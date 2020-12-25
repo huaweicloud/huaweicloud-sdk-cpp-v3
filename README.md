@@ -1,0 +1,1 @@
+# huaweicloud-sdk-cpp-v3

@@ -40,6 +40,16 @@ public:
     Client();
     ~Client();
 
+    std::function<void(const HttpResponse&)> handler_response;
+    void register_response_handler(std::function<void(const HttpResponse&)> func_response) {
+        handler_response = std::move(func_response);
+    }
+
+    std::function<void(const RequestParams&)> handler_request;
+    void register_request_handler(std::function<void(const RequestParams&)> func_request) {
+        handler_request = std::move(func_request);
+    }
+
     void setHttpConfig(const HttpConfig &httpConfig);
     void setCredentials(std::unique_ptr<Credentials> credentials);
     void setEndPoint(std::string endPoint);
@@ -49,9 +59,6 @@ public:
     std::unique_ptr<HttpResponse> callApi(const std::string &method, const std::string &resourcePath,
         const std::map<std::string, std::string> &pathParams, const std::map<std::string, std::string> &queryParams,
         const std::map<std::string, std::string> &headerParams, const std::string &body);
-
-    const HttpResponse &getHttpResponse();
-    const RequestParams &getRequestParams();
 
 private:
     std::string parseUrl(const RequestParams &requestParams);
@@ -70,9 +77,6 @@ private:
     bool streamLog_ = false;
     bool fileLog_ = false;
     std::string filePath_;
-
-    HttpResponse httpResponseLog_;
-    RequestParams requestParamsLog_;
 };
 }
 }

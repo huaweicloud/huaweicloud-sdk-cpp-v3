@@ -54,8 +54,9 @@ public:
     HttpClient();
     ~HttpClient();
 
-    std::unique_ptr<HttpResponse> doHttpRequestSync(const HttpRequest &httpRequest, const HttpConfig &httpConfig,
-        bool streamLog, bool fileLog, const std::string &filePath, HttpResponse &httpResponse);
+    std::unique_ptr<HttpResponse>
+    doHttpRequestSync(const HttpRequest &httpRequest, const HttpConfig &httpConfig,
+                      const std::function<void(const HttpResponse &)> &handler_response);
 
 private:
     static constexpr int HTTP_SUCCESS_BEGIN_CODE = 200;
@@ -66,12 +67,11 @@ private:
 
     std::map<std::string, std::string> parseErrorMessage(const std::string &responseBody);
 
-    void dealSslHandShakeException(bool streamLog, bool fileLog, const std::string &filePath);
-    void dealHostUnreachableException(bool streamLog, bool fileLog, const std::string &filePath);
-    void dealCallTimeoutException(bool log, bool log1, const std::string &basicString);
-    void dealRetryOutageException(bool streamLog, bool fileLog, const std::string &filePath);
-    void dealCurlOk(const HttpRequest &httpRequest, HttpResponse &httpResponse, bool streamLog, bool fileLog,
-        const std::string &filePath);
+    void dealSslHandShakeException(bool streamLog, bool fileLog);
+    void dealHostUnreachableException(bool streamLog, bool fileLog);
+    void dealCallTimeoutException(bool streamLog, bool fileLog);
+    void dealRetryOutageException(bool streamLog, bool fileLog);
+    void dealCurlOk(const HttpRequest &httpRequest, HttpResponse &httpResponse, bool streamLog, bool fileLog);
 
     std::string parseRequestId(const std::string &responseHeader);
 };

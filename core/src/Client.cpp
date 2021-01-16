@@ -46,7 +46,9 @@ std::unique_ptr<HttpResponse> Client::callApi(const std::string &method, const s
     addHeaderParams(requestParams, headerParams);
     credentials_->processAuthRequest(requestParams);
 
-    requestParamsLog_ = requestParams;
+    if (handler_request) {
+        handler_request(requestParams);
+    }
 
     HttpRequest httpRequest;
     httpRequest.setUrl(parseUrl(requestParams));
@@ -59,7 +61,7 @@ std::unique_ptr<HttpResponse> Client::callApi(const std::string &method, const s
 
     HttpClient httpClient;
     std::unique_ptr<HttpResponse> httpResponse =
-        httpClient.doHttpRequestSync(httpRequest, httpConfig_, streamLog_, fileLog_, filePath_, httpResponseLog_);
+            httpClient.doHttpRequestSync(httpRequest, httpConfig_, handler_response);
 
     return httpResponse;
 }
@@ -151,14 +153,4 @@ void Client::parseEndPoint(const std::string &str, std::string &scheme, std::str
     }
     scheme = res.at(0);
     host = res.at(1);
-}
-
-const HttpResponse &Client::getHttpResponse()
-{
-    return httpResponseLog_;
-}
-
-const RequestParams &Client::getRequestParams()
-{
-    return requestParamsLog_;
 }

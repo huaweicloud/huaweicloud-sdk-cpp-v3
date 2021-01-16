@@ -103,7 +103,7 @@
    ```c++
    #include <huaweicloud/core/exception/Exceptions.h>
    #include <huaweicloud/core/Client.h>
-   #include <huaweicloud/vpc/VpcClient.h>
+   #include <huaweicloud/vpc/v2/VpcClient.h>
    ```
 
 2. 配置客户端属性
@@ -184,12 +184,12 @@
 
    ```c++
    # 初始化指定云服务的客户端 {Service}Client ，以初始化 VpcClient 为例
-   std::unique_ptr<VpcClient> vpcApi = VpcClient::newBuilder()                    
+   std::unique_ptr<Vpc::V2::VpcClient> vpcApi_v2 = Vpc::V2::VpcClient::newBuilder()
        .withCredentials(std::unique_ptr<Credentials>(basicCredentials.release()))
-       .withHttpConfig(httpConfig)                    
-       .withFileLog(R"(.\log.txt)", true)                    
-       .withStreamLog(true)                    
-       .withEndPoint("endPoint")   
+       .withHttpConfig(httpConfig)
+       .withFileLog(R"(.\log.txt)", true)
+       .withStreamLog(true)
+       .withEndPoint("https://vpc.cn-north-7.ulanqab.huawei.com")
        .build();
    ```
 
@@ -212,8 +212,8 @@
 
    ```c++
    # 初始化请求，以调用接口 listVpcs 为例
-   ListVpcsRequest listRequest;
-   std::shared_ptr<ListVpcsResponse> listRes = vpcApi->listVpcs(listRequest);
+   Vpc::V2::Model::ListVpcsRequest listRequest;
+   std::shared_ptr<Vpc::V2::Model::ListVpcsResponse> listRes = vpcApi->listVpcs(listRequest);
    std::string responseBody = listRes->getHttpBody();
    std::cout << stringValue << std::endl;
    ```
@@ -232,7 +232,8 @@
    ```c++
    # 异常处理
    try {
-        std::shared_ptr<ListVpcsResponse> listRes = vpcApi->listVpcs(listRequest);
+        std::shared_ptr<Vpc::V2::Model::ListVpcsResponse> listRes = 
+            vpcApi->listVpcs(listRequest);
         std::string responseBody = listRes->getHttpBody();
         std::cout << stringValue << std::endl;
    } catch (HostUnreachableException& e) {
@@ -256,7 +257,8 @@
    ```c++
    # 采用c++ std::async接口实现，以listVpcs接口为例
    #inclue <future>
-   auto future = std::async(std::launch::async, &VpcClient::listVpcs, vpcApi, listRequest);
+   auto future = std::async(std::launch::async,
+                            &Vpc::V2::VpcClient::listVpcs, vpcApi, listRequest);
    auto listResponse = future.get();
    ```
 
@@ -272,10 +274,9 @@
   #include <iostream>
   #include <huaweicloud/core/exception/Exceptions.h>
   #include <huaweicloud/core/Client.h>
-  #include <huaweicloud/vpc/VpcClient.h>
+  #include <huaweicloud/vpc/v2/VpcClient.h>
   
-  using namespace HuaweiCloud::Sdk::Vpc::V2;
-  using namespace HuaweiCloud::Sdk::Vpc::V2::Model;
+  using namespace HuaweiCloud::Sdk;
   using namespace HuaweiCloud::Sdk::Core;
   using namespace HuaweiCloud::Sdk::Core::Exception;
   
@@ -285,35 +286,36 @@
       HttpConfig httpConfig = HttpConfig();
   	
       // Initialize AK/SK module
-      auto basicCredentials = std::make_shared<BasicCredentials>();
+      auto basicCredentials = std::make_unique<BasicCredentials>();
       basicCredentials->withAk("ak")
               .withSk("sk")
               .withProjectId("projectId")
               .withSecurityToken("securityToken");
       
       // Configure VpcClient instance
-      auto vpcApi = VpcClient::newBuilder(new VpcClient())
+      std::unique_ptr<Vpc::V2::VpcClient> vpcApi_v2 = Vpc::V2::VpcClient::newBuilder()
               .withCredentials(std::unique_ptr<Credentials>(basicCredentials.release()))
               .withHttpConfig(httpConfig)
-              .withFileLog(R"(.\log.txt)", true)
+              .withFileLog("{output log path}", true)
               .withStreamLog(true)
               .withEndPoint("{your endpoint}")
               .build();
   
       // Initialize request parameters
-      ListVpcsRequest listRequest;
+      Vpc::V2::Model::ListVpcsRequest listRequest;
       try {
           std::string stringValue;
           // Creat an API request and get response
           std::cout << "************ListVpc***********" << std::endl;
-          auto listRes = vpcApi->listVpcs(listRequest);
+          std::shared_ptr<Vpc::V2::Model::ListVpcsResponse> listRes = 
+              vpcApi->listVpcs(listRequest);
           stringValue = listRes->getHttpBody();
           std::cout << stringValue << std::endl;
       } catch (HostUnreachableException& e) { // handle exception
           std::cout << e.what() << std::endl;
       } catch (SslHandShakeException& e) {
           std::cout << e.what() << std::endl;
-      } catch (RetryQutageException& e) {
+      } catch (RetryOutageException& e) {
           std::cout << e.what() << std::endl;
       } catch (CallTimeoutException& e) {
           std::cout << e.what() << std::endl;

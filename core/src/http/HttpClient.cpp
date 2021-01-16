@@ -40,8 +40,9 @@ HttpClient::HttpClient() = default;
 
 HttpClient::~HttpClient() = default;
 
-std::unique_ptr<HttpResponse> HttpClient::doHttpRequestSync(const HttpRequest &httpRequest,
-    const HttpConfig &httpConfig, bool streamLog, bool fileLog, const std::string &filePath, HttpResponse &httpResponse)
+std::unique_ptr<HttpResponse>
+HttpClient::doHttpRequestSync(const HttpRequest &httpRequest, const HttpConfig &httpConfig,
+                              const std::function<void(const HttpResponse &)> &handler_response)
 {
     std::string body;
     std::string header;
@@ -49,33 +50,39 @@ std::unique_ptr<HttpResponse> HttpClient::doHttpRequestSync(const HttpRequest &h
     CURLcode res;
     res = curl_perform(httpRequest, httpConfig, body, header, statusCode);
 
-    if (streamLog && !spdlog::get("console")) {
+    if (httpRequest.isStreamLog() && !spdlog::get("console")) {
         auto console = spdlog::stdout_color_mt("console");
     }
-    if (fileLog && !spdlog::get("basic_logger")) {
-        auto logger = spdlog::basic_logger_mt("basic_logger", filePath);
+    if (httpRequest.isFileLog() && !spdlog::get("basic_logger")) {
+        auto logger = spdlog::basic_logger_mt("basic_logger", httpRequest.getFilePath());
     }
-
-    httpResponse.setHttpBody(body);
-    httpResponse.setHeaderParams(header);
-    httpResponse.setStatusCode(statusCode);
 
     switch (res) {
         case CURLE_SSL_CONNECT_ERROR:
-            dealSslHandShakeException(streamLog, fileLog, filePath);
+            dealSslHandShakeException(httpRequest.isStreamLog(), httpRequest.isFileLog());
             break;
         case CURLE_COULDNT_RESOLVE_HOST:
-            dealHostUnreachableException(streamLog, fileLog, filePath);
+            dealHostUnreachableException(httpRequest.isStreamLog(), httpRequest.isFileLog());
             break;
         case CURLE_OPERATION_TIMEDOUT:
-            dealCallTimeoutException(streamLog, fileLog, filePath);
+            dealCallTimeoutException(httpRequest.isStreamLog(), httpRequest.isFileLog());
             break;
         case CURLE_TOO_MANY_REDIRECTS:
-            dealRetryOutageException(streamLog, fileLog, filePath);
+            dealRetryOutageException(httpRequest.isStreamLog(), httpRequest.isFileLog());
             break;
         default:
+            HttpResponse httpResponse;
+
+            httpResponse.setHttpBody(body);
+            httpResponse.setHeaderParams(header);
+            httpResponse.setStatusCode(statusCode);
+
+            if (handler_response) {
+                handler_response(httpResponse);
+            }
+
             std::unique_ptr<HttpResponse> httpResponseCurl = std::make_unique<HttpResponse>(statusCode, header, body);
-            dealCurlOk(httpRequest, *httpResponseCurl, streamLog, fileLog, filePath);
+            dealCurlOk(httpRequest, *httpResponseCurl, httpRequest.isStreamLog(), httpRequest.isFileLog());
             return httpResponseCurl;
     }
     return nullptr;
@@ -171,7 +178,7 @@ std::map<std::string, std::string> HttpClient::parseErrorMessage(const std::stri
     return errorMsg;
 }
 
-void HttpClient::dealSslHandShakeException(bool streamLog, bool fileLog, const std::string &filePath)
+void HttpClient::dealSslHandShakeException(bool streamLog, bool fileLog)
 {
     if (streamLog) {
         spdlog::get("console")->error("\"SslHandShakeException!\"");
@@ -183,7 +190,7 @@ void HttpClient::dealSslHandShakeException(bool streamLog, bool fileLog, const s
     throw SslHandShakeException("SslHandShakeException!");
 }
 
-void HttpClient::dealHostUnreachableException(bool streamLog, bool fileLog, const std::string &filePath)
+void HttpClient::dealHostUnreachableException(bool streamLog, bool fileLog)
 {
     if (streamLog) {
         spdlog::get("console")->error("\"HostUnreachableException!\"");
@@ -195,7 +202,7 @@ void HttpClient::dealHostUnreachableException(bool streamLog, bool fileLog, cons
     throw HostUnreachableException("HostUnreachableException!");
 }
 
-void HttpClient::dealCallTimeoutException(bool streamLog, bool fileLog, const std::string &filePath)
+void HttpClient::dealCallTimeoutException(bool streamLog, bool fileLog)
 {
     if (streamLog) {
         spdlog::get("console")->error("\"CallTimeoutException!\"");
@@ -207,7 +214,7 @@ void HttpClient::dealCallTimeoutException(bool streamLog, bool fileLog, const st
     throw CallTimeoutException("CallTimeoutException!");
 }
 
-void HttpClient::dealRetryOutageException(bool streamLog, bool fileLog, const std::string &filePath)
+void HttpClient::dealRetryOutageException(bool streamLog, bool fileLog)
 {
     if (streamLog) {
         spdlog::get("console")->error("\"RetryOutageException!\"");
@@ -219,8 +226,7 @@ void HttpClient::dealRetryOutageException(bool streamLog, bool fileLog, const st
     throw RetryOutageException("RetryOutageException!");
 }
 
-void HttpClient::dealCurlOk(const HttpRequest &httpRequest, HttpResponse &httpResponse, bool streamLog, bool fileLog,
-    const std::string &filePath)
+void HttpClient::dealCurlOk(const HttpRequest &httpRequest, HttpResponse &httpResponse, bool streamLog, bool fileLog)
 {
     if (httpResponse.getStatusCode() < HTTP_SUCCESS_BEGIN_CODE ||
         httpResponse.getStatusCode() > HTTP_SUCCESS_END_CODE) {

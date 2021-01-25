@@ -17,6 +17,8 @@ ServerDetail::ServerDetail()
     statusIsSet_ = false;
     updated_ = "";
     updatedIsSet_ = false;
+    autoTerminateTime_ = "";
+    autoTerminateTimeIsSet_ = false;
     hostId_ = "";
     hostIdIsSet_ = false;
     oSEXTSRVATTRhost_ = "";
@@ -108,6 +110,9 @@ web::json::value ServerDetail::toJson() const
     }
     if(updatedIsSet_) {
         val[utility::conversions::to_string_t("updated")] = ModelBase::toJson(updated_);
+    }
+    if(autoTerminateTimeIsSet_) {
+        val[utility::conversions::to_string_t("auto_terminate_time")] = ModelBase::toJson(autoTerminateTime_);
     }
     if(hostIdIsSet_) {
         val[utility::conversions::to_string_t("hostId")] = ModelBase::toJson(hostId_);
@@ -259,6 +264,15 @@ bool ServerDetail::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setUpdated(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("auto_terminate_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("auto_terminate_time"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAutoTerminateTime(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("hostId"))) {
@@ -683,6 +697,27 @@ bool ServerDetail::updatedIsSet() const
 void ServerDetail::unsetupdated()
 {
     updatedIsSet_ = false;
+}
+
+std::string ServerDetail::getAutoTerminateTime() const
+{
+    return autoTerminateTime_;
+}
+
+void ServerDetail::setAutoTerminateTime(const std::string& value)
+{
+    autoTerminateTime_ = value;
+    autoTerminateTimeIsSet_ = true;
+}
+
+bool ServerDetail::autoTerminateTimeIsSet() const
+{
+    return autoTerminateTimeIsSet_;
+}
+
+void ServerDetail::unsetautoTerminateTime()
+{
+    autoTerminateTimeIsSet_ = false;
 }
 
 std::string ServerDetail::getHostId() const

@@ -93,8 +93,8 @@ private:
     std::string certFile_;
 
     std::string keyFile_;
-    int readTimeout_ = 100;
-    int connectTimeout_ = 100;
+    int readTimeout_ = 120;
+    int connectTimeout_ = 60;
     int poolConnections_ = 1;
     int poolMaxsize_ = 1;
 };

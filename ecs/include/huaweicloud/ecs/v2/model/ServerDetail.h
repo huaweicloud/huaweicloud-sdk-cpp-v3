@@ -68,6 +68,15 @@ public:
     void setUpdated(const std::string& value);
 
     /// <summary>
+    /// 弹性云服务器自动释放时间。  时间格式例如：2020-01-19T03:30:52Z
+    /// </summary>
+
+    std::string getAutoTerminateTime() const;
+    bool autoTerminateTimeIsSet() const;
+    void unsetautoTerminateTime();
+    void setAutoTerminateTime(const std::string& value);
+
+    /// <summary>
     /// 弹性云服务器所在主机的主机ID。
     /// </summary>
 
@@ -451,6 +460,8 @@ protected:
     bool statusIsSet_;
     std::string updated_;
     bool updatedIsSet_;
+    std::string autoTerminateTime_;
+    bool autoTerminateTimeIsSet_;
     std::string hostId_;
     bool hostIdIsSet_;
     std::string oSEXTSRVATTRhost_;

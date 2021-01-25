@@ -13,6 +13,8 @@ namespace Model {
 
 PrePaidServer::PrePaidServer()
 {
+    autoTerminateTime_ = "";
+    autoTerminateTimeIsSet_ = false;
     imageRef_ = "";
     imageRefIsSet_ = false;
     flavorRef_ = "";
@@ -57,6 +59,9 @@ web::json::value PrePaidServer::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(autoTerminateTimeIsSet_) {
+        val[utility::conversions::to_string_t("auto_terminate_time")] = ModelBase::toJson(autoTerminateTime_);
+    }
     if(imageRefIsSet_) {
         val[utility::conversions::to_string_t("imageRef")] = ModelBase::toJson(imageRef_);
     }
@@ -128,6 +133,15 @@ bool PrePaidServer::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("auto_terminate_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("auto_terminate_time"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAutoTerminateTime(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("imageRef"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("imageRef"));
         if(!fieldValue.is_null())
@@ -320,6 +334,27 @@ bool PrePaidServer::fromJson(const web::json::value& val)
     return ok;
 }
 
+
+std::string PrePaidServer::getAutoTerminateTime() const
+{
+    return autoTerminateTime_;
+}
+
+void PrePaidServer::setAutoTerminateTime(const std::string& value)
+{
+    autoTerminateTime_ = value;
+    autoTerminateTimeIsSet_ = true;
+}
+
+bool PrePaidServer::autoTerminateTimeIsSet() const
+{
+    return autoTerminateTimeIsSet_;
+}
+
+void PrePaidServer::unsetautoTerminateTime()
+{
+    autoTerminateTimeIsSet_ = false;
+}
 
 std::string PrePaidServer::getImageRef() const
 {

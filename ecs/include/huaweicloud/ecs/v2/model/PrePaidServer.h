@@ -50,6 +50,15 @@ public:
     /// PrePaidServer members
 
     /// <summary>
+    /// 弹性云服务器自动释放时间。  时间格式例如：2020-01-19T03:30:52Z
+    /// </summary>
+
+    std::string getAutoTerminateTime() const;
+    bool autoTerminateTimeIsSet() const;
+    void unsetautoTerminateTime();
+    void setAutoTerminateTime(const std::string& value);
+
+    /// <summary>
     /// 待创建云服务器的系统镜像，需要指定已创建镜像的ID，ID格式为通用唯一识别码（Universally Unique Identifier，简称UUID）。
     /// </summary>
 
@@ -240,6 +249,8 @@ public:
 
 
 protected:
+    std::string autoTerminateTime_;
+    bool autoTerminateTimeIsSet_;
     std::string imageRef_;
     bool imageRefIsSet_;
     std::string flavorRef_;

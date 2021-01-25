@@ -262,6 +262,35 @@
    auto listResponse = future.get();
    ```
 
+8. 配置CMakeLists.txt
+
+   使用一个服务
+
+   ```cmake
+   # USE ONE SERVICE
+   SET(BUILD_SERVICE vpc)
+   SET(SERVICE_VERSION v2)
+   
+   if(BUILD_SERVICE STREQUAL "")
+       add_subdirectory(core)
+   else()
+       add_subdirectory(core)
+       add_subdirectory(${BUILD_SERVICE}/src/${SERVICE_VERSION})
+       message(STATUS   "'BUILD_SERVICE'=${BUILD_SERVICE}")
+   endif()
+   ```
+
+   使用多个服务
+
+   ```cmake
+   # USE MULTIPLE SERVICES(EXAMPLE: USE VPC ECS AND EIP)
+   add_subdirectory(core)
+   add_subdirectory(vpc/src/v2)
+   add_subdirectory(eip/src/v2)
+   add_subdirectory(ecs/src/v2)
+   ```
+
+   
 
 ## 代码实例
 
@@ -334,7 +363,7 @@
   Linux 下
 
   ```bash
-  $ g++ -o vpc_test vpc_test.cpp --std=c++11 -lvpc -lcore -lcrypto -lboost_system -lcpprest
+  $ g++ -o vpc_test vpc_test.cpp --std=c++14 -lvpc_v2 -lcore -lcrypto -lboost_system -lcpprest
   $ ./vpc_test
   # 返回结果
   $

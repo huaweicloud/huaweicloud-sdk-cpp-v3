@@ -45,6 +45,15 @@ public:
     /// NovaCreateServersOption members
 
     /// <summary>
+    /// 弹性云服务器自动释放时间。  时间格式例如：2020-01-19T03:30:52Z
+    /// </summary>
+
+    std::string getAutoTerminateTime() const;
+    bool autoTerminateTimeIsSet() const;
+    void unsetautoTerminateTime();
+    void setAutoTerminateTime(const std::string& value);
+
+    /// <summary>
     /// 镜像ID或者镜像资源的URL。  - 镜像ID示例：3b8d6fef-af77-42ab-b8b7-5a7f0f0af8f2 - 镜像URL示例：http://glance.openstack.example.com/images/3b8d6fef-af77-42ab-b8b7-5a7f0f0af8f2 - 指定卷作为系统卷创弹性云服务器时，不需填写该参数；非卷创建弹性云服务器时需填写有效的UUID参数，否则API将返回400错误。  &gt; 说明： &gt; - 对于部分规格的弹性云服务器，不能支持公有云平台提供的所有公共镜像。具体规格的镜像支持列表，请登录管理控制台，以“创建弹性云服务器”页面系统自动过滤的镜像信息为准，并在镜像服务页面查询镜像ID。 &gt; - 如果创建失败，请尝试修改参数配置。
     /// </summary>
 
@@ -199,6 +208,8 @@ public:
 
 
 protected:
+    std::string autoTerminateTime_;
+    bool autoTerminateTimeIsSet_;
     std::string imageRef_;
     bool imageRefIsSet_;
     std::string flavorRef_;

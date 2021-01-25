@@ -13,6 +13,8 @@ namespace Model {
 
 PostPaidServer::PostPaidServer()
 {
+    autoTerminateTime_ = "";
+    autoTerminateTimeIsSet_ = false;
     adminPass_ = "";
     adminPassIsSet_ = false;
     availabilityZone_ = "";
@@ -57,6 +59,9 @@ web::json::value PostPaidServer::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(autoTerminateTimeIsSet_) {
+        val[utility::conversions::to_string_t("auto_terminate_time")] = ModelBase::toJson(autoTerminateTime_);
+    }
     if(adminPassIsSet_) {
         val[utility::conversions::to_string_t("adminPass")] = ModelBase::toJson(adminPass_);
     }
@@ -128,6 +133,15 @@ bool PostPaidServer::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("auto_terminate_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("auto_terminate_time"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAutoTerminateTime(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("adminPass"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("adminPass"));
         if(!fieldValue.is_null())
@@ -320,6 +334,27 @@ bool PostPaidServer::fromJson(const web::json::value& val)
     return ok;
 }
 
+
+std::string PostPaidServer::getAutoTerminateTime() const
+{
+    return autoTerminateTime_;
+}
+
+void PostPaidServer::setAutoTerminateTime(const std::string& value)
+{
+    autoTerminateTime_ = value;
+    autoTerminateTimeIsSet_ = true;
+}
+
+bool PostPaidServer::autoTerminateTimeIsSet() const
+{
+    return autoTerminateTimeIsSet_;
+}
+
+void PostPaidServer::unsetautoTerminateTime()
+{
+    autoTerminateTimeIsSet_ = false;
+}
 
 std::string PostPaidServer::getAdminPass() const
 {

@@ -116,7 +116,7 @@ public:
 
     ClientBuilder& operator= (ClientBuilder &&that) noexcept = default;
 
-    ClientBuilder& withHttpConfig(const HttpConfig &httpConfig)
+    ClientBuilder &withHttpConfig(const HttpConfig &httpConfig)
     {
         httpConfig_ = std::make_unique<HttpConfig>(httpConfig);
         return *this;
@@ -157,7 +157,12 @@ public:
         } else {
             client->setCredentials(std::move(credentials_));
         }
-        client->setHttpConfig(*std::move(httpConfig_));
+        if (!httpConfig_) {
+            HttpConfig httpConfig = HttpConfig();
+            client->setHttpConfig(httpConfig);
+        } else {
+            client->setHttpConfig(*std::move(httpConfig_));
+        }
         client->setFileLog(std::move(filePath_), fileLog_);
         client->setStreamLog(streamLog_);
         client->setEndPoint(std::move(endPoint_));

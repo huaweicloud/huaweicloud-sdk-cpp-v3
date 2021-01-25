@@ -206,7 +206,7 @@ This document introduces how to obtain and use HuaweiCloud C++ SDK.
 5. Send a request and print response.
 
    ```c++
-   # 初始化请求，以调用接口 listVpcs 为例
+   # Initialize request
    Vpc::V2::Model::ListVpcsRequest listRequest;
    std::shared_ptr<Vpc::V2::Model::ListVpcsResponse> listRes = vpcApi->listVpcs(listRequest);
    std::string responseBody = listRes->getHttpBody();
@@ -250,12 +250,41 @@ This document introduces how to obtain and use HuaweiCloud C++ SDK.
 7. Asynchronous Requests
 
    ```cpp
-   # 采用c++ std::async接口实现，以listVpcs接口为例
+   # use c++ std::async
    #inclue <future>
    auto future = std::async(std::launch::async,
                             &Vpc::V2::VpcClient::listVpcs, vpcApi, listRequest);
    auto listResponse = future.get();
    ```
+
+8. Set CMakeLists.txt
+
+    use one service
+
+    ```cmake
+    # USE ONE SERVICE
+    SET(BUILD_SERVICE vpc)
+    SET(SERVICE_VERSION v2)
+
+    if(BUILD_SERVICE STREQUAL "")
+        add_subdirectory(core)
+    else()
+        add_subdirectory(core)
+        add_subdirectory(${BUILD_SERVICE}/src/${SERVICE_VERSION})
+        message(STATUS   "'BUILD_SERVICE'=${BUILD_SERVICE}")
+    endif()
+    ```
+
+    use multiple services
+
+    ```cmake
+    # USE MULTIPLE SERVICES(EXAMPLE: USE VPC ECS AND EIP)
+    add_subdirectory(core)
+    add_subdirectory(vpc/src/v2)
+    add_subdirectory(eip/src/v2)
+    add_subdirectory(ecs/src/v2)
+    ```
+
 
 
 ## Code example
@@ -328,7 +357,7 @@ This document introduces how to obtain and use HuaweiCloud C++ SDK.
   Linux:
 
   ```bash
-  $ g++ -o vpc_test vpc_test.cpp --std=c++11 -lvpc -lcore -lcrypto -lboost_system -lcpprest
+  $ g++ -o vpc_test vpc_test.cpp --std=c++14 -lvpc_v2 -lcore -lcrypto -lboost_system -lcpprest
   $ ./vpc_test
   # response
   $

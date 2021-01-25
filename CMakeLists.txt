@@ -17,12 +17,20 @@ else()
     set(LIB_TYPE STATIC)
 endif()
 
+# USE ONE SERVICE
 SET(BUILD_SERVICE vpc)
+SET(SERVICE_VERSION v2)
 
 if(BUILD_SERVICE STREQUAL "")
     add_subdirectory(core)
 else()
     add_subdirectory(core)
-    add_subdirectory(${BUILD_SERVICE})
+    add_subdirectory(${BUILD_SERVICE}/src/${SERVICE_VERSION})
     message(STATUS   "'BUILD_SERVICE'=${BUILD_SERVICE}")
 endif()
+
+# USE MULTIPLE SERVICES(EXAMPLE: USE VPC ECS AND EIP)
+# add_subdirectory(core)
+# add_subdirectory(vpc/src/v2)
+# add_subdirectory(eip/src/v2)
+# add_subdirectory(ecs/src/v2)

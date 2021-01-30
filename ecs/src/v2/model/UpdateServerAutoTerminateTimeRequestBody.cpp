@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/ecs/v2/model/UpdateAutoTerminateTimeServerRequestBody.h"
+#include "huaweicloud/ecs/v2/model/UpdateServerAutoTerminateTimeRequestBody.h"
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -11,19 +11,19 @@ namespace Model {
 
 
 
-UpdateAutoTerminateTimeServerRequestBody::UpdateAutoTerminateTimeServerRequestBody()
+UpdateServerAutoTerminateTimeRequestBody::UpdateServerAutoTerminateTimeRequestBody()
 {
     autoTerminateTime_ = "";
     autoTerminateTimeIsSet_ = false;
 }
 
-UpdateAutoTerminateTimeServerRequestBody::~UpdateAutoTerminateTimeServerRequestBody() = default;
+UpdateServerAutoTerminateTimeRequestBody::~UpdateServerAutoTerminateTimeRequestBody() = default;
 
-void UpdateAutoTerminateTimeServerRequestBody::validate()
+void UpdateServerAutoTerminateTimeRequestBody::validate()
 {
 }
 
-web::json::value UpdateAutoTerminateTimeServerRequestBody::toJson() const
+web::json::value UpdateServerAutoTerminateTimeRequestBody::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -34,7 +34,7 @@ web::json::value UpdateAutoTerminateTimeServerRequestBody::toJson() const
     return val;
 }
 
-bool UpdateAutoTerminateTimeServerRequestBody::fromJson(const web::json::value& val)
+bool UpdateServerAutoTerminateTimeRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -51,23 +51,23 @@ bool UpdateAutoTerminateTimeServerRequestBody::fromJson(const web::json::value& 
 }
 
 
-std::string UpdateAutoTerminateTimeServerRequestBody::getAutoTerminateTime() const
+std::string UpdateServerAutoTerminateTimeRequestBody::getAutoTerminateTime() const
 {
     return autoTerminateTime_;
 }
 
-void UpdateAutoTerminateTimeServerRequestBody::setAutoTerminateTime(const std::string& value)
+void UpdateServerAutoTerminateTimeRequestBody::setAutoTerminateTime(const std::string& value)
 {
     autoTerminateTime_ = value;
     autoTerminateTimeIsSet_ = true;
 }
 
-bool UpdateAutoTerminateTimeServerRequestBody::autoTerminateTimeIsSet() const
+bool UpdateServerAutoTerminateTimeRequestBody::autoTerminateTimeIsSet() const
 {
     return autoTerminateTimeIsSet_;
 }
 
-void UpdateAutoTerminateTimeServerRequestBody::unsetautoTerminateTime()
+void UpdateServerAutoTerminateTimeRequestBody::unsetautoTerminateTime()
 {
     autoTerminateTimeIsSet_ = false;
 }

@@ -1,3 +1,21 @@
+# 3.0.4-beta 2021-01-30
+## HuaweiCloud SDK ECS
+- ### 新增特性
+    - 无
+- ### 解决问题
+    - 无
+- ### 特性变更
+    - 接口名称调整: UpdateAutoTerminateTimeServer → UpdateServerAutoTerminateTime
+
+## HuaweiCloud SDK EVS
+- ### 新增特性
+    - 无
+- ### 解决问题
+    - 无
+- ### 特性变更
+    - 创建云硬盘接口支持指定专属存储池ID
+    - 查询配额相关接口属性 `allocated` 类型调整: string → int
+
 # 3.0.3-beta 2021-01-25
 ## HuaweiCloud SDK Core
 - ### 新增特性

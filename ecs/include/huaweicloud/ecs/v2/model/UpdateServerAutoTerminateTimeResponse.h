@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_ECS_V2_MODEL_UpdateAutoTerminateTimeServerResponse_H_
-#define HUAWEICLOUD_SDK_ECS_V2_MODEL_UpdateAutoTerminateTimeServerResponse_H_
+#ifndef HUAWEICLOUD_SDK_ECS_V2_MODEL_UpdateServerAutoTerminateTimeResponse_H_
+#define HUAWEICLOUD_SDK_ECS_V2_MODEL_UpdateServerAutoTerminateTimeResponse_H_
 
 #include <huaweicloud/ecs/v2/EcsExport.h>
 
@@ -20,12 +20,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// Response Object
 /// </summary>
-class HUAWEICLOUD_ECS_V2_EXPORT  UpdateAutoTerminateTimeServerResponse
+class HUAWEICLOUD_ECS_V2_EXPORT  UpdateServerAutoTerminateTimeResponse
     : public ModelBase, public HttpResponse
 {
 public:
-    UpdateAutoTerminateTimeServerResponse();
-    virtual ~UpdateAutoTerminateTimeServerResponse();
+    UpdateServerAutoTerminateTimeResponse();
+    virtual ~UpdateServerAutoTerminateTimeResponse();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -36,7 +36,7 @@ public:
     bool fromJson(const web::json::value& json) override;
 
     /////////////////////////////////////////////
-    /// UpdateAutoTerminateTimeServerResponse members
+    /// UpdateServerAutoTerminateTimeResponse members
 
 
 protected:
@@ -53,4 +53,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_ECS_V2_MODEL_UpdateAutoTerminateTimeServerResponse_H_
+#endif // HUAWEICLOUD_SDK_ECS_V2_MODEL_UpdateServerAutoTerminateTimeResponse_H_

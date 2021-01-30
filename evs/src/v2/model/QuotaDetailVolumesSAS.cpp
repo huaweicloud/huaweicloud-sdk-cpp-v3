@@ -19,7 +19,7 @@ QuotaDetailVolumesSAS::QuotaDetailVolumesSAS()
     limitIsSet_ = false;
     reserved_ = 0;
     reservedIsSet_ = false;
-    allocated_ = "";
+    allocated_ = 0;
     allocatedIsSet_ = false;
 }
 
@@ -84,7 +84,7 @@ bool QuotaDetailVolumesSAS::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("allocated"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAllocated(refVal);
         }
@@ -156,12 +156,12 @@ void QuotaDetailVolumesSAS::unsetreserved()
     reservedIsSet_ = false;
 }
 
-std::string QuotaDetailVolumesSAS::getAllocated() const
+int32_t QuotaDetailVolumesSAS::getAllocated() const
 {
     return allocated_;
 }
 
-void QuotaDetailVolumesSAS::setAllocated(const std::string& value)
+void QuotaDetailVolumesSAS::setAllocated(int32_t value)
 {
     allocated_ = value;
     allocatedIsSet_ = true;

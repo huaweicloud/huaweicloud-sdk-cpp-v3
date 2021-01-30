@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_ECS_V2_MODEL_UpdateAutoTerminateTimeServerRequestBody_H_
-#define HUAWEICLOUD_SDK_ECS_V2_MODEL_UpdateAutoTerminateTimeServerRequestBody_H_
+#ifndef HUAWEICLOUD_SDK_ECS_V2_MODEL_UpdateServerAutoTerminateTimeRequestBody_H_
+#define HUAWEICLOUD_SDK_ECS_V2_MODEL_UpdateServerAutoTerminateTimeRequestBody_H_
 
 #include <huaweicloud/ecs/v2/EcsExport.h>
 
@@ -21,12 +21,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// This is a auto create Body Object
 /// </summary>
-class HUAWEICLOUD_ECS_V2_EXPORT  UpdateAutoTerminateTimeServerRequestBody
+class HUAWEICLOUD_ECS_V2_EXPORT  UpdateServerAutoTerminateTimeRequestBody
     : public ModelBase
 {
 public:
-    UpdateAutoTerminateTimeServerRequestBody();
-    virtual ~UpdateAutoTerminateTimeServerRequestBody();
+    UpdateServerAutoTerminateTimeRequestBody();
+    virtual ~UpdateServerAutoTerminateTimeRequestBody();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -37,7 +37,7 @@ public:
     bool fromJson(const web::json::value& json) override;
 
     /////////////////////////////////////////////
-    /// UpdateAutoTerminateTimeServerRequestBody members
+    /// UpdateServerAutoTerminateTimeRequestBody members
 
     /// <summary>
     /// 销毁时间
@@ -62,4 +62,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_ECS_V2_MODEL_UpdateAutoTerminateTimeServerRequestBody_H_
+#endif // HUAWEICLOUD_SDK_ECS_V2_MODEL_UpdateServerAutoTerminateTimeRequestBody_H_

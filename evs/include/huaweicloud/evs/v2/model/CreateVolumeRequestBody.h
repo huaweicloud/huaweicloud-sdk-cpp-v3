@@ -10,6 +10,7 @@
 #include <huaweicloud/evs/v2/model/BssParamForCreateVolume.h>
 #include <string>
 #include <huaweicloud/evs/v2/model/CreateVolumeOption.h>
+#include <huaweicloud/evs/v2/model/CreateVolumeSchedulerHints.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -68,6 +69,15 @@ public:
     void unsetserverId();
     void setServerId(const std::string& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    CreateVolumeSchedulerHints getOSSCHHNTschedulerHints() const;
+    bool oSSCHHNTschedulerHintsIsSet() const;
+    void unsetoSSCHHNTschedulerHints();
+    void setOSSCHHNTschedulerHints(const CreateVolumeSchedulerHints& value);
+
 
 protected:
     BssParamForCreateVolume bssParam_;
@@ -76,6 +86,8 @@ protected:
     bool volumeIsSet_;
     std::string serverId_;
     bool serverIdIsSet_;
+    CreateVolumeSchedulerHints oSSCHHNTschedulerHints_;
+    bool oSSCHHNTschedulerHintsIsSet_;
 
 };
 

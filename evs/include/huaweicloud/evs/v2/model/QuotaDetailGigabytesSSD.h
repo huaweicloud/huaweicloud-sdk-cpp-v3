@@ -7,7 +7,6 @@
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <string>
 #include <huaweicloud/evs/v2/model/QuotaDetail.h>
 
 namespace HuaweiCloud {
@@ -71,10 +70,10 @@ public:
     /// 预留属性。
     /// </summary>
 
-    std::string getAllocated() const;
+    int32_t getAllocated() const;
     bool allocatedIsSet() const;
     void unsetallocated();
-    void setAllocated(const std::string& value);
+    void setAllocated(int32_t value);
 
 
 protected:
@@ -84,7 +83,7 @@ protected:
     bool limitIsSet_;
     int32_t reserved_;
     bool reservedIsSet_;
-    std::string allocated_;
+    int32_t allocated_;
     bool allocatedIsSet_;
 
 };

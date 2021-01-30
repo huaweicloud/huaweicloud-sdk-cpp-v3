@@ -118,9 +118,9 @@
 #include <huaweicloud/ecs/v2/model/ShowServerResponse.h>
 #include <huaweicloud/ecs/v2/model/ShowServerTagsRequest.h>
 #include <huaweicloud/ecs/v2/model/ShowServerTagsResponse.h>
-#include <huaweicloud/ecs/v2/model/UpdateAutoTerminateTimeServerRequest.h>
-#include <huaweicloud/ecs/v2/model/UpdateAutoTerminateTimeServerRequestBody.h>
-#include <huaweicloud/ecs/v2/model/UpdateAutoTerminateTimeServerResponse.h>
+#include <huaweicloud/ecs/v2/model/UpdateServerAutoTerminateTimeRequest.h>
+#include <huaweicloud/ecs/v2/model/UpdateServerAutoTerminateTimeRequestBody.h>
+#include <huaweicloud/ecs/v2/model/UpdateServerAutoTerminateTimeResponse.h>
 #include <huaweicloud/ecs/v2/model/UpdateServerMetadataRequest.h>
 #include <huaweicloud/ecs/v2/model/UpdateServerMetadataRequestBody.h>
 #include <huaweicloud/ecs/v2/model/UpdateServerMetadataResponse.h>
@@ -646,17 +646,6 @@ public:
         ShowServerTagsRequest &request
     );
     /// <summary>
-    /// 修改云服务器云主机销毁时间
-    /// </summary>
-    /// <remarks>
-    /// 修改按需服务器，设置定时销毁时间。如果设置的销毁时间为空，表示取消销毁时间。  该接口支持企业项目细粒度权限的校验，具体细粒度请参见 ecs:cloudServers:put。
-    /// </remarks>
-    /// <param name="serverId">云服务器ID。</param>
-    /// <param name="updateAutoTerminateTimeServerRequestBody">This is a auto create Body Object</param>
-    std::shared_ptr<UpdateAutoTerminateTimeServerResponse> updateAutoTerminateTimeServer(
-        UpdateAutoTerminateTimeServerRequest &request
-    );
-    /// <summary>
     /// 修改云服务器
     /// </summary>
     /// <remarks>
@@ -666,6 +655,17 @@ public:
     /// <param name="updateServerRequestBody">This is a auto create Body Object</param>
     std::shared_ptr<UpdateServerResponse> updateServer(
         UpdateServerRequest &request
+    );
+    /// <summary>
+    /// 修改云服务器销毁时间
+    /// </summary>
+    /// <remarks>
+    /// 修改按需服务器，设置定时销毁时间。如果设置的销毁时间为空，表示取消销毁时间。  该接口支持企业项目细粒度权限的校验，具体细粒度请参见 ecs:cloudServers:put。
+    /// </remarks>
+    /// <param name="serverId">云服务器ID。</param>
+    /// <param name="updateServerAutoTerminateTimeRequestBody">This is a auto create Body Object</param>
+    std::shared_ptr<UpdateServerAutoTerminateTimeResponse> updateServerAutoTerminateTime(
+        UpdateServerAutoTerminateTimeRequest &request
     );
     /// <summary>
     /// 更新云服务器元数据

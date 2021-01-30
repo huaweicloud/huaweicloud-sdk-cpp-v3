@@ -19,7 +19,7 @@ QuotaDetailGigabytesSSD::QuotaDetailGigabytesSSD()
     limitIsSet_ = false;
     reserved_ = 0;
     reservedIsSet_ = false;
-    allocated_ = "";
+    allocated_ = 0;
     allocatedIsSet_ = false;
 }
 
@@ -84,7 +84,7 @@ bool QuotaDetailGigabytesSSD::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("allocated"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAllocated(refVal);
         }
@@ -156,12 +156,12 @@ void QuotaDetailGigabytesSSD::unsetreserved()
     reservedIsSet_ = false;
 }
 
-std::string QuotaDetailGigabytesSSD::getAllocated() const
+int32_t QuotaDetailGigabytesSSD::getAllocated() const
 {
     return allocated_;
 }
 
-void QuotaDetailGigabytesSSD::setAllocated(const std::string& value)
+void QuotaDetailGigabytesSSD::setAllocated(int32_t value)
 {
     allocated_ = value;
     allocatedIsSet_ = true;

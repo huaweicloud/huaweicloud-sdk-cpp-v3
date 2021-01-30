@@ -1,14 +1,14 @@
 
-#ifndef HUAWEICLOUD_SDK_ECS_V2_MODEL_UpdateAutoTerminateTimeServerRequest_H_
-#define HUAWEICLOUD_SDK_ECS_V2_MODEL_UpdateAutoTerminateTimeServerRequest_H_
+#ifndef HUAWEICLOUD_SDK_ECS_V2_MODEL_UpdateServerAutoTerminateTimeRequest_H_
+#define HUAWEICLOUD_SDK_ECS_V2_MODEL_UpdateServerAutoTerminateTimeRequest_H_
 
 #include <huaweicloud/ecs/v2/EcsExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/ecs/v2/model/UpdateAutoTerminateTimeServerRequestBody.h>
 #include <string>
+#include <huaweicloud/ecs/v2/model/UpdateServerAutoTerminateTimeRequestBody.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -22,12 +22,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// Request Object
 /// </summary>
-class HUAWEICLOUD_ECS_V2_EXPORT  UpdateAutoTerminateTimeServerRequest
+class HUAWEICLOUD_ECS_V2_EXPORT  UpdateServerAutoTerminateTimeRequest
     : public ModelBase
 {
 public:
-    UpdateAutoTerminateTimeServerRequest();
-    virtual ~UpdateAutoTerminateTimeServerRequest();
+    UpdateServerAutoTerminateTimeRequest();
+    virtual ~UpdateServerAutoTerminateTimeRequest();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -38,7 +38,7 @@ public:
     bool fromJson(const web::json::value& json) override;
 
     /////////////////////////////////////////////
-    /// UpdateAutoTerminateTimeServerRequest members
+    /// UpdateServerAutoTerminateTimeRequest members
 
     /// <summary>
     /// 
@@ -53,22 +53,22 @@ public:
     /// 
     /// </summary>
 
-    UpdateAutoTerminateTimeServerRequestBody getBody() const;
+    UpdateServerAutoTerminateTimeRequestBody getBody() const;
     bool bodyIsSet() const;
     void unsetbody();
-    void setBody(const UpdateAutoTerminateTimeServerRequestBody& value);
+    void setBody(const UpdateServerAutoTerminateTimeRequestBody& value);
 
 
 protected:
     std::string serverId_;
     bool serverIdIsSet_;
-    UpdateAutoTerminateTimeServerRequestBody body_;
+    UpdateServerAutoTerminateTimeRequestBody body_;
     bool bodyIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()
 public:
-    UpdateAutoTerminateTimeServerRequest& dereference_from_shared_ptr(std::shared_ptr<UpdateAutoTerminateTimeServerRequest> ptr) {
+    UpdateServerAutoTerminateTimeRequest& dereference_from_shared_ptr(std::shared_ptr<UpdateServerAutoTerminateTimeRequest> ptr) {
         return *ptr;
     }
 #endif
@@ -81,4 +81,4 @@ public:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_ECS_V2_MODEL_UpdateAutoTerminateTimeServerRequest_H_
+#endif // HUAWEICLOUD_SDK_ECS_V2_MODEL_UpdateServerAutoTerminateTimeRequest_H_

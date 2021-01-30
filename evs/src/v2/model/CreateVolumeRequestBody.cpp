@@ -17,6 +17,7 @@ CreateVolumeRequestBody::CreateVolumeRequestBody()
     volumeIsSet_ = false;
     serverId_ = "";
     serverIdIsSet_ = false;
+    oSSCHHNTschedulerHintsIsSet_ = false;
 }
 
 CreateVolumeRequestBody::~CreateVolumeRequestBody() = default;
@@ -37,6 +38,9 @@ web::json::value CreateVolumeRequestBody::toJson() const
     }
     if(serverIdIsSet_) {
         val[utility::conversions::to_string_t("server_id")] = ModelBase::toJson(serverId_);
+    }
+    if(oSSCHHNTschedulerHintsIsSet_) {
+        val[utility::conversions::to_string_t("OS-SCH-HNT:scheduler_hints")] = ModelBase::toJson(oSSCHHNTschedulerHints_);
     }
 
     return val;
@@ -71,6 +75,15 @@ bool CreateVolumeRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setServerId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("OS-SCH-HNT:scheduler_hints"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("OS-SCH-HNT:scheduler_hints"));
+        if(!fieldValue.is_null())
+        {
+            CreateVolumeSchedulerHints refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setOSSCHHNTschedulerHints(refVal);
         }
     }
     return ok;
@@ -138,6 +151,27 @@ bool CreateVolumeRequestBody::serverIdIsSet() const
 void CreateVolumeRequestBody::unsetserverId()
 {
     serverIdIsSet_ = false;
+}
+
+CreateVolumeSchedulerHints CreateVolumeRequestBody::getOSSCHHNTschedulerHints() const
+{
+    return oSSCHHNTschedulerHints_;
+}
+
+void CreateVolumeRequestBody::setOSSCHHNTschedulerHints(const CreateVolumeSchedulerHints& value)
+{
+    oSSCHHNTschedulerHints_ = value;
+    oSSCHHNTschedulerHintsIsSet_ = true;
+}
+
+bool CreateVolumeRequestBody::oSSCHHNTschedulerHintsIsSet() const
+{
+    return oSSCHHNTschedulerHintsIsSet_;
+}
+
+void CreateVolumeRequestBody::unsetoSSCHHNTschedulerHints()
+{
+    oSSCHHNTschedulerHintsIsSet_ = false;
 }
 
 }

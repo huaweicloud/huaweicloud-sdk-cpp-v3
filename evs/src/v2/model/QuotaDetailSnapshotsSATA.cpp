@@ -19,7 +19,7 @@ QuotaDetailSnapshotsSATA::QuotaDetailSnapshotsSATA()
     limitIsSet_ = false;
     reserved_ = 0;
     reservedIsSet_ = false;
-    allocated_ = "";
+    allocated_ = 0;
     allocatedIsSet_ = false;
 }
 
@@ -84,7 +84,7 @@ bool QuotaDetailSnapshotsSATA::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("allocated"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAllocated(refVal);
         }
@@ -156,12 +156,12 @@ void QuotaDetailSnapshotsSATA::unsetreserved()
     reservedIsSet_ = false;
 }
 
-std::string QuotaDetailSnapshotsSATA::getAllocated() const
+int32_t QuotaDetailSnapshotsSATA::getAllocated() const
 {
     return allocated_;
 }
 
-void QuotaDetailSnapshotsSATA::setAllocated(const std::string& value)
+void QuotaDetailSnapshotsSATA::setAllocated(int32_t value)
 {
     allocated_ = value;
     allocatedIsSet_ = true;

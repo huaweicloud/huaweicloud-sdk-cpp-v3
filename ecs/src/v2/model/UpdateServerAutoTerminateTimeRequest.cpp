@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/ecs/v2/model/UpdateAutoTerminateTimeServerRequest.h"
+#include "huaweicloud/ecs/v2/model/UpdateServerAutoTerminateTimeRequest.h"
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -11,20 +11,20 @@ namespace Model {
 
 
 
-UpdateAutoTerminateTimeServerRequest::UpdateAutoTerminateTimeServerRequest()
+UpdateServerAutoTerminateTimeRequest::UpdateServerAutoTerminateTimeRequest()
 {
     serverId_ = "";
     serverIdIsSet_ = false;
     bodyIsSet_ = false;
 }
 
-UpdateAutoTerminateTimeServerRequest::~UpdateAutoTerminateTimeServerRequest() = default;
+UpdateServerAutoTerminateTimeRequest::~UpdateServerAutoTerminateTimeRequest() = default;
 
-void UpdateAutoTerminateTimeServerRequest::validate()
+void UpdateServerAutoTerminateTimeRequest::validate()
 {
 }
 
-web::json::value UpdateAutoTerminateTimeServerRequest::toJson() const
+web::json::value UpdateServerAutoTerminateTimeRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -38,7 +38,7 @@ web::json::value UpdateAutoTerminateTimeServerRequest::toJson() const
     return val;
 }
 
-bool UpdateAutoTerminateTimeServerRequest::fromJson(const web::json::value& val)
+bool UpdateServerAutoTerminateTimeRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -55,7 +55,7 @@ bool UpdateAutoTerminateTimeServerRequest::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
         if(!fieldValue.is_null())
         {
-            UpdateAutoTerminateTimeServerRequestBody refVal;
+            UpdateServerAutoTerminateTimeRequestBody refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBody(refVal);
         }
@@ -64,44 +64,44 @@ bool UpdateAutoTerminateTimeServerRequest::fromJson(const web::json::value& val)
 }
 
 
-std::string UpdateAutoTerminateTimeServerRequest::getServerId() const
+std::string UpdateServerAutoTerminateTimeRequest::getServerId() const
 {
     return serverId_;
 }
 
-void UpdateAutoTerminateTimeServerRequest::setServerId(const std::string& value)
+void UpdateServerAutoTerminateTimeRequest::setServerId(const std::string& value)
 {
     serverId_ = value;
     serverIdIsSet_ = true;
 }
 
-bool UpdateAutoTerminateTimeServerRequest::serverIdIsSet() const
+bool UpdateServerAutoTerminateTimeRequest::serverIdIsSet() const
 {
     return serverIdIsSet_;
 }
 
-void UpdateAutoTerminateTimeServerRequest::unsetserverId()
+void UpdateServerAutoTerminateTimeRequest::unsetserverId()
 {
     serverIdIsSet_ = false;
 }
 
-UpdateAutoTerminateTimeServerRequestBody UpdateAutoTerminateTimeServerRequest::getBody() const
+UpdateServerAutoTerminateTimeRequestBody UpdateServerAutoTerminateTimeRequest::getBody() const
 {
     return body_;
 }
 
-void UpdateAutoTerminateTimeServerRequest::setBody(const UpdateAutoTerminateTimeServerRequestBody& value)
+void UpdateServerAutoTerminateTimeRequest::setBody(const UpdateServerAutoTerminateTimeRequestBody& value)
 {
     body_ = value;
     bodyIsSet_ = true;
 }
 
-bool UpdateAutoTerminateTimeServerRequest::bodyIsSet() const
+bool UpdateServerAutoTerminateTimeRequest::bodyIsSet() const
 {
     return bodyIsSet_;
 }
 
-void UpdateAutoTerminateTimeServerRequest::unsetbody()
+void UpdateServerAutoTerminateTimeRequest::unsetbody()
 {
     bodyIsSet_ = false;
 }

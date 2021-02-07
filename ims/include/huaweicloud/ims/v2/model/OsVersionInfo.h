@@ -70,10 +70,10 @@ public:
     /// 操作系统的位数
     /// </summary>
 
-    std::string getOsBit() const;
+    int32_t getOsBit() const;
     bool osBitIsSet() const;
     void unsetosBit();
-    void setOsBit(const std::string& value);
+    void setOsBit(int32_t value);
 
     /// <summary>
     /// 操作系统的类型，Linux或Windows
@@ -92,7 +92,7 @@ protected:
     bool osVersionKeyIsSet_;
     std::string osVersion_;
     bool osVersionIsSet_;
-    std::string osBit_;
+    int32_t osBit_;
     bool osBitIsSet_;
     std::string osType_;
     bool osTypeIsSet_;

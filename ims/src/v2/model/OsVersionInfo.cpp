@@ -19,7 +19,7 @@ OsVersionInfo::OsVersionInfo()
     osVersionKeyIsSet_ = false;
     osVersion_ = "";
     osVersionIsSet_ = false;
-    osBit_ = "";
+    osBit_ = 0;
     osBitIsSet_ = false;
     osType_ = "";
     osTypeIsSet_ = false;
@@ -89,7 +89,7 @@ bool OsVersionInfo::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("os_bit"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setOsBit(refVal);
         }
@@ -170,12 +170,12 @@ void OsVersionInfo::unsetosVersion()
     osVersionIsSet_ = false;
 }
 
-std::string OsVersionInfo::getOsBit() const
+int32_t OsVersionInfo::getOsBit() const
 {
     return osBit_;
 }
 
-void OsVersionInfo::setOsBit(const std::string& value)
+void OsVersionInfo::setOsBit(int32_t value)
 {
     osBit_ = value;
     osBitIsSet_ = true;

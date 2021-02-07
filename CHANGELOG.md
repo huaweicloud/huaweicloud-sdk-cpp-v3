@@ -1,3 +1,13 @@
+## 3.0.5-beta 2021-02-07
+## HuaweiCloud SDK IMS
+- ### Features
+    - None
+- ### Bug Fix
+    - None
+- ### Change
+    - Interface `ListOsVersions` adjustment: change the data type of `os_bit` which is the property of response of the interface from string to integer.
+
+
 # 3.0.4-beta 2021-01-30
 ## HuaweiCloud SDK ECS
 - ### Features

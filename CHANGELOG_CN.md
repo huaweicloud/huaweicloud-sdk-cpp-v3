@@ -1,3 +1,13 @@
+## 3.0.5-beta 2021-02-07
+## HuaweiCloud SDK IMS
+- ### 新增特性
+    - 无
+- ### 解决问题
+    - 无
+- ### 特性变更
+    - 查询镜像支持的OS列表(ListOsVersions)接口返回体属性 `os_bit` 数据类型调整：string → int32
+
+
 # 3.0.4-beta 2021-01-30
 ## HuaweiCloud SDK ECS
 - ### 新增特性

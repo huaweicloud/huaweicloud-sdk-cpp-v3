@@ -862,6 +862,46 @@ std::shared_ptr<ListServerBlockDevicesResponse> EcsClient::listServerBlockDevice
 
     return localVarResult;
 }
+std::shared_ptr<ListServerGroupsResponse> EcsClient::listServerGroups(ListServerGroupsRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/cloudservers/os-server-groups";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.markerIsSet()) {
+        localVarQueryParams["marker"] = parameterToString(request.getMarker());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+
+    std::shared_ptr<ListServerGroupsResponse> localVarResult = std::make_shared<ListServerGroupsResponse>();
+
+    if (!res->getHttpBody().empty()) {
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListServerInterfacesResponse> EcsClient::listServerInterfaces(ListServerInterfacesRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/cloudservers/{server_id}/os-interface";
@@ -1674,6 +1714,41 @@ std::shared_ptr<ShowServerResponse> EcsClient::showServer(ShowServerRequest &req
     std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
 
     std::shared_ptr<ShowServerResponse> localVarResult = std::make_shared<ShowServerResponse>();
+
+    if (!res->getHttpBody().empty()) {
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowServerGroupResponse> EcsClient::showServerGroup(ShowServerGroupRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/cloudservers/os-server-groups/{server_group_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
+
+    localVarPathParams["server_group_id"] = parameterToString(request.getServerGroupId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+
+    std::shared_ptr<ShowServerGroupResponse> localVarResult = std::make_shared<ShowServerGroupResponse>();
 
     if (!res->getHttpBody().empty()) {
         utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());

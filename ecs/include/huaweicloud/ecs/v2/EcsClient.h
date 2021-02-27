@@ -63,6 +63,8 @@
 #include <huaweicloud/ecs/v2/model/ListResizeFlavorsResponse.h>
 #include <huaweicloud/ecs/v2/model/ListServerBlockDevicesRequest.h>
 #include <huaweicloud/ecs/v2/model/ListServerBlockDevicesResponse.h>
+#include <huaweicloud/ecs/v2/model/ListServerGroupsRequest.h>
+#include <huaweicloud/ecs/v2/model/ListServerGroupsResponse.h>
 #include <huaweicloud/ecs/v2/model/ListServerInterfacesRequest.h>
 #include <huaweicloud/ecs/v2/model/ListServerInterfacesResponse.h>
 #include <huaweicloud/ecs/v2/model/ListServersDetailsRequest.h>
@@ -109,6 +111,8 @@
 #include <huaweicloud/ecs/v2/model/ResizeServerResponse.h>
 #include <huaweicloud/ecs/v2/model/ShowResetPasswordFlagRequest.h>
 #include <huaweicloud/ecs/v2/model/ShowResetPasswordFlagResponse.h>
+#include <huaweicloud/ecs/v2/model/ShowServerGroupRequest.h>
+#include <huaweicloud/ecs/v2/model/ShowServerGroupResponse.h>
 #include <huaweicloud/ecs/v2/model/ShowServerLimitsRequest.h>
 #include <huaweicloud/ecs/v2/model/ShowServerLimitsResponse.h>
 #include <huaweicloud/ecs/v2/model/ShowServerRemoteConsoleRequest.h>
@@ -384,6 +388,17 @@ public:
         ListServerBlockDevicesRequest &request
     );
     /// <summary>
+    /// 查询云服务器组列表
+    /// </summary>
+    /// <remarks>
+    /// 查询弹性云服务器组。  与原生的创建云服务器组接口不同之处在于该接口支持企业项目细粒度权限的校验。
+    /// </remarks>
+    /// <param name="limit">查询返回server group数量限制。 (optional, default to 0)</param>
+    /// <param name="marker">从marker指定的server group的下一条数据开始查询。 (optional, default to &quot;&quot;)</param>
+    std::shared_ptr<ListServerGroupsResponse> listServerGroups(
+        ListServerGroupsRequest &request
+    );
+    /// <summary>
     /// 查询云服务器网卡信息
     /// </summary>
     /// <remarks>
@@ -614,6 +629,16 @@ public:
     /// <param name="serverId">云服务器ID。</param>
     std::shared_ptr<ShowServerResponse> showServer(
         ShowServerRequest &request
+    );
+    /// <summary>
+    /// 查询云服务器组详情
+    /// </summary>
+    /// <remarks>
+    /// 查询弹性云服务器组详情。  与原生的创建云服务器组接口不同之处在于该接口支持企业项目细粒度权限的校验。
+    /// </remarks>
+    /// <param name="serverGroupId">弹性云服务器组UUID。</param>
+    std::shared_ptr<ShowServerGroupResponse> showServerGroup(
+        ShowServerGroupRequest &request
     );
     /// <summary>
     /// 查询租户配额

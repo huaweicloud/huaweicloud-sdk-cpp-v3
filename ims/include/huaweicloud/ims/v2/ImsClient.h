@@ -6,10 +6,16 @@
 #include <huaweicloud/core/ClientBuilder.h>
 
 
+#include <huaweicloud/ims/v2/model/AddImageTagRequest.h>
+#include <huaweicloud/ims/v2/model/AddImageTagRequestBody.h>
+#include <huaweicloud/ims/v2/model/AddImageTagResponse.h>
 #include <huaweicloud/ims/v2/model/AddOrUpdateTagsRequestBody.h>
 #include <huaweicloud/ims/v2/model/BatchAddMembersRequest.h>
 #include <huaweicloud/ims/v2/model/BatchAddMembersRequestBody.h>
 #include <huaweicloud/ims/v2/model/BatchAddMembersResponse.h>
+#include <huaweicloud/ims/v2/model/BatchAddOrDeleteTagsRequest.h>
+#include <huaweicloud/ims/v2/model/BatchAddOrDeleteTagsRequestBody.h>
+#include <huaweicloud/ims/v2/model/BatchAddOrDeleteTagsResponse.h>
 #include <huaweicloud/ims/v2/model/BatchDeleteMembersRequest.h>
 #include <huaweicloud/ims/v2/model/BatchDeleteMembersResponse.h>
 #include <huaweicloud/ims/v2/model/BatchUpdateMembersRequest.h>
@@ -32,13 +38,22 @@
 #include <huaweicloud/ims/v2/model/CreateWholeImageRequest.h>
 #include <huaweicloud/ims/v2/model/CreateWholeImageRequestBody.h>
 #include <huaweicloud/ims/v2/model/CreateWholeImageResponse.h>
+#include <huaweicloud/ims/v2/model/DeleteImageTagRequest.h>
+#include <huaweicloud/ims/v2/model/DeleteImageTagResponse.h>
 #include <huaweicloud/ims/v2/model/ExportImageRequest.h>
 #include <huaweicloud/ims/v2/model/ExportImageRequestBody.h>
 #include <huaweicloud/ims/v2/model/ExportImageResponse.h>
 #include <huaweicloud/ims/v2/model/ImportImageQuickRequest.h>
 #include <huaweicloud/ims/v2/model/ImportImageQuickResponse.h>
+#include <huaweicloud/ims/v2/model/ListImageByTagsRequest.h>
+#include <huaweicloud/ims/v2/model/ListImageByTagsRequestBody.h>
+#include <huaweicloud/ims/v2/model/ListImageByTagsResponse.h>
+#include <huaweicloud/ims/v2/model/ListImageTagsRequest.h>
+#include <huaweicloud/ims/v2/model/ListImageTagsResponse.h>
 #include <huaweicloud/ims/v2/model/ListImagesRequest.h>
 #include <huaweicloud/ims/v2/model/ListImagesResponse.h>
+#include <huaweicloud/ims/v2/model/ListImagesTagsRequest.h>
+#include <huaweicloud/ims/v2/model/ListImagesTagsResponse.h>
 #include <huaweicloud/ims/v2/model/ListOsVersionsRequest.h>
 #include <huaweicloud/ims/v2/model/ListOsVersionsResponse.h>
 #include <huaweicloud/ims/v2/model/ListOsVersionsResponseBody.h>
@@ -124,6 +139,17 @@ public:
     static ClientBuilder<ImsClient> newBuilder();
 
     /// <summary>
+    /// 添加镜像标签
+    /// </summary>
+    /// <remarks>
+    /// 该接口用于为指定镜像添加或更新指定的单个标签
+    /// </remarks>
+    /// <param name="imageId">镜像ID。</param>
+    /// <param name="bodyparam">请求参数</param>
+    std::shared_ptr<AddImageTagResponse> addImageTag(
+        AddImageTagRequest &request
+    );
+    /// <summary>
     /// 批量添加镜像成员
     /// </summary>
     /// <remarks>
@@ -132,6 +158,17 @@ public:
     /// <param name="members">镜像ID列表</param>
     std::shared_ptr<BatchAddMembersResponse> batchAddMembers(
         BatchAddMembersRequest &request
+    );
+    /// <summary>
+    /// 批量添加删除镜像标签
+    /// </summary>
+    /// <remarks>
+    /// 该接口用于为指定镜像批量添加/更新、删除标签。
+    /// </remarks>
+    /// <param name="imageId">镜像ID。</param>
+    /// <param name="bodyparam">请求参数</param>
+    std::shared_ptr<BatchAddOrDeleteTagsResponse> batchAddOrDeleteTags(
+        BatchAddOrDeleteTagsRequest &request
     );
     /// <summary>
     /// 批量删除镜像成员
@@ -216,6 +253,17 @@ public:
         CreateWholeImageRequest &request
     );
     /// <summary>
+    /// 删除镜像标签
+    /// </summary>
+    /// <remarks>
+    /// 该接口用于为镜像删除指定的标签
+    /// </remarks>
+    /// <param name="imageId">镜像ID。</param>
+    /// <param name="key">要删除的标签的键。</param>
+    std::shared_ptr<DeleteImageTagResponse> deleteImageTag(
+        DeleteImageTagRequest &request
+    );
+    /// <summary>
     /// 导出镜像
     /// </summary>
     /// <remarks>
@@ -235,6 +283,26 @@ public:
     /// <param name="fileCreateIms">快速通道创建镜像的Request Body</param>
     std::shared_ptr<ImportImageQuickResponse> importImageQuick(
         ImportImageQuickRequest &request
+    );
+    /// <summary>
+    /// 按标签查询镜像
+    /// </summary>
+    /// <remarks>
+    /// 该接口用于按标签或其他条件对镜像进行过滤或者计数使用。
+    /// </remarks>
+    /// <param name="bodyparam">请求参数</param>
+    std::shared_ptr<ListImageByTagsResponse> listImageByTags(
+        ListImageByTagsRequest &request
+    );
+    /// <summary>
+    /// 查询镜像标签
+    /// </summary>
+    /// <remarks>
+    /// 该接口用于为查询指定镜像上的所有标签
+    /// </remarks>
+    /// <param name="imageId">镜像ID。</param>
+    std::shared_ptr<ListImageTagsResponse> listImageTags(
+        ListImageTagsRequest &request
     );
     /// <summary>
     /// 查询镜像列表
@@ -281,6 +349,15 @@ public:
     /// <param name="architecture">镜像架构类型。取值包括： x86 arm (optional, default to &quot;&quot;)</param>
     std::shared_ptr<ListImagesResponse> listImages(
         ListImagesRequest &request
+    );
+    /// <summary>
+    /// 查询租户所有镜像标签
+    /// </summary>
+    /// <remarks>
+    /// 该接口用于为查询租户的所有镜像上的标签。
+    /// </remarks>
+    std::shared_ptr<ListImagesTagsResponse> listImagesTags(
+        ListImagesTagsRequest &request
     );
     /// <summary>
     /// 查询镜像支持的OS列表

@@ -49,6 +49,15 @@ public:
     void setEcsperformancetype(const std::string& value);
 
     /// <summary>
+    /// 主机的物理cpu数量。
+    /// </summary>
+
+    std::string getHwnumaNodes() const;
+    bool hwnumaNodesIsSet() const;
+    void unsethwnumaNodes();
+    void setHwnumaNodes(const std::string& value);
+
+    /// <summary>
     /// 资源类型。resource_type是为了区分云服务器的物理主机类型。
     /// </summary>
 
@@ -56,6 +65,42 @@ public:
     bool resourceTypeIsSet() const;
     void unsetresourceType();
     void setResourceType(const std::string& value);
+
+    /// <summary>
+    /// 弹性运服务器高精度时钟是否开启，开启为true，否则为false。（该字段是否返回根据云服务器规格而定）
+    /// </summary>
+
+    std::string getHpetSupport() const;
+    bool hpetSupportIsSet() const;
+    void unsethpetSupport();
+    void setHpetSupport(const std::string& value);
+
+    /// <summary>
+    /// 网卡类型，值固定为“enhanced”，表示使用增强型网络的资源创建云服务器。
+    /// </summary>
+
+    std::string getInstanceVnictype() const;
+    bool instanceVnictypeIsSet() const;
+    void unsetinstanceVnictype();
+    void setInstanceVnictype(const std::string& value);
+
+    /// <summary>
+    /// 最大带宽，单位Mbps，最大值为10000。
+    /// </summary>
+
+    int32_t getInstanceVnicinstanceBandwidth() const;
+    bool instanceVnicinstanceBandwidthIsSet() const;
+    void unsetinstanceVnicinstanceBandwidth();
+    void setInstanceVnicinstanceBandwidth(int32_t value);
+
+    /// <summary>
+    /// 最大网卡个数，最大为4。
+    /// </summary>
+
+    int32_t getInstanceVnicmaxCount() const;
+    bool instanceVnicmaxCountIsSet() const;
+    void unsetinstanceVnicmaxCount();
+    void setInstanceVnicmaxCount(int32_t value);
 
     /// <summary>
     /// 值格式为{type}:{count}:{size}:{safeFormat}，其中：  - type指磁盘类型，当前只支持hdd。 - count指本地磁盘数量，目前支持d1类型：3/6/12/24，d2类型：2/4/8/12/16/24，d3类型：2/4/8/12/16/24/28。 - size指单个磁盘容量，单位GB，目前只支持1675（实际磁盘大小为1800，格式化后可用大小为1675）。 - safeFormat指云服务器本地磁盘是否安全格式化，目前仅支持d1类型：FALSE，d2/d3类型：True。  &gt; 说明：  - 磁盘增强型特有字段。
@@ -74,6 +119,15 @@ public:
     bool quotanvmeSsdIsSet() const;
     void unsetquotanvmeSsd();
     void setQuotanvmeSsd(const std::string& value);
+
+    /// <summary>
+    /// 是否支持持久化，值为true。  代表云服务器访问存储的方式为持久化授权。   &gt; 说明：  - 密集存储D1型特有字段。
+    /// </summary>
+
+    bool isExtraSpeciopersistentGrant() const;
+    bool extraSpeciopersistentGrantIsSet() const;
+    void unsetextraSpeciopersistentGrant();
+    void setExtraSpeciopersistentGrant(bool value);
 
     /// <summary>
     /// 弹性云服务器类型的代数。  - s1：通用型I代 - s2：通用型II代 - s3：通用型 - m1：内存优化型I代 - m2：内存优化型II代 - m3：内存优化型 - h1：高性能计算型I代 - h2：高性能计算型II代 - h3：高性能计算型 - hi3：超高性能计算型 - d1：密集存储型I代 - d2：密集存储型II代 - d3：磁盘增强型 - g1：GPU加速型I代 - g2：GPU加速型II代 - f1：FPGA高性能型 - f2：FPGA通用型 - c3：通用计算增强型 - e3：大内存型 - i3：超高I/O型
@@ -174,16 +228,127 @@ public:
     void unsetcondoperationcharge();
     void setCondoperationcharge(const std::string& value);
 
+    /// <summary>
+    /// 关机是否收费  - 关机是否计费，默认免费： - charge - free
+    /// </summary>
+
+    std::string getCondoperationchargestop() const;
+    bool condoperationchargestopIsSet() const;
+    void unsetcondoperationchargestop();
+    void setCondoperationchargestop(const std::string& value);
+
+    /// <summary>
+    /// 计费类型  - 计费场景，不配置时都支持 - period，包周期 - demand，按需
+    /// </summary>
+
+    std::string getCondspotoperationaz() const;
+    bool condspotoperationazIsSet() const;
+    void unsetcondspotoperationaz();
+    void setCondspotoperationaz(const std::string& value);
+
+    /// <summary>
+    /// 允许的角色 匹配的用户标签（roles的op_gatexxx标签）。不设置时所有用户可见
+    /// </summary>
+
+    std::string getCondoperationroles() const;
+    bool condoperationrolesIsSet() const;
+    void unsetcondoperationroles();
+    void setCondoperationroles(const std::string& value);
+
+    /// <summary>
+    /// Flavor在竞价销售模式下的状态  - 不配置时等同abandon - normal，正常商用 - abandon，下线 - sellout，售罄 - obt，公测，未申请时提示申请（暂不支持） - private，私有，只给特定用户显示（暂不支持） - test，试用/免费（暂不支持） - promotion，推荐
+    /// </summary>
+
+    std::string getCondspotoperationstatus() const;
+    bool condspotoperationstatusIsSet() const;
+    void unsetcondspotoperationstatus();
+    void setCondspotoperationstatus(const std::string& value);
+
+    /// <summary>
+    /// 网络约束 支持网络特性，不配置时以UI配置为准。
+    /// </summary>
+
+    std::string getCondnetwork() const;
+    bool condnetworkIsSet() const;
+    void unsetcondnetwork();
+    void setCondnetwork(const std::string& value);
+
+    /// <summary>
+    /// 存储约束  - 支持磁盘特性，不配置时以UI配置为准。 - scsi，支持scsi - localdisk，支持本地盘 - ib，支持ib
+    /// </summary>
+
+    std::string getCondstorage() const;
+    bool condstorageIsSet() const;
+    void unsetcondstorage();
+    void setCondstorage(const std::string& value);
+
+    /// <summary>
+    /// 计算约束  - true，支持在线扩容。 - false或不存在该字段，不支持在线扩容。
+    /// </summary>
+
+    std::string getCondcomputeliveResizable() const;
+    bool condcomputeliveResizableIsSet() const;
+    void unsetcondcomputeliveResizable();
+    void setCondcomputeliveResizable(const std::string& value);
+
+    /// <summary>
+    /// 计算约束  - autorecovery，自动恢复特性。 - 不存在该字段，不支持自动恢复。
+    /// </summary>
+
+    std::string getCondcompute() const;
+    bool condcomputeIsSet() const;
+    void unsetcondcompute();
+    void setCondcompute(const std::string& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    std::string getInfogpuname() const;
+    bool infogpunameIsSet() const;
+    void unsetinfogpuname();
+    void setInfogpuname(const std::string& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    std::string getInfocpuname() const;
+    bool infocpunameIsSet() const;
+    void unsetinfocpuname();
+    void setInfocpuname(const std::string& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    std::string getQuotagpu() const;
+    bool quotagpuIsSet() const;
+    void unsetquotagpu();
+    void setQuotagpu(const std::string& value);
+
 
 protected:
     std::string ecsperformancetype_;
     bool ecsperformancetypeIsSet_;
+    std::string hwnumaNodes_;
+    bool hwnumaNodesIsSet_;
     std::string resourceType_;
     bool resourceTypeIsSet_;
+    std::string hpetSupport_;
+    bool hpetSupportIsSet_;
+    std::string instanceVnictype_;
+    bool instanceVnictypeIsSet_;
+    int32_t instanceVnicinstanceBandwidth_;
+    bool instanceVnicinstanceBandwidthIsSet_;
+    int32_t instanceVnicmaxCount_;
+    bool instanceVnicmaxCountIsSet_;
     std::string quotalocalDisk_;
     bool quotalocalDiskIsSet_;
     std::string quotanvmeSsd_;
     bool quotanvmeSsdIsSet_;
+    bool extraSpeciopersistentGrant_;
+    bool extraSpeciopersistentGrantIsSet_;
     std::string ecsgeneration_;
     bool ecsgenerationIsSet_;
     std::string ecsvirtualizationEnvTypes_;
@@ -206,6 +371,28 @@ protected:
     bool quotamaxPpsIsSet_;
     std::string condoperationcharge_;
     bool condoperationchargeIsSet_;
+    std::string condoperationchargestop_;
+    bool condoperationchargestopIsSet_;
+    std::string condspotoperationaz_;
+    bool condspotoperationazIsSet_;
+    std::string condoperationroles_;
+    bool condoperationrolesIsSet_;
+    std::string condspotoperationstatus_;
+    bool condspotoperationstatusIsSet_;
+    std::string condnetwork_;
+    bool condnetworkIsSet_;
+    std::string condstorage_;
+    bool condstorageIsSet_;
+    std::string condcomputeliveResizable_;
+    bool condcomputeliveResizableIsSet_;
+    std::string condcompute_;
+    bool condcomputeIsSet_;
+    std::string infogpuname_;
+    bool infogpunameIsSet_;
+    std::string infocpuname_;
+    bool infocpunameIsSet_;
+    std::string quotagpu_;
+    bool quotagpuIsSet_;
 
 };
 

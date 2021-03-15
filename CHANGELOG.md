@@ -1,3 +1,43 @@
+# 3.0.7-beta 2021-03-15
+
+### HuaweiCloud SDK ECS
+
+- _Features_
+    - Support more interface: `ShowServerGroup`.
+- _Bug Fix_
+    - None
+- _Change_
+    - Change the interface name from `ShowWindowsServerPassword` to `ShowServerPassword`.
+    - Change the interface name from `DeleteWindowsServerPassword` to `DeleteServerPassword`.
+
+### HuaweiCloud SDK IAM
+
+- _Features_
+    - Support more interfaces:
+        - `KeystoneShowIdentityProvider`
+        - `KeystoneCreateIdentityProvider`
+        - `KeystoneUpdateIdentityProvider`
+        - `KeystoneDeleteIdentityProvider`
+        - `CreateTokenWithIdToken`
+- _Bug Fix_
+    - None
+- _Change_
+    - Do not support interface `CreateUnscopeTokenByIdpInitiated` anymore.
+
+### HuaweiCloud SDK IMS
+
+- _Features_
+    - Support more interfaces:
+        - `ListImageByTags` which mead list images queried by tags.
+        - `ListImagesTags` which means list all tags of all images in current account.
+        - `ListImageTags` which means list all tags of specified image.
+        - `AddImageTag`
+        - `DeleteImageTag`
+- _Bug Fix_
+    - None
+- _Change_
+    - None
+
 # 3.0.6-beta 2021-02-27
 
 ### HuaweiCloud SDK Core

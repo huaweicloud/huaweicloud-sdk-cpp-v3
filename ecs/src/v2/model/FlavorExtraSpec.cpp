@@ -23,15 +23,15 @@ FlavorExtraSpec::FlavorExtraSpec()
     hpetSupportIsSet_ = false;
     instanceVnictype_ = "";
     instanceVnictypeIsSet_ = false;
-    instanceVnicinstanceBandwidth_ = 0;
+    instanceVnicinstanceBandwidth_ = "";
     instanceVnicinstanceBandwidthIsSet_ = false;
-    instanceVnicmaxCount_ = 0;
+    instanceVnicmaxCount_ = "";
     instanceVnicmaxCountIsSet_ = false;
     quotalocalDisk_ = "";
     quotalocalDiskIsSet_ = false;
     quotanvmeSsd_ = "";
     quotanvmeSsdIsSet_ = false;
-    extraSpeciopersistentGrant_ = false;
+    extraSpeciopersistentGrant_ = "";
     extraSpeciopersistentGrantIsSet_ = false;
     ecsgeneration_ = "";
     ecsgenerationIsSet_ = false;
@@ -242,7 +242,7 @@ bool FlavorExtraSpec::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("instance_vnic:instance_bandwidth"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setInstanceVnicinstanceBandwidth(refVal);
         }
@@ -251,7 +251,7 @@ bool FlavorExtraSpec::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("instance_vnic:max_count"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setInstanceVnicmaxCount(refVal);
         }
@@ -278,7 +278,7 @@ bool FlavorExtraSpec::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("extra_spec:io:persistent_grant"));
         if(!fieldValue.is_null())
         {
-            bool refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setExtraSpeciopersistentGrant(refVal);
         }
@@ -590,12 +590,12 @@ void FlavorExtraSpec::unsetinstanceVnictype()
     instanceVnictypeIsSet_ = false;
 }
 
-int32_t FlavorExtraSpec::getInstanceVnicinstanceBandwidth() const
+std::string FlavorExtraSpec::getInstanceVnicinstanceBandwidth() const
 {
     return instanceVnicinstanceBandwidth_;
 }
 
-void FlavorExtraSpec::setInstanceVnicinstanceBandwidth(int32_t value)
+void FlavorExtraSpec::setInstanceVnicinstanceBandwidth(const std::string& value)
 {
     instanceVnicinstanceBandwidth_ = value;
     instanceVnicinstanceBandwidthIsSet_ = true;
@@ -611,12 +611,12 @@ void FlavorExtraSpec::unsetinstanceVnicinstanceBandwidth()
     instanceVnicinstanceBandwidthIsSet_ = false;
 }
 
-int32_t FlavorExtraSpec::getInstanceVnicmaxCount() const
+std::string FlavorExtraSpec::getInstanceVnicmaxCount() const
 {
     return instanceVnicmaxCount_;
 }
 
-void FlavorExtraSpec::setInstanceVnicmaxCount(int32_t value)
+void FlavorExtraSpec::setInstanceVnicmaxCount(const std::string& value)
 {
     instanceVnicmaxCount_ = value;
     instanceVnicmaxCountIsSet_ = true;
@@ -674,12 +674,12 @@ void FlavorExtraSpec::unsetquotanvmeSsd()
     quotanvmeSsdIsSet_ = false;
 }
 
-bool FlavorExtraSpec::isExtraSpeciopersistentGrant() const
+std::string FlavorExtraSpec::getExtraSpeciopersistentGrant() const
 {
     return extraSpeciopersistentGrant_;
 }
 
-void FlavorExtraSpec::setExtraSpeciopersistentGrant(bool value)
+void FlavorExtraSpec::setExtraSpeciopersistentGrant(const std::string& value)
 {
     extraSpeciopersistentGrant_ = value;
     extraSpeciopersistentGrantIsSet_ = true;

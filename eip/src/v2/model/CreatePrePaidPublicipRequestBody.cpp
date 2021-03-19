@@ -16,6 +16,8 @@ CreatePrePaidPublicipRequestBody::CreatePrePaidPublicipRequestBody()
     publicipIsSet_ = false;
     bandwidthIsSet_ = false;
     extendParamIsSet_ = false;
+    enterpriseProjectId_ = "";
+    enterpriseProjectIdIsSet_ = false;
 }
 
 CreatePrePaidPublicipRequestBody::~CreatePrePaidPublicipRequestBody() = default;
@@ -36,6 +38,9 @@ web::json::value CreatePrePaidPublicipRequestBody::toJson() const
     }
     if(extendParamIsSet_) {
         val[utility::conversions::to_string_t("extendParam")] = ModelBase::toJson(extendParam_);
+    }
+    if(enterpriseProjectIdIsSet_) {
+        val[utility::conversions::to_string_t("enterprise_project_id")] = ModelBase::toJson(enterpriseProjectId_);
     }
 
     return val;
@@ -70,6 +75,15 @@ bool CreatePrePaidPublicipRequestBody::fromJson(const web::json::value& val)
             CreatePrePaidPublicipExtendParamOption refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setExtendParam(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("enterprise_project_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enterprise_project_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEnterpriseProjectId(refVal);
         }
     }
     return ok;
@@ -137,6 +151,27 @@ bool CreatePrePaidPublicipRequestBody::extendParamIsSet() const
 void CreatePrePaidPublicipRequestBody::unsetextendParam()
 {
     extendParamIsSet_ = false;
+}
+
+std::string CreatePrePaidPublicipRequestBody::getEnterpriseProjectId() const
+{
+    return enterpriseProjectId_;
+}
+
+void CreatePrePaidPublicipRequestBody::setEnterpriseProjectId(const std::string& value)
+{
+    enterpriseProjectId_ = value;
+    enterpriseProjectIdIsSet_ = true;
+}
+
+bool CreatePrePaidPublicipRequestBody::enterpriseProjectIdIsSet() const
+{
+    return enterpriseProjectIdIsSet_;
+}
+
+void CreatePrePaidPublicipRequestBody::unsetenterpriseProjectId()
+{
+    enterpriseProjectIdIsSet_ = false;
 }
 
 }

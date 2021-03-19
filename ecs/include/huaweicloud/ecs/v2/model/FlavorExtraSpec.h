@@ -88,19 +88,19 @@ public:
     /// 最大带宽，单位Mbps，最大值为10000。
     /// </summary>
 
-    int32_t getInstanceVnicinstanceBandwidth() const;
+    std::string getInstanceVnicinstanceBandwidth() const;
     bool instanceVnicinstanceBandwidthIsSet() const;
     void unsetinstanceVnicinstanceBandwidth();
-    void setInstanceVnicinstanceBandwidth(int32_t value);
+    void setInstanceVnicinstanceBandwidth(const std::string& value);
 
     /// <summary>
     /// 最大网卡个数，最大为4。
     /// </summary>
 
-    int32_t getInstanceVnicmaxCount() const;
+    std::string getInstanceVnicmaxCount() const;
     bool instanceVnicmaxCountIsSet() const;
     void unsetinstanceVnicmaxCount();
-    void setInstanceVnicmaxCount(int32_t value);
+    void setInstanceVnicmaxCount(const std::string& value);
 
     /// <summary>
     /// 值格式为{type}:{count}:{size}:{safeFormat}，其中：  - type指磁盘类型，当前只支持hdd。 - count指本地磁盘数量，目前支持d1类型：3/6/12/24，d2类型：2/4/8/12/16/24，d3类型：2/4/8/12/16/24/28。 - size指单个磁盘容量，单位GB，目前只支持1675（实际磁盘大小为1800，格式化后可用大小为1675）。 - safeFormat指云服务器本地磁盘是否安全格式化，目前仅支持d1类型：FALSE，d2/d3类型：True。  &gt; 说明：  - 磁盘增强型特有字段。
@@ -124,10 +124,10 @@ public:
     /// 是否支持持久化，值为true。  代表云服务器访问存储的方式为持久化授权。   &gt; 说明：  - 密集存储D1型特有字段。
     /// </summary>
 
-    bool isExtraSpeciopersistentGrant() const;
+    std::string getExtraSpeciopersistentGrant() const;
     bool extraSpeciopersistentGrantIsSet() const;
     void unsetextraSpeciopersistentGrant();
-    void setExtraSpeciopersistentGrant(bool value);
+    void setExtraSpeciopersistentGrant(const std::string& value);
 
     /// <summary>
     /// 弹性云服务器类型的代数。  - s1：通用型I代 - s2：通用型II代 - s3：通用型 - m1：内存优化型I代 - m2：内存优化型II代 - m3：内存优化型 - h1：高性能计算型I代 - h2：高性能计算型II代 - h3：高性能计算型 - hi3：超高性能计算型 - d1：密集存储型I代 - d2：密集存储型II代 - d3：磁盘增强型 - g1：GPU加速型I代 - g2：GPU加速型II代 - f1：FPGA高性能型 - f2：FPGA通用型 - c3：通用计算增强型 - e3：大内存型 - i3：超高I/O型
@@ -339,15 +339,15 @@ protected:
     bool hpetSupportIsSet_;
     std::string instanceVnictype_;
     bool instanceVnictypeIsSet_;
-    int32_t instanceVnicinstanceBandwidth_;
+    std::string instanceVnicinstanceBandwidth_;
     bool instanceVnicinstanceBandwidthIsSet_;
-    int32_t instanceVnicmaxCount_;
+    std::string instanceVnicmaxCount_;
     bool instanceVnicmaxCountIsSet_;
     std::string quotalocalDisk_;
     bool quotalocalDiskIsSet_;
     std::string quotanvmeSsd_;
     bool quotanvmeSsdIsSet_;
-    bool extraSpeciopersistentGrant_;
+    std::string extraSpeciopersistentGrant_;
     bool extraSpeciopersistentGrantIsSet_;
     std::string ecsgeneration_;
     bool ecsgenerationIsSet_;

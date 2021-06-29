@@ -73,3 +73,17 @@ std::vector<unsigned char> Hasher::hmac(const void *key, unsigned int keyLength,
             strlen(charData.data()), md.data(), &mdLength);
     return md;
 }
+
+int Hasher::hashstring(const char* strTohash)
+{
+    if (!strTohash)
+        return 0;
+
+    unsigned hash = 0;
+    while (char charValue = *strTohash++)
+    {
+        hash = charValue + 31 * hash;    
+    }
+
+    return hash;
+}

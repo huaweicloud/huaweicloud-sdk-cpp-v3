@@ -34,7 +34,7 @@ public:
     std::string hexEncode(const unsigned char *md, size_t length) const;
     int hashSHA256(const std::string &str, unsigned char *hash, int i);
     std::vector<unsigned char> hmac(const void *key, unsigned int keyLength, const std::string &data);
-    int hashstring(const char* strTohash);
+    static int hashstring(const char* strTohash);
 };
 }
 }

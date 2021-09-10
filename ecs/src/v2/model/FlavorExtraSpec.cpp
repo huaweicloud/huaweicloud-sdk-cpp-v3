@@ -77,6 +77,8 @@ FlavorExtraSpec::FlavorExtraSpec()
     infocpunameIsSet_ = false;
     quotagpu_ = "";
     quotagpuIsSet_ = false;
+    ecsinstanceArchitecture_ = "";
+    ecsinstanceArchitectureIsSet_ = false;
 }
 
 FlavorExtraSpec::~FlavorExtraSpec() = default;
@@ -184,6 +186,9 @@ web::json::value FlavorExtraSpec::toJson() const
     }
     if(quotagpuIsSet_) {
         val[utility::conversions::to_string_t("quota:gpu")] = ModelBase::toJson(quotagpu_);
+    }
+    if(ecsinstanceArchitectureIsSet_) {
+        val[utility::conversions::to_string_t("ecs:instance_architecture")] = ModelBase::toJson(ecsinstanceArchitecture_);
     }
 
     return val;
@@ -479,6 +484,15 @@ bool FlavorExtraSpec::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setQuotagpu(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("ecs:instance_architecture"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ecs:instance_architecture"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEcsinstanceArchitecture(refVal);
         }
     }
     return ok;
@@ -1155,6 +1169,27 @@ bool FlavorExtraSpec::quotagpuIsSet() const
 void FlavorExtraSpec::unsetquotagpu()
 {
     quotagpuIsSet_ = false;
+}
+
+std::string FlavorExtraSpec::getEcsinstanceArchitecture() const
+{
+    return ecsinstanceArchitecture_;
+}
+
+void FlavorExtraSpec::setEcsinstanceArchitecture(const std::string& value)
+{
+    ecsinstanceArchitecture_ = value;
+    ecsinstanceArchitectureIsSet_ = true;
+}
+
+bool FlavorExtraSpec::ecsinstanceArchitectureIsSet() const
+{
+    return ecsinstanceArchitectureIsSet_;
+}
+
+void FlavorExtraSpec::unsetecsinstanceArchitecture()
+{
+    ecsinstanceArchitectureIsSet_ = false;
 }
 
 }

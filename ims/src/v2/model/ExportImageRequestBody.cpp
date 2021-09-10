@@ -17,6 +17,8 @@ ExportImageRequestBody::ExportImageRequestBody()
     bucketUrlIsSet_ = false;
     fileFormat_ = "";
     fileFormatIsSet_ = false;
+    isQuickExport_ = false;
+    isQuickExportIsSet_ = false;
 }
 
 ExportImageRequestBody::~ExportImageRequestBody() = default;
@@ -34,6 +36,9 @@ web::json::value ExportImageRequestBody::toJson() const
     }
     if(fileFormatIsSet_) {
         val[utility::conversions::to_string_t("file_format")] = ModelBase::toJson(fileFormat_);
+    }
+    if(isQuickExportIsSet_) {
+        val[utility::conversions::to_string_t("is_quick_export")] = ModelBase::toJson(isQuickExport_);
     }
 
     return val;
@@ -59,6 +64,15 @@ bool ExportImageRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFileFormat(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_quick_export"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_quick_export"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsQuickExport(refVal);
         }
     }
     return ok;
@@ -105,6 +119,27 @@ bool ExportImageRequestBody::fileFormatIsSet() const
 void ExportImageRequestBody::unsetfileFormat()
 {
     fileFormatIsSet_ = false;
+}
+
+bool ExportImageRequestBody::isIsQuickExport() const
+{
+    return isQuickExport_;
+}
+
+void ExportImageRequestBody::setIsQuickExport(bool value)
+{
+    isQuickExport_ = value;
+    isQuickExportIsSet_ = true;
+}
+
+bool ExportImageRequestBody::isQuickExportIsSet() const
+{
+    return isQuickExportIsSet_;
+}
+
+void ExportImageRequestBody::unsetisQuickExport()
+{
+    isQuickExportIsSet_ = false;
 }
 
 }

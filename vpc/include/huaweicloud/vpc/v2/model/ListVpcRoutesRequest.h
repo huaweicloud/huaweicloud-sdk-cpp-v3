@@ -40,7 +40,7 @@ public:
     /// ListVpcRoutesRequest members
 
     /// <summary>
-    /// 
+    /// 每页返回的个数
     /// </summary>
 
     int32_t getLimit() const;
@@ -49,7 +49,7 @@ public:
     void setLimit(int32_t value);
 
     /// <summary>
-    /// 
+    /// 分页查询起始的资源ID，为空时查询第一页
     /// </summary>
 
     std::string getMarker() const;
@@ -58,7 +58,7 @@ public:
     void setMarker(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 按照routes_id过滤查询
     /// </summary>
 
     std::string getId() const;
@@ -67,7 +67,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 功能说明：按照路由类型过滤查询  取值范围：peering
     /// </summary>
 
     std::string getType() const;
@@ -76,7 +76,7 @@ public:
     void setType(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 按照vpc_id过滤查询
     /// </summary>
 
     std::string getVpcId() const;
@@ -85,7 +85,7 @@ public:
     void setVpcId(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 按照路由目的地址CIDR过滤查询
     /// </summary>
 
     std::string getDestination() const;
@@ -94,7 +94,7 @@ public:
     void setDestination(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 按照项目ID过滤查询
     /// </summary>
 
     std::string getTenantId() const;

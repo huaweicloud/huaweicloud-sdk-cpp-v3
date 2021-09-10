@@ -57,12 +57,23 @@ public:
     void unsetfileFormat();
     void setFileFormat(const std::string& value);
 
+    /// <summary>
+    /// 是否使用快速导出，取值为true或者false。 说明：若使用快速导出，则无法指定file_format参数。
+    /// </summary>
+
+    bool isIsQuickExport() const;
+    bool isQuickExportIsSet() const;
+    void unsetisQuickExport();
+    void setIsQuickExport(bool value);
+
 
 protected:
     std::string bucketUrl_;
     bool bucketUrlIsSet_;
     std::string fileFormat_;
     bool fileFormatIsSet_;
+    bool isQuickExport_;
+    bool isQuickExportIsSet_;
 
 };
 

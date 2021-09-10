@@ -40,7 +40,7 @@ public:
     /// DeleteServerMetadataRequest members
 
     /// <summary>
-    /// 
+    /// 待删除的云服务器metadata键值
     /// </summary>
 
     std::string getKey() const;
@@ -49,7 +49,7 @@ public:
     void setKey(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 云服务器ID。
     /// </summary>
 
     std::string getServerId() const;

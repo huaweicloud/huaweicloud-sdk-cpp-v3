@@ -30,8 +30,6 @@ CreateVolumeOption::CreateVolumeOption()
     multiattachIsSet_ = false;
     name_ = "";
     nameIsSet_ = false;
-    shareable_ = "";
-    shareableIsSet_ = false;
     size_ = 0;
     sizeIsSet_ = false;
     snapshotId_ = "";
@@ -77,9 +75,6 @@ web::json::value CreateVolumeOption::toJson() const
     }
     if(nameIsSet_) {
         val[utility::conversions::to_string_t("name")] = ModelBase::toJson(name_);
-    }
-    if(shareableIsSet_) {
-        val[utility::conversions::to_string_t("shareable")] = ModelBase::toJson(shareable_);
     }
     if(sizeIsSet_) {
         val[utility::conversions::to_string_t("size")] = ModelBase::toJson(size_);
@@ -180,15 +175,6 @@ bool CreateVolumeOption::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setName(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("shareable"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("shareable"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setShareable(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("size"))) {
@@ -418,27 +404,6 @@ bool CreateVolumeOption::nameIsSet() const
 void CreateVolumeOption::unsetname()
 {
     nameIsSet_ = false;
-}
-
-std::string CreateVolumeOption::getShareable() const
-{
-    return shareable_;
-}
-
-void CreateVolumeOption::setShareable(const std::string& value)
-{
-    shareable_ = value;
-    shareableIsSet_ = true;
-}
-
-bool CreateVolumeOption::shareableIsSet() const
-{
-    return shareableIsSet_;
-}
-
-void CreateVolumeOption::unsetshareable()
-{
-    shareableIsSet_ = false;
 }
 
 int32_t CreateVolumeOption::getSize() const

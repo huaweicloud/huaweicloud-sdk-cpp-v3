@@ -40,7 +40,7 @@ public:
     /// DeletePrivateipRequest members
 
     /// <summary>
-    /// 
+    /// 私有IP ID
     /// </summary>
 
     std::string getPrivateipId() const;

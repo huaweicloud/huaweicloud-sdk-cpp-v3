@@ -25,7 +25,7 @@ NovaKeypairDetail::NovaKeypairDetail()
     deletedIsSet_ = false;
     deletedAt_ = utility::datetime();
     deletedAtIsSet_ = false;
-    id_ = "";
+    id_ = 0;
     idIsSet_ = false;
     updatedAt_ = utility::datetime();
     updatedAtIsSet_ = false;
@@ -141,7 +141,7 @@ bool NovaKeypairDetail::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("id"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setId(refVal);
         }
@@ -303,12 +303,12 @@ void NovaKeypairDetail::unsetdeletedAt()
     deletedAtIsSet_ = false;
 }
 
-std::string NovaKeypairDetail::getId() const
+int32_t NovaKeypairDetail::getId() const
 {
     return id_;
 }
 
-void NovaKeypairDetail::setId(const std::string& value)
+void NovaKeypairDetail::setId(int32_t value)
 {
     id_ = value;
     idIsSet_ = true;

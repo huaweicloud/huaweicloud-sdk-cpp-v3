@@ -40,7 +40,7 @@ public:
     /// DeleteImageTagRequest members
 
     /// <summary>
-    /// 
+    /// 镜像ID。
     /// </summary>
 
     std::string getImageId() const;
@@ -49,7 +49,7 @@ public:
     void setImageId(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 要删除的标签的键。
     /// </summary>
 
     std::string getKey() const;

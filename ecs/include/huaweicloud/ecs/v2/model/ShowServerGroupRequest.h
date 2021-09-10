@@ -40,7 +40,7 @@ public:
     /// ShowServerGroupRequest members
 
     /// <summary>
-    /// 
+    /// 弹性云服务器组UUID。
     /// </summary>
 
     std::string getServerGroupId() const;

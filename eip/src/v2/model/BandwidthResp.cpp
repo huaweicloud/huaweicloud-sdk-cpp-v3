@@ -43,6 +43,8 @@ BandwidthResp::BandwidthResp()
     createdAtIsSet_ = false;
     updatedAt_ = "";
     updatedAtIsSet_ = false;
+    publicBorderGroup_ = "";
+    publicBorderGroupIsSet_ = false;
 }
 
 BandwidthResp::~BandwidthResp() = default;
@@ -102,6 +104,9 @@ web::json::value BandwidthResp::toJson() const
     }
     if(updatedAtIsSet_) {
         val[utility::conversions::to_string_t("updated_at")] = ModelBase::toJson(updatedAt_);
+    }
+    if(publicBorderGroupIsSet_) {
+        val[utility::conversions::to_string_t("public_border_group")] = ModelBase::toJson(publicBorderGroup_);
     }
 
     return val;
@@ -253,6 +258,15 @@ bool BandwidthResp::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setUpdatedAt(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("public_border_group"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("public_border_group"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPublicBorderGroup(refVal);
         }
     }
     return ok;
@@ -593,6 +607,27 @@ bool BandwidthResp::updatedAtIsSet() const
 void BandwidthResp::unsetupdatedAt()
 {
     updatedAtIsSet_ = false;
+}
+
+std::string BandwidthResp::getPublicBorderGroup() const
+{
+    return publicBorderGroup_;
+}
+
+void BandwidthResp::setPublicBorderGroup(const std::string& value)
+{
+    publicBorderGroup_ = value;
+    publicBorderGroupIsSet_ = true;
+}
+
+bool BandwidthResp::publicBorderGroupIsSet() const
+{
+    return publicBorderGroupIsSet_;
+}
+
+void BandwidthResp::unsetpublicBorderGroup()
+{
+    publicBorderGroupIsSet_ = false;
 }
 
 }

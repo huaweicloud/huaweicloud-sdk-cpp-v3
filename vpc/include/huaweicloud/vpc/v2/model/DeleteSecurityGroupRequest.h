@@ -40,7 +40,7 @@ public:
     /// DeleteSecurityGroupRequest members
 
     /// <summary>
-    /// 
+    /// 安全组ID
     /// </summary>
 
     std::string getSecurityGroupId() const;

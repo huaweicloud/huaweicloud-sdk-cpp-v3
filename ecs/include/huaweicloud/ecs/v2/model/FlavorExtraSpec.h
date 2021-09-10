@@ -327,6 +327,15 @@ public:
     void unsetquotagpu();
     void setQuotagpu(const std::string& value);
 
+    /// <summary>
+    /// 该规格对应的CPU架构，且仅鲲鹏实例架构规格返回该字段  - 取值为arm64表示CPU架构为鲲鹏计算。
+    /// </summary>
+
+    std::string getEcsinstanceArchitecture() const;
+    bool ecsinstanceArchitectureIsSet() const;
+    void unsetecsinstanceArchitecture();
+    void setEcsinstanceArchitecture(const std::string& value);
+
 
 protected:
     std::string ecsperformancetype_;
@@ -393,6 +402,8 @@ protected:
     bool infocpunameIsSet_;
     std::string quotagpu_;
     bool quotagpuIsSet_;
+    std::string ecsinstanceArchitecture_;
+    bool ecsinstanceArchitectureIsSet_;
 
 };
 

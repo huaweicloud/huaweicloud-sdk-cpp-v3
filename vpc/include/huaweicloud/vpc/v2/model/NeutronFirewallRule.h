@@ -103,6 +103,15 @@ public:
     void setEnabled(bool value);
 
     /// <summary>
+    /// 功能说明：是否支持跨租户共享 取值范围：true/false
+    /// </summary>
+
+    bool isPublic() const;
+    bool publicIsSet() const;
+    void unsetpublic();
+    void setPublic(bool value);
+
+    /// <summary>
     /// 功能说明：目的地址或者CIDR。
     /// </summary>
 
@@ -172,6 +181,8 @@ protected:
     bool ipVersionIsSet_;
     bool enabled_;
     bool enabledIsSet_;
+    bool public_;
+    bool publicIsSet_;
     std::string destinationIpAddress_;
     bool destinationIpAddressIsSet_;
     std::string destinationPort_;

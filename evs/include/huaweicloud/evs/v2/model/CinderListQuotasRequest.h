@@ -40,7 +40,7 @@ public:
     /// CinderListQuotasRequest members
 
     /// <summary>
-    /// 
+    /// 目标的项目ID。与project_id保持一致即可。
     /// </summary>
 
     std::string getTargetProjectId() const;
@@ -49,7 +49,7 @@ public:
     void setTargetProjectId(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 是否查询配额详细信息。当前只支持传true。
     /// </summary>
 
     std::string getUsage() const;

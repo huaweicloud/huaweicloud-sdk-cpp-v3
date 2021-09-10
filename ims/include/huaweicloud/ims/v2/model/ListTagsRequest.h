@@ -40,7 +40,7 @@ public:
     /// ListTagsRequest members
 
     /// <summary>
-    /// 
+    /// 用于分页，表示查询几条记录，取值为整数，默认为所有。
     /// </summary>
 
     int32_t getLimit() const;
@@ -49,7 +49,7 @@ public:
     void setLimit(int32_t value);
 
     /// <summary>
-    /// 
+    /// 页码，表示需要查询第几页的数据。默认值为1。
     /// </summary>
 
     int32_t getPage() const;
@@ -58,7 +58,7 @@ public:
     void setPage(int32_t value);
 
     /// <summary>
-    /// 
+    /// 镜像类型，目前支持以下类型：公共镜像：gold私有镜像：private共享镜像：shared
     /// </summary>
 
     std::string getImagetype() const;
@@ -67,7 +67,7 @@ public:
     void setImagetype(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 镜像ID。
     /// </summary>
 
     std::string getId() const;
@@ -76,7 +76,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 镜像状态。取值如下： queued：表示镜像元数据已经创建成功，等待上传镜像文件。 saving：表示镜像正在上传文件到后端存储。 deleted：表示镜像已经删除。 killed：表示镜像上传错误。 active：表示镜像可以正常使用。
     /// </summary>
 
     std::string getStatus() const;
@@ -85,7 +85,7 @@ public:
     void setStatus(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 镜像名称。
     /// </summary>
 
     std::string getName() const;
@@ -94,7 +94,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 镜像运行需要的最小磁盘，单位为GB 。
     /// </summary>
 
     int32_t getMinDisk() const;
@@ -103,7 +103,7 @@ public:
     void setMinDisk(int32_t value);
 
     /// <summary>
-    /// 
+    /// 镜像平台分类。
     /// </summary>
 
     std::string getPlatform() const;
@@ -112,7 +112,7 @@ public:
     void setPlatform(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 镜像系统类型，取值如下：Linux,Windows,Other
     /// </summary>
 
     std::string getOsType() const;
@@ -121,7 +121,7 @@ public:
     void setOsType(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 成员状态。目前取值有accepted、rejected、pending。
     /// </summary>
 
     std::string getMemberStatus() const;
@@ -130,7 +130,7 @@ public:
     void setMemberStatus(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 镜像使用环境类型：FusionCompute、Ironic、DataImage。
     /// </summary>
 
     std::string getVirtualEnvType() const;
@@ -139,7 +139,7 @@ public:
     void setVirtualEnvType(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 表示查询某个企业项目下的镜像。
     /// </summary>
 
     std::string getEnterpriseProjectId() const;
@@ -148,7 +148,7 @@ public:
     void setEnterpriseProjectId(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 镜像架构类型。取值包括：x86，arm
     /// </summary>
 
     std::string getArchitecture() const;
@@ -157,7 +157,7 @@ public:
     void setArchitecture(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 镜像创建时间。支持按照时间点过滤查询，取值格式为“操作符:UTC时间”。 其中操作符支持如下几种： gt：大于 gte：大于等于 lt：小于 lte：小于等于 eq：等于 neq：不等于 时间格式支持：yyyy-MM-ddThh:mm:ssZ或者yyyy-MM-dd hh:mm:ss 例如，查询创建时间在2018-10-28 10:00:00之前的镜像，可以通过如下条件过滤： created_at&#x3D;gt:2018-10-28T10:00:00Z
     /// </summary>
 
     std::string getCreatedAt() const;
@@ -166,7 +166,7 @@ public:
     void setCreatedAt(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 镜像修改时间。支持按照时间点过滤查询，取值格式为“ 操作符:UTC时间”。 其中操作符支持如下几种： gt：大于 gte：大于等于 lt：小于 lte：小于等于 eq：等于 neq：不等于 时间格式支持：yyyy-MM-ddThh:mm:ssZ或者yyyy-MM-dd hh:mm:ss 例如，查询修改时间在2018-10-28 10:00:00之前的镜像，可以通过如下条件过滤： updated_at&#x3D;gt:2018-10-28T10:00:00Z
     /// </summary>
 
     std::string getUpdatedAt() const;

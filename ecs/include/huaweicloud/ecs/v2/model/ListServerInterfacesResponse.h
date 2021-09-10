@@ -7,6 +7,7 @@
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/ecs/v2/model/InterfaceAttachableQuantity.h>
 #include <huaweicloud/ecs/v2/model/InterfaceAttachment.h>
 #include <vector>
 
@@ -41,6 +42,15 @@ public:
     /// ListServerInterfacesResponse members
 
     /// <summary>
+    /// 
+    /// </summary>
+
+    InterfaceAttachableQuantity getAttachableQuantity() const;
+    bool attachableQuantityIsSet() const;
+    void unsetattachableQuantity();
+    void setAttachableQuantity(const InterfaceAttachableQuantity& value);
+
+    /// <summary>
     /// 云服务器网卡信息列表
     /// </summary>
 
@@ -51,6 +61,8 @@ public:
 
 
 protected:
+    InterfaceAttachableQuantity attachableQuantity_;
+    bool attachableQuantityIsSet_;
     std::vector<InterfaceAttachment> interfaceAttachments_;
     bool interfaceAttachmentsIsSet_;
 

@@ -40,7 +40,7 @@ public:
     /// ListSubnetsRequest members
 
     /// <summary>
-    /// 
+    /// 每页返回的个数
     /// </summary>
 
     int32_t getLimit() const;
@@ -49,7 +49,7 @@ public:
     void setLimit(int32_t value);
 
     /// <summary>
-    /// 
+    /// 分页查询起始的资源id，为空时查询第一页
     /// </summary>
 
     std::string getMarker() const;
@@ -58,22 +58,13 @@ public:
     void setMarker(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 按照vpc_id过滤查询  企业项目细粒度授权场景下，该字段必传
     /// </summary>
 
     std::string getVpcId() const;
     bool vpcIdIsSet() const;
     void unsetvpcId();
     void setVpcId(const std::string& value);
-
-    /// <summary>
-    /// 
-    /// </summary>
-
-    std::string getScope() const;
-    bool scopeIsSet() const;
-    void unsetscope();
-    void setScope(const std::string& value);
 
 
 protected:
@@ -83,8 +74,6 @@ protected:
     bool markerIsSet_;
     std::string vpcId_;
     bool vpcIdIsSet_;
-    std::string scope_;
-    bool scopeIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

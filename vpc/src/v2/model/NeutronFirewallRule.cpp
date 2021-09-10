@@ -27,6 +27,8 @@ NeutronFirewallRule::NeutronFirewallRule()
     ipVersionIsSet_ = false;
     enabled_ = false;
     enabledIsSet_ = false;
+    public_ = false;
+    publicIsSet_ = false;
     destinationIpAddress_ = "";
     destinationIpAddressIsSet_ = false;
     destinationPort_ = "";
@@ -71,6 +73,9 @@ web::json::value NeutronFirewallRule::toJson() const
     }
     if(enabledIsSet_) {
         val[utility::conversions::to_string_t("enabled")] = ModelBase::toJson(enabled_);
+    }
+    if(publicIsSet_) {
+        val[utility::conversions::to_string_t("public")] = ModelBase::toJson(public_);
     }
     if(destinationIpAddressIsSet_) {
         val[utility::conversions::to_string_t("destination_ip_address")] = ModelBase::toJson(destinationIpAddress_);
@@ -159,6 +164,15 @@ bool NeutronFirewallRule::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEnabled(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("public"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("public"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPublic(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("destination_ip_address"))) {
@@ -364,6 +378,27 @@ bool NeutronFirewallRule::enabledIsSet() const
 void NeutronFirewallRule::unsetenabled()
 {
     enabledIsSet_ = false;
+}
+
+bool NeutronFirewallRule::isPublic() const
+{
+    return public_;
+}
+
+void NeutronFirewallRule::setPublic(bool value)
+{
+    public_ = value;
+    publicIsSet_ = true;
+}
+
+bool NeutronFirewallRule::publicIsSet() const
+{
+    return publicIsSet_;
+}
+
+void NeutronFirewallRule::unsetpublic()
+{
+    publicIsSet_ = false;
 }
 
 std::string NeutronFirewallRule::getDestinationIpAddress() const

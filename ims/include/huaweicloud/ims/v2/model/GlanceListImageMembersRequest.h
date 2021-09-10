@@ -40,7 +40,7 @@ public:
     /// GlanceListImageMembersRequest members
 
     /// <summary>
-    /// 
+    /// 镜像id
     /// </summary>
 
     std::string getImageId() const;

@@ -86,6 +86,51 @@ public:
     void unsetportState();
     void setPortState(const std::string& value);
 
+    /// <summary>
+    /// 卸载网卡时，是否删除网卡。
+    /// </summary>
+
+    bool isDeleteOnTermination() const;
+    bool deleteOnTerminationIsSet() const;
+    void unsetdeleteOnTermination();
+    void setDeleteOnTermination(bool value);
+
+    /// <summary>
+    /// 从guest os中，网卡的驱动类型。可选值为virtio和hinic，默认为virtio
+    /// </summary>
+
+    std::string getDriverMode() const;
+    bool driverModeIsSet() const;
+    void unsetdriverMode();
+    void setDriverMode(const std::string& value);
+
+    /// <summary>
+    /// 网卡带宽下限。
+    /// </summary>
+
+    int32_t getMinRate() const;
+    bool minRateIsSet() const;
+    void unsetminRate();
+    void setMinRate(int32_t value);
+
+    /// <summary>
+    /// 网卡多队列个数。
+    /// </summary>
+
+    int32_t getMultiqueueNum() const;
+    bool multiqueueNumIsSet() const;
+    void unsetmultiqueueNum();
+    void setMultiqueueNum(int32_t value);
+
+    /// <summary>
+    /// 弹性网卡在Linux GuestOS里的BDF号
+    /// </summary>
+
+    std::string getPciAddress() const;
+    bool pciAddressIsSet() const;
+    void unsetpciAddress();
+    void setPciAddress(const std::string& value);
+
 
 protected:
     std::vector<ServerInterfaceFixedIp> fixedIps_;
@@ -98,6 +143,16 @@ protected:
     bool portIdIsSet_;
     std::string portState_;
     bool portStateIsSet_;
+    bool deleteOnTermination_;
+    bool deleteOnTerminationIsSet_;
+    std::string driverMode_;
+    bool driverModeIsSet_;
+    int32_t minRate_;
+    bool minRateIsSet_;
+    int32_t multiqueueNum_;
+    bool multiqueueNumIsSet_;
+    std::string pciAddress_;
+    bool pciAddressIsSet_;
 
 };
 

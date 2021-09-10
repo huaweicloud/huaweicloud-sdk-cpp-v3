@@ -40,7 +40,7 @@ public:
     /// DeleteSubnetRequest members
 
     /// <summary>
-    /// 
+    /// 子网对应的vpc_id
     /// </summary>
 
     std::string getVpcId() const;
@@ -49,7 +49,7 @@ public:
     void setVpcId(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 子网ID
     /// </summary>
 
     std::string getSubnetId() const;

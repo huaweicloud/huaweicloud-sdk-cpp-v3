@@ -41,7 +41,7 @@ public:
     /// DeleteServerGroupMemberRequest members
 
     /// <summary>
-    /// 
+    /// 云服务器组ID。
     /// </summary>
 
     std::string getServerGroupId() const;

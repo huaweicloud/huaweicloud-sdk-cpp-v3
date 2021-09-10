@@ -85,6 +85,24 @@ public:
     void unsetbuildNearHostIp();
     void setBuildNearHostIp(const std::string& value);
 
+    /// <summary>
+    /// 在专属主机或共享池中创建弹性云服务器。默认为在共享池创建。 值为： shared 或dedicated。 shared：表示共享池。 dedicated:表示专属主机。 创建与查询此值均有效。
+    /// </summary>
+
+    std::string getTenancy() const;
+    bool tenancyIsSet() const;
+    void unsettenancy();
+    void setTenancy(const std::string& value);
+
+    /// <summary>
+    /// 专属主机ID。 此属性仅在tenancy值为dedicated时有效。 不指定此属性，系统将自动分配租户可自动放置弹性云服务器的专属主机。 创建与查询此值均有效。
+    /// </summary>
+
+    std::string getDedicatedHostId() const;
+    bool dedicatedHostIdIsSet() const;
+    void unsetdedicatedHostId();
+    void setDedicatedHostId(const std::string& value);
+
 
 protected:
     std::string group_;
@@ -97,6 +115,10 @@ protected:
     bool cidrIsSet_;
     std::string buildNearHostIp_;
     bool buildNearHostIpIsSet_;
+    std::string tenancy_;
+    bool tenancyIsSet_;
+    std::string dedicatedHostId_;
+    bool dedicatedHostIdIsSet_;
 
 };
 

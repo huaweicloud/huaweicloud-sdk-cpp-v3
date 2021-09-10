@@ -41,7 +41,7 @@ public:
     /// UpdatePrePaidBandwidthRequest members
 
     /// <summary>
-    /// 
+    /// 带宽唯一标识。通过弹性公网IP详情获取，且此弹性公网IP是包周期的。
     /// </summary>
 
     std::string getBandwidthId() const;

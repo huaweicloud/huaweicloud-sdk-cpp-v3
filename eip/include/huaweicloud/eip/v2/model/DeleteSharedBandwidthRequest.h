@@ -40,7 +40,7 @@ public:
     /// DeleteSharedBandwidthRequest members
 
     /// <summary>
-    /// 
+    /// 带宽唯一标识  约束： 当前仅支持删除共享带宽
     /// </summary>
 
     std::string getBandwidthId() const;

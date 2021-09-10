@@ -15,7 +15,7 @@ ShowImageByTagsResource::ShowImageByTagsResource()
 {
     resourceId_ = "";
     resourceIdIsSet_ = false;
-    resouceDetailIsSet_ = false;
+    resourceDetailIsSet_ = false;
     tagsIsSet_ = false;
     resourceName_ = "";
     resourceNameIsSet_ = false;
@@ -34,8 +34,8 @@ web::json::value ShowImageByTagsResource::toJson() const
     if(resourceIdIsSet_) {
         val[utility::conversions::to_string_t("resource_id")] = ModelBase::toJson(resourceId_);
     }
-    if(resouceDetailIsSet_) {
-        val[utility::conversions::to_string_t("resouce_detail")] = ModelBase::toJson(resouceDetail_);
+    if(resourceDetailIsSet_) {
+        val[utility::conversions::to_string_t("resource_detail")] = ModelBase::toJson(resourceDetail_);
     }
     if(tagsIsSet_) {
         val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
@@ -60,13 +60,13 @@ bool ShowImageByTagsResource::fromJson(const web::json::value& val)
             setResourceId(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("resouce_detail"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("resouce_detail"));
+    if(val.has_field(utility::conversions::to_string_t("resource_detail"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("resource_detail"));
         if(!fieldValue.is_null())
         {
             QueryImageByTagsResourceDetail refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setResouceDetail(refVal);
+            setResourceDetail(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("tags"))) {
@@ -112,25 +112,25 @@ void ShowImageByTagsResource::unsetresourceId()
     resourceIdIsSet_ = false;
 }
 
-QueryImageByTagsResourceDetail ShowImageByTagsResource::getResouceDetail() const
+QueryImageByTagsResourceDetail ShowImageByTagsResource::getResourceDetail() const
 {
-    return resouceDetail_;
+    return resourceDetail_;
 }
 
-void ShowImageByTagsResource::setResouceDetail(const QueryImageByTagsResourceDetail& value)
+void ShowImageByTagsResource::setResourceDetail(const QueryImageByTagsResourceDetail& value)
 {
-    resouceDetail_ = value;
-    resouceDetailIsSet_ = true;
+    resourceDetail_ = value;
+    resourceDetailIsSet_ = true;
 }
 
-bool ShowImageByTagsResource::resouceDetailIsSet() const
+bool ShowImageByTagsResource::resourceDetailIsSet() const
 {
-    return resouceDetailIsSet_;
+    return resourceDetailIsSet_;
 }
 
-void ShowImageByTagsResource::unsetresouceDetail()
+void ShowImageByTagsResource::unsetresourceDetail()
 {
-    resouceDetailIsSet_ = false;
+    resourceDetailIsSet_ = false;
 }
 
 std::vector<TagKeyValue>& ShowImageByTagsResource::getTags()

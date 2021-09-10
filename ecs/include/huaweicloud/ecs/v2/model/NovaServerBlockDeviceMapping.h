@@ -112,7 +112,7 @@ public:
     void setVolumeSize(int32_t value);
 
     /// <summary>
-    /// 卷类型，在source_type是image，destination_type是volume时建议填写。  卷类型取值范围请参考 EVS 服务 磁盘类型介绍。
+    /// 卷类型，在source_type是image，destination_type是volume时建议填写。  卷类型取值范围请参考 EVS 服务 [磁盘类型介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。
     /// </summary>
 
     std::string getVolumeType() const;

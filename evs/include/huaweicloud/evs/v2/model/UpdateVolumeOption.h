@@ -19,7 +19,7 @@ using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 
 /// <summary>
-/// 
+///  
 /// </summary>
 class HUAWEICLOUD_EVS_V2_EXPORT  UpdateVolumeOption
     : public ModelBase

@@ -41,7 +41,7 @@ public:
     /// NeutronListFirewallPoliciesRequest members
 
     /// <summary>
-    /// 
+    /// 每页返回的个数
     /// </summary>
 
     int32_t getLimit() const;
@@ -50,7 +50,7 @@ public:
     void setLimit(int32_t value);
 
     /// <summary>
-    /// 
+    /// 分页查询起始的资源ID，为空时查询第一页
     /// </summary>
 
     std::string getMarker() const;
@@ -59,7 +59,7 @@ public:
     void setMarker(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 使用网络ACL策略ID过滤网络ACL策略
     /// </summary>
 
     std::vector<std::string>& getId();
@@ -68,7 +68,7 @@ public:
     void setId(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 
+    /// 使用name过滤网络ACL策略
     /// </summary>
 
     std::vector<std::string>& getName();
@@ -77,7 +77,7 @@ public:
     void setName(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 
+    /// 使用网络ACL策略描述过滤查询网络ACL策略
     /// </summary>
 
     std::vector<std::string>& getDescription();
@@ -86,7 +86,7 @@ public:
     void setDescription(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 
+    /// 使用tenant_id过滤查询网络ACL策略
     /// </summary>
 
     std::string getTenantId() const;

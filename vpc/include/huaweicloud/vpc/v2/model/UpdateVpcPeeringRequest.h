@@ -41,7 +41,7 @@ public:
     /// UpdateVpcPeeringRequest members
 
     /// <summary>
-    /// 
+    /// 对等连接ID
     /// </summary>
 
     std::string getPeeringId() const;

@@ -41,7 +41,7 @@ public:
     /// NeutronListFirewallRulesRequest members
 
     /// <summary>
-    /// 
+    /// 分页查询起始的资源ID，为空时查询第一页
     /// </summary>
 
     std::string getMarker() const;
@@ -50,7 +50,7 @@ public:
     void setMarker(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 每页返回的个数
     /// </summary>
 
     int32_t getLimit() const;
@@ -59,7 +59,7 @@ public:
     void setLimit(int32_t value);
 
     /// <summary>
-    /// 
+    /// 使用网络ACL规则ID过滤网络ACL规则
     /// </summary>
 
     std::vector<std::string>& getId();
@@ -68,7 +68,7 @@ public:
     void setId(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 
+    /// 使用网络ACL规则name过滤网络ACL规则
     /// </summary>
 
     std::vector<std::string>& getName();
@@ -77,7 +77,7 @@ public:
     void setName(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 
+    /// 使用网络ACL规则的description过滤网络ACL规则
     /// </summary>
 
     std::vector<std::string>& getDescription();
@@ -86,7 +86,7 @@ public:
     void setDescription(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 
+    /// 使用action过滤查询网络ACL规则
     /// </summary>
 
     std::string getAction() const;
@@ -95,7 +95,7 @@ public:
     void setAction(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 使用tenant_id过滤查询网络ACL规则
     /// </summary>
 
     std::string getTenantId() const;

@@ -40,7 +40,7 @@ public:
     /// NovaDeleteKeypairRequest members
 
     /// <summary>
-    /// 
+    /// 密钥名称。
     /// </summary>
 
     std::string getKeypairName() const;

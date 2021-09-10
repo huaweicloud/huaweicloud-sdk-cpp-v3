@@ -11,6 +11,7 @@
 #include <huaweicloud/vpc/v2/model/ExtraDhcpOpt.h>
 #include <huaweicloud/vpc/v2/model/FixedIp.h>
 #include <string>
+#include <huaweicloud/vpc/v2/model/BindingVifDetails.h>
 #include <huaweicloud/vpc/v2/model/DnsAssignMent.h>
 #include <huaweicloud/vpc/v2/model/AllowedAddressPair.h>
 #include <vector>
@@ -190,13 +191,13 @@ public:
     void setDnsName(const std::string& value);
 
     /// <summary>
-    /// 功能说明：vif的详细信息，  \&quot;ovs_hybrid_plug\&quot;: 是否为ovs/bridge混合模式 约束：管理员权限，普通租户不可指定
+    /// 
     /// </summary>
 
-    Object getBindingvifDetails() const;
+    BindingVifDetails getBindingvifDetails() const;
     bool bindingvifDetailsIsSet() const;
     void unsetbindingvifDetails();
-    void setBindingvifDetails(const Object& value);
+    void setBindingvifDetails(const BindingVifDetails& value);
 
     /// <summary>
     /// 功能说明：提供用户设置自定义信息(扩展属性)
@@ -277,7 +278,7 @@ protected:
     bool dnsAssignmentIsSet_;
     std::string dnsName_;
     bool dnsNameIsSet_;
-    Object bindingvifDetails_;
+    BindingVifDetails bindingvifDetails_;
     bool bindingvifDetailsIsSet_;
     Object bindingprofile_;
     bool bindingprofileIsSet_;

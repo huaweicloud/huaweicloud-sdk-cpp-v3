@@ -41,7 +41,7 @@ public:
     /// BatchDeleteVolumeTagsRequest members
 
     /// <summary>
-    /// 
+    /// 磁盘ID。
     /// </summary>
 
     std::string getVolumeId() const;

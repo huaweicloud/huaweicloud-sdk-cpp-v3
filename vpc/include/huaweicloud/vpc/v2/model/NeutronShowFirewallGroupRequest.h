@@ -40,7 +40,7 @@ public:
     /// NeutronShowFirewallGroupRequest members
 
     /// <summary>
-    /// 
+    /// 网络ACL防火墙组ID
     /// </summary>
 
     std::string getFirewallGroupId() const;

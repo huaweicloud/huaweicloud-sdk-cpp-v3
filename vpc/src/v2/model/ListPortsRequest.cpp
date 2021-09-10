@@ -37,8 +37,6 @@ ListPortsRequest::ListPortsRequest()
     fixedIpsIsSet_ = false;
     enterpriseProjectId_ = "";
     enterpriseProjectIdIsSet_ = false;
-    zoneId_ = "";
-    zoneIdIsSet_ = false;
 }
 
 ListPortsRequest::~ListPortsRequest() = default;
@@ -86,9 +84,6 @@ web::json::value ListPortsRequest::toJson() const
     }
     if(enterpriseProjectIdIsSet_) {
         val[utility::conversions::to_string_t("enterprise_project_id")] = ModelBase::toJson(enterpriseProjectId_);
-    }
-    if(zoneIdIsSet_) {
-        val[utility::conversions::to_string_t("zone_id")] = ModelBase::toJson(zoneId_);
     }
 
     return val;
@@ -204,15 +199,6 @@ bool ListPortsRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEnterpriseProjectId(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("zone_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("zone_id"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setZoneId(refVal);
         }
     }
     return ok;
@@ -469,27 +455,6 @@ bool ListPortsRequest::enterpriseProjectIdIsSet() const
 void ListPortsRequest::unsetenterpriseProjectId()
 {
     enterpriseProjectIdIsSet_ = false;
-}
-
-std::string ListPortsRequest::getZoneId() const
-{
-    return zoneId_;
-}
-
-void ListPortsRequest::setZoneId(const std::string& value)
-{
-    zoneId_ = value;
-    zoneIdIsSet_ = true;
-}
-
-bool ListPortsRequest::zoneIdIsSet() const
-{
-    return zoneIdIsSet_;
-}
-
-void ListPortsRequest::unsetzoneId()
-{
-    zoneIdIsSet_ = false;
 }
 
 }

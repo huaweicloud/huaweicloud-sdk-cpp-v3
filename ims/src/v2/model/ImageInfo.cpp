@@ -19,16 +19,12 @@ ImageInfo::ImageInfo()
     dataOriginIsSet_ = false;
     description_ = "";
     descriptionIsSet_ = false;
-    imageLocation_ = "";
-    imageLocationIsSet_ = false;
     imageSize_ = "";
     imageSizeIsSet_ = false;
     imageSourceType_ = "";
     imageSourceTypeIsSet_ = false;
     imagetype_ = "";
     imagetypeIsSet_ = false;
-    isConfigInit_ = "";
-    isConfigInitIsSet_ = false;
     isregistered_ = "";
     isregisteredIsSet_ = false;
     originalimagename_ = "";
@@ -104,8 +100,6 @@ ImageInfo::ImageInfo()
     virtualSizeIsSet_ = false;
     visibility_ = "";
     visibilityIsSet_ = false;
-    architecture_ = "";
-    architectureIsSet_ = false;
     supportFcInject_ = "";
     supportFcInjectIsSet_ = false;
     hwFirmwareType_ = "";
@@ -122,6 +116,18 @@ ImageInfo::ImageInfo()
     accountCodeIsSet_ = false;
     hwVifMultiqueueEnabled_ = "";
     hwVifMultiqueueEnabledIsSet_ = false;
+    isOffshelved_ = "";
+    isOffshelvedIsSet_ = false;
+    lazyloading_ = "";
+    lazyloadingIsSet_ = false;
+    rootOrigin_ = "";
+    rootOriginIsSet_ = false;
+    sequenceNum_ = "";
+    sequenceNumIsSet_ = false;
+    activeAt_ = "";
+    activeAtIsSet_ = false;
+    supportAgentList_ = "";
+    supportAgentListIsSet_ = false;
 }
 
 ImageInfo::~ImageInfo() = default;
@@ -143,9 +149,6 @@ web::json::value ImageInfo::toJson() const
     if(descriptionIsSet_) {
         val[utility::conversions::to_string_t("__description")] = ModelBase::toJson(description_);
     }
-    if(imageLocationIsSet_) {
-        val[utility::conversions::to_string_t("__image_location")] = ModelBase::toJson(imageLocation_);
-    }
     if(imageSizeIsSet_) {
         val[utility::conversions::to_string_t("__image_size")] = ModelBase::toJson(imageSize_);
     }
@@ -154,9 +157,6 @@ web::json::value ImageInfo::toJson() const
     }
     if(imagetypeIsSet_) {
         val[utility::conversions::to_string_t("__imagetype")] = ModelBase::toJson(imagetype_);
-    }
-    if(isConfigInitIsSet_) {
-        val[utility::conversions::to_string_t("__is_config_init")] = ModelBase::toJson(isConfigInit_);
     }
     if(isregisteredIsSet_) {
         val[utility::conversions::to_string_t("__isregistered")] = ModelBase::toJson(isregistered_);
@@ -272,9 +272,6 @@ web::json::value ImageInfo::toJson() const
     if(visibilityIsSet_) {
         val[utility::conversions::to_string_t("visibility")] = ModelBase::toJson(visibility_);
     }
-    if(architectureIsSet_) {
-        val[utility::conversions::to_string_t("architecture")] = ModelBase::toJson(architecture_);
-    }
     if(supportFcInjectIsSet_) {
         val[utility::conversions::to_string_t("__support_fc_inject")] = ModelBase::toJson(supportFcInject_);
     }
@@ -298,6 +295,24 @@ web::json::value ImageInfo::toJson() const
     }
     if(hwVifMultiqueueEnabledIsSet_) {
         val[utility::conversions::to_string_t("hw_vif_multiqueue_enabled")] = ModelBase::toJson(hwVifMultiqueueEnabled_);
+    }
+    if(isOffshelvedIsSet_) {
+        val[utility::conversions::to_string_t("__is_offshelved")] = ModelBase::toJson(isOffshelved_);
+    }
+    if(lazyloadingIsSet_) {
+        val[utility::conversions::to_string_t("__lazyloading")] = ModelBase::toJson(lazyloading_);
+    }
+    if(rootOriginIsSet_) {
+        val[utility::conversions::to_string_t("__root_origin")] = ModelBase::toJson(rootOrigin_);
+    }
+    if(sequenceNumIsSet_) {
+        val[utility::conversions::to_string_t("__sequence_num")] = ModelBase::toJson(sequenceNum_);
+    }
+    if(activeAtIsSet_) {
+        val[utility::conversions::to_string_t("active_at")] = ModelBase::toJson(activeAt_);
+    }
+    if(supportAgentListIsSet_) {
+        val[utility::conversions::to_string_t("__support_agent_list")] = ModelBase::toJson(supportAgentList_);
     }
 
     return val;
@@ -334,15 +349,6 @@ bool ImageInfo::fromJson(const web::json::value& val)
             setDescription(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("__image_location"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("__image_location"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setImageLocation(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("__image_size"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("__image_size"));
         if(!fieldValue.is_null())
@@ -368,15 +374,6 @@ bool ImageInfo::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setImagetype(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("__is_config_init"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("__is_config_init"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setIsConfigInit(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("__isregistered"))) {
@@ -721,15 +718,6 @@ bool ImageInfo::fromJson(const web::json::value& val)
             setVisibility(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("architecture"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("architecture"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setArchitecture(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("__support_fc_inject"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("__support_fc_inject"));
         if(!fieldValue.is_null())
@@ -802,6 +790,60 @@ bool ImageInfo::fromJson(const web::json::value& val)
             setHwVifMultiqueueEnabled(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("__is_offshelved"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("__is_offshelved"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsOffshelved(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("__lazyloading"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("__lazyloading"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLazyloading(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("__root_origin"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("__root_origin"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRootOrigin(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("__sequence_num"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("__sequence_num"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSequenceNum(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("active_at"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("active_at"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setActiveAt(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("__support_agent_list"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("__support_agent_list"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSupportAgentList(refVal);
+        }
+    }
     return ok;
 }
 
@@ -869,27 +911,6 @@ void ImageInfo::unsetdescription()
     descriptionIsSet_ = false;
 }
 
-std::string ImageInfo::getImageLocation() const
-{
-    return imageLocation_;
-}
-
-void ImageInfo::setImageLocation(const std::string& value)
-{
-    imageLocation_ = value;
-    imageLocationIsSet_ = true;
-}
-
-bool ImageInfo::imageLocationIsSet() const
-{
-    return imageLocationIsSet_;
-}
-
-void ImageInfo::unsetimageLocation()
-{
-    imageLocationIsSet_ = false;
-}
-
 std::string ImageInfo::getImageSize() const
 {
     return imageSize_;
@@ -951,27 +972,6 @@ bool ImageInfo::imagetypeIsSet() const
 void ImageInfo::unsetimagetype()
 {
     imagetypeIsSet_ = false;
-}
-
-std::string ImageInfo::getIsConfigInit() const
-{
-    return isConfigInit_;
-}
-
-void ImageInfo::setIsConfigInit(const std::string& value)
-{
-    isConfigInit_ = value;
-    isConfigInitIsSet_ = true;
-}
-
-bool ImageInfo::isConfigInitIsSet() const
-{
-    return isConfigInitIsSet_;
-}
-
-void ImageInfo::unsetisConfigInit()
-{
-    isConfigInitIsSet_ = false;
 }
 
 std::string ImageInfo::getIsregistered() const
@@ -1772,27 +1772,6 @@ void ImageInfo::unsetvisibility()
     visibilityIsSet_ = false;
 }
 
-std::string ImageInfo::getArchitecture() const
-{
-    return architecture_;
-}
-
-void ImageInfo::setArchitecture(const std::string& value)
-{
-    architecture_ = value;
-    architectureIsSet_ = true;
-}
-
-bool ImageInfo::architectureIsSet() const
-{
-    return architectureIsSet_;
-}
-
-void ImageInfo::unsetarchitecture()
-{
-    architectureIsSet_ = false;
-}
-
 std::string ImageInfo::getSupportFcInject() const
 {
     return supportFcInject_;
@@ -1959,6 +1938,132 @@ bool ImageInfo::hwVifMultiqueueEnabledIsSet() const
 void ImageInfo::unsethwVifMultiqueueEnabled()
 {
     hwVifMultiqueueEnabledIsSet_ = false;
+}
+
+std::string ImageInfo::getIsOffshelved() const
+{
+    return isOffshelved_;
+}
+
+void ImageInfo::setIsOffshelved(const std::string& value)
+{
+    isOffshelved_ = value;
+    isOffshelvedIsSet_ = true;
+}
+
+bool ImageInfo::isOffshelvedIsSet() const
+{
+    return isOffshelvedIsSet_;
+}
+
+void ImageInfo::unsetisOffshelved()
+{
+    isOffshelvedIsSet_ = false;
+}
+
+std::string ImageInfo::getLazyloading() const
+{
+    return lazyloading_;
+}
+
+void ImageInfo::setLazyloading(const std::string& value)
+{
+    lazyloading_ = value;
+    lazyloadingIsSet_ = true;
+}
+
+bool ImageInfo::lazyloadingIsSet() const
+{
+    return lazyloadingIsSet_;
+}
+
+void ImageInfo::unsetlazyloading()
+{
+    lazyloadingIsSet_ = false;
+}
+
+std::string ImageInfo::getRootOrigin() const
+{
+    return rootOrigin_;
+}
+
+void ImageInfo::setRootOrigin(const std::string& value)
+{
+    rootOrigin_ = value;
+    rootOriginIsSet_ = true;
+}
+
+bool ImageInfo::rootOriginIsSet() const
+{
+    return rootOriginIsSet_;
+}
+
+void ImageInfo::unsetrootOrigin()
+{
+    rootOriginIsSet_ = false;
+}
+
+std::string ImageInfo::getSequenceNum() const
+{
+    return sequenceNum_;
+}
+
+void ImageInfo::setSequenceNum(const std::string& value)
+{
+    sequenceNum_ = value;
+    sequenceNumIsSet_ = true;
+}
+
+bool ImageInfo::sequenceNumIsSet() const
+{
+    return sequenceNumIsSet_;
+}
+
+void ImageInfo::unsetsequenceNum()
+{
+    sequenceNumIsSet_ = false;
+}
+
+std::string ImageInfo::getActiveAt() const
+{
+    return activeAt_;
+}
+
+void ImageInfo::setActiveAt(const std::string& value)
+{
+    activeAt_ = value;
+    activeAtIsSet_ = true;
+}
+
+bool ImageInfo::activeAtIsSet() const
+{
+    return activeAtIsSet_;
+}
+
+void ImageInfo::unsetactiveAt()
+{
+    activeAtIsSet_ = false;
+}
+
+std::string ImageInfo::getSupportAgentList() const
+{
+    return supportAgentList_;
+}
+
+void ImageInfo::setSupportAgentList(const std::string& value)
+{
+    supportAgentList_ = value;
+    supportAgentListIsSet_ = true;
+}
+
+bool ImageInfo::supportAgentListIsSet() const
+{
+    return supportAgentListIsSet_;
+}
+
+void ImageInfo::unsetsupportAgentList()
+{
+    supportAgentListIsSet_ = false;
 }
 
 }

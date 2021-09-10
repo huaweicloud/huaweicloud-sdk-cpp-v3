@@ -55,10 +55,10 @@ public:
     /// 
     /// </summary>
 
-    QueryImageByTagsResourceDetail getResouceDetail() const;
-    bool resouceDetailIsSet() const;
-    void unsetresouceDetail();
-    void setResouceDetail(const QueryImageByTagsResourceDetail& value);
+    QueryImageByTagsResourceDetail getResourceDetail() const;
+    bool resourceDetailIsSet() const;
+    void unsetresourceDetail();
+    void setResourceDetail(const QueryImageByTagsResourceDetail& value);
 
     /// <summary>
     /// 镜像的标签列表
@@ -82,8 +82,8 @@ public:
 protected:
     std::string resourceId_;
     bool resourceIdIsSet_;
-    QueryImageByTagsResourceDetail resouceDetail_;
-    bool resouceDetailIsSet_;
+    QueryImageByTagsResourceDetail resourceDetail_;
+    bool resourceDetailIsSet_;
     std::vector<TagKeyValue> tags_;
     bool tagsIsSet_;
     std::string resourceName_;

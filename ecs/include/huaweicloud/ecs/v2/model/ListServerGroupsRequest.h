@@ -40,7 +40,7 @@ public:
     /// ListServerGroupsRequest members
 
     /// <summary>
-    /// 
+    /// 查询返回server group数量限制。
     /// </summary>
 
     int32_t getLimit() const;
@@ -49,7 +49,7 @@ public:
     void setLimit(int32_t value);
 
     /// <summary>
-    /// 
+    /// 从marker指定的server group的下一条数据开始查询。
     /// </summary>
 
     std::string getMarker() const;

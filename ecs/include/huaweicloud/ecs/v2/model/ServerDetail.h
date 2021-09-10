@@ -11,12 +11,14 @@
 #include <huaweicloud/ecs/v2/model/ServerExtendVolumeAttachment.h>
 #include <huaweicloud/ecs/v2/model/ServerSchedulerHints.h>
 #include <string>
-#include <huaweicloud/ecs/v2/model/ServerSystemTag.h>
 #include <huaweicloud/ecs/v2/model/ServerFault.h>
+#include <huaweicloud/ecs/v2/model/Hypervisor.h>
+#include <vector>
+#include <huaweicloud/ecs/v2/model/ServerSystemTag.h>
 #include <huaweicloud/ecs/v2/model/ServerSecurityGroup.h>
+#include <huaweicloud/ecs/v2/model/CpuOptions.h>
 #include <map>
 #include <huaweicloud/ecs/v2/model/ServerFlavor.h>
-#include <vector>
 #include <huaweicloud/ecs/v2/model/ServerAddress.h>
 
 namespace HuaweiCloud {
@@ -50,7 +52,7 @@ public:
     /// ServerDetail members
 
     /// <summary>
-    /// 弹性云服务器状态。  取值范围：  ACTIVE、BUILD、DELETED、ERROR、HARD_REBOOT、MIGRATING、PAUSED、REBOOT、REBUILD、RESIZE、REVERT_RESIZE、SHUTOFF、SHELVED、SHELVED_OFFLOADED、SOFT_DELETED、SUSPENDED、VERIFY_RESIZE
+    /// 弹性云服务器状态。  取值范围：  ACTIVE、BUILD、DELETED、ERROR、HARD_REBOOT、MIGRATING、PAUSED、REBOOT、REBUILD、RESIZE、REVERT_RESIZE、SHUTOFF、SHELVED、SHELVED_OFFLOADED、SOFT_DELETED、SUSPENDED、VERIFY_RESIZE  弹性云服务器状态说明请参考[云服务器状态](https://support.huaweicloud.com/api-ecs/ecs_08_0002.html)
     /// </summary>
 
     std::string getStatus() const;
@@ -122,7 +124,7 @@ public:
     void setImage(const ServerImage& value);
 
     /// <summary>
-    /// 扩展属性，弹性云服务器当前任务的状态。
+    /// 扩展属性，弹性云服务器当前任务的状态。  取值范围请参考[云服务器状态](https://support.huaweicloud.com/api-ecs/ecs_08_0002.html)表3。
     /// </summary>
 
     std::string getOSEXTSTStaskState() const;
@@ -131,7 +133,7 @@ public:
     void setOSEXTSTStaskState(const std::string& value);
 
     /// <summary>
-    /// 扩展属性，弹性云服务器当前状态。
+    /// 扩展属性，弹性云服务器当前状态。  云服务器状态说明请参考[云服务器状态](https://support.huaweicloud.com/api-ecs/ecs_08_0002.html)。
     /// </summary>
 
     std::string getOSEXTSTSvmState() const;
@@ -454,6 +456,24 @@ public:
     void unsetsysTags();
     void setSysTags(const std::vector<ServerSystemTag>& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    CpuOptions getCpuOptions() const;
+    bool cpuOptionsIsSet() const;
+    void unsetcpuOptions();
+    void setCpuOptions(const CpuOptions& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    Hypervisor getHypervisor() const;
+    bool hypervisorIsSet() const;
+    void unsethypervisor();
+    void setHypervisor(const Hypervisor& value);
+
 
 protected:
     std::string status_;
@@ -546,6 +566,10 @@ protected:
     bool enterpriseProjectIdIsSet_;
     std::vector<ServerSystemTag> sysTags_;
     bool sysTagsIsSet_;
+    CpuOptions cpuOptions_;
+    bool cpuOptionsIsSet_;
+    Hypervisor hypervisor_;
+    bool hypervisorIsSet_;
 
 };
 

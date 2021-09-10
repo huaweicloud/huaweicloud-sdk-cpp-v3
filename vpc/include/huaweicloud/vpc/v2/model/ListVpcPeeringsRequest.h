@@ -40,7 +40,7 @@ public:
     /// ListVpcPeeringsRequest members
 
     /// <summary>
-    /// 
+    /// 每页返回的个数
     /// </summary>
 
     int32_t getLimit() const;
@@ -49,7 +49,7 @@ public:
     void setLimit(int32_t value);
 
     /// <summary>
-    /// 
+    /// 分页查询起始的资源ID，为空时查询第一页
     /// </summary>
 
     std::string getMarker() const;
@@ -58,7 +58,7 @@ public:
     void setMarker(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 按照peering_id过滤查询
     /// </summary>
 
     std::string getId() const;
@@ -67,7 +67,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 功能说明：按照peering_name过查询  取值范围：最大长度不超过64
     /// </summary>
 
     std::string getName() const;
@@ -76,7 +76,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 根据status进行过滤  - PENDING_ACCEPTANCE：等待接受 - REJECTED：已拒绝。 - EXPIRED：已过期。 - DELETED：已删除。 - ACTIVE：活动的。
     /// </summary>
 
     std::string getStatus() const;
@@ -85,7 +85,7 @@ public:
     void setStatus(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 按照项目ID过滤查询
     /// </summary>
 
     std::string getTenantId() const;
@@ -94,7 +94,7 @@ public:
     void setTenantId(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 根据vpc ID过滤查询
     /// </summary>
 
     std::string getVpcId() const;

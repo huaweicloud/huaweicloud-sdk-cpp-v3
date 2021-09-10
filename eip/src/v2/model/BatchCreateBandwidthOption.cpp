@@ -19,6 +19,8 @@ BatchCreateBandwidthOption::BatchCreateBandwidthOption()
     nameIsSet_ = false;
     size_ = 0;
     sizeIsSet_ = false;
+    publicBorderGroup_ = "";
+    publicBorderGroupIsSet_ = false;
 }
 
 BatchCreateBandwidthOption::~BatchCreateBandwidthOption() = default;
@@ -39,6 +41,9 @@ web::json::value BatchCreateBandwidthOption::toJson() const
     }
     if(sizeIsSet_) {
         val[utility::conversions::to_string_t("size")] = ModelBase::toJson(size_);
+    }
+    if(publicBorderGroupIsSet_) {
+        val[utility::conversions::to_string_t("public_border_group")] = ModelBase::toJson(publicBorderGroup_);
     }
 
     return val;
@@ -73,6 +78,15 @@ bool BatchCreateBandwidthOption::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSize(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("public_border_group"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("public_border_group"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPublicBorderGroup(refVal);
         }
     }
     return ok;
@@ -140,6 +154,27 @@ bool BatchCreateBandwidthOption::sizeIsSet() const
 void BatchCreateBandwidthOption::unsetsize()
 {
     sizeIsSet_ = false;
+}
+
+std::string BatchCreateBandwidthOption::getPublicBorderGroup() const
+{
+    return publicBorderGroup_;
+}
+
+void BatchCreateBandwidthOption::setPublicBorderGroup(const std::string& value)
+{
+    publicBorderGroup_ = value;
+    publicBorderGroupIsSet_ = true;
+}
+
+bool BatchCreateBandwidthOption::publicBorderGroupIsSet() const
+{
+    return publicBorderGroupIsSet_;
+}
+
+void BatchCreateBandwidthOption::unsetpublicBorderGroup()
+{
+    publicBorderGroupIsSet_ = false;
 }
 
 }

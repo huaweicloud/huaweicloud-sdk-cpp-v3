@@ -199,7 +199,7 @@ public:
     /// <param name="status">云硬盘快照状态，具体请参见A.3 云硬盘快照状态。 (optional, default to &quot;&quot;)</param>
     /// <param name="volumeId">快照所属云硬盘的ID。 (optional, default to &quot;&quot;)</param>
     /// <param name="availabilityZone">快照所属云硬盘的可用区。 (optional, default to &quot;&quot;)</param>
-    /// <param name="id">指定快照id进行过滤。 (optional, default to &quot;&quot;)</param>
+    /// <param name="id">指定快照id进行过滤。可以传入多个id过滤查询，格式：id&#x3D;id1&amp;id&#x3D;id2&amp;id&#x3D;id3 (optional, default to &quot;&quot;)</param>
     /// <param name="dedicatedStorageName">专属存储的名称。 (optional, default to &quot;&quot;)</param>
     /// <param name="dedicatedStorageId">专属存储ID。 (optional, default to &quot;&quot;)</param>
     /// <param name="serviceType">服务类型。仅支持EVS、DSS、DESS。 (optional, default to &quot;&quot;)</param>
@@ -239,6 +239,7 @@ public:
     /// <param name="id">云硬盘ID。 (optional, default to &quot;&quot;)</param>
     /// <param name="ids">云硬盘id列表，格式为ids&#x3D;[&#39;id1&#39;,&#39;id2&#39;,...,&#39;idx&#39;]，返回“ids”中有效id的云硬盘详情，无效的id会被忽略。 支持查询最多60个id对应的云硬盘详情。 如果“id”和“ids”查询参数同时存在，“id”会被忽略。 (optional, default to &quot;&quot;)</param>
     /// <param name="enterpriseProjectId">指定企业项目id进行过滤。 传入“all_granted_eps”，代表查询权限范围内的所有企业项目下的云硬盘。 &gt; 说明： &gt;  &gt; 关于企业项目ID的获取及企业项目特性的详细信息，请参考：\&quot;[企业管理用户指南](https://support.huaweicloud.com/usermanual-em/zh-cn_topic_0123692049.html)\&quot;。 (optional, default to &quot;&quot;)</param>
+    /// <param name="serverId">云服务器id。 (optional, default to &quot;&quot;)</param>
     std::shared_ptr<ListVolumesResponse> listVolumes(
         ListVolumesRequest &request
     );

@@ -63,10 +63,6 @@ GlanceUpdateImageResponse::GlanceUpdateImageResponse()
     containerFormatIsSet_ = false;
     createdAt_ = "";
     createdAtIsSet_ = false;
-    deleted_ = false;
-    deletedIsSet_ = false;
-    deletedAt_ = "";
-    deletedAtIsSet_ = false;
     diskFormat_ = "";
     diskFormatIsSet_ = false;
     file_ = "";
@@ -110,6 +106,30 @@ GlanceUpdateImageResponse::GlanceUpdateImageResponse()
     supportArmIsSet_ = false;
     isOffshelved_ = "";
     isOffshelvedIsSet_ = false;
+    lazyloading_ = "";
+    lazyloadingIsSet_ = false;
+    osFeatureList_ = "";
+    osFeatureListIsSet_ = false;
+    rootOrigin_ = "";
+    rootOriginIsSet_ = false;
+    sequenceNum_ = "";
+    sequenceNumIsSet_ = false;
+    supportAgentList_ = "";
+    supportAgentListIsSet_ = false;
+    systemCmkid_ = "";
+    systemCmkidIsSet_ = false;
+    activeAt_ = "";
+    activeAtIsSet_ = false;
+    hwVifMultiqueueEnabled_ = "";
+    hwVifMultiqueueEnabledIsSet_ = false;
+    maxRam_ = "";
+    maxRamIsSet_ = false;
+    imageLocation_ = "";
+    imageLocationIsSet_ = false;
+    isConfigInit_ = "";
+    isConfigInitIsSet_ = false;
+    accountCode_ = "";
+    accountCodeIsSet_ = false;
 }
 
 GlanceUpdateImageResponse::~GlanceUpdateImageResponse() = default;
@@ -197,12 +217,6 @@ web::json::value GlanceUpdateImageResponse::toJson() const
     if(createdAtIsSet_) {
         val[utility::conversions::to_string_t("created_at")] = ModelBase::toJson(createdAt_);
     }
-    if(deletedIsSet_) {
-        val[utility::conversions::to_string_t("deleted")] = ModelBase::toJson(deleted_);
-    }
-    if(deletedAtIsSet_) {
-        val[utility::conversions::to_string_t("deleted_at")] = ModelBase::toJson(deletedAt_);
-    }
     if(diskFormatIsSet_) {
         val[utility::conversions::to_string_t("disk_format")] = ModelBase::toJson(diskFormat_);
     }
@@ -268,6 +282,42 @@ web::json::value GlanceUpdateImageResponse::toJson() const
     }
     if(isOffshelvedIsSet_) {
         val[utility::conversions::to_string_t("__is_offshelved")] = ModelBase::toJson(isOffshelved_);
+    }
+    if(lazyloadingIsSet_) {
+        val[utility::conversions::to_string_t("__lazyloading")] = ModelBase::toJson(lazyloading_);
+    }
+    if(osFeatureListIsSet_) {
+        val[utility::conversions::to_string_t("__os_feature_list")] = ModelBase::toJson(osFeatureList_);
+    }
+    if(rootOriginIsSet_) {
+        val[utility::conversions::to_string_t("__root_origin")] = ModelBase::toJson(rootOrigin_);
+    }
+    if(sequenceNumIsSet_) {
+        val[utility::conversions::to_string_t("__sequence_num")] = ModelBase::toJson(sequenceNum_);
+    }
+    if(supportAgentListIsSet_) {
+        val[utility::conversions::to_string_t("__support_agent_list")] = ModelBase::toJson(supportAgentList_);
+    }
+    if(systemCmkidIsSet_) {
+        val[utility::conversions::to_string_t("__system__cmkid")] = ModelBase::toJson(systemCmkid_);
+    }
+    if(activeAtIsSet_) {
+        val[utility::conversions::to_string_t("active_at")] = ModelBase::toJson(activeAt_);
+    }
+    if(hwVifMultiqueueEnabledIsSet_) {
+        val[utility::conversions::to_string_t("hw_vif_multiqueue_enabled")] = ModelBase::toJson(hwVifMultiqueueEnabled_);
+    }
+    if(maxRamIsSet_) {
+        val[utility::conversions::to_string_t("max_ram")] = ModelBase::toJson(maxRam_);
+    }
+    if(imageLocationIsSet_) {
+        val[utility::conversions::to_string_t("__image_location")] = ModelBase::toJson(imageLocation_);
+    }
+    if(isConfigInitIsSet_) {
+        val[utility::conversions::to_string_t("__is_config_init")] = ModelBase::toJson(isConfigInit_);
+    }
+    if(accountCodeIsSet_) {
+        val[utility::conversions::to_string_t("__account_code")] = ModelBase::toJson(accountCode_);
     }
 
     return val;
@@ -502,24 +552,6 @@ bool GlanceUpdateImageResponse::fromJson(const web::json::value& val)
             setCreatedAt(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("deleted"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("deleted"));
-        if(!fieldValue.is_null())
-        {
-            bool refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setDeleted(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("deleted_at"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("deleted_at"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setDeletedAt(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("disk_format"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("disk_format"));
         if(!fieldValue.is_null())
@@ -716,6 +748,114 @@ bool GlanceUpdateImageResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsOffshelved(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("__lazyloading"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("__lazyloading"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLazyloading(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("__os_feature_list"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("__os_feature_list"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setOsFeatureList(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("__root_origin"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("__root_origin"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRootOrigin(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("__sequence_num"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("__sequence_num"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSequenceNum(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("__support_agent_list"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("__support_agent_list"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSupportAgentList(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("__system__cmkid"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("__system__cmkid"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSystemCmkid(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("active_at"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("active_at"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setActiveAt(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("hw_vif_multiqueue_enabled"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("hw_vif_multiqueue_enabled"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHwVifMultiqueueEnabled(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("max_ram"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("max_ram"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMaxRam(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("__image_location"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("__image_location"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setImageLocation(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("__is_config_init"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("__is_config_init"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsConfigInit(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("__account_code"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("__account_code"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAccountCode(refVal);
         }
     }
     return ok;
@@ -1247,48 +1387,6 @@ void GlanceUpdateImageResponse::unsetcreatedAt()
     createdAtIsSet_ = false;
 }
 
-bool GlanceUpdateImageResponse::isDeleted() const
-{
-    return deleted_;
-}
-
-void GlanceUpdateImageResponse::setDeleted(bool value)
-{
-    deleted_ = value;
-    deletedIsSet_ = true;
-}
-
-bool GlanceUpdateImageResponse::deletedIsSet() const
-{
-    return deletedIsSet_;
-}
-
-void GlanceUpdateImageResponse::unsetdeleted()
-{
-    deletedIsSet_ = false;
-}
-
-std::string GlanceUpdateImageResponse::getDeletedAt() const
-{
-    return deletedAt_;
-}
-
-void GlanceUpdateImageResponse::setDeletedAt(const std::string& value)
-{
-    deletedAt_ = value;
-    deletedAtIsSet_ = true;
-}
-
-bool GlanceUpdateImageResponse::deletedAtIsSet() const
-{
-    return deletedAtIsSet_;
-}
-
-void GlanceUpdateImageResponse::unsetdeletedAt()
-{
-    deletedAtIsSet_ = false;
-}
-
 std::string GlanceUpdateImageResponse::getDiskFormat() const
 {
     return diskFormat_;
@@ -1749,6 +1847,258 @@ bool GlanceUpdateImageResponse::isOffshelvedIsSet() const
 void GlanceUpdateImageResponse::unsetisOffshelved()
 {
     isOffshelvedIsSet_ = false;
+}
+
+std::string GlanceUpdateImageResponse::getLazyloading() const
+{
+    return lazyloading_;
+}
+
+void GlanceUpdateImageResponse::setLazyloading(const std::string& value)
+{
+    lazyloading_ = value;
+    lazyloadingIsSet_ = true;
+}
+
+bool GlanceUpdateImageResponse::lazyloadingIsSet() const
+{
+    return lazyloadingIsSet_;
+}
+
+void GlanceUpdateImageResponse::unsetlazyloading()
+{
+    lazyloadingIsSet_ = false;
+}
+
+std::string GlanceUpdateImageResponse::getOsFeatureList() const
+{
+    return osFeatureList_;
+}
+
+void GlanceUpdateImageResponse::setOsFeatureList(const std::string& value)
+{
+    osFeatureList_ = value;
+    osFeatureListIsSet_ = true;
+}
+
+bool GlanceUpdateImageResponse::osFeatureListIsSet() const
+{
+    return osFeatureListIsSet_;
+}
+
+void GlanceUpdateImageResponse::unsetosFeatureList()
+{
+    osFeatureListIsSet_ = false;
+}
+
+std::string GlanceUpdateImageResponse::getRootOrigin() const
+{
+    return rootOrigin_;
+}
+
+void GlanceUpdateImageResponse::setRootOrigin(const std::string& value)
+{
+    rootOrigin_ = value;
+    rootOriginIsSet_ = true;
+}
+
+bool GlanceUpdateImageResponse::rootOriginIsSet() const
+{
+    return rootOriginIsSet_;
+}
+
+void GlanceUpdateImageResponse::unsetrootOrigin()
+{
+    rootOriginIsSet_ = false;
+}
+
+std::string GlanceUpdateImageResponse::getSequenceNum() const
+{
+    return sequenceNum_;
+}
+
+void GlanceUpdateImageResponse::setSequenceNum(const std::string& value)
+{
+    sequenceNum_ = value;
+    sequenceNumIsSet_ = true;
+}
+
+bool GlanceUpdateImageResponse::sequenceNumIsSet() const
+{
+    return sequenceNumIsSet_;
+}
+
+void GlanceUpdateImageResponse::unsetsequenceNum()
+{
+    sequenceNumIsSet_ = false;
+}
+
+std::string GlanceUpdateImageResponse::getSupportAgentList() const
+{
+    return supportAgentList_;
+}
+
+void GlanceUpdateImageResponse::setSupportAgentList(const std::string& value)
+{
+    supportAgentList_ = value;
+    supportAgentListIsSet_ = true;
+}
+
+bool GlanceUpdateImageResponse::supportAgentListIsSet() const
+{
+    return supportAgentListIsSet_;
+}
+
+void GlanceUpdateImageResponse::unsetsupportAgentList()
+{
+    supportAgentListIsSet_ = false;
+}
+
+std::string GlanceUpdateImageResponse::getSystemCmkid() const
+{
+    return systemCmkid_;
+}
+
+void GlanceUpdateImageResponse::setSystemCmkid(const std::string& value)
+{
+    systemCmkid_ = value;
+    systemCmkidIsSet_ = true;
+}
+
+bool GlanceUpdateImageResponse::systemCmkidIsSet() const
+{
+    return systemCmkidIsSet_;
+}
+
+void GlanceUpdateImageResponse::unsetsystemCmkid()
+{
+    systemCmkidIsSet_ = false;
+}
+
+std::string GlanceUpdateImageResponse::getActiveAt() const
+{
+    return activeAt_;
+}
+
+void GlanceUpdateImageResponse::setActiveAt(const std::string& value)
+{
+    activeAt_ = value;
+    activeAtIsSet_ = true;
+}
+
+bool GlanceUpdateImageResponse::activeAtIsSet() const
+{
+    return activeAtIsSet_;
+}
+
+void GlanceUpdateImageResponse::unsetactiveAt()
+{
+    activeAtIsSet_ = false;
+}
+
+std::string GlanceUpdateImageResponse::getHwVifMultiqueueEnabled() const
+{
+    return hwVifMultiqueueEnabled_;
+}
+
+void GlanceUpdateImageResponse::setHwVifMultiqueueEnabled(const std::string& value)
+{
+    hwVifMultiqueueEnabled_ = value;
+    hwVifMultiqueueEnabledIsSet_ = true;
+}
+
+bool GlanceUpdateImageResponse::hwVifMultiqueueEnabledIsSet() const
+{
+    return hwVifMultiqueueEnabledIsSet_;
+}
+
+void GlanceUpdateImageResponse::unsethwVifMultiqueueEnabled()
+{
+    hwVifMultiqueueEnabledIsSet_ = false;
+}
+
+std::string GlanceUpdateImageResponse::getMaxRam() const
+{
+    return maxRam_;
+}
+
+void GlanceUpdateImageResponse::setMaxRam(const std::string& value)
+{
+    maxRam_ = value;
+    maxRamIsSet_ = true;
+}
+
+bool GlanceUpdateImageResponse::maxRamIsSet() const
+{
+    return maxRamIsSet_;
+}
+
+void GlanceUpdateImageResponse::unsetmaxRam()
+{
+    maxRamIsSet_ = false;
+}
+
+std::string GlanceUpdateImageResponse::getImageLocation() const
+{
+    return imageLocation_;
+}
+
+void GlanceUpdateImageResponse::setImageLocation(const std::string& value)
+{
+    imageLocation_ = value;
+    imageLocationIsSet_ = true;
+}
+
+bool GlanceUpdateImageResponse::imageLocationIsSet() const
+{
+    return imageLocationIsSet_;
+}
+
+void GlanceUpdateImageResponse::unsetimageLocation()
+{
+    imageLocationIsSet_ = false;
+}
+
+std::string GlanceUpdateImageResponse::getIsConfigInit() const
+{
+    return isConfigInit_;
+}
+
+void GlanceUpdateImageResponse::setIsConfigInit(const std::string& value)
+{
+    isConfigInit_ = value;
+    isConfigInitIsSet_ = true;
+}
+
+bool GlanceUpdateImageResponse::isConfigInitIsSet() const
+{
+    return isConfigInitIsSet_;
+}
+
+void GlanceUpdateImageResponse::unsetisConfigInit()
+{
+    isConfigInitIsSet_ = false;
+}
+
+std::string GlanceUpdateImageResponse::getAccountCode() const
+{
+    return accountCode_;
+}
+
+void GlanceUpdateImageResponse::setAccountCode(const std::string& value)
+{
+    accountCode_ = value;
+    accountCodeIsSet_ = true;
+}
+
+bool GlanceUpdateImageResponse::accountCodeIsSet() const
+{
+    return accountCodeIsSet_;
+}
+
+void GlanceUpdateImageResponse::unsetaccountCode()
+{
+    accountCodeIsSet_ = false;
 }
 
 }

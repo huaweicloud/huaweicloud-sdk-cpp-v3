@@ -284,7 +284,7 @@ bool Port::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("binding:vif_details"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            BindingVifDetails refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBindingvifDetails(refVal);
         }
@@ -674,12 +674,12 @@ void Port::unsetdnsName()
     dnsNameIsSet_ = false;
 }
 
-Object Port::getBindingvifDetails() const
+BindingVifDetails Port::getBindingvifDetails() const
 {
     return bindingvifDetails_;
 }
 
-void Port::setBindingvifDetails(const Object& value)
+void Port::setBindingvifDetails(const BindingVifDetails& value)
 {
     bindingvifDetails_ = value;
     bindingvifDetailsIsSet_ = true;

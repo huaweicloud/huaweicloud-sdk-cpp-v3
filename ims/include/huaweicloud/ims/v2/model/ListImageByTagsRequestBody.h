@@ -114,6 +114,15 @@ public:
     void unsetmatches();
     void setMatches(const std::vector<TagKeyValue>& value);
 
+    /// <summary>
+    /// 不包含任意一个标签，该字段为true时查询所有不带标签的资源，此时忽略tag、not_tags、tags_any、not_tags_any字段。
+    /// </summary>
+
+    bool isWithoutAnyTag() const;
+    bool withoutAnyTagIsSet() const;
+    void unsetwithoutAnyTag();
+    void setWithoutAnyTag(bool value);
+
 
 protected:
     std::string action_;
@@ -132,6 +141,8 @@ protected:
     bool offsetIsSet_;
     std::vector<TagKeyValue> matches_;
     bool matchesIsSet_;
+    bool withoutAnyTag_;
+    bool withoutAnyTagIsSet_;
 
 };
 

@@ -342,6 +342,15 @@ public:
     void unsetenterpriseProjectId();
     void setEnterpriseProjectId(const std::string& value);
 
+    /// <summary>
+    /// 云硬盘序列号。 只有SCSI类型的非双活卷才会返回该字段，用于与虚拟机中的盘做对应关系。
+    /// </summary>
+
+    std::string getSerialNumber() const;
+    bool serialNumberIsSet() const;
+    void unsetserialNumber();
+    void setSerialNumber(const std::string& value);
+
 
 protected:
     std::string id_;
@@ -410,6 +419,8 @@ protected:
     bool wwnIsSet_;
     std::string enterpriseProjectId_;
     bool enterpriseProjectIdIsSet_;
+    std::string serialNumber_;
+    bool serialNumberIsSet_;
 
 };
 

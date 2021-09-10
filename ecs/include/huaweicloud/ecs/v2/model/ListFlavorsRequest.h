@@ -40,7 +40,7 @@ public:
     /// ListFlavorsRequest members
 
     /// <summary>
-    /// 
+    /// 可用区，需要指定可用区（AZ）的名称或者ID或者code。  可通过接口 [查询可用区列表接口](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;ECS&amp;api&#x3D;NovaListAvailabilityZones) 获取，也可参考[地区和终端节点](https://developer.huaweicloud.com/endpoint)获取。
     /// </summary>
 
     std::string getAvailabilityZone() const;

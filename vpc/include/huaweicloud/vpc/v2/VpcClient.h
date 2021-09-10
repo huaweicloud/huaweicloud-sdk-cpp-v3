@@ -8,9 +8,20 @@
 
 #include <huaweicloud/vpc/v2/model/AcceptVpcPeeringRequest.h>
 #include <huaweicloud/vpc/v2/model/AcceptVpcPeeringResponse.h>
+#include <huaweicloud/vpc/v2/model/AssociateRouteTableRequest.h>
+#include <huaweicloud/vpc/v2/model/AssociateRouteTableResponse.h>
+#include <huaweicloud/vpc/v2/model/BatchCreateSubnetTagsRequest.h>
+#include <huaweicloud/vpc/v2/model/BatchCreateSubnetTagsRequestBody.h>
+#include <huaweicloud/vpc/v2/model/BatchCreateSubnetTagsResponse.h>
+#include <huaweicloud/vpc/v2/model/BatchDeleteSubnetTagsRequest.h>
+#include <huaweicloud/vpc/v2/model/BatchDeleteSubnetTagsRequestBody.h>
+#include <huaweicloud/vpc/v2/model/BatchDeleteSubnetTagsResponse.h>
 #include <huaweicloud/vpc/v2/model/CreatePortRequest.h>
 #include <huaweicloud/vpc/v2/model/CreatePortRequestBody.h>
 #include <huaweicloud/vpc/v2/model/CreatePortResponse.h>
+#include <huaweicloud/vpc/v2/model/CreateRouteTableRequest.h>
+#include <huaweicloud/vpc/v2/model/CreateRouteTableResponse.h>
+#include <huaweicloud/vpc/v2/model/CreateRoutetableReqBody.h>
 #include <huaweicloud/vpc/v2/model/CreateSecurityGroupRequest.h>
 #include <huaweicloud/vpc/v2/model/CreateSecurityGroupRequestBody.h>
 #include <huaweicloud/vpc/v2/model/CreateSecurityGroupResponse.h>
@@ -20,46 +31,70 @@
 #include <huaweicloud/vpc/v2/model/CreateSubnetRequest.h>
 #include <huaweicloud/vpc/v2/model/CreateSubnetRequestBody.h>
 #include <huaweicloud/vpc/v2/model/CreateSubnetResponse.h>
+#include <huaweicloud/vpc/v2/model/CreateSubnetTagRequest.h>
+#include <huaweicloud/vpc/v2/model/CreateSubnetTagRequestBody.h>
+#include <huaweicloud/vpc/v2/model/CreateSubnetTagResponse.h>
 #include <huaweicloud/vpc/v2/model/CreateVpcPeeringRequest.h>
 #include <huaweicloud/vpc/v2/model/CreateVpcPeeringRequestBody.h>
 #include <huaweicloud/vpc/v2/model/CreateVpcPeeringResponse.h>
 #include <huaweicloud/vpc/v2/model/DeletePortRequest.h>
 #include <huaweicloud/vpc/v2/model/DeletePortResponse.h>
+#include <huaweicloud/vpc/v2/model/DeleteRouteTableRequest.h>
+#include <huaweicloud/vpc/v2/model/DeleteRouteTableResponse.h>
 #include <huaweicloud/vpc/v2/model/DeleteSecurityGroupRequest.h>
 #include <huaweicloud/vpc/v2/model/DeleteSecurityGroupResponse.h>
 #include <huaweicloud/vpc/v2/model/DeleteSecurityGroupRuleRequest.h>
 #include <huaweicloud/vpc/v2/model/DeleteSecurityGroupRuleResponse.h>
 #include <huaweicloud/vpc/v2/model/DeleteSubnetRequest.h>
 #include <huaweicloud/vpc/v2/model/DeleteSubnetResponse.h>
+#include <huaweicloud/vpc/v2/model/DeleteSubnetTagRequest.h>
+#include <huaweicloud/vpc/v2/model/DeleteSubnetTagResponse.h>
 #include <huaweicloud/vpc/v2/model/DeleteVpcPeeringRequest.h>
 #include <huaweicloud/vpc/v2/model/DeleteVpcPeeringResponse.h>
+#include <huaweicloud/vpc/v2/model/DisassociateRouteTableRequest.h>
+#include <huaweicloud/vpc/v2/model/DisassociateRouteTableResponse.h>
 #include <huaweicloud/vpc/v2/model/ListPortsRequest.h>
 #include <huaweicloud/vpc/v2/model/ListPortsResponse.h>
+#include <huaweicloud/vpc/v2/model/ListRouteTablesRequest.h>
+#include <huaweicloud/vpc/v2/model/ListRouteTablesResponse.h>
 #include <huaweicloud/vpc/v2/model/ListSecurityGroupRulesRequest.h>
 #include <huaweicloud/vpc/v2/model/ListSecurityGroupRulesResponse.h>
 #include <huaweicloud/vpc/v2/model/ListSecurityGroupsRequest.h>
 #include <huaweicloud/vpc/v2/model/ListSecurityGroupsResponse.h>
+#include <huaweicloud/vpc/v2/model/ListSubnetTagsRequest.h>
+#include <huaweicloud/vpc/v2/model/ListSubnetTagsResponse.h>
+#include <huaweicloud/vpc/v2/model/ListSubnetsByTagsRequest.h>
+#include <huaweicloud/vpc/v2/model/ListSubnetsByTagsRequestBody.h>
+#include <huaweicloud/vpc/v2/model/ListSubnetsByTagsResponse.h>
 #include <huaweicloud/vpc/v2/model/ListSubnetsRequest.h>
 #include <huaweicloud/vpc/v2/model/ListSubnetsResponse.h>
 #include <huaweicloud/vpc/v2/model/ListVpcPeeringsRequest.h>
 #include <huaweicloud/vpc/v2/model/ListVpcPeeringsResponse.h>
 #include <huaweicloud/vpc/v2/model/RejectVpcPeeringRequest.h>
 #include <huaweicloud/vpc/v2/model/RejectVpcPeeringResponse.h>
+#include <huaweicloud/vpc/v2/model/RoutetableAssociateReqbody.h>
 #include <huaweicloud/vpc/v2/model/ShowPortRequest.h>
 #include <huaweicloud/vpc/v2/model/ShowPortResponse.h>
 #include <huaweicloud/vpc/v2/model/ShowQuotaRequest.h>
 #include <huaweicloud/vpc/v2/model/ShowQuotaResponse.h>
+#include <huaweicloud/vpc/v2/model/ShowRouteTableRequest.h>
+#include <huaweicloud/vpc/v2/model/ShowRouteTableResponse.h>
 #include <huaweicloud/vpc/v2/model/ShowSecurityGroupRequest.h>
 #include <huaweicloud/vpc/v2/model/ShowSecurityGroupResponse.h>
 #include <huaweicloud/vpc/v2/model/ShowSecurityGroupRuleRequest.h>
 #include <huaweicloud/vpc/v2/model/ShowSecurityGroupRuleResponse.h>
 #include <huaweicloud/vpc/v2/model/ShowSubnetRequest.h>
 #include <huaweicloud/vpc/v2/model/ShowSubnetResponse.h>
+#include <huaweicloud/vpc/v2/model/ShowSubnetTagsRequest.h>
+#include <huaweicloud/vpc/v2/model/ShowSubnetTagsResponse.h>
 #include <huaweicloud/vpc/v2/model/ShowVpcPeeringRequest.h>
 #include <huaweicloud/vpc/v2/model/ShowVpcPeeringResponse.h>
 #include <huaweicloud/vpc/v2/model/UpdatePortRequest.h>
 #include <huaweicloud/vpc/v2/model/UpdatePortRequestBody.h>
 #include <huaweicloud/vpc/v2/model/UpdatePortResponse.h>
+#include <huaweicloud/vpc/v2/model/UpdateRouteTableRequest.h>
+#include <huaweicloud/vpc/v2/model/UpdateRouteTableResponse.h>
+#include <huaweicloud/vpc/v2/model/UpdateRoutetableReqBody.h>
 #include <huaweicloud/vpc/v2/model/UpdateSubnetRequest.h>
 #include <huaweicloud/vpc/v2/model/UpdateSubnetRequestBody.h>
 #include <huaweicloud/vpc/v2/model/UpdateSubnetResponse.h>
@@ -79,6 +114,29 @@
 #include <huaweicloud/vpc/v2/model/ShowNetworkIpAvailabilitiesResponse.h>
 #include <huaweicloud/vpc/v2/model/ShowPrivateipRequest.h>
 #include <huaweicloud/vpc/v2/model/ShowPrivateipResponse.h>
+#include <string>
+
+#include <huaweicloud/vpc/v2/model/NeutronCreateSecurityGroupRequest.h>
+#include <huaweicloud/vpc/v2/model/NeutronCreateSecurityGroupRequestBody.h>
+#include <huaweicloud/vpc/v2/model/NeutronCreateSecurityGroupResponse.h>
+#include <huaweicloud/vpc/v2/model/NeutronCreateSecurityGroupRuleRequest.h>
+#include <huaweicloud/vpc/v2/model/NeutronCreateSecurityGroupRuleRequestBody.h>
+#include <huaweicloud/vpc/v2/model/NeutronCreateSecurityGroupRuleResponse.h>
+#include <huaweicloud/vpc/v2/model/NeutronDeleteSecurityGroupRequest.h>
+#include <huaweicloud/vpc/v2/model/NeutronDeleteSecurityGroupResponse.h>
+#include <huaweicloud/vpc/v2/model/NeutronDeleteSecurityGroupRuleRequest.h>
+#include <huaweicloud/vpc/v2/model/NeutronDeleteSecurityGroupRuleResponse.h>
+#include <huaweicloud/vpc/v2/model/NeutronListSecurityGroupRulesRequest.h>
+#include <huaweicloud/vpc/v2/model/NeutronListSecurityGroupRulesResponse.h>
+#include <huaweicloud/vpc/v2/model/NeutronListSecurityGroupsRequest.h>
+#include <huaweicloud/vpc/v2/model/NeutronListSecurityGroupsResponse.h>
+#include <huaweicloud/vpc/v2/model/NeutronShowSecurityGroupRequest.h>
+#include <huaweicloud/vpc/v2/model/NeutronShowSecurityGroupResponse.h>
+#include <huaweicloud/vpc/v2/model/NeutronShowSecurityGroupRuleRequest.h>
+#include <huaweicloud/vpc/v2/model/NeutronShowSecurityGroupRuleResponse.h>
+#include <huaweicloud/vpc/v2/model/NeutronUpdateSecurityGroupRequest.h>
+#include <huaweicloud/vpc/v2/model/NeutronUpdateSecurityGroupRequestBody.h>
+#include <huaweicloud/vpc/v2/model/NeutronUpdateSecurityGroupResponse.h>
 #include <string>
 
 #include <huaweicloud/vpc/v2/model/NeutronAddFirewallRuleRequest.h>
@@ -125,8 +183,17 @@
 #include <huaweicloud/vpc/v2/model/NeutronUpdateFirewallRuleResponse.h>
 #include <string>
 
+#include <huaweicloud/vpc/v2/model/BatchCreateVpcTagsRequest.h>
+#include <huaweicloud/vpc/v2/model/BatchCreateVpcTagsRequestBody.h>
+#include <huaweicloud/vpc/v2/model/BatchCreateVpcTagsResponse.h>
+#include <huaweicloud/vpc/v2/model/BatchDeleteVpcTagsRequest.h>
+#include <huaweicloud/vpc/v2/model/BatchDeleteVpcTagsRequestBody.h>
+#include <huaweicloud/vpc/v2/model/BatchDeleteVpcTagsResponse.h>
 #include <huaweicloud/vpc/v2/model/CreateVpcRequest.h>
 #include <huaweicloud/vpc/v2/model/CreateVpcRequestBody.h>
+#include <huaweicloud/vpc/v2/model/CreateVpcResourceTagRequest.h>
+#include <huaweicloud/vpc/v2/model/CreateVpcResourceTagRequestBody.h>
+#include <huaweicloud/vpc/v2/model/CreateVpcResourceTagResponse.h>
 #include <huaweicloud/vpc/v2/model/CreateVpcResponse.h>
 #include <huaweicloud/vpc/v2/model/CreateVpcRouteRequest.h>
 #include <huaweicloud/vpc/v2/model/CreateVpcRouteRequestBody.h>
@@ -135,14 +202,23 @@
 #include <huaweicloud/vpc/v2/model/DeleteVpcResponse.h>
 #include <huaweicloud/vpc/v2/model/DeleteVpcRouteRequest.h>
 #include <huaweicloud/vpc/v2/model/DeleteVpcRouteResponse.h>
+#include <huaweicloud/vpc/v2/model/DeleteVpcTagRequest.h>
+#include <huaweicloud/vpc/v2/model/DeleteVpcTagResponse.h>
 #include <huaweicloud/vpc/v2/model/ListVpcRoutesRequest.h>
 #include <huaweicloud/vpc/v2/model/ListVpcRoutesResponse.h>
+#include <huaweicloud/vpc/v2/model/ListVpcTagsRequest.h>
+#include <huaweicloud/vpc/v2/model/ListVpcTagsResponse.h>
+#include <huaweicloud/vpc/v2/model/ListVpcsByTagsRequest.h>
+#include <huaweicloud/vpc/v2/model/ListVpcsByTagsRequestBody.h>
+#include <huaweicloud/vpc/v2/model/ListVpcsByTagsResponse.h>
 #include <huaweicloud/vpc/v2/model/ListVpcsRequest.h>
 #include <huaweicloud/vpc/v2/model/ListVpcsResponse.h>
 #include <huaweicloud/vpc/v2/model/ShowVpcRequest.h>
 #include <huaweicloud/vpc/v2/model/ShowVpcResponse.h>
 #include <huaweicloud/vpc/v2/model/ShowVpcRouteRequest.h>
 #include <huaweicloud/vpc/v2/model/ShowVpcRouteResponse.h>
+#include <huaweicloud/vpc/v2/model/ShowVpcTagsRequest.h>
+#include <huaweicloud/vpc/v2/model/ShowVpcTagsResponse.h>
 #include <huaweicloud/vpc/v2/model/UpdateVpcRequest.h>
 #include <huaweicloud/vpc/v2/model/UpdateVpcRequestBody.h>
 #include <huaweicloud/vpc/v2/model/UpdateVpcResponse.h>
@@ -182,6 +258,39 @@ public:
         AcceptVpcPeeringRequest &request
     );
     /// <summary>
+    /// 子网关联路由表
+    /// </summary>
+    /// <remarks>
+    /// 路由表关联子网。子网关联路由表A后，再关联B，不需要先跟路由表A解关联再关联路由表B
+    /// </remarks>
+    /// <param name="routetableId">路由表ID</param>
+    /// <param name="routetableAssociate">关联路由表与子网请求体</param>
+    std::shared_ptr<AssociateRouteTableResponse> associateRouteTable(
+        AssociateRouteTableRequest &request
+    );
+    /// <summary>
+    /// 批量创建子网资源标签
+    /// </summary>
+    /// <remarks>
+    /// 为指定的子网资源实例批量添加标签。 此接口为幂等接口：创建时如果请求体中存在重复key则报错。创建时，不允许设置重复key数据，如果数据库已存在该key，就覆盖value的值。
+    /// </remarks>
+    /// <param name="subnetId">子网ID</param>
+    /// <param name="batchCreateSubnetTagsRequestBody">This is a auto create Body Object</param>
+    std::shared_ptr<BatchCreateSubnetTagsResponse> batchCreateSubnetTags(
+        BatchCreateSubnetTagsRequest &request
+    );
+    /// <summary>
+    /// 批量删除子网资源标签
+    /// </summary>
+    /// <remarks>
+    /// 为指定的子网资源实例批量删除标签 此接口为幂等接口：删除时，如果删除的标签不存在，默认处理成功；删除时不对标签字符集范围做校验。删除时tags结构体不能缺失，key不能为空，或者空字符串。
+    /// </remarks>
+    /// <param name="subnetId">子网ID</param>
+    /// <param name="batchDeleteSubnetTagsRequestBody">This is a auto create Body Object</param>
+    std::shared_ptr<BatchDeleteSubnetTagsResponse> batchDeleteSubnetTags(
+        BatchDeleteSubnetTagsRequest &request
+    );
+    /// <summary>
     /// 创建端口
     /// </summary>
     /// <remarks>
@@ -190,6 +299,16 @@ public:
     /// <param name="port">创建端口对象</param>
     std::shared_ptr<CreatePortResponse> createPort(
         CreatePortRequest &request
+    );
+    /// <summary>
+    /// 创建路由表
+    /// </summary>
+    /// <remarks>
+    /// 创建路由表
+    /// </remarks>
+    /// <param name="routetable">创建路由表对象，参见CreateRouteTableReq对象</param>
+    std::shared_ptr<CreateRouteTableResponse> createRouteTable(
+        CreateRouteTableRequest &request
     );
     /// <summary>
     /// 创建安全组
@@ -222,6 +341,17 @@ public:
         CreateSubnetRequest &request
     );
     /// <summary>
+    /// 创建子网资源标签
+    /// </summary>
+    /// <remarks>
+    /// 给指定子网资源实例增加标签信息。 此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
+    /// </remarks>
+    /// <param name="subnetId">子网ID</param>
+    /// <param name="createSubnetTagRequestBody">This is a auto create Body Object</param>
+    std::shared_ptr<CreateSubnetTagResponse> createSubnetTag(
+        CreateSubnetTagRequest &request
+    );
+    /// <summary>
     /// 创建对等连接
     /// </summary>
     /// <remarks>
@@ -240,6 +370,16 @@ public:
     /// <param name="portId">端口ID</param>
     std::shared_ptr<DeletePortResponse> deletePort(
         DeletePortRequest &request
+    );
+    /// <summary>
+    /// 删除路由表
+    /// </summary>
+    /// <remarks>
+    /// 删除路由表
+    /// </remarks>
+    /// <param name="routetableId">路由表ID</param>
+    std::shared_ptr<DeleteRouteTableResponse> deleteRouteTable(
+        DeleteRouteTableRequest &request
     );
     /// <summary>
     /// 删除安全组
@@ -273,6 +413,17 @@ public:
         DeleteSubnetRequest &request
     );
     /// <summary>
+    /// 删除子网资源标签
+    /// </summary>
+    /// <remarks>
+    /// 删除指定子网资源实例的标签信息。 该接口为幂等接口：删除的key不存在报404，Key不能为空或者空字符串
+    /// </remarks>
+    /// <param name="subnetId">子网ID</param>
+    /// <param name="key">功能说明：键值</param>
+    std::shared_ptr<DeleteSubnetTagResponse> deleteSubnetTag(
+        DeleteSubnetTagRequest &request
+    );
+    /// <summary>
     /// 删除对等连接
     /// </summary>
     /// <remarks>
@@ -281,6 +432,17 @@ public:
     /// <param name="peeringId">对等连接ID</param>
     std::shared_ptr<DeleteVpcPeeringResponse> deleteVpcPeering(
         DeleteVpcPeeringRequest &request
+    );
+    /// <summary>
+    /// 子网解关联路由表
+    /// </summary>
+    /// <remarks>
+    /// 子网解关联路由表
+    /// </remarks>
+    /// <param name="routetableId">路由表ID</param>
+    /// <param name="routetableAssociate">关联路由表与子网请求体</param>
+    std::shared_ptr<DisassociateRouteTableResponse> disassociateRouteTable(
+        DisassociateRouteTableRequest &request
     );
     /// <summary>
     /// 查询端口列表
@@ -300,9 +462,22 @@ public:
     /// <param name="marker">分页查询起始的资源ID，为空时查询第一页 (optional, default to &quot;&quot;)</param>
     /// <param name="fixedIps">按照fixed_ips&#x3D;ip_address或者fixed_ips&#x3D;subnet_id过滤查询 (optional, default to &quot;&quot;)</param>
     /// <param name="enterpriseProjectId">功能说明：企业项目ID，用于基于企业项目的权限管理。  取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。  若需要查询当前用户所有企业项目绑定的端口，请传参all_granted_eps。 (optional, default to &quot;&quot;)</param>
-    /// <param name="zoneId">功能说明：端口所属可用区 (optional, default to &quot;&quot;)</param>
     std::shared_ptr<ListPortsResponse> listPorts(
         ListPortsRequest &request
+    );
+    /// <summary>
+    /// 查询路由表列表
+    /// </summary>
+    /// <remarks>
+    /// 查询提交请求的帐户的所有路由表列表，并根据过滤条件进行过滤
+    /// </remarks>
+    /// <param name="limit">每页返回的个数 (optional, default to 0)</param>
+    /// <param name="marker">分页查询起始的资源ID，为空时为查询第一页 (optional, default to &quot;&quot;)</param>
+    /// <param name="id">路由表ID，可过滤对应ID的路由表 (optional, default to &quot;&quot;)</param>
+    /// <param name="vpcId">虚拟私有云ID，可过滤对应虚拟私有云包含的路由表 (optional, default to &quot;&quot;)</param>
+    /// <param name="subnetId">子网ID，可过滤对应子网关联的路由表 (optional, default to &quot;&quot;)</param>
+    std::shared_ptr<ListRouteTablesResponse> listRouteTables(
+        ListRouteTablesRequest &request
     );
     /// <summary>
     /// 查询安全组规则列表
@@ -330,6 +505,15 @@ public:
         ListSecurityGroupsRequest &request
     );
     /// <summary>
+    /// 查询子网项目标签
+    /// </summary>
+    /// <remarks>
+    /// 查询租户在指定区域和实例类型的所有标签集合
+    /// </remarks>
+    std::shared_ptr<ListSubnetTagsResponse> listSubnetTags(
+        ListSubnetTagsRequest &request
+    );
+    /// <summary>
     /// 查询子网列表
     /// </summary>
     /// <remarks>
@@ -338,9 +522,18 @@ public:
     /// <param name="limit">每页返回的个数 (optional, default to 0)</param>
     /// <param name="marker">分页查询起始的资源id，为空时查询第一页 (optional, default to &quot;&quot;)</param>
     /// <param name="vpcId">按照vpc_id过滤查询  企业项目细粒度授权场景下，该字段必传 (optional, default to &quot;&quot;)</param>
-    /// <param name="scope">功能说明：子网作用域 (optional, default to &quot;&quot;)</param>
     std::shared_ptr<ListSubnetsResponse> listSubnets(
         ListSubnetsRequest &request
+    );
+    /// <summary>
+    /// 查询子网资源实例
+    /// </summary>
+    /// <remarks>
+    /// 使用标签过滤实例
+    /// </remarks>
+    /// <param name="listSubnetsByTagsRequestBody">This is a auto create Body Object</param>
+    std::shared_ptr<ListSubnetsByTagsResponse> listSubnetsByTags(
+        ListSubnetsByTagsRequest &request
     );
     /// <summary>
     /// 查询对等连接列表
@@ -389,6 +582,16 @@ public:
         ShowQuotaRequest &request
     );
     /// <summary>
+    /// 查询路由表
+    /// </summary>
+    /// <remarks>
+    /// 查询路由表详情
+    /// </remarks>
+    /// <param name="routetableId">路由表ID</param>
+    std::shared_ptr<ShowRouteTableResponse> showRouteTable(
+        ShowRouteTableRequest &request
+    );
+    /// <summary>
     /// 查询安全组
     /// </summary>
     /// <remarks>
@@ -419,6 +622,16 @@ public:
         ShowSubnetRequest &request
     );
     /// <summary>
+    /// 查询子网资源标签
+    /// </summary>
+    /// <remarks>
+    /// 查询指定子网实例的标签信息。
+    /// </remarks>
+    /// <param name="subnetId">子网ID</param>
+    std::shared_ptr<ShowSubnetTagsResponse> showSubnetTags(
+        ShowSubnetTagsRequest &request
+    );
+    /// <summary>
     /// 查询对等连接
     /// </summary>
     /// <remarks>
@@ -438,6 +651,17 @@ public:
     /// <param name="port">更新端口对象</param>
     std::shared_ptr<UpdatePortResponse> updatePort(
         UpdatePortRequest &request
+    );
+    /// <summary>
+    /// 更新路由表
+    /// </summary>
+    /// <remarks>
+    /// 更新路由表，包括可以更新路由表的名称，描述，以及新增、更新、删除路由条目
+    /// </remarks>
+    /// <param name="routetableId">路由表ID</param>
+    /// <param name="routetable">更新路由表对象，参见UpdateRouteTableReq对象</param>
+    std::shared_ptr<UpdateRouteTableResponse> updateRouteTable(
+        UpdateRouteTableRequest &request
     );
     /// <summary>
     /// 更新子网
@@ -513,6 +737,114 @@ public:
     /// <param name="privateipId">私有IP ID</param>
     std::shared_ptr<ShowPrivateipResponse> showPrivateip(
         ShowPrivateipRequest &request
+    );
+    /// <summary>
+    /// 创建安全组
+    /// </summary>
+    /// <remarks>
+    /// 创建安全组
+    /// </remarks>
+    /// <param name="securityGroup">安全组对象</param>
+    std::shared_ptr<NeutronCreateSecurityGroupResponse> neutronCreateSecurityGroup(
+        NeutronCreateSecurityGroupRequest &request
+    );
+    /// <summary>
+    /// 创建安全组规则
+    /// </summary>
+    /// <remarks>
+    /// 创建安全组规则
+    /// </remarks>
+    /// <param name="securityGroupRule">安全组规则对象</param>
+    std::shared_ptr<NeutronCreateSecurityGroupRuleResponse> neutronCreateSecurityGroupRule(
+        NeutronCreateSecurityGroupRuleRequest &request
+    );
+    /// <summary>
+    /// 删除安全组
+    /// </summary>
+    /// <remarks>
+    /// 删除安全组
+    /// </remarks>
+    /// <param name="securityGroupId">安全组ID</param>
+    std::shared_ptr<NeutronDeleteSecurityGroupResponse> neutronDeleteSecurityGroup(
+        NeutronDeleteSecurityGroupRequest &request
+    );
+    /// <summary>
+    /// 删除安全组规则
+    /// </summary>
+    /// <remarks>
+    /// 删除安全组规则
+    /// </remarks>
+    /// <param name="securityGroupRuleId">安全组规则ID</param>
+    std::shared_ptr<NeutronDeleteSecurityGroupRuleResponse> neutronDeleteSecurityGroupRule(
+        NeutronDeleteSecurityGroupRuleRequest &request
+    );
+    /// <summary>
+    /// 查询安全组规则列表
+    /// </summary>
+    /// <remarks>
+    /// 查询提交请求的租户有权限查看的所有安全组规则。单次查询最多返回2000条数据，超过2000后会返回分页标记。分页查询请参考分页查询
+    /// </remarks>
+    /// <param name="limit">每页返回的个数 (optional, default to 0)</param>
+    /// <param name="marker">分页查询起始的资源ID，为空时查询第一页 (optional, default to &quot;&quot;)</param>
+    /// <param name="id">按照安全组规则对应的id过滤查询结果 (optional, default to &quot;&quot;)</param>
+    /// <param name="direction">按照安全组规则的方向过滤查询结果，支持ingress和egress进行过滤 (optional, default to &quot;&quot;)</param>
+    /// <param name="protocol">按照安全组规则的IP协议过滤查询结果 (optional, default to &quot;&quot;)</param>
+    /// <param name="ethertype">按照网络类型过滤查询结果，支持IPv4或者IPv6 (optional, default to &quot;&quot;)</param>
+    /// <param name="description">按照安全组规则的描述过滤查询结果 (optional, default to &quot;&quot;)</param>
+    /// <param name="remoteIpPrefix">按照与此安全组规则匹配的远端IP网段过滤查询结果 (optional, default to &quot;&quot;)</param>
+    /// <param name="remoteGroupId">按照与此安全组规则关联的远端安全组ID过滤查询结果 (optional, default to &quot;&quot;)</param>
+    /// <param name="securityGroupId">按照与此安全组规则所属的安全组ID过滤查询结果 (optional, default to &quot;&quot;)</param>
+    /// <param name="portRangeMax">按照最大端口过滤查询结果 (optional, default to &quot;&quot;)</param>
+    /// <param name="portRangeMin">按照最小端口过滤查询结果 (optional, default to &quot;&quot;)</param>
+    /// <param name="tenantId">按照安全组规则所属的项目ID过滤查询结果 (optional, default to &quot;&quot;)</param>
+    std::shared_ptr<NeutronListSecurityGroupRulesResponse> neutronListSecurityGroupRules(
+        NeutronListSecurityGroupRulesRequest &request
+    );
+    /// <summary>
+    /// 查询安全组列表
+    /// </summary>
+    /// <remarks>
+    /// 查询提交请求租户的所有安全组，单次查询最多返回2000条数据，超过2000后会返回分页标记。分页查询请参考分页查询 。
+    /// </remarks>
+    /// <param name="limit">每页返回的个数 (optional, default to 0)</param>
+    /// <param name="marker">分页查询起始的资源ID，为空时查询第一页 (optional, default to &quot;&quot;)</param>
+    /// <param name="id">按照安全组对应的ID过滤查询 (optional, default to &quot;&quot;)</param>
+    /// <param name="name">按照安全组的名称过滤查询 (optional, default to &quot;&quot;)</param>
+    /// <param name="description">按照安全组的描述过滤查询 (optional, default to &quot;&quot;)</param>
+    /// <param name="tenantId">按照安全组所属的项目ID过滤查询 (optional, default to &quot;&quot;)</param>
+    std::shared_ptr<NeutronListSecurityGroupsResponse> neutronListSecurityGroups(
+        NeutronListSecurityGroupsRequest &request
+    );
+    /// <summary>
+    /// 查询安全组
+    /// </summary>
+    /// <remarks>
+    /// 查询安全组详情
+    /// </remarks>
+    /// <param name="securityGroupId">安全组ID</param>
+    std::shared_ptr<NeutronShowSecurityGroupResponse> neutronShowSecurityGroup(
+        NeutronShowSecurityGroupRequest &request
+    );
+    /// <summary>
+    /// 查询安全组规则
+    /// </summary>
+    /// <remarks>
+    /// 查询安全组规则详情。
+    /// </remarks>
+    /// <param name="securityGroupRuleId">安全组规则ID</param>
+    std::shared_ptr<NeutronShowSecurityGroupRuleResponse> neutronShowSecurityGroupRule(
+        NeutronShowSecurityGroupRuleRequest &request
+    );
+    /// <summary>
+    /// 更新安全组
+    /// </summary>
+    /// <remarks>
+    /// 更新安全组
+    /// </remarks>
+    /// <param name="securityGroupId">安全组ID</param>
+    /// <param name="securityGroup">安全组</param>
+    std::shared_ptr<NeutronUpdateSecurityGroupResponse> neutronUpdateSecurityGroup(
+        NeutronUpdateSecurityGroupRequest &request
     );
     /// <summary>
     /// 插入网络ACL规则
@@ -707,6 +1039,28 @@ public:
         NeutronUpdateFirewallRuleRequest &request
     );
     /// <summary>
+    /// 批量创建VPC资源标签
+    /// </summary>
+    /// <remarks>
+    /// 为指定的VPC资源实例批量添加标签。 此接口为幂等接口：创建时如果请求体中存在重复key则报错。创建时，不允许设置重复key数据，如果数据库已存在该key，就覆盖value的值。
+    /// </remarks>
+    /// <param name="vpcId">功能说明：虚拟私有云唯一标识 取值范围：合法UUID 约束：ID对应的VPC必须存在</param>
+    /// <param name="batchCreateVpcTagsRequestBody">This is a auto create Body Object</param>
+    std::shared_ptr<BatchCreateVpcTagsResponse> batchCreateVpcTags(
+        BatchCreateVpcTagsRequest &request
+    );
+    /// <summary>
+    /// 批量删除VPC资源标签
+    /// </summary>
+    /// <remarks>
+    /// 为指定的VPC资源实例批量删除标签。 此接口为幂等接口：删除时，如果删除的标签不存在，默认处理成功；删除时不对标签字符集范围做校验。删除时tags结构体不能缺失，key不能为空，或者空字符串。
+    /// </remarks>
+    /// <param name="vpcId">功能说明：虚拟私有云唯一标识 取值范围：合法UUID 约束：ID对应的VPC必须存在</param>
+    /// <param name="batchDeleteVpcTagsRequestBody">This is a auto create Body Object</param>
+    std::shared_ptr<BatchDeleteVpcTagsResponse> batchDeleteVpcTags(
+        BatchDeleteVpcTagsRequest &request
+    );
+    /// <summary>
     /// 创建VPC
     /// </summary>
     /// <remarks>
@@ -715,6 +1069,17 @@ public:
     /// <param name="vpc">创建VPC对象</param>
     std::shared_ptr<CreateVpcResponse> createVpc(
         CreateVpcRequest &request
+    );
+    /// <summary>
+    /// 创建VPC资源标签
+    /// </summary>
+    /// <remarks>
+    /// 给指定VPC资源实例增加标签信息 此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
+    /// </remarks>
+    /// <param name="vpcId">功能说明：虚拟私有云唯一标识 取值范围：合法UUID 约束：ID对应的VPC必须存在</param>
+    /// <param name="createVpcResourceTagRequestBody">This is a auto create Body Object</param>
+    std::shared_ptr<CreateVpcResourceTagResponse> createVpcResourceTag(
+        CreateVpcResourceTagRequest &request
     );
     /// <summary>
     /// 创建VPC路由
@@ -747,6 +1112,17 @@ public:
         DeleteVpcRouteRequest &request
     );
     /// <summary>
+    /// 删除VPC资源标签
+    /// </summary>
+    /// <remarks>
+    /// 删除指定VPC资源实例的标签信息 该接口为幂等接口：删除的key不存在报404，Key不能为空或者空字符串
+    /// </remarks>
+    /// <param name="vpcId">功能说明：虚拟私有云唯一标识 取值范围：合法UUID 约束：ID对应的VPC必须存在</param>
+    /// <param name="key">功能说明：标签键</param>
+    std::shared_ptr<DeleteVpcTagResponse> deleteVpcTag(
+        DeleteVpcTagRequest &request
+    );
+    /// <summary>
     /// 查询VPC路由列表
     /// </summary>
     /// <remarks>
@@ -763,6 +1139,15 @@ public:
         ListVpcRoutesRequest &request
     );
     /// <summary>
+    /// 查询VPC项目标签
+    /// </summary>
+    /// <remarks>
+    /// 查询租户在指定区域和实例类型的所有标签集合
+    /// </remarks>
+    std::shared_ptr<ListVpcTagsResponse> listVpcTags(
+        ListVpcTagsRequest &request
+    );
+    /// <summary>
     /// 查询VPC列表
     /// </summary>
     /// <remarks>
@@ -774,6 +1159,16 @@ public:
     /// <param name="enterpriseProjectId">功能说明：企业项目ID。可以使用该字段过滤某个企业项目下的虚拟私有云。若未传值则默认返回所有企业项目绑定的虚拟私有云。  取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。若需要查询当前用户所有企业项目绑定的虚拟私有云，请传参all_granted_eps。 (optional, default to &quot;&quot;)</param>
     std::shared_ptr<ListVpcsResponse> listVpcs(
         ListVpcsRequest &request
+    );
+    /// <summary>
+    /// 查询VPC资源实例
+    /// </summary>
+    /// <remarks>
+    /// 使用标签过滤实例。
+    /// </remarks>
+    /// <param name="listVpcsByTagsRequestBody">This is a auto create Body Object</param>
+    std::shared_ptr<ListVpcsByTagsResponse> listVpcsByTags(
+        ListVpcsByTagsRequest &request
     );
     /// <summary>
     /// 查询VPC
@@ -794,6 +1189,16 @@ public:
     /// <param name="routeId">路由ID</param>
     std::shared_ptr<ShowVpcRouteResponse> showVpcRoute(
         ShowVpcRouteRequest &request
+    );
+    /// <summary>
+    /// 查询VPC资源标签
+    /// </summary>
+    /// <remarks>
+    /// 查询指定VPC实例的标签信息
+    /// </remarks>
+    /// <param name="vpcId">功能说明：虚拟私有云唯一标识 取值范围：合法UUID 约束：ID对应的VPC必须存在</param>
+    std::shared_ptr<ShowVpcTagsResponse> showVpcTags(
+        ShowVpcTagsRequest &request
     );
     /// <summary>
     /// 更新VPC

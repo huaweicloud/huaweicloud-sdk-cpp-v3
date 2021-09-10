@@ -24,6 +24,8 @@ ListImageByTagsRequestBody::ListImageByTagsRequestBody()
     offset_ = "";
     offsetIsSet_ = false;
     matchesIsSet_ = false;
+    withoutAnyTag_ = false;
+    withoutAnyTagIsSet_ = false;
 }
 
 ListImageByTagsRequestBody::~ListImageByTagsRequestBody() = default;
@@ -59,6 +61,9 @@ web::json::value ListImageByTagsRequestBody::toJson() const
     }
     if(matchesIsSet_) {
         val[utility::conversions::to_string_t("matches")] = ModelBase::toJson(matches_);
+    }
+    if(withoutAnyTagIsSet_) {
+        val[utility::conversions::to_string_t("without_any_tag")] = ModelBase::toJson(withoutAnyTag_);
     }
 
     return val;
@@ -138,6 +143,15 @@ bool ListImageByTagsRequestBody::fromJson(const web::json::value& val)
             std::vector<TagKeyValue> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setMatches(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("without_any_tag"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("without_any_tag"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setWithoutAnyTag(refVal);
         }
     }
     return ok;
@@ -310,6 +324,27 @@ bool ListImageByTagsRequestBody::matchesIsSet() const
 void ListImageByTagsRequestBody::unsetmatches()
 {
     matchesIsSet_ = false;
+}
+
+bool ListImageByTagsRequestBody::isWithoutAnyTag() const
+{
+    return withoutAnyTag_;
+}
+
+void ListImageByTagsRequestBody::setWithoutAnyTag(bool value)
+{
+    withoutAnyTag_ = value;
+    withoutAnyTagIsSet_ = true;
+}
+
+bool ListImageByTagsRequestBody::withoutAnyTagIsSet() const
+{
+    return withoutAnyTagIsSet_;
+}
+
+void ListImageByTagsRequestBody::unsetwithoutAnyTag()
+{
+    withoutAnyTagIsSet_ = false;
 }
 
 }

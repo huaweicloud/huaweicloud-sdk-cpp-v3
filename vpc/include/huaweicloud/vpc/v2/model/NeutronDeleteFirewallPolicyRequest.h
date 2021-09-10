@@ -40,7 +40,7 @@ public:
     /// NeutronDeleteFirewallPolicyRequest members
 
     /// <summary>
-    /// 
+    /// 网络ACL防火墙策略ID
     /// </summary>
 
     std::string getFirewallPolicyId() const;

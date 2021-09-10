@@ -40,7 +40,7 @@ public:
     /// ShowSnapshotRequest members
 
     /// <summary>
-    /// 
+    /// 快照ID。
     /// </summary>
 
     std::string getSnapshotId() const;

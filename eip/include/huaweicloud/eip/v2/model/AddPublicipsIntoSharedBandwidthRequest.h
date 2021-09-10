@@ -41,7 +41,7 @@ public:
     /// AddPublicipsIntoSharedBandwidthRequest members
 
     /// <summary>
-    /// 
+    /// 带宽唯一标识
     /// </summary>
 
     std::string getBandwidthId() const;

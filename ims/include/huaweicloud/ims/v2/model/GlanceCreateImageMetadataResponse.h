@@ -284,6 +284,33 @@ public:
     void unsetproperties();
     void setProperties(const Object& value);
 
+    /// <summary>
+    /// 表示当前镜像来源是从外部导入。取值：file
+    /// </summary>
+
+    std::string getRootOrigin() const;
+    bool rootOriginIsSet() const;
+    void unsetrootOrigin();
+    void setRootOrigin(const std::string& value);
+
+    /// <summary>
+    /// 镜像文件md5值。
+    /// </summary>
+
+    std::string getChecksum() const;
+    bool checksumIsSet() const;
+    void unsetchecksum();
+    void setChecksum(const std::string& value);
+
+    /// <summary>
+    /// 目前暂时不使用。
+    /// </summary>
+
+    int64_t getSize() const;
+    bool sizeIsSet() const;
+    void unsetsize();
+    void setSize(int64_t value);
+
 
 protected:
     std::string visibility_;
@@ -340,6 +367,12 @@ protected:
     bool virtualSizeIsSet_;
     Object properties_;
     bool propertiesIsSet_;
+    std::string rootOrigin_;
+    bool rootOriginIsSet_;
+    std::string checksum_;
+    bool checksumIsSet_;
+    int64_t size_;
+    bool sizeIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

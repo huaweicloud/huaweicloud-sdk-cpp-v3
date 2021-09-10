@@ -40,7 +40,7 @@ public:
     /// ListResizeFlavorsRequest members
 
     /// <summary>
-    /// 
+    /// 进行规格切换的云服务器ID，UUID格式。
     /// </summary>
 
     std::string getInstanceUuid() const;
@@ -49,7 +49,7 @@ public:
     void setInstanceUuid(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 单页面可显示的flavor条数最大值，默认是1000。
     /// </summary>
 
     int32_t getLimit() const;
@@ -58,7 +58,7 @@ public:
     void setLimit(int32_t value);
 
     /// <summary>
-    /// 
+    /// 以单页最后一条flavor的ID作为分页标记。
     /// </summary>
 
     std::string getMarker() const;
@@ -67,7 +67,7 @@ public:
     void setMarker(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 升序/降序排序，默认值为：asc。  取值范围：  - asc：表示升序。 - desc：表示降序
     /// </summary>
 
     std::string getSortDir() const;
@@ -76,7 +76,7 @@ public:
     void setSortDir(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 排序字段。  key的取值范围：  - flavorid：表示规格ID。 - sort_key的默认值为“flavorid”。 - name：表示规格名称。 - memory_mb：表示内存大小。 - vcpus：表示CPU大小。 - root_gb：表示系统盘大小。
     /// </summary>
 
     std::string getSortKey() const;
@@ -85,7 +85,7 @@ public:
     void setSortKey(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 进行规格切换的云服务器源规格ID。
     /// </summary>
 
     std::string getSourceFlavorId() const;
@@ -94,7 +94,7 @@ public:
     void setSourceFlavorId(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 进行规格切换的云服务器源规格名称。
     /// </summary>
 
     std::string getSourceFlavorName() const;

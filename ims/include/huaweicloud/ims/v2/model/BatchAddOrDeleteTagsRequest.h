@@ -41,7 +41,7 @@ public:
     /// BatchAddOrDeleteTagsRequest members
 
     /// <summary>
-    /// 
+    /// 镜像ID。
     /// </summary>
 
     std::string getImageId() const;

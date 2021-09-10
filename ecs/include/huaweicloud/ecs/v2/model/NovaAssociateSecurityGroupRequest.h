@@ -41,7 +41,7 @@ public:
     /// NovaAssociateSecurityGroupRequest members
 
     /// <summary>
-    /// 
+    /// 弹性云服务器ID。
     /// </summary>
 
     std::string getServerId() const;

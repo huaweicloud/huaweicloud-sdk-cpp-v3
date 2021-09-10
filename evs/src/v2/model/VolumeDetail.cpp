@@ -74,6 +74,8 @@ VolumeDetail::VolumeDetail()
     wwnIsSet_ = false;
     enterpriseProjectId_ = "";
     enterpriseProjectIdIsSet_ = false;
+    serialNumber_ = "";
+    serialNumberIsSet_ = false;
 }
 
 VolumeDetail::~VolumeDetail() = default;
@@ -184,6 +186,9 @@ web::json::value VolumeDetail::toJson() const
     }
     if(enterpriseProjectIdIsSet_) {
         val[utility::conversions::to_string_t("enterprise_project_id")] = ModelBase::toJson(enterpriseProjectId_);
+    }
+    if(serialNumberIsSet_) {
+        val[utility::conversions::to_string_t("serial_number")] = ModelBase::toJson(serialNumber_);
     }
 
     return val;
@@ -488,6 +493,15 @@ bool VolumeDetail::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEnterpriseProjectId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("serial_number"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("serial_number"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSerialNumber(refVal);
         }
     }
     return ok;
@@ -1185,6 +1199,27 @@ bool VolumeDetail::enterpriseProjectIdIsSet() const
 void VolumeDetail::unsetenterpriseProjectId()
 {
     enterpriseProjectIdIsSet_ = false;
+}
+
+std::string VolumeDetail::getSerialNumber() const
+{
+    return serialNumber_;
+}
+
+void VolumeDetail::setSerialNumber(const std::string& value)
+{
+    serialNumber_ = value;
+    serialNumberIsSet_ = true;
+}
+
+bool VolumeDetail::serialNumberIsSet() const
+{
+    return serialNumberIsSet_;
+}
+
+void VolumeDetail::unsetserialNumber()
+{
+    serialNumberIsSet_ = false;
 }
 
 }

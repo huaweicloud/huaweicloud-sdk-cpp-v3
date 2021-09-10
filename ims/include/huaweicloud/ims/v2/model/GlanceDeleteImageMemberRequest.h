@@ -40,7 +40,7 @@ public:
     /// GlanceDeleteImageMemberRequest members
 
     /// <summary>
-    /// 
+    /// 镜像id
     /// </summary>
 
     std::string getImageId() const;
@@ -49,7 +49,7 @@ public:
     void setImageId(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 成员id
     /// </summary>
 
     std::string getMemberId() const;

@@ -40,7 +40,7 @@ public:
     /// DetachServerVolumeRequest members
 
     /// <summary>
-    /// 
+    /// 云服务器ID。
     /// </summary>
 
     std::string getServerId() const;
@@ -49,7 +49,7 @@ public:
     void setServerId(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 磁盘ID。
     /// </summary>
 
     std::string getVolumeId() const;
@@ -58,7 +58,7 @@ public:
     void setVolumeId(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 是否强制卸载数据盘。  - 是，值为“1”。  - 否，值为“0”。  默认值为0。
     /// </summary>
 
     std::string getDeleteFlag() const;

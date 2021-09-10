@@ -41,7 +41,7 @@ public:
     /// UpdatePortRequest members
 
     /// <summary>
-    /// 
+    /// 端口ID
     /// </summary>
 
     std::string getPortId() const;

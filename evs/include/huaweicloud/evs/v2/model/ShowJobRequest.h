@@ -40,7 +40,7 @@ public:
     /// ShowJobRequest members
 
     /// <summary>
-    /// 
+    /// job ID。
     /// </summary>
 
     std::string getJobId() const;

@@ -40,7 +40,7 @@ public:
     /// GlanceCreateTagRequest members
 
     /// <summary>
-    /// 
+    /// 镜像id
     /// </summary>
 
     std::string getImageId() const;
@@ -49,7 +49,7 @@ public:
     void setImageId(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 新增的tag。字符串中不能包含“&#x3D;”和“.”。
     /// </summary>
 
     std::string getTag() const;

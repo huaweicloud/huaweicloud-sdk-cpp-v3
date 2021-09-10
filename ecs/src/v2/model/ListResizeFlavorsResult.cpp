@@ -39,6 +39,7 @@ ListResizeFlavorsResult::ListResizeFlavorsResult()
     osFlavorAccessisPublicIsSet_ = false;
     linksIsSet_ = false;
     extraSpecsIsSet_ = false;
+    instanceQuotaIsSet_ = false;
 }
 
 ListResizeFlavorsResult::~ListResizeFlavorsResult() = default;
@@ -92,6 +93,9 @@ web::json::value ListResizeFlavorsResult::toJson() const
     }
     if(extraSpecsIsSet_) {
         val[utility::conversions::to_string_t("extra_specs")] = ModelBase::toJson(extraSpecs_);
+    }
+    if(instanceQuotaIsSet_) {
+        val[utility::conversions::to_string_t("instance_quota")] = ModelBase::toJson(instanceQuota_);
     }
 
     return val;
@@ -225,6 +229,15 @@ bool ListResizeFlavorsResult::fromJson(const web::json::value& val)
             FlavorExtraSpec refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setExtraSpecs(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("instance_quota"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("instance_quota"));
+        if(!fieldValue.is_null())
+        {
+            Object refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setInstanceQuota(refVal);
         }
     }
     return ok;
@@ -523,6 +536,27 @@ bool ListResizeFlavorsResult::extraSpecsIsSet() const
 void ListResizeFlavorsResult::unsetextraSpecs()
 {
     extraSpecsIsSet_ = false;
+}
+
+Object ListResizeFlavorsResult::getInstanceQuota() const
+{
+    return instanceQuota_;
+}
+
+void ListResizeFlavorsResult::setInstanceQuota(const Object& value)
+{
+    instanceQuota_ = value;
+    instanceQuotaIsSet_ = true;
+}
+
+bool ListResizeFlavorsResult::instanceQuotaIsSet() const
+{
+    return instanceQuotaIsSet_;
+}
+
+void ListResizeFlavorsResult::unsetinstanceQuota()
+{
+    instanceQuotaIsSet_ = false;
 }
 
 }

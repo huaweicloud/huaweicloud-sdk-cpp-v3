@@ -98,10 +98,10 @@ public:
     /// 密钥ID。
     /// </summary>
 
-    std::string getId() const;
+    int32_t getId() const;
     bool idIsSet() const;
     void unsetid();
-    void setId(const std::string& value);
+    void setId(int32_t value);
 
     /// <summary>
     /// 密钥更新时间。
@@ -144,7 +144,7 @@ protected:
     bool deletedIsSet_;
     utility::datetime deletedAt_;
     bool deletedAtIsSet_;
-    std::string id_;
+    int32_t id_;
     bool idIsSet_;
     utility::datetime updatedAt_;
     bool updatedAtIsSet_;

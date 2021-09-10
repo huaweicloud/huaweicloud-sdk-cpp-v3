@@ -41,7 +41,7 @@ public:
     /// BatchDeletePublicipTagsRequest members
 
     /// <summary>
-    /// 
+    /// 资源ID
     /// </summary>
 
     std::string getPublicipId() const;

@@ -93,6 +93,8 @@ ServerDetail::ServerDetail()
     enterpriseProjectId_ = "";
     enterpriseProjectIdIsSet_ = false;
     sysTagsIsSet_ = false;
+    cpuOptionsIsSet_ = false;
+    hypervisorIsSet_ = false;
 }
 
 ServerDetail::~ServerDetail() = default;
@@ -239,6 +241,12 @@ web::json::value ServerDetail::toJson() const
     }
     if(sysTagsIsSet_) {
         val[utility::conversions::to_string_t("sys_tags")] = ModelBase::toJson(sysTags_);
+    }
+    if(cpuOptionsIsSet_) {
+        val[utility::conversions::to_string_t("cpu_options")] = ModelBase::toJson(cpuOptions_);
+    }
+    if(hypervisorIsSet_) {
+        val[utility::conversions::to_string_t("hypervisor")] = ModelBase::toJson(hypervisor_);
     }
 
     return val;
@@ -651,6 +659,24 @@ bool ServerDetail::fromJson(const web::json::value& val)
             std::vector<ServerSystemTag> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSysTags(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("cpu_options"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("cpu_options"));
+        if(!fieldValue.is_null())
+        {
+            CpuOptions refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCpuOptions(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("hypervisor"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("hypervisor"));
+        if(!fieldValue.is_null())
+        {
+            Hypervisor refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHypervisor(refVal);
         }
     }
     return ok;
@@ -1600,6 +1626,48 @@ bool ServerDetail::sysTagsIsSet() const
 void ServerDetail::unsetsysTags()
 {
     sysTagsIsSet_ = false;
+}
+
+CpuOptions ServerDetail::getCpuOptions() const
+{
+    return cpuOptions_;
+}
+
+void ServerDetail::setCpuOptions(const CpuOptions& value)
+{
+    cpuOptions_ = value;
+    cpuOptionsIsSet_ = true;
+}
+
+bool ServerDetail::cpuOptionsIsSet() const
+{
+    return cpuOptionsIsSet_;
+}
+
+void ServerDetail::unsetcpuOptions()
+{
+    cpuOptionsIsSet_ = false;
+}
+
+Hypervisor ServerDetail::getHypervisor() const
+{
+    return hypervisor_;
+}
+
+void ServerDetail::setHypervisor(const Hypervisor& value)
+{
+    hypervisor_ = value;
+    hypervisorIsSet_ = true;
+}
+
+bool ServerDetail::hypervisorIsSet() const
+{
+    return hypervisorIsSet_;
+}
+
+void ServerDetail::unsethypervisor()
+{
+    hypervisorIsSet_ = false;
 }
 
 }

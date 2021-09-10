@@ -41,7 +41,7 @@ public:
     /// NeutronUpdateFloatingIpRequest members
 
     /// <summary>
-    /// 
+    /// floatingip的ID
     /// </summary>
 
     std::string getFloatingipId() const;

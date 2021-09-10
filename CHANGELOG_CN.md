@@ -1,3 +1,40 @@
+# 3.0.9-beta 2021-09-10
+
+## HuaweiCloud SDK EVS
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`CreateVolume`的请求参数`size`改为必填
+
+### HuaweiCloud SDK FRS
+
+- _新增特性_
+  - 支持人脸识别服务
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+    - 支持文字识别服务
+- _解决问题_
+    - 无
+- _特性变更_
+    - 无
+
+### HuaweiCloud SDK VOD
+
+- _新增特性_
+    - 支持视频点播服务
+- _解决问题_
+    - 无
+- _特性变更_
+    - 无
+
 # 3.0.8-beta 2021-03-19
 
 ### HuaweiCloud SDK ECS

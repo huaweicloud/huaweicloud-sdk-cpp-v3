@@ -226,7 +226,7 @@ public:
     /// 制作镜像
     /// </summary>
     /// <remarks>
-    /// 本接口用于制作私有镜像，支持： 使用云服务器制作私有镜像。 使用上传至OBS桶中的外部镜像文件制作私有镜像。 使用数据卷制作系统盘镜像。 作为异步接口，调用成功，只是说明云平台收到了制作请求，镜像是否制作成功需要通过异步任务查询接口查询该任务的执行状态，具体请参考异步任务查询。
+    /// 本接口用于制作私有镜像，支持： - 使用云服务器制作私有镜像。 - 使用上传至OBS桶中的外部镜像文件制作私有镜像。 - 使用数据卷制作系统盘镜像。  作为异步接口，调用成功，只是说明云平台收到了制作请求，镜像是否制作成功需要通过异步任务查询接口查询该任务的执行状态，具体请参考异步任务查询。  不同场景必选参数说明：  - 使用云服务器制作镜像时的请求的必选参数：name,instance_id。 - 使用上传至OBS桶中的外部镜像文件时的请求必选参数：name,image_url,min_disk。 - 使用数据卷制作系统盘镜像时的请求必选参数：name,volume_id,os_version
     /// </remarks>
     /// <param name="eCSbodyparam">使用云服务器制作镜像时的Request Body</param>
     std::shared_ptr<CreateImageResponse> createImage(
@@ -537,7 +537,7 @@ public:
     /// <param name="isregistered">镜像是否是受保护，取值为true/false。一般查询公共镜像时候取值为true，查询私有镜像可以不指定。 (optional, default to false)</param>
     /// <param name="osBit">操作系统位数，一般取值为32或者64 (optional, default to &quot;&quot;)</param>
     /// <param name="osType">镜像系统类型，取值为Linux，Windows，Other (optional, default to &quot;&quot;)</param>
-    /// <param name="platform">镜像平台分类，取值为Windows，Ubuntu，RedHat，SUSE，CentOS，Debian，OpenSUSE, Oracle Linux，Fedora，Other，CoreOS和EuleOS (optional, default to &quot;&quot;)</param>
+    /// <param name="platform">镜像平台分类，取值为Windows，Ubuntu，RedHat，SUSE，CentOS，Debian，OpenSUSE, Oracle Linux，Fedora，Other，CoreOS和EulerOS (optional, default to &quot;&quot;)</param>
     /// <param name="supportDiskintensive">表示该镜像支持密集存储。如果镜像支持密集存储性能，则值为true，否则无需增加该属性 (optional, default to &quot;&quot;)</param>
     /// <param name="supportHighperformance">表示该镜像支持高计算性能。如果镜像支持高计算性能，则值为true，否则无需增加该属性 (optional, default to &quot;&quot;)</param>
     /// <param name="supportKvm">如果镜像支持KVM，取值为true，否则无需增加该属性 (optional, default to &quot;&quot;)</param>

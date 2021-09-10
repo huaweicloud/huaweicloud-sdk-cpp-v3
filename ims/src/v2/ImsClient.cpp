@@ -1711,7 +1711,7 @@ std::shared_ptr<GlanceUpdateImageResponse> ImsClient::glanceUpdateImage(GlanceUp
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
+    std::string contentType = getContentType("application/openstack-images-v2.1-json-patch", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
 

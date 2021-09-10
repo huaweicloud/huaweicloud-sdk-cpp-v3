@@ -44,6 +44,8 @@ PublicipShowResp::PublicipShowResp()
     publicIpv6AddressIsSet_ = false;
     ipVersion_ = 0;
     ipVersionIsSet_ = false;
+    publicBorderGroup_ = "";
+    publicBorderGroupIsSet_ = false;
 }
 
 PublicipShowResp::~PublicipShowResp() = default;
@@ -103,6 +105,9 @@ web::json::value PublicipShowResp::toJson() const
     }
     if(ipVersionIsSet_) {
         val[utility::conversions::to_string_t("ip_version")] = ModelBase::toJson(ipVersion_);
+    }
+    if(publicBorderGroupIsSet_) {
+        val[utility::conversions::to_string_t("public_border_group")] = ModelBase::toJson(publicBorderGroup_);
     }
 
     return val;
@@ -254,6 +259,15 @@ bool PublicipShowResp::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIpVersion(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("public_border_group"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("public_border_group"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPublicBorderGroup(refVal);
         }
     }
     return ok;
@@ -594,6 +608,27 @@ bool PublicipShowResp::ipVersionIsSet() const
 void PublicipShowResp::unsetipVersion()
 {
     ipVersionIsSet_ = false;
+}
+
+std::string PublicipShowResp::getPublicBorderGroup() const
+{
+    return publicBorderGroup_;
+}
+
+void PublicipShowResp::setPublicBorderGroup(const std::string& value)
+{
+    publicBorderGroup_ = value;
+    publicBorderGroupIsSet_ = true;
+}
+
+bool PublicipShowResp::publicBorderGroupIsSet() const
+{
+    return publicBorderGroupIsSet_;
+}
+
+void PublicipShowResp::unsetpublicBorderGroup()
+{
+    publicBorderGroupIsSet_ = false;
 }
 
 }

@@ -47,6 +47,8 @@ ListVolumesRequest::ListVolumesRequest()
     idsIsSet_ = false;
     enterpriseProjectId_ = "";
     enterpriseProjectIdIsSet_ = false;
+    serverId_ = "";
+    serverIdIsSet_ = false;
 }
 
 ListVolumesRequest::~ListVolumesRequest() = default;
@@ -109,6 +111,9 @@ web::json::value ListVolumesRequest::toJson() const
     }
     if(enterpriseProjectIdIsSet_) {
         val[utility::conversions::to_string_t("enterprise_project_id")] = ModelBase::toJson(enterpriseProjectId_);
+    }
+    if(serverIdIsSet_) {
+        val[utility::conversions::to_string_t("server_id")] = ModelBase::toJson(serverId_);
     }
 
     return val;
@@ -269,6 +274,15 @@ bool ListVolumesRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEnterpriseProjectId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("server_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("server_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setServerId(refVal);
         }
     }
     return ok;
@@ -630,6 +644,27 @@ bool ListVolumesRequest::enterpriseProjectIdIsSet() const
 void ListVolumesRequest::unsetenterpriseProjectId()
 {
     enterpriseProjectIdIsSet_ = false;
+}
+
+std::string ListVolumesRequest::getServerId() const
+{
+    return serverId_;
+}
+
+void ListVolumesRequest::setServerId(const std::string& value)
+{
+    serverId_ = value;
+    serverIdIsSet_ = true;
+}
+
+bool ListVolumesRequest::serverIdIsSet() const
+{
+    return serverIdIsSet_;
+}
+
+void ListVolumesRequest::unsetserverId()
+{
+    serverIdIsSet_ = false;
 }
 
 }

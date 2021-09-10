@@ -22,6 +22,16 @@ InterfaceAttachment::InterfaceAttachment()
     portIdIsSet_ = false;
     portState_ = "";
     portStateIsSet_ = false;
+    deleteOnTermination_ = false;
+    deleteOnTerminationIsSet_ = false;
+    driverMode_ = "";
+    driverModeIsSet_ = false;
+    minRate_ = 0;
+    minRateIsSet_ = false;
+    multiqueueNum_ = 0;
+    multiqueueNumIsSet_ = false;
+    pciAddress_ = "";
+    pciAddressIsSet_ = false;
 }
 
 InterfaceAttachment::~InterfaceAttachment() = default;
@@ -48,6 +58,21 @@ web::json::value InterfaceAttachment::toJson() const
     }
     if(portStateIsSet_) {
         val[utility::conversions::to_string_t("port_state")] = ModelBase::toJson(portState_);
+    }
+    if(deleteOnTerminationIsSet_) {
+        val[utility::conversions::to_string_t("delete_on_termination")] = ModelBase::toJson(deleteOnTermination_);
+    }
+    if(driverModeIsSet_) {
+        val[utility::conversions::to_string_t("driver_mode")] = ModelBase::toJson(driverMode_);
+    }
+    if(minRateIsSet_) {
+        val[utility::conversions::to_string_t("min_rate")] = ModelBase::toJson(minRate_);
+    }
+    if(multiqueueNumIsSet_) {
+        val[utility::conversions::to_string_t("multiqueue_num")] = ModelBase::toJson(multiqueueNum_);
+    }
+    if(pciAddressIsSet_) {
+        val[utility::conversions::to_string_t("pci_address")] = ModelBase::toJson(pciAddress_);
     }
 
     return val;
@@ -100,6 +125,51 @@ bool InterfaceAttachment::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPortState(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("delete_on_termination"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("delete_on_termination"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDeleteOnTermination(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("driver_mode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("driver_mode"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDriverMode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("min_rate"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("min_rate"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMinRate(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("multiqueue_num"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("multiqueue_num"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMultiqueueNum(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("pci_address"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("pci_address"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPciAddress(refVal);
         }
     }
     return ok;
@@ -209,6 +279,111 @@ bool InterfaceAttachment::portStateIsSet() const
 void InterfaceAttachment::unsetportState()
 {
     portStateIsSet_ = false;
+}
+
+bool InterfaceAttachment::isDeleteOnTermination() const
+{
+    return deleteOnTermination_;
+}
+
+void InterfaceAttachment::setDeleteOnTermination(bool value)
+{
+    deleteOnTermination_ = value;
+    deleteOnTerminationIsSet_ = true;
+}
+
+bool InterfaceAttachment::deleteOnTerminationIsSet() const
+{
+    return deleteOnTerminationIsSet_;
+}
+
+void InterfaceAttachment::unsetdeleteOnTermination()
+{
+    deleteOnTerminationIsSet_ = false;
+}
+
+std::string InterfaceAttachment::getDriverMode() const
+{
+    return driverMode_;
+}
+
+void InterfaceAttachment::setDriverMode(const std::string& value)
+{
+    driverMode_ = value;
+    driverModeIsSet_ = true;
+}
+
+bool InterfaceAttachment::driverModeIsSet() const
+{
+    return driverModeIsSet_;
+}
+
+void InterfaceAttachment::unsetdriverMode()
+{
+    driverModeIsSet_ = false;
+}
+
+int32_t InterfaceAttachment::getMinRate() const
+{
+    return minRate_;
+}
+
+void InterfaceAttachment::setMinRate(int32_t value)
+{
+    minRate_ = value;
+    minRateIsSet_ = true;
+}
+
+bool InterfaceAttachment::minRateIsSet() const
+{
+    return minRateIsSet_;
+}
+
+void InterfaceAttachment::unsetminRate()
+{
+    minRateIsSet_ = false;
+}
+
+int32_t InterfaceAttachment::getMultiqueueNum() const
+{
+    return multiqueueNum_;
+}
+
+void InterfaceAttachment::setMultiqueueNum(int32_t value)
+{
+    multiqueueNum_ = value;
+    multiqueueNumIsSet_ = true;
+}
+
+bool InterfaceAttachment::multiqueueNumIsSet() const
+{
+    return multiqueueNumIsSet_;
+}
+
+void InterfaceAttachment::unsetmultiqueueNum()
+{
+    multiqueueNumIsSet_ = false;
+}
+
+std::string InterfaceAttachment::getPciAddress() const
+{
+    return pciAddress_;
+}
+
+void InterfaceAttachment::setPciAddress(const std::string& value)
+{
+    pciAddress_ = value;
+    pciAddressIsSet_ = true;
+}
+
+bool InterfaceAttachment::pciAddressIsSet() const
+{
+    return pciAddressIsSet_;
+}
+
+void InterfaceAttachment::unsetpciAddress()
+{
+    pciAddressIsSet_ = false;
 }
 
 }

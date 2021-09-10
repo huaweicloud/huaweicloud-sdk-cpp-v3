@@ -40,7 +40,7 @@ public:
     /// NovaShowServerRequest members
 
     /// <summary>
-    /// 
+    /// 云服务器ID。
     /// </summary>
 
     std::string getServerId() const;
@@ -49,7 +49,7 @@ public:
     void setServerId(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 微版本头
     /// </summary>
 
     std::string getOpenStackAPIVersion() const;

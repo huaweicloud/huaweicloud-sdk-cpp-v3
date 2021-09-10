@@ -41,7 +41,7 @@ public:
     /// GlanceDeleteImageRequest members
 
     /// <summary>
-    /// 
+    /// 镜像ID
     /// </summary>
 
     std::string getImageId() const;

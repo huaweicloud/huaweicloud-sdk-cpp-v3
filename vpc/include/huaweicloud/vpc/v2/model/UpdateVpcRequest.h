@@ -41,7 +41,7 @@ public:
     /// UpdateVpcRequest members
 
     /// <summary>
-    /// 
+    /// 虚拟私有云ID
     /// </summary>
 
     std::string getVpcId() const;

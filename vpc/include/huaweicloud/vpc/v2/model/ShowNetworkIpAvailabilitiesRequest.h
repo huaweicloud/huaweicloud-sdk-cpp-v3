@@ -40,7 +40,7 @@ public:
     /// ShowNetworkIpAvailabilitiesRequest members
 
     /// <summary>
-    /// 
+    /// 网络ID
     /// </summary>
 
     std::string getNetworkId() const;

@@ -41,7 +41,7 @@ public:
     /// NeutronListFirewallGroupsRequest members
 
     /// <summary>
-    /// 
+    /// 分页查询起始的资源ID，为空时查询第一页
     /// </summary>
 
     std::string getMarker() const;
@@ -50,7 +50,7 @@ public:
     void setMarker(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 每页返回的个数
     /// </summary>
 
     int32_t getLimit() const;
@@ -59,7 +59,7 @@ public:
     void setLimit(int32_t value);
 
     /// <summary>
-    /// 
+    /// 使用id过滤网络ACL组
     /// </summary>
 
     std::vector<std::string>& getId();
@@ -68,7 +68,7 @@ public:
     void setId(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 
+    /// 使用name过滤ACL组
     /// </summary>
 
     std::vector<std::string>& getName();
@@ -77,7 +77,7 @@ public:
     void setName(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 
+    /// 使用description过滤ACL组
     /// </summary>
 
     std::vector<std::string>& getDescription();
@@ -86,7 +86,7 @@ public:
     void setDescription(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 
+    /// 使用入方向的网络ACL策略ID过滤网络ACL组
     /// </summary>
 
     std::string getIngressFirewallPolicyId() const;
@@ -95,7 +95,7 @@ public:
     void setIngressFirewallPolicyId(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 使用出方向的网络ACL策略过滤查询网络ACL组
     /// </summary>
 
     std::string getEgressFirewallPolicyId() const;

@@ -40,7 +40,7 @@ public:
     /// NovaListKeypairsRequest members
 
     /// <summary>
-    /// 
+    /// 查询返回秘钥数量限制。  在微版本2.35后支持
     /// </summary>
 
     int32_t getLimit() const;
@@ -49,7 +49,7 @@ public:
     void setLimit(int32_t value);
 
     /// <summary>
-    /// 
+    /// 从marker指定的keypair的名称的下一条数据开始查询。  在微版本2.35后支持。
     /// </summary>
 
     std::string getMarker() const;
@@ -58,7 +58,7 @@ public:
     void setMarker(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 微版本头
     /// </summary>
 
     std::string getOpenStackAPIVersion() const;

@@ -32,6 +32,8 @@ BatchBandwidthResp::BatchBandwidthResp()
     tenantIdIsSet_ = false;
     status_ = "";
     statusIsSet_ = false;
+    publicBorderGroup_ = "";
+    publicBorderGroupIsSet_ = false;
 }
 
 BatchBandwidthResp::~BatchBandwidthResp() = default;
@@ -73,6 +75,9 @@ web::json::value BatchBandwidthResp::toJson() const
     }
     if(statusIsSet_) {
         val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
+    }
+    if(publicBorderGroupIsSet_) {
+        val[utility::conversions::to_string_t("public_border_group")] = ModelBase::toJson(publicBorderGroup_);
     }
 
     return val;
@@ -170,6 +175,15 @@ bool BatchBandwidthResp::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("public_border_group"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("public_border_group"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPublicBorderGroup(refVal);
         }
     }
     return ok;
@@ -384,6 +398,27 @@ bool BatchBandwidthResp::statusIsSet() const
 void BatchBandwidthResp::unsetstatus()
 {
     statusIsSet_ = false;
+}
+
+std::string BatchBandwidthResp::getPublicBorderGroup() const
+{
+    return publicBorderGroup_;
+}
+
+void BatchBandwidthResp::setPublicBorderGroup(const std::string& value)
+{
+    publicBorderGroup_ = value;
+    publicBorderGroupIsSet_ = true;
+}
+
+bool BatchBandwidthResp::publicBorderGroupIsSet() const
+{
+    return publicBorderGroupIsSet_;
+}
+
+void BatchBandwidthResp::unsetpublicBorderGroup()
+{
+    publicBorderGroupIsSet_ = false;
 }
 
 }

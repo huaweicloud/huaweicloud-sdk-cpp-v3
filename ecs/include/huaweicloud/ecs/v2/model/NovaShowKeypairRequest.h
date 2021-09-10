@@ -40,7 +40,7 @@ public:
     /// NovaShowKeypairRequest members
 
     /// <summary>
-    /// 
+    /// 密钥名称信息。
     /// </summary>
 
     std::string getKeypairName() const;
@@ -49,7 +49,7 @@ public:
     void setKeypairName(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 微版本头
     /// </summary>
 
     std::string getOpenStackAPIVersion() const;

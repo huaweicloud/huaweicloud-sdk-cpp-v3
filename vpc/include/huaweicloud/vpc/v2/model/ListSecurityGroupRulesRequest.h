@@ -40,7 +40,7 @@ public:
     /// ListSecurityGroupRulesRequest members
 
     /// <summary>
-    /// 
+    /// 功能说明：分页查询起始的资源ID，为空时查询第一页
     /// </summary>
 
     std::string getMarker() const;
@@ -49,7 +49,7 @@ public:
     void setMarker(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 每页返回的个数
     /// </summary>
 
     int32_t getLimit() const;
@@ -58,7 +58,7 @@ public:
     void setLimit(int32_t value);
 
     /// <summary>
-    /// 
+    /// 安全组ID
     /// </summary>
 
     std::string getSecurityGroupId() const;

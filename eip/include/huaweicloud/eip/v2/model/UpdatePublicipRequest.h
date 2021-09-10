@@ -41,7 +41,7 @@ public:
     /// UpdatePublicipRequest members
 
     /// <summary>
-    /// 
+    /// 弹性公网IP唯一标识
     /// </summary>
 
     std::string getPublicipId() const;

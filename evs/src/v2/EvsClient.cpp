@@ -574,6 +574,9 @@ std::shared_ptr<ListVolumesResponse> EvsClient::listVolumes(ListVolumesRequest &
     if (request.enterpriseProjectIdIsSet()) {
         localVarQueryParams["enterprise_project_id"] = parameterToString(request.getEnterpriseProjectId());
     }
+    if (request.serverIdIsSet()) {
+        localVarQueryParams["server_id"] = parameterToString(request.getServerId());
+    }
 
     std::string localVarHttpBody;
 

@@ -40,7 +40,7 @@ public:
     /// ShowSubnetRequest members
 
     /// <summary>
-    /// 
+    /// 子网ID
     /// </summary>
 
     std::string getSubnetId() const;

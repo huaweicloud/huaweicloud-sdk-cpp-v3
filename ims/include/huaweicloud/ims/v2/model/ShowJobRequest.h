@@ -40,7 +40,7 @@ public:
     /// ShowJobRequest members
 
     /// <summary>
-    /// 
+    /// 异步任务ID
     /// </summary>
 
     std::string getJobId() const;

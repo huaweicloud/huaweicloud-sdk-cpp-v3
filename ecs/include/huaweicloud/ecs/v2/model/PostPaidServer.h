@@ -68,7 +68,7 @@ public:
     void setAdminPass(const std::string& value);
 
     /// <summary>
-    /// 待创建云服务器所在的可用分区，需要指定可用分区（AZ）的名称。  请参考[地区和终端节点](https://developer.huaweicloud.com/endpoint)获取。
+    /// 待创建云服务器所在的可用分区，需要指定可用分区（AZ）的名称。  可通过接口 [查询可用区列表接口](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;ECS&amp;api&#x3D;NovaListAvailabilityZones) 获取，也可参考[地区和终端节点](https://developer.huaweicloud.com/endpoint)获取。
     /// </summary>
 
     std::string getAvailabilityZone() const;
@@ -104,7 +104,7 @@ public:
     void setExtendparam(const PostPaidServerExtendParam& value);
 
     /// <summary>
-    /// 待创建云服务器的系统规格的ID。  已上线的规格请参见《[弹性云服务器产品介绍](https://support.huaweicloud.com/ecs/index.html)》的“实例类型与规格”章节。
+    /// 待创建云服务器的系统规格的ID。  可通过 [规格列表接口](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;ECS&amp;api&#x3D;ListFlavors) 查询，该接口支持通过 availability_zone 参数过滤出待创建云服务器可用区下可用的规格。  已上线的各规格详情介绍请参见《[弹性云服务器产品介绍](https://support.huaweicloud.com/ecs/index.html)》的“实例类型与规格”章节。
     /// </summary>
 
     std::string getFlavorRef() const;
@@ -113,7 +113,7 @@ public:
     void setFlavorRef(const std::string& value);
 
     /// <summary>
-    /// 待创建云服务器的系统镜像，需要指定已创建镜像的ID，ID格式为通用唯一识别码（Universally Unique Identifier，简称UUID）。
+    /// 待创建云服务器的系统镜像，需要指定已创建镜像的ID，ID格式为通用唯一识别码（Universally Unique Identifier，简称UUID）。  镜像的ID可以从镜像服务的 [查询镜像列表](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;IMS&amp;api&#x3D;ListImages) 接口获取，该接口可根据 __imagetype、__os_type 等参数过滤选择合适镜像。
     /// </summary>
 
     std::string getImageRef() const;
@@ -131,7 +131,7 @@ public:
     void setIsAutoRename(bool value);
 
     /// <summary>
-    /// 如果需要使用SSH密钥方式登录云服务器，请指定已创建密钥的名称。  密钥可以通过密钥创建接口进行创建 [创建和导入SSH密钥](https://support.huaweicloud.com/api-ecs/zh-cn_topic_0020212678.html)（请参见），或使用SSH密钥查询接口查询已有的密钥（请参见[查询SSH密钥列表](https://support.huaweicloud.com/api-ecs/zh-cn_topic_0020212676.html) ）。
+    /// 如果需要使用SSH密钥方式登录云服务器，请指定已创建密钥的名称。  密钥可以通过密钥创建接口进行创建（请参见[创建和导入SSH密钥](https://support.huaweicloud.com/api-ecs/zh-cn_topic_0020212678.html)），或使用SSH密钥查询接口查询已有的密钥（请参见[查询SSH密钥列表](https://support.huaweicloud.com/api-ecs/ecs_03_1201.html)）。
     /// </summary>
 
     std::string getKeyName() const;
@@ -158,7 +158,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 待创建云服务器的网卡信息。  约束：  - 网卡对应的子网（subnet）必须属于vpcid对应的VPC。 - 当前单个云服务器支持最多挂载12张网卡。
+    /// 待创建云服务器的网卡信息。  约束：  - 网卡对应的子网（subnet）必须属于vpcid对应的VPC。 - 当前单个云服务器支持最多挂载12张网卡。 - 不同的规格对网卡上限有一定的区别，参考[规格清单](https://support.huaweicloud.com/productdesc-ecs/zh-cn_topic_0159822360.html)。
     /// </summary>
 
     std::vector<PostPaidServerNic>& getNics();
@@ -221,7 +221,7 @@ public:
     void setTags(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 创建云服务器过程中待注入用户数据。支持注入文本、文本文件或gzip文件。  更多关于待注入用户数据的信息，请参见《弹性云服务器用户指南 》的“用户数据注入”章节。  约束：  - 注入内容，需要进行base64格式编码。注入内容（编码之前的内容）最大长度32KB。 - 创建密码方式鉴权的Linux弹性云服务器时，该字段可为root用户注入自定义初始化密码，具体注入密码的使用方法请参见接口描述（设置登录鉴权方式）。 示例（base64编码前）：  - Linux弹性云服务器  &#x60;&#x60;&#x60; #! /bin/bash echo user_test &gt;&gt; /home/user.txt  &#x60;&#x60;&#x60;  - Windows弹性云服务器  &#x60;&#x60;&#x60; rem cmd echo 111 &gt; c:\\aaa.tx &#x60;&#x60;&#x60;
+    /// 创建云服务器过程中待注入用户数据。支持注入文本、文本文件或gzip文件。  更多关于待注入用户数据的信息，请参见《弹性云服务器用户指南 》的“[用户数据注入](https://support.huaweicloud.com/usermanual-ecs/zh-cn_topic_0032380449.html)”章节。  约束：  - 注入内容，需要进行base64格式编码。注入内容（编码之前的内容）最大长度32KB。 - 创建密码方式鉴权的Linux弹性云服务器时，该字段可为root用户注入自定义初始化密码，具体注入密码的使用方法请参见接口描述（设置登录鉴权方式）。 示例（base64编码前）：  - Linux弹性云服务器  &#x60;&#x60;&#x60; #! /bin/bash echo user_test &gt;&gt; /home/user.txt &#x60;&#x60;&#x60;  - Windows弹性云服务器  &#x60;&#x60;&#x60; rem cmd echo 111 &gt; c:\\\\aaa.tx &#x60;&#x60;&#x60;
     /// </summary>
 
     std::string getUserData() const;
@@ -230,7 +230,7 @@ public:
     void setUserData(const std::string& value);
 
     /// <summary>
-    /// 待创建云服务器所属虚拟私有云（简称VPC），需要指定已创建VPC的ID，UUID格式。
+    /// 待创建云服务器所属虚拟私有云（简称VPC），需要指定已创建VPC的ID，UUID格式。  可通过 [查询VPC列表](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;VPC&amp;api&#x3D;ListVpcs) 接口查询。
     /// </summary>
 
     std::string getVpcid() const;

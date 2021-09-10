@@ -40,7 +40,7 @@ public:
     /// ListBandwidthsRequest members
 
     /// <summary>
-    /// 
+    /// 取值为上一页数据的最后一条记录的id，为空时为查询第一页
     /// </summary>
 
     std::string getMarker() const;
@@ -49,7 +49,7 @@ public:
     void setMarker(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 功能说明：每页返回的个数  取值范围：0~intmax
     /// </summary>
 
     int32_t getLimit() const;
@@ -58,7 +58,7 @@ public:
     void setLimit(int32_t value);
 
     /// <summary>
-    /// 
+    /// 功能说明：企业项目ID。可以使用该字段过滤某个企业项目下的虚拟私有云。  取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。若需要查询当前用户所有企业项目绑定的虚拟私有云，请传参all_granted_eps。
     /// </summary>
 
     std::string getEnterpriseProjectId() const;
@@ -67,7 +67,7 @@ public:
     void setEnterpriseProjectId(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 功能说明：带宽类型，标识是否是共享带宽 取值范围：WHOLE，PER WHOLE表示共享带宽；PER，表示独享带宽
     /// </summary>
 
     std::string getShareType() const;

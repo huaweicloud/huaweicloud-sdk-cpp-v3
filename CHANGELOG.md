@@ -1,3 +1,41 @@
+# 3.0.9-beta 2021-09-10
+
+### HuaweiCloud SDK EVS
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Set the request parameter `size` of the interface `CreateVolume` to `required`.
+
+### HuaweiCloud SDK FRS
+
+- _Features_
+  - Support `Face Recognition Service`.
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+    - Support service `Optical Character Recognition` .
+- _Bug Fix_
+    - None
+- _Change_
+    - None
+
+### HuaweiCloud SDK VOD
+
+- _Features_
+  - Support service `Video on Demand`.
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+
 # 3.0.8-beta 2021-03-19
 
 ### HuaweiCloud SDK ECS

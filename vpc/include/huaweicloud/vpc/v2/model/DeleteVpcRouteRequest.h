@@ -40,7 +40,7 @@ public:
     /// DeleteVpcRouteRequest members
 
     /// <summary>
-    /// 
+    /// 路由ID
     /// </summary>
 
     std::string getRouteId() const;

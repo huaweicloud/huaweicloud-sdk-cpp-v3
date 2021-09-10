@@ -40,7 +40,7 @@ public:
     /// CreatePublicipBandwidthOption members
 
     /// <summary>
-    /// 功能说明：按流量计费还是按带宽计费。  其中IPv6国外默认是bandwidth，国内默认是traffic。取值为traffic，表示流量计费。
+    /// 功能说明：按流量计费还是按带宽计费。 取值范围：bandwidth，traffic。  不填或为空时默认是bandwidth。  其中IPv6国外默认是bandwidth，国内默认是traffic。取值为traffic，表示流量计费。
     /// </summary>
 
     std::string getChargeMode() const;
@@ -67,7 +67,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 功能说明：带宽类型 取值范围：PER，WHOLE。 约束：该字段为WHOLE时，必须指定带宽ID。
+    /// 功能说明：带宽类型 取值范围：PER，WHOLE(PER为独占带宽，WHOLE是共享带宽)。 约束：该字段为WHOLE时，必须指定带宽ID。
     /// </summary>
 
     std::string getShareType() const;

@@ -66,6 +66,15 @@ public:
     void unsetsize();
     void setSize(int32_t value);
 
+    /// <summary>
+    /// 功能说明：表示中心站点资源或者边缘站点资源，对接了边缘站点的区域需传此字段 取值范围： center、边缘站点名称 上线区域：华北-乌兰察布一，华南-广州 约束：共享带宽只能插入与该字段相同的publicip
+    /// </summary>
+
+    std::string getPublicBorderGroup() const;
+    bool publicBorderGroupIsSet() const;
+    void unsetpublicBorderGroup();
+    void setPublicBorderGroup(const std::string& value);
+
 
 protected:
     int32_t count_;
@@ -74,6 +83,8 @@ protected:
     bool nameIsSet_;
     int32_t size_;
     bool sizeIsSet_;
+    std::string publicBorderGroup_;
+    bool publicBorderGroupIsSet_;
 
 };
 

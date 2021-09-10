@@ -21,6 +21,10 @@ NovaCreateServersSchedulerHint::NovaCreateServersSchedulerHint()
     cidrIsSet_ = false;
     buildNearHostIp_ = "";
     buildNearHostIpIsSet_ = false;
+    tenancy_ = "";
+    tenancyIsSet_ = false;
+    dedicatedHostId_ = "";
+    dedicatedHostIdIsSet_ = false;
 }
 
 NovaCreateServersSchedulerHint::~NovaCreateServersSchedulerHint() = default;
@@ -47,6 +51,12 @@ web::json::value NovaCreateServersSchedulerHint::toJson() const
     }
     if(buildNearHostIpIsSet_) {
         val[utility::conversions::to_string_t("build_near_host_ip")] = ModelBase::toJson(buildNearHostIp_);
+    }
+    if(tenancyIsSet_) {
+        val[utility::conversions::to_string_t("tenancy")] = ModelBase::toJson(tenancy_);
+    }
+    if(dedicatedHostIdIsSet_) {
+        val[utility::conversions::to_string_t("dedicated_host_id")] = ModelBase::toJson(dedicatedHostId_);
     }
 
     return val;
@@ -99,6 +109,24 @@ bool NovaCreateServersSchedulerHint::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBuildNearHostIp(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("tenancy"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("tenancy"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTenancy(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("dedicated_host_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("dedicated_host_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDedicatedHostId(refVal);
         }
     }
     return ok;
@@ -208,6 +236,48 @@ bool NovaCreateServersSchedulerHint::buildNearHostIpIsSet() const
 void NovaCreateServersSchedulerHint::unsetbuildNearHostIp()
 {
     buildNearHostIpIsSet_ = false;
+}
+
+std::string NovaCreateServersSchedulerHint::getTenancy() const
+{
+    return tenancy_;
+}
+
+void NovaCreateServersSchedulerHint::setTenancy(const std::string& value)
+{
+    tenancy_ = value;
+    tenancyIsSet_ = true;
+}
+
+bool NovaCreateServersSchedulerHint::tenancyIsSet() const
+{
+    return tenancyIsSet_;
+}
+
+void NovaCreateServersSchedulerHint::unsettenancy()
+{
+    tenancyIsSet_ = false;
+}
+
+std::string NovaCreateServersSchedulerHint::getDedicatedHostId() const
+{
+    return dedicatedHostId_;
+}
+
+void NovaCreateServersSchedulerHint::setDedicatedHostId(const std::string& value)
+{
+    dedicatedHostId_ = value;
+    dedicatedHostIdIsSet_ = true;
+}
+
+bool NovaCreateServersSchedulerHint::dedicatedHostIdIsSet() const
+{
+    return dedicatedHostIdIsSet_;
+}
+
+void NovaCreateServersSchedulerHint::unsetdedicatedHostId()
+{
+    dedicatedHostIdIsSet_ = false;
 }
 
 }

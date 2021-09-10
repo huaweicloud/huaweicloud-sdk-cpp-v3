@@ -8,6 +8,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/ecs/v2/model/FlavorExtraSpec.h>
+#include <huaweicloud/core/utils/Object.h>
 #include <string>
 #include <huaweicloud/ecs/v2/model/FlavorLink.h>
 #include <vector>
@@ -168,6 +169,15 @@ public:
     void unsetextraSpecs();
     void setExtraSpecs(const FlavorExtraSpec& value);
 
+    /// <summary>
+    /// 预留属性。
+    /// </summary>
+
+    Object getInstanceQuota() const;
+    bool instanceQuotaIsSet() const;
+    void unsetinstanceQuota();
+    void setInstanceQuota(const Object& value);
+
 
 protected:
     std::string id_;
@@ -198,6 +208,8 @@ protected:
     bool linksIsSet_;
     FlavorExtraSpec extraSpecs_;
     bool extraSpecsIsSet_;
+    Object instanceQuota_;
+    bool instanceQuotaIsSet_;
 
 };
 

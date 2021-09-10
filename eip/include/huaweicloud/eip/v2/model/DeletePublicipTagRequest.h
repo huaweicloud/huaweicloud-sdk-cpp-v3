@@ -40,7 +40,7 @@ public:
     /// DeletePublicipTagRequest members
 
     /// <summary>
-    /// 
+    /// 弹性公网IP的id
     /// </summary>
 
     std::string getPublicipId() const;
@@ -49,7 +49,7 @@ public:
     void setPublicipId(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 标签的键
     /// </summary>
 
     std::string getKey() const;

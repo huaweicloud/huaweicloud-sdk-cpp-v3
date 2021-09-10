@@ -19,8 +19,6 @@ ListSubnetsRequest::ListSubnetsRequest()
     markerIsSet_ = false;
     vpcId_ = "";
     vpcIdIsSet_ = false;
-    scope_ = "";
-    scopeIsSet_ = false;
 }
 
 ListSubnetsRequest::~ListSubnetsRequest() = default;
@@ -41,9 +39,6 @@ web::json::value ListSubnetsRequest::toJson() const
     }
     if(vpcIdIsSet_) {
         val[utility::conversions::to_string_t("vpc_id")] = ModelBase::toJson(vpcId_);
-    }
-    if(scopeIsSet_) {
-        val[utility::conversions::to_string_t("scope")] = ModelBase::toJson(scope_);
     }
 
     return val;
@@ -78,15 +73,6 @@ bool ListSubnetsRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setVpcId(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("scope"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("scope"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setScope(refVal);
         }
     }
     return ok;
@@ -154,27 +140,6 @@ bool ListSubnetsRequest::vpcIdIsSet() const
 void ListSubnetsRequest::unsetvpcId()
 {
     vpcIdIsSet_ = false;
-}
-
-std::string ListSubnetsRequest::getScope() const
-{
-    return scope_;
-}
-
-void ListSubnetsRequest::setScope(const std::string& value)
-{
-    scope_ = value;
-    scopeIsSet_ = true;
-}
-
-bool ListSubnetsRequest::scopeIsSet() const
-{
-    return scopeIsSet_;
-}
-
-void ListSubnetsRequest::unsetscope()
-{
-    scopeIsSet_ = false;
 }
 
 }

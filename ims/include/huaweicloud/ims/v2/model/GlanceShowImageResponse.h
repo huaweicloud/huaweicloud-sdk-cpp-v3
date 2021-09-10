@@ -266,24 +266,6 @@ public:
     void setCreatedAt(const std::string& value);
 
     /// <summary>
-    /// 是否是删除的镜像，取值为true或者false。
-    /// </summary>
-
-    bool isDeleted() const;
-    bool deletedIsSet() const;
-    void unsetdeleted();
-    void setDeleted(bool value);
-
-    /// <summary>
-    /// 删除时间。格式为UTC时间
-    /// </summary>
-
-    std::string getDeletedAt() const;
-    bool deletedAtIsSet() const;
-    void unsetdeletedAt();
-    void setDeletedAt(const std::string& value);
-
-    /// <summary>
     /// 镜像的格式，目前支持vhd，zvhd、raw，qcow2,zvhd2。默认值是vhd。
     /// </summary>
 
@@ -481,6 +463,114 @@ public:
     void unsetisOffshelved();
     void setIsOffshelved(const std::string& value);
 
+    /// <summary>
+    /// 镜像是否支持延迟加载。取值为True或False。
+    /// </summary>
+
+    std::string getLazyloading() const;
+    bool lazyloadingIsSet() const;
+    void unsetlazyloading();
+    void setLazyloading(const std::string& value);
+
+    /// <summary>
+    /// 镜像附加属性。该属性采用JSON格式来标识镜像支持的高级特性清单。
+    /// </summary>
+
+    std::string getOsFeatureList() const;
+    bool osFeatureListIsSet() const;
+    void unsetosFeatureList();
+    void setOsFeatureList(const std::string& value);
+
+    /// <summary>
+    /// 表示当前镜像来源是从外部导入。取值：file。
+    /// </summary>
+
+    std::string getRootOrigin() const;
+    bool rootOriginIsSet() const;
+    void unsetrootOrigin();
+    void setRootOrigin(const std::string& value);
+
+    /// <summary>
+    /// 目前暂时不用
+    /// </summary>
+
+    std::string getSequenceNum() const;
+    bool sequenceNumIsSet() const;
+    void unsetsequenceNum();
+    void setSequenceNum(const std::string& value);
+
+    /// <summary>
+    /// 镜像是否支持企业主机安全或主机监控。 hss：企业主机安全 ces：主机监控
+    /// </summary>
+
+    std::string getSupportAgentList() const;
+    bool supportAgentListIsSet() const;
+    void unsetsupportAgentList();
+    void setSupportAgentList(const std::string& value);
+
+    /// <summary>
+    /// 加密镜像所使用的密钥ID。
+    /// </summary>
+
+    std::string getSystemCmkid() const;
+    bool systemCmkidIsSet() const;
+    void unsetsystemCmkid();
+    void setSystemCmkid(const std::string& value);
+
+    /// <summary>
+    /// 镜像状态变为正常的时间。
+    /// </summary>
+
+    std::string getActiveAt() const;
+    bool activeAtIsSet() const;
+    void unsetactiveAt();
+    void setActiveAt(const std::string& value);
+
+    /// <summary>
+    /// 镜像是否支持网卡多队列。取值为true或者false。
+    /// </summary>
+
+    std::string getHwVifMultiqueueEnabled() const;
+    bool hwVifMultiqueueEnabledIsSet() const;
+    void unsethwVifMultiqueueEnabled();
+    void setHwVifMultiqueueEnabled(const std::string& value);
+
+    /// <summary>
+    /// 镜像支持的最大内存，单位为MB。取值可以参考云服务器规格限制，一般不设置。
+    /// </summary>
+
+    std::string getMaxRam() const;
+    bool maxRamIsSet() const;
+    void unsetmaxRam();
+    void setMaxRam(const std::string& value);
+
+    /// <summary>
+    /// 镜像的存储位置。
+    /// </summary>
+
+    std::string getImageLocation() const;
+    bool imageLocationIsSet() const;
+    void unsetimageLocation();
+    void setImageLocation(const std::string& value);
+
+    /// <summary>
+    /// 是否完成了初始化配置。取值为true或false
+    /// </summary>
+
+    std::string getIsConfigInit() const;
+    bool isConfigInitIsSet() const;
+    void unsetisConfigInit();
+    void setIsConfigInit(const std::string& value);
+
+    /// <summary>
+    /// 收费镜像标识。
+    /// </summary>
+
+    std::string getAccountCode() const;
+    bool accountCodeIsSet() const;
+    void unsetaccountCode();
+    void setAccountCode(const std::string& value);
+
 
 protected:
     std::string backupId_;
@@ -533,10 +623,6 @@ protected:
     bool containerFormatIsSet_;
     std::string createdAt_;
     bool createdAtIsSet_;
-    bool deleted_;
-    bool deletedIsSet_;
-    std::string deletedAt_;
-    bool deletedAtIsSet_;
     std::string diskFormat_;
     bool diskFormatIsSet_;
     std::string file_;
@@ -581,6 +667,30 @@ protected:
     bool supportArmIsSet_;
     std::string isOffshelved_;
     bool isOffshelvedIsSet_;
+    std::string lazyloading_;
+    bool lazyloadingIsSet_;
+    std::string osFeatureList_;
+    bool osFeatureListIsSet_;
+    std::string rootOrigin_;
+    bool rootOriginIsSet_;
+    std::string sequenceNum_;
+    bool sequenceNumIsSet_;
+    std::string supportAgentList_;
+    bool supportAgentListIsSet_;
+    std::string systemCmkid_;
+    bool systemCmkidIsSet_;
+    std::string activeAt_;
+    bool activeAtIsSet_;
+    std::string hwVifMultiqueueEnabled_;
+    bool hwVifMultiqueueEnabledIsSet_;
+    std::string maxRam_;
+    bool maxRamIsSet_;
+    std::string imageLocation_;
+    bool imageLocationIsSet_;
+    std::string isConfigInit_;
+    bool isConfigInitIsSet_;
+    std::string accountCode_;
+    bool accountCodeIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

@@ -40,7 +40,7 @@ public:
     /// NeutronListFloatingIpsRequest members
 
     /// <summary>
-    /// 
+    /// 每页显示的条目数量。
     /// </summary>
 
     std::string getLimit() const;
@@ -49,7 +49,7 @@ public:
     void setLimit(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 取值为上一页数据的最后一条记录的id，当marker参数为无效id时，response将响应错误码400
     /// </summary>
 
     std::string getMarker() const;
@@ -58,7 +58,7 @@ public:
     void setMarker(const std::string& value);
 
     /// <summary>
-    /// 
+    /// False/True，是否设置分页的顺序。
     /// </summary>
 
     bool isPageReverse() const;
@@ -67,7 +67,7 @@ public:
     void setPageReverse(bool value);
 
     /// <summary>
-    /// 
+    /// 浮动IP的id。
     /// </summary>
 
     std::string getId() const;
@@ -76,7 +76,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 浮动IP地址。
     /// </summary>
 
     std::string getFloatingIpAddress() const;
@@ -85,7 +85,7 @@ public:
     void setFloatingIpAddress(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 所属路由器id。
     /// </summary>
 
     std::string getRouterId() const;
@@ -94,7 +94,7 @@ public:
     void setRouterId(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 端口id。
     /// </summary>
 
     std::string getPortId() const;
@@ -103,7 +103,7 @@ public:
     void setPortId(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 关联端口的私有IP地址。
     /// </summary>
 
     std::string getFixedIpAddress() const;
@@ -112,7 +112,7 @@ public:
     void setFixedIpAddress(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 项目ID。
     /// </summary>
 
     std::string getTenantId() const;
@@ -121,7 +121,7 @@ public:
     void setTenantId(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 外部网络的id。只能使用固定的外网，外部网络的信息请通过GET /v2.0/networks?router:external&#x3D;True或GET /v2.0/networks?name&#x3D;{floating_network}或neutron net-external-list方式查询
     /// </summary>
 
     std::string getFloatingNetworkId() const;

@@ -40,7 +40,7 @@ public:
     /// ShowResetPasswordFlagRequest members
 
     /// <summary>
-    /// 
+    /// 云服务器ID。
     /// </summary>
 
     std::string getServerId() const;

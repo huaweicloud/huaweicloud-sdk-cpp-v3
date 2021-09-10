@@ -40,7 +40,7 @@ public:
     /// NeutronShowFirewallRuleRequest members
 
     /// <summary>
-    /// 
+    /// 网络ACL规则ID
     /// </summary>
 
     std::string getFirewallRuleId() const;

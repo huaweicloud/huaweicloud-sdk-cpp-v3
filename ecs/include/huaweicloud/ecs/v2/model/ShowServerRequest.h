@@ -40,7 +40,7 @@ public:
     /// ShowServerRequest members
 
     /// <summary>
-    /// 
+    /// 云服务器ID。
     /// </summary>
 
     std::string getServerId() const;

@@ -40,7 +40,7 @@ public:
     /// ListSnapshotsRequest members
 
     /// <summary>
-    /// 
+    /// 偏移量。 说明:分页查询快照时使用，与limit配合使用。假如共有30个快照，设置offset为11，limit为10，即为从第12个快照开始查询，一次最多可读取10个快照。
     /// </summary>
 
     int32_t getOffset() const;
@@ -49,7 +49,7 @@ public:
     void setOffset(int32_t value);
 
     /// <summary>
-    /// 
+    /// 返回结果个数限制，值为大于0的整数。默认值为1000。
     /// </summary>
 
     int32_t getLimit() const;
@@ -58,7 +58,7 @@ public:
     void setLimit(int32_t value);
 
     /// <summary>
-    /// 
+    /// 云硬盘快照名称。最大支持255个字节。
     /// </summary>
 
     std::string getName() const;
@@ -67,7 +67,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 云硬盘快照状态，具体请参见A.3 云硬盘快照状态。
     /// </summary>
 
     std::string getStatus() const;
@@ -76,7 +76,7 @@ public:
     void setStatus(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 快照所属云硬盘的ID。
     /// </summary>
 
     std::string getVolumeId() const;
@@ -85,7 +85,7 @@ public:
     void setVolumeId(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 快照所属云硬盘的可用区。
     /// </summary>
 
     std::string getAvailabilityZone() const;
@@ -94,7 +94,7 @@ public:
     void setAvailabilityZone(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 指定快照id进行过滤。可以传入多个id过滤查询，格式：id&#x3D;id1&amp;id&#x3D;id2&amp;id&#x3D;id3
     /// </summary>
 
     std::string getId() const;
@@ -103,7 +103,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 专属存储的名称。
     /// </summary>
 
     std::string getDedicatedStorageName() const;
@@ -112,7 +112,7 @@ public:
     void setDedicatedStorageName(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 专属存储ID。
     /// </summary>
 
     std::string getDedicatedStorageId() const;
@@ -121,7 +121,7 @@ public:
     void setDedicatedStorageId(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 服务类型。仅支持EVS、DSS、DESS。
     /// </summary>
 
     std::string getServiceType() const;
@@ -130,7 +130,7 @@ public:
     void setServiceType(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 指定企业项目id进行过滤。 传入“all_granted_eps”，代表查询权限范围内的所有企业项目下的云硬盘。 &gt; 说明： &gt;  &gt; 关于企业项目ID的获取及企业项目特性的详细信息，请参考：\&quot;[企业管理用户指南](https://support.huaweicloud.com/usermanual-em/zh-cn_topic_0123692049.html)\&quot;。
     /// </summary>
 
     std::string getEnterpriseProjectId() const;

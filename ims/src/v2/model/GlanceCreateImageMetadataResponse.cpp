@@ -65,6 +65,12 @@ GlanceCreateImageMetadataResponse::GlanceCreateImageMetadataResponse()
     virtualSize_ = 0;
     virtualSizeIsSet_ = false;
     propertiesIsSet_ = false;
+    rootOrigin_ = "";
+    rootOriginIsSet_ = false;
+    checksum_ = "";
+    checksumIsSet_ = false;
+    size_ = 0L;
+    sizeIsSet_ = false;
 }
 
 GlanceCreateImageMetadataResponse::~GlanceCreateImageMetadataResponse() = default;
@@ -157,6 +163,15 @@ web::json::value GlanceCreateImageMetadataResponse::toJson() const
     }
     if(propertiesIsSet_) {
         val[utility::conversions::to_string_t("properties")] = ModelBase::toJson(properties_);
+    }
+    if(rootOriginIsSet_) {
+        val[utility::conversions::to_string_t("__root_origin")] = ModelBase::toJson(rootOrigin_);
+    }
+    if(checksumIsSet_) {
+        val[utility::conversions::to_string_t("checksum")] = ModelBase::toJson(checksum_);
+    }
+    if(sizeIsSet_) {
+        val[utility::conversions::to_string_t("size")] = ModelBase::toJson(size_);
     }
 
     return val;
@@ -407,6 +422,33 @@ bool GlanceCreateImageMetadataResponse::fromJson(const web::json::value& val)
             Object refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setProperties(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("__root_origin"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("__root_origin"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRootOrigin(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("checksum"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("checksum"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setChecksum(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("size"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("size"));
+        if(!fieldValue.is_null())
+        {
+            int64_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSize(refVal);
         }
     }
     return ok;
@@ -978,6 +1020,69 @@ bool GlanceCreateImageMetadataResponse::propertiesIsSet() const
 void GlanceCreateImageMetadataResponse::unsetproperties()
 {
     propertiesIsSet_ = false;
+}
+
+std::string GlanceCreateImageMetadataResponse::getRootOrigin() const
+{
+    return rootOrigin_;
+}
+
+void GlanceCreateImageMetadataResponse::setRootOrigin(const std::string& value)
+{
+    rootOrigin_ = value;
+    rootOriginIsSet_ = true;
+}
+
+bool GlanceCreateImageMetadataResponse::rootOriginIsSet() const
+{
+    return rootOriginIsSet_;
+}
+
+void GlanceCreateImageMetadataResponse::unsetrootOrigin()
+{
+    rootOriginIsSet_ = false;
+}
+
+std::string GlanceCreateImageMetadataResponse::getChecksum() const
+{
+    return checksum_;
+}
+
+void GlanceCreateImageMetadataResponse::setChecksum(const std::string& value)
+{
+    checksum_ = value;
+    checksumIsSet_ = true;
+}
+
+bool GlanceCreateImageMetadataResponse::checksumIsSet() const
+{
+    return checksumIsSet_;
+}
+
+void GlanceCreateImageMetadataResponse::unsetchecksum()
+{
+    checksumIsSet_ = false;
+}
+
+int64_t GlanceCreateImageMetadataResponse::getSize() const
+{
+    return size_;
+}
+
+void GlanceCreateImageMetadataResponse::setSize(int64_t value)
+{
+    size_ = value;
+    sizeIsSet_ = true;
+}
+
+bool GlanceCreateImageMetadataResponse::sizeIsSet() const
+{
+    return sizeIsSet_;
+}
+
+void GlanceCreateImageMetadataResponse::unsetsize()
+{
+    sizeIsSet_ = false;
 }
 
 }

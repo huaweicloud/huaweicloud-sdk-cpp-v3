@@ -68,15 +68,6 @@ public:
     void setDescription(const std::string& value);
 
     /// <summary>
-    /// 镜像的存储位置
-    /// </summary>
-
-    std::string getImageLocation() const;
-    bool imageLocationIsSet() const;
-    void unsetimageLocation();
-    void setImageLocation(const std::string& value);
-
-    /// <summary>
     /// 镜像文件的大小，单位为字节
     /// </summary>
 
@@ -102,15 +93,6 @@ public:
     bool imagetypeIsSet() const;
     void unsetimagetype();
     void setImagetype(const std::string& value);
-
-    /// <summary>
-    /// 是否完成了初始化配置。取值为true或false。如果用户确定完成了初始化配置，则可以设置为true，否则设置为false。默认为false。
-    /// </summary>
-
-    std::string getIsConfigInit() const;
-    bool isConfigInitIsSet() const;
-    void unsetisConfigInit();
-    void setIsConfigInit(const std::string& value);
 
     /// <summary>
     /// 是否是注册过的镜像，取值为“true”或者“false”
@@ -455,15 +437,6 @@ public:
     void setVisibility(const std::string& value);
 
     /// <summary>
-    /// 镜像架构类型。取值包括： x86 arm
-    /// </summary>
-
-    std::string getArchitecture() const;
-    bool architectureIsSet() const;
-    void unsetarchitecture();
-    void setArchitecture(const std::string& value);
-
-    /// <summary>
     /// 表示当前镜像支持CloudInit密码/密钥注入方式，建议设置为\&quot;true\&quot;或者\&quot;false\&quot;。 如果取值为\&quot;true\&quot;，表示该镜像不支持CloudInit注入密码/密钥，其他取值时表示支持CloudInit注入密钥/密码。
     /// </summary>
 
@@ -535,6 +508,60 @@ public:
     void unsethwVifMultiqueueEnabled();
     void setHwVifMultiqueueEnabled(const std::string& value);
 
+    /// <summary>
+    /// 表示当前市场镜像是否下架。true：已下架 false：未下架
+    /// </summary>
+
+    std::string getIsOffshelved() const;
+    bool isOffshelvedIsSet() const;
+    void unsetisOffshelved();
+    void setIsOffshelved(const std::string& value);
+
+    /// <summary>
+    /// 镜像是否支持延迟加载。取值为“True”或“False”。
+    /// </summary>
+
+    std::string getLazyloading() const;
+    bool lazyloadingIsSet() const;
+    void unsetlazyloading();
+    void setLazyloading(const std::string& value);
+
+    /// <summary>
+    /// 表示当前镜像来源是从外部导入。取值：file。
+    /// </summary>
+
+    std::string getRootOrigin() const;
+    bool rootOriginIsSet() const;
+    void unsetrootOrigin();
+    void setRootOrigin(const std::string& value);
+
+    /// <summary>
+    /// 表示当前镜像对应云服务器的系统盘插槽位置。目前暂时不用
+    /// </summary>
+
+    std::string getSequenceNum() const;
+    bool sequenceNumIsSet() const;
+    void unsetsequenceNum();
+    void setSequenceNum(const std::string& value);
+
+    /// <summary>
+    /// 镜像状态变为正常的时间。
+    /// </summary>
+
+    std::string getActiveAt() const;
+    bool activeAtIsSet() const;
+    void unsetactiveAt();
+    void setActiveAt(const std::string& value);
+
+    /// <summary>
+    /// 镜像是否支持企业主机安全或主机监控。 hss：企业主机安全 ces：主机监控
+    /// </summary>
+
+    std::string getSupportAgentList() const;
+    bool supportAgentListIsSet() const;
+    void unsetsupportAgentList();
+    void setSupportAgentList(const std::string& value);
+
 
 protected:
     std::string backupId_;
@@ -543,16 +570,12 @@ protected:
     bool dataOriginIsSet_;
     std::string description_;
     bool descriptionIsSet_;
-    std::string imageLocation_;
-    bool imageLocationIsSet_;
     std::string imageSize_;
     bool imageSizeIsSet_;
     std::string imageSourceType_;
     bool imageSourceTypeIsSet_;
     std::string imagetype_;
     bool imagetypeIsSet_;
-    std::string isConfigInit_;
-    bool isConfigInitIsSet_;
     std::string isregistered_;
     bool isregisteredIsSet_;
     std::string originalimagename_;
@@ -629,8 +652,6 @@ protected:
     bool virtualSizeIsSet_;
     std::string visibility_;
     bool visibilityIsSet_;
-    std::string architecture_;
-    bool architectureIsSet_;
     std::string supportFcInject_;
     bool supportFcInjectIsSet_;
     std::string hwFirmwareType_;
@@ -647,6 +668,18 @@ protected:
     bool accountCodeIsSet_;
     std::string hwVifMultiqueueEnabled_;
     bool hwVifMultiqueueEnabledIsSet_;
+    std::string isOffshelved_;
+    bool isOffshelvedIsSet_;
+    std::string lazyloading_;
+    bool lazyloadingIsSet_;
+    std::string rootOrigin_;
+    bool rootOriginIsSet_;
+    std::string sequenceNum_;
+    bool sequenceNumIsSet_;
+    std::string activeAt_;
+    bool activeAtIsSet_;
+    std::string supportAgentList_;
+    bool supportAgentListIsSet_;
 
 };
 

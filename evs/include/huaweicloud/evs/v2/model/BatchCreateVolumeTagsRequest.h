@@ -41,7 +41,7 @@ public:
     /// BatchCreateVolumeTagsRequest members
 
     /// <summary>
-    /// 
+    /// 云硬盘ID。
     /// </summary>
 
     std::string getVolumeId() const;

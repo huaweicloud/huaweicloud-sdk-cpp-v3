@@ -128,6 +128,8 @@ ImageInfo::ImageInfo()
     activeAtIsSet_ = false;
     supportAgentList_ = "";
     supportAgentListIsSet_ = false;
+    supportAmd_ = "";
+    supportAmdIsSet_ = false;
 }
 
 ImageInfo::~ImageInfo() = default;
@@ -313,6 +315,9 @@ web::json::value ImageInfo::toJson() const
     }
     if(supportAgentListIsSet_) {
         val[utility::conversions::to_string_t("__support_agent_list")] = ModelBase::toJson(supportAgentList_);
+    }
+    if(supportAmdIsSet_) {
+        val[utility::conversions::to_string_t("__support_amd")] = ModelBase::toJson(supportAmd_);
     }
 
     return val;
@@ -842,6 +847,15 @@ bool ImageInfo::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSupportAgentList(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("__support_amd"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("__support_amd"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSupportAmd(refVal);
         }
     }
     return ok;
@@ -2064,6 +2078,27 @@ bool ImageInfo::supportAgentListIsSet() const
 void ImageInfo::unsetsupportAgentList()
 {
     supportAgentListIsSet_ = false;
+}
+
+std::string ImageInfo::getSupportAmd() const
+{
+    return supportAmd_;
+}
+
+void ImageInfo::setSupportAmd(const std::string& value)
+{
+    supportAmd_ = value;
+    supportAmdIsSet_ = true;
+}
+
+bool ImageInfo::supportAmdIsSet() const
+{
+    return supportAmdIsSet_;
+}
+
+void ImageInfo::unsetsupportAmd()
+{
+    supportAmdIsSet_ = false;
 }
 
 }

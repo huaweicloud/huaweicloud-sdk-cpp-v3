@@ -1,3 +1,22 @@
+# 3.0.10-beta 2021-09-16
+
+### HuaweiCloud SDK IMS
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`CreateDataImage`新增非必填的请求参数`__support_amd`
+  - 接口`ListImages`新增响应参数`__support_amd`
+
+### HuaweiCloud SDK OCR
+- _新增特性_
+  - 支持接口`RecognizeInvoiceVerification`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.0.9-beta 2021-09-10
 
 ## HuaweiCloud SDK EVS

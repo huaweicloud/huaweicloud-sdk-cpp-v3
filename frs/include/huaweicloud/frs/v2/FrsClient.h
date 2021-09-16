@@ -132,7 +132,7 @@ public:
     /// <param name="faceSetName">人脸库名称。</param>
     /// <param name="imageFile">本地图片文件，图片不能超过8MB，建议小于1MB。上传文件时，请求格式为multipart。</param>
     /// <param name="externalImageId">用户指定的图片外部ID，与当前图像绑定。用户没提供，系统会生成一个。 该ID长度范围为1～36位，可以包含字母、数字、中划线或者下划线，不包含其他的特殊字符。 (optional, default to &quot;&quot;)</param>
-    /// <param name="externalFields">根据用户自定义数据类型，填入相应的数值。 创建faceset时定义该字段，Json字符串不校验重复性，参考[自定义字段](zh-cn_topic_0130807044.xml)。 (optional, default to &quot;&quot;)</param>
+    /// <param name="externalFields">根据用户自定义数据类型，填入相应的数值。 创建faceset时定义该字段，Json字符串不校验重复性，参考[自定义字段](https://support.huaweicloud.com/api-face/face_02_0012.html)。 (optional, default to &quot;&quot;)</param>
     std::shared_ptr<AddFacesByFileResponse> addFacesByFile(
         AddFacesByFileRequest &request
     );
@@ -356,8 +356,8 @@ public:
     /// <param name="imageFile">本地图片文件，图片不能超过8MB,建议小于1MB。上传文件时，请求格式为multipart。  必选，与image_url、image_base64、face_id四选一。</param>
     /// <param name="topN">返回查询到的最相似的N张人脸，N默认为10。 (optional, default to 0)</param>
     /// <param name="threshold">人脸相似度阈值，低于这个阈值则不返回，取值范围0~1，一般情况下建议取值0.93，默认为0。 (optional, default to 0.0)</param>
-    /// <param name="sort">支持字段排序，参考[sort语法](zh-cn_topic_0130807047.xml)。 (optional, default to &quot;&quot;)</param>
-    /// <param name="filter">过滤条件，参考[filter语法](zh-cn_topic_0130807048.xml)。 (optional, default to &quot;&quot;)</param>
+    /// <param name="sort">支持字段排序，参考[sort语法](https://support.huaweicloud.com/api-face/face_02_0013.html)。 (optional, default to &quot;&quot;)</param>
+    /// <param name="filter">过滤条件，参考[filter语法](https://support.huaweicloud.com/api-face/face_02_0014.html)。 (optional, default to &quot;&quot;)</param>
     /// <param name="returnFields">指定返回的自定义字段。 (optional, default to &quot;&quot;)</param>
     std::shared_ptr<SearchFaceByFileResponse> searchFaceByFile(
         SearchFaceByFileRequest &request

@@ -562,6 +562,15 @@ public:
     void unsetsupportAgentList();
     void setSupportAgentList(const std::string& value);
 
+    /// <summary>
+    /// 是否是AMD架构类型的镜像。取值为“true”或者“false”。
+    /// </summary>
+
+    std::string getSupportAmd() const;
+    bool supportAmdIsSet() const;
+    void unsetsupportAmd();
+    void setSupportAmd(const std::string& value);
+
 
 protected:
     std::string backupId_;
@@ -680,6 +689,8 @@ protected:
     bool activeAtIsSet_;
     std::string supportAgentList_;
     bool supportAgentListIsSet_;
+    std::string supportAmd_;
+    bool supportAmdIsSet_;
 
 };
 

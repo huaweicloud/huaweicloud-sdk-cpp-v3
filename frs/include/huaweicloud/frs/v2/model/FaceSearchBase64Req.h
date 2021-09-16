@@ -42,7 +42,7 @@ public:
     /// FaceSearchBase64Req members
 
     /// <summary>
-    /// 过滤条件，参考[filter语法](zh-cn_topic_0130807048.xml)。
+    /// 过滤条件，参考[filter语法](https://support.huaweicloud.com/api-face/face_02_0014.html)。
     /// </summary>
 
     std::string getFilter() const;
@@ -87,7 +87,7 @@ public:
     void setThreshold(double value);
 
     /// <summary>
-    /// 支持字段排序，参考[sort语法](zh-cn_topic_0130807047.xml)。
+    /// 支持字段排序，参考[sort语法](https://support.huaweicloud.com/api-face/face_02_0013.html)。
     /// </summary>
 
     std::vector<std::map<std::string, std::string>>& getSort();

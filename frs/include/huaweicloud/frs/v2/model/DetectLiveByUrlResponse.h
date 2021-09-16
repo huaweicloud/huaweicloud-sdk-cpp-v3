@@ -51,7 +51,7 @@ public:
     void setVideoResult(const LiveDetectResp_videoresult& value);
 
     /// <summary>
-    /// 警告信息列表，WarningList结构见[WarningList](zh-cn_topic_0146322261.xml)。 调用失败时无此字段
+    /// 警告信息列表，WarningList结构见[WarningList](https://support.huaweicloud.com/api-face/face_02_0077.html)。 调用失败时无此字段
     /// </summary>
 
     std::vector<WarningList>& getWarningList();

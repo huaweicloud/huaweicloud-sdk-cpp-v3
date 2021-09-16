@@ -130,6 +130,8 @@ GlanceShowImageResponse::GlanceShowImageResponse()
     isConfigInitIsSet_ = false;
     accountCode_ = "";
     accountCodeIsSet_ = false;
+    supportAmd_ = "";
+    supportAmdIsSet_ = false;
 }
 
 GlanceShowImageResponse::~GlanceShowImageResponse() = default;
@@ -318,6 +320,9 @@ web::json::value GlanceShowImageResponse::toJson() const
     }
     if(accountCodeIsSet_) {
         val[utility::conversions::to_string_t("__account_code")] = ModelBase::toJson(accountCode_);
+    }
+    if(supportAmdIsSet_) {
+        val[utility::conversions::to_string_t("__support_amd")] = ModelBase::toJson(supportAmd_);
     }
 
     return val;
@@ -856,6 +861,15 @@ bool GlanceShowImageResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAccountCode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("__support_amd"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("__support_amd"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSupportAmd(refVal);
         }
     }
     return ok;
@@ -2099,6 +2113,27 @@ bool GlanceShowImageResponse::accountCodeIsSet() const
 void GlanceShowImageResponse::unsetaccountCode()
 {
     accountCodeIsSet_ = false;
+}
+
+std::string GlanceShowImageResponse::getSupportAmd() const
+{
+    return supportAmd_;
+}
+
+void GlanceShowImageResponse::setSupportAmd(const std::string& value)
+{
+    supportAmd_ = value;
+    supportAmdIsSet_ = true;
+}
+
+bool GlanceShowImageResponse::supportAmdIsSet() const
+{
+    return supportAmdIsSet_;
+}
+
+void GlanceShowImageResponse::unsetsupportAmd()
+{
+    supportAmdIsSet_ = false;
 }
 
 }

@@ -19,7 +19,7 @@ using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 
 /// <summary>
-/// 静默活体检测结果，LivelessDetectResult结构见表[结构格式说明表](zh-cn_topic_0238576582.xml)。 调用失败时无此字段。
+/// 静默活体检测结果，LivelessDetectResult结构见表[结构格式说明表](https://support.huaweicloud.com/api-face/face_02_0102.html#face_02_0102__table112325301714)。 调用失败时无此字段。
 /// </summary>
 class HUAWEICLOUD_FRS_V2_EXPORT  LiveDetectFaceResp_result
     : public ModelBase

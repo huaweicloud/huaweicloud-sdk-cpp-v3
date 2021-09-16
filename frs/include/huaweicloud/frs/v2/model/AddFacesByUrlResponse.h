@@ -60,7 +60,7 @@ public:
     void setFaceSetName(const std::string& value);
 
     /// <summary>
-    /// 人脸库当中的人脸结构，详见[FaceSetFace](zh-cn_topic_0106912070.xml)。 调用失败时无此字段。
+    /// 人脸库当中的人脸结构，详见[FaceSetFace](https://support.huaweicloud.com/api-face/face_02_0018.html)。 调用失败时无此字段。
     /// </summary>
 
     std::vector<FaceSetFace>& getFaces();

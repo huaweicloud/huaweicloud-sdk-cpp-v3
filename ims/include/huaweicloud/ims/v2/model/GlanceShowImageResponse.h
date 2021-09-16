@@ -571,6 +571,15 @@ public:
     void unsetaccountCode();
     void setAccountCode(const std::string& value);
 
+    /// <summary>
+    /// 是否是AMD架构类型的镜像。取值为“true”或者“false”。
+    /// </summary>
+
+    std::string getSupportAmd() const;
+    bool supportAmdIsSet() const;
+    void unsetsupportAmd();
+    void setSupportAmd(const std::string& value);
+
 
 protected:
     std::string backupId_;
@@ -691,6 +700,8 @@ protected:
     bool isConfigInitIsSet_;
     std::string accountCode_;
     bool accountCodeIsSet_;
+    std::string supportAmd_;
+    bool supportAmdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

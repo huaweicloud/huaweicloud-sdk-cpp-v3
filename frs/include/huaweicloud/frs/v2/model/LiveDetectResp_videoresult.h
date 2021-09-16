@@ -21,7 +21,7 @@ using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 
 /// <summary>
-/// 活体检测结果，VideoDetectResult结构见[VideoDetectResult](zh-cn_topic_0130807053.xml)。 调用失败时无此字段。
+/// 活体检测结果，VideoDetectResult结构见[VideoDetectResult](https://support.huaweicloud.com/api-face/face_02_0010.html)。 调用失败时无此字段。
 /// </summary>
 class HUAWEICLOUD_FRS_V2_EXPORT  LiveDetectResp_videoresult
     : public ModelBase

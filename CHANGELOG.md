@@ -1,3 +1,14 @@
+# 3.0.11-beta 2021-09-24
+
+### HuaweiCloud SDK IVS
+
+- _Features_
+  - Support the service `Identity Verification Solution`.
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.0.10-beta 2021-09-16
 
 ### HuaweiCloud SDK IMS

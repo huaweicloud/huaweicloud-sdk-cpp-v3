@@ -1,3 +1,26 @@
+# 3.0.12-beta 2021-09-29
+
+### HuaweiCloud SDK ECS
+
+- _Features_
+  - Support the following interfaces:
+    - `ListServerTags`
+    - `BatchAttachSharableVolumes`
+    - `ShowServerAutoRecovery`
+    - `BatchResetServersPassword`
+    - `ReinstallServerWithoutCloudInit`
+    - `ChangeServerOsWithoutCloudInit`
+    - `BatchUpdateServersName`
+    - `ShowServerPassword`
+    - `AssociateServerVirtualIp`
+    - `MigrateServer`
+    - `ShowServerBlockDevice`
+    - `DisassociateServerVirtualIp`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.0.11-beta 2021-09-24
 
 ### HuaweiCloud SDK IVS

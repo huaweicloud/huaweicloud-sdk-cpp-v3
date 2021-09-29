@@ -9,12 +9,18 @@
 #include <huaweicloud/ecs/v2/model/AddServerGroupMemberRequest.h>
 #include <huaweicloud/ecs/v2/model/AddServerGroupMemberRequestBody.h>
 #include <huaweicloud/ecs/v2/model/AddServerGroupMemberResponse.h>
+#include <huaweicloud/ecs/v2/model/AssociateServerVirtualIpRequest.h>
+#include <huaweicloud/ecs/v2/model/AssociateServerVirtualIpRequestBody.h>
+#include <huaweicloud/ecs/v2/model/AssociateServerVirtualIpResponse.h>
 #include <huaweicloud/ecs/v2/model/AttachServerVolumeRequest.h>
 #include <huaweicloud/ecs/v2/model/AttachServerVolumeRequestBody.h>
 #include <huaweicloud/ecs/v2/model/AttachServerVolumeResponse.h>
 #include <huaweicloud/ecs/v2/model/BatchAddServerNicsRequest.h>
 #include <huaweicloud/ecs/v2/model/BatchAddServerNicsRequestBody.h>
 #include <huaweicloud/ecs/v2/model/BatchAddServerNicsResponse.h>
+#include <huaweicloud/ecs/v2/model/BatchAttachSharableVolumesRequest.h>
+#include <huaweicloud/ecs/v2/model/BatchAttachSharableVolumesRequestBody.h>
+#include <huaweicloud/ecs/v2/model/BatchAttachSharableVolumesResponse.h>
 #include <huaweicloud/ecs/v2/model/BatchCreateServerTagsRequest.h>
 #include <huaweicloud/ecs/v2/model/BatchCreateServerTagsRequestBody.h>
 #include <huaweicloud/ecs/v2/model/BatchCreateServerTagsResponse.h>
@@ -27,15 +33,24 @@
 #include <huaweicloud/ecs/v2/model/BatchRebootServersRequest.h>
 #include <huaweicloud/ecs/v2/model/BatchRebootServersRequestBody.h>
 #include <huaweicloud/ecs/v2/model/BatchRebootServersResponse.h>
+#include <huaweicloud/ecs/v2/model/BatchResetServersPasswordRequest.h>
+#include <huaweicloud/ecs/v2/model/BatchResetServersPasswordRequestBody.h>
+#include <huaweicloud/ecs/v2/model/BatchResetServersPasswordResponse.h>
 #include <huaweicloud/ecs/v2/model/BatchStartServersRequest.h>
 #include <huaweicloud/ecs/v2/model/BatchStartServersRequestBody.h>
 #include <huaweicloud/ecs/v2/model/BatchStartServersResponse.h>
 #include <huaweicloud/ecs/v2/model/BatchStopServersRequest.h>
 #include <huaweicloud/ecs/v2/model/BatchStopServersRequestBody.h>
 #include <huaweicloud/ecs/v2/model/BatchStopServersResponse.h>
+#include <huaweicloud/ecs/v2/model/BatchUpdateServersNameRequest.h>
+#include <huaweicloud/ecs/v2/model/BatchUpdateServersNameRequestBody.h>
+#include <huaweicloud/ecs/v2/model/BatchUpdateServersNameResponse.h>
 #include <huaweicloud/ecs/v2/model/ChangeServerOsWithCloudInitRequest.h>
 #include <huaweicloud/ecs/v2/model/ChangeServerOsWithCloudInitRequestBody.h>
 #include <huaweicloud/ecs/v2/model/ChangeServerOsWithCloudInitResponse.h>
+#include <huaweicloud/ecs/v2/model/ChangeServerOsWithoutCloudInitRequest.h>
+#include <huaweicloud/ecs/v2/model/ChangeServerOsWithoutCloudInitRequestBody.h>
+#include <huaweicloud/ecs/v2/model/ChangeServerOsWithoutCloudInitResponse.h>
 #include <huaweicloud/ecs/v2/model/CreatePostPaidServersRequest.h>
 #include <huaweicloud/ecs/v2/model/CreatePostPaidServersRequestBody.h>
 #include <huaweicloud/ecs/v2/model/CreatePostPaidServersResponse.h>
@@ -52,11 +67,16 @@
 #include <huaweicloud/ecs/v2/model/DeleteServerGroupResponse.h>
 #include <huaweicloud/ecs/v2/model/DeleteServerMetadataRequest.h>
 #include <huaweicloud/ecs/v2/model/DeleteServerMetadataResponse.h>
+#include <huaweicloud/ecs/v2/model/DeleteServerPasswordRequest.h>
+#include <huaweicloud/ecs/v2/model/DeleteServerPasswordResponse.h>
 #include <huaweicloud/ecs/v2/model/DeleteServersRequest.h>
 #include <huaweicloud/ecs/v2/model/DeleteServersRequestBody.h>
 #include <huaweicloud/ecs/v2/model/DeleteServersResponse.h>
 #include <huaweicloud/ecs/v2/model/DetachServerVolumeRequest.h>
 #include <huaweicloud/ecs/v2/model/DetachServerVolumeResponse.h>
+#include <huaweicloud/ecs/v2/model/DisassociateServerVirtualIpRequest.h>
+#include <huaweicloud/ecs/v2/model/DisassociateServerVirtualIpRequestBody.h>
+#include <huaweicloud/ecs/v2/model/DisassociateServerVirtualIpResponse.h>
 #include <huaweicloud/ecs/v2/model/ListFlavorsRequest.h>
 #include <huaweicloud/ecs/v2/model/ListFlavorsResponse.h>
 #include <huaweicloud/ecs/v2/model/ListResizeFlavorsRequest.h>
@@ -67,8 +87,13 @@
 #include <huaweicloud/ecs/v2/model/ListServerGroupsResponse.h>
 #include <huaweicloud/ecs/v2/model/ListServerInterfacesRequest.h>
 #include <huaweicloud/ecs/v2/model/ListServerInterfacesResponse.h>
+#include <huaweicloud/ecs/v2/model/ListServerTagsRequest.h>
+#include <huaweicloud/ecs/v2/model/ListServerTagsResponse.h>
 #include <huaweicloud/ecs/v2/model/ListServersDetailsRequest.h>
 #include <huaweicloud/ecs/v2/model/ListServersDetailsResponse.h>
+#include <huaweicloud/ecs/v2/model/MigrateServerRequest.h>
+#include <huaweicloud/ecs/v2/model/MigrateServerRequestBody.h>
+#include <huaweicloud/ecs/v2/model/MigrateServerResponse.h>
 #include <huaweicloud/ecs/v2/model/NovaAssociateSecurityGroupRequest.h>
 #include <huaweicloud/ecs/v2/model/NovaAssociateSecurityGroupRequestBody.h>
 #include <huaweicloud/ecs/v2/model/NovaAssociateSecurityGroupResponse.h>
@@ -97,9 +122,15 @@
 #include <huaweicloud/ecs/v2/model/NovaShowKeypairResponse.h>
 #include <huaweicloud/ecs/v2/model/NovaShowServerRequest.h>
 #include <huaweicloud/ecs/v2/model/NovaShowServerResponse.h>
+#include <huaweicloud/ecs/v2/model/RegisterServerAutoRecoveryRequest.h>
+#include <huaweicloud/ecs/v2/model/RegisterServerAutoRecoveryRequestBody.h>
+#include <huaweicloud/ecs/v2/model/RegisterServerAutoRecoveryResponse.h>
 #include <huaweicloud/ecs/v2/model/ReinstallServerWithCloudInitRequest.h>
 #include <huaweicloud/ecs/v2/model/ReinstallServerWithCloudInitRequestBody.h>
 #include <huaweicloud/ecs/v2/model/ReinstallServerWithCloudInitResponse.h>
+#include <huaweicloud/ecs/v2/model/ReinstallServerWithoutCloudInitRequest.h>
+#include <huaweicloud/ecs/v2/model/ReinstallServerWithoutCloudInitRequestBody.h>
+#include <huaweicloud/ecs/v2/model/ReinstallServerWithoutCloudInitResponse.h>
 #include <huaweicloud/ecs/v2/model/ResetServerPasswordRequest.h>
 #include <huaweicloud/ecs/v2/model/ResetServerPasswordRequestBody.h>
 #include <huaweicloud/ecs/v2/model/ResetServerPasswordResponse.h>
@@ -111,10 +142,16 @@
 #include <huaweicloud/ecs/v2/model/ResizeServerResponse.h>
 #include <huaweicloud/ecs/v2/model/ShowResetPasswordFlagRequest.h>
 #include <huaweicloud/ecs/v2/model/ShowResetPasswordFlagResponse.h>
+#include <huaweicloud/ecs/v2/model/ShowServerAutoRecoveryRequest.h>
+#include <huaweicloud/ecs/v2/model/ShowServerAutoRecoveryResponse.h>
+#include <huaweicloud/ecs/v2/model/ShowServerBlockDeviceRequest.h>
+#include <huaweicloud/ecs/v2/model/ShowServerBlockDeviceResponse.h>
 #include <huaweicloud/ecs/v2/model/ShowServerGroupRequest.h>
 #include <huaweicloud/ecs/v2/model/ShowServerGroupResponse.h>
 #include <huaweicloud/ecs/v2/model/ShowServerLimitsRequest.h>
 #include <huaweicloud/ecs/v2/model/ShowServerLimitsResponse.h>
+#include <huaweicloud/ecs/v2/model/ShowServerPasswordRequest.h>
+#include <huaweicloud/ecs/v2/model/ShowServerPasswordResponse.h>
 #include <huaweicloud/ecs/v2/model/ShowServerRemoteConsoleRequest.h>
 #include <huaweicloud/ecs/v2/model/ShowServerRemoteConsoleRequestBody.h>
 #include <huaweicloud/ecs/v2/model/ShowServerRemoteConsoleResponse.h>
@@ -172,6 +209,17 @@ public:
         AddServerGroupMemberRequest &request
     );
     /// <summary>
+    /// 云服务器网卡配置虚拟IP地址
+    /// </summary>
+    /// <remarks>
+    /// 虚拟IP地址用于为网卡提供第二个IP地址，同时支持与多个弹性云服务器的网卡绑定，从而实现多个弹性云服务器之间的高可用性。  该接口用于给云服务器网卡配置虚拟IP地址：  - 当指定的IP地址是一个不存在的虚拟IP地址时，系统会创建该虚拟IP，并绑定至对应网卡。  - 当指定的IP地址是一个已经创建好的私有IP时，系统会将指定的网卡和虚拟IP绑定。如果该IP的device_owner为空，则仅支持VPC内二三层通信；如果该IP的device_owner为neutron:VIP_PORT，则支持VPC内二三层通信、VPC之间对等连接访问，以及弹性公网IP、VPN、云专线等Internet接入。
+    /// </remarks>
+    /// <param name="nicId">云服务器网卡ID。</param>
+    /// <param name="associateServerVirtualIpRequestBody">This is a auto create Body Object</param>
+    std::shared_ptr<AssociateServerVirtualIpResponse> associateServerVirtualIp(
+        AssociateServerVirtualIpRequest &request
+    );
+    /// <summary>
     /// 弹性云服务器挂载磁盘
     /// </summary>
     /// <remarks>
@@ -192,6 +240,17 @@ public:
     /// <param name="batchAddServerNicsRequestBody">This is a auto create Body Object</param>
     std::shared_ptr<BatchAddServerNicsResponse> batchAddServerNics(
         BatchAddServerNicsRequest &request
+    );
+    /// <summary>
+    /// 批量挂载指定共享盘
+    /// </summary>
+    /// <remarks>
+    /// 将指定的共享磁盘一次性挂载到多个弹性云服务器，实现批量挂载。
+    /// </remarks>
+    /// <param name="volumeId">共享磁盘ID。</param>
+    /// <param name="batchAttachSharableVolumesRequestBody">This is a auto create Body Object</param>
+    std::shared_ptr<BatchAttachSharableVolumesResponse> batchAttachSharableVolumes(
+        BatchAttachSharableVolumesRequest &request
     );
     /// <summary>
     /// 批量添加云服务器标签
@@ -237,6 +296,16 @@ public:
         BatchRebootServersRequest &request
     );
     /// <summary>
+    /// 批量重置弹性云服务器密码
+    /// </summary>
+    /// <remarks>
+    /// 批量重置弹性云服务器管理帐号（root用户或Administrator用户）的密码。
+    /// </remarks>
+    /// <param name="batchResetServersPasswordRequestBody">This is a auto create Body Object</param>
+    std::shared_ptr<BatchResetServersPasswordResponse> batchResetServersPassword(
+        BatchResetServersPasswordRequest &request
+    );
+    /// <summary>
     /// 批量启动云服务器
     /// </summary>
     /// <remarks>
@@ -257,6 +326,16 @@ public:
         BatchStopServersRequest &request
     );
     /// <summary>
+    /// 批量修改弹性云服务器
+    /// </summary>
+    /// <remarks>
+    /// 批量修改弹性云服务器信息。 当前仅支持批量修改云服务器名称，一次最多可以修改1000台。
+    /// </remarks>
+    /// <param name="batchUpdateServersNameRequestBody">This is a auto create Body Object</param>
+    std::shared_ptr<BatchUpdateServersNameResponse> batchUpdateServersName(
+        BatchUpdateServersNameRequest &request
+    );
+    /// <summary>
     /// 切换弹性云服务器操作系统(安装Cloud init)
     /// </summary>
     /// <remarks>
@@ -266,6 +345,17 @@ public:
     /// <param name="changeServerOsWithCloudInitRequestBody">This is a auto create Body Object</param>
     std::shared_ptr<ChangeServerOsWithCloudInitResponse> changeServerOsWithCloudInit(
         ChangeServerOsWithCloudInitRequest &request
+    );
+    /// <summary>
+    /// 切换弹性云服务器操作系统(未安装Cloud init)
+    /// </summary>
+    /// <remarks>
+    /// 切换弹性云服务器操作系统。  该接口支持未安装Cloud-init或Cloudbase-init的镜像使用。
+    /// </remarks>
+    /// <param name="serverId">云服务器ID。</param>
+    /// <param name="changeServerOsWithoutCloudInitRequestBody">This is a auto create Body Object</param>
+    std::shared_ptr<ChangeServerOsWithoutCloudInitResponse> changeServerOsWithoutCloudInit(
+        ChangeServerOsWithoutCloudInitRequest &request
     );
     /// <summary>
     /// 创建云服务器(按需)
@@ -330,6 +420,16 @@ public:
         DeleteServerMetadataRequest &request
     );
     /// <summary>
+    /// 云服务器清除密码(企业项目)
+    /// </summary>
+    /// <remarks>
+    /// 清除Windows云服务器初始安装时系统生成的密码记录。清除密码后，不影响云服务器密码登录功能，但不能再使用获取密码功能来查询该云服务器密码。
+    /// </remarks>
+    /// <param name="serverId">云服务器ID。</param>
+    std::shared_ptr<DeleteServerPasswordResponse> deleteServerPassword(
+        DeleteServerPasswordRequest &request
+    );
+    /// <summary>
     /// 删除云服务器
     /// </summary>
     /// <remarks>
@@ -350,6 +450,17 @@ public:
     /// <param name="deleteFlag">是否强制卸载数据盘。  - 是，值为“1”。  - 否，值为“0”。  默认值为0。 (optional, default to &quot;&quot;)</param>
     std::shared_ptr<DetachServerVolumeResponse> detachServerVolume(
         DetachServerVolumeRequest &request
+    );
+    /// <summary>
+    /// 云服务器网卡解绑虚拟IP地址
+    /// </summary>
+    /// <remarks>
+    /// 虚拟IP地址用于为网卡提供第二个IP地址，同时支持与多个弹性云服务器的网卡绑定，从而实现多个弹性云服务器之间的高可用性。  该接口用于解绑定弹性云服务器网卡的虚拟IP地址。解绑后，网卡不会被删除。
+    /// </remarks>
+    /// <param name="nicId">云服务器网卡ID。</param>
+    /// <param name="disassociateServerVirtualIpRequestBody">This is a auto create Body Object</param>
+    std::shared_ptr<DisassociateServerVirtualIpResponse> disassociateServerVirtualIp(
+        DisassociateServerVirtualIpRequest &request
     );
     /// <summary>
     /// 查询规格详情和规格扩展信息列表
@@ -409,6 +520,15 @@ public:
         ListServerInterfacesRequest &request
     );
     /// <summary>
+    /// 查询项目标签
+    /// </summary>
+    /// <remarks>
+    /// 项目（Project）用于将OpenStack的资源（计算资源、存储资源和网络资源）进行分组和隔离。项目可以是一个部门或者一个项目组。一个帐户中可以创建多个项目。  该接口用于查询用户在指定项目所使用的全部标签。
+    /// </remarks>
+    std::shared_ptr<ListServerTagsResponse> listServerTags(
+        ListServerTagsRequest &request
+    );
+    /// <summary>
     /// 查询云服务器详情列表
     /// </summary>
     /// <remarks>
@@ -426,6 +546,17 @@ public:
     /// <param name="tags">查询tag字段中包含该值的云服务器。 (optional, default to &quot;&quot;)</param>
     std::shared_ptr<ListServersDetailsResponse> listServersDetails(
         ListServersDetailsRequest &request
+    );
+    /// <summary>
+    /// 冷迁移云服务器
+    /// </summary>
+    /// <remarks>
+    /// - 将部署在专属主机上的弹性云服务器迁移至其他专属主机。 - 将部署在专属主机上的弹性云服务器迁移至公共资源池，即不再部署在专属主机上。 - 将公共资源池的弹性云服务器迁移至专属主机上，成为专属主机上部署的弹性云服务器。
+    /// </remarks>
+    /// <param name="serverId">云服务器ID。</param>
+    /// <param name="migrateServerRequestBody">This is a auto create Body Object</param>
+    std::shared_ptr<MigrateServerResponse> migrateServer(
+        MigrateServerRequest &request
     );
     /// <summary>
     /// 添加安全组
@@ -567,6 +698,17 @@ public:
         NovaShowServerRequest &request
     );
     /// <summary>
+    /// 管理云服务器自动恢复动作
+    /// </summary>
+    /// <remarks>
+    /// 配置、删除云服务器自动恢复动作。
+    /// </remarks>
+    /// <param name="serverId">云服务器ID。</param>
+    /// <param name="registerServerAutoRecoveryRequestBody">This is a auto create Body Object</param>
+    std::shared_ptr<RegisterServerAutoRecoveryResponse> registerServerAutoRecovery(
+        RegisterServerAutoRecoveryRequest &request
+    );
+    /// <summary>
     /// 重装弹性云服务器操作系统(安装Cloud-init)
     /// </summary>
     /// <remarks>
@@ -576,6 +718,17 @@ public:
     /// <param name="reinstallServerWithCloudInitRequestBody">This is a auto create Body Object</param>
     std::shared_ptr<ReinstallServerWithCloudInitResponse> reinstallServerWithCloudInit(
         ReinstallServerWithCloudInitRequest &request
+    );
+    /// <summary>
+    /// 重装弹性云服务器操作系统(未安装Cloud init)
+    /// </summary>
+    /// <remarks>
+    /// 重装弹性云服务器的操作系统。  该接口支持未安装Cloud-init或Cloudbase-init的镜像。
+    /// </remarks>
+    /// <param name="serverId">云服务器ID。</param>
+    /// <param name="reinstallServerWithoutCloudInitRequestBody">This is a auto create Body Object</param>
+    std::shared_ptr<ReinstallServerWithoutCloudInitResponse> reinstallServerWithoutCloudInit(
+        ReinstallServerWithoutCloudInitRequest &request
     );
     /// <summary>
     /// 一键重置弹性云服务器密码(企业项目)
@@ -631,6 +784,27 @@ public:
         ShowServerRequest &request
     );
     /// <summary>
+    /// 查询云服务器是否配置了自动恢复动作
+    /// </summary>
+    /// <remarks>
+    /// 查询云服务器是否配置了自动恢复动作。
+    /// </remarks>
+    /// <param name="serverId">云服务器ID。</param>
+    std::shared_ptr<ShowServerAutoRecoveryResponse> showServerAutoRecovery(
+        ShowServerAutoRecoveryRequest &request
+    );
+    /// <summary>
+    /// 查询弹性云服务器单个磁盘信息
+    /// </summary>
+    /// <remarks>
+    /// 查询弹性云服务器挂载的单个磁盘信息。
+    /// </remarks>
+    /// <param name="serverId">云服务器ID。</param>
+    /// <param name="volumeId">云硬盘ID，UUID格式。</param>
+    std::shared_ptr<ShowServerBlockDeviceResponse> showServerBlockDevice(
+        ShowServerBlockDeviceRequest &request
+    );
+    /// <summary>
     /// 查询云服务器组详情
     /// </summary>
     /// <remarks>
@@ -648,6 +822,16 @@ public:
     /// </remarks>
     std::shared_ptr<ShowServerLimitsResponse> showServerLimits(
         ShowServerLimitsRequest &request
+    );
+    /// <summary>
+    /// 云服务器获取密码(企业项目)
+    /// </summary>
+    /// <remarks>
+    /// 当通过支持Cloudbase-init功能的镜像创建Windows云服务器时，获取云服务器初始安装时系统生成的管理员帐户（Administrator帐户或Cloudbase-init设置的帐户）随机密码。
+    /// </remarks>
+    /// <param name="serverId">云服务器ID。</param>
+    std::shared_ptr<ShowServerPasswordResponse> showServerPassword(
+        ShowServerPasswordRequest &request
     );
     /// <summary>
     /// 获取VNC远程登录地址

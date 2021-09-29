@@ -129,6 +129,15 @@ public:
     void unsetspotDurationCount();
     void setSpotDurationCount(int32_t value);
 
+    /// <summary>
+    /// 云备份策略和云备份存储库详情，取值包含备份策略ID和云备份存储库ID。
+    /// </summary>
+
+    std::string getCbCsbsBackup() const;
+    bool cbCsbsBackupIsSet() const;
+    void unsetcbCsbsBackup();
+    void setCbCsbsBackup(const std::string& value);
+
 
 protected:
     int32_t chargingMode_;
@@ -151,6 +160,8 @@ protected:
     bool interruptionPolicyIsSet_;
     int32_t spotDurationCount_;
     bool spotDurationCountIsSet_;
+    std::string cbCsbsBackup_;
+    bool cbCsbsBackupIsSet_;
 
 };
 

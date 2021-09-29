@@ -33,6 +33,8 @@ PostPaidServerExtendParam::PostPaidServerExtendParam()
     interruptionPolicyIsSet_ = false;
     spotDurationCount_ = 0;
     spotDurationCountIsSet_ = false;
+    cbCsbsBackup_ = "";
+    cbCsbsBackupIsSet_ = false;
 }
 
 PostPaidServerExtendParam::~PostPaidServerExtendParam() = default;
@@ -74,6 +76,9 @@ web::json::value PostPaidServerExtendParam::toJson() const
     }
     if(spotDurationCountIsSet_) {
         val[utility::conversions::to_string_t("spot_duration_count")] = ModelBase::toJson(spotDurationCount_);
+    }
+    if(cbCsbsBackupIsSet_) {
+        val[utility::conversions::to_string_t("CB_CSBS_BACKUP")] = ModelBase::toJson(cbCsbsBackup_);
     }
 
     return val;
@@ -171,6 +176,15 @@ bool PostPaidServerExtendParam::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSpotDurationCount(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("CB_CSBS_BACKUP"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("CB_CSBS_BACKUP"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCbCsbsBackup(refVal);
         }
     }
     return ok;
@@ -385,6 +399,27 @@ bool PostPaidServerExtendParam::spotDurationCountIsSet() const
 void PostPaidServerExtendParam::unsetspotDurationCount()
 {
     spotDurationCountIsSet_ = false;
+}
+
+std::string PostPaidServerExtendParam::getCbCsbsBackup() const
+{
+    return cbCsbsBackup_;
+}
+
+void PostPaidServerExtendParam::setCbCsbsBackup(const std::string& value)
+{
+    cbCsbsBackup_ = value;
+    cbCsbsBackupIsSet_ = true;
+}
+
+bool PostPaidServerExtendParam::cbCsbsBackupIsSet() const
+{
+    return cbCsbsBackupIsSet_;
+}
+
+void PostPaidServerExtendParam::unsetcbCsbsBackup()
+{
+    cbCsbsBackupIsSet_ = false;
 }
 
 }

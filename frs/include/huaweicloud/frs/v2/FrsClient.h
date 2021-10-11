@@ -248,7 +248,7 @@ public:
     /// 人脸检测是对输入图片进行人脸检测和分析，输出人脸在图像中的位置、人脸关键点位置和人脸关键属性。
     /// </remarks>
     /// <param name="imageFile">本地图片文件，图片不能超过8MB。上传文件时，请求格式为multipart。</param>
-    /// <param name="attributes">是否返回人脸属性，希望获取的属性列表，多个属性间使用逗号（,）隔开。目前支持的属性有： • 1：性别 • 2：年龄 • 4：装束（帽子、眼镜） • 6：口罩 • 7：发型 • 8：胡须 • 9：肤色 • 10：民族 • 11：图片类型 • 12：质量 • 13：表情 • 21：人脸图片旋转角（顺时针偏转角度），支持0°、90°、180°和270°图片旋转 (optional, default to &quot;&quot;)</param>
+    /// <param name="attributes">是否返回人脸属性，希望获取的属性列表，多个属性间使用逗号（,）隔开。目前支持的属性有： • 2：年龄 • 4：装束（帽子、眼镜） • 6：口罩 • 7：发型 • 8：胡须 • 11：图片类型 • 12：质量 • 13：表情 • 21：人脸图片旋转角（顺时针偏转角度），支持0°、90°、180°和270°图片旋转 (optional, default to &quot;&quot;)</param>
     std::shared_ptr<DetectFaceByFileResponse> detectFaceByFile(
         DetectFaceByFileRequest &request
     );

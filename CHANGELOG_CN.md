@@ -1,3 +1,23 @@
+# 3.0.13-beta 2021-10-11
+
+### HuaweiCloud SDK ECS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`DisassociateServerVirtualIp`的请求参数`reverse_binding`改为非必填
+
+### HuaweiCloud SDK FRS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`DetectFaceByFile`、`DetectFaceByBase64`、`DetectFaceByUrl`的请求参数`attributes`可选值调整为`2,4,6,7,8,11,12,13,21`
+
 # 3.0.12-beta 2021-09-29
 
 ### HuaweiCloud SDK ECS

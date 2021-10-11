@@ -1,3 +1,23 @@
+# 3.0.13-beta 2021-10-11
+
+### HuaweiCloud SDK ECS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Set the request parameter `reverse_binding` to `optional` of the interface `DisassociateServerVirtualIp`.
+
+### HuaweiCloud SDK FRS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Modify the optional value to `2,4,6,7,8,11,12,13,21` of the request parameter `attributes` of the interfaces `DetectFaceByFile`,`DetectFaceByBase64` and `DetectFaceByUrl`.
+
 # 3.0.12-beta 2021-09-29
 
 ### HuaweiCloud SDK ECS

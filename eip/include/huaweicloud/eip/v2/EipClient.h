@@ -310,6 +310,7 @@ public:
     /// <param name="publicIpAddress">IPv4时是申请到的弹性公网IP地址，IPv6时是IPv6地址对应的IPv4地址 (optional, default to std::vector&lt;std::string&gt;())</param>
     /// <param name="privateIpAddress">关联端口的私有IP地址 (optional, default to std::vector&lt;std::string&gt;())</param>
     /// <param name="id">弹性公网IP唯一标识 (optional, default to std::vector&lt;std::string&gt;())</param>
+    /// <param name="allowShareBandwidthTypeAny">共享带宽类型，根据任一共享带宽类型过滤EIP列表。 可以指定多个带宽类型，不同的带宽类型间用逗号分隔。 (optional, default to std::vector&lt;std::string&gt;())</param>
     std::shared_ptr<ListPublicipsResponse> listPublicips(
         ListPublicipsRequest &request
     );
@@ -380,7 +381,7 @@ public:
     /// <remarks>
     /// 查询提交请求的租户有权限操作的所有浮动IP地址。
     /// </remarks>
-    /// <param name="limit">每页显示的条目数量。 (optional, default to &quot;&quot;)</param>
+    /// <param name="limit">每页显示的条目数量。 (optional, default to 0)</param>
     /// <param name="marker">取值为上一页数据的最后一条记录的id，当marker参数为无效id时，response将响应错误码400 (optional, default to &quot;&quot;)</param>
     /// <param name="pageReverse">False/True，是否设置分页的顺序。 (optional, default to false)</param>
     /// <param name="id">浮动IP的id。 (optional, default to &quot;&quot;)</param>
@@ -410,7 +411,7 @@ public:
     /// 更新浮动IP。  更新时需在URL中给出浮动IP地址的ID。  port_id 为空，则表示浮动IP从端口解绑。
     /// </remarks>
     /// <param name="floatingipId">floatingip的ID</param>
-    /// <param name="floatingip">更新floatingip对象</param>
+    /// <param name="neutronUpdateFloatingIpRequestBody">更新floatingip对象</param>
     std::shared_ptr<NeutronUpdateFloatingIpResponse> neutronUpdateFloatingIp(
         NeutronUpdateFloatingIpRequest &request
     );

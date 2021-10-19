@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_EIP_V2_MODEL_PublicipShowResp_H_
-#define HUAWEICLOUD_SDK_EIP_V2_MODEL_PublicipShowResp_H_
+#ifndef HUAWEICLOUD_SDK_EIP_V2_MODEL_PublicipUpdateResp_H_
+#define HUAWEICLOUD_SDK_EIP_V2_MODEL_PublicipUpdateResp_H_
 
 #include <huaweicloud/eip/v2/EipExport.h>
 
@@ -10,7 +10,6 @@
 #include <string>
 #include <cpprest/details/basic_types.h>
 #include <huaweicloud/eip/v2/model/ProfileResp.h>
-#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -24,12 +23,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// 弹性公网IP列表返回体
 /// </summary>
-class HUAWEICLOUD_EIP_V2_EXPORT  PublicipShowResp
+class HUAWEICLOUD_EIP_V2_EXPORT  PublicipUpdateResp
     : public ModelBase
 {
 public:
-    PublicipShowResp();
-    virtual ~PublicipShowResp();
+    PublicipUpdateResp();
+    virtual ~PublicipUpdateResp();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -40,7 +39,7 @@ public:
     bool fromJson(const web::json::value& json) override;
 
     /////////////////////////////////////////////
-    /// PublicipShowResp members
+    /// PublicipUpdateResp members
 
     /// <summary>
     /// 弹性公网IP对应带宽ID
@@ -186,24 +185,6 @@ public:
     void unsetipVersion();
     void setIpVersion(int32_t value);
 
-    /// <summary>
-    /// 功能说明：表示中心站点资源或者边缘站点资源 取值范围： center、边缘站点名称 约束：publicip只能绑定该字段相同的资源
-    /// </summary>
-
-    std::string getPublicBorderGroup() const;
-    bool publicBorderGroupIsSet() const;
-    void unsetpublicBorderGroup();
-    void setPublicBorderGroup(const std::string& value);
-
-    /// <summary>
-    /// 功能说明：表示此publicip可以加入的共享带宽类型列表，如果为空列表，则表示该           publicip不能加入任何共享带宽 约束：publicip只能加入到有该带宽类型的共享带宽中
-    /// </summary>
-
-    std::vector<std::string>& getAllowShareBandwidthTypes();
-    bool allowShareBandwidthTypesIsSet() const;
-    void unsetallowShareBandwidthTypes();
-    void setAllowShareBandwidthTypes(const std::vector<std::string>& value);
-
 
 protected:
     std::string bandwidthId_;
@@ -238,10 +219,6 @@ protected:
     bool publicIpv6AddressIsSet_;
     int32_t ipVersion_;
     bool ipVersionIsSet_;
-    std::string publicBorderGroup_;
-    bool publicBorderGroupIsSet_;
-    std::vector<std::string> allowShareBandwidthTypes_;
-    bool allowShareBandwidthTypesIsSet_;
 
 };
 
@@ -252,4 +229,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_EIP_V2_MODEL_PublicipShowResp_H_
+#endif // HUAWEICLOUD_SDK_EIP_V2_MODEL_PublicipUpdateResp_H_

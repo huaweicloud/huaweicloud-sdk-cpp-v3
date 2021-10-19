@@ -766,6 +766,9 @@ std::shared_ptr<ListPublicipsResponse> EipClient::listPublicips(ListPublicipsReq
     if (request.idIsSet()) {
         localVarQueryParams["id"] = parameterToString(request.getId());
     }
+    if (request.allowShareBandwidthTypeAnyIsSet()) {
+        localVarQueryParams["allow_share_bandwidth_type_any"] = parameterToString(request.getAllowShareBandwidthTypeAny());
+    }
 
     std::string localVarHttpBody;
 

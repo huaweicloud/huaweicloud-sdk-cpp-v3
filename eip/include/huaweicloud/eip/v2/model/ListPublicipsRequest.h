@@ -112,6 +112,15 @@ public:
     void unsetid();
     void setId(const std::vector<std::string>& value);
 
+    /// <summary>
+    /// 共享带宽类型，根据任一共享带宽类型过滤EIP列表。 可以指定多个带宽类型，不同的带宽类型间用逗号分隔。
+    /// </summary>
+
+    std::vector<std::string>& getAllowShareBandwidthTypeAny();
+    bool allowShareBandwidthTypeAnyIsSet() const;
+    void unsetallowShareBandwidthTypeAny();
+    void setAllowShareBandwidthTypeAny(const std::vector<std::string>& value);
+
 
 protected:
     std::string marker_;
@@ -130,6 +139,8 @@ protected:
     bool privateIpAddressIsSet_;
     std::vector<std::string> id_;
     bool idIsSet_;
+    std::vector<std::string> allowShareBandwidthTypeAny_;
+    bool allowShareBandwidthTypeAnyIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

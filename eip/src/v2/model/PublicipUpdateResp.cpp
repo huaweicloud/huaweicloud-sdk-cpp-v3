@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/eip/v2/model/PublicipShowResp.h"
+#include "huaweicloud/eip/v2/model/PublicipUpdateResp.h"
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -11,7 +11,7 @@ namespace Model {
 
 
 
-PublicipShowResp::PublicipShowResp()
+PublicipUpdateResp::PublicipUpdateResp()
 {
     bandwidthId_ = "";
     bandwidthIdIsSet_ = false;
@@ -44,18 +44,15 @@ PublicipShowResp::PublicipShowResp()
     publicIpv6AddressIsSet_ = false;
     ipVersion_ = 0;
     ipVersionIsSet_ = false;
-    publicBorderGroup_ = "";
-    publicBorderGroupIsSet_ = false;
-    allowShareBandwidthTypesIsSet_ = false;
 }
 
-PublicipShowResp::~PublicipShowResp() = default;
+PublicipUpdateResp::~PublicipUpdateResp() = default;
 
-void PublicipShowResp::validate()
+void PublicipUpdateResp::validate()
 {
 }
 
-web::json::value PublicipShowResp::toJson() const
+web::json::value PublicipUpdateResp::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -107,17 +104,11 @@ web::json::value PublicipShowResp::toJson() const
     if(ipVersionIsSet_) {
         val[utility::conversions::to_string_t("ip_version")] = ModelBase::toJson(ipVersion_);
     }
-    if(publicBorderGroupIsSet_) {
-        val[utility::conversions::to_string_t("public_border_group")] = ModelBase::toJson(publicBorderGroup_);
-    }
-    if(allowShareBandwidthTypesIsSet_) {
-        val[utility::conversions::to_string_t("allow_share_bandwidth_types")] = ModelBase::toJson(allowShareBandwidthTypes_);
-    }
 
     return val;
 }
 
-bool PublicipShowResp::fromJson(const web::json::value& val)
+bool PublicipUpdateResp::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -265,404 +256,344 @@ bool PublicipShowResp::fromJson(const web::json::value& val)
             setIpVersion(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("public_border_group"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("public_border_group"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setPublicBorderGroup(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("allow_share_bandwidth_types"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("allow_share_bandwidth_types"));
-        if(!fieldValue.is_null())
-        {
-            std::vector<std::string> refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setAllowShareBandwidthTypes(refVal);
-        }
-    }
     return ok;
 }
 
 
-std::string PublicipShowResp::getBandwidthId() const
+std::string PublicipUpdateResp::getBandwidthId() const
 {
     return bandwidthId_;
 }
 
-void PublicipShowResp::setBandwidthId(const std::string& value)
+void PublicipUpdateResp::setBandwidthId(const std::string& value)
 {
     bandwidthId_ = value;
     bandwidthIdIsSet_ = true;
 }
 
-bool PublicipShowResp::bandwidthIdIsSet() const
+bool PublicipUpdateResp::bandwidthIdIsSet() const
 {
     return bandwidthIdIsSet_;
 }
 
-void PublicipShowResp::unsetbandwidthId()
+void PublicipUpdateResp::unsetbandwidthId()
 {
     bandwidthIdIsSet_ = false;
 }
 
-std::string PublicipShowResp::getBandwidthName() const
+std::string PublicipUpdateResp::getBandwidthName() const
 {
     return bandwidthName_;
 }
 
-void PublicipShowResp::setBandwidthName(const std::string& value)
+void PublicipUpdateResp::setBandwidthName(const std::string& value)
 {
     bandwidthName_ = value;
     bandwidthNameIsSet_ = true;
 }
 
-bool PublicipShowResp::bandwidthNameIsSet() const
+bool PublicipUpdateResp::bandwidthNameIsSet() const
 {
     return bandwidthNameIsSet_;
 }
 
-void PublicipShowResp::unsetbandwidthName()
+void PublicipUpdateResp::unsetbandwidthName()
 {
     bandwidthNameIsSet_ = false;
 }
 
-std::string PublicipShowResp::getBandwidthShareType() const
+std::string PublicipUpdateResp::getBandwidthShareType() const
 {
     return bandwidthShareType_;
 }
 
-void PublicipShowResp::setBandwidthShareType(const std::string& value)
+void PublicipUpdateResp::setBandwidthShareType(const std::string& value)
 {
     bandwidthShareType_ = value;
     bandwidthShareTypeIsSet_ = true;
 }
 
-bool PublicipShowResp::bandwidthShareTypeIsSet() const
+bool PublicipUpdateResp::bandwidthShareTypeIsSet() const
 {
     return bandwidthShareTypeIsSet_;
 }
 
-void PublicipShowResp::unsetbandwidthShareType()
+void PublicipUpdateResp::unsetbandwidthShareType()
 {
     bandwidthShareTypeIsSet_ = false;
 }
 
-int32_t PublicipShowResp::getBandwidthSize() const
+int32_t PublicipUpdateResp::getBandwidthSize() const
 {
     return bandwidthSize_;
 }
 
-void PublicipShowResp::setBandwidthSize(int32_t value)
+void PublicipUpdateResp::setBandwidthSize(int32_t value)
 {
     bandwidthSize_ = value;
     bandwidthSizeIsSet_ = true;
 }
 
-bool PublicipShowResp::bandwidthSizeIsSet() const
+bool PublicipUpdateResp::bandwidthSizeIsSet() const
 {
     return bandwidthSizeIsSet_;
 }
 
-void PublicipShowResp::unsetbandwidthSize()
+void PublicipUpdateResp::unsetbandwidthSize()
 {
     bandwidthSizeIsSet_ = false;
 }
 
-utility::datetime PublicipShowResp::getCreateTime() const
+utility::datetime PublicipUpdateResp::getCreateTime() const
 {
     return createTime_;
 }
 
-void PublicipShowResp::setCreateTime(const utility::datetime& value)
+void PublicipUpdateResp::setCreateTime(const utility::datetime& value)
 {
     createTime_ = value;
     createTimeIsSet_ = true;
 }
 
-bool PublicipShowResp::createTimeIsSet() const
+bool PublicipUpdateResp::createTimeIsSet() const
 {
     return createTimeIsSet_;
 }
 
-void PublicipShowResp::unsetcreateTime()
+void PublicipUpdateResp::unsetcreateTime()
 {
     createTimeIsSet_ = false;
 }
 
-std::string PublicipShowResp::getEnterpriseProjectId() const
+std::string PublicipUpdateResp::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;
 }
 
-void PublicipShowResp::setEnterpriseProjectId(const std::string& value)
+void PublicipUpdateResp::setEnterpriseProjectId(const std::string& value)
 {
     enterpriseProjectId_ = value;
     enterpriseProjectIdIsSet_ = true;
 }
 
-bool PublicipShowResp::enterpriseProjectIdIsSet() const
+bool PublicipUpdateResp::enterpriseProjectIdIsSet() const
 {
     return enterpriseProjectIdIsSet_;
 }
 
-void PublicipShowResp::unsetenterpriseProjectId()
+void PublicipUpdateResp::unsetenterpriseProjectId()
 {
     enterpriseProjectIdIsSet_ = false;
 }
 
-std::string PublicipShowResp::getId() const
+std::string PublicipUpdateResp::getId() const
 {
     return id_;
 }
 
-void PublicipShowResp::setId(const std::string& value)
+void PublicipUpdateResp::setId(const std::string& value)
 {
     id_ = value;
     idIsSet_ = true;
 }
 
-bool PublicipShowResp::idIsSet() const
+bool PublicipUpdateResp::idIsSet() const
 {
     return idIsSet_;
 }
 
-void PublicipShowResp::unsetid()
+void PublicipUpdateResp::unsetid()
 {
     idIsSet_ = false;
 }
 
-std::string PublicipShowResp::getPortId() const
+std::string PublicipUpdateResp::getPortId() const
 {
     return portId_;
 }
 
-void PublicipShowResp::setPortId(const std::string& value)
+void PublicipUpdateResp::setPortId(const std::string& value)
 {
     portId_ = value;
     portIdIsSet_ = true;
 }
 
-bool PublicipShowResp::portIdIsSet() const
+bool PublicipUpdateResp::portIdIsSet() const
 {
     return portIdIsSet_;
 }
 
-void PublicipShowResp::unsetportId()
+void PublicipUpdateResp::unsetportId()
 {
     portIdIsSet_ = false;
 }
 
-std::string PublicipShowResp::getPrivateIpAddress() const
+std::string PublicipUpdateResp::getPrivateIpAddress() const
 {
     return privateIpAddress_;
 }
 
-void PublicipShowResp::setPrivateIpAddress(const std::string& value)
+void PublicipUpdateResp::setPrivateIpAddress(const std::string& value)
 {
     privateIpAddress_ = value;
     privateIpAddressIsSet_ = true;
 }
 
-bool PublicipShowResp::privateIpAddressIsSet() const
+bool PublicipUpdateResp::privateIpAddressIsSet() const
 {
     return privateIpAddressIsSet_;
 }
 
-void PublicipShowResp::unsetprivateIpAddress()
+void PublicipUpdateResp::unsetprivateIpAddress()
 {
     privateIpAddressIsSet_ = false;
 }
 
-ProfileResp PublicipShowResp::getProfile() const
+ProfileResp PublicipUpdateResp::getProfile() const
 {
     return profile_;
 }
 
-void PublicipShowResp::setProfile(const ProfileResp& value)
+void PublicipUpdateResp::setProfile(const ProfileResp& value)
 {
     profile_ = value;
     profileIsSet_ = true;
 }
 
-bool PublicipShowResp::profileIsSet() const
+bool PublicipUpdateResp::profileIsSet() const
 {
     return profileIsSet_;
 }
 
-void PublicipShowResp::unsetprofile()
+void PublicipUpdateResp::unsetprofile()
 {
     profileIsSet_ = false;
 }
 
-std::string PublicipShowResp::getPublicIpAddress() const
+std::string PublicipUpdateResp::getPublicIpAddress() const
 {
     return publicIpAddress_;
 }
 
-void PublicipShowResp::setPublicIpAddress(const std::string& value)
+void PublicipUpdateResp::setPublicIpAddress(const std::string& value)
 {
     publicIpAddress_ = value;
     publicIpAddressIsSet_ = true;
 }
 
-bool PublicipShowResp::publicIpAddressIsSet() const
+bool PublicipUpdateResp::publicIpAddressIsSet() const
 {
     return publicIpAddressIsSet_;
 }
 
-void PublicipShowResp::unsetpublicIpAddress()
+void PublicipUpdateResp::unsetpublicIpAddress()
 {
     publicIpAddressIsSet_ = false;
 }
 
-std::string PublicipShowResp::getStatus() const
+std::string PublicipUpdateResp::getStatus() const
 {
     return status_;
 }
 
-void PublicipShowResp::setStatus(const std::string& value)
+void PublicipUpdateResp::setStatus(const std::string& value)
 {
     status_ = value;
     statusIsSet_ = true;
 }
 
-bool PublicipShowResp::statusIsSet() const
+bool PublicipUpdateResp::statusIsSet() const
 {
     return statusIsSet_;
 }
 
-void PublicipShowResp::unsetstatus()
+void PublicipUpdateResp::unsetstatus()
 {
     statusIsSet_ = false;
 }
 
-std::string PublicipShowResp::getTenantId() const
+std::string PublicipUpdateResp::getTenantId() const
 {
     return tenantId_;
 }
 
-void PublicipShowResp::setTenantId(const std::string& value)
+void PublicipUpdateResp::setTenantId(const std::string& value)
 {
     tenantId_ = value;
     tenantIdIsSet_ = true;
 }
 
-bool PublicipShowResp::tenantIdIsSet() const
+bool PublicipUpdateResp::tenantIdIsSet() const
 {
     return tenantIdIsSet_;
 }
 
-void PublicipShowResp::unsettenantId()
+void PublicipUpdateResp::unsettenantId()
 {
     tenantIdIsSet_ = false;
 }
 
-std::string PublicipShowResp::getType() const
+std::string PublicipUpdateResp::getType() const
 {
     return type_;
 }
 
-void PublicipShowResp::setType(const std::string& value)
+void PublicipUpdateResp::setType(const std::string& value)
 {
     type_ = value;
     typeIsSet_ = true;
 }
 
-bool PublicipShowResp::typeIsSet() const
+bool PublicipUpdateResp::typeIsSet() const
 {
     return typeIsSet_;
 }
 
-void PublicipShowResp::unsettype()
+void PublicipUpdateResp::unsettype()
 {
     typeIsSet_ = false;
 }
 
-std::string PublicipShowResp::getPublicIpv6Address() const
+std::string PublicipUpdateResp::getPublicIpv6Address() const
 {
     return publicIpv6Address_;
 }
 
-void PublicipShowResp::setPublicIpv6Address(const std::string& value)
+void PublicipUpdateResp::setPublicIpv6Address(const std::string& value)
 {
     publicIpv6Address_ = value;
     publicIpv6AddressIsSet_ = true;
 }
 
-bool PublicipShowResp::publicIpv6AddressIsSet() const
+bool PublicipUpdateResp::publicIpv6AddressIsSet() const
 {
     return publicIpv6AddressIsSet_;
 }
 
-void PublicipShowResp::unsetpublicIpv6Address()
+void PublicipUpdateResp::unsetpublicIpv6Address()
 {
     publicIpv6AddressIsSet_ = false;
 }
 
-int32_t PublicipShowResp::getIpVersion() const
+int32_t PublicipUpdateResp::getIpVersion() const
 {
     return ipVersion_;
 }
 
-void PublicipShowResp::setIpVersion(int32_t value)
+void PublicipUpdateResp::setIpVersion(int32_t value)
 {
     ipVersion_ = value;
     ipVersionIsSet_ = true;
 }
 
-bool PublicipShowResp::ipVersionIsSet() const
+bool PublicipUpdateResp::ipVersionIsSet() const
 {
     return ipVersionIsSet_;
 }
 
-void PublicipShowResp::unsetipVersion()
+void PublicipUpdateResp::unsetipVersion()
 {
     ipVersionIsSet_ = false;
-}
-
-std::string PublicipShowResp::getPublicBorderGroup() const
-{
-    return publicBorderGroup_;
-}
-
-void PublicipShowResp::setPublicBorderGroup(const std::string& value)
-{
-    publicBorderGroup_ = value;
-    publicBorderGroupIsSet_ = true;
-}
-
-bool PublicipShowResp::publicBorderGroupIsSet() const
-{
-    return publicBorderGroupIsSet_;
-}
-
-void PublicipShowResp::unsetpublicBorderGroup()
-{
-    publicBorderGroupIsSet_ = false;
-}
-
-std::vector<std::string>& PublicipShowResp::getAllowShareBandwidthTypes()
-{
-    return allowShareBandwidthTypes_;
-}
-
-void PublicipShowResp::setAllowShareBandwidthTypes(const std::vector<std::string>& value)
-{
-    allowShareBandwidthTypes_ = value;
-    allowShareBandwidthTypesIsSet_ = true;
-}
-
-bool PublicipShowResp::allowShareBandwidthTypesIsSet() const
-{
-    return allowShareBandwidthTypesIsSet_;
-}
-
-void PublicipShowResp::unsetallowShareBandwidthTypes()
-{
-    allowShareBandwidthTypesIsSet_ = false;
 }
 
 }

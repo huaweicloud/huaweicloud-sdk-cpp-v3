@@ -1,3 +1,22 @@
+# 3.0.14-beta 2021-10-19
+
+### HuaweiCloud SDK EIP
+
+- _新增特性_
+  - 支持以下接口：
+    - `ListCommonPools`
+    - `ListPublicBorderGroups`
+    - `ListPublicipPool`
+    - `ShowPublicipPool`
+    - `ListShareBandwidthTypes`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ListPublicips`新增请求参数`allow_share_bandwidth_type_any`
+  - 接口`NeutronListFloatingIps`的请求参数`limit`的类型调整： `string` -> `integer`
+  - 接口`NeutronUpdateFloatingIp`请求体的名称调整： `floatingip` -> `NeutronUpdateFloatingIpRequestBody`
+  - 接口`ShowPublicip`新增响应参数`allow_share_bandwidth_types`
+
 # 3.0.13-beta 2021-10-11
 
 ### HuaweiCloud SDK ECS

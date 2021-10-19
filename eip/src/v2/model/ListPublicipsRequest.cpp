@@ -25,6 +25,7 @@ ListPublicipsRequest::ListPublicipsRequest()
     publicIpAddressIsSet_ = false;
     privateIpAddressIsSet_ = false;
     idIsSet_ = false;
+    allowShareBandwidthTypeAnyIsSet_ = false;
 }
 
 ListPublicipsRequest::~ListPublicipsRequest() = default;
@@ -60,6 +61,9 @@ web::json::value ListPublicipsRequest::toJson() const
     }
     if(idIsSet_) {
         val[utility::conversions::to_string_t("id")] = ModelBase::toJson(id_);
+    }
+    if(allowShareBandwidthTypeAnyIsSet_) {
+        val[utility::conversions::to_string_t("allow_share_bandwidth_type_any")] = ModelBase::toJson(allowShareBandwidthTypeAny_);
     }
 
     return val;
@@ -139,6 +143,15 @@ bool ListPublicipsRequest::fromJson(const web::json::value& val)
             std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("allow_share_bandwidth_type_any"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("allow_share_bandwidth_type_any"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAllowShareBandwidthTypeAny(refVal);
         }
     }
     return ok;
@@ -311,6 +324,27 @@ bool ListPublicipsRequest::idIsSet() const
 void ListPublicipsRequest::unsetid()
 {
     idIsSet_ = false;
+}
+
+std::vector<std::string>& ListPublicipsRequest::getAllowShareBandwidthTypeAny()
+{
+    return allowShareBandwidthTypeAny_;
+}
+
+void ListPublicipsRequest::setAllowShareBandwidthTypeAny(const std::vector<std::string>& value)
+{
+    allowShareBandwidthTypeAny_ = value;
+    allowShareBandwidthTypeAnyIsSet_ = true;
+}
+
+bool ListPublicipsRequest::allowShareBandwidthTypeAnyIsSet() const
+{
+    return allowShareBandwidthTypeAnyIsSet_;
+}
+
+void ListPublicipsRequest::unsetallowShareBandwidthTypeAny()
+{
+    allowShareBandwidthTypeAnyIsSet_ = false;
 }
 
 }

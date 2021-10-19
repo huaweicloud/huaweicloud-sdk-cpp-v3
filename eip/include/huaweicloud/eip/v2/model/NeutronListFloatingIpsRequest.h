@@ -43,10 +43,10 @@ public:
     /// 每页显示的条目数量。
     /// </summary>
 
-    std::string getLimit() const;
+    int32_t getLimit() const;
     bool limitIsSet() const;
     void unsetlimit();
-    void setLimit(const std::string& value);
+    void setLimit(int32_t value);
 
     /// <summary>
     /// 取值为上一页数据的最后一条记录的id，当marker参数为无效id时，response将响应错误码400
@@ -131,7 +131,7 @@ public:
 
 
 protected:
-    std::string limit_;
+    int32_t limit_;
     bool limitIsSet_;
     std::string marker_;
     bool markerIsSet_;

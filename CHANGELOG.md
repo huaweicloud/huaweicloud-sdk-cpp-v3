@@ -1,3 +1,22 @@
+# 3.0.14-beta 2021-10-19
+
+### HuaweiCloud SDK EIP
+
+- _Features_
+  - Support the following interfaces:
+    - `ListCommonPools`
+    - `ListPublicBorderGroups`
+    - `ListPublicipPool`
+    - `ShowPublicipPool`
+    - `ListShareBandwidthTypes`
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the request parameter `allow_share_bandwidth_type_any` to the interface `ListPublicips`.
+  - Modify the type of the request parameter `limit` of the interface `NeutronListFloatingIps`.
+  - Modify the name of the request body of the interface `NeutronUpdateFloatingIp`: `floatingip` -> `NeutronUpdateFloatingIpRequestBody`
+  - Add the response parameter `allow_share_bandwidth_types` to the interface `ShowPublicip`.
+
 # 3.0.13-beta 2021-10-11
 
 ### HuaweiCloud SDK ECS

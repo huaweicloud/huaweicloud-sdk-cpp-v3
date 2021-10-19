@@ -13,7 +13,7 @@ namespace Model {
 
 NeutronListFloatingIpsRequest::NeutronListFloatingIpsRequest()
 {
-    limit_ = "";
+    limit_ = 0;
     limitIsSet_ = false;
     marker_ = "";
     markerIsSet_ = false;
@@ -87,7 +87,7 @@ bool NeutronListFloatingIpsRequest::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("limit"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLimit(refVal);
         }
@@ -177,12 +177,12 @@ bool NeutronListFloatingIpsRequest::fromJson(const web::json::value& val)
 }
 
 
-std::string NeutronListFloatingIpsRequest::getLimit() const
+int32_t NeutronListFloatingIpsRequest::getLimit() const
 {
     return limit_;
 }
 
-void NeutronListFloatingIpsRequest::setLimit(const std::string& value)
+void NeutronListFloatingIpsRequest::setLimit(int32_t value)
 {
     limit_ = value;
     limitIsSet_ = true;

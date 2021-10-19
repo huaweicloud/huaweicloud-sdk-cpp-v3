@@ -7,7 +7,7 @@
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/eip/v2/model/PublicipShowResp.h>
+#include <huaweicloud/eip/v2/model/PublicipUpdateResp.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -43,14 +43,14 @@ public:
     /// 
     /// </summary>
 
-    PublicipShowResp getPublicip() const;
+    PublicipUpdateResp getPublicip() const;
     bool publicipIsSet() const;
     void unsetpublicip();
-    void setPublicip(const PublicipShowResp& value);
+    void setPublicip(const PublicipUpdateResp& value);
 
 
 protected:
-    PublicipShowResp publicip_;
+    PublicipUpdateResp publicip_;
     bool publicipIsSet_;
 
 #ifdef RTTR_FLAG

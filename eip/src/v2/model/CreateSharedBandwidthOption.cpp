@@ -23,6 +23,8 @@ CreateSharedBandwidthOption::CreateSharedBandwidthOption()
     chargeModeIsSet_ = false;
     publicBorderGroup_ = "";
     publicBorderGroupIsSet_ = false;
+    bandwidthType_ = "";
+    bandwidthTypeIsSet_ = false;
 }
 
 CreateSharedBandwidthOption::~CreateSharedBandwidthOption() = default;
@@ -49,6 +51,9 @@ web::json::value CreateSharedBandwidthOption::toJson() const
     }
     if(publicBorderGroupIsSet_) {
         val[utility::conversions::to_string_t("public_border_group")] = ModelBase::toJson(publicBorderGroup_);
+    }
+    if(bandwidthTypeIsSet_) {
+        val[utility::conversions::to_string_t("bandwidth_type")] = ModelBase::toJson(bandwidthType_);
     }
 
     return val;
@@ -101,6 +106,15 @@ bool CreateSharedBandwidthOption::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPublicBorderGroup(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("bandwidth_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("bandwidth_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBandwidthType(refVal);
         }
     }
     return ok;
@@ -210,6 +224,27 @@ bool CreateSharedBandwidthOption::publicBorderGroupIsSet() const
 void CreateSharedBandwidthOption::unsetpublicBorderGroup()
 {
     publicBorderGroupIsSet_ = false;
+}
+
+std::string CreateSharedBandwidthOption::getBandwidthType() const
+{
+    return bandwidthType_;
+}
+
+void CreateSharedBandwidthOption::setBandwidthType(const std::string& value)
+{
+    bandwidthType_ = value;
+    bandwidthTypeIsSet_ = true;
+}
+
+bool CreateSharedBandwidthOption::bandwidthTypeIsSet() const
+{
+    return bandwidthTypeIsSet_;
+}
+
+void CreateSharedBandwidthOption::unsetbandwidthType()
+{
+    bandwidthTypeIsSet_ = false;
 }
 
 }

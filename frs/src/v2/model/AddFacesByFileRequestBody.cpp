@@ -18,6 +18,8 @@ AddFacesByFileRequestBody::AddFacesByFileRequestBody()
     externalImageIdIsSet_ = false;
     externalFields_ = "";
     externalFieldsIsSet_ = false;
+    single_ = false;
+    singleIsSet_ = false;
 }
 
 AddFacesByFileRequestBody::~AddFacesByFileRequestBody() = default;
@@ -38,6 +40,9 @@ web::json::value AddFacesByFileRequestBody::toJson() const
     }
     if(externalFieldsIsSet_) {
         val[utility::conversions::to_string_t("external_fields")] = ModelBase::toJson(externalFields_);
+    }
+    if(singleIsSet_) {
+        val[utility::conversions::to_string_t("single")] = ModelBase::toJson(single_);
     }
 
     return val;
@@ -72,6 +77,15 @@ bool AddFacesByFileRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setExternalFields(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("single"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("single"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSingle(refVal);
         }
     }
     return ok;
@@ -139,6 +153,27 @@ bool AddFacesByFileRequestBody::externalFieldsIsSet() const
 void AddFacesByFileRequestBody::unsetexternalFields()
 {
     externalFieldsIsSet_ = false;
+}
+
+bool AddFacesByFileRequestBody::isSingle() const
+{
+    return single_;
+}
+
+void AddFacesByFileRequestBody::setSingle(bool value)
+{
+    single_ = value;
+    singleIsSet_ = true;
+}
+
+bool AddFacesByFileRequestBody::singleIsSet() const
+{
+    return singleIsSet_;
+}
+
+void AddFacesByFileRequestBody::unsetsingle()
+{
+    singleIsSet_ = false;
 }
 
 }

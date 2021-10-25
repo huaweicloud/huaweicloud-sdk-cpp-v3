@@ -1,3 +1,50 @@
+# 3.0.15-beta 2021-10-25
+
+### HuaweiCloud SDK EIP
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the request parameter `bandwidth_type` to the interface `CreateSharedBandwidth`.
+
+### HuaweiCloud SDK FRS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the request parameter `single` to the interfaces `AddFacesByFile`, `AddFacesByBase64` and `AddFacesByUrl`.
+
+### HuaweiCloud SDK IMS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the response parameters `current_task`, `image_name` and `process_percent` to the interface `ShowJob`.
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - Support the interfaces `RecognizeInsurancePolicy`, `RecognizeFinancialStatement` and `RecognizeQualificationCertificate`.
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK SDRS
+
+- _Features_
+  - Support the `Storage Disaster Recovery Service`.
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.0.14-beta 2021-10-19
 
 ### HuaweiCloud SDK EIP

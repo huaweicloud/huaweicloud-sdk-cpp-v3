@@ -116,7 +116,7 @@ public:
     /// 添加人脸
     /// </summary>
     /// <remarks>
-    /// 添加人脸到人脸库中，检测到传入的单张图片中存在多少张人脸，则增加多少张人脸到人脸库当中。
+    /// 添加人脸到人脸库中。将单张图片中的人脸添加至人脸库中，支持添加最大人脸或所有人脸。
     /// </remarks>
     /// <param name="faceSetName">人脸库名称。</param>
     /// <param name="addFacesBase64Req">This is a auto create Body Object</param>
@@ -127,12 +127,13 @@ public:
     /// 添加人脸
     /// </summary>
     /// <remarks>
-    /// 添加人脸到人脸库中，检测到传入的单张图片中存在多少张人脸，则增加多少张人脸到人脸库当中。
+    /// 添加人脸到人脸库中。将单张图片中的人脸添加至人脸库中，支持添加最大人脸或所有人脸。
     /// </remarks>
     /// <param name="faceSetName">人脸库名称。</param>
     /// <param name="imageFile">本地图片文件，图片不能超过8MB，建议小于1MB。上传文件时，请求格式为multipart。</param>
     /// <param name="externalImageId">用户指定的图片外部ID，与当前图像绑定。用户没提供，系统会生成一个。 该ID长度范围为1～36位，可以包含字母、数字、中划线或者下划线，不包含其他的特殊字符。 (optional, default to &quot;&quot;)</param>
     /// <param name="externalFields">根据用户自定义数据类型，填入相应的数值。 创建faceset时定义该字段，Json字符串不校验重复性，参考[自定义字段](https://support.huaweicloud.com/api-face/face_02_0012.html)。 (optional, default to &quot;&quot;)</param>
+    /// <param name="single">是否将图片中的最大人脸添加至人脸库。可选值包括: • true: 传入的单张图片中如果包含多张人脸，则只将最大人脸添加到人脸库中。 • false: 默认为false。传入的单张图片中如果包含多张人脸，则将所有人脸添加至人脸库中。 (optional, default to false)</param>
     std::shared_ptr<AddFacesByFileResponse> addFacesByFile(
         AddFacesByFileRequest &request
     );
@@ -140,7 +141,7 @@ public:
     /// 添加人脸
     /// </summary>
     /// <remarks>
-    /// 添加人脸到人脸库中，检测到传入的单张图片中存在多少张人脸，则增加多少张人脸到人脸库当中。
+    /// 添加人脸到人脸库中。将单张图片中的人脸添加至人脸库中，支持添加最大人脸或所有人脸。
     /// </remarks>
     /// <param name="faceSetName">人脸库名称。</param>
     /// <param name="addFacesUrlReq">This is a auto create Body Object</param>

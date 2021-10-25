@@ -98,6 +98,9 @@ std::shared_ptr<AddFacesByFileResponse> FrsClient::addFacesByFile(AddFacesByFile
     if (request.IsSet()) {
         localVarFormParams["external_fields"] = parameterToString(request.getExternalFields());
     }
+    if (request.IsSet()) {
+        localVarFormParams["single"] = parameterToString(request.isSingle());
+    }
 
     std::string localVarHttpBody;
 

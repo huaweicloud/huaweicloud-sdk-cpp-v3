@@ -84,6 +84,15 @@ public:
     void unsetpublicBorderGroup();
     void setPublicBorderGroup(const std::string& value);
 
+    /// <summary>
+    /// 功能说明：指定带宽类型创建，默认中心站点为share，边缘站点为edgeshare 取值范围： 查询当前租户可见的带宽类型列表获取
+    /// </summary>
+
+    std::string getBandwidthType() const;
+    bool bandwidthTypeIsSet() const;
+    void unsetbandwidthType();
+    void setBandwidthType(const std::string& value);
+
 
 protected:
     std::string enterpriseProjectId_;
@@ -96,6 +105,8 @@ protected:
     bool chargeModeIsSet_;
     std::string publicBorderGroup_;
     bool publicBorderGroupIsSet_;
+    std::string bandwidthType_;
+    bool bandwidthTypeIsSet_;
 
 };
 

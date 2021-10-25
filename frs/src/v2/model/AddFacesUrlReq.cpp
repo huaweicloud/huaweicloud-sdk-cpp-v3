@@ -18,6 +18,8 @@ AddFacesUrlReq::AddFacesUrlReq()
     externalFieldsIsSet_ = false;
     externalImageId_ = "";
     externalImageIdIsSet_ = false;
+    single_ = false;
+    singleIsSet_ = false;
 }
 
 AddFacesUrlReq::~AddFacesUrlReq() = default;
@@ -38,6 +40,9 @@ web::json::value AddFacesUrlReq::toJson() const
     }
     if(externalImageIdIsSet_) {
         val[utility::conversions::to_string_t("external_image_id")] = ModelBase::toJson(externalImageId_);
+    }
+    if(singleIsSet_) {
+        val[utility::conversions::to_string_t("single")] = ModelBase::toJson(single_);
     }
 
     return val;
@@ -72,6 +77,15 @@ bool AddFacesUrlReq::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setExternalImageId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("single"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("single"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSingle(refVal);
         }
     }
     return ok;
@@ -139,6 +153,27 @@ bool AddFacesUrlReq::externalImageIdIsSet() const
 void AddFacesUrlReq::unsetexternalImageId()
 {
     externalImageIdIsSet_ = false;
+}
+
+bool AddFacesUrlReq::isSingle() const
+{
+    return single_;
+}
+
+void AddFacesUrlReq::setSingle(bool value)
+{
+    single_ = value;
+    singleIsSet_ = true;
+}
+
+bool AddFacesUrlReq::singleIsSet() const
+{
+    return singleIsSet_;
+}
+
+void AddFacesUrlReq::unsetsingle()
+{
+    singleIsSet_ = false;
 }
 
 }

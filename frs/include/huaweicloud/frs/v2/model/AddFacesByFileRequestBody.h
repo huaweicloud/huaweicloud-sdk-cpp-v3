@@ -67,6 +67,15 @@ public:
     void unsetexternalFields();
     void setExternalFields(const std::string& value);
 
+    /// <summary>
+    /// 是否将图片中的最大人脸添加至人脸库。可选值包括: • true: 传入的单张图片中如果包含多张人脸，则只将最大人脸添加到人脸库中。 • false: 默认为false。传入的单张图片中如果包含多张人脸，则将所有人脸添加至人脸库中。
+    /// </summary>
+
+    bool isSingle() const;
+    bool singleIsSet() const;
+    void unsetsingle();
+    void setSingle(bool value);
+
 
 protected:
     HttpContent imageFile_;
@@ -75,6 +84,8 @@ protected:
     bool externalImageIdIsSet_;
     std::string externalFields_;
     bool externalFieldsIsSet_;
+    bool single_;
+    bool singleIsSet_;
 
 };
 

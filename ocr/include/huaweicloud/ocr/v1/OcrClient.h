@@ -11,15 +11,18 @@
 #include <huaweicloud/ocr/v1/model/BusinessCardRequestBody.h>
 #include <huaweicloud/ocr/v1/model/BusinessLicenseRequestBody.h>
 #include <huaweicloud/ocr/v1/model/DriverLicenseRequestBody.h>
+#include <huaweicloud/ocr/v1/model/FinancialStatementRequestBody.h>
 #include <huaweicloud/ocr/v1/model/FlightItineraryRequestBody.h>
 #include <huaweicloud/ocr/v1/model/GeneralTableRequestBody.h>
 #include <huaweicloud/ocr/v1/model/GeneralTextRequestBody.h>
 #include <huaweicloud/ocr/v1/model/HandwritingRequestBody.h>
 #include <huaweicloud/ocr/v1/model/IdCardRequestBody.h>
+#include <huaweicloud/ocr/v1/model/InsurancePolicyRequestBody.h>
 #include <huaweicloud/ocr/v1/model/InvoiceVerificationRequestBody.h>
 #include <huaweicloud/ocr/v1/model/LicensePlateRequestBody.h>
 #include <huaweicloud/ocr/v1/model/MvsInvoiceRequestBody.h>
 #include <huaweicloud/ocr/v1/model/PassportRequestBody.h>
+#include <huaweicloud/ocr/v1/model/QualificationCertificateRequestBody.h>
 #include <huaweicloud/ocr/v1/model/QuotaInvoiceRequestBody.h>
 #include <huaweicloud/ocr/v1/model/RecognizeAutoClassificationRequest.h>
 #include <huaweicloud/ocr/v1/model/RecognizeAutoClassificationResponse.h>
@@ -31,6 +34,8 @@
 #include <huaweicloud/ocr/v1/model/RecognizeBusinessLicenseResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeDriverLicenseRequest.h>
 #include <huaweicloud/ocr/v1/model/RecognizeDriverLicenseResponse.h>
+#include <huaweicloud/ocr/v1/model/RecognizeFinancialStatementRequest.h>
+#include <huaweicloud/ocr/v1/model/RecognizeFinancialStatementResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeFlightItineraryRequest.h>
 #include <huaweicloud/ocr/v1/model/RecognizeFlightItineraryResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeGeneralTableRequest.h>
@@ -41,6 +46,8 @@
 #include <huaweicloud/ocr/v1/model/RecognizeHandwritingResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeIdCardRequest.h>
 #include <huaweicloud/ocr/v1/model/RecognizeIdCardResponse.h>
+#include <huaweicloud/ocr/v1/model/RecognizeInsurancePolicyRequest.h>
+#include <huaweicloud/ocr/v1/model/RecognizeInsurancePolicyResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeInvoiceVerificationRequest.h>
 #include <huaweicloud/ocr/v1/model/RecognizeInvoiceVerificationResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeLicensePlateRequest.h>
@@ -49,6 +56,8 @@
 #include <huaweicloud/ocr/v1/model/RecognizeMvsInvoiceResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizePassportRequest.h>
 #include <huaweicloud/ocr/v1/model/RecognizePassportResponse.h>
+#include <huaweicloud/ocr/v1/model/RecognizeQualificationCertificateRequest.h>
+#include <huaweicloud/ocr/v1/model/RecognizeQualificationCertificateResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeQuotaInvoiceRequest.h>
 #include <huaweicloud/ocr/v1/model/RecognizeQuotaInvoiceResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeTaxiInvoiceRequest.h>
@@ -151,6 +160,16 @@ public:
         RecognizeDriverLicenseRequest &request
     );
     /// <summary>
+    /// 财务报表识别
+    /// </summary>
+    /// <remarks>
+    /// 识别用户上传的表格图片中的文字内容，并将识别的结果返回给用户。
+    /// </remarks>
+    /// <param name="financialStatementRequestBody">This is a financial statement Body Object</param>
+    std::shared_ptr<RecognizeFinancialStatementResponse> recognizeFinancialStatement(
+        RecognizeFinancialStatementRequest &request
+    );
+    /// <summary>
     /// 飞机行程单识别
     /// </summary>
     /// <remarks>
@@ -201,6 +220,16 @@ public:
         RecognizeIdCardRequest &request
     );
     /// <summary>
+    /// 保险单识别
+    /// </summary>
+    /// <remarks>
+    /// 识别保险单图片上的文字信息，并将识别的结构化结果返回给用户。支持对多板式保险单的扫描图片及手机照片进行结构化信息提取。 
+    /// </remarks>
+    /// <param name="insurancePolicyRequestBody">This is a insurance policy request Body Object</param>
+    std::shared_ptr<RecognizeInsurancePolicyResponse> recognizeInsurancePolicy(
+        RecognizeInsurancePolicyRequest &request
+    );
+    /// <summary>
     /// 发票验真
     /// </summary>
     /// <remarks>
@@ -239,6 +268,16 @@ public:
     /// <param name="passportRequestBody">This is a Passport Body Object</param>
     std::shared_ptr<RecognizePassportResponse> recognizePassport(
         RecognizePassportRequest &request
+    );
+    /// <summary>
+    /// 从业资格证识别
+    /// </summary>
+    /// <remarks>
+    /// 识别道路运输从业资格证上的关键文字信息，并返回识别的结构化结果。  说明：  如果图片中包含多张卡证票据，请调用[智能分类识别](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;OCR&amp;api&#x3D;AutoClassification)服务。 
+    /// </remarks>
+    /// <param name="qualificationCertificateRequestBody">This is a auto create Body Object Object</param>
+    std::shared_ptr<RecognizeQualificationCertificateResponse> recognizeQualificationCertificate(
+        RecognizeQualificationCertificateRequest &request
     );
     /// <summary>
     /// 定额发票识别

@@ -48,10 +48,43 @@ public:
     void unsetimageId();
     void setImageId(const std::string& value);
 
+    /// <summary>
+    /// 当前任务名称
+    /// </summary>
+
+    std::string getCurrentTask() const;
+    bool currentTaskIsSet() const;
+    void unsetcurrentTask();
+    void setCurrentTask(const std::string& value);
+
+    /// <summary>
+    /// 镜像名称
+    /// </summary>
+
+    std::string getImageName() const;
+    bool imageNameIsSet() const;
+    void unsetimageName();
+    void setImageName(const std::string& value);
+
+    /// <summary>
+    /// 任务执行进度
+    /// </summary>
+
+    double getProcessPercent() const;
+    bool processPercentIsSet() const;
+    void unsetprocessPercent();
+    void setProcessPercent(double value);
+
 
 protected:
     std::string imageId_;
     bool imageIdIsSet_;
+    std::string currentTask_;
+    bool currentTaskIsSet_;
+    std::string imageName_;
+    bool imageNameIsSet_;
+    double processPercent_;
+    bool processPercentIsSet_;
 
 };
 

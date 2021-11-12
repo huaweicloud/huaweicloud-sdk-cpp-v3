@@ -7,7 +7,9 @@
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/ims/v2/model/JobEntitiesResult.h>
 #include <string>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -75,6 +77,15 @@ public:
     void unsetprocessPercent();
     void setProcessPercent(double value);
 
+    /// <summary>
+    /// 批量任务执行结果
+    /// </summary>
+
+    std::vector<JobEntitiesResult>& getResults();
+    bool resultsIsSet() const;
+    void unsetresults();
+    void setResults(const std::vector<JobEntitiesResult>& value);
+
 
 protected:
     std::string imageId_;
@@ -85,6 +96,8 @@ protected:
     bool imageNameIsSet_;
     double processPercent_;
     bool processPercentIsSet_;
+    std::vector<JobEntitiesResult> results_;
+    bool resultsIsSet_;
 
 };
 

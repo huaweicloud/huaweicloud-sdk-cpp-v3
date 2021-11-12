@@ -15,15 +15,13 @@ GeneralTableWordsBlockList::GeneralTableWordsBlockList()
 {
     words_ = "";
     wordsIsSet_ = false;
+    confidence_ = 0.0f;
+    confidenceIsSet_ = false;
+    locationIsSet_ = false;
     wordsListIsSet_ = false;
     rowsIsSet_ = false;
     columnsIsSet_ = false;
-    locationIsSet_ = false;
     cellLocationIsSet_ = false;
-    confidence_ = 0.0f;
-    confidenceIsSet_ = false;
-    excel_ = "";
-    excelIsSet_ = false;
 }
 
 GeneralTableWordsBlockList::~GeneralTableWordsBlockList() = default;
@@ -39,6 +37,12 @@ web::json::value GeneralTableWordsBlockList::toJson() const
     if(wordsIsSet_) {
         val[utility::conversions::to_string_t("words")] = ModelBase::toJson(words_);
     }
+    if(confidenceIsSet_) {
+        val[utility::conversions::to_string_t("confidence")] = ModelBase::toJson(confidence_);
+    }
+    if(locationIsSet_) {
+        val[utility::conversions::to_string_t("location")] = ModelBase::toJson(location_);
+    }
     if(wordsListIsSet_) {
         val[utility::conversions::to_string_t("words_list")] = ModelBase::toJson(wordsList_);
     }
@@ -48,17 +52,8 @@ web::json::value GeneralTableWordsBlockList::toJson() const
     if(columnsIsSet_) {
         val[utility::conversions::to_string_t("columns")] = ModelBase::toJson(columns_);
     }
-    if(locationIsSet_) {
-        val[utility::conversions::to_string_t("location")] = ModelBase::toJson(location_);
-    }
     if(cellLocationIsSet_) {
         val[utility::conversions::to_string_t("cell_location")] = ModelBase::toJson(cellLocation_);
-    }
-    if(confidenceIsSet_) {
-        val[utility::conversions::to_string_t("confidence")] = ModelBase::toJson(confidence_);
-    }
-    if(excelIsSet_) {
-        val[utility::conversions::to_string_t("excel")] = ModelBase::toJson(excel_);
     }
 
     return val;
@@ -77,11 +72,29 @@ bool GeneralTableWordsBlockList::fromJson(const web::json::value& val)
             setWords(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("confidence"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("confidence"));
+        if(!fieldValue.is_null())
+        {
+            float refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setConfidence(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("location"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("location"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::vector<int32_t>> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLocation(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("words_list"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("words_list"));
         if(!fieldValue.is_null())
         {
-            std::vector<Object> refVal;
+            std::vector<WordsListIem> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setWordsList(refVal);
         }
@@ -104,15 +117,6 @@ bool GeneralTableWordsBlockList::fromJson(const web::json::value& val)
             setColumns(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("location"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("location"));
-        if(!fieldValue.is_null())
-        {
-            std::vector<std::vector<int32_t>> refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setLocation(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("cell_location"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("cell_location"));
         if(!fieldValue.is_null())
@@ -120,24 +124,6 @@ bool GeneralTableWordsBlockList::fromJson(const web::json::value& val)
             std::vector<std::vector<int32_t>> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCellLocation(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("confidence"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("confidence"));
-        if(!fieldValue.is_null())
-        {
-            float refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setConfidence(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("excel"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("excel"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setExcel(refVal);
         }
     }
     return ok;
@@ -165,12 +151,54 @@ void GeneralTableWordsBlockList::unsetwords()
     wordsIsSet_ = false;
 }
 
-std::vector<Object>& GeneralTableWordsBlockList::getWordsList()
+float GeneralTableWordsBlockList::getConfidence() const
+{
+    return confidence_;
+}
+
+void GeneralTableWordsBlockList::setConfidence(float value)
+{
+    confidence_ = value;
+    confidenceIsSet_ = true;
+}
+
+bool GeneralTableWordsBlockList::confidenceIsSet() const
+{
+    return confidenceIsSet_;
+}
+
+void GeneralTableWordsBlockList::unsetconfidence()
+{
+    confidenceIsSet_ = false;
+}
+
+std::vector<std::vector<int32_t>>& GeneralTableWordsBlockList::getLocation()
+{
+    return location_;
+}
+
+void GeneralTableWordsBlockList::setLocation(const std::vector<std::vector<int32_t>>& value)
+{
+    location_ = value;
+    locationIsSet_ = true;
+}
+
+bool GeneralTableWordsBlockList::locationIsSet() const
+{
+    return locationIsSet_;
+}
+
+void GeneralTableWordsBlockList::unsetlocation()
+{
+    locationIsSet_ = false;
+}
+
+std::vector<WordsListIem>& GeneralTableWordsBlockList::getWordsList()
 {
     return wordsList_;
 }
 
-void GeneralTableWordsBlockList::setWordsList(const std::vector<Object>& value)
+void GeneralTableWordsBlockList::setWordsList(const std::vector<WordsListIem>& value)
 {
     wordsList_ = value;
     wordsListIsSet_ = true;
@@ -228,27 +256,6 @@ void GeneralTableWordsBlockList::unsetcolumns()
     columnsIsSet_ = false;
 }
 
-std::vector<std::vector<int32_t>>& GeneralTableWordsBlockList::getLocation()
-{
-    return location_;
-}
-
-void GeneralTableWordsBlockList::setLocation(const std::vector<std::vector<int32_t>>& value)
-{
-    location_ = value;
-    locationIsSet_ = true;
-}
-
-bool GeneralTableWordsBlockList::locationIsSet() const
-{
-    return locationIsSet_;
-}
-
-void GeneralTableWordsBlockList::unsetlocation()
-{
-    locationIsSet_ = false;
-}
-
 std::vector<std::vector<int32_t>>& GeneralTableWordsBlockList::getCellLocation()
 {
     return cellLocation_;
@@ -268,48 +275,6 @@ bool GeneralTableWordsBlockList::cellLocationIsSet() const
 void GeneralTableWordsBlockList::unsetcellLocation()
 {
     cellLocationIsSet_ = false;
-}
-
-float GeneralTableWordsBlockList::getConfidence() const
-{
-    return confidence_;
-}
-
-void GeneralTableWordsBlockList::setConfidence(float value)
-{
-    confidence_ = value;
-    confidenceIsSet_ = true;
-}
-
-bool GeneralTableWordsBlockList::confidenceIsSet() const
-{
-    return confidenceIsSet_;
-}
-
-void GeneralTableWordsBlockList::unsetconfidence()
-{
-    confidenceIsSet_ = false;
-}
-
-std::string GeneralTableWordsBlockList::getExcel() const
-{
-    return excel_;
-}
-
-void GeneralTableWordsBlockList::setExcel(const std::string& value)
-{
-    excel_ = value;
-    excelIsSet_ = true;
-}
-
-bool GeneralTableWordsBlockList::excelIsSet() const
-{
-    return excelIsSet_;
-}
-
-void GeneralTableWordsBlockList::unsetexcel()
-{
-    excelIsSet_ = false;
 }
 
 }

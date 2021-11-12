@@ -16,6 +16,8 @@ GeneralTableResult::GeneralTableResult()
     wordsRegionCount_ = 0;
     wordsRegionCountIsSet_ = false;
     wordsRegionListIsSet_ = false;
+    excel_ = "";
+    excelIsSet_ = false;
 }
 
 GeneralTableResult::~GeneralTableResult() = default;
@@ -33,6 +35,9 @@ web::json::value GeneralTableResult::toJson() const
     }
     if(wordsRegionListIsSet_) {
         val[utility::conversions::to_string_t("words_region_list")] = ModelBase::toJson(wordsRegionList_);
+    }
+    if(excelIsSet_) {
+        val[utility::conversions::to_string_t("excel")] = ModelBase::toJson(excel_);
     }
 
     return val;
@@ -58,6 +63,15 @@ bool GeneralTableResult::fromJson(const web::json::value& val)
             std::vector<WordsRegionList> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setWordsRegionList(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("excel"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("excel"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setExcel(refVal);
         }
     }
     return ok;
@@ -104,6 +118,27 @@ bool GeneralTableResult::wordsRegionListIsSet() const
 void GeneralTableResult::unsetwordsRegionList()
 {
     wordsRegionListIsSet_ = false;
+}
+
+std::string GeneralTableResult::getExcel() const
+{
+    return excel_;
+}
+
+void GeneralTableResult::setExcel(const std::string& value)
+{
+    excel_ = value;
+    excelIsSet_ = true;
+}
+
+bool GeneralTableResult::excelIsSet() const
+{
+    return excelIsSet_;
+}
+
+void GeneralTableResult::unsetexcel()
+{
+    excelIsSet_ = false;
 }
 
 }

@@ -1,3 +1,32 @@
+# 3.0.16-beta 2021-11-12
+
+### HuaweiCloud SDK IMS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the response parameter `results` to the interface `ShowJob`.
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the response parameter `confidence` to the interface `RecognizeGeneralTable`.
+
+### HuaweiCloud SDK VPC
+
+- _Features_
+  - Support interfaces(V3): `AddVpcExtendCidr`¡¢`RemoveVpcExtendCidr`¡¢`ListVpcs`¡¢`ShowVpc`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.0.15-beta 2021-10-25
 
 ### HuaweiCloud SDK EIP

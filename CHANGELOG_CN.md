@@ -1,3 +1,32 @@
+# 3.0.16-beta 2021-11-12
+
+### HuaweiCloud SDK IMS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ShowJob`新增响应参数`results`
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`RecognizeGeneralTable`新增响应参数`confidence`
+
+### HuaweiCloud SDK VPC
+
+- _新增特性_
+  - 支持接口（V3）: `AddVpcExtendCidr`、`RemoveVpcExtendCidr`、`ListVpcs`、`ShowVpc`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.0.15-beta 2021-10-25
 
 ### HuaweiCloud SDK EIP

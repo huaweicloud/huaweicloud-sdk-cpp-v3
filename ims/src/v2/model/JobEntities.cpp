@@ -21,6 +21,7 @@ JobEntities::JobEntities()
     imageNameIsSet_ = false;
     processPercent_ = 0.0;
     processPercentIsSet_ = false;
+    resultsIsSet_ = false;
 }
 
 JobEntities::~JobEntities() = default;
@@ -44,6 +45,9 @@ web::json::value JobEntities::toJson() const
     }
     if(processPercentIsSet_) {
         val[utility::conversions::to_string_t("process_percent")] = ModelBase::toJson(processPercent_);
+    }
+    if(resultsIsSet_) {
+        val[utility::conversions::to_string_t("results")] = ModelBase::toJson(results_);
     }
 
     return val;
@@ -87,6 +91,15 @@ bool JobEntities::fromJson(const web::json::value& val)
             double refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setProcessPercent(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("results"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("results"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<JobEntitiesResult> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setResults(refVal);
         }
     }
     return ok;
@@ -175,6 +188,27 @@ bool JobEntities::processPercentIsSet() const
 void JobEntities::unsetprocessPercent()
 {
     processPercentIsSet_ = false;
+}
+
+std::vector<JobEntitiesResult>& JobEntities::getResults()
+{
+    return results_;
+}
+
+void JobEntities::setResults(const std::vector<JobEntitiesResult>& value)
+{
+    results_ = value;
+    resultsIsSet_ = true;
+}
+
+bool JobEntities::resultsIsSet() const
+{
+    return resultsIsSet_;
+}
+
+void JobEntities::unsetresults()
+{
+    resultsIsSet_ = false;
 }
 
 }

@@ -19,6 +19,8 @@ CreatePublicipOption::CreatePublicipOption()
     typeIsSet_ = false;
     ipVersion_ = 0;
     ipVersionIsSet_ = false;
+    alias_ = "";
+    aliasIsSet_ = false;
 }
 
 CreatePublicipOption::~CreatePublicipOption() = default;
@@ -39,6 +41,9 @@ web::json::value CreatePublicipOption::toJson() const
     }
     if(ipVersionIsSet_) {
         val[utility::conversions::to_string_t("ip_version")] = ModelBase::toJson(ipVersion_);
+    }
+    if(aliasIsSet_) {
+        val[utility::conversions::to_string_t("alias")] = ModelBase::toJson(alias_);
     }
 
     return val;
@@ -73,6 +78,15 @@ bool CreatePublicipOption::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIpVersion(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("alias"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("alias"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAlias(refVal);
         }
     }
     return ok;
@@ -140,6 +154,27 @@ bool CreatePublicipOption::ipVersionIsSet() const
 void CreatePublicipOption::unsetipVersion()
 {
     ipVersionIsSet_ = false;
+}
+
+std::string CreatePublicipOption::getAlias() const
+{
+    return alias_;
+}
+
+void CreatePublicipOption::setAlias(const std::string& value)
+{
+    alias_ = value;
+    aliasIsSet_ = true;
+}
+
+bool CreatePublicipOption::aliasIsSet() const
+{
+    return aliasIsSet_;
+}
+
+void CreatePublicipOption::unsetalias()
+{
+    aliasIsSet_ = false;
 }
 
 }

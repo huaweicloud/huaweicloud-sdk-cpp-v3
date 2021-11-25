@@ -1,17 +1,17 @@
 
-#ifndef HUAWEICLOUD_SDK_OCR_V1_MODEL_ExtractedData_H_
-#define HUAWEICLOUD_SDK_OCR_V1_MODEL_ExtractedData_H_
+#ifndef HUAWEICLOUD_SDK_SIS_V1_MODEL_CustomResult_H_
+#define HUAWEICLOUD_SDK_SIS_V1_MODEL_CustomResult_H_
 
-#include <huaweicloud/ocr/v1/OcrExport.h>
+#include <huaweicloud/sis/v1/SisExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/ocr/v1/model/MathInfo.h>
+#include <string>
 
 namespace HuaweiCloud {
 namespace Sdk {
-namespace Ocr {
+namespace Sis {
 namespace V1 {
 namespace Model {
 
@@ -19,14 +19,14 @@ using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 
 /// <summary>
-/// 
+/// 调用成功表示识别结果，调用失败时无此字段。
 /// </summary>
-class HUAWEICLOUD_OCR_V1_EXPORT  ExtractedData
+class HUAWEICLOUD_SIS_V1_EXPORT  CustomResult
     : public ModelBase
 {
 public:
-    ExtractedData();
-    virtual ~ExtractedData();
+    CustomResult();
+    virtual ~CustomResult();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -37,21 +37,21 @@ public:
     bool fromJson(const web::json::value& json) override;
 
     /////////////////////////////////////////////
-    /// ExtractedData members
+    /// CustomResult members
 
     /// <summary>
-    /// 
+    /// 语音数据， Base64编码格式返回。
     /// </summary>
 
-    MathInfo getMathInfo() const;
-    bool mathInfoIsSet() const;
-    void unsetmathInfo();
-    void setMathInfo(const MathInfo& value);
+    std::string getData() const;
+    bool dataIsSet() const;
+    void unsetdata();
+    void setData(const std::string& value);
 
 
 protected:
-    MathInfo mathInfo_;
-    bool mathInfoIsSet_;
+    std::string data_;
+    bool dataIsSet_;
 
 };
 
@@ -62,4 +62,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_OCR_V1_MODEL_ExtractedData_H_
+#endif // HUAWEICLOUD_SDK_SIS_V1_MODEL_CustomResult_H_

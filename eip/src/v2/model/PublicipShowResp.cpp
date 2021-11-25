@@ -47,6 +47,8 @@ PublicipShowResp::PublicipShowResp()
     publicBorderGroup_ = "";
     publicBorderGroupIsSet_ = false;
     allowShareBandwidthTypesIsSet_ = false;
+    alias_ = "";
+    aliasIsSet_ = false;
 }
 
 PublicipShowResp::~PublicipShowResp() = default;
@@ -112,6 +114,9 @@ web::json::value PublicipShowResp::toJson() const
     }
     if(allowShareBandwidthTypesIsSet_) {
         val[utility::conversions::to_string_t("allow_share_bandwidth_types")] = ModelBase::toJson(allowShareBandwidthTypes_);
+    }
+    if(aliasIsSet_) {
+        val[utility::conversions::to_string_t("alias")] = ModelBase::toJson(alias_);
     }
 
     return val;
@@ -281,6 +286,15 @@ bool PublicipShowResp::fromJson(const web::json::value& val)
             std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAllowShareBandwidthTypes(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("alias"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("alias"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAlias(refVal);
         }
     }
     return ok;
@@ -663,6 +677,27 @@ bool PublicipShowResp::allowShareBandwidthTypesIsSet() const
 void PublicipShowResp::unsetallowShareBandwidthTypes()
 {
     allowShareBandwidthTypesIsSet_ = false;
+}
+
+std::string PublicipShowResp::getAlias() const
+{
+    return alias_;
+}
+
+void PublicipShowResp::setAlias(const std::string& value)
+{
+    alias_ = value;
+    aliasIsSet_ = true;
+}
+
+bool PublicipShowResp::aliasIsSet() const
+{
+    return aliasIsSet_;
+}
+
+void PublicipShowResp::unsetalias()
+{
+    aliasIsSet_ = false;
 }
 
 }

@@ -39,10 +39,18 @@ set_target_properties(ivs_v2
         OUTPUT_NAME ivs_v2
         )
 
-if(${LIB_TYPE} STREQUAL "SHARED")
-    set_target_properties(ivs_v2
+if(CMAKE_HOST_WIN32)
+    if(${LIB_TYPE} STREQUAL "SHARED")
+        set_target_properties(ivs_v2
+            PROPERTIES
+            DEFINE_SYMBOL HUAWEICLOUD_IVS_V2_SHARED)
+    endif()
+else()
+    if(${LIB_TYPE} STREQUAL "SHARED")
+        set_target_properties(ivs_v2
             PROPERTIES
             DEFINE_SYMBOL HUAWEICLOUD_IVS_V2_EXPORT)
+    endif()
 endif()
 
 target_include_directories(ivs_v2 PUBLIC

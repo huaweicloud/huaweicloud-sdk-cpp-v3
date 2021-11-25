@@ -17,6 +17,8 @@ CreatePrePaidPublicipOption::CreatePrePaidPublicipOption()
     typeIsSet_ = false;
     ipVersion_ = 0;
     ipVersionIsSet_ = false;
+    alias_ = "";
+    aliasIsSet_ = false;
 }
 
 CreatePrePaidPublicipOption::~CreatePrePaidPublicipOption() = default;
@@ -34,6 +36,9 @@ web::json::value CreatePrePaidPublicipOption::toJson() const
     }
     if(ipVersionIsSet_) {
         val[utility::conversions::to_string_t("ip_version")] = ModelBase::toJson(ipVersion_);
+    }
+    if(aliasIsSet_) {
+        val[utility::conversions::to_string_t("alias")] = ModelBase::toJson(alias_);
     }
 
     return val;
@@ -59,6 +64,15 @@ bool CreatePrePaidPublicipOption::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIpVersion(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("alias"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("alias"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAlias(refVal);
         }
     }
     return ok;
@@ -105,6 +119,27 @@ bool CreatePrePaidPublicipOption::ipVersionIsSet() const
 void CreatePrePaidPublicipOption::unsetipVersion()
 {
     ipVersionIsSet_ = false;
+}
+
+std::string CreatePrePaidPublicipOption::getAlias() const
+{
+    return alias_;
+}
+
+void CreatePrePaidPublicipOption::setAlias(const std::string& value)
+{
+    alias_ = value;
+    aliasIsSet_ = true;
+}
+
+bool CreatePrePaidPublicipOption::aliasIsSet() const
+{
+    return aliasIsSet_;
+}
+
+void CreatePrePaidPublicipOption::unsetalias()
+{
+    aliasIsSet_ = false;
 }
 
 }

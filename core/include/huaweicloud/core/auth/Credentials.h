@@ -24,6 +24,7 @@
 #include <memory>
 #include <huaweicloud/core/CoreExport.h>
 #include <huaweicloud/core/RequestParams.h>
+#include <huaweicloud/core/auth/IamService.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -36,6 +37,8 @@ public:
 
     virtual const std::map<std::string, std::string> &getUpdatePathParams() = 0;
     virtual std::string processAuthRequest(HuaweiCloud::Sdk::Core::RequestParams &requestParams) = 0;
+	virtual void processAuthParams(const std::string regionId) = 0;
+    virtual void regionInit() = 0;
 };
 }
 }

@@ -29,6 +29,8 @@
 #include <huaweicloud/core/auth/Credentials.h>
 #include <huaweicloud/core/auth/BasicCredentials.h>
 #include <huaweicloud/core/auth/GlobalCredentials.h>
+#include <huaweicloud/core/auth/Region.h>
+#include <huaweicloud/core/exception/SdkException.h>
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/CoreExport.h>
 #include <type_traits>
@@ -38,6 +40,7 @@ namespace HuaweiCloud {
 namespace Sdk {
 namespace Core {
 using namespace HuaweiCloud::Sdk::Core::Auth;
+using namespace HuaweiCloud::Sdk::Core::Exception;
 
 #if defined(WIN32) || defined(__WIN32__) || defined(_WIN32) || defined(_MSC_VER)
 
@@ -149,13 +152,22 @@ public:
         return *this;
     }
 
+    ClientBuilder &withRegion(const Region& region)
+    {
+        region_ = std::move(region);
+        return *this;
+    }
+
     std::unique_ptr<T> build()
     {
         auto client = std::make_unique<T>();
-        if (!credentials_) {
+        if (credentials_ == nullptr) {
             client->setCredentials(getCredentialFromSystem(defaultType_));
         } else {
             client->setCredentials(std::move(credentials_));
+        }
+        if (client->isCredentialsEmpty()) {
+            throw SdkException("credential can not be null, Credential objects are required");
         }
         if (!httpConfig_) {
             HttpConfig httpConfig = HttpConfig();
@@ -165,7 +177,11 @@ public:
         }
         client->setFileLog(std::move(filePath_), fileLog_);
         client->setStreamLog(streamLog_);
-        client->setEndPoint(std::move(endPoint_));
+        client->setEndPoint(endPoint_);
+        if (region_.getRegionId() != "" && region_.getEndpoint() != "") {
+            client->setRegion(region_);
+            client->processRegionAuth();
+        }
         fileLog_ = false;
         streamLog_ = false;
         return client;
@@ -174,6 +190,7 @@ public:
 private:
     std::unique_ptr<Credentials> credentials_;
     std::unique_ptr<HttpConfig> httpConfig_;
+    Region region_;
     bool streamLog_ = false;
     std::string endPoint_;
     std::string filePath_;

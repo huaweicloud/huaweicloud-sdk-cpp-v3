@@ -28,7 +28,10 @@
 #include <huaweicloud/core/auth/Credentials.h>
 #include <huaweicloud/core/http/HttpConfig.h>
 #include <huaweicloud/core/http/HttpResponse.h>
+#include <huaweicloud/core/http/HttpClient.h>
 #include <huaweicloud/core/CoreExport.h>
+#include <huaweicloud/core/auth/Region.h>
+
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -55,7 +58,17 @@ public:
     void setEndPoint(std::string endPoint);
     void setStreamLog(bool streamLog);
     void setFileLog(std::string filePath, bool fileLog);
+    void setRegion(Region region);
+    void setHttpClient(const HttpClient& httpClient);
 
+    std::string getEndpoint();
+    Region getRegion();
+    bool getStreamLog();
+    bool getFileLog();
+
+    bool isCredentialsEmpty();
+
+    void processRegionAuth();
     std::unique_ptr<HttpResponse> callApi(const std::string &method, const std::string &resourcePath,
         const std::map<std::string, std::string> &pathParams, const std::map<std::string, std::string> &queryParams,
         const std::map<std::string, std::string> &headerParams, const std::string &body);
@@ -77,6 +90,8 @@ private:
     bool streamLog_ = false;
     bool fileLog_ = false;
     std::string filePath_;
+    Region region_;
+    HttpClient httpClient_;
 };
 }
 }

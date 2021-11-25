@@ -40,12 +40,17 @@ public:
     const std::string &getSk() const;
     const std::string &getSecurityToken() const;
     const std::string &getProjectId() const;
+    const std::string &getIamEndpoint() const;
 
     BasicCredentials &withAk(std::string ak);
     BasicCredentials &withSk(std::string sk);
     BasicCredentials &withSecurityToken(std::string securityToken);
     BasicCredentials &withProjectId(std::string projectId);
+    BasicCredentials &withIamEndpoint(std::string IamEndpoint);
+    BasicCredentials &withIamService(std::unique_ptr<IamService> iamService);
 
+    void regionInit() override;
+    void processAuthParams(const std::string regionId) override;
 
 protected:
     std::string processAuthRequest(HuaweiCloud::Sdk::Core::RequestParams &requestParams) override;
@@ -56,6 +61,8 @@ private:
     std::string sk_;
     std::string securityToken_;
     std::string projectId_;
+    std::string iamEndpoint_;
+    std::unique_ptr<IamService> iamService;
 };
 }
 }

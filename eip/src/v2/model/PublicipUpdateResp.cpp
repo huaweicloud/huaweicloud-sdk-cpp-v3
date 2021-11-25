@@ -44,6 +44,8 @@ PublicipUpdateResp::PublicipUpdateResp()
     publicIpv6AddressIsSet_ = false;
     ipVersion_ = 0;
     ipVersionIsSet_ = false;
+    alias_ = "";
+    aliasIsSet_ = false;
 }
 
 PublicipUpdateResp::~PublicipUpdateResp() = default;
@@ -103,6 +105,9 @@ web::json::value PublicipUpdateResp::toJson() const
     }
     if(ipVersionIsSet_) {
         val[utility::conversions::to_string_t("ip_version")] = ModelBase::toJson(ipVersion_);
+    }
+    if(aliasIsSet_) {
+        val[utility::conversions::to_string_t("alias")] = ModelBase::toJson(alias_);
     }
 
     return val;
@@ -254,6 +259,15 @@ bool PublicipUpdateResp::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIpVersion(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("alias"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("alias"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAlias(refVal);
         }
     }
     return ok;
@@ -594,6 +608,27 @@ bool PublicipUpdateResp::ipVersionIsSet() const
 void PublicipUpdateResp::unsetipVersion()
 {
     ipVersionIsSet_ = false;
+}
+
+std::string PublicipUpdateResp::getAlias() const
+{
+    return alias_;
+}
+
+void PublicipUpdateResp::setAlias(const std::string& value)
+{
+    alias_ = value;
+    aliasIsSet_ = true;
+}
+
+bool PublicipUpdateResp::aliasIsSet() const
+{
+    return aliasIsSet_;
+}
+
+void PublicipUpdateResp::unsetalias()
+{
+    aliasIsSet_ = false;
 }
 
 }

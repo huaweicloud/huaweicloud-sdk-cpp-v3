@@ -7,7 +7,6 @@
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/ocr/v1/model/ExtractedData.h>
 #include <huaweicloud/ocr/v1/model/HandwritingWordsBlockList.h>
 #include <vector>
 
@@ -59,23 +58,12 @@ public:
     void unsetwordsBlockList();
     void setWordsBlockList(const std::vector<HandwritingWordsBlockList>& value);
 
-    /// <summary>
-    /// 
-    /// </summary>
-
-    ExtractedData getExtractedData() const;
-    bool extractedDataIsSet() const;
-    void unsetextractedData();
-    void setExtractedData(const ExtractedData& value);
-
 
 protected:
     int32_t wordsBlockCount_;
     bool wordsBlockCountIsSet_;
     std::vector<HandwritingWordsBlockList> wordsBlockList_;
     bool wordsBlockListIsSet_;
-    ExtractedData extractedData_;
-    bool extractedDataIsSet_;
 
 };
 

@@ -19,10 +19,15 @@
 
 #include <huaweicloud/core/auth/Signer.h>
 #include <huaweicloud/core/auth/BasicCredentials.h>
+#include <huaweicloud/core/auth/AuthCache.h>
+#include <huaweicloud/core/auth/IamService.h>
+#include <huaweicloud/core/exception/SdkException.h>
+#include <spdlog/spdlog.h>
 
 #include <utility>
 
 using namespace HuaweiCloud::Sdk::Core::Auth;
+using namespace HuaweiCloud::Sdk::Core::Exception;
 
 BasicCredentials::BasicCredentials() = default;
 
@@ -54,6 +59,11 @@ const std::string &BasicCredentials::getSecurityToken() const
 const std::string &BasicCredentials::getProjectId() const
 {
     return projectId_;
+}
+
+const std::string &BasicCredentials::getIamEndpoint() const
+{
+    return iamEndpoint_;
 }
 
 std::string BasicCredentials::processAuthRequest(HuaweiCloud::Sdk::Core::RequestParams &requestParams)
@@ -95,4 +105,42 @@ BasicCredentials &BasicCredentials::withAk(std::string ak)
 {
     ak_ = std::move(ak);
     return *this;
+}
+
+BasicCredentials &BasicCredentials::withIamEndpoint(std::string iamEndpoint) {
+    iamEndpoint_ = std::move(iamEndpoint);
+    return *this;
+}
+
+BasicCredentials &BasicCredentials::withIamService(std::unique_ptr<IamService> iamService_) {
+    iamService = std::move(iamService_);
+    return *this;
+}
+
+void BasicCredentials::regionInit() {
+    iamService = std::make_unique<IamService>(iamEndpoint_, ak_, sk_);
+    iamService->init();
+}
+
+void BasicCredentials::processAuthParams(const std::string regionId) {
+    if (!this->projectId_.empty()) {
+        spdlog::info("already get projectid, do not get it from iam again");
+        return;
+    }
+    std::string akWithName = this->getAk() + regionId;
+    std::string projectId = AuthCache::getAuth(akWithName);
+    if (!projectId.empty()) {
+        spdlog::info("the projectId of the user exists!");
+        this->projectId_ = projectId;
+        return;
+    }
+    spdlog::info("begin start get iam project_id.....");
+    projectId = iamService->getProjectId(regionId);
+    if (projectId.empty()) {
+        spdlog::error("Failed to get project id automatically, please input project id!");
+        throw SdkException("Failed to get project id, please input project id when initializing BasicCredentials");
+    }
+    this->projectId_ = projectId;
+    AuthCache::setAuth(akWithName, this->projectId_);
+    spdlog::info("process region auth params successfully!");
 }

@@ -39,10 +39,18 @@ set_target_properties(eip_v3
         OUTPUT_NAME eip_v3
         )
 
-if(${LIB_TYPE} STREQUAL "SHARED")
-    set_target_properties(eip_v3
+if(CMAKE_HOST_WIN32)
+    if(${LIB_TYPE} STREQUAL "SHARED")
+        set_target_properties(eip_v3
+            PROPERTIES
+            DEFINE_SYMBOL HUAWEICLOUD_EIP_V3_SHARED)
+    endif()
+else()
+    if(${LIB_TYPE} STREQUAL "SHARED")
+        set_target_properties(eip_v3
             PROPERTIES
             DEFINE_SYMBOL HUAWEICLOUD_EIP_V3_EXPORT)
+    endif()
 endif()
 
 target_include_directories(eip_v3 PUBLIC

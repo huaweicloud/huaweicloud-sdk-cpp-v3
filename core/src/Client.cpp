@@ -21,15 +21,25 @@
 #include <huaweicloud/core/auth/GlobalCredentials.h>
 #include <huaweicloud/core/auth/BasicCredentials.h>
 #include <huaweicloud/core/http/HttpRequest.h>
-#include <huaweicloud/core/http/HttpClient.h>
 #include <boost/algorithm/string/replace.hpp>
 #include <utility>
+#include <huaweicloud/core/utils/MultipartFormData.h>
+#include <huaweicloud/core/utils/ModelBase.h>
 
 using namespace HuaweiCloud::Sdk::Core;
+using namespace HuaweiCloud::Sdk::Core::Auth;
 
 Client::Client() = default;
 
 Client::~Client() {}
+
+void Client::processRegionAuth() {
+    const std::string regionId = region_.getRegionId();
+    const std::string endPoint = region_.getEndpoint();
+    if (!endPoint.empty()) {
+        this->endpoint_ = endPoint;
+    }
+}
 
 std::unique_ptr<HttpResponse> Client::callApi(const std::string &method, const std::string &resourcePath,
     const std::map<std::string, std::string> &pathParams, const std::map<std::string, std::string> &queryParams,
@@ -37,6 +47,16 @@ std::unique_ptr<HttpResponse> Client::callApi(const std::string &method, const s
 {
     std::string scheme;
     std::string host;
+
+    spdlog::info("client:call service api {}, resourcePath:{}", method, resourcePath);
+    const std::string regionId = this->region_.getRegionId();
+    if (!regionId.empty()) {
+        spdlog::info("use region auth, processing...");
+        credentials_->regionInit();
+        credentials_->processAuthParams(regionId);
+        spdlog::info("region auth sucessfully!");
+    }
+
     parseEndPoint(endpoint_, scheme, host);
     std::string uriHttp = getResourcePath(resourcePath, pathParams, credentials_->getUpdatePathParams());
     std::string queryParamsHttp = getQueryParams(queryParams);
@@ -49,7 +69,7 @@ std::unique_ptr<HttpResponse> Client::callApi(const std::string &method, const s
     if (handler_request) {
         handler_request(requestParams);
     }
-
+    spdlog::info("begin execute http request for the api....");
     HttpRequest httpRequest;
     httpRequest.setUrl(parseUrl(requestParams));
     httpRequest.setMethod(requestParams.getMethod());
@@ -59,10 +79,9 @@ std::unique_ptr<HttpResponse> Client::callApi(const std::string &method, const s
     httpRequest.setFileLog(fileLog_);
     httpRequest.setFilePath(filePath_);
 
-    HttpClient httpClient;
     std::unique_ptr<HttpResponse> httpResponse =
-            httpClient.doHttpRequestSync(httpRequest, httpConfig_, handler_response);
-
+            httpClient_.doHttpRequestSync(httpRequest, httpConfig_, handler_response);
+    spdlog::info("execute http request for the api successfully, get the response....");
     return httpResponse;
 }
 
@@ -115,6 +134,10 @@ void Client::setCredentials(std::unique_ptr<Credentials> credentials)
     credentials_ = std::move(credentials);
 }
 
+bool Client::isCredentialsEmpty() {
+    return credentials_ == nullptr;
+}
+
 void Client::setEndPoint(std::string endPoint)
 {
     endpoint_ = std::move(endPoint);
@@ -129,6 +152,30 @@ void Client::setFileLog(std::string filePath, bool fileLog)
 {
     filePath_ = std::move(filePath);
     fileLog_ = fileLog;
+}
+
+void Client::setRegion(Region region)
+{
+    region_ = std::move(region);
+}
+
+void Client::setHttpClient(const HttpClient& httpClient) {
+    httpClient_ = httpClient;
+}
+
+std::string Client::getEndpoint() {
+    return this->endpoint_;
+}
+
+Region Client::getRegion() {
+    return this->region_;
+}
+bool Client::getFileLog() {
+    return this->fileLog_;
+}
+
+bool Client::getStreamLog() {
+    return this->streamLog_;
 }
 
 void Client::parseEndPoint(const std::string &str, std::string &scheme, std::string &host)

@@ -204,6 +204,15 @@ public:
     void unsetallowShareBandwidthTypes();
     void setAllowShareBandwidthTypes(const std::vector<std::string>& value);
 
+    /// <summary>
+    /// 功能说明：弹性公网IP名称 取值范围：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
+    /// </summary>
+
+    std::string getAlias() const;
+    bool aliasIsSet() const;
+    void unsetalias();
+    void setAlias(const std::string& value);
+
 
 protected:
     std::string bandwidthId_;
@@ -242,6 +251,8 @@ protected:
     bool publicBorderGroupIsSet_;
     std::vector<std::string> allowShareBandwidthTypes_;
     bool allowShareBandwidthTypesIsSet_;
+    std::string alias_;
+    bool aliasIsSet_;
 
 };
 

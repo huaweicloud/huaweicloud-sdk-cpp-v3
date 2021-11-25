@@ -33,8 +33,6 @@
 #include <huaweicloud/core/http/HttpConfig.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 #include <huaweicloud/core/http/HttpRequest.h>
-
-#include <huaweicloud/core/Client.h>
 #include <huaweicloud/core/RequestParams.h>
 
 #include <huaweicloud/core/exception/SslHandShakeException.h>
@@ -54,7 +52,7 @@ public:
     HttpClient();
     ~HttpClient();
 
-    std::unique_ptr<HttpResponse>
+    virtual std::unique_ptr<HttpResponse>
     doHttpRequestSync(const HttpRequest &httpRequest, const HttpConfig &httpConfig,
                       const std::function<void(const HttpResponse &)> &handler_response);
 

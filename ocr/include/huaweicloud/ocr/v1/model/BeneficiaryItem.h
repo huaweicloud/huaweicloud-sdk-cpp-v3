@@ -8,7 +8,6 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/ocr/v1/model/InsurancePolicyDetail.h>
-#include <huaweicloud/core/utils/Object.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -59,13 +58,13 @@ public:
     void setBeneficiaryType(const InsurancePolicyDetail& value);
 
     /// <summary>
-    /// 受益顺序。 
+    /// 
     /// </summary>
 
-    Object getBeneficiaryOrder() const;
+    InsurancePolicyDetail getBeneficiaryOrder() const;
     bool beneficiaryOrderIsSet() const;
     void unsetbeneficiaryOrder();
-    void setBeneficiaryOrder(const Object& value);
+    void setBeneficiaryOrder(const InsurancePolicyDetail& value);
 
     /// <summary>
     /// 
@@ -82,7 +81,7 @@ protected:
     bool beneficiaryNameIsSet_;
     InsurancePolicyDetail beneficiaryType_;
     bool beneficiaryTypeIsSet_;
-    Object beneficiaryOrder_;
+    InsurancePolicyDetail beneficiaryOrder_;
     bool beneficiaryOrderIsSet_;
     InsurancePolicyDetail beneficiaryShare_;
     bool beneficiaryShareIsSet_;

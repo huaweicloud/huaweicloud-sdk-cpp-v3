@@ -1,3 +1,5 @@
+
+
 [English](./README.md) | 简体中文
 
 <p align="center">
@@ -265,6 +267,11 @@ globalCredentials->withAk(ak)
     .withDomainId(domainId);
 ```
 
+**说明**:
+
+* `3.0.16-beta` 及以上版本支持自动获取 projectId/domainId ，用户需要指定当前华为云账号的永久 AK&SK 和 对应的 region_id，同时在初始化客户端时配合 `withRegion()`
+  方法使用。 代码示例详见 [3.2 指定Region方式（推荐）](#32-指定-region-方式-推荐-top) 。
+
 #### 2.2 使用临时 AK 和 SK [:top:](#用户手册-top)
 
 首先需要获得临时 AK、SK 和 SecurityToken ，可以从永久 AK&SK 获得，或者通过委托授权获得。
@@ -309,6 +316,68 @@ std::unique_ptr<Vpc::V2::VpcClient> vpcApi_v2 = Vpc::V2::VpcClient::newBuilder()
 **说明:**
 
 - `endpoint` 是华为云各服务应用区域和各服务的终端节点，详情请查看 [地区和终端节点](https://developer.huaweicloud.com/endpoint) 。
+
+- 当用户使用指定 Region 方式无法自动获取 projectId 时，可以使用当前方式调用接口。
+
+#### 3.2 指定Region 方式（推荐)  [:top:](#用户手册-top)
+
+* Region级服务
+
+```c++
+// 添加对应服务的Region依赖
+#include <huaweicloud/ecs/v2/EcsRegion.h>
+using namespace HuaweiCloud::Sdk::Ecs::V2;
+
+// 初始化客户端认证信息，使用当前客户端初始化方式可不填 projectId/domainId，，以初始化 BaisicCredentials 为例
+auto auth = std::make_unique<BasicCredentials>();
+auth->withAk(ak)
+        .withSk(sk);
+// 初始化指定云服务的客户端 {Service}Client ，以初始化 Region 级服务 ECS 的 IamClient 为例
+auto client = EcsClient::newBuilder()
+                .withCredentials(std::unique_ptr<Credentials>(auth.release()))
+                .withHttpConfig(httpConfig)
+                .withFileLog(R"(.\log.txt)", true)
+                .withStreamLog(true)
+                .withRegion(EcsRegion::valueOf("cn-east-2"))
+                .build();
+```
+
+* Global级服务
+
+```c++
+// 添加对应服务的Region依赖
+#include <huaweicloud/devstar/v1/DevstarRegion.h>
+#include <huaweicloud/devstar/v1/DevstarClient.h>
+using namespace HuaweiCloud::Sdk::Devstar::V1;
+
+auto auth = std::make_unique<GlobalCredentials>();
+auth->withAk(ak).withSk(sk);
+
+// 初始化指定云服务的客户端 {Service}Client ，以初始化 Global 级服务 Devstar为例
+auto client = DevStarClient::newBuilder()
+            .withCredentials(std::unique_ptr<Credentials>(auth.release()))
+            .withHttpConfig(httpConfig)
+            .withFileLog(R"(.\log.txt)", true)
+            .withStreamLog(true)
+            .withRegion(DevstarRegion::valueOf("cn-east-2"))
+            .build();
+```
+
+**说明**：
+
+* 指定 Region 方式创建客户端的场景，支持自动获取用户的 projectId 或者 domainId，初始化认证信息时可无需指定相应参数。
+
+* **不适用**于 `多ProjectId` 的场景。
+
+* 当前支持指定 Region 方式初始化客户端的 region_id : af-south-1, ap-southeast-1, ap-southeast-2, ap-southeast-3, cn-east-2, cn-east-3,
+  cn-north-1, cn-north-4, cn-south-1, cn-southwest-2, ru-northwest-2。调用其他 region 可能会抛出 `Unsupported regionId` 的异常信息。
+
+**两种方式对比：**
+
+| 初始化方式               | 优势                                                         | 劣势                                         |
+| ------------------------ | ------------------------------------------------------------ | -------------------------------------------- |
+| 指定云服务 Endpoint 方式 | 只要接口已在当前环境发布就可以成功调用                       | 需要用户自行查找并填写 projectId 和 endpoint |
+| 指定 Region 方式         | 无需指定 projectId 和 endpoint，按照要求配置即可自动获取该值并回填 | 支持的服务和 region 有限制                   |
 
 ### 4. 发送请求并查看响应 [:top:](#用户手册-top)
 

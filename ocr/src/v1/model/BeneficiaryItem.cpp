@@ -71,7 +71,7 @@ bool BeneficiaryItem::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("beneficiary_order"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            InsurancePolicyDetail refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBeneficiaryOrder(refVal);
         }
@@ -131,12 +131,12 @@ void BeneficiaryItem::unsetbeneficiaryType()
     beneficiaryTypeIsSet_ = false;
 }
 
-Object BeneficiaryItem::getBeneficiaryOrder() const
+InsurancePolicyDetail BeneficiaryItem::getBeneficiaryOrder() const
 {
     return beneficiaryOrder_;
 }
 
-void BeneficiaryItem::setBeneficiaryOrder(const Object& value)
+void BeneficiaryItem::setBeneficiaryOrder(const InsurancePolicyDetail& value)
 {
     beneficiaryOrder_ = value;
     beneficiaryOrderIsSet_ = true;

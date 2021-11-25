@@ -1,3 +1,42 @@
+# 3.0.17-beta 2021-11-25
+
+### HuaweiCloud SDK Core
+
+- _Features_
+  - Supports region management. When creating a new client, users can get region information through Region input or {Service}Region valueOf, without having to configure the endpoint by themselves. After the Region is configured, it supports automatic backfilling of ProjectId/DomainId.
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK EIP
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the request and response parameter `alias` to the interfaces `CreatePrePaidPublicip` and `CreatePublicip`.
+  - Add the response parameter `alias` to the interfaces `ShowPublicip` and `UpdatePublicip`.
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the response parameter `extracted_data` of the interface `RecognizeHandwriting`.
+
+### HuaweiCloud SDK SIS
+
+- _Features_
+  - Support the `Voice Interaction Service`.
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.0.16-beta 2021-11-12
 
 ### HuaweiCloud SDK IMS

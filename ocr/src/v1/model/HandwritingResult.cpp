@@ -16,7 +16,6 @@ HandwritingResult::HandwritingResult()
     wordsBlockCount_ = 0;
     wordsBlockCountIsSet_ = false;
     wordsBlockListIsSet_ = false;
-    extractedDataIsSet_ = false;
 }
 
 HandwritingResult::~HandwritingResult() = default;
@@ -34,9 +33,6 @@ web::json::value HandwritingResult::toJson() const
     }
     if(wordsBlockListIsSet_) {
         val[utility::conversions::to_string_t("words_block_list")] = ModelBase::toJson(wordsBlockList_);
-    }
-    if(extractedDataIsSet_) {
-        val[utility::conversions::to_string_t("extracted_data")] = ModelBase::toJson(extractedData_);
     }
 
     return val;
@@ -62,15 +58,6 @@ bool HandwritingResult::fromJson(const web::json::value& val)
             std::vector<HandwritingWordsBlockList> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setWordsBlockList(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("extracted_data"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("extracted_data"));
-        if(!fieldValue.is_null())
-        {
-            ExtractedData refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setExtractedData(refVal);
         }
     }
     return ok;
@@ -117,27 +104,6 @@ bool HandwritingResult::wordsBlockListIsSet() const
 void HandwritingResult::unsetwordsBlockList()
 {
     wordsBlockListIsSet_ = false;
-}
-
-ExtractedData HandwritingResult::getExtractedData() const
-{
-    return extractedData_;
-}
-
-void HandwritingResult::setExtractedData(const ExtractedData& value)
-{
-    extractedData_ = value;
-    extractedDataIsSet_ = true;
-}
-
-bool HandwritingResult::extractedDataIsSet() const
-{
-    return extractedDataIsSet_;
-}
-
-void HandwritingResult::unsetextractedData()
-{
-    extractedDataIsSet_ = false;
 }
 
 }

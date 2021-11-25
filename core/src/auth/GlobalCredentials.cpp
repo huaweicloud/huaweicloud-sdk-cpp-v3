@@ -20,8 +20,13 @@
 
 #include <huaweicloud/core/auth/Signer.h>
 #include <huaweicloud/core/auth/GlobalCredentials.h>
+#include <huaweicloud/core/auth/AuthCache.h>
+#include <huaweicloud/core/auth/IamService.h>
+#include <huaweicloud/core/exception/SdkException.h>
+#include <spdlog/spdlog.h>
 
 using namespace HuaweiCloud::Sdk::Core::Auth;
+using namespace HuaweiCloud::Sdk::Core::Exception;
 
 GlobalCredentials::GlobalCredentials() = default;
 
@@ -94,4 +99,42 @@ GlobalCredentials &GlobalCredentials::withAk(std::string ak)
 {
     ak_ = std::move(ak);
     return *this;
+}
+
+GlobalCredentials &GlobalCredentials::withIamEndpoint(std::string iamEndpoint) {
+    iamEndpoint_ = std::move(iamEndpoint);
+    return *this;
+}
+
+GlobalCredentials &GlobalCredentials::withIamService(std::unique_ptr<IamService> iamService_) {
+    iamService = std::move(iamService_);
+    return *this;
+}
+
+void GlobalCredentials::regionInit() {
+    iamService = std::make_unique<IamService>(iamEndpoint_, ak_, sk_);
+    iamService->init();
+}
+
+void GlobalCredentials::processAuthParams(const std::string regionId) {
+    if (!this->domainId_.empty()) {
+        spdlog::info("the domainId of the user exists");
+        return;
+    }
+    std::string akWithName = this->getAk() + regionId;
+    std::string domainId = AuthCache::getAuth(akWithName);
+    if (!domainId.empty()) {
+        spdlog::info("the domainId of the user exists!");
+        this->domainId_ = domainId;
+        return;
+    }
+    spdlog::info("begin get domainId from iam....");
+    domainId = iamService->getDomainId(regionId);
+    if (domainId.empty()) {
+        spdlog::error("Failed to get domain id automatically, please input domainId!");
+        throw SdkException("Failed to get domain id automatically, please input domain id when initializing GlobalCredentials");
+    }
+    this->domainId_ = domainId;
+    AuthCache::setAuth(akWithName, this->domainId_);
+    spdlog::info("get domainId from iam successfully!");
 }

@@ -1,3 +1,42 @@
+# 3.0.17-beta 2021-11-25
+
+### HuaweiCloud SDK Core
+
+- _新增特性_
+  - 支持region管理，用户新建客户端时可以通过Region传入或者{Service}Region的valueOf来获取region信息，无需自己配置endpoint。配置Region后，支持自动回填ProjectId/DomainId。
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK EIP
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`CreatePrePaidPublicip`、`CreatePublicip`新增请求和响应参数`alias`
+  - 接口`ShowPublicip`、`UpdatePublicip`新增响应参数`alias`
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`RecognizeHandwriting`移除响应参数`extracted_data`
+
+### HuaweiCloud SDK SIS
+
+- _新增特性_
+  - 支持语音交互服务
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.0.16-beta 2021-11-12
 
 ### HuaweiCloud SDK IMS

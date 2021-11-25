@@ -39,10 +39,18 @@ set_target_properties(vod_v1
         OUTPUT_NAME vod_v1
         )
 
-if(${LIB_TYPE} STREQUAL "SHARED")
-    set_target_properties(vod_v1
+if(CMAKE_HOST_WIN32)
+    if(${LIB_TYPE} STREQUAL "SHARED")
+        set_target_properties(vod_v1
+            PROPERTIES
+            DEFINE_SYMBOL HUAWEICLOUD_VOD_V1_SHARED)
+    endif()
+else()
+    if(${LIB_TYPE} STREQUAL "SHARED")
+        set_target_properties(vod_v1
             PROPERTIES
             DEFINE_SYMBOL HUAWEICLOUD_VOD_V1_EXPORT)
+    endif()
 endif()
 
 target_include_directories(vod_v1 PUBLIC

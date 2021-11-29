@@ -12,9 +12,6 @@
 #include <huaweicloud/evs/v2/model/BatchDeleteVolumeTagsRequest.h>
 #include <huaweicloud/evs/v2/model/BatchDeleteVolumeTagsRequestBody.h>
 #include <huaweicloud/evs/v2/model/BatchDeleteVolumeTagsResponse.h>
-#include <huaweicloud/evs/v2/model/CinderExportToImageRequest.h>
-#include <huaweicloud/evs/v2/model/CinderExportToImageRequestBody.h>
-#include <huaweicloud/evs/v2/model/CinderExportToImageResponse.h>
 #include <huaweicloud/evs/v2/model/CinderListAvailabilityZonesRequest.h>
 #include <huaweicloud/evs/v2/model/CinderListAvailabilityZonesResponse.h>
 #include <huaweicloud/evs/v2/model/CinderListQuotasRequest.h>
@@ -106,17 +103,6 @@ public:
     /// <param name="batchDeleteVolumeTagsRequestBody">This is a auto create Body Object</param>
     std::shared_ptr<BatchDeleteVolumeTagsResponse> batchDeleteVolumeTags(
         BatchDeleteVolumeTagsRequest &request
-    );
-    /// <summary>
-    /// 将云硬盘导出为镜像
-    /// </summary>
-    /// <remarks>
-    /// 将系统盘或数据盘的数据导出为IMS镜像，导出的镜像在IMS的私有镜像列表中可以查 看并使用。
-    /// </remarks>
-    /// <param name="volumeId">云硬盘ID。</param>
-    /// <param name="cinderExportToImageRequestBody">This is a auto create Body Object</param>
-    std::shared_ptr<CinderExportToImageResponse> cinderExportToImage(
-        CinderExportToImageRequest &request
     );
     /// <summary>
     /// 查询所有的可用分区信息

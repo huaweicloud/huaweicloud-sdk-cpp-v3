@@ -1,3 +1,23 @@
+# 3.0.18-beta 2021-11-29
+
+### HuaweiCloud SDK EVS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 移除接口`CinderExportToImage`
+
+### HuaweiCloud SDK ECS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`NovaShowServer`和`NovaListServersDetails`新增响应参数`os:scheduler_hints`
+
 # 3.0.17-beta 2021-11-25
 
 ### HuaweiCloud SDK Core

@@ -88,6 +88,7 @@ NovaServer::NovaServer()
     configDriveIsSet_ = false;
     progress_ = 0;
     progressIsSet_ = false;
+    osschedulerHintsIsSet_ = false;
 }
 
 NovaServer::~NovaServer() = default;
@@ -225,6 +226,9 @@ web::json::value NovaServer::toJson() const
     }
     if(progressIsSet_) {
         val[utility::conversions::to_string_t("progress")] = ModelBase::toJson(progress_);
+    }
+    if(osschedulerHintsIsSet_) {
+        val[utility::conversions::to_string_t("os:scheduler_hints")] = ModelBase::toJson(osschedulerHints_);
     }
 
     return val;
@@ -610,6 +614,15 @@ bool NovaServer::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setProgress(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("os:scheduler_hints"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("os:scheduler_hints"));
+        if(!fieldValue.is_null())
+        {
+            NovaServerSchedulerHints refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setOsschedulerHints(refVal);
         }
     }
     return ok;
@@ -1496,6 +1509,27 @@ bool NovaServer::progressIsSet() const
 void NovaServer::unsetprogress()
 {
     progressIsSet_ = false;
+}
+
+NovaServerSchedulerHints NovaServer::getOsschedulerHints() const
+{
+    return osschedulerHints_;
+}
+
+void NovaServer::setOsschedulerHints(const NovaServerSchedulerHints& value)
+{
+    osschedulerHints_ = value;
+    osschedulerHintsIsSet_ = true;
+}
+
+bool NovaServer::osschedulerHintsIsSet() const
+{
+    return osschedulerHintsIsSet_;
+}
+
+void NovaServer::unsetosschedulerHints()
+{
+    osschedulerHintsIsSet_ = false;
 }
 
 }

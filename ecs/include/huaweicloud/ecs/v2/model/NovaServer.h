@@ -12,6 +12,7 @@
 #include <huaweicloud/ecs/v2/model/NovaServerFault.h>
 #include <huaweicloud/ecs/v2/model/NovaServerFlavor.h>
 #include <huaweicloud/ecs/v2/model/NovaNetwork.h>
+#include <huaweicloud/ecs/v2/model/NovaServerSchedulerHints.h>
 #include <string>
 #include <huaweicloud/ecs/v2/model/NovaServerImage.h>
 #include <map>
@@ -426,6 +427,15 @@ public:
     void unsetprogress();
     void setProgress(int32_t value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    NovaServerSchedulerHints getOsschedulerHints() const;
+    bool osschedulerHintsIsSet() const;
+    void unsetosschedulerHints();
+    void setOsschedulerHints(const NovaServerSchedulerHints& value);
+
 
 protected:
     std::string name_;
@@ -512,6 +522,8 @@ protected:
     bool configDriveIsSet_;
     int32_t progress_;
     bool progressIsSet_;
+    NovaServerSchedulerHints osschedulerHints_;
+    bool osschedulerHintsIsSet_;
 
 };
 

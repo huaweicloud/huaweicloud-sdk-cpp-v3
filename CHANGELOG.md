@@ -1,3 +1,23 @@
+# 3.0.18-beta 2021-11-29
+
+### HuaweiCloud SDK EVS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the interface `CinderExportToImage`.
+
+### HuaweiCloud SDK ECS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the response parameter `os:scheduler_hints` to the interfaces `NovaShowServer` and `NovaListServersDetails`.
+
 # 3.0.17-beta 2021-11-25
 
 ### HuaweiCloud SDK Core

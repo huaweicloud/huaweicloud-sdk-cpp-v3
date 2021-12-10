@@ -16,29 +16,14 @@ Attributes::Attributes()
     dressIsSet_ = false;
     glass_ = "";
     glassIsSet_ = false;
-    gender_ = "";
-    genderIsSet_ = false;
-    yawAngle_ = 0.0;
-    yawAngleIsSet_ = false;
-    rollAngle_ = 0.0;
-    rollAngleIsSet_ = false;
-    pitchAngle_ = 0.0;
-    pitchAngleIsSet_ = false;
     hat_ = "";
     hatIsSet_ = false;
-    headposeIsSet_ = false;
     age_ = 0;
     ageIsSet_ = false;
-    smile_ = "";
-    smileIsSet_ = false;
     mask_ = "";
     maskIsSet_ = false;
     beard_ = "";
     beardIsSet_ = false;
-    skin_ = "";
-    skinIsSet_ = false;
-    ethnic_ = "";
-    ethnicIsSet_ = false;
     phototype_ = "";
     phototypeIsSet_ = false;
     qualityIsSet_ = false;
@@ -65,41 +50,17 @@ web::json::value Attributes::toJson() const
     if(glassIsSet_) {
         val[utility::conversions::to_string_t("glass")] = ModelBase::toJson(glass_);
     }
-    if(genderIsSet_) {
-        val[utility::conversions::to_string_t("gender")] = ModelBase::toJson(gender_);
-    }
-    if(yawAngleIsSet_) {
-        val[utility::conversions::to_string_t("yaw_angle")] = ModelBase::toJson(yawAngle_);
-    }
-    if(rollAngleIsSet_) {
-        val[utility::conversions::to_string_t("roll_angle")] = ModelBase::toJson(rollAngle_);
-    }
-    if(pitchAngleIsSet_) {
-        val[utility::conversions::to_string_t("pitch_angle")] = ModelBase::toJson(pitchAngle_);
-    }
     if(hatIsSet_) {
         val[utility::conversions::to_string_t("hat")] = ModelBase::toJson(hat_);
     }
-    if(headposeIsSet_) {
-        val[utility::conversions::to_string_t("headpose")] = ModelBase::toJson(headpose_);
-    }
     if(ageIsSet_) {
         val[utility::conversions::to_string_t("age")] = ModelBase::toJson(age_);
-    }
-    if(smileIsSet_) {
-        val[utility::conversions::to_string_t("smile")] = ModelBase::toJson(smile_);
     }
     if(maskIsSet_) {
         val[utility::conversions::to_string_t("mask")] = ModelBase::toJson(mask_);
     }
     if(beardIsSet_) {
         val[utility::conversions::to_string_t("beard")] = ModelBase::toJson(beard_);
-    }
-    if(skinIsSet_) {
-        val[utility::conversions::to_string_t("skin")] = ModelBase::toJson(skin_);
-    }
-    if(ethnicIsSet_) {
-        val[utility::conversions::to_string_t("ethnic")] = ModelBase::toJson(ethnic_);
     }
     if(phototypeIsSet_) {
         val[utility::conversions::to_string_t("phototype")] = ModelBase::toJson(phototype_);
@@ -142,42 +103,6 @@ bool Attributes::fromJson(const web::json::value& val)
             setGlass(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("gender"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("gender"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setGender(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("yaw_angle"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("yaw_angle"));
-        if(!fieldValue.is_null())
-        {
-            double refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setYawAngle(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("roll_angle"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("roll_angle"));
-        if(!fieldValue.is_null())
-        {
-            double refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setRollAngle(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("pitch_angle"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("pitch_angle"));
-        if(!fieldValue.is_null())
-        {
-            double refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setPitchAngle(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("hat"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("hat"));
         if(!fieldValue.is_null())
@@ -187,15 +112,6 @@ bool Attributes::fromJson(const web::json::value& val)
             setHat(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("headpose"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("headpose"));
-        if(!fieldValue.is_null())
-        {
-            std::vector<double> refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setHeadpose(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("age"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("age"));
         if(!fieldValue.is_null())
@@ -203,15 +119,6 @@ bool Attributes::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAge(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("smile"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("smile"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setSmile(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("mask"))) {
@@ -230,24 +137,6 @@ bool Attributes::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBeard(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("skin"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("skin"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setSkin(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("ethnic"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ethnic"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setEthnic(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("phototype"))) {
@@ -341,90 +230,6 @@ void Attributes::unsetglass()
     glassIsSet_ = false;
 }
 
-std::string Attributes::getGender() const
-{
-    return gender_;
-}
-
-void Attributes::setGender(const std::string& value)
-{
-    gender_ = value;
-    genderIsSet_ = true;
-}
-
-bool Attributes::genderIsSet() const
-{
-    return genderIsSet_;
-}
-
-void Attributes::unsetgender()
-{
-    genderIsSet_ = false;
-}
-
-double Attributes::getYawAngle() const
-{
-    return yawAngle_;
-}
-
-void Attributes::setYawAngle(double value)
-{
-    yawAngle_ = value;
-    yawAngleIsSet_ = true;
-}
-
-bool Attributes::yawAngleIsSet() const
-{
-    return yawAngleIsSet_;
-}
-
-void Attributes::unsetyawAngle()
-{
-    yawAngleIsSet_ = false;
-}
-
-double Attributes::getRollAngle() const
-{
-    return rollAngle_;
-}
-
-void Attributes::setRollAngle(double value)
-{
-    rollAngle_ = value;
-    rollAngleIsSet_ = true;
-}
-
-bool Attributes::rollAngleIsSet() const
-{
-    return rollAngleIsSet_;
-}
-
-void Attributes::unsetrollAngle()
-{
-    rollAngleIsSet_ = false;
-}
-
-double Attributes::getPitchAngle() const
-{
-    return pitchAngle_;
-}
-
-void Attributes::setPitchAngle(double value)
-{
-    pitchAngle_ = value;
-    pitchAngleIsSet_ = true;
-}
-
-bool Attributes::pitchAngleIsSet() const
-{
-    return pitchAngleIsSet_;
-}
-
-void Attributes::unsetpitchAngle()
-{
-    pitchAngleIsSet_ = false;
-}
-
 std::string Attributes::getHat() const
 {
     return hat_;
@@ -446,27 +251,6 @@ void Attributes::unsethat()
     hatIsSet_ = false;
 }
 
-std::vector<double>& Attributes::getHeadpose()
-{
-    return headpose_;
-}
-
-void Attributes::setHeadpose(std::vector<double> value)
-{
-    headpose_ = value;
-    headposeIsSet_ = true;
-}
-
-bool Attributes::headposeIsSet() const
-{
-    return headposeIsSet_;
-}
-
-void Attributes::unsetheadpose()
-{
-    headposeIsSet_ = false;
-}
-
 int32_t Attributes::getAge() const
 {
     return age_;
@@ -486,27 +270,6 @@ bool Attributes::ageIsSet() const
 void Attributes::unsetage()
 {
     ageIsSet_ = false;
-}
-
-std::string Attributes::getSmile() const
-{
-    return smile_;
-}
-
-void Attributes::setSmile(const std::string& value)
-{
-    smile_ = value;
-    smileIsSet_ = true;
-}
-
-bool Attributes::smileIsSet() const
-{
-    return smileIsSet_;
-}
-
-void Attributes::unsetsmile()
-{
-    smileIsSet_ = false;
 }
 
 std::string Attributes::getMask() const
@@ -549,48 +312,6 @@ bool Attributes::beardIsSet() const
 void Attributes::unsetbeard()
 {
     beardIsSet_ = false;
-}
-
-std::string Attributes::getSkin() const
-{
-    return skin_;
-}
-
-void Attributes::setSkin(const std::string& value)
-{
-    skin_ = value;
-    skinIsSet_ = true;
-}
-
-bool Attributes::skinIsSet() const
-{
-    return skinIsSet_;
-}
-
-void Attributes::unsetskin()
-{
-    skinIsSet_ = false;
-}
-
-std::string Attributes::getEthnic() const
-{
-    return ethnic_;
-}
-
-void Attributes::setEthnic(const std::string& value)
-{
-    ethnic_ = value;
-    ethnicIsSet_ = true;
-}
-
-bool Attributes::ethnicIsSet() const
-{
-    return ethnicIsSet_;
-}
-
-void Attributes::unsetethnic()
-{
-    ethnicIsSet_ = false;
 }
 
 std::string Attributes::getPhototype() const

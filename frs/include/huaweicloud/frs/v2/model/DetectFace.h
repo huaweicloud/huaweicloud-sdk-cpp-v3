@@ -8,7 +8,6 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/frs/v2/model/Attributes.h>
-#include <huaweicloud/frs/v2/model/Landmark.h>
 #include <huaweicloud/frs/v2/model/BoundingBox.h>
 
 namespace HuaweiCloud {
@@ -59,23 +58,12 @@ public:
     void unsetattributes();
     void setAttributes(const Attributes& value);
 
-    /// <summary>
-    /// 
-    /// </summary>
-
-    Landmark getLandmark() const;
-    bool landmarkIsSet() const;
-    void unsetlandmark();
-    void setLandmark(const Landmark& value);
-
 
 protected:
     BoundingBox boundingBox_;
     bool boundingBoxIsSet_;
     Attributes attributes_;
     bool attributesIsSet_;
-    Landmark landmark_;
-    bool landmarkIsSet_;
 
 };
 

@@ -15,7 +15,6 @@ DetectFace::DetectFace()
 {
     boundingBoxIsSet_ = false;
     attributesIsSet_ = false;
-    landmarkIsSet_ = false;
 }
 
 DetectFace::~DetectFace() = default;
@@ -33,9 +32,6 @@ web::json::value DetectFace::toJson() const
     }
     if(attributesIsSet_) {
         val[utility::conversions::to_string_t("attributes")] = ModelBase::toJson(attributes_);
-    }
-    if(landmarkIsSet_) {
-        val[utility::conversions::to_string_t("landmark")] = ModelBase::toJson(landmark_);
     }
 
     return val;
@@ -61,15 +57,6 @@ bool DetectFace::fromJson(const web::json::value& val)
             Attributes refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAttributes(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("landmark"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("landmark"));
-        if(!fieldValue.is_null())
-        {
-            Landmark refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setLandmark(refVal);
         }
     }
     return ok;
@@ -116,27 +103,6 @@ bool DetectFace::attributesIsSet() const
 void DetectFace::unsetattributes()
 {
     attributesIsSet_ = false;
-}
-
-Landmark DetectFace::getLandmark() const
-{
-    return landmark_;
-}
-
-void DetectFace::setLandmark(const Landmark& value)
-{
-    landmark_ = value;
-    landmarkIsSet_ = true;
-}
-
-bool DetectFace::landmarkIsSet() const
-{
-    return landmarkIsSet_;
-}
-
-void DetectFace::unsetlandmark()
-{
-    landmarkIsSet_ = false;
 }
 
 }

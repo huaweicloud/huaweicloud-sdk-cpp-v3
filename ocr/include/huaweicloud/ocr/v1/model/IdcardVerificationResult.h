@@ -18,7 +18,7 @@ using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 
 /// <summary>
-/// 校验信息。仅在输入参数return_verification为true时返回该字段。
+/// 校验信息。仅在输入参数return_verification为true时，返回该字段，该字段包含valid_number、valid_birth、valid_sex和valid_date的校验信息。
 /// </summary>
 class HUAWEICLOUD_OCR_V1_EXPORT  IdcardVerificationResult
     : public ModelBase
@@ -39,7 +39,7 @@ public:
     /// IdcardVerificationResult members
 
     /// <summary>
-    /// 身份证号合法。校验规则为：将身份证号前17位数字分别乘以7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2，再求和，求和结果对11取模，取模结果作为数组[1,0,X,9,8,7,6,5,4,3,2]的下标，从里面取出一位结果，例如取模结果为0，则从数组里取出来的结果是1，最后判断从数组里面取出来的结果是否和身份证号最后一位是否一致。如果一致，代表身份证号合法，返回true，否则代表身份证号不合法，返回false。  当身份证图片是背面时，默认是false。 
+    /// 身份证号规则校验是否通过。“true”表示身份证号规则校验通过，“false”表示身份证号规则校验不通过。当身份证图片是国徽面时，默认是false。仅在输入参数return_verification为true时，返回该字段。 
     /// </summary>
 
     bool isValidNumber() const;
@@ -48,7 +48,7 @@ public:
     void setValidNumber(bool value);
 
     /// <summary>
-    /// 身份证号与出生日期一致。出生日期和身份证号的第7位和第14位之间表示的出生日期是否一致。一致返回true，否则返回false。  当身份证图片是背面时，默认是false。 
+    /// 出生日期与身份证号所表示的出生日期是否一致。“true”表示一致，“false”表示不一致。当身份证图片是国徽面，或者身份证号规则校验不通过时，默认是false。仅在输入参数return_verification为true时，返回该字段。 
     /// </summary>
 
     bool isValidBirth() const;
@@ -57,7 +57,7 @@ public:
     void setValidBirth(bool value);
 
     /// <summary>
-    /// 身份证号与性别一致。性别和身份证号的第17位表示的性别信息是否一致。身份证号的第17位如果为奇数表示男性，偶数表示女性。一致返回true，否则返回false。  当身份证图片是背面时，默认是false。 
+    /// 性别与身份证号所表示的性别信息是否一致。“true”表示一致，“false”表示不一致。当身份证图片是国徽面，或者身份证号规则校验不通过时，默认是false。仅在输入参数return_verification为true时，返回该字段。 
     /// </summary>
 
     bool isValidSex() const;
@@ -66,7 +66,7 @@ public:
     void setValidSex(bool value);
 
     /// <summary>
-    /// 当前日期在有效期内。当前日期在身份证有效期内返回true，否则返回false。  当身份证图片是正面时，默认是false。 
+    /// 当前日期是否在有效期内。“true”表示当前日期在有效期内，“false”表示当前日期不在有效期内。当身份证图片是人像面时，默认是false。仅在输入参数return_verification为true时，返回该字段。 
     /// </summary>
 
     bool isValidDate() const;

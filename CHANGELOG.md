@@ -1,3 +1,19 @@
+# 3.0.20-beta 2021-12-17
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - Support the following interfaces£º
+    - `RecognizeThailandIdcard`
+    - `RecognizeMyanmarIdcard`
+    - `RecognizeMyanmarDriverLicense`
+    - `RecognizeChileIdCard`
+    - `RecognizeThailandLicensePlate`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.0.19-beta 2021-12-10
 
 ### HuaweiCloud SDK FRS

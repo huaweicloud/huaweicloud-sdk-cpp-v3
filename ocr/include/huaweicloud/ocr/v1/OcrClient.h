@@ -10,6 +10,7 @@
 #include <huaweicloud/ocr/v1/model/BankcardRequestBody.h>
 #include <huaweicloud/ocr/v1/model/BusinessCardRequestBody.h>
 #include <huaweicloud/ocr/v1/model/BusinessLicenseRequestBody.h>
+#include <huaweicloud/ocr/v1/model/ChileIdCardRequestBody.h>
 #include <huaweicloud/ocr/v1/model/DriverLicenseRequestBody.h>
 #include <huaweicloud/ocr/v1/model/FinancialStatementRequestBody.h>
 #include <huaweicloud/ocr/v1/model/FlightItineraryRequestBody.h>
@@ -21,6 +22,8 @@
 #include <huaweicloud/ocr/v1/model/InvoiceVerificationRequestBody.h>
 #include <huaweicloud/ocr/v1/model/LicensePlateRequestBody.h>
 #include <huaweicloud/ocr/v1/model/MvsInvoiceRequestBody.h>
+#include <huaweicloud/ocr/v1/model/MyanmarDriverLicenseRequestBody.h>
+#include <huaweicloud/ocr/v1/model/MyanmarIdcardRequestBody.h>
 #include <huaweicloud/ocr/v1/model/PassportRequestBody.h>
 #include <huaweicloud/ocr/v1/model/QualificationCertificateRequestBody.h>
 #include <huaweicloud/ocr/v1/model/QuotaInvoiceRequestBody.h>
@@ -32,6 +35,8 @@
 #include <huaweicloud/ocr/v1/model/RecognizeBusinessCardResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeBusinessLicenseRequest.h>
 #include <huaweicloud/ocr/v1/model/RecognizeBusinessLicenseResponse.h>
+#include <huaweicloud/ocr/v1/model/RecognizeChileIdCardRequest.h>
+#include <huaweicloud/ocr/v1/model/RecognizeChileIdCardResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeDriverLicenseRequest.h>
 #include <huaweicloud/ocr/v1/model/RecognizeDriverLicenseResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeFinancialStatementRequest.h>
@@ -54,6 +59,10 @@
 #include <huaweicloud/ocr/v1/model/RecognizeLicensePlateResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeMvsInvoiceRequest.h>
 #include <huaweicloud/ocr/v1/model/RecognizeMvsInvoiceResponse.h>
+#include <huaweicloud/ocr/v1/model/RecognizeMyanmarDriverLicenseRequest.h>
+#include <huaweicloud/ocr/v1/model/RecognizeMyanmarDriverLicenseResponse.h>
+#include <huaweicloud/ocr/v1/model/RecognizeMyanmarIdcardRequest.h>
+#include <huaweicloud/ocr/v1/model/RecognizeMyanmarIdcardResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizePassportRequest.h>
 #include <huaweicloud/ocr/v1/model/RecognizePassportResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeQualificationCertificateRequest.h>
@@ -62,6 +71,10 @@
 #include <huaweicloud/ocr/v1/model/RecognizeQuotaInvoiceResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeTaxiInvoiceRequest.h>
 #include <huaweicloud/ocr/v1/model/RecognizeTaxiInvoiceResponse.h>
+#include <huaweicloud/ocr/v1/model/RecognizeThailandIdcardRequest.h>
+#include <huaweicloud/ocr/v1/model/RecognizeThailandIdcardResponse.h>
+#include <huaweicloud/ocr/v1/model/RecognizeThailandLicensePlateRequest.h>
+#include <huaweicloud/ocr/v1/model/RecognizeThailandLicensePlateResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeTollInvoiceRequest.h>
 #include <huaweicloud/ocr/v1/model/RecognizeTollInvoiceResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeTrainTicketRequest.h>
@@ -75,6 +88,8 @@
 #include <huaweicloud/ocr/v1/model/RecognizeWebImageRequest.h>
 #include <huaweicloud/ocr/v1/model/RecognizeWebImageResponse.h>
 #include <huaweicloud/ocr/v1/model/TaxiInvoiceRequestBody.h>
+#include <huaweicloud/ocr/v1/model/ThailandIdcardRequestBody.h>
+#include <huaweicloud/ocr/v1/model/ThailandLicensePlateRequestBody.h>
 #include <huaweicloud/ocr/v1/model/TollInvoiceRequestBody.h>
 #include <huaweicloud/ocr/v1/model/TrainTicketRequestBody.h>
 #include <huaweicloud/ocr/v1/model/TransportationLicenseRequestBody.h>
@@ -148,6 +163,16 @@ public:
     /// <param name="businessLicenseRequestBody">This is a auto create Body Object</param>
     std::shared_ptr<RecognizeBusinessLicenseResponse> recognizeBusinessLicense(
         RecognizeBusinessLicenseRequest &request
+    );
+    /// <summary>
+    /// 智利身份证识别
+    /// </summary>
+    /// <remarks>
+    /// 识别智利身份证图片中的文字内容，并返回识别的结构化结果。
+    /// </remarks>
+    /// <param name="chileIdCardRequestBody">This is a chile id-card Body Object</param>
+    std::shared_ptr<RecognizeChileIdCardResponse> recognizeChileIdCard(
+        RecognizeChileIdCardRequest &request
     );
     /// <summary>
     /// 驾驶证识别
@@ -260,6 +285,26 @@ public:
         RecognizeMvsInvoiceRequest &request
     );
     /// <summary>
+    /// 缅文驾驶证识别
+    /// </summary>
+    /// <remarks>
+    /// 识别缅甸驾驶证中的文字信息，并返回识别的结构化结果。
+    /// </remarks>
+    /// <param name="myanmarDriverLicenseRequestBody">This is a Myanmar driver license Body Object</param>
+    std::shared_ptr<RecognizeMyanmarDriverLicenseResponse> recognizeMyanmarDriverLicense(
+        RecognizeMyanmarDriverLicenseRequest &request
+    );
+    /// <summary>
+    /// 缅文身份证识别
+    /// </summary>
+    /// <remarks>
+    /// 识别缅文身份证中的文字信息，并返回识别的结构化结果。
+    /// </remarks>
+    /// <param name="myanmarIdcardRequestBody">This is a Myanmar Idcard Body Object</param>
+    std::shared_ptr<RecognizeMyanmarIdcardResponse> recognizeMyanmarIdcard(
+        RecognizeMyanmarIdcardRequest &request
+    );
+    /// <summary>
     /// 护照识别
     /// </summary>
     /// <remarks>
@@ -298,6 +343,26 @@ public:
     /// <param name="taxiInvoiceRequestBody">This is a taxiinvoice Body Object</param>
     std::shared_ptr<RecognizeTaxiInvoiceResponse> recognizeTaxiInvoice(
         RecognizeTaxiInvoiceRequest &request
+    );
+    /// <summary>
+    /// 泰文身份证识别
+    /// </summary>
+    /// <remarks>
+    /// 识别泰国身份证中的文字信息，并返回识别的结构化结果。
+    /// </remarks>
+    /// <param name="thailandIdcardRequestBody">This is a Thailand Idcard Body Object</param>
+    std::shared_ptr<RecognizeThailandIdcardResponse> recognizeThailandIdcard(
+        RecognizeThailandIdcardRequest &request
+    );
+    /// <summary>
+    /// 泰国车牌识别
+    /// </summary>
+    /// <remarks>
+    /// 识别泰国车牌图片中的车牌信息，并返回识别的结构化结果。
+    /// </remarks>
+    /// <param name="thailandLicensePlateRequestBody">This is a thailand license plate Body Object</param>
+    std::shared_ptr<RecognizeThailandLicensePlateResponse> recognizeThailandLicensePlate(
+        RecognizeThailandLicensePlateRequest &request
     );
     /// <summary>
     /// 车辆通行费发票识别

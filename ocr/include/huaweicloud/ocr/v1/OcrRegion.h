@@ -26,6 +26,7 @@ public:
         regions["cn-south-1"] = Region("cn-south-1","https://ocr.cn-south-1.myhuaweicloud.com") ;
         regions["cn-east-3"] = Region("cn-east-3","https://ocr.cn-east-3.myhuaweicloud.com") ;
         regions["cn-north-1"] = Region("cn-north-1","https://ocr.cn-north-1.myhuaweicloud.com") ;
+        regions["ap-southeast-2"] = Region("ap-southeast-2","https://ocr.ap-southeast-2.myhuaweicloud.com") ;
         return regions;
     }
 private:

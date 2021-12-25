@@ -15,6 +15,8 @@ InsurancePolicyRequestBody::InsurancePolicyRequestBody()
 {
     image_ = "";
     imageIsSet_ = false;
+    url_ = "";
+    urlIsSet_ = false;
     detectDirection_ = false;
     detectDirectionIsSet_ = false;
 }
@@ -31,6 +33,9 @@ web::json::value InsurancePolicyRequestBody::toJson() const
 
     if(imageIsSet_) {
         val[utility::conversions::to_string_t("image")] = ModelBase::toJson(image_);
+    }
+    if(urlIsSet_) {
+        val[utility::conversions::to_string_t("url")] = ModelBase::toJson(url_);
     }
     if(detectDirectionIsSet_) {
         val[utility::conversions::to_string_t("detect_direction")] = ModelBase::toJson(detectDirection_);
@@ -50,6 +55,15 @@ bool InsurancePolicyRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setImage(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("url"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("url"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setUrl(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("detect_direction"))) {
@@ -84,6 +98,27 @@ bool InsurancePolicyRequestBody::imageIsSet() const
 void InsurancePolicyRequestBody::unsetimage()
 {
     imageIsSet_ = false;
+}
+
+std::string InsurancePolicyRequestBody::getUrl() const
+{
+    return url_;
+}
+
+void InsurancePolicyRequestBody::setUrl(const std::string& value)
+{
+    url_ = value;
+    urlIsSet_ = true;
+}
+
+bool InsurancePolicyRequestBody::urlIsSet() const
+{
+    return urlIsSet_;
+}
+
+void InsurancePolicyRequestBody::unseturl()
+{
+    urlIsSet_ = false;
 }
 
 bool InsurancePolicyRequestBody::isDetectDirection() const

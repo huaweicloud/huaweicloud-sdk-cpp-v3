@@ -357,7 +357,7 @@ public:
     /// <remarks>
     /// 创建对等连接。
     /// </remarks>
-    /// <param name="peering">peering对象列表</param>
+    /// <param name="peering">peering对象</param>
     std::shared_ptr<CreateVpcPeeringResponse> createVpcPeering(
         CreateVpcPeeringRequest &request
     );
@@ -1087,7 +1087,7 @@ public:
     /// <remarks>
     /// 创建路由
     /// </remarks>
-    /// <param name="route">创建vpc路由请求体</param>
+    /// <param name="route">route对象，必选字段：destination、nexthop、type、vpc_id。</param>
     std::shared_ptr<CreateVpcRouteResponse> createVpcRoute(
         CreateVpcRouteRequest &request
     );

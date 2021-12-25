@@ -1,3 +1,14 @@
+# 3.0.21-beta 2021-12-25
+
+### HuaweiCloud SDK ECS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the response parameter `updated_at` from the interface `NovaListServerActions`
+
 # 3.0.20-beta 2021-12-17
 
 ### HuaweiCloud SDK OCR

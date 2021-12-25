@@ -1,3 +1,14 @@
+# 3.0.21-beta 2021-12-25
+
+### HuaweiCloud SDK ECS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`NovaListServerActions`移除响应参数`updated_at`
+
 # 3.0.20-beta 2021-12-17
 
 ### HuaweiCloud SDK OCR

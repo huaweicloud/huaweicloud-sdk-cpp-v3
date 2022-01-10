@@ -1,3 +1,36 @@
+# 3.0.22-beta 2022-01-10
+
+### HuaweiCloud SDK ECS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the request parameter `delete_on_termination` to the interface `CreateServers`
+
+### HuaweiCloud SDK FunctionGraph
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Changes of the interface `UpdateFunctionConfig`:
+    - Add the request parameter `is_stateful_function`
+    - Add the response parameter `is_stateful_function`
+
+### HuaweiCloud SDK IMS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - The response parameter `active_at` changed to not required of the interface `GlanceListImages`
+  - The response parameter `active_at` changed to not required of the interface `GlanceShowImage`
+  - The response parameter `active_at` changed to not required of the interface `GlanceUpdateImage`
+
 # 3.0.21-beta 2021-12-25
 
 ### HuaweiCloud SDK ECS

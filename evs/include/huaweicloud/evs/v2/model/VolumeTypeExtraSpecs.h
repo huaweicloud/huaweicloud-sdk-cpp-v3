@@ -40,7 +40,7 @@ public:
     /// VolumeTypeExtraSpecs members
 
     /// <summary>
-    /// 支持当前云硬盘类型的可用区列表。
+    /// 支持当前云硬盘类型的可用区列表，列表的元素以逗号分隔。
     /// </summary>
 
     std::string getRESKEYavailabilityZones() const;
@@ -58,7 +58,7 @@ public:
     void setAvailabilityZone(const std::string& value);
 
     /// <summary>
-    /// 当前云硬盘类型已售罄的可用区列表。
+    /// 当前云硬盘类型已售罄的可用区列表，列表的元素以逗号分隔。
     /// </summary>
 
     std::string getOsVendorExtendedsoldOutAvailabilityZones() const;

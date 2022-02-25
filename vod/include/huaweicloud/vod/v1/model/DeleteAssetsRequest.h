@@ -67,6 +67,15 @@ public:
     void unsetassetId();
     void setAssetId(const std::vector<std::string>& value);
 
+    /// <summary>
+    /// 删除类型，当值为origin时只删除源文件，保留转码后文件。
+    /// </summary>
+
+    std::string getDeleteType() const;
+    bool deleteTypeIsSet() const;
+    void unsetdeleteType();
+    void setDeleteType(const std::string& value);
+
 
 protected:
     std::string authorization_;
@@ -75,6 +84,8 @@ protected:
     bool xSdkDateIsSet_;
     std::vector<std::string> assetId_;
     bool assetIdIsSet_;
+    std::string deleteType_;
+    bool deleteTypeIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

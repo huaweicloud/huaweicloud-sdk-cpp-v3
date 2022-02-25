@@ -1,6 +1,24 @@
-# 3.0.22-beta 2022-01-10
+# 3.0.23-beta 2022-02-25
 
-2022-01-10
+### HuaweiCloud SDK VOD
+
+- _新增特性_
+  - 支持接口`ListDomainLogs`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`DeleteAssets`新增请求参数 `delete_type`
+
+### HuaweiCloud SDK VPC
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`NeutronListSubnets`新增响应参数`subnetpool_id`
+
+# 3.0.22-beta 2022-01-10
 
 ### HuaweiCloud SDK IMS
 

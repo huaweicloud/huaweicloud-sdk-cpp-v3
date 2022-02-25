@@ -69,7 +69,7 @@ public:
     void setImageTags(const std::vector<TagKeyValue>& value);
 
     /// <summary>
-    /// 弹性云服务器ID。使用弹性云服务器制作整机镜像时使用此参数。 如果使用备份创建整机镜像，该参数应换成backup_id
+    /// 弹性云服务器ID。使用弹性云服务器制作整机镜像时使用此参数且必填。 如果使用备份创建整机镜像，该参数应换成backup_id。 非必填的原因是需要兼容“使用备份创建整机镜像”和“使用弹性云服务器制作整机镜像”两种场景的body体。
     /// </summary>
 
     std::string getInstanceId() const;
@@ -96,7 +96,7 @@ public:
     void setTags(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 使用云服务器备份创建整机镜像使用此参数。 如果使用ECS创建整机镜像，则该参数应传为instance_id
+    /// 使用云服务器备份创建整机镜像使用此参数且必填。 如果使用ECS创建整机镜像，则该参数应传为instance_id。 非必填的原因是需要兼容“使用备份创建整机镜像”和“使用弹性云服务器制作整机镜像”两种场景的body体。
     /// </summary>
 
     std::string getBackupId() const;

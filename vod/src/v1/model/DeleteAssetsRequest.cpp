@@ -18,6 +18,8 @@ DeleteAssetsRequest::DeleteAssetsRequest()
     xSdkDate_ = "";
     xSdkDateIsSet_ = false;
     assetIdIsSet_ = false;
+    deleteType_ = "";
+    deleteTypeIsSet_ = false;
 }
 
 DeleteAssetsRequest::~DeleteAssetsRequest() = default;
@@ -38,6 +40,9 @@ web::json::value DeleteAssetsRequest::toJson() const
     }
     if(assetIdIsSet_) {
         val[utility::conversions::to_string_t("asset_id")] = ModelBase::toJson(assetId_);
+    }
+    if(deleteTypeIsSet_) {
+        val[utility::conversions::to_string_t("delete_type")] = ModelBase::toJson(deleteType_);
     }
 
     return val;
@@ -72,6 +77,15 @@ bool DeleteAssetsRequest::fromJson(const web::json::value& val)
             std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAssetId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("delete_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("delete_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDeleteType(refVal);
         }
     }
     return ok;
@@ -139,6 +153,27 @@ bool DeleteAssetsRequest::assetIdIsSet() const
 void DeleteAssetsRequest::unsetassetId()
 {
     assetIdIsSet_ = false;
+}
+
+std::string DeleteAssetsRequest::getDeleteType() const
+{
+    return deleteType_;
+}
+
+void DeleteAssetsRequest::setDeleteType(const std::string& value)
+{
+    deleteType_ = value;
+    deleteTypeIsSet_ = true;
+}
+
+bool DeleteAssetsRequest::deleteTypeIsSet() const
+{
+    return deleteTypeIsSet_;
+}
+
+void DeleteAssetsRequest::unsetdeleteType()
+{
+    deleteTypeIsSet_ = false;
 }
 
 }

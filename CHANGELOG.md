@@ -1,3 +1,23 @@
+# 3.0.23-beta 2022-02-25
+
+### HuaweiCloud SDK VOD
+
+- _Features_
+  - Support the interface `ListDomainLogs`
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the request parameter `delete_type` to the interface `DeleteAssets`
+
+### HuaweiCloud SDK VPC
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the response parameter `subnetpool_id` to the interface `NeutronListSubnets`
+
 # 3.0.22-beta 2022-01-10
 
 ### HuaweiCloud SDK ECS
@@ -47,7 +67,7 @@
 ### HuaweiCloud SDK OCR
 
 - _Features_
-  - Support the following interfaces£º
+  - Support the following interfaces??
     - `RecognizeThailandIdcard`
     - `RecognizeMyanmarIdcard`
     - `RecognizeMyanmarDriverLicense`
@@ -153,7 +173,7 @@
 ### HuaweiCloud SDK VPC
 
 - _Features_
-  - Support interfaces(V3): `AddVpcExtendCidr`¡¢`RemoveVpcExtendCidr`¡¢`ListVpcs`¡¢`ShowVpc`
+  - Support interfaces(V3): `AddVpcExtendCidr`??`RemoveVpcExtendCidr`??`ListVpcs`??`ShowVpc`
 - _Bug Fix_
   - None
 - _Change_

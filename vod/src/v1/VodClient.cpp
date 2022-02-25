@@ -721,6 +721,9 @@ std::shared_ptr<DeleteAssetsResponse> VodClient::deleteAssets(DeleteAssetsReques
     if (request.assetIdIsSet()) {
         localVarQueryParams["asset_id"] = parameterToString(request.getAssetId());
     }
+    if (request.deleteTypeIsSet()) {
+        localVarQueryParams["delete_type"] = parameterToString(request.getDeleteType());
+    }
     if (request.authorizationIsSet()) {
         localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
     }
@@ -935,6 +938,58 @@ std::shared_ptr<ListAssetListResponse> VodClient::listAssetList(ListAssetListReq
     std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
 
     std::shared_ptr<ListAssetListResponse> localVarResult = std::make_shared<ListAssetListResponse>();
+
+    if (!res->getHttpBody().empty()) {
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListDomainLogsResponse> VodClient::listDomainLogs(ListDomainLogsRequest &request)
+{
+    std::string localVarPath = "/v1.0/{project_id}/vod/cdn/logs";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.domainNameIsSet()) {
+        localVarQueryParams["domain_name"] = parameterToString(request.getDomainName());
+    }
+    if (request.queryDateIsSet()) {
+        localVarQueryParams["query_date"] = parameterToString(request.getQueryDate());
+    }
+    if (request.pageSizeIsSet()) {
+        localVarQueryParams["page_size"] = parameterToString(request.getPageSize());
+    }
+    if (request.pageNumberIsSet()) {
+        localVarQueryParams["page_number"] = parameterToString(request.getPageNumber());
+    }
+    if (request.authorizationIsSet()) {
+        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
+    }
+    if (request.xSdkDateIsSet()) {
+        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+
+    std::shared_ptr<ListDomainLogsResponse> localVarResult = std::make_shared<ListDomainLogsResponse>();
 
     if (!res->getHttpBody().empty()) {
         utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());

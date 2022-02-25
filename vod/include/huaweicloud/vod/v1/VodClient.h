@@ -56,6 +56,8 @@
 #include <huaweicloud/vod/v1/model/ListAssetCategoryResponse.h>
 #include <huaweicloud/vod/v1/model/ListAssetListRequest.h>
 #include <huaweicloud/vod/v1/model/ListAssetListResponse.h>
+#include <huaweicloud/vod/v1/model/ListDomainLogsRequest.h>
+#include <huaweicloud/vod/v1/model/ListDomainLogsResponse.h>
 #include <huaweicloud/vod/v1/model/ListTemplateGroupRequest.h>
 #include <huaweicloud/vod/v1/model/ListTemplateGroupResponse.h>
 #include <huaweicloud/vod/v1/model/ListTopStatisticsRequest.h>
@@ -333,6 +335,7 @@ public:
     /// <param name="assetId">媒资ID，支持一次删除多个媒资，批量删除时以逗号分隔。</param>
     /// <param name="authorization">使用AK/SK方式认证时必选，携带的鉴权信息。  (optional, default to &quot;&quot;)</param>
     /// <param name="xSdkDate">使用AK/SK方式认证时必选，请求的发生时间。  (optional, default to &quot;&quot;)</param>
+    /// <param name="deleteType">删除类型，当值为origin时只删除源文件，保留转码后文件。 (optional, default to &quot;&quot;)</param>
     std::shared_ptr<DeleteAssetsResponse> deleteAssets(
         DeleteAssetsRequest &request
     );
@@ -393,6 +396,21 @@ public:
     /// <param name="order">查询顺序，按createTime顺序还是倒序 (optional, default to &quot;&quot;)</param>
     std::shared_ptr<ListAssetListResponse> listAssetList(
         ListAssetListRequest &request
+    );
+    /// <summary>
+    /// 查询域名播放日志
+    /// </summary>
+    /// <remarks>
+    /// 查询指定点播域名某段时间内在CDN的相关日志。
+    /// </remarks>
+    /// <param name="domainName">加速域名，参考格式：www.test1.com。</param>
+    /// <param name="queryDate">查询日期，格式为yyyymmdd。 - 查询结果为开始时间之后24小时内的日志数据 - 只能查最近一个月内的数据</param>
+    /// <param name="authorization">使用AK/SK方式认证时必选，携带的鉴权信息。  (optional, default to &quot;&quot;)</param>
+    /// <param name="xSdkDate">使用AK/SK方式认证时必选，请求的发生时间。  (optional, default to &quot;&quot;)</param>
+    /// <param name="pageSize">每页显示日志数量。  (optional, default to 0)</param>
+    /// <param name="pageNumber">当前页数。  (optional, default to 0)</param>
+    std::shared_ptr<ListDomainLogsResponse> listDomainLogs(
+        ListDomainLogsRequest &request
     );
     /// <summary>
     /// 查询转码模板组列表

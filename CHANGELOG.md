@@ -1,3 +1,14 @@
+# 3.0.24-beta 2022-03-07
+
+### HuaweiCloud SDK EIP
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Modify the type of the request parameter `ip_version` of the interface `CreatePrePaidPublicip`: `integer` -> `enum`
+
 # 3.0.23-beta 2022-02-25
 
 ### HuaweiCloud SDK VOD

@@ -1,3 +1,14 @@
+# 3.0.24-beta 2022-03-07
+
+### HuaweiCloud SDK EIP
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`CreatePrePaidPublicip`的请求参数`ip_version`类型变更： `integer` -> `enum`
+  
 # 3.0.23-beta 2022-02-25
 
 ### HuaweiCloud SDK VOD

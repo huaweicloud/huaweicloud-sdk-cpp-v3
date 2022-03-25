@@ -71,6 +71,12 @@
 #include <string>
 #include <vector>
 
+#include <huaweicloud/ims/v2/model/ListVersionsRequest.h>
+#include <huaweicloud/ims/v2/model/ListVersionsResponse.h>
+#include <huaweicloud/ims/v2/model/ShowVersionRequest.h>
+#include <huaweicloud/ims/v2/model/ShowVersionResponse.h>
+#include <string>
+
 #include <huaweicloud/ims/v2/model/ShowJobRequest.h>
 #include <huaweicloud/ims/v2/model/ShowJobResponse.h>
 #include <string>
@@ -423,6 +429,25 @@ public:
     /// <param name="bodyparam">请求参数</param>
     std::shared_ptr<UpdateImageResponse> updateImage(
         UpdateImageRequest &request
+    );
+    /// <summary>
+    /// 查询版本列表（OpenStack原生）
+    /// </summary>
+    /// <remarks>
+    /// 查询API的版本信息列表，包括API的版本兼容性、域名信息等。
+    /// </remarks>
+    std::shared_ptr<ListVersionsResponse> listVersions(
+        ListVersionsRequest &request
+    );
+    /// <summary>
+    /// 查询版本列表（OpenStack原生）
+    /// </summary>
+    /// <remarks>
+    /// 查询API的版本信息列表，包括API的版本兼容性、域名信息等。
+    /// </remarks>
+    /// <param name="version">API版本号。例如：v2.0</param>
+    std::shared_ptr<ShowVersionResponse> showVersion(
+        ShowVersionRequest &request
     );
     /// <summary>
     /// 查询job状态

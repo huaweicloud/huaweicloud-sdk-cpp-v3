@@ -1,3 +1,31 @@
+# 3.0.25-beta 2022-03-25
+
+### HuaweiCloud SDK IMS
+
+- _新增特性_
+  - 支持接口`ListVersions`、`ShowVersion`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`CreateDataImage`请求参数`os_type`改为非必填
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`RecognizeVatInvoice`:
+    - 新增请求参数 `return_text_location`
+    - 新增响应参数 `text_location`
+  - 接口`RecognizeIdCard`:
+    - 新增请求参数 `return_text_location`
+    - 新增响应参数 `text_location`
+  - 接口`RecognizeDriverLicense`:
+    - 新增请求参数 `return_text_location`
+    - 新增响应参数 `text_location`
+
 # 3.0.24-beta 2022-03-07
 
 ### HuaweiCloud SDK EIP

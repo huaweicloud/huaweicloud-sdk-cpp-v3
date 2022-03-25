@@ -39,6 +39,7 @@ DriverLicenseResult::DriverLicenseResult()
     fileNumberIsSet_ = false;
     record_ = "";
     recordIsSet_ = false;
+    textLocationIsSet_ = false;
 }
 
 DriverLicenseResult::~DriverLicenseResult() = default;
@@ -89,6 +90,9 @@ web::json::value DriverLicenseResult::toJson() const
     }
     if(recordIsSet_) {
         val[utility::conversions::to_string_t("record")] = ModelBase::toJson(record_);
+    }
+    if(textLocationIsSet_) {
+        val[utility::conversions::to_string_t("text_location")] = ModelBase::toJson(textLocation_);
     }
 
     return val;
@@ -213,6 +217,15 @@ bool DriverLicenseResult::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRecord(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("text_location"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("text_location"));
+        if(!fieldValue.is_null())
+        {
+            Object refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTextLocation(refVal);
         }
     }
     return ok;
@@ -490,6 +503,27 @@ bool DriverLicenseResult::recordIsSet() const
 void DriverLicenseResult::unsetrecord()
 {
     recordIsSet_ = false;
+}
+
+Object DriverLicenseResult::getTextLocation() const
+{
+    return textLocation_;
+}
+
+void DriverLicenseResult::setTextLocation(const Object& value)
+{
+    textLocation_ = value;
+    textLocationIsSet_ = true;
+}
+
+bool DriverLicenseResult::textLocationIsSet() const
+{
+    return textLocationIsSet_;
+}
+
+void DriverLicenseResult::unsettextLocation()
+{
+    textLocationIsSet_ = false;
 }
 
 }

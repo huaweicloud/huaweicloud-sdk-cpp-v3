@@ -105,7 +105,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 操作系统类型。只能是Windows、Linux二者之一，值区分大小写。
+    /// 操作系统类型。只能是Windows、Linux二者之一，默认Linux。
     /// </summary>
 
     std::string getOsType() const;

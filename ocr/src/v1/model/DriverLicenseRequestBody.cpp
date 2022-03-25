@@ -21,6 +21,8 @@ DriverLicenseRequestBody::DriverLicenseRequestBody()
     sideIsSet_ = false;
     returnIssuingAuthority_ = false;
     returnIssuingAuthorityIsSet_ = false;
+    returnTextLocation_ = false;
+    returnTextLocationIsSet_ = false;
 }
 
 DriverLicenseRequestBody::~DriverLicenseRequestBody() = default;
@@ -44,6 +46,9 @@ web::json::value DriverLicenseRequestBody::toJson() const
     }
     if(returnIssuingAuthorityIsSet_) {
         val[utility::conversions::to_string_t("return_issuing_authority")] = ModelBase::toJson(returnIssuingAuthority_);
+    }
+    if(returnTextLocationIsSet_) {
+        val[utility::conversions::to_string_t("return_text_location")] = ModelBase::toJson(returnTextLocation_);
     }
 
     return val;
@@ -87,6 +92,15 @@ bool DriverLicenseRequestBody::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setReturnIssuingAuthority(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("return_text_location"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("return_text_location"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setReturnTextLocation(refVal);
         }
     }
     return ok;
@@ -175,6 +189,27 @@ bool DriverLicenseRequestBody::returnIssuingAuthorityIsSet() const
 void DriverLicenseRequestBody::unsetreturnIssuingAuthority()
 {
     returnIssuingAuthorityIsSet_ = false;
+}
+
+bool DriverLicenseRequestBody::isReturnTextLocation() const
+{
+    return returnTextLocation_;
+}
+
+void DriverLicenseRequestBody::setReturnTextLocation(bool value)
+{
+    returnTextLocation_ = value;
+    returnTextLocationIsSet_ = true;
+}
+
+bool DriverLicenseRequestBody::returnTextLocationIsSet() const
+{
+    return returnTextLocationIsSet_;
+}
+
+void DriverLicenseRequestBody::unsetreturnTextLocation()
+{
+    returnTextLocationIsSet_ = false;
 }
 
 }

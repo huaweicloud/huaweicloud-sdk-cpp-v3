@@ -32,6 +32,7 @@ IdCardResult::IdCardResult()
     validTo_ = "";
     validToIsSet_ = false;
     verificationResultIsSet_ = false;
+    textLocationIsSet_ = false;
 }
 
 IdCardResult::~IdCardResult() = default;
@@ -73,6 +74,9 @@ web::json::value IdCardResult::toJson() const
     }
     if(verificationResultIsSet_) {
         val[utility::conversions::to_string_t("verification_result")] = ModelBase::toJson(verificationResult_);
+    }
+    if(textLocationIsSet_) {
+        val[utility::conversions::to_string_t("text_location")] = ModelBase::toJson(textLocation_);
     }
 
     return val;
@@ -170,6 +174,15 @@ bool IdCardResult::fromJson(const web::json::value& val)
             IdcardVerificationResult refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setVerificationResult(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("text_location"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("text_location"));
+        if(!fieldValue.is_null())
+        {
+            Object refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTextLocation(refVal);
         }
     }
     return ok;
@@ -384,6 +397,27 @@ bool IdCardResult::verificationResultIsSet() const
 void IdCardResult::unsetverificationResult()
 {
     verificationResultIsSet_ = false;
+}
+
+Object IdCardResult::getTextLocation() const
+{
+    return textLocation_;
+}
+
+void IdCardResult::setTextLocation(const Object& value)
+{
+    textLocation_ = value;
+    textLocationIsSet_ = true;
+}
+
+bool IdCardResult::textLocationIsSet() const
+{
+    return textLocationIsSet_;
+}
+
+void IdCardResult::unsettextLocation()
+{
+    textLocationIsSet_ = false;
 }
 
 }

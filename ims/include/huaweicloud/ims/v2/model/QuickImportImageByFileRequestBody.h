@@ -123,7 +123,7 @@ public:
     void setArchitecture(const std::string& value);
 
     /// <summary>
-    /// 操作系统版本。 创建数据盘镜像时该参数必填，取值为Linux或Windows。
+    /// 操作系统版本。 创建数据盘镜像时该参数取值为Linux或Windows，默认Linux。
     /// </summary>
 
     std::string getOsType() const;

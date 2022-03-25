@@ -1,3 +1,31 @@
+# 3.0.25-beta 2022-03-25
+
+### HuaweiCloud SDK IMS
+
+- _Features_
+  - Support the interfaces `ListVersions`, `ShowVersion`
+- _Bug Fix_
+  - None
+- _Change_
+  - The request parameter `os_type` changed to not required of the interface `CreateDataImage`
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Changes of the interface `RecognizeVatInvoice`:
+    - Add the request parameter `return_text_location`
+    - Add the response parameter `text_location`
+  - Changes of the interface `RecognizeIdCard`:
+    - Add the request parameter `return_text_location`
+    - Add the response parameter `text_location`
+  - Changes of the interface `RecognizeDriverLicense`:
+    - Add the request parameter `return_text_location`
+    - Add the response parameter `text_location`
+
 # 3.0.24-beta 2022-03-07
 
 ### HuaweiCloud SDK EIP

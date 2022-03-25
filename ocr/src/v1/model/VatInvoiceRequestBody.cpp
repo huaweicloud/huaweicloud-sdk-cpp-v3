@@ -19,6 +19,8 @@ VatInvoiceRequestBody::VatInvoiceRequestBody()
     urlIsSet_ = false;
     advancedMode_ = false;
     advancedModeIsSet_ = false;
+    returnTextLocation_ = false;
+    returnTextLocationIsSet_ = false;
 }
 
 VatInvoiceRequestBody::~VatInvoiceRequestBody() = default;
@@ -39,6 +41,9 @@ web::json::value VatInvoiceRequestBody::toJson() const
     }
     if(advancedModeIsSet_) {
         val[utility::conversions::to_string_t("advanced_mode")] = ModelBase::toJson(advancedMode_);
+    }
+    if(returnTextLocationIsSet_) {
+        val[utility::conversions::to_string_t("return_text_location")] = ModelBase::toJson(returnTextLocation_);
     }
 
     return val;
@@ -73,6 +78,15 @@ bool VatInvoiceRequestBody::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAdvancedMode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("return_text_location"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("return_text_location"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setReturnTextLocation(refVal);
         }
     }
     return ok;
@@ -140,6 +154,27 @@ bool VatInvoiceRequestBody::advancedModeIsSet() const
 void VatInvoiceRequestBody::unsetadvancedMode()
 {
     advancedModeIsSet_ = false;
+}
+
+bool VatInvoiceRequestBody::isReturnTextLocation() const
+{
+    return returnTextLocation_;
+}
+
+void VatInvoiceRequestBody::setReturnTextLocation(bool value)
+{
+    returnTextLocation_ = value;
+    returnTextLocationIsSet_ = true;
+}
+
+bool VatInvoiceRequestBody::returnTextLocationIsSet() const
+{
+    return returnTextLocationIsSet_;
+}
+
+void VatInvoiceRequestBody::unsetreturnTextLocation()
+{
+    returnTextLocationIsSet_ = false;
 }
 
 }

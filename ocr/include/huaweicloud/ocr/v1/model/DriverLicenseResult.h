@@ -7,6 +7,7 @@
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/core/utils/Object.h>
 #include <string>
 
 namespace HuaweiCloud {
@@ -156,6 +157,15 @@ public:
     void unsetrecord();
     void setRecord(const std::string& value);
 
+    /// <summary>
+    /// 文本框在原图位置。输出左上、右上、右下、左下四个点坐标。当“return_text_location”设置为“true”时才返回。 
+    /// </summary>
+
+    Object getTextLocation() const;
+    bool textLocationIsSet() const;
+    void unsettextLocation();
+    void setTextLocation(const Object& value);
+
 
 protected:
     std::string number_;
@@ -184,6 +194,8 @@ protected:
     bool fileNumberIsSet_;
     std::string record_;
     bool recordIsSet_;
+    Object textLocation_;
+    bool textLocationIsSet_;
 
 };
 

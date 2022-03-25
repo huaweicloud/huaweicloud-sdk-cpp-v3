@@ -7,6 +7,7 @@
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/core/utils/Object.h>
 #include <string>
 #include <huaweicloud/ocr/v1/model/IdcardVerificationResult.h>
 
@@ -113,7 +114,7 @@ public:
     void setValidFrom(const std::string& value);
 
     /// <summary>
-    /// 有效结束日期。   &gt; 说明：  - 身份证识别只支持中国大陆汉族身份证识别。 
+    /// 有效结束日期。   &gt; 说明：  - 身份证识别支持中华人民共和国居民身份证识别。 
     /// </summary>
 
     std::string getValidTo() const;
@@ -129,6 +130,15 @@ public:
     bool verificationResultIsSet() const;
     void unsetverificationResult();
     void setVerificationResult(const IdcardVerificationResult& value);
+
+    /// <summary>
+    /// 文本框在原图位置。输出左上、右上、右下、左下四个点坐标。当“return_text_location”设置为“true”时才返回。 
+    /// </summary>
+
+    Object getTextLocation() const;
+    bool textLocationIsSet() const;
+    void unsettextLocation();
+    void setTextLocation(const Object& value);
 
 
 protected:
@@ -152,6 +162,8 @@ protected:
     bool validToIsSet_;
     IdcardVerificationResult verificationResult_;
     bool verificationResultIsSet_;
+    Object textLocation_;
+    bool textLocationIsSet_;
 
 };
 

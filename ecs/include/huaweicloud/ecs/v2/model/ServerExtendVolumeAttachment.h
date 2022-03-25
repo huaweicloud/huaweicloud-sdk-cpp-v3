@@ -49,7 +49,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 删弹性云服务器时是否一并删除该磁盘。  - true：是 - false：否
+    /// 删弹性云服务器时是否一并删除该磁盘。  - true：是 - false：否 微版本2.3及以上版本支持。
     /// </summary>
 
     std::string getDeleteOnTermination() const;

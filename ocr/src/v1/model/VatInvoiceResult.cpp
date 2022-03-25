@@ -69,6 +69,7 @@ VatInvoiceResult::VatInvoiceResult()
     sellerSealIsSet_ = false;
     itemListIsSet_ = false;
     confidenceIsSet_ = false;
+    textLocationIsSet_ = false;
 }
 
 VatInvoiceResult::~VatInvoiceResult() = default;
@@ -170,6 +171,9 @@ web::json::value VatInvoiceResult::toJson() const
     }
     if(confidenceIsSet_) {
         val[utility::conversions::to_string_t("confidence")] = ModelBase::toJson(confidence_);
+    }
+    if(textLocationIsSet_) {
+        val[utility::conversions::to_string_t("text_location")] = ModelBase::toJson(textLocation_);
     }
 
     return val;
@@ -447,6 +451,15 @@ bool VatInvoiceResult::fromJson(const web::json::value& val)
             Object refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setConfidence(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("text_location"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("text_location"));
+        if(!fieldValue.is_null())
+        {
+            Object refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTextLocation(refVal);
         }
     }
     return ok;
@@ -1081,6 +1094,27 @@ bool VatInvoiceResult::confidenceIsSet() const
 void VatInvoiceResult::unsetconfidence()
 {
     confidenceIsSet_ = false;
+}
+
+Object VatInvoiceResult::getTextLocation() const
+{
+    return textLocation_;
+}
+
+void VatInvoiceResult::setTextLocation(const Object& value)
+{
+    textLocation_ = value;
+    textLocationIsSet_ = true;
+}
+
+bool VatInvoiceResult::textLocationIsSet() const
+{
+    return textLocationIsSet_;
+}
+
+void VatInvoiceResult::unsettextLocation()
+{
+    textLocationIsSet_ = false;
 }
 
 }

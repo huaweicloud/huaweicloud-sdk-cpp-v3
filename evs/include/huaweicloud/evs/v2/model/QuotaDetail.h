@@ -65,15 +65,6 @@ public:
     void unsetreserved();
     void setReserved(int32_t value);
 
-    /// <summary>
-    /// 预留属性。
-    /// </summary>
-
-    int32_t getAllocated() const;
-    bool allocatedIsSet() const;
-    void unsetallocated();
-    void setAllocated(int32_t value);
-
 
 protected:
     int32_t inUse_;
@@ -82,8 +73,6 @@ protected:
     bool limitIsSet_;
     int32_t reserved_;
     bool reservedIsSet_;
-    int32_t allocated_;
-    bool allocatedIsSet_;
 
 };
 

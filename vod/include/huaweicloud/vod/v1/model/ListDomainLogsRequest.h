@@ -67,7 +67,7 @@ public:
     void setDomainName(const std::string& value);
 
     /// <summary>
-    /// 查询日期，格式为yyyymmdd。 - 查询结果为开始时间之后24小时内的日志数据 - 只能查最近一个月内的数据
+    /// 查询日期，yyyyMMddHHmmss。 - 查询结果为开始时间之后24小时内的日志数据 - 只能查最近一个月内的数据
     /// </summary>
 
     std::string getQueryDate() const;

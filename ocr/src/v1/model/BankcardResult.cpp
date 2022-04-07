@@ -24,6 +24,7 @@ BankcardResult::BankcardResult()
     type_ = "";
     typeIsSet_ = false;
     confidenceIsSet_ = false;
+    textLocationIsSet_ = false;
 }
 
 BankcardResult::~BankcardResult() = default;
@@ -53,6 +54,9 @@ web::json::value BankcardResult::toJson() const
     }
     if(confidenceIsSet_) {
         val[utility::conversions::to_string_t("confidence")] = ModelBase::toJson(confidence_);
+    }
+    if(textLocationIsSet_) {
+        val[utility::conversions::to_string_t("text_location")] = ModelBase::toJson(textLocation_);
     }
 
     return val;
@@ -114,6 +118,15 @@ bool BankcardResult::fromJson(const web::json::value& val)
             Object refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setConfidence(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("text_location"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("text_location"));
+        if(!fieldValue.is_null())
+        {
+            Object refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTextLocation(refVal);
         }
     }
     return ok;
@@ -244,6 +257,27 @@ bool BankcardResult::confidenceIsSet() const
 void BankcardResult::unsetconfidence()
 {
     confidenceIsSet_ = false;
+}
+
+Object BankcardResult::getTextLocation() const
+{
+    return textLocation_;
+}
+
+void BankcardResult::setTextLocation(const Object& value)
+{
+    textLocation_ = value;
+    textLocationIsSet_ = true;
+}
+
+bool BankcardResult::textLocationIsSet() const
+{
+    return textLocationIsSet_;
+}
+
+void BankcardResult::unsettextLocation()
+{
+    textLocationIsSet_ = false;
 }
 
 }

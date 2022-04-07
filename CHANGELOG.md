@@ -1,3 +1,27 @@
+# 3.0.26-beta 2022-04-07
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - Support the interface `RecognizeWaybillElectronic`
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the response parameter `print_code` to the interface `RecognizeVatInvoice`
+  - Changes of the interface `RecognizeVehicleLicense`:
+    - Add the request parameter `return_text_location`
+    - Add the response parameter `text_location`
+  - Changes of the interface `RecognizeTaxiInvoice`:
+    - Add the request parameter `return_text_location`
+    - Add the response parameter `text_location`
+  - Add the response parameters `type`, `accumulated_scores`, `status`, `generation_date`, `current_time` to the interface `RecognizeDriverLicense`
+  - Changes of the interface `RecognizeTrainTicket`:
+    - Add the request parameter `return_text_location`
+    - Add the response parameter `text_location`
+  - Changes of the interface `RecognizeBankcard`:
+    - Add the request parameter `return_text_location`
+    - Add the response parameter `text_location`
+
 # 3.0.25-beta 2022-03-25
 
 ### HuaweiCloud SDK IMS

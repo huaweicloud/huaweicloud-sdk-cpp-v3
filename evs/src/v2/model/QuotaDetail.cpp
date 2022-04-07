@@ -19,8 +19,6 @@ QuotaDetail::QuotaDetail()
     limitIsSet_ = false;
     reserved_ = 0;
     reservedIsSet_ = false;
-    allocated_ = 0;
-    allocatedIsSet_ = false;
 }
 
 QuotaDetail::~QuotaDetail() = default;
@@ -41,9 +39,6 @@ web::json::value QuotaDetail::toJson() const
     }
     if(reservedIsSet_) {
         val[utility::conversions::to_string_t("reserved")] = ModelBase::toJson(reserved_);
-    }
-    if(allocatedIsSet_) {
-        val[utility::conversions::to_string_t("allocated")] = ModelBase::toJson(allocated_);
     }
 
     return val;
@@ -78,15 +73,6 @@ bool QuotaDetail::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setReserved(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("allocated"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("allocated"));
-        if(!fieldValue.is_null())
-        {
-            int32_t refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setAllocated(refVal);
         }
     }
     return ok;
@@ -154,27 +140,6 @@ bool QuotaDetail::reservedIsSet() const
 void QuotaDetail::unsetreserved()
 {
     reservedIsSet_ = false;
-}
-
-int32_t QuotaDetail::getAllocated() const
-{
-    return allocated_;
-}
-
-void QuotaDetail::setAllocated(int32_t value)
-{
-    allocated_ = value;
-    allocatedIsSet_ = true;
-}
-
-bool QuotaDetail::allocatedIsSet() const
-{
-    return allocatedIsSet_;
-}
-
-void QuotaDetail::unsetallocated()
-{
-    allocatedIsSet_ = false;
 }
 
 }

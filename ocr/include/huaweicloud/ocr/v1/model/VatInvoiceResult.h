@@ -88,6 +88,15 @@ public:
     void setCode(const std::string& value);
 
     /// <summary>
+    /// 打印发票代码。普通发票和专用发票在右上角，电子发票、通行费发票、卷票无此字段。 
+    /// </summary>
+
+    std::string getPrintCode() const;
+    bool printCodeIsSet() const;
+    void unsetprintCode();
+    void setPrintCode(const std::string& value);
+
+    /// <summary>
     /// 机器编号。 当“advanced_mode”设置为“true”时才返回。 
     /// </summary>
 
@@ -333,6 +342,8 @@ protected:
     bool supervisionSealIsSet_;
     std::string code_;
     bool codeIsSet_;
+    std::string printCode_;
+    bool printCodeIsSet_;
     std::string machineNumber_;
     bool machineNumberIsSet_;
     std::string printNumber_;

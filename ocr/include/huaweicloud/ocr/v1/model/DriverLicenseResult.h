@@ -8,7 +8,9 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/core/utils/Object.h>
+#include <huaweicloud/ocr/v1/model/DriverLicenseResult_status.h>
 #include <string>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -39,6 +41,15 @@ public:
 
     /////////////////////////////////////////////
     /// DriverLicenseResult members
+
+    /// <summary>
+    /// 驾驶证类型。 normal：纸质驾驶证 electronic：电子驾驶证 
+    /// </summary>
+
+    std::string getType() const;
+    bool typeIsSet() const;
+    void unsettype();
+    void setType(const std::string& value);
 
     /// <summary>
     /// 驾驶证号。 
@@ -158,7 +169,43 @@ public:
     void setRecord(const std::string& value);
 
     /// <summary>
-    /// 文本框在原图位置。输出左上、右上、右下、左下四个点坐标。当“return_text_location”设置为“true”时才返回。 
+    /// 累积记分。 
+    /// </summary>
+
+    std::string getAccumulatedScores() const;
+    bool accumulatedScoresIsSet() const;
+    void unsetaccumulatedScores();
+    void setAccumulatedScores(const std::string& value);
+
+    /// <summary>
+    /// 状态。
+    /// </summary>
+
+    std::vector<DriverLicenseResult_status>& getStatus();
+    bool statusIsSet() const;
+    void unsetstatus();
+    void setStatus(const std::vector<DriverLicenseResult_status>& value);
+
+    /// <summary>
+    /// 生成时间。 
+    /// </summary>
+
+    std::string getGenerationDate() const;
+    bool generationDateIsSet() const;
+    void unsetgenerationDate();
+    void setGenerationDate(const std::string& value);
+
+    /// <summary>
+    /// 当前时间。 
+    /// </summary>
+
+    std::string getCurrentTime() const;
+    bool currentTimeIsSet() const;
+    void unsetcurrentTime();
+    void setCurrentTime(const std::string& value);
+
+    /// <summary>
+    /// 对应所有在原图上识别到的字段位置信息，包含所有文字区域四个顶点的二维坐标（x,y）。采用图像坐标系，坐标原点为图片左上角，x轴沿水平方向，y轴沿竖直方向。 
     /// </summary>
 
     Object getTextLocation() const;
@@ -168,6 +215,8 @@ public:
 
 
 protected:
+    std::string type_;
+    bool typeIsSet_;
     std::string number_;
     bool numberIsSet_;
     std::string name_;
@@ -194,6 +243,14 @@ protected:
     bool fileNumberIsSet_;
     std::string record_;
     bool recordIsSet_;
+    std::string accumulatedScores_;
+    bool accumulatedScoresIsSet_;
+    std::vector<DriverLicenseResult_status> status_;
+    bool statusIsSet_;
+    std::string generationDate_;
+    bool generationDateIsSet_;
+    std::string currentTime_;
+    bool currentTimeIsSet_;
     Object textLocation_;
     bool textLocationIsSet_;
 

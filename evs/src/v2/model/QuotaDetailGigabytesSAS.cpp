@@ -19,8 +19,6 @@ QuotaDetailGigabytesSAS::QuotaDetailGigabytesSAS()
     limitIsSet_ = false;
     reserved_ = 0;
     reservedIsSet_ = false;
-    allocated_ = 0;
-    allocatedIsSet_ = false;
 }
 
 QuotaDetailGigabytesSAS::~QuotaDetailGigabytesSAS() = default;
@@ -41,9 +39,6 @@ web::json::value QuotaDetailGigabytesSAS::toJson() const
     }
     if(reservedIsSet_) {
         val[utility::conversions::to_string_t("reserved")] = ModelBase::toJson(reserved_);
-    }
-    if(allocatedIsSet_) {
-        val[utility::conversions::to_string_t("allocated")] = ModelBase::toJson(allocated_);
     }
 
     return val;
@@ -78,15 +73,6 @@ bool QuotaDetailGigabytesSAS::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setReserved(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("allocated"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("allocated"));
-        if(!fieldValue.is_null())
-        {
-            int32_t refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setAllocated(refVal);
         }
     }
     return ok;
@@ -154,27 +140,6 @@ bool QuotaDetailGigabytesSAS::reservedIsSet() const
 void QuotaDetailGigabytesSAS::unsetreserved()
 {
     reservedIsSet_ = false;
-}
-
-int32_t QuotaDetailGigabytesSAS::getAllocated() const
-{
-    return allocated_;
-}
-
-void QuotaDetailGigabytesSAS::setAllocated(int32_t value)
-{
-    allocated_ = value;
-    allocatedIsSet_ = true;
-}
-
-bool QuotaDetailGigabytesSAS::allocatedIsSet() const
-{
-    return allocatedIsSet_;
-}
-
-void QuotaDetailGigabytesSAS::unsetallocated()
-{
-    allocatedIsSet_ = false;
 }
 
 }

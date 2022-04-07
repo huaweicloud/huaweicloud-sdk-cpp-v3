@@ -19,7 +19,7 @@ using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 
 /// <summary>
-/// 备份容量，单位为GB，键值对，包含：reserved（预留）、allocated（预留）、limit（最大）和in_use（已使用）。
+/// 备份容量，单位为GB，键值对，包含：reserved（预留）、limit（最大）和in_use（已使用）。
 /// </summary>
 class HUAWEICLOUD_EVS_V2_EXPORT  QuotaDetailBackupGigabytes
     : public ModelBase
@@ -66,15 +66,6 @@ public:
     void unsetreserved();
     void setReserved(int32_t value);
 
-    /// <summary>
-    /// 预留属性。
-    /// </summary>
-
-    int32_t getAllocated() const;
-    bool allocatedIsSet() const;
-    void unsetallocated();
-    void setAllocated(int32_t value);
-
 
 protected:
     int32_t inUse_;
@@ -83,8 +74,6 @@ protected:
     bool limitIsSet_;
     int32_t reserved_;
     bool reservedIsSet_;
-    int32_t allocated_;
-    bool allocatedIsSet_;
 
 };
 

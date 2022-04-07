@@ -85,6 +85,8 @@
 #include <huaweicloud/ocr/v1/model/RecognizeVatInvoiceResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeVehicleLicenseRequest.h>
 #include <huaweicloud/ocr/v1/model/RecognizeVehicleLicenseResponse.h>
+#include <huaweicloud/ocr/v1/model/RecognizeWaybillElectronicRequest.h>
+#include <huaweicloud/ocr/v1/model/RecognizeWaybillElectronicResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeWebImageRequest.h>
 #include <huaweicloud/ocr/v1/model/RecognizeWebImageResponse.h>
 #include <huaweicloud/ocr/v1/model/TaxiInvoiceRequestBody.h>
@@ -95,6 +97,7 @@
 #include <huaweicloud/ocr/v1/model/TransportationLicenseRequestBody.h>
 #include <huaweicloud/ocr/v1/model/VatInvoiceRequestBody.h>
 #include <huaweicloud/ocr/v1/model/VehicleLicenseRequestBody.h>
+#include <huaweicloud/ocr/v1/model/WaybillElectronicRequestBody.h>
 #include <huaweicloud/ocr/v1/model/WebImageRequestBody.h>
 
 #include <huaweicloud/ocr/v1/model/RecognizeVinRequest.h>
@@ -413,6 +416,16 @@ public:
     /// <param name="vehicleLicenseRequestBody">This is a auto create Body Object</param>
     std::shared_ptr<RecognizeVehicleLicenseResponse> recognizeVehicleLicense(
         RecognizeVehicleLicenseRequest &request
+    );
+    /// <summary>
+    /// 电子面单识别
+    /// </summary>
+    /// <remarks>
+    /// 识别用户上传的韵达电子面单图片中的文字内容，并将识别的结果以json格式返回给用户。
+    /// </remarks>
+    /// <param name="waybillElectronicRequestBody">This is a thailand license plate Body Object</param>
+    std::shared_ptr<RecognizeWaybillElectronicResponse> recognizeWaybillElectronic(
+        RecognizeWaybillElectronicRequest &request
     );
     /// <summary>
     /// 网络图片识别

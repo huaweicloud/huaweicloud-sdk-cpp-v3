@@ -22,6 +22,8 @@ VatInvoiceResult::VatInvoiceResult()
     supervisionSealIsSet_ = false;
     code_ = "";
     codeIsSet_ = false;
+    printCode_ = "";
+    printCodeIsSet_ = false;
     machineNumber_ = "";
     machineNumberIsSet_ = false;
     printNumber_ = "";
@@ -96,6 +98,9 @@ web::json::value VatInvoiceResult::toJson() const
     }
     if(codeIsSet_) {
         val[utility::conversions::to_string_t("code")] = ModelBase::toJson(code_);
+    }
+    if(printCodeIsSet_) {
+        val[utility::conversions::to_string_t("print_code")] = ModelBase::toJson(printCode_);
     }
     if(machineNumberIsSet_) {
         val[utility::conversions::to_string_t("machine_number")] = ModelBase::toJson(machineNumber_);
@@ -226,6 +231,15 @@ bool VatInvoiceResult::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("print_code"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("print_code"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPrintCode(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("machine_number"))) {
@@ -569,6 +583,27 @@ bool VatInvoiceResult::codeIsSet() const
 void VatInvoiceResult::unsetcode()
 {
     codeIsSet_ = false;
+}
+
+std::string VatInvoiceResult::getPrintCode() const
+{
+    return printCode_;
+}
+
+void VatInvoiceResult::setPrintCode(const std::string& value)
+{
+    printCode_ = value;
+    printCodeIsSet_ = true;
+}
+
+bool VatInvoiceResult::printCodeIsSet() const
+{
+    return printCodeIsSet_;
+}
+
+void VatInvoiceResult::unsetprintCode()
+{
+    printCodeIsSet_ = false;
 }
 
 std::string VatInvoiceResult::getMachineNumber() const

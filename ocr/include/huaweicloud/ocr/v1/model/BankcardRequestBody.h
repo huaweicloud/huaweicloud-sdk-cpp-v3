@@ -57,12 +57,23 @@ public:
     void unseturl();
     void setUrl(const std::string& value);
 
+    /// <summary>
+    /// 返回文本块坐标及单元格坐标信息，可选值包括：  - true：返回文本块和单元格坐标;  - false：不返回。  &gt; 说明：  - 未传入该参数时默认为false，即不返回。 
+    /// </summary>
+
+    bool isReturnTextLocation() const;
+    bool returnTextLocationIsSet() const;
+    void unsetreturnTextLocation();
+    void setReturnTextLocation(bool value);
+
 
 protected:
     std::string image_;
     bool imageIsSet_;
     std::string url_;
     bool urlIsSet_;
+    bool returnTextLocation_;
+    bool returnTextLocationIsSet_;
 
 };
 

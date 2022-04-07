@@ -52,6 +52,7 @@ TaxiInvoiceResult::TaxiInvoiceResult()
     total_ = "";
     totalIsSet_ = false;
     confidenceIsSet_ = false;
+    textLocationIsSet_ = false;
 }
 
 TaxiInvoiceResult::~TaxiInvoiceResult() = default;
@@ -123,6 +124,9 @@ web::json::value TaxiInvoiceResult::toJson() const
     }
     if(confidenceIsSet_) {
         val[utility::conversions::to_string_t("confidence")] = ModelBase::toJson(confidence_);
+    }
+    if(textLocationIsSet_) {
+        val[utility::conversions::to_string_t("text_location")] = ModelBase::toJson(textLocation_);
     }
 
     return val;
@@ -310,6 +314,15 @@ bool TaxiInvoiceResult::fromJson(const web::json::value& val)
             Object refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setConfidence(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("text_location"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("text_location"));
+        if(!fieldValue.is_null())
+        {
+            Object refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTextLocation(refVal);
         }
     }
     return ok;
@@ -734,6 +747,27 @@ bool TaxiInvoiceResult::confidenceIsSet() const
 void TaxiInvoiceResult::unsetconfidence()
 {
     confidenceIsSet_ = false;
+}
+
+Object TaxiInvoiceResult::getTextLocation() const
+{
+    return textLocation_;
+}
+
+void TaxiInvoiceResult::setTextLocation(const Object& value)
+{
+    textLocation_ = value;
+    textLocationIsSet_ = true;
+}
+
+bool TaxiInvoiceResult::textLocationIsSet() const
+{
+    return textLocationIsSet_;
+}
+
+void TaxiInvoiceResult::unsettextLocation()
+{
+    textLocationIsSet_ = false;
 }
 
 }

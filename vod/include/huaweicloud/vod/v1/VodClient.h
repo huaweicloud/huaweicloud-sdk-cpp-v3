@@ -404,7 +404,7 @@ public:
     /// 查询指定点播域名某段时间内在CDN的相关日志。
     /// </remarks>
     /// <param name="domainName">加速域名，参考格式：www.test1.com。</param>
-    /// <param name="queryDate">查询日期，格式为yyyymmdd。 - 查询结果为开始时间之后24小时内的日志数据 - 只能查最近一个月内的数据</param>
+    /// <param name="queryDate">查询日期，yyyyMMddHHmmss。 - 查询结果为开始时间之后24小时内的日志数据 - 只能查最近一个月内的数据</param>
     /// <param name="authorization">使用AK/SK方式认证时必选，携带的鉴权信息。  (optional, default to &quot;&quot;)</param>
     /// <param name="xSdkDate">使用AK/SK方式认证时必选，请求的发生时间。  (optional, default to &quot;&quot;)</param>
     /// <param name="pageSize">每页显示日志数量。  (optional, default to 0)</param>

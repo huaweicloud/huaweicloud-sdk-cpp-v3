@@ -13,6 +13,8 @@ namespace Model {
 
 DriverLicenseResult::DriverLicenseResult()
 {
+    type_ = "";
+    typeIsSet_ = false;
     number_ = "";
     numberIsSet_ = false;
     name_ = "";
@@ -39,6 +41,13 @@ DriverLicenseResult::DriverLicenseResult()
     fileNumberIsSet_ = false;
     record_ = "";
     recordIsSet_ = false;
+    accumulatedScores_ = "";
+    accumulatedScoresIsSet_ = false;
+    statusIsSet_ = false;
+    generationDate_ = "";
+    generationDateIsSet_ = false;
+    currentTime_ = "";
+    currentTimeIsSet_ = false;
     textLocationIsSet_ = false;
 }
 
@@ -52,6 +61,9 @@ web::json::value DriverLicenseResult::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(typeIsSet_) {
+        val[utility::conversions::to_string_t("type")] = ModelBase::toJson(type_);
+    }
     if(numberIsSet_) {
         val[utility::conversions::to_string_t("number")] = ModelBase::toJson(number_);
     }
@@ -91,6 +103,18 @@ web::json::value DriverLicenseResult::toJson() const
     if(recordIsSet_) {
         val[utility::conversions::to_string_t("record")] = ModelBase::toJson(record_);
     }
+    if(accumulatedScoresIsSet_) {
+        val[utility::conversions::to_string_t("accumulated_scores")] = ModelBase::toJson(accumulatedScores_);
+    }
+    if(statusIsSet_) {
+        val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
+    }
+    if(generationDateIsSet_) {
+        val[utility::conversions::to_string_t("generation_date")] = ModelBase::toJson(generationDate_);
+    }
+    if(currentTimeIsSet_) {
+        val[utility::conversions::to_string_t("current_time")] = ModelBase::toJson(currentTime_);
+    }
     if(textLocationIsSet_) {
         val[utility::conversions::to_string_t("text_location")] = ModelBase::toJson(textLocation_);
     }
@@ -102,6 +126,15 @@ bool DriverLicenseResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setType(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("number"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("number"));
         if(!fieldValue.is_null())
@@ -219,6 +252,42 @@ bool DriverLicenseResult::fromJson(const web::json::value& val)
             setRecord(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("accumulated_scores"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("accumulated_scores"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAccumulatedScores(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("status"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("status"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<DriverLicenseResult_status> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("generation_date"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("generation_date"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setGenerationDate(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("current_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("current_time"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCurrentTime(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("text_location"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("text_location"));
         if(!fieldValue.is_null())
@@ -231,6 +300,27 @@ bool DriverLicenseResult::fromJson(const web::json::value& val)
     return ok;
 }
 
+
+std::string DriverLicenseResult::getType() const
+{
+    return type_;
+}
+
+void DriverLicenseResult::setType(const std::string& value)
+{
+    type_ = value;
+    typeIsSet_ = true;
+}
+
+bool DriverLicenseResult::typeIsSet() const
+{
+    return typeIsSet_;
+}
+
+void DriverLicenseResult::unsettype()
+{
+    typeIsSet_ = false;
+}
 
 std::string DriverLicenseResult::getNumber() const
 {
@@ -503,6 +593,90 @@ bool DriverLicenseResult::recordIsSet() const
 void DriverLicenseResult::unsetrecord()
 {
     recordIsSet_ = false;
+}
+
+std::string DriverLicenseResult::getAccumulatedScores() const
+{
+    return accumulatedScores_;
+}
+
+void DriverLicenseResult::setAccumulatedScores(const std::string& value)
+{
+    accumulatedScores_ = value;
+    accumulatedScoresIsSet_ = true;
+}
+
+bool DriverLicenseResult::accumulatedScoresIsSet() const
+{
+    return accumulatedScoresIsSet_;
+}
+
+void DriverLicenseResult::unsetaccumulatedScores()
+{
+    accumulatedScoresIsSet_ = false;
+}
+
+std::vector<DriverLicenseResult_status>& DriverLicenseResult::getStatus()
+{
+    return status_;
+}
+
+void DriverLicenseResult::setStatus(const std::vector<DriverLicenseResult_status>& value)
+{
+    status_ = value;
+    statusIsSet_ = true;
+}
+
+bool DriverLicenseResult::statusIsSet() const
+{
+    return statusIsSet_;
+}
+
+void DriverLicenseResult::unsetstatus()
+{
+    statusIsSet_ = false;
+}
+
+std::string DriverLicenseResult::getGenerationDate() const
+{
+    return generationDate_;
+}
+
+void DriverLicenseResult::setGenerationDate(const std::string& value)
+{
+    generationDate_ = value;
+    generationDateIsSet_ = true;
+}
+
+bool DriverLicenseResult::generationDateIsSet() const
+{
+    return generationDateIsSet_;
+}
+
+void DriverLicenseResult::unsetgenerationDate()
+{
+    generationDateIsSet_ = false;
+}
+
+std::string DriverLicenseResult::getCurrentTime() const
+{
+    return currentTime_;
+}
+
+void DriverLicenseResult::setCurrentTime(const std::string& value)
+{
+    currentTime_ = value;
+    currentTimeIsSet_ = true;
+}
+
+bool DriverLicenseResult::currentTimeIsSet() const
+{
+    return currentTimeIsSet_;
+}
+
+void DriverLicenseResult::unsetcurrentTime()
+{
+    currentTimeIsSet_ = false;
 }
 
 Object DriverLicenseResult::getTextLocation() const

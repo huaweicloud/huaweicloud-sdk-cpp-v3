@@ -55,6 +55,7 @@ VehicleLicenseResult::VehicleLicenseResult()
     inspectionRecordIsSet_ = false;
     codeNumber_ = "";
     codeNumberIsSet_ = false;
+    textLocationIsSet_ = false;
 }
 
 VehicleLicenseResult::~VehicleLicenseResult() = default;
@@ -129,6 +130,9 @@ web::json::value VehicleLicenseResult::toJson() const
     }
     if(codeNumberIsSet_) {
         val[utility::conversions::to_string_t("code_number")] = ModelBase::toJson(codeNumber_);
+    }
+    if(textLocationIsSet_) {
+        val[utility::conversions::to_string_t("text_location")] = ModelBase::toJson(textLocation_);
     }
 
     return val;
@@ -325,6 +329,15 @@ bool VehicleLicenseResult::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCodeNumber(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("text_location"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("text_location"));
+        if(!fieldValue.is_null())
+        {
+            Object refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTextLocation(refVal);
         }
     }
     return ok;
@@ -770,6 +783,27 @@ bool VehicleLicenseResult::codeNumberIsSet() const
 void VehicleLicenseResult::unsetcodeNumber()
 {
     codeNumberIsSet_ = false;
+}
+
+Object VehicleLicenseResult::getTextLocation() const
+{
+    return textLocation_;
+}
+
+void VehicleLicenseResult::setTextLocation(const Object& value)
+{
+    textLocation_ = value;
+    textLocationIsSet_ = true;
+}
+
+bool VehicleLicenseResult::textLocationIsSet() const
+{
+    return textLocationIsSet_;
+}
+
+void VehicleLicenseResult::unsettextLocation()
+{
+    textLocationIsSet_ = false;
 }
 
 }

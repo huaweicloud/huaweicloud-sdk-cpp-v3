@@ -1,3 +1,27 @@
+# 3.0.26-beta 2022-04-07
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 支持接口`RecognizeWaybillElectronic`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`RecognizeVatInvoice`新增响应参数 `print_code`
+  - 接口`RecognizeVehicleLicense`:
+    - 新增请求参数 `return_text_location`
+    - 新增响应参数 `text_location`
+  - 接口`RecognizeTaxiInvoice`:
+    - 新增请求参数 `return_text_location`
+    - 新增响应参数 `text_location`
+  - 接口`RecognizeDriverLicense`新增响应参数 `type`、`accumulated_scores`、`status`、`generation_date`、`current_time`
+  - 接口`RecognizeTrainTicket`:
+    - 新增请求参数 `return_text_location`
+    - 新增响应参数 `text_location`
+  - 接口`RecognizeBankcard`:
+    - 新增请求参数 `return_text_location`
+    - 新增响应参数 `text_location`
+
 # 3.0.25-beta 2022-03-25
 
 ### HuaweiCloud SDK IMS

@@ -1,3 +1,23 @@
+# 3.0.27-beta 2022-04-14
+
+### HuaweiCloud SDK CSMS
+
+- _新增特性_
+  - 支持云凭据管理服务
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK ECS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ListServersDetails`新增请求参数 `ip_eq`
+
 # 3.0.26-beta 2022-04-07
 
 ### HuaweiCloud SDK OCR

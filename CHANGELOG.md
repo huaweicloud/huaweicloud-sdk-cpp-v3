@@ -1,3 +1,23 @@
+# 3.0.27-beta 2022-04-14
+
+### HuaweiCloud SDK CSMS
+
+- _Features_
+  - Support the `Cloud Secret Management Service`.
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK ECS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the request parameter `ip_eq` to the interface `ListServersDetails`
+
 # 3.0.26-beta 2022-04-07
 
 ### HuaweiCloud SDK OCR

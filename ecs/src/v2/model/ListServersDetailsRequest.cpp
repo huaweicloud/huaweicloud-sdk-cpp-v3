@@ -33,6 +33,8 @@ ListServersDetailsRequest::ListServersDetailsRequest()
     statusIsSet_ = false;
     tags_ = "";
     tagsIsSet_ = false;
+    ipEq_ = "";
+    ipEqIsSet_ = false;
 }
 
 ListServersDetailsRequest::~ListServersDetailsRequest() = default;
@@ -74,6 +76,9 @@ web::json::value ListServersDetailsRequest::toJson() const
     }
     if(tagsIsSet_) {
         val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
+    }
+    if(ipEqIsSet_) {
+        val[utility::conversions::to_string_t("ip_eq")] = ModelBase::toJson(ipEq_);
     }
 
     return val;
@@ -171,6 +176,15 @@ bool ListServersDetailsRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTags(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("ip_eq"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ip_eq"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIpEq(refVal);
         }
     }
     return ok;
@@ -385,6 +399,27 @@ bool ListServersDetailsRequest::tagsIsSet() const
 void ListServersDetailsRequest::unsettags()
 {
     tagsIsSet_ = false;
+}
+
+std::string ListServersDetailsRequest::getIpEq() const
+{
+    return ipEq_;
+}
+
+void ListServersDetailsRequest::setIpEq(const std::string& value)
+{
+    ipEq_ = value;
+    ipEqIsSet_ = true;
+}
+
+bool ListServersDetailsRequest::ipEqIsSet() const
+{
+    return ipEqIsSet_;
+}
+
+void ListServersDetailsRequest::unsetipEq()
+{
+    ipEqIsSet_ = false;
 }
 
 }

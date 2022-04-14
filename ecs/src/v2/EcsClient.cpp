@@ -1290,6 +1290,9 @@ std::shared_ptr<ListServersDetailsResponse> EcsClient::listServersDetails(ListSe
     if (request.tagsIsSet()) {
         localVarQueryParams["tags"] = parameterToString(request.getTags());
     }
+    if (request.ipEqIsSet()) {
+        localVarQueryParams["ip_eq"] = parameterToString(request.getIpEq());
+    }
 
     std::string localVarHttpBody;
 

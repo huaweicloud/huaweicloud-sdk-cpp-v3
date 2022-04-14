@@ -129,6 +129,15 @@ public:
     void unsettags();
     void setTags(const std::string& value);
 
+    /// <summary>
+    /// IPv4地址过滤结果，匹配规则为精确匹配。
+    /// </summary>
+
+    std::string getIpEq() const;
+    bool ipEqIsSet() const;
+    void unsetipEq();
+    void setIpEq(const std::string& value);
+
 
 protected:
     std::string enterpriseProjectId_;
@@ -151,6 +160,8 @@ protected:
     bool statusIsSet_;
     std::string tags_;
     bool tagsIsSet_;
+    std::string ipEq_;
+    bool ipEqIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

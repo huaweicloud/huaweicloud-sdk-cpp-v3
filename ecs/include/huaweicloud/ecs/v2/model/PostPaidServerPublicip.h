@@ -58,12 +58,23 @@ public:
     void unseteip();
     void setEip(const PostPaidServerEip& value);
 
+    /// <summary>
+    /// 弹性公网IP随实例释放策略。  true：弹性公网IP随实例释放。 false：弹性公网IP不随实例释放。 默认值：false。
+    /// </summary>
+
+    bool isDeleteOnTermination() const;
+    bool deleteOnTerminationIsSet() const;
+    void unsetdeleteOnTermination();
+    void setDeleteOnTermination(bool value);
+
 
 protected:
     std::string id_;
     bool idIsSet_;
     PostPaidServerEip eip_;
     bool eipIsSet_;
+    bool deleteOnTermination_;
+    bool deleteOnTerminationIsSet_;
 
 };
 

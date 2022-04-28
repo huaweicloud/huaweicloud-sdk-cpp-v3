@@ -265,7 +265,7 @@ bool DriverLicenseResult::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("status"));
         if(!fieldValue.is_null())
         {
-            std::vector<DriverLicenseResult_status> refVal;
+            std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setStatus(refVal);
         }
@@ -616,12 +616,12 @@ void DriverLicenseResult::unsetaccumulatedScores()
     accumulatedScoresIsSet_ = false;
 }
 
-std::vector<DriverLicenseResult_status>& DriverLicenseResult::getStatus()
+std::vector<std::string>& DriverLicenseResult::getStatus()
 {
     return status_;
 }
 
-void DriverLicenseResult::setStatus(const std::vector<DriverLicenseResult_status>& value)
+void DriverLicenseResult::setStatus(const std::vector<std::string>& value)
 {
     status_ = value;
     statusIsSet_ = true;

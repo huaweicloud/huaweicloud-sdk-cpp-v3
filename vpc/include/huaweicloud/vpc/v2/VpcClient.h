@@ -247,970 +247,810 @@ public:
 
     static ClientBuilder<VpcClient> newBuilder();
 
-    /// <summary>
-    /// 接受对等连接请求
-    /// </summary>
-    /// <remarks>
-    /// 租户A名下的VPC申请和租户B的VPC建立对等连接，需要等待租户B接受该请求。此接口用于租户接受其他租户发起的对等连接请求。
-    /// </remarks>
-    /// <param name="peeringId">对等连接ID</param>
+    // 接受对等连接请求
+    //
+    // 租户A名下的VPC申请和租户B的VPC建立对等连接，需要等待租户B接受该请求。此接口用于租户接受其他租户发起的对等连接请求。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<AcceptVpcPeeringResponse> acceptVpcPeering(
         AcceptVpcPeeringRequest &request
     );
-    /// <summary>
-    /// 子网关联路由表
-    /// </summary>
-    /// <remarks>
-    /// 路由表关联子网。子网关联路由表A后，再关联B，不需要先跟路由表A解关联再关联路由表B
-    /// </remarks>
-    /// <param name="routetableId">路由表ID</param>
-    /// <param name="routetableAssociate">关联路由表与子网请求体</param>
+    // 子网关联路由表
+    //
+    // 路由表关联子网。子网关联路由表A后，再关联B，不需要先跟路由表A解关联再关联路由表B
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<AssociateRouteTableResponse> associateRouteTable(
         AssociateRouteTableRequest &request
     );
-    /// <summary>
-    /// 批量创建子网资源标签
-    /// </summary>
-    /// <remarks>
-    /// 为指定的子网资源实例批量添加标签。 此接口为幂等接口：创建时如果请求体中存在重复key则报错。创建时，不允许设置重复key数据，如果数据库已存在该key，就覆盖value的值。
-    /// </remarks>
-    /// <param name="subnetId">子网ID</param>
-    /// <param name="batchCreateSubnetTagsRequestBody">This is a auto create Body Object</param>
+    // 批量创建子网资源标签
+    //
+    // 为指定的子网资源实例批量添加标签。
+    // 此接口为幂等接口：创建时如果请求体中存在重复key则报错。创建时，不允许设置重复key数据，如果数据库已存在该key，就覆盖value的值。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<BatchCreateSubnetTagsResponse> batchCreateSubnetTags(
         BatchCreateSubnetTagsRequest &request
     );
-    /// <summary>
-    /// 批量删除子网资源标签
-    /// </summary>
-    /// <remarks>
-    /// 为指定的子网资源实例批量删除标签 此接口为幂等接口：删除时，如果删除的标签不存在，默认处理成功；删除时不对标签字符集范围做校验。删除时tags结构体不能缺失，key不能为空，或者空字符串。
-    /// </remarks>
-    /// <param name="subnetId">子网ID</param>
-    /// <param name="batchDeleteSubnetTagsRequestBody">This is a auto create Body Object</param>
+    // 批量删除子网资源标签
+    //
+    // 为指定的子网资源实例批量删除标签
+    // 此接口为幂等接口：删除时，如果删除的标签不存在，默认处理成功；删除时不对标签字符集范围做校验。删除时tags结构体不能缺失，key不能为空，或者空字符串。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<BatchDeleteSubnetTagsResponse> batchDeleteSubnetTags(
         BatchDeleteSubnetTagsRequest &request
     );
-    /// <summary>
-    /// 创建端口
-    /// </summary>
-    /// <remarks>
-    /// 创建端口。
-    /// </remarks>
-    /// <param name="port">创建端口对象</param>
+    // 创建端口
+    //
+    // 创建端口。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<CreatePortResponse> createPort(
         CreatePortRequest &request
     );
-    /// <summary>
-    /// 创建路由表
-    /// </summary>
-    /// <remarks>
-    /// 创建路由表
-    /// </remarks>
-    /// <param name="routetable">创建路由表对象，参见CreateRouteTableReq对象</param>
+    // 创建路由表
+    //
+    // 创建路由表
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<CreateRouteTableResponse> createRouteTable(
         CreateRouteTableRequest &request
     );
-    /// <summary>
-    /// 创建安全组
-    /// </summary>
-    /// <remarks>
-    /// 创建安全组。
-    /// </remarks>
-    /// <param name="securityGroup">创建安全组对象</param>
+    // 创建安全组
+    //
+    // 创建安全组。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<CreateSecurityGroupResponse> createSecurityGroup(
         CreateSecurityGroupRequest &request
     );
-    /// <summary>
-    /// 创建安全组规则
-    /// </summary>
-    /// <remarks>
-    /// 创建安全组规则。
-    /// </remarks>
-    /// <param name="securityGroupRule">创建安全组规则对象</param>
+    // 创建安全组规则
+    //
+    // 创建安全组规则。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<CreateSecurityGroupRuleResponse> createSecurityGroupRule(
         CreateSecurityGroupRuleRequest &request
     );
-    /// <summary>
-    /// 创建子网
-    /// </summary>
-    /// <remarks>
-    /// 创建子网。
-    /// </remarks>
-    /// <param name="subnet">创建子网对象</param>
+    // 创建子网
+    //
+    // 创建子网。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<CreateSubnetResponse> createSubnet(
         CreateSubnetRequest &request
     );
-    /// <summary>
-    /// 创建子网资源标签
-    /// </summary>
-    /// <remarks>
-    /// 给指定子网资源实例增加标签信息。 此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
-    /// </remarks>
-    /// <param name="subnetId">子网ID</param>
-    /// <param name="createSubnetTagRequestBody">This is a auto create Body Object</param>
+    // 创建子网资源标签
+    //
+    // 给指定子网资源实例增加标签信息。
+    // 此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<CreateSubnetTagResponse> createSubnetTag(
         CreateSubnetTagRequest &request
     );
-    /// <summary>
-    /// 创建对等连接
-    /// </summary>
-    /// <remarks>
-    /// 创建对等连接。
-    /// </remarks>
-    /// <param name="peering">peering对象</param>
+    // 创建对等连接
+    //
+    // 创建对等连接。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<CreateVpcPeeringResponse> createVpcPeering(
         CreateVpcPeeringRequest &request
     );
-    /// <summary>
-    /// 删除端口
-    /// </summary>
-    /// <remarks>
-    /// 删除端口。
-    /// </remarks>
-    /// <param name="portId">端口ID</param>
+    // 删除端口
+    //
+    // 删除端口。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<DeletePortResponse> deletePort(
         DeletePortRequest &request
     );
-    /// <summary>
-    /// 删除路由表
-    /// </summary>
-    /// <remarks>
-    /// 删除路由表
-    /// </remarks>
-    /// <param name="routetableId">路由表ID</param>
+    // 删除路由表
+    //
+    // 删除路由表
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<DeleteRouteTableResponse> deleteRouteTable(
         DeleteRouteTableRequest &request
     );
-    /// <summary>
-    /// 删除安全组
-    /// </summary>
-    /// <remarks>
-    /// 删除安全组。
-    /// </remarks>
-    /// <param name="securityGroupId">安全组ID</param>
+    // 删除安全组
+    //
+    // 删除安全组。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<DeleteSecurityGroupResponse> deleteSecurityGroup(
         DeleteSecurityGroupRequest &request
     );
-    /// <summary>
-    /// 删除安全组规则
-    /// </summary>
-    /// <remarks>
-    /// 删除安全组规则。
-    /// </remarks>
-    /// <param name="securityGroupRuleId">安全组规则ID</param>
+    // 删除安全组规则
+    //
+    // 删除安全组规则。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<DeleteSecurityGroupRuleResponse> deleteSecurityGroupRule(
         DeleteSecurityGroupRuleRequest &request
     );
-    /// <summary>
-    /// 删除子网
-    /// </summary>
-    /// <remarks>
-    /// 删除子网
-    /// </remarks>
-    /// <param name="vpcId">子网对应的vpc_id</param>
-    /// <param name="subnetId">子网ID</param>
+    // 删除子网
+    //
+    // 删除子网
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<DeleteSubnetResponse> deleteSubnet(
         DeleteSubnetRequest &request
     );
-    /// <summary>
-    /// 删除子网资源标签
-    /// </summary>
-    /// <remarks>
-    /// 删除指定子网资源实例的标签信息。 该接口为幂等接口：删除的key不存在报404，Key不能为空或者空字符串
-    /// </remarks>
-    /// <param name="subnetId">子网ID</param>
-    /// <param name="key">功能说明：键值</param>
+    // 删除子网资源标签
+    //
+    // 删除指定子网资源实例的标签信息。
+    // 该接口为幂等接口：删除的key不存在报404，Key不能为空或者空字符串
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<DeleteSubnetTagResponse> deleteSubnetTag(
         DeleteSubnetTagRequest &request
     );
-    /// <summary>
-    /// 删除对等连接
-    /// </summary>
-    /// <remarks>
-    /// 删除对等连接。 可以在在本端或对端任何一端删除对等连接。
-    /// </remarks>
-    /// <param name="peeringId">对等连接ID</param>
+    // 删除对等连接
+    //
+    // 删除对等连接。
+    // 可以在在本端或对端任何一端删除对等连接。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<DeleteVpcPeeringResponse> deleteVpcPeering(
         DeleteVpcPeeringRequest &request
     );
-    /// <summary>
-    /// 子网解关联路由表
-    /// </summary>
-    /// <remarks>
-    /// 子网解关联路由表
-    /// </remarks>
-    /// <param name="routetableId">路由表ID</param>
-    /// <param name="routetableAssociate">关联路由表与子网请求体</param>
+    // 子网解关联路由表
+    //
+    // 子网解关联路由表
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<DisassociateRouteTableResponse> disassociateRouteTable(
         DisassociateRouteTableRequest &request
     );
-    /// <summary>
-    /// 查询端口列表
-    /// </summary>
-    /// <remarks>
-    /// 查询提交请求的租户的所有端口，单次查询最多返回2000条数据。
-    /// </remarks>
-    /// <param name="name">功能说明：按照name过滤查询  取值范围：最大长度不超过255 (optional, default to &quot;&quot;)</param>
-    /// <param name="id">按照port_id过滤查询 (optional, default to &quot;&quot;)</param>
-    /// <param name="limit">每页返回的个数 (optional, default to 0)</param>
-    /// <param name="adminStateUp">按照admin_state_up进行过滤 (optional, default to false)</param>
-    /// <param name="networkId">按照network_id过滤查询 (optional, default to &quot;&quot;)</param>
-    /// <param name="macAddress">按照mac_address过滤查询 (optional, default to &quot;&quot;)</param>
-    /// <param name="deviceId">按照device_id过滤查询 (optional, default to &quot;&quot;)</param>
-    /// <param name="deviceOwner">按照device_owner过滤查询 (optional, default to &quot;&quot;)</param>
-    /// <param name="status">功能说明：按照status过滤查询  取值范围：ACTIVE、BUILD、DOWN (optional, default to &quot;&quot;)</param>
-    /// <param name="marker">分页查询起始的资源ID，为空时查询第一页 (optional, default to &quot;&quot;)</param>
-    /// <param name="fixedIps">按照fixed_ips&#x3D;ip_address或者fixed_ips&#x3D;subnet_id过滤查询 (optional, default to &quot;&quot;)</param>
-    /// <param name="enterpriseProjectId">功能说明：企业项目ID，用于基于企业项目的权限管理。  取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。  若需要查询当前用户所有企业项目绑定的端口，请传参all_granted_eps。 (optional, default to &quot;&quot;)</param>
+    // 查询端口列表
+    //
+    // 查询提交请求的租户的所有端口，单次查询最多返回2000条数据。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ListPortsResponse> listPorts(
         ListPortsRequest &request
     );
-    /// <summary>
-    /// 查询路由表列表
-    /// </summary>
-    /// <remarks>
-    /// 查询提交请求的帐户的所有路由表列表，并根据过滤条件进行过滤
-    /// </remarks>
-    /// <param name="limit">每页返回的个数 (optional, default to 0)</param>
-    /// <param name="marker">分页查询起始的资源ID，为空时为查询第一页 (optional, default to &quot;&quot;)</param>
-    /// <param name="id">路由表ID，可过滤对应ID的路由表 (optional, default to &quot;&quot;)</param>
-    /// <param name="vpcId">虚拟私有云ID，可过滤对应虚拟私有云包含的路由表 (optional, default to &quot;&quot;)</param>
-    /// <param name="subnetId">子网ID，可过滤对应子网关联的路由表 (optional, default to &quot;&quot;)</param>
+    // 查询路由表列表
+    //
+    // 查询提交请求的帐户的所有路由表列表，并根据过滤条件进行过滤
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ListRouteTablesResponse> listRouteTables(
         ListRouteTablesRequest &request
     );
-    /// <summary>
-    /// 查询安全组规则列表
-    /// </summary>
-    /// <remarks>
-    /// 查询安全组规则列表。
-    /// </remarks>
-    /// <param name="marker">功能说明：分页查询起始的资源ID，为空时查询第一页 (optional, default to &quot;&quot;)</param>
-    /// <param name="limit">每页返回的个数 (optional, default to 0)</param>
-    /// <param name="securityGroupId">安全组ID (optional, default to &quot;&quot;)</param>
+    // 查询安全组规则列表
+    //
+    // 查询安全组规则列表。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ListSecurityGroupRulesResponse> listSecurityGroupRules(
         ListSecurityGroupRulesRequest &request
     );
-    /// <summary>
-    /// 查询安全组列表
-    /// </summary>
-    /// <remarks>
-    /// 查询安全组列表
-    /// </remarks>
-    /// <param name="limit">每页返回的个数 (optional, default to 0)</param>
-    /// <param name="marker">分页查询起始的资源ID，为空时查询第一页 (optional, default to &quot;&quot;)</param>
-    /// <param name="vpcId">按照vpc_id过滤查询 (optional, default to &quot;&quot;)</param>
-    /// <param name="enterpriseProjectId">功能说明：企业项目ID。可以使用该字段过滤某个企业项目下的安全组。  取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。若需要查询当前用户所有企业项目绑定的安全组，或者企业项目子账号需要进行安全组列表展示，请传参all_granted_eps。 (optional, default to &quot;&quot;)</param>
+    // 查询安全组列表
+    //
+    // 查询安全组列表
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ListSecurityGroupsResponse> listSecurityGroups(
         ListSecurityGroupsRequest &request
     );
-    /// <summary>
-    /// 查询子网项目标签
-    /// </summary>
-    /// <remarks>
-    /// 查询租户在指定区域和实例类型的所有标签集合
-    /// </remarks>
+    // 查询子网项目标签
+    //
+    // 查询租户在指定区域和实例类型的所有标签集合
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ListSubnetTagsResponse> listSubnetTags(
         ListSubnetTagsRequest &request
     );
-    /// <summary>
-    /// 查询子网列表
-    /// </summary>
-    /// <remarks>
-    /// 查询子网列表
-    /// </remarks>
-    /// <param name="limit">每页返回的个数 (optional, default to 0)</param>
-    /// <param name="marker">分页查询起始的资源id，为空时查询第一页 (optional, default to &quot;&quot;)</param>
-    /// <param name="vpcId">按照vpc_id过滤查询  企业项目细粒度授权场景下，该字段必传 (optional, default to &quot;&quot;)</param>
+    // 查询子网列表
+    //
+    // 查询子网列表
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ListSubnetsResponse> listSubnets(
         ListSubnetsRequest &request
     );
-    /// <summary>
-    /// 查询子网资源实例
-    /// </summary>
-    /// <remarks>
-    /// 使用标签过滤实例
-    /// </remarks>
-    /// <param name="listSubnetsByTagsRequestBody">This is a auto create Body Object</param>
+    // 查询子网资源实例
+    //
+    // 使用标签过滤实例
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ListSubnetsByTagsResponse> listSubnetsByTags(
         ListSubnetsByTagsRequest &request
     );
-    /// <summary>
-    /// 查询对等连接列表
-    /// </summary>
-    /// <remarks>
-    /// 查询提交请求的租户的所有对等连接。根据过滤条件进行过滤。
-    /// </remarks>
-    /// <param name="limit">每页返回的个数 (optional, default to 0)</param>
-    /// <param name="marker">分页查询起始的资源ID，为空时查询第一页 (optional, default to &quot;&quot;)</param>
-    /// <param name="id">按照peering_id过滤查询 (optional, default to &quot;&quot;)</param>
-    /// <param name="name">功能说明：按照peering_name过查询  取值范围：最大长度不超过64 (optional, default to &quot;&quot;)</param>
-    /// <param name="status">根据status进行过滤  - PENDING_ACCEPTANCE：等待接受 - REJECTED：已拒绝。 - EXPIRED：已过期。 - DELETED：已删除。 - ACTIVE：活动的。 (optional, default to &quot;&quot;)</param>
-    /// <param name="tenantId">按照项目ID过滤查询 (optional, default to &quot;&quot;)</param>
-    /// <param name="vpcId">根据vpc ID过滤查询 (optional, default to &quot;&quot;)</param>
+    // 查询对等连接列表
+    //
+    // 查询提交请求的租户的所有对等连接。根据过滤条件进行过滤。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ListVpcPeeringsResponse> listVpcPeerings(
         ListVpcPeeringsRequest &request
     );
-    /// <summary>
-    /// 拒绝对等连接请求
-    /// </summary>
-    /// <remarks>
-    /// 租户A名下的VPC申请和租户B的VPC建立对等连接，需要等待租户B接受该请求。此接口用于租户拒绝其他租户发起的对等连接请求。
-    /// </remarks>
-    /// <param name="peeringId">对等连接ID</param>
+    // 拒绝对等连接请求
+    //
+    // 租户A名下的VPC申请和租户B的VPC建立对等连接，需要等待租户B接受该请求。此接口用于租户拒绝其他租户发起的对等连接请求。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<RejectVpcPeeringResponse> rejectVpcPeering(
         RejectVpcPeeringRequest &request
     );
-    /// <summary>
-    /// 查询端口
-    /// </summary>
-    /// <remarks>
-    /// 查询单个端口详情。
-    /// </remarks>
-    /// <param name="portId">端口ID</param>
+    // 查询端口
+    //
+    // 查询单个端口详情。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ShowPortResponse> showPort(
         ShowPortRequest &request
     );
-    /// <summary>
-    /// 查询配额
-    /// </summary>
-    /// <remarks>
-    /// 查询单租户在VPC服务下的网络资源配额，包括vpc配额、子网配额、安全组配额、安全组规则配额、弹性公网IP配额，vpn配额等。
-    /// </remarks>
-    /// <param name="type">功能说明：根据type过滤查询指定类型的配额 取值范围：vpc，subnet，securityGroup，securityGroupRule，publicIp，vpn，vpngw，vpcPeer，firewall，shareBandwidth，shareBandwidthIP，loadbalancer，listener，physicalConnect，virtualInterface，vpcContainRoutetable，routetableContainRoutes (optional, default to &quot;&quot;)</param>
+    // 查询配额
+    //
+    // 查询单租户在VPC服务下的网络资源配额，包括vpc配额、子网配额、安全组配额、安全组规则配额、弹性公网IP配额，vpn配额等。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ShowQuotaResponse> showQuota(
         ShowQuotaRequest &request
     );
-    /// <summary>
-    /// 查询路由表
-    /// </summary>
-    /// <remarks>
-    /// 查询路由表详情
-    /// </remarks>
-    /// <param name="routetableId">路由表ID</param>
+    // 查询路由表
+    //
+    // 查询路由表详情
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ShowRouteTableResponse> showRouteTable(
         ShowRouteTableRequest &request
     );
-    /// <summary>
-    /// 查询安全组
-    /// </summary>
-    /// <remarks>
-    /// 查询单个安全组详情。
-    /// </remarks>
-    /// <param name="securityGroupId">安全组ID</param>
+    // 查询安全组
+    //
+    // 查询单个安全组详情。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ShowSecurityGroupResponse> showSecurityGroup(
         ShowSecurityGroupRequest &request
     );
-    /// <summary>
-    /// 查询安全组规则
-    /// </summary>
-    /// <remarks>
-    /// 查询单个安全组规则详情
-    /// </remarks>
-    /// <param name="securityGroupRuleId">安全组规则ID</param>
+    // 查询安全组规则
+    //
+    // 查询单个安全组规则详情
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ShowSecurityGroupRuleResponse> showSecurityGroupRule(
         ShowSecurityGroupRuleRequest &request
     );
-    /// <summary>
-    /// 查询子网
-    /// </summary>
-    /// <remarks>
-    /// 查询子网详情。
-    /// </remarks>
-    /// <param name="subnetId">子网ID</param>
+    // 查询子网
+    //
+    // 查询子网详情。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ShowSubnetResponse> showSubnet(
         ShowSubnetRequest &request
     );
-    /// <summary>
-    /// 查询子网资源标签
-    /// </summary>
-    /// <remarks>
-    /// 查询指定子网实例的标签信息。
-    /// </remarks>
-    /// <param name="subnetId">子网ID</param>
+    // 查询子网资源标签
+    //
+    // 查询指定子网实例的标签信息。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ShowSubnetTagsResponse> showSubnetTags(
         ShowSubnetTagsRequest &request
     );
-    /// <summary>
-    /// 查询对等连接
-    /// </summary>
-    /// <remarks>
-    /// 查询对等连接详情。
-    /// </remarks>
-    /// <param name="peeringId">对等连接ID</param>
+    // 查询对等连接
+    //
+    // 查询对等连接详情。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ShowVpcPeeringResponse> showVpcPeering(
         ShowVpcPeeringRequest &request
     );
-    /// <summary>
-    /// 更新端口
-    /// </summary>
-    /// <remarks>
-    /// 更新端口。
-    /// </remarks>
-    /// <param name="portId">端口ID</param>
-    /// <param name="port">更新端口对象</param>
+    // 更新端口
+    //
+    // 更新端口。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<UpdatePortResponse> updatePort(
         UpdatePortRequest &request
     );
-    /// <summary>
-    /// 更新路由表
-    /// </summary>
-    /// <remarks>
-    /// 更新路由表，包括可以更新路由表的名称，描述，以及新增、更新、删除路由条目
-    /// </remarks>
-    /// <param name="routetableId">路由表ID</param>
-    /// <param name="routetable">更新路由表对象，参见UpdateRouteTableReq对象</param>
+    // 更新路由表
+    //
+    // 更新路由表，包括可以更新路由表的名称，描述，以及新增、更新、删除路由条目
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<UpdateRouteTableResponse> updateRouteTable(
         UpdateRouteTableRequest &request
     );
-    /// <summary>
-    /// 更新子网
-    /// </summary>
-    /// <remarks>
-    /// 更新子网。
-    /// </remarks>
-    /// <param name="vpcId">子网对应的vpc_id</param>
-    /// <param name="subnetId">子网ID</param>
-    /// <param name="subnet">更新子网对象</param>
+    // 更新子网
+    //
+    // 更新子网。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<UpdateSubnetResponse> updateSubnet(
         UpdateSubnetRequest &request
     );
-    /// <summary>
-    /// 更新对等连接
-    /// </summary>
-    /// <remarks>
-    /// 更新对等连接。
-    /// </remarks>
-    /// <param name="peeringId">对等连接ID</param>
-    /// <param name="peering">更新peering对象</param>
+    // 更新对等连接
+    //
+    // 更新对等连接。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<UpdateVpcPeeringResponse> updateVpcPeering(
         UpdateVpcPeeringRequest &request
     );
-    /// <summary>
-    /// 申请私有IP
-    /// </summary>
-    /// <remarks>
-    /// 申请私有IP。
-    /// </remarks>
-    /// <param name="privateips">申请私有IP对象</param>
+
+    // 申请私有IP
+    //
+    // 申请私有IP。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<CreatePrivateipResponse> createPrivateip(
         CreatePrivateipRequest &request
     );
-    /// <summary>
-    /// 删除私有IP
-    /// </summary>
-    /// <remarks>
-    /// 删除私有IP。
-    /// </remarks>
-    /// <param name="privateipId">私有IP ID</param>
+    // 删除私有IP
+    //
+    // 删除私有IP。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<DeletePrivateipResponse> deletePrivateip(
         DeletePrivateipRequest &request
     );
-    /// <summary>
-    /// 查询私有IP列表
-    /// </summary>
-    /// <remarks>
-    /// 查询指定子网下的私有IP列表。
-    /// </remarks>
-    /// <param name="subnetId">私有IP所在子网的唯一标识</param>
-    /// <param name="limit">每页返回的个数 (optional, default to 0)</param>
-    /// <param name="marker">分页查询起始的资源id，为空时查询第一页 (optional, default to &quot;&quot;)</param>
+    // 查询私有IP列表
+    //
+    // 查询指定子网下的私有IP列表。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ListPrivateipsResponse> listPrivateips(
         ListPrivateipsRequest &request
     );
-    /// <summary>
-    /// 查询网络IP使用情况
-    /// </summary>
-    /// <remarks>
-    /// 显示一个指定网络中的IPv4地址使用情况。 包括此网络中的IP总数以及已用IP总数，以及网络下每一个子网的IP地址总数和可用IP地址总数。  &gt; 须知  - 系统预留地址指的是子网的第1个以及最后4个地址，一般用于网关、DHCP等服务。 - 这里以及下文描述的IP地址总数、已用IP地址总数不包含系统预留地址。 - 在分配IP时，用户可以指定系统预留的IP地址。但是不论IP是如何分配的，只要是处于系统预留IP地址段的IP均不会被统计到已用IP地址数目和IP地址总数中。
-    /// </remarks>
-    /// <param name="networkId">网络ID</param>
+    // 查询网络IP使用情况
+    //
+    // 显示一个指定网络中的IPv4地址使用情况。
+    // 包括此网络中的IP总数以及已用IP总数，以及网络下每一个子网的IP地址总数和可用IP地址总数。
+    // 
+    // &gt; 须知
+    // 
+    // - 系统预留地址指的是子网的第1个以及最后4个地址，一般用于网关、DHCP等服务。
+    // - 这里以及下文描述的IP地址总数、已用IP地址总数不包含系统预留地址。
+    // - 在分配IP时，用户可以指定系统预留的IP地址。但是不论IP是如何分配的，只要是处于系统预留IP地址段的IP均不会被统计到已用IP地址数目和IP地址总数中。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ShowNetworkIpAvailabilitiesResponse> showNetworkIpAvailabilities(
         ShowNetworkIpAvailabilitiesRequest &request
     );
-    /// <summary>
-    /// 查询私有IP
-    /// </summary>
-    /// <remarks>
-    /// 指定ID查询私有IP。
-    /// </remarks>
-    /// <param name="privateipId">私有IP ID</param>
+    // 查询私有IP
+    //
+    // 指定ID查询私有IP。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ShowPrivateipResponse> showPrivateip(
         ShowPrivateipRequest &request
     );
-    /// <summary>
-    /// 创建安全组
-    /// </summary>
-    /// <remarks>
-    /// 创建安全组
-    /// </remarks>
-    /// <param name="securityGroup">安全组对象</param>
+
+    // 创建安全组
+    //
+    // 创建安全组
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<NeutronCreateSecurityGroupResponse> neutronCreateSecurityGroup(
         NeutronCreateSecurityGroupRequest &request
     );
-    /// <summary>
-    /// 创建安全组规则
-    /// </summary>
-    /// <remarks>
-    /// 创建安全组规则
-    /// </remarks>
-    /// <param name="securityGroupRule">安全组规则对象</param>
+    // 创建安全组规则
+    //
+    // 创建安全组规则
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<NeutronCreateSecurityGroupRuleResponse> neutronCreateSecurityGroupRule(
         NeutronCreateSecurityGroupRuleRequest &request
     );
-    /// <summary>
-    /// 删除安全组
-    /// </summary>
-    /// <remarks>
-    /// 删除安全组
-    /// </remarks>
-    /// <param name="securityGroupId">安全组ID</param>
+    // 删除安全组
+    //
+    // 删除安全组
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<NeutronDeleteSecurityGroupResponse> neutronDeleteSecurityGroup(
         NeutronDeleteSecurityGroupRequest &request
     );
-    /// <summary>
-    /// 删除安全组规则
-    /// </summary>
-    /// <remarks>
-    /// 删除安全组规则
-    /// </remarks>
-    /// <param name="securityGroupRuleId">安全组规则ID</param>
+    // 删除安全组规则
+    //
+    // 删除安全组规则
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<NeutronDeleteSecurityGroupRuleResponse> neutronDeleteSecurityGroupRule(
         NeutronDeleteSecurityGroupRuleRequest &request
     );
-    /// <summary>
-    /// 查询安全组规则列表
-    /// </summary>
-    /// <remarks>
-    /// 查询提交请求的租户有权限查看的所有安全组规则。单次查询最多返回2000条数据，超过2000后会返回分页标记。分页查询请参考分页查询
-    /// </remarks>
-    /// <param name="limit">每页返回的个数 (optional, default to 0)</param>
-    /// <param name="marker">分页查询起始的资源ID，为空时查询第一页 (optional, default to &quot;&quot;)</param>
-    /// <param name="id">按照安全组规则对应的id过滤查询结果 (optional, default to &quot;&quot;)</param>
-    /// <param name="direction">按照安全组规则的方向过滤查询结果，支持ingress和egress进行过滤 (optional, default to &quot;&quot;)</param>
-    /// <param name="protocol">按照安全组规则的IP协议过滤查询结果 (optional, default to &quot;&quot;)</param>
-    /// <param name="ethertype">按照网络类型过滤查询结果，支持IPv4或者IPv6 (optional, default to &quot;&quot;)</param>
-    /// <param name="description">按照安全组规则的描述过滤查询结果 (optional, default to &quot;&quot;)</param>
-    /// <param name="remoteIpPrefix">按照与此安全组规则匹配的远端IP网段过滤查询结果 (optional, default to &quot;&quot;)</param>
-    /// <param name="remoteGroupId">按照与此安全组规则关联的远端安全组ID过滤查询结果 (optional, default to &quot;&quot;)</param>
-    /// <param name="securityGroupId">按照与此安全组规则所属的安全组ID过滤查询结果 (optional, default to &quot;&quot;)</param>
-    /// <param name="portRangeMax">按照最大端口过滤查询结果 (optional, default to &quot;&quot;)</param>
-    /// <param name="portRangeMin">按照最小端口过滤查询结果 (optional, default to &quot;&quot;)</param>
-    /// <param name="tenantId">按照安全组规则所属的项目ID过滤查询结果 (optional, default to &quot;&quot;)</param>
+    // 查询安全组规则列表
+    //
+    // 查询提交请求的租户有权限查看的所有安全组规则。单次查询最多返回2000条数据，超过2000后会返回分页标记。分页查询请参考分页查询
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<NeutronListSecurityGroupRulesResponse> neutronListSecurityGroupRules(
         NeutronListSecurityGroupRulesRequest &request
     );
-    /// <summary>
-    /// 查询安全组列表
-    /// </summary>
-    /// <remarks>
-    /// 查询提交请求租户的所有安全组，单次查询最多返回2000条数据，超过2000后会返回分页标记。分页查询请参考分页查询 。
-    /// </remarks>
-    /// <param name="limit">每页返回的个数 (optional, default to 0)</param>
-    /// <param name="marker">分页查询起始的资源ID，为空时查询第一页 (optional, default to &quot;&quot;)</param>
-    /// <param name="id">按照安全组对应的ID过滤查询 (optional, default to &quot;&quot;)</param>
-    /// <param name="name">按照安全组的名称过滤查询 (optional, default to &quot;&quot;)</param>
-    /// <param name="description">按照安全组的描述过滤查询 (optional, default to &quot;&quot;)</param>
-    /// <param name="tenantId">按照安全组所属的项目ID过滤查询 (optional, default to &quot;&quot;)</param>
+    // 查询安全组列表
+    //
+    // 查询提交请求租户的所有安全组，单次查询最多返回2000条数据，超过2000后会返回分页标记。分页查询请参考分页查询 。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<NeutronListSecurityGroupsResponse> neutronListSecurityGroups(
         NeutronListSecurityGroupsRequest &request
     );
-    /// <summary>
-    /// 查询安全组
-    /// </summary>
-    /// <remarks>
-    /// 查询安全组详情
-    /// </remarks>
-    /// <param name="securityGroupId">安全组ID</param>
+    // 查询安全组
+    //
+    // 查询安全组详情
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<NeutronShowSecurityGroupResponse> neutronShowSecurityGroup(
         NeutronShowSecurityGroupRequest &request
     );
-    /// <summary>
-    /// 查询安全组规则
-    /// </summary>
-    /// <remarks>
-    /// 查询安全组规则详情。
-    /// </remarks>
-    /// <param name="securityGroupRuleId">安全组规则ID</param>
+    // 查询安全组规则
+    //
+    // 查询安全组规则详情。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<NeutronShowSecurityGroupRuleResponse> neutronShowSecurityGroupRule(
         NeutronShowSecurityGroupRuleRequest &request
     );
-    /// <summary>
-    /// 更新安全组
-    /// </summary>
-    /// <remarks>
-    /// 更新安全组
-    /// </remarks>
-    /// <param name="securityGroupId">安全组ID</param>
-    /// <param name="securityGroup">安全组</param>
+    // 更新安全组
+    //
+    // 更新安全组
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<NeutronUpdateSecurityGroupResponse> neutronUpdateSecurityGroup(
         NeutronUpdateSecurityGroupRequest &request
     );
-    /// <summary>
-    /// 插入网络ACL规则
-    /// </summary>
-    /// <remarks>
-    /// 插入一条网络ACL规则到某一网络ACL策略中。
-    /// </remarks>
-    /// <param name="firewallPolicyId">网络ACL防火墙策略ID</param>
-    /// <param name="insertFirewallRule">插入ACL规则请求体</param>
+
+    // 插入网络ACL规则
+    //
+    // 插入一条网络ACL规则到某一网络ACL策略中。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<NeutronAddFirewallRuleResponse> neutronAddFirewallRule(
         NeutronAddFirewallRuleRequest &request
     );
-    /// <summary>
-    /// 创建网络ACL组
-    /// </summary>
-    /// <remarks>
-    /// 创建网络ACL组
-    /// </remarks>
-    /// <param name="firewallGroup">firewall group对象</param>
+    // 创建网络ACL组
+    //
+    // 创建网络ACL组
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<NeutronCreateFirewallGroupResponse> neutronCreateFirewallGroup(
         NeutronCreateFirewallGroupRequest &request
     );
-    /// <summary>
-    /// 创建网络ACL策略
-    /// </summary>
-    /// <remarks>
-    /// 创建网络ACL策略。
-    /// </remarks>
-    /// <param name="firewallPolicy">firewall policy对象</param>
+    // 创建网络ACL策略
+    //
+    // 创建网络ACL策略。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<NeutronCreateFirewallPolicyResponse> neutronCreateFirewallPolicy(
         NeutronCreateFirewallPolicyRequest &request
     );
-    /// <summary>
-    /// 创建网络ACL规则
-    /// </summary>
-    /// <remarks>
-    /// 创建网络ACL规则。
-    /// </remarks>
-    /// <param name="firewallRule">firewall rule对象</param>
+    // 创建网络ACL规则
+    //
+    // 创建网络ACL规则。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<NeutronCreateFirewallRuleResponse> neutronCreateFirewallRule(
         NeutronCreateFirewallRuleRequest &request
     );
-    /// <summary>
-    /// 删除网络ACL组
-    /// </summary>
-    /// <remarks>
-    /// 删除网络ACL组
-    /// </remarks>
-    /// <param name="firewallGroupId">网络ACL防火墙组ID</param>
+    // 删除网络ACL组
+    //
+    // 删除网络ACL组
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<NeutronDeleteFirewallGroupResponse> neutronDeleteFirewallGroup(
         NeutronDeleteFirewallGroupRequest &request
     );
-    /// <summary>
-    /// 删除网络ACL策略
-    /// </summary>
-    /// <remarks>
-    /// 删除网络ACL策略。
-    /// </remarks>
-    /// <param name="firewallPolicyId">网络ACL防火墙策略ID</param>
+    // 删除网络ACL策略
+    //
+    // 删除网络ACL策略。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<NeutronDeleteFirewallPolicyResponse> neutronDeleteFirewallPolicy(
         NeutronDeleteFirewallPolicyRequest &request
     );
-    /// <summary>
-    /// 删除网络ACL规则
-    /// </summary>
-    /// <remarks>
-    /// 删除网络ACL规则。
-    /// </remarks>
-    /// <param name="firewallRuleId">网络ACL防火墙规则ID</param>
+    // 删除网络ACL规则
+    //
+    // 删除网络ACL规则。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<NeutronDeleteFirewallRuleResponse> neutronDeleteFirewallRule(
         NeutronDeleteFirewallRuleRequest &request
     );
-    /// <summary>
-    /// 查询所有网络ACL组
-    /// </summary>
-    /// <remarks>
-    /// 查询提交请求的租户有权限操作的所有网络ACL组信息。单次查询最多返回2000条数据，超过2000后会返回分页标记。
-    /// </remarks>
-    /// <param name="marker">分页查询起始的资源ID，为空时查询第一页 (optional, default to &quot;&quot;)</param>
-    /// <param name="limit">每页返回的个数 (optional, default to 0)</param>
-    /// <param name="id">使用id过滤网络ACL组 (optional, default to std::vector&lt;std::string&gt;())</param>
-    /// <param name="name">使用name过滤ACL组 (optional, default to std::vector&lt;std::string&gt;())</param>
-    /// <param name="description">使用description过滤ACL组 (optional, default to std::vector&lt;std::string&gt;())</param>
-    /// <param name="ingressFirewallPolicyId">使用入方向的网络ACL策略ID过滤网络ACL组 (optional, default to &quot;&quot;)</param>
-    /// <param name="egressFirewallPolicyId">使用出方向的网络ACL策略过滤查询网络ACL组 (optional, default to &quot;&quot;)</param>
+    // 查询所有网络ACL组
+    //
+    // 查询提交请求的租户有权限操作的所有网络ACL组信息。单次查询最多返回2000条数据，超过2000后会返回分页标记。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<NeutronListFirewallGroupsResponse> neutronListFirewallGroups(
         NeutronListFirewallGroupsRequest &request
     );
-    /// <summary>
-    /// 查询所有网络ACL策略
-    /// </summary>
-    /// <remarks>
-    /// 查询提交请求的租户有权限操作的所有网络ACL策略信息。单次查询最多返回2000条数据，超过2000后会返回分页标记。
-    /// </remarks>
-    /// <param name="limit">每页返回的个数 (optional, default to 0)</param>
-    /// <param name="marker">分页查询起始的资源ID，为空时查询第一页 (optional, default to &quot;&quot;)</param>
-    /// <param name="id">使用网络ACL策略ID过滤网络ACL策略 (optional, default to std::vector&lt;std::string&gt;())</param>
-    /// <param name="name">使用name过滤网络ACL策略 (optional, default to std::vector&lt;std::string&gt;())</param>
-    /// <param name="description">使用网络ACL策略描述过滤查询网络ACL策略 (optional, default to std::vector&lt;std::string&gt;())</param>
-    /// <param name="tenantId">使用tenant_id过滤查询网络ACL策略 (optional, default to &quot;&quot;)</param>
+    // 查询所有网络ACL策略
+    //
+    // 查询提交请求的租户有权限操作的所有网络ACL策略信息。单次查询最多返回2000条数据，超过2000后会返回分页标记。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<NeutronListFirewallPoliciesResponse> neutronListFirewallPolicies(
         NeutronListFirewallPoliciesRequest &request
     );
-    /// <summary>
-    /// 查询所有网络ACL规则
-    /// </summary>
-    /// <remarks>
-    /// 查询提交请求的租户有权限操作的所有网络ACL规则信息。单次查询最多返回2000条数据，超过2000后会返回分页标记。
-    /// </remarks>
-    /// <param name="marker">分页查询起始的资源ID，为空时查询第一页 (optional, default to &quot;&quot;)</param>
-    /// <param name="limit">每页返回的个数 (optional, default to 0)</param>
-    /// <param name="id">使用网络ACL规则ID过滤网络ACL规则 (optional, default to std::vector&lt;std::string&gt;())</param>
-    /// <param name="name">使用网络ACL规则name过滤网络ACL规则 (optional, default to std::vector&lt;std::string&gt;())</param>
-    /// <param name="description">使用网络ACL规则的description过滤网络ACL规则 (optional, default to std::vector&lt;std::string&gt;())</param>
-    /// <param name="action">使用action过滤查询网络ACL规则 (optional, default to &quot;&quot;)</param>
-    /// <param name="tenantId">使用tenant_id过滤查询网络ACL规则 (optional, default to &quot;&quot;)</param>
+    // 查询所有网络ACL规则
+    //
+    // 查询提交请求的租户有权限操作的所有网络ACL规则信息。单次查询最多返回2000条数据，超过2000后会返回分页标记。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<NeutronListFirewallRulesResponse> neutronListFirewallRules(
         NeutronListFirewallRulesRequest &request
     );
-    /// <summary>
-    /// 移除网络ACL规则
-    /// </summary>
-    /// <remarks>
-    /// 从某一网络ACL策略中移除一条网络ACL规则。
-    /// </remarks>
-    /// <param name="firewallPolicyId">网络ACL防火墙策略ID</param>
-    /// <param name="removeFirewallRule">移除ACL规则请求体</param>
+    // 移除网络ACL规则
+    //
+    // 从某一网络ACL策略中移除一条网络ACL规则。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<NeutronRemoveFirewallRuleResponse> neutronRemoveFirewallRule(
         NeutronRemoveFirewallRuleRequest &request
     );
-    /// <summary>
-    /// 查询特定网络ACL组详情
-    /// </summary>
-    /// <remarks>
-    /// 查询特定网络ACL组详情。
-    /// </remarks>
-    /// <param name="firewallGroupId">网络ACL防火墙组ID</param>
+    // 查询特定网络ACL组详情
+    //
+    // 查询特定网络ACL组详情。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<NeutronShowFirewallGroupResponse> neutronShowFirewallGroup(
         NeutronShowFirewallGroupRequest &request
     );
-    /// <summary>
-    /// 查询特定网络ACL策略详情
-    /// </summary>
-    /// <remarks>
-    /// 查询特定网络ACL策略详情。
-    /// </remarks>
-    /// <param name="firewallPolicyId">网络ACL防火墙策略ID</param>
+    // 查询特定网络ACL策略详情
+    //
+    // 查询特定网络ACL策略详情。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<NeutronShowFirewallPolicyResponse> neutronShowFirewallPolicy(
         NeutronShowFirewallPolicyRequest &request
     );
-    /// <summary>
-    /// 查询特定网络ACL规则
-    /// </summary>
-    /// <remarks>
-    /// 查询特定网络ACL规则。
-    /// </remarks>
-    /// <param name="firewallRuleId">网络ACL规则ID</param>
+    // 查询特定网络ACL规则
+    //
+    // 查询特定网络ACL规则。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<NeutronShowFirewallRuleResponse> neutronShowFirewallRule(
         NeutronShowFirewallRuleRequest &request
     );
-    /// <summary>
-    /// 更新网络ACL组
-    /// </summary>
-    /// <remarks>
-    /// 更新网络ACL组。
-    /// </remarks>
-    /// <param name="firewallGroupId">网络ACL防火墙组ID</param>
-    /// <param name="firewallGroup">firewall group对象</param>
+    // 更新网络ACL组
+    //
+    // 更新网络ACL组。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<NeutronUpdateFirewallGroupResponse> neutronUpdateFirewallGroup(
         NeutronUpdateFirewallGroupRequest &request
     );
-    /// <summary>
-    /// 更新网络ACL策略
-    /// </summary>
-    /// <remarks>
-    /// 更新网络ACL策略。
-    /// </remarks>
-    /// <param name="firewallPolicyId">网络ACL防火墙策略ID</param>
-    /// <param name="firewallPolicy">firewall policy对象</param>
+    // 更新网络ACL策略
+    //
+    // 更新网络ACL策略。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<NeutronUpdateFirewallPolicyResponse> neutronUpdateFirewallPolicy(
         NeutronUpdateFirewallPolicyRequest &request
     );
-    /// <summary>
-    /// 更新网络ACL规则
-    /// </summary>
-    /// <remarks>
-    /// 更新网络ACL规则。
-    /// </remarks>
-    /// <param name="firewallRuleId">网络ACL防火墙规则ID</param>
-    /// <param name="firewallRule">firewall rule对象</param>
+    // 更新网络ACL规则
+    //
+    // 更新网络ACL规则。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<NeutronUpdateFirewallRuleResponse> neutronUpdateFirewallRule(
         NeutronUpdateFirewallRuleRequest &request
     );
-    /// <summary>
-    /// 批量创建VPC资源标签
-    /// </summary>
-    /// <remarks>
-    /// 为指定的VPC资源实例批量添加标签。 此接口为幂等接口：创建时如果请求体中存在重复key则报错。创建时，不允许设置重复key数据，如果数据库已存在该key，就覆盖value的值。
-    /// </remarks>
-    /// <param name="vpcId">功能说明：虚拟私有云唯一标识 取值范围：合法UUID 约束：ID对应的VPC必须存在</param>
-    /// <param name="batchCreateVpcTagsRequestBody">This is a auto create Body Object</param>
+
+    // 批量创建VPC资源标签
+    //
+    // 为指定的VPC资源实例批量添加标签。
+    // 此接口为幂等接口：创建时如果请求体中存在重复key则报错。创建时，不允许设置重复key数据，如果数据库已存在该key，就覆盖value的值。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<BatchCreateVpcTagsResponse> batchCreateVpcTags(
         BatchCreateVpcTagsRequest &request
     );
-    /// <summary>
-    /// 批量删除VPC资源标签
-    /// </summary>
-    /// <remarks>
-    /// 为指定的VPC资源实例批量删除标签。 此接口为幂等接口：删除时，如果删除的标签不存在，默认处理成功；删除时不对标签字符集范围做校验。删除时tags结构体不能缺失，key不能为空，或者空字符串。
-    /// </remarks>
-    /// <param name="vpcId">功能说明：虚拟私有云唯一标识 取值范围：合法UUID 约束：ID对应的VPC必须存在</param>
-    /// <param name="batchDeleteVpcTagsRequestBody">This is a auto create Body Object</param>
+    // 批量删除VPC资源标签
+    //
+    // 为指定的VPC资源实例批量删除标签。
+    // 此接口为幂等接口：删除时，如果删除的标签不存在，默认处理成功；删除时不对标签字符集范围做校验。删除时tags结构体不能缺失，key不能为空，或者空字符串。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<BatchDeleteVpcTagsResponse> batchDeleteVpcTags(
         BatchDeleteVpcTagsRequest &request
     );
-    /// <summary>
-    /// 创建VPC
-    /// </summary>
-    /// <remarks>
-    /// 创建虚拟私有云。
-    /// </remarks>
-    /// <param name="vpc">创建VPC对象</param>
+    // 创建VPC
+    //
+    // 创建虚拟私有云。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<CreateVpcResponse> createVpc(
         CreateVpcRequest &request
     );
-    /// <summary>
-    /// 创建VPC资源标签
-    /// </summary>
-    /// <remarks>
-    /// 给指定VPC资源实例增加标签信息 此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
-    /// </remarks>
-    /// <param name="vpcId">功能说明：虚拟私有云唯一标识 取值范围：合法UUID 约束：ID对应的VPC必须存在</param>
-    /// <param name="createVpcResourceTagRequestBody">This is a auto create Body Object</param>
+    // 创建VPC资源标签
+    //
+    // 给指定VPC资源实例增加标签信息
+    // 此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<CreateVpcResourceTagResponse> createVpcResourceTag(
         CreateVpcResourceTagRequest &request
     );
-    /// <summary>
-    /// 创建VPC路由
-    /// </summary>
-    /// <remarks>
-    /// 创建路由
-    /// </remarks>
-    /// <param name="route">route对象，必选字段：destination、nexthop、type、vpc_id。</param>
+    // 创建VPC路由
+    //
+    // 创建路由
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<CreateVpcRouteResponse> createVpcRoute(
         CreateVpcRouteRequest &request
     );
-    /// <summary>
-    /// 删除VPC
-    /// </summary>
-    /// <remarks>
-    /// 删除虚拟私有云。
-    /// </remarks>
-    /// <param name="vpcId">虚拟私有云ID</param>
+    // 删除VPC
+    //
+    // 删除虚拟私有云。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<DeleteVpcResponse> deleteVpc(
         DeleteVpcRequest &request
     );
-    /// <summary>
-    /// 删除VPC路由
-    /// </summary>
-    /// <remarks>
-    /// 删除路由
-    /// </remarks>
-    /// <param name="routeId">路由ID</param>
+    // 删除VPC路由
+    //
+    // 删除路由
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<DeleteVpcRouteResponse> deleteVpcRoute(
         DeleteVpcRouteRequest &request
     );
-    /// <summary>
-    /// 删除VPC资源标签
-    /// </summary>
-    /// <remarks>
-    /// 删除指定VPC资源实例的标签信息 该接口为幂等接口：删除的key不存在报404，Key不能为空或者空字符串
-    /// </remarks>
-    /// <param name="vpcId">功能说明：虚拟私有云唯一标识 取值范围：合法UUID 约束：ID对应的VPC必须存在</param>
-    /// <param name="key">功能说明：标签键</param>
+    // 删除VPC资源标签
+    //
+    // 删除指定VPC资源实例的标签信息
+    // 该接口为幂等接口：删除的key不存在报404，Key不能为空或者空字符串
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<DeleteVpcTagResponse> deleteVpcTag(
         DeleteVpcTagRequest &request
     );
-    /// <summary>
-    /// 查询VPC路由列表
-    /// </summary>
-    /// <remarks>
-    /// 查询提交请求的租户的所有路由列表，并根据过滤条件进行过滤。
-    /// </remarks>
-    /// <param name="limit">每页返回的个数 (optional, default to 0)</param>
-    /// <param name="marker">分页查询起始的资源ID，为空时查询第一页 (optional, default to &quot;&quot;)</param>
-    /// <param name="id">按照routes_id过滤查询 (optional, default to &quot;&quot;)</param>
-    /// <param name="type">功能说明：按照路由类型过滤查询  取值范围：peering (optional, default to &quot;&quot;)</param>
-    /// <param name="vpcId">按照vpc_id过滤查询 (optional, default to &quot;&quot;)</param>
-    /// <param name="destination">按照路由目的地址CIDR过滤查询 (optional, default to &quot;&quot;)</param>
-    /// <param name="tenantId">按照项目ID过滤查询 (optional, default to &quot;&quot;)</param>
+    // 查询VPC路由列表
+    //
+    // 查询提交请求的租户的所有路由列表，并根据过滤条件进行过滤。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ListVpcRoutesResponse> listVpcRoutes(
         ListVpcRoutesRequest &request
     );
-    /// <summary>
-    /// 查询VPC项目标签
-    /// </summary>
-    /// <remarks>
-    /// 查询租户在指定区域和实例类型的所有标签集合
-    /// </remarks>
+    // 查询VPC项目标签
+    //
+    // 查询租户在指定区域和实例类型的所有标签集合
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ListVpcTagsResponse> listVpcTags(
         ListVpcTagsRequest &request
     );
-    /// <summary>
-    /// 查询VPC列表
-    /// </summary>
-    /// <remarks>
-    /// 查询虚拟私有云列表。
-    /// </remarks>
-    /// <param name="limit">每页返回的个数 (optional, default to 0)</param>
-    /// <param name="marker">分页查询起始的资源ID，为空时查询第一页 (optional, default to &quot;&quot;)</param>
-    /// <param name="id">功能说明：虚拟私有云ID。可以使用该字段过滤某个ID的虚拟私有云。 (optional, default to &quot;&quot;)</param>
-    /// <param name="enterpriseProjectId">功能说明：企业项目ID。可以使用该字段过滤某个企业项目下的虚拟私有云。若未传值则默认返回所有企业项目绑定的虚拟私有云。  取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。若需要查询当前用户所有企业项目绑定的虚拟私有云，请传参all_granted_eps。 (optional, default to &quot;&quot;)</param>
+    // 查询VPC列表
+    //
+    // 查询虚拟私有云列表。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ListVpcsResponse> listVpcs(
         ListVpcsRequest &request
     );
-    /// <summary>
-    /// 查询VPC资源实例
-    /// </summary>
-    /// <remarks>
-    /// 使用标签过滤实例。
-    /// </remarks>
-    /// <param name="listVpcsByTagsRequestBody">This is a auto create Body Object</param>
+    // 查询VPC资源实例
+    //
+    // 使用标签过滤实例。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ListVpcsByTagsResponse> listVpcsByTags(
         ListVpcsByTagsRequest &request
     );
-    /// <summary>
-    /// 查询VPC
-    /// </summary>
-    /// <remarks>
-    /// 查询虚拟私有云。
-    /// </remarks>
-    /// <param name="vpcId">虚拟私有云ID</param>
+    // 查询VPC
+    //
+    // 查询虚拟私有云。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ShowVpcResponse> showVpc(
         ShowVpcRequest &request
     );
-    /// <summary>
-    /// 查询VPC路由
-    /// </summary>
-    /// <remarks>
-    /// 查询路由详情
-    /// </remarks>
-    /// <param name="routeId">路由ID</param>
+    // 查询VPC路由
+    //
+    // 查询路由详情
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ShowVpcRouteResponse> showVpcRoute(
         ShowVpcRouteRequest &request
     );
-    /// <summary>
-    /// 查询VPC资源标签
-    /// </summary>
-    /// <remarks>
-    /// 查询指定VPC实例的标签信息
-    /// </remarks>
-    /// <param name="vpcId">功能说明：虚拟私有云唯一标识 取值范围：合法UUID 约束：ID对应的VPC必须存在</param>
+    // 查询VPC资源标签
+    //
+    // 查询指定VPC实例的标签信息
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ShowVpcTagsResponse> showVpcTags(
         ShowVpcTagsRequest &request
     );
-    /// <summary>
-    /// 更新VPC
-    /// </summary>
-    /// <remarks>
-    /// 更新虚拟私有云。
-    /// </remarks>
-    /// <param name="vpcId">虚拟私有云ID</param>
-    /// <param name="vpc">更新VPC对象</param>
+    // 更新VPC
+    //
+    // 更新虚拟私有云。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<UpdateVpcResponse> updateVpc(
         UpdateVpcRequest &request
     );
+
 
 private:
 #if defined(WIN32) || defined(__WIN32__) || defined(_WIN32) || defined(_MSC_VER)

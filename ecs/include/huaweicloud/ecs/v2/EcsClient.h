@@ -197,707 +197,690 @@ public:
 
     static ClientBuilder<EcsClient> newBuilder();
 
-    /// <summary>
-    /// 云服务器组添加成员
-    /// </summary>
-    /// <remarks>
-    /// 将云服务器加入云服务器组。添加成功后，如果该云服务器组是反亲和性策略的，则该云服务器与云服务器组中的其他成员尽量分散地创建在不同主机上。如果该云服务器时故障域类型的，则该云服务器会拥有故障域属性。
-    /// </remarks>
-    /// <param name="serverGroupId">云服务器组ID。</param>
-    /// <param name="addServerGroupMemberRequestBody">This is a auto create Body Object</param>
+    // 云服务器组添加成员
+    //
+    // 将云服务器加入云服务器组。添加成功后，如果该云服务器组是反亲和性策略的，则该云服务器与云服务器组中的其他成员尽量分散地创建在不同主机上。如果该云服务器时故障域类型的，则该云服务器会拥有故障域属性。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<AddServerGroupMemberResponse> addServerGroupMember(
         AddServerGroupMemberRequest &request
     );
-    /// <summary>
-    /// 云服务器网卡配置虚拟IP地址
-    /// </summary>
-    /// <remarks>
-    /// 虚拟IP地址用于为网卡提供第二个IP地址，同时支持与多个弹性云服务器的网卡绑定，从而实现多个弹性云服务器之间的高可用性。  该接口用于给云服务器网卡配置虚拟IP地址：  - 当指定的IP地址是一个不存在的虚拟IP地址时，系统会创建该虚拟IP，并绑定至对应网卡。  - 当指定的IP地址是一个已经创建好的私有IP时，系统会将指定的网卡和虚拟IP绑定。如果该IP的device_owner为空，则仅支持VPC内二三层通信；如果该IP的device_owner为neutron:VIP_PORT，则支持VPC内二三层通信、VPC之间对等连接访问，以及弹性公网IP、VPN、云专线等Internet接入。
-    /// </remarks>
-    /// <param name="nicId">云服务器网卡ID。</param>
-    /// <param name="associateServerVirtualIpRequestBody">This is a auto create Body Object</param>
+    // 云服务器网卡配置虚拟IP地址
+    //
+    // 虚拟IP地址用于为网卡提供第二个IP地址，同时支持与多个弹性云服务器的网卡绑定，从而实现多个弹性云服务器之间的高可用性。
+    // 
+    // 该接口用于给云服务器网卡配置虚拟IP地址：
+    // 
+    // - 当指定的IP地址是一个不存在的虚拟IP地址时，系统会创建该虚拟IP，并绑定至对应网卡。
+    // 
+    // - 当指定的IP地址是一个已经创建好的私有IP时，系统会将指定的网卡和虚拟IP绑定。如果该IP的device_owner为空，则仅支持VPC内二三层通信；如果该IP的device_owner为neutron:VIP_PORT，则支持VPC内二三层通信、VPC之间对等连接访问，以及弹性公网IP、VPN、云专线等Internet接入。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<AssociateServerVirtualIpResponse> associateServerVirtualIp(
         AssociateServerVirtualIpRequest &request
     );
-    /// <summary>
-    /// 弹性云服务器挂载磁盘
-    /// </summary>
-    /// <remarks>
-    /// 把磁盘挂载到弹性云服务器上。
-    /// </remarks>
-    /// <param name="serverId">云服务器ID。</param>
-    /// <param name="attachServerVolumeRequestBody">This is a auto create Body Object</param>
+    // 弹性云服务器挂载磁盘
+    //
+    // 把磁盘挂载到弹性云服务器上。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<AttachServerVolumeResponse> attachServerVolume(
         AttachServerVolumeRequest &request
     );
-    /// <summary>
-    /// 批量添加云服务器网卡
-    /// </summary>
-    /// <remarks>
-    /// 给云服务器添加一张或多张网卡。
-    /// </remarks>
-    /// <param name="serverId">云服务器ID。</param>
-    /// <param name="batchAddServerNicsRequestBody">This is a auto create Body Object</param>
+    // 批量添加云服务器网卡
+    //
+    // 给云服务器添加一张或多张网卡。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<BatchAddServerNicsResponse> batchAddServerNics(
         BatchAddServerNicsRequest &request
     );
-    /// <summary>
-    /// 批量挂载指定共享盘
-    /// </summary>
-    /// <remarks>
-    /// 将指定的共享磁盘一次性挂载到多个弹性云服务器，实现批量挂载。
-    /// </remarks>
-    /// <param name="volumeId">共享磁盘ID。</param>
-    /// <param name="batchAttachSharableVolumesRequestBody">This is a auto create Body Object</param>
+    // 批量挂载指定共享盘
+    //
+    // 将指定的共享磁盘一次性挂载到多个弹性云服务器，实现批量挂载。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<BatchAttachSharableVolumesResponse> batchAttachSharableVolumes(
         BatchAttachSharableVolumesRequest &request
     );
-    /// <summary>
-    /// 批量添加云服务器标签
-    /// </summary>
-    /// <remarks>
-    /// - 为指定云服务器批量添加标签。  - 标签管理服务TMS使用该接口批量管理云服务器的标签。
-    /// </remarks>
-    /// <param name="serverId">云服务器ID。</param>
-    /// <param name="batchCreateServerTagsRequestBody">This is a auto create Body Object</param>
+    // 批量添加云服务器标签
+    //
+    // - 为指定云服务器批量添加标签。
+    // 
+    // - 标签管理服务TMS使用该接口批量管理云服务器的标签。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<BatchCreateServerTagsResponse> batchCreateServerTags(
         BatchCreateServerTagsRequest &request
     );
-    /// <summary>
-    /// 批量删除云服务器网卡
-    /// </summary>
-    /// <remarks>
-    /// 卸载并删除云服务器中的一张或多张网卡。
-    /// </remarks>
-    /// <param name="serverId">云服务器ID。</param>
-    /// <param name="batchDeleteServerNicsRequestBody">This is a auto create Body Object</param>
+    // 批量删除云服务器网卡
+    //
+    // 卸载并删除云服务器中的一张或多张网卡。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<BatchDeleteServerNicsResponse> batchDeleteServerNics(
         BatchDeleteServerNicsRequest &request
     );
-    /// <summary>
-    /// 批量删除云服务器标签
-    /// </summary>
-    /// <remarks>
-    /// - 为指定云服务器批量删除标签。  - 标签管理服务TMS使用该接口批量管理云服务器的标签。
-    /// </remarks>
-    /// <param name="serverId">云服务器ID。</param>
-    /// <param name="batchDeleteServerTagsRequestBody">This is a auto create Body Object</param>
+    // 批量删除云服务器标签
+    //
+    // - 为指定云服务器批量删除标签。
+    // 
+    // - 标签管理服务TMS使用该接口批量管理云服务器的标签。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<BatchDeleteServerTagsResponse> batchDeleteServerTags(
         BatchDeleteServerTagsRequest &request
     );
-    /// <summary>
-    /// 批量重启云服务器
-    /// </summary>
-    /// <remarks>
-    /// 根据给定的云服务器ID列表，批量重启云服务器，一次最多可以重启1000台。
-    /// </remarks>
-    /// <param name="batchRebootServersRequestBody">This is a auto create Body Object</param>
+    // 批量重启云服务器
+    //
+    // 根据给定的云服务器ID列表，批量重启云服务器，一次最多可以重启1000台。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<BatchRebootServersResponse> batchRebootServers(
         BatchRebootServersRequest &request
     );
-    /// <summary>
-    /// 批量重置弹性云服务器密码
-    /// </summary>
-    /// <remarks>
-    /// 批量重置弹性云服务器管理帐号（root用户或Administrator用户）的密码。
-    /// </remarks>
-    /// <param name="batchResetServersPasswordRequestBody">This is a auto create Body Object</param>
+    // 批量重置弹性云服务器密码
+    //
+    // 批量重置弹性云服务器管理帐号（root用户或Administrator用户）的密码。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<BatchResetServersPasswordResponse> batchResetServersPassword(
         BatchResetServersPasswordRequest &request
     );
-    /// <summary>
-    /// 批量启动云服务器
-    /// </summary>
-    /// <remarks>
-    /// 根据给定的云服务器ID列表，批量启动云服务器，一次最多可以启动1000台。
-    /// </remarks>
-    /// <param name="batchStartServersRequestBody">This is a auto create Body Object</param>
+    // 批量启动云服务器
+    //
+    // 根据给定的云服务器ID列表，批量启动云服务器，一次最多可以启动1000台。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<BatchStartServersResponse> batchStartServers(
         BatchStartServersRequest &request
     );
-    /// <summary>
-    /// 批量关闭云服务器
-    /// </summary>
-    /// <remarks>
-    /// 根据给定的云服务器ID列表，批量关闭云服务器，一次最多可以关闭1000台。
-    /// </remarks>
-    /// <param name="batchStopServersRequestBody">This is a auto create Body Object</param>
+    // 批量关闭云服务器
+    //
+    // 根据给定的云服务器ID列表，批量关闭云服务器，一次最多可以关闭1000台。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<BatchStopServersResponse> batchStopServers(
         BatchStopServersRequest &request
     );
-    /// <summary>
-    /// 批量修改弹性云服务器
-    /// </summary>
-    /// <remarks>
-    /// 批量修改弹性云服务器信息。 当前仅支持批量修改云服务器名称，一次最多可以修改1000台。
-    /// </remarks>
-    /// <param name="batchUpdateServersNameRequestBody">This is a auto create Body Object</param>
+    // 批量修改弹性云服务器
+    //
+    // 批量修改弹性云服务器信息。
+    // 当前仅支持批量修改云服务器名称，一次最多可以修改1000台。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<BatchUpdateServersNameResponse> batchUpdateServersName(
         BatchUpdateServersNameRequest &request
     );
-    /// <summary>
-    /// 切换弹性云服务器操作系统(安装Cloud init)
-    /// </summary>
-    /// <remarks>
-    /// 切换弹性云服务器操作系统。支持弹性云服务器数据盘不变的情况下，使用新镜像重装系统盘。  调用该接口后，系统将卸载系统盘，然后使用新镜像重新创建系统盘，并挂载至弹性云服务器，实现切换操作系统功能。
-    /// </remarks>
-    /// <param name="serverId">云服务器ID。</param>
-    /// <param name="changeServerOsWithCloudInitRequestBody">This is a auto create Body Object</param>
+    // 切换弹性云服务器操作系统(安装Cloud init)
+    //
+    // 切换弹性云服务器操作系统。支持弹性云服务器数据盘不变的情况下，使用新镜像重装系统盘。
+    // 
+    // 调用该接口后，系统将卸载系统盘，然后使用新镜像重新创建系统盘，并挂载至弹性云服务器，实现切换操作系统功能。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ChangeServerOsWithCloudInitResponse> changeServerOsWithCloudInit(
         ChangeServerOsWithCloudInitRequest &request
     );
-    /// <summary>
-    /// 切换弹性云服务器操作系统(未安装Cloud init)
-    /// </summary>
-    /// <remarks>
-    /// 切换弹性云服务器操作系统。  该接口支持未安装Cloud-init或Cloudbase-init的镜像使用。
-    /// </remarks>
-    /// <param name="serverId">云服务器ID。</param>
-    /// <param name="changeServerOsWithoutCloudInitRequestBody">This is a auto create Body Object</param>
+    // 切换弹性云服务器操作系统(未安装Cloud init)
+    //
+    // 切换弹性云服务器操作系统。
+    // 
+    // 该接口支持未安装Cloud-init或Cloudbase-init的镜像使用。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ChangeServerOsWithoutCloudInitResponse> changeServerOsWithoutCloudInit(
         ChangeServerOsWithoutCloudInitRequest &request
     );
-    /// <summary>
-    /// 创建云服务器(按需)
-    /// </summary>
-    /// <remarks>
-    /// 创建一台或多台[按需付费](https://support.huaweicloud.com/productdesc-ecs/ecs_01_0065.html)方式的云服务器。  弹性云服务器的登录鉴权方式包括两种：密钥对、密码。为安全起见，推荐使用密钥对方式。  - 密钥对 密钥对指使用密钥对作为弹性云服务器的鉴权方式。 接口调用方法：使用key_name字段，指定弹性云服务器登录时使用的密钥文件。  - 密码 密码指使用设置初始密码方式作为弹性云服务器的鉴权方式，此时，您可以通过用户名密码方式登录弹性云服务器，Linux操作系统时为root用户的初始密码，Windows操作系统时为Administrator用户的初始密码。  接口调用方法：使用adminPass字段，指定管理员帐号的初始登录密码。对于镜像已安装Cloud-init的Linux云服务器，如果需要使用密文密码，可以使用user_data字段进行密码注入。  &gt; 对于安装Cloud-init镜像的Linux云服务器云主机，若指定user_data字段，则adminPass字段无效。
-    /// </remarks>
-    /// <param name="createPostPaidServersRequestBody">This is a auto create Body Object</param>
+    // 创建云服务器(按需)
+    //
+    // 创建一台或多台[按需付费](https://support.huaweicloud.com/productdesc-ecs/ecs_01_0065.html)方式的云服务器。
+    // 
+    // 弹性云服务器的登录鉴权方式包括两种：密钥对、密码。为安全起见，推荐使用密钥对方式。
+    // 
+    // - 密钥对
+    // 密钥对指使用密钥对作为弹性云服务器的鉴权方式。
+    // 接口调用方法：使用key_name字段，指定弹性云服务器登录时使用的密钥文件。
+    // 
+    // - 密码
+    // 密码指使用设置初始密码方式作为弹性云服务器的鉴权方式，此时，您可以通过用户名密码方式登录弹性云服务器，Linux操作系统时为root用户的初始密码，Windows操作系统时为Administrator用户的初始密码。
+    // 
+    // 接口调用方法：使用adminPass字段，指定管理员帐号的初始登录密码。对于镜像已安装Cloud-init的Linux云服务器，如果需要使用密文密码，可以使用user_data字段进行密码注入。
+    // 
+    // &gt; 对于安装Cloud-init镜像的Linux云服务器云主机，若指定user_data字段，则adminPass字段无效。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<CreatePostPaidServersResponse> createPostPaidServers(
         CreatePostPaidServersRequest &request
     );
-    /// <summary>
-    /// 创建云服务器组
-    /// </summary>
-    /// <remarks>
-    /// 创建弹性云服务器组。  与原生的创建云服务器组接口不同之处在于该接口支持企业项目细粒度权限的校验。
-    /// </remarks>
-    /// <param name="createServerGroupRequestBody">This is a auto create Body Object</param>
+    // 创建云服务器组
+    //
+    // 创建弹性云服务器组。
+    // 
+    // 与原生的创建云服务器组接口不同之处在于该接口支持企业项目细粒度权限的校验。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<CreateServerGroupResponse> createServerGroup(
         CreateServerGroupRequest &request
     );
-    /// <summary>
-    /// 创建云服务器
-    /// </summary>
-    /// <remarks>
-    /// 创建一台或多台云服务器。  指该接口兼容《弹性云服务器接口参考》创建云服务器v1的功能，同时合入新功能，支持创建[包年/包月](https://support.huaweicloud.com/productdesc-ecs/ecs_01_0065.html)的弹性云服务器。  弹性云服务器的登录鉴权方式包括两种：密钥对、密码。为安全起见，推荐使用密钥对方式。  - 密钥对  指使用密钥对作为弹性云服务器的鉴权方式。  接口调用方法：使用key_name字段，指定弹性云服务器登录时使用的密钥文件。  - 密码  指使用设置初始密码方式作为弹性云服务器的鉴权方式，此时，您可以通过用户名密码方式登录弹性云服务器，Linux操作系统时为root用户的初始密码，Windows操作系统时为Administrator用户的初始密码。  接口调用方法：使用adminPass字段，指定管理员帐号的初始登录密码。对于镜像已安装Cloud-init的Linux云服务器，如果需要使用密文密码，可以使用user_data字段进行密码注入。  &gt; 对于安装Cloud-init镜像的Linux云服务器云主机，若指定user_data字段，则adminPass字段无效。  购买操作示例： - [使用API购买ECS过程中常见问题及处理方法](https://support.huaweicloud.com/api-ecs/ecs_04_0007.html) - [获取Token并检验Token的有效期 ](https://support.huaweicloud.com/api-ecs/ecs_04_0008.html)
-    /// </remarks>
-    /// <param name="createServersRequestBody">This is a auto create Body Object</param>
+    // 创建云服务器
+    //
+    // 创建一台或多台云服务器。
+    // 
+    // 指该接口兼容《弹性云服务器接口参考》创建云服务器v1的功能，同时合入新功能，支持创建[包年/包月](https://support.huaweicloud.com/productdesc-ecs/ecs_01_0065.html)的弹性云服务器。
+    // 
+    // 弹性云服务器的登录鉴权方式包括两种：密钥对、密码。为安全起见，推荐使用密钥对方式。
+    // 
+    // - 密钥对
+    // 
+    // 指使用密钥对作为弹性云服务器的鉴权方式。
+    // 
+    // 接口调用方法：使用key_name字段，指定弹性云服务器登录时使用的密钥文件。
+    // 
+    // - 密码
+    // 
+    // 指使用设置初始密码方式作为弹性云服务器的鉴权方式，此时，您可以通过用户名密码方式登录弹性云服务器，Linux操作系统时为root用户的初始密码，Windows操作系统时为Administrator用户的初始密码。
+    // 
+    // 接口调用方法：使用adminPass字段，指定管理员帐号的初始登录密码。对于镜像已安装Cloud-init的Linux云服务器，如果需要使用密文密码，可以使用user_data字段进行密码注入。
+    // 
+    // &gt; 对于安装Cloud-init镜像的Linux云服务器云主机，若指定user_data字段，则adminPass字段无效。
+    // 
+    // 购买操作示例：
+    // - [使用API购买ECS过程中常见问题及处理方法](https://support.huaweicloud.com/api-ecs/ecs_04_0007.html)
+    // - [获取Token并检验Token的有效期 ](https://support.huaweicloud.com/api-ecs/ecs_04_0008.html)
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<CreateServersResponse> createServers(
         CreateServersRequest &request
     );
-    /// <summary>
-    /// 删除云服务器组
-    /// </summary>
-    /// <remarks>
-    /// 删除云服务器组。  与原生的删除云服务器组接口不同之处在于该接口支持企业项目细粒度权限的校验。
-    /// </remarks>
-    /// <param name="serverGroupId">弹性云服务器组UUID。</param>
+    // 删除云服务器组
+    //
+    // 删除云服务器组。
+    // 
+    // 与原生的删除云服务器组接口不同之处在于该接口支持企业项目细粒度权限的校验。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<DeleteServerGroupResponse> deleteServerGroup(
         DeleteServerGroupRequest &request
     );
-    /// <summary>
-    /// 云服务器组删除成员
-    /// </summary>
-    /// <remarks>
-    /// 将弹性云服务器移出云服务器组。移出后，该云服务器与云服务器组中的成员不再遵从反亲和策略。
-    /// </remarks>
-    /// <param name="serverGroupId">云服务器组ID。</param>
-    /// <param name="deleteServerGroupMemberRequestBody">This is a auto create Body Object</param>
+    // 云服务器组删除成员
+    //
+    // 将弹性云服务器移出云服务器组。移出后，该云服务器与云服务器组中的成员不再遵从反亲和策略。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<DeleteServerGroupMemberResponse> deleteServerGroupMember(
         DeleteServerGroupMemberRequest &request
     );
-    /// <summary>
-    /// 删除云服务器指定元数据
-    /// </summary>
-    /// <remarks>
-    /// 删除云服务器指定元数据。
-    /// </remarks>
-    /// <param name="key">待删除的云服务器metadata键值</param>
-    /// <param name="serverId">云服务器ID。</param>
+    // 删除云服务器指定元数据
+    //
+    // 删除云服务器指定元数据。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<DeleteServerMetadataResponse> deleteServerMetadata(
         DeleteServerMetadataRequest &request
     );
-    /// <summary>
-    /// 云服务器清除密码(企业项目)
-    /// </summary>
-    /// <remarks>
-    /// 清除Windows云服务器初始安装时系统生成的密码记录。清除密码后，不影响云服务器密码登录功能，但不能再使用获取密码功能来查询该云服务器密码。
-    /// </remarks>
-    /// <param name="serverId">云服务器ID。</param>
+    // 云服务器清除密码(企业项目)
+    //
+    // 清除Windows云服务器初始安装时系统生成的密码记录。清除密码后，不影响云服务器密码登录功能，但不能再使用获取密码功能来查询该云服务器密码。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<DeleteServerPasswordResponse> deleteServerPassword(
         DeleteServerPasswordRequest &request
     );
-    /// <summary>
-    /// 删除云服务器
-    /// </summary>
-    /// <remarks>
-    /// 根据指定的云服务器ID列表，删除云服务器。  系统支持删除单台云服务器和批量删除多台云服务器操作，批量删除云服务器时，一次最多可以删除1000台。
-    /// </remarks>
-    /// <param name="deleteServersRequestBody">This is a auto create Body Object</param>
+    // 删除云服务器
+    //
+    // 根据指定的云服务器ID列表，删除云服务器。
+    // 
+    // 系统支持删除单台云服务器和批量删除多台云服务器操作，批量删除云服务器时，一次最多可以删除1000台。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<DeleteServersResponse> deleteServers(
         DeleteServersRequest &request
     );
-    /// <summary>
-    /// 弹性云服务器卸载磁盘
-    /// </summary>
-    /// <remarks>
-    /// 从弹性云服务器中卸载磁盘。
-    /// </remarks>
-    /// <param name="serverId">云服务器ID。</param>
-    /// <param name="volumeId">磁盘ID。</param>
-    /// <param name="deleteFlag">是否强制卸载数据盘。  - 是，值为“1”。  - 否，值为“0”。  默认值为0。 (optional, default to &quot;&quot;)</param>
+    // 弹性云服务器卸载磁盘
+    //
+    // 从弹性云服务器中卸载磁盘。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<DetachServerVolumeResponse> detachServerVolume(
         DetachServerVolumeRequest &request
     );
-    /// <summary>
-    /// 云服务器网卡解绑虚拟IP地址
-    /// </summary>
-    /// <remarks>
-    /// 虚拟IP地址用于为网卡提供第二个IP地址，同时支持与多个弹性云服务器的网卡绑定，从而实现多个弹性云服务器之间的高可用性。  该接口用于解绑定弹性云服务器网卡的虚拟IP地址。解绑后，网卡不会被删除。
-    /// </remarks>
-    /// <param name="nicId">云服务器网卡ID。</param>
-    /// <param name="disassociateServerVirtualIpRequestBody">This is a auto create Body Object</param>
+    // 云服务器网卡解绑虚拟IP地址
+    //
+    // 虚拟IP地址用于为网卡提供第二个IP地址，同时支持与多个弹性云服务器的网卡绑定，从而实现多个弹性云服务器之间的高可用性。
+    // 
+    // 该接口用于解绑定弹性云服务器网卡的虚拟IP地址。解绑后，网卡不会被删除。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<DisassociateServerVirtualIpResponse> disassociateServerVirtualIp(
         DisassociateServerVirtualIpRequest &request
     );
-    /// <summary>
-    /// 查询规格详情和规格扩展信息列表
-    /// </summary>
-    /// <remarks>
-    /// 查询云服务器规格详情信息和规格扩展信息列表。
-    /// </remarks>
-    /// <param name="availabilityZone">可用区，需要指定可用区（AZ）的名称或者ID或者code。  可通过接口 [查询可用区列表接口](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;ECS&amp;api&#x3D;NovaListAvailabilityZones) 获取，也可参考[地区和终端节点](https://developer.huaweicloud.com/endpoint)获取。 (optional, default to &quot;&quot;)</param>
+    // 查询规格详情和规格扩展信息列表
+    //
+    // 查询云服务器规格详情信息和规格扩展信息列表。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ListFlavorsResponse> listFlavors(
         ListFlavorsRequest &request
     );
-    /// <summary>
-    /// 查询云服务器规格变更支持列表
-    /// </summary>
-    /// <remarks>
-    /// 变更规格时，部分规格的云服务器之间不能互相变更。您可以通过本接口，通过指定弹性云服务器规格，查询该规格可以变更的规格列表。
-    /// </remarks>
-    /// <param name="instanceUuid">进行规格切换的云服务器ID，UUID格式。 (optional, default to &quot;&quot;)</param>
-    /// <param name="limit">单页面可显示的flavor条数最大值，默认是1000。 (optional, default to 0)</param>
-    /// <param name="marker">以单页最后一条flavor的ID作为分页标记。 (optional, default to &quot;&quot;)</param>
-    /// <param name="sortDir">升序/降序排序，默认值为：asc。  取值范围：  - asc：表示升序。 - desc：表示降序 (optional, default to &quot;&quot;)</param>
-    /// <param name="sortKey">排序字段。  key的取值范围：  - flavorid：表示规格ID。 - sort_key的默认值为“flavorid”。 - name：表示规格名称。 - memory_mb：表示内存大小。 - vcpus：表示CPU大小。 - root_gb：表示系统盘大小。 (optional, default to &quot;&quot;)</param>
-    /// <param name="sourceFlavorId">进行规格切换的云服务器源规格ID。 (optional, default to &quot;&quot;)</param>
-    /// <param name="sourceFlavorName">进行规格切换的云服务器源规格名称。 (optional, default to &quot;&quot;)</param>
+    // 查询云服务器规格变更支持列表
+    //
+    // 变更规格时，部分规格的云服务器之间不能互相变更。您可以通过本接口，通过指定弹性云服务器规格，查询该规格可以变更的规格列表。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ListResizeFlavorsResponse> listResizeFlavors(
         ListResizeFlavorsRequest &request
     );
-    /// <summary>
-    /// 查询弹性云服务器磁盘信息
-    /// </summary>
-    /// <remarks>
-    /// 查询弹性云服务器挂载的磁盘信息。
-    /// </remarks>
-    /// <param name="serverId">云服务器ID。</param>
+    // 查询弹性云服务器磁盘信息
+    //
+    // 查询弹性云服务器挂载的磁盘信息。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ListServerBlockDevicesResponse> listServerBlockDevices(
         ListServerBlockDevicesRequest &request
     );
-    /// <summary>
-    /// 查询云服务器组列表
-    /// </summary>
-    /// <remarks>
-    /// 查询弹性云服务器组。  与原生的创建云服务器组接口不同之处在于该接口支持企业项目细粒度权限的校验。
-    /// </remarks>
-    /// <param name="limit">查询返回server group数量限制。 (optional, default to 0)</param>
-    /// <param name="marker">从marker指定的server group的下一条数据开始查询。 (optional, default to &quot;&quot;)</param>
+    // 查询云服务器组列表
+    //
+    // 查询弹性云服务器组。
+    // 
+    // 与原生的创建云服务器组接口不同之处在于该接口支持企业项目细粒度权限的校验。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ListServerGroupsResponse> listServerGroups(
         ListServerGroupsRequest &request
     );
-    /// <summary>
-    /// 查询云服务器网卡信息
-    /// </summary>
-    /// <remarks>
-    /// 查询云服务器网卡信息。
-    /// </remarks>
-    /// <param name="serverId">云服务器ID。</param>
+    // 查询云服务器网卡信息
+    //
+    // 查询云服务器网卡信息。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ListServerInterfacesResponse> listServerInterfaces(
         ListServerInterfacesRequest &request
     );
-    /// <summary>
-    /// 查询项目标签
-    /// </summary>
-    /// <remarks>
-    /// 项目（Project）用于将OpenStack的资源（计算资源、存储资源和网络资源）进行分组和隔离。项目可以是一个部门或者一个项目组。一个帐户中可以创建多个项目。  该接口用于查询用户在指定项目所使用的全部标签。
-    /// </remarks>
+    // 查询项目标签
+    //
+    // 项目（Project）用于将OpenStack的资源（计算资源、存储资源和网络资源）进行分组和隔离。项目可以是一个部门或者一个项目组。一个帐户中可以创建多个项目。
+    // 
+    // 该接口用于查询用户在指定项目所使用的全部标签。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ListServerTagsResponse> listServerTags(
         ListServerTagsRequest &request
     );
-    /// <summary>
-    /// 查询云服务器详情列表
-    /// </summary>
-    /// <remarks>
-    /// 根据用户请求条件从数据库筛选、查询所有的弹性云服务器，并关联相关表获取到弹性云服务器的详细信息。  该接口支持查询弹性云服务器计费方式，以及是否被冻结。
-    /// </remarks>
-    /// <param name="enterpriseProjectId">查询绑定某个企业项目的弹性云服务器。  若需要查询当前用户所有企业项目绑定的弹性云服务，请传参all_granted_eps。 (optional, default to &quot;&quot;)</param>
-    /// <param name="flavor">云服务器规格ID,已上线的规格请参见《弹性云服务器用户指南》的“实例和应用场景”章节。 (optional, default to &quot;&quot;)</param>
-    /// <param name="ip">IPv4地址过滤结果，匹配规则为模糊匹配。 (optional, default to &quot;&quot;)</param>
-    /// <param name="limit">查询返回云服务器当前页面的大小。每页最多返回1000台云服务器的信息。 (optional, default to 0)</param>
-    /// <param name="name">云服务器名称，匹配规则为模糊匹配。 (optional, default to &quot;&quot;)</param>
-    /// <param name="notTags">查询tag字段中不包含该值的云服务器。 (optional, default to &quot;&quot;)</param>
-    /// <param name="offset">页码。 当前页面数，默认为1。  取值大于等于0，取值为0时返回第1页。 (optional, default to 0)</param>
-    /// <param name="reservationId">批量创建弹性云服务器时，指定返回的ID，用于查询本次批量创建的弹性云服务器。 (optional, default to &quot;&quot;)</param>
-    /// <param name="status">云服务器状态。  取值范围：  ACTIVE， BUILD，DELETED，ERROR，HARD_REBOOT，MIGRATING，REBOOT，RESIZE，REVERT_RESIZE，SHELVED，SHELVED_OFFLOADED，SHUTOFF，UNKNOWN，VERIFY_RESIZE  只有管理员可以使用“deleted”状态过滤查询已经删除的弹性云服务器。  弹性云服务器状态说明请参考[云服务器状态](https://support.huaweicloud.com/api-ecs/ecs_08_0002.html) (optional, default to &quot;&quot;)</param>
-    /// <param name="tags">查询tag字段中包含该值的云服务器。 (optional, default to &quot;&quot;)</param>
-    /// <param name="ipEq">IPv4地址过滤结果，匹配规则为精确匹配。 (optional, default to &quot;&quot;)</param>
+    // 查询云服务器详情列表
+    //
+    // 根据用户请求条件从数据库筛选、查询所有的弹性云服务器，并关联相关表获取到弹性云服务器的详细信息。
+    // 
+    // 该接口支持查询弹性云服务器计费方式，以及是否被冻结。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ListServersDetailsResponse> listServersDetails(
         ListServersDetailsRequest &request
     );
-    /// <summary>
-    /// 冷迁移云服务器
-    /// </summary>
-    /// <remarks>
-    /// - 将部署在专属主机上的弹性云服务器迁移至其他专属主机。 - 将部署在专属主机上的弹性云服务器迁移至公共资源池，即不再部署在专属主机上。 - 将公共资源池的弹性云服务器迁移至专属主机上，成为专属主机上部署的弹性云服务器。
-    /// </remarks>
-    /// <param name="serverId">云服务器ID。</param>
-    /// <param name="migrateServerRequestBody">This is a auto create Body Object</param>
+    // 冷迁移云服务器
+    //
+    // - 将部署在专属主机上的弹性云服务器迁移至其他专属主机。
+    // - 将部署在专属主机上的弹性云服务器迁移至公共资源池，即不再部署在专属主机上。
+    // - 将公共资源池的弹性云服务器迁移至专属主机上，成为专属主机上部署的弹性云服务器。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<MigrateServerResponse> migrateServer(
         MigrateServerRequest &request
     );
-    /// <summary>
-    /// 添加安全组
-    /// </summary>
-    /// <remarks>
-    /// 为弹性云服务器添加一个安全组。  添加多个安全组时，建议最多为弹性云服务器添加5个安全组。
-    /// </remarks>
-    /// <param name="serverId">弹性云服务器ID。</param>
-    /// <param name="novaAssociateSecurityGroupRequestBody">This is a auto create Body Object</param>
+    // 添加安全组
+    //
+    // 为弹性云服务器添加一个安全组。
+    // 
+    // 添加多个安全组时，建议最多为弹性云服务器添加5个安全组。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<NovaAssociateSecurityGroupResponse> novaAssociateSecurityGroup(
         NovaAssociateSecurityGroupRequest &request
     );
-    /// <summary>
-    /// 创建和导入SSH密钥
-    /// </summary>
-    /// <remarks>
-    /// 创建SSH密钥，或把公钥导入系统，生成密钥对。  创建SSH密钥成功后，请把响应数据中的私钥内容保存到本地文件，用户使用该私钥登录云服务器云主机。为保证云服务器云主机器安全，私钥数据只能读取一次，请妥善保管。
-    /// </remarks>
-    /// <param name="novaCreateKeypairRequestBody">This is a auto create Body Object</param>
-    /// <param name="openStackAPIVersion">微版本头 (optional, default to &quot;&quot;)</param>
+    // 创建和导入SSH密钥
+    //
+    // 创建SSH密钥，或把公钥导入系统，生成密钥对。
+    // 
+    // 创建SSH密钥成功后，请把响应数据中的私钥内容保存到本地文件，用户使用该私钥登录云服务器云主机。为保证云服务器云主机器安全，私钥数据只能读取一次，请妥善保管。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<NovaCreateKeypairResponse> novaCreateKeypair(
         NovaCreateKeypairRequest &request
     );
-    /// <summary>
-    /// 创建云服务器
-    /// </summary>
-    /// <remarks>
-    /// 创建一台弹性云服务器。  弹性云服务器创建完成后，如需开启自动恢复功能，可以调用配置云服务器自动恢复的接口，具体使用请参见管理云服务器自动恢复动作。  该接口在云服务器创建失败后不支持自动回滚。若需要自动回滚能力，可以调用POST /v1/{project_id}/cloudservers接口，具体使用请参见创建云服务器（按需）。
-    /// </remarks>
-    /// <param name="novaCreateServersRequestBody">This is a auto create Body Object</param>
-    /// <param name="openStackAPIVersion">微版本头 (optional, default to &quot;&quot;)</param>
+    // 创建云服务器
+    //
+    // 创建一台弹性云服务器。
+    // 
+    // 弹性云服务器创建完成后，如需开启自动恢复功能，可以调用配置云服务器自动恢复的接口，具体使用请参见管理云服务器自动恢复动作。
+    // 
+    // 该接口在云服务器创建失败后不支持自动回滚。若需要自动回滚能力，可以调用POST /v1/{project_id}/cloudservers接口，具体使用请参见创建云服务器（按需）。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<NovaCreateServersResponse> novaCreateServers(
         NovaCreateServersRequest &request
     );
-    /// <summary>
-    /// 删除SSH密钥
-    /// </summary>
-    /// <remarks>
-    /// 根据SSH密钥的名称，删除指定SSH密钥。
-    /// </remarks>
-    /// <param name="keypairName">密钥名称。</param>
+    // 删除SSH密钥
+    //
+    // 根据SSH密钥的名称，删除指定SSH密钥。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<NovaDeleteKeypairResponse> novaDeleteKeypair(
         NovaDeleteKeypairRequest &request
     );
-    /// <summary>
-    /// 删除云服务器
-    /// </summary>
-    /// <remarks>
-    /// 删除一台云服务器。
-    /// </remarks>
-    /// <param name="serverId">云服务器ID。</param>
+    // 删除云服务器
+    //
+    // 删除一台云服务器。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<NovaDeleteServerResponse> novaDeleteServer(
         NovaDeleteServerRequest &request
     );
-    /// <summary>
-    /// 移除安全组
-    /// </summary>
-    /// <remarks>
-    /// 移除弹性云服务器中的安全组。
-    /// </remarks>
-    /// <param name="serverId">云服务器ID。</param>
-    /// <param name="novaDisassociateSecurityGroupRequestBody">This is a auto create Body Object</param>
+    // 移除安全组
+    //
+    // 移除弹性云服务器中的安全组。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<NovaDisassociateSecurityGroupResponse> novaDisassociateSecurityGroup(
         NovaDisassociateSecurityGroupRequest &request
     );
-    /// <summary>
-    /// 查询可用区列表
-    /// </summary>
-    /// <remarks>
-    /// 查询可用域列表。
-    /// </remarks>
+    // 查询可用区列表
+    //
+    // 查询可用域列表。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<NovaListAvailabilityZonesResponse> novaListAvailabilityZones(
         NovaListAvailabilityZonesRequest &request
     );
-    /// <summary>
-    /// 查询SSH密钥列表
-    /// </summary>
-    /// <remarks>
-    /// 查询SSH密钥信息列表。
-    /// </remarks>
-    /// <param name="limit">查询返回秘钥数量限制。  在微版本2.35后支持 (optional, default to 0)</param>
-    /// <param name="marker">从marker指定的keypair的名称的下一条数据开始查询。  在微版本2.35后支持。 (optional, default to &quot;&quot;)</param>
-    /// <param name="openStackAPIVersion">微版本头 (optional, default to &quot;&quot;)</param>
+    // 查询SSH密钥列表
+    //
+    // 查询SSH密钥信息列表。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<NovaListKeypairsResponse> novaListKeypairs(
         NovaListKeypairsRequest &request
     );
-    /// <summary>
-    /// 查询指定云服务器安全组列表
-    /// </summary>
-    /// <remarks>
-    /// 查询指定弹性云服务器的安全组。
-    /// </remarks>
-    /// <param name="serverId">云服务器ID。</param>
+    // 查询指定云服务器安全组列表
+    //
+    // 查询指定弹性云服务器的安全组。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<NovaListServerSecurityGroupsResponse> novaListServerSecurityGroups(
         NovaListServerSecurityGroupsRequest &request
     );
-    /// <summary>
-    /// 查询云服务器详情列表
-    /// </summary>
-    /// <remarks>
-    /// 查询云服务器详情信息列表。
-    /// </remarks>
-    /// <param name="changesSince">云服务器上次更新状态的时间戳信息。时间戳为UTC格式。 (optional, default to &quot;&quot;)</param>
-    /// <param name="flavor">云服务器规格ID。 (optional, default to &quot;&quot;)</param>
-    /// <param name="image">镜像ID  在使用image作为条件过滤时，不能同时支持其他过滤条件和分页条件。如果同时指定image及其他条件，则以image条件为准；当条件不含image时，接口功能不受限制。 (optional, default to &quot;&quot;)</param>
-    /// <param name="ip">IPv4地址过滤结果，匹配规则为模糊匹配。 (optional, default to &quot;&quot;)</param>
-    /// <param name="limit">查询返回云服务器数量限制。 (optional, default to 0)</param>
-    /// <param name="marker">从marker指定的云服务器ID的下一条数据开始查询。 (optional, default to &quot;&quot;)</param>
-    /// <param name="name">云服务器名称。 (optional, default to &quot;&quot;)</param>
-    /// <param name="notTags">查询tag字段中不包含该值的云服务器，值为标签的Key。  &gt; 说明： &gt;  &gt; 系统近期对标签功能进行了升级。如果之前添加的Tag为“Key.Value”的形式，则查询的时候需要使用“Key”来查询。 &gt;  &gt; 例如：之前添加的tag为“a.b”,则升级后，查询时需使用“not-tags&#x3D;a”。 (optional, default to &quot;&quot;)</param>
-    /// <param name="reservationId">批量创建弹性云服务器时，指定返回的ID，用于查询本次批量创建的弹性云服务器。 (optional, default to &quot;&quot;)</param>
-    /// <param name="sortKey">查询结果按弹性云服务器属性排序，默认排序顺序为created_at逆序。 (optional, default to &quot;&quot;)</param>
-    /// <param name="status">云服务器状态。  取值范围： ACTIVE， BUILD，DELETED，ERROR，HARD_REBOOT，MIGRATING，REBOOT，RESIZE，REVERT_RESIZE，SHELVED，SHELVED_OFFLOADED，SHUTOFF，UNKNOWN，VERIFY_RESIZE  直到2.37微版本，非上面范围的status字段将返回空列表，2.38之后的微版本，将返回400错误。  云服务器状态说明请参考[云服务器状态](https://support.huaweicloud.com/api-ecs/ecs_08_0002.html)。 (optional, default to &quot;&quot;)</param>
-    /// <param name="tags">查询tag字段中包含该值的云服务器。 (optional, default to &quot;&quot;)</param>
-    /// <param name="openStackAPIVersion">微版本头 (optional, default to &quot;&quot;)</param>
+    // 查询云服务器详情列表
+    //
+    // 查询云服务器详情信息列表。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<NovaListServersDetailsResponse> novaListServersDetails(
         NovaListServersDetailsRequest &request
     );
-    /// <summary>
-    /// 查询SSH密钥详情
-    /// </summary>
-    /// <remarks>
-    /// 根据SSH密钥名称查询指定SSH密钥。
-    /// </remarks>
-    /// <param name="keypairName">密钥名称信息。</param>
-    /// <param name="openStackAPIVersion">微版本头 (optional, default to &quot;&quot;)</param>
+    // 查询SSH密钥详情
+    //
+    // 根据SSH密钥名称查询指定SSH密钥。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<NovaShowKeypairResponse> novaShowKeypair(
         NovaShowKeypairRequest &request
     );
-    /// <summary>
-    /// 查询云服务器详情
-    /// </summary>
-    /// <remarks>
-    /// 根据云服务器ID，查询云服务器的详细信息。
-    /// </remarks>
-    /// <param name="serverId">云服务器ID。</param>
-    /// <param name="openStackAPIVersion">微版本头 (optional, default to &quot;&quot;)</param>
+    // 查询云服务器详情
+    //
+    // 根据云服务器ID，查询云服务器的详细信息。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<NovaShowServerResponse> novaShowServer(
         NovaShowServerRequest &request
     );
-    /// <summary>
-    /// 管理云服务器自动恢复动作
-    /// </summary>
-    /// <remarks>
-    /// 配置、删除云服务器自动恢复动作。
-    /// </remarks>
-    /// <param name="serverId">云服务器ID。</param>
-    /// <param name="registerServerAutoRecoveryRequestBody">This is a auto create Body Object</param>
+    // 管理云服务器自动恢复动作
+    //
+    // 配置、删除云服务器自动恢复动作。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<RegisterServerAutoRecoveryResponse> registerServerAutoRecovery(
         RegisterServerAutoRecoveryRequest &request
     );
-    /// <summary>
-    /// 重装弹性云服务器操作系统(安装Cloud-init)
-    /// </summary>
-    /// <remarks>
-    /// 重装弹性云服务器的操作系统。支持弹性云服务器数据盘不变的情况下，使用原镜像重装系统盘。  调用该接口后，系统将卸载系统盘，然后使用原镜像重新创建系统盘，并挂载至弹性云服务器，实现重装操作系统功能。
-    /// </remarks>
-    /// <param name="serverId">云服务器ID。</param>
-    /// <param name="reinstallServerWithCloudInitRequestBody">This is a auto create Body Object</param>
+    // 重装弹性云服务器操作系统(安装Cloud-init)
+    //
+    // 重装弹性云服务器的操作系统。支持弹性云服务器数据盘不变的情况下，使用原镜像重装系统盘。
+    // 
+    // 调用该接口后，系统将卸载系统盘，然后使用原镜像重新创建系统盘，并挂载至弹性云服务器，实现重装操作系统功能。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ReinstallServerWithCloudInitResponse> reinstallServerWithCloudInit(
         ReinstallServerWithCloudInitRequest &request
     );
-    /// <summary>
-    /// 重装弹性云服务器操作系统(未安装Cloud init)
-    /// </summary>
-    /// <remarks>
-    /// 重装弹性云服务器的操作系统。  该接口支持未安装Cloud-init或Cloudbase-init的镜像。
-    /// </remarks>
-    /// <param name="serverId">云服务器ID。</param>
-    /// <param name="reinstallServerWithoutCloudInitRequestBody">This is a auto create Body Object</param>
+    // 重装弹性云服务器操作系统(未安装Cloud init)
+    //
+    // 重装弹性云服务器的操作系统。
+    // 
+    // 该接口支持未安装Cloud-init或Cloudbase-init的镜像。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ReinstallServerWithoutCloudInitResponse> reinstallServerWithoutCloudInit(
         ReinstallServerWithoutCloudInitRequest &request
     );
-    /// <summary>
-    /// 一键重置弹性云服务器密码(企业项目)
-    /// </summary>
-    /// <remarks>
-    /// 重置弹性云服务器管理帐号（root用户或Administrator用户）的密码。
-    /// </remarks>
-    /// <param name="serverId">云服务器ID。</param>
-    /// <param name="resetServerPasswordRequestBody">This is a auto create Body Object</param>
+    // 一键重置弹性云服务器密码(企业项目)
+    //
+    // 重置弹性云服务器管理帐号（root用户或Administrator用户）的密码。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ResetServerPasswordResponse> resetServerPassword(
         ResetServerPasswordRequest &request
     );
-    /// <summary>
-    /// 变更云服务器规格(按需)
-    /// </summary>
-    /// <remarks>
-    /// 当您创建的弹性云服务器规格无法满足业务需要时，可以变更云服务器规格，升级vCPU、内存。具体接口的使用，请参见本节内容。  变更规格时，部分规格的云服务器之间不能互相变更。  您可以通过接口“/v1/{project_id}/cloudservers/resize_flavors?{instance_uuid,source_flavor_id,source_flavor_name}”查询支持列表。
-    /// </remarks>
-    /// <param name="serverId">云服务器ID。</param>
-    /// <param name="resizePostPaidServerRequestBody">This is a auto create Body Object</param>
+    // 变更云服务器规格(按需)
+    //
+    // 当您创建的弹性云服务器规格无法满足业务需要时，可以变更云服务器规格，升级vCPU、内存。具体接口的使用，请参见本节内容。
+    // 
+    // 变更规格时，部分规格的云服务器之间不能互相变更。
+    // 
+    // 您可以通过接口“/v1/{project_id}/cloudservers/resize_flavors?{instance_uuid,source_flavor_id,source_flavor_name}”查询支持列表。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ResizePostPaidServerResponse> resizePostPaidServer(
         ResizePostPaidServerRequest &request
     );
-    /// <summary>
-    /// 变更云服务器规格
-    /// </summary>
-    /// <remarks>
-    /// 变更云服务器规格。  v1.1版本：指该接口兼容v1接口的功能，同时合入新功能，支持变更包年/包月弹性云服务器的规格。  注意事项：  - 该接口可以使用合作伙伴自身的AK/SK或者token调用，也可以用合作伙伴子客户的AK/SK或者token来调用。 - 如果使用AK/SK认证方式，示例代码中region请参考[地区和终端节点](https://developer.huaweicloud.com/endpoint)中“弹性云服务 ECS”下“区域”的内容，，serviceName（英文服务名称缩写）请指定为ECS。 - Endpoint请参考[地区和终端节点](https://developer.huaweicloud.com/endpoint)中“弹性云服务 ECS”下“终端节点（Endpoint）”的内容。
-    /// </remarks>
-    /// <param name="serverId">云服务器ID。</param>
-    /// <param name="resizeServerRequestBody">This is a auto create Body Object</param>
+    // 变更云服务器规格
+    //
+    // 变更云服务器规格。
+    // 
+    // v1.1版本：指该接口兼容v1接口的功能，同时合入新功能，支持变更包年/包月弹性云服务器的规格。
+    // 
+    // 注意事项：
+    // 
+    // - 该接口可以使用合作伙伴自身的AK/SK或者token调用，也可以用合作伙伴子客户的AK/SK或者token来调用。
+    // - 如果使用AK/SK认证方式，示例代码中region请参考[地区和终端节点](https://developer.huaweicloud.com/endpoint)中“弹性云服务 ECS”下“区域”的内容，，serviceName（英文服务名称缩写）请指定为ECS。
+    // - Endpoint请参考[地区和终端节点](https://developer.huaweicloud.com/endpoint)中“弹性云服务 ECS”下“终端节点（Endpoint）”的内容。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ResizeServerResponse> resizeServer(
         ResizeServerRequest &request
     );
-    /// <summary>
-    /// 查询是否支持一键重置密码
-    /// </summary>
-    /// <remarks>
-    /// 查询弹性云服务器是否支持一键重置密码。
-    /// </remarks>
-    /// <param name="serverId">云服务器ID。</param>
+    // 查询是否支持一键重置密码
+    //
+    // 查询弹性云服务器是否支持一键重置密码。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ShowResetPasswordFlagResponse> showResetPasswordFlag(
         ShowResetPasswordFlagRequest &request
     );
-    /// <summary>
-    /// 查询云服务器详情
-    /// </summary>
-    /// <remarks>
-    /// 查询弹性云服务器的详细信息。  该接口支持查询弹性云服务器的计费方式，以及是否被冻结。
-    /// </remarks>
-    /// <param name="serverId">云服务器ID。</param>
+    // 查询云服务器详情
+    //
+    // 查询弹性云服务器的详细信息。
+    // 
+    // 该接口支持查询弹性云服务器的计费方式，以及是否被冻结。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ShowServerResponse> showServer(
         ShowServerRequest &request
     );
-    /// <summary>
-    /// 查询云服务器是否配置了自动恢复动作
-    /// </summary>
-    /// <remarks>
-    /// 查询云服务器是否配置了自动恢复动作。
-    /// </remarks>
-    /// <param name="serverId">云服务器ID。</param>
+    // 查询云服务器是否配置了自动恢复动作
+    //
+    // 查询云服务器是否配置了自动恢复动作。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ShowServerAutoRecoveryResponse> showServerAutoRecovery(
         ShowServerAutoRecoveryRequest &request
     );
-    /// <summary>
-    /// 查询弹性云服务器单个磁盘信息
-    /// </summary>
-    /// <remarks>
-    /// 查询弹性云服务器挂载的单个磁盘信息。
-    /// </remarks>
-    /// <param name="serverId">云服务器ID。</param>
-    /// <param name="volumeId">云硬盘ID，UUID格式。</param>
+    // 查询弹性云服务器单个磁盘信息
+    //
+    // 查询弹性云服务器挂载的单个磁盘信息。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ShowServerBlockDeviceResponse> showServerBlockDevice(
         ShowServerBlockDeviceRequest &request
     );
-    /// <summary>
-    /// 查询云服务器组详情
-    /// </summary>
-    /// <remarks>
-    /// 查询弹性云服务器组详情。  与原生的创建云服务器组接口不同之处在于该接口支持企业项目细粒度权限的校验。
-    /// </remarks>
-    /// <param name="serverGroupId">弹性云服务器组UUID。</param>
+    // 查询云服务器组详情
+    //
+    // 查询弹性云服务器组详情。
+    // 
+    // 与原生的创建云服务器组接口不同之处在于该接口支持企业项目细粒度权限的校验。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ShowServerGroupResponse> showServerGroup(
         ShowServerGroupRequest &request
     );
-    /// <summary>
-    /// 查询租户配额
-    /// </summary>
-    /// <remarks>
-    /// 查询租户配额信息。
-    /// </remarks>
+    // 查询租户配额
+    //
+    // 查询租户配额信息。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ShowServerLimitsResponse> showServerLimits(
         ShowServerLimitsRequest &request
     );
-    /// <summary>
-    /// 云服务器获取密码(企业项目)
-    /// </summary>
-    /// <remarks>
-    /// 当通过支持Cloudbase-init功能的镜像创建Windows云服务器时，获取云服务器初始安装时系统生成的管理员帐户（Administrator帐户或Cloudbase-init设置的帐户）随机密码。
-    /// </remarks>
-    /// <param name="serverId">云服务器ID。</param>
+    // 云服务器获取密码(企业项目)
+    //
+    // 当通过支持Cloudbase-init功能的镜像创建Windows云服务器时，获取云服务器初始安装时系统生成的管理员帐户（Administrator帐户或Cloudbase-init设置的帐户）随机密码。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ShowServerPasswordResponse> showServerPassword(
         ShowServerPasswordRequest &request
     );
-    /// <summary>
-    /// 获取VNC远程登录地址
-    /// </summary>
-    /// <remarks>
-    /// 获取弹性云服务器VNC远程登录地址。
-    /// </remarks>
-    /// <param name="serverId">云服务器ID。</param>
-    /// <param name="showServerRemoteConsoleRequestBody">This is a auto create Body Object</param>
+    // 获取VNC远程登录地址
+    //
+    // 获取弹性云服务器VNC远程登录地址。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ShowServerRemoteConsoleResponse> showServerRemoteConsole(
         ShowServerRemoteConsoleRequest &request
     );
-    /// <summary>
-    /// 查询云服务器标签
-    /// </summary>
-    /// <remarks>
-    /// - 查询指定云服务器的标签信息。  - 标签管理服务TMS使用该接口查询指定云服务器的全部标签数据。
-    /// </remarks>
-    /// <param name="serverId">云服务器ID。</param>
+    // 查询云服务器标签
+    //
+    // - 查询指定云服务器的标签信息。
+    // 
+    // - 标签管理服务TMS使用该接口查询指定云服务器的全部标签数据。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ShowServerTagsResponse> showServerTags(
         ShowServerTagsRequest &request
     );
-    /// <summary>
-    /// 修改云服务器
-    /// </summary>
-    /// <remarks>
-    /// 修改云服务器信息，目前支持修改云服务器名称及描述和hostname。
-    /// </remarks>
-    /// <param name="serverId">云服务器ID。</param>
-    /// <param name="updateServerRequestBody">This is a auto create Body Object</param>
+    // 修改云服务器
+    //
+    // 修改云服务器信息，目前支持修改云服务器名称及描述和hostname。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<UpdateServerResponse> updateServer(
         UpdateServerRequest &request
     );
-    /// <summary>
-    /// 修改云服务器销毁时间
-    /// </summary>
-    /// <remarks>
-    /// 修改按需服务器，设置定时销毁时间。如果设置的销毁时间为空，表示取消销毁时间。  该接口支持企业项目细粒度权限的校验，具体细粒度请参见 ecs:cloudServers:put。
-    /// </remarks>
-    /// <param name="serverId">云服务器ID。</param>
-    /// <param name="updateServerAutoTerminateTimeRequestBody">This is a auto create Body Object</param>
+    // 修改云服务器销毁时间
+    //
+    // 修改按需服务器，设置定时销毁时间。如果设置的销毁时间为空，表示取消销毁时间。
+    // 
+    // 该接口支持企业项目细粒度权限的校验，具体细粒度请参见 ecs:cloudServers:put。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<UpdateServerAutoTerminateTimeResponse> updateServerAutoTerminateTime(
         UpdateServerAutoTerminateTimeRequest &request
     );
-    /// <summary>
-    /// 更新云服务器元数据
-    /// </summary>
-    /// <remarks>
-    /// 更新云服务器元数据。  - 如果元数据中没有待更新字段，则自动添加该字段。  - 如果元数据中已存在待更新字段，则直接更新字段值。  - 如果元数据中的字段不再请求参数中，则保持不变
-    /// </remarks>
-    /// <param name="serverId">云服务器ID。</param>
-    /// <param name="updateServerMetadataRequestBody">This is a auto create Body Object</param>
+    // 更新云服务器元数据
+    //
+    // 更新云服务器元数据。
+    // 
+    // - 如果元数据中没有待更新字段，则自动添加该字段。
+    // 
+    // - 如果元数据中已存在待更新字段，则直接更新字段值。
+    // 
+    // - 如果元数据中的字段不再请求参数中，则保持不变
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<UpdateServerMetadataResponse> updateServerMetadata(
         UpdateServerMetadataRequest &request
     );
-    /// <summary>
-    /// 查询任务的执行状态
-    /// </summary>
-    /// <remarks>
-    /// 查询Job的执行状态。  对于创建云服务器、删除云服务器、云服务器批量操作和网卡操作等异步API，命令下发后，会返回job_id，通过job_id可以查询任务的执行状态。
-    /// </remarks>
-    /// <param name="jobId">异步请求的任务ID。</param>
+
+    // 查询任务的执行状态
+    //
+    // 查询Job的执行状态。
+    // 
+    // 对于创建云服务器、删除云服务器、云服务器批量操作和网卡操作等异步API，命令下发后，会返回job_id，通过job_id可以查询任务的执行状态。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ShowJobResponse> showJob(
         ShowJobRequest &request
     );
+
 
 private:
 #if defined(WIN32) || defined(__WIN32__) || defined(_WIN32) || defined(_MSC_VER)

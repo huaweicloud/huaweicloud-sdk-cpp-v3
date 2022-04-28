@@ -16,6 +16,8 @@ PostPaidServerPublicip::PostPaidServerPublicip()
     id_ = "";
     idIsSet_ = false;
     eipIsSet_ = false;
+    deleteOnTermination_ = false;
+    deleteOnTerminationIsSet_ = false;
 }
 
 PostPaidServerPublicip::~PostPaidServerPublicip() = default;
@@ -33,6 +35,9 @@ web::json::value PostPaidServerPublicip::toJson() const
     }
     if(eipIsSet_) {
         val[utility::conversions::to_string_t("eip")] = ModelBase::toJson(eip_);
+    }
+    if(deleteOnTerminationIsSet_) {
+        val[utility::conversions::to_string_t("delete_on_termination")] = ModelBase::toJson(deleteOnTermination_);
     }
 
     return val;
@@ -58,6 +63,15 @@ bool PostPaidServerPublicip::fromJson(const web::json::value& val)
             PostPaidServerEip refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEip(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("delete_on_termination"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("delete_on_termination"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDeleteOnTermination(refVal);
         }
     }
     return ok;
@@ -104,6 +118,27 @@ bool PostPaidServerPublicip::eipIsSet() const
 void PostPaidServerPublicip::unseteip()
 {
     eipIsSet_ = false;
+}
+
+bool PostPaidServerPublicip::isDeleteOnTermination() const
+{
+    return deleteOnTermination_;
+}
+
+void PostPaidServerPublicip::setDeleteOnTermination(bool value)
+{
+    deleteOnTermination_ = value;
+    deleteOnTerminationIsSet_ = true;
+}
+
+bool PostPaidServerPublicip::deleteOnTerminationIsSet() const
+{
+    return deleteOnTerminationIsSet_;
+}
+
+void PostPaidServerPublicip::unsetdeleteOnTermination()
+{
+    deleteOnTerminationIsSet_ = false;
 }
 
 }

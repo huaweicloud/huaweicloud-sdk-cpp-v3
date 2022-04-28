@@ -112,321 +112,272 @@ public:
 
     static ClientBuilder<FrsClient> newBuilder();
 
-    /// <summary>
-    /// 添加人脸
-    /// </summary>
-    /// <remarks>
-    /// 添加人脸到人脸库中。将单张图片中的人脸添加至人脸库中，支持添加最大人脸或所有人脸。
-    /// </remarks>
-    /// <param name="faceSetName">人脸库名称。</param>
-    /// <param name="addFacesBase64Req">This is a auto create Body Object</param>
+    // 添加人脸
+    //
+    // 添加人脸到人脸库中。将单张图片中的人脸添加至人脸库中，支持添加最大人脸或所有人脸。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<AddFacesByBase64Response> addFacesByBase64(
         AddFacesByBase64Request &request
     );
-    /// <summary>
-    /// 添加人脸
-    /// </summary>
-    /// <remarks>
-    /// 添加人脸到人脸库中。将单张图片中的人脸添加至人脸库中，支持添加最大人脸或所有人脸。
-    /// </remarks>
-    /// <param name="faceSetName">人脸库名称。</param>
-    /// <param name="imageFile">本地图片文件，图片不能超过8MB，建议小于1MB。上传文件时，请求格式为multipart。</param>
-    /// <param name="externalImageId">用户指定的图片外部ID，与当前图像绑定。用户没提供，系统会生成一个。 该ID长度范围为1～36位，可以包含字母、数字、中划线或者下划线，不包含其他的特殊字符。 (optional, default to &quot;&quot;)</param>
-    /// <param name="externalFields">根据用户自定义数据类型，填入相应的数值。 创建faceset时定义该字段，Json字符串不校验重复性，参考[自定义字段](https://support.huaweicloud.com/api-face/face_02_0012.html)。 (optional, default to &quot;&quot;)</param>
-    /// <param name="single">是否将图片中的最大人脸添加至人脸库。可选值包括: • true: 传入的单张图片中如果包含多张人脸，则只将最大人脸添加到人脸库中。 • false: 默认为false。传入的单张图片中如果包含多张人脸，则将所有人脸添加至人脸库中。 (optional, default to false)</param>
+    // 添加人脸
+    //
+    // 添加人脸到人脸库中。将单张图片中的人脸添加至人脸库中，支持添加最大人脸或所有人脸。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<AddFacesByFileResponse> addFacesByFile(
         AddFacesByFileRequest &request
     );
-    /// <summary>
-    /// 添加人脸
-    /// </summary>
-    /// <remarks>
-    /// 添加人脸到人脸库中。将单张图片中的人脸添加至人脸库中，支持添加最大人脸或所有人脸。
-    /// </remarks>
-    /// <param name="faceSetName">人脸库名称。</param>
-    /// <param name="addFacesUrlReq">This is a auto create Body Object</param>
+    // 添加人脸
+    //
+    // 添加人脸到人脸库中。将单张图片中的人脸添加至人脸库中，支持添加最大人脸或所有人脸。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<AddFacesByUrlResponse> addFacesByUrl(
         AddFacesByUrlRequest &request
     );
-    /// <summary>
-    /// 批量删除人脸
-    /// </summary>
-    /// <remarks>
-    /// 自定义筛选条件，批量删除人脸库中的符合指定条件的多张人脸。
-    /// </remarks>
-    /// <param name="faceSetName">人脸库名称。</param>
-    /// <param name="deleteFacesBatchReq">This is a auto create Body Object</param>
+    // 批量删除人脸
+    //
+    // 自定义筛选条件，批量删除人脸库中的符合指定条件的多张人脸。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<BatchDeleteFacesResponse> batchDeleteFaces(
         BatchDeleteFacesRequest &request
     );
-    /// <summary>
-    /// 人脸比对
-    /// </summary>
-    /// <remarks>
-    /// 人脸比对是将两个人脸进行比对，来判断是否为同一个人，返回比对置信度。如果传入的图片中包含多个人脸，选取最大的人脸进行比对。
-    /// </remarks>
-    /// <param name="faceCompareBase64Req">This is a auto create Body Object</param>
+    // 人脸比对
+    //
+    // 人脸比对是将两个人脸进行比对，来判断是否为同一个人，返回比对置信度。如果传入的图片中包含多个人脸，选取最大的人脸进行比对。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<CompareFaceByBase64Response> compareFaceByBase64(
         CompareFaceByBase64Request &request
     );
-    /// <summary>
-    /// 人脸比对
-    /// </summary>
-    /// <remarks>
-    /// 人脸比对是将两个人脸进行比对，来判断是否为同一个人，返回比对置信度。如果传入的图片中包含多个人脸，选取最大的人脸进行比对。
-    /// </remarks>
-    /// <param name="image1File">本地图片文件，图片不能超过8MB。上传文件时，请求格式为multipart。</param>
-    /// <param name="image2File">本地图片文件，图片不能超过8MB。上传文件时，请求格式为multipart。</param>
+    // 人脸比对
+    //
+    // 人脸比对是将两个人脸进行比对，来判断是否为同一个人，返回比对置信度。如果传入的图片中包含多个人脸，选取最大的人脸进行比对。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<CompareFaceByFileResponse> compareFaceByFile(
         CompareFaceByFileRequest &request
     );
-    /// <summary>
-    /// 人脸比对
-    /// </summary>
-    /// <remarks>
-    /// 人脸比对是将两个人脸进行比对，来判断是否为同一个人，返回比对置信度。如果传入的图片中包含多个人脸，选取最大的人脸进行比对。
-    /// </remarks>
-    /// <param name="faceCompareUrlReq">This is a auto create Body Object</param>
+    // 人脸比对
+    //
+    // 人脸比对是将两个人脸进行比对，来判断是否为同一个人，返回比对置信度。如果传入的图片中包含多个人脸，选取最大的人脸进行比对。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<CompareFaceByUrlResponse> compareFaceByUrl(
         CompareFaceByUrlRequest &request
     );
-    /// <summary>
-    /// 创建人脸库
-    /// </summary>
-    /// <remarks>
-    /// 创建用于存储人脸特征的人脸库。您最多可以创建10个人脸库，每个人脸库最大容量为10万个人脸特征。如有更大规格的需求请联系客服。
-    /// </remarks>
-    /// <param name="createFaceSetReq">This is a auto create Body Object</param>
+    // 创建人脸库
+    //
+    // 创建用于存储人脸特征的人脸库。您最多可以创建10个人脸库，每个人脸库最大容量为10万个人脸特征。如有更大规格的需求请联系客服。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<CreateFaceSetResponse> createFaceSet(
         CreateFaceSetRequest &request
     );
-    /// <summary>
-    /// 删除人脸
-    /// </summary>
-    /// <remarks>
-    /// 根据external_image_id删除人脸。
-    /// </remarks>
-    /// <param name="faceSetName">人脸库名称。</param>
-    /// <param name="externalImageId">external_image_id。</param>
+    // 删除人脸
+    //
+    // 根据external_image_id删除人脸。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<DeleteFaceByExternalImageIdResponse> deleteFaceByExternalImageId(
         DeleteFaceByExternalImageIdRequest &request
     );
-    /// <summary>
-    /// 删除人脸
-    /// </summary>
-    /// <remarks>
-    /// 根据face_id删除人脸。
-    /// </remarks>
-    /// <param name="faceSetName">人脸库名称。</param>
-    /// <param name="faceId">人脸ID。</param>
+    // 删除人脸
+    //
+    // 根据face_id删除人脸。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<DeleteFaceByFaceIdResponse> deleteFaceByFaceId(
         DeleteFaceByFaceIdRequest &request
     );
-    /// <summary>
-    /// 删除人脸库
-    /// </summary>
-    /// <remarks>
-    /// 删除人脸库以及其中所有的人脸。
-    /// </remarks>
-    /// <param name="faceSetName">人脸库名称。</param>
+    // 删除人脸库
+    //
+    // 删除人脸库以及其中所有的人脸。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<DeleteFaceSetResponse> deleteFaceSet(
         DeleteFaceSetRequest &request
     );
-    /// <summary>
-    /// 人脸检测
-    /// </summary>
-    /// <remarks>
-    /// 人脸检测是对输入图片进行人脸检测和分析，输出人脸在图像中的位置、人脸关键点位置和人脸关键属性。
-    /// </remarks>
-    /// <param name="faceDetectBase64Req">This is a auto create Body Object</param>
+    // 人脸检测
+    //
+    // 人脸检测是对输入图片进行人脸检测和分析，输出人脸在图像中的位置、人脸关键点位置和人脸关键属性。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<DetectFaceByBase64Response> detectFaceByBase64(
         DetectFaceByBase64Request &request
     );
-    /// <summary>
-    /// 人脸检测
-    /// </summary>
-    /// <remarks>
-    /// 人脸检测是对输入图片进行人脸检测和分析，输出人脸在图像中的位置、人脸关键点位置和人脸关键属性。
-    /// </remarks>
-    /// <param name="imageFile">本地图片文件，图片不能超过8MB。上传文件时，请求格式为multipart。</param>
-    /// <param name="attributes">是否返回人脸属性，希望获取的属性列表，多个属性间使用逗号（,）隔开。目前支持的属性有： • 2：年龄 • 4：装束（帽子、眼镜） • 6：口罩 • 7：发型 • 8：胡须 • 11：图片类型 • 12：质量 • 13：表情 • 21：人脸图片旋转角（顺时针偏转角度），支持0°、90°、180°和270°图片旋转 (optional, default to &quot;&quot;)</param>
+    // 人脸检测
+    //
+    // 人脸检测是对输入图片进行人脸检测和分析，输出人脸在图像中的位置、人脸关键点位置和人脸关键属性。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<DetectFaceByFileResponse> detectFaceByFile(
         DetectFaceByFileRequest &request
     );
-    /// <summary>
-    /// 人脸检测
-    /// </summary>
-    /// <remarks>
-    /// 人脸检测是对输入图片进行人脸检测和分析，输出人脸在图像中的位置、人脸关键点位置和人脸关键属性。
-    /// </remarks>
-    /// <param name="faceDetectUrlReq">This is a auto create Body Object</param>
+    // 人脸检测
+    //
+    // 人脸检测是对输入图片进行人脸检测和分析，输出人脸在图像中的位置、人脸关键点位置和人脸关键属性。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<DetectFaceByUrlResponse> detectFaceByUrl(
         DetectFaceByUrlRequest &request
     );
-    /// <summary>
-    /// 动作活体检测
-    /// </summary>
-    /// <remarks>
-    /// 动作活体检测是通过判断视频中的人物动作与传入动作列表是否一致来识别视频中人物是否为活体。如果有多张人脸出现，则选取最大的人脸进行判定。
-    /// </remarks>
-    /// <param name="liveDetectBase64Req">This is a auto create Body Object</param>
+    // 动作活体检测
+    //
+    // 动作活体检测是通过判断视频中的人物动作与传入动作列表是否一致来识别视频中人物是否为活体。如果有多张人脸出现，则选取最大的人脸进行判定。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<DetectLiveByBase64Response> detectLiveByBase64(
         DetectLiveByBase64Request &request
     );
-    /// <summary>
-    /// 动作活体检测
-    /// </summary>
-    /// <remarks>
-    /// 动作活体检测是通过判断视频中的人物动作与传入动作列表是否一致来识别视频中人物是否为活体。如果有多张人脸出现，则选取最大的人脸进行判定。
-    /// </remarks>
-    /// <param name="videoFile">本地视频文件。上传文件时，请求格式为multipart。 视频要求： • 视频文件大小不超过8MB，建议客户端压缩到200KB~2MB。 • 限制视频时长1～15秒。 • 建议帧率10fps～30fps。 • 封装格式：mp4、avi、flv、webm、asf、mov。 • 视频编码格式： h261、h263、h264、hevc、vc1、vp8、vp9、wmv3。</param>
-    /// <param name="actions">动作代码顺序列表，英文逗号（,）分隔。建议单动作，目前支持的动作有： • 1：左摇头 • 2：右摇头 • 3：点头 • 4：嘴部动作</param>
-    /// <param name="actionTime">该参数为动作时间数组拼接的字符串，数组的长度和actions的数量一致，每一项代表了对应次序动作的起始时间和结束时间，单位为距视频开始的毫秒数。 (optional, default to &quot;&quot;)</param>
+    // 动作活体检测
+    //
+    // 动作活体检测是通过判断视频中的人物动作与传入动作列表是否一致来识别视频中人物是否为活体。如果有多张人脸出现，则选取最大的人脸进行判定。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<DetectLiveByFileResponse> detectLiveByFile(
         DetectLiveByFileRequest &request
     );
-    /// <summary>
-    /// 动作活体检测
-    /// </summary>
-    /// <remarks>
-    /// 动作活体检测是通过判断视频中的人物动作与传入动作列表是否一致来识别视频中人物是否为活体。如果有多张人脸出现，则选取最大的人脸进行判定。
-    /// </remarks>
-    /// <param name="liveDetectUrlReq">This is a auto create Body Object</param>
+    // 动作活体检测
+    //
+    // 动作活体检测是通过判断视频中的人物动作与传入动作列表是否一致来识别视频中人物是否为活体。如果有多张人脸出现，则选取最大的人脸进行判定。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<DetectLiveByUrlResponse> detectLiveByUrl(
         DetectLiveByUrlRequest &request
     );
-    /// <summary>
-    /// 静默活体检测
-    /// </summary>
-    /// <remarks>
-    /// 静默活体检测是基于人脸图片中可能存在的畸变、摩尔纹、反光、倒影、边框等信息，判断图片中的人脸是否来自于真人活体，有效抵御纸质翻拍照、电子翻拍照以及视频翻拍等各种攻击方式。静默活体检测支持单张图片，不支持多人脸图片。
-    /// </remarks>
-    /// <param name="liveDetectFaceBase64Req">This is a auto create Body Object</param>
+    // 静默活体检测
+    //
+    // 静默活体检测是基于人脸图片中可能存在的畸变、摩尔纹、反光、倒影、边框等信息，判断图片中的人脸是否来自于真人活体，有效抵御纸质翻拍照、电子翻拍照以及视频翻拍等各种攻击方式。静默活体检测支持单张图片，不支持多人脸图片。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<DetectLiveFaceByBase64Response> detectLiveFaceByBase64(
         DetectLiveFaceByBase64Request &request
     );
-    /// <summary>
-    /// 静默活体检测
-    /// </summary>
-    /// <remarks>
-    /// 静默活体检测是基于人脸图片中可能存在的畸变、摩尔纹、反光、倒影、边框等信息，判断图片中的人脸是否来自于真人活体，有效抵御纸质翻拍照、电子翻拍照以及视频翻拍等各种攻击方式。静默活体检测支持单张图片，不支持多人脸图片。
-    /// </remarks>
-    /// <param name="imageFile">本地图片文件。上传文件时，请求格式为multipart。</param>
+    // 静默活体检测
+    //
+    // 静默活体检测是基于人脸图片中可能存在的畸变、摩尔纹、反光、倒影、边框等信息，判断图片中的人脸是否来自于真人活体，有效抵御纸质翻拍照、电子翻拍照以及视频翻拍等各种攻击方式。静默活体检测支持单张图片，不支持多人脸图片。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<DetectLiveFaceByFileResponse> detectLiveFaceByFile(
         DetectLiveFaceByFileRequest &request
     );
-    /// <summary>
-    /// 静默活体检测
-    /// </summary>
-    /// <remarks>
-    /// 静默活体检测是基于人脸图片中可能存在的畸变、摩尔纹、反光、倒影、边框等信息，判断图片中的人脸是否来自于真人活体，有效抵御纸质翻拍照、电子翻拍照以及视频翻拍等各种攻击方式。静默活体检测支持单张图片，不支持多人脸图片。
-    /// </remarks>
-    /// <param name="liveDetectFaceUrlReq">This is a auto create Body Object</param>
+    // 静默活体检测
+    //
+    // 静默活体检测是基于人脸图片中可能存在的畸变、摩尔纹、反光、倒影、边框等信息，判断图片中的人脸是否来自于真人活体，有效抵御纸质翻拍照、电子翻拍照以及视频翻拍等各种攻击方式。静默活体检测支持单张图片，不支持多人脸图片。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<DetectLiveFaceByUrlResponse> detectLiveFaceByUrl(
         DetectLiveFaceByUrlRequest &request
     );
-    /// <summary>
-    /// 人脸搜索
-    /// </summary>
-    /// <remarks>
-    /// 人脸搜索是指在已有的人脸库中，查询与目标人脸相似的一张或者多张人脸，并返回相应的置信度。 支持传入图片或者faceID进行人脸搜索，如果传入的是多张人脸图片，选取图片中检测到的最大尺寸人脸作为检索的输入。
-    /// </remarks>
-    /// <param name="faceSetName">人脸库名称。</param>
-    /// <param name="faceSearchBase64Req">This is a auto create Body Object</param>
+    // 人脸搜索
+    //
+    // 人脸搜索是指在已有的人脸库中，查询与目标人脸相似的一张或者多张人脸，并返回相应的置信度。
+    // 支持传入图片或者faceID进行人脸搜索，如果传入的是多张人脸图片，选取图片中检测到的最大尺寸人脸作为检索的输入。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<SearchFaceByBase64Response> searchFaceByBase64(
         SearchFaceByBase64Request &request
     );
-    /// <summary>
-    /// 人脸搜索
-    /// </summary>
-    /// <remarks>
-    /// 人脸搜索是指在已有的人脸库中，查询与目标人脸相似的一张或者多张人脸，并返回相应的置信度。 支持传入图片或者faceID进行人脸搜索，如果传入的是多张人脸图片，选取图片中检测到的最大尺寸人脸作为检索的输入。
-    /// </remarks>
-    /// <param name="faceSetName">人脸库名称。</param>
-    /// <param name="faceSearchFaceIdReq">This is a auto create Body Object</param>
+    // 人脸搜索
+    //
+    // 人脸搜索是指在已有的人脸库中，查询与目标人脸相似的一张或者多张人脸，并返回相应的置信度。
+    // 支持传入图片或者faceID进行人脸搜索，如果传入的是多张人脸图片，选取图片中检测到的最大尺寸人脸作为检索的输入。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<SearchFaceByFaceIdResponse> searchFaceByFaceId(
         SearchFaceByFaceIdRequest &request
     );
-    /// <summary>
-    /// 人脸搜索
-    /// </summary>
-    /// <remarks>
-    /// 人脸搜索是指在已有的人脸库中，查询与目标人脸相似的一张或者多张人脸，并返回相应的置信度。 支持传入图片或者faceID进行人脸搜索，如果传入的是多张人脸图片，选取图片中检测到的最大尺寸人脸作为检索的输入。
-    /// </remarks>
-    /// <param name="faceSetName">人脸库名称。</param>
-    /// <param name="imageFile">本地图片文件，图片不能超过8MB,建议小于1MB。上传文件时，请求格式为multipart。  必选，与image_url、image_base64、face_id四选一。</param>
-    /// <param name="topN">返回查询到的最相似的N张人脸，N默认为10。 (optional, default to 0)</param>
-    /// <param name="threshold">人脸相似度阈值，低于这个阈值则不返回，取值范围0~1，一般情况下建议取值0.93，默认为0。 (optional, default to 0.0)</param>
-    /// <param name="sort">支持字段排序，参考[sort语法](https://support.huaweicloud.com/api-face/face_02_0013.html)。 (optional, default to &quot;&quot;)</param>
-    /// <param name="filter">过滤条件，参考[filter语法](https://support.huaweicloud.com/api-face/face_02_0014.html)。 (optional, default to &quot;&quot;)</param>
-    /// <param name="returnFields">指定返回的自定义字段。 (optional, default to &quot;&quot;)</param>
+    // 人脸搜索
+    //
+    // 人脸搜索是指在已有的人脸库中，查询与目标人脸相似的一张或者多张人脸，并返回相应的置信度。
+    // 支持传入图片或者faceID进行人脸搜索，如果传入的是多张人脸图片，选取图片中检测到的最大尺寸人脸作为检索的输入。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<SearchFaceByFileResponse> searchFaceByFile(
         SearchFaceByFileRequest &request
     );
-    /// <summary>
-    /// 人脸搜索
-    /// </summary>
-    /// <remarks>
-    /// 人脸搜索是指在已有的人脸库中，查询与目标人脸相似的一张或者多张人脸，并返回相应的置信度。 支持传入图片或者faceID进行人脸搜索，如果传入的是多张人脸图片，选取图片中检测到的最大尺寸人脸作为检索的输入。
-    /// </remarks>
-    /// <param name="faceSetName">人脸库名称。</param>
-    /// <param name="faceSearchUrlReq">This is a auto create Body Object</param>
+    // 人脸搜索
+    //
+    // 人脸搜索是指在已有的人脸库中，查询与目标人脸相似的一张或者多张人脸，并返回相应的置信度。
+    // 支持传入图片或者faceID进行人脸搜索，如果传入的是多张人脸图片，选取图片中检测到的最大尺寸人脸作为检索的输入。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<SearchFaceByUrlResponse> searchFaceByUrl(
         SearchFaceByUrlRequest &request
     );
-    /// <summary>
-    /// 查询所有人脸库
-    /// </summary>
-    /// <remarks>
-    /// 查询当前用户所有人脸库的状态信息。
-    /// </remarks>
+    // 查询所有人脸库
+    //
+    // 查询当前用户所有人脸库的状态信息。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ShowAllFaceSetsResponse> showAllFaceSets(
         ShowAllFaceSetsRequest &request
     );
-    /// <summary>
-    /// 查询人脸库
-    /// </summary>
-    /// <remarks>
-    /// 查询人脸库当前的状态。
-    /// </remarks>
-    /// <param name="faceSetName">人脸库名称。</param>
+    // 查询人脸库
+    //
+    // 查询人脸库当前的状态。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ShowFaceSetResponse> showFaceSet(
         ShowFaceSetRequest &request
     );
-    /// <summary>
-    /// 查询人脸
-    /// </summary>
-    /// <remarks>
-    /// 查询指定人脸库中人脸信息。
-    /// </remarks>
-    /// <param name="faceSetName">人脸库名称。</param>
-    /// <param name="faceId">人脸ID。</param>
+    // 查询人脸
+    //
+    // 查询指定人脸库中人脸信息。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ShowFacesByFaceIdResponse> showFacesByFaceId(
         ShowFacesByFaceIdRequest &request
     );
-    /// <summary>
-    /// 查询人脸
-    /// </summary>
-    /// <remarks>
-    /// 查询指定人脸库中人脸信息。
-    /// </remarks>
-    /// <param name="faceSetName">人脸库名称。</param>
-    /// <param name="offset">从第几条数据读起，默认为0。</param>
-    /// <param name="limit">读取多少条，默认为5。</param>
+    // 查询人脸
+    //
+    // 查询指定人脸库中人脸信息。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ShowFacesByLimitResponse> showFacesByLimit(
         ShowFacesByLimitRequest &request
     );
-    /// <summary>
-    /// 更新人脸
-    /// </summary>
-    /// <remarks>
-    /// 根据人脸ID（face_id）更新单张人脸信息。
-    /// </remarks>
-    /// <param name="faceSetName">人脸库名称。</param>
-    /// <param name="updateFaceReq">This is a auto create Body Object</param>
+    // 更新人脸
+    //
+    // 根据人脸ID（face_id）更新单张人脸信息。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<UpdateFaceResponse> updateFace(
         UpdateFaceRequest &request
     );
+
 
 private:
 #if defined(WIN32) || defined(__WIN32__) || defined(_WIN32) || defined(_MSC_VER)

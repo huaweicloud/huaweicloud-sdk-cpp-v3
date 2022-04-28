@@ -1,3 +1,14 @@
+# 3.0.28-beta 2022-04-28
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - None
+- _Bug Fix_
+  - Fix the problem that the response body's type of the interface `RecognizeMyanmarDriverLicense` is incorrect.
+- _Change_
+  - None
+
 # 3.0.27-beta 2022-04-14
 
 ### HuaweiCloud SDK CSMS

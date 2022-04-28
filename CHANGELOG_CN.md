@@ -1,3 +1,14 @@
+# 3.0.28-beta 2022-04-28
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 修复接口`RecognizeMyanmarDriverLicense`的响应体类型错误的问题
+- _特性变更_
+  - 无
+
 # 3.0.27-beta 2022-04-14
 
 ### HuaweiCloud SDK CSMS

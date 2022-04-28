@@ -8,7 +8,6 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/core/utils/Object.h>
-#include <huaweicloud/ocr/v1/model/DriverLicenseResult_status.h>
 #include <string>
 #include <vector>
 
@@ -181,10 +180,10 @@ public:
     /// 状态。
     /// </summary>
 
-    std::vector<DriverLicenseResult_status>& getStatus();
+    std::vector<std::string>& getStatus();
     bool statusIsSet() const;
     void unsetstatus();
-    void setStatus(const std::vector<DriverLicenseResult_status>& value);
+    void setStatus(const std::vector<std::string>& value);
 
     /// <summary>
     /// 生成时间。 
@@ -245,7 +244,7 @@ protected:
     bool recordIsSet_;
     std::string accumulatedScores_;
     bool accumulatedScoresIsSet_;
-    std::vector<DriverLicenseResult_status> status_;
+    std::vector<std::string> status_;
     bool statusIsSet_;
     std::string generationDate_;
     bool generationDateIsSet_;

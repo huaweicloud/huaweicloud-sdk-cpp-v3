@@ -1,3 +1,29 @@
+# 3.0.29-beta 2022-05-12
+
+### HuaweiCloud SDK FRS
+
+- _Features_
+  - Support the following interfaces£º
+    - `DetectLiveByUrlIntl`
+    - `DetectLiveByFileIntl`
+    - `DetectLiveByBase64Intl`
+    - `DetectFaceByFileIntl`
+    - `DetectFaceByUrlIntl`
+    - `DetectFaceByBase64Intl`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - Support the interface `RecognizeHealthCode`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.0.28-beta 2022-04-28
 
 ### HuaweiCloud SDK OCR

@@ -17,6 +17,7 @@
 #include <huaweicloud/ocr/v1/model/GeneralTableRequestBody.h>
 #include <huaweicloud/ocr/v1/model/GeneralTextRequestBody.h>
 #include <huaweicloud/ocr/v1/model/HandwritingRequestBody.h>
+#include <huaweicloud/ocr/v1/model/HealthCodeRequestBody.h>
 #include <huaweicloud/ocr/v1/model/IdCardRequestBody.h>
 #include <huaweicloud/ocr/v1/model/InsurancePolicyRequestBody.h>
 #include <huaweicloud/ocr/v1/model/InvoiceVerificationRequestBody.h>
@@ -49,6 +50,8 @@
 #include <huaweicloud/ocr/v1/model/RecognizeGeneralTextResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeHandwritingRequest.h>
 #include <huaweicloud/ocr/v1/model/RecognizeHandwritingResponse.h>
+#include <huaweicloud/ocr/v1/model/RecognizeHealthCodeRequest.h>
+#include <huaweicloud/ocr/v1/model/RecognizeHealthCodeResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeIdCardRequest.h>
 #include <huaweicloud/ocr/v1/model/RecognizeIdCardResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeInsurancePolicyRequest.h>
@@ -245,6 +248,15 @@ public:
     // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<RecognizeHandwritingResponse> recognizeHandwriting(
         RecognizeHandwritingRequest &request
+    );
+    // 防疫健康码识别
+    //
+    // 识别防疫健康码中的文字信息，并将识别的结构化结果返回给用户。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
+    std::shared_ptr<RecognizeHealthCodeResponse> recognizeHealthCode(
+        RecognizeHealthCodeRequest &request
     );
     // 身份证识别
     //

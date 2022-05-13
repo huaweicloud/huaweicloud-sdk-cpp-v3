@@ -34,18 +34,32 @@
 #include <huaweicloud/frs/v2/model/DeleteFaceSetRequest.h>
 #include <huaweicloud/frs/v2/model/DeleteFaceSetResponse.h>
 #include <huaweicloud/frs/v2/model/DeleteFacesBatchReq.h>
+#include <huaweicloud/frs/v2/model/DetectFaceByBase64IntlRequest.h>
+#include <huaweicloud/frs/v2/model/DetectFaceByBase64IntlResponse.h>
 #include <huaweicloud/frs/v2/model/DetectFaceByBase64Request.h>
 #include <huaweicloud/frs/v2/model/DetectFaceByBase64Response.h>
+#include <huaweicloud/frs/v2/model/DetectFaceByFileIntlRequest.h>
+#include <huaweicloud/frs/v2/model/DetectFaceByFileIntlRequestBody.h>
+#include <huaweicloud/frs/v2/model/DetectFaceByFileIntlResponse.h>
 #include <huaweicloud/frs/v2/model/DetectFaceByFileRequest.h>
 #include <huaweicloud/frs/v2/model/DetectFaceByFileRequestBody.h>
 #include <huaweicloud/frs/v2/model/DetectFaceByFileResponse.h>
+#include <huaweicloud/frs/v2/model/DetectFaceByUrlIntlRequest.h>
+#include <huaweicloud/frs/v2/model/DetectFaceByUrlIntlResponse.h>
 #include <huaweicloud/frs/v2/model/DetectFaceByUrlRequest.h>
 #include <huaweicloud/frs/v2/model/DetectFaceByUrlResponse.h>
+#include <huaweicloud/frs/v2/model/DetectLiveByBase64IntlRequest.h>
+#include <huaweicloud/frs/v2/model/DetectLiveByBase64IntlResponse.h>
 #include <huaweicloud/frs/v2/model/DetectLiveByBase64Request.h>
 #include <huaweicloud/frs/v2/model/DetectLiveByBase64Response.h>
+#include <huaweicloud/frs/v2/model/DetectLiveByFileIntlRequest.h>
+#include <huaweicloud/frs/v2/model/DetectLiveByFileIntlRequestBody.h>
+#include <huaweicloud/frs/v2/model/DetectLiveByFileIntlResponse.h>
 #include <huaweicloud/frs/v2/model/DetectLiveByFileRequest.h>
 #include <huaweicloud/frs/v2/model/DetectLiveByFileRequestBody.h>
 #include <huaweicloud/frs/v2/model/DetectLiveByFileResponse.h>
+#include <huaweicloud/frs/v2/model/DetectLiveByUrlIntlRequest.h>
+#include <huaweicloud/frs/v2/model/DetectLiveByUrlIntlResponse.h>
 #include <huaweicloud/frs/v2/model/DetectLiveByUrlRequest.h>
 #include <huaweicloud/frs/v2/model/DetectLiveByUrlResponse.h>
 #include <huaweicloud/frs/v2/model/DetectLiveFaceByBase64Request.h>
@@ -226,6 +240,15 @@ public:
     // 
     // 详细说明请参考华为云API Explorer。
     // Please refer to Huawei cloud API Explorer for details.
+    std::shared_ptr<DetectFaceByBase64IntlResponse> detectFaceByBase64Intl(
+        DetectFaceByBase64IntlRequest &request
+    );
+    // 人脸检测
+    //
+    // 人脸检测是对输入图片进行人脸检测和分析，输出人脸在图像中的位置、人脸关键点位置和人脸关键属性。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<DetectFaceByFileResponse> detectFaceByFile(
         DetectFaceByFileRequest &request
     );
@@ -235,8 +258,26 @@ public:
     // 
     // 详细说明请参考华为云API Explorer。
     // Please refer to Huawei cloud API Explorer for details.
+    std::shared_ptr<DetectFaceByFileIntlResponse> detectFaceByFileIntl(
+        DetectFaceByFileIntlRequest &request
+    );
+    // 人脸检测
+    //
+    // 人脸检测是对输入图片进行人脸检测和分析，输出人脸在图像中的位置、人脸关键点位置和人脸关键属性。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<DetectFaceByUrlResponse> detectFaceByUrl(
         DetectFaceByUrlRequest &request
+    );
+    // 人脸检测
+    //
+    // 人脸检测是对输入图片进行人脸检测和分析，输出人脸在图像中的位置、人脸关键点位置和人脸关键属性。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
+    std::shared_ptr<DetectFaceByUrlIntlResponse> detectFaceByUrlIntl(
+        DetectFaceByUrlIntlRequest &request
     );
     // 动作活体检测
     //
@@ -253,6 +294,15 @@ public:
     // 
     // 详细说明请参考华为云API Explorer。
     // Please refer to Huawei cloud API Explorer for details.
+    std::shared_ptr<DetectLiveByBase64IntlResponse> detectLiveByBase64Intl(
+        DetectLiveByBase64IntlRequest &request
+    );
+    // 动作活体检测
+    //
+    // 动作活体检测是通过判断视频中的人物动作与传入动作列表是否一致来识别视频中人物是否为活体。如果有多张人脸出现，则选取最大的人脸进行判定。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<DetectLiveByFileResponse> detectLiveByFile(
         DetectLiveByFileRequest &request
     );
@@ -262,8 +312,26 @@ public:
     // 
     // 详细说明请参考华为云API Explorer。
     // Please refer to Huawei cloud API Explorer for details.
+    std::shared_ptr<DetectLiveByFileIntlResponse> detectLiveByFileIntl(
+        DetectLiveByFileIntlRequest &request
+    );
+    // 动作活体检测
+    //
+    // 动作活体检测是通过判断视频中的人物动作与传入动作列表是否一致来识别视频中人物是否为活体。如果有多张人脸出现，则选取最大的人脸进行判定。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<DetectLiveByUrlResponse> detectLiveByUrl(
         DetectLiveByUrlRequest &request
+    );
+    // 动作活体检测
+    //
+    // 动作活体检测是通过判断视频中的人物动作与传入动作列表是否一致来识别视频中人物是否为活体。如果有多张人脸出现，则选取最大的人脸进行判定。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
+    std::shared_ptr<DetectLiveByUrlIntlResponse> detectLiveByUrlIntl(
+        DetectLiveByUrlIntlRequest &request
     );
     // 静默活体检测
     //

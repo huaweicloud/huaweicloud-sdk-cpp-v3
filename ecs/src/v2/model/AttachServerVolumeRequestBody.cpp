@@ -14,6 +14,8 @@ namespace Model {
 AttachServerVolumeRequestBody::AttachServerVolumeRequestBody()
 {
     volumeAttachmentIsSet_ = false;
+    dryRun_ = false;
+    dryRunIsSet_ = false;
 }
 
 AttachServerVolumeRequestBody::~AttachServerVolumeRequestBody() = default;
@@ -28,6 +30,9 @@ web::json::value AttachServerVolumeRequestBody::toJson() const
 
     if(volumeAttachmentIsSet_) {
         val[utility::conversions::to_string_t("volumeAttachment")] = ModelBase::toJson(volumeAttachment_);
+    }
+    if(dryRunIsSet_) {
+        val[utility::conversions::to_string_t("dry_run")] = ModelBase::toJson(dryRun_);
     }
 
     return val;
@@ -44,6 +49,15 @@ bool AttachServerVolumeRequestBody::fromJson(const web::json::value& val)
             AttachServerVolumeOption refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setVolumeAttachment(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("dry_run"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("dry_run"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDryRun(refVal);
         }
     }
     return ok;
@@ -69,6 +83,27 @@ bool AttachServerVolumeRequestBody::volumeAttachmentIsSet() const
 void AttachServerVolumeRequestBody::unsetvolumeAttachment()
 {
     volumeAttachmentIsSet_ = false;
+}
+
+bool AttachServerVolumeRequestBody::isDryRun() const
+{
+    return dryRun_;
+}
+
+void AttachServerVolumeRequestBody::setDryRun(bool value)
+{
+    dryRun_ = value;
+    dryRunIsSet_ = true;
+}
+
+bool AttachServerVolumeRequestBody::dryRunIsSet() const
+{
+    return dryRunIsSet_;
+}
+
+void AttachServerVolumeRequestBody::unsetdryRun()
+{
+    dryRunIsSet_ = false;
 }
 
 }

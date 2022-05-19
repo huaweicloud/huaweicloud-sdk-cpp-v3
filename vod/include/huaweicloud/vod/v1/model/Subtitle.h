@@ -58,7 +58,7 @@ public:
     void setType(const std::string& value);
 
     /// <summary>
-    /// 字幕语音类型。  取值如下： - CN：表示中文字幕。 - EN：表示英文字幕。
+    /// 字幕语言类型。  取值如下： - CN：表示中文字幕。 - EN：表示英文字幕。
     /// </summary>
 
     std::string getLanguage() const;

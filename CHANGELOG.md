@@ -1,3 +1,42 @@
+# 3.0.30-beta 2022-05-19
+
+### HuaweiCloud SDK ECS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the request parameter `dry_run` to the interface `ResizeServer`
+  - Add the request parameter `dry_run` to the interface `ResizePostPaidServer`
+  - Add the request parameter `dry_run` to the interface `AttachServerVolume`
+
+### HuaweiCloud SDK VOD
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the enum values `M3U8` to the request parameter `video_type` to the interface `UploadMetaDataByUrl`
+  - Add the response parameter `sign_url` to the interface `PublishAssets`
+  - Add the response parameter `sign_url` to the interface `UnpublishAssets`
+  - Add the response parameter `sign_url` to the interface `ShowAssetMeta`
+  - Add the response parameter `sign_url` to the interface `ShowAssetDetail`
+  - Add the response parameter `sign_url` to the interface `ShowTakeOverTaskDetails`
+  - Add the response parameter `sign_url` to the interface `ShowTakeOverAssetDetails`
+
+### HuaweiCloud SDK VPC
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the enum values `neutron:VIP_PORT`, Remove the enum values `network:VIP_PORT` from the response parameter `device_owner` to the interface `ListPorts`
+  - Add the enum values `neutron:VIP_PORT`, Remove the enum values `network:VIP_PORT` from the response parameter `device_owner` to the interface `UpdatePort`
+  - Add the enum values `neutron:VIP_PORT`, Remove the enum values `network:VIP_PORT` from the response parameter `device_owner` to the interface `ShowPort`
+
 # 3.0.29-beta 2022-05-12
 
 ### HuaweiCloud SDK FRS

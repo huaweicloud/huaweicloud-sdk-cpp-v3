@@ -26,6 +26,7 @@
 #include <huaweicloud/ocr/v1/model/MyanmarDriverLicenseRequestBody.h>
 #include <huaweicloud/ocr/v1/model/MyanmarIdcardRequestBody.h>
 #include <huaweicloud/ocr/v1/model/PassportRequestBody.h>
+#include <huaweicloud/ocr/v1/model/PcrTestRecordRequestBody.h>
 #include <huaweicloud/ocr/v1/model/QualificationCertificateRequestBody.h>
 #include <huaweicloud/ocr/v1/model/QuotaInvoiceRequestBody.h>
 #include <huaweicloud/ocr/v1/model/RecognizeAutoClassificationRequest.h>
@@ -68,6 +69,8 @@
 #include <huaweicloud/ocr/v1/model/RecognizeMyanmarIdcardResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizePassportRequest.h>
 #include <huaweicloud/ocr/v1/model/RecognizePassportResponse.h>
+#include <huaweicloud/ocr/v1/model/RecognizePcrTestRecordRequest.h>
+#include <huaweicloud/ocr/v1/model/RecognizePcrTestRecordResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeQualificationCertificateRequest.h>
 #include <huaweicloud/ocr/v1/model/RecognizeQualificationCertificateResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeQuotaInvoiceRequest.h>
@@ -345,6 +348,15 @@ public:
     // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<RecognizePassportResponse> recognizePassport(
         RecognizePassportRequest &request
+    );
+    // 核酸检测记录
+    //
+    // 识别核酸检测记录中的文字信息，并将识别的结构化结果返回给用户。PCR，全称Polymerase chain reaction,即聚合酶链式反应.PCR-test也为大众所认知为新型冠状病毒核酸检测测试。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
+    std::shared_ptr<RecognizePcrTestRecordResponse> recognizePcrTestRecord(
+        RecognizePcrTestRecordRequest &request
     );
     // 从业资格证识别
     //

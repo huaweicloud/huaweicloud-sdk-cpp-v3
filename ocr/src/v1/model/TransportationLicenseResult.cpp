@@ -21,8 +21,8 @@ TransportationLicenseResult::TransportationLicenseResult()
     vehicleNumberIsSet_ = false;
     vehicleType_ = "";
     vehicleTypeIsSet_ = false;
-    vehicleWeight_ = "";
-    vehicleWeightIsSet_ = false;
+    maximumCapacity_ = "";
+    maximumCapacityIsSet_ = false;
     vehicleSize_ = "";
     vehicleSizeIsSet_ = false;
     issuingAuthority_ = "";
@@ -62,8 +62,8 @@ web::json::value TransportationLicenseResult::toJson() const
     if(vehicleTypeIsSet_) {
         val[utility::conversions::to_string_t("vehicle_type")] = ModelBase::toJson(vehicleType_);
     }
-    if(vehicleWeightIsSet_) {
-        val[utility::conversions::to_string_t("vehicle_weight")] = ModelBase::toJson(vehicleWeight_);
+    if(maximumCapacityIsSet_) {
+        val[utility::conversions::to_string_t("maximum_capacity")] = ModelBase::toJson(maximumCapacity_);
     }
     if(vehicleSizeIsSet_) {
         val[utility::conversions::to_string_t("vehicle_size")] = ModelBase::toJson(vehicleSize_);
@@ -133,13 +133,13 @@ bool TransportationLicenseResult::fromJson(const web::json::value& val)
             setVehicleType(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("vehicle_weight"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("vehicle_weight"));
+    if(val.has_field(utility::conversions::to_string_t("maximum_capacity"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("maximum_capacity"));
         if(!fieldValue.is_null())
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setVehicleWeight(refVal);
+            setMaximumCapacity(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("vehicle_size"))) {
@@ -302,25 +302,25 @@ void TransportationLicenseResult::unsetvehicleType()
     vehicleTypeIsSet_ = false;
 }
 
-std::string TransportationLicenseResult::getVehicleWeight() const
+std::string TransportationLicenseResult::getMaximumCapacity() const
 {
-    return vehicleWeight_;
+    return maximumCapacity_;
 }
 
-void TransportationLicenseResult::setVehicleWeight(const std::string& value)
+void TransportationLicenseResult::setMaximumCapacity(const std::string& value)
 {
-    vehicleWeight_ = value;
-    vehicleWeightIsSet_ = true;
+    maximumCapacity_ = value;
+    maximumCapacityIsSet_ = true;
 }
 
-bool TransportationLicenseResult::vehicleWeightIsSet() const
+bool TransportationLicenseResult::maximumCapacityIsSet() const
 {
-    return vehicleWeightIsSet_;
+    return maximumCapacityIsSet_;
 }
 
-void TransportationLicenseResult::unsetvehicleWeight()
+void TransportationLicenseResult::unsetmaximumCapacity()
 {
-    vehicleWeightIsSet_ = false;
+    maximumCapacityIsSet_ = false;
 }
 
 std::string TransportationLicenseResult::getVehicleSize() const

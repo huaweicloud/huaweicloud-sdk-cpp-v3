@@ -14,6 +14,8 @@ namespace Model {
 ResizeServerRequestBody::ResizeServerRequestBody()
 {
     resizeIsSet_ = false;
+    dryRun_ = false;
+    dryRunIsSet_ = false;
 }
 
 ResizeServerRequestBody::~ResizeServerRequestBody() = default;
@@ -28,6 +30,9 @@ web::json::value ResizeServerRequestBody::toJson() const
 
     if(resizeIsSet_) {
         val[utility::conversions::to_string_t("resize")] = ModelBase::toJson(resize_);
+    }
+    if(dryRunIsSet_) {
+        val[utility::conversions::to_string_t("dry_run")] = ModelBase::toJson(dryRun_);
     }
 
     return val;
@@ -44,6 +49,15 @@ bool ResizeServerRequestBody::fromJson(const web::json::value& val)
             ResizePrePaidServerOption refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResize(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("dry_run"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("dry_run"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDryRun(refVal);
         }
     }
     return ok;
@@ -69,6 +83,27 @@ bool ResizeServerRequestBody::resizeIsSet() const
 void ResizeServerRequestBody::unsetresize()
 {
     resizeIsSet_ = false;
+}
+
+bool ResizeServerRequestBody::isDryRun() const
+{
+    return dryRun_;
+}
+
+void ResizeServerRequestBody::setDryRun(bool value)
+{
+    dryRun_ = value;
+    dryRunIsSet_ = true;
+}
+
+bool ResizeServerRequestBody::dryRunIsSet() const
+{
+    return dryRunIsSet_;
+}
+
+void ResizeServerRequestBody::unsetdryRun()
+{
+    dryRunIsSet_ = false;
 }
 
 }

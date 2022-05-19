@@ -144,6 +144,15 @@ public:
     void setVideoUrl(const std::string& value);
 
     /// <summary>
+    /// 原视频文件的OBS临时访问地址,仅媒资详情接口生效
+    /// </summary>
+
+    std::string getSignUrl() const;
+    bool signUrlIsSet() const;
+    void unsetsignUrl();
+    void setSignUrl(const std::string& value);
+
+    /// <summary>
     /// 封面信息。
     /// </summary>
 
@@ -203,6 +212,8 @@ protected:
     bool metaDataIsSet_;
     std::string videoUrl_;
     bool videoUrlIsSet_;
+    std::string signUrl_;
+    bool signUrlIsSet_;
     std::vector<CoverInfo> coverInfoArray_;
     bool coverInfoArrayIsSet_;
     std::vector<SubtitleInfo> subtitleInfo_;

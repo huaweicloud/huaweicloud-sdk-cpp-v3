@@ -110,7 +110,7 @@ public:
     void setDeviceId(const std::string& value);
 
     /// <summary>
-    /// 功能说明：设备所属 取值范围：合法设备所属，如network:dhcp、network:VIP_PORT、network:router_interface_distributed、network:router_centralized_snat 约束：不支持设置和更新，由系统自动维护
+    /// 功能说明：设备所属 取值范围：合法设备所属，如network:dhcp、neutron:VIP_PORT、network:router_interface_distributed、network:router_centralized_snat 约束：不支持设置和更新，由系统自动维护
     /// </summary>
 
     std::string getDeviceOwner() const;

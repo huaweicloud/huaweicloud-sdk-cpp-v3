@@ -34,6 +34,8 @@ BaseInfo::BaseInfo()
     metaDataIsSet_ = false;
     videoUrl_ = "";
     videoUrlIsSet_ = false;
+    signUrl_ = "";
+    signUrlIsSet_ = false;
     coverInfoArrayIsSet_ = false;
     subtitleInfoIsSet_ = false;
     sourcePathIsSet_ = false;
@@ -82,6 +84,9 @@ web::json::value BaseInfo::toJson() const
     }
     if(videoUrlIsSet_) {
         val[utility::conversions::to_string_t("video_url")] = ModelBase::toJson(videoUrl_);
+    }
+    if(signUrlIsSet_) {
+        val[utility::conversions::to_string_t("sign_url")] = ModelBase::toJson(signUrl_);
     }
     if(coverInfoArrayIsSet_) {
         val[utility::conversions::to_string_t("cover_info_array")] = ModelBase::toJson(coverInfoArray_);
@@ -200,6 +205,15 @@ bool BaseInfo::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setVideoUrl(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("sign_url"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sign_url"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSignUrl(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("cover_info_array"))) {
@@ -471,6 +485,27 @@ bool BaseInfo::videoUrlIsSet() const
 void BaseInfo::unsetvideoUrl()
 {
     videoUrlIsSet_ = false;
+}
+
+std::string BaseInfo::getSignUrl() const
+{
+    return signUrl_;
+}
+
+void BaseInfo::setSignUrl(const std::string& value)
+{
+    signUrl_ = value;
+    signUrlIsSet_ = true;
+}
+
+bool BaseInfo::signUrlIsSet() const
+{
+    return signUrlIsSet_;
+}
+
+void BaseInfo::unsetsignUrl()
+{
+    signUrlIsSet_ = false;
 }
 
 std::vector<CoverInfo>& BaseInfo::getCoverInfoArray()

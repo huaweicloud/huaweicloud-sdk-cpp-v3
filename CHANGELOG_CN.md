@@ -1,3 +1,42 @@
+# 3.0.30-beta 2022-05-19
+
+### HuaweiCloud SDK ECS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ResizeServer`新增请求参数 `dry_run`
+  - 接口`ResizePostPaidServer`新增请求参数 `dry_run`
+  - 接口`AttachServerVolume`新增请求参数 `dry_run`
+
+### HuaweiCloud SDK VOD
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`UploadMetaDataByUrl`请求参数`video_type`新增枚举值`M3U8`
+  - 接口`PublishAssets`新增响应参数 `sign_url`
+  - 接口`UnpublishAssets`新增响应参数 `sign_url`
+  - 接口`ShowAssetMeta`新增响应参数 `sign_url`
+  - 接口`ShowAssetDetail`新增响应参数 `sign_url`
+  - 接口`ShowTakeOverTaskDetails`新增响应参数 `sign_url`
+  - 接口`ShowTakeOverAssetDetails`新增响应参数 `sign_url`
+
+### HuaweiCloud SDK VPC
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ListPorts`响应参数`device_owner`新增枚举值`neutron:VIP_PORT`, 移除枚举值`network:VIP_PORT`
+  - 接口`UpdatePort`响应参数`device_owner`新增枚举值`neutron:VIP_PORT`, 移除枚举值`network:VIP_PORT`
+  - 接口`ShowPort`响应参数`device_owner`新增枚举值`neutron:VIP_PORT`, 移除枚举值`network:VIP_PORT`
+
 # 3.0.29-beta 2022-05-12
 
 ### HuaweiCloud SDK FRS

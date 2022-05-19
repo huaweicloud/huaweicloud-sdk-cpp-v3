@@ -80,10 +80,10 @@ public:
     /// 吨(座)位。 
     /// </summary>
 
-    std::string getVehicleWeight() const;
-    bool vehicleWeightIsSet() const;
-    void unsetvehicleWeight();
-    void setVehicleWeight(const std::string& value);
+    std::string getMaximumCapacity() const;
+    bool maximumCapacityIsSet() const;
+    void unsetmaximumCapacity();
+    void setMaximumCapacity(const std::string& value);
 
     /// <summary>
     /// 车辆尺寸。 
@@ -167,8 +167,8 @@ protected:
     bool vehicleNumberIsSet_;
     std::string vehicleType_;
     bool vehicleTypeIsSet_;
-    std::string vehicleWeight_;
-    bool vehicleWeightIsSet_;
+    std::string maximumCapacity_;
+    bool maximumCapacityIsSet_;
     std::string vehicleSize_;
     bool vehicleSizeIsSet_;
     std::string issuingAuthority_;

@@ -17,6 +17,10 @@ AttachServerVolumeOption::AttachServerVolumeOption()
     deviceIsSet_ = false;
     volumeId_ = "";
     volumeIdIsSet_ = false;
+    volumeType_ = "";
+    volumeTypeIsSet_ = false;
+    hwpassthrough_ = "";
+    hwpassthroughIsSet_ = false;
 }
 
 AttachServerVolumeOption::~AttachServerVolumeOption() = default;
@@ -34,6 +38,12 @@ web::json::value AttachServerVolumeOption::toJson() const
     }
     if(volumeIdIsSet_) {
         val[utility::conversions::to_string_t("volumeId")] = ModelBase::toJson(volumeId_);
+    }
+    if(volumeTypeIsSet_) {
+        val[utility::conversions::to_string_t("volume_type")] = ModelBase::toJson(volumeType_);
+    }
+    if(hwpassthroughIsSet_) {
+        val[utility::conversions::to_string_t("hw:passthrough")] = ModelBase::toJson(hwpassthrough_);
     }
 
     return val;
@@ -59,6 +69,24 @@ bool AttachServerVolumeOption::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setVolumeId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("volume_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("volume_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setVolumeType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("hw:passthrough"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("hw:passthrough"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHwpassthrough(refVal);
         }
     }
     return ok;
@@ -105,6 +133,48 @@ bool AttachServerVolumeOption::volumeIdIsSet() const
 void AttachServerVolumeOption::unsetvolumeId()
 {
     volumeIdIsSet_ = false;
+}
+
+std::string AttachServerVolumeOption::getVolumeType() const
+{
+    return volumeType_;
+}
+
+void AttachServerVolumeOption::setVolumeType(const std::string& value)
+{
+    volumeType_ = value;
+    volumeTypeIsSet_ = true;
+}
+
+bool AttachServerVolumeOption::volumeTypeIsSet() const
+{
+    return volumeTypeIsSet_;
+}
+
+void AttachServerVolumeOption::unsetvolumeType()
+{
+    volumeTypeIsSet_ = false;
+}
+
+std::string AttachServerVolumeOption::getHwpassthrough() const
+{
+    return hwpassthrough_;
+}
+
+void AttachServerVolumeOption::setHwpassthrough(const std::string& value)
+{
+    hwpassthrough_ = value;
+    hwpassthroughIsSet_ = true;
+}
+
+bool AttachServerVolumeOption::hwpassthroughIsSet() const
+{
+    return hwpassthroughIsSet_;
+}
+
+void AttachServerVolumeOption::unsethwpassthrough()
+{
+    hwpassthroughIsSet_ = false;
 }
 
 }

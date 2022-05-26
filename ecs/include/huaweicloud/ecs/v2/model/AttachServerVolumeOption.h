@@ -57,12 +57,34 @@ public:
     void unsetvolumeId();
     void setVolumeId(const std::string& value);
 
+    /// <summary>
+    /// 云硬盘类型。  该字段于dry_run为true并且volumeId不存在时有效且为必选字段。
+    /// </summary>
+
+    std::string getVolumeType() const;
+    bool volumeTypeIsSet() const;
+    void unsetvolumeType();
+    void setVolumeType(const std::string& value);
+
+    /// <summary>
+    /// - true: 表示云硬盘的设备类型为SCSI类型，即允许ECS操作系统直接访问底层存储介质。支持SCSI锁命令 - false: 表示云硬盘的设备类型为VBD (虚拟块存储设备 , Virtual Block Device)类型，VBD只能支持简单的SCSI读写命令。 该字段于dry_run为true并且volumeId不存在时有效且为必选字段。
+    /// </summary>
+
+    std::string getHwpassthrough() const;
+    bool hwpassthroughIsSet() const;
+    void unsethwpassthrough();
+    void setHwpassthrough(const std::string& value);
+
 
 protected:
     std::string device_;
     bool deviceIsSet_;
     std::string volumeId_;
     bool volumeIdIsSet_;
+    std::string volumeType_;
+    bool volumeTypeIsSet_;
+    std::string hwpassthrough_;
+    bool hwpassthroughIsSet_;
 
 };
 

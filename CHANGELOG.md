@@ -1,3 +1,14 @@
+# 3.0.31-beta 2022-05-26
+
+### HuaweiCloud SDK ECS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the request parameters `volume_type`, `hw:passthrough` to the interface `AttachServerVolume`
+
 # 3.0.30-beta 2022-05-19
 
 ### HuaweiCloud SDK ECS
@@ -42,7 +53,7 @@
 ### HuaweiCloud SDK FRS
 
 - _Features_
-  - Support the following interfaces£º
+  - Support the following interfaces:
     - `DetectLiveByUrlIntl`
     - `DetectLiveByFileIntl`
     - `DetectLiveByBase64Intl`

@@ -21,7 +21,6 @@ PcrTestRecordResult::PcrTestRecordResult()
     testTimeIsSet_ = false;
     testResult_ = "";
     testResultIsSet_ = false;
-    confidence_ = 0.0f;
     confidenceIsSet_ = false;
     wordsBlockCount_ = 0;
     wordsBlockCountIsSet_ = false;
@@ -107,7 +106,7 @@ bool PcrTestRecordResult::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("confidence"));
         if(!fieldValue.is_null())
         {
-            float refVal;
+            PcrTestRecordConfidence refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setConfidence(refVal);
         }
@@ -218,12 +217,12 @@ void PcrTestRecordResult::unsettestResult()
     testResultIsSet_ = false;
 }
 
-float PcrTestRecordResult::getConfidence() const
+PcrTestRecordConfidence PcrTestRecordResult::getConfidence() const
 {
     return confidence_;
 }
 
-void PcrTestRecordResult::setConfidence(float value)
+void PcrTestRecordResult::setConfidence(const PcrTestRecordConfidence& value)
 {
     confidence_ = value;
     confidenceIsSet_ = true;

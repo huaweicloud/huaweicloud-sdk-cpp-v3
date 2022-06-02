@@ -1,3 +1,15 @@
+# 3.0.32-beta 2022-06-02
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the response parameters `words_block_count`, `words_block_list` to the interface `RecognizeHealthCode`
+  - Modify the type `float` -> `object` of the response parameter `confidence` of the interface `RecognizePcrTestRecord`
+
 # 3.0.31-beta 2022-05-26
 
 ### HuaweiCloud SDK ECS

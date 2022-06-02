@@ -9,6 +9,8 @@
 
 #include <huaweicloud/core/utils/Object.h>
 #include <string>
+#include <huaweicloud/ocr/v1/model/HealthCodeWordsBlockList.h>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -68,13 +70,31 @@ public:
     void setColor(const std::string& value);
 
     /// <summary>
-    /// 各个字段的置信度 
+    /// 各个字段的置信度。 
     /// </summary>
 
     Object getConfidence() const;
     bool confidenceIsSet() const;
     void unsetconfidence();
     void setConfidence(const Object& value);
+
+    /// <summary>
+    /// 代表检测识别出来的文字块数目。 
+    /// </summary>
+
+    int32_t getWordsBlockCount() const;
+    bool wordsBlockCountIsSet() const;
+    void unsetwordsBlockCount();
+    void setWordsBlockCount(int32_t value);
+
+    /// <summary>
+    /// 识别文字块列表，输出顺序从左到右，从上到下。 
+    /// </summary>
+
+    std::vector<HealthCodeWordsBlockList>& getWordsBlockList();
+    bool wordsBlockListIsSet() const;
+    void unsetwordsBlockList();
+    void setWordsBlockList(const std::vector<HealthCodeWordsBlockList>& value);
 
 
 protected:
@@ -86,6 +106,10 @@ protected:
     bool colorIsSet_;
     Object confidence_;
     bool confidenceIsSet_;
+    int32_t wordsBlockCount_;
+    bool wordsBlockCountIsSet_;
+    std::vector<HealthCodeWordsBlockList> wordsBlockList_;
+    bool wordsBlockListIsSet_;
 
 };
 

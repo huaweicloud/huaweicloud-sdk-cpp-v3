@@ -1,3 +1,15 @@
+# 3.0.32-beta 2022-06-02
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`RecognizeHealthCode`新增响应参数 `words_block_count`、`words_block_list`
+  - 接口`RecognizePcrTestRecord`响应参数`confidence`类型调整 `float` -> `object`
+
 # 3.0.31-beta 2022-05-26
 
 ### HuaweiCloud SDK ECS

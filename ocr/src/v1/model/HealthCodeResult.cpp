@@ -20,6 +20,9 @@ HealthCodeResult::HealthCodeResult()
     color_ = "";
     colorIsSet_ = false;
     confidenceIsSet_ = false;
+    wordsBlockCount_ = 0;
+    wordsBlockCountIsSet_ = false;
+    wordsBlockListIsSet_ = false;
 }
 
 HealthCodeResult::~HealthCodeResult() = default;
@@ -43,6 +46,12 @@ web::json::value HealthCodeResult::toJson() const
     }
     if(confidenceIsSet_) {
         val[utility::conversions::to_string_t("confidence")] = ModelBase::toJson(confidence_);
+    }
+    if(wordsBlockCountIsSet_) {
+        val[utility::conversions::to_string_t("words_block_count")] = ModelBase::toJson(wordsBlockCount_);
+    }
+    if(wordsBlockListIsSet_) {
+        val[utility::conversions::to_string_t("words_block_list")] = ModelBase::toJson(wordsBlockList_);
     }
 
     return val;
@@ -86,6 +95,24 @@ bool HealthCodeResult::fromJson(const web::json::value& val)
             Object refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setConfidence(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("words_block_count"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("words_block_count"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setWordsBlockCount(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("words_block_list"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("words_block_list"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<HealthCodeWordsBlockList> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setWordsBlockList(refVal);
         }
     }
     return ok;
@@ -174,6 +201,48 @@ bool HealthCodeResult::confidenceIsSet() const
 void HealthCodeResult::unsetconfidence()
 {
     confidenceIsSet_ = false;
+}
+
+int32_t HealthCodeResult::getWordsBlockCount() const
+{
+    return wordsBlockCount_;
+}
+
+void HealthCodeResult::setWordsBlockCount(int32_t value)
+{
+    wordsBlockCount_ = value;
+    wordsBlockCountIsSet_ = true;
+}
+
+bool HealthCodeResult::wordsBlockCountIsSet() const
+{
+    return wordsBlockCountIsSet_;
+}
+
+void HealthCodeResult::unsetwordsBlockCount()
+{
+    wordsBlockCountIsSet_ = false;
+}
+
+std::vector<HealthCodeWordsBlockList>& HealthCodeResult::getWordsBlockList()
+{
+    return wordsBlockList_;
+}
+
+void HealthCodeResult::setWordsBlockList(const std::vector<HealthCodeWordsBlockList>& value)
+{
+    wordsBlockList_ = value;
+    wordsBlockListIsSet_ = true;
+}
+
+bool HealthCodeResult::wordsBlockListIsSet() const
+{
+    return wordsBlockListIsSet_;
+}
+
+void HealthCodeResult::unsetwordsBlockList()
+{
+    wordsBlockListIsSet_ = false;
 }
 
 }

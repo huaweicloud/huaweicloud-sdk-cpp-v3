@@ -9,6 +9,7 @@
 
 #include <huaweicloud/ocr/v1/model/PcrTestRecordWordsBlockList.h>
 #include <string>
+#include <huaweicloud/ocr/v1/model/PcrTestRecordConfidence.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -78,13 +79,13 @@ public:
     void setTestResult(const std::string& value);
 
     /// <summary>
-    /// 各个字段的置信度 
+    /// 
     /// </summary>
 
-    float getConfidence() const;
+    PcrTestRecordConfidence getConfidence() const;
     bool confidenceIsSet() const;
     void unsetconfidence();
-    void setConfidence(float value);
+    void setConfidence(const PcrTestRecordConfidence& value);
 
     /// <summary>
     /// 代表检测识别出来的文字块数目。 
@@ -114,7 +115,7 @@ protected:
     bool testTimeIsSet_;
     std::string testResult_;
     bool testResultIsSet_;
-    float confidence_;
+    PcrTestRecordConfidence confidence_;
     bool confidenceIsSet_;
     int32_t wordsBlockCount_;
     bool wordsBlockCountIsSet_;

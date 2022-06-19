@@ -1,3 +1,14 @@
+# 3.0.33-beta 2022-06-19
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 支持接口`RecognizeIdDocument`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.0.32-beta 2022-06-02
 
 ### HuaweiCloud SDK OCR

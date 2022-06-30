@@ -1,3 +1,14 @@
+# 3.0.34-beta 2022-06-30
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - Support the interfaces `RecognizeHkIdCard`, `RecognizeCambodianIdCard`, `RecognizeExitEntryPermit`, `RecognizeMainlandTravelPermit`
+- _Bug Fix_
+  - None
+- _Change_
+  - Modify the type `int32` -> `float` of the response parameter `direction` of the interface `RecognizeGeneralText`
+
 # 3.0.33-beta 2022-06-19
 
 ### HuaweiCloud SDK OCR

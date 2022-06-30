@@ -10,19 +10,23 @@
 #include <huaweicloud/ocr/v1/model/BankcardRequestBody.h>
 #include <huaweicloud/ocr/v1/model/BusinessCardRequestBody.h>
 #include <huaweicloud/ocr/v1/model/BusinessLicenseRequestBody.h>
+#include <huaweicloud/ocr/v1/model/CambodianIdCardRequestBody.h>
 #include <huaweicloud/ocr/v1/model/ChileIdCardRequestBody.h>
 #include <huaweicloud/ocr/v1/model/DriverLicenseRequestBody.h>
+#include <huaweicloud/ocr/v1/model/ExitEntryPermitRequestBody.h>
 #include <huaweicloud/ocr/v1/model/FinancialStatementRequestBody.h>
 #include <huaweicloud/ocr/v1/model/FlightItineraryRequestBody.h>
 #include <huaweicloud/ocr/v1/model/GeneralTableRequestBody.h>
 #include <huaweicloud/ocr/v1/model/GeneralTextRequestBody.h>
 #include <huaweicloud/ocr/v1/model/HandwritingRequestBody.h>
 #include <huaweicloud/ocr/v1/model/HealthCodeRequestBody.h>
+#include <huaweicloud/ocr/v1/model/HkIdCardRequestBody.h>
 #include <huaweicloud/ocr/v1/model/IdCardRequestBody.h>
 #include <huaweicloud/ocr/v1/model/IdDocumentRequestBody.h>
 #include <huaweicloud/ocr/v1/model/InsurancePolicyRequestBody.h>
 #include <huaweicloud/ocr/v1/model/InvoiceVerificationRequestBody.h>
 #include <huaweicloud/ocr/v1/model/LicensePlateRequestBody.h>
+#include <huaweicloud/ocr/v1/model/MainlandTravelPermitRequestBody.h>
 #include <huaweicloud/ocr/v1/model/MvsInvoiceRequestBody.h>
 #include <huaweicloud/ocr/v1/model/MyanmarDriverLicenseRequestBody.h>
 #include <huaweicloud/ocr/v1/model/MyanmarIdcardRequestBody.h>
@@ -38,10 +42,14 @@
 #include <huaweicloud/ocr/v1/model/RecognizeBusinessCardResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeBusinessLicenseRequest.h>
 #include <huaweicloud/ocr/v1/model/RecognizeBusinessLicenseResponse.h>
+#include <huaweicloud/ocr/v1/model/RecognizeCambodianIdCardRequest.h>
+#include <huaweicloud/ocr/v1/model/RecognizeCambodianIdCardResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeChileIdCardRequest.h>
 #include <huaweicloud/ocr/v1/model/RecognizeChileIdCardResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeDriverLicenseRequest.h>
 #include <huaweicloud/ocr/v1/model/RecognizeDriverLicenseResponse.h>
+#include <huaweicloud/ocr/v1/model/RecognizeExitEntryPermitRequest.h>
+#include <huaweicloud/ocr/v1/model/RecognizeExitEntryPermitResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeFinancialStatementRequest.h>
 #include <huaweicloud/ocr/v1/model/RecognizeFinancialStatementResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeFlightItineraryRequest.h>
@@ -54,6 +62,8 @@
 #include <huaweicloud/ocr/v1/model/RecognizeHandwritingResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeHealthCodeRequest.h>
 #include <huaweicloud/ocr/v1/model/RecognizeHealthCodeResponse.h>
+#include <huaweicloud/ocr/v1/model/RecognizeHkIdCardRequest.h>
+#include <huaweicloud/ocr/v1/model/RecognizeHkIdCardResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeIdCardRequest.h>
 #include <huaweicloud/ocr/v1/model/RecognizeIdCardResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeIdDocumentRequest.h>
@@ -64,6 +74,8 @@
 #include <huaweicloud/ocr/v1/model/RecognizeInvoiceVerificationResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeLicensePlateRequest.h>
 #include <huaweicloud/ocr/v1/model/RecognizeLicensePlateResponse.h>
+#include <huaweicloud/ocr/v1/model/RecognizeMainlandTravelPermitRequest.h>
+#include <huaweicloud/ocr/v1/model/RecognizeMainlandTravelPermitResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeMvsInvoiceRequest.h>
 #include <huaweicloud/ocr/v1/model/RecognizeMvsInvoiceResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeMyanmarDriverLicenseRequest.h>
@@ -184,6 +196,15 @@ public:
     std::shared_ptr<RecognizeBusinessLicenseResponse> recognizeBusinessLicense(
         RecognizeBusinessLicenseRequest &request
     );
+    // 柬文身份证识别
+    //
+    // 识别柬文身份证图片中的文字内容，并将识别的结构化结果返回给用户。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
+    std::shared_ptr<RecognizeCambodianIdCardResponse> recognizeCambodianIdCard(
+        RecognizeCambodianIdCardRequest &request
+    );
     // 智利身份证识别
     //
     // 识别智利身份证图片中的文字内容，并返回识别的结构化结果。
@@ -205,6 +226,15 @@ public:
     // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<RecognizeDriverLicenseResponse> recognizeDriverLicense(
         RecognizeDriverLicenseRequest &request
+    );
+    // 往来港澳台通行证识别
+    //
+    // 识别往来港澳台证件图片中的文字内容，并将识别的结构化结果返回给用户。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
+    std::shared_ptr<RecognizeExitEntryPermitResponse> recognizeExitEntryPermit(
+        RecognizeExitEntryPermitRequest &request
     );
     // 财务报表识别
     //
@@ -263,6 +293,15 @@ public:
     // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<RecognizeHealthCodeResponse> recognizeHealthCode(
         RecognizeHealthCodeRequest &request
+    );
+    // 香港身份证识别
+    //
+    // 识别香港身份证中的文字内容，并将识别的结果返回给用户。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
+    std::shared_ptr<RecognizeHkIdCardResponse> recognizeHkIdCard(
+        RecognizeHkIdCardRequest &request
     );
     // 身份证识别
     //
@@ -331,6 +370,15 @@ public:
     // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<RecognizeLicensePlateResponse> recognizeLicensePlate(
         RecognizeLicensePlateRequest &request
+    );
+    // 港澳台居民来往内地通行证识别
+    //
+    // 识别港澳居民来往内地通行证上的文字内容，并将识别的结构化结果返回给用户。支持港澳居民来往内地通行证和台湾居民来往内地通行证两种卡证。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
+    std::shared_ptr<RecognizeMainlandTravelPermitResponse> recognizeMainlandTravelPermit(
+        RecognizeMainlandTravelPermitRequest &request
     );
     // 机动车销售发票识别
     //

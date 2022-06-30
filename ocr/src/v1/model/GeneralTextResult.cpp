@@ -13,7 +13,7 @@ namespace Model {
 
 GeneralTextResult::GeneralTextResult()
 {
-    direction_ = 0;
+    direction_ = 0.0f;
     directionIsSet_ = false;
     wordsBlockCount_ = 0;
     wordsBlockCountIsSet_ = false;
@@ -51,7 +51,7 @@ bool GeneralTextResult::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("direction"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            float refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDirection(refVal);
         }
@@ -78,12 +78,12 @@ bool GeneralTextResult::fromJson(const web::json::value& val)
 }
 
 
-int32_t GeneralTextResult::getDirection() const
+float GeneralTextResult::getDirection() const
 {
     return direction_;
 }
 
-void GeneralTextResult::setDirection(int32_t value)
+void GeneralTextResult::setDirection(float value)
 {
     direction_ = value;
     directionIsSet_ = true;

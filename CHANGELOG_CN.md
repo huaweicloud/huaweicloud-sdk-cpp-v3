@@ -1,3 +1,14 @@
+# 3.0.34-beta 2022-06-30
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 支持接口`RecognizeHkIdCard`、`RecognizeCambodianIdCard`、`RecognizeExitEntryPermit`、`RecognizeMainlandTravelPermit`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`RecognizeGeneralText`响应参数`direction`类型调整 `int32` -> `float`
+
 # 3.0.33-beta 2022-06-19
 
 ### HuaweiCloud SDK OCR

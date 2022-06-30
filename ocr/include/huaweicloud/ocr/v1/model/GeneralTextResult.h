@@ -41,13 +41,13 @@ public:
     /// GeneralTextResult members
 
     /// <summary>
-    /// 图片朝向，仅当detect_direction为true时，该字段有效。返回图片逆时针旋转角度，值区间为[0， 359]。当detect_direction为false时，该字段值为 -1。 
+    /// 图片朝向，仅当detect_direction为true时，该字段有效。返回图片逆时针旋转角度，值区间为[0， 360)。当detect_direction为false时，该字段值为 -1。 
     /// </summary>
 
-    int32_t getDirection() const;
+    float getDirection() const;
     bool directionIsSet() const;
     void unsetdirection();
-    void setDirection(int32_t value);
+    void setDirection(float value);
 
     /// <summary>
     /// 识别文字块数目。 
@@ -69,7 +69,7 @@ public:
 
 
 protected:
-    int32_t direction_;
+    float direction_;
     bool directionIsSet_;
     int32_t wordsBlockCount_;
     bool wordsBlockCountIsSet_;

@@ -53,10 +53,10 @@ public:
     /// 识别到的文字块的区域位置信息，列表形式，分别表示文字块4个顶点的（x,y）坐标。采用图像坐标系，图像坐标原点为图像左上角，x轴沿水平方向，y轴沿竖直方向。 
     /// </summary>
 
-    std::vector<int32_t>& getLocation();
+    std::vector<std::vector<int32_t>>& getLocation();
     bool locationIsSet() const;
     void unsetlocation();
-    void setLocation(std::vector<int32_t> value);
+    void setLocation(const std::vector<std::vector<int32_t>>& value);
 
     /// <summary>
     /// 各个字段的置信度 
@@ -71,7 +71,7 @@ public:
 protected:
     std::string words_;
     bool wordsIsSet_;
-    std::vector<int32_t> location_;
+    std::vector<std::vector<int32_t>> location_;
     bool locationIsSet_;
     float confidence_;
     bool confidenceIsSet_;

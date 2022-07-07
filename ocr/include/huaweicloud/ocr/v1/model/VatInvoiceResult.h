@@ -43,7 +43,16 @@ public:
     /// VatInvoiceResult members
 
     /// <summary>
-    /// 增值税发票类型，可选值包括：  - special: 增值税专用发票  - normal: 增值税普通发票  - electronic: 增值税电子普通发票  - roll：增值税普通发票（卷票） 
+    /// 增值税发票标题 
+    /// </summary>
+
+    std::string getTitle() const;
+    bool titleIsSet() const;
+    void unsettitle();
+    void setTitle(const std::string& value);
+
+    /// <summary>
+    /// 增值税发票类型，可选值包括：  - special: 增值税专用发票  - normal: 增值税普通发票  - electronic: 增值税电子普通发票  - special_electronic：增值税电子专用发票  - toll：增值税电子普通发票（通行费）  - roll：增值税普通发票（卷票） 
     /// </summary>
 
     std::string getType() const;
@@ -88,7 +97,7 @@ public:
     void setCode(const std::string& value);
 
     /// <summary>
-    /// 打印发票代码。普通发票和专用发票在右上角，电子发票、通行费发票、卷票无此字段。 
+    /// 机打代码。当“advanced_mode”设置为“true”时才返回。 
     /// </summary>
 
     std::string getPrintCode() const;
@@ -332,6 +341,8 @@ public:
 
 
 protected:
+    std::string title_;
+    bool titleIsSet_;
     std::string type_;
     bool typeIsSet_;
     std::string serialNumber_;

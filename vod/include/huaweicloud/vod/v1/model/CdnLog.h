@@ -85,7 +85,7 @@ public:
     void setSize(int64_t value);
 
     /// <summary>
-    /// 日志下载链接。
+    /// 日志下载链接,日志文件[参数说明](https://support.huaweicloud.com/usermanual-cdn/zh-cn_topic_0073337424.html)。
     /// </summary>
 
     std::string getLink() const;

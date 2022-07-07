@@ -1,3 +1,26 @@
+# 3.0.35-beta 2022-07-07
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`RecognizeVatInvoice`新增响应参数 `title`
+
+### HuaweiCloud SDK SIS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`RecognizeShortAudio`请求参数`property`新增枚举值`chinese_16k_travel`
+  - 接口`PushTranscriberJobs`请求参数`property`新增枚举值`chinese_16k_media`
+  - 接口`CollectTranscriberJob`新增响应参数 `audio_duration`
+  - 接口`RunTts`请求参数`property`新增枚举值`chinese_huaxiaomei_common`、`chinese_huaxiaofei_common`
+
 # 3.0.34-beta 2022-06-30
 
 ### HuaweiCloud SDK OCR

@@ -60,7 +60,7 @@ bool HealthCodeWordsBlockList::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("location"));
         if(!fieldValue.is_null())
         {
-            std::vector<int32_t> refVal;
+            std::vector<std::vector<int32_t>> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLocation(refVal);
         }
@@ -99,12 +99,12 @@ void HealthCodeWordsBlockList::unsetwords()
     wordsIsSet_ = false;
 }
 
-std::vector<int32_t>& HealthCodeWordsBlockList::getLocation()
+std::vector<std::vector<int32_t>>& HealthCodeWordsBlockList::getLocation()
 {
     return location_;
 }
 
-void HealthCodeWordsBlockList::setLocation(std::vector<int32_t> value)
+void HealthCodeWordsBlockList::setLocation(const std::vector<std::vector<int32_t>>& value)
 {
     location_ = value;
     locationIsSet_ = true;

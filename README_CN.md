@@ -8,7 +8,7 @@
 
 欢迎使用华为云 C++ SDK。
 
-华为云 C++ SDK 让您无需关心请求细节即可快速使用弹性云服务器、虚拟私有云等多个华为云服务。
+华为云 C++ SDK 让您无需关心请求细节即可快速使用弹性云服务器（ECS）、虚拟私有云（VPC）等多个华为云服务。
 
 这里将向您介绍如何获取并使用华为云 C++ SDK 。
 
@@ -184,7 +184,7 @@ $
     * [1.2 网络代理](#12-网络代理-top)
     * [1.3 超时配置](#13-超时配置-top)
     * [1.4 SSL 配置](#14-ssl-配置-top)
-* [2. 客户端认证信息](#2-客户端认证信息-top)
+* [2. 认证信息配置](#2-认证信息配置-top)
     * [2.1 使用永久 AK 和 SK](#21-使用永久-ak-和-sk-top)
     * [2.2 使用临时 AK 和 SK](#22-使用临时-ak-和-sk-top)
 * [3. 客户端初始化](#3-客户端初始化-top)
@@ -237,7 +237,9 @@ httpConfig.setIgnoreSslVerification(true);
 
 Global 级服务当前仅支持 IAM 。
 
-Region 级服务需要提供 projectId 。Global 级服务需要提供 domainId 。
+Region 级服务需要提供 projectId 。
+
+Global 级服务需要提供 domainId 。
 
 客户端认证可以使用永久 AK&SK 认证，也可以使用临时 AK&SK&SecurityToken 认证。
 

@@ -157,7 +157,7 @@ public:
     void setImageProcess(const std::string& value);
 
     /// <summary>
-    /// 水印开始时间。
+    /// 水印开始时间，与\&quot;timeline_duration\&quot;配合使用。 取值范围:[0, END)。\&quot;END\&quot;表示视频结束时间。 单位:秒。 
     /// </summary>
 
     std::string getTimelineStart() const;
@@ -166,7 +166,7 @@ public:
     void setTimelineStart(const std::string& value);
 
     /// <summary>
-    /// 水印持续时间。
+    /// 水印持续时间，与\&quot;timeline_start\&quot;配合使用。 取值范围:(0,END-开始时间]。\&quot;END\&quot;表示视频结束时间。 单位:秒。 默认:END。 
     /// </summary>
 
     std::string getTimelineDuration() const;

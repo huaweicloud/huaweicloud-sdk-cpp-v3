@@ -22,6 +22,8 @@ CollectTranscriberJobResponse::CollectTranscriberJobResponse()
     finishTime_ = "";
     finishTimeIsSet_ = false;
     segmentsIsSet_ = false;
+    audioDuration_ = 0;
+    audioDurationIsSet_ = false;
 }
 
 CollectTranscriberJobResponse::~CollectTranscriberJobResponse() = default;
@@ -48,6 +50,9 @@ web::json::value CollectTranscriberJobResponse::toJson() const
     }
     if(segmentsIsSet_) {
         val[utility::conversions::to_string_t("segments")] = ModelBase::toJson(segments_);
+    }
+    if(audioDurationIsSet_) {
+        val[utility::conversions::to_string_t("audio_duration")] = ModelBase::toJson(audioDuration_);
     }
 
     return val;
@@ -100,6 +105,15 @@ bool CollectTranscriberJobResponse::fromJson(const web::json::value& val)
             std::vector<Segment> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSegments(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("audio_duration"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("audio_duration"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAudioDuration(refVal);
         }
     }
     return ok;
@@ -209,6 +223,27 @@ bool CollectTranscriberJobResponse::segmentsIsSet() const
 void CollectTranscriberJobResponse::unsetsegments()
 {
     segmentsIsSet_ = false;
+}
+
+int32_t CollectTranscriberJobResponse::getAudioDuration() const
+{
+    return audioDuration_;
+}
+
+void CollectTranscriberJobResponse::setAudioDuration(int32_t value)
+{
+    audioDuration_ = value;
+    audioDurationIsSet_ = true;
+}
+
+bool CollectTranscriberJobResponse::audioDurationIsSet() const
+{
+    return audioDurationIsSet_;
+}
+
+void CollectTranscriberJobResponse::unsetaudioDuration()
+{
+    audioDurationIsSet_ = false;
 }
 
 }

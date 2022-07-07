@@ -13,6 +13,8 @@ namespace Model {
 
 VatInvoiceResult::VatInvoiceResult()
 {
+    title_ = "";
+    titleIsSet_ = false;
     type_ = "";
     typeIsSet_ = false;
     serialNumber_ = "";
@@ -84,6 +86,9 @@ web::json::value VatInvoiceResult::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(titleIsSet_) {
+        val[utility::conversions::to_string_t("title")] = ModelBase::toJson(title_);
+    }
     if(typeIsSet_) {
         val[utility::conversions::to_string_t("type")] = ModelBase::toJson(type_);
     }
@@ -188,6 +193,15 @@ bool VatInvoiceResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("title"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("title"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTitle(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("type"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("type"));
         if(!fieldValue.is_null())
@@ -479,6 +493,27 @@ bool VatInvoiceResult::fromJson(const web::json::value& val)
     return ok;
 }
 
+
+std::string VatInvoiceResult::getTitle() const
+{
+    return title_;
+}
+
+void VatInvoiceResult::setTitle(const std::string& value)
+{
+    title_ = value;
+    titleIsSet_ = true;
+}
+
+bool VatInvoiceResult::titleIsSet() const
+{
+    return titleIsSet_;
+}
+
+void VatInvoiceResult::unsettitle()
+{
+    titleIsSet_ = false;
+}
 
 std::string VatInvoiceResult::getType() const
 {

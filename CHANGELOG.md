@@ -1,3 +1,26 @@
+# 3.0.35-beta 2022-07-07
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the response parameter `title` to the interface `RecognizeVatInvoice`
+
+### HuaweiCloud SDK SIS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the enum values `chinese_16k_travel` to the request parameter `property` to the interface `RecognizeShortAudio`
+  - Add the enum values `chinese_16k_media` to the request parameter `property` to the interface `PushTranscriberJobs`
+  - Add the response parameter `audio_duration` to the interface `CollectTranscriberJob`
+  - Add the enum values `chinese_huaxiaomei_common`, `chinese_huaxiaofei_common` to the request parameter `property` to the interface `RunTts`
+
 # 3.0.34-beta 2022-06-30
 
 ### HuaweiCloud SDK OCR

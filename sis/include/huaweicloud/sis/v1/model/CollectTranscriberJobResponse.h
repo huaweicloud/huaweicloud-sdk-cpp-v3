@@ -86,6 +86,15 @@ public:
     void unsetsegments();
     void setSegments(const std::vector<Segment>& value);
 
+    /// <summary>
+    /// 音频时长，单位ms
+    /// </summary>
+
+    int32_t getAudioDuration() const;
+    bool audioDurationIsSet() const;
+    void unsetaudioDuration();
+    void setAudioDuration(int32_t value);
+
 
 protected:
     std::string status_;
@@ -98,6 +107,8 @@ protected:
     bool finishTimeIsSet_;
     std::vector<Segment> segments_;
     bool segmentsIsSet_;
+    int32_t audioDuration_;
+    bool audioDurationIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

@@ -393,7 +393,7 @@ bool PublicipSingleShowResp::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("tags"));
         if(!fieldValue.is_null())
         {
-            std::vector<TagsInfo> refVal;
+            std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTags(refVal);
         }
@@ -942,12 +942,12 @@ void PublicipSingleShowResp::unsetfakeNetworkType()
     fakeNetworkTypeIsSet_ = false;
 }
 
-std::vector<TagsInfo>& PublicipSingleShowResp::getTags()
+std::vector<std::string>& PublicipSingleShowResp::getTags()
 {
     return tags_;
 }
 
-void PublicipSingleShowResp::setTags(const std::vector<TagsInfo>& value)
+void PublicipSingleShowResp::setTags(const std::vector<std::string>& value)
 {
     tags_ = value;
     tagsIsSet_ = true;

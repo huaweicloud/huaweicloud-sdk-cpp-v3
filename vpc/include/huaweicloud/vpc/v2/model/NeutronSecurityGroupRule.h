@@ -122,6 +122,15 @@ public:
     void setRemoteIpPrefix(const std::string& value);
 
     /// <summary>
+    /// 功能说明：远端IP地址组ID 约束：和remote_ip_prefix，remote_group_id互斥
+    /// </summary>
+
+    std::string getRemoteAddressGroupId() const;
+    bool remoteAddressGroupIdIsSet() const;
+    void unsetremoteAddressGroupId();
+    void setRemoteAddressGroupId(const std::string& value);
+
+    /// <summary>
     /// 所属安全组ID
     /// </summary>
 
@@ -186,6 +195,8 @@ protected:
     bool remoteGroupIdIsSet_;
     std::string remoteIpPrefix_;
     bool remoteIpPrefixIsSet_;
+    std::string remoteAddressGroupId_;
+    bool remoteAddressGroupIdIsSet_;
     std::string securityGroupId_;
     bool securityGroupIdIsSet_;
     std::string tenantId_;

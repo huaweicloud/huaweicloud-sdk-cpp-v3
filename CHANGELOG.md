@@ -1,3 +1,36 @@
+# 3.0.36-beta 2022-07-14
+
+### HuaweiCloud SDK EIP
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Modify the type `date-time` -> `string` of the response parameter `create_time` of the interface `ListPublicips`
+  - Modify the type `date-time` -> `string` of the response parameter `create_time` of the interface `ShowPublicip`
+
+### HuaweiCloud SDK VPC
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the response parameters `port_filter`, `ovs_hybrid_plug` to the interface `ListPorts`
+  - Add the response parameters `port_filter`, `ovs_hybrid_plug` to the interface `UpdatePort`
+  - Add the response parameters `port_filter`, `ovs_hybrid_plug` to the interface `ShowPort`
+  - Add the response parameter `remote_address_group_id` to the interface `CreateSecurityGroup`
+  - Add the response parameter `remote_address_group_id` to the interface `ListSecurityGroups`
+  - Add the response parameter `remote_address_group_id` to the interface `ShowSecurityGroup`
+  - Add the response parameter `remote_address_group_id` to the interface `ListSecurityGroupRules`
+  - Add the response parameter `remote_address_group_id` to the interface `ShowSecurityGroupRule`
+  - Add the response parameter `remote_address_group_id` to the interface `NeutronListSecurityGroups`
+  - Add the response parameter `remote_address_group_id` to the interface `NeutronUpdateSecurityGroup`
+  - Add the response parameter `remote_address_group_id` to the interface `NeutronShowSecurityGroup`
+  - Add the response parameter `remote_address_group_id` to the interface `NeutronListSecurityGroupRules`
+  - Add the response parameter `remote_address_group_id` to the interface `NeutronShowSecurityGroupRule`
+
 # 3.0.35-beta 2022-07-07
 
 ### HuaweiCloud SDK OCR

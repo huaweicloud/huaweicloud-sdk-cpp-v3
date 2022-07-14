@@ -12,7 +12,6 @@
 #include <cpprest/details/basic_types.h>
 #include <huaweicloud/eip/v3/model/PublicipBandwidthInfo.h>
 #include <vector>
-#include <huaweicloud/eip/v3/model/TagsInfo.h>
 #include <huaweicloud/eip/v3/model/VnicInfo.h>
 
 namespace HuaweiCloud {
@@ -265,10 +264,10 @@ public:
     /// 默认不显示。用户标签
     /// </summary>
 
-    std::vector<TagsInfo>& getTags();
+    std::vector<std::string>& getTags();
     bool tagsIsSet() const;
     void unsettags();
-    void setTags(const std::vector<TagsInfo>& value);
+    void setTags(const std::vector<std::string>& value);
 
     /// <summary>
     /// 默认不显示。记录实例的更上一层归属。例如associate_instance_type为PORT，此字段记录PORT的device_id和device_owner信息。仅有限场景记录。
@@ -356,7 +355,7 @@ protected:
     bool profileIsSet_;
     bool fakeNetworkType_;
     bool fakeNetworkTypeIsSet_;
-    std::vector<TagsInfo> tags_;
+    std::vector<std::string> tags_;
     bool tagsIsSet_;
     std::string associateInstanceMetadata_;
     bool associateInstanceMetadataIsSet_;

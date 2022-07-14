@@ -33,6 +33,8 @@ SecurityGroupRule::SecurityGroupRule()
     remoteIpPrefixIsSet_ = false;
     remoteGroupId_ = "";
     remoteGroupIdIsSet_ = false;
+    remoteAddressGroupId_ = "";
+    remoteAddressGroupIdIsSet_ = false;
     tenantId_ = "";
     tenantIdIsSet_ = false;
 }
@@ -76,6 +78,9 @@ web::json::value SecurityGroupRule::toJson() const
     }
     if(remoteGroupIdIsSet_) {
         val[utility::conversions::to_string_t("remote_group_id")] = ModelBase::toJson(remoteGroupId_);
+    }
+    if(remoteAddressGroupIdIsSet_) {
+        val[utility::conversions::to_string_t("remote_address_group_id")] = ModelBase::toJson(remoteAddressGroupId_);
     }
     if(tenantIdIsSet_) {
         val[utility::conversions::to_string_t("tenant_id")] = ModelBase::toJson(tenantId_);
@@ -176,6 +181,15 @@ bool SecurityGroupRule::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRemoteGroupId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("remote_address_group_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("remote_address_group_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRemoteAddressGroupId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("tenant_id"))) {
@@ -399,6 +413,27 @@ bool SecurityGroupRule::remoteGroupIdIsSet() const
 void SecurityGroupRule::unsetremoteGroupId()
 {
     remoteGroupIdIsSet_ = false;
+}
+
+std::string SecurityGroupRule::getRemoteAddressGroupId() const
+{
+    return remoteAddressGroupId_;
+}
+
+void SecurityGroupRule::setRemoteAddressGroupId(const std::string& value)
+{
+    remoteAddressGroupId_ = value;
+    remoteAddressGroupIdIsSet_ = true;
+}
+
+bool SecurityGroupRule::remoteAddressGroupIdIsSet() const
+{
+    return remoteAddressGroupIdIsSet_;
+}
+
+void SecurityGroupRule::unsetremoteAddressGroupId()
+{
+    remoteAddressGroupIdIsSet_ = false;
 }
 
 std::string SecurityGroupRule::getTenantId() const

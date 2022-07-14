@@ -21,7 +21,7 @@ PublicipShowResp::PublicipShowResp()
     bandwidthShareTypeIsSet_ = false;
     bandwidthSize_ = 0;
     bandwidthSizeIsSet_ = false;
-    createTime_ = utility::datetime();
+    createTime_ = "";
     createTimeIsSet_ = false;
     enterpriseProjectId_ = "";
     enterpriseProjectIdIsSet_ = false;
@@ -166,7 +166,7 @@ bool PublicipShowResp::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("create_time"));
         if(!fieldValue.is_null())
         {
-            utility::datetime refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCreateTime(refVal);
         }
@@ -385,12 +385,12 @@ void PublicipShowResp::unsetbandwidthSize()
     bandwidthSizeIsSet_ = false;
 }
 
-utility::datetime PublicipShowResp::getCreateTime() const
+std::string PublicipShowResp::getCreateTime() const
 {
     return createTime_;
 }
 
-void PublicipShowResp::setCreateTime(const utility::datetime& value)
+void PublicipShowResp::setCreateTime(const std::string& value)
 {
     createTime_ = value;
     createTimeIsSet_ = true;

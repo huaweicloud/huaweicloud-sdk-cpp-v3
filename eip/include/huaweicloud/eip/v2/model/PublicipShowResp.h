@@ -8,7 +8,6 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
-#include <cpprest/details/basic_types.h>
 #include <huaweicloud/eip/v2/model/ProfileResp.h>
 #include <vector>
 
@@ -82,10 +81,10 @@ public:
     /// 弹性公网IP申请时间（UTC）
     /// </summary>
 
-    utility::datetime getCreateTime() const;
+    std::string getCreateTime() const;
     bool createTimeIsSet() const;
     void unsetcreateTime();
-    void setCreateTime(const utility::datetime& value);
+    void setCreateTime(const std::string& value);
 
     /// <summary>
     /// 企业项目ID。最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。  创建弹性公网IP时，给弹性公网IP绑定企业项目ID。
@@ -223,7 +222,7 @@ protected:
     bool bandwidthShareTypeIsSet_;
     int32_t bandwidthSize_;
     bool bandwidthSizeIsSet_;
-    utility::datetime createTime_;
+    std::string createTime_;
     bool createTimeIsSet_;
     std::string enterpriseProjectId_;
     bool enterpriseProjectIdIsSet_;

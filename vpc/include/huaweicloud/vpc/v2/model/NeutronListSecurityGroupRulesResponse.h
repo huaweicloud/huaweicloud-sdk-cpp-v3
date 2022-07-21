@@ -8,6 +8,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/vpc/v2/model/NeutronSecurityGroupRule.h>
+#include <huaweicloud/vpc/v2/model/NeutronPageLink.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -49,10 +50,21 @@ public:
     void unsetsecurityGroupRules();
     void setSecurityGroupRules(const std::vector<NeutronSecurityGroupRule>& value);
 
+    /// <summary>
+    /// 分页信息
+    /// </summary>
+
+    std::vector<NeutronPageLink>& getSecurityGroupRulesLinks();
+    bool securityGroupRulesLinksIsSet() const;
+    void unsetsecurityGroupRulesLinks();
+    void setSecurityGroupRulesLinks(const std::vector<NeutronPageLink>& value);
+
 
 protected:
     std::vector<NeutronSecurityGroupRule> securityGroupRules_;
     bool securityGroupRulesIsSet_;
+    std::vector<NeutronPageLink> securityGroupRulesLinks_;
+    bool securityGroupRulesLinksIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

@@ -1,3 +1,14 @@
+# 3.0.37-beta 2022-07-21
+
+### HuaweiCloud SDK VPC
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`NeutronListSecurityGroupRules`新增响应参数 `security_group_rules_links`
+
 # 3.0.36-beta 2022-07-14
 
 ### HuaweiCloud SDK EIP

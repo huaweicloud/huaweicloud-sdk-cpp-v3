@@ -1,3 +1,14 @@
+# 3.0.37-beta 2022-07-21
+
+### HuaweiCloud SDK VPC
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the response parameter `security_group_rules_links` to the interface `NeutronListSecurityGroupRules`
+
 # 3.0.36-beta 2022-07-14
 
 ### HuaweiCloud SDK EIP

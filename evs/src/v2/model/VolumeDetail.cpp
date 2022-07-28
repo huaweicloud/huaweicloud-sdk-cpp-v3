@@ -355,7 +355,7 @@ bool VolumeDetail::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("metadata"));
         if(!fieldValue.is_null())
         {
-            VolumeMetadata refVal;
+            std::map<std::string, Object> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setMetadata(refVal);
         }
@@ -865,12 +865,12 @@ void VolumeDetail::unsetbootable()
     bootableIsSet_ = false;
 }
 
-VolumeMetadata VolumeDetail::getMetadata() const
+std::map<std::string, Object>& VolumeDetail::getMetadata()
 {
     return metadata_;
 }
 
-void VolumeDetail::setMetadata(const VolumeMetadata& value)
+void VolumeDetail::setMetadata(const std::map<std::string, Object>& value)
 {
     metadata_ = value;
     metadataIsSet_ = true;

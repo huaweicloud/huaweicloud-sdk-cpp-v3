@@ -1,3 +1,18 @@
+# 3.0.38-beta 2022-07-28
+
+### HuaweiCloud SDK DRS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - The request parameter `db_type`, `db_type`, `key`, `value`, `key`, `value` changed to not required of the interface `BatchCreateJobs`
+  - The request parameter `id`, `object_type`, `object_name` changed to not required of the interface `BatchSetObjects`
+  - The request parameter `name`, `alarm_to_user`, `db_type`, `db_type`, `node_type`, `engine_type`, `net_type`, `store_db_info`, `key`, `value` changed to not required of the interface `BatchUpdateJob`
+  - The response parameter `db_type`, `db_type`, `db_type`, `db_type` changed to not required of the interface `BatchListJobDetails`
+  - The request parameter `id`, `select` changed to not required of the interface `BatchChangeData`
+
 # 3.0.37-beta 2022-07-21
 
 ### HuaweiCloud SDK VPC

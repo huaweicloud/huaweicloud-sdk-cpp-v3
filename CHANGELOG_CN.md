@@ -1,3 +1,18 @@
+# 3.0.38-beta 2022-07-28
+
+### HuaweiCloud SDK DRS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`BatchCreateJobs`请求参数`db_type`、`db_type`、`key`、`value`、`key`、`value`改为非必填
+  - 接口`BatchSetObjects`请求参数`id`、`object_type`、`object_name`改为非必填
+  - 接口`BatchUpdateJob`请求参数`name`、`alarm_to_user`、`db_type`、`db_type`、`node_type`、`engine_type`、`net_type`、`store_db_info`、`key`、`value`改为非必填
+  - 接口`BatchListJobDetails`响应参数`db_type`、`db_type`、`db_type`、`db_type`改为非必填
+  - 接口`BatchChangeData`请求参数`id`、`select`改为非必填
+
 # 3.0.37-beta 2022-07-21
 
 ### HuaweiCloud SDK VPC

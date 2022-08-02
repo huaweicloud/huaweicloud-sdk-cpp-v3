@@ -1,3 +1,14 @@
+# 3.0.39-beta 2022-08-02
+
+### HuaweiCloud SDK SIS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`RecognizeShortAudio`请求参数`audio_format`新增枚举值`auto`
+
 # 3.0.38-beta 2022-07-28
 
 ### HuaweiCloud SDK DRS

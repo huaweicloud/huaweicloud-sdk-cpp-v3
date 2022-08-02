@@ -1,3 +1,14 @@
+# 3.0.39-beta 2022-08-02
+
+### HuaweiCloud SDK SIS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the enum values `auto` to the request parameter `audio_format` to the interface `RecognizeShortAudio`
+
 # 3.0.38-beta 2022-07-28
 
 ### HuaweiCloud SDK DRS

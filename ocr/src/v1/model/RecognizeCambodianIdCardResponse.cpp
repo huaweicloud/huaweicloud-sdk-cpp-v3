@@ -41,7 +41,7 @@ bool RecognizeCambodianIdCardResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("result"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            CambodianIdCardResult refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResult(refVal);
         }
@@ -50,12 +50,12 @@ bool RecognizeCambodianIdCardResponse::fromJson(const web::json::value& val)
 }
 
 
-Object RecognizeCambodianIdCardResponse::getResult() const
+CambodianIdCardResult RecognizeCambodianIdCardResponse::getResult() const
 {
     return result_;
 }
 
-void RecognizeCambodianIdCardResponse::setResult(const Object& value)
+void RecognizeCambodianIdCardResponse::setResult(const CambodianIdCardResult& value)
 {
     result_ = value;
     resultIsSet_ = true;

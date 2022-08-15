@@ -26,6 +26,7 @@
 #include <huaweicloud/ocr/v1/model/InsurancePolicyRequestBody.h>
 #include <huaweicloud/ocr/v1/model/InvoiceVerificationRequestBody.h>
 #include <huaweicloud/ocr/v1/model/LicensePlateRequestBody.h>
+#include <huaweicloud/ocr/v1/model/MacaoIdCardRequestBody.h>
 #include <huaweicloud/ocr/v1/model/MainlandTravelPermitRequestBody.h>
 #include <huaweicloud/ocr/v1/model/MvsInvoiceRequestBody.h>
 #include <huaweicloud/ocr/v1/model/MyanmarDriverLicenseRequestBody.h>
@@ -74,6 +75,8 @@
 #include <huaweicloud/ocr/v1/model/RecognizeInvoiceVerificationResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeLicensePlateRequest.h>
 #include <huaweicloud/ocr/v1/model/RecognizeLicensePlateResponse.h>
+#include <huaweicloud/ocr/v1/model/RecognizeMacaoIdCardRequest.h>
+#include <huaweicloud/ocr/v1/model/RecognizeMacaoIdCardResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeMainlandTravelPermitRequest.h>
 #include <huaweicloud/ocr/v1/model/RecognizeMainlandTravelPermitResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeMvsInvoiceRequest.h>
@@ -370,6 +373,15 @@ public:
     // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<RecognizeLicensePlateResponse> recognizeLicensePlate(
         RecognizeLicensePlateRequest &request
+    );
+    // 澳门身份证识别
+    //
+    // 识别澳门身份证图片中的文字内容，并将识别的结果返回给用户。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
+    std::shared_ptr<RecognizeMacaoIdCardResponse> recognizeMacaoIdCard(
+        RecognizeMacaoIdCardRequest &request
     );
     // 港澳台居民来往内地通行证识别
     //

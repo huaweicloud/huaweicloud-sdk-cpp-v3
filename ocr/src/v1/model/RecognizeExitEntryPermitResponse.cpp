@@ -41,7 +41,7 @@ bool RecognizeExitEntryPermitResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("result"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            ExitEntryPermitResult refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResult(refVal);
         }
@@ -50,12 +50,12 @@ bool RecognizeExitEntryPermitResponse::fromJson(const web::json::value& val)
 }
 
 
-Object RecognizeExitEntryPermitResponse::getResult() const
+ExitEntryPermitResult RecognizeExitEntryPermitResponse::getResult() const
 {
     return result_;
 }
 
-void RecognizeExitEntryPermitResponse::setResult(const Object& value)
+void RecognizeExitEntryPermitResponse::setResult(const ExitEntryPermitResult& value)
 {
     result_ = value;
     resultIsSet_ = true;

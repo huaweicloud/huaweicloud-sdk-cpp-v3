@@ -1,17 +1,17 @@
 
-#ifndef HUAWEICLOUD_SDK_OCR_V1_MODEL_RecognizeCambodianIdCardResponse_H_
-#define HUAWEICLOUD_SDK_OCR_V1_MODEL_RecognizeCambodianIdCardResponse_H_
+#ifndef HUAWEICLOUD_SDK_CSMS_V1_MODEL_UploadSecretBlobResponse_H_
+#define HUAWEICLOUD_SDK_CSMS_V1_MODEL_UploadSecretBlobResponse_H_
 
-#include <huaweicloud/ocr/v1/OcrExport.h>
+#include <huaweicloud/csms/v1/CsmsExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/ocr/v1/model/CambodianIdCardResult.h>
+#include <huaweicloud/csms/v1/model/Secret.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
-namespace Ocr {
+namespace Csms {
 namespace V1 {
 namespace Model {
 
@@ -21,12 +21,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// Response Object
 /// </summary>
-class HUAWEICLOUD_OCR_V1_EXPORT  RecognizeCambodianIdCardResponse
+class HUAWEICLOUD_CSMS_V1_EXPORT  UploadSecretBlobResponse
     : public ModelBase, public HttpResponse
 {
 public:
-    RecognizeCambodianIdCardResponse();
-    virtual ~RecognizeCambodianIdCardResponse();
+    UploadSecretBlobResponse();
+    virtual ~UploadSecretBlobResponse();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -37,21 +37,21 @@ public:
     bool fromJson(const web::json::value& json) override;
 
     /////////////////////////////////////////////
-    /// RecognizeCambodianIdCardResponse members
+    /// UploadSecretBlobResponse members
 
     /// <summary>
     /// 
     /// </summary>
 
-    CambodianIdCardResult getResult() const;
-    bool resultIsSet() const;
-    void unsetresult();
-    void setResult(const CambodianIdCardResult& value);
+    Secret getSecret() const;
+    bool secretIsSet() const;
+    void unsetsecret();
+    void setSecret(const Secret& value);
 
 
 protected:
-    CambodianIdCardResult result_;
-    bool resultIsSet_;
+    Secret secret_;
+    bool secretIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()
@@ -65,4 +65,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_OCR_V1_MODEL_RecognizeCambodianIdCardResponse_H_
+#endif // HUAWEICLOUD_SDK_CSMS_V1_MODEL_UploadSecretBlobResponse_H_

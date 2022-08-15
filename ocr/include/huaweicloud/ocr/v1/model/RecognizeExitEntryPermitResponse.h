@@ -7,7 +7,7 @@
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/core/utils/Object.h>
+#include <huaweicloud/ocr/v1/model/ExitEntryPermitResult.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -40,17 +40,17 @@ public:
     /// RecognizeExitEntryPermitResponse members
 
     /// <summary>
-    /// 调用成功时表示调用结果。  调用失败时无此字段。 
+    /// 
     /// </summary>
 
-    Object getResult() const;
+    ExitEntryPermitResult getResult() const;
     bool resultIsSet() const;
     void unsetresult();
-    void setResult(const Object& value);
+    void setResult(const ExitEntryPermitResult& value);
 
 
 protected:
-    Object result_;
+    ExitEntryPermitResult result_;
     bool resultIsSet_;
 
 #ifdef RTTR_FLAG

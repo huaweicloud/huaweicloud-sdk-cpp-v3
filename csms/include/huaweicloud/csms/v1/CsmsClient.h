@@ -27,6 +27,8 @@
 #include <huaweicloud/csms/v1/model/DeleteSecretStageResponse.h>
 #include <huaweicloud/csms/v1/model/DeleteSecretTagRequest.h>
 #include <huaweicloud/csms/v1/model/DeleteSecretTagResponse.h>
+#include <huaweicloud/csms/v1/model/DownloadSecretBlobRequest.h>
+#include <huaweicloud/csms/v1/model/DownloadSecretBlobResponse.h>
 #include <huaweicloud/csms/v1/model/ListProjectSecretsTagsRequest.h>
 #include <huaweicloud/csms/v1/model/ListProjectSecretsTagsResponse.h>
 #include <huaweicloud/csms/v1/model/ListResourceInstancesRequest.h>
@@ -52,6 +54,9 @@
 #include <huaweicloud/csms/v1/model/UpdateSecretStageRequest.h>
 #include <huaweicloud/csms/v1/model/UpdateSecretStageRequestBody.h>
 #include <huaweicloud/csms/v1/model/UpdateSecretStageResponse.h>
+#include <huaweicloud/csms/v1/model/UploadSecretBlobRequest.h>
+#include <huaweicloud/csms/v1/model/UploadSecretBlobRequestBody.h>
+#include <huaweicloud/csms/v1/model/UploadSecretBlobResponse.h>
 #include <string>
 
 #include <cpprest/details/basic_types.h>
@@ -153,6 +158,15 @@ public:
     std::shared_ptr<DeleteSecretTagResponse> deleteSecretTag(
         DeleteSecretTagRequest &request
     );
+    // 下载凭据备份
+    //
+    // 下载指定凭据的备份文件
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
+    std::shared_ptr<DownloadSecretBlobResponse> downloadSecretBlob(
+        DownloadSecretBlobRequest &request
+    );
     // 查询项目标签
     //
     // - 功能介绍：查询用户在指定项目下的所有凭据标签集合。
@@ -228,7 +242,7 @@ public:
     // 查询凭据的版本与凭据值
     //
     // 查询指定凭据版本的信息和版本中的明文凭据值，只能查询ENABLED状态的凭据。
-    // 通过/v1/{project_id}/secrets/{secret_id}/versions/latest可访问凭据最新版本的凭据值。
+    // 通过/v1/{project_id}/secrets/{secret_name}/versions/latest （即将当前接口URL中的{version_id}赋值为latest）可访问凭据最新版本的凭据值。
     // 
     // 详细说明请参考华为云API Explorer。
     // Please refer to Huawei cloud API Explorer for details.
@@ -252,6 +266,15 @@ public:
     // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<UpdateSecretStageResponse> updateSecretStage(
         UpdateSecretStageRequest &request
+    );
+    // 恢复凭据对象
+    //
+    // 通过上传凭据备份文件，恢复凭据对象
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
+    std::shared_ptr<UploadSecretBlobResponse> uploadSecretBlob(
+        UploadSecretBlobRequest &request
     );
 
 

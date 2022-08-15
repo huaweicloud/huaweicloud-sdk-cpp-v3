@@ -1,3 +1,23 @@
+# 3.0.40-beta 2022-08-11
+
+### HuaweiCloud SDK CSMS
+
+- _Features_
+  - Support the interfaces `UploadSecretBlob`, `DownloadSecretBlob`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - Support the interface `RecognizeMacaoIdCard`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.0.39-beta 2022-08-02
 
 ### HuaweiCloud SDK SIS

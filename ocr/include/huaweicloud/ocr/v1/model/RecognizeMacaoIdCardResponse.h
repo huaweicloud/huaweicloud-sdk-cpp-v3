@@ -1,13 +1,13 @@
 
-#ifndef HUAWEICLOUD_SDK_OCR_V1_MODEL_RecognizeCambodianIdCardResponse_H_
-#define HUAWEICLOUD_SDK_OCR_V1_MODEL_RecognizeCambodianIdCardResponse_H_
+#ifndef HUAWEICLOUD_SDK_OCR_V1_MODEL_RecognizeMacaoIdCardResponse_H_
+#define HUAWEICLOUD_SDK_OCR_V1_MODEL_RecognizeMacaoIdCardResponse_H_
 
 #include <huaweicloud/ocr/v1/OcrExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/ocr/v1/model/CambodianIdCardResult.h>
+#include <huaweicloud/ocr/v1/model/MacaoIdCardResult.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -21,12 +21,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// Response Object
 /// </summary>
-class HUAWEICLOUD_OCR_V1_EXPORT  RecognizeCambodianIdCardResponse
+class HUAWEICLOUD_OCR_V1_EXPORT  RecognizeMacaoIdCardResponse
     : public ModelBase, public HttpResponse
 {
 public:
-    RecognizeCambodianIdCardResponse();
-    virtual ~RecognizeCambodianIdCardResponse();
+    RecognizeMacaoIdCardResponse();
+    virtual ~RecognizeMacaoIdCardResponse();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -37,20 +37,20 @@ public:
     bool fromJson(const web::json::value& json) override;
 
     /////////////////////////////////////////////
-    /// RecognizeCambodianIdCardResponse members
+    /// RecognizeMacaoIdCardResponse members
 
     /// <summary>
     /// 
     /// </summary>
 
-    CambodianIdCardResult getResult() const;
+    MacaoIdCardResult getResult() const;
     bool resultIsSet() const;
     void unsetresult();
-    void setResult(const CambodianIdCardResult& value);
+    void setResult(const MacaoIdCardResult& value);
 
 
 protected:
-    CambodianIdCardResult result_;
+    MacaoIdCardResult result_;
     bool resultIsSet_;
 
 #ifdef RTTR_FLAG
@@ -65,4 +65,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_OCR_V1_MODEL_RecognizeCambodianIdCardResponse_H_
+#endif // HUAWEICLOUD_SDK_OCR_V1_MODEL_RecognizeMacaoIdCardResponse_H_

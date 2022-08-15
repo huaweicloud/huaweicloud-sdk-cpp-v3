@@ -41,7 +41,7 @@ bool RecognizeMainlandTravelPermitResponse::fromJson(const web::json::value& val
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("result"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            MainlandTravelPermitResult refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResult(refVal);
         }
@@ -50,12 +50,12 @@ bool RecognizeMainlandTravelPermitResponse::fromJson(const web::json::value& val
 }
 
 
-Object RecognizeMainlandTravelPermitResponse::getResult() const
+MainlandTravelPermitResult RecognizeMainlandTravelPermitResponse::getResult() const
 {
     return result_;
 }
 
-void RecognizeMainlandTravelPermitResponse::setResult(const Object& value)
+void RecognizeMainlandTravelPermitResponse::setResult(const MainlandTravelPermitResult& value)
 {
     result_ = value;
     resultIsSet_ = true;

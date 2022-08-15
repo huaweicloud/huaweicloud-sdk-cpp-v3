@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/ocr/v1/model/RecognizeHkIdCardResponse.h"
+#include "huaweicloud/ocr/v1/model/RecognizeMacaoIdCardResponse.h"
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -11,18 +11,18 @@ namespace Model {
 
 
 
-RecognizeHkIdCardResponse::RecognizeHkIdCardResponse()
+RecognizeMacaoIdCardResponse::RecognizeMacaoIdCardResponse()
 {
     resultIsSet_ = false;
 }
 
-RecognizeHkIdCardResponse::~RecognizeHkIdCardResponse() = default;
+RecognizeMacaoIdCardResponse::~RecognizeMacaoIdCardResponse() = default;
 
-void RecognizeHkIdCardResponse::validate()
+void RecognizeMacaoIdCardResponse::validate()
 {
 }
 
-web::json::value RecognizeHkIdCardResponse::toJson() const
+web::json::value RecognizeMacaoIdCardResponse::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -33,7 +33,7 @@ web::json::value RecognizeHkIdCardResponse::toJson() const
     return val;
 }
 
-bool RecognizeHkIdCardResponse::fromJson(const web::json::value& val)
+bool RecognizeMacaoIdCardResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -41,7 +41,7 @@ bool RecognizeHkIdCardResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("result"));
         if(!fieldValue.is_null())
         {
-            HkIdCardResult refVal;
+            MacaoIdCardResult refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResult(refVal);
         }
@@ -50,23 +50,23 @@ bool RecognizeHkIdCardResponse::fromJson(const web::json::value& val)
 }
 
 
-HkIdCardResult RecognizeHkIdCardResponse::getResult() const
+MacaoIdCardResult RecognizeMacaoIdCardResponse::getResult() const
 {
     return result_;
 }
 
-void RecognizeHkIdCardResponse::setResult(const HkIdCardResult& value)
+void RecognizeMacaoIdCardResponse::setResult(const MacaoIdCardResult& value)
 {
     result_ = value;
     resultIsSet_ = true;
 }
 
-bool RecognizeHkIdCardResponse::resultIsSet() const
+bool RecognizeMacaoIdCardResponse::resultIsSet() const
 {
     return resultIsSet_;
 }
 
-void RecognizeHkIdCardResponse::unsetresult()
+void RecognizeMacaoIdCardResponse::unsetresult()
 {
     resultIsSet_ = false;
 }

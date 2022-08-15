@@ -52,7 +52,7 @@ public:
     void setTitle(const std::string& value);
 
     /// <summary>
-    /// 增值税发票类型，可选值包括：  - special: 增值税专用发票  - normal: 增值税普通发票  - electronic: 增值税电子普通发票  - special_electronic：增值税电子专用发票  - toll：增值税电子普通发票（通行费）  - roll：增值税普通发票（卷票） 
+    /// 增值税发票类型，可选值包括：  - special: 增值税专用发票  - normal: 增值税普通发票  - electronic: 增值税电子普通发票  - special_electronic: 增值税电子专用发票  - toll: 增值税电子普通发票（通行费）  - roll: 增值税普通发票（卷票） 
     /// </summary>
 
     std::string getType() const;

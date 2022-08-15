@@ -1,3 +1,23 @@
+# 3.0.40-beta 2022-08-11
+
+### HuaweiCloud SDK CSMS
+
+- _新增特性_
+  - 支持接口`UploadSecretBlob`、`DownloadSecretBlob`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 支持接口`RecognizeMacaoIdCard`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.0.39-beta 2022-08-02
 
 ### HuaweiCloud SDK SIS

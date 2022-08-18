@@ -38,8 +38,13 @@
 #include <huaweicloud/vod/v1/model/CreateTakeOverTaskReq.h>
 #include <huaweicloud/vod/v1/model/CreateTakeOverTaskRequest.h>
 #include <huaweicloud/vod/v1/model/CreateTakeOverTaskResponse.h>
+#include <huaweicloud/vod/v1/model/CreateTemplateGroupCollectionRequest.h>
+#include <huaweicloud/vod/v1/model/CreateTemplateGroupCollectionResponse.h>
 #include <huaweicloud/vod/v1/model/CreateTemplateGroupRequest.h>
 #include <huaweicloud/vod/v1/model/CreateTemplateGroupResponse.h>
+#include <huaweicloud/vod/v1/model/CreateTranscodeTemplate.h>
+#include <huaweicloud/vod/v1/model/CreateTranscodeTemplateRequest.h>
+#include <huaweicloud/vod/v1/model/CreateTranscodeTemplateResponse.h>
 #include <huaweicloud/vod/v1/model/CreateWatermarkTemplateReq.h>
 #include <huaweicloud/vod/v1/model/CreateWatermarkTemplateRequest.h>
 #include <huaweicloud/vod/v1/model/CreateWatermarkTemplateResponse.h>
@@ -47,8 +52,12 @@
 #include <huaweicloud/vod/v1/model/DeleteAssetCategoryResponse.h>
 #include <huaweicloud/vod/v1/model/DeleteAssetsRequest.h>
 #include <huaweicloud/vod/v1/model/DeleteAssetsResponse.h>
+#include <huaweicloud/vod/v1/model/DeleteTemplateGroupCollectionRequest.h>
+#include <huaweicloud/vod/v1/model/DeleteTemplateGroupCollectionResponse.h>
 #include <huaweicloud/vod/v1/model/DeleteTemplateGroupRequest.h>
 #include <huaweicloud/vod/v1/model/DeleteTemplateGroupResponse.h>
+#include <huaweicloud/vod/v1/model/DeleteTranscodeTemplateRequest.h>
+#include <huaweicloud/vod/v1/model/DeleteTranscodeTemplateResponse.h>
 #include <huaweicloud/vod/v1/model/DeleteWatermarkTemplateRequest.h>
 #include <huaweicloud/vod/v1/model/DeleteWatermarkTemplateResponse.h>
 #include <huaweicloud/vod/v1/model/ExtractAudioTaskReq.h>
@@ -58,12 +67,18 @@
 #include <huaweicloud/vod/v1/model/ListAssetListResponse.h>
 #include <huaweicloud/vod/v1/model/ListDomainLogsRequest.h>
 #include <huaweicloud/vod/v1/model/ListDomainLogsResponse.h>
+#include <huaweicloud/vod/v1/model/ListTemplateGroupCollectionRequest.h>
+#include <huaweicloud/vod/v1/model/ListTemplateGroupCollectionResponse.h>
 #include <huaweicloud/vod/v1/model/ListTemplateGroupRequest.h>
 #include <huaweicloud/vod/v1/model/ListTemplateGroupResponse.h>
 #include <huaweicloud/vod/v1/model/ListTopStatisticsRequest.h>
 #include <huaweicloud/vod/v1/model/ListTopStatisticsResponse.h>
+#include <huaweicloud/vod/v1/model/ListTranscodeTemplateRequest.h>
+#include <huaweicloud/vod/v1/model/ListTranscodeTemplateResponse.h>
 #include <huaweicloud/vod/v1/model/ListWatermarkTemplateRequest.h>
 #include <huaweicloud/vod/v1/model/ListWatermarkTemplateResponse.h>
+#include <huaweicloud/vod/v1/model/ModifyTemplateGroupCollection.h>
+#include <huaweicloud/vod/v1/model/ModifyTransTemplate.h>
 #include <huaweicloud/vod/v1/model/ModifyTransTemplateGroup.h>
 #include <huaweicloud/vod/v1/model/PublishAssetFromObsReq.h>
 #include <huaweicloud/vod/v1/model/PublishAssetFromObsRequest.h>
@@ -87,6 +102,7 @@
 #include <huaweicloud/vod/v1/model/ShowVodStatisticsRequest.h>
 #include <huaweicloud/vod/v1/model/ShowVodStatisticsResponse.h>
 #include <huaweicloud/vod/v1/model/TransTemplateGroup.h>
+#include <huaweicloud/vod/v1/model/TransTemplateGroupCollection.h>
 #include <huaweicloud/vod/v1/model/UnpublishAssetsRequest.h>
 #include <huaweicloud/vod/v1/model/UnpublishAssetsResponse.h>
 #include <huaweicloud/vod/v1/model/UpdateAssetCategoryRequest.h>
@@ -103,8 +119,12 @@
 #include <huaweicloud/vod/v1/model/UpdateCoverByThumbnailReq.h>
 #include <huaweicloud/vod/v1/model/UpdateCoverByThumbnailRequest.h>
 #include <huaweicloud/vod/v1/model/UpdateCoverByThumbnailResponse.h>
+#include <huaweicloud/vod/v1/model/UpdateTemplateGroupCollectionRequest.h>
+#include <huaweicloud/vod/v1/model/UpdateTemplateGroupCollectionResponse.h>
 #include <huaweicloud/vod/v1/model/UpdateTemplateGroupRequest.h>
 #include <huaweicloud/vod/v1/model/UpdateTemplateGroupResponse.h>
+#include <huaweicloud/vod/v1/model/UpdateTranscodeTemplateRequest.h>
+#include <huaweicloud/vod/v1/model/UpdateTranscodeTemplateResponse.h>
 #include <huaweicloud/vod/v1/model/UpdateWatermarkTemplateReq.h>
 #include <huaweicloud/vod/v1/model/UpdateWatermarkTemplateRequest.h>
 #include <huaweicloud/vod/v1/model/UpdateWatermarkTemplateResponse.h>
@@ -268,6 +288,24 @@ public:
     std::shared_ptr<CreateTemplateGroupResponse> createTemplateGroup(
         CreateTemplateGroupRequest &request
     );
+    // 创建转码模板组集合
+    //
+    // 创建转码模板组集合
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
+    std::shared_ptr<CreateTemplateGroupCollectionResponse> createTemplateGroupCollection(
+        CreateTemplateGroupCollectionRequest &request
+    );
+    // 创建自定义转码模板
+    //
+    // 创建自定义转码模板。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
+    std::shared_ptr<CreateTranscodeTemplateResponse> createTranscodeTemplate(
+        CreateTranscodeTemplateRequest &request
+    );
     // 创建水印模板
     //
     // 创建水印模板。
@@ -303,6 +341,24 @@ public:
     // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<DeleteTemplateGroupResponse> deleteTemplateGroup(
         DeleteTemplateGroupRequest &request
+    );
+    // 删除转码模板组集合
+    //
+    // 删除转码模板组集合
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
+    std::shared_ptr<DeleteTemplateGroupCollectionResponse> deleteTemplateGroupCollection(
+        DeleteTemplateGroupCollectionRequest &request
+    );
+    // 删除自定义模板
+    //
+    // 删除自定义模板
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
+    std::shared_ptr<DeleteTranscodeTemplateResponse> deleteTranscodeTemplate(
+        DeleteTranscodeTemplateRequest &request
     );
     // 删除水印模板
     //
@@ -349,6 +405,15 @@ public:
     std::shared_ptr<ListTemplateGroupResponse> listTemplateGroup(
         ListTemplateGroupRequest &request
     );
+    // 查询自定义模板组集合
+    //
+    // 查询转码模板组集合
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
+    std::shared_ptr<ListTemplateGroupCollectionResponse> listTemplateGroupCollection(
+        ListTemplateGroupCollectionRequest &request
+    );
     // 查询TopN媒资信息
     //
     // 查询指定域名在指定日期播放次数排名Top 100的媒资统计数据。
@@ -357,6 +422,15 @@ public:
     // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ListTopStatisticsResponse> listTopStatistics(
         ListTopStatisticsRequest &request
+    );
+    // 查询转码模板列表
+    //
+    // 查询转码模板列表
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
+    std::shared_ptr<ListTranscodeTemplateResponse> listTranscodeTemplate(
+        ListTranscodeTemplateRequest &request
     );
     // 查询水印列表
     //
@@ -522,6 +596,24 @@ public:
     // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<UpdateTemplateGroupResponse> updateTemplateGroup(
         UpdateTemplateGroupRequest &request
+    );
+    // 修改转码模板组集合
+    //
+    // 修改转码模板组结合
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
+    std::shared_ptr<UpdateTemplateGroupCollectionResponse> updateTemplateGroupCollection(
+        UpdateTemplateGroupCollectionRequest &request
+    );
+    // 修改转码模板
+    //
+    // 修改转码模板
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
+    std::shared_ptr<UpdateTranscodeTemplateResponse> updateTranscodeTemplate(
+        UpdateTranscodeTemplateRequest &request
     );
     // 修改水印模板
     //

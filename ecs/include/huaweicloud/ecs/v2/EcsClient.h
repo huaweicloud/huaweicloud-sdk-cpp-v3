@@ -89,6 +89,9 @@
 #include <huaweicloud/ecs/v2/model/ListServerInterfacesResponse.h>
 #include <huaweicloud/ecs/v2/model/ListServerTagsRequest.h>
 #include <huaweicloud/ecs/v2/model/ListServerTagsResponse.h>
+#include <huaweicloud/ecs/v2/model/ListServersByTagRequest.h>
+#include <huaweicloud/ecs/v2/model/ListServersByTagRequestBody.h>
+#include <huaweicloud/ecs/v2/model/ListServersByTagResponse.h>
 #include <huaweicloud/ecs/v2/model/ListServersDetailsRequest.h>
 #include <huaweicloud/ecs/v2/model/ListServersDetailsResponse.h>
 #include <huaweicloud/ecs/v2/model/MigrateServerRequest.h>
@@ -537,6 +540,15 @@ public:
     // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<ListServerTagsResponse> listServerTags(
         ListServerTagsRequest &request
+    );
+    // 按标签查询云服务器列表
+    //
+    // 使用标签过滤弹性云服务器，并返回云服务器使用的所有标签和资源列表。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
+    std::shared_ptr<ListServersByTagResponse> listServersByTag(
+        ListServersByTagRequest &request
     );
     // 查询云服务器详情列表
     //

@@ -84,6 +84,15 @@ public:
     void unsetreturnTextLocation();
     void setReturnTextLocation(bool value);
 
+    /// <summary>
+    /// 返回判断身份证图像是否经过翻拍的开关，默认false，可选值如下所示：  - true ：返回身份证图像是否经过翻拍  - false：不返回身份证图像是否经过翻拍 
+    /// </summary>
+
+    bool isDetectReproduce() const;
+    bool detectReproduceIsSet() const;
+    void unsetdetectReproduce();
+    void setDetectReproduce(bool value);
+
 
 protected:
     std::string image_;
@@ -96,6 +105,8 @@ protected:
     bool returnVerificationIsSet_;
     bool returnTextLocation_;
     bool returnTextLocationIsSet_;
+    bool detectReproduce_;
+    bool detectReproduceIsSet_;
 
 };
 

@@ -140,6 +140,15 @@ public:
     void unsettextLocation();
     void setTextLocation(const Object& value);
 
+    /// <summary>
+    /// 判断身份证图像是否经过翻拍，“true”表示是翻拍，“false”表示未经过翻拍。仅在输入参数detect_reproduce为true时，返回该字段。 
+    /// </summary>
+
+    bool isDetectReproduceResult() const;
+    bool detectReproduceResultIsSet() const;
+    void unsetdetectReproduceResult();
+    void setDetectReproduceResult(bool value);
+
 
 protected:
     std::string name_;
@@ -164,6 +173,8 @@ protected:
     bool verificationResultIsSet_;
     Object textLocation_;
     bool textLocationIsSet_;
+    bool detectReproduceResult_;
+    bool detectReproduceResultIsSet_;
 
 };
 

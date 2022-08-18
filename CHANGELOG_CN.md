@@ -1,3 +1,42 @@
+# 3.0.41-beta 2022-08-18
+
+### HuaweiCloud SDK ECS
+
+- _新增特性_
+  - 支持接口`ListServersByTag`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`NovaCreateServers`请求参数`destination_type`改为必填
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`RecognizeIdCard`:
+    - 新增请求参数 `detect_reproduce`
+    - 新增响应参数 `detect_reproduce_result`
+
+### HuaweiCloud SDK VOD
+
+- _新增特性_
+  - 支持以下接口：
+    - `ListTranscodeTemplate`
+    - `UpdateTranscodeTemplate`
+    - `CreateTranscodeTemplate`
+    - `DeleteTranscodeTemplate`
+    - `ListTemplateGroupCollection`
+    - `UpdateTemplateGroupCollection`
+    - `CreateTemplateGroupCollection`
+    - `DeleteTemplateGroupCollection`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.0.40-beta 2022-08-11
 
 ### HuaweiCloud SDK CSMS

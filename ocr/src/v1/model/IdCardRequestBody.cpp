@@ -23,6 +23,8 @@ IdCardRequestBody::IdCardRequestBody()
     returnVerificationIsSet_ = false;
     returnTextLocation_ = false;
     returnTextLocationIsSet_ = false;
+    detectReproduce_ = false;
+    detectReproduceIsSet_ = false;
 }
 
 IdCardRequestBody::~IdCardRequestBody() = default;
@@ -49,6 +51,9 @@ web::json::value IdCardRequestBody::toJson() const
     }
     if(returnTextLocationIsSet_) {
         val[utility::conversions::to_string_t("return_text_location")] = ModelBase::toJson(returnTextLocation_);
+    }
+    if(detectReproduceIsSet_) {
+        val[utility::conversions::to_string_t("detect_reproduce")] = ModelBase::toJson(detectReproduce_);
     }
 
     return val;
@@ -101,6 +106,15 @@ bool IdCardRequestBody::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setReturnTextLocation(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("detect_reproduce"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("detect_reproduce"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDetectReproduce(refVal);
         }
     }
     return ok;
@@ -210,6 +224,27 @@ bool IdCardRequestBody::returnTextLocationIsSet() const
 void IdCardRequestBody::unsetreturnTextLocation()
 {
     returnTextLocationIsSet_ = false;
+}
+
+bool IdCardRequestBody::isDetectReproduce() const
+{
+    return detectReproduce_;
+}
+
+void IdCardRequestBody::setDetectReproduce(bool value)
+{
+    detectReproduce_ = value;
+    detectReproduceIsSet_ = true;
+}
+
+bool IdCardRequestBody::detectReproduceIsSet() const
+{
+    return detectReproduceIsSet_;
+}
+
+void IdCardRequestBody::unsetdetectReproduce()
+{
+    detectReproduceIsSet_ = false;
 }
 
 }

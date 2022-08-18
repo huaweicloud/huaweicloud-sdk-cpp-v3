@@ -1,3 +1,42 @@
+# 3.0.41-beta 2022-08-18
+
+### HuaweiCloud SDK ECS
+
+- _Features_
+  - Support the interface `ListServersByTag`
+- _Bug Fix_
+  - None
+- _Change_
+  - The request parameter `destination_type` changed to required of the interface `NovaCreateServers`
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Changes of the interface `RecognizeIdCard`:
+    - Add the request parameter `detect_reproduce`
+    - Add the response parameter `detect_reproduce_result`
+
+### HuaweiCloud SDK VOD
+
+- _Features_
+  - Support the following interfaces：
+    - `ListTranscodeTemplate`
+    - `UpdateTranscodeTemplate`
+    - `CreateTranscodeTemplate`
+    - `DeleteTranscodeTemplate`
+    - `ListTemplateGroupCollection`
+    - `UpdateTemplateGroupCollection`
+    - `CreateTemplateGroupCollection`
+    - `DeleteTemplateGroupCollection`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.0.40-beta 2022-08-11
 
 ### HuaweiCloud SDK CSMS

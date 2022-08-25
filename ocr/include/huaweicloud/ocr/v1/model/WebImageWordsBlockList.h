@@ -167,6 +167,24 @@ public:
     void unsetdetailAddress();
     void setDetailAddress(const std::string& value);
 
+    /// <summary>
+    /// 文字块所属字体类型，列表形式，表示与文字块的文字最接近的字体类型。 
+    /// </summary>
+
+    std::vector<std::string>& getFontList();
+    bool fontListIsSet() const;
+    void unsetfontList();
+    void setFontList(const std::vector<std::string>& value);
+
+    /// <summary>
+    /// 文字块所属字体类型的概率，列表形式，与font_list一一对应，表示文字块的文字属于某种字体类型的概率。 
+    /// </summary>
+
+    std::vector<float>& getFontScores();
+    bool fontScoresIsSet() const;
+    void unsetfontScores();
+    void setFontScores(std::vector<float> value);
+
 
 protected:
     std::string words_;
@@ -197,6 +215,10 @@ protected:
     bool districtIsSet_;
     std::string detailAddress_;
     bool detailAddressIsSet_;
+    std::vector<std::string> fontList_;
+    bool fontListIsSet_;
+    std::vector<float> fontScores_;
+    bool fontScoresIsSet_;
 
 };
 

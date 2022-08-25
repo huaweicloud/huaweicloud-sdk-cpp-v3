@@ -1,3 +1,25 @@
+# 3.0.42-beta 2022-08-25
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`RecognizeWebImage`:
+    - 新增请求参数 `detect_font`
+    - 新增响应参数 `font_list`、`font_scores`
+
+### HuaweiCloud SDK VOD
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`CheckMd5Duplication`请求参数`size`类型调整 `int32` -> `int64`
+
 # 3.0.41-beta 2022-08-18
 
 ### HuaweiCloud SDK ECS

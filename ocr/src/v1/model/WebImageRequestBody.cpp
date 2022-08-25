@@ -20,6 +20,8 @@ WebImageRequestBody::WebImageRequestBody()
     detectDirection_ = false;
     detectDirectionIsSet_ = false;
     extractTypeIsSet_ = false;
+    detectFont_ = false;
+    detectFontIsSet_ = false;
 }
 
 WebImageRequestBody::~WebImageRequestBody() = default;
@@ -43,6 +45,9 @@ web::json::value WebImageRequestBody::toJson() const
     }
     if(extractTypeIsSet_) {
         val[utility::conversions::to_string_t("extract_type")] = ModelBase::toJson(extractType_);
+    }
+    if(detectFontIsSet_) {
+        val[utility::conversions::to_string_t("detect_font")] = ModelBase::toJson(detectFont_);
     }
 
     return val;
@@ -86,6 +91,15 @@ bool WebImageRequestBody::fromJson(const web::json::value& val)
             std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setExtractType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("detect_font"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("detect_font"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDetectFont(refVal);
         }
     }
     return ok;
@@ -174,6 +188,27 @@ bool WebImageRequestBody::extractTypeIsSet() const
 void WebImageRequestBody::unsetextractType()
 {
     extractTypeIsSet_ = false;
+}
+
+bool WebImageRequestBody::isDetectFont() const
+{
+    return detectFont_;
+}
+
+void WebImageRequestBody::setDetectFont(bool value)
+{
+    detectFont_ = value;
+    detectFontIsSet_ = true;
+}
+
+bool WebImageRequestBody::detectFontIsSet() const
+{
+    return detectFontIsSet_;
+}
+
+void WebImageRequestBody::unsetdetectFont()
+{
+    detectFontIsSet_ = false;
 }
 
 }

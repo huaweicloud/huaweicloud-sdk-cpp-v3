@@ -37,6 +37,8 @@ WebImageWordsBlockList::WebImageWordsBlockList()
     districtIsSet_ = false;
     detailAddress_ = "";
     detailAddressIsSet_ = false;
+    fontListIsSet_ = false;
+    fontScoresIsSet_ = false;
 }
 
 WebImageWordsBlockList::~WebImageWordsBlockList() = default;
@@ -90,6 +92,12 @@ web::json::value WebImageWordsBlockList::toJson() const
     }
     if(detailAddressIsSet_) {
         val[utility::conversions::to_string_t("detail_address")] = ModelBase::toJson(detailAddress_);
+    }
+    if(fontListIsSet_) {
+        val[utility::conversions::to_string_t("font_list")] = ModelBase::toJson(fontList_);
+    }
+    if(fontScoresIsSet_) {
+        val[utility::conversions::to_string_t("font_scores")] = ModelBase::toJson(fontScores_);
     }
 
     return val;
@@ -223,6 +231,24 @@ bool WebImageWordsBlockList::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDetailAddress(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("font_list"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("font_list"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFontList(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("font_scores"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("font_scores"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<float> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFontScores(refVal);
         }
     }
     return ok;
@@ -521,6 +547,48 @@ bool WebImageWordsBlockList::detailAddressIsSet() const
 void WebImageWordsBlockList::unsetdetailAddress()
 {
     detailAddressIsSet_ = false;
+}
+
+std::vector<std::string>& WebImageWordsBlockList::getFontList()
+{
+    return fontList_;
+}
+
+void WebImageWordsBlockList::setFontList(const std::vector<std::string>& value)
+{
+    fontList_ = value;
+    fontListIsSet_ = true;
+}
+
+bool WebImageWordsBlockList::fontListIsSet() const
+{
+    return fontListIsSet_;
+}
+
+void WebImageWordsBlockList::unsetfontList()
+{
+    fontListIsSet_ = false;
+}
+
+std::vector<float>& WebImageWordsBlockList::getFontScores()
+{
+    return fontScores_;
+}
+
+void WebImageWordsBlockList::setFontScores(std::vector<float> value)
+{
+    fontScores_ = value;
+    fontScoresIsSet_ = true;
+}
+
+bool WebImageWordsBlockList::fontScoresIsSet() const
+{
+    return fontScoresIsSet_;
+}
+
+void WebImageWordsBlockList::unsetfontScores()
+{
+    fontScoresIsSet_ = false;
 }
 
 }

@@ -76,6 +76,15 @@ public:
     void unsetextractType();
     void setExtractType(const std::vector<std::string>& value);
 
+    /// <summary>
+    /// 为Boolean类型，若不传该字段，默认不检测切片字体，为True时，将检测切片的字体类型，并返回最相似的5种字体名称。 
+    /// </summary>
+
+    bool isDetectFont() const;
+    bool detectFontIsSet() const;
+    void unsetdetectFont();
+    void setDetectFont(bool value);
+
 
 protected:
     std::string image_;
@@ -86,6 +95,8 @@ protected:
     bool detectDirectionIsSet_;
     std::vector<std::string> extractType_;
     bool extractTypeIsSet_;
+    bool detectFont_;
+    bool detectFontIsSet_;
 
 };
 

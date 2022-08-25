@@ -61,10 +61,10 @@ public:
     /// 文件大小
     /// </summary>
 
-    int32_t getSize() const;
+    int64_t getSize() const;
     bool sizeIsSet() const;
     void unsetsize();
-    void setSize(int32_t value);
+    void setSize(int64_t value);
 
     /// <summary>
     /// 文件MD5。  建议参考[上传校验](https://support.huaweicloud.com/api-vod/vod_04_0212.html#vod_04_0212__section575102165412)生成对应的MD5值。
@@ -81,7 +81,7 @@ protected:
     bool authorizationIsSet_;
     std::string xSdkDate_;
     bool xSdkDateIsSet_;
-    int32_t size_;
+    int64_t size_;
     bool sizeIsSet_;
     std::string md5_;
     bool md5IsSet_;

@@ -17,7 +17,7 @@ CheckMd5DuplicationRequest::CheckMd5DuplicationRequest()
     authorizationIsSet_ = false;
     xSdkDate_ = "";
     xSdkDateIsSet_ = false;
-    size_ = 0;
+    size_ = 0L;
     sizeIsSet_ = false;
     md5_ = "";
     md5IsSet_ = false;
@@ -75,7 +75,7 @@ bool CheckMd5DuplicationRequest::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("size"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSize(refVal);
         }
@@ -135,12 +135,12 @@ void CheckMd5DuplicationRequest::unsetxSdkDate()
     xSdkDateIsSet_ = false;
 }
 
-int32_t CheckMd5DuplicationRequest::getSize() const
+int64_t CheckMd5DuplicationRequest::getSize() const
 {
     return size_;
 }
 
-void CheckMd5DuplicationRequest::setSize(int32_t value)
+void CheckMd5DuplicationRequest::setSize(int64_t value)
 {
     size_ = value;
     sizeIsSet_ = true;

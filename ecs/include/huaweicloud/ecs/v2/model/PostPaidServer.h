@@ -77,6 +77,15 @@ public:
     void setAvailabilityZone(const std::string& value);
 
     /// <summary>
+    /// 是否支持随机多AZ部署。  - “true”：批量创建的ecs部署在多个AZ上 - “false”：批量创建的ecs部署在单个AZ上  &gt; 说明： &gt;  &gt; 当availability_zone为空时该字段生效。
+    /// </summary>
+
+    bool isBatchCreateInMultiAz() const;
+    bool batchCreateInMultiAzIsSet() const;
+    void unsetbatchCreateInMultiAz();
+    void setBatchCreateInMultiAz(bool value);
+
+    /// <summary>
     /// 创建云服务器数量。  约束：  - 不传该字段时默认取值为1。 - 租户的配额足够时，最大值为500。
     /// </summary>
 
@@ -255,6 +264,8 @@ protected:
     bool adminPassIsSet_;
     std::string availabilityZone_;
     bool availabilityZoneIsSet_;
+    bool batchCreateInMultiAz_;
+    bool batchCreateInMultiAzIsSet_;
     int32_t count_;
     bool countIsSet_;
     std::vector<PostPaidServerDataVolume> dataVolumes_;

@@ -19,6 +19,8 @@ PostPaidServer::PostPaidServer()
     adminPassIsSet_ = false;
     availabilityZone_ = "";
     availabilityZoneIsSet_ = false;
+    batchCreateInMultiAz_ = false;
+    batchCreateInMultiAzIsSet_ = false;
     count_ = 0;
     countIsSet_ = false;
     dataVolumesIsSet_ = false;
@@ -67,6 +69,9 @@ web::json::value PostPaidServer::toJson() const
     }
     if(availabilityZoneIsSet_) {
         val[utility::conversions::to_string_t("availability_zone")] = ModelBase::toJson(availabilityZone_);
+    }
+    if(batchCreateInMultiAzIsSet_) {
+        val[utility::conversions::to_string_t("batch_create_in_multi_az")] = ModelBase::toJson(batchCreateInMultiAz_);
     }
     if(countIsSet_) {
         val[utility::conversions::to_string_t("count")] = ModelBase::toJson(count_);
@@ -158,6 +163,15 @@ bool PostPaidServer::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAvailabilityZone(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("batch_create_in_multi_az"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("batch_create_in_multi_az"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBatchCreateInMultiAz(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("count"))) {
@@ -396,6 +410,27 @@ bool PostPaidServer::availabilityZoneIsSet() const
 void PostPaidServer::unsetavailabilityZone()
 {
     availabilityZoneIsSet_ = false;
+}
+
+bool PostPaidServer::isBatchCreateInMultiAz() const
+{
+    return batchCreateInMultiAz_;
+}
+
+void PostPaidServer::setBatchCreateInMultiAz(bool value)
+{
+    batchCreateInMultiAz_ = value;
+    batchCreateInMultiAzIsSet_ = true;
+}
+
+bool PostPaidServer::batchCreateInMultiAzIsSet() const
+{
+    return batchCreateInMultiAzIsSet_;
+}
+
+void PostPaidServer::unsetbatchCreateInMultiAz()
+{
+    batchCreateInMultiAzIsSet_ = false;
 }
 
 int32_t PostPaidServer::getCount() const

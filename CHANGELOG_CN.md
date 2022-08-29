@@ -1,3 +1,23 @@
+# 3.0.43-rc 2022-08-29
+
+### HuaweiCloud SDK ECS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`CreatePostPaidServers`新增请求参数 `batch_create_in_multi_az`
+
+### HuaweiCloud SDK IMS
+
+- _新增特性_
+  - 支持接口`ShowJobProgress`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.0.42-beta 2022-08-25
 
 ### HuaweiCloud SDK OCR

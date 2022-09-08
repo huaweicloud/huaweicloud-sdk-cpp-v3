@@ -35,6 +35,9 @@ public:
         regions["ap-southeast-3"] = Region("ap-southeast-3","https://evs.ap-southeast-3.myhuaweicloud.com") ;
         regions["sa-brazil-1"] = Region("sa-brazil-1","https://evs.sa-brazil-1.myhuaweicloud.com") ;
         regions["la-north-2"] = Region("la-north-2","https://evs.la-north-2.myhuaweicloud.com") ;
+        regions["la-south-2"] = Region("la-south-2","https://evs.la-south-2.myhuaweicloud.com") ;
+        regions["na-mexico-1"] = Region("na-mexico-1","https://evs.na-mexico-1.myhuaweicloud.com") ;
+        regions["cn-north-9"] = Region("cn-north-9","https://evs.cn-north-9.myhuaweicloud.com") ;
         return regions;
     }
 private:

@@ -19,6 +19,8 @@ AttachServerVolumeOption::AttachServerVolumeOption()
     volumeIdIsSet_ = false;
     volumeType_ = "";
     volumeTypeIsSet_ = false;
+    count_ = 0;
+    countIsSet_ = false;
     hwpassthrough_ = "";
     hwpassthroughIsSet_ = false;
 }
@@ -41,6 +43,9 @@ web::json::value AttachServerVolumeOption::toJson() const
     }
     if(volumeTypeIsSet_) {
         val[utility::conversions::to_string_t("volume_type")] = ModelBase::toJson(volumeType_);
+    }
+    if(countIsSet_) {
+        val[utility::conversions::to_string_t("count")] = ModelBase::toJson(count_);
     }
     if(hwpassthroughIsSet_) {
         val[utility::conversions::to_string_t("hw:passthrough")] = ModelBase::toJson(hwpassthrough_);
@@ -78,6 +83,15 @@ bool AttachServerVolumeOption::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setVolumeType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("count"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("count"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCount(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("hw:passthrough"))) {
@@ -154,6 +168,27 @@ bool AttachServerVolumeOption::volumeTypeIsSet() const
 void AttachServerVolumeOption::unsetvolumeType()
 {
     volumeTypeIsSet_ = false;
+}
+
+int32_t AttachServerVolumeOption::getCount() const
+{
+    return count_;
+}
+
+void AttachServerVolumeOption::setCount(int32_t value)
+{
+    count_ = value;
+    countIsSet_ = true;
+}
+
+bool AttachServerVolumeOption::countIsSet() const
+{
+    return countIsSet_;
+}
+
+void AttachServerVolumeOption::unsetcount()
+{
+    countIsSet_ = false;
 }
 
 std::string AttachServerVolumeOption::getHwpassthrough() const

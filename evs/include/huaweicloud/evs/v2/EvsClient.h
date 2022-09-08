@@ -12,12 +12,24 @@
 #include <huaweicloud/evs/v2/model/BatchDeleteVolumeTagsRequest.h>
 #include <huaweicloud/evs/v2/model/BatchDeleteVolumeTagsRequestBody.h>
 #include <huaweicloud/evs/v2/model/BatchDeleteVolumeTagsResponse.h>
+#include <huaweicloud/evs/v2/model/CinderAcceptVolumeTransferRequest.h>
+#include <huaweicloud/evs/v2/model/CinderAcceptVolumeTransferRequestBody.h>
+#include <huaweicloud/evs/v2/model/CinderAcceptVolumeTransferResponse.h>
+#include <huaweicloud/evs/v2/model/CinderCreateVolumeTransferRequest.h>
+#include <huaweicloud/evs/v2/model/CinderCreateVolumeTransferRequestBody.h>
+#include <huaweicloud/evs/v2/model/CinderCreateVolumeTransferResponse.h>
+#include <huaweicloud/evs/v2/model/CinderDeleteVolumeTransferRequest.h>
+#include <huaweicloud/evs/v2/model/CinderDeleteVolumeTransferResponse.h>
 #include <huaweicloud/evs/v2/model/CinderListAvailabilityZonesRequest.h>
 #include <huaweicloud/evs/v2/model/CinderListAvailabilityZonesResponse.h>
 #include <huaweicloud/evs/v2/model/CinderListQuotasRequest.h>
 #include <huaweicloud/evs/v2/model/CinderListQuotasResponse.h>
+#include <huaweicloud/evs/v2/model/CinderListVolumeTransfersRequest.h>
+#include <huaweicloud/evs/v2/model/CinderListVolumeTransfersResponse.h>
 #include <huaweicloud/evs/v2/model/CinderListVolumeTypesRequest.h>
 #include <huaweicloud/evs/v2/model/CinderListVolumeTypesResponse.h>
+#include <huaweicloud/evs/v2/model/CinderShowVolumeTransferRequest.h>
+#include <huaweicloud/evs/v2/model/CinderShowVolumeTransferResponse.h>
 #include <huaweicloud/evs/v2/model/CreateSnapshotRequest.h>
 #include <huaweicloud/evs/v2/model/CreateSnapshotRequestBody.h>
 #include <huaweicloud/evs/v2/model/CreateSnapshotResponse.h>
@@ -57,6 +69,12 @@
 #include <huaweicloud/evs/v2/model/UpdateVolumeRequest.h>
 #include <huaweicloud/evs/v2/model/UpdateVolumeRequestBody.h>
 #include <huaweicloud/evs/v2/model/UpdateVolumeResponse.h>
+#include <string>
+
+#include <huaweicloud/evs/v2/model/ListVersionsRequest.h>
+#include <huaweicloud/evs/v2/model/ListVersionsResponse.h>
+#include <huaweicloud/evs/v2/model/ShowVersionRequest.h>
+#include <huaweicloud/evs/v2/model/ShowVersionResponse.h>
 #include <string>
 
 #include <cpprest/details/basic_types.h>
@@ -103,6 +121,34 @@ public:
     std::shared_ptr<BatchDeleteVolumeTagsResponse> batchDeleteVolumeTags(
         BatchDeleteVolumeTagsRequest &request
     );
+    // 接受云硬盘过户
+    //
+    // 通过云硬盘过户记录ID以及身份认证密钥来接受云硬盘过户。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
+    std::shared_ptr<CinderAcceptVolumeTransferResponse> cinderAcceptVolumeTransfer(
+        CinderAcceptVolumeTransferRequest &request
+    );
+    // 创建云硬盘过户
+    //
+    // 指定云硬盘来创建云硬盘过户记录，创建成功后，会返回过户记录ID以及身份认证密钥。
+    // 云硬盘在过户过程中的状态变化如下：创建云硬盘过户后，云硬盘状态由“available”变为“awaiting-transfer”。当云硬盘过户被接收后，云硬盘状态变为“available”。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
+    std::shared_ptr<CinderCreateVolumeTransferResponse> cinderCreateVolumeTransfer(
+        CinderCreateVolumeTransferRequest &request
+    );
+    // 删除云硬盘过户
+    //
+    // 当云硬盘过户未被接受时，您可以删除云硬盘过户记录，接受后则无法执行删除操作。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
+    std::shared_ptr<CinderDeleteVolumeTransferResponse> cinderDeleteVolumeTransfer(
+        CinderDeleteVolumeTransferRequest &request
+    );
     // 查询所有的可用分区信息
     //
     // 查询所有的可用分区信息。
@@ -121,6 +167,15 @@ public:
     std::shared_ptr<CinderListQuotasResponse> cinderListQuotas(
         CinderListQuotasRequest &request
     );
+    // 查询云硬盘过户记录列表概要
+    //
+    // 查询当前租户下所有云硬盘的过户记录列表
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
+    std::shared_ptr<CinderListVolumeTransfersResponse> cinderListVolumeTransfers(
+        CinderListVolumeTransfersRequest &request
+    );
     // 查询云硬盘类型列表
     //
     // 查询云硬盘类型列表。
@@ -129,6 +184,15 @@ public:
     // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<CinderListVolumeTypesResponse> cinderListVolumeTypes(
         CinderListVolumeTypesRequest &request
+    );
+    // 查询单个云硬盘过户记录详情
+    //
+    // 查询单个云硬盘的过户记录详情，比如过户记录创建时间、ID以及名称等信息。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
+    std::shared_ptr<CinderShowVolumeTransferResponse> cinderShowVolumeTransfer(
+        CinderShowVolumeTransferRequest &request
     );
     // 创建云硬盘快照
     //
@@ -284,6 +348,25 @@ public:
     // Please refer to Huawei cloud API Explorer for details.
     std::shared_ptr<UpdateVolumeResponse> updateVolume(
         UpdateVolumeRequest &request
+    );
+
+    // 查询接口版本信息列表
+    //
+    // 查询接口版本信息列表。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
+    std::shared_ptr<ListVersionsResponse> listVersions(
+        ListVersionsRequest &request
+    );
+    // 查询API接口的版本信息
+    //
+    // 查询接口的指定版本信息。
+    // 
+    // 详细说明请参考华为云API Explorer。
+    // Please refer to Huawei cloud API Explorer for details.
+    std::shared_ptr<ShowVersionResponse> showVersion(
+        ShowVersionRequest &request
     );
 
 

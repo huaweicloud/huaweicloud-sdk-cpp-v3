@@ -1,3 +1,21 @@
+# 3.1.1 2022-09-08
+
+### HuaweiCloud SDK EVS
+
+- _新增特性_
+  - 支持以下接口：
+    - `ShowVersion`
+    - `ListVersions`
+    - `CinderShowVolumeTransfer`
+    - `CinderDeleteVolumeTransfer`
+    - `CinderListVolumeTransfers`
+    - `CinderCreateVolumeTransfer`
+    - `CinderAcceptVolumeTransfer`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.0.43-rc 2022-08-29
 
 ### HuaweiCloud SDK ECS

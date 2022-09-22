@@ -1,3 +1,40 @@
+# 3.1.3 2022-09-22
+
+### HuaweiCloud SDK EIP
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the request parameter `port_id` to the interface `CreatePublicip`
+  - Add the request parameter `port_id` to the interface `CreatePrePaidPublicip`
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Changes of the interface `RecognizeIdCard`:
+    - Add the request parameter `detect_copy`
+    - Add the response parameter `detect_copy_result`
+
+### HuaweiCloud SDK VOD
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the response parameters `pack_type`, `pack_type` to the interface `PublishAssets`
+  - Add the response parameters `pack_type`, `pack_type` to the interface `UnpublishAssets`
+  - Add the response parameters `pack_type`, `pack_type` to the interface `ShowAssetMeta`
+  - Add the response parameters `pack_type`, `pack_type` to the interface `ShowAssetDetail`
+  - Add the response parameters `pack_type`, `pack_type` to the interface `ShowTakeOverTaskDetails`
+  - Add the response parameters `pack_type`, `pack_type` to the interface `ShowTakeOverAssetDetails`
+
 # 3.1.2 2022-09-15
 
 ### HuaweiCloud SDK EVS

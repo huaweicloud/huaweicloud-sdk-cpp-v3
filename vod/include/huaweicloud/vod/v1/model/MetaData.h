@@ -40,6 +40,15 @@ public:
     /// MetaData members
 
     /// <summary>
+    /// 视频封装格式。  取值如下： - MP4 - TS - MOV - MXF - MPG - FLV - WMV - MP3 - WMA - APE - FLAC - AAC - AC3 - MMF - AMR - M4A - M4R - OGG - WAV - WV - MP2 - AVI - F4V - M4V - MPEG - HLS - DASH
+    /// </summary>
+
+    std::string getPackType() const;
+    bool packTypeIsSet() const;
+    void unsetpackType();
+    void setPackType(const std::string& value);
+
+    /// <summary>
     /// 视频编码格式。  取值如下： - MPEG-2 - MPEG-4 - H.264 - H.265 - WMV - Vorbis - AAC - AC-3 - AMR - APE - FLAC - MP3 - MP2 - WMA - PCM - ADPCM - WavPack
     /// </summary>
 
@@ -122,6 +131,8 @@ public:
 
 
 protected:
+    std::string packType_;
+    bool packTypeIsSet_;
     std::string codec_;
     bool codecIsSet_;
     int64_t duration_;

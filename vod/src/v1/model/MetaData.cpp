@@ -13,6 +13,8 @@ namespace Model {
 
 MetaData::MetaData()
 {
+    packType_ = "";
+    packTypeIsSet_ = false;
     codec_ = "";
     codecIsSet_ = false;
     duration_ = 0L;
@@ -43,6 +45,9 @@ web::json::value MetaData::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(packTypeIsSet_) {
+        val[utility::conversions::to_string_t("pack_type")] = ModelBase::toJson(packType_);
+    }
     if(codecIsSet_) {
         val[utility::conversions::to_string_t("codec")] = ModelBase::toJson(codec_);
     }
@@ -78,6 +83,15 @@ bool MetaData::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("pack_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("pack_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPackType(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("codec"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("codec"));
         if(!fieldValue.is_null())
@@ -162,6 +176,27 @@ bool MetaData::fromJson(const web::json::value& val)
     return ok;
 }
 
+
+std::string MetaData::getPackType() const
+{
+    return packType_;
+}
+
+void MetaData::setPackType(const std::string& value)
+{
+    packType_ = value;
+    packTypeIsSet_ = true;
+}
+
+bool MetaData::packTypeIsSet() const
+{
+    return packTypeIsSet_;
+}
+
+void MetaData::unsetpackType()
+{
+    packTypeIsSet_ = false;
+}
 
 std::string MetaData::getCodec() const
 {

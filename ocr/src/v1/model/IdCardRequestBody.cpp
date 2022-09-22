@@ -25,6 +25,8 @@ IdCardRequestBody::IdCardRequestBody()
     returnTextLocationIsSet_ = false;
     detectReproduce_ = false;
     detectReproduceIsSet_ = false;
+    detectCopy_ = false;
+    detectCopyIsSet_ = false;
 }
 
 IdCardRequestBody::~IdCardRequestBody() = default;
@@ -54,6 +56,9 @@ web::json::value IdCardRequestBody::toJson() const
     }
     if(detectReproduceIsSet_) {
         val[utility::conversions::to_string_t("detect_reproduce")] = ModelBase::toJson(detectReproduce_);
+    }
+    if(detectCopyIsSet_) {
+        val[utility::conversions::to_string_t("detect_copy")] = ModelBase::toJson(detectCopy_);
     }
 
     return val;
@@ -115,6 +120,15 @@ bool IdCardRequestBody::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDetectReproduce(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("detect_copy"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("detect_copy"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDetectCopy(refVal);
         }
     }
     return ok;
@@ -245,6 +259,27 @@ bool IdCardRequestBody::detectReproduceIsSet() const
 void IdCardRequestBody::unsetdetectReproduce()
 {
     detectReproduceIsSet_ = false;
+}
+
+bool IdCardRequestBody::isDetectCopy() const
+{
+    return detectCopy_;
+}
+
+void IdCardRequestBody::setDetectCopy(bool value)
+{
+    detectCopy_ = value;
+    detectCopyIsSet_ = true;
+}
+
+bool IdCardRequestBody::detectCopyIsSet() const
+{
+    return detectCopyIsSet_;
+}
+
+void IdCardRequestBody::unsetdetectCopy()
+{
+    detectCopyIsSet_ = false;
 }
 
 }

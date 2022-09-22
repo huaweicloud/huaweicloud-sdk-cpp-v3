@@ -21,6 +21,8 @@ CreatePublicipOption::CreatePublicipOption()
     ipVersionIsSet_ = false;
     alias_ = "";
     aliasIsSet_ = false;
+    portId_ = "";
+    portIdIsSet_ = false;
 }
 
 CreatePublicipOption::~CreatePublicipOption() = default;
@@ -44,6 +46,9 @@ web::json::value CreatePublicipOption::toJson() const
     }
     if(aliasIsSet_) {
         val[utility::conversions::to_string_t("alias")] = ModelBase::toJson(alias_);
+    }
+    if(portIdIsSet_) {
+        val[utility::conversions::to_string_t("port_id")] = ModelBase::toJson(portId_);
     }
 
     return val;
@@ -87,6 +92,15 @@ bool CreatePublicipOption::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAlias(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("port_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("port_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPortId(refVal);
         }
     }
     return ok;
@@ -175,6 +189,27 @@ bool CreatePublicipOption::aliasIsSet() const
 void CreatePublicipOption::unsetalias()
 {
     aliasIsSet_ = false;
+}
+
+std::string CreatePublicipOption::getPortId() const
+{
+    return portId_;
+}
+
+void CreatePublicipOption::setPortId(const std::string& value)
+{
+    portId_ = value;
+    portIdIsSet_ = true;
+}
+
+bool CreatePublicipOption::portIdIsSet() const
+{
+    return portIdIsSet_;
+}
+
+void CreatePublicipOption::unsetportId()
+{
+    portIdIsSet_ = false;
 }
 
 }

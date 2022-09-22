@@ -149,6 +149,15 @@ public:
     void unsetdetectReproduceResult();
     void setDetectReproduceResult(bool value);
 
+    /// <summary>
+    /// 判断身份证图像是黑白复印件还是原件，“true”表示是复印件，“false”表示是原件。仅在输入参数detect_copy为true时，返回该字段。           
+    /// </summary>
+
+    bool isDetectCopyResult() const;
+    bool detectCopyResultIsSet() const;
+    void unsetdetectCopyResult();
+    void setDetectCopyResult(bool value);
+
 
 protected:
     std::string name_;
@@ -175,6 +184,8 @@ protected:
     bool textLocationIsSet_;
     bool detectReproduceResult_;
     bool detectReproduceResultIsSet_;
+    bool detectCopyResult_;
+    bool detectCopyResultIsSet_;
 
 };
 

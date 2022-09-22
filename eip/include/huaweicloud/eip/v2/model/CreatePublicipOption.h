@@ -75,6 +75,15 @@ public:
     void unsetalias();
     void setAlias(const std::string& value);
 
+    /// <summary>
+    /// 功能说明：端口id  约束：必须是存在的端口id，如果该端口不存在或端口已绑定EIP则会提示出错。
+    /// </summary>
+
+    std::string getPortId() const;
+    bool portIdIsSet() const;
+    void unsetportId();
+    void setPortId(const std::string& value);
+
 
 protected:
     std::string ipAddress_;
@@ -85,6 +94,8 @@ protected:
     bool ipVersionIsSet_;
     std::string alias_;
     bool aliasIsSet_;
+    std::string portId_;
+    bool portIdIsSet_;
 
 };
 

@@ -93,6 +93,15 @@ public:
     void unsetdetectReproduce();
     void setDetectReproduce(bool value);
 
+    /// <summary>
+    /// 返回判断身份证图像是否是黑白复印件的开关，默认false，可选值如下所示：  - true ：返回身份证图像是否是复印件  - false : 不返回身份证图像是否是复印件             
+    /// </summary>
+
+    bool isDetectCopy() const;
+    bool detectCopyIsSet() const;
+    void unsetdetectCopy();
+    void setDetectCopy(bool value);
+
 
 protected:
     std::string image_;
@@ -107,6 +116,8 @@ protected:
     bool returnTextLocationIsSet_;
     bool detectReproduce_;
     bool detectReproduceIsSet_;
+    bool detectCopy_;
+    bool detectCopyIsSet_;
 
 };
 

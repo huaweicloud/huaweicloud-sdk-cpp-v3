@@ -58,7 +58,7 @@ public:
     void setPage(int32_t value);
 
     /// <summary>
-    /// 镜像类型，目前支持以下类型：公共镜像：gold私有镜像：private共享镜像：shared
+    /// 镜像类型，目前支持以下类型：公共镜像：gold私有镜像：private共享镜像：shared 市场镜像：market
     /// </summary>
 
     std::string getImagetype() const;

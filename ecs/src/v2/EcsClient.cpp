@@ -643,6 +643,9 @@ std::shared_ptr<CreatePostPaidServersResponse> EcsClient::createPostPaidServers(
     std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.xClientTokenIsSet()) {
+        localVarHeaderParams["X-Client-Token"] = parameterToString(request.getXClientToken());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -721,6 +724,9 @@ std::shared_ptr<CreateServersResponse> EcsClient::createServers(CreateServersReq
     std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.xClientTokenIsSet()) {
+        localVarHeaderParams["X-Client-Token"] = parameterToString(request.getXClientToken());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {

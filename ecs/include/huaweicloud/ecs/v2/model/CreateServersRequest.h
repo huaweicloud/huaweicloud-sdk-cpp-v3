@@ -7,6 +7,7 @@
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <string>
 #include <huaweicloud/ecs/v2/model/CreateServersRequestBody.h>
 
 namespace HuaweiCloud {
@@ -40,6 +41,15 @@ public:
     /// CreateServersRequest members
 
     /// <summary>
+    /// 保证客户端请求幂等性的标识
+    /// </summary>
+
+    std::string getXClientToken() const;
+    bool xClientTokenIsSet() const;
+    void unsetxClientToken();
+    void setXClientToken(const std::string& value);
+
+    /// <summary>
     /// 
     /// </summary>
 
@@ -50,6 +60,8 @@ public:
 
 
 protected:
+    std::string xClientToken_;
+    bool xClientTokenIsSet_;
     CreateServersRequestBody body_;
     bool bodyIsSet_;
 

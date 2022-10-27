@@ -1,3 +1,29 @@
+# 3.1.5 2022-10-27
+
+### HuaweiCloud SDK ECS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the request parameters `X-Client-Token`, `batch_create_in_multi_az` to the interface `CreateServers`
+  - Add the request parameter `X-Client-Token` to the interface `CreatePostPaidServers`
+
+### HuaweiCloud SDK IMS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the enum values `market` to the request parameter `__imagetype` to the interface `ListTags`
+  - Changes of the interface `GlanceListImages`:
+    - Add the enum values `market` to the request parameter `__imagetype`
+    - Add the enum values `market` to the response parameter `__imagetype`
+  - Add the enum values `market` to the response parameter `__imagetype` to the interface `GlanceShowImage`
+  - Add the enum values `market` to the response parameter `__imagetype` to the interface `GlanceUpdateImage`
+
 # 3.1.4 2022-09-28
 
 ### HuaweiCloud SDK OCR

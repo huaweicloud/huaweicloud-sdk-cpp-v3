@@ -40,7 +40,7 @@ public:
     /// PageInfo members
 
     /// <summary>
-    /// 下一页查询地址（下一页起始资源id），如果未指定该参数，则下一页为空。
+    /// 下一页查询地址（下一页起始资源id）。
     /// </summary>
 
     std::string getNextMarker() const;

@@ -194,6 +194,15 @@ public:
     void setAvailabilityZone(const std::string& value);
 
     /// <summary>
+    /// 是否支持随机多AZ部署。  - “true”：批量创建的ecs部署在多个AZ上 - “false”：批量创建的ecs部署在单个AZ上  &gt; 说明： &gt;  &gt; 当availability_zone为空时该字段生效。
+    /// </summary>
+
+    bool isBatchCreateInMultiAz() const;
+    bool batchCreateInMultiAzIsSet() const;
+    void unsetbatchCreateInMultiAz();
+    void setBatchCreateInMultiAz(bool value);
+
+    /// <summary>
     /// 
     /// </summary>
 
@@ -281,6 +290,8 @@ protected:
     bool securityGroupsIsSet_;
     std::string availabilityZone_;
     bool availabilityZoneIsSet_;
+    bool batchCreateInMultiAz_;
+    bool batchCreateInMultiAzIsSet_;
     PrePaidServerExtendParam extendparam_;
     bool extendparamIsSet_;
     std::map<std::string, std::string> metadata_;

@@ -1,3 +1,29 @@
+# 3.1.5 2022-10-27
+
+### HuaweiCloud SDK ECS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`CreateServers`新增请求参数 `X-Client-Token`、`batch_create_in_multi_az`
+  - 接口`CreatePostPaidServers`新增请求参数 `X-Client-Token`
+
+### HuaweiCloud SDK IMS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ListTags`请求参数`__imagetype`新增枚举值`market`
+  - 接口`GlanceListImages`:
+    - 请求参数`__imagetype`新增枚举值`market`
+    - 响应参数`__imagetype`新增枚举值`market`
+  - 接口`GlanceShowImage`响应参数`__imagetype`新增枚举值`market`
+  - 接口`GlanceUpdateImage`响应参数`__imagetype`新增枚举值`market`
+
 # 3.1.4 2022-09-28
 
 ### HuaweiCloud SDK OCR

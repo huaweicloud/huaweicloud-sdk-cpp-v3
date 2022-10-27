@@ -40,6 +40,8 @@ PrePaidServer::PrePaidServer()
     securityGroupsIsSet_ = false;
     availabilityZone_ = "";
     availabilityZoneIsSet_ = false;
+    batchCreateInMultiAz_ = false;
+    batchCreateInMultiAzIsSet_ = false;
     extendparamIsSet_ = false;
     metadataIsSet_ = false;
     osschedulerHintsIsSet_ = false;
@@ -106,6 +108,9 @@ web::json::value PrePaidServer::toJson() const
     }
     if(availabilityZoneIsSet_) {
         val[utility::conversions::to_string_t("availability_zone")] = ModelBase::toJson(availabilityZone_);
+    }
+    if(batchCreateInMultiAzIsSet_) {
+        val[utility::conversions::to_string_t("batch_create_in_multi_az")] = ModelBase::toJson(batchCreateInMultiAz_);
     }
     if(extendparamIsSet_) {
         val[utility::conversions::to_string_t("extendparam")] = ModelBase::toJson(extendparam_);
@@ -275,6 +280,15 @@ bool PrePaidServer::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAvailabilityZone(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("batch_create_in_multi_az"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("batch_create_in_multi_az"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBatchCreateInMultiAz(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("extendparam"))) {
@@ -669,6 +683,27 @@ bool PrePaidServer::availabilityZoneIsSet() const
 void PrePaidServer::unsetavailabilityZone()
 {
     availabilityZoneIsSet_ = false;
+}
+
+bool PrePaidServer::isBatchCreateInMultiAz() const
+{
+    return batchCreateInMultiAz_;
+}
+
+void PrePaidServer::setBatchCreateInMultiAz(bool value)
+{
+    batchCreateInMultiAz_ = value;
+    batchCreateInMultiAzIsSet_ = true;
+}
+
+bool PrePaidServer::batchCreateInMultiAzIsSet() const
+{
+    return batchCreateInMultiAzIsSet_;
+}
+
+void PrePaidServer::unsetbatchCreateInMultiAz()
+{
+    batchCreateInMultiAzIsSet_ = false;
 }
 
 PrePaidServerExtendParam PrePaidServer::getExtendparam() const

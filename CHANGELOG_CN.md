@@ -1,3 +1,24 @@
+# 3.1.6 2022-11-02
+
+### HuaweiCloud SDK ECS
+
+- _新增特性_
+  - 支持接口`UpdateServerBlockDevice`、`RegisterServerMonitor`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK SIS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`PushTranscriberJobs`请求参数`property`新增枚举值`sichuan_8k_common`
+  - 接口`RunTts`请求参数`property`新增枚举值`chinese_huaxiaolong_common`、`chinese_huaxiaorui_common`
+
 # 3.1.5 2022-10-27
 
 ### HuaweiCloud SDK ECS

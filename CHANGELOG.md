@@ -1,3 +1,24 @@
+# 3.1.6 2022-11-02
+
+### HuaweiCloud SDK ECS
+
+- _Features_
+  - Support the interfaces `UpdateServerBlockDevice`, `RegisterServerMonitor`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK SIS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the enum values `sichuan_8k_common` to the request parameter `property` to the interface `PushTranscriberJobs`
+  - Add the enum values `chinese_huaxiaolong_common`, `chinese_huaxiaorui_common` to the request parameter `property` to the interface `RunTts`
+
 # 3.1.5 2022-10-27
 
 ### HuaweiCloud SDK ECS

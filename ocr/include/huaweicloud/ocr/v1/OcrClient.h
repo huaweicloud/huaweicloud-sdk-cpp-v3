@@ -454,7 +454,7 @@ public:
     std::shared_ptr<RecognizePcrTestRecordResponse> recognizePcrTestRecord(
         RecognizePcrTestRecordRequest &request
     );
-    // 从业资格证识别
+    // 道路运输从业资格证识别
     //
     // 识别道路运输从业资格证上的关键文字信息，并返回识别的结构化结果。
     // 

@@ -21,6 +21,8 @@ GeneralTextRequestBody::GeneralTextRequestBody()
     detectDirectionIsSet_ = false;
     quickMode_ = false;
     quickModeIsSet_ = false;
+    characterMode_ = false;
+    characterModeIsSet_ = false;
 }
 
 GeneralTextRequestBody::~GeneralTextRequestBody() = default;
@@ -44,6 +46,9 @@ web::json::value GeneralTextRequestBody::toJson() const
     }
     if(quickModeIsSet_) {
         val[utility::conversions::to_string_t("quick_mode")] = ModelBase::toJson(quickMode_);
+    }
+    if(characterModeIsSet_) {
+        val[utility::conversions::to_string_t("character_mode")] = ModelBase::toJson(characterMode_);
     }
 
     return val;
@@ -87,6 +92,15 @@ bool GeneralTextRequestBody::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setQuickMode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("character_mode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("character_mode"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCharacterMode(refVal);
         }
     }
     return ok;
@@ -175,6 +189,27 @@ bool GeneralTextRequestBody::quickModeIsSet() const
 void GeneralTextRequestBody::unsetquickMode()
 {
     quickModeIsSet_ = false;
+}
+
+bool GeneralTextRequestBody::isCharacterMode() const
+{
+    return characterMode_;
+}
+
+void GeneralTextRequestBody::setCharacterMode(bool value)
+{
+    characterMode_ = value;
+    characterModeIsSet_ = true;
+}
+
+bool GeneralTextRequestBody::characterModeIsSet() const
+{
+    return characterModeIsSet_;
+}
+
+void GeneralTextRequestBody::unsetcharacterMode()
+{
+    characterModeIsSet_ = false;
 }
 
 }

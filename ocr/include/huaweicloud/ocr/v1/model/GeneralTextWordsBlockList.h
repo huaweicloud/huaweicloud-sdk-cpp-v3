@@ -8,6 +8,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <huaweicloud/ocr/v1/model/GeneralTextCharList.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -58,12 +59,34 @@ public:
     void unsetlocation();
     void setLocation(const std::vector<std::vector<int32_t>>& value);
 
+    /// <summary>
+    /// 文字块识别结果的置信度。 
+    /// </summary>
+
+    float getConfidence() const;
+    bool confidenceIsSet() const;
+    void unsetconfidence();
+    void setConfidence(float value);
+
+    /// <summary>
+    /// 文字块对应的单字符识别列表，输出顺序从左到右，先上后下。 
+    /// </summary>
+
+    std::vector<GeneralTextCharList>& getCharList();
+    bool charListIsSet() const;
+    void unsetcharList();
+    void setCharList(const std::vector<GeneralTextCharList>& value);
+
 
 protected:
     std::string words_;
     bool wordsIsSet_;
     std::vector<std::vector<int32_t>> location_;
     bool locationIsSet_;
+    float confidence_;
+    bool confidenceIsSet_;
+    std::vector<GeneralTextCharList> charList_;
+    bool charListIsSet_;
 
 };
 

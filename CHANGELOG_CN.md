@@ -1,3 +1,28 @@
+# 3.1.7 2022-11-03
+
+### HuaweiCloud SDK ECS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`NovaCreateServers`请求参数`destination_type`改为非必填
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`RecognizeGeneralText`:
+    - 新增请求参数 `character_mode`
+    - 新增响应参数 `confidence`、`char_list`
+  - 接口`RecognizeThailandIdcard`:
+    - 新增请求参数 `return_text_location`
+    - 新增响应参数 `text_location`
+
 # 3.1.6 2022-11-02
 
 ### HuaweiCloud SDK ECS

@@ -7,6 +7,7 @@
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/core/utils/Object.h>
 #include <string>
 #include <huaweicloud/ocr/v1/model/ThailandIdcardConfidence.h>
 #include <vector>
@@ -221,6 +222,15 @@ public:
     void unsetidcardType();
     void setIdcardType(const std::string& value);
 
+    /// <summary>
+    /// 对应所有在原图上识别到的字段位置信息，包含所有文字区域四个顶点的二维坐标（x,y）。采用图像坐标系，坐标原点为图片左上角，x轴沿水平方向，y轴沿竖直方向。 
+    /// </summary>
+
+    Object getTextLocation() const;
+    bool textLocationIsSet() const;
+    void unsettextLocation();
+    void setTextLocation(const Object& value);
+
 
 protected:
     std::string side_;
@@ -263,6 +273,8 @@ protected:
     bool portraitLocationIsSet_;
     std::string idcardType_;
     bool idcardTypeIsSet_;
+    Object textLocation_;
+    bool textLocationIsSet_;
 
 };
 

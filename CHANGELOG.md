@@ -1,3 +1,28 @@
+# 3.1.7 2022-11-03
+
+### HuaweiCloud SDK ECS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - The request parameter `destination_type` changed to not required of the interface `NovaCreateServers`
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Changes of the interface `RecognizeGeneralText`:
+    - Add the request parameter `character_mode`
+    - Add the response parameters `confidence`, `char_list`
+  - Changes of the interface `RecognizeThailandIdcard`:
+    - Add the request parameter `return_text_location`
+    - Add the response parameter `text_location`
+
 # 3.1.6 2022-11-02
 
 ### HuaweiCloud SDK ECS

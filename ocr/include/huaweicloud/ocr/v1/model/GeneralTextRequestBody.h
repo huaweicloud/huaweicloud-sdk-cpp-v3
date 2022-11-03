@@ -75,6 +75,15 @@ public:
     void unsetquickMode();
     void setQuickMode(bool value);
 
+    /// <summary>
+    /// 单字符模式开关。可选值包括： - true：打开单字符模式 - false：关闭单字符模式  未传入该参数时默认为false，即不返回单个文本行的单字符信息。 
+    /// </summary>
+
+    bool isCharacterMode() const;
+    bool characterModeIsSet() const;
+    void unsetcharacterMode();
+    void setCharacterMode(bool value);
+
 
 protected:
     std::string image_;
@@ -85,6 +94,8 @@ protected:
     bool detectDirectionIsSet_;
     bool quickMode_;
     bool quickModeIsSet_;
+    bool characterMode_;
+    bool characterModeIsSet_;
 
 };
 

@@ -25,6 +25,8 @@ ThailandIdcardRequestBody::ThailandIdcardRequestBody()
     returnPortraitLocationIsSet_ = false;
     returnIdcardType_ = false;
     returnIdcardTypeIsSet_ = false;
+    returnTextLocation_ = false;
+    returnTextLocationIsSet_ = false;
 }
 
 ThailandIdcardRequestBody::~ThailandIdcardRequestBody() = default;
@@ -54,6 +56,9 @@ web::json::value ThailandIdcardRequestBody::toJson() const
     }
     if(returnIdcardTypeIsSet_) {
         val[utility::conversions::to_string_t("return_idcard_type")] = ModelBase::toJson(returnIdcardType_);
+    }
+    if(returnTextLocationIsSet_) {
+        val[utility::conversions::to_string_t("return_text_location")] = ModelBase::toJson(returnTextLocation_);
     }
 
     return val;
@@ -115,6 +120,15 @@ bool ThailandIdcardRequestBody::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setReturnIdcardType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("return_text_location"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("return_text_location"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setReturnTextLocation(refVal);
         }
     }
     return ok;
@@ -245,6 +259,27 @@ bool ThailandIdcardRequestBody::returnIdcardTypeIsSet() const
 void ThailandIdcardRequestBody::unsetreturnIdcardType()
 {
     returnIdcardTypeIsSet_ = false;
+}
+
+bool ThailandIdcardRequestBody::isReturnTextLocation() const
+{
+    return returnTextLocation_;
+}
+
+void ThailandIdcardRequestBody::setReturnTextLocation(bool value)
+{
+    returnTextLocation_ = value;
+    returnTextLocationIsSet_ = true;
+}
+
+bool ThailandIdcardRequestBody::returnTextLocationIsSet() const
+{
+    return returnTextLocationIsSet_;
+}
+
+void ThailandIdcardRequestBody::unsetreturnTextLocation()
+{
+    returnTextLocationIsSet_ = false;
 }
 
 }

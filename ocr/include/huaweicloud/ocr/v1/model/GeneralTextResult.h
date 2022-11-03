@@ -41,7 +41,7 @@ public:
     /// GeneralTextResult members
 
     /// <summary>
-    /// 图片朝向，仅当detect_direction为true时，该字段有效。返回图片逆时针旋转角度，值区间为[0， 360)。当detect_direction为false时，该字段值为 -1。 
+    /// 图片朝向，仅当detect_direction为true时，该字段有效。返回图片逆时针旋转角度，值区间为[0， 359],保留四位小数。 当detect_direction为false时，该字段值为 -1。 
     /// </summary>
 
     float getDirection() const;

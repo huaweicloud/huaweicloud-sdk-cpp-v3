@@ -51,6 +51,7 @@ ThailandIdcardResult::ThailandIdcardResult()
     portraitLocationIsSet_ = false;
     idcardType_ = "";
     idcardTypeIsSet_ = false;
+    textLocationIsSet_ = false;
 }
 
 ThailandIdcardResult::~ThailandIdcardResult() = default;
@@ -122,6 +123,9 @@ web::json::value ThailandIdcardResult::toJson() const
     }
     if(idcardTypeIsSet_) {
         val[utility::conversions::to_string_t("idcard_type")] = ModelBase::toJson(idcardType_);
+    }
+    if(textLocationIsSet_) {
+        val[utility::conversions::to_string_t("text_location")] = ModelBase::toJson(textLocation_);
     }
 
     return val;
@@ -309,6 +313,15 @@ bool ThailandIdcardResult::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIdcardType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("text_location"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("text_location"));
+        if(!fieldValue.is_null())
+        {
+            Object refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTextLocation(refVal);
         }
     }
     return ok;
@@ -733,6 +746,27 @@ bool ThailandIdcardResult::idcardTypeIsSet() const
 void ThailandIdcardResult::unsetidcardType()
 {
     idcardTypeIsSet_ = false;
+}
+
+Object ThailandIdcardResult::getTextLocation() const
+{
+    return textLocation_;
+}
+
+void ThailandIdcardResult::setTextLocation(const Object& value)
+{
+    textLocation_ = value;
+    textLocationIsSet_ = true;
+}
+
+bool ThailandIdcardResult::textLocationIsSet() const
+{
+    return textLocationIsSet_;
+}
+
+void ThailandIdcardResult::unsettextLocation()
+{
+    textLocationIsSet_ = false;
 }
 
 }

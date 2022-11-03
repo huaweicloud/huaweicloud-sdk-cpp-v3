@@ -40,7 +40,7 @@ public:
     /// PageInfo members
 
     /// <summary>
-    /// 下一页查询地址（下一页起始资源id）。
+    /// 下一页查询地址（本页的末尾凭据名称，下一页起始凭据名称）。
     /// </summary>
 
     std::string getNextMarker() const;
@@ -49,7 +49,7 @@ public:
     void setNextMarker(const std::string& value);
 
     /// <summary>
-    /// 前一页查询地址（上一页末尾资源id）。
+    /// 本页的起始凭据名称，上一页末尾凭据名称。
     /// </summary>
 
     std::string getPreviousMarker() const;

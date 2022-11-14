@@ -14,6 +14,7 @@ namespace Model {
 ListSecretTagsResponse::ListSecretTagsResponse()
 {
     tagsIsSet_ = false;
+    sysTagsIsSet_ = false;
 }
 
 ListSecretTagsResponse::~ListSecretTagsResponse() = default;
@@ -28,6 +29,9 @@ web::json::value ListSecretTagsResponse::toJson() const
 
     if(tagsIsSet_) {
         val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
+    }
+    if(sysTagsIsSet_) {
+        val[utility::conversions::to_string_t("sys_tags")] = ModelBase::toJson(sysTags_);
     }
 
     return val;
@@ -44,6 +48,15 @@ bool ListSecretTagsResponse::fromJson(const web::json::value& val)
             std::vector<TagItem> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTags(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("sys_tags"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sys_tags"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<TagItem> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSysTags(refVal);
         }
     }
     return ok;
@@ -69,6 +82,27 @@ bool ListSecretTagsResponse::tagsIsSet() const
 void ListSecretTagsResponse::unsettags()
 {
     tagsIsSet_ = false;
+}
+
+std::vector<TagItem>& ListSecretTagsResponse::getSysTags()
+{
+    return sysTags_;
+}
+
+void ListSecretTagsResponse::setSysTags(const std::vector<TagItem>& value)
+{
+    sysTags_ = value;
+    sysTagsIsSet_ = true;
+}
+
+bool ListSecretTagsResponse::sysTagsIsSet() const
+{
+    return sysTagsIsSet_;
+}
+
+void ListSecretTagsResponse::unsetsysTags()
+{
+    sysTagsIsSet_ = false;
 }
 
 }

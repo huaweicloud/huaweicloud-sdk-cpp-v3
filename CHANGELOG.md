@@ -1,3 +1,14 @@
+# 3.1.8 2022-11-14
+
+### HuaweiCloud SDK CSMS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the response parameter `sys_tags` to the interface `ListSecretTags`
+
 # 3.1.7 2022-11-03
 
 ### HuaweiCloud SDK ECS

@@ -1,3 +1,14 @@
+# 3.1.8 2022-11-14
+
+### HuaweiCloud SDK CSMS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ListSecretTags`新增响应参数 `sys_tags`
+
 # 3.1.7 2022-11-03
 
 ### HuaweiCloud SDK ECS

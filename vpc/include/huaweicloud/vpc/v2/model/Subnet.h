@@ -204,7 +204,7 @@ public:
     void setNeutronSubnetIdV6(const std::string& value);
 
     /// <summary>
-    /// 子网配置的NTP地址
+    /// 子网配置的NTP地址或DHCP租约时间
     /// </summary>
 
     std::vector<ExtraDhcpOption>& getExtraDhcpOpts();

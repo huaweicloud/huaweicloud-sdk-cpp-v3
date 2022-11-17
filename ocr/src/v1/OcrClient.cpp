@@ -48,6 +48,9 @@ std::shared_ptr<RecognizeAutoClassificationResponse> OcrClient::recognizeAutoCla
     std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -87,6 +90,9 @@ std::shared_ptr<RecognizeBankcardResponse> OcrClient::recognizeBankcard(Recogniz
     std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -126,6 +132,9 @@ std::shared_ptr<RecognizeBusinessCardResponse> OcrClient::recognizeBusinessCard(
     std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -165,6 +174,9 @@ std::shared_ptr<RecognizeBusinessLicenseResponse> OcrClient::recognizeBusinessLi
     std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -204,6 +216,9 @@ std::shared_ptr<RecognizeCambodianIdCardResponse> OcrClient::recognizeCambodianI
     std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -243,6 +258,9 @@ std::shared_ptr<RecognizeChileIdCardResponse> OcrClient::recognizeChileIdCard(Re
     std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -282,6 +300,9 @@ std::shared_ptr<RecognizeDriverLicenseResponse> OcrClient::recognizeDriverLicens
     std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -321,6 +342,9 @@ std::shared_ptr<RecognizeExitEntryPermitResponse> OcrClient::recognizeExitEntryP
     std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -360,6 +384,9 @@ std::shared_ptr<RecognizeFinancialStatementResponse> OcrClient::recognizeFinanci
     std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -399,6 +426,9 @@ std::shared_ptr<RecognizeFlightItineraryResponse> OcrClient::recognizeFlightItin
     std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -438,6 +468,9 @@ std::shared_ptr<RecognizeGeneralTableResponse> OcrClient::recognizeGeneralTable(
     std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -477,6 +510,9 @@ std::shared_ptr<RecognizeGeneralTextResponse> OcrClient::recognizeGeneralText(Re
     std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -516,6 +552,9 @@ std::shared_ptr<RecognizeHandwritingResponse> OcrClient::recognizeHandwriting(Re
     std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -555,6 +594,9 @@ std::shared_ptr<RecognizeHealthCodeResponse> OcrClient::recognizeHealthCode(Reco
     std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -594,6 +636,9 @@ std::shared_ptr<RecognizeHkIdCardResponse> OcrClient::recognizeHkIdCard(Recogniz
     std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -633,6 +678,9 @@ std::shared_ptr<RecognizeIdCardResponse> OcrClient::recognizeIdCard(RecognizeIdC
     std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -672,6 +720,9 @@ std::shared_ptr<RecognizeIdDocumentResponse> OcrClient::recognizeIdDocument(Reco
     std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -711,6 +762,9 @@ std::shared_ptr<RecognizeInsurancePolicyResponse> OcrClient::recognizeInsuranceP
     std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -750,6 +804,9 @@ std::shared_ptr<RecognizeInvoiceVerificationResponse> OcrClient::recognizeInvoic
     std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -789,6 +846,9 @@ std::shared_ptr<RecognizeLicensePlateResponse> OcrClient::recognizeLicensePlate(
     std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -828,6 +888,9 @@ std::shared_ptr<RecognizeMacaoIdCardResponse> OcrClient::recognizeMacaoIdCard(Re
     std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -867,6 +930,9 @@ std::shared_ptr<RecognizeMainlandTravelPermitResponse> OcrClient::recognizeMainl
     std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -906,6 +972,9 @@ std::shared_ptr<RecognizeMvsInvoiceResponse> OcrClient::recognizeMvsInvoice(Reco
     std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -945,6 +1014,9 @@ std::shared_ptr<RecognizeMyanmarDriverLicenseResponse> OcrClient::recognizeMyanm
     std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -984,6 +1056,9 @@ std::shared_ptr<RecognizeMyanmarIdcardResponse> OcrClient::recognizeMyanmarIdcar
     std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -1023,6 +1098,9 @@ std::shared_ptr<RecognizePassportResponse> OcrClient::recognizePassport(Recogniz
     std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -1062,6 +1140,9 @@ std::shared_ptr<RecognizePcrTestRecordResponse> OcrClient::recognizePcrTestRecor
     std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -1101,6 +1182,9 @@ std::shared_ptr<RecognizeQualificationCertificateResponse> OcrClient::recognizeQ
     std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -1140,6 +1224,9 @@ std::shared_ptr<RecognizeQuotaInvoiceResponse> OcrClient::recognizeQuotaInvoice(
     std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -1179,6 +1266,9 @@ std::shared_ptr<RecognizeTaxiInvoiceResponse> OcrClient::recognizeTaxiInvoice(Re
     std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -1218,6 +1308,9 @@ std::shared_ptr<RecognizeThailandIdcardResponse> OcrClient::recognizeThailandIdc
     std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -1257,6 +1350,9 @@ std::shared_ptr<RecognizeThailandLicensePlateResponse> OcrClient::recognizeThail
     std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -1296,6 +1392,9 @@ std::shared_ptr<RecognizeTollInvoiceResponse> OcrClient::recognizeTollInvoice(Re
     std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -1335,6 +1434,9 @@ std::shared_ptr<RecognizeTrainTicketResponse> OcrClient::recognizeTrainTicket(Re
     std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -1374,6 +1476,9 @@ std::shared_ptr<RecognizeTransportationLicenseResponse> OcrClient::recognizeTran
     std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -1413,6 +1518,9 @@ std::shared_ptr<RecognizeVatInvoiceResponse> OcrClient::recognizeVatInvoice(Reco
     std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -1452,6 +1560,9 @@ std::shared_ptr<RecognizeVehicleLicenseResponse> OcrClient::recognizeVehicleLice
     std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -1491,6 +1602,9 @@ std::shared_ptr<RecognizeWaybillElectronicResponse> OcrClient::recognizeWaybillE
     std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -1530,6 +1644,9 @@ std::shared_ptr<RecognizeWebImageResponse> OcrClient::recognizeWebImage(Recogniz
     std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -1569,6 +1686,9 @@ std::shared_ptr<RecognizeVinResponse> OcrClient::recognizeVin(RecognizeVinReques
     std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {

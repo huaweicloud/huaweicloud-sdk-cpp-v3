@@ -105,7 +105,7 @@ public:
     void setDnsList(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 子网配置的NTP地址
+    /// 子网配置的NTP地址或租约时间
     /// </summary>
 
     std::vector<ExtraDhcpOption>& getExtraDhcpOpts();

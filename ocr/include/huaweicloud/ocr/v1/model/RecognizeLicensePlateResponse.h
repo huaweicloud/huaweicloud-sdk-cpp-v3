@@ -8,7 +8,6 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/ocr/v1/model/LicensePlateResult.h>
-#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -41,17 +40,17 @@ public:
     /// RecognizeLicensePlateResponse members
 
     /// <summary>
-    /// 调用成功时表示调用结果。  调用失败时无此字段。 
+    /// 
     /// </summary>
 
-    std::vector<LicensePlateResult>& getResult();
+    LicensePlateResult getResult() const;
     bool resultIsSet() const;
     void unsetresult();
-    void setResult(const std::vector<LicensePlateResult>& value);
+    void setResult(const LicensePlateResult& value);
 
 
 protected:
-    std::vector<LicensePlateResult> result_;
+    LicensePlateResult result_;
     bool resultIsSet_;
 
 #ifdef RTTR_FLAG

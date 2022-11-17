@@ -68,7 +68,7 @@ web::json::value MyanmarDriverLicenseConfidence::toJson() const
         val[utility::conversions::to_string_t("nrc_id_en")] = ModelBase::toJson(nrcIdEn_);
     }
     if(birthIsSet_) {
-        val[utility::conversions::to_string_t("Birth")] = ModelBase::toJson(birth_);
+        val[utility::conversions::to_string_t("birth")] = ModelBase::toJson(birth_);
     }
     if(birthEnIsSet_) {
         val[utility::conversions::to_string_t("birth_en")] = ModelBase::toJson(birthEn_);
@@ -147,8 +147,8 @@ bool MyanmarDriverLicenseConfidence::fromJson(const web::json::value& val)
             setNrcIdEn(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("Birth"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("Birth"));
+    if(val.has_field(utility::conversions::to_string_t("birth"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("birth"));
         if(!fieldValue.is_null())
         {
             float refVal;

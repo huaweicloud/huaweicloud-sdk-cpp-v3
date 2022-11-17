@@ -41,7 +41,7 @@ bool RecognizeIdDocumentResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("result"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            IdDocumentItem refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResult(refVal);
         }
@@ -50,12 +50,12 @@ bool RecognizeIdDocumentResponse::fromJson(const web::json::value& val)
 }
 
 
-Object RecognizeIdDocumentResponse::getResult() const
+IdDocumentItem RecognizeIdDocumentResponse::getResult() const
 {
     return result_;
 }
 
-void RecognizeIdDocumentResponse::setResult(const Object& value)
+void RecognizeIdDocumentResponse::setResult(const IdDocumentItem& value)
 {
     result_ = value;
     resultIsSet_ = true;

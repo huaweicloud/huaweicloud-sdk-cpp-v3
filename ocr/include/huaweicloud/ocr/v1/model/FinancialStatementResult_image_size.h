@@ -18,7 +18,7 @@ using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 
 /// <summary>
-/// 
+/// 图像信息
 /// </summary>
 class HUAWEICLOUD_OCR_V1_EXPORT  FinancialStatementResult_image_size
     : public ModelBase

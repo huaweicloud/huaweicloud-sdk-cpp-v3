@@ -123,10 +123,12 @@
 #include <huaweicloud/ocr/v1/model/VehicleLicenseRequestBody.h>
 #include <huaweicloud/ocr/v1/model/WaybillElectronicRequestBody.h>
 #include <huaweicloud/ocr/v1/model/WebImageRequestBody.h>
+#include <string>
 
 #include <huaweicloud/ocr/v1/model/RecognizeVinRequest.h>
 #include <huaweicloud/ocr/v1/model/RecognizeVinResponse.h>
 #include <huaweicloud/ocr/v1/model/VinRequestBody.h>
+#include <string>
 
 #include <cpprest/details/basic_types.h>
 #include <huaweicloud/core/utils/ModelBase.h>

@@ -1,3 +1,91 @@
+# 3.1.9 2022-11-17
+
+### HuaweiCloud SDK ECS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Modify the type `string` -> `enum` of the request parameter `monitorMetrics` of the interface `RegisterServerMonitor`
+
+### HuaweiCloud SDK EIP
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the enum values `VPN` to the request parameter `associate_instance_type` to the interface `DisassociatePublicips`
+  - Add the enum values `VPN` to the request parameter `associate_instance_type` to the interface `AssociatePublicips`
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the request parameter `Enterprise-Project-Id` to the interface `RecognizeGeneralTable`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `RecognizeVatInvoice`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `RecognizeInvoiceVerification`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `RecognizeGeneralText`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `RecognizeWebImage`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `RecognizeHealthCode`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `RecognizeQuotaInvoice`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `RecognizeIdCard`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `RecognizeHandwriting`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `RecognizeVehicleLicense`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `RecognizeTransportationLicense`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `RecognizeTaxiInvoice`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `RecognizeAutoClassification`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `RecognizeTollInvoice`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `RecognizeMvsInvoice`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `RecognizeLicensePlate`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `RecognizeFlightItinerary`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `RecognizeBusinessLicense`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `RecognizeDriverLicense`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `RecognizeBusinessCard`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `RecognizeTrainTicket`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `RecognizeVin`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `RecognizePassport`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `RecognizeBankcard`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `RecognizeInsurancePolicy`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `RecognizeFinancialStatement`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `RecognizeQualificationCertificate`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `RecognizeThailandIdcard`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `RecognizeMyanmarIdcard`
+  - Changes of the interface `RecognizeMyanmarDriverLicense`:
+    - Add the request parameter `Enterprise-Project-Id`
+    - Add the response parameters `birth`, `birth`
+    - Remove the response parameters `Birth`, `Birth`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `RecognizeChileIdCard`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `RecognizeThailandLicensePlate`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `RecognizeWaybillElectronic`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `RecognizePcrTestRecord`
+  - Changes of the interface `RecognizeIdDocument`:
+    - Add the request parameter `Enterprise-Project-Id`
+    - Modify the type `object` -> `object` of the response parameter `result`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `RecognizeHkIdCard`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `RecognizeCambodianIdCard`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `RecognizeExitEntryPermit`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `RecognizeMainlandTravelPermit`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `RecognizeMacaoIdCard`
+
+### HuaweiCloud SDK VPC
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Changes of the interface `CreateSubnet`:
+    - Add the enum values `addresstime` to the request parameter `opt_name`
+    - Add the enum values `addresstime` to the response parameter `opt_name`
+  - Add the enum values `addresstime` to the response parameter `opt_name` to the interface `ListSubnets`
+  - Add the enum values `addresstime` to the response parameter `opt_name` to the interface `ShowSubnet`
+  - Add the enum values `addresstime` to the request parameter `opt_name` to the interface `UpdateSubnet`
+
 # 3.1.8 2022-11-14
 
 ### HuaweiCloud SDK CSMS

@@ -1,3 +1,91 @@
+# 3.1.9 2022-11-17
+
+### HuaweiCloud SDK ECS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`RegisterServerMonitor`请求参数`monitorMetrics`类型调整 `string` -> `enum`
+
+### HuaweiCloud SDK EIP
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`DisassociatePublicips`请求参数`associate_instance_type`新增枚举值`VPN`
+  - 接口`AssociatePublicips`请求参数`associate_instance_type`新增枚举值`VPN`
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`RecognizeGeneralTable`新增请求参数 `Enterprise-Project-Id`
+  - 接口`RecognizeVatInvoice`新增请求参数 `Enterprise-Project-Id`
+  - 接口`RecognizeInvoiceVerification`新增请求参数 `Enterprise-Project-Id`
+  - 接口`RecognizeGeneralText`新增请求参数 `Enterprise-Project-Id`
+  - 接口`RecognizeWebImage`新增请求参数 `Enterprise-Project-Id`
+  - 接口`RecognizeHealthCode`新增请求参数 `Enterprise-Project-Id`
+  - 接口`RecognizeQuotaInvoice`新增请求参数 `Enterprise-Project-Id`
+  - 接口`RecognizeIdCard`新增请求参数 `Enterprise-Project-Id`
+  - 接口`RecognizeHandwriting`新增请求参数 `Enterprise-Project-Id`
+  - 接口`RecognizeVehicleLicense`新增请求参数 `Enterprise-Project-Id`
+  - 接口`RecognizeTransportationLicense`新增请求参数 `Enterprise-Project-Id`
+  - 接口`RecognizeTaxiInvoice`新增请求参数 `Enterprise-Project-Id`
+  - 接口`RecognizeAutoClassification`新增请求参数 `Enterprise-Project-Id`
+  - 接口`RecognizeTollInvoice`新增请求参数 `Enterprise-Project-Id`
+  - 接口`RecognizeMvsInvoice`新增请求参数 `Enterprise-Project-Id`
+  - 接口`RecognizeLicensePlate`新增请求参数 `Enterprise-Project-Id`
+  - 接口`RecognizeFlightItinerary`新增请求参数 `Enterprise-Project-Id`
+  - 接口`RecognizeBusinessLicense`新增请求参数 `Enterprise-Project-Id`
+  - 接口`RecognizeDriverLicense`新增请求参数 `Enterprise-Project-Id`
+  - 接口`RecognizeBusinessCard`新增请求参数 `Enterprise-Project-Id`
+  - 接口`RecognizeTrainTicket`新增请求参数 `Enterprise-Project-Id`
+  - 接口`RecognizeVin`新增请求参数 `Enterprise-Project-Id`
+  - 接口`RecognizePassport`新增请求参数 `Enterprise-Project-Id`
+  - 接口`RecognizeBankcard`新增请求参数 `Enterprise-Project-Id`
+  - 接口`RecognizeInsurancePolicy`新增请求参数 `Enterprise-Project-Id`
+  - 接口`RecognizeFinancialStatement`新增请求参数 `Enterprise-Project-Id`
+  - 接口`RecognizeQualificationCertificate`新增请求参数 `Enterprise-Project-Id`
+  - 接口`RecognizeThailandIdcard`新增请求参数 `Enterprise-Project-Id`
+  - 接口`RecognizeMyanmarIdcard`新增请求参数 `Enterprise-Project-Id`
+  - 接口`RecognizeMyanmarDriverLicense`:
+    - 新增请求参数 `Enterprise-Project-Id`
+    - 新增响应参数 `birth`、`birth`
+    - 移除响应参数 `Birth`、`Birth`
+  - 接口`RecognizeChileIdCard`新增请求参数 `Enterprise-Project-Id`
+  - 接口`RecognizeThailandLicensePlate`新增请求参数 `Enterprise-Project-Id`
+  - 接口`RecognizeWaybillElectronic`新增请求参数 `Enterprise-Project-Id`
+  - 接口`RecognizePcrTestRecord`新增请求参数 `Enterprise-Project-Id`
+  - 接口`RecognizeIdDocument`:
+    - 新增请求参数 `Enterprise-Project-Id`
+    - 响应参数`result`类型调整 `object` -> `object`
+  - 接口`RecognizeHkIdCard`新增请求参数 `Enterprise-Project-Id`
+  - 接口`RecognizeCambodianIdCard`新增请求参数 `Enterprise-Project-Id`
+  - 接口`RecognizeExitEntryPermit`新增请求参数 `Enterprise-Project-Id`
+  - 接口`RecognizeMainlandTravelPermit`新增请求参数 `Enterprise-Project-Id`
+  - 接口`RecognizeMacaoIdCard`新增请求参数 `Enterprise-Project-Id`
+
+### HuaweiCloud SDK VPC
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`CreateSubnet`:
+    - 请求参数`opt_name`新增枚举值`addresstime`
+    - 响应参数`opt_name`新增枚举值`addresstime`
+  - 接口`ListSubnets`响应参数`opt_name`新增枚举值`addresstime`
+  - 接口`ShowSubnet`响应参数`opt_name`新增枚举值`addresstime`
+  - 接口`UpdateSubnet`请求参数`opt_name`新增枚举值`addresstime`
+
 # 3.1.8 2022-11-14
 
 ### HuaweiCloud SDK CSMS

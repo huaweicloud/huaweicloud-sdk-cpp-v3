@@ -41,7 +41,7 @@ bool RecognizeLicensePlateResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("result"));
         if(!fieldValue.is_null())
         {
-            std::vector<LicensePlateResult> refVal;
+            LicensePlateResult refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResult(refVal);
         }
@@ -50,12 +50,12 @@ bool RecognizeLicensePlateResponse::fromJson(const web::json::value& val)
 }
 
 
-std::vector<LicensePlateResult>& RecognizeLicensePlateResponse::getResult()
+LicensePlateResult RecognizeLicensePlateResponse::getResult() const
 {
     return result_;
 }
 
-void RecognizeLicensePlateResponse::setResult(const std::vector<LicensePlateResult>& value)
+void RecognizeLicensePlateResponse::setResult(const LicensePlateResult& value)
 {
     result_ = value;
     resultIsSet_ = true;

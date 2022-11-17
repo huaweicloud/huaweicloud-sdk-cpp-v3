@@ -13,6 +13,8 @@ namespace Model {
 
 RecognizeInvoiceVerificationRequest::RecognizeInvoiceVerificationRequest()
 {
+    enterpriseProjectId_ = "";
+    enterpriseProjectIdIsSet_ = false;
     bodyIsSet_ = false;
 }
 
@@ -26,6 +28,9 @@ web::json::value RecognizeInvoiceVerificationRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(enterpriseProjectIdIsSet_) {
+        val[utility::conversions::to_string_t("Enterprise-Project-Id")] = ModelBase::toJson(enterpriseProjectId_);
+    }
     if(bodyIsSet_) {
         val[utility::conversions::to_string_t("body")] = ModelBase::toJson(body_);
     }
@@ -37,6 +42,15 @@ bool RecognizeInvoiceVerificationRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("Enterprise-Project-Id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("Enterprise-Project-Id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEnterpriseProjectId(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("body"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
         if(!fieldValue.is_null())
@@ -49,6 +63,27 @@ bool RecognizeInvoiceVerificationRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
+
+std::string RecognizeInvoiceVerificationRequest::getEnterpriseProjectId() const
+{
+    return enterpriseProjectId_;
+}
+
+void RecognizeInvoiceVerificationRequest::setEnterpriseProjectId(const std::string& value)
+{
+    enterpriseProjectId_ = value;
+    enterpriseProjectIdIsSet_ = true;
+}
+
+bool RecognizeInvoiceVerificationRequest::enterpriseProjectIdIsSet() const
+{
+    return enterpriseProjectIdIsSet_;
+}
+
+void RecognizeInvoiceVerificationRequest::unsetenterpriseProjectId()
+{
+    enterpriseProjectIdIsSet_ = false;
+}
 
 InvoiceVerificationRequestBody RecognizeInvoiceVerificationRequest::getBody() const
 {

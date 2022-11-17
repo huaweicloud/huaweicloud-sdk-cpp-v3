@@ -7,7 +7,7 @@
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/core/utils/Object.h>
+#include <huaweicloud/ocr/v1/model/IdDocumentItem.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -40,17 +40,17 @@ public:
     /// RecognizeIdDocumentResponse members
 
     /// <summary>
-    /// 调用成功时表示调用结果。  调用失败时此字段为空。 
+    /// 
     /// </summary>
 
-    Object getResult() const;
+    IdDocumentItem getResult() const;
     bool resultIsSet() const;
     void unsetresult();
-    void setResult(const Object& value);
+    void setResult(const IdDocumentItem& value);
 
 
 protected:
-    Object result_;
+    IdDocumentItem result_;
     bool resultIsSet_;
 
 #ifdef RTTR_FLAG

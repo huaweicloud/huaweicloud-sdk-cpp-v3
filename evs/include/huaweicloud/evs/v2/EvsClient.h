@@ -235,7 +235,7 @@ public:
     std::shared_ptr<DeleteVolumeResponse> deleteVolume(
         DeleteVolumeRequest &request
     );
-    // 查询云硬盘快照详细列表信息
+    // 查询云硬盘快照详情列表
     //
     // 查询云硬盘快照详细列表信息。
     // 
@@ -304,7 +304,7 @@ public:
     std::shared_ptr<ShowJobResponse> showJob(
         ShowJobRequest &request
     );
-    // 查询单个云硬盘快照详细信息
+    // 查询单个云硬盘快照详情
     //
     // 查询单个云硬盘快照信息。支持企业项目授权功能。
     // 

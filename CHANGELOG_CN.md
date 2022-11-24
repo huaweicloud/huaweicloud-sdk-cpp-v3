@@ -1,3 +1,14 @@
+# 3.1.10 2022-11-24
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`RecognizeHealthCode`新增响应参数 `test_interval`
+
 # 3.1.9 2022-11-17
 
 ### HuaweiCloud SDK ECS

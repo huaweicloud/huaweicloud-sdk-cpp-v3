@@ -31,6 +31,8 @@ HealthCodeResult::HealthCodeResult()
     colorIsSet_ = false;
     vaccinationStatus_ = "";
     vaccinationStatusIsSet_ = false;
+    testInterval_ = "";
+    testIntervalIsSet_ = false;
     pcrTestResult_ = "";
     pcrTestResultIsSet_ = false;
     pcrTestOrganization_ = "";
@@ -82,6 +84,9 @@ web::json::value HealthCodeResult::toJson() const
     }
     if(vaccinationStatusIsSet_) {
         val[utility::conversions::to_string_t("vaccination_status")] = ModelBase::toJson(vaccinationStatus_);
+    }
+    if(testIntervalIsSet_) {
+        val[utility::conversions::to_string_t("test_interval")] = ModelBase::toJson(testInterval_);
     }
     if(pcrTestResultIsSet_) {
         val[utility::conversions::to_string_t("pcr_test_result")] = ModelBase::toJson(pcrTestResult_);
@@ -194,6 +199,15 @@ bool HealthCodeResult::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setVaccinationStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("test_interval"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("test_interval"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTestInterval(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("pcr_test_result"))) {
@@ -459,6 +473,27 @@ bool HealthCodeResult::vaccinationStatusIsSet() const
 void HealthCodeResult::unsetvaccinationStatus()
 {
     vaccinationStatusIsSet_ = false;
+}
+
+std::string HealthCodeResult::getTestInterval() const
+{
+    return testInterval_;
+}
+
+void HealthCodeResult::setTestInterval(const std::string& value)
+{
+    testInterval_ = value;
+    testIntervalIsSet_ = true;
+}
+
+bool HealthCodeResult::testIntervalIsSet() const
+{
+    return testIntervalIsSet_;
+}
+
+void HealthCodeResult::unsettestInterval()
+{
+    testIntervalIsSet_ = false;
 }
 
 std::string HealthCodeResult::getPcrTestResult() const

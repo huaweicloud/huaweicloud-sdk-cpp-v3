@@ -115,13 +115,22 @@ public:
     void setColor(const std::string& value);
 
     /// <summary>
-    /// 疫苗接种情况 
+    /// 疫苗接种情况，可选值包括：  - 未接种 - 接种中 - 无接种记录 - 已接种1针 - 已接种2针 - 已接种3针 - 已完成新冠疫苗接种 
     /// </summary>
 
     std::string getVaccinationStatus() const;
     bool vaccinationStatusIsSet() const;
     void unsetvaccinationStatus();
     void setVaccinationStatus(const std::string& value);
+
+    /// <summary>
+    /// 核酸检测间隔时长，可选值包括： - 24小时内 - 48小时内 - 72小时内 - 5天内 - 7天内 - 7天外 
+    /// </summary>
+
+    std::string getTestInterval() const;
+    bool testIntervalIsSet() const;
+    void unsettestInterval();
+    void setTestInterval(const std::string& value);
 
     /// <summary>
     /// 核酸检测结果，可选值包括： - \&quot;positive\&quot;,即阳性 - \&quot;negative\&quot;,即阴性 - \&quot;unknown\&quot;,未知 
@@ -215,6 +224,8 @@ protected:
     bool colorIsSet_;
     std::string vaccinationStatus_;
     bool vaccinationStatusIsSet_;
+    std::string testInterval_;
+    bool testIntervalIsSet_;
     std::string pcrTestResult_;
     bool pcrTestResultIsSet_;
     std::string pcrTestOrganization_;

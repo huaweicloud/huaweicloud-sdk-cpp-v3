@@ -20,7 +20,6 @@ namespace Model {
 
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
-
 /// <summary>
 /// 版本信息结构体
 /// </summary>

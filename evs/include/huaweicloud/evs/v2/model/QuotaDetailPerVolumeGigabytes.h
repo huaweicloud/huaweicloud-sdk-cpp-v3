@@ -17,7 +17,6 @@ namespace Model {
 
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
-
 /// <summary>
 /// 每个云硬盘的容量配额限制。键值对，包含：reserved（预留）、limit（最大）和in_use（已使用）。
 /// </summary>

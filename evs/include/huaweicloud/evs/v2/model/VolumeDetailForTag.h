@@ -23,7 +23,6 @@ namespace Model {
 
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
-
 /// <summary>
 /// 云硬盘详情。
 /// </summary>

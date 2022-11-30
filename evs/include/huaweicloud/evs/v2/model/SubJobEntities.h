@@ -17,7 +17,6 @@ namespace Model {
 
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
-
 /// <summary>
 /// 子Job的响应信息。
 /// </summary>

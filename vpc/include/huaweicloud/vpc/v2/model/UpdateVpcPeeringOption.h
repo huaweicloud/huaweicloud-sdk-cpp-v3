@@ -17,7 +17,6 @@ namespace Model {
 
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
-
 /// <summary>
 /// 更新peering对象
 /// </summary>

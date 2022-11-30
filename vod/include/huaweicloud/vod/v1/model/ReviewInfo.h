@@ -20,7 +20,6 @@ namespace Model {
 
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
-
 /// <summary>
 /// 审核信息数组。  &gt; 仅当审核成功后才能查询到此信息，未审核、正在审核以及审核失败时，无此字段信息。
 /// </summary>

@@ -15,7 +15,6 @@ DisassociatePublicipsRequest::DisassociatePublicipsRequest()
 {
     publicipId_ = "";
     publicipIdIsSet_ = false;
-    bodyIsSet_ = false;
 }
 
 DisassociatePublicipsRequest::~DisassociatePublicipsRequest() = default;
@@ -30,9 +29,6 @@ web::json::value DisassociatePublicipsRequest::toJson() const
 
     if(publicipIdIsSet_) {
         val[utility::conversions::to_string_t("publicip_id")] = ModelBase::toJson(publicipId_);
-    }
-    if(bodyIsSet_) {
-        val[utility::conversions::to_string_t("body")] = ModelBase::toJson(body_);
     }
 
     return val;
@@ -49,15 +45,6 @@ bool DisassociatePublicipsRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPublicipId(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("body"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
-        if(!fieldValue.is_null())
-        {
-            DisassociatePublicipsRequestBody refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setBody(refVal);
         }
     }
     return ok;
@@ -83,27 +70,6 @@ bool DisassociatePublicipsRequest::publicipIdIsSet() const
 void DisassociatePublicipsRequest::unsetpublicipId()
 {
     publicipIdIsSet_ = false;
-}
-
-DisassociatePublicipsRequestBody DisassociatePublicipsRequest::getBody() const
-{
-    return body_;
-}
-
-void DisassociatePublicipsRequest::setBody(const DisassociatePublicipsRequestBody& value)
-{
-    body_ = value;
-    bodyIsSet_ = true;
-}
-
-bool DisassociatePublicipsRequest::bodyIsSet() const
-{
-    return bodyIsSet_;
-}
-
-void DisassociatePublicipsRequest::unsetbody()
-{
-    bodyIsSet_ = false;
 }
 
 }

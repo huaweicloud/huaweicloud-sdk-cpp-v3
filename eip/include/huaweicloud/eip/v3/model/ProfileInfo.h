@@ -18,7 +18,6 @@ namespace Model {
 
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
-
 /// <summary>
 /// 公网IP元数据, EIP服务内部使用，不对外开放
 /// </summary>

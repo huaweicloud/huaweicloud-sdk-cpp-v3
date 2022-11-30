@@ -17,7 +17,6 @@ namespace Model {
 
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
-
 /// <summary>
 /// SATA云硬盘类型预留的云硬盘个数，键值对，包含：reserved（预留）、limit（最大）和in_use（已使用）。
 /// </summary>

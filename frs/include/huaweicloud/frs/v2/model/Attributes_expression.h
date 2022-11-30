@@ -17,7 +17,6 @@ namespace Model {
 
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
-
 /// <summary>
 /// 人脸表情，包括中性、高兴、害怕、惊讶、伤心、生气、厌恶。
 /// </summary>

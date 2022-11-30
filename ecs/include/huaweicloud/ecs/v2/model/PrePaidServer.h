@@ -27,7 +27,6 @@ namespace Model {
 
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
-
 /// <summary>
 /// 创建弹性云服务器（包周期）接口Body体。
 /// </summary>

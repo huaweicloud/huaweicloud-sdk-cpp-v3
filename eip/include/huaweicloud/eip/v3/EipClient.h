@@ -28,6 +28,10 @@
 #include <huaweicloud/eip/v3/model/ShowPublicipPoolResponse.h>
 #include <huaweicloud/eip/v3/model/ShowPublicipRequest.h>
 #include <huaweicloud/eip/v3/model/ShowPublicipResponse.h>
+#include <huaweicloud/eip/v3/model/UpdateAssociatePublicipRequest.h>
+#include <huaweicloud/eip/v3/model/UpdateAssociatePublicipResponse.h>
+#include <huaweicloud/eip/v3/model/UpdateDisassociatePublicipRequest.h>
+#include <huaweicloud/eip/v3/model/UpdateDisassociatePublicipResponse.h>
 #include <string>
 
 #include <cpprest/details/basic_types.h>
@@ -57,8 +61,7 @@ public:
     //
     // 查询公共池列表
     // 
-    // 详细说明请参考华为云API Explorer。
-    // Please refer to Huawei cloud API Explorer for details.
+    // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListCommonPoolsResponse> listCommonPools(
         ListCommonPoolsRequest &request
     );
@@ -66,8 +69,7 @@ public:
     //
     // 查询公共池分组列表，包含名称和位置信息
     // 
-    // 详细说明请参考华为云API Explorer。
-    // Please refer to Huawei cloud API Explorer for details.
+    // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListPublicBorderGroupsResponse> listPublicBorderGroups(
         ListPublicBorderGroupsRequest &request
     );
@@ -75,8 +77,7 @@ public:
     //
     // 查询指定租户下的共享带宽类型列表
     // 
-    // 详细说明请参考华为云API Explorer。
-    // Please refer to Huawei cloud API Explorer for details.
+    // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListShareBandwidthTypesResponse> listShareBandwidthTypes(
         ListShareBandwidthTypesRequest &request
     );
@@ -85,8 +86,7 @@ public:
     //
     // 绑定弹性公网IP
     // 
-    // 详细说明请参考华为云API Explorer。
-    // Please refer to Huawei cloud API Explorer for details.
+    // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<AssociatePublicipsResponse> associatePublicips(
         AssociatePublicipsRequest &request
     );
@@ -94,8 +94,7 @@ public:
     //
     // 解绑弹性公网IP
     // 
-    // 详细说明请参考华为云API Explorer。
-    // Please refer to Huawei cloud API Explorer for details.
+    // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DisassociatePublicipsResponse> disassociatePublicips(
         DisassociatePublicipsRequest &request
     );
@@ -103,8 +102,7 @@ public:
     //
     // 全量查询公网IP池列表
     // 
-    // 详细说明请参考华为云API Explorer。
-    // Please refer to Huawei cloud API Explorer for details.
+    // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListPublicipPoolResponse> listPublicipPool(
         ListPublicipPoolRequest &request
     );
@@ -112,8 +110,7 @@ public:
     //
     // 查询弹性公网IP列表信息
     // 
-    // 详细说明请参考华为云API Explorer。
-    // Please refer to Huawei cloud API Explorer for details.
+    // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListPublicipsResponse> listPublicips(
         ListPublicipsRequest &request
     );
@@ -121,8 +118,7 @@ public:
     //
     // 查询弹性公网IP详情
     // 
-    // 详细说明请参考华为云API Explorer。
-    // Please refer to Huawei cloud API Explorer for details.
+    // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowPublicipResponse> showPublicip(
         ShowPublicipRequest &request
     );
@@ -130,10 +126,25 @@ public:
     //
     // 查询公网IP池详情
     // 
-    // 详细说明请参考华为云API Explorer。
-    // Please refer to Huawei cloud API Explorer for details.
+    // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowPublicipPoolResponse> showPublicipPool(
         ShowPublicipPoolRequest &request
+    );
+    // 绑定弹性公网IP
+    //
+    // 绑定弹性公网IP
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateAssociatePublicipResponse> updateAssociatePublicip(
+        UpdateAssociatePublicipRequest &request
+    );
+    // 解绑弹性公网IP
+    //
+    // 解绑弹性公网IP
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateDisassociatePublicipResponse> updateDisassociatePublicip(
+        UpdateDisassociatePublicipRequest &request
     );
 
 

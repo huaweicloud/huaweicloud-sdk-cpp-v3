@@ -19,7 +19,6 @@ namespace Model {
 
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
-
 /// <summary>
 /// 转码生成文件信息。  &gt; 仅当转码成功后才能查询到此信息，未转码、正在转码以及转码失败时，无此字段信息。
 /// </summary>

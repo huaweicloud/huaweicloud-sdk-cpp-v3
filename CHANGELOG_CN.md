@@ -1,3 +1,24 @@
+# 3.1.11 2022-11-30
+
+### HuaweiCloud SDK EIP
+
+- _新增特性_
+  - 支持接口`DisassociatePublicips`、`AssociatePublicips`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK SIS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`PushTranscriberJobs`请求参数`property`新增枚举值`chinese_8k_general`
+  - 接口`RunTts`请求参数`property`新增枚举值`chinese_huaxiaoru_common`、`chinese_huaxiaohan_common`、`chinese_huaxiaoning_common`、`chinese_huaxiaozhen_common`、`english_alvin_common`、`english_amy_common`
+
 # 3.1.10 2022-11-24
 
 ### HuaweiCloud SDK OCR

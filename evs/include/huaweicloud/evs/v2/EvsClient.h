@@ -107,8 +107,7 @@ public:
     // 添加标签时，如果云硬盘的标签已存在相同key，则会覆盖已有标签。
     // 单个云硬盘最多支持创建10个标签。
     // 
-    // 详细说明请参考华为云API Explorer。
-    // Please refer to Huawei cloud API Explorer for details.
+    // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<BatchCreateVolumeTagsResponse> batchCreateVolumeTags(
         BatchCreateVolumeTagsRequest &request
     );
@@ -116,8 +115,7 @@ public:
     //
     // 为指定云硬盘批量删除标签。
     // 
-    // 详细说明请参考华为云API Explorer。
-    // Please refer to Huawei cloud API Explorer for details.
+    // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<BatchDeleteVolumeTagsResponse> batchDeleteVolumeTags(
         BatchDeleteVolumeTagsRequest &request
     );
@@ -125,8 +123,7 @@ public:
     //
     // 通过云硬盘过户记录ID以及身份认证密钥来接受云硬盘过户。
     // 
-    // 详细说明请参考华为云API Explorer。
-    // Please refer to Huawei cloud API Explorer for details.
+    // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CinderAcceptVolumeTransferResponse> cinderAcceptVolumeTransfer(
         CinderAcceptVolumeTransferRequest &request
     );
@@ -135,8 +132,7 @@ public:
     // 指定云硬盘来创建云硬盘过户记录，创建成功后，会返回过户记录ID以及身份认证密钥。
     // 云硬盘在过户过程中的状态变化如下：创建云硬盘过户后，云硬盘状态由“available”变为“awaiting-transfer”。当云硬盘过户被接收后，云硬盘状态变为“available”。
     // 
-    // 详细说明请参考华为云API Explorer。
-    // Please refer to Huawei cloud API Explorer for details.
+    // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CinderCreateVolumeTransferResponse> cinderCreateVolumeTransfer(
         CinderCreateVolumeTransferRequest &request
     );
@@ -144,8 +140,7 @@ public:
     //
     // 当云硬盘过户未被接受时，您可以删除云硬盘过户记录，接受后则无法执行删除操作。
     // 
-    // 详细说明请参考华为云API Explorer。
-    // Please refer to Huawei cloud API Explorer for details.
+    // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CinderDeleteVolumeTransferResponse> cinderDeleteVolumeTransfer(
         CinderDeleteVolumeTransferRequest &request
     );
@@ -153,8 +148,7 @@ public:
     //
     // 查询所有的可用分区信息。
     // 
-    // 详细说明请参考华为云API Explorer。
-    // Please refer to Huawei cloud API Explorer for details.
+    // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CinderListAvailabilityZonesResponse> cinderListAvailabilityZones(
         CinderListAvailabilityZonesRequest &request
     );
@@ -162,8 +156,7 @@ public:
     //
     // 查询租户的详细配额。
     // 
-    // 详细说明请参考华为云API Explorer。
-    // Please refer to Huawei cloud API Explorer for details.
+    // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CinderListQuotasResponse> cinderListQuotas(
         CinderListQuotasRequest &request
     );
@@ -171,8 +164,7 @@ public:
     //
     // 查询当前租户下所有云硬盘的过户记录列表
     // 
-    // 详细说明请参考华为云API Explorer。
-    // Please refer to Huawei cloud API Explorer for details.
+    // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CinderListVolumeTransfersResponse> cinderListVolumeTransfers(
         CinderListVolumeTransfersRequest &request
     );
@@ -180,8 +172,7 @@ public:
     //
     // 查询云硬盘类型列表。
     // 
-    // 详细说明请参考华为云API Explorer。
-    // Please refer to Huawei cloud API Explorer for details.
+    // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CinderListVolumeTypesResponse> cinderListVolumeTypes(
         CinderListVolumeTypesRequest &request
     );
@@ -189,8 +180,7 @@ public:
     //
     // 查询单个云硬盘的过户记录详情，比如过户记录创建时间、ID以及名称等信息。
     // 
-    // 详细说明请参考华为云API Explorer。
-    // Please refer to Huawei cloud API Explorer for details.
+    // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CinderShowVolumeTransferResponse> cinderShowVolumeTransfer(
         CinderShowVolumeTransferRequest &request
     );
@@ -198,8 +188,7 @@ public:
     //
     // 创建云硬盘快照。
     // 
-    // 详细说明请参考华为云API Explorer。
-    // Please refer to Huawei cloud API Explorer for details.
+    // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateSnapshotResponse> createSnapshot(
         CreateSnapshotRequest &request
     );
@@ -212,8 +201,7 @@ public:
     // - 如果您需要查询订单的资源开通详情，请参考\&quot;[查询订单的资源开通详情](https://support.huaweicloud.com/api-oce/api_order_00001.html)\&quot;。
     // - 如果您需要退订该包周期资源，请参考“[退订包周期资源](https://support.huaweicloud.com/api-oce/zh-cn_topic_0082522030.html)”。
     // 
-    // 详细说明请参考华为云API Explorer。
-    // Please refer to Huawei cloud API Explorer for details.
+    // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateVolumeResponse> createVolume(
         CreateVolumeRequest &request
     );
@@ -221,8 +209,7 @@ public:
     //
     // 删除云硬盘快照。
     // 
-    // 详细说明请参考华为云API Explorer。
-    // Please refer to Huawei cloud API Explorer for details.
+    // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteSnapshotResponse> deleteSnapshot(
         DeleteSnapshotRequest &request
     );
@@ -230,8 +217,7 @@ public:
     //
     // 删除一个云硬盘。
     // 
-    // 详细说明请参考华为云API Explorer。
-    // Please refer to Huawei cloud API Explorer for details.
+    // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteVolumeResponse> deleteVolume(
         DeleteVolumeRequest &request
     );
@@ -239,8 +225,7 @@ public:
     //
     // 查询云硬盘快照详细列表信息。
     // 
-    // 详细说明请参考华为云API Explorer。
-    // Please refer to Huawei cloud API Explorer for details.
+    // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListSnapshotsResponse> listSnapshots(
         ListSnapshotsRequest &request
     );
@@ -248,8 +233,7 @@ public:
     //
     // 获取某个租户的所有云硬盘资源的标签信息。
     // 
-    // 详细说明请参考华为云API Explorer。
-    // Please refer to Huawei cloud API Explorer for details.
+    // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListVolumeTagsResponse> listVolumeTags(
         ListVolumeTagsRequest &request
     );
@@ -257,8 +241,7 @@ public:
     //
     // 查询所有云硬盘的详细信息。
     // 
-    // 详细说明请参考华为云API Explorer。
-    // Please refer to Huawei cloud API Explorer for details.
+    // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListVolumesResponse> listVolumes(
         ListVolumesRequest &request
     );
@@ -266,8 +249,7 @@ public:
     //
     // 通过标签查询云硬盘资源实例详情。
     // 
-    // 详细说明请参考华为云API Explorer。
-    // Please refer to Huawei cloud API Explorer for details.
+    // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListVolumesByTagsResponse> listVolumesByTags(
         ListVolumesByTagsRequest &request
     );
@@ -280,8 +262,7 @@ public:
     // - 如果您需要查询订单的资源开通详情，请参考\&quot;[查询订单的资源开通详情](https://support.huaweicloud.com/api-oce/api_order_00001.html)\&quot;。
     // - 如果您需要退订该包周期资源，请参考“[退订包周期资源](https://support.huaweicloud.com/api-oce/zh-cn_topic_0082522030.html)”。
     // 
-    // 详细说明请参考华为云API Explorer。
-    // Please refer to Huawei cloud API Explorer for details.
+    // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ResizeVolumeResponse> resizeVolume(
         ResizeVolumeRequest &request
     );
@@ -289,8 +270,7 @@ public:
     //
     // 将快照数据回滚到云硬盘。支持企业项目授权功能。
     // 
-    // 详细说明请参考华为云API Explorer。
-    // Please refer to Huawei cloud API Explorer for details.
+    // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<RollbackSnapshotResponse> rollbackSnapshot(
         RollbackSnapshotRequest &request
     );
@@ -299,8 +279,7 @@ public:
     // 查询Job的执行状态。
     // 可用于查询创建云硬盘，扩容云硬盘，删除云硬盘等API的执行状态。
     // 
-    // 详细说明请参考华为云API Explorer。
-    // Please refer to Huawei cloud API Explorer for details.
+    // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowJobResponse> showJob(
         ShowJobRequest &request
     );
@@ -308,8 +287,7 @@ public:
     //
     // 查询单个云硬盘快照信息。支持企业项目授权功能。
     // 
-    // 详细说明请参考华为云API Explorer。
-    // Please refer to Huawei cloud API Explorer for details.
+    // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowSnapshotResponse> showSnapshot(
         ShowSnapshotRequest &request
     );
@@ -317,8 +295,7 @@ public:
     //
     // 查询单个云硬盘的详细信息。支持企业项目授权功能。
     // 
-    // 详细说明请参考华为云API Explorer。
-    // Please refer to Huawei cloud API Explorer for details.
+    // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowVolumeResponse> showVolume(
         ShowVolumeRequest &request
     );
@@ -326,8 +303,7 @@ public:
     //
     // 查询指定云硬盘的标签信息。
     // 
-    // 详细说明请参考华为云API Explorer。
-    // Please refer to Huawei cloud API Explorer for details.
+    // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowVolumeTagsResponse> showVolumeTags(
         ShowVolumeTagsRequest &request
     );
@@ -335,8 +311,7 @@ public:
     //
     // 更新云硬盘快照。支持企业项目授权功能。
     // 
-    // 详细说明请参考华为云API Explorer。
-    // Please refer to Huawei cloud API Explorer for details.
+    // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateSnapshotResponse> updateSnapshot(
         UpdateSnapshotRequest &request
     );
@@ -344,8 +319,7 @@ public:
     //
     // 更新一个云硬盘的名称和描述。
     // 
-    // 详细说明请参考华为云API Explorer。
-    // Please refer to Huawei cloud API Explorer for details.
+    // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateVolumeResponse> updateVolume(
         UpdateVolumeRequest &request
     );
@@ -354,8 +328,7 @@ public:
     //
     // 查询接口版本信息列表。
     // 
-    // 详细说明请参考华为云API Explorer。
-    // Please refer to Huawei cloud API Explorer for details.
+    // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListVersionsResponse> listVersions(
         ListVersionsRequest &request
     );
@@ -363,8 +336,7 @@ public:
     //
     // 查询接口的指定版本信息。
     // 
-    // 详细说明请参考华为云API Explorer。
-    // Please refer to Huawei cloud API Explorer for details.
+    // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowVersionResponse> showVersion(
         ShowVersionRequest &request
     );

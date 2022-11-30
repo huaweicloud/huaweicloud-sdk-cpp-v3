@@ -8,7 +8,6 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
-#include <huaweicloud/eip/v3/model/DisassociatePublicipsRequestBody.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -18,7 +17,6 @@ namespace Model {
 
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
-
 /// <summary>
 /// Request Object
 /// </summary>
@@ -49,21 +47,10 @@ public:
     void unsetpublicipId();
     void setPublicipId(const std::string& value);
 
-    /// <summary>
-    /// 
-    /// </summary>
-
-    DisassociatePublicipsRequestBody getBody() const;
-    bool bodyIsSet() const;
-    void unsetbody();
-    void setBody(const DisassociatePublicipsRequestBody& value);
-
 
 protected:
     std::string publicipId_;
     bool publicipIdIsSet_;
-    DisassociatePublicipsRequestBody body_;
-    bool bodyIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

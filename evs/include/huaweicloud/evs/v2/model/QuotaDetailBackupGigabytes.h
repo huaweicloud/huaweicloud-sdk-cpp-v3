@@ -17,7 +17,6 @@ namespace Model {
 
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
-
 /// <summary>
 /// 备份容量，单位为GB，键值对，包含：reserved（预留）、limit（最大）和in_use（已使用）。
 /// </summary>

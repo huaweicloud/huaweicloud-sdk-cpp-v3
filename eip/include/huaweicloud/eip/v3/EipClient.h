@@ -10,22 +10,25 @@
 #include <huaweicloud/eip/v3/model/ListCommonPoolsResponse.h>
 #include <huaweicloud/eip/v3/model/ListPublicBorderGroupsRequest.h>
 #include <huaweicloud/eip/v3/model/ListPublicBorderGroupsResponse.h>
+#include <huaweicloud/eip/v3/model/ListPublicipPoolRequest.h>
+#include <huaweicloud/eip/v3/model/ListPublicipPoolResponse.h>
 #include <huaweicloud/eip/v3/model/ListShareBandwidthTypesRequest.h>
 #include <huaweicloud/eip/v3/model/ListShareBandwidthTypesResponse.h>
+#include <huaweicloud/eip/v3/model/ShowPublicipPoolRequest.h>
+#include <huaweicloud/eip/v3/model/ShowPublicipPoolResponse.h>
 #include <string>
 
 #include <huaweicloud/eip/v3/model/AssociatePublicipsRequest.h>
 #include <huaweicloud/eip/v3/model/AssociatePublicipsRequestBody.h>
 #include <huaweicloud/eip/v3/model/AssociatePublicipsResponse.h>
+#include <huaweicloud/eip/v3/model/CountEipAvailableResourcesRequest.h>
+#include <huaweicloud/eip/v3/model/CountEipAvailableResourcesResponse.h>
 #include <huaweicloud/eip/v3/model/DisassociatePublicipsRequest.h>
 #include <huaweicloud/eip/v3/model/DisassociatePublicipsRequestBody.h>
 #include <huaweicloud/eip/v3/model/DisassociatePublicipsResponse.h>
-#include <huaweicloud/eip/v3/model/ListPublicipPoolRequest.h>
-#include <huaweicloud/eip/v3/model/ListPublicipPoolResponse.h>
+#include <huaweicloud/eip/v3/model/EipResourcesAvailableV3RequestBody.h>
 #include <huaweicloud/eip/v3/model/ListPublicipsRequest.h>
 #include <huaweicloud/eip/v3/model/ListPublicipsResponse.h>
-#include <huaweicloud/eip/v3/model/ShowPublicipPoolRequest.h>
-#include <huaweicloud/eip/v3/model/ShowPublicipPoolResponse.h>
 #include <huaweicloud/eip/v3/model/ShowPublicipRequest.h>
 #include <huaweicloud/eip/v3/model/ShowPublicipResponse.h>
 #include <huaweicloud/eip/v3/model/UpdateAssociatePublicipRequest.h>
@@ -73,6 +76,14 @@ public:
     std::shared_ptr<ListPublicBorderGroupsResponse> listPublicBorderGroups(
         ListPublicBorderGroupsRequest &request
     );
+    // 查询公网IP池列表
+    //
+    // 全量查询公网IP池列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListPublicipPoolResponse> listPublicipPool(
+        ListPublicipPoolRequest &request
+    );
     // 查询指定租户下的共享带宽类型列表
     //
     // 查询指定租户下的共享带宽类型列表
@@ -80,6 +91,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListShareBandwidthTypesResponse> listShareBandwidthTypes(
         ListShareBandwidthTypesRequest &request
+    );
+    // 查询公网IP池详情
+    //
+    // 查询公网IP池详情
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowPublicipPoolResponse> showPublicipPool(
+        ShowPublicipPoolRequest &request
     );
 
     // 绑定弹性公网IP
@@ -90,6 +109,14 @@ public:
     std::shared_ptr<AssociatePublicipsResponse> associatePublicips(
         AssociatePublicipsRequest &request
     );
+    // 查询弹性公网IP可用数
+    //
+    // IP池用于查询公网可用ip个数
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CountEipAvailableResourcesResponse> countEipAvailableResources(
+        CountEipAvailableResourcesRequest &request
+    );
     // 解绑弹性公网IP
     //
     // 解绑弹性公网IP
@@ -97,14 +124,6 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DisassociatePublicipsResponse> disassociatePublicips(
         DisassociatePublicipsRequest &request
-    );
-    // 查询公网IP池列表
-    //
-    // 全量查询公网IP池列表
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ListPublicipPoolResponse> listPublicipPool(
-        ListPublicipPoolRequest &request
     );
     // 全量查询弹性公网IP列表
     //
@@ -121,14 +140,6 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowPublicipResponse> showPublicip(
         ShowPublicipRequest &request
-    );
-    // 查询公网IP池详情
-    //
-    // 查询公网IP池详情
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ShowPublicipPoolResponse> showPublicipPool(
-        ShowPublicipPoolRequest &request
     );
     // 绑定弹性公网IP
     //

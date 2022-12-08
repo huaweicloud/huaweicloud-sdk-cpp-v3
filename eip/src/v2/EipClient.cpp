@@ -185,6 +185,40 @@ std::shared_ptr<DeleteSharedBandwidthResponse> EipClient::deleteSharedBandwidth(
 
     return localVarResult;
 }
+std::shared_ptr<ListBandwidthPkgResponse> EipClient::listBandwidthPkg(ListBandwidthPkgRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/bandwidthpkgs";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+
+    std::shared_ptr<ListBandwidthPkgResponse> localVarResult = std::make_shared<ListBandwidthPkgResponse>();
+
+    if (!res->getHttpBody().empty()) {
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListBandwidthsResponse> EipClient::listBandwidths(ListBandwidthsRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/bandwidths";
@@ -463,6 +497,84 @@ std::shared_ptr<BatchCreatePublicipTagsResponse> EipClient::batchCreatePublicipT
 
     return localVarResult;
 }
+std::shared_ptr<BatchCreatePublicipsResponse> EipClient::batchCreatePublicips(BatchCreatePublicipsRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/batchpublicips";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+
+    std::shared_ptr<BatchCreatePublicipsResponse> localVarResult = std::make_shared<BatchCreatePublicipsResponse>();
+
+    if (!res->getHttpBody().empty()) {
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<BatchDeletePublicIpResponse> EipClient::batchDeletePublicIp(BatchDeletePublicIpRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/batchpublicips";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+
+    std::shared_ptr<BatchDeletePublicIpResponse> localVarResult = std::make_shared<BatchDeletePublicIpResponse>();
+
+    if (!res->getHttpBody().empty()) {
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<BatchDeletePublicipTagsResponse> EipClient::batchDeletePublicipTags(BatchDeletePublicipTagsRequest &request)
 {
     std::string localVarPath = "/v2.0/{project_id}/publicips/{publicip_id}/tags/action";
@@ -491,6 +603,113 @@ std::shared_ptr<BatchDeletePublicipTagsResponse> EipClient::batchDeletePublicipT
     std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
 
     std::shared_ptr<BatchDeletePublicipTagsResponse> localVarResult = std::make_shared<BatchDeletePublicipTagsResponse>();
+
+    if (!res->getHttpBody().empty()) {
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<BatchDisassociatePublicipsResponse> EipClient::batchDisassociatePublicips(BatchDisassociatePublicipsRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/batchpublicips";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PATCH", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+
+    std::shared_ptr<BatchDisassociatePublicipsResponse> localVarResult = std::make_shared<BatchDisassociatePublicipsResponse>();
+
+    if (!res->getHttpBody().empty()) {
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<CountPublicIpResponse> EipClient::countPublicIp(CountPublicIpRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/elasticips";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+
+    std::shared_ptr<CountPublicIpResponse> localVarResult = std::make_shared<CountPublicIpResponse>();
+
+    if (!res->getHttpBody().empty()) {
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<CountPublicIpInstanceResponse> EipClient::countPublicIpInstance(CountPublicIpInstanceRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/publicip/instances";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+
+    std::shared_ptr<CountPublicIpInstanceResponse> localVarResult = std::make_shared<CountPublicIpInstanceResponse>();
 
     if (!res->getHttpBody().empty()) {
         utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
@@ -814,6 +1033,40 @@ std::shared_ptr<ListPublicipsByTagsResponse> EipClient::listPublicipsByTags(List
     std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
 
     std::shared_ptr<ListPublicipsByTagsResponse> localVarResult = std::make_shared<ListPublicipsByTagsResponse>();
+
+    if (!res->getHttpBody().empty()) {
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowPublicIpTypeResponse> EipClient::showPublicIpType(ShowPublicIpTypeRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/publicip_types";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+
+    std::shared_ptr<ShowPublicIpTypeResponse> localVarResult = std::make_shared<ShowPublicIpTypeResponse>();
 
     if (!res->getHttpBody().empty()) {
         utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());

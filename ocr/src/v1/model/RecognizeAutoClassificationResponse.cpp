@@ -41,7 +41,7 @@ bool RecognizeAutoClassificationResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("result"));
         if(!fieldValue.is_null())
         {
-            AutoClassificationResult refVal;
+            std::vector<AutoClassificationResult> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResult(refVal);
         }
@@ -50,12 +50,12 @@ bool RecognizeAutoClassificationResponse::fromJson(const web::json::value& val)
 }
 
 
-AutoClassificationResult RecognizeAutoClassificationResponse::getResult() const
+std::vector<AutoClassificationResult>& RecognizeAutoClassificationResponse::getResult()
 {
     return result_;
 }
 
-void RecognizeAutoClassificationResponse::setResult(const AutoClassificationResult& value)
+void RecognizeAutoClassificationResponse::setResult(const std::vector<AutoClassificationResult>& value)
 {
     result_ = value;
     resultIsSet_ = true;

@@ -1,3 +1,23 @@
+# 3.1.12 2022-12-08
+
+### HuaweiCloud SDK EIP
+
+- _新增特性_
+  - 支持以下接口：
+    - `ListBandwidthPkg`
+    - `CountPublicIp`
+    - `ShowPublicIpType`
+    - `CountPublicIpInstance`
+    - `BatchCreatePublicips`
+    - `BatchDeletePublicIp`
+    - `BatchDisassociatePublicips`
+    - `CountEipAvailableResources`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`AssociatePublicips`请求参数`associate_instance_type`移除枚举值``
+  - 接口`UpdateAssociatePublicip`请求参数`associate_instance_type`移除枚举值``
+
 # 3.1.11 2022-11-30
 
 ### HuaweiCloud SDK EIP

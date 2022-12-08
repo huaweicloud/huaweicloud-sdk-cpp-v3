@@ -112,6 +112,76 @@ std::shared_ptr<ListPublicBorderGroupsResponse> EipClient::listPublicBorderGroup
 
     return localVarResult;
 }
+std::shared_ptr<ListPublicipPoolResponse> EipClient::listPublicipPool(ListPublicipPoolRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/eip/publicip-pools";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.markerIsSet()) {
+        localVarQueryParams["marker"] = parameterToString(request.getMarker());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.fieldsIsSet()) {
+        localVarQueryParams["fields"] = parameterToString(request.getFields());
+    }
+    if (request.sortKeyIsSet()) {
+        localVarQueryParams["sort_key"] = parameterToString(request.getSortKey());
+    }
+    if (request.sortDirIsSet()) {
+        localVarQueryParams["sort_dir"] = parameterToString(request.getSortDir());
+    }
+    if (request.idIsSet()) {
+        localVarQueryParams["id"] = parameterToString(request.getId());
+    }
+    if (request.nameIsSet()) {
+        localVarQueryParams["name"] = parameterToString(request.getName());
+    }
+    if (request.sizeIsSet()) {
+        localVarQueryParams["size"] = parameterToString(request.getSize());
+    }
+    if (request.statusIsSet()) {
+        localVarQueryParams["status"] = parameterToString(request.getStatus());
+    }
+    if (request.typeIsSet()) {
+        localVarQueryParams["type"] = parameterToString(request.getType());
+    }
+    if (request.descriptionIsSet()) {
+        localVarQueryParams["description"] = parameterToString(request.getDescription());
+    }
+    if (request.publicBorderGroupIsSet()) {
+        localVarQueryParams["public_border_group"] = parameterToString(request.getPublicBorderGroup());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+
+    std::shared_ptr<ListPublicipPoolResponse> localVarResult = std::make_shared<ListPublicipPoolResponse>();
+
+    if (!res->getHttpBody().empty()) {
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListShareBandwidthTypesResponse> EipClient::listShareBandwidthTypes(ListShareBandwidthTypesRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/eip/share-bandwidth-types";
@@ -173,6 +243,44 @@ std::shared_ptr<ListShareBandwidthTypesResponse> EipClient::listShareBandwidthTy
 
     return localVarResult;
 }
+std::shared_ptr<ShowPublicipPoolResponse> EipClient::showPublicipPool(ShowPublicipPoolRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/eip/publicip-pools/{publicip_pool_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
+
+    localVarPathParams["publicip_pool_id"] = parameterToString(request.getPublicipPoolId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.fieldsIsSet()) {
+        localVarQueryParams["fields"] = parameterToString(request.getFields());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+
+    std::shared_ptr<ShowPublicipPoolResponse> localVarResult = std::make_shared<ShowPublicipPoolResponse>();
+
+    if (!res->getHttpBody().empty()) {
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<AssociatePublicipsResponse> EipClient::associatePublicips(AssociatePublicipsRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/eip/publicips/{publicip_id}/associate-instance";
@@ -213,6 +321,45 @@ std::shared_ptr<AssociatePublicipsResponse> EipClient::associatePublicips(Associ
 
     return localVarResult;
 }
+std::shared_ptr<CountEipAvailableResourcesResponse> EipClient::countEipAvailableResources(CountEipAvailableResourcesRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/eip/resources/available";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+
+    std::shared_ptr<CountEipAvailableResourcesResponse> localVarResult = std::make_shared<CountEipAvailableResourcesResponse>();
+
+    if (!res->getHttpBody().empty()) {
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<DisassociatePublicipsResponse> EipClient::disassociatePublicips(DisassociatePublicipsRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/eip/publicips/{publicip_id}/disassociate-instance";
@@ -236,76 +383,6 @@ std::shared_ptr<DisassociatePublicipsResponse> EipClient::disassociatePublicips(
     std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
 
     std::shared_ptr<DisassociatePublicipsResponse> localVarResult = std::make_shared<DisassociatePublicipsResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
-std::shared_ptr<ListPublicipPoolResponse> EipClient::listPublicipPool(ListPublicipPoolRequest &request)
-{
-    std::string localVarPath = "/v3/{project_id}/eip/publicip-pools";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
-
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.markerIsSet()) {
-        localVarQueryParams["marker"] = parameterToString(request.getMarker());
-    }
-    if (request.limitIsSet()) {
-        localVarQueryParams["limit"] = parameterToString(request.getLimit());
-    }
-    if (request.fieldsIsSet()) {
-        localVarQueryParams["fields"] = parameterToString(request.getFields());
-    }
-    if (request.sortKeyIsSet()) {
-        localVarQueryParams["sort_key"] = parameterToString(request.getSortKey());
-    }
-    if (request.sortDirIsSet()) {
-        localVarQueryParams["sort_dir"] = parameterToString(request.getSortDir());
-    }
-    if (request.idIsSet()) {
-        localVarQueryParams["id"] = parameterToString(request.getId());
-    }
-    if (request.nameIsSet()) {
-        localVarQueryParams["name"] = parameterToString(request.getName());
-    }
-    if (request.sizeIsSet()) {
-        localVarQueryParams["size"] = parameterToString(request.getSize());
-    }
-    if (request.statusIsSet()) {
-        localVarQueryParams["status"] = parameterToString(request.getStatus());
-    }
-    if (request.typeIsSet()) {
-        localVarQueryParams["type"] = parameterToString(request.getType());
-    }
-    if (request.descriptionIsSet()) {
-        localVarQueryParams["description"] = parameterToString(request.getDescription());
-    }
-    if (request.publicBorderGroupIsSet()) {
-        localVarQueryParams["public_border_group"] = parameterToString(request.getPublicBorderGroup());
-    }
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
-
-    std::shared_ptr<ListPublicipPoolResponse> localVarResult = std::make_shared<ListPublicipPoolResponse>();
 
     if (!res->getHttpBody().empty()) {
         utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
@@ -501,44 +578,6 @@ std::shared_ptr<ShowPublicipResponse> EipClient::showPublicip(ShowPublicipReques
     std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
 
     std::shared_ptr<ShowPublicipResponse> localVarResult = std::make_shared<ShowPublicipResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
-std::shared_ptr<ShowPublicipPoolResponse> EipClient::showPublicipPool(ShowPublicipPoolRequest &request)
-{
-    std::string localVarPath = "/v3/{project_id}/eip/publicip-pools/{publicip_pool_id}";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
-
-    localVarPathParams["publicip_pool_id"] = parameterToString(request.getPublicipPoolId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.fieldsIsSet()) {
-        localVarQueryParams["fields"] = parameterToString(request.getFields());
-    }
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
-
-    std::shared_ptr<ShowPublicipPoolResponse> localVarResult = std::make_shared<ShowPublicipPoolResponse>();
 
     if (!res->getHttpBody().empty()) {
         utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());

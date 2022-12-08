@@ -1,3 +1,23 @@
+# 3.1.12 2022-12-08
+
+### HuaweiCloud SDK EIP
+
+- _Features_
+  - Support the following interfaces：
+    - `ListBandwidthPkg`
+    - `CountPublicIp`
+    - `ShowPublicIpType`
+    - `CountPublicIpInstance`
+    - `BatchCreatePublicips`
+    - `BatchDeletePublicIp`
+    - `BatchDisassociatePublicips`
+    - `CountEipAvailableResources`
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the enum values `` from the request parameter `associate_instance_type` from the interface `AssociatePublicips`
+  - Remove the enum values `` from the request parameter `associate_instance_type` from the interface `UpdateAssociatePublicip`
+
 # 3.1.11 2022-11-30
 
 ### HuaweiCloud SDK EIP

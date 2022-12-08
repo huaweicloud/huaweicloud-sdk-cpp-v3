@@ -8,6 +8,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/ocr/v1/model/AutoClassificationResult.h>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -39,17 +40,17 @@ public:
     /// RecognizeAutoClassificationResponse members
 
     /// <summary>
-    /// 
+    /// 调用成功时表示调用结果。  调用失败时无此字段。 
     /// </summary>
 
-    AutoClassificationResult getResult() const;
+    std::vector<AutoClassificationResult>& getResult();
     bool resultIsSet() const;
     void unsetresult();
-    void setResult(const AutoClassificationResult& value);
+    void setResult(const std::vector<AutoClassificationResult>& value);
 
 
 protected:
-    AutoClassificationResult result_;
+    std::vector<AutoClassificationResult> result_;
     bool resultIsSet_;
 
 #ifdef RTTR_FLAG

@@ -1,28 +1,29 @@
 
 
-#include "huaweicloud/ocr/v1/model/RecognizeLicensePlateResponse.h"
+#include "huaweicloud/eip/v3/model/CountEipAvailableResourcesResponse.h"
 
 namespace HuaweiCloud {
 namespace Sdk {
-namespace Ocr {
-namespace V1 {
+namespace Eip {
+namespace V3 {
 namespace Model {
 
 
 
 
-RecognizeLicensePlateResponse::RecognizeLicensePlateResponse()
+CountEipAvailableResourcesResponse::CountEipAvailableResourcesResponse()
 {
+    result_ = 0;
     resultIsSet_ = false;
 }
 
-RecognizeLicensePlateResponse::~RecognizeLicensePlateResponse() = default;
+CountEipAvailableResourcesResponse::~CountEipAvailableResourcesResponse() = default;
 
-void RecognizeLicensePlateResponse::validate()
+void CountEipAvailableResourcesResponse::validate()
 {
 }
 
-web::json::value RecognizeLicensePlateResponse::toJson() const
+web::json::value CountEipAvailableResourcesResponse::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -33,7 +34,7 @@ web::json::value RecognizeLicensePlateResponse::toJson() const
     return val;
 }
 
-bool RecognizeLicensePlateResponse::fromJson(const web::json::value& val)
+bool CountEipAvailableResourcesResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -41,7 +42,7 @@ bool RecognizeLicensePlateResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("result"));
         if(!fieldValue.is_null())
         {
-            std::vector<LicensePlateResult> refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResult(refVal);
         }
@@ -50,23 +51,23 @@ bool RecognizeLicensePlateResponse::fromJson(const web::json::value& val)
 }
 
 
-std::vector<LicensePlateResult>& RecognizeLicensePlateResponse::getResult()
+int32_t CountEipAvailableResourcesResponse::getResult() const
 {
     return result_;
 }
 
-void RecognizeLicensePlateResponse::setResult(const std::vector<LicensePlateResult>& value)
+void CountEipAvailableResourcesResponse::setResult(int32_t value)
 {
     result_ = value;
     resultIsSet_ = true;
 }
 
-bool RecognizeLicensePlateResponse::resultIsSet() const
+bool CountEipAvailableResourcesResponse::resultIsSet() const
 {
     return resultIsSet_;
 }
 
-void RecognizeLicensePlateResponse::unsetresult()
+void CountEipAvailableResourcesResponse::unsetresult()
 {
     resultIsSet_ = false;
 }

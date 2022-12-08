@@ -17,6 +17,8 @@
 #include <huaweicloud/eip/v2/model/CreateSharedBandwidthResponse.h>
 #include <huaweicloud/eip/v2/model/DeleteSharedBandwidthRequest.h>
 #include <huaweicloud/eip/v2/model/DeleteSharedBandwidthResponse.h>
+#include <huaweicloud/eip/v2/model/ListBandwidthPkgRequest.h>
+#include <huaweicloud/eip/v2/model/ListBandwidthPkgResponse.h>
 #include <huaweicloud/eip/v2/model/ListBandwidthsRequest.h>
 #include <huaweicloud/eip/v2/model/ListBandwidthsResponse.h>
 #include <huaweicloud/eip/v2/model/ListQuotasRequest.h>
@@ -37,9 +39,21 @@
 #include <huaweicloud/eip/v2/model/BatchCreatePublicipTagsRequest.h>
 #include <huaweicloud/eip/v2/model/BatchCreatePublicipTagsRequestBody.h>
 #include <huaweicloud/eip/v2/model/BatchCreatePublicipTagsResponse.h>
+#include <huaweicloud/eip/v2/model/BatchCreatePublicipsRequest.h>
+#include <huaweicloud/eip/v2/model/BatchCreatePublicipsResponse.h>
+#include <huaweicloud/eip/v2/model/BatchCreatePublicipsV2RequestBody.h>
+#include <huaweicloud/eip/v2/model/BatchDeletePublicIpRequest.h>
+#include <huaweicloud/eip/v2/model/BatchDeletePublicIpRequestBody.h>
+#include <huaweicloud/eip/v2/model/BatchDeletePublicIpResponse.h>
 #include <huaweicloud/eip/v2/model/BatchDeletePublicipTagsRequest.h>
 #include <huaweicloud/eip/v2/model/BatchDeletePublicipTagsRequestBody.h>
 #include <huaweicloud/eip/v2/model/BatchDeletePublicipTagsResponse.h>
+#include <huaweicloud/eip/v2/model/BatchDisassociatePublicipsRequest.h>
+#include <huaweicloud/eip/v2/model/BatchDisassociatePublicipsResponse.h>
+#include <huaweicloud/eip/v2/model/CountPublicIpInstanceRequest.h>
+#include <huaweicloud/eip/v2/model/CountPublicIpInstanceResponse.h>
+#include <huaweicloud/eip/v2/model/CountPublicIpRequest.h>
+#include <huaweicloud/eip/v2/model/CountPublicIpResponse.h>
 #include <huaweicloud/eip/v2/model/CreatePrePaidPublicipRequest.h>
 #include <huaweicloud/eip/v2/model/CreatePrePaidPublicipRequestBody.h>
 #include <huaweicloud/eip/v2/model/CreatePrePaidPublicipResponse.h>
@@ -60,6 +74,8 @@
 #include <huaweicloud/eip/v2/model/ListPublicipsByTagsResponse.h>
 #include <huaweicloud/eip/v2/model/ListPublicipsRequest.h>
 #include <huaweicloud/eip/v2/model/ListPublicipsResponse.h>
+#include <huaweicloud/eip/v2/model/ShowPublicIpTypeRequest.h>
+#include <huaweicloud/eip/v2/model/ShowPublicIpTypeResponse.h>
 #include <huaweicloud/eip/v2/model/ShowPublicipRequest.h>
 #include <huaweicloud/eip/v2/model/ShowPublicipResponse.h>
 #include <huaweicloud/eip/v2/model/ShowPublicipTagsRequest.h>
@@ -138,6 +154,14 @@ public:
     std::shared_ptr<DeleteSharedBandwidthResponse> deleteSharedBandwidth(
         DeleteSharedBandwidthRequest &request
     );
+    // 查询带宽加油包列表
+    //
+    // 查询带宽加油包列表信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListBandwidthPkgResponse> listBandwidthPkg(
+        ListBandwidthPkgRequest &request
+    );
     // 查询带宽列表
     //
     // 查询带宽列表。
@@ -195,6 +219,22 @@ public:
     std::shared_ptr<BatchCreatePublicipTagsResponse> batchCreatePublicipTags(
         BatchCreatePublicipTagsRequest &request
     );
+    // 批量创建弹性公网IP
+    //
+    // 批量创建弹性公网IP
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchCreatePublicipsResponse> batchCreatePublicips(
+        BatchCreatePublicipsRequest &request
+    );
+    // 批量删除弹性公网IP
+    //
+    // 批量删除弹性公网IP
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchDeletePublicIpResponse> batchDeletePublicIp(
+        BatchDeletePublicIpRequest &request
+    );
     // 批量删除弹性公网IP资源标签
     //
     // 为指定的弹性公网IP资源实例批量删除标签。
@@ -202,6 +242,30 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<BatchDeletePublicipTagsResponse> batchDeletePublicipTags(
         BatchDeletePublicipTagsRequest &request
+    );
+    // 批量解绑弹性公网IP
+    //
+    // 批量解绑弹性公网IP
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchDisassociatePublicipsResponse> batchDisassociatePublicips(
+        BatchDisassociatePublicipsRequest &request
+    );
+    // 查询PublicIp数量
+    //
+    // 查询PublicIp数量
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CountPublicIpResponse> countPublicIp(
+        CountPublicIpRequest &request
+    );
+    // 查询PublicIp实例数
+    //
+    // 查询PublicIp实例数
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CountPublicIpInstanceResponse> countPublicIpInstance(
+        CountPublicIpInstanceRequest &request
     );
     // 申请包周期弹性公网IP
     //
@@ -267,6 +331,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListPublicipsByTagsResponse> listPublicipsByTags(
         ListPublicipsByTagsRequest &request
+    );
+    // 查询PublicIp类型
+    //
+    // 查询PublicIp类型
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowPublicIpTypeResponse> showPublicIpType(
+        ShowPublicIpTypeRequest &request
     );
     // 查询弹性公网IP
     //

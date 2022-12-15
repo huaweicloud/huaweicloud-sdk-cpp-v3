@@ -58,7 +58,7 @@ public:
     void setOrderId(const std::string& value);
 
     /// <summary>
-    /// 待创建的云硬盘ID列表，在请求体的metadata字段中指定create_for_volume_id为true时才返回该参数。
+    /// 待创建的云硬盘ID列表。 &gt; 说明： &gt; 通过云硬盘ID查询云硬盘详情 ，若返回404 可能云硬盘正在创建中或者已经创建失败。 &gt; 通过JobId查询云硬盘创建任务是否完成[查询job的状态](https://support.huaweicloud.com/api-evs/evs_04_0054.html)。
     /// </summary>
 
     std::vector<std::string>& getVolumeIds();

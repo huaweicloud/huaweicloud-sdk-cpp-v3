@@ -1,3 +1,23 @@
+# 3.1.13 2022-12-15
+
+### HuaweiCloud SDK ECS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the request parameter `server_id` to the interface `ListServersDetails`
+
+### HuaweiCloud SDK EIP
+
+- _Features_
+  - Support the interfaces `ShowResourcesJobDetail`, `ChangeBandwidthToPeriod`, `ChangePublicipToPeriod`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.12 2022-12-08
 
 ### HuaweiCloud SDK EIP

@@ -137,6 +137,15 @@ public:
     void unsetipEq();
     void setIpEq(const std::string& value);
 
+    /// <summary>
+    /// 云服务器ID，格式为UUID，匹配规则为精确匹配  示例: server_id&#x3D;{id1}&amp;server_id&#x3D;{id2}
+    /// </summary>
+
+    std::string getServerId() const;
+    bool serverIdIsSet() const;
+    void unsetserverId();
+    void setServerId(const std::string& value);
+
 
 protected:
     std::string enterpriseProjectId_;
@@ -161,6 +170,8 @@ protected:
     bool tagsIsSet_;
     std::string ipEq_;
     bool ipEqIsSet_;
+    std::string serverId_;
+    bool serverIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

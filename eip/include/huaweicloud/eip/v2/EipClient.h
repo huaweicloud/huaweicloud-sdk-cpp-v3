@@ -12,6 +12,9 @@
 #include <huaweicloud/eip/v2/model/BatchCreateBandwidthRequestBody.h>
 #include <huaweicloud/eip/v2/model/BatchCreateSharedBandwidthsRequest.h>
 #include <huaweicloud/eip/v2/model/BatchCreateSharedBandwidthsResponse.h>
+#include <huaweicloud/eip/v2/model/BwChangeToPeriodReq.h>
+#include <huaweicloud/eip/v2/model/ChangeBandwidthToPeriodRequest.h>
+#include <huaweicloud/eip/v2/model/ChangeBandwidthToPeriodResponse.h>
 #include <huaweicloud/eip/v2/model/CreateSharedBandwidhRequestBody.h>
 #include <huaweicloud/eip/v2/model/CreateSharedBandwidthRequest.h>
 #include <huaweicloud/eip/v2/model/CreateSharedBandwidthResponse.h>
@@ -50,6 +53,9 @@
 #include <huaweicloud/eip/v2/model/BatchDeletePublicipTagsResponse.h>
 #include <huaweicloud/eip/v2/model/BatchDisassociatePublicipsRequest.h>
 #include <huaweicloud/eip/v2/model/BatchDisassociatePublicipsResponse.h>
+#include <huaweicloud/eip/v2/model/ChangePublicipToPeriodRequest.h>
+#include <huaweicloud/eip/v2/model/ChangePublicipToPeriodResponse.h>
+#include <huaweicloud/eip/v2/model/ChangeToPeriodReq.h>
 #include <huaweicloud/eip/v2/model/CountPublicIpInstanceRequest.h>
 #include <huaweicloud/eip/v2/model/CountPublicIpInstanceResponse.h>
 #include <huaweicloud/eip/v2/model/CountPublicIpRequest.h>
@@ -83,6 +89,10 @@
 #include <huaweicloud/eip/v2/model/UpdatePublicipRequest.h>
 #include <huaweicloud/eip/v2/model/UpdatePublicipResponse.h>
 #include <huaweicloud/eip/v2/model/UpdatePublicipsRequestBody.h>
+#include <string>
+
+#include <huaweicloud/eip/v2/model/ShowResourcesJobDetailRequest.h>
+#include <huaweicloud/eip/v2/model/ShowResourcesJobDetailResponse.h>
 #include <string>
 
 #include <huaweicloud/eip/v2/model/NeutronCreateFloatingIpRequest.h>
@@ -137,6 +147,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<BatchCreateSharedBandwidthsResponse> batchCreateSharedBandwidths(
         BatchCreateSharedBandwidthsRequest &request
+    );
+    // 按需转包API
+    //
+    // 租户按需转包接口。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ChangeBandwidthToPeriodResponse> changeBandwidthToPeriod(
+        ChangeBandwidthToPeriodRequest &request
     );
     // 创建共享带宽
     //
@@ -251,6 +269,14 @@ public:
     std::shared_ptr<BatchDisassociatePublicipsResponse> batchDisassociatePublicips(
         BatchDisassociatePublicipsRequest &request
     );
+    // 按需转包接口
+    //
+    // 租户按需转包接口。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ChangePublicipToPeriodResponse> changePublicipToPeriod(
+        ChangePublicipToPeriodRequest &request
+    );
     // 查询PublicIp数量
     //
     // 查询PublicIp数量
@@ -363,6 +389,15 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdatePublicipResponse> updatePublicip(
         UpdatePublicipRequest &request
+    );
+
+    // 查询Job状态接口
+    //
+    // 查询Job状态接口
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowResourcesJobDetailResponse> showResourcesJobDetail(
+        ShowResourcesJobDetailRequest &request
     );
 
     // 创建浮动IP

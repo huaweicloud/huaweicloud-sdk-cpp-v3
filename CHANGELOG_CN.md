@@ -1,3 +1,14 @@
+# 3.1.15 2022-12-22
+
+### HuaweiCloud SDK IMS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`CopyImageCrossRegion`新增请求参数 `vault_id`
+
 # 3.1.14 2022-12-19
 
 ### HuaweiCloud SDK ECS

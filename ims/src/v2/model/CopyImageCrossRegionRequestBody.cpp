@@ -23,6 +23,8 @@ CopyImageCrossRegionRequestBody::CopyImageCrossRegionRequestBody()
     projectNameIsSet_ = false;
     region_ = "";
     regionIsSet_ = false;
+    vaultId_ = "";
+    vaultIdIsSet_ = false;
 }
 
 CopyImageCrossRegionRequestBody::~CopyImageCrossRegionRequestBody() = default;
@@ -49,6 +51,9 @@ web::json::value CopyImageCrossRegionRequestBody::toJson() const
     }
     if(regionIsSet_) {
         val[utility::conversions::to_string_t("region")] = ModelBase::toJson(region_);
+    }
+    if(vaultIdIsSet_) {
+        val[utility::conversions::to_string_t("vault_id")] = ModelBase::toJson(vaultId_);
     }
 
     return val;
@@ -101,6 +106,15 @@ bool CopyImageCrossRegionRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRegion(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("vault_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("vault_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setVaultId(refVal);
         }
     }
     return ok;
@@ -210,6 +224,27 @@ bool CopyImageCrossRegionRequestBody::regionIsSet() const
 void CopyImageCrossRegionRequestBody::unsetregion()
 {
     regionIsSet_ = false;
+}
+
+std::string CopyImageCrossRegionRequestBody::getVaultId() const
+{
+    return vaultId_;
+}
+
+void CopyImageCrossRegionRequestBody::setVaultId(const std::string& value)
+{
+    vaultId_ = value;
+    vaultIdIsSet_ = true;
+}
+
+bool CopyImageCrossRegionRequestBody::vaultIdIsSet() const
+{
+    return vaultIdIsSet_;
+}
+
+void CopyImageCrossRegionRequestBody::unsetvaultId()
+{
+    vaultIdIsSet_ = false;
 }
 
 }

@@ -83,6 +83,15 @@ public:
     void unsetregion();
     void setRegion(const std::string& value);
 
+    /// <summary>
+    /// 存储库ID。如果是整机镜像，则在跨Region复制镜像时，为必选参数，需传入该值。
+    /// </summary>
+
+    std::string getVaultId() const;
+    bool vaultIdIsSet() const;
+    void unsetvaultId();
+    void setVaultId(const std::string& value);
+
 
 protected:
     std::string agencyName_;
@@ -95,6 +104,8 @@ protected:
     bool projectNameIsSet_;
     std::string region_;
     bool regionIsSet_;
+    std::string vaultId_;
+    bool vaultIdIsSet_;
 
 };
 

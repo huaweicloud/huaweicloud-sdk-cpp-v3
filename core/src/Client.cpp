@@ -62,7 +62,7 @@ std::unique_ptr<HttpResponse> Client::callApi(const std::string &method, const s
     std::string queryParamsHttp = getQueryParams(queryParams);
     RequestParams requestParams(method, scheme, host, uriHttp, queryParamsHttp, false, body);
 
-    requestParams.addHeader(Header("User-Agent", "huaweicloud-sdk-cpp/3.0"));
+    requestParams.addHeader(Header("User-Agent", "huaweicloud-usdk-cpp/3.0"));
     addHeaderParams(requestParams, headerParams);
     credentials_->processAuthRequest(requestParams);
 

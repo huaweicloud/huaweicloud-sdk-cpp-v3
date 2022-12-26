@@ -1,3 +1,18 @@
+# 3.1.16 2022-12-26
+
+### HuaweiCloud SDK VOD
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`UpdateTranscodeTemplate`请求参数`group_id`、`name`、`bitrate`、`frame_rate`、`video_codec`、`format`、`hls_interval`改为必填
+  - 接口`ListTranscodeTemplate`响应参数`bitrate`、`frame_rate`、`video_codec`、`format`、`hls_interval`改为必填
+  - 接口`CreateTranscodeTemplate`请求参数`name`、`bitrate`、`frame_rate`、`video_codec`、`format`、`hls_interval`改为必填
+  - 接口`UpdateTemplateGroupCollection`请求参数`name`、`template_group_list`改为必填
+  - 接口`CreateTemplateGroupCollection`请求参数`name`、`template_group_list`改为必填
+
 # 3.1.15 2022-12-22
 
 ### HuaweiCloud SDK IMS

@@ -1,3 +1,18 @@
+# 3.1.16 2022-12-26
+
+### HuaweiCloud SDK VOD
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - The request parameter `group_id`, `name`, `bitrate`, `frame_rate`, `video_codec`, `format`, `hls_interval` changed to required of the interface `UpdateTranscodeTemplate`
+  - The response parameter `bitrate`, `frame_rate`, `video_codec`, `format`, `hls_interval` changed to required of the interface `ListTranscodeTemplate`
+  - The request parameter `name`, `bitrate`, `frame_rate`, `video_codec`, `format`, `hls_interval` changed to required of the interface `CreateTranscodeTemplate`
+  - The request parameter `name`, `template_group_list` changed to required of the interface `UpdateTemplateGroupCollection`
+  - The request parameter `name`, `template_group_list` changed to required of the interface `CreateTemplateGroupCollection`
+
 # 3.1.15 2022-12-22
 
 ### HuaweiCloud SDK IMS

@@ -139,7 +139,7 @@ bool ShowResourcesJobDetailResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("entities"));
         if(!fieldValue.is_null())
         {
-            SubJobs refVal;
+            SubJobsInfo refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEntities(refVal);
         }
@@ -295,12 +295,12 @@ void ShowResourcesJobDetailResponse::unsetfailReason()
     failReasonIsSet_ = false;
 }
 
-SubJobs ShowResourcesJobDetailResponse::getEntities() const
+SubJobsInfo ShowResourcesJobDetailResponse::getEntities() const
 {
     return entities_;
 }
 
-void ShowResourcesJobDetailResponse::setEntities(const SubJobs& value)
+void ShowResourcesJobDetailResponse::setEntities(const SubJobsInfo& value)
 {
     entities_ = value;
     entitiesIsSet_ = true;

@@ -7,7 +7,7 @@
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/core/utils/Object.h>
+#include <huaweicloud/eip/v2/model/CreatePrePaidPublicipExtendParamOption.h>
 #include <string>
 #include <vector>
 
@@ -50,19 +50,19 @@ public:
     void setBandwidthIds(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 按需转包周期参数
+    /// 
     /// </summary>
 
-    Object getExtendParam() const;
+    CreatePrePaidPublicipExtendParamOption getExtendParam() const;
     bool extendParamIsSet() const;
     void unsetextendParam();
-    void setExtendParam(const Object& value);
+    void setExtendParam(const CreatePrePaidPublicipExtendParamOption& value);
 
 
 protected:
     std::vector<std::string> bandwidthIds_;
     bool bandwidthIdsIsSet_;
-    Object extendParam_;
+    CreatePrePaidPublicipExtendParamOption extendParam_;
     bool extendParamIsSet_;
 
 };

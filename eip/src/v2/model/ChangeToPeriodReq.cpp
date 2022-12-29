@@ -54,7 +54,7 @@ bool ChangeToPeriodReq::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("extendParam"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            CreatePrePaidPublicipExtendParamOption refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setExtendParam(refVal);
         }
@@ -84,12 +84,12 @@ void ChangeToPeriodReq::unsetpublicipIds()
     publicipIdsIsSet_ = false;
 }
 
-Object ChangeToPeriodReq::getExtendParam() const
+CreatePrePaidPublicipExtendParamOption ChangeToPeriodReq::getExtendParam() const
 {
     return extendParam_;
 }
 
-void ChangeToPeriodReq::setExtendParam(const Object& value)
+void ChangeToPeriodReq::setExtendParam(const CreatePrePaidPublicipExtendParamOption& value)
 {
     extendParam_ = value;
     extendParamIsSet_ = true;

@@ -61,7 +61,7 @@ web::json::value BandwidthPkgResp::toJson() const
         val[utility::conversions::to_string_t("pkgSize")] = ModelBase::toJson(pkgSize_);
     }
     if(tenantIdIsSet_) {
-        val[utility::conversions::to_string_t("tenant_id")] = ModelBase::toJson(tenantId_);
+        val[utility::conversions::to_string_t("tenantId")] = ModelBase::toJson(tenantId_);
     }
     if(billingInfoIsSet_) {
         val[utility::conversions::to_string_t("billingInfo")] = ModelBase::toJson(billingInfo_);
@@ -128,8 +128,8 @@ bool BandwidthPkgResp::fromJson(const web::json::value& val)
             setPkgSize(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("tenant_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("tenant_id"));
+    if(val.has_field(utility::conversions::to_string_t("tenantId"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("tenantId"));
         if(!fieldValue.is_null())
         {
             std::string refVal;

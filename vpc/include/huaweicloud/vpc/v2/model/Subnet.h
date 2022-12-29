@@ -8,6 +8,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <cpprest/details/basic_types.h>
 #include <huaweicloud/vpc/v2/model/ExtraDhcpOption.h>
 #include <vector>
 
@@ -220,6 +221,33 @@ public:
     void unsetscope();
     void setScope(const std::string& value);
 
+    /// <summary>
+    /// 项目ID
+    /// </summary>
+
+    std::string getTenantId() const;
+    bool tenantIdIsSet() const;
+    void unsettenantId();
+    void setTenantId(const std::string& value);
+
+    /// <summary>
+    /// 功能说明：资源创建UTC时间 格式：yyyy-MM-ddTHH:mm:ss
+    /// </summary>
+
+    utility::datetime getCreatedAt() const;
+    bool createdAtIsSet() const;
+    void unsetcreatedAt();
+    void setCreatedAt(const utility::datetime& value);
+
+    /// <summary>
+    /// 功能说明：资源更新UTC时间 格式：yyyy-MM-ddTHH:mm:ss
+    /// </summary>
+
+    utility::datetime getUpdatedAt() const;
+    bool updatedAtIsSet() const;
+    void unsetupdatedAt();
+    void setUpdatedAt(const utility::datetime& value);
+
 
 protected:
     std::string id_;
@@ -262,6 +290,12 @@ protected:
     bool extraDhcpOptsIsSet_;
     std::string scope_;
     bool scopeIsSet_;
+    std::string tenantId_;
+    bool tenantIdIsSet_;
+    utility::datetime createdAt_;
+    bool createdAtIsSet_;
+    utility::datetime updatedAt_;
+    bool updatedAtIsSet_;
 
 };
 

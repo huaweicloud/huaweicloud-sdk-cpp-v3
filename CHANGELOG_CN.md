@@ -1,3 +1,63 @@
+# 3.1.17 2022-12-29
+
+### HuaweiCloud SDK EIP
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ChangeBandwidthToPeriod`新增请求参数 `extendParam`
+  - 接口`ChangePublicipToPeriod`新增请求参数 `extendParam`
+  - 接口`ListBandwidthPkg`:
+    - 新增响应参数 `tenantId`
+    - 移除响应参数 `tenant_id`
+  - 接口`UpdateAssociatePublicip`请求参数`associate_instance_type`、`associate_instance_id`改为必填
+  - 接口`AssociatePublicips`请求参数`associate_instance_type`、`associate_instance_id`改为必填
+
+### HuaweiCloud SDK IMS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ShowJob`新增响应参数 `sub_jobs_result`、`sub_jobs_list`
+  - 接口`ShowJobProgress`新增响应参数 `sub_jobs_result`、`sub_jobs_list`
+
+### HuaweiCloud SDK VOD
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`UpdateTranscodeTemplate`请求参数`name`改为非必填
+  - 接口`UpdateTemplateGroupCollection`:
+    - 请求参数`collection_id`改为必填
+    - 请求参数`name`、`template_group_list`改为非必填
+
+### HuaweiCloud SDK VPC
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ListVpcs`新增响应参数 `tenant_id`、`created_at`、`updated_at`
+  - 接口`CreateVpc`新增响应参数 `tenant_id`、`created_at`、`updated_at`
+  - 接口`ShowVpc`新增响应参数 `tenant_id`、`created_at`、`updated_at`
+  - 接口`UpdateVpc`新增响应参数 `tenant_id`、`created_at`、`updated_at`
+  - 接口`ListSubnets`新增响应参数 `tenant_id`、`created_at`、`updated_at`
+  - 接口`CreateSubnet`新增响应参数 `tenant_id`、`created_at`、`updated_at`
+  - 接口`ShowSubnet`新增响应参数 `tenant_id`、`created_at`、`updated_at`
+  - 接口`ListRouteTables`新增响应参数 `created_at`、`updated_at`
+  - 接口`CreateRouteTable`新增响应参数 `created_at`、`updated_at`
+  - 接口`ShowRouteTable`新增响应参数 `created_at`、`updated_at`
+  - 接口`UpdateRouteTable`新增响应参数 `created_at`、`updated_at`
+  - 接口`AssociateRouteTable`新增响应参数 `created_at`、`updated_at`
+  - 接口`DisassociateRouteTable`新增响应参数 `created_at`、`updated_at`
+
 # 3.1.16 2022-12-26
 
 ### HuaweiCloud SDK VOD

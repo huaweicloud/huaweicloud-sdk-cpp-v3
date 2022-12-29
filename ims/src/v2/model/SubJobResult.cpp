@@ -1,18 +1,20 @@
 
 
-#include "huaweicloud/eip/v2/model/SubJobs.h"
+#include "huaweicloud/ims/v2/model/SubJobResult.h"
 
 namespace HuaweiCloud {
 namespace Sdk {
-namespace Eip {
+namespace Ims {
 namespace V2 {
 namespace Model {
 
 
 
 
-SubJobs::SubJobs()
+SubJobResult::SubJobResult()
 {
+    status_ = "";
+    statusIsSet_ = false;
     jobId_ = "";
     jobIdIsSet_ = false;
     jobType_ = "";
@@ -21,8 +23,6 @@ SubJobs::SubJobs()
     beginTimeIsSet_ = false;
     endTime_ = "";
     endTimeIsSet_ = false;
-    status_ = "";
-    statusIsSet_ = false;
     errorCode_ = "";
     errorCodeIsSet_ = false;
     failReason_ = "";
@@ -30,16 +30,19 @@ SubJobs::SubJobs()
     entitiesIsSet_ = false;
 }
 
-SubJobs::~SubJobs() = default;
+SubJobResult::~SubJobResult() = default;
 
-void SubJobs::validate()
+void SubJobResult::validate()
 {
 }
 
-web::json::value SubJobs::toJson() const
+web::json::value SubJobResult::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(statusIsSet_) {
+        val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
+    }
     if(jobIdIsSet_) {
         val[utility::conversions::to_string_t("job_id")] = ModelBase::toJson(jobId_);
     }
@@ -51,9 +54,6 @@ web::json::value SubJobs::toJson() const
     }
     if(endTimeIsSet_) {
         val[utility::conversions::to_string_t("end_time")] = ModelBase::toJson(endTime_);
-    }
-    if(statusIsSet_) {
-        val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
     }
     if(errorCodeIsSet_) {
         val[utility::conversions::to_string_t("error_code")] = ModelBase::toJson(errorCode_);
@@ -68,10 +68,19 @@ web::json::value SubJobs::toJson() const
     return val;
 }
 
-bool SubJobs::fromJson(const web::json::value& val)
+bool SubJobResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("status"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("status"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setStatus(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("job_id"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("job_id"));
         if(!fieldValue.is_null())
@@ -108,15 +117,6 @@ bool SubJobs::fromJson(const web::json::value& val)
             setEndTime(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("status"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("status"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setStatus(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("error_code"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("error_code"));
         if(!fieldValue.is_null())
@@ -139,7 +139,7 @@ bool SubJobs::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("entities"));
         if(!fieldValue.is_null())
         {
-            SubJobs refVal;
+            SubJobEntities refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEntities(refVal);
         }
@@ -148,170 +148,170 @@ bool SubJobs::fromJson(const web::json::value& val)
 }
 
 
-std::string SubJobs::getJobId() const
-{
-    return jobId_;
-}
-
-void SubJobs::setJobId(const std::string& value)
-{
-    jobId_ = value;
-    jobIdIsSet_ = true;
-}
-
-bool SubJobs::jobIdIsSet() const
-{
-    return jobIdIsSet_;
-}
-
-void SubJobs::unsetjobId()
-{
-    jobIdIsSet_ = false;
-}
-
-std::string SubJobs::getJobType() const
-{
-    return jobType_;
-}
-
-void SubJobs::setJobType(const std::string& value)
-{
-    jobType_ = value;
-    jobTypeIsSet_ = true;
-}
-
-bool SubJobs::jobTypeIsSet() const
-{
-    return jobTypeIsSet_;
-}
-
-void SubJobs::unsetjobType()
-{
-    jobTypeIsSet_ = false;
-}
-
-std::string SubJobs::getBeginTime() const
-{
-    return beginTime_;
-}
-
-void SubJobs::setBeginTime(const std::string& value)
-{
-    beginTime_ = value;
-    beginTimeIsSet_ = true;
-}
-
-bool SubJobs::beginTimeIsSet() const
-{
-    return beginTimeIsSet_;
-}
-
-void SubJobs::unsetbeginTime()
-{
-    beginTimeIsSet_ = false;
-}
-
-std::string SubJobs::getEndTime() const
-{
-    return endTime_;
-}
-
-void SubJobs::setEndTime(const std::string& value)
-{
-    endTime_ = value;
-    endTimeIsSet_ = true;
-}
-
-bool SubJobs::endTimeIsSet() const
-{
-    return endTimeIsSet_;
-}
-
-void SubJobs::unsetendTime()
-{
-    endTimeIsSet_ = false;
-}
-
-std::string SubJobs::getStatus() const
+std::string SubJobResult::getStatus() const
 {
     return status_;
 }
 
-void SubJobs::setStatus(const std::string& value)
+void SubJobResult::setStatus(const std::string& value)
 {
     status_ = value;
     statusIsSet_ = true;
 }
 
-bool SubJobs::statusIsSet() const
+bool SubJobResult::statusIsSet() const
 {
     return statusIsSet_;
 }
 
-void SubJobs::unsetstatus()
+void SubJobResult::unsetstatus()
 {
     statusIsSet_ = false;
 }
 
-std::string SubJobs::getErrorCode() const
+std::string SubJobResult::getJobId() const
+{
+    return jobId_;
+}
+
+void SubJobResult::setJobId(const std::string& value)
+{
+    jobId_ = value;
+    jobIdIsSet_ = true;
+}
+
+bool SubJobResult::jobIdIsSet() const
+{
+    return jobIdIsSet_;
+}
+
+void SubJobResult::unsetjobId()
+{
+    jobIdIsSet_ = false;
+}
+
+std::string SubJobResult::getJobType() const
+{
+    return jobType_;
+}
+
+void SubJobResult::setJobType(const std::string& value)
+{
+    jobType_ = value;
+    jobTypeIsSet_ = true;
+}
+
+bool SubJobResult::jobTypeIsSet() const
+{
+    return jobTypeIsSet_;
+}
+
+void SubJobResult::unsetjobType()
+{
+    jobTypeIsSet_ = false;
+}
+
+std::string SubJobResult::getBeginTime() const
+{
+    return beginTime_;
+}
+
+void SubJobResult::setBeginTime(const std::string& value)
+{
+    beginTime_ = value;
+    beginTimeIsSet_ = true;
+}
+
+bool SubJobResult::beginTimeIsSet() const
+{
+    return beginTimeIsSet_;
+}
+
+void SubJobResult::unsetbeginTime()
+{
+    beginTimeIsSet_ = false;
+}
+
+std::string SubJobResult::getEndTime() const
+{
+    return endTime_;
+}
+
+void SubJobResult::setEndTime(const std::string& value)
+{
+    endTime_ = value;
+    endTimeIsSet_ = true;
+}
+
+bool SubJobResult::endTimeIsSet() const
+{
+    return endTimeIsSet_;
+}
+
+void SubJobResult::unsetendTime()
+{
+    endTimeIsSet_ = false;
+}
+
+std::string SubJobResult::getErrorCode() const
 {
     return errorCode_;
 }
 
-void SubJobs::setErrorCode(const std::string& value)
+void SubJobResult::setErrorCode(const std::string& value)
 {
     errorCode_ = value;
     errorCodeIsSet_ = true;
 }
 
-bool SubJobs::errorCodeIsSet() const
+bool SubJobResult::errorCodeIsSet() const
 {
     return errorCodeIsSet_;
 }
 
-void SubJobs::unseterrorCode()
+void SubJobResult::unseterrorCode()
 {
     errorCodeIsSet_ = false;
 }
 
-std::string SubJobs::getFailReason() const
+std::string SubJobResult::getFailReason() const
 {
     return failReason_;
 }
 
-void SubJobs::setFailReason(const std::string& value)
+void SubJobResult::setFailReason(const std::string& value)
 {
     failReason_ = value;
     failReasonIsSet_ = true;
 }
 
-bool SubJobs::failReasonIsSet() const
+bool SubJobResult::failReasonIsSet() const
 {
     return failReasonIsSet_;
 }
 
-void SubJobs::unsetfailReason()
+void SubJobResult::unsetfailReason()
 {
     failReasonIsSet_ = false;
 }
 
-SubJobs SubJobs::getEntities() const
+SubJobEntities SubJobResult::getEntities() const
 {
     return entities_;
 }
 
-void SubJobs::setEntities(const SubJobs& value)
+void SubJobResult::setEntities(const SubJobEntities& value)
 {
     entities_ = value;
     entitiesIsSet_ = true;
 }
 
-bool SubJobs::entitiesIsSet() const
+bool SubJobResult::entitiesIsSet() const
 {
     return entitiesIsSet_;
 }
 
-void SubJobs::unsetentities()
+void SubJobResult::unsetentities()
 {
     entitiesIsSet_ = false;
 }

@@ -27,6 +27,10 @@ RouteTableResp::RouteTableResp()
     vpcIdIsSet_ = false;
     description_ = "";
     descriptionIsSet_ = false;
+    createdAt_ = utility::datetime();
+    createdAtIsSet_ = false;
+    updatedAt_ = utility::datetime();
+    updatedAtIsSet_ = false;
 }
 
 RouteTableResp::~RouteTableResp() = default;
@@ -62,6 +66,12 @@ web::json::value RouteTableResp::toJson() const
     }
     if(descriptionIsSet_) {
         val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
+    }
+    if(createdAtIsSet_) {
+        val[utility::conversions::to_string_t("created_at")] = ModelBase::toJson(createdAt_);
+    }
+    if(updatedAtIsSet_) {
+        val[utility::conversions::to_string_t("updated_at")] = ModelBase::toJson(updatedAt_);
     }
 
     return val;
@@ -141,6 +151,24 @@ bool RouteTableResp::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDescription(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("created_at"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("created_at"));
+        if(!fieldValue.is_null())
+        {
+            utility::datetime refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCreatedAt(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("updated_at"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("updated_at"));
+        if(!fieldValue.is_null())
+        {
+            utility::datetime refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setUpdatedAt(refVal);
         }
     }
     return ok;
@@ -313,6 +341,48 @@ bool RouteTableResp::descriptionIsSet() const
 void RouteTableResp::unsetdescription()
 {
     descriptionIsSet_ = false;
+}
+
+utility::datetime RouteTableResp::getCreatedAt() const
+{
+    return createdAt_;
+}
+
+void RouteTableResp::setCreatedAt(const utility::datetime& value)
+{
+    createdAt_ = value;
+    createdAtIsSet_ = true;
+}
+
+bool RouteTableResp::createdAtIsSet() const
+{
+    return createdAtIsSet_;
+}
+
+void RouteTableResp::unsetcreatedAt()
+{
+    createdAtIsSet_ = false;
+}
+
+utility::datetime RouteTableResp::getUpdatedAt() const
+{
+    return updatedAt_;
+}
+
+void RouteTableResp::setUpdatedAt(const utility::datetime& value)
+{
+    updatedAt_ = value;
+    updatedAtIsSet_ = true;
+}
+
+bool RouteTableResp::updatedAtIsSet() const
+{
+    return updatedAtIsSet_;
+}
+
+void RouteTableResp::unsetupdatedAt()
+{
+    updatedAtIsSet_ = false;
 }
 
 }

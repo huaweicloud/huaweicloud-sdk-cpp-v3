@@ -8,6 +8,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/ims/v2/model/JobEntitiesResult.h>
+#include <huaweicloud/ims/v2/model/SubJobResult.h>
 #include <string>
 #include <vector>
 
@@ -85,6 +86,24 @@ public:
     void unsetresults();
     void setResults(const std::vector<JobEntitiesResult>& value);
 
+    /// <summary>
+    /// 子任务结果列表
+    /// </summary>
+
+    std::vector<SubJobResult>& getSubJobsResult();
+    bool subJobsResultIsSet() const;
+    void unsetsubJobsResult();
+    void setSubJobsResult(const std::vector<SubJobResult>& value);
+
+    /// <summary>
+    /// 子任务ID列表
+    /// </summary>
+
+    std::vector<std::string>& getSubJobsList();
+    bool subJobsListIsSet() const;
+    void unsetsubJobsList();
+    void setSubJobsList(const std::vector<std::string>& value);
+
 
 protected:
     std::string imageId_;
@@ -97,6 +116,10 @@ protected:
     bool processPercentIsSet_;
     std::vector<JobEntitiesResult> results_;
     bool resultsIsSet_;
+    std::vector<SubJobResult> subJobsResult_;
+    bool subJobsResultIsSet_;
+    std::vector<std::string> subJobsList_;
+    bool subJobsListIsSet_;
 
 };
 

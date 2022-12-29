@@ -7,7 +7,7 @@
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/eip/v2/model/SubJobs.h>
+#include <huaweicloud/eip/v2/model/SubJobsInfo.h>
 #include <string>
 
 namespace HuaweiCloud {
@@ -106,10 +106,10 @@ public:
     /// 
     /// </summary>
 
-    SubJobs getEntities() const;
+    SubJobsInfo getEntities() const;
     bool entitiesIsSet() const;
     void unsetentities();
-    void setEntities(const SubJobs& value);
+    void setEntities(const SubJobsInfo& value);
 
 
 protected:
@@ -127,7 +127,7 @@ protected:
     bool errorCodeIsSet_;
     std::string failReason_;
     bool failReasonIsSet_;
-    SubJobs entities_;
+    SubJobsInfo entities_;
     bool entitiesIsSet_;
 
 #ifdef RTTR_FLAG

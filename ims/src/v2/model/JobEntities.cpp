@@ -22,6 +22,8 @@ JobEntities::JobEntities()
     processPercent_ = 0.0;
     processPercentIsSet_ = false;
     resultsIsSet_ = false;
+    subJobsResultIsSet_ = false;
+    subJobsListIsSet_ = false;
 }
 
 JobEntities::~JobEntities() = default;
@@ -48,6 +50,12 @@ web::json::value JobEntities::toJson() const
     }
     if(resultsIsSet_) {
         val[utility::conversions::to_string_t("results")] = ModelBase::toJson(results_);
+    }
+    if(subJobsResultIsSet_) {
+        val[utility::conversions::to_string_t("sub_jobs_result")] = ModelBase::toJson(subJobsResult_);
+    }
+    if(subJobsListIsSet_) {
+        val[utility::conversions::to_string_t("sub_jobs_list")] = ModelBase::toJson(subJobsList_);
     }
 
     return val;
@@ -100,6 +108,24 @@ bool JobEntities::fromJson(const web::json::value& val)
             std::vector<JobEntitiesResult> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResults(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("sub_jobs_result"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sub_jobs_result"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<SubJobResult> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSubJobsResult(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("sub_jobs_list"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sub_jobs_list"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSubJobsList(refVal);
         }
     }
     return ok;
@@ -209,6 +235,48 @@ bool JobEntities::resultsIsSet() const
 void JobEntities::unsetresults()
 {
     resultsIsSet_ = false;
+}
+
+std::vector<SubJobResult>& JobEntities::getSubJobsResult()
+{
+    return subJobsResult_;
+}
+
+void JobEntities::setSubJobsResult(const std::vector<SubJobResult>& value)
+{
+    subJobsResult_ = value;
+    subJobsResultIsSet_ = true;
+}
+
+bool JobEntities::subJobsResultIsSet() const
+{
+    return subJobsResultIsSet_;
+}
+
+void JobEntities::unsetsubJobsResult()
+{
+    subJobsResultIsSet_ = false;
+}
+
+std::vector<std::string>& JobEntities::getSubJobsList()
+{
+    return subJobsList_;
+}
+
+void JobEntities::setSubJobsList(const std::vector<std::string>& value)
+{
+    subJobsList_ = value;
+    subJobsListIsSet_ = true;
+}
+
+bool JobEntities::subJobsListIsSet() const
+{
+    return subJobsListIsSet_;
+}
+
+void JobEntities::unsetsubJobsList()
+{
+    subJobsListIsSet_ = false;
 }
 
 }

@@ -23,6 +23,8 @@ JobProgressEntities::JobProgressEntities()
     processPercentIsSet_ = false;
     subJobId_ = "";
     subJobIdIsSet_ = false;
+    subJobsResultIsSet_ = false;
+    subJobsListIsSet_ = false;
 }
 
 JobProgressEntities::~JobProgressEntities() = default;
@@ -49,6 +51,12 @@ web::json::value JobProgressEntities::toJson() const
     }
     if(subJobIdIsSet_) {
         val[utility::conversions::to_string_t("subJobId")] = ModelBase::toJson(subJobId_);
+    }
+    if(subJobsResultIsSet_) {
+        val[utility::conversions::to_string_t("sub_jobs_result")] = ModelBase::toJson(subJobsResult_);
+    }
+    if(subJobsListIsSet_) {
+        val[utility::conversions::to_string_t("sub_jobs_list")] = ModelBase::toJson(subJobsList_);
     }
 
     return val;
@@ -101,6 +109,24 @@ bool JobProgressEntities::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSubJobId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("sub_jobs_result"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sub_jobs_result"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<SubJobResult> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSubJobsResult(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("sub_jobs_list"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sub_jobs_list"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSubJobsList(refVal);
         }
     }
     return ok;
@@ -210,6 +236,48 @@ bool JobProgressEntities::subJobIdIsSet() const
 void JobProgressEntities::unsetsubJobId()
 {
     subJobIdIsSet_ = false;
+}
+
+std::vector<SubJobResult>& JobProgressEntities::getSubJobsResult()
+{
+    return subJobsResult_;
+}
+
+void JobProgressEntities::setSubJobsResult(const std::vector<SubJobResult>& value)
+{
+    subJobsResult_ = value;
+    subJobsResultIsSet_ = true;
+}
+
+bool JobProgressEntities::subJobsResultIsSet() const
+{
+    return subJobsResultIsSet_;
+}
+
+void JobProgressEntities::unsetsubJobsResult()
+{
+    subJobsResultIsSet_ = false;
+}
+
+std::vector<std::string>& JobProgressEntities::getSubJobsList()
+{
+    return subJobsList_;
+}
+
+void JobProgressEntities::setSubJobsList(const std::vector<std::string>& value)
+{
+    subJobsList_ = value;
+    subJobsListIsSet_ = true;
+}
+
+bool JobProgressEntities::subJobsListIsSet() const
+{
+    return subJobsListIsSet_;
+}
+
+void JobProgressEntities::unsetsubJobsList()
+{
+    subJobsListIsSet_ = false;
 }
 
 }

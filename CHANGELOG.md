@@ -1,3 +1,63 @@
+# 3.1.17 2022-12-29
+
+### HuaweiCloud SDK EIP
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the request parameter `extendParam` to the interface `ChangeBandwidthToPeriod`
+  - Add the request parameter `extendParam` to the interface `ChangePublicipToPeriod`
+  - Changes of the interface `ListBandwidthPkg`:
+    - Add the response parameter `tenantId`
+    - Remove the response parameter `tenant_id`
+  - The request parameter `associate_instance_type`, `associate_instance_id` changed to required of the interface `UpdateAssociatePublicip`
+  - The request parameter `associate_instance_type`, `associate_instance_id` changed to required of the interface `AssociatePublicips`
+
+### HuaweiCloud SDK IMS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the response parameters `sub_jobs_result`, `sub_jobs_list` to the interface `ShowJob`
+  - Add the response parameters `sub_jobs_result`, `sub_jobs_list` to the interface `ShowJobProgress`
+
+### HuaweiCloud SDK VOD
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - The request parameter `name` changed to not required of the interface `UpdateTranscodeTemplate`
+  - Changes of the interface `UpdateTemplateGroupCollection`:
+    - The request parameter `collection_id` changed to required
+    - The request parameter `name`, `template_group_list` changed to not required
+
+### HuaweiCloud SDK VPC
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the response parameters `tenant_id`, `created_at`, `updated_at` to the interface `ListVpcs`
+  - Add the response parameters `tenant_id`, `created_at`, `updated_at` to the interface `CreateVpc`
+  - Add the response parameters `tenant_id`, `created_at`, `updated_at` to the interface `ShowVpc`
+  - Add the response parameters `tenant_id`, `created_at`, `updated_at` to the interface `UpdateVpc`
+  - Add the response parameters `tenant_id`, `created_at`, `updated_at` to the interface `ListSubnets`
+  - Add the response parameters `tenant_id`, `created_at`, `updated_at` to the interface `CreateSubnet`
+  - Add the response parameters `tenant_id`, `created_at`, `updated_at` to the interface `ShowSubnet`
+  - Add the response parameters `created_at`, `updated_at` to the interface `ListRouteTables`
+  - Add the response parameters `created_at`, `updated_at` to the interface `CreateRouteTable`
+  - Add the response parameters `created_at`, `updated_at` to the interface `ShowRouteTable`
+  - Add the response parameters `created_at`, `updated_at` to the interface `UpdateRouteTable`
+  - Add the response parameters `created_at`, `updated_at` to the interface `AssociateRouteTable`
+  - Add the response parameters `created_at`, `updated_at` to the interface `DisassociateRouteTable`
+
 # 3.1.16 2022-12-26
 
 ### HuaweiCloud SDK VOD

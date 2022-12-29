@@ -54,7 +54,7 @@ bool BwChangeToPeriodReq::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("extendParam"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            CreatePrePaidPublicipExtendParamOption refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setExtendParam(refVal);
         }
@@ -84,12 +84,12 @@ void BwChangeToPeriodReq::unsetbandwidthIds()
     bandwidthIdsIsSet_ = false;
 }
 
-Object BwChangeToPeriodReq::getExtendParam() const
+CreatePrePaidPublicipExtendParamOption BwChangeToPeriodReq::getExtendParam() const
 {
     return extendParam_;
 }
 
-void BwChangeToPeriodReq::setExtendParam(const Object& value)
+void BwChangeToPeriodReq::setExtendParam(const CreatePrePaidPublicipExtendParamOption& value)
 {
     extendParam_ = value;
     extendParamIsSet_ = true;

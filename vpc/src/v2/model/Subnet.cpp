@@ -51,6 +51,12 @@ Subnet::Subnet()
     extraDhcpOptsIsSet_ = false;
     scope_ = "";
     scopeIsSet_ = false;
+    tenantId_ = "";
+    tenantIdIsSet_ = false;
+    createdAt_ = utility::datetime();
+    createdAtIsSet_ = false;
+    updatedAt_ = utility::datetime();
+    updatedAtIsSet_ = false;
 }
 
 Subnet::~Subnet() = default;
@@ -122,6 +128,15 @@ web::json::value Subnet::toJson() const
     }
     if(scopeIsSet_) {
         val[utility::conversions::to_string_t("scope")] = ModelBase::toJson(scope_);
+    }
+    if(tenantIdIsSet_) {
+        val[utility::conversions::to_string_t("tenant_id")] = ModelBase::toJson(tenantId_);
+    }
+    if(createdAtIsSet_) {
+        val[utility::conversions::to_string_t("created_at")] = ModelBase::toJson(createdAt_);
+    }
+    if(updatedAtIsSet_) {
+        val[utility::conversions::to_string_t("updated_at")] = ModelBase::toJson(updatedAt_);
     }
 
     return val;
@@ -309,6 +324,33 @@ bool Subnet::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setScope(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("tenant_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("tenant_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTenantId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("created_at"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("created_at"));
+        if(!fieldValue.is_null())
+        {
+            utility::datetime refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCreatedAt(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("updated_at"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("updated_at"));
+        if(!fieldValue.is_null())
+        {
+            utility::datetime refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setUpdatedAt(refVal);
         }
     }
     return ok;
@@ -733,6 +775,69 @@ bool Subnet::scopeIsSet() const
 void Subnet::unsetscope()
 {
     scopeIsSet_ = false;
+}
+
+std::string Subnet::getTenantId() const
+{
+    return tenantId_;
+}
+
+void Subnet::setTenantId(const std::string& value)
+{
+    tenantId_ = value;
+    tenantIdIsSet_ = true;
+}
+
+bool Subnet::tenantIdIsSet() const
+{
+    return tenantIdIsSet_;
+}
+
+void Subnet::unsettenantId()
+{
+    tenantIdIsSet_ = false;
+}
+
+utility::datetime Subnet::getCreatedAt() const
+{
+    return createdAt_;
+}
+
+void Subnet::setCreatedAt(const utility::datetime& value)
+{
+    createdAt_ = value;
+    createdAtIsSet_ = true;
+}
+
+bool Subnet::createdAtIsSet() const
+{
+    return createdAtIsSet_;
+}
+
+void Subnet::unsetcreatedAt()
+{
+    createdAtIsSet_ = false;
+}
+
+utility::datetime Subnet::getUpdatedAt() const
+{
+    return updatedAt_;
+}
+
+void Subnet::setUpdatedAt(const utility::datetime& value)
+{
+    updatedAt_ = value;
+    updatedAtIsSet_ = true;
+}
+
+bool Subnet::updatedAtIsSet() const
+{
+    return updatedAtIsSet_;
+}
+
+void Subnet::unsetupdatedAt()
+{
+    updatedAtIsSet_ = false;
 }
 
 }

@@ -10,6 +10,7 @@
 #include <huaweicloud/vpc/v2/model/SubnetList.h>
 #include <string>
 #include <huaweicloud/vpc/v2/model/RouteTableRoute.h>
+#include <cpprest/details/basic_types.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -113,6 +114,24 @@ public:
     void unsetdescription();
     void setDescription(const std::string& value);
 
+    /// <summary>
+    /// 功能说明：资源创建UTC时间 格式：yyyy-MM-ddTHH:mm:ss
+    /// </summary>
+
+    utility::datetime getCreatedAt() const;
+    bool createdAtIsSet() const;
+    void unsetcreatedAt();
+    void setCreatedAt(const utility::datetime& value);
+
+    /// <summary>
+    /// 功能说明：资源更新UTC时间 格式：yyyy-MM-ddTHH:mm:ss
+    /// </summary>
+
+    utility::datetime getUpdatedAt() const;
+    bool updatedAtIsSet() const;
+    void unsetupdatedAt();
+    void setUpdatedAt(const utility::datetime& value);
+
 
 protected:
     std::string id_;
@@ -131,6 +150,10 @@ protected:
     bool vpcIdIsSet_;
     std::string description_;
     bool descriptionIsSet_;
+    utility::datetime createdAt_;
+    bool createdAtIsSet_;
+    utility::datetime updatedAt_;
+    bool updatedAtIsSet_;
 
 };
 

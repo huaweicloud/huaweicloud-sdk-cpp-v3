@@ -791,6 +791,9 @@ std::shared_ptr<ListPortsResponse> VpcClient::listPorts(ListPortsRequest &reques
     if (request.statusIsSet()) {
         localVarQueryParams["status"] = parameterToString(request.getStatus());
     }
+    if (request.securityGroupsIsSet()) {
+        localVarQueryParams["security_groups"] = parameterToString(request.getSecurityGroups());
+    }
     if (request.markerIsSet()) {
         localVarQueryParams["marker"] = parameterToString(request.getMarker());
     }

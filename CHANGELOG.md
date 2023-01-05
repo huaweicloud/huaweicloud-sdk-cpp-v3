@@ -1,3 +1,16 @@
+# 3.1.18 2023-01-05
+
+### HuaweiCloud SDK VPC
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Changes of the interface `ListPorts`:
+    - Add the request parameter `security_groups`
+    - Modify the type `string` -> `array` of the request parameter `fixed_ips`
+
 # 3.1.17 2022-12-29
 
 ### HuaweiCloud SDK EIP

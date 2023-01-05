@@ -31,9 +31,9 @@ ListPortsRequest::ListPortsRequest()
     deviceOwnerIsSet_ = false;
     status_ = "";
     statusIsSet_ = false;
+    securityGroupsIsSet_ = false;
     marker_ = "";
     markerIsSet_ = false;
-    fixedIps_ = "";
     fixedIpsIsSet_ = false;
     enterpriseProjectId_ = "";
     enterpriseProjectIdIsSet_ = false;
@@ -75,6 +75,9 @@ web::json::value ListPortsRequest::toJson() const
     }
     if(statusIsSet_) {
         val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
+    }
+    if(securityGroupsIsSet_) {
+        val[utility::conversions::to_string_t("security_groups")] = ModelBase::toJson(securityGroups_);
     }
     if(markerIsSet_) {
         val[utility::conversions::to_string_t("marker")] = ModelBase::toJson(marker_);
@@ -174,6 +177,15 @@ bool ListPortsRequest::fromJson(const web::json::value& val)
             setStatus(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("security_groups"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("security_groups"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSecurityGroups(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("marker"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("marker"));
         if(!fieldValue.is_null())
@@ -187,7 +199,7 @@ bool ListPortsRequest::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("fixed_ips"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFixedIps(refVal);
         }
@@ -394,6 +406,27 @@ void ListPortsRequest::unsetstatus()
     statusIsSet_ = false;
 }
 
+std::vector<std::string>& ListPortsRequest::getSecurityGroups()
+{
+    return securityGroups_;
+}
+
+void ListPortsRequest::setSecurityGroups(const std::vector<std::string>& value)
+{
+    securityGroups_ = value;
+    securityGroupsIsSet_ = true;
+}
+
+bool ListPortsRequest::securityGroupsIsSet() const
+{
+    return securityGroupsIsSet_;
+}
+
+void ListPortsRequest::unsetsecurityGroups()
+{
+    securityGroupsIsSet_ = false;
+}
+
 std::string ListPortsRequest::getMarker() const
 {
     return marker_;
@@ -415,12 +448,12 @@ void ListPortsRequest::unsetmarker()
     markerIsSet_ = false;
 }
 
-std::string ListPortsRequest::getFixedIps() const
+std::vector<std::string>& ListPortsRequest::getFixedIps()
 {
     return fixedIps_;
 }
 
-void ListPortsRequest::setFixedIps(const std::string& value)
+void ListPortsRequest::setFixedIps(const std::vector<std::string>& value)
 {
     fixedIps_ = value;
     fixedIpsIsSet_ = true;

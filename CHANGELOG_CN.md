@@ -1,3 +1,16 @@
+# 3.1.18 2023-01-05
+
+### HuaweiCloud SDK VPC
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ListPorts`:
+    - 新增请求参数 `security_groups`
+    - 请求参数`fixed_ips`类型调整 `string` -> `array`
+
 # 3.1.17 2022-12-29
 
 ### HuaweiCloud SDK EIP

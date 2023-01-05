@@ -24,6 +24,7 @@ public:
         std::map<std::string, Region> regions;
         regions["cn-north-4"] = Region("cn-north-4","https://kms.cn-north-4.myhuaweicloud.com") ;
         regions["cn-north-1"] = Region("cn-north-1","https://kms.cn-north-1.myhuaweicloud.com") ;
+        regions["cn-north-2"] = Region("cn-north-2","https://kms.cn-north-2.myhuaweicloud.com") ;
         regions["cn-east-2"] = Region("cn-east-2","https://kms.cn-east-2.myhuaweicloud.com") ;
         regions["cn-east-3"] = Region("cn-east-3","https://kms.cn-east-3.myhuaweicloud.com") ;
         regions["cn-south-1"] = Region("cn-south-1","https://kms.cn-south-1.myhuaweicloud.com") ;

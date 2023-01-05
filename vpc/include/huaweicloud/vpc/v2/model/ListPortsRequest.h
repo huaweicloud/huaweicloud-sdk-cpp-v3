@@ -8,6 +8,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -120,6 +121,15 @@ public:
     void setStatus(const std::string& value);
 
     /// <summary>
+    /// 按照安全组ID列表过滤查询
+    /// </summary>
+
+    std::vector<std::string>& getSecurityGroups();
+    bool securityGroupsIsSet() const;
+    void unsetsecurityGroups();
+    void setSecurityGroups(const std::vector<std::string>& value);
+
+    /// <summary>
     /// 分页查询起始的资源ID，为空时查询第一页
     /// </summary>
 
@@ -132,10 +142,10 @@ public:
     /// 按照fixed_ips&#x3D;ip_address或者fixed_ips&#x3D;subnet_id过滤查询
     /// </summary>
 
-    std::string getFixedIps() const;
+    std::vector<std::string>& getFixedIps();
     bool fixedIpsIsSet() const;
     void unsetfixedIps();
-    void setFixedIps(const std::string& value);
+    void setFixedIps(const std::vector<std::string>& value);
 
     /// <summary>
     /// 功能说明：企业项目ID，用于基于企业项目的权限管理。  取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。  若需要查询当前用户所有企业项目绑定的端口，请传参all_granted_eps。
@@ -166,9 +176,11 @@ protected:
     bool deviceOwnerIsSet_;
     std::string status_;
     bool statusIsSet_;
+    std::vector<std::string> securityGroups_;
+    bool securityGroupsIsSet_;
     std::string marker_;
     bool markerIsSet_;
-    std::string fixedIps_;
+    std::vector<std::string> fixedIps_;
     bool fixedIpsIsSet_;
     std::string enterpriseProjectId_;
     bool enterpriseProjectIdIsSet_;

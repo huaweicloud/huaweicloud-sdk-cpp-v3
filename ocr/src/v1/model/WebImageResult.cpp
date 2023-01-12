@@ -16,6 +16,7 @@ WebImageResult::WebImageResult()
     wordsBlockCount_ = 0;
     wordsBlockCountIsSet_ = false;
     wordsBlockListIsSet_ = false;
+    extractedDataIsSet_ = false;
 }
 
 WebImageResult::~WebImageResult() = default;
@@ -33,6 +34,9 @@ web::json::value WebImageResult::toJson() const
     }
     if(wordsBlockListIsSet_) {
         val[utility::conversions::to_string_t("words_block_list")] = ModelBase::toJson(wordsBlockList_);
+    }
+    if(extractedDataIsSet_) {
+        val[utility::conversions::to_string_t("extracted_data")] = ModelBase::toJson(extractedData_);
     }
 
     return val;
@@ -58,6 +62,15 @@ bool WebImageResult::fromJson(const web::json::value& val)
             std::vector<WebImageWordsBlockList> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setWordsBlockList(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("extracted_data"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("extracted_data"));
+        if(!fieldValue.is_null())
+        {
+            WebImageExtractedData refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setExtractedData(refVal);
         }
     }
     return ok;
@@ -104,6 +117,27 @@ bool WebImageResult::wordsBlockListIsSet() const
 void WebImageResult::unsetwordsBlockList()
 {
     wordsBlockListIsSet_ = false;
+}
+
+WebImageExtractedData WebImageResult::getExtractedData() const
+{
+    return extractedData_;
+}
+
+void WebImageResult::setExtractedData(const WebImageExtractedData& value)
+{
+    extractedData_ = value;
+    extractedDataIsSet_ = true;
+}
+
+bool WebImageResult::extractedDataIsSet() const
+{
+    return extractedDataIsSet_;
+}
+
+void WebImageResult::unsetextractedData()
+{
+    extractedDataIsSet_ = false;
 }
 
 }

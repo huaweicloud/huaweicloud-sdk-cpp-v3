@@ -15,6 +15,8 @@ SearchFaceByBase64Request::SearchFaceByBase64Request()
 {
     faceSetName_ = "";
     faceSetNameIsSet_ = false;
+    enterpriseProjectId_ = "";
+    enterpriseProjectIdIsSet_ = false;
     bodyIsSet_ = false;
 }
 
@@ -30,6 +32,9 @@ web::json::value SearchFaceByBase64Request::toJson() const
 
     if(faceSetNameIsSet_) {
         val[utility::conversions::to_string_t("face_set_name")] = ModelBase::toJson(faceSetName_);
+    }
+    if(enterpriseProjectIdIsSet_) {
+        val[utility::conversions::to_string_t("Enterprise-Project-Id")] = ModelBase::toJson(enterpriseProjectId_);
     }
     if(bodyIsSet_) {
         val[utility::conversions::to_string_t("body")] = ModelBase::toJson(body_);
@@ -49,6 +54,15 @@ bool SearchFaceByBase64Request::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFaceSetName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("Enterprise-Project-Id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("Enterprise-Project-Id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEnterpriseProjectId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("body"))) {
@@ -83,6 +97,27 @@ bool SearchFaceByBase64Request::faceSetNameIsSet() const
 void SearchFaceByBase64Request::unsetfaceSetName()
 {
     faceSetNameIsSet_ = false;
+}
+
+std::string SearchFaceByBase64Request::getEnterpriseProjectId() const
+{
+    return enterpriseProjectId_;
+}
+
+void SearchFaceByBase64Request::setEnterpriseProjectId(const std::string& value)
+{
+    enterpriseProjectId_ = value;
+    enterpriseProjectIdIsSet_ = true;
+}
+
+bool SearchFaceByBase64Request::enterpriseProjectIdIsSet() const
+{
+    return enterpriseProjectIdIsSet_;
+}
+
+void SearchFaceByBase64Request::unsetenterpriseProjectId()
+{
+    enterpriseProjectIdIsSet_ = false;
 }
 
 FaceSearchBase64Req SearchFaceByBase64Request::getBody() const

@@ -49,6 +49,9 @@ std::shared_ptr<AddFacesByBase64Response> FrsClient::addFacesByBase64(AddFacesBy
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -89,6 +92,9 @@ std::shared_ptr<AddFacesByFileResponse> FrsClient::addFacesByFile(AddFacesByFile
     std::string contentType = getContentType("multipart/form-data", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
     if (request.IsSet()) {
         localVarFileParams["image_file"] = request.getImageFile();
     }
@@ -136,6 +142,9 @@ std::shared_ptr<AddFacesByUrlResponse> FrsClient::addFacesByUrl(AddFacesByUrlReq
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -176,6 +185,9 @@ std::shared_ptr<BatchDeleteFacesResponse> FrsClient::batchDeleteFaces(BatchDelet
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -215,6 +227,9 @@ std::shared_ptr<CompareFaceByBase64Response> FrsClient::compareFaceByBase64(Comp
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -254,6 +269,9 @@ std::shared_ptr<CompareFaceByFileResponse> FrsClient::compareFaceByFile(CompareF
     std::string contentType = getContentType("multipart/form-data", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
     if (request.IsSet()) {
         localVarFileParams["image1_file"] = request.getImage1File();
     }
@@ -294,6 +312,9 @@ std::shared_ptr<CompareFaceByUrlResponse> FrsClient::compareFaceByUrl(CompareFac
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -333,6 +354,9 @@ std::shared_ptr<CreateFaceSetResponse> FrsClient::createFaceSet(CreateFaceSetReq
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -376,6 +400,9 @@ std::shared_ptr<DeleteFaceByExternalImageIdResponse> FrsClient::deleteFaceByExte
     if (request.externalImageIdIsSet()) {
         localVarQueryParams["external_image_id"] = parameterToString(request.getExternalImageId());
     }
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
 
@@ -414,6 +441,9 @@ std::shared_ptr<DeleteFaceByFaceIdResponse> FrsClient::deleteFaceByFaceId(Delete
     if (request.faceIdIsSet()) {
         localVarQueryParams["face_id"] = parameterToString(request.getFaceId());
     }
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
 
@@ -449,6 +479,9 @@ std::shared_ptr<DeleteFaceSetResponse> FrsClient::deleteFaceSet(DeleteFaceSetReq
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
 
@@ -483,6 +516,9 @@ std::shared_ptr<DetectFaceByBase64Response> FrsClient::detectFaceByBase64(Detect
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -522,6 +558,9 @@ std::shared_ptr<DetectFaceByBase64IntlResponse> FrsClient::detectFaceByBase64Int
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -561,6 +600,9 @@ std::shared_ptr<DetectFaceByFileResponse> FrsClient::detectFaceByFile(DetectFace
     std::string contentType = getContentType("multipart/form-data", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
     if (request.IsSet()) {
         localVarFileParams["image_file"] = request.getImageFile();
     }
@@ -601,6 +643,9 @@ std::shared_ptr<DetectFaceByFileIntlResponse> FrsClient::detectFaceByFileIntl(De
     std::string contentType = getContentType("multipart/form-data", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
     if (request.IsSet()) {
         localVarFileParams["image_file"] = request.getImageFile();
     }
@@ -638,6 +683,9 @@ std::shared_ptr<DetectFaceByUrlResponse> FrsClient::detectFaceByUrl(DetectFaceBy
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -677,6 +725,9 @@ std::shared_ptr<DetectFaceByUrlIntlResponse> FrsClient::detectFaceByUrlIntl(Dete
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -716,6 +767,9 @@ std::shared_ptr<DetectLiveByBase64Response> FrsClient::detectLiveByBase64(Detect
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -755,6 +809,9 @@ std::shared_ptr<DetectLiveByBase64IntlResponse> FrsClient::detectLiveByBase64Int
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -794,6 +851,9 @@ std::shared_ptr<DetectLiveByFileResponse> FrsClient::detectLiveByFile(DetectLive
     std::string contentType = getContentType("multipart/form-data", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
     if (request.IsSet()) {
         localVarFileParams["video_file"] = request.getVideoFile();
     }
@@ -837,6 +897,9 @@ std::shared_ptr<DetectLiveByFileIntlResponse> FrsClient::detectLiveByFileIntl(De
     std::string contentType = getContentType("multipart/form-data", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
     if (request.IsSet()) {
         localVarFileParams["video_file"] = request.getVideoFile();
     }
@@ -880,6 +943,9 @@ std::shared_ptr<DetectLiveByUrlResponse> FrsClient::detectLiveByUrl(DetectLiveBy
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -919,6 +985,9 @@ std::shared_ptr<DetectLiveByUrlIntlResponse> FrsClient::detectLiveByUrlIntl(Dete
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -958,6 +1027,9 @@ std::shared_ptr<DetectLiveFaceByBase64Response> FrsClient::detectLiveFaceByBase6
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -997,6 +1069,9 @@ std::shared_ptr<DetectLiveFaceByFileResponse> FrsClient::detectLiveFaceByFile(De
     std::string contentType = getContentType("multipart/form-data", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
     if (request.IsSet()) {
         localVarFileParams["image_file"] = request.getImageFile();
     }
@@ -1034,6 +1109,9 @@ std::shared_ptr<DetectLiveFaceByUrlResponse> FrsClient::detectLiveFaceByUrl(Dete
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -1074,6 +1152,9 @@ std::shared_ptr<SearchFaceByBase64Response> FrsClient::searchFaceByBase64(Search
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -1114,6 +1195,9 @@ std::shared_ptr<SearchFaceByFaceIdResponse> FrsClient::searchFaceByFaceId(Search
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -1154,6 +1238,9 @@ std::shared_ptr<SearchFaceByFileResponse> FrsClient::searchFaceByFile(SearchFace
     std::string contentType = getContentType("multipart/form-data", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
     if (request.IsSet()) {
         localVarFileParams["image_file"] = request.getImageFile();
     }
@@ -1207,6 +1294,9 @@ std::shared_ptr<SearchFaceByUrlResponse> FrsClient::searchFaceByUrl(SearchFaceBy
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -1246,6 +1336,9 @@ std::shared_ptr<ShowAllFaceSetsResponse> FrsClient::showAllFaceSets(ShowAllFaceS
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
 
@@ -1281,6 +1374,9 @@ std::shared_ptr<ShowFaceSetResponse> FrsClient::showFaceSet(ShowFaceSetRequest &
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
 
@@ -1318,6 +1414,9 @@ std::shared_ptr<ShowFacesByFaceIdResponse> FrsClient::showFacesByFaceId(ShowFace
 
     if (request.faceIdIsSet()) {
         localVarQueryParams["face_id"] = parameterToString(request.getFaceId());
+    }
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
     }
 
     std::string localVarHttpBody;
@@ -1360,6 +1459,9 @@ std::shared_ptr<ShowFacesByLimitResponse> FrsClient::showFacesByLimit(ShowFacesB
     if (request.limitIsSet()) {
         localVarQueryParams["limit"] = parameterToString(request.getLimit());
     }
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
 
@@ -1395,6 +1497,9 @@ std::shared_ptr<UpdateFaceResponse> FrsClient::updateFace(UpdateFaceRequest &req
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {

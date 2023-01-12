@@ -113,7 +113,7 @@ public:
     void setValidFrom(const std::string& value);
 
     /// <summary>
-    /// 有效结束日期。   &gt; 说明：  - 身份证识别支持中华人民共和国居民身份证识别。 
+    /// 有效结束日期。  &gt; 说明： - 身份证识别支持中华人民共和国居民身份证识别。 
     /// </summary>
 
     std::string getValidTo() const;

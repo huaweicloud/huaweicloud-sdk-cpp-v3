@@ -8,6 +8,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/ocr/v1/model/WebImageWordsBlockList.h>
+#include <huaweicloud/ocr/v1/model/WebImageExtractedData.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -57,12 +58,23 @@ public:
     void unsetwordsBlockList();
     void setWordsBlockList(const std::vector<WebImageWordsBlockList>& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    WebImageExtractedData getExtractedData() const;
+    bool extractedDataIsSet() const;
+    void unsetextractedData();
+    void setExtractedData(const WebImageExtractedData& value);
+
 
 protected:
     int32_t wordsBlockCount_;
     bool wordsBlockCountIsSet_;
     std::vector<WebImageWordsBlockList> wordsBlockList_;
     bool wordsBlockListIsSet_;
+    WebImageExtractedData extractedData_;
+    bool extractedDataIsSet_;
 
 };
 

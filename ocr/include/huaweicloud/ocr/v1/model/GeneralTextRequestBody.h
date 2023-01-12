@@ -48,7 +48,7 @@ public:
     void setImage(const std::string& value);
 
     /// <summary>
-    /// 与image二选一  图片的URL路径，目前支持：  - 公网http/https url  - OBS提供的url，使用OBS数据需要进行授权。包括对服务授权、临时授权、匿名公开授权，详情参见[配置OBS访问权限](https://support.huaweicloud.com/api-ocr/ocr_03_0132.html)。  &gt; 说明：  - 接口响应时间依赖于图片的下载时间，如果图片下载时间过长，会返回接口调用失败。  - 请保证被检测图片所在的存储服务稳定可靠，推荐使用OBS服务存储图片数据。 
+    /// 与image二选一 图片的URL路径，目前支持： - 公网http/https url - OBS提供的url，使用OBS数据需要进行授权。包括对服务授权、临时授权、匿名公开授权，详情参见[配置OBS访问权限](https://support.huaweicloud.com/api-ocr/ocr_03_0132.html)。 &gt; 说明： - 接口响应时间依赖于图片的下载时间，如果图片下载时间过长，会返回接口调用失败。 - 请保证被检测图片所在的存储服务稳定可靠，推荐使用OBS服务存储图片数据。 
     /// </summary>
 
     std::string getUrl() const;
@@ -57,7 +57,7 @@ public:
     void setUrl(const std::string& value);
 
     /// <summary>
-    /// 图片朝向检测开关，可选值包括：  - true：检测图片朝向;  - false：不检测图片朝向。  &gt; 说明：  - 支持任意角度的图片朝向检测。未传入该参数时默认为false，即不检测图片朝向。 
+    /// 图片朝向检测开关，可选值包括： - true：检测图片朝向; - false：不检测图片朝向。  &gt; 说明： - 支持任意角度的图片朝向检测。未传入该参数时默认为false，即不检测图片朝向。 
     /// </summary>
 
     bool isDetectDirection() const;
@@ -66,7 +66,7 @@ public:
     void setDetectDirection(bool value);
 
     /// <summary>
-    /// 快速模式开关，针对单行文字图片（要求图片只包含一行文字，且文字区域占比超过50%），打开时可以更快返回识别。可选值包括：  - true：打开快速模式；  - false：关闭快速模式。  &gt; 说明：  - 未传入该参数时默认为false，即关闭快速模式。 
+    /// 快速模式开关，针对单行文字图片（要求图片只包含一行文字，且文字区域占比超过50%），打开时可以更快返回识别。可选值包括： - true：打开快速模式； - false：关闭快速模式。  &gt; 说明： - 未传入该参数时默认为false，即关闭快速模式。 
     /// </summary>
 
     bool isQuickMode() const;
@@ -83,6 +83,15 @@ public:
     void unsetcharacterMode();
     void setCharacterMode(bool value);
 
+    /// <summary>
+    /// 语种选择，可选值可参考表1中英文列。未传入该参数时默认为中英文识别模式。 **表1* 语种选择说明 | 英文 |     中文     | | :--: | :----------: | | auto | 自动语种分类 | |  ms  |    马来语    | |  uk  |   乌克兰语   | |  hi  |    印地语    | |  ru  |     俄语     | |  vi  |    越南语    | |  id  |    印尼语    | |  th  |     泰语     | |  zh  |    中英文    | 
+    /// </summary>
+
+    std::string getLanguage() const;
+    bool languageIsSet() const;
+    void unsetlanguage();
+    void setLanguage(const std::string& value);
+
 
 protected:
     std::string image_;
@@ -95,6 +104,8 @@ protected:
     bool quickModeIsSet_;
     bool characterMode_;
     bool characterModeIsSet_;
+    std::string language_;
+    bool languageIsSet_;
 
 };
 

@@ -48,7 +48,7 @@ public:
     void setImage(const std::string& value);
 
     /// <summary>
-    /// 与image二选一  图片的URL路径，目前支持：  - 公网http/https url  - OBS提供的url，使用OBS数据需要进行授权。包括对服务授权、临时授权、匿名公开授权，详情参见[配置OBS访问权限](https://support.huaweicloud.com/api-ocr/ocr_03_0132.html)。  &gt; 说明：  - 接口响应时间依赖于图片的下载时间，如果图片下载时间过长，会返回接口调用失败。  - 请保证被检测图片所在的存储服务稳定可靠，推荐使用OBS服务存储图片数据。 
+    /// 与image二选一 图片的URL路径，目前支持： - 公网http/https url - OBS提供的url，使用OBS数据需要进行授权。包括对服务授权、临时授权、匿名公开授权，详情参见[配置OBS访问权限](https://support.huaweicloud.com/api-ocr/ocr_03_0132.html)。 &gt; 说明： - 接口响应时间依赖于图片的下载时间，如果图片下载时间过长，会返回接口调用失败。 - 请保证被检测图片所在的存储服务稳定可靠，推荐使用OBS服务存储图片数据。 
     /// </summary>
 
     std::string getUrl() const;
@@ -57,7 +57,7 @@ public:
     void setUrl(const std::string& value);
 
     /// <summary>
-    /// 返回文本块坐标及单元格坐标信息，可选值如下所示：  - true：返回文本块和单元格坐标  - false：不返回  &gt; 说明：  - 如果未传入该参数时默认为false，即不返回。 
+    /// 返回文本块坐标及单元格坐标信息，可选值如下所示： - true：返回文本块和单元格坐标 - false：不返回  &gt; 说明： - 如果未传入该参数时默认为false，即不返回。 
     /// </summary>
 
     bool isReturnTextLocation() const;
@@ -66,7 +66,16 @@ public:
     void setReturnTextLocation(bool value);
 
     /// <summary>
-    /// 是否返回置信度的开关，可选值包括：  - true：返回置信度  - false：不返回置信度  &gt; 说明：  - 如果未传入该参数，系统默认为“false”，即不返回置信度。 
+    /// 返回单字符的坐标信息，可选值包括： - true：返回单字符的坐标 - false：不返回  未传入该参数时默认为false，即不返回。如果此参数为true时，return_text_loaction必须为true 
+    /// </summary>
+
+    bool isReturnCharLocation() const;
+    bool returnCharLocationIsSet() const;
+    void unsetreturnCharLocation();
+    void setReturnCharLocation(bool value);
+
+    /// <summary>
+    /// 是否返回置信度的开关，可选值包括： - true：返回置信度 - false：不返回置信度  &gt; 说明： - 如果未传入该参数，系统默认为“false”，即不返回置信度。 
     /// </summary>
 
     bool isReturnConfidence() const;
@@ -75,13 +84,22 @@ public:
     void setReturnConfidence(bool value);
 
     /// <summary>
-    /// 是否返回表格转换Microsoft Excel的base64编码字段。可选值包括：  - true：返回&#39;excel&#39;字段，表示xlsx格式的表格识别结果的base64编码  - false：不返回。默认为false  &gt; 说明：  - 对返回的Excel编码，可用Python函数 base64.b64decode解码后保存为.xlsx文件。 
+    /// 是否返回表格转换Microsoft Excel的base64编码字段。可选值包括： - true：返回&#39;excel&#39;字段，表示xlsx格式的表格识别结果的base64编码 - false：不返回。默认为false  &gt; 说明： - 对返回的Excel编码，可用Python函数 base64.b64decode解码后保存为.xlsx文件。 
     /// </summary>
 
     bool isReturnExcel() const;
     bool returnExcelIsSet() const;
     void unsetreturnExcel();
     void setReturnExcel(bool value);
+
+    /// <summary>
+    /// 可选值包括： - true：返回透视变换矩阵 - false：不返回  未传入该参数时默认为false，即不返回透视变换矩阵。 
+    /// </summary>
+
+    bool isReturnRectificationMatrix() const;
+    bool returnRectificationMatrixIsSet() const;
+    void unsetreturnRectificationMatrix();
+    void setReturnRectificationMatrix(bool value);
 
 
 protected:
@@ -91,10 +109,14 @@ protected:
     bool urlIsSet_;
     bool returnTextLocation_;
     bool returnTextLocationIsSet_;
+    bool returnCharLocation_;
+    bool returnCharLocationIsSet_;
     bool returnConfidence_;
     bool returnConfidenceIsSet_;
     bool returnExcel_;
     bool returnExcelIsSet_;
+    bool returnRectificationMatrix_;
+    bool returnRectificationMatrixIsSet_;
 
 };
 

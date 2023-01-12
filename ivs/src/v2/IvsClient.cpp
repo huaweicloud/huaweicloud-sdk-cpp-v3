@@ -48,6 +48,9 @@ std::shared_ptr<DetectExtentionByIdCardImageResponse> IvsClient::detectExtention
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -87,6 +90,9 @@ std::shared_ptr<DetectExtentionByNameAndIdResponse> IvsClient::detectExtentionBy
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -126,6 +132,9 @@ std::shared_ptr<DetectStandardByIdCardImageResponse> IvsClient::detectStandardBy
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -165,6 +174,9 @@ std::shared_ptr<DetectStandardByNameAndIdResponse> IvsClient::detectStandardByNa
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {

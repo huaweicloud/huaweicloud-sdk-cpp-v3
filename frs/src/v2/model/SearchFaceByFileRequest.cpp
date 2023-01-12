@@ -15,6 +15,8 @@ SearchFaceByFileRequest::SearchFaceByFileRequest()
 {
     faceSetName_ = "";
     faceSetNameIsSet_ = false;
+    enterpriseProjectId_ = "";
+    enterpriseProjectIdIsSet_ = false;
     bodyIsSet_ = false;
 }
 
@@ -30,6 +32,9 @@ web::json::value SearchFaceByFileRequest::toJson() const
 
     if(faceSetNameIsSet_) {
         val[utility::conversions::to_string_t("face_set_name")] = ModelBase::toJson(faceSetName_);
+    }
+    if(enterpriseProjectIdIsSet_) {
+        val[utility::conversions::to_string_t("Enterprise-Project-Id")] = ModelBase::toJson(enterpriseProjectId_);
     }
     if(bodyIsSet_) {
         val[utility::conversions::to_string_t("body")] = ModelBase::toJson(body_);
@@ -49,6 +54,15 @@ bool SearchFaceByFileRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFaceSetName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("Enterprise-Project-Id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("Enterprise-Project-Id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEnterpriseProjectId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("body"))) {
@@ -83,6 +97,27 @@ bool SearchFaceByFileRequest::faceSetNameIsSet() const
 void SearchFaceByFileRequest::unsetfaceSetName()
 {
     faceSetNameIsSet_ = false;
+}
+
+std::string SearchFaceByFileRequest::getEnterpriseProjectId() const
+{
+    return enterpriseProjectId_;
+}
+
+void SearchFaceByFileRequest::setEnterpriseProjectId(const std::string& value)
+{
+    enterpriseProjectId_ = value;
+    enterpriseProjectIdIsSet_ = true;
+}
+
+bool SearchFaceByFileRequest::enterpriseProjectIdIsSet() const
+{
+    return enterpriseProjectIdIsSet_;
+}
+
+void SearchFaceByFileRequest::unsetenterpriseProjectId()
+{
+    enterpriseProjectIdIsSet_ = false;
 }
 
 SearchFaceByFileRequestBody SearchFaceByFileRequest::getBody() const

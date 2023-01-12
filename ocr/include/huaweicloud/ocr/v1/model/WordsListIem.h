@@ -7,6 +7,7 @@
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/ocr/v1/model/CharListIem.h>
 #include <string>
 #include <vector>
 
@@ -66,6 +67,15 @@ public:
     void unsetlocation();
     void setLocation(const std::vector<std::vector<int32_t>>& value);
 
+    /// <summary>
+    /// 单元格内文字段列表。输出顺序从左到右，从上到下。仅当入参\&quot;return_text_location\&quot;和\&quot;return_char_location\&quot;同时为true时存在。 
+    /// </summary>
+
+    std::vector<CharListIem>& getCharList();
+    bool charListIsSet() const;
+    void unsetcharList();
+    void setCharList(const std::vector<CharListIem>& value);
+
 
 protected:
     std::string words_;
@@ -74,6 +84,8 @@ protected:
     bool confidenceIsSet_;
     std::vector<std::vector<int32_t>> location_;
     bool locationIsSet_;
+    std::vector<CharListIem> charList_;
+    bool charListIsSet_;
 
 };
 

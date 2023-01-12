@@ -19,10 +19,14 @@ GeneralTableRequestBody::GeneralTableRequestBody()
     urlIsSet_ = false;
     returnTextLocation_ = false;
     returnTextLocationIsSet_ = false;
+    returnCharLocation_ = false;
+    returnCharLocationIsSet_ = false;
     returnConfidence_ = false;
     returnConfidenceIsSet_ = false;
     returnExcel_ = false;
     returnExcelIsSet_ = false;
+    returnRectificationMatrix_ = false;
+    returnRectificationMatrixIsSet_ = false;
 }
 
 GeneralTableRequestBody::~GeneralTableRequestBody() = default;
@@ -44,11 +48,17 @@ web::json::value GeneralTableRequestBody::toJson() const
     if(returnTextLocationIsSet_) {
         val[utility::conversions::to_string_t("return_text_location")] = ModelBase::toJson(returnTextLocation_);
     }
+    if(returnCharLocationIsSet_) {
+        val[utility::conversions::to_string_t("return_char_location")] = ModelBase::toJson(returnCharLocation_);
+    }
     if(returnConfidenceIsSet_) {
         val[utility::conversions::to_string_t("return_confidence")] = ModelBase::toJson(returnConfidence_);
     }
     if(returnExcelIsSet_) {
         val[utility::conversions::to_string_t("return_excel")] = ModelBase::toJson(returnExcel_);
+    }
+    if(returnRectificationMatrixIsSet_) {
+        val[utility::conversions::to_string_t("return_rectification_matrix")] = ModelBase::toJson(returnRectificationMatrix_);
     }
 
     return val;
@@ -85,6 +95,15 @@ bool GeneralTableRequestBody::fromJson(const web::json::value& val)
             setReturnTextLocation(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("return_char_location"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("return_char_location"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setReturnCharLocation(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("return_confidence"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("return_confidence"));
         if(!fieldValue.is_null())
@@ -101,6 +120,15 @@ bool GeneralTableRequestBody::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setReturnExcel(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("return_rectification_matrix"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("return_rectification_matrix"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setReturnRectificationMatrix(refVal);
         }
     }
     return ok;
@@ -170,6 +198,27 @@ void GeneralTableRequestBody::unsetreturnTextLocation()
     returnTextLocationIsSet_ = false;
 }
 
+bool GeneralTableRequestBody::isReturnCharLocation() const
+{
+    return returnCharLocation_;
+}
+
+void GeneralTableRequestBody::setReturnCharLocation(bool value)
+{
+    returnCharLocation_ = value;
+    returnCharLocationIsSet_ = true;
+}
+
+bool GeneralTableRequestBody::returnCharLocationIsSet() const
+{
+    return returnCharLocationIsSet_;
+}
+
+void GeneralTableRequestBody::unsetreturnCharLocation()
+{
+    returnCharLocationIsSet_ = false;
+}
+
 bool GeneralTableRequestBody::isReturnConfidence() const
 {
     return returnConfidence_;
@@ -210,6 +259,27 @@ bool GeneralTableRequestBody::returnExcelIsSet() const
 void GeneralTableRequestBody::unsetreturnExcel()
 {
     returnExcelIsSet_ = false;
+}
+
+bool GeneralTableRequestBody::isReturnRectificationMatrix() const
+{
+    return returnRectificationMatrix_;
+}
+
+void GeneralTableRequestBody::setReturnRectificationMatrix(bool value)
+{
+    returnRectificationMatrix_ = value;
+    returnRectificationMatrixIsSet_ = true;
+}
+
+bool GeneralTableRequestBody::returnRectificationMatrixIsSet() const
+{
+    return returnRectificationMatrixIsSet_;
+}
+
+void GeneralTableRequestBody::unsetreturnRectificationMatrix()
+{
+    returnRectificationMatrixIsSet_ = false;
 }
 
 }

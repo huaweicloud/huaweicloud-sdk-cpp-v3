@@ -1,3 +1,75 @@
+# 3.1.19 2023-01-12
+
+### HuaweiCloud SDK FRS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`DetectLiveByUrl`新增请求参数 `Enterprise-Project-Id`
+  - 接口`DetectLiveByUrlIntl`新增请求参数 `Enterprise-Project-Id`
+  - 接口`DetectLiveFaceByUrl`新增请求参数 `Enterprise-Project-Id`
+  - 接口`DetectLiveByFile`新增请求参数 `Enterprise-Project-Id`
+  - 接口`DetectLiveByFileIntl`新增请求参数 `Enterprise-Project-Id`
+  - 接口`DetectLiveFaceByFile`新增请求参数 `Enterprise-Project-Id`
+  - 接口`DetectLiveByBase64`新增请求参数 `Enterprise-Project-Id`
+  - 接口`DetectLiveByBase64Intl`新增请求参数 `Enterprise-Project-Id`
+  - 接口`DetectLiveFaceByBase64`新增请求参数 `Enterprise-Project-Id`
+  - 接口`SearchFaceByFaceId`新增请求参数 `Enterprise-Project-Id`
+  - 接口`DetectFaceByFile`新增请求参数 `Enterprise-Project-Id`
+  - 接口`DetectFaceByFileIntl`新增请求参数 `Enterprise-Project-Id`
+  - 接口`UpdateFace`新增请求参数 `Enterprise-Project-Id`
+  - 接口`DeleteFaceByExternalImageId`新增请求参数 `Enterprise-Project-Id`
+  - 接口`ShowFacesByLimit`新增请求参数 `Enterprise-Project-Id`
+  - 接口`CompareFaceByFile`新增请求参数 `Enterprise-Project-Id`
+  - 接口`DeleteFaceByFaceId`新增请求参数 `Enterprise-Project-Id`
+  - 接口`ShowFacesByFaceId`新增请求参数 `Enterprise-Project-Id`
+  - 接口`AddFacesByBase64`新增请求参数 `Enterprise-Project-Id`
+  - 接口`DetectFaceByUrl`新增请求参数 `Enterprise-Project-Id`
+  - 接口`DetectFaceByUrlIntl`新增请求参数 `Enterprise-Project-Id`
+  - 接口`DeleteFaceSet`新增请求参数 `Enterprise-Project-Id`
+  - 接口`ShowFaceSet`新增请求参数 `Enterprise-Project-Id`
+  - 接口`CompareFaceByBase64`新增请求参数 `Enterprise-Project-Id`
+  - 接口`DetectFaceByBase64`新增请求参数 `Enterprise-Project-Id`
+  - 接口`DetectFaceByBase64Intl`新增请求参数 `Enterprise-Project-Id`
+  - 接口`CreateFaceSet`新增请求参数 `Enterprise-Project-Id`
+  - 接口`ShowAllFaceSets`新增请求参数 `Enterprise-Project-Id`
+  - 接口`SearchFaceByFile`新增请求参数 `Enterprise-Project-Id`
+  - 接口`AddFacesByUrl`新增请求参数 `Enterprise-Project-Id`
+  - 接口`AddFacesByFile`新增请求参数 `Enterprise-Project-Id`
+  - 接口`SearchFaceByUrl`新增请求参数 `Enterprise-Project-Id`
+  - 接口`SearchFaceByBase64`新增请求参数 `Enterprise-Project-Id`
+  - 接口`CompareFaceByUrl`新增请求参数 `Enterprise-Project-Id`
+  - 接口`BatchDeleteFaces`新增请求参数 `Enterprise-Project-Id`
+
+### HuaweiCloud SDK IVS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`DetectStandardByIdCardImage`新增请求参数 `Enterprise-Project-Id`
+  - 接口`DetectStandardByNameAndId`新增请求参数 `Enterprise-Project-Id`
+  - 接口`DetectExtentionByNameAndId`新增请求参数 `Enterprise-Project-Id`
+  - 接口`DetectExtentionByIdCardImage`新增请求参数 `Enterprise-Project-Id`
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 支持接口`RecognizeCustomTemplate`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`RecognizeGeneralTable`:
+    - 新增请求参数 `return_char_location`、`return_rectification_matrix`
+    - 新增响应参数 `char_list`
+  - 接口`RecognizeGeneralText`新增请求参数 `language`
+  - 接口`RecognizeWebImage`:
+    - 新增响应参数 `extracted_data`
+    - 移除响应参数 `extracted_data`、`contact_info`、`image_size`、`height`、`width`、`name`、`phone`、`province`、`city`、`district`、`detail_address`
+
 # 3.1.18 2023-01-05
 
 ### HuaweiCloud SDK VPC

@@ -1,3 +1,75 @@
+# 3.1.19 2023-01-12
+
+### HuaweiCloud SDK FRS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the request parameter `Enterprise-Project-Id` to the interface `DetectLiveByUrl`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `DetectLiveByUrlIntl`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `DetectLiveFaceByUrl`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `DetectLiveByFile`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `DetectLiveByFileIntl`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `DetectLiveFaceByFile`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `DetectLiveByBase64`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `DetectLiveByBase64Intl`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `DetectLiveFaceByBase64`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `SearchFaceByFaceId`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `DetectFaceByFile`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `DetectFaceByFileIntl`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `UpdateFace`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `DeleteFaceByExternalImageId`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `ShowFacesByLimit`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `CompareFaceByFile`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `DeleteFaceByFaceId`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `ShowFacesByFaceId`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `AddFacesByBase64`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `DetectFaceByUrl`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `DetectFaceByUrlIntl`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `DeleteFaceSet`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `ShowFaceSet`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `CompareFaceByBase64`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `DetectFaceByBase64`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `DetectFaceByBase64Intl`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `CreateFaceSet`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `ShowAllFaceSets`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `SearchFaceByFile`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `AddFacesByUrl`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `AddFacesByFile`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `SearchFaceByUrl`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `SearchFaceByBase64`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `CompareFaceByUrl`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `BatchDeleteFaces`
+
+### HuaweiCloud SDK IVS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the request parameter `Enterprise-Project-Id` to the interface `DetectStandardByIdCardImage`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `DetectStandardByNameAndId`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `DetectExtentionByNameAndId`
+  - Add the request parameter `Enterprise-Project-Id` to the interface `DetectExtentionByIdCardImage`
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - Support the interface `RecognizeCustomTemplate`
+- _Bug Fix_
+  - None
+- _Change_
+  - Changes of the interface `RecognizeGeneralTable`:
+    - Add the request parameters `return_char_location`, `return_rectification_matrix`
+    - Add the response parameter `char_list`
+  - Add the request parameter `language` to the interface `RecognizeGeneralText`
+  - Changes of the interface `RecognizeWebImage`:
+    - Add the response parameter `extracted_data`
+    - Remove the response parameters `extracted_data`, `contact_info`, `image_size`, `height`, `width`, `name`, `phone`, `province`, `city`, `district`, `detail_address`
+
 # 3.1.18 2023-01-05
 
 ### HuaweiCloud SDK VPC

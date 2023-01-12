@@ -23,6 +23,8 @@ GeneralTextRequestBody::GeneralTextRequestBody()
     quickModeIsSet_ = false;
     characterMode_ = false;
     characterModeIsSet_ = false;
+    language_ = "";
+    languageIsSet_ = false;
 }
 
 GeneralTextRequestBody::~GeneralTextRequestBody() = default;
@@ -49,6 +51,9 @@ web::json::value GeneralTextRequestBody::toJson() const
     }
     if(characterModeIsSet_) {
         val[utility::conversions::to_string_t("character_mode")] = ModelBase::toJson(characterMode_);
+    }
+    if(languageIsSet_) {
+        val[utility::conversions::to_string_t("language")] = ModelBase::toJson(language_);
     }
 
     return val;
@@ -101,6 +106,15 @@ bool GeneralTextRequestBody::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCharacterMode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("language"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("language"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLanguage(refVal);
         }
     }
     return ok;
@@ -210,6 +224,27 @@ bool GeneralTextRequestBody::characterModeIsSet() const
 void GeneralTextRequestBody::unsetcharacterMode()
 {
     characterModeIsSet_ = false;
+}
+
+std::string GeneralTextRequestBody::getLanguage() const
+{
+    return language_;
+}
+
+void GeneralTextRequestBody::setLanguage(const std::string& value)
+{
+    language_ = value;
+    languageIsSet_ = true;
+}
+
+bool GeneralTextRequestBody::languageIsSet() const
+{
+    return languageIsSet_;
+}
+
+void GeneralTextRequestBody::unsetlanguage()
+{
+    languageIsSet_ = false;
 }
 
 }

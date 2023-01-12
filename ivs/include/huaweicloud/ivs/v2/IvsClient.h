@@ -18,6 +18,7 @@
 #include <huaweicloud/ivs/v2/model/IvsExtentionByNameAndIdRequestBody.h>
 #include <huaweicloud/ivs/v2/model/IvsStandardByIdCardImageRequestBody.h>
 #include <huaweicloud/ivs/v2/model/IvsStandardByNameAndIdRequestBody.h>
+#include <string>
 
 #include <cpprest/details/basic_types.h>
 #include <huaweicloud/core/utils/ModelBase.h>

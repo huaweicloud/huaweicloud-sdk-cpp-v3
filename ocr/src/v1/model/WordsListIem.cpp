@@ -18,6 +18,7 @@ WordsListIem::WordsListIem()
     confidence_ = 0.0f;
     confidenceIsSet_ = false;
     locationIsSet_ = false;
+    charListIsSet_ = false;
 }
 
 WordsListIem::~WordsListIem() = default;
@@ -38,6 +39,9 @@ web::json::value WordsListIem::toJson() const
     }
     if(locationIsSet_) {
         val[utility::conversions::to_string_t("location")] = ModelBase::toJson(location_);
+    }
+    if(charListIsSet_) {
+        val[utility::conversions::to_string_t("char_list")] = ModelBase::toJson(charList_);
     }
 
     return val;
@@ -72,6 +76,15 @@ bool WordsListIem::fromJson(const web::json::value& val)
             std::vector<std::vector<int32_t>> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLocation(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("char_list"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("char_list"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<CharListIem> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCharList(refVal);
         }
     }
     return ok;
@@ -139,6 +152,27 @@ bool WordsListIem::locationIsSet() const
 void WordsListIem::unsetlocation()
 {
     locationIsSet_ = false;
+}
+
+std::vector<CharListIem>& WordsListIem::getCharList()
+{
+    return charList_;
+}
+
+void WordsListIem::setCharList(const std::vector<CharListIem>& value)
+{
+    charList_ = value;
+    charListIsSet_ = true;
+}
+
+bool WordsListIem::charListIsSet() const
+{
+    return charListIsSet_;
+}
+
+void WordsListIem::unsetcharList()
+{
+    charListIsSet_ = false;
 }
 
 }

@@ -231,7 +231,7 @@ httpConfig.setReadTimeout(120);
 httpConfig.setIgnoreSslVerification(true);
 ```
 
-### 2. 客户端认证信息 [:top:](#用户手册-top)
+### 2. 认证信息配置 [:top:](#用户手册-top)
 
 华为云服务存在两种部署方式，Region 级服务和 Global 级服务。
 

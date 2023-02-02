@@ -1,3 +1,14 @@
+# 3.1.20 2023-02-02
+
+### HuaweiCloud SDK IMS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`CreateImage`请求参数`type`新增枚举值`IsoImage`
+
 # 3.1.19 2023-01-12
 
 ### HuaweiCloud SDK FRS

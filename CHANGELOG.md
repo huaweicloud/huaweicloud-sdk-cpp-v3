@@ -1,3 +1,14 @@
+# 3.1.20 2023-02-02
+
+### HuaweiCloud SDK IMS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the enum values `IsoImage` to the request parameter `type` to the interface `CreateImage`
+
 # 3.1.19 2023-01-12
 
 ### HuaweiCloud SDK FRS

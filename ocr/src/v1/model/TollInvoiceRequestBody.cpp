@@ -17,6 +17,8 @@ TollInvoiceRequestBody::TollInvoiceRequestBody()
     imageIsSet_ = false;
     url_ = "";
     urlIsSet_ = false;
+    returnTextLocation_ = false;
+    returnTextLocationIsSet_ = false;
 }
 
 TollInvoiceRequestBody::~TollInvoiceRequestBody() = default;
@@ -34,6 +36,9 @@ web::json::value TollInvoiceRequestBody::toJson() const
     }
     if(urlIsSet_) {
         val[utility::conversions::to_string_t("url")] = ModelBase::toJson(url_);
+    }
+    if(returnTextLocationIsSet_) {
+        val[utility::conversions::to_string_t("return_text_location")] = ModelBase::toJson(returnTextLocation_);
     }
 
     return val;
@@ -59,6 +64,15 @@ bool TollInvoiceRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setUrl(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("return_text_location"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("return_text_location"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setReturnTextLocation(refVal);
         }
     }
     return ok;
@@ -105,6 +119,27 @@ bool TollInvoiceRequestBody::urlIsSet() const
 void TollInvoiceRequestBody::unseturl()
 {
     urlIsSet_ = false;
+}
+
+bool TollInvoiceRequestBody::isReturnTextLocation() const
+{
+    return returnTextLocation_;
+}
+
+void TollInvoiceRequestBody::setReturnTextLocation(bool value)
+{
+    returnTextLocation_ = value;
+    returnTextLocationIsSet_ = true;
+}
+
+bool TollInvoiceRequestBody::returnTextLocationIsSet() const
+{
+    return returnTextLocationIsSet_;
+}
+
+void TollInvoiceRequestBody::unsetreturnTextLocation()
+{
+    returnTextLocationIsSet_ = false;
 }
 
 }

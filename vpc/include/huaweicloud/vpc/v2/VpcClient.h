@@ -16,6 +16,9 @@
 #include <huaweicloud/vpc/v2/model/BatchDeleteSubnetTagsRequest.h>
 #include <huaweicloud/vpc/v2/model/BatchDeleteSubnetTagsRequestBody.h>
 #include <huaweicloud/vpc/v2/model/BatchDeleteSubnetTagsResponse.h>
+#include <huaweicloud/vpc/v2/model/CreateFlowLogReqBody.h>
+#include <huaweicloud/vpc/v2/model/CreateFlowLogRequest.h>
+#include <huaweicloud/vpc/v2/model/CreateFlowLogResponse.h>
 #include <huaweicloud/vpc/v2/model/CreatePortRequest.h>
 #include <huaweicloud/vpc/v2/model/CreatePortRequestBody.h>
 #include <huaweicloud/vpc/v2/model/CreatePortResponse.h>
@@ -37,6 +40,8 @@
 #include <huaweicloud/vpc/v2/model/CreateVpcPeeringRequest.h>
 #include <huaweicloud/vpc/v2/model/CreateVpcPeeringRequestBody.h>
 #include <huaweicloud/vpc/v2/model/CreateVpcPeeringResponse.h>
+#include <huaweicloud/vpc/v2/model/DeleteFlowLogRequest.h>
+#include <huaweicloud/vpc/v2/model/DeleteFlowLogResponse.h>
 #include <huaweicloud/vpc/v2/model/DeletePortRequest.h>
 #include <huaweicloud/vpc/v2/model/DeletePortResponse.h>
 #include <huaweicloud/vpc/v2/model/DeleteRouteTableRequest.h>
@@ -53,6 +58,8 @@
 #include <huaweicloud/vpc/v2/model/DeleteVpcPeeringResponse.h>
 #include <huaweicloud/vpc/v2/model/DisassociateRouteTableRequest.h>
 #include <huaweicloud/vpc/v2/model/DisassociateRouteTableResponse.h>
+#include <huaweicloud/vpc/v2/model/ListFlowLogsRequest.h>
+#include <huaweicloud/vpc/v2/model/ListFlowLogsResponse.h>
 #include <huaweicloud/vpc/v2/model/ListPortsRequest.h>
 #include <huaweicloud/vpc/v2/model/ListPortsResponse.h>
 #include <huaweicloud/vpc/v2/model/ListRouteTablesRequest.h>
@@ -73,6 +80,8 @@
 #include <huaweicloud/vpc/v2/model/RejectVpcPeeringRequest.h>
 #include <huaweicloud/vpc/v2/model/RejectVpcPeeringResponse.h>
 #include <huaweicloud/vpc/v2/model/RoutetableAssociateReqbody.h>
+#include <huaweicloud/vpc/v2/model/ShowFlowLogRequest.h>
+#include <huaweicloud/vpc/v2/model/ShowFlowLogResponse.h>
 #include <huaweicloud/vpc/v2/model/ShowPortRequest.h>
 #include <huaweicloud/vpc/v2/model/ShowPortResponse.h>
 #include <huaweicloud/vpc/v2/model/ShowQuotaRequest.h>
@@ -89,6 +98,9 @@
 #include <huaweicloud/vpc/v2/model/ShowSubnetTagsResponse.h>
 #include <huaweicloud/vpc/v2/model/ShowVpcPeeringRequest.h>
 #include <huaweicloud/vpc/v2/model/ShowVpcPeeringResponse.h>
+#include <huaweicloud/vpc/v2/model/UpdateFlowLogReqBody.h>
+#include <huaweicloud/vpc/v2/model/UpdateFlowLogRequest.h>
+#include <huaweicloud/vpc/v2/model/UpdateFlowLogResponse.h>
 #include <huaweicloud/vpc/v2/model/UpdatePortRequest.h>
 #include <huaweicloud/vpc/v2/model/UpdatePortRequestBody.h>
 #include <huaweicloud/vpc/v2/model/UpdatePortResponse.h>
@@ -281,6 +293,16 @@ public:
     std::shared_ptr<BatchDeleteSubnetTagsResponse> batchDeleteSubnetTags(
         BatchDeleteSubnetTagsRequest &request
     );
+    // 创建流日志
+    //
+    // 创建流日志。
+    // 流日志功能可以记录虚拟私有云中的流量信息，帮助您检查和优化安全组和网络ACL防火墙控制规则、监控网络流量、进行网络攻击分析等。
+    // VPC流日志功能需要与云日志服务LTS结合使用，请先在云日志服务中创建日志组和日志主题，然后再创建VPC流日志。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateFlowLogResponse> createFlowLog(
+        CreateFlowLogRequest &request
+    );
     // 创建端口
     //
     // 创建端口。
@@ -337,6 +359,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateVpcPeeringResponse> createVpcPeering(
         CreateVpcPeeringRequest &request
+    );
+    // 删除流日志
+    //
+    // 删除流日志
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteFlowLogResponse> deleteFlowLog(
+        DeleteFlowLogRequest &request
     );
     // 删除端口
     //
@@ -403,6 +433,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DisassociateRouteTableResponse> disassociateRouteTable(
         DisassociateRouteTableRequest &request
+    );
+    // 查询流日志列表
+    //
+    // 查询提交请求的租户的所有流日志列表，并根据过滤条件进行过滤
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListFlowLogsResponse> listFlowLogs(
+        ListFlowLogsRequest &request
     );
     // 查询端口列表
     //
@@ -476,6 +514,14 @@ public:
     std::shared_ptr<RejectVpcPeeringResponse> rejectVpcPeering(
         RejectVpcPeeringRequest &request
     );
+    // 查询流日志
+    //
+    // 查询流日志详情
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowFlowLogResponse> showFlowLog(
+        ShowFlowLogRequest &request
+    );
     // 查询端口
     //
     // 查询单个端口详情。
@@ -539,6 +585,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowVpcPeeringResponse> showVpcPeering(
         ShowVpcPeeringRequest &request
+    );
+    // 更新流日志
+    //
+    // 更新流日志
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateFlowLogResponse> updateFlowLog(
+        UpdateFlowLogRequest &request
     );
     // 更新端口
     //

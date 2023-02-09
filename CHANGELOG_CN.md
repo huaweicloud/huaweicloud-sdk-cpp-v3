@@ -1,3 +1,16 @@
+# 3.1.21 2023-02-09
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`RecognizeTollInvoice`:
+    - 新增请求参数 `return_text_location`
+    - 新增响应参数 `text_location`
+
 # 3.1.20 2023-02-02
 
 ### HuaweiCloud SDK IMS

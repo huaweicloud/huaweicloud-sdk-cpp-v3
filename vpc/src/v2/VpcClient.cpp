@@ -187,6 +187,45 @@ std::shared_ptr<BatchDeleteSubnetTagsResponse> VpcClient::batchDeleteSubnetTags(
 
     return localVarResult;
 }
+std::shared_ptr<CreateFlowLogResponse> VpcClient::createFlowLog(CreateFlowLogRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/fl/flow_logs";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+
+    std::shared_ptr<CreateFlowLogResponse> localVarResult = std::make_shared<CreateFlowLogResponse>();
+
+    if (!res->getHttpBody().empty()) {
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<CreatePortResponse> VpcClient::createPort(CreatePortRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/ports";
@@ -449,6 +488,41 @@ std::shared_ptr<CreateVpcPeeringResponse> VpcClient::createVpcPeering(CreateVpcP
     std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
 
     std::shared_ptr<CreateVpcPeeringResponse> localVarResult = std::make_shared<CreateVpcPeeringResponse>();
+
+    if (!res->getHttpBody().empty()) {
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<DeleteFlowLogResponse> VpcClient::deleteFlowLog(DeleteFlowLogRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/fl/flow_logs/{flowlog_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
+
+    localVarPathParams["flowlog_id"] = parameterToString(request.getFlowlogId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+
+    std::shared_ptr<DeleteFlowLogResponse> localVarResult = std::make_shared<DeleteFlowLogResponse>();
 
     if (!res->getHttpBody().empty()) {
         utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
@@ -736,6 +810,79 @@ std::shared_ptr<DisassociateRouteTableResponse> VpcClient::disassociateRouteTabl
     std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
 
     std::shared_ptr<DisassociateRouteTableResponse> localVarResult = std::make_shared<DisassociateRouteTableResponse>();
+
+    if (!res->getHttpBody().empty()) {
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListFlowLogsResponse> VpcClient::listFlowLogs(ListFlowLogsRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/fl/flow_logs";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.idIsSet()) {
+        localVarQueryParams["id"] = parameterToString(request.getId());
+    }
+    if (request.nameIsSet()) {
+        localVarQueryParams["name"] = parameterToString(request.getName());
+    }
+    if (request.tenantIdIsSet()) {
+        localVarQueryParams["tenant_id"] = parameterToString(request.getTenantId());
+    }
+    if (request.descriptionIsSet()) {
+        localVarQueryParams["description"] = parameterToString(request.getDescription());
+    }
+    if (request.resourceTypeIsSet()) {
+        localVarQueryParams["resource_type"] = parameterToString(request.getResourceType());
+    }
+    if (request.resourceIdIsSet()) {
+        localVarQueryParams["resource_id"] = parameterToString(request.getResourceId());
+    }
+    if (request.trafficTypeIsSet()) {
+        localVarQueryParams["traffic_type"] = parameterToString(request.getTrafficType());
+    }
+    if (request.logGroupIdIsSet()) {
+        localVarQueryParams["log_group_id"] = parameterToString(request.getLogGroupId());
+    }
+    if (request.logTopicIdIsSet()) {
+        localVarQueryParams["log_topic_id"] = parameterToString(request.getLogTopicId());
+    }
+    if (request.logStoreTypeIsSet()) {
+        localVarQueryParams["log_store_type"] = parameterToString(request.getLogStoreType());
+    }
+    if (request.statusIsSet()) {
+        localVarQueryParams["status"] = parameterToString(request.getStatus());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.markerIsSet()) {
+        localVarQueryParams["marker"] = parameterToString(request.getMarker());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+
+    std::shared_ptr<ListFlowLogsResponse> localVarResult = std::make_shared<ListFlowLogsResponse>();
 
     if (!res->getHttpBody().empty()) {
         utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
@@ -1165,6 +1312,41 @@ std::shared_ptr<RejectVpcPeeringResponse> VpcClient::rejectVpcPeering(RejectVpcP
 
     return localVarResult;
 }
+std::shared_ptr<ShowFlowLogResponse> VpcClient::showFlowLog(ShowFlowLogRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/fl/flow_logs/{flowlog_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
+
+    localVarPathParams["flowlog_id"] = parameterToString(request.getFlowlogId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+
+    std::shared_ptr<ShowFlowLogResponse> localVarResult = std::make_shared<ShowFlowLogResponse>();
+
+    if (!res->getHttpBody().empty()) {
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowPortResponse> VpcClient::showPort(ShowPortRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/ports/{port_id}";
@@ -1435,6 +1617,46 @@ std::shared_ptr<ShowVpcPeeringResponse> VpcClient::showVpcPeering(ShowVpcPeering
     std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
 
     std::shared_ptr<ShowVpcPeeringResponse> localVarResult = std::make_shared<ShowVpcPeeringResponse>();
+
+    if (!res->getHttpBody().empty()) {
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateFlowLogResponse> VpcClient::updateFlowLog(UpdateFlowLogRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/fl/flow_logs/{flowlog_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
+
+    localVarPathParams["flowlog_id"] = parameterToString(request.getFlowlogId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+
+    std::shared_ptr<UpdateFlowLogResponse> localVarResult = std::make_shared<UpdateFlowLogResponse>();
 
     if (!res->getHttpBody().empty()) {
         utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());

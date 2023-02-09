@@ -1,3 +1,16 @@
+# 3.1.21 2023-02-09
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Changes of the interface `RecognizeTollInvoice`:
+    - Add the request parameter `return_text_location`
+    - Add the response parameter `text_location`
+
 # 3.1.20 2023-02-02
 
 ### HuaweiCloud SDK IMS

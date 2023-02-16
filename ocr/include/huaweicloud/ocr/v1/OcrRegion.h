@@ -22,15 +22,42 @@ public:
 
     static std::map<std::string, Region> initRegions() {
         std::map<std::string, Region> regions;
-        regions["cn-north-4"] = Region("cn-north-4","https://ocr.cn-north-4.myhuaweicloud.com") ;
-        regions["cn-south-1"] = Region("cn-south-1","https://ocr.cn-south-1.myhuaweicloud.com") ;
-        regions["cn-east-3"] = Region("cn-east-3","https://ocr.cn-east-3.myhuaweicloud.com") ;
-        regions["cn-north-1"] = Region("cn-north-1","https://ocr.cn-north-1.myhuaweicloud.com") ;
-        regions["ap-southeast-2"] = Region("ap-southeast-2","https://ocr.ap-southeast-2.myhuaweicloud.com") ;
-        regions["ap-southeast-1"] = Region("ap-southeast-1","https://ocr.ap-southeast-1.myhuaweicloud.com") ;
-        regions["ap-southeast-3"] = Region("ap-southeast-3","https://ocr.ap-southeast-3.myhuaweicloud.com") ;
-        regions["la-south-2"] = Region("la-south-2","https://ocr.la-south-2.myhuaweicloud.com") ;
-        regions["af-south-1"] = Region("af-south-1","https://ocr.af-south-1.myhuaweicloud.com") ;
+        regions["cn-north-4"] = Region("cn-north-4",
+            { 
+                "https://ocr.cn-north-4.myhuaweicloud.com"
+            });
+        regions["cn-south-1"] = Region("cn-south-1",
+            { 
+                "https://ocr.cn-south-1.myhuaweicloud.com"
+            });
+        regions["cn-east-3"] = Region("cn-east-3",
+            { 
+                "https://ocr.cn-east-3.myhuaweicloud.com"
+            });
+        regions["cn-north-1"] = Region("cn-north-1",
+            { 
+                "https://ocr.cn-north-1.myhuaweicloud.com"
+            });
+        regions["ap-southeast-2"] = Region("ap-southeast-2",
+            { 
+                "https://ocr.ap-southeast-2.myhuaweicloud.com"
+            });
+        regions["ap-southeast-1"] = Region("ap-southeast-1",
+            { 
+                "https://ocr.ap-southeast-1.myhuaweicloud.com"
+            });
+        regions["ap-southeast-3"] = Region("ap-southeast-3",
+            { 
+                "https://ocr.ap-southeast-3.myhuaweicloud.com"
+            });
+        regions["la-south-2"] = Region("la-south-2",
+            { 
+                "https://ocr.la-south-2.myhuaweicloud.com"
+            });
+        regions["af-south-1"] = Region("af-south-1",
+            { 
+                "https://ocr.af-south-1.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

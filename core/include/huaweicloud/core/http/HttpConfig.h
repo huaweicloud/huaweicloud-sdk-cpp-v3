@@ -80,7 +80,6 @@ public:
     int getPoolMaxsize() const;
 
     void setPoolMaxsize(int poolMaxsize);
-
 private:
     std::string proxyProtocol_;
     std::string proxyHost_;
@@ -89,6 +88,7 @@ private:
     std::string proxyPassword_;
 
     bool ignoreSslVerification_ = false;
+
     std::string sslCaCert_;
     std::string certFile_;
 

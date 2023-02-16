@@ -135,7 +135,11 @@ public:
 
     ClientBuilder &withEndPoint(std::string endPoint)
     {
-        endPoint_ = std::move(endPoint);
+        if (endPoints_.empty()) {
+            endPoints_.emplace_back(endPoint);
+        } else {
+            endPoints_[0] = endPoint;
+        }
         return *this;
     }
 
@@ -177,7 +181,7 @@ public:
         }
         client->setFileLog(std::move(filePath_), fileLog_);
         client->setStreamLog(streamLog_);
-        client->setEndPoint(endPoint_);
+        client->setEndpoints(endPoints_);
         if (region_.getRegionId() != "" && region_.getEndpoint() != "") {
             client->setRegion(region_);
             client->processRegionAuth();
@@ -192,7 +196,7 @@ private:
     std::unique_ptr<HttpConfig> httpConfig_;
     Region region_;
     bool streamLog_ = false;
-    std::string endPoint_;
+    std::vector<std::string> endPoints_;
     std::string filePath_;
     bool fileLog_ = false;
     std::string defaultType_;

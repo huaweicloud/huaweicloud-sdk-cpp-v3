@@ -1,3 +1,19 @@
+# 3.1.22 2023-02-16
+
+### HuaweiCloud SDK FRS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`DetectLiveByUrl`新增请求参数 `nod_threshold`
+  - 接口`DetectLiveByUrlIntl`新增请求参数 `nod_threshold`
+  - 接口`DetectLiveByFile`新增请求参数 `nod_threshold`
+  - 接口`DetectLiveByFileIntl`新增请求参数 `nod_threshold`
+  - 接口`DetectLiveByBase64`新增请求参数 `nod_threshold`
+  - 接口`DetectLiveByBase64Intl`新增请求参数 `nod_threshold`
+
 # 3.1.21 2023-02-09
 
 ### HuaweiCloud SDK OCR

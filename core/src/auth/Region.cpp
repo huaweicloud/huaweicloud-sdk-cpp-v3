@@ -20,11 +20,19 @@
 #include <huaweicloud/core/auth/Region.h>
 using namespace HuaweiCloud::Sdk::Core::Auth;
 
-Region::Region(std::string regionId, std::string endpoint) :regionId_(regionId), endpoint_(endpoint)
+Region::Region(std::string regionId, std::string endpoint) :regionId_(regionId) {
+    this->endpoints_.emplace_back(endpoint);
+}
+
+Region::Region(const Region& region) :regionId_(region.getRegionId()), endpoints_(region.getEndpoints())
 {}
 
-Region::Region(const Region& region) :regionId_(region.getRegionId()), endpoint_(region.getEndpoint())
-{}
+Region::Region(std::string regionId, std::initializer_list<std::string> endpoints) {
+    this->regionId_ = regionId;
+    for (auto iter = endpoints.begin(); iter != endpoints.end(); iter++) {
+        endpoints_.emplace_back(*iter);
+    }
+}
 
 Region& Region::withRegionId(const std::string regionId) {
     this->regionId_ = regionId;
@@ -32,13 +40,27 @@ Region& Region::withRegionId(const std::string regionId) {
 }
 
 Region& Region::withEndpoint(const std::string endpoint) {
-    this->endpoint_ = endpoint;
+    if (this->endpoints_.empty()) {
+        this->endpoints_.emplace_back(endpoint);
+    } else {
+        this->endpoints_[0] = endpoint;
+    }
+    return *this;
+}
+
+Region& Region::withEndpoints(std::vector<std::string> endpoints) {
+    this->endpoints_ = endpoints;
     return *this;
 }
 
 const std::string Region::getRegionId() const {
     return this->regionId_;
 }
+
 const std::string Region::getEndpoint() const {
-    return this->endpoint_;
+    return this->endpoints_.empty() ? "" : this->endpoints_.front();
+}
+
+std::vector<std::string> Region::getEndpoints() const {
+    return this->endpoints_;
 }

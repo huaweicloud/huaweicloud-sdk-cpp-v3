@@ -1,3 +1,19 @@
+# 3.1.22 2023-02-16
+
+### HuaweiCloud SDK FRS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the request parameter `nod_threshold` to the interface `DetectLiveByUrl`
+  - Add the request parameter `nod_threshold` to the interface `DetectLiveByUrlIntl`
+  - Add the request parameter `nod_threshold` to the interface `DetectLiveByFile`
+  - Add the request parameter `nod_threshold` to the interface `DetectLiveByFileIntl`
+  - Add the request parameter `nod_threshold` to the interface `DetectLiveByBase64`
+  - Add the request parameter `nod_threshold` to the interface `DetectLiveByBase64Intl`
+
 # 3.1.21 2023-02-09
 
 ### HuaweiCloud SDK OCR

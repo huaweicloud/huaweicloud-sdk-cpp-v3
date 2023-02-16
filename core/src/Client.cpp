@@ -21,68 +21,80 @@
 #include <huaweicloud/core/auth/GlobalCredentials.h>
 #include <huaweicloud/core/auth/BasicCredentials.h>
 #include <huaweicloud/core/http/HttpRequest.h>
+#include <huaweicloud/core/utils/ModelBase.h>
+
 #include <boost/algorithm/string/replace.hpp>
 #include <utility>
-#include <huaweicloud/core/utils/MultipartFormData.h>
-#include <huaweicloud/core/utils/ModelBase.h>
 
 using namespace HuaweiCloud::Sdk::Core;
 using namespace HuaweiCloud::Sdk::Core::Auth;
+using namespace HuaweiCloud::Sdk::Core::Exception;
 
 Client::Client() = default;
 
-Client::~Client() {}
+Client::~Client() = default;
 
 void Client::processRegionAuth() {
+    spdlog::info("[Client]begin execute region auth...");
     const std::string regionId = region_.getRegionId();
     const std::string endPoint = region_.getEndpoint();
-    if (!endPoint.empty()) {
-        this->endpoint_ = endPoint;
-    }
+    const std::vector<std::string>& regionEndpoints = this->region_.getEndpoints();
+    this->endpoints_.insert(this->endpoints_.end(), regionEndpoints.begin(), regionEndpoints.end());
+    spdlog::info("[Client]execute region auth end...");
 }
 
 std::unique_ptr<HttpResponse> Client::callApi(const std::string &method, const std::string &resourcePath,
     const std::map<std::string, std::string> &pathParams, const std::map<std::string, std::string> &queryParams,
-    const std::map<std::string, std::string> &headerParams, const std::string &body)
-{
+    const std::map<std::string, std::string> &headerParams, const std::string &body) {
     std::string scheme;
     std::string host;
 
     spdlog::info("client:call service api {}, resourcePath:{}", method, resourcePath);
     const std::string regionId = this->region_.getRegionId();
     if (!regionId.empty()) {
-        spdlog::info("use region auth, processing...");
+        spdlog::info("begin execute region auth for region:{}", regionId);
         credentials_->regionInit();
         credentials_->processAuthParams(regionId);
-        spdlog::info("region auth sucessfully!");
+        spdlog::info("region auth for region:{} successfully!", regionId);
     }
+    while (true) {
+        parseEndPoint(this->endpoints_[endpointIndex], scheme, host);
+        std::string uriHttp = getResourcePath(resourcePath, pathParams, credentials_->getUpdatePathParams());
+        std::string queryParamsHttp = getQueryParams(queryParams);
+        RequestParams requestParams(method, scheme, host, uriHttp, queryParamsHttp, false, body);
 
-    parseEndPoint(endpoint_, scheme, host);
-    std::string uriHttp = getResourcePath(resourcePath, pathParams, credentials_->getUpdatePathParams());
-    std::string queryParamsHttp = getQueryParams(queryParams);
-    RequestParams requestParams(method, scheme, host, uriHttp, queryParamsHttp, false, body);
+        requestParams.addHeader(Header("User-Agent", "huaweicloud-usdk-cpp/3.0"));
+        addHeaderParams(requestParams, headerParams);
+        credentials_->processAuthRequest(requestParams);
 
-    requestParams.addHeader(Header("User-Agent", "huaweicloud-usdk-cpp/3.0"));
-    addHeaderParams(requestParams, headerParams);
-    credentials_->processAuthRequest(requestParams);
-
-    if (handler_request) {
-        handler_request(requestParams);
+        if (handler_request) {
+           handler_request(requestParams);
+        }
+        spdlog::info("begin execute http request for the api....");
+        HttpRequest httpRequest;
+        httpRequest.setUrl(parseUrl(requestParams));
+        httpRequest.setMethod(requestParams.getMethod());
+        httpRequest.setRequestBody(requestParams.getBody());
+        httpRequest.setHeaders(requestParams.getHeaders());
+        httpRequest.setStreamLog(streamLog_);
+        httpRequest.setFileLog(fileLog_);
+        httpRequest.setFilePath(filePath_);
+        try {
+            std::unique_ptr<HttpResponse> httpResponse =
+                httpClient_.doHttpRequestSync(httpRequest, httpConfig_, handler_response);
+            spdlog::info("execute http request for the api successfully, get the response....");
+            return httpResponse;
+        } catch (HostUnreachableException ex) {
+            if (!this->endpoints_.empty() && endpointIndex < this->endpoints_.size() - 1) {
+                spdlog::error("can not resolve host for service,region:{}, error:{}", regionId, ex.what());
+                endpointIndex++;
+            } else {
+               endpointIndex = 0;
+               std::string errorMsg = "can not resolve all endpoints for service in region:!" + regionId;
+               throw HostUnreachableException(errorMsg.c_str());
+            }
+        }
     }
-    spdlog::info("begin execute http request for the api....");
-    HttpRequest httpRequest;
-    httpRequest.setUrl(parseUrl(requestParams));
-    httpRequest.setMethod(requestParams.getMethod());
-    httpRequest.setRequestBody(requestParams.getBody());
-    httpRequest.setHeaders(requestParams.getHeaders());
-    httpRequest.setStreamLog(streamLog_);
-    httpRequest.setFileLog(fileLog_);
-    httpRequest.setFilePath(filePath_);
-
-    std::unique_ptr<HttpResponse> httpResponse =
-            httpClient_.doHttpRequestSync(httpRequest, httpConfig_, handler_response);
-    spdlog::info("execute http request for the api successfully, get the response....");
-    return httpResponse;
 }
 
 std::string Client::parseUrl(const RequestParams &requestParams)
@@ -138,11 +150,6 @@ bool Client::isCredentialsEmpty() {
     return credentials_ == nullptr;
 }
 
-void Client::setEndPoint(std::string endPoint)
-{
-    endpoint_ = std::move(endPoint);
-}
-
 void Client::setStreamLog(bool streamLog)
 {
     streamLog_ = streamLog;
@@ -163,10 +170,6 @@ void Client::setHttpClient(const HttpClient& httpClient) {
     httpClient_ = httpClient;
 }
 
-std::string Client::getEndpoint() {
-    return this->endpoint_;
-}
-
 Region Client::getRegion() {
     return this->region_;
 }
@@ -176,6 +179,14 @@ bool Client::getFileLog() {
 
 bool Client::getStreamLog() {
     return this->streamLog_;
+}
+
+const std::vector<std::string> &Client::getEndpoints() const {
+    return endpoints_;
+}
+
+void Client::setEndpoints(const std::vector<std::string> &endpoints) {
+    endpoints_ = endpoints;
 }
 
 void Client::parseEndPoint(const std::string &str, std::string &scheme, std::string &host)

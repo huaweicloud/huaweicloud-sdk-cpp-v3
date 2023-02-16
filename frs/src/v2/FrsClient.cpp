@@ -863,6 +863,9 @@ std::shared_ptr<DetectLiveByFileResponse> FrsClient::detectLiveByFile(DetectLive
     if (request.IsSet()) {
         localVarFormParams["action_time"] = parameterToString(request.getActionTime());
     }
+    if (request.IsSet()) {
+        localVarFormParams["nod_threshold"] = parameterToString(request.getNodThreshold());
+    }
 
     std::string localVarHttpBody;
 
@@ -908,6 +911,9 @@ std::shared_ptr<DetectLiveByFileIntlResponse> FrsClient::detectLiveByFileIntl(De
     }
     if (request.IsSet()) {
         localVarFormParams["action_time"] = parameterToString(request.getActionTime());
+    }
+    if (request.IsSet()) {
+        localVarFormParams["nod_threshold"] = parameterToString(request.getNodThreshold());
     }
 
     std::string localVarHttpBody;

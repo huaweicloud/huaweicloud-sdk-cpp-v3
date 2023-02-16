@@ -18,6 +18,8 @@ DetectLiveByFileIntlRequestBody::DetectLiveByFileIntlRequestBody()
     actionsIsSet_ = false;
     actionTime_ = "";
     actionTimeIsSet_ = false;
+    nodThreshold_ = 0.0;
+    nodThresholdIsSet_ = false;
 }
 
 DetectLiveByFileIntlRequestBody::~DetectLiveByFileIntlRequestBody() = default;
@@ -38,6 +40,9 @@ web::json::value DetectLiveByFileIntlRequestBody::toJson() const
     }
     if(actionTimeIsSet_) {
         val[utility::conversions::to_string_t("action_time")] = ModelBase::toJson(actionTime_);
+    }
+    if(nodThresholdIsSet_) {
+        val[utility::conversions::to_string_t("nod_threshold")] = ModelBase::toJson(nodThreshold_);
     }
 
     return val;
@@ -72,6 +77,15 @@ bool DetectLiveByFileIntlRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setActionTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("nod_threshold"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("nod_threshold"));
+        if(!fieldValue.is_null())
+        {
+            double refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setNodThreshold(refVal);
         }
     }
     return ok;
@@ -139,6 +153,27 @@ bool DetectLiveByFileIntlRequestBody::actionTimeIsSet() const
 void DetectLiveByFileIntlRequestBody::unsetactionTime()
 {
     actionTimeIsSet_ = false;
+}
+
+double DetectLiveByFileIntlRequestBody::getNodThreshold() const
+{
+    return nodThreshold_;
+}
+
+void DetectLiveByFileIntlRequestBody::setNodThreshold(double value)
+{
+    nodThreshold_ = value;
+    nodThresholdIsSet_ = true;
+}
+
+bool DetectLiveByFileIntlRequestBody::nodThresholdIsSet() const
+{
+    return nodThresholdIsSet_;
+}
+
+void DetectLiveByFileIntlRequestBody::unsetnodThreshold()
+{
+    nodThresholdIsSet_ = false;
 }
 
 }

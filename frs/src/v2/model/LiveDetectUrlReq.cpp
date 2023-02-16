@@ -13,12 +13,14 @@ namespace Model {
 
 LiveDetectUrlReq::LiveDetectUrlReq()
 {
-    actionTime_ = "";
-    actionTimeIsSet_ = false;
     videoUrl_ = "";
     videoUrlIsSet_ = false;
     actions_ = "";
     actionsIsSet_ = false;
+    actionTime_ = "";
+    actionTimeIsSet_ = false;
+    nodThreshold_ = 0.0;
+    nodThresholdIsSet_ = false;
 }
 
 LiveDetectUrlReq::~LiveDetectUrlReq() = default;
@@ -31,14 +33,17 @@ web::json::value LiveDetectUrlReq::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(actionTimeIsSet_) {
-        val[utility::conversions::to_string_t("action_time")] = ModelBase::toJson(actionTime_);
-    }
     if(videoUrlIsSet_) {
         val[utility::conversions::to_string_t("video_url")] = ModelBase::toJson(videoUrl_);
     }
     if(actionsIsSet_) {
         val[utility::conversions::to_string_t("actions")] = ModelBase::toJson(actions_);
+    }
+    if(actionTimeIsSet_) {
+        val[utility::conversions::to_string_t("action_time")] = ModelBase::toJson(actionTime_);
+    }
+    if(nodThresholdIsSet_) {
+        val[utility::conversions::to_string_t("nod_threshold")] = ModelBase::toJson(nodThreshold_);
     }
 
     return val;
@@ -48,15 +53,6 @@ bool LiveDetectUrlReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("action_time"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("action_time"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setActionTime(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("video_url"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("video_url"));
         if(!fieldValue.is_null())
@@ -75,30 +71,27 @@ bool LiveDetectUrlReq::fromJson(const web::json::value& val)
             setActions(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("action_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("action_time"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setActionTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("nod_threshold"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("nod_threshold"));
+        if(!fieldValue.is_null())
+        {
+            double refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setNodThreshold(refVal);
+        }
+    }
     return ok;
 }
 
-
-std::string LiveDetectUrlReq::getActionTime() const
-{
-    return actionTime_;
-}
-
-void LiveDetectUrlReq::setActionTime(const std::string& value)
-{
-    actionTime_ = value;
-    actionTimeIsSet_ = true;
-}
-
-bool LiveDetectUrlReq::actionTimeIsSet() const
-{
-    return actionTimeIsSet_;
-}
-
-void LiveDetectUrlReq::unsetactionTime()
-{
-    actionTimeIsSet_ = false;
-}
 
 std::string LiveDetectUrlReq::getVideoUrl() const
 {
@@ -140,6 +133,48 @@ bool LiveDetectUrlReq::actionsIsSet() const
 void LiveDetectUrlReq::unsetactions()
 {
     actionsIsSet_ = false;
+}
+
+std::string LiveDetectUrlReq::getActionTime() const
+{
+    return actionTime_;
+}
+
+void LiveDetectUrlReq::setActionTime(const std::string& value)
+{
+    actionTime_ = value;
+    actionTimeIsSet_ = true;
+}
+
+bool LiveDetectUrlReq::actionTimeIsSet() const
+{
+    return actionTimeIsSet_;
+}
+
+void LiveDetectUrlReq::unsetactionTime()
+{
+    actionTimeIsSet_ = false;
+}
+
+double LiveDetectUrlReq::getNodThreshold() const
+{
+    return nodThreshold_;
+}
+
+void LiveDetectUrlReq::setNodThreshold(double value)
+{
+    nodThreshold_ = value;
+    nodThresholdIsSet_ = true;
+}
+
+bool LiveDetectUrlReq::nodThresholdIsSet() const
+{
+    return nodThresholdIsSet_;
+}
+
+void LiveDetectUrlReq::unsetnodThreshold()
+{
+    nodThresholdIsSet_ = false;
 }
 
 }

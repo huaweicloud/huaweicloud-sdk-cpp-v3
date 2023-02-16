@@ -66,6 +66,15 @@ public:
     void unsetactionTime();
     void setActionTime(const std::string& value);
 
+    /// <summary>
+    /// 该参数为点头动作幅度的判断门限，取值范围：[1,90]，默认为10，单位为度。该值设置越大，则越难判断为点头。
+    /// </summary>
+
+    double getNodThreshold() const;
+    bool nodThresholdIsSet() const;
+    void unsetnodThreshold();
+    void setNodThreshold(double value);
+
 
 protected:
     HttpContent videoFile_;
@@ -74,6 +83,8 @@ protected:
     bool actionsIsSet_;
     std::string actionTime_;
     bool actionTimeIsSet_;
+    double nodThreshold_;
+    bool nodThresholdIsSet_;
 
 };
 

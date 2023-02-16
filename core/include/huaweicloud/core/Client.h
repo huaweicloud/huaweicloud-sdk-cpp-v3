@@ -22,6 +22,7 @@
 #include <memory>
 #include <curl/curl.h>
 #include <map>
+#include <atomic>
 
 #include <huaweicloud/core/RequestParams.h>
 #include <huaweicloud/core/utils/Header.h>
@@ -55,17 +56,16 @@ public:
 
     void setHttpConfig(const HttpConfig &httpConfig);
     void setCredentials(std::unique_ptr<Credentials> credentials);
-    void setEndPoint(std::string endPoint);
     void setStreamLog(bool streamLog);
     void setFileLog(std::string filePath, bool fileLog);
     void setRegion(Region region);
     void setHttpClient(const HttpClient& httpClient);
+    void setEndpoints(const std::vector<std::string> &endpoints);
 
-    std::string getEndpoint();
     Region getRegion();
     bool getStreamLog();
     bool getFileLog();
-
+    const std::vector<std::string> &getEndpoints() const;
     bool isCredentialsEmpty();
 
     void processRegionAuth();
@@ -84,7 +84,7 @@ private:
         const std::map<std::string, std::string> &updatePathParams);
     std::string getQueryParams(const std::map<std::string, std::string> &map);
 
-    std::string endpoint_;
+    std::vector<std::string> endpoints_;
     std::unique_ptr<Credentials> credentials_;
     HttpConfig httpConfig_;
     bool streamLog_ = false;
@@ -92,6 +92,8 @@ private:
     std::string filePath_;
     Region region_;
     HttpClient httpClient_;
+
+    std::atomic<int> endpointIndex = 0;
 };
 }
 }

@@ -39,15 +39,6 @@ public:
     /// LiveDetectBase64Req members
 
     /// <summary>
-    /// 该参数为动作时间数组拼接的字符串，数组的长度和actions的数量一致，每一项代表了对应次序动作的起始时间和结束时间，单位为距视频开始的毫秒数。
-    /// </summary>
-
-    std::string getActionTime() const;
-    bool actionTimeIsSet() const;
-    void unsetactionTime();
-    void setActionTime(const std::string& value);
-
-    /// <summary>
     /// 视频数据，Base64编码，要求： • Base64编码后大小不超过8MB，建议客户端压缩到200KB~2MB。 • 限制视频时长1～15秒。 • 建议帧率10fps～30fps。 • 封装格式：mp4、avi、flv、webm、asf、mov。 • 视频编码格式： h261、h263、h264、hevc、vc1、vp8、vp9、wmv3。
     /// </summary>
 
@@ -65,14 +56,34 @@ public:
     void unsetactions();
     void setActions(const std::string& value);
 
+    /// <summary>
+    /// 该参数为动作时间数组拼接的字符串，数组的长度和actions的数量一致，每一项代表了对应次序动作的起始时间和结束时间，单位为距视频开始的毫秒数。
+    /// </summary>
+
+    std::string getActionTime() const;
+    bool actionTimeIsSet() const;
+    void unsetactionTime();
+    void setActionTime(const std::string& value);
+
+    /// <summary>
+    /// 该参数为点头动作幅度的判断门限，取值范围：[1,90]，默认为10，单位为度。该值设置越大，则越难判断为点头。
+    /// </summary>
+
+    double getNodThreshold() const;
+    bool nodThresholdIsSet() const;
+    void unsetnodThreshold();
+    void setNodThreshold(double value);
+
 
 protected:
-    std::string actionTime_;
-    bool actionTimeIsSet_;
     std::string videoBase64_;
     bool videoBase64IsSet_;
     std::string actions_;
     bool actionsIsSet_;
+    std::string actionTime_;
+    bool actionTimeIsSet_;
+    double nodThreshold_;
+    bool nodThresholdIsSet_;
 
 };
 

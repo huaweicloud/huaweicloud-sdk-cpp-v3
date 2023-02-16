@@ -76,7 +76,6 @@ HttpClient::doHttpRequestSync(const HttpRequest &httpRequest, const HttpConfig &
             httpResponse.setHttpBody(body);
             httpResponse.setHeaderParams(header);
             httpResponse.setStatusCode(statusCode);
-
             if (handler_response) {
                 handler_response(httpResponse);
             }
@@ -231,31 +230,34 @@ void HttpClient::dealCurlOk(const HttpRequest &httpRequest, HttpResponse &httpRe
     if (httpResponse.getStatusCode() < HTTP_SUCCESS_BEGIN_CODE ||
         httpResponse.getStatusCode() > HTTP_SUCCESS_END_CODE) {
         std::map<std::string, std::string> errMap = parseErrorMessage(httpResponse.getHttpBody());
-        SdkErrorMessage sdkErrorMessage(errMap["error_code"], errMap["error_msg"], errMap["request_id"]);
+        // firstly parse requestId from http response, if not exist and get requestId from header(X-Request-Id)
+        std::string requestId = errMap["request_id"];
+        if (requestId.empty()) {
+            requestId = parseRequestId(httpResponse.getHeaderParams());
+        }
+        SdkErrorMessage sdkErrorMessage(errMap["error_code"], errMap["error_msg"], requestId);
 
         if (streamLog) {
             spdlog::get("console")->info("\n{0} {1} {2} {3} {4}\n\n", httpRequest.getMethod(), httpRequest.getUrl(),
-                httpResponse.getStatusCode(), httpResponse.getHttpBody().length(), errMap["request_id"]);
+                httpResponse.getStatusCode(), httpResponse.getHttpBody().length(), requestId);
         }
         if (fileLog) {
             spdlog::get("basic_logger")
                 ->info("\n{0} {1} {2} {3} {4}\n\n", httpRequest.getMethod(), httpRequest.getUrl(),
-                httpResponse.getStatusCode(), httpResponse.getHttpBody().length(), errMap["request_id"]);
+                httpResponse.getStatusCode(), httpResponse.getHttpBody().length(), requestId);
             spdlog::get("basic_logger")->flush();
         }
-
         throw ServiceResponseException::mapException(httpResponse.getStatusCode(), sdkErrorMessage);
     } else {
+        std::string requestId = parseRequestId(httpResponse.getHeaderParams());
         if (streamLog) {
             spdlog::get("console")->info("\n{0} {1} {2} {3} {4}\n\n", httpRequest.getMethod(), httpRequest.getUrl(),
-                httpResponse.getStatusCode(), httpResponse.getHttpBody().length(),
-                parseRequestId(httpResponse.getHeaderParams()));
+                httpResponse.getStatusCode(), httpResponse.getHttpBody().length(), requestId);
         }
         if (fileLog) {
             spdlog::get("basic_logger")
                 ->info("\n{0} {1} {2} {3} {4}\n\n", httpRequest.getMethod(), httpRequest.getUrl(),
-                httpResponse.getStatusCode(), httpResponse.getHttpBody().length(),
-                parseRequestId(httpResponse.getHeaderParams()));
+                httpResponse.getStatusCode(), httpResponse.getHttpBody().length(), requestId);
             spdlog::get("basic_logger")->flush();
         }
     }

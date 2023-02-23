@@ -93,7 +93,7 @@ private:
     Region region_;
     HttpClient httpClient_;
 
-    std::atomic<int> endpointIndex = 0;
+    std::atomic<int> endpointIndex;
 };
 }
 }

@@ -1,3 +1,14 @@
+# 3.1.23 2023-02-23
+
+### HuaweiCloud SDK Core
+
+- _Features_
+  - None
+- _Bug Fix_
+  - Fix compile errors on linux arm64 platform
+- _Change_
+  - None
+
 # 3.1.22 2023-02-16
 
 ### HuaweiCloud SDK FRS

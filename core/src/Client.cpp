@@ -30,7 +30,9 @@ using namespace HuaweiCloud::Sdk::Core;
 using namespace HuaweiCloud::Sdk::Core::Auth;
 using namespace HuaweiCloud::Sdk::Core::Exception;
 
-Client::Client() = default;
+Client::Client() {
+    endpointIndex = 0;
+};
 
 Client::~Client() = default;
 

@@ -142,6 +142,10 @@
 #include <huaweicloud/vod/v1/model/ShowTakeOverTaskDetailsResponse.h>
 #include <string>
 
+#include <huaweicloud/vod/v1/model/ModifySubtitleRequest.h>
+#include <huaweicloud/vod/v1/model/ModifySubtitleResponse.h>
+#include <huaweicloud/vod/v1/model/SubtitleModifyReq.h>
+
 #include <cpprest/details/basic_types.h>
 #include <huaweicloud/core/utils/ModelBase.h>
 #undef U
@@ -607,6 +611,15 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowTakeOverTaskDetailsResponse> showTakeOverTaskDetails(
         ShowTakeOverTaskDetailsRequest &request
+    );
+
+    // 多字幕封装
+    //
+    // 多字幕封装，仅支持 HLS VTT格式
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ModifySubtitleResponse> modifySubtitle(
+        ModifySubtitleRequest &request
     );
 
 

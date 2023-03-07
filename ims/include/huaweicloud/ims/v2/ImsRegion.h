@@ -94,6 +94,10 @@ public:
             { 
                 "https://ims.ap-southeast-4.myhuaweicloud.com"
             });
+        regions["cn-south-4"] = Region("cn-south-4",
+            { 
+                "https://ims.cn-south-4.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

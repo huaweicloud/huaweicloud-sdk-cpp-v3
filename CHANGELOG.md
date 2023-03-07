@@ -1,3 +1,14 @@
+# 3.1.24 2023-03-07
+
+### HuaweiCloud SDK VOD
+
+- _Features_
+  - Support the interface `ModifySubtitle`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.23 2023-02-23
 
 ### HuaweiCloud SDK Core

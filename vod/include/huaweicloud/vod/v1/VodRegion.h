@@ -34,6 +34,18 @@ public:
             { 
                 "https://vod.cn-north-4.myhuaweicloud.com"
             });
+        regions["ap-southeast-1"] = Region("ap-southeast-1",
+            { 
+                "https://vod.ap-southeast-1.myhuaweicloud.com"
+            });
+        regions["ap-southeast-2"] = Region("ap-southeast-2",
+            { 
+                "https://vod.ap-southeast-2.myhuaweicloud.com"
+            });
+        regions["ap-southeast-3"] = Region("ap-southeast-3",
+            { 
+                "https://vod.ap-southeast-3.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

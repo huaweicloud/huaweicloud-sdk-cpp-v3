@@ -18,6 +18,7 @@ AutoClassificationRequestBody::AutoClassificationRequestBody()
     url_ = "";
     urlIsSet_ = false;
     typeListIsSet_ = false;
+    extendedParametersIsSet_ = false;
 }
 
 AutoClassificationRequestBody::~AutoClassificationRequestBody() = default;
@@ -38,6 +39,9 @@ web::json::value AutoClassificationRequestBody::toJson() const
     }
     if(typeListIsSet_) {
         val[utility::conversions::to_string_t("type_list")] = ModelBase::toJson(typeList_);
+    }
+    if(extendedParametersIsSet_) {
+        val[utility::conversions::to_string_t("extended_parameters")] = ModelBase::toJson(extendedParameters_);
     }
 
     return val;
@@ -72,6 +76,15 @@ bool AutoClassificationRequestBody::fromJson(const web::json::value& val)
             std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTypeList(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("extended_parameters"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("extended_parameters"));
+        if(!fieldValue.is_null())
+        {
+            Object refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setExtendedParameters(refVal);
         }
     }
     return ok;
@@ -139,6 +152,27 @@ bool AutoClassificationRequestBody::typeListIsSet() const
 void AutoClassificationRequestBody::unsettypeList()
 {
     typeListIsSet_ = false;
+}
+
+Object AutoClassificationRequestBody::getExtendedParameters() const
+{
+    return extendedParameters_;
+}
+
+void AutoClassificationRequestBody::setExtendedParameters(const Object& value)
+{
+    extendedParameters_ = value;
+    extendedParametersIsSet_ = true;
+}
+
+bool AutoClassificationRequestBody::extendedParametersIsSet() const
+{
+    return extendedParametersIsSet_;
+}
+
+void AutoClassificationRequestBody::unsetextendedParameters()
+{
+    extendedParametersIsSet_ = false;
 }
 
 }

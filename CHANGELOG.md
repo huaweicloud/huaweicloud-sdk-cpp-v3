@@ -1,3 +1,14 @@
+# 3.1.25 2023-03-09
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Add the request parameter `extended_parameters` to the interface `RecognizeAutoClassification`
+
 # 3.1.24 2023-03-07
 
 ### HuaweiCloud SDK VOD

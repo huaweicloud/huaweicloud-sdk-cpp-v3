@@ -1,3 +1,14 @@
+# 3.1.25 2023-03-09
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`RecognizeAutoClassification`新增请求参数 `extended_parameters`
+
 # 3.1.24 2023-03-07
 
 ### HuaweiCloud SDK VOD

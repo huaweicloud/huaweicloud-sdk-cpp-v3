@@ -56,12 +56,45 @@ public:
     void unseturl();
     void setUrl(const std::string& value);
 
+    /// <summary>
+    /// 如果为True，返回体中会包含text_location对象，内容是各字段的检测框四点坐标。如果是False或者没有这个key，则返回体中不包含text_location对象。 
+    /// </summary>
+
+    bool isReturnTextLocation() const;
+    bool returnTextLocationIsSet() const;
+    void unsetreturnTextLocation();
+    void setReturnTextLocation(bool value);
+
+    /// <summary>
+    /// 如果为True，返回体中会包含confidence对象，内容是各字段的置信度。如果是False或者没有这个key，则返回体中不包含confidence对象。 
+    /// </summary>
+
+    bool isReturnConfidence() const;
+    bool returnConfidenceIsSet() const;
+    void unsetreturnConfidence();
+    void setReturnConfidence(bool value);
+
+    /// <summary>
+    /// 如果没有type字段则默认返回原机动车销售发票出参； 若存在type字段但是不属于 auto、new或者used三个枚举值，API返回AIS.0101入参错误； 如果type为auto，API自动判断发票类型，并在返回参数中添加type出参以指明发票类型； 如果type为new，API在检测出的类型为机动车发票时返回原版机动车发票出参并添加type出参（机动车销售统一发票），不一致时报错AIS.0104图像质量差； 如果type为used，API在检测出的类型为二手车时返回二手车发票出参，并添加type出参（二手车销售统一发票），不一致时报错AIS.0104图像质量差。 
+    /// </summary>
+
+    std::string getType() const;
+    bool typeIsSet() const;
+    void unsettype();
+    void setType(const std::string& value);
+
 
 protected:
     std::string image_;
     bool imageIsSet_;
     std::string url_;
     bool urlIsSet_;
+    bool returnTextLocation_;
+    bool returnTextLocationIsSet_;
+    bool returnConfidence_;
+    bool returnConfidenceIsSet_;
+    std::string type_;
+    bool typeIsSet_;
 
 };
 

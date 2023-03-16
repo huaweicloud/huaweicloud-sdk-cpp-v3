@@ -1,3 +1,69 @@
+# 3.1.26 2023-03-16
+
+### HuaweiCloud SDK EIP
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListBandwidthPkg**
+    - 请求参数变更
+      - `+ limit`
+      - `+ marker`
+      - `+ offset`
+  - **ListCommonPools**
+    - 请求参数变更
+      - `+ limit`
+      - `+ offset`
+  - **ListShareBandwidthTypes**
+    - 请求参数变更
+      - `+ marker`
+      - `+ offset`
+
+### HuaweiCloud SDK IVS
+
+- _新增特性_
+  - 支持接口`DetectStandardByVideoAndIdCardImage`、`DetectStandardByVideoAndNameAndId`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RecognizeMvsInvoice**
+    - 请求参数变更
+      - `+ return_text_location`
+      - `+ return_confidence`
+      - `+ type`
+    - 响应参数变更
+      - `+ result.buyer_address`
+      - `+ result.buyer_phone`
+      - `+ result.licence_plate_number`
+      - `+ result.registration_number`
+      - `+ result.dept_motor_vehicles`
+      - `+ result.auction_org_name`
+      - `+ result.auction_org_address`
+      - `+ result.auction_org_id`
+      - `+ result.auction_org_bank_account`
+      - `+ result.auction_org_phone`
+      - `+ result.used_vehicle_market_name`
+      - `+ result.used_vehicle_market_id`
+      - `+ result.used_vehicle_market_address`
+      - `+ result.used_vehicle_market_bank_account`
+      - `+ result.used_vehicle_market_phone`
+      - `+ result.remark`
+      - `+ result.drawer_name`
+      - `+ result.type`
+      - `+ result.text_location`
+      - `+ result.confidence`
+
 # 3.1.25 2023-03-09
 
 ### HuaweiCloud SDK OCR

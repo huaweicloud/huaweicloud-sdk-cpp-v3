@@ -240,6 +240,15 @@ std::shared_ptr<ListBandwidthPkgResponse> EipClient::listBandwidthPkg(ListBandwi
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.markerIsSet()) {
+        localVarQueryParams["marker"] = parameterToString(request.getMarker());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
 
     std::string localVarHttpBody;
 

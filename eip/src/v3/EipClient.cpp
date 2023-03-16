@@ -51,6 +51,12 @@ std::shared_ptr<ListCommonPoolsResponse> EipClient::listCommonPools(ListCommonPo
     if (request.fieldsIsSet()) {
         localVarQueryParams["fields"] = parameterToString(request.getFields());
     }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
     if (request.nameIsSet()) {
         localVarQueryParams["name"] = parameterToString(request.getName());
     }
@@ -224,6 +230,12 @@ std::shared_ptr<ListShareBandwidthTypesResponse> EipClient::listShareBandwidthTy
     }
     if (request.limitIsSet()) {
         localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.markerIsSet()) {
+        localVarQueryParams["marker"] = parameterToString(request.getMarker());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
     }
 
     std::string localVarHttpBody;

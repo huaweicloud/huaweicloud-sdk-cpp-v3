@@ -39,7 +39,7 @@ public:
     /// ListResizeFlavorsRequest members
 
     /// <summary>
-    /// 进行规格切换的云服务器ID，UUID格式。
+    /// 进行规格切换的云服务器ID，UUID格式。(instance_uuid,source_flavor_id and source_flavor_name 不能都为空)
     /// </summary>
 
     std::string getInstanceUuid() const;
@@ -84,7 +84,7 @@ public:
     void setSortKey(const std::string& value);
 
     /// <summary>
-    /// 进行规格切换的云服务器源规格ID。
+    /// 进行规格切换的云服务器源规格ID。(instance_uuid,source_flavor_id and source_flavor_name 不能都为空)
     /// </summary>
 
     std::string getSourceFlavorId() const;
@@ -93,7 +93,7 @@ public:
     void setSourceFlavorId(const std::string& value);
 
     /// <summary>
-    /// 进行规格切换的云服务器源规格名称。
+    /// 进行规格切换的云服务器源规格名称。(instance_uuid,source_flavor_id and source_flavor_name 不能都为空)
     /// </summary>
 
     std::string getSourceFlavorName() const;

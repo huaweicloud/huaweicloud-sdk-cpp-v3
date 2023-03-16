@@ -1,14 +1,14 @@
 
-#ifndef HUAWEICLOUD_SDK_IVS_V2_MODEL_ExtentionRespDataByIdCardImage_H_
-#define HUAWEICLOUD_SDK_IVS_V2_MODEL_ExtentionRespDataByIdCardImage_H_
+#ifndef HUAWEICLOUD_SDK_IVS_V2_MODEL_StandardRespDataByVideoAndNameAndId_H_
+#define HUAWEICLOUD_SDK_IVS_V2_MODEL_StandardRespDataByVideoAndNameAndId_H_
 
 #include <huaweicloud/ivs/v2/IvsExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/ivs/v2/model/IdcardResult.h>
 #include <string>
+#include <huaweicloud/ivs/v2/model/VideoResult.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -21,12 +21,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// 
 /// </summary>
-class HUAWEICLOUD_IVS_V2_EXPORT  ExtentionRespDataByIdCardImage
+class HUAWEICLOUD_IVS_V2_EXPORT  StandardRespDataByVideoAndNameAndId
     : public ModelBase
 {
 public:
-    ExtentionRespDataByIdCardImage();
-    virtual ~ExtentionRespDataByIdCardImage();
+    StandardRespDataByVideoAndNameAndId();
+    virtual ~StandardRespDataByVideoAndNameAndId();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -37,7 +37,7 @@ public:
     bool fromJson(const web::json::value& json) override;
 
     /////////////////////////////////////////////
-    /// ExtentionRespDataByIdCardImage members
+    /// StandardRespDataByVideoAndNameAndId members
 
     /// <summary>
     /// 审核校验结果： \&quot;valid\&quot;表示身份审核通过； \&quot;invalid\&quot;表示身份审核不通过； \&quot;nonexistent\&quot;表示数据源没有该身份证号码，这种情况一般是被验证人正在办理户籍迁移，或者被验证人是军人或政要。
@@ -67,13 +67,22 @@ public:
     void setVerificationCode(int32_t value);
 
     /// <summary>
+    /// 人像相识度。取值范围[0,100]
+    /// </summary>
+
+    std::string getSimilarity() const;
+    bool similarityIsSet() const;
+    void unsetsimilarity();
+    void setSimilarity(const std::string& value);
+
+    /// <summary>
     /// 
     /// </summary>
 
-    IdcardResult getIdcardResult() const;
-    bool idcardResultIsSet() const;
-    void unsetidcardResult();
-    void setIdcardResult(const IdcardResult& value);
+    VideoResult getVideoResult() const;
+    bool videoResultIsSet() const;
+    void unsetvideoResult();
+    void setVideoResult(const VideoResult& value);
 
 
 protected:
@@ -83,8 +92,10 @@ protected:
     bool verificationMessageIsSet_;
     int32_t verificationCode_;
     bool verificationCodeIsSet_;
-    IdcardResult idcardResult_;
-    bool idcardResultIsSet_;
+    std::string similarity_;
+    bool similarityIsSet_;
+    VideoResult videoResult_;
+    bool videoResultIsSet_;
 
 };
 
@@ -95,4 +106,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_IVS_V2_MODEL_ExtentionRespDataByIdCardImage_H_
+#endif // HUAWEICLOUD_SDK_IVS_V2_MODEL_StandardRespDataByVideoAndNameAndId_H_

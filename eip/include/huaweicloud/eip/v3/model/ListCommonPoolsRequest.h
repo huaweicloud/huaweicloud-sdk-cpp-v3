@@ -48,6 +48,24 @@ public:
     void setFields(const std::string& value);
 
     /// <summary>
+    /// 每页返回的个数取值范围：0~[2000]，其中2000为局点差异项，具体取值由局点决定
+    /// </summary>
+
+    int32_t getLimit() const;
+    bool limitIsSet() const;
+    void unsetlimit();
+    void setLimit(int32_t value);
+
+    /// <summary>
+    /// 分页查询起始的资源序号
+    /// </summary>
+
+    int32_t getOffset() const;
+    bool offsetIsSet() const;
+    void unsetoffset();
+    void setOffset(int32_t value);
+
+    /// <summary>
     /// 公共池名称
     /// </summary>
 
@@ -69,6 +87,10 @@ public:
 protected:
     std::string fields_;
     bool fieldsIsSet_;
+    int32_t limit_;
+    bool limitIsSet_;
+    int32_t offset_;
+    bool offsetIsSet_;
     std::string name_;
     bool nameIsSet_;
     std::string publicBorderGroup_;

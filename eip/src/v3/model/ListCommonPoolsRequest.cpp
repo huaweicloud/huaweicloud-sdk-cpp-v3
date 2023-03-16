@@ -15,6 +15,10 @@ ListCommonPoolsRequest::ListCommonPoolsRequest()
 {
     fields_ = "";
     fieldsIsSet_ = false;
+    limit_ = 0;
+    limitIsSet_ = false;
+    offset_ = 0;
+    offsetIsSet_ = false;
     name_ = "";
     nameIsSet_ = false;
     publicBorderGroup_ = "";
@@ -33,6 +37,12 @@ web::json::value ListCommonPoolsRequest::toJson() const
 
     if(fieldsIsSet_) {
         val[utility::conversions::to_string_t("fields")] = ModelBase::toJson(fields_);
+    }
+    if(limitIsSet_) {
+        val[utility::conversions::to_string_t("limit")] = ModelBase::toJson(limit_);
+    }
+    if(offsetIsSet_) {
+        val[utility::conversions::to_string_t("offset")] = ModelBase::toJson(offset_);
     }
     if(nameIsSet_) {
         val[utility::conversions::to_string_t("name")] = ModelBase::toJson(name_);
@@ -55,6 +65,24 @@ bool ListCommonPoolsRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFields(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("limit"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("limit"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLimit(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("offset"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("offset"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setOffset(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("name"))) {
@@ -98,6 +126,48 @@ bool ListCommonPoolsRequest::fieldsIsSet() const
 void ListCommonPoolsRequest::unsetfields()
 {
     fieldsIsSet_ = false;
+}
+
+int32_t ListCommonPoolsRequest::getLimit() const
+{
+    return limit_;
+}
+
+void ListCommonPoolsRequest::setLimit(int32_t value)
+{
+    limit_ = value;
+    limitIsSet_ = true;
+}
+
+bool ListCommonPoolsRequest::limitIsSet() const
+{
+    return limitIsSet_;
+}
+
+void ListCommonPoolsRequest::unsetlimit()
+{
+    limitIsSet_ = false;
+}
+
+int32_t ListCommonPoolsRequest::getOffset() const
+{
+    return offset_;
+}
+
+void ListCommonPoolsRequest::setOffset(int32_t value)
+{
+    offset_ = value;
+    offsetIsSet_ = true;
+}
+
+bool ListCommonPoolsRequest::offsetIsSet() const
+{
+    return offsetIsSet_;
+}
+
+void ListCommonPoolsRequest::unsetoffset()
+{
+    offsetIsSet_ = false;
 }
 
 std::string ListCommonPoolsRequest::getName() const

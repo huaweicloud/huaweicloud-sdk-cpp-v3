@@ -119,6 +119,24 @@ public:
     void unsetlimit();
     void setLimit(int32_t value);
 
+    /// <summary>
+    /// 分页查询起始的资源ID，为空时为查询第一页
+    /// </summary>
+
+    std::string getMarker() const;
+    bool markerIsSet() const;
+    void unsetmarker();
+    void setMarker(const std::string& value);
+
+    /// <summary>
+    /// 分页查询起始的资源序号
+    /// </summary>
+
+    int32_t getOffset() const;
+    bool offsetIsSet() const;
+    void unsetoffset();
+    void setOffset(int32_t value);
+
 
 protected:
     std::string fields_;
@@ -139,6 +157,10 @@ protected:
     bool sortDirIsSet_;
     int32_t limit_;
     bool limitIsSet_;
+    std::string marker_;
+    bool markerIsSet_;
+    int32_t offset_;
+    bool offsetIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

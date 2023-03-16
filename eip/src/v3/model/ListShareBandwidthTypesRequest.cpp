@@ -31,6 +31,10 @@ ListShareBandwidthTypesRequest::ListShareBandwidthTypesRequest()
     sortDirIsSet_ = false;
     limit_ = 0;
     limitIsSet_ = false;
+    marker_ = "";
+    markerIsSet_ = false;
+    offset_ = 0;
+    offsetIsSet_ = false;
 }
 
 ListShareBandwidthTypesRequest::~ListShareBandwidthTypesRequest() = default;
@@ -69,6 +73,12 @@ web::json::value ListShareBandwidthTypesRequest::toJson() const
     }
     if(limitIsSet_) {
         val[utility::conversions::to_string_t("limit")] = ModelBase::toJson(limit_);
+    }
+    if(markerIsSet_) {
+        val[utility::conversions::to_string_t("marker")] = ModelBase::toJson(marker_);
+    }
+    if(offsetIsSet_) {
+        val[utility::conversions::to_string_t("offset")] = ModelBase::toJson(offset_);
     }
 
     return val;
@@ -157,6 +167,24 @@ bool ListShareBandwidthTypesRequest::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLimit(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("marker"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("marker"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMarker(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("offset"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("offset"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setOffset(refVal);
         }
     }
     return ok;
@@ -350,6 +378,48 @@ bool ListShareBandwidthTypesRequest::limitIsSet() const
 void ListShareBandwidthTypesRequest::unsetlimit()
 {
     limitIsSet_ = false;
+}
+
+std::string ListShareBandwidthTypesRequest::getMarker() const
+{
+    return marker_;
+}
+
+void ListShareBandwidthTypesRequest::setMarker(const std::string& value)
+{
+    marker_ = value;
+    markerIsSet_ = true;
+}
+
+bool ListShareBandwidthTypesRequest::markerIsSet() const
+{
+    return markerIsSet_;
+}
+
+void ListShareBandwidthTypesRequest::unsetmarker()
+{
+    markerIsSet_ = false;
+}
+
+int32_t ListShareBandwidthTypesRequest::getOffset() const
+{
+    return offset_;
+}
+
+void ListShareBandwidthTypesRequest::setOffset(int32_t value)
+{
+    offset_ = value;
+    offsetIsSet_ = true;
+}
+
+bool ListShareBandwidthTypesRequest::offsetIsSet() const
+{
+    return offsetIsSet_;
+}
+
+void ListShareBandwidthTypesRequest::unsetoffset()
+{
+    offsetIsSet_ = false;
 }
 
 }

@@ -31,6 +31,10 @@ MvsInvoiceResult::MvsInvoiceResult()
     buyerOrganizationNumberIsSet_ = false;
     buyerId_ = "";
     buyerIdIsSet_ = false;
+    buyerAddress_ = "";
+    buyerAddressIsSet_ = false;
+    buyerPhone_ = "";
+    buyerPhoneIsSet_ = false;
     sellerName_ = "";
     sellerNameIsSet_ = false;
     sellerPhone_ = "";
@@ -41,6 +45,12 @@ MvsInvoiceResult::MvsInvoiceResult()
     sellerAccountIsSet_ = false;
     sellerAddress_ = "";
     sellerAddressIsSet_ = false;
+    licencePlateNumber_ = "";
+    licencePlateNumberIsSet_ = false;
+    registrationNumber_ = "";
+    registrationNumberIsSet_ = false;
+    deptMotorVehicles_ = "";
+    deptMotorVehiclesIsSet_ = false;
     sellerBank_ = "";
     sellerBankIsSet_ = false;
     vehicleType_ = "";
@@ -81,6 +91,34 @@ MvsInvoiceResult::MvsInvoiceResult()
     totalChineseIsSet_ = false;
     fiscalCode_ = "";
     fiscalCodeIsSet_ = false;
+    auctionOrgName_ = "";
+    auctionOrgNameIsSet_ = false;
+    auctionOrgAddress_ = "";
+    auctionOrgAddressIsSet_ = false;
+    auctionOrgId_ = "";
+    auctionOrgIdIsSet_ = false;
+    auctionOrgBankAccount_ = "";
+    auctionOrgBankAccountIsSet_ = false;
+    auctionOrgPhone_ = "";
+    auctionOrgPhoneIsSet_ = false;
+    usedVehicleMarketName_ = "";
+    usedVehicleMarketNameIsSet_ = false;
+    usedVehicleMarketId_ = "";
+    usedVehicleMarketIdIsSet_ = false;
+    usedVehicleMarketAddress_ = "";
+    usedVehicleMarketAddressIsSet_ = false;
+    usedVehicleMarketBankAccount_ = "";
+    usedVehicleMarketBankAccountIsSet_ = false;
+    usedVehicleMarketPhone_ = "";
+    usedVehicleMarketPhoneIsSet_ = false;
+    remark_ = "";
+    remarkIsSet_ = false;
+    drawerName_ = "";
+    drawerNameIsSet_ = false;
+    type_ = "";
+    typeIsSet_ = false;
+    textLocationIsSet_ = false;
+    confidenceIsSet_ = false;
 }
 
 MvsInvoiceResult::~MvsInvoiceResult() = default;
@@ -120,6 +158,12 @@ web::json::value MvsInvoiceResult::toJson() const
     if(buyerIdIsSet_) {
         val[utility::conversions::to_string_t("buyer_id")] = ModelBase::toJson(buyerId_);
     }
+    if(buyerAddressIsSet_) {
+        val[utility::conversions::to_string_t("buyer_address")] = ModelBase::toJson(buyerAddress_);
+    }
+    if(buyerPhoneIsSet_) {
+        val[utility::conversions::to_string_t("buyer_phone")] = ModelBase::toJson(buyerPhone_);
+    }
     if(sellerNameIsSet_) {
         val[utility::conversions::to_string_t("seller_name")] = ModelBase::toJson(sellerName_);
     }
@@ -134,6 +178,15 @@ web::json::value MvsInvoiceResult::toJson() const
     }
     if(sellerAddressIsSet_) {
         val[utility::conversions::to_string_t("seller_address")] = ModelBase::toJson(sellerAddress_);
+    }
+    if(licencePlateNumberIsSet_) {
+        val[utility::conversions::to_string_t("licence_plate_number")] = ModelBase::toJson(licencePlateNumber_);
+    }
+    if(registrationNumberIsSet_) {
+        val[utility::conversions::to_string_t("registration_number")] = ModelBase::toJson(registrationNumber_);
+    }
+    if(deptMotorVehiclesIsSet_) {
+        val[utility::conversions::to_string_t("dept_motor_vehicles")] = ModelBase::toJson(deptMotorVehicles_);
     }
     if(sellerBankIsSet_) {
         val[utility::conversions::to_string_t("seller_bank")] = ModelBase::toJson(sellerBank_);
@@ -194,6 +247,51 @@ web::json::value MvsInvoiceResult::toJson() const
     }
     if(fiscalCodeIsSet_) {
         val[utility::conversions::to_string_t("fiscal_code")] = ModelBase::toJson(fiscalCode_);
+    }
+    if(auctionOrgNameIsSet_) {
+        val[utility::conversions::to_string_t("auction_org_name")] = ModelBase::toJson(auctionOrgName_);
+    }
+    if(auctionOrgAddressIsSet_) {
+        val[utility::conversions::to_string_t("auction_org_address")] = ModelBase::toJson(auctionOrgAddress_);
+    }
+    if(auctionOrgIdIsSet_) {
+        val[utility::conversions::to_string_t("auction_org_id")] = ModelBase::toJson(auctionOrgId_);
+    }
+    if(auctionOrgBankAccountIsSet_) {
+        val[utility::conversions::to_string_t("auction_org_bank_account")] = ModelBase::toJson(auctionOrgBankAccount_);
+    }
+    if(auctionOrgPhoneIsSet_) {
+        val[utility::conversions::to_string_t("auction_org_phone")] = ModelBase::toJson(auctionOrgPhone_);
+    }
+    if(usedVehicleMarketNameIsSet_) {
+        val[utility::conversions::to_string_t("used_vehicle_market_name")] = ModelBase::toJson(usedVehicleMarketName_);
+    }
+    if(usedVehicleMarketIdIsSet_) {
+        val[utility::conversions::to_string_t("used_vehicle_market_id")] = ModelBase::toJson(usedVehicleMarketId_);
+    }
+    if(usedVehicleMarketAddressIsSet_) {
+        val[utility::conversions::to_string_t("used_vehicle_market_address")] = ModelBase::toJson(usedVehicleMarketAddress_);
+    }
+    if(usedVehicleMarketBankAccountIsSet_) {
+        val[utility::conversions::to_string_t("used_vehicle_market_bank_account")] = ModelBase::toJson(usedVehicleMarketBankAccount_);
+    }
+    if(usedVehicleMarketPhoneIsSet_) {
+        val[utility::conversions::to_string_t("used_vehicle_market_phone")] = ModelBase::toJson(usedVehicleMarketPhone_);
+    }
+    if(remarkIsSet_) {
+        val[utility::conversions::to_string_t("remark")] = ModelBase::toJson(remark_);
+    }
+    if(drawerNameIsSet_) {
+        val[utility::conversions::to_string_t("drawer_name")] = ModelBase::toJson(drawerName_);
+    }
+    if(typeIsSet_) {
+        val[utility::conversions::to_string_t("type")] = ModelBase::toJson(type_);
+    }
+    if(textLocationIsSet_) {
+        val[utility::conversions::to_string_t("text_location")] = ModelBase::toJson(textLocation_);
+    }
+    if(confidenceIsSet_) {
+        val[utility::conversions::to_string_t("confidence")] = ModelBase::toJson(confidence_);
     }
 
     return val;
@@ -284,6 +382,24 @@ bool MvsInvoiceResult::fromJson(const web::json::value& val)
             setBuyerId(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("buyer_address"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("buyer_address"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBuyerAddress(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("buyer_phone"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("buyer_phone"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBuyerPhone(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("seller_name"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("seller_name"));
         if(!fieldValue.is_null())
@@ -327,6 +443,33 @@ bool MvsInvoiceResult::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSellerAddress(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("licence_plate_number"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("licence_plate_number"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLicencePlateNumber(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("registration_number"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("registration_number"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRegistrationNumber(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("dept_motor_vehicles"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("dept_motor_vehicles"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDeptMotorVehicles(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("seller_bank"))) {
@@ -507,6 +650,141 @@ bool MvsInvoiceResult::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFiscalCode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("auction_org_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("auction_org_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAuctionOrgName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("auction_org_address"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("auction_org_address"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAuctionOrgAddress(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("auction_org_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("auction_org_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAuctionOrgId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("auction_org_bank_account"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("auction_org_bank_account"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAuctionOrgBankAccount(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("auction_org_phone"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("auction_org_phone"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAuctionOrgPhone(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("used_vehicle_market_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("used_vehicle_market_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setUsedVehicleMarketName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("used_vehicle_market_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("used_vehicle_market_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setUsedVehicleMarketId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("used_vehicle_market_address"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("used_vehicle_market_address"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setUsedVehicleMarketAddress(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("used_vehicle_market_bank_account"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("used_vehicle_market_bank_account"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setUsedVehicleMarketBankAccount(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("used_vehicle_market_phone"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("used_vehicle_market_phone"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setUsedVehicleMarketPhone(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("remark"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("remark"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRemark(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("drawer_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("drawer_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDrawerName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("text_location"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("text_location"));
+        if(!fieldValue.is_null())
+        {
+            Object refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTextLocation(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("confidence"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("confidence"));
+        if(!fieldValue.is_null())
+        {
+            Object refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setConfidence(refVal);
         }
     }
     return ok;
@@ -702,6 +980,48 @@ void MvsInvoiceResult::unsetbuyerId()
     buyerIdIsSet_ = false;
 }
 
+std::string MvsInvoiceResult::getBuyerAddress() const
+{
+    return buyerAddress_;
+}
+
+void MvsInvoiceResult::setBuyerAddress(const std::string& value)
+{
+    buyerAddress_ = value;
+    buyerAddressIsSet_ = true;
+}
+
+bool MvsInvoiceResult::buyerAddressIsSet() const
+{
+    return buyerAddressIsSet_;
+}
+
+void MvsInvoiceResult::unsetbuyerAddress()
+{
+    buyerAddressIsSet_ = false;
+}
+
+std::string MvsInvoiceResult::getBuyerPhone() const
+{
+    return buyerPhone_;
+}
+
+void MvsInvoiceResult::setBuyerPhone(const std::string& value)
+{
+    buyerPhone_ = value;
+    buyerPhoneIsSet_ = true;
+}
+
+bool MvsInvoiceResult::buyerPhoneIsSet() const
+{
+    return buyerPhoneIsSet_;
+}
+
+void MvsInvoiceResult::unsetbuyerPhone()
+{
+    buyerPhoneIsSet_ = false;
+}
+
 std::string MvsInvoiceResult::getSellerName() const
 {
     return sellerName_;
@@ -805,6 +1125,69 @@ bool MvsInvoiceResult::sellerAddressIsSet() const
 void MvsInvoiceResult::unsetsellerAddress()
 {
     sellerAddressIsSet_ = false;
+}
+
+std::string MvsInvoiceResult::getLicencePlateNumber() const
+{
+    return licencePlateNumber_;
+}
+
+void MvsInvoiceResult::setLicencePlateNumber(const std::string& value)
+{
+    licencePlateNumber_ = value;
+    licencePlateNumberIsSet_ = true;
+}
+
+bool MvsInvoiceResult::licencePlateNumberIsSet() const
+{
+    return licencePlateNumberIsSet_;
+}
+
+void MvsInvoiceResult::unsetlicencePlateNumber()
+{
+    licencePlateNumberIsSet_ = false;
+}
+
+std::string MvsInvoiceResult::getRegistrationNumber() const
+{
+    return registrationNumber_;
+}
+
+void MvsInvoiceResult::setRegistrationNumber(const std::string& value)
+{
+    registrationNumber_ = value;
+    registrationNumberIsSet_ = true;
+}
+
+bool MvsInvoiceResult::registrationNumberIsSet() const
+{
+    return registrationNumberIsSet_;
+}
+
+void MvsInvoiceResult::unsetregistrationNumber()
+{
+    registrationNumberIsSet_ = false;
+}
+
+std::string MvsInvoiceResult::getDeptMotorVehicles() const
+{
+    return deptMotorVehicles_;
+}
+
+void MvsInvoiceResult::setDeptMotorVehicles(const std::string& value)
+{
+    deptMotorVehicles_ = value;
+    deptMotorVehiclesIsSet_ = true;
+}
+
+bool MvsInvoiceResult::deptMotorVehiclesIsSet() const
+{
+    return deptMotorVehiclesIsSet_;
+}
+
+void MvsInvoiceResult::unsetdeptMotorVehicles()
+{
+    deptMotorVehiclesIsSet_ = false;
 }
 
 std::string MvsInvoiceResult::getSellerBank() const
@@ -1225,6 +1608,321 @@ bool MvsInvoiceResult::fiscalCodeIsSet() const
 void MvsInvoiceResult::unsetfiscalCode()
 {
     fiscalCodeIsSet_ = false;
+}
+
+std::string MvsInvoiceResult::getAuctionOrgName() const
+{
+    return auctionOrgName_;
+}
+
+void MvsInvoiceResult::setAuctionOrgName(const std::string& value)
+{
+    auctionOrgName_ = value;
+    auctionOrgNameIsSet_ = true;
+}
+
+bool MvsInvoiceResult::auctionOrgNameIsSet() const
+{
+    return auctionOrgNameIsSet_;
+}
+
+void MvsInvoiceResult::unsetauctionOrgName()
+{
+    auctionOrgNameIsSet_ = false;
+}
+
+std::string MvsInvoiceResult::getAuctionOrgAddress() const
+{
+    return auctionOrgAddress_;
+}
+
+void MvsInvoiceResult::setAuctionOrgAddress(const std::string& value)
+{
+    auctionOrgAddress_ = value;
+    auctionOrgAddressIsSet_ = true;
+}
+
+bool MvsInvoiceResult::auctionOrgAddressIsSet() const
+{
+    return auctionOrgAddressIsSet_;
+}
+
+void MvsInvoiceResult::unsetauctionOrgAddress()
+{
+    auctionOrgAddressIsSet_ = false;
+}
+
+std::string MvsInvoiceResult::getAuctionOrgId() const
+{
+    return auctionOrgId_;
+}
+
+void MvsInvoiceResult::setAuctionOrgId(const std::string& value)
+{
+    auctionOrgId_ = value;
+    auctionOrgIdIsSet_ = true;
+}
+
+bool MvsInvoiceResult::auctionOrgIdIsSet() const
+{
+    return auctionOrgIdIsSet_;
+}
+
+void MvsInvoiceResult::unsetauctionOrgId()
+{
+    auctionOrgIdIsSet_ = false;
+}
+
+std::string MvsInvoiceResult::getAuctionOrgBankAccount() const
+{
+    return auctionOrgBankAccount_;
+}
+
+void MvsInvoiceResult::setAuctionOrgBankAccount(const std::string& value)
+{
+    auctionOrgBankAccount_ = value;
+    auctionOrgBankAccountIsSet_ = true;
+}
+
+bool MvsInvoiceResult::auctionOrgBankAccountIsSet() const
+{
+    return auctionOrgBankAccountIsSet_;
+}
+
+void MvsInvoiceResult::unsetauctionOrgBankAccount()
+{
+    auctionOrgBankAccountIsSet_ = false;
+}
+
+std::string MvsInvoiceResult::getAuctionOrgPhone() const
+{
+    return auctionOrgPhone_;
+}
+
+void MvsInvoiceResult::setAuctionOrgPhone(const std::string& value)
+{
+    auctionOrgPhone_ = value;
+    auctionOrgPhoneIsSet_ = true;
+}
+
+bool MvsInvoiceResult::auctionOrgPhoneIsSet() const
+{
+    return auctionOrgPhoneIsSet_;
+}
+
+void MvsInvoiceResult::unsetauctionOrgPhone()
+{
+    auctionOrgPhoneIsSet_ = false;
+}
+
+std::string MvsInvoiceResult::getUsedVehicleMarketName() const
+{
+    return usedVehicleMarketName_;
+}
+
+void MvsInvoiceResult::setUsedVehicleMarketName(const std::string& value)
+{
+    usedVehicleMarketName_ = value;
+    usedVehicleMarketNameIsSet_ = true;
+}
+
+bool MvsInvoiceResult::usedVehicleMarketNameIsSet() const
+{
+    return usedVehicleMarketNameIsSet_;
+}
+
+void MvsInvoiceResult::unsetusedVehicleMarketName()
+{
+    usedVehicleMarketNameIsSet_ = false;
+}
+
+std::string MvsInvoiceResult::getUsedVehicleMarketId() const
+{
+    return usedVehicleMarketId_;
+}
+
+void MvsInvoiceResult::setUsedVehicleMarketId(const std::string& value)
+{
+    usedVehicleMarketId_ = value;
+    usedVehicleMarketIdIsSet_ = true;
+}
+
+bool MvsInvoiceResult::usedVehicleMarketIdIsSet() const
+{
+    return usedVehicleMarketIdIsSet_;
+}
+
+void MvsInvoiceResult::unsetusedVehicleMarketId()
+{
+    usedVehicleMarketIdIsSet_ = false;
+}
+
+std::string MvsInvoiceResult::getUsedVehicleMarketAddress() const
+{
+    return usedVehicleMarketAddress_;
+}
+
+void MvsInvoiceResult::setUsedVehicleMarketAddress(const std::string& value)
+{
+    usedVehicleMarketAddress_ = value;
+    usedVehicleMarketAddressIsSet_ = true;
+}
+
+bool MvsInvoiceResult::usedVehicleMarketAddressIsSet() const
+{
+    return usedVehicleMarketAddressIsSet_;
+}
+
+void MvsInvoiceResult::unsetusedVehicleMarketAddress()
+{
+    usedVehicleMarketAddressIsSet_ = false;
+}
+
+std::string MvsInvoiceResult::getUsedVehicleMarketBankAccount() const
+{
+    return usedVehicleMarketBankAccount_;
+}
+
+void MvsInvoiceResult::setUsedVehicleMarketBankAccount(const std::string& value)
+{
+    usedVehicleMarketBankAccount_ = value;
+    usedVehicleMarketBankAccountIsSet_ = true;
+}
+
+bool MvsInvoiceResult::usedVehicleMarketBankAccountIsSet() const
+{
+    return usedVehicleMarketBankAccountIsSet_;
+}
+
+void MvsInvoiceResult::unsetusedVehicleMarketBankAccount()
+{
+    usedVehicleMarketBankAccountIsSet_ = false;
+}
+
+std::string MvsInvoiceResult::getUsedVehicleMarketPhone() const
+{
+    return usedVehicleMarketPhone_;
+}
+
+void MvsInvoiceResult::setUsedVehicleMarketPhone(const std::string& value)
+{
+    usedVehicleMarketPhone_ = value;
+    usedVehicleMarketPhoneIsSet_ = true;
+}
+
+bool MvsInvoiceResult::usedVehicleMarketPhoneIsSet() const
+{
+    return usedVehicleMarketPhoneIsSet_;
+}
+
+void MvsInvoiceResult::unsetusedVehicleMarketPhone()
+{
+    usedVehicleMarketPhoneIsSet_ = false;
+}
+
+std::string MvsInvoiceResult::getRemark() const
+{
+    return remark_;
+}
+
+void MvsInvoiceResult::setRemark(const std::string& value)
+{
+    remark_ = value;
+    remarkIsSet_ = true;
+}
+
+bool MvsInvoiceResult::remarkIsSet() const
+{
+    return remarkIsSet_;
+}
+
+void MvsInvoiceResult::unsetremark()
+{
+    remarkIsSet_ = false;
+}
+
+std::string MvsInvoiceResult::getDrawerName() const
+{
+    return drawerName_;
+}
+
+void MvsInvoiceResult::setDrawerName(const std::string& value)
+{
+    drawerName_ = value;
+    drawerNameIsSet_ = true;
+}
+
+bool MvsInvoiceResult::drawerNameIsSet() const
+{
+    return drawerNameIsSet_;
+}
+
+void MvsInvoiceResult::unsetdrawerName()
+{
+    drawerNameIsSet_ = false;
+}
+
+std::string MvsInvoiceResult::getType() const
+{
+    return type_;
+}
+
+void MvsInvoiceResult::setType(const std::string& value)
+{
+    type_ = value;
+    typeIsSet_ = true;
+}
+
+bool MvsInvoiceResult::typeIsSet() const
+{
+    return typeIsSet_;
+}
+
+void MvsInvoiceResult::unsettype()
+{
+    typeIsSet_ = false;
+}
+
+Object MvsInvoiceResult::getTextLocation() const
+{
+    return textLocation_;
+}
+
+void MvsInvoiceResult::setTextLocation(const Object& value)
+{
+    textLocation_ = value;
+    textLocationIsSet_ = true;
+}
+
+bool MvsInvoiceResult::textLocationIsSet() const
+{
+    return textLocationIsSet_;
+}
+
+void MvsInvoiceResult::unsettextLocation()
+{
+    textLocationIsSet_ = false;
+}
+
+Object MvsInvoiceResult::getConfidence() const
+{
+    return confidence_;
+}
+
+void MvsInvoiceResult::setConfidence(const Object& value)
+{
+    confidence_ = value;
+    confidenceIsSet_ = true;
+}
+
+bool MvsInvoiceResult::confidenceIsSet() const
+{
+    return confidenceIsSet_;
+}
+
+void MvsInvoiceResult::unsetconfidence()
+{
+    confidenceIsSet_ = false;
 }
 
 }

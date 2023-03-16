@@ -14,10 +14,16 @@
 #include <huaweicloud/ivs/v2/model/DetectStandardByIdCardImageResponse.h>
 #include <huaweicloud/ivs/v2/model/DetectStandardByNameAndIdRequest.h>
 #include <huaweicloud/ivs/v2/model/DetectStandardByNameAndIdResponse.h>
+#include <huaweicloud/ivs/v2/model/DetectStandardByVideoAndIdCardImageRequest.h>
+#include <huaweicloud/ivs/v2/model/DetectStandardByVideoAndIdCardImageResponse.h>
+#include <huaweicloud/ivs/v2/model/DetectStandardByVideoAndNameAndIdRequest.h>
+#include <huaweicloud/ivs/v2/model/DetectStandardByVideoAndNameAndIdResponse.h>
 #include <huaweicloud/ivs/v2/model/IvsExtentionByIdCardImageRequestBody.h>
 #include <huaweicloud/ivs/v2/model/IvsExtentionByNameAndIdRequestBody.h>
 #include <huaweicloud/ivs/v2/model/IvsStandardByIdCardImageRequestBody.h>
 #include <huaweicloud/ivs/v2/model/IvsStandardByNameAndIdRequestBody.h>
+#include <huaweicloud/ivs/v2/model/IvsStandardByVideoAndIdCardImageRequestBody.h>
+#include <huaweicloud/ivs/v2/model/IvsStandardByVideoAndNameAndIdRequestBody.h>
 #include <string>
 
 #include <cpprest/details/basic_types.h>
@@ -61,8 +67,7 @@ public:
     );
     // 人证核身标准版（三要素）
     //
-    // 使用姓名、身份证号码、人脸图片三要素进行身份审核。
-    // 身份验证时，传入的数据为人脸图片、身份证信息。提取身份证信息时，可以使用身份证正反面图片，也可以直接输入姓名、身份证号文本。
+    // 使用身份证正反面图片提取姓名和身份证号码，与人脸图片进行三要素身份审核。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DetectStandardByIdCardImageResponse> detectStandardByIdCardImage(
@@ -70,11 +75,27 @@ public:
     );
     // 人证核身标准版（三要素）
     //
-    // 校验用户上传的身份证图片支持正反面同时上传 中的信息的真实性，输出最终的审核结果。 该接口也支持用户直接上传姓名和身份证号码进行合法性校验 。
+    // 使用姓名、身份证号文本和人脸图片进行三要素身份审核。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DetectStandardByNameAndIdResponse> detectStandardByNameAndId(
         DetectStandardByNameAndIdRequest &request
+    );
+    // 人证核身标准版（三要素）
+    //
+    // 从身份证正反面图片中提取姓名和身份证号码，并对视频做活体检测后提取人脸图片，以此进行三要素身份审核。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DetectStandardByVideoAndIdCardImageResponse> detectStandardByVideoAndIdCardImage(
+        DetectStandardByVideoAndIdCardImageRequest &request
+    );
+    // 人证核身标准版（三要素）
+    //
+    // 使用姓名、身份证号文本，并对视频做活体检测后提取人脸图片，以此进行三要素身份审核。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DetectStandardByVideoAndNameAndIdResponse> detectStandardByVideoAndNameAndId(
+        DetectStandardByVideoAndNameAndIdRequest &request
     );
 
 

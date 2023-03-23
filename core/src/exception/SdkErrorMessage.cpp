@@ -39,6 +39,14 @@ SdkErrorMessage::SdkErrorMessage(const std::string &errorCode, const std::string
     requestId_ = requestId;
 }
 
+SdkErrorMessage::SdkErrorMessage(const std::string &errorCode, const std::string &errorMsg, const std::string &requestId,
+                const std::string &encodedAuthorizationMessage) {
+    errorCode_ = errorCode;
+    errorMsg_ = errorMsg;
+    requestId_ = requestId;
+    encodedAuthorizationMessage_ = encodedAuthorizationMessage;
+}
+
 SdkErrorMessage::SdkErrorMessage(const std::string &errorCode, const std::string &errorMsg)
 {
     errorCode_ = errorCode;
@@ -67,6 +75,7 @@ void SdkErrorMessage::setErrorMsg(const std::string &errorMsg)
 
 SdkErrorMessage &SdkErrorMessage::withErrorMsg(const std::string &errorMsg)
 {
+    this->errorMsg_ = errorMsg;
     return *this;
 }
 
@@ -82,6 +91,7 @@ void SdkErrorMessage::setErrorCode(const std::string &errorCode)
 
 SdkErrorMessage &SdkErrorMessage::withErrorCode(const std::string &errorCode)
 {
+    this->errorCode_ = errorCode;
     return *this;
 }
 
@@ -97,5 +107,21 @@ void SdkErrorMessage::setRequestId(const std::string &requestId)
 
 SdkErrorMessage &SdkErrorMessage::withRequestId(const std::string &requestId)
 {
+    this->requestId_ = requestId;
     return *this;
 }
+
+SdkErrorMessage &SdkErrorMessage::withEncodedAuthorizationMessage(const std::string &encodedAuthorizationMessage) {
+    this->encodedAuthorizationMessage_ = encodedAuthorizationMessage;
+    return *this;
+}
+
+const std::string& SdkErrorMessage::getEncodedAuthorizationMessage() const {
+    return this->encodedAuthorizationMessage_;
+}
+
+void SdkErrorMessage::setEncodedAuthorizationMessage(const std::string &encodedAuthorizationMessage) {
+    SdkErrorMessage::encodedAuthorizationMessage_ = encodedAuthorizationMessage;
+}
+
+

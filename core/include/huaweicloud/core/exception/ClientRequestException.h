@@ -32,6 +32,9 @@ public:
     ClientRequestException(int statusCode, const std::string &errorCode, const std::string &errorMsg,
         const std::string &requestId);
 
+    ClientRequestException(int statusCode, const std::string &errorCode, const std::string &errorMsg,
+                           const std::string &requestId, const std::string &encodedAuthorizationMessage);
+
     ClientRequestException(int statusCode, const SdkErrorMessage &sdkErrorMessage);
 };
 }

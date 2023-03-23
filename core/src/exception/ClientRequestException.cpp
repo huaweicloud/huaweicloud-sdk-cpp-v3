@@ -30,3 +30,9 @@ ClientRequestException::ClientRequestException(int statusCode, const std::string
     const std::string &errorMsg, const std::string &requestId)
     : ServiceResponseException(statusCode, errorCode, errorMsg, requestId)
 {}
+
+ClientRequestException::ClientRequestException(int statusCode, const std::string &errorCode,
+                                               const std::string &errorMsg, const std::string &requestId,
+                                               const std::string &encodedAuthorizationMessage)
+        : ServiceResponseException(statusCode, errorCode, errorMsg, requestId, encodedAuthorizationMessage)
+{}

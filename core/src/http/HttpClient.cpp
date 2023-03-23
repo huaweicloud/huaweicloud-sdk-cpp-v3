@@ -162,6 +162,8 @@ std::map<std::string, std::string> HttpClient::parseErrorMessage(const std::stri
             errorMsg["error_msg"] = utility::conversions::to_utf8string(value.serialize());
         } else if (key == "request_id") {
             errorMsg["request_id"] = utility::conversions::to_utf8string(value.serialize());
+        } else if (key == "encoded_authorization_message") {
+            errorMsg["encoded_authorization_message"] =  utility::conversions::to_utf8string(value.serialize());
         } else {
             for (const auto &inner : value.as_object()) {
                 const std::string innerKey = utility::conversions::to_utf8string(inner.first);
@@ -170,6 +172,8 @@ std::map<std::string, std::string> HttpClient::parseErrorMessage(const std::stri
                     errorMsg["error_code"] = utility::conversions::to_utf8string(innerValue.serialize());
                 } else if (innerKey == "message") {
                     errorMsg["error_msg"] = utility::conversions::to_utf8string(innerValue.serialize());
+                } else if (key == "encoded_authorization_message") {
+                    errorMsg["encoded_authorization_message"] =  utility::conversions::to_utf8string(value.serialize());
                 }
             }
         }
@@ -235,7 +239,9 @@ void HttpClient::dealCurlOk(const HttpRequest &httpRequest, HttpResponse &httpRe
         if (requestId.empty()) {
             requestId = parseRequestId(httpResponse.getHeaderParams());
         }
-        SdkErrorMessage sdkErrorMessage(errMap["error_code"], errMap["error_msg"], requestId);
+        std::string encodedAuthorizationMessage = errMap["encoded_authorization_message"];
+        SdkErrorMessage sdkErrorMessage(errMap["error_code"], errMap["error_msg"], requestId,
+                                        encodedAuthorizationMessage);
 
         if (streamLog) {
             spdlog::get("console")->info("\n{0} {1} {2} {3} {4}\n\n", httpRequest.getMethod(), httpRequest.getUrl(),

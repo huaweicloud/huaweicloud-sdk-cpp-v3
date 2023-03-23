@@ -1,3 +1,23 @@
+# 3.1.27 2023-03-23
+
+### HuaweiCloud SDK EPS
+
+- _Features_
+  - Support Enterprise Project Management Service.
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK TMS
+
+- _Features_
+  - Support Tag Management Service.
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.26 2023-03-16
 
 ### HuaweiCloud SDK EIP

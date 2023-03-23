@@ -34,6 +34,7 @@ ServiceResponseException::ServiceResponseException(int statusCode, const SdkErro
     errorMsg_ = sdkErrorMessage.getErrorMsg();
     errorCode_ = sdkErrorMessage.getErrorCode();
     requestId_ = sdkErrorMessage.getRequestId();
+    encodedAuthorizationMessage_ = sdkErrorMessage.getEncodedAuthorizationMessage();
 }
 
 ServiceResponseException::ServiceResponseException(int statusCode, const std::string &errorCode,
@@ -46,11 +47,21 @@ ServiceResponseException::ServiceResponseException(int statusCode, const std::st
     requestId_ = requestId;
 }
 
+ServiceResponseException::ServiceResponseException(int statusCode, const std::string &errorCode, const std::string &errorMsg,
+                         const std::string &requestId, const std::string &encodedAuthorizationMessage)
+        : SdkException(errorMsg.c_str()) {
+    statusCode_ = statusCode;
+    errorMsg_ = errorMsg;
+    errorCode_ = errorCode;
+    requestId_ = requestId;
+    encodedAuthorizationMessage_ = encodedAuthorizationMessage;
+}
+
 ServiceResponseException ServiceResponseException::mapException(int statusCode,
                                                                 const SdkErrorMessage &sdkErrorMessage)
 {
     return mapException(statusCode, sdkErrorMessage.getErrorCode(), sdkErrorMessage.getErrorMsg(),
-        sdkErrorMessage.getRequestId());
+        sdkErrorMessage.getRequestId(), sdkErrorMessage.getEncodedAuthorizationMessage());
 }
 
 ServiceResponseException ServiceResponseException::mapException(int statusCode, const std::string &errorCode,
@@ -63,6 +74,19 @@ ServiceResponseException ServiceResponseException::mapException(int statusCode, 
         return ServerResponseException(statusCode, errorCode, errorMsg, requestId);
     }
     return ServiceResponseException(statusCode, errorCode, errorMsg, requestId);
+}
+
+ServiceResponseException ServiceResponseException::mapException(int statusCode, const std::string &errorCode,
+                                                                const std::string &errorMsg, const std::string &requestId,
+                                                                const std::string &encodedAuthorizationMessage)
+{
+    if (statusCode >= 400 && statusCode < 499) { // 400,499 statusCode
+        return ClientRequestException(statusCode, errorCode, errorMsg, requestId, encodedAuthorizationMessage);
+    }
+    if (statusCode >= 500 && statusCode < 600) { // 500,600 statusCode
+        return ServerResponseException(statusCode, errorCode, errorMsg, requestId);
+    }
+    return ServiceResponseException(statusCode, errorCode, errorMsg, requestId, encodedAuthorizationMessage);
 }
 
 int ServiceResponseException::getStatusCode() const
@@ -83,6 +107,10 @@ const std::string &ServiceResponseException::getErrorCode() const
 const std::string &ServiceResponseException::getRequestId() const
 {
     return requestId_;
+}
+
+const std::string &ServiceResponseException::getEncodedAuthorizationMessage() const {
+    return encodedAuthorizationMessage_;
 }
 
 std::string ServiceResponseException::toIndentedString(int msg)

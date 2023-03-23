@@ -34,6 +34,8 @@ public:
     explicit SdkErrorMessage(int statusCode);
     SdkErrorMessage(const std::string &errorCode, const std::string &errorMsg, const std::string &requestId);
     SdkErrorMessage(const std::string &errorCode, const std::string &errorMsg);
+    SdkErrorMessage(const std::string &errorCode, const std::string &errorMsg, const std::string &requestId,
+                    const std::string &encodedAuthorizationMessage);
 
     virtual ~SdkErrorMessage();
 
@@ -41,21 +43,25 @@ public:
     const std::string &getErrorMsg() const;
     const std::string &getErrorCode() const;
     const std::string &getRequestId() const;
+    const std::string &getEncodedAuthorizationMessage() const;
 
     void setStatusCode(int statusCode);
     void setErrorMsg(const std::string &errorMsg);
     void setErrorCode(const std::string &errorCode);
     void setRequestId(const std::string &requestId);
+    void setEncodedAuthorizationMessage(const std::string &encodedAuthorizationMessage);
 
     SdkErrorMessage &withErrorMsg(const std::string &errorMsg);
     SdkErrorMessage &withErrorCode(const std::string &errorCode);
     SdkErrorMessage &withRequestId(const std::string &requestId);
+    SdkErrorMessage &withEncodedAuthorizationMessage(const std::string &encodedAuthorizationMessage);
 
 private:
     int statusCode_ {};
     std::string errorMsg_;
     std::string errorCode_;
     std::string requestId_;
+    std::string encodedAuthorizationMessage_;
 };
 }
 }

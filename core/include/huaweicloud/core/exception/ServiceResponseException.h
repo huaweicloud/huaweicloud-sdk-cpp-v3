@@ -33,20 +33,30 @@ public:
     ServiceResponseException(int statusCode, const SdkErrorMessage &sdkErrorMessage);
     ServiceResponseException(int statusCode, const std::string &errorCode, const std::string &errorMsg,
         const std::string &requestId);
+
+    ServiceResponseException(int statusCode, const std::string &errorCode, const std::string &errorMsg,
+                             const std::string &requestId, const std::string &encodedAuthorizationMessage);
+
     static ServiceResponseException mapException(int statusCode, const SdkErrorMessage &sdkErrorMessage);
     static ServiceResponseException mapException(int statusCode, const std::string &errorCode,
         const std::string &errorMsg, const std::string &requestId);
+
+    static ServiceResponseException mapException(int statusCode, const std::string &errorCode,
+                                                 const std::string &errorMsg, const std::string &requestId,
+                                                 const std::string &encodedAuthorizationMessage);
 
     int getStatusCode() const;
     const std::string &getErrorMsg() const;
     const std::string &getErrorCode() const;
     const std::string &getRequestId() const;
+    const std::string &getEncodedAuthorizationMessage() const;
 
 private:
     int statusCode_;
     std::string errorMsg_;
     std::string errorCode_;
     std::string requestId_;
+    std::string encodedAuthorizationMessage_;
 
     std::string toIndentedString(int msg);
     std::string toIndentedString(const std::string &msg);

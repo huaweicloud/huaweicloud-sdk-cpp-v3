@@ -1,3 +1,16 @@
+# 3.1.28 2023-03-30
+
+### HuaweiCloud SDK VOD
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **PublishAssetFromObs**
+    - changes of request param
+      - `+ video_type: enum value [RMVB,WEBM]`
+
 # 3.1.27 2023-03-23
 
 ### HuaweiCloud SDK EPS

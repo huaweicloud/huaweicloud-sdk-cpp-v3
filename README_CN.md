@@ -88,7 +88,13 @@ vcpkg install curl cpprestsdk boost openssl spdlog
 
 5. 右键 `CMakeLists.txt` 选择 `Load CMake Project`
 
-6. 选择`Build`开始编译
+6. 配置clion的编译工具链为MSVC: 在第3步的`CMake`配置页面选择Toolchain为Visual Studio，不能选择mingw等其他编译器(windows平台下依赖msvc 编译器，
+ 选择mingw等其他编译器编译会报错)。另外，用户还可以选择编译出来的二进制文件是Debug模式还是Release 模式, 选择 `Build Type`进行下拉选择即可。
+  
+7. 配置目标文件的架构和平台: windows平台支持编译不同CPU架构（x64, x86)的sdk链接库文件，用户可以根据实际需要进行配置，点击
+`Build, Execution, Deployment` → `Toolchains`, 在Architecture 选项可以下拉选择支持的CPU架构。
+
+8. 选择`Build`开始编译，编译结果会在clion控制台进行打印。
 
 #### Step 3：安装 C++ SDK
 
@@ -167,6 +173,28 @@ $ ./vpc_test
 # 下方会显示实际运行结果
 $ 
 ```
+如果您是在 Windows系统下使用cmake来管理工程，则需要在CMakeLists.txt 中引入sdk core包和服务包的相关依赖。
+可以参考下面的CMakeLists.txt 文件:
+```
+cmake_minimum_required(VERSION 3.16)
+project(demo)
+find_package(CURL REQUIRED)
+set(CMAKE_CXX_STANDARD 14)
+
+set(LINK_DIR "C:/Program Files (x86)/huaweicloud_cpp_sdk_v3/bin;")
+set(BIN_DIR "C:/Program Files (x86)/huaweicloud_cpp_sdk_v3/lib;")
+set(SERVICE_DIR "C:/Program Files (x86)/huaweicloud_cpp_sdk_v3/include;")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DBOOST_UUID_FORCE_AUTO_LINK")
+
+link_directories(${BIN_DIR})
+include_directories(${SERVICE_DIR})
+add_compile_options("$<$<C_COMPILER_ID:MSVC>:/utf-8>")
+add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/utf-8>")
+
+add_executable(demo main.cpp)
+target_link_libraries(demo PUBLIC core vpc_v2)
+```
+
 
 ## 在线调试
 

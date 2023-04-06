@@ -40,7 +40,7 @@ public:
     /// MvsInvoiceResult members
 
     /// <summary>
-    /// 发票代码。
+    /// 发票代码。 
     /// </summary>
 
     std::string getCode() const;
@@ -49,7 +49,7 @@ public:
     void setCode(const std::string& value);
 
     /// <summary>
-    /// 发票号码。
+    /// 发票号码。 
     /// </summary>
 
     std::string getNumber() const;
@@ -58,7 +58,7 @@ public:
     void setNumber(const std::string& value);
 
     /// <summary>
-    /// 机打代码。
+    /// 机打代码。 
     /// </summary>
 
     std::string getMachinePrintedCode() const;
@@ -67,7 +67,7 @@ public:
     void setMachinePrintedCode(const std::string& value);
 
     /// <summary>
-    /// 机打号码。
+    /// 机打号码。 
     /// </summary>
 
     std::string getMachinePrintedNumber() const;
@@ -76,7 +76,7 @@ public:
     void setMachinePrintedNumber(const std::string& value);
 
     /// <summary>
-    /// 开票日期。
+    /// 开票日期。 
     /// </summary>
 
     std::string getIssueDate() const;
@@ -85,7 +85,7 @@ public:
     void setIssueDate(const std::string& value);
 
     /// <summary>
-    /// 机器编号。
+    /// 机器编号。 
     /// </summary>
 
     std::string getMachineNumber() const;
@@ -94,7 +94,7 @@ public:
     void setMachineNumber(const std::string& value);
 
     /// <summary>
-    /// 购买方名称、二手车买方单位/个人
+    /// 购买方名称、二手车买方单位/个人 
     /// </summary>
 
     std::string getBuyerName() const;
@@ -103,7 +103,7 @@ public:
     void setBuyerName(const std::string& value);
 
     /// <summary>
-    /// 购买方身份证号码/组织机构代码。
+    /// 购买方身份证号码/组织机构代码。 
     /// </summary>
 
     std::string getBuyerOrganizationNumber() const;
@@ -112,7 +112,7 @@ public:
     void setBuyerOrganizationNumber(const std::string& value);
 
     /// <summary>
-    /// 购买方纳税人识别号、二手车买方单位代码/身份证号
+    /// 购买方纳税人识别号、二手车买方单位代码/身份证号 
     /// </summary>
 
     std::string getBuyerId() const;
@@ -121,7 +121,7 @@ public:
     void setBuyerId(const std::string& value);
 
     /// <summary>
-    /// 二手车买方单位/个人住址。 当请求参数\&quot;tpye\&quot;设置为\&quot;auto\&quot;或“used”时才返回。 
+    /// 二手车买方单位/个人住址。 当请求参数\&quot;type\&quot;设置为\&quot;auto\&quot;或\&quot;used\&quot;时才返回。 
     /// </summary>
 
     std::string getBuyerAddress() const;
@@ -130,7 +130,7 @@ public:
     void setBuyerAddress(const std::string& value);
 
     /// <summary>
-    /// 二手车买方单位/个人电话。 当请求参数\&quot;tpye\&quot;设置为\&quot;auto\&quot;或“used”时才返回。 
+    /// 二手车买方单位/个人电话。 当请求参数\&quot;type\&quot;设置为\&quot;auto\&quot;或\&quot;used\&quot;时才返回。 
     /// </summary>
 
     std::string getBuyerPhone() const;
@@ -139,7 +139,7 @@ public:
     void setBuyerPhone(const std::string& value);
 
     /// <summary>
-    /// 销货单位名称、二手车卖方单位/个人
+    /// 销货单位名称、二手车卖方单位/个人 
     /// </summary>
 
     std::string getSellerName() const;
@@ -148,7 +148,7 @@ public:
     void setSellerName(const std::string& value);
 
     /// <summary>
-    /// 销售方电话、二手车卖方电话
+    /// 销售方电话、二手车卖方电话 
     /// </summary>
 
     std::string getSellerPhone() const;
@@ -157,7 +157,7 @@ public:
     void setSellerPhone(const std::string& value);
 
     /// <summary>
-    /// 销售方纳税人识别号、二手车卖方单位代码/身份证号
+    /// 销售方纳税人识别号、二手车卖方单位代码/身份证号 
     /// </summary>
 
     std::string getSellerId() const;
@@ -166,7 +166,7 @@ public:
     void setSellerId(const std::string& value);
 
     /// <summary>
-    /// 销售方账号。
+    /// 销售方账号。 
     /// </summary>
 
     std::string getSellerAccount() const;
@@ -175,7 +175,7 @@ public:
     void setSellerAccount(const std::string& value);
 
     /// <summary>
-    /// 销售方地址、二手车卖方单位/个人地址
+    /// 销售方地址、二手车卖方单位/个人地址 
     /// </summary>
 
     std::string getSellerAddress() const;
@@ -184,7 +184,7 @@ public:
     void setSellerAddress(const std::string& value);
 
     /// <summary>
-    /// 二手车车牌照号。 当请求参数\&quot;tpye\&quot;设置为\&quot;auto\&quot;或“used”时才返回。 
+    /// 二手车车牌照号。 当请求参数\&quot;type\&quot;设置为\&quot;auto\&quot;或\&quot;used\&quot;时才返回。 
     /// </summary>
 
     std::string getLicencePlateNumber() const;
@@ -193,7 +193,7 @@ public:
     void setLicencePlateNumber(const std::string& value);
 
     /// <summary>
-    /// 二手车登记证号。 当请求参数\&quot;tpye\&quot;设置为\&quot;auto\&quot;或“used”时才返回。 
+    /// 二手车登记证号。 当请求参数\&quot;type\&quot;设置为\&quot;auto\&quot;或\&quot;used\&quot;时才返回。 
     /// </summary>
 
     std::string getRegistrationNumber() const;
@@ -202,7 +202,7 @@ public:
     void setRegistrationNumber(const std::string& value);
 
     /// <summary>
-    /// 二手车转入地车管所名称。 当请求参数\&quot;tpye\&quot;设置为\&quot;auto\&quot;或“used”时才返回。 
+    /// 二手车转入地车管所名称。 当请求参数\&quot;type\&quot;设置为\&quot;auto\&quot;或\&quot;used\&quot;时才返回。 
     /// </summary>
 
     std::string getDeptMotorVehicles() const;
@@ -211,7 +211,7 @@ public:
     void setDeptMotorVehicles(const std::string& value);
 
     /// <summary>
-    /// 销售方开户行。
+    /// 销售方开户行。 
     /// </summary>
 
     std::string getSellerBank() const;
@@ -220,7 +220,7 @@ public:
     void setSellerBank(const std::string& value);
 
     /// <summary>
-    /// 车辆类型。
+    /// 车辆类型。 
     /// </summary>
 
     std::string getVehicleType() const;
@@ -229,7 +229,7 @@ public:
     void setVehicleType(const std::string& value);
 
     /// <summary>
-    /// 厂牌型号。
+    /// 厂牌型号。 
     /// </summary>
 
     std::string getBrandModel() const;
@@ -238,7 +238,7 @@ public:
     void setBrandModel(const std::string& value);
 
     /// <summary>
-    /// 产地。
+    /// 产地。 
     /// </summary>
 
     std::string getManufacturingLocation() const;
@@ -247,7 +247,7 @@ public:
     void setManufacturingLocation(const std::string& value);
 
     /// <summary>
-    /// 合格证号。
+    /// 合格证号。 
     /// </summary>
 
     std::string getQualityCertificate() const;
@@ -256,7 +256,7 @@ public:
     void setQualityCertificate(const std::string& value);
 
     /// <summary>
-    /// 进口证明书号。
+    /// 进口证明书号。 
     /// </summary>
 
     std::string getImportCertificate() const;
@@ -265,7 +265,7 @@ public:
     void setImportCertificate(const std::string& value);
 
     /// <summary>
-    /// 商检单号。
+    /// 商检单号。 
     /// </summary>
 
     std::string getInspectionNumber() const;
@@ -274,7 +274,7 @@ public:
     void setInspectionNumber(const std::string& value);
 
     /// <summary>
-    /// 发动机号码。
+    /// 发动机号码。 
     /// </summary>
 
     std::string getEngineNumber() const;
@@ -283,7 +283,7 @@ public:
     void setEngineNumber(const std::string& value);
 
     /// <summary>
-    /// 车辆识别代号/车架号码。
+    /// 车辆识别代号/车架号码。 
     /// </summary>
 
     std::string getVehicleIdentificationNumber() const;
@@ -292,7 +292,7 @@ public:
     void setVehicleIdentificationNumber(const std::string& value);
 
     /// <summary>
-    /// 吨位。
+    /// 吨位。 
     /// </summary>
 
     std::string getTonnage() const;
@@ -301,7 +301,7 @@ public:
     void setTonnage(const std::string& value);
 
     /// <summary>
-    /// 限乘人数。
+    /// 限乘人数。 
     /// </summary>
 
     std::string getSeatingCapacity() const;
@@ -310,7 +310,7 @@ public:
     void setSeatingCapacity(const std::string& value);
 
     /// <summary>
-    /// 主管税务机关。
+    /// 主管税务机关。 
     /// </summary>
 
     std::string getTaxAuthority() const;
@@ -319,7 +319,7 @@ public:
     void setTaxAuthority(const std::string& value);
 
     /// <summary>
-    /// 主管税务机关代码。
+    /// 主管税务机关代码。 
     /// </summary>
 
     std::string getTaxAuthorityCode() const;
@@ -328,7 +328,7 @@ public:
     void setTaxAuthorityCode(const std::string& value);
 
     /// <summary>
-    /// 完税凭证号码。
+    /// 完税凭证号码。 
     /// </summary>
 
     std::string getTaxPaymentReceipt() const;
@@ -337,7 +337,7 @@ public:
     void setTaxPaymentReceipt(const std::string& value);
 
     /// <summary>
-    /// 增值税税率或征收率。
+    /// 增值税税率或征收率。 
     /// </summary>
 
     std::string getTaxRate() const;
@@ -346,7 +346,7 @@ public:
     void setTaxRate(const std::string& value);
 
     /// <summary>
-    /// 增值税税额。
+    /// 增值税税额。 
     /// </summary>
 
     std::string getTax() const;
@@ -355,7 +355,7 @@ public:
     void setTax(const std::string& value);
 
     /// <summary>
-    /// 不含税价。
+    /// 不含税价。 
     /// </summary>
 
     std::string getTaxExclusivePrice() const;
@@ -364,7 +364,7 @@ public:
     void setTaxExclusivePrice(const std::string& value);
 
     /// <summary>
-    /// 价税合计、二手车车价合计（小写）
+    /// 价税合计、二手车车价合计（小写） 
     /// </summary>
 
     std::string getTotal() const;
@@ -373,7 +373,7 @@ public:
     void setTotal(const std::string& value);
 
     /// <summary>
-    /// 价税合计大写、二手车车价合计（大写）
+    /// 价税合计大写、二手车车价合计（大写） 
     /// </summary>
 
     std::string getTotalChinese() const;
@@ -382,7 +382,7 @@ public:
     void setTotalChinese(const std::string& value);
 
     /// <summary>
-    /// 税控码。
+    /// 税控码。 
     /// </summary>
 
     std::string getFiscalCode() const;
@@ -391,7 +391,7 @@ public:
     void setFiscalCode(const std::string& value);
 
     /// <summary>
-    /// 二手车经营拍卖单位名称。 当请求参数\&quot;tpye\&quot;设置为\&quot;auto\&quot;或“used”时才返回。 
+    /// 二手车经营拍卖单位名称。 当请求参数\&quot;type\&quot;设置为\&quot;auto\&quot;或\&quot;used\&quot;时才返回。 
     /// </summary>
 
     std::string getAuctionOrgName() const;
@@ -400,7 +400,7 @@ public:
     void setAuctionOrgName(const std::string& value);
 
     /// <summary>
-    /// 二手车经营拍卖单位地址。 当请求参数\&quot;tpye\&quot;设置为\&quot;auto\&quot;或“used”时才返回。 
+    /// 二手车经营拍卖单位地址。 当请求参数\&quot;type\&quot;设置为\&quot;auto\&quot;或\&quot;used\&quot;时才返回。 
     /// </summary>
 
     std::string getAuctionOrgAddress() const;
@@ -409,7 +409,7 @@ public:
     void setAuctionOrgAddress(const std::string& value);
 
     /// <summary>
-    /// 二手车经营拍卖单位纳税人识别号。 当请求参数\&quot;tpye\&quot;设置为\&quot;auto\&quot;或“used”时才返回。 
+    /// 二手车经营拍卖单位纳税人识别号。 当请求参数\&quot;type\&quot;设置为\&quot;auto\&quot;或\&quot;used\&quot;时才返回。 
     /// </summary>
 
     std::string getAuctionOrgId() const;
@@ -418,7 +418,7 @@ public:
     void setAuctionOrgId(const std::string& value);
 
     /// <summary>
-    /// 二手车经营拍卖单位银行和账号。 当请求参数\&quot;tpye\&quot;设置为\&quot;auto\&quot;或“used”时才返回。 
+    /// 二手车经营拍卖单位银行和账号。 当请求参数\&quot;type\&quot;设置为\&quot;auto\&quot;或\&quot;used\&quot;时才返回。 
     /// </summary>
 
     std::string getAuctionOrgBankAccount() const;
@@ -427,7 +427,7 @@ public:
     void setAuctionOrgBankAccount(const std::string& value);
 
     /// <summary>
-    /// 二手车经营拍卖单位电话。 当请求参数\&quot;tpye\&quot;设置为\&quot;auto\&quot;或“used”时才返回。 
+    /// 二手车经营拍卖单位电话。 当请求参数\&quot;type\&quot;设置为\&quot;auto\&quot;或\&quot;used\&quot;时才返回。 
     /// </summary>
 
     std::string getAuctionOrgPhone() const;
@@ -436,7 +436,7 @@ public:
     void setAuctionOrgPhone(const std::string& value);
 
     /// <summary>
-    /// 二手车市场名称。 当请求参数\&quot;tpye\&quot;设置为\&quot;auto\&quot;或“used”时才返回。 
+    /// 二手车市场名称。 当请求参数\&quot;type\&quot;设置为\&quot;auto\&quot;或\&quot;used\&quot;时才返回。 
     /// </summary>
 
     std::string getUsedVehicleMarketName() const;
@@ -445,7 +445,7 @@ public:
     void setUsedVehicleMarketName(const std::string& value);
 
     /// <summary>
-    /// 二手车市场纳税人识别号。 当请求参数\&quot;tpye\&quot;设置为\&quot;auto\&quot;或“used”时才返回。 
+    /// 二手车市场纳税人识别号。 当请求参数\&quot;type\&quot;设置为\&quot;auto\&quot;或\&quot;used\&quot;时才返回。 
     /// </summary>
 
     std::string getUsedVehicleMarketId() const;
@@ -454,7 +454,7 @@ public:
     void setUsedVehicleMarketId(const std::string& value);
 
     /// <summary>
-    /// 二手车市场地址。 当请求参数\&quot;tpye\&quot;设置为\&quot;auto\&quot;或“used”时才返回。 
+    /// 二手车市场地址。 当请求参数\&quot;type\&quot;设置为\&quot;auto\&quot;或\&quot;used\&quot;时才返回。 
     /// </summary>
 
     std::string getUsedVehicleMarketAddress() const;
@@ -463,7 +463,7 @@ public:
     void setUsedVehicleMarketAddress(const std::string& value);
 
     /// <summary>
-    /// 二手车市场银行和账号。 当请求参数\&quot;tpye\&quot;设置为\&quot;auto\&quot;或“used”时才返回。 
+    /// 二手车市场银行和账号。 当请求参数\&quot;type\&quot;设置为\&quot;auto\&quot;或\&quot;used\&quot;时才返回。 
     /// </summary>
 
     std::string getUsedVehicleMarketBankAccount() const;
@@ -472,7 +472,7 @@ public:
     void setUsedVehicleMarketBankAccount(const std::string& value);
 
     /// <summary>
-    /// 二手车市场电话。 当请求参数\&quot;tpye\&quot;设置为\&quot;auto\&quot;或“used”时才返回。 
+    /// 二手车市场电话。 当请求参数\&quot;type\&quot;设置为\&quot;auto\&quot;或\&quot;used\&quot;时才返回。 
     /// </summary>
 
     std::string getUsedVehicleMarketPhone() const;
@@ -481,7 +481,7 @@ public:
     void setUsedVehicleMarketPhone(const std::string& value);
 
     /// <summary>
-    /// 备注
+    /// 备注 
     /// </summary>
 
     std::string getRemark() const;
@@ -490,7 +490,7 @@ public:
     void setRemark(const std::string& value);
 
     /// <summary>
-    /// 开票人
+    /// 开票人 
     /// </summary>
 
     std::string getDrawerName() const;
@@ -508,7 +508,7 @@ public:
     void setType(const std::string& value);
 
     /// <summary>
-    /// 检测框对象，内部为字段-框坐标对。如 code:[[x0, y0],[x1,y1],[x2,y2],[x3,y3]], 点的顺序是左上角、右上角、右下角、左下角。如果原图找不到字段，返回空列表。
+    /// 检测框对象，内部为字段-框坐标对。如 code:[[x0, y0],[x1,y1],[x2,y2],[x3,y3]], 点的顺序是左上角、右上角、右下角、左下角。如果原图找不到字段，返回空列表。 
     /// </summary>
 
     Object getTextLocation() const;
@@ -517,7 +517,7 @@ public:
     void setTextLocation(const Object& value);
 
     /// <summary>
-    /// 字段文字内容置信度，内容为字段-字符置信度对,如code:0.9999。这个数值为字段中每个字符置信度，格式为fp32，保留四位。若字段不存在则返回0.0。
+    /// 字段文字内容置信度，内容为字段-字符置信度对,如code:0.9999。这个数值为字段中每个字符置信度，格式为fp32，保留四位。若字段不存在则返回0.0。 
     /// </summary>
 
     Object getConfidence() const;

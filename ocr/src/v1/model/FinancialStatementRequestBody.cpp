@@ -27,6 +27,8 @@ FinancialStatementRequestBody::FinancialStatementRequestBody()
     returnTableLocationIsSet_ = false;
     returnImageSize_ = false;
     returnImageSizeIsSet_ = false;
+    returnRectificationMatrix_ = false;
+    returnRectificationMatrixIsSet_ = false;
 }
 
 FinancialStatementRequestBody::~FinancialStatementRequestBody() = default;
@@ -59,6 +61,9 @@ web::json::value FinancialStatementRequestBody::toJson() const
     }
     if(returnImageSizeIsSet_) {
         val[utility::conversions::to_string_t("return_image_size")] = ModelBase::toJson(returnImageSize_);
+    }
+    if(returnRectificationMatrixIsSet_) {
+        val[utility::conversions::to_string_t("return_rectification_matrix")] = ModelBase::toJson(returnRectificationMatrix_);
     }
 
     return val;
@@ -129,6 +134,15 @@ bool FinancialStatementRequestBody::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setReturnImageSize(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("return_rectification_matrix"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("return_rectification_matrix"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setReturnRectificationMatrix(refVal);
         }
     }
     return ok;
@@ -280,6 +294,27 @@ bool FinancialStatementRequestBody::returnImageSizeIsSet() const
 void FinancialStatementRequestBody::unsetreturnImageSize()
 {
     returnImageSizeIsSet_ = false;
+}
+
+bool FinancialStatementRequestBody::isReturnRectificationMatrix() const
+{
+    return returnRectificationMatrix_;
+}
+
+void FinancialStatementRequestBody::setReturnRectificationMatrix(bool value)
+{
+    returnRectificationMatrix_ = value;
+    returnRectificationMatrixIsSet_ = true;
+}
+
+bool FinancialStatementRequestBody::returnRectificationMatrixIsSet() const
+{
+    return returnRectificationMatrixIsSet_;
+}
+
+void FinancialStatementRequestBody::unsetreturnRectificationMatrix()
+{
+    returnRectificationMatrixIsSet_ = false;
 }
 
 }

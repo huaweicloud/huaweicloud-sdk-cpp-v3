@@ -1,3 +1,18 @@
+# 3.1.29 2023-04-06
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **RecognizeFinancialStatement**
+    - changes of request param
+      - `+ return_rectification_matrix`
+    - changes of response param
+      - `+ result.rectification_matrix`
+
 # 3.1.28 2023-03-30
 
 ### HuaweiCloud SDK VOD

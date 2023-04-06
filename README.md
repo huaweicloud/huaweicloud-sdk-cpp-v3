@@ -86,7 +86,13 @@ vcpkg install curl cpprestsdk boost openssl spdlog
 
 5. click `CMakeLists.txt` and choose `Load CMake Project`
 
-6. choose `Build` and start compile
+6. Configure compilation toolchain of clion as MSVC: Select Toolchain as Visual Studio on the `CMake` configuration page in step 3, and you cannot select other compilers such as mingw (the windows platform relies on the msvc compiler,
+   Compiling with other compilers such as mingw will report an error). In addition, the user can also choose whether the compiled binary file is in Debug mode or Release mode, and select `Build Type` to make a drop-down selection.
+
+7. Configure the architecture and platform of the target file: the windows platform supports compiling sdk link library files of different CPU architectures (x64, x86), users can configure according to actual needs, click
+   `Build, Execution, Deployment` → `Toolchains`, in the Architecture option, you can drop down to select the supported CPU architecture.
+
+8. choose `Build` and start compile
 
 #### Step 3: Install C++ SDK
 
@@ -167,6 +173,27 @@ $ g++ -o vpc_test vpc_test.cpp --std=c++14 -lvpc_v2 -lcore -lcrypto -lboost_syst
 $ ./vpc_test
 # response
 $
+```
+If you use cmake to manage projects under Windows, you need to introduce the relevant dependencies of the sdk core package and service package in CMakeLists.txt.
+You can refer to the following CMakeLists.txt file:
+```
+cmake_minimum_required(VERSION 3.16)
+project(demo)
+find_package(CURL REQUIRED)
+set(CMAKE_CXX_STANDARD 14)
+
+set(LINK_DIR "C:/Program Files (x86)/huaweicloud_cpp_sdk_v3/bin;")
+set(BIN_DIR "C:/Program Files (x86)/huaweicloud_cpp_sdk_v3/lib;")
+set(SERVICE_DIR "C:/Program Files (x86)/huaweicloud_cpp_sdk_v3/include;")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DBOOST_UUID_FORCE_AUTO_LINK")
+
+link_directories(${BIN_DIR})
+include_directories(${SERVICE_DIR})
+add_compile_options("$<$<C_COMPILER_ID:MSVC>:/utf-8>")
+add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/utf-8>")
+
+add_executable(demo main.cpp)
+target_link_libraries(demo PUBLIC core vpc_v2)
 ```
 
 ## Online Debugging

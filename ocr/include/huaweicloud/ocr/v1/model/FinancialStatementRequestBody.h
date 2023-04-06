@@ -101,6 +101,15 @@ public:
     void unsetreturnImageSize();
     void setReturnImageSize(bool value);
 
+    /// <summary>
+    /// 透视变换矩阵，可选值包括： - true：返回透视变换矩阵; - false：不返回。  &gt; 说明： - 未传入该参数时默认为false，即不返回透视变换矩阵。 
+    /// </summary>
+
+    bool isReturnRectificationMatrix() const;
+    bool returnRectificationMatrixIsSet() const;
+    void unsetreturnRectificationMatrix();
+    void setReturnRectificationMatrix(bool value);
+
 
 protected:
     std::string image_;
@@ -117,6 +126,8 @@ protected:
     bool returnTableLocationIsSet_;
     bool returnImageSize_;
     bool returnImageSizeIsSet_;
+    bool returnRectificationMatrix_;
+    bool returnRectificationMatrixIsSet_;
 
 };
 

@@ -77,6 +77,15 @@ public:
     void unsetimageSize();
     void setImageSize(const FinancialStatementResult_image_size& value);
 
+    /// <summary>
+    /// 返回透视变换矩阵 
+    /// </summary>
+
+    std::vector<std::vector<float>>& getRectificationMatrix();
+    bool rectificationMatrixIsSet() const;
+    void unsetrectificationMatrix();
+    void setRectificationMatrix(const std::vector<std::vector<float>>& value);
+
 
 protected:
     int32_t wordsRegionCount_;
@@ -87,6 +96,8 @@ protected:
     bool excelIsSet_;
     FinancialStatementResult_image_size imageSize_;
     bool imageSizeIsSet_;
+    std::vector<std::vector<float>> rectificationMatrix_;
+    bool rectificationMatrixIsSet_;
 
 };
 

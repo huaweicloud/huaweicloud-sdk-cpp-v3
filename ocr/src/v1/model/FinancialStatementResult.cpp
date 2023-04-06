@@ -19,6 +19,7 @@ FinancialStatementResult::FinancialStatementResult()
     excel_ = "";
     excelIsSet_ = false;
     imageSizeIsSet_ = false;
+    rectificationMatrixIsSet_ = false;
 }
 
 FinancialStatementResult::~FinancialStatementResult() = default;
@@ -42,6 +43,9 @@ web::json::value FinancialStatementResult::toJson() const
     }
     if(imageSizeIsSet_) {
         val[utility::conversions::to_string_t("image_size")] = ModelBase::toJson(imageSize_);
+    }
+    if(rectificationMatrixIsSet_) {
+        val[utility::conversions::to_string_t("rectification_matrix")] = ModelBase::toJson(rectificationMatrix_);
     }
 
     return val;
@@ -85,6 +89,15 @@ bool FinancialStatementResult::fromJson(const web::json::value& val)
             FinancialStatementResult_image_size refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setImageSize(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("rectification_matrix"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("rectification_matrix"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::vector<float>> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRectificationMatrix(refVal);
         }
     }
     return ok;
@@ -173,6 +186,27 @@ bool FinancialStatementResult::imageSizeIsSet() const
 void FinancialStatementResult::unsetimageSize()
 {
     imageSizeIsSet_ = false;
+}
+
+std::vector<std::vector<float>>& FinancialStatementResult::getRectificationMatrix()
+{
+    return rectificationMatrix_;
+}
+
+void FinancialStatementResult::setRectificationMatrix(const std::vector<std::vector<float>>& value)
+{
+    rectificationMatrix_ = value;
+    rectificationMatrixIsSet_ = true;
+}
+
+bool FinancialStatementResult::rectificationMatrixIsSet() const
+{
+    return rectificationMatrixIsSet_;
+}
+
+void FinancialStatementResult::unsetrectificationMatrix()
+{
+    rectificationMatrixIsSet_ = false;
 }
 
 }

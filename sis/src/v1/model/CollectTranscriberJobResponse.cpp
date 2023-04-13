@@ -13,6 +13,8 @@ namespace Model {
 
 CollectTranscriberJobResponse::CollectTranscriberJobResponse()
 {
+    jobId_ = "";
+    jobIdIsSet_ = false;
     status_ = "";
     statusIsSet_ = false;
     createTime_ = "";
@@ -36,6 +38,9 @@ web::json::value CollectTranscriberJobResponse::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(jobIdIsSet_) {
+        val[utility::conversions::to_string_t("job_id")] = ModelBase::toJson(jobId_);
+    }
     if(statusIsSet_) {
         val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
     }
@@ -62,6 +67,15 @@ bool CollectTranscriberJobResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("job_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("job_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setJobId(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("status"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("status"));
         if(!fieldValue.is_null())
@@ -119,6 +133,27 @@ bool CollectTranscriberJobResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
+
+std::string CollectTranscriberJobResponse::getJobId() const
+{
+    return jobId_;
+}
+
+void CollectTranscriberJobResponse::setJobId(const std::string& value)
+{
+    jobId_ = value;
+    jobIdIsSet_ = true;
+}
+
+bool CollectTranscriberJobResponse::jobIdIsSet() const
+{
+    return jobIdIsSet_;
+}
+
+void CollectTranscriberJobResponse::unsetjobId()
+{
+    jobIdIsSet_ = false;
+}
 
 std::string CollectTranscriberJobResponse::getStatus() const
 {

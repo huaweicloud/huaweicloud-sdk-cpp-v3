@@ -1,3 +1,35 @@
+# 3.1.30 2023-04-13
+
+### HuaweiCloud SDK EVS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowVolume**
+    - changes of response param
+      - `+ volume.iops`
+      - `+ volume.throughput`
+  - **ListVolumes**
+    - changes of response param
+      - `+ volumes.iops`
+      - `+ volumes.throughput`
+
+### HuaweiCloud SDK SIS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **RecognizeShortAudio**
+    - changes of request param
+      - `+ config.property: enum value [english_8k_common,english_16k_common]`
+  - **CollectTranscriberJob**
+    - changes of response param
+      - `+ job_id`
+
 # 3.1.29 2023-04-06
 
 ### HuaweiCloud SDK OCR

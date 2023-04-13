@@ -12,7 +12,9 @@
 #include <huaweicloud/core/utils/Object.h>
 #include <string>
 #include <map>
+#include <huaweicloud/evs/v2/model/Iops.h>
 #include <vector>
+#include <huaweicloud/evs/v2/model/Throughput.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -349,6 +351,24 @@ public:
     void unsetserialNumber();
     void setSerialNumber(const std::string& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    Iops getIops() const;
+    bool iopsIsSet() const;
+    void unsetiops();
+    void setIops(const Iops& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    Throughput getThroughput() const;
+    bool throughputIsSet() const;
+    void unsetthroughput();
+    void setThroughput(const Throughput& value);
+
 
 protected:
     std::string id_;
@@ -419,6 +439,10 @@ protected:
     bool enterpriseProjectIdIsSet_;
     std::string serialNumber_;
     bool serialNumberIsSet_;
+    Iops iops_;
+    bool iopsIsSet_;
+    Throughput throughput_;
+    bool throughputIsSet_;
 
 };
 

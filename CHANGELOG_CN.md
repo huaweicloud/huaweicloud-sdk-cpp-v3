@@ -1,3 +1,35 @@
+# 3.1.30 2023-04-13
+
+### HuaweiCloud SDK EVS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowVolume**
+    - 响应参数变更
+      - `+ volume.iops`
+      - `+ volume.throughput`
+  - **ListVolumes**
+    - 响应参数变更
+      - `+ volumes.iops`
+      - `+ volumes.throughput`
+
+### HuaweiCloud SDK SIS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RecognizeShortAudio**
+    - 请求参数变更
+      - `+ config.property: enum value [english_8k_common,english_16k_common]`
+  - **CollectTranscriberJob**
+    - 响应参数变更
+      - `+ job_id`
+
 # 3.1.29 2023-04-06
 
 ### HuaweiCloud SDK OCR

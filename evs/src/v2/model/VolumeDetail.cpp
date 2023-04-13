@@ -76,6 +76,8 @@ VolumeDetail::VolumeDetail()
     enterpriseProjectIdIsSet_ = false;
     serialNumber_ = "";
     serialNumberIsSet_ = false;
+    iopsIsSet_ = false;
+    throughputIsSet_ = false;
 }
 
 VolumeDetail::~VolumeDetail() = default;
@@ -189,6 +191,12 @@ web::json::value VolumeDetail::toJson() const
     }
     if(serialNumberIsSet_) {
         val[utility::conversions::to_string_t("serial_number")] = ModelBase::toJson(serialNumber_);
+    }
+    if(iopsIsSet_) {
+        val[utility::conversions::to_string_t("iops")] = ModelBase::toJson(iops_);
+    }
+    if(throughputIsSet_) {
+        val[utility::conversions::to_string_t("throughput")] = ModelBase::toJson(throughput_);
     }
 
     return val;
@@ -502,6 +510,24 @@ bool VolumeDetail::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSerialNumber(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("iops"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("iops"));
+        if(!fieldValue.is_null())
+        {
+            Iops refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIops(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("throughput"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("throughput"));
+        if(!fieldValue.is_null())
+        {
+            Throughput refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setThroughput(refVal);
         }
     }
     return ok;
@@ -1220,6 +1246,48 @@ bool VolumeDetail::serialNumberIsSet() const
 void VolumeDetail::unsetserialNumber()
 {
     serialNumberIsSet_ = false;
+}
+
+Iops VolumeDetail::getIops() const
+{
+    return iops_;
+}
+
+void VolumeDetail::setIops(const Iops& value)
+{
+    iops_ = value;
+    iopsIsSet_ = true;
+}
+
+bool VolumeDetail::iopsIsSet() const
+{
+    return iopsIsSet_;
+}
+
+void VolumeDetail::unsetiops()
+{
+    iopsIsSet_ = false;
+}
+
+Throughput VolumeDetail::getThroughput() const
+{
+    return throughput_;
+}
+
+void VolumeDetail::setThroughput(const Throughput& value)
+{
+    throughput_ = value;
+    throughputIsSet_ = true;
+}
+
+bool VolumeDetail::throughputIsSet() const
+{
+    return throughputIsSet_;
+}
+
+void VolumeDetail::unsetthroughput()
+{
+    throughputIsSet_ = false;
 }
 
 }

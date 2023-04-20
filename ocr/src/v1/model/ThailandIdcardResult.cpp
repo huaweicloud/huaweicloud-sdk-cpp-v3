@@ -13,6 +13,12 @@ namespace Model {
 
 ThailandIdcardResult::ThailandIdcardResult()
 {
+    type_ = "";
+    typeIsSet_ = false;
+    nameEn_ = "";
+    nameEnIsSet_ = false;
+    refNumber_ = "";
+    refNumberIsSet_ = false;
     side_ = "";
     sideIsSet_ = false;
     idNumber_ = "";
@@ -64,6 +70,15 @@ web::json::value ThailandIdcardResult::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(typeIsSet_) {
+        val[utility::conversions::to_string_t("type")] = ModelBase::toJson(type_);
+    }
+    if(nameEnIsSet_) {
+        val[utility::conversions::to_string_t("name_en")] = ModelBase::toJson(nameEn_);
+    }
+    if(refNumberIsSet_) {
+        val[utility::conversions::to_string_t("ref_number")] = ModelBase::toJson(refNumber_);
+    }
     if(sideIsSet_) {
         val[utility::conversions::to_string_t("side")] = ModelBase::toJson(side_);
     }
@@ -135,6 +150,33 @@ bool ThailandIdcardResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("name_en"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("name_en"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setNameEn(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("ref_number"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ref_number"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRefNumber(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("side"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("side"));
         if(!fieldValue.is_null())
@@ -327,6 +369,69 @@ bool ThailandIdcardResult::fromJson(const web::json::value& val)
     return ok;
 }
 
+
+std::string ThailandIdcardResult::getType() const
+{
+    return type_;
+}
+
+void ThailandIdcardResult::setType(const std::string& value)
+{
+    type_ = value;
+    typeIsSet_ = true;
+}
+
+bool ThailandIdcardResult::typeIsSet() const
+{
+    return typeIsSet_;
+}
+
+void ThailandIdcardResult::unsettype()
+{
+    typeIsSet_ = false;
+}
+
+std::string ThailandIdcardResult::getNameEn() const
+{
+    return nameEn_;
+}
+
+void ThailandIdcardResult::setNameEn(const std::string& value)
+{
+    nameEn_ = value;
+    nameEnIsSet_ = true;
+}
+
+bool ThailandIdcardResult::nameEnIsSet() const
+{
+    return nameEnIsSet_;
+}
+
+void ThailandIdcardResult::unsetnameEn()
+{
+    nameEnIsSet_ = false;
+}
+
+std::string ThailandIdcardResult::getRefNumber() const
+{
+    return refNumber_;
+}
+
+void ThailandIdcardResult::setRefNumber(const std::string& value)
+{
+    refNumber_ = value;
+    refNumberIsSet_ = true;
+}
+
+bool ThailandIdcardResult::refNumberIsSet() const
+{
+    return refNumberIsSet_;
+}
+
+void ThailandIdcardResult::unsetrefNumber()
+{
+    refNumberIsSet_ = false;
+}
 
 std::string ThailandIdcardResult::getSide() const
 {

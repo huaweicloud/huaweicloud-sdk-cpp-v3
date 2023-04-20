@@ -56,6 +56,24 @@ public:
     void setNameTh(float value);
 
     /// <summary>
+    /// 英文名置信度。 
+    /// </summary>
+
+    float getNameEn() const;
+    bool nameEnIsSet() const;
+    void unsetnameEn();
+    void setNameEn(float value);
+
+    /// <summary>
+    /// 参考编码置信度。 
+    /// </summary>
+
+    float getRefNumber() const;
+    bool refNumberIsSet() const;
+    void unsetrefNumber();
+    void setRefNumber(float value);
+
+    /// <summary>
     /// 英文名字置信度。 
     /// </summary>
 
@@ -178,6 +196,10 @@ protected:
     bool idNumberIsSet_;
     float nameTh_;
     bool nameThIsSet_;
+    float nameEn_;
+    bool nameEnIsSet_;
+    float refNumber_;
+    bool refNumberIsSet_;
     float firstNameEn_;
     bool firstNameEnIsSet_;
     float lastNameEn_;

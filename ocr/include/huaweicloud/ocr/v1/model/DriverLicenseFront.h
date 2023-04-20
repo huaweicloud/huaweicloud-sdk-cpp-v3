@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_OCR_V1_MODEL_DriverLicenseResult_H_
-#define HUAWEICLOUD_SDK_OCR_V1_MODEL_DriverLicenseResult_H_
+#ifndef HUAWEICLOUD_SDK_OCR_V1_MODEL_DriverLicenseFront_H_
+#define HUAWEICLOUD_SDK_OCR_V1_MODEL_DriverLicenseFront_H_
 
 #include <huaweicloud/ocr/v1/OcrExport.h>
 
@@ -8,8 +8,6 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/core/utils/Object.h>
-#include <huaweicloud/ocr/v1/model/DriverLicenseBack.h>
-#include <huaweicloud/ocr/v1/model/DriverLicenseFront.h>
 #include <string>
 #include <vector>
 
@@ -24,12 +22,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// 
 /// </summary>
-class HUAWEICLOUD_OCR_V1_EXPORT  DriverLicenseResult
+class HUAWEICLOUD_OCR_V1_EXPORT  DriverLicenseFront
     : public ModelBase
 {
 public:
-    DriverLicenseResult();
-    virtual ~DriverLicenseResult();
+    DriverLicenseFront();
+    virtual ~DriverLicenseFront();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -40,7 +38,7 @@ public:
     bool fromJson(const web::json::value& json) override;
 
     /////////////////////////////////////////////
-    /// DriverLicenseResult members
+    /// DriverLicenseFront members
 
     /// <summary>
     /// 驾驶证类型。 normal：纸质驾驶证 electronic：电子驾驶证 
@@ -151,24 +149,6 @@ public:
     void setIssuingAuthority(const std::string& value);
 
     /// <summary>
-    /// 档案编号。 
-    /// </summary>
-
-    std::string getFileNumber() const;
-    bool fileNumberIsSet() const;
-    void unsetfileNumber();
-    void setFileNumber(const std::string& value);
-
-    /// <summary>
-    /// 记录。 
-    /// </summary>
-
-    std::string getRecord() const;
-    bool recordIsSet() const;
-    void unsetrecord();
-    void setRecord(const std::string& value);
-
-    /// <summary>
     /// 累积记分。 
     /// </summary>
 
@@ -205,6 +185,15 @@ public:
     void setCurrentTime(const std::string& value);
 
     /// <summary>
+    /// 档案编号。 
+    /// </summary>
+
+    std::string getFileNumber() const;
+    bool fileNumberIsSet() const;
+    void unsetfileNumber();
+    void setFileNumber(const std::string& value);
+
+    /// <summary>
     /// 对应所有在原图上识别到的字段位置信息，包含所有文字区域四个顶点的二维坐标（x,y）。采用图像坐标系，坐标原点为图片左上角，x轴沿水平方向，y轴沿竖直方向。 
     /// </summary>
 
@@ -212,24 +201,6 @@ public:
     bool textLocationIsSet() const;
     void unsettextLocation();
     void setTextLocation(const Object& value);
-
-    /// <summary>
-    /// 
-    /// </summary>
-
-    DriverLicenseFront getFront() const;
-    bool frontIsSet() const;
-    void unsetfront();
-    void setFront(const DriverLicenseFront& value);
-
-    /// <summary>
-    /// 
-    /// </summary>
-
-    DriverLicenseBack getBack() const;
-    bool backIsSet() const;
-    void unsetback();
-    void setBack(const DriverLicenseBack& value);
 
 
 protected:
@@ -257,10 +228,6 @@ protected:
     bool validToIsSet_;
     std::string issuingAuthority_;
     bool issuingAuthorityIsSet_;
-    std::string fileNumber_;
-    bool fileNumberIsSet_;
-    std::string record_;
-    bool recordIsSet_;
     std::string accumulatedScores_;
     bool accumulatedScoresIsSet_;
     std::vector<std::string> status_;
@@ -269,12 +236,10 @@ protected:
     bool generationDateIsSet_;
     std::string currentTime_;
     bool currentTimeIsSet_;
+    std::string fileNumber_;
+    bool fileNumberIsSet_;
     Object textLocation_;
     bool textLocationIsSet_;
-    DriverLicenseFront front_;
-    bool frontIsSet_;
-    DriverLicenseBack back_;
-    bool backIsSet_;
 
 };
 
@@ -285,4 +250,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_OCR_V1_MODEL_DriverLicenseResult_H_
+#endif // HUAWEICLOUD_SDK_OCR_V1_MODEL_DriverLicenseFront_H_

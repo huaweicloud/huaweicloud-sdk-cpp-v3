@@ -17,6 +17,10 @@ ThailandIdcardConfidence::ThailandIdcardConfidence()
     idNumberIsSet_ = false;
     nameTh_ = 0.0f;
     nameThIsSet_ = false;
+    nameEn_ = 0.0f;
+    nameEnIsSet_ = false;
+    refNumber_ = 0.0f;
+    refNumberIsSet_ = false;
     firstNameEn_ = 0.0f;
     firstNameEnIsSet_ = false;
     lastNameEn_ = 0.0f;
@@ -60,6 +64,12 @@ web::json::value ThailandIdcardConfidence::toJson() const
     }
     if(nameThIsSet_) {
         val[utility::conversions::to_string_t("name_th")] = ModelBase::toJson(nameTh_);
+    }
+    if(nameEnIsSet_) {
+        val[utility::conversions::to_string_t("name_en")] = ModelBase::toJson(nameEn_);
+    }
+    if(refNumberIsSet_) {
+        val[utility::conversions::to_string_t("ref_number")] = ModelBase::toJson(refNumber_);
     }
     if(firstNameEnIsSet_) {
         val[utility::conversions::to_string_t("first_name_en")] = ModelBase::toJson(firstNameEn_);
@@ -124,6 +134,24 @@ bool ThailandIdcardConfidence::fromJson(const web::json::value& val)
             float refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setNameTh(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("name_en"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("name_en"));
+        if(!fieldValue.is_null())
+        {
+            float refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setNameEn(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("ref_number"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ref_number"));
+        if(!fieldValue.is_null())
+        {
+            float refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRefNumber(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("first_name_en"))) {
@@ -287,6 +315,48 @@ bool ThailandIdcardConfidence::nameThIsSet() const
 void ThailandIdcardConfidence::unsetnameTh()
 {
     nameThIsSet_ = false;
+}
+
+float ThailandIdcardConfidence::getNameEn() const
+{
+    return nameEn_;
+}
+
+void ThailandIdcardConfidence::setNameEn(float value)
+{
+    nameEn_ = value;
+    nameEnIsSet_ = true;
+}
+
+bool ThailandIdcardConfidence::nameEnIsSet() const
+{
+    return nameEnIsSet_;
+}
+
+void ThailandIdcardConfidence::unsetnameEn()
+{
+    nameEnIsSet_ = false;
+}
+
+float ThailandIdcardConfidence::getRefNumber() const
+{
+    return refNumber_;
+}
+
+void ThailandIdcardConfidence::setRefNumber(float value)
+{
+    refNumber_ = value;
+    refNumberIsSet_ = true;
+}
+
+bool ThailandIdcardConfidence::refNumberIsSet() const
+{
+    return refNumberIsSet_;
+}
+
+void ThailandIdcardConfidence::unsetrefNumber()
+{
+    refNumberIsSet_ = false;
 }
 
 float ThailandIdcardConfidence::getFirstNameEn() const

@@ -69,7 +69,7 @@ bool UpdateRouteTableReq::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("routes"));
         if(!fieldValue.is_null())
         {
-            std::map<std::string, std::vector<RouteTableRoute>> refVal;
+            RouteTableRouteAction refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRoutes(refVal);
         }
@@ -120,12 +120,12 @@ void UpdateRouteTableReq::unsetdescription()
     descriptionIsSet_ = false;
 }
 
-std::map<std::string, std::vector<RouteTableRoute>>& UpdateRouteTableReq::getRoutes()
+RouteTableRouteAction UpdateRouteTableReq::getRoutes() const
 {
     return routes_;
 }
 
-void UpdateRouteTableReq::setRoutes(const std::map<std::string, std::vector<RouteTableRoute>>& value)
+void UpdateRouteTableReq::setRoutes(const RouteTableRouteAction& value)
 {
     routes_ = value;
     routesIsSet_ = true;

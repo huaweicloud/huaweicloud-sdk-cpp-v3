@@ -42,6 +42,33 @@ public:
     /// ThailandIdcardResult members
 
     /// <summary>
+    /// 返回证件类型，\&quot;normal\&quot;表示普通泰文证件，\&quot;pink\&quot;表示外国人身份证件 
+    /// </summary>
+
+    std::string getType() const;
+    bool typeIsSet() const;
+    void unsettype();
+    void setType(const std::string& value);
+
+    /// <summary>
+    /// 英文名。 
+    /// </summary>
+
+    std::string getNameEn() const;
+    bool nameEnIsSet() const;
+    void unsetnameEn();
+    void setNameEn(const std::string& value);
+
+    /// <summary>
+    /// 参考编码。 
+    /// </summary>
+
+    std::string getRefNumber() const;
+    bool refNumberIsSet() const;
+    void unsetrefNumber();
+    void setRefNumber(const std::string& value);
+
+    /// <summary>
     /// 标示正面还是反面，取值为front或back。 
     /// </summary>
 
@@ -213,7 +240,7 @@ public:
     void setPortraitLocation(const std::vector<std::vector<int32_t>>& value);
 
     /// <summary>
-    /// 身份证的类型。取值如下所示： - normal：身份证原件 - copy：复印的身份证 当输入参数“return_idcard_type”为“true”时，才返回该参数。 
+    /// 身份证的类型。取值如下所示： - normal：身份证原件 - copy：复印的身份证 - screen：屏幕翻拍 当输入参数“return_idcard_type”为“true”时，才返回该参数。 
     /// </summary>
 
     std::string getIdcardType() const;
@@ -232,6 +259,12 @@ public:
 
 
 protected:
+    std::string type_;
+    bool typeIsSet_;
+    std::string nameEn_;
+    bool nameEnIsSet_;
+    std::string refNumber_;
+    bool refNumberIsSet_;
     std::string side_;
     bool sideIsSet_;
     std::string idNumber_;

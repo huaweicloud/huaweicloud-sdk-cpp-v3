@@ -45,10 +45,10 @@ public:
     /// 资源详情。 资源对象，用于扩展。默认为空
     /// </summary>
 
-    Object getResouceDetail() const;
-    bool resouceDetailIsSet() const;
-    void unsetresouceDetail();
-    void setResouceDetail(const Object& value);
+    Object getResourceDetail() const;
+    bool resourceDetailIsSet() const;
+    void unsetresourceDetail();
+    void setResourceDetail(const Object& value);
 
     /// <summary>
     /// 资源ID
@@ -79,8 +79,8 @@ public:
 
 
 protected:
-    Object resouceDetail_;
-    bool resouceDetailIsSet_;
+    Object resourceDetail_;
+    bool resourceDetailIsSet_;
     std::string resourceId_;
     bool resourceIdIsSet_;
     std::string resourceName_;

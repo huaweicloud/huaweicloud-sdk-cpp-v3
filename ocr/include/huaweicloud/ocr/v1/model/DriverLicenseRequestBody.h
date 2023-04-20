@@ -57,7 +57,7 @@ public:
     void setUrl(const std::string& value);
 
     /// <summary>
-    /// 检测场景: - front：驾驶证主页。 - back：驾驶证副页。  &gt; 说明：如果参数值为空或无该参数，系统默认识别主页，建议填写，准确率更高。 
+    /// 检测场景: - front：驾驶证主页。 - back：驾驶证副页。 - double_side：驾驶证双页信息  &gt; 说明：如果参数值为空或无该参数，系统默认识别主页，建议填写，准确率更高。 
     /// </summary>
 
     std::string getSide() const;

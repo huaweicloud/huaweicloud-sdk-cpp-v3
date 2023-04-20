@@ -1,3 +1,46 @@
+# 3.1.31 2023-04-20
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **RecognizeDriverLicense**
+    - changes of response param
+      - `+ result.front`
+      - `+ result.back`
+  - **RecognizeThailandIdcard**
+    - changes of response param
+      - `+ result.type`
+      - `+ result.name_en`
+      - `+ result.ref_number`
+      - `+ result.confidence.name_en`
+      - `+ result.confidence.ref_number`
+
+### HuaweiCloud SDK VPC
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListVpcsByTags**
+    - changes of response param
+      - `+ resources.resource_detail`
+      - `- resources.resouce_detail`
+  - **ListSubnetsByTags**
+    - changes of response param
+      - `+ resources.resource_detail`
+      - `- resources.resouce_detail`
+  - **UpdateRouteTable**
+    - changes of request param
+      - `+ routetable.routes.add`
+      - `+ routetable.routes.mod`
+      - `+ routetable.routes.del`
+      - `* routetable.routes: map<string, list<RouteTableRoute>> -> object<RouteTableRouteAction>`
+
 # 3.1.30 2023-04-13
 
 ### HuaweiCloud SDK EVS

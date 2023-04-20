@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/ocr/v1/model/DriverLicenseResult.h"
+#include "huaweicloud/ocr/v1/model/DriverLicenseFront.h"
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -11,7 +11,7 @@ namespace Model {
 
 
 
-DriverLicenseResult::DriverLicenseResult()
+DriverLicenseFront::DriverLicenseFront()
 {
     type_ = "";
     typeIsSet_ = false;
@@ -37,10 +37,6 @@ DriverLicenseResult::DriverLicenseResult()
     validToIsSet_ = false;
     issuingAuthority_ = "";
     issuingAuthorityIsSet_ = false;
-    fileNumber_ = "";
-    fileNumberIsSet_ = false;
-    record_ = "";
-    recordIsSet_ = false;
     accumulatedScores_ = "";
     accumulatedScoresIsSet_ = false;
     statusIsSet_ = false;
@@ -48,18 +44,18 @@ DriverLicenseResult::DriverLicenseResult()
     generationDateIsSet_ = false;
     currentTime_ = "";
     currentTimeIsSet_ = false;
+    fileNumber_ = "";
+    fileNumberIsSet_ = false;
     textLocationIsSet_ = false;
-    frontIsSet_ = false;
-    backIsSet_ = false;
 }
 
-DriverLicenseResult::~DriverLicenseResult() = default;
+DriverLicenseFront::~DriverLicenseFront() = default;
 
-void DriverLicenseResult::validate()
+void DriverLicenseFront::validate()
 {
 }
 
-web::json::value DriverLicenseResult::toJson() const
+web::json::value DriverLicenseFront::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -99,12 +95,6 @@ web::json::value DriverLicenseResult::toJson() const
     if(issuingAuthorityIsSet_) {
         val[utility::conversions::to_string_t("issuing_authority")] = ModelBase::toJson(issuingAuthority_);
     }
-    if(fileNumberIsSet_) {
-        val[utility::conversions::to_string_t("file_number")] = ModelBase::toJson(fileNumber_);
-    }
-    if(recordIsSet_) {
-        val[utility::conversions::to_string_t("record")] = ModelBase::toJson(record_);
-    }
     if(accumulatedScoresIsSet_) {
         val[utility::conversions::to_string_t("accumulated_scores")] = ModelBase::toJson(accumulatedScores_);
     }
@@ -117,20 +107,17 @@ web::json::value DriverLicenseResult::toJson() const
     if(currentTimeIsSet_) {
         val[utility::conversions::to_string_t("current_time")] = ModelBase::toJson(currentTime_);
     }
+    if(fileNumberIsSet_) {
+        val[utility::conversions::to_string_t("file_number")] = ModelBase::toJson(fileNumber_);
+    }
     if(textLocationIsSet_) {
         val[utility::conversions::to_string_t("text_location")] = ModelBase::toJson(textLocation_);
-    }
-    if(frontIsSet_) {
-        val[utility::conversions::to_string_t("front")] = ModelBase::toJson(front_);
-    }
-    if(backIsSet_) {
-        val[utility::conversions::to_string_t("back")] = ModelBase::toJson(back_);
     }
 
     return val;
 }
 
-bool DriverLicenseResult::fromJson(const web::json::value& val)
+bool DriverLicenseFront::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -242,24 +229,6 @@ bool DriverLicenseResult::fromJson(const web::json::value& val)
             setIssuingAuthority(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("file_number"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("file_number"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setFileNumber(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("record"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("record"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setRecord(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("accumulated_scores"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("accumulated_scores"));
         if(!fieldValue.is_null())
@@ -296,6 +265,15 @@ bool DriverLicenseResult::fromJson(const web::json::value& val)
             setCurrentTime(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("file_number"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("file_number"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFileNumber(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("text_location"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("text_location"));
         if(!fieldValue.is_null())
@@ -305,467 +283,386 @@ bool DriverLicenseResult::fromJson(const web::json::value& val)
             setTextLocation(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("front"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("front"));
-        if(!fieldValue.is_null())
-        {
-            DriverLicenseFront refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setFront(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("back"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("back"));
-        if(!fieldValue.is_null())
-        {
-            DriverLicenseBack refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setBack(refVal);
-        }
-    }
     return ok;
 }
 
 
-std::string DriverLicenseResult::getType() const
+std::string DriverLicenseFront::getType() const
 {
     return type_;
 }
 
-void DriverLicenseResult::setType(const std::string& value)
+void DriverLicenseFront::setType(const std::string& value)
 {
     type_ = value;
     typeIsSet_ = true;
 }
 
-bool DriverLicenseResult::typeIsSet() const
+bool DriverLicenseFront::typeIsSet() const
 {
     return typeIsSet_;
 }
 
-void DriverLicenseResult::unsettype()
+void DriverLicenseFront::unsettype()
 {
     typeIsSet_ = false;
 }
 
-std::string DriverLicenseResult::getNumber() const
+std::string DriverLicenseFront::getNumber() const
 {
     return number_;
 }
 
-void DriverLicenseResult::setNumber(const std::string& value)
+void DriverLicenseFront::setNumber(const std::string& value)
 {
     number_ = value;
     numberIsSet_ = true;
 }
 
-bool DriverLicenseResult::numberIsSet() const
+bool DriverLicenseFront::numberIsSet() const
 {
     return numberIsSet_;
 }
 
-void DriverLicenseResult::unsetnumber()
+void DriverLicenseFront::unsetnumber()
 {
     numberIsSet_ = false;
 }
 
-std::string DriverLicenseResult::getName() const
+std::string DriverLicenseFront::getName() const
 {
     return name_;
 }
 
-void DriverLicenseResult::setName(const std::string& value)
+void DriverLicenseFront::setName(const std::string& value)
 {
     name_ = value;
     nameIsSet_ = true;
 }
 
-bool DriverLicenseResult::nameIsSet() const
+bool DriverLicenseFront::nameIsSet() const
 {
     return nameIsSet_;
 }
 
-void DriverLicenseResult::unsetname()
+void DriverLicenseFront::unsetname()
 {
     nameIsSet_ = false;
 }
 
-std::string DriverLicenseResult::getSex() const
+std::string DriverLicenseFront::getSex() const
 {
     return sex_;
 }
 
-void DriverLicenseResult::setSex(const std::string& value)
+void DriverLicenseFront::setSex(const std::string& value)
 {
     sex_ = value;
     sexIsSet_ = true;
 }
 
-bool DriverLicenseResult::sexIsSet() const
+bool DriverLicenseFront::sexIsSet() const
 {
     return sexIsSet_;
 }
 
-void DriverLicenseResult::unsetsex()
+void DriverLicenseFront::unsetsex()
 {
     sexIsSet_ = false;
 }
 
-std::string DriverLicenseResult::getNationality() const
+std::string DriverLicenseFront::getNationality() const
 {
     return nationality_;
 }
 
-void DriverLicenseResult::setNationality(const std::string& value)
+void DriverLicenseFront::setNationality(const std::string& value)
 {
     nationality_ = value;
     nationalityIsSet_ = true;
 }
 
-bool DriverLicenseResult::nationalityIsSet() const
+bool DriverLicenseFront::nationalityIsSet() const
 {
     return nationalityIsSet_;
 }
 
-void DriverLicenseResult::unsetnationality()
+void DriverLicenseFront::unsetnationality()
 {
     nationalityIsSet_ = false;
 }
 
-std::string DriverLicenseResult::getAddress() const
+std::string DriverLicenseFront::getAddress() const
 {
     return address_;
 }
 
-void DriverLicenseResult::setAddress(const std::string& value)
+void DriverLicenseFront::setAddress(const std::string& value)
 {
     address_ = value;
     addressIsSet_ = true;
 }
 
-bool DriverLicenseResult::addressIsSet() const
+bool DriverLicenseFront::addressIsSet() const
 {
     return addressIsSet_;
 }
 
-void DriverLicenseResult::unsetaddress()
+void DriverLicenseFront::unsetaddress()
 {
     addressIsSet_ = false;
 }
 
-std::string DriverLicenseResult::getBirth() const
+std::string DriverLicenseFront::getBirth() const
 {
     return birth_;
 }
 
-void DriverLicenseResult::setBirth(const std::string& value)
+void DriverLicenseFront::setBirth(const std::string& value)
 {
     birth_ = value;
     birthIsSet_ = true;
 }
 
-bool DriverLicenseResult::birthIsSet() const
+bool DriverLicenseFront::birthIsSet() const
 {
     return birthIsSet_;
 }
 
-void DriverLicenseResult::unsetbirth()
+void DriverLicenseFront::unsetbirth()
 {
     birthIsSet_ = false;
 }
 
-std::string DriverLicenseResult::getIssueDate() const
+std::string DriverLicenseFront::getIssueDate() const
 {
     return issueDate_;
 }
 
-void DriverLicenseResult::setIssueDate(const std::string& value)
+void DriverLicenseFront::setIssueDate(const std::string& value)
 {
     issueDate_ = value;
     issueDateIsSet_ = true;
 }
 
-bool DriverLicenseResult::issueDateIsSet() const
+bool DriverLicenseFront::issueDateIsSet() const
 {
     return issueDateIsSet_;
 }
 
-void DriverLicenseResult::unsetissueDate()
+void DriverLicenseFront::unsetissueDate()
 {
     issueDateIsSet_ = false;
 }
 
-std::string DriverLicenseResult::getClass() const
+std::string DriverLicenseFront::getClass() const
 {
     return class_;
 }
 
-void DriverLicenseResult::setClass(const std::string& value)
+void DriverLicenseFront::setClass(const std::string& value)
 {
     class_ = value;
     classIsSet_ = true;
 }
 
-bool DriverLicenseResult::classIsSet() const
+bool DriverLicenseFront::classIsSet() const
 {
     return classIsSet_;
 }
 
-void DriverLicenseResult::unsetclass()
+void DriverLicenseFront::unsetclass()
 {
     classIsSet_ = false;
 }
 
-std::string DriverLicenseResult::getValidFrom() const
+std::string DriverLicenseFront::getValidFrom() const
 {
     return validFrom_;
 }
 
-void DriverLicenseResult::setValidFrom(const std::string& value)
+void DriverLicenseFront::setValidFrom(const std::string& value)
 {
     validFrom_ = value;
     validFromIsSet_ = true;
 }
 
-bool DriverLicenseResult::validFromIsSet() const
+bool DriverLicenseFront::validFromIsSet() const
 {
     return validFromIsSet_;
 }
 
-void DriverLicenseResult::unsetvalidFrom()
+void DriverLicenseFront::unsetvalidFrom()
 {
     validFromIsSet_ = false;
 }
 
-std::string DriverLicenseResult::getValidTo() const
+std::string DriverLicenseFront::getValidTo() const
 {
     return validTo_;
 }
 
-void DriverLicenseResult::setValidTo(const std::string& value)
+void DriverLicenseFront::setValidTo(const std::string& value)
 {
     validTo_ = value;
     validToIsSet_ = true;
 }
 
-bool DriverLicenseResult::validToIsSet() const
+bool DriverLicenseFront::validToIsSet() const
 {
     return validToIsSet_;
 }
 
-void DriverLicenseResult::unsetvalidTo()
+void DriverLicenseFront::unsetvalidTo()
 {
     validToIsSet_ = false;
 }
 
-std::string DriverLicenseResult::getIssuingAuthority() const
+std::string DriverLicenseFront::getIssuingAuthority() const
 {
     return issuingAuthority_;
 }
 
-void DriverLicenseResult::setIssuingAuthority(const std::string& value)
+void DriverLicenseFront::setIssuingAuthority(const std::string& value)
 {
     issuingAuthority_ = value;
     issuingAuthorityIsSet_ = true;
 }
 
-bool DriverLicenseResult::issuingAuthorityIsSet() const
+bool DriverLicenseFront::issuingAuthorityIsSet() const
 {
     return issuingAuthorityIsSet_;
 }
 
-void DriverLicenseResult::unsetissuingAuthority()
+void DriverLicenseFront::unsetissuingAuthority()
 {
     issuingAuthorityIsSet_ = false;
 }
 
-std::string DriverLicenseResult::getFileNumber() const
-{
-    return fileNumber_;
-}
-
-void DriverLicenseResult::setFileNumber(const std::string& value)
-{
-    fileNumber_ = value;
-    fileNumberIsSet_ = true;
-}
-
-bool DriverLicenseResult::fileNumberIsSet() const
-{
-    return fileNumberIsSet_;
-}
-
-void DriverLicenseResult::unsetfileNumber()
-{
-    fileNumberIsSet_ = false;
-}
-
-std::string DriverLicenseResult::getRecord() const
-{
-    return record_;
-}
-
-void DriverLicenseResult::setRecord(const std::string& value)
-{
-    record_ = value;
-    recordIsSet_ = true;
-}
-
-bool DriverLicenseResult::recordIsSet() const
-{
-    return recordIsSet_;
-}
-
-void DriverLicenseResult::unsetrecord()
-{
-    recordIsSet_ = false;
-}
-
-std::string DriverLicenseResult::getAccumulatedScores() const
+std::string DriverLicenseFront::getAccumulatedScores() const
 {
     return accumulatedScores_;
 }
 
-void DriverLicenseResult::setAccumulatedScores(const std::string& value)
+void DriverLicenseFront::setAccumulatedScores(const std::string& value)
 {
     accumulatedScores_ = value;
     accumulatedScoresIsSet_ = true;
 }
 
-bool DriverLicenseResult::accumulatedScoresIsSet() const
+bool DriverLicenseFront::accumulatedScoresIsSet() const
 {
     return accumulatedScoresIsSet_;
 }
 
-void DriverLicenseResult::unsetaccumulatedScores()
+void DriverLicenseFront::unsetaccumulatedScores()
 {
     accumulatedScoresIsSet_ = false;
 }
 
-std::vector<std::string>& DriverLicenseResult::getStatus()
+std::vector<std::string>& DriverLicenseFront::getStatus()
 {
     return status_;
 }
 
-void DriverLicenseResult::setStatus(const std::vector<std::string>& value)
+void DriverLicenseFront::setStatus(const std::vector<std::string>& value)
 {
     status_ = value;
     statusIsSet_ = true;
 }
 
-bool DriverLicenseResult::statusIsSet() const
+bool DriverLicenseFront::statusIsSet() const
 {
     return statusIsSet_;
 }
 
-void DriverLicenseResult::unsetstatus()
+void DriverLicenseFront::unsetstatus()
 {
     statusIsSet_ = false;
 }
 
-std::string DriverLicenseResult::getGenerationDate() const
+std::string DriverLicenseFront::getGenerationDate() const
 {
     return generationDate_;
 }
 
-void DriverLicenseResult::setGenerationDate(const std::string& value)
+void DriverLicenseFront::setGenerationDate(const std::string& value)
 {
     generationDate_ = value;
     generationDateIsSet_ = true;
 }
 
-bool DriverLicenseResult::generationDateIsSet() const
+bool DriverLicenseFront::generationDateIsSet() const
 {
     return generationDateIsSet_;
 }
 
-void DriverLicenseResult::unsetgenerationDate()
+void DriverLicenseFront::unsetgenerationDate()
 {
     generationDateIsSet_ = false;
 }
 
-std::string DriverLicenseResult::getCurrentTime() const
+std::string DriverLicenseFront::getCurrentTime() const
 {
     return currentTime_;
 }
 
-void DriverLicenseResult::setCurrentTime(const std::string& value)
+void DriverLicenseFront::setCurrentTime(const std::string& value)
 {
     currentTime_ = value;
     currentTimeIsSet_ = true;
 }
 
-bool DriverLicenseResult::currentTimeIsSet() const
+bool DriverLicenseFront::currentTimeIsSet() const
 {
     return currentTimeIsSet_;
 }
 
-void DriverLicenseResult::unsetcurrentTime()
+void DriverLicenseFront::unsetcurrentTime()
 {
     currentTimeIsSet_ = false;
 }
 
-Object DriverLicenseResult::getTextLocation() const
+std::string DriverLicenseFront::getFileNumber() const
+{
+    return fileNumber_;
+}
+
+void DriverLicenseFront::setFileNumber(const std::string& value)
+{
+    fileNumber_ = value;
+    fileNumberIsSet_ = true;
+}
+
+bool DriverLicenseFront::fileNumberIsSet() const
+{
+    return fileNumberIsSet_;
+}
+
+void DriverLicenseFront::unsetfileNumber()
+{
+    fileNumberIsSet_ = false;
+}
+
+Object DriverLicenseFront::getTextLocation() const
 {
     return textLocation_;
 }
 
-void DriverLicenseResult::setTextLocation(const Object& value)
+void DriverLicenseFront::setTextLocation(const Object& value)
 {
     textLocation_ = value;
     textLocationIsSet_ = true;
 }
 
-bool DriverLicenseResult::textLocationIsSet() const
+bool DriverLicenseFront::textLocationIsSet() const
 {
     return textLocationIsSet_;
 }
 
-void DriverLicenseResult::unsettextLocation()
+void DriverLicenseFront::unsettextLocation()
 {
     textLocationIsSet_ = false;
-}
-
-DriverLicenseFront DriverLicenseResult::getFront() const
-{
-    return front_;
-}
-
-void DriverLicenseResult::setFront(const DriverLicenseFront& value)
-{
-    front_ = value;
-    frontIsSet_ = true;
-}
-
-bool DriverLicenseResult::frontIsSet() const
-{
-    return frontIsSet_;
-}
-
-void DriverLicenseResult::unsetfront()
-{
-    frontIsSet_ = false;
-}
-
-DriverLicenseBack DriverLicenseResult::getBack() const
-{
-    return back_;
-}
-
-void DriverLicenseResult::setBack(const DriverLicenseBack& value)
-{
-    back_ = value;
-    backIsSet_ = true;
-}
-
-bool DriverLicenseResult::backIsSet() const
-{
-    return backIsSet_;
-}
-
-void DriverLicenseResult::unsetback()
-{
-    backIsSet_ = false;
 }
 
 }

@@ -8,9 +8,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
-#include <huaweicloud/vpc/v2/model/RouteTableRoute.h>
-#include <map>
-#include <vector>
+#include <huaweicloud/vpc/v2/model/RouteTableRouteAction.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -60,13 +58,13 @@ public:
     void setDescription(const std::string& value);
 
     /// <summary>
-    /// 功能说明：路由对象  取值范围：参见route字段说明。更新存在三种动作：     1）add：新增路由条目，type，destination，nexthop必选。     2）mod：修改路由信息，type，destination，nexthop必选。     3）del：删除路由条目，destination必选  约束：     每个路由表最大关联200条路由。     不支持直接修改destination，如需修改，只能使用del先删除对应路由，然后使用add新增路由。
+    /// 
     /// </summary>
 
-    std::map<std::string, std::vector<RouteTableRoute>>& getRoutes();
+    RouteTableRouteAction getRoutes() const;
     bool routesIsSet() const;
     void unsetroutes();
-    void setRoutes(const std::map<std::string, std::vector<RouteTableRoute>>& value);
+    void setRoutes(const RouteTableRouteAction& value);
 
 
 protected:
@@ -74,7 +72,7 @@ protected:
     bool nameIsSet_;
     std::string description_;
     bool descriptionIsSet_;
-    std::map<std::string, std::vector<RouteTableRoute>> routes_;
+    RouteTableRouteAction routes_;
     bool routesIsSet_;
 
 };

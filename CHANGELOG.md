@@ -1,3 +1,25 @@
+# 3.1.32 2023-04-27
+
+### HuaweiCloud SDK LTS
+
+- _Features_
+    - Support `Log Tank Service`.
+- _Bug Fix_
+    - None
+- _Change_
+    - None
+
+### HuaweiCloud SDK CSMS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListResourceInstances**
+    - changes of response param
+      - `+ resources.sys_tags`
+
 # 3.1.31 2023-04-20
 
 ### HuaweiCloud SDK OCR

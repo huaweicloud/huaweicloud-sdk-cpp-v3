@@ -1,0 +1,104 @@
+#ifndef HUAWEICLOUD_SDK_LTS_V2_LtsRegion_H_
+#define HUAWEICLOUD_SDK_LTS_V2_LtsRegion_H_
+
+#include <huaweicloud/core/auth/Region.h>
+#include <huaweicloud/core/exception/SdkException.h>
+#include <huaweicloud/lts/v2/LtsExport.h>
+#include <map>
+#include <string>
+
+namespace HuaweiCloud {
+namespace Sdk {
+namespace Lts {
+namespace V2 {
+using namespace HuaweiCloud::Sdk::Core::Auth;
+
+class HUAWEICLOUD_LTS_V2_EXPORT LtsRegion {
+public:
+    LtsRegion();
+    virtual ~LtsRegion();
+
+    static Region valueOf(std::string regionId);
+
+    static std::map<std::string, Region> initRegions() {
+        std::map<std::string, Region> regions;
+        regions["cn-east-2"] = Region("cn-east-2",
+            { 
+                "https://lts.cn-east-2.myhuaweicloud.com"
+            });
+        regions["cn-east-3"] = Region("cn-east-3",
+            { 
+                "https://lts.cn-east-3.myhuaweicloud.com"
+            });
+        regions["cn-north-1"] = Region("cn-north-1",
+            { 
+                "https://lts.cn-north-1.myhuaweicloud.com"
+            });
+        regions["cn-north-2"] = Region("cn-north-2",
+            { 
+                "https://lts.cn-north-2.myhuaweicloud.com"
+            });
+        regions["cn-north-4"] = Region("cn-north-4",
+            { 
+                "https://lts.cn-north-4.myhuaweicloud.com"
+            });
+        regions["cn-south-1"] = Region("cn-south-1",
+            { 
+                "https://lts.cn-south-1.myhuaweicloud.com"
+            });
+        regions["cn-southwest-2"] = Region("cn-southwest-2",
+            { 
+                "https://lts.cn-southwest-2.myhuaweicloud.com"
+            });
+        regions["af-south-1"] = Region("af-south-1",
+            { 
+                "https://lts.af-south-1.myhuaweicloud.com"
+            });
+        regions["ap-southeast-1"] = Region("ap-southeast-1",
+            { 
+                "https://lts.ap-southeast-1.myhuaweicloud.com"
+            });
+        regions["ap-southeast-2"] = Region("ap-southeast-2",
+            { 
+                "https://lts.ap-southeast-2.myhuaweicloud.com"
+            });
+        regions["ap-southeast-3"] = Region("ap-southeast-3",
+            { 
+                "https://lts.ap-southeast-3.myhuaweicloud.com"
+            });
+        regions["la-south-2"] = Region("la-south-2",
+            { 
+                "https://lts.la-south-2.myhuaweicloud.com"
+            });
+        regions["sa-brazil-1"] = Region("sa-brazil-1",
+            { 
+                "https://lts.sa-brazil-1.myhuaweicloud.com"
+            });
+        regions["la-north-2"] = Region("la-north-2",
+            { 
+                "https://lts.la-north-2.myhuaweicloud.com"
+            });
+        regions["cn-north-9"] = Region("cn-north-9",
+            { 
+                "https://lts.cn-north-9.myhuaweicloud.com"
+            });
+        regions["cn-south-2"] = Region("cn-south-2",
+            { 
+                "https://lts.cn-south-2.myhuaweicloud.com"
+            });
+        regions["na-mexico-1"] = Region("na-mexico-1",
+            { 
+                "https://lts.na-mexico-1.myhuaweicloud.com"
+            });
+        return regions;
+    }
+private:
+    static std::map<std::string, Region> regions;
+};
+
+}
+}
+}
+}
+
+#endif // HUAWEICLOUD_SDK_LTS_V2_LtsRegion_H_

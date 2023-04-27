@@ -1,3 +1,25 @@
+# 3.1.32 2023-04-27
+
+### HuaweiCloud SDK LTS
+
+- _新增特性_
+    - 支持云日志服务
+- _解决问题_
+    - 无
+- _特性变更_
+    - 无
+
+### HuaweiCloud SDK CSMS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListResourceInstances**
+    - 响应参数变更
+      - `+ resources.sys_tags`
+
 # 3.1.31 2023-04-20
 
 ### HuaweiCloud SDK OCR

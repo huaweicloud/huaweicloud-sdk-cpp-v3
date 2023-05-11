@@ -7,7 +7,7 @@
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/lts/v2/model/AomMappingRequestInfo.h>
+#include <huaweicloud/lts/v2/model/UpdateAomMappingRequest.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -42,14 +42,14 @@ public:
     /// 
     /// </summary>
 
-    AomMappingRequestInfo getBody() const;
+    UpdateAomMappingRequest getBody() const;
     bool bodyIsSet() const;
     void unsetbody();
-    void setBody(const AomMappingRequestInfo& value);
+    void setBody(const UpdateAomMappingRequest& value);
 
 
 protected:
-    AomMappingRequestInfo body_;
+    UpdateAomMappingRequest body_;
     bool bodyIsSet_;
 
 #ifdef RTTR_FLAG

@@ -7,6 +7,7 @@
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/ecs/v2/model/ReinstallSeverMetadataWithoutCloudInitOption.h>
 #include <string>
 
 namespace HuaweiCloud {
@@ -74,6 +75,15 @@ public:
     void unsetmode();
     void setMode(const std::string& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    ReinstallSeverMetadataWithoutCloudInitOption getMetadata() const;
+    bool metadataIsSet() const;
+    void unsetmetadata();
+    void setMetadata(const ReinstallSeverMetadataWithoutCloudInitOption& value);
+
 
 protected:
     std::string adminpass_;
@@ -84,6 +94,8 @@ protected:
     bool useridIsSet_;
     std::string mode_;
     bool modeIsSet_;
+    ReinstallSeverMetadataWithoutCloudInitOption metadata_;
+    bool metadataIsSet_;
 
 };
 

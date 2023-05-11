@@ -8,6 +8,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <huaweicloud/ecs/v2/model/ChangeSeversOsMetadataWithoutCloudInitOption.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -83,6 +84,15 @@ public:
     void unsetmode();
     void setMode(const std::string& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    ChangeSeversOsMetadataWithoutCloudInitOption getMetadata() const;
+    bool metadataIsSet() const;
+    void unsetmetadata();
+    void setMetadata(const ChangeSeversOsMetadataWithoutCloudInitOption& value);
+
 
 protected:
     std::string adminpass_;
@@ -95,6 +105,8 @@ protected:
     bool imageidIsSet_;
     std::string mode_;
     bool modeIsSet_;
+    ChangeSeversOsMetadataWithoutCloudInitOption metadata_;
+    bool metadataIsSet_;
 
 };
 

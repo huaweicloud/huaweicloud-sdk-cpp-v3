@@ -21,6 +21,7 @@ ReinstallServerWithoutCloudInitOption::ReinstallServerWithoutCloudInitOption()
     useridIsSet_ = false;
     mode_ = "";
     modeIsSet_ = false;
+    metadataIsSet_ = false;
 }
 
 ReinstallServerWithoutCloudInitOption::~ReinstallServerWithoutCloudInitOption() = default;
@@ -44,6 +45,9 @@ web::json::value ReinstallServerWithoutCloudInitOption::toJson() const
     }
     if(modeIsSet_) {
         val[utility::conversions::to_string_t("mode")] = ModelBase::toJson(mode_);
+    }
+    if(metadataIsSet_) {
+        val[utility::conversions::to_string_t("metadata")] = ModelBase::toJson(metadata_);
     }
 
     return val;
@@ -87,6 +91,15 @@ bool ReinstallServerWithoutCloudInitOption::fromJson(const web::json::value& val
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setMode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("metadata"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("metadata"));
+        if(!fieldValue.is_null())
+        {
+            ReinstallSeverMetadataWithoutCloudInitOption refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMetadata(refVal);
         }
     }
     return ok;
@@ -175,6 +188,27 @@ bool ReinstallServerWithoutCloudInitOption::modeIsSet() const
 void ReinstallServerWithoutCloudInitOption::unsetmode()
 {
     modeIsSet_ = false;
+}
+
+ReinstallSeverMetadataWithoutCloudInitOption ReinstallServerWithoutCloudInitOption::getMetadata() const
+{
+    return metadata_;
+}
+
+void ReinstallServerWithoutCloudInitOption::setMetadata(const ReinstallSeverMetadataWithoutCloudInitOption& value)
+{
+    metadata_ = value;
+    metadataIsSet_ = true;
+}
+
+bool ReinstallServerWithoutCloudInitOption::metadataIsSet() const
+{
+    return metadataIsSet_;
+}
+
+void ReinstallServerWithoutCloudInitOption::unsetmetadata()
+{
+    metadataIsSet_ = false;
 }
 
 }

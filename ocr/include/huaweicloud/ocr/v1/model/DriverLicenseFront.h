@@ -185,7 +185,7 @@ public:
     void setCurrentTime(const std::string& value);
 
     /// <summary>
-    /// 档案编号。 
+    /// 档案编号。  &gt; 说明：当驾驶证类型为电子驾驶证时才返回。 
     /// </summary>
 
     std::string getFileNumber() const;

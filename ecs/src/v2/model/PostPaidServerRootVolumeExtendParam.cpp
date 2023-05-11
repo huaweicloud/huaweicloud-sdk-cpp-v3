@@ -13,6 +13,10 @@ namespace Model {
 
 PostPaidServerRootVolumeExtendParam::PostPaidServerRootVolumeExtendParam()
 {
+    systemEncrypted_ = "";
+    systemEncryptedIsSet_ = false;
+    systemCmkid_ = "";
+    systemCmkidIsSet_ = false;
     resourceSpecCode_ = "";
     resourceSpecCodeIsSet_ = false;
     resourceType_ = "";
@@ -31,6 +35,12 @@ web::json::value PostPaidServerRootVolumeExtendParam::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(systemEncryptedIsSet_) {
+        val[utility::conversions::to_string_t("__system__encrypted")] = ModelBase::toJson(systemEncrypted_);
+    }
+    if(systemCmkidIsSet_) {
+        val[utility::conversions::to_string_t("__system__cmkid")] = ModelBase::toJson(systemCmkid_);
+    }
     if(resourceSpecCodeIsSet_) {
         val[utility::conversions::to_string_t("resourceSpecCode")] = ModelBase::toJson(resourceSpecCode_);
     }
@@ -48,6 +58,24 @@ bool PostPaidServerRootVolumeExtendParam::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("__system__encrypted"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("__system__encrypted"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSystemEncrypted(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("__system__cmkid"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("__system__cmkid"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSystemCmkid(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("resourceSpecCode"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("resourceSpecCode"));
         if(!fieldValue.is_null())
@@ -78,6 +106,48 @@ bool PostPaidServerRootVolumeExtendParam::fromJson(const web::json::value& val)
     return ok;
 }
 
+
+std::string PostPaidServerRootVolumeExtendParam::getSystemEncrypted() const
+{
+    return systemEncrypted_;
+}
+
+void PostPaidServerRootVolumeExtendParam::setSystemEncrypted(const std::string& value)
+{
+    systemEncrypted_ = value;
+    systemEncryptedIsSet_ = true;
+}
+
+bool PostPaidServerRootVolumeExtendParam::systemEncryptedIsSet() const
+{
+    return systemEncryptedIsSet_;
+}
+
+void PostPaidServerRootVolumeExtendParam::unsetsystemEncrypted()
+{
+    systemEncryptedIsSet_ = false;
+}
+
+std::string PostPaidServerRootVolumeExtendParam::getSystemCmkid() const
+{
+    return systemCmkid_;
+}
+
+void PostPaidServerRootVolumeExtendParam::setSystemCmkid(const std::string& value)
+{
+    systemCmkid_ = value;
+    systemCmkidIsSet_ = true;
+}
+
+bool PostPaidServerRootVolumeExtendParam::systemCmkidIsSet() const
+{
+    return systemCmkidIsSet_;
+}
+
+void PostPaidServerRootVolumeExtendParam::unsetsystemCmkid()
+{
+    systemCmkidIsSet_ = false;
+}
 
 std::string PostPaidServerRootVolumeExtendParam::getResourceSpecCode() const
 {

@@ -41,7 +41,7 @@ bool UpdateAomMappingRulesRequest::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
         if(!fieldValue.is_null())
         {
-            AomMappingRequestInfo refVal;
+            UpdateAomMappingRequest refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBody(refVal);
         }
@@ -50,12 +50,12 @@ bool UpdateAomMappingRulesRequest::fromJson(const web::json::value& val)
 }
 
 
-AomMappingRequestInfo UpdateAomMappingRulesRequest::getBody() const
+UpdateAomMappingRequest UpdateAomMappingRulesRequest::getBody() const
 {
     return body_;
 }
 
-void UpdateAomMappingRulesRequest::setBody(const AomMappingRequestInfo& value)
+void UpdateAomMappingRulesRequest::setBody(const UpdateAomMappingRequest& value)
 {
     body_ = value;
     bodyIsSet_ = true;

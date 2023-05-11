@@ -85,7 +85,7 @@ public:
     void setAddress(const std::string& value);
 
     /// <summary>
-    /// 档案编号。 
+    /// 档案编号。 &gt; 说明：当驾驶证类型为纸质驾驶证时才返回。 
     /// </summary>
 
     std::string getFileNumber() const;

@@ -100,6 +100,9 @@
 #include <huaweicloud/ecs/v2/model/NovaAssociateSecurityGroupRequest.h>
 #include <huaweicloud/ecs/v2/model/NovaAssociateSecurityGroupRequestBody.h>
 #include <huaweicloud/ecs/v2/model/NovaAssociateSecurityGroupResponse.h>
+#include <huaweicloud/ecs/v2/model/NovaAttachInterfaceRequest.h>
+#include <huaweicloud/ecs/v2/model/NovaAttachInterfaceRequestBody.h>
+#include <huaweicloud/ecs/v2/model/NovaAttachInterfaceResponse.h>
 #include <huaweicloud/ecs/v2/model/NovaCreateKeypairRequest.h>
 #include <huaweicloud/ecs/v2/model/NovaCreateKeypairRequestBody.h>
 #include <huaweicloud/ecs/v2/model/NovaCreateKeypairResponse.h>
@@ -553,6 +556,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<NovaAssociateSecurityGroupResponse> novaAssociateSecurityGroup(
         NovaAssociateSecurityGroupRequest &request
+    );
+    // 添加云服务器网卡
+    //
+    // 给云服务器添加一张网卡。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<NovaAttachInterfaceResponse> novaAttachInterface(
+        NovaAttachInterfaceRequest &request
     );
     // 创建和导入SSH密钥
     //

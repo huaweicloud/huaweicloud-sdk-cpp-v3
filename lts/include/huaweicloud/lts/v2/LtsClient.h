@@ -183,6 +183,7 @@
 #include <huaweicloud/lts/v2/model/ShowAomMappingRuleResponse.h>
 #include <huaweicloud/lts/v2/model/ShowAomMappingRulesRequest.h>
 #include <huaweicloud/lts/v2/model/ShowAomMappingRulesResponse.h>
+#include <huaweicloud/lts/v2/model/UpdateAomMappingRequest.h>
 #include <huaweicloud/lts/v2/model/UpdateAomMappingRulesRequest.h>
 #include <huaweicloud/lts/v2/model/UpdateAomMappingRulesResponse.h>
 #include <string>

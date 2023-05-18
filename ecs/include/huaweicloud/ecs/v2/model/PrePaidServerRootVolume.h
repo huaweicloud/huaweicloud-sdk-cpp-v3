@@ -9,6 +9,7 @@
 
 #include <string>
 #include <huaweicloud/ecs/v2/model/PrePaidServerRootVolumeExtendParam.h>
+#include <huaweicloud/ecs/v2/model/PrePaidServerRootVolumeMetadata.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -67,6 +68,15 @@ public:
     void setExtendparam(const PrePaidServerRootVolumeExtendParam& value);
 
     /// <summary>
+    /// 
+    /// </summary>
+
+    PrePaidServerRootVolumeMetadata getMetadata() const;
+    bool metadataIsSet() const;
+    void unsetmetadata();
+    void setMetadata(const PrePaidServerRootVolumeMetadata& value);
+
+    /// <summary>
     /// 云服务器系统盘对应的磁盘存储类型。 磁盘存储类型枚举值： DSS：专属存储类型
     /// </summary>
 
@@ -101,6 +111,8 @@ protected:
     bool sizeIsSet_;
     PrePaidServerRootVolumeExtendParam extendparam_;
     bool extendparamIsSet_;
+    PrePaidServerRootVolumeMetadata metadata_;
+    bool metadataIsSet_;
     std::string clusterType_;
     bool clusterTypeIsSet_;
     std::string clusterId_;

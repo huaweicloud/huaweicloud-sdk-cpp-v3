@@ -31,6 +31,8 @@ PrePaidServerDataVolume::PrePaidServerDataVolume()
     metadataIsSet_ = false;
     dataImageId_ = "";
     dataImageIdIsSet_ = false;
+    deleteOnTermination_ = false;
+    deleteOnTerminationIsSet_ = false;
 }
 
 PrePaidServerDataVolume::~PrePaidServerDataVolume() = default;
@@ -72,6 +74,9 @@ web::json::value PrePaidServerDataVolume::toJson() const
     }
     if(dataImageIdIsSet_) {
         val[utility::conversions::to_string_t("data_image_id")] = ModelBase::toJson(dataImageId_);
+    }
+    if(deleteOnTerminationIsSet_) {
+        val[utility::conversions::to_string_t("delete_on_termination")] = ModelBase::toJson(deleteOnTermination_);
     }
 
     return val;
@@ -169,6 +174,15 @@ bool PrePaidServerDataVolume::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDataImageId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("delete_on_termination"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("delete_on_termination"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDeleteOnTermination(refVal);
         }
     }
     return ok;
@@ -383,6 +397,27 @@ bool PrePaidServerDataVolume::dataImageIdIsSet() const
 void PrePaidServerDataVolume::unsetdataImageId()
 {
     dataImageIdIsSet_ = false;
+}
+
+bool PrePaidServerDataVolume::isDeleteOnTermination() const
+{
+    return deleteOnTermination_;
+}
+
+void PrePaidServerDataVolume::setDeleteOnTermination(bool value)
+{
+    deleteOnTermination_ = value;
+    deleteOnTerminationIsSet_ = true;
+}
+
+bool PrePaidServerDataVolume::deleteOnTerminationIsSet() const
+{
+    return deleteOnTerminationIsSet_;
+}
+
+void PrePaidServerDataVolume::unsetdeleteOnTermination()
+{
+    deleteOnTerminationIsSet_ = false;
 }
 
 }

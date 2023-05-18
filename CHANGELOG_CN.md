@@ -1,3 +1,25 @@
+# 3.1.34 2023-05-18
+
+### HuaweiCloud SDK ECS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateServers**
+    - 请求参数变更
+      - `+ server.root_volume.metadata`
+      - `- server.root_volume.extendparam.__system__encrypted`
+      - `- server.root_volume.extendparam.__system__cmkid`
+      - `+ server.data_volumes.delete_on_termination`
+  - **CreatePostPaidServers**
+    - 请求参数变更
+      - `+ server.data_volumes.delete_on_termination`
+      - `+ server.root_volume.metadata`
+      - `- server.root_volume.extendparam.__system__encrypted`
+      - `- server.root_volume.extendparam.__system__cmkid`
+
 # 3.1.33 2023-05-11
 
 ### HuaweiCloud SDK ECS

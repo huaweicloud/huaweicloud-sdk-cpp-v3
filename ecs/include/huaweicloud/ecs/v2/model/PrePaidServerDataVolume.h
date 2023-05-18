@@ -130,6 +130,15 @@ public:
     void unsetdataImageId();
     void setDataImageId(const std::string& value);
 
+    /// <summary>
+    /// 弹性公网IP随实例释放策略。  true：弹性公网IP随实例释放。 false：弹性公网IP不随实例释放。 默认值：false。
+    /// </summary>
+
+    bool isDeleteOnTermination() const;
+    bool deleteOnTerminationIsSet() const;
+    void unsetdeleteOnTermination();
+    void setDeleteOnTermination(bool value);
+
 
 protected:
     std::string volumetype_;
@@ -152,6 +161,8 @@ protected:
     bool metadataIsSet_;
     std::string dataImageId_;
     bool dataImageIdIsSet_;
+    bool deleteOnTermination_;
+    bool deleteOnTerminationIsSet_;
 
 };
 

@@ -18,6 +18,7 @@ PrePaidServerRootVolume::PrePaidServerRootVolume()
     size_ = 0;
     sizeIsSet_ = false;
     extendparamIsSet_ = false;
+    metadataIsSet_ = false;
     clusterType_ = "";
     clusterTypeIsSet_ = false;
     clusterId_ = "";
@@ -44,6 +45,9 @@ web::json::value PrePaidServerRootVolume::toJson() const
     }
     if(extendparamIsSet_) {
         val[utility::conversions::to_string_t("extendparam")] = ModelBase::toJson(extendparam_);
+    }
+    if(metadataIsSet_) {
+        val[utility::conversions::to_string_t("metadata")] = ModelBase::toJson(metadata_);
     }
     if(clusterTypeIsSet_) {
         val[utility::conversions::to_string_t("cluster_type")] = ModelBase::toJson(clusterType_);
@@ -87,6 +91,15 @@ bool PrePaidServerRootVolume::fromJson(const web::json::value& val)
             PrePaidServerRootVolumeExtendParam refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setExtendparam(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("metadata"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("metadata"));
+        if(!fieldValue.is_null())
+        {
+            PrePaidServerRootVolumeMetadata refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMetadata(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("cluster_type"))) {
@@ -181,6 +194,27 @@ bool PrePaidServerRootVolume::extendparamIsSet() const
 void PrePaidServerRootVolume::unsetextendparam()
 {
     extendparamIsSet_ = false;
+}
+
+PrePaidServerRootVolumeMetadata PrePaidServerRootVolume::getMetadata() const
+{
+    return metadata_;
+}
+
+void PrePaidServerRootVolume::setMetadata(const PrePaidServerRootVolumeMetadata& value)
+{
+    metadata_ = value;
+    metadataIsSet_ = true;
+}
+
+bool PrePaidServerRootVolume::metadataIsSet() const
+{
+    return metadataIsSet_;
+}
+
+void PrePaidServerRootVolume::unsetmetadata()
+{
+    metadataIsSet_ = false;
 }
 
 std::string PrePaidServerRootVolume::getClusterType() const

@@ -7,6 +7,7 @@
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/ecs/v2/model/PostPaidServerRootVolumeMetadata.h>
 #include <string>
 #include <huaweicloud/ecs/v2/model/PostPaidServerRootVolumeExtendParam.h>
 
@@ -93,6 +94,15 @@ public:
     void unsetextendparam();
     void setExtendparam(const PostPaidServerRootVolumeExtendParam& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    PostPaidServerRootVolumeMetadata getMetadata() const;
+    bool metadataIsSet() const;
+    void unsetmetadata();
+    void setMetadata(const PostPaidServerRootVolumeMetadata& value);
+
 
 protected:
     std::string volumetype_;
@@ -107,6 +117,8 @@ protected:
     bool clusterIdIsSet_;
     PostPaidServerRootVolumeExtendParam extendparam_;
     bool extendparamIsSet_;
+    PostPaidServerRootVolumeMetadata metadata_;
+    bool metadataIsSet_;
 
 };
 

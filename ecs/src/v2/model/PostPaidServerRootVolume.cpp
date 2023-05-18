@@ -24,6 +24,7 @@ PostPaidServerRootVolume::PostPaidServerRootVolume()
     clusterId_ = "";
     clusterIdIsSet_ = false;
     extendparamIsSet_ = false;
+    metadataIsSet_ = false;
 }
 
 PostPaidServerRootVolume::~PostPaidServerRootVolume() = default;
@@ -53,6 +54,9 @@ web::json::value PostPaidServerRootVolume::toJson() const
     }
     if(extendparamIsSet_) {
         val[utility::conversions::to_string_t("extendparam")] = ModelBase::toJson(extendparam_);
+    }
+    if(metadataIsSet_) {
+        val[utility::conversions::to_string_t("metadata")] = ModelBase::toJson(metadata_);
     }
 
     return val;
@@ -114,6 +118,15 @@ bool PostPaidServerRootVolume::fromJson(const web::json::value& val)
             PostPaidServerRootVolumeExtendParam refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setExtendparam(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("metadata"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("metadata"));
+        if(!fieldValue.is_null())
+        {
+            PostPaidServerRootVolumeMetadata refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMetadata(refVal);
         }
     }
     return ok;
@@ -244,6 +257,27 @@ bool PostPaidServerRootVolume::extendparamIsSet() const
 void PostPaidServerRootVolume::unsetextendparam()
 {
     extendparamIsSet_ = false;
+}
+
+PostPaidServerRootVolumeMetadata PostPaidServerRootVolume::getMetadata() const
+{
+    return metadata_;
+}
+
+void PostPaidServerRootVolume::setMetadata(const PostPaidServerRootVolumeMetadata& value)
+{
+    metadata_ = value;
+    metadataIsSet_ = true;
+}
+
+bool PostPaidServerRootVolume::metadataIsSet() const
+{
+    return metadataIsSet_;
+}
+
+void PostPaidServerRootVolume::unsetmetadata()
+{
+    metadataIsSet_ = false;
 }
 
 }

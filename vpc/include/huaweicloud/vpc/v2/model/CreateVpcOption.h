@@ -8,6 +8,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -74,6 +75,15 @@ public:
     void unsetenterpriseProjectId();
     void setEnterpriseProjectId(const std::string& value);
 
+    /// <summary>
+    /// 功能说明：VPC资源标签。创建VPC时，给VPC添加资源标签。 取值范围：最大10个标签, key：标签名称; value：标签值。 格式：[key*value]，每一个标签的key和value之间用*连接
+    /// </summary>
+
+    std::vector<std::string>& getTags();
+    bool tagsIsSet() const;
+    void unsettags();
+    void setTags(const std::vector<std::string>& value);
+
 
 protected:
     std::string cidr_;
@@ -84,6 +94,8 @@ protected:
     bool descriptionIsSet_;
     std::string enterpriseProjectId_;
     bool enterpriseProjectIdIsSet_;
+    std::vector<std::string> tags_;
+    bool tagsIsSet_;
 
 };
 

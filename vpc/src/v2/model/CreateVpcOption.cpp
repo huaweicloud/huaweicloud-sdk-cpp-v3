@@ -21,6 +21,7 @@ CreateVpcOption::CreateVpcOption()
     descriptionIsSet_ = false;
     enterpriseProjectId_ = "";
     enterpriseProjectIdIsSet_ = false;
+    tagsIsSet_ = false;
 }
 
 CreateVpcOption::~CreateVpcOption() = default;
@@ -44,6 +45,9 @@ web::json::value CreateVpcOption::toJson() const
     }
     if(enterpriseProjectIdIsSet_) {
         val[utility::conversions::to_string_t("enterprise_project_id")] = ModelBase::toJson(enterpriseProjectId_);
+    }
+    if(tagsIsSet_) {
+        val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
     }
 
     return val;
@@ -87,6 +91,15 @@ bool CreateVpcOption::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEnterpriseProjectId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("tags"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("tags"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTags(refVal);
         }
     }
     return ok;
@@ -175,6 +188,27 @@ bool CreateVpcOption::enterpriseProjectIdIsSet() const
 void CreateVpcOption::unsetenterpriseProjectId()
 {
     enterpriseProjectIdIsSet_ = false;
+}
+
+std::vector<std::string>& CreateVpcOption::getTags()
+{
+    return tags_;
+}
+
+void CreateVpcOption::setTags(const std::vector<std::string>& value)
+{
+    tags_ = value;
+    tagsIsSet_ = true;
+}
+
+bool CreateVpcOption::tagsIsSet() const
+{
+    return tagsIsSet_;
+}
+
+void CreateVpcOption::unsettags()
+{
+    tagsIsSet_ = false;
 }
 
 }

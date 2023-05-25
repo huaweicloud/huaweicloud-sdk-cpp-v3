@@ -148,6 +148,15 @@ public:
     void unsetextraDhcpOpts();
     void setExtraDhcpOpts(const std::vector<ExtraDhcpOption>& value);
 
+    /// <summary>
+    /// 功能说明：子网资源标签。创建子网时，给子网添加资源标签。 取值范围：最大10个标签, key：标签名称; value：标签值。 格式：[key*value]，每一个标签的key和value之间用*连接
+    /// </summary>
+
+    std::vector<std::string>& getTags();
+    bool tagsIsSet() const;
+    void unsettags();
+    void setTags(const std::vector<std::string>& value);
+
 
 protected:
     std::string name_;
@@ -174,6 +183,8 @@ protected:
     bool availabilityZoneIsSet_;
     std::vector<ExtraDhcpOption> extraDhcpOpts_;
     bool extraDhcpOptsIsSet_;
+    std::vector<std::string> tags_;
+    bool tagsIsSet_;
 
 };
 

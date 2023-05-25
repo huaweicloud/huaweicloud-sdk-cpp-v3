@@ -1,3 +1,69 @@
+# 3.1.35 2023-05-25
+
+### HuaweiCloud SDK ECS
+
+- _新增特性_
+  - 支持接口`ListFlavorSellPolicies`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK EIP
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListPublicipsByTags**
+    - 响应参数变更
+      - `+ resources.resource_detail`
+      - `- resources.resouce_detail`
+  - **AddPublicipsIntoSharedBandwidth**
+    - 响应参数变更
+      - `+ bandwidth.enable_bandwidth_rules`
+      - `+ bandwidth.rule_quota`
+      - `+ bandwidth.bandwidth_rules`
+
+### HuaweiCloud SDK VPC
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateVpc**
+    - 请求参数变更
+      - `+ vpc.tags`
+  - **CreateSubnet**
+    - 请求参数变更
+      - `+ subnet.tags`
+    - **ShowAddressGroup**
+    - 响应参数变更
+      - `+ address_group.max_capacity`
+      - `+ address_group.status`
+      - `+ address_group.status_message`
+  - **UpdateAddressGroup**
+    - 请求参数变更
+      - `+ address_group.max_capacity`
+    - 响应参数变更
+      - `+ address_group.max_capacity`
+      - `+ address_group.status`
+      - `+ address_group.status_message`
+  - **ListAddressGroup**
+    - 响应参数变更
+      - `+ address_groups.max_capacity`
+      - `+ address_groups.status`
+      - `+ address_groups.status_message`
+  - **CreateAddressGroup**
+    - 请求参数变更
+      - `+ address_group.max_capacity`
+    - 响应参数变更
+      - `+ address_group.max_capacity`
+      - `+ address_group.status`
+      - `+ address_group.status_message`
+
 # 3.1.34 2023-05-18
 
 ### HuaweiCloud SDK ECS

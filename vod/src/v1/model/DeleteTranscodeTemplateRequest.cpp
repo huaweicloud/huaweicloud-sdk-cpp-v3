@@ -13,8 +13,6 @@ namespace Model {
 
 DeleteTranscodeTemplateRequest::DeleteTranscodeTemplateRequest()
 {
-    authorization_ = "";
-    authorizationIsSet_ = false;
     xSdkDate_ = "";
     xSdkDateIsSet_ = false;
     groupId_ = "";
@@ -31,9 +29,6 @@ web::json::value DeleteTranscodeTemplateRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(authorizationIsSet_) {
-        val[utility::conversions::to_string_t("Authorization")] = ModelBase::toJson(authorization_);
-    }
     if(xSdkDateIsSet_) {
         val[utility::conversions::to_string_t("X-Sdk-Date")] = ModelBase::toJson(xSdkDate_);
     }
@@ -48,15 +43,6 @@ bool DeleteTranscodeTemplateRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("Authorization"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("Authorization"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setAuthorization(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("X-Sdk-Date"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Sdk-Date"));
         if(!fieldValue.is_null())
@@ -78,27 +64,6 @@ bool DeleteTranscodeTemplateRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
-std::string DeleteTranscodeTemplateRequest::getAuthorization() const
-{
-    return authorization_;
-}
-
-void DeleteTranscodeTemplateRequest::setAuthorization(const std::string& value)
-{
-    authorization_ = value;
-    authorizationIsSet_ = true;
-}
-
-bool DeleteTranscodeTemplateRequest::authorizationIsSet() const
-{
-    return authorizationIsSet_;
-}
-
-void DeleteTranscodeTemplateRequest::unsetauthorization()
-{
-    authorizationIsSet_ = false;
-}
 
 std::string DeleteTranscodeTemplateRequest::getXSdkDate() const
 {

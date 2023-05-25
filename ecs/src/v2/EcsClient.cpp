@@ -1014,6 +1014,73 @@ std::shared_ptr<DisassociateServerVirtualIpResponse> EcsClient::disassociateServ
 
     return localVarResult;
 }
+std::shared_ptr<ListFlavorSellPoliciesResponse> EcsClient::listFlavorSellPolicies(ListFlavorSellPoliciesRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/cloudservers/flavor-sell-policies";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.flavorIdIsSet()) {
+        localVarQueryParams["flavor_id"] = parameterToString(request.getFlavorId());
+    }
+    if (request.sellStatusIsSet()) {
+        localVarQueryParams["sell_status"] = parameterToString(request.getSellStatus());
+    }
+    if (request.sellModeIsSet()) {
+        localVarQueryParams["sell_mode"] = parameterToString(request.getSellMode());
+    }
+    if (request.availabilityZoneIdIsSet()) {
+        localVarQueryParams["availability_zone_id"] = parameterToString(request.getAvailabilityZoneId());
+    }
+    if (request.longestSpotDurationHoursGtIsSet()) {
+        localVarQueryParams["longest_spot_duration_hours_gt"] = parameterToString(request.getLongestSpotDurationHoursGt());
+    }
+    if (request.largestSpotDurationCountGtIsSet()) {
+        localVarQueryParams["largest_spot_duration_count_gt"] = parameterToString(request.getLargestSpotDurationCountGt());
+    }
+    if (request.longestSpotDurationHoursIsSet()) {
+        localVarQueryParams["longest_spot_duration_hours"] = parameterToString(request.getLongestSpotDurationHours());
+    }
+    if (request.largestSpotDurationCountIsSet()) {
+        localVarQueryParams["largest_spot_duration_count"] = parameterToString(request.getLargestSpotDurationCount());
+    }
+    if (request.interruptionPolicyIsSet()) {
+        localVarQueryParams["interruption_policy"] = parameterToString(request.getInterruptionPolicy());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.markerIsSet()) {
+        localVarQueryParams["marker"] = parameterToString(request.getMarker());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+
+    std::shared_ptr<ListFlavorSellPoliciesResponse> localVarResult = std::make_shared<ListFlavorSellPoliciesResponse>();
+
+    if (!res->getHttpBody().empty()) {
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListFlavorsResponse> EcsClient::listFlavors(ListFlavorsRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/cloudservers/flavors";

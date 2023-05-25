@@ -39,15 +39,6 @@ public:
     /// ShowAssetTempAuthorityRequest members
 
     /// <summary>
-    /// 使用AK/SK方式认证时必选，携带的鉴权信息。 
-    /// </summary>
-
-    std::string getAuthorization() const;
-    bool authorizationIsSet() const;
-    void unsetauthorization();
-    void setAuthorization(const std::string& value);
-
-    /// <summary>
     /// 使用AK/SK方式认证时必选，请求的发生时间。 
     /// </summary>
 
@@ -121,8 +112,6 @@ public:
 
 
 protected:
-    std::string authorization_;
-    bool authorizationIsSet_;
     std::string xSdkDate_;
     bool xSdkDateIsSet_;
     std::string httpVerb_;

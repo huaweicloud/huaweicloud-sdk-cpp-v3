@@ -35,6 +35,7 @@ CreateSubnetOption::CreateSubnetOption()
     availabilityZone_ = "";
     availabilityZoneIsSet_ = false;
     extraDhcpOptsIsSet_ = false;
+    tagsIsSet_ = false;
 }
 
 CreateSubnetOption::~CreateSubnetOption() = default;
@@ -82,6 +83,9 @@ web::json::value CreateSubnetOption::toJson() const
     }
     if(extraDhcpOptsIsSet_) {
         val[utility::conversions::to_string_t("extra_dhcp_opts")] = ModelBase::toJson(extraDhcpOpts_);
+    }
+    if(tagsIsSet_) {
+        val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
     }
 
     return val;
@@ -197,6 +201,15 @@ bool CreateSubnetOption::fromJson(const web::json::value& val)
             std::vector<ExtraDhcpOption> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setExtraDhcpOpts(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("tags"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("tags"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTags(refVal);
         }
     }
     return ok;
@@ -453,6 +466,27 @@ bool CreateSubnetOption::extraDhcpOptsIsSet() const
 void CreateSubnetOption::unsetextraDhcpOpts()
 {
     extraDhcpOptsIsSet_ = false;
+}
+
+std::vector<std::string>& CreateSubnetOption::getTags()
+{
+    return tags_;
+}
+
+void CreateSubnetOption::setTags(const std::vector<std::string>& value)
+{
+    tags_ = value;
+    tagsIsSet_ = true;
+}
+
+bool CreateSubnetOption::tagsIsSet() const
+{
+    return tagsIsSet_;
+}
+
+void CreateSubnetOption::unsettags()
+{
+    tagsIsSet_ = false;
 }
 
 }

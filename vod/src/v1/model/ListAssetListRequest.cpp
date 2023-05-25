@@ -13,8 +13,6 @@ namespace Model {
 
 ListAssetListRequest::ListAssetListRequest()
 {
-    authorization_ = "";
-    authorizationIsSet_ = false;
     xSdkDate_ = "";
     xSdkDateIsSet_ = false;
     assetIdIsSet_ = false;
@@ -48,9 +46,6 @@ web::json::value ListAssetListRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(authorizationIsSet_) {
-        val[utility::conversions::to_string_t("Authorization")] = ModelBase::toJson(authorization_);
-    }
     if(xSdkDateIsSet_) {
         val[utility::conversions::to_string_t("X-Sdk-Date")] = ModelBase::toJson(xSdkDate_);
     }
@@ -95,15 +90,6 @@ bool ListAssetListRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("Authorization"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("Authorization"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setAuthorization(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("X-Sdk-Date"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Sdk-Date"));
         if(!fieldValue.is_null())
@@ -215,27 +201,6 @@ bool ListAssetListRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
-std::string ListAssetListRequest::getAuthorization() const
-{
-    return authorization_;
-}
-
-void ListAssetListRequest::setAuthorization(const std::string& value)
-{
-    authorization_ = value;
-    authorizationIsSet_ = true;
-}
-
-bool ListAssetListRequest::authorizationIsSet() const
-{
-    return authorizationIsSet_;
-}
-
-void ListAssetListRequest::unsetauthorization()
-{
-    authorizationIsSet_ = false;
-}
 
 std::string ListAssetListRequest::getXSdkDate() const
 {

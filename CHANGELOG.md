@@ -1,3 +1,69 @@
+# 3.1.35 2023-05-25
+
+### HuaweiCloud SDK ECS
+
+- _Features_
+  - Support the interface `ListFlavorSellPolicies`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK EIP
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListPublicipsByTags**
+    - changes of response param
+      - `+ resources.resource_detail`
+      - `- resources.resouce_detail`
+  - **AddPublicipsIntoSharedBandwidth**
+    - changes of response param
+      - `+ bandwidth.enable_bandwidth_rules`
+      - `+ bandwidth.rule_quota`
+      - `+ bandwidth.bandwidth_rules`
+
+### HuaweiCloud SDK VPC
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateVpc**
+    - changes of request param
+      - `+ vpc.tags`
+  - **CreateSubnet**
+    - changes of request param
+      - `+ subnet.tags`
+    - **ShowAddressGroup**
+    - changes of response param
+      - `+ address_group.max_capacity`
+      - `+ address_group.status`
+      - `+ address_group.status_message`
+  - **UpdateAddressGroup**
+    - changes of request param
+      - `+ address_group.max_capacity`
+    - changes of response param
+      - `+ address_group.max_capacity`
+      - `+ address_group.status`
+      - `+ address_group.status_message`
+  - **ListAddressGroup**
+    - changes of response param
+      - `+ address_groups.max_capacity`
+      - `+ address_groups.status`
+      - `+ address_groups.status_message`
+  - **CreateAddressGroup**
+    - changes of request param
+      - `+ address_group.max_capacity`
+    - changes of response param
+      - `+ address_group.max_capacity`
+      - `+ address_group.status`
+      - `+ address_group.status_message`
+
 # 3.1.34 2023-05-18
 
 ### HuaweiCloud SDK ECS

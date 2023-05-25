@@ -34,6 +34,11 @@ BandwidthRespInsert::BandwidthRespInsert()
     enterpriseProjectIdIsSet_ = false;
     status_ = "";
     statusIsSet_ = false;
+    enableBandwidthRules_ = false;
+    enableBandwidthRulesIsSet_ = false;
+    ruleQuota_ = 0;
+    ruleQuotaIsSet_ = false;
+    bandwidthRulesIsSet_ = false;
 }
 
 BandwidthRespInsert::~BandwidthRespInsert() = default;
@@ -78,6 +83,15 @@ web::json::value BandwidthRespInsert::toJson() const
     }
     if(statusIsSet_) {
         val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
+    }
+    if(enableBandwidthRulesIsSet_) {
+        val[utility::conversions::to_string_t("enable_bandwidth_rules")] = ModelBase::toJson(enableBandwidthRules_);
+    }
+    if(ruleQuotaIsSet_) {
+        val[utility::conversions::to_string_t("rule_quota")] = ModelBase::toJson(ruleQuota_);
+    }
+    if(bandwidthRulesIsSet_) {
+        val[utility::conversions::to_string_t("bandwidth_rules")] = ModelBase::toJson(bandwidthRules_);
     }
 
     return val;
@@ -184,6 +198,33 @@ bool BandwidthRespInsert::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("enable_bandwidth_rules"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enable_bandwidth_rules"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEnableBandwidthRules(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("rule_quota"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("rule_quota"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRuleQuota(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("bandwidth_rules"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("bandwidth_rules"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<BandWidthRules> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBandwidthRules(refVal);
         }
     }
     return ok;
@@ -419,6 +460,69 @@ bool BandwidthRespInsert::statusIsSet() const
 void BandwidthRespInsert::unsetstatus()
 {
     statusIsSet_ = false;
+}
+
+bool BandwidthRespInsert::isEnableBandwidthRules() const
+{
+    return enableBandwidthRules_;
+}
+
+void BandwidthRespInsert::setEnableBandwidthRules(bool value)
+{
+    enableBandwidthRules_ = value;
+    enableBandwidthRulesIsSet_ = true;
+}
+
+bool BandwidthRespInsert::enableBandwidthRulesIsSet() const
+{
+    return enableBandwidthRulesIsSet_;
+}
+
+void BandwidthRespInsert::unsetenableBandwidthRules()
+{
+    enableBandwidthRulesIsSet_ = false;
+}
+
+int32_t BandwidthRespInsert::getRuleQuota() const
+{
+    return ruleQuota_;
+}
+
+void BandwidthRespInsert::setRuleQuota(int32_t value)
+{
+    ruleQuota_ = value;
+    ruleQuotaIsSet_ = true;
+}
+
+bool BandwidthRespInsert::ruleQuotaIsSet() const
+{
+    return ruleQuotaIsSet_;
+}
+
+void BandwidthRespInsert::unsetruleQuota()
+{
+    ruleQuotaIsSet_ = false;
+}
+
+std::vector<BandWidthRules>& BandwidthRespInsert::getBandwidthRules()
+{
+    return bandwidthRules_;
+}
+
+void BandwidthRespInsert::setBandwidthRules(const std::vector<BandWidthRules>& value)
+{
+    bandwidthRules_ = value;
+    bandwidthRulesIsSet_ = true;
+}
+
+bool BandwidthRespInsert::bandwidthRulesIsSet() const
+{
+    return bandwidthRulesIsSet_;
+}
+
+void BandwidthRespInsert::unsetbandwidthRules()
+{
+    bandwidthRulesIsSet_ = false;
 }
 
 }

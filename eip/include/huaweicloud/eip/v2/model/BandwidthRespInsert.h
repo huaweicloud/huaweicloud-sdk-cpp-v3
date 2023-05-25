@@ -7,6 +7,7 @@
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/eip/v2/model/BandWidthRules.h>
 #include <huaweicloud/eip/v2/model/PublicipInfoResp.h>
 #include <string>
 #include <vector>
@@ -139,6 +140,33 @@ public:
     void unsetstatus();
     void setStatus(const std::string& value);
 
+    /// <summary>
+    /// 功能说明：是否开启企业级qos 取值范围：true/false
+    /// </summary>
+
+    bool isEnableBandwidthRules() const;
+    bool enableBandwidthRulesIsSet() const;
+    void unsetenableBandwidthRules();
+    void setEnableBandwidthRules(bool value);
+
+    /// <summary>
+    /// 功能说明：带宽支持的最大分组规则数。
+    /// </summary>
+
+    int32_t getRuleQuota() const;
+    bool ruleQuotaIsSet() const;
+    void unsetruleQuota();
+    void setRuleQuota(int32_t value);
+
+    /// <summary>
+    /// 功能说明：带宽规则对象
+    /// </summary>
+
+    std::vector<BandWidthRules>& getBandwidthRules();
+    bool bandwidthRulesIsSet() const;
+    void unsetbandwidthRules();
+    void setBandwidthRules(const std::vector<BandWidthRules>& value);
+
 
 protected:
     std::string bandwidthType_;
@@ -163,6 +191,12 @@ protected:
     bool enterpriseProjectIdIsSet_;
     std::string status_;
     bool statusIsSet_;
+    bool enableBandwidthRules_;
+    bool enableBandwidthRulesIsSet_;
+    int32_t ruleQuota_;
+    bool ruleQuotaIsSet_;
+    std::vector<BandWidthRules> bandwidthRules_;
+    bool bandwidthRulesIsSet_;
 
 };
 

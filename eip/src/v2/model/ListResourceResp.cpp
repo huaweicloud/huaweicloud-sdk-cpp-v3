@@ -13,7 +13,7 @@ namespace Model {
 
 ListResourceResp::ListResourceResp()
 {
-    resouceDetailIsSet_ = false;
+    resourceDetailIsSet_ = false;
     resourceId_ = "";
     resourceIdIsSet_ = false;
     resourceName_ = "";
@@ -31,8 +31,8 @@ web::json::value ListResourceResp::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(resouceDetailIsSet_) {
-        val[utility::conversions::to_string_t("resouce_detail")] = ModelBase::toJson(resouceDetail_);
+    if(resourceDetailIsSet_) {
+        val[utility::conversions::to_string_t("resource_detail")] = ModelBase::toJson(resourceDetail_);
     }
     if(resourceIdIsSet_) {
         val[utility::conversions::to_string_t("resource_id")] = ModelBase::toJson(resourceId_);
@@ -51,13 +51,13 @@ bool ListResourceResp::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("resouce_detail"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("resouce_detail"));
+    if(val.has_field(utility::conversions::to_string_t("resource_detail"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("resource_detail"));
         if(!fieldValue.is_null())
         {
             Object refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setResouceDetail(refVal);
+            setResourceDetail(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("resource_id"))) {
@@ -91,25 +91,25 @@ bool ListResourceResp::fromJson(const web::json::value& val)
 }
 
 
-Object ListResourceResp::getResouceDetail() const
+Object ListResourceResp::getResourceDetail() const
 {
-    return resouceDetail_;
+    return resourceDetail_;
 }
 
-void ListResourceResp::setResouceDetail(const Object& value)
+void ListResourceResp::setResourceDetail(const Object& value)
 {
-    resouceDetail_ = value;
-    resouceDetailIsSet_ = true;
+    resourceDetail_ = value;
+    resourceDetailIsSet_ = true;
 }
 
-bool ListResourceResp::resouceDetailIsSet() const
+bool ListResourceResp::resourceDetailIsSet() const
 {
-    return resouceDetailIsSet_;
+    return resourceDetailIsSet_;
 }
 
-void ListResourceResp::unsetresouceDetail()
+void ListResourceResp::unsetresourceDetail()
 {
-    resouceDetailIsSet_ = false;
+    resourceDetailIsSet_ = false;
 }
 
 std::string ListResourceResp::getResourceId() const

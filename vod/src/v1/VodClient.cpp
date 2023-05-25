@@ -51,9 +51,6 @@ std::shared_ptr<CancelAssetTranscodeTaskResponse> VodClient::cancelAssetTranscod
     if (request.assetIdIsSet()) {
         localVarQueryParams["asset_id"] = parameterToString(request.getAssetId());
     }
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
     }
@@ -93,9 +90,6 @@ std::shared_ptr<CancelExtractAudioTaskResponse> VodClient::cancelExtractAudioTas
 
     if (request.assetIdIsSet()) {
         localVarQueryParams["asset_id"] = parameterToString(request.getAssetId());
-    }
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
     }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
@@ -140,9 +134,6 @@ std::shared_ptr<CheckMd5DuplicationResponse> VodClient::checkMd5Duplication(Chec
     if (request.md5IsSet()) {
         localVarQueryParams["md5"] = parameterToString(request.getMd5());
     }
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
     }
@@ -180,9 +171,6 @@ std::shared_ptr<ConfirmAssetUploadResponse> VodClient::confirmAssetUpload(Confir
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
     }
@@ -225,9 +213,6 @@ std::shared_ptr<ConfirmImageUploadResponse> VodClient::confirmImageUpload(Confir
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
     }
@@ -270,9 +255,6 @@ std::shared_ptr<CreateAssetByFileUploadResponse> VodClient::createAssetByFileUpl
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
     }
@@ -315,9 +297,6 @@ std::shared_ptr<CreateAssetCategoryResponse> VodClient::createAssetCategory(Crea
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
     }
@@ -360,9 +339,6 @@ std::shared_ptr<CreateAssetProcessTaskResponse> VodClient::createAssetProcessTas
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
     }
@@ -405,9 +381,6 @@ std::shared_ptr<CreateAssetReviewTaskResponse> VodClient::createAssetReviewTask(
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
     }
@@ -450,9 +423,6 @@ std::shared_ptr<CreateExtractAudioTaskResponse> VodClient::createExtractAudioTas
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
     }
@@ -495,9 +465,6 @@ std::shared_ptr<CreatePreheatingAssetResponse> VodClient::createPreheatingAsset(
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
     }
@@ -540,9 +507,6 @@ std::shared_ptr<CreateTakeOverTaskResponse> VodClient::createTakeOverTask(Create
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
     }
@@ -585,9 +549,6 @@ std::shared_ptr<CreateTemplateGroupResponse> VodClient::createTemplateGroup(Crea
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
     }
@@ -630,9 +591,6 @@ std::shared_ptr<CreateTemplateGroupCollectionResponse> VodClient::createTemplate
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
     }
@@ -675,9 +633,6 @@ std::shared_ptr<CreateTranscodeTemplateResponse> VodClient::createTranscodeTempl
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
     }
@@ -720,9 +675,6 @@ std::shared_ptr<CreateWatermarkTemplateResponse> VodClient::createWatermarkTempl
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
     }
@@ -768,9 +720,6 @@ std::shared_ptr<DeleteAssetCategoryResponse> VodClient::deleteAssetCategory(Dele
     if (request.idIsSet()) {
         localVarQueryParams["id"] = parameterToString(request.getId());
     }
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
     }
@@ -814,9 +763,6 @@ std::shared_ptr<DeleteAssetsResponse> VodClient::deleteAssets(DeleteAssetsReques
     if (request.deleteTypeIsSet()) {
         localVarQueryParams["delete_type"] = parameterToString(request.getDeleteType());
     }
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
     }
@@ -856,9 +802,6 @@ std::shared_ptr<DeleteTemplateGroupResponse> VodClient::deleteTemplateGroup(Dele
 
     if (request.groupIdIsSet()) {
         localVarQueryParams["group_id"] = parameterToString(request.getGroupId());
-    }
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
     }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
@@ -900,9 +843,6 @@ std::shared_ptr<DeleteTemplateGroupCollectionResponse> VodClient::deleteTemplate
     if (request.groupCollectionIdIsSet()) {
         localVarQueryParams["group_collection_id"] = parameterToString(request.getGroupCollectionId());
     }
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
     }
@@ -942,9 +882,6 @@ std::shared_ptr<DeleteTranscodeTemplateResponse> VodClient::deleteTranscodeTempl
 
     if (request.groupIdIsSet()) {
         localVarQueryParams["group_id"] = parameterToString(request.getGroupId());
-    }
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
     }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
@@ -986,9 +923,6 @@ std::shared_ptr<DeleteWatermarkTemplateResponse> VodClient::deleteWatermarkTempl
     if (request.idIsSet()) {
         localVarQueryParams["id"] = parameterToString(request.getId());
     }
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
     }
@@ -1028,9 +962,6 @@ std::shared_ptr<ListAssetCategoryResponse> VodClient::listAssetCategory(ListAsse
 
     if (request.idIsSet()) {
         localVarQueryParams["id"] = parameterToString(request.getId());
-    }
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
     }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
@@ -1102,9 +1033,6 @@ std::shared_ptr<ListAssetListResponse> VodClient::listAssetList(ListAssetListReq
     if (request.orderIsSet()) {
         localVarQueryParams["order"] = parameterToString(request.getOrder());
     }
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
     }
@@ -1153,9 +1081,6 @@ std::shared_ptr<ListDomainLogsResponse> VodClient::listDomainLogs(ListDomainLogs
     }
     if (request.pageNumberIsSet()) {
         localVarQueryParams["page_number"] = parameterToString(request.getPageNumber());
-    }
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
     }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
@@ -1206,9 +1131,6 @@ std::shared_ptr<ListTemplateGroupResponse> VodClient::listTemplateGroup(ListTemp
     if (request.sizeIsSet()) {
         localVarQueryParams["size"] = parameterToString(request.getSize());
     }
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
     }
@@ -1255,9 +1177,6 @@ std::shared_ptr<ListTemplateGroupCollectionResponse> VodClient::listTemplateGrou
     if (request.limitIsSet()) {
         localVarQueryParams["limit"] = parameterToString(request.getLimit());
     }
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
     }
@@ -1300,9 +1219,6 @@ std::shared_ptr<ListTopStatisticsResponse> VodClient::listTopStatistics(ListTopS
     }
     if (request.dateIsSet()) {
         localVarQueryParams["date"] = parameterToString(request.getDate());
-    }
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
     }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
@@ -1356,9 +1272,6 @@ std::shared_ptr<ListTranscodeTemplateResponse> VodClient::listTranscodeTemplate(
     if (request.queryStringIsSet()) {
         localVarQueryParams["query_string"] = parameterToString(request.getQueryString());
     }
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
     }
@@ -1405,9 +1318,6 @@ std::shared_ptr<ListWatermarkTemplateResponse> VodClient::listWatermarkTemplate(
     if (request.sizeIsSet()) {
         localVarQueryParams["size"] = parameterToString(request.getSize());
     }
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
     }
@@ -1445,9 +1355,6 @@ std::shared_ptr<PublishAssetFromObsResponse> VodClient::publishAssetFromObs(Publ
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
     }
@@ -1490,9 +1397,6 @@ std::shared_ptr<PublishAssetsResponse> VodClient::publishAssets(PublishAssetsReq
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
     }
@@ -1538,9 +1442,6 @@ std::shared_ptr<ShowAssetCipherResponse> VodClient::showAssetCipher(ShowAssetCip
     if (request.assetIdIsSet()) {
         localVarQueryParams["asset_id"] = parameterToString(request.getAssetId());
     }
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
     }
@@ -1583,9 +1484,6 @@ std::shared_ptr<ShowAssetDetailResponse> VodClient::showAssetDetail(ShowAssetDet
     }
     if (request.categoriesIsSet()) {
         localVarQueryParams["categories"] = parameterToString(request.getCategories());
-    }
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
     }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
@@ -1657,9 +1555,6 @@ std::shared_ptr<ShowAssetMetaResponse> VodClient::showAssetMeta(ShowAssetMetaReq
     if (request.sizeIsSet()) {
         localVarQueryParams["size"] = parameterToString(request.getSize());
     }
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
     }
@@ -1718,9 +1613,6 @@ std::shared_ptr<ShowAssetTempAuthorityResponse> VodClient::showAssetTempAuthorit
     if (request.partNumberIsSet()) {
         localVarQueryParams["part_number"] = parameterToString(request.getPartNumber());
     }
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
     }
@@ -1773,9 +1665,6 @@ std::shared_ptr<ShowCdnStatisticsResponse> VodClient::showCdnStatistics(ShowCdnS
     if (request.intervalIsSet()) {
         localVarQueryParams["interval"] = parameterToString(request.getInterval());
     }
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
     }
@@ -1815,9 +1704,6 @@ std::shared_ptr<ShowPreheatingAssetResponse> VodClient::showPreheatingAsset(Show
 
     if (request.taskIdIsSet()) {
         localVarQueryParams["task_id"] = parameterToString(request.getTaskId());
-    }
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
     }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
@@ -1865,9 +1751,6 @@ std::shared_ptr<ShowVodStatisticsResponse> VodClient::showVodStatistics(ShowVodS
     if (request.intervalIsSet()) {
         localVarQueryParams["interval"] = parameterToString(request.getInterval());
     }
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
     }
@@ -1905,9 +1788,6 @@ std::shared_ptr<UnpublishAssetsResponse> VodClient::unpublishAssets(UnpublishAss
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
     }
@@ -1950,9 +1830,6 @@ std::shared_ptr<UpdateAssetResponse> VodClient::updateAsset(UpdateAssetRequest &
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
     }
@@ -1995,9 +1872,6 @@ std::shared_ptr<UpdateAssetCategoryResponse> VodClient::updateAssetCategory(Upda
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
     }
@@ -2040,9 +1914,6 @@ std::shared_ptr<UpdateAssetMetaResponse> VodClient::updateAssetMeta(UpdateAssetM
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
     }
@@ -2085,9 +1956,6 @@ std::shared_ptr<UpdateBucketAuthorizedResponse> VodClient::updateBucketAuthorize
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
     }
@@ -2130,9 +1998,6 @@ std::shared_ptr<UpdateCoverByThumbnailResponse> VodClient::updateCoverByThumbnai
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
     }
@@ -2175,9 +2040,6 @@ std::shared_ptr<UpdateTemplateGroupResponse> VodClient::updateTemplateGroup(Upda
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
     }
@@ -2220,9 +2082,6 @@ std::shared_ptr<UpdateTemplateGroupCollectionResponse> VodClient::updateTemplate
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
     }
@@ -2265,9 +2124,6 @@ std::shared_ptr<UpdateTranscodeTemplateResponse> VodClient::updateTranscodeTempl
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
     }
@@ -2310,9 +2166,6 @@ std::shared_ptr<UpdateWatermarkTemplateResponse> VodClient::updateWatermarkTempl
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
     }
@@ -2355,9 +2208,6 @@ std::shared_ptr<UploadMetaDataByUrlResponse> VodClient::uploadMetaDataByUrl(Uplo
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
     }
@@ -2412,9 +2262,6 @@ std::shared_ptr<ListTakeOverTaskResponse> VodClient::listTakeOverTask(ListTakeOv
     if (request.sizeIsSet()) {
         localVarQueryParams["size"] = parameterToString(request.getSize());
     }
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
-    }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
     }
@@ -2457,9 +2304,6 @@ std::shared_ptr<ShowTakeOverAssetDetailsResponse> VodClient::showTakeOverAssetDe
     }
     if (request.sourceObjectIsSet()) {
         localVarQueryParams["source_object"] = parameterToString(request.getSourceObject());
-    }
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
     }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
@@ -2506,9 +2350,6 @@ std::shared_ptr<ShowTakeOverTaskDetailsResponse> VodClient::showTakeOverTaskDeta
     }
     if (request.sizeIsSet()) {
         localVarQueryParams["size"] = parameterToString(request.getSize());
-    }
-    if (request.authorizationIsSet()) {
-        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
     }
     if (request.xSdkDateIsSet()) {
         localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());

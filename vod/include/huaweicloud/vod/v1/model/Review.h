@@ -47,10 +47,54 @@ public:
     void unsettemplateId();
     void setTemplateId(const std::string& value);
 
+    /// <summary>
+    /// 截图检测时间间隔，取值范围为[0,100]，该参数在请求参数中忽略。 置信度越高，说明审核结果越可信。未开启或设置为0时，表示不进行此项检测。
+    /// </summary>
+
+    int32_t getInterval() const;
+    bool intervalIsSet() const;
+    void unsetinterval();
+    void setInterval(int32_t value);
+
+    /// <summary>
+    /// 鉴政内容检测置信度，取值范围为[0,100]，该参数在请求参数中忽略。 置信度越高，说明审核结果越可信。未开启或设置为0时，表示不进行此项检测。
+    /// </summary>
+
+    int32_t getPolitics() const;
+    bool politicsIsSet() const;
+    void unsetpolitics();
+    void setPolitics(int32_t value);
+
+    /// <summary>
+    /// 鉴恐内容的检测置信度，取值范围为[0,100]，该参数在请求参数中忽略。 置信度越高，说明审核结果越可信。未开启或设置为0时，表示不进行此项检测。
+    /// </summary>
+
+    int32_t getTerrorism() const;
+    bool terrorismIsSet() const;
+    void unsetterrorism();
+    void setTerrorism(int32_t value);
+
+    /// <summary>
+    /// 鉴黄内容的检测置信度，取值范围为[0,100]，该参数在请求参数中忽略。 置信度越高，说明审核结果越可信。未开启或设置为0时，表示不进行此项检测。  
+    /// </summary>
+
+    int32_t getPorn() const;
+    bool pornIsSet() const;
+    void unsetporn();
+    void setPorn(int32_t value);
+
 
 protected:
     std::string templateId_;
     bool templateIdIsSet_;
+    int32_t interval_;
+    bool intervalIsSet_;
+    int32_t politics_;
+    bool politicsIsSet_;
+    int32_t terrorism_;
+    bool terrorismIsSet_;
+    int32_t porn_;
+    bool pornIsSet_;
 
 };
 

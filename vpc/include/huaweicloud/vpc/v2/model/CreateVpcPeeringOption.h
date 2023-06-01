@@ -49,6 +49,15 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
+    /// 功能说明：对等连接的描述 取值范围：0-255个字符，不能包含“&lt;”和“&gt;”。
+    /// </summary>
+
+    std::string getDescription() const;
+    bool descriptionIsSet() const;
+    void unsetdescription();
+    void setDescription(const std::string& value);
+
+    /// <summary>
     /// 
     /// </summary>
 
@@ -70,6 +79,8 @@ public:
 protected:
     std::string name_;
     bool nameIsSet_;
+    std::string description_;
+    bool descriptionIsSet_;
     VpcInfo requestVpcInfo_;
     bool requestVpcInfoIsSet_;
     VpcInfo acceptVpcInfo_;

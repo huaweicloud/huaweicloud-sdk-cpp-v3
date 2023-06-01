@@ -15,6 +15,8 @@ CreateVpcPeeringOption::CreateVpcPeeringOption()
 {
     name_ = "";
     nameIsSet_ = false;
+    description_ = "";
+    descriptionIsSet_ = false;
     requestVpcInfoIsSet_ = false;
     acceptVpcInfoIsSet_ = false;
 }
@@ -31,6 +33,9 @@ web::json::value CreateVpcPeeringOption::toJson() const
 
     if(nameIsSet_) {
         val[utility::conversions::to_string_t("name")] = ModelBase::toJson(name_);
+    }
+    if(descriptionIsSet_) {
+        val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
     }
     if(requestVpcInfoIsSet_) {
         val[utility::conversions::to_string_t("request_vpc_info")] = ModelBase::toJson(requestVpcInfo_);
@@ -53,6 +58,15 @@ bool CreateVpcPeeringOption::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("description"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("description"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDescription(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("request_vpc_info"))) {
@@ -96,6 +110,27 @@ bool CreateVpcPeeringOption::nameIsSet() const
 void CreateVpcPeeringOption::unsetname()
 {
     nameIsSet_ = false;
+}
+
+std::string CreateVpcPeeringOption::getDescription() const
+{
+    return description_;
+}
+
+void CreateVpcPeeringOption::setDescription(const std::string& value)
+{
+    description_ = value;
+    descriptionIsSet_ = true;
+}
+
+bool CreateVpcPeeringOption::descriptionIsSet() const
+{
+    return descriptionIsSet_;
+}
+
+void CreateVpcPeeringOption::unsetdescription()
+{
+    descriptionIsSet_ = false;
 }
 
 VpcInfo CreateVpcPeeringOption::getRequestVpcInfo() const

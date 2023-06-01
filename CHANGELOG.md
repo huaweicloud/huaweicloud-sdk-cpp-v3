@@ -1,3 +1,53 @@
+# 3.1.36 2023-06-01
+
+### HuaweiCloud SDK VOD
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateAssetByFileUpload**
+    - changes of request param
+      - `+ review.interval`
+      - `+ review.politics`
+      - `+ review.terrorism`
+      - `+ review.porn`
+  - **PublishAssetFromObs**
+    - changes of request param
+      - `+ review.interval`
+      - `+ review.politics`
+      - `+ review.terrorism`
+      - `+ review.porn`
+  - **CreateAssetReviewTask**
+    - changes of request param
+      - `+ review.interval`
+      - `+ review.politics`
+      - `+ review.terrorism`
+      - `+ review.porn`
+    - changes of response param
+      - `+ review.interval`
+      - `+ review.politics`
+      - `+ review.terrorism`
+      - `+ review.porn`
+  - **UploadMetaDataByUrl**
+    - changes of request param
+      - `+ upload_metadatas.review.interval`
+      - `+ upload_metadatas.review.politics`
+      - `+ upload_metadatas.review.terrorism`
+      - `+ upload_metadatas.review.porn`
+
+### HuaweiCloud SDK VPC
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateVpcPeering**
+    - changes of request param
+      - `+ peering.description`
+
 # 3.1.35 2023-05-25
 
 ### HuaweiCloud SDK ECS

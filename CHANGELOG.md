@@ -1,3 +1,54 @@
+# 3.1.37 2023-06-08
+
+### HuaweiCloud SDK ECS
+
+- _Features_
+  - Support the interface `ChangeServerChargeMode`
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateServers**
+    - changes of request param
+      - `+ server.nics.allowed_address_pairs`
+  - **CreatePostPaidServers**
+    - changes of request param
+      - `+ server.nics.allowed_address_pairs`
+
+### HuaweiCloud SDK TMS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListResource**
+    - changes of response param
+      - `+ resources.tags`
+
+### HuaweiCloud SDK VPC
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowAddressGroup**
+    - changes of response param
+      - `+ address_group.enterprise_project_id`
+  - **UpdateAddressGroup**
+    - changes of response param
+      - `+ address_group.enterprise_project_id`
+  - **ListAddressGroup**
+    - changes of request param
+      - `+ enterprise_project_id`
+    - changes of response param
+      - `+ address_groups.enterprise_project_id`
+  - **CreateAddressGroup**
+    - changes of request param
+      - `+ address_group.enterprise_project_id`
+    - changes of response param
+      - `+ address_group.enterprise_project_id`
+
 # 3.1.36 2023-06-01
 
 ### HuaweiCloud SDK VOD

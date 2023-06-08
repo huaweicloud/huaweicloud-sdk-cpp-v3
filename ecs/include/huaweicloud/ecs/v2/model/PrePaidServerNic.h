@@ -7,8 +7,10 @@
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/ecs/v2/model/CreateServerNicAllowedAddressPairs.h>
 #include <string>
 #include <huaweicloud/ecs/v2/model/PrePaidServerIpv6Bandwidth.h>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -75,6 +77,15 @@ public:
     void unsetipv6Bandwidth();
     void setIpv6Bandwidth(const PrePaidServerIpv6Bandwidth& value);
 
+    /// <summary>
+    /// IP/Mac对列表， 约束：IP地址不允许为 “0.0.0.0/0” 如果allowed_address_pairs配置地址池较大的CIDR（掩码小于24位），建议为该port配置一个单独的安全组 如果allowed_address_pairs为“1.1.1.1/0”，表示关闭源目地址检查开关 被绑定的云服务器网卡allowed_address_pairs填“1.1.1.1/0”
+    /// </summary>
+
+    std::vector<CreateServerNicAllowedAddressPairs>& getAllowedAddressPairs();
+    bool allowedAddressPairsIsSet() const;
+    void unsetallowedAddressPairs();
+    void setAllowedAddressPairs(const std::vector<CreateServerNicAllowedAddressPairs>& value);
+
 
 protected:
     std::string subnetId_;
@@ -85,6 +96,8 @@ protected:
     bool ipv6EnableIsSet_;
     PrePaidServerIpv6Bandwidth ipv6Bandwidth_;
     bool ipv6BandwidthIsSet_;
+    std::vector<CreateServerNicAllowedAddressPairs> allowedAddressPairs_;
+    bool allowedAddressPairsIsSet_;
 
 };
 

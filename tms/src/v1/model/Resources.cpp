@@ -24,6 +24,7 @@ Resources::Resources()
     resourceNameIsSet_ = false;
     resourceType_ = "";
     resourceTypeIsSet_ = false;
+    tagsIsSet_ = false;
 }
 
 Resources::~Resources() = default;
@@ -53,6 +54,9 @@ web::json::value Resources::toJson() const
     }
     if(resourceTypeIsSet_) {
         val[utility::conversions::to_string_t("resource_type")] = ModelBase::toJson(resourceType_);
+    }
+    if(tagsIsSet_) {
+        val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
     }
 
     return val;
@@ -114,6 +118,15 @@ bool Resources::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResourceType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("tags"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("tags"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<CreateTagRequest> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTags(refVal);
         }
     }
     return ok;
@@ -244,6 +257,27 @@ bool Resources::resourceTypeIsSet() const
 void Resources::unsetresourceType()
 {
     resourceTypeIsSet_ = false;
+}
+
+std::vector<CreateTagRequest>& Resources::getTags()
+{
+    return tags_;
+}
+
+void Resources::setTags(const std::vector<CreateTagRequest>& value)
+{
+    tags_ = value;
+    tagsIsSet_ = true;
+}
+
+bool Resources::tagsIsSet() const
+{
+    return tagsIsSet_;
+}
+
+void Resources::unsettags()
+{
+    tagsIsSet_ = false;
 }
 
 }

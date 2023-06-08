@@ -9,6 +9,8 @@
 
 #include <huaweicloud/core/utils/Object.h>
 #include <string>
+#include <huaweicloud/tms/v1/model/CreateTagRequest.h>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -93,6 +95,15 @@ public:
     void unsetresourceType();
     void setResourceType(const std::string& value);
 
+    /// <summary>
+    /// 标签列表
+    /// </summary>
+
+    std::vector<CreateTagRequest>& getTags();
+    bool tagsIsSet() const;
+    void unsettags();
+    void setTags(const std::vector<CreateTagRequest>& value);
+
 
 protected:
     std::string projectId_;
@@ -107,6 +118,8 @@ protected:
     bool resourceNameIsSet_;
     std::string resourceType_;
     bool resourceTypeIsSet_;
+    std::vector<CreateTagRequest> tags_;
+    bool tagsIsSet_;
 
 };
 

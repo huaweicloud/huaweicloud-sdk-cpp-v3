@@ -1,3 +1,54 @@
+# 3.1.37 2023-06-08
+
+### HuaweiCloud SDK ECS
+
+- _新增特性_
+  - 支持接口`ChangeServerChargeMode`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateServers**
+    - 请求参数变更
+      - `+ server.nics.allowed_address_pairs`
+  - **CreatePostPaidServers**
+    - 请求参数变更
+      - `+ server.nics.allowed_address_pairs`
+
+### HuaweiCloud SDK TMS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListResource**
+    - 响应参数变更
+      - `+ resources.tags`
+
+### HuaweiCloud SDK VPC
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowAddressGroup**
+    - 响应参数变更
+      - `+ address_group.enterprise_project_id`
+  - **UpdateAddressGroup**
+    - 响应参数变更
+      - `+ address_group.enterprise_project_id`
+  - **ListAddressGroup**
+    - 请求参数变更
+      - `+ enterprise_project_id`
+    - 响应参数变更
+      - `+ address_groups.enterprise_project_id`
+  - **CreateAddressGroup**
+    - 请求参数变更
+      - `+ address_group.enterprise_project_id`
+    - 响应参数变更
+      - `+ address_group.enterprise_project_id`
+
 # 3.1.36 2023-06-01
 
 ### HuaweiCloud SDK VOD

@@ -45,6 +45,9 @@
 #include <huaweicloud/ecs/v2/model/BatchUpdateServersNameRequest.h>
 #include <huaweicloud/ecs/v2/model/BatchUpdateServersNameRequestBody.h>
 #include <huaweicloud/ecs/v2/model/BatchUpdateServersNameResponse.h>
+#include <huaweicloud/ecs/v2/model/ChangeServerChargeModeRequest.h>
+#include <huaweicloud/ecs/v2/model/ChangeServerChargeModeRequestBody.h>
+#include <huaweicloud/ecs/v2/model/ChangeServerChargeModeResponse.h>
 #include <huaweicloud/ecs/v2/model/ChangeServerOsWithCloudInitRequest.h>
 #include <huaweicloud/ecs/v2/model/ChangeServerOsWithCloudInitRequestBody.h>
 #include <huaweicloud/ecs/v2/model/ChangeServerOsWithCloudInitResponse.h>
@@ -325,6 +328,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<BatchUpdateServersNameResponse> batchUpdateServersName(
         BatchUpdateServersNameRequest &request
+    );
+    // 更换云服务器计费模式
+    //
+    // 更换云服务器的计费模式
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ChangeServerChargeModeResponse> changeServerChargeMode(
+        ChangeServerChargeModeRequest &request
     );
     // 切换弹性云服务器操作系统(安装Cloud init)
     //

@@ -20,6 +20,7 @@ PostPaidServerNic::PostPaidServerNic()
     ipv6Enable_ = false;
     ipv6EnableIsSet_ = false;
     ipv6BandwidthIsSet_ = false;
+    allowedAddressPairsIsSet_ = false;
 }
 
 PostPaidServerNic::~PostPaidServerNic() = default;
@@ -43,6 +44,9 @@ web::json::value PostPaidServerNic::toJson() const
     }
     if(ipv6BandwidthIsSet_) {
         val[utility::conversions::to_string_t("ipv6_bandwidth")] = ModelBase::toJson(ipv6Bandwidth_);
+    }
+    if(allowedAddressPairsIsSet_) {
+        val[utility::conversions::to_string_t("allowed_address_pairs")] = ModelBase::toJson(allowedAddressPairs_);
     }
 
     return val;
@@ -86,6 +90,15 @@ bool PostPaidServerNic::fromJson(const web::json::value& val)
             PostPaidServerIpv6Bandwidth refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIpv6Bandwidth(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("allowed_address_pairs"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("allowed_address_pairs"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<CreateServerNicAllowedAddressPairs> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAllowedAddressPairs(refVal);
         }
     }
     return ok;
@@ -174,6 +187,27 @@ bool PostPaidServerNic::ipv6BandwidthIsSet() const
 void PostPaidServerNic::unsetipv6Bandwidth()
 {
     ipv6BandwidthIsSet_ = false;
+}
+
+std::vector<CreateServerNicAllowedAddressPairs>& PostPaidServerNic::getAllowedAddressPairs()
+{
+    return allowedAddressPairs_;
+}
+
+void PostPaidServerNic::setAllowedAddressPairs(const std::vector<CreateServerNicAllowedAddressPairs>& value)
+{
+    allowedAddressPairs_ = value;
+    allowedAddressPairsIsSet_ = true;
+}
+
+bool PostPaidServerNic::allowedAddressPairsIsSet() const
+{
+    return allowedAddressPairsIsSet_;
+}
+
+void PostPaidServerNic::unsetallowedAddressPairs()
+{
+    allowedAddressPairsIsSet_ = false;
 }
 
 }

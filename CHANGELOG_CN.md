@@ -1,3 +1,46 @@
+# 3.1.38 2023-06-15
+
+### HuaweiCloud SDK CBR
+
+- _新增特性_
+    - 支持云备份服务
+- _解决问题_
+    - 无
+- _特性变更_
+    - 无
+
+### HuaweiCloud SDK Live
+
+- _新增特性_
+    - 支持视频直播服务
+- _解决问题_
+    - 无
+- _特性变更_
+    - 无
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RecognizeGeneralText**
+    - 请求参数变更
+      - `+ single_orientation_mode`
+
+### HuaweiCloud SDK SIS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowVocabularies**
+    - 请求参数变更
+      - `+ offset`
+      - `+ limit`
+
 # 3.1.37 2023-06-08
 
 ### HuaweiCloud SDK ECS

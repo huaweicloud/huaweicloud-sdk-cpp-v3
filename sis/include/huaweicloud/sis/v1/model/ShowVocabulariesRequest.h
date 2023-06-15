@@ -39,6 +39,24 @@ public:
     /// ShowVocabulariesRequest members
 
     /// <summary>
+    /// 页码偏移量，表示从此页码偏移量开始查询，offset大于等于0。
+    /// </summary>
+
+    int32_t getOffset() const;
+    bool offsetIsSet() const;
+    void unsetoffset();
+    void setOffset(int32_t value);
+
+    /// <summary>
+    /// 每页显示的条目数量。
+    /// </summary>
+
+    int32_t getLimit() const;
+    bool limitIsSet() const;
+    void unsetlimit();
+    void setLimit(int32_t value);
+
+    /// <summary>
     /// 
     /// </summary>
 
@@ -49,6 +67,10 @@ public:
 
 
 protected:
+    int32_t offset_;
+    bool offsetIsSet_;
+    int32_t limit_;
+    bool limitIsSet_;
     ShowVocabulariesParams body_;
     bool bodyIsSet_;
 

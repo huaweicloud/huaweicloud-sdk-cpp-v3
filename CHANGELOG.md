@@ -1,3 +1,46 @@
+# 3.1.38 2023-06-15
+
+### HuaweiCloud SDK CBR
+
+- _Features_
+    - Support Cloud Backup and Recovery service.
+- _Bug Fix_
+    - None
+- _Change_
+    - None
+
+### HuaweiCloud SDK Live
+
+- _Features_
+    - Support Live service.
+- _Bug Fix_
+    - None
+- _Change_
+    - None
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **RecognizeGeneralText**
+    - changes of request param
+      - `+ single_orientation_mode`
+
+### HuaweiCloud SDK SIS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowVocabularies**
+    - changes of request param
+      - `+ offset`
+      - `+ limit`
+
 # 3.1.37 2023-06-08
 
 ### HuaweiCloud SDK ECS

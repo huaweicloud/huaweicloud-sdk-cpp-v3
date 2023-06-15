@@ -25,6 +25,8 @@ GeneralTextRequestBody::GeneralTextRequestBody()
     characterModeIsSet_ = false;
     language_ = "";
     languageIsSet_ = false;
+    singleOrientationMode_ = false;
+    singleOrientationModeIsSet_ = false;
 }
 
 GeneralTextRequestBody::~GeneralTextRequestBody() = default;
@@ -54,6 +56,9 @@ web::json::value GeneralTextRequestBody::toJson() const
     }
     if(languageIsSet_) {
         val[utility::conversions::to_string_t("language")] = ModelBase::toJson(language_);
+    }
+    if(singleOrientationModeIsSet_) {
+        val[utility::conversions::to_string_t("single_orientation_mode")] = ModelBase::toJson(singleOrientationMode_);
     }
 
     return val;
@@ -115,6 +120,15 @@ bool GeneralTextRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLanguage(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("single_orientation_mode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("single_orientation_mode"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSingleOrientationMode(refVal);
         }
     }
     return ok;
@@ -245,6 +259,27 @@ bool GeneralTextRequestBody::languageIsSet() const
 void GeneralTextRequestBody::unsetlanguage()
 {
     languageIsSet_ = false;
+}
+
+bool GeneralTextRequestBody::isSingleOrientationMode() const
+{
+    return singleOrientationMode_;
+}
+
+void GeneralTextRequestBody::setSingleOrientationMode(bool value)
+{
+    singleOrientationMode_ = value;
+    singleOrientationModeIsSet_ = true;
+}
+
+bool GeneralTextRequestBody::singleOrientationModeIsSet() const
+{
+    return singleOrientationModeIsSet_;
+}
+
+void GeneralTextRequestBody::unsetsingleOrientationMode()
+{
+    singleOrientationModeIsSet_ = false;
 }
 
 }

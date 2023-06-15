@@ -413,6 +413,12 @@ std::shared_ptr<ShowVocabulariesResponse> SisClient::showVocabularies(ShowVocabu
     std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {

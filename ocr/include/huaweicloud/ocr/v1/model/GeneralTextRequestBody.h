@@ -84,13 +84,22 @@ public:
     void setCharacterMode(bool value);
 
     /// <summary>
-    /// 语种选择，可选值可参考表1中英文列。未传入该参数时默认为中英文识别模式。 **表1* 语种选择说明 | 英文 |     中文     | | :--: | :----------: | | auto | 自动语种分类 | |  ms  |    马来语    | |  uk  |   乌克兰语   | |  hi  |    印地语    | |  ru  |     俄语     | |  vi  |    越南语    | |  id  |    印尼语    | |  th  |     泰语     | |  zh  |    中英文    | |  ar  |   阿拉伯语   | 
+    /// 语种选择，可选值可参考表1中英文列。未传入该参数时默认为中英文识别模式。 **表1* 语种选择说明 | 英文 |     中文     | | :--: | :----------: | | auto | 自动语种分类 | |  ms  |    马来语    | |  uk  |   乌克兰语   | |  hi  |    印地语    | |  ru  |     俄语     | |  vi  |    越南语    | |  id  |    印尼语    | |  th  |     泰语     | |  zh  |    中英文    | |  ar  |   阿拉伯语   | |  de  |     德语     | |  la  |    拉丁语    | |  fr  |     法语     | |  it  |   意大利语   | |  es  |   西班牙语   | |  pt  |   葡萄牙语   | |  ro  |  罗马尼亚语  | |  pl  |    波兰语    | |  am  |  阿姆哈拉语  | |  ja  |     日语     | |  ko  |     韩语     | 
     /// </summary>
 
     std::string getLanguage() const;
     bool languageIsSet() const;
     void unsetlanguage();
     void setLanguage(const std::string& value);
+
+    /// <summary>
+    /// 单朝向模式开关。可选值包括： - true：打开单朝向模式 - false：关闭单朝向模式  未传入该参数时默认为false，既默认图片中的字段为多朝向。 
+    /// </summary>
+
+    bool isSingleOrientationMode() const;
+    bool singleOrientationModeIsSet() const;
+    void unsetsingleOrientationMode();
+    void setSingleOrientationMode(bool value);
 
 
 protected:
@@ -106,6 +115,8 @@ protected:
     bool characterModeIsSet_;
     std::string language_;
     bool languageIsSet_;
+    bool singleOrientationMode_;
+    bool singleOrientationModeIsSet_;
 
 };
 

@@ -1,3 +1,37 @@
+# 3.1.39 2023-06-21
+
+### HuaweiCloud SDK CloudRTC
+
+- _新增特性_
+  - 支持华为云实时音视频服务
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK CFW
+
+- _新增特性_
+  - 支持云防火墙服务
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK CloudTable
+
+- _新增特性_
+  - 支持以下接口：
+    - `EnableComponent`
+    - `ExpandClusterComponent`
+    - `RebootCloudTableCluster`
+    - `ShowClusterSetting`
+    - `UpdateClusterSetting`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.1.38 2023-06-15
 
 ### HuaweiCloud SDK CBR

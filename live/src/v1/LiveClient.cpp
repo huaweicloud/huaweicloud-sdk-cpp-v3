@@ -30,7 +30,7 @@ LiveClient::~LiveClient()
 
 ClientBuilder<LiveClient> LiveClient::newBuilder()
 {
-    return ClientBuilder<LiveClient>("");
+    return ClientBuilder<LiveClient>("BasicCredentials");
 }
 std::shared_ptr<BatchShowIpBelongsResponse> LiveClient::batchShowIpBelongs(BatchShowIpBelongsRequest &request)
 {

@@ -1,3 +1,37 @@
+# 3.1.39 2023-06-21
+
+### HuaweiCloud SDK CloudRTC
+
+- _Features_
+  - Support the service `CloudRTC`.
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK CFW
+
+- _Features_
+  - Support the service `Cloud Firewall`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK CloudTable
+
+- _Features_
+  - Support the following interfaces：
+    - `EnableComponent`
+    - `ExpandClusterComponent`
+    - `RebootCloudTableCluster`
+    - `ShowClusterSetting`
+    - `UpdateClusterSetting`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.38 2023-06-15
 
 ### HuaweiCloud SDK CBR

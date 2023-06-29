@@ -29,7 +29,7 @@ public:
     void validate() override;
 
     web::json::value toJson() const override;
-    void fromJson(const web::json::value& json) override;
+    bool fromJson(const web::json::value& json) override;
 
     enum class eVideoFormatVar 
     {

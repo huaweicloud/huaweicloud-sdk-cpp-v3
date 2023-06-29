@@ -1,3 +1,52 @@
+# 3.1.40 2023-06-29
+
+### HuaweiCloud SDK IdentityCenter
+
+- _Features_
+  - Support `IdentityCenter`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK WorkspaceApp
+
+- _Features_
+  - Support `WorkspaceApp`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK Config
+
+- _Features_
+  - Support `Config`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK VPC
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowAddressGroup**
+    - changes of response param
+      - `+ address_group.tags`
+  - **UpdateAddressGroup**
+    - changes of response param
+      - `+ address_group.tags`
+  - **ListAddressGroup**
+    - changes of response param
+      - `+ address_groups.tags`
+  - **CreateAddressGroup**
+    - changes of response param
+      - `+ address_group.tags`
+
 # 3.1.39 2023-06-21
 
 ### HuaweiCloud SDK CloudRTC

@@ -2,7 +2,7 @@
 #ifndef HUAWEICLOUD_SDK_CLOUDTABLE_V2_MODEL_RebootCloudTableClusterRequest_H_
 #define HUAWEICLOUD_SDK_CLOUDTABLE_V2_MODEL_RebootCloudTableClusterRequest_H_
 
-#include <huaweicloud/cloudtable/v2/CloudtableExport.h>
+#include <huaweicloud/cloudtable/v2/CloudTableExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/http/HttpResponse.h>
@@ -40,15 +40,6 @@ public:
     /// RebootCloudTableClusterRequest members
 
     /// <summary>
-    /// 租户ID
-    /// </summary>
-
-    std::string getProjectId() const;
-    bool projectIdIsSet() const;
-    void unsetprojectId();
-    void setProjectId(const std::string& value);
-
-    /// <summary>
     /// 集群ID
     /// </summary>
 
@@ -77,8 +68,6 @@ public:
 
 
 protected:
-    std::string projectId_;
-    bool projectIdIsSet_;
     std::string clusterId_;
     bool clusterIdIsSet_;
     std::string xLanguage_;

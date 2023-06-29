@@ -13,8 +13,6 @@ namespace Model {
 
 RebootCloudTableClusterRequest::RebootCloudTableClusterRequest()
 {
-    projectId_ = "";
-    projectIdIsSet_ = false;
     clusterId_ = "";
     clusterIdIsSet_ = false;
     xLanguage_ = "";
@@ -32,11 +30,8 @@ web::json::value RebootCloudTableClusterRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(projectIdIsSet_) {
-        val[utility::conversions::to_string_t("projectId")] = ModelBase::toJson(projectId_);
-    }
     if(clusterIdIsSet_) {
-        val[utility::conversions::to_string_t("clusterId")] = ModelBase::toJson(clusterId_);
+        val[utility::conversions::to_string_t("cluster_id")] = ModelBase::toJson(clusterId_);
     }
     if(xLanguageIsSet_) {
         val[utility::conversions::to_string_t("X-Language")] = ModelBase::toJson(xLanguage_);
@@ -52,17 +47,8 @@ bool RebootCloudTableClusterRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("projectId"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("projectId"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setProjectId(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("clusterId"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("clusterId"));
+    if(val.has_field(utility::conversions::to_string_t("cluster_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("cluster_id"));
         if(!fieldValue.is_null())
         {
             std::string refVal;
@@ -91,27 +77,6 @@ bool RebootCloudTableClusterRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
-std::string RebootCloudTableClusterRequest::getProjectId() const
-{
-    return projectId_;
-}
-
-void RebootCloudTableClusterRequest::setProjectId(const std::string& value)
-{
-    projectId_ = value;
-    projectIdIsSet_ = true;
-}
-
-bool RebootCloudTableClusterRequest::projectIdIsSet() const
-{
-    return projectIdIsSet_;
-}
-
-void RebootCloudTableClusterRequest::unsetprojectId()
-{
-    projectIdIsSet_ = false;
-}
 
 std::string RebootCloudTableClusterRequest::getClusterId() const
 {

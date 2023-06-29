@@ -2,7 +2,7 @@
 #ifndef HUAWEICLOUD_SDK_CLOUDTABLE_V2_MODEL_HbaseModifySettingV2_H_
 #define HUAWEICLOUD_SDK_CLOUDTABLE_V2_MODEL_HbaseModifySettingV2_H_
 
-#include <huaweicloud/cloudtable/v2/CloudtableExport.h>
+#include <huaweicloud/cloudtable/v2/CloudTableExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/http/HttpResponse.h>

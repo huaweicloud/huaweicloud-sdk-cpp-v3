@@ -1,3 +1,52 @@
+# 3.1.40 2023-06-29
+
+### HuaweiCloud SDK IdentityCenter
+
+- _新增特性_
+  - 支持IAM 身份中心服务
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK WorkspaceApp
+
+- _新增特性_
+  - 支持云应用服务
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK Config
+
+- _新增特性_
+  - 支持配置审计服务
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK VPC
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowAddressGroup**
+    - 响应参数变更
+      - `+ address_group.tags`
+  - **UpdateAddressGroup**
+    - 响应参数变更
+      - `+ address_group.tags`
+  - **ListAddressGroup**
+    - 响应参数变更
+      - `+ address_groups.tags`
+  - **CreateAddressGroup**
+    - 响应参数变更
+      - `+ address_group.tags`
+
 # 3.1.39 2023-06-21
 
 ### HuaweiCloud SDK CloudRTC

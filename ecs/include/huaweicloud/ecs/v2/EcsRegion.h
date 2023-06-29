@@ -98,6 +98,10 @@ public:
             { 
                 "https://ecs.ap-southeast-4.myhuaweicloud.com"
             });
+        regions["tr-west-1"] = Region("tr-west-1",
+            { 
+                "https://ecs.tr-west-1.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

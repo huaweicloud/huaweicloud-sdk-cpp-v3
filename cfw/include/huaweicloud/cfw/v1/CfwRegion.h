@@ -76,7 +76,7 @@ public:
             });
         regions["af-south-1"] = Region("af-south-1",
             { 
-                "https://cfw.la-south-2.myhuaweicloud.com"
+                "https://cfw.af-south-1.myhuaweicloud.com"
             });
         regions["sa-brazil-1"] = Region("sa-brazil-1",
             { 

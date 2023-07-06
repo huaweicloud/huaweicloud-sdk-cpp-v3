@@ -63,7 +63,6 @@ bool UpdateVocabularyRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateVocabularyRequest::getVocabularyId() const
 {
     return vocabularyId_;

@@ -63,7 +63,6 @@ bool CreatePreheatingAssetRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreatePreheatingAssetRequest::getXSdkDate() const
 {
     return xSdkDate_;

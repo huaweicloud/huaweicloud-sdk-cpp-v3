@@ -78,7 +78,6 @@ bool UpdateServerOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateServerOption::getName() const
 {
     return name_;

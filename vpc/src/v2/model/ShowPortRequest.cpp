@@ -50,7 +50,6 @@ bool ShowPortRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowPortRequest::getPortId() const
 {
     return portId_;

@@ -49,7 +49,6 @@ bool CreateSharedBandwidhRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 CreateSharedBandwidthOption CreateSharedBandwidhRequestBody::getBandwidth() const
 {
     return bandwidth_;

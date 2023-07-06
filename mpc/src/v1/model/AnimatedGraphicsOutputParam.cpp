@@ -120,7 +120,6 @@ bool AnimatedGraphicsOutputParam::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AnimatedGraphicsOutputParam::getFormat() const
 {
     return format_;

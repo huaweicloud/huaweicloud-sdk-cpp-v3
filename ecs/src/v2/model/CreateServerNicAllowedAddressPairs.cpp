@@ -64,7 +64,6 @@ bool CreateServerNicAllowedAddressPairs::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateServerNicAllowedAddressPairs::getIpAddress() const
 {
     return ipAddress_;

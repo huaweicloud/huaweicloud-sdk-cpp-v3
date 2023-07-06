@@ -64,7 +64,6 @@ bool RecordData::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t RecordData::getConcurrentCount() const
 {
     return concurrentCount_;

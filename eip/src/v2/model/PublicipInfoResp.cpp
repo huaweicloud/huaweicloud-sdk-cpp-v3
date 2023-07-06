@@ -106,7 +106,6 @@ bool PublicipInfoResp::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PublicipInfoResp::getPublicipAddress() const
 {
     return publicipAddress_;

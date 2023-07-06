@@ -49,7 +49,6 @@ bool BatchDeletePublicIpResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& BatchDeletePublicIpResponse::getJobIds()
 {
     return jobIds_;

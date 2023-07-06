@@ -62,7 +62,6 @@ bool NeutronListFirewallRulesResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<NeutronFirewallRule>& NeutronListFirewallRulesResponse::getFirewallRules()
 {
     return firewallRules_;

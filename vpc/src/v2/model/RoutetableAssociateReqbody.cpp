@@ -49,7 +49,6 @@ bool RoutetableAssociateReqbody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 AsscoiateReq RoutetableAssociateReqbody::getRoutetable() const
 {
     return routetable_;

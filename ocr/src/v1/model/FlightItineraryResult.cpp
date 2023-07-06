@@ -300,7 +300,6 @@ bool FlightItineraryResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string FlightItineraryResult::getSerialNumber() const
 {
     return serialNumber_;

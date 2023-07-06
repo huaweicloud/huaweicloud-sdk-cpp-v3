@@ -63,7 +63,6 @@ bool TranscodeData::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<TranscodeSpec>& TranscodeData::getSpecList()
 {
     return specList_;

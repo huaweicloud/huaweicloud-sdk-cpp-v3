@@ -49,7 +49,6 @@ bool CreateDomainRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 LiveDomainCreateReq CreateDomainRequest::getBody() const
 {
     return body_;

@@ -63,7 +63,6 @@ bool UpdateImageRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateImageRequest::getImageId() const
 {
     return imageId_;

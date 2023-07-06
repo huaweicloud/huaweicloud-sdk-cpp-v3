@@ -49,7 +49,6 @@ bool ShowServerBlockDeviceResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ServerBlockDevice ShowServerBlockDeviceResponse::getVolumeAttachment() const
 {
     return volumeAttachment_;

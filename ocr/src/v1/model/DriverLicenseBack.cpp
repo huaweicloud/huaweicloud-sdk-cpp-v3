@@ -147,7 +147,6 @@ bool DriverLicenseBack::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DriverLicenseBack::getType() const
 {
     return type_;

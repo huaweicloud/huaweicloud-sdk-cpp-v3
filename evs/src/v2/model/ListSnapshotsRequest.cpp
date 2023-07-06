@@ -190,7 +190,6 @@ bool ListSnapshotsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t ListSnapshotsRequest::getOffset() const
 {
     return offset_;

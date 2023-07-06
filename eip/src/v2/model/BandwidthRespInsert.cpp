@@ -230,7 +230,6 @@ bool BandwidthRespInsert::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BandwidthRespInsert::getBandwidthType() const
 {
     return bandwidthType_;

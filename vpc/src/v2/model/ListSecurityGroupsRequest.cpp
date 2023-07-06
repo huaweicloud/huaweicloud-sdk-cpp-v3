@@ -92,7 +92,6 @@ bool ListSecurityGroupsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t ListSecurityGroupsRequest::getLimit() const
 {
     return limit_;

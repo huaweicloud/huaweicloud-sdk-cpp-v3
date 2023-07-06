@@ -106,7 +106,6 @@ bool MigrateResource::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string MigrateResource::getRegionId() const
 {
     return regionId_;

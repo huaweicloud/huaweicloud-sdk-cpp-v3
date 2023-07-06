@@ -159,7 +159,6 @@ bool ResetTracksTaskInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ResetTracksTaskInfo::getTaskId() const
 {
     return taskId_;

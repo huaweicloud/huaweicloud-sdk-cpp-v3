@@ -77,7 +77,6 @@ bool AddFacesByFileRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AddFacesByFileRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

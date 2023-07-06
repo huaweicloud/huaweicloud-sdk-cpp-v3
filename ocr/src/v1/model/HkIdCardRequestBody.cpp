@@ -92,7 +92,6 @@ bool HkIdCardRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string HkIdCardRequestBody::getImage() const
 {
     return image_;

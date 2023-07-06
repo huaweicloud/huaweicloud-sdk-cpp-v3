@@ -49,7 +49,6 @@ bool ShowFaceSetResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 FaceSetInfo ShowFaceSetResponse::getFaceSetInfo() const
 {
     return faceSetInfo_;

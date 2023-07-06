@@ -63,7 +63,6 @@ bool DetectExtentionByIdCardImageRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DetectExtentionByIdCardImageRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

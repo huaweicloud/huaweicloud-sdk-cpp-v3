@@ -62,7 +62,6 @@ bool GetHostListRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& GetHostListRequestBody::getHostIdList()
 {
     return hostIdList_;

@@ -50,7 +50,6 @@ bool ShowFlowLogRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowFlowLogRequest::getFlowlogId() const
 {
     return flowlogId_;

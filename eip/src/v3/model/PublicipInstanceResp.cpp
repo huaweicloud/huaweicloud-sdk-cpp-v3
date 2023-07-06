@@ -328,7 +328,6 @@ bool PublicipInstanceResp::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PublicipInstanceResp::getId() const
 {
     return id_;

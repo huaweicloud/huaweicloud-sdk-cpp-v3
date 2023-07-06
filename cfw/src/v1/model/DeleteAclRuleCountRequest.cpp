@@ -77,7 +77,6 @@ bool DeleteAclRuleCountRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteAclRuleCountRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

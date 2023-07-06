@@ -63,7 +63,6 @@ bool ShowResourceBindEnterpriseProjectRequest::fromJson(const web::json::value& 
     return ok;
 }
 
-
 std::string ShowResourceBindEnterpriseProjectRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

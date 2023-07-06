@@ -64,7 +64,6 @@ bool PrePaidServerTag::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PrePaidServerTag::getKey() const
 {
     return key_;

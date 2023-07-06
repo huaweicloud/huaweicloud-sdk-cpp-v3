@@ -49,7 +49,6 @@ bool QuotasDetail::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<EpQuotas>& QuotasDetail::getResources()
 {
     return resources_;

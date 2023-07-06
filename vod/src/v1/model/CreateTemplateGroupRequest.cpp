@@ -63,7 +63,6 @@ bool CreateTemplateGroupRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateTemplateGroupRequest::getXSdkDate() const
 {
     return xSdkDate_;

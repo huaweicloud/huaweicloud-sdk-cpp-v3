@@ -147,7 +147,6 @@ bool TranscriberConfig::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string TranscriberConfig::getAudioFormat() const
 {
     return audioFormat_;

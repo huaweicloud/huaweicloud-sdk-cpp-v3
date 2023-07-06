@@ -89,7 +89,6 @@ bool CreatePrePaidPublicipRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 CreatePrePaidPublicipOption CreatePrePaidPublicipRequestBody::getPublicip() const
 {
     return publicip_;

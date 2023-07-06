@@ -63,7 +63,6 @@ bool RecognizeInsurancePolicyRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RecognizeInsurancePolicyRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

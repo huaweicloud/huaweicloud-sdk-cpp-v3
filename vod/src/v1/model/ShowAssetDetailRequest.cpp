@@ -77,7 +77,6 @@ bool ShowAssetDetailRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowAssetDetailRequest::getXSdkDate() const
 {
     return xSdkDate_;

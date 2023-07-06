@@ -104,7 +104,6 @@ bool PolicyCreate::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 bool PolicyCreate::isEnabled() const
 {
     return enabled_;

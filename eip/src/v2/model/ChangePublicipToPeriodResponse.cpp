@@ -77,7 +77,6 @@ bool ChangePublicipToPeriodResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& ChangePublicipToPeriodResponse::getPublicipIds()
 {
     return publicipIds_;

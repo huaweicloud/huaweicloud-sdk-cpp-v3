@@ -50,7 +50,6 @@ bool ShowProtectionGroupRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowProtectionGroupRequest::getServerGroupId() const
 {
     return serverGroupId_;

@@ -50,7 +50,6 @@ bool ShowDomainKeyChainRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowDomainKeyChainRequest::getDomain() const
 {
     return domain_;

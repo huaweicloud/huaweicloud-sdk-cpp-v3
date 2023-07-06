@@ -50,7 +50,6 @@ bool RollbackInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RollbackInfo::getVolumeId() const
 {
     return volumeId_;

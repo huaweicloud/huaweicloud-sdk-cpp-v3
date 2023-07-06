@@ -78,7 +78,6 @@ bool VideoObj::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t VideoObj::getWidth() const
 {
     return width_;

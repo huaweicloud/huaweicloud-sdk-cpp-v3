@@ -105,7 +105,6 @@ bool RecordRuleRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RecordRuleRequest::getPublishDomain() const
 {
     return publishDomain_;

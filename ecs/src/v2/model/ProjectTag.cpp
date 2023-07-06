@@ -63,7 +63,6 @@ bool ProjectTag::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ProjectTag::getKey() const
 {
     return key_;

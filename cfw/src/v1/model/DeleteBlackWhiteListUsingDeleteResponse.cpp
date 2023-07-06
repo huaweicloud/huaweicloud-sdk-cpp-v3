@@ -49,7 +49,6 @@ bool DeleteBlackWhiteListUsingDeleteResponse::fromJson(const web::json::value& v
     return ok;
 }
 
-
 IdObject DeleteBlackWhiteListUsingDeleteResponse::getData() const
 {
     return data_;

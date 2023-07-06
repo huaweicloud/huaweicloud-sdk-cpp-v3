@@ -50,7 +50,6 @@ bool NovaServerSecurityGroup::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NovaServerSecurityGroup::getName() const
 {
     return name_;

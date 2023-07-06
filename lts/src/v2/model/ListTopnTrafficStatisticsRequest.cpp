@@ -63,7 +63,6 @@ bool ListTopnTrafficStatisticsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListTopnTrafficStatisticsRequest::getContentType() const
 {
     return contentType_;

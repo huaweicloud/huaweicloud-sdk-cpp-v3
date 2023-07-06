@@ -92,7 +92,6 @@ bool AnalysisInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 bool AnalysisInfo::isDiarization() const
 {
     return diarization_;

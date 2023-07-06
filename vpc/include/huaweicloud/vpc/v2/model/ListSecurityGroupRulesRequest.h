@@ -65,6 +65,15 @@ public:
     void unsetsecurityGroupId();
     void setSecurityGroupId(const std::string& value);
 
+    /// <summary>
+    /// 功能说明：远端IP地址 取值范围：cidr格式
+    /// </summary>
+
+    std::string getRemoteIpPrefix() const;
+    bool remoteIpPrefixIsSet() const;
+    void unsetremoteIpPrefix();
+    void setRemoteIpPrefix(const std::string& value);
+
 
 protected:
     std::string marker_;
@@ -73,6 +82,8 @@ protected:
     bool limitIsSet_;
     std::string securityGroupId_;
     bool securityGroupIdIsSet_;
+    std::string remoteIpPrefix_;
+    bool remoteIpPrefixIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

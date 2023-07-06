@@ -49,7 +49,6 @@ bool CreateResetTracksTaskRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 CreateResetTracksReq CreateResetTracksTaskRequest::getBody() const
 {
     return body_;

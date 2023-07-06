@@ -63,7 +63,6 @@ bool CreateServersRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 bool CreateServersRequestBody::isDryRun() const
 {
     return dryRun_;

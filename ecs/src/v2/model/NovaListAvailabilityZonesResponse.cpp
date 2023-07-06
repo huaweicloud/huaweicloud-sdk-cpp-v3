@@ -49,7 +49,6 @@ bool NovaListAvailabilityZonesResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<NovaAvailabilityZone>& NovaListAvailabilityZonesResponse::getAvailabilityZoneInfo()
 {
     return availabilityZoneInfo_;

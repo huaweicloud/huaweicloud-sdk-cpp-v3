@@ -63,7 +63,6 @@ bool BatchDeleteVpcTagsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BatchDeleteVpcTagsRequest::getVpcId() const
 {
     return vpcId_;

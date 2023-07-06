@@ -49,7 +49,6 @@ bool UpdateDomainRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 LiveDomainModifyReq UpdateDomainRequest::getBody() const
 {
     return body_;

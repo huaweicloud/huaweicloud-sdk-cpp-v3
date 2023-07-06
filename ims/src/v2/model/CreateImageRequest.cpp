@@ -49,7 +49,6 @@ bool CreateImageRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 CreateImageRequestBody CreateImageRequest::getBody() const
 {
     return body_;

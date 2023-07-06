@@ -78,7 +78,6 @@ bool VaultPolicyResp::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string VaultPolicyResp::getDestinationVaultId() const
 {
     return destinationVaultId_;

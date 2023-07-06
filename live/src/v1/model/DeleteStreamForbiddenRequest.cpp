@@ -78,7 +78,6 @@ bool DeleteStreamForbiddenRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteStreamForbiddenRequest::getDomain() const
 {
     return domain_;

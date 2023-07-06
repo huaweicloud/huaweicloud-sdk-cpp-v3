@@ -63,7 +63,6 @@ bool GlanceDeleteImageRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string GlanceDeleteImageRequest::getImageId() const
 {
     return imageId_;

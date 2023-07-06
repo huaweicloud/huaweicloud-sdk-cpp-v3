@@ -260,7 +260,6 @@ bool ListFlowLogsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListFlowLogsRequest::getFwInstanceId() const
 {
     return fwInstanceId_;

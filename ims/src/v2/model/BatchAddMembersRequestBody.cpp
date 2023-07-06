@@ -62,7 +62,6 @@ bool BatchAddMembersRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& BatchAddMembersRequestBody::getImages()
 {
     return images_;

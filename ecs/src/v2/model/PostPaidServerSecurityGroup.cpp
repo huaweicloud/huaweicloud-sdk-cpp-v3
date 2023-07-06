@@ -50,7 +50,6 @@ bool PostPaidServerSecurityGroup::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PostPaidServerSecurityGroup::getId() const
 {
     return id_;

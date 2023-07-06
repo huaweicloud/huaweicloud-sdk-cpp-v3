@@ -49,7 +49,6 @@ bool ImportBackupRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 BackupSyncReq ImportBackupRequest::getBody() const
 {
     return body_;

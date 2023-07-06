@@ -64,7 +64,6 @@ bool QuertHistorySQLResultsBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int64_t QuertHistorySQLResultsBody::getLastUseTime() const
 {
     return lastUseTime_;

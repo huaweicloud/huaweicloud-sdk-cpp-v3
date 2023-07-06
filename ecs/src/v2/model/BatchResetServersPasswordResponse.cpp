@@ -49,7 +49,6 @@ bool BatchResetServersPasswordResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ServerId>& BatchResetServersPasswordResponse::getResponse()
 {
     return response_;

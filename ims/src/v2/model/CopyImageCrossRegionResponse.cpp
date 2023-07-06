@@ -50,7 +50,6 @@ bool CopyImageCrossRegionResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CopyImageCrossRegionResponse::getJobId() const
 {
     return jobId_;

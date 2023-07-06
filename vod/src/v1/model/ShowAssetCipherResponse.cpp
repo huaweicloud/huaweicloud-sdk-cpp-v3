@@ -78,7 +78,6 @@ bool ShowAssetCipherResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowAssetCipherResponse::getAssetId() const
 {
     return assetId_;

@@ -63,7 +63,6 @@ bool UpdateVpcPeeringRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateVpcPeeringRequest::getPeeringId() const
 {
     return peeringId_;

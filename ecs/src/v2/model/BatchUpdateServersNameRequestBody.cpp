@@ -77,7 +77,6 @@ bool BatchUpdateServersNameRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BatchUpdateServersNameRequestBody::getName() const
 {
     return name_;

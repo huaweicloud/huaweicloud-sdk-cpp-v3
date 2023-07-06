@@ -49,7 +49,6 @@ bool CreateAomMappingRulesResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<AomMappingRuleResp>& CreateAomMappingRulesResponse::getBody()
 {
     return body_;

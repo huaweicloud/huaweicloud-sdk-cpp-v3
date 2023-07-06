@@ -92,7 +92,6 @@ bool PcrTestRecordConfidence::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 float PcrTestRecordConfidence::getName() const
 {
     return name_;

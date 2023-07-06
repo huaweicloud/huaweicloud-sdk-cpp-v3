@@ -64,7 +64,6 @@ bool Match::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string Match::getKey() const
 {
     return key_;

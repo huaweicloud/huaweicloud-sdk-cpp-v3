@@ -64,7 +64,6 @@ bool RegisterDmsKafkaInstanceRequestBody_connect_info::fromJson(const web::json:
     return ok;
 }
 
-
 std::string RegisterDmsKafkaInstanceRequestBody_connect_info::getUserName() const
 {
     return userName_;

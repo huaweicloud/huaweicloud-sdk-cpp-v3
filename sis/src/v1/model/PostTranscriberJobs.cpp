@@ -63,7 +63,6 @@ bool PostTranscriberJobs::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 TranscriberConfig PostTranscriberJobs::getConfig() const
 {
     return config_;

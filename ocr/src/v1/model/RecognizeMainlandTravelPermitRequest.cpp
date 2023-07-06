@@ -63,7 +63,6 @@ bool RecognizeMainlandTravelPermitRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RecognizeMainlandTravelPermitRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

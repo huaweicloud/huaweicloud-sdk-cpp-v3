@@ -92,7 +92,6 @@ bool BoundingBox::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t BoundingBox::getWidth() const
 {
     return width_;

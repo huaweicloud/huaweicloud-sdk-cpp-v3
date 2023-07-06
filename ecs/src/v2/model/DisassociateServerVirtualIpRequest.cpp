@@ -63,7 +63,6 @@ bool DisassociateServerVirtualIpRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DisassociateServerVirtualIpRequest::getNicId() const
 {
     return nicId_;

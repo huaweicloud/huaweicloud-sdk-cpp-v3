@@ -64,7 +64,6 @@ bool TrafficData::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int64_t TrafficData::getValue() const
 {
     return value_;

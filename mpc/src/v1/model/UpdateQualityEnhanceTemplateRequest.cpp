@@ -49,7 +49,6 @@ bool UpdateQualityEnhanceTemplateRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 UpdateQualityEnhanceTemplateReq UpdateQualityEnhanceTemplateRequest::getBody() const
 {
     return body_;

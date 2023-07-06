@@ -50,7 +50,6 @@ bool ListServerGroupsPageInfoResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListServerGroupsPageInfoResult::getNextMarker() const
 {
     return nextMarker_;

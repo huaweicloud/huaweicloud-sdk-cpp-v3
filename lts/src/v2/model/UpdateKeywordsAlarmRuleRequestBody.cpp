@@ -185,7 +185,7 @@ bool UpdateKeywordsAlarmRuleRequestBody::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("notification_save_rule"));
         if(!fieldValue.is_null())
         {
-            NotificationSaveRule refVal;
+            SqlNotificationSaveRule refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setNotificationSaveRule(refVal);
         }
@@ -228,7 +228,6 @@ bool UpdateKeywordsAlarmRuleRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
-
 
 std::string UpdateKeywordsAlarmRuleRequestBody::getKeywordsAlarmRuleId() const
 {
@@ -419,12 +418,12 @@ void UpdateKeywordsAlarmRuleRequestBody::unsetdomainId()
     domainIdIsSet_ = false;
 }
 
-NotificationSaveRule UpdateKeywordsAlarmRuleRequestBody::getNotificationSaveRule() const
+SqlNotificationSaveRule UpdateKeywordsAlarmRuleRequestBody::getNotificationSaveRule() const
 {
     return notificationSaveRule_;
 }
 
-void UpdateKeywordsAlarmRuleRequestBody::setNotificationSaveRule(const NotificationSaveRule& value)
+void UpdateKeywordsAlarmRuleRequestBody::setNotificationSaveRule(const SqlNotificationSaveRule& value)
 {
     notificationSaveRule_ = value;
     notificationSaveRuleIsSet_ = true;

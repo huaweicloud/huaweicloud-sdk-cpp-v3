@@ -62,7 +62,6 @@ bool AddAgentPathResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& AddAgentPathResponse::getAdded()
 {
     return added_;

@@ -134,7 +134,6 @@ bool ListResizeFlavorsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListResizeFlavorsRequest::getInstanceUuid() const
 {
     return instanceUuid_;

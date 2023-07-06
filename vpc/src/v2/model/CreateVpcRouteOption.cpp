@@ -92,7 +92,6 @@ bool CreateVpcRouteOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateVpcRouteOption::getDestination() const
 {
     return destination_;

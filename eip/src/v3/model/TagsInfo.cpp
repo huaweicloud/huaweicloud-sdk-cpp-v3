@@ -64,7 +64,6 @@ bool TagsInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string TagsInfo::getKey() const
 {
     return key_;

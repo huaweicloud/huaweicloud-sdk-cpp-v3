@@ -105,7 +105,6 @@ bool BlackWhiteListResponse_data::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BlackWhiteListResponse_data::getObjectId() const
 {
     return objectId_;

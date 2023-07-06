@@ -78,7 +78,6 @@ bool NovaServerNetwork::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NovaServerNetwork::getPort() const
 {
     return port_;

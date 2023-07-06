@@ -78,7 +78,6 @@ bool FLVRecordConfig::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t FLVRecordConfig::getRecordCycle() const
 {
     return recordCycle_;

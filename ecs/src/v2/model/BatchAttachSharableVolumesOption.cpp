@@ -64,7 +64,6 @@ bool BatchAttachSharableVolumesOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BatchAttachSharableVolumesOption::getServerId() const
 {
     return serverId_;

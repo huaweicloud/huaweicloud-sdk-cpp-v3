@@ -92,7 +92,6 @@ bool Path::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string Path::getId() const
 {
     return id_;

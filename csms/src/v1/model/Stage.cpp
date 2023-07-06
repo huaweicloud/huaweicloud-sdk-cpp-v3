@@ -92,7 +92,6 @@ bool Stage::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string Stage::getName() const
 {
     return name_;

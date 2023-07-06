@@ -28,9 +28,6 @@ web::json::value DetectFaceByFileRequestBody::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(imageFileIsSet_) {
-        val[utility::conversions::to_string_t("image_file")] = ModelBase::toJson(imageFile_);
-    }
     if(attributesIsSet_) {
         val[utility::conversions::to_string_t("attributes")] = ModelBase::toJson(attributes_);
     }
@@ -42,15 +39,6 @@ bool DetectFaceByFileRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("image_file"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("image_file"));
-        if(!fieldValue.is_null())
-        {
-            HttpContent refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setImageFile(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("attributes"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("attributes"));
         if(!fieldValue.is_null())
@@ -62,7 +50,6 @@ bool DetectFaceByFileRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
-
 
 HttpContent DetectFaceByFileRequestBody::getImageFile() const
 {

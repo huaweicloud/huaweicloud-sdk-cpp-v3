@@ -63,7 +63,6 @@ bool RecognizeMyanmarDriverLicenseRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RecognizeMyanmarDriverLicenseRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

@@ -64,7 +64,6 @@ bool OrderRuleAclDto::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string OrderRuleAclDto::getDestRuleId() const
 {
     return destRuleId_;

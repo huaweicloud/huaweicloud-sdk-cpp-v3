@@ -49,7 +49,6 @@ bool Quota::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<QuotaInfo>& Quota::getResources()
 {
     return resources_;

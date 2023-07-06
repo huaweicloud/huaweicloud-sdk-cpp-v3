@@ -7,8 +7,8 @@
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/lts/v2/model/AccessConfigDeatil.h>
 #include <huaweicloud/lts/v2/model/AccessConfigHostGroupIdList.h>
+#include <huaweicloud/lts/v2/model/AccessConfigDeatilCreate.h>
 #include <string>
 #include <huaweicloud/lts/v2/model/AccessConfigTag.h>
 #include <vector>
@@ -55,10 +55,10 @@ public:
     /// 
     /// </summary>
 
-    AccessConfigDeatil getAccessConfigDetail() const;
+    AccessConfigDeatilCreate getAccessConfigDetail() const;
     bool accessConfigDetailIsSet() const;
     void unsetaccessConfigDetail();
-    void setAccessConfigDetail(const AccessConfigDeatil& value);
+    void setAccessConfigDetail(const AccessConfigDeatilCreate& value);
 
     /// <summary>
     /// 
@@ -70,7 +70,7 @@ public:
     void setHostGroupInfo(const AccessConfigHostGroupIdList& value);
 
     /// <summary>
-    /// 
+    /// 标签信息。KEY不能重复,最多20个标签
     /// </summary>
 
     std::vector<AccessConfigTag>& getAccessConfigTag();
@@ -78,16 +78,38 @@ public:
     void unsetaccessConfigTag();
     void setAccessConfigTag(const std::vector<AccessConfigTag>& value);
 
+    /// <summary>
+    /// 日志拆分
+    /// </summary>
+
+    bool isLogSplit() const;
+    bool logSplitIsSet() const;
+    void unsetlogSplit();
+    void setLogSplit(bool value);
+
+    /// <summary>
+    /// 二进制采集
+    /// </summary>
+
+    bool isBinaryCollect() const;
+    bool binaryCollectIsSet() const;
+    void unsetbinaryCollect();
+    void setBinaryCollect(bool value);
+
 
 protected:
     std::string accessConfigId_;
     bool accessConfigIdIsSet_;
-    AccessConfigDeatil accessConfigDetail_;
+    AccessConfigDeatilCreate accessConfigDetail_;
     bool accessConfigDetailIsSet_;
     AccessConfigHostGroupIdList hostGroupInfo_;
     bool hostGroupInfoIsSet_;
     std::vector<AccessConfigTag> accessConfigTag_;
     bool accessConfigTagIsSet_;
+    bool logSplit_;
+    bool logSplitIsSet_;
+    bool binaryCollect_;
+    bool binaryCollectIsSet_;
 
 };
 

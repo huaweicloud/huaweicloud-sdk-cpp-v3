@@ -92,7 +92,6 @@ bool ListVpcsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t ListVpcsRequest::getLimit() const
 {
     return limit_;

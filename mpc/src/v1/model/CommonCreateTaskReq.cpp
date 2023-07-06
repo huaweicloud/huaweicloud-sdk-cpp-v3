@@ -76,7 +76,6 @@ bool CommonCreateTaskReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ObsObjInfo CommonCreateTaskReq::getInput() const
 {
     return input_;

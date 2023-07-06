@@ -63,7 +63,6 @@ bool NovaServerImage::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NovaServerImage::getId() const
 {
     return id_;

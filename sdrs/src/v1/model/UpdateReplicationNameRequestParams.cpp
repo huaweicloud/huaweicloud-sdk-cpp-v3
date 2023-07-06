@@ -50,7 +50,6 @@ bool UpdateReplicationNameRequestParams::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateReplicationNameRequestParams::getName() const
 {
     return name_;

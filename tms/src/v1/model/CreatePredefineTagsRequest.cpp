@@ -49,7 +49,6 @@ bool CreatePredefineTagsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ReqCreatePredefineTag CreatePredefineTagsRequest::getBody() const
 {
     return body_;

@@ -49,7 +49,6 @@ bool RecognizeFlightItineraryResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 FlightItineraryResult RecognizeFlightItineraryResponse::getResult() const
 {
     return result_;

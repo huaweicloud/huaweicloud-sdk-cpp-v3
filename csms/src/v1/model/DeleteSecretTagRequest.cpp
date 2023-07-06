@@ -64,7 +64,6 @@ bool DeleteSecretTagRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteSecretTagRequest::getSecretId() const
 {
     return secretId_;

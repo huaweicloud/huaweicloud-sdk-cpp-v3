@@ -104,7 +104,6 @@ bool ListVolumesByTagsRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListVolumesByTagsRequestBody::getAction() const
 {
     return action_;

@@ -63,7 +63,6 @@ bool ListClustersResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ClusterDetail>& ListClustersResponse::getClusters()
 {
     return clusters_;

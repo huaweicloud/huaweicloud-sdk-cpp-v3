@@ -64,7 +64,6 @@ bool SubJobEntities::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string SubJobEntities::getImageId() const
 {
     return imageId_;

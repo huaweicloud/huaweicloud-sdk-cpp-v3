@@ -132,7 +132,6 @@ bool VaultUpdate::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 BillingUpdate VaultUpdate::getBilling() const
 {
     return billing_;

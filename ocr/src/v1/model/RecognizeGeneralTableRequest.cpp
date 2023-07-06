@@ -63,7 +63,6 @@ bool RecognizeGeneralTableRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RecognizeGeneralTableRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

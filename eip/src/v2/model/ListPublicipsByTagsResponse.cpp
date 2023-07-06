@@ -63,7 +63,6 @@ bool ListPublicipsByTagsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ListResourceResp>& ListPublicipsByTagsResponse::getResources()
 {
     return resources_;

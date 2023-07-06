@@ -50,7 +50,6 @@ bool ListPublicBorderGroupsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListPublicBorderGroupsRequest::getFields() const
 {
     return fields_;

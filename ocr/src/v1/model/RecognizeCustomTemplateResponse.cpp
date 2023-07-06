@@ -63,7 +63,6 @@ bool RecognizeCustomTemplateResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 Object RecognizeCustomTemplateResponse::getResult() const
 {
     return result_;

@@ -36,7 +36,6 @@ bool DeleteTranscodeTemplateResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

@@ -63,7 +63,6 @@ bool ListAccessConfigRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListAccessConfigRequest::getContentType() const
 {
     return contentType_;

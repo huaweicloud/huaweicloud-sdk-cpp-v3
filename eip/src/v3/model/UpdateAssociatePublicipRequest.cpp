@@ -63,7 +63,6 @@ bool UpdateAssociatePublicipRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateAssociatePublicipRequest::getPublicipId() const
 {
     return publicipId_;

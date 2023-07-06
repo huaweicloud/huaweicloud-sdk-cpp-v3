@@ -36,7 +36,6 @@ bool BatchCreateVolumeTagsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

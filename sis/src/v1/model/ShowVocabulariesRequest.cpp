@@ -77,7 +77,6 @@ bool ShowVocabulariesRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t ShowVocabulariesRequest::getOffset() const
 {
     return offset_;

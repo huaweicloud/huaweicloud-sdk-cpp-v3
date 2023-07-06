@@ -64,7 +64,6 @@ bool ListQueryAllSearchCriteriasRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListQueryAllSearchCriteriasRequest::getGroupId() const
 {
     return groupId_;

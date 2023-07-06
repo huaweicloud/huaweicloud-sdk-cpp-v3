@@ -63,7 +63,6 @@ bool ListHostResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<GetHostListInfo>& ListHostResponse::getResult()
 {
     return result_;

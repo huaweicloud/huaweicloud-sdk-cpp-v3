@@ -49,7 +49,6 @@ bool ListBandwidthsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<BandwidthResp>& ListBandwidthsResponse::getBandwidths()
 {
     return bandwidths_;

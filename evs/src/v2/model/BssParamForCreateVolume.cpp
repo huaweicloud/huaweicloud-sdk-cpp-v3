@@ -106,7 +106,6 @@ bool BssParamForCreateVolume::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BssParamForCreateVolume::getChargingMode() const
 {
     return chargingMode_;

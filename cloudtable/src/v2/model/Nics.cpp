@@ -64,7 +64,6 @@ bool Nics::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string Nics::getNetId() const
 {
     return netId_;

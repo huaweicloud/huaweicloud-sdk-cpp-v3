@@ -146,7 +146,6 @@ bool MergeChannelsTaskInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string MergeChannelsTaskInfo::getTaskId() const
 {
     return taskId_;

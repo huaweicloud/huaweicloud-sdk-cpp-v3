@@ -50,7 +50,6 @@ bool RegisterImageRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RegisterImageRequestBody::getImageUrl() const
 {
     return imageUrl_;

@@ -63,7 +63,6 @@ bool UpdateServerAutoTerminateTimeRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateServerAutoTerminateTimeRequest::getServerId() const
 {
     return serverId_;

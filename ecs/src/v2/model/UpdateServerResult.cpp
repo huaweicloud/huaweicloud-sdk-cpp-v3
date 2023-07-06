@@ -325,7 +325,6 @@ bool UpdateServerResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateServerResult::getTenantId() const
 {
     return tenantId_;

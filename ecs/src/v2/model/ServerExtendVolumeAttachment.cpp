@@ -92,7 +92,6 @@ bool ServerExtendVolumeAttachment::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ServerExtendVolumeAttachment::getId() const
 {
     return id_;

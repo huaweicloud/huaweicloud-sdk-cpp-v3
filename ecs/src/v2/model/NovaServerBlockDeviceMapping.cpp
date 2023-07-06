@@ -162,7 +162,6 @@ bool NovaServerBlockDeviceMapping::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NovaServerBlockDeviceMapping::getSourceType() const
 {
     return sourceType_;

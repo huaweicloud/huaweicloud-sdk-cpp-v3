@@ -49,7 +49,6 @@ bool ListAllObsObjListResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ObsObject>& ListAllObsObjListResponse::getObjects()
 {
     return objects_;

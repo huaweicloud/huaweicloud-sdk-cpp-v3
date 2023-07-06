@@ -50,7 +50,6 @@ bool SecurityGroupsParams::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string SecurityGroupsParams::getId() const
 {
     return id_;

@@ -106,7 +106,6 @@ bool FaceQuality::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 double FaceQuality::getTotalScore() const
 {
     return totalScore_;

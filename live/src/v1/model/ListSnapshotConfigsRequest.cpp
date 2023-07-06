@@ -92,7 +92,6 @@ bool ListSnapshotConfigsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListSnapshotConfigsRequest::getDomain() const
 {
     return domain_;

@@ -118,7 +118,6 @@ bool CreateNotificationTemplateRequestBody::fromJson(const web::json::value& val
     return ok;
 }
 
-
 std::string CreateNotificationTemplateRequestBody::getName() const
 {
     return name_;

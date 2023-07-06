@@ -62,7 +62,6 @@ bool ListServerBlockDevicesResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 BlockDeviceAttachableQuantity ListServerBlockDevicesResponse::getAttachableQuantity() const
 {
     return attachableQuantity_;

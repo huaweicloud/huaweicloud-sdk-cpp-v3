@@ -50,7 +50,6 @@ bool OutputPolicy::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string OutputPolicy::getOutputPolicy() const
 {
     return outputPolicy_;

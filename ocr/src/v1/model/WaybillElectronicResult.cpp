@@ -161,7 +161,6 @@ bool WaybillElectronicResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string WaybillElectronicResult::getCode() const
 {
     return code_;

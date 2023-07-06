@@ -49,7 +49,6 @@ bool UpdateBackupResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 BackupResp UpdateBackupResponse::getBackup() const
 {
     return backup_;

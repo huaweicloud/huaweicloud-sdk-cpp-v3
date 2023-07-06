@@ -104,7 +104,6 @@ bool AssetInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AssetInfo::getAssetId() const
 {
     return assetId_;

@@ -63,7 +63,6 @@ bool ListDomainLogsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t ListDomainLogsResponse::getTotal() const
 {
     return total_;

@@ -148,7 +148,6 @@ bool Member::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string Member::getStatus() const
 {
     return status_;

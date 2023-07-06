@@ -49,7 +49,6 @@ bool UpdateSnapshotRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 UpdateSnapshotOption UpdateSnapshotRequestBody::getSnapshot() const
 {
     return snapshot_;

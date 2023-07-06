@@ -50,7 +50,6 @@ bool DeleteReplicationResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteReplicationResponse::getJobId() const
 {
     return jobId_;

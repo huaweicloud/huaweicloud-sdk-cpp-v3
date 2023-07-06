@@ -77,7 +77,6 @@ bool GeneralTextResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 float GeneralTextResult::getDirection() const
 {
     return direction_;

@@ -63,7 +63,6 @@ bool CreatePostPaidServersResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreatePostPaidServersResponse::getJobId() const
 {
     return jobId_;

@@ -257,7 +257,6 @@ bool UpdateSqlAlarmRuleResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateSqlAlarmRuleResponse::getId() const
 {
     return id_;

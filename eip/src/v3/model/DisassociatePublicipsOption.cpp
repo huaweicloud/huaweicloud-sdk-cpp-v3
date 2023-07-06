@@ -64,7 +64,6 @@ bool DisassociatePublicipsOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DisassociatePublicipsOption::getAssociateInstanceType() const
 {
     return associateInstanceType_;

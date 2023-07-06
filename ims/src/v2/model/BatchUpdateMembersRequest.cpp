@@ -49,7 +49,6 @@ bool BatchUpdateMembersRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 BatchUpdateMembersRequestBody BatchUpdateMembersRequest::getBody() const
 {
     return body_;

@@ -64,7 +64,6 @@ bool HostGroupTag::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string HostGroupTag::getKey() const
 {
     return key_;

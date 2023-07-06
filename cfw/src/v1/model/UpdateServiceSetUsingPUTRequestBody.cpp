@@ -64,7 +64,6 @@ bool UpdateServiceSetUsingPUTRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateServiceSetUsingPUTRequestBody::getName() const
 {
     return name_;

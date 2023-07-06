@@ -64,7 +64,6 @@ bool V2UserData::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int64_t V2UserData::getValue() const
 {
     return value_;

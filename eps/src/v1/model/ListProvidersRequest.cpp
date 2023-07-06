@@ -92,7 +92,6 @@ bool ListProvidersRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListProvidersRequest::getLocale() const
 {
     return locale_;

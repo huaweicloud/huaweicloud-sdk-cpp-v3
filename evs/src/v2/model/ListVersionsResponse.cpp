@@ -49,7 +49,6 @@ bool ListVersionsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<Versions>& ListVersionsResponse::getVersions()
 {
     return versions_;

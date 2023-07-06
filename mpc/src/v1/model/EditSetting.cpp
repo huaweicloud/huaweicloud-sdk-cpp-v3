@@ -156,7 +156,6 @@ bool EditSetting::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string EditSetting::getTimelineStart() const
 {
     return timelineStart_;

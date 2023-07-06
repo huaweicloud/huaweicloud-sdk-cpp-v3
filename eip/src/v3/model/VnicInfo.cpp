@@ -190,7 +190,6 @@ bool VnicInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string VnicInfo::getPrivateIpAddress() const
 {
     return privateIpAddress_;

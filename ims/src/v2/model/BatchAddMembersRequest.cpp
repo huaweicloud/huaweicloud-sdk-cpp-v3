@@ -49,7 +49,6 @@ bool BatchAddMembersRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 BatchAddMembersRequestBody BatchAddMembersRequest::getBody() const
 {
     return body_;

@@ -63,7 +63,6 @@ bool CreateVaultTagsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateVaultTagsRequest::getVaultId() const
 {
     return vaultId_;

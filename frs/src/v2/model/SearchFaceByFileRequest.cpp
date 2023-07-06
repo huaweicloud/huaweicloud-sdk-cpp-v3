@@ -77,7 +77,6 @@ bool SearchFaceByFileRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string SearchFaceByFileRequest::getFaceSetName() const
 {
     return faceSetName_;

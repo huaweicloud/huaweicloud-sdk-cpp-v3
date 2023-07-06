@@ -49,7 +49,6 @@ bool BatchStartServersRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 BatchStartServersRequestBody BatchStartServersRequest::getBody() const
 {
     return body_;

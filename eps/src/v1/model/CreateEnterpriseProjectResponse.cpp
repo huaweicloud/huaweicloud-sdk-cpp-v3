@@ -49,7 +49,6 @@ bool CreateEnterpriseProjectResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 EpDetail CreateEnterpriseProjectResponse::getEnterpriseProject() const
 {
     return enterpriseProject_;

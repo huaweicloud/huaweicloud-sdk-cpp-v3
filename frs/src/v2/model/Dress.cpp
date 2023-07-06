@@ -64,7 +64,6 @@ bool Dress::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string Dress::getGlass() const
 {
     return glass_;

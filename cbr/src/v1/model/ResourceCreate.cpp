@@ -91,7 +91,6 @@ bool ResourceCreate::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ResourceExtraInfo ResourceCreate::getExtraInfo() const
 {
     return extraInfo_;

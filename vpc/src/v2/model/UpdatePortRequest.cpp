@@ -63,7 +63,6 @@ bool UpdatePortRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdatePortRequest::getPortId() const
 {
     return portId_;

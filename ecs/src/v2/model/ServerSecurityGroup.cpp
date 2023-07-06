@@ -64,7 +64,6 @@ bool ServerSecurityGroup::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ServerSecurityGroup::getName() const
 {
     return name_;

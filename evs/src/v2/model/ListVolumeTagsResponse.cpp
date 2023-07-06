@@ -49,7 +49,6 @@ bool ListVolumeTagsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::map<std::string, std::vector<std::string>>& ListVolumeTagsResponse::getTags()
 {
     return tags_;

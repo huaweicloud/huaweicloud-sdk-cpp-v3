@@ -120,7 +120,6 @@ bool RuleAddressDto::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t RuleAddressDto::getType() const
 {
     return type_;

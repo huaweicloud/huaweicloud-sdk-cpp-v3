@@ -148,7 +148,6 @@ bool CommonTaskMeta::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CommonTaskMeta::getTaskId() const
 {
     return taskId_;

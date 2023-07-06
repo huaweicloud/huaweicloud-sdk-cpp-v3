@@ -49,7 +49,6 @@ bool NovaAttachInterfaceRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 NovaAttachInterfaceOption NovaAttachInterfaceRequestBody::getInterfaceAttachment() const
 {
     return interfaceAttachment_;

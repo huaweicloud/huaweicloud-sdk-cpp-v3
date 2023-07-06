@@ -271,7 +271,6 @@ bool PublicipPoolShowResp::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PublicipPoolShowResp::getId() const
 {
     return id_;

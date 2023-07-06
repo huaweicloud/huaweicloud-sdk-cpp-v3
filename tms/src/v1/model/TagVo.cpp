@@ -64,7 +64,6 @@ bool TagVo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string TagVo::getKey() const
 {
     return key_;

@@ -64,7 +64,6 @@ bool ListClustersRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t ListClustersRequest::getOffset() const
 {
     return offset_;

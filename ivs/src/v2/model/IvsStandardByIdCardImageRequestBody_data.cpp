@@ -49,7 +49,6 @@ bool IvsStandardByIdCardImageRequestBody_data::fromJson(const web::json::value& 
     return ok;
 }
 
-
 std::vector<ReqDataByIdCardImage>& IvsStandardByIdCardImageRequestBody_data::getReqData()
 {
     return reqData_;

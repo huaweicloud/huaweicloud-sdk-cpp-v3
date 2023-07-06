@@ -50,7 +50,6 @@ bool DeleteSecurityGroupRuleRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteSecurityGroupRuleRequest::getSecurityGroupRuleId() const
 {
     return securityGroupRuleId_;

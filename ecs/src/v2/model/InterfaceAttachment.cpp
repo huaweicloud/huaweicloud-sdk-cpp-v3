@@ -175,7 +175,6 @@ bool InterfaceAttachment::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ServerInterfaceFixedIp>& InterfaceAttachment::getFixedIps()
 {
     return fixedIps_;

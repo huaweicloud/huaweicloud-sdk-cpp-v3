@@ -49,7 +49,6 @@ bool UpdateAddressSetInfoUsingPutResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 IdObject UpdateAddressSetInfoUsingPutResponse::getData() const
 {
     return data_;

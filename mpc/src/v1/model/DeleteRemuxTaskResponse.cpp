@@ -36,7 +36,6 @@ bool DeleteRemuxTaskResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

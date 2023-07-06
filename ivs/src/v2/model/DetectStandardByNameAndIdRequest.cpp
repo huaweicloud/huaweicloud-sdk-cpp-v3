@@ -63,7 +63,6 @@ bool DetectStandardByNameAndIdRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DetectStandardByNameAndIdRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

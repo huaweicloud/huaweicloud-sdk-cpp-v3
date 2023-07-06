@@ -49,7 +49,6 @@ bool RecognizeBankcardResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 BankcardResult RecognizeBankcardResponse::getResult() const
 {
     return result_;

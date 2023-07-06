@@ -77,7 +77,6 @@ bool AddSubtitle::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AddSubtitle::getType() const
 {
     return type_;

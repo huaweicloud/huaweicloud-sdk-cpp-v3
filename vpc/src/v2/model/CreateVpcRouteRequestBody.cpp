@@ -49,7 +49,6 @@ bool CreateVpcRouteRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 CreateVpcRouteOption CreateVpcRouteRequestBody::getRoute() const
 {
     return route_;

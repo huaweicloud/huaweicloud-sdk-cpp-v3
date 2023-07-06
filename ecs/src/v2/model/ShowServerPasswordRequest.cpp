@@ -50,7 +50,6 @@ bool ShowServerPasswordRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowServerPasswordRequest::getServerId() const
 {
     return serverId_;

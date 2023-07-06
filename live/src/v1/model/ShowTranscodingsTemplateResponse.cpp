@@ -77,7 +77,6 @@ bool ShowTranscodingsTemplateResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t ShowTranscodingsTemplateResponse::getTotal() const
 {
     return total_;

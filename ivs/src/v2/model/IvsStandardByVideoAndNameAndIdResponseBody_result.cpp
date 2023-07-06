@@ -77,7 +77,6 @@ bool IvsStandardByVideoAndNameAndIdResponseBody_result::fromJson(const web::json
     return ok;
 }
 
-
 std::string IvsStandardByVideoAndNameAndIdResponseBody_result::getServiceName() const
 {
     return serviceName_;

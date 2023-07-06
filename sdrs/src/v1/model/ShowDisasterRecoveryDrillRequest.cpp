@@ -50,7 +50,6 @@ bool ShowDisasterRecoveryDrillRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowDisasterRecoveryDrillRequest::getDisasterRecoveryDrillId() const
 {
     return disasterRecoveryDrillId_;

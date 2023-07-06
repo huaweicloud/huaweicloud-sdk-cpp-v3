@@ -37,6 +37,10 @@ CreateVolumeOption::CreateVolumeOption()
     volumeType_ = "";
     volumeTypeIsSet_ = false;
     tagsIsSet_ = false;
+    iops_ = 0;
+    iopsIsSet_ = false;
+    throughput_ = 0;
+    throughputIsSet_ = false;
 }
 
 CreateVolumeOption::~CreateVolumeOption() = default;
@@ -87,6 +91,12 @@ web::json::value CreateVolumeOption::toJson() const
     }
     if(tagsIsSet_) {
         val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
+    }
+    if(iopsIsSet_) {
+        val[utility::conversions::to_string_t("iops")] = ModelBase::toJson(iops_);
+    }
+    if(throughputIsSet_) {
+        val[utility::conversions::to_string_t("throughput")] = ModelBase::toJson(throughput_);
     }
 
     return val;
@@ -213,9 +223,26 @@ bool CreateVolumeOption::fromJson(const web::json::value& val)
             setTags(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("iops"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("iops"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIops(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("throughput"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("throughput"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setThroughput(refVal);
+        }
+    }
     return ok;
 }
-
 
 std::string CreateVolumeOption::getAvailabilityZone() const
 {
@@ -488,6 +515,48 @@ bool CreateVolumeOption::tagsIsSet() const
 void CreateVolumeOption::unsettags()
 {
     tagsIsSet_ = false;
+}
+
+int32_t CreateVolumeOption::getIops() const
+{
+    return iops_;
+}
+
+void CreateVolumeOption::setIops(int32_t value)
+{
+    iops_ = value;
+    iopsIsSet_ = true;
+}
+
+bool CreateVolumeOption::iopsIsSet() const
+{
+    return iopsIsSet_;
+}
+
+void CreateVolumeOption::unsetiops()
+{
+    iopsIsSet_ = false;
+}
+
+int32_t CreateVolumeOption::getThroughput() const
+{
+    return throughput_;
+}
+
+void CreateVolumeOption::setThroughput(int32_t value)
+{
+    throughput_ = value;
+    throughputIsSet_ = true;
+}
+
+bool CreateVolumeOption::throughputIsSet() const
+{
+    return throughputIsSet_;
+}
+
+void CreateVolumeOption::unsetthroughput()
+{
+    throughputIsSet_ = false;
 }
 
 }

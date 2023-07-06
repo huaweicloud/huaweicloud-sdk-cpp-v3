@@ -49,7 +49,6 @@ bool ChangeIpsProtectModeUsingPostResponse::fromJson(const web::json::value& val
     return ok;
 }
 
-
 IdObject ChangeIpsProtectModeUsingPostResponse::getData() const
 {
     return data_;

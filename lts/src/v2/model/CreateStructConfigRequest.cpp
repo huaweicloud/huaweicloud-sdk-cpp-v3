@@ -63,7 +63,6 @@ bool CreateStructConfigRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateStructConfigRequest::getContentType() const
 {
     return contentType_;

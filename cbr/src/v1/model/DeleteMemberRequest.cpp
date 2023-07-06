@@ -64,7 +64,6 @@ bool DeleteMemberRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteMemberRequest::getBackupId() const
 {
     return backupId_;

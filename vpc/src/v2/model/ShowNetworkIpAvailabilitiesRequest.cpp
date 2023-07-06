@@ -50,7 +50,6 @@ bool ShowNetworkIpAvailabilitiesRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowNetworkIpAvailabilitiesRequest::getNetworkId() const
 {
     return networkId_;

@@ -50,7 +50,6 @@ bool ListNotificationTemplateResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListNotificationTemplateResponse::getTemplate() const
 {
     return template_;

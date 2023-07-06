@@ -49,7 +49,6 @@ bool NovaAssociateSecurityGroupRequestBody::fromJson(const web::json::value& val
     return ok;
 }
 
-
 NovaAddSecurityGroupOption NovaAssociateSecurityGroupRequestBody::getAddSecurityGroup() const
 {
     return addSecurityGroup_;

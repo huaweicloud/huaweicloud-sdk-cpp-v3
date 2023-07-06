@@ -92,7 +92,6 @@ bool Notification::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string Notification::getEventName() const
 {
     return eventName_;

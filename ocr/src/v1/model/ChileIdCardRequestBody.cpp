@@ -64,7 +64,6 @@ bool ChileIdCardRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ChileIdCardRequestBody::getImage() const
 {
     return image_;

@@ -36,7 +36,6 @@ bool GlanceDeleteImageResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

@@ -78,7 +78,6 @@ bool File_addr::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string File_addr::getBucket() const
 {
     return bucket_;

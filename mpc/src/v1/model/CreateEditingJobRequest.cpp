@@ -49,7 +49,6 @@ bool CreateEditingJobRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 CreateEditingJobReq CreateEditingJobRequest::getBody() const
 {
     return body_;

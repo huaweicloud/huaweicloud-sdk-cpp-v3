@@ -49,7 +49,6 @@ bool DeleteStructTemplateRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 DeleteStructTemplateReqBody DeleteStructTemplateRequest::getBody() const
 {
     return body_;

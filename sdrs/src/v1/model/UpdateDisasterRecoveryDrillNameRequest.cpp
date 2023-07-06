@@ -63,7 +63,6 @@ bool UpdateDisasterRecoveryDrillNameRequest::fromJson(const web::json::value& va
     return ok;
 }
 
-
 std::string UpdateDisasterRecoveryDrillNameRequest::getDisasterRecoveryDrillId() const
 {
     return disasterRecoveryDrillId_;

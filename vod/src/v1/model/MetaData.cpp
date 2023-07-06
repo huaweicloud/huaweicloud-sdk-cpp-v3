@@ -176,7 +176,6 @@ bool MetaData::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string MetaData::getPackType() const
 {
     return packType_;

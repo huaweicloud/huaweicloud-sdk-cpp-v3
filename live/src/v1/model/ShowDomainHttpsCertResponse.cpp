@@ -92,7 +92,6 @@ bool ShowDomainHttpsCertResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowDomainHttpsCertResponse::getCertificateFormat() const
 {
     return certificateFormat_;

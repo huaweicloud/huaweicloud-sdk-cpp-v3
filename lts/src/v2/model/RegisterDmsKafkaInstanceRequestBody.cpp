@@ -77,7 +77,6 @@ bool RegisterDmsKafkaInstanceRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RegisterDmsKafkaInstanceRequestBody::getInstanceId() const
 {
     return instanceId_;

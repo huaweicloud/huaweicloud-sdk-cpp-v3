@@ -50,7 +50,6 @@ bool DeleteTemplateRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int64_t DeleteTemplateRequest::getTemplateId() const
 {
     return templateId_;

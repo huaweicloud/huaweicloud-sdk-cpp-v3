@@ -90,7 +90,6 @@ bool ShowImageByTagsResource::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowImageByTagsResource::getResourceId() const
 {
     return resourceId_;

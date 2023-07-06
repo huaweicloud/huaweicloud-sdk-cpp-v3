@@ -49,7 +49,6 @@ bool CreateMediaProcessTaskRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 CreateMediaProcessReq CreateMediaProcessTaskRequest::getBody() const
 {
     return body_;

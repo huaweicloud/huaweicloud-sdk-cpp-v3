@@ -78,7 +78,6 @@ bool PostPaidServerDataVolumeExtendParam::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PostPaidServerDataVolumeExtendParam::getResourceSpecCode() const
 {
     return resourceSpecCode_;

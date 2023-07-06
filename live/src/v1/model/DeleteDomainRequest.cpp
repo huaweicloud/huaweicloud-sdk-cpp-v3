@@ -50,7 +50,6 @@ bool DeleteDomainRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteDomainRequest::getDomain() const
 {
     return domain_;

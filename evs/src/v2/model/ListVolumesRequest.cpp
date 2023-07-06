@@ -288,7 +288,6 @@ bool ListVolumesRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListVolumesRequest::getMarker() const
 {
     return marker_;

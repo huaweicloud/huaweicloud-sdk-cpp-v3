@@ -104,7 +104,6 @@ bool AssetProcessReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AssetProcessReq::getAssetId() const
 {
     return assetId_;

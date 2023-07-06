@@ -145,7 +145,6 @@ bool TransTemplateGroup::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string TransTemplateGroup::getName() const
 {
     return name_;

@@ -190,7 +190,6 @@ bool ListVaultRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t ListVaultRequest::getLimit() const
 {
     return limit_;

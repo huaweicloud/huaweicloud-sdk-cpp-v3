@@ -63,7 +63,6 @@ bool AssociateRouteTableRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AssociateRouteTableRequest::getRoutetableId() const
 {
     return routetableId_;

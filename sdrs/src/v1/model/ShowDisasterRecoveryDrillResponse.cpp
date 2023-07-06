@@ -49,7 +49,6 @@ bool ShowDisasterRecoveryDrillResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ShowDisasterRecoveryDrillParams ShowDisasterRecoveryDrillResponse::getDisasterRecoveryDrill() const
 {
     return disasterRecoveryDrill_;

@@ -147,7 +147,6 @@ bool NeutronRemoveFirewallRuleResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NeutronRemoveFirewallRuleResponse::getId() const
 {
     return id_;

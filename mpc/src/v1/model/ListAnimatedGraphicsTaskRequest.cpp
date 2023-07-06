@@ -133,7 +133,6 @@ bool ListAnimatedGraphicsTaskRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListAnimatedGraphicsTaskRequest::getXLanguage() const
 {
     return xLanguage_;

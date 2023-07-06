@@ -50,7 +50,6 @@ bool UploadSecretBlobRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UploadSecretBlobRequestBody::getSecretBlob() const
 {
     return secretBlob_;

@@ -50,7 +50,6 @@ bool PushTranscriberJobsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PushTranscriberJobsResponse::getJobId() const
 {
     return jobId_;

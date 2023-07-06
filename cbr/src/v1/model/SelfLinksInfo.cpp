@@ -50,7 +50,6 @@ bool SelfLinksInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string SelfLinksInfo::getSelf() const
 {
     return self_;

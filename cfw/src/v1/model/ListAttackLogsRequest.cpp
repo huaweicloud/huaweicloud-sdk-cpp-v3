@@ -316,7 +316,6 @@ bool ListAttackLogsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int64_t ListAttackLogsRequest::getStartTime() const
 {
     return startTime_;

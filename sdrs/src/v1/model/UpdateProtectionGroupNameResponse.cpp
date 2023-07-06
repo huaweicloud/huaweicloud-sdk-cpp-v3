@@ -49,7 +49,6 @@ bool UpdateProtectionGroupNameResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ShowProtectionGroupParams UpdateProtectionGroupNameResponse::getServerGroup() const
 {
     return serverGroup_;

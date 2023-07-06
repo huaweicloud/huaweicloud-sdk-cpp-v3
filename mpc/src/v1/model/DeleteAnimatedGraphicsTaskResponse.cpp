@@ -36,7 +36,6 @@ bool DeleteAnimatedGraphicsTaskResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

@@ -146,7 +146,6 @@ bool VpcPeering::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string VpcPeering::getId() const
 {
     return id_;

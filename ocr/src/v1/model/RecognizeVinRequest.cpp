@@ -63,7 +63,6 @@ bool RecognizeVinRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RecognizeVinRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

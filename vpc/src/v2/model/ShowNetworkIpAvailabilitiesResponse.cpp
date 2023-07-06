@@ -49,7 +49,6 @@ bool ShowNetworkIpAvailabilitiesResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 NetworkIpAvailability ShowNetworkIpAvailabilitiesResponse::getNetworkIpAvailability() const
 {
     return networkIpAvailability_;

@@ -49,7 +49,6 @@ bool RecognizeFinancialStatementResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 FinancialStatementResult RecognizeFinancialStatementResponse::getResult() const
 {
     return result_;

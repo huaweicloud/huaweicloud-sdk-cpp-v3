@@ -118,7 +118,6 @@ bool CreateTransferRequestBody_log_transfer_info::fromJson(const web::json::valu
     return ok;
 }
 
-
 std::string CreateTransferRequestBody_log_transfer_info::getLogTransferType() const
 {
     return logTransferType_;

@@ -161,7 +161,6 @@ bool ListChartsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListChartsResponse::getId() const
 {
     return id_;

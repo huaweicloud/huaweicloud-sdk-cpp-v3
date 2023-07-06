@@ -134,7 +134,6 @@ bool ListAddressItemsUsingGetRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListAddressItemsUsingGetRequest::getSetId() const
 {
     return setId_;

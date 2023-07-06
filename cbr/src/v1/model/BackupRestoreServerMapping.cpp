@@ -64,7 +64,6 @@ bool BackupRestoreServerMapping::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BackupRestoreServerMapping::getBackupId() const
 {
     return backupId_;

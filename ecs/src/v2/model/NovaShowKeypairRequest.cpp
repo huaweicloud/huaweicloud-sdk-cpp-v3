@@ -64,7 +64,6 @@ bool NovaShowKeypairRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NovaShowKeypairRequest::getKeypairName() const
 {
     return keypairName_;

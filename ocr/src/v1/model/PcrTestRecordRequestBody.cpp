@@ -78,7 +78,6 @@ bool PcrTestRecordRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PcrTestRecordRequestBody::getImage() const
 {
     return image_;

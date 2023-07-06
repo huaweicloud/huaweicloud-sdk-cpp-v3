@@ -106,7 +106,6 @@ bool CreatePublicipOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreatePublicipOption::getIpAddress() const
 {
     return ipAddress_;

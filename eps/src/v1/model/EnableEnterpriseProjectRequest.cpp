@@ -63,7 +63,6 @@ bool EnableEnterpriseProjectRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string EnableEnterpriseProjectRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

@@ -78,7 +78,6 @@ bool UpdateDnsServersRequestBody_dns_server::fromJson(const web::json::value& va
     return ok;
 }
 
-
 std::string UpdateDnsServersRequestBody_dns_server::getServerIp() const
 {
     return serverIp_;

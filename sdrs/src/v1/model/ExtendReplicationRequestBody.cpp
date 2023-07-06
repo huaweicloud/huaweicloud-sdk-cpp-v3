@@ -49,7 +49,6 @@ bool ExtendReplicationRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ExtendReplicationRequestParams ExtendReplicationRequestBody::getExtendReplication() const
 {
     return extendReplication_;

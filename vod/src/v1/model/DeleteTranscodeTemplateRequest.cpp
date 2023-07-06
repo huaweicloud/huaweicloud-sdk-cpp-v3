@@ -64,7 +64,6 @@ bool DeleteTranscodeTemplateRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteTranscodeTemplateRequest::getXSdkDate() const
 {
     return xSdkDate_;

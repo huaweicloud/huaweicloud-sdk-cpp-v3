@@ -36,7 +36,6 @@ bool BatchDeletePublicipTagsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

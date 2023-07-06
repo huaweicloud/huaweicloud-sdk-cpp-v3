@@ -64,7 +64,6 @@ bool ListNotificationsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListNotificationsRequest::getNotificationType() const
 {
     return notificationType_;

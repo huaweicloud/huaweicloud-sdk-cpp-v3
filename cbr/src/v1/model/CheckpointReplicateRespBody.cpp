@@ -147,7 +147,6 @@ bool CheckpointReplicateRespBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<CheckpointReplicateRespbackups>& CheckpointReplicateRespBody::getBackups()
 {
     return backups_;

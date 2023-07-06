@@ -92,7 +92,6 @@ bool ServerFault::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t ServerFault::getCode() const
 {
     return code_;

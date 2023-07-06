@@ -50,7 +50,6 @@ bool ShowAomMappingRuleRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowAomMappingRuleRequest::getRuleId() const
 {
     return ruleId_;

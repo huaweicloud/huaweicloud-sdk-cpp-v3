@@ -63,7 +63,6 @@ bool RecognizeTransportationLicenseRequest::fromJson(const web::json::value& val
     return ok;
 }
 
-
 std::string RecognizeTransportationLicenseRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

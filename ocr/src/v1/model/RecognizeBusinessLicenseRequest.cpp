@@ -63,7 +63,6 @@ bool RecognizeBusinessLicenseRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RecognizeBusinessLicenseRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

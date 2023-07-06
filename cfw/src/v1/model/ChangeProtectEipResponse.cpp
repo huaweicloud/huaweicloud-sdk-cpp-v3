@@ -49,7 +49,6 @@ bool ChangeProtectEipResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 IdObject ChangeProtectEipResponse::getData() const
 {
     return data_;

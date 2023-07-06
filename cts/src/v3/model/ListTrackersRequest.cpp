@@ -64,7 +64,6 @@ bool ListTrackersRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListTrackersRequest::getTrackerName() const
 {
     return trackerName_;

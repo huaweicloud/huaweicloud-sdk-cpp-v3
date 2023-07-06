@@ -63,7 +63,6 @@ bool BatchCreateAndDeleteVaultTagsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BatchCreateAndDeleteVaultTagsRequest::getVaultId() const
 {
     return vaultId_;

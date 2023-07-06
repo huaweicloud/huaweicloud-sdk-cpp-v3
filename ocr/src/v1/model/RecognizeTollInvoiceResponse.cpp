@@ -49,7 +49,6 @@ bool RecognizeTollInvoiceResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 TollInvoiceResult RecognizeTollInvoiceResponse::getResult() const
 {
     return result_;

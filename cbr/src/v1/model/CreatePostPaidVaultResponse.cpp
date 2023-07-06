@@ -91,7 +91,6 @@ bool CreatePostPaidVaultResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<CbcOrderResult>& CreatePostPaidVaultResponse::getOrders()
 {
     return orders_;

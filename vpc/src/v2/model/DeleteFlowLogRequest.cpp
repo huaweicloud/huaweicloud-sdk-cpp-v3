@@ -50,7 +50,6 @@ bool DeleteFlowLogRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteFlowLogRequest::getFlowlogId() const
 {
     return flowlogId_;

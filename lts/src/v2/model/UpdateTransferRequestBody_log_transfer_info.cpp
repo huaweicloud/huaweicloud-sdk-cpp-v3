@@ -77,7 +77,6 @@ bool UpdateTransferRequestBody_log_transfer_info::fromJson(const web::json::valu
     return ok;
 }
 
-
 std::string UpdateTransferRequestBody_log_transfer_info::getLogStorageFormat() const
 {
     return logStorageFormat_;

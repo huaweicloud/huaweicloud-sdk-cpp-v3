@@ -49,7 +49,6 @@ bool CinderAcceptVolumeTransferRequestBody::fromJson(const web::json::value& val
     return ok;
 }
 
-
 CinderAcceptVolumeTransferOption CinderAcceptVolumeTransferRequestBody::getAccept() const
 {
     return accept_;

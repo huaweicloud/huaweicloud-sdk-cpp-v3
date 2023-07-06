@@ -286,7 +286,6 @@ bool DriverLicenseFront::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DriverLicenseFront::getType() const
 {
     return type_;

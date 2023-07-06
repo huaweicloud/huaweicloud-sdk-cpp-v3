@@ -49,7 +49,6 @@ bool HbaseClusterActionReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 Object HbaseClusterActionReq::getRestart() const
 {
     return restart_;

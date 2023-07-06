@@ -49,7 +49,6 @@ bool CreateRouteTableResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 RouteTableResp CreateRouteTableResponse::getRoutetable() const
 {
     return routetable_;

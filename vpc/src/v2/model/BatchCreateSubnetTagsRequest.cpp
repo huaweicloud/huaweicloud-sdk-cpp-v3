@@ -63,7 +63,6 @@ bool BatchCreateSubnetTagsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BatchCreateSubnetTagsRequest::getSubnetId() const
 {
     return subnetId_;

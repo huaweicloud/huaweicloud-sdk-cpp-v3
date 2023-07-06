@@ -78,7 +78,6 @@ bool ObsBucket::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ObsBucket::getBucket() const
 {
     return bucket_;

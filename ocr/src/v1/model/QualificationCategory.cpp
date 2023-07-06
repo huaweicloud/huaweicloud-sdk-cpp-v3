@@ -92,7 +92,6 @@ bool QualificationCategory::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string QualificationCategory::getCategory() const
 {
     return category_;

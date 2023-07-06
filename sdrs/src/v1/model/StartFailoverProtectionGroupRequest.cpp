@@ -63,7 +63,6 @@ bool StartFailoverProtectionGroupRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string StartFailoverProtectionGroupRequest::getServerGroupId() const
 {
     return serverGroupId_;

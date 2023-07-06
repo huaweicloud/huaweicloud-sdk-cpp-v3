@@ -202,7 +202,6 @@ bool VideoTypeRef::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string VideoTypeRef::getVideoType() const
 {
     return videoType_;

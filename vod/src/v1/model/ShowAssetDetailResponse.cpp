@@ -102,7 +102,6 @@ bool ShowAssetDetailResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowAssetDetailResponse::getAssetId() const
 {
     return assetId_;

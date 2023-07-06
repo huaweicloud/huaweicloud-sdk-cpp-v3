@@ -92,7 +92,6 @@ bool VideoContrast::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string VideoContrast::getName() const
 {
     return name_;

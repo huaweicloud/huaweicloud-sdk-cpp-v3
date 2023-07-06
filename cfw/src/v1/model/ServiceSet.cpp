@@ -106,7 +106,6 @@ bool ServiceSet::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ServiceSet::getSetId() const
 {
     return setId_;

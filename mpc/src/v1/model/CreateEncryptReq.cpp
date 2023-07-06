@@ -89,7 +89,6 @@ bool CreateEncryptReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ObsObjInfo CreateEncryptReq::getInput() const
 {
     return input_;

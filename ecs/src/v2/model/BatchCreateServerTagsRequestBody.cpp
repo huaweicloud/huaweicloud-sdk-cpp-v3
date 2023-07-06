@@ -63,7 +63,6 @@ bool BatchCreateServerTagsRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BatchCreateServerTagsRequestBody::getAction() const
 {
     return action_;

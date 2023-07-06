@@ -106,7 +106,6 @@ bool ResizeProtectedInstanceRequestParams::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ResizeProtectedInstanceRequestParams::getFlavorRef() const
 {
     return flavorRef_;

@@ -1042,6 +1042,9 @@ std::shared_ptr<ListSecurityGroupRulesResponse> VpcClient::listSecurityGroupRule
     if (request.securityGroupIdIsSet()) {
         localVarQueryParams["security_group_id"] = parameterToString(request.getSecurityGroupId());
     }
+    if (request.remoteIpPrefixIsSet()) {
+        localVarQueryParams["remote_ip_prefix"] = parameterToString(request.getRemoteIpPrefix());
+    }
 
     std::string localVarHttpBody;
 

@@ -246,7 +246,6 @@ bool ListTagsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t ListTagsRequest::getLimit() const
 {
     return limit_;

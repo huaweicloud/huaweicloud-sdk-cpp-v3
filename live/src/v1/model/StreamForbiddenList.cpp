@@ -78,7 +78,6 @@ bool StreamForbiddenList::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string StreamForbiddenList::getAppName() const
 {
     return appName_;

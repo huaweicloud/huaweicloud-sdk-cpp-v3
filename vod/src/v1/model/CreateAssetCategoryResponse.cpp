@@ -106,7 +106,6 @@ bool CreateAssetCategoryResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateAssetCategoryResponse::getName() const
 {
     return name_;

@@ -120,7 +120,6 @@ bool ListFailureJobsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListFailureJobsRequest::getFailureStatus() const
 {
     return failureStatus_;

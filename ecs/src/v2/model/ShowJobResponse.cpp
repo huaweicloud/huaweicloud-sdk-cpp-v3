@@ -175,7 +175,6 @@ bool ShowJobResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowJobResponse::getBeginTime() const
 {
     return beginTime_;

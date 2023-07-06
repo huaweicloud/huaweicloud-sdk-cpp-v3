@@ -78,7 +78,6 @@ bool DetachServerVolumeRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DetachServerVolumeRequest::getServerId() const
 {
     return serverId_;

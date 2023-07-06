@@ -49,7 +49,6 @@ bool CreateVolumeRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 CreateVolumeRequestBody CreateVolumeRequest::getBody() const
 {
     return body_;

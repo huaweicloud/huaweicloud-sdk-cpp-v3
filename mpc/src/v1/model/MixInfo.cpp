@@ -62,7 +62,6 @@ bool MixInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<InputSetting>& MixInfo::getInputs()
 {
     return inputs_;

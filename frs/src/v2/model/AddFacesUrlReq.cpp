@@ -91,7 +91,6 @@ bool AddFacesUrlReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AddFacesUrlReq::getImageUrl() const
 {
     return imageUrl_;

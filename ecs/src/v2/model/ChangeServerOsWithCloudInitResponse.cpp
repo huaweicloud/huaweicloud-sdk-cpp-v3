@@ -50,7 +50,6 @@ bool ChangeServerOsWithCloudInitResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ChangeServerOsWithCloudInitResponse::getJobId() const
 {
     return jobId_;

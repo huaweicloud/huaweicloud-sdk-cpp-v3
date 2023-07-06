@@ -50,7 +50,6 @@ bool ResourceId::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ResourceId::getId() const
 {
     return id_;

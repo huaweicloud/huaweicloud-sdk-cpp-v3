@@ -50,7 +50,6 @@ bool DeleteFacesBatchReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteFacesBatchReq::getFilter() const
 {
     return filter_;

@@ -77,7 +77,6 @@ bool HttpQueryCfwAccessControllerLogsResponseDTO_data::fromJson(const web::json:
     return ok;
 }
 
-
 int32_t HttpQueryCfwAccessControllerLogsResponseDTO_data::getTotal() const
 {
     return total_;

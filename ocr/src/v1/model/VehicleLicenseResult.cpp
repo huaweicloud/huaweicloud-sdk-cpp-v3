@@ -343,7 +343,6 @@ bool VehicleLicenseResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string VehicleLicenseResult::getNumber() const
 {
     return number_;

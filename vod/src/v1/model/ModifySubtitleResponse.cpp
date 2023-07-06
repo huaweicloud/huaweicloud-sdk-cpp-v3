@@ -50,7 +50,6 @@ bool ModifySubtitleResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ModifySubtitleResponse::getAssetId() const
 {
     return assetId_;

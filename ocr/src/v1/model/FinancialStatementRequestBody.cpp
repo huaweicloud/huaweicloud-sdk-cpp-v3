@@ -148,7 +148,6 @@ bool FinancialStatementRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string FinancialStatementRequestBody::getImage() const
 {
     return image_;

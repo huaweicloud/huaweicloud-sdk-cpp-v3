@@ -78,7 +78,6 @@ bool HealthCodeRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string HealthCodeRequestBody::getImage() const
 {
     return image_;

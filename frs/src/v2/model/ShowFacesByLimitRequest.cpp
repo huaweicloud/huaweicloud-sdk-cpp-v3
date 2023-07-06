@@ -92,7 +92,6 @@ bool ShowFacesByLimitRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowFacesByLimitRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

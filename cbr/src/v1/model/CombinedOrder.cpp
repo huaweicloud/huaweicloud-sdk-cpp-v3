@@ -78,7 +78,6 @@ bool CombinedOrder::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CombinedOrder::getCombinedOrderId() const
 {
     return combinedOrderId_;

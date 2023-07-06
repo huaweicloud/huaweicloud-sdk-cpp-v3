@@ -63,7 +63,6 @@ bool ListVpcsByTagsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ListResourceResp>& ListVpcsByTagsResponse::getResources()
 {
     return resources_;

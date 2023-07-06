@@ -190,7 +190,6 @@ bool ListFlavorSellPoliciesRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListFlavorSellPoliciesRequest::getFlavorId() const
 {
     return flavorId_;

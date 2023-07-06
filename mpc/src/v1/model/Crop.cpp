@@ -50,7 +50,6 @@ bool Crop::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t Crop::getDuration() const
 {
     return duration_;

@@ -92,7 +92,6 @@ bool TagDeleteResponseItem::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string TagDeleteResponseItem::getResourceId() const
 {
     return resourceId_;

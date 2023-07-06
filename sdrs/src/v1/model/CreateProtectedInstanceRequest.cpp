@@ -49,7 +49,6 @@ bool CreateProtectedInstanceRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 CreateProtectedInstanceRequestBody CreateProtectedInstanceRequest::getBody() const
 {
     return body_;

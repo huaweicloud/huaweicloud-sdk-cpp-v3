@@ -120,7 +120,6 @@ bool ListServiceItemsDetailsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListServiceItemsDetailsRequest::getSetId() const
 {
     return setId_;

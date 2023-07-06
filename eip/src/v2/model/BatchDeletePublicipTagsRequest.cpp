@@ -63,7 +63,6 @@ bool BatchDeletePublicipTagsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BatchDeletePublicipTagsRequest::getPublicipId() const
 {
     return publicipId_;

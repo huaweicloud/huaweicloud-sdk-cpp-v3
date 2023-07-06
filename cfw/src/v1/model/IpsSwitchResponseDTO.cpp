@@ -78,7 +78,6 @@ bool IpsSwitchResponseDTO::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string IpsSwitchResponseDTO::getId() const
 {
     return id_;

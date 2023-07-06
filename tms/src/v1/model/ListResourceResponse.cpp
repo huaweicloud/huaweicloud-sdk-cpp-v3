@@ -76,7 +76,6 @@ bool ListResourceResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<Resources>& ListResourceResponse::getResources()
 {
     return resources_;

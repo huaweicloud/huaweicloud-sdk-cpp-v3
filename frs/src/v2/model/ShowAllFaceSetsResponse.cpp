@@ -49,7 +49,6 @@ bool ShowAllFaceSetsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<FaceSetInfo>& ShowAllFaceSetsResponse::getFaceSetsInfo()
 {
     return faceSetsInfo_;

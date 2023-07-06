@@ -120,7 +120,6 @@ bool MosaicInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string MosaicInfo::getTimelineStart() const
 {
     return timelineStart_;

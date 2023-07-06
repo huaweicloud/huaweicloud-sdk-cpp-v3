@@ -77,7 +77,6 @@ bool AddFacesByUrlResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AddFacesByUrlResponse::getFaceSetId() const
 {
     return faceSetId_;

@@ -49,7 +49,6 @@ bool VaultOrderCreateReqs::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 VaultOrder VaultOrderCreateReqs::getVault() const
 {
     return vault_;

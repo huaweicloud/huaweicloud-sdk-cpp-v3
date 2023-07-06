@@ -92,7 +92,6 @@ bool ShowDomainResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowDomainResponse::getProjectName() const
 {
     return projectName_;

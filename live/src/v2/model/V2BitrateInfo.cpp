@@ -119,7 +119,6 @@ bool V2BitrateInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string V2BitrateInfo::getPublishDomain() const
 {
     return publishDomain_;

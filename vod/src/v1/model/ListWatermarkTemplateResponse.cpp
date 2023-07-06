@@ -63,7 +63,6 @@ bool ListWatermarkTemplateResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<WatermarkTemplate>& ListWatermarkTemplateResponse::getTemplates()
 {
     return templates_;

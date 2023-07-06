@@ -64,7 +64,6 @@ bool BillingInfoDict::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BillingInfoDict::getOrderId() const
 {
     return orderId_;

@@ -49,7 +49,6 @@ bool UpdateTemplateGroupRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ModifyTransTemplateGroup UpdateTemplateGroupRequest::getBody() const
 {
     return body_;

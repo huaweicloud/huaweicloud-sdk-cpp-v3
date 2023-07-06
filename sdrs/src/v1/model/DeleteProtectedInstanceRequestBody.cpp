@@ -64,7 +64,6 @@ bool DeleteProtectedInstanceRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 bool DeleteProtectedInstanceRequestBody::isDeleteTargetServer() const
 {
     return deleteTargetServer_;

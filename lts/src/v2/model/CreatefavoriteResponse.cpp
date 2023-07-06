@@ -162,7 +162,6 @@ bool CreatefavoriteResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int64_t CreatefavoriteResponse::getCreateTime() const
 {
     return createTime_;

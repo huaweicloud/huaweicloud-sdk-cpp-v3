@@ -162,7 +162,6 @@ bool HistoryStreamInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string HistoryStreamInfo::getDomain() const
 {
     return domain_;

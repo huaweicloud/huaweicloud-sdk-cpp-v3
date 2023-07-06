@@ -148,7 +148,6 @@ bool BackupReplicateRespBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BackupReplicateRespBody::getBackupId() const
 {
     return backupId_;

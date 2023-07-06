@@ -49,7 +49,6 @@ bool BatchResetServersPasswordRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 BatchResetServersPasswordRequestBody BatchResetServersPasswordRequest::getBody() const
 {
     return body_;

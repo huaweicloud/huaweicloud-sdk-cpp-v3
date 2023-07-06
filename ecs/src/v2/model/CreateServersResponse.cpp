@@ -77,7 +77,6 @@ bool CreateServersResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateServersResponse::getJobId() const
 {
     return jobId_;

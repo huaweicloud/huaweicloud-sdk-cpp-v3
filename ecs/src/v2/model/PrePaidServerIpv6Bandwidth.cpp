@@ -50,7 +50,6 @@ bool PrePaidServerIpv6Bandwidth::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PrePaidServerIpv6Bandwidth::getId() const
 {
     return id_;

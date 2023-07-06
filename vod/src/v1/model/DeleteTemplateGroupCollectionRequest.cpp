@@ -64,7 +64,6 @@ bool DeleteTemplateGroupCollectionRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteTemplateGroupCollectionRequest::getXSdkDate() const
 {
     return xSdkDate_;

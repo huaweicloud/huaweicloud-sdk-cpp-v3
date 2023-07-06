@@ -62,7 +62,6 @@ bool ChangeToPeriodReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& ChangeToPeriodReq::getPublicipIds()
 {
     return publicipIds_;

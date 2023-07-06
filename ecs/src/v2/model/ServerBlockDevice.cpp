@@ -148,7 +148,6 @@ bool ServerBlockDevice::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t ServerBlockDevice::getBootIndex() const
 {
     return bootIndex_;

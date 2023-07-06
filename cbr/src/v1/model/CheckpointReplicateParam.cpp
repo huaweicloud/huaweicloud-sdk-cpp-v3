@@ -120,7 +120,6 @@ bool CheckpointReplicateParam::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 bool CheckpointReplicateParam::isAutoTrigger() const
 {
     return autoTrigger_;

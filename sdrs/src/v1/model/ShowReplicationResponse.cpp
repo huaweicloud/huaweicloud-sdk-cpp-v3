@@ -49,7 +49,6 @@ bool ShowReplicationResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ShowReplicationParams ShowReplicationResponse::getReplication() const
 {
     return replication_;

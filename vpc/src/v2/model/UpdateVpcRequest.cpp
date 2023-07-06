@@ -63,7 +63,6 @@ bool UpdateVpcRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateVpcRequest::getVpcId() const
 {
     return vpcId_;

@@ -63,7 +63,6 @@ bool CreateAssetReviewTaskRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateAssetReviewTaskRequest::getXSdkDate() const
 {
     return xSdkDate_;

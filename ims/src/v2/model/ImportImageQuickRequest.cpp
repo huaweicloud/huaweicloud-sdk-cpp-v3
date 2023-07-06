@@ -49,7 +49,6 @@ bool ImportImageQuickRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 QuickImportImageByFileRequestBody ImportImageQuickRequest::getBody() const
 {
     return body_;

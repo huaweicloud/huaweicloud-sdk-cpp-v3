@@ -171,7 +171,7 @@ bool CreateSqlAlarmRuleRequestBody::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("notification_save_rule"));
         if(!fieldValue.is_null())
         {
-            NotificationSaveRule refVal;
+            SqlNotificationSaveRule refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setNotificationSaveRule(refVal);
         }
@@ -214,7 +214,6 @@ bool CreateSqlAlarmRuleRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
-
 
 std::string CreateSqlAlarmRuleRequestBody::getSqlAlarmRuleName() const
 {
@@ -384,12 +383,12 @@ void CreateSqlAlarmRuleRequestBody::unsetdomainId()
     domainIdIsSet_ = false;
 }
 
-NotificationSaveRule CreateSqlAlarmRuleRequestBody::getNotificationSaveRule() const
+SqlNotificationSaveRule CreateSqlAlarmRuleRequestBody::getNotificationSaveRule() const
 {
     return notificationSaveRule_;
 }
 
-void CreateSqlAlarmRuleRequestBody::setNotificationSaveRule(const NotificationSaveRule& value)
+void CreateSqlAlarmRuleRequestBody::setNotificationSaveRule(const SqlNotificationSaveRule& value)
 {
     notificationSaveRule_ = value;
     notificationSaveRuleIsSet_ = true;

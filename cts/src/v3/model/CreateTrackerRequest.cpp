@@ -49,7 +49,6 @@ bool CreateTrackerRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 CreateTrackerRequestBody CreateTrackerRequest::getBody() const
 {
     return body_;

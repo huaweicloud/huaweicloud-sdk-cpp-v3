@@ -91,7 +91,6 @@ bool CreateTagsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateTagsRequest::getResourceType() const
 {
     return resourceType_;

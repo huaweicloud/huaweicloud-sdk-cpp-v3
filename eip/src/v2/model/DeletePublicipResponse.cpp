@@ -36,7 +36,6 @@ bool DeletePublicipResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

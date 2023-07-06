@@ -50,7 +50,6 @@ bool QueryImageByTagsResourceDetail::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string QueryImageByTagsResourceDetail::getStatus() const
 {
     return status_;

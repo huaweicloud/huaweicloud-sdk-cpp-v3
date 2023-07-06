@@ -63,7 +63,6 @@ bool ListRpoStatisticsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<RpoStattisticsParams>& ListRpoStatisticsResponse::getResourceRpoStatistics()
 {
     return resourceRpoStatistics_;

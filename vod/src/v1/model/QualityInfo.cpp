@@ -76,7 +76,6 @@ bool QualityInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 VideoTemplateInfo QualityInfo::getVideo() const
 {
     return video_;

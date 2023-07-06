@@ -49,7 +49,6 @@ bool VaultAddResourceReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ResourceCreate>& VaultAddResourceReq::getResources()
 {
     return resources_;

@@ -49,7 +49,6 @@ bool ShowSecurityGroupResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 SecurityGroup ShowSecurityGroupResponse::getSecurityGroup() const
 {
     return securityGroup_;

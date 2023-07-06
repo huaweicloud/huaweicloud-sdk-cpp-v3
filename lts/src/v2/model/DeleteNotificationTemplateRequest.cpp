@@ -77,7 +77,6 @@ bool DeleteNotificationTemplateRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteNotificationTemplateRequest::getDomainId() const
 {
     return domainId_;

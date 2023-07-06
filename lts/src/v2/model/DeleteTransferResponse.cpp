@@ -104,7 +104,6 @@ bool DeleteTransferResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteTransferResponse::getLogGroupId() const
 {
     return logGroupId_;

@@ -50,7 +50,6 @@ bool NeutronDeleteFirewallRuleRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NeutronDeleteFirewallRuleRequest::getFirewallRuleId() const
 {
     return firewallRuleId_;

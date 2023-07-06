@@ -50,7 +50,6 @@ bool CreateVolumeSchedulerHints::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateVolumeSchedulerHints::getDedicatedStorageId() const
 {
     return dedicatedStorageId_;

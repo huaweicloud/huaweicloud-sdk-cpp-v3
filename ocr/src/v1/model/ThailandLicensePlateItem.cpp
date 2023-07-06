@@ -77,7 +77,6 @@ bool ThailandLicensePlateItem::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ThailandLicensePlateItem::getPlateNumber() const
 {
     return plateNumber_;

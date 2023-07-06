@@ -49,7 +49,6 @@ bool RecognizeTrainTicketResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 TrainTicketResult RecognizeTrainTicketResponse::getResult() const
 {
     return result_;

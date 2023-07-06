@@ -49,7 +49,6 @@ bool BackupReplicateReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 BackupReplicateReqBody BackupReplicateReq::getReplicate() const
 {
     return replicate_;

@@ -119,7 +119,6 @@ bool ListMergeChannelsTaskRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& ListMergeChannelsTaskRequest::getTaskId()
 {
     return taskId_;

@@ -49,7 +49,6 @@ bool CreateSubnetRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 CreateSubnetRequestBody CreateSubnetRequest::getBody() const
 {
     return body_;

@@ -36,7 +36,6 @@ bool UpdateStreamForbiddenResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

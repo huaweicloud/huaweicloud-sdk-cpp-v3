@@ -50,7 +50,6 @@ bool SubnetList::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string SubnetList::getId() const
 {
     return id_;

@@ -50,7 +50,6 @@ bool ListDomainProjectsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListDomainProjectsRequest::getDomainName() const
 {
     return domainName_;

@@ -64,7 +64,6 @@ bool ResizePostPaidServerOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ResizePostPaidServerOption::getFlavorRef() const
 {
     return flavorRef_;

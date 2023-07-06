@@ -64,7 +64,6 @@ bool ReviewDetail::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ReviewDetail::getConfidence() const
 {
     return confidence_;

@@ -454,7 +454,6 @@ bool GlanceCreateImageMetadataResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string GlanceCreateImageMetadataResponse::getVisibility() const
 {
     return visibility_;

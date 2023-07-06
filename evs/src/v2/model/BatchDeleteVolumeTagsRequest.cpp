@@ -63,7 +63,6 @@ bool BatchDeleteVolumeTagsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BatchDeleteVolumeTagsRequest::getVolumeId() const
 {
     return volumeId_;

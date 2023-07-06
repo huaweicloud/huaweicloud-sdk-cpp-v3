@@ -78,7 +78,6 @@ bool AssociateServerVirtualIpOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AssociateServerVirtualIpOption::getSubnetId() const
 {
     return subnetId_;

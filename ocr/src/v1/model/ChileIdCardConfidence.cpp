@@ -162,7 +162,6 @@ bool ChileIdCardConfidence::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 float ChileIdCardConfidence::getSurname() const
 {
     return surname_;

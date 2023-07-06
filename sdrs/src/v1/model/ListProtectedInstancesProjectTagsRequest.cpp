@@ -36,7 +36,6 @@ bool ListProtectedInstancesProjectTagsRequest::fromJson(const web::json::value& 
     return ok;
 }
 
-
 }
 }
 }

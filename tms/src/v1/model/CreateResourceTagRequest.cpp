@@ -49,7 +49,6 @@ bool CreateResourceTagRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ReqCreateTag CreateResourceTagRequest::getBody() const
 {
     return body_;

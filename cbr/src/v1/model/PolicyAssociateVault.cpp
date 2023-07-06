@@ -64,7 +64,6 @@ bool PolicyAssociateVault::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PolicyAssociateVault::getDestinationVaultId() const
 {
     return destinationVaultId_;

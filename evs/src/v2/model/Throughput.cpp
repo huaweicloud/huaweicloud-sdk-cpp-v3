@@ -78,7 +78,6 @@ bool Throughput::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 bool Throughput::isFrozened() const
 {
     return frozened_;

@@ -106,7 +106,6 @@ bool TopUrl::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int64_t TopUrl::getValue() const
 {
     return value_;

@@ -78,7 +78,6 @@ bool ServiceSetDetailResponseDto::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ServiceSetDetailResponseDto::getId() const
 {
     return id_;

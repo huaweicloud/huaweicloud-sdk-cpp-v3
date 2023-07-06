@@ -49,7 +49,6 @@ bool CompareFace::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 BoundingBox CompareFace::getBoundingBox() const
 {
     return boundingBox_;

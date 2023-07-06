@@ -63,7 +63,6 @@ bool UnpublishAssetsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UnpublishAssetsRequest::getXSdkDate() const
 {
     return xSdkDate_;

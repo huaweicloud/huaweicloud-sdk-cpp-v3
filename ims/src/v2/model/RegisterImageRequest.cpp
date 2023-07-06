@@ -63,7 +63,6 @@ bool RegisterImageRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RegisterImageRequest::getImageId() const
 {
     return imageId_;

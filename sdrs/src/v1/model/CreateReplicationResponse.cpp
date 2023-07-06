@@ -50,7 +50,6 @@ bool CreateReplicationResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateReplicationResponse::getJobId() const
 {
     return jobId_;

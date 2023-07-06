@@ -49,7 +49,6 @@ bool UpdateTranscodingsTemplateRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 StreamTranscodingTemplate UpdateTranscodingsTemplateRequest::getBody() const
 {
     return body_;

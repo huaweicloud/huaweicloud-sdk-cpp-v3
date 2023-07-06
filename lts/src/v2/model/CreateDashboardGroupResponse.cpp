@@ -50,7 +50,6 @@ bool CreateDashboardGroupResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateDashboardGroupResponse::getResult() const
 {
     return result_;

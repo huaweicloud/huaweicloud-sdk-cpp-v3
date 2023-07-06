@@ -78,7 +78,6 @@ bool ProtectableAgentStatusResource::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ProtectableAgentStatusResource::getResourceId() const
 {
     return resourceId_;

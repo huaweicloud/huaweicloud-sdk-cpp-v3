@@ -78,7 +78,6 @@ bool PageInfoOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PageInfoOption::getPreviousMarker() const
 {
     return previousMarker_;

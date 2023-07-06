@@ -92,7 +92,6 @@ bool ListBandwidthsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListBandwidthsRequest::getMarker() const
 {
     return marker_;

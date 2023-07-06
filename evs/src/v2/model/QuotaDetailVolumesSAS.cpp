@@ -78,7 +78,6 @@ bool QuotaDetailVolumesSAS::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t QuotaDetailVolumesSAS::getInUse() const
 {
     return inUse_;

@@ -49,7 +49,6 @@ bool PolicyTriggerReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 PolicyTriggerPropertiesReq PolicyTriggerReq::getProperties() const
 {
     return properties_;

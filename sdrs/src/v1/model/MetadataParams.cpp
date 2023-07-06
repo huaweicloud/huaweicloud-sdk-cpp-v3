@@ -50,7 +50,6 @@ bool MetadataParams::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string MetadataParams::getSystemFrozen() const
 {
     return systemFrozen_;

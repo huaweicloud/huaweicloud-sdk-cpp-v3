@@ -96,9 +96,6 @@ std::shared_ptr<AddFacesByFileResponse> FrsClient::addFacesByFile(AddFacesByFile
         localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
     }
     if (request.IsSet()) {
-        localVarFileParams["image_file"] = request.getImageFile();
-    }
-    if (request.IsSet()) {
         localVarFormParams["external_image_id"] = parameterToString(request.getExternalImageId());
     }
     if (request.IsSet()) {
@@ -271,12 +268,6 @@ std::shared_ptr<CompareFaceByFileResponse> FrsClient::compareFaceByFile(CompareF
 
     if (request.enterpriseProjectIdIsSet()) {
         localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
-    }
-    if (request.IsSet()) {
-        localVarFileParams["image1_file"] = request.getImage1File();
-    }
-    if (request.IsSet()) {
-        localVarFileParams["image2_file"] = request.getImage2File();
     }
 
     std::string localVarHttpBody;
@@ -604,9 +595,6 @@ std::shared_ptr<DetectFaceByFileResponse> FrsClient::detectFaceByFile(DetectFace
         localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
     }
     if (request.IsSet()) {
-        localVarFileParams["image_file"] = request.getImageFile();
-    }
-    if (request.IsSet()) {
         localVarFormParams["attributes"] = parameterToString(request.getAttributes());
     }
 
@@ -645,9 +633,6 @@ std::shared_ptr<DetectFaceByFileIntlResponse> FrsClient::detectFaceByFileIntl(De
 
     if (request.enterpriseProjectIdIsSet()) {
         localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
-    }
-    if (request.IsSet()) {
-        localVarFileParams["image_file"] = request.getImageFile();
     }
 
     std::string localVarHttpBody;
@@ -855,9 +840,6 @@ std::shared_ptr<DetectLiveByFileResponse> FrsClient::detectLiveByFile(DetectLive
         localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
     }
     if (request.IsSet()) {
-        localVarFileParams["video_file"] = request.getVideoFile();
-    }
-    if (request.IsSet()) {
         localVarFormParams["actions"] = parameterToString(request.getActions());
     }
     if (request.IsSet()) {
@@ -902,9 +884,6 @@ std::shared_ptr<DetectLiveByFileIntlResponse> FrsClient::detectLiveByFileIntl(De
 
     if (request.enterpriseProjectIdIsSet()) {
         localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
-    }
-    if (request.IsSet()) {
-        localVarFileParams["video_file"] = request.getVideoFile();
     }
     if (request.IsSet()) {
         localVarFormParams["actions"] = parameterToString(request.getActions());
@@ -1078,9 +1057,6 @@ std::shared_ptr<DetectLiveFaceByFileResponse> FrsClient::detectLiveFaceByFile(De
     if (request.enterpriseProjectIdIsSet()) {
         localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
     }
-    if (request.IsSet()) {
-        localVarFileParams["image_file"] = request.getImageFile();
-    }
 
     std::string localVarHttpBody;
 
@@ -1246,9 +1222,6 @@ std::shared_ptr<SearchFaceByFileResponse> FrsClient::searchFaceByFile(SearchFace
 
     if (request.enterpriseProjectIdIsSet()) {
         localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
-    }
-    if (request.IsSet()) {
-        localVarFileParams["image_file"] = request.getImageFile();
     }
     if (request.IsSet()) {
         localVarFormParams["top_n"] = parameterToString(request.getTopN());

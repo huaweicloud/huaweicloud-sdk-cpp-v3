@@ -49,7 +49,6 @@ bool ListCriteriasResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<GetQuerySearchCriteriasBody>& ListCriteriasResponse::getSearchCriterias()
 {
     return searchCriterias_;

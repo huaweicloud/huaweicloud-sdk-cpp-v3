@@ -204,7 +204,6 @@ bool VideoParameters::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string VideoParameters::getOutputPolicy() const
 {
     return outputPolicy_;

@@ -147,7 +147,6 @@ bool ShowJobResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowJobResponse::getStatus() const
 {
     return status_;

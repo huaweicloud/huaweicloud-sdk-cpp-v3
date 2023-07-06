@@ -49,7 +49,6 @@ bool CheckAgentResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ProtectableAgentStatus>& CheckAgentResponse::getAgentStatus()
 {
     return agentStatus_;

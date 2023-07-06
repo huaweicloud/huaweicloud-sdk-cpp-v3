@@ -147,7 +147,6 @@ bool SubJobParams::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string SubJobParams::getStatus() const
 {
     return status_;

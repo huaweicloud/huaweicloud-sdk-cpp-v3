@@ -64,7 +64,6 @@ bool BackupSyncRespBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BackupSyncRespBody::getBackupId() const
 {
     return backupId_;

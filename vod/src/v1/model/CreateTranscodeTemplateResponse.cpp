@@ -50,7 +50,6 @@ bool CreateTranscodeTemplateResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateTranscodeTemplateResponse::getGroupId() const
 {
     return groupId_;

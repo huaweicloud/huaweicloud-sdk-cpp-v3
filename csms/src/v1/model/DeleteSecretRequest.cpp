@@ -50,7 +50,6 @@ bool DeleteSecretRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteSecretRequest::getSecretName() const
 {
     return secretName_;

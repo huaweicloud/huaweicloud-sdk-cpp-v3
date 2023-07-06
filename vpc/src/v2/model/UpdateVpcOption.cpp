@@ -91,7 +91,6 @@ bool UpdateVpcOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateVpcOption::getName() const
 {
     return name_;

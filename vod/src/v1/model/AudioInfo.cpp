@@ -78,7 +78,6 @@ bool AudioInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AudioInfo::getSampleRate() const
 {
     return sampleRate_;

@@ -63,7 +63,6 @@ bool NovaDisassociateSecurityGroupRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NovaDisassociateSecurityGroupRequest::getServerId() const
 {
     return serverId_;

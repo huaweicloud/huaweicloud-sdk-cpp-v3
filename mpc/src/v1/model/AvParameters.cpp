@@ -75,7 +75,6 @@ bool AvParameters::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 VideoParameters AvParameters::getVideo() const
 {
     return video_;

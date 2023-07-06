@@ -134,7 +134,6 @@ bool AgentRegister::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AgentRegister::getAgentId() const
 {
     return agentId_;

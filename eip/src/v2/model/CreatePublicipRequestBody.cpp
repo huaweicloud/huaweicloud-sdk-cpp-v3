@@ -76,7 +76,6 @@ bool CreatePublicipRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 CreatePublicipBandwidthOption CreatePublicipRequestBody::getBandwidth() const
 {
     return bandwidth_;

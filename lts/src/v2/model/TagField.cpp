@@ -92,7 +92,6 @@ bool TagField::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string TagField::getFieldName() const
 {
     return fieldName_;

@@ -63,7 +63,6 @@ bool DetectStandardByIdCardImageRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DetectStandardByIdCardImageRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

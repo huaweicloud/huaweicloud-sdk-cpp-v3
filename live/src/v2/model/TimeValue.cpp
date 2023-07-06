@@ -64,7 +64,6 @@ bool TimeValue::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string TimeValue::getTime() const
 {
     return time_;

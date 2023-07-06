@@ -78,7 +78,6 @@ bool PassportRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PassportRequestBody::getImage() const
 {
     return image_;

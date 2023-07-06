@@ -64,7 +64,6 @@ bool Pager::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string Pager::getHref() const
 {
     return href_;

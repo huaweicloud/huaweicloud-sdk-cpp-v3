@@ -89,7 +89,6 @@ bool GetHostGroupListFilter::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string GetHostGroupListFilter::getHostGroupType() const
 {
     return hostGroupType_;

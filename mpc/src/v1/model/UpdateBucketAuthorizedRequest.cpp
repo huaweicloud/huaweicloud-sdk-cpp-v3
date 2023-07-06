@@ -49,7 +49,6 @@ bool UpdateBucketAuthorizedRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 BucketAuthorizedReq UpdateBucketAuthorizedRequest::getBody() const
 {
     return body_;

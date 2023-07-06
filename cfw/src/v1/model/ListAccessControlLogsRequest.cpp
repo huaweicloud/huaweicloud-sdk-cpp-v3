@@ -260,7 +260,6 @@ bool ListAccessControlLogsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListAccessControlLogsRequest::getFwInstanceId() const
 {
     return fwInstanceId_;

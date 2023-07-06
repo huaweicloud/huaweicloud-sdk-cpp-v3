@@ -63,7 +63,6 @@ bool ListHostRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListHostRequest::getContentType() const
 {
     return contentType_;

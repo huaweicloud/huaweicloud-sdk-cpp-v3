@@ -62,7 +62,6 @@ bool ListSecretsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<Secret>& ListSecretsResponse::getSecrets()
 {
     return secrets_;

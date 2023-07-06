@@ -77,7 +77,6 @@ bool TransTemplateGroupCollection::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string TransTemplateGroupCollection::getName() const
 {
     return name_;

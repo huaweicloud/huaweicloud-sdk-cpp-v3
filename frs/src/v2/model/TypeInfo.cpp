@@ -50,7 +50,6 @@ bool TypeInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string TypeInfo::getType() const
 {
     return type_;

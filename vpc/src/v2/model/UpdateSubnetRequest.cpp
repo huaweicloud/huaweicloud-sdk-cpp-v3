@@ -77,7 +77,6 @@ bool UpdateSubnetRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateSubnetRequest::getVpcId() const
 {
     return vpcId_;

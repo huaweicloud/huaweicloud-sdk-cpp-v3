@@ -50,7 +50,6 @@ bool PrePaidServerEipExtendParam::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PrePaidServerEipExtendParam::getChargingMode() const
 {
     return chargingMode_;

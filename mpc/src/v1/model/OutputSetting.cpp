@@ -102,7 +102,6 @@ bool OutputSetting::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string OutputSetting::getFormat() const
 {
     return format_;

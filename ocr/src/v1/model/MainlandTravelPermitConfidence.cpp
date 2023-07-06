@@ -260,7 +260,6 @@ bool MainlandTravelPermitConfidence::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 float MainlandTravelPermitConfidence::getName() const
 {
     return name_;

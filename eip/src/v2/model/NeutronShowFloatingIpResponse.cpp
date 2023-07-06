@@ -49,7 +49,6 @@ bool NeutronShowFloatingIpResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 FloatingIpResp NeutronShowFloatingIpResponse::getFloatingip() const
 {
     return floatingip_;

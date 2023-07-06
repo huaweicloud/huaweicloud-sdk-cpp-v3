@@ -63,7 +63,6 @@ bool ShowDomainResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 double ShowDomainResponse::getTotal() const
 {
     return total_;

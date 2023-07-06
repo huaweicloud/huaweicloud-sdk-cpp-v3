@@ -27,12 +27,6 @@ web::json::value CompareFaceByFileRequestBody::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(image1FileIsSet_) {
-        val[utility::conversions::to_string_t("image1_file")] = ModelBase::toJson(image1File_);
-    }
-    if(image2FileIsSet_) {
-        val[utility::conversions::to_string_t("image2_file")] = ModelBase::toJson(image2File_);
-    }
 
     return val;
 }
@@ -41,27 +35,8 @@ bool CompareFaceByFileRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("image1_file"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("image1_file"));
-        if(!fieldValue.is_null())
-        {
-            HttpContent refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setImage1File(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("image2_file"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("image2_file"));
-        if(!fieldValue.is_null())
-        {
-            HttpContent refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setImage2File(refVal);
-        }
-    }
     return ok;
 }
-
 
 HttpContent CompareFaceByFileRequestBody::getImage1File() const
 {

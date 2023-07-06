@@ -49,7 +49,6 @@ bool ListQuotasResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<CtsQuota>& ListQuotasResponse::getResources()
 {
     return resources_;

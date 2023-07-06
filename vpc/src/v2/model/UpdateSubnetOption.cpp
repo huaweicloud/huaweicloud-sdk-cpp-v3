@@ -146,7 +146,6 @@ bool UpdateSubnetOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateSubnetOption::getName() const
 {
     return name_;

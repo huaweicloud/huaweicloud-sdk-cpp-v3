@@ -49,7 +49,6 @@ bool DeleteAddressItemUsingDeleteResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 IdObject DeleteAddressItemUsingDeleteResponse::getData() const
 {
     return data_;

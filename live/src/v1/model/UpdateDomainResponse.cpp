@@ -162,7 +162,6 @@ bool UpdateDomainResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateDomainResponse::getDomain() const
 {
     return domain_;

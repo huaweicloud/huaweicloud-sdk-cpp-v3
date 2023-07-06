@@ -64,7 +64,6 @@ bool VpcInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string VpcInfo::getVpcId() const
 {
     return vpcId_;

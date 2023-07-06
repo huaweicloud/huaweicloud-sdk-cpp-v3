@@ -50,7 +50,6 @@ bool DeleteSnapshotRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteSnapshotRequest::getSnapshotId() const
 {
     return snapshotId_;

@@ -134,7 +134,6 @@ bool CreatefavoriteReqbody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreatefavoriteReqbody::getEpsId() const
 {
     return epsId_;

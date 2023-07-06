@@ -78,7 +78,6 @@ bool InsurancePolicyRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string InsurancePolicyRequestBody::getImage() const
 {
     return image_;

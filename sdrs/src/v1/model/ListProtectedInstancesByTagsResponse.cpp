@@ -63,7 +63,6 @@ bool ListProtectedInstancesByTagsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ResourceParams>& ListProtectedInstancesByTagsResponse::getResources()
 {
     return resources_;

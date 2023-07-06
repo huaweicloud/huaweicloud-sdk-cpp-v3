@@ -120,7 +120,6 @@ bool RpoStattisticsParams::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RpoStattisticsParams::getId() const
 {
     return id_;

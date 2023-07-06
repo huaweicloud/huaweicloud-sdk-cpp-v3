@@ -49,7 +49,6 @@ bool ListTrackersResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<TrackerResponseBody>& ListTrackersResponse::getTrackers()
 {
     return trackers_;

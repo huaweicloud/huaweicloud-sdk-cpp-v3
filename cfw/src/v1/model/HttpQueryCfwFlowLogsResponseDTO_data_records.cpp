@@ -204,7 +204,6 @@ bool HttpQueryCfwFlowLogsResponseDTO_data_records::fromJson(const web::json::val
     return ok;
 }
 
-
 int32_t HttpQueryCfwFlowLogsResponseDTO_data_records::getBytes() const
 {
     return bytes_;

@@ -64,7 +64,6 @@ bool DeleteSearchCriterias::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteSearchCriterias::getEpsId() const
 {
     return epsId_;

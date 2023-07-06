@@ -91,7 +91,6 @@ bool UpdateAssetResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateAssetResponse::getAssetId() const
 {
     return assetId_;

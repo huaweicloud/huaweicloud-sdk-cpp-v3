@@ -92,7 +92,6 @@ bool DomainHttpsCertInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DomainHttpsCertInfo::getCertificateFormat() const
 {
     return certificateFormat_;

@@ -78,7 +78,6 @@ bool DeleteAddressSetInfoUsingDeleteRequest::fromJson(const web::json::value& va
     return ok;
 }
 
-
 std::string DeleteAddressSetInfoUsingDeleteRequest::getSetId() const
 {
     return setId_;

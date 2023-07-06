@@ -64,7 +64,6 @@ bool DeleteFaceSetRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteFaceSetRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

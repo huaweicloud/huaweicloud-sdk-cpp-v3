@@ -63,7 +63,6 @@ bool ResizeServerRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ResizePrePaidServerOption ResizeServerRequestBody::getResize() const
 {
     return resize_;

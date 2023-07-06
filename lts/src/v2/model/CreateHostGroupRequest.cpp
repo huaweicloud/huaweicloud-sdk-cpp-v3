@@ -63,7 +63,6 @@ bool CreateHostGroupRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateHostGroupRequest::getContentType() const
 {
     return contentType_;

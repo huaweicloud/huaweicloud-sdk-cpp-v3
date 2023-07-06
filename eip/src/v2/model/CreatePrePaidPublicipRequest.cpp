@@ -49,7 +49,6 @@ bool CreatePrePaidPublicipRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 CreatePrePaidPublicipRequestBody CreatePrePaidPublicipRequest::getBody() const
 {
     return body_;

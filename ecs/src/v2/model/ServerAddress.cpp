@@ -106,7 +106,6 @@ bool ServerAddress::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ServerAddress::getVersion() const
 {
     return version_;

@@ -63,7 +63,6 @@ bool RegisterServerAutoRecoveryRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RegisterServerAutoRecoveryRequest::getServerId() const
 {
     return serverId_;

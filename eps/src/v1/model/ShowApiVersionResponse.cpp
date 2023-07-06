@@ -49,7 +49,6 @@ bool ShowApiVersionResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 VersionDetail ShowApiVersionResponse::getVersion() const
 {
     return version_;

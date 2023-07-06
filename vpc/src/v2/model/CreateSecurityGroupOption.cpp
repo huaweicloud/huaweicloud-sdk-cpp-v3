@@ -78,7 +78,6 @@ bool CreateSecurityGroupOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateSecurityGroupOption::getName() const
 {
     return name_;

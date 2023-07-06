@@ -91,7 +91,6 @@ bool UpdateAddressSetInfoUsingPutRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateAddressSetInfoUsingPutRequest::getSetId() const
 {
     return setId_;

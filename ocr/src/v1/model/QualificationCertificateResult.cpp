@@ -300,7 +300,6 @@ bool QualificationCertificateResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string QualificationCertificateResult::getIdNumber() const
 {
     return idNumber_;

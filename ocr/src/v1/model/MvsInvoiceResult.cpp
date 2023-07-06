@@ -790,7 +790,6 @@ bool MvsInvoiceResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string MvsInvoiceResult::getCode() const
 {
     return code_;

@@ -189,7 +189,6 @@ bool BatchBandwidthResp::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BatchBandwidthResp::getBandwidthType() const
 {
     return bandwidthType_;

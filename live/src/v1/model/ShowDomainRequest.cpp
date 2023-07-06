@@ -64,7 +64,6 @@ bool ShowDomainRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowDomainRequest::getDomain() const
 {
     return domain_;

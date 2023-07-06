@@ -147,7 +147,6 @@ bool NeutronSecurityGroup::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NeutronSecurityGroup::getDescription() const
 {
     return description_;

@@ -49,7 +49,6 @@ bool DeleteAssetsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<DeleteResult>& DeleteAssetsResponse::getDeleteResultArray()
 {
     return deleteResultArray_;

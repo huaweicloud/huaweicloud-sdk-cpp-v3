@@ -77,7 +77,6 @@ bool CreateLogStreamRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateLogStreamRequest::getLogGroupId() const
 {
     return logGroupId_;

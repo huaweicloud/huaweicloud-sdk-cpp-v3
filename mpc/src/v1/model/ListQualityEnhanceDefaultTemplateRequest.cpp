@@ -36,7 +36,6 @@ bool ListQualityEnhanceDefaultTemplateRequest::fromJson(const web::json::value& 
     return ok;
 }
 
-
 }
 }
 }

@@ -284,7 +284,6 @@ bool QuotaList::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 QuotaDetailBackupGigabytes QuotaList::getBackupGigabytes() const
 {
     return backupGigabytes_;

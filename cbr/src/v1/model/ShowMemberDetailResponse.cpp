@@ -49,7 +49,6 @@ bool ShowMemberDetailResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 Member ShowMemberDetailResponse::getMember() const
 {
     return member_;

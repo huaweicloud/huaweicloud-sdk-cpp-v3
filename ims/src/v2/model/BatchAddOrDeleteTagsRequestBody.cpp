@@ -63,7 +63,6 @@ bool BatchAddOrDeleteTagsRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BatchAddOrDeleteTagsRequestBody::getAction() const
 {
     return action_;

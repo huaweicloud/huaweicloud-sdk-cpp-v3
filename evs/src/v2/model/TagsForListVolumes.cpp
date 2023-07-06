@@ -63,7 +63,6 @@ bool TagsForListVolumes::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string TagsForListVolumes::getKey() const
 {
     return key_;

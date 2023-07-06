@@ -64,7 +64,6 @@ bool ResetServerPasswordOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ResetServerPasswordOption::getNewPassword() const
 {
     return newPassword_;

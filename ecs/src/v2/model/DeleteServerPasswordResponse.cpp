@@ -36,7 +36,6 @@ bool DeleteServerPasswordResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

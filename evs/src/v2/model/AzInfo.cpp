@@ -63,7 +63,6 @@ bool AzInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AzInfo::getZoneName() const
 {
     return zoneName_;

@@ -63,7 +63,6 @@ bool ListTag::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListTag::getKey() const
 {
     return key_;

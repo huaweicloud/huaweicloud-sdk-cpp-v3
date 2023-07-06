@@ -63,7 +63,6 @@ bool DeleteProtectedInstanceNicRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteProtectedInstanceNicRequest::getProtectedInstanceId() const
 {
     return protectedInstanceId_;

@@ -49,7 +49,6 @@ bool UpdateObsBucketAuthorityPublicRequest::fromJson(const web::json::value& val
     return ok;
 }
 
-
 ObsAuthorityConfigV2 UpdateObsBucketAuthorityPublicRequest::getBody() const
 {
     return body_;

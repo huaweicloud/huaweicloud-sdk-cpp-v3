@@ -118,7 +118,6 @@ bool FaceSearchFaceIdReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string FaceSearchFaceIdReq::getFilter() const
 {
     return filter_;

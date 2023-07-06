@@ -120,7 +120,6 @@ bool VideoInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t VideoInfo::getWidth() const
 {
     return width_;

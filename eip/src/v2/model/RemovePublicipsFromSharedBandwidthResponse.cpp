@@ -36,7 +36,6 @@ bool RemovePublicipsFromSharedBandwidthResponse::fromJson(const web::json::value
     return ok;
 }
 
-
 }
 }
 }

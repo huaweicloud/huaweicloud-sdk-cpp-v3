@@ -63,7 +63,6 @@ bool BatchCreateVolumeTagsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BatchCreateVolumeTagsRequest::getVolumeId() const
 {
     return volumeId_;

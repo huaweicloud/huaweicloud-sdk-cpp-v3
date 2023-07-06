@@ -63,7 +63,6 @@ bool CreateAccessConfigRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateAccessConfigRequest::getContentType() const
 {
     return contentType_;

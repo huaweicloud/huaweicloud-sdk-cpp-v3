@@ -49,7 +49,6 @@ bool ListRuleHitCountDto::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& ListRuleHitCountDto::getRuleIds()
 {
     return ruleIds_;

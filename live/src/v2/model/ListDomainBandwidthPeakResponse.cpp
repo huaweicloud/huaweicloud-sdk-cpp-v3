@@ -63,7 +63,6 @@ bool ListDomainBandwidthPeakResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<PeakBandwidthData>& ListDomainBandwidthPeakResponse::getBandwidthList()
 {
     return bandwidthList_;

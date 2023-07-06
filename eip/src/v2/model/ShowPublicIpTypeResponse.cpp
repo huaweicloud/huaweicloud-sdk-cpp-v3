@@ -50,7 +50,6 @@ bool ShowPublicIpTypeResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowPublicIpTypeResponse::getBody() const
 {
     return body_;

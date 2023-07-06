@@ -49,7 +49,6 @@ bool NeutronCreateSecurityGroupResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 NeutronSecurityGroup NeutronCreateSecurityGroupResponse::getSecurityGroup() const
 {
     return securityGroup_;

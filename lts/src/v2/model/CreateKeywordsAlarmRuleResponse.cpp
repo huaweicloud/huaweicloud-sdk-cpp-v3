@@ -50,7 +50,6 @@ bool CreateKeywordsAlarmRuleResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateKeywordsAlarmRuleResponse::getKeywordsAlarmRuleId() const
 {
     return keywordsAlarmRuleId_;

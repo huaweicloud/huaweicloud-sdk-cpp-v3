@@ -50,7 +50,6 @@ bool ShowVolumeTagsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowVolumeTagsRequest::getVolumeId() const
 {
     return volumeId_;

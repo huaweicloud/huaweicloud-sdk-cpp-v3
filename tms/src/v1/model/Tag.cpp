@@ -63,7 +63,6 @@ bool Tag::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string Tag::getKey() const
 {
     return key_;

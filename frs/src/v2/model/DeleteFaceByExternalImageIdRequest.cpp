@@ -78,7 +78,6 @@ bool DeleteFaceByExternalImageIdRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteFaceByExternalImageIdRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

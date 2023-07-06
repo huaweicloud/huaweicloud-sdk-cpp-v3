@@ -63,7 +63,6 @@ bool AddAddressItemsInfoDto::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AddAddressItemsInfoDto::getSetId() const
 {
     return setId_;

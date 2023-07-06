@@ -50,7 +50,6 @@ bool DeleteDomainHttpsCertRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteDomainHttpsCertRequest::getDomain() const
 {
     return domain_;

@@ -63,7 +63,6 @@ bool BatchCreateVpcTagsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BatchCreateVpcTagsRequest::getVpcId() const
 {
     return vpcId_;

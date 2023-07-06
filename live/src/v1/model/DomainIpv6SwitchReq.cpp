@@ -64,7 +64,6 @@ bool DomainIpv6SwitchReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DomainIpv6SwitchReq::getDomain() const
 {
     return domain_;

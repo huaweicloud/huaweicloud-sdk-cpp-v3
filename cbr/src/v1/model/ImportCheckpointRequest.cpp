@@ -49,7 +49,6 @@ bool ImportCheckpointRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 SyncReq ImportCheckpointRequest::getBody() const
 {
     return body_;

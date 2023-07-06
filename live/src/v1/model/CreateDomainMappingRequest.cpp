@@ -49,7 +49,6 @@ bool CreateDomainMappingRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 DomainMapping CreateDomainMappingRequest::getBody() const
 {
     return body_;

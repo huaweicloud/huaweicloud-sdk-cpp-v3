@@ -257,7 +257,6 @@ bool PublishAssetFromObsReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PublishAssetFromObsReq::getVideoType() const
 {
     return videoType_;

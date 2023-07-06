@@ -91,7 +91,6 @@ bool CreateDataImage::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateDataImage::getName() const
 {
     return name_;

@@ -49,7 +49,6 @@ bool RecognizeExitEntryPermitResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ExitEntryPermitResult RecognizeExitEntryPermitResponse::getResult() const
 {
     return result_;

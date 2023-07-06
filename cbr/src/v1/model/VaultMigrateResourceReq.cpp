@@ -63,7 +63,6 @@ bool VaultMigrateResourceReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string VaultMigrateResourceReq::getDestinationVaultId() const
 {
     return destinationVaultId_;

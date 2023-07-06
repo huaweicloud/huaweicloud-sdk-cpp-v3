@@ -49,7 +49,6 @@ bool CreateSecretRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 CreateSecretRequestBody CreateSecretRequest::getBody() const
 {
     return body_;

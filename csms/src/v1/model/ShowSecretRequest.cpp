@@ -50,7 +50,6 @@ bool ShowSecretRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowSecretRequest::getSecretName() const
 {
     return secretName_;

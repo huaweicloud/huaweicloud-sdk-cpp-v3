@@ -77,7 +77,6 @@ bool MbTaskParameter::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string MbTaskParameter::getStatusDescription() const
 {
     return statusDescription_;

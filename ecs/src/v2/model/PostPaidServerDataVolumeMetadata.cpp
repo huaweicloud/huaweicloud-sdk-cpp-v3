@@ -64,7 +64,6 @@ bool PostPaidServerDataVolumeMetadata::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PostPaidServerDataVolumeMetadata::getSystemEncrypted() const
 {
     return systemEncrypted_;

@@ -49,7 +49,6 @@ bool ShowServerResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ServerDetail ShowServerResponse::getServer() const
 {
     return server_;

@@ -49,7 +49,6 @@ bool NeutronShowFirewallGroupResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 NeutronFirewallGroup NeutronShowFirewallGroupResponse::getFirewallGroup() const
 {
     return firewallGroup_;

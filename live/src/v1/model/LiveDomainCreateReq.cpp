@@ -106,7 +106,6 @@ bool LiveDomainCreateReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string LiveDomainCreateReq::getDomain() const
 {
     return domain_;

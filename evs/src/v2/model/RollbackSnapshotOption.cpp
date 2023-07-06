@@ -64,7 +64,6 @@ bool RollbackSnapshotOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RollbackSnapshotOption::getName() const
 {
     return name_;

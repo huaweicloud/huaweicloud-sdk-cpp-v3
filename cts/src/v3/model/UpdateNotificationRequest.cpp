@@ -49,7 +49,6 @@ bool UpdateNotificationRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 UpdateNotificationRequestBody UpdateNotificationRequest::getBody() const
 {
     return body_;

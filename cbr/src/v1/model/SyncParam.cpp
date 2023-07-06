@@ -64,7 +64,6 @@ bool SyncParam::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 bool SyncParam::isAutoTrigger() const
 {
     return autoTrigger_;

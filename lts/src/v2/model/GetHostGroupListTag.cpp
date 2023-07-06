@@ -63,7 +63,6 @@ bool GetHostGroupListTag::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string GetHostGroupListTag::getTagType() const
 {
     return tagType_;

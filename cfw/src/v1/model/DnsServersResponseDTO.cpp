@@ -92,7 +92,6 @@ bool DnsServersResponseDTO::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t DnsServersResponseDTO::getId() const
 {
     return id_;

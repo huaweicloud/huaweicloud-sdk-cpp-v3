@@ -49,7 +49,6 @@ bool UpdateSnapshotConfigRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 LiveSnapshotConfig UpdateSnapshotConfigRequest::getBody() const
 {
     return body_;

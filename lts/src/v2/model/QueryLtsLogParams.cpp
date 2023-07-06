@@ -189,7 +189,6 @@ bool QueryLtsLogParams::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string QueryLtsLogParams::getStartTime() const
 {
     return startTime_;

@@ -50,7 +50,6 @@ bool CreateTransTemplateResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t CreateTransTemplateResponse::getTemplateId() const
 {
     return templateId_;

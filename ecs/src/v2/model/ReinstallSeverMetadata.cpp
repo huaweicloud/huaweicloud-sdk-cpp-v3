@@ -78,7 +78,6 @@ bool ReinstallSeverMetadata::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ReinstallSeverMetadata::getSystemEncrypted() const
 {
     return systemEncrypted_;

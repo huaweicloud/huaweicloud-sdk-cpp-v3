@@ -77,7 +77,6 @@ bool UpdateFaceReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 Object UpdateFaceReq::getExternalFields() const
 {
     return externalFields_;

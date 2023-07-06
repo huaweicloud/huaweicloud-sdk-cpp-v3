@@ -62,7 +62,6 @@ bool DetectLiveByBase64IntlResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 LiveDetectResp_videoresult DetectLiveByBase64IntlResponse::getVideoResult() const
 {
     return videoResult_;

@@ -92,7 +92,6 @@ bool CbcOrderResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CbcOrderResult::getCloudServiceId() const
 {
     return cloudServiceId_;

@@ -63,7 +63,6 @@ bool NeutronUpdateFloatingIpRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NeutronUpdateFloatingIpRequest::getFloatingipId() const
 {
     return floatingipId_;

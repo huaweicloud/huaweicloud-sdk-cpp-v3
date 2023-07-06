@@ -63,7 +63,6 @@ bool ExportImageRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ExportImageRequest::getImageId() const
 {
     return imageId_;

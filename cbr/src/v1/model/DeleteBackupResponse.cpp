@@ -36,7 +36,6 @@ bool DeleteBackupResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

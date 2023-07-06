@@ -62,7 +62,6 @@ bool DetectStandardByVideoAndIdCardImageResponse::fromJson(const web::json::valu
     return ok;
 }
 
-
 Meta DetectStandardByVideoAndIdCardImageResponse::getMeta() const
 {
     return meta_;

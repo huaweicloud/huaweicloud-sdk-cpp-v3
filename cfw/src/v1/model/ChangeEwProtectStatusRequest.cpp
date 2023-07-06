@@ -77,7 +77,6 @@ bool ChangeEwProtectStatusRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ChangeEwProtectStatusRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

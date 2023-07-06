@@ -49,7 +49,6 @@ bool RunTtsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 PostCustomTTSReq RunTtsRequest::getBody() const
 {
     return body_;

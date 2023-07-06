@@ -92,7 +92,6 @@ bool AddAddressSetDto::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AddAddressSetDto::getObjectId() const
 {
     return objectId_;

@@ -49,7 +49,6 @@ bool NovaShowServerResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 NovaServer NovaShowServerResponse::getServer() const
 {
     return server_;

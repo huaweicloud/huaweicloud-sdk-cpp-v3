@@ -64,7 +64,6 @@ bool TemplateRule::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string TemplateRule::getType() const
 {
     return type_;

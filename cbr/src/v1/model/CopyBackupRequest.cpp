@@ -63,7 +63,6 @@ bool CopyBackupRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CopyBackupRequest::getBackupId() const
 {
     return backupId_;

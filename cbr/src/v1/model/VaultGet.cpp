@@ -284,7 +284,6 @@ bool VaultGet::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 Billing VaultGet::getBilling() const
 {
     return billing_;

@@ -49,7 +49,6 @@ bool ListEastWestFirewallResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 GetEastWestFirewallResponseBody ListEastWestFirewallResponse::getData() const
 {
     return data_;

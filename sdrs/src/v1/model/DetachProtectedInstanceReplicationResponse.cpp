@@ -50,7 +50,6 @@ bool DetachProtectedInstanceReplicationResponse::fromJson(const web::json::value
     return ok;
 }
 
-
 std::string DetachProtectedInstanceReplicationResponse::getJobId() const
 {
     return jobId_;

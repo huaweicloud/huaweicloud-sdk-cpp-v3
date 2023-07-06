@@ -134,7 +134,6 @@ bool Attachment::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string Attachment::getAttachedAt() const
 {
     return attachedAt_;

@@ -78,7 +78,6 @@ bool FlavorLink::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string FlavorLink::getHref() const
 {
     return href_;

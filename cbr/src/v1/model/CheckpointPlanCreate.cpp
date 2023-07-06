@@ -90,7 +90,6 @@ bool CheckpointPlanCreate::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CheckpointPlanCreate::getId() const
 {
     return id_;

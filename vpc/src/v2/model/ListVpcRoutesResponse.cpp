@@ -62,7 +62,6 @@ bool ListVpcRoutesResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<VpcRoute>& ListVpcRoutesResponse::getRoutes()
 {
     return routes_;

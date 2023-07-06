@@ -106,7 +106,6 @@ bool ActionProgress::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ActionProgress::getCreating() const
 {
     return creating_;

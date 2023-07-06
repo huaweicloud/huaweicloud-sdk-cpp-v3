@@ -64,7 +64,6 @@ bool InsertPublicipInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string InsertPublicipInfo::getPublicipType() const
 {
     return publicipType_;

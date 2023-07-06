@@ -50,7 +50,6 @@ bool DeleteVaultRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteVaultRequest::getVaultId() const
 {
     return vaultId_;

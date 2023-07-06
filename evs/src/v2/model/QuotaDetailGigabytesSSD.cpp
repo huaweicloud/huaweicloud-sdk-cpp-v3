@@ -78,7 +78,6 @@ bool QuotaDetailGigabytesSSD::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t QuotaDetailGigabytesSSD::getInUse() const
 {
     return inUse_;

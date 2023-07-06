@@ -49,7 +49,6 @@ bool AddressItems::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<IdObject>& AddressItems::getItems()
 {
     return items_;

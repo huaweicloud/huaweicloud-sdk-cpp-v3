@@ -64,7 +64,6 @@ bool ObsInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ObsInfo::getBucket() const
 {
     return bucket_;

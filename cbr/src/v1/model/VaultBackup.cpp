@@ -63,7 +63,6 @@ bool VaultBackup::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 CheckpointParam VaultBackup::getParameters() const
 {
     return parameters_;

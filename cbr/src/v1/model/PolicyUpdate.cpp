@@ -90,7 +90,6 @@ bool PolicyUpdate::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 bool PolicyUpdate::isEnabled() const
 {
     return enabled_;

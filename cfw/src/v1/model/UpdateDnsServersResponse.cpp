@@ -49,7 +49,6 @@ bool UpdateDnsServersResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& UpdateDnsServersResponse::getData()
 {
     return data_;

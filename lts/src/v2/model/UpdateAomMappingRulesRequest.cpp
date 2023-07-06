@@ -49,7 +49,6 @@ bool UpdateAomMappingRulesRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 UpdateAomMappingRequest UpdateAomMappingRulesRequest::getBody() const
 {
     return body_;

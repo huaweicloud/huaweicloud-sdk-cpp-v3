@@ -50,7 +50,6 @@ bool DeleteServerPasswordRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteServerPasswordRequest::getServerId() const
 {
     return serverId_;

@@ -49,7 +49,6 @@ bool ListIpsSwitchStatusUsingGetResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 IpsSwitchResponseDTO ListIpsSwitchStatusUsingGetResponse::getData() const
 {
     return data_;

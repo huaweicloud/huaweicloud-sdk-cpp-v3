@@ -77,7 +77,6 @@ bool AddRuleAclUsingPostRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AddRuleAclUsingPostRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

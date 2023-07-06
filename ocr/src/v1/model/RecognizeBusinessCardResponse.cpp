@@ -49,7 +49,6 @@ bool RecognizeBusinessCardResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 BusinessCardResult RecognizeBusinessCardResponse::getResult() const
 {
     return result_;

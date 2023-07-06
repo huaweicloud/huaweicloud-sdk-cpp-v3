@@ -49,7 +49,6 @@ bool NovaListKeypairsResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 NovaSimpleKeypair NovaListKeypairsResult::getKeypair() const
 {
     return keypair_;

@@ -50,7 +50,6 @@ bool ListSecretTagsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListSecretTagsRequest::getSecretId() const
 {
     return secretId_;

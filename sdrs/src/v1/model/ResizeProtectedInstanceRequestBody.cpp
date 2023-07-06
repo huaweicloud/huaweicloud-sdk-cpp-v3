@@ -49,7 +49,6 @@ bool ResizeProtectedInstanceRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ResizeProtectedInstanceRequestParams ResizeProtectedInstanceRequestBody::getResize() const
 {
     return resize_;

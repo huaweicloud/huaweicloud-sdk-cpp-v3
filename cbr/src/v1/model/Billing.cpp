@@ -246,7 +246,6 @@ bool Billing::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t Billing::getAllocated() const
 {
     return allocated_;

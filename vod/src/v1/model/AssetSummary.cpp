@@ -245,7 +245,6 @@ bool AssetSummary::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AssetSummary::getAssetId() const
 {
     return assetId_;

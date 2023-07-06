@@ -36,7 +36,6 @@ bool DeleteQualityEnhanceTemplateResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

@@ -50,7 +50,6 @@ bool NeutronShowSecurityGroupRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NeutronShowSecurityGroupRequest::getSecurityGroupId() const
 {
     return securityGroupId_;

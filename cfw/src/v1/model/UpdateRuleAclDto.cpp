@@ -256,7 +256,6 @@ bool UpdateRuleAclDto::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t UpdateRuleAclDto::getAddressType() const
 {
     return addressType_;

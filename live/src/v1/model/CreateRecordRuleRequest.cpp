@@ -49,7 +49,6 @@ bool CreateRecordRuleRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 RecordRuleRequest CreateRecordRuleRequest::getBody() const
 {
     return body_;

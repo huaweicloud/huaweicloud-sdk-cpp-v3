@@ -64,7 +64,6 @@ bool ResizeServerResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ResizeServerResponse::getOrderId() const
 {
     return orderId_;

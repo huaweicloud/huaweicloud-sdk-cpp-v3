@@ -36,7 +36,6 @@ bool ListVersionsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

@@ -49,7 +49,6 @@ bool CountEipAvailableResourcesRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 EipResourcesAvailableV3RequestBody CountEipAvailableResourcesRequest::getBody() const
 {
     return body_;

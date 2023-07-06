@@ -76,7 +76,6 @@ bool ListSnapshotsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t ListSnapshotsResponse::getCount() const
 {
     return count_;

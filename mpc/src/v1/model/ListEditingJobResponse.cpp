@@ -63,7 +63,6 @@ bool ListEditingJobResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t ListEditingJobResponse::getTotal() const
 {
     return total_;

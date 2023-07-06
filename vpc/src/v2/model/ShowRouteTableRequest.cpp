@@ -50,7 +50,6 @@ bool ShowRouteTableRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowRouteTableRequest::getRoutetableId() const
 {
     return routetableId_;

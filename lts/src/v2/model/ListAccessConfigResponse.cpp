@@ -63,7 +63,6 @@ bool ListAccessConfigResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<AccessConfigInfo>& ListAccessConfigResponse::getResult()
 {
     return result_;

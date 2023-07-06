@@ -63,7 +63,6 @@ bool BatchCreateSubnetTagsRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BatchCreateSubnetTagsRequestBody::getAction() const
 {
     return action_;

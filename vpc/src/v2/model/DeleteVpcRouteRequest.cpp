@@ -50,7 +50,6 @@ bool DeleteVpcRouteRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteVpcRouteRequest::getRouteId() const
 {
     return routeId_;

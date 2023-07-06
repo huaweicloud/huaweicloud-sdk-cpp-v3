@@ -63,7 +63,6 @@ bool DisassociatePublicipsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DisassociatePublicipsResponse::getRequestId() const
 {
     return requestId_;

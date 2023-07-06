@@ -106,7 +106,6 @@ bool UpdateAssetCategoryResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateAssetCategoryResponse::getName() const
 {
     return name_;

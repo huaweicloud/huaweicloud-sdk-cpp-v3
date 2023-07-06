@@ -78,7 +78,6 @@ bool SubJobEntities::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string SubJobEntities::getServerId() const
 {
     return serverId_;

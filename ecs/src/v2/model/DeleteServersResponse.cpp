@@ -50,7 +50,6 @@ bool DeleteServersResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteServersResponse::getJobId() const
 {
     return jobId_;

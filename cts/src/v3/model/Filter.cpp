@@ -77,7 +77,6 @@ bool Filter::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string Filter::getCondition() const
 {
     return condition_;

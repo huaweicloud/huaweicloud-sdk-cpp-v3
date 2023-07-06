@@ -63,7 +63,6 @@ bool ReqCreatePredefineTag::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ReqCreatePredefineTag::getAction() const
 {
     return action_;

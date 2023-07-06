@@ -90,7 +90,6 @@ bool ChangeServerChargeModeRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& ChangeServerChargeModeRequestBody::getServerIds()
 {
     return serverIds_;

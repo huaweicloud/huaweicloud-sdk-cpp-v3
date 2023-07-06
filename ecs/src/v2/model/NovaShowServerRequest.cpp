@@ -64,7 +64,6 @@ bool NovaShowServerRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NovaShowServerRequest::getServerId() const
 {
     return serverId_;

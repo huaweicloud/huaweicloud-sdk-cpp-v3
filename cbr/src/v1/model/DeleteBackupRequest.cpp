@@ -50,7 +50,6 @@ bool DeleteBackupRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteBackupRequest::getBackupId() const
 {
     return backupId_;

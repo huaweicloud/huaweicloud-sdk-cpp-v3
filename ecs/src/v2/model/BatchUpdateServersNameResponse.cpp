@@ -49,7 +49,6 @@ bool BatchUpdateServersNameResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ServerId>& BatchUpdateServersNameResponse::getResponse()
 {
     return response_;

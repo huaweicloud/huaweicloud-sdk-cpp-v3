@@ -49,7 +49,6 @@ bool IvsStandardByVideoAndIdCardImageRequestBody_data::fromJson(const web::json:
     return ok;
 }
 
-
 std::vector<ReqDataByVideoAndIdCardImage>& IvsStandardByVideoAndIdCardImageRequestBody_data::getReqData()
 {
     return reqData_;

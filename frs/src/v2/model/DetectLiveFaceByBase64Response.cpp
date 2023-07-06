@@ -62,7 +62,6 @@ bool DetectLiveFaceByBase64Response::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 LiveDetectFaceResp_result DetectLiveFaceByBase64Response::getResult() const
 {
     return result_;

@@ -49,7 +49,6 @@ bool ListSubnetsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<Subnet>& ListSubnetsResponse::getSubnets()
 {
     return subnets_;

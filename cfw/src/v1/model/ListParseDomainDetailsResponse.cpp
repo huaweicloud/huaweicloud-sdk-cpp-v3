@@ -49,7 +49,6 @@ bool ListParseDomainDetailsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& ListParseDomainDetailsResponse::getData()
 {
     return data_;

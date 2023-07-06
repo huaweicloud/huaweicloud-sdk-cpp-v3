@@ -64,7 +64,6 @@ bool DeletePublicipTagRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeletePublicipTagRequest::getPublicipId() const
 {
     return publicipId_;

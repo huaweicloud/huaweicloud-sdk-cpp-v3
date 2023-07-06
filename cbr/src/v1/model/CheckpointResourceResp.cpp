@@ -148,7 +148,6 @@ bool CheckpointResourceResp::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CheckpointResourceResp::getExtraInfo() const
 {
     return extraInfo_;

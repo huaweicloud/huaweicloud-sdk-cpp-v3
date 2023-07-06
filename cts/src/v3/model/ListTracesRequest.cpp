@@ -232,7 +232,6 @@ bool ListTracesRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListTracesRequest::getTraceType() const
 {
     return traceType_;

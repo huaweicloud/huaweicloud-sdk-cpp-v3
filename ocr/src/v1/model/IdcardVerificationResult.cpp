@@ -92,7 +92,6 @@ bool IdcardVerificationResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 bool IdcardVerificationResult::isValidNumber() const
 {
     return validNumber_;

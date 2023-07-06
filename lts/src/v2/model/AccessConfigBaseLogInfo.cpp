@@ -64,7 +64,6 @@ bool AccessConfigBaseLogInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AccessConfigBaseLogInfo::getLogGroupId() const
 {
     return logGroupId_;

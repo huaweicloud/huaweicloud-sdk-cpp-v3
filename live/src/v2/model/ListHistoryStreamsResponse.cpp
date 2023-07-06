@@ -77,7 +77,6 @@ bool ListHistoryStreamsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<HistoryStreamInfo>& ListHistoryStreamsResponse::getHistoryStreamList()
 {
     return historyStreamList_;

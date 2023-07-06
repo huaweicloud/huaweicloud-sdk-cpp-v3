@@ -49,7 +49,6 @@ bool RuleIdList::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<RuleId>& RuleIdList::getRules()
 {
     return rules_;

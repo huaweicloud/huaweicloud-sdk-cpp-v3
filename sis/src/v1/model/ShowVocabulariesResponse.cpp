@@ -63,7 +63,6 @@ bool ShowVocabulariesResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t ShowVocabulariesResponse::getCount() const
 {
     return count_;

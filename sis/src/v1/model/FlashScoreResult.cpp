@@ -77,7 +77,6 @@ bool FlashScoreResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string FlashScoreResult::getText() const
 {
     return text_;

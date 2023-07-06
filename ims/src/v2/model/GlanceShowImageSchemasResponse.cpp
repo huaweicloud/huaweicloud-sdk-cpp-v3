@@ -89,7 +89,6 @@ bool GlanceShowImageSchemasResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 AdditionalProperties GlanceShowImageSchemasResponse::getAdditionalProperties() const
 {
     return additionalProperties_;

@@ -50,7 +50,6 @@ bool BatchDeleteServerNicsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BatchDeleteServerNicsResponse::getJobId() const
 {
     return jobId_;

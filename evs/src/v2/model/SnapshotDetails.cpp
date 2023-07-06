@@ -189,7 +189,6 @@ bool SnapshotDetails::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string SnapshotDetails::getId() const
 {
     return id_;

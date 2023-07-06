@@ -198,7 +198,6 @@ bool VaultResourceInstancesReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 bool VaultResourceInstancesReq::isWithoutAnyTag() const
 {
     return withoutAnyTag_;

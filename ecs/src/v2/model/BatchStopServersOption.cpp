@@ -63,7 +63,6 @@ bool BatchStopServersOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ServerId>& BatchStopServersOption::getServers()
 {
     return servers_;

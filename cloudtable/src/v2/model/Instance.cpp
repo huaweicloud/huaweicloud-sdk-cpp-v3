@@ -105,7 +105,6 @@ bool Instance::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string Instance::getAvailabilityZone() const
 {
     return availabilityZone_;

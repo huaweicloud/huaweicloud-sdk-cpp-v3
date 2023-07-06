@@ -63,7 +63,6 @@ bool ServerTags::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ServerTags::getKey() const
 {
     return key_;

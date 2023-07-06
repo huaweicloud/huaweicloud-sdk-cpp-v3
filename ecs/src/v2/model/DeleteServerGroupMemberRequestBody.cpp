@@ -49,7 +49,6 @@ bool DeleteServerGroupMemberRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ServerGroupMember DeleteServerGroupMemberRequestBody::getRemoveMember() const
 {
     return removeMember_;

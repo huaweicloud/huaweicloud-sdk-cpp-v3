@@ -106,7 +106,6 @@ bool VehicleLicenseRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string VehicleLicenseRequestBody::getImage() const
 {
     return image_;

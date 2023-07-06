@@ -49,7 +49,6 @@ bool ListTopnTrafficStatisticsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ResultsTopnBody>& ListTopnTrafficStatisticsResponse::getResults()
 {
     return results_;

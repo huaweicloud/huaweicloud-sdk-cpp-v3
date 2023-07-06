@@ -18,6 +18,10 @@ UpdateAccessConfigRequestBody::UpdateAccessConfigRequestBody()
     accessConfigDetailIsSet_ = false;
     hostGroupInfoIsSet_ = false;
     accessConfigTagIsSet_ = false;
+    logSplit_ = false;
+    logSplitIsSet_ = false;
+    binaryCollect_ = false;
+    binaryCollectIsSet_ = false;
 }
 
 UpdateAccessConfigRequestBody::~UpdateAccessConfigRequestBody() = default;
@@ -42,6 +46,12 @@ web::json::value UpdateAccessConfigRequestBody::toJson() const
     if(accessConfigTagIsSet_) {
         val[utility::conversions::to_string_t("access_config_tag")] = ModelBase::toJson(accessConfigTag_);
     }
+    if(logSplitIsSet_) {
+        val[utility::conversions::to_string_t("log_split")] = ModelBase::toJson(logSplit_);
+    }
+    if(binaryCollectIsSet_) {
+        val[utility::conversions::to_string_t("binary_collect")] = ModelBase::toJson(binaryCollect_);
+    }
 
     return val;
 }
@@ -63,7 +73,7 @@ bool UpdateAccessConfigRequestBody::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("access_config_detail"));
         if(!fieldValue.is_null())
         {
-            AccessConfigDeatil refVal;
+            AccessConfigDeatilCreate refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAccessConfigDetail(refVal);
         }
@@ -86,9 +96,26 @@ bool UpdateAccessConfigRequestBody::fromJson(const web::json::value& val)
             setAccessConfigTag(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("log_split"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("log_split"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLogSplit(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("binary_collect"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("binary_collect"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBinaryCollect(refVal);
+        }
+    }
     return ok;
 }
-
 
 std::string UpdateAccessConfigRequestBody::getAccessConfigId() const
 {
@@ -111,12 +138,12 @@ void UpdateAccessConfigRequestBody::unsetaccessConfigId()
     accessConfigIdIsSet_ = false;
 }
 
-AccessConfigDeatil UpdateAccessConfigRequestBody::getAccessConfigDetail() const
+AccessConfigDeatilCreate UpdateAccessConfigRequestBody::getAccessConfigDetail() const
 {
     return accessConfigDetail_;
 }
 
-void UpdateAccessConfigRequestBody::setAccessConfigDetail(const AccessConfigDeatil& value)
+void UpdateAccessConfigRequestBody::setAccessConfigDetail(const AccessConfigDeatilCreate& value)
 {
     accessConfigDetail_ = value;
     accessConfigDetailIsSet_ = true;
@@ -172,6 +199,48 @@ bool UpdateAccessConfigRequestBody::accessConfigTagIsSet() const
 void UpdateAccessConfigRequestBody::unsetaccessConfigTag()
 {
     accessConfigTagIsSet_ = false;
+}
+
+bool UpdateAccessConfigRequestBody::isLogSplit() const
+{
+    return logSplit_;
+}
+
+void UpdateAccessConfigRequestBody::setLogSplit(bool value)
+{
+    logSplit_ = value;
+    logSplitIsSet_ = true;
+}
+
+bool UpdateAccessConfigRequestBody::logSplitIsSet() const
+{
+    return logSplitIsSet_;
+}
+
+void UpdateAccessConfigRequestBody::unsetlogSplit()
+{
+    logSplitIsSet_ = false;
+}
+
+bool UpdateAccessConfigRequestBody::isBinaryCollect() const
+{
+    return binaryCollect_;
+}
+
+void UpdateAccessConfigRequestBody::setBinaryCollect(bool value)
+{
+    binaryCollect_ = value;
+    binaryCollectIsSet_ = true;
+}
+
+bool UpdateAccessConfigRequestBody::binaryCollectIsSet() const
+{
+    return binaryCollectIsSet_;
+}
+
+void UpdateAccessConfigRequestBody::unsetbinaryCollect()
+{
+    binaryCollectIsSet_ = false;
 }
 
 }

@@ -50,7 +50,6 @@ bool DeleteFailureJobRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteFailureJobRequest::getFailureJobId() const
 {
     return failureJobId_;

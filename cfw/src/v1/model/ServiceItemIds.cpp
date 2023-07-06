@@ -49,7 +49,6 @@ bool ServiceItemIds::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<IdObject>& ServiceItemIds::getItems()
 {
     return items_;

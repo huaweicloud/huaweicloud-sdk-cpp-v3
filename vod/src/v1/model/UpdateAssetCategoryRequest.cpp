@@ -63,7 +63,6 @@ bool UpdateAssetCategoryRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateAssetCategoryRequest::getXSdkDate() const
 {
     return xSdkDate_;

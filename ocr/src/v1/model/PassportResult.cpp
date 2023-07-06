@@ -244,7 +244,6 @@ bool PassportResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PassportResult::getPassportType() const
 {
     return passportType_;

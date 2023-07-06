@@ -103,7 +103,6 @@ bool WebImageWordsBlockList::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string WebImageWordsBlockList::getWords() const
 {
     return words_;

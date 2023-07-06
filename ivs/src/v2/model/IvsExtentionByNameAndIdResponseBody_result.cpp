@@ -77,7 +77,6 @@ bool IvsExtentionByNameAndIdResponseBody_result::fromJson(const web::json::value
     return ok;
 }
 
-
 std::string IvsExtentionByNameAndIdResponseBody_result::getServiceName() const
 {
     return serviceName_;

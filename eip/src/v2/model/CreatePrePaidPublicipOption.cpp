@@ -92,7 +92,6 @@ bool CreatePrePaidPublicipOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreatePrePaidPublicipOption::getType() const
 {
     return type_;

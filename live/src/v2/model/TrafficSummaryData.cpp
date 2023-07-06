@@ -64,7 +64,6 @@ bool TrafficSummaryData::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int64_t TrafficSummaryData::getValue() const
 {
     return value_;

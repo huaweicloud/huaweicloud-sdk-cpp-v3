@@ -62,7 +62,6 @@ bool ModifyPrefineTag::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 PredefineTagRequest ModifyPrefineTag::getNewTag() const
 {
     return newTag_;

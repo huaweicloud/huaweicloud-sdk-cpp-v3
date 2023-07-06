@@ -63,7 +63,6 @@ bool RecognizeTollInvoiceRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RecognizeTollInvoiceRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

@@ -49,7 +49,6 @@ bool UploadMetaDataByUrlResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<UploadAsset>& UploadMetaDataByUrlResponse::getUploadAssets()
 {
     return uploadAssets_;

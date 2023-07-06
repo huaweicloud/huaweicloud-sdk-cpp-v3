@@ -77,7 +77,6 @@ bool QueryCategoryRsp::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string QueryCategoryRsp::getId() const
 {
     return id_;

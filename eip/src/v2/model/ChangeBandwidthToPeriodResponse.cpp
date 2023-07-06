@@ -77,7 +77,6 @@ bool ChangeBandwidthToPeriodResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& ChangeBandwidthToPeriodResponse::getBandwidthIds()
 {
     return bandwidthIds_;

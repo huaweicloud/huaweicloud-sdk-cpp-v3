@@ -50,7 +50,6 @@ bool OsExtend::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t OsExtend::getNewSize() const
 {
     return newSize_;

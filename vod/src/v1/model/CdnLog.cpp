@@ -120,7 +120,6 @@ bool CdnLog::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CdnLog::getDomainName() const
 {
     return domainName_;

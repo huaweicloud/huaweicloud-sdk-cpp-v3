@@ -63,7 +63,6 @@ bool UpdateRouteTableRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateRouteTableRequest::getRoutetableId() const
 {
     return routetableId_;

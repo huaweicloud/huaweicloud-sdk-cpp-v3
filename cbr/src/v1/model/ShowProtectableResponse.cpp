@@ -49,7 +49,6 @@ bool ShowProtectableResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ProtectablesResp ShowProtectableResponse::getInstance() const
 {
     return instance_;

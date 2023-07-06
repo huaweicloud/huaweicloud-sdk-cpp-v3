@@ -76,7 +76,6 @@ bool ListPublicipPoolResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<PublicipPoolShowResp>& ListPublicipPoolResponse::getPublicipPools()
 {
     return publicipPools_;

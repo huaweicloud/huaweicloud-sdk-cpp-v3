@@ -64,7 +64,6 @@ bool DeleteTranscodingsTemplateRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteTranscodingsTemplateRequest::getDomain() const
 {
     return domain_;

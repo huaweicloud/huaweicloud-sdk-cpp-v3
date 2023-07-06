@@ -1,0 +1,154 @@
+
+#ifndef HUAWEICLOUD_SDK_DRS_V5_MODEL_PrecheckResult_H_
+#define HUAWEICLOUD_SDK_DRS_V5_MODEL_PrecheckResult_H_
+
+#include <huaweicloud/drs/v5/DrsExport.h>
+
+#include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/http/HttpResponse.h>
+
+#include <huaweicloud/drs/v5/model/PrecheckFailSubJobResult.h>
+#include <string>
+#include <vector>
+
+namespace HuaweiCloud {
+namespace Sdk {
+namespace Drs {
+namespace V5 {
+namespace Model {
+
+using namespace HuaweiCloud::Sdk::Core::Utils;
+using namespace HuaweiCloud::Sdk::Core::Http;
+/// <summary>
+/// 预检查项结果。
+/// </summary>
+class HUAWEICLOUD_DRS_V5_EXPORT  PrecheckResult
+    : public ModelBase
+{
+public:
+    PrecheckResult();
+    virtual ~PrecheckResult();
+
+    /////////////////////////////////////////////
+    /// ModelBase overrides
+
+    void validate() override;
+
+    web::json::value toJson() const override;
+    bool fromJson(const web::json::value& json) override;
+
+    /////////////////////////////////////////////
+    /// PrecheckResult members
+
+    /// <summary>
+    /// 检查项。
+    /// </summary>
+
+    std::string getItem() const;
+    bool itemIsSet() const;
+    void unsetitem();
+    void setItem(const std::string& value);
+
+    /// <summary>
+    /// 检查结果。取值： - PASSED：检查通过。 - ALARM：检查告警项。 - FAILED：检查失败。
+    /// </summary>
+
+    std::string getResult() const;
+    bool resultIsSet() const;
+    void unsetresult();
+    void setResult(const std::string& value);
+
+    /// <summary>
+    /// 失败原因。
+    /// </summary>
+
+    std::string getFailedReason() const;
+    bool failedReasonIsSet() const;
+    void unsetfailedReason();
+    void setFailedReason(const std::string& value);
+
+    /// <summary>
+    /// 失败数据。
+    /// </summary>
+
+    std::string getData() const;
+    bool dataIsSet() const;
+    void unsetdata();
+    void setData(const std::string& value);
+
+    /// <summary>
+    /// 失败详情。
+    /// </summary>
+
+    std::string getRawErrorMsg() const;
+    bool rawErrorMsgIsSet() const;
+    void unsetrawErrorMsg();
+    void setRawErrorMsg(const std::string& value);
+
+    /// <summary>
+    /// 检查项分组。
+    /// </summary>
+
+    std::string getGroup() const;
+    bool groupIsSet() const;
+    void unsetgroup();
+    void setGroup(const std::string& value);
+
+    /// <summary>
+    /// 是否支持跳过。
+    /// </summary>
+
+    bool isIsSupportSkip() const;
+    bool isSupportSkipIsSet() const;
+    void unsetisSupportSkip();
+    void setIsSupportSkip(bool value);
+
+    /// <summary>
+    /// 是否已跳过。
+    /// </summary>
+
+    bool isIsSkipped() const;
+    bool isSkippedIsSet() const;
+    void unsetisSkipped();
+    void setIsSkipped(bool value);
+
+    /// <summary>
+    /// 失败子任务详情。
+    /// </summary>
+
+    std::vector<PrecheckFailSubJobResult>& getFailedSubJobs();
+    bool failedSubJobsIsSet() const;
+    void unsetfailedSubJobs();
+    void setFailedSubJobs(const std::vector<PrecheckFailSubJobResult>& value);
+
+
+protected:
+    std::string item_;
+    bool itemIsSet_;
+    std::string result_;
+    bool resultIsSet_;
+    std::string failedReason_;
+    bool failedReasonIsSet_;
+    std::string data_;
+    bool dataIsSet_;
+    std::string rawErrorMsg_;
+    bool rawErrorMsgIsSet_;
+    std::string group_;
+    bool groupIsSet_;
+    bool isSupportSkip_;
+    bool isSupportSkipIsSet_;
+    bool isSkipped_;
+    bool isSkippedIsSet_;
+    std::vector<PrecheckFailSubJobResult> failedSubJobs_;
+    bool failedSubJobsIsSet_;
+
+};
+
+
+}
+}
+}
+}
+}
+
+#endif // HUAWEICLOUD_SDK_DRS_V5_MODEL_PrecheckResult_H_

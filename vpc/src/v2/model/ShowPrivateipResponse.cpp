@@ -49,7 +49,6 @@ bool ShowPrivateipResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 Privateip ShowPrivateipResponse::getPrivateip() const
 {
     return privateip_;

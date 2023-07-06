@@ -271,7 +271,6 @@ bool CreateAssetByFileUploadReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateAssetByFileUploadReq::getTitle() const
 {
     return title_;

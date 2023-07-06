@@ -49,7 +49,6 @@ bool RemovePublicipsFromSharedBandwidthRequestBody::fromJson(const web::json::va
     return ok;
 }
 
-
 RemoveFromSharedBandwidthOption RemovePublicipsFromSharedBandwidthRequestBody::getBandwidth() const
 {
     return bandwidth_;

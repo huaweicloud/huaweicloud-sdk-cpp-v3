@@ -49,7 +49,6 @@ bool AddMembersReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& AddMembersReq::getMembers()
 {
     return members_;

@@ -63,7 +63,6 @@ bool DetectFaceByBase64Request::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DetectFaceByBase64Request::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

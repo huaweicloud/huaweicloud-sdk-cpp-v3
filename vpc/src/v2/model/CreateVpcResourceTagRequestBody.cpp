@@ -49,7 +49,6 @@ bool CreateVpcResourceTagRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ResourceTag CreateVpcResourceTagRequestBody::getTag() const
 {
     return tag_;

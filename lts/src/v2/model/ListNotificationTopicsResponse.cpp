@@ -77,7 +77,6 @@ bool ListNotificationTopicsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListNotificationTopicsResponse::getRequestId() const
 {
     return requestId_;

@@ -157,7 +157,6 @@ bool ListImageByTagsRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListImageByTagsRequestBody::getAction() const
 {
     return action_;

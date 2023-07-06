@@ -78,7 +78,6 @@ bool ReqDataByIdCardImage::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ReqDataByIdCardImage::getIdcardImage1() const
 {
     return idcardImage1_;

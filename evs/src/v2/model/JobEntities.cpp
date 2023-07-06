@@ -105,7 +105,6 @@ bool JobEntities::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string JobEntities::getVolumeType() const
 {
     return volumeType_;

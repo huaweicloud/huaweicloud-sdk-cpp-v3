@@ -49,7 +49,6 @@ bool RecognizeMainlandTravelPermitResponse::fromJson(const web::json::value& val
     return ok;
 }
 
-
 MainlandTravelPermitResult RecognizeMainlandTravelPermitResponse::getResult() const
 {
     return result_;

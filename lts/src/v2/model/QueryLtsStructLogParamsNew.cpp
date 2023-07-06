@@ -91,7 +91,6 @@ bool QueryLtsStructLogParamsNew::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string QueryLtsStructLogParamsNew::getQuery() const
 {
     return query_;

@@ -63,7 +63,6 @@ bool ListTranscodeTemplateResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<TransTemplateRsp>& ListTranscodeTemplateResponse::getTemplateGroupList()
 {
     return templateGroupList_;

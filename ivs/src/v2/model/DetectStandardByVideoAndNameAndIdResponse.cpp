@@ -62,7 +62,6 @@ bool DetectStandardByVideoAndNameAndIdResponse::fromJson(const web::json::value&
     return ok;
 }
 
-
 Meta DetectStandardByVideoAndNameAndIdResponse::getMeta() const
 {
     return meta_;

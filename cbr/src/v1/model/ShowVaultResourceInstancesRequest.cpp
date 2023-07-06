@@ -49,7 +49,6 @@ bool ShowVaultResourceInstancesRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 VaultResourceInstancesReq ShowVaultResourceInstancesRequest::getBody() const
 {
     return body_;

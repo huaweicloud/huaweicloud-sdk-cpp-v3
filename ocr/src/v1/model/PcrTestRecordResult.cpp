@@ -132,7 +132,6 @@ bool PcrTestRecordResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PcrTestRecordResult::getName() const
 {
     return name_;

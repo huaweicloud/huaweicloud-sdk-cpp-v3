@@ -49,7 +49,6 @@ bool CreateMbTasksReportRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 MbTasksReportReq CreateMbTasksReportRequest::getBody() const
 {
     return body_;

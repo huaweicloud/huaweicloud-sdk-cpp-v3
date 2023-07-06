@@ -63,7 +63,6 @@ bool CompareFaceByUrlRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CompareFaceByUrlRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

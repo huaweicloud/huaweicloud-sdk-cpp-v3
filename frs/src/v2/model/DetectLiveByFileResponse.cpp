@@ -62,7 +62,6 @@ bool DetectLiveByFileResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 LiveDetectResp_videoresult DetectLiveByFileResponse::getVideoResult() const
 {
     return videoResult_;

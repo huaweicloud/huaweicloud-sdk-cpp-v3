@@ -50,7 +50,6 @@ bool MigrateServerResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string MigrateServerResponse::getJobId() const
 {
     return jobId_;

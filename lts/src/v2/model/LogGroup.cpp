@@ -105,7 +105,6 @@ bool LogGroup::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int64_t LogGroup::getCreationTime() const
 {
     return creationTime_;

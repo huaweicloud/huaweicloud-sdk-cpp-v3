@@ -63,7 +63,6 @@ bool RecognizeThailandLicensePlateRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RecognizeThailandLicensePlateRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

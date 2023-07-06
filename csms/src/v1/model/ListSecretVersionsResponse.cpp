@@ -62,7 +62,6 @@ bool ListSecretVersionsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<VersionMetadata>& ListSecretVersionsResponse::getVersionMetadatas()
 {
     return versionMetadatas_;

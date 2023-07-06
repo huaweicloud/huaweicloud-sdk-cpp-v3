@@ -63,7 +63,6 @@ bool ResizePostPaidServerRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ResizePostPaidServerOption ResizePostPaidServerRequestBody::getResize() const
 {
     return resize_;

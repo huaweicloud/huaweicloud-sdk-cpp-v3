@@ -91,7 +91,6 @@ bool PutUpdateVocabReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PutUpdateVocabReq::getName() const
 {
     return name_;

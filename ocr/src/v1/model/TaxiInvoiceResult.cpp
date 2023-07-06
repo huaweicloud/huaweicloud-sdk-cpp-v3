@@ -328,7 +328,6 @@ bool TaxiInvoiceResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string TaxiInvoiceResult::getLocation() const
 {
     return location_;

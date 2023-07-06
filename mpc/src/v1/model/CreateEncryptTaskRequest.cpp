@@ -49,7 +49,6 @@ bool CreateEncryptTaskRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 CreateEncryptReq CreateEncryptTaskRequest::getBody() const
 {
     return body_;

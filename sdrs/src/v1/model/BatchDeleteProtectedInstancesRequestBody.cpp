@@ -77,7 +77,6 @@ bool BatchDeleteProtectedInstancesRequestBody::fromJson(const web::json::value& 
     return ok;
 }
 
-
 std::vector<ResourceId>& BatchDeleteProtectedInstancesRequestBody::getProtectedInstances()
 {
     return protectedInstances_;

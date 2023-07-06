@@ -63,7 +63,6 @@ bool DeleteHostGroupResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<GetHostGroupInfo>& DeleteHostGroupResponse::getResult()
 {
     return result_;

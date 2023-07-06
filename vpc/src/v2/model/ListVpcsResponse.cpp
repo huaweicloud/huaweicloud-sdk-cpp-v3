@@ -49,7 +49,6 @@ bool ListVpcsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<Vpc>& ListVpcsResponse::getVpcs()
 {
     return vpcs_;

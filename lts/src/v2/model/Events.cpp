@@ -146,7 +146,6 @@ bool Events::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 Annotations Events::getAnnotations() const
 {
     return annotations_;

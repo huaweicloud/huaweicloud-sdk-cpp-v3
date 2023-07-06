@@ -90,7 +90,6 @@ bool FinancialStatementWordsRegionList::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string FinancialStatementWordsRegionList::getType() const
 {
     return type_;

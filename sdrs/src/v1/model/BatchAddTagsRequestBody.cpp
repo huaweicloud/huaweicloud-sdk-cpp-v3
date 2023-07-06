@@ -63,7 +63,6 @@ bool BatchAddTagsRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ResourceTag>& BatchAddTagsRequestBody::getTags()
 {
     return tags_;

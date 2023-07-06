@@ -36,7 +36,6 @@ bool DeleteServerMetadataResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

@@ -245,7 +245,6 @@ bool IdDocumentItem::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string IdDocumentItem::getCountryRegion() const
 {
     return countryRegion_;

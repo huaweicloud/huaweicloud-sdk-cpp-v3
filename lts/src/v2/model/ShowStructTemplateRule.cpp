@@ -64,7 +64,6 @@ bool ShowStructTemplateRule::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowStructTemplateRule::getParam() const
 {
     return param_;

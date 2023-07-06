@@ -78,7 +78,6 @@ bool WordInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t WordInfo::getStartTime() const
 {
     return startTime_;

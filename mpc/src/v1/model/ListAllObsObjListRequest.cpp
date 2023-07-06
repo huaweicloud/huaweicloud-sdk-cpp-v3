@@ -78,7 +78,6 @@ bool ListAllObsObjListRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListAllObsObjListRequest::getBucket() const
 {
     return bucket_;

@@ -104,7 +104,6 @@ bool ShowTakeOverAssetDetailsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowTakeOverAssetDetailsResponse::getAssetId() const
 {
     return assetId_;

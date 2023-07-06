@@ -64,7 +64,6 @@ bool PhonemeFluency::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 float PhonemeFluency::getScore() const
 {
     return score_;

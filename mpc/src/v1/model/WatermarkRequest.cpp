@@ -103,7 +103,6 @@ bool WatermarkRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ObsObjInfo WatermarkRequest::getInput() const
 {
     return input_;

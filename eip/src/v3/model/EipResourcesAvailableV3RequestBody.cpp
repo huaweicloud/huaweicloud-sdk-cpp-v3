@@ -64,7 +64,6 @@ bool EipResourcesAvailableV3RequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string EipResourcesAvailableV3RequestBody::getType() const
 {
     return type_;

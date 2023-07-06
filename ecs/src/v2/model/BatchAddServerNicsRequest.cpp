@@ -63,7 +63,6 @@ bool BatchAddServerNicsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BatchAddServerNicsRequest::getServerId() const
 {
     return serverId_;

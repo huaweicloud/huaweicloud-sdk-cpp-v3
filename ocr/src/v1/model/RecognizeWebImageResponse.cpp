@@ -49,7 +49,6 @@ bool RecognizeWebImageResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 WebImageResult RecognizeWebImageResponse::getResult() const
 {
     return result_;

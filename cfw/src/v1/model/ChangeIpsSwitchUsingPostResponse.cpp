@@ -63,7 +63,6 @@ bool ChangeIpsSwitchUsingPostResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ChangeIpsSwitchUsingPostResponse::getTraceId() const
 {
     return traceId_;

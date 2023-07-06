@@ -228,7 +228,6 @@ bool VaultCreate::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string VaultCreate::getBackupPolicyId() const
 {
     return backupPolicyId_;

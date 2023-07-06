@@ -105,7 +105,6 @@ bool ReinstallServerWithCloudInitOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ReinstallServerWithCloudInitOption::getAdminpass() const
 {
     return adminpass_;

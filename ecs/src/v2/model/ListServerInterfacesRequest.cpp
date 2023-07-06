@@ -50,7 +50,6 @@ bool ListServerInterfacesRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListServerInterfacesRequest::getServerId() const
 {
     return serverId_;

@@ -218,7 +218,6 @@ bool ListRuleAclsUsingGetRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListRuleAclsUsingGetRequest::getObjectId() const
 {
     return objectId_;

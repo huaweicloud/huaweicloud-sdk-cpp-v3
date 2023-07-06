@@ -50,7 +50,6 @@ bool ShowPolicyRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowPolicyRequest::getPolicyId() const
 {
     return policyId_;

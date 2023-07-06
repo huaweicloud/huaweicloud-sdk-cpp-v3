@@ -78,7 +78,6 @@ bool DeleteAddressItemUsingDeleteRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteAddressItemUsingDeleteRequest::getItemId() const
 {
     return itemId_;

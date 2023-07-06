@@ -63,7 +63,6 @@ bool ListFlavorSellPoliciesResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t ListFlavorSellPoliciesResponse::getCount() const
 {
     return count_;

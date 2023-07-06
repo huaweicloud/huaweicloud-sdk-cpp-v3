@@ -64,7 +64,6 @@ bool SyncRespBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string SyncRespBody::getOperationLogId() const
 {
     return operationLogId_;

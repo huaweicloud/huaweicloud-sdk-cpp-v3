@@ -148,7 +148,6 @@ bool BackupSync::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BackupSync::getBackupId() const
 {
     return backupId_;

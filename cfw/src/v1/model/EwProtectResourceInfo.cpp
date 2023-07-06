@@ -120,7 +120,6 @@ bool EwProtectResourceInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t EwProtectResourceInfo::getProtectedResourceType() const
 {
     return protectedResourceType_;

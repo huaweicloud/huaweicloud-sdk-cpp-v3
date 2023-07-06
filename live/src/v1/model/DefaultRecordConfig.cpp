@@ -101,7 +101,6 @@ bool DefaultRecordConfig::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<VideoFormatVar>& DefaultRecordConfig::getRecordFormat()
 {
     return recordFormat_;

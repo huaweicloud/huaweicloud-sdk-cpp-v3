@@ -49,7 +49,6 @@ bool ListActiveActiveDomainsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ShowActiveActiveDomainParams>& ListActiveActiveDomainsResponse::getDomains()
 {
     return domains_;

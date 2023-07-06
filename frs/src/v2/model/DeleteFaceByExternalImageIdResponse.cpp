@@ -78,7 +78,6 @@ bool DeleteFaceByExternalImageIdResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t DeleteFaceByExternalImageIdResponse::getFaceNumber() const
 {
     return faceNumber_;

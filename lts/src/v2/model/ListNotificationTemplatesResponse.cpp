@@ -49,7 +49,6 @@ bool ListNotificationTemplatesResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<NotificationTemplate>& ListNotificationTemplatesResponse::getResults()
 {
     return results_;

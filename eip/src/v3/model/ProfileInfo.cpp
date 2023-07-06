@@ -175,7 +175,6 @@ bool ProfileInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ProfileInfo::getLocalNetworkPort() const
 {
     return localNetworkPort_;

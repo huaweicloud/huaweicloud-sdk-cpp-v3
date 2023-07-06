@@ -160,7 +160,6 @@ bool CreateDataImageRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateDataImageRequestBody::getCmkId() const
 {
     return cmkId_;

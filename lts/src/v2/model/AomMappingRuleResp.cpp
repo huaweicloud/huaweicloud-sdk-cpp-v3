@@ -91,7 +91,6 @@ bool AomMappingRuleResp::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AomMappingRuleResp::getProjectId() const
 {
     return projectId_;

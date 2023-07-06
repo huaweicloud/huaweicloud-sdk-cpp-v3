@@ -50,7 +50,6 @@ bool ShowServerAutoRecoveryResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowServerAutoRecoveryResponse::getSupportAutoRecovery() const
 {
     return supportAutoRecovery_;

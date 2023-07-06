@@ -49,7 +49,6 @@ bool NovaListKeypairsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<NovaListKeypairsResult>& NovaListKeypairsResponse::getKeypairs()
 {
     return keypairs_;

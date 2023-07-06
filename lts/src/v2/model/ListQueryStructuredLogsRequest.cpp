@@ -91,7 +91,6 @@ bool ListQueryStructuredLogsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListQueryStructuredLogsRequest::getLogGroupId() const
 {
     return logGroupId_;

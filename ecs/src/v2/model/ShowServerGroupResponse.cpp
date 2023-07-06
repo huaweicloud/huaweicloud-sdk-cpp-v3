@@ -49,7 +49,6 @@ bool ShowServerGroupResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ShowServerGroupResult ShowServerGroupResponse::getServerGroup() const
 {
     return serverGroup_;

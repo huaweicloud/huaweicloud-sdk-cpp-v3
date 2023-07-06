@@ -63,7 +63,6 @@ bool AddServiceItemsUsingPOSTRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AddServiceItemsUsingPOSTRequestBody::getSetId() const
 {
     return setId_;

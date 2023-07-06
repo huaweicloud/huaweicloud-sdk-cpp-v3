@@ -148,7 +148,6 @@ bool StreamPortrait::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string StreamPortrait::getTime() const
 {
     return time_;

@@ -49,7 +49,6 @@ bool RegisterAgentResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 Agent RegisterAgentResponse::getAgent() const
 {
     return agent_;

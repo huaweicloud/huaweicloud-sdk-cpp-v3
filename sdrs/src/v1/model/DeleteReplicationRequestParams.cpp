@@ -64,7 +64,6 @@ bool DeleteReplicationRequestParams::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteReplicationRequestParams::getServerGroupId() const
 {
     return serverGroupId_;

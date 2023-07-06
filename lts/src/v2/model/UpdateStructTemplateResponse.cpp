@@ -50,7 +50,6 @@ bool UpdateStructTemplateResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateStructTemplateResponse::getBody() const
 {
     return body_;

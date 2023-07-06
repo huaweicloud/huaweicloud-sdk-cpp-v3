@@ -189,7 +189,6 @@ bool BackupExtendInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 bool BackupExtendInfo::isAutoTrigger() const
 {
     return autoTrigger_;

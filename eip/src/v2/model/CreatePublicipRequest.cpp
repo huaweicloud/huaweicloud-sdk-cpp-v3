@@ -49,7 +49,6 @@ bool CreatePublicipRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 CreatePublicipRequestBody CreatePublicipRequest::getBody() const
 {
     return body_;

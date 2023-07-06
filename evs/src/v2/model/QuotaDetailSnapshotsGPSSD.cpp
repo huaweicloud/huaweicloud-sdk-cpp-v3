@@ -78,7 +78,6 @@ bool QuotaDetailSnapshotsGPSSD::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t QuotaDetailSnapshotsGPSSD::getInUse() const
 {
     return inUse_;

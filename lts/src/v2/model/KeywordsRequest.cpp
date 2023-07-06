@@ -162,7 +162,6 @@ bool KeywordsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string KeywordsRequest::getLogStreamId() const
 {
     return logStreamId_;

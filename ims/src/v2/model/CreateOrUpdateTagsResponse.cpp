@@ -36,7 +36,6 @@ bool CreateOrUpdateTagsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

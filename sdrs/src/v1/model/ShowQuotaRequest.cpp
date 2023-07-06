@@ -36,7 +36,6 @@ bool ShowQuotaRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

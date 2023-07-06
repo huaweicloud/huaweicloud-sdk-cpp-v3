@@ -49,7 +49,6 @@ bool ShowBackupResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 BackupResp ShowBackupResponse::getBackup() const
 {
     return backup_;

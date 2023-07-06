@@ -63,7 +63,6 @@ bool ShowStorageUsageResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t ShowStorageUsageResponse::getResourceCount() const
 {
     return resourceCount_;

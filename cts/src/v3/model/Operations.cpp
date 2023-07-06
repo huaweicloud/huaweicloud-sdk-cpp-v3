@@ -77,7 +77,6 @@ bool Operations::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string Operations::getServiceType() const
 {
     return serviceType_;

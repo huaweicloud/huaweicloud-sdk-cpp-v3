@@ -49,7 +49,6 @@ bool RecognizeMvsInvoiceResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 MvsInvoiceResult RecognizeMvsInvoiceResponse::getResult() const
 {
     return result_;

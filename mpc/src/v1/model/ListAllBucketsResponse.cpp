@@ -49,7 +49,6 @@ bool ListAllBucketsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ObsBucket>& ListAllBucketsResponse::getBuckets()
 {
     return buckets_;

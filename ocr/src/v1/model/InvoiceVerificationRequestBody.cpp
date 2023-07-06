@@ -106,7 +106,6 @@ bool InvoiceVerificationRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string InvoiceVerificationRequestBody::getCode() const
 {
     return code_;

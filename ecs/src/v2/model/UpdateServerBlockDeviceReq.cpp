@@ -49,7 +49,6 @@ bool UpdateServerBlockDeviceReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 UpdateServerBlockDeviceOption UpdateServerBlockDeviceReq::getBlockDevice() const
 {
     return blockDevice_;

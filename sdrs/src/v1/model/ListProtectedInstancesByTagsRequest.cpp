@@ -49,7 +49,6 @@ bool ListProtectedInstancesByTagsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ListProtectedInstancesByTagsRequestBody ListProtectedInstancesByTagsRequest::getBody() const
 {
     return body_;

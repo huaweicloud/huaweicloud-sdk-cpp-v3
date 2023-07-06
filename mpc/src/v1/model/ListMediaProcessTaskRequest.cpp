@@ -119,7 +119,6 @@ bool ListMediaProcessTaskRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& ListMediaProcessTaskRequest::getTaskId()
 {
     return taskId_;

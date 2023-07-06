@@ -76,7 +76,6 @@ bool ShowResourceBindEnterpriseProjectResponse::fromJson(const web::json::value&
     return ok;
 }
 
-
 std::vector<Resources>& ShowResourceBindEnterpriseProjectResponse::getResources()
 {
     return resources_;

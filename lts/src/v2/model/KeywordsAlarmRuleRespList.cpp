@@ -299,7 +299,6 @@ bool KeywordsAlarmRuleRespList::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string KeywordsAlarmRuleRespList::getProjectId() const
 {
     return projectId_;

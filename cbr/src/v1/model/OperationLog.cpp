@@ -244,7 +244,6 @@ bool OperationLog::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string OperationLog::getCheckpointId() const
 {
     return checkpointId_;

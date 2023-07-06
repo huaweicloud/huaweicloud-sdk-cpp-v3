@@ -78,7 +78,6 @@ bool ListSnapshotDataRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListSnapshotDataRequest::getPublishDomain() const
 {
     return publishDomain_;

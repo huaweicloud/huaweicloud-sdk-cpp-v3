@@ -49,7 +49,6 @@ bool BatchStopServersRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 BatchStopServersOption BatchStopServersRequestBody::getOsStop() const
 {
     return osStop_;

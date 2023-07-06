@@ -146,7 +146,6 @@ bool StructConfig::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string StructConfig::getLogGroupId() const
 {
     return logGroupId_;

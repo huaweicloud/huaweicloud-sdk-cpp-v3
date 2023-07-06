@@ -148,7 +148,6 @@ bool ListExternalVaultRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListExternalVaultRequest::getExternalProjectId() const
 {
     return externalProjectId_;

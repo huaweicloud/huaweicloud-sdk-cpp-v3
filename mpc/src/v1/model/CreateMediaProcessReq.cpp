@@ -76,7 +76,6 @@ bool CreateMediaProcessReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ObsObjInfo CreateMediaProcessReq::getInput() const
 {
     return input_;

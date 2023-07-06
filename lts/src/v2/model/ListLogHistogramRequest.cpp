@@ -63,7 +63,6 @@ bool ListLogHistogramRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListLogHistogramRequest::getContentType() const
 {
     return contentType_;

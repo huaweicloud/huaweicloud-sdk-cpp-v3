@@ -106,7 +106,6 @@ bool ServerFlavor::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ServerFlavor::getId() const
 {
     return id_;

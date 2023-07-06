@@ -203,7 +203,6 @@ bool VpcAttachmentDetail::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string VpcAttachmentDetail::getId() const
 {
     return id_;

@@ -134,7 +134,6 @@ bool ListHistoryStreamsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListHistoryStreamsRequest::getDomain() const
 {
     return domain_;

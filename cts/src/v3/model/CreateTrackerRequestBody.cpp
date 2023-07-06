@@ -146,7 +146,6 @@ bool CreateTrackerRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateTrackerRequestBody::getTrackerType() const
 {
     return trackerType_;

@@ -49,7 +49,6 @@ bool BatchDeletePublicIpRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 BatchDeletePublicIpRequestBody BatchDeletePublicIpRequest::getBody() const
 {
     return body_;

@@ -63,7 +63,6 @@ bool ListResourceInstancesResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ActionResources>& ListResourceInstancesResponse::getResources()
 {
     return resources_;

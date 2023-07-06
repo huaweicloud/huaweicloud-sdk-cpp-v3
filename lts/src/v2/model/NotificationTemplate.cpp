@@ -160,7 +160,6 @@ bool NotificationTemplate::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NotificationTemplate::getName() const
 {
     return name_;

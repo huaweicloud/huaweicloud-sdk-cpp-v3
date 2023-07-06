@@ -36,7 +36,6 @@ bool UpdateTrackerResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

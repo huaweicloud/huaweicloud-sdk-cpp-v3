@@ -50,7 +50,6 @@ bool PostPaidServerIpv6Bandwidth::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PostPaidServerIpv6Bandwidth::getId() const
 {
     return id_;

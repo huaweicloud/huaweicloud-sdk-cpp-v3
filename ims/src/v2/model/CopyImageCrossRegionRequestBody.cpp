@@ -120,7 +120,6 @@ bool CopyImageCrossRegionRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CopyImageCrossRegionRequestBody::getAgencyName() const
 {
     return agencyName_;

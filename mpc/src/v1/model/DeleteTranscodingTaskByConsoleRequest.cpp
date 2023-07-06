@@ -50,7 +50,6 @@ bool DeleteTranscodingTaskByConsoleRequest::fromJson(const web::json::value& val
     return ok;
 }
 
-
 int32_t DeleteTranscodingTaskByConsoleRequest::getTaskId() const
 {
     return taskId_;

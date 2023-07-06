@@ -49,7 +49,6 @@ bool RollbackSnapshotResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 RollbackInfo RollbackSnapshotResponse::getRollback() const
 {
     return rollback_;

@@ -63,7 +63,6 @@ bool RemovePublicipsFromSharedBandwidthRequest::fromJson(const web::json::value&
     return ok;
 }
 
-
 std::string RemovePublicipsFromSharedBandwidthRequest::getBandwidthId() const
 {
     return bandwidthId_;

@@ -64,7 +64,6 @@ bool OpExtendInfoDelete::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string OpExtendInfoDelete::getBackupId() const
 {
     return backupId_;

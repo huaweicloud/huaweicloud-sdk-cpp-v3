@@ -92,7 +92,6 @@ bool BandwidthInfoResp::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BandwidthInfoResp::getBandwidthName() const
 {
     return bandwidthName_;

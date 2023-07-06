@@ -63,7 +63,6 @@ bool UpdateTranscodeTemplateRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateTranscodeTemplateRequest::getXSdkDate() const
 {
     return xSdkDate_;

@@ -77,7 +77,6 @@ bool ClipInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ObsObjInfo ClipInfo::getInput() const
 {
     return input_;

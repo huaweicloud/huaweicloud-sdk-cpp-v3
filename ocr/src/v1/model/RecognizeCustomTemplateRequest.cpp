@@ -63,7 +63,6 @@ bool RecognizeCustomTemplateRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RecognizeCustomTemplateRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

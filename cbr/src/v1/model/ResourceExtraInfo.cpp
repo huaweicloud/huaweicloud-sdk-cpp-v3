@@ -62,7 +62,6 @@ bool ResourceExtraInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& ResourceExtraInfo::getExcludeVolumes()
 {
     return excludeVolumes_;

@@ -64,7 +64,6 @@ bool ServerSystemTag::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ServerSystemTag::getKey() const
 {
     return key_;

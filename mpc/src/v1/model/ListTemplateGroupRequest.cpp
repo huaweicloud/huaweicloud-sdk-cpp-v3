@@ -90,7 +90,6 @@ bool ListTemplateGroupRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& ListTemplateGroupRequest::getGroupId()
 {
     return groupId_;

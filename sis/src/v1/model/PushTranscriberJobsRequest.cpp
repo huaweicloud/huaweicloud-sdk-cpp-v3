@@ -49,7 +49,6 @@ bool PushTranscriberJobsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 PostTranscriberJobs PushTranscriberJobsRequest::getBody() const
 {
     return body_;

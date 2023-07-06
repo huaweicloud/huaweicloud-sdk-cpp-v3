@@ -131,7 +131,6 @@ bool RunMultiModalAssessmentResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 float RunMultiModalAssessmentResponse::getScore() const
 {
     return score_;

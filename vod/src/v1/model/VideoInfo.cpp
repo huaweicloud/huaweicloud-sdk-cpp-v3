@@ -106,7 +106,6 @@ bool VideoInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string VideoInfo::getQuality() const
 {
     return quality_;

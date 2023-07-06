@@ -119,7 +119,6 @@ bool NetworkIpAvailability::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NetworkIpAvailability::getNetworkId() const
 {
     return networkId_;

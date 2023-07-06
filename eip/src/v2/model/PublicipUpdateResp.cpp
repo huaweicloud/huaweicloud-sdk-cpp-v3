@@ -273,7 +273,6 @@ bool PublicipUpdateResp::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PublicipUpdateResp::getBandwidthId() const
 {
     return bandwidthId_;

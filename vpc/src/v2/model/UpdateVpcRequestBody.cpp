@@ -49,7 +49,6 @@ bool UpdateVpcRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 UpdateVpcOption UpdateVpcRequestBody::getVpc() const
 {
     return vpc_;

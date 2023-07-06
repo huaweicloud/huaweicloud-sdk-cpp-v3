@@ -49,7 +49,6 @@ bool NovaListServerSecurityGroupsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<NovaSecurityGroup>& NovaListServerSecurityGroupsResponse::getSecurityGroups()
 {
     return securityGroups_;

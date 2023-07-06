@@ -78,7 +78,6 @@ bool ListVpcProtectsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListVpcProtectsRequest::getObjectId() const
 {
     return objectId_;

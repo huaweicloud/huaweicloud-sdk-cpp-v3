@@ -63,7 +63,6 @@ bool ShowStreamPortraitResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<StreamPortrait>& ShowStreamPortraitResponse::getStreamPortraits()
 {
     return streamPortraits_;

@@ -131,7 +131,6 @@ bool CreateTranscodeTemplate::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateTranscodeTemplate::getName() const
 {
     return name_;

@@ -64,7 +64,6 @@ bool Attributes_expression::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string Attributes_expression::getType() const
 {
     return type_;

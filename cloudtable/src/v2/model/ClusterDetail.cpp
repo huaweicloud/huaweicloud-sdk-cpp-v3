@@ -244,7 +244,6 @@ bool ClusterDetail::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ActionProgress ClusterDetail::getActionProgress() const
 {
     return actionProgress_;

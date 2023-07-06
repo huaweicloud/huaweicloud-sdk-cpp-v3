@@ -92,7 +92,6 @@ bool EditAudioInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string EditAudioInfo::getCodec() const
 {
     return codec_;

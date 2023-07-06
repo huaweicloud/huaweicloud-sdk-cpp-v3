@@ -49,7 +49,6 @@ bool ShowImageQuotaResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 Quota ShowImageQuotaResponse::getQuotas() const
 {
     return quotas_;

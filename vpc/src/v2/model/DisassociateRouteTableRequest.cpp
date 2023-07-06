@@ -63,7 +63,6 @@ bool DisassociateRouteTableRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DisassociateRouteTableRequest::getRoutetableId() const
 {
     return routetableId_;

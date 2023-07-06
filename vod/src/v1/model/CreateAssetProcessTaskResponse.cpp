@@ -50,7 +50,6 @@ bool CreateAssetProcessTaskResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateAssetProcessTaskResponse::getAssetId() const
 {
     return assetId_;

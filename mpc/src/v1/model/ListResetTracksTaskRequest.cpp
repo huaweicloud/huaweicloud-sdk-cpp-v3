@@ -119,7 +119,6 @@ bool ListResetTracksTaskRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& ListResetTracksTaskRequest::getTaskId()
 {
     return taskId_;

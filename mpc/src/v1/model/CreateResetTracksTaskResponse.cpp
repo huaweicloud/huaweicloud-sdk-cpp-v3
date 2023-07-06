@@ -50,7 +50,6 @@ bool CreateResetTracksTaskResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateResetTracksTaskResponse::getTaskId() const
 {
     return taskId_;

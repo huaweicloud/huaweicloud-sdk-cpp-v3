@@ -64,7 +64,6 @@ bool CreateTransferResponseBody_log_streams::fromJson(const web::json::value& va
     return ok;
 }
 
-
 std::string CreateTransferResponseBody_log_streams::getLogStreamId() const
 {
     return logStreamId_;

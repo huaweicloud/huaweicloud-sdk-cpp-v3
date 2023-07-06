@@ -50,7 +50,6 @@ bool ListBreifStructTemplateRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListBreifStructTemplateRequest::getContentType() const
 {
     return contentType_;

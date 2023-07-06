@@ -105,7 +105,6 @@ bool VersionMetadata::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string VersionMetadata::getId() const
 {
     return id_;

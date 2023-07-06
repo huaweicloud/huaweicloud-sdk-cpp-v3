@@ -50,7 +50,6 @@ bool ResizeProtectedInstanceResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ResizeProtectedInstanceResponse::getJobId() const
 {
     return jobId_;

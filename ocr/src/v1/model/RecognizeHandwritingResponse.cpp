@@ -49,7 +49,6 @@ bool RecognizeHandwritingResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 HandwritingResult RecognizeHandwritingResponse::getResult() const
 {
     return result_;

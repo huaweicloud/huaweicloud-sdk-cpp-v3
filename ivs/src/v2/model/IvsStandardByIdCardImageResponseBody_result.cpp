@@ -77,7 +77,6 @@ bool IvsStandardByIdCardImageResponseBody_result::fromJson(const web::json::valu
     return ok;
 }
 
-
 std::string IvsStandardByIdCardImageResponseBody_result::getServiceName() const
 {
     return serviceName_;

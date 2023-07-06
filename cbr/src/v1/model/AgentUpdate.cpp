@@ -50,7 +50,6 @@ bool AgentUpdate::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AgentUpdate::getStatus() const
 {
     return status_;

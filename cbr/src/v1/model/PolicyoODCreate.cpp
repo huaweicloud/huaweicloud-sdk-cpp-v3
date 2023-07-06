@@ -190,7 +190,6 @@ bool PolicyoODCreate::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t PolicyoODCreate::getDayBackups() const
 {
     return dayBackups_;

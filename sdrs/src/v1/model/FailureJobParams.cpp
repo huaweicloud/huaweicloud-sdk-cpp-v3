@@ -176,7 +176,6 @@ bool FailureJobParams::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string FailureJobParams::getJobType() const
 {
     return jobType_;

@@ -49,7 +49,6 @@ bool DeleteSecretForScheduleResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 Secret DeleteSecretForScheduleResponse::getSecret() const
 {
     return secret_;

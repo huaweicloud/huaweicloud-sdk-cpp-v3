@@ -49,7 +49,6 @@ bool ListTranscodeDetailResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<TaskDetailInfo>& ListTranscodeDetailResponse::getTaskArray()
 {
     return taskArray_;

@@ -63,7 +63,6 @@ bool ListProtectedInstancesResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ShowProtectedInstanceParams>& ListProtectedInstancesResponse::getProtectedInstances()
 {
     return protectedInstances_;

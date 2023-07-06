@@ -101,7 +101,6 @@ bool MediaDetail::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& MediaDetail::getFeatures()
 {
     return features_;

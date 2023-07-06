@@ -64,7 +64,6 @@ bool AutoClassificationResult_status::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AutoClassificationResult_status::getErrorCode() const
 {
     return errorCode_;

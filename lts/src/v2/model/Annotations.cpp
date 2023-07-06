@@ -92,7 +92,6 @@ bool Annotations::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string Annotations::getMessage() const
 {
     return message_;

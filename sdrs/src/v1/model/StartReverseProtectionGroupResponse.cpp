@@ -50,7 +50,6 @@ bool StartReverseProtectionGroupResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string StartReverseProtectionGroupResponse::getJobId() const
 {
     return jobId_;

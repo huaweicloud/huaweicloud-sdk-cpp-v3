@@ -104,7 +104,6 @@ bool BatchAddServerNicOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BatchAddServerNicOption::getSubnetId() const
 {
     return subnetId_;

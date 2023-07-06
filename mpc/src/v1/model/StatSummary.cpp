@@ -64,7 +64,6 @@ bool StatSummary::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 float StatSummary::getValue() const
 {
     return value_;

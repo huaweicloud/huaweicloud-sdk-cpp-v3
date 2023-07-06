@@ -50,7 +50,6 @@ bool DeleteProtectedInstanceResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteProtectedInstanceResponse::getJobId() const
 {
     return jobId_;

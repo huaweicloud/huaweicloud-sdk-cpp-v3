@@ -78,7 +78,6 @@ bool ExportImageRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ExportImageRequestBody::getBucketUrl() const
 {
     return bucketUrl_;

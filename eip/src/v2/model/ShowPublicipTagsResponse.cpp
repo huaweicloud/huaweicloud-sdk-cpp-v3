@@ -49,7 +49,6 @@ bool ShowPublicipTagsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ResourceTagResp>& ShowPublicipTagsResponse::getTags()
 {
     return tags_;

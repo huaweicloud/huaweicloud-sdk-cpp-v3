@@ -77,7 +77,6 @@ bool GeneralTableResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t GeneralTableResult::getWordsRegionCount() const
 {
     return wordsRegionCount_;

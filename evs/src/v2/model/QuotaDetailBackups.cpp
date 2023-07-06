@@ -78,7 +78,6 @@ bool QuotaDetailBackups::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t QuotaDetailBackups::getInUse() const
 {
     return inUse_;

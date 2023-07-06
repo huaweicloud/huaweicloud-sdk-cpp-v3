@@ -50,7 +50,6 @@ bool ShowPrivateipRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowPrivateipRequest::getPrivateipId() const
 {
     return privateipId_;

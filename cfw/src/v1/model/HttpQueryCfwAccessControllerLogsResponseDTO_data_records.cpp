@@ -190,7 +190,6 @@ bool HttpQueryCfwAccessControllerLogsResponseDTO_data_records::fromJson(const we
     return ok;
 }
 
-
 std::string HttpQueryCfwAccessControllerLogsResponseDTO_data_records::getAction() const
 {
     return action_;

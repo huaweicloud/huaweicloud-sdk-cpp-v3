@@ -63,7 +63,6 @@ bool RecognizeTaxiInvoiceRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RecognizeTaxiInvoiceRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

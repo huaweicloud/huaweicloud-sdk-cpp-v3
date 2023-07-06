@@ -186,7 +186,6 @@ bool ListBandwidthDetailRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& ListBandwidthDetailRequest::getPlayDomains()
 {
     return playDomains_;

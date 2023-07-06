@@ -63,7 +63,6 @@ bool RegisterServerMonitorRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RegisterServerMonitorRequest::getServerId() const
 {
     return serverId_;

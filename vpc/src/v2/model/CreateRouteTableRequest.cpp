@@ -49,7 +49,6 @@ bool CreateRouteTableRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 CreateRoutetableReqBody CreateRouteTableRequest::getBody() const
 {
     return body_;

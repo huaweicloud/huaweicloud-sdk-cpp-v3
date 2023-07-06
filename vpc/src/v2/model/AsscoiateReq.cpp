@@ -49,7 +49,6 @@ bool AsscoiateReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 AssociateRouteTableAndSubnetReq AsscoiateReq::getSubnets() const
 {
     return subnets_;

@@ -78,7 +78,6 @@ bool EipCountRespData::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string EipCountRespData::getObjectId() const
 {
     return objectId_;

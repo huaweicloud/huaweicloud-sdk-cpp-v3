@@ -78,7 +78,6 @@ bool ListIpsSwitchStatusUsingGetRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListIpsSwitchStatusUsingGetRequest::getObjectId() const
 {
     return objectId_;

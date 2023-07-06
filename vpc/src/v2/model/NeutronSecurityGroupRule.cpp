@@ -246,7 +246,6 @@ bool NeutronSecurityGroupRule::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NeutronSecurityGroupRule::getDescription() const
 {
     return description_;

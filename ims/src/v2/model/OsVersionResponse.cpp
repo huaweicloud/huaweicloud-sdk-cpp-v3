@@ -77,7 +77,6 @@ bool OsVersionResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string OsVersionResponse::getStatus() const
 {
     return status_;

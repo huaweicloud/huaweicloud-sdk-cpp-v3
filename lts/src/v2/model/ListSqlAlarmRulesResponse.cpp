@@ -49,7 +49,6 @@ bool ListSqlAlarmRulesResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<SqlAlarmRuleRespList>& ListSqlAlarmRulesResponse::getSqlAlarmRules()
 {
     return sqlAlarmRules_;

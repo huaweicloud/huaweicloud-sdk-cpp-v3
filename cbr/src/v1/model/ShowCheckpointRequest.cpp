@@ -50,7 +50,6 @@ bool ShowCheckpointRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowCheckpointRequest::getCheckpointId() const
 {
     return checkpointId_;

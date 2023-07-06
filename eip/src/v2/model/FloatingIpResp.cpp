@@ -218,7 +218,6 @@ bool FloatingIpResp::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string FloatingIpResp::getFixedIpAddress() const
 {
     return fixedIpAddress_;

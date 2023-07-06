@@ -49,7 +49,6 @@ bool DeleteServersRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 DeleteServersRequestBody DeleteServersRequest::getBody() const
 {
     return body_;

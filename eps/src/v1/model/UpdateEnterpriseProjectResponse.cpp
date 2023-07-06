@@ -49,7 +49,6 @@ bool UpdateEnterpriseProjectResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 EpDetail UpdateEnterpriseProjectResponse::getEnterpriseProject() const
 {
     return enterpriseProject_;

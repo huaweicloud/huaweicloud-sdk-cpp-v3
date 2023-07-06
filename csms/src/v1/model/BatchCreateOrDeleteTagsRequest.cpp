@@ -63,7 +63,6 @@ bool BatchCreateOrDeleteTagsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BatchCreateOrDeleteTagsRequest::getSecretId() const
 {
     return secretId_;

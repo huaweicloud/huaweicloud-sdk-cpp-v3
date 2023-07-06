@@ -91,7 +91,6 @@ bool ListAgentResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<Agent>& ListAgentResponse::getAgents()
 {
     return agents_;

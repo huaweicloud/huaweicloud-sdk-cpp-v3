@@ -50,7 +50,6 @@ bool CreateAnimatedGraphicsTaskResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateAnimatedGraphicsTaskResponse::getTaskId() const
 {
     return taskId_;

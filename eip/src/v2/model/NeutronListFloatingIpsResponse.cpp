@@ -62,7 +62,6 @@ bool NeutronListFloatingIpsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<FloatingIpResp>& NeutronListFloatingIpsResponse::getFloatingips()
 {
     return floatingips_;

@@ -64,7 +64,6 @@ bool UpdateMember::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateMember::getStatus() const
 {
     return status_;

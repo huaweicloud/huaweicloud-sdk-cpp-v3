@@ -78,7 +78,6 @@ bool LiveDetectFaceResp_result::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 bool LiveDetectFaceResp_result::isAlive() const
 {
     return alive_;

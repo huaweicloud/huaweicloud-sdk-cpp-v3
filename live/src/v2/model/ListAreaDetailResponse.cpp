@@ -63,7 +63,6 @@ bool ListAreaDetailResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<AreaDetail>& ListAreaDetailResponse::getDataList()
 {
     return dataList_;

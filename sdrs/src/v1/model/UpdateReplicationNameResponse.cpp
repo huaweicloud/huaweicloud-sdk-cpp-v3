@@ -49,7 +49,6 @@ bool UpdateReplicationNameResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ShowReplicationParams UpdateReplicationNameResponse::getReplication() const
 {
     return replication_;

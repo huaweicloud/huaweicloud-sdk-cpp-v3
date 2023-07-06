@@ -64,7 +64,6 @@ bool ConfirmImageUploadReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ConfirmImageUploadReq::getId() const
 {
     return id_;

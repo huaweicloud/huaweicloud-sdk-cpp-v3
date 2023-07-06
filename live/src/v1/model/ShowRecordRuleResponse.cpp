@@ -145,7 +145,6 @@ bool ShowRecordRuleResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowRecordRuleResponse::getId() const
 {
     return id_;

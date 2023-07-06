@@ -64,7 +64,6 @@ bool WarningList::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t WarningList::getWarningCode() const
 {
     return warningCode_;

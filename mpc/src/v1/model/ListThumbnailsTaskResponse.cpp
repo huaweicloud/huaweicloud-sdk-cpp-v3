@@ -77,7 +77,6 @@ bool ListThumbnailsTaskResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ThumbTask>& ListThumbnailsTaskResponse::getTaskArray()
 {
     return taskArray_;

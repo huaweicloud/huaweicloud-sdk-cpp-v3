@@ -49,7 +49,6 @@ bool BatchCreatePublicipsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 BatchCreatePublicipsV2RequestBody BatchCreatePublicipsRequest::getBody() const
 {
     return body_;

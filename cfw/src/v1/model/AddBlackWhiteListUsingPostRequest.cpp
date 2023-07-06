@@ -77,7 +77,6 @@ bool AddBlackWhiteListUsingPostRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AddBlackWhiteListUsingPostRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

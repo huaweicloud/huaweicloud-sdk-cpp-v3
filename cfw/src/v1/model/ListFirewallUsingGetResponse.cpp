@@ -49,7 +49,6 @@ bool ListFirewallUsingGetResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 GetFirewallInstanceData ListFirewallUsingGetResponse::getData() const
 {
     return data_;

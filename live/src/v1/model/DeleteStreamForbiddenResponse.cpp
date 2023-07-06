@@ -36,7 +36,6 @@ bool DeleteStreamForbiddenResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

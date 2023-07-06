@@ -49,7 +49,6 @@ bool ChangePublicipToPeriodRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ChangeToPeriodReq ChangePublicipToPeriodRequest::getBody() const
 {
     return body_;

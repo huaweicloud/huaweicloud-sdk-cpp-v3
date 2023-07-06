@@ -118,7 +118,6 @@ bool Phoneme::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string Phoneme::getArpa() const
 {
     return arpa_;

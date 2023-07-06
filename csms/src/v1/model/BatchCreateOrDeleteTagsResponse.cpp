@@ -36,7 +36,6 @@ bool BatchCreateOrDeleteTagsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

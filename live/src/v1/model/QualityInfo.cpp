@@ -204,7 +204,6 @@ bool QualityInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string QualityInfo::getTemplateName() const
 {
     return templateName_;

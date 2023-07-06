@@ -63,7 +63,6 @@ bool DetectLiveFaceByUrlRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DetectLiveFaceByUrlRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

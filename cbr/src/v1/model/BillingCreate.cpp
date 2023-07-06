@@ -246,7 +246,6 @@ bool BillingCreate::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BillingCreate::getCloudType() const
 {
     return cloudType_;

@@ -49,7 +49,6 @@ bool RollbackSnapshotRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 RollbackSnapshotOption RollbackSnapshotRequestBody::getRollback() const
 {
     return rollback_;

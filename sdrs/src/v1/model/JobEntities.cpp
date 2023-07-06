@@ -133,7 +133,6 @@ bool JobEntities::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string JobEntities::getReplicationPairId() const
 {
     return replicationPairId_;

@@ -50,7 +50,6 @@ bool CreateSqlAlarmRuleResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateSqlAlarmRuleResponse::getSqlAlarmRuleId() const
 {
     return sqlAlarmRuleId_;

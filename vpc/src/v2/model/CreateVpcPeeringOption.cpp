@@ -90,7 +90,6 @@ bool CreateVpcPeeringOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateVpcPeeringOption::getName() const
 {
     return name_;

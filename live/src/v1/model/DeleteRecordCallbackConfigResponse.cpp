@@ -36,7 +36,6 @@ bool DeleteRecordCallbackConfigResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

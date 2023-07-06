@@ -63,7 +63,6 @@ bool RecognizeAutoClassificationRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RecognizeAutoClassificationRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

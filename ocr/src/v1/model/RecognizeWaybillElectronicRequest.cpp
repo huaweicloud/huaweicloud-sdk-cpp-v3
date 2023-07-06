@@ -63,7 +63,6 @@ bool RecognizeWaybillElectronicRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RecognizeWaybillElectronicRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

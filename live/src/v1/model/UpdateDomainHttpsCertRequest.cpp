@@ -63,7 +63,6 @@ bool UpdateDomainHttpsCertRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateDomainHttpsCertRequest::getDomain() const
 {
     return domain_;

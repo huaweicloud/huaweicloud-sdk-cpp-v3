@@ -64,7 +64,6 @@ bool AccessConfigTag::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AccessConfigTag::getKey() const
 {
     return key_;

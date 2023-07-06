@@ -117,7 +117,6 @@ bool ReviewInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ReviewInfo::getSuggestion() const
 {
     return suggestion_;

@@ -50,7 +50,6 @@ bool CreateTranscodingTaskResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t CreateTranscodingTaskResponse::getTaskId() const
 {
     return taskId_;

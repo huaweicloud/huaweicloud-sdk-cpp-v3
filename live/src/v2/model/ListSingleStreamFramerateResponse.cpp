@@ -63,7 +63,6 @@ bool ListSingleStreamFramerateResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<V2FramerateInfo>& ListSingleStreamFramerateResponse::getFramerateInfoList()
 {
     return framerateInfoList_;

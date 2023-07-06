@@ -78,7 +78,6 @@ bool RecordObsFileAddr::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RecordObsFileAddr::getBucket() const
 {
     return bucket_;

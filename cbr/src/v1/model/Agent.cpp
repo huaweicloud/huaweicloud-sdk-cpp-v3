@@ -203,7 +203,6 @@ bool Agent::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 utility::datetime Agent::getCreatedAt() const
 {
     return createdAt_;

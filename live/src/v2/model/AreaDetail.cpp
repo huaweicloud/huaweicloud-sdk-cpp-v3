@@ -76,7 +76,6 @@ bool AreaDetail::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AreaDetail::getArea() const
 {
     return area_;

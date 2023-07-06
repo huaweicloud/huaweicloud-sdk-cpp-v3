@@ -50,7 +50,6 @@ bool ImportImageQuickResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ImportImageQuickResponse::getJobId() const
 {
     return jobId_;

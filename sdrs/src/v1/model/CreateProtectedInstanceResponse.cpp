@@ -50,7 +50,6 @@ bool CreateProtectedInstanceResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateProtectedInstanceResponse::getJobId() const
 {
     return jobId_;

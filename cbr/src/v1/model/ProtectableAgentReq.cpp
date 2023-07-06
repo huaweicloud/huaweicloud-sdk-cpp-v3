@@ -49,7 +49,6 @@ bool ProtectableAgentReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ProtectableAgentStatusResource>& ProtectableAgentReq::getAgentStatus()
 {
     return agentStatus_;

@@ -63,7 +63,6 @@ bool AttachProtectedInstanceReplicationRequest::fromJson(const web::json::value&
     return ok;
 }
 
-
 std::string AttachProtectedInstanceReplicationRequest::getProtectedInstanceId() const
 {
     return protectedInstanceId_;

@@ -49,7 +49,6 @@ bool ListVpcTagsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ListTag>& ListVpcTagsResponse::getTags()
 {
     return tags_;

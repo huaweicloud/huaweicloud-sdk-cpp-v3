@@ -49,7 +49,6 @@ bool UnpublishAssetsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<AssetInfo>& UnpublishAssetsResponse::getAssetInfoArray()
 {
     return assetInfoArray_;

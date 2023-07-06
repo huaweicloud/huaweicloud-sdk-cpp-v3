@@ -92,7 +92,6 @@ bool GetQuerySearchCriteriasBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string GetQuerySearchCriteriasBody::getCriteria() const
 {
     return criteria_;

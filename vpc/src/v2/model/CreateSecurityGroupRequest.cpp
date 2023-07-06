@@ -49,7 +49,6 @@ bool CreateSecurityGroupRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 CreateSecurityGroupRequestBody CreateSecurityGroupRequest::getBody() const
 {
     return body_;

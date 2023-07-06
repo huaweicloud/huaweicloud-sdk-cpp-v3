@@ -49,7 +49,6 @@ bool UpdateRoutetableReqBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 UpdateRouteTableReq UpdateRoutetableReqBody::getRoutetable() const
 {
     return routetable_;

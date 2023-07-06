@@ -64,7 +64,6 @@ bool PeakBandwidthData::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int64_t PeakBandwidthData::getValue() const
 {
     return value_;

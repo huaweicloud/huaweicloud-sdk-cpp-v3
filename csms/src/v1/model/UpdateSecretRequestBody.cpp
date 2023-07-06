@@ -64,7 +64,6 @@ bool UpdateSecretRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateSecretRequestBody::getKmsKeyId() const
 {
     return kmsKeyId_;

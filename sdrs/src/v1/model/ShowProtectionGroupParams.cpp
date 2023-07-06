@@ -386,7 +386,6 @@ bool ShowProtectionGroupParams::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowProtectionGroupParams::getId() const
 {
     return id_;

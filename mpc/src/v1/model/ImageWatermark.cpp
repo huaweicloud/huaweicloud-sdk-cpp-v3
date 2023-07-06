@@ -162,7 +162,6 @@ bool ImageWatermark::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ImageWatermark::getDx() const
 {
     return dx_;

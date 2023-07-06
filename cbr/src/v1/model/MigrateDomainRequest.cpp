@@ -49,7 +49,6 @@ bool MigrateDomainRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 DomainMigrate MigrateDomainRequest::getBody() const
 {
     return body_;

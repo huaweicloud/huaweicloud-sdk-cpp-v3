@@ -49,7 +49,6 @@ bool ListPortsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<Port>& ListPortsResponse::getPorts()
 {
     return ports_;

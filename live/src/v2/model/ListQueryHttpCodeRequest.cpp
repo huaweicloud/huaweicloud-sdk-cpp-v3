@@ -116,7 +116,6 @@ bool ListQueryHttpCodeRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& ListQueryHttpCodeRequest::getPlayDomains()
 {
     return playDomains_;

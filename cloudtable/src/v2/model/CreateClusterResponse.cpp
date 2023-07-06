@@ -50,7 +50,6 @@ bool CreateClusterResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateClusterResponse::getClusterId() const
 {
     return clusterId_;

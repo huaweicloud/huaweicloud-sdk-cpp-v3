@@ -64,7 +64,6 @@ bool NovaServerVolume::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NovaServerVolume::getId() const
 {
     return id_;

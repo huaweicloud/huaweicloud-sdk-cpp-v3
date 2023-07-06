@@ -119,7 +119,6 @@ bool BasicTaskInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BasicTaskInfo::getTaskId() const
 {
     return taskId_;

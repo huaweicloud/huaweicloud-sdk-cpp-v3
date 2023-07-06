@@ -49,7 +49,6 @@ bool ShowServerTagsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ServerTag>& ShowServerTagsResponse::getTags()
 {
     return tags_;

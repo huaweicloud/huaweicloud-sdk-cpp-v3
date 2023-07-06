@@ -246,7 +246,6 @@ bool CreateTranscodingReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ObsObjInfo CreateTranscodingReq::getInput() const
 {
     return input_;

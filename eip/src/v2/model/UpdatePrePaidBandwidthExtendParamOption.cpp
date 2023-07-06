@@ -50,7 +50,6 @@ bool UpdatePrePaidBandwidthExtendParamOption::fromJson(const web::json::value& v
     return ok;
 }
 
-
 bool UpdatePrePaidBandwidthExtendParamOption::isIsAutoPay() const
 {
     return isAutoPay_;

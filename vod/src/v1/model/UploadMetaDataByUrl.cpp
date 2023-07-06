@@ -216,7 +216,6 @@ bool UploadMetaDataByUrl::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UploadMetaDataByUrl::getVideoType() const
 {
     return videoType_;

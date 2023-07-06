@@ -134,7 +134,6 @@ bool EpDetail::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string EpDetail::getId() const
 {
     return id_;

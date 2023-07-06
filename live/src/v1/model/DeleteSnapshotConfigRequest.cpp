@@ -64,7 +64,6 @@ bool DeleteSnapshotConfigRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteSnapshotConfigRequest::getDomain() const
 {
     return domain_;

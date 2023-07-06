@@ -62,7 +62,6 @@ bool IvsStandardByNameAndIdRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 Meta IvsStandardByNameAndIdRequestBody::getMeta() const
 {
     return meta_;

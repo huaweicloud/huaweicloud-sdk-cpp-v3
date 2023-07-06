@@ -49,7 +49,6 @@ bool ListLogStreamsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ListLogStreamsResponseBody1_log_streams>& ListLogStreamsResponse::getLogStreams()
 {
     return logStreams_;

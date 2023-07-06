@@ -49,7 +49,6 @@ bool AssociateVaultPolicyResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 VaultPolicyResp AssociateVaultPolicyResponse::getAssociatePolicy() const
 {
     return associatePolicy_;

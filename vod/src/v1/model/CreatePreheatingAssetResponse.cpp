@@ -50,7 +50,6 @@ bool CreatePreheatingAssetResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreatePreheatingAssetResponse::getTaskId() const
 {
     return taskId_;

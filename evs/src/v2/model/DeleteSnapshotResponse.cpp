@@ -36,7 +36,6 @@ bool DeleteSnapshotResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

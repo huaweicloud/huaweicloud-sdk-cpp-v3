@@ -50,7 +50,6 @@ bool DeleteNotificationRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteNotificationRequest::getNotificationId() const
 {
     return notificationId_;

@@ -77,7 +77,6 @@ bool AddAddressItemsUsingPostRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AddAddressItemsUsingPostRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

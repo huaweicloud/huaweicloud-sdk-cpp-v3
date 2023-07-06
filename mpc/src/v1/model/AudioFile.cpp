@@ -62,7 +62,6 @@ bool AudioFile::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<TracksInfo>& AudioFile::getTracksInfo()
 {
     return tracksInfo_;

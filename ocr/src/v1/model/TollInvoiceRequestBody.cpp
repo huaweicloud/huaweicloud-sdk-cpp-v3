@@ -78,7 +78,6 @@ bool TollInvoiceRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string TollInvoiceRequestBody::getImage() const
 {
     return image_;

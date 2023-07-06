@@ -229,7 +229,6 @@ bool ShowProtectedInstanceParams::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowProtectedInstanceParams::getId() const
 {
     return id_;

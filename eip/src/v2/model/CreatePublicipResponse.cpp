@@ -49,7 +49,6 @@ bool CreatePublicipResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 PublicipCreateResp CreatePublicipResponse::getPublicip() const
 {
     return publicip_;

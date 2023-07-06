@@ -36,7 +36,6 @@ bool DeleteDomainKeyChainResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

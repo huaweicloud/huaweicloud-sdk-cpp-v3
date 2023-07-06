@@ -49,7 +49,6 @@ bool MigrateServerRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 MigrateServerOption MigrateServerRequestBody::getMigrate() const
 {
     return migrate_;

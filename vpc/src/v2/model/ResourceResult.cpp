@@ -92,7 +92,6 @@ bool ResourceResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ResourceResult::getType() const
 {
     return type_;

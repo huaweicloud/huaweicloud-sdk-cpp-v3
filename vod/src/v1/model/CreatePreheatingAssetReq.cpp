@@ -63,7 +63,6 @@ bool CreatePreheatingAssetReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreatePreheatingAssetReq::getAssetId() const
 {
     return assetId_;

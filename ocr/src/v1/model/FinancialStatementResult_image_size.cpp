@@ -64,7 +64,6 @@ bool FinancialStatementResult_image_size::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t FinancialStatementResult_image_size::getHeight() const
 {
     return height_;

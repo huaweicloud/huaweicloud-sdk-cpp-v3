@@ -875,7 +875,6 @@ bool GlanceShowImageResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string GlanceShowImageResponse::getBackupId() const
 {
     return backupId_;

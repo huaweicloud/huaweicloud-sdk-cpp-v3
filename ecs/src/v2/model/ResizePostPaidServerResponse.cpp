@@ -50,7 +50,6 @@ bool ResizePostPaidServerResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ResizePostPaidServerResponse::getJobId() const
 {
     return jobId_;

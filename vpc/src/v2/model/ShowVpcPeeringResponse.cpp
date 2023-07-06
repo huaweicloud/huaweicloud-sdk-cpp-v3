@@ -49,7 +49,6 @@ bool ShowVpcPeeringResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 VpcPeering ShowVpcPeeringResponse::getPeering() const
 {
     return peering_;

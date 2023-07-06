@@ -49,7 +49,6 @@ bool CreateVaultRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 VaultCreateReq CreateVaultRequest::getBody() const
 {
     return body_;

@@ -76,7 +76,6 @@ bool Subtitle::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ObsObjInfo Subtitle::getInput() const
 {
     return input_;

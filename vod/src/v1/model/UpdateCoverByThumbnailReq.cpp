@@ -50,7 +50,6 @@ bool UpdateCoverByThumbnailReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateCoverByThumbnailReq::getThumbnailUrl() const
 {
     return thumbnailUrl_;

@@ -49,7 +49,6 @@ bool AssociatePublicipsRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 AssociatePublicipsOption AssociatePublicipsRequestBody::getPublicip() const
 {
     return publicip_;

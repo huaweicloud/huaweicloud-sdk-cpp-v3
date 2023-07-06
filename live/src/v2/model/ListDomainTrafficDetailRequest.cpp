@@ -173,7 +173,6 @@ bool ListDomainTrafficDetailRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& ListDomainTrafficDetailRequest::getPlayDomains()
 {
     return playDomains_;

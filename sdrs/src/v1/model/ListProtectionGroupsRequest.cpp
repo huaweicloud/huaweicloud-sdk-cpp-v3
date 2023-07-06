@@ -120,7 +120,6 @@ bool ListProtectionGroupsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t ListProtectionGroupsRequest::getLimit() const
 {
     return limit_;

@@ -106,7 +106,6 @@ bool ReqDataByVideoAndIdCardImage::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ReqDataByVideoAndIdCardImage::getIdcardImage1() const
 {
     return idcardImage1_;

@@ -78,7 +78,6 @@ bool ListPrivateipsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListPrivateipsRequest::getSubnetId() const
 {
     return subnetId_;

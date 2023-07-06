@@ -78,7 +78,6 @@ bool CheckMd5DuplicationRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CheckMd5DuplicationRequest::getXSdkDate() const
 {
     return xSdkDate_;

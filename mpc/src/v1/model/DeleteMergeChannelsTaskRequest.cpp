@@ -50,7 +50,6 @@ bool DeleteMergeChannelsTaskRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteMergeChannelsTaskRequest::getTaskId() const
 {
     return taskId_;

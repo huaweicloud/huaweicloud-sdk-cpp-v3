@@ -49,7 +49,6 @@ bool SyncReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 SyncParam SyncReq::getSync() const
 {
     return sync_;

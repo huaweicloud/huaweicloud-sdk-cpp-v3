@@ -77,7 +77,6 @@ bool Version::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 VersionMetadata Version::getVersionMetadata() const
 {
     return versionMetadata_;

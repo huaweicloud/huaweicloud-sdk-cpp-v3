@@ -49,7 +49,6 @@ bool BatchCreateProtectedInstancesRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 BatchCreateProtectedInstancesRequestBody BatchCreateProtectedInstancesRequest::getBody() const
 {
     return body_;

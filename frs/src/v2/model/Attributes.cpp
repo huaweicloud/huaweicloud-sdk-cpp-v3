@@ -187,7 +187,6 @@ bool Attributes::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 Dress Attributes::getDress() const
 {
     return dress_;

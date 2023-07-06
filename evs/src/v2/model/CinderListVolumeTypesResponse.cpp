@@ -49,7 +49,6 @@ bool CinderListVolumeTypesResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<VolumeType>& CinderListVolumeTypesResponse::getVolumeTypes()
 {
     return volumeTypes_;

@@ -64,7 +64,6 @@ bool DeleteSqlAlarmRuleRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteSqlAlarmRuleRequest::getSqlAlarmRuleId() const
 {
     return sqlAlarmRuleId_;

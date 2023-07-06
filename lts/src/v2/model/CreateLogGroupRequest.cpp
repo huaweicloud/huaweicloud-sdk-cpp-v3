@@ -63,7 +63,6 @@ bool CreateLogGroupRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateLogGroupRequest::getContentType() const
 {
     return contentType_;

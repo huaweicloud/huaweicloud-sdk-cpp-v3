@@ -50,7 +50,6 @@ bool CpuOptions::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t CpuOptions::getHwcpuThreads() const
 {
     return hwcpuThreads_;

@@ -50,7 +50,6 @@ bool DeleteRecordRuleRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteRecordRuleRequest::getId() const
 {
     return id_;

@@ -49,7 +49,6 @@ bool CreatePortResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 Port CreatePortResponse::getPort() const
 {
     return port_;

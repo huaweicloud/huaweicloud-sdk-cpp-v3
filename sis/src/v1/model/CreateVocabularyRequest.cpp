@@ -49,7 +49,6 @@ bool CreateVocabularyRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 PostCreateVocabReq CreateVocabularyRequest::getBody() const
 {
     return body_;

@@ -64,7 +64,6 @@ bool ResourceExtraInfoIncludeVolumes::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ResourceExtraInfoIncludeVolumes::getId() const
 {
     return id_;

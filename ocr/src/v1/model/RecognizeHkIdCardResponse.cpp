@@ -49,7 +49,6 @@ bool RecognizeHkIdCardResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 HkIdCardResult RecognizeHkIdCardResponse::getResult() const
 {
     return result_;

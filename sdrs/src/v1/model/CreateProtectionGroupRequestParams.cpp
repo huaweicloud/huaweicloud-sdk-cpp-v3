@@ -134,7 +134,6 @@ bool CreateProtectionGroupRequestParams::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateProtectionGroupRequestParams::getName() const
 {
     return name_;

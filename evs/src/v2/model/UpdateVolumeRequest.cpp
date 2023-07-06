@@ -63,7 +63,6 @@ bool UpdateVolumeRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateVolumeRequest::getVolumeId() const
 {
     return volumeId_;

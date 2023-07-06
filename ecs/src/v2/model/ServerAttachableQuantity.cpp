@@ -92,7 +92,6 @@ bool ServerAttachableQuantity::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t ServerAttachableQuantity::getFreeScsi() const
 {
     return freeScsi_;

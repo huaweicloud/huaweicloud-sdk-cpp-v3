@@ -49,7 +49,6 @@ bool ReverseProtectionGroupRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ReverseProtectionGroupRequestParams ReverseProtectionGroupRequestBody::getReverseServerGroup() const
 {
     return reverseServerGroup_;

@@ -77,7 +77,6 @@ bool ListStatSummaryResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<StatSummary>& ListStatSummaryResponse::getSummary()
 {
     return summary_;

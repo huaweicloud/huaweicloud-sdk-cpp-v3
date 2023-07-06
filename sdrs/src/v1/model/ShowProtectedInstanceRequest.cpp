@@ -50,7 +50,6 @@ bool ShowProtectedInstanceRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowProtectedInstanceRequest::getProtectedInstanceId() const
 {
     return protectedInstanceId_;

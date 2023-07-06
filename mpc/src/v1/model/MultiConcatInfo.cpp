@@ -101,7 +101,6 @@ bool MultiConcatInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ObsObjInfo>& MultiConcatInfo::getInputs()
 {
     return inputs_;

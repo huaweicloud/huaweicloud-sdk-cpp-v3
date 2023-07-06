@@ -77,7 +77,6 @@ bool ListStructuredLogsWithTimeRangeRequest::fromJson(const web::json::value& va
     return ok;
 }
 
-
 std::string ListStructuredLogsWithTimeRangeRequest::getLogStreamId() const
 {
     return logStreamId_;

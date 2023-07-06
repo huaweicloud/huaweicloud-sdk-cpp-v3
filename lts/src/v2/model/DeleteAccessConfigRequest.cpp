@@ -63,7 +63,6 @@ bool DeleteAccessConfigRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteAccessConfigRequest::getContentType() const
 {
     return contentType_;

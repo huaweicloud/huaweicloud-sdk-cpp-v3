@@ -49,7 +49,6 @@ bool ListProtectedInstancesProjectTagsResponse::fromJson(const web::json::value&
     return ok;
 }
 
-
 std::vector<TagParams>& ListProtectedInstancesProjectTagsResponse::getTags()
 {
     return tags_;

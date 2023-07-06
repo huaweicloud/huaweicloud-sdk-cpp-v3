@@ -78,7 +78,6 @@ bool ShowStructTemplateclusterInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowStructTemplateclusterInfo::getClusterName() const
 {
     return clusterName_;

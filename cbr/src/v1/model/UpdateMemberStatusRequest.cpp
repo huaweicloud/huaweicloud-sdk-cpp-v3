@@ -77,7 +77,6 @@ bool UpdateMemberStatusRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateMemberStatusRequest::getMemberId() const
 {
     return memberId_;

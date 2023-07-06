@@ -50,7 +50,6 @@ bool UpdateDisasterRecoveryDrillNameRequestParams::fromJson(const web::json::val
     return ok;
 }
 
-
 std::string UpdateDisasterRecoveryDrillNameRequestParams::getName() const
 {
     return name_;

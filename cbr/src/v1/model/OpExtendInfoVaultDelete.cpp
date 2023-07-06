@@ -64,7 +64,6 @@ bool OpExtendInfoVaultDelete::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t OpExtendInfoVaultDelete::getFailCount() const
 {
     return failCount_;

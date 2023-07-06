@@ -50,7 +50,6 @@ bool CreateEncryptTaskResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateEncryptTaskResponse::getTaskId() const
 {
     return taskId_;

@@ -101,7 +101,6 @@ bool InsurantItem::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 InsurancePolicyDetail InsurantItem::getInsurantName() const
 {
     return insurantName_;

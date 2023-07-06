@@ -63,7 +63,6 @@ bool ListReplicationsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ShowReplicationParams>& ListReplicationsResponse::getReplications()
 {
     return replications_;

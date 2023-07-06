@@ -64,7 +64,6 @@ bool CancelExtractAudioTaskRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CancelExtractAudioTaskRequest::getXSdkDate() const
 {
     return xSdkDate_;

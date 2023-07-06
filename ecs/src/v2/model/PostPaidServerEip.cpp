@@ -76,7 +76,6 @@ bool PostPaidServerEip::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PostPaidServerEip::getIptype() const
 {
     return iptype_;

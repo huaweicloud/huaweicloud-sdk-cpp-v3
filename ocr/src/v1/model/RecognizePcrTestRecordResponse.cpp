@@ -49,7 +49,6 @@ bool RecognizePcrTestRecordResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 PcrTestRecordResult RecognizePcrTestRecordResponse::getResult() const
 {
     return result_;

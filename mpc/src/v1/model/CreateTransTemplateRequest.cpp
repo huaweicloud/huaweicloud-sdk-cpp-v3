@@ -49,7 +49,6 @@ bool CreateTransTemplateRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 TransTemplate CreateTransTemplateRequest::getBody() const
 {
     return body_;

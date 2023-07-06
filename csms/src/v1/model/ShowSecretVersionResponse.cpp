@@ -49,7 +49,6 @@ bool ShowSecretVersionResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 Version ShowSecretVersionResponse::getVersion() const
 {
     return version_;

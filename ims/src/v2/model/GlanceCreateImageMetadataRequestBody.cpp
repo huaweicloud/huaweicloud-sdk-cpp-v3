@@ -161,7 +161,6 @@ bool GlanceCreateImageMetadataRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string GlanceCreateImageMetadataRequestBody::getOsVersion() const
 {
     return osVersion_;

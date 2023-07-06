@@ -348,7 +348,6 @@ bool PrePaidServer::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PrePaidServer::getAutoTerminateTime() const
 {
     return autoTerminateTime_;

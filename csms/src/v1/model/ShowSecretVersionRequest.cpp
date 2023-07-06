@@ -64,7 +64,6 @@ bool ShowSecretVersionRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowSecretVersionRequest::getSecretName() const
 {
     return secretName_;

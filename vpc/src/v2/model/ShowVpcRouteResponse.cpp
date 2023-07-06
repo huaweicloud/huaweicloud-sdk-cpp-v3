@@ -49,7 +49,6 @@ bool ShowVpcRouteResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 VpcRoute ShowVpcRouteResponse::getRoute() const
 {
     return route_;

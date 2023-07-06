@@ -131,7 +131,6 @@ bool CreateThumbReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ObsObjInfo CreateThumbReq::getInput() const
 {
     return input_;

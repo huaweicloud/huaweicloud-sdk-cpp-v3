@@ -63,7 +63,6 @@ bool CreateExtractAudioTaskRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateExtractAudioTaskRequest::getXSdkDate() const
 {
     return xSdkDate_;

@@ -49,7 +49,6 @@ bool CreateAnimatedGraphicsTaskRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 CreateAnimatedGraphicsTaskReq CreateAnimatedGraphicsTaskRequest::getBody() const
 {
     return body_;

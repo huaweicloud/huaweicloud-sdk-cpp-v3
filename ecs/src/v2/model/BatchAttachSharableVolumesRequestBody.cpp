@@ -49,7 +49,6 @@ bool BatchAttachSharableVolumesRequestBody::fromJson(const web::json::value& val
     return ok;
 }
 
-
 std::vector<BatchAttachSharableVolumesOption>& BatchAttachSharableVolumesRequestBody::getServerinfo()
 {
     return serverinfo_;

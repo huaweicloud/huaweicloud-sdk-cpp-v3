@@ -50,7 +50,6 @@ bool BatchDeleteProtectedInstancesResponse::fromJson(const web::json::value& val
     return ok;
 }
 
-
 std::string BatchDeleteProtectedInstancesResponse::getJobId() const
 {
     return jobId_;

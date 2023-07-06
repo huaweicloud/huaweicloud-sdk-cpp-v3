@@ -64,7 +64,6 @@ bool Rule::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string Rule::getType() const
 {
     return type_;

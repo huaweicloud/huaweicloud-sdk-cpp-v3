@@ -77,7 +77,6 @@ bool PostPaidServerPublicip::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PostPaidServerPublicip::getId() const
 {
     return id_;

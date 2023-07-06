@@ -106,7 +106,6 @@ bool OsVersionInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string OsVersionInfo::getPlatform() const
 {
     return platform_;

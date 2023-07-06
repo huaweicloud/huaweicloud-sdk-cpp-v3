@@ -119,7 +119,6 @@ bool VolumeType::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string VolumeType::getId() const
 {
     return id_;

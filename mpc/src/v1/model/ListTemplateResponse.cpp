@@ -63,7 +63,6 @@ bool ListTemplateResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<TemplateInfo>& ListTemplateResponse::getTemplateArray()
 {
     return templateArray_;

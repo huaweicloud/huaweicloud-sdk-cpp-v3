@@ -49,7 +49,6 @@ bool CreateProtectionGroupRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 CreateProtectionGroupRequestParams CreateProtectionGroupRequestBody::getServerGroup() const
 {
     return serverGroup_;

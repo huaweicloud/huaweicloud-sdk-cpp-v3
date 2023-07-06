@@ -62,7 +62,6 @@ bool DetectStandardByIdCardImageResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 Meta DetectStandardByIdCardImageResponse::getMeta() const
 {
     return meta_;

@@ -49,7 +49,6 @@ bool ListFlowLogsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<FlowLogResp>& ListFlowLogsResponse::getFlowLogs()
 {
     return flowLogs_;

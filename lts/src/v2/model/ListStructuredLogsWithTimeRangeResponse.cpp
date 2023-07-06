@@ -49,7 +49,6 @@ bool ListStructuredLogsWithTimeRangeResponse::fromJson(const web::json::value& v
     return ok;
 }
 
-
 std::map<std::string, std::vector<Object>>& ListStructuredLogsWithTimeRangeResponse::getBody()
 {
     return body_;

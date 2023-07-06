@@ -63,7 +63,6 @@ bool CreateDashBoardRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateDashBoardRequest::getContentType() const
 {
     return contentType_;

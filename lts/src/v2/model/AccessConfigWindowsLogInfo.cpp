@@ -75,7 +75,6 @@ bool AccessConfigWindowsLogInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& AccessConfigWindowsLogInfo::getCategorys()
 {
     return categorys_;

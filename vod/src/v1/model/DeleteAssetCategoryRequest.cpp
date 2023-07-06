@@ -64,7 +64,6 @@ bool DeleteAssetCategoryRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteAssetCategoryRequest::getXSdkDate() const
 {
     return xSdkDate_;

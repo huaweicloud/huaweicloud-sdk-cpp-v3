@@ -63,7 +63,6 @@ bool ProtectableReplicationCapabilitiesRespRegion::fromJson(const web::json::val
     return ok;
 }
 
-
 std::string ProtectableReplicationCapabilitiesRespRegion::getName() const
 {
     return name_;

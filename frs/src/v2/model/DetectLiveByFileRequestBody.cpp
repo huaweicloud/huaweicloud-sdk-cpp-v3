@@ -32,9 +32,6 @@ web::json::value DetectLiveByFileRequestBody::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(videoFileIsSet_) {
-        val[utility::conversions::to_string_t("video_file")] = ModelBase::toJson(videoFile_);
-    }
     if(actionsIsSet_) {
         val[utility::conversions::to_string_t("actions")] = ModelBase::toJson(actions_);
     }
@@ -52,15 +49,6 @@ bool DetectLiveByFileRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("video_file"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("video_file"));
-        if(!fieldValue.is_null())
-        {
-            HttpContent refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setVideoFile(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("actions"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("actions"));
         if(!fieldValue.is_null())
@@ -90,7 +78,6 @@ bool DetectLiveByFileRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
-
 
 HttpContent DetectLiveByFileRequestBody::getVideoFile() const
 {

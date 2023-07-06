@@ -145,7 +145,6 @@ bool ShowMetadataResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowMetadataResponse::getBackupId() const
 {
     return backupId_;

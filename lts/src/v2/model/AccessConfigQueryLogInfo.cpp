@@ -92,7 +92,6 @@ bool AccessConfigQueryLogInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AccessConfigQueryLogInfo::getLogGroupId() const
 {
     return logGroupId_;

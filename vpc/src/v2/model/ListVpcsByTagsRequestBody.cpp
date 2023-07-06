@@ -104,7 +104,6 @@ bool ListVpcsByTagsRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListVpcsByTagsRequestBody::getAction() const
 {
     return action_;

@@ -216,7 +216,6 @@ bool HkIdCardResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string HkIdCardResult::getName() const
 {
     return name_;

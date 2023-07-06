@@ -91,7 +91,6 @@ bool AddressSetListResponseDTO_data::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t AddressSetListResponseDTO_data::getOffset() const
 {
     return offset_;

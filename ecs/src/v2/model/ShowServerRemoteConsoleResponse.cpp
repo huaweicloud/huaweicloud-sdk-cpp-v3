@@ -49,7 +49,6 @@ bool ShowServerRemoteConsoleResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ServerRemoteConsole ShowServerRemoteConsoleResponse::getRemoteConsole() const
 {
     return remoteConsole_;

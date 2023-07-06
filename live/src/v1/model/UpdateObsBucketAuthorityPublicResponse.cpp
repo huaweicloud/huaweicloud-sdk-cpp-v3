@@ -36,7 +36,6 @@ bool UpdateObsBucketAuthorityPublicResponse::fromJson(const web::json::value& va
     return ok;
 }
 
-
 }
 }
 }

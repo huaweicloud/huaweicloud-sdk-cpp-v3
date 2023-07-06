@@ -64,7 +64,6 @@ bool UpdateCategoryReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateCategoryReq::getName() const
 {
     return name_;

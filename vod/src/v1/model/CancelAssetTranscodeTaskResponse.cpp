@@ -36,7 +36,6 @@ bool CancelAssetTranscodeTaskResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

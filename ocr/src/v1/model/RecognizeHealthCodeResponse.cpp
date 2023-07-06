@@ -49,7 +49,6 @@ bool RecognizeHealthCodeResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 HealthCodeResult RecognizeHealthCodeResponse::getResult() const
 {
     return result_;

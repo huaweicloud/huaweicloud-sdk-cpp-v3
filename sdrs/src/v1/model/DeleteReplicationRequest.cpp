@@ -63,7 +63,6 @@ bool DeleteReplicationRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteReplicationRequest::getReplicationId() const
 {
     return replicationId_;

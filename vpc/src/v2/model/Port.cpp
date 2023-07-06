@@ -337,7 +337,6 @@ bool Port::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string Port::getId() const
 {
     return id_;

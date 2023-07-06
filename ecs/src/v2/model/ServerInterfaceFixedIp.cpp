@@ -64,7 +64,6 @@ bool ServerInterfaceFixedIp::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ServerInterfaceFixedIp::getIpAddress() const
 {
     return ipAddress_;

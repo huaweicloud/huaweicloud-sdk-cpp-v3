@@ -63,7 +63,6 @@ bool ListCommonPoolsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<CommonPoolDict>& ListCommonPoolsResponse::getCommonPools()
 {
     return commonPools_;

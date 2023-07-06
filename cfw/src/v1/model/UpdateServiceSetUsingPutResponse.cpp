@@ -49,7 +49,6 @@ bool UpdateServiceSetUsingPutResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 IdObject UpdateServiceSetUsingPutResponse::getData() const
 {
     return data_;

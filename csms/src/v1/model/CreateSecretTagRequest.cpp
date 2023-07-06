@@ -63,7 +63,6 @@ bool CreateSecretTagRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateSecretTagRequest::getSecretId() const
 {
     return secretId_;

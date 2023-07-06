@@ -49,7 +49,6 @@ bool ListRuleHitCountResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 RuleHitCountRecords ListRuleHitCountResponse::getData() const
 {
     return data_;

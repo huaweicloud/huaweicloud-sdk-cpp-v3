@@ -49,7 +49,6 @@ bool DeleteResourceTagResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<TagDeleteResponseItem>& DeleteResourceTagResponse::getFailedResources()
 {
     return failedResources_;

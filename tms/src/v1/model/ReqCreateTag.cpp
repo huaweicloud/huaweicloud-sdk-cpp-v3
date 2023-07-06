@@ -76,7 +76,6 @@ bool ReqCreateTag::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ReqCreateTag::getProjectId() const
 {
     return projectId_;

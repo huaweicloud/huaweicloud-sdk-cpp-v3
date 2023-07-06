@@ -105,7 +105,6 @@ bool ListUpStreamDetailResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListUpStreamDetailResponse::getPublishDomain() const
 {
     return publishDomain_;

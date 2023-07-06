@@ -49,7 +49,6 @@ bool MigrateVaultResourceResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& MigrateVaultResourceResponse::getMigratedResources()
 {
     return migratedResources_;

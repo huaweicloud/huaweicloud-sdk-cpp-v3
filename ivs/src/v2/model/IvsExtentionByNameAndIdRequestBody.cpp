@@ -62,7 +62,6 @@ bool IvsExtentionByNameAndIdRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 Meta IvsExtentionByNameAndIdRequestBody::getMeta() const
 {
     return meta_;

@@ -120,7 +120,6 @@ bool ShowCdnStatisticsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowCdnStatisticsRequest::getXSdkDate() const
 {
     return xSdkDate_;

@@ -63,7 +63,6 @@ bool CreatePostPaidServersRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 bool CreatePostPaidServersRequestBody::isDryRun() const
 {
     return dryRun_;

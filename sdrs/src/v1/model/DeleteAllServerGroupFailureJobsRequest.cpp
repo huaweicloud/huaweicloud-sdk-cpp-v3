@@ -36,7 +36,6 @@ bool DeleteAllServerGroupFailureJobsRequest::fromJson(const web::json::value& va
     return ok;
 }
 
-
 }
 }
 }

@@ -63,7 +63,6 @@ bool BatchAddOrDeleteTagsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BatchAddOrDeleteTagsRequest::getImageId() const
 {
     return imageId_;

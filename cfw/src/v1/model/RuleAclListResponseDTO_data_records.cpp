@@ -270,7 +270,6 @@ bool RuleAclListResponseDTO_data_records::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RuleAclListResponseDTO_data_records::getRuleId() const
 {
     return ruleId_;

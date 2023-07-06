@@ -63,7 +63,6 @@ bool CreateAssetByFileUploadRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateAssetByFileUploadRequest::getXSdkDate() const
 {
     return xSdkDate_;

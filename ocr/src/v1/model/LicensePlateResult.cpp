@@ -91,7 +91,6 @@ bool LicensePlateResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string LicensePlateResult::getPlateNumber() const
 {
     return plateNumber_;

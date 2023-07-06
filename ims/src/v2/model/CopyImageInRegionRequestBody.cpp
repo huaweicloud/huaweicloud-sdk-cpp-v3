@@ -92,7 +92,6 @@ bool CopyImageInRegionRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CopyImageInRegionRequestBody::getCmkId() const
 {
     return cmkId_;

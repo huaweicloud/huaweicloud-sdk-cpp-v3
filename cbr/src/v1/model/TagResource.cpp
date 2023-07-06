@@ -103,7 +103,6 @@ bool TagResource::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string TagResource::getResourceId() const
 {
     return resourceId_;

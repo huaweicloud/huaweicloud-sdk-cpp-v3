@@ -118,7 +118,6 @@ bool RespDataByVideoAndIdCardImage::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RespDataByVideoAndIdCardImage::getVerificationResult() const
 {
     return verificationResult_;

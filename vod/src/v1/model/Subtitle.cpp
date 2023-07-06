@@ -106,7 +106,6 @@ bool Subtitle::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t Subtitle::getId() const
 {
     return id_;

@@ -49,7 +49,6 @@ bool ListTimeLineTrafficStatisticsResponse::fromJson(const web::json::value& val
     return ok;
 }
 
-
 std::vector<Resulits>& ListTimeLineTrafficStatisticsResponse::getResults()
 {
     return results_;

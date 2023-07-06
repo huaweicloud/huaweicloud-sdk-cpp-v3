@@ -90,7 +90,6 @@ bool Resource::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string Resource::getResourceId() const
 {
     return resourceId_;

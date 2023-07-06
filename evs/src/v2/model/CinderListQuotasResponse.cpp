@@ -49,7 +49,6 @@ bool CinderListQuotasResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 QuotaList CinderListQuotasResponse::getQuotaSet() const
 {
     return quotaSet_;

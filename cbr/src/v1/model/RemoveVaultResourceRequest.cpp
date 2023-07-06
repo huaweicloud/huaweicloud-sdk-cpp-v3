@@ -63,7 +63,6 @@ bool RemoveVaultResourceRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RemoveVaultResourceRequest::getVaultId() const
 {
     return vaultId_;

@@ -49,7 +49,6 @@ bool ShowFlowLogResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 FlowLogResp ShowFlowLogResponse::getFlowLog() const
 {
     return flowLog_;

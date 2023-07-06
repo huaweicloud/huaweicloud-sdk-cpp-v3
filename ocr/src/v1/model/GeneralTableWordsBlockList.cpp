@@ -129,7 +129,6 @@ bool GeneralTableWordsBlockList::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string GeneralTableWordsBlockList::getWords() const
 {
     return words_;

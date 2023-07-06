@@ -50,7 +50,6 @@ bool RunRecordResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RunRecordResponse::getXRequestId() const
 {
     return xRequestId_;

@@ -78,7 +78,6 @@ bool AudioConfig::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AudioConfig::getAudioFormat() const
 {
     return audioFormat_;

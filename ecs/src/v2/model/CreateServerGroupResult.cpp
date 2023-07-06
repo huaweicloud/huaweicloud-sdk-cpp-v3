@@ -103,7 +103,6 @@ bool CreateServerGroupResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateServerGroupResult::getId() const
 {
     return id_;

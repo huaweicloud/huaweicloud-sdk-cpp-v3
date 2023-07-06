@@ -49,7 +49,6 @@ bool RecognizePassportResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 PassportResult RecognizePassportResponse::getResult() const
 {
     return result_;

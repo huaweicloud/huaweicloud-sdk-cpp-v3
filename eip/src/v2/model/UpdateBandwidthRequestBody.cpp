@@ -49,7 +49,6 @@ bool UpdateBandwidthRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 UpdateBandwidthOption UpdateBandwidthRequestBody::getBandwidth() const
 {
     return bandwidth_;

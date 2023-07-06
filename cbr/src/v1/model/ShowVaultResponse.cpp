@@ -49,7 +49,6 @@ bool ShowVaultResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 Vault ShowVaultResponse::getVault() const
 {
     return vault_;

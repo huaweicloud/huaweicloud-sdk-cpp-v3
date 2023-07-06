@@ -176,7 +176,6 @@ bool BandwidthPkgResp::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BandwidthPkgResp::getResourceId() const
 {
     return resourceId_;

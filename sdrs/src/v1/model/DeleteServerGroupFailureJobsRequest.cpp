@@ -50,7 +50,6 @@ bool DeleteServerGroupFailureJobsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteServerGroupFailureJobsRequest::getServerGroupId() const
 {
     return serverGroupId_;

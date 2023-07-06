@@ -50,7 +50,6 @@ bool DeleteRouteTableRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteRouteTableRequest::getRoutetableId() const
 {
     return routetableId_;

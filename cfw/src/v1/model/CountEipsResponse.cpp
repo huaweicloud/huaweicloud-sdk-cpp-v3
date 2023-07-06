@@ -49,7 +49,6 @@ bool CountEipsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 EipCountRespData CountEipsResponse::getData() const
 {
     return data_;

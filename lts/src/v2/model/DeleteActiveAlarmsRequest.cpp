@@ -77,7 +77,6 @@ bool DeleteActiveAlarmsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteActiveAlarmsRequest::getDomainId() const
 {
     return domainId_;

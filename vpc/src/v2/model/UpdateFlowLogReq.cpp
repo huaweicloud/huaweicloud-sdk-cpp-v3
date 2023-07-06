@@ -78,7 +78,6 @@ bool UpdateFlowLogReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateFlowLogReq::getName() const
 {
     return name_;

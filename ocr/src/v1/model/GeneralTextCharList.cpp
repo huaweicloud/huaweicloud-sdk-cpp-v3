@@ -77,7 +77,6 @@ bool GeneralTextCharList::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string GeneralTextCharList::getChar() const
 {
     return char_;

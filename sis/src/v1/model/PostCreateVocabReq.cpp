@@ -91,7 +91,6 @@ bool PostCreateVocabReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PostCreateVocabReq::getName() const
 {
     return name_;

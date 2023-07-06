@@ -49,7 +49,6 @@ bool AddServiceItemsUsingPostResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ServiceItemIds AddServiceItemsUsingPostResponse::getData() const
 {
     return data_;

@@ -62,7 +62,6 @@ bool QualityInfoList::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 VideoInfo QualityInfoList::getVideo() const
 {
     return video_;

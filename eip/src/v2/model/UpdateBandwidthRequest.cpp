@@ -63,7 +63,6 @@ bool UpdateBandwidthRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateBandwidthRequest::getBandwidthId() const
 {
     return bandwidthId_;

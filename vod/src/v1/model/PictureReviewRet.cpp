@@ -117,7 +117,6 @@ bool PictureReviewRet::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PictureReviewRet::getSuggestion() const
 {
     return suggestion_;

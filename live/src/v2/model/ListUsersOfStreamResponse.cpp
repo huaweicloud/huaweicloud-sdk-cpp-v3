@@ -63,7 +63,6 @@ bool ListUsersOfStreamResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<V2UserData>& ListUsersOfStreamResponse::getDataList()
 {
     return dataList_;

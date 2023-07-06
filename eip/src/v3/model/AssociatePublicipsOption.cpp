@@ -64,7 +64,6 @@ bool AssociatePublicipsOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AssociatePublicipsOption::getAssociateInstanceType() const
 {
     return associateInstanceType_;

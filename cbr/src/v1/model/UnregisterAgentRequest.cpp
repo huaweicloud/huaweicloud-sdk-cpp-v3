@@ -50,7 +50,6 @@ bool UnregisterAgentRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UnregisterAgentRequest::getAgentId() const
 {
     return agentId_;

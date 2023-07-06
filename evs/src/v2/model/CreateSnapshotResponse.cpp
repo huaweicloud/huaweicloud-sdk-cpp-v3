@@ -49,7 +49,6 @@ bool CreateSnapshotResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 SnapshotDetails CreateSnapshotResponse::getSnapshot() const
 {
     return snapshot_;

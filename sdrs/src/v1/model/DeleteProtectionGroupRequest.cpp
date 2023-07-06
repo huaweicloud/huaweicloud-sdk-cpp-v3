@@ -50,7 +50,6 @@ bool DeleteProtectionGroupRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteProtectionGroupRequest::getServerGroupId() const
 {
     return serverGroupId_;

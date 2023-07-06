@@ -91,7 +91,6 @@ bool ResizePrePaidServerOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ResizePrePaidServerOption::getFlavorRef() const
 {
     return flavorRef_;

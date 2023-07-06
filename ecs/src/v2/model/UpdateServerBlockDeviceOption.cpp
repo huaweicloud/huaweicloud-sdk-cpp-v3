@@ -50,7 +50,6 @@ bool UpdateServerBlockDeviceOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 bool UpdateServerBlockDeviceOption::isDeleteOnTermination() const
 {
     return deleteOnTermination_;

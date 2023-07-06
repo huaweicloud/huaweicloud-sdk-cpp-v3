@@ -91,7 +91,6 @@ bool CreateRouteTableReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateRouteTableReq::getName() const
 {
     return name_;

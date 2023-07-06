@@ -78,7 +78,6 @@ bool NovaListKeypairsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t NovaListKeypairsRequest::getLimit() const
 {
     return limit_;

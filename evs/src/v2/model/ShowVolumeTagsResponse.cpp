@@ -49,7 +49,6 @@ bool ShowVolumeTagsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<Tag>& ShowVolumeTagsResponse::getTags()
 {
     return tags_;

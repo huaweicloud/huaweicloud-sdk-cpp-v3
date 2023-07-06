@@ -50,7 +50,6 @@ bool DeleteAnimatedGraphicsTaskRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteAnimatedGraphicsTaskRequest::getTaskId() const
 {
     return taskId_;

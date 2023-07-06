@@ -91,7 +91,6 @@ bool DeleteSearchCriteriasRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteSearchCriteriasRequest::getGroupId() const
 {
     return groupId_;

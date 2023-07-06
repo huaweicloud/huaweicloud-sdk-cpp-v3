@@ -64,7 +64,6 @@ bool DeleteTransferRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteTransferRequest::getContentType() const
 {
     return contentType_;

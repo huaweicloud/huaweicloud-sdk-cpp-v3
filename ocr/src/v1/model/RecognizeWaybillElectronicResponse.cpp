@@ -49,7 +49,6 @@ bool RecognizeWaybillElectronicResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 WaybillElectronicResult RecognizeWaybillElectronicResponse::getResult() const
 {
     return result_;

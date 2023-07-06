@@ -134,7 +134,6 @@ bool DemoField::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DemoField::getFieldName() const
 {
     return fieldName_;

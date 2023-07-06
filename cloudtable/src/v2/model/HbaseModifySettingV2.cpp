@@ -78,7 +78,6 @@ bool HbaseModifySettingV2::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string HbaseModifySettingV2::getParmName() const
 {
     return parmName_;

@@ -187,7 +187,6 @@ bool ListUsersOfStreamRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListUsersOfStreamRequest::getPlayDomain() const
 {
     return playDomain_;

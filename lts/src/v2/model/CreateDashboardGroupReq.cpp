@@ -50,7 +50,6 @@ bool CreateDashboardGroupReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateDashboardGroupReq::getGroupName() const
 {
     return groupName_;

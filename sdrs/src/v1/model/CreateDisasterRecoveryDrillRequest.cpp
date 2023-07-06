@@ -49,7 +49,6 @@ bool CreateDisasterRecoveryDrillRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 CreateDisasterRecoveryDrillRequestBody CreateDisasterRecoveryDrillRequest::getBody() const
 {
     return body_;

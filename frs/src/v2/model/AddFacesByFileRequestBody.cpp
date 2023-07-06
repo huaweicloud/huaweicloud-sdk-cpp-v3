@@ -32,9 +32,6 @@ web::json::value AddFacesByFileRequestBody::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(imageFileIsSet_) {
-        val[utility::conversions::to_string_t("image_file")] = ModelBase::toJson(imageFile_);
-    }
     if(externalImageIdIsSet_) {
         val[utility::conversions::to_string_t("external_image_id")] = ModelBase::toJson(externalImageId_);
     }
@@ -52,15 +49,6 @@ bool AddFacesByFileRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("image_file"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("image_file"));
-        if(!fieldValue.is_null())
-        {
-            HttpContent refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setImageFile(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("external_image_id"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("external_image_id"));
         if(!fieldValue.is_null())
@@ -90,7 +78,6 @@ bool AddFacesByFileRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
-
 
 HttpContent AddFacesByFileRequestBody::getImageFile() const
 {

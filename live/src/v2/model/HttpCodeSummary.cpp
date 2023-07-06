@@ -63,7 +63,6 @@ bool HttpCodeSummary::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<HttpCode>& HttpCodeSummary::getHttpCodes()
 {
     return httpCodes_;

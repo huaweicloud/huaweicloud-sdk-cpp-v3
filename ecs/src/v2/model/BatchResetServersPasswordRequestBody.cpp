@@ -77,7 +77,6 @@ bool BatchResetServersPasswordRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BatchResetServersPasswordRequestBody::getNewPassword() const
 {
     return newPassword_;

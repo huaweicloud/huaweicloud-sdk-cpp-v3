@@ -63,7 +63,6 @@ bool UpdateProtectionGroupNameRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateProtectionGroupNameRequest::getServerGroupId() const
 {
     return serverGroupId_;

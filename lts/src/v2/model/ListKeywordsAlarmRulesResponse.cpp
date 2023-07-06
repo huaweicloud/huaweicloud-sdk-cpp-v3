@@ -49,7 +49,6 @@ bool ListKeywordsAlarmRulesResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<KeywordsAlarmRuleRespList>& ListKeywordsAlarmRulesResponse::getKeywordsAlarmRules()
 {
     return keywordsAlarmRules_;

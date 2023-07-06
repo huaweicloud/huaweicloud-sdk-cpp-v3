@@ -64,7 +64,6 @@ bool CheckpointReplicateRespbackups::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CheckpointReplicateRespbackups::getBackupId() const
 {
     return backupId_;

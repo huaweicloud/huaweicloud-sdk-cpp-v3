@@ -134,7 +134,6 @@ bool ObsInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ObsInfo::getBucketName() const
 {
     return bucketName_;

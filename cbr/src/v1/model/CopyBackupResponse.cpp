@@ -49,7 +49,6 @@ bool CopyBackupResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 BackupReplicateRespBody CopyBackupResponse::getReplication() const
 {
     return replication_;

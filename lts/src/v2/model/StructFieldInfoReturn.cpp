@@ -106,7 +106,6 @@ bool StructFieldInfoReturn::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string StructFieldInfoReturn::getFieldName() const
 {
     return fieldName_;

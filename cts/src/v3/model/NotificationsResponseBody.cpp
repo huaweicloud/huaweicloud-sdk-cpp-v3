@@ -187,7 +187,6 @@ bool NotificationsResponseBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NotificationsResponseBody::getNotificationName() const
 {
     return notificationName_;

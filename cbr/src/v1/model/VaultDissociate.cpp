@@ -50,7 +50,6 @@ bool VaultDissociate::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string VaultDissociate::getPolicyId() const
 {
     return policyId_;

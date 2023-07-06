@@ -49,7 +49,6 @@ bool ListFlowLogsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 HttpQueryCfwFlowLogsResponseDTO_data ListFlowLogsResponse::getData() const
 {
     return data_;

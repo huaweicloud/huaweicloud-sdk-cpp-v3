@@ -358,7 +358,6 @@ bool ListBackupsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListBackupsRequest::getCheckpointId() const
 {
     return checkpointId_;

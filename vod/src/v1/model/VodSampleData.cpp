@@ -64,7 +64,6 @@ bool VodSampleData::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 float VodSampleData::getStorage() const
 {
     return storage_;

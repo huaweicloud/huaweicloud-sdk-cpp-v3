@@ -78,7 +78,6 @@ bool CheckpointExtraInfoResp::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CheckpointExtraInfoResp::getName() const
 {
     return name_;

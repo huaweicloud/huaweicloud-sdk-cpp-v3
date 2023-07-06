@@ -63,7 +63,6 @@ bool AssetReviewReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AssetReviewReq::getAssetId() const
 {
     return assetId_;

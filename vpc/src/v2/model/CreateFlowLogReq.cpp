@@ -148,7 +148,6 @@ bool CreateFlowLogReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateFlowLogReq::getName() const
 {
     return name_;

@@ -76,7 +76,6 @@ bool ReqDeleteTag::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ReqDeleteTag::getProjectId() const
 {
     return projectId_;

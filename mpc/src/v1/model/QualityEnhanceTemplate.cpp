@@ -77,7 +77,6 @@ bool QualityEnhanceTemplate::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string QualityEnhanceTemplate::getTemplateName() const
 {
     return templateName_;

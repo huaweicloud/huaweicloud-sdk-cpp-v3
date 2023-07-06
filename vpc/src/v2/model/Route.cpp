@@ -64,7 +64,6 @@ bool Route::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string Route::getDestination() const
 {
     return destination_;

@@ -63,7 +63,6 @@ bool TagParams::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string TagParams::getKey() const
 {
     return key_;

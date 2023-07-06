@@ -63,7 +63,6 @@ bool CreateDashboardGroupRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateDashboardGroupRequest::getContentType() const
 {
     return contentType_;

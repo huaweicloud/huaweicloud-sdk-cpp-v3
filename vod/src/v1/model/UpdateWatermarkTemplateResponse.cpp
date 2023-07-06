@@ -36,7 +36,6 @@ bool UpdateWatermarkTemplateResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

@@ -49,7 +49,6 @@ bool ListServersByTagRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ListServersByTagRequestBody ListServersByTagRequest::getBody() const
 {
     return body_;

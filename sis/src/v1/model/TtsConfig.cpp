@@ -120,7 +120,6 @@ bool TtsConfig::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string TtsConfig::getAudioFormat() const
 {
     return audioFormat_;

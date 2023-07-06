@@ -49,7 +49,6 @@ bool BatchDeleteMembersRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 BatchAddMembersRequestBody BatchDeleteMembersRequest::getBody() const
 {
     return body_;

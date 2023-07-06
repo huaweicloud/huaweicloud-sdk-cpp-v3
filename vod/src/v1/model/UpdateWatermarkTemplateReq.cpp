@@ -190,7 +190,6 @@ bool UpdateWatermarkTemplateReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateWatermarkTemplateReq::getId() const
 {
     return id_;

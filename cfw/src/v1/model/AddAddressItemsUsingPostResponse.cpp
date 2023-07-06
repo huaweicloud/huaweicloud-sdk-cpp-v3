@@ -49,7 +49,6 @@ bool AddAddressItemsUsingPostResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 AddressItems AddAddressItemsUsingPostResponse::getData() const
 {
     return data_;

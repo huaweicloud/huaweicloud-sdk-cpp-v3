@@ -50,7 +50,6 @@ bool MigrateServerOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string MigrateServerOption::getDedicatedHostId() const
 {
     return dedicatedHostId_;

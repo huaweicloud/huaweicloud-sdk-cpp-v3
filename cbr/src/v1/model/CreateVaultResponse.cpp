@@ -49,7 +49,6 @@ bool CreateVaultResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 VaultCreateResource CreateVaultResponse::getVault() const
 {
     return vault_;

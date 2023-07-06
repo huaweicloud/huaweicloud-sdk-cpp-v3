@@ -92,7 +92,6 @@ bool ObsObjInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ObsObjInfo::getBucket() const
 {
     return bucket_;

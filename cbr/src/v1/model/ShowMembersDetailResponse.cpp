@@ -63,7 +63,6 @@ bool ShowMembersDetailResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<Member>& ShowMembersDetailResponse::getMembers()
 {
     return members_;

@@ -77,7 +77,6 @@ bool ChangeProtectEipRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ChangeProtectEipRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

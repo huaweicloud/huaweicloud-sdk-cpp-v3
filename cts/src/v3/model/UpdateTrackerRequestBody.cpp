@@ -160,7 +160,6 @@ bool UpdateTrackerRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateTrackerRequestBody::getTrackerType() const
 {
     return trackerType_;

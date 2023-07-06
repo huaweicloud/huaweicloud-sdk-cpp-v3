@@ -120,7 +120,6 @@ bool ProtectableAgentStatus::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t ProtectableAgentStatus::getCode() const
 {
     return code_;

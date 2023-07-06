@@ -50,7 +50,6 @@ bool ListProtectedInstanceTagsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListProtectedInstanceTagsRequest::getProtectedInstanceId() const
 {
     return protectedInstanceId_;

@@ -63,7 +63,6 @@ bool PolicyTriggerPropertiesResp::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& PolicyTriggerPropertiesResp::getPattern()
 {
     return pattern_;

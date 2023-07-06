@@ -49,7 +49,6 @@ bool NeutronCreateFloatingIpResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 PostAndPutFloatingIpResp NeutronCreateFloatingIpResponse::getFloatingip() const
 {
     return floatingip_;

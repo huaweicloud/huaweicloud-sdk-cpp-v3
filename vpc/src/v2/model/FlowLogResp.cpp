@@ -232,7 +232,6 @@ bool FlowLogResp::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string FlowLogResp::getId() const
 {
     return id_;

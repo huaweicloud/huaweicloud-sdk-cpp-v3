@@ -76,7 +76,6 @@ bool NovaAvailabilityZone::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& NovaAvailabilityZone::getHosts()
 {
     return hosts_;

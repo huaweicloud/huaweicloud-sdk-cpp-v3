@@ -49,7 +49,6 @@ bool ChangeBandwidthToPeriodRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 BwChangeToPeriodReq ChangeBandwidthToPeriodRequest::getBody() const
 {
     return body_;

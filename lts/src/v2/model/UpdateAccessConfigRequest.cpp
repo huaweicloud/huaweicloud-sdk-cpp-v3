@@ -63,7 +63,6 @@ bool UpdateAccessConfigRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateAccessConfigRequest::getContentType() const
 {
     return contentType_;

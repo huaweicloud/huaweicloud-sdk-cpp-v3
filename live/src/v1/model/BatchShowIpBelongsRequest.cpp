@@ -49,7 +49,6 @@ bool BatchShowIpBelongsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& BatchShowIpBelongsRequest::getIp()
 {
     return ip_;

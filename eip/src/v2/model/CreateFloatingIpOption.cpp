@@ -92,7 +92,6 @@ bool CreateFloatingIpOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateFloatingIpOption::getFloatingIpAddress() const
 {
     return floatingIpAddress_;

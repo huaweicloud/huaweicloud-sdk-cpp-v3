@@ -287,7 +287,6 @@ bool QualificationConfidence::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 float QualificationConfidence::getIdNumber() const
 {
     return idNumber_;

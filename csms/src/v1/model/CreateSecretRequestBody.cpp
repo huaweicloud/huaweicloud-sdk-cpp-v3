@@ -106,7 +106,6 @@ bool CreateSecretRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateSecretRequestBody::getName() const
 {
     return name_;

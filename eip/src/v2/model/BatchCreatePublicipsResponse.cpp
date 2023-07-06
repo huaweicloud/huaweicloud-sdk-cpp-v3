@@ -50,7 +50,6 @@ bool BatchCreatePublicipsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BatchCreatePublicipsResponse::getJobId() const
 {
     return jobId_;

@@ -188,7 +188,6 @@ bool PrePaidServerDataVolume::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PrePaidServerDataVolume::getVolumetype() const
 {
     return volumetype_;

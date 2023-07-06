@@ -92,7 +92,6 @@ bool ShowTakeOverTaskDetailsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowTakeOverTaskDetailsRequest::getXSdkDate() const
 {
     return xSdkDate_;

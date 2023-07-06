@@ -50,7 +50,6 @@ bool ShowSubnetTagsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowSubnetTagsRequest::getSubnetId() const
 {
     return subnetId_;

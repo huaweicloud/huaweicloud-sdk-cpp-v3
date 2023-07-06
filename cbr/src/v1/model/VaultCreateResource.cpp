@@ -353,7 +353,6 @@ bool VaultCreateResource::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 Billing VaultCreateResource::getBilling() const
 {
     return billing_;

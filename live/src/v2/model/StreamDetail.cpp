@@ -77,7 +77,6 @@ bool StreamDetail::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string StreamDetail::getStartTime() const
 {
     return startTime_;

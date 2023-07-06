@@ -90,7 +90,6 @@ bool CreateExtractTaskReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ObsObjInfo CreateExtractTaskReq::getInput() const
 {
     return input_;

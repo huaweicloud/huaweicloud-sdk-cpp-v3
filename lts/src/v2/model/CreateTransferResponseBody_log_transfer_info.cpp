@@ -132,7 +132,6 @@ bool CreateTransferResponseBody_log_transfer_info::fromJson(const web::json::val
     return ok;
 }
 
-
 CreateTransferResponseBody_log_transfer_info_log_agency_transfer CreateTransferResponseBody_log_transfer_info::getLogAgencyTransfer() const
 {
     return logAgencyTransfer_;

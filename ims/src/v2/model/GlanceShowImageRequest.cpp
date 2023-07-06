@@ -50,7 +50,6 @@ bool GlanceShowImageRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string GlanceShowImageRequest::getImageId() const
 {
     return imageId_;

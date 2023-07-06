@@ -49,7 +49,6 @@ bool ConcatInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ObsObjInfo>& ConcatInfo::getInputs()
 {
     return inputs_;

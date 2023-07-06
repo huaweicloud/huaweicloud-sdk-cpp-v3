@@ -77,7 +77,6 @@ bool UpdateSecretStageRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateSecretStageRequest::getSecretName() const
 {
     return secretName_;

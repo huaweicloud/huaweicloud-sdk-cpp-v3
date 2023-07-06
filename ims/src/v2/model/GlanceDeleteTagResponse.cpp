@@ -36,7 +36,6 @@ bool GlanceDeleteTagResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

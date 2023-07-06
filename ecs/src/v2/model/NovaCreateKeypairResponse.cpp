@@ -49,7 +49,6 @@ bool NovaCreateKeypairResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 NovaKeypair NovaCreateKeypairResponse::getKeypair() const
 {
     return keypair_;

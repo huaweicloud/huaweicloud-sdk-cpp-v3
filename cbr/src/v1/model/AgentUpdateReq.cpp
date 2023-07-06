@@ -49,7 +49,6 @@ bool AgentUpdateReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 AgentUpdate AgentUpdateReq::getAgent() const
 {
     return agent_;

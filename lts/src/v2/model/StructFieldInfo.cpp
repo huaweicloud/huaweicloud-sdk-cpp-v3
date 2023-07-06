@@ -120,7 +120,6 @@ bool StructFieldInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 bool StructFieldInfo::isIsAnalysis() const
 {
     return isAnalysis_;

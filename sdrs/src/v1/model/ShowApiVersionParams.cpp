@@ -119,7 +119,6 @@ bool ShowApiVersionParams::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowApiVersionParams::getId() const
 {
     return id_;

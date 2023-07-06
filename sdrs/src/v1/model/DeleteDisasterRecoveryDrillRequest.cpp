@@ -50,7 +50,6 @@ bool DeleteDisasterRecoveryDrillRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteDisasterRecoveryDrillRequest::getDisasterRecoveryDrillId() const
 {
     return disasterRecoveryDrillId_;

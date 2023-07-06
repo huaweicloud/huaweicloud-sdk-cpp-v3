@@ -204,7 +204,6 @@ bool ItemList::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ItemList::getName() const
 {
     return name_;

@@ -76,7 +76,6 @@ bool CompareFaceByFileResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 CompareFace CompareFaceByFileResponse::getImage1Face() const
 {
     return image1Face_;

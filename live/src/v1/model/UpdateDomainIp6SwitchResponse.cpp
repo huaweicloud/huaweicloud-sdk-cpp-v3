@@ -36,7 +36,6 @@ bool UpdateDomainIp6SwitchResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

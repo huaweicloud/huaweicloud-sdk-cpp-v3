@@ -91,7 +91,6 @@ bool HandwritingWordsBlockList::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string HandwritingWordsBlockList::getWords() const
 {
     return words_;

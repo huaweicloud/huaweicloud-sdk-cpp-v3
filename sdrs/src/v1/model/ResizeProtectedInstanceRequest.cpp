@@ -63,7 +63,6 @@ bool ResizeProtectedInstanceRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ResizeProtectedInstanceRequest::getProtectedInstanceId() const
 {
     return protectedInstanceId_;

@@ -49,7 +49,6 @@ bool DeleteAccessConfigRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& DeleteAccessConfigRequestBody::getAccessConfigIdList()
 {
     return accessConfigIdList_;

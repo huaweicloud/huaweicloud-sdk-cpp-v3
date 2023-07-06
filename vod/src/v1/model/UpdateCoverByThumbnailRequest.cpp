@@ -63,7 +63,6 @@ bool UpdateCoverByThumbnailRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateCoverByThumbnailRequest::getXSdkDate() const
 {
     return xSdkDate_;

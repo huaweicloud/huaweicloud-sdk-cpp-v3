@@ -62,7 +62,6 @@ bool DetectExtentionByIdCardImageResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 Meta DetectExtentionByIdCardImageResponse::getMeta() const
 {
     return meta_;

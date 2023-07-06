@@ -50,7 +50,6 @@ bool NovaAvailabilityZoneState::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 bool NovaAvailabilityZoneState::isAvailable() const
 {
     return available_;

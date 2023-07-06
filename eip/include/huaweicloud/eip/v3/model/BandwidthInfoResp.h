@@ -18,7 +18,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 公网IP绑定的带宽信息
+/// 弹性公网IP绑定的带宽信息
 /// </summary>
 class HUAWEICLOUD_EIP_V3_EXPORT  BandwidthInfoResp
     : public ModelBase
@@ -39,7 +39,7 @@ public:
     /// BandwidthInfoResp members
 
     /// <summary>
-    /// 带宽名称
+    /// - 功能说明：带宽名称
     /// </summary>
 
     std::string getBandwidthName() const;
@@ -48,7 +48,7 @@ public:
     void setBandwidthName(const std::string& value);
 
     /// <summary>
-    /// 带宽大小
+    /// - 功能说明：带宽大小
     /// </summary>
 
     int32_t getBandwidthNumber() const;
@@ -57,7 +57,7 @@ public:
     void setBandwidthNumber(int32_t value);
 
     /// <summary>
-    /// 带宽类型
+    /// - 功能说明：带宽类型
     /// </summary>
 
     std::string getBandwidthType() const;
@@ -66,7 +66,7 @@ public:
     void setBandwidthType(const std::string& value);
 
     /// <summary>
-    /// 带宽id
+    /// - 功能说明：带宽id
     /// </summary>
 
     std::string getBandwidthId() const;

@@ -77,7 +77,6 @@ bool WordsRegionList::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string WordsRegionList::getType() const
 {
     return type_;

@@ -78,7 +78,6 @@ bool ShowResourceTagRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowResourceTagRequest::getResourceId() const
 {
     return resourceId_;

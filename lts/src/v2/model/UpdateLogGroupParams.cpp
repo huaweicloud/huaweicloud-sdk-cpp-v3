@@ -50,7 +50,6 @@ bool UpdateLogGroupParams::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t UpdateLogGroupParams::getTtlInDays() const
 {
     return ttlInDays_;

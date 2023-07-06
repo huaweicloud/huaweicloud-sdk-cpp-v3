@@ -49,7 +49,6 @@ bool ShowVpcResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 Vpc ShowVpcResponse::getVpc() const
 {
     return vpc_;

@@ -49,7 +49,6 @@ bool AddServerGroupMemberRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ServerGroupMember AddServerGroupMemberRequestBody::getAddMember() const
 {
     return addMember_;

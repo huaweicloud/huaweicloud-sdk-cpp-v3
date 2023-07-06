@@ -105,7 +105,6 @@ bool StandardRespDataByVideoAndNameAndId::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string StandardRespDataByVideoAndNameAndId::getVerificationResult() const
 {
     return verificationResult_;

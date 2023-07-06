@@ -274,7 +274,6 @@ bool ThailandIdcardConfidence::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 float ThailandIdcardConfidence::getIdNumber() const
 {
     return idNumber_;

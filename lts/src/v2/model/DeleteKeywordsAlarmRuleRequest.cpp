@@ -64,7 +64,6 @@ bool DeleteKeywordsAlarmRuleRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteKeywordsAlarmRuleRequest::getKeywordsAlarmRuleId() const
 {
     return keywordsAlarmRuleId_;

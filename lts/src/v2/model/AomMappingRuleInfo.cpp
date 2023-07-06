@@ -132,7 +132,6 @@ bool AomMappingRuleInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AomMappingRuleInfo::getClusterId() const
 {
     return clusterId_;

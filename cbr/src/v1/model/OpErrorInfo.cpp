@@ -64,7 +64,6 @@ bool OpErrorInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string OpErrorInfo::getCode() const
 {
     return code_;

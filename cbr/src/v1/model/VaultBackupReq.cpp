@@ -49,7 +49,6 @@ bool VaultBackupReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 VaultBackup VaultBackupReq::getCheckpoint() const
 {
     return checkpoint_;

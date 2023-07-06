@@ -49,7 +49,6 @@ bool CreateTemplateGroupRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 TransTemplateGroup CreateTemplateGroupRequest::getBody() const
 {
     return body_;

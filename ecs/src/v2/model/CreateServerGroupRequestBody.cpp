@@ -49,7 +49,6 @@ bool CreateServerGroupRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 CreateServerGroupOption CreateServerGroupRequestBody::getServerGroup() const
 {
     return serverGroup_;

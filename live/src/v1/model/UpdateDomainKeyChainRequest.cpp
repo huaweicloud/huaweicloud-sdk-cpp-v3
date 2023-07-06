@@ -63,7 +63,6 @@ bool UpdateDomainKeyChainRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateDomainKeyChainRequest::getDomain() const
 {
     return domain_;

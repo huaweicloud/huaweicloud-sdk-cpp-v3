@@ -145,7 +145,6 @@ bool ModifyTransTemplateGroup::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ModifyTransTemplateGroup::getGroupId() const
 {
     return groupId_;

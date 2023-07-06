@@ -78,7 +78,6 @@ bool PostPaidServerSchedulerHints::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PostPaidServerSchedulerHints::getGroup() const
 {
     return group_;

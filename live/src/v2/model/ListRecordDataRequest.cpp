@@ -78,7 +78,6 @@ bool ListRecordDataRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListRecordDataRequest::getPublishDomain() const
 {
     return publishDomain_;

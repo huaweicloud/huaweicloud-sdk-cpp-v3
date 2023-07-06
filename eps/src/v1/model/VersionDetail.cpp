@@ -119,7 +119,6 @@ bool VersionDetail::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string VersionDetail::getId() const
 {
     return id_;

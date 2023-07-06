@@ -91,7 +91,6 @@ bool EnableComponentRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string EnableComponentRequest::getClusterId() const
 {
     return clusterId_;

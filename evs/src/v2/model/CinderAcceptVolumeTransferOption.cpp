@@ -50,7 +50,6 @@ bool CinderAcceptVolumeTransferOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CinderAcceptVolumeTransferOption::getAuthKey() const
 {
     return authKey_;

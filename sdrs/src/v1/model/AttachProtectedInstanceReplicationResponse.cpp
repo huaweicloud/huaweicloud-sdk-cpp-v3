@@ -50,7 +50,6 @@ bool AttachProtectedInstanceReplicationResponse::fromJson(const web::json::value
     return ok;
 }
 
-
 std::string AttachProtectedInstanceReplicationResponse::getJobId() const
 {
     return jobId_;

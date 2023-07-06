@@ -106,7 +106,6 @@ bool ListSingleStreamFramerateRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListSingleStreamFramerateRequest::getDomain() const
 {
     return domain_;

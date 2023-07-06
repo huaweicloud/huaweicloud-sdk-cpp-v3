@@ -160,7 +160,6 @@ bool BatchCreateProtectedInstancesRequestParams::fromJson(const web::json::value
     return ok;
 }
 
-
 std::string BatchCreateProtectedInstancesRequestParams::getNamePrefix() const
 {
     return namePrefix_;

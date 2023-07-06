@@ -64,7 +64,6 @@ bool VaultBatchUpdate::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 bool VaultBatchUpdate::isSmnNotify() const
 {
     return smnNotify_;

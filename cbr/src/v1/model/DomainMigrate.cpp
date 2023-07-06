@@ -64,7 +64,6 @@ bool DomainMigrate::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 bool DomainMigrate::isAllRegions() const
 {
     return allRegions_;

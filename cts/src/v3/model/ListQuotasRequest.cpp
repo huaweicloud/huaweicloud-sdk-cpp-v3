@@ -36,7 +36,6 @@ bool ListQuotasRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

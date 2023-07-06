@@ -92,7 +92,6 @@ bool VatInvoiceRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string VatInvoiceRequestBody::getImage() const
 {
     return image_;

@@ -19,6 +19,8 @@ ListSecurityGroupRulesRequest::ListSecurityGroupRulesRequest()
     limitIsSet_ = false;
     securityGroupId_ = "";
     securityGroupIdIsSet_ = false;
+    remoteIpPrefix_ = "";
+    remoteIpPrefixIsSet_ = false;
 }
 
 ListSecurityGroupRulesRequest::~ListSecurityGroupRulesRequest() = default;
@@ -39,6 +41,9 @@ web::json::value ListSecurityGroupRulesRequest::toJson() const
     }
     if(securityGroupIdIsSet_) {
         val[utility::conversions::to_string_t("security_group_id")] = ModelBase::toJson(securityGroupId_);
+    }
+    if(remoteIpPrefixIsSet_) {
+        val[utility::conversions::to_string_t("remote_ip_prefix")] = ModelBase::toJson(remoteIpPrefix_);
     }
 
     return val;
@@ -75,9 +80,17 @@ bool ListSecurityGroupRulesRequest::fromJson(const web::json::value& val)
             setSecurityGroupId(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("remote_ip_prefix"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("remote_ip_prefix"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRemoteIpPrefix(refVal);
+        }
+    }
     return ok;
 }
-
 
 std::string ListSecurityGroupRulesRequest::getMarker() const
 {
@@ -140,6 +153,27 @@ bool ListSecurityGroupRulesRequest::securityGroupIdIsSet() const
 void ListSecurityGroupRulesRequest::unsetsecurityGroupId()
 {
     securityGroupIdIsSet_ = false;
+}
+
+std::string ListSecurityGroupRulesRequest::getRemoteIpPrefix() const
+{
+    return remoteIpPrefix_;
+}
+
+void ListSecurityGroupRulesRequest::setRemoteIpPrefix(const std::string& value)
+{
+    remoteIpPrefix_ = value;
+    remoteIpPrefixIsSet_ = true;
+}
+
+bool ListSecurityGroupRulesRequest::remoteIpPrefixIsSet() const
+{
+    return remoteIpPrefixIsSet_;
+}
+
+void ListSecurityGroupRulesRequest::unsetremoteIpPrefix()
+{
+    remoteIpPrefixIsSet_ = false;
 }
 
 }

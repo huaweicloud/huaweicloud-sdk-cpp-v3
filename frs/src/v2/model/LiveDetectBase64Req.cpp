@@ -92,7 +92,6 @@ bool LiveDetectBase64Req::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string LiveDetectBase64Req::getVideoBase64() const
 {
     return videoBase64_;

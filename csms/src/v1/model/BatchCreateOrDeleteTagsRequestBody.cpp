@@ -77,7 +77,6 @@ bool BatchCreateOrDeleteTagsRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<TagItem>& BatchCreateOrDeleteTagsRequestBody::getTags()
 {
     return tags_;

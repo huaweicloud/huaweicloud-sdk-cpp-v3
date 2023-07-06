@@ -106,7 +106,6 @@ bool ListFirewallUsingGetRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t ListFirewallUsingGetRequest::getOffset() const
 {
     return offset_;

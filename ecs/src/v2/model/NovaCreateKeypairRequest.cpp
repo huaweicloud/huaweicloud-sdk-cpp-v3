@@ -63,7 +63,6 @@ bool NovaCreateKeypairRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NovaCreateKeypairRequest::getOpenStackAPIVersion() const
 {
     return openStackAPIVersion_;

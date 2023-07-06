@@ -62,7 +62,6 @@ bool ListVpcPeeringsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<VpcPeering>& ListVpcPeeringsResponse::getPeerings()
 {
     return peerings_;

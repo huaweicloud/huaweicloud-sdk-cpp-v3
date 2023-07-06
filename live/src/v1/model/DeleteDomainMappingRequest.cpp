@@ -64,7 +64,6 @@ bool DeleteDomainMappingRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteDomainMappingRequest::getPullDomain() const
 {
     return pullDomain_;

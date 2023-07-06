@@ -92,7 +92,6 @@ bool NovaSimpleKeypair::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NovaSimpleKeypair::getFingerprint() const
 {
     return fingerprint_;

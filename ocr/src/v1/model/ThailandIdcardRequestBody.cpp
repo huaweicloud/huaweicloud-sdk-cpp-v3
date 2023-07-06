@@ -134,7 +134,6 @@ bool ThailandIdcardRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ThailandIdcardRequestBody::getImage() const
 {
     return image_;

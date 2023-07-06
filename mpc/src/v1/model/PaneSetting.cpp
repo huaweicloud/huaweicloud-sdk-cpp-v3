@@ -106,7 +106,6 @@ bool PaneSetting::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PaneSetting::getPaneId() const
 {
     return paneId_;

@@ -50,7 +50,6 @@ bool ShowAssetTempAuthorityResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowAssetTempAuthorityResponse::getSignStr() const
 {
     return signStr_;

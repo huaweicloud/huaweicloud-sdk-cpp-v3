@@ -259,7 +259,6 @@ bool MacaoIdCardResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string MacaoIdCardResult::getSide() const
 {
     return side_;

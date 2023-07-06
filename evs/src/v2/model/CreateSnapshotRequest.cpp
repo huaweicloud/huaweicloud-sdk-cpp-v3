@@ -49,7 +49,6 @@ bool CreateSnapshotRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 CreateSnapshotRequestBody CreateSnapshotRequest::getBody() const
 {
     return body_;

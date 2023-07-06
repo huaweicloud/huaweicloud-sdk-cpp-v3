@@ -76,7 +76,6 @@ bool Thumbnail::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t Thumbnail::getTar() const
 {
     return tar_;

@@ -50,7 +50,6 @@ bool BatchAddServerNicsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BatchAddServerNicsResponse::getJobId() const
 {
     return jobId_;

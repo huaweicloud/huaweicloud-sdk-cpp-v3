@@ -49,7 +49,6 @@ bool UpdateFlowLogReqBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 UpdateFlowLogReq UpdateFlowLogReqBody::getFlowLog() const
 {
     return flowLog_;

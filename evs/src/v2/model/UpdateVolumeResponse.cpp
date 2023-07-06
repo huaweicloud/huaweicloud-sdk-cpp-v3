@@ -312,7 +312,6 @@ bool UpdateVolumeResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<Attachment>& UpdateVolumeResponse::getAttachments()
 {
     return attachments_;

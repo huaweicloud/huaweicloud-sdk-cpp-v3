@@ -120,7 +120,6 @@ bool GlanceImageMembers::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string GlanceImageMembers::getStatus() const
 {
     return status_;

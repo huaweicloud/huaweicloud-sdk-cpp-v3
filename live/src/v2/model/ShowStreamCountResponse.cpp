@@ -63,7 +63,6 @@ bool ShowStreamCountResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<StreamCountData>& ShowStreamCountResponse::getDataList()
 {
     return dataList_;

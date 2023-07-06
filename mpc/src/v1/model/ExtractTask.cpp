@@ -187,7 +187,6 @@ bool ExtractTask::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ExtractTask::getTaskId() const
 {
     return taskId_;

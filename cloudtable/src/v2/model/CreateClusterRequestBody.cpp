@@ -49,7 +49,6 @@ bool CreateClusterRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 Cluster CreateClusterRequestBody::getCluster() const
 {
     return cluster_;

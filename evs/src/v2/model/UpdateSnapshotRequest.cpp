@@ -63,7 +63,6 @@ bool UpdateSnapshotRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateSnapshotRequest::getSnapshotId() const
 {
     return snapshotId_;

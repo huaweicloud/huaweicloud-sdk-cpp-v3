@@ -50,7 +50,6 @@ bool ShowVocabularyRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowVocabularyRequest::getVocabularyId() const
 {
     return vocabularyId_;

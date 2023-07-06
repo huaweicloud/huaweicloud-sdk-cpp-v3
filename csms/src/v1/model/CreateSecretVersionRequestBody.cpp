@@ -77,7 +77,6 @@ bool CreateSecretVersionRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateSecretVersionRequestBody::getSecretBinary() const
 {
     return secretBinary_;

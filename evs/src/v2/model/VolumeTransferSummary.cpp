@@ -91,7 +91,6 @@ bool VolumeTransferSummary::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string VolumeTransferSummary::getId() const
 {
     return id_;

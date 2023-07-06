@@ -36,7 +36,6 @@ bool DeleteVocabularyResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

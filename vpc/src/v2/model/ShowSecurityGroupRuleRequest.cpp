@@ -50,7 +50,6 @@ bool ShowSecurityGroupRuleRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowSecurityGroupRuleRequest::getSecurityGroupRuleId() const
 {
     return securityGroupRuleId_;

@@ -50,7 +50,6 @@ bool CountPublicIpInstanceResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CountPublicIpInstanceResponse::getBody() const
 {
     return body_;

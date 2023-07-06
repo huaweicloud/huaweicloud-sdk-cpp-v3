@@ -49,7 +49,6 @@ bool UpdatePortRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 UpdatePortOption UpdatePortRequestBody::getPort() const
 {
     return port_;

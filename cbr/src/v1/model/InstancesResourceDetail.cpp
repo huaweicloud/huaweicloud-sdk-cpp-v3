@@ -49,7 +49,6 @@ bool InstancesResourceDetail::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 Vault InstancesResourceDetail::getVault() const
 {
     return vault_;

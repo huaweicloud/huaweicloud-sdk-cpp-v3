@@ -266,7 +266,6 @@ bool QueryTranscodingsTaskResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string QueryTranscodingsTaskResponse::getTaskId() const
 {
     return taskId_;

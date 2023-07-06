@@ -49,7 +49,6 @@ bool BatchDeletePublicIpRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& BatchDeletePublicIpRequestBody::getPublicipIds()
 {
     return publicipIds_;

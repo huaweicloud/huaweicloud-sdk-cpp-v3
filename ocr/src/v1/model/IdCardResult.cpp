@@ -216,7 +216,6 @@ bool IdCardResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string IdCardResult::getName() const
 {
     return name_;

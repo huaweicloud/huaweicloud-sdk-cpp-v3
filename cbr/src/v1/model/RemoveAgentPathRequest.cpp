@@ -63,7 +63,6 @@ bool RemoveAgentPathRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RemoveAgentPathRequest::getAgentId() const
 {
     return agentId_;

@@ -63,7 +63,6 @@ bool ChangeEwProtectStatusResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 SuccessRsp_data ChangeEwProtectStatusResponse::getData() const
 {
     return data_;

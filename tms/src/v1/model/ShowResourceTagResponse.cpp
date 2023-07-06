@@ -49,7 +49,6 @@ bool ShowResourceTagResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<TagVo>& ShowResourceTagResponse::getTags()
 {
     return tags_;

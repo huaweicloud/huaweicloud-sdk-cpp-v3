@@ -91,7 +91,6 @@ bool ListLogsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListLogsRequest::getLogGroupId() const
 {
     return logGroupId_;

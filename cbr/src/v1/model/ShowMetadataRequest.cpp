@@ -50,7 +50,6 @@ bool ShowMetadataRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowMetadataRequest::getBackupId() const
 {
     return backupId_;

@@ -78,7 +78,6 @@ bool AudioTemplateInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t AudioTemplateInfo::getSampleRate() const
 {
     return sampleRate_;

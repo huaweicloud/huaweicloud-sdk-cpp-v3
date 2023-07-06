@@ -218,7 +218,6 @@ bool ListFlowLogsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListFlowLogsRequest::getId() const
 {
     return id_;

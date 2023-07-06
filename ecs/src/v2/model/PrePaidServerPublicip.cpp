@@ -77,7 +77,6 @@ bool PrePaidServerPublicip::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PrePaidServerPublicip::getId() const
 {
     return id_;

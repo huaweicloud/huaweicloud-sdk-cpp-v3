@@ -62,7 +62,6 @@ bool ListProjectsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ProjectsListInfo>& ListProjectsResponse::getProjects()
 {
     return projects_;

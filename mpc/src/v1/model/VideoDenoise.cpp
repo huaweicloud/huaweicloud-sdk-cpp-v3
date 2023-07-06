@@ -64,7 +64,6 @@ bool VideoDenoise::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string VideoDenoise::getName() const
 {
     return name_;

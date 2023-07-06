@@ -49,7 +49,6 @@ bool ListServiceSetDetailsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ServiceSetDetailResponseDto ListServiceSetDetailsResponse::getData() const
 {
     return data_;

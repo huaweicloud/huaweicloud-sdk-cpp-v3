@@ -49,7 +49,6 @@ bool ReinstallServerWithoutCloudInitRequestBody::fromJson(const web::json::value
     return ok;
 }
 
-
 ReinstallServerWithoutCloudInitOption ReinstallServerWithoutCloudInitRequestBody::getOsReinstall() const
 {
     return osReinstall_;

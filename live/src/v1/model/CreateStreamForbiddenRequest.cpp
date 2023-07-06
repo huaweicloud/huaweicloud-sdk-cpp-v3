@@ -49,7 +49,6 @@ bool CreateStreamForbiddenRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 StreamForbiddenSetting CreateStreamForbiddenRequest::getBody() const
 {
     return body_;

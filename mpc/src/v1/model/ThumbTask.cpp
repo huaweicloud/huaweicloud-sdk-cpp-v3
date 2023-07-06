@@ -173,7 +173,6 @@ bool ThumbTask::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ThumbTask::getTaskId() const
 {
     return taskId_;

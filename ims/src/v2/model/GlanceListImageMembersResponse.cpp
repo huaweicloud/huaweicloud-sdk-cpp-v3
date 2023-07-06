@@ -63,7 +63,6 @@ bool GlanceListImageMembersResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<GlanceImageMembers>& GlanceListImageMembersResponse::getMembers()
 {
     return members_;

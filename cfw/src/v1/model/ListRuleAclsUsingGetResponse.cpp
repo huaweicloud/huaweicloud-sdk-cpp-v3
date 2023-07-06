@@ -49,7 +49,6 @@ bool ListRuleAclsUsingGetResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 RuleAclListResponseDTO_data ListRuleAclsUsingGetResponse::getData() const
 {
     return data_;

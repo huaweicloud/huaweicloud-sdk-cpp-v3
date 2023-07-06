@@ -63,7 +63,6 @@ bool BatchDeleteTagsRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<DeleteResourceTag>& BatchDeleteTagsRequestBody::getTags()
 {
     return tags_;

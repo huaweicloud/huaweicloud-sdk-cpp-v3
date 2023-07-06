@@ -63,7 +63,6 @@ bool CreateLogDumpObsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateLogDumpObsRequest::getContentType() const
 {
     return contentType_;

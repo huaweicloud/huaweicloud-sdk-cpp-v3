@@ -63,7 +63,6 @@ bool VaultSetResourceReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& VaultSetResourceReq::getResourceIds()
 {
     return resourceIds_;

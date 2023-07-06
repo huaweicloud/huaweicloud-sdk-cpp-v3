@@ -153,7 +153,6 @@ bool OpExtraInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 OpExtendInfoBckup OpExtraInfo::getBackup() const
 {
     return backup_;

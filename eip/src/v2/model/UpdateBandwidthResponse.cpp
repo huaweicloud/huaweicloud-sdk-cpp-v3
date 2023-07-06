@@ -49,7 +49,6 @@ bool UpdateBandwidthResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 BandwidthResp UpdateBandwidthResponse::getBandwidth() const
 {
     return bandwidth_;

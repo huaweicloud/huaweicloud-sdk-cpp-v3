@@ -64,7 +64,6 @@ bool DrillServerParams::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DrillServerParams::getProtectedInstance() const
 {
     return protectedInstance_;

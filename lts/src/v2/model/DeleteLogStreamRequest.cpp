@@ -78,7 +78,6 @@ bool DeleteLogStreamRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteLogStreamRequest::getLogGroupId() const
 {
     return logGroupId_;

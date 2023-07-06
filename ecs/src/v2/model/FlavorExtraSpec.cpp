@@ -498,7 +498,6 @@ bool FlavorExtraSpec::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string FlavorExtraSpec::getEcsperformancetype() const
 {
     return ecsperformancetype_;

@@ -64,7 +64,6 @@ bool ListAssetCategoryRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListAssetCategoryRequest::getXSdkDate() const
 {
     return xSdkDate_;

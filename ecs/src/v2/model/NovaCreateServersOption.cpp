@@ -284,7 +284,6 @@ bool NovaCreateServersOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NovaCreateServersOption::getAutoTerminateTime() const
 {
     return autoTerminateTime_;

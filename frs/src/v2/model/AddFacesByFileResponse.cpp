@@ -77,7 +77,6 @@ bool AddFacesByFileResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AddFacesByFileResponse::getFaceSetId() const
 {
     return faceSetId_;

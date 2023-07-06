@@ -50,7 +50,6 @@ bool ServerImage::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ServerImage::getId() const
 {
     return id_;

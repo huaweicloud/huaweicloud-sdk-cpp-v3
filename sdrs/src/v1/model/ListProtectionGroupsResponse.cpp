@@ -63,7 +63,6 @@ bool ListProtectionGroupsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ShowProtectionGroupParams>& ListProtectionGroupsResponse::getServerGroups()
 {
     return serverGroups_;

@@ -64,7 +64,6 @@ bool CreateLogGroupParams::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateLogGroupParams::getLogGroupName() const
 {
     return logGroupName_;

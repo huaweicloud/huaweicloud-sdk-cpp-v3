@@ -92,7 +92,6 @@ bool UpdateLogGroupResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int64_t UpdateLogGroupResponse::getCreationTime() const
 {
     return creationTime_;

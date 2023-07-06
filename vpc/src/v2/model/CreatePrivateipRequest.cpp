@@ -49,7 +49,6 @@ bool CreatePrivateipRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 CreatePrivateipRequestBody CreatePrivateipRequest::getBody() const
 {
     return body_;

@@ -134,7 +134,6 @@ bool DomainMigrateProjectStatus::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DomainMigrateProjectStatus::getStatus() const
 {
     return status_;

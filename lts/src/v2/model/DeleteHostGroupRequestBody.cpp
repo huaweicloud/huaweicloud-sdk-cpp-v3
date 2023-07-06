@@ -49,7 +49,6 @@ bool DeleteHostGroupRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& DeleteHostGroupRequestBody::getHostGroupIdList()
 {
     return hostGroupIdList_;

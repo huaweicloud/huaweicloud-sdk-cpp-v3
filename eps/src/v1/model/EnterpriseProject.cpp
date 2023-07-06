@@ -78,7 +78,6 @@ bool EnterpriseProject::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string EnterpriseProject::getName() const
 {
     return name_;

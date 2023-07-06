@@ -49,7 +49,6 @@ bool RecognizeInsurancePolicyResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 InsurancePolicyResult RecognizeInsurancePolicyResponse::getResult() const
 {
     return result_;

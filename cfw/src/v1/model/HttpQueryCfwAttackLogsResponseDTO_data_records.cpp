@@ -300,7 +300,6 @@ bool HttpQueryCfwAttackLogsResponseDTO_data_records::fromJson(const web::json::v
     return ok;
 }
 
-
 std::string HttpQueryCfwAttackLogsResponseDTO_data_records::getDirection() const
 {
     return direction_;

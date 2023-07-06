@@ -63,7 +63,6 @@ bool ConfirmAssetUploadRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ConfirmAssetUploadRequest::getXSdkDate() const
 {
     return xSdkDate_;

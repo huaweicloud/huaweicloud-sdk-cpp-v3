@@ -78,7 +78,6 @@ bool ChartConfig::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 bool ChartConfig::isCanSort() const
 {
     return canSort_;

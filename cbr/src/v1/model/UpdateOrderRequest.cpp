@@ -63,7 +63,6 @@ bool UpdateOrderRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateOrderRequest::getOrderId() const
 {
     return orderId_;

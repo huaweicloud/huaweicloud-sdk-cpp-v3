@@ -229,7 +229,6 @@ bool CreateTrackerResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateTrackerResponse::getId() const
 {
     return id_;

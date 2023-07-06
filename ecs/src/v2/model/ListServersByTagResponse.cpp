@@ -63,7 +63,6 @@ bool ListServersByTagResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ServerResource>& ListServersByTagResponse::getResources()
 {
     return resources_;

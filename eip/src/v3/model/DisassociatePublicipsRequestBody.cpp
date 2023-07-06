@@ -49,7 +49,6 @@ bool DisassociatePublicipsRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 DisassociatePublicipsOption DisassociatePublicipsRequestBody::getPublicip() const
 {
     return publicip_;

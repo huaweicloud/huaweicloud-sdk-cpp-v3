@@ -77,7 +77,6 @@ bool ListWatermarkTemplateRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<int32_t>& ListWatermarkTemplateRequest::getTemplateId()
 {
     return templateId_;

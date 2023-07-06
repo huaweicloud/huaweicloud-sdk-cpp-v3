@@ -76,7 +76,6 @@ bool MpcMultiAudio::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ObsObjInfo MpcMultiAudio::getOutput() const
 {
     return output_;

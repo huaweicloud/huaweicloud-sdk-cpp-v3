@@ -50,7 +50,6 @@ bool LiveDetectFaceBase64Req::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string LiveDetectFaceBase64Req::getImageBase64() const
 {
     return imageBase64_;

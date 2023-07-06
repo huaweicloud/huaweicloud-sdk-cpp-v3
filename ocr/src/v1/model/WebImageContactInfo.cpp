@@ -120,7 +120,6 @@ bool WebImageContactInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string WebImageContactInfo::getName() const
 {
     return name_;

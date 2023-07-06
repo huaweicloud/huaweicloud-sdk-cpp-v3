@@ -63,7 +63,6 @@ bool RecognizeTrainTicketRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RecognizeTrainTicketRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

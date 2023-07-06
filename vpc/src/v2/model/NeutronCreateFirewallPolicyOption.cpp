@@ -91,7 +91,6 @@ bool NeutronCreateFirewallPolicyOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 bool NeutronCreateFirewallPolicyOption::isAudited() const
 {
     return audited_;

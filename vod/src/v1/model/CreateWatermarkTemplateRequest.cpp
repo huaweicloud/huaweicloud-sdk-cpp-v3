@@ -63,7 +63,6 @@ bool CreateWatermarkTemplateRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateWatermarkTemplateRequest::getXSdkDate() const
 {
     return xSdkDate_;

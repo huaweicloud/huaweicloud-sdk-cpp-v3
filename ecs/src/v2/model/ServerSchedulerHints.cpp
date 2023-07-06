@@ -75,7 +75,6 @@ bool ServerSchedulerHints::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& ServerSchedulerHints::getGroup()
 {
     return group_;

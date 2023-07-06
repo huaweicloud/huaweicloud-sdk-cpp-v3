@@ -62,7 +62,6 @@ bool NovaServerSchedulerHints::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& NovaServerSchedulerHints::getTenancy()
 {
     return tenancy_;

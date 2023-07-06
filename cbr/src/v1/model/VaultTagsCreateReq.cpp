@@ -49,7 +49,6 @@ bool VaultTagsCreateReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 Tag VaultTagsCreateReq::getTag() const
 {
     return tag_;

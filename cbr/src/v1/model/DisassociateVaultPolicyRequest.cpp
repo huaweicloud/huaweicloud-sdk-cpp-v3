@@ -63,7 +63,6 @@ bool DisassociateVaultPolicyRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DisassociateVaultPolicyRequest::getVaultId() const
 {
     return vaultId_;

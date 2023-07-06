@@ -63,7 +63,6 @@ bool RecognizeQuotaInvoiceRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RecognizeQuotaInvoiceRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

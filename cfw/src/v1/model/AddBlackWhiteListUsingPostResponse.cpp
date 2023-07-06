@@ -49,7 +49,6 @@ bool AddBlackWhiteListUsingPostResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 IdObject AddBlackWhiteListUsingPostResponse::getData() const
 {
     return data_;

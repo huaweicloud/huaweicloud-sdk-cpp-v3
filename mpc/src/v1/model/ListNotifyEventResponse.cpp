@@ -63,7 +63,6 @@ bool ListNotifyEventResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& ListNotifyEventResponse::getEventName()
 {
     return eventName_;

@@ -49,7 +49,6 @@ bool CreateMergeChannelsTaskRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 CreateMergeChannelsReq CreateMergeChannelsTaskRequest::getBody() const
 {
     return body_;

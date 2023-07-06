@@ -50,7 +50,6 @@ bool NovaRemoveSecurityGroupOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NovaRemoveSecurityGroupOption::getName() const
 {
     return name_;

@@ -44,7 +44,7 @@ public:
     /// CreateAccessConfigRequestBody members
 
     /// <summary>
-    /// 日志接入名称
+    /// 日志接入名称。 满足正则表达式：^(?!\\.)(?!_)(?!.*?\\.$)[\\u4e00-\\u9fa5a-zA-Z0-9-_.]{1,64}$
     /// </summary>
 
     std::string getAccessConfigName() const;
@@ -53,7 +53,7 @@ public:
     void setAccessConfigName(const std::string& value);
 
     /// <summary>
-    /// 日志接入类型。AGENT：主机接入类型
+    /// 日志接入类型。AGENT：ECS接入,K8S_CCE:CCE接入
     /// </summary>
 
     std::string getAccessConfigType() const;
@@ -89,13 +89,31 @@ public:
     void setHostGroupInfo(const AccessConfigHostGroupIdListCreate& value);
 
     /// <summary>
-    /// 
+    /// 标签信息。KEY不能重复,最多20个标签
     /// </summary>
 
     std::vector<AccessConfigTag>& getAccessConfigTag();
     bool accessConfigTagIsSet() const;
     void unsetaccessConfigTag();
     void setAccessConfigTag(const std::vector<AccessConfigTag>& value);
+
+    /// <summary>
+    /// 二进制采集
+    /// </summary>
+
+    bool isBinaryCollect() const;
+    bool binaryCollectIsSet() const;
+    void unsetbinaryCollect();
+    void setBinaryCollect(bool value);
+
+    /// <summary>
+    /// 日志拆分
+    /// </summary>
+
+    bool isLogSplit() const;
+    bool logSplitIsSet() const;
+    void unsetlogSplit();
+    void setLogSplit(bool value);
 
 
 protected:
@@ -111,6 +129,10 @@ protected:
     bool hostGroupInfoIsSet_;
     std::vector<AccessConfigTag> accessConfigTag_;
     bool accessConfigTagIsSet_;
+    bool binaryCollect_;
+    bool binaryCollectIsSet_;
+    bool logSplit_;
+    bool logSplitIsSet_;
 
 };
 

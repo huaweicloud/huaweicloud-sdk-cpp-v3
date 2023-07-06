@@ -119,7 +119,6 @@ bool MpeCallBackReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string MpeCallBackReq::getTaskType() const
 {
     return taskType_;

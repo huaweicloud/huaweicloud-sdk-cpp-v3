@@ -63,7 +63,6 @@ bool DataBucket::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DataBucket::getDataBucketName() const
 {
     return dataBucketName_;

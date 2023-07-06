@@ -49,7 +49,6 @@ bool CreateFlowLogReqBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 CreateFlowLogReq CreateFlowLogReqBody::getFlowLog() const
 {
     return flowLog_;

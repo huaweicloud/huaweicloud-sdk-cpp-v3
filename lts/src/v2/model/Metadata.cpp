@@ -148,7 +148,6 @@ bool Metadata::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string Metadata::getEventType() const
 {
     return eventType_;

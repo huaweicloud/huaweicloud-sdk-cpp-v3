@@ -36,7 +36,6 @@ bool DeleteServerGroupMemberResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

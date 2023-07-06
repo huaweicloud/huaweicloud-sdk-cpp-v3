@@ -49,7 +49,6 @@ bool RecognizeThailandIdcardResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ThailandIdcardResult RecognizeThailandIdcardResponse::getResult() const
 {
     return result_;

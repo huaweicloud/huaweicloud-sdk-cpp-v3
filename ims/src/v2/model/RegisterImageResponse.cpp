@@ -50,7 +50,6 @@ bool RegisterImageResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RegisterImageResponse::getJobId() const
 {
     return jobId_;

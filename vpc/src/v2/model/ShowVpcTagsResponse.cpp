@@ -49,7 +49,6 @@ bool ShowVpcTagsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ResourceTag>& ShowVpcTagsResponse::getTags()
 {
     return tags_;

@@ -78,7 +78,6 @@ bool KeyChainInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string KeyChainInfo::getKey() const
 {
     return key_;

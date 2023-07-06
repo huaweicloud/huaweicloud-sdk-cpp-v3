@@ -63,7 +63,6 @@ bool ListTemplateGroupCollectionResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<TemplateGroupCollection>& ListTemplateGroupCollectionResponse::getTemplateGroupCollectionList()
 {
     return templateGroupCollectionList_;

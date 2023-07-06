@@ -77,7 +77,6 @@ bool CharListIem::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CharListIem::getChar() const
 {
     return char_;

@@ -49,7 +49,6 @@ bool QuotaParams::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<QuotaResourceParams>& QuotaParams::getResources()
 {
     return resources_;

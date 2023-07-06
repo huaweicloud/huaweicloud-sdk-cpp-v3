@@ -200,7 +200,6 @@ bool RecordContentInfoV2::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RecordContentInfoV2::getPublishDomain() const
 {
     return publishDomain_;

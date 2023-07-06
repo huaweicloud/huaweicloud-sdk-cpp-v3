@@ -217,7 +217,6 @@ bool TransportationLicenseResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string TransportationLicenseResult::getOwnerName() const
 {
     return ownerName_;

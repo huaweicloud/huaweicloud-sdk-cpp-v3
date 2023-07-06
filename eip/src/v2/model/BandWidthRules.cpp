@@ -119,7 +119,6 @@ bool BandWidthRules::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BandWidthRules::getId() const
 {
     return id_;

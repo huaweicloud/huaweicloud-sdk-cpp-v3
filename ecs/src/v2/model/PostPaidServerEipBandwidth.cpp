@@ -92,7 +92,6 @@ bool PostPaidServerEipBandwidth::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t PostPaidServerEipBandwidth::getSize() const
 {
     return size_;

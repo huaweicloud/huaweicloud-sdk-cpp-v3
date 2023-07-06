@@ -64,7 +64,6 @@ bool DeleteServerMetadataRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteServerMetadataRequest::getKey() const
 {
     return key_;

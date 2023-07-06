@@ -64,7 +64,6 @@ bool ExtraDhcpOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ExtraDhcpOption::getOptName() const
 {
     return optName_;

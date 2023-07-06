@@ -78,7 +78,6 @@ bool DeleteRuleAclUsingDeleteRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteRuleAclUsingDeleteRequest::getAclRuleId() const
 {
     return aclRuleId_;

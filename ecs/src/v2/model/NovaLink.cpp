@@ -64,7 +64,6 @@ bool NovaLink::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NovaLink::getHref() const
 {
     return href_;

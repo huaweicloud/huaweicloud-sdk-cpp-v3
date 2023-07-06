@@ -104,7 +104,6 @@ bool SearchFace::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 BoundingBox SearchFace::getBoundingBox() const
 {
     return boundingBox_;

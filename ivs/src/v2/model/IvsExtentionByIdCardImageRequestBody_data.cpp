@@ -49,7 +49,6 @@ bool IvsExtentionByIdCardImageRequestBody_data::fromJson(const web::json::value&
     return ok;
 }
 
-
 std::vector<ExtentionReqDataByIdCardImage>& IvsExtentionByIdCardImageRequestBody_data::getReqData()
 {
     return reqData_;

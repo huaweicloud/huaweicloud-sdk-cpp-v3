@@ -118,7 +118,6 @@ bool BatchPublicIp::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BatchPublicIp::getId() const
 {
     return id_;

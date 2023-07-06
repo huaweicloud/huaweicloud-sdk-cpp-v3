@@ -64,7 +64,6 @@ bool ShowProtectableRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowProtectableRequest::getInstanceId() const
 {
     return instanceId_;

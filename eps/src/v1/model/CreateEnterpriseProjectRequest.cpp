@@ -49,7 +49,6 @@ bool CreateEnterpriseProjectRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 EnterpriseProject CreateEnterpriseProjectRequest::getBody() const
 {
     return body_;

@@ -63,7 +63,6 @@ bool InsurancePolicyDetail::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string InsurancePolicyDetail::getWords() const
 {
     return words_;

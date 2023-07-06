@@ -50,7 +50,6 @@ bool CreateEditingJobResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateEditingJobResponse::getJobId() const
 {
     return jobId_;

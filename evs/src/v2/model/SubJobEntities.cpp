@@ -92,7 +92,6 @@ bool SubJobEntities::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string SubJobEntities::getVolumeType() const
 {
     return volumeType_;

@@ -64,7 +64,6 @@ bool AccessConfigFormatMutilCreate::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AccessConfigFormatMutilCreate::getMode() const
 {
     return mode_;

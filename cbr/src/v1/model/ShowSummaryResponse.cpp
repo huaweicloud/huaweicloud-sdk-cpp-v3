@@ -64,7 +64,6 @@ bool ShowSummaryResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t ShowSummaryResponse::getSize() const
 {
     return size_;

@@ -78,7 +78,6 @@ bool UpdatePublicipOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdatePublicipOption::getPortId() const
 {
     return portId_;

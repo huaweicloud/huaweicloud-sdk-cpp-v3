@@ -50,7 +50,6 @@ bool DeleteAomMappingRulesRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteAomMappingRulesRequest::getId() const
 {
     return id_;

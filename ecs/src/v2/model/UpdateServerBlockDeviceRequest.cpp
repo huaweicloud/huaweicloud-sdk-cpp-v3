@@ -77,7 +77,6 @@ bool UpdateServerBlockDeviceRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateServerBlockDeviceRequest::getServerId() const
 {
     return serverId_;

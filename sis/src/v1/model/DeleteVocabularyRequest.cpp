@@ -50,7 +50,6 @@ bool DeleteVocabularyRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteVocabularyRequest::getVocabularyId() const
 {
     return vocabularyId_;

@@ -49,7 +49,6 @@ bool Encryption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 HlsEncrypt Encryption::getHlsEncrypt() const
 {
     return hlsEncrypt_;

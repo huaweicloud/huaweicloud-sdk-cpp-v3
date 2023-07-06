@@ -116,7 +116,6 @@ bool FinancialStatementWordsBlockList::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string FinancialStatementWordsBlockList::getWords() const
 {
     return words_;

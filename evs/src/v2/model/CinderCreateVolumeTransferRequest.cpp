@@ -49,7 +49,6 @@ bool CinderCreateVolumeTransferRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 CinderCreateVolumeTransferRequestBody CinderCreateVolumeTransferRequest::getBody() const
 {
     return body_;

@@ -119,7 +119,6 @@ bool ListActiveOrHistoryAlarmsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListActiveOrHistoryAlarmsRequest::getDomainId() const
 {
     return domainId_;

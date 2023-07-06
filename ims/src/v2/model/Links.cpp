@@ -64,7 +64,6 @@ bool Links::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string Links::getHref() const
 {
     return href_;

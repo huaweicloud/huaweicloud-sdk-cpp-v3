@@ -132,7 +132,6 @@ bool MetaData::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int64_t MetaData::getSize() const
 {
     return size_;

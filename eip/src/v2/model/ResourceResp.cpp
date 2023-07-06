@@ -49,7 +49,6 @@ bool ResourceResp::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<QuotaShowResp>& ResourceResp::getResources()
 {
     return resources_;

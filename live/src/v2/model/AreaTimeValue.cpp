@@ -63,7 +63,6 @@ bool AreaTimeValue::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AreaTimeValue::getName() const
 {
     return name_;

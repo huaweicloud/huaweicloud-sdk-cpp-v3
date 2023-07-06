@@ -50,7 +50,6 @@ bool EnableAction::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string EnableAction::getAction() const
 {
     return action_;

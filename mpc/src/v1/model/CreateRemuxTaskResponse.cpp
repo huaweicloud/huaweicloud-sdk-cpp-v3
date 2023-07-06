@@ -50,7 +50,6 @@ bool CreateRemuxTaskResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateRemuxTaskResponse::getTaskId() const
 {
     return taskId_;

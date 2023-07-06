@@ -104,7 +104,6 @@ bool IdDocumentRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string IdDocumentRequestBody::getImage() const
 {
     return image_;

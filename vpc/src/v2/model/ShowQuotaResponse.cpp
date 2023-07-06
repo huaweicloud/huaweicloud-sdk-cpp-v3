@@ -49,7 +49,6 @@ bool ShowQuotaResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 Quota ShowQuotaResponse::getQuotas() const
 {
     return quotas_;

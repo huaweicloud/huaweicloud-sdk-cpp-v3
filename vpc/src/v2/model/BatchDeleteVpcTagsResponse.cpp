@@ -36,7 +36,6 @@ bool BatchDeleteVpcTagsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

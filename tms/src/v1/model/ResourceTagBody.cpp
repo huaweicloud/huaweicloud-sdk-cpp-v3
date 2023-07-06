@@ -64,7 +64,6 @@ bool ResourceTagBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ResourceTagBody::getResourceId() const
 {
     return resourceId_;

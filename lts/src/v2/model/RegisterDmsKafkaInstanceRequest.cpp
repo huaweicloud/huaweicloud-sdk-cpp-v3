@@ -63,7 +63,6 @@ bool RegisterDmsKafkaInstanceRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RegisterDmsKafkaInstanceRequest::getContentType() const
 {
     return contentType_;

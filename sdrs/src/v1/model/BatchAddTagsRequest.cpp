@@ -63,7 +63,6 @@ bool BatchAddTagsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BatchAddTagsRequest::getProtectedInstanceId() const
 {
     return protectedInstanceId_;

@@ -78,7 +78,6 @@ bool ObsFileAddr::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ObsFileAddr::getBucket() const
 {
     return bucket_;

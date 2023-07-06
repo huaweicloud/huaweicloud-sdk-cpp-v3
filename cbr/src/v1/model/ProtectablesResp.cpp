@@ -145,7 +145,6 @@ bool ProtectablesResp::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<Object>& ProtectablesResp::getChildren()
 {
     return children_;

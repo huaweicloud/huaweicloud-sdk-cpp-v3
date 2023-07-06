@@ -49,7 +49,6 @@ bool BatchRebootServersRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 BatchRebootSeversOption BatchRebootServersRequestBody::getReboot() const
 {
     return reboot_;

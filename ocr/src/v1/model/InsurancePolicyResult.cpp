@@ -193,7 +193,6 @@ bool InsurancePolicyResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string InsurancePolicyResult::getBankName() const
 {
     return bankName_;

@@ -49,7 +49,6 @@ bool PublishAssetReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& PublishAssetReq::getAssetId()
 {
     return assetId_;

@@ -63,7 +63,6 @@ bool StopProtectionGroupRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string StopProtectionGroupRequest::getServerGroupId() const
 {
     return serverGroupId_;

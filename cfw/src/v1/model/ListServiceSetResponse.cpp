@@ -49,7 +49,6 @@ bool ListServiceSetResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ServiceSetRecords ListServiceSetResponse::getData() const
 {
     return data_;

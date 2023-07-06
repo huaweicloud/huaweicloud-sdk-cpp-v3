@@ -49,7 +49,6 @@ bool UpdateDomainIp6SwitchRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 DomainIpv6SwitchReq UpdateDomainIp6SwitchRequest::getBody() const
 {
     return body_;

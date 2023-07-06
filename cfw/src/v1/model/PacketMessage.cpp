@@ -77,7 +77,6 @@ bool PacketMessage::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PacketMessage::getHexIndex() const
 {
     return hexIndex_;

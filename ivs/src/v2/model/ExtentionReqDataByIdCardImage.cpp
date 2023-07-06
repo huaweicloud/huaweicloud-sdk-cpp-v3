@@ -64,7 +64,6 @@ bool ExtentionReqDataByIdCardImage::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ExtentionReqDataByIdCardImage::getIdcardImage1() const
 {
     return idcardImage1_;

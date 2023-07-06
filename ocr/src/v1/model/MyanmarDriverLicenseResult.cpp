@@ -217,7 +217,6 @@ bool MyanmarDriverLicenseResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string MyanmarDriverLicenseResult::getCardNumber() const
 {
     return cardNumber_;

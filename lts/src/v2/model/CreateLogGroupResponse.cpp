@@ -50,7 +50,6 @@ bool CreateLogGroupResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateLogGroupResponse::getLogGroupId() const
 {
     return logGroupId_;

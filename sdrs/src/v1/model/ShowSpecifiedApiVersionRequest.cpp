@@ -50,7 +50,6 @@ bool ShowSpecifiedApiVersionRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowSpecifiedApiVersionRequest::getApiVersion() const
 {
     return apiVersion_;

@@ -64,7 +64,6 @@ bool ConfirmAssetUploadReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ConfirmAssetUploadReq::getAssetId() const
 {
     return assetId_;

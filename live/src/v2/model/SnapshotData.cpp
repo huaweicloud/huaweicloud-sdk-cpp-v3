@@ -64,7 +64,6 @@ bool SnapshotData::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int64_t SnapshotData::getCount() const
 {
     return count_;

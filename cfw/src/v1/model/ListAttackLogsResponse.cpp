@@ -49,7 +49,6 @@ bool ListAttackLogsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 HttpQueryCfwAttackLogsResponseDTO_data ListAttackLogsResponse::getData() const
 {
     return data_;

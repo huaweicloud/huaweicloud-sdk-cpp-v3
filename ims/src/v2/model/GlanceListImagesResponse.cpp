@@ -91,7 +91,6 @@ bool GlanceListImagesResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string GlanceListImagesResponse::getFirst() const
 {
     return first_;

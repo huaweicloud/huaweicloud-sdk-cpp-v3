@@ -134,7 +134,6 @@ bool AddBlackWhiteListDto::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AddBlackWhiteListDto::getObjectId() const
 {
     return objectId_;

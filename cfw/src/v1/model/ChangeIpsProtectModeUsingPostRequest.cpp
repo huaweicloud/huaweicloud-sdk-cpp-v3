@@ -77,7 +77,6 @@ bool ChangeIpsProtectModeUsingPostRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ChangeIpsProtectModeUsingPostRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

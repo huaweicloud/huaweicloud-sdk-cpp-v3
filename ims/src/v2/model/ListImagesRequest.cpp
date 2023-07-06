@@ -554,7 +554,6 @@ bool ListImagesRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListImagesRequest::getImagetype() const
 {
     return imagetype_;

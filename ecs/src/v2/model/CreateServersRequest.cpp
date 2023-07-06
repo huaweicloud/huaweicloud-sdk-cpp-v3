@@ -63,7 +63,6 @@ bool CreateServersRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateServersRequest::getXClientToken() const
 {
     return xClientToken_;

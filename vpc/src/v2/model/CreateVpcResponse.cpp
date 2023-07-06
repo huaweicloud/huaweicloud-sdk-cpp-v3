@@ -49,7 +49,6 @@ bool CreateVpcResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 Vpc CreateVpcResponse::getVpc() const
 {
     return vpc_;

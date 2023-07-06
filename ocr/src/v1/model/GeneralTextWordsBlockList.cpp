@@ -90,7 +90,6 @@ bool GeneralTextWordsBlockList::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string GeneralTextWordsBlockList::getWords() const
 {
     return words_;

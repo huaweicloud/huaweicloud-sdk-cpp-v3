@@ -50,7 +50,6 @@ bool DeleteTagsOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteTagsOption::getKey() const
 {
     return key_;

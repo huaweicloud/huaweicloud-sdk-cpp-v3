@@ -78,7 +78,6 @@ bool GlanceUpdateImageRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string GlanceUpdateImageRequestBody::getOp() const
 {
     return op_;

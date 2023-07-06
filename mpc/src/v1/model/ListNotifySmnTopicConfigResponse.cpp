@@ -63,7 +63,6 @@ bool ListNotifySmnTopicConfigResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<Notification>& ListNotifySmnTopicConfigResponse::getNotifications()
 {
     return notifications_;

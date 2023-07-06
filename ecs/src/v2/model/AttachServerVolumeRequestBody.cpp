@@ -63,7 +63,6 @@ bool AttachServerVolumeRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 AttachServerVolumeOption AttachServerVolumeRequestBody::getVolumeAttachment() const
 {
     return volumeAttachment_;

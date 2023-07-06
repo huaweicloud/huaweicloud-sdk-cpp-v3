@@ -63,7 +63,6 @@ bool PostCustomTTSReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PostCustomTTSReq::getText() const
 {
     return text_;

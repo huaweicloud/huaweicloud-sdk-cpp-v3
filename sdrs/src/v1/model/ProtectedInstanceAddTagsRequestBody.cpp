@@ -49,7 +49,6 @@ bool ProtectedInstanceAddTagsRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ResourceTag ProtectedInstanceAddTagsRequestBody::getTag() const
 {
     return tag_;

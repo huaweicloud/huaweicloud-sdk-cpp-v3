@@ -89,7 +89,6 @@ bool CreateRemuxTaskReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ObsObjInfo CreateRemuxTaskReq::getInput() const
 {
     return input_;

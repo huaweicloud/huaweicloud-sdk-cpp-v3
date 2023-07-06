@@ -119,7 +119,6 @@ bool NeutronUpdateFirewallGroupOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 bool NeutronUpdateFirewallGroupOption::isAdminStateUp() const
 {
     return adminStateUp_;

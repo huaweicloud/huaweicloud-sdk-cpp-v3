@@ -63,7 +63,6 @@ bool CreateAssetReviewTaskResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateAssetReviewTaskResponse::getAssetId() const
 {
     return assetId_;

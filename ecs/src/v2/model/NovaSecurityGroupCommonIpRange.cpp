@@ -50,7 +50,6 @@ bool NovaSecurityGroupCommonIpRange::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NovaSecurityGroupCommonIpRange::getCidr() const
 {
     return cidr_;

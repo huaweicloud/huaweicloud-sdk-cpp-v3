@@ -50,7 +50,6 @@ bool BatchAddMembersResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BatchAddMembersResponse::getJobId() const
 {
     return jobId_;

@@ -49,7 +49,6 @@ bool ShowOpLogResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 OperationLog ShowOpLogResponse::getOperationLog() const
 {
     return operationLog_;

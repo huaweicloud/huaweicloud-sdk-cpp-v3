@@ -90,7 +90,6 @@ bool AutoClassificationRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AutoClassificationRequestBody::getImage() const
 {
     return image_;

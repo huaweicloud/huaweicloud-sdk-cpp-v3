@@ -493,7 +493,6 @@ bool VolumeDetailForTag::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string VolumeDetailForTag::getId() const
 {
     return id_;

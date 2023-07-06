@@ -92,7 +92,6 @@ bool StreamForbiddenSetting::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string StreamForbiddenSetting::getDomain() const
 {
     return domain_;

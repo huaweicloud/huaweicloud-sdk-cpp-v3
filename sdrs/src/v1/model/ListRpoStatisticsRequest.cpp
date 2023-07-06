@@ -106,7 +106,6 @@ bool ListRpoStatisticsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t ListRpoStatisticsRequest::getLimit() const
 {
     return limit_;

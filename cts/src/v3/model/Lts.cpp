@@ -78,7 +78,6 @@ bool Lts::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 bool Lts::isIsLtsEnabled() const
 {
     return isLtsEnabled_;

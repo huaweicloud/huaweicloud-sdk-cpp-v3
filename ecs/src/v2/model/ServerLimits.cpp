@@ -399,7 +399,6 @@ bool ServerLimits::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t ServerLimits::getMaxImageMeta() const
 {
     return maxImageMeta_;

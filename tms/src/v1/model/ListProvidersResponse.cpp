@@ -63,7 +63,6 @@ bool ListProvidersResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ProviderResponseBody>& ListProvidersResponse::getProviders()
 {
     return providers_;

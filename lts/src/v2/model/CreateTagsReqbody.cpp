@@ -77,7 +77,6 @@ bool CreateTagsReqbody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateTagsReqbody::getAction() const
 {
     return action_;

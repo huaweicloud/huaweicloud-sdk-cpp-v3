@@ -49,7 +49,6 @@ bool RegisterAgentRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 AgentRegisterReq RegisterAgentRequest::getBody() const
 {
     return body_;

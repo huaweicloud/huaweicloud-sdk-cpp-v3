@@ -104,7 +104,6 @@ bool OriginPara::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t OriginPara::getDuration() const
 {
     return duration_;

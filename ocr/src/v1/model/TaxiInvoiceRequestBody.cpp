@@ -78,7 +78,6 @@ bool TaxiInvoiceRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string TaxiInvoiceRequestBody::getImage() const
 {
     return image_;

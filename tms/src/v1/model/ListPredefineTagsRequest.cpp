@@ -120,7 +120,6 @@ bool ListPredefineTagsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListPredefineTagsRequest::getKey() const
 {
     return key_;

@@ -243,7 +243,6 @@ bool Flavor::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string Flavor::getId() const
 {
     return id_;

@@ -62,7 +62,6 @@ bool IvsStandardByVideoAndIdCardImageRequestBody::fromJson(const web::json::valu
     return ok;
 }
 
-
 Meta IvsStandardByVideoAndIdCardImageRequestBody::getMeta() const
 {
     return meta_;

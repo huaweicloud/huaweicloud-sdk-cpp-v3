@@ -78,7 +78,6 @@ bool UpdateImageRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateImageRequestBody::getOp() const
 {
     return op_;

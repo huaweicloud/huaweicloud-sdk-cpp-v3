@@ -63,7 +63,6 @@ bool ListPoliciesResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<Policy>& ListPoliciesResponse::getPolicies()
 {
     return policies_;

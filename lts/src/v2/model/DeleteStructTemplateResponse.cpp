@@ -50,7 +50,6 @@ bool DeleteStructTemplateResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteStructTemplateResponse::getBody() const
 {
     return body_;

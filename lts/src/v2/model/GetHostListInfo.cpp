@@ -134,7 +134,6 @@ bool GetHostListInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string GetHostListInfo::getHostId() const
 {
     return hostId_;

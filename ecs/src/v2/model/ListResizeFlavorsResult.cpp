@@ -243,7 +243,6 @@ bool ListResizeFlavorsResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListResizeFlavorsResult::getId() const
 {
     return id_;

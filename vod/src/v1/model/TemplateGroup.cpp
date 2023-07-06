@@ -159,7 +159,6 @@ bool TemplateGroup::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string TemplateGroup::getGroupId() const
 {
     return groupId_;

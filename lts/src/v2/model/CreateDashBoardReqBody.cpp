@@ -64,7 +64,6 @@ bool CreateDashBoardReqBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateDashBoardReqBody::getGroupName() const
 {
     return groupName_;

@@ -49,7 +49,6 @@ bool CreatePrivateipRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<CreatePrivateipOption>& CreatePrivateipRequestBody::getPrivateips()
 {
     return privateips_;

@@ -64,7 +64,6 @@ bool Hypervisor::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string Hypervisor::getHypervisorType() const
 {
     return hypervisorType_;

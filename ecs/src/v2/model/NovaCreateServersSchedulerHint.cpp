@@ -132,7 +132,6 @@ bool NovaCreateServersSchedulerHint::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NovaCreateServersSchedulerHint::getGroup() const
 {
     return group_;

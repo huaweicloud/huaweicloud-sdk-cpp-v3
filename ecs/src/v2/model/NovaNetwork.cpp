@@ -92,7 +92,6 @@ bool NovaNetwork::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NovaNetwork::getAddr() const
 {
     return addr_;

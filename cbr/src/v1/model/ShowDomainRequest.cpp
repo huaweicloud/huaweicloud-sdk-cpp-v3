@@ -50,7 +50,6 @@ bool ShowDomainRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowDomainRequest::getSourceProjectId() const
 {
     return sourceProjectId_;

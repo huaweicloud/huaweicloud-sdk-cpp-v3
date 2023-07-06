@@ -50,7 +50,6 @@ bool DeleteMediaProcessTaskRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteMediaProcessTaskRequest::getTaskId() const
 {
     return taskId_;

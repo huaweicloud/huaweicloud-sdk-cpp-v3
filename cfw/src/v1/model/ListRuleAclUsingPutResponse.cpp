@@ -49,7 +49,6 @@ bool ListRuleAclUsingPutResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 RuleId ListRuleAclUsingPutResponse::getData() const
 {
     return data_;

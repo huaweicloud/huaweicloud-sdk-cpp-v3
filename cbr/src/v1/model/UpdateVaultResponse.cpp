@@ -49,7 +49,6 @@ bool UpdateVaultResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 Vault UpdateVaultResponse::getVault() const
 {
     return vault_;

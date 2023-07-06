@@ -134,7 +134,6 @@ bool IdCardRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string IdCardRequestBody::getImage() const
 {
     return image_;

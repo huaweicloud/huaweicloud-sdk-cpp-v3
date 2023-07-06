@@ -162,7 +162,6 @@ bool CreateDomainResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateDomainResponse::getDomain() const
 {
     return domain_;

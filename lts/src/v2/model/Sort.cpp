@@ -63,7 +63,6 @@ bool Sort::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& Sort::getOrderBy()
 {
     return orderBy_;

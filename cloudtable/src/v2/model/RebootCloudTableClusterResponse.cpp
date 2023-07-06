@@ -49,7 +49,6 @@ bool RebootCloudTableClusterResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<RestartInstanceRsp>& RebootCloudTableClusterResponse::getBody()
 {
     return body_;

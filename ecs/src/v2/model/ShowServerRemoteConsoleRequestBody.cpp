@@ -49,7 +49,6 @@ bool ShowServerRemoteConsoleRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 GetServerRemoteConsoleOption ShowServerRemoteConsoleRequestBody::getRemoteConsole() const
 {
     return remoteConsole_;

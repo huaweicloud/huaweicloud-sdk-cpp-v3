@@ -63,7 +63,6 @@ bool CreatePostPaidServersRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreatePostPaidServersRequest::getXClientToken() const
 {
     return xClientToken_;

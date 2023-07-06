@@ -49,7 +49,6 @@ bool UpdateStructTemplateRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 LtsStructTemplateInfo UpdateStructTemplateRequest::getBody() const
 {
     return body_;

@@ -50,7 +50,6 @@ bool CreateTemplateGroupResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateTemplateGroupResponse::getGroupId() const
 {
     return groupId_;

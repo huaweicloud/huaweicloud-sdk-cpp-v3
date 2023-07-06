@@ -132,7 +132,6 @@ bool Resources::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string Resources::getProjectId() const
 {
     return projectId_;

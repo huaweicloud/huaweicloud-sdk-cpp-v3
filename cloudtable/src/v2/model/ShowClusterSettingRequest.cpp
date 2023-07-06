@@ -64,7 +64,6 @@ bool ShowClusterSettingRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowClusterSettingRequest::getClusterId() const
 {
     return clusterId_;

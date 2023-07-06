@@ -50,7 +50,6 @@ bool ShowVocabulariesParams::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowVocabulariesParams::getName() const
 {
     return name_;

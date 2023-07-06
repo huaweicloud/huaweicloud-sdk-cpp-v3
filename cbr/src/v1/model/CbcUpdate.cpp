@@ -91,7 +91,6 @@ bool CbcUpdate::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CbcUpdate::getCloudServiceConsoleURL() const
 {
     return cloudServiceConsoleURL_;

@@ -76,7 +76,6 @@ bool GlanceListImageSchemasResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string GlanceListImageSchemasResponse::getName() const
 {
     return name_;

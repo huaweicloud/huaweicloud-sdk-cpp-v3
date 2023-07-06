@@ -437,7 +437,6 @@ bool PublicipSingleShowResp::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PublicipSingleShowResp::getId() const
 {
     return id_;

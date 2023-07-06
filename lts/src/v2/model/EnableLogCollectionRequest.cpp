@@ -50,7 +50,6 @@ bool EnableLogCollectionRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string EnableLogCollectionRequest::getContentType() const
 {
     return contentType_;

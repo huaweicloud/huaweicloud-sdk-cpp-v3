@@ -92,7 +92,6 @@ bool SubtitleInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string SubtitleInfo::getUrl() const
 {
     return url_;

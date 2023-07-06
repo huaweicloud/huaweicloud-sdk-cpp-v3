@@ -50,7 +50,6 @@ bool ListServerBlockDevicesRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListServerBlockDevicesRequest::getServerId() const
 {
     return serverId_;

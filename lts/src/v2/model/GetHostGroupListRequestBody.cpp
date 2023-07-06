@@ -62,7 +62,6 @@ bool GetHostGroupListRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& GetHostGroupListRequestBody::getHostGroupIdList()
 {
     return hostGroupIdList_;

@@ -64,7 +64,6 @@ bool ShowStructTemplateRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowStructTemplateRequest::getLogGroupId() const
 {
     return logGroupId_;

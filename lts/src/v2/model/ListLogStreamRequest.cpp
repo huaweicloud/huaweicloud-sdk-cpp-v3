@@ -78,7 +78,6 @@ bool ListLogStreamRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListLogStreamRequest::getLogGroupId() const
 {
     return logGroupId_;

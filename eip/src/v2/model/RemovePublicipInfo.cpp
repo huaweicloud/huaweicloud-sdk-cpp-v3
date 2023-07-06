@@ -64,7 +64,6 @@ bool RemovePublicipInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RemovePublicipInfo::getPublicipType() const
 {
     return publicipType_;

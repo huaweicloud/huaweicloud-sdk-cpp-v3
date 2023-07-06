@@ -63,7 +63,6 @@ bool BatchDeletePublicipTagsRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ResourceTagOption>& BatchDeletePublicipTagsRequestBody::getTags()
 {
     return tags_;

@@ -64,7 +64,6 @@ bool AudioProcess::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AudioProcess::getVolume() const
 {
     return volume_;

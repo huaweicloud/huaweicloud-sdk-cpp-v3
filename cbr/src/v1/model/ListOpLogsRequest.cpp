@@ -204,7 +204,6 @@ bool ListOpLogsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListOpLogsRequest::getEndTime() const
 {
     return endTime_;

@@ -77,7 +77,6 @@ bool AddRuleAclDto::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AddRuleAclDto::getObjectId() const
 {
     return objectId_;

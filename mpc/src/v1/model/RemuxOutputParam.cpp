@@ -78,7 +78,6 @@ bool RemuxOutputParam::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RemuxOutputParam::getFormat() const
 {
     return format_;

@@ -92,7 +92,6 @@ bool AomMappingLogStreamInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AomMappingLogStreamInfo::getTargetLogGroupId() const
 {
     return targetLogGroupId_;

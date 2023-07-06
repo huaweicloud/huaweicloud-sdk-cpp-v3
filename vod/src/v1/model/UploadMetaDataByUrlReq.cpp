@@ -49,7 +49,6 @@ bool UploadMetaDataByUrlReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<UploadMetaDataByUrl>& UploadMetaDataByUrlReq::getUploadMetadatas()
 {
     return uploadMetadatas_;

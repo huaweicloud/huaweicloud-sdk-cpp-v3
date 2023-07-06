@@ -118,7 +118,6 @@ bool SourceInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t SourceInfo::getDuration() const
 {
     return duration_;

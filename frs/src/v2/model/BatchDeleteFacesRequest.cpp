@@ -77,7 +77,6 @@ bool BatchDeleteFacesRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BatchDeleteFacesRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

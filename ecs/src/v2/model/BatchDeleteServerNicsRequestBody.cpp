@@ -49,7 +49,6 @@ bool BatchDeleteServerNicsRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<BatchDeleteServerNicOption>& BatchDeleteServerNicsRequestBody::getNics()
 {
     return nics_;

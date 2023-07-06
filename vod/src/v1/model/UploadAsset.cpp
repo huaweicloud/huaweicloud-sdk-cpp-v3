@@ -92,7 +92,6 @@ bool UploadAsset::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UploadAsset::getUrl() const
 {
     return url_;

@@ -63,7 +63,6 @@ bool RecognizeFinancialStatementRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RecognizeFinancialStatementRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

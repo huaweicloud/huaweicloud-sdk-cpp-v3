@@ -63,7 +63,6 @@ bool RecognizePcrTestRecordRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RecognizePcrTestRecordRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

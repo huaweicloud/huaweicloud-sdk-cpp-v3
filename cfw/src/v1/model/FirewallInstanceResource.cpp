@@ -120,7 +120,6 @@ bool FirewallInstanceResource::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string FirewallInstanceResource::getResourceId() const
 {
     return resourceId_;

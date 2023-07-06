@@ -64,7 +64,6 @@ bool Resulits::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int64_t Resulits::getTimestamp() const
 {
     return timestamp_;

@@ -106,7 +106,6 @@ bool CdnIp::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CdnIp::getIp() const
 {
     return ip_;

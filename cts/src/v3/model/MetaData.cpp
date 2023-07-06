@@ -64,7 +64,6 @@ bool MetaData::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t MetaData::getCount() const
 {
     return count_;

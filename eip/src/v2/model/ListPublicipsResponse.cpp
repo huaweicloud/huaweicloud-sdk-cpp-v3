@@ -49,7 +49,6 @@ bool ListPublicipsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<PublicipShowResp>& ListPublicipsResponse::getPublicips()
 {
     return publicips_;

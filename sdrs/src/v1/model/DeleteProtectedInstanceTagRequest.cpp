@@ -64,7 +64,6 @@ bool DeleteProtectedInstanceTagRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteProtectedInstanceTagRequest::getProtectedInstanceId() const
 {
     return protectedInstanceId_;

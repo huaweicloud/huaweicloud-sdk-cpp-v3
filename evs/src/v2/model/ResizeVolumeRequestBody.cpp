@@ -62,7 +62,6 @@ bool ResizeVolumeRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 BssParamForResizeVolume ResizeVolumeRequestBody::getBssParam() const
 {
     return bssParam_;

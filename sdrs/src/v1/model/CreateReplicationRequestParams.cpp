@@ -106,7 +106,6 @@ bool CreateReplicationRequestParams::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateReplicationRequestParams::getServerGroupId() const
 {
     return serverGroupId_;

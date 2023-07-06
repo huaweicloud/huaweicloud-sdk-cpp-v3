@@ -78,7 +78,6 @@ bool HttpCode::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t HttpCode::getCode() const
 {
     return code_;

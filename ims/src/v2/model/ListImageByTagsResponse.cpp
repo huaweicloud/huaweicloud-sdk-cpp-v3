@@ -63,7 +63,6 @@ bool ListImageByTagsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ShowImageByTagsResource>& ListImageByTagsResponse::getResources()
 {
     return resources_;

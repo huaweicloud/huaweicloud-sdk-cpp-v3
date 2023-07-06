@@ -106,7 +106,6 @@ bool VolumeTypeExtraSpecs::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string VolumeTypeExtraSpecs::getRESKEYavailabilityZones() const
 {
     return rESKEYavailabilityZones_;

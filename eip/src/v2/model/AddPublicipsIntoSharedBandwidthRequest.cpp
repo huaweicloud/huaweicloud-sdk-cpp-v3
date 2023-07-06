@@ -63,7 +63,6 @@ bool AddPublicipsIntoSharedBandwidthRequest::fromJson(const web::json::value& va
     return ok;
 }
 
-
 std::string AddPublicipsIntoSharedBandwidthRequest::getBandwidthId() const
 {
     return bandwidthId_;

@@ -63,7 +63,6 @@ bool ListRecordDataResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<RecordData>& ListRecordDataResponse::getRecordDataList()
 {
     return recordDataList_;

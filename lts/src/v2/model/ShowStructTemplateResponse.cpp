@@ -200,7 +200,6 @@ bool ShowStructTemplateResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<StructFieldInfoReturn>& ShowStructTemplateResponse::getDemoFields()
 {
     return demoFields_;

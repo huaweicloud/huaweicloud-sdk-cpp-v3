@@ -49,7 +49,6 @@ bool ListIpsProtectModeUsingPostResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 IpsProtectModeObject ListIpsProtectModeUsingPostResponse::getData() const
 {
     return data_;

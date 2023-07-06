@@ -145,7 +145,6 @@ bool UpdateRecordCallbackConfigResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateRecordCallbackConfigResponse::getId() const
 {
     return id_;

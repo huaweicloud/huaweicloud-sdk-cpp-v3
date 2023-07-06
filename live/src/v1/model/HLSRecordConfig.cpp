@@ -106,7 +106,6 @@ bool HLSRecordConfig::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t HLSRecordConfig::getRecordCycle() const
 {
     return recordCycle_;

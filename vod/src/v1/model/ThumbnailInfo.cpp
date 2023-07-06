@@ -90,7 +90,6 @@ bool ThumbnailInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ThumbnailRsp>& ThumbnailInfo::getSample()
 {
     return sample_;

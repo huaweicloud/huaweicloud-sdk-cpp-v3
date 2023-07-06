@@ -21,6 +21,10 @@ CreateAccessConfigRequestBody::CreateAccessConfigRequestBody()
     logInfoIsSet_ = false;
     hostGroupInfoIsSet_ = false;
     accessConfigTagIsSet_ = false;
+    binaryCollect_ = false;
+    binaryCollectIsSet_ = false;
+    logSplit_ = false;
+    logSplitIsSet_ = false;
 }
 
 CreateAccessConfigRequestBody::~CreateAccessConfigRequestBody() = default;
@@ -50,6 +54,12 @@ web::json::value CreateAccessConfigRequestBody::toJson() const
     }
     if(accessConfigTagIsSet_) {
         val[utility::conversions::to_string_t("access_config_tag")] = ModelBase::toJson(accessConfigTag_);
+    }
+    if(binaryCollectIsSet_) {
+        val[utility::conversions::to_string_t("binary_collect")] = ModelBase::toJson(binaryCollect_);
+    }
+    if(logSplitIsSet_) {
+        val[utility::conversions::to_string_t("log_split")] = ModelBase::toJson(logSplit_);
     }
 
     return val;
@@ -113,9 +123,26 @@ bool CreateAccessConfigRequestBody::fromJson(const web::json::value& val)
             setAccessConfigTag(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("binary_collect"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("binary_collect"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBinaryCollect(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("log_split"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("log_split"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLogSplit(refVal);
+        }
+    }
     return ok;
 }
-
 
 std::string CreateAccessConfigRequestBody::getAccessConfigName() const
 {
@@ -241,6 +268,48 @@ bool CreateAccessConfigRequestBody::accessConfigTagIsSet() const
 void CreateAccessConfigRequestBody::unsetaccessConfigTag()
 {
     accessConfigTagIsSet_ = false;
+}
+
+bool CreateAccessConfigRequestBody::isBinaryCollect() const
+{
+    return binaryCollect_;
+}
+
+void CreateAccessConfigRequestBody::setBinaryCollect(bool value)
+{
+    binaryCollect_ = value;
+    binaryCollectIsSet_ = true;
+}
+
+bool CreateAccessConfigRequestBody::binaryCollectIsSet() const
+{
+    return binaryCollectIsSet_;
+}
+
+void CreateAccessConfigRequestBody::unsetbinaryCollect()
+{
+    binaryCollectIsSet_ = false;
+}
+
+bool CreateAccessConfigRequestBody::isLogSplit() const
+{
+    return logSplit_;
+}
+
+void CreateAccessConfigRequestBody::setLogSplit(bool value)
+{
+    logSplit_ = value;
+    logSplitIsSet_ = true;
+}
+
+bool CreateAccessConfigRequestBody::logSplitIsSet() const
+{
+    return logSplitIsSet_;
+}
+
+void CreateAccessConfigRequestBody::unsetlogSplit()
+{
+    logSplitIsSet_ = false;
 }
 
 }

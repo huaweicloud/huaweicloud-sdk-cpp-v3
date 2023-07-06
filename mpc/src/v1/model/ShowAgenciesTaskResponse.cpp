@@ -50,7 +50,6 @@ bool ShowAgenciesTaskResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowAgenciesTaskResponse::getOperateType() const
 {
     return operateType_;

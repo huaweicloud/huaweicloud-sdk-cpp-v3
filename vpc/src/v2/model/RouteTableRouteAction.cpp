@@ -75,7 +75,6 @@ bool RouteTableRouteAction::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<AddRouteTableRoute>& RouteTableRouteAction::getAdd()
 {
     return add_;

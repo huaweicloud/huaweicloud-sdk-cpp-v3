@@ -36,7 +36,6 @@ bool GlanceListImageMemberSchemasRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

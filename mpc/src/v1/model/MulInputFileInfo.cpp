@@ -63,7 +63,6 @@ bool MulInputFileInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string MulInputFileInfo::getLanguage() const
 {
     return language_;

@@ -118,7 +118,6 @@ bool NovaCreateServersResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NovaCreateServersResult::getId() const
 {
     return id_;

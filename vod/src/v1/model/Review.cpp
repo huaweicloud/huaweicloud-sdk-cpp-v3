@@ -106,7 +106,6 @@ bool Review::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string Review::getTemplateId() const
 {
     return templateId_;

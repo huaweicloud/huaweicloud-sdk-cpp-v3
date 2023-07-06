@@ -158,7 +158,6 @@ bool CreatePortOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreatePortOption::getName() const
 {
     return name_;

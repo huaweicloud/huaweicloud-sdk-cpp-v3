@@ -106,7 +106,6 @@ bool UpdateAssetMetaReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateAssetMetaReq::getAssetId() const
 {
     return assetId_;

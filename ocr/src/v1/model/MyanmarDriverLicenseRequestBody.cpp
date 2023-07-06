@@ -78,7 +78,6 @@ bool MyanmarDriverLicenseRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string MyanmarDriverLicenseRequestBody::getImage() const
 {
     return image_;

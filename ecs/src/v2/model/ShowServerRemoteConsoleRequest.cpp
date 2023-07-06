@@ -63,7 +63,6 @@ bool ShowServerRemoteConsoleRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowServerRemoteConsoleRequest::getServerId() const
 {
     return serverId_;

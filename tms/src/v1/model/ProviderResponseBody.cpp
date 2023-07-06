@@ -77,7 +77,6 @@ bool ProviderResponseBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ProviderResponseBody::getProvider() const
 {
     return provider_;

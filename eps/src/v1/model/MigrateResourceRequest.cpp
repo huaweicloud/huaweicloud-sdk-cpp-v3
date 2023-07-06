@@ -63,7 +63,6 @@ bool MigrateResourceRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string MigrateResourceRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

@@ -63,7 +63,6 @@ bool RecognizeExitEntryPermitRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RecognizeExitEntryPermitRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

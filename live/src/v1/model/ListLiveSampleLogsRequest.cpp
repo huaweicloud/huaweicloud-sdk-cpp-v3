@@ -78,7 +78,6 @@ bool ListLiveSampleLogsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListLiveSampleLogsRequest::getPlayDomain() const
 {
     return playDomain_;

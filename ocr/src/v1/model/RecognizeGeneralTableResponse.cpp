@@ -49,7 +49,6 @@ bool RecognizeGeneralTableResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 GeneralTableResult RecognizeGeneralTableResponse::getResult() const
 {
     return result_;

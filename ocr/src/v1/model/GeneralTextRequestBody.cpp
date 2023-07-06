@@ -134,7 +134,6 @@ bool GeneralTextRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string GeneralTextRequestBody::getImage() const
 {
     return image_;

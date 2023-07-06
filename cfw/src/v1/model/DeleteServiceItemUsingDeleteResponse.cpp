@@ -49,7 +49,6 @@ bool DeleteServiceItemUsingDeleteResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 IdObject DeleteServiceItemUsingDeleteResponse::getData() const
 {
     return data_;

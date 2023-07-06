@@ -172,7 +172,6 @@ bool Word::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string Word::getText() const
 {
     return text_;

@@ -348,7 +348,6 @@ bool PostPaidServer::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PostPaidServer::getAutoTerminateTime() const
 {
     return autoTerminateTime_;

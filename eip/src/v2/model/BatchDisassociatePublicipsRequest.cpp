@@ -49,7 +49,6 @@ bool BatchDisassociatePublicipsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 BatchDeletePublicIpRequestBody BatchDisassociatePublicipsRequest::getBody() const
 {
     return body_;

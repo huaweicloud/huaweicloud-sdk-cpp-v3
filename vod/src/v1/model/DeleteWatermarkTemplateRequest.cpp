@@ -64,7 +64,6 @@ bool DeleteWatermarkTemplateRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteWatermarkTemplateRequest::getXSdkDate() const
 {
     return xSdkDate_;

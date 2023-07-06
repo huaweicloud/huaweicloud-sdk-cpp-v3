@@ -36,7 +36,6 @@ bool BatchDeleteVolumeTagsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

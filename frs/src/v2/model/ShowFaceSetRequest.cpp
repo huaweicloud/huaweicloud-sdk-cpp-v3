@@ -64,7 +64,6 @@ bool ShowFaceSetRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowFaceSetRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

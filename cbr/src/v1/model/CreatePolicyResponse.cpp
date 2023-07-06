@@ -49,7 +49,6 @@ bool CreatePolicyResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 Policy CreatePolicyResponse::getPolicy() const
 {
     return policy_;

@@ -120,7 +120,6 @@ bool CreateTransferRequestBody_log_transfer_info_log_agency_transfer::fromJson(c
     return ok;
 }
 
-
 std::string CreateTransferRequestBody_log_transfer_info_log_agency_transfer::getAgencyDomainId() const
 {
     return agencyDomainId_;

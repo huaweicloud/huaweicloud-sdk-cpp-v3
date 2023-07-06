@@ -204,7 +204,6 @@ bool ListPublicipPoolRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListPublicipPoolRequest::getMarker() const
 {
     return marker_;

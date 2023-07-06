@@ -49,7 +49,6 @@ bool AccessConfigHostGroupIdListCreate::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& AccessConfigHostGroupIdListCreate::getHostGroupIdList()
 {
     return hostGroupIdList_;

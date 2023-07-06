@@ -50,7 +50,6 @@ bool ShowVpcTagsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowVpcTagsRequest::getVpcId() const
 {
     return vpcId_;

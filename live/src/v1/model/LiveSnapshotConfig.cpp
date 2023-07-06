@@ -147,7 +147,6 @@ bool LiveSnapshotConfig::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string LiveSnapshotConfig::getDomain() const
 {
     return domain_;

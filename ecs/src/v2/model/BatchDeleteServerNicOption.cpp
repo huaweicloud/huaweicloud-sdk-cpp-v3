@@ -50,7 +50,6 @@ bool BatchDeleteServerNicOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BatchDeleteServerNicOption::getId() const
 {
     return id_;

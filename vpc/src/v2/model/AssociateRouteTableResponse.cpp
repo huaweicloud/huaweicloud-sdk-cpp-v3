@@ -49,7 +49,6 @@ bool AssociateRouteTableResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 RouteTableResp AssociateRouteTableResponse::getRoutetable() const
 {
     return routetable_;

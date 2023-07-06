@@ -77,7 +77,6 @@ bool ShowFacesByFaceIdResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowFacesByFaceIdResponse::getFaceSetId() const
 {
     return faceSetId_;

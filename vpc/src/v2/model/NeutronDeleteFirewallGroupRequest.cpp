@@ -50,7 +50,6 @@ bool NeutronDeleteFirewallGroupRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NeutronDeleteFirewallGroupRequest::getFirewallGroupId() const
 {
     return firewallGroupId_;

@@ -190,7 +190,6 @@ bool ListShareBandwidthTypesRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListShareBandwidthTypesRequest::getFields() const
 {
     return fields_;

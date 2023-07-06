@@ -77,7 +77,6 @@ bool UpdateClusterSettingRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateClusterSettingRequest::getClusterId() const
 {
     return clusterId_;

@@ -36,7 +36,6 @@ bool DeleteEditingJobResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

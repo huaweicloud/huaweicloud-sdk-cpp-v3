@@ -78,7 +78,6 @@ bool DnsAssignMent::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DnsAssignMent::getHostname() const
 {
     return hostname_;

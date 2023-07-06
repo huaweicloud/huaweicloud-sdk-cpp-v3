@@ -49,7 +49,6 @@ bool RecognizeIdCardResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 IdCardResult RecognizeIdCardResponse::getResult() const
 {
     return result_;

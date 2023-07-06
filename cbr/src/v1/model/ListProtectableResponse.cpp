@@ -49,7 +49,6 @@ bool ListProtectableResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ProtectablesResp>& ListProtectableResponse::getInstances()
 {
     return instances_;

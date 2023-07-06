@@ -49,7 +49,6 @@ bool ListSubnetsByTagsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ListSubnetsByTagsRequestBody ListSubnetsByTagsRequest::getBody() const
 {
     return body_;

@@ -49,7 +49,6 @@ bool AddPublicipsIntoSharedBandwidthOption::fromJson(const web::json::value& val
     return ok;
 }
 
-
 std::vector<InsertPublicipInfo>& AddPublicipsIntoSharedBandwidthOption::getPublicipInfo()
 {
     return publicipInfo_;

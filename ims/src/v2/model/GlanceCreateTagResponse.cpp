@@ -36,7 +36,6 @@ bool GlanceCreateTagResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

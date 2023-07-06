@@ -77,7 +77,6 @@ bool ListTimeLineTrafficStatisticsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListTimeLineTrafficStatisticsRequest::getContentType() const
 {
     return contentType_;

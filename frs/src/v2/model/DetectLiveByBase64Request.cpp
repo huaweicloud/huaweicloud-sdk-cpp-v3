@@ -63,7 +63,6 @@ bool DetectLiveByBase64Request::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DetectLiveByBase64Request::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

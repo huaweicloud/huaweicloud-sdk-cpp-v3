@@ -50,7 +50,6 @@ bool DeleteVpcRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteVpcRequest::getVpcId() const
 {
     return vpcId_;

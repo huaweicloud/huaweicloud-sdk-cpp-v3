@@ -49,7 +49,6 @@ bool BatchCreateSharedBandwidthsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 BatchCreateBandwidthRequestBody BatchCreateSharedBandwidthsRequest::getBody() const
 {
     return body_;

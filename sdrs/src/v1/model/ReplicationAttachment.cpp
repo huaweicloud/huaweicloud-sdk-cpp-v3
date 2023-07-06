@@ -64,7 +64,6 @@ bool ReplicationAttachment::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ReplicationAttachment::getProtectedInstance() const
 {
     return protectedInstance_;

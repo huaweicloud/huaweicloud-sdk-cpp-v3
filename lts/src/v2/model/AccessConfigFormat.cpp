@@ -62,7 +62,6 @@ bool AccessConfigFormat::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 AccessConfigFormatSingle AccessConfigFormat::getSingle() const
 {
     return single_;

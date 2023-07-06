@@ -77,7 +77,6 @@ bool HttpQueryCfwFlowLogsResponseDTO_data::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t HttpQueryCfwFlowLogsResponseDTO_data::getTotal() const
 {
     return total_;

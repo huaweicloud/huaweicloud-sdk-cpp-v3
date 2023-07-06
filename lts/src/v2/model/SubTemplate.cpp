@@ -64,7 +64,6 @@ bool SubTemplate::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string SubTemplate::getSubType() const
 {
     return subType_;

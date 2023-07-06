@@ -147,7 +147,6 @@ bool ShowResourcesJobDetailResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowResourcesJobDetailResponse::getJobId() const
 {
     return jobId_;

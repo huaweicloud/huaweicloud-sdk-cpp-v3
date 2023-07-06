@@ -117,7 +117,6 @@ bool ListServersByTagRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListServersByTagRequestBody::getAction() const
 {
     return action_;

@@ -92,7 +92,6 @@ bool ListRecordCallbackConfigsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListRecordCallbackConfigsRequest::getPublishDomain() const
 {
     return publishDomain_;

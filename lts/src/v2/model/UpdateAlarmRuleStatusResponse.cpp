@@ -50,7 +50,6 @@ bool UpdateAlarmRuleStatusResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateAlarmRuleStatusResponse::getBody() const
 {
     return body_;

@@ -50,7 +50,6 @@ bool BatchCreateProtectedInstancesResponse::fromJson(const web::json::value& val
     return ok;
 }
 
-
 std::string BatchCreateProtectedInstancesResponse::getJobId() const
 {
     return jobId_;

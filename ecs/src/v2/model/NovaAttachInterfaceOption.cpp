@@ -77,7 +77,6 @@ bool NovaAttachInterfaceOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<NovaAttachInterfaceFixedIp>& NovaAttachInterfaceOption::getFixedIps()
 {
     return fixedIps_;

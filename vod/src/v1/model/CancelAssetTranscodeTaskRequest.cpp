@@ -64,7 +64,6 @@ bool CancelAssetTranscodeTaskRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CancelAssetTranscodeTaskRequest::getXSdkDate() const
 {
     return xSdkDate_;

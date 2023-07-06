@@ -64,7 +64,6 @@ bool DeleteSubnetRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteSubnetRequest::getVpcId() const
 {
     return vpcId_;

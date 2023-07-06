@@ -103,7 +103,6 @@ bool ResqEpResouce::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& ResqEpResouce::getProjects()
 {
     return projects_;

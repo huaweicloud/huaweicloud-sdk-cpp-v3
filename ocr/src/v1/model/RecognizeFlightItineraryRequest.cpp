@@ -63,7 +63,6 @@ bool RecognizeFlightItineraryRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RecognizeFlightItineraryRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

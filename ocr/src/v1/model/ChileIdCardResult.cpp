@@ -174,7 +174,6 @@ bool ChileIdCardResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& ChileIdCardResult::getSurname()
 {
     return surname_;

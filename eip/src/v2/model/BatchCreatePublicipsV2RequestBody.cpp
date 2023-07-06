@@ -90,7 +90,6 @@ bool BatchCreatePublicipsV2RequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 BatchBandwidth BatchCreatePublicipsV2RequestBody::getBandwidth() const
 {
     return bandwidth_;

@@ -50,7 +50,6 @@ bool ResizeServerExtendParam::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ResizeServerExtendParam::getIsAutoPay() const
 {
     return isAutoPay_;

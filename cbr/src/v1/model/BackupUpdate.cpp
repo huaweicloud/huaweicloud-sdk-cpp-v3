@@ -50,7 +50,6 @@ bool BackupUpdate::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BackupUpdate::getName() const
 {
     return name_;

@@ -64,7 +64,6 @@ bool FaceCompareUrlReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string FaceCompareUrlReq::getImage1Url() const
 {
     return image1Url_;

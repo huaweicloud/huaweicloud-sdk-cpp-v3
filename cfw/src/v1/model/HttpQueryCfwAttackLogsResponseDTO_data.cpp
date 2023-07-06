@@ -77,7 +77,6 @@ bool HttpQueryCfwAttackLogsResponseDTO_data::fromJson(const web::json::value& va
     return ok;
 }
 
-
 int32_t HttpQueryCfwAttackLogsResponseDTO_data::getTotal() const
 {
     return total_;

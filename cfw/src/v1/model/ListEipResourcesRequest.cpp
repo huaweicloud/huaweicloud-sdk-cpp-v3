@@ -204,7 +204,6 @@ bool ListEipResourcesRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListEipResourcesRequest::getObjectId() const
 {
     return objectId_;

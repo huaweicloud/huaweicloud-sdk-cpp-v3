@@ -49,7 +49,6 @@ bool AgentRegisterReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 AgentRegister AgentRegisterReq::getAgent() const
 {
     return agent_;

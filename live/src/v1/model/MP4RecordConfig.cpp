@@ -78,7 +78,6 @@ bool MP4RecordConfig::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t MP4RecordConfig::getRecordCycle() const
 {
     return recordCycle_;

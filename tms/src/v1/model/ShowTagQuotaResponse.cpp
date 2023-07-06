@@ -49,7 +49,6 @@ bool ShowTagQuotaResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<TagQuota>& ShowTagQuotaResponse::getQuotas()
 {
     return quotas_;

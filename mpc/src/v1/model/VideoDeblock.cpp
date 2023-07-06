@@ -64,7 +64,6 @@ bool VideoDeblock::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string VideoDeblock::getName() const
 {
     return name_;

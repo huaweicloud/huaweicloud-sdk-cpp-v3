@@ -89,7 +89,6 @@ bool AutoClassificationResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 AutoClassificationResult_status AutoClassificationResult::getStatus() const
 {
     return status_;

@@ -213,7 +213,6 @@ bool VaultOrder::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string VaultOrder::getName() const
 {
     return name_;

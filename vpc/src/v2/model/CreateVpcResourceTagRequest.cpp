@@ -63,7 +63,6 @@ bool CreateVpcResourceTagRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateVpcResourceTagRequest::getVpcId() const
 {
     return vpcId_;

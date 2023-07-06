@@ -106,7 +106,6 @@ bool AttachServerVolumeOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AttachServerVolumeOption::getDevice() const
 {
     return device_;

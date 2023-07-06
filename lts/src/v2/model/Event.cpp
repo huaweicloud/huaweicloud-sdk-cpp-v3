@@ -63,7 +63,6 @@ bool Event::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 Metadata Event::getMetadata() const
 {
     return metadata_;

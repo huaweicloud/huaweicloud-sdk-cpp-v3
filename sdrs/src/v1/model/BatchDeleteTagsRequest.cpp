@@ -63,7 +63,6 @@ bool BatchDeleteTagsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BatchDeleteTagsRequest::getProtectedInstanceId() const
 {
     return protectedInstanceId_;

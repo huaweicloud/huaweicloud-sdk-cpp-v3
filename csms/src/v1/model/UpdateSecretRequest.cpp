@@ -63,7 +63,6 @@ bool UpdateSecretRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateSecretRequest::getSecretName() const
 {
     return secretName_;

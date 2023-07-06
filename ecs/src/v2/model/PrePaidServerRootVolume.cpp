@@ -132,7 +132,6 @@ bool PrePaidServerRootVolume::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PrePaidServerRootVolume::getVolumetype() const
 {
     return volumetype_;

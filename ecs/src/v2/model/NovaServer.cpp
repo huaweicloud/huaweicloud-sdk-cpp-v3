@@ -628,7 +628,6 @@ bool NovaServer::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NovaServer::getName() const
 {
     return name_;

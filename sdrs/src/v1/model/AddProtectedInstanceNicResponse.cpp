@@ -50,7 +50,6 @@ bool AddProtectedInstanceNicResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AddProtectedInstanceNicResponse::getJobId() const
 {
     return jobId_;

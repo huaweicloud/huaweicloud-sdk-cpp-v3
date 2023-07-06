@@ -63,7 +63,6 @@ bool ResetServerPasswordRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ResetServerPasswordRequest::getServerId() const
 {
     return serverId_;

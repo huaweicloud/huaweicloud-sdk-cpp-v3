@@ -120,7 +120,6 @@ bool OpExtendInfoBckup::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string OpExtendInfoBckup::getAppConsistencyErrorCode() const
 {
     return appConsistencyErrorCode_;

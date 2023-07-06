@@ -91,7 +91,6 @@ bool ListBackupsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<BackupResp>& ListBackupsResponse::getBackups()
 {
     return backups_;

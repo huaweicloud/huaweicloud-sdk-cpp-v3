@@ -49,7 +49,6 @@ bool ListSecurityGroupsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<SecurityGroup>& ListSecurityGroupsResponse::getSecurityGroups()
 {
     return securityGroups_;

@@ -78,7 +78,6 @@ bool ListLogHistogramResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListLogHistogramResponse::getHistogram() const
 {
     return histogram_;

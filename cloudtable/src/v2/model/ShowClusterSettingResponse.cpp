@@ -63,7 +63,6 @@ bool ShowClusterSettingResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t ShowClusterSettingResponse::getParmStatus() const
 {
     return parmStatus_;

@@ -50,7 +50,6 @@ bool ShowResetPasswordFlagRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowResetPasswordFlagRequest::getServerId() const
 {
     return serverId_;

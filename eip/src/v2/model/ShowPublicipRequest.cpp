@@ -50,7 +50,6 @@ bool ShowPublicipRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowPublicipRequest::getPublicipId() const
 {
     return publicipId_;

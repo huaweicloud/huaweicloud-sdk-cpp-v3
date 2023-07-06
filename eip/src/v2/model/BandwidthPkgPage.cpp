@@ -64,7 +64,6 @@ bool BandwidthPkgPage::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BandwidthPkgPage::getHref() const
 {
     return href_;

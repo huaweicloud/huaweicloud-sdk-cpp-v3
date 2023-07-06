@@ -89,7 +89,6 @@ bool TransTemplate::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string TransTemplate::getTemplateName() const
 {
     return templateName_;

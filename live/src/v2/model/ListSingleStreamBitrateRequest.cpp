@@ -106,7 +106,6 @@ bool ListSingleStreamBitrateRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListSingleStreamBitrateRequest::getDomain() const
 {
     return domain_;

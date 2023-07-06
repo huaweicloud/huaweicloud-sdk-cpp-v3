@@ -64,7 +64,6 @@ bool DomainMapping::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DomainMapping::getPullDomain() const
 {
     return pullDomain_;

@@ -49,7 +49,6 @@ bool UpdatePublicipResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 PublicipUpdateResp UpdatePublicipResponse::getPublicip() const
 {
     return publicip_;

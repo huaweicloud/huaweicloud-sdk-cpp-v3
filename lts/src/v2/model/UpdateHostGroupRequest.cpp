@@ -63,7 +63,6 @@ bool UpdateHostGroupRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateHostGroupRequest::getContentType() const
 {
     return contentType_;

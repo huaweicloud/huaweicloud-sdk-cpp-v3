@@ -91,7 +91,6 @@ bool Resource::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ResourceExtraInfo Resource::getExtraInfo() const
 {
     return extraInfo_;

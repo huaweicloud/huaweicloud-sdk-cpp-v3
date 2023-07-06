@@ -162,7 +162,6 @@ bool TextWatermark::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string TextWatermark::getDx() const
 {
     return dx_;

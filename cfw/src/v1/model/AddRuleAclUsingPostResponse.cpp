@@ -49,7 +49,6 @@ bool AddRuleAclUsingPostResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 RuleIdList AddRuleAclUsingPostResponse::getData() const
 {
     return data_;

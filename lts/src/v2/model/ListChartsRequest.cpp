@@ -106,7 +106,6 @@ bool ListChartsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListChartsRequest::getLogGroupId() const
 {
     return logGroupId_;

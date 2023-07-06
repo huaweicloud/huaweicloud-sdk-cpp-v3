@@ -63,7 +63,6 @@ bool FlashResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t FlashResult::getChannelId() const
 {
     return channelId_;

@@ -50,7 +50,6 @@ bool CreateTemplateGroupCollectionResponse::fromJson(const web::json::value& val
     return ok;
 }
 
-
 std::string CreateTemplateGroupCollectionResponse::getGroupCollectionId() const
 {
     return groupCollectionId_;

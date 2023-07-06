@@ -50,7 +50,6 @@ bool NovaAttachInterfaceFixedIp::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NovaAttachInterfaceFixedIp::getIpAddress() const
 {
     return ipAddress_;

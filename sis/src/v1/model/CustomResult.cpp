@@ -50,7 +50,6 @@ bool CustomResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CustomResult::getData() const
 {
     return data_;

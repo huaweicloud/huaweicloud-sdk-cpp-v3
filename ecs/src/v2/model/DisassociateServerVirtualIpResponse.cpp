@@ -50,7 +50,6 @@ bool DisassociateServerVirtualIpResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DisassociateServerVirtualIpResponse::getPortId() const
 {
     return portId_;

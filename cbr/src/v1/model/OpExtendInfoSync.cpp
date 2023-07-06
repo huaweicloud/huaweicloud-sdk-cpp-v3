@@ -78,7 +78,6 @@ bool OpExtendInfoSync::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t OpExtendInfoSync::getSyncBackupNum() const
 {
     return syncBackupNum_;

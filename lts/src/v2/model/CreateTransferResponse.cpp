@@ -104,7 +104,6 @@ bool CreateTransferResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateTransferResponse::getLogGroupId() const
 {
     return logGroupId_;

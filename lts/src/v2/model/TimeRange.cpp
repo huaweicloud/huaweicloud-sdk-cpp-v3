@@ -106,7 +106,6 @@ bool TimeRange::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string TimeRange::getSqlTimeZone() const
 {
     return sqlTimeZone_;

@@ -50,7 +50,6 @@ bool RejectVpcPeeringRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RejectVpcPeeringRequest::getPeeringId() const
 {
     return peeringId_;

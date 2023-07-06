@@ -50,7 +50,6 @@ bool ImageData::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ImageData::getImageId() const
 {
     return imageId_;

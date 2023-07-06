@@ -76,7 +76,6 @@ bool BulkCreateAndDeleteVaultTagsReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<Tag>& BulkCreateAndDeleteVaultTagsReq::getTags()
 {
     return tags_;

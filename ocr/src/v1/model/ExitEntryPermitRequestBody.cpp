@@ -92,7 +92,6 @@ bool ExitEntryPermitRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ExitEntryPermitRequestBody::getImage() const
 {
     return image_;

@@ -147,7 +147,6 @@ bool CreateTakeOverTaskReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateTakeOverTaskReq::getBucket() const
 {
     return bucket_;

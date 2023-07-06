@@ -64,7 +64,6 @@ bool ListSecretsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListSecretsRequest::getLimit() const
 {
     return limit_;

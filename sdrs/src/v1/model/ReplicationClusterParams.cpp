@@ -50,7 +50,6 @@ bool ReplicationClusterParams::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ReplicationClusterParams::getAvailabilityZone() const
 {
     return availabilityZone_;

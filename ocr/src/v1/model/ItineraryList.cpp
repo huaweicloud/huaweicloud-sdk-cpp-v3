@@ -190,7 +190,6 @@ bool ItineraryList::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ItineraryList::getDepartureStation() const
 {
     return departureStation_;

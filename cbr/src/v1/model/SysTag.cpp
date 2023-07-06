@@ -64,7 +64,6 @@ bool SysTag::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string SysTag::getKey() const
 {
     return key_;

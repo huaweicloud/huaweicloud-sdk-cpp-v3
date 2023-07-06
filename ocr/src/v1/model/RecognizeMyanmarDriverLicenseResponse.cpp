@@ -49,7 +49,6 @@ bool RecognizeMyanmarDriverLicenseResponse::fromJson(const web::json::value& val
     return ok;
 }
 
-
 MyanmarDriverLicenseResult RecognizeMyanmarDriverLicenseResponse::getResult() const
 {
     return result_;

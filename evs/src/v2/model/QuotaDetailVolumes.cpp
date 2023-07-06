@@ -78,7 +78,6 @@ bool QuotaDetailVolumes::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t QuotaDetailVolumes::getInUse() const
 {
     return inUse_;

@@ -49,7 +49,6 @@ bool CreateAgenciesTaskRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 AgenciesTaskReq CreateAgenciesTaskRequest::getBody() const
 {
     return body_;

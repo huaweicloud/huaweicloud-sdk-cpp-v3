@@ -63,7 +63,6 @@ bool CreateTransferRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateTransferRequest::getContentType() const
 {
     return contentType_;

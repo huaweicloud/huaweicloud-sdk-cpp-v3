@@ -104,7 +104,6 @@ bool ResqTagResource::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ResqTagResource::getProjectId() const
 {
     return projectId_;

@@ -64,7 +64,6 @@ bool ServerTagMatch::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ServerTagMatch::getKey() const
 {
     return key_;

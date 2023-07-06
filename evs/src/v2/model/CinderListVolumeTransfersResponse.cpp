@@ -49,7 +49,6 @@ bool CinderListVolumeTransfersResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<VolumeTransferSummary>& CinderListVolumeTransfersResponse::getTransfers()
 {
     return transfers_;

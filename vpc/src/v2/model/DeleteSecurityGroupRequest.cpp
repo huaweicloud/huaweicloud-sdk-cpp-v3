@@ -50,7 +50,6 @@ bool DeleteSecurityGroupRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteSecurityGroupRequest::getSecurityGroupId() const
 {
     return securityGroupId_;

@@ -229,7 +229,6 @@ bool ExitEntryPermitConfidence::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 float ExitEntryPermitConfidence::getName() const
 {
     return name_;

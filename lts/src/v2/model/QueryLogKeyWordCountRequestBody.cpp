@@ -134,7 +134,6 @@ bool QueryLogKeyWordCountRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string QueryLogKeyWordCountRequestBody::getStartTime() const
 {
     return startTime_;

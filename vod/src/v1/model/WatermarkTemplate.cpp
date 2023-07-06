@@ -246,7 +246,6 @@ bool WatermarkTemplate::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string WatermarkTemplate::getName() const
 {
     return name_;

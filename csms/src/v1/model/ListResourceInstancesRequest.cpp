@@ -63,7 +63,6 @@ bool ListResourceInstancesRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListResourceInstancesRequest::getResourceInstances() const
 {
     return resourceInstances_;

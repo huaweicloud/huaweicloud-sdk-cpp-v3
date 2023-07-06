@@ -50,7 +50,6 @@ bool GlanceAddImageMemberRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string GlanceAddImageMemberRequestBody::getMember() const
 {
     return member_;

@@ -49,7 +49,6 @@ bool CreateMpeCallBackRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 MpeCallBackReq CreateMpeCallBackRequest::getBody() const
 {
     return body_;

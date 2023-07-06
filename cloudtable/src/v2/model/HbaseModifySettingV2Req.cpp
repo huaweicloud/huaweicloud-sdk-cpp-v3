@@ -63,7 +63,6 @@ bool HbaseModifySettingV2Req::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string HbaseModifySettingV2Req::getIsReboot() const
 {
     return isReboot_;

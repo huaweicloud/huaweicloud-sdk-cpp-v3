@@ -63,7 +63,6 @@ bool RecognizeHkIdCardRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RecognizeHkIdCardRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

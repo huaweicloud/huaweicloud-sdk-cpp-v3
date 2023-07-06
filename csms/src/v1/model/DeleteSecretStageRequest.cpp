@@ -64,7 +64,6 @@ bool DeleteSecretStageRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteSecretStageRequest::getSecretName() const
 {
     return secretName_;

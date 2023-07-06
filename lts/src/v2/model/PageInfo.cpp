@@ -78,7 +78,6 @@ bool PageInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PageInfo::getNextMarker() const
 {
     return nextMarker_;

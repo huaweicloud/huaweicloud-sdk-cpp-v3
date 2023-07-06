@@ -77,7 +77,6 @@ bool ListTemplateRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<int32_t>& ListTemplateRequest::getTemplateId()
 {
     return templateId_;

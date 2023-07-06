@@ -201,7 +201,6 @@ bool ListAssetListRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListAssetListRequest::getXSdkDate() const
 {
     return xSdkDate_;

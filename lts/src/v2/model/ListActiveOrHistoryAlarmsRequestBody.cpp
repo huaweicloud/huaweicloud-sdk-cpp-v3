@@ -146,7 +146,6 @@ bool ListActiveOrHistoryAlarmsRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t ListActiveOrHistoryAlarmsRequestBody::getStep() const
 {
     return step_;

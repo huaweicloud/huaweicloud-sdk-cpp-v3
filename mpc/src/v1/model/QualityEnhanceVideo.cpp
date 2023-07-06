@@ -114,7 +114,6 @@ bool QualityEnhanceVideo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 VideoDenoise QualityEnhanceVideo::getVideoDenoise() const
 {
     return videoDenoise_;

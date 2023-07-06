@@ -76,7 +76,6 @@ bool ListShareBandwidthTypesResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ShareBandwidthTypeShowResp>& ListShareBandwidthTypesResponse::getShareBandwidthTypes()
 {
     return shareBandwidthTypes_;

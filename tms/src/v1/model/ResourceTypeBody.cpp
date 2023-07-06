@@ -91,7 +91,6 @@ bool ResourceTypeBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ResourceTypeBody::getResourceType() const
 {
     return resourceType_;

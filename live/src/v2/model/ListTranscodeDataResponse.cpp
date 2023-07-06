@@ -76,7 +76,6 @@ bool ListTranscodeDataResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<TranscodeData>& ListTranscodeDataResponse::getTranscodeDataList()
 {
     return transcodeDataList_;

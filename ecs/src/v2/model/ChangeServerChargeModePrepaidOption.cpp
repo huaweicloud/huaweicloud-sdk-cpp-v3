@@ -120,7 +120,6 @@ bool ChangeServerChargeModePrepaidOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 bool ChangeServerChargeModePrepaidOption::isIncludeDataDisks() const
 {
     return includeDataDisks_;

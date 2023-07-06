@@ -36,7 +36,6 @@ bool DeleteVpcRouteResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

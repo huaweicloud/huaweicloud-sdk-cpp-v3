@@ -63,7 +63,6 @@ bool CreateServerGroupOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateServerGroupOption::getName() const
 {
     return name_;

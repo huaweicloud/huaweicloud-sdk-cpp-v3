@@ -77,7 +77,6 @@ bool ListEncryptTaskResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<EachEncryptRsp>& ListEncryptTaskResponse::getTaskArray()
 {
     return taskArray_;

@@ -92,7 +92,6 @@ bool ListCriteriasRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListCriteriasRequest::getGroupId() const
 {
     return groupId_;

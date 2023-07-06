@@ -92,7 +92,6 @@ bool AddressSetDetailResponseDTO_data::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AddressSetDetailResponseDTO_data::getId() const
 {
     return id_;

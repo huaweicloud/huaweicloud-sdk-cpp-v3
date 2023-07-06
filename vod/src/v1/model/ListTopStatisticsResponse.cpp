@@ -49,7 +49,6 @@ bool ListTopStatisticsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<TopUrl>& ListTopStatisticsResponse::getTopUrls()
 {
     return topUrls_;

@@ -63,7 +63,6 @@ bool UpdateRecordRuleRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateRecordRuleRequest::getId() const
 {
     return id_;

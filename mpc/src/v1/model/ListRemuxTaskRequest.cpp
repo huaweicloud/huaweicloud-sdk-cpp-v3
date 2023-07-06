@@ -147,7 +147,6 @@ bool ListRemuxTaskRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& ListRemuxTaskRequest::getTaskId()
 {
     return taskId_;

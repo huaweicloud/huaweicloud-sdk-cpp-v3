@@ -88,7 +88,6 @@ bool AccessConfigDeatil::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& AccessConfigDeatil::getPaths()
 {
     return paths_;

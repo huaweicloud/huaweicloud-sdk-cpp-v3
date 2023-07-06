@@ -50,7 +50,6 @@ bool ShowServerTagsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowServerTagsRequest::getServerId() const
 {
     return serverId_;

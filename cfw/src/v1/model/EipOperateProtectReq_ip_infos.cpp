@@ -78,7 +78,6 @@ bool EipOperateProtectReq_ip_infos::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string EipOperateProtectReq_ip_infos::getId() const
 {
     return id_;

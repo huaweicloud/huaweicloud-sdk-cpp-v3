@@ -63,7 +63,6 @@ bool CreateClusterRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateClusterRequest::getXLanguage() const
 {
     return xLanguage_;

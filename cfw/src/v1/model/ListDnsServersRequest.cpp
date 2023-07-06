@@ -92,7 +92,6 @@ bool ListDnsServersRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t ListDnsServersRequest::getLimit() const
 {
     return limit_;

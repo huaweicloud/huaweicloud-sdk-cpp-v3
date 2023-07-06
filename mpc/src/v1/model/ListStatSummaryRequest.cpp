@@ -78,7 +78,6 @@ bool ListStatSummaryRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListStatSummaryRequest::getStartTime() const
 {
     return startTime_;

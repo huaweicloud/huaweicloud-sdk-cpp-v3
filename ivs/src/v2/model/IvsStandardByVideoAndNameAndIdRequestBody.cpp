@@ -62,7 +62,6 @@ bool IvsStandardByVideoAndNameAndIdRequestBody::fromJson(const web::json::value&
     return ok;
 }
 
-
 Meta IvsStandardByVideoAndNameAndIdRequestBody::getMeta() const
 {
     return meta_;

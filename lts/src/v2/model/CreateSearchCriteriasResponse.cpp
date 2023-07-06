@@ -50,7 +50,6 @@ bool CreateSearchCriteriasResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateSearchCriteriasResponse::getId() const
 {
     return id_;

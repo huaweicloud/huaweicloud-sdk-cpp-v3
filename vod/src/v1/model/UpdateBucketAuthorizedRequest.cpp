@@ -63,7 +63,6 @@ bool UpdateBucketAuthorizedRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateBucketAuthorizedRequest::getXSdkDate() const
 {
     return xSdkDate_;

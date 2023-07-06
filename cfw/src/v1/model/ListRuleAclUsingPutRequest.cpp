@@ -91,7 +91,6 @@ bool ListRuleAclUsingPutRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListRuleAclUsingPutRequest::getAclRuleId() const
 {
     return aclRuleId_;

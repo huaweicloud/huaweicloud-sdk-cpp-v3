@@ -49,7 +49,6 @@ bool ListLogGroupsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<LogGroup>& ListLogGroupsResponse::getLogGroups()
 {
     return logGroups_;

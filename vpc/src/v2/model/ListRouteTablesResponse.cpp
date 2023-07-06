@@ -49,7 +49,6 @@ bool ListRouteTablesResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<RouteTableListResp>& ListRouteTablesResponse::getRoutetables()
 {
     return routetables_;

@@ -176,7 +176,6 @@ bool OpExtendInfoReplication::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string OpExtendInfoReplication::getDestinationBackupId() const
 {
     return destinationBackupId_;

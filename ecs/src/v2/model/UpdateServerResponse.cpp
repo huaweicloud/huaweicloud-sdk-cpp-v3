@@ -49,7 +49,6 @@ bool UpdateServerResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 UpdateServerResult UpdateServerResponse::getServer() const
 {
     return server_;

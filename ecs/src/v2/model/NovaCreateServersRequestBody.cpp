@@ -62,7 +62,6 @@ bool NovaCreateServersRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 NovaCreateServersOption NovaCreateServersRequestBody::getServer() const
 {
     return server_;

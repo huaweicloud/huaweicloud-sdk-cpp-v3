@@ -145,7 +145,6 @@ bool MediaProcessTaskInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string MediaProcessTaskInfo::getTaskId() const
 {
     return taskId_;

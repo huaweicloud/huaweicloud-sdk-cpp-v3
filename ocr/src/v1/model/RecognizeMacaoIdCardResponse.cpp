@@ -49,7 +49,6 @@ bool RecognizeMacaoIdCardResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 MacaoIdCardResult RecognizeMacaoIdCardResponse::getResult() const
 {
     return result_;

@@ -49,7 +49,6 @@ bool GlanceCreateImageMetadataRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 GlanceCreateImageMetadataRequestBody GlanceCreateImageMetadataRequest::getBody() const
 {
     return body_;

@@ -64,7 +64,6 @@ bool PrePaidServerDataVolumeMetadata::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PrePaidServerDataVolumeMetadata::getSystemEncrypted() const
 {
     return systemEncrypted_;

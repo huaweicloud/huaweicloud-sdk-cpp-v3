@@ -412,7 +412,6 @@ bool ShowClusterDetailResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& ShowClusterDetailResponse::getActions()
 {
     return actions_;

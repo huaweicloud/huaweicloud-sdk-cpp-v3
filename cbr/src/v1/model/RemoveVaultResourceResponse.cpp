@@ -49,7 +49,6 @@ bool RemoveVaultResourceResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& RemoveVaultResourceResponse::getRemoveResourceIds()
 {
     return removeResourceIds_;

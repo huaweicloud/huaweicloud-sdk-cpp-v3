@@ -120,7 +120,6 @@ bool Privateip::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string Privateip::getStatus() const
 {
     return status_;

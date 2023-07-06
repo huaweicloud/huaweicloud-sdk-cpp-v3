@@ -50,7 +50,6 @@ bool ExtendReplicationRequestParams::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t ExtendReplicationRequestParams::getNewSize() const
 {
     return newSize_;

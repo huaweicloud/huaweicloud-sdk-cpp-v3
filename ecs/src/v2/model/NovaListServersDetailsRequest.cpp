@@ -218,7 +218,6 @@ bool NovaListServersDetailsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NovaListServersDetailsRequest::getChangesSince() const
 {
     return changesSince_;

@@ -231,7 +231,6 @@ bool SnapshotList::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string SnapshotList::getId() const
 {
     return id_;

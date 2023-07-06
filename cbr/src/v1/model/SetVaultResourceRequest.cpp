@@ -63,7 +63,6 @@ bool SetVaultResourceRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string SetVaultResourceRequest::getVaultId() const
 {
     return vaultId_;

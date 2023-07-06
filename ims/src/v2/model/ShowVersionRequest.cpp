@@ -50,7 +50,6 @@ bool ShowVersionRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowVersionRequest::getVersion() const
 {
     return version_;

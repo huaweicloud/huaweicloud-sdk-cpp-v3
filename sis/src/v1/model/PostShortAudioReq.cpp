@@ -63,7 +63,6 @@ bool PostShortAudioReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 Config PostShortAudioReq::getConfig() const
 {
     return config_;

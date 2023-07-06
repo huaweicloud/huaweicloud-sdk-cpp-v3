@@ -36,7 +36,6 @@ bool EnableEnterpriseProjectResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

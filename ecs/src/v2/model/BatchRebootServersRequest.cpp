@@ -49,7 +49,6 @@ bool BatchRebootServersRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 BatchRebootServersRequestBody BatchRebootServersRequest::getBody() const
 {
     return body_;

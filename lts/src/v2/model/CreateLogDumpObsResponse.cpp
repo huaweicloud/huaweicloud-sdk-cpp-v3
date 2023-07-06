@@ -50,7 +50,6 @@ bool CreateLogDumpObsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateLogDumpObsResponse::getLogDumpObsId() const
 {
     return logDumpObsId_;

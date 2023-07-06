@@ -49,7 +49,6 @@ bool CreateRemuxTaskRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 CreateRemuxTaskReq CreateRemuxTaskRequest::getBody() const
 {
     return body_;

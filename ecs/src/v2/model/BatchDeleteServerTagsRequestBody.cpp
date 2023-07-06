@@ -63,7 +63,6 @@ bool BatchDeleteServerTagsRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BatchDeleteServerTagsRequestBody::getAction() const
 {
     return action_;

@@ -49,7 +49,6 @@ bool RecognizeVinResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 VINResult RecognizeVinResponse::getResult() const
 {
     return result_;

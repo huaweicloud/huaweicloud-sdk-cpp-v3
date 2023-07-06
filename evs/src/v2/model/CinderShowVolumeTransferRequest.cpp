@@ -50,7 +50,6 @@ bool CinderShowVolumeTransferRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CinderShowVolumeTransferRequest::getTransferId() const
 {
     return transferId_;

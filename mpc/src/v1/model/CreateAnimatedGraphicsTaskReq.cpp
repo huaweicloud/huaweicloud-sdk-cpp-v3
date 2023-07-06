@@ -89,7 +89,6 @@ bool CreateAnimatedGraphicsTaskReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ObsObjInfo CreateAnimatedGraphicsTaskReq::getInput() const
 {
     return input_;

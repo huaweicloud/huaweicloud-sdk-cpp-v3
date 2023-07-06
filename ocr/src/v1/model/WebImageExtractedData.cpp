@@ -62,7 +62,6 @@ bool WebImageExtractedData::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 WebImageContactInfo WebImageExtractedData::getContactInfo() const
 {
     return contactInfo_;

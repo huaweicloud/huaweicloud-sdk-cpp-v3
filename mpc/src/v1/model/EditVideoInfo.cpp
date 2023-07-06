@@ -120,7 +120,6 @@ bool EditVideoInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string EditVideoInfo::getReference() const
 {
     return reference_;

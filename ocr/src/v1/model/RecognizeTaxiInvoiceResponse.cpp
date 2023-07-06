@@ -49,7 +49,6 @@ bool RecognizeTaxiInvoiceResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 TaxiInvoiceResult RecognizeTaxiInvoiceResponse::getResult() const
 {
     return result_;

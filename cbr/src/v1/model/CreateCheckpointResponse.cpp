@@ -49,7 +49,6 @@ bool CreateCheckpointResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 CheckpointCreate CreateCheckpointResponse::getCheckpoint() const
 {
     return checkpoint_;

@@ -78,7 +78,6 @@ bool UpdateAddressSetDto::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateAddressSetDto::getName() const
 {
     return name_;

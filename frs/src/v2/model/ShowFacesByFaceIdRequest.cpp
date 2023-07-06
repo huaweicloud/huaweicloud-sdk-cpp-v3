@@ -78,7 +78,6 @@ bool ShowFacesByFaceIdRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowFacesByFaceIdRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

@@ -63,7 +63,6 @@ bool BatchCreateVolumeTagsRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BatchCreateVolumeTagsRequestBody::getAction() const
 {
     return action_;

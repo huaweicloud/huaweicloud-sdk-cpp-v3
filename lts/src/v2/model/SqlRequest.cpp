@@ -162,7 +162,6 @@ bool SqlRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 bool SqlRequest::isIsTimeRangeRelative() const
 {
     return isTimeRangeRelative_;

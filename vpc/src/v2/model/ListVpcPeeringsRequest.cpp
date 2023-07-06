@@ -134,7 +134,6 @@ bool ListVpcPeeringsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t ListVpcPeeringsRequest::getLimit() const
 {
     return limit_;

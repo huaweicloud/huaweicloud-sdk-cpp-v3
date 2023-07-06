@@ -63,7 +63,6 @@ bool RestoreBackupRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RestoreBackupRequest::getBackupId() const
 {
     return backupId_;

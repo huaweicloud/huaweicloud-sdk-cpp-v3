@@ -49,7 +49,6 @@ bool VaultBindRules::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<BindRulesTags>& VaultBindRules::getTags()
 {
     return tags_;

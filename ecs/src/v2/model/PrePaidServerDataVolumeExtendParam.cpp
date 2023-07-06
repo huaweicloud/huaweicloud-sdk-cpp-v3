@@ -78,7 +78,6 @@ bool PrePaidServerDataVolumeExtendParam::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PrePaidServerDataVolumeExtendParam::getResourceSpecCode() const
 {
     return resourceSpecCode_;

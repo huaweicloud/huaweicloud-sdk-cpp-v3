@@ -105,7 +105,6 @@ bool CreateSnapshotOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateSnapshotOption::getVolumeId() const
 {
     return volumeId_;

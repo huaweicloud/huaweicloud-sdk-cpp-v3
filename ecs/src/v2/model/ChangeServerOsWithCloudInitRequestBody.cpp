@@ -49,7 +49,6 @@ bool ChangeServerOsWithCloudInitRequestBody::fromJson(const web::json::value& va
     return ok;
 }
 
-
 ChangeServerOsWithCloudInitOption ChangeServerOsWithCloudInitRequestBody::getOsChange() const
 {
     return osChange_;

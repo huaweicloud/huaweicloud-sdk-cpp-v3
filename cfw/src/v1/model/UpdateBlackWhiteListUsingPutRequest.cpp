@@ -91,7 +91,6 @@ bool UpdateBlackWhiteListUsingPutRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateBlackWhiteListUsingPutRequest::getListId() const
 {
     return listId_;

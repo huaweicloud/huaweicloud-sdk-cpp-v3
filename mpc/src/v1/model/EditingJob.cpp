@@ -214,7 +214,6 @@ bool EditingJob::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string EditingJob::getTaskId() const
 {
     return taskId_;

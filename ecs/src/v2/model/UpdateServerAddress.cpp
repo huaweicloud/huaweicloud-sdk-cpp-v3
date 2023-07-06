@@ -64,7 +64,6 @@ bool UpdateServerAddress::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t UpdateServerAddress::getVersion() const
 {
     return version_;

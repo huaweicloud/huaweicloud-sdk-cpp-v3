@@ -49,7 +49,6 @@ bool DeleteResourceTagRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ReqDeleteTag DeleteResourceTagRequest::getBody() const
 {
     return body_;

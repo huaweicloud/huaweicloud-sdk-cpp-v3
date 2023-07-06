@@ -92,7 +92,6 @@ bool TagQuota::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string TagQuota::getQuotaKey() const
 {
     return quotaKey_;

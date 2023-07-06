@@ -242,7 +242,6 @@ bool AddRuleAclDto_rules::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AddRuleAclDto_rules::getName() const
 {
     return name_;

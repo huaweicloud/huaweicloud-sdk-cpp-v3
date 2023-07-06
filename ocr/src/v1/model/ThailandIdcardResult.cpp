@@ -369,7 +369,6 @@ bool ThailandIdcardResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ThailandIdcardResult::getType() const
 {
     return type_;

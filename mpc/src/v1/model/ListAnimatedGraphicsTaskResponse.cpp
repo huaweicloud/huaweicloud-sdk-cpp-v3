@@ -63,7 +63,6 @@ bool ListAnimatedGraphicsTaskResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t ListAnimatedGraphicsTaskResponse::getTotal() const
 {
     return total_;

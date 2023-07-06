@@ -64,7 +64,6 @@ bool PostPaidServerTag::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PostPaidServerTag::getKey() const
 {
     return key_;

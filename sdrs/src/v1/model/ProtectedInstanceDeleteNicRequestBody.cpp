@@ -50,7 +50,6 @@ bool ProtectedInstanceDeleteNicRequestBody::fromJson(const web::json::value& val
     return ok;
 }
 
-
 std::string ProtectedInstanceDeleteNicRequestBody::getNicId() const
 {
     return nicId_;

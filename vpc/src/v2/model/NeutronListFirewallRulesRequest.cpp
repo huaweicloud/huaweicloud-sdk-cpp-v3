@@ -131,7 +131,6 @@ bool NeutronListFirewallRulesRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NeutronListFirewallRulesRequest::getMarker() const
 {
     return marker_;

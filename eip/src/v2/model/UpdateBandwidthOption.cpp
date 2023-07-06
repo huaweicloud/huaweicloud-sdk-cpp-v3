@@ -78,7 +78,6 @@ bool UpdateBandwidthOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateBandwidthOption::getName() const
 {
     return name_;

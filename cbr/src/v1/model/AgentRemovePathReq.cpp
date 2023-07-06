@@ -49,7 +49,6 @@ bool AgentRemovePathReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& AgentRemovePathReq::getRemovePath()
 {
     return removePath_;

@@ -49,7 +49,6 @@ bool DeleteAomMappingRulesResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& DeleteAomMappingRulesResponse::getBody()
 {
     return body_;

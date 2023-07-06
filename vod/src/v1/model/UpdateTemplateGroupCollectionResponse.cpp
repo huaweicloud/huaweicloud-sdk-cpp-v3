@@ -36,7 +36,6 @@ bool UpdateTemplateGroupCollectionResponse::fromJson(const web::json::value& val
     return ok;
 }
 
-
 }
 }
 }

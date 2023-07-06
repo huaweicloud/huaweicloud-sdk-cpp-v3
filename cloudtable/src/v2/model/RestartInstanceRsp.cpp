@@ -49,7 +49,6 @@ bool RestartInstanceRsp::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& RestartInstanceRsp::getJobId()
 {
     return jobId_;

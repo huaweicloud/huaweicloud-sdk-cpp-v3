@@ -64,7 +64,6 @@ bool TranscodeSpec::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string TranscodeSpec::getType() const
 {
     return type_;

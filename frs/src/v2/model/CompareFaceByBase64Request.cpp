@@ -63,7 +63,6 @@ bool CompareFaceByBase64Request::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CompareFaceByBase64Request::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

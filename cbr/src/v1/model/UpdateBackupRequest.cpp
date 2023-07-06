@@ -63,7 +63,6 @@ bool UpdateBackupRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateBackupRequest::getBackupId() const
 {
     return backupId_;

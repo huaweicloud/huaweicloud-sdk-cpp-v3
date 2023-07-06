@@ -49,7 +49,6 @@ bool ListImagesResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ImageInfo>& ListImagesResponse::getImages()
 {
     return images_;

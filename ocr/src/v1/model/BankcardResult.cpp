@@ -132,7 +132,6 @@ bool BankcardResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BankcardResult::getBankName() const
 {
     return bankName_;

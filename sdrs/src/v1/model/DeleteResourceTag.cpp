@@ -64,7 +64,6 @@ bool DeleteResourceTag::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteResourceTag::getKey() const
 {
     return key_;

@@ -131,7 +131,6 @@ bool RunAudioAssessmentResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 float RunAudioAssessmentResponse::getScore() const
 {
     return score_;

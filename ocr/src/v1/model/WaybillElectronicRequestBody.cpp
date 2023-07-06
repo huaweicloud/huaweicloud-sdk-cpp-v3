@@ -64,7 +64,6 @@ bool WaybillElectronicRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string WaybillElectronicRequestBody::getImage() const
 {
     return image_;

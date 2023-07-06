@@ -36,7 +36,6 @@ bool ShowPublicIpTypeRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

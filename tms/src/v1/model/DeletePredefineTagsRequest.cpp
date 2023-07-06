@@ -49,7 +49,6 @@ bool DeletePredefineTagsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ReqDeletePredefineTag DeletePredefineTagsRequest::getBody() const
 {
     return body_;

@@ -63,7 +63,6 @@ bool ResizeServerRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ResizeServerRequest::getServerId() const
 {
     return serverId_;

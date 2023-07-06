@@ -63,7 +63,6 @@ bool RecognizeLicensePlateRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RecognizeLicensePlateRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

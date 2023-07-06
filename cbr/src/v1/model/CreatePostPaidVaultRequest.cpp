@@ -49,7 +49,6 @@ bool CreatePostPaidVaultRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 VaultOrderCreateReqs CreatePostPaidVaultRequest::getBody() const
 {
     return body_;

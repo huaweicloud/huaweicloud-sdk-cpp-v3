@@ -200,7 +200,6 @@ bool TaskDetailInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string TaskDetailInfo::getTaskId() const
 {
     return taskId_;

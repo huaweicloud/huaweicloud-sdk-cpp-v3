@@ -36,7 +36,6 @@ bool ListVpcTagsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

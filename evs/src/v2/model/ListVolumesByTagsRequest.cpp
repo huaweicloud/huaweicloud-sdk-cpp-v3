@@ -49,7 +49,6 @@ bool ListVolumesByTagsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ListVolumesByTagsRequestBody ListVolumesByTagsRequest::getBody() const
 {
     return body_;

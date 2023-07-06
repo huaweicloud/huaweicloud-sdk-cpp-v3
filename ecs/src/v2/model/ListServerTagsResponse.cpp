@@ -49,7 +49,6 @@ bool ListServerTagsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ProjectTag>& ListServerTagsResponse::getTags()
 {
     return tags_;

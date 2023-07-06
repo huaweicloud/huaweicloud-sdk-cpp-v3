@@ -1,3 +1,195 @@
+# 3.1.41 2023-07-06
+
+### HuaweiCloud SDK EVS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateVolume**
+    - 请求参数变更
+      - `+ volume.iops`
+      - `+ volume.throughput`
+      - `+ volume.volume_type: enum value [GPSSD2,ESSD2]`
+
+### HuaweiCloud SDK LTS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **UpdateSqlAlarmRule**
+    - 请求参数变更
+      - `+ notification_save_rule.template_name`
+  - **CreateSqlAlarmRule**
+    - 请求参数变更
+      - `+ notification_save_rule.template_name`
+  - **UpdateKeywordsAlarmRule**
+    - 请求参数变更
+      - `+ notification_save_rule.template_name`
+  - **CreateKeywordsAlarmRule**
+    - 请求参数变更
+      - `+ notification_save_rule.template_name`
+  - **ListAccessConfig**
+    - 响应参数变更
+      - `+ log_split`
+      - `+ binary_collect`
+      - `+ result.log_split`
+      - `+ result.binary_collect`
+      - `+ result.access_config_type: enum value [K8S_CCE]`
+      - `+ result.access_config_detail.stdout`
+      - `+ result.access_config_detail.stderr`
+      - `+ result.access_config_detail.pathType`
+      - `+ result.access_config_detail.namespaceRegex`
+      - `+ result.access_config_detail.podNameRegex`
+      - `+ result.access_config_detail.containerNameRegex`
+      - `+ result.access_config_detail.includeLabels`
+      - `+ result.access_config_detail.excludeLabels`
+      - `+ result.access_config_detail.includeEnvs`
+      - `+ result.access_config_detail.excludeEnvs`
+      - `+ result.access_config_detail.logLabels`
+      - `+ result.access_config_detail.logEnvs`
+      - `+ result.access_config_detail.includeK8sLabels`
+      - `+ result.access_config_detail.excludeK8sLabels`
+      - `+ result.access_config_detail.logK8s`
+      - `* result.access_config_detail.format.single: object<AccessConfigFormatSingle> -> object<AccessConfigFormatSingleCreate>`
+      - `* result.access_config_detail.format.multi: object<AccessConfigFormatMutil> -> object<AccessConfigFormatMutilCreate>`
+      - `* result.access_config_detail.format: object<AccessConfigFormat> -> object<AccessConfigFormatCreate>`
+      - `* result.access_config_detail.windows_log_info: object<AccessConfigWindowsLogInfo> -> object<AccessConfigWindowsLogInfoCreate>`
+      - `* result.access_config_detail: object<AccessConfigDeatil> -> object<AccessConfigDeatilCreate>`
+  - **UpdateAccessConfig**
+    - 请求参数变更
+      - `+ log_split`
+      - `+ binary_collect`
+      - `+ access_config_detail.stdout`
+      - `+ access_config_detail.stderr`
+      - `+ access_config_detail.pathType`
+      - `+ access_config_detail.namespaceRegex`
+      - `+ access_config_detail.podNameRegex`
+      - `+ access_config_detail.containerNameRegex`
+      - `+ access_config_detail.includeLabels`
+      - `+ access_config_detail.excludeLabels`
+      - `+ access_config_detail.includeEnvs`
+      - `+ access_config_detail.excludeEnvs`
+      - `+ access_config_detail.logLabels`
+      - `+ access_config_detail.logEnvs`
+      - `+ access_config_detail.includeK8sLabels`
+      - `+ access_config_detail.excludeK8sLabels`
+      - `+ access_config_detail.logK8s`
+      - `* access_config_detail.format.single: object<AccessConfigFormatSingle> -> object<AccessConfigFormatSingleCreate>`
+      - `* access_config_detail.format.multi: object<AccessConfigFormatMutil> -> object<AccessConfigFormatMutilCreate>`
+      - `* access_config_detail.format: object<AccessConfigFormat> -> object<AccessConfigFormatCreate>`
+      - `* access_config_detail.windows_log_info: object<AccessConfigWindowsLogInfo> -> object<AccessConfigWindowsLogInfoCreate>`
+      - `* access_config_detail: object<AccessConfigDeatil> -> object<AccessConfigDeatilCreate>`
+    - 响应参数变更
+      - `+ log_split`
+      - `+ binary_collect`
+      - `+ access_config_type: enum value [K8S_CCE]`
+      - `+ access_config_detail.stdout`
+      - `+ access_config_detail.stderr`
+      - `+ access_config_detail.pathType`
+      - `+ access_config_detail.namespaceRegex`
+      - `+ access_config_detail.podNameRegex`
+      - `+ access_config_detail.containerNameRegex`
+      - `+ access_config_detail.includeLabels`
+      - `+ access_config_detail.excludeLabels`
+      - `+ access_config_detail.includeEnvs`
+      - `+ access_config_detail.excludeEnvs`
+      - `+ access_config_detail.logLabels`
+      - `+ access_config_detail.logEnvs`
+      - `+ access_config_detail.includeK8sLabels`
+      - `+ access_config_detail.excludeK8sLabels`
+      - `+ access_config_detail.logK8s`
+      - `* access_config_detail.format.single: object<AccessConfigFormatSingle> -> object<AccessConfigFormatSingleCreate>`
+      - `* access_config_detail.format.multi: object<AccessConfigFormatMutil> -> object<AccessConfigFormatMutilCreate>`
+      - `* access_config_detail.format: object<AccessConfigFormat> -> object<AccessConfigFormatCreate>`
+      - `* access_config_detail.windows_log_info: object<AccessConfigWindowsLogInfo> -> object<AccessConfigWindowsLogInfoCreate>`
+      - `* access_config_detail: object<AccessConfigDeatil> -> object<AccessConfigDeatilCreate>`
+  - **CreateAccessConfig**
+    - 请求参数变更
+      - `+ binary_collect`
+      - `+ log_split`
+      - `+ access_config_type: enum value [K8S_CCE]`
+      - `+ access_config_detail.stdout`
+      - `+ access_config_detail.stderr`
+      - `+ access_config_detail.pathType`
+      - `+ access_config_detail.namespaceRegex`
+      - `+ access_config_detail.podNameRegex`
+      - `+ access_config_detail.containerNameRegex`
+      - `+ access_config_detail.includeLabels`
+      - `+ access_config_detail.excludeLabels`
+      - `+ access_config_detail.includeEnvs`
+      - `+ access_config_detail.excludeEnvs`
+      - `+ access_config_detail.logLabels`
+      - `+ access_config_detail.logEnvs`
+      - `+ access_config_detail.includeK8sLabels`
+      - `+ access_config_detail.excludeK8sLabels`
+      - `+ access_config_detail.logK8s`
+    - 响应参数变更
+      - `+ log_split`
+      - `+ binary_collect`
+      - `+ access_config_type: enum value [K8S_CCE]`
+      - `+ access_config_detail.stdout`
+      - `+ access_config_detail.stderr`
+      - `+ access_config_detail.pathType`
+      - `+ access_config_detail.namespaceRegex`
+      - `+ access_config_detail.podNameRegex`
+      - `+ access_config_detail.containerNameRegex`
+      - `+ access_config_detail.includeLabels`
+      - `+ access_config_detail.excludeLabels`
+      - `+ access_config_detail.includeEnvs`
+      - `+ access_config_detail.excludeEnvs`
+      - `+ access_config_detail.logLabels`
+      - `+ access_config_detail.logEnvs`
+      - `+ access_config_detail.includeK8sLabels`
+      - `+ access_config_detail.excludeK8sLabels`
+      - `+ access_config_detail.logK8s`
+      - `* access_config_detail.format.single: object<AccessConfigFormatSingle> -> object<AccessConfigFormatSingleCreate>`
+      - `* access_config_detail.format.multi: object<AccessConfigFormatMutil> -> object<AccessConfigFormatMutilCreate>`
+      - `* access_config_detail.format: object<AccessConfigFormat> -> object<AccessConfigFormatCreate>`
+      - `* access_config_detail.windows_log_info: object<AccessConfigWindowsLogInfo> -> object<AccessConfigWindowsLogInfoCreate>`
+      - `* access_config_detail: object<AccessConfigDeatil> -> object<AccessConfigDeatilCreate>`
+  - **DeleteAccessConfig**
+    - 响应参数变更
+      - `+ log_split`
+      - `+ binary_collect`
+      - `+ result.log_split`
+      - `+ result.binary_collect`
+      - `+ result.access_config_type: enum value [K8S_CCE]`
+      - `+ result.access_config_detail.stdout`
+      - `+ result.access_config_detail.stderr`
+      - `+ result.access_config_detail.pathType`
+      - `+ result.access_config_detail.namespaceRegex`
+      - `+ result.access_config_detail.podNameRegex`
+      - `+ result.access_config_detail.containerNameRegex`
+      - `+ result.access_config_detail.includeLabels`
+      - `+ result.access_config_detail.excludeLabels`
+      - `+ result.access_config_detail.includeEnvs`
+      - `+ result.access_config_detail.excludeEnvs`
+      - `+ result.access_config_detail.logLabels`
+      - `+ result.access_config_detail.logEnvs`
+      - `+ result.access_config_detail.includeK8sLabels`
+      - `+ result.access_config_detail.excludeK8sLabels`
+      - `+ result.access_config_detail.logK8s`
+      - `* result.access_config_detail.format.single: object<AccessConfigFormatSingle> -> object<AccessConfigFormatSingleCreate>`
+      - `* result.access_config_detail.format.multi: object<AccessConfigFormatMutil> -> object<AccessConfigFormatMutilCreate>`
+      - `* result.access_config_detail.format: object<AccessConfigFormat> -> object<AccessConfigFormatCreate>`
+      - `* result.access_config_detail.windows_log_info: object<AccessConfigWindowsLogInfo> -> object<AccessConfigWindowsLogInfoCreate>`
+      - `* result.access_config_detail: object<AccessConfigDeatil> -> object<AccessConfigDeatilCreate>`
+
+### HuaweiCloud SDK VPC
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListSecurityGroupRules**
+    - 请求参数变更
+      - `+ remote_ip_prefix`
+
 # 3.1.40 2023-06-29
 
 ### HuaweiCloud SDK IdentityCenter

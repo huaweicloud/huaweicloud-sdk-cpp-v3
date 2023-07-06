@@ -62,7 +62,6 @@ bool DetectFace::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 BoundingBox DetectFace::getBoundingBox() const
 {
     return boundingBox_;

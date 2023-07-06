@@ -50,7 +50,6 @@ bool ChangeServerChargeModeResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ChangeServerChargeModeResponse::getOrderId() const
 {
     return orderId_;

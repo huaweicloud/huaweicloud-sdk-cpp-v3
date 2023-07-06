@@ -63,7 +63,6 @@ bool DisableEnterpriseProjectRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DisableEnterpriseProjectRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

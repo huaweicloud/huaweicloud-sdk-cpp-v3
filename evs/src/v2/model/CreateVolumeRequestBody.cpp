@@ -89,7 +89,6 @@ bool CreateVolumeRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 BssParamForCreateVolume CreateVolumeRequestBody::getBssParam() const
 {
     return bssParam_;

@@ -103,7 +103,6 @@ bool FinancialStatementResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t FinancialStatementResult::getWordsRegionCount() const
 {
     return wordsRegionCount_;

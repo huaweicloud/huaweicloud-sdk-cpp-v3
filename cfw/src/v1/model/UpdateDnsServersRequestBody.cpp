@@ -49,7 +49,6 @@ bool UpdateDnsServersRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<UpdateDnsServersRequestBody_dns_server>& UpdateDnsServersRequestBody::getDnsServer()
 {
     return dnsServer_;

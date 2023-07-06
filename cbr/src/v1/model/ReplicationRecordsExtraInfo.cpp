@@ -106,7 +106,6 @@ bool ReplicationRecordsExtraInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t ReplicationRecordsExtraInfo::getProgress() const
 {
     return progress_;

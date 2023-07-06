@@ -63,7 +63,6 @@ bool UpdatePrePaidBandwidthRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdatePrePaidBandwidthRequest::getBandwidthId() const
 {
     return bandwidthId_;

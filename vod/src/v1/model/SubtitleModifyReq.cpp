@@ -90,7 +90,6 @@ bool SubtitleModifyReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string SubtitleModifyReq::getAssetId() const
 {
     return assetId_;

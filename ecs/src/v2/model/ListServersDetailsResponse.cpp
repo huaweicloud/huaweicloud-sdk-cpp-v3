@@ -63,7 +63,6 @@ bool ListServersDetailsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t ListServersDetailsResponse::getCount() const
 {
     return count_;

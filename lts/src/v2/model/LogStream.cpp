@@ -119,7 +119,6 @@ bool LogStream::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int64_t LogStream::getCreationTime() const
 {
     return creationTime_;

@@ -49,7 +49,6 @@ bool DisassociateVaultPolicyResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 VaultPolicyResp DisassociateVaultPolicyResponse::getDissociatePolicy() const
 {
     return dissociatePolicy_;

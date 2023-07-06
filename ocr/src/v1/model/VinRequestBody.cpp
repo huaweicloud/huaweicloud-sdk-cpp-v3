@@ -64,7 +64,6 @@ bool VinRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string VinRequestBody::getImage() const
 {
     return image_;

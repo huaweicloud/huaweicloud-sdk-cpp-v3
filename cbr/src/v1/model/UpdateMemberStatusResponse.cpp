@@ -49,7 +49,6 @@ bool UpdateMemberStatusResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 Member UpdateMemberStatusResponse::getMember() const
 {
     return member_;

@@ -49,7 +49,6 @@ bool ListPublicipsByTagsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ListPublicipsByTagsRequestBody ListPublicipsByTagsRequest::getBody() const
 {
     return body_;

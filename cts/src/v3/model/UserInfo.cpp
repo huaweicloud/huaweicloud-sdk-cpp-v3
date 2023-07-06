@@ -77,7 +77,6 @@ bool UserInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UserInfo::getId() const
 {
     return id_;

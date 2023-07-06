@@ -49,7 +49,6 @@ bool RecognizeInvoiceVerificationResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 Object RecognizeInvoiceVerificationResponse::getResult() const
 {
     return result_;

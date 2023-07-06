@@ -285,7 +285,6 @@ bool CreateImageRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<CreateDataImage>& CreateImageRequestBody::getDataImages()
 {
     return dataImages_;

@@ -175,7 +175,6 @@ bool CreateLogDumpObsRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateLogDumpObsRequestBody::getLogGroupId() const
 {
     return logGroupId_;

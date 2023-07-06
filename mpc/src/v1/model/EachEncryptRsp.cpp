@@ -159,7 +159,6 @@ bool EachEncryptRsp::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string EachEncryptRsp::getTaskId() const
 {
     return taskId_;

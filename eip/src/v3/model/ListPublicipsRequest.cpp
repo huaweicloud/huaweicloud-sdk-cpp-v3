@@ -580,7 +580,6 @@ bool ListPublicipsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListPublicipsRequest::getMarker() const
 {
     return marker_;

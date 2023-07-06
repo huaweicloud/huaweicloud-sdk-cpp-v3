@@ -77,7 +77,6 @@ bool ChangeIpsSwitchUsingPostRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ChangeIpsSwitchUsingPostRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

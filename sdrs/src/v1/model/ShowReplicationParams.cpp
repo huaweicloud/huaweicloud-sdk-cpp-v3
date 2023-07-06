@@ -258,7 +258,6 @@ bool ShowReplicationParams::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowReplicationParams::getId() const
 {
     return id_;

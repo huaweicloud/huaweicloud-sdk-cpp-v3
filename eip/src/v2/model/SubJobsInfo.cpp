@@ -49,7 +49,6 @@ bool SubJobsInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<Object>& SubJobsInfo::getSubJobs()
 {
     return subJobs_;

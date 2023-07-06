@@ -92,7 +92,6 @@ bool ProfileResp::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ProfileResp::getOrderId() const
 {
     return orderId_;

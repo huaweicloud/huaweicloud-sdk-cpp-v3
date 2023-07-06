@@ -77,7 +77,6 @@ bool CreateFaceSetReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::map<std::string, TypeInfo>& CreateFaceSetReq::getExternalFields()
 {
     return externalFields_;

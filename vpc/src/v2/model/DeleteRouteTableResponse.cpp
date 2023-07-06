@@ -36,7 +36,6 @@ bool DeleteRouteTableResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

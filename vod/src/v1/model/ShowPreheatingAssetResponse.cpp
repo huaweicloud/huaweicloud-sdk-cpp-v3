@@ -49,7 +49,6 @@ bool ShowPreheatingAssetResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<PreheatingResult>& ShowPreheatingAssetResponse::getPreheatingResults()
 {
     return preheatingResults_;

@@ -63,7 +63,6 @@ bool UpdateProtectedInstanceNameRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateProtectedInstanceNameRequest::getProtectedInstanceId() const
 {
     return protectedInstanceId_;

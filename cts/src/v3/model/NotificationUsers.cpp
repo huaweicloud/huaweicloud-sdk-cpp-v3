@@ -63,7 +63,6 @@ bool NotificationUsers::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NotificationUsers::getUserGroup() const
 {
     return userGroup_;

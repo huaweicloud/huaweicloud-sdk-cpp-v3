@@ -36,7 +36,6 @@ bool CreateMpeCallBackResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

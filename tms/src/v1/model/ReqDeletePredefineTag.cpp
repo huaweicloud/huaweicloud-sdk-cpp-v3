@@ -63,7 +63,6 @@ bool ReqDeletePredefineTag::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ReqDeletePredefineTag::getAction() const
 {
     return action_;

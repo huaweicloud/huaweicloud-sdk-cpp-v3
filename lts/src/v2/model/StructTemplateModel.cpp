@@ -173,7 +173,6 @@ bool StructTemplateModel::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string StructTemplateModel::getProjectId() const
 {
     return projectId_;

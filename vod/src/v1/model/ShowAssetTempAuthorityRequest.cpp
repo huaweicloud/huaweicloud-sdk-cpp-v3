@@ -148,7 +148,6 @@ bool ShowAssetTempAuthorityRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowAssetTempAuthorityRequest::getXSdkDate() const
 {
     return xSdkDate_;

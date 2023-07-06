@@ -120,7 +120,6 @@ bool ListRecordRulesRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListRecordRulesRequest::getPublishDomain() const
 {
     return publishDomain_;

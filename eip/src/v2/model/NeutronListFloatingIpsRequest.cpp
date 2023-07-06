@@ -176,7 +176,6 @@ bool NeutronListFloatingIpsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t NeutronListFloatingIpsRequest::getLimit() const
 {
     return limit_;

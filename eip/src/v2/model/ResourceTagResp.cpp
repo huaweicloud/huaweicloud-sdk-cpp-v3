@@ -64,7 +64,6 @@ bool ResourceTagResp::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ResourceTagResp::getKey() const
 {
     return key_;

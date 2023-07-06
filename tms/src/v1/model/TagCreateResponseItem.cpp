@@ -92,7 +92,6 @@ bool TagCreateResponseItem::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string TagCreateResponseItem::getResourceId() const
 {
     return resourceId_;

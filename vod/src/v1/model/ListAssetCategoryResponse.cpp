@@ -49,7 +49,6 @@ bool ListAssetCategoryResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<QueryCategoryRsp>& ListAssetCategoryResponse::getBody()
 {
     return body_;

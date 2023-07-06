@@ -50,7 +50,6 @@ bool ReinstallServerWithoutCloudInitResponse::fromJson(const web::json::value& v
     return ok;
 }
 
-
 std::string ReinstallServerWithoutCloudInitResponse::getJobId() const
 {
     return jobId_;

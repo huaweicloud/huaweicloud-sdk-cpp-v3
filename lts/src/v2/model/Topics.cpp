@@ -92,7 +92,6 @@ bool Topics::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string Topics::getName() const
 {
     return name_;

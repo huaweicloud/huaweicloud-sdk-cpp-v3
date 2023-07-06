@@ -64,7 +64,6 @@ bool ReinstallSeverMetadataWithoutCloudInitOption::fromJson(const web::json::val
     return ok;
 }
 
-
 std::string ReinstallSeverMetadataWithoutCloudInitOption::getSystemEncrypted() const
 {
     return systemEncrypted_;

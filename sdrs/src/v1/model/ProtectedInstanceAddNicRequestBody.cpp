@@ -77,7 +77,6 @@ bool ProtectedInstanceAddNicRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ProtectedInstanceAddNicRequestBody::getSubnetId() const
 {
     return subnetId_;

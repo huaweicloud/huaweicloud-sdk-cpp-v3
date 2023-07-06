@@ -49,7 +49,6 @@ bool MixInfo_layout::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<PaneSetting>& MixInfo_layout::getPanes()
 {
     return panes_;

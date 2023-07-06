@@ -106,7 +106,6 @@ bool QuotaInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string QuotaInfo::getType() const
 {
     return type_;

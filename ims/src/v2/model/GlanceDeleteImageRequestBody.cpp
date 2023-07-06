@@ -50,7 +50,6 @@ bool GlanceDeleteImageRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 bool GlanceDeleteImageRequestBody::isDeleteBackup() const
 {
     return deleteBackup_;

@@ -62,7 +62,6 @@ bool NovaListServersDetailsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<NovaServer>& NovaListServersDetailsResponse::getServers()
 {
     return servers_;

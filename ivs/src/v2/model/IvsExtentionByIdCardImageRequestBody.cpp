@@ -62,7 +62,6 @@ bool IvsExtentionByIdCardImageRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 Meta IvsExtentionByIdCardImageRequestBody::getMeta() const
 {
     return meta_;

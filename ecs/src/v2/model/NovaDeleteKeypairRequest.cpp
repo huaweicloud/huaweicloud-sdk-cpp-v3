@@ -50,7 +50,6 @@ bool NovaDeleteKeypairRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NovaDeleteKeypairRequest::getKeypairName() const
 {
     return keypairName_;

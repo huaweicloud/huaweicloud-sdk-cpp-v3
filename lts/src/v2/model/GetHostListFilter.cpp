@@ -90,7 +90,6 @@ bool GetHostListFilter::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& GetHostListFilter::getHostNameList()
 {
     return hostNameList_;

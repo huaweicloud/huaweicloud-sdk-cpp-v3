@@ -77,7 +77,6 @@ bool ListLogsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t ListLogsResponse::getCount() const
 {
     return count_;

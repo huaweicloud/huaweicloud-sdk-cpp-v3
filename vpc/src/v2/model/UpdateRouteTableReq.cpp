@@ -77,7 +77,6 @@ bool UpdateRouteTableReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateRouteTableReq::getName() const
 {
     return name_;

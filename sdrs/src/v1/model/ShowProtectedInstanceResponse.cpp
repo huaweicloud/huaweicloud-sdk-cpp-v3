@@ -49,7 +49,6 @@ bool ShowProtectedInstanceResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ShowProtectedInstanceParams ShowProtectedInstanceResponse::getProtectedInstance() const
 {
     return protectedInstance_;

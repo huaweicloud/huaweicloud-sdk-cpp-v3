@@ -63,7 +63,6 @@ bool RecognizeHandwritingRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RecognizeHandwritingRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

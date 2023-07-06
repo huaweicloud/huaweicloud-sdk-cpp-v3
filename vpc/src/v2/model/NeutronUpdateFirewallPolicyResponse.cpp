@@ -49,7 +49,6 @@ bool NeutronUpdateFirewallPolicyResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 NeutronFirewallPolicy NeutronUpdateFirewallPolicyResponse::getFirewallPolicy() const
 {
     return firewallPolicy_;

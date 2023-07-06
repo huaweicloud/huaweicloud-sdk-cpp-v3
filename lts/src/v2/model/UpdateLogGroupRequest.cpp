@@ -77,7 +77,6 @@ bool UpdateLogGroupRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateLogGroupRequest::getLogGroupId() const
 {
     return logGroupId_;

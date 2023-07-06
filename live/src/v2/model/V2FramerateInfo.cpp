@@ -119,7 +119,6 @@ bool V2FramerateInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string V2FramerateInfo::getPublishDomain() const
 {
     return publishDomain_;

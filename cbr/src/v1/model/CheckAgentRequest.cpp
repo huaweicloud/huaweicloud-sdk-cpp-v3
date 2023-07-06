@@ -49,7 +49,6 @@ bool CheckAgentRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ProtectableAgentReq CheckAgentRequest::getBody() const
 {
     return body_;

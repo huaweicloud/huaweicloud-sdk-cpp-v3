@@ -78,7 +78,6 @@ bool VideoSaturation::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string VideoSaturation::getName() const
 {
     return name_;

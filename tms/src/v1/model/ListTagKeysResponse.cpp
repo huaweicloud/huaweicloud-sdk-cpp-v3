@@ -62,7 +62,6 @@ bool ListTagKeysResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& ListTagKeysResponse::getKeys()
 {
     return keys_;

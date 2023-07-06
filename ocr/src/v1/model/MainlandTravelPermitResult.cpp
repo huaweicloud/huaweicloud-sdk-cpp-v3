@@ -300,7 +300,6 @@ bool MainlandTravelPermitResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string MainlandTravelPermitResult::getName() const
 {
     return name_;

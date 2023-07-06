@@ -90,7 +90,6 @@ bool CreateHostGroupRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateHostGroupRequestBody::getHostGroupName() const
 {
     return hostGroupName_;

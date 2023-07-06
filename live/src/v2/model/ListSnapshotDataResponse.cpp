@@ -77,7 +77,6 @@ bool ListSnapshotDataResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<SnapshotData>& ListSnapshotDataResponse::getSnapshotList()
 {
     return snapshotList_;

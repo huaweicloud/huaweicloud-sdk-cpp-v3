@@ -64,7 +64,6 @@ bool CinderListQuotasRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CinderListQuotasRequest::getTargetProjectId() const
 {
     return targetProjectId_;

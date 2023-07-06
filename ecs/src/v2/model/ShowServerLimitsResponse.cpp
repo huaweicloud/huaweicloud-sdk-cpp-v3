@@ -49,7 +49,6 @@ bool ShowServerLimitsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ServerLimits ShowServerLimitsResponse::getAbsolute() const
 {
     return absolute_;

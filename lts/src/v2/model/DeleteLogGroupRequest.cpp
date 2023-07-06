@@ -64,7 +64,6 @@ bool DeleteLogGroupRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteLogGroupRequest::getLogGroupId() const
 {
     return logGroupId_;

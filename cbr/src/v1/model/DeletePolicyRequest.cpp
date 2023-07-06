@@ -50,7 +50,6 @@ bool DeletePolicyRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeletePolicyRequest::getPolicyId() const
 {
     return policyId_;

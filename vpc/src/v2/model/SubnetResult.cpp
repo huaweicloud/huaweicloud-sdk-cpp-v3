@@ -64,7 +64,6 @@ bool SubnetResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string SubnetResult::getId() const
 {
     return id_;

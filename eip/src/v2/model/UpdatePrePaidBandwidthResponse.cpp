@@ -63,7 +63,6 @@ bool UpdatePrePaidBandwidthResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 BandwidthResp UpdatePrePaidBandwidthResponse::getBandwidth() const
 {
     return bandwidth_;

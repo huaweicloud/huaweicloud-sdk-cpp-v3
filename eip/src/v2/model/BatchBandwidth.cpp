@@ -106,7 +106,6 @@ bool BatchBandwidth::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BatchBandwidth::getChargeMode() const
 {
     return chargeMode_;

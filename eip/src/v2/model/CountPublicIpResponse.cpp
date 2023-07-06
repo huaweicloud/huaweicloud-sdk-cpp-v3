@@ -50,7 +50,6 @@ bool CountPublicIpResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t CountPublicIpResponse::getElasticipSize() const
 {
     return elasticipSize_;

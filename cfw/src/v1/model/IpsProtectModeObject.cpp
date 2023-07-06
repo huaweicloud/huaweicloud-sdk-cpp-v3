@@ -64,7 +64,6 @@ bool IpsProtectModeObject::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string IpsProtectModeObject::getId() const
 {
     return id_;

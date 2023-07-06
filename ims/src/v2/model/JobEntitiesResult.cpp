@@ -78,7 +78,6 @@ bool JobEntitiesResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string JobEntitiesResult::getImageId() const
 {
     return imageId_;

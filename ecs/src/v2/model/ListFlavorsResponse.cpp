@@ -49,7 +49,6 @@ bool ListFlavorsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<Flavor>& ListFlavorsResponse::getFlavors()
 {
     return flavors_;

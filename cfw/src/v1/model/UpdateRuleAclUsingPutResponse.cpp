@@ -49,7 +49,6 @@ bool UpdateRuleAclUsingPutResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 RuleId UpdateRuleAclUsingPutResponse::getData() const
 {
     return data_;

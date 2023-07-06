@@ -92,7 +92,6 @@ bool AddAddressItemsInfoDto_address_items::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AddAddressItemsInfoDto_address_items::getName() const
 {
     return name_;

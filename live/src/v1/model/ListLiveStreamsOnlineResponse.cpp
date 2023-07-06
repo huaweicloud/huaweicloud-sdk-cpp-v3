@@ -119,7 +119,6 @@ bool ListLiveStreamsOnlineResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int64_t ListLiveStreamsOnlineResponse::getTotalPage() const
 {
     return totalPage_;

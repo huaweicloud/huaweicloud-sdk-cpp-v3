@@ -49,7 +49,6 @@ bool UploadSecretBlobResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 Secret UploadSecretBlobResponse::getSecret() const
 {
     return secret_;

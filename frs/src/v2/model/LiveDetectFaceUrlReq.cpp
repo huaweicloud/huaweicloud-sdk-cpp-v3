@@ -50,7 +50,6 @@ bool LiveDetectFaceUrlReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string LiveDetectFaceUrlReq::getImageUrl() const
 {
     return imageUrl_;

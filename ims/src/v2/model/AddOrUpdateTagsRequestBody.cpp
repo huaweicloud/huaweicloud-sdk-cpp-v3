@@ -77,7 +77,6 @@ bool AddOrUpdateTagsRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AddOrUpdateTagsRequestBody::getImageId() const
 {
     return imageId_;

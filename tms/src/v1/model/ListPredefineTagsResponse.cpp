@@ -77,7 +77,6 @@ bool ListPredefineTagsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListPredefineTagsResponse::getMarker() const
 {
     return marker_;

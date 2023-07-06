@@ -49,7 +49,6 @@ bool StopProtectionGroupRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 Object StopProtectionGroupRequestBody::getStopServerGroup() const
 {
     return stopServerGroup_;

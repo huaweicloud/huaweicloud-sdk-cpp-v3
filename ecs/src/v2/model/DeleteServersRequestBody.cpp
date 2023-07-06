@@ -77,7 +77,6 @@ bool DeleteServersRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 bool DeleteServersRequestBody::isDeletePublicip() const
 {
     return deletePublicip_;

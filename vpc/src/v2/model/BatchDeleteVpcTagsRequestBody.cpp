@@ -63,7 +63,6 @@ bool BatchDeleteVpcTagsRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BatchDeleteVpcTagsRequestBody::getAction() const
 {
     return action_;

@@ -49,7 +49,6 @@ bool ListServiceItemsDetailsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ServiceItemListResponseDto_data ListServiceItemsDetailsResponse::getData() const
 {
     return data_;

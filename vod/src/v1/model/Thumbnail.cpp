@@ -133,7 +133,6 @@ bool Thumbnail::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string Thumbnail::getType() const
 {
     return type_;

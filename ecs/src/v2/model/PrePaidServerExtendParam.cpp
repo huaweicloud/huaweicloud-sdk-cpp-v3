@@ -232,7 +232,6 @@ bool PrePaidServerExtendParam::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PrePaidServerExtendParam::getChargingMode() const
 {
     return chargingMode_;

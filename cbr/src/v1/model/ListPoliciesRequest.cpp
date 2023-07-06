@@ -64,7 +64,6 @@ bool ListPoliciesRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListPoliciesRequest::getOperationType() const
 {
     return operationType_;

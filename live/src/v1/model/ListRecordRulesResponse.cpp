@@ -63,7 +63,6 @@ bool ListRecordRulesResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t ListRecordRulesResponse::getTotal() const
 {
     return total_;

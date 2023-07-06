@@ -146,7 +146,6 @@ bool CreateDashBoardResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& CreateDashBoardResponse::getCharts()
 {
     return charts_;

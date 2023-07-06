@@ -49,7 +49,6 @@ bool CreateSnapshotConfigRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 LiveSnapshotConfig CreateSnapshotConfigRequest::getBody() const
 {
     return body_;

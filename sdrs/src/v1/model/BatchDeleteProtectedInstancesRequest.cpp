@@ -49,7 +49,6 @@ bool BatchDeleteProtectedInstancesRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 BatchDeleteProtectedInstancesRequestBody BatchDeleteProtectedInstancesRequest::getBody() const
 {
     return body_;

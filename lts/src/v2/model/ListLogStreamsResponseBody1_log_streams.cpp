@@ -105,7 +105,6 @@ bool ListLogStreamsResponseBody1_log_streams::fromJson(const web::json::value& v
     return ok;
 }
 
-
 int64_t ListLogStreamsResponseBody1_log_streams::getCreationTime() const
 {
     return creationTime_;

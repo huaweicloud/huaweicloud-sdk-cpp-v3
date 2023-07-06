@@ -204,7 +204,6 @@ bool OnlineInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string OnlineInfo::getPublishDomain() const
 {
     return publishDomain_;

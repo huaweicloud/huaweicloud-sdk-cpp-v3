@@ -36,7 +36,6 @@ bool DeleteMemberResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

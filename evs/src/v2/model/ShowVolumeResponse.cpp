@@ -49,7 +49,6 @@ bool ShowVolumeResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 VolumeDetail ShowVolumeResponse::getVolume() const
 {
     return volume_;

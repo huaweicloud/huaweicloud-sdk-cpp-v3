@@ -49,7 +49,6 @@ bool AddServiceSetUsingPostResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 IdObject AddServiceSetUsingPostResponse::getData() const
 {
     return data_;

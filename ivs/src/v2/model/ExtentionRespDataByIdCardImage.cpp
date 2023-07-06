@@ -91,7 +91,6 @@ bool ExtentionRespDataByIdCardImage::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ExtentionRespDataByIdCardImage::getVerificationResult() const
 {
     return verificationResult_;

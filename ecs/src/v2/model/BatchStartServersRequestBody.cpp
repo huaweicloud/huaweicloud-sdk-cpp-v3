@@ -49,7 +49,6 @@ bool BatchStartServersRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 BatchStartServersOption BatchStartServersRequestBody::getOsStart() const
 {
     return osStart_;

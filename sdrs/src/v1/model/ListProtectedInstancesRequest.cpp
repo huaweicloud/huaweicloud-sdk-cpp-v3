@@ -162,7 +162,6 @@ bool ListProtectedInstancesRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListProtectedInstancesRequest::getServerGroupId() const
 {
     return serverGroupId_;

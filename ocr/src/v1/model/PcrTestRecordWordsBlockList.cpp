@@ -77,7 +77,6 @@ bool PcrTestRecordWordsBlockList::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PcrTestRecordWordsBlockList::getWords() const
 {
     return words_;

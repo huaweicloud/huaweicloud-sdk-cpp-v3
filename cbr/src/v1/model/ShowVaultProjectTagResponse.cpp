@@ -49,7 +49,6 @@ bool ShowVaultProjectTagResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<TagsResp>& ShowVaultProjectTagResponse::getTags()
 {
     return tags_;

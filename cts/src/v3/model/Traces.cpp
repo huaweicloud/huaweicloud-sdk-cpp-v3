@@ -329,7 +329,6 @@ bool Traces::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string Traces::getResourceId() const
 {
     return resourceId_;

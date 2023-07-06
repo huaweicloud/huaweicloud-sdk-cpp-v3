@@ -148,7 +148,6 @@ bool UpStreamDetail::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpStreamDetail::getTime() const
 {
     return time_;

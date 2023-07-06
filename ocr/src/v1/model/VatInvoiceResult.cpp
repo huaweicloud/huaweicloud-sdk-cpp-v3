@@ -493,7 +493,6 @@ bool VatInvoiceResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string VatInvoiceResult::getTitle() const
 {
     return title_;

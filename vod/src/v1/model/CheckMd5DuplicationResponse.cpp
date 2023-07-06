@@ -63,7 +63,6 @@ bool CheckMd5DuplicationResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t CheckMd5DuplicationResponse::getIsDuplicated() const
 {
     return isDuplicated_;

@@ -64,7 +64,6 @@ bool ExtentionReqDataByNameAndId::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ExtentionReqDataByNameAndId::getVerificationName() const
 {
     return verificationName_;

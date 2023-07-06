@@ -120,7 +120,6 @@ bool VpcRoute::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string VpcRoute::getId() const
 {
     return id_;

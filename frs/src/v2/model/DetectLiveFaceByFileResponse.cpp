@@ -62,7 +62,6 @@ bool DetectLiveFaceByFileResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 LiveDetectFaceResp_result DetectLiveFaceByFileResponse::getResult() const
 {
     return result_;

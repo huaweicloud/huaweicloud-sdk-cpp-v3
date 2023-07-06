@@ -62,7 +62,6 @@ bool BwChangeToPeriodReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& BwChangeToPeriodReq::getBandwidthIds()
 {
     return bandwidthIds_;

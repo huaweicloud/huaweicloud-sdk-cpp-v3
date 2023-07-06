@@ -63,7 +63,6 @@ bool HandwritingResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t HandwritingResult::getWordsBlockCount() const
 {
     return wordsBlockCount_;

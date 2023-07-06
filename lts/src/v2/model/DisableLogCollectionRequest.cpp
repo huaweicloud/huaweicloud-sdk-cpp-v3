@@ -50,7 +50,6 @@ bool DisableLogCollectionRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DisableLogCollectionRequest::getContentType() const
 {
     return contentType_;

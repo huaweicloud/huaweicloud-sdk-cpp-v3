@@ -49,7 +49,6 @@ bool ListSubnetTagsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ListTag>& ListSubnetTagsResponse::getTags()
 {
     return tags_;

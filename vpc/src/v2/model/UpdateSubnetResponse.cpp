@@ -49,7 +49,6 @@ bool UpdateSubnetResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 SubnetResult UpdateSubnetResponse::getSubnet() const
 {
     return subnet_;

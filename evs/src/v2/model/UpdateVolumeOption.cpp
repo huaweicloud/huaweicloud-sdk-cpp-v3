@@ -64,7 +64,6 @@ bool UpdateVolumeOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateVolumeOption::getDescription() const
 {
     return description_;

@@ -105,7 +105,6 @@ bool QuotaInvoiceResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string QuotaInvoiceResult::getNumber() const
 {
     return number_;

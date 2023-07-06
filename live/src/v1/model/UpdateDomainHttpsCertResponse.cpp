@@ -36,7 +36,6 @@ bool UpdateDomainHttpsCertResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

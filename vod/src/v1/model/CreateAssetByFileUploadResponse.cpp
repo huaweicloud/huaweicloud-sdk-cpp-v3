@@ -104,7 +104,6 @@ bool CreateAssetByFileUploadResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateAssetByFileUploadResponse::getAssetId() const
 {
     return assetId_;

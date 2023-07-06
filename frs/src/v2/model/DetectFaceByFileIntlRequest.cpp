@@ -63,7 +63,6 @@ bool DetectFaceByFileIntlRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DetectFaceByFileIntlRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

@@ -92,7 +92,6 @@ bool ShowTranscodingsTemplateRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowTranscodingsTemplateRequest::getDomain() const
 {
     return domain_;

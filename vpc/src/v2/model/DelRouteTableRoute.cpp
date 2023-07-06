@@ -92,7 +92,6 @@ bool DelRouteTableRoute::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DelRouteTableRoute::getType() const
 {
     return type_;

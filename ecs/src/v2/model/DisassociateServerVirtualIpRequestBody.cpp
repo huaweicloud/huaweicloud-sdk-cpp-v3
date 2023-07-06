@@ -49,7 +49,6 @@ bool DisassociateServerVirtualIpRequestBody::fromJson(const web::json::value& va
     return ok;
 }
 
-
 DisassociateServerVirtualIpOption DisassociateServerVirtualIpRequestBody::getNic() const
 {
     return nic_;

@@ -49,7 +49,6 @@ bool RecognizeDriverLicenseResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 DriverLicenseResult RecognizeDriverLicenseResponse::getResult() const
 {
     return result_;

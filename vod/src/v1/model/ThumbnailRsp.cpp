@@ -64,7 +64,6 @@ bool ThumbnailRsp::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t ThumbnailRsp::getOffset() const
 {
     return offset_;

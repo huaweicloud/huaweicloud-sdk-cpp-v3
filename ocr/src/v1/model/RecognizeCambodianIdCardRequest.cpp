@@ -63,7 +63,6 @@ bool RecognizeCambodianIdCardRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RecognizeCambodianIdCardRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

@@ -118,7 +118,6 @@ bool ListResourceInstancesRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListResourceInstancesRequestBody::getLimit() const
 {
     return limit_;

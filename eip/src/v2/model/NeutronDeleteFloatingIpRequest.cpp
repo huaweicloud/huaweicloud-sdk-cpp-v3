@@ -50,7 +50,6 @@ bool NeutronDeleteFloatingIpRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NeutronDeleteFloatingIpRequest::getFloatingipId() const
 {
     return floatingipId_;

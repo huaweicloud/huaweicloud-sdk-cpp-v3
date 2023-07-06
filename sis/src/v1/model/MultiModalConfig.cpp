@@ -78,7 +78,6 @@ bool MultiModalConfig::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string MultiModalConfig::getVideoFormat() const
 {
     return videoFormat_;

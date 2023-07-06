@@ -77,7 +77,6 @@ bool ListMergeChannelsTaskResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<MergeChannelsTaskInfo>& ListMergeChannelsTaskResponse::getTaskArray()
 {
     return taskArray_;

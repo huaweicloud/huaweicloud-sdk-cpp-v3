@@ -36,7 +36,6 @@ bool ShowVaultProjectTagRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

@@ -49,7 +49,6 @@ bool CheckpointReplicateReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 CheckpointReplicateParam CheckpointReplicateReq::getReplicate() const
 {
     return replicate_;

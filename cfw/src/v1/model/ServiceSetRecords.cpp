@@ -91,7 +91,6 @@ bool ServiceSetRecords::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t ServiceSetRecords::getOffset() const
 {
     return offset_;

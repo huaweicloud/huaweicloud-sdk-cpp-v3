@@ -106,7 +106,6 @@ bool QuotaResourceParams::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string QuotaResourceParams::getType() const
 {
     return type_;

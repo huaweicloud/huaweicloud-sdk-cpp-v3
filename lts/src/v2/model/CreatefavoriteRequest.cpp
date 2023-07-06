@@ -49,7 +49,6 @@ bool CreatefavoriteRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 CreatefavoriteReqbody CreatefavoriteRequest::getBody() const
 {
     return body_;

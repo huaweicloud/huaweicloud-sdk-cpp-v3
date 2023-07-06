@@ -92,7 +92,6 @@ bool MainlandTravelPermitRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string MainlandTravelPermitRequestBody::getImage() const
 {
     return image_;

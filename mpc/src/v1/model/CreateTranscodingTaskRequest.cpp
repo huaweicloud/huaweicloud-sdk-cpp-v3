@@ -49,7 +49,6 @@ bool CreateTranscodingTaskRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 CreateTranscodingReq CreateTranscodingTaskRequest::getBody() const
 {
     return body_;

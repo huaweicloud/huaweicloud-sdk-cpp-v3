@@ -148,7 +148,6 @@ bool CommonInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 bool CommonInfo::isPvc() const
 {
     return pvc_;

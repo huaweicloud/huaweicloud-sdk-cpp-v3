@@ -50,7 +50,6 @@ bool DeleteAclRuleCountResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteAclRuleCountResponse::getBody() const
 {
     return body_;

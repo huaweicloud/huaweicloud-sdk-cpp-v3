@@ -64,7 +64,6 @@ bool NeutronPageLink::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NeutronPageLink::getHref() const
 {
     return href_;

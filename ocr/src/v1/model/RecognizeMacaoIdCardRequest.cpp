@@ -63,7 +63,6 @@ bool RecognizeMacaoIdCardRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RecognizeMacaoIdCardRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

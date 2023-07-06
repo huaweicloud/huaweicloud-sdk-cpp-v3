@@ -50,7 +50,6 @@ bool ListLogGroupsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListLogGroupsRequest::getContentType() const
 {
     return contentType_;

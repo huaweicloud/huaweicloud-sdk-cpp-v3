@@ -36,7 +36,6 @@ bool DeleteTemplateGroupResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

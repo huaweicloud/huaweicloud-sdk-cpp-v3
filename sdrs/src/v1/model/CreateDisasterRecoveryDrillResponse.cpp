@@ -50,7 +50,6 @@ bool CreateDisasterRecoveryDrillResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateDisasterRecoveryDrillResponse::getJobId() const
 {
     return jobId_;

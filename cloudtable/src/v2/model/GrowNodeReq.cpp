@@ -64,7 +64,6 @@ bool GrowNodeReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string GrowNodeReq::getComponentName() const
 {
     return componentName_;

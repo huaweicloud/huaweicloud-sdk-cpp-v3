@@ -190,7 +190,6 @@ bool PublicipCreateResp::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t PublicipCreateResp::getBandwidthSize() const
 {
     return bandwidthSize_;

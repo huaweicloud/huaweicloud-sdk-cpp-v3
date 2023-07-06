@@ -49,7 +49,6 @@ bool CinderShowVolumeTransferResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 VolumeTransfer CinderShowVolumeTransferResponse::getTransfer() const
 {
     return transfer_;

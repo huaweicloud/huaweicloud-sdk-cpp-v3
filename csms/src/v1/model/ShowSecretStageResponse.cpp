@@ -49,7 +49,6 @@ bool ShowSecretStageResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 Stage ShowSecretStageResponse::getStage() const
 {
     return stage_;

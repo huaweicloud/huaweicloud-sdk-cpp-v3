@@ -354,7 +354,6 @@ bool BackupResp::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BackupResp::getCheckpointId() const
 {
     return checkpointId_;

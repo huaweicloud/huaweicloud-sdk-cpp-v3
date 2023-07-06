@@ -64,7 +64,6 @@ bool DetachProtectedInstanceReplicationRequest::fromJson(const web::json::value&
     return ok;
 }
 
-
 std::string DetachProtectedInstanceReplicationRequest::getProtectedInstanceId() const
 {
     return protectedInstanceId_;

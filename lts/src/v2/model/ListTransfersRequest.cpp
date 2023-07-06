@@ -120,7 +120,6 @@ bool ListTransfersRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListTransfersRequest::getContentType() const
 {
     return contentType_;

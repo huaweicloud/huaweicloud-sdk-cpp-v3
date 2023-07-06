@@ -78,7 +78,6 @@ bool LiveDomainModifyReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string LiveDomainModifyReq::getDomain() const
 {
     return domain_;

@@ -49,7 +49,6 @@ bool CreateNotificationRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 CreateNotificationRequestBody CreateNotificationRequest::getBody() const
 {
     return body_;

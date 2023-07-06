@@ -189,7 +189,6 @@ bool BusinessLicenseResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BusinessLicenseResult::getRegistrationNumber() const
 {
     return registrationNumber_;

@@ -50,7 +50,6 @@ bool DeleteProtectedInstanceNicResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteProtectedInstanceNicResponse::getJobId() const
 {
     return jobId_;

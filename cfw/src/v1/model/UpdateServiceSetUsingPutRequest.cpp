@@ -91,7 +91,6 @@ bool UpdateServiceSetUsingPutRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateServiceSetUsingPutRequest::getSetId() const
 {
     return setId_;

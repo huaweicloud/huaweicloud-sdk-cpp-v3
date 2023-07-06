@@ -50,7 +50,6 @@ bool Meta::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string Meta::getUuid() const
 {
     return uuid_;

@@ -77,7 +77,6 @@ bool UpdateDnsServersRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateDnsServersRequest::getFwInstanceId() const
 {
     return fwInstanceId_;

@@ -49,7 +49,6 @@ bool CreateSecurityGroupRuleResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 SecurityGroupRule CreateSecurityGroupRuleResponse::getSecurityGroupRule() const
 {
     return securityGroupRule_;

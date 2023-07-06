@@ -63,7 +63,6 @@ bool CreateKeywordsAlarmRuleRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateKeywordsAlarmRuleRequest::getContentType() const
 {
     return contentType_;

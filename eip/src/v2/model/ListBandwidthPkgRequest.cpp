@@ -78,7 +78,6 @@ bool ListBandwidthPkgRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t ListBandwidthPkgRequest::getLimit() const
 {
     return limit_;

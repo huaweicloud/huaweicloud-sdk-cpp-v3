@@ -62,7 +62,6 @@ bool NeutronListFirewallGroupsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<NeutronFirewallGroup>& NeutronListFirewallGroupsResponse::getFirewallGroups()
 {
     return firewallGroups_;

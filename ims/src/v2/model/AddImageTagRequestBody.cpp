@@ -49,7 +49,6 @@ bool AddImageTagRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ResourceTag AddImageTagRequestBody::getTag() const
 {
     return tag_;

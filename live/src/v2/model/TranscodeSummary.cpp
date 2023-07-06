@@ -64,7 +64,6 @@ bool TranscodeSummary::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string TranscodeSummary::getType() const
 {
     return type_;

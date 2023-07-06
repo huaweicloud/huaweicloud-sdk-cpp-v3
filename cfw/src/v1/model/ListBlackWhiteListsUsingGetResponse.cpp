@@ -49,7 +49,6 @@ bool ListBlackWhiteListsUsingGetResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 BlackWhiteListResponse_data ListBlackWhiteListsUsingGetResponse::getData() const
 {
     return data_;

@@ -89,7 +89,6 @@ bool UpdatePortOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdatePortOption::getName() const
 {
     return name_;

@@ -106,7 +106,6 @@ bool CambodianIdCardRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CambodianIdCardRequestBody::getImage() const
 {
     return image_;

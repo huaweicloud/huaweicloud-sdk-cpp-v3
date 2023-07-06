@@ -201,7 +201,6 @@ bool LtsStructTemplateInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<StructFieldInfo>& LtsStructTemplateInfo::getDemoFields()
 {
     return demoFields_;

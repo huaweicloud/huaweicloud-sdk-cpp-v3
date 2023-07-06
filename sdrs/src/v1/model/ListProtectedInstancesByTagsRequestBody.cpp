@@ -143,7 +143,6 @@ bool ListProtectedInstancesByTagsRequestBody::fromJson(const web::json::value& v
     return ok;
 }
 
-
 std::vector<TagParams>& ListProtectedInstancesByTagsRequestBody::getTags()
 {
     return tags_;

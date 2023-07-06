@@ -63,7 +63,6 @@ bool UpdateDisassociatePublicipResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateDisassociatePublicipResponse::getRequestId() const
 {
     return requestId_;

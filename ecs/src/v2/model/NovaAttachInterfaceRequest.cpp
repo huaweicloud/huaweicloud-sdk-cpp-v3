@@ -63,7 +63,6 @@ bool NovaAttachInterfaceRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NovaAttachInterfaceRequest::getServerId() const
 {
     return serverId_;

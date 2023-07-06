@@ -106,7 +106,6 @@ bool MvsInvoiceRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string MvsInvoiceRequestBody::getImage() const
 {
     return image_;

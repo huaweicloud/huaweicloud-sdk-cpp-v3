@@ -50,7 +50,6 @@ bool ShowQuotaRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowQuotaRequest::getType() const
 {
     return type_;

@@ -49,7 +49,6 @@ bool NeutronUpdateSecurityGroupRequestBody::fromJson(const web::json::value& val
     return ok;
 }
 
-
 NeutronUpdateSecurityGroupOption NeutronUpdateSecurityGroupRequestBody::getSecurityGroup() const
 {
     return securityGroup_;

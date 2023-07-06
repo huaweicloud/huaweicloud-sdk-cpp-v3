@@ -132,7 +132,6 @@ bool NovaSecurityGroupCommonRule::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t NovaSecurityGroupCommonRule::getFromPort() const
 {
     return fromPort_;

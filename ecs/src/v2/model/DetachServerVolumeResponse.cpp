@@ -50,7 +50,6 @@ bool DetachServerVolumeResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DetachServerVolumeResponse::getJobId() const
 {
     return jobId_;

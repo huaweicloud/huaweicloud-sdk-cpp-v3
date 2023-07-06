@@ -300,7 +300,6 @@ bool TrainTicketResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string TrainTicketResult::getTicketId() const
 {
     return ticketId_;

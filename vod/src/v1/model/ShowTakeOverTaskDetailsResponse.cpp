@@ -91,7 +91,6 @@ bool ShowTakeOverTaskDetailsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t ShowTakeOverTaskDetailsResponse::getTotal() const
 {
     return total_;

@@ -78,7 +78,6 @@ bool TrainTicketRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string TrainTicketRequestBody::getImage() const
 {
     return image_;

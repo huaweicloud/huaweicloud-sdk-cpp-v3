@@ -92,7 +92,6 @@ bool ListEastWestFirewallRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t ListEastWestFirewallRequest::getLimit() const
 {
     return limit_;

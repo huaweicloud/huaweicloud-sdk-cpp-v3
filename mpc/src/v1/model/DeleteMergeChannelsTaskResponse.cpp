@@ -36,7 +36,6 @@ bool DeleteMergeChannelsTaskResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

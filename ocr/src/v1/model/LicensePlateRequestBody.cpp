@@ -64,7 +64,6 @@ bool LicensePlateRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string LicensePlateRequestBody::getImage() const
 {
     return image_;

@@ -49,7 +49,6 @@ bool ListPrivateipsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<Privateip>& ListPrivateipsResponse::getPrivateips()
 {
     return privateips_;

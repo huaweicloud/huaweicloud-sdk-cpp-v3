@@ -50,7 +50,6 @@ bool PrePaidServerSecurityGroup::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PrePaidServerSecurityGroup::getId() const
 {
     return id_;

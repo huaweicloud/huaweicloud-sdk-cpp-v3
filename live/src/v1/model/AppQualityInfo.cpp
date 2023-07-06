@@ -63,7 +63,6 @@ bool AppQualityInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AppQualityInfo::getAppName() const
 {
     return appName_;

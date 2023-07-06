@@ -92,7 +92,6 @@ bool ReplicationRecordMetadata::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 bool ReplicationRecordMetadata::isMultiattach() const
 {
     return multiattach_;

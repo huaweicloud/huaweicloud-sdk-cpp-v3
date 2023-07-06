@@ -106,7 +106,6 @@ bool ListTakeOverTaskRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListTakeOverTaskRequest::getXSdkDate() const
 {
     return xSdkDate_;

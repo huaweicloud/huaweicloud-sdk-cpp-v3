@@ -204,7 +204,6 @@ bool MyanmarDriverLicenseConfidence::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 float MyanmarDriverLicenseConfidence::getCardNumber() const
 {
     return cardNumber_;

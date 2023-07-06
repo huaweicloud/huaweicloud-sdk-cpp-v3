@@ -49,7 +49,6 @@ bool DetectFaceByFileIntlResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<DetectFace>& DetectFaceByFileIntlResponse::getFaces()
 {
     return faces_;

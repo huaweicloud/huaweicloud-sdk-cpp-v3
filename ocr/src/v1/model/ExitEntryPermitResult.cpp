@@ -269,7 +269,6 @@ bool ExitEntryPermitResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ExitEntryPermitResult::getName() const
 {
     return name_;

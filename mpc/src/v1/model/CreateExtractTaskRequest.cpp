@@ -49,7 +49,6 @@ bool CreateExtractTaskRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 CreateExtractTaskReq CreateExtractTaskRequest::getBody() const
 {
     return body_;

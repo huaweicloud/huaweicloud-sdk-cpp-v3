@@ -64,7 +64,6 @@ bool ChangeSeversOsMetadataWithoutCloudInitOption::fromJson(const web::json::val
     return ok;
 }
 
-
 std::string ChangeSeversOsMetadataWithoutCloudInitOption::getSystemEncrypted() const
 {
     return systemEncrypted_;

@@ -120,7 +120,6 @@ bool StorageUsage::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t StorageUsage::getBackupCount() const
 {
     return backupCount_;

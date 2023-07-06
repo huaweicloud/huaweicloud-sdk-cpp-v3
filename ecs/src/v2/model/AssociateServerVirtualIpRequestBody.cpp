@@ -49,7 +49,6 @@ bool AssociateServerVirtualIpRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 AssociateServerVirtualIpOption AssociateServerVirtualIpRequestBody::getNic() const
 {
     return nic_;

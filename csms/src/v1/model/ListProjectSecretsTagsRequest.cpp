@@ -36,7 +36,6 @@ bool ListProjectSecretsTagsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

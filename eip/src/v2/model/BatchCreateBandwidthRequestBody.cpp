@@ -49,7 +49,6 @@ bool BatchCreateBandwidthRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 BatchCreateBandwidthOption BatchCreateBandwidthRequestBody::getBandwidth() const
 {
     return bandwidth_;

@@ -49,7 +49,6 @@ bool FailoverProtectionGroupRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 Object FailoverProtectionGroupRequestBody::getFailoverServerGroup() const
 {
     return failoverServerGroup_;

@@ -214,7 +214,6 @@ bool RemuxTask::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RemuxTask::getTaskId() const
 {
     return taskId_;

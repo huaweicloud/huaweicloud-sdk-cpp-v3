@@ -49,7 +49,6 @@ bool RecognizeChileIdCardResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ChileIdCardResult RecognizeChileIdCardResponse::getResult() const
 {
     return result_;

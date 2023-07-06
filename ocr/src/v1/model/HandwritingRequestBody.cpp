@@ -106,7 +106,6 @@ bool HandwritingRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string HandwritingRequestBody::getImage() const
 {
     return image_;

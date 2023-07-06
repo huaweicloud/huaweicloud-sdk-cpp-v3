@@ -49,7 +49,6 @@ bool BackupRestoreReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 BackupRestore BackupRestoreReq::getRestore() const
 {
     return restore_;

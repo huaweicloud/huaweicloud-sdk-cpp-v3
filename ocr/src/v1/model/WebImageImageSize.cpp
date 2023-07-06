@@ -64,7 +64,6 @@ bool WebImageImageSize::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t WebImageImageSize::getHeight() const
 {
     return height_;

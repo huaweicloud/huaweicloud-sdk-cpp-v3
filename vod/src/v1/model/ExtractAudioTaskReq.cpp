@@ -63,7 +63,6 @@ bool ExtractAudioTaskReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ExtractAudioTaskReq::getAssetId() const
 {
     return assetId_;

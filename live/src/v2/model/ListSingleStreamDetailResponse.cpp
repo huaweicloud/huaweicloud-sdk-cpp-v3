@@ -131,7 +131,6 @@ bool ListSingleStreamDetailResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListSingleStreamDetailResponse::getPublishDomain() const
 {
     return publishDomain_;

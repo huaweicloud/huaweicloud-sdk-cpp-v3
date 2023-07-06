@@ -50,7 +50,6 @@ bool DownloadSecretBlobResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DownloadSecretBlobResponse::getSecretBlob() const
 {
     return secretBlob_;

@@ -120,7 +120,6 @@ bool SubnetIpAvailability::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t SubnetIpAvailability::getUsedIps() const
 {
     return usedIps_;

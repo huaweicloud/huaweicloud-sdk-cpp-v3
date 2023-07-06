@@ -92,7 +92,6 @@ bool VpcDetail::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string VpcDetail::getId() const
 {
     return id_;

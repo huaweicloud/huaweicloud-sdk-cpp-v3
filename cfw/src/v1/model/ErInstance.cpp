@@ -120,7 +120,6 @@ bool ErInstance::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ErInstance::getId() const
 {
     return id_;

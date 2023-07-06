@@ -176,7 +176,6 @@ bool NeutronUpdateFirewallRuleOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NeutronUpdateFirewallRuleOption::getAction() const
 {
     return action_;

@@ -49,7 +49,6 @@ bool ListQuotasResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ResourceResp ListQuotasResponse::getQuotas() const
 {
     return quotas_;

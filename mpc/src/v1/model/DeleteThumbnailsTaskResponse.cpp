@@ -36,7 +36,6 @@ bool DeleteThumbnailsTaskResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

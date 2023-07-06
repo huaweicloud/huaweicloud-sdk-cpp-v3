@@ -36,7 +36,6 @@ bool DeleteProtectedInstanceTagResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

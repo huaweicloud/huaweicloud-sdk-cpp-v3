@@ -120,7 +120,6 @@ bool CreateSharedBandwidthOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateSharedBandwidthOption::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

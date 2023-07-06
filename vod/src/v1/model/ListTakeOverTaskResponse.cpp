@@ -63,7 +63,6 @@ bool ListTakeOverTaskResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<TakeOverTask>& ListTakeOverTaskResponse::getTasks()
 {
     return tasks_;

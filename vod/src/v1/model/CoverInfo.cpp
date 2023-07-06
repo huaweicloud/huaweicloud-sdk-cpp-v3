@@ -50,7 +50,6 @@ bool CoverInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CoverInfo::getCoverUrl() const
 {
     return coverUrl_;

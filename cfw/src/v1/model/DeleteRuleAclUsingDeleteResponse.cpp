@@ -49,7 +49,6 @@ bool DeleteRuleAclUsingDeleteResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 RuleId DeleteRuleAclUsingDeleteResponse::getData() const
 {
     return data_;

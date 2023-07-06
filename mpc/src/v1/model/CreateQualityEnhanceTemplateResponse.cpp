@@ -50,7 +50,6 @@ bool CreateQualityEnhanceTemplateResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t CreateQualityEnhanceTemplateResponse::getTemplateId() const
 {
     return templateId_;

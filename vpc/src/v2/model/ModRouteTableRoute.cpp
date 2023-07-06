@@ -92,7 +92,6 @@ bool ModRouteTableRoute::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ModRouteTableRoute::getType() const
 {
     return type_;

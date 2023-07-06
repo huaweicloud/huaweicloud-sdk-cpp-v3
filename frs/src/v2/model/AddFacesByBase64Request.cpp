@@ -77,7 +77,6 @@ bool AddFacesByBase64Request::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AddFacesByBase64Request::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

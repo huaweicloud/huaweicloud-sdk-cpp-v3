@@ -36,7 +36,6 @@ bool NovaDeleteKeypairResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

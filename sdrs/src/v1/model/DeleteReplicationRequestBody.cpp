@@ -49,7 +49,6 @@ bool DeleteReplicationRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 DeleteReplicationRequestParams DeleteReplicationRequestBody::getReplication() const
 {
     return replication_;

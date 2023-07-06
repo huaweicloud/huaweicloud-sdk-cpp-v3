@@ -78,7 +78,6 @@ bool EpQuotas::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t EpQuotas::getQuota() const
 {
     return quota_;

@@ -78,7 +78,6 @@ bool ShowDomainKeyChainResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowDomainKeyChainResponse::getKey() const
 {
     return key_;

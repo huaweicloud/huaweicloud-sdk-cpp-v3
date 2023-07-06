@@ -49,7 +49,6 @@ bool CopyCheckpointRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 CheckpointReplicateReq CopyCheckpointRequest::getBody() const
 {
     return body_;

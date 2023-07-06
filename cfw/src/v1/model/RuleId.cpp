@@ -50,7 +50,6 @@ bool RuleId::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RuleId::getId() const
 {
     return id_;

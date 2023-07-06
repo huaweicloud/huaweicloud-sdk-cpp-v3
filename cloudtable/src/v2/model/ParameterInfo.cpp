@@ -162,7 +162,6 @@ bool ParameterInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ParameterInfo::getId() const
 {
     return id_;

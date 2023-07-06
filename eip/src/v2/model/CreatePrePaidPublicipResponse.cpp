@@ -77,7 +77,6 @@ bool CreatePrePaidPublicipResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 PublicipCreateResp CreatePrePaidPublicipResponse::getPublicip() const
 {
     return publicip_;

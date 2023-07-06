@@ -286,7 +286,6 @@ bool MyanmarIdcardResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string MyanmarIdcardResult::getSide() const
 {
     return side_;

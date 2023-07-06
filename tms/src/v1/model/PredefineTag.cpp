@@ -78,7 +78,6 @@ bool PredefineTag::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PredefineTag::getKey() const
 {
     return key_;

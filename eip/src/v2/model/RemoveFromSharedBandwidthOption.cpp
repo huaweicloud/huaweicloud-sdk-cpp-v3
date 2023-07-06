@@ -77,7 +77,6 @@ bool RemoveFromSharedBandwidthOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RemoveFromSharedBandwidthOption::getChargeMode() const
 {
     return chargeMode_;

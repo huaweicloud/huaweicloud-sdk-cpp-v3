@@ -49,7 +49,6 @@ bool CreatePublicipTagRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ResourceTagOption CreatePublicipTagRequestBody::getTag() const
 {
     return tag_;

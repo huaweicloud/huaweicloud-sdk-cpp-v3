@@ -63,7 +63,6 @@ bool ListDnsServersResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<DnsServersResponseDTO>& ListDnsServersResponse::getData()
 {
     return data_;

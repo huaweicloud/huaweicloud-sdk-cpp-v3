@@ -92,7 +92,6 @@ bool ListTagValuesRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListTagValuesRequest::getRegionId() const
 {
     return regionId_;

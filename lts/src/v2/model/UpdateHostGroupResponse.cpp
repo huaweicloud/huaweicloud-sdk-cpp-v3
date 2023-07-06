@@ -132,7 +132,6 @@ bool UpdateHostGroupResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateHostGroupResponse::getHostGroupId() const
 {
     return hostGroupId_;

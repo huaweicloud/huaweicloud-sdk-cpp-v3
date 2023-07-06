@@ -49,7 +49,6 @@ bool SetVaultResourceResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& SetVaultResourceResponse::getSetResourceIds()
 {
     return setResourceIds_;

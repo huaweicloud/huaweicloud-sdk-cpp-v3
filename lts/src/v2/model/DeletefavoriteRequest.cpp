@@ -64,7 +64,6 @@ bool DeletefavoriteRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeletefavoriteRequest::getFavResId() const
 {
     return favResId_;

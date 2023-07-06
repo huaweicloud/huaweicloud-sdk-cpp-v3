@@ -63,7 +63,6 @@ bool ListEnterpriseProjectResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<EpDetail>& ListEnterpriseProjectResponse::getEnterpriseProjects()
 {
     return enterpriseProjects_;

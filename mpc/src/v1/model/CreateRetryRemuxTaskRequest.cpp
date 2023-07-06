@@ -49,7 +49,6 @@ bool CreateRetryRemuxTaskRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 RemuxRetryReq CreateRetryRemuxTaskRequest::getBody() const
 {
     return body_;

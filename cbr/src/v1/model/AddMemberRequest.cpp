@@ -63,7 +63,6 @@ bool AddMemberRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AddMemberRequest::getBackupId() const
 {
     return backupId_;

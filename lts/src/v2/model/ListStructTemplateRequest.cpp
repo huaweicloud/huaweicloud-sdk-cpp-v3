@@ -64,7 +64,6 @@ bool ListStructTemplateRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListStructTemplateRequest::getContentType() const
 {
     return contentType_;

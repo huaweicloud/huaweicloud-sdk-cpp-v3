@@ -91,7 +91,6 @@ bool StreamTranscodingTemplate::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string StreamTranscodingTemplate::getDomain() const
 {
     return domain_;

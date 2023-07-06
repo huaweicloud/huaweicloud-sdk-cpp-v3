@@ -176,7 +176,6 @@ bool PostAndPutFloatingIpResp::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PostAndPutFloatingIpResp::getFixedIpAddress() const
 {
     return fixedIpAddress_;

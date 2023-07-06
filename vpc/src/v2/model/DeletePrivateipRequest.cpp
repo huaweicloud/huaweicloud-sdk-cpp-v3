@@ -50,7 +50,6 @@ bool DeletePrivateipRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeletePrivateipRequest::getPrivateipId() const
 {
     return privateipId_;

@@ -64,7 +64,6 @@ bool StructLogContents::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string StructLogContents::getLogContent() const
 {
     return logContent_;

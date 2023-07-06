@@ -49,7 +49,6 @@ bool NotifySmnTopicConfigRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 NotificationConfigReq NotifySmnTopicConfigRequest::getBody() const
 {
     return body_;

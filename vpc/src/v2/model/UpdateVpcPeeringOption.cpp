@@ -64,7 +64,6 @@ bool UpdateVpcPeeringOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateVpcPeeringOption::getName() const
 {
     return name_;

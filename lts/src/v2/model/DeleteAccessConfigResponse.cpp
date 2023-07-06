@@ -63,7 +63,6 @@ bool DeleteAccessConfigResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<AccessConfigInfo>& DeleteAccessConfigResponse::getResult()
 {
     return result_;

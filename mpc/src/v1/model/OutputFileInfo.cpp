@@ -77,7 +77,6 @@ bool OutputFileInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string OutputFileInfo::getOutputFileName() const
 {
     return outputFileName_;

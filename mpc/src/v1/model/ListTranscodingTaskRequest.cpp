@@ -133,7 +133,6 @@ bool ListTranscodingTaskRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListTranscodingTaskRequest::getXLanguage() const
 {
     return xLanguage_;

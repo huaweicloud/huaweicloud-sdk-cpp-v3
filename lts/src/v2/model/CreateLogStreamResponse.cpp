@@ -50,7 +50,6 @@ bool CreateLogStreamResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateLogStreamResponse::getLogStreamId() const
 {
     return logStreamId_;

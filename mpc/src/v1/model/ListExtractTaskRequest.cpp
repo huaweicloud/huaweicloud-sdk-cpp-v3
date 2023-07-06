@@ -133,7 +133,6 @@ bool ListExtractTaskRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListExtractTaskRequest::getXLanguage() const
 {
     return xLanguage_;

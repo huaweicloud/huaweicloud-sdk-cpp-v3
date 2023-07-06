@@ -49,7 +49,6 @@ bool UpdateVolumeRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 UpdateVolumeOption UpdateVolumeRequestBody::getVolume() const
 {
     return volume_;

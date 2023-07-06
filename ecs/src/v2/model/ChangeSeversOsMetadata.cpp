@@ -78,7 +78,6 @@ bool ChangeSeversOsMetadata::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ChangeSeversOsMetadata::getSystemEncrypted() const
 {
     return systemEncrypted_;

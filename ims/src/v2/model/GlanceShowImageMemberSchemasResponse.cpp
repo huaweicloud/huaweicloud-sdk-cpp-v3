@@ -63,7 +63,6 @@ bool GlanceShowImageMemberSchemasResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string GlanceShowImageMemberSchemasResponse::getName() const
 {
     return name_;

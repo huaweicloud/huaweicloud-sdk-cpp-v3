@@ -176,7 +176,6 @@ bool NeutronCreateFirewallRuleOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NeutronCreateFirewallRuleOption::getName() const
 {
     return name_;

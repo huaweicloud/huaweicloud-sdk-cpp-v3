@@ -134,7 +134,6 @@ bool ListEnterpriseProjectRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListEnterpriseProjectRequest::getId() const
 {
     return id_;

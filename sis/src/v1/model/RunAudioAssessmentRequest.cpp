@@ -49,7 +49,6 @@ bool RunAudioAssessmentRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 PostShortAudioAssessmentReq RunAudioAssessmentRequest::getBody() const
 {
     return body_;

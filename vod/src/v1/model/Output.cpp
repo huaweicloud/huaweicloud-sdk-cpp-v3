@@ -105,7 +105,6 @@ bool Output::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string Output::getPlayType() const
 {
     return playType_;

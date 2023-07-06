@@ -64,7 +64,6 @@ bool NovaServerInterfaceFixedIp::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NovaServerInterfaceFixedIp::getIpAddress() const
 {
     return ipAddress_;

@@ -63,7 +63,6 @@ bool NeutronUpdateFirewallPolicyRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NeutronUpdateFirewallPolicyRequest::getFirewallPolicyId() const
 {
     return firewallPolicyId_;

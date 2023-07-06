@@ -49,7 +49,6 @@ bool AddPublicipsIntoSharedBandwidthRequestBody::fromJson(const web::json::value
     return ok;
 }
 
-
 AddPublicipsIntoSharedBandwidthOption AddPublicipsIntoSharedBandwidthRequestBody::getBandwidth() const
 {
     return bandwidth_;

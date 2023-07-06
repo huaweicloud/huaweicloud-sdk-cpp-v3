@@ -64,7 +64,6 @@ bool AgenciesTaskReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AgenciesTaskReq::getProjectId() const
 {
     return projectId_;

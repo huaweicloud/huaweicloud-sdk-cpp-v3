@@ -49,7 +49,6 @@ bool ListBreifStructTemplateResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<BriefStructTemplateModel>& ListBreifStructTemplateResponse::getResults()
 {
     return results_;

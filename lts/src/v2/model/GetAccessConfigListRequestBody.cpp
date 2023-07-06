@@ -101,7 +101,6 @@ bool GetAccessConfigListRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& GetAccessConfigListRequestBody::getAccessConfigNameList()
 {
     return accessConfigNameList_;

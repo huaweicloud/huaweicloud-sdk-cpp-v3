@@ -49,7 +49,6 @@ bool DeleteAddressSetInfoUsingDeleteResponse::fromJson(const web::json::value& v
     return ok;
 }
 
-
 IdObject DeleteAddressSetInfoUsingDeleteResponse::getData() const
 {
     return data_;

@@ -64,7 +64,6 @@ bool ChangeProtectStatusRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ChangeProtectStatusRequestBody::getObjectId() const
 {
     return objectId_;

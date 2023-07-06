@@ -64,7 +64,6 @@ bool CreatePrivateipOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreatePrivateipOption::getSubnetId() const
 {
     return subnetId_;

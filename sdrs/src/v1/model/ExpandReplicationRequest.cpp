@@ -63,7 +63,6 @@ bool ExpandReplicationRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ExpandReplicationRequest::getReplicationId() const
 {
     return replicationId_;

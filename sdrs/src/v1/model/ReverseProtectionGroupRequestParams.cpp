@@ -50,7 +50,6 @@ bool ReverseProtectionGroupRequestParams::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ReverseProtectionGroupRequestParams::getPriorityStation() const
 {
     return priorityStation_;

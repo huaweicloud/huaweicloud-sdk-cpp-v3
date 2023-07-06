@@ -50,7 +50,6 @@ bool ExportImageResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ExportImageResponse::getJobId() const
 {
     return jobId_;

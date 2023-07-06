@@ -78,7 +78,6 @@ bool PrePaidServerSchedulerHints::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PrePaidServerSchedulerHints::getGroup() const
 {
     return group_;

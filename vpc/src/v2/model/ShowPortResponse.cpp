@@ -49,7 +49,6 @@ bool ShowPortResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 Port ShowPortResponse::getPort() const
 {
     return port_;

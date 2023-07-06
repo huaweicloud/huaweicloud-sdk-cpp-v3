@@ -63,7 +63,6 @@ bool RecognizeHealthCodeRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RecognizeHealthCodeRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

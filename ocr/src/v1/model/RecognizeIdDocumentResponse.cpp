@@ -49,7 +49,6 @@ bool RecognizeIdDocumentResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 IdDocumentItem RecognizeIdDocumentResponse::getResult() const
 {
     return result_;

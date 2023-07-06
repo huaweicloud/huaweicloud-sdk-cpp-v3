@@ -106,7 +106,6 @@ bool VideoTemplateInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string VideoTemplateInfo::getQuality() const
 {
     return quality_;

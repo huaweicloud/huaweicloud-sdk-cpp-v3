@@ -118,7 +118,6 @@ bool FaceSearchBase64Req::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string FaceSearchBase64Req::getFilter() const
 {
     return filter_;

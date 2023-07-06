@@ -104,7 +104,6 @@ bool ListSubnetsByTagsRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListSubnetsByTagsRequestBody::getAction() const
 {
     return action_;

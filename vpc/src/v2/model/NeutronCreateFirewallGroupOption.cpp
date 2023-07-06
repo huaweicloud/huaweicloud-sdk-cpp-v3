@@ -119,7 +119,6 @@ bool NeutronCreateFirewallGroupOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NeutronCreateFirewallGroupOption::getName() const
 {
     return name_;

@@ -50,7 +50,6 @@ bool BatchRebootServersResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BatchRebootServersResponse::getJobId() const
 {
     return jobId_;

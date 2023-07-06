@@ -50,7 +50,6 @@ bool ShowJobRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowJobRequest::getJobId() const
 {
     return jobId_;

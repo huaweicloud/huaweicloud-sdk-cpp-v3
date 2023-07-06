@@ -49,7 +49,6 @@ bool CreatePortRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 CreatePortRequestBody CreatePortRequest::getBody() const
 {
     return body_;

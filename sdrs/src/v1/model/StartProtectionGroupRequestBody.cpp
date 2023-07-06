@@ -49,7 +49,6 @@ bool StartProtectionGroupRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 Object StartProtectionGroupRequestBody::getStartServerGroup() const
 {
     return startServerGroup_;

@@ -49,7 +49,6 @@ bool BatchUpdateVaultResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& BatchUpdateVaultResponse::getUpdatedVaultsId()
 {
     return updatedVaultsId_;

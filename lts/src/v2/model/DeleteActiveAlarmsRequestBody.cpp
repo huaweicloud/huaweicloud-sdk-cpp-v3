@@ -49,7 +49,6 @@ bool DeleteActiveAlarmsRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<Event>& DeleteActiveAlarmsRequestBody::getEvents()
 {
     return events_;

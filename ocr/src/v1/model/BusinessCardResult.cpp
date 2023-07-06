@@ -193,7 +193,6 @@ bool BusinessCardResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& BusinessCardResult::getName()
 {
     return name_;

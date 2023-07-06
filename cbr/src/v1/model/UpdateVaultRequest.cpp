@@ -63,7 +63,6 @@ bool UpdateVaultRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateVaultRequest::getVaultId() const
 {
     return vaultId_;

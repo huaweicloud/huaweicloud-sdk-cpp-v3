@@ -92,7 +92,6 @@ bool MacaoIdCardRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string MacaoIdCardRequestBody::getImage() const
 {
     return image_;

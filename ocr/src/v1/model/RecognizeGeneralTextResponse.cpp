@@ -49,7 +49,6 @@ bool RecognizeGeneralTextResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 GeneralTextResult RecognizeGeneralTextResponse::getResult() const
 {
     return result_;

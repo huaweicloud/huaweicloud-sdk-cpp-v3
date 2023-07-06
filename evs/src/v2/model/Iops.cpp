@@ -78,7 +78,6 @@ bool Iops::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 bool Iops::isFrozened() const
 {
     return frozened_;

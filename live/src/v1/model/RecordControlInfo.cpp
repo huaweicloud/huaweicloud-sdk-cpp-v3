@@ -78,7 +78,6 @@ bool RecordControlInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RecordControlInfo::getPublishDomain() const
 {
     return publishDomain_;

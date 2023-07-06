@@ -77,7 +77,6 @@ bool AddFacesByBase64Response::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AddFacesByBase64Response::getFaceSetId() const
 {
     return faceSetId_;

@@ -63,7 +63,6 @@ bool UpdateAssetRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateAssetRequest::getXSdkDate() const
 {
     return xSdkDate_;

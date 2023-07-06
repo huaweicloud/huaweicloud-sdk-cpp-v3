@@ -49,7 +49,6 @@ bool RecognizeLicensePlateResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<LicensePlateResult>& RecognizeLicensePlateResponse::getResult()
 {
     return result_;

@@ -88,7 +88,6 @@ bool BeneficiaryItem::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 InsurancePolicyDetail BeneficiaryItem::getBeneficiaryName() const
 {
     return beneficiaryName_;

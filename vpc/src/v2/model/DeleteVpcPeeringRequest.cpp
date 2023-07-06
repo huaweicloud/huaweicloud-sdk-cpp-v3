@@ -50,7 +50,6 @@ bool DeleteVpcPeeringRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteVpcPeeringRequest::getPeeringId() const
 {
     return peeringId_;

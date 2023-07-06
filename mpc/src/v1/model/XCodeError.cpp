@@ -64,7 +64,6 @@ bool XCodeError::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string XCodeError::getCode() const
 {
     return code_;

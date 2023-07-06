@@ -49,7 +49,6 @@ bool AddAddressSetInfoUsingPostResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 IdObject AddAddressSetInfoUsingPostResponse::getData() const
 {
     return data_;

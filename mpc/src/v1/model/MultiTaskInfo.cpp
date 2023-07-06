@@ -76,7 +76,6 @@ bool MultiTaskInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t MultiTaskInfo::getTemplateId() const
 {
     return templateId_;

@@ -62,7 +62,6 @@ bool DetectStandardByNameAndIdResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 Meta DetectStandardByNameAndIdResponse::getMeta() const
 {
     return meta_;

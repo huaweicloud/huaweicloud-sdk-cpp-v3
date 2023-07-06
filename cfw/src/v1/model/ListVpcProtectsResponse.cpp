@@ -63,7 +63,6 @@ bool ListVpcProtectsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListVpcProtectsResponse::getTraceId() const
 {
     return traceId_;

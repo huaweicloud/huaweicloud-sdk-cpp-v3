@@ -49,7 +49,6 @@ bool UpdateTransTemplateRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ModifyTransTemplateReq UpdateTransTemplateRequest::getBody() const
 {
     return body_;

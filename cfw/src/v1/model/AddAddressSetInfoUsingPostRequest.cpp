@@ -77,7 +77,6 @@ bool AddAddressSetInfoUsingPostRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AddAddressSetInfoUsingPostRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

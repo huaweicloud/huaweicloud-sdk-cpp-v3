@@ -50,7 +50,6 @@ bool ListFlavorsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListFlavorsRequest::getAvailabilityZone() const
 {
     return availabilityZone_;

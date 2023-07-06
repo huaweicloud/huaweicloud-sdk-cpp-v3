@@ -119,7 +119,6 @@ bool RecordCallbackConfigRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RecordCallbackConfigRequest::getPublishDomain() const
 {
     return publishDomain_;

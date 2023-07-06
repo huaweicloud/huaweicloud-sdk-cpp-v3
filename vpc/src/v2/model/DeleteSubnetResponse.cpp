@@ -36,7 +36,6 @@ bool DeleteSubnetResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

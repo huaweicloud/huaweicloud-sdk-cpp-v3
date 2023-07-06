@@ -49,7 +49,6 @@ bool ListStructTemplateResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<StructTemplateModel>& ListStructTemplateResponse::getResults()
 {
     return results_;

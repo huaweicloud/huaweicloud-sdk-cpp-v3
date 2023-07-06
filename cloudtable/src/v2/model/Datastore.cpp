@@ -64,7 +64,6 @@ bool Datastore::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string Datastore::getVersion() const
 {
     return version_;

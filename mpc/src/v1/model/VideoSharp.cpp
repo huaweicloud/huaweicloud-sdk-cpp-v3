@@ -78,7 +78,6 @@ bool VideoSharp::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string VideoSharp::getName() const
 {
     return name_;

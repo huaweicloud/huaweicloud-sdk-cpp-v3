@@ -49,7 +49,6 @@ bool ListVpcsByTagsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ListVpcsByTagsRequestBody ListVpcsByTagsRequest::getBody() const
 {
     return body_;

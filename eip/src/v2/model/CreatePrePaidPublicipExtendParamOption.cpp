@@ -106,7 +106,6 @@ bool CreatePrePaidPublicipExtendParamOption::fromJson(const web::json::value& va
     return ok;
 }
 
-
 std::string CreatePrePaidPublicipExtendParamOption::getChargeMode() const
 {
     return chargeMode_;

@@ -78,7 +78,6 @@ bool ListSubnetsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t ListSubnetsRequest::getLimit() const
 {
     return limit_;

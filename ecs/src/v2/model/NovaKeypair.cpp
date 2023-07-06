@@ -120,7 +120,6 @@ bool NovaKeypair::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NovaKeypair::getFingerprint() const
 {
     return fingerprint_;

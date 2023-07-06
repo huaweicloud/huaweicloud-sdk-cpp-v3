@@ -36,7 +36,6 @@ bool CreateMbTasksReportResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

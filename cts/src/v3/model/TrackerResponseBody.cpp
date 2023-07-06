@@ -257,7 +257,6 @@ bool TrackerResponseBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string TrackerResponseBody::getId() const
 {
     return id_;

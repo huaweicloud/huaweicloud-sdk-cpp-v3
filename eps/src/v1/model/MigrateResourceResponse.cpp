@@ -36,7 +36,6 @@ bool MigrateResourceResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

@@ -134,7 +134,6 @@ bool GeneralTableRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string GeneralTableRequestBody::getImage() const
 {
     return image_;

@@ -50,7 +50,6 @@ bool DeleteResetTracksTaskRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteResetTracksTaskRequest::getTaskId() const
 {
     return taskId_;

@@ -63,7 +63,6 @@ bool RecognizeInvoiceVerificationRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RecognizeInvoiceVerificationRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

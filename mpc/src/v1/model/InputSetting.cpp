@@ -77,7 +77,6 @@ bool InputSetting::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ObsObjInfo InputSetting::getInput() const
 {
     return input_;

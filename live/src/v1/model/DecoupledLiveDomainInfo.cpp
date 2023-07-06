@@ -204,7 +204,6 @@ bool DecoupledLiveDomainInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DecoupledLiveDomainInfo::getDomain() const
 {
     return domain_;

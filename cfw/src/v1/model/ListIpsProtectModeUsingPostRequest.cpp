@@ -78,7 +78,6 @@ bool ListIpsProtectModeUsingPostRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListIpsProtectModeUsingPostRequest::getObjectId() const
 {
     return objectId_;

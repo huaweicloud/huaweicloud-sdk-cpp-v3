@@ -36,7 +36,6 @@ bool DeleteTranscodingTaskByConsoleResponse::fromJson(const web::json::value& va
     return ok;
 }
 
-
 }
 }
 }

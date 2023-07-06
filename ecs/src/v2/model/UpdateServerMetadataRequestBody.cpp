@@ -49,7 +49,6 @@ bool UpdateServerMetadataRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::map<std::string, std::string>& UpdateServerMetadataRequestBody::getMetadata()
 {
     return metadata_;

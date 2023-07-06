@@ -49,7 +49,6 @@ bool ShowAgentResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 Agent ShowAgentResponse::getAgent() const
 {
     return agent_;

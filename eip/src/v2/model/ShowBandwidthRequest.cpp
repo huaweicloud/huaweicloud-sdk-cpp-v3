@@ -50,7 +50,6 @@ bool ShowBandwidthRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowBandwidthRequest::getBandwidthId() const
 {
     return bandwidthId_;

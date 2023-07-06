@@ -63,7 +63,6 @@ bool ShowPublicipPoolResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 PublicipPoolShowResp ShowPublicipPoolResponse::getPublicipPool() const
 {
     return publicipPool_;

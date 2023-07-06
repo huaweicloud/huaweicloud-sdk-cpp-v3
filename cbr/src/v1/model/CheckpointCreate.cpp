@@ -118,7 +118,6 @@ bool CheckpointCreate::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CheckpointCreate::getCreatedAt() const
 {
     return createdAt_;

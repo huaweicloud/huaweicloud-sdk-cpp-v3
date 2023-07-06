@@ -50,7 +50,6 @@ bool ShowVpcRouteRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowVpcRouteRequest::getRouteId() const
 {
     return routeId_;

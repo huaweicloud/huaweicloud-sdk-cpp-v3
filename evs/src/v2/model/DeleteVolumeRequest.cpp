@@ -50,7 +50,6 @@ bool DeleteVolumeRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteVolumeRequest::getVolumeId() const
 {
     return volumeId_;

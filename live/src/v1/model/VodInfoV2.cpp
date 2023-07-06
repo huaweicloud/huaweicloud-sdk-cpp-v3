@@ -64,7 +64,6 @@ bool VodInfoV2::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string VodInfoV2::getAssetId() const
 {
     return assetId_;

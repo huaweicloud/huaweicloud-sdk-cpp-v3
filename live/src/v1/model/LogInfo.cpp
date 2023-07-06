@@ -106,7 +106,6 @@ bool LogInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string LogInfo::getName() const
 {
     return name_;

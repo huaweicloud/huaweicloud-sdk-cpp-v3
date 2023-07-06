@@ -50,7 +50,6 @@ bool UpdateClusterSettingResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 bool UpdateClusterSettingResponse::isModifyResult() const
 {
     return modifyResult_;

@@ -50,7 +50,6 @@ bool AssociateServerVirtualIpResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AssociateServerVirtualIpResponse::getPortId() const
 {
     return portId_;

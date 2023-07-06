@@ -49,7 +49,6 @@ bool NeutronCreateFloatingIpRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 NeutronCreateFloatingIpRequestBody NeutronCreateFloatingIpRequest::getBody() const
 {
     return body_;

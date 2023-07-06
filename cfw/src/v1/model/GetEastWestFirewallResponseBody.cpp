@@ -185,7 +185,6 @@ bool GetEastWestFirewallResponseBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string GetEastWestFirewallResponseBody::getObjectId() const
 {
     return objectId_;

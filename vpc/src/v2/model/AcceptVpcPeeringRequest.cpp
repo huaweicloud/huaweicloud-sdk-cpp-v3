@@ -50,7 +50,6 @@ bool AcceptVpcPeeringRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AcceptVpcPeeringRequest::getPeeringId() const
 {
     return peeringId_;

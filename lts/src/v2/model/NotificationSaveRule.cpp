@@ -91,7 +91,6 @@ bool NotificationSaveRule::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NotificationSaveRule::getLanguage() const
 {
     return language_;

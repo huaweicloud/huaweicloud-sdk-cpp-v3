@@ -78,7 +78,6 @@ bool UpdateFaceResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t UpdateFaceResponse::getFaceNumber() const
 {
     return faceNumber_;

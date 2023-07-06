@@ -50,7 +50,6 @@ bool DeletePortRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeletePortRequest::getPortId() const
 {
     return portId_;

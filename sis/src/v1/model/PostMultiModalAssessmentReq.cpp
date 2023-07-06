@@ -77,7 +77,6 @@ bool PostMultiModalAssessmentReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 MultiModalConfig PostMultiModalAssessmentReq::getConfig() const
 {
     return config_;

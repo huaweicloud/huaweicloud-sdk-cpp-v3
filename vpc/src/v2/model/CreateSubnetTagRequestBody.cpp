@@ -49,7 +49,6 @@ bool CreateSubnetTagRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ResourceTag CreateSubnetTagRequestBody::getTag() const
 {
     return tag_;

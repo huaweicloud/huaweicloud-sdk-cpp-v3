@@ -64,7 +64,6 @@ bool ShowAssetCipherRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowAssetCipherRequest::getXSdkDate() const
 {
     return xSdkDate_;

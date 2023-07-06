@@ -92,7 +92,6 @@ bool ListNotificationTemplatesRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListNotificationTemplatesRequest::getDomainId() const
 {
     return domainId_;

@@ -78,7 +78,6 @@ bool BindingVifDetails::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 bool BindingVifDetails::isPrimaryInterface() const
 {
     return primaryInterface_;

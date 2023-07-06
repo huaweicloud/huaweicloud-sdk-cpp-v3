@@ -105,7 +105,6 @@ bool OutputThumbnailPara::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t OutputThumbnailPara::getTotalPictures() const
 {
     return totalPictures_;

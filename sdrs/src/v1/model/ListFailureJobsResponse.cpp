@@ -63,7 +63,6 @@ bool ListFailureJobsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<FailureJobParams>& ListFailureJobsResponse::getFailureJobs()
 {
     return failureJobs_;

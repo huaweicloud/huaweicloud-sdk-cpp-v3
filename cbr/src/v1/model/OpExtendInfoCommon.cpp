@@ -78,7 +78,6 @@ bool OpExtendInfoCommon::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t OpExtendInfoCommon::getProgress() const
 {
     return progress_;

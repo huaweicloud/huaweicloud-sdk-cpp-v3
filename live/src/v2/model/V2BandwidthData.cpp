@@ -64,7 +64,6 @@ bool V2BandwidthData::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int64_t V2BandwidthData::getValue() const
 {
     return value_;

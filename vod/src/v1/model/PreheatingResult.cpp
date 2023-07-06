@@ -64,7 +64,6 @@ bool PreheatingResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PreheatingResult::getUrl() const
 {
     return url_;

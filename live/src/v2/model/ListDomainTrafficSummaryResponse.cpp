@@ -63,7 +63,6 @@ bool ListDomainTrafficSummaryResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<TrafficSummaryData>& ListDomainTrafficSummaryResponse::getTrafficList()
 {
     return trafficList_;

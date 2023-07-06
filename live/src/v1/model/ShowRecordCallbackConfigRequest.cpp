@@ -50,7 +50,6 @@ bool ShowRecordCallbackConfigRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowRecordCallbackConfigRequest::getId() const
 {
     return id_;

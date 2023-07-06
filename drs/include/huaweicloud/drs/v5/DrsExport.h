@@ -1,0 +1,16 @@
+#ifndef HUAWEICLOUD_SDK_DRS_V5_DrsExport_H_
+#define HUAWEICLOUD_SDK_DRS_V5_DrsExport_H_
+
+#include <huaweicloud/core/EXPORT.h>
+
+#if defined(HUAWEICLOUD_SHARED)
+#	if defined(HUAWEICLOUD_DRS_V5_SHARED)
+#		define HUAWEICLOUD_DRS_V5_EXPORT HUAWEICLOUD_EXPORT
+#	else
+#		define HUAWEICLOUD_DRS_V5_EXPORT HUAWEICLOUD_IMPORT
+#	endif
+#else
+#	define HUAWEICLOUD_DRS_V5_EXPORT
+#endif
+
+#endif // !HUAWEICLOUD_SDK_DRS_V5_DrsExport_H_

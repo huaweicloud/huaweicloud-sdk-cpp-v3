@@ -92,7 +92,6 @@ bool ListAgentRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListAgentRequest::getLimit() const
 {
     return limit_;

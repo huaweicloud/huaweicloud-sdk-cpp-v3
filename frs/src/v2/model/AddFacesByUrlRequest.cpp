@@ -77,7 +77,6 @@ bool AddFacesByUrlRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AddFacesByUrlRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

@@ -92,7 +92,6 @@ bool HlsEncrypt::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string HlsEncrypt::getKey() const
 {
     return key_;

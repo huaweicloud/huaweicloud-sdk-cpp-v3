@@ -62,7 +62,6 @@ bool DetectExtentionByNameAndIdResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 Meta DetectExtentionByNameAndIdResponse::getMeta() const
 {
     return meta_;

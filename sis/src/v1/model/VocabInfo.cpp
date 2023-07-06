@@ -92,7 +92,6 @@ bool VocabInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string VocabInfo::getVocabularyId() const
 {
     return vocabularyId_;

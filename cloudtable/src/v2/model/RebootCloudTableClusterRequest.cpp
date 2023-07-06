@@ -77,7 +77,6 @@ bool RebootCloudTableClusterRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RebootCloudTableClusterRequest::getClusterId() const
 {
     return clusterId_;

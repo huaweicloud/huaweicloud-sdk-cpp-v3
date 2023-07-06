@@ -49,7 +49,6 @@ bool ListAccessControlLogsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 HttpQueryCfwAccessControllerLogsResponseDTO_data ListAccessControlLogsResponse::getData() const
 {
     return data_;

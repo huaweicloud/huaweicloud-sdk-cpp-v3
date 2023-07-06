@@ -204,7 +204,6 @@ bool SecurityGroupRule::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string SecurityGroupRule::getId() const
 {
     return id_;

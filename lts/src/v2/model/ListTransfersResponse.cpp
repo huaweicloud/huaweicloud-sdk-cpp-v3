@@ -49,7 +49,6 @@ bool ListTransfersResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<CreateTransferResponseBody>& ListTransfersResponse::getLogTransfers()
 {
     return logTransfers_;

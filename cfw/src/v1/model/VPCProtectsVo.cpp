@@ -117,7 +117,6 @@ bool VPCProtectsVo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t VPCProtectsVo::getTotal() const
 {
     return total_;

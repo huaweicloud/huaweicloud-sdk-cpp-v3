@@ -49,7 +49,6 @@ bool CreateVpcRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 CreateVpcOption CreateVpcRequestBody::getVpc() const
 {
     return vpc_;

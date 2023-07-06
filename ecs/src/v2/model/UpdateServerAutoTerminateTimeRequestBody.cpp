@@ -50,7 +50,6 @@ bool UpdateServerAutoTerminateTimeRequestBody::fromJson(const web::json::value& 
     return ok;
 }
 
-
 std::string UpdateServerAutoTerminateTimeRequestBody::getAutoTerminateTime() const
 {
     return autoTerminateTime_;

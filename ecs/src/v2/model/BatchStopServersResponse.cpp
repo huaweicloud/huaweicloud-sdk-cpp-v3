@@ -50,7 +50,6 @@ bool BatchStopServersResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BatchStopServersResponse::getJobId() const
 {
     return jobId_;

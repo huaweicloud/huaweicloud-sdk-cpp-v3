@@ -105,7 +105,6 @@ bool ServiceItemListResponseDto_data::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t ServiceItemListResponseDto_data::getOffset() const
 {
     return offset_;

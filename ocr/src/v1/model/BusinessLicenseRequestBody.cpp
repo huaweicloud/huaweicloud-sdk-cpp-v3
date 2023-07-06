@@ -64,7 +64,6 @@ bool BusinessLicenseRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BusinessLicenseRequestBody::getImage() const
 {
     return image_;

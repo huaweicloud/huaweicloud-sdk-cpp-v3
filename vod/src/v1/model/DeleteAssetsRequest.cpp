@@ -77,7 +77,6 @@ bool DeleteAssetsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteAssetsRequest::getXSdkDate() const
 {
     return xSdkDate_;

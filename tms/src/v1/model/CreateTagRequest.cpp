@@ -64,7 +64,6 @@ bool CreateTagRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateTagRequest::getKey() const
 {
     return key_;

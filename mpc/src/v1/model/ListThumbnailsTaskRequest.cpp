@@ -133,7 +133,6 @@ bool ListThumbnailsTaskRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListThumbnailsTaskRequest::getXLanguage() const
 {
     return xLanguage_;

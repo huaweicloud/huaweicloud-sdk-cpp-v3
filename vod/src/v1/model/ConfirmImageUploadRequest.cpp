@@ -63,7 +63,6 @@ bool ConfirmImageUploadRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ConfirmImageUploadRequest::getXSdkDate() const
 {
     return xSdkDate_;

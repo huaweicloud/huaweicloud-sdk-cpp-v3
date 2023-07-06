@@ -50,7 +50,6 @@ bool CreateMediaProcessTaskResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateMediaProcessTaskResponse::getTaskId() const
 {
     return taskId_;

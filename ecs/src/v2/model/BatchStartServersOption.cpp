@@ -49,7 +49,6 @@ bool BatchStartServersOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ServerId>& BatchStartServersOption::getServers()
 {
     return servers_;

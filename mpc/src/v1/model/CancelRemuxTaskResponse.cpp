@@ -36,7 +36,6 @@ bool CancelRemuxTaskResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

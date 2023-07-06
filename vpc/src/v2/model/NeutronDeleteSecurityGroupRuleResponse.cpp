@@ -36,7 +36,6 @@ bool NeutronDeleteSecurityGroupRuleResponse::fromJson(const web::json::value& va
     return ok;
 }
 
-
 }
 }
 }

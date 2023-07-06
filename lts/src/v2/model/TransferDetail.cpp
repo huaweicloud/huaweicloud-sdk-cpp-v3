@@ -259,7 +259,6 @@ bool TransferDetail::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t TransferDetail::getObsPeriod() const
 {
     return obsPeriod_;

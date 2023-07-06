@@ -63,7 +63,6 @@ bool ResizeVolumeRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ResizeVolumeRequest::getVolumeId() const
 {
     return volumeId_;

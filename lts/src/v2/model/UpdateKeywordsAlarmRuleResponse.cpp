@@ -243,7 +243,6 @@ bool UpdateKeywordsAlarmRuleResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateKeywordsAlarmRuleResponse::getKeywordsAlarmRuleId() const
 {
     return keywordsAlarmRuleId_;

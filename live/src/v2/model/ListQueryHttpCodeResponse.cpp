@@ -63,7 +63,6 @@ bool ListQueryHttpCodeResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<HttpCodeSummary>& ListQueryHttpCodeResponse::getDataSeries()
 {
     return dataSeries_;

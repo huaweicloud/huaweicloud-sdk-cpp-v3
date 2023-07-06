@@ -63,7 +63,6 @@ bool DeleteSecretForScheduleRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteSecretForScheduleRequest::getSecretName() const
 {
     return secretName_;

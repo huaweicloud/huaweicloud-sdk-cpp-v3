@@ -49,7 +49,6 @@ bool UpdateProtectedInstanceNameResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ShowProtectedInstanceParams UpdateProtectedInstanceNameResponse::getProtectedInstance() const
 {
     return protectedInstance_;

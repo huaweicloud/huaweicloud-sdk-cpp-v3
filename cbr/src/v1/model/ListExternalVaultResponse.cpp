@@ -91,7 +91,6 @@ bool ListExternalVaultResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<Vault>& ListExternalVaultResponse::getVaults()
 {
     return vaults_;

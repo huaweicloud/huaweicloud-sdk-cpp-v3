@@ -63,7 +63,6 @@ bool NeutronUpdateFirewallGroupRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NeutronUpdateFirewallGroupRequest::getFirewallGroupId() const
 {
     return firewallGroupId_;

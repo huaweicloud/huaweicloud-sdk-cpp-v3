@@ -64,7 +64,6 @@ bool GetServerRemoteConsoleOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string GetServerRemoteConsoleOption::getProtocol() const
 {
     return protocol_;

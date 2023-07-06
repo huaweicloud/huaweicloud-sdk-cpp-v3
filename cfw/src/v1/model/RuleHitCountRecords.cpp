@@ -91,7 +91,6 @@ bool RuleHitCountRecords::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t RuleHitCountRecords::getLimit() const
 {
     return limit_;

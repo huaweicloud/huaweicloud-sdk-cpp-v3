@@ -49,7 +49,6 @@ bool ListApiVersionsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<VersionDetail>& ListApiVersionsResponse::getVersions()
 {
     return versions_;

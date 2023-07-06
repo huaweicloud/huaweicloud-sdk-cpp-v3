@@ -50,7 +50,6 @@ bool DeleteWatermarkTemplateRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t DeleteWatermarkTemplateRequest::getTemplateId() const
 {
     return templateId_;

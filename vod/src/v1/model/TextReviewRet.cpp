@@ -92,7 +92,6 @@ bool TextReviewRet::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string TextReviewRet::getSuggestion() const
 {
     return suggestion_;

@@ -50,7 +50,6 @@ bool ShowServerPasswordResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowServerPasswordResponse::getPassword() const
 {
     return password_;

@@ -92,7 +92,6 @@ bool BatchProfile::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BatchProfile::getUserId() const
 {
     return userId_;

@@ -92,7 +92,6 @@ bool OpExtendInfoRestore::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string OpExtendInfoRestore::getBackupId() const
 {
     return backupId_;

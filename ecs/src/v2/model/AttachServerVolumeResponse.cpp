@@ -50,7 +50,6 @@ bool AttachServerVolumeResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AttachServerVolumeResponse::getJobId() const
 {
     return jobId_;

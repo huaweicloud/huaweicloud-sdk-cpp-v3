@@ -64,7 +64,6 @@ bool ShowPublicipPoolRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowPublicipPoolRequest::getPublicipPoolId() const
 {
     return publicipPoolId_;

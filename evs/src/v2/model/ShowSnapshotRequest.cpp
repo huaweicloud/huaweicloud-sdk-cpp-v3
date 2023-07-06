@@ -50,7 +50,6 @@ bool ShowSnapshotRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowSnapshotRequest::getSnapshotId() const
 {
     return snapshotId_;

@@ -64,7 +64,6 @@ bool DomainProjectsInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DomainProjectsInfo::getProjectId() const
 {
     return projectId_;

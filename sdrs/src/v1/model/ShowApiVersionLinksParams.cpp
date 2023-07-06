@@ -64,7 +64,6 @@ bool ShowApiVersionLinksParams::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowApiVersionLinksParams::getRel() const
 {
     return rel_;

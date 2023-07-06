@@ -49,7 +49,6 @@ bool ChangeServerChargeModeRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ChangeServerChargeModeRequestBody ChangeServerChargeModeRequest::getBody() const
 {
     return body_;

@@ -64,7 +64,6 @@ bool AccessConfigFormatMutil::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AccessConfigFormatMutil::getMode() const
 {
     return mode_;

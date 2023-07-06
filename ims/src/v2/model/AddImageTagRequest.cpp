@@ -63,7 +63,6 @@ bool AddImageTagRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AddImageTagRequest::getImageId() const
 {
     return imageId_;

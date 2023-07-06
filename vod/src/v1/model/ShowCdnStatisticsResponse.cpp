@@ -77,7 +77,6 @@ bool ShowCdnStatisticsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowCdnStatisticsResponse::getStartTime() const
 {
     return startTime_;

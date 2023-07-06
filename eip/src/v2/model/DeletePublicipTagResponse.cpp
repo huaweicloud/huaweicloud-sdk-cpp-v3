@@ -36,7 +36,6 @@ bool DeletePublicipTagResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

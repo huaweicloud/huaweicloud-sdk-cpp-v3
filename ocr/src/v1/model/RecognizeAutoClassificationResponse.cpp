@@ -49,7 +49,6 @@ bool RecognizeAutoClassificationResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<AutoClassificationResult>& RecognizeAutoClassificationResponse::getResult()
 {
     return result_;

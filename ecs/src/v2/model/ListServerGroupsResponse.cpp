@@ -62,7 +62,6 @@ bool ListServerGroupsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ListServerGroupsResult>& ListServerGroupsResponse::getServerGroups()
 {
     return serverGroups_;

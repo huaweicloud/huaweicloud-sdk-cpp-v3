@@ -78,7 +78,6 @@ bool QuotaDetailBackupGigabytes::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t QuotaDetailBackupGigabytes::getInUse() const
 {
     return inUse_;

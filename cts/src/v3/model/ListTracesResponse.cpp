@@ -62,7 +62,6 @@ bool ListTracesResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<Traces>& ListTracesResponse::getTraces()
 {
     return traces_;

@@ -49,7 +49,6 @@ bool IvsStandardByNameAndIdRequestBody_data::fromJson(const web::json::value& va
     return ok;
 }
 
-
 std::vector<StandardReqDataByNameAndId>& IvsStandardByNameAndIdRequestBody_data::getReqData()
 {
     return reqData_;

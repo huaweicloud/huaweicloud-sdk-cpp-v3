@@ -62,7 +62,6 @@ bool TranscodeDetail::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<MultiTaskInfo>& TranscodeDetail::getMultitaskInfo()
 {
     return multitaskInfo_;

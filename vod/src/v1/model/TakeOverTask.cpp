@@ -203,7 +203,6 @@ bool TakeOverTask::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string TakeOverTask::getBucket() const
 {
     return bucket_;

@@ -50,7 +50,6 @@ bool ListKeywordsAlarmRulesRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListKeywordsAlarmRulesRequest::getContentType() const
 {
     return contentType_;

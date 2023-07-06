@@ -64,7 +64,6 @@ bool DeleteVaultTagRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteVaultTagRequest::getKey() const
 {
     return key_;

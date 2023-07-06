@@ -63,7 +63,6 @@ bool RecognizeBankcardRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RecognizeBankcardRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

@@ -77,7 +77,6 @@ bool ExpandClusterComponentRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ExpandClusterComponentRequest::getClusterId() const
 {
     return clusterId_;

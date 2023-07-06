@@ -49,7 +49,6 @@ bool ListResourceRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ResqTagResource ListResourceRequest::getBody() const
 {
     return body_;

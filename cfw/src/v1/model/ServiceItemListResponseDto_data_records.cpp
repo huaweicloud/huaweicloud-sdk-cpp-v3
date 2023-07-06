@@ -120,7 +120,6 @@ bool ServiceItemListResponseDto_data_records::fromJson(const web::json::value& v
     return ok;
 }
 
-
 std::string ServiceItemListResponseDto_data_records::getItemId() const
 {
     return itemId_;

@@ -50,7 +50,6 @@ bool CollectTranscriberJobRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CollectTranscriberJobRequest::getJobId() const
 {
     return jobId_;

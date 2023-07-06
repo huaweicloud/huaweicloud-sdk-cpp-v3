@@ -64,7 +64,6 @@ bool DeleteImageTagRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteImageTagRequest::getImageId() const
 {
     return imageId_;

@@ -92,7 +92,6 @@ bool BusinessCardRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BusinessCardRequestBody::getImage() const
 {
     return image_;

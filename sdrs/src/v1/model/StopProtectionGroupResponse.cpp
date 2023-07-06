@@ -50,7 +50,6 @@ bool StopProtectionGroupResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string StopProtectionGroupResponse::getJobId() const
 {
     return jobId_;

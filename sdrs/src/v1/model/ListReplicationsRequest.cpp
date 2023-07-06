@@ -176,7 +176,6 @@ bool ListReplicationsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListReplicationsRequest::getServerGroupId() const
 {
     return serverGroupId_;

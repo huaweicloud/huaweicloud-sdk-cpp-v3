@@ -49,7 +49,6 @@ bool AgentAddPathReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& AgentAddPathReq::getAddPath()
 {
     return addPath_;

@@ -120,7 +120,6 @@ bool TimelineTrafficStatisticsRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int64_t TimelineTrafficStatisticsRequestBody::getStartTime() const
 {
     return startTime_;

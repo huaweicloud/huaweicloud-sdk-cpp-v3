@@ -64,7 +64,6 @@ bool ShowClusterDetailRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowClusterDetailRequest::getXLanguage() const
 {
     return xLanguage_;

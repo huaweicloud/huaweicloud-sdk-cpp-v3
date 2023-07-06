@@ -63,7 +63,6 @@ bool AssociateServerVirtualIpRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AssociateServerVirtualIpRequest::getNicId() const
 {
     return nicId_;

@@ -49,7 +49,6 @@ bool RecognizeQuotaInvoiceResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 QuotaInvoiceResult RecognizeQuotaInvoiceResponse::getResult() const
 {
     return result_;

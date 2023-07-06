@@ -49,7 +49,6 @@ bool NovaDisassociateSecurityGroupRequestBody::fromJson(const web::json::value& 
     return ok;
 }
 
-
 NovaRemoveSecurityGroupOption NovaDisassociateSecurityGroupRequestBody::getRemoveSecurityGroup() const
 {
     return removeSecurityGroup_;

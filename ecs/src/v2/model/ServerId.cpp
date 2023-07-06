@@ -50,7 +50,6 @@ bool ServerId::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ServerId::getId() const
 {
     return id_;

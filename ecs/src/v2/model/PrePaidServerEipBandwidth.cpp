@@ -92,7 +92,6 @@ bool PrePaidServerEipBandwidth::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t PrePaidServerEipBandwidth::getSize() const
 {
     return size_;

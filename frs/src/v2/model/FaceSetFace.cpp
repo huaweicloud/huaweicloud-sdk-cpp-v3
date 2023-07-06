@@ -90,7 +90,6 @@ bool FaceSetFace::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 BoundingBox FaceSetFace::getBoundingBox() const
 {
     return boundingBox_;

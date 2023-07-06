@@ -64,7 +64,6 @@ bool DeleteSubnetTagRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteSubnetTagRequest::getSubnetId() const
 {
     return subnetId_;

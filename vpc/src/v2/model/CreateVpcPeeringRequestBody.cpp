@@ -49,7 +49,6 @@ bool CreateVpcPeeringRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 CreateVpcPeeringOption CreateVpcPeeringRequestBody::getPeering() const
 {
     return peering_;

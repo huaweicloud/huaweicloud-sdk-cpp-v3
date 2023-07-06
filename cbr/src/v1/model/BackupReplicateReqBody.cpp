@@ -120,7 +120,6 @@ bool BackupReplicateReqBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BackupReplicateReqBody::getDescription() const
 {
     return description_;

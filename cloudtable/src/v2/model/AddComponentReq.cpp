@@ -50,7 +50,6 @@ bool AddComponentReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t AddComponentReq::getNodeNum() const
 {
     return nodeNum_;

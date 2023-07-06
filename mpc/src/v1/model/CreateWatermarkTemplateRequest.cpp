@@ -49,7 +49,6 @@ bool CreateWatermarkTemplateRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 WatermarkTemplate CreateWatermarkTemplateRequest::getBody() const
 {
     return body_;

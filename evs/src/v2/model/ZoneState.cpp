@@ -50,7 +50,6 @@ bool ZoneState::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 bool ZoneState::isAvailable() const
 {
     return available_;

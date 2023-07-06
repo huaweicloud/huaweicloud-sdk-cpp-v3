@@ -64,7 +64,6 @@ bool CinderListVolumeTransfersRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t CinderListVolumeTransfersRequest::getLimit() const
 {
     return limit_;

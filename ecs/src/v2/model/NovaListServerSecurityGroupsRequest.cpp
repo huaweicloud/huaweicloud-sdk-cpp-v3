@@ -50,7 +50,6 @@ bool NovaListServerSecurityGroupsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NovaListServerSecurityGroupsRequest::getServerId() const
 {
     return serverId_;

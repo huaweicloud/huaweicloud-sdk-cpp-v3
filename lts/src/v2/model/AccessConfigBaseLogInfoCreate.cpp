@@ -64,7 +64,6 @@ bool AccessConfigBaseLogInfoCreate::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AccessConfigBaseLogInfoCreate::getLogGroupId() const
 {
     return logGroupId_;

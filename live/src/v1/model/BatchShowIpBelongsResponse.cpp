@@ -49,7 +49,6 @@ bool BatchShowIpBelongsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<CdnIp>& BatchShowIpBelongsResponse::getCdnIps()
 {
     return cdnIps_;

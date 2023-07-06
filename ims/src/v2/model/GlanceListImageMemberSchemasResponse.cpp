@@ -76,7 +76,6 @@ bool GlanceListImageMemberSchemasResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<Links>& GlanceListImageMemberSchemasResponse::getLinks()
 {
     return links_;

@@ -49,7 +49,6 @@ bool CreateCheckpointRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 VaultBackupReq CreateCheckpointRequest::getBody() const
 {
     return body_;

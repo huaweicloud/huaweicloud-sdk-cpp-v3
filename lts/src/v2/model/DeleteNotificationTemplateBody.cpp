@@ -49,7 +49,6 @@ bool DeleteNotificationTemplateBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& DeleteNotificationTemplateBody::getTemplateNames()
 {
     return templateNames_;

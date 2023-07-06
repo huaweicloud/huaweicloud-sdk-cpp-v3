@@ -78,7 +78,6 @@ bool AudioTrack::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t AudioTrack::getType() const
 {
     return type_;

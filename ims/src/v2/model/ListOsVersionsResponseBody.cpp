@@ -63,7 +63,6 @@ bool ListOsVersionsResponseBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListOsVersionsResponseBody::getPlatform() const
 {
     return platform_;

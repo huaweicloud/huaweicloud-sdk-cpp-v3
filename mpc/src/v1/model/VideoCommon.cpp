@@ -162,7 +162,6 @@ bool VideoCommon::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string VideoCommon::getOutputPolicy() const
 {
     return outputPolicy_;

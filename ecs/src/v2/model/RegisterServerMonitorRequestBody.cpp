@@ -50,7 +50,6 @@ bool RegisterServerMonitorRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RegisterServerMonitorRequestBody::getMonitorMetrics() const
 {
     return monitorMetrics_;

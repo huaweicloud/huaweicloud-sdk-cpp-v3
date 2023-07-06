@@ -64,7 +64,6 @@ bool MediaTypes::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string MediaTypes::getBase() const
 {
     return base_;

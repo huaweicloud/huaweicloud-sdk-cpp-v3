@@ -63,7 +63,6 @@ bool RecognizeShortAudioResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RecognizeShortAudioResponse::getTraceId() const
 {
     return traceId_;

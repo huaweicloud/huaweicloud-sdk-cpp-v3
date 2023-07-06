@@ -105,7 +105,6 @@ bool WebImageRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string WebImageRequestBody::getImage() const
 {
     return image_;

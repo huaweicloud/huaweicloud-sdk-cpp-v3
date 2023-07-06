@@ -49,7 +49,6 @@ bool RecognizeQualificationCertificateResponse::fromJson(const web::json::value&
     return ok;
 }
 
-
 QualificationCertificateResult RecognizeQualificationCertificateResponse::getResult() const
 {
     return result_;

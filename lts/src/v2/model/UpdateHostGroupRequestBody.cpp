@@ -90,7 +90,6 @@ bool UpdateHostGroupRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateHostGroupRequestBody::getHostGroupId() const
 {
     return hostGroupId_;

@@ -49,7 +49,6 @@ bool ResetServerPasswordRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ResetServerPasswordOption ResetServerPasswordRequestBody::getResetPassword() const
 {
     return resetPassword_;

@@ -50,7 +50,6 @@ bool AdditionalProperties::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AdditionalProperties::getType() const
 {
     return type_;

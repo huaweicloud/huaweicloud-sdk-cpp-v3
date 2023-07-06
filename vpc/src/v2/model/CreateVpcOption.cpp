@@ -105,7 +105,6 @@ bool CreateVpcOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateVpcOption::getCidr() const
 {
     return cidr_;

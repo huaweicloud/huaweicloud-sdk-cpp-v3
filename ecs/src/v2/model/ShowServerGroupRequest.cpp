@@ -50,7 +50,6 @@ bool ShowServerGroupRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowServerGroupRequest::getServerGroupId() const
 {
     return serverGroupId_;

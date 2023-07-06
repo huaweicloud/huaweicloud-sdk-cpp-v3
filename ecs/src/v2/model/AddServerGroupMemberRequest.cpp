@@ -63,7 +63,6 @@ bool AddServerGroupMemberRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AddServerGroupMemberRequest::getServerGroupId() const
 {
     return serverGroupId_;

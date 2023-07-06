@@ -120,7 +120,6 @@ bool ListTranscodeTemplateRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListTranscodeTemplateRequest::getXSdkDate() const
 {
     return xSdkDate_;

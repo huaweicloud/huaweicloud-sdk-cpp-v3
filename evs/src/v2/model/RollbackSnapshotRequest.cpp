@@ -63,7 +63,6 @@ bool RollbackSnapshotRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RollbackSnapshotRequest::getSnapshotId() const
 {
     return snapshotId_;

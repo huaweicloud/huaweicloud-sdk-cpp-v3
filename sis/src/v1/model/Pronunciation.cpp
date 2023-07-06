@@ -64,7 +64,6 @@ bool Pronunciation::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 float Pronunciation::getScore() const
 {
     return score_;

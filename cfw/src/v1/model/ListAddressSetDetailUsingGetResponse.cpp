@@ -49,7 +49,6 @@ bool ListAddressSetDetailUsingGetResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 AddressSetDetailResponseDTO_data ListAddressSetDetailUsingGetResponse::getData() const
 {
     return data_;

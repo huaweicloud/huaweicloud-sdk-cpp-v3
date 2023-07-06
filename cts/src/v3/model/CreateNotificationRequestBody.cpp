@@ -117,7 +117,6 @@ bool CreateNotificationRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateNotificationRequestBody::getNotificationName() const
 {
     return notificationName_;

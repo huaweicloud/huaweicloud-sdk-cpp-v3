@@ -63,7 +63,6 @@ bool AomMappingfilesInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AomMappingfilesInfo::getFileName() const
 {
     return fileName_;

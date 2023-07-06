@@ -106,7 +106,6 @@ bool VolumeMetadata::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string VolumeMetadata::getSystemCmkid() const
 {
     return systemCmkid_;

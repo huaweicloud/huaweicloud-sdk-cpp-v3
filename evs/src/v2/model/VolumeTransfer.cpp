@@ -105,7 +105,6 @@ bool VolumeTransfer::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string VolumeTransfer::getCreatedAt() const
 {
     return createdAt_;

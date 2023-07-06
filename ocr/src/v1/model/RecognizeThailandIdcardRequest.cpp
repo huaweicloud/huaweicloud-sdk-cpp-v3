@@ -63,7 +63,6 @@ bool RecognizeThailandIdcardRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RecognizeThailandIdcardRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

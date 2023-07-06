@@ -49,7 +49,6 @@ bool CreateSecretTagRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 TagItem CreateSecretTagRequestBody::getTag() const
 {
     return tag_;

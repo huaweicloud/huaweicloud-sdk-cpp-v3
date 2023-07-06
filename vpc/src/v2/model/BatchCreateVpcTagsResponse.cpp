@@ -36,7 +36,6 @@ bool BatchCreateVpcTagsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

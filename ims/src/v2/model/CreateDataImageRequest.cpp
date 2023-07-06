@@ -49,7 +49,6 @@ bool CreateDataImageRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 CreateDataImageRequestBody CreateDataImageRequest::getBody() const
 {
     return body_;

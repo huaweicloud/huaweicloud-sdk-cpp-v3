@@ -63,7 +63,6 @@ bool CopyImageCrossRegionRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CopyImageCrossRegionRequest::getImageId() const
 {
     return imageId_;

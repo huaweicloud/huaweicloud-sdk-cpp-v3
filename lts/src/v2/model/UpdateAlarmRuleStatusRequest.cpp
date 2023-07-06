@@ -49,7 +49,6 @@ bool UpdateAlarmRuleStatusRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ChangeAlarmRuleStatus UpdateAlarmRuleStatusRequest::getBody() const
 {
     return body_;

@@ -49,7 +49,6 @@ bool ListQueryStructuredLogsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<StructLogContents>& ListQueryStructuredLogsResponse::getStructLogs()
 {
     return structLogs_;

@@ -77,7 +77,6 @@ bool DataBucketQuery::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DataBucketQuery::getDataBucketName() const
 {
     return dataBucketName_;

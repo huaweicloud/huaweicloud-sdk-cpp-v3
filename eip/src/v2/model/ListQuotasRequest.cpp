@@ -50,7 +50,6 @@ bool ListQuotasRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListQuotasRequest::getType() const
 {
     return type_;

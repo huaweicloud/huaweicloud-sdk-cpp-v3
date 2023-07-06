@@ -77,7 +77,6 @@ bool ShowAssetMetaResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<AssetInfo>& ShowAssetMetaResponse::getAssetInfoArray()
 {
     return assetInfoArray_;

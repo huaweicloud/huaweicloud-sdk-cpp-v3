@@ -49,7 +49,6 @@ bool UpdatePredefineTagsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ModifyPrefineTag UpdatePredefineTagsRequest::getBody() const
 {
     return body_;

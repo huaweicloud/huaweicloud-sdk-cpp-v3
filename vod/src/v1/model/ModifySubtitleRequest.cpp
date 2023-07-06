@@ -49,7 +49,6 @@ bool ModifySubtitleRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 SubtitleModifyReq ModifySubtitleRequest::getBody() const
 {
     return body_;

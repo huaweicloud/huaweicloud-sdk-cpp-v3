@@ -77,7 +77,6 @@ bool HealthCodeWordsBlockList::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string HealthCodeWordsBlockList::getWords() const
 {
     return words_;

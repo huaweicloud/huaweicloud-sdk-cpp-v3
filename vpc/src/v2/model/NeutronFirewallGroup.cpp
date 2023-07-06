@@ -217,7 +217,6 @@ bool NeutronFirewallGroup::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NeutronFirewallGroup::getId() const
 {
     return id_;

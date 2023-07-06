@@ -133,7 +133,6 @@ bool CommonPoolDict::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CommonPoolDict::getName() const
 {
     return name_;

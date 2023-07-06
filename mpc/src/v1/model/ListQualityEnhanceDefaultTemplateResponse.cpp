@@ -63,7 +63,6 @@ bool ListQualityEnhanceDefaultTemplateResponse::fromJson(const web::json::value&
     return ok;
 }
 
-
 std::vector<QualityEnhanceTemplateInfo>& ListQualityEnhanceDefaultTemplateResponse::getTaskArray()
 {
     return taskArray_;

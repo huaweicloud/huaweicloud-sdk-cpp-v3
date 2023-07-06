@@ -36,7 +36,6 @@ bool ListProjectsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

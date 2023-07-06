@@ -50,7 +50,6 @@ bool OutputWatermarkPara::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t OutputWatermarkPara::getTimeDuration() const
 {
     return timeDuration_;

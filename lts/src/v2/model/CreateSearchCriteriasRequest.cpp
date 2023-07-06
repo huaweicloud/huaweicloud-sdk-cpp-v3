@@ -91,7 +91,6 @@ bool CreateSearchCriteriasRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateSearchCriteriasRequest::getGroupId() const
 {
     return groupId_;

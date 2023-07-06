@@ -145,7 +145,6 @@ bool RecordRule::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RecordRule::getId() const
 {
     return id_;

@@ -63,7 +63,6 @@ bool BatchDeleteSubnetTagsRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BatchDeleteSubnetTagsRequestBody::getAction() const
 {
     return action_;

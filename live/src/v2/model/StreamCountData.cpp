@@ -64,7 +64,6 @@ bool StreamCountData::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t StreamCountData::getValue() const
 {
     return value_;

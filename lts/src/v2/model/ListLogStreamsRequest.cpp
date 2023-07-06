@@ -106,7 +106,6 @@ bool ListLogStreamsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListLogStreamsRequest::getContentType() const
 {
     return contentType_;

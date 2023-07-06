@@ -64,7 +64,6 @@ bool BillingUpdate::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BillingUpdate::getConsistentLevel() const
 {
     return consistentLevel_;

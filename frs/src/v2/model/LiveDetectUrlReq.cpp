@@ -92,7 +92,6 @@ bool LiveDetectUrlReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string LiveDetectUrlReq::getVideoUrl() const
 {
     return videoUrl_;

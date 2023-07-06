@@ -173,7 +173,6 @@ bool ListAreaDetailRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListAreaDetailRequest::getStartTime() const
 {
     return startTime_;

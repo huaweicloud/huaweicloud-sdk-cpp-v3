@@ -63,7 +63,6 @@ bool RecognizeQualificationCertificateRequest::fromJson(const web::json::value& 
     return ok;
 }
 
-
 std::string RecognizeQualificationCertificateRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

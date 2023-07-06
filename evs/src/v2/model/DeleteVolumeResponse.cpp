@@ -50,7 +50,6 @@ bool DeleteVolumeResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteVolumeResponse::getJobId() const
 {
     return jobId_;

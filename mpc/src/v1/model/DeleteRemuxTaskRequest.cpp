@@ -50,7 +50,6 @@ bool DeleteRemuxTaskRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteRemuxTaskRequest::getTaskId() const
 {
     return taskId_;

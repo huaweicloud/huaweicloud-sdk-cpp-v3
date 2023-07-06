@@ -91,7 +91,6 @@ bool PolicyTriggerResp::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PolicyTriggerResp::getId() const
 {
     return id_;

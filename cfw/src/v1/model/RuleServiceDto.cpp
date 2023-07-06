@@ -120,7 +120,6 @@ bool RuleServiceDto::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t RuleServiceDto::getType() const
 {
     return type_;

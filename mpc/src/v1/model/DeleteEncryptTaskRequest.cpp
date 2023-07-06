@@ -50,7 +50,6 @@ bool DeleteEncryptTaskRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteEncryptTaskRequest::getTaskId() const
 {
     return taskId_;

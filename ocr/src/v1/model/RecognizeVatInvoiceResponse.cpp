@@ -49,7 +49,6 @@ bool RecognizeVatInvoiceResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 VatInvoiceResult RecognizeVatInvoiceResponse::getResult() const
 {
     return result_;

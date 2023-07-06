@@ -63,7 +63,6 @@ bool UpdateFlowLogRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateFlowLogRequest::getFlowlogId() const
 {
     return flowlogId_;

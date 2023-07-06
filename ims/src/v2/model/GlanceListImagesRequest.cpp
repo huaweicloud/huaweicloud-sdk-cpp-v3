@@ -484,7 +484,6 @@ bool GlanceListImagesRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string GlanceListImagesRequest::getImagetype() const
 {
     return imagetype_;

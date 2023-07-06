@@ -76,7 +76,6 @@ bool TranscriberResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string TranscriberResult::getText() const
 {
     return text_;

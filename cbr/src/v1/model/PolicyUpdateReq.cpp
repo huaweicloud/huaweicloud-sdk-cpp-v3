@@ -49,7 +49,6 @@ bool PolicyUpdateReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 PolicyUpdate PolicyUpdateReq::getPolicy() const
 {
     return policy_;

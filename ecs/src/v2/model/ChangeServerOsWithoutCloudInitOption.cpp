@@ -119,7 +119,6 @@ bool ChangeServerOsWithoutCloudInitOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ChangeServerOsWithoutCloudInitOption::getAdminpass() const
 {
     return adminpass_;

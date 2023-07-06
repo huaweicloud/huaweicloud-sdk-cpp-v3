@@ -77,7 +77,6 @@ bool LogContents::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string LogContents::getContent() const
 {
     return content_;

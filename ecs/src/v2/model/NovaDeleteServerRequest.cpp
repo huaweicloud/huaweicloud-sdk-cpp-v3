@@ -50,7 +50,6 @@ bool NovaDeleteServerRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NovaDeleteServerRequest::getServerId() const
 {
     return serverId_;

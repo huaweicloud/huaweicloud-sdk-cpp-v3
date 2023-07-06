@@ -104,7 +104,6 @@ bool ListPublicipsByTagsRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<TagReq>& ListPublicipsByTagsRequestBody::getTags()
 {
     return tags_;

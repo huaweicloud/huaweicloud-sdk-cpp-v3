@@ -63,7 +63,6 @@ bool BatchCreatePublicipTagsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BatchCreatePublicipTagsRequest::getPublicipId() const
 {
     return publicipId_;

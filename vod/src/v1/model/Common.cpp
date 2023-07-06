@@ -106,7 +106,6 @@ bool Common::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string Common::getPvc() const
 {
     return pvc_;

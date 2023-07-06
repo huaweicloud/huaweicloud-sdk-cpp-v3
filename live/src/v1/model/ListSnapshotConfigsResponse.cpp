@@ -91,7 +91,6 @@ bool ListSnapshotConfigsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t ListSnapshotConfigsResponse::getTotal() const
 {
     return total_;

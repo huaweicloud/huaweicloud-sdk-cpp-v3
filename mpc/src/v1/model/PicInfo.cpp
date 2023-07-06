@@ -50,7 +50,6 @@ bool PicInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PicInfo::getPicName() const
 {
     return picName_;

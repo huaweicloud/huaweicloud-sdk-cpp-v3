@@ -63,7 +63,6 @@ bool ListVolumesByTagsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t ListVolumesByTagsResponse::getTotalCount() const
 {
     return totalCount_;

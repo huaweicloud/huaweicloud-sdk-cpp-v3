@@ -49,7 +49,6 @@ bool NeutronUpdateFirewallRuleRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 NeutronUpdateFirewallRuleOption NeutronUpdateFirewallRuleRequestBody::getFirewallRule() const
 {
     return firewallRule_;

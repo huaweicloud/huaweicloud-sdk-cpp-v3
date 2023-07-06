@@ -63,7 +63,6 @@ bool UpdateAgentRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateAgentRequest::getAgentId() const
 {
     return agentId_;

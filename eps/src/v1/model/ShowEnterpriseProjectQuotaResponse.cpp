@@ -49,7 +49,6 @@ bool ShowEnterpriseProjectQuotaResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 QuotasDetail ShowEnterpriseProjectQuotaResponse::getQuotas() const
 {
     return quotas_;

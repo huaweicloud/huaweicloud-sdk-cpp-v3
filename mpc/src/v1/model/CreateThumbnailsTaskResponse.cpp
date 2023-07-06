@@ -133,7 +133,6 @@ bool CreateThumbnailsTaskResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateThumbnailsTaskResponse::getTaskId() const
 {
     return taskId_;

@@ -49,7 +49,6 @@ bool ImportCheckpointResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 SyncRespBody ImportCheckpointResponse::getSync() const
 {
     return sync_;

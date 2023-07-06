@@ -49,7 +49,6 @@ bool ShowReplicationCapabilitiesResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ProtectableReplicationCapabilitiesRespRegion>& ShowReplicationCapabilitiesResponse::getRegions()
 {
     return regions_;

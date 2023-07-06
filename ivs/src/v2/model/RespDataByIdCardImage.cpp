@@ -105,7 +105,6 @@ bool RespDataByIdCardImage::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RespDataByIdCardImage::getVerificationResult() const
 {
     return verificationResult_;

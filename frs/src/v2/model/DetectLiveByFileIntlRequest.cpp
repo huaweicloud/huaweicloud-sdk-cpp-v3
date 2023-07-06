@@ -63,7 +63,6 @@ bool DetectLiveByFileIntlRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DetectLiveByFileIntlRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

@@ -49,7 +49,6 @@ bool NovaAttachInterfaceResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 NovaServerInterfaceDetail NovaAttachInterfaceResponse::getInterfaceAttachment() const
 {
     return interfaceAttachment_;

@@ -106,7 +106,6 @@ bool CheckpointCreateSkippedResource::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CheckpointCreateSkippedResource::getId() const
 {
     return id_;

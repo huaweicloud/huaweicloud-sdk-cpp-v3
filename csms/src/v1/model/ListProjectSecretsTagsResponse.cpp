@@ -49,7 +49,6 @@ bool ListProjectSecretsTagsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<Tag>& ListProjectSecretsTagsResponse::getTags()
 {
     return tags_;

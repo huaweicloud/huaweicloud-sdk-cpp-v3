@@ -77,7 +77,6 @@ bool ListMediaProcessTaskResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<MediaProcessTaskInfo>& ListMediaProcessTaskResponse::getTaskArray()
 {
     return taskArray_;

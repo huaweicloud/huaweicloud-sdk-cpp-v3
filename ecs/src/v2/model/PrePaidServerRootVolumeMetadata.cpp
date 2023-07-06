@@ -64,7 +64,6 @@ bool PrePaidServerRootVolumeMetadata::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PrePaidServerRootVolumeMetadata::getSystemEncrypted() const
 {
     return systemEncrypted_;

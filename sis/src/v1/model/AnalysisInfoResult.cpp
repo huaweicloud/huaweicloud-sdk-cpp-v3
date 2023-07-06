@@ -78,7 +78,6 @@ bool AnalysisInfoResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AnalysisInfoResult::getRole() const
 {
     return role_;

@@ -147,7 +147,6 @@ bool UploadAssetReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UploadAssetReq::getAssetId() const
 {
     return assetId_;

@@ -78,7 +78,6 @@ bool ListHistorySqlRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListHistorySqlRequest::getContentType() const
 {
     return contentType_;

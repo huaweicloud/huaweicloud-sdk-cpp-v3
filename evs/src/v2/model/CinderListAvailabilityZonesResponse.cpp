@@ -49,7 +49,6 @@ bool CinderListAvailabilityZonesResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<AzInfo>& CinderListAvailabilityZonesResponse::getAvailabilityZoneInfo()
 {
     return availabilityZoneInfo_;

@@ -92,7 +92,6 @@ bool Common::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 bool Common::isPvc() const
 {
     return pvc_;

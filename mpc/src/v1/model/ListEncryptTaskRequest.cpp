@@ -119,7 +119,6 @@ bool ListEncryptTaskRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& ListEncryptTaskRequest::getTaskId()
 {
     return taskId_;

@@ -106,7 +106,6 @@ bool VideoProcess::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t VideoProcess::getHlsInitCount() const
 {
     return hlsInitCount_;

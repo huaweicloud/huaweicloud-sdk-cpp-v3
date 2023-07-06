@@ -64,7 +64,6 @@ bool BaseUser::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BaseUser::getId() const
 {
     return id_;

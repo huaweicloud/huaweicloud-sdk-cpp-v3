@@ -49,7 +49,6 @@ bool RunMultiModalAssessmentRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 PostMultiModalAssessmentReq RunMultiModalAssessmentRequest::getBody() const
 {
     return body_;

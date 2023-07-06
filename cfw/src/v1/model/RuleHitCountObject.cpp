@@ -64,7 +64,6 @@ bool RuleHitCountObject::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RuleHitCountObject::getRuleId() const
 {
     return ruleId_;

@@ -63,7 +63,6 @@ bool StartReverseProtectionGroupRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string StartReverseProtectionGroupRequest::getServerGroupId() const
 {
     return serverGroupId_;

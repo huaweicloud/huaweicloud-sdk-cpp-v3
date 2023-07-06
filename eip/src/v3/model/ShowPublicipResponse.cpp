@@ -63,7 +63,6 @@ bool ShowPublicipResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowPublicipResponse::getRequestId() const
 {
     return requestId_;

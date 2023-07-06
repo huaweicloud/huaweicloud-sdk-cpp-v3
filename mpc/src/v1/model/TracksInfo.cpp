@@ -64,7 +64,6 @@ bool TracksInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string TracksInfo::getChannelLayout() const
 {
     return channelLayout_;

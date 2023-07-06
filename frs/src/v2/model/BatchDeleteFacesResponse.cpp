@@ -78,7 +78,6 @@ bool BatchDeleteFacesResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t BatchDeleteFacesResponse::getFaceNumber() const
 {
     return faceNumber_;

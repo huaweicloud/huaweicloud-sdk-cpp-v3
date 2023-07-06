@@ -92,7 +92,6 @@ bool ListTranscodeDataRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListTranscodeDataRequest::getPublishDomain() const
 {
     return publishDomain_;

@@ -64,7 +64,6 @@ bool GlanceUpdateImageMemberRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string GlanceUpdateImageMemberRequestBody::getStatus() const
 {
     return status_;

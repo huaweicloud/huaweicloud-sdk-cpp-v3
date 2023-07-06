@@ -50,7 +50,6 @@ bool InterfaceAttachableQuantity::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t InterfaceAttachableQuantity::getFreeNic() const
 {
     return freeNic_;

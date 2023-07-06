@@ -49,7 +49,6 @@ bool RecognizeCambodianIdCardResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 CambodianIdCardResult RecognizeCambodianIdCardResponse::getResult() const
 {
     return result_;

@@ -64,7 +64,6 @@ bool PageInfoTagValues::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PageInfoTagValues::getNextMarker() const
 {
     return nextMarker_;

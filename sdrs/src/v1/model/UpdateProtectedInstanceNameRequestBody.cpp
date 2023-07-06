@@ -49,7 +49,6 @@ bool UpdateProtectedInstanceNameRequestBody::fromJson(const web::json::value& va
     return ok;
 }
 
-
 UpdateProtectedInstanceNameRequestParams UpdateProtectedInstanceNameRequestBody::getProtectedInstance() const
 {
     return protectedInstance_;

@@ -64,7 +64,6 @@ bool ActionsList::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 double ActionsList::getConfidence() const
 {
     return confidence_;

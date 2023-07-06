@@ -77,7 +77,6 @@ bool Sentences::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t Sentences::getEndTime() const
 {
     return endTime_;

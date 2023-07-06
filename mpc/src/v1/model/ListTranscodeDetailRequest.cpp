@@ -49,7 +49,6 @@ bool ListTranscodeDetailRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& ListTranscodeDetailRequest::getTaskId()
 {
     return taskId_;

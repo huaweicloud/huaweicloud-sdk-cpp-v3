@@ -63,7 +63,6 @@ bool DetectExtentionByNameAndIdRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DetectExtentionByNameAndIdRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

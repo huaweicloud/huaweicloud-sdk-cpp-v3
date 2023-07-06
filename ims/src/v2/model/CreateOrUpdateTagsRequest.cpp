@@ -49,7 +49,6 @@ bool CreateOrUpdateTagsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 AddOrUpdateTagsRequestBody CreateOrUpdateTagsRequest::getBody() const
 {
     return body_;

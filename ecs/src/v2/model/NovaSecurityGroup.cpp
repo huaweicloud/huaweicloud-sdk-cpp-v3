@@ -105,7 +105,6 @@ bool NovaSecurityGroup::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NovaSecurityGroup::getDescription() const
 {
     return description_;

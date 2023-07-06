@@ -50,7 +50,6 @@ bool ShowOpLogRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowOpLogRequest::getOperationLogId() const
 {
     return operationLogId_;

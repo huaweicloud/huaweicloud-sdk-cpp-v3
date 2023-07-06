@@ -50,7 +50,6 @@ bool ShowSecurityGroupRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowSecurityGroupRequest::getSecurityGroupId() const
 {
     return securityGroupId_;

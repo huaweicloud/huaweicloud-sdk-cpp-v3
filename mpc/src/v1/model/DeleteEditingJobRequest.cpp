@@ -50,7 +50,6 @@ bool DeleteEditingJobRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteEditingJobRequest::getJobId() const
 {
     return jobId_;

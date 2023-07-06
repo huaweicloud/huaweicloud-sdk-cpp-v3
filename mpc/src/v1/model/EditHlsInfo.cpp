@@ -50,7 +50,6 @@ bool EditHlsInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t EditHlsInfo::getInterval() const
 {
     return interval_;

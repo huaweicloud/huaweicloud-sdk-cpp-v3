@@ -63,7 +63,6 @@ bool UploadMetaDataByUrlRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UploadMetaDataByUrlRequest::getXSdkDate() const
 {
     return xSdkDate_;

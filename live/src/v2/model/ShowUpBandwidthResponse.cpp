@@ -63,7 +63,6 @@ bool ShowUpBandwidthResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<V2BandwidthData>& ShowUpBandwidthResponse::getDataList()
 {
     return dataList_;

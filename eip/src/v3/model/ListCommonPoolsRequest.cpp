@@ -106,7 +106,6 @@ bool ListCommonPoolsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListCommonPoolsRequest::getFields() const
 {
     return fields_;

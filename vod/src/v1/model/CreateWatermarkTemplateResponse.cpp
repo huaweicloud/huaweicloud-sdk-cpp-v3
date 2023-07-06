@@ -64,7 +64,6 @@ bool CreateWatermarkTemplateResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateWatermarkTemplateResponse::getId() const
 {
     return id_;

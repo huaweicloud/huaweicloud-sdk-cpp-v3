@@ -36,7 +36,6 @@ bool DeleteActiveAlarmsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

@@ -50,7 +50,6 @@ bool ServerGroupMember::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ServerGroupMember::getInstanceUuid() const
 {
     return instanceUuid_;

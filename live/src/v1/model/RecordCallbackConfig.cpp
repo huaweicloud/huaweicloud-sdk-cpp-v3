@@ -145,7 +145,6 @@ bool RecordCallbackConfig::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RecordCallbackConfig::getId() const
 {
     return id_;

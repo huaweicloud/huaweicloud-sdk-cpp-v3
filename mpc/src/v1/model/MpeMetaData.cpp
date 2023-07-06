@@ -218,7 +218,6 @@ bool MpeMetaData::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string MpeMetaData::getPackType() const
 {
     return packType_;

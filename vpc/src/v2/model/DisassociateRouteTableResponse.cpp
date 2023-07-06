@@ -49,7 +49,6 @@ bool DisassociateRouteTableResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 RouteTableResp DisassociateRouteTableResponse::getRoutetable() const
 {
     return routetable_;

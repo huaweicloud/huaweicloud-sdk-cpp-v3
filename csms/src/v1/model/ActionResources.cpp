@@ -103,7 +103,6 @@ bool ActionResources::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ActionResources::getResourceId() const
 {
     return resourceId_;

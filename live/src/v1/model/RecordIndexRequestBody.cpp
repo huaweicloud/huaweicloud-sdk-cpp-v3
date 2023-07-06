@@ -120,7 +120,6 @@ bool RecordIndexRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RecordIndexRequestBody::getPublishDomain() const
 {
     return publishDomain_;

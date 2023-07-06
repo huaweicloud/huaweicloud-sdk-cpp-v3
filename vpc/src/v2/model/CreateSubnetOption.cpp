@@ -215,7 +215,6 @@ bool CreateSubnetOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateSubnetOption::getName() const
 {
     return name_;

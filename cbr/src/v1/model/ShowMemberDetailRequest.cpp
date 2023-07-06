@@ -64,7 +64,6 @@ bool ShowMemberDetailRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowMemberDetailRequest::getBackupId() const
 {
     return backupId_;

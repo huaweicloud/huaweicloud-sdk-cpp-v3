@@ -50,7 +50,6 @@ bool DeleteSharedBandwidthRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteSharedBandwidthRequest::getBandwidthId() const
 {
     return bandwidthId_;

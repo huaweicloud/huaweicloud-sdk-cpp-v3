@@ -106,7 +106,6 @@ bool CustomTemplateRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CustomTemplateRequestBody::getImage() const
 {
     return image_;

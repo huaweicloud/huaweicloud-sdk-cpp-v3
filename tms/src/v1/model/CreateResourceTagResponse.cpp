@@ -49,7 +49,6 @@ bool CreateResourceTagResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<TagCreateResponseItem>& CreateResourceTagResponse::getFailedResources()
 {
     return failedResources_;

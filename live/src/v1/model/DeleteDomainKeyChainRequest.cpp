@@ -50,7 +50,6 @@ bool DeleteDomainKeyChainRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteDomainKeyChainRequest::getDomain() const
 {
     return domain_;

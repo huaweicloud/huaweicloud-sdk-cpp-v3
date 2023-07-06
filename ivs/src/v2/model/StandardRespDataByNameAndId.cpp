@@ -92,7 +92,6 @@ bool StandardRespDataByNameAndId::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string StandardRespDataByNameAndId::getVerificationResult() const
 {
     return verificationResult_;

@@ -49,7 +49,6 @@ bool CreateResetTracksReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 SubAudioFile CreateResetTracksReq::getAudioFile() const
 {
     return audioFile_;

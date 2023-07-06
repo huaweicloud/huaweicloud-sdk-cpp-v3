@@ -147,7 +147,6 @@ bool ShowDisasterRecoveryDrillParams::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowDisasterRecoveryDrillParams::getId() const
 {
     return id_;

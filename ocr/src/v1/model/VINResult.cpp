@@ -50,7 +50,6 @@ bool VINResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string VINResult::getVin() const
 {
     return vin_;

@@ -162,7 +162,6 @@ bool RecognizeFlashAsrRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RecognizeFlashAsrRequest::getProperty() const
 {
     return property_;

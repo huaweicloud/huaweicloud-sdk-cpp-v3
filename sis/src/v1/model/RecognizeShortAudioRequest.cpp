@@ -49,7 +49,6 @@ bool RecognizeShortAudioRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 PostShortAudioReq RecognizeShortAudioRequest::getBody() const
 {
     return body_;

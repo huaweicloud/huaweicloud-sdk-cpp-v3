@@ -106,7 +106,6 @@ bool Audio::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string Audio::getOutputPolicy() const
 {
     return outputPolicy_;

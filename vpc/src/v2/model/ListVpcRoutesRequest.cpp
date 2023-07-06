@@ -134,7 +134,6 @@ bool ListVpcRoutesRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t ListVpcRoutesRequest::getLimit() const
 {
     return limit_;

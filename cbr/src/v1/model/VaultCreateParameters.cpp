@@ -49,7 +49,6 @@ bool VaultCreateParameters::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 CombinedOrder VaultCreateParameters::getCombinedOrder() const
 {
     return combinedOrder_;

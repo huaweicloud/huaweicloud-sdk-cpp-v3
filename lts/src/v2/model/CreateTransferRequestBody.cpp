@@ -76,7 +76,6 @@ bool CreateTransferRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateTransferRequestBody::getLogGroupId() const
 {
     return logGroupId_;

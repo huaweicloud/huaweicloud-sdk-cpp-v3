@@ -77,7 +77,6 @@ bool ShowStreamCountRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& ShowStreamCountRequest::getPublishDomains()
 {
     return publishDomains_;

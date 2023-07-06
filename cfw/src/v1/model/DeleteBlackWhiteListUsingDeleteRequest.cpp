@@ -78,7 +78,6 @@ bool DeleteBlackWhiteListUsingDeleteRequest::fromJson(const web::json::value& va
     return ok;
 }
 
-
 std::string DeleteBlackWhiteListUsingDeleteRequest::getListId() const
 {
     return listId_;

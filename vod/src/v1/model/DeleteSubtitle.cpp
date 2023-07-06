@@ -64,7 +64,6 @@ bool DeleteSubtitle::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteSubtitle::getType() const
 {
     return type_;

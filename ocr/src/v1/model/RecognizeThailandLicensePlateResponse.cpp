@@ -49,7 +49,6 @@ bool RecognizeThailandLicensePlateResponse::fromJson(const web::json::value& val
     return ok;
 }
 
-
 std::vector<ThailandLicensePlateItem>& RecognizeThailandLicensePlateResponse::getResult()
 {
     return result_;

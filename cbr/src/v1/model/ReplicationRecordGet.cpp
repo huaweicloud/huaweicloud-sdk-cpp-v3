@@ -231,7 +231,6 @@ bool ReplicationRecordGet::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ReplicationRecordGet::getCreatedAt() const
 {
     return createdAt_;

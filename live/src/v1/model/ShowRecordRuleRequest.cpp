@@ -50,7 +50,6 @@ bool ShowRecordRuleRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowRecordRuleRequest::getId() const
 {
     return id_;

@@ -286,7 +286,6 @@ bool CambodianIdCardResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CambodianIdCardResult::getIdNumber() const
 {
     return idNumber_;

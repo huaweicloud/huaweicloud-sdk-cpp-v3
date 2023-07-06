@@ -50,7 +50,6 @@ bool ShowMigrateStatusRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 bool ShowMigrateStatusRequest::isAllRegions() const
 {
     return allRegions_;

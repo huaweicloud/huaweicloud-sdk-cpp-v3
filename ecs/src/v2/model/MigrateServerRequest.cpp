@@ -63,7 +63,6 @@ bool MigrateServerRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string MigrateServerRequest::getServerId() const
 {
     return serverId_;

@@ -50,7 +50,6 @@ bool RegisterServerAutoRecoveryRequestBody::fromJson(const web::json::value& val
     return ok;
 }
 
-
 std::string RegisterServerAutoRecoveryRequestBody::getSupportAutoRecovery() const
 {
     return supportAutoRecovery_;

@@ -50,7 +50,6 @@ bool CountEipAvailableResourcesResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t CountEipAvailableResourcesResponse::getResult() const
 {
     return result_;

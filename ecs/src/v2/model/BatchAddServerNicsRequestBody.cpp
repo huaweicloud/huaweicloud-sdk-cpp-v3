@@ -49,7 +49,6 @@ bool BatchAddServerNicsRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<BatchAddServerNicOption>& BatchAddServerNicsRequestBody::getNics()
 {
     return nics_;

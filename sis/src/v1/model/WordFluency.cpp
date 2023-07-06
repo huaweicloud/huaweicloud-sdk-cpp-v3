@@ -64,7 +64,6 @@ bool WordFluency::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 float WordFluency::getScore() const
 {
     return score_;

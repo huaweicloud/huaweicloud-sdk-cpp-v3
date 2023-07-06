@@ -78,7 +78,6 @@ bool VideoSuperresolution::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string VideoSuperresolution::getName() const
 {
     return name_;

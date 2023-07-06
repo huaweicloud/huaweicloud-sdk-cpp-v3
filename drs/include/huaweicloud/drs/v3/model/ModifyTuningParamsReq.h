@@ -1,0 +1,110 @@
+
+#ifndef HUAWEICLOUD_SDK_DRS_V3_MODEL_ModifyTuningParamsReq_H_
+#define HUAWEICLOUD_SDK_DRS_V3_MODEL_ModifyTuningParamsReq_H_
+
+#include <huaweicloud/drs/v3/DrsExport.h>
+
+#include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/http/HttpResponse.h>
+
+#include <string>
+#include <map>
+#include <vector>
+
+namespace HuaweiCloud {
+namespace Sdk {
+namespace Drs {
+namespace V3 {
+namespace Model {
+
+using namespace HuaweiCloud::Sdk::Core::Utils;
+using namespace HuaweiCloud::Sdk::Core::Http;
+/// <summary>
+/// 修改调优参数请求体
+/// </summary>
+class HUAWEICLOUD_DRS_V3_EXPORT  ModifyTuningParamsReq
+    : public ModelBase
+{
+public:
+    ModifyTuningParamsReq();
+    virtual ~ModifyTuningParamsReq();
+
+    /////////////////////////////////////////////
+    /// ModelBase overrides
+
+    void validate() override;
+
+    web::json::value toJson() const override;
+    bool fromJson(const web::json::value& json) override;
+
+    /////////////////////////////////////////////
+    /// ModifyTuningParamsReq members
+
+    /// <summary>
+    /// 全量参数的参数名及对应的取值
+    /// </summary>
+
+    std::map<std::string, std::string>& getFullSync();
+    bool fullSyncIsSet() const;
+    void unsetfullSync();
+    void setFullSync(const std::map<std::string, std::string>& value);
+
+    /// <summary>
+    /// 增量抓取参数的参数名及对应的取值
+    /// </summary>
+
+    std::map<std::string, std::string>& getIncreCapture();
+    bool increCaptureIsSet() const;
+    void unsetincreCapture();
+    void setIncreCapture(const std::map<std::string, std::string>& value);
+
+    /// <summary>
+    /// 增量回放参数的参数名及对应的取值
+    /// </summary>
+
+    std::map<std::string, std::string>& getIncreApply();
+    bool increApplyIsSet() const;
+    void unsetincreApply();
+    void setIncreApply(const std::map<std::string, std::string>& value);
+
+    /// <summary>
+    /// 增量日志拉取参数的参数名及对应的取值 -slotAdvanceInterval： 源库逻辑复制槽推进间隔
+    /// </summary>
+
+    std::map<std::string, std::string>& getIncreRelay();
+    bool increRelayIsSet() const;
+    void unsetincreRelay();
+    void setIncreRelay(const std::map<std::string, std::string>& value);
+
+    /// <summary>
+    /// 初始化参数，首次调用时需要传true，其他时候不传。
+    /// </summary>
+
+    bool isRecovery() const;
+    bool recoveryIsSet() const;
+    void unsetrecovery();
+    void setRecovery(bool value);
+
+
+protected:
+    std::map<std::string, std::string> fullSync_;
+    bool fullSyncIsSet_;
+    std::map<std::string, std::string> increCapture_;
+    bool increCaptureIsSet_;
+    std::map<std::string, std::string> increApply_;
+    bool increApplyIsSet_;
+    std::map<std::string, std::string> increRelay_;
+    bool increRelayIsSet_;
+    bool recovery_;
+    bool recoveryIsSet_;
+
+};
+
+
+}
+}
+}
+}
+}
+
+#endif // HUAWEICLOUD_SDK_DRS_V3_MODEL_ModifyTuningParamsReq_H_

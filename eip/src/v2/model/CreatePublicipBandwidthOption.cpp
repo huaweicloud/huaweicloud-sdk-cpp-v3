@@ -106,7 +106,6 @@ bool CreatePublicipBandwidthOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreatePublicipBandwidthOption::getChargeMode() const
 {
     return chargeMode_;

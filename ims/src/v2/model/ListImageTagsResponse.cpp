@@ -49,7 +49,6 @@ bool ListImageTagsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ResourceTag>& ListImageTagsResponse::getTags()
 {
     return tags_;

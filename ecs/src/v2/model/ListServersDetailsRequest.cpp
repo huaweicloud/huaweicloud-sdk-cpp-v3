@@ -204,7 +204,6 @@ bool ListServersDetailsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListServersDetailsRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

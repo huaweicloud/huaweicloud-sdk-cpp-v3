@@ -682,7 +682,6 @@ bool ServerDetail::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ServerDetail::getStatus() const
 {
     return status_;

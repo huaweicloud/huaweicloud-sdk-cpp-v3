@@ -90,7 +90,6 @@ bool ListPublicipsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListPublicipsResponse::getRequestId() const
 {
     return requestId_;

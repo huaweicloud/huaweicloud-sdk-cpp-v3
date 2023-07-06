@@ -50,7 +50,6 @@ bool ShowVaultTagRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowVaultTagRequest::getVaultId() const
 {
     return vaultId_;

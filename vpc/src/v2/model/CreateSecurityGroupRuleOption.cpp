@@ -162,7 +162,6 @@ bool CreateSecurityGroupRuleOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateSecurityGroupRuleOption::getSecurityGroupId() const
 {
     return securityGroupId_;

@@ -77,7 +77,6 @@ bool UpdateNotificationTemplateRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateNotificationTemplateRequest::getDomainId() const
 {
     return domainId_;

@@ -91,7 +91,6 @@ bool GetFirewallInstanceData::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t GetFirewallInstanceData::getLimit() const
 {
     return limit_;

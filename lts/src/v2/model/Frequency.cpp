@@ -120,7 +120,6 @@ bool Frequency::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string Frequency::getType() const
 {
     return type_;

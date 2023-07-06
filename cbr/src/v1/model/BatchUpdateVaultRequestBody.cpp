@@ -49,7 +49,6 @@ bool BatchUpdateVaultRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 VaultBatchUpdate BatchUpdateVaultRequestBody::getVault() const
 {
     return vault_;

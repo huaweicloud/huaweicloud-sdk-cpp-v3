@@ -256,7 +256,6 @@ bool Vault::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 Billing Vault::getBilling() const
 {
     return billing_;

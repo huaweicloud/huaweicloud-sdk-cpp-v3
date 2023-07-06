@@ -50,7 +50,6 @@ bool ShowEnterpriseProjectRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowEnterpriseProjectRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

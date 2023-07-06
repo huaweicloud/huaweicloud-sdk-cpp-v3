@@ -50,7 +50,6 @@ bool UpdateSecretStageRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateSecretStageRequestBody::getVersionId() const
 {
     return versionId_;

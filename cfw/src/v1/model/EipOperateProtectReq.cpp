@@ -77,7 +77,6 @@ bool EipOperateProtectReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string EipOperateProtectReq::getObjectId() const
 {
     return objectId_;

@@ -64,7 +64,6 @@ bool BucketAuthorizedReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BucketAuthorizedReq::getBucket() const
 {
     return bucket_;

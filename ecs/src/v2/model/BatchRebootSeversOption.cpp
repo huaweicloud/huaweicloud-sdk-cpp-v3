@@ -63,7 +63,6 @@ bool BatchRebootSeversOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ServerId>& BatchRebootSeversOption::getServers()
 {
     return servers_;

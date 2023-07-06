@@ -63,7 +63,6 @@ bool NovaCreateServersRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NovaCreateServersRequest::getOpenStackAPIVersion() const
 {
     return openStackAPIVersion_;

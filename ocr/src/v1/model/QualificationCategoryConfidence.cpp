@@ -92,7 +92,6 @@ bool QualificationCategoryConfidence::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 float QualificationCategoryConfidence::getCategory() const
 {
     return category_;

@@ -36,7 +36,6 @@ bool ShowAomMappingRulesRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

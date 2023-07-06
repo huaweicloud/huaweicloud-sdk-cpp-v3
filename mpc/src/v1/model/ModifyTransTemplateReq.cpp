@@ -103,7 +103,6 @@ bool ModifyTransTemplateReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int64_t ModifyTransTemplateReq::getTemplateId() const
 {
     return templateId_;

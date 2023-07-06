@@ -78,7 +78,6 @@ bool QuotaDetailVolumesGPSSD::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t QuotaDetailVolumesGPSSD::getInUse() const
 {
     return inUse_;

@@ -64,7 +64,6 @@ bool DeleteClusterRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteClusterRequest::getXLanguage() const
 {
     return xLanguage_;

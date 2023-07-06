@@ -63,7 +63,6 @@ bool AddProtectedInstanceNicRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AddProtectedInstanceNicRequest::getProtectedInstanceId() const
 {
     return protectedInstanceId_;

@@ -78,7 +78,6 @@ bool PreviewTemplateBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PreviewTemplateBody::getTemplates() const
 {
     return templates_;

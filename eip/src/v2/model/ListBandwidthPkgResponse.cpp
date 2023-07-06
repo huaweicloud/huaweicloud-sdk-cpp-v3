@@ -62,7 +62,6 @@ bool ListBandwidthPkgResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<BandwidthPkgResp>& ListBandwidthPkgResponse::getBandwidthpkgs()
 {
     return bandwidthpkgs_;

@@ -78,7 +78,6 @@ bool CtsQuota::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CtsQuota::getType() const
 {
     return type_;

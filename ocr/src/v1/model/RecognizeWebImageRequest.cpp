@@ -63,7 +63,6 @@ bool RecognizeWebImageRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RecognizeWebImageRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

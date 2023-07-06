@@ -92,7 +92,6 @@ bool NovaServerFault::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t NovaServerFault::getCode() const
 {
     return code_;

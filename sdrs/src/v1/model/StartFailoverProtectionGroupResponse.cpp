@@ -50,7 +50,6 @@ bool StartFailoverProtectionGroupResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string StartFailoverProtectionGroupResponse::getJobId() const
 {
     return jobId_;

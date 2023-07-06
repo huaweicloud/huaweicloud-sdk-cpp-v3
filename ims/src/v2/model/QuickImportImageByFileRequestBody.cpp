@@ -188,7 +188,6 @@ bool QuickImportImageByFileRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string QuickImportImageByFileRequestBody::getName() const
 {
     return name_;

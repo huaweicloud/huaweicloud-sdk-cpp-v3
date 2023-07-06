@@ -50,7 +50,6 @@ bool NeutronDeleteSecurityGroupRuleRequest::fromJson(const web::json::value& val
     return ok;
 }
 
-
 std::string NeutronDeleteSecurityGroupRuleRequest::getSecurityGroupRuleId() const
 {
     return securityGroupRuleId_;

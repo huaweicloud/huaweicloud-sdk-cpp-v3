@@ -50,7 +50,6 @@ bool ListOsVersionsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListOsVersionsRequest::getTag() const
 {
     return tag_;

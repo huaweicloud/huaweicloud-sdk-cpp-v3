@@ -36,7 +36,6 @@ bool RegisterServerMonitorResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

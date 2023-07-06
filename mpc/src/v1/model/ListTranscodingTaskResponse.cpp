@@ -77,7 +77,6 @@ bool ListTranscodingTaskResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<QueryTranscodingsTaskResponse>& ListTranscodingTaskResponse::getTaskArray()
 {
     return taskArray_;

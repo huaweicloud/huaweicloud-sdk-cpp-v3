@@ -49,7 +49,6 @@ bool UpdateTrackerRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 UpdateTrackerRequestBody UpdateTrackerRequest::getBody() const
 {
     return body_;

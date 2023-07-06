@@ -63,7 +63,6 @@ bool ListDisasterRecoveryDrillsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ShowDisasterRecoveryDrillParams>& ListDisasterRecoveryDrillsResponse::getDisasterRecoveryDrills()
 {
     return disasterRecoveryDrills_;

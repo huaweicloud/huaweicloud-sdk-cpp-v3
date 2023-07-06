@@ -78,7 +78,6 @@ bool ShowTakeOverAssetDetailsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowTakeOverAssetDetailsRequest::getXSdkDate() const
 {
     return xSdkDate_;

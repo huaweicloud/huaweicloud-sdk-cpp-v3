@@ -50,7 +50,6 @@ bool IdObject::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string IdObject::getId() const
 {
     return id_;

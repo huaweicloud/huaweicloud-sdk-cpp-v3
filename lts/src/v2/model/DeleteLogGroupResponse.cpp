@@ -50,7 +50,6 @@ bool DeleteLogGroupResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteLogGroupResponse::getBody() const
 {
     return body_;

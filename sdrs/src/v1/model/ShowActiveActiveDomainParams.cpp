@@ -118,7 +118,6 @@ bool ShowActiveActiveDomainParams::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowActiveActiveDomainParams::getId() const
 {
     return id_;

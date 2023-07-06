@@ -78,7 +78,6 @@ bool ShowStreamPortraitRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowStreamPortraitRequest::getPlayDomain() const
 {
     return playDomain_;

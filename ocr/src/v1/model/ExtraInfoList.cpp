@@ -77,7 +77,6 @@ bool ExtraInfoList::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ExtraInfoList::getItem() const
 {
     return item_;

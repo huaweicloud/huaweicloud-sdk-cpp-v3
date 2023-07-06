@@ -78,7 +78,6 @@ bool DeleteServiceSetUsingDeleteRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteServiceSetUsingDeleteRequest::getSetId() const
 {
     return setId_;

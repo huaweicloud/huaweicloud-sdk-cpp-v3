@@ -49,7 +49,6 @@ bool UpdateBlackWhiteListUsingPutResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 IdObject UpdateBlackWhiteListUsingPutResponse::getData() const
 {
     return data_;

@@ -50,7 +50,6 @@ bool CommonCreateTaskRsp::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CommonCreateTaskRsp::getTaskId() const
 {
     return taskId_;

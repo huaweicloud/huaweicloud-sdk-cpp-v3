@@ -77,7 +77,6 @@ bool ShowVodStatisticsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowVodStatisticsResponse::getStartTime() const
 {
     return startTime_;

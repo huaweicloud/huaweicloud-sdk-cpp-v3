@@ -78,7 +78,6 @@ bool ServerRemoteConsole::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ServerRemoteConsole::getProtocol() const
 {
     return protocol_;

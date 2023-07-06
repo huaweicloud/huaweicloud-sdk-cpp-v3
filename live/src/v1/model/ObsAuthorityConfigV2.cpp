@@ -64,7 +64,6 @@ bool ObsAuthorityConfigV2::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ObsAuthorityConfigV2::getBucket() const
 {
     return bucket_;

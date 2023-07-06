@@ -63,7 +63,6 @@ bool RecognizeDriverLicenseRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RecognizeDriverLicenseRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

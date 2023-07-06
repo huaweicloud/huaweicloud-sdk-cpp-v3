@@ -64,7 +64,6 @@ bool AccessConfigTimeOffsetCreate::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int64_t AccessConfigTimeOffsetCreate::getOffset() const
 {
     return offset_;

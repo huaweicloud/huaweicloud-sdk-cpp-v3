@@ -187,7 +187,6 @@ bool AnimatedGraphicsTask::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AnimatedGraphicsTask::getTaskId() const
 {
     return taskId_;

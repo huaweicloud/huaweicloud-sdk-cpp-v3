@@ -63,7 +63,6 @@ bool PublishAssetFromObsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PublishAssetFromObsRequest::getXSdkDate() const
 {
     return xSdkDate_;

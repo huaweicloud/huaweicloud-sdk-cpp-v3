@@ -50,7 +50,6 @@ bool DeleteServerGroupRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteServerGroupRequest::getServerGroupId() const
 {
     return serverGroupId_;

@@ -50,7 +50,6 @@ bool CreateStructTemplateResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateStructTemplateResponse::getBody() const
 {
     return body_;

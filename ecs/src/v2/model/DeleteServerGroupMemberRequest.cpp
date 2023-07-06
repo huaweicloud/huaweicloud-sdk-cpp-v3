@@ -63,7 +63,6 @@ bool DeleteServerGroupMemberRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteServerGroupMemberRequest::getServerGroupId() const
 {
     return serverGroupId_;

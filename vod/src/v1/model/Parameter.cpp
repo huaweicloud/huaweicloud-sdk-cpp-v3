@@ -50,7 +50,6 @@ bool Parameter::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string Parameter::getFormat() const
 {
     return format_;

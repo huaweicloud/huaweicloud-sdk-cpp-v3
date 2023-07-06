@@ -63,7 +63,6 @@ bool ListSingleStreamBitrateResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<V2BitrateInfo>& ListSingleStreamBitrateResponse::getBitrateInfoList()
 {
     return bitrateInfoList_;

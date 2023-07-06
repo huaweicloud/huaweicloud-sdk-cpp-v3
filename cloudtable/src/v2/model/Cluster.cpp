@@ -160,7 +160,6 @@ bool Cluster::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string Cluster::getAuthMode() const
 {
     return authMode_;

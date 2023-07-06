@@ -64,7 +64,6 @@ bool QuotaInvoiceRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string QuotaInvoiceRequestBody::getImage() const
 {
     return image_;

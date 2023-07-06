@@ -160,7 +160,6 @@ bool NovaServerFlavor::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NovaServerFlavor::getId() const
 {
     return id_;

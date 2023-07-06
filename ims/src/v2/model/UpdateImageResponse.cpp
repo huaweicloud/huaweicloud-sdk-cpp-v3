@@ -861,7 +861,6 @@ bool UpdateImageResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateImageResponse::getBackupId() const
 {
     return backupId_;

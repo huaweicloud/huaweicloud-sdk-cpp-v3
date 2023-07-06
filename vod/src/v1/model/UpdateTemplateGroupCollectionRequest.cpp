@@ -63,7 +63,6 @@ bool UpdateTemplateGroupCollectionRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateTemplateGroupCollectionRequest::getXSdkDate() const
 {
     return xSdkDate_;

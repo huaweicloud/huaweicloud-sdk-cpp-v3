@@ -63,7 +63,6 @@ bool ListPublicBorderGroupsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<CommonPoolsWithBorderGroupDict>& ListPublicBorderGroupsResponse::getPublicBorderGroups()
 {
     return publicBorderGroups_;

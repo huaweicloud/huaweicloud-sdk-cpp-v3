@@ -64,7 +64,6 @@ bool GlanceCreateTagRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string GlanceCreateTagRequest::getImageId() const
 {
     return imageId_;

@@ -63,7 +63,6 @@ bool UpdateServerMetadataRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateServerMetadataRequest::getServerId() const
 {
     return serverId_;

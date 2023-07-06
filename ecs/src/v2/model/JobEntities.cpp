@@ -63,7 +63,6 @@ bool JobEntities::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<SubJob>& JobEntities::getSubJobs()
 {
     return subJobs_;

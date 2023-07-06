@@ -64,7 +64,6 @@ bool ProtectedInstanceAttachReplicationRequestParams::fromJson(const web::json::
     return ok;
 }
 
-
 std::string ProtectedInstanceAttachReplicationRequestParams::getReplicationId() const
 {
     return replicationId_;

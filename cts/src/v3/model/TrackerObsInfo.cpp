@@ -120,7 +120,6 @@ bool TrackerObsInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string TrackerObsInfo::getBucketName() const
 {
     return bucketName_;

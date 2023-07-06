@@ -50,7 +50,6 @@ bool SuccessRsp_data::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string SuccessRsp_data::getId() const
 {
     return id_;

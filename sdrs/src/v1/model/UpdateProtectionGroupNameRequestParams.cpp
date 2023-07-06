@@ -50,7 +50,6 @@ bool UpdateProtectionGroupNameRequestParams::fromJson(const web::json::value& va
     return ok;
 }
 
-
 std::string UpdateProtectionGroupNameRequestParams::getName() const
 {
     return name_;

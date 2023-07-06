@@ -49,7 +49,6 @@ bool BatchCreateSharedBandwidthsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<BatchBandwidthResp>& BatchCreateSharedBandwidthsResponse::getBandwidths()
 {
     return bandwidths_;

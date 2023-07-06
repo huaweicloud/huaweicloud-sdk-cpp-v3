@@ -134,7 +134,6 @@ bool ResultsTopnBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 double ResultsTopnBody::getIndexTraffic() const
 {
     return indexTraffic_;

@@ -63,7 +63,6 @@ bool RecognizeMvsInvoiceRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RecognizeMvsInvoiceRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

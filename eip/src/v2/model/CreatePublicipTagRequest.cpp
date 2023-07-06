@@ -63,7 +63,6 @@ bool CreatePublicipTagRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreatePublicipTagRequest::getPublicipId() const
 {
     return publicipId_;

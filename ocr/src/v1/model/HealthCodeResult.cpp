@@ -285,7 +285,6 @@ bool HealthCodeResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string HealthCodeResult::getType() const
 {
     return type_;

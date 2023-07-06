@@ -92,7 +92,6 @@ bool ShowVodStatisticsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowVodStatisticsRequest::getXSdkDate() const
 {
     return xSdkDate_;

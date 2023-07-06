@@ -133,7 +133,6 @@ bool CollectTranscriberJobResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CollectTranscriberJobResponse::getJobId() const
 {
     return jobId_;

@@ -118,7 +118,6 @@ bool FaceSearchUrlReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string FaceSearchUrlReq::getFilter() const
 {
     return filter_;

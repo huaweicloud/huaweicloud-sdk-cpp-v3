@@ -176,7 +176,6 @@ bool NovaKeypairDetail::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NovaKeypairDetail::getPublicKey() const
 {
     return publicKey_;

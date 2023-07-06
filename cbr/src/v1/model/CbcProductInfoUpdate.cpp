@@ -92,7 +92,6 @@ bool CbcProductInfoUpdate::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CbcProductInfoUpdate::getProductId() const
 {
     return productId_;

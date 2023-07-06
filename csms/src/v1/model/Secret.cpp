@@ -148,7 +148,6 @@ bool Secret::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string Secret::getId() const
 {
     return id_;

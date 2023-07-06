@@ -50,7 +50,6 @@ bool UpdateFloatingIpOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateFloatingIpOption::getPortId() const
 {
     return portId_;

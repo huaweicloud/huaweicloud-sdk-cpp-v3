@@ -92,7 +92,6 @@ bool RouteTableRoute::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RouteTableRoute::getType() const
 {
     return type_;

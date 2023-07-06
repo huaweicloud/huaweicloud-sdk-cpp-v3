@@ -200,7 +200,6 @@ bool ShowAssetMetaRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowAssetMetaRequest::getXSdkDate() const
 {
     return xSdkDate_;

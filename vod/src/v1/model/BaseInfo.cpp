@@ -255,7 +255,6 @@ bool BaseInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BaseInfo::getTitle() const
 {
     return title_;

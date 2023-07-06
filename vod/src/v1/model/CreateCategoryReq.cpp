@@ -64,7 +64,6 @@ bool CreateCategoryReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateCategoryReq::getName() const
 {
     return name_;

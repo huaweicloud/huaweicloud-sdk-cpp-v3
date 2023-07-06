@@ -50,7 +50,6 @@ bool ListSqlAlarmRulesRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListSqlAlarmRulesRequest::getContentType() const
 {
     return contentType_;

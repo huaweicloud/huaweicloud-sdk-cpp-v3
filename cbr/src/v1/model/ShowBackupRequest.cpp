@@ -50,7 +50,6 @@ bool ShowBackupRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowBackupRequest::getBackupId() const
 {
     return backupId_;

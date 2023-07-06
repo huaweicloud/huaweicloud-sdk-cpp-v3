@@ -49,7 +49,6 @@ bool AddVaultResourceResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& AddVaultResourceResponse::getAddResourceIds()
 {
     return addResourceIds_;

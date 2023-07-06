@@ -50,7 +50,6 @@ bool UpdateStructConfigResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateStructConfigResponse::getBody() const
 {
     return body_;

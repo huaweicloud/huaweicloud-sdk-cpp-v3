@@ -77,7 +77,6 @@ bool CreateVolumeResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateVolumeResponse::getJobId() const
 {
     return jobId_;

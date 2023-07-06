@@ -50,7 +50,6 @@ bool CreateMergeChannelsTaskResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateMergeChannelsTaskResponse::getTaskId() const
 {
     return taskId_;

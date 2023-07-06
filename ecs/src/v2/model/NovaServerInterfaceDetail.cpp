@@ -105,7 +105,6 @@ bool NovaServerInterfaceDetail::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<NovaServerInterfaceFixedIp>& NovaServerInterfaceDetail::getFixedIps()
 {
     return fixedIps_;

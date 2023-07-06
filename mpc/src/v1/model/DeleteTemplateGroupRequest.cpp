@@ -50,7 +50,6 @@ bool DeleteTemplateGroupRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteTemplateGroupRequest::getGroupId() const
 {
     return groupId_;

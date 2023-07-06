@@ -49,7 +49,6 @@ bool NeutronCreateFirewallPolicyRequestBody::fromJson(const web::json::value& va
     return ok;
 }
 
-
 NeutronCreateFirewallPolicyOption NeutronCreateFirewallPolicyRequestBody::getFirewallPolicy() const
 {
     return firewallPolicy_;

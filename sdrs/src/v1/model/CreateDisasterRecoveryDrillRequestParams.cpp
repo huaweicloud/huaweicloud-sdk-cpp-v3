@@ -78,7 +78,6 @@ bool CreateDisasterRecoveryDrillRequestParams::fromJson(const web::json::value& 
     return ok;
 }
 
-
 std::string CreateDisasterRecoveryDrillRequestParams::getServerGroupId() const
 {
     return serverGroupId_;

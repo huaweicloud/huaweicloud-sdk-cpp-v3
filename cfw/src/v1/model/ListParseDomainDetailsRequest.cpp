@@ -78,7 +78,6 @@ bool ListParseDomainDetailsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListParseDomainDetailsRequest::getDomainName() const
 {
     return domainName_;

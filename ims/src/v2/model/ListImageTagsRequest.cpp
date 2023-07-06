@@ -50,7 +50,6 @@ bool ListImageTagsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListImageTagsRequest::getImageId() const
 {
     return imageId_;

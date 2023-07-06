@@ -77,7 +77,6 @@ bool Search_criteriasBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<GetQuerySearchCriteriasBody>& Search_criteriasBody::getCriterias()
 {
     return criterias_;

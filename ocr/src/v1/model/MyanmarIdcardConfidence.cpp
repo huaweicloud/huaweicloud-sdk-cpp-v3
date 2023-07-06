@@ -190,7 +190,6 @@ bool MyanmarIdcardConfidence::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 float MyanmarIdcardConfidence::getNrcId() const
 {
     return nrcId_;

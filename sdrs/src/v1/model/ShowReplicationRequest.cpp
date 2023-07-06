@@ -50,7 +50,6 @@ bool ShowReplicationRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowReplicationRequest::getReplicationId() const
 {
     return replicationId_;

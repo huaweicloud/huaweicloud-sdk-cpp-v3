@@ -218,7 +218,6 @@ bool NeutronListSecurityGroupRulesRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t NeutronListSecurityGroupRulesRequest::getLimit() const
 {
     return limit_;

@@ -62,7 +62,6 @@ bool NeutronListSecurityGroupsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<NeutronSecurityGroup>& NeutronListSecurityGroupsResponse::getSecurityGroups()
 {
     return securityGroups_;

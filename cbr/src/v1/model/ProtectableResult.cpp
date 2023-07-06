@@ -105,7 +105,6 @@ bool ProtectableResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ProtectableResult::getCode() const
 {
     return code_;

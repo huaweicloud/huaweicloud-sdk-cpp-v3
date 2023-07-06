@@ -63,7 +63,6 @@ bool RunTtsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RunTtsResponse::getTraceId() const
 {
     return traceId_;

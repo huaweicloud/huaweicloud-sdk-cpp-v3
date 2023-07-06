@@ -105,7 +105,6 @@ bool BackupRestore::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<BackupRestoreServerMapping>& BackupRestore::getMappings()
 {
     return mappings_;

@@ -204,7 +204,6 @@ bool EipResource::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string EipResource::getId() const
 {
     return id_;

@@ -49,7 +49,6 @@ bool ListEipResourcesResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 EipResponseData ListEipResourcesResponse::getData() const
 {
     return data_;

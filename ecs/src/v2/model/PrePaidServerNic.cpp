@@ -104,7 +104,6 @@ bool PrePaidServerNic::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PrePaidServerNic::getSubnetId() const
 {
     return subnetId_;

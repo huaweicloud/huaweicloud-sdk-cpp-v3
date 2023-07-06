@@ -91,7 +91,6 @@ bool ModifyTemplateGroupCollection::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ModifyTemplateGroupCollection::getName() const
 {
     return name_;

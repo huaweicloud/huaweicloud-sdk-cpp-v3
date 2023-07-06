@@ -106,7 +106,6 @@ bool ListTemplateGroupRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ListTemplateGroupRequest::getXSdkDate() const
 {
     return xSdkDate_;

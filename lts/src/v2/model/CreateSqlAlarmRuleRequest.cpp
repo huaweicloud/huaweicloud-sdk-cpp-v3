@@ -63,7 +63,6 @@ bool CreateSqlAlarmRuleRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateSqlAlarmRuleRequest::getContentType() const
 {
     return contentType_;

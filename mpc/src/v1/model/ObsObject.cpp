@@ -78,7 +78,6 @@ bool ObsObject::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ObsObject::getFileName() const
 {
     return fileName_;

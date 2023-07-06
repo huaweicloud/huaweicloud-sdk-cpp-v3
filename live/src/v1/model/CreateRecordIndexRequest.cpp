@@ -49,7 +49,6 @@ bool CreateRecordIndexRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 RecordIndexRequestBody CreateRecordIndexRequest::getBody() const
 {
     return body_;

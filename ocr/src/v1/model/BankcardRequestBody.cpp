@@ -78,7 +78,6 @@ bool BankcardRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BankcardRequestBody::getImage() const
 {
     return image_;

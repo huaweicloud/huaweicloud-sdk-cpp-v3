@@ -50,7 +50,6 @@ bool PublishAssetFromObsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PublishAssetFromObsResponse::getAssetId() const
 {
     return assetId_;

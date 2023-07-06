@@ -36,7 +36,6 @@ bool DeleteSearchCriteriasResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

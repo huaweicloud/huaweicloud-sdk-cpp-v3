@@ -49,7 +49,6 @@ bool UpdateDisasterRecoveryDrillNameResponse::fromJson(const web::json::value& v
     return ok;
 }
 
-
 ShowDisasterRecoveryDrillParams UpdateDisasterRecoveryDrillNameResponse::getDisasterRecoveryDrill() const
 {
     return disasterRecoveryDrill_;

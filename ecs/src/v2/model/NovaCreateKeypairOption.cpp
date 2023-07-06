@@ -92,7 +92,6 @@ bool NovaCreateKeypairOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NovaCreateKeypairOption::getPublicKey() const
 {
     return publicKey_;

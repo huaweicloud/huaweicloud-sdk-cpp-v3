@@ -77,7 +77,6 @@ bool ShowFacesByLimitResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowFacesByLimitResponse::getFaceSetId() const
 {
     return faceSetId_;

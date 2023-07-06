@@ -49,7 +49,6 @@ bool UpdateVpcPeeringResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 VpcPeering UpdateVpcPeeringResponse::getPeering() const
 {
     return peering_;

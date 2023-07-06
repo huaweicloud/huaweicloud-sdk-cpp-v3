@@ -63,7 +63,6 @@ bool ShowVaultResourceInstancesResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<TagResource>& ShowVaultResourceInstancesResponse::getResources()
 {
     return resources_;

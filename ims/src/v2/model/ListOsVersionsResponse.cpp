@@ -49,7 +49,6 @@ bool ListOsVersionsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ListOsVersionsResponseBody>& ListOsVersionsResponse::getBody()
 {
     return body_;

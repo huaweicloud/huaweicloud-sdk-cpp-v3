@@ -63,7 +63,6 @@ bool RecognizeGeneralTextRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RecognizeGeneralTextRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

@@ -78,7 +78,6 @@ bool FlavorSpotOptions::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t FlavorSpotOptions::getLongestSpotDurationHours() const
 {
     return longestSpotDurationHours_;

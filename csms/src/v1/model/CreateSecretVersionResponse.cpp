@@ -49,7 +49,6 @@ bool CreateSecretVersionResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 VersionMetadata CreateSecretVersionResponse::getVersionMetadata() const
 {
     return versionMetadata_;

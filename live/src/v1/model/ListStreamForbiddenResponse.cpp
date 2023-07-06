@@ -63,7 +63,6 @@ bool ListStreamForbiddenResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t ListStreamForbiddenResponse::getTotal() const
 {
     return total_;

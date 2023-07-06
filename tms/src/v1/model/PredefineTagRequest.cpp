@@ -64,7 +64,6 @@ bool PredefineTagRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PredefineTagRequest::getKey() const
 {
     return key_;

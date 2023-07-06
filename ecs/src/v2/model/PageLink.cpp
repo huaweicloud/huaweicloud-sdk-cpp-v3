@@ -64,7 +64,6 @@ bool PageLink::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PageLink::getHref() const
 {
     return href_;

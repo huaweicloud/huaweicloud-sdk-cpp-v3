@@ -78,7 +78,6 @@ bool Fluency::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 float Fluency::getScore() const
 {
     return score_;

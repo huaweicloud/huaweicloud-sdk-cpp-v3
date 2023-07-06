@@ -50,7 +50,6 @@ bool DeleteSecretForScheduleRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t DeleteSecretForScheduleRequestBody::getRecoveryWindowInDays() const
 {
     return recoveryWindowInDays_;

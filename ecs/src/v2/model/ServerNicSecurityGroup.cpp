@@ -50,7 +50,6 @@ bool ServerNicSecurityGroup::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ServerNicSecurityGroup::getId() const
 {
     return id_;

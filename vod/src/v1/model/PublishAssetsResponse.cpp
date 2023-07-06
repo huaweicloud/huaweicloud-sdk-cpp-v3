@@ -49,7 +49,6 @@ bool PublishAssetsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<AssetInfo>& PublishAssetsResponse::getAssetInfoArray()
 {
     return assetInfoArray_;

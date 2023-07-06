@@ -159,7 +159,6 @@ bool ListDomainBandwidthPeakRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& ListDomainBandwidthPeakRequest::getPlayDomains()
 {
     return playDomains_;

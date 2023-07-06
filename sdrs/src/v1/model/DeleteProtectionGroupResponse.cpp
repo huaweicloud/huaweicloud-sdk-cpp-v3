@@ -50,7 +50,6 @@ bool DeleteProtectionGroupResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteProtectionGroupResponse::getJobId() const
 {
     return jobId_;

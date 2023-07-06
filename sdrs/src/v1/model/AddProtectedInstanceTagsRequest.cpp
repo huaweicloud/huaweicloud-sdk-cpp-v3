@@ -63,7 +63,6 @@ bool AddProtectedInstanceTagsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AddProtectedInstanceTagsRequest::getProtectedInstanceId() const
 {
     return protectedInstanceId_;

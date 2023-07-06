@@ -106,7 +106,6 @@ bool ExitEntryPermitEndorsementInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ExitEntryPermitEndorsementInfo::getEndorsementType() const
 {
     return endorsementType_;

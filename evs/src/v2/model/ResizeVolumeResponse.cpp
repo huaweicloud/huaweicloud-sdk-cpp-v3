@@ -64,7 +64,6 @@ bool ResizeVolumeResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ResizeVolumeResponse::getJobId() const
 {
     return jobId_;

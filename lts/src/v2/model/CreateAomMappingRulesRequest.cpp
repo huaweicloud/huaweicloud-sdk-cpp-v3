@@ -63,7 +63,6 @@ bool CreateAomMappingRulesRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 bool CreateAomMappingRulesRequest::isIsBatch() const
 {
     return isBatch_;

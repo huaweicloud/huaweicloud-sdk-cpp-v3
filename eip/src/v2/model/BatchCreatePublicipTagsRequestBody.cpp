@@ -63,7 +63,6 @@ bool BatchCreatePublicipTagsRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<ResourceTagOption>& BatchCreatePublicipTagsRequestBody::getTags()
 {
     return tags_;

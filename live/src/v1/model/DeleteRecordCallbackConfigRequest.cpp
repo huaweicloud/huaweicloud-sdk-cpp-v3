@@ -50,7 +50,6 @@ bool DeleteRecordCallbackConfigRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteRecordCallbackConfigRequest::getId() const
 {
     return id_;

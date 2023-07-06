@@ -49,7 +49,6 @@ bool CreateMergeChannelsReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 MpcMultiAudio CreateMergeChannelsReq::getMultiAudio() const
 {
     return multiAudio_;

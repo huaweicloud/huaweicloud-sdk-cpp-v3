@@ -118,7 +118,6 @@ bool CreateNotificationTemplateResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateNotificationTemplateResponse::getName() const
 {
     return name_;

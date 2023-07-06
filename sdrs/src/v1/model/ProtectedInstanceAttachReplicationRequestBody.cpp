@@ -49,7 +49,6 @@ bool ProtectedInstanceAttachReplicationRequestBody::fromJson(const web::json::va
     return ok;
 }
 
-
 ProtectedInstanceAttachReplicationRequestParams ProtectedInstanceAttachReplicationRequestBody::getReplicationAttachment() const
 {
     return replicationAttachment_;

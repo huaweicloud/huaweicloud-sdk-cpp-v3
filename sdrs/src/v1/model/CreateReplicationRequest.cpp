@@ -49,7 +49,6 @@ bool CreateReplicationRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 CreateReplicationRequestBody CreateReplicationRequest::getBody() const
 {
     return body_;

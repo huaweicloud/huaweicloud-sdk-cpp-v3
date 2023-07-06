@@ -36,7 +36,6 @@ bool NeutronDeleteFirewallRuleResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

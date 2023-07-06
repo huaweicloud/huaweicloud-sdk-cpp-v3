@@ -232,7 +232,6 @@ bool NeutronFirewallRule::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NeutronFirewallRule::getId() const
 {
     return id_;

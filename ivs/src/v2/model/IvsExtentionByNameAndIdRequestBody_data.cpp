@@ -49,7 +49,6 @@ bool IvsExtentionByNameAndIdRequestBody_data::fromJson(const web::json::value& v
     return ok;
 }
 
-
 std::vector<ExtentionReqDataByNameAndId>& IvsExtentionByNameAndIdRequestBody_data::getReqData()
 {
     return reqData_;

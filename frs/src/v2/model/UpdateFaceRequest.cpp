@@ -77,7 +77,6 @@ bool UpdateFaceRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateFaceRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

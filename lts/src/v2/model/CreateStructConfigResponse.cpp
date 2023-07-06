@@ -50,7 +50,6 @@ bool CreateStructConfigResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateStructConfigResponse::getBody() const
 {
     return body_;

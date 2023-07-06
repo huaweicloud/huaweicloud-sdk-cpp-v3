@@ -49,7 +49,6 @@ bool RecognizeBusinessLicenseResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 BusinessLicenseResult RecognizeBusinessLicenseResponse::getResult() const
 {
     return result_;

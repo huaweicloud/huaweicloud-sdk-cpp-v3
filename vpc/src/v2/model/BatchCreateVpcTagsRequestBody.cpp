@@ -63,7 +63,6 @@ bool BatchCreateVpcTagsRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BatchCreateVpcTagsRequestBody::getAction() const
 {
     return action_;

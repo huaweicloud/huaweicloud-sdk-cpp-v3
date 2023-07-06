@@ -77,7 +77,6 @@ bool RecognizeFlashAsrResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RecognizeFlashAsrResponse::getTraceId() const
 {
     return traceId_;

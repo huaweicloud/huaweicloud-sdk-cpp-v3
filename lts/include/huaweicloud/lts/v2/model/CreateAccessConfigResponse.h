@@ -7,8 +7,8 @@
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/lts/v2/model/AccessConfigDeatil.h>
 #include <huaweicloud/lts/v2/model/AccessConfigHostGroupIdList.h>
+#include <huaweicloud/lts/v2/model/AccessConfigDeatilCreate.h>
 #include <string>
 #include <huaweicloud/lts/v2/model/AccessConfigQueryLogInfo.h>
 #include <huaweicloud/lts/v2/model/AccessConfigTag.h>
@@ -62,7 +62,7 @@ public:
     void setAccessConfigName(const std::string& value);
 
     /// <summary>
-    /// 日志接入类型。AGENT：主机接入
+    /// 日志接入类型。AGENT：ECS接入  K8S_CCE: CCE接入
     /// </summary>
 
     std::string getAccessConfigType() const;
@@ -83,10 +83,10 @@ public:
     /// 
     /// </summary>
 
-    AccessConfigDeatil getAccessConfigDetail() const;
+    AccessConfigDeatilCreate getAccessConfigDetail() const;
     bool accessConfigDetailIsSet() const;
     void unsetaccessConfigDetail();
-    void setAccessConfigDetail(const AccessConfigDeatil& value);
+    void setAccessConfigDetail(const AccessConfigDeatilCreate& value);
 
     /// <summary>
     /// 
@@ -107,13 +107,31 @@ public:
     void setHostGroupInfo(const AccessConfigHostGroupIdList& value);
 
     /// <summary>
-    /// 
+    /// 标签信息。KEY不能重复,最多20个标签
     /// </summary>
 
     std::vector<AccessConfigTag>& getAccessConfigTag();
     bool accessConfigTagIsSet() const;
     void unsetaccessConfigTag();
     void setAccessConfigTag(const std::vector<AccessConfigTag>& value);
+
+    /// <summary>
+    /// 二进制采集
+    /// </summary>
+
+    bool isLogSplit() const;
+    bool logSplitIsSet() const;
+    void unsetlogSplit();
+    void setLogSplit(bool value);
+
+    /// <summary>
+    /// 日志拆分
+    /// </summary>
+
+    bool isBinaryCollect() const;
+    bool binaryCollectIsSet() const;
+    void unsetbinaryCollect();
+    void setBinaryCollect(bool value);
 
 
 protected:
@@ -125,7 +143,7 @@ protected:
     bool accessConfigTypeIsSet_;
     int64_t createTime_;
     bool createTimeIsSet_;
-    AccessConfigDeatil accessConfigDetail_;
+    AccessConfigDeatilCreate accessConfigDetail_;
     bool accessConfigDetailIsSet_;
     AccessConfigQueryLogInfo logInfo_;
     bool logInfoIsSet_;
@@ -133,6 +151,10 @@ protected:
     bool hostGroupInfoIsSet_;
     std::vector<AccessConfigTag> accessConfigTag_;
     bool accessConfigTagIsSet_;
+    bool logSplit_;
+    bool logSplitIsSet_;
+    bool binaryCollect_;
+    bool binaryCollectIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

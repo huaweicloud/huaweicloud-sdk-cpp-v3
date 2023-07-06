@@ -91,7 +91,6 @@ bool ListOpLogsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<OperationLog>& ListOpLogsResponse::getOperationLogs()
 {
     return operationLogs_;

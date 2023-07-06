@@ -92,7 +92,6 @@ bool QuotaShowResp::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string QuotaShowResp::getType() const
 {
     return type_;

@@ -49,7 +49,6 @@ bool CreateRecordCallbackConfigRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 RecordCallbackConfigRequest CreateRecordCallbackConfigRequest::getBody() const
 {
     return body_;

@@ -63,7 +63,6 @@ bool RecognizePassportRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RecognizePassportRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

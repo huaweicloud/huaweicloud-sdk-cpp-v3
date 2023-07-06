@@ -91,7 +91,6 @@ bool TranscodeInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string TranscodeInfo::getTemplateGroupName() const
 {
     return templateGroupName_;

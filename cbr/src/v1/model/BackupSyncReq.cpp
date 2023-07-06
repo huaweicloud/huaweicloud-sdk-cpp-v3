@@ -49,7 +49,6 @@ bool BackupSyncReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<BackupSync>& BackupSyncReq::getSync()
 {
     return sync_;

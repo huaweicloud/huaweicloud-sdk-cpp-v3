@@ -62,7 +62,6 @@ bool ListServerInterfacesResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 InterfaceAttachableQuantity ListServerInterfacesResponse::getAttachableQuantity() const
 {
     return attachableQuantity_;

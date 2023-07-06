@@ -64,7 +64,6 @@ bool ImageTag::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ImageTag::getKey() const
 {
     return key_;

@@ -90,7 +90,6 @@ bool WordsListIem::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string WordsListIem::getWords() const
 {
     return words_;

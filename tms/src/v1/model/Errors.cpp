@@ -92,7 +92,6 @@ bool Errors::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string Errors::getErrorCode() const
 {
     return errorCode_;

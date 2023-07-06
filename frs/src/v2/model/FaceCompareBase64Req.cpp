@@ -64,7 +64,6 @@ bool FaceCompareBase64Req::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string FaceCompareBase64Req::getImage2Base64() const
 {
     return image2Base64_;

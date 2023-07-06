@@ -132,7 +132,6 @@ bool CreateHostGroupResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateHostGroupResponse::getHostGroupId() const
 {
     return hostGroupId_;

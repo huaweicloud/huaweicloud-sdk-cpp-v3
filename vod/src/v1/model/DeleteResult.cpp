@@ -64,7 +64,6 @@ bool DeleteResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteResult::getAssetId() const
 {
     return assetId_;

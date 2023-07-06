@@ -49,7 +49,6 @@ bool CreateTemplateGroupResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 TemplateGroup CreateTemplateGroupResponse::getTemplateGroup() const
 {
     return templateGroup_;

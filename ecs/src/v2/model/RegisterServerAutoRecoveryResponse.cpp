@@ -36,7 +36,6 @@ bool RegisterServerAutoRecoveryResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

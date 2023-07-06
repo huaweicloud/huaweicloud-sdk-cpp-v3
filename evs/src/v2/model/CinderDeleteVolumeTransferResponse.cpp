@@ -36,7 +36,6 @@ bool CinderDeleteVolumeTransferResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

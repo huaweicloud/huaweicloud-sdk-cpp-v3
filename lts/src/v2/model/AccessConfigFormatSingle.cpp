@@ -64,7 +64,6 @@ bool AccessConfigFormatSingle::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AccessConfigFormatSingle::getMode() const
 {
     return mode_;

@@ -64,7 +64,6 @@ bool QualificationCertificateRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string QualificationCertificateRequestBody::getImage() const
 {
     return image_;

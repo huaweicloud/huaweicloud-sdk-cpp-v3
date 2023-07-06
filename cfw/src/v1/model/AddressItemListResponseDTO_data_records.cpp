@@ -106,7 +106,6 @@ bool AddressItemListResponseDTO_data_records::fromJson(const web::json::value& v
     return ok;
 }
 
-
 std::string AddressItemListResponseDTO_data_records::getItemId() const
 {
     return itemId_;

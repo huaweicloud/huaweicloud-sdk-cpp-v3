@@ -50,7 +50,6 @@ bool UpdateProtectedInstanceNameRequestParams::fromJson(const web::json::value& 
     return ok;
 }
 
-
 std::string UpdateProtectedInstanceNameRequestParams::getName() const
 {
     return name_;

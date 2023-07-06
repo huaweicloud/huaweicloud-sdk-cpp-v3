@@ -50,7 +50,6 @@ bool ShowResetPasswordFlagResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowResetPasswordFlagResponse::getResetpwdFlag() const
 {
     return resetpwdFlag_;

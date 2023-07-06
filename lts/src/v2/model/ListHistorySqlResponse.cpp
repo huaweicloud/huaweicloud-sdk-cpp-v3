@@ -49,7 +49,6 @@ bool ListHistorySqlResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<QuertHistorySQLResultsBody>& ListHistorySqlResponse::getResults()
 {
     return results_;

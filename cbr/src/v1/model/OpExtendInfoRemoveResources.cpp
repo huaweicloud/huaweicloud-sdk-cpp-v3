@@ -77,7 +77,6 @@ bool OpExtendInfoRemoveResources::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 int32_t OpExtendInfoRemoveResources::getFailCount() const
 {
     return failCount_;

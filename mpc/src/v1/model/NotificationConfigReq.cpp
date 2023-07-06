@@ -49,7 +49,6 @@ bool NotificationConfigReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<Notification>& NotificationConfigReq::getNotifications()
 {
     return notifications_;

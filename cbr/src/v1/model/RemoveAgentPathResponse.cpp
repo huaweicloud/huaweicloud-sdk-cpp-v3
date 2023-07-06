@@ -62,7 +62,6 @@ bool RemoveAgentPathResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& RemoveAgentPathResponse::getRemoved()
 {
     return removed_;

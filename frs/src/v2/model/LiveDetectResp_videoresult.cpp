@@ -77,7 +77,6 @@ bool LiveDetectResp_videoresult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 bool LiveDetectResp_videoresult::isAlive() const
 {
     return alive_;

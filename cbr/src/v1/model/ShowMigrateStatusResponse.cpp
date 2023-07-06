@@ -63,7 +63,6 @@ bool ShowMigrateStatusResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShowMigrateStatusResponse::getStatus() const
 {
     return status_;

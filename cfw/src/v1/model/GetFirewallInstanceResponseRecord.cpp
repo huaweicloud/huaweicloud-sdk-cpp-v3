@@ -242,7 +242,6 @@ bool GetFirewallInstanceResponseRecord::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string GetFirewallInstanceResponseRecord::getFwInstanceId() const
 {
     return fwInstanceId_;

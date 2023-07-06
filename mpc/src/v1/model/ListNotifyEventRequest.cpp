@@ -36,7 +36,6 @@ bool ListNotifyEventRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

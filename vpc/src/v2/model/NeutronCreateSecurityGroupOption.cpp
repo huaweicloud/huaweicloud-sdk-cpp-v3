@@ -64,7 +64,6 @@ bool NeutronCreateSecurityGroupOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string NeutronCreateSecurityGroupOption::getDescription() const
 {
     return description_;

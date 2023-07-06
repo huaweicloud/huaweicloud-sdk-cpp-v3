@@ -148,7 +148,6 @@ bool ShareBandwidthTypeShowResp::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ShareBandwidthTypeShowResp::getId() const
 {
     return id_;

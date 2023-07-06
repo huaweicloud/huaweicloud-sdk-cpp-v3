@@ -76,7 +76,6 @@ bool MultiAudio::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<TracksInfo>& MultiAudio::getTracksInfo()
 {
     return tracksInfo_;

@@ -64,7 +64,6 @@ bool UpdatePrePaidBandwidthOption::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdatePrePaidBandwidthOption::getName() const
 {
     return name_;

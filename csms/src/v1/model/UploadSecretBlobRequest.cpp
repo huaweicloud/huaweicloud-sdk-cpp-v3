@@ -49,7 +49,6 @@ bool UploadSecretBlobRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 UploadSecretBlobRequestBody UploadSecretBlobRequest::getBody() const
 {
     return body_;

@@ -49,7 +49,6 @@ bool NeutronCreateSecurityGroupRuleResponse::fromJson(const web::json::value& va
     return ok;
 }
 
-
 NeutronSecurityGroupRule NeutronCreateSecurityGroupRuleResponse::getSecurityGroupRule() const
 {
     return securityGroupRule_;

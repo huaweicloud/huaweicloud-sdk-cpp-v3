@@ -62,7 +62,6 @@ bool AssociateRouteTableAndSubnetReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<std::string>& AssociateRouteTableAndSubnetReq::getAssociate()
 {
     return associate_;

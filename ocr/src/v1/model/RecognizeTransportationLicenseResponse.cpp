@@ -49,7 +49,6 @@ bool RecognizeTransportationLicenseResponse::fromJson(const web::json::value& va
     return ok;
 }
 
-
 TransportationLicenseResult RecognizeTransportationLicenseResponse::getResult() const
 {
     return result_;

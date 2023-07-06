@@ -91,7 +91,6 @@ bool PlayInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string PlayInfo::getPlayType() const
 {
     return playType_;

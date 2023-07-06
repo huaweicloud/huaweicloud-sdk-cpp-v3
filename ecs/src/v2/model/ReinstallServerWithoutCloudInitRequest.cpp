@@ -63,7 +63,6 @@ bool ReinstallServerWithoutCloudInitRequest::fromJson(const web::json::value& va
     return ok;
 }
 
-
 std::string ReinstallServerWithoutCloudInitRequest::getServerId() const
 {
     return serverId_;

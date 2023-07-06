@@ -120,7 +120,6 @@ bool BlackWhiteListResponse_data_records::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string BlackWhiteListResponse_data_records::getListId() const
 {
     return listId_;

@@ -91,7 +91,6 @@ bool TemplateGroupCollection::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string TemplateGroupCollection::getGroupCollectionId() const
 {
     return groupCollectionId_;

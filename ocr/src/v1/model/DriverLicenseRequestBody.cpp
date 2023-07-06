@@ -106,7 +106,6 @@ bool DriverLicenseRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DriverLicenseRequestBody::getImage() const
 {
     return image_;

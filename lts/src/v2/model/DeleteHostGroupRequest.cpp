@@ -63,7 +63,6 @@ bool DeleteHostGroupRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string DeleteHostGroupRequest::getContentType() const
 {
     return contentType_;

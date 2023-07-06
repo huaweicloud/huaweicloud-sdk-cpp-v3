@@ -861,7 +861,6 @@ bool ImageInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ImageInfo::getBackupId() const
 {
     return backupId_;

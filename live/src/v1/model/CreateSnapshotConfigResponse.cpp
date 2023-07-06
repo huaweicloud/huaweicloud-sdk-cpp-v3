@@ -36,7 +36,6 @@ bool CreateSnapshotConfigResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

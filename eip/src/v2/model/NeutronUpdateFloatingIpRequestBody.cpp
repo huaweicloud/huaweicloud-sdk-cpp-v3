@@ -49,7 +49,6 @@ bool NeutronUpdateFloatingIpRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 UpdateFloatingIpOption NeutronUpdateFloatingIpRequestBody::getFloatingip() const
 {
     return floatingip_;

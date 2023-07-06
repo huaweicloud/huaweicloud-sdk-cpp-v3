@@ -49,7 +49,6 @@ bool CreateSecretResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 Secret CreateSecretResponse::getSecret() const
 {
     return secret_;

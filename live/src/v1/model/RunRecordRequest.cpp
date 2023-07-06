@@ -63,7 +63,6 @@ bool RunRecordRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string RunRecordRequest::getAction() const
 {
     return action_;

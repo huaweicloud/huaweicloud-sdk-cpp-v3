@@ -78,7 +78,6 @@ bool ChangeAlarmRuleStatus::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ChangeAlarmRuleStatus::getAlarmRuleId() const
 {
     return alarmRuleId_;

@@ -64,7 +64,6 @@ bool ThailandLicensePlateRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string ThailandLicensePlateRequestBody::getImage() const
 {
     return image_;

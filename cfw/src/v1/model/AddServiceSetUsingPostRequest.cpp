@@ -77,7 +77,6 @@ bool AddServiceSetUsingPostRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string AddServiceSetUsingPostRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

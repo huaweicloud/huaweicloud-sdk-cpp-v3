@@ -106,7 +106,6 @@ bool AddressSetListResponseDTO_data_records::fromJson(const web::json::value& va
     return ok;
 }
 
-
 std::string AddressSetListResponseDTO_data_records::getSetId() const
 {
     return setId_;

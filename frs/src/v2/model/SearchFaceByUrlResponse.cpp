@@ -49,7 +49,6 @@ bool SearchFaceByUrlResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::vector<SearchFace>& SearchFaceByUrlResponse::getFaces()
 {
     return faces_;

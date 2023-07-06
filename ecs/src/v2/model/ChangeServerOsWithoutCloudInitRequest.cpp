@@ -63,7 +63,6 @@ bool ChangeServerOsWithoutCloudInitRequest::fromJson(const web::json::value& val
     return ok;
 }
 
-
 std::string ChangeServerOsWithoutCloudInitRequest::getServerId() const
 {
     return serverId_;

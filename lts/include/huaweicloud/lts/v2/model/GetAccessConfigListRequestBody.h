@@ -77,7 +77,7 @@ public:
     void setLogStreamNameList(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 
+    /// 接入配置标签，KEY不能重复,最多20个标签
     /// </summary>
 
     std::vector<AccessConfigTag>& getAccessConfigTagList();

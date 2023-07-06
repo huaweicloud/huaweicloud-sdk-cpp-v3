@@ -188,7 +188,6 @@ bool TollInvoiceResult::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string TollInvoiceResult::getCode() const
 {
     return code_;

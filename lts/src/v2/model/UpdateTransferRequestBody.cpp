@@ -63,7 +63,6 @@ bool UpdateTransferRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string UpdateTransferRequestBody::getLogTransferId() const
 {
     return logTransferId_;

@@ -63,7 +63,6 @@ bool DetectStandardByVideoAndNameAndIdRequest::fromJson(const web::json::value& 
     return ok;
 }
 
-
 std::string DetectStandardByVideoAndNameAndIdRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;

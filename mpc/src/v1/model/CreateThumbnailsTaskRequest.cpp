@@ -49,7 +49,6 @@ bool CreateThumbnailsTaskRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 CreateThumbReq CreateThumbnailsTaskRequest::getBody() const
 {
     return body_;

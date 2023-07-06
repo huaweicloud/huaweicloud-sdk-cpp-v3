@@ -204,7 +204,6 @@ bool CreateWatermarkTemplateReq::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 std::string CreateWatermarkTemplateReq::getName() const
 {
     return name_;

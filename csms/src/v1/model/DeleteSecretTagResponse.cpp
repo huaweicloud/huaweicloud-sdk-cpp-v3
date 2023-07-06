@@ -36,7 +36,6 @@ bool DeleteSecretTagResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 }
 }
 }

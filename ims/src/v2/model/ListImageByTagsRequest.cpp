@@ -49,7 +49,6 @@ bool ListImageByTagsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
-
 ListImageByTagsRequestBody ListImageByTagsRequest::getBody() const
 {
     return body_;

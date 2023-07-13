@@ -128,27 +128,80 @@
 #include <huaweicloud/vpc/v2/model/ShowPrivateipResponse.h>
 #include <string>
 
+#include <huaweicloud/vpc/v2/model/NeutronAddRouterInterfaceRequest.h>
+#include <huaweicloud/vpc/v2/model/NeutronAddRouterInterfaceResponse.h>
+#include <huaweicloud/vpc/v2/model/NeutronCreateNetworkRequest.h>
+#include <huaweicloud/vpc/v2/model/NeutronCreateNetworkRequestBody.h>
+#include <huaweicloud/vpc/v2/model/NeutronCreateNetworkResponse.h>
+#include <huaweicloud/vpc/v2/model/NeutronCreatePortRequest.h>
+#include <huaweicloud/vpc/v2/model/NeutronCreatePortRequestBody.h>
+#include <huaweicloud/vpc/v2/model/NeutronCreatePortResponse.h>
+#include <huaweicloud/vpc/v2/model/NeutronCreateRouterRequest.h>
+#include <huaweicloud/vpc/v2/model/NeutronCreateRouterRequestBody.h>
+#include <huaweicloud/vpc/v2/model/NeutronCreateRouterResponse.h>
 #include <huaweicloud/vpc/v2/model/NeutronCreateSecurityGroupRequest.h>
 #include <huaweicloud/vpc/v2/model/NeutronCreateSecurityGroupRequestBody.h>
 #include <huaweicloud/vpc/v2/model/NeutronCreateSecurityGroupResponse.h>
 #include <huaweicloud/vpc/v2/model/NeutronCreateSecurityGroupRuleRequest.h>
 #include <huaweicloud/vpc/v2/model/NeutronCreateSecurityGroupRuleRequestBody.h>
 #include <huaweicloud/vpc/v2/model/NeutronCreateSecurityGroupRuleResponse.h>
+#include <huaweicloud/vpc/v2/model/NeutronCreateSubnetRequest.h>
+#include <huaweicloud/vpc/v2/model/NeutronCreateSubnetRequestBody.h>
+#include <huaweicloud/vpc/v2/model/NeutronCreateSubnetResponse.h>
+#include <huaweicloud/vpc/v2/model/NeutronDeleteNetworkRequest.h>
+#include <huaweicloud/vpc/v2/model/NeutronDeleteNetworkResponse.h>
+#include <huaweicloud/vpc/v2/model/NeutronDeletePortRequest.h>
+#include <huaweicloud/vpc/v2/model/NeutronDeletePortResponse.h>
+#include <huaweicloud/vpc/v2/model/NeutronDeleteRouterRequest.h>
+#include <huaweicloud/vpc/v2/model/NeutronDeleteRouterResponse.h>
 #include <huaweicloud/vpc/v2/model/NeutronDeleteSecurityGroupRequest.h>
 #include <huaweicloud/vpc/v2/model/NeutronDeleteSecurityGroupResponse.h>
 #include <huaweicloud/vpc/v2/model/NeutronDeleteSecurityGroupRuleRequest.h>
 #include <huaweicloud/vpc/v2/model/NeutronDeleteSecurityGroupRuleResponse.h>
+#include <huaweicloud/vpc/v2/model/NeutronDeleteSubnetRequest.h>
+#include <huaweicloud/vpc/v2/model/NeutronDeleteSubnetResponse.h>
+#include <huaweicloud/vpc/v2/model/NeutronListNetworksRequest.h>
+#include <huaweicloud/vpc/v2/model/NeutronListNetworksResponse.h>
+#include <huaweicloud/vpc/v2/model/NeutronListPortsRequest.h>
+#include <huaweicloud/vpc/v2/model/NeutronListPortsResponse.h>
+#include <huaweicloud/vpc/v2/model/NeutronListRoutersRequest.h>
+#include <huaweicloud/vpc/v2/model/NeutronListRoutersResponse.h>
 #include <huaweicloud/vpc/v2/model/NeutronListSecurityGroupRulesRequest.h>
 #include <huaweicloud/vpc/v2/model/NeutronListSecurityGroupRulesResponse.h>
 #include <huaweicloud/vpc/v2/model/NeutronListSecurityGroupsRequest.h>
 #include <huaweicloud/vpc/v2/model/NeutronListSecurityGroupsResponse.h>
+#include <huaweicloud/vpc/v2/model/NeutronListSubnetsRequest.h>
+#include <huaweicloud/vpc/v2/model/NeutronListSubnetsResponse.h>
+#include <huaweicloud/vpc/v2/model/NeutronRemoveRouterInterfaceRequest.h>
+#include <huaweicloud/vpc/v2/model/NeutronRemoveRouterInterfaceResponse.h>
+#include <huaweicloud/vpc/v2/model/NeutronShowNetworkRequest.h>
+#include <huaweicloud/vpc/v2/model/NeutronShowNetworkResponse.h>
+#include <huaweicloud/vpc/v2/model/NeutronShowPortRequest.h>
+#include <huaweicloud/vpc/v2/model/NeutronShowPortResponse.h>
+#include <huaweicloud/vpc/v2/model/NeutronShowRouterRequest.h>
+#include <huaweicloud/vpc/v2/model/NeutronShowRouterResponse.h>
 #include <huaweicloud/vpc/v2/model/NeutronShowSecurityGroupRequest.h>
 #include <huaweicloud/vpc/v2/model/NeutronShowSecurityGroupResponse.h>
 #include <huaweicloud/vpc/v2/model/NeutronShowSecurityGroupRuleRequest.h>
 #include <huaweicloud/vpc/v2/model/NeutronShowSecurityGroupRuleResponse.h>
+#include <huaweicloud/vpc/v2/model/NeutronShowSubnetRequest.h>
+#include <huaweicloud/vpc/v2/model/NeutronShowSubnetResponse.h>
+#include <huaweicloud/vpc/v2/model/NeutronUpdateNetworkRequest.h>
+#include <huaweicloud/vpc/v2/model/NeutronUpdateNetworkRequestBody.h>
+#include <huaweicloud/vpc/v2/model/NeutronUpdateNetworkResponse.h>
+#include <huaweicloud/vpc/v2/model/NeutronUpdatePortRequest.h>
+#include <huaweicloud/vpc/v2/model/NeutronUpdatePortRequestBody.h>
+#include <huaweicloud/vpc/v2/model/NeutronUpdatePortResponse.h>
+#include <huaweicloud/vpc/v2/model/NeutronUpdateRouterRequest.h>
+#include <huaweicloud/vpc/v2/model/NeutronUpdateRouterRequestBody.h>
+#include <huaweicloud/vpc/v2/model/NeutronUpdateRouterResponse.h>
 #include <huaweicloud/vpc/v2/model/NeutronUpdateSecurityGroupRequest.h>
 #include <huaweicloud/vpc/v2/model/NeutronUpdateSecurityGroupRequestBody.h>
 #include <huaweicloud/vpc/v2/model/NeutronUpdateSecurityGroupResponse.h>
+#include <huaweicloud/vpc/v2/model/NeutronUpdateSubnetRequest.h>
+#include <huaweicloud/vpc/v2/model/NeutronUpdateSubnetRequestBody.h>
+#include <huaweicloud/vpc/v2/model/NeutronUpdateSubnetResponse.h>
+#include <huaweicloud/vpc/v2/model/RouterInterfaceRequestBody.h>
 #include <string>
 
 #include <huaweicloud/vpc/v2/model/NeutronAddFirewallRuleRequest.h>
@@ -194,6 +247,9 @@
 #include <huaweicloud/vpc/v2/model/NeutronUpdateFirewallRuleRequestBody.h>
 #include <huaweicloud/vpc/v2/model/NeutronUpdateFirewallRuleResponse.h>
 #include <string>
+
+#include <huaweicloud/vpc/v2/model/ListApiVersionRequest.h>
+#include <huaweicloud/vpc/v2/model/ListApiVersionResponse.h>
 
 #include <huaweicloud/vpc/v2/model/BatchCreateVpcTagsRequest.h>
 #include <huaweicloud/vpc/v2/model/BatchCreateVpcTagsRequestBody.h>
@@ -675,6 +731,38 @@ public:
         ShowPrivateipRequest &request
     );
 
+    // 路由器添加接口
+    //
+    // 添加路由器接口。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<NeutronAddRouterInterfaceResponse> neutronAddRouterInterface(
+        NeutronAddRouterInterfaceRequest &request
+    );
+    // 创建网络
+    //
+    // 创建网络
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<NeutronCreateNetworkResponse> neutronCreateNetwork(
+        NeutronCreateNetworkRequest &request
+    );
+    // 创建端口
+    //
+    // 创建端口。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<NeutronCreatePortResponse> neutronCreatePort(
+        NeutronCreatePortRequest &request
+    );
+    // 创建路由器
+    //
+    // 创建路由器。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<NeutronCreateRouterResponse> neutronCreateRouter(
+        NeutronCreateRouterRequest &request
+    );
     // 创建安全组
     //
     // 创建安全组
@@ -690,6 +778,38 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<NeutronCreateSecurityGroupRuleResponse> neutronCreateSecurityGroupRule(
         NeutronCreateSecurityGroupRuleRequest &request
+    );
+    // 创建子网
+    //
+    // 创建子网。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<NeutronCreateSubnetResponse> neutronCreateSubnet(
+        NeutronCreateSubnetRequest &request
+    );
+    // 删除网络
+    //
+    // 删除网络
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<NeutronDeleteNetworkResponse> neutronDeleteNetwork(
+        NeutronDeleteNetworkRequest &request
+    );
+    // 删除端口
+    //
+    // 删除端口。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<NeutronDeletePortResponse> neutronDeletePort(
+        NeutronDeletePortRequest &request
+    );
+    // 删除路由器
+    //
+    // 删除路由器
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<NeutronDeleteRouterResponse> neutronDeleteRouter(
+        NeutronDeleteRouterRequest &request
     );
     // 删除安全组
     //
@@ -707,6 +827,38 @@ public:
     std::shared_ptr<NeutronDeleteSecurityGroupRuleResponse> neutronDeleteSecurityGroupRule(
         NeutronDeleteSecurityGroupRuleRequest &request
     );
+    // 删除子网
+    //
+    // 删除子网
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<NeutronDeleteSubnetResponse> neutronDeleteSubnet(
+        NeutronDeleteSubnetRequest &request
+    );
+    // 查询网络列表
+    //
+    // 查询提交请求的租户的所有网络，单次查询最多返回2000条数据，超过2000后会返回分页标记。分页查询请参考分页查询。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<NeutronListNetworksResponse> neutronListNetworks(
+        NeutronListNetworksRequest &request
+    );
+    // 查询端口列表
+    //
+    // 查询提交请求的租户的所有端口，单次查询最多返回2000条数据，超过2000后会返回分页标记。分页查询请参考分页查询。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<NeutronListPortsResponse> neutronListPorts(
+        NeutronListPortsRequest &request
+    );
+    // 查询路由器列表
+    //
+    // 查询提交请求的租户有权限操作的所有路由器信息，单次查询最多返回2000条数据，超过2000后会返回分页标记。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<NeutronListRoutersResponse> neutronListRouters(
+        NeutronListRoutersRequest &request
+    );
     // 查询安全组规则列表
     //
     // 查询提交请求的租户有权限查看的所有安全组规则。单次查询最多返回2000条数据，超过2000后会返回分页标记。分页查询请参考分页查询
@@ -722,6 +874,46 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<NeutronListSecurityGroupsResponse> neutronListSecurityGroups(
         NeutronListSecurityGroupsRequest &request
+    );
+    // 查询子网列表
+    //
+    // 查询提交请求租户的所有子网，单次查询最多返回2000条数据，超过2000后会返回分页标记。分页查询请参考分页查询 。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<NeutronListSubnetsResponse> neutronListSubnets(
+        NeutronListSubnetsRequest &request
+    );
+    // 路由器删除接口
+    //
+    // 删除路由器接口。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<NeutronRemoveRouterInterfaceResponse> neutronRemoveRouterInterface(
+        NeutronRemoveRouterInterfaceRequest &request
+    );
+    // 查询网络
+    //
+    // 查询指定的网络详情
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<NeutronShowNetworkResponse> neutronShowNetwork(
+        NeutronShowNetworkRequest &request
+    );
+    // 查询端口
+    //
+    // 查询端口详情。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<NeutronShowPortResponse> neutronShowPort(
+        NeutronShowPortRequest &request
+    );
+    // 查询路由器
+    //
+    // 查询路由器详情。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<NeutronShowRouterResponse> neutronShowRouter(
+        NeutronShowRouterRequest &request
     );
     // 查询安全组
     //
@@ -739,6 +931,38 @@ public:
     std::shared_ptr<NeutronShowSecurityGroupRuleResponse> neutronShowSecurityGroupRule(
         NeutronShowSecurityGroupRuleRequest &request
     );
+    // 查询子网
+    //
+    // 查询子网详情
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<NeutronShowSubnetResponse> neutronShowSubnet(
+        NeutronShowSubnetRequest &request
+    );
+    // 更新网络
+    //
+    // 更新网络
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<NeutronUpdateNetworkResponse> neutronUpdateNetwork(
+        NeutronUpdateNetworkRequest &request
+    );
+    // 更新端口
+    //
+    // 更新端口
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<NeutronUpdatePortResponse> neutronUpdatePort(
+        NeutronUpdatePortRequest &request
+    );
+    // 更新路由器
+    //
+    // 更新路由器。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<NeutronUpdateRouterResponse> neutronUpdateRouter(
+        NeutronUpdateRouterRequest &request
+    );
     // 更新安全组
     //
     // 更新安全组
@@ -746,6 +970,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<NeutronUpdateSecurityGroupResponse> neutronUpdateSecurityGroup(
         NeutronUpdateSecurityGroupRequest &request
+    );
+    // 更新子网
+    //
+    // 更新子网
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<NeutronUpdateSubnetResponse> neutronUpdateSubnet(
+        NeutronUpdateSubnetRequest &request
     );
 
     // 插入网络ACL规则
@@ -883,6 +1115,15 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<NeutronUpdateFirewallRuleResponse> neutronUpdateFirewallRule(
         NeutronUpdateFirewallRuleRequest &request
+    );
+
+    // 查询API版本信息列表
+    //
+    // 返回当前API所有可用的版本（仅针对OpenStack原生接口）。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListApiVersionResponse> listApiVersion(
+        ListApiVersionRequest &request
     );
 
     // 批量创建VPC资源标签

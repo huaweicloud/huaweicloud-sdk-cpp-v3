@@ -157,6 +157,9 @@ std::shared_ptr<PushTranscriberJobsResponse> SisClient::pushTranscriberJobs(Push
     std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {

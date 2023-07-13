@@ -1,3 +1,48 @@
+# 3.1.42 2023-07-13
+
+### HuaweiCloud SDK SIS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **PushTranscriberJobs**
+    - changes of request param
+      - `+ Enterprise-Project-Id`
+
+### HuaweiCloud SDK VPC
+
+- _Features_
+  - Support the following interfaces：
+    - `ListApiVersion`
+    - `NeutronListPorts`
+    - `NeutronCreatePort`
+    - `NeutronShowPort`
+    - `NeutronUpdatePort`
+    - `NeutronDeletePort`
+    - `NeutronListNetworks`
+    - `NeutronCreateNetwork`
+    - `NeutronShowNetwork`
+    - `NeutronUpdateNetwork`
+    - `NeutronDeleteNetwork`
+    - `NeutronListSubnets`
+    - `NeutronCreateSubnet`
+    - `NeutronShowSubnet`
+    - `NeutronUpdateSubnet`
+    - `NeutronDeleteSubnet`
+    - `NeutronListRouters`
+    - `NeutronCreateRouter`
+    - `NeutronShowRouter`
+    - `NeutronUpdateRouter`
+    - `NeutronDeleteRouter`
+    - `NeutronAddRouterInterface`
+    - `NeutronRemoveRouterInterface`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.41 2023-07-06
 
 ### HuaweiCloud SDK EVS

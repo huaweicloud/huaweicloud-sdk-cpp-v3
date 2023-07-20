@@ -15,6 +15,7 @@ JobNodeInfo::JobNodeInfo()
 {
     specIsSet_ = false;
     vpcIsSet_ = false;
+    baseInfoIsSet_ = false;
 }
 
 JobNodeInfo::~JobNodeInfo() = default;
@@ -32,6 +33,9 @@ web::json::value JobNodeInfo::toJson() const
     }
     if(vpcIsSet_) {
         val[utility::conversions::to_string_t("vpc")] = ModelBase::toJson(vpc_);
+    }
+    if(baseInfoIsSet_) {
+        val[utility::conversions::to_string_t("base_info")] = ModelBase::toJson(baseInfo_);
     }
 
     return val;
@@ -57,6 +61,15 @@ bool JobNodeInfo::fromJson(const web::json::value& val)
             JobNodeVpcInfo refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setVpc(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("base_info"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("base_info"));
+        if(!fieldValue.is_null())
+        {
+            JobNodeBaseInfo refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBaseInfo(refVal);
         }
     }
     return ok;
@@ -102,6 +115,27 @@ bool JobNodeInfo::vpcIsSet() const
 void JobNodeInfo::unsetvpc()
 {
     vpcIsSet_ = false;
+}
+
+JobNodeBaseInfo JobNodeInfo::getBaseInfo() const
+{
+    return baseInfo_;
+}
+
+void JobNodeInfo::setBaseInfo(const JobNodeBaseInfo& value)
+{
+    baseInfo_ = value;
+    baseInfoIsSet_ = true;
+}
+
+bool JobNodeInfo::baseInfoIsSet() const
+{
+    return baseInfoIsSet_;
+}
+
+void JobNodeInfo::unsetbaseInfo()
+{
+    baseInfoIsSet_ = false;
 }
 
 }

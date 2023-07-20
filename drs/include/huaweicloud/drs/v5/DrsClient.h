@@ -16,19 +16,28 @@
 #include <huaweicloud/drs/v5/model/BatchExecuteJobActionsRequest.h>
 #include <huaweicloud/drs/v5/model/BatchExecuteJobActionsResponse.h>
 #include <huaweicloud/drs/v5/model/BatchJobActionReq.h>
+#include <huaweicloud/drs/v5/model/CheckJobNameReq.h>
+#include <huaweicloud/drs/v5/model/CloneJobReq.h>
 #include <huaweicloud/drs/v5/model/CollectDbObjectsAsyncRequest.h>
 #include <huaweicloud/drs/v5/model/CollectDbObjectsAsyncResponse.h>
 #include <huaweicloud/drs/v5/model/CommitAsyncJobRequest.h>
 #include <huaweicloud/drs/v5/model/CommitAsyncJobResponse.h>
+#include <huaweicloud/drs/v5/model/CopyJobRequest.h>
+#include <huaweicloud/drs/v5/model/CopyJobResponse.h>
 #include <huaweicloud/drs/v5/model/CreateJobRequest.h>
 #include <huaweicloud/drs/v5/model/CreateJobResponse.h>
 #include <huaweicloud/drs/v5/model/DeleteJobRequest.h>
 #include <huaweicloud/drs/v5/model/DeleteJobResponse.h>
+#include <huaweicloud/drs/v5/model/DownloadBatchCreateTemplateRequest.h>
+#include <huaweicloud/drs/v5/model/DownloadBatchCreateTemplateResponse.h>
 #include <huaweicloud/drs/v5/model/DownloadDbObjectTemplateRequest.h>
 #include <huaweicloud/drs/v5/model/DownloadDbObjectTemplateResponse.h>
 #include <huaweicloud/drs/v5/model/ExecuteJobActionRequest.h>
 #include <huaweicloud/drs/v5/model/ExecuteJobActionResponse.h>
 #include <huaweicloud/core/utils/HttpContent.h>
+#include <huaweicloud/drs/v5/model/ImportBatchCreateJobsRequest.h>
+#include <huaweicloud/drs/v5/model/ImportBatchCreateJobsRequestBody.h>
+#include <huaweicloud/drs/v5/model/ImportBatchCreateJobsResponse.h>
 #include <huaweicloud/drs/v5/model/JobActionReq.h>
 #include <huaweicloud/drs/v5/model/ListAsyncJobDetailRequest.h>
 #include <huaweicloud/drs/v5/model/ListAsyncJobDetailResponse.h>
@@ -40,14 +49,31 @@
 #include <huaweicloud/drs/v5/model/ListJobsResponse.h>
 #include <huaweicloud/drs/v5/model/ListLinksRequest.h>
 #include <huaweicloud/drs/v5/model/ListLinksResponse.h>
+#include <huaweicloud/drs/v5/model/QueryUserSelectedObjectInfoReq.h>
+#include <huaweicloud/drs/v5/model/ShowActionsRequest.h>
+#include <huaweicloud/drs/v5/model/ShowActionsResponse.h>
+#include <huaweicloud/drs/v5/model/ShowComparePolicyRequest.h>
+#include <huaweicloud/drs/v5/model/ShowComparePolicyResponse.h>
 #include <huaweicloud/drs/v5/model/ShowDbObjectCollectionStatusRequest.h>
 #include <huaweicloud/drs/v5/model/ShowDbObjectCollectionStatusResponse.h>
 #include <huaweicloud/drs/v5/model/ShowDbObjectTemplateProgressRequest.h>
 #include <huaweicloud/drs/v5/model/ShowDbObjectTemplateProgressResponse.h>
 #include <huaweicloud/drs/v5/model/ShowDbObjectTemplateResultRequest.h>
 #include <huaweicloud/drs/v5/model/ShowDbObjectTemplateResultResponse.h>
+#include <huaweicloud/drs/v5/model/ShowDirtyDataRequest.h>
+#include <huaweicloud/drs/v5/model/ShowDirtyDataResponse.h>
+#include <huaweicloud/drs/v5/model/ShowEnterpriseProjectRequest.h>
+#include <huaweicloud/drs/v5/model/ShowEnterpriseProjectResponse.h>
+#include <huaweicloud/drs/v5/model/ShowHealthCompareJobListRequest.h>
+#include <huaweicloud/drs/v5/model/ShowHealthCompareJobListResponse.h>
 #include <huaweicloud/drs/v5/model/ShowJobDetailRequest.h>
 #include <huaweicloud/drs/v5/model/ShowJobDetailResponse.h>
+#include <huaweicloud/drs/v5/model/ShowMeteringRequest.h>
+#include <huaweicloud/drs/v5/model/ShowMeteringResponse.h>
+#include <huaweicloud/drs/v5/model/ShowObjectMappingRequest.h>
+#include <huaweicloud/drs/v5/model/ShowObjectMappingResponse.h>
+#include <huaweicloud/drs/v5/model/ShowProgressDataRequest.h>
+#include <huaweicloud/drs/v5/model/ShowProgressDataResponse.h>
 #include <huaweicloud/drs/v5/model/ShowUpdateObjectSavingStatusRequest.h>
 #include <huaweicloud/drs/v5/model/ShowUpdateObjectSavingStatusResponse.h>
 #include <huaweicloud/drs/v5/model/SingleCreateJobReq.h>
@@ -59,6 +85,8 @@
 #include <huaweicloud/drs/v5/model/UploadDbObjectTemplateRequest.h>
 #include <huaweicloud/drs/v5/model/UploadDbObjectTemplateRequestBody.h>
 #include <huaweicloud/drs/v5/model/UploadDbObjectTemplateResponse.h>
+#include <huaweicloud/drs/v5/model/ValidateJobNameRequest.h>
+#include <huaweicloud/drs/v5/model/ValidateJobNameResponse.h>
 #include <string>
 
 #include <cpprest/details/basic_types.h>
@@ -127,6 +155,14 @@ public:
     std::shared_ptr<CommitAsyncJobResponse> commitAsyncJob(
         CommitAsyncJobRequest &request
     );
+    // 克隆任务
+    //
+    // DRS支持通过克隆功能，快速复制现有同步任务的配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CopyJobResponse> copyJob(
+        CopyJobRequest &request
+    );
     // 创建任务
     //
     // 创建单个任务，根据请求参数不同，可以创建单个实时迁移、实时同步、实时灾备等任务。
@@ -143,6 +179,14 @@ public:
     std::shared_ptr<DeleteJobResponse> deleteJob(
         DeleteJobRequest &request
     );
+    // 下载批量导入任务模板
+    //
+    // 下载批量导入任务模板
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DownloadBatchCreateTemplateResponse> downloadBatchCreateTemplate(
+        DownloadBatchCreateTemplateRequest &request
+    );
     // 对象选择（文件导入 - 模板下载）
     //
     // 对象选择（文件导入 - 模板下载）。
@@ -158,6 +202,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ExecuteJobActionResponse> executeJobAction(
         ExecuteJobActionRequest &request
+    );
+    // 批量导入任务
+    //
+    // 批量导入任务
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ImportBatchCreateJobsResponse> importBatchCreateJobs(
+        ImportBatchCreateJobsRequest &request
     );
     // 查询指定ID批量异步任务详情
     //
@@ -193,11 +245,27 @@ public:
     );
     // 查询可用链路信息
     //
-    // 查询可用链路信息。
+    // 根据参数不同，可查询实时迁移、实时同步、实时灾备等可用链路信息。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListLinksResponse> listLinks(
         ListLinksRequest &request
+    );
+    // 获取指定任务操作信息
+    //
+    // 获取指定任务允许、不允许、当前操作信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowActionsResponse> showActions(
+        ShowActionsRequest &request
+    );
+    // 查询对比策略
+    //
+    // 查询对比策略。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowComparePolicyResponse> showComparePolicy(
+        ShowComparePolicyRequest &request
     );
     // 获取提交查询数据库对象信息的结果
     //
@@ -223,6 +291,30 @@ public:
     std::shared_ptr<ShowDbObjectTemplateResultResponse> showDbObjectTemplateResult(
         ShowDbObjectTemplateResultRequest &request
     );
+    // 查询异常数据列表
+    //
+    // 查询异常数据列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowDirtyDataResponse> showDirtyData(
+        ShowDirtyDataRequest &request
+    );
+    // 查询企业项目列表
+    //
+    // 查询企业项目列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowEnterpriseProjectResponse> showEnterpriseProject(
+        ShowEnterpriseProjectRequest &request
+    );
+    // 查询健康对比列表
+    //
+    // 查询健康对比列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowHealthCompareJobListResponse> showHealthCompareJobList(
+        ShowHealthCompareJobListRequest &request
+    );
     // 查询任务详情
     //
     // 查询任务详情。
@@ -230,6 +322,34 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowJobDetailResponse> showJobDetail(
         ShowJobDetailRequest &request
+    );
+    // 获取任务价格信息
+    //
+    // 获取询价接口的参数。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowMeteringResponse> showMetering(
+        ShowMeteringRequest &request
+    );
+    // 查询同步映射列表
+    //
+    // 查询实时同步映射关系包括对象选择时的库映射、schema映射、表映射和数据加工时的列映射。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowObjectMappingResponse> showObjectMapping(
+        ShowObjectMappingRequest &request
+    );
+    // 查询数据级流式对比列表
+    //
+    // 查询不同迁移对象类型的迁移进度。
+    // 说明：
+    // - 目前仅MySQL-&gt;MySQL、MySQL-&gt;GaussDB(for MySQL)、MongoDB-&gt;DDS、DDS-&gt;MongoDB的迁移支持查看迁移明细。
+    // - 在任务未结束前，不能修改源库和目标库的所有用户、密码和用户权限等。
+    // - 全量、增量完成不代表任务结束，如果存在触发器和事件将会进行迁移。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowProgressDataResponse> showProgressData(
+        ShowProgressDataRequest &request
     );
     // 获取对象保存进度
     //
@@ -263,6 +383,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UploadDbObjectTemplateResponse> uploadDbObjectTemplate(
         UploadDbObjectTemplateRequest &request
+    );
+    // 任务名称校验
+    //
+    // 创建任务时对任务名称进行校验。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ValidateJobNameResponse> validateJobName(
+        ValidateJobNameRequest &request
     );
 
 

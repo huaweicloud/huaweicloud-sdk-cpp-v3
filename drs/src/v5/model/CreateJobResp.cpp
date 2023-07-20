@@ -21,6 +21,8 @@ CreateJobResp::CreateJobResp()
     statusIsSet_ = false;
     createTime_ = "";
     createTimeIsSet_ = false;
+    isCloneJob_ = "";
+    isCloneJobIsSet_ = false;
 }
 
 CreateJobResp::~CreateJobResp() = default;
@@ -44,6 +46,9 @@ web::json::value CreateJobResp::toJson() const
     }
     if(createTimeIsSet_) {
         val[utility::conversions::to_string_t("create_time")] = ModelBase::toJson(createTime_);
+    }
+    if(isCloneJobIsSet_) {
+        val[utility::conversions::to_string_t("is_clone_job")] = ModelBase::toJson(isCloneJob_);
     }
 
     return val;
@@ -87,6 +92,15 @@ bool CreateJobResp::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCreateTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_clone_job"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_clone_job"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsCloneJob(refVal);
         }
     }
     return ok;
@@ -174,6 +188,27 @@ bool CreateJobResp::createTimeIsSet() const
 void CreateJobResp::unsetcreateTime()
 {
     createTimeIsSet_ = false;
+}
+
+std::string CreateJobResp::getIsCloneJob() const
+{
+    return isCloneJob_;
+}
+
+void CreateJobResp::setIsCloneJob(const std::string& value)
+{
+    isCloneJob_ = value;
+    isCloneJobIsSet_ = true;
+}
+
+bool CreateJobResp::isCloneJobIsSet() const
+{
+    return isCloneJobIsSet_;
+}
+
+void CreateJobResp::unsetisCloneJob()
+{
+    isCloneJobIsSet_ = false;
 }
 
 }

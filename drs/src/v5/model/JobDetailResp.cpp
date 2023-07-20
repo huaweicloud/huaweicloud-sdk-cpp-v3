@@ -41,6 +41,10 @@ JobDetailResp::JobDetailResp()
     migrationObjectProgressInfoIsSet_ = false;
     metricsIsSet_ = false;
     compareResultIsSet_ = false;
+    supportImportFileRespIsSet_ = false;
+    instanceFeaturesIsSet_ = false;
+    taskVersion_ = "";
+    taskVersionIsSet_ = false;
 }
 
 JobDetailResp::~JobDetailResp() = default;
@@ -121,6 +125,15 @@ web::json::value JobDetailResp::toJson() const
     }
     if(compareResultIsSet_) {
         val[utility::conversions::to_string_t("compare_result")] = ModelBase::toJson(compareResult_);
+    }
+    if(supportImportFileRespIsSet_) {
+        val[utility::conversions::to_string_t("support_import_file_resp")] = ModelBase::toJson(supportImportFileResp_);
+    }
+    if(instanceFeaturesIsSet_) {
+        val[utility::conversions::to_string_t("instance_features")] = ModelBase::toJson(instanceFeatures_);
+    }
+    if(taskVersionIsSet_) {
+        val[utility::conversions::to_string_t("task_version")] = ModelBase::toJson(taskVersion_);
     }
 
     return val;
@@ -335,6 +348,33 @@ bool JobDetailResp::fromJson(const web::json::value& val)
             CompareResultInfo refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCompareResult(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("support_import_file_resp"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("support_import_file_resp"));
+        if(!fieldValue.is_null())
+        {
+            SupportImportFileResult refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSupportImportFileResp(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("instance_features"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("instance_features"));
+        if(!fieldValue.is_null())
+        {
+            std::map<std::string, std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setInstanceFeatures(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("task_version"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("task_version"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTaskVersion(refVal);
         }
     }
     return ok;
@@ -821,6 +861,69 @@ bool JobDetailResp::compareResultIsSet() const
 void JobDetailResp::unsetcompareResult()
 {
     compareResultIsSet_ = false;
+}
+
+SupportImportFileResult JobDetailResp::getSupportImportFileResp() const
+{
+    return supportImportFileResp_;
+}
+
+void JobDetailResp::setSupportImportFileResp(const SupportImportFileResult& value)
+{
+    supportImportFileResp_ = value;
+    supportImportFileRespIsSet_ = true;
+}
+
+bool JobDetailResp::supportImportFileRespIsSet() const
+{
+    return supportImportFileRespIsSet_;
+}
+
+void JobDetailResp::unsetsupportImportFileResp()
+{
+    supportImportFileRespIsSet_ = false;
+}
+
+std::map<std::string, std::string>& JobDetailResp::getInstanceFeatures()
+{
+    return instanceFeatures_;
+}
+
+void JobDetailResp::setInstanceFeatures(const std::map<std::string, std::string>& value)
+{
+    instanceFeatures_ = value;
+    instanceFeaturesIsSet_ = true;
+}
+
+bool JobDetailResp::instanceFeaturesIsSet() const
+{
+    return instanceFeaturesIsSet_;
+}
+
+void JobDetailResp::unsetinstanceFeatures()
+{
+    instanceFeaturesIsSet_ = false;
+}
+
+std::string JobDetailResp::getTaskVersion() const
+{
+    return taskVersion_;
+}
+
+void JobDetailResp::setTaskVersion(const std::string& value)
+{
+    taskVersion_ = value;
+    taskVersionIsSet_ = true;
+}
+
+bool JobDetailResp::taskVersionIsSet() const
+{
+    return taskVersionIsSet_;
+}
+
+void JobDetailResp::unsettaskVersion()
+{
+    taskVersionIsSet_ = false;
 }
 
 }

@@ -56,12 +56,23 @@ public:
     void unsetxLanguage();
     void setXLanguage(const std::string& value);
 
+    /// <summary>
+    /// 文件模板支持数据同步级别，不填默认为table表级。 - database：库级 - table：表级
+    /// </summary>
+
+    std::string getFileImportDbLevel() const;
+    bool fileImportDbLevelIsSet() const;
+    void unsetfileImportDbLevel();
+    void setFileImportDbLevel(const std::string& value);
+
 
 protected:
     std::string jobId_;
     bool jobIdIsSet_;
     std::string xLanguage_;
     bool xLanguageIsSet_;
+    std::string fileImportDbLevel_;
+    bool fileImportDbLevelIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

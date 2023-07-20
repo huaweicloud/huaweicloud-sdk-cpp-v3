@@ -7,6 +7,7 @@
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/drs/v5/model/JobNodeBaseInfo.h>
 #include <huaweicloud/drs/v5/model/JobNodeVpcInfo.h>
 #include <huaweicloud/drs/v5/model/JobNodeSpecInfo.h>
 
@@ -57,12 +58,23 @@ public:
     void unsetvpc();
     void setVpc(const JobNodeVpcInfo& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    JobNodeBaseInfo getBaseInfo() const;
+    bool baseInfoIsSet() const;
+    void unsetbaseInfo();
+    void setBaseInfo(const JobNodeBaseInfo& value);
+
 
 protected:
     JobNodeSpecInfo spec_;
     bool specIsSet_;
     JobNodeVpcInfo vpc_;
     bool vpcIsSet_;
+    JobNodeBaseInfo baseInfo_;
+    bool baseInfoIsSet_;
 
 };
 

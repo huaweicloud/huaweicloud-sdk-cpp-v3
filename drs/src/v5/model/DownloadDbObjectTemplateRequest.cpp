@@ -17,6 +17,8 @@ DownloadDbObjectTemplateRequest::DownloadDbObjectTemplateRequest()
     jobIdIsSet_ = false;
     xLanguage_ = "";
     xLanguageIsSet_ = false;
+    fileImportDbLevel_ = "";
+    fileImportDbLevelIsSet_ = false;
 }
 
 DownloadDbObjectTemplateRequest::~DownloadDbObjectTemplateRequest() = default;
@@ -34,6 +36,9 @@ web::json::value DownloadDbObjectTemplateRequest::toJson() const
     }
     if(xLanguageIsSet_) {
         val[utility::conversions::to_string_t("X-Language")] = ModelBase::toJson(xLanguage_);
+    }
+    if(fileImportDbLevelIsSet_) {
+        val[utility::conversions::to_string_t("file_import_db_level")] = ModelBase::toJson(fileImportDbLevel_);
     }
 
     return val;
@@ -59,6 +64,15 @@ bool DownloadDbObjectTemplateRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setXLanguage(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("file_import_db_level"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("file_import_db_level"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFileImportDbLevel(refVal);
         }
     }
     return ok;
@@ -104,6 +118,27 @@ bool DownloadDbObjectTemplateRequest::xLanguageIsSet() const
 void DownloadDbObjectTemplateRequest::unsetxLanguage()
 {
     xLanguageIsSet_ = false;
+}
+
+std::string DownloadDbObjectTemplateRequest::getFileImportDbLevel() const
+{
+    return fileImportDbLevel_;
+}
+
+void DownloadDbObjectTemplateRequest::setFileImportDbLevel(const std::string& value)
+{
+    fileImportDbLevel_ = value;
+    fileImportDbLevelIsSet_ = true;
+}
+
+bool DownloadDbObjectTemplateRequest::fileImportDbLevelIsSet() const
+{
+    return fileImportDbLevelIsSet_;
+}
+
+void DownloadDbObjectTemplateRequest::unsetfileImportDbLevel()
+{
+    fileImportDbLevelIsSet_ = false;
 }
 
 }

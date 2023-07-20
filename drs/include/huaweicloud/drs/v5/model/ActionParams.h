@@ -106,7 +106,7 @@ public:
     void setIsSyncReEdit(bool value);
 
     /// <summary>
-    /// 强制结束任务时取值true。
+    /// 强制结束时取值为true。
     /// </summary>
 
     bool isForceDelete() const;

@@ -1,3 +1,57 @@
+# 3.1.43 2023-07-20
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _Features_
+  - Support `GaussDBforopenGauss`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK GaussDB
+
+- _Features_
+  - Support `GaussDB`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _Features_
+  - Support `GaussDBforNoSQL`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK DDS
+
+- _Features_
+  - Support `DDS`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK EIP
+
+- _Features_
+  - Support the following interfaces：
+    - `AttachShareBandwidth`
+    - `AttachBatchPublicIp`
+    - `DetachShareBandwidth`
+    - `DetachBatchPublicIp`
+    - `EnableNat64`
+    - `DisableNat64`
+    - `ListBandwidth`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.42 2023-07-13
 
 ### HuaweiCloud SDK SIS

@@ -6,6 +6,8 @@
 #include <huaweicloud/core/ClientBuilder.h>
 
 
+#include <huaweicloud/eip/v3/model/ListBandwidthRequest.h>
+#include <huaweicloud/eip/v3/model/ListBandwidthResponse.h>
 #include <huaweicloud/eip/v3/model/ListCommonPoolsRequest.h>
 #include <huaweicloud/eip/v3/model/ListCommonPoolsResponse.h>
 #include <huaweicloud/eip/v3/model/ListPublicBorderGroupsRequest.h>
@@ -21,12 +23,28 @@
 #include <huaweicloud/eip/v3/model/AssociatePublicipsRequest.h>
 #include <huaweicloud/eip/v3/model/AssociatePublicipsRequestBody.h>
 #include <huaweicloud/eip/v3/model/AssociatePublicipsResponse.h>
+#include <huaweicloud/eip/v3/model/AttachBatchPublicIpRequest.h>
+#include <huaweicloud/eip/v3/model/AttachBatchPublicIpResponse.h>
+#include <huaweicloud/eip/v3/model/AttachShareBandwidthRequest.h>
+#include <huaweicloud/eip/v3/model/AttachShareBandwidthResponse.h>
+#include <huaweicloud/eip/v3/model/AttachSharebwReq.h>
+#include <huaweicloud/eip/v3/model/BatchAttachSharebwReq.h>
 #include <huaweicloud/eip/v3/model/CountEipAvailableResourcesRequest.h>
 #include <huaweicloud/eip/v3/model/CountEipAvailableResourcesResponse.h>
+#include <huaweicloud/eip/v3/model/DetachBatchPublicIpRequest.h>
+#include <huaweicloud/eip/v3/model/DetachBatchPublicIpResponse.h>
+#include <huaweicloud/eip/v3/model/DetachBatchSharedbwReq.h>
+#include <huaweicloud/eip/v3/model/DetachShareBandwidthRequest.h>
+#include <huaweicloud/eip/v3/model/DetachShareBandwidthResponse.h>
+#include <huaweicloud/eip/v3/model/DetachSharedbwReq.h>
+#include <huaweicloud/eip/v3/model/DisableNat64Request.h>
+#include <huaweicloud/eip/v3/model/DisableNat64Response.h>
 #include <huaweicloud/eip/v3/model/DisassociatePublicipsRequest.h>
 #include <huaweicloud/eip/v3/model/DisassociatePublicipsRequestBody.h>
 #include <huaweicloud/eip/v3/model/DisassociatePublicipsResponse.h>
 #include <huaweicloud/eip/v3/model/EipResourcesAvailableV3RequestBody.h>
+#include <huaweicloud/eip/v3/model/EnableNat64Request.h>
+#include <huaweicloud/eip/v3/model/EnableNat64Response.h>
 #include <huaweicloud/eip/v3/model/ListPublicipsRequest.h>
 #include <huaweicloud/eip/v3/model/ListPublicipsResponse.h>
 #include <huaweicloud/eip/v3/model/ShowPublicipRequest.h>
@@ -60,6 +78,14 @@ public:
 
     static ClientBuilder<EipClient> newBuilder();
 
+    // 查询带宽列表
+    //
+    // 查询带宽列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListBandwidthResponse> listBandwidth(
+        ListBandwidthRequest &request
+    );
     // 查询公共池列表
     //
     // 查询公共池列表
@@ -109,6 +135,22 @@ public:
     std::shared_ptr<AssociatePublicipsResponse> associatePublicips(
         AssociatePublicipsRequest &request
     );
+    // 共享带宽批量加入弹性公网IP
+    //
+    // 共享带宽批量加入弹性公网IP
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<AttachBatchPublicIpResponse> attachBatchPublicIp(
+        AttachBatchPublicIpRequest &request
+    );
+    // 共享带宽加入弹性公网IP
+    //
+    // 共享带宽加入弹性公网IP
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<AttachShareBandwidthResponse> attachShareBandwidth(
+        AttachShareBandwidthRequest &request
+    );
     // 查询弹性公网IP可用数
     //
     // IP池用于查询公网可用ip个数
@@ -117,6 +159,30 @@ public:
     std::shared_ptr<CountEipAvailableResourcesResponse> countEipAvailableResources(
         CountEipAvailableResourcesRequest &request
     );
+    // 共享带宽批量移出弹性公网IP
+    //
+    // 共享带宽批量移出弹性公网IP
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DetachBatchPublicIpResponse> detachBatchPublicIp(
+        DetachBatchPublicIpRequest &request
+    );
+    // 共享带宽移出弹性公网IP
+    //
+    // 共享带宽移出弹性公网IP
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DetachShareBandwidthResponse> detachShareBandwidth(
+        DetachShareBandwidthRequest &request
+    );
+    // 弹性公网IP关闭NAT64
+    //
+    // 弹性公网IP关闭NAT64
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DisableNat64Response> disableNat64(
+        DisableNat64Request &request
+    );
     // 解绑弹性公网IP
     //
     // 解绑弹性公网IP
@@ -124,6 +190,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DisassociatePublicipsResponse> disassociatePublicips(
         DisassociatePublicipsRequest &request
+    );
+    // 弹性公网IP开启NAT64
+    //
+    // 弹性公网IP开启NAT64
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<EnableNat64Response> enableNat64(
+        EnableNat64Request &request
     );
     // 全量查询弹性公网IP列表
     //

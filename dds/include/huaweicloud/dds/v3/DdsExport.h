@@ -1,0 +1,16 @@
+#ifndef HUAWEICLOUD_SDK_DDS_V3_DdsExport_H_
+#define HUAWEICLOUD_SDK_DDS_V3_DdsExport_H_
+
+#include <huaweicloud/core/EXPORT.h>
+
+#if defined(HUAWEICLOUD_SHARED)
+#	if defined(HUAWEICLOUD_DDS_V3_SHARED)
+#		define HUAWEICLOUD_DDS_V3_EXPORT HUAWEICLOUD_EXPORT
+#	else
+#		define HUAWEICLOUD_DDS_V3_EXPORT HUAWEICLOUD_IMPORT
+#	endif
+#else
+#	define HUAWEICLOUD_DDS_V3_EXPORT
+#endif
+
+#endif // !HUAWEICLOUD_SDK_DDS_V3_DdsExport_H_

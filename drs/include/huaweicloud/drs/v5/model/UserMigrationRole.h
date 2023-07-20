@@ -18,7 +18,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 用户迁移信息角色列表字段。当前支持的场景：  - 实时迁移场景：MongoDB迁移。
+/// 用户迁移信息角色列表字段。当前支持的场景： - 实时迁移场景：MongoDB迁移。
 /// </summary>
 class HUAWEICLOUD_DRS_V5_EXPORT  UserMigrationRole
     : public ModelBase

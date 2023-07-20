@@ -74,6 +74,15 @@ public:
     void unsetcreateTime();
     void setCreateTime(const std::string& value);
 
+    /// <summary>
+    /// 是否为克隆任务。
+    /// </summary>
+
+    std::string getIsCloneJob() const;
+    bool isCloneJobIsSet() const;
+    void unsetisCloneJob();
+    void setIsCloneJob(const std::string& value);
+
 
 protected:
     std::string id_;
@@ -84,6 +93,8 @@ protected:
     bool statusIsSet_;
     std::string createTime_;
     bool createTimeIsSet_;
+    std::string isCloneJob_;
+    bool isCloneJobIsSet_;
 
 };
 

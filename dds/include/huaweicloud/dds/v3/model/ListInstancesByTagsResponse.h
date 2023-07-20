@@ -1,0 +1,79 @@
+
+#ifndef HUAWEICLOUD_SDK_DDS_V3_MODEL_ListInstancesByTagsResponse_H_
+#define HUAWEICLOUD_SDK_DDS_V3_MODEL_ListInstancesByTagsResponse_H_
+
+#include <huaweicloud/dds/v3/DdsExport.h>
+
+#include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/http/HttpResponse.h>
+
+#include <huaweicloud/dds/v3/model/InstanceItem.h>
+#include <vector>
+
+namespace HuaweiCloud {
+namespace Sdk {
+namespace Dds {
+namespace V3 {
+namespace Model {
+
+using namespace HuaweiCloud::Sdk::Core::Utils;
+using namespace HuaweiCloud::Sdk::Core::Http;
+/// <summary>
+/// Response Object
+/// </summary>
+class HUAWEICLOUD_DDS_V3_EXPORT  ListInstancesByTagsResponse
+    : public ModelBase, public HttpResponse
+{
+public:
+    ListInstancesByTagsResponse();
+    virtual ~ListInstancesByTagsResponse();
+
+    /////////////////////////////////////////////
+    /// ModelBase overrides
+
+    void validate() override;
+
+    web::json::value toJson() const override;
+    bool fromJson(const web::json::value& json) override;
+
+    /////////////////////////////////////////////
+    /// ListInstancesByTagsResponse members
+
+    /// <summary>
+    /// 实例列表。
+    /// </summary>
+
+    std::vector<InstanceItem>& getInstances();
+    bool instancesIsSet() const;
+    void unsetinstances();
+    void setInstances(const std::vector<InstanceItem>& value);
+
+    /// <summary>
+    /// 总记录数。
+    /// </summary>
+
+    int32_t getTotalCount() const;
+    bool totalCountIsSet() const;
+    void unsettotalCount();
+    void setTotalCount(int32_t value);
+
+
+protected:
+    std::vector<InstanceItem> instances_;
+    bool instancesIsSet_;
+    int32_t totalCount_;
+    bool totalCountIsSet_;
+
+#ifdef RTTR_FLAG
+    RTTR_ENABLE()
+#endif
+};
+
+
+}
+}
+}
+}
+}
+
+#endif // HUAWEICLOUD_SDK_DDS_V3_MODEL_ListInstancesByTagsResponse_H_

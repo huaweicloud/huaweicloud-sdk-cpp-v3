@@ -14,6 +14,7 @@
 #include <string>
 #include <huaweicloud/drs/v5/model/JobNodeInfo.h>
 #include <huaweicloud/drs/v5/model/JobProgressInfo.h>
+#include <huaweicloud/drs/v5/model/SupportImportFileResult.h>
 #include <vector>
 #include <huaweicloud/drs/v5/model/QueryMigrationObjectProgressInfo.h>
 #include <huaweicloud/drs/v5/model/DbParamInfo.h>
@@ -23,6 +24,7 @@
 #include <huaweicloud/drs/v5/model/QueryPreCheckResult.h>
 #include <huaweicloud/drs/v5/model/TuningParamInfo.h>
 #include <huaweicloud/drs/v5/model/PeriodOrderInfo.h>
+#include <map>
 #include <huaweicloud/drs/v5/model/JobBaseInfo.h>
 #include <huaweicloud/drs/v5/model/AlarmNotifyConfig.h>
 #include <huaweicloud/drs/v5/model/PolicyConfig.h>
@@ -138,7 +140,7 @@ public:
     void setAlarmNotify(const AlarmNotifyConfig& value);
 
     /// <summary>
-    /// 限速信息体。 - 限速：自定义的最大迁移速度，迁移过程中的迁移速度将不会超过该速度。  - 不限速：对迁移速度不进行限制，通常会最大化使用源数据库的出口带宽。该流速模式同时会对源数据库造成读消耗，消耗取决于源数据库的出口带宽。比如：源数据库的出口带宽为100MB/s，假设高速模式使用了80%带宽，则迁移对源数据库将造成80MB/s的读操作IO消耗。
+    /// 限速信息体。 - 限速：自定义的最大迁移速度，迁移过程中的迁移速度将不会超过该速度。 - 不限速：对迁移速度不进行限制，通常会最大化使用源数据库的出口带宽。该流速模式同时会对源数据库造成读消耗，消耗取决于源数据库的出口带宽。比如：源数据库的出口带宽为100MB/s，假设高速模式使用了80%带宽，则迁移对源数据库将造成80MB/s的读操作IO消耗。
     /// </summary>
 
     std::vector<SpeedLimitInfo>& getSpeedLimit();
@@ -263,6 +265,33 @@ public:
     void unsetcompareResult();
     void setCompareResult(const CompareResultInfo& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    SupportImportFileResult getSupportImportFileResp() const;
+    bool supportImportFileRespIsSet() const;
+    void unsetsupportImportFileResp();
+    void setSupportImportFileResp(const SupportImportFileResult& value);
+
+    /// <summary>
+    /// 由开关和版本共同控制的任务级别的功能列表。
+    /// </summary>
+
+    std::map<std::string, std::string>& getInstanceFeatures();
+    bool instanceFeaturesIsSet() const;
+    void unsetinstanceFeatures();
+    void setInstanceFeatures(const std::map<std::string, std::string>& value);
+
+    /// <summary>
+    /// 任务版本。
+    /// </summary>
+
+    std::string getTaskVersion() const;
+    bool taskVersionIsSet() const;
+    void unsettaskVersion();
+    void setTaskVersion(const std::string& value);
+
 
 protected:
     std::string id_;
@@ -311,6 +340,12 @@ protected:
     bool metricsIsSet_;
     CompareResultInfo compareResult_;
     bool compareResultIsSet_;
+    SupportImportFileResult supportImportFileResp_;
+    bool supportImportFileRespIsSet_;
+    std::map<std::string, std::string> instanceFeatures_;
+    bool instanceFeaturesIsSet_;
+    std::string taskVersion_;
+    bool taskVersionIsSet_;
 
 };
 

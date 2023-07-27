@@ -19,10 +19,16 @@ VnicResp::VnicResp()
     deviceIdIsSet_ = false;
     deviceOwner_ = "";
     deviceOwnerIsSet_ = false;
+    vtep_ = "";
+    vtepIsSet_ = false;
+    vni_ = "";
+    vniIsSet_ = false;
     vpcId_ = "";
     vpcIdIsSet_ = false;
     portId_ = "";
     portIdIsSet_ = false;
+    portProfile_ = "";
+    portProfileIsSet_ = false;
     mac_ = "";
     macIsSet_ = false;
     instanceId_ = "";
@@ -50,11 +56,20 @@ web::json::value VnicResp::toJson() const
     if(deviceOwnerIsSet_) {
         val[utility::conversions::to_string_t("device_owner")] = ModelBase::toJson(deviceOwner_);
     }
+    if(vtepIsSet_) {
+        val[utility::conversions::to_string_t("vtep")] = ModelBase::toJson(vtep_);
+    }
+    if(vniIsSet_) {
+        val[utility::conversions::to_string_t("vni")] = ModelBase::toJson(vni_);
+    }
     if(vpcIdIsSet_) {
         val[utility::conversions::to_string_t("vpc_id")] = ModelBase::toJson(vpcId_);
     }
     if(portIdIsSet_) {
         val[utility::conversions::to_string_t("port_id")] = ModelBase::toJson(portId_);
+    }
+    if(portProfileIsSet_) {
+        val[utility::conversions::to_string_t("port_profile")] = ModelBase::toJson(portProfile_);
     }
     if(macIsSet_) {
         val[utility::conversions::to_string_t("mac")] = ModelBase::toJson(mac_);
@@ -100,6 +115,24 @@ bool VnicResp::fromJson(const web::json::value& val)
             setDeviceOwner(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("vtep"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("vtep"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setVtep(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("vni"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("vni"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setVni(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("vpc_id"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("vpc_id"));
         if(!fieldValue.is_null())
@@ -116,6 +149,15 @@ bool VnicResp::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPortId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("port_profile"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("port_profile"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPortProfile(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("mac"))) {
@@ -211,6 +253,48 @@ void VnicResp::unsetdeviceOwner()
     deviceOwnerIsSet_ = false;
 }
 
+std::string VnicResp::getVtep() const
+{
+    return vtep_;
+}
+
+void VnicResp::setVtep(const std::string& value)
+{
+    vtep_ = value;
+    vtepIsSet_ = true;
+}
+
+bool VnicResp::vtepIsSet() const
+{
+    return vtepIsSet_;
+}
+
+void VnicResp::unsetvtep()
+{
+    vtepIsSet_ = false;
+}
+
+std::string VnicResp::getVni() const
+{
+    return vni_;
+}
+
+void VnicResp::setVni(const std::string& value)
+{
+    vni_ = value;
+    vniIsSet_ = true;
+}
+
+bool VnicResp::vniIsSet() const
+{
+    return vniIsSet_;
+}
+
+void VnicResp::unsetvni()
+{
+    vniIsSet_ = false;
+}
+
 std::string VnicResp::getVpcId() const
 {
     return vpcId_;
@@ -251,6 +335,27 @@ bool VnicResp::portIdIsSet() const
 void VnicResp::unsetportId()
 {
     portIdIsSet_ = false;
+}
+
+std::string VnicResp::getPortProfile() const
+{
+    return portProfile_;
+}
+
+void VnicResp::setPortProfile(const std::string& value)
+{
+    portProfile_ = value;
+    portProfileIsSet_ = true;
+}
+
+bool VnicResp::portProfileIsSet() const
+{
+    return portProfileIsSet_;
+}
+
+void VnicResp::unsetportProfile()
+{
+    portProfileIsSet_ = false;
 }
 
 std::string VnicResp::getMac() const

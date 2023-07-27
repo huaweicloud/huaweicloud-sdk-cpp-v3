@@ -66,6 +66,24 @@ public:
     void setDeviceOwner(const std::string& value);
 
     /// <summary>
+    /// - 功能说明：VTEP IP
+    /// </summary>
+
+    std::string getVtep() const;
+    bool vtepIsSet() const;
+    void unsetvtep();
+    void setVtep(const std::string& value);
+
+    /// <summary>
+    /// - 功能说明：VXLAN ID
+    /// </summary>
+
+    std::string getVni() const;
+    bool vniIsSet() const;
+    void unsetvni();
+    void setVni(const std::string& value);
+
+    /// <summary>
     /// - 功能说明：PORT所在VPC的ID
     /// </summary>
 
@@ -82,6 +100,15 @@ public:
     bool portIdIsSet() const;
     void unsetportId();
     void setPortId(const std::string& value);
+
+    /// <summary>
+    /// - 功能说明：端口profile信息
+    /// </summary>
+
+    std::string getPortProfile() const;
+    bool portProfileIsSet() const;
+    void unsetportProfile();
+    void setPortProfile(const std::string& value);
 
     /// <summary>
     /// - 功能说明：PORT的MAC信息
@@ -118,10 +145,16 @@ protected:
     bool deviceIdIsSet_;
     std::string deviceOwner_;
     bool deviceOwnerIsSet_;
+    std::string vtep_;
+    bool vtepIsSet_;
+    std::string vni_;
+    bool vniIsSet_;
     std::string vpcId_;
     bool vpcIdIsSet_;
     std::string portId_;
     bool portIdIsSet_;
+    std::string portProfile_;
+    bool portProfileIsSet_;
     std::string mac_;
     bool macIsSet_;
     std::string instanceId_;

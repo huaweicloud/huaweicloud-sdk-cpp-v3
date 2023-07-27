@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_LTS_V2_MODEL_UpdateLogGroupParams_H_
-#define HUAWEICLOUD_SDK_LTS_V2_MODEL_UpdateLogGroupParams_H_
+#ifndef HUAWEICLOUD_SDK_LTS_V2_MODEL_UpdateLogStreamParams_H_
+#define HUAWEICLOUD_SDK_LTS_V2_MODEL_UpdateLogStreamParams_H_
 
 #include <huaweicloud/lts/v2/LtsExport.h>
 
@@ -19,14 +19,14 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 修改日志组的参数。
+/// 
 /// </summary>
-class HUAWEICLOUD_LTS_V2_EXPORT  UpdateLogGroupParams
+class HUAWEICLOUD_LTS_V2_EXPORT  UpdateLogStreamParams
     : public ModelBase
 {
 public:
-    UpdateLogGroupParams();
-    virtual ~UpdateLogGroupParams();
+    UpdateLogStreamParams();
+    virtual ~UpdateLogStreamParams();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -37,10 +37,10 @@ public:
     bool fromJson(const web::json::value& json) override;
 
     /////////////////////////////////////////////
-    /// UpdateLogGroupParams members
+    /// UpdateLogStreamParams members
 
     /// <summary>
-    /// 日志存储时间 天。 取值范围为 [1, 30]
+    /// 日志存储时间（天）。   该参数仅对华东-上海一、华北-北京四、华南-广州用户开放。
     /// </summary>
 
     int32_t getTtlInDays() const;
@@ -73,4 +73,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_LTS_V2_MODEL_UpdateLogGroupParams_H_
+#endif // HUAWEICLOUD_SDK_LTS_V2_MODEL_UpdateLogStreamParams_H_

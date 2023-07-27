@@ -1,3 +1,169 @@
+# 3.1.44 2023-07-27
+
+### HuaweiCloud SDK DRS
+
+- _新增特性_
+  - 支持以下接口：
+    - `DownloadBatchCreateTemplate`
+    - `ImportBatchCreateJobs`
+    - `CopyJob`
+    - `ShowMetering`
+    - `ShowDirtyData`
+    - `ShowComparePolicy`
+    - `ShowHealthCompareJobList`
+    - `ShowProgressData`
+    - `ShowObjectMapping`
+    - `ShowActions`
+    - `ValidateJobName`
+    - `ShowEnterpriseProject`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **DownloadDbObjectTemplate**
+    - 请求参数变更
+      - `+ file_import_db_level`
+  - **UploadDbObjectTemplate**
+    - 请求参数变更
+      - `+ file_import_db_level`
+  - **ListAsyncJobs**
+    - 响应参数变更
+      - `+ jobs.status: enum value [AUTO_PARAM_VALIDATE_SUCCESS,COMMIT_SUCCESS]`
+      - `- jobs.status: enum value [ASYNC_JOB_CREATING,ASYNC_JOB_CREATE_FAILED,ASYNC_JOB_COMPLETED]`
+  - **CreateJob**
+    - 请求参数变更
+      - `+ job.node_info.base_info`
+    - 响应参数变更
+      - `+ is_clone_job`
+      - `+ create_time`
+      - `+ name`
+      - `+ id`
+      - `+ status`
+      - `+ job.is_clone_job`
+  - **BatchCreateJobsAsync**
+    - 请求参数变更
+      - `+ jobs.node_info.base_info`
+  - **ListAsyncJobDetail**
+    - 响应参数变更
+      - `+ jobs.support_import_file_resp`
+      - `+ jobs.instance_features`
+      - `+ jobs.task_version`
+      - `+ jobs.node_info.base_info`
+  - **UpdateBatchAsyncJobs**
+    - 请求参数变更
+      - `+ jobs.type: enum value [policy]`
+      - `- jobs.type: enum value [policy_config]`
+      - `+ jobs.params.node_info.base_info`
+  - **ShowJobDetail**
+    - 请求参数变更
+      - `+ type: enum value [file]`
+    - 响应参数变更
+      - `+ job.support_import_file_resp`
+      - `+ job.instance_features`
+      - `+ job.task_version`
+      - `+ job.node_info.base_info`
+  - **UpdateJob**
+    - 请求参数变更
+      - `+ job.type: enum value [policy]`
+      - `- job.type: enum value [policy_config]`
+      - `+ job.params.node_info.base_info`
+
+### HuaweiCloud SDK EIP
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **AttachShareBandwidth**
+    - 响应参数变更
+      - `+ publicip.vnic.vtep`
+      - `+ publicip.vnic.vni`
+      - `+ publicip.vnic.port_profile`
+  - **DetachShareBandwidth**
+    - 响应参数变更
+      - `+ publicip.vnic.vtep`
+      - `+ publicip.vnic.vni`
+      - `+ publicip.vnic.port_profile`
+  - **EnableNat64**
+    - 响应参数变更
+      - `+ publicip.vnic.vtep`
+      - `+ publicip.vnic.vni`
+      - `+ publicip.vnic.port_profile`
+  - **DisableNat64**
+    - 响应参数变更
+      - `+ publicip.vnic.vtep`
+      - `+ publicip.vnic.vni`
+      - `+ publicip.vnic.port_profile`
+  - **AttachBatchPublicIp**
+    - 响应参数变更
+      - `+ publicips.publicip.vnic.vtep`
+      - `+ publicips.publicip.vnic.vni`
+      - `+ publicips.publicip.vnic.port_profile`
+  - **DetachBatchPublicIp**
+    - 响应参数变更
+      - `+ publicips.publicip.vnic.vtep`
+      - `+ publicips.publicip.vnic.vni`
+      - `+ publicips.publicip.vnic.port_profile`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _新增特性_
+  - 支持接口`ShowInstanceBiactiveRegions`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListConfigurations**
+    - 响应参数变更
+      - `+ quota`
+      - `+ configurations.mode`
+  - **ListConfigurationTemplates**
+    - 响应参数变更
+      - `+ quota`
+      - `+ configurations.mode`
+  - **ShowInstanceConfiguration**
+    - 响应参数变更
+      - `+ mode`
+      - `+ id`
+  - **ListConfigurationDatastores**
+    - 响应参数变更
+      - `+ datastores.mode`
+  - **ShowQuotas**
+    - 请求参数变更
+      - `+ datastore_type`
+      - `+ mode`
+  - **ListInstances**
+    - 响应参数变更
+      - `+ instances.datastore.whole_version`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _新增特性_
+  - 支持接口`DownloadBackup`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK LTS
+
+- _新增特性_
+  - 支持接口`UpdateLogStream`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **UpdateLogGroup**
+    - 请求参数变更
+      - `+ tags`
+  - **CreateLogGroup**
+    - 请求参数变更
+      - `+ tags`
+  - **CreateLogStream**
+    - 请求参数变更
+      - `+ enterprise_project_name`
+      - `+ ttl_in_days`
+      - `+ tags`
+      - `+ log_stream_name: enum value [lts-stream-13ci]`
+
 # 3.1.43 2023-07-20
 
 ### HuaweiCloud SDK GaussDBforopenGauss

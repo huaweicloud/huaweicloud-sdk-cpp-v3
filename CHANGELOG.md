@@ -1,3 +1,169 @@
+# 3.1.44 2023-07-27
+
+### HuaweiCloud SDK DRS
+
+- _Features_
+  - Support the following interfaces：
+    - `DownloadBatchCreateTemplate`
+    - `ImportBatchCreateJobs`
+    - `CopyJob`
+    - `ShowMetering`
+    - `ShowDirtyData`
+    - `ShowComparePolicy`
+    - `ShowHealthCompareJobList`
+    - `ShowProgressData`
+    - `ShowObjectMapping`
+    - `ShowActions`
+    - `ValidateJobName`
+    - `ShowEnterpriseProject`
+- _Bug Fix_
+  - None
+- _Change_
+  - **DownloadDbObjectTemplate**
+    - changes of request param
+      - `+ file_import_db_level`
+  - **UploadDbObjectTemplate**
+    - changes of request param
+      - `+ file_import_db_level`
+  - **ListAsyncJobs**
+    - changes of response param
+      - `+ jobs.status: enum value [AUTO_PARAM_VALIDATE_SUCCESS,COMMIT_SUCCESS]`
+      - `- jobs.status: enum value [ASYNC_JOB_CREATING,ASYNC_JOB_CREATE_FAILED,ASYNC_JOB_COMPLETED]`
+  - **CreateJob**
+    - changes of request param
+      - `+ job.node_info.base_info`
+    - changes of response param
+      - `+ is_clone_job`
+      - `+ create_time`
+      - `+ name`
+      - `+ id`
+      - `+ status`
+      - `+ job.is_clone_job`
+  - **BatchCreateJobsAsync**
+    - changes of request param
+      - `+ jobs.node_info.base_info`
+  - **ListAsyncJobDetail**
+    - changes of response param
+      - `+ jobs.support_import_file_resp`
+      - `+ jobs.instance_features`
+      - `+ jobs.task_version`
+      - `+ jobs.node_info.base_info`
+  - **UpdateBatchAsyncJobs**
+    - changes of request param
+      - `+ jobs.type: enum value [policy]`
+      - `- jobs.type: enum value [policy_config]`
+      - `+ jobs.params.node_info.base_info`
+  - **ShowJobDetail**
+    - changes of request param
+      - `+ type: enum value [file]`
+    - changes of response param
+      - `+ job.support_import_file_resp`
+      - `+ job.instance_features`
+      - `+ job.task_version`
+      - `+ job.node_info.base_info`
+  - **UpdateJob**
+    - changes of request param
+      - `+ job.type: enum value [policy]`
+      - `- job.type: enum value [policy_config]`
+      - `+ job.params.node_info.base_info`
+
+### HuaweiCloud SDK EIP
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **AttachShareBandwidth**
+    - changes of response param
+      - `+ publicip.vnic.vtep`
+      - `+ publicip.vnic.vni`
+      - `+ publicip.vnic.port_profile`
+  - **DetachShareBandwidth**
+    - changes of response param
+      - `+ publicip.vnic.vtep`
+      - `+ publicip.vnic.vni`
+      - `+ publicip.vnic.port_profile`
+  - **EnableNat64**
+    - changes of response param
+      - `+ publicip.vnic.vtep`
+      - `+ publicip.vnic.vni`
+      - `+ publicip.vnic.port_profile`
+  - **DisableNat64**
+    - changes of response param
+      - `+ publicip.vnic.vtep`
+      - `+ publicip.vnic.vni`
+      - `+ publicip.vnic.port_profile`
+  - **AttachBatchPublicIp**
+    - changes of response param
+      - `+ publicips.publicip.vnic.vtep`
+      - `+ publicips.publicip.vnic.vni`
+      - `+ publicips.publicip.vnic.port_profile`
+  - **DetachBatchPublicIp**
+    - changes of response param
+      - `+ publicips.publicip.vnic.vtep`
+      - `+ publicips.publicip.vnic.vni`
+      - `+ publicips.publicip.vnic.port_profile`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _Features_
+  - Support the interface `ShowInstanceBiactiveRegions`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListConfigurations**
+    - changes of response param
+      - `+ quota`
+      - `+ configurations.mode`
+  - **ListConfigurationTemplates**
+    - changes of response param
+      - `+ quota`
+      - `+ configurations.mode`
+  - **ShowInstanceConfiguration**
+    - changes of response param
+      - `+ mode`
+      - `+ id`
+  - **ListConfigurationDatastores**
+    - changes of response param
+      - `+ datastores.mode`
+  - **ShowQuotas**
+    - changes of request param
+      - `+ datastore_type`
+      - `+ mode`
+  - **ListInstances**
+    - changes of response param
+      - `+ instances.datastore.whole_version`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _Features_
+  - Support the interface `DownloadBackup`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK LTS
+
+- _Features_
+  - Support the interface `UpdateLogStream`
+- _Bug Fix_
+  - None
+- _Change_
+  - **UpdateLogGroup**
+    - changes of request param
+      - `+ tags`
+  - **CreateLogGroup**
+    - changes of request param
+      - `+ tags`
+  - **CreateLogStream**
+    - changes of request param
+      - `+ enterprise_project_name`
+      - `+ ttl_in_days`
+      - `+ tags`
+      - `+ log_stream_name: enum value [lts-stream-13ci]`
+
 # 3.1.43 2023-07-20
 
 ### HuaweiCloud SDK GaussDBforopenGauss

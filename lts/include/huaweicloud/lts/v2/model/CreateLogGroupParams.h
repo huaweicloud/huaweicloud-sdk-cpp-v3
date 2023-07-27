@@ -8,6 +8,8 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <vector>
+#include <huaweicloud/lts/v2/model/TagsBody.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -56,12 +58,23 @@ public:
     void unsetttlInDays();
     void setTtlInDays(int32_t value);
 
+    /// <summary>
+    /// 标签字段信息
+    /// </summary>
+
+    std::vector<TagsBody>& getTags();
+    bool tagsIsSet() const;
+    void unsettags();
+    void setTags(const std::vector<TagsBody>& value);
+
 
 protected:
     std::string logGroupName_;
     bool logGroupNameIsSet_;
     int32_t ttlInDays_;
     bool ttlInDaysIsSet_;
+    std::vector<TagsBody> tags_;
+    bool tagsIsSet_;
 
 };
 

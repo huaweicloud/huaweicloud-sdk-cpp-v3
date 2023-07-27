@@ -161,6 +161,9 @@
 #include <huaweicloud/lts/v2/model/UpdateLogGroupParams.h>
 #include <huaweicloud/lts/v2/model/UpdateLogGroupRequest.h>
 #include <huaweicloud/lts/v2/model/UpdateLogGroupResponse.h>
+#include <huaweicloud/lts/v2/model/UpdateLogStreamParams.h>
+#include <huaweicloud/lts/v2/model/UpdateLogStreamRequest.h>
+#include <huaweicloud/lts/v2/model/UpdateLogStreamResponse.h>
 #include <huaweicloud/lts/v2/model/UpdateNotificationTemplateRequest.h>
 #include <huaweicloud/lts/v2/model/UpdateNotificationTemplateResponse.h>
 #include <huaweicloud/lts/v2/model/UpdateStructConfigRequest.h>
@@ -697,6 +700,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateLogGroupResponse> updateLogGroup(
         UpdateLogGroupRequest &request
+    );
+    // 修改日志流
+    //
+    // 该接口用于修改指定日志流下的日志存储时长。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateLogStreamResponse> updateLogStream(
+        UpdateLogStreamRequest &request
     );
     // 修改消息模板
     //

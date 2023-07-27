@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/lts/v2/model/UpdateLogGroupParams.h"
+#include "huaweicloud/lts/v2/model/UpdateLogStreamParams.h"
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -11,20 +11,20 @@ namespace Model {
 
 
 
-UpdateLogGroupParams::UpdateLogGroupParams()
+UpdateLogStreamParams::UpdateLogStreamParams()
 {
     ttlInDays_ = 0;
     ttlInDaysIsSet_ = false;
     tagsIsSet_ = false;
 }
 
-UpdateLogGroupParams::~UpdateLogGroupParams() = default;
+UpdateLogStreamParams::~UpdateLogStreamParams() = default;
 
-void UpdateLogGroupParams::validate()
+void UpdateLogStreamParams::validate()
 {
 }
 
-web::json::value UpdateLogGroupParams::toJson() const
+web::json::value UpdateLogStreamParams::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -38,7 +38,7 @@ web::json::value UpdateLogGroupParams::toJson() const
     return val;
 }
 
-bool UpdateLogGroupParams::fromJson(const web::json::value& val)
+bool UpdateLogStreamParams::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -63,44 +63,44 @@ bool UpdateLogGroupParams::fromJson(const web::json::value& val)
     return ok;
 }
 
-int32_t UpdateLogGroupParams::getTtlInDays() const
+int32_t UpdateLogStreamParams::getTtlInDays() const
 {
     return ttlInDays_;
 }
 
-void UpdateLogGroupParams::setTtlInDays(int32_t value)
+void UpdateLogStreamParams::setTtlInDays(int32_t value)
 {
     ttlInDays_ = value;
     ttlInDaysIsSet_ = true;
 }
 
-bool UpdateLogGroupParams::ttlInDaysIsSet() const
+bool UpdateLogStreamParams::ttlInDaysIsSet() const
 {
     return ttlInDaysIsSet_;
 }
 
-void UpdateLogGroupParams::unsetttlInDays()
+void UpdateLogStreamParams::unsetttlInDays()
 {
     ttlInDaysIsSet_ = false;
 }
 
-std::vector<TagsBody>& UpdateLogGroupParams::getTags()
+std::vector<TagsBody>& UpdateLogStreamParams::getTags()
 {
     return tags_;
 }
 
-void UpdateLogGroupParams::setTags(const std::vector<TagsBody>& value)
+void UpdateLogStreamParams::setTags(const std::vector<TagsBody>& value)
 {
     tags_ = value;
     tagsIsSet_ = true;
 }
 
-bool UpdateLogGroupParams::tagsIsSet() const
+bool UpdateLogStreamParams::tagsIsSet() const
 {
     return tagsIsSet_;
 }
 
-void UpdateLogGroupParams::unsettags()
+void UpdateLogStreamParams::unsettags()
 {
     tagsIsSet_ = false;
 }

@@ -696,6 +696,46 @@ std::shared_ptr<DeleteManualBackupResponse> GaussDBforopenGaussClient::deleteMan
 
     return localVarResult;
 }
+std::shared_ptr<DownloadBackupResponse> GaussDBforopenGaussClient::downloadBackup(DownloadBackupRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/backup-files";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.backupIdIsSet()) {
+        localVarQueryParams["backup_id"] = parameterToString(request.getBackupId());
+    }
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+
+    std::shared_ptr<DownloadBackupResponse> localVarResult = std::make_shared<DownloadBackupResponse>();
+
+    if (!res->getHttpBody().empty()) {
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListApplicableInstancesResponse> GaussDBforopenGaussClient::listApplicableInstances(ListApplicableInstancesRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/configurations/{config_id}/applicable-instances";

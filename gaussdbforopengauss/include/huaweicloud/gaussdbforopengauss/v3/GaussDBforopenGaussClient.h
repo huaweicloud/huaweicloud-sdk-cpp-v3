@@ -47,6 +47,9 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/DeleteJobResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/DeleteManualBackupRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/DeleteManualBackupResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/DownloadBackupErrorResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/DownloadBackupRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/DownloadBackupResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/FlavorErrorResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/GaussDBforOpenDatabaseForCreation.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/GaussDBforOpenGaussDatabaseSchemaReq.h>
@@ -335,6 +338,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteManualBackupResponse> deleteManualBackup(
         DeleteManualBackupRequest &request
+    );
+    // 获取备份下载链接
+    //
+    // 获取备份下载链接。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DownloadBackupResponse> downloadBackup(
+        DownloadBackupRequest &request
     );
     // 查询可应用实例列表
     //

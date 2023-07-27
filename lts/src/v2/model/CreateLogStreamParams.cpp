@@ -15,6 +15,11 @@ CreateLogStreamParams::CreateLogStreamParams()
 {
     logStreamName_ = "";
     logStreamNameIsSet_ = false;
+    enterpriseProjectName_ = "";
+    enterpriseProjectNameIsSet_ = false;
+    ttlInDays_ = "";
+    ttlInDaysIsSet_ = false;
+    tagsIsSet_ = false;
 }
 
 CreateLogStreamParams::~CreateLogStreamParams() = default;
@@ -29,6 +34,15 @@ web::json::value CreateLogStreamParams::toJson() const
 
     if(logStreamNameIsSet_) {
         val[utility::conversions::to_string_t("log_stream_name")] = ModelBase::toJson(logStreamName_);
+    }
+    if(enterpriseProjectNameIsSet_) {
+        val[utility::conversions::to_string_t("enterprise_project_name")] = ModelBase::toJson(enterpriseProjectName_);
+    }
+    if(ttlInDaysIsSet_) {
+        val[utility::conversions::to_string_t("ttl_in_days")] = ModelBase::toJson(ttlInDays_);
+    }
+    if(tagsIsSet_) {
+        val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
     }
 
     return val;
@@ -45,6 +59,33 @@ bool CreateLogStreamParams::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLogStreamName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("enterprise_project_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enterprise_project_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEnterpriseProjectName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("ttl_in_days"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ttl_in_days"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTtlInDays(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("tags"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("tags"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<TagsBody> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTags(refVal);
         }
     }
     return ok;
@@ -69,6 +110,69 @@ bool CreateLogStreamParams::logStreamNameIsSet() const
 void CreateLogStreamParams::unsetlogStreamName()
 {
     logStreamNameIsSet_ = false;
+}
+
+std::string CreateLogStreamParams::getEnterpriseProjectName() const
+{
+    return enterpriseProjectName_;
+}
+
+void CreateLogStreamParams::setEnterpriseProjectName(const std::string& value)
+{
+    enterpriseProjectName_ = value;
+    enterpriseProjectNameIsSet_ = true;
+}
+
+bool CreateLogStreamParams::enterpriseProjectNameIsSet() const
+{
+    return enterpriseProjectNameIsSet_;
+}
+
+void CreateLogStreamParams::unsetenterpriseProjectName()
+{
+    enterpriseProjectNameIsSet_ = false;
+}
+
+std::string CreateLogStreamParams::getTtlInDays() const
+{
+    return ttlInDays_;
+}
+
+void CreateLogStreamParams::setTtlInDays(const std::string& value)
+{
+    ttlInDays_ = value;
+    ttlInDaysIsSet_ = true;
+}
+
+bool CreateLogStreamParams::ttlInDaysIsSet() const
+{
+    return ttlInDaysIsSet_;
+}
+
+void CreateLogStreamParams::unsetttlInDays()
+{
+    ttlInDaysIsSet_ = false;
+}
+
+std::vector<TagsBody>& CreateLogStreamParams::getTags()
+{
+    return tags_;
+}
+
+void CreateLogStreamParams::setTags(const std::vector<TagsBody>& value)
+{
+    tags_ = value;
+    tagsIsSet_ = true;
+}
+
+bool CreateLogStreamParams::tagsIsSet() const
+{
+    return tagsIsSet_;
+}
+
+void CreateLogStreamParams::unsettags()
+{
+    tagsIsSet_ = false;
 }
 
 }

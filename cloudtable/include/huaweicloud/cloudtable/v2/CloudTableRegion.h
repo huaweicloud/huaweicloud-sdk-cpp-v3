@@ -34,6 +34,10 @@ public:
             { 
                 "https://cloudtable.cn-south-1.myhuaweicloud.com"
             });
+        regions["cn-south-4"] = Region("cn-south-4",
+            { 
+                "https://cloudtable.cn-south-4.myhuaweicloud.com"
+            });
         regions["cn-east-2"] = Region("cn-east-2",
             { 
                 "https://cloudtable.cn-east-2.myhuaweicloud.com"
@@ -45,6 +49,14 @@ public:
         regions["cn-southwest-2"] = Region("cn-southwest-2",
             { 
                 "https://cloudtable.cn-southwest-2.myhuaweicloud.com"
+            });
+        regions["ap-southeast-1"] = Region("ap-southeast-1",
+            { 
+                "https://cloudtable.ap-southeast-1.myhuaweicloud.com"
+            });
+        regions["ap-southeast-3"] = Region("ap-southeast-3",
+            { 
+                "https://cloudtable.ap-southeast-3.myhuaweicloud.com"
             });
         regions["cn-south-2"] = Region("cn-south-2",
             { 

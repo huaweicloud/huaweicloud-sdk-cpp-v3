@@ -39,7 +39,7 @@ public:
     /// ProxyUpdateProxyConnectionPoolTypeRequest members
 
     /// <summary>
-    /// 连接池类型。CLOSED：关闭连接池；SESSION：开启会话级连接池
+    /// 连接池类型。 - CLOSED：关闭连接池。 - SESSION：开启会话级连接池
     /// </summary>
 
     std::string getConnectionPoolType() const;

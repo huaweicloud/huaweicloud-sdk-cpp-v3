@@ -17,6 +17,8 @@ ConfigsGetBody::ConfigsGetBody()
     businessTypeIsSet_ = false;
     serviceArea_ = "";
     serviceAreaIsSet_ = false;
+    remark_ = "";
+    remarkIsSet_ = false;
     originRequestHeaderIsSet_ = false;
     httpResponseHeaderIsSet_ = false;
     urlAuthIsSet_ = false;
@@ -48,6 +50,9 @@ ConfigsGetBody::ConfigsGetBody()
     websocketIsSet_ = false;
     videoSeekIsSet_ = false;
     requestLimitRulesIsSet_ = false;
+    ipFrequencyLimitIsSet_ = false;
+    hstsIsSet_ = false;
+    quicIsSet_ = false;
     errorCodeRedirectRulesIsSet_ = false;
 }
 
@@ -66,6 +71,9 @@ web::json::value ConfigsGetBody::toJson() const
     }
     if(serviceAreaIsSet_) {
         val[utility::conversions::to_string_t("service_area")] = ModelBase::toJson(serviceArea_);
+    }
+    if(remarkIsSet_) {
+        val[utility::conversions::to_string_t("remark")] = ModelBase::toJson(remark_);
     }
     if(originRequestHeaderIsSet_) {
         val[utility::conversions::to_string_t("origin_request_header")] = ModelBase::toJson(originRequestHeader_);
@@ -142,6 +150,15 @@ web::json::value ConfigsGetBody::toJson() const
     if(requestLimitRulesIsSet_) {
         val[utility::conversions::to_string_t("request_limit_rules")] = ModelBase::toJson(requestLimitRules_);
     }
+    if(ipFrequencyLimitIsSet_) {
+        val[utility::conversions::to_string_t("ip_frequency_limit")] = ModelBase::toJson(ipFrequencyLimit_);
+    }
+    if(hstsIsSet_) {
+        val[utility::conversions::to_string_t("hsts")] = ModelBase::toJson(hsts_);
+    }
+    if(quicIsSet_) {
+        val[utility::conversions::to_string_t("quic")] = ModelBase::toJson(quic_);
+    }
     if(errorCodeRedirectRulesIsSet_) {
         val[utility::conversions::to_string_t("error_code_redirect_rules")] = ModelBase::toJson(errorCodeRedirectRules_);
     }
@@ -169,6 +186,15 @@ bool ConfigsGetBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setServiceArea(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("remark"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("remark"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRemark(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("origin_request_header"))) {
@@ -283,7 +309,7 @@ bool ConfigsGetBody::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("cache_url_parameter_filter"));
         if(!fieldValue.is_null())
         {
-            CacheUrlParameterFilter refVal;
+            CacheUrlParameterFilterGetBody refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCacheUrlParameterFilter(refVal);
         }
@@ -396,6 +422,33 @@ bool ConfigsGetBody::fromJson(const web::json::value& val)
             setRequestLimitRules(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("ip_frequency_limit"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ip_frequency_limit"));
+        if(!fieldValue.is_null())
+        {
+            IpFrequencyLimitQuery refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIpFrequencyLimit(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("hsts"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("hsts"));
+        if(!fieldValue.is_null())
+        {
+            HstsQuery refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHsts(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("quic"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("quic"));
+        if(!fieldValue.is_null())
+        {
+            Quic refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setQuic(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("error_code_redirect_rules"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("error_code_redirect_rules"));
         if(!fieldValue.is_null())
@@ -448,6 +501,27 @@ bool ConfigsGetBody::serviceAreaIsSet() const
 void ConfigsGetBody::unsetserviceArea()
 {
     serviceAreaIsSet_ = false;
+}
+
+std::string ConfigsGetBody::getRemark() const
+{
+    return remark_;
+}
+
+void ConfigsGetBody::setRemark(const std::string& value)
+{
+    remark_ = value;
+    remarkIsSet_ = true;
+}
+
+bool ConfigsGetBody::remarkIsSet() const
+{
+    return remarkIsSet_;
+}
+
+void ConfigsGetBody::unsetremark()
+{
+    remarkIsSet_ = false;
 }
 
 std::vector<OriginRequestHeader>& ConfigsGetBody::getOriginRequestHeader()
@@ -702,12 +776,12 @@ void ConfigsGetBody::unsetcompress()
     compressIsSet_ = false;
 }
 
-CacheUrlParameterFilter ConfigsGetBody::getCacheUrlParameterFilter() const
+CacheUrlParameterFilterGetBody ConfigsGetBody::getCacheUrlParameterFilter() const
 {
     return cacheUrlParameterFilter_;
 }
 
-void ConfigsGetBody::setCacheUrlParameterFilter(const CacheUrlParameterFilter& value)
+void ConfigsGetBody::setCacheUrlParameterFilter(const CacheUrlParameterFilterGetBody& value)
 {
     cacheUrlParameterFilter_ = value;
     cacheUrlParameterFilterIsSet_ = true;
@@ -973,6 +1047,69 @@ bool ConfigsGetBody::requestLimitRulesIsSet() const
 void ConfigsGetBody::unsetrequestLimitRules()
 {
     requestLimitRulesIsSet_ = false;
+}
+
+IpFrequencyLimitQuery ConfigsGetBody::getIpFrequencyLimit() const
+{
+    return ipFrequencyLimit_;
+}
+
+void ConfigsGetBody::setIpFrequencyLimit(const IpFrequencyLimitQuery& value)
+{
+    ipFrequencyLimit_ = value;
+    ipFrequencyLimitIsSet_ = true;
+}
+
+bool ConfigsGetBody::ipFrequencyLimitIsSet() const
+{
+    return ipFrequencyLimitIsSet_;
+}
+
+void ConfigsGetBody::unsetipFrequencyLimit()
+{
+    ipFrequencyLimitIsSet_ = false;
+}
+
+HstsQuery ConfigsGetBody::getHsts() const
+{
+    return hsts_;
+}
+
+void ConfigsGetBody::setHsts(const HstsQuery& value)
+{
+    hsts_ = value;
+    hstsIsSet_ = true;
+}
+
+bool ConfigsGetBody::hstsIsSet() const
+{
+    return hstsIsSet_;
+}
+
+void ConfigsGetBody::unsethsts()
+{
+    hstsIsSet_ = false;
+}
+
+Quic ConfigsGetBody::getQuic() const
+{
+    return quic_;
+}
+
+void ConfigsGetBody::setQuic(const Quic& value)
+{
+    quic_ = value;
+    quicIsSet_ = true;
+}
+
+bool ConfigsGetBody::quicIsSet() const
+{
+    return quicIsSet_;
+}
+
+void ConfigsGetBody::unsetquic()
+{
+    quicIsSet_ = false;
 }
 
 std::vector<ErrorCodeRedirectRules>& ConfigsGetBody::getErrorCodeRedirectRules()

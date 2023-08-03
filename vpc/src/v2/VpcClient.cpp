@@ -950,6 +950,9 @@ std::shared_ptr<ListPortsResponse> VpcClient::listPorts(ListPortsRequest &reques
     if (request.enterpriseProjectIdIsSet()) {
         localVarQueryParams["enterprise_project_id"] = parameterToString(request.getEnterpriseProjectId());
     }
+    if (request.enableEfiIsSet()) {
+        localVarQueryParams["enable_efi"] = parameterToString(request.isEnableEfi());
+    }
 
     std::string localVarHttpBody;
 
@@ -4711,10 +4714,18 @@ std::string VpcClient::parameterToString(double value)
     return toString(value);
 }
 
+std::string VpcClient::parameterToString(const Object& obj)
+{
+    auto val = obj.toJson();
+    std::string value;
+    ModelBase::fromJson(val, value);
+    return value;
+}
 std::string VpcClient::parameterToString(const utility::datetime &value)
 {
     return utility::conversions::to_utf8string(value.to_string(utility::datetime::ISO_8601));
 }
+
 }
 }
 }

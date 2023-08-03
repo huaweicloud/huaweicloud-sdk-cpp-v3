@@ -39,7 +39,7 @@ public:
     /// CacheRules members
 
     /// <summary>
-    /// 类型,all：匹配所有文件， file_extension：按文件后缀匹配， catalog：按目录匹配， full_path：全路径匹配， home_page：按首页匹配。
+    /// 匹配类型: - all：匹配所有文件， - file_extension：按文件后缀匹配， - catalog：按目录匹配， - full_path：全路径匹配， - home_page：按首页匹配。   &gt; 配置单条缓存规则时，可不传，默认为all。   &gt; 配置多条缓存规则时，此参数必传。
     /// </summary>
 
     std::string getMatchType() const;
@@ -57,7 +57,7 @@ public:
     void setMatchValue(const std::string& value);
 
     /// <summary>
-    /// 缓存过期时间，最大支持365天。
+    /// 缓存过期时间，最大支持365天。  &gt; 默认值为0。
     /// </summary>
 
     int32_t getTtl() const;
@@ -84,7 +84,7 @@ public:
     void setPriority(int32_t value);
 
     /// <summary>
-    /// 缓存遵循源站开关，on：打开，off：关闭。
+    /// 缓存遵循源站开关，on：打开，off：关闭。  &gt; 默认值为off。
     /// </summary>
 
     std::string getFollowOrigin() const;
@@ -93,7 +93,7 @@ public:
     void setFollowOrigin(const std::string& value);
 
     /// <summary>
-    /// URL参数， del_params：忽略指定URL参数， reserve_params：保留指定URL参数， ignore_url_params：忽略全部URL参数， full_url：使用完整URL参数。
+    /// URL参数： - del_params：忽略指定URL参数， - reserve_params：保留指定URL参数， - ignore_url_params：忽略全部URL参数， - full_url：使用完整URL参数。   &gt; 不传此参数时，默认为full_url。
     /// </summary>
 
     std::string getUrlParameterType() const;
@@ -102,7 +102,7 @@ public:
     void setUrlParameterType(const std::string& value);
 
     /// <summary>
-    /// URL参数值，最多设置10条，以\&quot;,\&quot;分隔。
+    /// URL参数值，最多设置10条，以\&quot;,\&quot;分隔。  &gt; 当url_parameter_type为del_params或reserve_params时必填。
     /// </summary>
 
     std::string getUrlParameterValue() const;

@@ -50,6 +50,8 @@ Port::Port()
     portSecurityEnabledIsSet_ = false;
     zoneId_ = "";
     zoneIdIsSet_ = false;
+    enableEfi_ = false;
+    enableEfiIsSet_ = false;
 }
 
 Port::~Port() = default;
@@ -127,6 +129,9 @@ web::json::value Port::toJson() const
     }
     if(zoneIdIsSet_) {
         val[utility::conversions::to_string_t("zone_id")] = ModelBase::toJson(zoneId_);
+    }
+    if(enableEfiIsSet_) {
+        val[utility::conversions::to_string_t("enable_efi")] = ModelBase::toJson(enableEfi_);
     }
 
     return val;
@@ -332,6 +337,15 @@ bool Port::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setZoneId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("enable_efi"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enable_efi"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEnableEfi(refVal);
         }
     }
     return ok;
@@ -797,6 +811,27 @@ bool Port::zoneIdIsSet() const
 void Port::unsetzoneId()
 {
     zoneIdIsSet_ = false;
+}
+
+bool Port::isEnableEfi() const
+{
+    return enableEfi_;
+}
+
+void Port::setEnableEfi(bool value)
+{
+    enableEfi_ = value;
+    enableEfiIsSet_ = true;
+}
+
+bool Port::enableEfiIsSet() const
+{
+    return enableEfiIsSet_;
+}
+
+void Port::unsetenableEfi()
+{
+    enableEfiIsSet_ = false;
 }
 
 }

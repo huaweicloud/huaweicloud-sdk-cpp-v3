@@ -74,6 +74,24 @@ public:
     void unsetlimit();
     void setLimit(int32_t value);
 
+    /// <summary>
+    /// 组件类型，过滤拿到需要的组件类型的组件信息，默认为ALL，传参数会查询对应组件信息。 枚举值：   \&quot;ALL\&quot;: 查询所有组件类型。   \&quot;CN\&quot;: 查询CN组件类型。   \&quot;DN\&quot;: 查询DN组件类型。   \&quot;CM\&quot;: 查询CMS组件类型。   \&quot;GTM\&quot;: 查询GTM组件类型。   \&quot;ETCD\&quot;: 查询ETCD组件类型。
+    /// </summary>
+
+    std::string getComponentType() const;
+    bool componentTypeIsSet() const;
+    void unsetcomponentType();
+    void setComponentType(const std::string& value);
+
+    /// <summary>
+    /// 主组件所在可用区编号，筛选符合条件的组件，默认为ALL，查询实例所有可用区上的节点的组件信息。 当调用接口传入可用区编号时：   相对于DN组件，会查询出的DN分片中的主组件在该可用区上的这个分片的所有副本的组件信息。   相对于CN组件，CN组件没有主备关系，会查询出该可用区上的CN组件信息。   相对于其他组件，会查询该可用区上有没有某个组件类型的主组件，有则会返回该组件类型的所有组件信息，没有则不返回该组件类型的信息。
+    /// </summary>
+
+    std::string getAvailabilityZoneId() const;
+    bool availabilityZoneIdIsSet() const;
+    void unsetavailabilityZoneId();
+    void setAvailabilityZoneId(const std::string& value);
+
 
 protected:
     std::string xLanguage_;
@@ -84,6 +102,10 @@ protected:
     bool offsetIsSet_;
     int32_t limit_;
     bool limitIsSet_;
+    std::string componentType_;
+    bool componentTypeIsSet_;
+    std::string availabilityZoneId_;
+    bool availabilityZoneIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

@@ -993,6 +993,12 @@ std::shared_ptr<ListComponentInfosResponse> GaussDBforopenGaussClient::listCompo
     if (request.limitIsSet()) {
         localVarQueryParams["limit"] = parameterToString(request.getLimit());
     }
+    if (request.componentTypeIsSet()) {
+        localVarQueryParams["component_type"] = parameterToString(request.getComponentType());
+    }
+    if (request.availabilityZoneIdIsSet()) {
+        localVarQueryParams["availability_zone_id"] = parameterToString(request.getAvailabilityZoneId());
+    }
     if (request.xLanguageIsSet()) {
         localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
     }
@@ -3210,10 +3216,18 @@ std::string GaussDBforopenGaussClient::parameterToString(double value)
     return toString(value);
 }
 
+std::string GaussDBforopenGaussClient::parameterToString(const Object& obj)
+{
+    auto val = obj.toJson();
+    std::string value;
+    ModelBase::fromJson(val, value);
+    return value;
+}
 std::string GaussDBforopenGaussClient::parameterToString(const utility::datetime &value)
 {
     return utility::conversions::to_utf8string(value.to_string(utility::datetime::ISO_8601));
 }
+
 }
 }
 }

@@ -50,6 +50,42 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
+    /// 节点名字。
+    /// </summary>
+
+    std::string getName() const;
+    bool nameIsSet() const;
+    void unsetname();
+    void setName(const std::string& value);
+
+    /// <summary>
+    /// 节点所在可用区编码。
+    /// </summary>
+
+    std::string getAvailabilityZoneId() const;
+    bool availabilityZoneIdIsSet() const;
+    void unsetavailabilityZoneId();
+    void setAvailabilityZoneId(const std::string& value);
+
+    /// <summary>
+    /// 可用区描述信息。
+    /// </summary>
+
+    std::string getDescription() const;
+    bool descriptionIsSet() const;
+    void unsetdescription();
+    void setDescription(const std::string& value);
+
+    /// <summary>
+    /// 节点状态。
+    /// </summary>
+
+    std::string getStatus() const;
+    bool statusIsSet() const;
+    void unsetstatus();
+    void setStatus(const std::string& value);
+
+    /// <summary>
     /// 组件列表。
     /// </summary>
 
@@ -62,6 +98,14 @@ public:
 protected:
     std::string id_;
     bool idIsSet_;
+    std::string name_;
+    bool nameIsSet_;
+    std::string availabilityZoneId_;
+    bool availabilityZoneIdIsSet_;
+    std::string description_;
+    bool descriptionIsSet_;
+    std::string status_;
+    bool statusIsSet_;
     std::vector<Components> components_;
     bool componentsIsSet_;
 

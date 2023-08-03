@@ -77,6 +77,15 @@ public:
     void setProxyMode(const std::string& value);
 
     /// <summary>
+    /// 数据库代理路由模式，默认为权重负载模式。  取值范围: - 0，表示权重负载模式; - 1，表示负载均衡模式（数据库主节点不接受读请求）； - 2，表示负载均衡模式（数据库主节点接受读请求）。
+    /// </summary>
+
+    int32_t getRouteMode() const;
+    bool routeModeIsSet() const;
+    void unsetrouteMode();
+    void setRouteMode(int32_t value);
+
+    /// <summary>
     /// 数据库节点的读权重设置。
     /// </summary>
 
@@ -95,6 +104,8 @@ protected:
     bool proxyNameIsSet_;
     std::string proxyMode_;
     bool proxyModeIsSet_;
+    int32_t routeMode_;
+    bool routeModeIsSet_;
     std::vector<NodesWeight> nodesReadWeight_;
     bool nodesReadWeightIsSet_;
 

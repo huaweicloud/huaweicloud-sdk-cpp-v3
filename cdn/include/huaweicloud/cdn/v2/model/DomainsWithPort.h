@@ -8,7 +8,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
-#include <huaweicloud/cdn/v2/model/SourcesConfig.h>
+#include <huaweicloud/cdn/v2/model/SourcesDomainConfig.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -89,10 +89,10 @@ public:
     /// 源站配置。
     /// </summary>
 
-    std::vector<SourcesConfig>& getSources();
+    std::vector<SourcesDomainConfig>& getSources();
     bool sourcesIsSet() const;
     void unsetsources();
-    void setSources(const std::vector<SourcesConfig>& value);
+    void setSources(const std::vector<SourcesDomainConfig>& value);
 
     /// <summary>
     /// 是否开启HTTPS加速。 0：代表未开启HTTPS加速； 1：代表开启HTTPS加速，且回源方式为协议跟随； 2：代表开启HTTPS加速，且回源方式为HTTP； 3：代表开启HTTPS加速，且回源方式为HTTPS。
@@ -160,7 +160,7 @@ protected:
     bool domainStatusIsSet_;
     std::string cname_;
     bool cnameIsSet_;
-    std::vector<SourcesConfig> sources_;
+    std::vector<SourcesDomainConfig> sources_;
     bool sourcesIsSet_;
     int32_t httpsStatus_;
     bool httpsStatusIsSet_;

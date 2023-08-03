@@ -10,25 +10,28 @@
 #include <huaweicloud/cdn/v2/model/ForceRedirectConfig.h>
 #include <huaweicloud/cdn/v2/model/HttpResponseHeader.h>
 #include <huaweicloud/cdn/v2/model/Compress.h>
+#include <huaweicloud/cdn/v2/model/HstsQuery.h>
+#include <huaweicloud/cdn/v2/model/WebSocketSeek.h>
+#include <huaweicloud/cdn/v2/model/RequestLimitRules.h>
+#include <huaweicloud/cdn/v2/model/VideoSeek.h>
+#include <huaweicloud/cdn/v2/model/UrlAuthGetBody.h>
+#include <huaweicloud/cdn/v2/model/Quic.h>
+#include <huaweicloud/cdn/v2/model/IpFilter.h>
+#include <huaweicloud/cdn/v2/model/CacheUrlParameterFilterGetBody.h>
 #include <string>
 #include <huaweicloud/cdn/v2/model/OriginRequestHeader.h>
 #include <huaweicloud/cdn/v2/model/CommonRemoteAuth.h>
-#include <huaweicloud/cdn/v2/model/WebSocketSeek.h>
 #include <huaweicloud/cdn/v2/model/ErrorCodeRedirectRules.h>
+#include <huaweicloud/cdn/v2/model/IpFrequencyLimitQuery.h>
 #include <vector>
-#include <huaweicloud/cdn/v2/model/RequestLimitRules.h>
-#include <huaweicloud/cdn/v2/model/VideoSeek.h>
 #include <huaweicloud/cdn/v2/model/UserAgentFilter.h>
 #include <huaweicloud/cdn/v2/model/RefererConfig.h>
-#include <huaweicloud/cdn/v2/model/UrlAuthGetBody.h>
 #include <huaweicloud/cdn/v2/model/FlexibleOrigins.h>
 #include <huaweicloud/cdn/v2/model/SourcesConfig.h>
-#include <huaweicloud/cdn/v2/model/IpFilter.h>
 #include <huaweicloud/cdn/v2/model/OriginRequestUrlRewrite.h>
 #include <huaweicloud/cdn/v2/model/HttpGetBody.h>
 #include <huaweicloud/cdn/v2/model/ErrorCodeCache.h>
 #include <huaweicloud/cdn/v2/model/CacheRules.h>
-#include <huaweicloud/cdn/v2/model/CacheUrlParameterFilter.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -60,7 +63,7 @@ public:
     /// ConfigsGetBody members
 
     /// <summary>
-    /// 业务类型，web：网站加速，download：文件下载加速，video：点播加速，wholesit：全站加速。
+    /// 业务类型： - web：网站加速； - download：文件下载加速； - video：点播加速； - wholesite：全站加速。
     /// </summary>
 
     std::string getBusinessType() const;
@@ -69,13 +72,22 @@ public:
     void setBusinessType(const std::string& value);
 
     /// <summary>
-    /// 服务区域，mainland_china：中国大陆，global：全球，outside_mainland_china：中国大陆境外。
+    /// 服务区域： - mainland_china：中国大陆； - global：全球； - outside_mainland_china：中国大陆境外。
     /// </summary>
 
     std::string getServiceArea() const;
     bool serviceAreaIsSet() const;
     void unsetserviceArea();
     void setServiceArea(const std::string& value);
+
+    /// <summary>
+    /// 域名备注。
+    /// </summary>
+
+    std::string getRemark() const;
+    bool remarkIsSet() const;
+    void unsetremark();
+    void setRemark(const std::string& value);
 
     /// <summary>
     /// 回源请求头配置
@@ -189,10 +201,10 @@ public:
     /// 
     /// </summary>
 
-    CacheUrlParameterFilter getCacheUrlParameterFilter() const;
+    CacheUrlParameterFilterGetBody getCacheUrlParameterFilter() const;
     bool cacheUrlParameterFilterIsSet() const;
     void unsetcacheUrlParameterFilter();
-    void setCacheUrlParameterFilter(const CacheUrlParameterFilter& value);
+    void setCacheUrlParameterFilter(const CacheUrlParameterFilterGetBody& value);
 
     /// <summary>
     /// ipv6设置，1：打开；0：关闭。
@@ -303,6 +315,33 @@ public:
     void setRequestLimitRules(const std::vector<RequestLimitRules>& value);
 
     /// <summary>
+    /// 
+    /// </summary>
+
+    IpFrequencyLimitQuery getIpFrequencyLimit() const;
+    bool ipFrequencyLimitIsSet() const;
+    void unsetipFrequencyLimit();
+    void setIpFrequencyLimit(const IpFrequencyLimitQuery& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    HstsQuery getHsts() const;
+    bool hstsIsSet() const;
+    void unsethsts();
+    void setHsts(const HstsQuery& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    Quic getQuic() const;
+    bool quicIsSet() const;
+    void unsetquic();
+    void setQuic(const Quic& value);
+
+    /// <summary>
     /// 自定义错误页面
     /// </summary>
 
@@ -317,6 +356,8 @@ protected:
     bool businessTypeIsSet_;
     std::string serviceArea_;
     bool serviceAreaIsSet_;
+    std::string remark_;
+    bool remarkIsSet_;
     std::vector<OriginRequestHeader> originRequestHeader_;
     bool originRequestHeaderIsSet_;
     std::vector<HttpResponseHeader> httpResponseHeader_;
@@ -341,7 +382,7 @@ protected:
     bool forceRedirectIsSet_;
     Compress compress_;
     bool compressIsSet_;
-    CacheUrlParameterFilter cacheUrlParameterFilter_;
+    CacheUrlParameterFilterGetBody cacheUrlParameterFilter_;
     bool cacheUrlParameterFilterIsSet_;
     int32_t ipv6Accelerate_;
     bool ipv6AccelerateIsSet_;
@@ -367,6 +408,12 @@ protected:
     bool videoSeekIsSet_;
     std::vector<RequestLimitRules> requestLimitRules_;
     bool requestLimitRulesIsSet_;
+    IpFrequencyLimitQuery ipFrequencyLimit_;
+    bool ipFrequencyLimitIsSet_;
+    HstsQuery hsts_;
+    bool hstsIsSet_;
+    Quic quic_;
+    bool quicIsSet_;
     std::vector<ErrorCodeRedirectRules> errorCodeRedirectRules_;
     bool errorCodeRedirectRulesIsSet_;
 

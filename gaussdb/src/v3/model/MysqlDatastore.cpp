@@ -17,6 +17,8 @@ MysqlDatastore::MysqlDatastore()
     typeIsSet_ = false;
     version_ = "";
     versionIsSet_ = false;
+    kernelVersion_ = "";
+    kernelVersionIsSet_ = false;
 }
 
 MysqlDatastore::~MysqlDatastore() = default;
@@ -34,6 +36,9 @@ web::json::value MysqlDatastore::toJson() const
     }
     if(versionIsSet_) {
         val[utility::conversions::to_string_t("version")] = ModelBase::toJson(version_);
+    }
+    if(kernelVersionIsSet_) {
+        val[utility::conversions::to_string_t("kernel_version")] = ModelBase::toJson(kernelVersion_);
     }
 
     return val;
@@ -59,6 +64,15 @@ bool MysqlDatastore::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setVersion(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("kernel_version"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("kernel_version"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setKernelVersion(refVal);
         }
     }
     return ok;
@@ -104,6 +118,27 @@ bool MysqlDatastore::versionIsSet() const
 void MysqlDatastore::unsetversion()
 {
     versionIsSet_ = false;
+}
+
+std::string MysqlDatastore::getKernelVersion() const
+{
+    return kernelVersion_;
+}
+
+void MysqlDatastore::setKernelVersion(const std::string& value)
+{
+    kernelVersion_ = value;
+    kernelVersionIsSet_ = true;
+}
+
+bool MysqlDatastore::kernelVersionIsSet() const
+{
+    return kernelVersionIsSet_;
+}
+
+void MysqlDatastore::unsetkernelVersion()
+{
+    kernelVersionIsSet_ = false;
 }
 
 }

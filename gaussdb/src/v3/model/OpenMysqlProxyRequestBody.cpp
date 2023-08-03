@@ -21,6 +21,8 @@ OpenMysqlProxyRequestBody::OpenMysqlProxyRequestBody()
     proxyNameIsSet_ = false;
     proxyMode_ = "";
     proxyModeIsSet_ = false;
+    routeMode_ = 0;
+    routeModeIsSet_ = false;
     nodesReadWeightIsSet_ = false;
 }
 
@@ -45,6 +47,9 @@ web::json::value OpenMysqlProxyRequestBody::toJson() const
     }
     if(proxyModeIsSet_) {
         val[utility::conversions::to_string_t("proxy_mode")] = ModelBase::toJson(proxyMode_);
+    }
+    if(routeModeIsSet_) {
+        val[utility::conversions::to_string_t("route_mode")] = ModelBase::toJson(routeMode_);
     }
     if(nodesReadWeightIsSet_) {
         val[utility::conversions::to_string_t("nodes_read_weight")] = ModelBase::toJson(nodesReadWeight_);
@@ -91,6 +96,15 @@ bool OpenMysqlProxyRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setProxyMode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("route_mode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("route_mode"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRouteMode(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("nodes_read_weight"))) {
@@ -187,6 +201,27 @@ bool OpenMysqlProxyRequestBody::proxyModeIsSet() const
 void OpenMysqlProxyRequestBody::unsetproxyMode()
 {
     proxyModeIsSet_ = false;
+}
+
+int32_t OpenMysqlProxyRequestBody::getRouteMode() const
+{
+    return routeMode_;
+}
+
+void OpenMysqlProxyRequestBody::setRouteMode(int32_t value)
+{
+    routeMode_ = value;
+    routeModeIsSet_ = true;
+}
+
+bool OpenMysqlProxyRequestBody::routeModeIsSet() const
+{
+    return routeModeIsSet_;
+}
+
+void OpenMysqlProxyRequestBody::unsetrouteMode()
+{
+    routeModeIsSet_ = false;
 }
 
 std::vector<NodesWeight>& OpenMysqlProxyRequestBody::getNodesReadWeight()

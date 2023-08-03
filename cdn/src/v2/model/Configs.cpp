@@ -17,6 +17,8 @@ Configs::Configs()
     businessTypeIsSet_ = false;
     serviceArea_ = "";
     serviceAreaIsSet_ = false;
+    remark_ = "";
+    remarkIsSet_ = false;
     originRequestHeaderIsSet_ = false;
     httpResponseHeaderIsSet_ = false;
     urlAuthIsSet_ = false;
@@ -48,6 +50,9 @@ Configs::Configs()
     websocketIsSet_ = false;
     videoSeekIsSet_ = false;
     requestLimitRulesIsSet_ = false;
+    ipFrequencyLimitIsSet_ = false;
+    hstsIsSet_ = false;
+    quicIsSet_ = false;
     errorCodeRedirectRulesIsSet_ = false;
 }
 
@@ -66,6 +71,9 @@ web::json::value Configs::toJson() const
     }
     if(serviceAreaIsSet_) {
         val[utility::conversions::to_string_t("service_area")] = ModelBase::toJson(serviceArea_);
+    }
+    if(remarkIsSet_) {
+        val[utility::conversions::to_string_t("remark")] = ModelBase::toJson(remark_);
     }
     if(originRequestHeaderIsSet_) {
         val[utility::conversions::to_string_t("origin_request_header")] = ModelBase::toJson(originRequestHeader_);
@@ -142,6 +150,15 @@ web::json::value Configs::toJson() const
     if(requestLimitRulesIsSet_) {
         val[utility::conversions::to_string_t("request_limit_rules")] = ModelBase::toJson(requestLimitRules_);
     }
+    if(ipFrequencyLimitIsSet_) {
+        val[utility::conversions::to_string_t("ip_frequency_limit")] = ModelBase::toJson(ipFrequencyLimit_);
+    }
+    if(hstsIsSet_) {
+        val[utility::conversions::to_string_t("hsts")] = ModelBase::toJson(hsts_);
+    }
+    if(quicIsSet_) {
+        val[utility::conversions::to_string_t("quic")] = ModelBase::toJson(quic_);
+    }
     if(errorCodeRedirectRulesIsSet_) {
         val[utility::conversions::to_string_t("error_code_redirect_rules")] = ModelBase::toJson(errorCodeRedirectRules_);
     }
@@ -169,6 +186,15 @@ bool Configs::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setServiceArea(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("remark"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("remark"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRemark(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("origin_request_header"))) {
@@ -396,6 +422,33 @@ bool Configs::fromJson(const web::json::value& val)
             setRequestLimitRules(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("ip_frequency_limit"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ip_frequency_limit"));
+        if(!fieldValue.is_null())
+        {
+            IpFrequencyLimit refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIpFrequencyLimit(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("hsts"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("hsts"));
+        if(!fieldValue.is_null())
+        {
+            Hsts refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHsts(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("quic"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("quic"));
+        if(!fieldValue.is_null())
+        {
+            Quic refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setQuic(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("error_code_redirect_rules"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("error_code_redirect_rules"));
         if(!fieldValue.is_null())
@@ -448,6 +501,27 @@ bool Configs::serviceAreaIsSet() const
 void Configs::unsetserviceArea()
 {
     serviceAreaIsSet_ = false;
+}
+
+std::string Configs::getRemark() const
+{
+    return remark_;
+}
+
+void Configs::setRemark(const std::string& value)
+{
+    remark_ = value;
+    remarkIsSet_ = true;
+}
+
+bool Configs::remarkIsSet() const
+{
+    return remarkIsSet_;
+}
+
+void Configs::unsetremark()
+{
+    remarkIsSet_ = false;
 }
 
 std::vector<OriginRequestHeader>& Configs::getOriginRequestHeader()
@@ -973,6 +1047,69 @@ bool Configs::requestLimitRulesIsSet() const
 void Configs::unsetrequestLimitRules()
 {
     requestLimitRulesIsSet_ = false;
+}
+
+IpFrequencyLimit Configs::getIpFrequencyLimit() const
+{
+    return ipFrequencyLimit_;
+}
+
+void Configs::setIpFrequencyLimit(const IpFrequencyLimit& value)
+{
+    ipFrequencyLimit_ = value;
+    ipFrequencyLimitIsSet_ = true;
+}
+
+bool Configs::ipFrequencyLimitIsSet() const
+{
+    return ipFrequencyLimitIsSet_;
+}
+
+void Configs::unsetipFrequencyLimit()
+{
+    ipFrequencyLimitIsSet_ = false;
+}
+
+Hsts Configs::getHsts() const
+{
+    return hsts_;
+}
+
+void Configs::setHsts(const Hsts& value)
+{
+    hsts_ = value;
+    hstsIsSet_ = true;
+}
+
+bool Configs::hstsIsSet() const
+{
+    return hstsIsSet_;
+}
+
+void Configs::unsethsts()
+{
+    hstsIsSet_ = false;
+}
+
+Quic Configs::getQuic() const
+{
+    return quic_;
+}
+
+void Configs::setQuic(const Quic& value)
+{
+    quic_ = value;
+    quicIsSet_ = true;
+}
+
+bool Configs::quicIsSet() const
+{
+    return quicIsSet_;
+}
+
+void Configs::unsetquic()
+{
+    quicIsSet_ = false;
 }
 
 std::vector<ErrorCodeRedirectRules>& Configs::getErrorCodeRedirectRules()

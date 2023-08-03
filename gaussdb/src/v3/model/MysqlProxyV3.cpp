@@ -48,6 +48,10 @@ MysqlProxyV3::MysqlProxyV3()
     connectionPoolTypeIsSet_ = false;
     switchConnectionPoolTypeEnabled_ = false;
     switchConnectionPoolTypeEnabledIsSet_ = false;
+    routeMode_ = 0;
+    routeModeIsSet_ = false;
+    balanceRouteModeEnabled_ = false;
+    balanceRouteModeEnabledIsSet_ = false;
 }
 
 MysqlProxyV3::~MysqlProxyV3() = default;
@@ -113,6 +117,12 @@ web::json::value MysqlProxyV3::toJson() const
     }
     if(switchConnectionPoolTypeEnabledIsSet_) {
         val[utility::conversions::to_string_t("switch_connection_pool_type_enabled")] = ModelBase::toJson(switchConnectionPoolTypeEnabled_);
+    }
+    if(routeModeIsSet_) {
+        val[utility::conversions::to_string_t("route_mode")] = ModelBase::toJson(routeMode_);
+    }
+    if(balanceRouteModeEnabledIsSet_) {
+        val[utility::conversions::to_string_t("balance_route_mode_enabled")] = ModelBase::toJson(balanceRouteModeEnabled_);
     }
 
     return val;
@@ -282,6 +292,24 @@ bool MysqlProxyV3::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSwitchConnectionPoolTypeEnabled(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("route_mode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("route_mode"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRouteMode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("balance_route_mode_enabled"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("balance_route_mode_enabled"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBalanceRouteModeEnabled(refVal);
         }
     }
     return ok;
@@ -663,6 +691,48 @@ bool MysqlProxyV3::switchConnectionPoolTypeEnabledIsSet() const
 void MysqlProxyV3::unsetswitchConnectionPoolTypeEnabled()
 {
     switchConnectionPoolTypeEnabledIsSet_ = false;
+}
+
+int32_t MysqlProxyV3::getRouteMode() const
+{
+    return routeMode_;
+}
+
+void MysqlProxyV3::setRouteMode(int32_t value)
+{
+    routeMode_ = value;
+    routeModeIsSet_ = true;
+}
+
+bool MysqlProxyV3::routeModeIsSet() const
+{
+    return routeModeIsSet_;
+}
+
+void MysqlProxyV3::unsetrouteMode()
+{
+    routeModeIsSet_ = false;
+}
+
+bool MysqlProxyV3::isBalanceRouteModeEnabled() const
+{
+    return balanceRouteModeEnabled_;
+}
+
+void MysqlProxyV3::setBalanceRouteModeEnabled(bool value)
+{
+    balanceRouteModeEnabled_ = value;
+    balanceRouteModeEnabledIsSet_ = true;
+}
+
+bool MysqlProxyV3::balanceRouteModeEnabledIsSet() const
+{
+    return balanceRouteModeEnabledIsSet_;
+}
+
+void MysqlProxyV3::unsetbalanceRouteModeEnabled()
+{
+    balanceRouteModeEnabledIsSet_ = false;
 }
 
 }

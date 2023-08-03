@@ -8,6 +8,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <huaweicloud/cdn/v2/model/InheritConfig.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -39,7 +40,7 @@ public:
     /// UrlAuth members
 
     /// <summary>
-    /// 是否开启URL鉴权，off：开启,on：关闭。
+    /// 是否开启URL鉴权，on：开启,off：关闭。
     /// </summary>
 
     std::string getStatus() const;
@@ -82,6 +83,15 @@ public:
     bool matchTypeIsSet() const;
     void unsetmatchType();
     void setMatchType(const std::string& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    InheritConfig getInheritConfig() const;
+    bool inheritConfigIsSet() const;
+    void unsetinheritConfig();
+    void setInheritConfig(const InheritConfig& value);
 
     /// <summary>
     /// 鉴权KEY 由6-32位大小写字母、数字构成。
@@ -131,6 +141,8 @@ protected:
     bool signMethodIsSet_;
     std::string matchType_;
     bool matchTypeIsSet_;
+    InheritConfig inheritConfig_;
+    bool inheritConfigIsSet_;
     std::string key_;
     bool keyIsSet_;
     std::string backupKey_;

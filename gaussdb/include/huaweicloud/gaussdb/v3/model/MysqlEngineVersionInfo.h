@@ -56,12 +56,34 @@ public:
     void unsetname();
     void setName(const std::string& value);
 
+    /// <summary>
+    /// 兼容的开源数据库版本号，返回三位开源版本号。
+    /// </summary>
+
+    std::string getVersion() const;
+    bool versionIsSet() const;
+    void unsetversion();
+    void setVersion(const std::string& value);
+
+    /// <summary>
+    /// 数据库版本号，返回完整的四位版本号。
+    /// </summary>
+
+    std::string getKernelVersion() const;
+    bool kernelVersionIsSet() const;
+    void unsetkernelVersion();
+    void setKernelVersion(const std::string& value);
+
 
 protected:
     std::string id_;
     bool idIsSet_;
     std::string name_;
     bool nameIsSet_;
+    std::string version_;
+    bool versionIsSet_;
+    std::string kernelVersion_;
+    bool kernelVersionIsSet_;
 
 };
 

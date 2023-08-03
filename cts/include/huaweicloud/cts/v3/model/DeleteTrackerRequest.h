@@ -48,7 +48,7 @@ public:
     void setTrackerName(const std::string& value);
 
     /// <summary>
-    /// 标识追踪器类型。 目前仅支持数据类追踪器（data）的删除，默认值为\&quot;data\&quot;。
+    /// 标识追踪器类型。 默认值为\&quot;data\&quot;。传入\&quot;system\&quot;时，配合tracker_name参数可删除管理类追踪器。
     /// </summary>
 
     std::string getTrackerType() const;

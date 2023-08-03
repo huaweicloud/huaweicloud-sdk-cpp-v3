@@ -202,6 +202,24 @@ public:
     void unsetswitchConnectionPoolTypeEnabled();
     void setSwitchConnectionPoolTypeEnabled(bool value);
 
+    /// <summary>
+    /// 数据库代理路由模式，默认为权重负载模式。  取值范围: - 0，表示权重负载模式; - 1，表示负载均衡模式（数据库主节点不接受读请求）； - 2，表示负载均衡模式（数据库主节点接受读请求）。
+    /// </summary>
+
+    int32_t getRouteMode() const;
+    bool routeModeIsSet() const;
+    void unsetrouteMode();
+    void setRouteMode(int32_t value);
+
+    /// <summary>
+    /// 数据库代理版本是否支持负载均衡模式。  取值范围: - true 支持; - false 不支持。
+    /// </summary>
+
+    bool isBalanceRouteModeEnabled() const;
+    bool balanceRouteModeEnabledIsSet() const;
+    void unsetbalanceRouteModeEnabled();
+    void setBalanceRouteModeEnabled(bool value);
+
 
 protected:
     std::string poolId_;
@@ -240,6 +258,10 @@ protected:
     bool connectionPoolTypeIsSet_;
     bool switchConnectionPoolTypeEnabled_;
     bool switchConnectionPoolTypeEnabledIsSet_;
+    int32_t routeMode_;
+    bool routeModeIsSet_;
+    bool balanceRouteModeEnabled_;
+    bool balanceRouteModeEnabledIsSet_;
 
 };
 

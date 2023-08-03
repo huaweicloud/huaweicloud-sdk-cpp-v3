@@ -1,3 +1,138 @@
+# 3.1.45 2023-08-03
+
+### HuaweiCloud SDK RDS
+
+- _Features_
+  - Support `RDS`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK CDN
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowDomainDetailByName**
+    - changes of response param
+      - `- domain.sources.weight`
+      - `* domain.sources: list<SourcesConfig> -> list<SourcesDomainConfig>`
+  - **ShowDomainFullConfig**
+    - changes of response param
+      - `+ configs.remark`
+      - `+ configs.ip_frequency_limit`
+      - `+ configs.hsts`
+      - `+ configs.quic`
+      - `+ configs.url_auth.inherit_config`
+      - `+ configs.sources.bucket_access_key`
+      - `+ configs.sources.bucket_secret_key`
+      - `+ configs.sources.bucket_region`
+      - `+ configs.sources.bucket_name`
+      - `+ configs.request_limit_rules.priority`
+      - `+ configs.request_limit_rules.match_type`
+      - `+ configs.request_limit_rules.match_value`
+  - **UpdateDomainFullConfig**
+    - changes of request param
+      - `+ configs.remark`
+      - `+ configs.ip_frequency_limit`
+      - `+ configs.hsts`
+      - `+ configs.quic`
+      - `+ configs.url_auth.inherit_config`
+      - `+ configs.sources.bucket_access_key`
+      - `+ configs.sources.bucket_secret_key`
+      - `+ configs.sources.bucket_region`
+      - `+ configs.sources.bucket_name`
+      - `+ configs.request_limit_rules.priority`
+      - `+ configs.request_limit_rules.match_type`
+      - `+ configs.request_limit_rules.match_value`
+
+### HuaweiCloud SDK CTS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **DeleteTracker**
+    - changes of request param
+      - `+ tracker_type: enum value [system]`
+
+### HuaweiCloud SDK GaussDB
+
+- _Features_
+  - Support the interface `ModifyGaussMySqlProxyRouteMode`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowGaussMySqlEngineVersion**
+    - changes of response param
+      - `+ datastores.version`
+      - `+ datastores.kernel_version`
+  - **CreateGaussMySqlProxy**
+    - changes of request param
+      - `+ route_mode`
+  - **CreateGaussMySqlInstance**
+    - changes of request param
+      - `+ datastore.kernel_version`
+    - changes of response param
+      - `+ instance.datastore.kernel_version`
+  - **ShowGaussMySqlBackupList**
+    - changes of response param
+      - `+ backups.datastore.kernel_version`
+  - **ShowGaussMySqlProxyList**
+    - changes of response param
+      - `+ proxy_list.proxy.route_mode`
+      - `+ proxy_list.proxy.balance_route_mode_enabled`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListInstances**
+    - changes of response param
+      - `+ instances.backup_used_space`
+  - **ListComponentInfos**
+    - changes of request param
+      - `+ component_type`
+      - `+ availability_zone_id`
+    - changes of response param
+      - `+ nodes.name`
+      - `+ nodes.availability_zone_id`
+      - `+ nodes.description`
+      - `+ nodes.status`
+      - `+ nodes.components.distributed_id`
+  - **ListInstancesDetails**
+    - changes of response param
+      - `+ instances.backup_used_space`
+
+### HuaweiCloud SDK VPC
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListPorts**
+    - changes of request param
+      - `+ enable_efi`
+    - changes of response param
+      - `+ ports.enable_efi`
+  - **CreatePort**
+    - changes of response param
+      - `+ port.enable_efi`
+  - **ShowPort**
+    - changes of response param
+      - `+ port.enable_efi`
+  - **UpdatePort**
+    - changes of response param
+      - `+ port.enable_efi`
+
 # 3.1.44 2023-07-27
 
 ### HuaweiCloud SDK DRS

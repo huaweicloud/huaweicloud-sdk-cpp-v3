@@ -19,6 +19,8 @@ Components::Components()
     roleIsSet_ = false;
     status_ = "";
     statusIsSet_ = false;
+    distributedId_ = "";
+    distributedIdIsSet_ = false;
 }
 
 Components::~Components() = default;
@@ -39,6 +41,9 @@ web::json::value Components::toJson() const
     }
     if(statusIsSet_) {
         val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
+    }
+    if(distributedIdIsSet_) {
+        val[utility::conversions::to_string_t("distributed_id")] = ModelBase::toJson(distributedId_);
     }
 
     return val;
@@ -73,6 +78,15 @@ bool Components::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("distributed_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("distributed_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDistributedId(refVal);
         }
     }
     return ok;
@@ -139,6 +153,27 @@ bool Components::statusIsSet() const
 void Components::unsetstatus()
 {
     statusIsSet_ = false;
+}
+
+std::string Components::getDistributedId() const
+{
+    return distributedId_;
+}
+
+void Components::setDistributedId(const std::string& value)
+{
+    distributedId_ = value;
+    distributedIdIsSet_ = true;
+}
+
+bool Components::distributedIdIsSet() const
+{
+    return distributedIdIsSet_;
+}
+
+void Components::unsetdistributedId()
+{
+    distributedIdIsSet_ = false;
 }
 
 }

@@ -243,6 +243,15 @@ public:
     void unsetzoneId();
     void setZoneId(const std::string& value);
 
+    /// <summary>
+    /// 功能说明：是否使能efi，使能则表示端口支持vRoCE能力，默认为false
+    /// </summary>
+
+    bool isEnableEfi() const;
+    bool enableEfiIsSet() const;
+    void unsetenableEfi();
+    void setEnableEfi(bool value);
+
 
 protected:
     std::string id_;
@@ -289,6 +298,8 @@ protected:
     bool portSecurityEnabledIsSet_;
     std::string zoneId_;
     bool zoneIdIsSet_;
+    bool enableEfi_;
+    bool enableEfiIsSet_;
 
 };
 

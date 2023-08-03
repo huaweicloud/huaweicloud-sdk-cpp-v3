@@ -21,6 +21,10 @@ ListComponentInfosRequest::ListComponentInfosRequest()
     offsetIsSet_ = false;
     limit_ = 0;
     limitIsSet_ = false;
+    componentType_ = "";
+    componentTypeIsSet_ = false;
+    availabilityZoneId_ = "";
+    availabilityZoneIdIsSet_ = false;
 }
 
 ListComponentInfosRequest::~ListComponentInfosRequest() = default;
@@ -44,6 +48,12 @@ web::json::value ListComponentInfosRequest::toJson() const
     }
     if(limitIsSet_) {
         val[utility::conversions::to_string_t("limit")] = ModelBase::toJson(limit_);
+    }
+    if(componentTypeIsSet_) {
+        val[utility::conversions::to_string_t("component_type")] = ModelBase::toJson(componentType_);
+    }
+    if(availabilityZoneIdIsSet_) {
+        val[utility::conversions::to_string_t("availability_zone_id")] = ModelBase::toJson(availabilityZoneId_);
     }
 
     return val;
@@ -87,6 +97,24 @@ bool ListComponentInfosRequest::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLimit(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("component_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("component_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setComponentType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("availability_zone_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("availability_zone_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAvailabilityZoneId(refVal);
         }
     }
     return ok;
@@ -174,6 +202,48 @@ bool ListComponentInfosRequest::limitIsSet() const
 void ListComponentInfosRequest::unsetlimit()
 {
     limitIsSet_ = false;
+}
+
+std::string ListComponentInfosRequest::getComponentType() const
+{
+    return componentType_;
+}
+
+void ListComponentInfosRequest::setComponentType(const std::string& value)
+{
+    componentType_ = value;
+    componentTypeIsSet_ = true;
+}
+
+bool ListComponentInfosRequest::componentTypeIsSet() const
+{
+    return componentTypeIsSet_;
+}
+
+void ListComponentInfosRequest::unsetcomponentType()
+{
+    componentTypeIsSet_ = false;
+}
+
+std::string ListComponentInfosRequest::getAvailabilityZoneId() const
+{
+    return availabilityZoneId_;
+}
+
+void ListComponentInfosRequest::setAvailabilityZoneId(const std::string& value)
+{
+    availabilityZoneId_ = value;
+    availabilityZoneIdIsSet_ = true;
+}
+
+bool ListComponentInfosRequest::availabilityZoneIdIsSet() const
+{
+    return availabilityZoneIdIsSet_;
+}
+
+void ListComponentInfosRequest::unsetavailabilityZoneId()
+{
+    availabilityZoneIdIsSet_ = false;
 }
 
 }

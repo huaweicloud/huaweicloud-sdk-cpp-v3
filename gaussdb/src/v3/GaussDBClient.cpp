@@ -1689,6 +1689,50 @@ std::shared_ptr<ListScheduleJobsResponse> GaussDBClient::listScheduleJobs(ListSc
 
     return localVarResult;
 }
+std::shared_ptr<ModifyGaussMySqlProxyRouteModeResponse> GaussDBClient::modifyGaussMySqlProxyRouteMode(ModifyGaussMySqlProxyRouteModeRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/route-mode";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+    localVarPathParams["proxy_id"] = parameterToString(request.getProxyId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+
+    std::shared_ptr<ModifyGaussMySqlProxyRouteModeResponse> localVarResult = std::make_shared<ModifyGaussMySqlProxyRouteModeResponse>();
+
+    if (!res->getHttpBody().empty()) {
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ResetGaussMySqlDatabasePasswordResponse> GaussDBClient::resetGaussMySqlDatabasePassword(ResetGaussMySqlDatabasePasswordRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/db-users/password";
@@ -3717,10 +3761,18 @@ std::string GaussDBClient::parameterToString(double value)
     return toString(value);
 }
 
+std::string GaussDBClient::parameterToString(const Object& obj)
+{
+    auto val = obj.toJson();
+    std::string value;
+    ModelBase::fromJson(val, value);
+    return value;
+}
 std::string GaussDBClient::parameterToString(const utility::datetime &value)
 {
     return utility::conversions::to_utf8string(value.to_string(utility::datetime::ISO_8601));
 }
+
 }
 }
 }

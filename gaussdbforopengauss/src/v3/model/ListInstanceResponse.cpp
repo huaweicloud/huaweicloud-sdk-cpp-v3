@@ -63,6 +63,8 @@ ListInstanceResponse::ListInstanceResponse()
     timeZone_ = "";
     timeZoneIsSet_ = false;
     tagsIsSet_ = false;
+    backupUsedSpace_ = "";
+    backupUsedSpaceIsSet_ = false;
 }
 
 ListInstanceResponse::~ListInstanceResponse() = default;
@@ -164,6 +166,9 @@ web::json::value ListInstanceResponse::toJson() const
     }
     if(tagsIsSet_) {
         val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
+    }
+    if(backupUsedSpaceIsSet_) {
+        val[utility::conversions::to_string_t("backup_used_space")] = ModelBase::toJson(backupUsedSpace_);
     }
 
     return val;
@@ -441,6 +446,15 @@ bool ListInstanceResponse::fromJson(const web::json::value& val)
             std::vector<Object> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTags(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("backup_used_space"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("backup_used_space"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBackupUsedSpace(refVal);
         }
     }
     return ok;
@@ -1074,6 +1088,27 @@ bool ListInstanceResponse::tagsIsSet() const
 void ListInstanceResponse::unsettags()
 {
     tagsIsSet_ = false;
+}
+
+std::string ListInstanceResponse::getBackupUsedSpace() const
+{
+    return backupUsedSpace_;
+}
+
+void ListInstanceResponse::setBackupUsedSpace(const std::string& value)
+{
+    backupUsedSpace_ = value;
+    backupUsedSpaceIsSet_ = true;
+}
+
+bool ListInstanceResponse::backupUsedSpaceIsSet() const
+{
+    return backupUsedSpaceIsSet_;
+}
+
+void ListInstanceResponse::unsetbackupUsedSpace()
+{
+    backupUsedSpaceIsSet_ = false;
 }
 
 }

@@ -57,7 +57,7 @@ public:
     void setIpOrDomain(const std::string& value);
 
     /// <summary>
-    /// obs桶类型， “private”： 私有桶， “public”： 公有桶。
+    /// OBS桶类型： - “private”， 私有桶： - “public”，公有桶。
     /// </summary>
 
     std::string getObsBucketType() const;

@@ -31,6 +31,14 @@ SourcesConfig::SourcesConfig()
     hostNameIsSet_ = false;
     obsBucketType_ = "";
     obsBucketTypeIsSet_ = false;
+    bucketAccessKey_ = "";
+    bucketAccessKeyIsSet_ = false;
+    bucketSecretKey_ = "";
+    bucketSecretKeyIsSet_ = false;
+    bucketRegion_ = "";
+    bucketRegionIsSet_ = false;
+    bucketName_ = "";
+    bucketNameIsSet_ = false;
 }
 
 SourcesConfig::~SourcesConfig() = default;
@@ -69,6 +77,18 @@ web::json::value SourcesConfig::toJson() const
     }
     if(obsBucketTypeIsSet_) {
         val[utility::conversions::to_string_t("obs_bucket_type")] = ModelBase::toJson(obsBucketType_);
+    }
+    if(bucketAccessKeyIsSet_) {
+        val[utility::conversions::to_string_t("bucket_access_key")] = ModelBase::toJson(bucketAccessKey_);
+    }
+    if(bucketSecretKeyIsSet_) {
+        val[utility::conversions::to_string_t("bucket_secret_key")] = ModelBase::toJson(bucketSecretKey_);
+    }
+    if(bucketRegionIsSet_) {
+        val[utility::conversions::to_string_t("bucket_region")] = ModelBase::toJson(bucketRegion_);
+    }
+    if(bucketNameIsSet_) {
+        val[utility::conversions::to_string_t("bucket_name")] = ModelBase::toJson(bucketName_);
     }
 
     return val;
@@ -157,6 +177,42 @@ bool SourcesConfig::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setObsBucketType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("bucket_access_key"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("bucket_access_key"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBucketAccessKey(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("bucket_secret_key"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("bucket_secret_key"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBucketSecretKey(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("bucket_region"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("bucket_region"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBucketRegion(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("bucket_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("bucket_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBucketName(refVal);
         }
     }
     return ok;
@@ -349,6 +405,90 @@ bool SourcesConfig::obsBucketTypeIsSet() const
 void SourcesConfig::unsetobsBucketType()
 {
     obsBucketTypeIsSet_ = false;
+}
+
+std::string SourcesConfig::getBucketAccessKey() const
+{
+    return bucketAccessKey_;
+}
+
+void SourcesConfig::setBucketAccessKey(const std::string& value)
+{
+    bucketAccessKey_ = value;
+    bucketAccessKeyIsSet_ = true;
+}
+
+bool SourcesConfig::bucketAccessKeyIsSet() const
+{
+    return bucketAccessKeyIsSet_;
+}
+
+void SourcesConfig::unsetbucketAccessKey()
+{
+    bucketAccessKeyIsSet_ = false;
+}
+
+std::string SourcesConfig::getBucketSecretKey() const
+{
+    return bucketSecretKey_;
+}
+
+void SourcesConfig::setBucketSecretKey(const std::string& value)
+{
+    bucketSecretKey_ = value;
+    bucketSecretKeyIsSet_ = true;
+}
+
+bool SourcesConfig::bucketSecretKeyIsSet() const
+{
+    return bucketSecretKeyIsSet_;
+}
+
+void SourcesConfig::unsetbucketSecretKey()
+{
+    bucketSecretKeyIsSet_ = false;
+}
+
+std::string SourcesConfig::getBucketRegion() const
+{
+    return bucketRegion_;
+}
+
+void SourcesConfig::setBucketRegion(const std::string& value)
+{
+    bucketRegion_ = value;
+    bucketRegionIsSet_ = true;
+}
+
+bool SourcesConfig::bucketRegionIsSet() const
+{
+    return bucketRegionIsSet_;
+}
+
+void SourcesConfig::unsetbucketRegion()
+{
+    bucketRegionIsSet_ = false;
+}
+
+std::string SourcesConfig::getBucketName() const
+{
+    return bucketName_;
+}
+
+void SourcesConfig::setBucketName(const std::string& value)
+{
+    bucketName_ = value;
+    bucketNameIsSet_ = true;
+}
+
+bool SourcesConfig::bucketNameIsSet() const
+{
+    return bucketNameIsSet_;
+}
+
+void SourcesConfig::unsetbucketName()
+{
+    bucketNameIsSet_ = false;
 }
 
 }

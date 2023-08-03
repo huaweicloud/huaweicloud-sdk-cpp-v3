@@ -37,6 +37,8 @@ ListPortsRequest::ListPortsRequest()
     fixedIpsIsSet_ = false;
     enterpriseProjectId_ = "";
     enterpriseProjectIdIsSet_ = false;
+    enableEfi_ = false;
+    enableEfiIsSet_ = false;
 }
 
 ListPortsRequest::~ListPortsRequest() = default;
@@ -87,6 +89,9 @@ web::json::value ListPortsRequest::toJson() const
     }
     if(enterpriseProjectIdIsSet_) {
         val[utility::conversions::to_string_t("enterprise_project_id")] = ModelBase::toJson(enterpriseProjectId_);
+    }
+    if(enableEfiIsSet_) {
+        val[utility::conversions::to_string_t("enable_efi")] = ModelBase::toJson(enableEfi_);
     }
 
     return val;
@@ -211,6 +216,15 @@ bool ListPortsRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEnterpriseProjectId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("enable_efi"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enable_efi"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEnableEfi(refVal);
         }
     }
     return ok;
@@ -487,6 +501,27 @@ bool ListPortsRequest::enterpriseProjectIdIsSet() const
 void ListPortsRequest::unsetenterpriseProjectId()
 {
     enterpriseProjectIdIsSet_ = false;
+}
+
+bool ListPortsRequest::isEnableEfi() const
+{
+    return enableEfi_;
+}
+
+void ListPortsRequest::setEnableEfi(bool value)
+{
+    enableEfi_ = value;
+    enableEfiIsSet_ = true;
+}
+
+bool ListPortsRequest::enableEfiIsSet() const
+{
+    return enableEfiIsSet_;
+}
+
+void ListPortsRequest::unsetenableEfi()
+{
+    enableEfiIsSet_ = false;
 }
 
 }

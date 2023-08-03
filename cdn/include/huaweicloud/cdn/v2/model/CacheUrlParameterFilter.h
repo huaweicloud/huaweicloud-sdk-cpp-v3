@@ -39,7 +39,7 @@ public:
     /// CacheUrlParameterFilter members
 
     /// <summary>
-    /// 缓存URL参数操作类型, full_url：缓存所有参数，ignore_url_params：忽略所有参数，del_params：忽略指定URL参数，reserve_params：保留指定URL参数。  &gt;   本接口参数有调整，参数替换如下： &gt;   - del_params替代del_args。 &gt;   - reserve_params替代reserve_args。
+    /// 缓存URL参数操作类型： - full_url：缓存所有参数； - ignore_url_params：忽略所有参数； - del_params：忽略指定URL参数； - reserve_params：保留指定URL参数。   &gt; 本接口参数有调整，参数替换如下：   &gt; - del_params替代del_args。   &gt; - reserve_params替代reserve_args。
     /// </summary>
 
     std::string getType() const;

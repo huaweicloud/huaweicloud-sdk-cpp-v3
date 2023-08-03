@@ -1,3 +1,138 @@
+# 3.1.45 2023-08-03
+
+### HuaweiCloud SDK RDS
+
+- _新增特性_
+  - 支持云数据库服务
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK CDN
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowDomainDetailByName**
+    - 响应参数变更
+      - `- domain.sources.weight`
+      - `* domain.sources: list<SourcesConfig> -> list<SourcesDomainConfig>`
+  - **ShowDomainFullConfig**
+    - 响应参数变更
+      - `+ configs.remark`
+      - `+ configs.ip_frequency_limit`
+      - `+ configs.hsts`
+      - `+ configs.quic`
+      - `+ configs.url_auth.inherit_config`
+      - `+ configs.sources.bucket_access_key`
+      - `+ configs.sources.bucket_secret_key`
+      - `+ configs.sources.bucket_region`
+      - `+ configs.sources.bucket_name`
+      - `+ configs.request_limit_rules.priority`
+      - `+ configs.request_limit_rules.match_type`
+      - `+ configs.request_limit_rules.match_value`
+  - **UpdateDomainFullConfig**
+    - 请求参数变更
+      - `+ configs.remark`
+      - `+ configs.ip_frequency_limit`
+      - `+ configs.hsts`
+      - `+ configs.quic`
+      - `+ configs.url_auth.inherit_config`
+      - `+ configs.sources.bucket_access_key`
+      - `+ configs.sources.bucket_secret_key`
+      - `+ configs.sources.bucket_region`
+      - `+ configs.sources.bucket_name`
+      - `+ configs.request_limit_rules.priority`
+      - `+ configs.request_limit_rules.match_type`
+      - `+ configs.request_limit_rules.match_value`
+
+### HuaweiCloud SDK CTS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **DeleteTracker**
+    - 请求参数变更
+      - `+ tracker_type: enum value [system]`
+
+### HuaweiCloud SDK GaussDB
+
+- _新增特性_
+  - 支持接口`ModifyGaussMySqlProxyRouteMode`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowGaussMySqlEngineVersion**
+    - 响应参数变更
+      - `+ datastores.version`
+      - `+ datastores.kernel_version`
+  - **CreateGaussMySqlProxy**
+    - 请求参数变更
+      - `+ route_mode`
+  - **CreateGaussMySqlInstance**
+    - 请求参数变更
+      - `+ datastore.kernel_version`
+    - 响应参数变更
+      - `+ instance.datastore.kernel_version`
+  - **ShowGaussMySqlBackupList**
+    - 响应参数变更
+      - `+ backups.datastore.kernel_version`
+  - **ShowGaussMySqlProxyList**
+    - 响应参数变更
+      - `+ proxy_list.proxy.route_mode`
+      - `+ proxy_list.proxy.balance_route_mode_enabled`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListInstances**
+    - 响应参数变更
+      - `+ instances.backup_used_space`
+  - **ListComponentInfos**
+    - 请求参数变更
+      - `+ component_type`
+      - `+ availability_zone_id`
+    - 响应参数变更
+      - `+ nodes.name`
+      - `+ nodes.availability_zone_id`
+      - `+ nodes.description`
+      - `+ nodes.status`
+      - `+ nodes.components.distributed_id`
+  - **ListInstancesDetails**
+    - 响应参数变更
+      - `+ instances.backup_used_space`
+
+### HuaweiCloud SDK VPC
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListPorts**
+    - 请求参数变更
+      - `+ enable_efi`
+    - 响应参数变更
+      - `+ ports.enable_efi`
+  - **CreatePort**
+    - 响应参数变更
+      - `+ port.enable_efi`
+  - **ShowPort**
+    - 响应参数变更
+      - `+ port.enable_efi`
+  - **UpdatePort**
+    - 响应参数变更
+      - `+ port.enable_efi`
+
 # 3.1.44 2023-07-27
 
 ### HuaweiCloud SDK DRS

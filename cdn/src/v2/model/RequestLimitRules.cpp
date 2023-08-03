@@ -15,6 +15,12 @@ RequestLimitRules::RequestLimitRules()
 {
     status_ = "";
     statusIsSet_ = false;
+    priority_ = 0;
+    priorityIsSet_ = false;
+    matchType_ = "";
+    matchTypeIsSet_ = false;
+    matchValue_ = "";
+    matchValueIsSet_ = false;
     type_ = "";
     typeIsSet_ = false;
     limitRateAfter_ = 0L;
@@ -35,6 +41,15 @@ web::json::value RequestLimitRules::toJson() const
 
     if(statusIsSet_) {
         val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
+    }
+    if(priorityIsSet_) {
+        val[utility::conversions::to_string_t("priority")] = ModelBase::toJson(priority_);
+    }
+    if(matchTypeIsSet_) {
+        val[utility::conversions::to_string_t("match_type")] = ModelBase::toJson(matchType_);
+    }
+    if(matchValueIsSet_) {
+        val[utility::conversions::to_string_t("match_value")] = ModelBase::toJson(matchValue_);
     }
     if(typeIsSet_) {
         val[utility::conversions::to_string_t("type")] = ModelBase::toJson(type_);
@@ -60,6 +75,33 @@ bool RequestLimitRules::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("priority"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("priority"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPriority(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("match_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("match_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMatchType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("match_value"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("match_value"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMatchValue(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("type"))) {
@@ -111,6 +153,69 @@ bool RequestLimitRules::statusIsSet() const
 void RequestLimitRules::unsetstatus()
 {
     statusIsSet_ = false;
+}
+
+int32_t RequestLimitRules::getPriority() const
+{
+    return priority_;
+}
+
+void RequestLimitRules::setPriority(int32_t value)
+{
+    priority_ = value;
+    priorityIsSet_ = true;
+}
+
+bool RequestLimitRules::priorityIsSet() const
+{
+    return priorityIsSet_;
+}
+
+void RequestLimitRules::unsetpriority()
+{
+    priorityIsSet_ = false;
+}
+
+std::string RequestLimitRules::getMatchType() const
+{
+    return matchType_;
+}
+
+void RequestLimitRules::setMatchType(const std::string& value)
+{
+    matchType_ = value;
+    matchTypeIsSet_ = true;
+}
+
+bool RequestLimitRules::matchTypeIsSet() const
+{
+    return matchTypeIsSet_;
+}
+
+void RequestLimitRules::unsetmatchType()
+{
+    matchTypeIsSet_ = false;
+}
+
+std::string RequestLimitRules::getMatchValue() const
+{
+    return matchValue_;
+}
+
+void RequestLimitRules::setMatchValue(const std::string& value)
+{
+    matchValue_ = value;
+    matchValueIsSet_ = true;
+}
+
+bool RequestLimitRules::matchValueIsSet() const
+{
+    return matchValueIsSet_;
+}
+
+void RequestLimitRules::unsetmatchValue()
+{
+    matchValueIsSet_ = false;
 }
 
 std::string RequestLimitRules::getType() const

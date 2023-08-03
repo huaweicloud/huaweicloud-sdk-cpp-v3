@@ -23,6 +23,7 @@ UrlAuthGetBody::UrlAuthGetBody()
     signMethodIsSet_ = false;
     matchType_ = "";
     matchTypeIsSet_ = false;
+    inheritConfigIsSet_ = false;
     key_ = "";
     keyIsSet_ = false;
     backupKey_ = "";
@@ -57,6 +58,9 @@ web::json::value UrlAuthGetBody::toJson() const
     }
     if(matchTypeIsSet_) {
         val[utility::conversions::to_string_t("match_type")] = ModelBase::toJson(matchType_);
+    }
+    if(inheritConfigIsSet_) {
+        val[utility::conversions::to_string_t("inherit_config")] = ModelBase::toJson(inheritConfig_);
     }
     if(keyIsSet_) {
         val[utility::conversions::to_string_t("key")] = ModelBase::toJson(key_);
@@ -121,6 +125,15 @@ bool UrlAuthGetBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setMatchType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("inherit_config"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("inherit_config"));
+        if(!fieldValue.is_null())
+        {
+            InheritConfigQuery refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setInheritConfig(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("key"))) {
@@ -265,6 +278,27 @@ bool UrlAuthGetBody::matchTypeIsSet() const
 void UrlAuthGetBody::unsetmatchType()
 {
     matchTypeIsSet_ = false;
+}
+
+InheritConfigQuery UrlAuthGetBody::getInheritConfig() const
+{
+    return inheritConfig_;
+}
+
+void UrlAuthGetBody::setInheritConfig(const InheritConfigQuery& value)
+{
+    inheritConfig_ = value;
+    inheritConfigIsSet_ = true;
+}
+
+bool UrlAuthGetBody::inheritConfigIsSet() const
+{
+    return inheritConfigIsSet_;
+}
+
+void UrlAuthGetBody::unsetinheritConfig()
+{
+    inheritConfigIsSet_ = false;
 }
 
 std::string UrlAuthGetBody::getKey() const

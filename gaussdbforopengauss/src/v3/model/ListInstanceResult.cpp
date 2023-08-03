@@ -65,6 +65,8 @@ ListInstanceResult::ListInstanceResult()
     tagsIsSet_ = false;
     diskUsage_ = "";
     diskUsageIsSet_ = false;
+    backupUsedSpace_ = "";
+    backupUsedSpaceIsSet_ = false;
 }
 
 ListInstanceResult::~ListInstanceResult() = default;
@@ -169,6 +171,9 @@ web::json::value ListInstanceResult::toJson() const
     }
     if(diskUsageIsSet_) {
         val[utility::conversions::to_string_t("disk_usage")] = ModelBase::toJson(diskUsage_);
+    }
+    if(backupUsedSpaceIsSet_) {
+        val[utility::conversions::to_string_t("backup_used_space")] = ModelBase::toJson(backupUsedSpace_);
     }
 
     return val;
@@ -455,6 +460,15 @@ bool ListInstanceResult::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDiskUsage(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("backup_used_space"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("backup_used_space"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBackupUsedSpace(refVal);
         }
     }
     return ok;
@@ -1109,6 +1123,27 @@ bool ListInstanceResult::diskUsageIsSet() const
 void ListInstanceResult::unsetdiskUsage()
 {
     diskUsageIsSet_ = false;
+}
+
+std::string ListInstanceResult::getBackupUsedSpace() const
+{
+    return backupUsedSpace_;
+}
+
+void ListInstanceResult::setBackupUsedSpace(const std::string& value)
+{
+    backupUsedSpace_ = value;
+    backupUsedSpaceIsSet_ = true;
+}
+
+bool ListInstanceResult::backupUsedSpaceIsSet() const
+{
+    return backupUsedSpaceIsSet_;
+}
+
+void ListInstanceResult::unsetbackupUsedSpace()
+{
+    backupUsedSpaceIsSet_ = false;
 }
 
 }

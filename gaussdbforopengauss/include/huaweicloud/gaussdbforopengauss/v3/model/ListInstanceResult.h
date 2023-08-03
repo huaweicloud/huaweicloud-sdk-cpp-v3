@@ -326,6 +326,15 @@ public:
     void unsetdiskUsage();
     void setDiskUsage(const std::string& value);
 
+    /// <summary>
+    /// 备份空间使用量，单位KB。
+    /// </summary>
+
+    std::string getBackupUsedSpace() const;
+    bool backupUsedSpaceIsSet() const;
+    void unsetbackupUsedSpace();
+    void setBackupUsedSpace(const std::string& value);
+
 
 protected:
     std::string id_;
@@ -390,6 +399,8 @@ protected:
     bool tagsIsSet_;
     std::string diskUsage_;
     bool diskUsageIsSet_;
+    std::string backupUsedSpace_;
+    bool backupUsedSpaceIsSet_;
 
 };
 

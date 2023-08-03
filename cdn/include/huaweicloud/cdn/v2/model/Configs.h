@@ -10,20 +10,23 @@
 #include <huaweicloud/cdn/v2/model/ForceRedirectConfig.h>
 #include <huaweicloud/cdn/v2/model/HttpResponseHeader.h>
 #include <huaweicloud/cdn/v2/model/Compress.h>
+#include <huaweicloud/cdn/v2/model/WebSocketSeek.h>
+#include <huaweicloud/cdn/v2/model/IpFrequencyLimit.h>
+#include <huaweicloud/cdn/v2/model/RequestLimitRules.h>
+#include <huaweicloud/cdn/v2/model/VideoSeek.h>
+#include <huaweicloud/cdn/v2/model/Quic.h>
+#include <huaweicloud/cdn/v2/model/IpFilter.h>
 #include <string>
 #include <huaweicloud/cdn/v2/model/OriginRequestHeader.h>
 #include <huaweicloud/cdn/v2/model/CommonRemoteAuth.h>
-#include <huaweicloud/cdn/v2/model/WebSocketSeek.h>
+#include <huaweicloud/cdn/v2/model/Hsts.h>
 #include <huaweicloud/cdn/v2/model/ErrorCodeRedirectRules.h>
 #include <vector>
-#include <huaweicloud/cdn/v2/model/RequestLimitRules.h>
 #include <huaweicloud/cdn/v2/model/UrlAuth.h>
-#include <huaweicloud/cdn/v2/model/VideoSeek.h>
 #include <huaweicloud/cdn/v2/model/UserAgentFilter.h>
 #include <huaweicloud/cdn/v2/model/RefererConfig.h>
 #include <huaweicloud/cdn/v2/model/FlexibleOrigins.h>
 #include <huaweicloud/cdn/v2/model/SourcesConfig.h>
-#include <huaweicloud/cdn/v2/model/IpFilter.h>
 #include <huaweicloud/cdn/v2/model/OriginRequestUrlRewrite.h>
 #include <huaweicloud/cdn/v2/model/ErrorCodeCache.h>
 #include <huaweicloud/cdn/v2/model/CacheRules.h>
@@ -60,7 +63,7 @@ public:
     /// Configs members
 
     /// <summary>
-    /// 业务类型，web：网站加速，download：文件下载加速，video：点播加速。  &gt; 暂不支持“全站加速”变更为其它业务类型。
+    /// 业务类型： - web：网站加速； - download：文件下载加速； - video：点播加速。  &gt; 暂不支持“全站加速”变更为其它业务类型。
     /// </summary>
 
     std::string getBusinessType() const;
@@ -69,13 +72,22 @@ public:
     void setBusinessType(const std::string& value);
 
     /// <summary>
-    /// 服务区域，mainland_china：中国大陆，global：全球，outside_mainland_china：中国大陆境外。  &gt; 暂不支持“中国大陆”与“中国大陆境外”互相直接切换。
+    /// 服务区域： - mainland_china：中国大陆； - global：全球； - outside_mainland_china：中国大陆境外。  &gt; 暂不支持“中国大陆”与“中国大陆境外”互相直接切换。
     /// </summary>
 
     std::string getServiceArea() const;
     bool serviceAreaIsSet() const;
     void unsetserviceArea();
     void setServiceArea(const std::string& value);
+
+    /// <summary>
+    /// 给域名添加备注，字符长度范围0-200。
+    /// </summary>
+
+    std::string getRemark() const;
+    bool remarkIsSet() const;
+    void unsetremark();
+    void setRemark(const std::string& value);
 
     /// <summary>
     /// 回源请求头改写 该功能将覆盖原有配置（清空之前的配置），在使用此接口时，请上传全量头部信息。
@@ -303,6 +315,33 @@ public:
     void setRequestLimitRules(const std::vector<RequestLimitRules>& value);
 
     /// <summary>
+    /// 
+    /// </summary>
+
+    IpFrequencyLimit getIpFrequencyLimit() const;
+    bool ipFrequencyLimitIsSet() const;
+    void unsetipFrequencyLimit();
+    void setIpFrequencyLimit(const IpFrequencyLimit& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    Hsts getHsts() const;
+    bool hstsIsSet() const;
+    void unsethsts();
+    void setHsts(const Hsts& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    Quic getQuic() const;
+    bool quicIsSet() const;
+    void unsetquic();
+    void setQuic(const Quic& value);
+
+    /// <summary>
     /// 自定义错误页面。
     /// </summary>
 
@@ -317,6 +356,8 @@ protected:
     bool businessTypeIsSet_;
     std::string serviceArea_;
     bool serviceAreaIsSet_;
+    std::string remark_;
+    bool remarkIsSet_;
     std::vector<OriginRequestHeader> originRequestHeader_;
     bool originRequestHeaderIsSet_;
     std::vector<HttpResponseHeader> httpResponseHeader_;
@@ -367,6 +408,12 @@ protected:
     bool videoSeekIsSet_;
     std::vector<RequestLimitRules> requestLimitRules_;
     bool requestLimitRulesIsSet_;
+    IpFrequencyLimit ipFrequencyLimit_;
+    bool ipFrequencyLimitIsSet_;
+    Hsts hsts_;
+    bool hstsIsSet_;
+    Quic quic_;
+    bool quicIsSet_;
     std::vector<ErrorCodeRedirectRules> errorCodeRedirectRules_;
     bool errorCodeRedirectRulesIsSet_;
 

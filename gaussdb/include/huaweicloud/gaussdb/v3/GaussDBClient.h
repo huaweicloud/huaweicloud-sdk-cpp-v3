@@ -98,6 +98,9 @@
 #include <huaweicloud/gaussdb/v3/model/LtsLogSlowQueryRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ModifyAliasRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ModifyBindEipRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ModifyGaussMySqlProxyRouteModeRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ModifyGaussMySqlProxyRouteModeRequestBody.h>
+#include <huaweicloud/gaussdb/v3/model/ModifyGaussMySqlProxyRouteModeResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ModifyInternalIpRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ModifyOpsWindow.h>
 #include <huaweicloud/gaussdb/v3/model/ModifyPortRequest.h>
@@ -558,6 +561,14 @@ public:
     std::shared_ptr<ListScheduleJobsResponse> listScheduleJobs(
         ListScheduleJobsRequest &request
     );
+    // 设置读写分离路由模式
+    //
+    // 设置读写分离路由模式。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ModifyGaussMySqlProxyRouteModeResponse> modifyGaussMySqlProxyRouteMode(
+        ModifyGaussMySqlProxyRouteModeRequest &request
+    );
     // 修改数据库用户密码
     //
     // 修改云数据库 GaussDB(for MySQL)实例数据库用户密码。
@@ -864,7 +875,7 @@ public:
     );
     // 更改数据库代理连接池类型
     //
-    // 更改数据库代理连接池类型
+    // 更改数据库代理连接池类型。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateProxyConnectionPoolTypeResponse> updateProxyConnectionPoolType(
@@ -946,7 +957,9 @@ private:
     std::string parameterToString(int64_t value);
     std::string parameterToString(float value);
     std::string parameterToString(double value);
+    std::string parameterToString(const Object& obj);
     std::string parameterToString(const utility::datetime &value);
+
     template<class T>
     std::string parameterToString(const std::vector<T> &value)
     {

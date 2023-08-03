@@ -57,13 +57,22 @@ public:
     void setRole(const std::string& value);
 
     /// <summary>
-    /// 节点状态。
+    /// 组件状态。 Primary：该组件为主。 Normal：该组件状态正常。 Down：该组件处于宕机状态。 Standby：该组件为备。 StateFollower：该ETCD为备。 StateLeader：该ETCD为主。 StateCandidate：该ETCD为仲裁。
     /// </summary>
 
     std::string getStatus() const;
     bool statusIsSet() const;
     void unsetstatus();
     void setStatus(const std::string& value);
+
+    /// <summary>
+    /// 分组id，只有dn组件有分组id，用于区分是否是同一个分片下的组件。其他组件为空字符串。
+    /// </summary>
+
+    std::string getDistributedId() const;
+    bool distributedIdIsSet() const;
+    void unsetdistributedId();
+    void setDistributedId(const std::string& value);
 
 
 protected:
@@ -73,6 +82,8 @@ protected:
     bool roleIsSet_;
     std::string status_;
     bool statusIsSet_;
+    std::string distributedId_;
+    bool distributedIdIsSet_;
 
 };
 

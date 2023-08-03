@@ -7,6 +7,7 @@
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/cdn/v2/model/InheritConfigQuery.h>
 #include <string>
 
 namespace HuaweiCloud {
@@ -39,7 +40,7 @@ public:
     /// UrlAuthGetBody members
 
     /// <summary>
-    /// 是否开启URL鉴权，off：开启,on：关闭。
+    /// 是否开启URL鉴权，on：开启,off：关闭。
     /// </summary>
 
     std::string getStatus() const;
@@ -82,6 +83,15 @@ public:
     bool matchTypeIsSet() const;
     void unsetmatchType();
     void setMatchType(const std::string& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    InheritConfigQuery getInheritConfig() const;
+    bool inheritConfigIsSet() const;
+    void unsetinheritConfig();
+    void setInheritConfig(const InheritConfigQuery& value);
 
     /// <summary>
     /// 鉴权KEY。
@@ -131,6 +141,8 @@ protected:
     bool signMethodIsSet_;
     std::string matchType_;
     bool matchTypeIsSet_;
+    InheritConfigQuery inheritConfig_;
+    bool inheritConfigIsSet_;
     std::string key_;
     bool keyIsSet_;
     std::string backupKey_;

@@ -545,10 +545,18 @@ std::string EpsClient::parameterToString(double value)
     return toString(value);
 }
 
+std::string EpsClient::parameterToString(const Object& obj)
+{
+    auto val = obj.toJson();
+    std::string value;
+    ModelBase::fromJson(val, value);
+    return value;
+}
 std::string EpsClient::parameterToString(const utility::datetime &value)
 {
     return utility::conversions::to_utf8string(value.to_string(utility::datetime::ISO_8601));
 }
+
 }
 }
 }

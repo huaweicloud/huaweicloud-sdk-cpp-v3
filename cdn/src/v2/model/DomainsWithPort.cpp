@@ -141,7 +141,7 @@ bool DomainsWithPort::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sources"));
         if(!fieldValue.is_null())
         {
-            std::vector<SourcesConfig> refVal;
+            std::vector<SourcesDomainConfig> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSources(refVal);
         }
@@ -308,12 +308,12 @@ void DomainsWithPort::unsetcname()
     cnameIsSet_ = false;
 }
 
-std::vector<SourcesConfig>& DomainsWithPort::getSources()
+std::vector<SourcesDomainConfig>& DomainsWithPort::getSources()
 {
     return sources_;
 }
 
-void DomainsWithPort::setSources(const std::vector<SourcesConfig>& value)
+void DomainsWithPort::setSources(const std::vector<SourcesDomainConfig>& value)
 {
     sources_ = value;
     sourcesIsSet_ = true;

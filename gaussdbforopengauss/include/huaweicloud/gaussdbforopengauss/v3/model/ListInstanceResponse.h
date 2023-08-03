@@ -316,6 +316,15 @@ public:
     void unsettags();
     void setTags(const std::vector<Object>& value);
 
+    /// <summary>
+    /// 备份空间使用量，单位KB。
+    /// </summary>
+
+    std::string getBackupUsedSpace() const;
+    bool backupUsedSpaceIsSet() const;
+    void unsetbackupUsedSpace();
+    void setBackupUsedSpace(const std::string& value);
+
 
 protected:
     std::string id_;
@@ -378,6 +387,8 @@ protected:
     bool timeZoneIsSet_;
     std::vector<Object> tags_;
     bool tagsIsSet_;
+    std::string backupUsedSpace_;
+    bool backupUsedSpaceIsSet_;
 
 };
 

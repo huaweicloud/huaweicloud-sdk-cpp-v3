@@ -8,6 +8,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <huaweicloud/ocr/v1/model/MyanmarIdcardTranslationInfo.h>
 #include <vector>
 #include <huaweicloud/ocr/v1/model/MyanmarIdcardConfidence.h>
 
@@ -202,6 +203,15 @@ public:
     void unsetidcardType();
     void setIdcardType(const std::string& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    MyanmarIdcardTranslationInfo getTranslationInfo() const;
+    bool translationInfoIsSet() const;
+    void unsettranslationInfo();
+    void setTranslationInfo(const MyanmarIdcardTranslationInfo& value);
+
 
 protected:
     std::string side_;
@@ -240,6 +250,8 @@ protected:
     bool portraitLocationIsSet_;
     std::string idcardType_;
     bool idcardTypeIsSet_;
+    MyanmarIdcardTranslationInfo translationInfo_;
+    bool translationInfoIsSet_;
 
 };
 

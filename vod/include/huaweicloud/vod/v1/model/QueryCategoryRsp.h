@@ -73,7 +73,7 @@ protected:
     bool idIsSet_;
     std::string name_;
     bool nameIsSet_;
-    std::vector<QueryCategoryRsp> children_;
+    std::vector<QueryCategoryRsp>* children_;
     bool childrenIsSet_;
 
 };

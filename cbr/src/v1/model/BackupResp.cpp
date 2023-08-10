@@ -134,7 +134,7 @@ web::json::value BackupResp::toJson() const
         val[utility::conversions::to_string_t("provider_id")] = ModelBase::toJson(providerId_);
     }
     if(childrenIsSet_) {
-        val[utility::conversions::to_string_t("children")] = ModelBase::toJson(children_);
+        val[utility::conversions::to_string_t("children")] = ModelBase::toJson(*children_);
     }
 
     return val;
@@ -818,12 +818,12 @@ void BackupResp::unsetproviderId()
 
 std::vector<BackupResp>& BackupResp::getChildren()
 {
-    return children_;
+    return *children_;
 }
 
 void BackupResp::setChildren(const std::vector<BackupResp>& value)
 {
-    children_ = value;
+    *children_ = value;
     childrenIsSet_ = true;
 }
 

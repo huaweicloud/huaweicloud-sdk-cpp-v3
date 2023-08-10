@@ -296,7 +296,7 @@ protected:
     bool enterpriseProjectIdIsSet_;
     std::string providerId_;
     bool providerIdIsSet_;
-    std::vector<BackupResp> children_;
+    std::vector<BackupResp>* children_;
     bool childrenIsSet_;
 
 };

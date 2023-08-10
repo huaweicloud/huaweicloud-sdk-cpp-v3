@@ -47,10 +47,21 @@ public:
     void unsetsessionConsistence();
     void setSessionConsistence(const std::string& value);
 
+    /// <summary>
+    /// 一致性模式。默认值为空，此时以会话一致性参数session_consistence为准。 - session: 会话一致性 - global: 全局一致性 - eventual: 最终一致性
+    /// </summary>
+
+    std::string getConsistenceMode() const;
+    bool consistenceModeIsSet() const;
+    void unsetconsistenceMode();
+    void setConsistenceMode(const std::string& value);
+
 
 protected:
     std::string sessionConsistence_;
     bool sessionConsistenceIsSet_;
+    std::string consistenceMode_;
+    bool consistenceModeIsSet_;
 
 };
 

@@ -150,7 +150,7 @@ protected:
     bool instanceNameIsSet_;
     std::string dbName_;
     bool dbNameIsSet_;
-    std::vector<BaseEndpoint> sourceSharding_;
+    std::vector<BaseEndpoint>* sourceSharding_;
     bool sourceShardingIsSet_;
 
 };

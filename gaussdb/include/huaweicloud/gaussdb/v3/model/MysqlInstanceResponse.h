@@ -7,7 +7,7 @@
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/gaussdb/v3/model/MysqlDatastore.h>
+#include <huaweicloud/gaussdb/v3/model/MysqlDatastoreInRes.h>
 #include <string>
 #include <huaweicloud/gaussdb/v3/model/MysqlBackupStrategy.h>
 #include <huaweicloud/gaussdb/v3/model/MysqlChargeInfo.h>
@@ -72,10 +72,10 @@ public:
     /// 
     /// </summary>
 
-    MysqlDatastore getDatastore() const;
+    MysqlDatastoreInRes getDatastore() const;
     bool datastoreIsSet() const;
     void unsetdatastore();
-    void setDatastore(const MysqlDatastore& value);
+    void setDatastore(const MysqlDatastoreInRes& value);
 
     /// <summary>
     /// 实例类型，仅支持Cluster。
@@ -202,7 +202,7 @@ protected:
     bool nameIsSet_;
     std::string status_;
     bool statusIsSet_;
-    MysqlDatastore datastore_;
+    MysqlDatastoreInRes datastore_;
     bool datastoreIsSet_;
     std::string mode_;
     bool modeIsSet_;

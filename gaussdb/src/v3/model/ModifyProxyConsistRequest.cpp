@@ -15,6 +15,8 @@ ModifyProxyConsistRequest::ModifyProxyConsistRequest()
 {
     sessionConsistence_ = "";
     sessionConsistenceIsSet_ = false;
+    consistenceMode_ = "";
+    consistenceModeIsSet_ = false;
 }
 
 ModifyProxyConsistRequest::~ModifyProxyConsistRequest() = default;
@@ -29,6 +31,9 @@ web::json::value ModifyProxyConsistRequest::toJson() const
 
     if(sessionConsistenceIsSet_) {
         val[utility::conversions::to_string_t("session_consistence")] = ModelBase::toJson(sessionConsistence_);
+    }
+    if(consistenceModeIsSet_) {
+        val[utility::conversions::to_string_t("consistence_mode")] = ModelBase::toJson(consistenceMode_);
     }
 
     return val;
@@ -45,6 +50,15 @@ bool ModifyProxyConsistRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSessionConsistence(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("consistence_mode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("consistence_mode"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setConsistenceMode(refVal);
         }
     }
     return ok;
@@ -69,6 +83,27 @@ bool ModifyProxyConsistRequest::sessionConsistenceIsSet() const
 void ModifyProxyConsistRequest::unsetsessionConsistence()
 {
     sessionConsistenceIsSet_ = false;
+}
+
+std::string ModifyProxyConsistRequest::getConsistenceMode() const
+{
+    return consistenceMode_;
+}
+
+void ModifyProxyConsistRequest::setConsistenceMode(const std::string& value)
+{
+    consistenceMode_ = value;
+    consistenceModeIsSet_ = true;
+}
+
+bool ModifyProxyConsistRequest::consistenceModeIsSet() const
+{
+    return consistenceModeIsSet_;
+}
+
+void ModifyProxyConsistRequest::unsetconsistenceMode()
+{
+    consistenceModeIsSet_ = false;
 }
 
 }

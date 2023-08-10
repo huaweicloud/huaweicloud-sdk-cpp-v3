@@ -168,7 +168,7 @@ bool Backups::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("datastore"));
         if(!fieldValue.is_null())
         {
-            MysqlDatastore refVal;
+            MysqlDatastoreInBackup refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDatastore(refVal);
         }
@@ -371,12 +371,12 @@ void Backups::unsetsize()
     sizeIsSet_ = false;
 }
 
-MysqlDatastore Backups::getDatastore() const
+MysqlDatastoreInBackup Backups::getDatastore() const
 {
     return datastore_;
 }
 
-void Backups::setDatastore(const MysqlDatastore& value)
+void Backups::setDatastore(const MysqlDatastoreInBackup& value)
 {
     datastore_ = value;
     datastoreIsSet_ = true;

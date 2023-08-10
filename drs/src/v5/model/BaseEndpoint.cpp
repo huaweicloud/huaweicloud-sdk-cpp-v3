@@ -72,7 +72,7 @@ web::json::value BaseEndpoint::toJson() const
         val[utility::conversions::to_string_t("db_name")] = ModelBase::toJson(dbName_);
     }
     if(sourceShardingIsSet_) {
-        val[utility::conversions::to_string_t("source_sharding")] = ModelBase::toJson(sourceSharding_);
+        val[utility::conversions::to_string_t("source_sharding")] = ModelBase::toJson(*sourceSharding_);
     }
 
     return val;
@@ -366,12 +366,12 @@ void BaseEndpoint::unsetdbName()
 
 std::vector<BaseEndpoint>& BaseEndpoint::getSourceSharding()
 {
-    return sourceSharding_;
+    return *sourceSharding_;
 }
 
 void BaseEndpoint::setSourceSharding(const std::vector<BaseEndpoint>& value)
 {
-    sourceSharding_ = value;
+    *sourceSharding_ = value;
     sourceShardingIsSet_ = true;
 }
 

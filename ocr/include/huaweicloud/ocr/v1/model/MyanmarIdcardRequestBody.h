@@ -101,6 +101,15 @@ public:
     void unsetreturnIdcardType();
     void setReturnIdcardType(bool value);
 
+    /// <summary>
+    /// 是否返回转译信息的开关，可选值如下所示： - true: 返回转译信息。 - false：不返回转译信息。 
+    /// </summary>
+
+    bool isReturnTranslation() const;
+    bool returnTranslationIsSet() const;
+    void unsetreturnTranslation();
+    void setReturnTranslation(bool value);
+
 
 protected:
     std::string image_;
@@ -117,6 +126,8 @@ protected:
     bool returnPortraitLocationIsSet_;
     bool returnIdcardType_;
     bool returnIdcardTypeIsSet_;
+    bool returnTranslation_;
+    bool returnTranslationIsSet_;
 
 };
 

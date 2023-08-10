@@ -37,7 +37,7 @@ web::json::value QueryCategoryRsp::toJson() const
         val[utility::conversions::to_string_t("name")] = ModelBase::toJson(name_);
     }
     if(childrenIsSet_) {
-        val[utility::conversions::to_string_t("children")] = ModelBase::toJson(children_);
+        val[utility::conversions::to_string_t("children")] = ModelBase::toJson(*children_);
     }
 
     return val;
@@ -121,12 +121,12 @@ void QueryCategoryRsp::unsetname()
 
 std::vector<QueryCategoryRsp>& QueryCategoryRsp::getChildren()
 {
-    return children_;
+    return *children_;
 }
 
 void QueryCategoryRsp::setChildren(const std::vector<QueryCategoryRsp>& value)
 {
-    children_ = value;
+    *children_ = value;
     childrenIsSet_ = true;
 }
 

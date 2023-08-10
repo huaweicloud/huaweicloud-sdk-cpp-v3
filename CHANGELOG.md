@@ -1,3 +1,59 @@
+# 3.1.46 2023-08-10
+
+### HuaweiCloud SDK CodeArtsDeploy
+
+- _Features_
+  - Support `CodeArtsDeploy`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK GaussDB
+
+- _Features_
+  - Support the interfaces `UpdateProxyPort`, `DescribeBackupEncryptStatus`, `ModifyBackupEncryptStatus`
+- _Bug Fix_
+  - None
+- _Change_
+  - **UpdateProxySessionConsistence**
+    - changes of request param
+      - `+ consistence_mode`
+  - **CreateGaussMySqlInstance**
+    - changes of request param
+      - `* datastore: object<MysqlDatastore> -> object<MysqlDatastoreInReq>`
+    - changes of response param
+      - `* instance.datastore: object<MysqlDatastore> -> object<MysqlDatastoreInRes>`
+  - **ShowGaussMySqlBackupList**
+    - changes of response param
+      - `- backups.datastore.kernel_version`
+      - `* backups.datastore: object<MysqlDatastore> -> object<MysqlDatastoreInBackup>`
+  - **ShowGaussMySqlProxyList**
+    - changes of response param
+      - `+ proxy_list.proxy.consistence_mode`
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **RecognizeMyanmarIdcard**
+    - changes of request param
+      - `+ return_translation`
+    - changes of response param
+      - `+ result.translation_info`
+
+### HuaweiCloud SDK RDS
+
+- _Features_
+  - Support the interfaces `ListXellogFiles`, `CreateXelLogDownload`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.45 2023-08-03
 
 ### HuaweiCloud SDK RDS

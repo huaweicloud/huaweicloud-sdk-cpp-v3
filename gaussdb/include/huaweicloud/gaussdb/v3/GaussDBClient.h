@@ -9,6 +9,7 @@
 #include <huaweicloud/gaussdb/v3/model/AddDatabasePermissionRequest.h>
 #include <huaweicloud/gaussdb/v3/model/AddDatabasePermissionResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ApplyConfigurationRequestBody.h>
+#include <huaweicloud/gaussdb/v3/model/BackupEncryptRequest.h>
 #include <huaweicloud/gaussdb/v3/model/BatchOperateInstanceTagRequestBody.h>
 #include <huaweicloud/gaussdb/v3/model/BatchTagActionRequest.h>
 #include <huaweicloud/gaussdb/v3/model/BatchTagActionResponse.h>
@@ -60,6 +61,8 @@
 #include <huaweicloud/gaussdb/v3/model/DeleteGaussMySqlReadonlyNodeResponse.h>
 #include <huaweicloud/gaussdb/v3/model/DeleteTaskRecordRequest.h>
 #include <huaweicloud/gaussdb/v3/model/DeleteTaskRecordResponse.h>
+#include <huaweicloud/gaussdb/v3/model/DescribeBackupEncryptStatusRequest.h>
+#include <huaweicloud/gaussdb/v3/model/DescribeBackupEncryptStatusResponse.h>
 #include <huaweicloud/gaussdb/v3/model/EnlargeProxyRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ExpandGaussMySqlInstanceVolumeRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ExpandGaussMySqlInstanceVolumeResponse.h>
@@ -97,6 +100,8 @@
 #include <huaweicloud/gaussdb/v3/model/LtsLogErrorQueryRequest.h>
 #include <huaweicloud/gaussdb/v3/model/LtsLogSlowQueryRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ModifyAliasRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ModifyBackupEncryptStatusRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ModifyBackupEncryptStatusResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ModifyBindEipRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ModifyGaussMySqlProxyRouteModeRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ModifyGaussMySqlProxyRouteModeRequestBody.h>
@@ -209,6 +214,9 @@
 #include <huaweicloud/gaussdb/v3/model/UpdateInstanceMonitorResponse.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateProxyConnectionPoolTypeRequest.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateProxyConnectionPoolTypeResponse.h>
+#include <huaweicloud/gaussdb/v3/model/UpdateProxyPortRequest.h>
+#include <huaweicloud/gaussdb/v3/model/UpdateProxyPortRequestBody.h>
+#include <huaweicloud/gaussdb/v3/model/UpdateProxyPortResponse.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateProxySessionConsistenceRequest.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateProxySessionConsistenceResponse.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateTransactionSplitStatusRequest.h>
@@ -235,6 +243,7 @@
 
 #include <cpprest/details/basic_types.h>
 #include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Object.h>
 #undef U
 #include <boost/optional.hpp>
 
@@ -432,6 +441,14 @@ public:
     std::shared_ptr<DeleteTaskRecordResponse> deleteTaskRecord(
         DeleteTaskRecordRequest &request
     );
+    // 查询实例是否开启备份加密功能
+    //
+    // 查询实例是否开启备份加密功能。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DescribeBackupEncryptStatusResponse> describeBackupEncryptStatus(
+        DescribeBackupEncryptStatusRequest &request
+    );
     // 包周期存储扩容
     //
     // 包周期存储扩容。
@@ -560,6 +577,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListScheduleJobsResponse> listScheduleJobs(
         ListScheduleJobsRequest &request
+    );
+    // 打开或关闭备份加密
+    //
+    // 打开或关闭备份加密。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ModifyBackupEncryptStatusResponse> modifyBackupEncryptStatus(
+        ModifyBackupEncryptStatusRequest &request
     );
     // 设置读写分离路由模式
     //
@@ -880,6 +905,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateProxyConnectionPoolTypeResponse> updateProxyConnectionPoolType(
         UpdateProxyConnectionPoolTypeRequest &request
+    );
+    // 修改读写分离端口号
+    //
+    // 修改读写分离端口号。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateProxyPortResponse> updateProxyPort(
+        UpdateProxyPortRequest &request
     );
     // 修改代理会话一致性
     //

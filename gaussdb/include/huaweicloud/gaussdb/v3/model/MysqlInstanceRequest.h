@@ -7,13 +7,13 @@
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/gaussdb/v3/model/MysqlDatastore.h>
 #include <string>
 #include <huaweicloud/gaussdb/v3/model/MysqlVolume.h>
 #include <huaweicloud/gaussdb/v3/model/MysqlBackupStrategy.h>
 #include <huaweicloud/gaussdb/v3/model/MysqlChargeInfo.h>
 #include <huaweicloud/gaussdb/v3/model/MysqlRestorePoint.h>
 #include <huaweicloud/gaussdb/v3/model/MysqlTags.h>
+#include <huaweicloud/gaussdb/v3/model/MysqlDatastoreInReq.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -76,10 +76,10 @@ public:
     /// 
     /// </summary>
 
-    MysqlDatastore getDatastore() const;
+    MysqlDatastoreInReq getDatastore() const;
     bool datastoreIsSet() const;
     void unsetdatastore();
-    void setDatastore(const MysqlDatastore& value);
+    void setDatastore(const MysqlDatastoreInReq& value);
 
     /// <summary>
     /// 实例类型，目前仅支持Cluster。
@@ -251,7 +251,7 @@ protected:
     bool regionIsSet_;
     std::string name_;
     bool nameIsSet_;
-    MysqlDatastore datastore_;
+    MysqlDatastoreInReq datastore_;
     bool datastoreIsSet_;
     std::string mode_;
     bool modeIsSet_;

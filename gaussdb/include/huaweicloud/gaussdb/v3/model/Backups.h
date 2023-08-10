@@ -7,7 +7,7 @@
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/gaussdb/v3/model/MysqlDatastore.h>
+#include <huaweicloud/gaussdb/v3/model/MysqlDatastoreInBackup.h>
 #include <string>
 
 namespace HuaweiCloud {
@@ -115,10 +115,10 @@ public:
     /// 
     /// </summary>
 
-    MysqlDatastore getDatastore() const;
+    MysqlDatastoreInBackup getDatastore() const;
     bool datastoreIsSet() const;
     void unsetdatastore();
-    void setDatastore(const MysqlDatastore& value);
+    void setDatastore(const MysqlDatastoreInBackup& value);
 
     /// <summary>
     /// 实例ID。
@@ -165,7 +165,7 @@ protected:
     bool typeIsSet_;
     int64_t size_;
     bool sizeIsSet_;
-    MysqlDatastore datastore_;
+    MysqlDatastoreInBackup datastore_;
     bool datastoreIsSet_;
     std::string instanceId_;
     bool instanceIdIsSet_;

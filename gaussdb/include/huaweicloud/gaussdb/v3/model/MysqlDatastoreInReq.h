@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_GAUSSDB_V3_MODEL_MysqlDatastore_H_
-#define HUAWEICLOUD_SDK_GAUSSDB_V3_MODEL_MysqlDatastore_H_
+#ifndef HUAWEICLOUD_SDK_GAUSSDB_V3_MODEL_MysqlDatastoreInReq_H_
+#define HUAWEICLOUD_SDK_GAUSSDB_V3_MODEL_MysqlDatastoreInReq_H_
 
 #include <huaweicloud/gaussdb/v3/GaussDBExport.h>
 
@@ -20,12 +20,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// 数据库信息。
 /// </summary>
-class HUAWEICLOUD_GAUSSDB_V3_EXPORT  MysqlDatastore
+class HUAWEICLOUD_GAUSSDB_V3_EXPORT  MysqlDatastoreInReq
     : public ModelBase
 {
 public:
-    MysqlDatastore();
-    virtual ~MysqlDatastore();
+    MysqlDatastoreInReq();
+    virtual ~MysqlDatastoreInReq();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -36,10 +36,10 @@ public:
     bool fromJson(const web::json::value& json) override;
 
     /////////////////////////////////////////////
-    /// MysqlDatastore members
+    /// MysqlDatastoreInReq members
 
     /// <summary>
-    /// 数据库引擎，现在只支持gaussdb-mysql
+    /// 数据库引擎，现在只支持gaussdb-mysql。
     /// </summary>
 
     std::string getType() const;
@@ -57,7 +57,7 @@ public:
     void setVersion(const std::string& value);
 
     /// <summary>
-    /// 内核数据库版本。  完整的四位内核数据库版本，获取方法请参见[查询数据库引擎的版本](https://support.huaweicloud.com/api-gaussdb/ShowGaussMySqlEngineVersion.html)返回的kernel_version字段。
+    /// 内核数据库版本。如果需要指定具体的内核版本，请联系客服人员添加白名单。  完整的四位内核数据库版本，获取方法请参见[查询数据库引擎的版本](https://support.huaweicloud.com/api-gaussdb/ShowGaussMySqlEngineVersion.html)返回的kernel_version字段。
     /// </summary>
 
     std::string getKernelVersion() const;
@@ -83,4 +83,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_GAUSSDB_V3_MODEL_MysqlDatastore_H_
+#endif // HUAWEICLOUD_SDK_GAUSSDB_V3_MODEL_MysqlDatastoreInReq_H_

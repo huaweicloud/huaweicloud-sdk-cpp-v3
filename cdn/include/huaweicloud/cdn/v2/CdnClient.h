@@ -43,6 +43,7 @@
 
 #include <cpprest/details/basic_types.h>
 #include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Object.h>
 #undef U
 #include <boost/optional.hpp>
 

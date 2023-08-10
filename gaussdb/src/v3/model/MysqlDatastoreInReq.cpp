@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/gaussdb/v3/model/MysqlDatastore.h"
+#include "huaweicloud/gaussdb/v3/model/MysqlDatastoreInReq.h"
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -11,7 +11,7 @@ namespace Model {
 
 
 
-MysqlDatastore::MysqlDatastore()
+MysqlDatastoreInReq::MysqlDatastoreInReq()
 {
     type_ = "";
     typeIsSet_ = false;
@@ -21,13 +21,13 @@ MysqlDatastore::MysqlDatastore()
     kernelVersionIsSet_ = false;
 }
 
-MysqlDatastore::~MysqlDatastore() = default;
+MysqlDatastoreInReq::~MysqlDatastoreInReq() = default;
 
-void MysqlDatastore::validate()
+void MysqlDatastoreInReq::validate()
 {
 }
 
-web::json::value MysqlDatastore::toJson() const
+web::json::value MysqlDatastoreInReq::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -44,7 +44,7 @@ web::json::value MysqlDatastore::toJson() const
     return val;
 }
 
-bool MysqlDatastore::fromJson(const web::json::value& val)
+bool MysqlDatastoreInReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -78,65 +78,65 @@ bool MysqlDatastore::fromJson(const web::json::value& val)
     return ok;
 }
 
-std::string MysqlDatastore::getType() const
+std::string MysqlDatastoreInReq::getType() const
 {
     return type_;
 }
 
-void MysqlDatastore::setType(const std::string& value)
+void MysqlDatastoreInReq::setType(const std::string& value)
 {
     type_ = value;
     typeIsSet_ = true;
 }
 
-bool MysqlDatastore::typeIsSet() const
+bool MysqlDatastoreInReq::typeIsSet() const
 {
     return typeIsSet_;
 }
 
-void MysqlDatastore::unsettype()
+void MysqlDatastoreInReq::unsettype()
 {
     typeIsSet_ = false;
 }
 
-std::string MysqlDatastore::getVersion() const
+std::string MysqlDatastoreInReq::getVersion() const
 {
     return version_;
 }
 
-void MysqlDatastore::setVersion(const std::string& value)
+void MysqlDatastoreInReq::setVersion(const std::string& value)
 {
     version_ = value;
     versionIsSet_ = true;
 }
 
-bool MysqlDatastore::versionIsSet() const
+bool MysqlDatastoreInReq::versionIsSet() const
 {
     return versionIsSet_;
 }
 
-void MysqlDatastore::unsetversion()
+void MysqlDatastoreInReq::unsetversion()
 {
     versionIsSet_ = false;
 }
 
-std::string MysqlDatastore::getKernelVersion() const
+std::string MysqlDatastoreInReq::getKernelVersion() const
 {
     return kernelVersion_;
 }
 
-void MysqlDatastore::setKernelVersion(const std::string& value)
+void MysqlDatastoreInReq::setKernelVersion(const std::string& value)
 {
     kernelVersion_ = value;
     kernelVersionIsSet_ = true;
 }
 
-bool MysqlDatastore::kernelVersionIsSet() const
+bool MysqlDatastoreInReq::kernelVersionIsSet() const
 {
     return kernelVersionIsSet_;
 }
 
-void MysqlDatastore::unsetkernelVersion()
+void MysqlDatastoreInReq::unsetkernelVersion()
 {
     kernelVersionIsSet_ = false;
 }

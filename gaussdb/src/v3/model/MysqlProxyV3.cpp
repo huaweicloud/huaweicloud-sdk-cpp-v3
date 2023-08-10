@@ -52,6 +52,8 @@ MysqlProxyV3::MysqlProxyV3()
     routeModeIsSet_ = false;
     balanceRouteModeEnabled_ = false;
     balanceRouteModeEnabledIsSet_ = false;
+    consistenceMode_ = "";
+    consistenceModeIsSet_ = false;
 }
 
 MysqlProxyV3::~MysqlProxyV3() = default;
@@ -123,6 +125,9 @@ web::json::value MysqlProxyV3::toJson() const
     }
     if(balanceRouteModeEnabledIsSet_) {
         val[utility::conversions::to_string_t("balance_route_mode_enabled")] = ModelBase::toJson(balanceRouteModeEnabled_);
+    }
+    if(consistenceModeIsSet_) {
+        val[utility::conversions::to_string_t("consistence_mode")] = ModelBase::toJson(consistenceMode_);
     }
 
     return val;
@@ -310,6 +315,15 @@ bool MysqlProxyV3::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBalanceRouteModeEnabled(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("consistence_mode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("consistence_mode"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setConsistenceMode(refVal);
         }
     }
     return ok;
@@ -733,6 +747,27 @@ bool MysqlProxyV3::balanceRouteModeEnabledIsSet() const
 void MysqlProxyV3::unsetbalanceRouteModeEnabled()
 {
     balanceRouteModeEnabledIsSet_ = false;
+}
+
+std::string MysqlProxyV3::getConsistenceMode() const
+{
+    return consistenceMode_;
+}
+
+void MysqlProxyV3::setConsistenceMode(const std::string& value)
+{
+    consistenceMode_ = value;
+    consistenceModeIsSet_ = true;
+}
+
+bool MysqlProxyV3::consistenceModeIsSet() const
+{
+    return consistenceModeIsSet_;
+}
+
+void MysqlProxyV3::unsetconsistenceMode()
+{
+    consistenceModeIsSet_ = false;
 }
 
 }

@@ -39,7 +39,7 @@ public:
     /// ModifyProxyRouteWeightReadonlyNode members
 
     /// <summary>
-    /// 只读节点id
+    /// 只读节点ID。
     /// </summary>
 
     std::string getId() const;

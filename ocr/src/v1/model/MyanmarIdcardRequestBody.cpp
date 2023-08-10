@@ -27,6 +27,8 @@ MyanmarIdcardRequestBody::MyanmarIdcardRequestBody()
     returnPortraitLocationIsSet_ = false;
     returnIdcardType_ = false;
     returnIdcardTypeIsSet_ = false;
+    returnTranslation_ = false;
+    returnTranslationIsSet_ = false;
 }
 
 MyanmarIdcardRequestBody::~MyanmarIdcardRequestBody() = default;
@@ -59,6 +61,9 @@ web::json::value MyanmarIdcardRequestBody::toJson() const
     }
     if(returnIdcardTypeIsSet_) {
         val[utility::conversions::to_string_t("return_idcard_type")] = ModelBase::toJson(returnIdcardType_);
+    }
+    if(returnTranslationIsSet_) {
+        val[utility::conversions::to_string_t("return_translation")] = ModelBase::toJson(returnTranslation_);
     }
 
     return val;
@@ -129,6 +134,15 @@ bool MyanmarIdcardRequestBody::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setReturnIdcardType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("return_translation"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("return_translation"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setReturnTranslation(refVal);
         }
     }
     return ok;
@@ -279,6 +293,27 @@ bool MyanmarIdcardRequestBody::returnIdcardTypeIsSet() const
 void MyanmarIdcardRequestBody::unsetreturnIdcardType()
 {
     returnIdcardTypeIsSet_ = false;
+}
+
+bool MyanmarIdcardRequestBody::isReturnTranslation() const
+{
+    return returnTranslation_;
+}
+
+void MyanmarIdcardRequestBody::setReturnTranslation(bool value)
+{
+    returnTranslation_ = value;
+    returnTranslationIsSet_ = true;
+}
+
+bool MyanmarIdcardRequestBody::returnTranslationIsSet() const
+{
+    return returnTranslationIsSet_;
+}
+
+void MyanmarIdcardRequestBody::unsetreturnTranslation()
+{
+    returnTranslationIsSet_ = false;
 }
 
 }

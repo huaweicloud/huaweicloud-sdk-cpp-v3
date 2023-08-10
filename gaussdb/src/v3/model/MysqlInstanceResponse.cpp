@@ -146,7 +146,7 @@ bool MysqlInstanceResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("datastore"));
         if(!fieldValue.is_null())
         {
-            MysqlDatastore refVal;
+            MysqlDatastoreInRes refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDatastore(refVal);
         }
@@ -334,12 +334,12 @@ void MysqlInstanceResponse::unsetstatus()
     statusIsSet_ = false;
 }
 
-MysqlDatastore MysqlInstanceResponse::getDatastore() const
+MysqlDatastoreInRes MysqlInstanceResponse::getDatastore() const
 {
     return datastore_;
 }
 
-void MysqlInstanceResponse::setDatastore(const MysqlDatastore& value)
+void MysqlInstanceResponse::setDatastore(const MysqlDatastoreInRes& value)
 {
     datastore_ = value;
     datastoreIsSet_ = true;

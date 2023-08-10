@@ -46,6 +46,9 @@
 #include <huaweicloud/rds/v3/model/CreateRestoreInstanceRequest.h>
 #include <huaweicloud/rds/v3/model/CreateRestoreInstanceRequestBody.h>
 #include <huaweicloud/rds/v3/model/CreateRestoreInstanceResponse.h>
+#include <huaweicloud/rds/v3/model/CreateXelLogDownloadRequest.h>
+#include <huaweicloud/rds/v3/model/CreateXelLogDownloadRequestBody.h>
+#include <huaweicloud/rds/v3/model/CreateXelLogDownloadResponse.h>
 #include <huaweicloud/rds/v3/model/CustomerModifyAutoEnlargePolicyReq.h>
 #include <huaweicloud/rds/v3/model/CustomerUpgradeDatabaseVersionReq.h>
 #include <huaweicloud/rds/v3/model/DataIpRequest.h>
@@ -138,6 +141,8 @@
 #include <huaweicloud/rds/v3/model/ListSslCertDownloadLinkResponse.h>
 #include <huaweicloud/rds/v3/model/ListStorageTypesRequest.h>
 #include <huaweicloud/rds/v3/model/ListStorageTypesResponse.h>
+#include <huaweicloud/rds/v3/model/ListXellogFilesRequest.h>
+#include <huaweicloud/rds/v3/model/ListXellogFilesResponse.h>
 #include <huaweicloud/rds/v3/model/MigrateFollowerRequest.h>
 #include <huaweicloud/rds/v3/model/MigrateFollowerResponse.h>
 #include <huaweicloud/rds/v3/model/ModifiyInstanceNameRequest.h>
@@ -415,6 +420,7 @@
 
 #include <cpprest/details/basic_types.h>
 #include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Object.h>
 #undef U
 #include <boost/optional.hpp>
 
@@ -547,6 +553,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateRestoreInstanceResponse> createRestoreInstance(
         CreateRestoreInstanceRequest &request
+    );
+    // 获取扩展日志下载信息
+    //
+    // 获取扩展日志下载信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateXelLogDownloadResponse> createXelLogDownload(
+        CreateXelLogDownloadRequest &request
     );
     // 删除参数模板
     //
@@ -863,6 +877,15 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListStorageTypesResponse> listStorageTypes(
         ListStorageTypesRequest &request
+    );
+    // 查询扩展日志文件列表
+    //
+    // 查询扩展日志文件列表。
+    // 查询扩展日志文件列表，可以调用接口/v3/{project_id}/instances/{instance_id}/xellog-download 获取扩展日志下载链接
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListXellogFilesResponse> listXellogFiles(
+        ListXellogFilesRequest &request
     );
     // 迁移主备实例的备机
     //

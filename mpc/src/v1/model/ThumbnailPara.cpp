@@ -22,6 +22,7 @@ ThumbnailPara::ThumbnailPara()
     duration_ = 0;
     durationIsSet_ = false;
     dotsIsSet_ = false;
+    dotsMsIsSet_ = false;
     outputFilename_ = "";
     outputFilenameIsSet_ = false;
     format_ = 0;
@@ -58,6 +59,9 @@ web::json::value ThumbnailPara::toJson() const
     }
     if(dotsIsSet_) {
         val[utility::conversions::to_string_t("dots")] = ModelBase::toJson(dots_);
+    }
+    if(dotsMsIsSet_) {
+        val[utility::conversions::to_string_t("dots_ms")] = ModelBase::toJson(dotsMs_);
     }
     if(outputFilenameIsSet_) {
         val[utility::conversions::to_string_t("output_filename")] = ModelBase::toJson(outputFilename_);
@@ -125,6 +129,15 @@ bool ThumbnailPara::fromJson(const web::json::value& val)
             std::vector<int32_t> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDots(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("dots_ms"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("dots_ms"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<int32_t> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDotsMs(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("output_filename"))) {
@@ -278,6 +291,27 @@ bool ThumbnailPara::dotsIsSet() const
 void ThumbnailPara::unsetdots()
 {
     dotsIsSet_ = false;
+}
+
+std::vector<int32_t>& ThumbnailPara::getDotsMs()
+{
+    return dotsMs_;
+}
+
+void ThumbnailPara::setDotsMs(std::vector<int32_t> value)
+{
+    dotsMs_ = value;
+    dotsMsIsSet_ = true;
+}
+
+bool ThumbnailPara::dotsMsIsSet() const
+{
+    return dotsMsIsSet_;
+}
+
+void ThumbnailPara::unsetdotsMs()
+{
+    dotsMsIsSet_ = false;
 }
 
 std::string ThumbnailPara::getOutputFilename() const

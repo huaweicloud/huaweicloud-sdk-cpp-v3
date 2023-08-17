@@ -1,3 +1,93 @@
+# 3.1.47 2023-08-17
+
+### HuaweiCloud SDK CodeArtsBuild
+
+- _新增特性_
+  - 支持编译构建服务
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK ECS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateServers**
+    - 请求参数变更
+      - `+ server.root_volume.iops`
+      - `+ server.root_volume.throughput`
+      - `+ server.root_volume.volumetype: enum value [GPSSD2,ESSD2]`
+      - `+ server.data_volumes.iops`
+      - `+ server.data_volumes.throughput`
+      - `+ server.data_volumes.volumetype: enum value [GPSSD2,ESSD2]`
+  - **CreatePostPaidServers**
+    - 请求参数变更
+      - `+ server.data_volumes.iops`
+      - `+ server.data_volumes.throughput`
+      - `+ server.data_volumes.volumetype: enum value [GPSSD2,ESSD2]`
+      - `+ server.root_volume.iops`
+      - `+ server.root_volume.throughput`
+      - `+ server.root_volume.volumetype: enum value [GPSSD2,ESSD2]`
+
+### HuaweiCloud SDK GaussDB
+
+- _新增特性_
+  - 支持接口`ModifyGaussMysqlDns`、`CreateGaussMysqlDns`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowGaussMySqlInstanceInfo**
+    - 响应参数变更
+      - `+ instance.private_dns_names`
+  - **ListGaussMySqlInstanceDetailInfo**
+    - 响应参数变更
+      - `+ instances.private_dns_names`
+
+### HuaweiCloud SDK Live
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListSnapshotConfigs**
+    - 响应参数变更
+      - `* body: object<LiveSnapshotConfig> -> list<LiveSnapshotConfig>`
+
+### HuaweiCloud SDK MPC
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateThumbnailsTask**
+    - 请求参数变更
+      - `+ thumbnail_para.dots_ms`
+      - `+ thumbnail_para.type: enum value [DOTS_MS]`
+  - **CreateTranscodingTask**
+    - 请求参数变更
+      - `+ thumbnail.params.dots_ms`
+      - `+ thumbnail.params.type: enum value [DOTS_MS]`
+
+### HuaweiCloud SDK VPC
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateSecurityGroupRule**
+    - 请求参数变更
+      - `+ security_group_rule.remote_address_group_id`
+  - **NeutronCreateSecurityGroupRule**
+    - 请求参数变更
+      - `+ security_group_rule.remote_address_group_id`
+
 # 3.1.46 2023-08-10
 
 ### HuaweiCloud SDK CodeArtsDeploy

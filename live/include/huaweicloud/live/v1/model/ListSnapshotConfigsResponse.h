@@ -8,6 +8,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/live/v1/model/LiveSnapshotConfig.h>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -48,13 +49,13 @@ public:
     void setTotal(int32_t value);
 
     /// <summary>
-    /// 
+    /// 截图配置
     /// </summary>
 
-    LiveSnapshotConfig getSnapshotConfigList() const;
+    std::vector<LiveSnapshotConfig>& getSnapshotConfigList();
     bool snapshotConfigListIsSet() const;
     void unsetsnapshotConfigList();
-    void setSnapshotConfigList(const LiveSnapshotConfig& value);
+    void setSnapshotConfigList(const std::vector<LiveSnapshotConfig>& value);
 
     /// <summary>
     /// 每页记录数
@@ -78,7 +79,7 @@ public:
 protected:
     int32_t total_;
     bool totalIsSet_;
-    LiveSnapshotConfig snapshotConfigList_;
+    std::vector<LiveSnapshotConfig> snapshotConfigList_;
     bool snapshotConfigListIsSet_;
     int32_t limit_;
     bool limitIsSet_;

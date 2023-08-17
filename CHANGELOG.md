@@ -1,3 +1,93 @@
+# 3.1.47 2023-08-17
+
+### HuaweiCloud SDK CodeArtsBuild
+
+- _Features_
+  - Support `CodeArtsBuild`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK ECS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateServers**
+    - changes of request param
+      - `+ server.root_volume.iops`
+      - `+ server.root_volume.throughput`
+      - `+ server.root_volume.volumetype: enum value [GPSSD2,ESSD2]`
+      - `+ server.data_volumes.iops`
+      - `+ server.data_volumes.throughput`
+      - `+ server.data_volumes.volumetype: enum value [GPSSD2,ESSD2]`
+  - **CreatePostPaidServers**
+    - changes of request param
+      - `+ server.data_volumes.iops`
+      - `+ server.data_volumes.throughput`
+      - `+ server.data_volumes.volumetype: enum value [GPSSD2,ESSD2]`
+      - `+ server.root_volume.iops`
+      - `+ server.root_volume.throughput`
+      - `+ server.root_volume.volumetype: enum value [GPSSD2,ESSD2]`
+
+### HuaweiCloud SDK GaussDB
+
+- _Features_
+  - Support the interfaces `ModifyGaussMysqlDns`, `CreateGaussMysqlDns`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowGaussMySqlInstanceInfo**
+    - changes of response param
+      - `+ instance.private_dns_names`
+  - **ListGaussMySqlInstanceDetailInfo**
+    - changes of response param
+      - `+ instances.private_dns_names`
+
+### HuaweiCloud SDK Live
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListSnapshotConfigs**
+    - changes of response param
+      - `* body: object<LiveSnapshotConfig> -> list<LiveSnapshotConfig>`
+
+### HuaweiCloud SDK MPC
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateThumbnailsTask**
+    - changes of request param
+      - `+ thumbnail_para.dots_ms`
+      - `+ thumbnail_para.type: enum value [DOTS_MS]`
+  - **CreateTranscodingTask**
+    - changes of request param
+      - `+ thumbnail.params.dots_ms`
+      - `+ thumbnail.params.type: enum value [DOTS_MS]`
+
+### HuaweiCloud SDK VPC
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateSecurityGroupRule**
+    - changes of request param
+      - `+ security_group_rule.remote_address_group_id`
+  - **NeutronCreateSecurityGroupRule**
+    - changes of request param
+      - `+ security_group_rule.remote_address_group_id`
+
 # 3.1.46 2023-08-10
 
 ### HuaweiCloud SDK CodeArtsDeploy

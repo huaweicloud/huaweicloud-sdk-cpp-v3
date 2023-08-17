@@ -38,6 +38,7 @@ MysqlInstanceInfoDetail::MysqlInstanceInfoDetail()
     updated_ = "";
     updatedIsSet_ = false;
     privateWriteIpsIsSet_ = false;
+    privateDnsNamesIsSet_ = false;
     publicIps_ = "";
     publicIpsIsSet_ = false;
     dbUserName_ = "";
@@ -119,6 +120,9 @@ web::json::value MysqlInstanceInfoDetail::toJson() const
     }
     if(privateWriteIpsIsSet_) {
         val[utility::conversions::to_string_t("private_write_ips")] = ModelBase::toJson(privateWriteIps_);
+    }
+    if(privateDnsNamesIsSet_) {
+        val[utility::conversions::to_string_t("private_dns_names")] = ModelBase::toJson(privateDnsNames_);
     }
     if(publicIpsIsSet_) {
         val[utility::conversions::to_string_t("public_ips")] = ModelBase::toJson(publicIps_);
@@ -300,6 +304,15 @@ bool MysqlInstanceInfoDetail::fromJson(const web::json::value& val)
             std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPrivateWriteIps(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("private_dns_names"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("private_dns_names"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPrivateDnsNames(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("public_ips"))) {
@@ -741,6 +754,27 @@ bool MysqlInstanceInfoDetail::privateWriteIpsIsSet() const
 void MysqlInstanceInfoDetail::unsetprivateWriteIps()
 {
     privateWriteIpsIsSet_ = false;
+}
+
+std::vector<std::string>& MysqlInstanceInfoDetail::getPrivateDnsNames()
+{
+    return privateDnsNames_;
+}
+
+void MysqlInstanceInfoDetail::setPrivateDnsNames(const std::vector<std::string>& value)
+{
+    privateDnsNames_ = value;
+    privateDnsNamesIsSet_ = true;
+}
+
+bool MysqlInstanceInfoDetail::privateDnsNamesIsSet() const
+{
+    return privateDnsNamesIsSet_;
+}
+
+void MysqlInstanceInfoDetail::unsetprivateDnsNames()
+{
+    privateDnsNamesIsSet_ = false;
 }
 
 std::string MysqlInstanceInfoDetail::getPublicIps() const

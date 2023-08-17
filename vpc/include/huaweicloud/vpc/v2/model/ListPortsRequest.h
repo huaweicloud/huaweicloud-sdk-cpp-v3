@@ -157,7 +157,7 @@ public:
     void setEnterpriseProjectId(const std::string& value);
 
     /// <summary>
-    /// 功能说明：是否使能efi，使能则表示端口支持vRoCE能力，默认为false
+    /// 按照是否使能efi过滤查询
     /// </summary>
 
     bool isEnableEfi() const;

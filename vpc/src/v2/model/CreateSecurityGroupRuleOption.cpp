@@ -31,6 +31,8 @@ CreateSecurityGroupRuleOption::CreateSecurityGroupRuleOption()
     remoteIpPrefixIsSet_ = false;
     remoteGroupId_ = "";
     remoteGroupIdIsSet_ = false;
+    remoteAddressGroupId_ = "";
+    remoteAddressGroupIdIsSet_ = false;
 }
 
 CreateSecurityGroupRuleOption::~CreateSecurityGroupRuleOption() = default;
@@ -69,6 +71,9 @@ web::json::value CreateSecurityGroupRuleOption::toJson() const
     }
     if(remoteGroupIdIsSet_) {
         val[utility::conversions::to_string_t("remote_group_id")] = ModelBase::toJson(remoteGroupId_);
+    }
+    if(remoteAddressGroupIdIsSet_) {
+        val[utility::conversions::to_string_t("remote_address_group_id")] = ModelBase::toJson(remoteAddressGroupId_);
     }
 
     return val;
@@ -157,6 +162,15 @@ bool CreateSecurityGroupRuleOption::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRemoteGroupId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("remote_address_group_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("remote_address_group_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRemoteAddressGroupId(refVal);
         }
     }
     return ok;
@@ -349,6 +363,27 @@ bool CreateSecurityGroupRuleOption::remoteGroupIdIsSet() const
 void CreateSecurityGroupRuleOption::unsetremoteGroupId()
 {
     remoteGroupIdIsSet_ = false;
+}
+
+std::string CreateSecurityGroupRuleOption::getRemoteAddressGroupId() const
+{
+    return remoteAddressGroupId_;
+}
+
+void CreateSecurityGroupRuleOption::setRemoteAddressGroupId(const std::string& value)
+{
+    remoteAddressGroupId_ = value;
+    remoteAddressGroupIdIsSet_ = true;
+}
+
+bool CreateSecurityGroupRuleOption::remoteAddressGroupIdIsSet() const
+{
+    return remoteAddressGroupIdIsSet_;
+}
+
+void CreateSecurityGroupRuleOption::unsetremoteAddressGroupId()
+{
+    remoteAddressGroupIdIsSet_ = false;
 }
 
 }

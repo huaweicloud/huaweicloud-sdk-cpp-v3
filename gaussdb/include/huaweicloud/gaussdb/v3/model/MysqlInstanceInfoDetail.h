@@ -172,6 +172,15 @@ public:
     void setPrivateWriteIps(const std::vector<std::string>& value);
 
     /// <summary>
+    /// 实例内网域名列表。实例创建成功后，需要手动申请内网域名，否则查询内网域名为空。
+    /// </summary>
+
+    std::vector<std::string>& getPrivateDnsNames();
+    bool privateDnsNamesIsSet() const;
+    void unsetprivateDnsNames();
+    void setPrivateDnsNames(const std::vector<std::string>& value);
+
+    /// <summary>
     /// 实例的公网IP。
     /// </summary>
 
@@ -345,6 +354,8 @@ protected:
     bool updatedIsSet_;
     std::vector<std::string> privateWriteIps_;
     bool privateWriteIpsIsSet_;
+    std::vector<std::string> privateDnsNames_;
+    bool privateDnsNamesIsSet_;
     std::string publicIps_;
     bool publicIpsIsSet_;
     std::string dbUserName_;

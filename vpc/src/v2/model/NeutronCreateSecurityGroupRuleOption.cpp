@@ -29,6 +29,8 @@ NeutronCreateSecurityGroupRuleOption::NeutronCreateSecurityGroupRuleOption()
     remoteGroupIdIsSet_ = false;
     remoteIpPrefix_ = "";
     remoteIpPrefixIsSet_ = false;
+    remoteAddressGroupId_ = "";
+    remoteAddressGroupIdIsSet_ = false;
     securityGroupId_ = "";
     securityGroupIdIsSet_ = false;
 }
@@ -66,6 +68,9 @@ web::json::value NeutronCreateSecurityGroupRuleOption::toJson() const
     }
     if(remoteIpPrefixIsSet_) {
         val[utility::conversions::to_string_t("remote_ip_prefix")] = ModelBase::toJson(remoteIpPrefix_);
+    }
+    if(remoteAddressGroupIdIsSet_) {
+        val[utility::conversions::to_string_t("remote_address_group_id")] = ModelBase::toJson(remoteAddressGroupId_);
     }
     if(securityGroupIdIsSet_) {
         val[utility::conversions::to_string_t("security_group_id")] = ModelBase::toJson(securityGroupId_);
@@ -148,6 +153,15 @@ bool NeutronCreateSecurityGroupRuleOption::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRemoteIpPrefix(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("remote_address_group_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("remote_address_group_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRemoteAddressGroupId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("security_group_id"))) {
@@ -328,6 +342,27 @@ bool NeutronCreateSecurityGroupRuleOption::remoteIpPrefixIsSet() const
 void NeutronCreateSecurityGroupRuleOption::unsetremoteIpPrefix()
 {
     remoteIpPrefixIsSet_ = false;
+}
+
+std::string NeutronCreateSecurityGroupRuleOption::getRemoteAddressGroupId() const
+{
+    return remoteAddressGroupId_;
+}
+
+void NeutronCreateSecurityGroupRuleOption::setRemoteAddressGroupId(const std::string& value)
+{
+    remoteAddressGroupId_ = value;
+    remoteAddressGroupIdIsSet_ = true;
+}
+
+bool NeutronCreateSecurityGroupRuleOption::remoteAddressGroupIdIsSet() const
+{
+    return remoteAddressGroupIdIsSet_;
+}
+
+void NeutronCreateSecurityGroupRuleOption::unsetremoteAddressGroupId()
+{
+    remoteAddressGroupIdIsSet_ = false;
 }
 
 std::string NeutronCreateSecurityGroupRuleOption::getSecurityGroupId() const

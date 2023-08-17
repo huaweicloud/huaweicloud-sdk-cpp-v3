@@ -40,7 +40,7 @@ public:
     /// ThumbnailPara members
 
     /// <summary>
-    /// 采样类型。  取值如下： - \&quot;TIME\&quot;：根据时间间隔采样截图。 - \&quot;DOTS\&quot;：指定时间点截图。选择同步截图时，需指定此类型。  默认值：\&quot;TIME\&quot; 
+    /// 采样类型。  取值如下： - \&quot;TIME\&quot;：根据时间间隔采样截图。 - \&quot;DOTS\&quot;：指定时间点截图。选择同步截图时，需指定此类型。 - \&quot;DOTS_MS\&quot;：同步截图指定时间点毫秒值。  默认值：\&quot;TIME\&quot; 
     /// </summary>
 
     std::string getType() const;
@@ -83,6 +83,15 @@ public:
     bool dotsIsSet() const;
     void unsetdots();
     void setDots(std::vector<int32_t> value);
+
+    /// <summary>
+    /// 同步截图下，指定时间截图的时间点数组，单位毫秒  例如输入[1000]，截取视频第1000毫秒位置的图像帧，仅支持一个时间点 
+    /// </summary>
+
+    std::vector<int32_t>& getDotsMs();
+    bool dotsMsIsSet() const;
+    void unsetdotsMs();
+    void setDotsMs(std::vector<int32_t> value);
 
     /// <summary>
     /// 截图输出文件名。  - 如果只抽一张图（即：按DOTS方式，指定1个时间点）则按该指定文件名输出图片。  - 如果抽多张图（即：按DOTS方式指定多个时间点或按TIME间隔截图）则输出图片名在该指定文件名基础上在增加时间点（示例：output_filename_10.jpg）。  - 如果指定了压缩抽帧图片生成tar包，则tar包按该指定文件名输出。 
@@ -141,6 +150,8 @@ protected:
     bool durationIsSet_;
     std::vector<int32_t> dots_;
     bool dotsIsSet_;
+    std::vector<int32_t> dotsMs_;
+    bool dotsMsIsSet_;
     std::string outputFilename_;
     bool outputFilenameIsSet_;
     int32_t format_;

@@ -65,7 +65,7 @@ bool ListSnapshotConfigsResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("snapshot_config_list"));
         if(!fieldValue.is_null())
         {
-            LiveSnapshotConfig refVal;
+            std::vector<LiveSnapshotConfig> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSnapshotConfigList(refVal);
         }
@@ -112,12 +112,12 @@ void ListSnapshotConfigsResponse::unsettotal()
     totalIsSet_ = false;
 }
 
-LiveSnapshotConfig ListSnapshotConfigsResponse::getSnapshotConfigList() const
+std::vector<LiveSnapshotConfig>& ListSnapshotConfigsResponse::getSnapshotConfigList()
 {
     return snapshotConfigList_;
 }
 
-void ListSnapshotConfigsResponse::setSnapshotConfigList(const LiveSnapshotConfig& value)
+void ListSnapshotConfigsResponse::setSnapshotConfigList(const std::vector<LiveSnapshotConfig>& value)
 {
     snapshotConfigList_ = value;
     snapshotConfigListIsSet_ = true;

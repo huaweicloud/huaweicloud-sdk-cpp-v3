@@ -111,7 +111,7 @@ public:
     void setPortRangeMax(int32_t value);
 
     /// <summary>
-    /// 功能说明：远端IP地址，当direction是egress时为虚拟机访问端的地址，当direction是ingress时为访问虚拟机的地址 取值范围：IP地址，或者cidr格式 约束：和remote_group_id互斥
+    /// 功能说明：远端IP地址，当direction是egress时为虚拟机访问端的地址，当direction是ingress时为访问虚拟机的地址 取值范围：IP地址，或者cidr格式 约束：和remote_group_id，remote_address_group_id互斥
     /// </summary>
 
     std::string getRemoteIpPrefix() const;
@@ -120,7 +120,7 @@ public:
     void setRemoteIpPrefix(const std::string& value);
 
     /// <summary>
-    /// 功能说明：对端安全组ID 约束：和remote_ip_prefix互斥
+    /// 功能说明：对端安全组ID 约束：和remote_ip_prefix，remote_address_group_id互斥
     /// </summary>
 
     std::string getRemoteGroupId() const;

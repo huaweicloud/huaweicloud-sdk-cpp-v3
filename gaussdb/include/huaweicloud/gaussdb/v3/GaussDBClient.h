@@ -25,6 +25,7 @@
 #include <huaweicloud/gaussdb/v3/model/CloseMysqlProxyRequestBody.h>
 #include <huaweicloud/gaussdb/v3/model/CreateConfigurationRequestBody.h>
 #include <huaweicloud/gaussdb/v3/model/CreateDatabaseUserRequest.h>
+#include <huaweicloud/gaussdb/v3/model/CreateDnsNameReq.h>
 #include <huaweicloud/gaussdb/v3/model/CreateGaussMySqlBackupRequest.h>
 #include <huaweicloud/gaussdb/v3/model/CreateGaussMySqlBackupResponse.h>
 #include <huaweicloud/gaussdb/v3/model/CreateGaussMySqlConfigurationRequest.h>
@@ -40,6 +41,8 @@
 #include <huaweicloud/gaussdb/v3/model/CreateGaussMySqlProxyResponse.h>
 #include <huaweicloud/gaussdb/v3/model/CreateGaussMySqlReadonlyNodeRequest.h>
 #include <huaweicloud/gaussdb/v3/model/CreateGaussMySqlReadonlyNodeResponse.h>
+#include <huaweicloud/gaussdb/v3/model/CreateGaussMysqlDnsRequest.h>
+#include <huaweicloud/gaussdb/v3/model/CreateGaussMysqlDnsResponse.h>
 #include <huaweicloud/gaussdb/v3/model/DeleteDatabasePermissionRequest.h>
 #include <huaweicloud/gaussdb/v3/model/DeleteDatabasePermissionRequestBody.h>
 #include <huaweicloud/gaussdb/v3/model/DeleteDatabasePermissionResponse.h>
@@ -103,9 +106,12 @@
 #include <huaweicloud/gaussdb/v3/model/ModifyBackupEncryptStatusRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ModifyBackupEncryptStatusResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ModifyBindEipRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ModifyDnsNameReq.h>
 #include <huaweicloud/gaussdb/v3/model/ModifyGaussMySqlProxyRouteModeRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ModifyGaussMySqlProxyRouteModeRequestBody.h>
 #include <huaweicloud/gaussdb/v3/model/ModifyGaussMySqlProxyRouteModeResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ModifyGaussMysqlDnsRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ModifyGaussMysqlDnsResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ModifyInternalIpRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ModifyOpsWindow.h>
 #include <huaweicloud/gaussdb/v3/model/ModifyPortRequest.h>
@@ -369,6 +375,14 @@ public:
     std::shared_ptr<CreateGaussMySqlReadonlyNodeResponse> createGaussMySqlReadonlyNode(
         CreateGaussMySqlReadonlyNodeRequest &request
     );
+    // 申请内网域名
+    //
+    // 申请内网域名。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateGaussMysqlDnsResponse> createGaussMysqlDns(
+        CreateGaussMysqlDnsRequest &request
+    );
     // 删除数据库用户的数据库权限
     //
     // 删除云数据库 GaussDB(for MySQL)实例数据库用户的数据库权限。
@@ -593,6 +607,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ModifyGaussMySqlProxyRouteModeResponse> modifyGaussMySqlProxyRouteMode(
         ModifyGaussMySqlProxyRouteModeRequest &request
+    );
+    // 修改内网域名
+    //
+    // 修改内网域名。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ModifyGaussMysqlDnsResponse> modifyGaussMysqlDns(
+        ModifyGaussMysqlDnsRequest &request
     );
     // 修改数据库用户密码
     //

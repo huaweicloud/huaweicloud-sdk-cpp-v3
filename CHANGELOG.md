@@ -1,3 +1,50 @@
+# 3.1.48 2023-08-21
+
+### HuaweiCloud SDK KMS
+
+- _Features_
+  - Support `KMS`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK LTS
+
+- _Features_
+  - Support the interface `DeleteDashboard`
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateDashBoard**
+    - changes of response param
+      - `* last_update_time: string -> int64`
+      - `* useSystemTemplate: string -> boolean`
+  - **CreateLogStream**
+    - changes of request param
+      - `- enterprise_project_name`
+      - `- log_stream_name: enum value [lts-stream-13ci]`
+      - `* ttl_in_days: string -> int32`
+      - `* tags: list<tagsBody> -> object<tagsBody>`
+  - **ListAccessConfig**
+    - changes of response param
+      - `+ cluster_id`
+      - `+ result.cluster_id`
+  - **UpdateAccessConfig**
+    - changes of request param
+      - `+ cluster_id`
+    - changes of response param
+      - `+ cluster_id`
+  - **CreateAccessConfig**
+    - changes of request param
+      - `+ cluster_id`
+    - changes of response param
+      - `+ cluster_id`
+  - **DeleteAccessConfig**
+    - changes of response param
+      - `+ cluster_id`
+      - `+ result.cluster_id`
+
 # 3.1.47 2023-08-17
 
 ### HuaweiCloud SDK CodeArtsBuild

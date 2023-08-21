@@ -25,6 +25,8 @@ CreateAccessConfigRequestBody::CreateAccessConfigRequestBody()
     binaryCollectIsSet_ = false;
     logSplit_ = false;
     logSplitIsSet_ = false;
+    clusterId_ = "";
+    clusterIdIsSet_ = false;
 }
 
 CreateAccessConfigRequestBody::~CreateAccessConfigRequestBody() = default;
@@ -60,6 +62,9 @@ web::json::value CreateAccessConfigRequestBody::toJson() const
     }
     if(logSplitIsSet_) {
         val[utility::conversions::to_string_t("log_split")] = ModelBase::toJson(logSplit_);
+    }
+    if(clusterIdIsSet_) {
+        val[utility::conversions::to_string_t("cluster_id")] = ModelBase::toJson(clusterId_);
     }
 
     return val;
@@ -139,6 +144,15 @@ bool CreateAccessConfigRequestBody::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLogSplit(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("cluster_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("cluster_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setClusterId(refVal);
         }
     }
     return ok;
@@ -310,6 +324,27 @@ bool CreateAccessConfigRequestBody::logSplitIsSet() const
 void CreateAccessConfigRequestBody::unsetlogSplit()
 {
     logSplitIsSet_ = false;
+}
+
+std::string CreateAccessConfigRequestBody::getClusterId() const
+{
+    return clusterId_;
+}
+
+void CreateAccessConfigRequestBody::setClusterId(const std::string& value)
+{
+    clusterId_ = value;
+    clusterIdIsSet_ = true;
+}
+
+bool CreateAccessConfigRequestBody::clusterIdIsSet() const
+{
+    return clusterIdIsSet_;
+}
+
+void CreateAccessConfigRequestBody::unsetclusterId()
+{
+    clusterIdIsSet_ = false;
 }
 
 }

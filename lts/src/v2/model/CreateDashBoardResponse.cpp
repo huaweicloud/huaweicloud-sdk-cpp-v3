@@ -19,13 +19,13 @@ CreateDashBoardResponse::CreateDashBoardResponse()
     groupNameIsSet_ = false;
     id_ = "";
     idIsSet_ = false;
-    lastUpdateTime_ = "";
+    lastUpdateTime_ = 0L;
     lastUpdateTimeIsSet_ = false;
     projectId_ = "";
     projectIdIsSet_ = false;
     title_ = "";
     titleIsSet_ = false;
-    useSystemTemplate_ = "";
+    useSystemTemplate_ = false;
     useSystemTemplateIsSet_ = false;
 }
 
@@ -111,7 +111,7 @@ bool CreateDashBoardResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("last_update_time"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLastUpdateTime(refVal);
         }
@@ -138,7 +138,7 @@ bool CreateDashBoardResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("useSystemTemplate"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setUseSystemTemplate(refVal);
         }
@@ -230,12 +230,12 @@ void CreateDashBoardResponse::unsetid()
     idIsSet_ = false;
 }
 
-std::string CreateDashBoardResponse::getLastUpdateTime() const
+int64_t CreateDashBoardResponse::getLastUpdateTime() const
 {
     return lastUpdateTime_;
 }
 
-void CreateDashBoardResponse::setLastUpdateTime(const std::string& value)
+void CreateDashBoardResponse::setLastUpdateTime(int64_t value)
 {
     lastUpdateTime_ = value;
     lastUpdateTimeIsSet_ = true;
@@ -293,12 +293,12 @@ void CreateDashBoardResponse::unsettitle()
     titleIsSet_ = false;
 }
 
-std::string CreateDashBoardResponse::getUseSystemTemplate() const
+bool CreateDashBoardResponse::isUseSystemTemplate() const
 {
     return useSystemTemplate_;
 }
 
-void CreateDashBoardResponse::setUseSystemTemplate(const std::string& value)
+void CreateDashBoardResponse::setUseSystemTemplate(bool value)
 {
     useSystemTemplate_ = value;
     useSystemTemplateIsSet_ = true;

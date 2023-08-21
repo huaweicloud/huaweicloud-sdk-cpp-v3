@@ -115,6 +115,15 @@ public:
     void unsetlogSplit();
     void setLogSplit(bool value);
 
+    /// <summary>
+    /// CCE集群ID，当CCE类型时，为必填
+    /// </summary>
+
+    std::string getClusterId() const;
+    bool clusterIdIsSet() const;
+    void unsetclusterId();
+    void setClusterId(const std::string& value);
+
 
 protected:
     std::string accessConfigName_;
@@ -133,6 +142,8 @@ protected:
     bool binaryCollectIsSet_;
     bool logSplit_;
     bool logSplitIsSet_;
+    std::string clusterId_;
+    bool clusterIdIsSet_;
 
 };
 

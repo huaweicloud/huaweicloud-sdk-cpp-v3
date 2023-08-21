@@ -8,7 +8,6 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
-#include <vector>
 #include <huaweicloud/lts/v2/model/TagsBody.h>
 
 namespace HuaweiCloud {
@@ -50,41 +49,30 @@ public:
     void setLogStreamName(const std::string& value);
 
     /// <summary>
-    /// 企业项目名称。
+    /// 日志存储时间 说明： 该参数仅对华东-上海一、华北-北京四、华南-广州用户开放。
     /// </summary>
 
-    std::string getEnterpriseProjectName() const;
-    bool enterpriseProjectNameIsSet() const;
-    void unsetenterpriseProjectName();
-    void setEnterpriseProjectName(const std::string& value);
-
-    /// <summary>
-    /// 日志存储时间  最小值：1 最大值：365 说明： 该参数仅对华东-上海一、华北-北京四、华南-广州用户开放。
-    /// </summary>
-
-    std::string getTtlInDays() const;
+    int32_t getTtlInDays() const;
     bool ttlInDaysIsSet() const;
     void unsetttlInDays();
-    void setTtlInDays(const std::string& value);
+    void setTtlInDays(int32_t value);
 
     /// <summary>
-    /// 标签字段信息
+    /// 
     /// </summary>
 
-    std::vector<TagsBody>& getTags();
+    TagsBody getTags() const;
     bool tagsIsSet() const;
     void unsettags();
-    void setTags(const std::vector<TagsBody>& value);
+    void setTags(const TagsBody& value);
 
 
 protected:
     std::string logStreamName_;
     bool logStreamNameIsSet_;
-    std::string enterpriseProjectName_;
-    bool enterpriseProjectNameIsSet_;
-    std::string ttlInDays_;
+    int32_t ttlInDays_;
     bool ttlInDaysIsSet_;
-    std::vector<TagsBody> tags_;
+    TagsBody tags_;
     bool tagsIsSet_;
 
 };

@@ -29,6 +29,8 @@ CreateAccessConfigResponse::CreateAccessConfigResponse()
     logSplitIsSet_ = false;
     binaryCollect_ = false;
     binaryCollectIsSet_ = false;
+    clusterId_ = "";
+    clusterIdIsSet_ = false;
 }
 
 CreateAccessConfigResponse::~CreateAccessConfigResponse() = default;
@@ -70,6 +72,9 @@ web::json::value CreateAccessConfigResponse::toJson() const
     }
     if(binaryCollectIsSet_) {
         val[utility::conversions::to_string_t("binary_collect")] = ModelBase::toJson(binaryCollect_);
+    }
+    if(clusterIdIsSet_) {
+        val[utility::conversions::to_string_t("cluster_id")] = ModelBase::toJson(clusterId_);
     }
 
     return val;
@@ -167,6 +172,15 @@ bool CreateAccessConfigResponse::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBinaryCollect(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("cluster_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("cluster_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setClusterId(refVal);
         }
     }
     return ok;
@@ -380,6 +394,27 @@ bool CreateAccessConfigResponse::binaryCollectIsSet() const
 void CreateAccessConfigResponse::unsetbinaryCollect()
 {
     binaryCollectIsSet_ = false;
+}
+
+std::string CreateAccessConfigResponse::getClusterId() const
+{
+    return clusterId_;
+}
+
+void CreateAccessConfigResponse::setClusterId(const std::string& value)
+{
+    clusterId_ = value;
+    clusterIdIsSet_ = true;
+}
+
+bool CreateAccessConfigResponse::clusterIdIsSet() const
+{
+    return clusterIdIsSet_;
+}
+
+void CreateAccessConfigResponse::unsetclusterId()
+{
+    clusterIdIsSet_ = false;
 }
 
 }

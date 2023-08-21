@@ -1,3 +1,50 @@
+# 3.1.48 2023-08-21
+
+### HuaweiCloud SDK KMS
+
+- _新增特性_
+  - 支持数据加密服务-密钥管理
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK LTS
+
+- _新增特性_
+  - 支持接口`DeleteDashboard`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateDashBoard**
+    - 响应参数变更
+      - `* last_update_time: string -> int64`
+      - `* useSystemTemplate: string -> boolean`
+  - **CreateLogStream**
+    - 请求参数变更
+      - `- enterprise_project_name`
+      - `- log_stream_name: enum value [lts-stream-13ci]`
+      - `* ttl_in_days: string -> int32`
+      - `* tags: list<tagsBody> -> object<tagsBody>`
+  - **ListAccessConfig**
+    - 响应参数变更
+      - `+ cluster_id`
+      - `+ result.cluster_id`
+  - **UpdateAccessConfig**
+    - 请求参数变更
+      - `+ cluster_id`
+    - 响应参数变更
+      - `+ cluster_id`
+  - **CreateAccessConfig**
+    - 请求参数变更
+      - `+ cluster_id`
+    - 响应参数变更
+      - `+ cluster_id`
+  - **DeleteAccessConfig**
+    - 响应参数变更
+      - `+ cluster_id`
+      - `+ result.cluster_id`
+
 # 3.1.47 2023-08-17
 
 ### HuaweiCloud SDK CodeArtsBuild

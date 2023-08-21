@@ -96,6 +96,15 @@ public:
     void unsetbinaryCollect();
     void setBinaryCollect(bool value);
 
+    /// <summary>
+    /// CCE集群ID，CCE类型时，为必填
+    /// </summary>
+
+    std::string getClusterId() const;
+    bool clusterIdIsSet() const;
+    void unsetclusterId();
+    void setClusterId(const std::string& value);
+
 
 protected:
     std::string accessConfigId_;
@@ -110,6 +119,8 @@ protected:
     bool logSplitIsSet_;
     bool binaryCollect_;
     bool binaryCollectIsSet_;
+    std::string clusterId_;
+    bool clusterIdIsSet_;
 
 };
 

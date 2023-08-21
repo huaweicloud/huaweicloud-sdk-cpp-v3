@@ -55,6 +55,8 @@
 #include <huaweicloud/lts/v2/model/DeleteActiveAlarmsRequest.h>
 #include <huaweicloud/lts/v2/model/DeleteActiveAlarmsRequestBody.h>
 #include <huaweicloud/lts/v2/model/DeleteActiveAlarmsResponse.h>
+#include <huaweicloud/lts/v2/model/DeleteDashboardRequest.h>
+#include <huaweicloud/lts/v2/model/DeleteDashboardResponse.h>
 #include <huaweicloud/lts/v2/model/DeleteHostGroupRequest.h>
 #include <huaweicloud/lts/v2/model/DeleteHostGroupRequestBody.h>
 #include <huaweicloud/lts/v2/model/DeleteHostGroupResponse.h>
@@ -365,6 +367,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteActiveAlarmsResponse> deleteActiveAlarms(
         DeleteActiveAlarmsRequest &request
+    );
+    // 删除仪表盘
+    //
+    // 删除仪表盘
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteDashboardResponse> deleteDashboard(
+        DeleteDashboardRequest &request
     );
     // 删除主机组
     //

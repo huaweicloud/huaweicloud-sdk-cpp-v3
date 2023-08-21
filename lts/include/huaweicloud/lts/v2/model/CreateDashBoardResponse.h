@@ -79,10 +79,10 @@ public:
     /// 最近修改时间
     /// </summary>
 
-    std::string getLastUpdateTime() const;
+    int64_t getLastUpdateTime() const;
     bool lastUpdateTimeIsSet() const;
     void unsetlastUpdateTime();
-    void setLastUpdateTime(const std::string& value);
+    void setLastUpdateTime(int64_t value);
 
     /// <summary>
     /// 项目id
@@ -106,10 +106,10 @@ public:
     /// 是否使用模板
     /// </summary>
 
-    std::string getUseSystemTemplate() const;
+    bool isUseSystemTemplate() const;
     bool useSystemTemplateIsSet() const;
     void unsetuseSystemTemplate();
-    void setUseSystemTemplate(const std::string& value);
+    void setUseSystemTemplate(bool value);
 
 
 protected:
@@ -121,13 +121,13 @@ protected:
     bool groupNameIsSet_;
     std::string id_;
     bool idIsSet_;
-    std::string lastUpdateTime_;
+    int64_t lastUpdateTime_;
     bool lastUpdateTimeIsSet_;
     std::string projectId_;
     bool projectIdIsSet_;
     std::string title_;
     bool titleIsSet_;
-    std::string useSystemTemplate_;
+    bool useSystemTemplate_;
     bool useSystemTemplateIsSet_;
 
 #ifdef RTTR_FLAG

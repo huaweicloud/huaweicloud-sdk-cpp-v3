@@ -6,6 +6,10 @@ jobs:
   release:
     runs-on: ubuntu-22.04
     steps:
+    - name: Configure
+      run: |
+        git config --global user.name ${{ vars.SDK_USERNAME }}
+        git config --global user.email ${{ vars.SDK_EMAIL }}
     - name: Pull source
       uses: actions/checkout@v3
       with:
@@ -19,10 +23,6 @@ jobs:
       with:
         ssh-key: ${{ secrets.SSH_KEY }}
         path: target
-    - name: Configure
-      run: |
-        git config --global user.name ${{ vars.SDK_USERNAME }}
-        git config --global user.email ${{ vars.SDK_EMAIL }}
     - name: Push & Tag & Release
       shell: bash
       run: |

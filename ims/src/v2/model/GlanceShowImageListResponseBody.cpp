@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/ims/v2/model/GlanceShowImageResponseBody.h"
+#include "huaweicloud/ims/v2/model/GlanceShowImageListResponseBody.h"
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -11,7 +11,7 @@ namespace Model {
 
 
 
-GlanceShowImageResponseBody::GlanceShowImageResponseBody()
+GlanceShowImageListResponseBody::GlanceShowImageListResponseBody()
 {
     backupId_ = "";
     backupIdIsSet_ = false;
@@ -100,6 +100,8 @@ GlanceShowImageResponseBody::GlanceShowImageResponseBody()
     supportFcInjectIsSet_ = false;
     enterpriseProjectId_ = "";
     enterpriseProjectIdIsSet_ = false;
+    sysEnterpriseProjectId_ = "";
+    sysEnterpriseProjectIdIsSet_ = false;
     hwFirmwareType_ = "";
     hwFirmwareTypeIsSet_ = false;
     supportArm_ = "";
@@ -134,13 +136,13 @@ GlanceShowImageResponseBody::GlanceShowImageResponseBody()
     supportAmdIsSet_ = false;
 }
 
-GlanceShowImageResponseBody::~GlanceShowImageResponseBody() = default;
+GlanceShowImageListResponseBody::~GlanceShowImageListResponseBody() = default;
 
-void GlanceShowImageResponseBody::validate()
+void GlanceShowImageListResponseBody::validate()
 {
 }
 
-web::json::value GlanceShowImageResponseBody::toJson() const
+web::json::value GlanceShowImageListResponseBody::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -276,6 +278,9 @@ web::json::value GlanceShowImageResponseBody::toJson() const
     if(enterpriseProjectIdIsSet_) {
         val[utility::conversions::to_string_t("enterprise_project_id")] = ModelBase::toJson(enterpriseProjectId_);
     }
+    if(sysEnterpriseProjectIdIsSet_) {
+        val[utility::conversions::to_string_t("_sys_enterprise_project_id")] = ModelBase::toJson(sysEnterpriseProjectId_);
+    }
     if(hwFirmwareTypeIsSet_) {
         val[utility::conversions::to_string_t("hw_firmware_type")] = ModelBase::toJson(hwFirmwareType_);
     }
@@ -328,7 +333,7 @@ web::json::value GlanceShowImageResponseBody::toJson() const
     return val;
 }
 
-bool GlanceShowImageResponseBody::fromJson(const web::json::value& val)
+bool GlanceShowImageListResponseBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -728,6 +733,15 @@ bool GlanceShowImageResponseBody::fromJson(const web::json::value& val)
             setEnterpriseProjectId(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("_sys_enterprise_project_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("_sys_enterprise_project_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSysEnterpriseProjectId(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("hw_firmware_type"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("hw_firmware_type"));
         if(!fieldValue.is_null())
@@ -875,1262 +889,1283 @@ bool GlanceShowImageResponseBody::fromJson(const web::json::value& val)
     return ok;
 }
 
-std::string GlanceShowImageResponseBody::getBackupId() const
+std::string GlanceShowImageListResponseBody::getBackupId() const
 {
     return backupId_;
 }
 
-void GlanceShowImageResponseBody::setBackupId(const std::string& value)
+void GlanceShowImageListResponseBody::setBackupId(const std::string& value)
 {
     backupId_ = value;
     backupIdIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::backupIdIsSet() const
+bool GlanceShowImageListResponseBody::backupIdIsSet() const
 {
     return backupIdIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetbackupId()
+void GlanceShowImageListResponseBody::unsetbackupId()
 {
     backupIdIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getDataOrigin() const
+std::string GlanceShowImageListResponseBody::getDataOrigin() const
 {
     return dataOrigin_;
 }
 
-void GlanceShowImageResponseBody::setDataOrigin(const std::string& value)
+void GlanceShowImageListResponseBody::setDataOrigin(const std::string& value)
 {
     dataOrigin_ = value;
     dataOriginIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::dataOriginIsSet() const
+bool GlanceShowImageListResponseBody::dataOriginIsSet() const
 {
     return dataOriginIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetdataOrigin()
+void GlanceShowImageListResponseBody::unsetdataOrigin()
 {
     dataOriginIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getDescription() const
+std::string GlanceShowImageListResponseBody::getDescription() const
 {
     return description_;
 }
 
-void GlanceShowImageResponseBody::setDescription(const std::string& value)
+void GlanceShowImageListResponseBody::setDescription(const std::string& value)
 {
     description_ = value;
     descriptionIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::descriptionIsSet() const
+bool GlanceShowImageListResponseBody::descriptionIsSet() const
 {
     return descriptionIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetdescription()
+void GlanceShowImageListResponseBody::unsetdescription()
 {
     descriptionIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getImageSize() const
+std::string GlanceShowImageListResponseBody::getImageSize() const
 {
     return imageSize_;
 }
 
-void GlanceShowImageResponseBody::setImageSize(const std::string& value)
+void GlanceShowImageListResponseBody::setImageSize(const std::string& value)
 {
     imageSize_ = value;
     imageSizeIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::imageSizeIsSet() const
+bool GlanceShowImageListResponseBody::imageSizeIsSet() const
 {
     return imageSizeIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetimageSize()
+void GlanceShowImageListResponseBody::unsetimageSize()
 {
     imageSizeIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getImageSourceType() const
+std::string GlanceShowImageListResponseBody::getImageSourceType() const
 {
     return imageSourceType_;
 }
 
-void GlanceShowImageResponseBody::setImageSourceType(const std::string& value)
+void GlanceShowImageListResponseBody::setImageSourceType(const std::string& value)
 {
     imageSourceType_ = value;
     imageSourceTypeIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::imageSourceTypeIsSet() const
+bool GlanceShowImageListResponseBody::imageSourceTypeIsSet() const
 {
     return imageSourceTypeIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetimageSourceType()
+void GlanceShowImageListResponseBody::unsetimageSourceType()
 {
     imageSourceTypeIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getImagetype() const
+std::string GlanceShowImageListResponseBody::getImagetype() const
 {
     return imagetype_;
 }
 
-void GlanceShowImageResponseBody::setImagetype(const std::string& value)
+void GlanceShowImageListResponseBody::setImagetype(const std::string& value)
 {
     imagetype_ = value;
     imagetypeIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::imagetypeIsSet() const
+bool GlanceShowImageListResponseBody::imagetypeIsSet() const
 {
     return imagetypeIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetimagetype()
+void GlanceShowImageListResponseBody::unsetimagetype()
 {
     imagetypeIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getIsregistered() const
+std::string GlanceShowImageListResponseBody::getIsregistered() const
 {
     return isregistered_;
 }
 
-void GlanceShowImageResponseBody::setIsregistered(const std::string& value)
+void GlanceShowImageListResponseBody::setIsregistered(const std::string& value)
 {
     isregistered_ = value;
     isregisteredIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::isregisteredIsSet() const
+bool GlanceShowImageListResponseBody::isregisteredIsSet() const
 {
     return isregisteredIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetisregistered()
+void GlanceShowImageListResponseBody::unsetisregistered()
 {
     isregisteredIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getOriginalimagename() const
+std::string GlanceShowImageListResponseBody::getOriginalimagename() const
 {
     return originalimagename_;
 }
 
-void GlanceShowImageResponseBody::setOriginalimagename(const std::string& value)
+void GlanceShowImageListResponseBody::setOriginalimagename(const std::string& value)
 {
     originalimagename_ = value;
     originalimagenameIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::originalimagenameIsSet() const
+bool GlanceShowImageListResponseBody::originalimagenameIsSet() const
 {
     return originalimagenameIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetoriginalimagename()
+void GlanceShowImageListResponseBody::unsetoriginalimagename()
 {
     originalimagenameIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getOsBit() const
+std::string GlanceShowImageListResponseBody::getOsBit() const
 {
     return osBit_;
 }
 
-void GlanceShowImageResponseBody::setOsBit(const std::string& value)
+void GlanceShowImageListResponseBody::setOsBit(const std::string& value)
 {
     osBit_ = value;
     osBitIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::osBitIsSet() const
+bool GlanceShowImageListResponseBody::osBitIsSet() const
 {
     return osBitIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetosBit()
+void GlanceShowImageListResponseBody::unsetosBit()
 {
     osBitIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getOsType() const
+std::string GlanceShowImageListResponseBody::getOsType() const
 {
     return osType_;
 }
 
-void GlanceShowImageResponseBody::setOsType(const std::string& value)
+void GlanceShowImageListResponseBody::setOsType(const std::string& value)
 {
     osType_ = value;
     osTypeIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::osTypeIsSet() const
+bool GlanceShowImageListResponseBody::osTypeIsSet() const
 {
     return osTypeIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetosType()
+void GlanceShowImageListResponseBody::unsetosType()
 {
     osTypeIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getOsVersion() const
+std::string GlanceShowImageListResponseBody::getOsVersion() const
 {
     return osVersion_;
 }
 
-void GlanceShowImageResponseBody::setOsVersion(const std::string& value)
+void GlanceShowImageListResponseBody::setOsVersion(const std::string& value)
 {
     osVersion_ = value;
     osVersionIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::osVersionIsSet() const
+bool GlanceShowImageListResponseBody::osVersionIsSet() const
 {
     return osVersionIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetosVersion()
+void GlanceShowImageListResponseBody::unsetosVersion()
 {
     osVersionIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getPlatform() const
+std::string GlanceShowImageListResponseBody::getPlatform() const
 {
     return platform_;
 }
 
-void GlanceShowImageResponseBody::setPlatform(const std::string& value)
+void GlanceShowImageListResponseBody::setPlatform(const std::string& value)
 {
     platform_ = value;
     platformIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::platformIsSet() const
+bool GlanceShowImageListResponseBody::platformIsSet() const
 {
     return platformIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetplatform()
+void GlanceShowImageListResponseBody::unsetplatform()
 {
     platformIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getProductcode() const
+std::string GlanceShowImageListResponseBody::getProductcode() const
 {
     return productcode_;
 }
 
-void GlanceShowImageResponseBody::setProductcode(const std::string& value)
+void GlanceShowImageListResponseBody::setProductcode(const std::string& value)
 {
     productcode_ = value;
     productcodeIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::productcodeIsSet() const
+bool GlanceShowImageListResponseBody::productcodeIsSet() const
 {
     return productcodeIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetproductcode()
+void GlanceShowImageListResponseBody::unsetproductcode()
 {
     productcodeIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getSupportDiskintensive() const
+std::string GlanceShowImageListResponseBody::getSupportDiskintensive() const
 {
     return supportDiskintensive_;
 }
 
-void GlanceShowImageResponseBody::setSupportDiskintensive(const std::string& value)
+void GlanceShowImageListResponseBody::setSupportDiskintensive(const std::string& value)
 {
     supportDiskintensive_ = value;
     supportDiskintensiveIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::supportDiskintensiveIsSet() const
+bool GlanceShowImageListResponseBody::supportDiskintensiveIsSet() const
 {
     return supportDiskintensiveIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetsupportDiskintensive()
+void GlanceShowImageListResponseBody::unsetsupportDiskintensive()
 {
     supportDiskintensiveIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getSupportHighperformance() const
+std::string GlanceShowImageListResponseBody::getSupportHighperformance() const
 {
     return supportHighperformance_;
 }
 
-void GlanceShowImageResponseBody::setSupportHighperformance(const std::string& value)
+void GlanceShowImageListResponseBody::setSupportHighperformance(const std::string& value)
 {
     supportHighperformance_ = value;
     supportHighperformanceIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::supportHighperformanceIsSet() const
+bool GlanceShowImageListResponseBody::supportHighperformanceIsSet() const
 {
     return supportHighperformanceIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetsupportHighperformance()
+void GlanceShowImageListResponseBody::unsetsupportHighperformance()
 {
     supportHighperformanceIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getSupportKvm() const
+std::string GlanceShowImageListResponseBody::getSupportKvm() const
 {
     return supportKvm_;
 }
 
-void GlanceShowImageResponseBody::setSupportKvm(const std::string& value)
+void GlanceShowImageListResponseBody::setSupportKvm(const std::string& value)
 {
     supportKvm_ = value;
     supportKvmIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::supportKvmIsSet() const
+bool GlanceShowImageListResponseBody::supportKvmIsSet() const
 {
     return supportKvmIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetsupportKvm()
+void GlanceShowImageListResponseBody::unsetsupportKvm()
 {
     supportKvmIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getSupportKvmGpuType() const
+std::string GlanceShowImageListResponseBody::getSupportKvmGpuType() const
 {
     return supportKvmGpuType_;
 }
 
-void GlanceShowImageResponseBody::setSupportKvmGpuType(const std::string& value)
+void GlanceShowImageListResponseBody::setSupportKvmGpuType(const std::string& value)
 {
     supportKvmGpuType_ = value;
     supportKvmGpuTypeIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::supportKvmGpuTypeIsSet() const
+bool GlanceShowImageListResponseBody::supportKvmGpuTypeIsSet() const
 {
     return supportKvmGpuTypeIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetsupportKvmGpuType()
+void GlanceShowImageListResponseBody::unsetsupportKvmGpuType()
 {
     supportKvmGpuTypeIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getSupportKvmInfiniband() const
+std::string GlanceShowImageListResponseBody::getSupportKvmInfiniband() const
 {
     return supportKvmInfiniband_;
 }
 
-void GlanceShowImageResponseBody::setSupportKvmInfiniband(const std::string& value)
+void GlanceShowImageListResponseBody::setSupportKvmInfiniband(const std::string& value)
 {
     supportKvmInfiniband_ = value;
     supportKvmInfinibandIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::supportKvmInfinibandIsSet() const
+bool GlanceShowImageListResponseBody::supportKvmInfinibandIsSet() const
 {
     return supportKvmInfinibandIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetsupportKvmInfiniband()
+void GlanceShowImageListResponseBody::unsetsupportKvmInfiniband()
 {
     supportKvmInfinibandIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getSupportLargememory() const
+std::string GlanceShowImageListResponseBody::getSupportLargememory() const
 {
     return supportLargememory_;
 }
 
-void GlanceShowImageResponseBody::setSupportLargememory(const std::string& value)
+void GlanceShowImageListResponseBody::setSupportLargememory(const std::string& value)
 {
     supportLargememory_ = value;
     supportLargememoryIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::supportLargememoryIsSet() const
+bool GlanceShowImageListResponseBody::supportLargememoryIsSet() const
 {
     return supportLargememoryIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetsupportLargememory()
+void GlanceShowImageListResponseBody::unsetsupportLargememory()
 {
     supportLargememoryIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getSupportXen() const
+std::string GlanceShowImageListResponseBody::getSupportXen() const
 {
     return supportXen_;
 }
 
-void GlanceShowImageResponseBody::setSupportXen(const std::string& value)
+void GlanceShowImageListResponseBody::setSupportXen(const std::string& value)
 {
     supportXen_ = value;
     supportXenIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::supportXenIsSet() const
+bool GlanceShowImageListResponseBody::supportXenIsSet() const
 {
     return supportXenIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetsupportXen()
+void GlanceShowImageListResponseBody::unsetsupportXen()
 {
     supportXenIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getSupportXenGpuType() const
+std::string GlanceShowImageListResponseBody::getSupportXenGpuType() const
 {
     return supportXenGpuType_;
 }
 
-void GlanceShowImageResponseBody::setSupportXenGpuType(const std::string& value)
+void GlanceShowImageListResponseBody::setSupportXenGpuType(const std::string& value)
 {
     supportXenGpuType_ = value;
     supportXenGpuTypeIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::supportXenGpuTypeIsSet() const
+bool GlanceShowImageListResponseBody::supportXenGpuTypeIsSet() const
 {
     return supportXenGpuTypeIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetsupportXenGpuType()
+void GlanceShowImageListResponseBody::unsetsupportXenGpuType()
 {
     supportXenGpuTypeIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getSupportXenHana() const
+std::string GlanceShowImageListResponseBody::getSupportXenHana() const
 {
     return supportXenHana_;
 }
 
-void GlanceShowImageResponseBody::setSupportXenHana(const std::string& value)
+void GlanceShowImageListResponseBody::setSupportXenHana(const std::string& value)
 {
     supportXenHana_ = value;
     supportXenHanaIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::supportXenHanaIsSet() const
+bool GlanceShowImageListResponseBody::supportXenHanaIsSet() const
 {
     return supportXenHanaIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetsupportXenHana()
+void GlanceShowImageListResponseBody::unsetsupportXenHana()
 {
     supportXenHanaIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getChecksum() const
+std::string GlanceShowImageListResponseBody::getChecksum() const
 {
     return checksum_;
 }
 
-void GlanceShowImageResponseBody::setChecksum(const std::string& value)
+void GlanceShowImageListResponseBody::setChecksum(const std::string& value)
 {
     checksum_ = value;
     checksumIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::checksumIsSet() const
+bool GlanceShowImageListResponseBody::checksumIsSet() const
 {
     return checksumIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetchecksum()
+void GlanceShowImageListResponseBody::unsetchecksum()
 {
     checksumIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getContainerFormat() const
+std::string GlanceShowImageListResponseBody::getContainerFormat() const
 {
     return containerFormat_;
 }
 
-void GlanceShowImageResponseBody::setContainerFormat(const std::string& value)
+void GlanceShowImageListResponseBody::setContainerFormat(const std::string& value)
 {
     containerFormat_ = value;
     containerFormatIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::containerFormatIsSet() const
+bool GlanceShowImageListResponseBody::containerFormatIsSet() const
 {
     return containerFormatIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetcontainerFormat()
+void GlanceShowImageListResponseBody::unsetcontainerFormat()
 {
     containerFormatIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getCreatedAt() const
+std::string GlanceShowImageListResponseBody::getCreatedAt() const
 {
     return createdAt_;
 }
 
-void GlanceShowImageResponseBody::setCreatedAt(const std::string& value)
+void GlanceShowImageListResponseBody::setCreatedAt(const std::string& value)
 {
     createdAt_ = value;
     createdAtIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::createdAtIsSet() const
+bool GlanceShowImageListResponseBody::createdAtIsSet() const
 {
     return createdAtIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetcreatedAt()
+void GlanceShowImageListResponseBody::unsetcreatedAt()
 {
     createdAtIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getDiskFormat() const
+std::string GlanceShowImageListResponseBody::getDiskFormat() const
 {
     return diskFormat_;
 }
 
-void GlanceShowImageResponseBody::setDiskFormat(const std::string& value)
+void GlanceShowImageListResponseBody::setDiskFormat(const std::string& value)
 {
     diskFormat_ = value;
     diskFormatIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::diskFormatIsSet() const
+bool GlanceShowImageListResponseBody::diskFormatIsSet() const
 {
     return diskFormatIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetdiskFormat()
+void GlanceShowImageListResponseBody::unsetdiskFormat()
 {
     diskFormatIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getFile() const
+std::string GlanceShowImageListResponseBody::getFile() const
 {
     return file_;
 }
 
-void GlanceShowImageResponseBody::setFile(const std::string& value)
+void GlanceShowImageListResponseBody::setFile(const std::string& value)
 {
     file_ = value;
     fileIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::fileIsSet() const
+bool GlanceShowImageListResponseBody::fileIsSet() const
 {
     return fileIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetfile()
+void GlanceShowImageListResponseBody::unsetfile()
 {
     fileIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getId() const
+std::string GlanceShowImageListResponseBody::getId() const
 {
     return id_;
 }
 
-void GlanceShowImageResponseBody::setId(const std::string& value)
+void GlanceShowImageListResponseBody::setId(const std::string& value)
 {
     id_ = value;
     idIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::idIsSet() const
+bool GlanceShowImageListResponseBody::idIsSet() const
 {
     return idIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetid()
+void GlanceShowImageListResponseBody::unsetid()
 {
     idIsSet_ = false;
 }
 
-int32_t GlanceShowImageResponseBody::getMinDisk() const
+int32_t GlanceShowImageListResponseBody::getMinDisk() const
 {
     return minDisk_;
 }
 
-void GlanceShowImageResponseBody::setMinDisk(int32_t value)
+void GlanceShowImageListResponseBody::setMinDisk(int32_t value)
 {
     minDisk_ = value;
     minDiskIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::minDiskIsSet() const
+bool GlanceShowImageListResponseBody::minDiskIsSet() const
 {
     return minDiskIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetminDisk()
+void GlanceShowImageListResponseBody::unsetminDisk()
 {
     minDiskIsSet_ = false;
 }
 
-int32_t GlanceShowImageResponseBody::getMinRam() const
+int32_t GlanceShowImageListResponseBody::getMinRam() const
 {
     return minRam_;
 }
 
-void GlanceShowImageResponseBody::setMinRam(int32_t value)
+void GlanceShowImageListResponseBody::setMinRam(int32_t value)
 {
     minRam_ = value;
     minRamIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::minRamIsSet() const
+bool GlanceShowImageListResponseBody::minRamIsSet() const
 {
     return minRamIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetminRam()
+void GlanceShowImageListResponseBody::unsetminRam()
 {
     minRamIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getName() const
+std::string GlanceShowImageListResponseBody::getName() const
 {
     return name_;
 }
 
-void GlanceShowImageResponseBody::setName(const std::string& value)
+void GlanceShowImageListResponseBody::setName(const std::string& value)
 {
     name_ = value;
     nameIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::nameIsSet() const
+bool GlanceShowImageListResponseBody::nameIsSet() const
 {
     return nameIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetname()
+void GlanceShowImageListResponseBody::unsetname()
 {
     nameIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getOwner() const
+std::string GlanceShowImageListResponseBody::getOwner() const
 {
     return owner_;
 }
 
-void GlanceShowImageResponseBody::setOwner(const std::string& value)
+void GlanceShowImageListResponseBody::setOwner(const std::string& value)
 {
     owner_ = value;
     ownerIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::ownerIsSet() const
+bool GlanceShowImageListResponseBody::ownerIsSet() const
 {
     return ownerIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetowner()
+void GlanceShowImageListResponseBody::unsetowner()
 {
     ownerIsSet_ = false;
 }
 
-bool GlanceShowImageResponseBody::isProtected() const
+bool GlanceShowImageListResponseBody::isProtected() const
 {
     return protected_;
 }
 
-void GlanceShowImageResponseBody::setProtected(bool value)
+void GlanceShowImageListResponseBody::setProtected(bool value)
 {
     protected_ = value;
     protectedIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::protectedIsSet() const
+bool GlanceShowImageListResponseBody::protectedIsSet() const
 {
     return protectedIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetprotected()
+void GlanceShowImageListResponseBody::unsetprotected()
 {
     protectedIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getSchema() const
+std::string GlanceShowImageListResponseBody::getSchema() const
 {
     return schema_;
 }
 
-void GlanceShowImageResponseBody::setSchema(const std::string& value)
+void GlanceShowImageListResponseBody::setSchema(const std::string& value)
 {
     schema_ = value;
     schemaIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::schemaIsSet() const
+bool GlanceShowImageListResponseBody::schemaIsSet() const
 {
     return schemaIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetschema()
+void GlanceShowImageListResponseBody::unsetschema()
 {
     schemaIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getSelf() const
+std::string GlanceShowImageListResponseBody::getSelf() const
 {
     return self_;
 }
 
-void GlanceShowImageResponseBody::setSelf(const std::string& value)
+void GlanceShowImageListResponseBody::setSelf(const std::string& value)
 {
     self_ = value;
     selfIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::selfIsSet() const
+bool GlanceShowImageListResponseBody::selfIsSet() const
 {
     return selfIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetself()
+void GlanceShowImageListResponseBody::unsetself()
 {
     selfIsSet_ = false;
 }
 
-int64_t GlanceShowImageResponseBody::getSize() const
+int64_t GlanceShowImageListResponseBody::getSize() const
 {
     return size_;
 }
 
-void GlanceShowImageResponseBody::setSize(int64_t value)
+void GlanceShowImageListResponseBody::setSize(int64_t value)
 {
     size_ = value;
     sizeIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::sizeIsSet() const
+bool GlanceShowImageListResponseBody::sizeIsSet() const
 {
     return sizeIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetsize()
+void GlanceShowImageListResponseBody::unsetsize()
 {
     sizeIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getStatus() const
+std::string GlanceShowImageListResponseBody::getStatus() const
 {
     return status_;
 }
 
-void GlanceShowImageResponseBody::setStatus(const std::string& value)
+void GlanceShowImageListResponseBody::setStatus(const std::string& value)
 {
     status_ = value;
     statusIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::statusIsSet() const
+bool GlanceShowImageListResponseBody::statusIsSet() const
 {
     return statusIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetstatus()
+void GlanceShowImageListResponseBody::unsetstatus()
 {
     statusIsSet_ = false;
 }
 
-std::vector<std::string>& GlanceShowImageResponseBody::getTags()
+std::vector<std::string>& GlanceShowImageListResponseBody::getTags()
 {
     return tags_;
 }
 
-void GlanceShowImageResponseBody::setTags(const std::vector<std::string>& value)
+void GlanceShowImageListResponseBody::setTags(const std::vector<std::string>& value)
 {
     tags_ = value;
     tagsIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::tagsIsSet() const
+bool GlanceShowImageListResponseBody::tagsIsSet() const
 {
     return tagsIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsettags()
+void GlanceShowImageListResponseBody::unsettags()
 {
     tagsIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getUpdatedAt() const
+std::string GlanceShowImageListResponseBody::getUpdatedAt() const
 {
     return updatedAt_;
 }
 
-void GlanceShowImageResponseBody::setUpdatedAt(const std::string& value)
+void GlanceShowImageListResponseBody::setUpdatedAt(const std::string& value)
 {
     updatedAt_ = value;
     updatedAtIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::updatedAtIsSet() const
+bool GlanceShowImageListResponseBody::updatedAtIsSet() const
 {
     return updatedAtIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetupdatedAt()
+void GlanceShowImageListResponseBody::unsetupdatedAt()
 {
     updatedAtIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getVirtualEnvType() const
+std::string GlanceShowImageListResponseBody::getVirtualEnvType() const
 {
     return virtualEnvType_;
 }
 
-void GlanceShowImageResponseBody::setVirtualEnvType(const std::string& value)
+void GlanceShowImageListResponseBody::setVirtualEnvType(const std::string& value)
 {
     virtualEnvType_ = value;
     virtualEnvTypeIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::virtualEnvTypeIsSet() const
+bool GlanceShowImageListResponseBody::virtualEnvTypeIsSet() const
 {
     return virtualEnvTypeIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetvirtualEnvType()
+void GlanceShowImageListResponseBody::unsetvirtualEnvType()
 {
     virtualEnvTypeIsSet_ = false;
 }
 
-int32_t GlanceShowImageResponseBody::getVirtualSize() const
+int32_t GlanceShowImageListResponseBody::getVirtualSize() const
 {
     return virtualSize_;
 }
 
-void GlanceShowImageResponseBody::setVirtualSize(int32_t value)
+void GlanceShowImageListResponseBody::setVirtualSize(int32_t value)
 {
     virtualSize_ = value;
     virtualSizeIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::virtualSizeIsSet() const
+bool GlanceShowImageListResponseBody::virtualSizeIsSet() const
 {
     return virtualSizeIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetvirtualSize()
+void GlanceShowImageListResponseBody::unsetvirtualSize()
 {
     virtualSizeIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getVisibility() const
+std::string GlanceShowImageListResponseBody::getVisibility() const
 {
     return visibility_;
 }
 
-void GlanceShowImageResponseBody::setVisibility(const std::string& value)
+void GlanceShowImageListResponseBody::setVisibility(const std::string& value)
 {
     visibility_ = value;
     visibilityIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::visibilityIsSet() const
+bool GlanceShowImageListResponseBody::visibilityIsSet() const
 {
     return visibilityIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetvisibility()
+void GlanceShowImageListResponseBody::unsetvisibility()
 {
     visibilityIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getSupportFcInject() const
+std::string GlanceShowImageListResponseBody::getSupportFcInject() const
 {
     return supportFcInject_;
 }
 
-void GlanceShowImageResponseBody::setSupportFcInject(const std::string& value)
+void GlanceShowImageListResponseBody::setSupportFcInject(const std::string& value)
 {
     supportFcInject_ = value;
     supportFcInjectIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::supportFcInjectIsSet() const
+bool GlanceShowImageListResponseBody::supportFcInjectIsSet() const
 {
     return supportFcInjectIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetsupportFcInject()
+void GlanceShowImageListResponseBody::unsetsupportFcInject()
 {
     supportFcInjectIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getEnterpriseProjectId() const
+std::string GlanceShowImageListResponseBody::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;
 }
 
-void GlanceShowImageResponseBody::setEnterpriseProjectId(const std::string& value)
+void GlanceShowImageListResponseBody::setEnterpriseProjectId(const std::string& value)
 {
     enterpriseProjectId_ = value;
     enterpriseProjectIdIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::enterpriseProjectIdIsSet() const
+bool GlanceShowImageListResponseBody::enterpriseProjectIdIsSet() const
 {
     return enterpriseProjectIdIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetenterpriseProjectId()
+void GlanceShowImageListResponseBody::unsetenterpriseProjectId()
 {
     enterpriseProjectIdIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getHwFirmwareType() const
+std::string GlanceShowImageListResponseBody::getSysEnterpriseProjectId() const
+{
+    return sysEnterpriseProjectId_;
+}
+
+void GlanceShowImageListResponseBody::setSysEnterpriseProjectId(const std::string& value)
+{
+    sysEnterpriseProjectId_ = value;
+    sysEnterpriseProjectIdIsSet_ = true;
+}
+
+bool GlanceShowImageListResponseBody::sysEnterpriseProjectIdIsSet() const
+{
+    return sysEnterpriseProjectIdIsSet_;
+}
+
+void GlanceShowImageListResponseBody::unsetsysEnterpriseProjectId()
+{
+    sysEnterpriseProjectIdIsSet_ = false;
+}
+
+std::string GlanceShowImageListResponseBody::getHwFirmwareType() const
 {
     return hwFirmwareType_;
 }
 
-void GlanceShowImageResponseBody::setHwFirmwareType(const std::string& value)
+void GlanceShowImageListResponseBody::setHwFirmwareType(const std::string& value)
 {
     hwFirmwareType_ = value;
     hwFirmwareTypeIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::hwFirmwareTypeIsSet() const
+bool GlanceShowImageListResponseBody::hwFirmwareTypeIsSet() const
 {
     return hwFirmwareTypeIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsethwFirmwareType()
+void GlanceShowImageListResponseBody::unsethwFirmwareType()
 {
     hwFirmwareTypeIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getSupportArm() const
+std::string GlanceShowImageListResponseBody::getSupportArm() const
 {
     return supportArm_;
 }
 
-void GlanceShowImageResponseBody::setSupportArm(const std::string& value)
+void GlanceShowImageListResponseBody::setSupportArm(const std::string& value)
 {
     supportArm_ = value;
     supportArmIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::supportArmIsSet() const
+bool GlanceShowImageListResponseBody::supportArmIsSet() const
 {
     return supportArmIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetsupportArm()
+void GlanceShowImageListResponseBody::unsetsupportArm()
 {
     supportArmIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getIsOffshelved() const
+std::string GlanceShowImageListResponseBody::getIsOffshelved() const
 {
     return isOffshelved_;
 }
 
-void GlanceShowImageResponseBody::setIsOffshelved(const std::string& value)
+void GlanceShowImageListResponseBody::setIsOffshelved(const std::string& value)
 {
     isOffshelved_ = value;
     isOffshelvedIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::isOffshelvedIsSet() const
+bool GlanceShowImageListResponseBody::isOffshelvedIsSet() const
 {
     return isOffshelvedIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetisOffshelved()
+void GlanceShowImageListResponseBody::unsetisOffshelved()
 {
     isOffshelvedIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getLazyloading() const
+std::string GlanceShowImageListResponseBody::getLazyloading() const
 {
     return lazyloading_;
 }
 
-void GlanceShowImageResponseBody::setLazyloading(const std::string& value)
+void GlanceShowImageListResponseBody::setLazyloading(const std::string& value)
 {
     lazyloading_ = value;
     lazyloadingIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::lazyloadingIsSet() const
+bool GlanceShowImageListResponseBody::lazyloadingIsSet() const
 {
     return lazyloadingIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetlazyloading()
+void GlanceShowImageListResponseBody::unsetlazyloading()
 {
     lazyloadingIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getOsFeatureList() const
+std::string GlanceShowImageListResponseBody::getOsFeatureList() const
 {
     return osFeatureList_;
 }
 
-void GlanceShowImageResponseBody::setOsFeatureList(const std::string& value)
+void GlanceShowImageListResponseBody::setOsFeatureList(const std::string& value)
 {
     osFeatureList_ = value;
     osFeatureListIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::osFeatureListIsSet() const
+bool GlanceShowImageListResponseBody::osFeatureListIsSet() const
 {
     return osFeatureListIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetosFeatureList()
+void GlanceShowImageListResponseBody::unsetosFeatureList()
 {
     osFeatureListIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getRootOrigin() const
+std::string GlanceShowImageListResponseBody::getRootOrigin() const
 {
     return rootOrigin_;
 }
 
-void GlanceShowImageResponseBody::setRootOrigin(const std::string& value)
+void GlanceShowImageListResponseBody::setRootOrigin(const std::string& value)
 {
     rootOrigin_ = value;
     rootOriginIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::rootOriginIsSet() const
+bool GlanceShowImageListResponseBody::rootOriginIsSet() const
 {
     return rootOriginIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetrootOrigin()
+void GlanceShowImageListResponseBody::unsetrootOrigin()
 {
     rootOriginIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getSequenceNum() const
+std::string GlanceShowImageListResponseBody::getSequenceNum() const
 {
     return sequenceNum_;
 }
 
-void GlanceShowImageResponseBody::setSequenceNum(const std::string& value)
+void GlanceShowImageListResponseBody::setSequenceNum(const std::string& value)
 {
     sequenceNum_ = value;
     sequenceNumIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::sequenceNumIsSet() const
+bool GlanceShowImageListResponseBody::sequenceNumIsSet() const
 {
     return sequenceNumIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetsequenceNum()
+void GlanceShowImageListResponseBody::unsetsequenceNum()
 {
     sequenceNumIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getSupportAgentList() const
+std::string GlanceShowImageListResponseBody::getSupportAgentList() const
 {
     return supportAgentList_;
 }
 
-void GlanceShowImageResponseBody::setSupportAgentList(const std::string& value)
+void GlanceShowImageListResponseBody::setSupportAgentList(const std::string& value)
 {
     supportAgentList_ = value;
     supportAgentListIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::supportAgentListIsSet() const
+bool GlanceShowImageListResponseBody::supportAgentListIsSet() const
 {
     return supportAgentListIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetsupportAgentList()
+void GlanceShowImageListResponseBody::unsetsupportAgentList()
 {
     supportAgentListIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getSystemCmkid() const
+std::string GlanceShowImageListResponseBody::getSystemCmkid() const
 {
     return systemCmkid_;
 }
 
-void GlanceShowImageResponseBody::setSystemCmkid(const std::string& value)
+void GlanceShowImageListResponseBody::setSystemCmkid(const std::string& value)
 {
     systemCmkid_ = value;
     systemCmkidIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::systemCmkidIsSet() const
+bool GlanceShowImageListResponseBody::systemCmkidIsSet() const
 {
     return systemCmkidIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetsystemCmkid()
+void GlanceShowImageListResponseBody::unsetsystemCmkid()
 {
     systemCmkidIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getActiveAt() const
+std::string GlanceShowImageListResponseBody::getActiveAt() const
 {
     return activeAt_;
 }
 
-void GlanceShowImageResponseBody::setActiveAt(const std::string& value)
+void GlanceShowImageListResponseBody::setActiveAt(const std::string& value)
 {
     activeAt_ = value;
     activeAtIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::activeAtIsSet() const
+bool GlanceShowImageListResponseBody::activeAtIsSet() const
 {
     return activeAtIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetactiveAt()
+void GlanceShowImageListResponseBody::unsetactiveAt()
 {
     activeAtIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getHwVifMultiqueueEnabled() const
+std::string GlanceShowImageListResponseBody::getHwVifMultiqueueEnabled() const
 {
     return hwVifMultiqueueEnabled_;
 }
 
-void GlanceShowImageResponseBody::setHwVifMultiqueueEnabled(const std::string& value)
+void GlanceShowImageListResponseBody::setHwVifMultiqueueEnabled(const std::string& value)
 {
     hwVifMultiqueueEnabled_ = value;
     hwVifMultiqueueEnabledIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::hwVifMultiqueueEnabledIsSet() const
+bool GlanceShowImageListResponseBody::hwVifMultiqueueEnabledIsSet() const
 {
     return hwVifMultiqueueEnabledIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsethwVifMultiqueueEnabled()
+void GlanceShowImageListResponseBody::unsethwVifMultiqueueEnabled()
 {
     hwVifMultiqueueEnabledIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getMaxRam() const
+std::string GlanceShowImageListResponseBody::getMaxRam() const
 {
     return maxRam_;
 }
 
-void GlanceShowImageResponseBody::setMaxRam(const std::string& value)
+void GlanceShowImageListResponseBody::setMaxRam(const std::string& value)
 {
     maxRam_ = value;
     maxRamIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::maxRamIsSet() const
+bool GlanceShowImageListResponseBody::maxRamIsSet() const
 {
     return maxRamIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetmaxRam()
+void GlanceShowImageListResponseBody::unsetmaxRam()
 {
     maxRamIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getImageLocation() const
+std::string GlanceShowImageListResponseBody::getImageLocation() const
 {
     return imageLocation_;
 }
 
-void GlanceShowImageResponseBody::setImageLocation(const std::string& value)
+void GlanceShowImageListResponseBody::setImageLocation(const std::string& value)
 {
     imageLocation_ = value;
     imageLocationIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::imageLocationIsSet() const
+bool GlanceShowImageListResponseBody::imageLocationIsSet() const
 {
     return imageLocationIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetimageLocation()
+void GlanceShowImageListResponseBody::unsetimageLocation()
 {
     imageLocationIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getIsConfigInit() const
+std::string GlanceShowImageListResponseBody::getIsConfigInit() const
 {
     return isConfigInit_;
 }
 
-void GlanceShowImageResponseBody::setIsConfigInit(const std::string& value)
+void GlanceShowImageListResponseBody::setIsConfigInit(const std::string& value)
 {
     isConfigInit_ = value;
     isConfigInitIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::isConfigInitIsSet() const
+bool GlanceShowImageListResponseBody::isConfigInitIsSet() const
 {
     return isConfigInitIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetisConfigInit()
+void GlanceShowImageListResponseBody::unsetisConfigInit()
 {
     isConfigInitIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getAccountCode() const
+std::string GlanceShowImageListResponseBody::getAccountCode() const
 {
     return accountCode_;
 }
 
-void GlanceShowImageResponseBody::setAccountCode(const std::string& value)
+void GlanceShowImageListResponseBody::setAccountCode(const std::string& value)
 {
     accountCode_ = value;
     accountCodeIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::accountCodeIsSet() const
+bool GlanceShowImageListResponseBody::accountCodeIsSet() const
 {
     return accountCodeIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetaccountCode()
+void GlanceShowImageListResponseBody::unsetaccountCode()
 {
     accountCodeIsSet_ = false;
 }
 
-std::string GlanceShowImageResponseBody::getSupportAmd() const
+std::string GlanceShowImageListResponseBody::getSupportAmd() const
 {
     return supportAmd_;
 }
 
-void GlanceShowImageResponseBody::setSupportAmd(const std::string& value)
+void GlanceShowImageListResponseBody::setSupportAmd(const std::string& value)
 {
     supportAmd_ = value;
     supportAmdIsSet_ = true;
 }
 
-bool GlanceShowImageResponseBody::supportAmdIsSet() const
+bool GlanceShowImageListResponseBody::supportAmdIsSet() const
 {
     return supportAmdIsSet_;
 }
 
-void GlanceShowImageResponseBody::unsetsupportAmd()
+void GlanceShowImageListResponseBody::unsetsupportAmd()
 {
     supportAmdIsSet_ = false;
 }

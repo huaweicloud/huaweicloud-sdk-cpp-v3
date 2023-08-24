@@ -17,6 +17,12 @@ VatInvoiceResult::VatInvoiceResult()
     titleIsSet_ = false;
     type_ = "";
     typeIsSet_ = false;
+    invoiceTag_ = "";
+    invoiceTagIsSet_ = false;
+    sumAmount_ = "";
+    sumAmountIsSet_ = false;
+    sumTax_ = "";
+    sumTaxIsSet_ = false;
     serialNumber_ = "";
     serialNumberIsSet_ = false;
     attribution_ = "";
@@ -91,6 +97,15 @@ web::json::value VatInvoiceResult::toJson() const
     }
     if(typeIsSet_) {
         val[utility::conversions::to_string_t("type")] = ModelBase::toJson(type_);
+    }
+    if(invoiceTagIsSet_) {
+        val[utility::conversions::to_string_t("invoice_tag")] = ModelBase::toJson(invoiceTag_);
+    }
+    if(sumAmountIsSet_) {
+        val[utility::conversions::to_string_t("sum_amount")] = ModelBase::toJson(sumAmount_);
+    }
+    if(sumTaxIsSet_) {
+        val[utility::conversions::to_string_t("sum_tax")] = ModelBase::toJson(sumTax_);
     }
     if(serialNumberIsSet_) {
         val[utility::conversions::to_string_t("serial_number")] = ModelBase::toJson(serialNumber_);
@@ -209,6 +224,33 @@ bool VatInvoiceResult::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("invoice_tag"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("invoice_tag"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setInvoiceTag(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("sum_amount"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sum_amount"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSumAmount(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("sum_tax"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sum_tax"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSumTax(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("serial_number"))) {
@@ -533,6 +575,69 @@ bool VatInvoiceResult::typeIsSet() const
 void VatInvoiceResult::unsettype()
 {
     typeIsSet_ = false;
+}
+
+std::string VatInvoiceResult::getInvoiceTag() const
+{
+    return invoiceTag_;
+}
+
+void VatInvoiceResult::setInvoiceTag(const std::string& value)
+{
+    invoiceTag_ = value;
+    invoiceTagIsSet_ = true;
+}
+
+bool VatInvoiceResult::invoiceTagIsSet() const
+{
+    return invoiceTagIsSet_;
+}
+
+void VatInvoiceResult::unsetinvoiceTag()
+{
+    invoiceTagIsSet_ = false;
+}
+
+std::string VatInvoiceResult::getSumAmount() const
+{
+    return sumAmount_;
+}
+
+void VatInvoiceResult::setSumAmount(const std::string& value)
+{
+    sumAmount_ = value;
+    sumAmountIsSet_ = true;
+}
+
+bool VatInvoiceResult::sumAmountIsSet() const
+{
+    return sumAmountIsSet_;
+}
+
+void VatInvoiceResult::unsetsumAmount()
+{
+    sumAmountIsSet_ = false;
+}
+
+std::string VatInvoiceResult::getSumTax() const
+{
+    return sumTax_;
+}
+
+void VatInvoiceResult::setSumTax(const std::string& value)
+{
+    sumTax_ = value;
+    sumTaxIsSet_ = true;
+}
+
+bool VatInvoiceResult::sumTaxIsSet() const
+{
+    return sumTaxIsSet_;
+}
+
+void VatInvoiceResult::unsetsumTax()
+{
+    sumTaxIsSet_ = false;
 }
 
 std::string VatInvoiceResult::getSerialNumber() const

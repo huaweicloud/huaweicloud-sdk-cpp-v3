@@ -65,7 +65,7 @@ bool GlanceListImagesResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("images"));
         if(!fieldValue.is_null())
         {
-            std::vector<GlanceShowImageResponseBody> refVal;
+            std::vector<GlanceShowImageListResponseBody> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setImages(refVal);
         }
@@ -112,12 +112,12 @@ void GlanceListImagesResponse::unsetfirst()
     firstIsSet_ = false;
 }
 
-std::vector<GlanceShowImageResponseBody>& GlanceListImagesResponse::getImages()
+std::vector<GlanceShowImageListResponseBody>& GlanceListImagesResponse::getImages()
 {
     return images_;
 }
 
-void GlanceListImagesResponse::setImages(const std::vector<GlanceShowImageResponseBody>& value)
+void GlanceListImagesResponse::setImages(const std::vector<GlanceShowImageListResponseBody>& value)
 {
     images_ = value;
     imagesIsSet_ = true;

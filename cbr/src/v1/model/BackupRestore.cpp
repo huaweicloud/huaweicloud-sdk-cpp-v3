@@ -22,6 +22,7 @@ BackupRestore::BackupRestore()
     volumeIdIsSet_ = false;
     resourceId_ = "";
     resourceIdIsSet_ = false;
+    detailsIsSet_ = false;
 }
 
 BackupRestore::~BackupRestore() = default;
@@ -48,6 +49,9 @@ web::json::value BackupRestore::toJson() const
     }
     if(resourceIdIsSet_) {
         val[utility::conversions::to_string_t("resource_id")] = ModelBase::toJson(resourceId_);
+    }
+    if(detailsIsSet_) {
+        val[utility::conversions::to_string_t("details")] = ModelBase::toJson(details_);
     }
 
     return val;
@@ -100,6 +104,15 @@ bool BackupRestore::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResourceId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("details"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("details"));
+        if(!fieldValue.is_null())
+        {
+            RestoreDetails refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDetails(refVal);
         }
     }
     return ok;
@@ -208,6 +221,27 @@ bool BackupRestore::resourceIdIsSet() const
 void BackupRestore::unsetresourceId()
 {
     resourceIdIsSet_ = false;
+}
+
+RestoreDetails BackupRestore::getDetails() const
+{
+    return details_;
+}
+
+void BackupRestore::setDetails(const RestoreDetails& value)
+{
+    details_ = value;
+    detailsIsSet_ = true;
+}
+
+bool BackupRestore::detailsIsSet() const
+{
+    return detailsIsSet_;
+}
+
+void BackupRestore::unsetdetails()
+{
+    detailsIsSet_ = false;
 }
 
 }

@@ -69,7 +69,7 @@ bool CreateLogStreamParams::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("tags"));
         if(!fieldValue.is_null())
         {
-            TagsBody refVal;
+            std::vector<TagsBody> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTags(refVal);
         }
@@ -119,12 +119,12 @@ void CreateLogStreamParams::unsetttlInDays()
     ttlInDaysIsSet_ = false;
 }
 
-TagsBody CreateLogStreamParams::getTags() const
+std::vector<TagsBody>& CreateLogStreamParams::getTags()
 {
     return tags_;
 }
 
-void CreateLogStreamParams::setTags(const TagsBody& value)
+void CreateLogStreamParams::setTags(const std::vector<TagsBody>& value)
 {
     tags_ = value;
     tagsIsSet_ = true;

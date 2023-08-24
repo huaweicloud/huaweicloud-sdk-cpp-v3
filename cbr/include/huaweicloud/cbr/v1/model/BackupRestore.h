@@ -8,6 +8,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <huaweicloud/cbr/v1/model/RestoreDetails.h>
 #include <vector>
 #include <huaweicloud/cbr/v1/model/BackupRestoreServerMapping.h>
 
@@ -85,6 +86,15 @@ public:
     void unsetresourceId();
     void setResourceId(const std::string& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    RestoreDetails getDetails() const;
+    bool detailsIsSet() const;
+    void unsetdetails();
+    void setDetails(const RestoreDetails& value);
+
 
 protected:
     std::vector<BackupRestoreServerMapping> mappings_;
@@ -97,6 +107,8 @@ protected:
     bool volumeIdIsSet_;
     std::string resourceId_;
     bool resourceIdIsSet_;
+    RestoreDetails details_;
+    bool detailsIsSet_;
 
 };
 

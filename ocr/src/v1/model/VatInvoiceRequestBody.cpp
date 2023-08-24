@@ -21,6 +21,8 @@ VatInvoiceRequestBody::VatInvoiceRequestBody()
     advancedModeIsSet_ = false;
     returnTextLocation_ = false;
     returnTextLocationIsSet_ = false;
+    pageNum_ = 0;
+    pageNumIsSet_ = false;
 }
 
 VatInvoiceRequestBody::~VatInvoiceRequestBody() = default;
@@ -44,6 +46,9 @@ web::json::value VatInvoiceRequestBody::toJson() const
     }
     if(returnTextLocationIsSet_) {
         val[utility::conversions::to_string_t("return_text_location")] = ModelBase::toJson(returnTextLocation_);
+    }
+    if(pageNumIsSet_) {
+        val[utility::conversions::to_string_t("page_num")] = ModelBase::toJson(pageNum_);
     }
 
     return val;
@@ -87,6 +92,15 @@ bool VatInvoiceRequestBody::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setReturnTextLocation(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("page_num"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("page_num"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPageNum(refVal);
         }
     }
     return ok;
@@ -174,6 +188,27 @@ bool VatInvoiceRequestBody::returnTextLocationIsSet() const
 void VatInvoiceRequestBody::unsetreturnTextLocation()
 {
     returnTextLocationIsSet_ = false;
+}
+
+int32_t VatInvoiceRequestBody::getPageNum() const
+{
+    return pageNum_;
+}
+
+void VatInvoiceRequestBody::setPageNum(int32_t value)
+{
+    pageNum_ = value;
+    pageNumIsSet_ = true;
+}
+
+bool VatInvoiceRequestBody::pageNumIsSet() const
+{
+    return pageNumIsSet_;
+}
+
+void VatInvoiceRequestBody::unsetpageNum()
+{
+    pageNumIsSet_ = false;
 }
 
 }

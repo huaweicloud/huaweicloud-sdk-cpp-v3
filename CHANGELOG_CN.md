@@ -1,3 +1,109 @@
+# 3.1.49 2023-08-24
+
+### HuaweiCloud SDK Core
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 修复由于path参数中含有中文导致编码错误的问题
+  - 修复针对int64类型参数反序列化失败的问题
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK CBR
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListJarPackageHostInfo**
+    - 响应参数变更
+      - `* data_list.record_time: int32 -> int64`
+
+### HuaweiCloud SDK IMS
+
+- _新增特性_
+  - 支持以下接口：
+    - `ListAimMsgTemplate`
+    - `CreateAimMsgTemplate`
+    - `ShowAimMsgTemplateVariable`
+    - `SendAimBatchMessages`
+    - `SendAimBatchDifferentMessages`
+    - `DeleteAimMsgSignature`
+    - `ShowAimMsgTemplateDetail`
+    - `UpdateAimMsgTemplate`
+    - `DeleteAimMsgTemplate`
+    - `ListAimMsgSignature`
+    - `AddAimMsgSignature`
+    - `ListAimMsgApp`
+    - `CreateSmsApp`
+    - `ListAimMsgAppDetail`
+    - `UpdateAimMsgApp`
+    - `ShowAimMsgSignatureFileInfo`
+    - `UploadAimMsgSignatureFile`
+    - `ListAimMsgSignatureDetail`
+    - `UpdateAimMsgSignature`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListAimResolveDetails**
+    - 请求参数变更
+      - `+ task_name`
+    - 响应参数变更
+      - `+ resolve_details.task_name`
+  - **ListResolveTasks**
+    - 请求参数变更
+      - `+ task_name`
+    - 响应参数变更
+      - `+ resolve_tasks.task_name`
+
+### HuaweiCloud SDK LTS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListNatGateways**
+    - 响应参数变更
+      - `+ nat_gateways.session_conf`
+  - **CreateNatGateway**
+    - 请求参数变更
+      - `+ nat_gateway.session_conf`
+    - 响应参数变更
+      - `+ nat_gateway.session_conf`
+  - **ShowNatGateway**
+    - 响应参数变更
+      - `+ nat_gateway.session_conf`
+  - **UpdateNatGateway**
+    - 请求参数变更
+      - `+ nat_gateway.session_conf`
+    - 响应参数变更
+      - `+ nat_gateway.session_conf`
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 支持接口`ShowLoginType`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK SIS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RunTts**
+    - 请求参数变更
+      - `+ config.property: enum value [chinese_huaxiaoman_common,chinese_huaxiaofang_common,chinese_huaxiaojun_common]`
+
+### HuaweiCloud SDK VPC
+
 # 3.1.48 2023-08-21
 
 ### HuaweiCloud SDK KMS

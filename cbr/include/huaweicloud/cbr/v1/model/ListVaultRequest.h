@@ -129,7 +129,7 @@ public:
     void setStatus(const std::string& value);
 
     /// <summary>
-    /// 资源id
+    /// 资源id，支持多资源，以英文逗号分割
     /// </summary>
 
     std::string getResourceIds() const;

@@ -139,22 +139,24 @@ std::string dealSwUsual(char ch, std::string encodedStr)
     encodedStr += ch;
     return encodedStr;
 }
+unsigned char toHex(unsigned char x) {
+    return x > 9 ? x + 55 : x + 48;
+}
 
 std::string uriEncode(std::string &str, bool path)
 {
-    static unsigned char hex[] = "0123456789ABCDEF";
     std::string encodedStr;
     if (str.empty()) {
         return encodedStr;
     }
     for (char i : str) {
-        uint32_t c = i;
-        if (isalnum(c) || c == '.' || c == '~' || c == '_' || c == '-' || (path && c == '/')) {
+        unsigned char c = i;
+        if (isalnum(static_cast<unsigned char>(c)) || c == '.' || c == '~' || c == '_' || c == '-' || (path && c == '/')) {
             encodedStr += i;
         } else {
             encodedStr += '%';
-            encodedStr += hex[c >> 4]; // 4���������
-            encodedStr += hex[c & 0xf];
+            encodedStr += toHex(c >> 4); // 4���������
+            encodedStr += toHex(c & 0xf);
         }
     }
     return encodedStr;

@@ -74,6 +74,15 @@ public:
     void unsetreturnTextLocation();
     void setReturnTextLocation(bool value);
 
+    /// <summary>
+    /// 页码，默认为1，返回第一页结果。如果传参不大于PDF页数，则返回对应PDF页的结果。 
+    /// </summary>
+
+    int32_t getPageNum() const;
+    bool pageNumIsSet() const;
+    void unsetpageNum();
+    void setPageNum(int32_t value);
+
 
 protected:
     std::string image_;
@@ -84,6 +93,8 @@ protected:
     bool advancedModeIsSet_;
     bool returnTextLocation_;
     bool returnTextLocationIsSet_;
+    int32_t pageNum_;
+    bool pageNumIsSet_;
 
 };
 

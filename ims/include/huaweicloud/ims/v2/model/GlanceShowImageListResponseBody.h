@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_IMS_V2_MODEL_GlanceShowImageResponseBody_H_
-#define HUAWEICLOUD_SDK_IMS_V2_MODEL_GlanceShowImageResponseBody_H_
+#ifndef HUAWEICLOUD_SDK_IMS_V2_MODEL_GlanceShowImageListResponseBody_H_
+#define HUAWEICLOUD_SDK_IMS_V2_MODEL_GlanceShowImageListResponseBody_H_
 
 #include <huaweicloud/ims/v2/ImsExport.h>
 
@@ -19,14 +19,14 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 镜像信息响应体
+/// 
 /// </summary>
-class HUAWEICLOUD_IMS_V2_EXPORT  GlanceShowImageResponseBody
+class HUAWEICLOUD_IMS_V2_EXPORT  GlanceShowImageListResponseBody
     : public ModelBase
 {
 public:
-    GlanceShowImageResponseBody();
-    virtual ~GlanceShowImageResponseBody();
+    GlanceShowImageListResponseBody();
+    virtual ~GlanceShowImageListResponseBody();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -37,7 +37,7 @@ public:
     bool fromJson(const web::json::value& json) override;
 
     /////////////////////////////////////////////
-    /// GlanceShowImageResponseBody members
+    /// GlanceShowImageListResponseBody members
 
     /// <summary>
     /// 备份ID。如果是备份创建的镜像，则填写为备份的ID，否则为空。
@@ -436,6 +436,15 @@ public:
     void setEnterpriseProjectId(const std::string& value);
 
     /// <summary>
+    /// 表示当前镜像所属的企业项目。 取值为0或无该值，表示属于default企业项目。 取值为UUID，表示属于该UUID对应的企业项目。 关于企业项目ID的获取及企业项目特性的详细信息，请参考《企业管理用户指南》。
+    /// </summary>
+
+    std::string getSysEnterpriseProjectId() const;
+    bool sysEnterpriseProjectIdIsSet() const;
+    void unsetsysEnterpriseProjectId();
+    void setSysEnterpriseProjectId(const std::string& value);
+
+    /// <summary>
     /// 云主机云服务器的启动方式。目前支持： bios：表示bios引导启动。 uefi：表示uefi引导启动。
     /// </summary>
 
@@ -669,6 +678,8 @@ protected:
     bool supportFcInjectIsSet_;
     std::string enterpriseProjectId_;
     bool enterpriseProjectIdIsSet_;
+    std::string sysEnterpriseProjectId_;
+    bool sysEnterpriseProjectIdIsSet_;
     std::string hwFirmwareType_;
     bool hwFirmwareTypeIsSet_;
     std::string supportArm_;
@@ -711,4 +722,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_IMS_V2_MODEL_GlanceShowImageResponseBody_H_
+#endif // HUAWEICLOUD_SDK_IMS_V2_MODEL_GlanceShowImageListResponseBody_H_

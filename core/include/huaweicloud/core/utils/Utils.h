@@ -35,8 +35,9 @@ namespace Utils {
 std::string trim(std::string str);
 std::string toLowerCaseStr(std::string str);
 std::string toISO8601Time(const time_t &time);
-std::string uriDecode(std::string &str);
-std::string uriEncode(std::string &str, bool path = false);
+HUAWEICLOUD_CORE_EXPORT std::string uriDecode(std::string &str);
+HUAWEICLOUD_CORE_EXPORT std::string uriEncode(std::string &str, bool path = false);
+unsigned char toHex(unsigned char x);
 std::string dealSwUsual(char ch, std::string encodedStr);
 std::string dealSwQuotedSecond(char ch, std::string encodedStr, char decoded);
 HUAWEICLOUD_CORE_EXPORT std::string getContentType(const std::string &contentType, bool &isJson, bool &isMultiPart);

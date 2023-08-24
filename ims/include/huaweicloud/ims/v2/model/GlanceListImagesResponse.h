@@ -7,8 +7,8 @@
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/ims/v2/model/GlanceShowImageResponseBody.h>
 #include <string>
+#include <huaweicloud/ims/v2/model/GlanceShowImageListResponseBody.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -53,10 +53,10 @@ public:
     /// 资源类型。
     /// </summary>
 
-    std::vector<GlanceShowImageResponseBody>& getImages();
+    std::vector<GlanceShowImageListResponseBody>& getImages();
     bool imagesIsSet() const;
     void unsetimages();
-    void setImages(const std::vector<GlanceShowImageResponseBody>& value);
+    void setImages(const std::vector<GlanceShowImageListResponseBody>& value);
 
     /// <summary>
     /// 描述镜像列表模式的URL。
@@ -80,7 +80,7 @@ public:
 protected:
     std::string first_;
     bool firstIsSet_;
-    std::vector<GlanceShowImageResponseBody> images_;
+    std::vector<GlanceShowImageListResponseBody> images_;
     bool imagesIsSet_;
     std::string schema_;
     bool schemaIsSet_;

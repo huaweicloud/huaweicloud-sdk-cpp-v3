@@ -60,6 +60,33 @@ public:
     void setType(const std::string& value);
 
     /// <summary>
+    /// 增值税发票左上角标志。当“advanced_mode”设置为“true”时才返回。包含：通行费、代开。 
+    /// </summary>
+
+    std::string getInvoiceTag() const;
+    bool invoiceTagIsSet() const;
+    void unsetinvoiceTag();
+    void setInvoiceTag(const std::string& value);
+
+    /// <summary>
+    /// 小计金额，当传入多页PDF时返回此字段。 
+    /// </summary>
+
+    std::string getSumAmount() const;
+    bool sumAmountIsSet() const;
+    void unsetsumAmount();
+    void setSumAmount(const std::string& value);
+
+    /// <summary>
+    /// 小计税额，当传入多页PDF时返回此字段。 
+    /// </summary>
+
+    std::string getSumTax() const;
+    bool sumTaxIsSet() const;
+    void unsetsumTax();
+    void setSumTax(const std::string& value);
+
+    /// <summary>
     /// 发票联次。 当“advanced_mode”设置为“true”时才返回。 
     /// </summary>
 
@@ -344,6 +371,12 @@ protected:
     bool titleIsSet_;
     std::string type_;
     bool typeIsSet_;
+    std::string invoiceTag_;
+    bool invoiceTagIsSet_;
+    std::string sumAmount_;
+    bool sumAmountIsSet_;
+    std::string sumTax_;
+    bool sumTaxIsSet_;
     std::string serialNumber_;
     bool serialNumberIsSet_;
     std::string attribution_;

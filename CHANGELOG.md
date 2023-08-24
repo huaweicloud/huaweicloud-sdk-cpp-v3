@@ -1,3 +1,109 @@
+# 3.1.49 2023-08-24
+
+### HuaweiCloud SDK Core
+
+- _Features_
+  - None
+- _Bug Fix_
+  - Fix the problem of encoding errors caused by Chinese characters in the path parameter
+  - Fix the problem that deserialization of int64 fails
+- _Change_
+  - None
+
+### HuaweiCloud SDK CBR
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListJarPackageHostInfo**
+    - changes of response param
+      - `* data_list.record_time: int32 -> int64`
+
+### HuaweiCloud SDK IMS
+
+- _Features_
+  - Support the following interfaces：
+    - `ListAimMsgTemplate`
+    - `CreateAimMsgTemplate`
+    - `ShowAimMsgTemplateVariable`
+    - `SendAimBatchMessages`
+    - `SendAimBatchDifferentMessages`
+    - `DeleteAimMsgSignature`
+    - `ShowAimMsgTemplateDetail`
+    - `UpdateAimMsgTemplate`
+    - `DeleteAimMsgTemplate`
+    - `ListAimMsgSignature`
+    - `AddAimMsgSignature`
+    - `ListAimMsgApp`
+    - `CreateSmsApp`
+    - `ListAimMsgAppDetail`
+    - `UpdateAimMsgApp`
+    - `ShowAimMsgSignatureFileInfo`
+    - `UploadAimMsgSignatureFile`
+    - `ListAimMsgSignatureDetail`
+    - `UpdateAimMsgSignature`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListAimResolveDetails**
+    - changes of request param
+      - `+ task_name`
+    - changes of response param
+      - `+ resolve_details.task_name`
+  - **ListResolveTasks**
+    - changes of request param
+      - `+ task_name`
+    - changes of response param
+      - `+ resolve_tasks.task_name`
+
+### HuaweiCloud SDK LTS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListNatGateways**
+    - changes of response param
+      - `+ nat_gateways.session_conf`
+  - **CreateNatGateway**
+    - changes of request param
+      - `+ nat_gateway.session_conf`
+    - changes of response param
+      - `+ nat_gateway.session_conf`
+  - **ShowNatGateway**
+    - changes of response param
+      - `+ nat_gateway.session_conf`
+  - **UpdateNatGateway**
+    - changes of request param
+      - `+ nat_gateway.session_conf`
+    - changes of response param
+      - `+ nat_gateway.session_conf`
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - Support the interface `ShowLoginType`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK SIS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **RunTts**
+    - changes of request param
+      - `+ config.property: enum value [chinese_huaxiaoman_common,chinese_huaxiaofang_common,chinese_huaxiaojun_common]`
+
+### HuaweiCloud SDK VPC
+
 # 3.1.48 2023-08-21
 
 ### HuaweiCloud SDK KMS

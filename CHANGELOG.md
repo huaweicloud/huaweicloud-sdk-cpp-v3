@@ -1,3 +1,91 @@
+# 3.1.50 2023-08-31
+
+### HuaweiCloud SDK CodeArtsDeploy
+
+- _Features_
+  - Support the following interfaces：
+    - `ListHostClusters`
+    - `CreateHostCluster`
+    - `ShowHostClusterDetail`
+    - `ListNewHosts`
+    - `CreateHost`
+    - `ShowHostDetail`
+    - `ListEnvironments`
+    - `CreateEnvironment`
+    - `ShowEnvironmentDetail`
+    - `DeleteEnvironment`
+    - `ImportHostToEnvironment`
+    - `DeleteHostFromEnvironment`
+    - `ListAllApp`
+    - `CreateApp`
+    - `ShowAppDetailById`
+    - `DeleteApplication`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK ECS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowJob**
+    - changes of response param
+      - `+ entities.server_id`
+      - `+ entities.nic_id`
+  - **CreateServers**
+    - changes of request param
+      - `+ server.extendparam.CB_CSBS_BACKUP`
+
+### HuaweiCloud SDK FRS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **DetectFaceByFile**
+    - changes of response param
+      - `+ faces.attributes.gender`
+  - **DetectFaceByFileIntl**
+    - changes of response param
+      - `+ faces.attributes.gender`
+  - **DetectFaceByUrl**
+    - changes of response param
+      - `+ faces.attributes.gender`
+  - **DetectFaceByUrlIntl**
+    - changes of response param
+      - `+ faces.attributes.gender`
+  - **DetectFaceByBase64**
+    - changes of response param
+      - `+ faces.attributes.gender`
+  - **DetectFaceByBase64Intl**
+    - changes of response param
+      - `+ faces.attributes.gender`
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - Support the interface `RecognizeSmartDocumentRecognizer`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK RDS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListInstances**
+    - changes of response param
+      - `+ instances.public_dns_names`
+
 # 3.1.49 2023-08-24
 
 ### HuaweiCloud SDK Core

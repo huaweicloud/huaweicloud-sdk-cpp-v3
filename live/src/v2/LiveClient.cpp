@@ -42,6 +42,7 @@ std::shared_ptr<ListAreaDetailResponse> LiveClient::listAreaDetail(ListAreaDetai
     std::map<std::string, std::string> localVarPathParams;
     std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
 
     bool isJson = false;
     bool isMultiPart = false;
@@ -106,6 +107,7 @@ std::shared_ptr<ListBandwidthDetailResponse> LiveClient::listBandwidthDetail(Lis
     std::map<std::string, std::string> localVarPathParams;
     std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
 
     bool isJson = false;
     bool isMultiPart = false;
@@ -173,6 +175,7 @@ std::shared_ptr<ListDomainBandwidthPeakResponse> LiveClient::listDomainBandwidth
     std::map<std::string, std::string> localVarPathParams;
     std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
 
     bool isJson = false;
     bool isMultiPart = false;
@@ -234,6 +237,7 @@ std::shared_ptr<ListDomainTrafficDetailResponse> LiveClient::listDomainTrafficDe
     std::map<std::string, std::string> localVarPathParams;
     std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
 
     bool isJson = false;
     bool isMultiPart = false;
@@ -298,6 +302,7 @@ std::shared_ptr<ListDomainTrafficSummaryResponse> LiveClient::listDomainTrafficS
     std::map<std::string, std::string> localVarPathParams;
     std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
 
     bool isJson = false;
     bool isMultiPart = false;
@@ -359,6 +364,7 @@ std::shared_ptr<ListHistoryStreamsResponse> LiveClient::listHistoryStreams(ListH
     std::map<std::string, std::string> localVarPathParams;
     std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
 
     bool isJson = false;
     bool isMultiPart = false;
@@ -414,6 +420,7 @@ std::shared_ptr<ListQueryHttpCodeResponse> LiveClient::listQueryHttpCode(ListQue
     std::map<std::string, std::string> localVarPathParams;
     std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
 
     bool isJson = false;
     bool isMultiPart = false;
@@ -466,6 +473,7 @@ std::shared_ptr<ListRecordDataResponse> LiveClient::listRecordData(ListRecordDat
     std::map<std::string, std::string> localVarPathParams;
     std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
 
     bool isJson = false;
     bool isMultiPart = false;
@@ -509,6 +517,7 @@ std::shared_ptr<ListSnapshotDataResponse> LiveClient::listSnapshotData(ListSnaps
     std::map<std::string, std::string> localVarPathParams;
     std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
 
     bool isJson = false;
     bool isMultiPart = false;
@@ -552,6 +561,7 @@ std::shared_ptr<ListTranscodeDataResponse> LiveClient::listTranscodeData(ListTra
     std::map<std::string, std::string> localVarPathParams;
     std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
 
     bool isJson = false;
     bool isMultiPart = false;
@@ -598,6 +608,7 @@ std::shared_ptr<ListUsersOfStreamResponse> LiveClient::listUsersOfStream(ListUse
     std::map<std::string, std::string> localVarPathParams;
     std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
 
     bool isJson = false;
     bool isMultiPart = false;
@@ -665,6 +676,7 @@ std::shared_ptr<ShowStreamCountResponse> LiveClient::showStreamCount(ShowStreamC
     std::map<std::string, std::string> localVarPathParams;
     std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
 
     bool isJson = false;
     bool isMultiPart = false;
@@ -708,6 +720,7 @@ std::shared_ptr<ShowStreamPortraitResponse> LiveClient::showStreamPortrait(ShowS
     std::map<std::string, std::string> localVarPathParams;
     std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
 
     bool isJson = false;
     bool isMultiPart = false;
@@ -751,6 +764,7 @@ std::shared_ptr<ShowUpBandwidthResponse> LiveClient::showUpBandwidth(ShowUpBandw
     std::map<std::string, std::string> localVarPathParams;
     std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
 
     bool isJson = false;
     bool isMultiPart = false;
@@ -812,6 +826,7 @@ std::shared_ptr<ListSingleStreamBitrateResponse> LiveClient::listSingleStreamBit
     std::map<std::string, std::string> localVarPathParams;
     std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
 
     bool isJson = false;
     bool isMultiPart = false;
@@ -861,6 +876,7 @@ std::shared_ptr<ListSingleStreamDetailResponse> LiveClient::listSingleStreamDeta
     std::map<std::string, std::string> localVarPathParams;
     std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
 
     bool isJson = false;
     bool isMultiPart = false;
@@ -910,6 +926,7 @@ std::shared_ptr<ListSingleStreamFramerateResponse> LiveClient::listSingleStreamF
     std::map<std::string, std::string> localVarPathParams;
     std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
 
     bool isJson = false;
     bool isMultiPart = false;
@@ -959,6 +976,7 @@ std::shared_ptr<ListUpStreamDetailResponse> LiveClient::listUpStreamDetail(ListU
     std::map<std::string, std::string> localVarPathParams;
     std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
 
     bool isJson = false;
     bool isMultiPart = false;

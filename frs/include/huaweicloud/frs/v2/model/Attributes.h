@@ -42,6 +42,15 @@ public:
     /// Attributes members
 
     /// <summary>
+    /// 性别： • male：男性 • female：女性
+    /// </summary>
+
+    std::string getGender() const;
+    bool genderIsSet() const;
+    void unsetgender();
+    void setGender(const std::string& value);
+
+    /// <summary>
     /// 
     /// </summary>
 
@@ -142,6 +151,8 @@ public:
 
 
 protected:
+    std::string gender_;
+    bool genderIsSet_;
     Dress dress_;
     bool dressIsSet_;
     std::string glass_;

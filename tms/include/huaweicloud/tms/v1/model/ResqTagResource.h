@@ -68,6 +68,15 @@ public:
     void setTags(const std::vector<Tag>& value);
 
     /// <summary>
+    /// 是否仅查询未带标签的资源。该字段为true时查询不带标签的资源。
+    /// </summary>
+
+    bool isWithoutAnyTag() const;
+    bool withoutAnyTagIsSet() const;
+    void unsetwithoutAnyTag();
+    void setWithoutAnyTag(bool value);
+
+    /// <summary>
     /// 索引位置， 从offset指定的下一条数据开始查询，必须为数字，不能为负数，默认为0。
     /// </summary>
 
@@ -93,6 +102,8 @@ protected:
     bool resourceTypesIsSet_;
     std::vector<Tag> tags_;
     bool tagsIsSet_;
+    bool withoutAnyTag_;
+    bool withoutAnyTagIsSet_;
     int32_t offset_;
     bool offsetIsSet_;
     int32_t limit_;

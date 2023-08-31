@@ -13,6 +13,8 @@ namespace Model {
 
 Attributes::Attributes()
 {
+    gender_ = "";
+    genderIsSet_ = false;
     dressIsSet_ = false;
     glass_ = "";
     glassIsSet_ = false;
@@ -44,6 +46,9 @@ web::json::value Attributes::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(genderIsSet_) {
+        val[utility::conversions::to_string_t("gender")] = ModelBase::toJson(gender_);
+    }
     if(dressIsSet_) {
         val[utility::conversions::to_string_t("dress")] = ModelBase::toJson(dress_);
     }
@@ -85,6 +90,15 @@ bool Attributes::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("gender"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("gender"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setGender(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("dress"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("dress"));
         if(!fieldValue.is_null())
@@ -185,6 +199,27 @@ bool Attributes::fromJson(const web::json::value& val)
         }
     }
     return ok;
+}
+
+std::string Attributes::getGender() const
+{
+    return gender_;
+}
+
+void Attributes::setGender(const std::string& value)
+{
+    gender_ = value;
+    genderIsSet_ = true;
+}
+
+bool Attributes::genderIsSet() const
+{
+    return genderIsSet_;
+}
+
+void Attributes::unsetgender()
+{
+    genderIsSet_ = false;
 }
 
 Dress Attributes::getDress() const

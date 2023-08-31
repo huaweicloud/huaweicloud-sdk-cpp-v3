@@ -1,3 +1,91 @@
+# 3.1.50 2023-08-31
+
+### HuaweiCloud SDK CodeArtsDeploy
+
+- _新增特性_
+  - 支持以下接口：
+    - `ListHostClusters`
+    - `CreateHostCluster`
+    - `ShowHostClusterDetail`
+    - `ListNewHosts`
+    - `CreateHost`
+    - `ShowHostDetail`
+    - `ListEnvironments`
+    - `CreateEnvironment`
+    - `ShowEnvironmentDetail`
+    - `DeleteEnvironment`
+    - `ImportHostToEnvironment`
+    - `DeleteHostFromEnvironment`
+    - `ListAllApp`
+    - `CreateApp`
+    - `ShowAppDetailById`
+    - `DeleteApplication`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK ECS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowJob**
+    - 响应参数变更
+      - `+ entities.server_id`
+      - `+ entities.nic_id`
+  - **CreateServers**
+    - 请求参数变更
+      - `+ server.extendparam.CB_CSBS_BACKUP`
+
+### HuaweiCloud SDK FRS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **DetectFaceByFile**
+    - 响应参数变更
+      - `+ faces.attributes.gender`
+  - **DetectFaceByFileIntl**
+    - 响应参数变更
+      - `+ faces.attributes.gender`
+  - **DetectFaceByUrl**
+    - 响应参数变更
+      - `+ faces.attributes.gender`
+  - **DetectFaceByUrlIntl**
+    - 响应参数变更
+      - `+ faces.attributes.gender`
+  - **DetectFaceByBase64**
+    - 响应参数变更
+      - `+ faces.attributes.gender`
+  - **DetectFaceByBase64Intl**
+    - 响应参数变更
+      - `+ faces.attributes.gender`
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 支持接口`RecognizeSmartDocumentRecognizer`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK RDS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListInstances**
+    - 响应参数变更
+      - `+ instances.public_dns_names`
+
 # 3.1.49 2023-08-24
 
 ### HuaweiCloud SDK Core

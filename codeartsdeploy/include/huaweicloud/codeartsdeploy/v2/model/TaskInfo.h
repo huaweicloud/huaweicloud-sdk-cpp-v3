@@ -259,7 +259,7 @@ public:
     void setCanCopy(bool value);
 
     /// <summary>
-    /// 是否有管理权限，包含增删改查部署以及权限修改
+    /// 是否有编辑应用权限矩阵的权限
     /// </summary>
 
     bool isCanManage() const;

@@ -39,6 +39,15 @@ public:
     /// ShowStreamPortraitRequest members
 
     /// <summary>
+    /// 项目ID，获取方法请参考[获取项目ID](live_03_0023.xml)。 
+    /// </summary>
+
+    std::string getProjectId() const;
+    bool projectIdIsSet() const;
+    void unsetprojectId();
+    void setProjectId(const std::string& value);
+
+    /// <summary>
     /// 播放域名。 
     /// </summary>
 
@@ -67,6 +76,8 @@ public:
 
 
 protected:
+    std::string projectId_;
+    bool projectIdIsSet_;
     std::string playDomain_;
     bool playDomainIsSet_;
     std::string stream_;

@@ -39,6 +39,8 @@ PrePaidServerExtendParam::PrePaidServerExtendParam()
     spotDurationHoursIsSet_ = false;
     interruptionPolicy_ = "";
     interruptionPolicyIsSet_ = false;
+    cbCsbsBackup_ = "";
+    cbCsbsBackupIsSet_ = false;
     spotDurationCount_ = 0;
     spotDurationCountIsSet_ = false;
 }
@@ -91,6 +93,9 @@ web::json::value PrePaidServerExtendParam::toJson() const
     }
     if(interruptionPolicyIsSet_) {
         val[utility::conversions::to_string_t("interruption_policy")] = ModelBase::toJson(interruptionPolicy_);
+    }
+    if(cbCsbsBackupIsSet_) {
+        val[utility::conversions::to_string_t("CB_CSBS_BACKUP")] = ModelBase::toJson(cbCsbsBackup_);
     }
     if(spotDurationCountIsSet_) {
         val[utility::conversions::to_string_t("spot_duration_count")] = ModelBase::toJson(spotDurationCount_);
@@ -218,6 +223,15 @@ bool PrePaidServerExtendParam::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setInterruptionPolicy(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("CB_CSBS_BACKUP"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("CB_CSBS_BACKUP"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCbCsbsBackup(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("spot_duration_count"))) {
@@ -503,6 +517,27 @@ bool PrePaidServerExtendParam::interruptionPolicyIsSet() const
 void PrePaidServerExtendParam::unsetinterruptionPolicy()
 {
     interruptionPolicyIsSet_ = false;
+}
+
+std::string PrePaidServerExtendParam::getCbCsbsBackup() const
+{
+    return cbCsbsBackup_;
+}
+
+void PrePaidServerExtendParam::setCbCsbsBackup(const std::string& value)
+{
+    cbCsbsBackup_ = value;
+    cbCsbsBackupIsSet_ = true;
+}
+
+bool PrePaidServerExtendParam::cbCsbsBackupIsSet() const
+{
+    return cbCsbsBackupIsSet_;
+}
+
+void PrePaidServerExtendParam::unsetcbCsbsBackup()
+{
+    cbCsbsBackupIsSet_ = false;
 }
 
 int32_t PrePaidServerExtendParam::getSpotDurationCount() const

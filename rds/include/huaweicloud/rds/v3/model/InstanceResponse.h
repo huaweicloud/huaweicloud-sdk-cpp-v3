@@ -84,13 +84,22 @@ public:
     void setPrivateIps(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 
+    /// 内网域名列表
     /// </summary>
 
     std::vector<std::string>& getPrivateDnsNames();
     bool privateDnsNamesIsSet() const;
     void unsetprivateDnsNames();
     void setPrivateDnsNames(const std::vector<std::string>& value);
+
+    /// <summary>
+    /// 公网域名列表
+    /// </summary>
+
+    std::vector<std::string>& getPublicDnsNames();
+    bool publicDnsNamesIsSet() const;
+    void unsetpublicDnsNames();
+    void setPublicDnsNames(const std::vector<std::string>& value);
 
     /// <summary>
     /// 实例外网IP地址列表。
@@ -419,6 +428,8 @@ protected:
     bool privateIpsIsSet_;
     std::vector<std::string> privateDnsNames_;
     bool privateDnsNamesIsSet_;
+    std::vector<std::string> publicDnsNames_;
+    bool publicDnsNamesIsSet_;
     std::vector<std::string> publicIps_;
     bool publicIpsIsSet_;
     std::string type_;

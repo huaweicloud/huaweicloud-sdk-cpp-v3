@@ -150,6 +150,7 @@ std::map<std::string, std::string> HttpClient::parseErrorMessage(const std::stri
 {
     std::map<std::string, std::string> errorMsg;
 
+    spdlog::info("begin parse error message from response body");
     web::json::value error;
     error = web::json::value::parse(utility::conversions::to_string_t(responseBody));
 
@@ -168,9 +169,9 @@ std::map<std::string, std::string> HttpClient::parseErrorMessage(const std::stri
             for (const auto &inner : value.as_object()) {
                 const std::string innerKey = utility::conversions::to_utf8string(inner.first);
                 const web::json::value innerValue = inner.second;
-                if (innerKey == "code") {
+                if (innerKey == "code" || innerKey == "error_code") {
                     errorMsg["error_code"] = utility::conversions::to_utf8string(innerValue.serialize());
-                } else if (innerKey == "message") {
+                } else if (innerKey == "message" || innerKey == "error_msg") {
                     errorMsg["error_msg"] = utility::conversions::to_utf8string(innerValue.serialize());
                 } else if (key == "encoded_authorization_message") {
                     errorMsg["encoded_authorization_message"] =  utility::conversions::to_utf8string(value.serialize());
@@ -178,6 +179,7 @@ std::map<std::string, std::string> HttpClient::parseErrorMessage(const std::stri
             }
         }
     }
+    spdlog::info("parse error message from response body successfully");
     return errorMsg;
 }
 

@@ -39,7 +39,7 @@ public:
     /// DatastoreOption members
 
     /// <summary>
-    /// 数据库类型。 - 支持GaussDB(for Cassandra)，GaussDB(for Mongo)，GaussDB(for Influx)数据库实例。 - 取值为“cassandra”，表示创建GaussDB(for Cassandra)数据库实例。 - 取值为“mongodb”，表示创建GaussDB(for Mongo)数据库实例。 - 取值为“influxdb”，表示创建GaussDB(for Influx)数据库实例。
+    /// 数据库类型。 - 支持GaussDB(for Cassandra)，GaussDB(for Mongo)，GaussDB(for Influx)数据库实例。 - 取值为“cassandra”，表示创建GaussDB(for Cassandra)数据库实例。 - 取值为“mongodb”，表示创建GaussDB(for Mongo)数据库实例。 - 取值为“influxdb”，表示创建GaussDB(for Influx)数据库实例。 - 取值为“redis”，表示创建GaussDB(for Redis)数据库实例。
     /// </summary>
 
     std::string getType() const;
@@ -48,7 +48,7 @@ public:
     void setType(const std::string& value);
 
     /// <summary>
-    /// 数据库版本。 - GaussDB(for Cassandra)实例支持3.11版本，取值为“3.11”。 - GaussDB(for Mongo)实例支持3.4，4.0版本，取值为\&quot;3.4\&quot;或\&quot;4.0\&quot;。 - GaussDB(for Influx)实例支持1.7版本，取值为“1.7”。
+    /// 数据库版本。 - GaussDB(for Cassandra)实例支持3.11版本，取值为“3.11”。 - GaussDB(for Mongo)实例支持3.4，4.0版本，取值为\&quot;3.4\&quot;或\&quot;4.0\&quot;。 - GaussDB(for Influx)实例支持1.7版本，取值为“1.7”。 - GaussDB(for Redis)实例支持5.0版本，取值为“5.0”。
     /// </summary>
 
     std::string getVersion() const;
@@ -57,7 +57,7 @@ public:
     void setVersion(const std::string& value);
 
     /// <summary>
-    /// 存储引擎。 - GaussDB(for Cassandra)实例支持RocksDB存储引擎，取值为“rocksDB”。 - GaussDB(for Mongo)实例支持RocksDB存储引擎，取值为“rocksDB”。 - GaussDB(for Influx)实例支持RocksDB存储引擎，取值为“rocksDB”。
+    /// 存储引擎。 - GaussDB(for Cassandra)实例支持RocksDB存储引擎，取值为“rocksDB”。 - GaussDB(for Mongo)实例支持RocksDB存储引擎，取值为“rocksDB”。 - GaussDB(for Influx)实例支持RocksDB存储引擎，取值为“rocksDB”。 - GaussDB(for Redis)实例支持RocksDB存储引擎，取值为“rocksDB”。
     /// </summary>
 
     std::string getStorageEngine() const;

@@ -21,6 +21,7 @@ InstanceResponse::InstanceResponse()
     enableSslIsSet_ = false;
     privateIpsIsSet_ = false;
     privateDnsNamesIsSet_ = false;
+    publicDnsNamesIsSet_ = false;
     publicIpsIsSet_ = false;
     type_ = "";
     typeIsSet_ = false;
@@ -108,6 +109,9 @@ web::json::value InstanceResponse::toJson() const
     }
     if(privateDnsNamesIsSet_) {
         val[utility::conversions::to_string_t("private_dns_names")] = ModelBase::toJson(privateDnsNames_);
+    }
+    if(publicDnsNamesIsSet_) {
+        val[utility::conversions::to_string_t("public_dns_names")] = ModelBase::toJson(publicDnsNames_);
     }
     if(publicIpsIsSet_) {
         val[utility::conversions::to_string_t("public_ips")] = ModelBase::toJson(publicIps_);
@@ -265,6 +269,15 @@ bool InstanceResponse::fromJson(const web::json::value& val)
             std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPrivateDnsNames(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("public_dns_names"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("public_dns_names"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPublicDnsNames(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("public_ips"))) {
@@ -688,6 +701,27 @@ bool InstanceResponse::privateDnsNamesIsSet() const
 void InstanceResponse::unsetprivateDnsNames()
 {
     privateDnsNamesIsSet_ = false;
+}
+
+std::vector<std::string>& InstanceResponse::getPublicDnsNames()
+{
+    return publicDnsNames_;
+}
+
+void InstanceResponse::setPublicDnsNames(const std::vector<std::string>& value)
+{
+    publicDnsNames_ = value;
+    publicDnsNamesIsSet_ = true;
+}
+
+bool InstanceResponse::publicDnsNamesIsSet() const
+{
+    return publicDnsNamesIsSet_;
+}
+
+void InstanceResponse::unsetpublicDnsNames()
+{
+    publicDnsNamesIsSet_ = false;
 }
 
 std::vector<std::string>& InstanceResponse::getPublicIps()

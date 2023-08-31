@@ -13,6 +13,8 @@ namespace Model {
 
 ListQueryHttpCodeRequest::ListQueryHttpCodeRequest()
 {
+    projectId_ = "";
+    projectIdIsSet_ = false;
     playDomainsIsSet_ = false;
     codeIsSet_ = false;
     regionIsSet_ = false;
@@ -33,6 +35,9 @@ web::json::value ListQueryHttpCodeRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(projectIdIsSet_) {
+        val[utility::conversions::to_string_t("project_id")] = ModelBase::toJson(projectId_);
+    }
     if(playDomainsIsSet_) {
         val[utility::conversions::to_string_t("play_domains")] = ModelBase::toJson(playDomains_);
     }
@@ -59,6 +64,15 @@ bool ListQueryHttpCodeRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("project_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("project_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProjectId(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("play_domains"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("play_domains"));
         if(!fieldValue.is_null())
@@ -114,6 +128,27 @@ bool ListQueryHttpCodeRequest::fromJson(const web::json::value& val)
         }
     }
     return ok;
+}
+
+std::string ListQueryHttpCodeRequest::getProjectId() const
+{
+    return projectId_;
+}
+
+void ListQueryHttpCodeRequest::setProjectId(const std::string& value)
+{
+    projectId_ = value;
+    projectIdIsSet_ = true;
+}
+
+bool ListQueryHttpCodeRequest::projectIdIsSet() const
+{
+    return projectIdIsSet_;
+}
+
+void ListQueryHttpCodeRequest::unsetprojectId()
+{
+    projectIdIsSet_ = false;
 }
 
 std::vector<std::string>& ListQueryHttpCodeRequest::getPlayDomains()

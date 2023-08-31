@@ -13,6 +13,8 @@ namespace Model {
 
 ListAreaDetailRequest::ListAreaDetailRequest()
 {
+    projectId_ = "";
+    projectIdIsSet_ = false;
     startTime_ = "";
     startTimeIsSet_ = false;
     endTime_ = "";
@@ -42,6 +44,9 @@ web::json::value ListAreaDetailRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(projectIdIsSet_) {
+        val[utility::conversions::to_string_t("project_id")] = ModelBase::toJson(projectId_);
+    }
     if(startTimeIsSet_) {
         val[utility::conversions::to_string_t("start_time")] = ModelBase::toJson(startTime_);
     }
@@ -80,6 +85,15 @@ bool ListAreaDetailRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("project_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("project_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProjectId(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("start_time"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("start_time"));
         if(!fieldValue.is_null())
@@ -171,6 +185,27 @@ bool ListAreaDetailRequest::fromJson(const web::json::value& val)
         }
     }
     return ok;
+}
+
+std::string ListAreaDetailRequest::getProjectId() const
+{
+    return projectId_;
+}
+
+void ListAreaDetailRequest::setProjectId(const std::string& value)
+{
+    projectId_ = value;
+    projectIdIsSet_ = true;
+}
+
+bool ListAreaDetailRequest::projectIdIsSet() const
+{
+    return projectIdIsSet_;
+}
+
+void ListAreaDetailRequest::unsetprojectId()
+{
+    projectIdIsSet_ = false;
 }
 
 std::string ListAreaDetailRequest::getStartTime() const

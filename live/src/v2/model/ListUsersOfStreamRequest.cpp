@@ -13,6 +13,8 @@ namespace Model {
 
 ListUsersOfStreamRequest::ListUsersOfStreamRequest()
 {
+    projectId_ = "";
+    projectIdIsSet_ = false;
     playDomain_ = "";
     playDomainIsSet_ = false;
     app_ = "";
@@ -44,6 +46,9 @@ web::json::value ListUsersOfStreamRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(projectIdIsSet_) {
+        val[utility::conversions::to_string_t("project_id")] = ModelBase::toJson(projectId_);
+    }
     if(playDomainIsSet_) {
         val[utility::conversions::to_string_t("play_domain")] = ModelBase::toJson(playDomain_);
     }
@@ -85,6 +90,15 @@ bool ListUsersOfStreamRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("project_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("project_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProjectId(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("play_domain"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("play_domain"));
         if(!fieldValue.is_null())
@@ -185,6 +199,27 @@ bool ListUsersOfStreamRequest::fromJson(const web::json::value& val)
         }
     }
     return ok;
+}
+
+std::string ListUsersOfStreamRequest::getProjectId() const
+{
+    return projectId_;
+}
+
+void ListUsersOfStreamRequest::setProjectId(const std::string& value)
+{
+    projectId_ = value;
+    projectIdIsSet_ = true;
+}
+
+bool ListUsersOfStreamRequest::projectIdIsSet() const
+{
+    return projectIdIsSet_;
+}
+
+void ListUsersOfStreamRequest::unsetprojectId()
+{
+    projectIdIsSet_ = false;
 }
 
 std::string ListUsersOfStreamRequest::getPlayDomain() const

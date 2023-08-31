@@ -13,6 +13,8 @@ namespace Model {
 
 ListSnapshotDataRequest::ListSnapshotDataRequest()
 {
+    projectId_ = "";
+    projectIdIsSet_ = false;
     publishDomain_ = "";
     publishDomainIsSet_ = false;
     startTime_ = "";
@@ -31,6 +33,9 @@ web::json::value ListSnapshotDataRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(projectIdIsSet_) {
+        val[utility::conversions::to_string_t("project_id")] = ModelBase::toJson(projectId_);
+    }
     if(publishDomainIsSet_) {
         val[utility::conversions::to_string_t("publish_domain")] = ModelBase::toJson(publishDomain_);
     }
@@ -48,6 +53,15 @@ bool ListSnapshotDataRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("project_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("project_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProjectId(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("publish_domain"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("publish_domain"));
         if(!fieldValue.is_null())
@@ -76,6 +90,27 @@ bool ListSnapshotDataRequest::fromJson(const web::json::value& val)
         }
     }
     return ok;
+}
+
+std::string ListSnapshotDataRequest::getProjectId() const
+{
+    return projectId_;
+}
+
+void ListSnapshotDataRequest::setProjectId(const std::string& value)
+{
+    projectId_ = value;
+    projectIdIsSet_ = true;
+}
+
+bool ListSnapshotDataRequest::projectIdIsSet() const
+{
+    return projectIdIsSet_;
+}
+
+void ListSnapshotDataRequest::unsetprojectId()
+{
+    projectIdIsSet_ = false;
 }
 
 std::string ListSnapshotDataRequest::getPublishDomain() const

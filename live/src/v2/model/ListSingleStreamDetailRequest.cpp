@@ -13,6 +13,8 @@ namespace Model {
 
 ListSingleStreamDetailRequest::ListSingleStreamDetailRequest()
 {
+    projectId_ = "";
+    projectIdIsSet_ = false;
     publishDomain_ = "";
     publishDomainIsSet_ = false;
     app_ = "";
@@ -35,6 +37,9 @@ web::json::value ListSingleStreamDetailRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(projectIdIsSet_) {
+        val[utility::conversions::to_string_t("project_id")] = ModelBase::toJson(projectId_);
+    }
     if(publishDomainIsSet_) {
         val[utility::conversions::to_string_t("publish_domain")] = ModelBase::toJson(publishDomain_);
     }
@@ -58,6 +63,15 @@ bool ListSingleStreamDetailRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("project_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("project_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProjectId(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("publish_domain"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("publish_domain"));
         if(!fieldValue.is_null())
@@ -104,6 +118,27 @@ bool ListSingleStreamDetailRequest::fromJson(const web::json::value& val)
         }
     }
     return ok;
+}
+
+std::string ListSingleStreamDetailRequest::getProjectId() const
+{
+    return projectId_;
+}
+
+void ListSingleStreamDetailRequest::setProjectId(const std::string& value)
+{
+    projectId_ = value;
+    projectIdIsSet_ = true;
+}
+
+bool ListSingleStreamDetailRequest::projectIdIsSet() const
+{
+    return projectIdIsSet_;
+}
+
+void ListSingleStreamDetailRequest::unsetprojectId()
+{
+    projectIdIsSet_ = false;
 }
 
 std::string ListSingleStreamDetailRequest::getPublishDomain() const

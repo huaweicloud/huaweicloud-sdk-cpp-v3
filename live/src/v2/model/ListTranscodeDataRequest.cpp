@@ -13,6 +13,8 @@ namespace Model {
 
 ListTranscodeDataRequest::ListTranscodeDataRequest()
 {
+    projectId_ = "";
+    projectIdIsSet_ = false;
     publishDomain_ = "";
     publishDomainIsSet_ = false;
     stream_ = "";
@@ -33,6 +35,9 @@ web::json::value ListTranscodeDataRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(projectIdIsSet_) {
+        val[utility::conversions::to_string_t("project_id")] = ModelBase::toJson(projectId_);
+    }
     if(publishDomainIsSet_) {
         val[utility::conversions::to_string_t("publish_domain")] = ModelBase::toJson(publishDomain_);
     }
@@ -53,6 +58,15 @@ bool ListTranscodeDataRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("project_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("project_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProjectId(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("publish_domain"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("publish_domain"));
         if(!fieldValue.is_null())
@@ -90,6 +104,27 @@ bool ListTranscodeDataRequest::fromJson(const web::json::value& val)
         }
     }
     return ok;
+}
+
+std::string ListTranscodeDataRequest::getProjectId() const
+{
+    return projectId_;
+}
+
+void ListTranscodeDataRequest::setProjectId(const std::string& value)
+{
+    projectId_ = value;
+    projectIdIsSet_ = true;
+}
+
+bool ListTranscodeDataRequest::projectIdIsSet() const
+{
+    return projectIdIsSet_;
+}
+
+void ListTranscodeDataRequest::unsetprojectId()
+{
+    projectIdIsSet_ = false;
 }
 
 std::string ListTranscodeDataRequest::getPublishDomain() const

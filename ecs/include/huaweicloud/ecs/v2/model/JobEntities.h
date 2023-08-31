@@ -8,6 +8,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/ecs/v2/model/SubJob.h>
+#include <string>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -40,6 +41,24 @@ public:
     /// JobEntities members
 
     /// <summary>
+    /// 云服务器相关操作显示server_id。
+    /// </summary>
+
+    std::string getServerId() const;
+    bool serverIdIsSet() const;
+    void unsetserverId();
+    void setServerId(const std::string& value);
+
+    /// <summary>
+    /// 网卡相关操作显示nic_id。
+    /// </summary>
+
+    std::string getNicId() const;
+    bool nicIdIsSet() const;
+    void unsetnicId();
+    void setNicId(const std::string& value);
+
+    /// <summary>
     /// 每个子任务的执行信息。
     /// </summary>
 
@@ -59,6 +78,10 @@ public:
 
 
 protected:
+    std::string serverId_;
+    bool serverIdIsSet_;
+    std::string nicId_;
+    bool nicIdIsSet_;
     std::vector<SubJob> subJobs_;
     bool subJobsIsSet_;
     int32_t subJobsTotal_;

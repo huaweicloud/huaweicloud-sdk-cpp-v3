@@ -93,6 +93,8 @@
 #include <huaweicloud/ocr/v1/model/RecognizeQualificationCertificateResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeQuotaInvoiceRequest.h>
 #include <huaweicloud/ocr/v1/model/RecognizeQuotaInvoiceResponse.h>
+#include <huaweicloud/ocr/v1/model/RecognizeSmartDocumentRecognizerRequest.h>
+#include <huaweicloud/ocr/v1/model/RecognizeSmartDocumentRecognizerResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeTaxiInvoiceRequest.h>
 #include <huaweicloud/ocr/v1/model/RecognizeTaxiInvoiceResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeThailandIdcardRequest.h>
@@ -113,6 +115,7 @@
 #include <huaweicloud/ocr/v1/model/RecognizeWaybillElectronicResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeWebImageRequest.h>
 #include <huaweicloud/ocr/v1/model/RecognizeWebImageResponse.h>
+#include <huaweicloud/ocr/v1/model/SmartDocumentRecognizerRequestBody.h>
 #include <huaweicloud/ocr/v1/model/TaxiInvoiceRequestBody.h>
 #include <huaweicloud/ocr/v1/model/ThailandIdcardRequestBody.h>
 #include <huaweicloud/ocr/v1/model/ThailandLicensePlateRequestBody.h>
@@ -443,6 +446,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<RecognizeQuotaInvoiceResponse> recognizeQuotaInvoice(
         RecognizeQuotaInvoiceRequest &request
+    );
+    // 智能文档解析
+    //
+    // 对证件、票据、表单等任意版式文档进行键值对提取、文字识别、以及表格识别等任务，实现进阶高效的自动化结构化返回。该接口的使用限制请参见[约束与限制](https://support.huaweicloud.com/productdesc-ocr/ocr_01_0006.html#section11)，详细使用指导请参见[OCR服务使用简介](https://support.huaweicloud.com/qs-ocr/ocr_05_0001.html)章节。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<RecognizeSmartDocumentRecognizerResponse> recognizeSmartDocumentRecognizer(
+        RecognizeSmartDocumentRecognizerRequest &request
     );
     // 出租车发票识别
     //

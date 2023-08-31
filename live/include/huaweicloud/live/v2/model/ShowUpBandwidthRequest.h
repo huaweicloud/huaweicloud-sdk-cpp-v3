@@ -40,6 +40,15 @@ public:
     /// ShowUpBandwidthRequest members
 
     /// <summary>
+    /// 项目ID，获取方法请参考[获取项目ID](live_03_0023.xml)。 
+    /// </summary>
+
+    std::string getProjectId() const;
+    bool projectIdIsSet() const;
+    void unsetprojectId();
+    void setProjectId(const std::string& value);
+
+    /// <summary>
     /// 推流域名列表，最多支持查询100个域名，多个域名以逗号分隔，若查询多个域名，则返回的是多个域名合并数据。 
     /// </summary>
 
@@ -122,6 +131,8 @@ public:
 
 
 protected:
+    std::string projectId_;
+    bool projectIdIsSet_;
     std::vector<std::string> publishDomains_;
     bool publishDomainsIsSet_;
     std::string app_;

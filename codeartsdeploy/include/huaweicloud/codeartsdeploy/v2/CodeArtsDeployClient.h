@@ -6,15 +6,25 @@
 #include <huaweicloud/core/ClientBuilder.h>
 
 
+#include <huaweicloud/codeartsdeploy/v2/model/CreateAppRequest.h>
+#include <huaweicloud/codeartsdeploy/v2/model/CreateAppRequestBody.h>
+#include <huaweicloud/codeartsdeploy/v2/model/CreateAppResponse.h>
 #include <huaweicloud/codeartsdeploy/v2/model/CreateDeployTaskByTemplateRequest.h>
 #include <huaweicloud/codeartsdeploy/v2/model/CreateDeployTaskByTemplateResponse.h>
+#include <huaweicloud/codeartsdeploy/v2/model/DeleteApplicationRequest.h>
+#include <huaweicloud/codeartsdeploy/v2/model/DeleteApplicationResponse.h>
 #include <huaweicloud/codeartsdeploy/v2/model/DeleteDeployTaskRequest.h>
 #include <huaweicloud/codeartsdeploy/v2/model/DeleteDeployTaskResponse.h>
 #include <huaweicloud/codeartsdeploy/v2/model/EnvExecutionBody.h>
+#include <huaweicloud/codeartsdeploy/v2/model/ListAllAppRequest.h>
+#include <huaweicloud/codeartsdeploy/v2/model/ListAllAppRequestBody.h>
+#include <huaweicloud/codeartsdeploy/v2/model/ListAllAppResponse.h>
 #include <huaweicloud/codeartsdeploy/v2/model/ListDeployTaskHistoryByDateRequest.h>
 #include <huaweicloud/codeartsdeploy/v2/model/ListDeployTaskHistoryByDateResponse.h>
 #include <huaweicloud/codeartsdeploy/v2/model/ListDeployTasksRequest.h>
 #include <huaweicloud/codeartsdeploy/v2/model/ListDeployTasksResponse.h>
+#include <huaweicloud/codeartsdeploy/v2/model/ShowAppDetailByIdRequest.h>
+#include <huaweicloud/codeartsdeploy/v2/model/ShowAppDetailByIdResponse.h>
 #include <huaweicloud/codeartsdeploy/v2/model/ShowDeployTaskDetailRequest.h>
 #include <huaweicloud/codeartsdeploy/v2/model/ShowDeployTaskDetailResponse.h>
 #include <huaweicloud/codeartsdeploy/v2/model/StartDeployTaskRequest.h>
@@ -22,30 +32,60 @@
 #include <huaweicloud/codeartsdeploy/v2/model/TemplateTaskRequestBody.h>
 #include <string>
 
+#include <huaweicloud/codeartsdeploy/v2/model/CreateEnvironmentRequest.h>
+#include <huaweicloud/codeartsdeploy/v2/model/CreateEnvironmentResponse.h>
+#include <huaweicloud/codeartsdeploy/v2/model/DeleteEnvironmentRequest.h>
+#include <huaweicloud/codeartsdeploy/v2/model/DeleteEnvironmentResponse.h>
+#include <huaweicloud/codeartsdeploy/v2/model/DeleteHostFromEnvironmentRequest.h>
+#include <huaweicloud/codeartsdeploy/v2/model/DeleteHostFromEnvironmentResponse.h>
+#include <huaweicloud/codeartsdeploy/v2/model/EnvironmentRequestBody.h>
+#include <huaweicloud/codeartsdeploy/v2/model/ImportHostToEnvironmentRequest.h>
+#include <huaweicloud/codeartsdeploy/v2/model/ImportHostToEnvironmentRequestBody.h>
+#include <huaweicloud/codeartsdeploy/v2/model/ImportHostToEnvironmentResponse.h>
+#include <huaweicloud/codeartsdeploy/v2/model/ListEnvironmentsRequest.h>
+#include <huaweicloud/codeartsdeploy/v2/model/ListEnvironmentsResponse.h>
+#include <huaweicloud/codeartsdeploy/v2/model/ShowEnvironmentDetailRequest.h>
+#include <huaweicloud/codeartsdeploy/v2/model/ShowEnvironmentDetailResponse.h>
+#include <string>
+
 #include <huaweicloud/codeartsdeploy/v2/model/CreateDeploymentHostRequest.h>
 #include <huaweicloud/codeartsdeploy/v2/model/CreateDeploymentHostResponse.h>
+#include <huaweicloud/codeartsdeploy/v2/model/CreateHostRequest.h>
+#include <huaweicloud/codeartsdeploy/v2/model/CreateHostRequestBody.h>
+#include <huaweicloud/codeartsdeploy/v2/model/CreateHostResponse.h>
 #include <huaweicloud/codeartsdeploy/v2/model/DeleteDeploymentHostRequest.h>
 #include <huaweicloud/codeartsdeploy/v2/model/DeleteDeploymentHostResponse.h>
 #include <huaweicloud/codeartsdeploy/v2/model/DeploymentHost.h>
 #include <huaweicloud/codeartsdeploy/v2/model/DeploymentHostRequest.h>
 #include <huaweicloud/codeartsdeploy/v2/model/ListHostsRequest.h>
 #include <huaweicloud/codeartsdeploy/v2/model/ListHostsResponse.h>
+#include <huaweicloud/codeartsdeploy/v2/model/ListNewHostsRequest.h>
+#include <huaweicloud/codeartsdeploy/v2/model/ListNewHostsResponse.h>
 #include <huaweicloud/codeartsdeploy/v2/model/ShowDeploymentHostDetailRequest.h>
 #include <huaweicloud/codeartsdeploy/v2/model/ShowDeploymentHostDetailResponse.h>
+#include <huaweicloud/codeartsdeploy/v2/model/ShowHostDetailRequest.h>
+#include <huaweicloud/codeartsdeploy/v2/model/ShowHostDetailResponse.h>
 #include <huaweicloud/codeartsdeploy/v2/model/UpdateDeploymentHostRequest.h>
 #include <huaweicloud/codeartsdeploy/v2/model/UpdateDeploymentHostResponse.h>
 #include <string>
 
 #include <huaweicloud/codeartsdeploy/v2/model/CreateDeploymentGroupRequest.h>
 #include <huaweicloud/codeartsdeploy/v2/model/CreateDeploymentGroupResponse.h>
+#include <huaweicloud/codeartsdeploy/v2/model/CreateHostClusterRequest.h>
+#include <huaweicloud/codeartsdeploy/v2/model/CreateHostClusterRequestBody.h>
+#include <huaweicloud/codeartsdeploy/v2/model/CreateHostClusterResponse.h>
 #include <huaweicloud/codeartsdeploy/v2/model/DeleteDeploymentGroupRequest.h>
 #include <huaweicloud/codeartsdeploy/v2/model/DeleteDeploymentGroupResponse.h>
 #include <huaweicloud/codeartsdeploy/v2/model/DeploymentGroup.h>
 #include <huaweicloud/codeartsdeploy/v2/model/DeploymentGroupUpdateRequest.h>
+#include <huaweicloud/codeartsdeploy/v2/model/ListHostClustersRequest.h>
+#include <huaweicloud/codeartsdeploy/v2/model/ListHostClustersResponse.h>
 #include <huaweicloud/codeartsdeploy/v2/model/ListHostGroupsRequest.h>
 #include <huaweicloud/codeartsdeploy/v2/model/ListHostGroupsResponse.h>
 #include <huaweicloud/codeartsdeploy/v2/model/ShowDeploymentGroupDetailRequest.h>
 #include <huaweicloud/codeartsdeploy/v2/model/ShowDeploymentGroupDetailResponse.h>
+#include <huaweicloud/codeartsdeploy/v2/model/ShowHostClusterDetailRequest.h>
+#include <huaweicloud/codeartsdeploy/v2/model/ShowHostClusterDetailResponse.h>
 #include <huaweicloud/codeartsdeploy/v2/model/UpdateDeploymentGroupRequest.h>
 #include <huaweicloud/codeartsdeploy/v2/model/UpdateDeploymentGroupResponse.h>
 #include <string>
@@ -81,9 +121,17 @@ public:
 
     static ClientBuilder<CodeArtsDeployClient> newBuilder();
 
+    // 新建应用
+    //
+    // 新建应用。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateAppResponse> createApp(
+        CreateAppRequest &request
+    );
     // 通过模板新建应用
     //
-    // 通过模板新建应用。
+    // 通过模板新建应用。该接口于2024年09月30日后不再维护，推荐使用新版CreateApp接口。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateDeployTaskByTemplateResponse> createDeployTaskByTemplate(
@@ -91,11 +139,27 @@ public:
     );
     // 删除应用
     //
-    // 根据部署任务id删除应用。
+    // 根据应用id删除应用。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteApplicationResponse> deleteApplication(
+        DeleteApplicationRequest &request
+    );
+    // 删除应用
+    //
+    // 根据部署任务id删除应用。该接口于2024年09月30日后不再维护，推荐使用新版DeleteApplication接口。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteDeployTaskResponse> deleteDeployTask(
         DeleteDeployTaskRequest &request
+    );
+    // 获取应用列表
+    //
+    // 查询项目下应用列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListAllAppResponse> listAllApp(
+        ListAllAppRequest &request
     );
     // 根据开始时间和结束时间查询项目下指定应用的历史部署记录列表
     //
@@ -107,7 +171,7 @@ public:
     );
     // 获取应用列表
     //
-    // 查询项目下应用列表
+    // 查询项目下应用列表。该接口于2024年09月30日后不再维护，推荐使用新版ListAllApp接口。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListDeployTasksResponse> listDeployTasks(
@@ -115,7 +179,15 @@ public:
     );
     // 获取应用详情
     //
-    // 根据部署任务id获取应用详情。
+    // 根据应用id获取应用详情。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowAppDetailByIdResponse> showAppDetailById(
+        ShowAppDetailByIdRequest &request
+    );
+    // 获取应用详情
+    //
+    // 根据部署任务id获取应用详情。该接口于2024年09月30日后不再维护，推荐使用新版ShowAppDetailById接口。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowDeployTaskDetailResponse> showDeployTaskDetail(
@@ -130,13 +202,70 @@ public:
         StartDeployTaskRequest &request
     );
 
+    // 应用下创建环境
+    //
+    // 应用下创建环境
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateEnvironmentResponse> createEnvironment(
+        CreateEnvironmentRequest &request
+    );
+    // 删除应用下的环境
+    //
+    // 删除应用下的环境
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteEnvironmentResponse> deleteEnvironment(
+        DeleteEnvironmentRequest &request
+    );
+    // 环境下删除主机
+    //
+    // 环境下删除主机
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteHostFromEnvironmentResponse> deleteHostFromEnvironment(
+        DeleteHostFromEnvironmentRequest &request
+    );
+    // 环境下导入主机
+    //
+    // 环境下导入主机
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ImportHostToEnvironmentResponse> importHostToEnvironment(
+        ImportHostToEnvironmentRequest &request
+    );
+    // 查询应用下环境列表
+    //
+    // 查询应用下环境列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListEnvironmentsResponse> listEnvironments(
+        ListEnvironmentsRequest &request
+    );
+    // 查询环境详情
+    //
+    // 查询环境详情
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowEnvironmentDetailResponse> showEnvironmentDetail(
+        ShowEnvironmentDetailRequest &request
+    );
+
+    // 新建主机
+    //
+    // 在指定主机集群下新建主机。该接口于2024年09月30日后不再维护，推荐使用新版CreateHost接口。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateDeploymentHostResponse> createDeploymentHost(
+        CreateDeploymentHostRequest &request
+    );
     // 新建主机
     //
     // 在指定主机集群下新建主机。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<CreateDeploymentHostResponse> createDeploymentHost(
-        CreateDeploymentHostRequest &request
+    std::shared_ptr<CreateHostResponse> createHost(
+        CreateHostRequest &request
     );
     // 删除主机
     //
@@ -148,19 +277,35 @@ public:
     );
     // 查询主机列表
     //
-    // 根据主机集群id查询指定主机集群下的主机列表。
+    // 根据主机集群id查询指定主机集群下的主机列表。该接口于2024年09月30日后不再维护，推荐使用新版ListNewHosts接口。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListHostsResponse> listHosts(
         ListHostsRequest &request
+    );
+    // 查询主机列表
+    //
+    // 根据主机集群id查询指定主机集群下的主机列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListNewHostsResponse> listNewHosts(
+        ListNewHostsRequest &request
+    );
+    // 查询主机详情
+    //
+    // 根据主机id查询主机详情。该接口于2024年09月30日后不再维护，推荐使用新版ShowHostDetail接口。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowDeploymentHostDetailResponse> showDeploymentHostDetail(
+        ShowDeploymentHostDetailRequest &request
     );
     // 查询主机详情
     //
     // 根据主机id查询主机详情。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ShowDeploymentHostDetailResponse> showDeploymentHostDetail(
-        ShowDeploymentHostDetailRequest &request
+    std::shared_ptr<ShowHostDetailResponse> showHostDetail(
+        ShowHostDetailRequest &request
     );
     // 修改主机
     //
@@ -173,11 +318,19 @@ public:
 
     // 新建主机集群
     //
-    // 在项目下新建主机集群。
+    // 在项目下新建主机集群。该接口于2024年09月30日后不再维护，推荐使用新版CreateHostCluster接口。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateDeploymentGroupResponse> createDeploymentGroup(
         CreateDeploymentGroupRequest &request
+    );
+    // 新建主机集群
+    //
+    // 在项目下新建主机集群。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateHostClusterResponse> createHostCluster(
+        CreateHostClusterRequest &request
     );
     // 删除主机集群
     //
@@ -192,16 +345,32 @@ public:
     // 按条件查询主机集群列表。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListHostClustersResponse> listHostClusters(
+        ListHostClustersRequest &request
+    );
+    // 查询主机集群列表
+    //
+    // 按条件查询主机集群列表。该接口于2024年09月30日后不再维护，推荐使用新版ListHostClusters接口。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListHostGroupsResponse> listHostGroups(
         ListHostGroupsRequest &request
+    );
+    // 查询主机集群
+    //
+    // 根据主机集群id查询主机集群详情。该接口于2024年09月30日后不再维护，推荐使用新版ShowHostClusterDetail接口。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowDeploymentGroupDetailResponse> showDeploymentGroupDetail(
+        ShowDeploymentGroupDetailRequest &request
     );
     // 查询主机集群
     //
     // 根据主机集群id查询主机集群详情。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ShowDeploymentGroupDetailResponse> showDeploymentGroupDetail(
-        ShowDeploymentGroupDetailRequest &request
+    std::shared_ptr<ShowHostClusterDetailResponse> showHostClusterDetail(
+        ShowHostClusterDetailRequest &request
     );
     // 修改主机集群
     //

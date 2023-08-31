@@ -40,6 +40,15 @@ public:
     /// ListDomainBandwidthPeakRequest members
 
     /// <summary>
+    /// 项目ID。获取方法请参考[获取项目ID](live_03_0023.xml)。 
+    /// </summary>
+
+    std::string getProjectId() const;
+    bool projectIdIsSet() const;
+    void unsetprojectId();
+    void setProjectId(const std::string& value);
+
+    /// <summary>
     /// 播放域名列表，最多支持查询100个域名，多个域名以逗号分隔。  如果不传入域名，则查询租户下所有播放域名的带宽峰值。 
     /// </summary>
 
@@ -122,6 +131,8 @@ public:
 
 
 protected:
+    std::string projectId_;
+    bool projectIdIsSet_;
     std::vector<std::string> playDomains_;
     bool playDomainsIsSet_;
     std::string app_;

@@ -17,6 +17,8 @@ ResqTagResource::ResqTagResource()
     projectIdIsSet_ = false;
     resourceTypesIsSet_ = false;
     tagsIsSet_ = false;
+    withoutAnyTag_ = false;
+    withoutAnyTagIsSet_ = false;
     offset_ = 0;
     offsetIsSet_ = false;
     limit_ = 0;
@@ -41,6 +43,9 @@ web::json::value ResqTagResource::toJson() const
     }
     if(tagsIsSet_) {
         val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
+    }
+    if(withoutAnyTagIsSet_) {
+        val[utility::conversions::to_string_t("without_any_tag")] = ModelBase::toJson(withoutAnyTag_);
     }
     if(offsetIsSet_) {
         val[utility::conversions::to_string_t("offset")] = ModelBase::toJson(offset_);
@@ -81,6 +86,15 @@ bool ResqTagResource::fromJson(const web::json::value& val)
             std::vector<Tag> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTags(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("without_any_tag"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("without_any_tag"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setWithoutAnyTag(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("offset"))) {
@@ -165,6 +179,27 @@ bool ResqTagResource::tagsIsSet() const
 void ResqTagResource::unsettags()
 {
     tagsIsSet_ = false;
+}
+
+bool ResqTagResource::isWithoutAnyTag() const
+{
+    return withoutAnyTag_;
+}
+
+void ResqTagResource::setWithoutAnyTag(bool value)
+{
+    withoutAnyTag_ = value;
+    withoutAnyTagIsSet_ = true;
+}
+
+bool ResqTagResource::withoutAnyTagIsSet() const
+{
+    return withoutAnyTagIsSet_;
+}
+
+void ResqTagResource::unsetwithoutAnyTag()
+{
+    withoutAnyTagIsSet_ = false;
 }
 
 int32_t ResqTagResource::getOffset() const

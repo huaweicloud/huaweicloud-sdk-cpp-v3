@@ -156,6 +156,15 @@ public:
     void setInterruptionPolicy(const std::string& value);
 
     /// <summary>
+    /// 云备份策略和云备份存储库详情，取值包含：备份策略ID和云备份存储库ID。
+    /// </summary>
+
+    std::string getCbCsbsBackup() const;
+    bool cbCsbsBackupIsSet() const;
+    void unsetcbCsbsBackup();
+    void setCbCsbsBackup(const std::string& value);
+
+    /// <summary>
     /// 表示购买的“竞价实例时长”的个数。  - 仅spot_duration_hours&gt;0 时该字段有效。 - spot_duration_hours小于6时，spot_duration_count值必须为1。 - spot_duration_hours等于6时，spot_duration_count大于等于1。  spot_duration_count的最大值由预测系统给出可以从flavor的extra_specs的cond:spot_block:operation:longest_duration_count字段中查询。  
     /// </summary>
 
@@ -192,6 +201,8 @@ protected:
     bool spotDurationHoursIsSet_;
     std::string interruptionPolicy_;
     bool interruptionPolicyIsSet_;
+    std::string cbCsbsBackup_;
+    bool cbCsbsBackupIsSet_;
     int32_t spotDurationCount_;
     bool spotDurationCountIsSet_;
 

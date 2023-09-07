@@ -1,3 +1,63 @@
+# 3.1.51 2023-09-07
+
+### HuaweiCloud SDK DRS
+
+- _Features_
+  - Support the following interfaces：
+    - `StopJobAction`
+    - `ShowDataProgress`
+    - `UpdateDataProgress`
+    - `ShowDataProcessingRulesResult`
+    - `CheckDataFilter`
+    - `ShowDataFilteringResult`
+    - `CollectColumns`
+    - `ShowColumnInfoResult`
+    - `BatchStopJobsAction`
+    - `ExportOperationInfo`
+    - `BatchTagAction`
+    - `ListProjectTags`
+    - `ShowInstanceTags`
+    - `UpdateStartPosition`
+    - `ShowMonitorData`
+    - `ShowSupportObjectType`
+    - `ShowIncrementComponentsDetail`
+    - `CollectDbObjectsInfo`
+    - `ShowDbObjectsList`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowDbObjectTemplateResult**
+    - changes of request param
+      - `+ type: enum value [change]`
+  - **ShowUpdateObjectSavingStatus**
+    - changes of request param
+      - `+ X-Language: enum value [en-us,zh-cn]`
+  - **ShowObjectMapping**
+    - changes of request param
+      - `+ X-Language: enum value [en-us,zh-cn]`
+  - **ListJobs**
+    - changes of request param
+      - `+ instance_ids`
+      - `+ instance_ip`
+  - **ShowDbObjectCollectionStatus**
+    - changes of request param
+      - `+ X-Language: enum value [en-us,zh-cn]`
+  - **UpdateBatchAsyncJobs**
+    - changes of request param
+      - `+ jobs.type: enum value [re_create,expired_days]`
+  - **UpdateJob**
+    - changes of request param
+      - `+ job.type: enum value [re_create,expired_days]`
+
+### HuaweiCloud SDK RDS
+
+- _Features_
+  - Support the interfaces `ListInstancesResourceMetrics`, `ListInstancesRecommendation`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.50 2023-08-31
 
 ### HuaweiCloud SDK CodeArtsDeploy

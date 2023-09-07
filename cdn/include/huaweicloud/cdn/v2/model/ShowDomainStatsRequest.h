@@ -39,7 +39,7 @@ public:
     /// ShowDomainStatsRequest members
 
     /// <summary>
-    /// - 动作名称，可选summary、detail。 - summary：查询汇总数据 - detail：查询数据详情。
+    /// 动作名称，可选summary、detail。 - summary：查询汇总数据 - detail：查询数据详情。
     /// </summary>
 
     std::string getAction() const;
@@ -48,7 +48,7 @@ public:
     void setAction(const std::string& value);
 
     /// <summary>
-    /// - 查询起始时间戳，需与结束时间戳同时指定，左闭右开，设置方式如下： - interval为300时，start_time设置为整5分钟时刻点，如：1631240100000(对应2021-09-10 10:15:00) - interval为3600时，start_time设置为整小时时刻点，如：1631239200000(对应2021-09-10 10:00:00) - interval为86400时，start_time设置为东8区零点时刻点，如：1631203200000(对应2021-09-10 00:00:00)
+    /// 查询起始时间戳，需与结束时间戳同时指定，左闭右开，设置方式如下： - interval为300时，start_time设置为整5分钟时刻点，如：1631240100000(对应2021-09-10 10:15:00) - interval为3600时，start_time设置为整小时时刻点，如：1631239200000(对应2021-09-10 10:00:00) - interval为86400时，start_time设置为东8区零点时刻点，如：1631203200000(对应2021-09-10 00:00:00)
     /// </summary>
 
     int64_t getStartTime() const;
@@ -57,7 +57,7 @@ public:
     void setStartTime(int64_t value);
 
     /// <summary>
-    /// - 查询结束时间戳，需与开始时间戳同时指定，左闭右开，设置方式如下： - interval为300时，end_time设置为整5分钟时刻点，如：1631243700000(对应2021-09-10 11:15:00) - interval为3600时，end_time设置为整小时时刻点，如：1631325600000(对应2021-09-11 10:00:00) - interval为86400时，end_time设置为东8区零点时刻点，如：1631376000000(对应2021-09-12 00:00:00)
+    /// 查询结束时间戳，需与开始时间戳同时指定，左闭右开，设置方式如下： - interval为300时，end_time设置为整5分钟时刻点，如：1631243700000(对应2021-09-10 11:15:00) - interval为3600时，end_time设置为整小时时刻点，如：1631325600000(对应2021-09-11 10:00:00) - interval为86400时，end_time设置为东8区零点时刻点，如：1631376000000(对应2021-09-12 00:00:00)
     /// </summary>
 
     int64_t getEndTime() const;
@@ -84,7 +84,7 @@ public:
     void setStatType(const std::string& value);
 
     /// <summary>
-    /// - 查询时间间隔，单位：秒，取值说明： - 300(5分钟)：最大查询跨度2天 - 3600(1小时)：最大查询跨度7天 - 86400(1天)：最大查询跨度31天 - 如果不传，默认取对应时间跨度的最小间隔。
+    /// 查询时间间隔，单位：秒，取值说明： - 300(5分钟)：最大查询跨度2天 - 3600(1小时)：最大查询跨度7天 - 86400(1天)：最大查询跨度31天 - 如果不传，默认取对应时间跨度的最小间隔。
     /// </summary>
 
     int64_t getInterval() const;
@@ -102,7 +102,7 @@ public:
     void setGroupBy(const std::string& value);
 
     /// <summary>
-    /// 服务区域：mainland_china（默认）、outside_mainland_china，当查询回源类指标时该参数无效。
+    /// 服务区域：mainland_china(中国大陆)，outside_mainland_china(中国大陆境外)，默认为mainland_china，当查询回源类指标时该参数无效。
     /// </summary>
 
     std::string getServiceArea() const;

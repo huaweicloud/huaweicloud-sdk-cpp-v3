@@ -66,6 +66,7 @@
 #include <huaweicloud/rds/v3/model/EnableConfigurationResponse.h>
 #include <huaweicloud/rds/v3/model/EnlargeVolumeRequestBody.h>
 #include <huaweicloud/rds/v3/model/ErrorResponse.h>
+#include <huaweicloud/rds/v3/model/ErrorRsp.h>
 #include <huaweicloud/rds/v3/model/ErrorlogForLtsRequest.h>
 #include <huaweicloud/rds/v3/model/FailoverModeRequest.h>
 #include <huaweicloud/rds/v3/model/FailoverRequest.h>
@@ -100,7 +101,11 @@
 #include <huaweicloud/rds/v3/model/ListInstanceParamHistoriesResponse.h>
 #include <huaweicloud/rds/v3/model/ListInstanceTagsRequest.h>
 #include <huaweicloud/rds/v3/model/ListInstanceTagsResponse.h>
+#include <huaweicloud/rds/v3/model/ListInstancesRecommendationRequest.h>
+#include <huaweicloud/rds/v3/model/ListInstancesRecommendationResponse.h>
 #include <huaweicloud/rds/v3/model/ListInstancesRequest.h>
+#include <huaweicloud/rds/v3/model/ListInstancesResourceMetricsRequest.h>
+#include <huaweicloud/rds/v3/model/ListInstancesResourceMetricsResponse.h>
 #include <huaweicloud/rds/v3/model/ListInstancesResponse.h>
 #include <huaweicloud/rds/v3/model/ListInstancesSupportFastRestoreRequest.h>
 #include <huaweicloud/rds/v3/model/ListInstancesSupportFastRestoreRequestBody.h>
@@ -720,6 +725,22 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListInstancesResponse> listInstances(
         ListInstancesRequest &request
+    );
+    // 查询购买推荐
+    //
+    // 查询购买推荐
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListInstancesRecommendationResponse> listInstancesRecommendation(
+        ListInstancesRecommendationRequest &request
+    );
+    // 查询监控大盘列表
+    //
+    // 查询监控大盘列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListInstancesResourceMetricsResponse> listInstancesResourceMetrics(
+        ListInstancesResourceMetricsRequest &request
     );
     // 获取实例是否能使用极速恢复
     //

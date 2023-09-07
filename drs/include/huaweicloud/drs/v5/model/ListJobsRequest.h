@@ -8,6 +8,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -137,6 +138,24 @@ public:
     void unsetsortDir();
     void setSortDir(const std::string& value);
 
+    /// <summary>
+    /// 数据库实例ID列表，最多支持10个
+    /// </summary>
+
+    std::vector<std::string>& getInstanceIds();
+    bool instanceIdsIsSet() const;
+    void unsetinstanceIds();
+    void setInstanceIds(const std::vector<std::string>& value);
+
+    /// <summary>
+    /// 数据库实例IP
+    /// </summary>
+
+    std::string getInstanceIp() const;
+    bool instanceIpIsSet() const;
+    void unsetinstanceIp();
+    void setInstanceIp(const std::string& value);
+
 
 protected:
     std::string xLanguage_;
@@ -161,6 +180,10 @@ protected:
     bool sortKeyIsSet_;
     std::string sortDir_;
     bool sortDirIsSet_;
+    std::vector<std::string> instanceIds_;
+    bool instanceIdsIsSet_;
+    std::string instanceIp_;
+    bool instanceIpIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

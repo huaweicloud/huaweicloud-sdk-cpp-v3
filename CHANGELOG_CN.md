@@ -1,3 +1,63 @@
+# 3.1.51 2023-09-07
+
+### HuaweiCloud SDK DRS
+
+- _新增特性_
+  - 支持以下接口：
+    - `StopJobAction`
+    - `ShowDataProgress`
+    - `UpdateDataProgress`
+    - `ShowDataProcessingRulesResult`
+    - `CheckDataFilter`
+    - `ShowDataFilteringResult`
+    - `CollectColumns`
+    - `ShowColumnInfoResult`
+    - `BatchStopJobsAction`
+    - `ExportOperationInfo`
+    - `BatchTagAction`
+    - `ListProjectTags`
+    - `ShowInstanceTags`
+    - `UpdateStartPosition`
+    - `ShowMonitorData`
+    - `ShowSupportObjectType`
+    - `ShowIncrementComponentsDetail`
+    - `CollectDbObjectsInfo`
+    - `ShowDbObjectsList`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowDbObjectTemplateResult**
+    - 请求参数变更
+      - `+ type: enum value [change]`
+  - **ShowUpdateObjectSavingStatus**
+    - 请求参数变更
+      - `+ X-Language: enum value [en-us,zh-cn]`
+  - **ShowObjectMapping**
+    - 请求参数变更
+      - `+ X-Language: enum value [en-us,zh-cn]`
+  - **ListJobs**
+    - 请求参数变更
+      - `+ instance_ids`
+      - `+ instance_ip`
+  - **ShowDbObjectCollectionStatus**
+    - 请求参数变更
+      - `+ X-Language: enum value [en-us,zh-cn]`
+  - **UpdateBatchAsyncJobs**
+    - 请求参数变更
+      - `+ jobs.type: enum value [re_create,expired_days]`
+  - **UpdateJob**
+    - 请求参数变更
+      - `+ job.type: enum value [re_create,expired_days]`
+
+### HuaweiCloud SDK RDS
+
+- _新增特性_
+  - 支持接口`ListInstancesResourceMetrics`、`ListInstancesRecommendation`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.1.50 2023-08-31
 
 ### HuaweiCloud SDK CodeArtsDeploy

@@ -35,6 +35,9 @@ ListJobsRequest::ListJobsRequest()
     sortKeyIsSet_ = false;
     sortDir_ = "";
     sortDirIsSet_ = false;
+    instanceIdsIsSet_ = false;
+    instanceIp_ = "";
+    instanceIpIsSet_ = false;
 }
 
 ListJobsRequest::~ListJobsRequest() = default;
@@ -79,6 +82,12 @@ web::json::value ListJobsRequest::toJson() const
     }
     if(sortDirIsSet_) {
         val[utility::conversions::to_string_t("sort_dir")] = ModelBase::toJson(sortDir_);
+    }
+    if(instanceIdsIsSet_) {
+        val[utility::conversions::to_string_t("instance_ids")] = ModelBase::toJson(instanceIds_);
+    }
+    if(instanceIpIsSet_) {
+        val[utility::conversions::to_string_t("instance_ip")] = ModelBase::toJson(instanceIp_);
     }
 
     return val;
@@ -185,6 +194,24 @@ bool ListJobsRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSortDir(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("instance_ids"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("instance_ids"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setInstanceIds(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("instance_ip"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("instance_ip"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setInstanceIp(refVal);
         }
     }
     return ok;
@@ -419,6 +446,48 @@ bool ListJobsRequest::sortDirIsSet() const
 void ListJobsRequest::unsetsortDir()
 {
     sortDirIsSet_ = false;
+}
+
+std::vector<std::string>& ListJobsRequest::getInstanceIds()
+{
+    return instanceIds_;
+}
+
+void ListJobsRequest::setInstanceIds(const std::vector<std::string>& value)
+{
+    instanceIds_ = value;
+    instanceIdsIsSet_ = true;
+}
+
+bool ListJobsRequest::instanceIdsIsSet() const
+{
+    return instanceIdsIsSet_;
+}
+
+void ListJobsRequest::unsetinstanceIds()
+{
+    instanceIdsIsSet_ = false;
+}
+
+std::string ListJobsRequest::getInstanceIp() const
+{
+    return instanceIp_;
+}
+
+void ListJobsRequest::setInstanceIp(const std::string& value)
+{
+    instanceIp_ = value;
+    instanceIpIsSet_ = true;
+}
+
+bool ListJobsRequest::instanceIpIsSet() const
+{
+    return instanceIpIsSet_;
+}
+
+void ListJobsRequest::unsetinstanceIp()
+{
+    instanceIpIsSet_ = false;
 }
 
 }

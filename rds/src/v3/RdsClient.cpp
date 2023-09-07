@@ -1567,6 +1567,95 @@ std::shared_ptr<ListInstancesResponse> RdsClient::listInstances(ListInstancesReq
 
     return localVarResult;
 }
+std::shared_ptr<ListInstancesRecommendationResponse> RdsClient::listInstancesRecommendation(ListInstancesRecommendationRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/product-recommendation";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.engineIsSet()) {
+        localVarQueryParams["engine"] = parameterToString(request.getEngine());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+
+    std::shared_ptr<ListInstancesRecommendationResponse> localVarResult = std::make_shared<ListInstancesRecommendationResponse>();
+
+    if (!res->getHttpBody().empty()) {
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListInstancesResourceMetricsResponse> RdsClient::listInstancesResourceMetrics(ListInstancesResourceMetricsRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/resource-monitoring";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.engineIsSet()) {
+        localVarQueryParams["engine"] = parameterToString(request.getEngine());
+    }
+    if (request.searchFieldIsSet()) {
+        localVarQueryParams["search_field"] = parameterToString(request.getSearchField());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.orderIsSet()) {
+        localVarQueryParams["order"] = parameterToString(request.getOrder());
+    }
+    if (request.sortFieldIsSet()) {
+        localVarQueryParams["sort_field"] = parameterToString(request.getSortField());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+
+    std::shared_ptr<ListInstancesResourceMetricsResponse> localVarResult = std::make_shared<ListInstancesResourceMetricsResponse>();
+
+    if (!res->getHttpBody().empty()) {
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListInstancesSupportFastRestoreResponse> RdsClient::listInstancesSupportFastRestore(ListInstancesSupportFastRestoreRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/instances/fast-restore";

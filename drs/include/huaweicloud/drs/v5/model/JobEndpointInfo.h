@@ -44,7 +44,7 @@ public:
     /// JobEndpointInfo members
 
     /// <summary>
-    /// 数据库类型。取值： - oracle：Oracle。 - gaussdbv5：GaussDB分布式版。
+    /// 数据库类型。取值：  - oracle：Oracle。 - gaussdbv5：GaussDB分布式版。
     /// </summary>
 
     std::string getDbType() const;
@@ -53,7 +53,7 @@ public:
     void setDbType(const std::string& value);
 
     /// <summary>
-    /// 数据库实例类型。取值： - offline：自建数据库。 - ecs：华为云ECS自建数据库。 - cloud：华为云数据库。
+    /// 数据库实例类型。取值：  - offline：自建数据库。 - ecs：华为云ECS自建数据库。 - cloud：华为云数据库。
     /// </summary>
 
     std::string getEndpointType() const;

@@ -41,7 +41,7 @@ public:
     /// ShowTopUrlResponse members
 
     /// <summary>
-    /// 服务区域
+    /// 服务区域：mainland_china(中国大陆)，outside_mainland_china(中国大陆境外)，默认为mainland_china。
     /// </summary>
 
     std::string getServiceArea() const;

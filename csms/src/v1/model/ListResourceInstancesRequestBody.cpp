@@ -101,7 +101,7 @@ bool ListResourceInstancesRequestBody::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("matches"));
         if(!fieldValue.is_null())
         {
-            std::vector<TagItem> refVal;
+            std::vector<TagMatches> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setMatches(refVal);
         }
@@ -202,12 +202,12 @@ void ListResourceInstancesRequestBody::unsettags()
     tagsIsSet_ = false;
 }
 
-std::vector<TagItem>& ListResourceInstancesRequestBody::getMatches()
+std::vector<TagMatches>& ListResourceInstancesRequestBody::getMatches()
 {
     return matches_;
 }
 
-void ListResourceInstancesRequestBody::setMatches(const std::vector<TagItem>& value)
+void ListResourceInstancesRequestBody::setMatches(const std::vector<TagMatches>& value)
 {
     matches_ = value;
     matchesIsSet_ = true;

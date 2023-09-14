@@ -349,7 +349,7 @@ bool AppDetailInfo::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("arrange_infos"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            std::vector<TaskV2Info> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setArrangeInfos(refVal);
         }
@@ -819,12 +819,12 @@ void AppDetailInfo::unsetpermissionLevel()
     permissionLevelIsSet_ = false;
 }
 
-Object AppDetailInfo::getArrangeInfos() const
+std::vector<TaskV2Info>& AppDetailInfo::getArrangeInfos()
 {
     return arrangeInfos_;
 }
 
-void AppDetailInfo::setArrangeInfos(const Object& value)
+void AppDetailInfo::setArrangeInfos(const std::vector<TaskV2Info>& value)
 {
     arrangeInfos_ = value;
     arrangeInfosIsSet_ = true;

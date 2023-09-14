@@ -8,9 +8,9 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/codeartsdeploy/v2/model/HostAuthorizationBody.h>
+#include <huaweicloud/codeartsdeploy/v2/model/PermissionHostDetailNew.h>
 #include <string>
 #include <huaweicloud/codeartsdeploy/v2/model/HostInfo.h>
-#include <huaweicloud/codeartsdeploy/v2/model/PermissionHostDetail.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -90,10 +90,10 @@ public:
     /// 
     /// </summary>
 
-    PermissionHostDetail getPermission() const;
+    PermissionHostDetailNew getPermission() const;
     bool permissionIsSet() const;
     void unsetpermission();
-    void setPermission(const PermissionHostDetail& value);
+    void setPermission(const PermissionHostDetailNew& value);
 
     /// <summary>
     /// 主机名称
@@ -233,7 +233,7 @@ protected:
     bool portIsSet_;
     HostAuthorizationBody authorization_;
     bool authorizationIsSet_;
-    PermissionHostDetail permission_;
+    PermissionHostDetailNew permission_;
     bool permissionIsSet_;
     std::string hostName_;
     bool hostNameIsSet_;

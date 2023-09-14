@@ -39,22 +39,13 @@ public:
     /// ListLogStreamRequest members
 
     /// <summary>
-    /// 租户想查询的日志流所在的日志组的groupid，一般为36位字符串。 
+    /// 租户想查询的日志流所在的日志组的groupid，一般为36位字符串。
     /// </summary>
 
     std::string getLogGroupId() const;
     bool logGroupIdIsSet() const;
     void unsetlogGroupId();
     void setLogGroupId(const std::string& value);
-
-    /// <summary>
-    /// 按条件搜索，内容设置为日志流的tag键值对，比如k1&#x3D;v1； 
-    /// </summary>
-
-    std::string getTag() const;
-    bool tagIsSet() const;
-    void unsettag();
-    void setTag(const std::string& value);
 
     /// <summary>
     /// 该字段填为：application/json;charset&#x3D;UTF-8。
@@ -69,8 +60,6 @@ public:
 protected:
     std::string logGroupId_;
     bool logGroupIdIsSet_;
-    std::string tag_;
-    bool tagIsSet_;
     std::string contentType_;
     bool contentTypeIsSet_;
 

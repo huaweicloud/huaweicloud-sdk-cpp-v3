@@ -179,7 +179,7 @@ bool HostInfo::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("permission"));
         if(!fieldValue.is_null())
         {
-            PermissionHostDetail refVal;
+            PermissionHostDetailNew refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPermission(refVal);
         }
@@ -418,12 +418,12 @@ void HostInfo::unsetauthorization()
     authorizationIsSet_ = false;
 }
 
-PermissionHostDetail HostInfo::getPermission() const
+PermissionHostDetailNew HostInfo::getPermission() const
 {
     return permission_;
 }
 
-void HostInfo::setPermission(const PermissionHostDetail& value)
+void HostInfo::setPermission(const PermissionHostDetailNew& value)
 {
     permission_ = value;
     permissionIsSet_ = true;

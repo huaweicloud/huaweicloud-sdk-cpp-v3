@@ -140,7 +140,7 @@ bool UpdateKeywordsAlarmRuleRequestBody::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("frequency"));
         if(!fieldValue.is_null())
         {
-            Frequency refVal;
+            Object refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFrequency(refVal);
         }
@@ -185,7 +185,7 @@ bool UpdateKeywordsAlarmRuleRequestBody::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("notification_save_rule"));
         if(!fieldValue.is_null())
         {
-            SqlNotificationSaveRule refVal;
+            Object refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setNotificationSaveRule(refVal);
         }
@@ -313,12 +313,12 @@ void UpdateKeywordsAlarmRuleRequestBody::unsetkeywordsRequests()
     keywordsRequestsIsSet_ = false;
 }
 
-Frequency UpdateKeywordsAlarmRuleRequestBody::getFrequency() const
+Object UpdateKeywordsAlarmRuleRequestBody::getFrequency() const
 {
     return frequency_;
 }
 
-void UpdateKeywordsAlarmRuleRequestBody::setFrequency(const Frequency& value)
+void UpdateKeywordsAlarmRuleRequestBody::setFrequency(const Object& value)
 {
     frequency_ = value;
     frequencyIsSet_ = true;
@@ -418,12 +418,12 @@ void UpdateKeywordsAlarmRuleRequestBody::unsetdomainId()
     domainIdIsSet_ = false;
 }
 
-SqlNotificationSaveRule UpdateKeywordsAlarmRuleRequestBody::getNotificationSaveRule() const
+Object UpdateKeywordsAlarmRuleRequestBody::getNotificationSaveRule() const
 {
     return notificationSaveRule_;
 }
 
-void UpdateKeywordsAlarmRuleRequestBody::setNotificationSaveRule(const SqlNotificationSaveRule& value)
+void UpdateKeywordsAlarmRuleRequestBody::setNotificationSaveRule(const Object& value)
 {
     notificationSaveRule_ = value;
     notificationSaveRuleIsSet_ = true;

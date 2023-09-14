@@ -33,7 +33,6 @@ HostInfoDetail::HostInfoDetail()
     proxyHostIdIsSet_ = false;
     ownerName_ = "";
     ownerNameIsSet_ = false;
-    proxyHost_ = "";
     proxyHostIsSet_ = false;
     connectionStatus_ = "";
     connectionStatusIsSet_ = false;
@@ -95,7 +94,7 @@ web::json::value HostInfoDetail::toJson() const
         val[utility::conversions::to_string_t("owner_name")] = ModelBase::toJson(ownerName_);
     }
     if(proxyHostIsSet_) {
-        val[utility::conversions::to_string_t("proxy_host")] = ModelBase::toJson(proxyHost_);
+        val[utility::conversions::to_string_t("proxy_host")] = ModelBase::toJson(*proxyHost_);
     }
     if(connectionStatusIsSet_) {
         val[utility::conversions::to_string_t("connection_status")] = ModelBase::toJson(connectionStatus_);
@@ -175,7 +174,7 @@ bool HostInfoDetail::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("permission"));
         if(!fieldValue.is_null())
         {
-            PermissionHostDetail refVal;
+            PermissionHostDetailNew refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPermission(refVal);
         }
@@ -229,7 +228,7 @@ bool HostInfoDetail::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("proxy_host"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            HostInfoDetail refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setProxyHost(refVal);
         }
@@ -405,12 +404,12 @@ void HostInfoDetail::unsetauthorization()
     authorizationIsSet_ = false;
 }
 
-PermissionHostDetail HostInfoDetail::getPermission() const
+PermissionHostDetailNew HostInfoDetail::getPermission() const
 {
     return permission_;
 }
 
-void HostInfoDetail::setPermission(const PermissionHostDetail& value)
+void HostInfoDetail::setPermission(const PermissionHostDetailNew& value)
 {
     permission_ = value;
     permissionIsSet_ = true;
@@ -531,14 +530,14 @@ void HostInfoDetail::unsetownerName()
     ownerNameIsSet_ = false;
 }
 
-std::string HostInfoDetail::getProxyHost() const
+HostInfoDetail HostInfoDetail::getProxyHost() const
 {
-    return proxyHost_;
+    return *proxyHost_;
 }
 
-void HostInfoDetail::setProxyHost(const std::string& value)
+void HostInfoDetail::setProxyHost(const HostInfoDetail& value)
 {
-    proxyHost_ = value;
+    *proxyHost_ = value;
     proxyHostIsSet_ = true;
 }
 

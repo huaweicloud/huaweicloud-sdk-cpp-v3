@@ -9,6 +9,9 @@
 #include <huaweicloud/csms/v1/model/BatchCreateOrDeleteTagsRequest.h>
 #include <huaweicloud/csms/v1/model/BatchCreateOrDeleteTagsRequestBody.h>
 #include <huaweicloud/csms/v1/model/BatchCreateOrDeleteTagsResponse.h>
+#include <huaweicloud/csms/v1/model/CreateSecretEventRequest.h>
+#include <huaweicloud/csms/v1/model/CreateSecretEventRequestBody.h>
+#include <huaweicloud/csms/v1/model/CreateSecretEventResponse.h>
 #include <huaweicloud/csms/v1/model/CreateSecretRequest.h>
 #include <huaweicloud/csms/v1/model/CreateSecretRequestBody.h>
 #include <huaweicloud/csms/v1/model/CreateSecretResponse.h>
@@ -18,6 +21,8 @@
 #include <huaweicloud/csms/v1/model/CreateSecretVersionRequest.h>
 #include <huaweicloud/csms/v1/model/CreateSecretVersionRequestBody.h>
 #include <huaweicloud/csms/v1/model/CreateSecretVersionResponse.h>
+#include <huaweicloud/csms/v1/model/DeleteSecretEventRequest.h>
+#include <huaweicloud/csms/v1/model/DeleteSecretEventResponse.h>
 #include <huaweicloud/csms/v1/model/DeleteSecretForScheduleRequest.h>
 #include <huaweicloud/csms/v1/model/DeleteSecretForScheduleRequestBody.h>
 #include <huaweicloud/csms/v1/model/DeleteSecretForScheduleResponse.h>
@@ -29,11 +34,15 @@
 #include <huaweicloud/csms/v1/model/DeleteSecretTagResponse.h>
 #include <huaweicloud/csms/v1/model/DownloadSecretBlobRequest.h>
 #include <huaweicloud/csms/v1/model/DownloadSecretBlobResponse.h>
+#include <huaweicloud/csms/v1/model/ListNotificationRecordsRequest.h>
+#include <huaweicloud/csms/v1/model/ListNotificationRecordsResponse.h>
 #include <huaweicloud/csms/v1/model/ListProjectSecretsTagsRequest.h>
 #include <huaweicloud/csms/v1/model/ListProjectSecretsTagsResponse.h>
 #include <huaweicloud/csms/v1/model/ListResourceInstancesRequest.h>
 #include <huaweicloud/csms/v1/model/ListResourceInstancesRequestBody.h>
 #include <huaweicloud/csms/v1/model/ListResourceInstancesResponse.h>
+#include <huaweicloud/csms/v1/model/ListSecretEventsRequest.h>
+#include <huaweicloud/csms/v1/model/ListSecretEventsResponse.h>
 #include <huaweicloud/csms/v1/model/ListSecretTagsRequest.h>
 #include <huaweicloud/csms/v1/model/ListSecretTagsResponse.h>
 #include <huaweicloud/csms/v1/model/ListSecretVersionsRequest.h>
@@ -42,18 +51,26 @@
 #include <huaweicloud/csms/v1/model/ListSecretsResponse.h>
 #include <huaweicloud/csms/v1/model/RestoreSecretRequest.h>
 #include <huaweicloud/csms/v1/model/RestoreSecretResponse.h>
+#include <huaweicloud/csms/v1/model/ShowSecretEventRequest.h>
+#include <huaweicloud/csms/v1/model/ShowSecretEventResponse.h>
 #include <huaweicloud/csms/v1/model/ShowSecretRequest.h>
 #include <huaweicloud/csms/v1/model/ShowSecretResponse.h>
 #include <huaweicloud/csms/v1/model/ShowSecretStageRequest.h>
 #include <huaweicloud/csms/v1/model/ShowSecretStageResponse.h>
 #include <huaweicloud/csms/v1/model/ShowSecretVersionRequest.h>
 #include <huaweicloud/csms/v1/model/ShowSecretVersionResponse.h>
+#include <huaweicloud/csms/v1/model/UpdateSecretEventRequest.h>
+#include <huaweicloud/csms/v1/model/UpdateSecretEventRequestBody.h>
+#include <huaweicloud/csms/v1/model/UpdateSecretEventResponse.h>
 #include <huaweicloud/csms/v1/model/UpdateSecretRequest.h>
 #include <huaweicloud/csms/v1/model/UpdateSecretRequestBody.h>
 #include <huaweicloud/csms/v1/model/UpdateSecretResponse.h>
 #include <huaweicloud/csms/v1/model/UpdateSecretStageRequest.h>
 #include <huaweicloud/csms/v1/model/UpdateSecretStageRequestBody.h>
 #include <huaweicloud/csms/v1/model/UpdateSecretStageResponse.h>
+#include <huaweicloud/csms/v1/model/UpdateVersionRequest.h>
+#include <huaweicloud/csms/v1/model/UpdateVersionRequestBody.h>
+#include <huaweicloud/csms/v1/model/UpdateVersionResponse.h>
 #include <huaweicloud/csms/v1/model/UploadSecretBlobRequest.h>
 #include <huaweicloud/csms/v1/model/UploadSecretBlobRequestBody.h>
 #include <huaweicloud/csms/v1/model/UploadSecretBlobResponse.h>
@@ -103,9 +120,17 @@ public:
     std::shared_ptr<CreateSecretResponse> createSecret(
         CreateSecretRequest &request
     );
+    // 创建事件
+    //
+    // 创建事件，事件可配置在一个或多个凭据对象上。当事件为启用状态且包含的基础事件类型在凭据对象上触发时，云服务会将对应的事件通知发送至事件指定的通知主题上。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateSecretEventResponse> createSecretEvent(
+        CreateSecretEventRequest &request
+    );
     // 添加凭据标签
     //
-    // - 功能介绍：添加凭据标签。
+    // 添加凭据标签。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateSecretTagResponse> createSecretTag(
@@ -127,6 +152,14 @@ public:
     std::shared_ptr<DeleteSecretResponse> deleteSecret(
         DeleteSecretRequest &request
     );
+    // 立即删除事件
+    //
+    // 立即删除指定的事件，且无法恢复。如事件存在凭据引用，则无法删除，请先解除关联。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteSecretEventResponse> deleteSecretEvent(
+        DeleteSecretEventRequest &request
+    );
     // 创建凭据的定时删除任务
     //
     // 指定延迟删除时间，创建删除凭据的定时任务，可设置7~30天的的延迟删除时间。
@@ -145,7 +178,7 @@ public:
     );
     // 删除凭据标签
     //
-    // - 功能介绍：删除凭据标签。
+    // 删除凭据标签。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteSecretTagResponse> deleteSecretTag(
@@ -159,9 +192,17 @@ public:
     std::shared_ptr<DownloadSecretBlobResponse> downloadSecretBlob(
         DownloadSecretBlobRequest &request
     );
+    // 查询已触发的事件通知记录
+    //
+    // 查询三个月内所有已触发的事件通知记录。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListNotificationRecordsResponse> listNotificationRecords(
+        ListNotificationRecordsRequest &request
+    );
     // 查询项目标签
     //
-    // - 功能介绍：查询用户在指定项目下的所有凭据标签集合。
+    // 查询用户在指定项目下的所有凭据标签集合。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListProjectSecretsTagsResponse> listProjectSecretsTags(
@@ -169,15 +210,23 @@ public:
     );
     // 查询凭据实例
     //
-    // - 功能介绍：查询凭据实例。通过标签过滤，筛选用户凭据,返回凭据列表。
+    // 查询凭据实例。通过标签过滤，筛选用户凭据，返回凭据列表。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListResourceInstancesResponse> listResourceInstances(
         ListResourceInstancesRequest &request
     );
+    // 查询事件列表
+    //
+    // 查询当前用户在本项目下创建的所有事件。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListSecretEventsResponse> listSecretEvents(
+        ListSecretEventsRequest &request
+    );
     // 查询凭据标签
     //
-    // - 功能介绍：查询凭据标签。
+    // 查询凭据标签。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListSecretTagsResponse> listSecretTags(
@@ -215,6 +264,14 @@ public:
     std::shared_ptr<ShowSecretResponse> showSecret(
         ShowSecretRequest &request
     );
+    // 查询事件
+    //
+    // 查询指定事件的信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowSecretEventResponse> showSecretEvent(
+        ShowSecretEventRequest &request
+    );
     // 查询凭据的版本状态
     //
     // 查询指定凭据版本状态标记的版本信息。
@@ -240,6 +297,14 @@ public:
     std::shared_ptr<UpdateSecretResponse> updateSecret(
         UpdateSecretRequest &request
     );
+    // 更新事件
+    //
+    // 更新指定事件的元数据信息。支持更新的元数据包含事件启用状态、基础类型列表、通知主题。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateSecretEventResponse> updateSecretEvent(
+        UpdateSecretEventRequest &request
+    );
     // 更新凭据的版本状态
     //
     // 更新凭据的版本状态。
@@ -247,6 +312,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateSecretStageResponse> updateSecretStage(
         UpdateSecretStageRequest &request
+    );
+    // 更新凭据版本
+    //
+    // 当前支持更新指定凭据版本的有效期，只能更新ENABLED状态的凭据。在关联订阅的事件包含“版本过期”基础事件类型时，每次更新版本有效期后仅会触发一次事件通知。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateVersionResponse> updateVersion(
+        UpdateVersionRequest &request
     );
     // 恢复凭据对象
     //

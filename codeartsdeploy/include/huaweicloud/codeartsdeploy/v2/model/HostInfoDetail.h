@@ -8,8 +8,9 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/codeartsdeploy/v2/model/HostAuthorizationBody.h>
+#include <huaweicloud/codeartsdeploy/v2/model/PermissionHostDetailNew.h>
 #include <string>
-#include <huaweicloud/codeartsdeploy/v2/model/PermissionHostDetail.h>
+#include <huaweicloud/codeartsdeploy/v2/model/HostInfoDetail.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -89,10 +90,10 @@ public:
     /// 
     /// </summary>
 
-    PermissionHostDetail getPermission() const;
+    PermissionHostDetailNew getPermission() const;
     bool permissionIsSet() const;
     void unsetpermission();
-    void setPermission(const PermissionHostDetail& value);
+    void setPermission(const PermissionHostDetailNew& value);
 
     /// <summary>
     /// 主机集群id
@@ -140,13 +141,13 @@ public:
     void setOwnerName(const std::string& value);
 
     /// <summary>
-    /// 代理机
+    /// 
     /// </summary>
 
-    std::string getProxyHost() const;
+    HostInfoDetail getProxyHost() const;
     bool proxyHostIsSet() const;
     void unsetproxyHost();
-    void setProxyHost(const std::string& value);
+    void setProxyHost(const HostInfoDetail& value);
 
     /// <summary>
     /// 连通性状态
@@ -223,7 +224,7 @@ protected:
     bool portIsSet_;
     HostAuthorizationBody authorization_;
     bool authorizationIsSet_;
-    PermissionHostDetail permission_;
+    PermissionHostDetailNew permission_;
     bool permissionIsSet_;
     std::string groupId_;
     bool groupIdIsSet_;
@@ -235,7 +236,7 @@ protected:
     bool proxyHostIdIsSet_;
     std::string ownerName_;
     bool ownerNameIsSet_;
-    std::string proxyHost_;
+    HostInfoDetail* proxyHost_;
     bool proxyHostIsSet_;
     std::string connectionStatus_;
     bool connectionStatusIsSet_;

@@ -37,12 +37,6 @@ BillingCreate::BillingCreate()
     consoleUrlIsSet_ = false;
     isMultiAz_ = false;
     isMultiAzIsSet_ = false;
-    promotionInfo_ = "";
-    promotionInfoIsSet_ = false;
-    purchaseMode_ = "";
-    purchaseModeIsSet_ = false;
-    orderId_ = "";
-    orderIdIsSet_ = false;
 }
 
 BillingCreate::~BillingCreate() = default;
@@ -90,15 +84,6 @@ web::json::value BillingCreate::toJson() const
     }
     if(isMultiAzIsSet_) {
         val[utility::conversions::to_string_t("is_multi_az")] = ModelBase::toJson(isMultiAz_);
-    }
-    if(promotionInfoIsSet_) {
-        val[utility::conversions::to_string_t("promotion_info")] = ModelBase::toJson(promotionInfo_);
-    }
-    if(purchaseModeIsSet_) {
-        val[utility::conversions::to_string_t("purchase_mode")] = ModelBase::toJson(purchaseMode_);
-    }
-    if(orderIdIsSet_) {
-        val[utility::conversions::to_string_t("order_id")] = ModelBase::toJson(orderId_);
     }
 
     return val;
@@ -214,33 +199,6 @@ bool BillingCreate::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsMultiAz(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("promotion_info"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("promotion_info"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setPromotionInfo(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("purchase_mode"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("purchase_mode"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setPurchaseMode(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("order_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("order_id"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOrderId(refVal);
         }
     }
     return ok;
@@ -496,69 +454,6 @@ bool BillingCreate::isMultiAzIsSet() const
 void BillingCreate::unsetisMultiAz()
 {
     isMultiAzIsSet_ = false;
-}
-
-std::string BillingCreate::getPromotionInfo() const
-{
-    return promotionInfo_;
-}
-
-void BillingCreate::setPromotionInfo(const std::string& value)
-{
-    promotionInfo_ = value;
-    promotionInfoIsSet_ = true;
-}
-
-bool BillingCreate::promotionInfoIsSet() const
-{
-    return promotionInfoIsSet_;
-}
-
-void BillingCreate::unsetpromotionInfo()
-{
-    promotionInfoIsSet_ = false;
-}
-
-std::string BillingCreate::getPurchaseMode() const
-{
-    return purchaseMode_;
-}
-
-void BillingCreate::setPurchaseMode(const std::string& value)
-{
-    purchaseMode_ = value;
-    purchaseModeIsSet_ = true;
-}
-
-bool BillingCreate::purchaseModeIsSet() const
-{
-    return purchaseModeIsSet_;
-}
-
-void BillingCreate::unsetpurchaseMode()
-{
-    purchaseModeIsSet_ = false;
-}
-
-std::string BillingCreate::getOrderId() const
-{
-    return orderId_;
-}
-
-void BillingCreate::setOrderId(const std::string& value)
-{
-    orderId_ = value;
-    orderIdIsSet_ = true;
-}
-
-bool BillingCreate::orderIdIsSet() const
-{
-    return orderIdIsSet_;
-}
-
-void BillingCreate::unsetorderId()
-{
-    orderIdIsSet_ = false;
 }
 
 }

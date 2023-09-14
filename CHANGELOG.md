@@ -1,3 +1,389 @@
+# 3.1.52 2023-09-14
+
+### HuaweiCloud SDK CBR
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateVault**
+    - changes of request param
+      - `- vault.billing.promotion_info`
+      - `- vault.billing.purchase_mode`
+      - `- vault.billing.order_id`
+  - **CreatePostPaidVault**
+    - changes of request param
+      - `- vault.billing.promotion_info`
+      - `- vault.billing.purchase_mode`
+      - `- vault.billing.order_id`
+
+### HuaweiCloud SDK CodeArtsDeploy
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowAppDetailById**
+    - changes of response param
+      - `* result.arrange_infos: object -> list<TaskV2Info>`
+  - **ListNewHosts**
+    - changes of response param
+      - `+ result.permission.can_copy`
+      - `- result.permission.can_connection_test`
+      - `* result.permission: object<PermissionHostDetail> -> object<PermissionHostDetailNew>`
+  - **ShowHostDetail**
+    - changes of response param
+      - `* result.proxy_host: string -> object<HostInfoDetail>`
+      - `+ result.permission.can_copy`
+      - `- result.permission.can_connection_test`
+      - `* result.permission: object<PermissionHostDetail> -> object<PermissionHostDetailNew>`
+
+### HuaweiCloud SDK CSMS
+
+- _Features_
+  - Support the following interfaces：
+    - `ListSecretEvents`
+    - `CreateSecretEvent`
+    - `ShowSecretEvent`
+    - `UpdateSecretEvent`
+    - `DeleteSecretEvent`
+    - `ListNotificationRecords`
+    - `UpdateVersion`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListSecrets**
+    - changes of request param
+      - `+ event_name`
+    - changes of response param
+      - `+ secrets.secret_type`
+      - `+ secrets.auto_rotation`
+      - `+ secrets.rotation_period`
+      - `+ secrets.rotation_config`
+      - `+ secrets.rotation_time`
+      - `+ secrets.next_rotation_time`
+      - `+ secrets.event_subscriptions`
+      - `+ secrets.enterprise_project_id`
+  - **CreateSecret**
+    - changes of request param
+      - `+ secret_type`
+      - `+ auto_rotation`
+      - `+ rotation_period`
+      - `+ rotation_config`
+      - `+ event_subscriptions`
+      - `+ enterprise_project_id`
+    - changes of response param
+      - `+ secret.secret_type`
+      - `+ secret.auto_rotation`
+      - `+ secret.rotation_period`
+      - `+ secret.rotation_config`
+      - `+ secret.rotation_time`
+      - `+ secret.next_rotation_time`
+      - `+ secret.event_subscriptions`
+      - `+ secret.enterprise_project_id`
+  - **ShowSecret**
+    - changes of response param
+      - `+ secret.secret_type`
+      - `+ secret.auto_rotation`
+      - `+ secret.rotation_period`
+      - `+ secret.rotation_config`
+      - `+ secret.rotation_time`
+      - `+ secret.next_rotation_time`
+      - `+ secret.event_subscriptions`
+      - `+ secret.enterprise_project_id`
+  - **UpdateSecret**
+    - changes of request param
+      - `+ auto_rotation`
+      - `+ rotation_period`
+      - `+ event_subscriptions`
+    - changes of response param
+      - `+ secret.secret_type`
+      - `+ secret.auto_rotation`
+      - `+ secret.rotation_period`
+      - `+ secret.rotation_config`
+      - `+ secret.rotation_time`
+      - `+ secret.next_rotation_time`
+      - `+ secret.event_subscriptions`
+      - `+ secret.enterprise_project_id`
+  - **UploadSecretBlob**
+    - changes of response param
+      - `+ secret.secret_type`
+      - `+ secret.auto_rotation`
+      - `+ secret.rotation_period`
+      - `+ secret.rotation_config`
+      - `+ secret.rotation_time`
+      - `+ secret.next_rotation_time`
+      - `+ secret.event_subscriptions`
+      - `+ secret.enterprise_project_id`
+  - **ListSecretVersions**
+    - changes of response param
+      - `+ version_metadatas.expire_time`
+  - **CreateSecretVersion**
+    - changes of request param
+      - `+ expire_time`
+    - changes of response param
+      - `+ version_metadata.expire_time`
+  - **DeleteSecretForSchedule**
+    - changes of response param
+      - `+ secret.secret_type`
+      - `+ secret.auto_rotation`
+      - `+ secret.rotation_period`
+      - `+ secret.rotation_config`
+      - `+ secret.rotation_time`
+      - `+ secret.next_rotation_time`
+      - `+ secret.event_subscriptions`
+      - `+ secret.enterprise_project_id`
+  - **RestoreSecret**
+    - changes of response param
+      - `+ secret.secret_type`
+      - `+ secret.auto_rotation`
+      - `+ secret.rotation_period`
+      - `+ secret.rotation_config`
+      - `+ secret.rotation_time`
+      - `+ secret.next_rotation_time`
+      - `+ secret.event_subscriptions`
+      - `+ secret.enterprise_project_id`
+  - **ListSecretTags**
+    - changes of response param
+      - `* sys_tags: list<TagItem> -> list<SysTag>`
+  - **ListProjectSecretsTags**
+    - changes of response param
+      - `* tags: list<Tag> -> list<TagResponse>`
+  - **ShowSecretVersion**
+    - changes of response param
+      - `+ version.version_metadata.expire_time`
+  - **ListResourceInstances**
+    - changes of request param
+      - `* matches: list<TagItem> -> list<TagMatches>`
+    - changes of response param
+      - `- resources.sys_tags`
+      - `+ resources.resource_detail.secret_type`
+      - `+ resources.resource_detail.auto_rotation`
+      - `+ resources.resource_detail.rotation_period`
+      - `+ resources.resource_detail.rotation_config`
+      - `+ resources.resource_detail.rotation_time`
+      - `+ resources.resource_detail.next_rotation_time`
+      - `+ resources.resource_detail.event_subscriptions`
+      - `+ resources.resource_detail.enterprise_project_id`
+
+### HuaweiCloud SDK EVS
+
+- _Features_
+  - Support the interface `ModifyVolumeQoS`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK GaussDB
+
+- _Features_
+  - Support the interface `ListAuditLogDownloadLink`
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateGaussMySqlInstance**
+    - changes of response param
+      - `+ instance.volume`
+
+### HuaweiCloud SDK LTS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListCharts**
+    - changes of response param
+      - `- config.can_sort`
+      - `- config.can_search`
+      - `- config.page_size`
+  - **ShowNotificationTemplate**
+    - changes of response param
+      - `+ body`
+      - `- create_time`
+      - `- project_id`
+      - `- templates`
+      - `- modify_time`
+      - `- name`
+      - `- source`
+      - `- type`
+      - `- locale`
+      - `- desc`
+  - **ListLogStream**
+    - changes of request param
+      - `- tag`
+    - changes of response param
+      - `* log_streams: list<LogStream> -> list<LogStreamResBody>`
+  - **ListStructuredLogsWithTimeRange**
+    - changes of response param
+      - `+ context`
+      - `- body`
+  - **DeleteTransfer**
+    - changes of response param
+      - `- log_transfer_info.log_transfer_detail.obs_period`
+      - `- log_transfer_info.log_transfer_detail.obs_encrypted_id`
+      - `- log_transfer_info.log_transfer_detail.obs_prefix_name`
+      - `- log_transfer_info.log_transfer_detail.obs_period_unit`
+      - `- log_transfer_info.log_transfer_detail.obs_transfer_path`
+      - `- log_transfer_info.log_transfer_detail.obs_eps_id`
+      - `- log_transfer_info.log_transfer_detail.obs_bucket_name`
+      - `- log_transfer_info.log_transfer_detail.obs_encrypted_enable`
+      - `- log_transfer_info.log_transfer_detail.obs_dir_pre_fix_name`
+      - `- log_transfer_info.log_transfer_detail.dis_id`
+      - `- log_transfer_info.log_transfer_detail.dis_name`
+      - `- log_transfer_info.log_transfer_detail.kafka_id`
+      - `- log_transfer_info.log_transfer_detail.kafka_topic`
+      - `- log_transfer_info.log_transfer_detail.obs_time_zone`
+      - `- log_transfer_info.log_transfer_detail.obs_time_zone_id`
+      - `- log_transfer_info.log_transfer_detail.tags`
+  - **ListTransfers**
+    - changes of response param
+      - `- log_transfers.log_transfer_info.log_transfer_detail.obs_period`
+      - `- log_transfers.log_transfer_info.log_transfer_detail.obs_encrypted_id`
+      - `- log_transfers.log_transfer_info.log_transfer_detail.obs_prefix_name`
+      - `- log_transfers.log_transfer_info.log_transfer_detail.obs_period_unit`
+      - `- log_transfers.log_transfer_info.log_transfer_detail.obs_transfer_path`
+      - `- log_transfers.log_transfer_info.log_transfer_detail.obs_eps_id`
+      - `- log_transfers.log_transfer_info.log_transfer_detail.obs_bucket_name`
+      - `- log_transfers.log_transfer_info.log_transfer_detail.obs_encrypted_enable`
+      - `- log_transfers.log_transfer_info.log_transfer_detail.obs_dir_pre_fix_name`
+      - `- log_transfers.log_transfer_info.log_transfer_detail.dis_id`
+      - `- log_transfers.log_transfer_info.log_transfer_detail.dis_name`
+      - `- log_transfers.log_transfer_info.log_transfer_detail.kafka_id`
+      - `- log_transfers.log_transfer_info.log_transfer_detail.kafka_topic`
+      - `- log_transfers.log_transfer_info.log_transfer_detail.obs_time_zone`
+      - `- log_transfers.log_transfer_info.log_transfer_detail.obs_time_zone_id`
+      - `- log_transfers.log_transfer_info.log_transfer_detail.tags`
+  - **UpdateTransfer**
+    - changes of response param
+      - `- log_transfer_info.log_transfer_detail.obs_period`
+      - `- log_transfer_info.log_transfer_detail.obs_encrypted_id`
+      - `- log_transfer_info.log_transfer_detail.obs_prefix_name`
+      - `- log_transfer_info.log_transfer_detail.obs_period_unit`
+      - `- log_transfer_info.log_transfer_detail.obs_transfer_path`
+      - `- log_transfer_info.log_transfer_detail.obs_eps_id`
+      - `- log_transfer_info.log_transfer_detail.obs_bucket_name`
+      - `- log_transfer_info.log_transfer_detail.obs_encrypted_enable`
+      - `- log_transfer_info.log_transfer_detail.obs_dir_pre_fix_name`
+      - `- log_transfer_info.log_transfer_detail.dis_id`
+      - `- log_transfer_info.log_transfer_detail.dis_name`
+      - `- log_transfer_info.log_transfer_detail.kafka_id`
+      - `- log_transfer_info.log_transfer_detail.kafka_topic`
+      - `- log_transfer_info.log_transfer_detail.obs_time_zone`
+      - `- log_transfer_info.log_transfer_detail.obs_time_zone_id`
+      - `- log_transfer_info.log_transfer_detail.tags`
+  - **CreateTransfer**
+    - changes of response param
+      - `- log_transfer_info.log_transfer_detail.obs_period`
+      - `- log_transfer_info.log_transfer_detail.obs_encrypted_id`
+      - `- log_transfer_info.log_transfer_detail.obs_prefix_name`
+      - `- log_transfer_info.log_transfer_detail.obs_period_unit`
+      - `- log_transfer_info.log_transfer_detail.obs_transfer_path`
+      - `- log_transfer_info.log_transfer_detail.obs_eps_id`
+      - `- log_transfer_info.log_transfer_detail.obs_bucket_name`
+      - `- log_transfer_info.log_transfer_detail.obs_encrypted_enable`
+      - `- log_transfer_info.log_transfer_detail.obs_dir_pre_fix_name`
+      - `- log_transfer_info.log_transfer_detail.dis_id`
+      - `- log_transfer_info.log_transfer_detail.dis_name`
+      - `- log_transfer_info.log_transfer_detail.kafka_id`
+      - `- log_transfer_info.log_transfer_detail.kafka_topic`
+      - `- log_transfer_info.log_transfer_detail.obs_time_zone`
+      - `- log_transfer_info.log_transfer_detail.obs_time_zone_id`
+      - `- log_transfer_info.log_transfer_detail.tags`
+  - **ListNotificationTemplates**
+    - changes of response param
+      - `+ body`
+      - `- create_time`
+      - `- project_id`
+      - `- templates`
+      - `- modify_time`
+      - `- name`
+      - `- source`
+      - `- type`
+      - `- locale`
+      - `- desc`
+  - **UpdateSqlAlarmRule**
+    - changes of request param
+      - `- frequency.type`
+      - `- frequency.cron_expr`
+      - `- frequency.hour_of_day`
+      - `- frequency.day_of_week`
+      - `- frequency.fixed_rate`
+      - `- frequency.fixed_rate_unit`
+      - `- notification_save_rule.language`
+      - `- notification_save_rule.timezone`
+      - `- notification_save_rule.user_name`
+      - `- notification_save_rule.topics`
+      - `- notification_save_rule.template_name`
+    - changes of response param
+      - `- frequency.type`
+      - `- frequency.cron_expr`
+      - `- frequency.hour_of_day`
+      - `- frequency.day_of_week`
+      - `- frequency.fixed_rate`
+      - `- frequency.fixed_rate_unit`
+  - **CreateSqlAlarmRule**
+    - changes of request param
+      - `- frequency.type`
+      - `- frequency.cron_expr`
+      - `- frequency.hour_of_day`
+      - `- frequency.day_of_week`
+      - `- frequency.fixed_rate`
+      - `- frequency.fixed_rate_unit`
+      - `- notification_save_rule.language`
+      - `- notification_save_rule.timezone`
+      - `- notification_save_rule.user_name`
+      - `- notification_save_rule.topics`
+      - `- notification_save_rule.template_name`
+  - **ListSqlAlarmRules**
+    - changes of response param
+      - `- sql_alarm_rules.frequency.type`
+      - `- sql_alarm_rules.frequency.cron_expr`
+      - `- sql_alarm_rules.frequency.hour_of_day`
+      - `- sql_alarm_rules.frequency.day_of_week`
+      - `- sql_alarm_rules.frequency.fixed_rate`
+      - `- sql_alarm_rules.frequency.fixed_rate_unit`
+  - **UpdateKeywordsAlarmRule**
+    - changes of request param
+      - `- frequency.type`
+      - `- frequency.cron_expr`
+      - `- frequency.hour_of_day`
+      - `- frequency.day_of_week`
+      - `- frequency.fixed_rate`
+      - `- frequency.fixed_rate_unit`
+      - `- notification_save_rule.language`
+      - `- notification_save_rule.timezone`
+      - `- notification_save_rule.user_name`
+      - `- notification_save_rule.topics`
+      - `- notification_save_rule.template_name`
+  - **CreateKeywordsAlarmRule**
+    - changes of request param
+      - `- notification_save_rule.language`
+      - `- notification_save_rule.timezone`
+      - `- notification_save_rule.user_name`
+      - `- notification_save_rule.topics`
+      - `- notification_save_rule.template_name`
+  - **ListKeywordsAlarmRules**
+    - changes of response param
+      - `- keywords_alarm_rules.frequency.type`
+      - `- keywords_alarm_rules.frequency.cron_expr`
+      - `- keywords_alarm_rules.frequency.hour_of_day`
+      - `- keywords_alarm_rules.frequency.day_of_week`
+      - `- keywords_alarm_rules.frequency.fixed_rate`
+      - `- keywords_alarm_rules.frequency.fixed_rate_unit`
+
+### HuaweiCloud SDK RDS
+
+- _Features_
+  - Support the interfaces `RestoreTablesNew`, `UpgradeDbVersionNew`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.51 2023-09-07
 
 ### HuaweiCloud SDK DRS

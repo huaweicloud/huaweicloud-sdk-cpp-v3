@@ -183,7 +183,7 @@ bool KeywordsAlarmRuleRespList::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("frequency"));
         if(!fieldValue.is_null())
         {
-            Frequency refVal;
+            Object refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFrequency(refVal);
         }
@@ -425,12 +425,12 @@ void KeywordsAlarmRuleRespList::unsetkeywordsRequests()
     keywordsRequestsIsSet_ = false;
 }
 
-Frequency KeywordsAlarmRuleRespList::getFrequency() const
+Object KeywordsAlarmRuleRespList::getFrequency() const
 {
     return frequency_;
 }
 
-void KeywordsAlarmRuleRespList::setFrequency(const Frequency& value)
+void KeywordsAlarmRuleRespList::setFrequency(const Object& value)
 {
     frequency_ = value;
     frequencyIsSet_ = true;

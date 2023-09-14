@@ -7,8 +7,9 @@
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/core/utils/Object.h>
+#include <huaweicloud/codeartsdeploy/v2/model/TaskV2Info.h>
 #include <string>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -241,10 +242,10 @@ public:
     /// 部署任务信息
     /// </summary>
 
-    Object getArrangeInfos() const;
+    std::vector<TaskV2Info>& getArrangeInfos();
     bool arrangeInfosIsSet() const;
     void unsetarrangeInfos();
-    void setArrangeInfos(const Object& value);
+    void setArrangeInfos(const std::vector<TaskV2Info>& value);
 
 
 protected:
@@ -292,7 +293,7 @@ protected:
     bool updateTimeIsSet_;
     std::string permissionLevel_;
     bool permissionLevelIsSet_;
-    Object arrangeInfos_;
+    std::vector<TaskV2Info> arrangeInfos_;
     bool arrangeInfosIsSet_;
 
 };

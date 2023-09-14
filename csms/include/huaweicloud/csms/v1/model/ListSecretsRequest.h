@@ -39,7 +39,7 @@ public:
     /// ListSecretsRequest members
 
     /// <summary>
-    /// 每页返回的个数。  默认值：50。 
+    /// 每页返回的个数。  默认值：50。
     /// </summary>
 
     std::string getLimit() const;
@@ -48,7 +48,7 @@ public:
     void setLimit(const std::string& value);
 
     /// <summary>
-    /// 分页查询起始的凭据名称，为空时为查询第一页 
+    /// 分页查询起始的凭据名称，为空时为查询第一页
     /// </summary>
 
     std::string getMarker() const;
@@ -56,12 +56,23 @@ public:
     void unsetmarker();
     void setMarker(const std::string& value);
 
+    /// <summary>
+    /// 指定事件名称时，仅返回关联该事件的凭据
+    /// </summary>
+
+    std::string getEventName() const;
+    bool eventNameIsSet() const;
+    void unseteventName();
+    void setEventName(const std::string& value);
+
 
 protected:
     std::string limit_;
     bool limitIsSet_;
     std::string marker_;
     bool markerIsSet_;
+    std::string eventName_;
+    bool eventNameIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

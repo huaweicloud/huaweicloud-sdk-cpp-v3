@@ -17,6 +17,8 @@ VersionMetadata::VersionMetadata()
     idIsSet_ = false;
     createTime_ = 0L;
     createTimeIsSet_ = false;
+    expireTime_ = 0L;
+    expireTimeIsSet_ = false;
     kmsKeyId_ = "";
     kmsKeyIdIsSet_ = false;
     secretName_ = "";
@@ -39,6 +41,9 @@ web::json::value VersionMetadata::toJson() const
     }
     if(createTimeIsSet_) {
         val[utility::conversions::to_string_t("create_time")] = ModelBase::toJson(createTime_);
+    }
+    if(expireTimeIsSet_) {
+        val[utility::conversions::to_string_t("expire_time")] = ModelBase::toJson(expireTime_);
     }
     if(kmsKeyIdIsSet_) {
         val[utility::conversions::to_string_t("kms_key_id")] = ModelBase::toJson(kmsKeyId_);
@@ -73,6 +78,15 @@ bool VersionMetadata::fromJson(const web::json::value& val)
             int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCreateTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("expire_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("expire_time"));
+        if(!fieldValue.is_null())
+        {
+            int64_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setExpireTime(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("kms_key_id"))) {
@@ -145,6 +159,27 @@ bool VersionMetadata::createTimeIsSet() const
 void VersionMetadata::unsetcreateTime()
 {
     createTimeIsSet_ = false;
+}
+
+int64_t VersionMetadata::getExpireTime() const
+{
+    return expireTime_;
+}
+
+void VersionMetadata::setExpireTime(int64_t value)
+{
+    expireTime_ = value;
+    expireTimeIsSet_ = true;
+}
+
+bool VersionMetadata::expireTimeIsSet() const
+{
+    return expireTimeIsSet_;
+}
+
+void VersionMetadata::unsetexpireTime()
+{
+    expireTimeIsSet_ = false;
 }
 
 std::string VersionMetadata::getKmsKeyId() const

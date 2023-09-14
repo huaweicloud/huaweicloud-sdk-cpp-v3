@@ -44,6 +44,7 @@ MysqlInstanceResponse::MysqlInstanceResponse()
     flavorRef_ = "";
     flavorRefIsSet_ = false;
     chargeInfoIsSet_ = false;
+    volumeIsSet_ = false;
 }
 
 MysqlInstanceResponse::~MysqlInstanceResponse() = default;
@@ -106,6 +107,9 @@ web::json::value MysqlInstanceResponse::toJson() const
     }
     if(chargeInfoIsSet_) {
         val[utility::conversions::to_string_t("charge_info")] = ModelBase::toJson(chargeInfo_);
+    }
+    if(volumeIsSet_) {
+        val[utility::conversions::to_string_t("volume")] = ModelBase::toJson(volume_);
     }
 
     return val;
@@ -266,6 +270,15 @@ bool MysqlInstanceResponse::fromJson(const web::json::value& val)
             MysqlChargeInfo refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setChargeInfo(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("volume"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("volume"));
+        if(!fieldValue.is_null())
+        {
+            MysqlVolumeResp refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setVolume(refVal);
         }
     }
     return ok;
@@ -626,6 +639,27 @@ bool MysqlInstanceResponse::chargeInfoIsSet() const
 void MysqlInstanceResponse::unsetchargeInfo()
 {
     chargeInfoIsSet_ = false;
+}
+
+MysqlVolumeResp MysqlInstanceResponse::getVolume() const
+{
+    return volume_;
+}
+
+void MysqlInstanceResponse::setVolume(const MysqlVolumeResp& value)
+{
+    volume_ = value;
+    volumeIsSet_ = true;
+}
+
+bool MysqlInstanceResponse::volumeIsSet() const
+{
+    return volumeIsSet_;
+}
+
+void MysqlInstanceResponse::unsetvolume()
+{
+    volumeIsSet_ = false;
 }
 
 }

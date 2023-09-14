@@ -17,6 +17,11 @@ UpdateSecretRequestBody::UpdateSecretRequestBody()
     kmsKeyIdIsSet_ = false;
     description_ = "";
     descriptionIsSet_ = false;
+    autoRotation_ = false;
+    autoRotationIsSet_ = false;
+    rotationPeriod_ = "";
+    rotationPeriodIsSet_ = false;
+    eventSubscriptionsIsSet_ = false;
 }
 
 UpdateSecretRequestBody::~UpdateSecretRequestBody() = default;
@@ -34,6 +39,15 @@ web::json::value UpdateSecretRequestBody::toJson() const
     }
     if(descriptionIsSet_) {
         val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
+    }
+    if(autoRotationIsSet_) {
+        val[utility::conversions::to_string_t("auto_rotation")] = ModelBase::toJson(autoRotation_);
+    }
+    if(rotationPeriodIsSet_) {
+        val[utility::conversions::to_string_t("rotation_period")] = ModelBase::toJson(rotationPeriod_);
+    }
+    if(eventSubscriptionsIsSet_) {
+        val[utility::conversions::to_string_t("event_subscriptions")] = ModelBase::toJson(eventSubscriptions_);
     }
 
     return val;
@@ -59,6 +73,33 @@ bool UpdateSecretRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDescription(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("auto_rotation"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("auto_rotation"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAutoRotation(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("rotation_period"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("rotation_period"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRotationPeriod(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("event_subscriptions"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("event_subscriptions"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEventSubscriptions(refVal);
         }
     }
     return ok;
@@ -104,6 +145,69 @@ bool UpdateSecretRequestBody::descriptionIsSet() const
 void UpdateSecretRequestBody::unsetdescription()
 {
     descriptionIsSet_ = false;
+}
+
+bool UpdateSecretRequestBody::isAutoRotation() const
+{
+    return autoRotation_;
+}
+
+void UpdateSecretRequestBody::setAutoRotation(bool value)
+{
+    autoRotation_ = value;
+    autoRotationIsSet_ = true;
+}
+
+bool UpdateSecretRequestBody::autoRotationIsSet() const
+{
+    return autoRotationIsSet_;
+}
+
+void UpdateSecretRequestBody::unsetautoRotation()
+{
+    autoRotationIsSet_ = false;
+}
+
+std::string UpdateSecretRequestBody::getRotationPeriod() const
+{
+    return rotationPeriod_;
+}
+
+void UpdateSecretRequestBody::setRotationPeriod(const std::string& value)
+{
+    rotationPeriod_ = value;
+    rotationPeriodIsSet_ = true;
+}
+
+bool UpdateSecretRequestBody::rotationPeriodIsSet() const
+{
+    return rotationPeriodIsSet_;
+}
+
+void UpdateSecretRequestBody::unsetrotationPeriod()
+{
+    rotationPeriodIsSet_ = false;
+}
+
+std::vector<std::string>& UpdateSecretRequestBody::getEventSubscriptions()
+{
+    return eventSubscriptions_;
+}
+
+void UpdateSecretRequestBody::setEventSubscriptions(const std::vector<std::string>& value)
+{
+    eventSubscriptions_ = value;
+    eventSubscriptionsIsSet_ = true;
+}
+
+bool UpdateSecretRequestBody::eventSubscriptionsIsSet() const
+{
+    return eventSubscriptionsIsSet_;
+}
+
+void UpdateSecretRequestBody::unseteventSubscriptions()
+{
+    eventSubscriptionsIsSet_ = false;
 }
 
 }

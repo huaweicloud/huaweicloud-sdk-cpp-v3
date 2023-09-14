@@ -7,6 +7,7 @@
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/csms/v1/model/SysTag.h>
 #include <huaweicloud/csms/v1/model/TagItem.h>
 #include <vector>
 
@@ -40,7 +41,7 @@ public:
     /// ListSecretTagsResponse members
 
     /// <summary>
-    /// 标签列表，key和value键值对的集合。  - key：表示标签键，一个凭据下最多包含10个key，key不能为空，不能重复，同一个key中value不能重复。key最大长度为36个字符。  - value：表示标签值。每个值最大长度43个字符，value之间为“与”的关系。
+    /// 标签列表，key和value键值对的集合。  - key：表示标签键，一个凭据下最多包含20个key，key不能为空，不能重复，同一个key中value不能重复。key最大长度为128个字符。  - value：表示标签值。每个值最大长度255个字符，value之间为“与”的关系。
     /// </summary>
 
     std::vector<TagItem>& getTags();
@@ -49,19 +50,19 @@ public:
     void setTags(const std::vector<TagItem>& value);
 
     /// <summary>
-    /// 标签列表，key和value键值对的集合。  - key：表示标签键，一个凭据下最多包含10个key，key不能为空，不能重复，同一个key中value不能重复。key最大长度为36个字符。  - value：表示标签值。每个值最大长度43个字符，value之间为“与”的关系。
+    /// 系统标签列表。
     /// </summary>
 
-    std::vector<TagItem>& getSysTags();
+    std::vector<SysTag>& getSysTags();
     bool sysTagsIsSet() const;
     void unsetsysTags();
-    void setSysTags(const std::vector<TagItem>& value);
+    void setSysTags(const std::vector<SysTag>& value);
 
 
 protected:
     std::vector<TagItem> tags_;
     bool tagsIsSet_;
-    std::vector<TagItem> sysTags_;
+    std::vector<SysTag> sysTags_;
     bool sysTagsIsSet_;
 
 #ifdef RTTR_FLAG

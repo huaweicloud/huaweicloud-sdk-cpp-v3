@@ -1703,9 +1703,6 @@ std::shared_ptr<ListLogStreamResponse> LtsClient::listLogStream(ListLogStreamReq
     std::string contentType = getContentType("application/json", isJson, isMultiPart);
     localVarHeaderParams["Content-Type"] = contentType;
 
-    if (request.tagIsSet()) {
-        localVarQueryParams["tag"] = parameterToString(request.getTag());
-    }
     if (request.contentTypeIsSet()) {
         localVarHeaderParams["Content-Type"] = parameterToString(request.getContentType());
     }

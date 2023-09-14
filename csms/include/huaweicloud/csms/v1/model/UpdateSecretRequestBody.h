@@ -8,6 +8,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -56,12 +57,45 @@ public:
     void unsetdescription();
     void setDescription(const std::string& value);
 
+    /// <summary>
+    /// 自动轮转  取值：true 开启 false 关 
+    /// </summary>
+
+    bool isAutoRotation() const;
+    bool autoRotationIsSet() const;
+    void unsetautoRotation();
+    void setAutoRotation(bool value);
+
+    /// <summary>
+    /// 轮转周期  约束：6小时-8,760小时 （365天）  类型：Integer[unit] ，Integer表示时间长度 。unit表示时间单位，d（天）、h（小时）、m（分钟）、s（秒）。例如 1d 表示一天，24h也表示一天  说明：当开启自动轮转时，必须填写该值 
+    /// </summary>
+
+    std::string getRotationPeriod() const;
+    bool rotationPeriodIsSet() const;
+    void unsetrotationPeriod();
+    void setRotationPeriod(const std::string& value);
+
+    /// <summary>
+    /// 凭据订阅的事件列表，当前最大可订阅一个事件。当事件包含的基础事件触发时，通知消息将发送到事件对应的通知主题。 
+    /// </summary>
+
+    std::vector<std::string>& getEventSubscriptions();
+    bool eventSubscriptionsIsSet() const;
+    void unseteventSubscriptions();
+    void setEventSubscriptions(const std::vector<std::string>& value);
+
 
 protected:
     std::string kmsKeyId_;
     bool kmsKeyIdIsSet_;
     std::string description_;
     bool descriptionIsSet_;
+    bool autoRotation_;
+    bool autoRotationIsSet_;
+    std::string rotationPeriod_;
+    bool rotationPeriodIsSet_;
+    std::vector<std::string> eventSubscriptions_;
+    bool eventSubscriptionsIsSet_;
 
 };
 

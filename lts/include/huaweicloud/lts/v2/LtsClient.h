@@ -136,6 +136,7 @@
 #include <huaweicloud/lts/v2/model/ListTransfersRequest.h>
 #include <huaweicloud/lts/v2/model/ListTransfersResponse.h>
 #include <huaweicloud/lts/v2/model/LtsStructTemplateInfo.h>
+#include <huaweicloud/lts/v2/model/NotificationTemplate.h>
 #include <huaweicloud/lts/v2/model/PreviewTemplateBody.h>
 #include <huaweicloud/lts/v2/model/QueryLogKeyWordCountRequestBody.h>
 #include <huaweicloud/lts/v2/model/QueryLtsLogParams.h>
@@ -176,7 +177,6 @@
 #include <huaweicloud/lts/v2/model/UpdateTransferRequestBody.h>
 #include <huaweicloud/lts/v2/model/UpdateTransferResponse.h>
 #include <string>
-#include <vector>
 
 #include <huaweicloud/lts/v2/model/AomMappingRequestInfo.h>
 #include <huaweicloud/lts/v2/model/AomMappingRuleResp.h>

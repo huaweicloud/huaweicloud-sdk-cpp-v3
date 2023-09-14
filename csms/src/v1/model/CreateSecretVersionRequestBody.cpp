@@ -18,6 +18,8 @@ CreateSecretVersionRequestBody::CreateSecretVersionRequestBody()
     secretString_ = "";
     secretStringIsSet_ = false;
     versionStagesIsSet_ = false;
+    expireTime_ = 0L;
+    expireTimeIsSet_ = false;
 }
 
 CreateSecretVersionRequestBody::~CreateSecretVersionRequestBody() = default;
@@ -38,6 +40,9 @@ web::json::value CreateSecretVersionRequestBody::toJson() const
     }
     if(versionStagesIsSet_) {
         val[utility::conversions::to_string_t("version_stages")] = ModelBase::toJson(versionStages_);
+    }
+    if(expireTimeIsSet_) {
+        val[utility::conversions::to_string_t("expire_time")] = ModelBase::toJson(expireTime_);
     }
 
     return val;
@@ -72,6 +77,15 @@ bool CreateSecretVersionRequestBody::fromJson(const web::json::value& val)
             std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setVersionStages(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("expire_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("expire_time"));
+        if(!fieldValue.is_null())
+        {
+            int64_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setExpireTime(refVal);
         }
     }
     return ok;
@@ -138,6 +152,27 @@ bool CreateSecretVersionRequestBody::versionStagesIsSet() const
 void CreateSecretVersionRequestBody::unsetversionStages()
 {
     versionStagesIsSet_ = false;
+}
+
+int64_t CreateSecretVersionRequestBody::getExpireTime() const
+{
+    return expireTime_;
+}
+
+void CreateSecretVersionRequestBody::setExpireTime(int64_t value)
+{
+    expireTime_ = value;
+    expireTimeIsSet_ = true;
+}
+
+bool CreateSecretVersionRequestBody::expireTimeIsSet() const
+{
+    return expireTimeIsSet_;
+}
+
+void CreateSecretVersionRequestBody::unsetexpireTime()
+{
+    expireTimeIsSet_ = false;
 }
 
 }

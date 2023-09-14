@@ -49,7 +49,7 @@ public:
     void setSecretName(const std::string& value);
 
     /// <summary>
-    /// 凭据版本状态的名称。满足 &#39;^[a-zA-Z0-9._-]{1,64}$&#39;
+    /// 凭据版本状态的名称。满足 &#39;^[a-zA-Z0-9_-]{1,64}$&#39;
     /// </summary>
 
     std::string getStageName() const;

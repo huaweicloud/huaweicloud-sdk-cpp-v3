@@ -66,6 +66,15 @@ public:
     void unsetversionStages();
     void setVersionStages(const std::vector<std::string>& value);
 
+    /// <summary>
+    /// 凭据版本过期时间，时间戳，即从1970年1月1日至该时间的总秒数。默认为空，凭据订阅“版本过期”事件类型时，有效期判断所依据的值。 
+    /// </summary>
+
+    int64_t getExpireTime() const;
+    bool expireTimeIsSet() const;
+    void unsetexpireTime();
+    void setExpireTime(int64_t value);
+
 
 protected:
     std::string secretBinary_;
@@ -74,6 +83,8 @@ protected:
     bool secretStringIsSet_;
     std::vector<std::string> versionStages_;
     bool versionStagesIsSet_;
+    int64_t expireTime_;
+    bool expireTimeIsSet_;
 
 };
 

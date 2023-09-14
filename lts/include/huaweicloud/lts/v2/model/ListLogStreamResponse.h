@@ -7,8 +7,8 @@
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/lts/v2/model/LogStream.h>
 #include <vector>
+#include <huaweicloud/lts/v2/model/LogStreamResBody.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -40,17 +40,17 @@ public:
     /// ListLogStreamResponse members
 
     /// <summary>
-    /// 日志组数组。
+    /// 
     /// </summary>
 
-    std::vector<LogStream>& getLogStreams();
+    std::vector<LogStreamResBody>& getLogStreams();
     bool logStreamsIsSet() const;
     void unsetlogStreams();
-    void setLogStreams(const std::vector<LogStream>& value);
+    void setLogStreams(const std::vector<LogStreamResBody>& value);
 
 
 protected:
-    std::vector<LogStream> logStreams_;
+    std::vector<LogStreamResBody> logStreams_;
     bool logStreamsIsSet_;
 
 #ifdef RTTR_FLAG

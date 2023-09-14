@@ -17,6 +17,8 @@ ListSecretsRequest::ListSecretsRequest()
     limitIsSet_ = false;
     marker_ = "";
     markerIsSet_ = false;
+    eventName_ = "";
+    eventNameIsSet_ = false;
 }
 
 ListSecretsRequest::~ListSecretsRequest() = default;
@@ -34,6 +36,9 @@ web::json::value ListSecretsRequest::toJson() const
     }
     if(markerIsSet_) {
         val[utility::conversions::to_string_t("marker")] = ModelBase::toJson(marker_);
+    }
+    if(eventNameIsSet_) {
+        val[utility::conversions::to_string_t("event_name")] = ModelBase::toJson(eventName_);
     }
 
     return val;
@@ -59,6 +64,15 @@ bool ListSecretsRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setMarker(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("event_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("event_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEventName(refVal);
         }
     }
     return ok;
@@ -104,6 +118,27 @@ bool ListSecretsRequest::markerIsSet() const
 void ListSecretsRequest::unsetmarker()
 {
     markerIsSet_ = false;
+}
+
+std::string ListSecretsRequest::getEventName() const
+{
+    return eventName_;
+}
+
+void ListSecretsRequest::setEventName(const std::string& value)
+{
+    eventName_ = value;
+    eventNameIsSet_ = true;
+}
+
+bool ListSecretsRequest::eventNameIsSet() const
+{
+    return eventNameIsSet_;
+}
+
+void ListSecretsRequest::unseteventName()
+{
+    eventNameIsSet_ = false;
 }
 
 }

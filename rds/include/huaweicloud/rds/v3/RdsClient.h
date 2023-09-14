@@ -51,6 +51,7 @@
 #include <huaweicloud/rds/v3/model/CreateXelLogDownloadResponse.h>
 #include <huaweicloud/rds/v3/model/CustomerModifyAutoEnlargePolicyReq.h>
 #include <huaweicloud/rds/v3/model/CustomerUpgradeDatabaseVersionReq.h>
+#include <huaweicloud/rds/v3/model/CustomerUpgradeDatabaseVersionReqNew.h>
 #include <huaweicloud/rds/v3/model/DataIpRequest.h>
 #include <huaweicloud/rds/v3/model/DeleteConfigurationRequest.h>
 #include <huaweicloud/rds/v3/model/DeleteConfigurationResponse.h>
@@ -159,6 +160,9 @@
 #include <huaweicloud/rds/v3/model/RestoreExistInstanceRequest.h>
 #include <huaweicloud/rds/v3/model/RestoreExistInstanceResponse.h>
 #include <huaweicloud/rds/v3/model/RestoreExistingInstanceRequestBody.h>
+#include <huaweicloud/rds/v3/model/RestoreTablesNewRequest.h>
+#include <huaweicloud/rds/v3/model/RestoreTablesNewRequestBody.h>
+#include <huaweicloud/rds/v3/model/RestoreTablesNewResponse.h>
 #include <huaweicloud/rds/v3/model/RestoreTablesRequest.h>
 #include <huaweicloud/rds/v3/model/RestoreTablesRequestBody.h>
 #include <huaweicloud/rds/v3/model/RestoreTablesResponse.h>
@@ -261,6 +265,8 @@
 #include <huaweicloud/rds/v3/model/UpdatePostgresqlInstanceAliasRequest.h>
 #include <huaweicloud/rds/v3/model/UpdatePostgresqlInstanceAliasResponse.h>
 #include <huaweicloud/rds/v3/model/UpdateRdsInstanceAliasRequest.h>
+#include <huaweicloud/rds/v3/model/UpgradeDbVersionNewRequest.h>
+#include <huaweicloud/rds/v3/model/UpgradeDbVersionNewResponse.h>
 #include <huaweicloud/rds/v3/model/UpgradeDbVersionRequest.h>
 #include <huaweicloud/rds/v3/model/UpgradeDbVersionResponse.h>
 #include <string>
@@ -932,6 +938,14 @@ public:
     std::shared_ptr<RestoreTablesResponse> restoreTables(
         RestoreTablesRequest &request
     );
+    // 表级时间点恢复(MySQL)
+    //
+    // 表级时间点恢复(MySQL)。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<RestoreTablesNewResponse> restoreTablesNew(
+        RestoreTablesNewRequest &request
+    );
     // 恢复到已有实例
     //
     // 恢复到已有实例。
@@ -1279,6 +1293,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpgradeDbVersionResponse> upgradeDbVersion(
         UpgradeDbVersionRequest &request
+    );
+    // 升级内核小版本
+    //
+    // 对实例进行小版本升级。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpgradeDbVersionNewResponse> upgradeDbVersionNew(
+        UpgradeDbVersionNewRequest &request
     );
 
     // 查询API版本列表

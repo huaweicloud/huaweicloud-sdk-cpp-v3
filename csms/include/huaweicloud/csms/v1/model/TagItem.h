@@ -39,7 +39,7 @@ public:
     /// TagItem members
 
     /// <summary>
-    /// 键。 最大长度36个unicode字符。 key不能为空。不能包含非打印字符“ASCII(0-31)”、“*”、“&lt;”、“&gt;”、“\\”、“&#x3D;”。
+    /// 标签的名称。 同一个凭据，一个标签键只能对应一个标签值；不同的凭据可以使用相同的标签键。 用户最多可以给单个凭据添加20个标签。  约束：取值范围为1到128个字符，满足正则匹配\&quot;^((?!\\\\s)(?!_sys_)[\\\\p{L}\\\\p{Z}\\\\p{N}_.:&#x3D;+\\\\-@]*)(?&lt;!\\\\s)$\&quot;
     /// </summary>
 
     std::string getKey() const;
@@ -48,7 +48,7 @@ public:
     void setKey(const std::string& value);
 
     /// <summary>
-    /// 值。 每个值最大长度43个unicode字符，可以为空字符串。 不能包含非打印字符“ASCII(0-31)”、“*”、“&lt;”、“&gt;”、“\\”、“&#x3D;”。
+    /// 标签的值。  约束：取值范围不超过255个字符，满足正则匹配\&quot;^([\\\\p{L}\\\\p{Z}\\\\p{N}_.:\\/&#x3D;+\\\\-@]*)$\&quot;
     /// </summary>
 
     std::string getValue() const;

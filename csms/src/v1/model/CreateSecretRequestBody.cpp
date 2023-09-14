@@ -23,6 +23,17 @@ CreateSecretRequestBody::CreateSecretRequestBody()
     secretBinaryIsSet_ = false;
     secretString_ = "";
     secretStringIsSet_ = false;
+    secretType_ = "";
+    secretTypeIsSet_ = false;
+    autoRotation_ = false;
+    autoRotationIsSet_ = false;
+    rotationPeriod_ = "";
+    rotationPeriodIsSet_ = false;
+    rotationConfig_ = "";
+    rotationConfigIsSet_ = false;
+    eventSubscriptionsIsSet_ = false;
+    enterpriseProjectId_ = "";
+    enterpriseProjectIdIsSet_ = false;
 }
 
 CreateSecretRequestBody::~CreateSecretRequestBody() = default;
@@ -49,6 +60,24 @@ web::json::value CreateSecretRequestBody::toJson() const
     }
     if(secretStringIsSet_) {
         val[utility::conversions::to_string_t("secret_string")] = ModelBase::toJson(secretString_);
+    }
+    if(secretTypeIsSet_) {
+        val[utility::conversions::to_string_t("secret_type")] = ModelBase::toJson(secretType_);
+    }
+    if(autoRotationIsSet_) {
+        val[utility::conversions::to_string_t("auto_rotation")] = ModelBase::toJson(autoRotation_);
+    }
+    if(rotationPeriodIsSet_) {
+        val[utility::conversions::to_string_t("rotation_period")] = ModelBase::toJson(rotationPeriod_);
+    }
+    if(rotationConfigIsSet_) {
+        val[utility::conversions::to_string_t("rotation_config")] = ModelBase::toJson(rotationConfig_);
+    }
+    if(eventSubscriptionsIsSet_) {
+        val[utility::conversions::to_string_t("event_subscriptions")] = ModelBase::toJson(eventSubscriptions_);
+    }
+    if(enterpriseProjectIdIsSet_) {
+        val[utility::conversions::to_string_t("enterprise_project_id")] = ModelBase::toJson(enterpriseProjectId_);
     }
 
     return val;
@@ -101,6 +130,60 @@ bool CreateSecretRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSecretString(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("secret_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("secret_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSecretType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("auto_rotation"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("auto_rotation"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAutoRotation(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("rotation_period"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("rotation_period"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRotationPeriod(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("rotation_config"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("rotation_config"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRotationConfig(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("event_subscriptions"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("event_subscriptions"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEventSubscriptions(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("enterprise_project_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enterprise_project_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEnterpriseProjectId(refVal);
         }
     }
     return ok;
@@ -209,6 +292,132 @@ bool CreateSecretRequestBody::secretStringIsSet() const
 void CreateSecretRequestBody::unsetsecretString()
 {
     secretStringIsSet_ = false;
+}
+
+std::string CreateSecretRequestBody::getSecretType() const
+{
+    return secretType_;
+}
+
+void CreateSecretRequestBody::setSecretType(const std::string& value)
+{
+    secretType_ = value;
+    secretTypeIsSet_ = true;
+}
+
+bool CreateSecretRequestBody::secretTypeIsSet() const
+{
+    return secretTypeIsSet_;
+}
+
+void CreateSecretRequestBody::unsetsecretType()
+{
+    secretTypeIsSet_ = false;
+}
+
+bool CreateSecretRequestBody::isAutoRotation() const
+{
+    return autoRotation_;
+}
+
+void CreateSecretRequestBody::setAutoRotation(bool value)
+{
+    autoRotation_ = value;
+    autoRotationIsSet_ = true;
+}
+
+bool CreateSecretRequestBody::autoRotationIsSet() const
+{
+    return autoRotationIsSet_;
+}
+
+void CreateSecretRequestBody::unsetautoRotation()
+{
+    autoRotationIsSet_ = false;
+}
+
+std::string CreateSecretRequestBody::getRotationPeriod() const
+{
+    return rotationPeriod_;
+}
+
+void CreateSecretRequestBody::setRotationPeriod(const std::string& value)
+{
+    rotationPeriod_ = value;
+    rotationPeriodIsSet_ = true;
+}
+
+bool CreateSecretRequestBody::rotationPeriodIsSet() const
+{
+    return rotationPeriodIsSet_;
+}
+
+void CreateSecretRequestBody::unsetrotationPeriod()
+{
+    rotationPeriodIsSet_ = false;
+}
+
+std::string CreateSecretRequestBody::getRotationConfig() const
+{
+    return rotationConfig_;
+}
+
+void CreateSecretRequestBody::setRotationConfig(const std::string& value)
+{
+    rotationConfig_ = value;
+    rotationConfigIsSet_ = true;
+}
+
+bool CreateSecretRequestBody::rotationConfigIsSet() const
+{
+    return rotationConfigIsSet_;
+}
+
+void CreateSecretRequestBody::unsetrotationConfig()
+{
+    rotationConfigIsSet_ = false;
+}
+
+std::vector<std::string>& CreateSecretRequestBody::getEventSubscriptions()
+{
+    return eventSubscriptions_;
+}
+
+void CreateSecretRequestBody::setEventSubscriptions(const std::vector<std::string>& value)
+{
+    eventSubscriptions_ = value;
+    eventSubscriptionsIsSet_ = true;
+}
+
+bool CreateSecretRequestBody::eventSubscriptionsIsSet() const
+{
+    return eventSubscriptionsIsSet_;
+}
+
+void CreateSecretRequestBody::unseteventSubscriptions()
+{
+    eventSubscriptionsIsSet_ = false;
+}
+
+std::string CreateSecretRequestBody::getEnterpriseProjectId() const
+{
+    return enterpriseProjectId_;
+}
+
+void CreateSecretRequestBody::setEnterpriseProjectId(const std::string& value)
+{
+    enterpriseProjectId_ = value;
+    enterpriseProjectIdIsSet_ = true;
+}
+
+bool CreateSecretRequestBody::enterpriseProjectIdIsSet() const
+{
+    return enterpriseProjectIdIsSet_;
+}
+
+void CreateSecretRequestBody::unsetenterpriseProjectId()
+{
+    enterpriseProjectIdIsSet_ = false;
 }
 
 }

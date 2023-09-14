@@ -186,7 +186,7 @@ bool UpdateSqlAlarmRuleResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("frequency"));
         if(!fieldValue.is_null())
         {
-            Frequency refVal;
+            Object refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFrequency(refVal);
         }
@@ -425,12 +425,12 @@ void UpdateSqlAlarmRuleResponse::unsetsqlRequests()
     sqlRequestsIsSet_ = false;
 }
 
-Frequency UpdateSqlAlarmRuleResponse::getFrequency() const
+Object UpdateSqlAlarmRuleResponse::getFrequency() const
 {
     return frequency_;
 }
 
-void UpdateSqlAlarmRuleResponse::setFrequency(const Frequency& value)
+void UpdateSqlAlarmRuleResponse::setFrequency(const Object& value)
 {
     frequency_ = value;
     frequencyIsSet_ = true;

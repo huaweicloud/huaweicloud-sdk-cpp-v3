@@ -7,7 +7,7 @@
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/lts/v2/model/ChartConfig.h>
+#include <huaweicloud/core/utils/Object.h>
 #include <string>
 
 namespace HuaweiCloud {
@@ -115,10 +115,10 @@ public:
     /// 图表配置详情
     /// </summary>
 
-    ChartConfig getConfig() const;
+    Object getConfig() const;
     bool configIsSet() const;
     void unsetconfig();
-    void setConfig(const ChartConfig& value);
+    void setConfig(const Object& value);
 
 
 protected:
@@ -138,7 +138,7 @@ protected:
     bool logStreamIdIsSet_;
     std::string logStreamName_;
     bool logStreamNameIsSet_;
-    ChartConfig config_;
+    Object config_;
     bool configIsSet_;
 
 #ifdef RTTR_FLAG

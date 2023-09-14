@@ -1156,6 +1156,59 @@ std::shared_ptr<InvokeGaussMySqlInstanceSwitchOverResponse> GaussDBClient::invok
 
     return localVarResult;
 }
+std::shared_ptr<ListAuditLogDownloadLinkResponse> GaussDBClient::listAuditLogDownloadLink(ListAuditLogDownloadLinkRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instance/{instance_id}/auditlog/download-link";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.nodeIdIsSet()) {
+        localVarQueryParams["node_id"] = parameterToString(request.getNodeId());
+    }
+    if (request.lastFileNameIsSet()) {
+        localVarQueryParams["last_file_name"] = parameterToString(request.getLastFileName());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.startTimeIsSet()) {
+        localVarQueryParams["start_time"] = parameterToString(request.getStartTime());
+    }
+    if (request.endTimeIsSet()) {
+        localVarQueryParams["end_time"] = parameterToString(request.getEndTime());
+    }
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+
+    std::shared_ptr<ListAuditLogDownloadLinkResponse> localVarResult = std::make_shared<ListAuditLogDownloadLinkResponse>();
+
+    if (!res->getHttpBody().empty()) {
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListGaussMySqlConfigurationsResponse> GaussDBClient::listGaussMySqlConfigurations(ListGaussMySqlConfigurationsRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/configurations";

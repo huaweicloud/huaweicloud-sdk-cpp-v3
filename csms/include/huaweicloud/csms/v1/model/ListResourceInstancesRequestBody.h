@@ -7,7 +7,7 @@
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/csms/v1/model/TagItem.h>
+#include <huaweicloud/csms/v1/model/TagMatches.h>
 #include <string>
 #include <vector>
 #include <huaweicloud/csms/v1/model/Tag.h>
@@ -69,7 +69,7 @@ public:
     void setAction(const std::string& value);
 
     /// <summary>
-    /// 标签列表，key和value键值对的集合。  - key：表示标签键，一个凭据下最多包含20个key，key不能为空，不能重复，同一个key中value不能重复。key最大长度为36个字符。key之间是“与”的关系  - value：表示标签值。每个值最大长度43个字符，value之间为“或”的关系。
+    /// 标签列表，key和value键值对的集合。最多不超过10个。
     /// </summary>
 
     std::vector<Tag>& getTags();
@@ -81,10 +81,10 @@ public:
     /// 搜索字段。  - key为搜索的字段，目前仅支持搜索凭据名称，值为“resource_name”。  - value为模糊匹配的值，最大长度为255个字符。为空返回空值。
     /// </summary>
 
-    std::vector<TagItem>& getMatches();
+    std::vector<TagMatches>& getMatches();
     bool matchesIsSet() const;
     void unsetmatches();
-    void setMatches(const std::vector<TagItem>& value);
+    void setMatches(const std::vector<TagMatches>& value);
 
     /// <summary>
     /// 请求消息序列号，36字节序列号。 例如：919c82d4-8046-4722-9094-35c3c6524cff
@@ -105,7 +105,7 @@ protected:
     bool actionIsSet_;
     std::vector<Tag> tags_;
     bool tagsIsSet_;
-    std::vector<TagItem> matches_;
+    std::vector<TagMatches> matches_;
     bool matchesIsSet_;
     std::string sequence_;
     bool sequenceIsSet_;

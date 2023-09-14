@@ -146,33 +146,6 @@ public:
     void unsetisMultiAz();
     void setIsMultiAz(bool value);
 
-    /// <summary>
-    /// 促销信息，包周期时可选参数
-    /// </summary>
-
-    std::string getPromotionInfo() const;
-    bool promotionInfoIsSet() const;
-    void unsetpromotionInfo();
-    void setPromotionInfo(const std::string& value);
-
-    /// <summary>
-    /// 购买模式，包周期时可选参数
-    /// </summary>
-
-    std::string getPurchaseMode() const;
-    bool purchaseModeIsSet() const;
-    void unsetpurchaseMode();
-    void setPurchaseMode(const std::string& value);
-
-    /// <summary>
-    /// 订单 ID，包周期时可选参数
-    /// </summary>
-
-    std::string getOrderId() const;
-    bool orderIdIsSet() const;
-    void unsetorderId();
-    void setOrderId(const std::string& value);
-
 
 protected:
     std::string cloudType_;
@@ -199,12 +172,6 @@ protected:
     bool consoleUrlIsSet_;
     bool isMultiAz_;
     bool isMultiAzIsSet_;
-    std::string promotionInfo_;
-    bool promotionInfoIsSet_;
-    std::string purchaseMode_;
-    bool purchaseModeIsSet_;
-    std::string orderId_;
-    bool orderIdIsSet_;
 
 };
 

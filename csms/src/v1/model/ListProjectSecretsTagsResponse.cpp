@@ -41,7 +41,7 @@ bool ListProjectSecretsTagsResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("tags"));
         if(!fieldValue.is_null())
         {
-            std::vector<Tag> refVal;
+            std::vector<TagResponse> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTags(refVal);
         }
@@ -49,12 +49,12 @@ bool ListProjectSecretsTagsResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-std::vector<Tag>& ListProjectSecretsTagsResponse::getTags()
+std::vector<TagResponse>& ListProjectSecretsTagsResponse::getTags()
 {
     return tags_;
 }
 
-void ListProjectSecretsTagsResponse::setTags(const std::vector<Tag>& value)
+void ListProjectSecretsTagsResponse::setTags(const std::vector<TagResponse>& value)
 {
     tags_ = value;
     tagsIsSet_ = true;

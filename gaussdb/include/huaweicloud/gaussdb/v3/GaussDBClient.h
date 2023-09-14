@@ -74,6 +74,8 @@
 #include <huaweicloud/gaussdb/v3/model/GrantDatabasePermissionRequestBody.h>
 #include <huaweicloud/gaussdb/v3/model/InvokeGaussMySqlInstanceSwitchOverRequest.h>
 #include <huaweicloud/gaussdb/v3/model/InvokeGaussMySqlInstanceSwitchOverResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ListAuditLogDownloadLinkRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ListAuditLogDownloadLinkResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ListGaussMySqlConfigurationsRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ListGaussMySqlConfigurationsResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ListGaussMySqlDatabaseCharsetsRequest.h>
@@ -487,6 +489,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<InvokeGaussMySqlInstanceSwitchOverResponse> invokeGaussMySqlInstanceSwitchOver(
         InvokeGaussMySqlInstanceSwitchOverRequest &request
+    );
+    // 获取全量SQL的临时下载链接
+    //
+    // 获取全量SQL的临时下载链接。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListAuditLogDownloadLinkResponse> listAuditLogDownloadLink(
+        ListAuditLogDownloadLinkRequest &request
     );
     // 查询参数模板
     //

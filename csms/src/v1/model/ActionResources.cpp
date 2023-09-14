@@ -19,7 +19,6 @@ ActionResources::ActionResources()
     resourceName_ = "";
     resourceNameIsSet_ = false;
     tagsIsSet_ = false;
-    sysTagsIsSet_ = false;
 }
 
 ActionResources::~ActionResources() = default;
@@ -43,9 +42,6 @@ web::json::value ActionResources::toJson() const
     }
     if(tagsIsSet_) {
         val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
-    }
-    if(sysTagsIsSet_) {
-        val[utility::conversions::to_string_t("sys_tags")] = ModelBase::toJson(sysTags_);
     }
 
     return val;
@@ -89,15 +85,6 @@ bool ActionResources::fromJson(const web::json::value& val)
             std::vector<TagItem> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTags(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("sys_tags"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sys_tags"));
-        if(!fieldValue.is_null())
-        {
-            std::vector<TagItem> refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setSysTags(refVal);
         }
     }
     return ok;
@@ -185,27 +172,6 @@ bool ActionResources::tagsIsSet() const
 void ActionResources::unsettags()
 {
     tagsIsSet_ = false;
-}
-
-std::vector<TagItem>& ActionResources::getSysTags()
-{
-    return sysTags_;
-}
-
-void ActionResources::setSysTags(const std::vector<TagItem>& value)
-{
-    sysTags_ = value;
-    sysTagsIsSet_ = true;
-}
-
-bool ActionResources::sysTagsIsSet() const
-{
-    return sysTagsIsSet_;
-}
-
-void ActionResources::unsetsysTags()
-{
-    sysTagsIsSet_ = false;
 }
 
 }

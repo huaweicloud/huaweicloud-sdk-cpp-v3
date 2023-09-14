@@ -8,6 +8,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/gaussdb/v3/model/MysqlDatastoreInRes.h>
+#include <huaweicloud/gaussdb/v3/model/MysqlVolumeResp.h>
 #include <string>
 #include <huaweicloud/gaussdb/v3/model/MysqlBackupStrategy.h>
 #include <huaweicloud/gaussdb/v3/model/MysqlChargeInfo.h>
@@ -194,6 +195,15 @@ public:
     void unsetchargeInfo();
     void setChargeInfo(const MysqlChargeInfo& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    MysqlVolumeResp getVolume() const;
+    bool volumeIsSet() const;
+    void unsetvolume();
+    void setVolume(const MysqlVolumeResp& value);
+
 
 protected:
     std::string id_;
@@ -230,6 +240,8 @@ protected:
     bool flavorRefIsSet_;
     MysqlChargeInfo chargeInfo_;
     bool chargeInfoIsSet_;
+    MysqlVolumeResp volume_;
+    bool volumeIsSet_;
 
 };
 

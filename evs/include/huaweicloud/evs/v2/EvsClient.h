@@ -49,6 +49,9 @@
 #include <huaweicloud/evs/v2/model/ListVolumesByTagsResponse.h>
 #include <huaweicloud/evs/v2/model/ListVolumesRequest.h>
 #include <huaweicloud/evs/v2/model/ListVolumesResponse.h>
+#include <huaweicloud/evs/v2/model/ModifyVolumeQoSRequest.h>
+#include <huaweicloud/evs/v2/model/ModifyVolumeQoSRequestBody.h>
+#include <huaweicloud/evs/v2/model/ModifyVolumeQoSResponse.h>
 #include <huaweicloud/evs/v2/model/ResizeVolumeRequest.h>
 #include <huaweicloud/evs/v2/model/ResizeVolumeRequestBody.h>
 #include <huaweicloud/evs/v2/model/ResizeVolumeResponse.h>
@@ -253,6 +256,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListVolumesByTagsResponse> listVolumesByTags(
         ListVolumesByTagsRequest &request
+    );
+    // 修改云硬盘QoS
+    //
+    // 调整云硬盘的iops或者吞吐量。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ModifyVolumeQoSResponse> modifyVolumeQoS(
+        ModifyVolumeQoSRequest &request
     );
     // 扩容云硬盘
     //

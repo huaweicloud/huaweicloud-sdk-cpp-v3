@@ -41,7 +41,7 @@ bool ListLogStreamResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("log_streams"));
         if(!fieldValue.is_null())
         {
-            std::vector<LogStream> refVal;
+            std::vector<LogStreamResBody> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLogStreams(refVal);
         }
@@ -49,12 +49,12 @@ bool ListLogStreamResponse::fromJson(const web::json::value& val)
     return ok;
 }
 
-std::vector<LogStream>& ListLogStreamResponse::getLogStreams()
+std::vector<LogStreamResBody>& ListLogStreamResponse::getLogStreams()
 {
     return logStreams_;
 }
 
-void ListLogStreamResponse::setLogStreams(const std::vector<LogStream>& value)
+void ListLogStreamResponse::setLogStreams(const std::vector<LogStreamResBody>& value)
 {
     logStreams_ = value;
     logStreamsIsSet_ = true;

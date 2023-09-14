@@ -13,7 +13,7 @@ namespace Model {
 
 ListStructuredLogsWithTimeRangeResponse::ListStructuredLogsWithTimeRangeResponse()
 {
-    bodyIsSet_ = false;
+    contextIsSet_ = false;
 }
 
 ListStructuredLogsWithTimeRangeResponse::~ListStructuredLogsWithTimeRangeResponse() = default;
@@ -26,8 +26,8 @@ web::json::value ListStructuredLogsWithTimeRangeResponse::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(bodyIsSet_) {
-        val[utility::conversions::to_string_t("body")] = ModelBase::toJson(body_);
+    if(contextIsSet_) {
+        val[utility::conversions::to_string_t("context")] = ModelBase::toJson(context_);
     }
 
     return val;
@@ -37,37 +37,37 @@ bool ListStructuredLogsWithTimeRangeResponse::fromJson(const web::json::value& v
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("body"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
+    if(val.has_field(utility::conversions::to_string_t("context"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("context"));
         if(!fieldValue.is_null())
         {
-            std::map<std::string, std::vector<Object>> refVal;
+            std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setBody(refVal);
+            setContext(refVal);
         }
     }
     return ok;
 }
 
-std::map<std::string, std::vector<Object>>& ListStructuredLogsWithTimeRangeResponse::getBody()
+std::vector<std::string>& ListStructuredLogsWithTimeRangeResponse::getContext()
 {
-    return body_;
+    return context_;
 }
 
-void ListStructuredLogsWithTimeRangeResponse::setBody(const std::map<std::string, std::vector<Object>>& value)
+void ListStructuredLogsWithTimeRangeResponse::setContext(const std::vector<std::string>& value)
 {
-    body_ = value;
-    bodyIsSet_ = true;
+    context_ = value;
+    contextIsSet_ = true;
 }
 
-bool ListStructuredLogsWithTimeRangeResponse::bodyIsSet() const
+bool ListStructuredLogsWithTimeRangeResponse::contextIsSet() const
 {
-    return bodyIsSet_;
+    return contextIsSet_;
 }
 
-void ListStructuredLogsWithTimeRangeResponse::unsetbody()
+void ListStructuredLogsWithTimeRangeResponse::unsetcontext()
 {
-    bodyIsSet_ = false;
+    contextIsSet_ = false;
 }
 
 }

@@ -29,6 +29,21 @@ Secret::Secret()
     updateTimeIsSet_ = false;
     scheduledDeleteTime_ = 0L;
     scheduledDeleteTimeIsSet_ = false;
+    secretType_ = "";
+    secretTypeIsSet_ = false;
+    autoRotation_ = false;
+    autoRotationIsSet_ = false;
+    rotationPeriod_ = "";
+    rotationPeriodIsSet_ = false;
+    rotationConfig_ = "";
+    rotationConfigIsSet_ = false;
+    rotationTime_ = 0L;
+    rotationTimeIsSet_ = false;
+    nextRotationTime_ = 0L;
+    nextRotationTimeIsSet_ = false;
+    eventSubscriptionsIsSet_ = false;
+    enterpriseProjectId_ = "";
+    enterpriseProjectIdIsSet_ = false;
 }
 
 Secret::~Secret() = default;
@@ -64,6 +79,30 @@ web::json::value Secret::toJson() const
     }
     if(scheduledDeleteTimeIsSet_) {
         val[utility::conversions::to_string_t("scheduled_delete_time")] = ModelBase::toJson(scheduledDeleteTime_);
+    }
+    if(secretTypeIsSet_) {
+        val[utility::conversions::to_string_t("secret_type")] = ModelBase::toJson(secretType_);
+    }
+    if(autoRotationIsSet_) {
+        val[utility::conversions::to_string_t("auto_rotation")] = ModelBase::toJson(autoRotation_);
+    }
+    if(rotationPeriodIsSet_) {
+        val[utility::conversions::to_string_t("rotation_period")] = ModelBase::toJson(rotationPeriod_);
+    }
+    if(rotationConfigIsSet_) {
+        val[utility::conversions::to_string_t("rotation_config")] = ModelBase::toJson(rotationConfig_);
+    }
+    if(rotationTimeIsSet_) {
+        val[utility::conversions::to_string_t("rotation_time")] = ModelBase::toJson(rotationTime_);
+    }
+    if(nextRotationTimeIsSet_) {
+        val[utility::conversions::to_string_t("next_rotation_time")] = ModelBase::toJson(nextRotationTime_);
+    }
+    if(eventSubscriptionsIsSet_) {
+        val[utility::conversions::to_string_t("event_subscriptions")] = ModelBase::toJson(eventSubscriptions_);
+    }
+    if(enterpriseProjectIdIsSet_) {
+        val[utility::conversions::to_string_t("enterprise_project_id")] = ModelBase::toJson(enterpriseProjectId_);
     }
 
     return val;
@@ -143,6 +182,78 @@ bool Secret::fromJson(const web::json::value& val)
             int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setScheduledDeleteTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("secret_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("secret_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSecretType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("auto_rotation"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("auto_rotation"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAutoRotation(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("rotation_period"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("rotation_period"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRotationPeriod(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("rotation_config"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("rotation_config"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRotationConfig(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("rotation_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("rotation_time"));
+        if(!fieldValue.is_null())
+        {
+            int64_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRotationTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("next_rotation_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("next_rotation_time"));
+        if(!fieldValue.is_null())
+        {
+            int64_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setNextRotationTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("event_subscriptions"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("event_subscriptions"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEventSubscriptions(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("enterprise_project_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enterprise_project_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEnterpriseProjectId(refVal);
         }
     }
     return ok;
@@ -314,6 +425,174 @@ bool Secret::scheduledDeleteTimeIsSet() const
 void Secret::unsetscheduledDeleteTime()
 {
     scheduledDeleteTimeIsSet_ = false;
+}
+
+std::string Secret::getSecretType() const
+{
+    return secretType_;
+}
+
+void Secret::setSecretType(const std::string& value)
+{
+    secretType_ = value;
+    secretTypeIsSet_ = true;
+}
+
+bool Secret::secretTypeIsSet() const
+{
+    return secretTypeIsSet_;
+}
+
+void Secret::unsetsecretType()
+{
+    secretTypeIsSet_ = false;
+}
+
+bool Secret::isAutoRotation() const
+{
+    return autoRotation_;
+}
+
+void Secret::setAutoRotation(bool value)
+{
+    autoRotation_ = value;
+    autoRotationIsSet_ = true;
+}
+
+bool Secret::autoRotationIsSet() const
+{
+    return autoRotationIsSet_;
+}
+
+void Secret::unsetautoRotation()
+{
+    autoRotationIsSet_ = false;
+}
+
+std::string Secret::getRotationPeriod() const
+{
+    return rotationPeriod_;
+}
+
+void Secret::setRotationPeriod(const std::string& value)
+{
+    rotationPeriod_ = value;
+    rotationPeriodIsSet_ = true;
+}
+
+bool Secret::rotationPeriodIsSet() const
+{
+    return rotationPeriodIsSet_;
+}
+
+void Secret::unsetrotationPeriod()
+{
+    rotationPeriodIsSet_ = false;
+}
+
+std::string Secret::getRotationConfig() const
+{
+    return rotationConfig_;
+}
+
+void Secret::setRotationConfig(const std::string& value)
+{
+    rotationConfig_ = value;
+    rotationConfigIsSet_ = true;
+}
+
+bool Secret::rotationConfigIsSet() const
+{
+    return rotationConfigIsSet_;
+}
+
+void Secret::unsetrotationConfig()
+{
+    rotationConfigIsSet_ = false;
+}
+
+int64_t Secret::getRotationTime() const
+{
+    return rotationTime_;
+}
+
+void Secret::setRotationTime(int64_t value)
+{
+    rotationTime_ = value;
+    rotationTimeIsSet_ = true;
+}
+
+bool Secret::rotationTimeIsSet() const
+{
+    return rotationTimeIsSet_;
+}
+
+void Secret::unsetrotationTime()
+{
+    rotationTimeIsSet_ = false;
+}
+
+int64_t Secret::getNextRotationTime() const
+{
+    return nextRotationTime_;
+}
+
+void Secret::setNextRotationTime(int64_t value)
+{
+    nextRotationTime_ = value;
+    nextRotationTimeIsSet_ = true;
+}
+
+bool Secret::nextRotationTimeIsSet() const
+{
+    return nextRotationTimeIsSet_;
+}
+
+void Secret::unsetnextRotationTime()
+{
+    nextRotationTimeIsSet_ = false;
+}
+
+std::vector<std::string>& Secret::getEventSubscriptions()
+{
+    return eventSubscriptions_;
+}
+
+void Secret::setEventSubscriptions(const std::vector<std::string>& value)
+{
+    eventSubscriptions_ = value;
+    eventSubscriptionsIsSet_ = true;
+}
+
+bool Secret::eventSubscriptionsIsSet() const
+{
+    return eventSubscriptionsIsSet_;
+}
+
+void Secret::unseteventSubscriptions()
+{
+    eventSubscriptionsIsSet_ = false;
+}
+
+std::string Secret::getEnterpriseProjectId() const
+{
+    return enterpriseProjectId_;
+}
+
+void Secret::setEnterpriseProjectId(const std::string& value)
+{
+    enterpriseProjectId_ = value;
+    enterpriseProjectIdIsSet_ = true;
+}
+
+bool Secret::enterpriseProjectIdIsSet() const
+{
+    return enterpriseProjectIdIsSet_;
+}
+
+void Secret::unsetenterpriseProjectId()
+{
+    enterpriseProjectIdIsSet_ = false;
 }
 
 }

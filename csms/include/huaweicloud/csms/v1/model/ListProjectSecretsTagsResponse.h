@@ -7,8 +7,8 @@
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/csms/v1/model/TagResponse.h>
 #include <vector>
-#include <huaweicloud/csms/v1/model/Tag.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -40,17 +40,17 @@ public:
     /// ListProjectSecretsTagsResponse members
 
     /// <summary>
-    /// 标签列表，key和value键值对的集合。  - key：表示标签键，一个凭据下最多包含10个key，key不能为空，不能重复，同一个key中value不能重复。key最大长度为36个字符。  - value：表示标签值。每个值最大长度43个字符，value之间为“与”的关系。
+    /// 标签列表，key和value键值对的集合。  - key：表示标签键，一个凭据下最多包含20个key，key不能为空，不能重复，同一个key中value不能重复。key最大长度为128个字符。  - value：表示标签值。每个值最大长度255个字符，value之间为“与”的关系。
     /// </summary>
 
-    std::vector<Tag>& getTags();
+    std::vector<TagResponse>& getTags();
     bool tagsIsSet() const;
     void unsettags();
-    void setTags(const std::vector<Tag>& value);
+    void setTags(const std::vector<TagResponse>& value);
 
 
 protected:
-    std::vector<Tag> tags_;
+    std::vector<TagResponse> tags_;
     bool tagsIsSet_;
 
 #ifdef RTTR_FLAG

@@ -10,6 +10,7 @@ jobs:
       run: |
         git config --global user.name ${{ vars.SDK_USERNAME }}
         git config --global user.email ${{ vars.SDK_EMAIL }}
+        git config --global core.compression 0
     - name: Pull source
       uses: actions/checkout@v3
       with:

@@ -12,6 +12,7 @@
 #include <string>
 #include <huaweicloud/gaussdbfornosql/v3/model/ChargeInfoOption.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/DatastoreOption.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/AvailabilityZoneDetail.h>
 #include <vector>
 #include <huaweicloud/gaussdbfornosql/v3/model/BackupStrategyOption.h>
 
@@ -117,7 +118,7 @@ public:
     void setPassword(const std::string& value);
 
     /// <summary>
-    /// 实例类型。   - GaussDB(for Cassandra)支持集群类型，取值为“Cluster”。   - GaussDB(for Mongo)4.0版本支持副本集类型，取值为“ReplicaSet”。   - GaussDB(for Influx)支持集群类型，取值为“Cluster”。
+    /// 实例类型。   - GaussDB(for Cassandra)支持集群类型，取值为“Cluster”。   - GaussDB(for Mongo)4.0版本支持副本集类型，取值为“ReplicaSet”。   - GaussDB(for Influx)支持集群类型，取值为“Cluster”。   - GaussDB(for Influx)支持单节点类型，取值为“InfluxdbSingle”。   - GaussDB(for redis)支持集群类型，取值为“Cluster”。   - GaussDB(for redis)支持主备类型，取值为“Replication”。
     /// </summary>
 
     std::string getMode() const;
@@ -206,6 +207,15 @@ public:
     void unsetport();
     void setPort(const std::string& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    AvailabilityZoneDetail getAvailabilityZoneDetail() const;
+    bool availabilityZoneDetailIsSet() const;
+    void unsetavailabilityZoneDetail();
+    void setAvailabilityZoneDetail(const AvailabilityZoneDetail& value);
+
 
 protected:
     std::string name_;
@@ -244,6 +254,8 @@ protected:
     bool restoreInfoIsSet_;
     std::string port_;
     bool portIsSet_;
+    AvailabilityZoneDetail availabilityZoneDetail_;
+    bool availabilityZoneDetailIsSet_;
 
 };
 

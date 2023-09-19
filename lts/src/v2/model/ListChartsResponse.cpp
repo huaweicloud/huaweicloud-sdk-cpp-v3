@@ -153,7 +153,7 @@ bool ListChartsResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("config"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            ChartConfig refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setConfig(refVal);
         }
@@ -329,12 +329,12 @@ void ListChartsResponse::unsetlogStreamName()
     logStreamNameIsSet_ = false;
 }
 
-Object ListChartsResponse::getConfig() const
+ChartConfig ListChartsResponse::getConfig() const
 {
     return config_;
 }
 
-void ListChartsResponse::setConfig(const Object& value)
+void ListChartsResponse::setConfig(const ChartConfig& value)
 {
     config_ = value;
     configIsSet_ = true;

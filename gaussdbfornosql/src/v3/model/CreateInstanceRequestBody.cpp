@@ -44,6 +44,7 @@ CreateInstanceRequestBody::CreateInstanceRequestBody()
     restoreInfoIsSet_ = false;
     port_ = "";
     portIsSet_ = false;
+    availabilityZoneDetailIsSet_ = false;
 }
 
 CreateInstanceRequestBody::~CreateInstanceRequestBody() = default;
@@ -109,6 +110,9 @@ web::json::value CreateInstanceRequestBody::toJson() const
     }
     if(portIsSet_) {
         val[utility::conversions::to_string_t("port")] = ModelBase::toJson(port_);
+    }
+    if(availabilityZoneDetailIsSet_) {
+        val[utility::conversions::to_string_t("availability_zone_detail")] = ModelBase::toJson(availabilityZoneDetail_);
     }
 
     return val;
@@ -278,6 +282,15 @@ bool CreateInstanceRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPort(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("availability_zone_detail"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("availability_zone_detail"));
+        if(!fieldValue.is_null())
+        {
+            AvailabilityZoneDetail refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAvailabilityZoneDetail(refVal);
         }
     }
     return ok;
@@ -659,6 +672,27 @@ bool CreateInstanceRequestBody::portIsSet() const
 void CreateInstanceRequestBody::unsetport()
 {
     portIsSet_ = false;
+}
+
+AvailabilityZoneDetail CreateInstanceRequestBody::getAvailabilityZoneDetail() const
+{
+    return availabilityZoneDetail_;
+}
+
+void CreateInstanceRequestBody::setAvailabilityZoneDetail(const AvailabilityZoneDetail& value)
+{
+    availabilityZoneDetail_ = value;
+    availabilityZoneDetailIsSet_ = true;
+}
+
+bool CreateInstanceRequestBody::availabilityZoneDetailIsSet() const
+{
+    return availabilityZoneDetailIsSet_;
+}
+
+void CreateInstanceRequestBody::unsetavailabilityZoneDetail()
+{
+    availabilityZoneDetailIsSet_ = false;
 }
 
 }

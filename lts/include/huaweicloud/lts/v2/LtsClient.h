@@ -136,7 +136,6 @@
 #include <huaweicloud/lts/v2/model/ListTransfersRequest.h>
 #include <huaweicloud/lts/v2/model/ListTransfersResponse.h>
 #include <huaweicloud/lts/v2/model/LtsStructTemplateInfo.h>
-#include <huaweicloud/lts/v2/model/NotificationTemplate.h>
 #include <huaweicloud/lts/v2/model/PreviewTemplateBody.h>
 #include <huaweicloud/lts/v2/model/QueryLogKeyWordCountRequestBody.h>
 #include <huaweicloud/lts/v2/model/QueryLtsLogParams.h>
@@ -191,6 +190,19 @@
 #include <huaweicloud/lts/v2/model/UpdateAomMappingRequest.h>
 #include <huaweicloud/lts/v2/model/UpdateAomMappingRulesRequest.h>
 #include <huaweicloud/lts/v2/model/UpdateAomMappingRulesResponse.h>
+#include <string>
+
+#include <huaweicloud/lts/v2/model/ShowAdminConfigRequest.h>
+#include <huaweicloud/lts/v2/model/ShowAdminConfigResponse.h>
+#include <huaweicloud/lts/v2/model/ShowLogConvergeConfigRequest.h>
+#include <huaweicloud/lts/v2/model/ShowLogConvergeConfigResponse.h>
+#include <huaweicloud/lts/v2/model/ShowMemberGroupAndStreamRequest.h>
+#include <huaweicloud/lts/v2/model/ShowMemberGroupAndStreamResponse.h>
+#include <huaweicloud/lts/v2/model/UpdateLogConvergeConfigRequest.h>
+#include <huaweicloud/lts/v2/model/UpdateLogConvergeConfigResponse.h>
+#include <huaweicloud/lts/v2/model/UpdateSwitchRequest.h>
+#include <huaweicloud/lts/v2/model/UpdateSwitchResponse.h>
+#include <huaweicloud/lts/v2/model/UpdatelogConvergeConfig.h>
 #include <string>
 
 #include <huaweicloud/lts/v2/model/ChangeAlarmRuleStatus.h>
@@ -792,6 +804,47 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateAomMappingRulesResponse> updateAomMappingRules(
         UpdateAomMappingRulesRequest &request
+    );
+
+    // 获取日志汇聚开关
+    //
+    // 只能由管理员或者委托管理员调用    获取日志汇聚开关
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowAdminConfigResponse> showAdminConfig(
+        ShowAdminConfigRequest &request
+    );
+    // 获取组织成员汇聚配置
+    //
+    // 只能由组织管理员或者委托管理员调用    获取组织成员汇聚配置
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowLogConvergeConfigResponse> showLogConvergeConfig(
+        ShowLogConvergeConfigRequest &request
+    );
+    // 获取组织成员日志组日志流
+    //
+    // 只能由管理员或者委托管理员调用，获取组织成员日志组日志流
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowMemberGroupAndStreamResponse> showMemberGroupAndStream(
+        ShowMemberGroupAndStreamRequest &request
+    );
+    // 更新汇聚配置
+    //
+    // 只能由管理员或者委托管理员 ,更新汇聚配置
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateLogConvergeConfigResponse> updateLogConvergeConfig(
+        UpdateLogConvergeConfigRequest &request
+    );
+    // 修改日志汇聚开关
+    //
+    // 只能由管理员或者委托管理员调用     修改日志汇聚开关
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateSwitchResponse> updateSwitch(
+        UpdateSwitchRequest &request
     );
 
     // 创建SQL告警规则

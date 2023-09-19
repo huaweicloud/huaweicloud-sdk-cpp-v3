@@ -102,6 +102,14 @@ public:
             { 
                 "https://cts.eu-west-101.myhuaweicloud.eu"
             });
+        regions["ap-southeast-4"] = Region("ap-southeast-4",
+            { 
+                "https://cts.ap-southeast-4.myhuaweicloud.com"
+            });
+        regions["tr-west-1"] = Region("tr-west-1",
+            { 
+                "https://cts.tr-west-1.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

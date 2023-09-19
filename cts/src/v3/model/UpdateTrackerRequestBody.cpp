@@ -19,6 +19,9 @@ UpdateTrackerRequestBody::UpdateTrackerRequestBody()
     trackerNameIsSet_ = false;
     status_ = "";
     statusIsSet_ = false;
+    isOrganizationTracker_ = false;
+    isOrganizationTrackerIsSet_ = false;
+    managementEventSelectorIsSet_ = false;
     isLtsEnabled_ = false;
     isLtsEnabledIsSet_ = false;
     obsInfoIsSet_ = false;
@@ -49,6 +52,12 @@ web::json::value UpdateTrackerRequestBody::toJson() const
     }
     if(statusIsSet_) {
         val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
+    }
+    if(isOrganizationTrackerIsSet_) {
+        val[utility::conversions::to_string_t("is_organization_tracker")] = ModelBase::toJson(isOrganizationTracker_);
+    }
+    if(managementEventSelectorIsSet_) {
+        val[utility::conversions::to_string_t("management_event_selector")] = ModelBase::toJson(managementEventSelector_);
     }
     if(isLtsEnabledIsSet_) {
         val[utility::conversions::to_string_t("is_lts_enabled")] = ModelBase::toJson(isLtsEnabled_);
@@ -101,6 +110,24 @@ bool UpdateTrackerRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_organization_tracker"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_organization_tracker"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsOrganizationTracker(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("management_event_selector"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("management_event_selector"));
+        if(!fieldValue.is_null())
+        {
+            ManagementEventSelector refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setManagementEventSelector(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("is_lts_enabled"))) {
@@ -221,6 +248,48 @@ bool UpdateTrackerRequestBody::statusIsSet() const
 void UpdateTrackerRequestBody::unsetstatus()
 {
     statusIsSet_ = false;
+}
+
+bool UpdateTrackerRequestBody::isIsOrganizationTracker() const
+{
+    return isOrganizationTracker_;
+}
+
+void UpdateTrackerRequestBody::setIsOrganizationTracker(bool value)
+{
+    isOrganizationTracker_ = value;
+    isOrganizationTrackerIsSet_ = true;
+}
+
+bool UpdateTrackerRequestBody::isOrganizationTrackerIsSet() const
+{
+    return isOrganizationTrackerIsSet_;
+}
+
+void UpdateTrackerRequestBody::unsetisOrganizationTracker()
+{
+    isOrganizationTrackerIsSet_ = false;
+}
+
+ManagementEventSelector UpdateTrackerRequestBody::getManagementEventSelector() const
+{
+    return managementEventSelector_;
+}
+
+void UpdateTrackerRequestBody::setManagementEventSelector(const ManagementEventSelector& value)
+{
+    managementEventSelector_ = value;
+    managementEventSelectorIsSet_ = true;
+}
+
+bool UpdateTrackerRequestBody::managementEventSelectorIsSet() const
+{
+    return managementEventSelectorIsSet_;
+}
+
+void UpdateTrackerRequestBody::unsetmanagementEventSelector()
+{
+    managementEventSelectorIsSet_ = false;
 }
 
 bool UpdateTrackerRequestBody::isIsLtsEnabled() const

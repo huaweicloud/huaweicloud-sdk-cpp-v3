@@ -8,8 +8,8 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/lts/v2/model/CreateTransferResponseBody_log_transfer_info_log_agency_transfer.h>
-#include <huaweicloud/core/utils/Object.h>
 #include <string>
+#include <huaweicloud/lts/v2/model/TransferDetail.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -68,13 +68,13 @@ public:
     void setLogStorageFormat(const std::string& value);
 
     /// <summary>
-    /// 日志转储详细信息
+    /// 
     /// </summary>
 
-    Object getLogTransferDetail() const;
+    TransferDetail getLogTransferDetail() const;
     bool logTransferDetailIsSet() const;
     void unsetlogTransferDetail();
-    void setLogTransferDetail(const Object& value);
+    void setLogTransferDetail(const TransferDetail& value);
 
     /// <summary>
     /// 日志转储方式。cycle是指周期性转储，realTime是指实时转储。OBS转储只支持\&quot;cycle\&quot;，DIS转储和DMS转储只支持\&quot;realTime\&quot;。
@@ -111,7 +111,7 @@ protected:
     bool logCreateTimeIsSet_;
     std::string logStorageFormat_;
     bool logStorageFormatIsSet_;
-    Object logTransferDetail_;
+    TransferDetail logTransferDetail_;
     bool logTransferDetailIsSet_;
     std::string logTransferMode_;
     bool logTransferModeIsSet_;

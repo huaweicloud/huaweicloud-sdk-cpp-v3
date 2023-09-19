@@ -7,7 +7,7 @@
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/core/utils/Object.h>
+#include <huaweicloud/lts/v2/model/SqlNotificationSaveRule.h>
 #include <huaweicloud/lts/v2/model/KeywordsRequest.h>
 #include <string>
 #include <vector>
@@ -106,13 +106,13 @@ public:
     void setDomainId(const std::string& value);
 
     /// <summary>
-    /// 通知主题
+    /// 
     /// </summary>
 
-    Object getNotificationSaveRule() const;
+    SqlNotificationSaveRule getNotificationSaveRule() const;
     bool notificationSaveRuleIsSet() const;
     void unsetnotificationSaveRule();
-    void setNotificationSaveRule(const Object& value);
+    void setNotificationSaveRule(const SqlNotificationSaveRule& value);
 
     /// <summary>
     /// 触发条件：触发次数;默认为1
@@ -166,7 +166,7 @@ protected:
     bool keywordsAlarmSendIsSet_;
     std::string domainId_;
     bool domainIdIsSet_;
-    Object notificationSaveRule_;
+    SqlNotificationSaveRule notificationSaveRule_;
     bool notificationSaveRuleIsSet_;
     int32_t triggerConditionCount_;
     bool triggerConditionCountIsSet_;

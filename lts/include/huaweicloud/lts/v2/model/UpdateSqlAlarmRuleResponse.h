@@ -7,11 +7,11 @@
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/core/utils/Object.h>
 #include <huaweicloud/lts/v2/model/SqlRequest.h>
 #include <huaweicloud/lts/v2/model/Topics.h>
 #include <string>
 #include <vector>
+#include <huaweicloud/lts/v2/model/Frequency.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -115,13 +115,13 @@ public:
     void setSqlRequests(const std::vector<SqlRequest>& value);
 
     /// <summary>
-    /// 告警统计周期
+    /// 
     /// </summary>
 
-    Object getFrequency() const;
+    Frequency getFrequency() const;
     bool frequencyIsSet() const;
     void unsetfrequency();
-    void setFrequency(const Object& value);
+    void setFrequency(const Frequency& value);
 
     /// <summary>
     /// 条件表达式
@@ -204,7 +204,7 @@ protected:
     bool sqlAlarmRuleDescriptionIsSet_;
     std::vector<SqlRequest> sqlRequests_;
     bool sqlRequestsIsSet_;
-    Object frequency_;
+    Frequency frequency_;
     bool frequencyIsSet_;
     std::string conditionExpression_;
     bool conditionExpressionIsSet_;

@@ -7,10 +7,11 @@
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/core/utils/Object.h>
 #include <huaweicloud/lts/v2/model/SqlRequest.h>
+#include <huaweicloud/lts/v2/model/SqlNotificationSaveRule.h>
 #include <string>
 #include <vector>
+#include <huaweicloud/lts/v2/model/Frequency.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -78,13 +79,13 @@ public:
     void setSqlRequests(const std::vector<SqlRequest>& value);
 
     /// <summary>
-    /// 告警统计周期
+    /// 
     /// </summary>
 
-    Object getFrequency() const;
+    Frequency getFrequency() const;
     bool frequencyIsSet() const;
     void unsetfrequency();
-    void setFrequency(const Object& value);
+    void setFrequency(const Frequency& value);
 
     /// <summary>
     /// 条件表达式
@@ -132,13 +133,13 @@ public:
     void setDomainId(const std::string& value);
 
     /// <summary>
-    /// 通知主题
+    /// 
     /// </summary>
 
-    Object getNotificationSaveRule() const;
+    SqlNotificationSaveRule getNotificationSaveRule() const;
     bool notificationSaveRuleIsSet() const;
     void unsetnotificationSaveRule();
-    void setNotificationSaveRule(const Object& value);
+    void setNotificationSaveRule(const SqlNotificationSaveRule& value);
 
     /// <summary>
     /// 触发条件：触发次数;默认为1
@@ -186,7 +187,7 @@ protected:
     bool sqlAlarmRuleDescriptionIsSet_;
     std::vector<SqlRequest> sqlRequests_;
     bool sqlRequestsIsSet_;
-    Object frequency_;
+    Frequency frequency_;
     bool frequencyIsSet_;
     std::string conditionExpression_;
     bool conditionExpressionIsSet_;
@@ -198,7 +199,7 @@ protected:
     bool sqlAlarmSendCodeIsSet_;
     std::string domainId_;
     bool domainIdIsSet_;
-    Object notificationSaveRule_;
+    SqlNotificationSaveRule notificationSaveRule_;
     bool notificationSaveRuleIsSet_;
     int32_t triggerConditionCount_;
     bool triggerConditionCountIsSet_;

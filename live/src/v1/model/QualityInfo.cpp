@@ -37,6 +37,10 @@ QualityInfo::QualityInfo()
     iFrameIntervalIsSet_ = false;
     gop_ = 0;
     gopIsSet_ = false;
+    bitrateAdaptive_ = "";
+    bitrateAdaptiveIsSet_ = false;
+    iFramePolicy_ = "";
+    iFramePolicyIsSet_ = false;
 }
 
 QualityInfo::~QualityInfo() = default;
@@ -84,6 +88,12 @@ web::json::value QualityInfo::toJson() const
     }
     if(gopIsSet_) {
         val[utility::conversions::to_string_t("gop")] = ModelBase::toJson(gop_);
+    }
+    if(bitrateAdaptiveIsSet_) {
+        val[utility::conversions::to_string_t("bitrate_adaptive")] = ModelBase::toJson(bitrateAdaptive_);
+    }
+    if(iFramePolicyIsSet_) {
+        val[utility::conversions::to_string_t("i_frame_policy")] = ModelBase::toJson(iFramePolicy_);
     }
 
     return val;
@@ -199,6 +209,24 @@ bool QualityInfo::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setGop(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("bitrate_adaptive"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("bitrate_adaptive"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBitrateAdaptive(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("i_frame_policy"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("i_frame_policy"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIFramePolicy(refVal);
         }
     }
     return ok;
@@ -454,6 +482,48 @@ bool QualityInfo::gopIsSet() const
 void QualityInfo::unsetgop()
 {
     gopIsSet_ = false;
+}
+
+std::string QualityInfo::getBitrateAdaptive() const
+{
+    return bitrateAdaptive_;
+}
+
+void QualityInfo::setBitrateAdaptive(const std::string& value)
+{
+    bitrateAdaptive_ = value;
+    bitrateAdaptiveIsSet_ = true;
+}
+
+bool QualityInfo::bitrateAdaptiveIsSet() const
+{
+    return bitrateAdaptiveIsSet_;
+}
+
+void QualityInfo::unsetbitrateAdaptive()
+{
+    bitrateAdaptiveIsSet_ = false;
+}
+
+std::string QualityInfo::getIFramePolicy() const
+{
+    return iFramePolicy_;
+}
+
+void QualityInfo::setIFramePolicy(const std::string& value)
+{
+    iFramePolicy_ = value;
+    iFramePolicyIsSet_ = true;
+}
+
+bool QualityInfo::iFramePolicyIsSet() const
+{
+    return iFramePolicyIsSet_;
+}
+
+void QualityInfo::unsetiFramePolicy()
+{
+    iFramePolicyIsSet_ = false;
 }
 
 }

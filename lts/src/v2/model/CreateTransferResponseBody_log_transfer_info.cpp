@@ -97,7 +97,7 @@ bool CreateTransferResponseBody_log_transfer_info::fromJson(const web::json::val
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("log_transfer_detail"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            TransferDetail refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLogTransferDetail(refVal);
         }
@@ -195,12 +195,12 @@ void CreateTransferResponseBody_log_transfer_info::unsetlogStorageFormat()
     logStorageFormatIsSet_ = false;
 }
 
-Object CreateTransferResponseBody_log_transfer_info::getLogTransferDetail() const
+TransferDetail CreateTransferResponseBody_log_transfer_info::getLogTransferDetail() const
 {
     return logTransferDetail_;
 }
 
-void CreateTransferResponseBody_log_transfer_info::setLogTransferDetail(const Object& value)
+void CreateTransferResponseBody_log_transfer_info::setLogTransferDetail(const TransferDetail& value)
 {
     logTransferDetail_ = value;
     logTransferDetailIsSet_ = true;

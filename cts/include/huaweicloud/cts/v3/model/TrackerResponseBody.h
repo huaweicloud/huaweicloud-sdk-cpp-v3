@@ -10,6 +10,7 @@
 #include <string>
 #include <huaweicloud/cts/v3/model/Lts.h>
 #include <huaweicloud/cts/v3/model/DataBucketQuery.h>
+#include <huaweicloud/cts/v3/model/ManagementEventSelector.h>
 #include <huaweicloud/cts/v3/model/ObsInfo.h>
 
 namespace HuaweiCloud {
@@ -76,6 +77,24 @@ public:
     bool isSupportValidateIsSet() const;
     void unsetisSupportValidate();
     void setIsSupportValidate(bool value);
+
+    /// <summary>
+    /// 是否应用到我的组织。 只针对管理类追踪器。设置为true时，ORG组织下所有成员当前区域的审计日志会转储到该追踪器配置的OBS桶或者LTS日志流，但是事件列表界面不支持查看其它组织成员的审计日志。
+    /// </summary>
+
+    bool isIsOrganizationTracker() const;
+    bool isOrganizationTrackerIsSet() const;
+    void unsetisOrganizationTracker();
+    void setIsOrganizationTracker(bool value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    ManagementEventSelector getManagementEventSelector() const;
+    bool managementEventSelectorIsSet() const;
+    void unsetmanagementEventSelector();
+    void setManagementEventSelector(const ManagementEventSelector& value);
 
     /// <summary>
     /// 
@@ -195,6 +214,10 @@ protected:
     bool kmsIdIsSet_;
     bool isSupportValidate_;
     bool isSupportValidateIsSet_;
+    bool isOrganizationTracker_;
+    bool isOrganizationTrackerIsSet_;
+    ManagementEventSelector managementEventSelector_;
+    bool managementEventSelectorIsSet_;
     Lts lts_;
     bool ltsIsSet_;
     std::string trackerType_;

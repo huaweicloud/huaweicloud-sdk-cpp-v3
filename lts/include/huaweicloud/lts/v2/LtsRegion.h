@@ -90,6 +90,10 @@ public:
             { 
                 "https://lts.na-mexico-1.myhuaweicloud.com"
             });
+        regions["ap-southeast-4"] = Region("ap-southeast-4",
+            { 
+                "https://lts.ap-southeast-4.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

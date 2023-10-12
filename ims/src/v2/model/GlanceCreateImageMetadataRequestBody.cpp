@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ims/v2/model/GlanceCreateImageMetadataRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ims {
@@ -72,7 +71,6 @@ web::json::value GlanceCreateImageMetadataRequestBody::toJson() const
 
     return val;
 }
-
 bool GlanceCreateImageMetadataRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -160,6 +158,7 @@ bool GlanceCreateImageMetadataRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string GlanceCreateImageMetadataRequestBody::getOsVersion() const
 {

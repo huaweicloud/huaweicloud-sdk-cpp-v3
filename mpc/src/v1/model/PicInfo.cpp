@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/PicInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -33,7 +32,6 @@ web::json::value PicInfo::toJson() const
 
     return val;
 }
-
 bool PicInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool PicInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string PicInfo::getPicName() const
 {

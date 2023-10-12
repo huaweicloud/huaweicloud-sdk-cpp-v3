@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/DeleteDatabaseRoleResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -28,13 +27,13 @@ web::json::value DeleteDatabaseRoleResponse::toJson() const
 
     return val;
 }
-
 bool DeleteDatabaseRoleResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 }
 }

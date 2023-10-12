@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/ListImmediateJobsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -37,7 +36,6 @@ web::json::value ListImmediateJobsResponse::toJson() const
 
     return val;
 }
-
 bool ListImmediateJobsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ListImmediateJobsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<TaskDetailInfo>& ListImmediateJobsResponse::getJobs()
 {

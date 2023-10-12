@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/evs/v2/model/DeleteVolumeResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Evs {
@@ -33,7 +32,6 @@ web::json::value DeleteVolumeResponse::toJson() const
 
     return val;
 }
-
 bool DeleteVolumeResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool DeleteVolumeResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DeleteVolumeResponse::getJobId() const
 {

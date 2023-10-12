@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/codeartsdeploy/v2/model/DeleteApplicationRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsdeploy {
@@ -33,7 +32,6 @@ web::json::value DeleteApplicationRequest::toJson() const
 
     return val;
 }
-
 bool DeleteApplicationRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool DeleteApplicationRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DeleteApplicationRequest::getAppId() const
 {

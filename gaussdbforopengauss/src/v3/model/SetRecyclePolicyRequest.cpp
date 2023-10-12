@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/SetRecyclePolicyRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -32,7 +31,6 @@ web::json::value SetRecyclePolicyRequest::toJson() const
 
     return val;
 }
-
 bool SetRecyclePolicyRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool SetRecyclePolicyRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 RecyclePolicyRequestBody SetRecyclePolicyRequest::getBody() const
 {

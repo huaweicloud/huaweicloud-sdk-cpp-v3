@@ -2,9 +2,11 @@
 #ifndef HUAWEICLOUD_SDK_CDN_V1_MODEL_CreateDomainResponseBodyContent_H_
 #define HUAWEICLOUD_SDK_CDN_V1_MODEL_CreateDomainResponseBodyContent_H_
 
+
 #include <huaweicloud/cdn/v1/CdnExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/cdn/v1/model/Sources.h>
@@ -34,10 +36,8 @@ public:
     /// ModelBase overrides
 
     void validate() override;
-
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
-
     /////////////////////////////////////////////
     /// CreateDomainResponseBodyContent members
 

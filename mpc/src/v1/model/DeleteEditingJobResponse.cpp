@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/DeleteEditingJobResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -28,13 +27,13 @@ web::json::value DeleteEditingJobResponse::toJson() const
 
     return val;
 }
-
 bool DeleteEditingJobResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 }
 }

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/ThumbnailInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -46,7 +45,6 @@ web::json::value ThumbnailInfo::toJson() const
 
     return val;
 }
-
 bool ThumbnailInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -89,6 +87,7 @@ bool ThumbnailInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<ThumbnailRsp>& ThumbnailInfo::getSample()
 {

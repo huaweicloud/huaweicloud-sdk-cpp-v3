@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/SmartDocumentRecognizerKvResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -37,7 +36,6 @@ web::json::value SmartDocumentRecognizerKvResult::toJson() const
 
     return val;
 }
-
 bool SmartDocumentRecognizerKvResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool SmartDocumentRecognizerKvResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t SmartDocumentRecognizerKvResult::getKvBlockCount() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v1/model/ShowDomainResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -37,7 +36,6 @@ web::json::value ShowDomainResponse::toJson() const
 
     return val;
 }
-
 bool ShowDomainResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ShowDomainResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 double ShowDomainResponse::getTotal() const
 {

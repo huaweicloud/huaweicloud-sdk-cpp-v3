@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/TranscodeDetail.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -36,7 +35,6 @@ web::json::value TranscodeDetail::toJson() const
 
     return val;
 }
-
 bool TranscodeDetail::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -61,6 +59,7 @@ bool TranscodeDetail::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<MultiTaskInfo>& TranscodeDetail::getMultitaskInfo()
 {

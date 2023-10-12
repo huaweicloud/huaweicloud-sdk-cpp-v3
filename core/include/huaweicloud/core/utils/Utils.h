@@ -22,7 +22,6 @@
 #include <string>
 #include <ctime>
 #include <locale>
-#include <codecvt>
 #include <cpprest/http_client.h>
 #include <cctype>
 #include <iomanip>
@@ -40,7 +39,7 @@ HUAWEICLOUD_CORE_EXPORT std::string uriEncode(std::string &str, bool path = fals
 unsigned char toHex(unsigned char x);
 std::string dealSwUsual(char ch, std::string encodedStr);
 std::string dealSwQuotedSecond(char ch, std::string encodedStr, char decoded);
-HUAWEICLOUD_CORE_EXPORT std::string getContentType(const std::string &contentType, bool &isJson, bool &isMultiPart);
+HUAWEICLOUD_CORE_EXPORT std::string getContentType(const std::string &contentType, bool &isJson, bool &isMultiPart, bool &isBson);
 }
 }
 }

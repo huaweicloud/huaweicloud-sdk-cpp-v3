@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v2/model/CreatePrePaidPublicipRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -32,7 +31,6 @@ web::json::value CreatePrePaidPublicipRequest::toJson() const
 
     return val;
 }
-
 bool CreatePrePaidPublicipRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CreatePrePaidPublicipRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 CreatePrePaidPublicipRequestBody CreatePrePaidPublicipRequest::getBody() const
 {

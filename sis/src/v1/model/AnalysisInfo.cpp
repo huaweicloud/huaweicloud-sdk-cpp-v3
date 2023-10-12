@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sis/v1/model/AnalysisInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sis {
@@ -48,7 +47,6 @@ web::json::value AnalysisInfo::toJson() const
 
     return val;
 }
-
 bool AnalysisInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool AnalysisInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool AnalysisInfo::isDiarization() const
 {

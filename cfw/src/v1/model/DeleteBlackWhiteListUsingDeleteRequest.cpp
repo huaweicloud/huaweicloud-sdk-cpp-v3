@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/DeleteBlackWhiteListUsingDeleteRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -43,7 +42,6 @@ web::json::value DeleteBlackWhiteListUsingDeleteRequest::toJson() const
 
     return val;
 }
-
 bool DeleteBlackWhiteListUsingDeleteRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool DeleteBlackWhiteListUsingDeleteRequest::fromJson(const web::json::value& va
     }
     return ok;
 }
+
 
 std::string DeleteBlackWhiteListUsingDeleteRequest::getListId() const
 {

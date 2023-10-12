@@ -2,9 +2,11 @@
 #ifndef HUAWEICLOUD_SDK_LTS_V2_MODEL_TopnRequstBody_H_
 #define HUAWEICLOUD_SDK_LTS_V2_MODEL_TopnRequstBody_H_
 
+
 #include <huaweicloud/lts/v2/LtsExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
@@ -33,10 +35,8 @@ public:
     /// ModelBase overrides
 
     void validate() override;
-
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
-
     /////////////////////////////////////////////
     /// TopnRequstBody members
 
@@ -68,7 +68,7 @@ public:
     void setResourceType(const std::string& value);
 
     /// <summary>
-    /// 排序依据，index/write/storage，必须是search_list中存在的数据
+    /// 排序依据，index/write/storage/basicTransfer/seniorTransfer，必须是search_list中存在的数据
     /// </summary>
 
     std::string getSortBy() const;
@@ -104,7 +104,7 @@ public:
     void setFilter(const std::map<std::string, std::string>& value);
 
     /// <summary>
-    /// 查询数据类型，字符串数组可多种搭配，只能在index/write/storage中选填
+    /// 查询数据类型，字符串数组可多种搭配，只能在index/write/storage/basicTransfer/seniorTransfer中选填
     /// </summary>
 
     std::vector<std::string>& getSearchList();

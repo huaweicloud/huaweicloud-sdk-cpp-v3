@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/ChangeAlarmRuleStatus.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -43,7 +42,6 @@ web::json::value ChangeAlarmRuleStatus::toJson() const
 
     return val;
 }
-
 bool ChangeAlarmRuleStatus::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool ChangeAlarmRuleStatus::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ChangeAlarmRuleStatus::getAlarmRuleId() const
 {

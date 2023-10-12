@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/DurationStrategies.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -38,7 +37,6 @@ web::json::value DurationStrategies::toJson() const
 
     return val;
 }
-
 bool DurationStrategies::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool DurationStrategies::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DurationStrategies::getStrategy() const
 {

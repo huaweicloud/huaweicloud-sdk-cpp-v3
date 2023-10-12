@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v1/model/StreamForbiddenSetting.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -48,7 +47,6 @@ web::json::value StreamForbiddenSetting::toJson() const
 
     return val;
 }
-
 bool StreamForbiddenSetting::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool StreamForbiddenSetting::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string StreamForbiddenSetting::getDomain() const
 {

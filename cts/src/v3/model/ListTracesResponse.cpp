@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cts/v3/model/ListTracesResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cts {
@@ -36,7 +35,6 @@ web::json::value ListTracesResponse::toJson() const
 
     return val;
 }
-
 bool ListTracesResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -61,6 +59,7 @@ bool ListTracesResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<Traces>& ListTracesResponse::getTraces()
 {

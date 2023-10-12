@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/ListResizeFlavorsResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -100,7 +99,6 @@ web::json::value ListResizeFlavorsResult::toJson() const
 
     return val;
 }
-
 bool ListResizeFlavorsResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -242,6 +240,7 @@ bool ListResizeFlavorsResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListResizeFlavorsResult::getId() const
 {

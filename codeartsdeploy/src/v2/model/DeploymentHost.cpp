@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/codeartsdeploy/v2/model/DeploymentHost.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsdeploy {
@@ -67,7 +66,6 @@ web::json::value DeploymentHost::toJson() const
 
     return val;
 }
-
 bool DeploymentHost::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -146,6 +144,7 @@ bool DeploymentHost::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DeploymentHost::getHostName() const
 {

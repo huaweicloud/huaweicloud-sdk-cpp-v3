@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/UpdateStartPositionResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -32,7 +31,6 @@ web::json::value UpdateStartPositionResponse::toJson() const
 
     return val;
 }
-
 bool UpdateStartPositionResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool UpdateStartPositionResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 Object UpdateStartPositionResponse::getBody() const
 {

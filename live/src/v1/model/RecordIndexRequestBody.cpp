@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v1/model/RecordIndexRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -58,7 +57,6 @@ web::json::value RecordIndexRequestBody::toJson() const
 
     return val;
 }
-
 bool RecordIndexRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool RecordIndexRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string RecordIndexRequestBody::getPublishDomain() const
 {

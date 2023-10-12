@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/NeutronRemoveRouterInterfaceRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -37,7 +36,6 @@ web::json::value NeutronRemoveRouterInterfaceRequest::toJson() const
 
     return val;
 }
-
 bool NeutronRemoveRouterInterfaceRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool NeutronRemoveRouterInterfaceRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string NeutronRemoveRouterInterfaceRequest::getRouterId() const
 {

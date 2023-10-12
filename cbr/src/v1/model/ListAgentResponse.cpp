@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/ListAgentResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -47,7 +46,6 @@ web::json::value ListAgentResponse::toJson() const
 
     return val;
 }
-
 bool ListAgentResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -90,6 +88,7 @@ bool ListAgentResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<Agent>& ListAgentResponse::getAgents()
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/JobActions.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -41,7 +40,6 @@ web::json::value JobActions::toJson() const
 
     return val;
 }
-
 bool JobActions::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -75,6 +73,7 @@ bool JobActions::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<std::string>& JobActions::getAvailableActions()
 {

@@ -1,5 +1,5 @@
 #include <huaweicloud/live/v2/LiveClient.h>
-#include <huaweicloud/core/utils/MultipartFormData.h>
+#include <huaweicloud/live/v2/LiveMeta.h>
 
 #include <unordered_set>
 
@@ -40,13 +40,13 @@ std::shared_ptr<ListAreaDetailResponse> LiveClient::listAreaDetail(ListAreaDetai
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["project_id"] = parameterToString(request.getProjectId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.startTimeIsSet()) {
@@ -82,15 +82,10 @@ std::shared_ptr<ListAreaDetailResponse> LiveClient::listAreaDetail(ListAreaDetai
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForListAreaDetail());
 
     std::shared_ptr<ListAreaDetailResponse> localVarResult = std::make_shared<ListAreaDetailResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -105,13 +100,13 @@ std::shared_ptr<ListBandwidthDetailResponse> LiveClient::listBandwidthDetail(Lis
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["project_id"] = parameterToString(request.getProjectId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.playDomainsIsSet()) {
@@ -150,15 +145,10 @@ std::shared_ptr<ListBandwidthDetailResponse> LiveClient::listBandwidthDetail(Lis
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForListBandwidthDetail());
 
     std::shared_ptr<ListBandwidthDetailResponse> localVarResult = std::make_shared<ListBandwidthDetailResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -173,13 +163,13 @@ std::shared_ptr<ListDomainBandwidthPeakResponse> LiveClient::listDomainBandwidth
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["project_id"] = parameterToString(request.getProjectId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.playDomainsIsSet()) {
@@ -212,15 +202,10 @@ std::shared_ptr<ListDomainBandwidthPeakResponse> LiveClient::listDomainBandwidth
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForListDomainBandwidthPeak());
 
     std::shared_ptr<ListDomainBandwidthPeakResponse> localVarResult = std::make_shared<ListDomainBandwidthPeakResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -235,13 +220,13 @@ std::shared_ptr<ListDomainTrafficDetailResponse> LiveClient::listDomainTrafficDe
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["project_id"] = parameterToString(request.getProjectId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.playDomainsIsSet()) {
@@ -277,15 +262,10 @@ std::shared_ptr<ListDomainTrafficDetailResponse> LiveClient::listDomainTrafficDe
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForListDomainTrafficDetail());
 
     std::shared_ptr<ListDomainTrafficDetailResponse> localVarResult = std::make_shared<ListDomainTrafficDetailResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -300,13 +280,13 @@ std::shared_ptr<ListDomainTrafficSummaryResponse> LiveClient::listDomainTrafficS
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["project_id"] = parameterToString(request.getProjectId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.playDomainsIsSet()) {
@@ -339,15 +319,10 @@ std::shared_ptr<ListDomainTrafficSummaryResponse> LiveClient::listDomainTrafficS
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForListDomainTrafficSummary());
 
     std::shared_ptr<ListDomainTrafficSummaryResponse> localVarResult = std::make_shared<ListDomainTrafficSummaryResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -362,13 +337,13 @@ std::shared_ptr<ListHistoryStreamsResponse> LiveClient::listHistoryStreams(ListH
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["project_id"] = parameterToString(request.getProjectId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.domainIsSet()) {
@@ -395,15 +370,10 @@ std::shared_ptr<ListHistoryStreamsResponse> LiveClient::listHistoryStreams(ListH
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForListHistoryStreams());
 
     std::shared_ptr<ListHistoryStreamsResponse> localVarResult = std::make_shared<ListHistoryStreamsResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -418,13 +388,13 @@ std::shared_ptr<ListQueryHttpCodeResponse> LiveClient::listQueryHttpCode(ListQue
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["project_id"] = parameterToString(request.getProjectId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.playDomainsIsSet()) {
@@ -448,15 +418,10 @@ std::shared_ptr<ListQueryHttpCodeResponse> LiveClient::listQueryHttpCode(ListQue
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForListQueryHttpCode());
 
     std::shared_ptr<ListQueryHttpCodeResponse> localVarResult = std::make_shared<ListQueryHttpCodeResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -471,13 +436,13 @@ std::shared_ptr<ListRecordDataResponse> LiveClient::listRecordData(ListRecordDat
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["project_id"] = parameterToString(request.getProjectId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.publishDomainIsSet()) {
@@ -492,15 +457,10 @@ std::shared_ptr<ListRecordDataResponse> LiveClient::listRecordData(ListRecordDat
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForListRecordData());
 
     std::shared_ptr<ListRecordDataResponse> localVarResult = std::make_shared<ListRecordDataResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -515,13 +475,13 @@ std::shared_ptr<ListSnapshotDataResponse> LiveClient::listSnapshotData(ListSnaps
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["project_id"] = parameterToString(request.getProjectId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.publishDomainIsSet()) {
@@ -536,15 +496,10 @@ std::shared_ptr<ListSnapshotDataResponse> LiveClient::listSnapshotData(ListSnaps
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForListSnapshotData());
 
     std::shared_ptr<ListSnapshotDataResponse> localVarResult = std::make_shared<ListSnapshotDataResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -559,13 +514,13 @@ std::shared_ptr<ListTranscodeDataResponse> LiveClient::listTranscodeData(ListTra
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["project_id"] = parameterToString(request.getProjectId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.publishDomainIsSet()) {
@@ -583,15 +538,10 @@ std::shared_ptr<ListTranscodeDataResponse> LiveClient::listTranscodeData(ListTra
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForListTranscodeData());
 
     std::shared_ptr<ListTranscodeDataResponse> localVarResult = std::make_shared<ListTranscodeDataResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -606,13 +556,13 @@ std::shared_ptr<ListUsersOfStreamResponse> LiveClient::listUsersOfStream(ListUse
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["project_id"] = parameterToString(request.getProjectId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.playDomainIsSet()) {
@@ -651,15 +601,10 @@ std::shared_ptr<ListUsersOfStreamResponse> LiveClient::listUsersOfStream(ListUse
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForListUsersOfStream());
 
     std::shared_ptr<ListUsersOfStreamResponse> localVarResult = std::make_shared<ListUsersOfStreamResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -674,13 +619,13 @@ std::shared_ptr<ShowStreamCountResponse> LiveClient::showStreamCount(ShowStreamC
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["project_id"] = parameterToString(request.getProjectId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.publishDomainsIsSet()) {
@@ -695,15 +640,10 @@ std::shared_ptr<ShowStreamCountResponse> LiveClient::showStreamCount(ShowStreamC
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForShowStreamCount());
 
     std::shared_ptr<ShowStreamCountResponse> localVarResult = std::make_shared<ShowStreamCountResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -718,13 +658,13 @@ std::shared_ptr<ShowStreamPortraitResponse> LiveClient::showStreamPortrait(ShowS
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["project_id"] = parameterToString(request.getProjectId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.playDomainIsSet()) {
@@ -739,15 +679,10 @@ std::shared_ptr<ShowStreamPortraitResponse> LiveClient::showStreamPortrait(ShowS
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForShowStreamPortrait());
 
     std::shared_ptr<ShowStreamPortraitResponse> localVarResult = std::make_shared<ShowStreamPortraitResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -762,13 +697,13 @@ std::shared_ptr<ShowUpBandwidthResponse> LiveClient::showUpBandwidth(ShowUpBandw
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["project_id"] = parameterToString(request.getProjectId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.publishDomainsIsSet()) {
@@ -801,15 +736,10 @@ std::shared_ptr<ShowUpBandwidthResponse> LiveClient::showUpBandwidth(ShowUpBandw
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForShowUpBandwidth());
 
     std::shared_ptr<ShowUpBandwidthResponse> localVarResult = std::make_shared<ShowUpBandwidthResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -824,13 +754,13 @@ std::shared_ptr<ListSingleStreamBitrateResponse> LiveClient::listSingleStreamBit
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["project_id"] = parameterToString(request.getProjectId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.domainIsSet()) {
@@ -851,15 +781,10 @@ std::shared_ptr<ListSingleStreamBitrateResponse> LiveClient::listSingleStreamBit
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForListSingleStreamBitrate());
 
     std::shared_ptr<ListSingleStreamBitrateResponse> localVarResult = std::make_shared<ListSingleStreamBitrateResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -874,13 +799,13 @@ std::shared_ptr<ListSingleStreamDetailResponse> LiveClient::listSingleStreamDeta
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["project_id"] = parameterToString(request.getProjectId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.publishDomainIsSet()) {
@@ -901,15 +826,10 @@ std::shared_ptr<ListSingleStreamDetailResponse> LiveClient::listSingleStreamDeta
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForListSingleStreamDetail());
 
     std::shared_ptr<ListSingleStreamDetailResponse> localVarResult = std::make_shared<ListSingleStreamDetailResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -924,13 +844,13 @@ std::shared_ptr<ListSingleStreamFramerateResponse> LiveClient::listSingleStreamF
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["project_id"] = parameterToString(request.getProjectId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.domainIsSet()) {
@@ -951,15 +871,10 @@ std::shared_ptr<ListSingleStreamFramerateResponse> LiveClient::listSingleStreamF
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForListSingleStreamFramerate());
 
     std::shared_ptr<ListSingleStreamFramerateResponse> localVarResult = std::make_shared<ListSingleStreamFramerateResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -974,13 +889,13 @@ std::shared_ptr<ListUpStreamDetailResponse> LiveClient::listUpStreamDetail(ListU
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["project_id"] = parameterToString(request.getProjectId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.publishDomainIsSet()) {
@@ -1001,15 +916,10 @@ std::shared_ptr<ListUpStreamDetailResponse> LiveClient::listUpStreamDetail(ListU
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForListUpStreamDetail());
 
     std::shared_ptr<ListUpStreamDetailResponse> localVarResult = std::make_shared<ListUpStreamDetailResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

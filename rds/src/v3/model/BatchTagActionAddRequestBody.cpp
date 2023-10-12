@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/BatchTagActionAddRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -37,7 +36,6 @@ web::json::value BatchTagActionAddRequestBody::toJson() const
 
     return val;
 }
-
 bool BatchTagActionAddRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool BatchTagActionAddRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string BatchTagActionAddRequestBody::getAction() const
 {

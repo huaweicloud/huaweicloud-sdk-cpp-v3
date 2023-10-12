@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/ReplicationRecordGet.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -97,7 +96,6 @@ web::json::value ReplicationRecordGet::toJson() const
 
     return val;
 }
-
 bool ReplicationRecordGet::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -230,6 +228,7 @@ bool ReplicationRecordGet::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ReplicationRecordGet::getCreatedAt() const
 {

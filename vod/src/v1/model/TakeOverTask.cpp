@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/TakeOverTask.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -87,7 +86,6 @@ web::json::value TakeOverTask::toJson() const
 
     return val;
 }
-
 bool TakeOverTask::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -202,6 +200,7 @@ bool TakeOverTask::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string TakeOverTask::getBucket() const
 {

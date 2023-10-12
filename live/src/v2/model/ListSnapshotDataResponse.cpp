@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v2/model/ListSnapshotDataResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -42,7 +41,6 @@ web::json::value ListSnapshotDataResponse::toJson() const
 
     return val;
 }
-
 bool ListSnapshotDataResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool ListSnapshotDataResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<SnapshotData>& ListSnapshotDataResponse::getSnapshotList()
 {

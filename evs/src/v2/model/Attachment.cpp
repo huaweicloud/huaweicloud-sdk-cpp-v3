@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/evs/v2/model/Attachment.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Evs {
@@ -63,7 +62,6 @@ web::json::value Attachment::toJson() const
 
     return val;
 }
-
 bool Attachment::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -133,6 +131,7 @@ bool Attachment::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string Attachment::getAttachedAt() const
 {

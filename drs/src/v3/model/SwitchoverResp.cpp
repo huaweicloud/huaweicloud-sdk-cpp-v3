@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/SwitchoverResp.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -66,7 +65,6 @@ web::json::value SwitchoverResp::toJson() const
 
     return val;
 }
-
 bool SwitchoverResp::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -145,6 +143,7 @@ bool SwitchoverResp::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string SwitchoverResp::getJobId() const
 {

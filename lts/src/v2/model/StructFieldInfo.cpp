@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/StructFieldInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -58,7 +57,6 @@ web::json::value StructFieldInfo::toJson() const
 
     return val;
 }
-
 bool StructFieldInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool StructFieldInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool StructFieldInfo::isIsAnalysis() const
 {

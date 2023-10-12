@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/ShowErrorLogRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -63,7 +62,6 @@ web::json::value ShowErrorLogRequest::toJson() const
 
     return val;
 }
-
 bool ShowErrorLogRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -133,6 +131,7 @@ bool ShowErrorLogRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowErrorLogRequest::getInstanceId() const
 {

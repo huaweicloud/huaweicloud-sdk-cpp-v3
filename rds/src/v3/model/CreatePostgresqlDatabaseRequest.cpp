@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/CreatePostgresqlDatabaseRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -42,7 +41,6 @@ web::json::value CreatePostgresqlDatabaseRequest::toJson() const
 
     return val;
 }
-
 bool CreatePostgresqlDatabaseRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool CreatePostgresqlDatabaseRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreatePostgresqlDatabaseRequest::getXLanguage() const
 {

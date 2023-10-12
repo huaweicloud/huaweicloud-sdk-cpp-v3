@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/evs/v2/model/Iops.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Evs {
@@ -43,7 +42,6 @@ web::json::value Iops::toJson() const
 
     return val;
 }
-
 bool Iops::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool Iops::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool Iops::isFrozened() const
 {

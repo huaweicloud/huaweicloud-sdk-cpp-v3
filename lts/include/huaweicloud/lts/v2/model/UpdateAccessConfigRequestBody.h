@@ -2,16 +2,18 @@
 #ifndef HUAWEICLOUD_SDK_LTS_V2_MODEL_UpdateAccessConfigRequestBody_H_
 #define HUAWEICLOUD_SDK_LTS_V2_MODEL_UpdateAccessConfigRequestBody_H_
 
+
 #include <huaweicloud/lts/v2/LtsExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/lts/v2/model/AccessConfigHostGroupIdList.h>
-#include <huaweicloud/lts/v2/model/AccessConfigDeatilCreate.h>
 #include <string>
 #include <huaweicloud/lts/v2/model/AccessConfigTag.h>
 #include <vector>
+#include <huaweicloud/lts/v2/model/AccessConfigDeatilUpdate.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -35,10 +37,8 @@ public:
     /// ModelBase overrides
 
     void validate() override;
-
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
-
     /////////////////////////////////////////////
     /// UpdateAccessConfigRequestBody members
 
@@ -55,10 +55,10 @@ public:
     /// 
     /// </summary>
 
-    AccessConfigDeatilCreate getAccessConfigDetail() const;
+    AccessConfigDeatilUpdate getAccessConfigDetail() const;
     bool accessConfigDetailIsSet() const;
     void unsetaccessConfigDetail();
-    void setAccessConfigDetail(const AccessConfigDeatilCreate& value);
+    void setAccessConfigDetail(const AccessConfigDeatilUpdate& value);
 
     /// <summary>
     /// 
@@ -109,7 +109,7 @@ public:
 protected:
     std::string accessConfigId_;
     bool accessConfigIdIsSet_;
-    AccessConfigDeatilCreate accessConfigDetail_;
+    AccessConfigDeatilUpdate accessConfigDetail_;
     bool accessConfigDetailIsSet_;
     AccessConfigHostGroupIdList hostGroupInfo_;
     bool hostGroupInfoIsSet_;

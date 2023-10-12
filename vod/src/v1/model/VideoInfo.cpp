@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/VideoInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -53,7 +52,6 @@ web::json::value VideoInfo::toJson() const
 
     return val;
 }
-
 bool VideoInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool VideoInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string VideoInfo::getQuality() const
 {

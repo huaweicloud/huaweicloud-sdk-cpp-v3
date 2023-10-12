@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/StopJobActionResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -53,7 +52,6 @@ web::json::value StopJobActionResponse::toJson() const
 
     return val;
 }
-
 bool StopJobActionResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool StopJobActionResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string StopJobActionResponse::getErrorCode() const
 {

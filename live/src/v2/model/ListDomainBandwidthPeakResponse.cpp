@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v2/model/ListDomainBandwidthPeakResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -37,7 +36,6 @@ web::json::value ListDomainBandwidthPeakResponse::toJson() const
 
     return val;
 }
-
 bool ListDomainBandwidthPeakResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ListDomainBandwidthPeakResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<PeakBandwidthData>& ListDomainBandwidthPeakResponse::getBandwidthList()
 {

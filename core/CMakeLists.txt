@@ -22,20 +22,40 @@ else()
     find_package(Boost REQUIRED COMPONENTS filesystem thread system regex date_time program_options)
 endif()
 
-file(GLOB source_file  "src/*.cpp" "src/auth/*.cpp" "src/http/*.cpp" "src/utils/*.cpp" "src/exception/*.cpp")
+if(ENABLE_BSON)
+    file(GLOB source_file "src/*.cpp" "src/auth/*.cpp" "src/http/*.cpp" "src/utils/*.cpp" "src/exception/*.cpp" "src/bson/*.cpp" "src/bson/impl/*.cpp")
+    file(GLOB core_bson_header ${CMAKE_CURRENT_SOURCE_DIR}/include/huaweicloud/core/bson/*.h)
+    file(GLOB core_bson_impl_header ${CMAKE_CURRENT_SOURCE_DIR}/include/huaweicloud/core/bson/impl/*.h)
+else()
+    file(GLOB source_file "src/*.cpp" "src/auth/*.cpp" "src/http/*.cpp" "src/utils/*.cpp" "src/exception/*.cpp")
+endif ()
 file(GLOB core_header ${CMAKE_CURRENT_SOURCE_DIR}/include/huaweicloud/core/*.h)
 file(GLOB core_auth_header ${CMAKE_CURRENT_SOURCE_DIR}/include/huaweicloud/core/auth/*.h)
 file(GLOB core_exception_header ${CMAKE_CURRENT_SOURCE_DIR}/include/huaweicloud/core/exception/*.h)
 file(GLOB core_http_header ${CMAKE_CURRENT_SOURCE_DIR}/include/huaweicloud/core/http/*.h)
 file(GLOB core_utils_header ${CMAKE_CURRENT_SOURCE_DIR}/include/huaweicloud/core/utils/*.h)
 
-add_library(core ${LIB_TYPE}
-        ${source_file}
-        ${core_header}
-        ${core_auth_header}
-        ${core_exception_header}
-        ${core_http_header}
-        ${core_utils_header})
+if(ENABLE_BSON)
+    add_library(core ${LIB_TYPE}
+            ${source_file}
+            ${core_header}
+            ${core_auth_header}
+            ${core_exception_header}
+            ${core_http_header}
+            ${core_utils_header}
+            ${core_bson_header}
+            ${core_bson_impl_header}
+            )
+else()
+    add_library(core ${LIB_TYPE}
+            ${source_file}
+            ${core_header}
+            ${core_auth_header}
+            ${core_exception_header}
+            ${core_http_header}
+            ${core_utils_header}
+            )
+endif()
 
 set_target_properties(core
         PROPERTIES
@@ -50,6 +70,17 @@ if(${LIB_TYPE} STREQUAL "SHARED")
     set_target_properties(core
             PROPERTIES
             DEFINE_SYMBOL HUAWEICLOUD_CORE_SHARED)
+endif()
+
+if(ENABLE_BSON)
+    if(NOT LIBBSON_DIR)
+        message(FATAL_ERROR "Please manual set variable LIBBSON_DIR for search libbson root dir")
+    endif()
+    set(LIBBSON_LIBRARY_DIR ${LIBBSON_DIR}/lib)
+    set(LIBBSON_INCLUDE_DIR ${LIBBSON_DIR}/include/libbson-1.0)
+    target_include_directories(core PUBLIC ${LIBBSON_INCLUDE_DIR})
+    target_link_libraries(core PUBLIC bson-1.0)
+    target_link_directories(core PUBLIC ${LIBBSON_LIBRARY_DIR})
 endif()
 
 target_include_directories(core PUBLIC
@@ -91,3 +122,9 @@ install(TARGETS core
         LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
         RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
         )
+if(ENABLE_BSON)
+install(FILES ${core_bson_header}
+        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/huaweicloud/core/bson)
+install(FILES ${core_bson_impl_header}
+        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/huaweicloud/core/bson/impl)
+endif()

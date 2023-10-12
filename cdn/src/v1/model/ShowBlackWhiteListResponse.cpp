@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/ShowBlackWhiteListResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -37,7 +36,6 @@ web::json::value ShowBlackWhiteListResponse::toJson() const
 
     return val;
 }
-
 bool ShowBlackWhiteListResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ShowBlackWhiteListResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ShowBlackWhiteListResponse::getType() const
 {

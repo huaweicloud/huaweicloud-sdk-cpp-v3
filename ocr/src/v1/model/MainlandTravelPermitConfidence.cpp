@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/MainlandTravelPermitConfidence.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -108,7 +107,6 @@ web::json::value MainlandTravelPermitConfidence::toJson() const
 
     return val;
 }
-
 bool MainlandTravelPermitConfidence::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -259,6 +257,7 @@ bool MainlandTravelPermitConfidence::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 float MainlandTravelPermitConfidence::getName() const
 {

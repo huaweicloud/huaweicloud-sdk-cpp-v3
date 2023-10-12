@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/CreateCompareTaskReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -42,7 +41,6 @@ web::json::value CreateCompareTaskReq::toJson() const
 
     return val;
 }
-
 bool CreateCompareTaskReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool CreateCompareTaskReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateCompareTaskReq::getJobId() const
 {

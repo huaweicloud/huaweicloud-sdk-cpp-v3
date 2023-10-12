@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/smn/v2/model/DeleteApplicationEndpointResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Smn {
@@ -33,7 +32,6 @@ web::json::value DeleteApplicationEndpointResponse::toJson() const
 
     return val;
 }
-
 bool DeleteApplicationEndpointResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool DeleteApplicationEndpointResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DeleteApplicationEndpointResponse::getRequestId() const
 {

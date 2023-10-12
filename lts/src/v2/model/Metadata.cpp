@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/Metadata.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -68,7 +67,6 @@ web::json::value Metadata::toJson() const
 
     return val;
 }
-
 bool Metadata::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -147,6 +145,7 @@ bool Metadata::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string Metadata::getEventType() const
 {

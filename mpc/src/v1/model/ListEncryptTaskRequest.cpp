@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/ListEncryptTaskRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -57,7 +56,6 @@ web::json::value ListEncryptTaskRequest::toJson() const
 
     return val;
 }
-
 bool ListEncryptTaskRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -118,6 +116,7 @@ bool ListEncryptTaskRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<std::string>& ListEncryptTaskRequest::getTaskId()
 {

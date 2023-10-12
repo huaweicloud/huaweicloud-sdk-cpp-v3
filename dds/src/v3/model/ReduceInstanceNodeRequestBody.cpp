@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/ReduceInstanceNodeRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -37,7 +36,6 @@ web::json::value ReduceInstanceNodeRequestBody::toJson() const
 
     return val;
 }
-
 bool ReduceInstanceNodeRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ReduceInstanceNodeRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ReduceInstanceNodeRequestBody::getNum() const
 {

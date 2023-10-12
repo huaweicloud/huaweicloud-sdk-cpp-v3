@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ivs/v2/model/DetectStandardByVideoAndIdCardImageRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ivs {
@@ -37,7 +36,6 @@ web::json::value DetectStandardByVideoAndIdCardImageRequest::toJson() const
 
     return val;
 }
-
 bool DetectStandardByVideoAndIdCardImageRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool DetectStandardByVideoAndIdCardImageRequest::fromJson(const web::json::value
     }
     return ok;
 }
+
 
 std::string DetectStandardByVideoAndIdCardImageRequest::getEnterpriseProjectId() const
 {

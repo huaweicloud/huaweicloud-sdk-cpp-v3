@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/evs/v2/model/ListSnapshotsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Evs {
@@ -41,7 +40,6 @@ web::json::value ListSnapshotsResponse::toJson() const
 
     return val;
 }
-
 bool ListSnapshotsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -75,6 +73,7 @@ bool ListSnapshotsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ListSnapshotsResponse::getCount() const
 {

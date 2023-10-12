@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/TagResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -38,7 +37,6 @@ web::json::value TagResult::toJson() const
 
     return val;
 }
-
 bool TagResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool TagResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string TagResult::getKey() const
 {

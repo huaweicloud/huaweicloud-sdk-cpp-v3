@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v1/model/DefaultRecordConfig.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -48,7 +47,6 @@ web::json::value DefaultRecordConfig::toJson() const
 
     return val;
 }
-
 bool DefaultRecordConfig::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -100,6 +98,7 @@ bool DefaultRecordConfig::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<VideoFormatVar>& DefaultRecordConfig::getRecordFormat()
 {

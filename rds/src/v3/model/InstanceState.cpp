@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/InstanceState.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -38,7 +37,6 @@ web::json::value InstanceState::toJson() const
 
     return val;
 }
-
 bool InstanceState::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool InstanceState::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string InstanceState::getStatus() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/VaultOrder.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -88,7 +87,6 @@ web::json::value VaultOrder::toJson() const
 
     return val;
 }
-
 bool VaultOrder::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -212,6 +210,7 @@ bool VaultOrder::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string VaultOrder::getName() const
 {

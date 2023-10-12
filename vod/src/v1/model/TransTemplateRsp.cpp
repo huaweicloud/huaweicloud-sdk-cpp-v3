@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/TransTemplateRsp.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -70,7 +69,6 @@ web::json::value TransTemplateRsp::toJson() const
 
     return val;
 }
-
 bool TransTemplateRsp::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -158,6 +156,7 @@ bool TransTemplateRsp::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string TransTemplateRsp::getGroupId() const
 {

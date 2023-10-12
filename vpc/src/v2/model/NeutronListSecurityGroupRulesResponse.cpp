@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/NeutronListSecurityGroupRulesResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -36,7 +35,6 @@ web::json::value NeutronListSecurityGroupRulesResponse::toJson() const
 
     return val;
 }
-
 bool NeutronListSecurityGroupRulesResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -61,6 +59,7 @@ bool NeutronListSecurityGroupRulesResponse::fromJson(const web::json::value& val
     }
     return ok;
 }
+
 
 std::vector<NeutronSecurityGroupRule>& NeutronListSecurityGroupRulesResponse::getSecurityGroupRules()
 {

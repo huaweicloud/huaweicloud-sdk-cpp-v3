@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v2/model/BatchCopyErrorRsp.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -32,7 +31,6 @@ web::json::value BatchCopyErrorRsp::toJson() const
 
     return val;
 }
-
 bool BatchCopyErrorRsp::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool BatchCopyErrorRsp::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 BatchCopyErrorRsp_error BatchCopyErrorRsp::getError() const
 {

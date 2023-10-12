@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/ListTasksRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -63,7 +62,6 @@ web::json::value ListTasksRequest::toJson() const
 
     return val;
 }
-
 bool ListTasksRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -133,6 +131,7 @@ bool ListTasksRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListTasksRequest::getXLanguage() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v1/model/ListRecordCallbackConfigsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -37,7 +36,6 @@ web::json::value ListRecordCallbackConfigsResponse::toJson() const
 
     return val;
 }
-
 bool ListRecordCallbackConfigsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ListRecordCallbackConfigsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ListRecordCallbackConfigsResponse::getTotal() const
 {

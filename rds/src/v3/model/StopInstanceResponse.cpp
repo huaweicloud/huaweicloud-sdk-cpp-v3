@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/StopInstanceResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -33,7 +32,6 @@ web::json::value StopInstanceResponse::toJson() const
 
     return val;
 }
-
 bool StopInstanceResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool StopInstanceResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string StopInstanceResponse::getJobId() const
 {

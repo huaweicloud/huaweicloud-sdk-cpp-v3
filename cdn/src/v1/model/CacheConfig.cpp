@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/CacheConfig.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -46,7 +45,6 @@ web::json::value CacheConfig::toJson() const
 
     return val;
 }
-
 bool CacheConfig::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -89,6 +87,7 @@ bool CacheConfig::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool CacheConfig::isIgnoreUrlParameter() const
 {

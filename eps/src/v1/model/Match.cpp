@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eps/v1/model/Match.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eps {
@@ -38,7 +37,6 @@ web::json::value Match::toJson() const
 
     return val;
 }
-
 bool Match::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool Match::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string Match::getKey() const
 {

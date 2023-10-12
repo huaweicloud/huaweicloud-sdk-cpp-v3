@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/ListInstancesByResourceTagsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -32,7 +31,6 @@ web::json::value ListInstancesByResourceTagsRequest::toJson() const
 
     return val;
 }
-
 bool ListInstancesByResourceTagsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ListInstancesByResourceTagsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 ListInstancesByTagsRequestBody ListInstancesByResourceTagsRequest::getBody() const
 {

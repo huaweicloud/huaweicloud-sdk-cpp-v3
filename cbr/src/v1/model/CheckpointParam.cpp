@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/CheckpointParam.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -61,7 +60,6 @@ web::json::value CheckpointParam::toJson() const
 
     return val;
 }
-
 bool CheckpointParam::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -131,6 +129,7 @@ bool CheckpointParam::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool CheckpointParam::isAutoTrigger() const
 {

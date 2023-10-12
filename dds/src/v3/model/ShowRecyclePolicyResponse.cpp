@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/ShowRecyclePolicyResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -32,7 +31,6 @@ web::json::value ShowRecyclePolicyResponse::toJson() const
 
     return val;
 }
-
 bool ShowRecyclePolicyResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ShowRecyclePolicyResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 RecyclePolicy ShowRecyclePolicyResponse::getRecyclePolicy() const
 {

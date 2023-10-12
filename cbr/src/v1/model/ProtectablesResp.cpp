@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/ProtectablesResp.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -65,7 +64,6 @@ web::json::value ProtectablesResp::toJson() const
 
     return val;
 }
-
 bool ProtectablesResp::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -144,6 +142,7 @@ bool ProtectablesResp::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<Object>& ProtectablesResp::getChildren()
 {

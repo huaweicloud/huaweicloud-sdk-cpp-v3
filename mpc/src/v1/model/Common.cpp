@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/Common.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -48,7 +47,6 @@ web::json::value Common::toJson() const
 
     return val;
 }
-
 bool Common::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool Common::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool Common::isPvc() const
 {

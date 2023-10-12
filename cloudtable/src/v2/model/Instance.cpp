@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cloudtable/v2/model/Instance.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cloudtable {
@@ -52,7 +51,6 @@ web::json::value Instance::toJson() const
 
     return val;
 }
-
 bool Instance::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -104,6 +102,7 @@ bool Instance::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string Instance::getAvailabilityZone() const
 {

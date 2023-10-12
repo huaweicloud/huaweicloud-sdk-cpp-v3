@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/codeartsdeploy/v2/model/CreateAppRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsdeploy {
@@ -32,7 +31,6 @@ web::json::value CreateAppRequest::toJson() const
 
     return val;
 }
-
 bool CreateAppRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CreateAppRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 CreateAppRequestBody CreateAppRequest::getBody() const
 {

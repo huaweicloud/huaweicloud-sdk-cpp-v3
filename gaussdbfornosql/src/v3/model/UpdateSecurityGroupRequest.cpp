@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/UpdateSecurityGroupRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -37,7 +36,6 @@ web::json::value UpdateSecurityGroupRequest::toJson() const
 
     return val;
 }
-
 bool UpdateSecurityGroupRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool UpdateSecurityGroupRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateSecurityGroupRequest::getInstanceId() const
 {

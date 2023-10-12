@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/PostPaidServer.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -133,7 +132,6 @@ web::json::value PostPaidServer::toJson() const
 
     return val;
 }
-
 bool PostPaidServer::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -347,6 +345,7 @@ bool PostPaidServer::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string PostPaidServer::getAutoTerminateTime() const
 {

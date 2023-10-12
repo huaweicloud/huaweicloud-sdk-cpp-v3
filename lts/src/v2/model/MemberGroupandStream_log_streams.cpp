@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/MemberGroupandStream_log_streams.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -38,7 +37,6 @@ web::json::value MemberGroupandStream_log_streams::toJson() const
 
     return val;
 }
-
 bool MemberGroupandStream_log_streams::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool MemberGroupandStream_log_streams::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string MemberGroupandStream_log_streams::getLogStreamName() const
 {

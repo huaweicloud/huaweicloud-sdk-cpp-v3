@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/Search_criteriasBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -42,7 +41,6 @@ web::json::value Search_criteriasBody::toJson() const
 
     return val;
 }
-
 bool Search_criteriasBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool Search_criteriasBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<GetQuerySearchCriteriasBody>& Search_criteriasBody::getCriterias()
 {

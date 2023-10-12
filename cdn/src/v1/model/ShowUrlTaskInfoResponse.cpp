@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/ShowUrlTaskInfoResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -47,7 +46,6 @@ web::json::value ShowUrlTaskInfoResponse::toJson() const
 
     return val;
 }
-
 bool ShowUrlTaskInfoResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -90,6 +88,7 @@ bool ShowUrlTaskInfoResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ShowUrlTaskInfoResponse::getTotal() const
 {

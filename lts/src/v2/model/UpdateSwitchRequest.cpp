@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/UpdateSwitchRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -38,7 +37,6 @@ web::json::value UpdateSwitchRequest::toJson() const
 
     return val;
 }
-
 bool UpdateSwitchRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool UpdateSwitchRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateSwitchRequest::getLogConvergeSwitch() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/CreateEditingJobReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -69,7 +68,6 @@ web::json::value CreateEditingJobReq::toJson() const
 
     return val;
 }
-
 bool CreateEditingJobReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -166,6 +164,7 @@ bool CreateEditingJobReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<std::string>& CreateEditingJobReq::getEditType()
 {

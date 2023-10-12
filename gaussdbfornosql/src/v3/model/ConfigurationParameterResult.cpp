@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/ConfigurationParameterResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -63,7 +62,6 @@ web::json::value ConfigurationParameterResult::toJson() const
 
     return val;
 }
-
 bool ConfigurationParameterResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -133,6 +131,7 @@ bool ConfigurationParameterResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ConfigurationParameterResult::getName() const
 {

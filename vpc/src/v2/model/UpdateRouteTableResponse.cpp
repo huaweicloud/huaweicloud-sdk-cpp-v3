@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/UpdateRouteTableResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -32,7 +31,6 @@ web::json::value UpdateRouteTableResponse::toJson() const
 
     return val;
 }
-
 bool UpdateRouteTableResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool UpdateRouteTableResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 RouteTableResp UpdateRouteTableResponse::getRoutetable() const
 {

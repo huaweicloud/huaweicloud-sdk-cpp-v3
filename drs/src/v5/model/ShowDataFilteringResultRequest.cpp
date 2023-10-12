@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/ShowDataFilteringResultRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -43,7 +42,6 @@ web::json::value ShowDataFilteringResultRequest::toJson() const
 
     return val;
 }
-
 bool ShowDataFilteringResultRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool ShowDataFilteringResultRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowDataFilteringResultRequest::getJobId() const
 {

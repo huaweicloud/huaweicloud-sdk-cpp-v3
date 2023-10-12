@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/FinancialStatementResult_image_size.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -38,7 +37,6 @@ web::json::value FinancialStatementResult_image_size::toJson() const
 
     return val;
 }
-
 bool FinancialStatementResult_image_size::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool FinancialStatementResult_image_size::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t FinancialStatementResult_image_size::getHeight() const
 {

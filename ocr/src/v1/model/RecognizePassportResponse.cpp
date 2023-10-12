@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/RecognizePassportResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -32,7 +31,6 @@ web::json::value RecognizePassportResponse::toJson() const
 
     return val;
 }
-
 bool RecognizePassportResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool RecognizePassportResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 PassportResult RecognizePassportResponse::getResult() const
 {

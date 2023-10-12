@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/ModifyEpsQuotaRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -37,7 +36,6 @@ web::json::value ModifyEpsQuotaRequest::toJson() const
 
     return val;
 }
-
 bool ModifyEpsQuotaRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ModifyEpsQuotaRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ModifyEpsQuotaRequest::getXLanguage() const
 {

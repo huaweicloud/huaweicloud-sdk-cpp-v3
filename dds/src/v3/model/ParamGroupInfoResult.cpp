@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/ParamGroupInfoResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -63,7 +62,6 @@ web::json::value ParamGroupInfoResult::toJson() const
 
     return val;
 }
-
 bool ParamGroupInfoResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -133,6 +131,7 @@ bool ParamGroupInfoResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ParamGroupInfoResult::getId() const
 {

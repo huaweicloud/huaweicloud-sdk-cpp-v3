@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/ValidateJobNameRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -37,7 +36,6 @@ web::json::value ValidateJobNameRequest::toJson() const
 
     return val;
 }
-
 bool ValidateJobNameRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ValidateJobNameRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ValidateJobNameRequest::getXLanguage() const
 {

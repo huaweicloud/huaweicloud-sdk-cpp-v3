@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/BaseResp.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -33,7 +32,6 @@ web::json::value BaseResp::toJson() const
 
     return val;
 }
-
 bool BaseResp::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool BaseResp::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t BaseResp::getTotalCount() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/ModifyDbPwdResp.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -53,7 +52,6 @@ web::json::value ModifyDbPwdResp::toJson() const
 
     return val;
 }
-
 bool ModifyDbPwdResp::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool ModifyDbPwdResp::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ModifyDbPwdResp::getId() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/SmartDocumentRecognizerTableResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -37,7 +36,6 @@ web::json::value SmartDocumentRecognizerTableResult::toJson() const
 
     return val;
 }
-
 bool SmartDocumentRecognizerTableResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool SmartDocumentRecognizerTableResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t SmartDocumentRecognizerTableResult::getTableCount() const
 {

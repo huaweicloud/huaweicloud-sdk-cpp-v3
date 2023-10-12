@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/evs/v2/model/ShowJobResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Evs {
@@ -67,7 +66,6 @@ web::json::value ShowJobResponse::toJson() const
 
     return val;
 }
-
 bool ShowJobResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -146,6 +144,7 @@ bool ShowJobResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowJobResponse::getStatus() const
 {

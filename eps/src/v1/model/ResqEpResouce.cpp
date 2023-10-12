@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eps/v1/model/ResqEpResouce.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eps {
@@ -50,7 +49,6 @@ web::json::value ResqEpResouce::toJson() const
 
     return val;
 }
-
 bool ResqEpResouce::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -102,6 +100,7 @@ bool ResqEpResouce::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<std::string>& ResqEpResouce::getProjects()
 {

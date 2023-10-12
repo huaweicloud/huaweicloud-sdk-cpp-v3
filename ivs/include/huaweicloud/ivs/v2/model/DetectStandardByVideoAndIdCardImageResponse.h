@@ -2,9 +2,11 @@
 #ifndef HUAWEICLOUD_SDK_IVS_V2_MODEL_DetectStandardByVideoAndIdCardImageResponse_H_
 #define HUAWEICLOUD_SDK_IVS_V2_MODEL_DetectStandardByVideoAndIdCardImageResponse_H_
 
+
 #include <huaweicloud/ivs/v2/IvsExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/ivs/v2/model/IvsStandardByVideoAndIdCardImageResponseBody_result.h>
@@ -32,10 +34,8 @@ public:
     /// ModelBase overrides
 
     void validate() override;
-
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
-
     /////////////////////////////////////////////
     /// DetectStandardByVideoAndIdCardImageResponse members
 

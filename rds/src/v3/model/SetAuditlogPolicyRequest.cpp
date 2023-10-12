@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/SetAuditlogPolicyRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -42,7 +41,6 @@ web::json::value SetAuditlogPolicyRequest::toJson() const
 
     return val;
 }
-
 bool SetAuditlogPolicyRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool SetAuditlogPolicyRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string SetAuditlogPolicyRequest::getXLanguage() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/DedicatedResourceCapacity.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -43,7 +42,6 @@ web::json::value DedicatedResourceCapacity::toJson() const
 
     return val;
 }
-
 bool DedicatedResourceCapacity::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool DedicatedResourceCapacity::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t DedicatedResourceCapacity::getRam() const
 {

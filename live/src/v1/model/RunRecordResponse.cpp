@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v1/model/RunRecordResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -33,7 +32,6 @@ web::json::value RunRecordResponse::toJson() const
 
     return val;
 }
-
 bool RunRecordResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool RunRecordResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string RunRecordResponse::getXRequestId() const
 {

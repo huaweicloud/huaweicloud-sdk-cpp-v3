@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v2/model/ShowTopDomainNamesResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -32,7 +31,6 @@ web::json::value ShowTopDomainNamesResponse::toJson() const
 
     return val;
 }
-
 bool ShowTopDomainNamesResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ShowTopDomainNamesResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<std::map<std::string, Object>>& ShowTopDomainNamesResponse::getTopDomainNames()
 {

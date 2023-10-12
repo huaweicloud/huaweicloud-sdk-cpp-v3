@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/tms/v1/model/PageInfoTagValues.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Tms {
@@ -38,7 +37,6 @@ web::json::value PageInfoTagValues::toJson() const
 
     return val;
 }
-
 bool PageInfoTagValues::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool PageInfoTagValues::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string PageInfoTagValues::getNextMarker() const
 {

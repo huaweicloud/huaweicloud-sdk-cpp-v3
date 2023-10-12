@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/ShowDiskUsageResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -32,7 +31,6 @@ web::json::value ShowDiskUsageResponse::toJson() const
 
     return val;
 }
-
 bool ShowDiskUsageResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ShowDiskUsageResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<DiskVolumes>& ShowDiskUsageResponse::getVolumes()
 {

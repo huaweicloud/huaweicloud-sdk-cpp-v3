@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/GetRestoreTimeResponse_restore_time.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -38,7 +37,6 @@ web::json::value GetRestoreTimeResponse_restore_time::toJson() const
 
     return val;
 }
-
 bool GetRestoreTimeResponse_restore_time::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool GetRestoreTimeResponse_restore_time::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int64_t GetRestoreTimeResponse_restore_time::getStartTime() const
 {

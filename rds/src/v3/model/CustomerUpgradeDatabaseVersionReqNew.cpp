@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/CustomerUpgradeDatabaseVersionReqNew.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -13,8 +12,8 @@ namespace Model {
 
 CustomerUpgradeDatabaseVersionReqNew::CustomerUpgradeDatabaseVersionReqNew()
 {
-    delay_ = false;
-    delayIsSet_ = false;
+    isDelayed_ = false;
+    isDelayedIsSet_ = false;
 }
 
 CustomerUpgradeDatabaseVersionReqNew::~CustomerUpgradeDatabaseVersionReqNew() = default;
@@ -27,48 +26,48 @@ web::json::value CustomerUpgradeDatabaseVersionReqNew::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(delayIsSet_) {
-        val[utility::conversions::to_string_t("delay")] = ModelBase::toJson(delay_);
+    if(isDelayedIsSet_) {
+        val[utility::conversions::to_string_t("is_delayed")] = ModelBase::toJson(isDelayed_);
     }
 
     return val;
 }
-
 bool CustomerUpgradeDatabaseVersionReqNew::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("delay"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("delay"));
+    if(val.has_field(utility::conversions::to_string_t("is_delayed"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_delayed"));
         if(!fieldValue.is_null())
         {
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setDelay(refVal);
+            setIsDelayed(refVal);
         }
     }
     return ok;
 }
 
-bool CustomerUpgradeDatabaseVersionReqNew::isDelay() const
+
+bool CustomerUpgradeDatabaseVersionReqNew::isIsDelayed() const
 {
-    return delay_;
+    return isDelayed_;
 }
 
-void CustomerUpgradeDatabaseVersionReqNew::setDelay(bool value)
+void CustomerUpgradeDatabaseVersionReqNew::setIsDelayed(bool value)
 {
-    delay_ = value;
-    delayIsSet_ = true;
+    isDelayed_ = value;
+    isDelayedIsSet_ = true;
 }
 
-bool CustomerUpgradeDatabaseVersionReqNew::delayIsSet() const
+bool CustomerUpgradeDatabaseVersionReqNew::isDelayedIsSet() const
 {
-    return delayIsSet_;
+    return isDelayedIsSet_;
 }
 
-void CustomerUpgradeDatabaseVersionReqNew::unsetdelay()
+void CustomerUpgradeDatabaseVersionReqNew::unsetisDelayed()
 {
-    delayIsSet_ = false;
+    isDelayedIsSet_ = false;
 }
 
 }

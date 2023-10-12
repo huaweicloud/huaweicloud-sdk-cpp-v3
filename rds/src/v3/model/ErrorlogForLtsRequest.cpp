@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/ErrorlogForLtsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -58,7 +57,6 @@ web::json::value ErrorlogForLtsRequest::toJson() const
 
     return val;
 }
-
 bool ErrorlogForLtsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool ErrorlogForLtsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ErrorlogForLtsRequest::getStartTime() const
 {

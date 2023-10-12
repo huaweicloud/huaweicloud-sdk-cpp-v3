@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/CreatePrivateipRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -32,7 +31,6 @@ web::json::value CreatePrivateipRequest::toJson() const
 
     return val;
 }
-
 bool CreatePrivateipRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CreatePrivateipRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 CreatePrivateipRequestBody CreatePrivateipRequest::getBody() const
 {

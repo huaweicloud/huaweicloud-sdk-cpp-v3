@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/kms/v2/model/ListKeysResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Kms {
@@ -51,7 +50,6 @@ web::json::value ListKeysResponse::toJson() const
 
     return val;
 }
-
 bool ListKeysResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -103,6 +101,7 @@ bool ListKeysResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<std::string>& ListKeysResponse::getKeys()
 {

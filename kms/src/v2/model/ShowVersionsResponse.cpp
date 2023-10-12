@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/kms/v2/model/ShowVersionsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Kms {
@@ -32,7 +31,6 @@ web::json::value ShowVersionsResponse::toJson() const
 
     return val;
 }
-
 bool ShowVersionsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ShowVersionsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<ApiVersionDetail>& ShowVersionsResponse::getVersions()
 {

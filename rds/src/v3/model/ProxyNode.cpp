@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/ProxyNode.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -58,7 +57,6 @@ web::json::value ProxyNode::toJson() const
 
     return val;
 }
-
 bool ProxyNode::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool ProxyNode::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ProxyNode::getId() const
 {

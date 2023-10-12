@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/NeutronListSecurityGroupsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -58,7 +57,6 @@ web::json::value NeutronListSecurityGroupsRequest::toJson() const
 
     return val;
 }
-
 bool NeutronListSecurityGroupsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool NeutronListSecurityGroupsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t NeutronListSecurityGroupsRequest::getLimit() const
 {

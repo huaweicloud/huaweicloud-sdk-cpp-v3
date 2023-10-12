@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eps/v1/model/EnableAction.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eps {
@@ -33,7 +32,6 @@ web::json::value EnableAction::toJson() const
 
     return val;
 }
-
 bool EnableAction::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool EnableAction::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string EnableAction::getAction() const
 {

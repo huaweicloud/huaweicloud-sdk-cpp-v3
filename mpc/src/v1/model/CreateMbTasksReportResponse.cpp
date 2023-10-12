@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/CreateMbTasksReportResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -28,13 +27,13 @@ web::json::value CreateMbTasksReportResponse::toJson() const
 
     return val;
 }
-
 bool CreateMbTasksReportResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 }
 }

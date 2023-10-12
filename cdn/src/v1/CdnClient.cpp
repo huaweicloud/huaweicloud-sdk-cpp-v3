@@ -1,5 +1,5 @@
 #include <huaweicloud/cdn/v1/CdnClient.h>
-#include <huaweicloud/core/utils/MultipartFormData.h>
+#include <huaweicloud/cdn/v1/CdnMeta.h>
 
 #include <unordered_set>
 
@@ -40,34 +40,36 @@ std::shared_ptr<BatchDeleteTagsResponse> CdnClient::batchDeleteTags(BatchDeleteT
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
 
     std::string localVarHttpBody;
     if (isJson) {
+        // handle json input
         web::json::value localVarJson;
         localVarJson = ModelBase::toJson(request.getBody());
         localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
     }
 
-    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForBatchDeleteTags());
 
     std::shared_ptr<BatchDeleteTagsResponse> localVarResult = std::make_shared<BatchDeleteTagsResponse>();
-
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
     if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
         utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -79,34 +81,36 @@ std::shared_ptr<CreateDomainResponse> CdnClient::createDomain(CreateDomainReques
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
 
     std::string localVarHttpBody;
     if (isJson) {
+        // handle json input
         web::json::value localVarJson;
         localVarJson = ModelBase::toJson(request.getBody());
         localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
     }
 
-    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForCreateDomain());
 
     std::shared_ptr<CreateDomainResponse> localVarResult = std::make_shared<CreateDomainResponse>();
-
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
     if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
         utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -118,12 +122,12 @@ std::shared_ptr<CreatePreheatingTasksResponse> CdnClient::createPreheatingTasks(
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.enterpriseProjectIdIsSet()) {
@@ -132,23 +136,25 @@ std::shared_ptr<CreatePreheatingTasksResponse> CdnClient::createPreheatingTasks(
 
     std::string localVarHttpBody;
     if (isJson) {
+        // handle json input
         web::json::value localVarJson;
         localVarJson = ModelBase::toJson(request.getBody());
         localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
     }
 
-    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForCreatePreheatingTasks());
 
     std::shared_ptr<CreatePreheatingTasksResponse> localVarResult = std::make_shared<CreatePreheatingTasksResponse>();
-
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
     if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
         utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -160,12 +166,12 @@ std::shared_ptr<CreateRefreshTasksResponse> CdnClient::createRefreshTasks(Create
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.enterpriseProjectIdIsSet()) {
@@ -174,23 +180,25 @@ std::shared_ptr<CreateRefreshTasksResponse> CdnClient::createRefreshTasks(Create
 
     std::string localVarHttpBody;
     if (isJson) {
+        // handle json input
         web::json::value localVarJson;
         localVarJson = ModelBase::toJson(request.getBody());
         localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
     }
 
-    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForCreateRefreshTasks());
 
     std::shared_ptr<CreateRefreshTasksResponse> localVarResult = std::make_shared<CreateRefreshTasksResponse>();
-
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
     if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
         utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -202,34 +210,36 @@ std::shared_ptr<CreateTagsResponse> CdnClient::createTags(CreateTagsRequest &req
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
 
     std::string localVarHttpBody;
     if (isJson) {
+        // handle json input
         web::json::value localVarJson;
         localVarJson = ModelBase::toJson(request.getBody());
         localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
     }
 
-    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForCreateTags());
 
     std::shared_ptr<CreateTagsResponse> localVarResult = std::make_shared<CreateTagsResponse>();
-
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
     if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
         utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -241,13 +251,13 @@ std::shared_ptr<DeleteDomainResponse> CdnClient::deleteDomain(DeleteDomainReques
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["domain_id"] = parameterToString(request.getDomainId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.enterpriseProjectIdIsSet()) {
@@ -256,15 +266,10 @@ std::shared_ptr<DeleteDomainResponse> CdnClient::deleteDomain(DeleteDomainReques
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForDeleteDomain());
 
     std::shared_ptr<DeleteDomainResponse> localVarResult = std::make_shared<DeleteDomainResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -279,13 +284,13 @@ std::shared_ptr<DisableDomainResponse> CdnClient::disableDomain(DisableDomainReq
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["domain_id"] = parameterToString(request.getDomainId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.enterpriseProjectIdIsSet()) {
@@ -294,15 +299,10 @@ std::shared_ptr<DisableDomainResponse> CdnClient::disableDomain(DisableDomainReq
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForDisableDomain());
 
     std::shared_ptr<DisableDomainResponse> localVarResult = std::make_shared<DisableDomainResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -317,13 +317,13 @@ std::shared_ptr<EnableDomainResponse> CdnClient::enableDomain(EnableDomainReques
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["domain_id"] = parameterToString(request.getDomainId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.enterpriseProjectIdIsSet()) {
@@ -332,15 +332,10 @@ std::shared_ptr<EnableDomainResponse> CdnClient::enableDomain(EnableDomainReques
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForEnableDomain());
 
     std::shared_ptr<EnableDomainResponse> localVarResult = std::make_shared<EnableDomainResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -355,12 +350,12 @@ std::shared_ptr<ListDomainsResponse> CdnClient::listDomains(ListDomainsRequest &
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.domainNameIsSet()) {
@@ -393,15 +388,10 @@ std::shared_ptr<ListDomainsResponse> CdnClient::listDomains(ListDomainsRequest &
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForListDomains());
 
     std::shared_ptr<ListDomainsResponse> localVarResult = std::make_shared<ListDomainsResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -416,13 +406,13 @@ std::shared_ptr<ShowBlackWhiteListResponse> CdnClient::showBlackWhiteList(ShowBl
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["domain_id"] = parameterToString(request.getDomainId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.enterpriseProjectIdIsSet()) {
@@ -431,15 +421,10 @@ std::shared_ptr<ShowBlackWhiteListResponse> CdnClient::showBlackWhiteList(ShowBl
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForShowBlackWhiteList());
 
     std::shared_ptr<ShowBlackWhiteListResponse> localVarResult = std::make_shared<ShowBlackWhiteListResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -454,13 +439,13 @@ std::shared_ptr<ShowCacheRulesResponse> CdnClient::showCacheRules(ShowCacheRules
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["domain_id"] = parameterToString(request.getDomainId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.enterpriseProjectIdIsSet()) {
@@ -469,15 +454,10 @@ std::shared_ptr<ShowCacheRulesResponse> CdnClient::showCacheRules(ShowCacheRules
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForShowCacheRules());
 
     std::shared_ptr<ShowCacheRulesResponse> localVarResult = std::make_shared<ShowCacheRulesResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -492,12 +472,12 @@ std::shared_ptr<ShowCertificatesHttpsInfoResponse> CdnClient::showCertificatesHt
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.pageSizeIsSet()) {
@@ -518,15 +498,10 @@ std::shared_ptr<ShowCertificatesHttpsInfoResponse> CdnClient::showCertificatesHt
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForShowCertificatesHttpsInfo());
 
     std::shared_ptr<ShowCertificatesHttpsInfoResponse> localVarResult = std::make_shared<ShowCertificatesHttpsInfoResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -541,13 +516,13 @@ std::shared_ptr<ShowDomainDetailResponse> CdnClient::showDomainDetail(ShowDomain
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["domain_id"] = parameterToString(request.getDomainId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.enterpriseProjectIdIsSet()) {
@@ -556,15 +531,10 @@ std::shared_ptr<ShowDomainDetailResponse> CdnClient::showDomainDetail(ShowDomain
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForShowDomainDetail());
 
     std::shared_ptr<ShowDomainDetailResponse> localVarResult = std::make_shared<ShowDomainDetailResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -579,13 +549,13 @@ std::shared_ptr<ShowDomainFullConfigResponse> CdnClient::showDomainFullConfig(Sh
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["domain_name"] = parameterToString(request.getDomainName());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.enterpriseProjectIdIsSet()) {
@@ -594,15 +564,10 @@ std::shared_ptr<ShowDomainFullConfigResponse> CdnClient::showDomainFullConfig(Sh
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForShowDomainFullConfig());
 
     std::shared_ptr<ShowDomainFullConfigResponse> localVarResult = std::make_shared<ShowDomainFullConfigResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -617,12 +582,12 @@ std::shared_ptr<ShowDomainItemDetailsResponse> CdnClient::showDomainItemDetails(
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.enterpriseProjectIdIsSet()) {
@@ -646,15 +611,10 @@ std::shared_ptr<ShowDomainItemDetailsResponse> CdnClient::showDomainItemDetails(
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForShowDomainItemDetails());
 
     std::shared_ptr<ShowDomainItemDetailsResponse> localVarResult = std::make_shared<ShowDomainItemDetailsResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -669,12 +629,12 @@ std::shared_ptr<ShowDomainItemLocationDetailsResponse> CdnClient::showDomainItem
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.enterpriseProjectIdIsSet()) {
@@ -701,15 +661,10 @@ std::shared_ptr<ShowDomainItemLocationDetailsResponse> CdnClient::showDomainItem
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForShowDomainItemLocationDetails());
 
     std::shared_ptr<ShowDomainItemLocationDetailsResponse> localVarResult = std::make_shared<ShowDomainItemLocationDetailsResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -724,12 +679,12 @@ std::shared_ptr<ShowDomainLocationStatsResponse> CdnClient::showDomainLocationSt
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.actionIsSet()) {
@@ -768,15 +723,10 @@ std::shared_ptr<ShowDomainLocationStatsResponse> CdnClient::showDomainLocationSt
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForShowDomainLocationStats());
 
     std::shared_ptr<ShowDomainLocationStatsResponse> localVarResult = std::make_shared<ShowDomainLocationStatsResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -791,12 +741,12 @@ std::shared_ptr<ShowDomainStatsResponse> CdnClient::showDomainStats(ShowDomainSt
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.actionIsSet()) {
@@ -829,15 +779,10 @@ std::shared_ptr<ShowDomainStatsResponse> CdnClient::showDomainStats(ShowDomainSt
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForShowDomainStats());
 
     std::shared_ptr<ShowDomainStatsResponse> localVarResult = std::make_shared<ShowDomainStatsResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -852,13 +797,13 @@ std::shared_ptr<ShowHistoryTaskDetailsResponse> CdnClient::showHistoryTaskDetail
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["history_tasks_id"] = parameterToString(request.getHistoryTasksId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.enterpriseProjectIdIsSet()) {
@@ -882,15 +827,10 @@ std::shared_ptr<ShowHistoryTaskDetailsResponse> CdnClient::showHistoryTaskDetail
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForShowHistoryTaskDetails());
 
     std::shared_ptr<ShowHistoryTaskDetailsResponse> localVarResult = std::make_shared<ShowHistoryTaskDetailsResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -905,12 +845,12 @@ std::shared_ptr<ShowHistoryTasksResponse> CdnClient::showHistoryTasks(ShowHistor
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.enterpriseProjectIdIsSet()) {
@@ -940,18 +880,16 @@ std::shared_ptr<ShowHistoryTasksResponse> CdnClient::showHistoryTasks(ShowHistor
     if (request.fileTypeIsSet()) {
         localVarQueryParams["file_type"] = parameterToString(request.getFileType());
     }
+    if (request.taskTypeIsSet()) {
+        localVarQueryParams["task_type"] = parameterToString(request.getTaskType());
+    }
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForShowHistoryTasks());
 
     std::shared_ptr<ShowHistoryTasksResponse> localVarResult = std::make_shared<ShowHistoryTasksResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -966,13 +904,13 @@ std::shared_ptr<ShowHttpInfoResponse> CdnClient::showHttpInfo(ShowHttpInfoReques
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["domain_id"] = parameterToString(request.getDomainId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.enterpriseProjectIdIsSet()) {
@@ -981,15 +919,10 @@ std::shared_ptr<ShowHttpInfoResponse> CdnClient::showHttpInfo(ShowHttpInfoReques
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForShowHttpInfo());
 
     std::shared_ptr<ShowHttpInfoResponse> localVarResult = std::make_shared<ShowHttpInfoResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -1004,12 +937,12 @@ std::shared_ptr<ShowIpInfoResponse> CdnClient::showIpInfo(ShowIpInfoRequest &req
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.enterpriseProjectIdIsSet()) {
@@ -1021,15 +954,10 @@ std::shared_ptr<ShowIpInfoResponse> CdnClient::showIpInfo(ShowIpInfoRequest &req
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForShowIpInfo());
 
     std::shared_ptr<ShowIpInfoResponse> localVarResult = std::make_shared<ShowIpInfoResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -1044,12 +972,12 @@ std::shared_ptr<ShowLogsResponse> CdnClient::showLogs(ShowLogsRequest &request)
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.domainNameIsSet()) {
@@ -1073,15 +1001,10 @@ std::shared_ptr<ShowLogsResponse> CdnClient::showLogs(ShowLogsRequest &request)
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForShowLogs());
 
     std::shared_ptr<ShowLogsResponse> localVarResult = std::make_shared<ShowLogsResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -1096,13 +1019,13 @@ std::shared_ptr<ShowOriginHostResponse> CdnClient::showOriginHost(ShowOriginHost
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["domain_id"] = parameterToString(request.getDomainId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.enterpriseProjectIdIsSet()) {
@@ -1111,15 +1034,10 @@ std::shared_ptr<ShowOriginHostResponse> CdnClient::showOriginHost(ShowOriginHost
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForShowOriginHost());
 
     std::shared_ptr<ShowOriginHostResponse> localVarResult = std::make_shared<ShowOriginHostResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -1134,26 +1052,21 @@ std::shared_ptr<ShowQuotaResponse> CdnClient::showQuota(ShowQuotaRequest &reques
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForShowQuota());
 
     std::shared_ptr<ShowQuotaResponse> localVarResult = std::make_shared<ShowQuotaResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -1168,13 +1081,13 @@ std::shared_ptr<ShowReferResponse> CdnClient::showRefer(ShowReferRequest &reques
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["domain_id"] = parameterToString(request.getDomainId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.enterpriseProjectIdIsSet()) {
@@ -1183,15 +1096,10 @@ std::shared_ptr<ShowReferResponse> CdnClient::showRefer(ShowReferRequest &reques
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForShowRefer());
 
     std::shared_ptr<ShowReferResponse> localVarResult = std::make_shared<ShowReferResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -1206,13 +1114,13 @@ std::shared_ptr<ShowResponseHeaderResponse> CdnClient::showResponseHeader(ShowRe
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["domain_id"] = parameterToString(request.getDomainId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.enterpriseProjectIdIsSet()) {
@@ -1221,15 +1129,10 @@ std::shared_ptr<ShowResponseHeaderResponse> CdnClient::showResponseHeader(ShowRe
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForShowResponseHeader());
 
     std::shared_ptr<ShowResponseHeaderResponse> localVarResult = std::make_shared<ShowResponseHeaderResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -1244,12 +1147,12 @@ std::shared_ptr<ShowTagsResponse> CdnClient::showTags(ShowTagsRequest &request)
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.resourceIdIsSet()) {
@@ -1258,15 +1161,10 @@ std::shared_ptr<ShowTagsResponse> CdnClient::showTags(ShowTagsRequest &request)
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForShowTags());
 
     std::shared_ptr<ShowTagsResponse> localVarResult = std::make_shared<ShowTagsResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -1281,12 +1179,12 @@ std::shared_ptr<ShowTopUrlResponse> CdnClient::showTopUrl(ShowTopUrlRequest &req
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.enterpriseProjectIdIsSet()) {
@@ -1310,15 +1208,10 @@ std::shared_ptr<ShowTopUrlResponse> CdnClient::showTopUrl(ShowTopUrlRequest &req
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForShowTopUrl());
 
     std::shared_ptr<ShowTopUrlResponse> localVarResult = std::make_shared<ShowTopUrlResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -1333,12 +1226,12 @@ std::shared_ptr<ShowUrlTaskInfoResponse> CdnClient::showUrlTaskInfo(ShowUrlTaskI
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.startTimeIsSet()) {
@@ -1368,15 +1261,10 @@ std::shared_ptr<ShowUrlTaskInfoResponse> CdnClient::showUrlTaskInfo(ShowUrlTaskI
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForShowUrlTaskInfo());
 
     std::shared_ptr<ShowUrlTaskInfoResponse> localVarResult = std::make_shared<ShowUrlTaskInfoResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -1391,13 +1279,13 @@ std::shared_ptr<UpdateBlackWhiteListResponse> CdnClient::updateBlackWhiteList(Up
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["domain_id"] = parameterToString(request.getDomainId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.enterpriseProjectIdIsSet()) {
@@ -1406,23 +1294,25 @@ std::shared_ptr<UpdateBlackWhiteListResponse> CdnClient::updateBlackWhiteList(Up
 
     std::string localVarHttpBody;
     if (isJson) {
+        // handle json input
         web::json::value localVarJson;
         localVarJson = ModelBase::toJson(request.getBody());
         localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
     }
 
-    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForUpdateBlackWhiteList());
 
     std::shared_ptr<UpdateBlackWhiteListResponse> localVarResult = std::make_shared<UpdateBlackWhiteListResponse>();
-
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
     if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
         utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -1434,13 +1324,13 @@ std::shared_ptr<UpdateCacheRulesResponse> CdnClient::updateCacheRules(UpdateCach
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["domain_id"] = parameterToString(request.getDomainId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.enterpriseProjectIdIsSet()) {
@@ -1449,23 +1339,25 @@ std::shared_ptr<UpdateCacheRulesResponse> CdnClient::updateCacheRules(UpdateCach
 
     std::string localVarHttpBody;
     if (isJson) {
+        // handle json input
         web::json::value localVarJson;
         localVarJson = ModelBase::toJson(request.getBody());
         localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
     }
 
-    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForUpdateCacheRules());
 
     std::shared_ptr<UpdateCacheRulesResponse> localVarResult = std::make_shared<UpdateCacheRulesResponse>();
-
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
     if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
         utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -1477,13 +1369,13 @@ std::shared_ptr<UpdateDomainFullConfigResponse> CdnClient::updateDomainFullConfi
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["domain_name"] = parameterToString(request.getDomainName());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.enterpriseProjectIdIsSet()) {
@@ -1492,23 +1384,25 @@ std::shared_ptr<UpdateDomainFullConfigResponse> CdnClient::updateDomainFullConfi
 
     std::string localVarHttpBody;
     if (isJson) {
+        // handle json input
         web::json::value localVarJson;
         localVarJson = ModelBase::toJson(request.getBody());
         localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
     }
 
-    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForUpdateDomainFullConfig());
 
     std::shared_ptr<UpdateDomainFullConfigResponse> localVarResult = std::make_shared<UpdateDomainFullConfigResponse>();
-
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
     if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
         utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -1520,12 +1414,12 @@ std::shared_ptr<UpdateDomainMultiCertificatesResponse> CdnClient::updateDomainMu
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.enterpriseProjectIdIsSet()) {
@@ -1534,23 +1428,25 @@ std::shared_ptr<UpdateDomainMultiCertificatesResponse> CdnClient::updateDomainMu
 
     std::string localVarHttpBody;
     if (isJson) {
+        // handle json input
         web::json::value localVarJson;
         localVarJson = ModelBase::toJson(request.getBody());
         localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
     }
 
-    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForUpdateDomainMultiCertificates());
 
     std::shared_ptr<UpdateDomainMultiCertificatesResponse> localVarResult = std::make_shared<UpdateDomainMultiCertificatesResponse>();
-
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
     if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
         utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -1562,13 +1458,13 @@ std::shared_ptr<UpdateDomainOriginResponse> CdnClient::updateDomainOrigin(Update
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["domain_id"] = parameterToString(request.getDomainId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.enterpriseProjectIdIsSet()) {
@@ -1577,23 +1473,25 @@ std::shared_ptr<UpdateDomainOriginResponse> CdnClient::updateDomainOrigin(Update
 
     std::string localVarHttpBody;
     if (isJson) {
+        // handle json input
         web::json::value localVarJson;
         localVarJson = ModelBase::toJson(request.getBody());
         localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
     }
 
-    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForUpdateDomainOrigin());
 
     std::shared_ptr<UpdateDomainOriginResponse> localVarResult = std::make_shared<UpdateDomainOriginResponse>();
-
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
     if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
         utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -1605,13 +1503,13 @@ std::shared_ptr<UpdateFollow302SwitchResponse> CdnClient::updateFollow302Switch(
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["domain_id"] = parameterToString(request.getDomainId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.enterpriseProjectIdIsSet()) {
@@ -1620,23 +1518,25 @@ std::shared_ptr<UpdateFollow302SwitchResponse> CdnClient::updateFollow302Switch(
 
     std::string localVarHttpBody;
     if (isJson) {
+        // handle json input
         web::json::value localVarJson;
         localVarJson = ModelBase::toJson(request.getBody());
         localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
     }
 
-    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForUpdateFollow302Switch());
 
     std::shared_ptr<UpdateFollow302SwitchResponse> localVarResult = std::make_shared<UpdateFollow302SwitchResponse>();
-
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
     if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
         utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -1648,13 +1548,13 @@ std::shared_ptr<UpdateHttpsInfoResponse> CdnClient::updateHttpsInfo(UpdateHttpsI
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["domain_id"] = parameterToString(request.getDomainId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.enterpriseProjectIdIsSet()) {
@@ -1663,23 +1563,25 @@ std::shared_ptr<UpdateHttpsInfoResponse> CdnClient::updateHttpsInfo(UpdateHttpsI
 
     std::string localVarHttpBody;
     if (isJson) {
+        // handle json input
         web::json::value localVarJson;
         localVarJson = ModelBase::toJson(request.getBody());
         localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
     }
 
-    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForUpdateHttpsInfo());
 
     std::shared_ptr<UpdateHttpsInfoResponse> localVarResult = std::make_shared<UpdateHttpsInfoResponse>();
-
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
     if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
         utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -1691,13 +1593,13 @@ std::shared_ptr<UpdateOriginHostResponse> CdnClient::updateOriginHost(UpdateOrig
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["domain_id"] = parameterToString(request.getDomainId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.enterpriseProjectIdIsSet()) {
@@ -1706,23 +1608,25 @@ std::shared_ptr<UpdateOriginHostResponse> CdnClient::updateOriginHost(UpdateOrig
 
     std::string localVarHttpBody;
     if (isJson) {
+        // handle json input
         web::json::value localVarJson;
         localVarJson = ModelBase::toJson(request.getBody());
         localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
     }
 
-    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForUpdateOriginHost());
 
     std::shared_ptr<UpdateOriginHostResponse> localVarResult = std::make_shared<UpdateOriginHostResponse>();
-
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
     if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
         utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -1734,13 +1638,13 @@ std::shared_ptr<UpdatePrivateBucketAccessResponse> CdnClient::updatePrivateBucke
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["domain_id"] = parameterToString(request.getDomainId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.enterpriseProjectIdIsSet()) {
@@ -1749,23 +1653,25 @@ std::shared_ptr<UpdatePrivateBucketAccessResponse> CdnClient::updatePrivateBucke
 
     std::string localVarHttpBody;
     if (isJson) {
+        // handle json input
         web::json::value localVarJson;
         localVarJson = ModelBase::toJson(request.getBody());
         localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
     }
 
-    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForUpdatePrivateBucketAccess());
 
     std::shared_ptr<UpdatePrivateBucketAccessResponse> localVarResult = std::make_shared<UpdatePrivateBucketAccessResponse>();
-
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
     if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
         utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -1777,13 +1683,13 @@ std::shared_ptr<UpdateRangeSwitchResponse> CdnClient::updateRangeSwitch(UpdateRa
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["domain_id"] = parameterToString(request.getDomainId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.enterpriseProjectIdIsSet()) {
@@ -1792,23 +1698,25 @@ std::shared_ptr<UpdateRangeSwitchResponse> CdnClient::updateRangeSwitch(UpdateRa
 
     std::string localVarHttpBody;
     if (isJson) {
+        // handle json input
         web::json::value localVarJson;
         localVarJson = ModelBase::toJson(request.getBody());
         localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
     }
 
-    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForUpdateRangeSwitch());
 
     std::shared_ptr<UpdateRangeSwitchResponse> localVarResult = std::make_shared<UpdateRangeSwitchResponse>();
-
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
     if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
         utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -1820,13 +1728,13 @@ std::shared_ptr<UpdateReferResponse> CdnClient::updateRefer(UpdateReferRequest &
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["domain_id"] = parameterToString(request.getDomainId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.enterpriseProjectIdIsSet()) {
@@ -1835,23 +1743,25 @@ std::shared_ptr<UpdateReferResponse> CdnClient::updateRefer(UpdateReferRequest &
 
     std::string localVarHttpBody;
     if (isJson) {
+        // handle json input
         web::json::value localVarJson;
         localVarJson = ModelBase::toJson(request.getBody());
         localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
     }
 
-    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForUpdateRefer());
 
     std::shared_ptr<UpdateReferResponse> localVarResult = std::make_shared<UpdateReferResponse>();
-
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
     if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
         utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -1863,13 +1773,13 @@ std::shared_ptr<UpdateResponseHeaderResponse> CdnClient::updateResponseHeader(Up
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["domain_id"] = parameterToString(request.getDomainId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.enterpriseProjectIdIsSet()) {
@@ -1878,23 +1788,25 @@ std::shared_ptr<UpdateResponseHeaderResponse> CdnClient::updateResponseHeader(Up
 
     std::string localVarHttpBody;
     if (isJson) {
+        // handle json input
         web::json::value localVarJson;
         localVarJson = ModelBase::toJson(request.getBody());
         localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
     }
 
-    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForUpdateResponseHeader());
 
     std::shared_ptr<UpdateResponseHeaderResponse> localVarResult = std::make_shared<UpdateResponseHeaderResponse>();
-
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
     if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
         utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }

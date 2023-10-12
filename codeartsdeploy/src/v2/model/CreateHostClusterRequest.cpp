@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/codeartsdeploy/v2/model/CreateHostClusterRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsdeploy {
@@ -32,7 +31,6 @@ web::json::value CreateHostClusterRequest::toJson() const
 
     return val;
 }
-
 bool CreateHostClusterRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CreateHostClusterRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 CreateHostClusterRequestBody CreateHostClusterRequest::getBody() const
 {

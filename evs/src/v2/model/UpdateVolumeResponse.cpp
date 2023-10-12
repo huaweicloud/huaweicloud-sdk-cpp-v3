@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/evs/v2/model/UpdateVolumeResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Evs {
@@ -124,7 +123,6 @@ web::json::value UpdateVolumeResponse::toJson() const
 
     return val;
 }
-
 bool UpdateVolumeResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -311,6 +309,7 @@ bool UpdateVolumeResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<Attachment>& UpdateVolumeResponse::getAttachments()
 {

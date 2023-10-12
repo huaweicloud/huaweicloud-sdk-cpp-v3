@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sdrs/v1/model/ShowProtectionGroupResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sdrs {
@@ -32,7 +31,6 @@ web::json::value ShowProtectionGroupResponse::toJson() const
 
     return val;
 }
-
 bool ShowProtectionGroupResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ShowProtectionGroupResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 ShowProtectionGroupParams ShowProtectionGroupResponse::getServerGroup() const
 {

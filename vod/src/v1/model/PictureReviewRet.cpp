@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/PictureReviewRet.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -55,7 +54,6 @@ web::json::value PictureReviewRet::toJson() const
 
     return val;
 }
-
 bool PictureReviewRet::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -116,6 +114,7 @@ bool PictureReviewRet::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string PictureReviewRet::getSuggestion() const
 {

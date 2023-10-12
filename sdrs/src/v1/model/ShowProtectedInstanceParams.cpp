@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sdrs/v1/model/ShowProtectedInstanceParams.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sdrs {
@@ -95,7 +94,6 @@ web::json::value ShowProtectedInstanceParams::toJson() const
 
     return val;
 }
-
 bool ShowProtectedInstanceParams::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -228,6 +226,7 @@ bool ShowProtectedInstanceParams::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowProtectedInstanceParams::getId() const
 {

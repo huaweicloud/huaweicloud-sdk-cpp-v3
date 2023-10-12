@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/evs/v2/model/ListVolumesByTagsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Evs {
@@ -37,7 +36,6 @@ web::json::value ListVolumesByTagsResponse::toJson() const
 
     return val;
 }
-
 bool ListVolumesByTagsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ListVolumesByTagsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ListVolumesByTagsResponse::getTotalCount() const
 {

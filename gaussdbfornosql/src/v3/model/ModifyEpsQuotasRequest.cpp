@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/ModifyEpsQuotasRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -32,7 +31,6 @@ web::json::value ModifyEpsQuotasRequest::toJson() const
 
     return val;
 }
-
 bool ModifyEpsQuotasRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ModifyEpsQuotasRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 NoSqlModiflyEpsQuotasRequestBody ModifyEpsQuotasRequest::getBody() const
 {

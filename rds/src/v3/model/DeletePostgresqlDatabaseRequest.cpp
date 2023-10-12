@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/DeletePostgresqlDatabaseRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -43,7 +42,6 @@ web::json::value DeletePostgresqlDatabaseRequest::toJson() const
 
     return val;
 }
-
 bool DeletePostgresqlDatabaseRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool DeletePostgresqlDatabaseRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DeletePostgresqlDatabaseRequest::getXLanguage() const
 {

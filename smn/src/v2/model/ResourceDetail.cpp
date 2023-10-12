@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/smn/v2/model/ResourceDetail.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Smn {
@@ -48,7 +47,6 @@ web::json::value ResourceDetail::toJson() const
 
     return val;
 }
-
 bool ResourceDetail::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool ResourceDetail::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ResourceDetail::getEnterpriseProjectId() const
 {

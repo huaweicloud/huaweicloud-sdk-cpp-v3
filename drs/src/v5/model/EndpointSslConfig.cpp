@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/EndpointSslConfig.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -53,7 +52,6 @@ web::json::value EndpointSslConfig::toJson() const
 
     return val;
 }
-
 bool EndpointSslConfig::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool EndpointSslConfig::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool EndpointSslConfig::isSslLink() const
 {

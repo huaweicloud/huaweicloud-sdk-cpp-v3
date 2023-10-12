@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/ModifyTuningParamsReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -49,7 +48,6 @@ web::json::value ModifyTuningParamsReq::toJson() const
 
     return val;
 }
-
 bool ModifyTuningParamsReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -101,6 +99,7 @@ bool ModifyTuningParamsReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::map<std::string, std::string>& ModifyTuningParamsReq::getFullSync()
 {

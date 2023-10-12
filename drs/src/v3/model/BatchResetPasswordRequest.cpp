@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/BatchResetPasswordRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -37,7 +36,6 @@ web::json::value BatchResetPasswordRequest::toJson() const
 
     return val;
 }
-
 bool BatchResetPasswordRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool BatchResetPasswordRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string BatchResetPasswordRequest::getXLanguage() const
 {

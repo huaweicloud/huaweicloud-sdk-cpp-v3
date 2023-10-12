@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/DataProcessInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -67,7 +66,6 @@ web::json::value DataProcessInfo::toJson() const
 
     return val;
 }
-
 bool DataProcessInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -155,6 +153,7 @@ bool DataProcessInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<DataFilteringCondition>& DataProcessInfo::getFilterConditions()
 {

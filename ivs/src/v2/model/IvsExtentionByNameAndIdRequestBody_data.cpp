@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ivs/v2/model/IvsExtentionByNameAndIdRequestBody_data.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ivs {
@@ -32,7 +31,6 @@ web::json::value IvsExtentionByNameAndIdRequestBody_data::toJson() const
 
     return val;
 }
-
 bool IvsExtentionByNameAndIdRequestBody_data::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool IvsExtentionByNameAndIdRequestBody_data::fromJson(const web::json::value& v
     }
     return ok;
 }
+
 
 std::vector<ExtentionReqDataByNameAndId>& IvsExtentionByNameAndIdRequestBody_data::getReqData()
 {

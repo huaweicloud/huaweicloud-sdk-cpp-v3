@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/StartInstanceEnlargeVolumeActionRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -42,7 +41,6 @@ web::json::value StartInstanceEnlargeVolumeActionRequest::toJson() const
 
     return val;
 }
-
 bool StartInstanceEnlargeVolumeActionRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool StartInstanceEnlargeVolumeActionRequest::fromJson(const web::json::value& v
     }
     return ok;
 }
+
 
 std::string StartInstanceEnlargeVolumeActionRequest::getXLanguage() const
 {

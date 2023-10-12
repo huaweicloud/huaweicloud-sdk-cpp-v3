@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/UpdateReadWeightResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -33,7 +32,6 @@ web::json::value UpdateReadWeightResponse::toJson() const
 
     return val;
 }
-
 bool UpdateReadWeightResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool UpdateReadWeightResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateReadWeightResponse::getResult() const
 {

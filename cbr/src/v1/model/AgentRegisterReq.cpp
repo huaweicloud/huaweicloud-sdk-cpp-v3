@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/AgentRegisterReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -32,7 +31,6 @@ web::json::value AgentRegisterReq::toJson() const
 
     return val;
 }
-
 bool AgentRegisterReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool AgentRegisterReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 AgentRegister AgentRegisterReq::getAgent() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v2/model/IpFrequencyLimitQuery.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -38,7 +37,6 @@ web::json::value IpFrequencyLimitQuery::toJson() const
 
     return val;
 }
-
 bool IpFrequencyLimitQuery::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool IpFrequencyLimitQuery::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string IpFrequencyLimitQuery::getStatus() const
 {

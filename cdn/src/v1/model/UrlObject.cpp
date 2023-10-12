@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/UrlObject.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -58,7 +57,6 @@ web::json::value UrlObject::toJson() const
 
     return val;
 }
-
 bool UrlObject::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool UrlObject::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UrlObject::getId() const
 {

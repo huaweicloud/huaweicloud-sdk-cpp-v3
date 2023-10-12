@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/CreateMergeChannelsReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -32,7 +31,6 @@ web::json::value CreateMergeChannelsReq::toJson() const
 
     return val;
 }
-
 bool CreateMergeChannelsReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CreateMergeChannelsReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 MpcMultiAudio CreateMergeChannelsReq::getMultiAudio() const
 {

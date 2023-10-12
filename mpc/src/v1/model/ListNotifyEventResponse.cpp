@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/ListNotifyEventResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -37,7 +36,6 @@ web::json::value ListNotifyEventResponse::toJson() const
 
     return val;
 }
-
 bool ListNotifyEventResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ListNotifyEventResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<std::string>& ListNotifyEventResponse::getEventName()
 {

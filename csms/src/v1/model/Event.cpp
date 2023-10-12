@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/csms/v1/model/Event.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Csms {
@@ -61,7 +60,6 @@ web::json::value Event::toJson() const
 
     return val;
 }
-
 bool Event::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -131,6 +129,7 @@ bool Event::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string Event::getName() const
 {

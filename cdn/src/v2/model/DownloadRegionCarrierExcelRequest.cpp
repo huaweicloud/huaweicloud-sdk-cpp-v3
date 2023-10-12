@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v2/model/DownloadRegionCarrierExcelRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -78,7 +77,6 @@ web::json::value DownloadRegionCarrierExcelRequest::toJson() const
 
     return val;
 }
-
 bool DownloadRegionCarrierExcelRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -175,6 +173,7 @@ bool DownloadRegionCarrierExcelRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int64_t DownloadRegionCarrierExcelRequest::getStartTime() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/CreateDatabaseRoleRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -37,7 +36,6 @@ web::json::value CreateDatabaseRoleRequest::toJson() const
 
     return val;
 }
-
 bool CreateDatabaseRoleRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool CreateDatabaseRoleRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateDatabaseRoleRequest::getInstanceId() const
 {

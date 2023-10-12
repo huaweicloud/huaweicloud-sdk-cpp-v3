@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/OpenGaussBackupStrategyForListResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -38,7 +37,6 @@ web::json::value OpenGaussBackupStrategyForListResponse::toJson() const
 
     return val;
 }
-
 bool OpenGaussBackupStrategyForListResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool OpenGaussBackupStrategyForListResponse::fromJson(const web::json::value& va
     }
     return ok;
 }
+
 
 std::string OpenGaussBackupStrategyForListResponse::getStartTime() const
 {

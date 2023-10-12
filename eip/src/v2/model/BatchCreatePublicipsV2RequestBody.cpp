@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v2/model/BatchCreatePublicipsV2RequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -46,7 +45,6 @@ web::json::value BatchCreatePublicipsV2RequestBody::toJson() const
 
     return val;
 }
-
 bool BatchCreatePublicipsV2RequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -89,6 +87,7 @@ bool BatchCreatePublicipsV2RequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 BatchBandwidth BatchCreatePublicipsV2RequestBody::getBandwidth() const
 {

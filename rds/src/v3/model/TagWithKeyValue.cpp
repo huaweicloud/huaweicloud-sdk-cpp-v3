@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/TagWithKeyValue.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -38,7 +37,6 @@ web::json::value TagWithKeyValue::toJson() const
 
     return val;
 }
-
 bool TagWithKeyValue::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool TagWithKeyValue::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string TagWithKeyValue::getKey() const
 {

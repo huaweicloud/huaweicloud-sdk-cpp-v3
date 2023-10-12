@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/UpdatePostgresqlParameterValueResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -38,7 +37,6 @@ web::json::value UpdatePostgresqlParameterValueResponse::toJson() const
 
     return val;
 }
-
 bool UpdatePostgresqlParameterValueResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool UpdatePostgresqlParameterValueResponse::fromJson(const web::json::value& va
     }
     return ok;
 }
+
 
 std::string UpdatePostgresqlParameterValueResponse::getJobId() const
 {

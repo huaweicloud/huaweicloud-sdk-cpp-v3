@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v2/model/BatchDisassociatePublicipsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -32,7 +31,6 @@ web::json::value BatchDisassociatePublicipsRequest::toJson() const
 
     return val;
 }
-
 bool BatchDisassociatePublicipsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool BatchDisassociatePublicipsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 BatchDeletePublicIpRequestBody BatchDisassociatePublicipsRequest::getBody() const
 {

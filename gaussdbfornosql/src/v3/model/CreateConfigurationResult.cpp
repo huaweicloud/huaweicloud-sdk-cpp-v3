@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/CreateConfigurationResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -63,7 +62,6 @@ web::json::value CreateConfigurationResult::toJson() const
 
     return val;
 }
-
 bool CreateConfigurationResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -133,6 +131,7 @@ bool CreateConfigurationResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateConfigurationResult::getId() const
 {

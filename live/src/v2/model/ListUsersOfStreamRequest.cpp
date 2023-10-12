@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v2/model/ListUsersOfStreamRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -85,7 +84,6 @@ web::json::value ListUsersOfStreamRequest::toJson() const
 
     return val;
 }
-
 bool ListUsersOfStreamRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -200,6 +198,7 @@ bool ListUsersOfStreamRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListUsersOfStreamRequest::getProjectId() const
 {

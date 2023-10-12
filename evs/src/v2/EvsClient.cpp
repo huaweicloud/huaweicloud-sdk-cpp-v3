@@ -1,5 +1,5 @@
 #include <huaweicloud/evs/v2/EvsClient.h>
-#include <huaweicloud/core/utils/MultipartFormData.h>
+#include <huaweicloud/evs/v2/EvsMeta.h>
 
 #include <unordered_set>
 
@@ -40,35 +40,37 @@ std::shared_ptr<BatchCreateVolumeTagsResponse> EvsClient::batchCreateVolumeTags(
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["volume_id"] = parameterToString(request.getVolumeId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
 
     std::string localVarHttpBody;
     if (isJson) {
+        // handle json input
         web::json::value localVarJson;
         localVarJson = ModelBase::toJson(request.getBody());
         localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
     }
 
-    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EvsMeta::genRequestDefForBatchCreateVolumeTags());
 
     std::shared_ptr<BatchCreateVolumeTagsResponse> localVarResult = std::make_shared<BatchCreateVolumeTagsResponse>();
-
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
     if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
         utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -80,35 +82,37 @@ std::shared_ptr<BatchDeleteVolumeTagsResponse> EvsClient::batchDeleteVolumeTags(
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["volume_id"] = parameterToString(request.getVolumeId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
 
     std::string localVarHttpBody;
     if (isJson) {
+        // handle json input
         web::json::value localVarJson;
         localVarJson = ModelBase::toJson(request.getBody());
         localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
     }
 
-    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EvsMeta::genRequestDefForBatchDeleteVolumeTags());
 
     std::shared_ptr<BatchDeleteVolumeTagsResponse> localVarResult = std::make_shared<BatchDeleteVolumeTagsResponse>();
-
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
     if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
         utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -120,35 +124,37 @@ std::shared_ptr<CinderAcceptVolumeTransferResponse> EvsClient::cinderAcceptVolum
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["transfer_id"] = parameterToString(request.getTransferId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
 
     std::string localVarHttpBody;
     if (isJson) {
+        // handle json input
         web::json::value localVarJson;
         localVarJson = ModelBase::toJson(request.getBody());
         localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
     }
 
-    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EvsMeta::genRequestDefForCinderAcceptVolumeTransfer());
 
     std::shared_ptr<CinderAcceptVolumeTransferResponse> localVarResult = std::make_shared<CinderAcceptVolumeTransferResponse>();
-
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
     if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
         utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -160,34 +166,36 @@ std::shared_ptr<CinderCreateVolumeTransferResponse> EvsClient::cinderCreateVolum
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
 
     std::string localVarHttpBody;
     if (isJson) {
+        // handle json input
         web::json::value localVarJson;
         localVarJson = ModelBase::toJson(request.getBody());
         localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
     }
 
-    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EvsMeta::genRequestDefForCinderCreateVolumeTransfer());
 
     std::shared_ptr<CinderCreateVolumeTransferResponse> localVarResult = std::make_shared<CinderCreateVolumeTransferResponse>();
-
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
     if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
         utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -199,27 +207,22 @@ std::shared_ptr<CinderDeleteVolumeTransferResponse> EvsClient::cinderDeleteVolum
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["transfer_id"] = parameterToString(request.getTransferId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EvsMeta::genRequestDefForCinderDeleteVolumeTransfer());
 
     std::shared_ptr<CinderDeleteVolumeTransferResponse> localVarResult = std::make_shared<CinderDeleteVolumeTransferResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -234,26 +237,21 @@ std::shared_ptr<CinderListAvailabilityZonesResponse> EvsClient::cinderListAvaila
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EvsMeta::genRequestDefForCinderListAvailabilityZones());
 
     std::shared_ptr<CinderListAvailabilityZonesResponse> localVarResult = std::make_shared<CinderListAvailabilityZonesResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -268,13 +266,13 @@ std::shared_ptr<CinderListQuotasResponse> EvsClient::cinderListQuotas(CinderList
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["target_project_id"] = parameterToString(request.getTargetProjectId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.usageIsSet()) {
@@ -283,15 +281,10 @@ std::shared_ptr<CinderListQuotasResponse> EvsClient::cinderListQuotas(CinderList
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EvsMeta::genRequestDefForCinderListQuotas());
 
     std::shared_ptr<CinderListQuotasResponse> localVarResult = std::make_shared<CinderListQuotasResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -306,12 +299,12 @@ std::shared_ptr<CinderListVolumeTransfersResponse> EvsClient::cinderListVolumeTr
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.limitIsSet()) {
@@ -323,15 +316,10 @@ std::shared_ptr<CinderListVolumeTransfersResponse> EvsClient::cinderListVolumeTr
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EvsMeta::genRequestDefForCinderListVolumeTransfers());
 
     std::shared_ptr<CinderListVolumeTransfersResponse> localVarResult = std::make_shared<CinderListVolumeTransfersResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -346,26 +334,21 @@ std::shared_ptr<CinderListVolumeTypesResponse> EvsClient::cinderListVolumeTypes(
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EvsMeta::genRequestDefForCinderListVolumeTypes());
 
     std::shared_ptr<CinderListVolumeTypesResponse> localVarResult = std::make_shared<CinderListVolumeTypesResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -380,27 +363,22 @@ std::shared_ptr<CinderShowVolumeTransferResponse> EvsClient::cinderShowVolumeTra
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["transfer_id"] = parameterToString(request.getTransferId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EvsMeta::genRequestDefForCinderShowVolumeTransfer());
 
     std::shared_ptr<CinderShowVolumeTransferResponse> localVarResult = std::make_shared<CinderShowVolumeTransferResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -415,34 +393,36 @@ std::shared_ptr<CreateSnapshotResponse> EvsClient::createSnapshot(CreateSnapshot
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
 
     std::string localVarHttpBody;
     if (isJson) {
+        // handle json input
         web::json::value localVarJson;
         localVarJson = ModelBase::toJson(request.getBody());
         localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
     }
 
-    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EvsMeta::genRequestDefForCreateSnapshot());
 
     std::shared_ptr<CreateSnapshotResponse> localVarResult = std::make_shared<CreateSnapshotResponse>();
-
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
     if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
         utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -454,34 +434,36 @@ std::shared_ptr<CreateVolumeResponse> EvsClient::createVolume(CreateVolumeReques
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
 
     std::string localVarHttpBody;
     if (isJson) {
+        // handle json input
         web::json::value localVarJson;
         localVarJson = ModelBase::toJson(request.getBody());
         localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
     }
 
-    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EvsMeta::genRequestDefForCreateVolume());
 
     std::shared_ptr<CreateVolumeResponse> localVarResult = std::make_shared<CreateVolumeResponse>();
-
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
     if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
         utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -493,27 +475,22 @@ std::shared_ptr<DeleteSnapshotResponse> EvsClient::deleteSnapshot(DeleteSnapshot
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["snapshot_id"] = parameterToString(request.getSnapshotId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EvsMeta::genRequestDefForDeleteSnapshot());
 
     std::shared_ptr<DeleteSnapshotResponse> localVarResult = std::make_shared<DeleteSnapshotResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -528,27 +505,22 @@ std::shared_ptr<DeleteVolumeResponse> EvsClient::deleteVolume(DeleteVolumeReques
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["volume_id"] = parameterToString(request.getVolumeId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EvsMeta::genRequestDefForDeleteVolume());
 
     std::shared_ptr<DeleteVolumeResponse> localVarResult = std::make_shared<DeleteVolumeResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -563,12 +535,12 @@ std::shared_ptr<ListSnapshotsResponse> EvsClient::listSnapshots(ListSnapshotsReq
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.offsetIsSet()) {
@@ -607,15 +579,10 @@ std::shared_ptr<ListSnapshotsResponse> EvsClient::listSnapshots(ListSnapshotsReq
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EvsMeta::genRequestDefForListSnapshots());
 
     std::shared_ptr<ListSnapshotsResponse> localVarResult = std::make_shared<ListSnapshotsResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -630,26 +597,21 @@ std::shared_ptr<ListVolumeTagsResponse> EvsClient::listVolumeTags(ListVolumeTags
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EvsMeta::genRequestDefForListVolumeTags());
 
     std::shared_ptr<ListVolumeTagsResponse> localVarResult = std::make_shared<ListVolumeTagsResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -664,12 +626,12 @@ std::shared_ptr<ListVolumesResponse> EvsClient::listVolumes(ListVolumesRequest &
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.markerIsSet()) {
@@ -729,15 +691,10 @@ std::shared_ptr<ListVolumesResponse> EvsClient::listVolumes(ListVolumesRequest &
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EvsMeta::genRequestDefForListVolumes());
 
     std::shared_ptr<ListVolumesResponse> localVarResult = std::make_shared<ListVolumesResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -752,34 +709,36 @@ std::shared_ptr<ListVolumesByTagsResponse> EvsClient::listVolumesByTags(ListVolu
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
 
     std::string localVarHttpBody;
     if (isJson) {
+        // handle json input
         web::json::value localVarJson;
         localVarJson = ModelBase::toJson(request.getBody());
         localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
     }
 
-    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EvsMeta::genRequestDefForListVolumesByTags());
 
     std::shared_ptr<ListVolumesByTagsResponse> localVarResult = std::make_shared<ListVolumesByTagsResponse>();
-
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
     if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
         utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -791,35 +750,37 @@ std::shared_ptr<ModifyVolumeQoSResponse> EvsClient::modifyVolumeQoS(ModifyVolume
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["volume_id"] = parameterToString(request.getVolumeId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
 
     std::string localVarHttpBody;
     if (isJson) {
+        // handle json input
         web::json::value localVarJson;
         localVarJson = ModelBase::toJson(request.getBody());
         localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
     }
 
-    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EvsMeta::genRequestDefForModifyVolumeQoS());
 
     std::shared_ptr<ModifyVolumeQoSResponse> localVarResult = std::make_shared<ModifyVolumeQoSResponse>();
-
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
     if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
         utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -831,35 +792,37 @@ std::shared_ptr<ResizeVolumeResponse> EvsClient::resizeVolume(ResizeVolumeReques
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["volume_id"] = parameterToString(request.getVolumeId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
 
     std::string localVarHttpBody;
     if (isJson) {
+        // handle json input
         web::json::value localVarJson;
         localVarJson = ModelBase::toJson(request.getBody());
         localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
     }
 
-    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EvsMeta::genRequestDefForResizeVolume());
 
     std::shared_ptr<ResizeVolumeResponse> localVarResult = std::make_shared<ResizeVolumeResponse>();
-
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
     if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
         utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -871,35 +834,37 @@ std::shared_ptr<RollbackSnapshotResponse> EvsClient::rollbackSnapshot(RollbackSn
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["snapshot_id"] = parameterToString(request.getSnapshotId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
 
     std::string localVarHttpBody;
     if (isJson) {
+        // handle json input
         web::json::value localVarJson;
         localVarJson = ModelBase::toJson(request.getBody());
         localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
     }
 
-    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EvsMeta::genRequestDefForRollbackSnapshot());
 
     std::shared_ptr<RollbackSnapshotResponse> localVarResult = std::make_shared<RollbackSnapshotResponse>();
-
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
     if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
         utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -911,27 +876,22 @@ std::shared_ptr<ShowJobResponse> EvsClient::showJob(ShowJobRequest &request)
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["job_id"] = parameterToString(request.getJobId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EvsMeta::genRequestDefForShowJob());
 
     std::shared_ptr<ShowJobResponse> localVarResult = std::make_shared<ShowJobResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -946,27 +906,22 @@ std::shared_ptr<ShowSnapshotResponse> EvsClient::showSnapshot(ShowSnapshotReques
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["snapshot_id"] = parameterToString(request.getSnapshotId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EvsMeta::genRequestDefForShowSnapshot());
 
     std::shared_ptr<ShowSnapshotResponse> localVarResult = std::make_shared<ShowSnapshotResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -981,27 +936,22 @@ std::shared_ptr<ShowVolumeResponse> EvsClient::showVolume(ShowVolumeRequest &req
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["volume_id"] = parameterToString(request.getVolumeId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EvsMeta::genRequestDefForShowVolume());
 
     std::shared_ptr<ShowVolumeResponse> localVarResult = std::make_shared<ShowVolumeResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -1016,27 +966,22 @@ std::shared_ptr<ShowVolumeTagsResponse> EvsClient::showVolumeTags(ShowVolumeTags
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["volume_id"] = parameterToString(request.getVolumeId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EvsMeta::genRequestDefForShowVolumeTags());
 
     std::shared_ptr<ShowVolumeTagsResponse> localVarResult = std::make_shared<ShowVolumeTagsResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -1051,35 +996,37 @@ std::shared_ptr<UpdateSnapshotResponse> EvsClient::updateSnapshot(UpdateSnapshot
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["snapshot_id"] = parameterToString(request.getSnapshotId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
 
     std::string localVarHttpBody;
     if (isJson) {
+        // handle json input
         web::json::value localVarJson;
         localVarJson = ModelBase::toJson(request.getBody());
         localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
     }
 
-    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EvsMeta::genRequestDefForUpdateSnapshot());
 
     std::shared_ptr<UpdateSnapshotResponse> localVarResult = std::make_shared<UpdateSnapshotResponse>();
-
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
     if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
         utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -1091,35 +1038,37 @@ std::shared_ptr<UpdateVolumeResponse> EvsClient::updateVolume(UpdateVolumeReques
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["volume_id"] = parameterToString(request.getVolumeId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
 
     std::string localVarHttpBody;
     if (isJson) {
+        // handle json input
         web::json::value localVarJson;
         localVarJson = ModelBase::toJson(request.getBody());
         localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
     }
 
-    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EvsMeta::genRequestDefForUpdateVolume());
 
     std::shared_ptr<UpdateVolumeResponse> localVarResult = std::make_shared<UpdateVolumeResponse>();
-
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
     if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
         utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -1131,26 +1080,21 @@ std::shared_ptr<ListVersionsResponse> EvsClient::listVersions(ListVersionsReques
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EvsMeta::genRequestDefForListVersions());
 
     std::shared_ptr<ListVersionsResponse> localVarResult = std::make_shared<ListVersionsResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -1165,27 +1109,22 @@ std::shared_ptr<ShowVersionResponse> EvsClient::showVersion(ShowVersionRequest &
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["version"] = parameterToString(request.getVersion());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EvsMeta::genRequestDefForShowVersion());
 
     std::shared_ptr<ShowVersionResponse> localVarResult = std::make_shared<ShowVersionResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

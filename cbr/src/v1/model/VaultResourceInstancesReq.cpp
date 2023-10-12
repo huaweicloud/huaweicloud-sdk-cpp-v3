@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/VaultResourceInstancesReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -82,7 +81,6 @@ web::json::value VaultResourceInstancesReq::toJson() const
 
     return val;
 }
-
 bool VaultResourceInstancesReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -197,6 +195,7 @@ bool VaultResourceInstancesReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool VaultResourceInstancesReq::isWithoutAnyTag() const
 {

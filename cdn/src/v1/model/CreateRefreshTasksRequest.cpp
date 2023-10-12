@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/CreateRefreshTasksRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -37,7 +36,6 @@ web::json::value CreateRefreshTasksRequest::toJson() const
 
     return val;
 }
-
 bool CreateRefreshTasksRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool CreateRefreshTasksRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateRefreshTasksRequest::getEnterpriseProjectId() const
 {

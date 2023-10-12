@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/frs/v2/model/SearchFaceByBase64Response.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Frs {
@@ -32,7 +31,6 @@ web::json::value SearchFaceByBase64Response::toJson() const
 
     return val;
 }
-
 bool SearchFaceByBase64Response::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool SearchFaceByBase64Response::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<SearchFace>& SearchFaceByBase64Response::getFaces()
 {

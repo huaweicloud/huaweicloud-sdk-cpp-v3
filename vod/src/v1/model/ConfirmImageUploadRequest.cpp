@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/ConfirmImageUploadRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -37,7 +36,6 @@ web::json::value ConfirmImageUploadRequest::toJson() const
 
     return val;
 }
-
 bool ConfirmImageUploadRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ConfirmImageUploadRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ConfirmImageUploadRequest::getXSdkDate() const
 {

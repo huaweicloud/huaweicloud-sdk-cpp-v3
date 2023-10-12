@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/UpdateInstanceNameResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -33,7 +32,6 @@ web::json::value UpdateInstanceNameResponse::toJson() const
 
     return val;
 }
-
 bool UpdateInstanceNameResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool UpdateInstanceNameResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateInstanceNameResponse::getJobId() const
 {

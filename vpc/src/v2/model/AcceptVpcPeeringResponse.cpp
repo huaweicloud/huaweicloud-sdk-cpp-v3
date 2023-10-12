@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/AcceptVpcPeeringResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -66,7 +65,6 @@ web::json::value AcceptVpcPeeringResponse::toJson() const
 
     return val;
 }
-
 bool AcceptVpcPeeringResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -145,6 +143,7 @@ bool AcceptVpcPeeringResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string AcceptVpcPeeringResponse::getId() const
 {

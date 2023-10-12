@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/frs/v2/model/DetectLiveByBase64IntlResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Frs {
@@ -36,7 +35,6 @@ web::json::value DetectLiveByBase64IntlResponse::toJson() const
 
     return val;
 }
-
 bool DetectLiveByBase64IntlResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -61,6 +59,7 @@ bool DetectLiveByBase64IntlResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 LiveDetectResp_videoresult DetectLiveByBase64IntlResponse::getVideoResult() const
 {

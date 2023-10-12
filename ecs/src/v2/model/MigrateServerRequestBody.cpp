@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/MigrateServerRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -32,7 +31,6 @@ web::json::value MigrateServerRequestBody::toJson() const
 
     return val;
 }
-
 bool MigrateServerRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool MigrateServerRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 MigrateServerOption MigrateServerRequestBody::getMigrate() const
 {

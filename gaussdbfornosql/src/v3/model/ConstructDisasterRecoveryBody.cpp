@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/ConstructDisasterRecoveryBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -52,7 +51,6 @@ web::json::value ConstructDisasterRecoveryBody::toJson() const
 
     return val;
 }
-
 bool ConstructDisasterRecoveryBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -104,6 +102,7 @@ bool ConstructDisasterRecoveryBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ConstructDisasterRecoveryBody::getId() const
 {

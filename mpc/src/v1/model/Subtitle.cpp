@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/Subtitle.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -41,7 +40,6 @@ web::json::value Subtitle::toJson() const
 
     return val;
 }
-
 bool Subtitle::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -75,6 +73,7 @@ bool Subtitle::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 ObsObjInfo Subtitle::getInput() const
 {

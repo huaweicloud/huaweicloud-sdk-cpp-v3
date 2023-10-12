@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/ListMsdtcHostsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -37,7 +36,6 @@ web::json::value ListMsdtcHostsResponse::toJson() const
 
     return val;
 }
-
 bool ListMsdtcHostsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ListMsdtcHostsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ListMsdtcHostsResponse::getTotalCount() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/evs/v2/model/VolumeDetail.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Evs {
@@ -201,7 +200,6 @@ web::json::value VolumeDetail::toJson() const
 
     return val;
 }
-
 bool VolumeDetail::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -532,6 +530,7 @@ bool VolumeDetail::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string VolumeDetail::getId() const
 {

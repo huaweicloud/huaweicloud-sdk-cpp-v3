@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v1/model/StreamTranscodingTemplate.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -47,7 +46,6 @@ web::json::value StreamTranscodingTemplate::toJson() const
 
     return val;
 }
-
 bool StreamTranscodingTemplate::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -90,6 +88,7 @@ bool StreamTranscodingTemplate::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string StreamTranscodingTemplate::getDomain() const
 {

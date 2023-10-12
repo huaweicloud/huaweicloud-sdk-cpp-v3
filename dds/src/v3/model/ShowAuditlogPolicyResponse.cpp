@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/ShowAuditlogPolicyResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -42,7 +41,6 @@ web::json::value ShowAuditlogPolicyResponse::toJson() const
 
     return val;
 }
-
 bool ShowAuditlogPolicyResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool ShowAuditlogPolicyResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ShowAuditlogPolicyResponse::getKeepDays() const
 {

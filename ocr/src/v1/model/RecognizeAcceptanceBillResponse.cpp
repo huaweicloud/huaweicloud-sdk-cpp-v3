@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/RecognizeAcceptanceBillResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -32,7 +31,6 @@ web::json::value RecognizeAcceptanceBillResponse::toJson() const
 
     return val;
 }
-
 bool RecognizeAcceptanceBillResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool RecognizeAcceptanceBillResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 AcceptanceBillResult RecognizeAcceptanceBillResponse::getResult() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/ListAppliedHistoriesResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -37,7 +36,6 @@ web::json::value ListAppliedHistoriesResponse::toJson() const
 
     return val;
 }
-
 bool ListAppliedHistoriesResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ListAppliedHistoriesResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ListAppliedHistoriesResponse::getTotalCount() const
 {

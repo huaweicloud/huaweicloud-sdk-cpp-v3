@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v2/model/BackSources.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -53,7 +52,6 @@ web::json::value BackSources::toJson() const
 
     return val;
 }
-
 bool BackSources::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool BackSources::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string BackSources::getSourcesType() const
 {

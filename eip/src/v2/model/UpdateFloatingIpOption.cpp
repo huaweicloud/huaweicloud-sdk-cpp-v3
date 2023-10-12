@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v2/model/UpdateFloatingIpOption.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -33,7 +32,6 @@ web::json::value UpdateFloatingIpOption::toJson() const
 
     return val;
 }
-
 bool UpdateFloatingIpOption::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool UpdateFloatingIpOption::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateFloatingIpOption::getPortId() const
 {

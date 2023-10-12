@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v1/model/ShowRecordRuleResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -65,7 +64,6 @@ web::json::value ShowRecordRuleResponse::toJson() const
 
     return val;
 }
-
 bool ShowRecordRuleResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -144,6 +142,7 @@ bool ShowRecordRuleResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowRecordRuleResponse::getId() const
 {

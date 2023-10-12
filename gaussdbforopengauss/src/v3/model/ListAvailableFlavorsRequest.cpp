@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/ListAvailableFlavorsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -48,7 +47,6 @@ web::json::value ListAvailableFlavorsRequest::toJson() const
 
     return val;
 }
-
 bool ListAvailableFlavorsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool ListAvailableFlavorsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListAvailableFlavorsRequest::getXLanguage() const
 {

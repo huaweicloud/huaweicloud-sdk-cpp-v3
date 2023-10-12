@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/AnimatedGraphicsOutputParam.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -58,7 +57,6 @@ web::json::value AnimatedGraphicsOutputParam::toJson() const
 
     return val;
 }
-
 bool AnimatedGraphicsOutputParam::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool AnimatedGraphicsOutputParam::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string AnimatedGraphicsOutputParam::getFormat() const
 {

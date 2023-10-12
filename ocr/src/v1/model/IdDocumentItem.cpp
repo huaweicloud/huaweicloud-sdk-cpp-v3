@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/IdDocumentItem.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -102,7 +101,6 @@ web::json::value IdDocumentItem::toJson() const
 
     return val;
 }
-
 bool IdDocumentItem::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -244,6 +242,7 @@ bool IdDocumentItem::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string IdDocumentItem::getCountryRegion() const
 {

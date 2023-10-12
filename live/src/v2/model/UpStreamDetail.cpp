@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v2/model/UpStreamDetail.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -68,7 +67,6 @@ web::json::value UpStreamDetail::toJson() const
 
     return val;
 }
-
 bool UpStreamDetail::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -147,6 +145,7 @@ bool UpStreamDetail::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpStreamDetail::getTime() const
 {

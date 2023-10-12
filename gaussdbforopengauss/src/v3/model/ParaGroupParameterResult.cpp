@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/ParaGroupParameterResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -63,7 +62,6 @@ web::json::value ParaGroupParameterResult::toJson() const
 
     return val;
 }
-
 bool ParaGroupParameterResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -133,6 +131,7 @@ bool ParaGroupParameterResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ParaGroupParameterResult::getName() const
 {

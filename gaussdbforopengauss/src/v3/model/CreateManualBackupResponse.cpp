@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/CreateManualBackupResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -37,7 +36,6 @@ web::json::value CreateManualBackupResponse::toJson() const
 
     return val;
 }
-
 bool CreateManualBackupResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool CreateManualBackupResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 BackupInfo CreateManualBackupResponse::getBackup() const
 {

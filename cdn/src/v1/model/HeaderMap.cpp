@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/HeaderMap.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -58,7 +57,6 @@ web::json::value HeaderMap::toJson() const
 
     return val;
 }
-
 bool HeaderMap::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool HeaderMap::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string HeaderMap::getContentDisposition() const
 {

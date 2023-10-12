@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/ListConfigurationsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -32,7 +31,6 @@ web::json::value ListConfigurationsResponse::toJson() const
 
     return val;
 }
-
 bool ListConfigurationsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ListConfigurationsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<ConfigurationSummary>& ListConfigurationsResponse::getConfigurations()
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/LineCompareResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -56,7 +55,6 @@ web::json::value LineCompareResult::toJson() const
 
     return val;
 }
-
 bool LineCompareResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -117,6 +115,7 @@ bool LineCompareResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string LineCompareResult::getCompareTaskId() const
 {

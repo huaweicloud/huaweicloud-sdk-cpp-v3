@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/SetAuditlogPolicyRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -38,7 +37,6 @@ web::json::value SetAuditlogPolicyRequestBody::toJson() const
 
     return val;
 }
-
 bool SetAuditlogPolicyRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool SetAuditlogPolicyRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t SetAuditlogPolicyRequestBody::getKeepDays() const
 {

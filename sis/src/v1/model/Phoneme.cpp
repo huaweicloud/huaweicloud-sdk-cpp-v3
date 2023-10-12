@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sis/v1/model/Phoneme.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sis {
@@ -56,7 +55,6 @@ web::json::value Phoneme::toJson() const
 
     return val;
 }
-
 bool Phoneme::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -117,6 +115,7 @@ bool Phoneme::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string Phoneme::getArpa() const
 {

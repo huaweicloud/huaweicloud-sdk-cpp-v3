@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/QueryJobsReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -77,7 +76,6 @@ web::json::value QueryJobsReq::toJson() const
 
     return val;
 }
-
 bool QueryJobsReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -174,6 +172,7 @@ bool QueryJobsReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t QueryJobsReq::getCurPage() const
 {

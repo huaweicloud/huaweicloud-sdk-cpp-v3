@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/kms/v2/model/ApiVersionDetail.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Kms {
@@ -57,7 +56,6 @@ web::json::value ApiVersionDetail::toJson() const
 
     return val;
 }
-
 bool ApiVersionDetail::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -118,6 +116,7 @@ bool ApiVersionDetail::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ApiVersionDetail::getId() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/QueryUserDetailResp.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -82,7 +81,6 @@ web::json::value QueryUserDetailResp::toJson() const
 
     return val;
 }
-
 bool QueryUserDetailResp::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -188,6 +186,7 @@ bool QueryUserDetailResp::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string QueryUserDetailResp::getId() const
 {

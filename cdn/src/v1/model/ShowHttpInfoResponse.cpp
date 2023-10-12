@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/ShowHttpInfoResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -32,7 +31,6 @@ web::json::value ShowHttpInfoResponse::toJson() const
 
     return val;
 }
-
 bool ShowHttpInfoResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ShowHttpInfoResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 HttpInfoResponseBody ShowHttpInfoResponse::getHttps() const
 {

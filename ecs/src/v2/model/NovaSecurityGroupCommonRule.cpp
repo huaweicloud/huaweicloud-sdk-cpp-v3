@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/NovaSecurityGroupCommonRule.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -61,7 +60,6 @@ web::json::value NovaSecurityGroupCommonRule::toJson() const
 
     return val;
 }
-
 bool NovaSecurityGroupCommonRule::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -131,6 +129,7 @@ bool NovaSecurityGroupCommonRule::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t NovaSecurityGroupCommonRule::getFromPort() const
 {

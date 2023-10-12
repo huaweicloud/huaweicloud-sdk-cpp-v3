@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sdrs/v1/model/RpoStattisticsParams.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sdrs {
@@ -58,7 +57,6 @@ web::json::value RpoStattisticsParams::toJson() const
 
     return val;
 }
-
 bool RpoStattisticsParams::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool RpoStattisticsParams::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string RpoStattisticsParams::getId() const
 {

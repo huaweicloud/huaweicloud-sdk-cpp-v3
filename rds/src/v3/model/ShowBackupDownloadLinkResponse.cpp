@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/ShowBackupDownloadLinkResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -37,7 +36,6 @@ web::json::value ShowBackupDownloadLinkResponse::toJson() const
 
     return val;
 }
-
 bool ShowBackupDownloadLinkResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ShowBackupDownloadLinkResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<GetBackupDownloadLink_files>& ShowBackupDownloadLinkResponse::getFiles()
 {

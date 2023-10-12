@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/ShowReplicationCapabilitiesResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -32,7 +31,6 @@ web::json::value ShowReplicationCapabilitiesResponse::toJson() const
 
     return val;
 }
-
 bool ShowReplicationCapabilitiesResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ShowReplicationCapabilitiesResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<ProtectableReplicationCapabilitiesRespRegion>& ShowReplicationCapabilitiesResponse::getRegions()
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/codeartsbuild/v3/model/ShowListPeriodHistoryResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsbuild {
@@ -37,7 +36,6 @@ web::json::value ShowListPeriodHistoryResponse::toJson() const
 
     return val;
 }
-
 bool ShowListPeriodHistoryResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ShowListPeriodHistoryResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ShowListPeriodHistoryResponse::getTotal() const
 {

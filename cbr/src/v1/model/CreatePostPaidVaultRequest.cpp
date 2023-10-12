@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/CreatePostPaidVaultRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -32,7 +31,6 @@ web::json::value CreatePostPaidVaultRequest::toJson() const
 
     return val;
 }
-
 bool CreatePostPaidVaultRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CreatePostPaidVaultRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 VaultOrderCreateReqs CreatePostPaidVaultRequest::getBody() const
 {

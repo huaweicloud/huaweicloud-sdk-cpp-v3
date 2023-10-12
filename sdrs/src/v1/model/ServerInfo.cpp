@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sdrs/v1/model/ServerInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sdrs {
@@ -38,7 +37,6 @@ web::json::value ServerInfo::toJson() const
 
     return val;
 }
-
 bool ServerInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ServerInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ServerInfo::getServerId() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/frs/v2/model/ShowAllFaceSetsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Frs {
@@ -33,7 +32,6 @@ web::json::value ShowAllFaceSetsRequest::toJson() const
 
     return val;
 }
-
 bool ShowAllFaceSetsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool ShowAllFaceSetsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowAllFaceSetsRequest::getEnterpriseProjectId() const
 {

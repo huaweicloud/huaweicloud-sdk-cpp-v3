@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/csms/v1/model/Record.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Csms {
@@ -73,7 +72,6 @@ web::json::value Record::toJson() const
 
     return val;
 }
-
 bool Record::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -161,6 +159,7 @@ bool Record::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string Record::getEventName() const
 {

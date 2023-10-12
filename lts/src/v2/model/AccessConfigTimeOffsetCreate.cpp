@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/AccessConfigTimeOffsetCreate.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -38,7 +37,6 @@ web::json::value AccessConfigTimeOffsetCreate::toJson() const
 
     return val;
 }
-
 bool AccessConfigTimeOffsetCreate::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool AccessConfigTimeOffsetCreate::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int64_t AccessConfigTimeOffsetCreate::getOffset() const
 {

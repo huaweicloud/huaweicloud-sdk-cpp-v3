@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/DeleteVpcRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -33,7 +32,6 @@ web::json::value DeleteVpcRequest::toJson() const
 
     return val;
 }
-
 bool DeleteVpcRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool DeleteVpcRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DeleteVpcRequest::getVpcId() const
 {

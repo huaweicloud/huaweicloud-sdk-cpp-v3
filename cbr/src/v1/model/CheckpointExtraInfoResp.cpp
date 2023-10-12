@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/CheckpointExtraInfoResp.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -43,7 +42,6 @@ web::json::value CheckpointExtraInfoResp::toJson() const
 
     return val;
 }
-
 bool CheckpointExtraInfoResp::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool CheckpointExtraInfoResp::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CheckpointExtraInfoResp::getName() const
 {

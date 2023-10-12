@@ -2,9 +2,11 @@
 #ifndef HUAWEICLOUD_SDK_CDN_V1_MODEL_Urls_H_
 #define HUAWEICLOUD_SDK_CDN_V1_MODEL_Urls_H_
 
+
 #include <huaweicloud/cdn/v1/CdnExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
@@ -31,10 +33,8 @@ public:
     /// ModelBase overrides
 
     void validate() override;
-
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
-
     /////////////////////////////////////////////
     /// Urls members
 
@@ -110,6 +110,15 @@ public:
     void unsetfileType();
     void setFileType(const std::string& value);
 
+    /// <summary>
+    /// 目录刷新方式，all：刷新目录下全部资源；detect_modify_refresh：刷新目录下已变更的资源，默认值为all。
+    /// </summary>
+
+    std::string getMode() const;
+    bool modeIsSet() const;
+    void unsetmode();
+    void setMode(const std::string& value);
+
 
 protected:
     int64_t id_;
@@ -128,6 +137,8 @@ protected:
     bool createTimeIsSet_;
     std::string fileType_;
     bool fileTypeIsSet_;
+    std::string mode_;
+    bool modeIsSet_;
 
 };
 

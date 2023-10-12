@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/SetOffSiteBackupPolicyRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -32,7 +31,6 @@ web::json::value SetOffSiteBackupPolicyRequestBody::toJson() const
 
     return val;
 }
-
 bool SetOffSiteBackupPolicyRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool SetOffSiteBackupPolicyRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<OffSiteBackupPolicy>& SetOffSiteBackupPolicyRequestBody::getPolicyPara()
 {

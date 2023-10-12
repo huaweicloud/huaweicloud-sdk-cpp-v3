@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/csms/v1/model/ShowSecretStageResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Csms {
@@ -32,7 +31,6 @@ web::json::value ShowSecretStageResponse::toJson() const
 
     return val;
 }
-
 bool ShowSecretStageResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ShowSecretStageResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 Stage ShowSecretStageResponse::getStage() const
 {

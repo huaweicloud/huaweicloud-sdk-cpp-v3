@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/CreateTagsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -28,13 +27,13 @@ web::json::value CreateTagsResponse::toJson() const
 
     return val;
 }
-
 bool CreateTagsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 }
 }

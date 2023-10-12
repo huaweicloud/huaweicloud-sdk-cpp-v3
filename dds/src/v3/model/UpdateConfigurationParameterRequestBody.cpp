@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/UpdateConfigurationParameterRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -42,7 +41,6 @@ web::json::value UpdateConfigurationParameterRequestBody::toJson() const
 
     return val;
 }
-
 bool UpdateConfigurationParameterRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool UpdateConfigurationParameterRequestBody::fromJson(const web::json::value& v
     }
     return ok;
 }
+
 
 std::string UpdateConfigurationParameterRequestBody::getName() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/frs/v2/model/UpdateFaceReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Frs {
@@ -42,7 +41,6 @@ web::json::value UpdateFaceReq::toJson() const
 
     return val;
 }
-
 bool UpdateFaceReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool UpdateFaceReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 Object UpdateFaceReq::getExternalFields() const
 {

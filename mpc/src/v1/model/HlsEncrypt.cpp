@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/HlsEncrypt.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -48,7 +47,6 @@ web::json::value HlsEncrypt::toJson() const
 
     return val;
 }
-
 bool HlsEncrypt::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool HlsEncrypt::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string HlsEncrypt::getKey() const
 {

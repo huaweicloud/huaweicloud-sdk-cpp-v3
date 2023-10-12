@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/CreateIpResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -28,13 +27,13 @@ web::json::value CreateIpResponse::toJson() const
 
     return val;
 }
-
 bool CreateIpResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 }
 }

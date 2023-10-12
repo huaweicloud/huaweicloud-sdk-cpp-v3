@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v3/model/DetachBatchPublicIpResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -37,7 +36,6 @@ web::json::value DetachBatchPublicIpResponse::toJson() const
 
     return val;
 }
-
 bool DetachBatchPublicIpResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool DetachBatchPublicIpResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<BatchPublicipResp>& DetachBatchPublicIpResponse::getPublicips()
 {

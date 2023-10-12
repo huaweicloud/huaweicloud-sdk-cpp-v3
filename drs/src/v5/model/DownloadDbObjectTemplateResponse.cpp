@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/DownloadDbObjectTemplateResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -28,13 +27,13 @@ web::json::value DownloadDbObjectTemplateResponse::toJson() const
 
     return val;
 }
-
 bool DownloadDbObjectTemplateResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 }
 }

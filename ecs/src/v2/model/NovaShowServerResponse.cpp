@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/NovaShowServerResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -32,7 +31,6 @@ web::json::value NovaShowServerResponse::toJson() const
 
     return val;
 }
-
 bool NovaShowServerResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool NovaShowServerResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 NovaServer NovaShowServerResponse::getServer() const
 {

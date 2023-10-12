@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/PreheatingTaskRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -32,7 +31,6 @@ web::json::value PreheatingTaskRequest::toJson() const
 
     return val;
 }
-
 bool PreheatingTaskRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool PreheatingTaskRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 PreheatingTaskRequestBody PreheatingTaskRequest::getPreheatingTask() const
 {

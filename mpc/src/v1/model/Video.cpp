@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/Video.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -88,7 +87,6 @@ web::json::value Video::toJson() const
 
     return val;
 }
-
 bool Video::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -203,6 +201,7 @@ bool Video::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string Video::getOutputPolicy() const
 {

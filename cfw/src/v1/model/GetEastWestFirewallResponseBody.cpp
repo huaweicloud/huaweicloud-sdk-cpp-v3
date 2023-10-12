@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/GetEastWestFirewallResponseBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -78,7 +77,6 @@ web::json::value GetEastWestFirewallResponseBody::toJson() const
 
     return val;
 }
-
 bool GetEastWestFirewallResponseBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -184,6 +182,7 @@ bool GetEastWestFirewallResponseBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string GetEastWestFirewallResponseBody::getObjectId() const
 {

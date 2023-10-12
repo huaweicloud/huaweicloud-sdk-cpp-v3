@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/WebImageRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -22,6 +21,8 @@ WebImageRequestBody::WebImageRequestBody()
     extractTypeIsSet_ = false;
     detectFont_ = false;
     detectFontIsSet_ = false;
+    detectTextDirection_ = false;
+    detectTextDirectionIsSet_ = false;
 }
 
 WebImageRequestBody::~WebImageRequestBody() = default;
@@ -49,10 +50,12 @@ web::json::value WebImageRequestBody::toJson() const
     if(detectFontIsSet_) {
         val[utility::conversions::to_string_t("detect_font")] = ModelBase::toJson(detectFont_);
     }
+    if(detectTextDirectionIsSet_) {
+        val[utility::conversions::to_string_t("detect_text_direction")] = ModelBase::toJson(detectTextDirection_);
+    }
 
     return val;
 }
-
 bool WebImageRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -102,8 +105,18 @@ bool WebImageRequestBody::fromJson(const web::json::value& val)
             setDetectFont(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("detect_text_direction"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("detect_text_direction"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDetectTextDirection(refVal);
+        }
+    }
     return ok;
 }
+
 
 std::string WebImageRequestBody::getImage() const
 {
@@ -208,6 +221,27 @@ bool WebImageRequestBody::detectFontIsSet() const
 void WebImageRequestBody::unsetdetectFont()
 {
     detectFontIsSet_ = false;
+}
+
+bool WebImageRequestBody::isDetectTextDirection() const
+{
+    return detectTextDirection_;
+}
+
+void WebImageRequestBody::setDetectTextDirection(bool value)
+{
+    detectTextDirection_ = value;
+    detectTextDirectionIsSet_ = true;
+}
+
+bool WebImageRequestBody::detectTextDirectionIsSet() const
+{
+    return detectTextDirectionIsSet_;
+}
+
+void WebImageRequestBody::unsetdetectTextDirection()
+{
+    detectTextDirectionIsSet_ = false;
 }
 
 }

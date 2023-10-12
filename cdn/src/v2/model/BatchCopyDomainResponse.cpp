@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v2/model/BatchCopyDomainResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -32,7 +31,6 @@ web::json::value BatchCopyDomainResponse::toJson() const
 
     return val;
 }
-
 bool BatchCopyDomainResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool BatchCopyDomainResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<BatchCopyResultVo>& BatchCopyDomainResponse::getResult()
 {

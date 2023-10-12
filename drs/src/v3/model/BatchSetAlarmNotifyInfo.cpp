@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/BatchSetAlarmNotifyInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -57,7 +56,6 @@ web::json::value BatchSetAlarmNotifyInfo::toJson() const
 
     return val;
 }
-
 bool BatchSetAlarmNotifyInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -118,6 +116,7 @@ bool BatchSetAlarmNotifyInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<SubscriptionInfo>& BatchSetAlarmNotifyInfo::getSubscriptions()
 {

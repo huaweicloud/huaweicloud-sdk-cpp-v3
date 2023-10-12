@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/smn/v2/model/ListTopicsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Smn {
@@ -58,7 +57,6 @@ web::json::value ListTopicsRequest::toJson() const
 
     return val;
 }
-
 bool ListTopicsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool ListTopicsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ListTopicsRequest::getOffset() const
 {

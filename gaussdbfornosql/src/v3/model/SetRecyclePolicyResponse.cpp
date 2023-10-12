@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/SetRecyclePolicyResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -28,13 +27,13 @@ web::json::value SetRecyclePolicyResponse::toJson() const
 
     return val;
 }
-
 bool SetRecyclePolicyResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 }
 }

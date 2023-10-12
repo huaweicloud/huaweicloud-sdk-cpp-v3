@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v2/model/ListUpStreamDetailRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -58,7 +57,6 @@ web::json::value ListUpStreamDetailRequest::toJson() const
 
     return val;
 }
-
 bool ListUpStreamDetailRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool ListUpStreamDetailRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListUpStreamDetailRequest::getProjectId() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v2/model/BatchCreatePublicipTagsRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -37,7 +36,6 @@ web::json::value BatchCreatePublicipTagsRequestBody::toJson() const
 
     return val;
 }
-
 bool BatchCreatePublicipTagsRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool BatchCreatePublicipTagsRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<ResourceTagOption>& BatchCreatePublicipTagsRequestBody::getTags()
 {

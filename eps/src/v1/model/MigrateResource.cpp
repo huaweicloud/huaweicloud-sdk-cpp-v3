@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eps/v1/model/MigrateResource.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eps {
@@ -53,7 +52,6 @@ web::json::value MigrateResource::toJson() const
 
     return val;
 }
-
 bool MigrateResource::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool MigrateResource::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string MigrateResource::getRegionId() const
 {

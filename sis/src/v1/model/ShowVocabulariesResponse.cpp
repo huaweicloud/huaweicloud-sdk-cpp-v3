@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sis/v1/model/ShowVocabulariesResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sis {
@@ -37,7 +36,6 @@ web::json::value ShowVocabulariesResponse::toJson() const
 
     return val;
 }
-
 bool ShowVocabulariesResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ShowVocabulariesResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ShowVocabulariesResponse::getCount() const
 {

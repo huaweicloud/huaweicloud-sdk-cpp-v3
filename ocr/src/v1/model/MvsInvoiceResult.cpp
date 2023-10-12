@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/MvsInvoiceResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -296,7 +295,6 @@ web::json::value MvsInvoiceResult::toJson() const
 
     return val;
 }
-
 bool MvsInvoiceResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -789,6 +787,7 @@ bool MvsInvoiceResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string MvsInvoiceResult::getCode() const
 {

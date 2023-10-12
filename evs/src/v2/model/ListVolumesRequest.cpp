@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/evs/v2/model/ListVolumesRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Evs {
@@ -118,7 +117,6 @@ web::json::value ListVolumesRequest::toJson() const
 
     return val;
 }
-
 bool ListVolumesRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -287,6 +285,7 @@ bool ListVolumesRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListVolumesRequest::getMarker() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/CreateTemplateGroupCollectionResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -33,7 +32,6 @@ web::json::value CreateTemplateGroupCollectionResponse::toJson() const
 
     return val;
 }
-
 bool CreateTemplateGroupCollectionResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool CreateTemplateGroupCollectionResponse::fromJson(const web::json::value& val
     }
     return ok;
 }
+
 
 std::string CreateTemplateGroupCollectionResponse::getGroupCollectionId() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/frs/v2/model/DetectFace.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Frs {
@@ -36,7 +35,6 @@ web::json::value DetectFace::toJson() const
 
     return val;
 }
-
 bool DetectFace::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -61,6 +59,7 @@ bool DetectFace::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 BoundingBox DetectFace::getBoundingBox() const
 {

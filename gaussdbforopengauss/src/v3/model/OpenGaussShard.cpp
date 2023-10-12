@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/OpenGaussShard.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -33,7 +32,6 @@ web::json::value OpenGaussShard::toJson() const
 
     return val;
 }
-
 bool OpenGaussShard::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool OpenGaussShard::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t OpenGaussShard::getCount() const
 {

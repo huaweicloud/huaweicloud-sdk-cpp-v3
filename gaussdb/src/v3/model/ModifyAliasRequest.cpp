@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/ModifyAliasRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -33,7 +32,6 @@ web::json::value ModifyAliasRequest::toJson() const
 
     return val;
 }
-
 bool ModifyAliasRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool ModifyAliasRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ModifyAliasRequest::getAlias() const
 {

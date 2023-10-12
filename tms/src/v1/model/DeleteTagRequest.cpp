@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/tms/v1/model/DeleteTagRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Tms {
@@ -33,7 +32,6 @@ web::json::value DeleteTagRequest::toJson() const
 
     return val;
 }
-
 bool DeleteTagRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool DeleteTagRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DeleteTagRequest::getKey() const
 {

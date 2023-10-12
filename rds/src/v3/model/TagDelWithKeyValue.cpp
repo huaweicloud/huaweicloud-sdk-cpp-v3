@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/TagDelWithKeyValue.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -38,7 +37,6 @@ web::json::value TagDelWithKeyValue::toJson() const
 
     return val;
 }
-
 bool TagDelWithKeyValue::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool TagDelWithKeyValue::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string TagDelWithKeyValue::getKey() const
 {

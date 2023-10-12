@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/ModifyOpsWindow.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -38,7 +37,6 @@ web::json::value ModifyOpsWindow::toJson() const
 
     return val;
 }
-
 bool ModifyOpsWindow::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ModifyOpsWindow::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ModifyOpsWindow::getStartTime() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/DbObject.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -41,7 +40,6 @@ web::json::value DbObject::toJson() const
 
     return val;
 }
-
 bool DbObject::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -75,6 +73,7 @@ bool DbObject::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DbObject::getObjectScope() const
 {

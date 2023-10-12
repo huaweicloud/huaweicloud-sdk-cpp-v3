@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sdrs/v1/model/DrillServerParams.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sdrs {
@@ -38,7 +37,6 @@ web::json::value DrillServerParams::toJson() const
 
     return val;
 }
-
 bool DrillServerParams::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool DrillServerParams::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DrillServerParams::getProtectedInstance() const
 {

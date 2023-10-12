@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v1/model/UpdateDomainIp6SwitchRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -32,7 +31,6 @@ web::json::value UpdateDomainIp6SwitchRequest::toJson() const
 
     return val;
 }
-
 bool UpdateDomainIp6SwitchRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool UpdateDomainIp6SwitchRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 DomainIpv6SwitchReq UpdateDomainIp6SwitchRequest::getBody() const
 {

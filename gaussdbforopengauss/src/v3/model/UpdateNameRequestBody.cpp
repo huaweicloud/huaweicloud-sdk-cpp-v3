@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/UpdateNameRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -33,7 +32,6 @@ web::json::value UpdateNameRequestBody::toJson() const
 
     return val;
 }
-
 bool UpdateNameRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool UpdateNameRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateNameRequestBody::getName() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v3/model/BatchPublicipResp.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -37,7 +36,6 @@ web::json::value BatchPublicipResp::toJson() const
 
     return val;
 }
-
 bool BatchPublicipResp::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool BatchPublicipResp::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t BatchPublicipResp::getStatusCode() const
 {

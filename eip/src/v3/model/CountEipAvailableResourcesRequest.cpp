@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v3/model/CountEipAvailableResourcesRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -32,7 +31,6 @@ web::json::value CountEipAvailableResourcesRequest::toJson() const
 
     return val;
 }
-
 bool CountEipAvailableResourcesRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CountEipAvailableResourcesRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 EipResourcesAvailableV3RequestBody CountEipAvailableResourcesRequest::getBody() const
 {

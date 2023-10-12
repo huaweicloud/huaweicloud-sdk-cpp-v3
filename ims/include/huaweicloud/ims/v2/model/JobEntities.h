@@ -2,9 +2,11 @@
 #ifndef HUAWEICLOUD_SDK_IMS_V2_MODEL_JobEntities_H_
 #define HUAWEICLOUD_SDK_IMS_V2_MODEL_JobEntities_H_
 
+
 #include <huaweicloud/ims/v2/ImsExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/ims/v2/model/JobEntitiesResult.h>
@@ -34,10 +36,8 @@ public:
     /// ModelBase overrides
 
     void validate() override;
-
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
-
     /////////////////////////////////////////////
     /// JobEntities members
 
@@ -67,6 +67,51 @@ public:
     bool imageNameIsSet() const;
     void unsetimageName();
     void setImageName(const std::string& value);
+
+    /// <summary>
+    /// 添加错误码
+    /// </summary>
+
+    std::string getAdditionErrorCode() const;
+    bool additionErrorCodeIsSet() const;
+    void unsetadditionErrorCode();
+    void setAdditionErrorCode(const std::string& value);
+
+    /// <summary>
+    /// 添加错误消息
+    /// </summary>
+
+    std::string getAdditionErrorMsg() const;
+    bool additionErrorMsgIsSet() const;
+    void unsetadditionErrorMsg();
+    void setAdditionErrorMsg(const std::string& value);
+
+    /// <summary>
+    /// 错误码
+    /// </summary>
+
+    std::string getErrorCode() const;
+    bool errorCodeIsSet() const;
+    void unseterrorCode();
+    void setErrorCode(const std::string& value);
+
+    /// <summary>
+    /// 错误消息
+    /// </summary>
+
+    std::string getError() const;
+    bool errorIsSet() const;
+    void unseterror();
+    void setError(const std::string& value);
+
+    /// <summary>
+    /// 告警代码
+    /// </summary>
+
+    std::string getAlarmCode() const;
+    bool alarmCodeIsSet() const;
+    void unsetalarmCode();
+    void setAlarmCode(const std::string& value);
 
     /// <summary>
     /// 任务执行进度
@@ -112,6 +157,16 @@ protected:
     bool currentTaskIsSet_;
     std::string imageName_;
     bool imageNameIsSet_;
+    std::string additionErrorCode_;
+    bool additionErrorCodeIsSet_;
+    std::string additionErrorMsg_;
+    bool additionErrorMsgIsSet_;
+    std::string errorCode_;
+    bool errorCodeIsSet_;
+    std::string error_;
+    bool errorIsSet_;
+    std::string alarmCode_;
+    bool alarmCodeIsSet_;
     double processPercent_;
     bool processPercentIsSet_;
     std::vector<JobEntitiesResult> results_;

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/DeleteServiceItemUsingDeleteRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -43,7 +42,6 @@ web::json::value DeleteServiceItemUsingDeleteRequest::toJson() const
 
     return val;
 }
-
 bool DeleteServiceItemUsingDeleteRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool DeleteServiceItemUsingDeleteRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DeleteServiceItemUsingDeleteRequest::getItemId() const
 {

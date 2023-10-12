@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v3/model/DetachSharedbwReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -32,7 +31,6 @@ web::json::value DetachSharedbwReq::toJson() const
 
     return val;
 }
-
 bool DetachSharedbwReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool DetachSharedbwReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 DetachSharedbwReq_publicip DetachSharedbwReq::getPublicip() const
 {

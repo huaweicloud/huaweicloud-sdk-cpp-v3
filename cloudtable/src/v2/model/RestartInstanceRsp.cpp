@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cloudtable/v2/model/RestartInstanceRsp.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cloudtable {
@@ -32,7 +31,6 @@ web::json::value RestartInstanceRsp::toJson() const
 
     return val;
 }
-
 bool RestartInstanceRsp::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool RestartInstanceRsp::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<std::string>& RestartInstanceRsp::getJobId()
 {

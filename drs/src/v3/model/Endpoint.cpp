@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/Endpoint.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -143,7 +142,6 @@ web::json::value Endpoint::toJson() const
 
     return val;
 }
-
 bool Endpoint::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -357,6 +355,7 @@ bool Endpoint::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string Endpoint::getDbType() const
 {

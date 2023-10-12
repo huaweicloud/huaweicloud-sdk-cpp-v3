@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/NovaKeypairDetail.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -78,7 +77,6 @@ web::json::value NovaKeypairDetail::toJson() const
 
     return val;
 }
-
 bool NovaKeypairDetail::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -175,6 +173,7 @@ bool NovaKeypairDetail::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string NovaKeypairDetail::getPublicKey() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v3/model/AttachShareBandwidthRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -37,7 +36,6 @@ web::json::value AttachShareBandwidthRequest::toJson() const
 
     return val;
 }
-
 bool AttachShareBandwidthRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool AttachShareBandwidthRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string AttachShareBandwidthRequest::getPublicipId() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sis/v1/model/UpdateVocabularyRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sis {
@@ -37,7 +36,6 @@ web::json::value UpdateVocabularyRequest::toJson() const
 
     return val;
 }
-
 bool UpdateVocabularyRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool UpdateVocabularyRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateVocabularyRequest::getVocabularyId() const
 {

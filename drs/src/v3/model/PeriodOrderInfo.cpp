@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/PeriodOrderInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -43,7 +42,6 @@ web::json::value PeriodOrderInfo::toJson() const
 
     return val;
 }
-
 bool PeriodOrderInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool PeriodOrderInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t PeriodOrderInfo::getPeriodType() const
 {

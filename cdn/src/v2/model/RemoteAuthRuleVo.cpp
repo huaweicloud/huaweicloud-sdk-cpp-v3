@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v2/model/RemoteAuthRuleVo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -101,7 +100,6 @@ web::json::value RemoteAuthRuleVo::toJson() const
 
     return val;
 }
-
 bool RemoteAuthRuleVo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -243,6 +241,7 @@ bool RemoteAuthRuleVo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string RemoteAuthRuleVo::getAuthServer() const
 {

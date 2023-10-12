@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/tms/v1/model/DeleteResourceTagRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Tms {
@@ -32,7 +31,6 @@ web::json::value DeleteResourceTagRequest::toJson() const
 
     return val;
 }
-
 bool DeleteResourceTagRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool DeleteResourceTagRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 ReqDeleteTag DeleteResourceTagRequest::getBody() const
 {

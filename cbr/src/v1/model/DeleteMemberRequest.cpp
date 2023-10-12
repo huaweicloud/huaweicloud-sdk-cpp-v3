@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/DeleteMemberRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -38,7 +37,6 @@ web::json::value DeleteMemberRequest::toJson() const
 
     return val;
 }
-
 bool DeleteMemberRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool DeleteMemberRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DeleteMemberRequest::getBackupId() const
 {

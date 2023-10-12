@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/ListDbObjectsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -57,7 +56,6 @@ web::json::value ListDbObjectsRequest::toJson() const
 
     return val;
 }
-
 bool ListDbObjectsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -118,6 +116,7 @@ bool ListDbObjectsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListDbObjectsRequest::getJobId() const
 {

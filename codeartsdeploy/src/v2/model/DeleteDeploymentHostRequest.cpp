@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/codeartsdeploy/v2/model/DeleteDeploymentHostRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsdeploy {
@@ -38,7 +37,6 @@ web::json::value DeleteDeploymentHostRequest::toJson() const
 
     return val;
 }
-
 bool DeleteDeploymentHostRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool DeleteDeploymentHostRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DeleteDeploymentHostRequest::getGroupId() const
 {

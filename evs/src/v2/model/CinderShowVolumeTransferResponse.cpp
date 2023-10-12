@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/evs/v2/model/CinderShowVolumeTransferResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Evs {
@@ -32,7 +31,6 @@ web::json::value CinderShowVolumeTransferResponse::toJson() const
 
     return val;
 }
-
 bool CinderShowVolumeTransferResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CinderShowVolumeTransferResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 VolumeTransfer CinderShowVolumeTransferResponse::getTransfer() const
 {

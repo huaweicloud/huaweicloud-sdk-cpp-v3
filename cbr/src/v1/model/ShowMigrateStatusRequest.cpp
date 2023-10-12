@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/ShowMigrateStatusRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -33,7 +32,6 @@ web::json::value ShowMigrateStatusRequest::toJson() const
 
     return val;
 }
-
 bool ShowMigrateStatusRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool ShowMigrateStatusRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool ShowMigrateStatusRequest::isAllRegions() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/StorageUsage.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -58,7 +57,6 @@ web::json::value StorageUsage::toJson() const
 
     return val;
 }
-
 bool StorageUsage::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool StorageUsage::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t StorageUsage::getBackupCount() const
 {

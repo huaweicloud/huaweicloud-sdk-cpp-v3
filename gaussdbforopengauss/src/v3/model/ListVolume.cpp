@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/ListVolume.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -38,7 +37,6 @@ web::json::value ListVolume::toJson() const
 
     return val;
 }
-
 bool ListVolume::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ListVolume::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListVolume::getType() const
 {

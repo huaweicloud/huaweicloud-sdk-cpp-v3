@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/BatchCreateAndDeleteVaultTagsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -37,7 +36,6 @@ web::json::value BatchCreateAndDeleteVaultTagsRequest::toJson() const
 
     return val;
 }
-
 bool BatchCreateAndDeleteVaultTagsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool BatchCreateAndDeleteVaultTagsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string BatchCreateAndDeleteVaultTagsRequest::getVaultId() const
 {

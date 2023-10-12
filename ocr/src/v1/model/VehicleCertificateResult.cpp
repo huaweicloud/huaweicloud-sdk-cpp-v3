@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/VehicleCertificateResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -251,7 +250,6 @@ web::json::value VehicleCertificateResult::toJson() const
 
     return val;
 }
-
 bool VehicleCertificateResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -663,6 +661,7 @@ bool VehicleCertificateResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string VehicleCertificateResult::getCertificateNumber() const
 {

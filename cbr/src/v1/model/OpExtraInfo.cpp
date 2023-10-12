@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/OpExtraInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -64,7 +63,6 @@ web::json::value OpExtraInfo::toJson() const
 
     return val;
 }
-
 bool OpExtraInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -152,6 +150,7 @@ bool OpExtraInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 OpExtendInfoBckup OpExtraInfo::getBackup() const
 {

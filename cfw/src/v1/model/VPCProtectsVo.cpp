@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/VPCProtectsVo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -55,7 +54,6 @@ web::json::value VPCProtectsVo::toJson() const
 
     return val;
 }
-
 bool VPCProtectsVo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -116,6 +114,7 @@ bool VPCProtectsVo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t VPCProtectsVo::getTotal() const
 {

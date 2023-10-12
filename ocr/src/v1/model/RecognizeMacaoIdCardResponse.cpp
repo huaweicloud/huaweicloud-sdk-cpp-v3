@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/RecognizeMacaoIdCardResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -32,7 +31,6 @@ web::json::value RecognizeMacaoIdCardResponse::toJson() const
 
     return val;
 }
-
 bool RecognizeMacaoIdCardResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool RecognizeMacaoIdCardResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 MacaoIdCardResult RecognizeMacaoIdCardResponse::getResult() const
 {

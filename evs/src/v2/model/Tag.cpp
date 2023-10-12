@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/evs/v2/model/Tag.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Evs {
@@ -38,7 +37,6 @@ web::json::value Tag::toJson() const
 
     return val;
 }
-
 bool Tag::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool Tag::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string Tag::getKey() const
 {

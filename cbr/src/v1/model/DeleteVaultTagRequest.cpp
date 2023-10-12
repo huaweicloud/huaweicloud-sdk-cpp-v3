@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/DeleteVaultTagRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -38,7 +37,6 @@ web::json::value DeleteVaultTagRequest::toJson() const
 
     return val;
 }
-
 bool DeleteVaultTagRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool DeleteVaultTagRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DeleteVaultTagRequest::getKey() const
 {

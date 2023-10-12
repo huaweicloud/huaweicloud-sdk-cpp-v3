@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v1/model/ShowDomainHttpsCertResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -48,7 +47,6 @@ web::json::value ShowDomainHttpsCertResponse::toJson() const
 
     return val;
 }
-
 bool ShowDomainHttpsCertResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool ShowDomainHttpsCertResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowDomainHttpsCertResponse::getCertificateFormat() const
 {

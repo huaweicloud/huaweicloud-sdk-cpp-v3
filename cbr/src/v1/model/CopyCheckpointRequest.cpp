@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/CopyCheckpointRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -32,7 +31,6 @@ web::json::value CopyCheckpointRequest::toJson() const
 
     return val;
 }
-
 bool CopyCheckpointRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CopyCheckpointRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 CheckpointReplicateReq CopyCheckpointRequest::getBody() const
 {

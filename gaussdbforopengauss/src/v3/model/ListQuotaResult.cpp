@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/ListQuotaResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -78,7 +77,6 @@ web::json::value ListQuotaResult::toJson() const
 
     return val;
 }
-
 bool ListQuotaResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -175,6 +173,7 @@ bool ListQuotaResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListQuotaResult::getEnterpriseProjectId() const
 {

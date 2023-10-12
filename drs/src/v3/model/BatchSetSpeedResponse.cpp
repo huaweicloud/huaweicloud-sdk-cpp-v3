@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/BatchSetSpeedResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -37,7 +36,6 @@ web::json::value BatchSetSpeedResponse::toJson() const
 
     return val;
 }
-
 bool BatchSetSpeedResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool BatchSetSpeedResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t BatchSetSpeedResponse::getCount() const
 {

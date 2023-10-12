@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/NeutronShowSubnetRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -33,7 +32,6 @@ web::json::value NeutronShowSubnetRequest::toJson() const
 
     return val;
 }
-
 bool NeutronShowSubnetRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool NeutronShowSubnetRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string NeutronShowSubnetRequest::getSubnetId() const
 {

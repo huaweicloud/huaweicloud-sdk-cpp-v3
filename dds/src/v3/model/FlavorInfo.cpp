@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/FlavorInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -61,7 +60,6 @@ web::json::value FlavorInfo::toJson() const
 
     return val;
 }
-
 bool FlavorInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -131,6 +129,7 @@ bool FlavorInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string FlavorInfo::getEngineName() const
 {

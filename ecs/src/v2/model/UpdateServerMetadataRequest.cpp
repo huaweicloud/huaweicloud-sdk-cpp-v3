@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/UpdateServerMetadataRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -37,7 +36,6 @@ web::json::value UpdateServerMetadataRequest::toJson() const
 
     return val;
 }
-
 bool UpdateServerMetadataRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool UpdateServerMetadataRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateServerMetadataRequest::getServerId() const
 {

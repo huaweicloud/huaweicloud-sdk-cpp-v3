@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/BackupSync.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -68,7 +67,6 @@ web::json::value BackupSync::toJson() const
 
     return val;
 }
-
 bool BackupSync::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -147,6 +145,7 @@ bool BackupSync::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string BackupSync::getBackupId() const
 {

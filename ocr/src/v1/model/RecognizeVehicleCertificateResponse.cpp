@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/RecognizeVehicleCertificateResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -32,7 +31,6 @@ web::json::value RecognizeVehicleCertificateResponse::toJson() const
 
     return val;
 }
-
 bool RecognizeVehicleCertificateResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool RecognizeVehicleCertificateResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 VehicleCertificateResult RecognizeVehicleCertificateResponse::getResult() const
 {

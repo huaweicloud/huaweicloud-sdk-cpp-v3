@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v1/model/ListLiveSampleLogsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -42,7 +41,6 @@ web::json::value ListLiveSampleLogsResponse::toJson() const
 
     return val;
 }
-
 bool ListLiveSampleLogsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool ListLiveSampleLogsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ListLiveSampleLogsResponse::getTotal() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/QueryDataGuardMonitorResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -128,7 +127,6 @@ web::json::value QueryDataGuardMonitorResponse::toJson() const
 
     return val;
 }
-
 bool QueryDataGuardMonitorResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -315,6 +313,7 @@ bool QueryDataGuardMonitorResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string QueryDataGuardMonitorResponse::getBandwidth() const
 {

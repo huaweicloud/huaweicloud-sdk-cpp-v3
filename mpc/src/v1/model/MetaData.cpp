@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/MetaData.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -61,7 +60,6 @@ web::json::value MetaData::toJson() const
 
     return val;
 }
-
 bool MetaData::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -131,6 +129,7 @@ bool MetaData::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int64_t MetaData::getSize() const
 {

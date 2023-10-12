@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/ListEastWestFirewallRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -48,7 +47,6 @@ web::json::value ListEastWestFirewallRequest::toJson() const
 
     return val;
 }
-
 bool ListEastWestFirewallRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool ListEastWestFirewallRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ListEastWestFirewallRequest::getLimit() const
 {

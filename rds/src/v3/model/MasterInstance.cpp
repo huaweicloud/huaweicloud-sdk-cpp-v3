@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/MasterInstance.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -57,7 +56,6 @@ web::json::value MasterInstance::toJson() const
 
     return val;
 }
-
 bool MasterInstance::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -118,6 +116,7 @@ bool MasterInstance::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string MasterInstance::getId() const
 {

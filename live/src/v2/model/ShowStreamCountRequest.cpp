@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v2/model/ShowStreamCountRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -47,7 +46,6 @@ web::json::value ShowStreamCountRequest::toJson() const
 
     return val;
 }
-
 bool ShowStreamCountRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -90,6 +88,7 @@ bool ShowStreamCountRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowStreamCountRequest::getProjectId() const
 {

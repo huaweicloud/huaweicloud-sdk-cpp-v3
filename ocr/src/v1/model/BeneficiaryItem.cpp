@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/BeneficiaryItem.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -44,7 +43,6 @@ web::json::value BeneficiaryItem::toJson() const
 
     return val;
 }
-
 bool BeneficiaryItem::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -87,6 +85,7 @@ bool BeneficiaryItem::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 InsurancePolicyDetail BeneficiaryItem::getBeneficiaryName() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/DnsAssignMent.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -43,7 +42,6 @@ web::json::value DnsAssignMent::toJson() const
 
     return val;
 }
-
 bool DnsAssignMent::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool DnsAssignMent::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DnsAssignMent::getHostname() const
 {

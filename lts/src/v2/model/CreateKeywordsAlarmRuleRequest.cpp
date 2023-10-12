@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/CreateKeywordsAlarmRuleRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -37,7 +36,6 @@ web::json::value CreateKeywordsAlarmRuleRequest::toJson() const
 
     return val;
 }
-
 bool CreateKeywordsAlarmRuleRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool CreateKeywordsAlarmRuleRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateKeywordsAlarmRuleRequest::getContentType() const
 {

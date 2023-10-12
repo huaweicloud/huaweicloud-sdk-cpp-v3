@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sdrs/v1/model/DeleteProtectedInstanceResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sdrs {
@@ -33,7 +32,6 @@ web::json::value DeleteProtectedInstanceResponse::toJson() const
 
     return val;
 }
-
 bool DeleteProtectedInstanceResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool DeleteProtectedInstanceResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DeleteProtectedInstanceResponse::getJobId() const
 {

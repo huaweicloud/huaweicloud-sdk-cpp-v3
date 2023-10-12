@@ -2,9 +2,11 @@
 #ifndef HUAWEICLOUD_SDK_ECS_V2_MODEL_PrePaidServer_H_
 #define HUAWEICLOUD_SDK_ECS_V2_MODEL_PrePaidServer_H_
 
+
 #include <huaweicloud/ecs/v2/EcsExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/ecs/v2/model/PrePaidServerRootVolume.h>
@@ -41,15 +43,13 @@ public:
     /// ModelBase overrides
 
     void validate() override;
-
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
-
     /////////////////////////////////////////////
     /// PrePaidServer members
 
     /// <summary>
-    /// 弹性云服务器自动释放时间。  时间格式例如：2020-01-19T03:30:52Z
+    /// 弹性云服务器定时删除时间。  时间格式例如：2020-01-19T03:30:52Z
     /// </summary>
 
     std::string getAutoTerminateTime() const;

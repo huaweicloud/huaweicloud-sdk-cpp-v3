@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ivs/v2/model/Meta.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ivs {
@@ -33,7 +32,6 @@ web::json::value Meta::toJson() const
 
     return val;
 }
-
 bool Meta::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool Meta::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string Meta::getUuid() const
 {

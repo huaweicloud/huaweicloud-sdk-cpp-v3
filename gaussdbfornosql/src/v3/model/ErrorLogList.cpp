@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/ErrorLogList.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -48,7 +47,6 @@ web::json::value ErrorLogList::toJson() const
 
     return val;
 }
-
 bool ErrorLogList::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool ErrorLogList::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ErrorLogList::getNodeName() const
 {

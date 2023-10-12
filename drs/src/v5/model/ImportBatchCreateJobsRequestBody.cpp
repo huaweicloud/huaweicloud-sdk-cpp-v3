@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/ImportBatchCreateJobsRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -29,13 +28,13 @@ web::json::value ImportBatchCreateJobsRequestBody::toJson() const
 
     return val;
 }
-
 bool ImportBatchCreateJobsRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 HttpContent ImportBatchCreateJobsRequestBody::getFile() const
 {

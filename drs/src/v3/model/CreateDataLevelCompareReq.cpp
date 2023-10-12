@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/CreateDataLevelCompareReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -56,7 +55,6 @@ web::json::value CreateDataLevelCompareReq::toJson() const
 
     return val;
 }
-
 bool CreateDataLevelCompareReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -117,6 +115,7 @@ bool CreateDataLevelCompareReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateDataLevelCompareReq::getConflictPolicy() const
 {

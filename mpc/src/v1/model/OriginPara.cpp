@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/OriginPara.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -51,7 +50,6 @@ web::json::value OriginPara::toJson() const
 
     return val;
 }
-
 bool OriginPara::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -103,6 +101,7 @@ bool OriginPara::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t OriginPara::getDuration() const
 {

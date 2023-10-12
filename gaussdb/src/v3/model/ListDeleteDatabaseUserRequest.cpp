@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/ListDeleteDatabaseUserRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -38,7 +37,6 @@ web::json::value ListDeleteDatabaseUserRequest::toJson() const
 
     return val;
 }
-
 bool ListDeleteDatabaseUserRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ListDeleteDatabaseUserRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListDeleteDatabaseUserRequest::getName() const
 {

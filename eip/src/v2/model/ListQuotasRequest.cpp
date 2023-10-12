@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v2/model/ListQuotasRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -33,7 +32,6 @@ web::json::value ListQuotasRequest::toJson() const
 
     return val;
 }
-
 bool ListQuotasRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool ListQuotasRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListQuotasRequest::getType() const
 {

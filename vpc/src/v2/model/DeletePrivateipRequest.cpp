@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/DeletePrivateipRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -33,7 +32,6 @@ web::json::value DeletePrivateipRequest::toJson() const
 
     return val;
 }
-
 bool DeletePrivateipRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool DeletePrivateipRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DeletePrivateipRequest::getPrivateipId() const
 {

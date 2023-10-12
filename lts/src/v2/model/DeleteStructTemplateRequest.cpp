@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/DeleteStructTemplateRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -32,7 +31,6 @@ web::json::value DeleteStructTemplateRequest::toJson() const
 
     return val;
 }
-
 bool DeleteStructTemplateRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool DeleteStructTemplateRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 DeleteStructTemplateReqBody DeleteStructTemplateRequest::getBody() const
 {

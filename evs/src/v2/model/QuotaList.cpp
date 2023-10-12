@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/evs/v2/model/QuotaList.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Evs {
@@ -105,7 +104,6 @@ web::json::value QuotaList::toJson() const
 
     return val;
 }
-
 bool QuotaList::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -283,6 +281,7 @@ bool QuotaList::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 QuotaDetailBackupGigabytes QuotaList::getBackupGigabytes() const
 {

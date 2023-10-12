@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/Single2Ha.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -32,7 +31,6 @@ web::json::value Single2Ha::toJson() const
 
     return val;
 }
-
 bool Single2Ha::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool Single2Ha::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 Single2HaObject Single2Ha::getSingleToHa() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/ResetConfigurationRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -33,7 +32,6 @@ web::json::value ResetConfigurationRequest::toJson() const
 
     return val;
 }
-
 bool ResetConfigurationRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool ResetConfigurationRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ResetConfigurationRequest::getConfigId() const
 {

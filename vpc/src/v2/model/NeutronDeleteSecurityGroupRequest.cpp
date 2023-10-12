@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/NeutronDeleteSecurityGroupRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -33,7 +32,6 @@ web::json::value NeutronDeleteSecurityGroupRequest::toJson() const
 
     return val;
 }
-
 bool NeutronDeleteSecurityGroupRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool NeutronDeleteSecurityGroupRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string NeutronDeleteSecurityGroupRequest::getSecurityGroupId() const
 {

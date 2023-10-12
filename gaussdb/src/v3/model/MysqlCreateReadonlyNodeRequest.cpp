@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/MysqlCreateReadonlyNodeRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -37,7 +36,6 @@ web::json::value MysqlCreateReadonlyNodeRequest::toJson() const
 
     return val;
 }
-
 bool MysqlCreateReadonlyNodeRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool MysqlCreateReadonlyNodeRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<int32_t>& MysqlCreateReadonlyNodeRequest::getPriorities()
 {

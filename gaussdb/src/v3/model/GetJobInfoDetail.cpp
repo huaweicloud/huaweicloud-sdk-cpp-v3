@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/GetJobInfoDetail.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -71,7 +70,6 @@ web::json::value GetJobInfoDetail::toJson() const
 
     return val;
 }
-
 bool GetJobInfoDetail::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -159,6 +157,7 @@ bool GetJobInfoDetail::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string GetJobInfoDetail::getId() const
 {

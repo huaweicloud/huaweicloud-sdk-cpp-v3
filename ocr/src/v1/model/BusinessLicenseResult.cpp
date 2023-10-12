@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/BusinessLicenseResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -82,7 +81,6 @@ web::json::value BusinessLicenseResult::toJson() const
 
     return val;
 }
-
 bool BusinessLicenseResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -188,6 +186,7 @@ bool BusinessLicenseResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string BusinessLicenseResult::getRegistrationNumber() const
 {

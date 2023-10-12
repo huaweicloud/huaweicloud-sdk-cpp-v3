@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/ListLtsSlowLogsRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -80,7 +79,6 @@ web::json::value ListLtsSlowLogsRequestBody::toJson() const
 
     return val;
 }
-
 bool ListLtsSlowLogsRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -186,6 +184,7 @@ bool ListLtsSlowLogsRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListLtsSlowLogsRequestBody::getStartTime() const
 {

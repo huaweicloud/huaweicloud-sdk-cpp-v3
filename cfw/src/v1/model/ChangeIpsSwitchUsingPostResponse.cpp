@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/ChangeIpsSwitchUsingPostResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -37,7 +36,6 @@ web::json::value ChangeIpsSwitchUsingPostResponse::toJson() const
 
     return val;
 }
-
 bool ChangeIpsSwitchUsingPostResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ChangeIpsSwitchUsingPostResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ChangeIpsSwitchUsingPostResponse::getTraceId() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ims/v2/model/CreateWholeImageResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ims {
@@ -33,7 +32,6 @@ web::json::value CreateWholeImageResponse::toJson() const
 
     return val;
 }
-
 bool CreateWholeImageResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool CreateWholeImageResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateWholeImageResponse::getJobId() const
 {

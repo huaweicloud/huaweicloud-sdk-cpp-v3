@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v1/model/FLVRecordConfig.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -43,7 +42,6 @@ web::json::value FLVRecordConfig::toJson() const
 
     return val;
 }
-
 bool FLVRecordConfig::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool FLVRecordConfig::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t FLVRecordConfig::getRecordCycle() const
 {

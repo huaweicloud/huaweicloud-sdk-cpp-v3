@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v2/model/ListBandwidthsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -48,7 +47,6 @@ web::json::value ListBandwidthsRequest::toJson() const
 
     return val;
 }
-
 bool ListBandwidthsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool ListBandwidthsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListBandwidthsRequest::getMarker() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/CheckpointReplicateRespBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -67,7 +66,6 @@ web::json::value CheckpointReplicateRespBody::toJson() const
 
     return val;
 }
-
 bool CheckpointReplicateRespBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -146,6 +144,7 @@ bool CheckpointReplicateRespBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<CheckpointReplicateRespbackups>& CheckpointReplicateRespBody::getBackups()
 {

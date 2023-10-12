@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cts/v3/model/Filter.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cts {
@@ -42,7 +41,6 @@ web::json::value Filter::toJson() const
 
     return val;
 }
-
 bool Filter::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool Filter::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string Filter::getCondition() const
 {

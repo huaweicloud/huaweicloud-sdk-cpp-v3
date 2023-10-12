@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cloudtable/v2/model/EnableComponentResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cloudtable {
@@ -28,13 +27,13 @@ web::json::value EnableComponentResponse::toJson() const
 
     return val;
 }
-
 bool EnableComponentResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 }
 }

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/ModifyStartPositionReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -38,7 +37,6 @@ web::json::value ModifyStartPositionReq::toJson() const
 
     return val;
 }
-
 bool ModifyStartPositionReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ModifyStartPositionReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ModifyStartPositionReq::getFileAndPosition() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/CancelExtractAudioTaskResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -28,13 +27,13 @@ web::json::value CancelExtractAudioTaskResponse::toJson() const
 
     return val;
 }
-
 bool CancelExtractAudioTaskResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 }
 }

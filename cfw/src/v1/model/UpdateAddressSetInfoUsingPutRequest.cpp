@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/UpdateAddressSetInfoUsingPutRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -47,7 +46,6 @@ web::json::value UpdateAddressSetInfoUsingPutRequest::toJson() const
 
     return val;
 }
-
 bool UpdateAddressSetInfoUsingPutRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -90,6 +88,7 @@ bool UpdateAddressSetInfoUsingPutRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateAddressSetInfoUsingPutRequest::getSetId() const
 {

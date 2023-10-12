@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/ListDedicatedResourcesResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -37,7 +36,6 @@ web::json::value ListDedicatedResourcesResponse::toJson() const
 
     return val;
 }
-
 bool ListDedicatedResourcesResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ListDedicatedResourcesResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ListDedicatedResourcesResponse::getTotalCount() const
 {

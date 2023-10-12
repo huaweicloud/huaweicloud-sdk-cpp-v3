@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/ListTag.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -37,7 +36,6 @@ web::json::value ListTag::toJson() const
 
     return val;
 }
-
 bool ListTag::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ListTag::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListTag::getKey() const
 {

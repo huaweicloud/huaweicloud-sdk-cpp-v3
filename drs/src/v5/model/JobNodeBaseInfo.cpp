@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/JobNodeBaseInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -53,7 +52,6 @@ web::json::value JobNodeBaseInfo::toJson() const
 
     return val;
 }
-
 bool JobNodeBaseInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool JobNodeBaseInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string JobNodeBaseInfo::getInstanceType() const
 {

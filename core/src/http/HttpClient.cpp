@@ -20,9 +20,16 @@
 #include <cstdio>
 
 #include <huaweicloud/core/http/HttpClient.h>
+#if defined(HUAWEICLOUD_SDK_BSON_)
+#include <huaweicloud/core/bson/Document.h>
+#include <huaweicloud/core/bson/Viewer.h>
+#endif
 
 using namespace HuaweiCloud::Sdk::Core::Http;
 using namespace HuaweiCloud::Sdk::Core::Exception;
+#if defined(HUAWEICLOUD_SDK_BSON_)
+using namespace HuaweiCloud::Sdk::Core::Bson;
+#endif
 
 static size_t WriteMemoryCallback(const char *contents, size_t size, size_t nmemb, void *userp)
 {
@@ -125,6 +132,7 @@ CURLcode HttpClient::curl_perform(const HttpRequest &httpRequest, const HttpConf
     }
 
     curl_easy_setopt(curl, CURLOPT_HTTPHEADER, list);
+    curl_easy_setopt(curl, CURLOPT_POSTFIELDSIZE, httpRequest.getRequestBody().size()); //Bson byte array convert to string,need to set requestbody size.
     curl_easy_setopt(curl, CURLOPT_COPYPOSTFIELDS, httpRequest.getRequestBody().c_str());
     curl_easy_setopt(curl, CURLOPT_NOBODY, 0L);
 
@@ -235,7 +243,14 @@ void HttpClient::dealCurlOk(const HttpRequest &httpRequest, HttpResponse &httpRe
 {
     if (httpResponse.getStatusCode() < HTTP_SUCCESS_BEGIN_CODE ||
         httpResponse.getStatusCode() > HTTP_SUCCESS_END_CODE) {
-        std::map<std::string, std::string> errMap = parseErrorMessage(httpResponse.getHttpBody());
+        std::map<std::string, std::string> errMap;
+        if (httpResponse.getHeaderParams().find(APPLICATION_BSON) != std::string::npos) {
+            #if defined(HUAWEICLOUD_SDK_BSON_)
+            errMap = parseBsonErrorMessage(httpResponse.getHttpBody());
+            #endif
+        } else {
+            errMap = parseErrorMessage(httpResponse.getHttpBody());
+        }
         // firstly parse requestId from http response, if not exist and get requestId from header(X-Request-Id)
         std::string requestId = errMap["request_id"];
         if (requestId.empty()) {
@@ -284,3 +299,29 @@ std::string HttpClient::parseRequestId(const std::string &responseHeader)
     }
     return responseHeader;
 }
+
+#if defined(HUAWEICLOUD_SDK_BSON_)
+std::map<std::string, std::string> HttpClient::parseBsonErrorMessage(const std::string &responseBody)
+{
+    std::map<std::string, std::string> errorMsg;
+    Document doc((const uint8_t *)responseBody.data(), responseBody.length());
+
+    Viewer viewer(doc);
+    Viewer::Iterator it = viewer.begin();
+    while (it != viewer.end()) {
+        const std::string &key = it->key();
+        if (key == "code" || key == "error_code" || key == "errorCode") {
+            errorMsg["error_code"] = it->getString().value_;
+        } else if (key == "message" || key == "error_msg" || key == "errorMsg") {
+            errorMsg["error_msg"] = it->getString().value_;
+        } else if (key == "request_id") {
+            errorMsg["request_id"] = it->getString().value_;
+        } else if (key == "encoded_authorization_message") {
+            errorMsg["encoded_authorization_message"] = it->getString().value_;
+        }
+        ++it;
+    }
+
+    return errorMsg;
+}
+#endif

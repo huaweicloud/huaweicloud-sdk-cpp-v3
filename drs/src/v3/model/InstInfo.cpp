@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/InstInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -63,7 +62,6 @@ web::json::value InstInfo::toJson() const
 
     return val;
 }
-
 bool InstInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -133,6 +131,7 @@ bool InstInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string InstInfo::getEngineType() const
 {

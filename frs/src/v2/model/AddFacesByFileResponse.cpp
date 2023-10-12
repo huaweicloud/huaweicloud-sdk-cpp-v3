@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/frs/v2/model/AddFacesByFileResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Frs {
@@ -42,7 +41,6 @@ web::json::value AddFacesByFileResponse::toJson() const
 
     return val;
 }
-
 bool AddFacesByFileResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool AddFacesByFileResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string AddFacesByFileResponse::getFaceSetId() const
 {

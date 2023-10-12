@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ims/v2/model/GlanceUpdateImageRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ims {
@@ -43,7 +42,6 @@ web::json::value GlanceUpdateImageRequestBody::toJson() const
 
     return val;
 }
-
 bool GlanceUpdateImageRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool GlanceUpdateImageRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string GlanceUpdateImageRequestBody::getOp() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/ShowDirtyDataRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -58,7 +57,6 @@ web::json::value ShowDirtyDataRequest::toJson() const
 
     return val;
 }
-
 bool ShowDirtyDataRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool ShowDirtyDataRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowDirtyDataRequest::getXLanguage() const
 {

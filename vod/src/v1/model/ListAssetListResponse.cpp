@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/ListAssetListResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -37,7 +36,6 @@ web::json::value ListAssetListResponse::toJson() const
 
     return val;
 }
-
 bool ListAssetListResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ListAssetListResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ListAssetListResponse::getTotal() const
 {

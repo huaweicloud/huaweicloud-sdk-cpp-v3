@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/codeartsdeploy/v2/model/ListHostGroupsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsdeploy {
@@ -68,7 +67,6 @@ web::json::value ListHostGroupsRequest::toJson() const
 
     return val;
 }
-
 bool ListHostGroupsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -147,6 +145,7 @@ bool ListHostGroupsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListHostGroupsRequest::getProjectId() const
 {

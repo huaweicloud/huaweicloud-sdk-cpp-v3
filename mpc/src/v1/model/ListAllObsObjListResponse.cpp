@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/ListAllObsObjListResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -32,7 +31,6 @@ web::json::value ListAllObsObjListResponse::toJson() const
 
     return val;
 }
-
 bool ListAllObsObjListResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ListAllObsObjListResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<ObsObject>& ListAllObsObjListResponse::getObjects()
 {

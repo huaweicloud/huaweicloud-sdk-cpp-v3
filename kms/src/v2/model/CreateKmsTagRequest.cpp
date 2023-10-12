@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/kms/v2/model/CreateKmsTagRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Kms {
@@ -37,7 +36,6 @@ web::json::value CreateKmsTagRequest::toJson() const
 
     return val;
 }
-
 bool CreateKmsTagRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool CreateKmsTagRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateKmsTagRequest::getKeyId() const
 {

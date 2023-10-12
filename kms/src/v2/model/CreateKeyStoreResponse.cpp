@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/kms/v2/model/CreateKeyStoreResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Kms {
@@ -32,7 +31,6 @@ web::json::value CreateKeyStoreResponse::toJson() const
 
     return val;
 }
-
 bool CreateKeyStoreResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CreateKeyStoreResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 KeystoreInfo CreateKeyStoreResponse::getKeystore() const
 {

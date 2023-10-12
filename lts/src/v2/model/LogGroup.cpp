@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/LogGroup.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -52,7 +51,6 @@ web::json::value LogGroup::toJson() const
 
     return val;
 }
-
 bool LogGroup::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -104,6 +102,7 @@ bool LogGroup::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int64_t LogGroup::getCreationTime() const
 {

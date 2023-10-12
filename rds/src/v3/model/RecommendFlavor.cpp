@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/RecommendFlavor.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -57,7 +56,6 @@ web::json::value RecommendFlavor::toJson() const
 
     return val;
 }
-
 bool RecommendFlavor::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -118,6 +116,7 @@ bool RecommendFlavor::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string RecommendFlavor::getType() const
 {

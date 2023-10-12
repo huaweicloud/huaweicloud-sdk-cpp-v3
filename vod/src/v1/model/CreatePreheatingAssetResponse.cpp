@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/CreatePreheatingAssetResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -33,7 +32,6 @@ web::json::value CreatePreheatingAssetResponse::toJson() const
 
     return val;
 }
-
 bool CreatePreheatingAssetResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool CreatePreheatingAssetResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreatePreheatingAssetResponse::getTaskId() const
 {

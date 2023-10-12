@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/csms/v1/model/RestoreSecretRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Csms {
@@ -33,7 +32,6 @@ web::json::value RestoreSecretRequest::toJson() const
 
     return val;
 }
-
 bool RestoreSecretRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool RestoreSecretRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string RestoreSecretRequest::getSecretName() const
 {

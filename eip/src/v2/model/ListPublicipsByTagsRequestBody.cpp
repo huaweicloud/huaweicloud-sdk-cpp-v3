@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v2/model/ListPublicipsByTagsRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -51,7 +50,6 @@ web::json::value ListPublicipsByTagsRequestBody::toJson() const
 
     return val;
 }
-
 bool ListPublicipsByTagsRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -103,6 +101,7 @@ bool ListPublicipsByTagsRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<TagReq>& ListPublicipsByTagsRequestBody::getTags()
 {

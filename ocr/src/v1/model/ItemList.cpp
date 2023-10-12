@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/ItemList.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -88,7 +87,6 @@ web::json::value ItemList::toJson() const
 
     return val;
 }
-
 bool ItemList::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -203,6 +201,7 @@ bool ItemList::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ItemList::getName() const
 {

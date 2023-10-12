@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/OpenGaussHaOption.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -43,7 +42,6 @@ web::json::value OpenGaussHaOption::toJson() const
 
     return val;
 }
-
 bool OpenGaussHaOption::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool OpenGaussHaOption::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string OpenGaussHaOption::getMode() const
 {

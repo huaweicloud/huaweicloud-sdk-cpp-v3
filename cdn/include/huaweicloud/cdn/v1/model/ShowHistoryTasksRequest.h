@@ -2,9 +2,11 @@
 #ifndef HUAWEICLOUD_SDK_CDN_V1_MODEL_ShowHistoryTasksRequest_H_
 #define HUAWEICLOUD_SDK_CDN_V1_MODEL_ShowHistoryTasksRequest_H_
 
+
 #include <huaweicloud/cdn/v1/CdnExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
@@ -31,10 +33,8 @@ public:
     /// ModelBase overrides
 
     void validate() override;
-
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
-
     /////////////////////////////////////////////
     /// ShowHistoryTasksRequest members
 
@@ -111,13 +111,22 @@ public:
     void setOrderType(const std::string& value);
 
     /// <summary>
-    /// 默认是文件file。file：文件,directory：目录。
+    /// file：文件,directory：目录。
     /// </summary>
 
     std::string getFileType() const;
     bool fileTypeIsSet() const;
     void unsetfileType();
     void setFileType(const std::string& value);
+
+    /// <summary>
+    /// 任务类型，refresh：刷新任务；preheating：预热任务
+    /// </summary>
+
+    std::string getTaskType() const;
+    bool taskTypeIsSet() const;
+    void unsettaskType();
+    void setTaskType(const std::string& value);
 
 
 protected:
@@ -139,6 +148,8 @@ protected:
     bool orderTypeIsSet_;
     std::string fileType_;
     bool fileTypeIsSet_;
+    std::string taskType_;
+    bool taskTypeIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

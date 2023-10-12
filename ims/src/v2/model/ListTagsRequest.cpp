@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ims/v2/model/ListTagsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ims {
@@ -103,7 +102,6 @@ web::json::value ListTagsRequest::toJson() const
 
     return val;
 }
-
 bool ListTagsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -245,6 +243,7 @@ bool ListTagsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ListTagsRequest::getLimit() const
 {

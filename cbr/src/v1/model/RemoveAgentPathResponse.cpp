@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/RemoveAgentPathResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -36,7 +35,6 @@ web::json::value RemoveAgentPathResponse::toJson() const
 
     return val;
 }
-
 bool RemoveAgentPathResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -61,6 +59,7 @@ bool RemoveAgentPathResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<std::string>& RemoveAgentPathResponse::getRemoved()
 {

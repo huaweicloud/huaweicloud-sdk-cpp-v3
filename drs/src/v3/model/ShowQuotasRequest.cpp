@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/ShowQuotasRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -33,7 +32,6 @@ web::json::value ShowQuotasRequest::toJson() const
 
     return val;
 }
-
 bool ShowQuotasRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool ShowQuotasRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowQuotasRequest::getXLanguage() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/QueryInstanceBackupResponseBody_backups.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -82,7 +81,6 @@ web::json::value QueryInstanceBackupResponseBody_backups::toJson() const
 
     return val;
 }
-
 bool QueryInstanceBackupResponseBody_backups::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -188,6 +186,7 @@ bool QueryInstanceBackupResponseBody_backups::fromJson(const web::json::value& v
     }
     return ok;
 }
+
 
 std::string QueryInstanceBackupResponseBody_backups::getId() const
 {

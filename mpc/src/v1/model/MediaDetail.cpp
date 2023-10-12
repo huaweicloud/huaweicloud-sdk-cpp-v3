@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/MediaDetail.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -48,7 +47,6 @@ web::json::value MediaDetail::toJson() const
 
     return val;
 }
-
 bool MediaDetail::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -100,6 +98,7 @@ bool MediaDetail::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<std::string>& MediaDetail::getFeatures()
 {

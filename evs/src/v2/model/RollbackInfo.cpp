@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/evs/v2/model/RollbackInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Evs {
@@ -33,7 +32,6 @@ web::json::value RollbackInfo::toJson() const
 
     return val;
 }
-
 bool RollbackInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool RollbackInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string RollbackInfo::getVolumeId() const
 {

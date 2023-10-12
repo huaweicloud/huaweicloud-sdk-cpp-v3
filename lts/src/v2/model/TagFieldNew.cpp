@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/TagFieldNew.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -53,7 +52,6 @@ web::json::value TagFieldNew::toJson() const
 
     return val;
 }
-
 bool TagFieldNew::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool TagFieldNew::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string TagFieldNew::getFieldName() const
 {

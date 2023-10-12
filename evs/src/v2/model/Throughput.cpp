@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/evs/v2/model/Throughput.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Evs {
@@ -43,7 +42,6 @@ web::json::value Throughput::toJson() const
 
     return val;
 }
-
 bool Throughput::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool Throughput::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool Throughput::isFrozened() const
 {

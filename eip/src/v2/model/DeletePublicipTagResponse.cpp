@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v2/model/DeletePublicipTagResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -28,13 +27,13 @@ web::json::value DeletePublicipTagResponse::toJson() const
 
     return val;
 }
-
 bool DeletePublicipTagResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 }
 }

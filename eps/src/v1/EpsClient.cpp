@@ -1,5 +1,5 @@
 #include <huaweicloud/eps/v1/EpsClient.h>
-#include <huaweicloud/core/utils/MultipartFormData.h>
+#include <huaweicloud/eps/v1/EpsMeta.h>
 
 #include <unordered_set>
 
@@ -40,34 +40,36 @@ std::shared_ptr<CreateEnterpriseProjectResponse> EpsClient::createEnterpriseProj
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
 
     std::string localVarHttpBody;
     if (isJson) {
+        // handle json input
         web::json::value localVarJson;
         localVarJson = ModelBase::toJson(request.getBody());
         localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
     }
 
-    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EpsMeta::genRequestDefForCreateEnterpriseProject());
 
     std::shared_ptr<CreateEnterpriseProjectResponse> localVarResult = std::make_shared<CreateEnterpriseProjectResponse>();
-
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
     if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
         utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -79,35 +81,37 @@ std::shared_ptr<DisableEnterpriseProjectResponse> EpsClient::disableEnterprisePr
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["enterprise_project_id"] = parameterToString(request.getEnterpriseProjectId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
 
     std::string localVarHttpBody;
     if (isJson) {
+        // handle json input
         web::json::value localVarJson;
         localVarJson = ModelBase::toJson(request.getBody());
         localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
     }
 
-    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EpsMeta::genRequestDefForDisableEnterpriseProject());
 
     std::shared_ptr<DisableEnterpriseProjectResponse> localVarResult = std::make_shared<DisableEnterpriseProjectResponse>();
-
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
     if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
         utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -119,35 +123,37 @@ std::shared_ptr<EnableEnterpriseProjectResponse> EpsClient::enableEnterpriseProj
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["enterprise_project_id"] = parameterToString(request.getEnterpriseProjectId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
 
     std::string localVarHttpBody;
     if (isJson) {
+        // handle json input
         web::json::value localVarJson;
         localVarJson = ModelBase::toJson(request.getBody());
         localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
     }
 
-    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EpsMeta::genRequestDefForEnableEnterpriseProject());
 
     std::shared_ptr<EnableEnterpriseProjectResponse> localVarResult = std::make_shared<EnableEnterpriseProjectResponse>();
-
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
     if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
         utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -159,26 +165,21 @@ std::shared_ptr<ListApiVersionsResponse> EpsClient::listApiVersions(ListApiVersi
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EpsMeta::genRequestDefForListApiVersions());
 
     std::shared_ptr<ListApiVersionsResponse> localVarResult = std::make_shared<ListApiVersionsResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -193,12 +194,12 @@ std::shared_ptr<ListEnterpriseProjectResponse> EpsClient::listEnterpriseProject(
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.idIsSet()) {
@@ -225,15 +226,10 @@ std::shared_ptr<ListEnterpriseProjectResponse> EpsClient::listEnterpriseProject(
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EpsMeta::genRequestDefForListEnterpriseProject());
 
     std::shared_ptr<ListEnterpriseProjectResponse> localVarResult = std::make_shared<ListEnterpriseProjectResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -248,12 +244,12 @@ std::shared_ptr<ListProvidersResponse> EpsClient::listProviders(ListProvidersReq
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
     if (request.localeIsSet()) {
@@ -271,15 +267,10 @@ std::shared_ptr<ListProvidersResponse> EpsClient::listProviders(ListProvidersReq
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EpsMeta::genRequestDefForListProviders());
 
     std::shared_ptr<ListProvidersResponse> localVarResult = std::make_shared<ListProvidersResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -294,35 +285,37 @@ std::shared_ptr<MigrateResourceResponse> EpsClient::migrateResource(MigrateResou
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["enterprise_project_id"] = parameterToString(request.getEnterpriseProjectId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
 
     std::string localVarHttpBody;
     if (isJson) {
+        // handle json input
         web::json::value localVarJson;
         localVarJson = ModelBase::toJson(request.getBody());
         localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
     }
 
-    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EpsMeta::genRequestDefForMigrateResource());
 
     std::shared_ptr<MigrateResourceResponse> localVarResult = std::make_shared<MigrateResourceResponse>();
-
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
     if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
         utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -334,27 +327,22 @@ std::shared_ptr<ShowApiVersionResponse> EpsClient::showApiVersion(ShowApiVersion
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["api_version"] = parameterToString(request.getApiVersion());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EpsMeta::genRequestDefForShowApiVersion());
 
     std::shared_ptr<ShowApiVersionResponse> localVarResult = std::make_shared<ShowApiVersionResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -369,27 +357,22 @@ std::shared_ptr<ShowEnterpriseProjectResponse> EpsClient::showEnterpriseProject(
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["enterprise_project_id"] = parameterToString(request.getEnterpriseProjectId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EpsMeta::genRequestDefForShowEnterpriseProject());
 
     std::shared_ptr<ShowEnterpriseProjectResponse> localVarResult = std::make_shared<ShowEnterpriseProjectResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -404,26 +387,21 @@ std::shared_ptr<ShowEnterpriseProjectQuotaResponse> EpsClient::showEnterprisePro
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
 
     std::string localVarHttpBody;
 
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EpsMeta::genRequestDefForShowEnterpriseProjectQuota());
 
     std::shared_ptr<ShowEnterpriseProjectQuotaResponse> localVarResult = std::make_shared<ShowEnterpriseProjectQuotaResponse>();
-
-    if (!res->getHttpBody().empty()) {
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -438,35 +416,37 @@ std::shared_ptr<ShowResourceBindEnterpriseProjectResponse> EpsClient::showResour
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["enterprise_project_id"] = parameterToString(request.getEnterpriseProjectId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
 
     std::string localVarHttpBody;
     if (isJson) {
+        // handle json input
         web::json::value localVarJson;
         localVarJson = ModelBase::toJson(request.getBody());
         localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
     }
 
-    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EpsMeta::genRequestDefForShowResourceBindEnterpriseProject());
 
     std::shared_ptr<ShowResourceBindEnterpriseProjectResponse> localVarResult = std::make_shared<ShowResourceBindEnterpriseProjectResponse>();
-
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
     if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
         utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -478,35 +458,37 @@ std::shared_ptr<UpdateEnterpriseProjectResponse> EpsClient::updateEnterpriseProj
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
-    std::map<std::string, std::shared_ptr<HttpContent>> localVarFileParams;
 
     localVarPathParams["enterprise_project_id"] = parameterToString(request.getEnterpriseProjectId());
 
     bool isJson = false;
     bool isMultiPart = false;
-    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart);
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
 
     std::string localVarHttpBody;
     if (isJson) {
+        // handle json input
         web::json::value localVarJson;
         localVarJson = ModelBase::toJson(request.getBody());
         localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
     }
 
-    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams, localVarHeaderParams, localVarHttpBody);
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EpsMeta::genRequestDefForUpdateEnterpriseProject());
 
     std::shared_ptr<UpdateEnterpriseProjectResponse> localVarResult = std::make_shared<UpdateEnterpriseProjectResponse>();
-
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
     if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
         utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }

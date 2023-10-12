@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v2/model/CreatePublicipResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -32,7 +31,6 @@ web::json::value CreatePublicipResponse::toJson() const
 
     return val;
 }
-
 bool CreatePublicipResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CreatePublicipResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 PublicipCreateResp CreatePublicipResponse::getPublicip() const
 {

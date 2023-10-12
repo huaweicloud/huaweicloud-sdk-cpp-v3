@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/ListVpcPeeringsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -63,7 +62,6 @@ web::json::value ListVpcPeeringsRequest::toJson() const
 
     return val;
 }
-
 bool ListVpcPeeringsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -133,6 +131,7 @@ bool ListVpcPeeringsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ListVpcPeeringsRequest::getLimit() const
 {

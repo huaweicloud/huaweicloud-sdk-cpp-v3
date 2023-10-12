@@ -2,9 +2,11 @@
 #ifndef HUAWEICLOUD_SDK_LIVE_V2_MODEL_ListUsersOfStreamResponse_H_
 #define HUAWEICLOUD_SDK_LIVE_V2_MODEL_ListUsersOfStreamResponse_H_
 
+
 #include <huaweicloud/live/v2/LiveExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/live/v2/model/V2UserData.h>
@@ -33,10 +35,8 @@ public:
     /// ModelBase overrides
 
     void validate() override;
-
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
-
     /////////////////////////////////////////////
     /// ListUsersOfStreamResponse members
 

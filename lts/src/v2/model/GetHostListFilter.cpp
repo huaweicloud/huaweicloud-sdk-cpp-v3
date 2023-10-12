@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/GetHostListFilter.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -46,7 +45,6 @@ web::json::value GetHostListFilter::toJson() const
 
     return val;
 }
-
 bool GetHostListFilter::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -89,6 +87,7 @@ bool GetHostListFilter::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<std::string>& GetHostListFilter::getHostNameList()
 {

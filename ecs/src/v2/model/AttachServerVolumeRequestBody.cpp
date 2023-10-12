@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/AttachServerVolumeRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -37,7 +36,6 @@ web::json::value AttachServerVolumeRequestBody::toJson() const
 
     return val;
 }
-
 bool AttachServerVolumeRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool AttachServerVolumeRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 AttachServerVolumeOption AttachServerVolumeRequestBody::getVolumeAttachment() const
 {

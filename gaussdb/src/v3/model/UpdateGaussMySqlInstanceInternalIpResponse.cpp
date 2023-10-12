@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/UpdateGaussMySqlInstanceInternalIpResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -33,7 +32,6 @@ web::json::value UpdateGaussMySqlInstanceInternalIpResponse::toJson() const
 
     return val;
 }
-
 bool UpdateGaussMySqlInstanceInternalIpResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool UpdateGaussMySqlInstanceInternalIpResponse::fromJson(const web::json::value
     }
     return ok;
 }
+
 
 std::string UpdateGaussMySqlInstanceInternalIpResponse::getJobId() const
 {

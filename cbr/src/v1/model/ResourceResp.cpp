@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/ResourceResp.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -72,7 +71,6 @@ web::json::value ResourceResp::toJson() const
 
     return val;
 }
-
 bool ResourceResp::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -160,6 +158,7 @@ bool ResourceResp::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 ResourceExtraInfo ResourceResp::getExtraInfo() const
 {

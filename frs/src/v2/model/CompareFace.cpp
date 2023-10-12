@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/frs/v2/model/CompareFace.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Frs {
@@ -32,7 +31,6 @@ web::json::value CompareFace::toJson() const
 
     return val;
 }
-
 bool CompareFace::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CompareFace::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 BoundingBox CompareFace::getBoundingBox() const
 {

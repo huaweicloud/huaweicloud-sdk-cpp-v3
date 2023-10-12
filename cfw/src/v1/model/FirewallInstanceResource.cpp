@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/FirewallInstanceResource.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -58,7 +57,6 @@ web::json::value FirewallInstanceResource::toJson() const
 
     return val;
 }
-
 bool FirewallInstanceResource::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool FirewallInstanceResource::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string FirewallInstanceResource::getResourceId() const
 {

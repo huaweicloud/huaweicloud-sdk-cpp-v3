@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/OutputThumbnailPara.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -52,7 +51,6 @@ web::json::value OutputThumbnailPara::toJson() const
 
     return val;
 }
-
 bool OutputThumbnailPara::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -104,6 +102,7 @@ bool OutputThumbnailPara::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t OutputThumbnailPara::getTotalPictures() const
 {

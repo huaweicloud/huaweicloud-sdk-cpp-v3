@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/CreateVpcRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -32,7 +31,6 @@ web::json::value CreateVpcRequestBody::toJson() const
 
     return val;
 }
-
 bool CreateVpcRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CreateVpcRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 CreateVpcOption CreateVpcRequestBody::getVpc() const
 {

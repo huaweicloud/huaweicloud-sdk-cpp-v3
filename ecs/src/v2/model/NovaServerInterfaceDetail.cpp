@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/NovaServerInterfaceDetail.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -52,7 +51,6 @@ web::json::value NovaServerInterfaceDetail::toJson() const
 
     return val;
 }
-
 bool NovaServerInterfaceDetail::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -104,6 +102,7 @@ bool NovaServerInterfaceDetail::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<NovaServerInterfaceFixedIp>& NovaServerInterfaceDetail::getFixedIps()
 {

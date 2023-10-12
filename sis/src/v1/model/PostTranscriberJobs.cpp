@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sis/v1/model/PostTranscriberJobs.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sis {
@@ -37,7 +36,6 @@ web::json::value PostTranscriberJobs::toJson() const
 
     return val;
 }
-
 bool PostTranscriberJobs::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool PostTranscriberJobs::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 TranscriberConfig PostTranscriberJobs::getConfig() const
 {

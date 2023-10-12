@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/AutoClassificationResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -45,7 +44,6 @@ web::json::value AutoClassificationResult::toJson() const
 
     return val;
 }
-
 bool AutoClassificationResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -88,6 +86,7 @@ bool AutoClassificationResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 AutoClassificationResult_status AutoClassificationResult::getStatus() const
 {

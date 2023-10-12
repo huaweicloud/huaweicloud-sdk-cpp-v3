@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/ServerSchedulerHints.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -40,7 +39,6 @@ web::json::value ServerSchedulerHints::toJson() const
 
     return val;
 }
-
 bool ServerSchedulerHints::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -74,6 +72,7 @@ bool ServerSchedulerHints::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<std::string>& ServerSchedulerHints::getGroup()
 {

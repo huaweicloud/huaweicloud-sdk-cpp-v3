@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/ShowMembersDetailRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -73,7 +72,6 @@ web::json::value ShowMembersDetailRequest::toJson() const
 
     return val;
 }
-
 bool ShowMembersDetailRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -161,6 +159,7 @@ bool ShowMembersDetailRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowMembersDetailRequest::getBackupId() const
 {

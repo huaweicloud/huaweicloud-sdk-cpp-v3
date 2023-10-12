@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/codeartsdeploy/v2/model/CreateHostRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsdeploy {
@@ -67,7 +66,6 @@ web::json::value CreateHostRequestBody::toJson() const
 
     return val;
 }
-
 bool CreateHostRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -146,6 +144,7 @@ bool CreateHostRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateHostRequestBody::getHostName() const
 {

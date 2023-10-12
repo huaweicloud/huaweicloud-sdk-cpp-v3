@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/BatchDeleteJobsByIdResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -32,7 +31,6 @@ web::json::value BatchDeleteJobsByIdResponse::toJson() const
 
     return val;
 }
-
 bool BatchDeleteJobsByIdResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool BatchDeleteJobsByIdResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<DeleteJobResp>& BatchDeleteJobsByIdResponse::getJobs()
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/ListStructuredLogsWithTimeRangeRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -42,7 +41,6 @@ web::json::value ListStructuredLogsWithTimeRangeRequest::toJson() const
 
     return val;
 }
-
 bool ListStructuredLogsWithTimeRangeRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool ListStructuredLogsWithTimeRangeRequest::fromJson(const web::json::value& va
     }
     return ok;
 }
+
 
 std::string ListStructuredLogsWithTimeRangeRequest::getLogStreamId() const
 {

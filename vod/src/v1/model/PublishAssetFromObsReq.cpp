@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/PublishAssetFromObsReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -105,7 +104,6 @@ web::json::value PublishAssetFromObsReq::toJson() const
 
     return val;
 }
-
 bool PublishAssetFromObsReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -256,6 +254,7 @@ bool PublishAssetFromObsReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string PublishAssetFromObsReq::getVideoType() const
 {

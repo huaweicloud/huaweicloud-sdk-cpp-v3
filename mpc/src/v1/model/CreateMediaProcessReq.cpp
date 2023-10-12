@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/CreateMediaProcessReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -41,7 +40,6 @@ web::json::value CreateMediaProcessReq::toJson() const
 
     return val;
 }
-
 bool CreateMediaProcessReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -75,6 +73,7 @@ bool CreateMediaProcessReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 ObsObjInfo CreateMediaProcessReq::getInput() const
 {

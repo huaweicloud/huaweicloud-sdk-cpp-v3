@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/CreateExtractTaskRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -32,7 +31,6 @@ web::json::value CreateExtractTaskRequest::toJson() const
 
     return val;
 }
-
 bool CreateExtractTaskRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CreateExtractTaskRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 CreateExtractTaskReq CreateExtractTaskRequest::getBody() const
 {

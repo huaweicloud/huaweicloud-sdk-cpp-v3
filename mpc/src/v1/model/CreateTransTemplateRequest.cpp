@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/CreateTransTemplateRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -32,7 +31,6 @@ web::json::value CreateTransTemplateRequest::toJson() const
 
     return val;
 }
-
 bool CreateTransTemplateRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CreateTransTemplateRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 TransTemplate CreateTransTemplateRequest::getBody() const
 {

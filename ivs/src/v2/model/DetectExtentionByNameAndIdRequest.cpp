@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ivs/v2/model/DetectExtentionByNameAndIdRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ivs {
@@ -37,7 +36,6 @@ web::json::value DetectExtentionByNameAndIdRequest::toJson() const
 
     return val;
 }
-
 bool DetectExtentionByNameAndIdRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool DetectExtentionByNameAndIdRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DetectExtentionByNameAndIdRequest::getEnterpriseProjectId() const
 {

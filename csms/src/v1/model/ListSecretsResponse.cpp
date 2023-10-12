@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/csms/v1/model/ListSecretsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Csms {
@@ -36,7 +35,6 @@ web::json::value ListSecretsResponse::toJson() const
 
     return val;
 }
-
 bool ListSecretsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -61,6 +59,7 @@ bool ListSecretsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<Secret>& ListSecretsResponse::getSecrets()
 {

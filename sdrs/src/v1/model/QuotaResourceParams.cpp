@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sdrs/v1/model/QuotaResourceParams.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sdrs {
@@ -53,7 +52,6 @@ web::json::value QuotaResourceParams::toJson() const
 
     return val;
 }
-
 bool QuotaResourceParams::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool QuotaResourceParams::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string QuotaResourceParams::getType() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/UpdateGaussMySqlInstanceSecurityGroupRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -42,7 +41,6 @@ web::json::value UpdateGaussMySqlInstanceSecurityGroupRequest::toJson() const
 
     return val;
 }
-
 bool UpdateGaussMySqlInstanceSecurityGroupRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool UpdateGaussMySqlInstanceSecurityGroupRequest::fromJson(const web::json::val
     }
     return ok;
 }
+
 
 std::string UpdateGaussMySqlInstanceSecurityGroupRequest::getXLanguage() const
 {

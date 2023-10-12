@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/smn/v2/model/CreateApplicationEndpointRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Smn {
@@ -38,7 +37,6 @@ web::json::value CreateApplicationEndpointRequestBody::toJson() const
 
     return val;
 }
-
 bool CreateApplicationEndpointRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool CreateApplicationEndpointRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateApplicationEndpointRequestBody::getToken() const
 {

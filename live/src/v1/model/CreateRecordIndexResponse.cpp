@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v1/model/CreateRecordIndexResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -93,7 +92,6 @@ web::json::value CreateRecordIndexResponse::toJson() const
 
     return val;
 }
-
 bool CreateRecordIndexResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -217,6 +215,7 @@ bool CreateRecordIndexResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateRecordIndexResponse::getIndexUrl() const
 {

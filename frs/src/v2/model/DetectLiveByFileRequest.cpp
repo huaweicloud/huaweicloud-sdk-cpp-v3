@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/frs/v2/model/DetectLiveByFileRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Frs {
@@ -37,7 +36,6 @@ web::json::value DetectLiveByFileRequest::toJson() const
 
     return val;
 }
-
 bool DetectLiveByFileRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool DetectLiveByFileRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DetectLiveByFileRequest::getEnterpriseProjectId() const
 {

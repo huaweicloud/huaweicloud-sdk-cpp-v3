@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/UploadAssetReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -67,7 +66,6 @@ web::json::value UploadAssetReq::toJson() const
 
     return val;
 }
-
 bool UploadAssetReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -146,6 +144,7 @@ bool UploadAssetReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UploadAssetReq::getAssetId() const
 {

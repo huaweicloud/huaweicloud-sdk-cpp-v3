@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/ShowUpdateObjectSavingStatusResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -38,7 +37,6 @@ web::json::value ShowUpdateObjectSavingStatusResponse::toJson() const
 
     return val;
 }
-
 bool ShowUpdateObjectSavingStatusResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ShowUpdateObjectSavingStatusResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowUpdateObjectSavingStatusResponse::getId() const
 {

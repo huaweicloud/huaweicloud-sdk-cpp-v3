@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cloudtable/v2/model/ParameterInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cloudtable {
@@ -73,7 +72,6 @@ web::json::value ParameterInfo::toJson() const
 
     return val;
 }
-
 bool ParameterInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -161,6 +159,7 @@ bool ParameterInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ParameterInfo::getId() const
 {

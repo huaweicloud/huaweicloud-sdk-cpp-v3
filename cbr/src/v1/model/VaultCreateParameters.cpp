@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/VaultCreateParameters.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -32,7 +31,6 @@ web::json::value VaultCreateParameters::toJson() const
 
     return val;
 }
-
 bool VaultCreateParameters::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool VaultCreateParameters::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 CombinedOrder VaultCreateParameters::getCombinedOrder() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v2/model/ShowTopUrlRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -58,7 +57,6 @@ web::json::value ShowTopUrlRequest::toJson() const
 
     return val;
 }
-
 bool ShowTopUrlRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool ShowTopUrlRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int64_t ShowTopUrlRequest::getStartTime() const
 {

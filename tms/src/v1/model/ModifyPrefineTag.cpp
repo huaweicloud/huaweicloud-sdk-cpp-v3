@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/tms/v1/model/ModifyPrefineTag.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Tms {
@@ -36,7 +35,6 @@ web::json::value ModifyPrefineTag::toJson() const
 
     return val;
 }
-
 bool ModifyPrefineTag::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -61,6 +59,7 @@ bool ModifyPrefineTag::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 PredefineTagRequest ModifyPrefineTag::getNewTag() const
 {

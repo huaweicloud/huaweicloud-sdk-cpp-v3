@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/ListSlowlogStatisticsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -68,7 +67,6 @@ web::json::value ListSlowlogStatisticsRequest::toJson() const
 
     return val;
 }
-
 bool ListSlowlogStatisticsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -147,6 +145,7 @@ bool ListSlowlogStatisticsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListSlowlogStatisticsRequest::getXLanguage() const
 {

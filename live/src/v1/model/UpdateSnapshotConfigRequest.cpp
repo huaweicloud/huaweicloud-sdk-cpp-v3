@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v1/model/UpdateSnapshotConfigRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -32,7 +31,6 @@ web::json::value UpdateSnapshotConfigRequest::toJson() const
 
     return val;
 }
-
 bool UpdateSnapshotConfigRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool UpdateSnapshotConfigRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 LiveSnapshotConfig UpdateSnapshotConfigRequest::getBody() const
 {

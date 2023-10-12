@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/TaurusModifyProxyWeightRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -37,7 +36,6 @@ web::json::value TaurusModifyProxyWeightRequest::toJson() const
 
     return val;
 }
-
 bool TaurusModifyProxyWeightRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool TaurusModifyProxyWeightRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t TaurusModifyProxyWeightRequest::getMasterWeight() const
 {

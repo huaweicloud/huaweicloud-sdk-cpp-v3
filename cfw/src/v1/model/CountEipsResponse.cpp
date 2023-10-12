@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/CountEipsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -32,7 +31,6 @@ web::json::value CountEipsResponse::toJson() const
 
     return val;
 }
-
 bool CountEipsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CountEipsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 EipCountRespData CountEipsResponse::getData() const
 {

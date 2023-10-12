@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/ShowConfigurationDetailRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -38,7 +37,6 @@ web::json::value ShowConfigurationDetailRequest::toJson() const
 
     return val;
 }
-
 bool ShowConfigurationDetailRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ShowConfigurationDetailRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowConfigurationDetailRequest::getXLanguage() const
 {

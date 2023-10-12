@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/ApplyConfigurationRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -32,7 +31,6 @@ web::json::value ApplyConfigurationRequestBody::toJson() const
 
     return val;
 }
-
 bool ApplyConfigurationRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ApplyConfigurationRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<std::string>& ApplyConfigurationRequestBody::getEntityIds()
 {

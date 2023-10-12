@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/UpdateDataIpResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -33,7 +32,6 @@ web::json::value UpdateDataIpResponse::toJson() const
 
     return val;
 }
-
 bool UpdateDataIpResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool UpdateDataIpResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateDataIpResponse::getWorkflowId() const
 {

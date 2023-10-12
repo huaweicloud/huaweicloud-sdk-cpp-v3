@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v1/model/KeyChainInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -43,7 +42,6 @@ web::json::value KeyChainInfo::toJson() const
 
     return val;
 }
-
 bool KeyChainInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool KeyChainInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string KeyChainInfo::getKey() const
 {

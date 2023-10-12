@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/smn/v2/model/ListApplicationEndpointAttributesResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Smn {
@@ -37,7 +36,6 @@ web::json::value ListApplicationEndpointAttributesResponse::toJson() const
 
     return val;
 }
-
 bool ListApplicationEndpointAttributesResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ListApplicationEndpointAttributesResponse::fromJson(const web::json::value&
     }
     return ok;
 }
+
 
 std::string ListApplicationEndpointAttributesResponse::getRequestId() const
 {

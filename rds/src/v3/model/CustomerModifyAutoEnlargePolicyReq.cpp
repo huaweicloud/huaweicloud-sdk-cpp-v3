@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/CustomerModifyAutoEnlargePolicyReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -43,7 +42,6 @@ web::json::value CustomerModifyAutoEnlargePolicyReq::toJson() const
 
     return val;
 }
-
 bool CustomerModifyAutoEnlargePolicyReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool CustomerModifyAutoEnlargePolicyReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool CustomerModifyAutoEnlargePolicyReq::isSwitchOption() const
 {

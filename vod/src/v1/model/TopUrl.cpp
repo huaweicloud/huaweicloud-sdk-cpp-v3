@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/TopUrl.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -53,7 +52,6 @@ web::json::value TopUrl::toJson() const
 
     return val;
 }
-
 bool TopUrl::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool TopUrl::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int64_t TopUrl::getValue() const
 {

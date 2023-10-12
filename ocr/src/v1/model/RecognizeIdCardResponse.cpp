@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/RecognizeIdCardResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -32,7 +31,6 @@ web::json::value RecognizeIdCardResponse::toJson() const
 
     return val;
 }
-
 bool RecognizeIdCardResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool RecognizeIdCardResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 IdCardResult RecognizeIdCardResponse::getResult() const
 {

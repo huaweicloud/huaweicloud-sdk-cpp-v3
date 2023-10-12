@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/ShowOffSiteBackupPolicyRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -38,7 +37,6 @@ web::json::value ShowOffSiteBackupPolicyRequest::toJson() const
 
     return val;
 }
-
 bool ShowOffSiteBackupPolicyRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ShowOffSiteBackupPolicyRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowOffSiteBackupPolicyRequest::getXLanguage() const
 {

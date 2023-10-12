@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ivs/v2/model/IvsExtentionByNameAndIdResponseBody_result.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ivs {
@@ -42,7 +41,6 @@ web::json::value IvsExtentionByNameAndIdResponseBody_result::toJson() const
 
     return val;
 }
-
 bool IvsExtentionByNameAndIdResponseBody_result::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool IvsExtentionByNameAndIdResponseBody_result::fromJson(const web::json::value
     }
     return ok;
 }
+
 
 std::string IvsExtentionByNameAndIdResponseBody_result::getServiceName() const
 {

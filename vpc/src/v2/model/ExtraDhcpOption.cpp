@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/ExtraDhcpOption.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -38,7 +37,6 @@ web::json::value ExtraDhcpOption::toJson() const
 
     return val;
 }
-
 bool ExtraDhcpOption::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ExtraDhcpOption::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ExtraDhcpOption::getOptName() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/UpdateRangeSwitchRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -42,7 +41,6 @@ web::json::value UpdateRangeSwitchRequest::toJson() const
 
     return val;
 }
-
 bool UpdateRangeSwitchRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool UpdateRangeSwitchRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateRangeSwitchRequest::getEnterpriseProjectId() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/CreateRouteTableReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -47,7 +46,6 @@ web::json::value CreateRouteTableReq::toJson() const
 
     return val;
 }
-
 bool CreateRouteTableReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -90,6 +88,7 @@ bool CreateRouteTableReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateRouteTableReq::getName() const
 {

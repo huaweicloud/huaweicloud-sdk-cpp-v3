@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/ApiVersionResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -57,7 +56,6 @@ web::json::value ApiVersionResponse::toJson() const
 
     return val;
 }
-
 bool ApiVersionResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -118,6 +116,7 @@ bool ApiVersionResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ApiVersionResponse::getId() const
 {

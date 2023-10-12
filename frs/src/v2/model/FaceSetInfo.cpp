@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/frs/v2/model/FaceSetInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Frs {
@@ -57,7 +56,6 @@ web::json::value FaceSetInfo::toJson() const
 
     return val;
 }
-
 bool FaceSetInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -118,6 +116,7 @@ bool FaceSetInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t FaceSetInfo::getFaceNumber() const
 {

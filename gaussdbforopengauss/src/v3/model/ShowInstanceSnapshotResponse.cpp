@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/ShowInstanceSnapshotResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -73,7 +72,6 @@ web::json::value ShowInstanceSnapshotResponse::toJson() const
 
     return val;
 }
-
 bool ShowInstanceSnapshotResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -161,6 +159,7 @@ bool ShowInstanceSnapshotResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowInstanceSnapshotResponse::getClusterMode() const
 {

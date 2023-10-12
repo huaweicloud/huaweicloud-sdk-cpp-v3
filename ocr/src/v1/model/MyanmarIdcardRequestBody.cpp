@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/MyanmarIdcardRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -68,7 +67,6 @@ web::json::value MyanmarIdcardRequestBody::toJson() const
 
     return val;
 }
-
 bool MyanmarIdcardRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -147,6 +145,7 @@ bool MyanmarIdcardRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string MyanmarIdcardRequestBody::getImage() const
 {

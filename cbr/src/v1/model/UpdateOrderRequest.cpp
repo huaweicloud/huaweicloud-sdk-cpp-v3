@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/UpdateOrderRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -37,7 +36,6 @@ web::json::value UpdateOrderRequest::toJson() const
 
     return val;
 }
-
 bool UpdateOrderRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool UpdateOrderRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateOrderRequest::getOrderId() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/DatastoreResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -43,7 +42,6 @@ web::json::value DatastoreResult::toJson() const
 
     return val;
 }
-
 bool DatastoreResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool DatastoreResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DatastoreResult::getType() const
 {

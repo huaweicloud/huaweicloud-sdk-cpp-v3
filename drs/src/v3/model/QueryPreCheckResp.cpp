@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/QueryPreCheckResp.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -72,7 +71,6 @@ web::json::value QueryPreCheckResp::toJson() const
 
     return val;
 }
-
 bool QueryPreCheckResp::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -160,6 +158,7 @@ bool QueryPreCheckResp::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string QueryPreCheckResp::getPrecheckId() const
 {

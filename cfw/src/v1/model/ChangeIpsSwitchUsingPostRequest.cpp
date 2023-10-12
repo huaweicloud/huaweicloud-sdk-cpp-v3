@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/ChangeIpsSwitchUsingPostRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -42,7 +41,6 @@ web::json::value ChangeIpsSwitchUsingPostRequest::toJson() const
 
     return val;
 }
-
 bool ChangeIpsSwitchUsingPostRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool ChangeIpsSwitchUsingPostRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ChangeIpsSwitchUsingPostRequest::getEnterpriseProjectId() const
 {

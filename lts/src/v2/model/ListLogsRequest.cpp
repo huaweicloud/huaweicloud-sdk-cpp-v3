@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/ListLogsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -47,7 +46,6 @@ web::json::value ListLogsRequest::toJson() const
 
     return val;
 }
-
 bool ListLogsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -90,6 +88,7 @@ bool ListLogsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListLogsRequest::getLogGroupId() const
 {

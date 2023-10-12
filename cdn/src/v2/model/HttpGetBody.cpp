@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v2/model/HttpGetBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -73,7 +72,6 @@ web::json::value HttpGetBody::toJson() const
 
     return val;
 }
-
 bool HttpGetBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -161,6 +159,7 @@ bool HttpGetBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string HttpGetBody::getHttpsStatus() const
 {

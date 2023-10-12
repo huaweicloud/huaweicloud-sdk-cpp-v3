@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/evs/v2/model/CreateVolumeOption.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Evs {
@@ -101,7 +100,6 @@ web::json::value CreateVolumeOption::toJson() const
 
     return val;
 }
-
 bool CreateVolumeOption::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -243,6 +241,7 @@ bool CreateVolumeOption::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateVolumeOption::getAvailabilityZone() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ims/v2/model/CreateImageRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ims {
@@ -115,7 +114,6 @@ web::json::value CreateImageRequestBody::toJson() const
 
     return val;
 }
-
 bool CreateImageRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -284,6 +282,7 @@ bool CreateImageRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<CreateDataImage>& CreateImageRequestBody::getDataImages()
 {

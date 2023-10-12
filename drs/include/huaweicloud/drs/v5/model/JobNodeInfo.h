@@ -2,9 +2,11 @@
 #ifndef HUAWEICLOUD_SDK_DRS_V5_MODEL_JobNodeInfo_H_
 #define HUAWEICLOUD_SDK_DRS_V5_MODEL_JobNodeInfo_H_
 
+
 #include <huaweicloud/drs/v5/DrsExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/drs/v5/model/JobNodeBaseInfo.h>
@@ -33,10 +35,8 @@ public:
     /// ModelBase overrides
 
     void validate() override;
-
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
-
     /////////////////////////////////////////////
     /// JobNodeInfo members
 

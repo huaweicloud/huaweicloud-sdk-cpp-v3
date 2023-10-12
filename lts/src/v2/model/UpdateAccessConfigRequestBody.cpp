@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/UpdateAccessConfigRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -60,7 +59,6 @@ web::json::value UpdateAccessConfigRequestBody::toJson() const
 
     return val;
 }
-
 bool UpdateAccessConfigRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -78,7 +76,7 @@ bool UpdateAccessConfigRequestBody::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("access_config_detail"));
         if(!fieldValue.is_null())
         {
-            AccessConfigDeatilCreate refVal;
+            AccessConfigDeatilUpdate refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAccessConfigDetail(refVal);
         }
@@ -131,6 +129,7 @@ bool UpdateAccessConfigRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
+
 std::string UpdateAccessConfigRequestBody::getAccessConfigId() const
 {
     return accessConfigId_;
@@ -152,12 +151,12 @@ void UpdateAccessConfigRequestBody::unsetaccessConfigId()
     accessConfigIdIsSet_ = false;
 }
 
-AccessConfigDeatilCreate UpdateAccessConfigRequestBody::getAccessConfigDetail() const
+AccessConfigDeatilUpdate UpdateAccessConfigRequestBody::getAccessConfigDetail() const
 {
     return accessConfigDetail_;
 }
 
-void UpdateAccessConfigRequestBody::setAccessConfigDetail(const AccessConfigDeatilCreate& value)
+void UpdateAccessConfigRequestBody::setAccessConfigDetail(const AccessConfigDeatilUpdate& value)
 {
     accessConfigDetail_ = value;
     accessConfigDetailIsSet_ = true;

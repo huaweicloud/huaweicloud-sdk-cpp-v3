@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/CreateAssetCategoryResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -53,7 +52,6 @@ web::json::value CreateAssetCategoryResponse::toJson() const
 
     return val;
 }
-
 bool CreateAssetCategoryResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool CreateAssetCategoryResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateAssetCategoryResponse::getName() const
 {

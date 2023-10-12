@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v2/model/ShowResourcesJobDetailRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -33,7 +32,6 @@ web::json::value ShowResourcesJobDetailRequest::toJson() const
 
     return val;
 }
-
 bool ShowResourcesJobDetailRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool ShowResourcesJobDetailRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowResourcesJobDetailRequest::getJobId() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/ShowDeploymentFormResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -48,7 +47,6 @@ web::json::value ShowDeploymentFormResponse::toJson() const
 
     return val;
 }
-
 bool ShowDeploymentFormResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool ShowDeploymentFormResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ShowDeploymentFormResponse::getInitialNodeNum() const
 {

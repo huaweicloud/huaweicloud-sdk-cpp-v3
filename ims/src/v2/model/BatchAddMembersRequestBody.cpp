@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ims/v2/model/BatchAddMembersRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ims {
@@ -36,7 +35,6 @@ web::json::value BatchAddMembersRequestBody::toJson() const
 
     return val;
 }
-
 bool BatchAddMembersRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -61,6 +59,7 @@ bool BatchAddMembersRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<std::string>& BatchAddMembersRequestBody::getImages()
 {

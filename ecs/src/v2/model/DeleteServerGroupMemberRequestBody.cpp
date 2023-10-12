@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/DeleteServerGroupMemberRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -32,7 +31,6 @@ web::json::value DeleteServerGroupMemberRequestBody::toJson() const
 
     return val;
 }
-
 bool DeleteServerGroupMemberRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool DeleteServerGroupMemberRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 ServerGroupMember DeleteServerGroupMemberRequestBody::getRemoveMember() const
 {

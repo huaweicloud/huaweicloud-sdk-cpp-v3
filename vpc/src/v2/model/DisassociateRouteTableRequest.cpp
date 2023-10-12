@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/DisassociateRouteTableRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -37,7 +36,6 @@ web::json::value DisassociateRouteTableRequest::toJson() const
 
     return val;
 }
-
 bool DisassociateRouteTableRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool DisassociateRouteTableRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DisassociateRouteTableRequest::getRoutetableId() const
 {

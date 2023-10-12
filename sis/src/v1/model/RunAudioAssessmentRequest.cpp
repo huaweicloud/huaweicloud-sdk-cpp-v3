@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sis/v1/model/RunAudioAssessmentRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sis {
@@ -32,7 +31,6 @@ web::json::value RunAudioAssessmentRequest::toJson() const
 
     return val;
 }
-
 bool RunAudioAssessmentRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool RunAudioAssessmentRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 PostShortAudioAssessmentReq RunAudioAssessmentRequest::getBody() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/OffsiteBackupInstance.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -67,7 +66,6 @@ web::json::value OffsiteBackupInstance::toJson() const
 
     return val;
 }
-
 bool OffsiteBackupInstance::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -146,6 +144,7 @@ bool OffsiteBackupInstance::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string OffsiteBackupInstance::getId() const
 {

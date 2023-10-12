@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/VideoSuperresolution.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -43,7 +42,6 @@ web::json::value VideoSuperresolution::toJson() const
 
     return val;
 }
-
 bool VideoSuperresolution::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool VideoSuperresolution::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string VideoSuperresolution::getName() const
 {

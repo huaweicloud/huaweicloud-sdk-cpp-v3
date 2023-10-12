@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/CertInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -38,7 +37,6 @@ web::json::value CertInfo::toJson() const
 
     return val;
 }
-
 bool CertInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool CertInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CertInfo::getCategory() const
 {

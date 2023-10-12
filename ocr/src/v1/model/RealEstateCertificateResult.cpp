@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/RealEstateCertificateResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -137,7 +136,6 @@ web::json::value RealEstateCertificateResult::toJson() const
 
     return val;
 }
-
 bool RealEstateCertificateResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -342,6 +340,7 @@ bool RealEstateCertificateResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string RealEstateCertificateResult::getIssuer() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/ServerSystemTag.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -38,7 +37,6 @@ web::json::value ServerSystemTag::toJson() const
 
     return val;
 }
-
 bool ServerSystemTag::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ServerSystemTag::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ServerSystemTag::getKey() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/ListPrivateipsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -32,7 +31,6 @@ web::json::value ListPrivateipsResponse::toJson() const
 
     return val;
 }
-
 bool ListPrivateipsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ListPrivateipsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<Privateip>& ListPrivateipsResponse::getPrivateips()
 {

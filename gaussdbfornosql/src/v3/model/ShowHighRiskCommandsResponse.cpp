@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/ShowHighRiskCommandsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -32,7 +31,6 @@ web::json::value ShowHighRiskCommandsResponse::toJson() const
 
     return val;
 }
-
 bool ShowHighRiskCommandsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ShowHighRiskCommandsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<CommandInfo>& ShowHighRiskCommandsResponse::getCommands()
 {

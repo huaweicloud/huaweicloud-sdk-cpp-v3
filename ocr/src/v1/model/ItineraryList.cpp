@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/ItineraryList.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -83,7 +82,6 @@ web::json::value ItineraryList::toJson() const
 
     return val;
 }
-
 bool ItineraryList::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -189,6 +187,7 @@ bool ItineraryList::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ItineraryList::getDepartureStation() const
 {

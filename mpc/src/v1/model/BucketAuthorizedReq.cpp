@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/BucketAuthorizedReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -38,7 +37,6 @@ web::json::value BucketAuthorizedReq::toJson() const
 
     return val;
 }
-
 bool BucketAuthorizedReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool BucketAuthorizedReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string BucketAuthorizedReq::getBucket() const
 {

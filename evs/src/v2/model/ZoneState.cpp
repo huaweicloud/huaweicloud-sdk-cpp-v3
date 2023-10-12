@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/evs/v2/model/ZoneState.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Evs {
@@ -33,7 +32,6 @@ web::json::value ZoneState::toJson() const
 
     return val;
 }
-
 bool ZoneState::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool ZoneState::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool ZoneState::isAvailable() const
 {

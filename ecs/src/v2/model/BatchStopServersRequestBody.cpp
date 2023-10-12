@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/BatchStopServersRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -32,7 +31,6 @@ web::json::value BatchStopServersRequestBody::toJson() const
 
     return val;
 }
-
 bool BatchStopServersRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool BatchStopServersRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 BatchStopServersOption BatchStopServersRequestBody::getOsStop() const
 {

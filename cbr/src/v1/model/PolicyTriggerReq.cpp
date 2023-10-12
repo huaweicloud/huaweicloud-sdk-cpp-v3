@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/PolicyTriggerReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -32,7 +31,6 @@ web::json::value PolicyTriggerReq::toJson() const
 
     return val;
 }
-
 bool PolicyTriggerReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool PolicyTriggerReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 PolicyTriggerPropertiesReq PolicyTriggerReq::getProperties() const
 {

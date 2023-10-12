@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/QuerySessionResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -78,7 +77,6 @@ web::json::value QuerySessionResponse::toJson() const
 
     return val;
 }
-
 bool QuerySessionResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -175,6 +173,7 @@ bool QuerySessionResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string QuerySessionResponse::getId() const
 {

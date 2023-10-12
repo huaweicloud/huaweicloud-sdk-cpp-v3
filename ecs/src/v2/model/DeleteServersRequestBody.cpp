@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/DeleteServersRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -42,7 +41,6 @@ web::json::value DeleteServersRequestBody::toJson() const
 
     return val;
 }
-
 bool DeleteServersRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool DeleteServersRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool DeleteServersRequestBody::isDeletePublicip() const
 {

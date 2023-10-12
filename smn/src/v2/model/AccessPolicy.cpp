@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/smn/v2/model/AccessPolicy.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Smn {
@@ -42,7 +41,6 @@ web::json::value AccessPolicy::toJson() const
 
     return val;
 }
-
 bool AccessPolicy::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool AccessPolicy::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string AccessPolicy::getVersion() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v2/model/BatchDeletePublicIpResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -32,7 +31,6 @@ web::json::value BatchDeletePublicIpResponse::toJson() const
 
     return val;
 }
-
 bool BatchDeletePublicIpResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool BatchDeletePublicIpResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<std::string>& BatchDeletePublicIpResponse::getJobIds()
 {

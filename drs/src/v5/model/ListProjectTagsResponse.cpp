@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/ListProjectTagsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -32,7 +31,6 @@ web::json::value ListProjectTagsResponse::toJson() const
 
     return val;
 }
-
 bool ListProjectTagsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ListProjectTagsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<ProjectTag>& ListProjectTagsResponse::getTags()
 {

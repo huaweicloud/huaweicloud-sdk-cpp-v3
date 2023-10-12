@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/codeartsbuild/v3/model/ShowLastHistoryResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsbuild {
@@ -68,7 +67,6 @@ web::json::value ShowLastHistoryResponse::toJson() const
 
     return val;
 }
-
 bool ShowLastHistoryResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -147,6 +145,7 @@ bool ShowLastHistoryResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowLastHistoryResponse::getRecordId() const
 {

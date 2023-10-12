@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/RecognizeQualificationCertificateResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -32,7 +31,6 @@ web::json::value RecognizeQualificationCertificateResponse::toJson() const
 
     return val;
 }
-
 bool RecognizeQualificationCertificateResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool RecognizeQualificationCertificateResponse::fromJson(const web::json::value&
     }
     return ok;
 }
+
 
 QualificationCertificateResult RecognizeQualificationCertificateResponse::getResult() const
 {

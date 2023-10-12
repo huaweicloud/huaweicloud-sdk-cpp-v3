@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/frs/v2/model/DetectLiveByFileRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Frs {
@@ -44,7 +43,6 @@ web::json::value DetectLiveByFileRequestBody::toJson() const
 
     return val;
 }
-
 bool DetectLiveByFileRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -78,6 +76,7 @@ bool DetectLiveByFileRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 HttpContent DetectLiveByFileRequestBody::getVideoFile() const
 {

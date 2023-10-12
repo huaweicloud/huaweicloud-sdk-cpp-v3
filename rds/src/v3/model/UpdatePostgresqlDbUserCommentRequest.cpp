@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/UpdatePostgresqlDbUserCommentRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -42,7 +41,6 @@ web::json::value UpdatePostgresqlDbUserCommentRequest::toJson() const
 
     return val;
 }
-
 bool UpdatePostgresqlDbUserCommentRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool UpdatePostgresqlDbUserCommentRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdatePostgresqlDbUserCommentRequest::getInstanceId() const
 {

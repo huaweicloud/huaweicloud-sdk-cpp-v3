@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/csms/v1/model/Secret.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Csms {
@@ -107,7 +106,6 @@ web::json::value Secret::toJson() const
 
     return val;
 }
-
 bool Secret::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -258,6 +256,7 @@ bool Secret::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string Secret::getId() const
 {

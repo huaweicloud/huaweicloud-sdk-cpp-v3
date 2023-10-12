@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/smn/v2/model/UpdateMessageTemplateRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Smn {
@@ -33,7 +32,6 @@ web::json::value UpdateMessageTemplateRequestBody::toJson() const
 
     return val;
 }
-
 bool UpdateMessageTemplateRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool UpdateMessageTemplateRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateMessageTemplateRequestBody::getContent() const
 {

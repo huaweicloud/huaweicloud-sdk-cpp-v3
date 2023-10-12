@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cloudtable/v2/model/EnableComponentRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cloudtable {
@@ -47,7 +46,6 @@ web::json::value EnableComponentRequest::toJson() const
 
     return val;
 }
-
 bool EnableComponentRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -90,6 +88,7 @@ bool EnableComponentRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string EnableComponentRequest::getClusterId() const
 {

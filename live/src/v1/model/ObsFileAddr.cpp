@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v1/model/ObsFileAddr.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -43,7 +42,6 @@ web::json::value ObsFileAddr::toJson() const
 
     return val;
 }
-
 bool ObsFileAddr::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool ObsFileAddr::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ObsFileAddr::getBucket() const
 {

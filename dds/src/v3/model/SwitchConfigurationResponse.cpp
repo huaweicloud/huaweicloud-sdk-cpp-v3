@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/SwitchConfigurationResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -33,7 +32,6 @@ web::json::value SwitchConfigurationResponse::toJson() const
 
     return val;
 }
-
 bool SwitchConfigurationResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool SwitchConfigurationResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string SwitchConfigurationResponse::getJobId() const
 {

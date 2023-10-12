@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/BatchCreateServerTagsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -28,13 +27,13 @@ web::json::value BatchCreateServerTagsResponse::toJson() const
 
     return val;
 }
-
 bool BatchCreateServerTagsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 }
 }

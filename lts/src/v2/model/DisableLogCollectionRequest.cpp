@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/DisableLogCollectionRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -33,7 +32,6 @@ web::json::value DisableLogCollectionRequest::toJson() const
 
     return val;
 }
-
 bool DisableLogCollectionRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool DisableLogCollectionRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DisableLogCollectionRequest::getContentType() const
 {

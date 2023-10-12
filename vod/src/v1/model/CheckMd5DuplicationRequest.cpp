@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/CheckMd5DuplicationRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -43,7 +42,6 @@ web::json::value CheckMd5DuplicationRequest::toJson() const
 
     return val;
 }
-
 bool CheckMd5DuplicationRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool CheckMd5DuplicationRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CheckMd5DuplicationRequest::getXSdkDate() const
 {

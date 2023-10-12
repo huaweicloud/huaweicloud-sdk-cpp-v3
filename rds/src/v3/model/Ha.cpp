@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/Ha.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -38,7 +37,6 @@ web::json::value Ha::toJson() const
 
     return val;
 }
-
 bool Ha::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool Ha::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string Ha::getMode() const
 {

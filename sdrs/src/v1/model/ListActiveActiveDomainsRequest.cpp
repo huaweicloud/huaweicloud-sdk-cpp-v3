@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sdrs/v1/model/ListActiveActiveDomainsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sdrs {
@@ -28,13 +27,13 @@ web::json::value ListActiveActiveDomainsRequest::toJson() const
 
     return val;
 }
-
 bool ListActiveActiveDomainsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 }
 }

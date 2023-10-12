@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/ResizeInstanceVolumeOption.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -42,7 +41,6 @@ web::json::value ResizeInstanceVolumeOption::toJson() const
 
     return val;
 }
-
 bool ResizeInstanceVolumeOption::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool ResizeInstanceVolumeOption::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ResizeInstanceVolumeOption::getSize() const
 {

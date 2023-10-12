@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/ListApiVersionNewResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -32,7 +31,6 @@ web::json::value ListApiVersionNewResponse::toJson() const
 
     return val;
 }
-
 bool ListApiVersionNewResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ListApiVersionNewResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<ApiVersion>& ListApiVersionNewResponse::getVersions()
 {

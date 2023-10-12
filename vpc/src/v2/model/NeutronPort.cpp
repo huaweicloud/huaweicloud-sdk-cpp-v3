@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/NeutronPort.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -131,7 +130,6 @@ web::json::value NeutronPort::toJson() const
 
     return val;
 }
-
 bool NeutronPort::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -336,6 +334,7 @@ bool NeutronPort::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool NeutronPort::isAdminStateUp() const
 {

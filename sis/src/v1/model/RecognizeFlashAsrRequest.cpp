@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sis/v1/model/RecognizeFlashAsrRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sis {
@@ -73,7 +72,6 @@ web::json::value RecognizeFlashAsrRequest::toJson() const
 
     return val;
 }
-
 bool RecognizeFlashAsrRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -161,6 +159,7 @@ bool RecognizeFlashAsrRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string RecognizeFlashAsrRequest::getProperty() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/QuerySelectObjectInfoReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -42,7 +41,6 @@ web::json::value QuerySelectObjectInfoReq::toJson() const
 
     return val;
 }
-
 bool QuerySelectObjectInfoReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool QuerySelectObjectInfoReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<std::string>& QuerySelectObjectInfoReq::getDbNames()
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/kms/v2/model/ShowKmsTagsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Kms {
@@ -37,7 +36,6 @@ web::json::value ShowKmsTagsResponse::toJson() const
 
     return val;
 }
-
 bool ShowKmsTagsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ShowKmsTagsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<TagItem>& ShowKmsTagsResponse::getTags()
 {

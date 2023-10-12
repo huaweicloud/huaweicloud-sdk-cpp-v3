@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/ListAz2MigrateRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -33,7 +32,6 @@ web::json::value ListAz2MigrateRequest::toJson() const
 
     return val;
 }
-
 bool ListAz2MigrateRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool ListAz2MigrateRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListAz2MigrateRequest::getInstanceId() const
 {

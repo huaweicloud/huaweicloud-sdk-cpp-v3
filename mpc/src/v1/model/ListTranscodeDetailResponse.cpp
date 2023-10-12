@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/ListTranscodeDetailResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -32,7 +31,6 @@ web::json::value ListTranscodeDetailResponse::toJson() const
 
     return val;
 }
-
 bool ListTranscodeDetailResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ListTranscodeDetailResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<TaskDetailInfo>& ListTranscodeDetailResponse::getTaskArray()
 {

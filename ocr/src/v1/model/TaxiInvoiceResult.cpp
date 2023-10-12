@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/TaxiInvoiceResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -131,7 +130,6 @@ web::json::value TaxiInvoiceResult::toJson() const
 
     return val;
 }
-
 bool TaxiInvoiceResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -327,6 +325,7 @@ bool TaxiInvoiceResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string TaxiInvoiceResult::getLocation() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v1/model/DeleteRecordRuleRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -33,7 +32,6 @@ web::json::value DeleteRecordRuleRequest::toJson() const
 
     return val;
 }
-
 bool DeleteRecordRuleRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool DeleteRecordRuleRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DeleteRecordRuleRequest::getId() const
 {

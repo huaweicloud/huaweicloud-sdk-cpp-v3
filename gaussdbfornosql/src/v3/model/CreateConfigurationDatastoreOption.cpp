@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/CreateConfigurationDatastoreOption.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -43,7 +42,6 @@ web::json::value CreateConfigurationDatastoreOption::toJson() const
 
     return val;
 }
-
 bool CreateConfigurationDatastoreOption::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool CreateConfigurationDatastoreOption::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateConfigurationDatastoreOption::getType() const
 {

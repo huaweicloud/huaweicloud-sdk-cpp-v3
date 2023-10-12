@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/ResizePostPaidServerRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -37,7 +36,6 @@ web::json::value ResizePostPaidServerRequestBody::toJson() const
 
     return val;
 }
-
 bool ResizePostPaidServerRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ResizePostPaidServerRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 ResizePostPaidServerOption ResizePostPaidServerRequestBody::getResize() const
 {

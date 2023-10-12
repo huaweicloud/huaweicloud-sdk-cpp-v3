@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/FileInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -53,7 +52,6 @@ web::json::value FileInfo::toJson() const
 
     return val;
 }
-
 bool FileInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool FileInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string FileInfo::getName() const
 {

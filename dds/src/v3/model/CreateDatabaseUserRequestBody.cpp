@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/CreateDatabaseUserRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -47,7 +46,6 @@ web::json::value CreateDatabaseUserRequestBody::toJson() const
 
     return val;
 }
-
 bool CreateDatabaseUserRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -90,6 +88,7 @@ bool CreateDatabaseUserRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateDatabaseUserRequestBody::getUserName() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/MigrationObjectOverviewInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -58,7 +57,6 @@ web::json::value MigrationObjectOverviewInfo::toJson() const
 
     return val;
 }
-
 bool MigrationObjectOverviewInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool MigrationObjectOverviewInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string MigrationObjectOverviewInfo::getType() const
 {

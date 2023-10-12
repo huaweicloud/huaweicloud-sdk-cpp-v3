@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/UpdateGaussMySqlInstanceNameResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -33,7 +32,6 @@ web::json::value UpdateGaussMySqlInstanceNameResponse::toJson() const
 
     return val;
 }
-
 bool UpdateGaussMySqlInstanceNameResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool UpdateGaussMySqlInstanceNameResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateGaussMySqlInstanceNameResponse::getJobId() const
 {

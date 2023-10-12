@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/evs/v2/model/BatchCreateVolumeTagsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Evs {
@@ -37,7 +36,6 @@ web::json::value BatchCreateVolumeTagsRequest::toJson() const
 
     return val;
 }
-
 bool BatchCreateVolumeTagsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool BatchCreateVolumeTagsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string BatchCreateVolumeTagsRequest::getVolumeId() const
 {

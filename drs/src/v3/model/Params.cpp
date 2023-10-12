@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/Params.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -78,7 +77,6 @@ web::json::value Params::toJson() const
 
     return val;
 }
-
 bool Params::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -175,6 +173,7 @@ bool Params::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string Params::getCompareResult() const
 {

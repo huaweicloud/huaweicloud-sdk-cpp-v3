@@ -2,9 +2,11 @@
 #ifndef HUAWEICLOUD_SDK_DDS_V3_MODEL_CheckPasswordRequest_H_
 #define HUAWEICLOUD_SDK_DDS_V3_MODEL_CheckPasswordRequest_H_
 
+
 #include <huaweicloud/dds/v3/DdsExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
@@ -32,10 +34,8 @@ public:
     /// ModelBase overrides
 
     void validate() override;
-
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
-
     /////////////////////////////////////////////
     /// CheckPasswordRequest members
 

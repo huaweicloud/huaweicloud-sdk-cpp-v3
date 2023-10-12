@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/ShowInformationAboutDatabaseProxyResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -40,7 +39,6 @@ web::json::value ShowInformationAboutDatabaseProxyResponse::toJson() const
 
     return val;
 }
-
 bool ShowInformationAboutDatabaseProxyResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -74,6 +72,7 @@ bool ShowInformationAboutDatabaseProxyResponse::fromJson(const web::json::value&
     }
     return ok;
 }
+
 
 Proxy ShowInformationAboutDatabaseProxyResponse::getProxy() const
 {

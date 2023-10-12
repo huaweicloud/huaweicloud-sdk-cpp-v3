@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/DeleteSqlserverDatabaseExResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -33,7 +32,6 @@ web::json::value DeleteSqlserverDatabaseExResponse::toJson() const
 
     return val;
 }
-
 bool DeleteSqlserverDatabaseExResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool DeleteSqlserverDatabaseExResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DeleteSqlserverDatabaseExResponse::getJobId() const
 {

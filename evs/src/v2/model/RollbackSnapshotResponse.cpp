@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/evs/v2/model/RollbackSnapshotResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Evs {
@@ -32,7 +31,6 @@ web::json::value RollbackSnapshotResponse::toJson() const
 
     return val;
 }
-
 bool RollbackSnapshotResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool RollbackSnapshotResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 RollbackInfo RollbackSnapshotResponse::getRollback() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/ParaErrorResponseBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -38,7 +37,6 @@ web::json::value ParaErrorResponseBody::toJson() const
 
     return val;
 }
-
 bool ParaErrorResponseBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ParaErrorResponseBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ParaErrorResponseBody::getErrorCode() const
 {

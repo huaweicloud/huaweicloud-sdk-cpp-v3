@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/OpExtendInfoCommon.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -43,7 +42,6 @@ web::json::value OpExtendInfoCommon::toJson() const
 
     return val;
 }
-
 bool OpExtendInfoCommon::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool OpExtendInfoCommon::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t OpExtendInfoCommon::getProgress() const
 {

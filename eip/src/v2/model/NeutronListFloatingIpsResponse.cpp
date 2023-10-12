@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v2/model/NeutronListFloatingIpsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -36,7 +35,6 @@ web::json::value NeutronListFloatingIpsResponse::toJson() const
 
     return val;
 }
-
 bool NeutronListFloatingIpsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -61,6 +59,7 @@ bool NeutronListFloatingIpsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<FloatingIpResp>& NeutronListFloatingIpsResponse::getFloatingips()
 {

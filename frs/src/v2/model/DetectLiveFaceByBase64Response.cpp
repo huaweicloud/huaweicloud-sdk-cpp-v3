@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/frs/v2/model/DetectLiveFaceByBase64Response.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Frs {
@@ -36,7 +35,6 @@ web::json::value DetectLiveFaceByBase64Response::toJson() const
 
     return val;
 }
-
 bool DetectLiveFaceByBase64Response::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -61,6 +59,7 @@ bool DetectLiveFaceByBase64Response::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 LiveDetectFaceResp_result DetectLiveFaceByBase64Response::getResult() const
 {

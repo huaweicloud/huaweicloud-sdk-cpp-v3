@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/ShowSlowLogDesensitizationRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -33,7 +32,6 @@ web::json::value ShowSlowLogDesensitizationRequest::toJson() const
 
     return val;
 }
-
 bool ShowSlowLogDesensitizationRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool ShowSlowLogDesensitizationRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowSlowLogDesensitizationRequest::getInstanceId() const
 {

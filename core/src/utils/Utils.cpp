@@ -55,7 +55,13 @@ std::string toLowerCaseStr(std::string str)
 std::string toISO8601Time(const time_t &time)
 {
     char buffer[32];
-    strftime(buffer, sizeof(buffer), "%Y%m%dT%H%M%SZ", gmtime(&time));
+    struct tm timeinfo;
+#if defined(WIN32) || defined(__WIN32__) || defined(_WIN32) || defined(_MSC_VER)
+    gmtime_s(&timeinfo, &time);
+#else
+    gmtime_r(&time, &timeinfo);
+#endif
+    strftime(buffer, sizeof(buffer), "%Y%m%dT%H%M%SZ", &timeinfo);
     std::string str(buffer);
     return str;
 }
@@ -162,7 +168,7 @@ std::string uriEncode(std::string &str, bool path)
     return encodedStr;
 }
 
-std::string getContentType(const std::string &contentType, bool &isJson, bool &isMultiPart)
+std::string getContentType(const std::string &contentType, bool &isJson, bool &isMultiPart, bool &isBson)
 {
     if (contentType == "application/json") {
         isJson = true;
@@ -173,12 +179,14 @@ std::string getContentType(const std::string &contentType, bool &isJson, bool &i
     } else if (contentType == "multipart/form-data") {
         isMultiPart = true;
         return "multipart/form-data";
+    } else if (contentType == "application/bson") {
+        isBson = true;
+        return "application/bson";
     } else {
         isJson = true;
         return "application/json";
     }
 }
-
 }
 }
 }

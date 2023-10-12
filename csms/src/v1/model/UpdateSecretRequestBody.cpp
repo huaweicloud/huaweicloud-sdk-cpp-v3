@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/csms/v1/model/UpdateSecretRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Csms {
@@ -52,7 +51,6 @@ web::json::value UpdateSecretRequestBody::toJson() const
 
     return val;
 }
-
 bool UpdateSecretRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -104,6 +102,7 @@ bool UpdateSecretRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateSecretRequestBody::getKmsKeyId() const
 {

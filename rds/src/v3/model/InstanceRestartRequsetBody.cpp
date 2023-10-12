@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/InstanceRestartRequsetBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -32,7 +31,6 @@ web::json::value InstanceRestartRequsetBody::toJson() const
 
     return val;
 }
-
 bool InstanceRestartRequsetBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool InstanceRestartRequsetBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 Object InstanceRestartRequsetBody::getRestart() const
 {

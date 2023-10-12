@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/codeartsdeploy/v2/model/HostInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsdeploy {
@@ -125,7 +124,6 @@ web::json::value HostInfo::toJson() const
 
     return val;
 }
-
 bool HostInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -312,6 +310,7 @@ bool HostInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string HostInfo::getUuid() const
 {

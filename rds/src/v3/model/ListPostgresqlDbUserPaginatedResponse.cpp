@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/ListPostgresqlDbUserPaginatedResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -37,7 +36,6 @@ web::json::value ListPostgresqlDbUserPaginatedResponse::toJson() const
 
     return val;
 }
-
 bool ListPostgresqlDbUserPaginatedResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ListPostgresqlDbUserPaginatedResponse::fromJson(const web::json::value& val
     }
     return ok;
 }
+
 
 std::vector<PostgresqlUserForList>& ListPostgresqlDbUserPaginatedResponse::getUsers()
 {

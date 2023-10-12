@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/EachEncryptRsp.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -70,7 +69,6 @@ web::json::value EachEncryptRsp::toJson() const
 
     return val;
 }
-
 bool EachEncryptRsp::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -158,6 +156,7 @@ bool EachEncryptRsp::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string EachEncryptRsp::getTaskId() const
 {

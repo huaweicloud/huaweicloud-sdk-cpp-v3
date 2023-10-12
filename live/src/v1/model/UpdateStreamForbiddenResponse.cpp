@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v1/model/UpdateStreamForbiddenResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -28,13 +27,13 @@ web::json::value UpdateStreamForbiddenResponse::toJson() const
 
     return val;
 }
-
 bool UpdateStreamForbiddenResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 }
 }

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/DeleteTemplateRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -33,7 +32,6 @@ web::json::value DeleteTemplateRequest::toJson() const
 
     return val;
 }
-
 bool DeleteTemplateRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool DeleteTemplateRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int64_t DeleteTemplateRequest::getTemplateId() const
 {

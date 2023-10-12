@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ims/v2/model/ShowImageQuotaResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ims {
@@ -32,7 +31,6 @@ web::json::value ShowImageQuotaResponse::toJson() const
 
     return val;
 }
-
 bool ShowImageQuotaResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ShowImageQuotaResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 Quota ShowImageQuotaResponse::getQuotas() const
 {

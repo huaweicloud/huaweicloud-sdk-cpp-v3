@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/CreateInstanceRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -42,7 +41,6 @@ web::json::value CreateInstanceRequest::toJson() const
 
     return val;
 }
-
 bool CreateInstanceRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool CreateInstanceRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateInstanceRequest::getXLanguage() const
 {

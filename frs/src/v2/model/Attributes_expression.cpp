@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/frs/v2/model/Attributes_expression.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Frs {
@@ -38,7 +37,6 @@ web::json::value Attributes_expression::toJson() const
 
     return val;
 }
-
 bool Attributes_expression::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool Attributes_expression::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string Attributes_expression::getType() const
 {

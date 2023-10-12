@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/ChangeOpsWindowRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -37,7 +36,6 @@ web::json::value ChangeOpsWindowRequest::toJson() const
 
     return val;
 }
-
 bool ChangeOpsWindowRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ChangeOpsWindowRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ChangeOpsWindowRequest::getInstanceId() const
 {

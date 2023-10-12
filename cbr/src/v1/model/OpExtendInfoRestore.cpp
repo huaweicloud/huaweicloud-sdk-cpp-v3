@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/OpExtendInfoRestore.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -48,7 +47,6 @@ web::json::value OpExtendInfoRestore::toJson() const
 
     return val;
 }
-
 bool OpExtendInfoRestore::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool OpExtendInfoRestore::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string OpExtendInfoRestore::getBackupId() const
 {

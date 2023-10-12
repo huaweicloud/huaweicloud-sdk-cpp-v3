@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/AttachEipResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -53,7 +52,6 @@ web::json::value AttachEipResponse::toJson() const
 
     return val;
 }
-
 bool AttachEipResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool AttachEipResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string AttachEipResponse::getJobId() const
 {

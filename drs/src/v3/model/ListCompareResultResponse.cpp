@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/ListCompareResultResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -59,7 +58,6 @@ web::json::value ListCompareResultResponse::toJson() const
 
     return val;
 }
-
 bool ListCompareResultResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -129,6 +127,7 @@ bool ListCompareResultResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListCompareResultResponse::getJobId() const
 {

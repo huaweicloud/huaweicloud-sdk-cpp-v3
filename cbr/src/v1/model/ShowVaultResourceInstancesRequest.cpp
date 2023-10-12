@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/ShowVaultResourceInstancesRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -32,7 +31,6 @@ web::json::value ShowVaultResourceInstancesRequest::toJson() const
 
     return val;
 }
-
 bool ShowVaultResourceInstancesRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ShowVaultResourceInstancesRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 VaultResourceInstancesReq ShowVaultResourceInstancesRequest::getBody() const
 {

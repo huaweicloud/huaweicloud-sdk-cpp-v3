@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/CreateAomMappingRulesRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -37,7 +36,6 @@ web::json::value CreateAomMappingRulesRequest::toJson() const
 
     return val;
 }
-
 bool CreateAomMappingRulesRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool CreateAomMappingRulesRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool CreateAomMappingRulesRequest::isIsBatch() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sdrs/v1/model/ResizeProtectedInstanceRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sdrs {
@@ -32,7 +31,6 @@ web::json::value ResizeProtectedInstanceRequestBody::toJson() const
 
     return val;
 }
-
 bool ResizeProtectedInstanceRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ResizeProtectedInstanceRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 ResizeProtectedInstanceRequestParams ResizeProtectedInstanceRequestBody::getResize() const
 {

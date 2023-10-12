@@ -2,9 +2,11 @@
 #ifndef HUAWEICLOUD_SDK_EIP_V2_MODEL_UpdateBandwidthRequest_H_
 #define HUAWEICLOUD_SDK_EIP_V2_MODEL_UpdateBandwidthRequest_H_
 
+
 #include <huaweicloud/eip/v2/EipExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/eip/v2/model/UpdateBandwidthRequestBody.h>
@@ -32,10 +34,8 @@ public:
     /// ModelBase overrides
 
     void validate() override;
-
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
-
     /////////////////////////////////////////////
     /// UpdateBandwidthRequest members
 

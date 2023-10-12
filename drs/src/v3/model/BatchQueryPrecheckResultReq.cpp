@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/BatchQueryPrecheckResultReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -32,7 +31,6 @@ web::json::value BatchQueryPrecheckResultReq::toJson() const
 
     return val;
 }
-
 bool BatchQueryPrecheckResultReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool BatchQueryPrecheckResultReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<std::string>& BatchQueryPrecheckResultReq::getJobs()
 {

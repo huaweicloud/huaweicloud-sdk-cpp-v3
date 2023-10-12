@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/smn/v2/model/DeleteTopicResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Smn {
@@ -33,7 +32,6 @@ web::json::value DeleteTopicResponse::toJson() const
 
     return val;
 }
-
 bool DeleteTopicResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool DeleteTopicResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DeleteTopicResponse::getRequestId() const
 {

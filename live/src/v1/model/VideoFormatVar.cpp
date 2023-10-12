@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v1/model/VideoFormatVar.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/ServerDetail.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -251,7 +250,6 @@ web::json::value ServerDetail::toJson() const
 
     return val;
 }
-
 bool ServerDetail::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -681,6 +679,7 @@ bool ServerDetail::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ServerDetail::getStatus() const
 {

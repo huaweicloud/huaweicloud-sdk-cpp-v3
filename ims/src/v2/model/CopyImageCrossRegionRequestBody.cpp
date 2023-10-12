@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ims/v2/model/CopyImageCrossRegionRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ims {
@@ -58,7 +57,6 @@ web::json::value CopyImageCrossRegionRequestBody::toJson() const
 
     return val;
 }
-
 bool CopyImageCrossRegionRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool CopyImageCrossRegionRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CopyImageCrossRegionRequestBody::getAgencyName() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cloudtable/v2/model/ActionProgress.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cloudtable {
@@ -53,7 +52,6 @@ web::json::value ActionProgress::toJson() const
 
     return val;
 }
-
 bool ActionProgress::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool ActionProgress::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ActionProgress::getCreating() const
 {

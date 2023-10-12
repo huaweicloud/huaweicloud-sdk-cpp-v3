@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/BatchStartServersRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -32,7 +31,6 @@ web::json::value BatchStartServersRequestBody::toJson() const
 
     return val;
 }
-
 bool BatchStartServersRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool BatchStartServersRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 BatchStartServersOption BatchStartServersRequestBody::getOsStart() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/CopyConfigurationRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -42,7 +41,6 @@ web::json::value CopyConfigurationRequest::toJson() const
 
     return val;
 }
-
 bool CopyConfigurationRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool CopyConfigurationRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CopyConfigurationRequest::getXLanguage() const
 {

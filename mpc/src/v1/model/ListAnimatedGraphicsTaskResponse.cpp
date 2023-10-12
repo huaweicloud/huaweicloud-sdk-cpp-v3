@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/ListAnimatedGraphicsTaskResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -37,7 +36,6 @@ web::json::value ListAnimatedGraphicsTaskResponse::toJson() const
 
     return val;
 }
-
 bool ListAnimatedGraphicsTaskResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ListAnimatedGraphicsTaskResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ListAnimatedGraphicsTaskResponse::getTotal() const
 {

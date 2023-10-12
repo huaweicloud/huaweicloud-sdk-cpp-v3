@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/ServerExtendVolumeAttachment.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -48,7 +47,6 @@ web::json::value ServerExtendVolumeAttachment::toJson() const
 
     return val;
 }
-
 bool ServerExtendVolumeAttachment::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool ServerExtendVolumeAttachment::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ServerExtendVolumeAttachment::getId() const
 {

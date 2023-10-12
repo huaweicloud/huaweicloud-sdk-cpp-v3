@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/frs/v2/model/CompareFaceByFileRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Frs {
@@ -30,13 +29,13 @@ web::json::value CompareFaceByFileRequestBody::toJson() const
 
     return val;
 }
-
 bool CompareFaceByFileRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 HttpContent CompareFaceByFileRequestBody::getImage1File() const
 {

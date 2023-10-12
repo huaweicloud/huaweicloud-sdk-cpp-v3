@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/CreateLogDumpObsRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -77,7 +76,6 @@ web::json::value CreateLogDumpObsRequestBody::toJson() const
 
     return val;
 }
-
 bool CreateLogDumpObsRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -174,6 +172,7 @@ bool CreateLogDumpObsRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateLogDumpObsRequestBody::getLogGroupId() const
 {

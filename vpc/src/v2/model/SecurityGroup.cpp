@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/SecurityGroup.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -57,7 +56,6 @@ web::json::value SecurityGroup::toJson() const
 
     return val;
 }
-
 bool SecurityGroup::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -118,6 +116,7 @@ bool SecurityGroup::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string SecurityGroup::getName() const
 {

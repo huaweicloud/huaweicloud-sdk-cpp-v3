@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/frs/v2/model/DetectLiveFaceByFileResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Frs {
@@ -36,7 +35,6 @@ web::json::value DetectLiveFaceByFileResponse::toJson() const
 
     return val;
 }
-
 bool DetectLiveFaceByFileResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -61,6 +59,7 @@ bool DetectLiveFaceByFileResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 LiveDetectFaceResp_result DetectLiveFaceByFileResponse::getResult() const
 {

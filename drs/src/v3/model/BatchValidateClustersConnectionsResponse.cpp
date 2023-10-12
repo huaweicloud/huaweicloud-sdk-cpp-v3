@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/BatchValidateClustersConnectionsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -37,7 +36,6 @@ web::json::value BatchValidateClustersConnectionsResponse::toJson() const
 
     return val;
 }
-
 bool BatchValidateClustersConnectionsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool BatchValidateClustersConnectionsResponse::fromJson(const web::json::value& 
     }
     return ok;
 }
+
 
 std::vector<CheckJobResp>& BatchValidateClustersConnectionsResponse::getResults()
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/BatchUpdateServersNameRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -42,7 +41,6 @@ web::json::value BatchUpdateServersNameRequestBody::toJson() const
 
     return val;
 }
-
 bool BatchUpdateServersNameRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool BatchUpdateServersNameRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string BatchUpdateServersNameRequestBody::getName() const
 {

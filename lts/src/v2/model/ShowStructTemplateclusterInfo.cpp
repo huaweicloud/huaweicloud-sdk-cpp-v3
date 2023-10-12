@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/ShowStructTemplateclusterInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -43,7 +42,6 @@ web::json::value ShowStructTemplateclusterInfo::toJson() const
 
     return val;
 }
-
 bool ShowStructTemplateclusterInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool ShowStructTemplateclusterInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowStructTemplateclusterInfo::getClusterName() const
 {

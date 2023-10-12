@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/MetaData.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -78,7 +77,6 @@ web::json::value MetaData::toJson() const
 
     return val;
 }
-
 bool MetaData::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -175,6 +173,7 @@ bool MetaData::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string MetaData::getPackType() const
 {

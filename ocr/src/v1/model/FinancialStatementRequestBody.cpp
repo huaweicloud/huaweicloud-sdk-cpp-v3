@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/FinancialStatementRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -68,7 +67,6 @@ web::json::value FinancialStatementRequestBody::toJson() const
 
     return val;
 }
-
 bool FinancialStatementRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -147,6 +145,7 @@ bool FinancialStatementRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string FinancialStatementRequestBody::getImage() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/ListConfigurationTemplatesRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -38,7 +37,6 @@ web::json::value ListConfigurationTemplatesRequest::toJson() const
 
     return val;
 }
-
 bool ListConfigurationTemplatesRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ListConfigurationTemplatesRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ListConfigurationTemplatesRequest::getOffset() const
 {

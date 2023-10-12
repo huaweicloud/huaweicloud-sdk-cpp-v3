@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/CreateRestoreInstanceResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -42,7 +41,6 @@ web::json::value CreateRestoreInstanceResponse::toJson() const
 
     return val;
 }
-
 bool CreateRestoreInstanceResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool CreateRestoreInstanceResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 CreateInstanceRespItem CreateRestoreInstanceResponse::getInstance() const
 {

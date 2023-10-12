@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/ChangeServerChargeModeRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -46,7 +45,6 @@ web::json::value ChangeServerChargeModeRequestBody::toJson() const
 
     return val;
 }
-
 bool ChangeServerChargeModeRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -89,6 +87,7 @@ bool ChangeServerChargeModeRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<std::string>& ChangeServerChargeModeRequestBody::getServerIds()
 {

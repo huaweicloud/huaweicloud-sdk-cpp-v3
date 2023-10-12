@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/ServiceSet.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -53,7 +52,6 @@ web::json::value ServiceSet::toJson() const
 
     return val;
 }
-
 bool ServiceSet::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool ServiceSet::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ServiceSet::getSetId() const
 {

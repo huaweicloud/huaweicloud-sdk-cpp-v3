@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sdrs/v1/model/ListProtectedInstancesByTagsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sdrs {
@@ -37,7 +36,6 @@ web::json::value ListProtectedInstancesByTagsResponse::toJson() const
 
     return val;
 }
-
 bool ListProtectedInstancesByTagsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ListProtectedInstancesByTagsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<ResourceParams>& ListProtectedInstancesByTagsResponse::getResources()
 {

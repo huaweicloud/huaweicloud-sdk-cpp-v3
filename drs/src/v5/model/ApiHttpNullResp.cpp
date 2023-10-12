@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/ApiHttpNullResp.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -28,13 +27,13 @@ web::json::value ApiHttpNullResp::toJson() const
 
     return val;
 }
-
 bool ApiHttpNullResp::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 }
 }

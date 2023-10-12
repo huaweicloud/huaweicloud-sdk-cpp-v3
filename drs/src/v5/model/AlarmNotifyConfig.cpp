@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/AlarmNotifyConfig.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -53,7 +52,6 @@ web::json::value AlarmNotifyConfig::toJson() const
 
     return val;
 }
-
 bool AlarmNotifyConfig::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool AlarmNotifyConfig::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool AlarmNotifyConfig::isAlarmToUser() const
 {

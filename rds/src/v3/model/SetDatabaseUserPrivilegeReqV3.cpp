@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/SetDatabaseUserPrivilegeReqV3.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -43,7 +42,6 @@ web::json::value SetDatabaseUserPrivilegeReqV3::toJson() const
 
     return val;
 }
-
 bool SetDatabaseUserPrivilegeReqV3::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool SetDatabaseUserPrivilegeReqV3::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool SetDatabaseUserPrivilegeReqV3::isAllUsers() const
 {

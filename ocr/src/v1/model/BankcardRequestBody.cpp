@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/BankcardRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -43,7 +42,6 @@ web::json::value BankcardRequestBody::toJson() const
 
     return val;
 }
-
 bool BankcardRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool BankcardRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string BankcardRequestBody::getImage() const
 {

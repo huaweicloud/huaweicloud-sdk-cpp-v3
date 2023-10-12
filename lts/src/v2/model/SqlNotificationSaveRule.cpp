@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/SqlNotificationSaveRule.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -52,7 +51,6 @@ web::json::value SqlNotificationSaveRule::toJson() const
 
     return val;
 }
-
 bool SqlNotificationSaveRule::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -104,6 +102,7 @@ bool SqlNotificationSaveRule::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string SqlNotificationSaveRule::getLanguage() const
 {

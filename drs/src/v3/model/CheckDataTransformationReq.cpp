@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/CheckDataTransformationReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -45,7 +44,6 @@ web::json::value CheckDataTransformationReq::toJson() const
 
     return val;
 }
-
 bool CheckDataTransformationReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -88,6 +86,7 @@ bool CheckDataTransformationReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CheckDataTransformationReq::getJobId() const
 {

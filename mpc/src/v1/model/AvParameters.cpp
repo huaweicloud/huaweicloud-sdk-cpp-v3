@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/AvParameters.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -40,7 +39,6 @@ web::json::value AvParameters::toJson() const
 
     return val;
 }
-
 bool AvParameters::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -74,6 +72,7 @@ bool AvParameters::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 VideoParameters AvParameters::getVideo() const
 {

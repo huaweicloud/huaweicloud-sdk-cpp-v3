@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/frs/v2/model/FaceSetFace.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Frs {
@@ -46,7 +45,6 @@ web::json::value FaceSetFace::toJson() const
 
     return val;
 }
-
 bool FaceSetFace::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -89,6 +87,7 @@ bool FaceSetFace::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 BoundingBox FaceSetFace::getBoundingBox() const
 {

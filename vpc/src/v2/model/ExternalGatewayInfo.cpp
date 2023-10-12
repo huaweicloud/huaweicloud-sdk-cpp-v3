@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/ExternalGatewayInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -38,7 +37,6 @@ web::json::value ExternalGatewayInfo::toJson() const
 
     return val;
 }
-
 bool ExternalGatewayInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ExternalGatewayInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool ExternalGatewayInfo::isEnableSnat() const
 {

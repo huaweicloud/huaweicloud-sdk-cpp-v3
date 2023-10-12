@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/SqlAlarmRuleRespList.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -115,7 +114,6 @@ web::json::value SqlAlarmRuleRespList::toJson() const
 
     return val;
 }
-
 bool SqlAlarmRuleRespList::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -284,6 +282,7 @@ bool SqlAlarmRuleRespList::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string SqlAlarmRuleRespList::getSqlAlarmRuleName() const
 {

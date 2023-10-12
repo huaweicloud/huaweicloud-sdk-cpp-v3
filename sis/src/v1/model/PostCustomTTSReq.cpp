@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sis/v1/model/PostCustomTTSReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sis {
@@ -37,7 +36,6 @@ web::json::value PostCustomTTSReq::toJson() const
 
     return val;
 }
-
 bool PostCustomTTSReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool PostCustomTTSReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string PostCustomTTSReq::getText() const
 {

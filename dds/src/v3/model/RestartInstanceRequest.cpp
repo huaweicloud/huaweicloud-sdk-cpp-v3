@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/RestartInstanceRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -37,7 +36,6 @@ web::json::value RestartInstanceRequest::toJson() const
 
     return val;
 }
-
 bool RestartInstanceRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool RestartInstanceRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string RestartInstanceRequest::getInstanceId() const
 {

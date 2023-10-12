@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/codeartsdeploy/v2/model/ListDeployTaskHistoryByDateRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsdeploy {
@@ -58,7 +57,6 @@ web::json::value ListDeployTaskHistoryByDateRequest::toJson() const
 
     return val;
 }
-
 bool ListDeployTaskHistoryByDateRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool ListDeployTaskHistoryByDateRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListDeployTaskHistoryByDateRequest::getProjectId() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/RecognizeSmartDocumentRecognizerRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -37,7 +36,6 @@ web::json::value RecognizeSmartDocumentRecognizerRequest::toJson() const
 
     return val;
 }
-
 bool RecognizeSmartDocumentRecognizerRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool RecognizeSmartDocumentRecognizerRequest::fromJson(const web::json::value& v
     }
     return ok;
 }
+
 
 std::string RecognizeSmartDocumentRecognizerRequest::getEnterpriseProjectId() const
 {

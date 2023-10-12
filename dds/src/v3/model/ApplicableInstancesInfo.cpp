@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/ApplicableInstancesInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -42,7 +41,6 @@ web::json::value ApplicableInstancesInfo::toJson() const
 
     return val;
 }
-
 bool ApplicableInstancesInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool ApplicableInstancesInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ApplicableInstancesInfo::getInstanceId() const
 {

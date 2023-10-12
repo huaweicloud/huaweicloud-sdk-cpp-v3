@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/AccessConfigDeatilCreate.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -110,7 +109,6 @@ web::json::value AccessConfigDeatilCreate::toJson() const
 
     return val;
 }
-
 bool AccessConfigDeatilCreate::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -288,6 +286,7 @@ bool AccessConfigDeatilCreate::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<std::string>& AccessConfigDeatilCreate::getPaths()
 {

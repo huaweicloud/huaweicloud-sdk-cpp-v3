@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/ListTemplateGroupResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -37,7 +36,6 @@ web::json::value ListTemplateGroupResponse::toJson() const
 
     return val;
 }
-
 bool ListTemplateGroupResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ListTemplateGroupResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<TemplateGroup>& ListTemplateGroupResponse::getTemplateGroupList()
 {

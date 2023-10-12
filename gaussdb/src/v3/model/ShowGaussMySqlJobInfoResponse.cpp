@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/ShowGaussMySqlJobInfoResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -32,7 +31,6 @@ web::json::value ShowGaussMySqlJobInfoResponse::toJson() const
 
     return val;
 }
-
 bool ShowGaussMySqlJobInfoResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ShowGaussMySqlJobInfoResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 GetJobInfoDetail ShowGaussMySqlJobInfoResponse::getJob() const
 {

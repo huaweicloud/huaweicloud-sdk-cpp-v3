@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/frs/v2/model/ShowAllFaceSetsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Frs {
@@ -32,7 +31,6 @@ web::json::value ShowAllFaceSetsResponse::toJson() const
 
     return val;
 }
-
 bool ShowAllFaceSetsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ShowAllFaceSetsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<FaceSetInfo>& ShowAllFaceSetsResponse::getFaceSetsInfo()
 {

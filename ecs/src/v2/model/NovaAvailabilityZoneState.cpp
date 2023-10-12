@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/NovaAvailabilityZoneState.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -33,7 +32,6 @@ web::json::value NovaAvailabilityZoneState::toJson() const
 
     return val;
 }
-
 bool NovaAvailabilityZoneState::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool NovaAvailabilityZoneState::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool NovaAvailabilityZoneState::isAvailable() const
 {

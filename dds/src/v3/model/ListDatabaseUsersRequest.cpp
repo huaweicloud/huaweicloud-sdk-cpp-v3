@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/ListDatabaseUsersRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -53,7 +52,6 @@ web::json::value ListDatabaseUsersRequest::toJson() const
 
     return val;
 }
-
 bool ListDatabaseUsersRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool ListDatabaseUsersRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListDatabaseUsersRequest::getInstanceId() const
 {

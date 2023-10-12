@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/TransferDetail.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -107,7 +106,6 @@ web::json::value TransferDetail::toJson() const
 
     return val;
 }
-
 bool TransferDetail::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -258,6 +256,7 @@ bool TransferDetail::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t TransferDetail::getObsPeriod() const
 {

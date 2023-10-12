@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/ListAuthorizedSqlserverDbUsersResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -37,7 +36,6 @@ web::json::value ListAuthorizedSqlserverDbUsersResponse::toJson() const
 
     return val;
 }
-
 bool ListAuthorizedSqlserverDbUsersResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ListAuthorizedSqlserverDbUsersResponse::fromJson(const web::json::value& va
     }
     return ok;
 }
+
 
 std::vector<UserWithPrivilege>& ListAuthorizedSqlserverDbUsersResponse::getUsers()
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v2/model/RemovePublicipsFromSharedBandwidthRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -32,7 +31,6 @@ web::json::value RemovePublicipsFromSharedBandwidthRequestBody::toJson() const
 
     return val;
 }
-
 bool RemovePublicipsFromSharedBandwidthRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool RemovePublicipsFromSharedBandwidthRequestBody::fromJson(const web::json::va
     }
     return ok;
 }
+
 
 RemoveFromSharedBandwidthOption RemovePublicipsFromSharedBandwidthRequestBody::getBandwidth() const
 {

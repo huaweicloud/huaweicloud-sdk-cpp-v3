@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/RestoreToExistingInstanceRequestBody_source.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -52,7 +51,6 @@ web::json::value RestoreToExistingInstanceRequestBody_source::toJson() const
 
     return val;
 }
-
 bool RestoreToExistingInstanceRequestBody_source::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -104,6 +102,7 @@ bool RestoreToExistingInstanceRequestBody_source::fromJson(const web::json::valu
     }
     return ok;
 }
+
 
 std::string RestoreToExistingInstanceRequestBody_source::getInstanceId() const
 {

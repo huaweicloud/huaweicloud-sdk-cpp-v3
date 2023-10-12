@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/WordsListIem.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -46,7 +45,6 @@ web::json::value WordsListIem::toJson() const
 
     return val;
 }
-
 bool WordsListIem::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -89,6 +87,7 @@ bool WordsListIem::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string WordsListIem::getWords() const
 {

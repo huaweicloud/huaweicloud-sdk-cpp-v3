@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v3/model/DisassociatePublicipsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -33,7 +32,6 @@ web::json::value DisassociatePublicipsRequest::toJson() const
 
     return val;
 }
-
 bool DisassociatePublicipsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool DisassociatePublicipsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DisassociatePublicipsRequest::getPublicipId() const
 {

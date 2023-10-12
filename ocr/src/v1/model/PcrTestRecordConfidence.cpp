@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/PcrTestRecordConfidence.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -48,7 +47,6 @@ web::json::value PcrTestRecordConfidence::toJson() const
 
     return val;
 }
-
 bool PcrTestRecordConfidence::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool PcrTestRecordConfidence::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 float PcrTestRecordConfidence::getName() const
 {

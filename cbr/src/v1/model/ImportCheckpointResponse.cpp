@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/ImportCheckpointResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -32,7 +31,6 @@ web::json::value ImportCheckpointResponse::toJson() const
 
     return val;
 }
-
 bool ImportCheckpointResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ImportCheckpointResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 SyncRespBody ImportCheckpointResponse::getSync() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/kms/v2/model/CreateDatakeyWithoutPlaintextRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Kms {
@@ -32,7 +31,6 @@ web::json::value CreateDatakeyWithoutPlaintextRequest::toJson() const
 
     return val;
 }
-
 bool CreateDatakeyWithoutPlaintextRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CreateDatakeyWithoutPlaintextRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 CreateDatakeyRequestBody CreateDatakeyWithoutPlaintextRequest::getBody() const
 {

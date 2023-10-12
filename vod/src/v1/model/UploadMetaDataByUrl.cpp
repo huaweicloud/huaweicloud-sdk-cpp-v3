@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/UploadMetaDataByUrl.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -91,7 +90,6 @@ web::json::value UploadMetaDataByUrl::toJson() const
 
     return val;
 }
-
 bool UploadMetaDataByUrl::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -215,6 +213,7 @@ bool UploadMetaDataByUrl::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UploadMetaDataByUrl::getVideoType() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/OpenGaussModifyInstanceConfigurationRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -32,7 +31,6 @@ web::json::value OpenGaussModifyInstanceConfigurationRequest::toJson() const
 
     return val;
 }
-
 bool OpenGaussModifyInstanceConfigurationRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool OpenGaussModifyInstanceConfigurationRequest::fromJson(const web::json::valu
     }
     return ok;
 }
+
 
 std::map<std::string, std::string>& OpenGaussModifyInstanceConfigurationRequest::getValues()
 {

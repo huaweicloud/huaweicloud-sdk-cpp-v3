@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/ModifyPublicIpResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -33,7 +32,6 @@ web::json::value ModifyPublicIpResponse::toJson() const
 
     return val;
 }
-
 bool ModifyPublicIpResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool ModifyPublicIpResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ModifyPublicIpResponse::getJobId() const
 {

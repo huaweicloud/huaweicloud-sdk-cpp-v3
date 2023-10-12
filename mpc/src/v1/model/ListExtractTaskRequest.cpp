@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/ListExtractTaskRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -62,7 +61,6 @@ web::json::value ListExtractTaskRequest::toJson() const
 
     return val;
 }
-
 bool ListExtractTaskRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -132,6 +130,7 @@ bool ListExtractTaskRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListExtractTaskRequest::getXLanguage() const
 {

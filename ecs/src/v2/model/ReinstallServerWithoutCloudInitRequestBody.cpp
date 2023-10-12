@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/ReinstallServerWithoutCloudInitRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -32,7 +31,6 @@ web::json::value ReinstallServerWithoutCloudInitRequestBody::toJson() const
 
     return val;
 }
-
 bool ReinstallServerWithoutCloudInitRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ReinstallServerWithoutCloudInitRequestBody::fromJson(const web::json::value
     }
     return ok;
 }
+
 
 ReinstallServerWithoutCloudInitOption ReinstallServerWithoutCloudInitRequestBody::getOsReinstall() const
 {

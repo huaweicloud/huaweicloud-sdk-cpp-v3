@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/codeartsdeploy/v2/model/PermissionGroupDetail.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsdeploy {
@@ -53,7 +52,6 @@ web::json::value PermissionGroupDetail::toJson() const
 
     return val;
 }
-
 bool PermissionGroupDetail::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool PermissionGroupDetail::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool PermissionGroupDetail::isCanView() const
 {

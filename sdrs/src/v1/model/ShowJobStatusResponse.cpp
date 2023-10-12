@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sdrs/v1/model/ShowJobStatusResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sdrs {
@@ -67,7 +66,6 @@ web::json::value ShowJobStatusResponse::toJson() const
 
     return val;
 }
-
 bool ShowJobStatusResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -146,6 +144,7 @@ bool ShowJobStatusResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowJobStatusResponse::getStatus() const
 {

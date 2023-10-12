@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/SqlFilterRule.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -37,7 +36,6 @@ web::json::value SqlFilterRule::toJson() const
 
     return val;
 }
-
 bool SqlFilterRule::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool SqlFilterRule::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string SqlFilterRule::getSqlType() const
 {

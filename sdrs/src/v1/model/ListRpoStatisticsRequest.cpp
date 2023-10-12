@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sdrs/v1/model/ListRpoStatisticsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sdrs {
@@ -53,7 +52,6 @@ web::json::value ListRpoStatisticsRequest::toJson() const
 
     return val;
 }
-
 bool ListRpoStatisticsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool ListRpoStatisticsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ListRpoStatisticsRequest::getLimit() const
 {

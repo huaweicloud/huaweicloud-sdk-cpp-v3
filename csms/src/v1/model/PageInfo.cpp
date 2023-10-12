@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/csms/v1/model/PageInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Csms {
@@ -43,7 +42,6 @@ web::json::value PageInfo::toJson() const
 
     return val;
 }
-
 bool PageInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool PageInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string PageInfo::getNextMarker() const
 {

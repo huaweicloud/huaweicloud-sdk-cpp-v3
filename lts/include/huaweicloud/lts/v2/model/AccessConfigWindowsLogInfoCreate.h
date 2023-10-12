@@ -2,13 +2,15 @@
 #ifndef HUAWEICLOUD_SDK_LTS_V2_MODEL_AccessConfigWindowsLogInfoCreate_H_
 #define HUAWEICLOUD_SDK_LTS_V2_MODEL_AccessConfigWindowsLogInfoCreate_H_
 
+
 #include <huaweicloud/lts/v2/LtsExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
-#include <huaweicloud/lts/v2/model/AccessConfigTimeOffsetCreate.h>
+#include <huaweicloud/lts/v2/model/AccessConfigTimeOffset.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -33,10 +35,8 @@ public:
     /// ModelBase overrides
 
     void validate() override;
-
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
-
     /////////////////////////////////////////////
     /// AccessConfigWindowsLogInfoCreate members
 
@@ -53,10 +53,10 @@ public:
     /// 
     /// </summary>
 
-    AccessConfigTimeOffsetCreate getTimeOffset() const;
+    AccessConfigTimeOffset getTimeOffset() const;
     bool timeOffsetIsSet() const;
     void unsettimeOffset();
-    void setTimeOffset(const AccessConfigTimeOffsetCreate& value);
+    void setTimeOffset(const AccessConfigTimeOffset& value);
 
     /// <summary>
     /// 事件等级。information：info，warning：告警，error：错误，critical：关键，verbose：冗长
@@ -71,7 +71,7 @@ public:
 protected:
     std::vector<std::string> categorys_;
     bool categorysIsSet_;
-    AccessConfigTimeOffsetCreate timeOffset_;
+    AccessConfigTimeOffset timeOffset_;
     bool timeOffsetIsSet_;
     std::vector<std::string> eventLevel_;
     bool eventLevelIsSet_;

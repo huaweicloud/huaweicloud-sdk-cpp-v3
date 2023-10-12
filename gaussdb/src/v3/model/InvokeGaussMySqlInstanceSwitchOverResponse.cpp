@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/InvokeGaussMySqlInstanceSwitchOverResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -33,7 +32,6 @@ web::json::value InvokeGaussMySqlInstanceSwitchOverResponse::toJson() const
 
     return val;
 }
-
 bool InvokeGaussMySqlInstanceSwitchOverResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool InvokeGaussMySqlInstanceSwitchOverResponse::fromJson(const web::json::value
     }
     return ok;
 }
+
 
 std::string InvokeGaussMySqlInstanceSwitchOverResponse::getJobId() const
 {

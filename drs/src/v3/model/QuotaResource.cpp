@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/QuotaResource.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -53,7 +52,6 @@ web::json::value QuotaResource::toJson() const
 
     return val;
 }
-
 bool QuotaResource::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool QuotaResource::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string QuotaResource::getType() const
 {

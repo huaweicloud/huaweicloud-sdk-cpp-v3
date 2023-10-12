@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/csms/v1/model/UploadSecretBlobResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Csms {
@@ -32,7 +31,6 @@ web::json::value UploadSecretBlobResponse::toJson() const
 
     return val;
 }
-
 bool UploadSecretBlobResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool UploadSecretBlobResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 Secret UploadSecretBlobResponse::getSecret() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/ListServerInterfacesResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -36,7 +35,6 @@ web::json::value ListServerInterfacesResponse::toJson() const
 
     return val;
 }
-
 bool ListServerInterfacesResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -61,6 +59,7 @@ bool ListServerInterfacesResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 InterfaceAttachableQuantity ListServerInterfacesResponse::getAttachableQuantity() const
 {

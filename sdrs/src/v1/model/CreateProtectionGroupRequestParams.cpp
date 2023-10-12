@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sdrs/v1/model/CreateProtectionGroupRequestParams.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sdrs {
@@ -63,7 +62,6 @@ web::json::value CreateProtectionGroupRequestParams::toJson() const
 
     return val;
 }
-
 bool CreateProtectionGroupRequestParams::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -133,6 +131,7 @@ bool CreateProtectionGroupRequestParams::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateProtectionGroupRequestParams::getName() const
 {

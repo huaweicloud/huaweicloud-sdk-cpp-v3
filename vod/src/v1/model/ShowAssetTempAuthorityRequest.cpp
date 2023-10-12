@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/ShowAssetTempAuthorityRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -68,7 +67,6 @@ web::json::value ShowAssetTempAuthorityRequest::toJson() const
 
     return val;
 }
-
 bool ShowAssetTempAuthorityRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -147,6 +145,7 @@ bool ShowAssetTempAuthorityRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowAssetTempAuthorityRequest::getXSdkDate() const
 {

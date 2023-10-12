@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/SysTags.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -37,7 +36,6 @@ web::json::value SysTags::toJson() const
 
     return val;
 }
-
 bool SysTags::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool SysTags::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string SysTags::getKey() const
 {

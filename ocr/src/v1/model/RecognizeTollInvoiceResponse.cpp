@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/RecognizeTollInvoiceResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -32,7 +31,6 @@ web::json::value RecognizeTollInvoiceResponse::toJson() const
 
     return val;
 }
-
 bool RecognizeTollInvoiceResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool RecognizeTollInvoiceResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 TollInvoiceResult RecognizeTollInvoiceResponse::getResult() const
 {

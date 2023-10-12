@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/UpdateGaussMySqlInstanceEipRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -42,7 +41,6 @@ web::json::value UpdateGaussMySqlInstanceEipRequest::toJson() const
 
     return val;
 }
-
 bool UpdateGaussMySqlInstanceEipRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool UpdateGaussMySqlInstanceEipRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateGaussMySqlInstanceEipRequest::getXLanguage() const
 {

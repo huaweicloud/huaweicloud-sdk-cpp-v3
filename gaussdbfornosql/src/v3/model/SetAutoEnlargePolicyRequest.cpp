@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/SetAutoEnlargePolicyRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -32,7 +31,6 @@ web::json::value SetAutoEnlargePolicyRequest::toJson() const
 
     return val;
 }
-
 bool SetAutoEnlargePolicyRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool SetAutoEnlargePolicyRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 SetAutoPolicyRequestBody SetAutoEnlargePolicyRequest::getBody() const
 {

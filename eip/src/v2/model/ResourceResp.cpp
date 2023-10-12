@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v2/model/ResourceResp.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -32,7 +31,6 @@ web::json::value ResourceResp::toJson() const
 
     return val;
 }
-
 bool ResourceResp::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ResourceResp::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<QuotaShowResp>& ResourceResp::getResources()
 {

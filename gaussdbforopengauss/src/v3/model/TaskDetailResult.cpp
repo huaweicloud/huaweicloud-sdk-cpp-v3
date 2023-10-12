@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/TaskDetailResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -57,7 +56,6 @@ web::json::value TaskDetailResult::toJson() const
 
     return val;
 }
-
 bool TaskDetailResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -118,6 +116,7 @@ bool TaskDetailResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 InstanceInfoResult TaskDetailResult::getInstanceInfo() const
 {

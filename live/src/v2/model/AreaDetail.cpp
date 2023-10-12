@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v2/model/AreaDetail.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -41,7 +40,6 @@ web::json::value AreaDetail::toJson() const
 
     return val;
 }
-
 bool AreaDetail::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -75,6 +73,7 @@ bool AreaDetail::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string AreaDetail::getArea() const
 {

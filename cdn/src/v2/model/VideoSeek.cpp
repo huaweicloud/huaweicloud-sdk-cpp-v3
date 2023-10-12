@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v2/model/VideoSeek.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -48,7 +47,6 @@ web::json::value VideoSeek::toJson() const
 
     return val;
 }
-
 bool VideoSeek::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool VideoSeek::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool VideoSeek::isEnableVideoSeek() const
 {

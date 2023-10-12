@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cts/v3/model/UpdateNotificationRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cts {
@@ -32,7 +31,6 @@ web::json::value UpdateNotificationRequest::toJson() const
 
     return val;
 }
-
 bool UpdateNotificationRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool UpdateNotificationRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 UpdateNotificationRequestBody UpdateNotificationRequest::getBody() const
 {

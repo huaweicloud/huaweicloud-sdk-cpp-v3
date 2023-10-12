@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ims/v2/model/CreateDataImageRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ims {
@@ -32,7 +31,6 @@ web::json::value CreateDataImageRequest::toJson() const
 
     return val;
 }
-
 bool CreateDataImageRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CreateDataImageRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 CreateDataImageRequestBody CreateDataImageRequest::getBody() const
 {

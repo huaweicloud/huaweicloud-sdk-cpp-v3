@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ims/v2/model/GlanceDeleteImageMemberResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ims {
@@ -28,13 +27,13 @@ web::json::value GlanceDeleteImageMemberResponse::toJson() const
 
     return val;
 }
-
 bool GlanceDeleteImageMemberResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 }
 }

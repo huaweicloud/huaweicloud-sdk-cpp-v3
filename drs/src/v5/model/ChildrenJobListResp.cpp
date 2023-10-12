@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/ChildrenJobListResp.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -122,7 +121,6 @@ web::json::value ChildrenJobListResp::toJson() const
 
     return val;
 }
-
 bool ChildrenJobListResp::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -300,6 +298,7 @@ bool ChildrenJobListResp::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ChildrenJobListResp::getId() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/ShowSslCertDownloadLinkResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -33,7 +32,6 @@ web::json::value ShowSslCertDownloadLinkResponse::toJson() const
 
     return val;
 }
-
 bool ShowSslCertDownloadLinkResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool ShowSslCertDownloadLinkResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowSslCertDownloadLinkResponse::getDownloadLink() const
 {

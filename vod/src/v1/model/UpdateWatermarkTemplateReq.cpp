@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/UpdateWatermarkTemplateReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -83,7 +82,6 @@ web::json::value UpdateWatermarkTemplateReq::toJson() const
 
     return val;
 }
-
 bool UpdateWatermarkTemplateReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -189,6 +187,7 @@ bool UpdateWatermarkTemplateReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateWatermarkTemplateReq::getId() const
 {

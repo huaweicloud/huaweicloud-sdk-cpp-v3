@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/ChangeServerOsWithCloudInitRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -32,7 +31,6 @@ web::json::value ChangeServerOsWithCloudInitRequestBody::toJson() const
 
     return val;
 }
-
 bool ChangeServerOsWithCloudInitRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ChangeServerOsWithCloudInitRequestBody::fromJson(const web::json::value& va
     }
     return ok;
 }
+
 
 ChangeServerOsWithCloudInitOption ChangeServerOsWithCloudInitRequestBody::getOsChange() const
 {

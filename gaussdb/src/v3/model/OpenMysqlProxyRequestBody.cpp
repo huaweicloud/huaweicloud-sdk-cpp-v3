@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/OpenMysqlProxyRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -57,7 +56,6 @@ web::json::value OpenMysqlProxyRequestBody::toJson() const
 
     return val;
 }
-
 bool OpenMysqlProxyRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -118,6 +116,7 @@ bool OpenMysqlProxyRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string OpenMysqlProxyRequestBody::getFlavorRef() const
 {

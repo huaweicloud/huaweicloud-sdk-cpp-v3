@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/codeartsdeploy/v2/model/ListAllAppRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsdeploy {
@@ -32,7 +31,6 @@ web::json::value ListAllAppRequest::toJson() const
 
     return val;
 }
-
 bool ListAllAppRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ListAllAppRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 ListAllAppRequestBody ListAllAppRequest::getBody() const
 {

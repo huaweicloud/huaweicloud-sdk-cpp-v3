@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/RecognizeFinancialStatementRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -37,7 +36,6 @@ web::json::value RecognizeFinancialStatementRequest::toJson() const
 
     return val;
 }
-
 bool RecognizeFinancialStatementRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool RecognizeFinancialStatementRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string RecognizeFinancialStatementRequest::getEnterpriseProjectId() const
 {

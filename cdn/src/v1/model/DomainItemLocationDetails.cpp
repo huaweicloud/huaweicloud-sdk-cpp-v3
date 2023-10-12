@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/DomainItemLocationDetails.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -47,7 +46,6 @@ web::json::value DomainItemLocationDetails::toJson() const
 
     return val;
 }
-
 bool DomainItemLocationDetails::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -90,6 +88,7 @@ bool DomainItemLocationDetails::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int64_t DomainItemLocationDetails::getStartTime() const
 {

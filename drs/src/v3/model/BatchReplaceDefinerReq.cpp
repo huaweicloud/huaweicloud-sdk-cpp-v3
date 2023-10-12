@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/BatchReplaceDefinerReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -32,7 +31,6 @@ web::json::value BatchReplaceDefinerReq::toJson() const
 
     return val;
 }
-
 bool BatchReplaceDefinerReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool BatchReplaceDefinerReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<ReplaceDefinerInfo>& BatchReplaceDefinerReq::getJobs()
 {

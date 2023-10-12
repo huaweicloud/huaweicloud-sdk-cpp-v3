@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/UpdateConfigurationRsp_configuration.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -42,7 +41,6 @@ web::json::value UpdateConfigurationRsp_configuration::toJson() const
 
     return val;
 }
-
 bool UpdateConfigurationRsp_configuration::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool UpdateConfigurationRsp_configuration::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateConfigurationRsp_configuration::getId() const
 {

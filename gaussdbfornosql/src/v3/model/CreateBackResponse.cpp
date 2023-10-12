@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/CreateBackResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -38,7 +37,6 @@ web::json::value CreateBackResponse::toJson() const
 
     return val;
 }
-
 bool CreateBackResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool CreateBackResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateBackResponse::getJobId() const
 {

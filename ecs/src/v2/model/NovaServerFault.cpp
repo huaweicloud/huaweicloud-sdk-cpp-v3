@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/NovaServerFault.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -48,7 +47,6 @@ web::json::value NovaServerFault::toJson() const
 
     return val;
 }
-
 bool NovaServerFault::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool NovaServerFault::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t NovaServerFault::getCode() const
 {

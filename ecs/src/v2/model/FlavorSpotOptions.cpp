@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/FlavorSpotOptions.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -43,7 +42,6 @@ web::json::value FlavorSpotOptions::toJson() const
 
     return val;
 }
-
 bool FlavorSpotOptions::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool FlavorSpotOptions::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t FlavorSpotOptions::getLongestSpotDurationHours() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/UpdateResponseHeaderRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -42,7 +41,6 @@ web::json::value UpdateResponseHeaderRequest::toJson() const
 
     return val;
 }
-
 bool UpdateResponseHeaderRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool UpdateResponseHeaderRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateResponseHeaderRequest::getDomainId() const
 {

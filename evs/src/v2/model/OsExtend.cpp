@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/evs/v2/model/OsExtend.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Evs {
@@ -33,7 +32,6 @@ web::json::value OsExtend::toJson() const
 
     return val;
 }
-
 bool OsExtend::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool OsExtend::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t OsExtend::getNewSize() const
 {

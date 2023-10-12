@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/MysqlInstanceNodeVolumeInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -43,7 +42,6 @@ web::json::value MysqlInstanceNodeVolumeInfo::toJson() const
 
     return val;
 }
-
 bool MysqlInstanceNodeVolumeInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool MysqlInstanceNodeVolumeInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string MysqlInstanceNodeVolumeInfo::getType() const
 {

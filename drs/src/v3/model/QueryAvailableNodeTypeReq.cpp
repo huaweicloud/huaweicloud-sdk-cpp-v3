@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/QueryAvailableNodeTypeReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -53,7 +52,6 @@ web::json::value QueryAvailableNodeTypeReq::toJson() const
 
     return val;
 }
-
 bool QueryAvailableNodeTypeReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool QueryAvailableNodeTypeReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string QueryAvailableNodeTypeReq::getEngineType() const
 {

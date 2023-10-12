@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/RouteTableRouteAction.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -40,7 +39,6 @@ web::json::value RouteTableRouteAction::toJson() const
 
     return val;
 }
-
 bool RouteTableRouteAction::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -74,6 +72,7 @@ bool RouteTableRouteAction::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<AddRouteTableRoute>& RouteTableRouteAction::getAdd()
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/EntityConfigurationParametersResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -63,7 +62,6 @@ web::json::value EntityConfigurationParametersResult::toJson() const
 
     return val;
 }
-
 bool EntityConfigurationParametersResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -133,6 +131,7 @@ bool EntityConfigurationParametersResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string EntityConfigurationParametersResult::getName() const
 {

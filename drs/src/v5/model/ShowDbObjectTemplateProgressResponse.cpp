@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/ShowDbObjectTemplateProgressResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -43,7 +42,6 @@ web::json::value ShowDbObjectTemplateProgressResponse::toJson() const
 
     return val;
 }
-
 bool ShowDbObjectTemplateProgressResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool ShowDbObjectTemplateProgressResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool ShowDbObjectTemplateProgressResponse::isSendSuccess() const
 {

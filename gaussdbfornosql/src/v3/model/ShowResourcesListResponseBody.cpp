@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/ShowResourcesListResponseBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -32,7 +31,6 @@ web::json::value ShowResourcesListResponseBody::toJson() const
 
     return val;
 }
-
 bool ShowResourcesListResponseBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ShowResourcesListResponseBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<ShowResourcesDetailResponseBody>& ShowResourcesListResponseBody::getResources()
 {

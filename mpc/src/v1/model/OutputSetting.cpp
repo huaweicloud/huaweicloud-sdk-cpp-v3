@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/OutputSetting.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -49,7 +48,6 @@ web::json::value OutputSetting::toJson() const
 
     return val;
 }
-
 bool OutputSetting::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -101,6 +99,7 @@ bool OutputSetting::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string OutputSetting::getFormat() const
 {

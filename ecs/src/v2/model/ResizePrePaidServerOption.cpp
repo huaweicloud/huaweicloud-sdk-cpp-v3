@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/ResizePrePaidServerOption.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -47,7 +46,6 @@ web::json::value ResizePrePaidServerOption::toJson() const
 
     return val;
 }
-
 bool ResizePrePaidServerOption::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -90,6 +88,7 @@ bool ResizePrePaidServerOption::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ResizePrePaidServerOption::getFlavorRef() const
 {

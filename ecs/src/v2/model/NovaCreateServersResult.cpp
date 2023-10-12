@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/NovaCreateServersResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -56,7 +55,6 @@ web::json::value NovaCreateServersResult::toJson() const
 
     return val;
 }
-
 bool NovaCreateServersResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -117,6 +115,7 @@ bool NovaCreateServersResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string NovaCreateServersResult::getId() const
 {

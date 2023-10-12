@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/RecognizePcrTestRecordRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -37,7 +36,6 @@ web::json::value RecognizePcrTestRecordRequest::toJson() const
 
     return val;
 }
-
 bool RecognizePcrTestRecordRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool RecognizePcrTestRecordRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string RecognizePcrTestRecordRequest::getEnterpriseProjectId() const
 {

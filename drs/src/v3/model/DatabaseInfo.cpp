@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/DatabaseInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -58,7 +57,6 @@ web::json::value DatabaseInfo::toJson() const
 
     return val;
 }
-
 bool DatabaseInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool DatabaseInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DatabaseInfo::getId() const
 {

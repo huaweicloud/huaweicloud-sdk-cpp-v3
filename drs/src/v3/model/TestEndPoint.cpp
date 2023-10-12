@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/TestEndPoint.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -127,7 +126,6 @@ web::json::value TestEndPoint::toJson() const
 
     return val;
 }
-
 bool TestEndPoint::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -314,6 +312,7 @@ bool TestEndPoint::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string TestEndPoint::getId() const
 {

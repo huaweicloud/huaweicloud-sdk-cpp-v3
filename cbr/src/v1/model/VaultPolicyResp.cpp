@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/VaultPolicyResp.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -43,7 +42,6 @@ web::json::value VaultPolicyResp::toJson() const
 
     return val;
 }
-
 bool VaultPolicyResp::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool VaultPolicyResp::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string VaultPolicyResp::getDestinationVaultId() const
 {

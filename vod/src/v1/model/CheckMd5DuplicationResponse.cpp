@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/CheckMd5DuplicationResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -37,7 +36,6 @@ web::json::value CheckMd5DuplicationResponse::toJson() const
 
     return val;
 }
-
 bool CheckMd5DuplicationResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool CheckMd5DuplicationResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t CheckMd5DuplicationResponse::getIsDuplicated() const
 {

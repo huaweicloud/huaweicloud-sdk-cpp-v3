@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/ListInstanceParamHistoriesResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -37,7 +36,6 @@ web::json::value ListInstanceParamHistoriesResponse::toJson() const
 
     return val;
 }
-
 bool ListInstanceParamHistoriesResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ListInstanceParamHistoriesResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ListInstanceParamHistoriesResponse::getTotalCount() const
 {

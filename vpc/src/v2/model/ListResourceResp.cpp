@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/ListResourceResp.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -46,7 +45,6 @@ web::json::value ListResourceResp::toJson() const
 
     return val;
 }
-
 bool ListResourceResp::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -89,6 +87,7 @@ bool ListResourceResp::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 Object ListResourceResp::getResourceDetail() const
 {

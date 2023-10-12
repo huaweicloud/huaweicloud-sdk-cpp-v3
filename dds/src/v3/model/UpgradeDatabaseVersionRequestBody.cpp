@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/UpgradeDatabaseVersionRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -33,7 +32,6 @@ web::json::value UpgradeDatabaseVersionRequestBody::toJson() const
 
     return val;
 }
-
 bool UpgradeDatabaseVersionRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool UpgradeDatabaseVersionRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpgradeDatabaseVersionRequestBody::getUpgradeMode() const
 {

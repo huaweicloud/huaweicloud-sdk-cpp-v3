@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/frs/v2/model/SearchFace.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Frs {
@@ -51,7 +50,6 @@ web::json::value SearchFace::toJson() const
 
     return val;
 }
-
 bool SearchFace::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -103,6 +101,7 @@ bool SearchFace::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 BoundingBox SearchFace::getBoundingBox() const
 {

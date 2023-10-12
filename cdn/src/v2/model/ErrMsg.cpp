@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v2/model/ErrMsg.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -38,7 +37,6 @@ web::json::value ErrMsg::toJson() const
 
     return val;
 }
-
 bool ErrMsg::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ErrMsg::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ErrMsg::getErrorCode() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sdrs/v1/model/DeleteProtectedInstanceRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sdrs {
@@ -38,7 +37,6 @@ web::json::value DeleteProtectedInstanceRequestBody::toJson() const
 
     return val;
 }
-
 bool DeleteProtectedInstanceRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool DeleteProtectedInstanceRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool DeleteProtectedInstanceRequestBody::isDeleteTargetServer() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/OutputFileInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -42,7 +41,6 @@ web::json::value OutputFileInfo::toJson() const
 
     return val;
 }
-
 bool OutputFileInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool OutputFileInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string OutputFileInfo::getOutputFileName() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/AsyncCommitJobResp.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -43,7 +42,6 @@ web::json::value AsyncCommitJobResp::toJson() const
 
     return val;
 }
-
 bool AsyncCommitJobResp::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool AsyncCommitJobResp::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string AsyncCommitJobResp::getAsyncJobId() const
 {

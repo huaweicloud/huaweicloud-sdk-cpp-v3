@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/RestorableTime.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -38,7 +37,6 @@ web::json::value RestorableTime::toJson() const
 
     return val;
 }
-
 bool RestorableTime::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool RestorableTime::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int64_t RestorableTime::getStartTime() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/BindEIPRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -43,7 +42,6 @@ web::json::value BindEIPRequestBody::toJson() const
 
     return val;
 }
-
 bool BindEIPRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool BindEIPRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string BindEIPRequestBody::getAction() const
 {

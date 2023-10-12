@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/ShowVpcResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -32,7 +31,6 @@ web::json::value ShowVpcResponse::toJson() const
 
     return val;
 }
-
 bool ShowVpcResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ShowVpcResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 Vpc ShowVpcResponse::getVpc() const
 {

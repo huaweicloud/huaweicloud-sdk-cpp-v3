@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/TransTemplateGroup.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -65,7 +64,6 @@ web::json::value TransTemplateGroup::toJson() const
 
     return val;
 }
-
 bool TransTemplateGroup::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -144,6 +142,7 @@ bool TransTemplateGroup::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string TransTemplateGroup::getName() const
 {

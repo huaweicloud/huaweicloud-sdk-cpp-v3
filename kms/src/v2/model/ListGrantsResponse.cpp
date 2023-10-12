@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/kms/v2/model/ListGrantsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Kms {
@@ -47,7 +46,6 @@ web::json::value ListGrantsResponse::toJson() const
 
     return val;
 }
-
 bool ListGrantsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -90,6 +88,7 @@ bool ListGrantsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<Grants>& ListGrantsResponse::getGrants()
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/MysqlChangeSpecificationRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -37,7 +36,6 @@ web::json::value MysqlChangeSpecificationRequest::toJson() const
 
     return val;
 }
-
 bool MysqlChangeSpecificationRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool MysqlChangeSpecificationRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 MysqlResizeFlavor MysqlChangeSpecificationRequest::getResizeFlavor() const
 {

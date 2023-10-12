@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/CreatefavoriteReqbody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -63,7 +62,6 @@ web::json::value CreatefavoriteReqbody::toJson() const
 
     return val;
 }
-
 bool CreatefavoriteReqbody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -133,6 +131,7 @@ bool CreatefavoriteReqbody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreatefavoriteReqbody::getEpsId() const
 {

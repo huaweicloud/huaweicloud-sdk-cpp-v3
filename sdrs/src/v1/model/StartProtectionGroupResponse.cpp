@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sdrs/v1/model/StartProtectionGroupResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sdrs {
@@ -33,7 +32,6 @@ web::json::value StartProtectionGroupResponse::toJson() const
 
     return val;
 }
-
 bool StartProtectionGroupResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool StartProtectionGroupResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string StartProtectionGroupResponse::getJobId() const
 {

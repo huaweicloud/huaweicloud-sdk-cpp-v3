@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v2/model/ShowDomainStatsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -32,7 +31,6 @@ web::json::value ShowDomainStatsResponse::toJson() const
 
     return val;
 }
-
 bool ShowDomainStatsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ShowDomainStatsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::map<std::string, Object>& ShowDomainStatsResponse::getResult()
 {

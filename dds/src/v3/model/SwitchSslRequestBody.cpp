@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/SwitchSslRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -33,7 +32,6 @@ web::json::value SwitchSslRequestBody::toJson() const
 
     return val;
 }
-
 bool SwitchSslRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool SwitchSslRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string SwitchSslRequestBody::getSslOption() const
 {

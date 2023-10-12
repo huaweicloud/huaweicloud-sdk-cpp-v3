@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v2/model/Quic.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -33,7 +32,6 @@ web::json::value Quic::toJson() const
 
     return val;
 }
-
 bool Quic::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool Quic::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string Quic::getStatus() const
 {

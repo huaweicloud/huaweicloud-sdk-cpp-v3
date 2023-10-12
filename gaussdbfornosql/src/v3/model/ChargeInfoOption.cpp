@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/ChargeInfoOption.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -53,7 +52,6 @@ web::json::value ChargeInfoOption::toJson() const
 
     return val;
 }
-
 bool ChargeInfoOption::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool ChargeInfoOption::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ChargeInfoOption::getChargeMode() const
 {

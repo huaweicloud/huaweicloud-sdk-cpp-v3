@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/AudioProcess.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -38,7 +37,6 @@ web::json::value AudioProcess::toJson() const
 
     return val;
 }
-
 bool AudioProcess::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool AudioProcess::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string AudioProcess::getVolume() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/CombinedOrder.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -43,7 +42,6 @@ web::json::value CombinedOrder::toJson() const
 
     return val;
 }
-
 bool CombinedOrder::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool CombinedOrder::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CombinedOrder::getCombinedOrderId() const
 {

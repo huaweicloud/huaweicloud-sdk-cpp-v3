@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/DatabaseObject.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -61,7 +60,6 @@ web::json::value DatabaseObject::toJson() const
 
     return val;
 }
-
 bool DatabaseObject::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -131,6 +129,7 @@ bool DatabaseObject::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DatabaseObject::getSyncType() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/DeletePolicyRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -33,7 +32,6 @@ web::json::value DeletePolicyRequest::toJson() const
 
     return val;
 }
-
 bool DeletePolicyRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool DeletePolicyRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DeletePolicyRequest::getPolicyId() const
 {

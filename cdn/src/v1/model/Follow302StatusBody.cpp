@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/Follow302StatusBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -38,7 +37,6 @@ web::json::value Follow302StatusBody::toJson() const
 
     return val;
 }
-
 bool Follow302StatusBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool Follow302StatusBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string Follow302StatusBody::getDomainId() const
 {

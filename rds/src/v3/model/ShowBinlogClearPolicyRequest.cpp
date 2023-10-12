@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/ShowBinlogClearPolicyRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -38,7 +37,6 @@ web::json::value ShowBinlogClearPolicyRequest::toJson() const
 
     return val;
 }
-
 bool ShowBinlogClearPolicyRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ShowBinlogClearPolicyRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowBinlogClearPolicyRequest::getXLanguage() const
 {

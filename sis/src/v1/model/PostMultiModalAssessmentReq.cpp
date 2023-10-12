@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sis/v1/model/PostMultiModalAssessmentReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sis {
@@ -42,7 +41,6 @@ web::json::value PostMultiModalAssessmentReq::toJson() const
 
     return val;
 }
-
 bool PostMultiModalAssessmentReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool PostMultiModalAssessmentReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 MultiModalConfig PostMultiModalAssessmentReq::getConfig() const
 {

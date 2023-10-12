@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/frs/v2/model/DetectLiveByUrlIntlResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Frs {
@@ -36,7 +35,6 @@ web::json::value DetectLiveByUrlIntlResponse::toJson() const
 
     return val;
 }
-
 bool DetectLiveByUrlIntlResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -61,6 +59,7 @@ bool DetectLiveByUrlIntlResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 LiveDetectResp_videoresult DetectLiveByUrlIntlResponse::getVideoResult() const
 {

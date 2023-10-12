@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/frs/v2/model/Attributes.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Frs {
@@ -85,7 +84,6 @@ web::json::value Attributes::toJson() const
 
     return val;
 }
-
 bool Attributes::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -200,6 +198,7 @@ bool Attributes::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string Attributes::getGender() const
 {

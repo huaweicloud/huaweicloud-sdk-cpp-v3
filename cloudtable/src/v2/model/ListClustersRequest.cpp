@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cloudtable/v2/model/ListClustersRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cloudtable {
@@ -38,7 +37,6 @@ web::json::value ListClustersRequest::toJson() const
 
     return val;
 }
-
 bool ListClustersRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ListClustersRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ListClustersRequest::getOffset() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/CreateNotificationTemplateResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -56,7 +55,6 @@ web::json::value CreateNotificationTemplateResponse::toJson() const
 
     return val;
 }
-
 bool CreateNotificationTemplateResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -117,6 +115,7 @@ bool CreateNotificationTemplateResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateNotificationTemplateResponse::getName() const
 {

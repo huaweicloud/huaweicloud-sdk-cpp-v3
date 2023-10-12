@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v2/model/ListPublicipTagsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -28,13 +27,13 @@ web::json::value ListPublicipTagsRequest::toJson() const
 
     return val;
 }
-
 bool ListPublicipTagsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 }
 }

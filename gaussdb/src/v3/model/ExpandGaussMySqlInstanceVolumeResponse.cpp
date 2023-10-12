@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/ExpandGaussMySqlInstanceVolumeResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -38,7 +37,6 @@ web::json::value ExpandGaussMySqlInstanceVolumeResponse::toJson() const
 
     return val;
 }
-
 bool ExpandGaussMySqlInstanceVolumeResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ExpandGaussMySqlInstanceVolumeResponse::fromJson(const web::json::value& va
     }
     return ok;
 }
+
 
 int32_t ExpandGaussMySqlInstanceVolumeResponse::getSize() const
 {

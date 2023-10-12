@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/ListDatastore.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -17,6 +16,10 @@ ListDatastore::ListDatastore()
     typeIsSet_ = false;
     version_ = "";
     versionIsSet_ = false;
+    completeVersion_ = "";
+    completeVersionIsSet_ = false;
+    hotfixVersions_ = "";
+    hotfixVersionsIsSet_ = false;
 }
 
 ListDatastore::~ListDatastore() = default;
@@ -35,10 +38,15 @@ web::json::value ListDatastore::toJson() const
     if(versionIsSet_) {
         val[utility::conversions::to_string_t("version")] = ModelBase::toJson(version_);
     }
+    if(completeVersionIsSet_) {
+        val[utility::conversions::to_string_t("complete_version")] = ModelBase::toJson(completeVersion_);
+    }
+    if(hotfixVersionsIsSet_) {
+        val[utility::conversions::to_string_t("hotfix_versions")] = ModelBase::toJson(hotfixVersions_);
+    }
 
     return val;
 }
-
 bool ListDatastore::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -61,8 +69,27 @@ bool ListDatastore::fromJson(const web::json::value& val)
             setVersion(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("complete_version"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("complete_version"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCompleteVersion(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("hotfix_versions"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("hotfix_versions"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHotfixVersions(refVal);
+        }
+    }
     return ok;
 }
+
 
 std::string ListDatastore::getType() const
 {
@@ -104,6 +131,48 @@ bool ListDatastore::versionIsSet() const
 void ListDatastore::unsetversion()
 {
     versionIsSet_ = false;
+}
+
+std::string ListDatastore::getCompleteVersion() const
+{
+    return completeVersion_;
+}
+
+void ListDatastore::setCompleteVersion(const std::string& value)
+{
+    completeVersion_ = value;
+    completeVersionIsSet_ = true;
+}
+
+bool ListDatastore::completeVersionIsSet() const
+{
+    return completeVersionIsSet_;
+}
+
+void ListDatastore::unsetcompleteVersion()
+{
+    completeVersionIsSet_ = false;
+}
+
+std::string ListDatastore::getHotfixVersions() const
+{
+    return hotfixVersions_;
+}
+
+void ListDatastore::setHotfixVersions(const std::string& value)
+{
+    hotfixVersions_ = value;
+    hotfixVersionsIsSet_ = true;
+}
+
+bool ListDatastore::hotfixVersionsIsSet() const
+{
+    return hotfixVersionsIsSet_;
+}
+
+void ListDatastore::unsethotfixVersions()
+{
+    hotfixVersionsIsSet_ = false;
 }
 
 }

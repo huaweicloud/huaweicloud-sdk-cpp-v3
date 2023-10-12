@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/tms/v1/model/DeleteResourceTagResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Tms {
@@ -32,7 +31,6 @@ web::json::value DeleteResourceTagResponse::toJson() const
 
     return val;
 }
-
 bool DeleteResourceTagResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool DeleteResourceTagResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<TagDeleteResponseItem>& DeleteResourceTagResponse::getFailedResources()
 {

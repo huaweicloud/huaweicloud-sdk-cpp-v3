@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/frs/v2/model/SearchFaceByFileRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Frs {
@@ -54,7 +53,6 @@ web::json::value SearchFaceByFileRequestBody::toJson() const
 
     return val;
 }
-
 bool SearchFaceByFileRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -106,6 +104,7 @@ bool SearchFaceByFileRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 HttpContent SearchFaceByFileRequestBody::getImageFile() const
 {

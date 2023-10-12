@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/UpdateReplSetNameRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -37,7 +36,6 @@ web::json::value UpdateReplSetNameRequest::toJson() const
 
     return val;
 }
-
 bool UpdateReplSetNameRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool UpdateReplSetNameRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateReplSetNameRequest::getInstanceId() const
 {

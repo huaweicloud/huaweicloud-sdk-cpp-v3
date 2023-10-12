@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/GrantDatabasePermissionRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -32,7 +31,6 @@ web::json::value GrantDatabasePermissionRequestBody::toJson() const
 
     return val;
 }
-
 bool GrantDatabasePermissionRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool GrantDatabasePermissionRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<GrantDatabasePermission>& GrantDatabasePermissionRequestBody::getUsers()
 {

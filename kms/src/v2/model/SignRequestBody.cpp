@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/kms/v2/model/SignRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Kms {
@@ -53,7 +52,6 @@ web::json::value SignRequestBody::toJson() const
 
     return val;
 }
-
 bool SignRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool SignRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string SignRequestBody::getKeyId() const
 {

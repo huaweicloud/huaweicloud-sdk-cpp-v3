@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/Storage.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -41,7 +40,6 @@ web::json::value Storage::toJson() const
 
     return val;
 }
-
 bool Storage::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -75,6 +73,7 @@ bool Storage::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string Storage::getName() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/CreateTranscodingTaskRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -32,7 +31,6 @@ web::json::value CreateTranscodingTaskRequest::toJson() const
 
     return val;
 }
-
 bool CreateTranscodingTaskRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CreateTranscodingTaskRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 CreateTranscodingReq CreateTranscodingTaskRequest::getBody() const
 {

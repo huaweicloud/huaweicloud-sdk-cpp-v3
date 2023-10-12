@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sdrs/v1/model/CreateReplicationRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sdrs {
@@ -32,7 +31,6 @@ web::json::value CreateReplicationRequestBody::toJson() const
 
     return val;
 }
-
 bool CreateReplicationRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CreateReplicationRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 CreateReplicationRequestParams CreateReplicationRequestBody::getReplication() const
 {

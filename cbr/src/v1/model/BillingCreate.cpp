@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/BillingCreate.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -88,7 +87,6 @@ web::json::value BillingCreate::toJson() const
 
     return val;
 }
-
 bool BillingCreate::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -203,6 +201,7 @@ bool BillingCreate::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string BillingCreate::getCloudType() const
 {

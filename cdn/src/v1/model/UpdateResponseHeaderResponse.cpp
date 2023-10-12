@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/UpdateResponseHeaderResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -32,7 +31,6 @@ web::json::value UpdateResponseHeaderResponse::toJson() const
 
     return val;
 }
-
 bool UpdateResponseHeaderResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool UpdateResponseHeaderResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 HeaderMap UpdateResponseHeaderResponse::getHeaders() const
 {

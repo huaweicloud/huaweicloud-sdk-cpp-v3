@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/evs/v2/model/UpdateSnapshotOption.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Evs {
@@ -38,7 +37,6 @@ web::json::value UpdateSnapshotOption::toJson() const
 
     return val;
 }
-
 bool UpdateSnapshotOption::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool UpdateSnapshotOption::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateSnapshotOption::getDescription() const
 {

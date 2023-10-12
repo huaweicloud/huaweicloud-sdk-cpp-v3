@@ -6,6 +6,15 @@
 #include <huaweicloud/core/ClientBuilder.h>
 
 
+#include <huaweicloud/cts/v3/model/BatchCreateResourceTagsRequest.h>
+#include <huaweicloud/cts/v3/model/BatchCreateResourceTagsRequestBody.h>
+#include <huaweicloud/cts/v3/model/BatchCreateResourceTagsResponse.h>
+#include <huaweicloud/cts/v3/model/BatchDeleteResourceTagsRequest.h>
+#include <huaweicloud/cts/v3/model/BatchDeleteResourceTagsRequestBody.h>
+#include <huaweicloud/cts/v3/model/BatchDeleteResourceTagsResponse.h>
+#include <huaweicloud/cts/v3/model/CheckObsBucketsRequest.h>
+#include <huaweicloud/cts/v3/model/CheckObsBucketsRequestBody.h>
+#include <huaweicloud/cts/v3/model/CheckObsBucketsResponse.h>
 #include <huaweicloud/cts/v3/model/CreateNotificationRequest.h>
 #include <huaweicloud/cts/v3/model/CreateNotificationRequestBody.h>
 #include <huaweicloud/cts/v3/model/CreateNotificationResponse.h>
@@ -18,12 +27,18 @@
 #include <huaweicloud/cts/v3/model/DeleteTrackerResponse.h>
 #include <huaweicloud/cts/v3/model/ListNotificationsRequest.h>
 #include <huaweicloud/cts/v3/model/ListNotificationsResponse.h>
+#include <huaweicloud/cts/v3/model/ListOperationsRequest.h>
+#include <huaweicloud/cts/v3/model/ListOperationsResponse.h>
 #include <huaweicloud/cts/v3/model/ListQuotasRequest.h>
 #include <huaweicloud/cts/v3/model/ListQuotasResponse.h>
+#include <huaweicloud/cts/v3/model/ListTraceResourcesRequest.h>
+#include <huaweicloud/cts/v3/model/ListTraceResourcesResponse.h>
 #include <huaweicloud/cts/v3/model/ListTracesRequest.h>
 #include <huaweicloud/cts/v3/model/ListTracesResponse.h>
 #include <huaweicloud/cts/v3/model/ListTrackersRequest.h>
 #include <huaweicloud/cts/v3/model/ListTrackersResponse.h>
+#include <huaweicloud/cts/v3/model/ListUserResourcesRequest.h>
+#include <huaweicloud/cts/v3/model/ListUserResourcesResponse.h>
 #include <huaweicloud/cts/v3/model/UpdateNotificationRequest.h>
 #include <huaweicloud/cts/v3/model/UpdateNotificationRequestBody.h>
 #include <huaweicloud/cts/v3/model/UpdateNotificationResponse.h>
@@ -56,6 +71,30 @@ public:
 
     static ClientBuilder<CtsClient> newBuilder();
 
+    // 批量添加CTS资源标签
+    //
+    // 批量添加CTS资源标签。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchCreateResourceTagsResponse> batchCreateResourceTags(
+        BatchCreateResourceTagsRequest &request
+    );
+    // 批量删除CTS资源标签
+    //
+    // 批量删除CTS资源标签。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchDeleteResourceTagsResponse> batchDeleteResourceTags(
+        BatchDeleteResourceTagsRequest &request
+    );
+    // 检查已经配置OBS桶是否可以成功转储
+    //
+    // 检查已经配置OBS桶是否可以成功转储。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CheckObsBucketsResponse> checkObsBuckets(
+        CheckObsBucketsRequest &request
+    );
     // 创建关键操作通知
     //
     // 配置关键操作通知，可在发生特定操作时，使用预先创建好的SMN主题，向用户手机、邮箱发送消息，也可直接发送http/https消息。常用于实时感知高危操作、触发特定操作或对接用户自有审计分析系统。
@@ -97,6 +136,14 @@ public:
     std::shared_ptr<ListNotificationsResponse> listNotifications(
         ListNotificationsRequest &request
     );
+    // 查询云服务的全量操作列表
+    //
+    // 查询云服务的全量操作列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListOperationsResponse> listOperations(
+        ListOperationsRequest &request
+    );
     // 查询租户追踪器配额信息
     //
     // 查询租户追踪器配额信息。
@@ -104,6 +151,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListQuotasResponse> listQuotas(
         ListQuotasRequest &request
+    );
+    // 查询事件的资源类型列表
+    //
+    // 查询事件的资源类型列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListTraceResourcesResponse> listTraceResources(
+        ListTraceResourcesRequest &request
     );
     // 查询事件列表
     //
@@ -120,6 +175,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListTrackersResponse> listTrackers(
         ListTrackersRequest &request
+    );
+    // 查询30天事件的操作用户列表
+    //
+    // 查询30天事件的操作用户列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListUserResourcesResponse> listUserResources(
+        ListUserResourcesRequest &request
     );
     // 修改关键操作通知
     //

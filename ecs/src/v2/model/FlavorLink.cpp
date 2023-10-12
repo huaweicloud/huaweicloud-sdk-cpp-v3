@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/FlavorLink.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -43,7 +42,6 @@ web::json::value FlavorLink::toJson() const
 
     return val;
 }
-
 bool FlavorLink::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool FlavorLink::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string FlavorLink::getHref() const
 {

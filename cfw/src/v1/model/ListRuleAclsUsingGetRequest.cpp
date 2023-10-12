@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/ListRuleAclsUsingGetRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -93,7 +92,6 @@ web::json::value ListRuleAclsUsingGetRequest::toJson() const
 
     return val;
 }
-
 bool ListRuleAclsUsingGetRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -217,6 +215,7 @@ bool ListRuleAclsUsingGetRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListRuleAclsUsingGetRequest::getObjectId() const
 {

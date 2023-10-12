@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/ThumbnailPara.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -81,7 +80,6 @@ web::json::value ThumbnailPara::toJson() const
 
     return val;
 }
-
 bool ThumbnailPara::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -187,6 +185,7 @@ bool ThumbnailPara::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ThumbnailPara::getType() const
 {

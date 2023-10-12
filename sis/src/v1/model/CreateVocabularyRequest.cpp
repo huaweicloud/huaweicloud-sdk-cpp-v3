@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sis/v1/model/CreateVocabularyRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sis {
@@ -32,7 +31,6 @@ web::json::value CreateVocabularyRequest::toJson() const
 
     return val;
 }
-
 bool CreateVocabularyRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CreateVocabularyRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 PostCreateVocabReq CreateVocabularyRequest::getBody() const
 {

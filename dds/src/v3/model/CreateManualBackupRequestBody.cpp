@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/CreateManualBackupRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -32,7 +31,6 @@ web::json::value CreateManualBackupRequestBody::toJson() const
 
     return val;
 }
-
 bool CreateManualBackupRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CreateManualBackupRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 CreateManualBackupOption CreateManualBackupRequestBody::getBackup() const
 {

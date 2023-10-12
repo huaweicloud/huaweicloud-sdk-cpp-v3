@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/TemplateInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -37,7 +36,6 @@ web::json::value TemplateInfo::toJson() const
 
     return val;
 }
-
 bool TemplateInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool TemplateInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t TemplateInfo::getTemplateId() const
 {

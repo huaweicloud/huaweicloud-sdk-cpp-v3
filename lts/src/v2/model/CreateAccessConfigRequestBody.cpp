@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/CreateAccessConfigRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -69,7 +68,6 @@ web::json::value CreateAccessConfigRequestBody::toJson() const
 
     return val;
 }
-
 bool CreateAccessConfigRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -157,6 +155,7 @@ bool CreateAccessConfigRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateAccessConfigRequestBody::getAccessConfigName() const
 {

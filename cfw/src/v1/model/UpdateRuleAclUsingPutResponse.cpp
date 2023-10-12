@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/UpdateRuleAclUsingPutResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -32,7 +31,6 @@ web::json::value UpdateRuleAclUsingPutResponse::toJson() const
 
     return val;
 }
-
 bool UpdateRuleAclUsingPutResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool UpdateRuleAclUsingPutResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 RuleId UpdateRuleAclUsingPutResponse::getData() const
 {

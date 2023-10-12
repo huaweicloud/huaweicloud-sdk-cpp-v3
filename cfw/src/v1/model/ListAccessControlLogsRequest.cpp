@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/ListAccessControlLogsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -108,7 +107,6 @@ web::json::value ListAccessControlLogsRequest::toJson() const
 
     return val;
 }
-
 bool ListAccessControlLogsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -259,6 +257,7 @@ bool ListAccessControlLogsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListAccessControlLogsRequest::getFwInstanceId() const
 {

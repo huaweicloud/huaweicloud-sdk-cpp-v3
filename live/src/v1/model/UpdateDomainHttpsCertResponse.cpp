@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v1/model/UpdateDomainHttpsCertResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -28,13 +27,13 @@ web::json::value UpdateDomainHttpsCertResponse::toJson() const
 
     return val;
 }
-
 bool UpdateDomainHttpsCertResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 }
 }

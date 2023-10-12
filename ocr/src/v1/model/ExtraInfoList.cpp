@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/ExtraInfoList.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -42,7 +41,6 @@ web::json::value ExtraInfoList::toJson() const
 
     return val;
 }
-
 bool ExtraInfoList::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool ExtraInfoList::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ExtraInfoList::getItem() const
 {

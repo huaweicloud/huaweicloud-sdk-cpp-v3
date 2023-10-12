@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/csms/v1/model/CreateSecretTagRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Csms {
@@ -32,7 +31,6 @@ web::json::value CreateSecretTagRequestBody::toJson() const
 
     return val;
 }
-
 bool CreateSecretTagRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CreateSecretTagRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 TagItem CreateSecretTagRequestBody::getTag() const
 {

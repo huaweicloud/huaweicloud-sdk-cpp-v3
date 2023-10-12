@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/TableLineCompareDetailInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -63,7 +62,6 @@ web::json::value TableLineCompareDetailInfo::toJson() const
 
     return val;
 }
-
 bool TableLineCompareDetailInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -133,6 +131,7 @@ bool TableLineCompareDetailInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string TableLineCompareDetailInfo::getSourceTableName() const
 {

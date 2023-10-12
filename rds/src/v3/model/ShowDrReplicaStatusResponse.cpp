@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/ShowDrReplicaStatusResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -48,7 +47,6 @@ web::json::value ShowDrReplicaStatusResponse::toJson() const
 
     return val;
 }
-
 bool ShowDrReplicaStatusResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool ShowDrReplicaStatusResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowDrReplicaStatusResponse::getReplicaState() const
 {

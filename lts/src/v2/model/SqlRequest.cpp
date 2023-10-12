@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/SqlRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -73,7 +72,6 @@ web::json::value SqlRequest::toJson() const
 
     return val;
 }
-
 bool SqlRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -161,6 +159,7 @@ bool SqlRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool SqlRequest::isIsTimeRangeRelative() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/codeartsbuild/v3/model/HistoryRecord.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsbuild {
@@ -58,7 +57,6 @@ web::json::value HistoryRecord::toJson() const
 
     return val;
 }
-
 bool HistoryRecord::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool HistoryRecord::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string HistoryRecord::getRecordId() const
 {

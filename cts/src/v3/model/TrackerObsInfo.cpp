@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cts/v3/model/TrackerObsInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cts {
@@ -58,7 +57,6 @@ web::json::value TrackerObsInfo::toJson() const
 
     return val;
 }
-
 bool TrackerObsInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool TrackerObsInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string TrackerObsInfo::getBucketName() const
 {

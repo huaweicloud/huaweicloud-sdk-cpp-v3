@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/ListServersByTagRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -32,7 +31,6 @@ web::json::value ListServersByTagRequest::toJson() const
 
     return val;
 }
-
 bool ListServersByTagRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ListServersByTagRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 ListServersByTagRequestBody ListServersByTagRequest::getBody() const
 {

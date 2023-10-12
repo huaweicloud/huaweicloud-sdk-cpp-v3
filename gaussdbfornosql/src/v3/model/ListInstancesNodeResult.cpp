@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/ListInstancesNodeResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -78,7 +77,6 @@ web::json::value ListInstancesNodeResult::toJson() const
 
     return val;
 }
-
 bool ListInstancesNodeResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -175,6 +173,7 @@ bool ListInstancesNodeResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListInstancesNodeResult::getId() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v1/model/CreateDomainMappingRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -32,7 +31,6 @@ web::json::value CreateDomainMappingRequest::toJson() const
 
     return val;
 }
-
 bool CreateDomainMappingRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CreateDomainMappingRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 DomainMapping CreateDomainMappingRequest::getBody() const
 {

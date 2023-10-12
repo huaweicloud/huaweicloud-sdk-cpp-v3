@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/GetBackupDownloadLink_files.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -53,7 +52,6 @@ web::json::value GetBackupDownloadLink_files::toJson() const
 
     return val;
 }
-
 bool GetBackupDownloadLink_files::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool GetBackupDownloadLink_files::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string GetBackupDownloadLink_files::getName() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/Rules.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -53,7 +52,6 @@ web::json::value Rules::toJson() const
 
     return val;
 }
-
 bool Rules::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool Rules::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t Rules::getRuleType() const
 {

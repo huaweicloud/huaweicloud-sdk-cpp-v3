@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/Output.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -52,7 +51,6 @@ web::json::value Output::toJson() const
 
     return val;
 }
-
 bool Output::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -104,6 +102,7 @@ bool Output::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string Output::getPlayType() const
 {

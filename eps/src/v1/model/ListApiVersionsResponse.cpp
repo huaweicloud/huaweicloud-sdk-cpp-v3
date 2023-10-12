@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eps/v1/model/ListApiVersionsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eps {
@@ -32,7 +31,6 @@ web::json::value ListApiVersionsResponse::toJson() const
 
     return val;
 }
-
 bool ListApiVersionsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ListApiVersionsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<VersionDetail>& ListApiVersionsResponse::getVersions()
 {

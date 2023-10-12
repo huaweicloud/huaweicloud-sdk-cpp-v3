@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/BatchDeleteTagsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -28,13 +27,13 @@ web::json::value BatchDeleteTagsResponse::toJson() const
 
     return val;
 }
-
 bool BatchDeleteTagsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 }
 }

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/NeutronUpdateRouterOption.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -46,7 +45,6 @@ web::json::value NeutronUpdateRouterOption::toJson() const
 
     return val;
 }
-
 bool NeutronUpdateRouterOption::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -89,6 +87,7 @@ bool NeutronUpdateRouterOption::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string NeutronUpdateRouterOption::getName() const
 {

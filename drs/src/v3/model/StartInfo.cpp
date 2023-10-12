@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/StartInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -38,7 +37,6 @@ web::json::value StartInfo::toJson() const
 
     return val;
 }
-
 bool StartInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool StartInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string StartInfo::getJobId() const
 {

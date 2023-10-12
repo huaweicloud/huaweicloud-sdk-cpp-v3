@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cts/v3/model/ObsInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cts {
@@ -63,7 +62,6 @@ web::json::value ObsInfo::toJson() const
 
     return val;
 }
-
 bool ObsInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -133,6 +131,7 @@ bool ObsInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ObsInfo::getBucketName() const
 {

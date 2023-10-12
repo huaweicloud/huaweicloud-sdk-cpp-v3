@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/ListResetTracksTaskResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -42,7 +41,6 @@ web::json::value ListResetTracksTaskResponse::toJson() const
 
     return val;
 }
-
 bool ListResetTracksTaskResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool ListResetTracksTaskResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<ResetTracksTaskInfo>& ListResetTracksTaskResponse::getTaskArray()
 {

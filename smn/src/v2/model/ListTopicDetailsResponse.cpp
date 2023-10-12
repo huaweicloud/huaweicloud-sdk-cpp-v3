@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/smn/v2/model/ListTopicDetailsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Smn {
@@ -73,7 +72,6 @@ web::json::value ListTopicDetailsResponse::toJson() const
 
     return val;
 }
-
 bool ListTopicDetailsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -161,6 +159,7 @@ bool ListTopicDetailsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListTopicDetailsResponse::getUpdateTime() const
 {

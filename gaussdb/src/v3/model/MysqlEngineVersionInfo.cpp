@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/MysqlEngineVersionInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -48,7 +47,6 @@ web::json::value MysqlEngineVersionInfo::toJson() const
 
     return val;
 }
-
 bool MysqlEngineVersionInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool MysqlEngineVersionInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string MysqlEngineVersionInfo::getId() const
 {

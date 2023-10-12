@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cts/v3/model/ListNotificationsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cts {
@@ -38,7 +37,6 @@ web::json::value ListNotificationsRequest::toJson() const
 
     return val;
 }
-
 bool ListNotificationsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ListNotificationsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListNotificationsRequest::getNotificationType() const
 {

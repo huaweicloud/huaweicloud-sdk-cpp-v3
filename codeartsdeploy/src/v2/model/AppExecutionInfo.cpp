@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/codeartsdeploy/v2/model/AppExecutionInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsdeploy {
@@ -152,7 +151,6 @@ web::json::value AppExecutionInfo::toJson() const
 
     return val;
 }
-
 bool AppExecutionInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -384,6 +382,7 @@ bool AppExecutionInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string AppExecutionInfo::getId() const
 {

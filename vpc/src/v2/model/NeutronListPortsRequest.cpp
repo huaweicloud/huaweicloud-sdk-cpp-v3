@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/NeutronListPortsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -91,7 +90,6 @@ web::json::value NeutronListPortsRequest::toJson() const
 
     return val;
 }
-
 bool NeutronListPortsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -215,6 +213,7 @@ bool NeutronListPortsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t NeutronListPortsRequest::getLimit() const
 {

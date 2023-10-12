@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/kms/v2/model/CancelKeyDeletionRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Kms {
@@ -32,7 +31,6 @@ web::json::value CancelKeyDeletionRequest::toJson() const
 
     return val;
 }
-
 bool CancelKeyDeletionRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CancelKeyDeletionRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 OperateKeyRequestBody CancelKeyDeletionRequest::getBody() const
 {

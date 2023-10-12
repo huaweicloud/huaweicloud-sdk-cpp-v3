@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/codeartsdeploy/v2/model/ExecuteRecordV2Body.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsdeploy {
@@ -73,7 +72,6 @@ web::json::value ExecuteRecordV2Body::toJson() const
 
     return val;
 }
-
 bool ExecuteRecordV2Body::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -161,6 +159,7 @@ bool ExecuteRecordV2Body::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ExecuteRecordV2Body::getDuration() const
 {

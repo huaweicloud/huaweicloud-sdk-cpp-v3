@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/ModifyDomainConfigRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -32,7 +31,6 @@ web::json::value ModifyDomainConfigRequestBody::toJson() const
 
     return val;
 }
-
 bool ModifyDomainConfigRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ModifyDomainConfigRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 Configs ModifyDomainConfigRequestBody::getConfigs() const
 {

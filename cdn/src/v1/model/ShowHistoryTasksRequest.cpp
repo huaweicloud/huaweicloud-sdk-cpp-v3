@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/ShowHistoryTasksRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -31,6 +30,8 @@ ShowHistoryTasksRequest::ShowHistoryTasksRequest()
     orderTypeIsSet_ = false;
     fileType_ = "";
     fileTypeIsSet_ = false;
+    taskType_ = "";
+    taskTypeIsSet_ = false;
 }
 
 ShowHistoryTasksRequest::~ShowHistoryTasksRequest() = default;
@@ -70,10 +71,12 @@ web::json::value ShowHistoryTasksRequest::toJson() const
     if(fileTypeIsSet_) {
         val[utility::conversions::to_string_t("file_type")] = ModelBase::toJson(fileType_);
     }
+    if(taskTypeIsSet_) {
+        val[utility::conversions::to_string_t("task_type")] = ModelBase::toJson(taskType_);
+    }
 
     return val;
 }
-
 bool ShowHistoryTasksRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -159,8 +162,18 @@ bool ShowHistoryTasksRequest::fromJson(const web::json::value& val)
             setFileType(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("task_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("task_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTaskType(refVal);
+        }
+    }
     return ok;
 }
+
 
 std::string ShowHistoryTasksRequest::getEnterpriseProjectId() const
 {
@@ -349,6 +362,27 @@ bool ShowHistoryTasksRequest::fileTypeIsSet() const
 void ShowHistoryTasksRequest::unsetfileType()
 {
     fileTypeIsSet_ = false;
+}
+
+std::string ShowHistoryTasksRequest::getTaskType() const
+{
+    return taskType_;
+}
+
+void ShowHistoryTasksRequest::setTaskType(const std::string& value)
+{
+    taskType_ = value;
+    taskTypeIsSet_ = true;
+}
+
+bool ShowHistoryTasksRequest::taskTypeIsSet() const
+{
+    return taskTypeIsSet_;
+}
+
+void ShowHistoryTasksRequest::unsettaskType()
+{
+    taskTypeIsSet_ = false;
 }
 
 }

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/ListFlavorSellPoliciesRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -83,7 +82,6 @@ web::json::value ListFlavorSellPoliciesRequest::toJson() const
 
     return val;
 }
-
 bool ListFlavorSellPoliciesRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -189,6 +187,7 @@ bool ListFlavorSellPoliciesRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListFlavorSellPoliciesRequest::getFlavorId() const
 {

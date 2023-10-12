@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/CreateColdVolumeResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -38,7 +37,6 @@ web::json::value CreateColdVolumeResponse::toJson() const
 
     return val;
 }
-
 bool CreateColdVolumeResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool CreateColdVolumeResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateColdVolumeResponse::getJobId() const
 {

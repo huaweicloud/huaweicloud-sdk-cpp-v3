@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/ListRestoreTimeRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -53,7 +52,6 @@ web::json::value ListRestoreTimeRequest::toJson() const
 
     return val;
 }
-
 bool ListRestoreTimeRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool ListRestoreTimeRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListRestoreTimeRequest::getInstanceId() const
 {

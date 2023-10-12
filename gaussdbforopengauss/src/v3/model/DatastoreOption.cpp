@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/DatastoreOption.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -38,7 +37,6 @@ web::json::value DatastoreOption::toJson() const
 
     return val;
 }
-
 bool DatastoreOption::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool DatastoreOption::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DatastoreOption::getEngineVersion() const
 {

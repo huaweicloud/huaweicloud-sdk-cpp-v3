@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/UpdateServerAutoTerminateTimeRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -33,7 +32,6 @@ web::json::value UpdateServerAutoTerminateTimeRequestBody::toJson() const
 
     return val;
 }
-
 bool UpdateServerAutoTerminateTimeRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool UpdateServerAutoTerminateTimeRequestBody::fromJson(const web::json::value& 
     }
     return ok;
 }
+
 
 std::string UpdateServerAutoTerminateTimeRequestBody::getAutoTerminateTime() const
 {

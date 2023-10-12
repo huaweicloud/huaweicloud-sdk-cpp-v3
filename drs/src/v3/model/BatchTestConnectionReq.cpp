@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/BatchTestConnectionReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -32,7 +31,6 @@ web::json::value BatchTestConnectionReq::toJson() const
 
     return val;
 }
-
 bool BatchTestConnectionReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool BatchTestConnectionReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<TestEndPoint>& BatchTestConnectionReq::getJobs()
 {

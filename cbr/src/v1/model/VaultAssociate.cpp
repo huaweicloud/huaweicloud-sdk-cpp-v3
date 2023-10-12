@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/VaultAssociate.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -42,7 +41,6 @@ web::json::value VaultAssociate::toJson() const
 
     return val;
 }
-
 bool VaultAssociate::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool VaultAssociate::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string VaultAssociate::getDestinationVaultId() const
 {

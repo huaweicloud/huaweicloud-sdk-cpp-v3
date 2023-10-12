@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/HttpQueryCfwAccessControllerLogsResponseDTO_data.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -42,7 +41,6 @@ web::json::value HttpQueryCfwAccessControllerLogsResponseDTO_data::toJson() cons
 
     return val;
 }
-
 bool HttpQueryCfwAccessControllerLogsResponseDTO_data::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool HttpQueryCfwAccessControllerLogsResponseDTO_data::fromJson(const web::json:
     }
     return ok;
 }
+
 
 int32_t HttpQueryCfwAccessControllerLogsResponseDTO_data::getTotal() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sdrs/v1/model/ListFailureJobsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sdrs {
@@ -58,7 +57,6 @@ web::json::value ListFailureJobsRequest::toJson() const
 
     return val;
 }
-
 bool ListFailureJobsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool ListFailureJobsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListFailureJobsRequest::getFailureStatus() const
 {

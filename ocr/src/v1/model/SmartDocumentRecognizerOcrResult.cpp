@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/SmartDocumentRecognizerOcrResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -42,7 +41,6 @@ web::json::value SmartDocumentRecognizerOcrResult::toJson() const
 
     return val;
 }
-
 bool SmartDocumentRecognizerOcrResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool SmartDocumentRecognizerOcrResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 float SmartDocumentRecognizerOcrResult::getDirection() const
 {

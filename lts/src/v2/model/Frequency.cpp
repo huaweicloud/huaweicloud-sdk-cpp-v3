@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/Frequency.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -58,7 +57,6 @@ web::json::value Frequency::toJson() const
 
     return val;
 }
-
 bool Frequency::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool Frequency::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string Frequency::getType() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/smn/v2/model/ListInstanceRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Smn {
@@ -63,7 +62,6 @@ web::json::value ListInstanceRequestBody::toJson() const
 
     return val;
 }
-
 bool ListInstanceRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -142,6 +140,7 @@ bool ListInstanceRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<ResourceTags>& ListInstanceRequestBody::getTags()
 {

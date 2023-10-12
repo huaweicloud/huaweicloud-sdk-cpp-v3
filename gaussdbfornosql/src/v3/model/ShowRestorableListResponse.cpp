@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/ShowRestorableListResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -37,7 +36,6 @@ web::json::value ShowRestorableListResponse::toJson() const
 
     return val;
 }
-
 bool ShowRestorableListResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ShowRestorableListResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ShowRestorableListResponse::getTotalCount() const
 {

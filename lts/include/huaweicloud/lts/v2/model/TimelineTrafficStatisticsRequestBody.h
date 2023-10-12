@@ -2,9 +2,11 @@
 #ifndef HUAWEICLOUD_SDK_LTS_V2_MODEL_TimelineTrafficStatisticsRequestBody_H_
 #define HUAWEICLOUD_SDK_LTS_V2_MODEL_TimelineTrafficStatisticsRequestBody_H_
 
+
 #include <huaweicloud/lts/v2/LtsExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
@@ -31,10 +33,8 @@ public:
     /// ModelBase overrides
 
     void validate() override;
-
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
-
     /////////////////////////////////////////////
     /// TimelineTrafficStatisticsRequestBody members
 
@@ -75,7 +75,7 @@ public:
     void setResourceType(const std::string& value);
 
     /// <summary>
-    /// 查询流量类型值为：write，index，storage
+    /// 查询流量类型值为：write，index，storage,basicTransfer，seniorTransfer
     /// </summary>
 
     std::string getSearchType() const;

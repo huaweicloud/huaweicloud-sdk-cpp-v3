@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/SimpleFlavor.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -37,7 +36,6 @@ web::json::value SimpleFlavor::toJson() const
 
     return val;
 }
-
 bool SimpleFlavor::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool SimpleFlavor::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string SimpleFlavor::getId() const
 {

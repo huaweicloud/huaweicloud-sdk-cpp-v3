@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/CreateTagsRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -37,7 +36,6 @@ web::json::value CreateTagsRequestBody::toJson() const
 
     return val;
 }
-
 bool CreateTagsRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool CreateTagsRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateTagsRequestBody::getResourceId() const
 {

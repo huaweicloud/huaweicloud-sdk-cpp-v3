@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/ShowReplicationStatusRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -38,7 +37,6 @@ web::json::value ShowReplicationStatusRequest::toJson() const
 
     return val;
 }
-
 bool ShowReplicationStatusRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ShowReplicationStatusRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowReplicationStatusRequest::getInstanceId() const
 {

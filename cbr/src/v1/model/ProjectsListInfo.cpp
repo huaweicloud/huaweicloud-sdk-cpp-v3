@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/ProjectsListInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -67,7 +66,6 @@ web::json::value ProjectsListInfo::toJson() const
 
     return val;
 }
-
 bool ProjectsListInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -146,6 +144,7 @@ bool ProjectsListInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ProjectsListInfo::getDomainId() const
 {

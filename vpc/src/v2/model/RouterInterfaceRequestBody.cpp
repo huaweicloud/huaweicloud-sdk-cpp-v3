@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/RouterInterfaceRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -38,7 +37,6 @@ web::json::value RouterInterfaceRequestBody::toJson() const
 
     return val;
 }
-
 bool RouterInterfaceRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool RouterInterfaceRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string RouterInterfaceRequestBody::getPortId() const
 {

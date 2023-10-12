@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/evs/v2/model/CreateVolumeTransferOption.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Evs {
@@ -38,7 +37,6 @@ web::json::value CreateVolumeTransferOption::toJson() const
 
     return val;
 }
-
 bool CreateVolumeTransferOption::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool CreateVolumeTransferOption::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateVolumeTransferOption::getName() const
 {

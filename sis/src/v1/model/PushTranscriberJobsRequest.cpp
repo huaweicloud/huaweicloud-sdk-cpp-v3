@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sis/v1/model/PushTranscriberJobsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sis {
@@ -37,7 +36,6 @@ web::json::value PushTranscriberJobsRequest::toJson() const
 
     return val;
 }
-
 bool PushTranscriberJobsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool PushTranscriberJobsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string PushTranscriberJobsRequest::getEnterpriseProjectId() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/kms/v2/model/Quotas.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Kms {
@@ -32,7 +31,6 @@ web::json::value Quotas::toJson() const
 
     return val;
 }
-
 bool Quotas::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool Quotas::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<Resources>& Quotas::getResources()
 {

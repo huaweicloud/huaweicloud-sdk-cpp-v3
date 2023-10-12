@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/CreateSubnetRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -32,7 +31,6 @@ web::json::value CreateSubnetRequestBody::toJson() const
 
     return val;
 }
-
 bool CreateSubnetRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CreateSubnetRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 CreateSubnetOption CreateSubnetRequestBody::getSubnet() const
 {

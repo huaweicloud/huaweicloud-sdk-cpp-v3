@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v2/model/V2FramerateInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -57,7 +56,6 @@ web::json::value V2FramerateInfo::toJson() const
 
     return val;
 }
-
 bool V2FramerateInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -118,6 +116,7 @@ bool V2FramerateInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string V2FramerateInfo::getPublishDomain() const
 {

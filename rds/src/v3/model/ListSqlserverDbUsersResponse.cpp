@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/ListSqlserverDbUsersResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -37,7 +36,6 @@ web::json::value ListSqlserverDbUsersResponse::toJson() const
 
     return val;
 }
-
 bool ListSqlserverDbUsersResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ListSqlserverDbUsersResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<UserForList>& ListSqlserverDbUsersResponse::getUsers()
 {

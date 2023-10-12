@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/UpdateParamsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -48,7 +47,6 @@ web::json::value UpdateParamsResponse::toJson() const
 
     return val;
 }
-
 bool UpdateParamsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool UpdateParamsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool UpdateParamsResponse::isSuccess() const
 {

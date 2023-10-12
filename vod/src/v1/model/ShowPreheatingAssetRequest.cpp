@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/ShowPreheatingAssetRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -38,7 +37,6 @@ web::json::value ShowPreheatingAssetRequest::toJson() const
 
     return val;
 }
-
 bool ShowPreheatingAssetRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ShowPreheatingAssetRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowPreheatingAssetRequest::getXSdkDate() const
 {

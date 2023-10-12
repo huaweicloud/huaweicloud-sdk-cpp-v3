@@ -2,9 +2,11 @@
 #ifndef HUAWEICLOUD_SDK_VOD_V1_MODEL_SubtitleModifyReq_H_
 #define HUAWEICLOUD_SDK_VOD_V1_MODEL_SubtitleModifyReq_H_
 
+
 #include <huaweicloud/vod/v1/VodExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/vod/v1/model/AddSubtitle.h>
@@ -34,10 +36,8 @@ public:
     /// ModelBase overrides
 
     void validate() override;
-
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
-
     /////////////////////////////////////////////
     /// SubtitleModifyReq members
 

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/RecognizeHealthCodeRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -37,7 +36,6 @@ web::json::value RecognizeHealthCodeRequest::toJson() const
 
     return val;
 }
-
 bool RecognizeHealthCodeRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool RecognizeHealthCodeRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string RecognizeHealthCodeRequest::getEnterpriseProjectId() const
 {

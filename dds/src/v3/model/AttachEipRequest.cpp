@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/AttachEipRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -37,7 +36,6 @@ web::json::value AttachEipRequest::toJson() const
 
     return val;
 }
-
 bool AttachEipRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool AttachEipRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string AttachEipRequest::getNodeId() const
 {

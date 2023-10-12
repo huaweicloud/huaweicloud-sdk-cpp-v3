@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/AvailableFlavorInfoResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -47,7 +46,6 @@ web::json::value AvailableFlavorInfoResult::toJson() const
 
     return val;
 }
-
 bool AvailableFlavorInfoResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -90,6 +88,7 @@ bool AvailableFlavorInfoResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string AvailableFlavorInfoResult::getSpecCpde() const
 {

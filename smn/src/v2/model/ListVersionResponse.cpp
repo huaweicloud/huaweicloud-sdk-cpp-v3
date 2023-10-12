@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/smn/v2/model/ListVersionResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Smn {
@@ -32,7 +31,6 @@ web::json::value ListVersionResponse::toJson() const
 
     return val;
 }
-
 bool ListVersionResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ListVersionResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 VersionItem ListVersionResponse::getVersion() const
 {

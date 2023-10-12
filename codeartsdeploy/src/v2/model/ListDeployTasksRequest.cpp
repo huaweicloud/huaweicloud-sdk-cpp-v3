@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/codeartsdeploy/v2/model/ListDeployTasksRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsdeploy {
@@ -43,7 +42,6 @@ web::json::value ListDeployTasksRequest::toJson() const
 
     return val;
 }
-
 bool ListDeployTasksRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool ListDeployTasksRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListDeployTasksRequest::getProjectId() const
 {

@@ -2,9 +2,11 @@
 #ifndef HUAWEICLOUD_SDK_IMS_V2_MODEL_ListImageByTagsRequest_H_
 #define HUAWEICLOUD_SDK_IMS_V2_MODEL_ListImageByTagsRequest_H_
 
+
 #include <huaweicloud/ims/v2/ImsExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/ims/v2/model/ListImageByTagsRequestBody.h>
@@ -31,10 +33,8 @@ public:
     /// ModelBase overrides
 
     void validate() override;
-
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
-
     /////////////////////////////////////////////
     /// ListImageByTagsRequest members
 

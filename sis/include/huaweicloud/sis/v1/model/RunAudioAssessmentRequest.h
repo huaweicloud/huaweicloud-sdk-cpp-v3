@@ -2,9 +2,11 @@
 #ifndef HUAWEICLOUD_SDK_SIS_V1_MODEL_RunAudioAssessmentRequest_H_
 #define HUAWEICLOUD_SDK_SIS_V1_MODEL_RunAudioAssessmentRequest_H_
 
+
 #include <huaweicloud/sis/v1/SisExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/sis/v1/model/PostShortAudioAssessmentReq.h>
@@ -31,10 +33,8 @@ public:
     /// ModelBase overrides
 
     void validate() override;
-
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
-
     /////////////////////////////////////////////
     /// RunAudioAssessmentRequest members
 

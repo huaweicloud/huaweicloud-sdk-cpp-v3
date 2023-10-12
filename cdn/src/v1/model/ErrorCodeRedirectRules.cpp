@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/ErrorCodeRedirectRules.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -43,7 +42,6 @@ web::json::value ErrorCodeRedirectRules::toJson() const
 
     return val;
 }
-
 bool ErrorCodeRedirectRules::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool ErrorCodeRedirectRules::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ErrorCodeRedirectRules::getErrorCode() const
 {

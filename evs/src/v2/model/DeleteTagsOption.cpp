@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/evs/v2/model/DeleteTagsOption.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Evs {
@@ -33,7 +32,6 @@ web::json::value DeleteTagsOption::toJson() const
 
     return val;
 }
-
 bool DeleteTagsOption::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool DeleteTagsOption::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DeleteTagsOption::getKey() const
 {

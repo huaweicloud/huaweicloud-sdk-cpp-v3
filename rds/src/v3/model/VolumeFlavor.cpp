@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/VolumeFlavor.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -52,7 +51,6 @@ web::json::value VolumeFlavor::toJson() const
 
     return val;
 }
-
 bool VolumeFlavor::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -104,6 +102,7 @@ bool VolumeFlavor::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string VolumeFlavor::getEngineVersion() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v2/model/BatchCopyDRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -32,7 +31,6 @@ web::json::value BatchCopyDRequestBody::toJson() const
 
     return val;
 }
-
 bool BatchCopyDRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool BatchCopyDRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 BatchCopyConfigs BatchCopyDRequestBody::getConfigs() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/WatermarkRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -50,7 +49,6 @@ web::json::value WatermarkRequest::toJson() const
 
     return val;
 }
-
 bool WatermarkRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -102,6 +100,7 @@ bool WatermarkRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 ObsObjInfo WatermarkRequest::getInput() const
 {

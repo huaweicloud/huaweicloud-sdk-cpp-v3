@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ims/v2/model/QuotaInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ims {
@@ -53,7 +52,6 @@ web::json::value QuotaInfo::toJson() const
 
     return val;
 }
-
 bool QuotaInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool QuotaInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string QuotaInfo::getType() const
 {

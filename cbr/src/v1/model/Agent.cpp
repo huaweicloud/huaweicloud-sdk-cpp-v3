@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/Agent.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -87,7 +86,6 @@ web::json::value Agent::toJson() const
 
     return val;
 }
-
 bool Agent::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -202,6 +200,7 @@ bool Agent::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 utility::datetime Agent::getCreatedAt() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v2/model/ListSingleStreamDetailResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -60,7 +59,6 @@ web::json::value ListSingleStreamDetailResponse::toJson() const
 
     return val;
 }
-
 bool ListSingleStreamDetailResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -130,6 +128,7 @@ bool ListSingleStreamDetailResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListSingleStreamDetailResponse::getPublishDomain() const
 {

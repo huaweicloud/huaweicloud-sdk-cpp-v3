@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/BatchTagActionTagOption.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -38,7 +37,6 @@ web::json::value BatchTagActionTagOption::toJson() const
 
     return val;
 }
-
 bool BatchTagActionTagOption::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool BatchTagActionTagOption::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string BatchTagActionTagOption::getKey() const
 {

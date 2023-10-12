@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/codeartsdeploy/v2/model/ShowHostDetailResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsdeploy {
@@ -37,7 +36,6 @@ web::json::value ShowHostDetailResponse::toJson() const
 
     return val;
 }
-
 bool ShowHostDetailResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ShowHostDetailResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowHostDetailResponse::getStatus() const
 {

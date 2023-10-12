@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/UpdateDatabaseReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -38,7 +37,6 @@ web::json::value UpdateDatabaseReq::toJson() const
 
     return val;
 }
-
 bool UpdateDatabaseReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool UpdateDatabaseReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateDatabaseReq::getName() const
 {

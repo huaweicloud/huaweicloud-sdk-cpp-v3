@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/CreatePostPaidServersRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -37,7 +36,6 @@ web::json::value CreatePostPaidServersRequest::toJson() const
 
     return val;
 }
-
 bool CreatePostPaidServersRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool CreatePostPaidServersRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreatePostPaidServersRequest::getXClientToken() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/IdObject.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -33,7 +32,6 @@ web::json::value IdObject::toJson() const
 
     return val;
 }
-
 bool IdObject::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool IdObject::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string IdObject::getId() const
 {

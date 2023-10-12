@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/AgentRemovePathReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -32,7 +31,6 @@ web::json::value AgentRemovePathReq::toJson() const
 
     return val;
 }
-
 bool AgentRemovePathReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool AgentRemovePathReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<std::string>& AgentRemovePathReq::getRemovePath()
 {

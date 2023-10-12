@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v2/model/HttpCode.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -43,7 +42,6 @@ web::json::value HttpCode::toJson() const
 
     return val;
 }
-
 bool HttpCode::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool HttpCode::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t HttpCode::getCode() const
 {

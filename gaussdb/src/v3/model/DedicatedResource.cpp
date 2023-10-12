@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/DedicatedResource.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -61,7 +60,6 @@ web::json::value DedicatedResource::toJson() const
 
     return val;
 }
-
 bool DedicatedResource::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -131,6 +129,7 @@ bool DedicatedResource::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DedicatedResource::getId() const
 {

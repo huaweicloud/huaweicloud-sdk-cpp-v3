@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/SwitchSlowlogDesensitizationRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -33,7 +32,6 @@ web::json::value SwitchSlowlogDesensitizationRequestBody::toJson() const
 
     return val;
 }
-
 bool SwitchSlowlogDesensitizationRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool SwitchSlowlogDesensitizationRequestBody::fromJson(const web::json::value& v
     }
     return ok;
 }
+
 
 std::string SwitchSlowlogDesensitizationRequestBody::getDesensitizationStatus() const
 {

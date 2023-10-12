@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/LogStreamResBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -57,7 +56,6 @@ web::json::value LogStreamResBody::toJson() const
 
     return val;
 }
-
 bool LogStreamResBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -118,6 +116,7 @@ bool LogStreamResBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int64_t LogStreamResBody::getCreationTime() const
 {

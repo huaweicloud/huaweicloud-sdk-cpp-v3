@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v2/model/BatchCreateBandwidthOption.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -48,7 +47,6 @@ web::json::value BatchCreateBandwidthOption::toJson() const
 
     return val;
 }
-
 bool BatchCreateBandwidthOption::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool BatchCreateBandwidthOption::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t BatchCreateBandwidthOption::getCount() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/ExtractTask.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -80,7 +79,6 @@ web::json::value ExtractTask::toJson() const
 
     return val;
 }
-
 bool ExtractTask::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -186,6 +184,7 @@ bool ExtractTask::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ExtractTask::getTaskId() const
 {

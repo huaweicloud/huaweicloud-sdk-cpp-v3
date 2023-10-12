@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/DownloadSlowlogResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -58,7 +57,6 @@ web::json::value DownloadSlowlogResult::toJson() const
 
     return val;
 }
-
 bool DownloadSlowlogResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool DownloadSlowlogResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DownloadSlowlogResult::getNodeName() const
 {

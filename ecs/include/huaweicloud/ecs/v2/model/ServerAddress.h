@@ -2,9 +2,11 @@
 #ifndef HUAWEICLOUD_SDK_ECS_V2_MODEL_ServerAddress_H_
 #define HUAWEICLOUD_SDK_ECS_V2_MODEL_ServerAddress_H_
 
+
 #include <huaweicloud/ecs/v2/EcsExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
@@ -31,10 +33,8 @@ public:
     /// ModelBase overrides
 
     void validate() override;
-
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
-
     /////////////////////////////////////////////
     /// ServerAddress members
 
@@ -46,6 +46,15 @@ public:
     bool versionIsSet() const;
     void unsetversion();
     void setVersion(const std::string& value);
+
+    /// <summary>
+    /// 是否主网卡。  - true：是主网卡 - false：辅助网卡
+    /// </summary>
+
+    bool isPrimary() const;
+    bool primaryIsSet() const;
+    void unsetprimary();
+    void setPrimary(bool value);
 
     /// <summary>
     /// IP地址。
@@ -87,6 +96,8 @@ public:
 protected:
     std::string version_;
     bool versionIsSet_;
+    bool primary_;
+    bool primaryIsSet_;
     std::string addr_;
     bool addrIsSet_;
     std::string oSEXTIPStype_;

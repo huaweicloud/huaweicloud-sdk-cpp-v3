@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/ModifySubtitleRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -32,7 +31,6 @@ web::json::value ModifySubtitleRequest::toJson() const
 
     return val;
 }
-
 bool ModifySubtitleRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ModifySubtitleRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 SubtitleModifyReq ModifySubtitleRequest::getBody() const
 {

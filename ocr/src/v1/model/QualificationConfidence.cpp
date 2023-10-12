@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/QualificationConfidence.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -117,7 +116,6 @@ web::json::value QualificationConfidence::toJson() const
 
     return val;
 }
-
 bool QualificationConfidence::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -286,6 +284,7 @@ bool QualificationConfidence::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 float QualificationConfidence::getIdNumber() const
 {

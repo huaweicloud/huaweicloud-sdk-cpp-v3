@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/ServerLimits.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -157,7 +156,6 @@ web::json::value ServerLimits::toJson() const
 
     return val;
 }
-
 bool ServerLimits::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -398,6 +396,7 @@ bool ServerLimits::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ServerLimits::getMaxImageMeta() const
 {

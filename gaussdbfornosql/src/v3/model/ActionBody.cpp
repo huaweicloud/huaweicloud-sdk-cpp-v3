@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/ActionBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -33,7 +32,6 @@ web::json::value ActionBody::toJson() const
 
     return val;
 }
-
 bool ActionBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool ActionBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ActionBody::getAction() const
 {

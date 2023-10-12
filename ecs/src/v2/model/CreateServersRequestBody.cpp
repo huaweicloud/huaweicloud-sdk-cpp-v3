@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/CreateServersRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -37,7 +36,6 @@ web::json::value CreateServersRequestBody::toJson() const
 
     return val;
 }
-
 bool CreateServersRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool CreateServersRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool CreateServersRequestBody::isDryRun() const
 {

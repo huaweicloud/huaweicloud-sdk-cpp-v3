@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/smn/v2/model/UpdateApplicationEndpointRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Smn {
@@ -38,7 +37,6 @@ web::json::value UpdateApplicationEndpointRequestBody::toJson() const
 
     return val;
 }
-
 bool UpdateApplicationEndpointRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool UpdateApplicationEndpointRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateApplicationEndpointRequestBody::getEnabled() const
 {

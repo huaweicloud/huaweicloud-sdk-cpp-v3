@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/GenerateAuditlogDownloadLinkRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -32,7 +31,6 @@ web::json::value GenerateAuditlogDownloadLinkRequest::toJson() const
 
     return val;
 }
-
 bool GenerateAuditlogDownloadLinkRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool GenerateAuditlogDownloadLinkRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<std::string>& GenerateAuditlogDownloadLinkRequest::getIds()
 {

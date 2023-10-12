@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/ListEngineFlavorsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -68,7 +67,6 @@ web::json::value ListEngineFlavorsRequest::toJson() const
 
     return val;
 }
-
 bool ListEngineFlavorsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -147,6 +145,7 @@ bool ListEngineFlavorsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListEngineFlavorsRequest::getInstanceId() const
 {

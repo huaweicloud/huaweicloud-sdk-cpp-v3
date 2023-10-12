@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/QueryDbParamsResp.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -32,7 +31,6 @@ web::json::value QueryDbParamsResp::toJson() const
 
     return val;
 }
-
 bool QueryDbParamsResp::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool QueryDbParamsResp::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<Params>& QueryDbParamsResp::getParams()
 {

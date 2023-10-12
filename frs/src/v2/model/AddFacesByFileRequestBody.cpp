@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/frs/v2/model/AddFacesByFileRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Frs {
@@ -44,7 +43,6 @@ web::json::value AddFacesByFileRequestBody::toJson() const
 
     return val;
 }
-
 bool AddFacesByFileRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -78,6 +76,7 @@ bool AddFacesByFileRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 HttpContent AddFacesByFileRequestBody::getImageFile() const
 {

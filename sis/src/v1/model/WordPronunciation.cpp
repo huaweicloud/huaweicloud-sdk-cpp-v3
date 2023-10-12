@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sis/v1/model/WordPronunciation.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sis {
@@ -38,7 +37,6 @@ web::json::value WordPronunciation::toJson() const
 
     return val;
 }
-
 bool WordPronunciation::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool WordPronunciation::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 float WordPronunciation::getScore() const
 {

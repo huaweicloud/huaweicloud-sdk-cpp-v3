@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v2/model/HistoryStreamInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -73,7 +72,6 @@ web::json::value HistoryStreamInfo::toJson() const
 
     return val;
 }
-
 bool HistoryStreamInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -161,6 +159,7 @@ bool HistoryStreamInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string HistoryStreamInfo::getDomain() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sis/v1/model/DeleteVocabularyResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sis {
@@ -28,13 +27,13 @@ web::json::value DeleteVocabularyResponse::toJson() const
 
     return val;
 }
-
 bool DeleteVocabularyResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 }
 }

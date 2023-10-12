@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ivs/v2/model/IdcardResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ivs {
@@ -73,7 +72,6 @@ web::json::value IdcardResult::toJson() const
 
     return val;
 }
-
 bool IdcardResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -161,6 +159,7 @@ bool IdcardResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string IdcardResult::getName() const
 {

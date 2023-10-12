@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/ChangeProtectStatusRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -38,7 +37,6 @@ web::json::value ChangeProtectStatusRequestBody::toJson() const
 
     return val;
 }
-
 bool ChangeProtectStatusRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ChangeProtectStatusRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ChangeProtectStatusRequestBody::getObjectId() const
 {

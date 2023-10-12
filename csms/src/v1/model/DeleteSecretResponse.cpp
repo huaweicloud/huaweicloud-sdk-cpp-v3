@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/csms/v1/model/DeleteSecretResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Csms {
@@ -28,13 +27,13 @@ web::json::value DeleteSecretResponse::toJson() const
 
     return val;
 }
-
 bool DeleteSecretResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 }
 }

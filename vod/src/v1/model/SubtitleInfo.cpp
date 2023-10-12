@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/SubtitleInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -48,7 +47,6 @@ web::json::value SubtitleInfo::toJson() const
 
     return val;
 }
-
 bool SubtitleInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool SubtitleInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string SubtitleInfo::getUrl() const
 {

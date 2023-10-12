@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/evs/v2/model/BatchDeleteVolumeTagsRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Evs {
@@ -37,7 +36,6 @@ web::json::value BatchDeleteVolumeTagsRequestBody::toJson() const
 
     return val;
 }
-
 bool BatchDeleteVolumeTagsRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool BatchDeleteVolumeTagsRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string BatchDeleteVolumeTagsRequestBody::getAction() const
 {

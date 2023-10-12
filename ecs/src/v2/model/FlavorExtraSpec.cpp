@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/FlavorExtraSpec.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -77,6 +76,10 @@ FlavorExtraSpec::FlavorExtraSpec()
     infocpunameIsSet_ = false;
     quotagpu_ = "";
     quotagpuIsSet_ = false;
+    quotavifMaxNum_ = "";
+    quotavifMaxNumIsSet_ = false;
+    quotasubNetworkInterfaceMaxNum_ = "";
+    quotasubNetworkInterfaceMaxNumIsSet_ = false;
     ecsinstanceArchitecture_ = "";
     ecsinstanceArchitectureIsSet_ = false;
 }
@@ -187,13 +190,18 @@ web::json::value FlavorExtraSpec::toJson() const
     if(quotagpuIsSet_) {
         val[utility::conversions::to_string_t("quota:gpu")] = ModelBase::toJson(quotagpu_);
     }
+    if(quotavifMaxNumIsSet_) {
+        val[utility::conversions::to_string_t("quota:vif_max_num")] = ModelBase::toJson(quotavifMaxNum_);
+    }
+    if(quotasubNetworkInterfaceMaxNumIsSet_) {
+        val[utility::conversions::to_string_t("quota:sub_network_interface_max_num")] = ModelBase::toJson(quotasubNetworkInterfaceMaxNum_);
+    }
     if(ecsinstanceArchitectureIsSet_) {
         val[utility::conversions::to_string_t("ecs:instance_architecture")] = ModelBase::toJson(ecsinstanceArchitecture_);
     }
 
     return val;
 }
-
 bool FlavorExtraSpec::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -486,6 +494,24 @@ bool FlavorExtraSpec::fromJson(const web::json::value& val)
             setQuotagpu(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("quota:vif_max_num"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("quota:vif_max_num"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setQuotavifMaxNum(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("quota:sub_network_interface_max_num"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("quota:sub_network_interface_max_num"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setQuotasubNetworkInterfaceMaxNum(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("ecs:instance_architecture"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ecs:instance_architecture"));
         if(!fieldValue.is_null())
@@ -497,6 +523,7 @@ bool FlavorExtraSpec::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string FlavorExtraSpec::getEcsperformancetype() const
 {
@@ -1168,6 +1195,48 @@ bool FlavorExtraSpec::quotagpuIsSet() const
 void FlavorExtraSpec::unsetquotagpu()
 {
     quotagpuIsSet_ = false;
+}
+
+std::string FlavorExtraSpec::getQuotavifMaxNum() const
+{
+    return quotavifMaxNum_;
+}
+
+void FlavorExtraSpec::setQuotavifMaxNum(const std::string& value)
+{
+    quotavifMaxNum_ = value;
+    quotavifMaxNumIsSet_ = true;
+}
+
+bool FlavorExtraSpec::quotavifMaxNumIsSet() const
+{
+    return quotavifMaxNumIsSet_;
+}
+
+void FlavorExtraSpec::unsetquotavifMaxNum()
+{
+    quotavifMaxNumIsSet_ = false;
+}
+
+std::string FlavorExtraSpec::getQuotasubNetworkInterfaceMaxNum() const
+{
+    return quotasubNetworkInterfaceMaxNum_;
+}
+
+void FlavorExtraSpec::setQuotasubNetworkInterfaceMaxNum(const std::string& value)
+{
+    quotasubNetworkInterfaceMaxNum_ = value;
+    quotasubNetworkInterfaceMaxNumIsSet_ = true;
+}
+
+bool FlavorExtraSpec::quotasubNetworkInterfaceMaxNumIsSet() const
+{
+    return quotasubNetworkInterfaceMaxNumIsSet_;
+}
+
+void FlavorExtraSpec::unsetquotasubNetworkInterfaceMaxNum()
+{
+    quotasubNetworkInterfaceMaxNumIsSet_ = false;
 }
 
 std::string FlavorExtraSpec::getEcsinstanceArchitecture() const

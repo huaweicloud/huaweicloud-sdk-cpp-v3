@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/SearchQueryScaleComputeFlavorsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -32,7 +31,6 @@ web::json::value SearchQueryScaleComputeFlavorsResponse::toJson() const
 
     return val;
 }
-
 bool SearchQueryScaleComputeFlavorsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool SearchQueryScaleComputeFlavorsResponse::fromJson(const web::json::value& va
     }
     return ok;
 }
+
 
 std::vector<Computes>& SearchQueryScaleComputeFlavorsResponse::getComputeFlavorGroups()
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v1/model/BatchShowIpBelongsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -32,7 +31,6 @@ web::json::value BatchShowIpBelongsResponse::toJson() const
 
     return val;
 }
-
 bool BatchShowIpBelongsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool BatchShowIpBelongsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<CdnIp>& BatchShowIpBelongsResponse::getCdnIps()
 {

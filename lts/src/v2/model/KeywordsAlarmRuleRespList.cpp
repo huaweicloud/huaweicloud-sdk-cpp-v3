@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/KeywordsAlarmRuleRespList.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -120,7 +119,6 @@ web::json::value KeywordsAlarmRuleRespList::toJson() const
 
     return val;
 }
-
 bool KeywordsAlarmRuleRespList::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -298,6 +296,7 @@ bool KeywordsAlarmRuleRespList::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string KeywordsAlarmRuleRespList::getProjectId() const
 {

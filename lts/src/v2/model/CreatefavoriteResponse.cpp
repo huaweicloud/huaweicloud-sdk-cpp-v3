@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/CreatefavoriteResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -73,7 +72,6 @@ web::json::value CreatefavoriteResponse::toJson() const
 
     return val;
 }
-
 bool CreatefavoriteResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -161,6 +159,7 @@ bool CreatefavoriteResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int64_t CreatefavoriteResponse::getCreateTime() const
 {

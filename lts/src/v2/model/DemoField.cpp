@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/DemoField.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -63,7 +62,6 @@ web::json::value DemoField::toJson() const
 
     return val;
 }
-
 bool DemoField::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -133,6 +131,7 @@ bool DemoField::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DemoField::getFieldName() const
 {

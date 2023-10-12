@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/ListIpsProtectModeUsingPostResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -32,7 +31,6 @@ web::json::value ListIpsProtectModeUsingPostResponse::toJson() const
 
     return val;
 }
-
 bool ListIpsProtectModeUsingPostResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ListIpsProtectModeUsingPostResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 IpsProtectModeObject ListIpsProtectModeUsingPostResponse::getData() const
 {

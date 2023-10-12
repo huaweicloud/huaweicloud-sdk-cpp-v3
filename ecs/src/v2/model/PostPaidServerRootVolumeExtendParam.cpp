@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/PostPaidServerRootVolumeExtendParam.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -43,7 +42,6 @@ web::json::value PostPaidServerRootVolumeExtendParam::toJson() const
 
     return val;
 }
-
 bool PostPaidServerRootVolumeExtendParam::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool PostPaidServerRootVolumeExtendParam::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string PostPaidServerRootVolumeExtendParam::getResourceSpecCode() const
 {

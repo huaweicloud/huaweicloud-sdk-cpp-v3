@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/AlarmNotifyInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -52,7 +51,6 @@ web::json::value AlarmNotifyInfo::toJson() const
 
     return val;
 }
-
 bool AlarmNotifyInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -104,6 +102,7 @@ bool AlarmNotifyInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int64_t AlarmNotifyInfo::getDelayTime() const
 {

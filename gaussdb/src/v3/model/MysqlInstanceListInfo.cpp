@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/MysqlInstanceListInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -148,7 +147,6 @@ web::json::value MysqlInstanceListInfo::toJson() const
 
     return val;
 }
-
 bool MysqlInstanceListInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -389,6 +387,7 @@ bool MysqlInstanceListInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string MysqlInstanceListInfo::getId() const
 {

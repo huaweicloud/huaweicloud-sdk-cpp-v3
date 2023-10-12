@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v1/model/RecordContentInfoV2.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -84,7 +83,6 @@ web::json::value RecordContentInfoV2::toJson() const
 
     return val;
 }
-
 bool RecordContentInfoV2::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -199,6 +197,7 @@ bool RecordContentInfoV2::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string RecordContentInfoV2::getPublishDomain() const
 {

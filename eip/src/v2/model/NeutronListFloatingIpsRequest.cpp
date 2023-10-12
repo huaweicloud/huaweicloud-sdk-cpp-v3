@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v2/model/NeutronListFloatingIpsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -78,7 +77,6 @@ web::json::value NeutronListFloatingIpsRequest::toJson() const
 
     return val;
 }
-
 bool NeutronListFloatingIpsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -175,6 +173,7 @@ bool NeutronListFloatingIpsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t NeutronListFloatingIpsRequest::getLimit() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/evs/v2/model/CinderListQuotasResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Evs {
@@ -32,7 +31,6 @@ web::json::value CinderListQuotasResponse::toJson() const
 
     return val;
 }
-
 bool CinderListQuotasResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CinderListQuotasResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 QuotaList CinderListQuotasResponse::getQuotaSet() const
 {

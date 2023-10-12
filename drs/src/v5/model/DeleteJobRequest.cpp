@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/DeleteJobRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -38,7 +37,6 @@ web::json::value DeleteJobRequest::toJson() const
 
     return val;
 }
-
 bool DeleteJobRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool DeleteJobRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DeleteJobRequest::getJobId() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/GeneralTableResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -42,7 +41,6 @@ web::json::value GeneralTableResult::toJson() const
 
     return val;
 }
-
 bool GeneralTableResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool GeneralTableResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t GeneralTableResult::getWordsRegionCount() const
 {

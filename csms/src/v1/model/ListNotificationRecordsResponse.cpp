@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/csms/v1/model/ListNotificationRecordsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Csms {
@@ -36,7 +35,6 @@ web::json::value ListNotificationRecordsResponse::toJson() const
 
     return val;
 }
-
 bool ListNotificationRecordsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -61,6 +59,7 @@ bool ListNotificationRecordsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<Record>& ListNotificationRecordsResponse::getRecords()
 {

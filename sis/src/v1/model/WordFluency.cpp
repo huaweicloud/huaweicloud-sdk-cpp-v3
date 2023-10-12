@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sis/v1/model/WordFluency.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sis {
@@ -38,7 +37,6 @@ web::json::value WordFluency::toJson() const
 
     return val;
 }
-
 bool WordFluency::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool WordFluency::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 float WordFluency::getScore() const
 {

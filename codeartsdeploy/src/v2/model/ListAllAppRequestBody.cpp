@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/codeartsdeploy/v2/model/ListAllAppRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsdeploy {
@@ -23,6 +22,9 @@ ListAllAppRequestBody::ListAllAppRequestBody()
     sortNameIsSet_ = false;
     sortBy_ = "";
     sortByIsSet_ = false;
+    statesIsSet_ = false;
+    groupId_ = "";
+    groupIdIsSet_ = false;
 }
 
 ListAllAppRequestBody::~ListAllAppRequestBody() = default;
@@ -50,10 +52,15 @@ web::json::value ListAllAppRequestBody::toJson() const
     if(sortByIsSet_) {
         val[utility::conversions::to_string_t("sort_by")] = ModelBase::toJson(sortBy_);
     }
+    if(statesIsSet_) {
+        val[utility::conversions::to_string_t("states")] = ModelBase::toJson(states_);
+    }
+    if(groupIdIsSet_) {
+        val[utility::conversions::to_string_t("group_id")] = ModelBase::toJson(groupId_);
+    }
 
     return val;
 }
-
 bool ListAllAppRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -103,8 +110,27 @@ bool ListAllAppRequestBody::fromJson(const web::json::value& val)
             setSortBy(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("states"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("states"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setStates(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("group_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("group_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setGroupId(refVal);
+        }
+    }
     return ok;
 }
+
 
 std::string ListAllAppRequestBody::getProjectId() const
 {
@@ -209,6 +235,48 @@ bool ListAllAppRequestBody::sortByIsSet() const
 void ListAllAppRequestBody::unsetsortBy()
 {
     sortByIsSet_ = false;
+}
+
+std::vector<std::string>& ListAllAppRequestBody::getStates()
+{
+    return states_;
+}
+
+void ListAllAppRequestBody::setStates(const std::vector<std::string>& value)
+{
+    states_ = value;
+    statesIsSet_ = true;
+}
+
+bool ListAllAppRequestBody::statesIsSet() const
+{
+    return statesIsSet_;
+}
+
+void ListAllAppRequestBody::unsetstates()
+{
+    statesIsSet_ = false;
+}
+
+std::string ListAllAppRequestBody::getGroupId() const
+{
+    return groupId_;
+}
+
+void ListAllAppRequestBody::setGroupId(const std::string& value)
+{
+    groupId_ = value;
+    groupIdIsSet_ = true;
+}
+
+bool ListAllAppRequestBody::groupIdIsSet() const
+{
+    return groupIdIsSet_;
+}
+
+void ListAllAppRequestBody::unsetgroupId()
+{
+    groupIdIsSet_ = false;
 }
 
 }

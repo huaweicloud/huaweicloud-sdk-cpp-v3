@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/ListConfigurationsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -37,7 +36,6 @@ web::json::value ListConfigurationsResponse::toJson() const
 
     return val;
 }
-
 bool ListConfigurationsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ListConfigurationsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ListConfigurationsResponse::getTotalCount() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/PrePaidServerPublicip.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -42,7 +41,6 @@ web::json::value PrePaidServerPublicip::toJson() const
 
     return val;
 }
-
 bool PrePaidServerPublicip::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool PrePaidServerPublicip::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string PrePaidServerPublicip::getId() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/ChangeSeversOsMetadataWithoutCloudInitOption.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -38,7 +37,6 @@ web::json::value ChangeSeversOsMetadataWithoutCloudInitOption::toJson() const
 
     return val;
 }
-
 bool ChangeSeversOsMetadataWithoutCloudInitOption::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ChangeSeversOsMetadataWithoutCloudInitOption::fromJson(const web::json::val
     }
     return ok;
 }
+
 
 std::string ChangeSeversOsMetadataWithoutCloudInitOption::getSystemEncrypted() const
 {

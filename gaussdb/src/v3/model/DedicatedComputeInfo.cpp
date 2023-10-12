@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/DedicatedComputeInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -58,7 +57,6 @@ web::json::value DedicatedComputeInfo::toJson() const
 
     return val;
 }
-
 bool DedicatedComputeInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool DedicatedComputeInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t DedicatedComputeInfo::getVcpusTotal() const
 {

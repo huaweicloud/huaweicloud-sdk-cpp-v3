@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ims/v2/model/GlanceCreateImageMetadataResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ims {
@@ -176,7 +175,6 @@ web::json::value GlanceCreateImageMetadataResponse::toJson() const
 
     return val;
 }
-
 bool GlanceCreateImageMetadataResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -453,6 +451,7 @@ bool GlanceCreateImageMetadataResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string GlanceCreateImageMetadataResponse::getVisibility() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/evs/v2/model/ListSnapshotsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Evs {
@@ -83,7 +82,6 @@ web::json::value ListSnapshotsRequest::toJson() const
 
     return val;
 }
-
 bool ListSnapshotsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -189,6 +187,7 @@ bool ListSnapshotsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ListSnapshotsRequest::getOffset() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/AddReadonlyNodeRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -48,7 +47,6 @@ web::json::value AddReadonlyNodeRequestBody::toJson() const
 
     return val;
 }
-
 bool AddReadonlyNodeRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool AddReadonlyNodeRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string AddReadonlyNodeRequestBody::getSpecCode() const
 {

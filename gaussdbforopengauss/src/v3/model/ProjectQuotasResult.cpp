@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/ProjectQuotasResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -32,7 +31,6 @@ web::json::value ProjectQuotasResult::toJson() const
 
     return val;
 }
-
 bool ProjectQuotasResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ProjectQuotasResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<ResourceResult>& ProjectQuotasResult::getResources()
 {

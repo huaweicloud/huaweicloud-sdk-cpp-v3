@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/tms/v1/model/ListProvidersRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Tms {
@@ -48,7 +47,6 @@ web::json::value ListProvidersRequest::toJson() const
 
     return val;
 }
-
 bool ListProvidersRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool ListProvidersRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListProvidersRequest::getLocale() const
 {

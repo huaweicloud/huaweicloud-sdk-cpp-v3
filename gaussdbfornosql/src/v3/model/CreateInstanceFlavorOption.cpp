@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/CreateInstanceFlavorOption.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -48,7 +47,6 @@ web::json::value CreateInstanceFlavorOption::toJson() const
 
     return val;
 }
-
 bool CreateInstanceFlavorOption::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool CreateInstanceFlavorOption::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateInstanceFlavorOption::getNum() const
 {

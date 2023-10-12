@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v2/model/UpdatePrePaidBandwidthResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -37,7 +36,6 @@ web::json::value UpdatePrePaidBandwidthResponse::toJson() const
 
     return val;
 }
-
 bool UpdatePrePaidBandwidthResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool UpdatePrePaidBandwidthResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 BandwidthResp UpdatePrePaidBandwidthResponse::getBandwidth() const
 {

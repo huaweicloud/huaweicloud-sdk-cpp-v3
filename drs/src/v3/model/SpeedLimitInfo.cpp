@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/SpeedLimitInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -48,7 +47,6 @@ web::json::value SpeedLimitInfo::toJson() const
 
     return val;
 }
-
 bool SpeedLimitInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool SpeedLimitInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string SpeedLimitInfo::getBegin() const
 {

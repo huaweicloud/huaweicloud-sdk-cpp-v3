@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v2/model/TagResp.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -37,7 +36,6 @@ web::json::value TagResp::toJson() const
 
     return val;
 }
-
 bool TagResp::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool TagResp::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string TagResp::getKey() const
 {

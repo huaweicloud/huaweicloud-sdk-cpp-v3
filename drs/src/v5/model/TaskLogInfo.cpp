@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/TaskLogInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -43,7 +42,6 @@ web::json::value TaskLogInfo::toJson() const
 
     return val;
 }
-
 bool TaskLogInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool TaskLogInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string TaskLogInfo::getLevel() const
 {

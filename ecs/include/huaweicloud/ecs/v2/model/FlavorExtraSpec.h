@@ -2,9 +2,11 @@
 #ifndef HUAWEICLOUD_SDK_ECS_V2_MODEL_FlavorExtraSpec_H_
 #define HUAWEICLOUD_SDK_ECS_V2_MODEL_FlavorExtraSpec_H_
 
+
 #include <huaweicloud/ecs/v2/EcsExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
@@ -31,10 +33,8 @@ public:
     /// ModelBase overrides
 
     void validate() override;
-
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
-
     /////////////////////////////////////////////
     /// FlavorExtraSpec members
 
@@ -327,6 +327,24 @@ public:
     void setQuotagpu(const std::string& value);
 
     /// <summary>
+    /// 最多支持的弹性网卡个数
+    /// </summary>
+
+    std::string getQuotavifMaxNum() const;
+    bool quotavifMaxNumIsSet() const;
+    void unsetquotavifMaxNum();
+    void setQuotavifMaxNum(const std::string& value);
+
+    /// <summary>
+    /// 最多支持的辅助弹性网卡个数
+    /// </summary>
+
+    std::string getQuotasubNetworkInterfaceMaxNum() const;
+    bool quotasubNetworkInterfaceMaxNumIsSet() const;
+    void unsetquotasubNetworkInterfaceMaxNum();
+    void setQuotasubNetworkInterfaceMaxNum(const std::string& value);
+
+    /// <summary>
     /// 该规格对应的CPU架构，且仅鲲鹏实例架构规格返回该字段  - 取值为arm64表示CPU架构为鲲鹏计算。
     /// </summary>
 
@@ -401,6 +419,10 @@ protected:
     bool infocpunameIsSet_;
     std::string quotagpu_;
     bool quotagpuIsSet_;
+    std::string quotavifMaxNum_;
+    bool quotavifMaxNumIsSet_;
+    std::string quotasubNetworkInterfaceMaxNum_;
+    bool quotasubNetworkInterfaceMaxNumIsSet_;
     std::string ecsinstanceArchitecture_;
     bool ecsinstanceArchitectureIsSet_;
 

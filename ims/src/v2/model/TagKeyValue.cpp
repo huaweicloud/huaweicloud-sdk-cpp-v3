@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ims/v2/model/TagKeyValue.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ims {
@@ -38,7 +37,6 @@ web::json::value TagKeyValue::toJson() const
 
     return val;
 }
-
 bool TagKeyValue::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool TagKeyValue::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string TagKeyValue::getKey() const
 {

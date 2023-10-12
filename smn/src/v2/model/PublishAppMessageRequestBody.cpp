@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/smn/v2/model/PublishAppMessageRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Smn {
@@ -43,7 +42,6 @@ web::json::value PublishAppMessageRequestBody::toJson() const
 
     return val;
 }
-
 bool PublishAppMessageRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool PublishAppMessageRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string PublishAppMessageRequestBody::getMessage() const
 {

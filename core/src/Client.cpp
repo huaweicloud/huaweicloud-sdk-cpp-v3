@@ -47,7 +47,7 @@ void Client::processRegionAuth() {
 
 std::unique_ptr<HttpResponse> Client::callApi(const std::string &method, const std::string &resourcePath,
     const std::map<std::string, std::string> &pathParams, const std::map<std::string, std::string> &queryParams,
-    const std::map<std::string, std::string> &headerParams, const std::string &body) {
+    const std::map<std::string, std::string> &headerParams, const std::string &body, const HttpRequestDef& def) {
     std::string scheme;
     std::string host;
 
@@ -60,7 +60,9 @@ std::unique_ptr<HttpResponse> Client::callApi(const std::string &method, const s
         spdlog::info("region auth for region:{} successfully!", regionId);
     }
     while (true) {
-        parseEndPoint(this->endpoints_[endpointIndex], scheme, host);
+        std::string endpoint = buildEndpoint(def, pathParams, queryParams);
+        spdlog::info("build endpoint:{} successfully", endpoint);
+        parseEndPoint(endpoint, scheme, host);
         std::string uriHttp = getResourcePath(resourcePath, pathParams, credentials_->getUpdatePathParams());
         std::string queryParamsHttp = getQueryParams(queryParams);
         RequestParams requestParams(method, scheme, host, uriHttp, queryParamsHttp, false, body);
@@ -213,4 +215,38 @@ void Client::parseEndPoint(const std::string &str, std::string &scheme, std::str
     }
     scheme = res.at(0);
     host = res.at(1);
+}
+
+std::string Client::buildEndpoint(const HttpRequestDef& def, const std::map<std::string, std::string>& pathParams,
+                                  const std::map<std::string, std::string> &queryParams) {
+    spdlog::info("[Client] begin assemable service endpoint...");
+    for (auto field : def.getRequestFields()) {
+        if (field.getLocationType() != Cname) {
+            continue;
+        }
+        std::string scheme;
+        std::string host;
+        parseEndPoint(this->endpoints_[endpointIndex], scheme, host);
+        std::string value = getFieldValueByName(field.getJsonTag(),
+                                                const_cast<std::map<std::string, std::string> &>(pathParams),
+                                                const_cast<std::map<std::string, std::string> &>(queryParams));
+        if (!scheme.empty() && !host.empty() && !value.empty()) {
+            return scheme + "://" + value + "." + host;
+        }
+    }
+    std::string scheme;
+    std::string host;
+    parseEndPoint(this->endpoints_[endpointIndex], scheme, host);
+    return scheme + "://" + host;
+}
+
+std::string Client::getFieldValueByName(std::string key, std::map<std::string, std::string>& pathParams,
+                                        std::map<std::string, std::string> &queryParams) {
+    if (pathParams.find(key) != pathParams.end()) {
+        return pathParams[key];
+    }
+    if (queryParams.find(key) != queryParams.end()) {
+        return queryParams[key];
+    }
+    return "";
 }

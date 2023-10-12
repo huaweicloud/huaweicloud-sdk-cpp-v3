@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v2/model/TranscodeData.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -37,7 +36,6 @@ web::json::value TranscodeData::toJson() const
 
     return val;
 }
-
 bool TranscodeData::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool TranscodeData::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<TranscodeSpec>& TranscodeData::getSpecList()
 {

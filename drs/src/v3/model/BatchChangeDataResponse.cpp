@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/BatchChangeDataResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -37,7 +36,6 @@ web::json::value BatchChangeDataResponse::toJson() const
 
     return val;
 }
-
 bool BatchChangeDataResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool BatchChangeDataResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<DataTransformationResp>& BatchChangeDataResponse::getResults()
 {

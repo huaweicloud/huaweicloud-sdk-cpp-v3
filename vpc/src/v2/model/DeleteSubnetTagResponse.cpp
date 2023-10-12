@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/DeleteSubnetTagResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -28,13 +27,13 @@ web::json::value DeleteSubnetTagResponse::toJson() const
 
     return val;
 }
-
 bool DeleteSubnetTagResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 }
 }

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/ListEpsQuotasRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -43,7 +42,6 @@ web::json::value ListEpsQuotasRequest::toJson() const
 
     return val;
 }
-
 bool ListEpsQuotasRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool ListEpsQuotasRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListEpsQuotasRequest::getEnterpriseProjectName() const
 {

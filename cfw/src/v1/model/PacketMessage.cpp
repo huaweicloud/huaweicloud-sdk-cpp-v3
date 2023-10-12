@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/PacketMessage.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -42,7 +41,6 @@ web::json::value PacketMessage::toJson() const
 
     return val;
 }
-
 bool PacketMessage::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool PacketMessage::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string PacketMessage::getHexIndex() const
 {

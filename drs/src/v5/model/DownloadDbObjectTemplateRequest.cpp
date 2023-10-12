@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/DownloadDbObjectTemplateRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -43,7 +42,6 @@ web::json::value DownloadDbObjectTemplateRequest::toJson() const
 
     return val;
 }
-
 bool DownloadDbObjectTemplateRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool DownloadDbObjectTemplateRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DownloadDbObjectTemplateRequest::getJobId() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/FlavorResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -66,7 +65,6 @@ web::json::value FlavorResult::toJson() const
 
     return val;
 }
-
 bool FlavorResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -145,6 +143,7 @@ bool FlavorResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string FlavorResult::getVcpus() const
 {

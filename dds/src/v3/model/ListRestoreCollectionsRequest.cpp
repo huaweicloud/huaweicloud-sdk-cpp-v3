@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/ListRestoreCollectionsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -58,7 +57,6 @@ web::json::value ListRestoreCollectionsRequest::toJson() const
 
     return val;
 }
-
 bool ListRestoreCollectionsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool ListRestoreCollectionsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListRestoreCollectionsRequest::getXLanguage() const
 {

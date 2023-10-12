@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/NeutronPageLink.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -38,7 +37,6 @@ web::json::value NeutronPageLink::toJson() const
 
     return val;
 }
-
 bool NeutronPageLink::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool NeutronPageLink::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string NeutronPageLink::getHref() const
 {

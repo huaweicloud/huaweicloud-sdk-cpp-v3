@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/CreateHostGroupRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -46,7 +45,6 @@ web::json::value CreateHostGroupRequestBody::toJson() const
 
     return val;
 }
-
 bool CreateHostGroupRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -89,6 +87,7 @@ bool CreateHostGroupRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateHostGroupRequestBody::getHostGroupName() const
 {

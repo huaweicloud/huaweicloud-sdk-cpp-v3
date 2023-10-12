@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/UpdateBatchAsyncJobsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -42,7 +41,6 @@ web::json::value UpdateBatchAsyncJobsRequest::toJson() const
 
     return val;
 }
-
 bool UpdateBatchAsyncJobsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool UpdateBatchAsyncJobsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateBatchAsyncJobsRequest::getAsyncJobId() const
 {

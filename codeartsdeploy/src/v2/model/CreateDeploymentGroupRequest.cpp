@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/codeartsdeploy/v2/model/CreateDeploymentGroupRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsdeploy {
@@ -32,7 +31,6 @@ web::json::value CreateDeploymentGroupRequest::toJson() const
 
     return val;
 }
-
 bool CreateDeploymentGroupRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CreateDeploymentGroupRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 DeploymentGroup CreateDeploymentGroupRequest::getBody() const
 {

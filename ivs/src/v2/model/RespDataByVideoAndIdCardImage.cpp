@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ivs/v2/model/RespDataByVideoAndIdCardImage.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ivs {
@@ -56,7 +55,6 @@ web::json::value RespDataByVideoAndIdCardImage::toJson() const
 
     return val;
 }
-
 bool RespDataByVideoAndIdCardImage::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -117,6 +115,7 @@ bool RespDataByVideoAndIdCardImage::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string RespDataByVideoAndIdCardImage::getVerificationResult() const
 {

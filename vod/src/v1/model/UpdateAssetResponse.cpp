@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/UpdateAssetResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -47,7 +46,6 @@ web::json::value UpdateAssetResponse::toJson() const
 
     return val;
 }
-
 bool UpdateAssetResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -90,6 +88,7 @@ bool UpdateAssetResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateAssetResponse::getAssetId() const
 {

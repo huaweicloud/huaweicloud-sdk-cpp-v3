@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/TasksObject.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -73,7 +72,6 @@ web::json::value TasksObject::toJson() const
 
     return val;
 }
-
 bool TasksObject::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -161,6 +159,7 @@ bool TasksObject::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string TasksObject::getId() const
 {

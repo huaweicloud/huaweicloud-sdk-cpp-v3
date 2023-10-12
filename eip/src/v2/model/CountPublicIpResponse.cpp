@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v2/model/CountPublicIpResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -33,7 +32,6 @@ web::json::value CountPublicIpResponse::toJson() const
 
     return val;
 }
-
 bool CountPublicIpResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool CountPublicIpResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t CountPublicIpResponse::getElasticipSize() const
 {

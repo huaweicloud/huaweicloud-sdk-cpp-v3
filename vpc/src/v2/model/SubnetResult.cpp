@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/SubnetResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -38,7 +37,6 @@ web::json::value SubnetResult::toJson() const
 
     return val;
 }
-
 bool SubnetResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool SubnetResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string SubnetResult::getId() const
 {

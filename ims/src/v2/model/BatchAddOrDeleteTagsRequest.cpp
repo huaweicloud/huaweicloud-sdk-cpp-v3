@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ims/v2/model/BatchAddOrDeleteTagsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ims {
@@ -37,7 +36,6 @@ web::json::value BatchAddOrDeleteTagsRequest::toJson() const
 
     return val;
 }
-
 bool BatchAddOrDeleteTagsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool BatchAddOrDeleteTagsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string BatchAddOrDeleteTagsRequest::getImageId() const
 {

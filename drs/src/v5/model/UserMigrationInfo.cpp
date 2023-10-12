@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/UserMigrationInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -51,7 +50,6 @@ web::json::value UserMigrationInfo::toJson() const
 
     return val;
 }
-
 bool UserMigrationInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -103,6 +101,7 @@ bool UserMigrationInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool UserMigrationInfo::isIsMigrateUser() const
 {

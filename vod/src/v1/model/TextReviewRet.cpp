@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/TextReviewRet.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -48,7 +47,6 @@ web::json::value TextReviewRet::toJson() const
 
     return val;
 }
-
 bool TextReviewRet::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool TextReviewRet::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string TextReviewRet::getSuggestion() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/ResourceBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -32,7 +31,6 @@ web::json::value ResourceBody::toJson() const
 
     return val;
 }
-
 bool ResourceBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ResourceBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<SourceWithPort>& ResourceBody::getSources()
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/EnableLogCollectionResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -28,13 +27,13 @@ web::json::value EnableLogCollectionResponse::toJson() const
 
     return val;
 }
-
 bool EnableLogCollectionResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 }
 }

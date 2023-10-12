@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/DeleteResetTracksTaskRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -33,7 +32,6 @@ web::json::value DeleteResetTracksTaskRequest::toJson() const
 
     return val;
 }
-
 bool DeleteResetTracksTaskRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool DeleteResetTracksTaskRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DeleteResetTracksTaskRequest::getTaskId() const
 {

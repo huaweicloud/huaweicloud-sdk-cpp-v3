@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/UpdateGaussMySqlQuotasRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -37,7 +36,6 @@ web::json::value UpdateGaussMySqlQuotasRequest::toJson() const
 
     return val;
 }
-
 bool UpdateGaussMySqlQuotasRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool UpdateGaussMySqlQuotasRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateGaussMySqlQuotasRequest::getXLanguage() const
 {

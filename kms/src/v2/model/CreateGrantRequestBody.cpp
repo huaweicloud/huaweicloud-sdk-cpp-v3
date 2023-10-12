@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/kms/v2/model/CreateGrantRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Kms {
@@ -62,7 +61,6 @@ web::json::value CreateGrantRequestBody::toJson() const
 
     return val;
 }
-
 bool CreateGrantRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -132,6 +130,7 @@ bool CreateGrantRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateGrantRequestBody::getKeyId() const
 {

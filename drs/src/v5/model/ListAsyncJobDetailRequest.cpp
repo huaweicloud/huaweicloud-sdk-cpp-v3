@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/ListAsyncJobDetailRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -48,7 +47,6 @@ web::json::value ListAsyncJobDetailRequest::toJson() const
 
     return val;
 }
-
 bool ListAsyncJobDetailRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool ListAsyncJobDetailRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListAsyncJobDetailRequest::getAsyncJobId() const
 {

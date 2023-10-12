@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ims/v2/model/GlanceListImageMemberSchemasResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ims {
@@ -41,7 +40,6 @@ web::json::value GlanceListImageMemberSchemasResponse::toJson() const
 
     return val;
 }
-
 bool GlanceListImageMemberSchemasResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -75,6 +73,7 @@ bool GlanceListImageMemberSchemasResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<Links>& GlanceListImageMemberSchemasResponse::getLinks()
 {

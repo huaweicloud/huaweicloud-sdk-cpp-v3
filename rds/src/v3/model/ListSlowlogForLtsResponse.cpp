@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/ListSlowlogForLtsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -37,7 +36,6 @@ web::json::value ListSlowlogForLtsResponse::toJson() const
 
     return val;
 }
-
 bool ListSlowlogForLtsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ListSlowlogForLtsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<MysqlSlowLogDetailsItem>& ListSlowlogForLtsResponse::getSlowLogList()
 {

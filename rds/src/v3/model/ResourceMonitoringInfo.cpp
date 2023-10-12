@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/ResourceMonitoringInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -111,7 +110,6 @@ web::json::value ResourceMonitoringInfo::toJson() const
 
     return val;
 }
-
 bool ResourceMonitoringInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -271,6 +269,7 @@ bool ResourceMonitoringInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ResourceMonitoringInfo::getId() const
 {

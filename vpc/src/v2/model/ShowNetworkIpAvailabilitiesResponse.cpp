@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/ShowNetworkIpAvailabilitiesResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -32,7 +31,6 @@ web::json::value ShowNetworkIpAvailabilitiesResponse::toJson() const
 
     return val;
 }
-
 bool ShowNetworkIpAvailabilitiesResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ShowNetworkIpAvailabilitiesResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 NetworkIpAvailability ShowNetworkIpAvailabilitiesResponse::getNetworkIpAvailability() const
 {

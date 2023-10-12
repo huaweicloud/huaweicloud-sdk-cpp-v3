@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/PostPaidServerRootVolume.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -71,7 +70,6 @@ web::json::value PostPaidServerRootVolume::toJson() const
 
     return val;
 }
-
 bool PostPaidServerRootVolume::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -159,6 +157,7 @@ bool PostPaidServerRootVolume::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string PostPaidServerRootVolume::getVolumetype() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sis/v1/model/Fluency.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sis {
@@ -43,7 +42,6 @@ web::json::value Fluency::toJson() const
 
     return val;
 }
-
 bool Fluency::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool Fluency::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 float Fluency::getScore() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/UpdateSqlFilterControlRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -42,7 +41,6 @@ web::json::value UpdateSqlFilterControlRequest::toJson() const
 
     return val;
 }
-
 bool UpdateSqlFilterControlRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool UpdateSqlFilterControlRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateSqlFilterControlRequest::getXLanguage() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/ShowLogsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -37,7 +36,6 @@ web::json::value ShowLogsResponse::toJson() const
 
     return val;
 }
-
 bool ShowLogsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ShowLogsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ShowLogsResponse::getTotal() const
 {

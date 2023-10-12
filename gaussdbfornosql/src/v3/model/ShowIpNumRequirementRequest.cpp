@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/ShowIpNumRequirementRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -48,7 +47,6 @@ web::json::value ShowIpNumRequirementRequest::toJson() const
 
     return val;
 }
-
 bool ShowIpNumRequirementRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool ShowIpNumRequirementRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ShowIpNumRequirementRequest::getNodeNum() const
 {

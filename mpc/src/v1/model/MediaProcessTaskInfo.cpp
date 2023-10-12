@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/MediaProcessTaskInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -65,7 +64,6 @@ web::json::value MediaProcessTaskInfo::toJson() const
 
     return val;
 }
-
 bool MediaProcessTaskInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -144,6 +142,7 @@ bool MediaProcessTaskInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string MediaProcessTaskInfo::getTaskId() const
 {

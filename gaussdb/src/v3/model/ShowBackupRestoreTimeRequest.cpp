@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/ShowBackupRestoreTimeRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -43,7 +42,6 @@ web::json::value ShowBackupRestoreTimeRequest::toJson() const
 
     return val;
 }
-
 bool ShowBackupRestoreTimeRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool ShowBackupRestoreTimeRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowBackupRestoreTimeRequest::getXLanguage() const
 {

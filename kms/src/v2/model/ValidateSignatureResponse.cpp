@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/kms/v2/model/ValidateSignatureResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Kms {
@@ -38,7 +37,6 @@ web::json::value ValidateSignatureResponse::toJson() const
 
     return val;
 }
-
 bool ValidateSignatureResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ValidateSignatureResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ValidateSignatureResponse::getKeyId() const
 {

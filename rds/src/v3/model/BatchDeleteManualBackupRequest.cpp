@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/BatchDeleteManualBackupRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -37,7 +36,6 @@ web::json::value BatchDeleteManualBackupRequest::toJson() const
 
     return val;
 }
-
 bool BatchDeleteManualBackupRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool BatchDeleteManualBackupRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string BatchDeleteManualBackupRequest::getXLanguage() const
 {

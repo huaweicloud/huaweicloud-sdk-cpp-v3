@@ -2,9 +2,11 @@
 #ifndef HUAWEICLOUD_SDK_SMN_V2_MODEL_TagMatch_H_
 #define HUAWEICLOUD_SDK_SMN_V2_MODEL_TagMatch_H_
 
+
 #include <huaweicloud/smn/v2/SmnExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
@@ -31,10 +33,8 @@ public:
     /// ModelBase overrides
 
     void validate() override;
-
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
-
     /////////////////////////////////////////////
     /// TagMatch members
 

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/RestoreRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -53,7 +52,6 @@ web::json::value RestoreRequest::toJson() const
 
     return val;
 }
-
 bool RestoreRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool RestoreRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string RestoreRequest::getTargetInstanceId() const
 {

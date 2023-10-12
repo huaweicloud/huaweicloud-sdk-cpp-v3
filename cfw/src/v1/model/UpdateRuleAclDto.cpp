@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/UpdateRuleAclDto.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -104,7 +103,6 @@ web::json::value UpdateRuleAclDto::toJson() const
 
     return val;
 }
-
 bool UpdateRuleAclDto::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -255,6 +253,7 @@ bool UpdateRuleAclDto::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t UpdateRuleAclDto::getAddressType() const
 {

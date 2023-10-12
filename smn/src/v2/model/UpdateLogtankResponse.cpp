@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/smn/v2/model/UpdateLogtankResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Smn {
@@ -37,7 +36,6 @@ web::json::value UpdateLogtankResponse::toJson() const
 
     return val;
 }
-
 bool UpdateLogtankResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool UpdateLogtankResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateLogtankResponse::getRequestId() const
 {

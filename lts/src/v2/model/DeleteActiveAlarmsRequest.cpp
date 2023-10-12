@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/DeleteActiveAlarmsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -42,7 +41,6 @@ web::json::value DeleteActiveAlarmsRequest::toJson() const
 
     return val;
 }
-
 bool DeleteActiveAlarmsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool DeleteActiveAlarmsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DeleteActiveAlarmsRequest::getDomainId() const
 {

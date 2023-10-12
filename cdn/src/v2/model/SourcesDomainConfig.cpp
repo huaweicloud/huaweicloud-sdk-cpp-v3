@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v2/model/SourcesDomainConfig.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -68,7 +67,6 @@ web::json::value SourcesDomainConfig::toJson() const
 
     return val;
 }
-
 bool SourcesDomainConfig::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -147,6 +145,7 @@ bool SourcesDomainConfig::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string SourcesDomainConfig::getOriginType() const
 {

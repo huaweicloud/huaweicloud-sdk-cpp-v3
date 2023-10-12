@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/AddAddressItemsInfoDto_address_items.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -48,7 +47,6 @@ web::json::value AddAddressItemsInfoDto_address_items::toJson() const
 
     return val;
 }
-
 bool AddAddressItemsInfoDto_address_items::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool AddAddressItemsInfoDto_address_items::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string AddAddressItemsInfoDto_address_items::getName() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/CreateAnimatedGraphicsTaskReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -45,7 +44,6 @@ web::json::value CreateAnimatedGraphicsTaskReq::toJson() const
 
     return val;
 }
-
 bool CreateAnimatedGraphicsTaskReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -88,6 +86,7 @@ bool CreateAnimatedGraphicsTaskReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 ObsObjInfo CreateAnimatedGraphicsTaskReq::getInput() const
 {

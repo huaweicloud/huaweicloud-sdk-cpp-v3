@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/CreateInstanceRespItem.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -103,7 +102,6 @@ web::json::value CreateInstanceRespItem::toJson() const
 
     return val;
 }
-
 bool CreateInstanceRespItem::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -254,6 +252,7 @@ bool CreateInstanceRespItem::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateInstanceRespItem::getId() const
 {

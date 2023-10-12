@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/ListFlavorsResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -61,7 +60,6 @@ web::json::value ListFlavorsResult::toJson() const
 
     return val;
 }
-
 bool ListFlavorsResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -131,6 +129,7 @@ bool ListFlavorsResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListFlavorsResult::getEngineName() const
 {

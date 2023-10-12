@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/ListDomainLogsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -37,7 +36,6 @@ web::json::value ListDomainLogsResponse::toJson() const
 
     return val;
 }
-
 bool ListDomainLogsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ListDomainLogsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ListDomainLogsResponse::getTotal() const
 {

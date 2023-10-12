@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/MysqlInstanceRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -132,7 +131,6 @@ web::json::value MysqlInstanceRequest::toJson() const
 
     return val;
 }
-
 bool MysqlInstanceRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -337,6 +335,7 @@ bool MysqlInstanceRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 MysqlChargeInfo MysqlInstanceRequest::getChargeInfo() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/QueryRestoreList.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -61,7 +60,6 @@ web::json::value QueryRestoreList::toJson() const
 
     return val;
 }
-
 bool QueryRestoreList::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -131,6 +129,7 @@ bool QueryRestoreList::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string QueryRestoreList::getInstanceId() const
 {

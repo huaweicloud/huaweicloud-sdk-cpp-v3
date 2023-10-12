@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/Referer.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -43,7 +42,6 @@ web::json::value Referer::toJson() const
 
     return val;
 }
-
 bool Referer::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool Referer::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t Referer::getRefererType() const
 {

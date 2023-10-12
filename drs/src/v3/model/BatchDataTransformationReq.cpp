@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/BatchDataTransformationReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -32,7 +31,6 @@ web::json::value BatchDataTransformationReq::toJson() const
 
     return val;
 }
-
 bool BatchDataTransformationReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool BatchDataTransformationReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<CheckDataTransformationReq>& BatchDataTransformationReq::getJobs()
 {

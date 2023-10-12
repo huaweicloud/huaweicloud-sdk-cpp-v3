@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/ReinstallServerWithoutCloudInitResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -33,7 +32,6 @@ web::json::value ReinstallServerWithoutCloudInitResponse::toJson() const
 
     return val;
 }
-
 bool ReinstallServerWithoutCloudInitResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool ReinstallServerWithoutCloudInitResponse::fromJson(const web::json::value& v
     }
     return ok;
 }
+
 
 std::string ReinstallServerWithoutCloudInitResponse::getJobId() const
 {

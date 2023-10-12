@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/RecognizeGeneralTableRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -37,7 +36,6 @@ web::json::value RecognizeGeneralTableRequest::toJson() const
 
     return val;
 }
-
 bool RecognizeGeneralTableRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool RecognizeGeneralTableRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string RecognizeGeneralTableRequest::getEnterpriseProjectId() const
 {

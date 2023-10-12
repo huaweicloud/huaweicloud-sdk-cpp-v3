@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v2/model/ChangePublicipToPeriodResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -42,7 +41,6 @@ web::json::value ChangePublicipToPeriodResponse::toJson() const
 
     return val;
 }
-
 bool ChangePublicipToPeriodResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool ChangePublicipToPeriodResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<std::string>& ChangePublicipToPeriodResponse::getPublicipIds()
 {

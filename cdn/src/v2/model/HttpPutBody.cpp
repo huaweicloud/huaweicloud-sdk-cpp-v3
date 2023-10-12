@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v2/model/HttpPutBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -73,7 +72,6 @@ web::json::value HttpPutBody::toJson() const
 
     return val;
 }
-
 bool HttpPutBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -161,6 +159,7 @@ bool HttpPutBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string HttpPutBody::getHttpsStatus() const
 {

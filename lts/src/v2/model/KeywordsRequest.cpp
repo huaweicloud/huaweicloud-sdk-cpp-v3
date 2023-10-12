@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/KeywordsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -73,7 +72,6 @@ web::json::value KeywordsRequest::toJson() const
 
     return val;
 }
-
 bool KeywordsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -161,6 +159,7 @@ bool KeywordsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string KeywordsRequest::getLogStreamId() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v2/model/RemovePublicipInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -38,7 +37,6 @@ web::json::value RemovePublicipInfo::toJson() const
 
     return val;
 }
-
 bool RemovePublicipInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool RemovePublicipInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string RemovePublicipInfo::getPublicipType() const
 {

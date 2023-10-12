@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v2/model/ListQueryHttpCodeRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -59,7 +58,6 @@ web::json::value ListQueryHttpCodeRequest::toJson() const
 
     return val;
 }
-
 bool ListQueryHttpCodeRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -129,6 +127,7 @@ bool ListQueryHttpCodeRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListQueryHttpCodeRequest::getProjectId() const
 {

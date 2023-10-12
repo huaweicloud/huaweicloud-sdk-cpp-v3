@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/ResultsTopnBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -27,6 +26,12 @@ ResultsTopnBody::ResultsTopnBody()
     logStreamIdIsSet_ = false;
     logStreamName_ = "";
     logStreamNameIsSet_ = false;
+    basicTransfer_ = 0.0;
+    basicTransferIsSet_ = false;
+    seniorTransfer_ = 0.0;
+    seniorTransferIsSet_ = false;
+    isAgencyTransfer_ = false;
+    isAgencyTransferIsSet_ = false;
 }
 
 ResultsTopnBody::~ResultsTopnBody() = default;
@@ -60,10 +65,18 @@ web::json::value ResultsTopnBody::toJson() const
     if(logStreamNameIsSet_) {
         val[utility::conversions::to_string_t("log_stream_name")] = ModelBase::toJson(logStreamName_);
     }
+    if(basicTransferIsSet_) {
+        val[utility::conversions::to_string_t("basic_transfer")] = ModelBase::toJson(basicTransfer_);
+    }
+    if(seniorTransferIsSet_) {
+        val[utility::conversions::to_string_t("senior_transfer")] = ModelBase::toJson(seniorTransfer_);
+    }
+    if(isAgencyTransferIsSet_) {
+        val[utility::conversions::to_string_t("is_agency_transfer")] = ModelBase::toJson(isAgencyTransfer_);
+    }
 
     return val;
 }
-
 bool ResultsTopnBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -131,8 +144,36 @@ bool ResultsTopnBody::fromJson(const web::json::value& val)
             setLogStreamName(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("basic_transfer"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("basic_transfer"));
+        if(!fieldValue.is_null())
+        {
+            double refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBasicTransfer(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("senior_transfer"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("senior_transfer"));
+        if(!fieldValue.is_null())
+        {
+            double refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSeniorTransfer(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_agency_transfer"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_agency_transfer"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsAgencyTransfer(refVal);
+        }
+    }
     return ok;
 }
+
 
 double ResultsTopnBody::getIndexTraffic() const
 {
@@ -279,6 +320,69 @@ bool ResultsTopnBody::logStreamNameIsSet() const
 void ResultsTopnBody::unsetlogStreamName()
 {
     logStreamNameIsSet_ = false;
+}
+
+double ResultsTopnBody::getBasicTransfer() const
+{
+    return basicTransfer_;
+}
+
+void ResultsTopnBody::setBasicTransfer(double value)
+{
+    basicTransfer_ = value;
+    basicTransferIsSet_ = true;
+}
+
+bool ResultsTopnBody::basicTransferIsSet() const
+{
+    return basicTransferIsSet_;
+}
+
+void ResultsTopnBody::unsetbasicTransfer()
+{
+    basicTransferIsSet_ = false;
+}
+
+double ResultsTopnBody::getSeniorTransfer() const
+{
+    return seniorTransfer_;
+}
+
+void ResultsTopnBody::setSeniorTransfer(double value)
+{
+    seniorTransfer_ = value;
+    seniorTransferIsSet_ = true;
+}
+
+bool ResultsTopnBody::seniorTransferIsSet() const
+{
+    return seniorTransferIsSet_;
+}
+
+void ResultsTopnBody::unsetseniorTransfer()
+{
+    seniorTransferIsSet_ = false;
+}
+
+bool ResultsTopnBody::isIsAgencyTransfer() const
+{
+    return isAgencyTransfer_;
+}
+
+void ResultsTopnBody::setIsAgencyTransfer(bool value)
+{
+    isAgencyTransfer_ = value;
+    isAgencyTransferIsSet_ = true;
+}
+
+bool ResultsTopnBody::isAgencyTransferIsSet() const
+{
+    return isAgencyTransferIsSet_;
+}
+
+void ResultsTopnBody::unsetisAgencyTransfer()
+{
+    isAgencyTransferIsSet_ = false;
 }
 
 }

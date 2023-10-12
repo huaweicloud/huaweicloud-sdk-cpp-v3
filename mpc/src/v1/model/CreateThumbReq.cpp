@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/CreateThumbReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -60,7 +59,6 @@ web::json::value CreateThumbReq::toJson() const
 
     return val;
 }
-
 bool CreateThumbReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -130,6 +128,7 @@ bool CreateThumbReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 ObsObjInfo CreateThumbReq::getInput() const
 {

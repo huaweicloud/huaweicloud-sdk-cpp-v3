@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/BatchCheckJobsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -37,7 +36,6 @@ web::json::value BatchCheckJobsResponse::toJson() const
 
     return val;
 }
-
 bool BatchCheckJobsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool BatchCheckJobsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<PostPreCheckResp>& BatchCheckJobsResponse::getResults()
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/kms/v2/model/DeleteTagRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Kms {
@@ -38,7 +37,6 @@ web::json::value DeleteTagRequest::toJson() const
 
     return val;
 }
-
 bool DeleteTagRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool DeleteTagRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DeleteTagRequest::getKeyId() const
 {

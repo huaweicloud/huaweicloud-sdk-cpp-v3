@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/ShowVodStatisticsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -48,7 +47,6 @@ web::json::value ShowVodStatisticsRequest::toJson() const
 
     return val;
 }
-
 bool ShowVodStatisticsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool ShowVodStatisticsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowVodStatisticsRequest::getXSdkDate() const
 {

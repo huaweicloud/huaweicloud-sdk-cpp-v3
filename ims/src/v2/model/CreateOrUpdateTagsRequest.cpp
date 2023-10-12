@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ims/v2/model/CreateOrUpdateTagsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ims {
@@ -32,7 +31,6 @@ web::json::value CreateOrUpdateTagsRequest::toJson() const
 
     return val;
 }
-
 bool CreateOrUpdateTagsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CreateOrUpdateTagsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 AddOrUpdateTagsRequestBody CreateOrUpdateTagsRequest::getBody() const
 {

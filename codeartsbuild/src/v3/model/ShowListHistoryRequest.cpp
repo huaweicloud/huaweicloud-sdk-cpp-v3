@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/codeartsbuild/v3/model/ShowListHistoryRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsbuild {
@@ -48,7 +47,6 @@ web::json::value ShowListHistoryRequest::toJson() const
 
     return val;
 }
-
 bool ShowListHistoryRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool ShowListHistoryRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowListHistoryRequest::getJobId() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/kms/v2/model/CreateParametersForImportRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Kms {
@@ -32,7 +31,6 @@ web::json::value CreateParametersForImportRequest::toJson() const
 
     return val;
 }
-
 bool CreateParametersForImportRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CreateParametersForImportRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 GetParametersForImportRequestBody CreateParametersForImportRequest::getBody() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/tms/v1/model/ResourceTagBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Tms {
@@ -38,7 +37,6 @@ web::json::value ResourceTagBody::toJson() const
 
     return val;
 }
-
 bool ResourceTagBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ResourceTagBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ResourceTagBody::getResourceId() const
 {

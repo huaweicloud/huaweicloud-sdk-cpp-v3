@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/kms/v2/model/ActionResources.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Kms {
@@ -46,7 +45,6 @@ web::json::value ActionResources::toJson() const
 
     return val;
 }
-
 bool ActionResources::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -89,6 +87,7 @@ bool ActionResources::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ActionResources::getResourceId() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/ComputeFlavor.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -52,7 +51,6 @@ web::json::value ComputeFlavor::toJson() const
 
     return val;
 }
-
 bool ComputeFlavor::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -104,6 +102,7 @@ bool ComputeFlavor::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ComputeFlavor::getVcpus() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/TemplateGroup.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -58,7 +57,6 @@ web::json::value TemplateGroup::toJson() const
 
     return val;
 }
-
 bool TemplateGroup::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -128,6 +126,7 @@ bool TemplateGroup::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string TemplateGroup::getGroupId() const
 {

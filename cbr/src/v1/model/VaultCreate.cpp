@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/VaultCreate.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -94,7 +93,6 @@ web::json::value VaultCreate::toJson() const
 
     return val;
 }
-
 bool VaultCreate::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -227,6 +225,7 @@ bool VaultCreate::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string VaultCreate::getBackupPolicyId() const
 {

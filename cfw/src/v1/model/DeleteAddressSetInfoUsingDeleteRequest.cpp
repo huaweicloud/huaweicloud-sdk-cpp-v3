@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/DeleteAddressSetInfoUsingDeleteRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -43,7 +42,6 @@ web::json::value DeleteAddressSetInfoUsingDeleteRequest::toJson() const
 
     return val;
 }
-
 bool DeleteAddressSetInfoUsingDeleteRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool DeleteAddressSetInfoUsingDeleteRequest::fromJson(const web::json::value& va
     }
     return ok;
 }
+
 
 std::string DeleteAddressSetInfoUsingDeleteRequest::getSetId() const
 {

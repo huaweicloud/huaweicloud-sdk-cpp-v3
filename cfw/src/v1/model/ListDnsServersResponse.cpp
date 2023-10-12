@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/ListDnsServersResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -37,7 +36,6 @@ web::json::value ListDnsServersResponse::toJson() const
 
     return val;
 }
-
 bool ListDnsServersResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ListDnsServersResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<DnsServersResponseDTO>& ListDnsServersResponse::getData()
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/csms/v1/model/CreateSecretEventRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Csms {
@@ -32,7 +31,6 @@ web::json::value CreateSecretEventRequest::toJson() const
 
     return val;
 }
-
 bool CreateSecretEventRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CreateSecretEventRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 CreateSecretEventRequestBody CreateSecretEventRequest::getBody() const
 {

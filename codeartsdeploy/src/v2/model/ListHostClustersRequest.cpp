@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/codeartsdeploy/v2/model/ListHostClustersRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsdeploy {
@@ -73,7 +72,6 @@ web::json::value ListHostClustersRequest::toJson() const
 
     return val;
 }
-
 bool ListHostClustersRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -161,6 +159,7 @@ bool ListHostClustersRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListHostClustersRequest::getProjectId() const
 {

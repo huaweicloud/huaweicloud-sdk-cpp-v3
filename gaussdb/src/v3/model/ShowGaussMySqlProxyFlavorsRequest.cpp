@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/ShowGaussMySqlProxyFlavorsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -38,7 +37,6 @@ web::json::value ShowGaussMySqlProxyFlavorsRequest::toJson() const
 
     return val;
 }
-
 bool ShowGaussMySqlProxyFlavorsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ShowGaussMySqlProxyFlavorsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowGaussMySqlProxyFlavorsRequest::getXLanguage() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/AddressItems.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -32,7 +31,6 @@ web::json::value AddressItems::toJson() const
 
     return val;
 }
-
 bool AddressItems::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool AddressItems::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<IdObject>& AddressItems::getItems()
 {

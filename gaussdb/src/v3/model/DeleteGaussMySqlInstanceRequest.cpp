@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/DeleteGaussMySqlInstanceRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -38,7 +37,6 @@ web::json::value DeleteGaussMySqlInstanceRequest::toJson() const
 
     return val;
 }
-
 bool DeleteGaussMySqlInstanceRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool DeleteGaussMySqlInstanceRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DeleteGaussMySqlInstanceRequest::getXLanguage() const
 {

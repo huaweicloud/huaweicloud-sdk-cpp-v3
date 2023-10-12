@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/UpdateVpcPeeringRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -32,7 +31,6 @@ web::json::value UpdateVpcPeeringRequestBody::toJson() const
 
     return val;
 }
-
 bool UpdateVpcPeeringRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool UpdateVpcPeeringRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 UpdateVpcPeeringOption UpdateVpcPeeringRequestBody::getPeering() const
 {

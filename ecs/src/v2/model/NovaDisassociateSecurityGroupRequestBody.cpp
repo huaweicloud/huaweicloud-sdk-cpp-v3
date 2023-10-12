@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/NovaDisassociateSecurityGroupRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -32,7 +31,6 @@ web::json::value NovaDisassociateSecurityGroupRequestBody::toJson() const
 
     return val;
 }
-
 bool NovaDisassociateSecurityGroupRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool NovaDisassociateSecurityGroupRequestBody::fromJson(const web::json::value& 
     }
     return ok;
 }
+
 
 NovaRemoveSecurityGroupOption NovaDisassociateSecurityGroupRequestBody::getRemoveSecurityGroup() const
 {

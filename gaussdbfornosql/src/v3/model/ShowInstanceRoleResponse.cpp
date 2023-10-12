@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/ShowInstanceRoleResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -33,7 +32,6 @@ web::json::value ShowInstanceRoleResponse::toJson() const
 
     return val;
 }
-
 bool ShowInstanceRoleResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool ShowInstanceRoleResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowInstanceRoleResponse::getRole() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/CharListIem.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -42,7 +41,6 @@ web::json::value CharListIem::toJson() const
 
     return val;
 }
-
 bool CharListIem::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool CharListIem::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CharListIem::getChar() const
 {

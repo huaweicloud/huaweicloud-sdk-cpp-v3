@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v1/model/VodInfoV2.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -38,7 +37,6 @@ web::json::value VodInfoV2::toJson() const
 
     return val;
 }
-
 bool VodInfoV2::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool VodInfoV2::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string VodInfoV2::getAssetId() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/AttachEipRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -38,7 +37,6 @@ web::json::value AttachEipRequestBody::toJson() const
 
     return val;
 }
-
 bool AttachEipRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool AttachEipRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string AttachEipRequestBody::getPublicIpId() const
 {

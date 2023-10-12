@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/MixInfo_layout.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -32,7 +31,6 @@ web::json::value MixInfo_layout::toJson() const
 
     return val;
 }
-
 bool MixInfo_layout::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool MixInfo_layout::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<PaneSetting>& MixInfo_layout::getPanes()
 {

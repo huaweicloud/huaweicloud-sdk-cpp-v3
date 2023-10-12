@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/BindingVifDetails.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -43,7 +42,6 @@ web::json::value BindingVifDetails::toJson() const
 
     return val;
 }
-
 bool BindingVifDetails::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool BindingVifDetails::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool BindingVifDetails::isPrimaryInterface() const
 {

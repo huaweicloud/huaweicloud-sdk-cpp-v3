@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/StructConfig.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -66,7 +65,6 @@ web::json::value StructConfig::toJson() const
 
     return val;
 }
-
 bool StructConfig::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -145,6 +143,7 @@ bool StructConfig::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string StructConfig::getLogGroupId() const
 {

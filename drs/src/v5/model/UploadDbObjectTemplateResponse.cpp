@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/UploadDbObjectTemplateResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -43,7 +42,6 @@ web::json::value UploadDbObjectTemplateResponse::toJson() const
 
     return val;
 }
-
 bool UploadDbObjectTemplateResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool UploadDbObjectTemplateResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool UploadDbObjectTemplateResponse::isSendSuccess() const
 {

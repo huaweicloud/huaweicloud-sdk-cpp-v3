@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/BatchOperateInstanceTagRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -37,7 +36,6 @@ web::json::value BatchOperateInstanceTagRequestBody::toJson() const
 
     return val;
 }
-
 bool BatchOperateInstanceTagRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool BatchOperateInstanceTagRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string BatchOperateInstanceTagRequestBody::getAction() const
 {

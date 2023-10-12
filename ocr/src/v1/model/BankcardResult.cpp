@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/BankcardResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -61,7 +60,6 @@ web::json::value BankcardResult::toJson() const
 
     return val;
 }
-
 bool BankcardResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -131,6 +129,7 @@ bool BankcardResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string BankcardResult::getBankName() const
 {

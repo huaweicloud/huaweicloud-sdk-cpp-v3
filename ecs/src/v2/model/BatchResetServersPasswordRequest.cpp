@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/BatchResetServersPasswordRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -32,7 +31,6 @@ web::json::value BatchResetServersPasswordRequest::toJson() const
 
     return val;
 }
-
 bool BatchResetServersPasswordRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool BatchResetServersPasswordRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 BatchResetServersPasswordRequestBody BatchResetServersPasswordRequest::getBody() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/GroupResponseItem.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -56,7 +55,6 @@ web::json::value GroupResponseItem::toJson() const
 
     return val;
 }
-
 bool GroupResponseItem::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -117,6 +115,7 @@ bool GroupResponseItem::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string GroupResponseItem::getType() const
 {

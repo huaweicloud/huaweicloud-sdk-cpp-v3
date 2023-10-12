@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/FailoverRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -33,7 +32,6 @@ web::json::value FailoverRequest::toJson() const
 
     return val;
 }
-
 bool FailoverRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool FailoverRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool FailoverRequest::isForce() const
 {

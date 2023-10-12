@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/codeartsbuild/v3/model/RunJobResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsbuild {
@@ -43,7 +42,6 @@ web::json::value RunJobResponse::toJson() const
 
     return val;
 }
-
 bool RunJobResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool RunJobResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string RunJobResponse::getOctopusJobName() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/UserAccountVO.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -71,7 +70,6 @@ web::json::value UserAccountVO::toJson() const
 
     return val;
 }
-
 bool UserAccountVO::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -159,6 +157,7 @@ bool UserAccountVO::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UserAccountVO::getId() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/ClipInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -42,7 +41,6 @@ web::json::value ClipInfo::toJson() const
 
     return val;
 }
-
 bool ClipInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool ClipInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 ObsObjInfo ClipInfo::getInput() const
 {

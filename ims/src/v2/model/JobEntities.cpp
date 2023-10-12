@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ims/v2/model/JobEntities.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ims {
@@ -19,6 +18,16 @@ JobEntities::JobEntities()
     currentTaskIsSet_ = false;
     imageName_ = "";
     imageNameIsSet_ = false;
+    additionErrorCode_ = "";
+    additionErrorCodeIsSet_ = false;
+    additionErrorMsg_ = "";
+    additionErrorMsgIsSet_ = false;
+    errorCode_ = "";
+    errorCodeIsSet_ = false;
+    error_ = "";
+    errorIsSet_ = false;
+    alarmCode_ = "";
+    alarmCodeIsSet_ = false;
     processPercent_ = 0.0;
     processPercentIsSet_ = false;
     resultsIsSet_ = false;
@@ -45,6 +54,21 @@ web::json::value JobEntities::toJson() const
     if(imageNameIsSet_) {
         val[utility::conversions::to_string_t("image_name")] = ModelBase::toJson(imageName_);
     }
+    if(additionErrorCodeIsSet_) {
+        val[utility::conversions::to_string_t("addition_error_code")] = ModelBase::toJson(additionErrorCode_);
+    }
+    if(additionErrorMsgIsSet_) {
+        val[utility::conversions::to_string_t("addition_error_msg")] = ModelBase::toJson(additionErrorMsg_);
+    }
+    if(errorCodeIsSet_) {
+        val[utility::conversions::to_string_t("error_code")] = ModelBase::toJson(errorCode_);
+    }
+    if(errorIsSet_) {
+        val[utility::conversions::to_string_t("error")] = ModelBase::toJson(error_);
+    }
+    if(alarmCodeIsSet_) {
+        val[utility::conversions::to_string_t("alarm_code")] = ModelBase::toJson(alarmCode_);
+    }
     if(processPercentIsSet_) {
         val[utility::conversions::to_string_t("process_percent")] = ModelBase::toJson(processPercent_);
     }
@@ -60,7 +84,6 @@ web::json::value JobEntities::toJson() const
 
     return val;
 }
-
 bool JobEntities::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -90,6 +113,51 @@ bool JobEntities::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setImageName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("addition_error_code"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("addition_error_code"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAdditionErrorCode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("addition_error_msg"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("addition_error_msg"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAdditionErrorMsg(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("error_code"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("error_code"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setErrorCode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("error"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("error"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setError(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("alarm_code"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("alarm_code"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAlarmCode(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("process_percent"))) {
@@ -130,6 +198,7 @@ bool JobEntities::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string JobEntities::getImageId() const
 {
@@ -192,6 +261,111 @@ bool JobEntities::imageNameIsSet() const
 void JobEntities::unsetimageName()
 {
     imageNameIsSet_ = false;
+}
+
+std::string JobEntities::getAdditionErrorCode() const
+{
+    return additionErrorCode_;
+}
+
+void JobEntities::setAdditionErrorCode(const std::string& value)
+{
+    additionErrorCode_ = value;
+    additionErrorCodeIsSet_ = true;
+}
+
+bool JobEntities::additionErrorCodeIsSet() const
+{
+    return additionErrorCodeIsSet_;
+}
+
+void JobEntities::unsetadditionErrorCode()
+{
+    additionErrorCodeIsSet_ = false;
+}
+
+std::string JobEntities::getAdditionErrorMsg() const
+{
+    return additionErrorMsg_;
+}
+
+void JobEntities::setAdditionErrorMsg(const std::string& value)
+{
+    additionErrorMsg_ = value;
+    additionErrorMsgIsSet_ = true;
+}
+
+bool JobEntities::additionErrorMsgIsSet() const
+{
+    return additionErrorMsgIsSet_;
+}
+
+void JobEntities::unsetadditionErrorMsg()
+{
+    additionErrorMsgIsSet_ = false;
+}
+
+std::string JobEntities::getErrorCode() const
+{
+    return errorCode_;
+}
+
+void JobEntities::setErrorCode(const std::string& value)
+{
+    errorCode_ = value;
+    errorCodeIsSet_ = true;
+}
+
+bool JobEntities::errorCodeIsSet() const
+{
+    return errorCodeIsSet_;
+}
+
+void JobEntities::unseterrorCode()
+{
+    errorCodeIsSet_ = false;
+}
+
+std::string JobEntities::getError() const
+{
+    return error_;
+}
+
+void JobEntities::setError(const std::string& value)
+{
+    error_ = value;
+    errorIsSet_ = true;
+}
+
+bool JobEntities::errorIsSet() const
+{
+    return errorIsSet_;
+}
+
+void JobEntities::unseterror()
+{
+    errorIsSet_ = false;
+}
+
+std::string JobEntities::getAlarmCode() const
+{
+    return alarmCode_;
+}
+
+void JobEntities::setAlarmCode(const std::string& value)
+{
+    alarmCode_ = value;
+    alarmCodeIsSet_ = true;
+}
+
+bool JobEntities::alarmCodeIsSet() const
+{
+    return alarmCodeIsSet_;
+}
+
+void JobEntities::unsetalarmCode()
+{
+    alarmCodeIsSet_ = false;
 }
 
 double JobEntities::getProcessPercent() const

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/ShowConfigurationAppliedHistoryRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -43,7 +42,6 @@ web::json::value ShowConfigurationAppliedHistoryRequest::toJson() const
 
     return val;
 }
-
 bool ShowConfigurationAppliedHistoryRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool ShowConfigurationAppliedHistoryRequest::fromJson(const web::json::value& va
     }
     return ok;
 }
+
 
 std::string ShowConfigurationAppliedHistoryRequest::getConfigId() const
 {

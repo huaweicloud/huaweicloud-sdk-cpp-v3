@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/CpuOptions.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -33,7 +32,6 @@ web::json::value CpuOptions::toJson() const
 
     return val;
 }
-
 bool CpuOptions::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool CpuOptions::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t CpuOptions::getHwcpuThreads() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/ListStorageTypesResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -32,7 +31,6 @@ web::json::value ListStorageTypesResponse::toJson() const
 
     return val;
 }
-
 bool ListStorageTypesResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ListStorageTypesResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<Storage>& ListStorageTypesResponse::getStorageType()
 {

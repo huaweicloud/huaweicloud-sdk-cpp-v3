@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eps/v1/model/ShowEnterpriseProjectQuotaResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eps {
@@ -32,7 +31,6 @@ web::json::value ShowEnterpriseProjectQuotaResponse::toJson() const
 
     return val;
 }
-
 bool ShowEnterpriseProjectQuotaResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ShowEnterpriseProjectQuotaResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 QuotasDetail ShowEnterpriseProjectQuotaResponse::getQuotas() const
 {

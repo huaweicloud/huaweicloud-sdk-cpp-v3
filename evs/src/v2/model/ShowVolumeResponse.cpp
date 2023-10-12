@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/evs/v2/model/ShowVolumeResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Evs {
@@ -32,7 +31,6 @@ web::json::value ShowVolumeResponse::toJson() const
 
     return val;
 }
-
 bool ShowVolumeResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ShowVolumeResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 VolumeDetail ShowVolumeResponse::getVolume() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/VideoParameters.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -88,7 +87,6 @@ web::json::value VideoParameters::toJson() const
 
     return val;
 }
-
 bool VideoParameters::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -203,6 +201,7 @@ bool VideoParameters::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string VideoParameters::getOutputPolicy() const
 {

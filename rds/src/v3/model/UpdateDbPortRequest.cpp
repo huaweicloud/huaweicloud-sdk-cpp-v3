@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/UpdateDbPortRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -33,7 +32,6 @@ web::json::value UpdateDbPortRequest::toJson() const
 
     return val;
 }
-
 bool UpdateDbPortRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool UpdateDbPortRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t UpdateDbPortRequest::getPort() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/RecognizeVinResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -32,7 +31,6 @@ web::json::value RecognizeVinResponse::toJson() const
 
     return val;
 }
-
 bool RecognizeVinResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool RecognizeVinResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 VINResult RecognizeVinResponse::getResult() const
 {

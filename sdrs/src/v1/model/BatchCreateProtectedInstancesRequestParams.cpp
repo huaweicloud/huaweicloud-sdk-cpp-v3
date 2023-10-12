@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sdrs/v1/model/BatchCreateProtectedInstancesRequestParams.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sdrs {
@@ -71,7 +70,6 @@ web::json::value BatchCreateProtectedInstancesRequestParams::toJson() const
 
     return val;
 }
-
 bool BatchCreateProtectedInstancesRequestParams::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -159,6 +157,7 @@ bool BatchCreateProtectedInstancesRequestParams::fromJson(const web::json::value
     }
     return ok;
 }
+
 
 std::string BatchCreateProtectedInstancesRequestParams::getNamePrefix() const
 {

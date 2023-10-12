@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eps/v1/model/VersionDetail.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eps {
@@ -57,7 +56,6 @@ web::json::value VersionDetail::toJson() const
 
     return val;
 }
-
 bool VersionDetail::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -118,6 +116,7 @@ bool VersionDetail::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string VersionDetail::getId() const
 {

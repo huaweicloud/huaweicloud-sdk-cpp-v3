@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/ShowBalanceStatusRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -38,7 +37,6 @@ web::json::value ShowBalanceStatusRequest::toJson() const
 
     return val;
 }
-
 bool ShowBalanceStatusRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ShowBalanceStatusRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowBalanceStatusRequest::getXLanguage() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/ListFlowLogsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -32,7 +31,6 @@ web::json::value ListFlowLogsResponse::toJson() const
 
     return val;
 }
-
 bool ListFlowLogsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ListFlowLogsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 HttpQueryCfwFlowLogsResponseDTO_data ListFlowLogsResponse::getData() const
 {

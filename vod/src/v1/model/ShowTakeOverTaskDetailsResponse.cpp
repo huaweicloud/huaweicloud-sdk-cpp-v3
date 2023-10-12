@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/ShowTakeOverTaskDetailsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -47,7 +46,6 @@ web::json::value ShowTakeOverTaskDetailsResponse::toJson() const
 
     return val;
 }
-
 bool ShowTakeOverTaskDetailsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -90,6 +88,7 @@ bool ShowTakeOverTaskDetailsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ShowTakeOverTaskDetailsResponse::getTotal() const
 {

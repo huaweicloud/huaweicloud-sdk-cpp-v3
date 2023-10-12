@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/SetBalancerWindowResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -33,7 +32,6 @@ web::json::value SetBalancerWindowResponse::toJson() const
 
     return val;
 }
-
 bool SetBalancerWindowResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool SetBalancerWindowResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string SetBalancerWindowResponse::getJobId() const
 {

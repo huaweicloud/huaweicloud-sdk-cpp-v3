@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/ListAuditLogDownloadLinkResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -32,7 +31,6 @@ web::json::value ListAuditLogDownloadLinkResponse::toJson() const
 
     return val;
 }
-
 bool ListAuditLogDownloadLinkResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ListAuditLogDownloadLinkResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<FileInfo>& ListAuditLogDownloadLinkResponse::getFiles()
 {

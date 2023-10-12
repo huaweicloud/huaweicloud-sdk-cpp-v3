@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sdrs/v1/model/ReplicationClusterParams.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sdrs {
@@ -33,7 +32,6 @@ web::json::value ReplicationClusterParams::toJson() const
 
     return val;
 }
-
 bool ReplicationClusterParams::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool ReplicationClusterParams::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ReplicationClusterParams::getAvailabilityZone() const
 {

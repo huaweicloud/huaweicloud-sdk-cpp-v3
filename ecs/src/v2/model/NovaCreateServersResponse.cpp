@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/NovaCreateServersResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -32,7 +31,6 @@ web::json::value NovaCreateServersResponse::toJson() const
 
     return val;
 }
-
 bool NovaCreateServersResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool NovaCreateServersResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 NovaCreateServersResult NovaCreateServersResponse::getServer() const
 {

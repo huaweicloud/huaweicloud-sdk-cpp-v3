@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/CreateSqlserverDbUserRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -42,7 +41,6 @@ web::json::value CreateSqlserverDbUserRequest::toJson() const
 
     return val;
 }
-
 bool CreateSqlserverDbUserRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool CreateSqlserverDbUserRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateSqlserverDbUserRequest::getXLanguage() const
 {

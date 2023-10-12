@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/ApplyConfigurationResponse_apply_results.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -48,7 +47,6 @@ web::json::value ApplyConfigurationResponse_apply_results::toJson() const
 
     return val;
 }
-
 bool ApplyConfigurationResponse_apply_results::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool ApplyConfigurationResponse_apply_results::fromJson(const web::json::value& 
     }
     return ok;
 }
+
 
 std::string ApplyConfigurationResponse_apply_results::getInstanceId() const
 {

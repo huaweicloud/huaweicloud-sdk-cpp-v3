@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/DataIpRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -33,7 +32,6 @@ web::json::value DataIpRequest::toJson() const
 
     return val;
 }
-
 bool DataIpRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool DataIpRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DataIpRequest::getNewIp() const
 {

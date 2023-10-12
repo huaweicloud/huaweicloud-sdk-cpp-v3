@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/EipOperateProtectReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -42,7 +41,6 @@ web::json::value EipOperateProtectReq::toJson() const
 
     return val;
 }
-
 bool EipOperateProtectReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool EipOperateProtectReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string EipOperateProtectReq::getObjectId() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sis/v1/model/RecognizeShortAudioResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sis {
@@ -37,7 +36,6 @@ web::json::value RecognizeShortAudioResponse::toJson() const
 
     return val;
 }
-
 bool RecognizeShortAudioResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool RecognizeShortAudioResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string RecognizeShortAudioResponse::getTraceId() const
 {

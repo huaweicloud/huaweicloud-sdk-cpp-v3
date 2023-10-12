@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/ShowSupportObjectTypeResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -82,7 +81,6 @@ web::json::value ShowSupportObjectTypeResponse::toJson() const
 
     return val;
 }
-
 bool ShowSupportObjectTypeResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -188,6 +186,7 @@ bool ShowSupportObjectTypeResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool ShowSupportObjectTypeResponse::isIsFullTransSupportObject() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/QueryMetricResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -102,7 +101,6 @@ web::json::value QueryMetricResult::toJson() const
 
     return val;
 }
-
 bool QueryMetricResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -244,6 +242,7 @@ bool QueryMetricResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string QueryMetricResult::getJobId() const
 {

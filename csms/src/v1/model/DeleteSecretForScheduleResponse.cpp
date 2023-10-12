@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/csms/v1/model/DeleteSecretForScheduleResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Csms {
@@ -32,7 +31,6 @@ web::json::value DeleteSecretForScheduleResponse::toJson() const
 
     return val;
 }
-
 bool DeleteSecretForScheduleResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool DeleteSecretForScheduleResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 Secret DeleteSecretForScheduleResponse::getSecret() const
 {

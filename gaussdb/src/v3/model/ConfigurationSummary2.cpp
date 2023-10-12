@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/ConfigurationSummary2.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -57,7 +56,6 @@ web::json::value ConfigurationSummary2::toJson() const
 
     return val;
 }
-
 bool ConfigurationSummary2::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -118,6 +116,7 @@ bool ConfigurationSummary2::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ConfigurationSummary2::getId() const
 {

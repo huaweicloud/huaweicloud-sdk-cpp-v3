@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/ChileIdCardConfidence.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -73,7 +72,6 @@ web::json::value ChileIdCardConfidence::toJson() const
 
     return val;
 }
-
 bool ChileIdCardConfidence::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -161,6 +159,7 @@ bool ChileIdCardConfidence::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 float ChileIdCardConfidence::getSurname() const
 {

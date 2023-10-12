@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/MysqlProxyNodeV3.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -57,7 +56,6 @@ web::json::value MysqlProxyNodeV3::toJson() const
 
     return val;
 }
-
 bool MysqlProxyNodeV3::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -118,6 +116,7 @@ bool MysqlProxyNodeV3::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string MysqlProxyNodeV3::getId() const
 {

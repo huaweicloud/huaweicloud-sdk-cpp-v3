@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/InstanceItemTagItem.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -38,7 +37,6 @@ web::json::value InstanceItemTagItem::toJson() const
 
     return val;
 }
-
 bool InstanceItemTagItem::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool InstanceItemTagItem::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string InstanceItemTagItem::getKey() const
 {

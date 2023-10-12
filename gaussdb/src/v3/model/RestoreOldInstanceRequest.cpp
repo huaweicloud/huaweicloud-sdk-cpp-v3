@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/RestoreOldInstanceRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -37,7 +36,6 @@ web::json::value RestoreOldInstanceRequest::toJson() const
 
     return val;
 }
-
 bool RestoreOldInstanceRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool RestoreOldInstanceRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string RestoreOldInstanceRequest::getXLanguage() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/ListServerGroupsResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -50,7 +49,6 @@ web::json::value ListServerGroupsResult::toJson() const
 
     return val;
 }
-
 bool ListServerGroupsResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -102,6 +100,7 @@ bool ListServerGroupsResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListServerGroupsResult::getId() const
 {

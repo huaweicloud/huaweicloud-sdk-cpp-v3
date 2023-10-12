@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/Configs.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -108,7 +107,6 @@ web::json::value Configs::toJson() const
 
     return val;
 }
-
 bool Configs::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -286,6 +284,7 @@ bool Configs::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<OriginRequestHeader>& Configs::getOriginRequestHeader()
 {

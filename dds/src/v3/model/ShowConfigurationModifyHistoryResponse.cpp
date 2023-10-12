@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/ShowConfigurationModifyHistoryResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -32,7 +31,6 @@ web::json::value ShowConfigurationModifyHistoryResponse::toJson() const
 
     return val;
 }
-
 bool ShowConfigurationModifyHistoryResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ShowConfigurationModifyHistoryResponse::fromJson(const web::json::value& va
     }
     return ok;
 }
+
 
 std::vector<HistoryInfo>& ShowConfigurationModifyHistoryResponse::getHistories()
 {

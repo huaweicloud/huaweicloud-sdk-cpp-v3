@@ -2,9 +2,11 @@
 #ifndef HUAWEICLOUD_SDK_LTS_V2_MODEL_DeleteTransferResponse_H_
 #define HUAWEICLOUD_SDK_LTS_V2_MODEL_DeleteTransferResponse_H_
 
+
 #include <huaweicloud/lts/v2/LtsExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/lts/v2/model/CreateTransferResponseBody_log_streams.h>
@@ -34,10 +36,8 @@ public:
     /// ModelBase overrides
 
     void validate() override;
-
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
-
     /////////////////////////////////////////////
     /// DeleteTransferResponse members
 

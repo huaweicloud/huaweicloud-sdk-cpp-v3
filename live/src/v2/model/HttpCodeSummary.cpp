@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v2/model/HttpCodeSummary.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -37,7 +36,6 @@ web::json::value HttpCodeSummary::toJson() const
 
     return val;
 }
-
 bool HttpCodeSummary::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool HttpCodeSummary::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<HttpCode>& HttpCodeSummary::getHttpCodes()
 {

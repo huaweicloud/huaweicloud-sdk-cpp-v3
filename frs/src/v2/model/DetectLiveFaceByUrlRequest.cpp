@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/frs/v2/model/DetectLiveFaceByUrlRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Frs {
@@ -37,7 +36,6 @@ web::json::value DetectLiveFaceByUrlRequest::toJson() const
 
     return val;
 }
-
 bool DetectLiveFaceByUrlRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool DetectLiveFaceByUrlRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DetectLiveFaceByUrlRequest::getEnterpriseProjectId() const
 {

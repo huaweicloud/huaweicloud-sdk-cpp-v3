@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/BillingUpdate.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -38,7 +37,6 @@ web::json::value BillingUpdate::toJson() const
 
     return val;
 }
-
 bool BillingUpdate::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool BillingUpdate::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string BillingUpdate::getConsistentLevel() const
 {

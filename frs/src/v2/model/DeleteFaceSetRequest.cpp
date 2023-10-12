@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/frs/v2/model/DeleteFaceSetRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Frs {
@@ -38,7 +37,6 @@ web::json::value DeleteFaceSetRequest::toJson() const
 
     return val;
 }
-
 bool DeleteFaceSetRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool DeleteFaceSetRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DeleteFaceSetRequest::getEnterpriseProjectId() const
 {

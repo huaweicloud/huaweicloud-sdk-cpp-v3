@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/kms/v2/model/DisableKeyRotationResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Kms {
@@ -28,13 +27,13 @@ web::json::value DisableKeyRotationResponse::toJson() const
 
     return val;
 }
-
 bool DisableKeyRotationResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 }
 }

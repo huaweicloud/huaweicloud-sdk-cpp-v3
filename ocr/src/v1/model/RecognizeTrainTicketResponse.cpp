@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/RecognizeTrainTicketResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -32,7 +31,6 @@ web::json::value RecognizeTrainTicketResponse::toJson() const
 
     return val;
 }
-
 bool RecognizeTrainTicketResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool RecognizeTrainTicketResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 TrainTicketResult RecognizeTrainTicketResponse::getResult() const
 {

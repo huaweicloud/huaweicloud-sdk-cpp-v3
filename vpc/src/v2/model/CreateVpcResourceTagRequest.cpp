@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/CreateVpcResourceTagRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -37,7 +36,6 @@ web::json::value CreateVpcResourceTagRequest::toJson() const
 
     return val;
 }
-
 bool CreateVpcResourceTagRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool CreateVpcResourceTagRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateVpcResourceTagRequest::getVpcId() const
 {

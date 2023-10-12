@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/codeartsdeploy/v2/model/CreateDeployTaskByTemplateRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsdeploy {
@@ -32,7 +31,6 @@ web::json::value CreateDeployTaskByTemplateRequest::toJson() const
 
     return val;
 }
-
 bool CreateDeployTaskByTemplateRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CreateDeployTaskByTemplateRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 TemplateTaskRequestBody CreateDeployTaskByTemplateRequest::getBody() const
 {

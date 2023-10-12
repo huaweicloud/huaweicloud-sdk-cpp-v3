@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/ListFlowLogsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -93,7 +92,6 @@ web::json::value ListFlowLogsRequest::toJson() const
 
     return val;
 }
-
 bool ListFlowLogsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -217,6 +215,7 @@ bool ListFlowLogsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListFlowLogsRequest::getId() const
 {

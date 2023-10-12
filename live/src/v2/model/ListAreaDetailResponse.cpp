@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v2/model/ListAreaDetailResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -37,7 +36,6 @@ web::json::value ListAreaDetailResponse::toJson() const
 
     return val;
 }
-
 bool ListAreaDetailResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ListAreaDetailResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<AreaDetail>& ListAreaDetailResponse::getDataList()
 {

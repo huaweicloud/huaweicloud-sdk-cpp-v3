@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ims/v2/model/GlanceShowImageMemberResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ims {
@@ -58,7 +57,6 @@ web::json::value GlanceShowImageMemberResponse::toJson() const
 
     return val;
 }
-
 bool GlanceShowImageMemberResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool GlanceShowImageMemberResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string GlanceShowImageMemberResponse::getStatus() const
 {

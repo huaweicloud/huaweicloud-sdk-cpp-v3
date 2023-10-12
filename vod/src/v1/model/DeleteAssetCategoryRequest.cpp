@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/DeleteAssetCategoryRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -38,7 +37,6 @@ web::json::value DeleteAssetCategoryRequest::toJson() const
 
     return val;
 }
-
 bool DeleteAssetCategoryRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool DeleteAssetCategoryRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DeleteAssetCategoryRequest::getXSdkDate() const
 {

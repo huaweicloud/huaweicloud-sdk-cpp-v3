@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/PostPaidServerNic.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -51,7 +50,6 @@ web::json::value PostPaidServerNic::toJson() const
 
     return val;
 }
-
 bool PostPaidServerNic::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -103,6 +101,7 @@ bool PostPaidServerNic::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string PostPaidServerNic::getSubnetId() const
 {

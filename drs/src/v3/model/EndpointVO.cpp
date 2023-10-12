@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/EndpointVO.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -207,7 +206,6 @@ web::json::value EndpointVO::toJson() const
 
     return val;
 }
-
 bool EndpointVO::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -538,6 +536,7 @@ bool EndpointVO::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string EndpointVO::getId() const
 {

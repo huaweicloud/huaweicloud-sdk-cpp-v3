@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v2/model/ListDomainsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -37,7 +36,6 @@ web::json::value ListDomainsResponse::toJson() const
 
     return val;
 }
-
 bool ListDomainsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ListDomainsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ListDomainsResponse::getTotal() const
 {

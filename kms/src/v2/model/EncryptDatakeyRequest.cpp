@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/kms/v2/model/EncryptDatakeyRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Kms {
@@ -32,7 +31,6 @@ web::json::value EncryptDatakeyRequest::toJson() const
 
     return val;
 }
-
 bool EncryptDatakeyRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool EncryptDatakeyRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 EncryptDatakeyRequestBody EncryptDatakeyRequest::getBody() const
 {

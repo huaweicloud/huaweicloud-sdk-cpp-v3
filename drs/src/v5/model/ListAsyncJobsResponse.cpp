@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/ListAsyncJobsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -37,7 +36,6 @@ web::json::value ListAsyncJobsResponse::toJson() const
 
     return val;
 }
-
 bool ListAsyncJobsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ListAsyncJobsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ListAsyncJobsResponse::getTotalCount() const
 {

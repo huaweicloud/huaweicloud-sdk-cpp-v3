@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/ListAvailableFlavorInfosRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -43,7 +42,6 @@ web::json::value ListAvailableFlavorInfosRequest::toJson() const
 
     return val;
 }
-
 bool ListAvailableFlavorInfosRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool ListAvailableFlavorInfosRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListAvailableFlavorInfosRequest::getInstanceId() const
 {

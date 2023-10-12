@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/Proxy.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -92,7 +91,6 @@ web::json::value Proxy::toJson() const
 
     return val;
 }
-
 bool Proxy::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -216,6 +214,7 @@ bool Proxy::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string Proxy::getPoolId() const
 {

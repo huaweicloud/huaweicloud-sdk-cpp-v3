@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/ModifyJobResp.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -48,7 +47,6 @@ web::json::value ModifyJobResp::toJson() const
 
     return val;
 }
-
 bool ModifyJobResp::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool ModifyJobResp::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ModifyJobResp::getId() const
 {

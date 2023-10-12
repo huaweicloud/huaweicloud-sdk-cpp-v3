@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/TextWatermark.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -73,7 +72,6 @@ web::json::value TextWatermark::toJson() const
 
     return val;
 }
-
 bool TextWatermark::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -161,6 +159,7 @@ bool TextWatermark::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string TextWatermark::getDx() const
 {

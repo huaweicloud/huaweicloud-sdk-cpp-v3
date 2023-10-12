@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/ListAddressSetListUsingGetResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -32,7 +31,6 @@ web::json::value ListAddressSetListUsingGetResponse::toJson() const
 
     return val;
 }
-
 bool ListAddressSetListUsingGetResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ListAddressSetListUsingGetResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 AddressSetListResponseDTO_data ListAddressSetListUsingGetResponse::getData() const
 {

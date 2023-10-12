@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/ShrinkInstanceNodeRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -37,7 +36,6 @@ web::json::value ShrinkInstanceNodeRequest::toJson() const
 
     return val;
 }
-
 bool ShrinkInstanceNodeRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ShrinkInstanceNodeRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShrinkInstanceNodeRequest::getInstanceId() const
 {

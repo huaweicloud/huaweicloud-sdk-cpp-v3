@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/smn/v2/model/CreateResourceTagRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Smn {
@@ -42,7 +41,6 @@ web::json::value CreateResourceTagRequest::toJson() const
 
     return val;
 }
-
 bool CreateResourceTagRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool CreateResourceTagRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateResourceTagRequest::getResourceType() const
 {

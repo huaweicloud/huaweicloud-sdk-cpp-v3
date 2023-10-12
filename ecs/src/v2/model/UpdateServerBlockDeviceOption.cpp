@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/UpdateServerBlockDeviceOption.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -33,7 +32,6 @@ web::json::value UpdateServerBlockDeviceOption::toJson() const
 
     return val;
 }
-
 bool UpdateServerBlockDeviceOption::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool UpdateServerBlockDeviceOption::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool UpdateServerBlockDeviceOption::isDeleteOnTermination() const
 {

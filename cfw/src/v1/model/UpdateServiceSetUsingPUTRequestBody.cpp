@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/UpdateServiceSetUsingPUTRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -38,7 +37,6 @@ web::json::value UpdateServiceSetUsingPUTRequestBody::toJson() const
 
     return val;
 }
-
 bool UpdateServiceSetUsingPUTRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool UpdateServiceSetUsingPUTRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateServiceSetUsingPUTRequestBody::getName() const
 {

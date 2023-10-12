@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/frs/v2/model/BoundingBox.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Frs {
@@ -48,7 +47,6 @@ web::json::value BoundingBox::toJson() const
 
     return val;
 }
-
 bool BoundingBox::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool BoundingBox::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t BoundingBox::getWidth() const
 {

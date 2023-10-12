@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/BatchUpdateJobRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -37,7 +36,6 @@ web::json::value BatchUpdateJobRequest::toJson() const
 
     return val;
 }
-
 bool BatchUpdateJobRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool BatchUpdateJobRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string BatchUpdateJobRequest::getXLanguage() const
 {

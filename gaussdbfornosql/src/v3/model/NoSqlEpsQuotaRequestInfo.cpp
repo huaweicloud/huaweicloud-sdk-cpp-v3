@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/NoSqlEpsQuotaRequestInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -43,7 +42,6 @@ web::json::value NoSqlEpsQuotaRequestInfo::toJson() const
 
     return val;
 }
-
 bool NoSqlEpsQuotaRequestInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool NoSqlEpsQuotaRequestInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t NoSqlEpsQuotaRequestInfo::getInstance() const
 {

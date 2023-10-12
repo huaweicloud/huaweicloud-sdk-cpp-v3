@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cts/v3/model/ListTrackersRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cts {
@@ -38,7 +37,6 @@ web::json::value ListTrackersRequest::toJson() const
 
     return val;
 }
-
 bool ListTrackersRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ListTrackersRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListTrackersRequest::getTrackerName() const
 {

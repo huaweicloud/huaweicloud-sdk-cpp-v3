@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/evs/v2/model/ResizeVolumeResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Evs {
@@ -38,7 +37,6 @@ web::json::value ResizeVolumeResponse::toJson() const
 
     return val;
 }
-
 bool ResizeVolumeResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ResizeVolumeResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ResizeVolumeResponse::getJobId() const
 {

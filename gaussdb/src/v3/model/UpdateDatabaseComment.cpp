@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/UpdateDatabaseComment.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -38,7 +37,6 @@ web::json::value UpdateDatabaseComment::toJson() const
 
     return val;
 }
-
 bool UpdateDatabaseComment::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool UpdateDatabaseComment::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateDatabaseComment::getName() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/NovaCreateServersOption.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -114,7 +113,6 @@ web::json::value NovaCreateServersOption::toJson() const
 
     return val;
 }
-
 bool NovaCreateServersOption::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -283,6 +281,7 @@ bool NovaCreateServersOption::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string NovaCreateServersOption::getAutoTerminateTime() const
 {

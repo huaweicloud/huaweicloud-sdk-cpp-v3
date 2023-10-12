@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/kms/v2/model/ShowKeyRotationStatusResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Kms {
@@ -48,7 +47,6 @@ web::json::value ShowKeyRotationStatusResponse::toJson() const
 
     return val;
 }
-
 bool ShowKeyRotationStatusResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool ShowKeyRotationStatusResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool ShowKeyRotationStatusResponse::isKeyRotationEnabled() const
 {

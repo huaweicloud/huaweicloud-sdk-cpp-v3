@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/BatchAttachSharableVolumesResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -33,7 +32,6 @@ web::json::value BatchAttachSharableVolumesResponse::toJson() const
 
     return val;
 }
-
 bool BatchAttachSharableVolumesResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool BatchAttachSharableVolumesResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string BatchAttachSharableVolumesResponse::getJobId() const
 {

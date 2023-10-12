@@ -33,6 +33,13 @@
 #include <vector>
 #include <huaweicloud/core/CoreExport.h>
 
+#if defined(HUAWEICLOUD_SDK_BSON_)
+#include <huaweicloud/core/bson/Builder.h>
+#include <huaweicloud/core/bson/Viewer.h>
+
+using namespace HuaweiCloud::Sdk::Core::Bson;
+#endif
+
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Core {
@@ -44,8 +51,8 @@ public:
 
     virtual void validate() = 0;
 
-    virtual web::json::value toJson() const = 0;
-    virtual bool fromJson(const web::json::value &json) = 0;
+    virtual web::json::value toJson() const;
+    virtual bool fromJson(const web::json::value &json);
 
     // virtual void toMultipart( std::shared_ptr<MultipartFormData> multipart, const utility::string_t& namePrefix )
     // const = 0; virtual bool fromMultiPart( std::shared_ptr<MultipartFormData> multipart, const utility::string_t&
@@ -71,6 +78,7 @@ public:
     static web::json::value toJson(int32_t val);
     static web::json::value toJson(int64_t val);
     static web::json::value toJson(const std::string &val);
+
 #if defined(WIN32) || defined(__WIN32__) || defined(_WIN32) || defined(_MSC_VER)
     static web::json::value toJson(const utility::string_t &val);
 #endif
@@ -117,7 +125,69 @@ public:
 #if defined(WIN32) || defined(__WIN32__) || defined(_WIN32) || defined(_MSC_VER)
     template <typename T> static bool fromJson(const web::json::value &val, std::map<utility::string_t, T> &);
 #endif
+#if defined(HUAWEICLOUD_SDK_BSON_)
+#define BSON_METHOD_DECL(TYPE)                                     \
+    static bool bson_get(const Viewer::Iterator &it, TYPE &value); \
+    static bool bson_append(Builder &builder, const TYPE &value);  \
+    static bool bson_append(Builder &builder, const std::string &key, const TYPE &value);
 
+    BSON_METHOD_DECL(double)
+    BSON_METHOD_DECL(BsonDouble)
+    BSON_METHOD_DECL(std::string)
+    BSON_METHOD_DECL(BsonString)
+    BSON_METHOD_DECL(Document)
+    BSON_METHOD_DECL(BsonDocument)
+    BSON_METHOD_DECL(Array)
+    BSON_METHOD_DECL(BsonArray)
+    BSON_METHOD_DECL(BsonBinary)
+    BSON_METHOD_DECL(BsonUndefined)
+    BSON_METHOD_DECL(Oid)
+    BSON_METHOD_DECL(BsonOid)
+    BSON_METHOD_DECL(bool)
+    BSON_METHOD_DECL(BsonBool)
+    BSON_METHOD_DECL(std::chrono::milliseconds)
+    BSON_METHOD_DECL(BsonDate)
+    BSON_METHOD_DECL(BsonNull)
+    BSON_METHOD_DECL(BsonRegex)
+    BSON_METHOD_DECL(BsonDBPointer)
+    BSON_METHOD_DECL(BsonCode)
+    BSON_METHOD_DECL(BsonSymbol)
+    BSON_METHOD_DECL(BsonCodeWScope)
+    BSON_METHOD_DECL(int32_t)
+    BSON_METHOD_DECL(BsonInt32)
+    BSON_METHOD_DECL(BsonTimestamp)
+    BSON_METHOD_DECL(int64_t)
+    BSON_METHOD_DECL(BsonInt64)
+    BSON_METHOD_DECL(Decimal128)
+    BSON_METHOD_DECL(BsonDecimal128)
+    BSON_METHOD_DECL(BsonMinKey)
+    BSON_METHOD_DECL(BsonMaxKey)
+
+    static bool bson_get(const Viewer::Iterator &it, ModelBase &value);
+    static bool bson_append(Builder &builder, const ModelBase &value);
+    static bool bson_append(Builder &builder, const std::string &key, const ModelBase &value);
+
+    template<typename T>
+    static bool bson_get(const Viewer::Iterator &it, std::vector<T> &value);
+
+    template<typename T>
+    static bool bson_get(const Viewer::Iterator &it, std::map<std::string, T> &value);
+
+    template<typename T>
+    static bool bson_append(Builder &builder, const std::vector<T> &value);
+
+    template<typename T>
+    static bool bson_append(Builder &builder, const std::string &key, const std::vector<T> &value);
+
+    template<typename T>
+    static bool bson_append(Builder &builder, const std::map<std::string, T> &value);
+
+    template<typename T>
+    static bool bson_append(Builder &builder, const std::string &key, const std::map<std::string, T> &value);
+
+    virtual bool toBson(Builder &builder) const = 0;
+    virtual bool fromBson(const Viewer &viewer) = 0;
+#endif
     static std::shared_ptr<HttpContent> toHttpContent(const utility::string_t &name, bool value,
         const utility::string_t &contentType = utility::conversions::to_string_t(""));
     static std::shared_ptr<HttpContent> toHttpContent(const utility::string_t &name, float value,
@@ -202,6 +272,7 @@ template <typename T> web::json::value ModelBase::toJson(const T &val)
     retVal = val.toJson();
     return retVal;
 }
+
 template <typename T> web::json::value ModelBase::toJson(const std::vector<T> &value)
 {
     std::vector<web::json::value> ret;
@@ -302,6 +373,86 @@ template <typename T> bool ModelBase::fromJson(const web::json::value &jval, std
     }
     return ok;
 }
+
+#if defined(HUAWEICLOUD_SDK_BSON_)
+
+template<typename T>
+bool ModelBase::bson_get(const Viewer::Iterator &it, std::vector<T> &value) {
+    Array arr = it->getArray();
+    Viewer arrViewer(arr);
+    Viewer::Iterator arrIter = arrViewer.begin();
+    while (arrIter != arrViewer.end()) {
+        T tmp;
+        bson_get(arrIter, tmp);
+        value.push_back(tmp);
+        ++arrIter;
+    }
+    return true;
+}
+
+template<typename T>
+bool ModelBase::bson_get(const Viewer::Iterator &it, std::map<std::string, T> &value) {
+    Document doc = it->getDocument();
+    Viewer docViewer(doc);
+    Viewer::Iterator docIter = docViewer.begin();
+    while (docIter != docViewer.end()) {
+        T tmp;
+        bson_get(docIter, tmp);
+        value[it->key()] = tmp;
+        ++docIter;
+    }
+    return true;
+}
+
+template<typename T>
+bool ModelBase::bson_append(Builder &builder, const std::vector<T> &value) {
+    builder << Builder::SubArrayBegin;
+    for (const auto &v: value) {
+        if (!bson_append(builder, v)) {
+            return false;
+        }
+    }
+    builder << Builder::SubArrayEnd;
+    return true;
+}
+
+template<typename T>
+bool ModelBase::bson_append(Builder &builder, const std::string &key, const std::vector<T> &value) {
+    builder << key << Builder::SubArrayBegin;
+    for (const auto &v: value) {
+        if (!bson_append(builder, v)) {
+            return false;
+        }
+    }
+    builder << Builder::SubArrayEnd;
+    return true;
+}
+
+template<typename T>
+bool ModelBase::bson_append(Builder &builder, const std::map<std::string, T> &value) {
+    builder << Builder::SubDocumentBegin;
+    for (const auto &p: value) {
+        if (!bson_append(builder, p.first, p.second)) {
+            return false;
+        }
+    }
+    builder << Builder::SubDocumentEnd;
+    return true;
+}
+
+template<typename T>
+bool ModelBase::bson_append(Builder &builder, const std::string &key, const std::map<std::string, T> &value) {
+    builder << key << Builder::SubDocumentBegin;
+    for (const auto &p: value) {
+        if (!bson_append(builder, p.first, p.second)) {
+            return false;
+        }
+    }
+    builder << Builder::SubDocumentEnd;
+    return true;
+}
+#endif // HUAWEICLOUD_SDK_BSON_
+
 template <typename T>
 std::shared_ptr<HttpContent> ModelBase::toHttpContent(const utility::string_t &name, const std::shared_ptr<T> &value,
     const utility::string_t &contentType)

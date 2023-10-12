@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/TimeRange.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -53,7 +52,6 @@ web::json::value TimeRange::toJson() const
 
     return val;
 }
-
 bool TimeRange::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool TimeRange::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string TimeRange::getSqlTimeZone() const
 {

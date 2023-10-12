@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/MergeChannelsTaskInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -66,7 +65,6 @@ web::json::value MergeChannelsTaskInfo::toJson() const
 
     return val;
 }
-
 bool MergeChannelsTaskInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -145,6 +143,7 @@ bool MergeChannelsTaskInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string MergeChannelsTaskInfo::getTaskId() const
 {

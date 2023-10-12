@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/BriefStructTemplateModel.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -53,7 +52,6 @@ web::json::value BriefStructTemplateModel::toJson() const
 
     return val;
 }
-
 bool BriefStructTemplateModel::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool BriefStructTemplateModel::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int64_t BriefStructTemplateModel::getCreateTime() const
 {

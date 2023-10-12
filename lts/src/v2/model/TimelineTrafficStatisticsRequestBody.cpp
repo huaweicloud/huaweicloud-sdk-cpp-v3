@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/TimelineTrafficStatisticsRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -58,7 +57,6 @@ web::json::value TimelineTrafficStatisticsRequestBody::toJson() const
 
     return val;
 }
-
 bool TimelineTrafficStatisticsRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool TimelineTrafficStatisticsRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int64_t TimelineTrafficStatisticsRequestBody::getStartTime() const
 {

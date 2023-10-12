@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/ModifyCollationRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -42,7 +41,6 @@ web::json::value ModifyCollationRequest::toJson() const
 
     return val;
 }
-
 bool ModifyCollationRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool ModifyCollationRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ModifyCollationRequest::getXLanguage() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/codeartsbuild/v3/model/ShowJobSuccessRatioRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsbuild {
@@ -43,7 +42,6 @@ web::json::value ShowJobSuccessRatioRequest::toJson() const
 
     return val;
 }
-
 bool ShowJobSuccessRatioRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool ShowJobSuccessRatioRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowJobSuccessRatioRequest::getJobId() const
 {

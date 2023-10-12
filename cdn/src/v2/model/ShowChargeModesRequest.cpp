@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v2/model/ShowChargeModesRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -43,7 +42,6 @@ web::json::value ShowChargeModesRequest::toJson() const
 
     return val;
 }
-
 bool ShowChargeModesRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool ShowChargeModesRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowChargeModesRequest::getProductType() const
 {

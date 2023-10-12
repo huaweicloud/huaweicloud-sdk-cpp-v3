@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/ImageWatermarkSetting.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -67,7 +66,6 @@ web::json::value ImageWatermarkSetting::toJson() const
 
     return val;
 }
-
 bool ImageWatermarkSetting::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -146,6 +144,7 @@ bool ImageWatermarkSetting::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ImageWatermarkSetting::getDx() const
 {

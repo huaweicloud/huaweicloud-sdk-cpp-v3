@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/AssetProcessReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -51,7 +50,6 @@ web::json::value AssetProcessReq::toJson() const
 
     return val;
 }
-
 bool AssetProcessReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -103,6 +101,7 @@ bool AssetProcessReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string AssetProcessReq::getAssetId() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/evs/v2/model/CreateSnapshotOption.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Evs {
@@ -52,7 +51,6 @@ web::json::value CreateSnapshotOption::toJson() const
 
     return val;
 }
-
 bool CreateSnapshotOption::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -104,6 +102,7 @@ bool CreateSnapshotOption::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateSnapshotOption::getVolumeId() const
 {

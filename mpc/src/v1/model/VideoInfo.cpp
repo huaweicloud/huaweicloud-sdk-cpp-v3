@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/VideoInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -58,7 +57,6 @@ web::json::value VideoInfo::toJson() const
 
     return val;
 }
-
 bool VideoInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool VideoInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t VideoInfo::getWidth() const
 {

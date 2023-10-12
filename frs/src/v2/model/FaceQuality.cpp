@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/frs/v2/model/FaceQuality.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Frs {
@@ -53,7 +52,6 @@ web::json::value FaceQuality::toJson() const
 
     return val;
 }
-
 bool FaceQuality::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool FaceQuality::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 double FaceQuality::getTotalScore() const
 {

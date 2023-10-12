@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/ShowGaussMySqlBackupListRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -68,7 +67,6 @@ web::json::value ShowGaussMySqlBackupListRequest::toJson() const
 
     return val;
 }
-
 bool ShowGaussMySqlBackupListRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -147,6 +145,7 @@ bool ShowGaussMySqlBackupListRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowGaussMySqlBackupListRequest::getXLanguage() const
 {

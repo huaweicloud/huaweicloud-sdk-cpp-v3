@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/ShowUrlTaskInfoRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -68,7 +67,6 @@ web::json::value ShowUrlTaskInfoRequest::toJson() const
 
     return val;
 }
-
 bool ShowUrlTaskInfoRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -147,6 +145,7 @@ bool ShowUrlTaskInfoRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int64_t ShowUrlTaskInfoRequest::getStartTime() const
 {

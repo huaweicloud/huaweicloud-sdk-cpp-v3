@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/csms/v1/model/UpdateVersionResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Csms {
@@ -32,7 +31,6 @@ web::json::value UpdateVersionResponse::toJson() const
 
     return val;
 }
-
 bool UpdateVersionResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool UpdateVersionResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 VersionMetadata UpdateVersionResponse::getVersionMetadata() const
 {

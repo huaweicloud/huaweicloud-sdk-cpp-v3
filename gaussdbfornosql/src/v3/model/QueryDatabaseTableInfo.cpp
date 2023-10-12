@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/QueryDatabaseTableInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -37,7 +36,6 @@ web::json::value QueryDatabaseTableInfo::toJson() const
 
     return val;
 }
-
 bool QueryDatabaseTableInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool QueryDatabaseTableInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string QueryDatabaseTableInfo::getDatabaseName() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v2/model/ListSingleStreamFramerateResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -37,7 +36,6 @@ web::json::value ListSingleStreamFramerateResponse::toJson() const
 
     return val;
 }
-
 bool ListSingleStreamFramerateResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ListSingleStreamFramerateResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<V2FramerateInfo>& ListSingleStreamFramerateResponse::getFramerateInfoList()
 {

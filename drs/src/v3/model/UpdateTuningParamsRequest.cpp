@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/UpdateTuningParamsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -42,7 +41,6 @@ web::json::value UpdateTuningParamsRequest::toJson() const
 
     return val;
 }
-
 bool UpdateTuningParamsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool UpdateTuningParamsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateTuningParamsRequest::getJobId() const
 {

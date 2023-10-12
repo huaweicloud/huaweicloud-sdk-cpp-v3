@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/ProxyTransactionSplitRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -37,7 +36,6 @@ web::json::value ProxyTransactionSplitRequest::toJson() const
 
     return val;
 }
-
 bool ProxyTransactionSplitRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ProxyTransactionSplitRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ProxyTransactionSplitRequest::getTransactionSplit() const
 {

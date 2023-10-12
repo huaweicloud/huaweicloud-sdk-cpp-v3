@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/smn/v2/model/ListMessageTemplatesRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Smn {
@@ -48,7 +47,6 @@ web::json::value ListMessageTemplatesRequest::toJson() const
 
     return val;
 }
-
 bool ListMessageTemplatesRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool ListMessageTemplatesRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ListMessageTemplatesRequest::getOffset() const
 {

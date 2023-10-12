@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/BatchAddMsdtcsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -37,7 +36,6 @@ web::json::value BatchAddMsdtcsRequest::toJson() const
 
     return val;
 }
-
 bool BatchAddMsdtcsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool BatchAddMsdtcsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string BatchAddMsdtcsRequest::getInstanceId() const
 {

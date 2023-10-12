@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/BusinessCardResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -77,7 +76,6 @@ web::json::value BusinessCardResult::toJson() const
 
     return val;
 }
-
 bool BusinessCardResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -192,6 +190,7 @@ bool BusinessCardResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<std::string>& BusinessCardResult::getName()
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/ListQualityEnhanceDefaultTemplateResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -37,7 +36,6 @@ web::json::value ListQualityEnhanceDefaultTemplateResponse::toJson() const
 
     return val;
 }
-
 bool ListQualityEnhanceDefaultTemplateResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ListQualityEnhanceDefaultTemplateResponse::fromJson(const web::json::value&
     }
     return ok;
 }
+
 
 std::vector<QualityEnhanceTemplateInfo>& ListQualityEnhanceDefaultTemplateResponse::getTaskArray()
 {

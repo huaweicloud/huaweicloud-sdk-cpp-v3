@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/WebImageWordsBlockList.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -50,7 +49,6 @@ web::json::value WebImageWordsBlockList::toJson() const
 
     return val;
 }
-
 bool WebImageWordsBlockList::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -102,6 +100,7 @@ bool WebImageWordsBlockList::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string WebImageWordsBlockList::getWords() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/UpdateInstanceConfigurationResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -38,7 +37,6 @@ web::json::value UpdateInstanceConfigurationResponse::toJson() const
 
     return val;
 }
-
 bool UpdateInstanceConfigurationResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool UpdateInstanceConfigurationResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateInstanceConfigurationResponse::getJobId() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/ChildrenJobInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -97,7 +96,6 @@ web::json::value ChildrenJobInfo::toJson() const
 
     return val;
 }
-
 bool ChildrenJobInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -230,6 +228,7 @@ bool ChildrenJobInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool ChildrenJobInfo::isBillingTag() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/EnlargeProxyRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -38,7 +37,6 @@ web::json::value EnlargeProxyRequest::toJson() const
 
     return val;
 }
-
 bool EnlargeProxyRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool EnlargeProxyRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t EnlargeProxyRequest::getNodeNum() const
 {

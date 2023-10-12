@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/NeutronListSubnetsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -78,7 +77,6 @@ web::json::value NeutronListSubnetsRequest::toJson() const
 
     return val;
 }
-
 bool NeutronListSubnetsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -175,6 +173,7 @@ bool NeutronListSubnetsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t NeutronListSubnetsRequest::getLimit() const
 {

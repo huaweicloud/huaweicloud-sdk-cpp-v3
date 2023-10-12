@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/BackupResp.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -139,7 +138,6 @@ web::json::value BackupResp::toJson() const
 
     return val;
 }
-
 bool BackupResp::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -353,6 +351,7 @@ bool BackupResp::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string BackupResp::getCheckpointId() const
 {

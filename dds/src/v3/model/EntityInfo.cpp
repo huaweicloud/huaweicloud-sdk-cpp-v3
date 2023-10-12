@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/EntityInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -38,7 +37,6 @@ web::json::value EntityInfo::toJson() const
 
     return val;
 }
-
 bool EntityInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool EntityInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string EntityInfo::getEntityId() const
 {

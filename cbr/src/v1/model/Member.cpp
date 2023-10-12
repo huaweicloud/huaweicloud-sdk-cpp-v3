@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/Member.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -68,7 +67,6 @@ web::json::value Member::toJson() const
 
     return val;
 }
-
 bool Member::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -147,6 +145,7 @@ bool Member::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string Member::getStatus() const
 {

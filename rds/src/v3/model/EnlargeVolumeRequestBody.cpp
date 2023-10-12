@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/EnlargeVolumeRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -32,7 +31,6 @@ web::json::value EnlargeVolumeRequestBody::toJson() const
 
     return val;
 }
-
 bool EnlargeVolumeRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool EnlargeVolumeRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 EnlargeVolumeObject EnlargeVolumeRequestBody::getEnlargeVolume() const
 {

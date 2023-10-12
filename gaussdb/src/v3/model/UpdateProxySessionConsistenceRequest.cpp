@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/UpdateProxySessionConsistenceRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -47,7 +46,6 @@ web::json::value UpdateProxySessionConsistenceRequest::toJson() const
 
     return val;
 }
-
 bool UpdateProxySessionConsistenceRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -90,6 +88,7 @@ bool UpdateProxySessionConsistenceRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateProxySessionConsistenceRequest::getXLanguage() const
 {

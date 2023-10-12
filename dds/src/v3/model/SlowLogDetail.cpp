@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/SlowLogDetail.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -88,7 +87,6 @@ web::json::value SlowLogDetail::toJson() const
 
     return val;
 }
-
 bool SlowLogDetail::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -203,6 +201,7 @@ bool SlowLogDetail::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string SlowLogDetail::getNodeName() const
 {

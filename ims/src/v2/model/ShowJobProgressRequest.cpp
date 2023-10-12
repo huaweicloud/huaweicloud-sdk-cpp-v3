@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ims/v2/model/ShowJobProgressRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ims {
@@ -33,7 +32,6 @@ web::json::value ShowJobProgressRequest::toJson() const
 
     return val;
 }
-
 bool ShowJobProgressRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool ShowJobProgressRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowJobProgressRequest::getJobId() const
 {

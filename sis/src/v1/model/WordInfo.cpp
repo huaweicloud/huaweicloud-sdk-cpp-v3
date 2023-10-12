@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sis/v1/model/WordInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sis {
@@ -43,7 +42,6 @@ web::json::value WordInfo::toJson() const
 
     return val;
 }
-
 bool WordInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool WordInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t WordInfo::getStartTime() const
 {

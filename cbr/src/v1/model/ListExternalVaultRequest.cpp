@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/ListExternalVaultRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -68,7 +67,6 @@ web::json::value ListExternalVaultRequest::toJson() const
 
     return val;
 }
-
 bool ListExternalVaultRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -147,6 +145,7 @@ bool ListExternalVaultRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListExternalVaultRequest::getExternalProjectId() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/MpeCallBackReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -57,7 +56,6 @@ web::json::value MpeCallBackReq::toJson() const
 
     return val;
 }
-
 bool MpeCallBackReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -118,6 +116,7 @@ bool MpeCallBackReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string MpeCallBackReq::getTaskType() const
 {

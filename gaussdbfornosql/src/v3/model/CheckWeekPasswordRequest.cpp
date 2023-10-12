@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/CheckWeekPasswordRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -32,7 +31,6 @@ web::json::value CheckWeekPasswordRequest::toJson() const
 
     return val;
 }
-
 bool CheckWeekPasswordRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CheckWeekPasswordRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 CheckWeekPasswordRequestBody CheckWeekPasswordRequest::getBody() const
 {

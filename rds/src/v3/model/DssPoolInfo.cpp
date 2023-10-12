@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/DssPoolInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -53,7 +52,6 @@ web::json::value DssPoolInfo::toJson() const
 
     return val;
 }
-
 bool DssPoolInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool DssPoolInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DssPoolInfo::getAzName() const
 {

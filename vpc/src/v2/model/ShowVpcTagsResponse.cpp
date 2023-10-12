@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/ShowVpcTagsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -32,7 +31,6 @@ web::json::value ShowVpcTagsResponse::toJson() const
 
     return val;
 }
-
 bool ShowVpcTagsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ShowVpcTagsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<ResourceTag>& ShowVpcTagsResponse::getTags()
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ims/v2/model/CreateOrUpdateTagsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ims {
@@ -28,13 +27,13 @@ web::json::value CreateOrUpdateTagsResponse::toJson() const
 
     return val;
 }
-
 bool CreateOrUpdateTagsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 }
 }

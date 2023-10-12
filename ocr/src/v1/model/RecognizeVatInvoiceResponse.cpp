@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/RecognizeVatInvoiceResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -32,7 +31,6 @@ web::json::value RecognizeVatInvoiceResponse::toJson() const
 
     return val;
 }
-
 bool RecognizeVatInvoiceResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool RecognizeVatInvoiceResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 VatInvoiceResult RecognizeVatInvoiceResponse::getResult() const
 {

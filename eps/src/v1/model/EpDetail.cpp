@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eps/v1/model/EpDetail.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eps {
@@ -63,7 +62,6 @@ web::json::value EpDetail::toJson() const
 
     return val;
 }
-
 bool EpDetail::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -133,6 +131,7 @@ bool EpDetail::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string EpDetail::getId() const
 {

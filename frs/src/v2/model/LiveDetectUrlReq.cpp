@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/frs/v2/model/LiveDetectUrlReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Frs {
@@ -48,7 +47,6 @@ web::json::value LiveDetectUrlReq::toJson() const
 
     return val;
 }
-
 bool LiveDetectUrlReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool LiveDetectUrlReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string LiveDetectUrlReq::getVideoUrl() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/ListChartsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -72,7 +71,6 @@ web::json::value ListChartsResponse::toJson() const
 
     return val;
 }
-
 bool ListChartsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -160,6 +158,7 @@ bool ListChartsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListChartsResponse::getId() const
 {

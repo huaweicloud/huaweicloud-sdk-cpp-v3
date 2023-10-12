@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/kms/v2/model/ShowUserInstancesResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Kms {
@@ -33,7 +32,6 @@ web::json::value ShowUserInstancesResponse::toJson() const
 
     return val;
 }
-
 bool ShowUserInstancesResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool ShowUserInstancesResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ShowUserInstancesResponse::getInstanceNum() const
 {

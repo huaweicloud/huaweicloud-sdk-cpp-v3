@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/FinancialStatementWordsBlockList.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -54,7 +53,6 @@ web::json::value FinancialStatementWordsBlockList::toJson() const
 
     return val;
 }
-
 bool FinancialStatementWordsBlockList::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -115,6 +113,7 @@ bool FinancialStatementWordsBlockList::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string FinancialStatementWordsBlockList::getWords() const
 {

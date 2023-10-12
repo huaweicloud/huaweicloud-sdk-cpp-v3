@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/GeneralTextResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -42,7 +41,6 @@ web::json::value GeneralTextResult::toJson() const
 
     return val;
 }
-
 bool GeneralTextResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool GeneralTextResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 float GeneralTextResult::getDirection() const
 {

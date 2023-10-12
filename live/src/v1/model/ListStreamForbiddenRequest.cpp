@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v1/model/ListStreamForbiddenRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -53,7 +52,6 @@ web::json::value ListStreamForbiddenRequest::toJson() const
 
     return val;
 }
-
 bool ListStreamForbiddenRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool ListStreamForbiddenRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListStreamForbiddenRequest::getDomain() const
 {

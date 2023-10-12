@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/NovaSimpleKeypair.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -48,7 +47,6 @@ web::json::value NovaSimpleKeypair::toJson() const
 
     return val;
 }
-
 bool NovaSimpleKeypair::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool NovaSimpleKeypair::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string NovaSimpleKeypair::getFingerprint() const
 {

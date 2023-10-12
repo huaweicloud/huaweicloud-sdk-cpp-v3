@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v2/model/CreatePublicipRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -41,7 +40,6 @@ web::json::value CreatePublicipRequestBody::toJson() const
 
     return val;
 }
-
 bool CreatePublicipRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -75,6 +73,7 @@ bool CreatePublicipRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 CreatePublicipBandwidthOption CreatePublicipRequestBody::getBandwidth() const
 {

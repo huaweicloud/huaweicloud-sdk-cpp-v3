@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cts/v3/model/DataBucket.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cts {
@@ -37,7 +36,6 @@ web::json::value DataBucket::toJson() const
 
     return val;
 }
-
 bool DataBucket::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool DataBucket::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DataBucket::getDataBucketName() const
 {

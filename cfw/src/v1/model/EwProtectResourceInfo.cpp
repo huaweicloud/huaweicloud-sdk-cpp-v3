@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/EwProtectResourceInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -58,7 +57,6 @@ web::json::value EwProtectResourceInfo::toJson() const
 
     return val;
 }
-
 bool EwProtectResourceInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool EwProtectResourceInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t EwProtectResourceInfo::getProtectedResourceType() const
 {

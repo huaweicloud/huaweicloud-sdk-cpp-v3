@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/CreateExtractTaskReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -46,7 +45,6 @@ web::json::value CreateExtractTaskReq::toJson() const
 
     return val;
 }
-
 bool CreateExtractTaskReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -89,6 +87,7 @@ bool CreateExtractTaskReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 ObsObjInfo CreateExtractTaskReq::getInput() const
 {

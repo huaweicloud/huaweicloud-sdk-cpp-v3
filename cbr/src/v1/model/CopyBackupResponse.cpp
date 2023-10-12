@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/CopyBackupResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -32,7 +31,6 @@ web::json::value CopyBackupResponse::toJson() const
 
     return val;
 }
-
 bool CopyBackupResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CopyBackupResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 BackupReplicateRespBody CopyBackupResponse::getReplication() const
 {

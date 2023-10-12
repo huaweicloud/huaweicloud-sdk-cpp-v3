@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/ValidateWeakPasswordResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -33,7 +32,6 @@ web::json::value ValidateWeakPasswordResponse::toJson() const
 
     return val;
 }
-
 bool ValidateWeakPasswordResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool ValidateWeakPasswordResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool ValidateWeakPasswordResponse::isIsWeakPassword() const
 {

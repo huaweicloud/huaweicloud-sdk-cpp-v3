@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v2/model/ListDomainTrafficDetailRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -80,7 +79,6 @@ web::json::value ListDomainTrafficDetailRequest::toJson() const
 
     return val;
 }
-
 bool ListDomainTrafficDetailRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -186,6 +184,7 @@ bool ListDomainTrafficDetailRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListDomainTrafficDetailRequest::getProjectId() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/BasicTaskInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -57,7 +56,6 @@ web::json::value BasicTaskInfo::toJson() const
 
     return val;
 }
-
 bool BasicTaskInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -118,6 +116,7 @@ bool BasicTaskInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string BasicTaskInfo::getTaskId() const
 {

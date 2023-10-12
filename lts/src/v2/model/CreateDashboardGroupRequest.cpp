@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/CreateDashboardGroupRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -37,7 +36,6 @@ web::json::value CreateDashboardGroupRequest::toJson() const
 
     return val;
 }
-
 bool CreateDashboardGroupRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool CreateDashboardGroupRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateDashboardGroupRequest::getContentType() const
 {

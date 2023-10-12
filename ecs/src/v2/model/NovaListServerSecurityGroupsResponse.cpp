@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/NovaListServerSecurityGroupsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -32,7 +31,6 @@ web::json::value NovaListServerSecurityGroupsResponse::toJson() const
 
     return val;
 }
-
 bool NovaListServerSecurityGroupsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool NovaListServerSecurityGroupsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<NovaSecurityGroup>& NovaListServerSecurityGroupsResponse::getSecurityGroups()
 {

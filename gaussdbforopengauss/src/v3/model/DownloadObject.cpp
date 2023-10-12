@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/DownloadObject.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -48,7 +47,6 @@ web::json::value DownloadObject::toJson() const
 
     return val;
 }
-
 bool DownloadObject::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool DownloadObject::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DownloadObject::getName() const
 {

@@ -2,9 +2,11 @@
 #ifndef HUAWEICLOUD_SDK_EIP_V3_MODEL_ListPublicipsResponse_H_
 #define HUAWEICLOUD_SDK_EIP_V3_MODEL_ListPublicipsResponse_H_
 
+
 #include <huaweicloud/eip/v3/EipExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/eip/v3/model/PublicipSingleShowResp.h>
@@ -34,10 +36,8 @@ public:
     /// ModelBase overrides
 
     void validate() override;
-
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
-
     /////////////////////////////////////////////
     /// ListPublicipsResponse members
 

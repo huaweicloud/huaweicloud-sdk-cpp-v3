@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/ShowAssetMetaRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -84,7 +83,6 @@ web::json::value ShowAssetMetaRequest::toJson() const
 
     return val;
 }
-
 bool ShowAssetMetaRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -199,6 +197,7 @@ bool ShowAssetMetaRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowAssetMetaRequest::getXSdkDate() const
 {

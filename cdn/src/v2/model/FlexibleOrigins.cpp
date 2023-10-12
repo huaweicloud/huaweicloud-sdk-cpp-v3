@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v2/model/FlexibleOrigins.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -47,7 +46,6 @@ web::json::value FlexibleOrigins::toJson() const
 
     return val;
 }
-
 bool FlexibleOrigins::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -90,6 +88,7 @@ bool FlexibleOrigins::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string FlexibleOrigins::getMatchType() const
 {

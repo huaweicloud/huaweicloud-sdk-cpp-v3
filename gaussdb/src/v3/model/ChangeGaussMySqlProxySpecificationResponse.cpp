@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/ChangeGaussMySqlProxySpecificationResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -33,7 +32,6 @@ web::json::value ChangeGaussMySqlProxySpecificationResponse::toJson() const
 
     return val;
 }
-
 bool ChangeGaussMySqlProxySpecificationResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool ChangeGaussMySqlProxySpecificationResponse::fromJson(const web::json::value
     }
     return ok;
 }
+
 
 std::string ChangeGaussMySqlProxySpecificationResponse::getJobId() const
 {

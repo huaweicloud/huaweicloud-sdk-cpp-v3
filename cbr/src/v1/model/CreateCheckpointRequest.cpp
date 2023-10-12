@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/CreateCheckpointRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -32,7 +31,6 @@ web::json::value CreateCheckpointRequest::toJson() const
 
     return val;
 }
-
 bool CreateCheckpointRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CreateCheckpointRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 VaultBackupReq CreateCheckpointRequest::getBody() const
 {

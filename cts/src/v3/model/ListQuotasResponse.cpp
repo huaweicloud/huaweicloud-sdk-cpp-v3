@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cts/v3/model/ListQuotasResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cts {
@@ -32,7 +31,6 @@ web::json::value ListQuotasResponse::toJson() const
 
     return val;
 }
-
 bool ListQuotasResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ListQuotasResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<CtsQuota>& ListQuotasResponse::getResources()
 {

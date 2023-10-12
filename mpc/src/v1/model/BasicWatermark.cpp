@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/BasicWatermark.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -53,7 +52,6 @@ web::json::value BasicWatermark::toJson() const
 
     return val;
 }
-
 bool BasicWatermark::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool BasicWatermark::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string BasicWatermark::getDx() const
 {

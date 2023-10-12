@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/ChangeTheDelayThresholdResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -33,7 +32,6 @@ web::json::value ChangeTheDelayThresholdResponse::toJson() const
 
     return val;
 }
-
 bool ChangeTheDelayThresholdResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool ChangeTheDelayThresholdResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ChangeTheDelayThresholdResponse::getResult() const
 {

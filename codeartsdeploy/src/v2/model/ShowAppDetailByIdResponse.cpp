@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/codeartsdeploy/v2/model/ShowAppDetailByIdResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsdeploy {
@@ -37,7 +36,6 @@ web::json::value ShowAppDetailByIdResponse::toJson() const
 
     return val;
 }
-
 bool ShowAppDetailByIdResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ShowAppDetailByIdResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 AppDetailInfo ShowAppDetailByIdResponse::getResult() const
 {

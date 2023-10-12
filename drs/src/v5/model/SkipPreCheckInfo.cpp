@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/SkipPreCheckInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -37,7 +36,6 @@ web::json::value SkipPreCheckInfo::toJson() const
 
     return val;
 }
-
 bool SkipPreCheckInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool SkipPreCheckInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<std::string>& SkipPreCheckInfo::getSkippedPrecheckList()
 {

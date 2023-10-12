@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/ListJobInfoDetailRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -48,7 +47,6 @@ web::json::value ListJobInfoDetailRequest::toJson() const
 
     return val;
 }
-
 bool ListJobInfoDetailRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool ListJobInfoDetailRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListJobInfoDetailRequest::getXLanguage() const
 {

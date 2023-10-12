@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sdrs/v1/model/ReplicationRecordMetadata.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sdrs {
@@ -48,7 +47,6 @@ web::json::value ReplicationRecordMetadata::toJson() const
 
     return val;
 }
-
 bool ReplicationRecordMetadata::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool ReplicationRecordMetadata::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool ReplicationRecordMetadata::isMultiattach() const
 {

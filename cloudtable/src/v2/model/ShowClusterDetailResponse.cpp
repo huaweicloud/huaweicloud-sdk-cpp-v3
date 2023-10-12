@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cloudtable/v2/model/ShowClusterDetailResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cloudtable {
@@ -161,7 +160,6 @@ web::json::value ShowClusterDetailResponse::toJson() const
 
     return val;
 }
-
 bool ShowClusterDetailResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -411,6 +409,7 @@ bool ShowClusterDetailResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<std::string>& ShowClusterDetailResponse::getActions()
 {

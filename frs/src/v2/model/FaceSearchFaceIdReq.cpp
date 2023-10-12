@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/frs/v2/model/FaceSearchFaceIdReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Frs {
@@ -56,7 +55,6 @@ web::json::value FaceSearchFaceIdReq::toJson() const
 
     return val;
 }
-
 bool FaceSearchFaceIdReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -117,6 +115,7 @@ bool FaceSearchFaceIdReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string FaceSearchFaceIdReq::getFilter() const
 {

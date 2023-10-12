@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/ListDbBackupsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -68,7 +67,6 @@ web::json::value ListDbBackupsRequest::toJson() const
 
     return val;
 }
-
 bool ListDbBackupsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -147,6 +145,7 @@ bool ListDbBackupsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListDbBackupsRequest::getXLanguage() const
 {

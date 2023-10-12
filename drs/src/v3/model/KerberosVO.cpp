@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/KerberosVO.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -48,7 +47,6 @@ web::json::value KerberosVO::toJson() const
 
     return val;
 }
-
 bool KerberosVO::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool KerberosVO::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string KerberosVO::getKrb5ConfFile() const
 {

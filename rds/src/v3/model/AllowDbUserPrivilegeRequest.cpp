@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/AllowDbUserPrivilegeRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -42,7 +41,6 @@ web::json::value AllowDbUserPrivilegeRequest::toJson() const
 
     return val;
 }
-
 bool AllowDbUserPrivilegeRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool AllowDbUserPrivilegeRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string AllowDbUserPrivilegeRequest::getXLanguage() const
 {

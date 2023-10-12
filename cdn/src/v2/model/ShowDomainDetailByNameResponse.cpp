@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v2/model/ShowDomainDetailByNameResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -32,7 +31,6 @@ web::json::value ShowDomainDetailByNameResponse::toJson() const
 
     return val;
 }
-
 bool ShowDomainDetailByNameResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ShowDomainDetailByNameResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 DomainsWithPort ShowDomainDetailByNameResponse::getDomain() const
 {

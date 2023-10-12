@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/SlowLog.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -83,7 +82,6 @@ web::json::value SlowLog::toJson() const
 
     return val;
 }
-
 bool SlowLog::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -189,6 +187,7 @@ bool SlowLog::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string SlowLog::getCount() const
 {

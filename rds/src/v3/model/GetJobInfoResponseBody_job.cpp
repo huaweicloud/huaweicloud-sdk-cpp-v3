@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/GetJobInfoResponseBody_job.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -71,7 +70,6 @@ web::json::value GetJobInfoResponseBody_job::toJson() const
 
     return val;
 }
-
 bool GetJobInfoResponseBody_job::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -159,6 +157,7 @@ bool GetJobInfoResponseBody_job::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string GetJobInfoResponseBody_job::getId() const
 {

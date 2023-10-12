@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/CreateRestoreInstanceRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -150,7 +149,6 @@ web::json::value CreateRestoreInstanceRequestBody::toJson() const
 
     return val;
 }
-
 bool CreateRestoreInstanceRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -391,6 +389,7 @@ bool CreateRestoreInstanceRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateRestoreInstanceRequestBody::getName() const
 {

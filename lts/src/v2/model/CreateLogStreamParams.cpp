@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/CreateLogStreamParams.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -42,7 +41,6 @@ web::json::value CreateLogStreamParams::toJson() const
 
     return val;
 }
-
 bool CreateLogStreamParams::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool CreateLogStreamParams::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateLogStreamParams::getLogStreamName() const
 {

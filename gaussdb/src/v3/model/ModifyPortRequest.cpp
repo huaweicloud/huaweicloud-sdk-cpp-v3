@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/ModifyPortRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -33,7 +32,6 @@ web::json::value ModifyPortRequest::toJson() const
 
     return val;
 }
-
 bool ModifyPortRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool ModifyPortRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ModifyPortRequest::getPort() const
 {

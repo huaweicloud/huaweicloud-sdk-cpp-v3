@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/TaurusModifyInstanceMonitorRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -38,7 +37,6 @@ web::json::value TaurusModifyInstanceMonitorRequestBody::toJson() const
 
     return val;
 }
-
 bool TaurusModifyInstanceMonitorRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool TaurusModifyInstanceMonitorRequestBody::fromJson(const web::json::value& va
     }
     return ok;
 }
+
 
 bool TaurusModifyInstanceMonitorRequestBody::isMonitorSwitch() const
 {

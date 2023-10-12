@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v3/model/ProfileInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -77,7 +76,6 @@ web::json::value ProfileInfo::toJson() const
 
     return val;
 }
-
 bool ProfileInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -174,6 +172,7 @@ bool ProfileInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ProfileInfo::getLocalNetworkPort() const
 {

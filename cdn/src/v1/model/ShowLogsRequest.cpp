@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/ShowLogsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -58,7 +57,6 @@ web::json::value ShowLogsRequest::toJson() const
 
     return val;
 }
-
 bool ShowLogsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool ShowLogsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowLogsRequest::getDomainName() const
 {

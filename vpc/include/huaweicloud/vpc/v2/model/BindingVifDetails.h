@@ -2,9 +2,11 @@
 #ifndef HUAWEICLOUD_SDK_VPC_V2_MODEL_BindingVifDetails_H_
 #define HUAWEICLOUD_SDK_VPC_V2_MODEL_BindingVifDetails_H_
 
+
 #include <huaweicloud/vpc/v2/VpcExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
 
@@ -30,10 +32,8 @@ public:
     /// ModelBase overrides
 
     void validate() override;
-
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
-
     /////////////////////////////////////////////
     /// BindingVifDetails members
 

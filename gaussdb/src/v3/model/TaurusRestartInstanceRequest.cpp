@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/TaurusRestartInstanceRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -33,7 +32,6 @@ web::json::value TaurusRestartInstanceRequest::toJson() const
 
     return val;
 }
-
 bool TaurusRestartInstanceRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool TaurusRestartInstanceRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool TaurusRestartInstanceRequest::isDelay() const
 {

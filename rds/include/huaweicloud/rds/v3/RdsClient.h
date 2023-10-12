@@ -6,6 +6,8 @@
 #include <huaweicloud/core/ClientBuilder.h>
 
 
+#include <huaweicloud/rds/v3/model/AddPostgresqlHbaConfRequest.h>
+#include <huaweicloud/rds/v3/model/AddPostgresqlHbaConfResponse.h>
 #include <huaweicloud/rds/v3/model/ApplyConfigurationAsyncRequest.h>
 #include <huaweicloud/rds/v3/model/ApplyConfigurationAsyncResponse.h>
 #include <huaweicloud/rds/v3/model/ApplyConfigurationRequest.h>
@@ -61,6 +63,8 @@
 #include <huaweicloud/rds/v3/model/DeleteJobResponse.h>
 #include <huaweicloud/rds/v3/model/DeleteManualBackupRequest.h>
 #include <huaweicloud/rds/v3/model/DeleteManualBackupResponse.h>
+#include <huaweicloud/rds/v3/model/DeletePostgresqlHbaConfRequest.h>
+#include <huaweicloud/rds/v3/model/DeletePostgresqlHbaConfResponse.h>
 #include <huaweicloud/rds/v3/model/DownloadSlowlogRequest.h>
 #include <huaweicloud/rds/v3/model/DownloadSlowlogResponse.h>
 #include <huaweicloud/rds/v3/model/EnableConfigurationRequest.h>
@@ -121,6 +125,10 @@
 #include <huaweicloud/rds/v3/model/ListOffSiteInstancesResponse.h>
 #include <huaweicloud/rds/v3/model/ListOffSiteRestoreTimesRequest.h>
 #include <huaweicloud/rds/v3/model/ListOffSiteRestoreTimesResponse.h>
+#include <huaweicloud/rds/v3/model/ListPostgresqlHbaInfoHistoryRequest.h>
+#include <huaweicloud/rds/v3/model/ListPostgresqlHbaInfoHistoryResponse.h>
+#include <huaweicloud/rds/v3/model/ListPostgresqlHbaInfoRequest.h>
+#include <huaweicloud/rds/v3/model/ListPostgresqlHbaInfoResponse.h>
 #include <huaweicloud/rds/v3/model/ListPredefinedTagRequest.h>
 #include <huaweicloud/rds/v3/model/ListPredefinedTagResponse.h>
 #include <huaweicloud/rds/v3/model/ListProjectTagsRequest.h>
@@ -153,8 +161,12 @@
 #include <huaweicloud/rds/v3/model/MigrateFollowerResponse.h>
 #include <huaweicloud/rds/v3/model/ModifiyInstanceNameRequest.h>
 #include <huaweicloud/rds/v3/model/ModifyDnsNameRequestBody.h>
+#include <huaweicloud/rds/v3/model/ModifyPostgresqlHbaConfRequest.h>
+#include <huaweicloud/rds/v3/model/ModifyPostgresqlHbaConfResponse.h>
 #include <huaweicloud/core/utils/Object.h>
 #include <huaweicloud/rds/v3/model/OpsWindowRequest.h>
+#include <huaweicloud/rds/v3/model/PostgresqlHbaConf.h>
+#include <huaweicloud/rds/v3/model/PostgresqlHbaHistory.h>
 #include <huaweicloud/rds/v3/model/RecyclePolicyRequestBody.h>
 #include <huaweicloud/rds/v3/model/ResizeFlavorRequest.h>
 #include <huaweicloud/rds/v3/model/RestoreExistInstanceRequest.h>
@@ -270,6 +282,8 @@
 #include <huaweicloud/rds/v3/model/UpgradeDbVersionRequest.h>
 #include <huaweicloud/rds/v3/model/UpgradeDbVersionResponse.h>
 #include <string>
+#include <vector>
+#include <cpprest/details/basic_types.h>
 
 #include <huaweicloud/rds/v3/model/ListApiVersionNewRequest.h>
 #include <huaweicloud/rds/v3/model/ListApiVersionNewResponse.h>
@@ -453,6 +467,14 @@ public:
 
     static ClientBuilder<RdsClient> newBuilder();
 
+    // 在pg_hba.conf文件最后新增单个或多个配置
+    //
+    // 以传入配置全量覆盖当前pg_hba.conf文件内容，入参为空时用默认配置覆盖当前文件内容
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<AddPostgresqlHbaConfResponse> addPostgresqlHbaConf(
+        AddPostgresqlHbaConfRequest &request
+    );
     // 应用参数模板
     //
     // 应用参数模板。
@@ -603,6 +625,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteManualBackupResponse> deleteManualBackup(
         DeleteManualBackupRequest &request
+    );
+    // 删除pg_hba.conf文件的单个或多个配置
+    //
+    // 删除pg_hba.conf文件的单个或多个配置，以priority做唯一标识
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeletePostgresqlHbaConfResponse> deletePostgresqlHbaConf(
+        DeletePostgresqlHbaConfRequest &request
     );
     // 获取慢日志下载链接
     //
@@ -799,6 +829,22 @@ public:
     std::shared_ptr<ListOffSiteRestoreTimesResponse> listOffSiteRestoreTimes(
         ListOffSiteRestoreTimesRequest &request
     );
+    // 查询实例的pg_hba.conf文件配置
+    //
+    // 查询实例的pg_hba.conf文件配置
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListPostgresqlHbaInfoResponse> listPostgresqlHbaInfo(
+        ListPostgresqlHbaInfoRequest &request
+    );
+    // 查询实例的pg_hba.conf文件修改历史
+    //
+    // 查询实例的pg_hba.conf文件修改历史
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListPostgresqlHbaInfoHistoryResponse> listPostgresqlHbaInfoHistory(
+        ListPostgresqlHbaInfoHistoryRequest &request
+    );
     // 
     //
     // 查询预定义标签
@@ -921,6 +967,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<MigrateFollowerResponse> migrateFollower(
         MigrateFollowerRequest &request
+    );
+    // 修改pg_hba.conf文件的单个或多个配置
+    //
+    // 修改/新增pg_hba.conf文件的单个或多个配置，以priority做唯一标识，priority不存在的新增，存在的修改
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ModifyPostgresqlHbaConfResponse> modifyPostgresqlHbaConf(
+        ModifyPostgresqlHbaConfRequest &request
     );
     // 恢复到已有实例
     //

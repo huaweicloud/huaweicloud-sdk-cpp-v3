@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/OpenGaussResizeRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -38,7 +37,6 @@ web::json::value OpenGaussResizeRequest::toJson() const
 
     return val;
 }
-
 bool OpenGaussResizeRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool OpenGaussResizeRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string OpenGaussResizeRequest::getFlavorRef() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v2/model/RequestLimitRules.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -63,7 +62,6 @@ web::json::value RequestLimitRules::toJson() const
 
     return val;
 }
-
 bool RequestLimitRules::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -133,6 +131,7 @@ bool RequestLimitRules::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string RequestLimitRules::getStatus() const
 {

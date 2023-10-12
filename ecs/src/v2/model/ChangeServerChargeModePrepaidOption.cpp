@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/ChangeServerChargeModePrepaidOption.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -58,7 +57,6 @@ web::json::value ChangeServerChargeModePrepaidOption::toJson() const
 
     return val;
 }
-
 bool ChangeServerChargeModePrepaidOption::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool ChangeServerChargeModePrepaidOption::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool ChangeServerChargeModePrepaidOption::isIncludeDataDisks() const
 {

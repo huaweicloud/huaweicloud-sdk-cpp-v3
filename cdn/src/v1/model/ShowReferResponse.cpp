@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/ShowReferResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -32,7 +31,6 @@ web::json::value ShowReferResponse::toJson() const
 
     return val;
 }
-
 bool ShowReferResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ShowReferResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 RefererRsp ShowReferResponse::getReferer() const
 {

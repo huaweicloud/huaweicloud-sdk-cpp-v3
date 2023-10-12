@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/BackupPolicy.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -48,7 +47,6 @@ web::json::value BackupPolicy::toJson() const
 
     return val;
 }
-
 bool BackupPolicy::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool BackupPolicy::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t BackupPolicy::getKeepDays() const
 {

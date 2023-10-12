@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/UpdatePortRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -32,7 +31,6 @@ web::json::value UpdatePortRequestBody::toJson() const
 
     return val;
 }
-
 bool UpdatePortRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool UpdatePortRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 UpdatePortOption UpdatePortRequestBody::getPort() const
 {

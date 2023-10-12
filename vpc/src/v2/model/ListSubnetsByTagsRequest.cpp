@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/ListSubnetsByTagsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -32,7 +31,6 @@ web::json::value ListSubnetsByTagsRequest::toJson() const
 
     return val;
 }
-
 bool ListSubnetsByTagsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ListSubnetsByTagsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 ListSubnetsByTagsRequestBody ListSubnetsByTagsRequest::getBody() const
 {

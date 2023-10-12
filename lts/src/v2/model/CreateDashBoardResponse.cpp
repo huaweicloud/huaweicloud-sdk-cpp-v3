@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/CreateDashBoardResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -66,7 +65,6 @@ web::json::value CreateDashBoardResponse::toJson() const
 
     return val;
 }
-
 bool CreateDashBoardResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -145,6 +143,7 @@ bool CreateDashBoardResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<std::string>& CreateDashBoardResponse::getCharts()
 {

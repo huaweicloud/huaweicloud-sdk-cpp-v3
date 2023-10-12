@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/QualityInfoList.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -36,7 +35,6 @@ web::json::value QualityInfoList::toJson() const
 
     return val;
 }
-
 bool QualityInfoList::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -61,6 +59,7 @@ bool QualityInfoList::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 VideoInfo QualityInfoList::getVideo() const
 {

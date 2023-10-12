@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ims/v2/model/OsVersionInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ims {
@@ -53,7 +52,6 @@ web::json::value OsVersionInfo::toJson() const
 
     return val;
 }
-
 bool OsVersionInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool OsVersionInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string OsVersionInfo::getPlatform() const
 {

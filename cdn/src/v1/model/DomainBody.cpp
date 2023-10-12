@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/DomainBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -52,7 +51,6 @@ web::json::value DomainBody::toJson() const
 
     return val;
 }
-
 bool DomainBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -104,6 +102,7 @@ bool DomainBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DomainBody::getDomainName() const
 {

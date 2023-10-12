@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/AsyncActionBaseResp.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -33,7 +32,6 @@ web::json::value AsyncActionBaseResp::toJson() const
 
     return val;
 }
-
 bool AsyncActionBaseResp::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool AsyncActionBaseResp::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string AsyncActionBaseResp::getQueryId() const
 {

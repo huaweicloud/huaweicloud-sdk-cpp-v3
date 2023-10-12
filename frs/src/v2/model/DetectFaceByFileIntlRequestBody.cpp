@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/frs/v2/model/DetectFaceByFileIntlRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Frs {
@@ -29,13 +28,13 @@ web::json::value DetectFaceByFileIntlRequestBody::toJson() const
 
     return val;
 }
-
 bool DetectFaceByFileIntlRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 HttpContent DetectFaceByFileIntlRequestBody::getImageFile() const
 {

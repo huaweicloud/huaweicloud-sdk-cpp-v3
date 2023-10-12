@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/ProtectableReplicationCapabilitiesRespRegion.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -37,7 +36,6 @@ web::json::value ProtectableReplicationCapabilitiesRespRegion::toJson() const
 
     return val;
 }
-
 bool ProtectableReplicationCapabilitiesRespRegion::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ProtectableReplicationCapabilitiesRespRegion::fromJson(const web::json::val
     }
     return ok;
 }
+
 
 std::string ProtectableReplicationCapabilitiesRespRegion::getName() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/UpdateFollow302SwitchResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -32,7 +31,6 @@ web::json::value UpdateFollow302SwitchResponse::toJson() const
 
     return val;
 }
-
 bool UpdateFollow302SwitchResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool UpdateFollow302SwitchResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 Follow302StatusBody UpdateFollow302SwitchResponse::getFollowStatus() const
 {

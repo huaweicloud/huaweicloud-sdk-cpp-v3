@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/VaultOrderCreateReqs.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -32,7 +31,6 @@ web::json::value VaultOrderCreateReqs::toJson() const
 
     return val;
 }
-
 bool VaultOrderCreateReqs::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool VaultOrderCreateReqs::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 VaultOrder VaultOrderCreateReqs::getVault() const
 {

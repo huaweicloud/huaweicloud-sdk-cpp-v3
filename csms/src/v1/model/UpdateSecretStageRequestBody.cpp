@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/csms/v1/model/UpdateSecretStageRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Csms {
@@ -33,7 +32,6 @@ web::json::value UpdateSecretStageRequestBody::toJson() const
 
     return val;
 }
-
 bool UpdateSecretStageRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool UpdateSecretStageRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateSecretStageRequestBody::getVersionId() const
 {

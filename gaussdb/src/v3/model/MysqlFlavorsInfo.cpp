@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/MysqlFlavorsInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -67,7 +66,6 @@ web::json::value MysqlFlavorsInfo::toJson() const
 
     return val;
 }
-
 bool MysqlFlavorsInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -146,6 +144,7 @@ bool MysqlFlavorsInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string MysqlFlavorsInfo::getVcpus() const
 {

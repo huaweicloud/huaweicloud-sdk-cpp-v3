@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/ListInstanceDatabasesRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -43,7 +42,6 @@ web::json::value ListInstanceDatabasesRequest::toJson() const
 
     return val;
 }
-
 bool ListInstanceDatabasesRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool ListInstanceDatabasesRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListInstanceDatabasesRequest::getInstanceId() const
 {

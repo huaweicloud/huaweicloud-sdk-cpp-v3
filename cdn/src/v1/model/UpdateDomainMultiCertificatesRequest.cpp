@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/UpdateDomainMultiCertificatesRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -37,7 +36,6 @@ web::json::value UpdateDomainMultiCertificatesRequest::toJson() const
 
     return val;
 }
-
 bool UpdateDomainMultiCertificatesRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool UpdateDomainMultiCertificatesRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateDomainMultiCertificatesRequest::getEnterpriseProjectId() const
 {

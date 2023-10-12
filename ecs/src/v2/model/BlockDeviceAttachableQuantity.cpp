@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/BlockDeviceAttachableQuantity.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -43,7 +42,6 @@ web::json::value BlockDeviceAttachableQuantity::toJson() const
 
     return val;
 }
-
 bool BlockDeviceAttachableQuantity::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool BlockDeviceAttachableQuantity::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t BlockDeviceAttachableQuantity::getFreeScsi() const
 {

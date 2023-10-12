@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/ExtensionsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -58,7 +57,6 @@ web::json::value ExtensionsResponse::toJson() const
 
     return val;
 }
-
 bool ExtensionsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool ExtensionsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ExtensionsResponse::getName() const
 {

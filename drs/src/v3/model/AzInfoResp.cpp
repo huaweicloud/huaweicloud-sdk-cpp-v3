@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/AzInfoResp.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -43,7 +42,6 @@ web::json::value AzInfoResp::toJson() const
 
     return val;
 }
-
 bool AzInfoResp::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool AzInfoResp::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string AzInfoResp::getCode() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/ConfigTransformationVo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -63,7 +62,6 @@ web::json::value ConfigTransformationVo::toJson() const
 
     return val;
 }
-
 bool ConfigTransformationVo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -133,6 +131,7 @@ bool ConfigTransformationVo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ConfigTransformationVo::getDbTableName() const
 {

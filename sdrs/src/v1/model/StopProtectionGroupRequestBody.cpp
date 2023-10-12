@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sdrs/v1/model/StopProtectionGroupRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sdrs {
@@ -32,7 +31,6 @@ web::json::value StopProtectionGroupRequestBody::toJson() const
 
     return val;
 }
-
 bool StopProtectionGroupRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool StopProtectionGroupRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 Object StopProtectionGroupRequestBody::getStopServerGroup() const
 {

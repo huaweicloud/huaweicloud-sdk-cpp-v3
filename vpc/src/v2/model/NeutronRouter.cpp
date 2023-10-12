@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/NeutronRouter.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -76,7 +75,6 @@ web::json::value NeutronRouter::toJson() const
 
     return val;
 }
-
 bool NeutronRouter::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -173,6 +171,7 @@ bool NeutronRouter::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool NeutronRouter::isAdminStateUp() const
 {

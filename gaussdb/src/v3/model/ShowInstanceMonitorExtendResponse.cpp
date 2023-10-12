@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/ShowInstanceMonitorExtendResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -38,7 +37,6 @@ web::json::value ShowInstanceMonitorExtendResponse::toJson() const
 
     return val;
 }
-
 bool ShowInstanceMonitorExtendResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ShowInstanceMonitorExtendResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool ShowInstanceMonitorExtendResponse::isMonitorSwitch() const
 {

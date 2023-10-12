@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/UpdateInstanceConfigurationAsyncRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -42,7 +41,6 @@ web::json::value UpdateInstanceConfigurationAsyncRequest::toJson() const
 
     return val;
 }
-
 bool UpdateInstanceConfigurationAsyncRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool UpdateInstanceConfigurationAsyncRequest::fromJson(const web::json::value& v
     }
     return ok;
 }
+
 
 std::string UpdateInstanceConfigurationAsyncRequest::getXLanguage() const
 {

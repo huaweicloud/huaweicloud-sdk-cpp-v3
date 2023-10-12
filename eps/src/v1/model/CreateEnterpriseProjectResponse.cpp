@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eps/v1/model/CreateEnterpriseProjectResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eps {
@@ -32,7 +31,6 @@ web::json::value CreateEnterpriseProjectResponse::toJson() const
 
     return val;
 }
-
 bool CreateEnterpriseProjectResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CreateEnterpriseProjectResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 EpDetail CreateEnterpriseProjectResponse::getEnterpriseProject() const
 {

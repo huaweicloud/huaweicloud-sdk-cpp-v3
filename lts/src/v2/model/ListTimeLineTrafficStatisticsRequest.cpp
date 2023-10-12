@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/ListTimeLineTrafficStatisticsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -42,7 +41,6 @@ web::json::value ListTimeLineTrafficStatisticsRequest::toJson() const
 
     return val;
 }
-
 bool ListTimeLineTrafficStatisticsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool ListTimeLineTrafficStatisticsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListTimeLineTrafficStatisticsRequest::getContentType() const
 {

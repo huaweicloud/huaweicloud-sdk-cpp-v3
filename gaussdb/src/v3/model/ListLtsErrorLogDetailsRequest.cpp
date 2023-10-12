@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/ListLtsErrorLogDetailsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -42,7 +41,6 @@ web::json::value ListLtsErrorLogDetailsRequest::toJson() const
 
     return val;
 }
-
 bool ListLtsErrorLogDetailsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool ListLtsErrorLogDetailsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListLtsErrorLogDetailsRequest::getXLanguage() const
 {

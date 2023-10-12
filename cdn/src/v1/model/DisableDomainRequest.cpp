@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/DisableDomainRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -38,7 +37,6 @@ web::json::value DisableDomainRequest::toJson() const
 
     return val;
 }
-
 bool DisableDomainRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool DisableDomainRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DisableDomainRequest::getDomainId() const
 {

@@ -59,12 +59,13 @@ public:
 private:
     static constexpr int HTTP_SUCCESS_BEGIN_CODE = 200;
     static constexpr int HTTP_SUCCESS_END_CODE = 299;
+    std::string APPLICATION_BSON = "application/bson";
+
 
     CURLcode curl_perform(const HttpRequest &httpRequest, const HttpConfig &httpConfig, std::string &body,
         std::string &header, long &statusCode);
 
     std::map<std::string, std::string> parseErrorMessage(const std::string &responseBody);
-
     void dealSslHandShakeException(bool streamLog, bool fileLog);
     void dealHostUnreachableException(bool streamLog, bool fileLog);
     void dealCallTimeoutException(bool streamLog, bool fileLog);
@@ -72,6 +73,9 @@ private:
     void dealCurlOk(const HttpRequest &httpRequest, HttpResponse &httpResponse, bool streamLog, bool fileLog);
 
     std::string parseRequestId(const std::string &responseHeader);
+#if defined(HUAWEICLOUD_SDK_BSON_)
+    std::map<std::string, std::string> parseBsonErrorMessage(const std::string &responseBody);
+#endif
 };
 }
 }

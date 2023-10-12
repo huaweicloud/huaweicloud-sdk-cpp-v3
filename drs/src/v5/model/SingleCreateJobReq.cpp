@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/SingleCreateJobReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -32,7 +31,6 @@ web::json::value SingleCreateJobReq::toJson() const
 
     return val;
 }
-
 bool SingleCreateJobReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool SingleCreateJobReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 CreateJobReq SingleCreateJobReq::getJob() const
 {

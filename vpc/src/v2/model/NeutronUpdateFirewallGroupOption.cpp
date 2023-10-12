@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/NeutronUpdateFirewallGroupOption.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -57,7 +56,6 @@ web::json::value NeutronUpdateFirewallGroupOption::toJson() const
 
     return val;
 }
-
 bool NeutronUpdateFirewallGroupOption::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -118,6 +116,7 @@ bool NeutronUpdateFirewallGroupOption::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool NeutronUpdateFirewallGroupOption::isAdminStateUp() const
 {

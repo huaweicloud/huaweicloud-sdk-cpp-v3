@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/tms/v1/model/DeletePredefineTagsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Tms {
@@ -32,7 +31,6 @@ web::json::value DeletePredefineTagsRequest::toJson() const
 
     return val;
 }
-
 bool DeletePredefineTagsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool DeletePredefineTagsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 ReqDeletePredefineTag DeletePredefineTagsRequest::getBody() const
 {

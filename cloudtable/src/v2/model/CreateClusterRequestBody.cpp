@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cloudtable/v2/model/CreateClusterRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cloudtable {
@@ -32,7 +31,6 @@ web::json::value CreateClusterRequestBody::toJson() const
 
     return val;
 }
-
 bool CreateClusterRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CreateClusterRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 Cluster CreateClusterRequestBody::getCluster() const
 {

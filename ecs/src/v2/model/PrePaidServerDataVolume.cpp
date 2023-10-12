@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/PrePaidServerDataVolume.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -91,7 +90,6 @@ web::json::value PrePaidServerDataVolume::toJson() const
 
     return val;
 }
-
 bool PrePaidServerDataVolume::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -215,6 +213,7 @@ bool PrePaidServerDataVolume::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string PrePaidServerDataVolume::getVolumetype() const
 {

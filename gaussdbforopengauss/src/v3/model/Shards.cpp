@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/Shards.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -38,7 +37,6 @@ web::json::value Shards::toJson() const
 
     return val;
 }
-
 bool Shards::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool Shards::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string Shards::getNodeId() const
 {

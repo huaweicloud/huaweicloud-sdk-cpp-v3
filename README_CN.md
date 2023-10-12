@@ -52,6 +52,11 @@ make
 sudo make install
 ```
 
+对于使用bson编码的服务(kvs)，需要安装libbson，编译sdk时设置LIBBSON_INCLUDE_DIRS和LIBBSON_LIBRARY_DIRS指定头文件和库文件路径
+``` bash
+sudo apt-get install libbson-1.0
+```
+
 #### Step 2：编译安装
 
 ``` bash
@@ -72,6 +77,10 @@ sudo make install
 
 ``` bash
 vcpkg install curl cpprestsdk boost openssl spdlog
+```
+对于使用bson编码的服务(kvs)，需要安装libbson，编译sdk时设置LIBBSON_INCLUDE_DIRS和LIBBSON_LIBRARY_DIRS指定头文件和库文件路径
+``` bash
+vcpkg install libbson
 ```
 
 #### Step 2：使用 CLion 进行编译
@@ -527,3 +536,7 @@ add_subdirectory(vpc/src/v2)
 add_subdirectory(eip/src/v2)
 add_subdirectory(ecs/src/v2)
 ```
+- 对于使用bson编码的服务(kvs)，需要设置ENABLE_BSON开关为ON，默认OFF
+``` cmake
+# SET ENABLE_BSON IS ON
+option(ENABLE_BSON "Enable bson library" ON)

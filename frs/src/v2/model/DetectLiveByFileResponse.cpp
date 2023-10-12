@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/frs/v2/model/DetectLiveByFileResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Frs {
@@ -36,7 +35,6 @@ web::json::value DetectLiveByFileResponse::toJson() const
 
     return val;
 }
-
 bool DetectLiveByFileResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -61,6 +59,7 @@ bool DetectLiveByFileResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 LiveDetectResp_videoresult DetectLiveByFileResponse::getVideoResult() const
 {

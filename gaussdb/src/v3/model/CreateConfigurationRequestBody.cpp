@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/CreateConfigurationRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -46,7 +45,6 @@ web::json::value CreateConfigurationRequestBody::toJson() const
 
     return val;
 }
-
 bool CreateConfigurationRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -89,6 +87,7 @@ bool CreateConfigurationRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateConfigurationRequestBody::getName() const
 {

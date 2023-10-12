@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/AssociateServerVirtualIpRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -32,7 +31,6 @@ web::json::value AssociateServerVirtualIpRequestBody::toJson() const
 
     return val;
 }
-
 bool AssociateServerVirtualIpRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool AssociateServerVirtualIpRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 AssociateServerVirtualIpOption AssociateServerVirtualIpRequestBody::getNic() const
 {

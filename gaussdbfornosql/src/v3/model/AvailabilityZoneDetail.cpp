@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/AvailabilityZoneDetail.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -38,7 +37,6 @@ web::json::value AvailabilityZoneDetail::toJson() const
 
     return val;
 }
-
 bool AvailabilityZoneDetail::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool AvailabilityZoneDetail::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string AvailabilityZoneDetail::getPrimaryAvailabilityZone() const
 {

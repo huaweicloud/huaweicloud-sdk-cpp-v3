@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v1/model/DeleteRecordRuleResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -28,13 +27,13 @@ web::json::value DeleteRecordRuleResponse::toJson() const
 
     return val;
 }
-
 bool DeleteRecordRuleResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 }
 }

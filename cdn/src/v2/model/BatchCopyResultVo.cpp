@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v2/model/BatchCopyResultVo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -43,7 +42,6 @@ web::json::value BatchCopyResultVo::toJson() const
 
     return val;
 }
-
 bool BatchCopyResultVo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool BatchCopyResultVo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string BatchCopyResultVo::getReason() const
 {

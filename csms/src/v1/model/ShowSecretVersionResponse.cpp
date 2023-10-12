@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/csms/v1/model/ShowSecretVersionResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Csms {
@@ -32,7 +31,6 @@ web::json::value ShowSecretVersionResponse::toJson() const
 
     return val;
 }
-
 bool ShowSecretVersionResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ShowSecretVersionResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 Version ShowSecretVersionResponse::getVersion() const
 {

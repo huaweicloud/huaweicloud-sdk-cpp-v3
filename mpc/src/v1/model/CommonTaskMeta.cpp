@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/CommonTaskMeta.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -68,7 +67,6 @@ web::json::value CommonTaskMeta::toJson() const
 
     return val;
 }
-
 bool CommonTaskMeta::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -147,6 +145,7 @@ bool CommonTaskMeta::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CommonTaskMeta::getTaskId() const
 {

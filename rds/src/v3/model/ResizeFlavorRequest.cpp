@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/ResizeFlavorRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -32,7 +31,6 @@ web::json::value ResizeFlavorRequest::toJson() const
 
     return val;
 }
-
 bool ResizeFlavorRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ResizeFlavorRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 ResizeFlavorObject ResizeFlavorRequest::getResizeFlavor() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ims/v2/model/ListImagesResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ims {
@@ -32,7 +31,6 @@ web::json::value ListImagesResponse::toJson() const
 
     return val;
 }
-
 bool ListImagesResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ListImagesResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<ImageInfo>& ListImagesResponse::getImages()
 {

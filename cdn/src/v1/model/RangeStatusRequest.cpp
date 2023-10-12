@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/RangeStatusRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -33,7 +32,6 @@ web::json::value RangeStatusRequest::toJson() const
 
     return val;
 }
-
 bool RangeStatusRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool RangeStatusRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string RangeStatusRequest::getRangeStatus() const
 {

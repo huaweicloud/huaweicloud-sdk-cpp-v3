@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/ShowComparePolicyResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -67,7 +66,6 @@ web::json::value ShowComparePolicyResponse::toJson() const
 
     return val;
 }
-
 bool ShowComparePolicyResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -146,6 +144,7 @@ bool ShowComparePolicyResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowComparePolicyResponse::getPeriod() const
 {

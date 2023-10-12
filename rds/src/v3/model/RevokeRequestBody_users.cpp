@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/RevokeRequestBody_users.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -33,7 +32,6 @@ web::json::value RevokeRequestBody_users::toJson() const
 
     return val;
 }
-
 bool RevokeRequestBody_users::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool RevokeRequestBody_users::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string RevokeRequestBody_users::getName() const
 {

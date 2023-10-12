@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/PolicyoODCreate.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -83,7 +82,6 @@ web::json::value PolicyoODCreate::toJson() const
 
     return val;
 }
-
 bool PolicyoODCreate::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -189,6 +187,7 @@ bool PolicyoODCreate::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t PolicyoODCreate::getDayBackups() const
 {

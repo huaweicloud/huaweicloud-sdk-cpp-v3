@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/kms/v2/model/UpdateKeyAliasRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Kms {
@@ -43,7 +42,6 @@ web::json::value UpdateKeyAliasRequestBody::toJson() const
 
     return val;
 }
-
 bool UpdateKeyAliasRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool UpdateKeyAliasRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateKeyAliasRequestBody::getKeyId() const
 {

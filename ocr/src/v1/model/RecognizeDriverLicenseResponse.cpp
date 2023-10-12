@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/RecognizeDriverLicenseResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -32,7 +31,6 @@ web::json::value RecognizeDriverLicenseResponse::toJson() const
 
     return val;
 }
-
 bool RecognizeDriverLicenseResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool RecognizeDriverLicenseResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 DriverLicenseResult RecognizeDriverLicenseResponse::getResult() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/QueryTranscodingsTaskResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -105,7 +104,6 @@ web::json::value QueryTranscodingsTaskResponse::toJson() const
 
     return val;
 }
-
 bool QueryTranscodingsTaskResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -265,6 +263,7 @@ bool QueryTranscodingsTaskResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string QueryTranscodingsTaskResponse::getTaskId() const
 {

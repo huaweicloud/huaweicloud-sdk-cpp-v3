@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/frs/v2/model/SearchFaceByUrlRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Frs {
@@ -42,7 +41,6 @@ web::json::value SearchFaceByUrlRequest::toJson() const
 
     return val;
 }
-
 bool SearchFaceByUrlRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool SearchFaceByUrlRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string SearchFaceByUrlRequest::getFaceSetName() const
 {

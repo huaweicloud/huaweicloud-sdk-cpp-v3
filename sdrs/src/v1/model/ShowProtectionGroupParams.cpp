@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sdrs/v1/model/ShowProtectionGroupParams.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sdrs {
@@ -153,7 +152,6 @@ web::json::value ShowProtectionGroupParams::toJson() const
 
     return val;
 }
-
 bool ShowProtectionGroupParams::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -385,6 +383,7 @@ bool ShowProtectionGroupParams::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowProtectionGroupParams::getId() const
 {

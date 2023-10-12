@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/AudioTrack.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -43,7 +42,6 @@ web::json::value AudioTrack::toJson() const
 
     return val;
 }
-
 bool AudioTrack::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool AudioTrack::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t AudioTrack::getType() const
 {

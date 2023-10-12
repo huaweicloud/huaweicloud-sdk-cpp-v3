@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/ResizeInstanceRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -37,7 +36,6 @@ web::json::value ResizeInstanceRequest::toJson() const
 
     return val;
 }
-
 bool ResizeInstanceRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ResizeInstanceRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ResizeInstanceRequest::getInstanceId() const
 {

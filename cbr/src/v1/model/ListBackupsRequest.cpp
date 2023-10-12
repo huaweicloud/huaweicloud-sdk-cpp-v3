@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/ListBackupsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -143,7 +142,6 @@ web::json::value ListBackupsRequest::toJson() const
 
     return val;
 }
-
 bool ListBackupsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -357,6 +355,7 @@ bool ListBackupsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListBackupsRequest::getCheckpointId() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/frs/v2/model/DetectFaceByUrlResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Frs {
@@ -32,7 +31,6 @@ web::json::value DetectFaceByUrlResponse::toJson() const
 
     return val;
 }
-
 bool DetectFaceByUrlResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool DetectFaceByUrlResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<DetectFace>& DetectFaceByUrlResponse::getFaces()
 {

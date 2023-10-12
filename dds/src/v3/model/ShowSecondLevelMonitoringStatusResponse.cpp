@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/ShowSecondLevelMonitoringStatusResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -33,7 +32,6 @@ web::json::value ShowSecondLevelMonitoringStatusResponse::toJson() const
 
     return val;
 }
-
 bool ShowSecondLevelMonitoringStatusResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool ShowSecondLevelMonitoringStatusResponse::fromJson(const web::json::value& v
     }
     return ok;
 }
+
 
 bool ShowSecondLevelMonitoringStatusResponse::isEnabled() const
 {

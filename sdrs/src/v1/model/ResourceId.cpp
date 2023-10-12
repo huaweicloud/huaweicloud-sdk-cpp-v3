@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sdrs/v1/model/ResourceId.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sdrs {
@@ -33,7 +32,6 @@ web::json::value ResourceId::toJson() const
 
     return val;
 }
-
 bool ResourceId::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool ResourceId::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ResourceId::getId() const
 {

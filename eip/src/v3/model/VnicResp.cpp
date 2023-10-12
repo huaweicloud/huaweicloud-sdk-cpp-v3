@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v3/model/VnicResp.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -83,7 +82,6 @@ web::json::value VnicResp::toJson() const
 
     return val;
 }
-
 bool VnicResp::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -189,6 +187,7 @@ bool VnicResp::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string VnicResp::getPrivateIpAddress() const
 {

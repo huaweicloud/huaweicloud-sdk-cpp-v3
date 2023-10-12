@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/QualificationCategoryConfidence.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -48,7 +47,6 @@ web::json::value QualificationCategoryConfidence::toJson() const
 
     return val;
 }
-
 bool QualificationCategoryConfidence::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool QualificationCategoryConfidence::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 float QualificationCategoryConfidence::getCategory() const
 {

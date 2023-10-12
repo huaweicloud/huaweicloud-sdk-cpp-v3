@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/ListAuthorizedDatabasesRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -53,7 +52,6 @@ web::json::value ListAuthorizedDatabasesRequest::toJson() const
 
     return val;
 }
-
 bool ListAuthorizedDatabasesRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool ListAuthorizedDatabasesRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListAuthorizedDatabasesRequest::getXLanguage() const
 {

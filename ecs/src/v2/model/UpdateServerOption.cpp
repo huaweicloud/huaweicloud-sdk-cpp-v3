@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/UpdateServerOption.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -43,7 +42,6 @@ web::json::value UpdateServerOption::toJson() const
 
     return val;
 }
-
 bool UpdateServerOption::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool UpdateServerOption::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateServerOption::getName() const
 {

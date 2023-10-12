@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/AccessConfigHostGroupIdListCreate.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -32,7 +31,6 @@ web::json::value AccessConfigHostGroupIdListCreate::toJson() const
 
     return val;
 }
-
 bool AccessConfigHostGroupIdListCreate::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool AccessConfigHostGroupIdListCreate::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<std::string>& AccessConfigHostGroupIdListCreate::getHostGroupIdList()
 {

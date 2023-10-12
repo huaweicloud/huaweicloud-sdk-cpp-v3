@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/ListXellogFilesRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -48,7 +47,6 @@ web::json::value ListXellogFilesRequest::toJson() const
 
     return val;
 }
-
 bool ListXellogFilesRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool ListXellogFilesRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListXellogFilesRequest::getXLanguage() const
 {

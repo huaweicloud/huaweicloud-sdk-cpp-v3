@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/smn/v2/model/PublishMessageResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Smn {
@@ -38,7 +37,6 @@ web::json::value PublishMessageResponse::toJson() const
 
     return val;
 }
-
 bool PublishMessageResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool PublishMessageResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string PublishMessageResponse::getRequestId() const
 {

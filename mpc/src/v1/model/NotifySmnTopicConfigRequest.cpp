@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/NotifySmnTopicConfigRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -32,7 +31,6 @@ web::json::value NotifySmnTopicConfigRequest::toJson() const
 
     return val;
 }
-
 bool NotifySmnTopicConfigRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool NotifySmnTopicConfigRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 NotificationConfigReq NotifySmnTopicConfigRequest::getBody() const
 {

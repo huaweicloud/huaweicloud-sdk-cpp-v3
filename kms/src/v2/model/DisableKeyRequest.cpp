@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/kms/v2/model/DisableKeyRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Kms {
@@ -32,7 +31,6 @@ web::json::value DisableKeyRequest::toJson() const
 
     return val;
 }
-
 bool DisableKeyRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool DisableKeyRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 OperateKeyRequestBody DisableKeyRequest::getBody() const
 {

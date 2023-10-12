@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cts/v3/model/DeleteNotificationRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cts {
@@ -33,7 +32,6 @@ web::json::value DeleteNotificationRequest::toJson() const
 
     return val;
 }
-
 bool DeleteNotificationRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool DeleteNotificationRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DeleteNotificationRequest::getNotificationId() const
 {

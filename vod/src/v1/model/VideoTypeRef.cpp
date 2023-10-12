@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/VideoTypeRef.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -86,7 +85,6 @@ web::json::value VideoTypeRef::toJson() const
 
     return val;
 }
-
 bool VideoTypeRef::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -201,6 +199,7 @@ bool VideoTypeRef::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string VideoTypeRef::getVideoType() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cloudtable/v2/model/Nics.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cloudtable {
@@ -38,7 +37,6 @@ web::json::value Nics::toJson() const
 
     return val;
 }
-
 bool Nics::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool Nics::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string Nics::getNetId() const
 {

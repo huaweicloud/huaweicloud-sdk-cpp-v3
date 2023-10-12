@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/AccessConfigFormatCreate.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -36,7 +35,6 @@ web::json::value AccessConfigFormatCreate::toJson() const
 
     return val;
 }
-
 bool AccessConfigFormatCreate::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -61,6 +59,7 @@ bool AccessConfigFormatCreate::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 AccessConfigFormatSingleCreate AccessConfigFormatCreate::getSingle() const
 {

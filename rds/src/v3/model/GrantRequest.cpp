@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/GrantRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -37,7 +36,6 @@ web::json::value GrantRequest::toJson() const
 
     return val;
 }
-
 bool GrantRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool GrantRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string GrantRequest::getDbName() const
 {

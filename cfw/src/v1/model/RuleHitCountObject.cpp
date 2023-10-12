@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/RuleHitCountObject.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -38,7 +37,6 @@ web::json::value RuleHitCountObject::toJson() const
 
     return val;
 }
-
 bool RuleHitCountObject::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool RuleHitCountObject::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string RuleHitCountObject::getRuleId() const
 {

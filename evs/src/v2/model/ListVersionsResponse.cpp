@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/evs/v2/model/ListVersionsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Evs {
@@ -32,7 +31,6 @@ web::json::value ListVersionsResponse::toJson() const
 
     return val;
 }
-
 bool ListVersionsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ListVersionsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<Versions>& ListVersionsResponse::getVersions()
 {

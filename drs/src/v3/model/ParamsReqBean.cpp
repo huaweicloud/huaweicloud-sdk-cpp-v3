@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/ParamsReqBean.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -38,7 +37,6 @@ web::json::value ParamsReqBean::toJson() const
 
     return val;
 }
-
 bool ParamsReqBean::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ParamsReqBean::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ParamsReqBean::getKey() const
 {

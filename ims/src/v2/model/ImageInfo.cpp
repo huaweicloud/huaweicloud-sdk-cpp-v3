@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ims/v2/model/ImageInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ims {
@@ -322,7 +321,6 @@ web::json::value ImageInfo::toJson() const
 
     return val;
 }
-
 bool ImageInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -860,6 +858,7 @@ bool ImageInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ImageInfo::getBackupId() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/CreateServerNicAllowedAddressPairs.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -38,7 +37,6 @@ web::json::value CreateServerNicAllowedAddressPairs::toJson() const
 
     return val;
 }
-
 bool CreateServerNicAllowedAddressPairs::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool CreateServerNicAllowedAddressPairs::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateServerNicAllowedAddressPairs::getIpAddress() const
 {

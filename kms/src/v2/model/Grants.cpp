@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/kms/v2/model/Grants.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Kms {
@@ -72,7 +71,6 @@ web::json::value Grants::toJson() const
 
     return val;
 }
-
 bool Grants::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -160,6 +158,7 @@ bool Grants::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string Grants::getKeyId() const
 {

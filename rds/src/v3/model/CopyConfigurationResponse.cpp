@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/CopyConfigurationResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -63,7 +62,6 @@ web::json::value CopyConfigurationResponse::toJson() const
 
     return val;
 }
-
 bool CopyConfigurationResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -133,6 +131,7 @@ bool CopyConfigurationResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CopyConfigurationResponse::getId() const
 {

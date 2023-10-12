@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/UpdatePostgresqlDatabaseRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -42,7 +41,6 @@ web::json::value UpdatePostgresqlDatabaseRequest::toJson() const
 
     return val;
 }
-
 bool UpdatePostgresqlDatabaseRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool UpdatePostgresqlDatabaseRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdatePostgresqlDatabaseRequest::getXLanguage() const
 {

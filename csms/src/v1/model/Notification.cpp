@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/csms/v1/model/Notification.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Csms {
@@ -43,7 +42,6 @@ web::json::value Notification::toJson() const
 
     return val;
 }
-
 bool Notification::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool Notification::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string Notification::getTargetType() const
 {

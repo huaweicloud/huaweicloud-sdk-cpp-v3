@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/ScheduleTask.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -87,7 +86,6 @@ web::json::value ScheduleTask::toJson() const
 
     return val;
 }
-
 bool ScheduleTask::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -202,6 +200,7 @@ bool ScheduleTask::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ScheduleTask::getJobId() const
 {

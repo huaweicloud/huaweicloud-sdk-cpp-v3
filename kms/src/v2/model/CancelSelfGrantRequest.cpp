@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/kms/v2/model/CancelSelfGrantRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Kms {
@@ -32,7 +31,6 @@ web::json::value CancelSelfGrantRequest::toJson() const
 
     return val;
 }
-
 bool CancelSelfGrantRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CancelSelfGrantRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 RevokeGrantRequestBody CancelSelfGrantRequest::getBody() const
 {

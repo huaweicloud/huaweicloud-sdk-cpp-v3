@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/QueryTagItem.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -37,7 +36,6 @@ web::json::value QueryTagItem::toJson() const
 
     return val;
 }
-
 bool QueryTagItem::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool QueryTagItem::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string QueryTagItem::getKey() const
 {

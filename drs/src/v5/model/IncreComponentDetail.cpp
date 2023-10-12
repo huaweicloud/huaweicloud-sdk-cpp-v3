@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/IncreComponentDetail.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -63,7 +62,6 @@ web::json::value IncreComponentDetail::toJson() const
 
     return val;
 }
-
 bool IncreComponentDetail::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -133,6 +131,7 @@ bool IncreComponentDetail::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string IncreComponentDetail::getType() const
 {

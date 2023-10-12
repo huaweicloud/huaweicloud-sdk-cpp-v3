@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/ShowServerAutoRecoveryRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -33,7 +32,6 @@ web::json::value ShowServerAutoRecoveryRequest::toJson() const
 
     return val;
 }
-
 bool ShowServerAutoRecoveryRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool ShowServerAutoRecoveryRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowServerAutoRecoveryRequest::getServerId() const
 {

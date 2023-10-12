@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/DeleteGaussMySqlReadonlyNodeResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -38,7 +37,6 @@ web::json::value DeleteGaussMySqlReadonlyNodeResponse::toJson() const
 
     return val;
 }
-
 bool DeleteGaussMySqlReadonlyNodeResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool DeleteGaussMySqlReadonlyNodeResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DeleteGaussMySqlReadonlyNodeResponse::getJobId() const
 {

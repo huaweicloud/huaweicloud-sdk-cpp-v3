@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/ExitEntryPermitResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -108,7 +107,6 @@ web::json::value ExitEntryPermitResult::toJson() const
 
     return val;
 }
-
 bool ExitEntryPermitResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -268,6 +266,7 @@ bool ExitEntryPermitResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ExitEntryPermitResult::getName() const
 {

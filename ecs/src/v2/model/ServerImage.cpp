@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/ServerImage.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -33,7 +32,6 @@ web::json::value ServerImage::toJson() const
 
     return val;
 }
-
 bool ServerImage::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool ServerImage::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ServerImage::getId() const
 {

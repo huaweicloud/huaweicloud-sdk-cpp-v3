@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/UpdatePostgresqlInstanceAliasRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -42,7 +41,6 @@ web::json::value UpdatePostgresqlInstanceAliasRequest::toJson() const
 
     return val;
 }
-
 bool UpdatePostgresqlInstanceAliasRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool UpdatePostgresqlInstanceAliasRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdatePostgresqlInstanceAliasRequest::getXLanguage() const
 {

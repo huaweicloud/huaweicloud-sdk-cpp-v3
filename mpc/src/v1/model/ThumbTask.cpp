@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/ThumbTask.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -75,7 +74,6 @@ web::json::value ThumbTask::toJson() const
 
     return val;
 }
-
 bool ThumbTask::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -172,6 +170,7 @@ bool ThumbTask::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ThumbTask::getTaskId() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/CdnIps.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -53,7 +52,6 @@ web::json::value CdnIps::toJson() const
 
     return val;
 }
-
 bool CdnIps::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool CdnIps::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CdnIps::getIp() const
 {

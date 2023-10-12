@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/tms/v1/model/CreateTagRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Tms {
@@ -38,7 +37,6 @@ web::json::value CreateTagRequest::toJson() const
 
     return val;
 }
-
 bool CreateTagRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool CreateTagRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateTagRequest::getKey() const
 {

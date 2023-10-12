@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/frs/v2/model/DetectLiveByBase64IntlRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Frs {
@@ -37,7 +36,6 @@ web::json::value DetectLiveByBase64IntlRequest::toJson() const
 
     return val;
 }
-
 bool DetectLiveByBase64IntlRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool DetectLiveByBase64IntlRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DetectLiveByBase64IntlRequest::getEnterpriseProjectId() const
 {

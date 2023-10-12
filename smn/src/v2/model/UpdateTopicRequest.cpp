@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/smn/v2/model/UpdateTopicRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Smn {
@@ -37,7 +36,6 @@ web::json::value UpdateTopicRequest::toJson() const
 
     return val;
 }
-
 bool UpdateTopicRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool UpdateTopicRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateTopicRequest::getTopicUrn() const
 {

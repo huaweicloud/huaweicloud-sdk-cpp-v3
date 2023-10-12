@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sis/v1/model/FlashResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sis {
@@ -37,7 +36,6 @@ web::json::value FlashResult::toJson() const
 
     return val;
 }
-
 bool FlashResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool FlashResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t FlashResult::getChannelId() const
 {

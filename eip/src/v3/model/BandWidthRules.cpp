@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v3/model/BandWidthRules.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -57,7 +56,6 @@ web::json::value BandWidthRules::toJson() const
 
     return val;
 }
-
 bool BandWidthRules::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -118,6 +116,7 @@ bool BandWidthRules::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string BandWidthRules::getId() const
 {

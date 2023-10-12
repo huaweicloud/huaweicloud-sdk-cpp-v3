@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/ListExtractTaskResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -37,7 +36,6 @@ web::json::value ListExtractTaskResponse::toJson() const
 
     return val;
 }
-
 bool ListExtractTaskResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ListExtractTaskResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ListExtractTaskResponse::getTotal() const
 {

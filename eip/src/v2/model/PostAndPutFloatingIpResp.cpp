@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v2/model/PostAndPutFloatingIpResp.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -78,7 +77,6 @@ web::json::value PostAndPutFloatingIpResp::toJson() const
 
     return val;
 }
-
 bool PostAndPutFloatingIpResp::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -175,6 +173,7 @@ bool PostAndPutFloatingIpResp::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string PostAndPutFloatingIpResp::getFixedIpAddress() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/RecycleInstancesDetailResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -93,7 +92,6 @@ web::json::value RecycleInstancesDetailResult::toJson() const
 
     return val;
 }
-
 bool RecycleInstancesDetailResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -217,6 +215,7 @@ bool RecycleInstancesDetailResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string RecycleInstancesDetailResult::getId() const
 {

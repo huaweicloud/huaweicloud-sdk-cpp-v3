@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/csms/v1/model/DownloadSecretBlobRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Csms {
@@ -33,7 +32,6 @@ web::json::value DownloadSecretBlobRequest::toJson() const
 
     return val;
 }
-
 bool DownloadSecretBlobRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool DownloadSecretBlobRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DownloadSecretBlobRequest::getSecretName() const
 {

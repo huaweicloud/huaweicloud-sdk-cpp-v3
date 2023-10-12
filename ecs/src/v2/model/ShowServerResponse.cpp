@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/ShowServerResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -32,7 +31,6 @@ web::json::value ShowServerResponse::toJson() const
 
     return val;
 }
-
 bool ShowServerResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ShowServerResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 ServerDetail ShowServerResponse::getServer() const
 {

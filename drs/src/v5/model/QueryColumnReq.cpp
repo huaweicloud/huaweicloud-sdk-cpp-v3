@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/QueryColumnReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -37,7 +36,6 @@ web::json::value QueryColumnReq::toJson() const
 
     return val;
 }
-
 bool QueryColumnReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool QueryColumnReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool QueryColumnReq::isIsForceRefresh() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/ShowStructTemplateResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -84,7 +83,6 @@ web::json::value ShowStructTemplateResponse::toJson() const
 
     return val;
 }
-
 bool ShowStructTemplateResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -199,6 +197,7 @@ bool ShowStructTemplateResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<StructFieldInfoReturn>& ShowStructTemplateResponse::getDemoFields()
 {

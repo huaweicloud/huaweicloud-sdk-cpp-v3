@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sdrs/v1/model/ExpandReplicationRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sdrs {
@@ -37,7 +36,6 @@ web::json::value ExpandReplicationRequest::toJson() const
 
     return val;
 }
-
 bool ExpandReplicationRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ExpandReplicationRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ExpandReplicationRequest::getReplicationId() const
 {

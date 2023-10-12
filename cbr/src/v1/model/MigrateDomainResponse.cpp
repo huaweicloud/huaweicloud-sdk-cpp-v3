@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/MigrateDomainResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -32,7 +31,6 @@ web::json::value MigrateDomainResponse::toJson() const
 
     return val;
 }
-
 bool MigrateDomainResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool MigrateDomainResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::map<std::string, std::string>& MigrateDomainResponse::getBody()
 {

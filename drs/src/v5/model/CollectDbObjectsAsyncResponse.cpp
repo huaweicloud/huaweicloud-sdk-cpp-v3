@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/CollectDbObjectsAsyncResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -38,7 +37,6 @@ web::json::value CollectDbObjectsAsyncResponse::toJson() const
 
     return val;
 }
-
 bool CollectDbObjectsAsyncResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool CollectDbObjectsAsyncResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CollectDbObjectsAsyncResponse::getId() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/OptionalFlavorsInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -37,7 +36,6 @@ web::json::value OptionalFlavorsInfo::toJson() const
 
     return val;
 }
-
 bool OptionalFlavorsInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool OptionalFlavorsInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<ComputeFlavor>& OptionalFlavorsInfo::getList()
 {

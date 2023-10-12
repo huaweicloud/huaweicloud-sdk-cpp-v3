@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/NeutronListFirewallPoliciesRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -55,7 +54,6 @@ web::json::value NeutronListFirewallPoliciesRequest::toJson() const
 
     return val;
 }
-
 bool NeutronListFirewallPoliciesRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -116,6 +114,7 @@ bool NeutronListFirewallPoliciesRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t NeutronListFirewallPoliciesRequest::getLimit() const
 {

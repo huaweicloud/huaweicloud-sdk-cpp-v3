@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sis/v1/model/Result.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sis {
@@ -42,7 +41,6 @@ web::json::value Result::toJson() const
 
     return val;
 }
-
 bool Result::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool Result::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string Result::getText() const
 {

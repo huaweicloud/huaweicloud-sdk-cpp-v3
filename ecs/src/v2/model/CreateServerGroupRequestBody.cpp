@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/CreateServerGroupRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -32,7 +31,6 @@ web::json::value CreateServerGroupRequestBody::toJson() const
 
     return val;
 }
-
 bool CreateServerGroupRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CreateServerGroupRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 CreateServerGroupOption CreateServerGroupRequestBody::getServerGroup() const
 {

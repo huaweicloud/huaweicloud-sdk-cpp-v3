@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/PauseJobResp.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -48,7 +47,6 @@ web::json::value PauseJobResp::toJson() const
 
     return val;
 }
-
 bool PauseJobResp::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool PauseJobResp::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string PauseJobResp::getId() const
 {

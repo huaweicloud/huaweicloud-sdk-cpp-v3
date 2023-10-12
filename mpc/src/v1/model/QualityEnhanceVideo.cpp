@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/QualityEnhanceVideo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -52,7 +51,6 @@ web::json::value QualityEnhanceVideo::toJson() const
 
     return val;
 }
-
 bool QualityEnhanceVideo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -113,6 +111,7 @@ bool QualityEnhanceVideo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 VideoDenoise QualityEnhanceVideo::getVideoDenoise() const
 {

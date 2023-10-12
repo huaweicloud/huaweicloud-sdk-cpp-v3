@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/NeutronCreateNetworkResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -32,7 +31,6 @@ web::json::value NeutronCreateNetworkResponse::toJson() const
 
     return val;
 }
-
 bool NeutronCreateNetworkResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool NeutronCreateNetworkResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 NeutronNetwork NeutronCreateNetworkResponse::getNetwork() const
 {

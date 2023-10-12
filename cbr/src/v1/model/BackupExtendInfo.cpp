@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/BackupExtendInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -82,7 +81,6 @@ web::json::value BackupExtendInfo::toJson() const
 
     return val;
 }
-
 bool BackupExtendInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -188,6 +186,7 @@ bool BackupExtendInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool BackupExtendInfo::isAutoTrigger() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/tms/v1/model/ResqTagResource.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Tms {
@@ -56,7 +55,6 @@ web::json::value ResqTagResource::toJson() const
 
     return val;
 }
-
 bool ResqTagResource::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -117,6 +115,7 @@ bool ResqTagResource::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ResqTagResource::getProjectId() const
 {

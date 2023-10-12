@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/StructProcessVO.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -58,7 +57,6 @@ web::json::value StructProcessVO::toJson() const
 
     return val;
 }
-
 bool StructProcessVO::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool StructProcessVO::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string StructProcessVO::getType() const
 {

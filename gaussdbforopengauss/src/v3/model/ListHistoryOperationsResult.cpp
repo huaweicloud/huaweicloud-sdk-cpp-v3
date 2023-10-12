@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/ListHistoryOperationsResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -53,7 +52,6 @@ web::json::value ListHistoryOperationsResult::toJson() const
 
     return val;
 }
-
 bool ListHistoryOperationsResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool ListHistoryOperationsResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListHistoryOperationsResult::getParameterName() const
 {

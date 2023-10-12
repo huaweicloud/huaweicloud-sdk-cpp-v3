@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ims/v2/model/ListImagesTagsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ims {
@@ -32,7 +31,6 @@ web::json::value ListImagesTagsResponse::toJson() const
 
     return val;
 }
-
 bool ListImagesTagsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ListImagesTagsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<Tags>& ListImagesTagsResponse::getTags()
 {

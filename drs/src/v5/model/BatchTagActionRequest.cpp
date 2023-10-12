@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/BatchTagActionRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -47,7 +46,6 @@ web::json::value BatchTagActionRequest::toJson() const
 
     return val;
 }
-
 bool BatchTagActionRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -90,6 +88,7 @@ bool BatchTagActionRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string BatchTagActionRequest::getResourceType() const
 {

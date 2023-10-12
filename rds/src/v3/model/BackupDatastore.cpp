@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/BackupDatastore.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -38,7 +37,6 @@ web::json::value BackupDatastore::toJson() const
 
     return val;
 }
-
 bool BackupDatastore::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool BackupDatastore::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string BackupDatastore::getType() const
 {

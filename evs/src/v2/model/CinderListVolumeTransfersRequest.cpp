@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/evs/v2/model/CinderListVolumeTransfersRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Evs {
@@ -38,7 +37,6 @@ web::json::value CinderListVolumeTransfersRequest::toJson() const
 
     return val;
 }
-
 bool CinderListVolumeTransfersRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool CinderListVolumeTransfersRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t CinderListVolumeTransfersRequest::getLimit() const
 {

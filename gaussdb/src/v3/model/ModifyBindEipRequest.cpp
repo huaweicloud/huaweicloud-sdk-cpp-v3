@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/ModifyBindEipRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -38,7 +37,6 @@ web::json::value ModifyBindEipRequest::toJson() const
 
     return val;
 }
-
 bool ModifyBindEipRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ModifyBindEipRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ModifyBindEipRequest::getPublicIp() const
 {

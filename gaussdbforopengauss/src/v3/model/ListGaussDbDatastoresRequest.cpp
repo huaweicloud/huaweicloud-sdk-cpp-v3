@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/ListGaussDbDatastoresRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -33,7 +32,6 @@ web::json::value ListGaussDbDatastoresRequest::toJson() const
 
     return val;
 }
-
 bool ListGaussDbDatastoresRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool ListGaussDbDatastoresRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListGaussDbDatastoresRequest::getXLanguage() const
 {

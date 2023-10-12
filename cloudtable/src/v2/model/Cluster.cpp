@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cloudtable/v2/model/Cluster.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cloudtable {
@@ -71,7 +70,6 @@ web::json::value Cluster::toJson() const
 
     return val;
 }
-
 bool Cluster::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -159,6 +157,7 @@ bool Cluster::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string Cluster::getAuthMode() const
 {

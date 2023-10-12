@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cts/v3/model/CreateNotificationRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cts {
@@ -55,7 +54,6 @@ web::json::value CreateNotificationRequestBody::toJson() const
 
     return val;
 }
-
 bool CreateNotificationRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -116,6 +114,7 @@ bool CreateNotificationRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateNotificationRequestBody::getNotificationName() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/UpdateInstanceConfigurationRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -32,7 +31,6 @@ web::json::value UpdateInstanceConfigurationRequestBody::toJson() const
 
     return val;
 }
-
 bool UpdateInstanceConfigurationRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool UpdateInstanceConfigurationRequestBody::fromJson(const web::json::value& va
     }
     return ok;
 }
+
 
 std::map<std::string, std::string>& UpdateInstanceConfigurationRequestBody::getValues()
 {

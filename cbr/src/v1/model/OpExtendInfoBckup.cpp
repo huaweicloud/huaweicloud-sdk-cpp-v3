@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/OpExtendInfoBckup.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -58,7 +57,6 @@ web::json::value OpExtendInfoBckup::toJson() const
 
     return val;
 }
-
 bool OpExtendInfoBckup::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool OpExtendInfoBckup::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string OpExtendInfoBckup::getAppConsistencyErrorCode() const
 {

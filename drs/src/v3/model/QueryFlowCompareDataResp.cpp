@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/QueryFlowCompareDataResp.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -42,7 +41,6 @@ web::json::value QueryFlowCompareDataResp::toJson() const
 
     return val;
 }
-
 bool QueryFlowCompareDataResp::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool QueryFlowCompareDataResp::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int64_t QueryFlowCompareDataResp::getTotalRecord() const
 {

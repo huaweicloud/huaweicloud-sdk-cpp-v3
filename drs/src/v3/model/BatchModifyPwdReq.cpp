@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/BatchModifyPwdReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -32,7 +31,6 @@ web::json::value BatchModifyPwdReq::toJson() const
 
     return val;
 }
-
 bool BatchModifyPwdReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool BatchModifyPwdReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<ModifyPwdEndPoint>& BatchModifyPwdReq::getJobs()
 {

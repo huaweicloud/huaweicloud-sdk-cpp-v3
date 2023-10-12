@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cloudtable/v2/model/GrowNodeReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cloudtable {
@@ -38,7 +37,6 @@ web::json::value GrowNodeReq::toJson() const
 
     return val;
 }
-
 bool GrowNodeReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool GrowNodeReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string GrowNodeReq::getComponentName() const
 {

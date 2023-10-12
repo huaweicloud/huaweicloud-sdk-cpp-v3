@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/ListOffSiteBackupsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -68,7 +67,6 @@ web::json::value ListOffSiteBackupsRequest::toJson() const
 
     return val;
 }
-
 bool ListOffSiteBackupsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -147,6 +145,7 @@ bool ListOffSiteBackupsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListOffSiteBackupsRequest::getXLanguage() const
 {

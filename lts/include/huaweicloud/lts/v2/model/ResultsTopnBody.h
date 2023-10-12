@@ -2,9 +2,11 @@
 #ifndef HUAWEICLOUD_SDK_LTS_V2_MODEL_ResultsTopnBody_H_
 #define HUAWEICLOUD_SDK_LTS_V2_MODEL_ResultsTopnBody_H_
 
+
 #include <huaweicloud/lts/v2/LtsExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
@@ -31,10 +33,8 @@ public:
     /// ModelBase overrides
 
     void validate() override;
-
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
-
     /////////////////////////////////////////////
     /// ResultsTopnBody members
 
@@ -101,6 +101,33 @@ public:
     void unsetlogStreamName();
     void setLogStreamName(const std::string& value);
 
+    /// <summary>
+    /// 基础转储流量，byte, 查询数据类型中包含basicTransfer时返回
+    /// </summary>
+
+    double getBasicTransfer() const;
+    bool basicTransferIsSet() const;
+    void unsetbasicTransfer();
+    void setBasicTransfer(double value);
+
+    /// <summary>
+    /// 基础转储流量，byte, 查询数据类型中包含seniorTransfer时返回
+    /// </summary>
+
+    double getSeniorTransfer() const;
+    bool seniorTransferIsSet() const;
+    void unsetseniorTransfer();
+    void setSeniorTransfer(double value);
+
+    /// <summary>
+    /// 不是委托转储，true，是委托转储，则前端资源统计展示的流不能跳
+    /// </summary>
+
+    bool isIsAgencyTransfer() const;
+    bool isAgencyTransferIsSet() const;
+    void unsetisAgencyTransfer();
+    void setIsAgencyTransfer(bool value);
+
 
 protected:
     double indexTraffic_;
@@ -117,6 +144,12 @@ protected:
     bool logStreamIdIsSet_;
     std::string logStreamName_;
     bool logStreamNameIsSet_;
+    double basicTransfer_;
+    bool basicTransferIsSet_;
+    double seniorTransfer_;
+    bool seniorTransferIsSet_;
+    bool isAgencyTransfer_;
+    bool isAgencyTransferIsSet_;
 
 };
 

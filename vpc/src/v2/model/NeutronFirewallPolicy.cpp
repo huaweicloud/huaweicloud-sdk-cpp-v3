@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/NeutronFirewallPolicy.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -67,7 +66,6 @@ web::json::value NeutronFirewallPolicy::toJson() const
 
     return val;
 }
-
 bool NeutronFirewallPolicy::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -146,6 +144,7 @@ bool NeutronFirewallPolicy::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool NeutronFirewallPolicy::isAudited() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/CancelScheduleTaskResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -32,7 +31,6 @@ web::json::value CancelScheduleTaskResponse::toJson() const
 
     return val;
 }
-
 bool CancelScheduleTaskResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CancelScheduleTaskResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<std::string>& CancelScheduleTaskResponse::getJobIds()
 {

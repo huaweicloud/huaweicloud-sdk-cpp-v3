@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/ListRestorableInstancesResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -37,7 +36,6 @@ web::json::value ListRestorableInstancesResponse::toJson() const
 
     return val;
 }
-
 bool ListRestorableInstancesResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ListRestorableInstancesResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<InstancesResult>& ListRestorableInstancesResponse::getInstances()
 {

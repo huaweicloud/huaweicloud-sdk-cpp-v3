@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/UpdateBlackWhiteListUsingPutRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -47,7 +46,6 @@ web::json::value UpdateBlackWhiteListUsingPutRequest::toJson() const
 
     return val;
 }
-
 bool UpdateBlackWhiteListUsingPutRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -90,6 +88,7 @@ bool UpdateBlackWhiteListUsingPutRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateBlackWhiteListUsingPutRequest::getListId() const
 {

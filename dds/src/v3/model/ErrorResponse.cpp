@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/ErrorResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -38,7 +37,6 @@ web::json::value ErrorResponse::toJson() const
 
     return val;
 }
-
 bool ErrorResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ErrorResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ErrorResponse::getErrorCode() const
 {

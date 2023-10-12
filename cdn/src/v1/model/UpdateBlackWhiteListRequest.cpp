@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/UpdateBlackWhiteListRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -42,7 +41,6 @@ web::json::value UpdateBlackWhiteListRequest::toJson() const
 
     return val;
 }
-
 bool UpdateBlackWhiteListRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool UpdateBlackWhiteListRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateBlackWhiteListRequest::getDomainId() const
 {

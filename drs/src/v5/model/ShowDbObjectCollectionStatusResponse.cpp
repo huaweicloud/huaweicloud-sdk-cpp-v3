@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/ShowDbObjectCollectionStatusResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -56,7 +55,6 @@ web::json::value ShowDbObjectCollectionStatusResponse::toJson() const
 
     return val;
 }
-
 bool ShowDbObjectCollectionStatusResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -117,6 +115,7 @@ bool ShowDbObjectCollectionStatusResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 TargetRootDb ShowDbObjectCollectionStatusResponse::getTargetRootDb() const
 {

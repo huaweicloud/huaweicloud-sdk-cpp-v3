@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cloudtable/v2/model/ShowClusterSettingResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cloudtable {
@@ -37,7 +36,6 @@ web::json::value ShowClusterSettingResponse::toJson() const
 
     return val;
 }
-
 bool ShowClusterSettingResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ShowClusterSettingResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ShowClusterSettingResponse::getParmStatus() const
 {

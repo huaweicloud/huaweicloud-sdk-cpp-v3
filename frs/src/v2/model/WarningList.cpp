@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/frs/v2/model/WarningList.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Frs {
@@ -38,7 +37,6 @@ web::json::value WarningList::toJson() const
 
     return val;
 }
-
 bool WarningList::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool WarningList::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t WarningList::getWarningCode() const
 {

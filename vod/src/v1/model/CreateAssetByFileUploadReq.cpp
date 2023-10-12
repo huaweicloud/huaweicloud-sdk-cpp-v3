@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/CreateAssetByFileUploadReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -110,7 +109,6 @@ web::json::value CreateAssetByFileUploadReq::toJson() const
 
     return val;
 }
-
 bool CreateAssetByFileUploadReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -270,6 +268,7 @@ bool CreateAssetByFileUploadReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateAssetByFileUploadReq::getTitle() const
 {

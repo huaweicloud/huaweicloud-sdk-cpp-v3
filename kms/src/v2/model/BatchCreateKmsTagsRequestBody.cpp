@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/kms/v2/model/BatchCreateKmsTagsRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Kms {
@@ -42,7 +41,6 @@ web::json::value BatchCreateKmsTagsRequestBody::toJson() const
 
     return val;
 }
-
 bool BatchCreateKmsTagsRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool BatchCreateKmsTagsRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<TagItem>& BatchCreateKmsTagsRequestBody::getTags()
 {

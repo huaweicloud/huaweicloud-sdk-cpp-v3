@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/BatchValidateConnectionsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -37,7 +36,6 @@ web::json::value BatchValidateConnectionsRequest::toJson() const
 
     return val;
 }
-
 bool BatchValidateConnectionsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool BatchValidateConnectionsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string BatchValidateConnectionsRequest::getXLanguage() const
 {

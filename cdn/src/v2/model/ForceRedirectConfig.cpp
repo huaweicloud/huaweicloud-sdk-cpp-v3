@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v2/model/ForceRedirectConfig.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -43,7 +42,6 @@ web::json::value ForceRedirectConfig::toJson() const
 
     return val;
 }
-
 bool ForceRedirectConfig::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool ForceRedirectConfig::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ForceRedirectConfig::getStatus() const
 {

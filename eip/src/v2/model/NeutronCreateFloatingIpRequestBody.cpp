@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v2/model/NeutronCreateFloatingIpRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -32,7 +31,6 @@ web::json::value NeutronCreateFloatingIpRequestBody::toJson() const
 
     return val;
 }
-
 bool NeutronCreateFloatingIpRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool NeutronCreateFloatingIpRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 CreateFloatingIpOption NeutronCreateFloatingIpRequestBody::getFloatingip() const
 {

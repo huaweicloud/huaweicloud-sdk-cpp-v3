@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/ListProjectTagsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -37,7 +36,6 @@ web::json::value ListProjectTagsResponse::toJson() const
 
     return val;
 }
-
 bool ListProjectTagsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ListProjectTagsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ListProjectTagsResponse::getTotalCount() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/StructDetailVO.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -53,7 +52,6 @@ web::json::value StructDetailVO::toJson() const
 
     return val;
 }
-
 bool StructDetailVO::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool StructDetailVO::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t StructDetailVO::getProgress() const
 {

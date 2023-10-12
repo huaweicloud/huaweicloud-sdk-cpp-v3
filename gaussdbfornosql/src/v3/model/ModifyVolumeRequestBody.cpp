@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/ModifyVolumeRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -38,7 +37,6 @@ web::json::value ModifyVolumeRequestBody::toJson() const
 
     return val;
 }
-
 bool ModifyVolumeRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ModifyVolumeRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ModifyVolumeRequestBody::getSize() const
 {

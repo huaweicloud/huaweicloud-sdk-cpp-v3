@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/FinancialStatementResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -50,7 +49,6 @@ web::json::value FinancialStatementResult::toJson() const
 
     return val;
 }
-
 bool FinancialStatementResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -102,6 +100,7 @@ bool FinancialStatementResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t FinancialStatementResult::getWordsRegionCount() const
 {

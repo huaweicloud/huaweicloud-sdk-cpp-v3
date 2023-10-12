@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/BatchListStructDetailRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -42,7 +41,6 @@ web::json::value BatchListStructDetailRequest::toJson() const
 
     return val;
 }
-
 bool BatchListStructDetailRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool BatchListStructDetailRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string BatchListStructDetailRequest::getType() const
 {

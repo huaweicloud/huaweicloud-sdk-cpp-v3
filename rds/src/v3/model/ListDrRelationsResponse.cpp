@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/ListDrRelationsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -32,7 +31,6 @@ web::json::value ListDrRelationsResponse::toJson() const
 
     return val;
 }
-
 bool ListDrRelationsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ListDrRelationsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<Instance_dr_relation>& ListDrRelationsResponse::getInstanceDrRelations()
 {

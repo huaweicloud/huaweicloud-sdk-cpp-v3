@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/ListServerBlockDevicesResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -36,7 +35,6 @@ web::json::value ListServerBlockDevicesResponse::toJson() const
 
     return val;
 }
-
 bool ListServerBlockDevicesResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -61,6 +59,7 @@ bool ListServerBlockDevicesResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 BlockDeviceAttachableQuantity ListServerBlockDevicesResponse::getAttachableQuantity() const
 {

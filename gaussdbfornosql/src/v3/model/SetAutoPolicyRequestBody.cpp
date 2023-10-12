@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/SetAutoPolicyRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -41,7 +40,6 @@ web::json::value SetAutoPolicyRequestBody::toJson() const
 
     return val;
 }
-
 bool SetAutoPolicyRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -75,6 +73,7 @@ bool SetAutoPolicyRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<std::string>& SetAutoPolicyRequestBody::getInstanceIds()
 {

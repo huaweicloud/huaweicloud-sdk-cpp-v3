@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/smn/v2/model/LogtankItem.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Smn {
@@ -53,7 +52,6 @@ web::json::value LogtankItem::toJson() const
 
     return val;
 }
-
 bool LogtankItem::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool LogtankItem::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string LogtankItem::getId() const
 {

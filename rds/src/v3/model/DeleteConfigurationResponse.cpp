@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/DeleteConfigurationResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -28,13 +27,13 @@ web::json::value DeleteConfigurationResponse::toJson() const
 
     return val;
 }
-
 bool DeleteConfigurationResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 }
 }

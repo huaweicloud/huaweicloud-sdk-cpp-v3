@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/TransformationInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -38,7 +37,6 @@ web::json::value TransformationInfo::toJson() const
 
     return val;
 }
-
 bool TransformationInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool TransformationInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string TransformationInfo::getTransformationType() const
 {

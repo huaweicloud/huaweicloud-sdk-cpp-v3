@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/codeartsdeploy/v2/model/DeploymentGroupDetail.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsdeploy {
@@ -105,7 +104,6 @@ web::json::value DeploymentGroupDetail::toJson() const
 
     return val;
 }
-
 bool DeploymentGroupDetail::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -256,6 +254,7 @@ bool DeploymentGroupDetail::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DeploymentGroupDetail::getGroupId() const
 {

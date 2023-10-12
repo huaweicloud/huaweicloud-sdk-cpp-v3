@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/ListAllBucketsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -32,7 +31,6 @@ web::json::value ListAllBucketsResponse::toJson() const
 
     return val;
 }
-
 bool ListAllBucketsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ListAllBucketsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<ObsBucket>& ListAllBucketsResponse::getBuckets()
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/tms/v1/model/PredefineTag.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Tms {
@@ -43,7 +42,6 @@ web::json::value PredefineTag::toJson() const
 
     return val;
 }
-
 bool PredefineTag::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool PredefineTag::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string PredefineTag::getKey() const
 {

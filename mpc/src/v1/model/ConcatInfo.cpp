@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/ConcatInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -32,7 +31,6 @@ web::json::value ConcatInfo::toJson() const
 
     return val;
 }
-
 bool ConcatInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ConcatInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<ObsObjInfo>& ConcatInfo::getInputs()
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v2/model/CreatePrePaidPublicipExtendParamOption.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -53,7 +52,6 @@ web::json::value CreatePrePaidPublicipExtendParamOption::toJson() const
 
     return val;
 }
-
 bool CreatePrePaidPublicipExtendParamOption::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool CreatePrePaidPublicipExtendParamOption::fromJson(const web::json::value& va
     }
     return ok;
 }
+
 
 std::string CreatePrePaidPublicipExtendParamOption::getChargeMode() const
 {

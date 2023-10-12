@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sdrs/v1/model/ShowActiveActiveDomainParams.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sdrs {
@@ -56,7 +55,6 @@ web::json::value ShowActiveActiveDomainParams::toJson() const
 
     return val;
 }
-
 bool ShowActiveActiveDomainParams::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -117,6 +115,7 @@ bool ShowActiveActiveDomainParams::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowActiveActiveDomainParams::getId() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/WebImageExtractedData.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -36,7 +35,6 @@ web::json::value WebImageExtractedData::toJson() const
 
     return val;
 }
-
 bool WebImageExtractedData::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -61,6 +59,7 @@ bool WebImageExtractedData::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 WebImageContactInfo WebImageExtractedData::getContactInfo() const
 {

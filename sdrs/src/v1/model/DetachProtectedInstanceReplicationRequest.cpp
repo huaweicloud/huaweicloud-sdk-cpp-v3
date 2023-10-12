@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sdrs/v1/model/DetachProtectedInstanceReplicationRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sdrs {
@@ -38,7 +37,6 @@ web::json::value DetachProtectedInstanceReplicationRequest::toJson() const
 
     return val;
 }
-
 bool DetachProtectedInstanceReplicationRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool DetachProtectedInstanceReplicationRequest::fromJson(const web::json::value&
     }
     return ok;
 }
+
 
 std::string DetachProtectedInstanceReplicationRequest::getProtectedInstanceId() const
 {

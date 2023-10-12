@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/csms/v1/model/BatchCreateOrDeleteTagsRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Csms {
@@ -42,7 +41,6 @@ web::json::value BatchCreateOrDeleteTagsRequestBody::toJson() const
 
     return val;
 }
-
 bool BatchCreateOrDeleteTagsRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool BatchCreateOrDeleteTagsRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<TagItem>& BatchCreateOrDeleteTagsRequestBody::getTags()
 {

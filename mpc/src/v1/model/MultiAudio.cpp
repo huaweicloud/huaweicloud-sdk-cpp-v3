@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/MultiAudio.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -41,7 +40,6 @@ web::json::value MultiAudio::toJson() const
 
     return val;
 }
-
 bool MultiAudio::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -75,6 +73,7 @@ bool MultiAudio::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<TracksInfo>& MultiAudio::getTracksInfo()
 {

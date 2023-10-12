@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ims/v2/model/SubJobResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ims {
@@ -67,7 +66,6 @@ web::json::value SubJobResult::toJson() const
 
     return val;
 }
-
 bool SubJobResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -146,6 +144,7 @@ bool SubJobResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string SubJobResult::getStatus() const
 {

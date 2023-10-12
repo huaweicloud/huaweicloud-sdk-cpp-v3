@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/ListAsyncJobsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -73,7 +72,6 @@ web::json::value ListAsyncJobsRequest::toJson() const
 
     return val;
 }
-
 bool ListAsyncJobsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -161,6 +159,7 @@ bool ListAsyncJobsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListAsyncJobsRequest::getXLanguage() const
 {

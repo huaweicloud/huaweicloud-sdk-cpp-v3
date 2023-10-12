@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/ServiceItemListResponseDto_data_records.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -58,7 +57,6 @@ web::json::value ServiceItemListResponseDto_data_records::toJson() const
 
     return val;
 }
-
 bool ServiceItemListResponseDto_data_records::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool ServiceItemListResponseDto_data_records::fromJson(const web::json::value& v
     }
     return ok;
 }
+
 
 std::string ServiceItemListResponseDto_data_records::getItemId() const
 {

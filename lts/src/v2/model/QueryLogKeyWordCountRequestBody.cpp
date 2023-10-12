@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/QueryLogKeyWordCountRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -63,7 +62,6 @@ web::json::value QueryLogKeyWordCountRequestBody::toJson() const
 
     return val;
 }
-
 bool QueryLogKeyWordCountRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -133,6 +131,7 @@ bool QueryLogKeyWordCountRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string QueryLogKeyWordCountRequestBody::getStartTime() const
 {

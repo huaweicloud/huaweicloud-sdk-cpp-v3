@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sdrs/v1/model/DeleteAllServerGroupFailureJobsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sdrs {
@@ -28,13 +27,13 @@ web::json::value DeleteAllServerGroupFailureJobsRequest::toJson() const
 
     return val;
 }
-
 bool DeleteAllServerGroupFailureJobsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 }
 }

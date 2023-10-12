@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/SyncPolicyReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -103,7 +102,6 @@ web::json::value SyncPolicyReq::toJson() const
 
     return val;
 }
-
 bool SyncPolicyReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -245,6 +243,7 @@ bool SyncPolicyReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string SyncPolicyReq::getJobId() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v2/model/StreamDetail.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -42,7 +41,6 @@ web::json::value StreamDetail::toJson() const
 
     return val;
 }
-
 bool StreamDetail::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool StreamDetail::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string StreamDetail::getStartTime() const
 {

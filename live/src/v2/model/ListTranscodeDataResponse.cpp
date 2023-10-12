@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v2/model/ListTranscodeDataResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -41,7 +40,6 @@ web::json::value ListTranscodeDataResponse::toJson() const
 
     return val;
 }
-
 bool ListTranscodeDataResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -75,6 +73,7 @@ bool ListTranscodeDataResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<TranscodeData>& ListTranscodeDataResponse::getTranscodeDataList()
 {

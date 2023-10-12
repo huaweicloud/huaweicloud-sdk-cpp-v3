@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eps/v1/model/ResourceTypeBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eps {
@@ -47,7 +46,6 @@ web::json::value ResourceTypeBody::toJson() const
 
     return val;
 }
-
 bool ResourceTypeBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -90,6 +88,7 @@ bool ResourceTypeBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ResourceTypeBody::getResourceType() const
 {

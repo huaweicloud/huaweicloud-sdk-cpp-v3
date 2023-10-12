@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v2/model/ListSingleStreamFramerateRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -58,7 +57,6 @@ web::json::value ListSingleStreamFramerateRequest::toJson() const
 
     return val;
 }
-
 bool ListSingleStreamFramerateRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool ListSingleStreamFramerateRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListSingleStreamFramerateRequest::getProjectId() const
 {

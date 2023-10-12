@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v1/model/CreateTranscodingsTemplateRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -32,7 +31,6 @@ web::json::value CreateTranscodingsTemplateRequest::toJson() const
 
     return val;
 }
-
 bool CreateTranscodingsTemplateRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CreateTranscodingsTemplateRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 StreamTranscodingTemplate CreateTranscodingsTemplateRequest::getBody() const
 {

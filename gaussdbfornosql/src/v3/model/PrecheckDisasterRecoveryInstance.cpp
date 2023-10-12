@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/PrecheckDisasterRecoveryInstance.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -42,7 +41,6 @@ web::json::value PrecheckDisasterRecoveryInstance::toJson() const
 
     return val;
 }
-
 bool PrecheckDisasterRecoveryInstance::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool PrecheckDisasterRecoveryInstance::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string PrecheckDisasterRecoveryInstance::getVpcCidr() const
 {

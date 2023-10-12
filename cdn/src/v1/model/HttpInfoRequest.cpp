@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/HttpInfoRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -32,7 +31,6 @@ web::json::value HttpInfoRequest::toJson() const
 
     return val;
 }
-
 bool HttpInfoRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool HttpInfoRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 HttpInfoRequestBody HttpInfoRequest::getHttps() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/ShowSlowlogDesensitizationSwitchRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -38,7 +37,6 @@ web::json::value ShowSlowlogDesensitizationSwitchRequest::toJson() const
 
     return val;
 }
-
 bool ShowSlowlogDesensitizationSwitchRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ShowSlowlogDesensitizationSwitchRequest::fromJson(const web::json::value& v
     }
     return ok;
 }
+
 
 std::string ShowSlowlogDesensitizationSwitchRequest::getXLanguage() const
 {

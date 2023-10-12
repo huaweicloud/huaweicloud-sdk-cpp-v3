@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/kms/v2/model/DeleteKeyStoreRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Kms {
@@ -33,7 +32,6 @@ web::json::value DeleteKeyStoreRequest::toJson() const
 
     return val;
 }
-
 bool DeleteKeyStoreRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool DeleteKeyStoreRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DeleteKeyStoreRequest::getKeystoreId() const
 {

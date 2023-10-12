@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v1/model/DeleteTranscodingsTemplateRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -38,7 +37,6 @@ web::json::value DeleteTranscodingsTemplateRequest::toJson() const
 
     return val;
 }
-
 bool DeleteTranscodingsTemplateRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool DeleteTranscodingsTemplateRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DeleteTranscodingsTemplateRequest::getDomain() const
 {

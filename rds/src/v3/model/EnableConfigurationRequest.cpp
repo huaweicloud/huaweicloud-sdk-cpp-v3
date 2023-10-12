@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/EnableConfigurationRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -42,7 +41,6 @@ web::json::value EnableConfigurationRequest::toJson() const
 
     return val;
 }
-
 bool EnableConfigurationRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool EnableConfigurationRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string EnableConfigurationRequest::getXLanguage() const
 {

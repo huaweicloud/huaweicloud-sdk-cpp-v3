@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/RecognizeHandwritingResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -32,7 +31,6 @@ web::json::value RecognizeHandwritingResponse::toJson() const
 
     return val;
 }
-
 bool RecognizeHandwritingResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool RecognizeHandwritingResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 HandwritingResult RecognizeHandwritingResponse::getResult() const
 {

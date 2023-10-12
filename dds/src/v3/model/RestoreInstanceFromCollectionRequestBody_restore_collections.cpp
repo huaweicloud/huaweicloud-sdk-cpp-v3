@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/RestoreInstanceFromCollectionRequestBody_restore_collections.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -42,7 +41,6 @@ web::json::value RestoreInstanceFromCollectionRequestBody_restore_collections::t
 
     return val;
 }
-
 bool RestoreInstanceFromCollectionRequestBody_restore_collections::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool RestoreInstanceFromCollectionRequestBody_restore_collections::fromJson(cons
     }
     return ok;
 }
+
 
 std::string RestoreInstanceFromCollectionRequestBody_restore_collections::getDatabase() const
 {

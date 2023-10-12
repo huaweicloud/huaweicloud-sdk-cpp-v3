@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/UnregisterAgentRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -33,7 +32,6 @@ web::json::value UnregisterAgentRequest::toJson() const
 
     return val;
 }
-
 bool UnregisterAgentRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool UnregisterAgentRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UnregisterAgentRequest::getAgentId() const
 {

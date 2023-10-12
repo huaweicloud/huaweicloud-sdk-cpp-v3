@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/frs/v2/model/CompareFaceByBase64Request.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Frs {
@@ -37,7 +36,6 @@ web::json::value CompareFaceByBase64Request::toJson() const
 
     return val;
 }
-
 bool CompareFaceByBase64Request::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool CompareFaceByBase64Request::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CompareFaceByBase64Request::getEnterpriseProjectId() const
 {

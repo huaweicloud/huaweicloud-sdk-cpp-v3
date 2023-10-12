@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/UpdateFlowLogResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -32,7 +31,6 @@ web::json::value UpdateFlowLogResponse::toJson() const
 
     return val;
 }
-
 bool UpdateFlowLogResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool UpdateFlowLogResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 FlowLogResp UpdateFlowLogResponse::getFlowLog() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/SelectedSetAlarmTaskReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -43,7 +42,6 @@ web::json::value SelectedSetAlarmTaskReq::toJson() const
 
     return val;
 }
-
 bool SelectedSetAlarmTaskReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool SelectedSetAlarmTaskReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string SelectedSetAlarmTaskReq::getJobId() const
 {

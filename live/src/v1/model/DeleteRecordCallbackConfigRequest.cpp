@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v1/model/DeleteRecordCallbackConfigRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -33,7 +32,6 @@ web::json::value DeleteRecordCallbackConfigRequest::toJson() const
 
     return val;
 }
-
 bool DeleteRecordCallbackConfigRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool DeleteRecordCallbackConfigRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DeleteRecordCallbackConfigRequest::getId() const
 {

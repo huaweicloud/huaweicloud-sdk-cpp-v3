@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/ShowStorageUsageRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -48,7 +47,6 @@ web::json::value ShowStorageUsageRequest::toJson() const
 
     return val;
 }
-
 bool ShowStorageUsageRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool ShowStorageUsageRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ShowStorageUsageRequest::getLimit() const
 {

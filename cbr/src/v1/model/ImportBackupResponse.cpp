@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/ImportBackupResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -32,7 +31,6 @@ web::json::value ImportBackupResponse::toJson() const
 
     return val;
 }
-
 bool ImportBackupResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ImportBackupResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<BackupSyncRespBody>& ImportBackupResponse::getSync()
 {

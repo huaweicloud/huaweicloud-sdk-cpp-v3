@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/codeartsdeploy/v2/model/HostAuthorizationBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsdeploy {
@@ -48,7 +47,6 @@ web::json::value HostAuthorizationBody::toJson() const
 
     return val;
 }
-
 bool HostAuthorizationBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool HostAuthorizationBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string HostAuthorizationBody::getUsername() const
 {

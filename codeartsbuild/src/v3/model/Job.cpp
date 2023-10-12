@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/codeartsbuild/v3/model/Job.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsbuild {
@@ -113,7 +112,6 @@ web::json::value Job::toJson() const
 
     return val;
 }
-
 bool Job::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -273,6 +271,7 @@ bool Job::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string Job::getId() const
 {

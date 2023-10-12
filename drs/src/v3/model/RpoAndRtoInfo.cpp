@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/RpoAndRtoInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -48,7 +47,6 @@ web::json::value RpoAndRtoInfo::toJson() const
 
     return val;
 }
-
 bool RpoAndRtoInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool RpoAndRtoInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string RpoAndRtoInfo::getCheckPoint() const
 {

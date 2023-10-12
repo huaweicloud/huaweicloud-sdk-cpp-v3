@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/ShowServerBlockDeviceResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -32,7 +31,6 @@ web::json::value ShowServerBlockDeviceResponse::toJson() const
 
     return val;
 }
-
 bool ShowServerBlockDeviceResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ShowServerBlockDeviceResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 ServerBlockDevice ShowServerBlockDeviceResponse::getVolumeAttachment() const
 {

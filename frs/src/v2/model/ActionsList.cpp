@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/frs/v2/model/ActionsList.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Frs {
@@ -38,7 +37,6 @@ web::json::value ActionsList::toJson() const
 
     return val;
 }
-
 bool ActionsList::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ActionsList::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 double ActionsList::getConfidence() const
 {

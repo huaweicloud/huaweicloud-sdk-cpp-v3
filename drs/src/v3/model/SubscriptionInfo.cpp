@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/SubscriptionInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -37,7 +36,6 @@ web::json::value SubscriptionInfo::toJson() const
 
     return val;
 }
-
 bool SubscriptionInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool SubscriptionInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<std::string>& SubscriptionInfo::getEndpoints()
 {

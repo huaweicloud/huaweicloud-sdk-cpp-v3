@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/frs/v2/model/CompareFaceByFileRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Frs {
@@ -37,7 +36,6 @@ web::json::value CompareFaceByFileRequest::toJson() const
 
     return val;
 }
-
 bool CompareFaceByFileRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool CompareFaceByFileRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CompareFaceByFileRequest::getEnterpriseProjectId() const
 {

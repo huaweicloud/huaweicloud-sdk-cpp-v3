@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/AddBlackWhiteListUsingPostRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -42,7 +41,6 @@ web::json::value AddBlackWhiteListUsingPostRequest::toJson() const
 
     return val;
 }
-
 bool AddBlackWhiteListUsingPostRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool AddBlackWhiteListUsingPostRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string AddBlackWhiteListUsingPostRequest::getEnterpriseProjectId() const
 {

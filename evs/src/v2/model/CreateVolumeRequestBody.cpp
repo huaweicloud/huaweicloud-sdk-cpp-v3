@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/evs/v2/model/CreateVolumeRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Evs {
@@ -45,7 +44,6 @@ web::json::value CreateVolumeRequestBody::toJson() const
 
     return val;
 }
-
 bool CreateVolumeRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -88,6 +86,7 @@ bool CreateVolumeRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 BssParamForCreateVolume CreateVolumeRequestBody::getBssParam() const
 {

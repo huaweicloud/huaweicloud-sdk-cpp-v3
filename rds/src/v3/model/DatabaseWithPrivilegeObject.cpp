@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/DatabaseWithPrivilegeObject.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -38,7 +37,6 @@ web::json::value DatabaseWithPrivilegeObject::toJson() const
 
     return val;
 }
-
 bool DatabaseWithPrivilegeObject::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool DatabaseWithPrivilegeObject::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DatabaseWithPrivilegeObject::getName() const
 {

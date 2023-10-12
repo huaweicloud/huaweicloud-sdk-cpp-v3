@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/ResizePostPaidServerOption.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -38,7 +37,6 @@ web::json::value ResizePostPaidServerOption::toJson() const
 
     return val;
 }
-
 bool ResizePostPaidServerOption::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ResizePostPaidServerOption::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ResizePostPaidServerOption::getFlavorRef() const
 {

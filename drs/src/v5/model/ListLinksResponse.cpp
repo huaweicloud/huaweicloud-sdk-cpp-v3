@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/ListLinksResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -37,7 +36,6 @@ web::json::value ListLinksResponse::toJson() const
 
     return val;
 }
-
 bool ListLinksResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ListLinksResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<JobLinkResp>& ListLinksResponse::getJobLinks()
 {

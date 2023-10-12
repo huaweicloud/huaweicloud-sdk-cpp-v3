@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ims/v2/model/QuickImportImageByFileRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ims {
@@ -81,7 +80,6 @@ web::json::value QuickImportImageByFileRequestBody::toJson() const
 
     return val;
 }
-
 bool QuickImportImageByFileRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -187,6 +185,7 @@ bool QuickImportImageByFileRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string QuickImportImageByFileRequestBody::getName() const
 {

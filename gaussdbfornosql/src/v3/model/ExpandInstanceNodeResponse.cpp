@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/ExpandInstanceNodeResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -38,7 +37,6 @@ web::json::value ExpandInstanceNodeResponse::toJson() const
 
     return val;
 }
-
 bool ExpandInstanceNodeResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ExpandInstanceNodeResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ExpandInstanceNodeResponse::getJobId() const
 {

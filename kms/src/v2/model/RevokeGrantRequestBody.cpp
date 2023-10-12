@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/kms/v2/model/RevokeGrantRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Kms {
@@ -43,7 +42,6 @@ web::json::value RevokeGrantRequestBody::toJson() const
 
     return val;
 }
-
 bool RevokeGrantRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool RevokeGrantRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string RevokeGrantRequestBody::getKeyId() const
 {

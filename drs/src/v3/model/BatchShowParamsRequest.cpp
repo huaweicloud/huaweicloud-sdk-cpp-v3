@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/BatchShowParamsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -37,7 +36,6 @@ web::json::value BatchShowParamsRequest::toJson() const
 
     return val;
 }
-
 bool BatchShowParamsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool BatchShowParamsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string BatchShowParamsRequest::getXLanguage() const
 {

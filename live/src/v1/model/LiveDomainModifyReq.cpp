@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v1/model/LiveDomainModifyReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -43,7 +42,6 @@ web::json::value LiveDomainModifyReq::toJson() const
 
     return val;
 }
-
 bool LiveDomainModifyReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool LiveDomainModifyReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string LiveDomainModifyReq::getDomain() const
 {

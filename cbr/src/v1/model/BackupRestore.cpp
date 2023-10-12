@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/BackupRestore.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -56,7 +55,6 @@ web::json::value BackupRestore::toJson() const
 
     return val;
 }
-
 bool BackupRestore::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -117,6 +115,7 @@ bool BackupRestore::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<BackupRestoreServerMapping>& BackupRestore::getMappings()
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/RenameHighRiskCommandsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -32,7 +31,6 @@ web::json::value RenameHighRiskCommandsRequest::toJson() const
 
     return val;
 }
-
 bool RenameHighRiskCommandsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool RenameHighRiskCommandsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<CommandInfo>& RenameHighRiskCommandsRequest::getCommands()
 {

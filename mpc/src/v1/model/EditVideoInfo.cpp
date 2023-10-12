@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/EditVideoInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -58,7 +57,6 @@ web::json::value EditVideoInfo::toJson() const
 
     return val;
 }
-
 bool EditVideoInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool EditVideoInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string EditVideoInfo::getReference() const
 {

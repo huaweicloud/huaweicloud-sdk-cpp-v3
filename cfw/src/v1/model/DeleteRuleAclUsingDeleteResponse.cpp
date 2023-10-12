@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/DeleteRuleAclUsingDeleteResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -32,7 +31,6 @@ web::json::value DeleteRuleAclUsingDeleteResponse::toJson() const
 
     return val;
 }
-
 bool DeleteRuleAclUsingDeleteResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool DeleteRuleAclUsingDeleteResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 RuleId DeleteRuleAclUsingDeleteResponse::getData() const
 {

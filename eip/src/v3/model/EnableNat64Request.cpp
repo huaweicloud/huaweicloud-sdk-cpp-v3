@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v3/model/EnableNat64Request.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -33,7 +32,6 @@ web::json::value EnableNat64Request::toJson() const
 
     return val;
 }
-
 bool EnableNat64Request::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool EnableNat64Request::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string EnableNat64Request::getPublicipId() const
 {

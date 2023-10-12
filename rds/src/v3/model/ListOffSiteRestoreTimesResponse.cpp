@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/ListOffSiteRestoreTimesResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -32,7 +31,6 @@ web::json::value ListOffSiteRestoreTimesResponse::toJson() const
 
     return val;
 }
-
 bool ListOffSiteRestoreTimesResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ListOffSiteRestoreTimesResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<GetRestoreTimeResponse_restore_time>& ListOffSiteRestoreTimesResponse::getRestoreTime()
 {

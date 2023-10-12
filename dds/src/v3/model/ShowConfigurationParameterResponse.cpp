@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/ShowConfigurationParameterResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -67,7 +66,6 @@ web::json::value ShowConfigurationParameterResponse::toJson() const
 
     return val;
 }
-
 bool ShowConfigurationParameterResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -146,6 +144,7 @@ bool ShowConfigurationParameterResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowConfigurationParameterResponse::getId() const
 {

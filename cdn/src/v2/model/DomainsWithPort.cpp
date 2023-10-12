@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v2/model/DomainsWithPort.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -87,7 +86,6 @@ web::json::value DomainsWithPort::toJson() const
 
     return val;
 }
-
 bool DomainsWithPort::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -202,6 +200,7 @@ bool DomainsWithPort::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DomainsWithPort::getId() const
 {

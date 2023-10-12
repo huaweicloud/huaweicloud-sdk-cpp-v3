@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/AssociateRouteTableAndSubnetReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -36,7 +35,6 @@ web::json::value AssociateRouteTableAndSubnetReq::toJson() const
 
     return val;
 }
-
 bool AssociateRouteTableAndSubnetReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -61,6 +59,7 @@ bool AssociateRouteTableAndSubnetReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<std::string>& AssociateRouteTableAndSubnetReq::getAssociate()
 {

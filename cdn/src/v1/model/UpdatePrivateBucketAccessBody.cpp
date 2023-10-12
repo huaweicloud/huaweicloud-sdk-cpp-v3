@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/UpdatePrivateBucketAccessBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -33,7 +32,6 @@ web::json::value UpdatePrivateBucketAccessBody::toJson() const
 
     return val;
 }
-
 bool UpdatePrivateBucketAccessBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool UpdatePrivateBucketAccessBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool UpdatePrivateBucketAccessBody::isStatus() const
 {

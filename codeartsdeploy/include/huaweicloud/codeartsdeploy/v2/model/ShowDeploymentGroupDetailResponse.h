@@ -2,9 +2,11 @@
 #ifndef HUAWEICLOUD_SDK_CODEARTSDEPLOY_V2_MODEL_ShowDeploymentGroupDetailResponse_H_
 #define HUAWEICLOUD_SDK_CODEARTSDEPLOY_V2_MODEL_ShowDeploymentGroupDetailResponse_H_
 
+
 #include <huaweicloud/codeartsdeploy/v2/CodeArtsDeployExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
@@ -33,10 +35,8 @@ public:
     /// ModelBase overrides
 
     void validate() override;
-
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
-
     /////////////////////////////////////////////
     /// ShowDeploymentGroupDetailResponse members
 
@@ -122,7 +122,7 @@ public:
     void setOs(const std::string& value);
 
     /// <summary>
-    /// 自动连通性验证 0不执行 1每日 2每周
+    /// 自动测试功能已下架，该字段已失效
     /// </summary>
 
     int32_t getAutoConnectionTestSwitch() const;

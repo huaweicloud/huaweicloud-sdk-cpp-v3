@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/BackupPolicyItem.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -43,7 +42,6 @@ web::json::value BackupPolicyItem::toJson() const
 
     return val;
 }
-
 bool BackupPolicyItem::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool BackupPolicyItem::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t BackupPolicyItem::getKeepDays() const
 {

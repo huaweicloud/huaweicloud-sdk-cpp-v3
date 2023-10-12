@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/BinlogClearPolicyRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -33,7 +32,6 @@ web::json::value BinlogClearPolicyRequestBody::toJson() const
 
     return val;
 }
-
 bool BinlogClearPolicyRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool BinlogClearPolicyRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int64_t BinlogClearPolicyRequestBody::getBinlogRetentionHours() const
 {

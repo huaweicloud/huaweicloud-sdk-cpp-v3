@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/GeneralTextCharList.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -42,7 +41,6 @@ web::json::value GeneralTextCharList::toJson() const
 
     return val;
 }
-
 bool GeneralTextCharList::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool GeneralTextCharList::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string GeneralTextCharList::getChar() const
 {

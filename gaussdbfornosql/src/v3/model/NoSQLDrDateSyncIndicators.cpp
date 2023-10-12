@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/NoSQLDrDateSyncIndicators.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -63,7 +62,6 @@ web::json::value NoSQLDrDateSyncIndicators::toJson() const
 
     return val;
 }
-
 bool NoSQLDrDateSyncIndicators::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -133,6 +131,7 @@ bool NoSQLDrDateSyncIndicators::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int64_t NoSQLDrDateSyncIndicators::getRsyncOps() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/OperationLog.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -101,7 +100,6 @@ web::json::value OperationLog::toJson() const
 
     return val;
 }
-
 bool OperationLog::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -243,6 +241,7 @@ bool OperationLog::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string OperationLog::getCheckpointId() const
 {

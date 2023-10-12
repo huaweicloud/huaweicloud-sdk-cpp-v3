@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/ListOpLogsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -88,7 +87,6 @@ web::json::value ListOpLogsRequest::toJson() const
 
     return val;
 }
-
 bool ListOpLogsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -203,6 +201,7 @@ bool ListOpLogsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListOpLogsRequest::getEndTime() const
 {

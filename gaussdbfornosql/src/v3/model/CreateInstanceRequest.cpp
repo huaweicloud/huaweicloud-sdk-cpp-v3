@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/CreateInstanceRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -32,7 +31,6 @@ web::json::value CreateInstanceRequest::toJson() const
 
     return val;
 }
-
 bool CreateInstanceRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CreateInstanceRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 CreateInstanceRequestBody CreateInstanceRequest::getBody() const
 {

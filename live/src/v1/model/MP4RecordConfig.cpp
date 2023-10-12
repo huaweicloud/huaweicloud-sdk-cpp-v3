@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v1/model/MP4RecordConfig.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -43,7 +42,6 @@ web::json::value MP4RecordConfig::toJson() const
 
     return val;
 }
-
 bool MP4RecordConfig::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool MP4RecordConfig::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t MP4RecordConfig::getRecordCycle() const
 {

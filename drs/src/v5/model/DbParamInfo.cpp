@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/DbParamInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -36,7 +35,6 @@ web::json::value DbParamInfo::toJson() const
 
     return val;
 }
-
 bool DbParamInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -61,6 +59,7 @@ bool DbParamInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<DbParam>& DbParamInfo::getCommon()
 {

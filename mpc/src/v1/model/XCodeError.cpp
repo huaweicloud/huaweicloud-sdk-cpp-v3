@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/XCodeError.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -38,7 +37,6 @@ web::json::value XCodeError::toJson() const
 
     return val;
 }
-
 bool XCodeError::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool XCodeError::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string XCodeError::getCode() const
 {

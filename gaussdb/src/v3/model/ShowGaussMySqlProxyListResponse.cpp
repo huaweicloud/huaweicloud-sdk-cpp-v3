@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/ShowGaussMySqlProxyListResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -32,7 +31,6 @@ web::json::value ShowGaussMySqlProxyListResponse::toJson() const
 
     return val;
 }
-
 bool ShowGaussMySqlProxyListResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ShowGaussMySqlProxyListResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<MysqlShowProxyResponseV3>& ShowGaussMySqlProxyListResponse::getProxyList()
 {

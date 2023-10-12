@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/EditSetting.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -67,7 +66,6 @@ web::json::value EditSetting::toJson() const
 
     return val;
 }
-
 bool EditSetting::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -155,6 +153,7 @@ bool EditSetting::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string EditSetting::getTimelineStart() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/UpdateProxyPortResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -33,7 +32,6 @@ web::json::value UpdateProxyPortResponse::toJson() const
 
     return val;
 }
-
 bool UpdateProxyPortResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool UpdateProxyPortResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateProxyPortResponse::getJobId() const
 {

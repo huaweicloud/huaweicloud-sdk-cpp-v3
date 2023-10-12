@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/MysqlUpdateBackupPolicyRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -32,7 +31,6 @@ web::json::value MysqlUpdateBackupPolicyRequest::toJson() const
 
     return val;
 }
-
 bool MysqlUpdateBackupPolicyRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool MysqlUpdateBackupPolicyRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 MysqlBackupPolicy MysqlUpdateBackupPolicyRequest::getBackupPolicy() const
 {

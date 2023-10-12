@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/ListSecurityGroupsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -48,7 +47,6 @@ web::json::value ListSecurityGroupsRequest::toJson() const
 
     return val;
 }
-
 bool ListSecurityGroupsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool ListSecurityGroupsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ListSecurityGroupsRequest::getLimit() const
 {

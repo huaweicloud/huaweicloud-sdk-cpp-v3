@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/SqlserverUserWithPrivilege.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -38,7 +37,6 @@ web::json::value SqlserverUserWithPrivilege::toJson() const
 
     return val;
 }
-
 bool SqlserverUserWithPrivilege::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool SqlserverUserWithPrivilege::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string SqlserverUserWithPrivilege::getName() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/frs/v2/model/DeleteFaceByFaceIdResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Frs {
@@ -43,7 +42,6 @@ web::json::value DeleteFaceByFaceIdResponse::toJson() const
 
     return val;
 }
-
 bool DeleteFaceByFaceIdResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool DeleteFaceByFaceIdResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t DeleteFaceByFaceIdResponse::getFaceNumber() const
 {

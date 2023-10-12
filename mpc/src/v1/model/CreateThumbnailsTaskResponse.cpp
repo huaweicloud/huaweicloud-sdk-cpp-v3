@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/CreateThumbnailsTaskResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -62,7 +61,6 @@ web::json::value CreateThumbnailsTaskResponse::toJson() const
 
     return val;
 }
-
 bool CreateThumbnailsTaskResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -132,6 +130,7 @@ bool CreateThumbnailsTaskResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateThumbnailsTaskResponse::getTaskId() const
 {

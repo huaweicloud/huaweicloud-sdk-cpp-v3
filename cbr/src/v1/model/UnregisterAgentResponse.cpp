@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/UnregisterAgentResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -28,13 +27,13 @@ web::json::value UnregisterAgentResponse::toJson() const
 
     return val;
 }
-
 bool UnregisterAgentResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 }
 }

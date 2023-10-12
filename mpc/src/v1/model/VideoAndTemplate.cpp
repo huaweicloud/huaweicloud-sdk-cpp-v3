@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/VideoAndTemplate.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -48,7 +47,6 @@ web::json::value VideoAndTemplate::toJson() const
 
     return val;
 }
-
 bool VideoAndTemplate::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool VideoAndTemplate::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t VideoAndTemplate::getTemplateId() const
 {

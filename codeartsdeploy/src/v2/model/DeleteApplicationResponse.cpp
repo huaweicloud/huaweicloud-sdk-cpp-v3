@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/codeartsdeploy/v2/model/DeleteApplicationResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsdeploy {
@@ -37,7 +36,6 @@ web::json::value DeleteApplicationResponse::toJson() const
 
     return val;
 }
-
 bool DeleteApplicationResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool DeleteApplicationResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DeleteApplicationResponse::getStatus() const
 {

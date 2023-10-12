@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/Instance_dr_relation.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -41,7 +40,6 @@ web::json::value Instance_dr_relation::toJson() const
 
     return val;
 }
-
 bool Instance_dr_relation::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -75,6 +73,7 @@ bool Instance_dr_relation::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string Instance_dr_relation::getInstanceId() const
 {

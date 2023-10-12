@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sdrs/v1/model/ReverseProtectionGroupRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sdrs {
@@ -32,7 +31,6 @@ web::json::value ReverseProtectionGroupRequestBody::toJson() const
 
     return val;
 }
-
 bool ReverseProtectionGroupRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ReverseProtectionGroupRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 ReverseProtectionGroupRequestParams ReverseProtectionGroupRequestBody::getReverseServerGroup() const
 {

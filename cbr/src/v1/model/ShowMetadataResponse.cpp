@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/ShowMetadataResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -65,7 +64,6 @@ web::json::value ShowMetadataResponse::toJson() const
 
     return val;
 }
-
 bool ShowMetadataResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -144,6 +142,7 @@ bool ShowMetadataResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowMetadataResponse::getBackupId() const
 {

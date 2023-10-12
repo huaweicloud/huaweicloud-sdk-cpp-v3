@@ -107,6 +107,7 @@ web::json::value ModelBase::toJson(const std::string &val)
 {
     return web::json::value::string(utility::conversions::to_string_t(val));
 }
+
 #if defined(WIN32) || defined(__WIN32__) || defined(_WIN32) || defined(_MSC_VER)
 web::json::value ModelBase::toJson(const utility::string_t &value)
 {
@@ -310,6 +311,79 @@ bool ModelBase::fromJson(const web::json::value &val, std::shared_ptr<HttpConten
     }
     return result;
 }
+
+#if defined(HUAWEICLOUD_SDK_BSON_)
+
+#define BSON_GET_IMPL(METHOD, TYPE)                                                        \
+bool ModelBase::bson_get(const Viewer::Iterator &it, TYPE &value) {                        \
+    value = it->METHOD();                                                                  \
+    return true;                                                                           \
+}                                                                                          \
+bool ModelBase::bson_append(Builder &builder, const TYPE &value) {                         \
+    builder << value;                                                                      \
+    return true;                                                                           \
+}                                                                                          \
+bool ModelBase::bson_append(Builder &builder, const std::string &key, const TYPE &value) { \
+    builder << key << value;                                                               \
+    return true;                                                                           \
+}
+
+BSON_GET_IMPL(getDouble, double)
+BSON_GET_IMPL(getDouble, BsonDouble)
+BSON_GET_IMPL(getString, std::string)
+BSON_GET_IMPL(getString, BsonString)
+BSON_GET_IMPL(getDocument, Document)
+BSON_GET_IMPL(getDocument, BsonDocument)
+BSON_GET_IMPL(getArray, Array)
+BSON_GET_IMPL(getArray, BsonArray)
+BSON_GET_IMPL(getBinary, BsonBinary)
+BSON_GET_IMPL(getUndefined, BsonUndefined)
+BSON_GET_IMPL(getOid, Oid)
+BSON_GET_IMPL(getOid, BsonOid)
+BSON_GET_IMPL(getBool, bool)
+BSON_GET_IMPL(getBool, BsonBool)
+BSON_GET_IMPL(getDate, BsonDate)
+BSON_GET_IMPL(getNull, BsonNull)
+BSON_GET_IMPL(getRegex, BsonRegex)
+BSON_GET_IMPL(getDBPointer, BsonDBPointer)
+BSON_GET_IMPL(getCode, BsonCode)
+BSON_GET_IMPL(getSymbol, BsonSymbol)
+BSON_GET_IMPL(getCodeWScope, BsonCodeWScope)
+BSON_GET_IMPL(getInt32, int32_t)
+BSON_GET_IMPL(getInt32, BsonInt32)
+BSON_GET_IMPL(getTimestamp, BsonTimestamp)
+BSON_GET_IMPL(getInt64, int64_t)
+BSON_GET_IMPL(getInt64, BsonInt64)
+BSON_GET_IMPL(getDecimal128, Decimal128)
+BSON_GET_IMPL(getDecimal128, BsonDecimal128)
+BSON_GET_IMPL(getMinKey, BsonMinKey)
+BSON_GET_IMPL(getMaxKey, BsonMaxKey)
+
+bool ModelBase::bson_get(const Viewer::Iterator &it, ModelBase &value) {
+    Document doc = it->getDocument();
+    Viewer viewer(doc);
+    value.fromBson(viewer);
+    return true;
+}
+
+bool ModelBase::bson_append(Builder &builder, const ModelBase &value) {
+    builder << Builder::SubDocumentBegin;
+    value.toBson(builder);
+    builder << Builder::SubDocumentEnd;
+
+    return true;
+}
+
+bool ModelBase::bson_append(Builder &builder, const std::string &key, const ModelBase &value) {
+    builder << key << Builder::SubDocumentBegin;
+    value.toBson(builder);
+    builder << Builder::SubDocumentEnd;
+
+    return true;
+}
+
+#endif // HUAWEICLOUD_SDK_BSON_
+
 std::shared_ptr<HttpContent> ModelBase::toHttpContent(const utility::string_t &name, bool value,
     const utility::string_t &contentType)
 {
@@ -592,4 +666,10 @@ std::shared_ptr<std::istream> ModelBase::fromBase64(const utility::string_t &enc
     }
 
     return result;
+}
+bool ModelBase::fromJson(const web::json::value &json) {
+    return false;
+}
+web::json::value ModelBase::toJson() const {
+    return web::json::value();
 }

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/ListProtectableRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -68,7 +67,6 @@ web::json::value ListProtectableRequest::toJson() const
 
     return val;
 }
-
 bool ListProtectableRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -147,6 +145,7 @@ bool ListProtectableRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ListProtectableRequest::getLimit() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/kms/v2/model/KeyDetails.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Kms {
@@ -123,7 +122,6 @@ web::json::value KeyDetails::toJson() const
 
     return val;
 }
-
 bool KeyDetails::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -301,6 +299,7 @@ bool KeyDetails::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string KeyDetails::getKeyId() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/ShowPauseResumeStutusResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -51,7 +50,6 @@ web::json::value ShowPauseResumeStutusResponse::toJson() const
 
     return val;
 }
-
 bool ShowPauseResumeStutusResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -103,6 +101,7 @@ bool ShowPauseResumeStutusResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowPauseResumeStutusResponse::getMasterInstanceId() const
 {

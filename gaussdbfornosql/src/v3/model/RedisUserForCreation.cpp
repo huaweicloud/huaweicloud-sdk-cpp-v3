@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/RedisUserForCreation.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -47,7 +46,6 @@ web::json::value RedisUserForCreation::toJson() const
 
     return val;
 }
-
 bool RedisUserForCreation::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -90,6 +88,7 @@ bool RedisUserForCreation::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string RedisUserForCreation::getName() const
 {

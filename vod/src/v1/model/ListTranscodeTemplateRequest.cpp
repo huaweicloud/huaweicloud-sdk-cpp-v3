@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/ListTranscodeTemplateRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -58,7 +57,6 @@ web::json::value ListTranscodeTemplateRequest::toJson() const
 
     return val;
 }
-
 bool ListTranscodeTemplateRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool ListTranscodeTemplateRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListTranscodeTemplateRequest::getXSdkDate() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/MysqlProxyFlavorGroups.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -37,7 +36,6 @@ web::json::value MysqlProxyFlavorGroups::toJson() const
 
     return val;
 }
-
 bool MysqlProxyFlavorGroups::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool MysqlProxyFlavorGroups::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string MysqlProxyFlavorGroups::getGroupType() const
 {

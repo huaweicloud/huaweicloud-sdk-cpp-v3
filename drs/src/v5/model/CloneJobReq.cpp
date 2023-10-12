@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/CloneJobReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -43,7 +42,6 @@ web::json::value CloneJobReq::toJson() const
 
     return val;
 }
-
 bool CloneJobReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool CloneJobReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CloneJobReq::getJobId() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/ServerBlockDevice.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -68,7 +67,6 @@ web::json::value ServerBlockDevice::toJson() const
 
     return val;
 }
-
 bool ServerBlockDevice::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -147,6 +145,7 @@ bool ServerBlockDevice::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ServerBlockDevice::getBootIndex() const
 {

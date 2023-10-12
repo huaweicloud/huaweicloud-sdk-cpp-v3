@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/kms/v2/model/ImportKeyMaterialResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Kms {
@@ -28,13 +27,13 @@ web::json::value ImportKeyMaterialResponse::toJson() const
 
     return val;
 }
-
 bool ImportKeyMaterialResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 }
 }

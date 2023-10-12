@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/CreateTransferRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -37,7 +36,6 @@ web::json::value CreateTransferRequest::toJson() const
 
     return val;
 }
-
 bool CreateTransferRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool CreateTransferRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateTransferRequest::getContentType() const
 {

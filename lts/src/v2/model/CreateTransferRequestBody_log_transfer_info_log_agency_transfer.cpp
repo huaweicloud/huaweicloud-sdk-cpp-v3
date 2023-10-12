@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/CreateTransferRequestBody_log_transfer_info_log_agency_transfer.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -58,7 +57,6 @@ web::json::value CreateTransferRequestBody_log_transfer_info_log_agency_transfer
 
     return val;
 }
-
 bool CreateTransferRequestBody_log_transfer_info_log_agency_transfer::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool CreateTransferRequestBody_log_transfer_info_log_agency_transfer::fromJson(c
     }
     return ok;
 }
+
 
 std::string CreateTransferRequestBody_log_transfer_info_log_agency_transfer::getAgencyDomainId() const
 {

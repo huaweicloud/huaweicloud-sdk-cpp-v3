@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/smn/v2/model/ApplicationItem.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Smn {
@@ -63,7 +62,6 @@ web::json::value ApplicationItem::toJson() const
 
     return val;
 }
-
 bool ApplicationItem::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -133,6 +131,7 @@ bool ApplicationItem::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ApplicationItem::getName() const
 {

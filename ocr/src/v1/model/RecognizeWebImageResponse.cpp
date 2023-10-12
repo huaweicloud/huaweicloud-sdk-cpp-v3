@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/RecognizeWebImageResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -32,7 +31,6 @@ web::json::value RecognizeWebImageResponse::toJson() const
 
     return val;
 }
-
 bool RecognizeWebImageResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool RecognizeWebImageResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 WebImageResult RecognizeWebImageResponse::getResult() const
 {

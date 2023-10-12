@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/evs/v2/model/ListVolumeTagsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Evs {
@@ -32,7 +31,6 @@ web::json::value ListVolumeTagsResponse::toJson() const
 
     return val;
 }
-
 bool ListVolumeTagsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ListVolumeTagsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::map<std::string, std::vector<std::string>>& ListVolumeTagsResponse::getTags()
 {

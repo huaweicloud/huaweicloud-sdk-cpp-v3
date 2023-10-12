@@ -2,9 +2,11 @@
 #ifndef HUAWEICLOUD_SDK_DRS_V3_MODEL_BatchPrecheckReq_H_
 #define HUAWEICLOUD_SDK_DRS_V3_MODEL_BatchPrecheckReq_H_
 
+
 #include <huaweicloud/drs/v3/DrsExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/drs/v3/model/PreCheckInfo.h>
@@ -32,10 +34,8 @@ public:
     /// ModelBase overrides
 
     void validate() override;
-
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
-
     /////////////////////////////////////////////
     /// BatchPrecheckReq members
 

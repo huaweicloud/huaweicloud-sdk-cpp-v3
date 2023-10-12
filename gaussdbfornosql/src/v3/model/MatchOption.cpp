@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/MatchOption.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -38,7 +37,6 @@ web::json::value MatchOption::toJson() const
 
     return val;
 }
-
 bool MatchOption::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool MatchOption::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string MatchOption::getKey() const
 {

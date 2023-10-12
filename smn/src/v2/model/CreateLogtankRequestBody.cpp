@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/smn/v2/model/CreateLogtankRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Smn {
@@ -38,7 +37,6 @@ web::json::value CreateLogtankRequestBody::toJson() const
 
     return val;
 }
-
 bool CreateLogtankRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool CreateLogtankRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateLogtankRequestBody::getLogGroupId() const
 {

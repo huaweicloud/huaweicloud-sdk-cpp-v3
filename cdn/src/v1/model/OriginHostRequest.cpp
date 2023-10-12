@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/OriginHostRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -32,7 +31,6 @@ web::json::value OriginHostRequest::toJson() const
 
     return val;
 }
-
 bool OriginHostRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool OriginHostRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 OriginHostBody OriginHostRequest::getOriginHost() const
 {

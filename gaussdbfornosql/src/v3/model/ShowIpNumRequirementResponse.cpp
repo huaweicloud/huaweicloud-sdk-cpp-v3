@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/ShowIpNumRequirementResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -33,7 +32,6 @@ web::json::value ShowIpNumRequirementResponse::toJson() const
 
     return val;
 }
-
 bool ShowIpNumRequirementResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool ShowIpNumRequirementResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ShowIpNumRequirementResponse::getCount() const
 {

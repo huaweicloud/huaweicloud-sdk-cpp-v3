@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/EnlargeReplicasetNodeRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -38,7 +37,6 @@ web::json::value EnlargeReplicasetNodeRequestBody::toJson() const
 
     return val;
 }
-
 bool EnlargeReplicasetNodeRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool EnlargeReplicasetNodeRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t EnlargeReplicasetNodeRequestBody::getNum() const
 {

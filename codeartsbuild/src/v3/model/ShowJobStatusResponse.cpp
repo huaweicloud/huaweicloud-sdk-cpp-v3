@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/codeartsbuild/v3/model/ShowJobStatusResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsbuild {
@@ -33,7 +32,6 @@ web::json::value ShowJobStatusResponse::toJson() const
 
     return val;
 }
-
 bool ShowJobStatusResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool ShowJobStatusResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool ShowJobStatusResponse::isResult() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/UpdateBlackWhiteListDto.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -63,7 +62,6 @@ web::json::value UpdateBlackWhiteListDto::toJson() const
 
     return val;
 }
-
 bool UpdateBlackWhiteListDto::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -133,6 +131,7 @@ bool UpdateBlackWhiteListDto::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t UpdateBlackWhiteListDto::getDirection() const
 {

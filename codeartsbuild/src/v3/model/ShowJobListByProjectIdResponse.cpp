@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/codeartsbuild/v3/model/ShowJobListByProjectIdResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsbuild {
@@ -37,7 +36,6 @@ web::json::value ShowJobListByProjectIdResponse::toJson() const
 
     return val;
 }
-
 bool ShowJobListByProjectIdResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ShowJobListByProjectIdResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<Job>& ShowJobListByProjectIdResponse::getJobs()
 {

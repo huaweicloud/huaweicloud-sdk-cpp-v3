@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/AddRuleAclDto_rules.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -99,7 +98,6 @@ web::json::value AddRuleAclDto_rules::toJson() const
 
     return val;
 }
-
 bool AddRuleAclDto_rules::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -241,6 +239,7 @@ bool AddRuleAclDto_rules::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string AddRuleAclDto_rules::getName() const
 {

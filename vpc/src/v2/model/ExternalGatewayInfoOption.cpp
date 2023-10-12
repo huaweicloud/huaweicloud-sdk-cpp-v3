@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/ExternalGatewayInfoOption.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -33,7 +32,6 @@ web::json::value ExternalGatewayInfoOption::toJson() const
 
     return val;
 }
-
 bool ExternalGatewayInfoOption::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool ExternalGatewayInfoOption::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ExternalGatewayInfoOption::getNetworkId() const
 {

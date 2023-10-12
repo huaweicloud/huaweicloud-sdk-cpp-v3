@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/BatchQueryJobReqPage.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -36,7 +35,6 @@ web::json::value BatchQueryJobReqPage::toJson() const
 
     return val;
 }
-
 bool BatchQueryJobReqPage::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -61,6 +59,7 @@ bool BatchQueryJobReqPage::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<std::string>& BatchQueryJobReqPage::getJobs()
 {

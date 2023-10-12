@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sdrs/v1/model/ShowSpecifiedApiVersionRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sdrs {
@@ -33,7 +32,6 @@ web::json::value ShowSpecifiedApiVersionRequest::toJson() const
 
     return val;
 }
-
 bool ShowSpecifiedApiVersionRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool ShowSpecifiedApiVersionRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowSpecifiedApiVersionRequest::getApiVersion() const
 {

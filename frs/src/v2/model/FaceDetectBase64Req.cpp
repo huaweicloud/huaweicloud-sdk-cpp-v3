@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/frs/v2/model/FaceDetectBase64Req.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Frs {
@@ -38,7 +37,6 @@ web::json::value FaceDetectBase64Req::toJson() const
 
     return val;
 }
-
 bool FaceDetectBase64Req::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool FaceDetectBase64Req::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string FaceDetectBase64Req::getImageBase64() const
 {

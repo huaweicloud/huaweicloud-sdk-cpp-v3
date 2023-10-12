@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/BackupStrategyResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -38,7 +37,6 @@ web::json::value BackupStrategyResult::toJson() const
 
     return val;
 }
-
 bool BackupStrategyResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool BackupStrategyResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string BackupStrategyResult::getStartTime() const
 {

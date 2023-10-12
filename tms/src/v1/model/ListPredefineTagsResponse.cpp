@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/tms/v1/model/ListPredefineTagsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Tms {
@@ -42,7 +41,6 @@ web::json::value ListPredefineTagsResponse::toJson() const
 
     return val;
 }
-
 bool ListPredefineTagsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool ListPredefineTagsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListPredefineTagsResponse::getMarker() const
 {

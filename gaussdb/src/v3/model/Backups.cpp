@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/Backups.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -87,7 +86,6 @@ web::json::value Backups::toJson() const
 
     return val;
 }
-
 bool Backups::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -202,6 +200,7 @@ bool Backups::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string Backups::getId() const
 {

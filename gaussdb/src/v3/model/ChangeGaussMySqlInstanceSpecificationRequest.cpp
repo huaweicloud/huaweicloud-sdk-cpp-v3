@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/ChangeGaussMySqlInstanceSpecificationRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -42,7 +41,6 @@ web::json::value ChangeGaussMySqlInstanceSpecificationRequest::toJson() const
 
     return val;
 }
-
 bool ChangeGaussMySqlInstanceSpecificationRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool ChangeGaussMySqlInstanceSpecificationRequest::fromJson(const web::json::val
     }
     return ok;
 }
+
 
 std::string ChangeGaussMySqlInstanceSpecificationRequest::getXLanguage() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/frs/v2/model/LiveDetectBase64Req.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Frs {
@@ -48,7 +47,6 @@ web::json::value LiveDetectBase64Req::toJson() const
 
     return val;
 }
-
 bool LiveDetectBase64Req::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool LiveDetectBase64Req::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string LiveDetectBase64Req::getVideoBase64() const
 {

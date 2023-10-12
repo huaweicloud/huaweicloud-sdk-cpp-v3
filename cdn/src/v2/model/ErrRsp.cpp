@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v2/model/ErrRsp.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -32,7 +31,6 @@ web::json::value ErrRsp::toJson() const
 
     return val;
 }
-
 bool ErrRsp::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ErrRsp::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 ErrMsg ErrRsp::getError() const
 {

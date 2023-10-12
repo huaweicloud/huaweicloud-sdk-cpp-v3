@@ -2,9 +2,11 @@
 #ifndef HUAWEICLOUD_SDK_LIVE_V1_MODEL_VideoFormatVar_H_
 #define HUAWEICLOUD_SDK_LIVE_V1_MODEL_VideoFormatVar_H_
 
+
 #include <huaweicloud/live/v1/LiveExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
 

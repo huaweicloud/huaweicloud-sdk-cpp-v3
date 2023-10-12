@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/ListScheduleJobsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -68,7 +67,6 @@ web::json::value ListScheduleJobsRequest::toJson() const
 
     return val;
 }
-
 bool ListScheduleJobsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -147,6 +145,7 @@ bool ListScheduleJobsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListScheduleJobsRequest::getXLanguage() const
 {

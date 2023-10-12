@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/NoSQLDrRpoAndRto.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -43,7 +42,6 @@ web::json::value NoSQLDrRpoAndRto::toJson() const
 
     return val;
 }
-
 bool NoSQLDrRpoAndRto::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool NoSQLDrRpoAndRto::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string NoSQLDrRpoAndRto::getScene() const
 {

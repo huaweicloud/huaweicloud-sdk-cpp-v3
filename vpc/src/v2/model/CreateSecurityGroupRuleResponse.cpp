@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/CreateSecurityGroupRuleResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -32,7 +31,6 @@ web::json::value CreateSecurityGroupRuleResponse::toJson() const
 
     return val;
 }
-
 bool CreateSecurityGroupRuleResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CreateSecurityGroupRuleResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 SecurityGroupRule CreateSecurityGroupRuleResponse::getSecurityGroupRule() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/CreateTranscodeTemplate.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -60,7 +59,6 @@ web::json::value CreateTranscodeTemplate::toJson() const
 
     return val;
 }
-
 bool CreateTranscodeTemplate::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -130,6 +128,7 @@ bool CreateTranscodeTemplate::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateTranscodeTemplate::getName() const
 {

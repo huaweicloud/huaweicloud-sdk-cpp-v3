@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/UpdateMember.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -38,7 +37,6 @@ web::json::value UpdateMember::toJson() const
 
     return val;
 }
-
 bool UpdateMember::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool UpdateMember::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateMember::getStatus() const
 {

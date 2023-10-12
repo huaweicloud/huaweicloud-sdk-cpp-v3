@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/ListInstancesSupportFastRestoreRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -37,7 +36,6 @@ web::json::value ListInstancesSupportFastRestoreRequestBody::toJson() const
 
     return val;
 }
-
 bool ListInstancesSupportFastRestoreRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ListInstancesSupportFastRestoreRequestBody::fromJson(const web::json::value
     }
     return ok;
 }
+
 
 std::string ListInstancesSupportFastRestoreRequestBody::getRestoreTime() const
 {

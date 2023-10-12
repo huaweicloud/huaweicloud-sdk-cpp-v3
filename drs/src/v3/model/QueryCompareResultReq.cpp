@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/QueryCompareResultReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -58,7 +57,6 @@ web::json::value QueryCompareResultReq::toJson() const
 
     return val;
 }
-
 bool QueryCompareResultReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool QueryCompareResultReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string QueryCompareResultReq::getJobId() const
 {

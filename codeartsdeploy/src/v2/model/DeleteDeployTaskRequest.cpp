@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/codeartsdeploy/v2/model/DeleteDeployTaskRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsdeploy {
@@ -33,7 +32,6 @@ web::json::value DeleteDeployTaskRequest::toJson() const
 
     return val;
 }
-
 bool DeleteDeployTaskRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool DeleteDeployTaskRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DeleteDeployTaskRequest::getTaskId() const
 {

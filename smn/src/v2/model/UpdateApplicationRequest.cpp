@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/smn/v2/model/UpdateApplicationRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Smn {
@@ -37,7 +36,6 @@ web::json::value UpdateApplicationRequest::toJson() const
 
     return val;
 }
-
 bool UpdateApplicationRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool UpdateApplicationRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateApplicationRequest::getApplicationUrn() const
 {

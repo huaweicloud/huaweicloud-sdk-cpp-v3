@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/OpExtendInfoRemoveResources.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -42,7 +41,6 @@ web::json::value OpExtendInfoRemoveResources::toJson() const
 
     return val;
 }
-
 bool OpExtendInfoRemoveResources::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool OpExtendInfoRemoveResources::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t OpExtendInfoRemoveResources::getFailCount() const
 {

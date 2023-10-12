@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ims/v2/model/JobProgressEntities.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ims {
@@ -61,7 +60,6 @@ web::json::value JobProgressEntities::toJson() const
 
     return val;
 }
-
 bool JobProgressEntities::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -131,6 +129,7 @@ bool JobProgressEntities::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string JobProgressEntities::getImageId() const
 {

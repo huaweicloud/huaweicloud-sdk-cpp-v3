@@ -2,9 +2,11 @@
 #ifndef HUAWEICLOUD_SDK_OCR_V1_MODEL_HkIdCardResult_H_
 #define HUAWEICLOUD_SDK_OCR_V1_MODEL_HkIdCardResult_H_
 
+
 #include <huaweicloud/ocr/v1/OcrExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/core/utils/Object.h>
@@ -33,10 +35,8 @@ public:
     /// ModelBase overrides
 
     void validate() override;
-
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
-
     /////////////////////////////////////////////
     /// HkIdCardResult members
 

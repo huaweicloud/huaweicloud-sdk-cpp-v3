@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cloudtable/v2/model/RebootCloudTableClusterResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cloudtable {
@@ -32,7 +31,6 @@ web::json::value RebootCloudTableClusterResponse::toJson() const
 
     return val;
 }
-
 bool RebootCloudTableClusterResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool RebootCloudTableClusterResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<RestartInstanceRsp>& RebootCloudTableClusterResponse::getBody()
 {

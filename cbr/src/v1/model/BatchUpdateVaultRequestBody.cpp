@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/BatchUpdateVaultRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -32,7 +31,6 @@ web::json::value BatchUpdateVaultRequestBody::toJson() const
 
     return val;
 }
-
 bool BatchUpdateVaultRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool BatchUpdateVaultRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 VaultBatchUpdate BatchUpdateVaultRequestBody::getVault() const
 {

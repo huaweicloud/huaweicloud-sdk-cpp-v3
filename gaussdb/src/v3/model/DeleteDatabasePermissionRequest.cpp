@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/DeleteDatabasePermissionRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -42,7 +41,6 @@ web::json::value DeleteDatabasePermissionRequest::toJson() const
 
     return val;
 }
-
 bool DeleteDatabasePermissionRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool DeleteDatabasePermissionRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DeleteDatabasePermissionRequest::getXLanguage() const
 {

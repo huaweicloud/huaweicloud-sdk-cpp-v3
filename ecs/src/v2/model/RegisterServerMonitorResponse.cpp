@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/RegisterServerMonitorResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -28,13 +27,13 @@ web::json::value RegisterServerMonitorResponse::toJson() const
 
     return val;
 }
-
 bool RegisterServerMonitorResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 }
 }

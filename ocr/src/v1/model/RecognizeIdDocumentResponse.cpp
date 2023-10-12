@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/RecognizeIdDocumentResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -32,7 +31,6 @@ web::json::value RecognizeIdDocumentResponse::toJson() const
 
     return val;
 }
-
 bool RecognizeIdDocumentResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool RecognizeIdDocumentResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 IdDocumentItem RecognizeIdDocumentResponse::getResult() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/PolicyCreate.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -51,7 +50,6 @@ web::json::value PolicyCreate::toJson() const
 
     return val;
 }
-
 bool PolicyCreate::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -103,6 +101,7 @@ bool PolicyCreate::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool PolicyCreate::isEnabled() const
 {

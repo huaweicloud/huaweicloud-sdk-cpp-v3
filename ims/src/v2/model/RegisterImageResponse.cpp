@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ims/v2/model/RegisterImageResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ims {
@@ -33,7 +32,6 @@ web::json::value RegisterImageResponse::toJson() const
 
     return val;
 }
-
 bool RegisterImageResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool RegisterImageResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string RegisterImageResponse::getJobId() const
 {

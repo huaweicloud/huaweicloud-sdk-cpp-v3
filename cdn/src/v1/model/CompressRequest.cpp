@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/CompressRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -33,7 +32,6 @@ web::json::value CompressRequest::toJson() const
 
     return val;
 }
-
 bool CompressRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool CompressRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t CompressRequest::getCompressSwitch() const
 {

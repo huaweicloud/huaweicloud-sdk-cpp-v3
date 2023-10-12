@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v2/model/TrafficSummaryData.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -38,7 +37,6 @@ web::json::value TrafficSummaryData::toJson() const
 
     return val;
 }
-
 bool TrafficSummaryData::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool TrafficSummaryData::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int64_t TrafficSummaryData::getValue() const
 {

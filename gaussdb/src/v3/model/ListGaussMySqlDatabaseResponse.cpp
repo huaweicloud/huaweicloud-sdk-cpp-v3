@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/ListGaussMySqlDatabaseResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -37,7 +36,6 @@ web::json::value ListGaussMySqlDatabaseResponse::toJson() const
 
     return val;
 }
-
 bool ListGaussMySqlDatabaseResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ListGaussMySqlDatabaseResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<ListGaussMysqlDatabaseInfo>& ListGaussMySqlDatabaseResponse::getDatabases()
 {

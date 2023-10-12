@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/CheckWeakPasswordResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -33,7 +32,6 @@ web::json::value CheckWeakPasswordResponse::toJson() const
 
     return val;
 }
-
 bool CheckWeakPasswordResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool CheckWeakPasswordResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool CheckWeakPasswordResponse::isWeak() const
 {

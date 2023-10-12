@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/NovaDeleteKeypairRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -33,7 +32,6 @@ web::json::value NovaDeleteKeypairRequest::toJson() const
 
     return val;
 }
-
 bool NovaDeleteKeypairRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool NovaDeleteKeypairRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string NovaDeleteKeypairRequest::getKeypairName() const
 {

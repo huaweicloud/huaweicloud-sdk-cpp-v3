@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/codeartsdeploy/v2/model/HostClusterInfoDetail.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsdeploy {
@@ -81,7 +80,6 @@ web::json::value HostClusterInfoDetail::toJson() const
 
     return val;
 }
-
 bool HostClusterInfoDetail::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -187,6 +185,7 @@ bool HostClusterInfoDetail::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string HostClusterInfoDetail::getId() const
 {

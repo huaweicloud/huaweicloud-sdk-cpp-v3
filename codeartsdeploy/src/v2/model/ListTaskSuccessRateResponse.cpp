@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/codeartsdeploy/v2/model/ListTaskSuccessRateResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsdeploy {
@@ -52,7 +51,6 @@ web::json::value ListTaskSuccessRateResponse::toJson() const
 
     return val;
 }
-
 bool ListTaskSuccessRateResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -104,6 +102,7 @@ bool ListTaskSuccessRateResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListTaskSuccessRateResponse::getProjectId() const
 {

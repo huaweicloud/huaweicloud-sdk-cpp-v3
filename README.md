@@ -52,6 +52,12 @@ make
 sudo make install
 ```
 
+For services that use BSON (kvs), install `libbson` and configure LIBBSON_INCLUDE_DIRS and LIBBSON_LIBRARY_DIRS to specify the header file path and library file path, respectively.
+
+``` bash
+sudo apt-get install libbson-1.0
+```
+
 #### Step 2: Build and install SDK
 
 ``` bash
@@ -73,7 +79,10 @@ After the preceding commands completed, **the installation directory of C++ SDK*
 ``` bash
 vcpkg install curl cpprestsdk boost openssl spdlog
 ```
-
+For services that use BSON (kvs), install `libbson` and configure LIBBSON_INCLUDE_DIRS and LIBBSON_LIBRARY_DIRS to specify the header file path and library file path, respectively.
+``` bash
+vcpkg install libbson
+```
 #### Step 2: Build By CLion
 
 1. open directory `huaweicloud-sdk-cpp-v3` by clion
@@ -530,4 +539,9 @@ add_subdirectory(core)
 add_subdirectory(vpc/src/v2)
 add_subdirectory(eip/src/v2)
 add_subdirectory(ecs/src/v2)
+```
+- For services that use BSON (kvs), set ENABLE_BSON to ON. ENABLE_BSON is set to OFF by default.
+``` bash
+# For services that use BSON, set ENABLE_BSON to ON. ENABLE_BSON is set to OFF by default.
+option(ENABLE_BSON "Enable bson library" ON)
 ```

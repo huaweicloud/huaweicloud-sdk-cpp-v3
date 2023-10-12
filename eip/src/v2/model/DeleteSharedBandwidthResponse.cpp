@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v2/model/DeleteSharedBandwidthResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -28,13 +27,13 @@ web::json::value DeleteSharedBandwidthResponse::toJson() const
 
     return val;
 }
-
 bool DeleteSharedBandwidthResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 }
 }

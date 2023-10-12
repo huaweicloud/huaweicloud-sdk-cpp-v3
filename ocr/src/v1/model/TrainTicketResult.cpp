@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/TrainTicketResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -121,7 +120,6 @@ web::json::value TrainTicketResult::toJson() const
 
     return val;
 }
-
 bool TrainTicketResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -299,6 +297,7 @@ bool TrainTicketResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string TrainTicketResult::getTicketId() const
 {

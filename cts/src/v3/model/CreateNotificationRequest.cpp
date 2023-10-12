@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cts/v3/model/CreateNotificationRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cts {
@@ -32,7 +31,6 @@ web::json::value CreateNotificationRequest::toJson() const
 
     return val;
 }
-
 bool CreateNotificationRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CreateNotificationRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 CreateNotificationRequestBody CreateNotificationRequest::getBody() const
 {

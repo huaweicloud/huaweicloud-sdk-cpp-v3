@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cts/v3/model/CreateTrackerRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cts {
@@ -75,7 +74,6 @@ web::json::value CreateTrackerRequestBody::toJson() const
 
     return val;
 }
-
 bool CreateTrackerRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -172,6 +170,7 @@ bool CreateTrackerRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateTrackerRequestBody::getTrackerType() const
 {

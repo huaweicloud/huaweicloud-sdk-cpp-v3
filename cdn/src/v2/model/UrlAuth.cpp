@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v2/model/UrlAuth.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -77,7 +76,6 @@ web::json::value UrlAuth::toJson() const
 
     return val;
 }
-
 bool UrlAuth::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -174,6 +172,7 @@ bool UrlAuth::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UrlAuth::getStatus() const
 {

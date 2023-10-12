@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/NeutronSubnet.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -110,7 +109,6 @@ web::json::value NeutronSubnet::toJson() const
 
     return val;
 }
-
 bool NeutronSubnet::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -270,6 +268,7 @@ bool NeutronSubnet::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<AllocationPool>& NeutronSubnet::getAllocationPools()
 {

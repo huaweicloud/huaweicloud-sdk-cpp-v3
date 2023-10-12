@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/smn/v2/model/Statement.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Smn {
@@ -68,7 +67,6 @@ web::json::value Statement::toJson() const
 
     return val;
 }
-
 bool Statement::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -147,6 +145,7 @@ bool Statement::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string Statement::getSid() const
 {

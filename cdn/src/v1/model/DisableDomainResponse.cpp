@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/DisableDomainResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -32,7 +31,6 @@ web::json::value DisableDomainResponse::toJson() const
 
     return val;
 }
-
 bool DisableDomainResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool DisableDomainResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 DomainsWithPort DisableDomainResponse::getDomain() const
 {

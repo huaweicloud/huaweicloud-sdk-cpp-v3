@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/CommonInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -68,7 +67,6 @@ web::json::value CommonInfo::toJson() const
 
     return val;
 }
-
 bool CommonInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -147,6 +145,7 @@ bool CommonInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool CommonInfo::isPvc() const
 {

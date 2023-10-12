@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/ListPrivateipsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -43,7 +42,6 @@ web::json::value ListPrivateipsRequest::toJson() const
 
     return val;
 }
-
 bool ListPrivateipsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool ListPrivateipsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListPrivateipsRequest::getSubnetId() const
 {

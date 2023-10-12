@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/AudioInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -53,7 +52,6 @@ web::json::value AudioInfo::toJson() const
 
     return val;
 }
-
 bool AudioInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool AudioInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string AudioInfo::getCodec() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sis/v1/model/TranscriberResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sis {
@@ -41,7 +40,6 @@ web::json::value TranscriberResult::toJson() const
 
     return val;
 }
-
 bool TranscriberResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -75,6 +73,7 @@ bool TranscriberResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string TranscriberResult::getText() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ims/v2/model/GlanceListImageMembersRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ims {
@@ -33,7 +32,6 @@ web::json::value GlanceListImageMembersRequest::toJson() const
 
     return val;
 }
-
 bool GlanceListImageMembersRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool GlanceListImageMembersRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string GlanceListImageMembersRequest::getImageId() const
 {

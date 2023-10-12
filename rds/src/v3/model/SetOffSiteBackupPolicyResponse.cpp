@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/SetOffSiteBackupPolicyResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -28,13 +27,13 @@ web::json::value SetOffSiteBackupPolicyResponse::toJson() const
 
     return val;
 }
-
 bool SetOffSiteBackupPolicyResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 }
 }

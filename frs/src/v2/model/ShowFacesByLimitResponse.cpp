@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/frs/v2/model/ShowFacesByLimitResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Frs {
@@ -42,7 +41,6 @@ web::json::value ShowFacesByLimitResponse::toJson() const
 
     return val;
 }
-
 bool ShowFacesByLimitResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool ShowFacesByLimitResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowFacesByLimitResponse::getFaceSetId() const
 {

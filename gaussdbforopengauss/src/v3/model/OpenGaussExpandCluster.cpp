@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/OpenGaussExpandCluster.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -36,7 +35,6 @@ web::json::value OpenGaussExpandCluster::toJson() const
 
     return val;
 }
-
 bool OpenGaussExpandCluster::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -61,6 +59,7 @@ bool OpenGaussExpandCluster::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<OpenGaussCoordinators>& OpenGaussExpandCluster::getCoordinators()
 {

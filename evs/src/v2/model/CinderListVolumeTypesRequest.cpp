@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/evs/v2/model/CinderListVolumeTypesRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Evs {
@@ -28,13 +27,13 @@ web::json::value CinderListVolumeTypesRequest::toJson() const
 
     return val;
 }
-
 bool CinderListVolumeTypesRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 }
 }

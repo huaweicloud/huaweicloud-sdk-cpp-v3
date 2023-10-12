@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/ValidateParaGroupNameResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -33,7 +32,6 @@ web::json::value ValidateParaGroupNameResponse::toJson() const
 
     return val;
 }
-
 bool ValidateParaGroupNameResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool ValidateParaGroupNameResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool ValidateParaGroupNameResponse::isExist() const
 {

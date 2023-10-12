@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/PcrTestRecordWordsBlockList.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -42,7 +41,6 @@ web::json::value PcrTestRecordWordsBlockList::toJson() const
 
     return val;
 }
-
 bool PcrTestRecordWordsBlockList::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool PcrTestRecordWordsBlockList::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string PcrTestRecordWordsBlockList::getWords() const
 {

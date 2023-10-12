@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/ListParseDomainDetailsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -32,7 +31,6 @@ web::json::value ListParseDomainDetailsResponse::toJson() const
 
     return val;
 }
-
 bool ListParseDomainDetailsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ListParseDomainDetailsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<std::string>& ListParseDomainDetailsResponse::getData()
 {

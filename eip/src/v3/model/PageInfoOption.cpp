@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v3/model/PageInfoOption.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -43,7 +42,6 @@ web::json::value PageInfoOption::toJson() const
 
     return val;
 }
-
 bool PageInfoOption::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool PageInfoOption::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string PageInfoOption::getPreviousMarker() const
 {

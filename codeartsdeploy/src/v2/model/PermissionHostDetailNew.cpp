@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/codeartsdeploy/v2/model/PermissionHostDetailNew.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsdeploy {
@@ -53,7 +52,6 @@ web::json::value PermissionHostDetailNew::toJson() const
 
     return val;
 }
-
 bool PermissionHostDetailNew::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool PermissionHostDetailNew::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool PermissionHostDetailNew::isCanView() const
 {

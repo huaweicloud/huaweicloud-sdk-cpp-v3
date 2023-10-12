@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/CreateInstanceResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -137,7 +136,6 @@ web::json::value CreateInstanceResponse::toJson() const
 
     return val;
 }
-
 bool CreateInstanceResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -351,6 +349,7 @@ bool CreateInstanceResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateInstanceResponse::getId() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/ShowIpInfoResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -32,7 +31,6 @@ web::json::value ShowIpInfoResponse::toJson() const
 
     return val;
 }
-
 bool ShowIpInfoResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ShowIpInfoResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<CdnIps>& ShowIpInfoResponse::getCdnIps()
 {

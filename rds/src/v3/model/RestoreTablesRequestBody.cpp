@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/RestoreTablesRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -42,7 +41,6 @@ web::json::value RestoreTablesRequestBody::toJson() const
 
     return val;
 }
-
 bool RestoreTablesRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool RestoreTablesRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int64_t RestoreTablesRequestBody::getRestoreTime() const
 {

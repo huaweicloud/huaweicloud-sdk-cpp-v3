@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cloudtable/v2/model/ClusterDetail.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cloudtable {
@@ -101,7 +100,6 @@ web::json::value ClusterDetail::toJson() const
 
     return val;
 }
-
 bool ClusterDetail::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -243,6 +241,7 @@ bool ClusterDetail::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 ActionProgress ClusterDetail::getActionProgress() const
 {

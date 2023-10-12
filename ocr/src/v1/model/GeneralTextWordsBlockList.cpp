@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/GeneralTextWordsBlockList.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -46,7 +45,6 @@ web::json::value GeneralTextWordsBlockList::toJson() const
 
     return val;
 }
-
 bool GeneralTextWordsBlockList::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -89,6 +87,7 @@ bool GeneralTextWordsBlockList::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string GeneralTextWordsBlockList::getWords() const
 {

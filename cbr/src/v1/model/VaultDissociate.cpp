@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/VaultDissociate.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -33,7 +32,6 @@ web::json::value VaultDissociate::toJson() const
 
     return val;
 }
-
 bool VaultDissociate::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool VaultDissociate::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string VaultDissociate::getPolicyId() const
 {

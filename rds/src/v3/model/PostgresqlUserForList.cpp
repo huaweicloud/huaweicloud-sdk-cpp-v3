@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/PostgresqlUserForList.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -46,7 +45,6 @@ web::json::value PostgresqlUserForList::toJson() const
 
     return val;
 }
-
 bool PostgresqlUserForList::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -89,6 +87,7 @@ bool PostgresqlUserForList::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string PostgresqlUserForList::getName() const
 {

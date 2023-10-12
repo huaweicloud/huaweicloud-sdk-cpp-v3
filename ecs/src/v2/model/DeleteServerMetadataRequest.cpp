@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/DeleteServerMetadataRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -38,7 +37,6 @@ web::json::value DeleteServerMetadataRequest::toJson() const
 
     return val;
 }
-
 bool DeleteServerMetadataRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool DeleteServerMetadataRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DeleteServerMetadataRequest::getKey() const
 {

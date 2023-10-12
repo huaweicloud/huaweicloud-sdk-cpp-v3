@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v1/model/OnlineInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -88,7 +87,6 @@ web::json::value OnlineInfo::toJson() const
 
     return val;
 }
-
 bool OnlineInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -203,6 +201,7 @@ bool OnlineInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string OnlineInfo::getPublishDomain() const
 {

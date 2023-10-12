@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/ListPredefinedTagsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -33,7 +32,6 @@ web::json::value ListPredefinedTagsRequest::toJson() const
 
     return val;
 }
-
 bool ListPredefinedTagsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool ListPredefinedTagsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListPredefinedTagsRequest::getXLanguage() const
 {

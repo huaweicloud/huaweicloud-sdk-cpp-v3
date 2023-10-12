@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/NeutronCreatePortRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -32,7 +31,6 @@ web::json::value NeutronCreatePortRequest::toJson() const
 
     return val;
 }
-
 bool NeutronCreatePortRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool NeutronCreatePortRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 NeutronCreatePortRequestBody NeutronCreatePortRequest::getBody() const
 {

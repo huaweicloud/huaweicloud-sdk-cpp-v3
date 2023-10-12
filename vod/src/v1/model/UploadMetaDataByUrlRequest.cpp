@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/UploadMetaDataByUrlRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -37,7 +36,6 @@ web::json::value UploadMetaDataByUrlRequest::toJson() const
 
     return val;
 }
-
 bool UploadMetaDataByUrlRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool UploadMetaDataByUrlRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UploadMetaDataByUrlRequest::getXSdkDate() const
 {

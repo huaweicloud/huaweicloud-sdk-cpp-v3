@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/GetHostListRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -36,7 +35,6 @@ web::json::value GetHostListRequestBody::toJson() const
 
     return val;
 }
-
 bool GetHostListRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -61,6 +59,7 @@ bool GetHostListRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<std::string>& GetHostListRequestBody::getHostIdList()
 {

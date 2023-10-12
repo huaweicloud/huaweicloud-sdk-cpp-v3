@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/BatchSetSmnRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -37,7 +36,6 @@ web::json::value BatchSetSmnRequest::toJson() const
 
     return val;
 }
-
 bool BatchSetSmnRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool BatchSetSmnRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string BatchSetSmnRequest::getXLanguage() const
 {

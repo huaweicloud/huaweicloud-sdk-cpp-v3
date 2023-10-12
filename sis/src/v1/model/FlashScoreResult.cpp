@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sis/v1/model/FlashScoreResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sis {
@@ -42,7 +41,6 @@ web::json::value FlashScoreResult::toJson() const
 
     return val;
 }
-
 bool FlashScoreResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool FlashScoreResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string FlashScoreResult::getText() const
 {

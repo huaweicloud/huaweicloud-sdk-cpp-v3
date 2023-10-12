@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/BatchSwitchoverReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -32,7 +31,6 @@ web::json::value BatchSwitchoverReq::toJson() const
 
     return val;
 }
-
 bool BatchSwitchoverReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool BatchSwitchoverReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<std::string>& BatchSwitchoverReq::getJobs()
 {

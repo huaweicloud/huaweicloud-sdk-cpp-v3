@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/RecognizeFlightItineraryResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -32,7 +31,6 @@ web::json::value RecognizeFlightItineraryResponse::toJson() const
 
     return val;
 }
-
 bool RecognizeFlightItineraryResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool RecognizeFlightItineraryResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 FlightItineraryResult RecognizeFlightItineraryResponse::getResult() const
 {

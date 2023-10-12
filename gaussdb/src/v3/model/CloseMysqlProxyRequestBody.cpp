@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/CloseMysqlProxyRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -32,7 +31,6 @@ web::json::value CloseMysqlProxyRequestBody::toJson() const
 
     return val;
 }
-
 bool CloseMysqlProxyRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CloseMysqlProxyRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<std::string>& CloseMysqlProxyRequestBody::getProxyIds()
 {

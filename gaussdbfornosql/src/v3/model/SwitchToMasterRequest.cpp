@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/SwitchToMasterRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -37,7 +36,6 @@ web::json::value SwitchToMasterRequest::toJson() const
 
     return val;
 }
-
 bool SwitchToMasterRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool SwitchToMasterRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string SwitchToMasterRequest::getInstanceId() const
 {

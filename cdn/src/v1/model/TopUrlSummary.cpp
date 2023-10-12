@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/TopUrlSummary.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -53,7 +52,6 @@ web::json::value TopUrlSummary::toJson() const
 
     return val;
 }
-
 bool TopUrlSummary::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool TopUrlSummary::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string TopUrlSummary::getUrl() const
 {

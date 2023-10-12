@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/QueryMigrationObjectProgressInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -53,7 +52,6 @@ web::json::value QueryMigrationObjectProgressInfo::toJson() const
 
     return val;
 }
-
 bool QueryMigrationObjectProgressInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -114,6 +112,7 @@ bool QueryMigrationObjectProgressInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<MigrationObjectOverviewInfo>& QueryMigrationObjectProgressInfo::getMigrationObjectOverview()
 {

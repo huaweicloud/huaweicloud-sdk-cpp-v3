@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/CreateColdVolumeRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -37,7 +36,6 @@ web::json::value CreateColdVolumeRequest::toJson() const
 
     return val;
 }
-
 bool CreateColdVolumeRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool CreateColdVolumeRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateColdVolumeRequest::getInstanceId() const
 {

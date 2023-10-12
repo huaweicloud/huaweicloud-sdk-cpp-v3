@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/BackupReplicateReqBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -58,7 +57,6 @@ web::json::value BackupReplicateReqBody::toJson() const
 
     return val;
 }
-
 bool BackupReplicateReqBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool BackupReplicateReqBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string BackupReplicateReqBody::getDescription() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/ChartConfig.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -32,24 +31,23 @@ web::json::value ChartConfig::toJson() const
     web::json::value val = web::json::value::object();
 
     if(canSortIsSet_) {
-        val[utility::conversions::to_string_t("can_sort")] = ModelBase::toJson(canSort_);
+        val[utility::conversions::to_string_t("canSort")] = ModelBase::toJson(canSort_);
     }
     if(canSearchIsSet_) {
-        val[utility::conversions::to_string_t("can_search")] = ModelBase::toJson(canSearch_);
+        val[utility::conversions::to_string_t("canSearch")] = ModelBase::toJson(canSearch_);
     }
     if(pageSizeIsSet_) {
-        val[utility::conversions::to_string_t("page_size")] = ModelBase::toJson(pageSize_);
+        val[utility::conversions::to_string_t("pageSize")] = ModelBase::toJson(pageSize_);
     }
 
     return val;
 }
-
 bool ChartConfig::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("can_sort"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("can_sort"));
+    if(val.has_field(utility::conversions::to_string_t("canSort"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("canSort"));
         if(!fieldValue.is_null())
         {
             bool refVal;
@@ -57,8 +55,8 @@ bool ChartConfig::fromJson(const web::json::value& val)
             setCanSort(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("can_search"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("can_search"));
+    if(val.has_field(utility::conversions::to_string_t("canSearch"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("canSearch"));
         if(!fieldValue.is_null())
         {
             bool refVal;
@@ -66,8 +64,8 @@ bool ChartConfig::fromJson(const web::json::value& val)
             setCanSearch(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("page_size"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("page_size"));
+    if(val.has_field(utility::conversions::to_string_t("pageSize"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("pageSize"));
         if(!fieldValue.is_null())
         {
             int32_t refVal;
@@ -77,6 +75,7 @@ bool ChartConfig::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool ChartConfig::isCanSort() const
 {

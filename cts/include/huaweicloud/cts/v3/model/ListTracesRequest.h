@@ -2,9 +2,11 @@
 #ifndef HUAWEICLOUD_SDK_CTS_V3_MODEL_ListTracesRequest_H_
 #define HUAWEICLOUD_SDK_CTS_V3_MODEL_ListTracesRequest_H_
 
+
 #include <huaweicloud/cts/v3/CtsExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
@@ -31,10 +33,8 @@ public:
     /// ModelBase overrides
 
     void validate() override;
-
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
-
     /////////////////////////////////////////////
     /// ListTracesRequest members
 

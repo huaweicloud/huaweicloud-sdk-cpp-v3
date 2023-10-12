@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/ReinstallSeverMetadataWithoutCloudInitOption.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -17,6 +16,8 @@ ReinstallSeverMetadataWithoutCloudInitOption::ReinstallSeverMetadataWithoutCloud
     systemEncryptedIsSet_ = false;
     systemCmkid_ = "";
     systemCmkidIsSet_ = false;
+    byol_ = "";
+    byolIsSet_ = false;
 }
 
 ReinstallSeverMetadataWithoutCloudInitOption::~ReinstallSeverMetadataWithoutCloudInitOption() = default;
@@ -35,10 +36,12 @@ web::json::value ReinstallSeverMetadataWithoutCloudInitOption::toJson() const
     if(systemCmkidIsSet_) {
         val[utility::conversions::to_string_t("__system__cmkid")] = ModelBase::toJson(systemCmkid_);
     }
+    if(byolIsSet_) {
+        val[utility::conversions::to_string_t("BYOL")] = ModelBase::toJson(byol_);
+    }
 
     return val;
 }
-
 bool ReinstallSeverMetadataWithoutCloudInitOption::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -61,8 +64,18 @@ bool ReinstallSeverMetadataWithoutCloudInitOption::fromJson(const web::json::val
             setSystemCmkid(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("BYOL"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("BYOL"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setByol(refVal);
+        }
+    }
     return ok;
 }
+
 
 std::string ReinstallSeverMetadataWithoutCloudInitOption::getSystemEncrypted() const
 {
@@ -104,6 +117,27 @@ bool ReinstallSeverMetadataWithoutCloudInitOption::systemCmkidIsSet() const
 void ReinstallSeverMetadataWithoutCloudInitOption::unsetsystemCmkid()
 {
     systemCmkidIsSet_ = false;
+}
+
+std::string ReinstallSeverMetadataWithoutCloudInitOption::getByol() const
+{
+    return byol_;
+}
+
+void ReinstallSeverMetadataWithoutCloudInitOption::setByol(const std::string& value)
+{
+    byol_ = value;
+    byolIsSet_ = true;
+}
+
+bool ReinstallSeverMetadataWithoutCloudInitOption::byolIsSet() const
+{
+    return byolIsSet_;
+}
+
+void ReinstallSeverMetadataWithoutCloudInitOption::unsetbyol()
+{
+    byolIsSet_ = false;
 }
 
 }

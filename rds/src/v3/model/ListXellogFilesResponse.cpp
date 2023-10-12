@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/ListXellogFilesResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -37,7 +36,6 @@ web::json::value ListXellogFilesResponse::toJson() const
 
     return val;
 }
-
 bool ListXellogFilesResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ListXellogFilesResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<ListXelLogResponseResult>& ListXellogFilesResponse::getList()
 {

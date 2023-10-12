@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/SchemaObject.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -47,7 +46,6 @@ web::json::value SchemaObject::toJson() const
 
     return val;
 }
-
 bool SchemaObject::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -90,6 +88,7 @@ bool SchemaObject::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string SchemaObject::getSyncType() const
 {

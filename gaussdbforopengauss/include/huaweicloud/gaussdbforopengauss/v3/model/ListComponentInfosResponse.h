@@ -2,9 +2,11 @@
 #ifndef HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_ListComponentInfosResponse_H_
 #define HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_ListComponentInfosResponse_H_
 
+
 #include <huaweicloud/gaussdbforopengauss/v3/GaussDBforopenGaussExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/gaussdbforopengauss/v3/model/Nodes.h>
@@ -32,10 +34,8 @@ public:
     /// ModelBase overrides
 
     void validate() override;
-
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
-
     /////////////////////////////////////////////
     /// ListComponentInfosResponse members
 

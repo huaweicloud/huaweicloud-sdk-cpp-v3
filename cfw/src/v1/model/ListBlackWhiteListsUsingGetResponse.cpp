@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/ListBlackWhiteListsUsingGetResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -32,7 +31,6 @@ web::json::value ListBlackWhiteListsUsingGetResponse::toJson() const
 
     return val;
 }
-
 bool ListBlackWhiteListsUsingGetResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ListBlackWhiteListsUsingGetResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 BlackWhiteListResponse_data ListBlackWhiteListsUsingGetResponse::getData() const
 {

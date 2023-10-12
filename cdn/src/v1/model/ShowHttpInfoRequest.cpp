@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/ShowHttpInfoRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -38,7 +37,6 @@ web::json::value ShowHttpInfoRequest::toJson() const
 
     return val;
 }
-
 bool ShowHttpInfoRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ShowHttpInfoRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowHttpInfoRequest::getDomainId() const
 {

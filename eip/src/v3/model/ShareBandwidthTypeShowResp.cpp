@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v3/model/ShareBandwidthTypeShowResp.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -68,7 +67,6 @@ web::json::value ShareBandwidthTypeShowResp::toJson() const
 
     return val;
 }
-
 bool ShareBandwidthTypeShowResp::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -147,6 +145,7 @@ bool ShareBandwidthTypeShowResp::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShareBandwidthTypeShowResp::getId() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/DomainMigrateProjectStatus.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -63,7 +62,6 @@ web::json::value DomainMigrateProjectStatus::toJson() const
 
     return val;
 }
-
 bool DomainMigrateProjectStatus::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -133,6 +131,7 @@ bool DomainMigrateProjectStatus::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DomainMigrateProjectStatus::getStatus() const
 {

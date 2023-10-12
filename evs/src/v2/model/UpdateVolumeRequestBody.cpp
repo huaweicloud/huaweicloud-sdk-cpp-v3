@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/evs/v2/model/UpdateVolumeRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Evs {
@@ -32,7 +31,6 @@ web::json::value UpdateVolumeRequestBody::toJson() const
 
     return val;
 }
-
 bool UpdateVolumeRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool UpdateVolumeRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 UpdateVolumeOption UpdateVolumeRequestBody::getVolume() const
 {

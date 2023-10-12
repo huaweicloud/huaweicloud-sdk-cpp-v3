@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/RecognizeGeneralTextResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -32,7 +31,6 @@ web::json::value RecognizeGeneralTextResponse::toJson() const
 
     return val;
 }
-
 bool RecognizeGeneralTextResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool RecognizeGeneralTextResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 GeneralTextResult RecognizeGeneralTextResponse::getResult() const
 {

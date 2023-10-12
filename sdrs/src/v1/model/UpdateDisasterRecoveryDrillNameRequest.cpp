@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sdrs/v1/model/UpdateDisasterRecoveryDrillNameRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sdrs {
@@ -37,7 +36,6 @@ web::json::value UpdateDisasterRecoveryDrillNameRequest::toJson() const
 
     return val;
 }
-
 bool UpdateDisasterRecoveryDrillNameRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool UpdateDisasterRecoveryDrillNameRequest::fromJson(const web::json::value& va
     }
     return ok;
 }
+
 
 std::string UpdateDisasterRecoveryDrillNameRequest::getDisasterRecoveryDrillId() const
 {

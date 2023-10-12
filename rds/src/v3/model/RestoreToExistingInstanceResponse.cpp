@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/RestoreToExistingInstanceResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -33,7 +32,6 @@ web::json::value RestoreToExistingInstanceResponse::toJson() const
 
     return val;
 }
-
 bool RestoreToExistingInstanceResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool RestoreToExistingInstanceResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string RestoreToExistingInstanceResponse::getJobId() const
 {

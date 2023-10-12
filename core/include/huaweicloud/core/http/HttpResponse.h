@@ -36,7 +36,7 @@ public:
     int getStatusCode() const;
     std::string getHeaderParams() const;
     std::string getHttpBody() const;
-
+    const std::string& getHttpBodyRef() const;
     void setStatusCode(int code);
     void setHeaderParams(std::string header);
     void setHttpBody(std::string body);

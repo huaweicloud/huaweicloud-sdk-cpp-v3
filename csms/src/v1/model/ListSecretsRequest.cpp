@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/csms/v1/model/ListSecretsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Csms {
@@ -43,7 +42,6 @@ web::json::value ListSecretsRequest::toJson() const
 
     return val;
 }
-
 bool ListSecretsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool ListSecretsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListSecretsRequest::getLimit() const
 {

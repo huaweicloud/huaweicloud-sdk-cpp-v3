@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/ShowColumnInfoResultResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -37,7 +36,6 @@ web::json::value ShowColumnInfoResultResponse::toJson() const
 
     return val;
 }
-
 bool ShowColumnInfoResultResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ShowColumnInfoResultResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<DbObjectColumnInfo>& ShowColumnInfoResultResponse::getResults()
 {

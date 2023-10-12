@@ -32,7 +32,7 @@
 #include <huaweicloud/core/http/HttpClient.h>
 #include <huaweicloud/core/CoreExport.h>
 #include <huaweicloud/core/auth/Region.h>
-
+#include <huaweicloud/core/http/HttpRequestDef.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -71,7 +71,7 @@ public:
     void processRegionAuth();
     std::unique_ptr<HttpResponse> callApi(const std::string &method, const std::string &resourcePath,
         const std::map<std::string, std::string> &pathParams, const std::map<std::string, std::string> &queryParams,
-        const std::map<std::string, std::string> &headerParams, const std::string &body);
+        const std::map<std::string, std::string> &headerParams, const std::string &body, const HttpRequestDef& def);
 
 private:
     std::string parseUrl(const RequestParams &requestParams);
@@ -79,6 +79,12 @@ private:
     void addHeaderParams(RequestParams &requestParams, const std::map<std::string, std::string> &headerParams);
 
     static void parseEndPoint(const std::string &str, std::string &scheme, std::string &host);
+
+    std::string buildEndpoint(const HttpRequestDef& ref, const std::map<std::string, std::string>& pathParams,
+                              const std::map<std::string, std::string> &queryParams);
+
+    std::string getFieldValueByName(std::string key, std::map<std::string, std::string>& pathParams,
+                                    std::map<std::string, std::string> &queryParams);
 
     std::string getResourcePath(const std::string &uri, const std::map<std::string, std::string> &pathParams,
         const std::map<std::string, std::string> &updatePathParams);

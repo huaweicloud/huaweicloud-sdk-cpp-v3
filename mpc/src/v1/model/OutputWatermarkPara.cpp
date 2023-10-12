@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/OutputWatermarkPara.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -33,7 +32,6 @@ web::json::value OutputWatermarkPara::toJson() const
 
     return val;
 }
-
 bool OutputWatermarkPara::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool OutputWatermarkPara::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t OutputWatermarkPara::getTimeDuration() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/BatchLimitSpeedReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -32,7 +31,6 @@ web::json::value BatchLimitSpeedReq::toJson() const
 
     return val;
 }
-
 bool BatchLimitSpeedReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool BatchLimitSpeedReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<LimitSpeedReq>& BatchLimitSpeedReq::getSpeedLimits()
 {

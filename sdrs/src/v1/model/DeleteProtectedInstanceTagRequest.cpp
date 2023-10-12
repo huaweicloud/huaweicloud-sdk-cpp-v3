@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sdrs/v1/model/DeleteProtectedInstanceTagRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sdrs {
@@ -38,7 +37,6 @@ web::json::value DeleteProtectedInstanceTagRequest::toJson() const
 
     return val;
 }
-
 bool DeleteProtectedInstanceTagRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool DeleteProtectedInstanceTagRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DeleteProtectedInstanceTagRequest::getProtectedInstanceId() const
 {

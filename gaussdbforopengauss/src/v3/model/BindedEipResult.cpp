@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/BindedEipResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -78,7 +77,6 @@ web::json::value BindedEipResult::toJson() const
 
     return val;
 }
-
 bool BindedEipResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -175,6 +173,7 @@ bool BindedEipResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string BindedEipResult::getPublicIpId() const
 {

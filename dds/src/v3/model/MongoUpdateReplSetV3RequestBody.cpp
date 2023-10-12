@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/MongoUpdateReplSetV3RequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -33,7 +32,6 @@ web::json::value MongoUpdateReplSetV3RequestBody::toJson() const
 
     return val;
 }
-
 bool MongoUpdateReplSetV3RequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool MongoUpdateReplSetV3RequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string MongoUpdateReplSetV3RequestBody::getName() const
 {

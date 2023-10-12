@@ -2,9 +2,11 @@
 #ifndef HUAWEICLOUD_SDK_GAUSSDBFORNOSQL_V3_MODEL_CreateConfigurationRequestBody_H_
 #define HUAWEICLOUD_SDK_GAUSSDBFORNOSQL_V3_MODEL_CreateConfigurationRequestBody_H_
 
+
 #include <huaweicloud/gaussdbfornosql/v3/GaussDBforNoSQLExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/gaussdbfornosql/v3/model/CreateConfigurationDatastoreOption.h>
@@ -34,10 +36,8 @@ public:
     /// ModelBase overrides
 
     void validate() override;
-
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
-
     /////////////////////////////////////////////
     /// CreateConfigurationRequestBody members
 

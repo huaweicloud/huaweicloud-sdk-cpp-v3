@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/UpdateTransferRequestBody_log_transfer_info.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -42,7 +41,6 @@ web::json::value UpdateTransferRequestBody_log_transfer_info::toJson() const
 
     return val;
 }
-
 bool UpdateTransferRequestBody_log_transfer_info::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool UpdateTransferRequestBody_log_transfer_info::fromJson(const web::json::valu
     }
     return ok;
 }
+
 
 std::string UpdateTransferRequestBody_log_transfer_info::getLogStorageFormat() const
 {

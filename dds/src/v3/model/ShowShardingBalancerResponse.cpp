@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/ShowShardingBalancerResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -37,7 +36,6 @@ web::json::value ShowShardingBalancerResponse::toJson() const
 
     return val;
 }
-
 bool ShowShardingBalancerResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ShowShardingBalancerResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool ShowShardingBalancerResponse::isIsOpen() const
 {

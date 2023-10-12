@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/codeartsdeploy/v2/model/PermissionClusterDetail.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsdeploy {
@@ -53,7 +52,6 @@ web::json::value PermissionClusterDetail::toJson() const
 
     return val;
 }
-
 bool PermissionClusterDetail::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool PermissionClusterDetail::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool PermissionClusterDetail::isCanView() const
 {

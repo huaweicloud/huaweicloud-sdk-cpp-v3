@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/RestoreNewInstanceResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -128,7 +127,6 @@ web::json::value RestoreNewInstanceResponse::toJson() const
 
     return val;
 }
-
 bool RestoreNewInstanceResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -324,6 +322,7 @@ bool RestoreNewInstanceResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string RestoreNewInstanceResponse::getId() const
 {

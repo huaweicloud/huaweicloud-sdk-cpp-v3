@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/HeaderBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -32,7 +31,6 @@ web::json::value HeaderBody::toJson() const
 
     return val;
 }
-
 bool HeaderBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool HeaderBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 HeaderMap HeaderBody::getHeaders() const
 {

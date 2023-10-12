@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/ShowDomainItemLocationDetailsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -63,7 +62,6 @@ web::json::value ShowDomainItemLocationDetailsRequest::toJson() const
 
     return val;
 }
-
 bool ShowDomainItemLocationDetailsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -133,6 +131,7 @@ bool ShowDomainItemLocationDetailsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowDomainItemLocationDetailsRequest::getEnterpriseProjectId() const
 {

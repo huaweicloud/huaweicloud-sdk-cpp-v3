@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/PrePaidServer.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -133,7 +132,6 @@ web::json::value PrePaidServer::toJson() const
 
     return val;
 }
-
 bool PrePaidServer::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -347,6 +345,7 @@ bool PrePaidServer::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string PrePaidServer::getAutoTerminateTime() const
 {

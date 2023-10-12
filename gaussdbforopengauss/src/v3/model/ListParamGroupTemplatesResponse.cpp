@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/ListParamGroupTemplatesResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -37,7 +36,6 @@ web::json::value ListParamGroupTemplatesResponse::toJson() const
 
     return val;
 }
-
 bool ListParamGroupTemplatesResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ListParamGroupTemplatesResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ListParamGroupTemplatesResponse::getCount() const
 {

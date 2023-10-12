@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/CommandInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -38,7 +37,6 @@ web::json::value CommandInfo::toJson() const
 
     return val;
 }
-
 bool CommandInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool CommandInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CommandInfo::getOriginName() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/CacheUrlParameterFilter.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -38,7 +37,6 @@ web::json::value CacheUrlParameterFilter::toJson() const
 
     return val;
 }
-
 bool CacheUrlParameterFilter::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool CacheUrlParameterFilter::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CacheUrlParameterFilter::getType() const
 {

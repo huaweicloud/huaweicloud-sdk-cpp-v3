@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/AccessConfigBaseLogInfoCreate.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -38,7 +37,6 @@ web::json::value AccessConfigBaseLogInfoCreate::toJson() const
 
     return val;
 }
-
 bool AccessConfigBaseLogInfoCreate::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool AccessConfigBaseLogInfoCreate::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string AccessConfigBaseLogInfoCreate::getLogGroupId() const
 {

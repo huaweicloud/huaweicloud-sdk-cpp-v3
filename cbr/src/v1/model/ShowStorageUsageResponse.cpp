@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/ShowStorageUsageResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -37,7 +36,6 @@ web::json::value ShowStorageUsageResponse::toJson() const
 
     return val;
 }
-
 bool ShowStorageUsageResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ShowStorageUsageResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ShowStorageUsageResponse::getResourceCount() const
 {

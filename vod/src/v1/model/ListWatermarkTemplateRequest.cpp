@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/ListWatermarkTemplateRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -47,7 +46,6 @@ web::json::value ListWatermarkTemplateRequest::toJson() const
 
     return val;
 }
-
 bool ListWatermarkTemplateRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -90,6 +88,7 @@ bool ListWatermarkTemplateRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListWatermarkTemplateRequest::getXSdkDate() const
 {

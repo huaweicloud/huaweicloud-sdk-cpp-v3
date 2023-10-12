@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/ShowGaussMySqlProjectQuotasResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -32,7 +31,6 @@ web::json::value ShowGaussMySqlProjectQuotasResponse::toJson() const
 
     return val;
 }
-
 bool ShowGaussMySqlProjectQuotasResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ShowGaussMySqlProjectQuotasResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 Project_quotas ShowGaussMySqlProjectQuotasResponse::getQuotas() const
 {

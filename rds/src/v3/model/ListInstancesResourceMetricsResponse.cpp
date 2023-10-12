@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/ListInstancesResourceMetricsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -37,7 +36,6 @@ web::json::value ListInstancesResourceMetricsResponse::toJson() const
 
     return val;
 }
-
 bool ListInstancesResourceMetricsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ListInstancesResourceMetricsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ListInstancesResourceMetricsResponse::getTotalCount() const
 {

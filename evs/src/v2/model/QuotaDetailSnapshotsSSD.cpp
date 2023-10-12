@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/evs/v2/model/QuotaDetailSnapshotsSSD.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Evs {
@@ -43,7 +42,6 @@ web::json::value QuotaDetailSnapshotsSSD::toJson() const
 
     return val;
 }
-
 bool QuotaDetailSnapshotsSSD::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool QuotaDetailSnapshotsSSD::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t QuotaDetailSnapshotsSSD::getInUse() const
 {

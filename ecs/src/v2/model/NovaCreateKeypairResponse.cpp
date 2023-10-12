@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/NovaCreateKeypairResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -32,7 +31,6 @@ web::json::value NovaCreateKeypairResponse::toJson() const
 
     return val;
 }
-
 bool NovaCreateKeypairResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool NovaCreateKeypairResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 NovaKeypair NovaCreateKeypairResponse::getKeypair() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/RestartNodeRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -33,7 +32,6 @@ web::json::value RestartNodeRequest::toJson() const
 
     return val;
 }
-
 bool RestartNodeRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool RestartNodeRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool RestartNodeRequest::isDelay() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sis/v1/model/RunTtsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sis {
@@ -32,7 +31,6 @@ web::json::value RunTtsRequest::toJson() const
 
     return val;
 }
-
 bool RunTtsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool RunTtsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 PostCustomTTSReq RunTtsRequest::getBody() const
 {

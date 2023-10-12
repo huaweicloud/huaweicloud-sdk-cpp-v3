@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/ShowAllInstancesBackupsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -37,7 +36,6 @@ web::json::value ShowAllInstancesBackupsResponse::toJson() const
 
     return val;
 }
-
 bool ShowAllInstancesBackupsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ShowAllInstancesBackupsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int64_t ShowAllInstancesBackupsResponse::getTotalCount() const
 {

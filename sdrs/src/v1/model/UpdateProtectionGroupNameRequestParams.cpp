@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sdrs/v1/model/UpdateProtectionGroupNameRequestParams.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sdrs {
@@ -33,7 +32,6 @@ web::json::value UpdateProtectionGroupNameRequestParams::toJson() const
 
     return val;
 }
-
 bool UpdateProtectionGroupNameRequestParams::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool UpdateProtectionGroupNameRequestParams::fromJson(const web::json::value& va
     }
     return ok;
 }
+
 
 std::string UpdateProtectionGroupNameRequestParams::getName() const
 {

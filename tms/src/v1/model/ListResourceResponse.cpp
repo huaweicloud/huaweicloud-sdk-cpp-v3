@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/tms/v1/model/ListResourceResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Tms {
@@ -41,7 +40,6 @@ web::json::value ListResourceResponse::toJson() const
 
     return val;
 }
-
 bool ListResourceResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -75,6 +73,7 @@ bool ListResourceResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<Resources>& ListResourceResponse::getResources()
 {

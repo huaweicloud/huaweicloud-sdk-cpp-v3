@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/kms/v2/model/UpdateKeyDescriptionResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Kms {
@@ -32,7 +31,6 @@ web::json::value UpdateKeyDescriptionResponse::toJson() const
 
     return val;
 }
-
 bool UpdateKeyDescriptionResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool UpdateKeyDescriptionResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 KeyDescriptionInfo UpdateKeyDescriptionResponse::getKeyInfo() const
 {

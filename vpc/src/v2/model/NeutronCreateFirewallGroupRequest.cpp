@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/NeutronCreateFirewallGroupRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -32,7 +31,6 @@ web::json::value NeutronCreateFirewallGroupRequest::toJson() const
 
     return val;
 }
-
 bool NeutronCreateFirewallGroupRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool NeutronCreateFirewallGroupRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 NeutronCreateFirewallGroupRequestBody NeutronCreateFirewallGroupRequest::getBody() const
 {

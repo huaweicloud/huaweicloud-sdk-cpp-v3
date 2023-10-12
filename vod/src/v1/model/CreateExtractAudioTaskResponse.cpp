@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/CreateExtractAudioTaskResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -38,7 +37,6 @@ web::json::value CreateExtractAudioTaskResponse::toJson() const
 
     return val;
 }
-
 bool CreateExtractAudioTaskResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool CreateExtractAudioTaskResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateExtractAudioTaskResponse::getAssetId() const
 {

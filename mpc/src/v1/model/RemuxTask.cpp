@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/RemuxTask.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -89,7 +88,6 @@ web::json::value RemuxTask::toJson() const
 
     return val;
 }
-
 bool RemuxTask::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -213,6 +211,7 @@ bool RemuxTask::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string RemuxTask::getTaskId() const
 {

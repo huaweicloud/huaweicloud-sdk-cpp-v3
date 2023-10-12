@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/ShowProtectableResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -32,7 +31,6 @@ web::json::value ShowProtectableResponse::toJson() const
 
     return val;
 }
-
 bool ShowProtectableResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ShowProtectableResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 ProtectablesResp ShowProtectableResponse::getInstance() const
 {

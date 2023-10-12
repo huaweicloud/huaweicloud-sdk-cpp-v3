@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/File_addr.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -43,7 +42,6 @@ web::json::value File_addr::toJson() const
 
     return val;
 }
-
 bool File_addr::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool File_addr::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string File_addr::getBucket() const
 {

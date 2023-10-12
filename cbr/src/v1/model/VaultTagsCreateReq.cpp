@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/VaultTagsCreateReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -32,7 +31,6 @@ web::json::value VaultTagsCreateReq::toJson() const
 
     return val;
 }
-
 bool VaultTagsCreateReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool VaultTagsCreateReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 Tag VaultTagsCreateReq::getTag() const
 {

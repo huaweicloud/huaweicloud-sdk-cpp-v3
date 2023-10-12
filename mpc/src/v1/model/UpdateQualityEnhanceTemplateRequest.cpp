@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/UpdateQualityEnhanceTemplateRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -32,7 +31,6 @@ web::json::value UpdateQualityEnhanceTemplateRequest::toJson() const
 
     return val;
 }
-
 bool UpdateQualityEnhanceTemplateRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool UpdateQualityEnhanceTemplateRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 UpdateQualityEnhanceTemplateReq UpdateQualityEnhanceTemplateRequest::getBody() const
 {

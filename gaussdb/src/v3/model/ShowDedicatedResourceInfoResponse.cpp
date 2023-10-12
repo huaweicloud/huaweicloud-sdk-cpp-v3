@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/ShowDedicatedResourceInfoResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -65,7 +64,6 @@ web::json::value ShowDedicatedResourceInfoResponse::toJson() const
 
     return val;
 }
-
 bool ShowDedicatedResourceInfoResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -144,6 +142,7 @@ bool ShowDedicatedResourceInfoResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowDedicatedResourceInfoResponse::getId() const
 {

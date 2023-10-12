@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eps/v1/model/ShowResourceBindEnterpriseProjectResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eps {
@@ -41,7 +40,6 @@ web::json::value ShowResourceBindEnterpriseProjectResponse::toJson() const
 
     return val;
 }
-
 bool ShowResourceBindEnterpriseProjectResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -75,6 +73,7 @@ bool ShowResourceBindEnterpriseProjectResponse::fromJson(const web::json::value&
     }
     return ok;
 }
+
 
 std::vector<Resources>& ShowResourceBindEnterpriseProjectResponse::getResources()
 {

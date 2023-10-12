@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v3/model/AttachBatchPublicIpRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -32,7 +31,6 @@ web::json::value AttachBatchPublicIpRequest::toJson() const
 
     return val;
 }
-
 bool AttachBatchPublicIpRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool AttachBatchPublicIpRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 BatchAttachSharebwReq AttachBatchPublicIpRequest::getBody() const
 {

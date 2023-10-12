@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/ShowDomainNameResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -53,7 +52,6 @@ web::json::value ShowDomainNameResponse::toJson() const
 
     return val;
 }
-
 bool ShowDomainNameResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool ShowDomainNameResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowDomainNameResponse::getInstanceId() const
 {

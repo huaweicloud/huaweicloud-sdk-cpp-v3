@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v1/model/CreateDomainMappingResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -38,7 +37,6 @@ web::json::value CreateDomainMappingResponse::toJson() const
 
     return val;
 }
-
 bool CreateDomainMappingResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool CreateDomainMappingResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateDomainMappingResponse::getPullDomain() const
 {

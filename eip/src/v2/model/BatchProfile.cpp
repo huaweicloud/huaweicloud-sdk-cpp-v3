@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v2/model/BatchProfile.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -48,7 +47,6 @@ web::json::value BatchProfile::toJson() const
 
     return val;
 }
-
 bool BatchProfile::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool BatchProfile::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string BatchProfile::getUserId() const
 {

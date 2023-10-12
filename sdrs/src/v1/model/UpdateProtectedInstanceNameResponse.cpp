@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sdrs/v1/model/UpdateProtectedInstanceNameResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sdrs {
@@ -32,7 +31,6 @@ web::json::value UpdateProtectedInstanceNameResponse::toJson() const
 
     return val;
 }
-
 bool UpdateProtectedInstanceNameResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool UpdateProtectedInstanceNameResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 ShowProtectedInstanceParams UpdateProtectedInstanceNameResponse::getProtectedInstance() const
 {

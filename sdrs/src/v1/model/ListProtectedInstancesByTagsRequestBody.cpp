@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sdrs/v1/model/ListProtectedInstancesByTagsRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sdrs {
@@ -63,7 +62,6 @@ web::json::value ListProtectedInstancesByTagsRequestBody::toJson() const
 
     return val;
 }
-
 bool ListProtectedInstancesByTagsRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -142,6 +140,7 @@ bool ListProtectedInstancesByTagsRequestBody::fromJson(const web::json::value& v
     }
     return ok;
 }
+
 
 std::vector<TagParams>& ListProtectedInstancesByTagsRequestBody::getTags()
 {

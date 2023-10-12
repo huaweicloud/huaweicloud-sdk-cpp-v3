@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/ListErrorlogForLtsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -32,7 +31,6 @@ web::json::value ListErrorlogForLtsResponse::toJson() const
 
     return val;
 }
-
 bool ListErrorlogForLtsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ListErrorlogForLtsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<ErrorLogItem>& ListErrorlogForLtsResponse::getErrorLogList()
 {

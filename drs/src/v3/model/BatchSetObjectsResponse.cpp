@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/BatchSetObjectsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -37,7 +36,6 @@ web::json::value BatchSetObjectsResponse::toJson() const
 
     return val;
 }
-
 bool BatchSetObjectsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool BatchSetObjectsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int64_t BatchSetObjectsResponse::getAllCounts() const
 {

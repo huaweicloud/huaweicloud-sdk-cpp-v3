@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sis/v1/model/Config.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sis {
@@ -58,7 +57,6 @@ web::json::value Config::toJson() const
 
     return val;
 }
-
 bool Config::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool Config::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string Config::getAudioFormat() const
 {

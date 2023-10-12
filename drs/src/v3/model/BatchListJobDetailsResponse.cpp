@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/BatchListJobDetailsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -37,7 +36,6 @@ web::json::value BatchListJobDetailsResponse::toJson() const
 
     return val;
 }
-
 bool BatchListJobDetailsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool BatchListJobDetailsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t BatchListJobDetailsResponse::getCount() const
 {

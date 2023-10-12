@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/kms/v2/model/ListRetirableGrantsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Kms {
@@ -32,7 +31,6 @@ web::json::value ListRetirableGrantsRequest::toJson() const
 
     return val;
 }
-
 bool ListRetirableGrantsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ListRetirableGrantsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 ListRetirableGrantsRequestBody ListRetirableGrantsRequest::getBody() const
 {

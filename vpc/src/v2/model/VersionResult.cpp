@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/VersionResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -42,7 +41,6 @@ web::json::value VersionResult::toJson() const
 
     return val;
 }
-
 bool VersionResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool VersionResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string VersionResult::getStatus() const
 {

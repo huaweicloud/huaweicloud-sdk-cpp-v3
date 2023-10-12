@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/UpdateAssetMetaResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -28,13 +27,13 @@ web::json::value UpdateAssetMetaResponse::toJson() const
 
     return val;
 }
-
 bool UpdateAssetMetaResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 }
 }

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eps/v1/model/QuotasDetail.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eps {
@@ -32,7 +31,6 @@ web::json::value QuotasDetail::toJson() const
 
     return val;
 }
-
 bool QuotasDetail::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool QuotasDetail::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<EpQuotas>& QuotasDetail::getResources()
 {

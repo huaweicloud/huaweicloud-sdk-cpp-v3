@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/AddServiceItemsUsingPostResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -32,7 +31,6 @@ web::json::value AddServiceItemsUsingPostResponse::toJson() const
 
     return val;
 }
-
 bool AddServiceItemsUsingPostResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool AddServiceItemsUsingPostResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 ServiceItemIds AddServiceItemsUsingPostResponse::getData() const
 {

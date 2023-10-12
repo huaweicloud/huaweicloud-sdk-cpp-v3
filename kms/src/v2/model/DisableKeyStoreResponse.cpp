@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/kms/v2/model/DisableKeyStoreResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Kms {
@@ -32,7 +31,6 @@ web::json::value DisableKeyStoreResponse::toJson() const
 
     return val;
 }
-
 bool DisableKeyStoreResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool DisableKeyStoreResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 KeyStoreStateInfo DisableKeyStoreResponse::getKeystore() const
 {

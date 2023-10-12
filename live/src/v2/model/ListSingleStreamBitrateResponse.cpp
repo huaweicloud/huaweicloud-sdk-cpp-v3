@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v2/model/ListSingleStreamBitrateResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -37,7 +36,6 @@ web::json::value ListSingleStreamBitrateResponse::toJson() const
 
     return val;
 }
-
 bool ListSingleStreamBitrateResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ListSingleStreamBitrateResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<V2BitrateInfo>& ListSingleStreamBitrateResponse::getBitrateInfoList()
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/MosaicInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -58,7 +57,6 @@ web::json::value MosaicInfo::toJson() const
 
     return val;
 }
-
 bool MosaicInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool MosaicInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string MosaicInfo::getTimelineStart() const
 {

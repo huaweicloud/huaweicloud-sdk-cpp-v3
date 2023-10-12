@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/DeleteConfigurationRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -33,7 +32,6 @@ web::json::value DeleteConfigurationRequest::toJson() const
 
     return val;
 }
-
 bool DeleteConfigurationRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool DeleteConfigurationRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DeleteConfigurationRequest::getConfigId() const
 {

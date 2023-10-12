@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/DisassociateServerVirtualIpRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -32,7 +31,6 @@ web::json::value DisassociateServerVirtualIpRequestBody::toJson() const
 
     return val;
 }
-
 bool DisassociateServerVirtualIpRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool DisassociateServerVirtualIpRequestBody::fromJson(const web::json::value& va
     }
     return ok;
 }
+
 
 DisassociateServerVirtualIpOption DisassociateServerVirtualIpRequestBody::getNic() const
 {

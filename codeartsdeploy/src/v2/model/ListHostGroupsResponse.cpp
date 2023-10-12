@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/codeartsdeploy/v2/model/ListHostGroupsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsdeploy {
@@ -37,7 +36,6 @@ web::json::value ListHostGroupsResponse::toJson() const
 
     return val;
 }
-
 bool ListHostGroupsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ListHostGroupsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ListHostGroupsResponse::getTotal() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v2/model/ListBandwidthPkgRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -43,7 +42,6 @@ web::json::value ListBandwidthPkgRequest::toJson() const
 
     return val;
 }
-
 bool ListBandwidthPkgRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool ListBandwidthPkgRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ListBandwidthPkgRequest::getLimit() const
 {

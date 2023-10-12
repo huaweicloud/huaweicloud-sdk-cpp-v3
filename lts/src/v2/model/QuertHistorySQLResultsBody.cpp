@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/QuertHistorySQLResultsBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -38,7 +37,6 @@ web::json::value QuertHistorySQLResultsBody::toJson() const
 
     return val;
 }
-
 bool QuertHistorySQLResultsBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool QuertHistorySQLResultsBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int64_t QuertHistorySQLResultsBody::getLastUseTime() const
 {

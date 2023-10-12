@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/WatermarkTemplate.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -88,7 +87,6 @@ web::json::value WatermarkTemplate::toJson() const
 
     return val;
 }
-
 bool WatermarkTemplate::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -203,6 +201,7 @@ bool WatermarkTemplate::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string WatermarkTemplate::getDx() const
 {

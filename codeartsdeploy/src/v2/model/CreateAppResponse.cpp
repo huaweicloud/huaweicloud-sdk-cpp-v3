@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/codeartsdeploy/v2/model/CreateAppResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsdeploy {
@@ -37,7 +36,6 @@ web::json::value CreateAppResponse::toJson() const
 
     return val;
 }
-
 bool CreateAppResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool CreateAppResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateAppResponse::getStatus() const
 {

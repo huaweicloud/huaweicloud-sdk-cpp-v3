@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ivs/v2/model/IvsStandardByIdCardImageResponseBody_result.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ivs {
@@ -42,7 +41,6 @@ web::json::value IvsStandardByIdCardImageResponseBody_result::toJson() const
 
     return val;
 }
-
 bool IvsStandardByIdCardImageResponseBody_result::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool IvsStandardByIdCardImageResponseBody_result::fromJson(const web::json::valu
     }
     return ok;
 }
+
 
 std::string IvsStandardByIdCardImageResponseBody_result::getServiceName() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/VaultBackup.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -37,7 +36,6 @@ web::json::value VaultBackup::toJson() const
 
     return val;
 }
-
 bool VaultBackup::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool VaultBackup::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 CheckpointParam VaultBackup::getParameters() const
 {

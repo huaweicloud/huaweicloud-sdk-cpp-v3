@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/tms/v1/model/ListTagValuesResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Tms {
@@ -36,7 +35,6 @@ web::json::value ListTagValuesResponse::toJson() const
 
     return val;
 }
-
 bool ListTagValuesResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -61,6 +59,7 @@ bool ListTagValuesResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<std::string>& ListTagValuesResponse::getValues()
 {

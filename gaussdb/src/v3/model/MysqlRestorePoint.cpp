@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/MysqlRestorePoint.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -48,7 +47,6 @@ web::json::value MysqlRestorePoint::toJson() const
 
     return val;
 }
-
 bool MysqlRestorePoint::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool MysqlRestorePoint::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int64_t MysqlRestorePoint::getRestoreTime() const
 {

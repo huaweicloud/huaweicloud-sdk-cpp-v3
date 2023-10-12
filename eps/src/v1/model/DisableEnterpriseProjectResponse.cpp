@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eps/v1/model/DisableEnterpriseProjectResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eps {
@@ -28,13 +27,13 @@ web::json::value DisableEnterpriseProjectResponse::toJson() const
 
     return val;
 }
-
 bool DisableEnterpriseProjectResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 }
 }

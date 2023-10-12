@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/codeartsdeploy/v2/model/DeleteHostFromEnvironmentResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsdeploy {
@@ -38,7 +37,6 @@ web::json::value DeleteHostFromEnvironmentResponse::toJson() const
 
     return val;
 }
-
 bool DeleteHostFromEnvironmentResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool DeleteHostFromEnvironmentResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DeleteHostFromEnvironmentResponse::getStatus() const
 {

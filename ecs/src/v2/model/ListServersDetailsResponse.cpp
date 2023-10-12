@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/ListServersDetailsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -37,7 +36,6 @@ web::json::value ListServersDetailsResponse::toJson() const
 
     return val;
 }
-
 bool ListServersDetailsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ListServersDetailsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ListServersDetailsResponse::getCount() const
 {

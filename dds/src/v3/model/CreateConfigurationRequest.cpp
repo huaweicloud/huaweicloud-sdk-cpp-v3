@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/CreateConfigurationRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -32,7 +31,6 @@ web::json::value CreateConfigurationRequest::toJson() const
 
     return val;
 }
-
 bool CreateConfigurationRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CreateConfigurationRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 CreateConfigurationRequestBody CreateConfigurationRequest::getBody() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/SubnetIpAvailability.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -58,7 +57,6 @@ web::json::value SubnetIpAvailability::toJson() const
 
     return val;
 }
-
 bool SubnetIpAvailability::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool SubnetIpAvailability::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t SubnetIpAvailability::getUsedIps() const
 {

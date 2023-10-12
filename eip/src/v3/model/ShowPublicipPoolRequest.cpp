@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v3/model/ShowPublicipPoolRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -38,7 +37,6 @@ web::json::value ShowPublicipPoolRequest::toJson() const
 
     return val;
 }
-
 bool ShowPublicipPoolRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ShowPublicipPoolRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowPublicipPoolRequest::getPublicipPoolId() const
 {

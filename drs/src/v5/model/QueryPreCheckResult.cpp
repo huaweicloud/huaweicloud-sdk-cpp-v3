@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/QueryPreCheckResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -57,7 +56,6 @@ web::json::value QueryPreCheckResult::toJson() const
 
     return val;
 }
-
 bool QueryPreCheckResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -118,6 +116,7 @@ bool QueryPreCheckResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool QueryPreCheckResult::isResult() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/ListPortsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -96,7 +95,6 @@ web::json::value ListPortsRequest::toJson() const
 
     return val;
 }
-
 bool ListPortsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -229,6 +227,7 @@ bool ListPortsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListPortsRequest::getName() const
 {

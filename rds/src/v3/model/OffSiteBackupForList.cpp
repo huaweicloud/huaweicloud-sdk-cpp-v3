@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/OffSiteBackupForList.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -81,7 +80,6 @@ web::json::value OffSiteBackupForList::toJson() const
 
     return val;
 }
-
 bool OffSiteBackupForList::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -187,6 +185,7 @@ bool OffSiteBackupForList::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string OffSiteBackupForList::getId() const
 {

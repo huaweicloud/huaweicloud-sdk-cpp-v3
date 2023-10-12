@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/MyanmarDriverLicenseConfidence.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -88,7 +87,6 @@ web::json::value MyanmarDriverLicenseConfidence::toJson() const
 
     return val;
 }
-
 bool MyanmarDriverLicenseConfidence::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -203,6 +201,7 @@ bool MyanmarDriverLicenseConfidence::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 float MyanmarDriverLicenseConfidence::getCardNumber() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/VINResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -33,7 +32,6 @@ web::json::value VINResult::toJson() const
 
     return val;
 }
-
 bool VINResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool VINResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string VINResult::getVin() const
 {

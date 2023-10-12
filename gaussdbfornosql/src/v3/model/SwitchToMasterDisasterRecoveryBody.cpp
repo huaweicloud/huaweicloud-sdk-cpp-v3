@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/SwitchToMasterDisasterRecoveryBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -33,7 +32,6 @@ web::json::value SwitchToMasterDisasterRecoveryBody::toJson() const
 
     return val;
 }
-
 bool SwitchToMasterDisasterRecoveryBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool SwitchToMasterDisasterRecoveryBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool SwitchToMasterDisasterRecoveryBody::isForce() const
 {

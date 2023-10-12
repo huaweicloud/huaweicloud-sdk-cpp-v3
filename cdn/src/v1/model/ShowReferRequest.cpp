@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/ShowReferRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -38,7 +37,6 @@ web::json::value ShowReferRequest::toJson() const
 
     return val;
 }
-
 bool ShowReferRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ShowReferRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowReferRequest::getEnterpriseProjectId() const
 {

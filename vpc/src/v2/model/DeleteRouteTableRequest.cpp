@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/DeleteRouteTableRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -33,7 +32,6 @@ web::json::value DeleteRouteTableRequest::toJson() const
 
     return val;
 }
-
 bool DeleteRouteTableRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool DeleteRouteTableRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DeleteRouteTableRequest::getRoutetableId() const
 {

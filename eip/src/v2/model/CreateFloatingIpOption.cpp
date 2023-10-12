@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v2/model/CreateFloatingIpOption.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -48,7 +47,6 @@ web::json::value CreateFloatingIpOption::toJson() const
 
     return val;
 }
-
 bool CreateFloatingIpOption::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool CreateFloatingIpOption::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateFloatingIpOption::getFloatingIpAddress() const
 {

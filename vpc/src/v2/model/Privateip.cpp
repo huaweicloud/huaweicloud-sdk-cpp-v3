@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/Privateip.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -58,7 +57,6 @@ web::json::value Privateip::toJson() const
 
     return val;
 }
-
 bool Privateip::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool Privateip::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string Privateip::getStatus() const
 {

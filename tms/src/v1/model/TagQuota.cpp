@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/tms/v1/model/TagQuota.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Tms {
@@ -48,7 +47,6 @@ web::json::value TagQuota::toJson() const
 
     return val;
 }
-
 bool TagQuota::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool TagQuota::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string TagQuota::getQuotaKey() const
 {

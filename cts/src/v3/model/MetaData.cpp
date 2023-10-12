@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cts/v3/model/MetaData.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cts {
@@ -38,7 +37,6 @@ web::json::value MetaData::toJson() const
 
     return val;
 }
-
 bool MetaData::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool MetaData::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t MetaData::getCount() const
 {

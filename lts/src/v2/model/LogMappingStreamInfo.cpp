@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/LogMappingStreamInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -53,7 +52,6 @@ web::json::value LogMappingStreamInfo::toJson() const
 
     return val;
 }
-
 bool LogMappingStreamInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool LogMappingStreamInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string LogMappingStreamInfo::getSourceLogStreamId() const
 {

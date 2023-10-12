@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/frs/v2/model/TypeInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Frs {
@@ -33,7 +32,6 @@ web::json::value TypeInfo::toJson() const
 
     return val;
 }
-
 bool TypeInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool TypeInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string TypeInfo::getType() const
 {

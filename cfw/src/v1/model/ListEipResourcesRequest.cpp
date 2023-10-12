@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/ListEipResourcesRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -88,7 +87,6 @@ web::json::value ListEipResourcesRequest::toJson() const
 
     return val;
 }
-
 bool ListEipResourcesRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -203,6 +201,7 @@ bool ListEipResourcesRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListEipResourcesRequest::getObjectId() const
 {

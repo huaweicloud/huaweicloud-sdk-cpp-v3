@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/ListVpcsByTagsRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -51,7 +50,6 @@ web::json::value ListVpcsByTagsRequestBody::toJson() const
 
     return val;
 }
-
 bool ListVpcsByTagsRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -103,6 +101,7 @@ bool ListVpcsByTagsRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListVpcsByTagsRequestBody::getAction() const
 {

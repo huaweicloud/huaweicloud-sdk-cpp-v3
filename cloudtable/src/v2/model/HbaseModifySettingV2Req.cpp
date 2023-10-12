@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cloudtable/v2/model/HbaseModifySettingV2Req.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cloudtable {
@@ -37,7 +36,6 @@ web::json::value HbaseModifySettingV2Req::toJson() const
 
     return val;
 }
-
 bool HbaseModifySettingV2Req::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool HbaseModifySettingV2Req::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string HbaseModifySettingV2Req::getIsReboot() const
 {

@@ -61,3 +61,8 @@ std::string HttpResponse::getHttpBody() const
 {
     return body_;
 }
+
+const std::string& HttpResponse::getHttpBodyRef() const
+{
+    return body_;
+}

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/ChangeServerOsWithoutCloudInitOption.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -57,7 +56,6 @@ web::json::value ChangeServerOsWithoutCloudInitOption::toJson() const
 
     return val;
 }
-
 bool ChangeServerOsWithoutCloudInitOption::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -118,6 +116,7 @@ bool ChangeServerOsWithoutCloudInitOption::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ChangeServerOsWithoutCloudInitOption::getAdminpass() const
 {

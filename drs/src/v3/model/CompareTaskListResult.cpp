@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/CompareTaskListResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -47,7 +46,6 @@ web::json::value CompareTaskListResult::toJson() const
 
     return val;
 }
-
 bool CompareTaskListResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -90,6 +88,7 @@ bool CompareTaskListResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<CompareTaskList>& CompareTaskListResult::getCompareTaskList()
 {

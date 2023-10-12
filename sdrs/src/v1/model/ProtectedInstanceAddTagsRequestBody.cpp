@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sdrs/v1/model/ProtectedInstanceAddTagsRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sdrs {
@@ -32,7 +31,6 @@ web::json::value ProtectedInstanceAddTagsRequestBody::toJson() const
 
     return val;
 }
-
 bool ProtectedInstanceAddTagsRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ProtectedInstanceAddTagsRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 ResourceTag ProtectedInstanceAddTagsRequestBody::getTag() const
 {

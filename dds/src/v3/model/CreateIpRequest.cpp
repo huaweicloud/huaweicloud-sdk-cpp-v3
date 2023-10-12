@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/CreateIpRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -37,7 +36,6 @@ web::json::value CreateIpRequest::toJson() const
 
     return val;
 }
-
 bool CreateIpRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool CreateIpRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateIpRequest::getInstanceId() const
 {

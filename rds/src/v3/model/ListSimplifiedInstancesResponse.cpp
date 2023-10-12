@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/ListSimplifiedInstancesResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -32,7 +31,6 @@ web::json::value ListSimplifiedInstancesResponse::toJson() const
 
     return val;
 }
-
 bool ListSimplifiedInstancesResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ListSimplifiedInstancesResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<SimplifiedInstanceEntry>& ListSimplifiedInstancesResponse::getInstances()
 {

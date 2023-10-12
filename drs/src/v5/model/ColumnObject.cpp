@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/ColumnObject.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -78,7 +77,6 @@ web::json::value ColumnObject::toJson() const
 
     return val;
 }
-
 bool ColumnObject::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -175,6 +173,7 @@ bool ColumnObject::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ColumnObject::getSyncType() const
 {

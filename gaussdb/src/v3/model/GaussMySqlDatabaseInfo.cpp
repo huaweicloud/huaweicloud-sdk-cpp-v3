@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/GaussMySqlDatabaseInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -43,7 +42,6 @@ web::json::value GaussMySqlDatabaseInfo::toJson() const
 
     return val;
 }
-
 bool GaussMySqlDatabaseInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool GaussMySqlDatabaseInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string GaussMySqlDatabaseInfo::getName() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/CreateEncryptTaskRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -32,7 +31,6 @@ web::json::value CreateEncryptTaskRequest::toJson() const
 
     return val;
 }
-
 bool CreateEncryptTaskRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CreateEncryptTaskRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 CreateEncryptReq CreateEncryptTaskRequest::getBody() const
 {

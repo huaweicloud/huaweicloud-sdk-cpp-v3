@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/ServerTagMatch.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -38,7 +37,6 @@ web::json::value ServerTagMatch::toJson() const
 
     return val;
 }
-
 bool ServerTagMatch::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ServerTagMatch::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ServerTagMatch::getKey() const
 {

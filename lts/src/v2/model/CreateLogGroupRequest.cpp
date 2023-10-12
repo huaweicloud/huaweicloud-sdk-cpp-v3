@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/CreateLogGroupRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -37,7 +36,6 @@ web::json::value CreateLogGroupRequest::toJson() const
 
     return val;
 }
-
 bool CreateLogGroupRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool CreateLogGroupRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateLogGroupRequest::getContentType() const
 {

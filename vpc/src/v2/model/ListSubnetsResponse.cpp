@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/ListSubnetsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -32,7 +31,6 @@ web::json::value ListSubnetsResponse::toJson() const
 
     return val;
 }
-
 bool ListSubnetsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ListSubnetsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<Subnet>& ListSubnetsResponse::getSubnets()
 {

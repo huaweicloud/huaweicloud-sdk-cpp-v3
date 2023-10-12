@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/PostPaidServerTag.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -38,7 +37,6 @@ web::json::value PostPaidServerTag::toJson() const
 
     return val;
 }
-
 bool PostPaidServerTag::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool PostPaidServerTag::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string PostPaidServerTag::getKey() const
 {

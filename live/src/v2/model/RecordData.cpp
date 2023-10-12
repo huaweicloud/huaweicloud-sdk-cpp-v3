@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v2/model/RecordData.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -38,7 +37,6 @@ web::json::value RecordData::toJson() const
 
     return val;
 }
-
 bool RecordData::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool RecordData::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t RecordData::getConcurrentCount() const
 {

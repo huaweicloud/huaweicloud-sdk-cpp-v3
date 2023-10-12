@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/AccessConfigWindowsLogInfoCreate.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -40,7 +39,6 @@ web::json::value AccessConfigWindowsLogInfoCreate::toJson() const
 
     return val;
 }
-
 bool AccessConfigWindowsLogInfoCreate::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -58,7 +56,7 @@ bool AccessConfigWindowsLogInfoCreate::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("time_offset"));
         if(!fieldValue.is_null())
         {
-            AccessConfigTimeOffsetCreate refVal;
+            AccessConfigTimeOffset refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTimeOffset(refVal);
         }
@@ -74,6 +72,7 @@ bool AccessConfigWindowsLogInfoCreate::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<std::string>& AccessConfigWindowsLogInfoCreate::getCategorys()
 {
@@ -96,12 +95,12 @@ void AccessConfigWindowsLogInfoCreate::unsetcategorys()
     categorysIsSet_ = false;
 }
 
-AccessConfigTimeOffsetCreate AccessConfigWindowsLogInfoCreate::getTimeOffset() const
+AccessConfigTimeOffset AccessConfigWindowsLogInfoCreate::getTimeOffset() const
 {
     return timeOffset_;
 }
 
-void AccessConfigWindowsLogInfoCreate::setTimeOffset(const AccessConfigTimeOffsetCreate& value)
+void AccessConfigWindowsLogInfoCreate::setTimeOffset(const AccessConfigTimeOffset& value)
 {
     timeOffset_ = value;
     timeOffsetIsSet_ = true;

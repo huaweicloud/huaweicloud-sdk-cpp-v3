@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/MigrateFollowerRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -42,7 +41,6 @@ web::json::value MigrateFollowerRequest::toJson() const
 
     return val;
 }
-
 bool MigrateFollowerRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool MigrateFollowerRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string MigrateFollowerRequest::getXLanguage() const
 {

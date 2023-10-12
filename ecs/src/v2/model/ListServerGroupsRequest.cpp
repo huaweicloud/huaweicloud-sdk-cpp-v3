@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/ListServerGroupsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -38,7 +37,6 @@ web::json::value ListServerGroupsRequest::toJson() const
 
     return val;
 }
-
 bool ListServerGroupsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ListServerGroupsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ListServerGroupsRequest::getLimit() const
 {

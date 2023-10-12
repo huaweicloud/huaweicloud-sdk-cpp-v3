@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ims/v2/model/GlanceDeleteTagRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ims {
@@ -38,7 +37,6 @@ web::json::value GlanceDeleteTagRequest::toJson() const
 
     return val;
 }
-
 bool GlanceDeleteTagRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool GlanceDeleteTagRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string GlanceDeleteTagRequest::getImageId() const
 {

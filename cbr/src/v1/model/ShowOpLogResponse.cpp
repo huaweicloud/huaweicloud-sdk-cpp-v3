@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/ShowOpLogResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -32,7 +31,6 @@ web::json::value ShowOpLogResponse::toJson() const
 
     return val;
 }
-
 bool ShowOpLogResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ShowOpLogResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 OperationLog ShowOpLogResponse::getOperationLog() const
 {

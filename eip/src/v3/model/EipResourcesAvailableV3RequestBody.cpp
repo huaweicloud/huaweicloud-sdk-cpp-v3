@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v3/model/EipResourcesAvailableV3RequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -38,7 +37,6 @@ web::json::value EipResourcesAvailableV3RequestBody::toJson() const
 
     return val;
 }
-
 bool EipResourcesAvailableV3RequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool EipResourcesAvailableV3RequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string EipResourcesAvailableV3RequestBody::getType() const
 {

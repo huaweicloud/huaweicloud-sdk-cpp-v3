@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/smn/v2/model/CreateApplicationRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Smn {
@@ -32,7 +31,6 @@ web::json::value CreateApplicationRequest::toJson() const
 
     return val;
 }
-
 bool CreateApplicationRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CreateApplicationRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 CreateApplicationRequestBody CreateApplicationRequest::getBody() const
 {

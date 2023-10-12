@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/DeleteAclRuleCountRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -42,7 +41,6 @@ web::json::value DeleteAclRuleCountRequest::toJson() const
 
     return val;
 }
-
 bool DeleteAclRuleCountRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool DeleteAclRuleCountRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DeleteAclRuleCountRequest::getEnterpriseProjectId() const
 {

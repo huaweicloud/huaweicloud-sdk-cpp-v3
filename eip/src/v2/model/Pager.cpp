@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v2/model/Pager.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -38,7 +37,6 @@ web::json::value Pager::toJson() const
 
     return val;
 }
-
 bool Pager::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool Pager::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string Pager::getHref() const
 {

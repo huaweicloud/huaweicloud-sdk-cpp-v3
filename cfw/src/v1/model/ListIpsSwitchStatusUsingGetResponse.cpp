@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/ListIpsSwitchStatusUsingGetResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -32,7 +31,6 @@ web::json::value ListIpsSwitchStatusUsingGetResponse::toJson() const
 
     return val;
 }
-
 bool ListIpsSwitchStatusUsingGetResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ListIpsSwitchStatusUsingGetResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 IpsSwitchResponseDTO ListIpsSwitchStatusUsingGetResponse::getData() const
 {

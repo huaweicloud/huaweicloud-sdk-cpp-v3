@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/ShowQuotaResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -32,7 +31,6 @@ web::json::value ShowQuotaResponse::toJson() const
 
     return val;
 }
-
 bool ShowQuotaResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ShowQuotaResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 Quota ShowQuotaResponse::getQuotas() const
 {

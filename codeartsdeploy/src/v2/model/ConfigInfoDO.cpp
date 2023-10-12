@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/codeartsdeploy/v2/model/ConfigInfoDO.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsdeploy {
@@ -62,7 +61,6 @@ web::json::value ConfigInfoDO::toJson() const
 
     return val;
 }
-
 bool ConfigInfoDO::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -132,6 +130,7 @@ bool ConfigInfoDO::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ConfigInfoDO::getName() const
 {

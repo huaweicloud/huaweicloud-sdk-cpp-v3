@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/ListAttackLogsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -128,7 +127,6 @@ web::json::value ListAttackLogsRequest::toJson() const
 
     return val;
 }
-
 bool ListAttackLogsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -315,6 +313,7 @@ bool ListAttackLogsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int64_t ListAttackLogsRequest::getStartTime() const
 {

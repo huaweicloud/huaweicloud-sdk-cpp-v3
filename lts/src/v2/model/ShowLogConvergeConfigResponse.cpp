@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/ShowLogConvergeConfigResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -82,7 +81,6 @@ web::json::value ShowLogConvergeConfigResponse::toJson() const
 
     return val;
 }
-
 bool ShowLogConvergeConfigResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -188,6 +186,7 @@ bool ShowLogConvergeConfigResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowLogConvergeConfigResponse::getId() const
 {

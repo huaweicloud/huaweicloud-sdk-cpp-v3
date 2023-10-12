@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/CambodianIdCardResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -116,7 +115,6 @@ web::json::value CambodianIdCardResult::toJson() const
 
     return val;
 }
-
 bool CambodianIdCardResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -285,6 +283,7 @@ bool CambodianIdCardResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CambodianIdCardResult::getIdNumber() const
 {

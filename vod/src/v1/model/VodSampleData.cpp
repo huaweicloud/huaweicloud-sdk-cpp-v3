@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/VodSampleData.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -38,7 +37,6 @@ web::json::value VodSampleData::toJson() const
 
     return val;
 }
-
 bool VodSampleData::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool VodSampleData::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 float VodSampleData::getStorage() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eps/v1/model/DisableAction.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eps {
@@ -33,7 +32,6 @@ web::json::value DisableAction::toJson() const
 
     return val;
 }
-
 bool DisableAction::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool DisableAction::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DisableAction::getAction() const
 {

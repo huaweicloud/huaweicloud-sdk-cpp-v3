@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/evs/v2/model/BssParamForCreateVolume.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Evs {
@@ -53,7 +52,6 @@ web::json::value BssParamForCreateVolume::toJson() const
 
     return val;
 }
-
 bool BssParamForCreateVolume::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool BssParamForCreateVolume::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string BssParamForCreateVolume::getChargingMode() const
 {

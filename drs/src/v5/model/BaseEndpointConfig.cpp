@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/BaseEndpointConfig.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -33,7 +32,6 @@ web::json::value BaseEndpointConfig::toJson() const
 
     return val;
 }
-
 bool BaseEndpointConfig::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool BaseEndpointConfig::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool BaseEndpointConfig::isIsTargetReadonly() const
 {

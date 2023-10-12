@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/CompareConfigurationRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -32,7 +31,6 @@ web::json::value CompareConfigurationRequest::toJson() const
 
     return val;
 }
-
 bool CompareConfigurationRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CompareConfigurationRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 CompareConfigurationRequestBody CompareConfigurationRequest::getBody() const
 {

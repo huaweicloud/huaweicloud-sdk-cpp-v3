@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v2/model/ListBandwidthDetailRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -84,7 +83,6 @@ web::json::value ListBandwidthDetailRequest::toJson() const
 
     return val;
 }
-
 bool ListBandwidthDetailRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -199,6 +197,7 @@ bool ListBandwidthDetailRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListBandwidthDetailRequest::getProjectId() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/ShowDomainFullConfigRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -38,7 +37,6 @@ web::json::value ShowDomainFullConfigRequest::toJson() const
 
     return val;
 }
-
 bool ShowDomainFullConfigRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ShowDomainFullConfigRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowDomainFullConfigRequest::getDomainName() const
 {

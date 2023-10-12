@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/HealthCompareJob.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -58,7 +57,6 @@ web::json::value HealthCompareJob::toJson() const
 
     return val;
 }
-
 bool HealthCompareJob::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool HealthCompareJob::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string HealthCompareJob::getId() const
 {

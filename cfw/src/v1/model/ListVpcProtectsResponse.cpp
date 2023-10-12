@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/ListVpcProtectsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -37,7 +36,6 @@ web::json::value ListVpcProtectsResponse::toJson() const
 
     return val;
 }
-
 bool ListVpcProtectsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ListVpcProtectsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListVpcProtectsResponse::getTraceId() const
 {

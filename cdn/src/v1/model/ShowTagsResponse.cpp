@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/ShowTagsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -32,7 +31,6 @@ web::json::value ShowTagsResponse::toJson() const
 
     return val;
 }
-
 bool ShowTagsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ShowTagsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<Map>& ShowTagsResponse::getTags()
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/smn/v2/model/VersionItem.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Smn {
@@ -57,7 +56,6 @@ web::json::value VersionItem::toJson() const
 
     return val;
 }
-
 bool VersionItem::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -118,6 +116,7 @@ bool VersionItem::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string VersionItem::getId() const
 {

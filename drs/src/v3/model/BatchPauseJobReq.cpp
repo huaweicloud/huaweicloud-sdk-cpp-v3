@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/BatchPauseJobReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -32,7 +31,6 @@ web::json::value BatchPauseJobReq::toJson() const
 
     return val;
 }
-
 bool BatchPauseJobReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool BatchPauseJobReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<PauseInfo>& BatchPauseJobReq::getJobs()
 {

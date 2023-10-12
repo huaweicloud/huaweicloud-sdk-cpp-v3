@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/CreateDomainRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -32,7 +31,6 @@ web::json::value CreateDomainRequest::toJson() const
 
     return val;
 }
-
 bool CreateDomainRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CreateDomainRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 CreateDomainRequestBody CreateDomainRequest::getBody() const
 {

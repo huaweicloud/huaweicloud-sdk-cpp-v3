@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/DifferentDetails.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -43,7 +42,6 @@ web::json::value DifferentDetails::toJson() const
 
     return val;
 }
-
 bool DifferentDetails::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool DifferentDetails::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DifferentDetails::getParameterName() const
 {

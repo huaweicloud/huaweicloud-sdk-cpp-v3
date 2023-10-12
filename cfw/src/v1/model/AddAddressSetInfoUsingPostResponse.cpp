@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/AddAddressSetInfoUsingPostResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -32,7 +31,6 @@ web::json::value AddAddressSetInfoUsingPostResponse::toJson() const
 
     return val;
 }
-
 bool AddAddressSetInfoUsingPostResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool AddAddressSetInfoUsingPostResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 IdObject AddAddressSetInfoUsingPostResponse::getData() const
 {

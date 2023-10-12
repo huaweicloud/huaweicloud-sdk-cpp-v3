@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/VideoProcess.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -53,7 +52,6 @@ web::json::value VideoProcess::toJson() const
 
     return val;
 }
-
 bool VideoProcess::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool VideoProcess::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t VideoProcess::getHlsInitCount() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/HealthCodeResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -115,7 +114,6 @@ web::json::value HealthCodeResult::toJson() const
 
     return val;
 }
-
 bool HealthCodeResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -284,6 +282,7 @@ bool HealthCodeResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string HealthCodeResult::getType() const
 {

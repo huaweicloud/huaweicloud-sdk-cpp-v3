@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/kms/v2/model/UpdateKeyRotationIntervalRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Kms {
@@ -32,7 +31,6 @@ web::json::value UpdateKeyRotationIntervalRequest::toJson() const
 
     return val;
 }
-
 bool UpdateKeyRotationIntervalRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool UpdateKeyRotationIntervalRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 UpdateKeyRotationIntervalRequestBody UpdateKeyRotationIntervalRequest::getBody() const
 {

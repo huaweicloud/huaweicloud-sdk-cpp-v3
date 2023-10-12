@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eps/v1/model/DisableEnterpriseProjectRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eps {
@@ -37,7 +36,6 @@ web::json::value DisableEnterpriseProjectRequest::toJson() const
 
     return val;
 }
-
 bool DisableEnterpriseProjectRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool DisableEnterpriseProjectRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DisableEnterpriseProjectRequest::getEnterpriseProjectId() const
 {

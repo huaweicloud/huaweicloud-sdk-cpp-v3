@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sis/v1/model/Segment.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sis {
@@ -42,7 +41,6 @@ web::json::value Segment::toJson() const
 
     return val;
 }
-
 bool Segment::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool Segment::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t Segment::getStartTime() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/DeleteTransferResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -51,7 +50,6 @@ web::json::value DeleteTransferResponse::toJson() const
 
     return val;
 }
-
 bool DeleteTransferResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -103,6 +101,7 @@ bool DeleteTransferResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DeleteTransferResponse::getLogGroupId() const
 {

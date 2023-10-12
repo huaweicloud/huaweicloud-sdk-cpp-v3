@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/GeneralTextRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -63,7 +62,6 @@ web::json::value GeneralTextRequestBody::toJson() const
 
     return val;
 }
-
 bool GeneralTextRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -133,6 +131,7 @@ bool GeneralTextRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string GeneralTextRequestBody::getImage() const
 {

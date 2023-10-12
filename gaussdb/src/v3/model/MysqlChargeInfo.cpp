@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/MysqlChargeInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -53,7 +52,6 @@ web::json::value MysqlChargeInfo::toJson() const
 
     return val;
 }
-
 bool MysqlChargeInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool MysqlChargeInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string MysqlChargeInfo::getChargeMode() const
 {

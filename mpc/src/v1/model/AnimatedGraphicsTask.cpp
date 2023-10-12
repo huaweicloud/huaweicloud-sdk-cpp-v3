@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/AnimatedGraphicsTask.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -80,7 +79,6 @@ web::json::value AnimatedGraphicsTask::toJson() const
 
     return val;
 }
-
 bool AnimatedGraphicsTask::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -186,6 +184,7 @@ bool AnimatedGraphicsTask::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string AnimatedGraphicsTask::getTaskId() const
 {

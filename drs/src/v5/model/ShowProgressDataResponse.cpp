@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/ShowProgressDataResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -42,7 +41,6 @@ web::json::value ShowProgressDataResponse::toJson() const
 
     return val;
 }
-
 bool ShowProgressDataResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool ShowProgressDataResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int64_t ShowProgressDataResponse::getCount() const
 {

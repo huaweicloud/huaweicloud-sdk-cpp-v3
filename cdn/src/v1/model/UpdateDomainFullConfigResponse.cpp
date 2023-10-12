@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/UpdateDomainFullConfigResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -28,13 +27,13 @@ web::json::value UpdateDomainFullConfigResponse::toJson() const
 
     return val;
 }
-
 bool UpdateDomainFullConfigResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 }
 }

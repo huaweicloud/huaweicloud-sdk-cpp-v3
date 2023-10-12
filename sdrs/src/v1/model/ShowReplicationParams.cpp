@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sdrs/v1/model/ShowReplicationParams.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sdrs {
@@ -106,7 +105,6 @@ web::json::value ShowReplicationParams::toJson() const
 
     return val;
 }
-
 bool ShowReplicationParams::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -257,6 +255,7 @@ bool ShowReplicationParams::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowReplicationParams::getId() const
 {

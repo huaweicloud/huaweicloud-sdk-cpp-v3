@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cloudtable/v2/model/AddComponentReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cloudtable {
@@ -33,7 +32,6 @@ web::json::value AddComponentReq::toJson() const
 
     return val;
 }
-
 bool AddComponentReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool AddComponentReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t AddComponentReq::getNodeNum() const
 {

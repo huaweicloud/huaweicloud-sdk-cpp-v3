@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/ResetGaussMySqlDatabasePasswordRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -42,7 +41,6 @@ web::json::value ResetGaussMySqlDatabasePasswordRequest::toJson() const
 
     return val;
 }
-
 bool ResetGaussMySqlDatabasePasswordRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool ResetGaussMySqlDatabasePasswordRequest::fromJson(const web::json::value& va
     }
     return ok;
 }
+
 
 std::string ResetGaussMySqlDatabasePasswordRequest::getXLanguage() const
 {

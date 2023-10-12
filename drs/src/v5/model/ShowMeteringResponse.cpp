@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/ShowMeteringResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -32,7 +31,6 @@ web::json::value ShowMeteringResponse::toJson() const
 
     return val;
 }
-
 bool ShowMeteringResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ShowMeteringResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<ProductInfo>& ShowMeteringResponse::getProductInfoList()
 {

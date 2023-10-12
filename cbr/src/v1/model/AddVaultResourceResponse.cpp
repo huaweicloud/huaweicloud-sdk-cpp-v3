@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/AddVaultResourceResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -32,7 +31,6 @@ web::json::value AddVaultResourceResponse::toJson() const
 
     return val;
 }
-
 bool AddVaultResourceResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool AddVaultResourceResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<std::string>& AddVaultResourceResponse::getAddResourceIds()
 {

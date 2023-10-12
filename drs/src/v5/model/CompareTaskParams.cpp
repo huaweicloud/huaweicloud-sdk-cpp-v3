@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/CompareTaskParams.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -51,7 +50,6 @@ web::json::value CompareTaskParams::toJson() const
 
     return val;
 }
-
 bool CompareTaskParams::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -103,6 +101,7 @@ bool CompareTaskParams::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CompareTaskParams::getCompareTaskId() const
 {

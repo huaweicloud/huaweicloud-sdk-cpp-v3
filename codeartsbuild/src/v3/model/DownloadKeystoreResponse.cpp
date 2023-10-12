@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/codeartsbuild/v3/model/DownloadKeystoreResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsbuild {
@@ -28,13 +27,13 @@ web::json::value DownloadKeystoreResponse::toJson() const
 
     return val;
 }
-
 bool DownloadKeystoreResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 }
 }

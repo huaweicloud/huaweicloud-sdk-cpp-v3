@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/WebImageResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -41,7 +40,6 @@ web::json::value WebImageResult::toJson() const
 
     return val;
 }
-
 bool WebImageResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -75,6 +73,7 @@ bool WebImageResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t WebImageResult::getWordsBlockCount() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/csms/v1/model/TagMatches.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Csms {
@@ -38,7 +37,6 @@ web::json::value TagMatches::toJson() const
 
     return val;
 }
-
 bool TagMatches::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool TagMatches::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string TagMatches::getKey() const
 {

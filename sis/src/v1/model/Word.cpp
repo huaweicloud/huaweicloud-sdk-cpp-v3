@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sis/v1/model/Word.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sis {
@@ -74,7 +73,6 @@ web::json::value Word::toJson() const
 
     return val;
 }
-
 bool Word::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -171,6 +169,7 @@ bool Word::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string Word::getText() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ims/v2/model/AddImageTagRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ims {
@@ -32,7 +31,6 @@ web::json::value AddImageTagRequestBody::toJson() const
 
     return val;
 }
-
 bool AddImageTagRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool AddImageTagRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 ResourceTag AddImageTagRequestBody::getTag() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/ListAssetListRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -85,7 +84,6 @@ web::json::value ListAssetListRequest::toJson() const
 
     return val;
 }
-
 bool ListAssetListRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -200,6 +198,7 @@ bool ListAssetListRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListAssetListRequest::getXSdkDate() const
 {

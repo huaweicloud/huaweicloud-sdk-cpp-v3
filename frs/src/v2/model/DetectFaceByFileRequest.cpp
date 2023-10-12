@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/frs/v2/model/DetectFaceByFileRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Frs {
@@ -37,7 +36,6 @@ web::json::value DetectFaceByFileRequest::toJson() const
 
     return val;
 }
-
 bool DetectFaceByFileRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool DetectFaceByFileRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DetectFaceByFileRequest::getEnterpriseProjectId() const
 {

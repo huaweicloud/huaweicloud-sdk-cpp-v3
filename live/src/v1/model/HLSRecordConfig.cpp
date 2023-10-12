@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v1/model/HLSRecordConfig.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -53,7 +52,6 @@ web::json::value HLSRecordConfig::toJson() const
 
     return val;
 }
-
 bool HLSRecordConfig::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool HLSRecordConfig::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t HLSRecordConfig::getRecordCycle() const
 {

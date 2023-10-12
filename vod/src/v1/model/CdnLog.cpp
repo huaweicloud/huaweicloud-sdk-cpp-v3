@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/CdnLog.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -58,7 +57,6 @@ web::json::value CdnLog::toJson() const
 
     return val;
 }
-
 bool CdnLog::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool CdnLog::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CdnLog::getDomainName() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ivs/v2/model/DetectStandardByNameAndIdRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ivs {
@@ -37,7 +36,6 @@ web::json::value DetectStandardByNameAndIdRequest::toJson() const
 
     return val;
 }
-
 bool DetectStandardByNameAndIdRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool DetectStandardByNameAndIdRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DetectStandardByNameAndIdRequest::getEnterpriseProjectId() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/LtsLogSlowDetail.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -93,7 +92,6 @@ web::json::value LtsLogSlowDetail::toJson() const
 
     return val;
 }
-
 bool LtsLogSlowDetail::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -217,6 +215,7 @@ bool LtsLogSlowDetail::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string LtsLogSlowDetail::getNodeId() const
 {

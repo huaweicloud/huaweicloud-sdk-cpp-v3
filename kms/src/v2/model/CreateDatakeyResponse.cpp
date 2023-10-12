@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/kms/v2/model/CreateDatakeyResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Kms {
@@ -43,7 +42,6 @@ web::json::value CreateDatakeyResponse::toJson() const
 
     return val;
 }
-
 bool CreateDatakeyResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool CreateDatakeyResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateDatakeyResponse::getKeyId() const
 {

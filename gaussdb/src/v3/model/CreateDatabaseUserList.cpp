@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/CreateDatabaseUserList.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -51,7 +50,6 @@ web::json::value CreateDatabaseUserList::toJson() const
 
     return val;
 }
-
 bool CreateDatabaseUserList::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -103,6 +101,7 @@ bool CreateDatabaseUserList::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateDatabaseUserList::getName() const
 {

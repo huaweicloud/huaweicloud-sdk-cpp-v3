@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v2/model/ChangeBandwidthToPeriodResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -42,7 +41,6 @@ web::json::value ChangeBandwidthToPeriodResponse::toJson() const
 
     return val;
 }
-
 bool ChangeBandwidthToPeriodResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool ChangeBandwidthToPeriodResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<std::string>& ChangeBandwidthToPeriodResponse::getBandwidthIds()
 {

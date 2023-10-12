@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sdrs/v1/model/AddProtectedInstanceNicResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sdrs {
@@ -33,7 +32,6 @@ web::json::value AddProtectedInstanceNicResponse::toJson() const
 
     return val;
 }
-
 bool AddProtectedInstanceNicResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool AddProtectedInstanceNicResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string AddProtectedInstanceNicResponse::getJobId() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/csms/v1/model/UpdateVersionRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Csms {
@@ -42,7 +41,6 @@ web::json::value UpdateVersionRequest::toJson() const
 
     return val;
 }
-
 bool UpdateVersionRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool UpdateVersionRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateVersionRequest::getSecretName() const
 {

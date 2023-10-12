@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/evs/v2/model/MediaTypes.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Evs {
@@ -38,7 +37,6 @@ web::json::value MediaTypes::toJson() const
 
     return val;
 }
-
 bool MediaTypes::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool MediaTypes::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string MediaTypes::getBase() const
 {

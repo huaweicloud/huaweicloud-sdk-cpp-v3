@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/ListServiceItemsDetailsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -58,7 +57,6 @@ web::json::value ListServiceItemsDetailsRequest::toJson() const
 
     return val;
 }
-
 bool ListServiceItemsDetailsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool ListServiceItemsDetailsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListServiceItemsDetailsRequest::getSetId() const
 {

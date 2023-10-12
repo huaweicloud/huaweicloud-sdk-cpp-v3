@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cts/v3/model/DeleteTrackerResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cts {
@@ -28,13 +27,13 @@ web::json::value DeleteTrackerResponse::toJson() const
 
     return val;
 }
-
 bool DeleteTrackerResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 }
 }

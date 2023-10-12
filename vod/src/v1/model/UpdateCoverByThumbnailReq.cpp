@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/UpdateCoverByThumbnailReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -33,7 +32,6 @@ web::json::value UpdateCoverByThumbnailReq::toJson() const
 
     return val;
 }
-
 bool UpdateCoverByThumbnailReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool UpdateCoverByThumbnailReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateCoverByThumbnailReq::getThumbnailUrl() const
 {

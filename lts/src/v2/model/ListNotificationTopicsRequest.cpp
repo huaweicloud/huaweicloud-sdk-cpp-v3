@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/ListNotificationTopicsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -43,7 +42,6 @@ web::json::value ListNotificationTopicsRequest::toJson() const
 
     return val;
 }
-
 bool ListNotificationTopicsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool ListNotificationTopicsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ListNotificationTopicsRequest::getOffset() const
 {

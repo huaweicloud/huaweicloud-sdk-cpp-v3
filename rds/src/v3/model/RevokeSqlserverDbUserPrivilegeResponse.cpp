@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/RevokeSqlserverDbUserPrivilegeResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -33,7 +32,6 @@ web::json::value RevokeSqlserverDbUserPrivilegeResponse::toJson() const
 
     return val;
 }
-
 bool RevokeSqlserverDbUserPrivilegeResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool RevokeSqlserverDbUserPrivilegeResponse::fromJson(const web::json::value& va
     }
     return ok;
 }
+
 
 std::string RevokeSqlserverDbUserPrivilegeResponse::getResp() const
 {

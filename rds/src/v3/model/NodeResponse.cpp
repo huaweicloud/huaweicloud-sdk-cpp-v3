@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/NodeResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -53,7 +52,6 @@ web::json::value NodeResponse::toJson() const
 
     return val;
 }
-
 bool NodeResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool NodeResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string NodeResponse::getId() const
 {

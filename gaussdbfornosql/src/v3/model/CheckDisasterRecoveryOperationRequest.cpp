@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/CheckDisasterRecoveryOperationRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -37,7 +36,6 @@ web::json::value CheckDisasterRecoveryOperationRequest::toJson() const
 
     return val;
 }
-
 bool CheckDisasterRecoveryOperationRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool CheckDisasterRecoveryOperationRequest::fromJson(const web::json::value& val
     }
     return ok;
 }
+
 
 std::string CheckDisasterRecoveryOperationRequest::getInstanceId() const
 {

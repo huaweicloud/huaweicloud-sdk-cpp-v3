@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/evs/v2/model/VolumeTransferSummary.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Evs {
@@ -47,7 +46,6 @@ web::json::value VolumeTransferSummary::toJson() const
 
     return val;
 }
-
 bool VolumeTransferSummary::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -90,6 +88,7 @@ bool VolumeTransferSummary::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string VolumeTransferSummary::getId() const
 {

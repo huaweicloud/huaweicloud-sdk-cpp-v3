@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/ProjectTagItem.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -37,7 +36,6 @@ web::json::value ProjectTagItem::toJson() const
 
     return val;
 }
-
 bool ProjectTagItem::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ProjectTagItem::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ProjectTagItem::getKey() const
 {

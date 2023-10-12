@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/smn/v2/model/BatchCreateOrDeleteResourceTagsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Smn {
@@ -42,7 +41,6 @@ web::json::value BatchCreateOrDeleteResourceTagsRequest::toJson() const
 
     return val;
 }
-
 bool BatchCreateOrDeleteResourceTagsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool BatchCreateOrDeleteResourceTagsRequest::fromJson(const web::json::value& va
     }
     return ok;
 }
+
 
 std::string BatchCreateOrDeleteResourceTagsRequest::getResourceType() const
 {

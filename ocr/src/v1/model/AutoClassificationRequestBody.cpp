@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/AutoClassificationRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -46,7 +45,6 @@ web::json::value AutoClassificationRequestBody::toJson() const
 
     return val;
 }
-
 bool AutoClassificationRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -89,6 +87,7 @@ bool AutoClassificationRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string AutoClassificationRequestBody::getImage() const
 {

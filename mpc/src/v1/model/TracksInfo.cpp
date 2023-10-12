@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/TracksInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -38,7 +37,6 @@ web::json::value TracksInfo::toJson() const
 
     return val;
 }
-
 bool TracksInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool TracksInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string TracksInfo::getChannelLayout() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ims/v2/model/UpdateImageRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ims {
@@ -37,7 +36,6 @@ web::json::value UpdateImageRequest::toJson() const
 
     return val;
 }
-
 bool UpdateImageRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool UpdateImageRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateImageRequest::getImageId() const
 {

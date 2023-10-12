@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/AllowDbPrivilegesResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -28,13 +27,13 @@ web::json::value AllowDbPrivilegesResponse::toJson() const
 
     return val;
 }
-
 bool AllowDbPrivilegesResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 }
 }

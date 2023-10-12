@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/DownloadErrorlogRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -36,7 +35,6 @@ web::json::value DownloadErrorlogRequestBody::toJson() const
 
     return val;
 }
-
 bool DownloadErrorlogRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -61,6 +59,7 @@ bool DownloadErrorlogRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<std::string>& DownloadErrorlogRequestBody::getFileNameList()
 {

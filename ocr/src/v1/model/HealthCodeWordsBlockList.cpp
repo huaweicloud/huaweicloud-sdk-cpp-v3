@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/HealthCodeWordsBlockList.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -42,7 +41,6 @@ web::json::value HealthCodeWordsBlockList::toJson() const
 
     return val;
 }
-
 bool HealthCodeWordsBlockList::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool HealthCodeWordsBlockList::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string HealthCodeWordsBlockList::getWords() const
 {

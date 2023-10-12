@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eps/v1/model/MigrateResourceResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eps {
@@ -28,13 +27,13 @@ web::json::value MigrateResourceResponse::toJson() const
 
     return val;
 }
-
 bool MigrateResourceResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 }
 }

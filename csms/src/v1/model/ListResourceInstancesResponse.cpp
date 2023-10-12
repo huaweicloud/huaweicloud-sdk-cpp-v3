@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/csms/v1/model/ListResourceInstancesResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Csms {
@@ -37,7 +36,6 @@ web::json::value ListResourceInstancesResponse::toJson() const
 
     return val;
 }
-
 bool ListResourceInstancesResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ListResourceInstancesResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<ActionResources>& ListResourceInstancesResponse::getResources()
 {

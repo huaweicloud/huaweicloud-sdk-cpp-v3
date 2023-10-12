@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/CreateAssetProcessTaskResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -33,7 +32,6 @@ web::json::value CreateAssetProcessTaskResponse::toJson() const
 
     return val;
 }
-
 bool CreateAssetProcessTaskResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool CreateAssetProcessTaskResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateAssetProcessTaskResponse::getAssetId() const
 {

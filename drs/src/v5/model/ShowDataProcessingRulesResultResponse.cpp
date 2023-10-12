@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/ShowDataProcessingRulesResultResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -38,7 +37,6 @@ web::json::value ShowDataProcessingRulesResultResponse::toJson() const
 
     return val;
 }
-
 bool ShowDataProcessingRulesResultResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ShowDataProcessingRulesResultResponse::fromJson(const web::json::value& val
     }
     return ok;
 }
+
 
 std::string ShowDataProcessingRulesResultResponse::getId() const
 {

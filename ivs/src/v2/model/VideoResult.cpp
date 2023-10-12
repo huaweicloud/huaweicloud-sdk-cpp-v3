@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ivs/v2/model/VideoResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ivs {
@@ -42,7 +41,6 @@ web::json::value VideoResult::toJson() const
 
     return val;
 }
-
 bool VideoResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool VideoResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool VideoResult::isAlive() const
 {

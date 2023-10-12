@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/NovaListAvailabilityZonesRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -28,13 +27,13 @@ web::json::value NovaListAvailabilityZonesRequest::toJson() const
 
     return val;
 }
-
 bool NovaListAvailabilityZonesRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 }
 }

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v1/model/DeleteDomainMappingResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -28,13 +27,13 @@ web::json::value DeleteDomainMappingResponse::toJson() const
 
     return val;
 }
-
 bool DeleteDomainMappingResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 }
 }

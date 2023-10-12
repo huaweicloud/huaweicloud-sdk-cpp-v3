@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v1/model/ListLiveStreamsOnlineResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -57,7 +56,6 @@ web::json::value ListLiveStreamsOnlineResponse::toJson() const
 
     return val;
 }
-
 bool ListLiveStreamsOnlineResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -118,6 +116,7 @@ bool ListLiveStreamsOnlineResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int64_t ListLiveStreamsOnlineResponse::getTotalPage() const
 {

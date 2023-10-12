@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/ListFirewallUsingGetRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -53,7 +52,6 @@ web::json::value ListFirewallUsingGetRequest::toJson() const
 
     return val;
 }
-
 bool ListFirewallUsingGetRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool ListFirewallUsingGetRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ListFirewallUsingGetRequest::getOffset() const
 {

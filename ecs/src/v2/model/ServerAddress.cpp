@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/ServerAddress.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -15,6 +14,8 @@ ServerAddress::ServerAddress()
 {
     version_ = "";
     versionIsSet_ = false;
+    primary_ = false;
+    primaryIsSet_ = false;
     addr_ = "";
     addrIsSet_ = false;
     oSEXTIPStype_ = "";
@@ -38,6 +39,9 @@ web::json::value ServerAddress::toJson() const
     if(versionIsSet_) {
         val[utility::conversions::to_string_t("version")] = ModelBase::toJson(version_);
     }
+    if(primaryIsSet_) {
+        val[utility::conversions::to_string_t("primary")] = ModelBase::toJson(primary_);
+    }
     if(addrIsSet_) {
         val[utility::conversions::to_string_t("addr")] = ModelBase::toJson(addr_);
     }
@@ -53,7 +57,6 @@ web::json::value ServerAddress::toJson() const
 
     return val;
 }
-
 bool ServerAddress::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -65,6 +68,15 @@ bool ServerAddress::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setVersion(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("primary"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("primary"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPrimary(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("addr"))) {
@@ -106,6 +118,7 @@ bool ServerAddress::fromJson(const web::json::value& val)
     return ok;
 }
 
+
 std::string ServerAddress::getVersion() const
 {
     return version_;
@@ -125,6 +138,27 @@ bool ServerAddress::versionIsSet() const
 void ServerAddress::unsetversion()
 {
     versionIsSet_ = false;
+}
+
+bool ServerAddress::isPrimary() const
+{
+    return primary_;
+}
+
+void ServerAddress::setPrimary(bool value)
+{
+    primary_ = value;
+    primaryIsSet_ = true;
+}
+
+bool ServerAddress::primaryIsSet() const
+{
+    return primaryIsSet_;
+}
+
+void ServerAddress::unsetprimary()
+{
+    primaryIsSet_ = false;
 }
 
 std::string ServerAddress::getAddr() const

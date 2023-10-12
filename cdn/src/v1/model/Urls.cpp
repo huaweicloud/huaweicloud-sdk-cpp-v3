@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/Urls.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -29,6 +28,8 @@ Urls::Urls()
     createTimeIsSet_ = false;
     fileType_ = "";
     fileTypeIsSet_ = false;
+    mode_ = "";
+    modeIsSet_ = false;
 }
 
 Urls::~Urls() = default;
@@ -65,10 +66,12 @@ web::json::value Urls::toJson() const
     if(fileTypeIsSet_) {
         val[utility::conversions::to_string_t("file_type")] = ModelBase::toJson(fileType_);
     }
+    if(modeIsSet_) {
+        val[utility::conversions::to_string_t("mode")] = ModelBase::toJson(mode_);
+    }
 
     return val;
 }
-
 bool Urls::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -145,8 +148,18 @@ bool Urls::fromJson(const web::json::value& val)
             setFileType(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("mode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("mode"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMode(refVal);
+        }
+    }
     return ok;
 }
+
 
 int64_t Urls::getId() const
 {
@@ -314,6 +327,27 @@ bool Urls::fileTypeIsSet() const
 void Urls::unsetfileType()
 {
     fileTypeIsSet_ = false;
+}
+
+std::string Urls::getMode() const
+{
+    return mode_;
+}
+
+void Urls::setMode(const std::string& value)
+{
+    mode_ = value;
+    modeIsSet_ = true;
+}
+
+bool Urls::modeIsSet() const
+{
+    return modeIsSet_;
+}
+
+void Urls::unsetmode()
+{
+    modeIsSet_ = false;
 }
 
 }

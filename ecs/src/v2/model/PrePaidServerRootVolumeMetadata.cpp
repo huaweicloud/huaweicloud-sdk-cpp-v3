@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/PrePaidServerRootVolumeMetadata.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -38,7 +37,6 @@ web::json::value PrePaidServerRootVolumeMetadata::toJson() const
 
     return val;
 }
-
 bool PrePaidServerRootVolumeMetadata::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool PrePaidServerRootVolumeMetadata::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string PrePaidServerRootVolumeMetadata::getSystemEncrypted() const
 {

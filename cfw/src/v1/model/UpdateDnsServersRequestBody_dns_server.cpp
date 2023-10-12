@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cfw/v1/model/UpdateDnsServersRequestBody_dns_server.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -43,7 +42,6 @@ web::json::value UpdateDnsServersRequestBody_dns_server::toJson() const
 
     return val;
 }
-
 bool UpdateDnsServersRequestBody_dns_server::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool UpdateDnsServersRequestBody_dns_server::fromJson(const web::json::value& va
     }
     return ok;
 }
+
 
 std::string UpdateDnsServersRequestBody_dns_server::getServerIp() const
 {

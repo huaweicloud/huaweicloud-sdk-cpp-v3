@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/RecognizeLicensePlateRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -37,7 +36,6 @@ web::json::value RecognizeLicensePlateRequest::toJson() const
 
     return val;
 }
-
 bool RecognizeLicensePlateRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool RecognizeLicensePlateRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string RecognizeLicensePlateRequest::getEnterpriseProjectId() const
 {

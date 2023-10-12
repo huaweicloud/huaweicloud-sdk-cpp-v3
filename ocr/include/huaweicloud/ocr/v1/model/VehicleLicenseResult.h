@@ -2,13 +2,17 @@
 #ifndef HUAWEICLOUD_SDK_OCR_V1_MODEL_VehicleLicenseResult_H_
 #define HUAWEICLOUD_SDK_OCR_V1_MODEL_VehicleLicenseResult_H_
 
+
 #include <huaweicloud/ocr/v1/OcrExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/core/utils/Object.h>
+#include <huaweicloud/ocr/v1/model/VehicleLicenseback.h>
 #include <string>
+#include <huaweicloud/ocr/v1/model/VehicleLicenseFront.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -32,10 +36,8 @@ public:
     /// ModelBase overrides
 
     void validate() override;
-
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
-
     /////////////////////////////////////////////
     /// VehicleLicenseResult members
 
@@ -237,6 +239,33 @@ public:
     void unsettextLocation();
     void setTextLocation(const Object& value);
 
+    /// <summary>
+    /// 能源类型。 
+    /// </summary>
+
+    std::string getEnergyType() const;
+    bool energyTypeIsSet() const;
+    void unsetenergyType();
+    void setEnergyType(const std::string& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    VehicleLicenseFront getFront() const;
+    bool frontIsSet() const;
+    void unsetfront();
+    void setFront(const VehicleLicenseFront& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    VehicleLicenseback getBack() const;
+    bool backIsSet() const;
+    void unsetback();
+    void setBack(const VehicleLicenseback& value);
+
 
 protected:
     std::string number_;
@@ -283,6 +312,12 @@ protected:
     bool codeNumberIsSet_;
     Object textLocation_;
     bool textLocationIsSet_;
+    std::string energyType_;
+    bool energyTypeIsSet_;
+    VehicleLicenseFront front_;
+    bool frontIsSet_;
+    VehicleLicenseback back_;
+    bool backIsSet_;
 
 };
 

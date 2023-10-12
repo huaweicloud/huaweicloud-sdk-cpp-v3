@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/BatchQueryRpoAndRtoReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -32,7 +31,6 @@ web::json::value BatchQueryRpoAndRtoReq::toJson() const
 
     return val;
 }
-
 bool BatchQueryRpoAndRtoReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool BatchQueryRpoAndRtoReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<std::string>& BatchQueryRpoAndRtoReq::getJobs()
 {

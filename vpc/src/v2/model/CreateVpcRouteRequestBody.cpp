@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/CreateVpcRouteRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -32,7 +31,6 @@ web::json::value CreateVpcRouteRequestBody::toJson() const
 
     return val;
 }
-
 bool CreateVpcRouteRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CreateVpcRouteRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 CreateVpcRouteOption CreateVpcRouteRequestBody::getRoute() const
 {

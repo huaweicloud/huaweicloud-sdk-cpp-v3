@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/CreateSecurityGroupRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -32,7 +31,6 @@ web::json::value CreateSecurityGroupRequestBody::toJson() const
 
     return val;
 }
-
 bool CreateSecurityGroupRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CreateSecurityGroupRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 CreateSecurityGroupOption CreateSecurityGroupRequestBody::getSecurityGroup() const
 {

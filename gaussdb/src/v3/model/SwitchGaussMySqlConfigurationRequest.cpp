@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/SwitchGaussMySqlConfigurationRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -42,7 +41,6 @@ web::json::value SwitchGaussMySqlConfigurationRequest::toJson() const
 
     return val;
 }
-
 bool SwitchGaussMySqlConfigurationRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool SwitchGaussMySqlConfigurationRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string SwitchGaussMySqlConfigurationRequest::getXLanguage() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/MpeMetaData.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -93,7 +92,6 @@ web::json::value MpeMetaData::toJson() const
 
     return val;
 }
-
 bool MpeMetaData::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -217,6 +215,7 @@ bool MpeMetaData::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string MpeMetaData::getPackType() const
 {

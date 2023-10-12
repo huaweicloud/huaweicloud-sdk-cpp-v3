@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/ContentCompareDiff.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -46,7 +45,6 @@ web::json::value ContentCompareDiff::toJson() const
 
     return val;
 }
-
 bool ContentCompareDiff::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -89,6 +87,7 @@ bool ContentCompareDiff::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ContentCompareDiff::getTargetSelectSql() const
 {

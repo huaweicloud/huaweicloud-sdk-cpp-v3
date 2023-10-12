@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/UpdateRangeSwitchResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -32,7 +31,6 @@ web::json::value UpdateRangeSwitchResponse::toJson() const
 
     return val;
 }
-
 bool UpdateRangeSwitchResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool UpdateRangeSwitchResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 OriginRangeBody UpdateRangeSwitchResponse::getOriginRange() const
 {

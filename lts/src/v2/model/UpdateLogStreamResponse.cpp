@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/UpdateLogStreamResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -48,7 +47,6 @@ web::json::value UpdateLogStreamResponse::toJson() const
 
     return val;
 }
-
 bool UpdateLogStreamResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool UpdateLogStreamResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int64_t UpdateLogStreamResponse::getCreationTime() const
 {

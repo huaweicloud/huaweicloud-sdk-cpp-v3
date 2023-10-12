@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sdrs/v1/model/DeleteReplicationRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sdrs {
@@ -32,7 +31,6 @@ web::json::value DeleteReplicationRequestBody::toJson() const
 
     return val;
 }
-
 bool DeleteReplicationRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool DeleteReplicationRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 DeleteReplicationRequestParams DeleteReplicationRequestBody::getReplication() const
 {

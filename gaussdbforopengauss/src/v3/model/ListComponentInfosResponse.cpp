@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/ListComponentInfosResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -37,7 +36,6 @@ web::json::value ListComponentInfosResponse::toJson() const
 
     return val;
 }
-
 bool ListComponentInfosResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ListComponentInfosResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<Nodes>& ListComponentInfosResponse::getNodes()
 {

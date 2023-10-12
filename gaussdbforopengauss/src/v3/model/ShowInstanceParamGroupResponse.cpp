@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/ShowInstanceParamGroupResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -52,7 +51,6 @@ web::json::value ShowInstanceParamGroupResponse::toJson() const
 
     return val;
 }
-
 bool ShowInstanceParamGroupResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -104,6 +102,7 @@ bool ShowInstanceParamGroupResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowInstanceParamGroupResponse::getDatastoreVersion() const
 {

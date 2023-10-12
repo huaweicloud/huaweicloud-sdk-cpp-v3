@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/ConfigurationParameter.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -58,7 +57,6 @@ web::json::value ConfigurationParameter::toJson() const
 
     return val;
 }
-
 bool ConfigurationParameter::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool ConfigurationParameter::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ConfigurationParameter::getName() const
 {

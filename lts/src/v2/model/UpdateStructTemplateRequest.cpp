@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/UpdateStructTemplateRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -32,7 +31,6 @@ web::json::value UpdateStructTemplateRequest::toJson() const
 
     return val;
 }
-
 bool UpdateStructTemplateRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool UpdateStructTemplateRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 LtsStructTemplateInfo UpdateStructTemplateRequest::getBody() const
 {

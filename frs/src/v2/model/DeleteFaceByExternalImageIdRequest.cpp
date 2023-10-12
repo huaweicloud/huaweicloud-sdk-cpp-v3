@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/frs/v2/model/DeleteFaceByExternalImageIdRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Frs {
@@ -43,7 +42,6 @@ web::json::value DeleteFaceByExternalImageIdRequest::toJson() const
 
     return val;
 }
-
 bool DeleteFaceByExternalImageIdRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool DeleteFaceByExternalImageIdRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DeleteFaceByExternalImageIdRequest::getEnterpriseProjectId() const
 {

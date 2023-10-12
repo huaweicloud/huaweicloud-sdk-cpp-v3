@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v1/model/ListRecordContentsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -68,7 +67,6 @@ web::json::value ListRecordContentsRequest::toJson() const
 
     return val;
 }
-
 bool ListRecordContentsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -147,6 +145,7 @@ bool ListRecordContentsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListRecordContentsRequest::getPublishDomain() const
 {

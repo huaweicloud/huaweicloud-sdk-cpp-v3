@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/smn/v2/model/ResourceTags.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Smn {
@@ -37,7 +36,6 @@ web::json::value ResourceTags::toJson() const
 
     return val;
 }
-
 bool ResourceTags::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ResourceTags::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ResourceTags::getKey() const
 {

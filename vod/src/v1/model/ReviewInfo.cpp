@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/ReviewInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -55,7 +54,6 @@ web::json::value ReviewInfo::toJson() const
 
     return val;
 }
-
 bool ReviewInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -116,6 +114,7 @@ bool ReviewInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ReviewInfo::getSuggestion() const
 {

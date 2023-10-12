@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/kms/v2/model/ShowPublicKeyRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Kms {
@@ -32,7 +31,6 @@ web::json::value ShowPublicKeyRequest::toJson() const
 
     return val;
 }
-
 bool ShowPublicKeyRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ShowPublicKeyRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 OperateKeyRequestBody ShowPublicKeyRequest::getBody() const
 {

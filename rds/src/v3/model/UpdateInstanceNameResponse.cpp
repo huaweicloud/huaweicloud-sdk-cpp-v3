@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/UpdateInstanceNameResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -28,13 +27,13 @@ web::json::value UpdateInstanceNameResponse::toJson() const
 
     return val;
 }
-
 bool UpdateInstanceNameResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 }
 }

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/DeleteAssetsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -42,7 +41,6 @@ web::json::value DeleteAssetsRequest::toJson() const
 
     return val;
 }
-
 bool DeleteAssetsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool DeleteAssetsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DeleteAssetsRequest::getXSdkDate() const
 {

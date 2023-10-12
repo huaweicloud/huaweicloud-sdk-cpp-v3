@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/CreateDomainResponseBodyContent.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -116,7 +115,6 @@ web::json::value CreateDomainResponseBodyContent::toJson() const
 
     return val;
 }
-
 bool CreateDomainResponseBodyContent::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -285,6 +283,7 @@ bool CreateDomainResponseBodyContent::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateDomainResponseBodyContent::getId() const
 {

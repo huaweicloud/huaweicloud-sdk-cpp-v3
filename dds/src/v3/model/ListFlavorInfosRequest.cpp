@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/ListFlavorInfosRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -48,7 +47,6 @@ web::json::value ListFlavorInfosRequest::toJson() const
 
     return val;
 }
-
 bool ListFlavorInfosRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool ListFlavorInfosRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListFlavorInfosRequest::getEngineName() const
 {

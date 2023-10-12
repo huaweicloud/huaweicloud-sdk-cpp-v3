@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v2/model/PublicipUpdateResp.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -112,7 +111,6 @@ web::json::value PublicipUpdateResp::toJson() const
 
     return val;
 }
-
 bool PublicipUpdateResp::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -272,6 +270,7 @@ bool PublicipUpdateResp::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string PublicipUpdateResp::getBandwidthId() const
 {

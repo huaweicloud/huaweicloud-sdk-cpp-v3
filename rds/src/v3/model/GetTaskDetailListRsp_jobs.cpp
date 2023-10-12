@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/GetTaskDetailListRsp_jobs.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -76,7 +75,6 @@ web::json::value GetTaskDetailListRsp_jobs::toJson() const
 
     return val;
 }
-
 bool GetTaskDetailListRsp_jobs::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -173,6 +171,7 @@ bool GetTaskDetailListRsp_jobs::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string GetTaskDetailListRsp_jobs::getId() const
 {

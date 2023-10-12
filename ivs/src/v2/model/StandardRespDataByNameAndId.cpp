@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ivs/v2/model/StandardRespDataByNameAndId.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ivs {
@@ -48,7 +47,6 @@ web::json::value StandardRespDataByNameAndId::toJson() const
 
     return val;
 }
-
 bool StandardRespDataByNameAndId::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool StandardRespDataByNameAndId::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string StandardRespDataByNameAndId::getVerificationResult() const
 {

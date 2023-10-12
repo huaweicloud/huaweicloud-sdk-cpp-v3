@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/GaussDBforOpenGaussUserForList_attributes.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -68,7 +67,6 @@ web::json::value GaussDBforOpenGaussUserForList_attributes::toJson() const
 
     return val;
 }
-
 bool GaussDBforOpenGaussUserForList_attributes::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -147,6 +145,7 @@ bool GaussDBforOpenGaussUserForList_attributes::fromJson(const web::json::value&
     }
     return ok;
 }
+
 
 bool GaussDBforOpenGaussUserForList_attributes::isRolsuper() const
 {

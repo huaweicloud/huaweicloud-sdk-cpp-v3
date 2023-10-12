@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/evs/v2/model/CreateVolumeResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Evs {
@@ -42,7 +41,6 @@ web::json::value CreateVolumeResponse::toJson() const
 
     return val;
 }
-
 bool CreateVolumeResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool CreateVolumeResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateVolumeResponse::getJobId() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v3/model/PublicipSingleShowResp.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -168,7 +167,6 @@ web::json::value PublicipSingleShowResp::toJson() const
 
     return val;
 }
-
 bool PublicipSingleShowResp::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -436,6 +434,7 @@ bool PublicipSingleShowResp::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string PublicipSingleShowResp::getId() const
 {

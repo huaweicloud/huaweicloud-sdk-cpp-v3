@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/CreateTemplateGroupRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -37,7 +36,6 @@ web::json::value CreateTemplateGroupRequest::toJson() const
 
     return val;
 }
-
 bool CreateTemplateGroupRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool CreateTemplateGroupRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CreateTemplateGroupRequest::getXSdkDate() const
 {

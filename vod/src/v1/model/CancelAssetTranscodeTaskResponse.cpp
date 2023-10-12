@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/CancelAssetTranscodeTaskResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -28,13 +27,13 @@ web::json::value CancelAssetTranscodeTaskResponse::toJson() const
 
     return val;
 }
-
 bool CancelAssetTranscodeTaskResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 }
 }

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/ObjectCompareResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -51,7 +50,6 @@ web::json::value ObjectCompareResult::toJson() const
 
     return val;
 }
-
 bool ObjectCompareResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -103,6 +101,7 @@ bool ObjectCompareResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ObjectCompareResult::getCompareTaskId() const
 {

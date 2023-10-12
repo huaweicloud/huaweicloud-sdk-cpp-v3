@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/UpdateDomainMultiCertificatesResponseBodyContent.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -77,7 +76,6 @@ web::json::value UpdateDomainMultiCertificatesResponseBodyContent::toJson() cons
 
     return val;
 }
-
 bool UpdateDomainMultiCertificatesResponseBodyContent::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -174,6 +172,7 @@ bool UpdateDomainMultiCertificatesResponseBodyContent::fromJson(const web::json:
     }
     return ok;
 }
+
 
 std::string UpdateDomainMultiCertificatesResponseBodyContent::getDomainName() const
 {

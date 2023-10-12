@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/codeartsbuild/v3/model/RunJobRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsbuild {
@@ -32,7 +31,6 @@ web::json::value RunJobRequest::toJson() const
 
     return val;
 }
-
 bool RunJobRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool RunJobRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 RunJobRequestBody RunJobRequest::getBody() const
 {

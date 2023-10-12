@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/csms/v1/model/Stage.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Csms {
@@ -48,7 +47,6 @@ web::json::value Stage::toJson() const
 
     return val;
 }
-
 bool Stage::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool Stage::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string Stage::getName() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/kms/v2/model/DecryptDataRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Kms {
@@ -32,7 +31,6 @@ web::json::value DecryptDataRequest::toJson() const
 
     return val;
 }
-
 bool DecryptDataRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool DecryptDataRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 DecryptDataRequestBody DecryptDataRequest::getBody() const
 {

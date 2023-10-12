@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/TagOption.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -37,7 +36,6 @@ web::json::value TagOption::toJson() const
 
     return val;
 }
-
 bool TagOption::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool TagOption::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string TagOption::getKey() const
 {

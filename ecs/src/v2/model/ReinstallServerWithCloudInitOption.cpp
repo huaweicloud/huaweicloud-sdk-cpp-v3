@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/ReinstallServerWithCloudInitOption.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -52,7 +51,6 @@ web::json::value ReinstallServerWithCloudInitOption::toJson() const
 
     return val;
 }
-
 bool ReinstallServerWithCloudInitOption::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -104,6 +102,7 @@ bool ReinstallServerWithCloudInitOption::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ReinstallServerWithCloudInitOption::getAdminpass() const
 {

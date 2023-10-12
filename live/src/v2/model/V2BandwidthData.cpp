@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v2/model/V2BandwidthData.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -38,7 +37,6 @@ web::json::value V2BandwidthData::toJson() const
 
     return val;
 }
-
 bool V2BandwidthData::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool V2BandwidthData::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int64_t V2BandwidthData::getValue() const
 {

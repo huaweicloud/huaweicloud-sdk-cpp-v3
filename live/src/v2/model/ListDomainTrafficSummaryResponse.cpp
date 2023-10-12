@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v2/model/ListDomainTrafficSummaryResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -37,7 +36,6 @@ web::json::value ListDomainTrafficSummaryResponse::toJson() const
 
     return val;
 }
-
 bool ListDomainTrafficSummaryResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ListDomainTrafficSummaryResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<TrafficSummaryData>& ListDomainTrafficSummaryResponse::getTrafficList()
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/MysqlSlowLogDetailsItem.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -88,7 +87,6 @@ web::json::value MysqlSlowLogDetailsItem::toJson() const
 
     return val;
 }
-
 bool MysqlSlowLogDetailsItem::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -203,6 +201,7 @@ bool MysqlSlowLogDetailsItem::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string MysqlSlowLogDetailsItem::getCount() const
 {

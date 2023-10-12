@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v2/model/ShowPublicipTagsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -33,7 +32,6 @@ web::json::value ShowPublicipTagsRequest::toJson() const
 
     return val;
 }
-
 bool ShowPublicipTagsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool ShowPublicipTagsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowPublicipTagsRequest::getPublicipId() const
 {

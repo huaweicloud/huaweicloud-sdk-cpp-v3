@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/CreateFlowLogReqBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -32,7 +31,6 @@ web::json::value CreateFlowLogReqBody::toJson() const
 
     return val;
 }
-
 bool CreateFlowLogReqBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CreateFlowLogReqBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 CreateFlowLogReq CreateFlowLogReqBody::getFlowLog() const
 {

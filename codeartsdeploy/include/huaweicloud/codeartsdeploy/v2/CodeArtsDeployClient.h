@@ -6,6 +6,7 @@
 #include <huaweicloud/core/ClientBuilder.h>
 
 
+#include <huaweicloud/codeartsdeploy/v2/model/ConfigInfo.h>
 #include <huaweicloud/codeartsdeploy/v2/model/CreateAppRequest.h>
 #include <huaweicloud/codeartsdeploy/v2/model/CreateAppRequestBody.h>
 #include <huaweicloud/codeartsdeploy/v2/model/CreateAppResponse.h>
@@ -27,6 +28,8 @@
 #include <huaweicloud/codeartsdeploy/v2/model/ShowAppDetailByIdResponse.h>
 #include <huaweicloud/codeartsdeploy/v2/model/ShowDeployTaskDetailRequest.h>
 #include <huaweicloud/codeartsdeploy/v2/model/ShowDeployTaskDetailResponse.h>
+#include <huaweicloud/codeartsdeploy/v2/model/ShowExecutionParamsRequest.h>
+#include <huaweicloud/codeartsdeploy/v2/model/ShowExecutionParamsResponse.h>
 #include <huaweicloud/codeartsdeploy/v2/model/StartDeployTaskRequest.h>
 #include <huaweicloud/codeartsdeploy/v2/model/StartDeployTaskResponse.h>
 #include <huaweicloud/codeartsdeploy/v2/model/TemplateTaskRequestBody.h>
@@ -155,7 +158,7 @@ public:
     );
     // 获取应用列表
     //
-    // 查询项目下应用列表
+    // 查询项目下应用列表。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListAllAppResponse> listAllApp(
@@ -163,7 +166,7 @@ public:
     );
     // 根据开始时间和结束时间查询项目下指定应用的历史部署记录列表
     //
-    // 根据开始时间和结束时间查询项目下指定应用的历史部署记录列表
+    // 根据开始时间和结束时间查询项目下指定应用的历史部署记录列表。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListDeployTaskHistoryByDateResponse> listDeployTaskHistoryByDate(
@@ -193,6 +196,14 @@ public:
     std::shared_ptr<ShowDeployTaskDetailResponse> showDeployTaskDetail(
         ShowDeployTaskDetailRequest &request
     );
+    // 查询部署记录的执行参数
+    //
+    // 查询部署记录的执行参数
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowExecutionParamsResponse> showExecutionParams(
+        ShowExecutionParamsRequest &request
+    );
     // 部署应用
     //
     // 根据部署任务id部署应用。
@@ -204,7 +215,7 @@ public:
 
     // 应用下创建环境
     //
-    // 应用下创建环境
+    // 应用下创建环境。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateEnvironmentResponse> createEnvironment(
@@ -212,7 +223,7 @@ public:
     );
     // 删除应用下的环境
     //
-    // 删除应用下的环境
+    // 删除应用下的环境。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteEnvironmentResponse> deleteEnvironment(
@@ -220,7 +231,7 @@ public:
     );
     // 环境下删除主机
     //
-    // 环境下删除主机
+    // 环境下删除主机。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteHostFromEnvironmentResponse> deleteHostFromEnvironment(
@@ -228,7 +239,7 @@ public:
     );
     // 环境下导入主机
     //
-    // 环境下导入主机
+    // 环境下导入主机。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ImportHostToEnvironmentResponse> importHostToEnvironment(
@@ -236,7 +247,7 @@ public:
     );
     // 查询应用下环境列表
     //
-    // 查询应用下环境列表
+    // 查询应用下环境列表。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListEnvironmentsResponse> listEnvironments(
@@ -244,7 +255,7 @@ public:
     );
     // 查询环境详情
     //
-    // 查询环境详情
+    // 查询环境详情。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowEnvironmentDetailResponse> showEnvironmentDetail(
@@ -356,7 +367,7 @@ public:
     std::shared_ptr<ListHostGroupsResponse> listHostGroups(
         ListHostGroupsRequest &request
     );
-    // 查询主机集群
+    // 查询主机集群详情
     //
     // 根据主机集群id查询主机集群详情。该接口于2024年09月30日后不再维护，推荐使用新版ShowHostClusterDetail接口。
     // 
@@ -364,7 +375,7 @@ public:
     std::shared_ptr<ShowDeploymentGroupDetailResponse> showDeploymentGroupDetail(
         ShowDeploymentGroupDetailRequest &request
     );
-    // 查询主机集群
+    // 查询主机集群详情
     //
     // 根据主机集群id查询主机集群详情。
     // 
@@ -383,7 +394,7 @@ public:
 
     // 获取指定应用的应用部署成功率
     //
-    // 获取指定应用的应用部署成功率
+    // 获取指定应用的应用部署成功率。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListTaskSuccessRateResponse> listTaskSuccessRate(
@@ -391,7 +402,7 @@ public:
     );
     // 获取指定项目的应用部署成功率
     //
-    // 获取指定项目的应用部署成功率
+    // 获取指定项目的应用部署成功率。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowProjectSuccessRateResponse> showProjectSuccessRate(

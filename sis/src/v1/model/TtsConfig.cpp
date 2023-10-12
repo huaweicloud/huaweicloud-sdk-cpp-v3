@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sis/v1/model/TtsConfig.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sis {
@@ -58,7 +57,6 @@ web::json::value TtsConfig::toJson() const
 
     return val;
 }
-
 bool TtsConfig::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool TtsConfig::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string TtsConfig::getAudioFormat() const
 {

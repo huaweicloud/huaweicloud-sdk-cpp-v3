@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/BaseInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -103,7 +102,6 @@ web::json::value BaseInfo::toJson() const
 
     return val;
 }
-
 bool BaseInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -254,6 +252,7 @@ bool BaseInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string BaseInfo::getTitle() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/ReplicationRecordsExtraInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -53,7 +52,6 @@ web::json::value ReplicationRecordsExtraInfo::toJson() const
 
     return val;
 }
-
 bool ReplicationRecordsExtraInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool ReplicationRecordsExtraInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ReplicationRecordsExtraInfo::getProgress() const
 {

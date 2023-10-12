@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/UpdateInstanceConfigurationResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -33,7 +32,6 @@ web::json::value UpdateInstanceConfigurationResponse::toJson() const
 
     return val;
 }
-
 bool UpdateInstanceConfigurationResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool UpdateInstanceConfigurationResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool UpdateInstanceConfigurationResponse::isRestartRequired() const
 {

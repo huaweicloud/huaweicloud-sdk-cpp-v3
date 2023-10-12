@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/ResetPwdRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -42,7 +41,6 @@ web::json::value ResetPwdRequest::toJson() const
 
     return val;
 }
-
 bool ResetPwdRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool ResetPwdRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ResetPwdRequest::getXLanguage() const
 {

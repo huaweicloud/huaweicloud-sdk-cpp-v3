@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/UpdateProxyConnectionPoolTypeRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -47,7 +46,6 @@ web::json::value UpdateProxyConnectionPoolTypeRequest::toJson() const
 
     return val;
 }
-
 bool UpdateProxyConnectionPoolTypeRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -90,6 +88,7 @@ bool UpdateProxyConnectionPoolTypeRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateProxyConnectionPoolTypeRequest::getInstanceId() const
 {

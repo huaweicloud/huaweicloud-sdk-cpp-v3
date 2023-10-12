@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/Quotas.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -48,7 +47,6 @@ web::json::value Quotas::toJson() const
 
     return val;
 }
-
 bool Quotas::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool Quotas::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t Quotas::getQuotaLimit() const
 {

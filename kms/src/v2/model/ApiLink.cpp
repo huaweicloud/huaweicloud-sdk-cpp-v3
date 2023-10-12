@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/kms/v2/model/ApiLink.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Kms {
@@ -38,7 +37,6 @@ web::json::value ApiLink::toJson() const
 
     return val;
 }
-
 bool ApiLink::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ApiLink::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ApiLink::getHref() const
 {

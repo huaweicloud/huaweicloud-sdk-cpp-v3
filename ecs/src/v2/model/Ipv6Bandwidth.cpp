@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/Ipv6Bandwidth.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -33,7 +32,6 @@ web::json::value Ipv6Bandwidth::toJson() const
 
     return val;
 }
-
 bool Ipv6Bandwidth::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool Ipv6Bandwidth::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string Ipv6Bandwidth::getId() const
 {

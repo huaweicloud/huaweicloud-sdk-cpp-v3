@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/smn/v2/model/ListLogtankRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Smn {
@@ -33,7 +32,6 @@ web::json::value ListLogtankRequest::toJson() const
 
     return val;
 }
-
 bool ListLogtankRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool ListLogtankRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListLogtankRequest::getTopicUrn() const
 {

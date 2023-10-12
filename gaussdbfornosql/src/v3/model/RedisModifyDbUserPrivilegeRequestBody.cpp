@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/RedisModifyDbUserPrivilegeRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -42,7 +41,6 @@ web::json::value RedisModifyDbUserPrivilegeRequestBody::toJson() const
 
     return val;
 }
-
 bool RedisModifyDbUserPrivilegeRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool RedisModifyDbUserPrivilegeRequestBody::fromJson(const web::json::value& val
     }
     return ok;
 }
+
 
 std::string RedisModifyDbUserPrivilegeRequestBody::getName() const
 {

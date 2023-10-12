@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/HandwritingWordsBlockList.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -47,7 +46,6 @@ web::json::value HandwritingWordsBlockList::toJson() const
 
     return val;
 }
-
 bool HandwritingWordsBlockList::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -90,6 +88,7 @@ bool HandwritingWordsBlockList::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string HandwritingWordsBlockList::getWords() const
 {

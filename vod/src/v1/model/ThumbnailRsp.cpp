@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/ThumbnailRsp.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -38,7 +37,6 @@ web::json::value ThumbnailRsp::toJson() const
 
     return val;
 }
-
 bool ThumbnailRsp::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ThumbnailRsp::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ThumbnailRsp::getOffset() const
 {

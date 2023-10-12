@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sdrs/v1/model/ProtectedInstanceAttachReplicationRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sdrs {
@@ -32,7 +31,6 @@ web::json::value ProtectedInstanceAttachReplicationRequestBody::toJson() const
 
     return val;
 }
-
 bool ProtectedInstanceAttachReplicationRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ProtectedInstanceAttachReplicationRequestBody::fromJson(const web::json::va
     }
     return ok;
 }
+
 
 ProtectedInstanceAttachReplicationRequestParams ProtectedInstanceAttachReplicationRequestBody::getReplicationAttachment() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v2/model/ListRecordDataRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -48,7 +47,6 @@ web::json::value ListRecordDataRequest::toJson() const
 
     return val;
 }
-
 bool ListRecordDataRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool ListRecordDataRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListRecordDataRequest::getProjectId() const
 {

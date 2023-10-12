@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/RestoreInstanceFromCollectionResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -33,7 +32,6 @@ web::json::value RestoreInstanceFromCollectionResponse::toJson() const
 
     return val;
 }
-
 bool RestoreInstanceFromCollectionResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool RestoreInstanceFromCollectionResponse::fromJson(const web::json::value& val
     }
     return ok;
 }
+
 
 std::string RestoreInstanceFromCollectionResponse::getJobId() const
 {

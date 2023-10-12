@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ivs/v2/model/IvsStandardByNameAndIdRequestBody_data.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ivs {
@@ -32,7 +31,6 @@ web::json::value IvsStandardByNameAndIdRequestBody_data::toJson() const
 
     return val;
 }
-
 bool IvsStandardByNameAndIdRequestBody_data::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool IvsStandardByNameAndIdRequestBody_data::fromJson(const web::json::value& va
     }
     return ok;
 }
+
 
 std::vector<StandardReqDataByNameAndId>& IvsStandardByNameAndIdRequestBody_data::getReqData()
 {

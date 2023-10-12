@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cloudtable/v2/model/HbaseClusterActionReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cloudtable {
@@ -32,7 +31,6 @@ web::json::value HbaseClusterActionReq::toJson() const
 
     return val;
 }
-
 bool HbaseClusterActionReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool HbaseClusterActionReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 Object HbaseClusterActionReq::getRestart() const
 {

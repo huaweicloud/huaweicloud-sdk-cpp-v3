@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v1/model/CreateRecordRuleRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -32,7 +31,6 @@ web::json::value CreateRecordRuleRequest::toJson() const
 
     return val;
 }
-
 bool CreateRecordRuleRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CreateRecordRuleRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 RecordRuleRequest CreateRecordRuleRequest::getBody() const
 {

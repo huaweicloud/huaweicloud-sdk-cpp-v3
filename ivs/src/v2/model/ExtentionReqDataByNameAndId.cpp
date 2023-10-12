@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ivs/v2/model/ExtentionReqDataByNameAndId.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ivs {
@@ -38,7 +37,6 @@ web::json::value ExtentionReqDataByNameAndId::toJson() const
 
     return val;
 }
-
 bool ExtentionReqDataByNameAndId::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ExtentionReqDataByNameAndId::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ExtentionReqDataByNameAndId::getVerificationName() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/NodeSqlFilterRulePattern.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -38,7 +37,6 @@ web::json::value NodeSqlFilterRulePattern::toJson() const
 
     return val;
 }
-
 bool NodeSqlFilterRulePattern::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool NodeSqlFilterRulePattern::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string NodeSqlFilterRulePattern::getPattern() const
 {

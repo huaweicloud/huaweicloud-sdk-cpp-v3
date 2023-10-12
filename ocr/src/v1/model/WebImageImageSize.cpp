@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/WebImageImageSize.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -38,7 +37,6 @@ web::json::value WebImageImageSize::toJson() const
 
     return val;
 }
-
 bool WebImageImageSize::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool WebImageImageSize::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t WebImageImageSize::getHeight() const
 {

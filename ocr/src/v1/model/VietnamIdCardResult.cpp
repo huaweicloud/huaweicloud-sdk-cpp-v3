@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/VietnamIdCardResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -120,7 +119,6 @@ web::json::value VietnamIdCardResult::toJson() const
 
     return val;
 }
-
 bool VietnamIdCardResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -298,6 +296,7 @@ bool VietnamIdCardResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string VietnamIdCardResult::getSide() const
 {

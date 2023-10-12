@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v2/model/ListUpStreamDetailResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -52,7 +51,6 @@ web::json::value ListUpStreamDetailResponse::toJson() const
 
     return val;
 }
-
 bool ListUpStreamDetailResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -104,6 +102,7 @@ bool ListUpStreamDetailResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListUpStreamDetailResponse::getPublishDomain() const
 {

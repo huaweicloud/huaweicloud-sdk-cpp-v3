@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v2/model/ShowTopDomainNamesRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -58,7 +57,6 @@ web::json::value ShowTopDomainNamesRequest::toJson() const
 
     return val;
 }
-
 bool ShowTopDomainNamesRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -119,6 +117,7 @@ bool ShowTopDomainNamesRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int64_t ShowTopDomainNamesRequest::getStartTime() const
 {

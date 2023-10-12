@@ -2,9 +2,11 @@
 #ifndef HUAWEICLOUD_SDK_ECS_V2_MODEL_NovaServer_H_
 #define HUAWEICLOUD_SDK_ECS_V2_MODEL_NovaServer_H_
 
+
 #include <huaweicloud/ecs/v2/EcsExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/ecs/v2/model/NovaServerSecurityGroup.h>
@@ -41,10 +43,8 @@ public:
     /// ModelBase overrides
 
     void validate() override;
-
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
-
     /////////////////////////////////////////////
     /// NovaServer members
 

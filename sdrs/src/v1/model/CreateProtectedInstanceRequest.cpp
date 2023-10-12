@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sdrs/v1/model/CreateProtectedInstanceRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sdrs {
@@ -32,7 +31,6 @@ web::json::value CreateProtectedInstanceRequest::toJson() const
 
     return val;
 }
-
 bool CreateProtectedInstanceRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CreateProtectedInstanceRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 CreateProtectedInstanceRequestBody CreateProtectedInstanceRequest::getBody() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/smn/v2/model/DeleteResourceTagRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Smn {
@@ -43,7 +42,6 @@ web::json::value DeleteResourceTagRequest::toJson() const
 
     return val;
 }
-
 bool DeleteResourceTagRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool DeleteResourceTagRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DeleteResourceTagRequest::getResourceType() const
 {

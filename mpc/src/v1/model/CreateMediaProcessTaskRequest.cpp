@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/CreateMediaProcessTaskRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -32,7 +31,6 @@ web::json::value CreateMediaProcessTaskRequest::toJson() const
 
     return val;
 }
-
 bool CreateMediaProcessTaskRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CreateMediaProcessTaskRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 CreateMediaProcessReq CreateMediaProcessTaskRequest::getBody() const
 {

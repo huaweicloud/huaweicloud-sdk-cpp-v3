@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/CheckAgentRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -32,7 +31,6 @@ web::json::value CheckAgentRequest::toJson() const
 
     return val;
 }
-
 bool CheckAgentRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CheckAgentRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 ProtectableAgentReq CheckAgentRequest::getBody() const
 {

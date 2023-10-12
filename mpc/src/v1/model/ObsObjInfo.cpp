@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/ObsObjInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -48,7 +47,6 @@ web::json::value ObsObjInfo::toJson() const
 
     return val;
 }
-
 bool ObsObjInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool ObsObjInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ObsObjInfo::getBucket() const
 {

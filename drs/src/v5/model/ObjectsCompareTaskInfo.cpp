@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/ObjectsCompareTaskInfo.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -67,7 +66,6 @@ web::json::value ObjectsCompareTaskInfo::toJson() const
 
     return val;
 }
-
 bool ObjectsCompareTaskInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -146,6 +144,7 @@ bool ObjectsCompareTaskInfo::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ObjectsCompareTaskInfo::getCreateTime() const
 {

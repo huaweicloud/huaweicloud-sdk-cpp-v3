@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/WaybillElectronicResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -72,7 +71,6 @@ web::json::value WaybillElectronicResult::toJson() const
 
     return val;
 }
-
 bool WaybillElectronicResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -160,6 +158,7 @@ bool WaybillElectronicResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string WaybillElectronicResult::getCode() const
 {

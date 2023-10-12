@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/ShowOriginHostResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -32,7 +31,6 @@ web::json::value ShowOriginHostResponse::toJson() const
 
     return val;
 }
-
 bool ShowOriginHostResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ShowOriginHostResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 DomainOriginHost ShowOriginHostResponse::getOriginHost() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/ShowVaultTagResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -36,7 +35,6 @@ web::json::value ShowVaultTagResponse::toJson() const
 
     return val;
 }
-
 bool ShowVaultTagResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -61,6 +59,7 @@ bool ShowVaultTagResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<Tag>& ShowVaultTagResponse::getTags()
 {

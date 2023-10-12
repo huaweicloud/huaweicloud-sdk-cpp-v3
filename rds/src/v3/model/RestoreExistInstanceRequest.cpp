@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/RestoreExistInstanceRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -37,7 +36,6 @@ web::json::value RestoreExistInstanceRequest::toJson() const
 
     return val;
 }
-
 bool RestoreExistInstanceRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool RestoreExistInstanceRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string RestoreExistInstanceRequest::getXLanguage() const
 {

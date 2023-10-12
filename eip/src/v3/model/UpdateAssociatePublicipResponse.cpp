@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eip/v3/model/UpdateAssociatePublicipResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eip {
@@ -37,7 +36,6 @@ web::json::value UpdateAssociatePublicipResponse::toJson() const
 
     return val;
 }
-
 bool UpdateAssociatePublicipResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool UpdateAssociatePublicipResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateAssociatePublicipResponse::getRequestId() const
 {

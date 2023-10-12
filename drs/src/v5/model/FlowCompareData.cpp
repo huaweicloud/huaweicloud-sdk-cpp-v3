@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/FlowCompareData.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -53,7 +52,6 @@ web::json::value FlowCompareData::toJson() const
 
     return val;
 }
-
 bool FlowCompareData::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -105,6 +103,7 @@ bool FlowCompareData::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string FlowCompareData::getSrcDb() const
 {

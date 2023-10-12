@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/OpenGaussEnlargeVolume.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -33,7 +32,6 @@ web::json::value OpenGaussEnlargeVolume::toJson() const
 
     return val;
 }
-
 bool OpenGaussEnlargeVolume::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool OpenGaussEnlargeVolume::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t OpenGaussEnlargeVolume::getSize() const
 {

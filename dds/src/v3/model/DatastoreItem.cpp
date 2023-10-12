@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/DatastoreItem.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -43,7 +42,6 @@ web::json::value DatastoreItem::toJson() const
 
     return val;
 }
-
 bool DatastoreItem::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool DatastoreItem::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DatastoreItem::getType() const
 {

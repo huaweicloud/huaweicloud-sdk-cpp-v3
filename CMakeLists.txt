@@ -5,10 +5,13 @@ project(huaweicloud_cpp_sdk_v3)
 
 set(CMAKE_CXX_STANDARD 14)
 
+
 include(GNUInstallDirs)
+include(FindPackageHandleStandardArgs)
 
 option(ENABLE_SHARED  "Enable shared library" ON)
 option(ENABLE_RTTR  "Enable rttr library" OFF)
+option(ENABLE_BSON "Enable bson library" OFF)
 
 if(ENABLE_SHARED)
     set(LIB_TYPE SHARED)
@@ -17,8 +20,13 @@ else()
     set(LIB_TYPE STATIC)
 endif()
 
-SET(BUILD_SERVICE codeartsdeploy)
-SET(SERVICE_VERSION v2)
+if(ENABLE_BSON)
+    add_definitions(-DBOOST_NO_CXX11_DELETED_FUNCTIONS)
+    add_definitions(-DHUAWEICLOUD_SDK_BSON_)
+endif()
+
+SET(BUILD_SERVICE kvs)
+SET(SERVICE_VERSION v1)
 
 if(BUILD_SERVICE STREQUAL "all" OR BUILD_SERVICE STREQUAL "")
    # USE MULTIPLE SERVICES(EXAMPLE: USE VPC ECS AND EIP)
@@ -33,4 +41,3 @@ else()
    add_subdirectory(${BUILD_SERVICE}/src/${SERVICE_VERSION})
    message(STATUS   "'BUILD_SERVICE'=${BUILD_SERVICE}")
 endif()
-

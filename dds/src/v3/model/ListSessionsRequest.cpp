@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/ListSessionsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -63,7 +62,6 @@ web::json::value ListSessionsRequest::toJson() const
 
     return val;
 }
-
 bool ListSessionsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -133,6 +131,7 @@ bool ListSessionsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListSessionsRequest::getNodeId() const
 {

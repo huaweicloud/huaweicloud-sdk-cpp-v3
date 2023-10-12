@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/RegisterDmsKafkaInstanceRequestBody_connect_info.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -38,7 +37,6 @@ web::json::value RegisterDmsKafkaInstanceRequestBody_connect_info::toJson() cons
 
     return val;
 }
-
 bool RegisterDmsKafkaInstanceRequestBody_connect_info::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool RegisterDmsKafkaInstanceRequestBody_connect_info::fromJson(const web::json:
     }
     return ok;
 }
+
 
 std::string RegisterDmsKafkaInstanceRequestBody_connect_info::getUserName() const
 {

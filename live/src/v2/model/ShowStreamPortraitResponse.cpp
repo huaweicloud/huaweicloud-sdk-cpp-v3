@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v2/model/ShowStreamPortraitResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -37,7 +36,6 @@ web::json::value ShowStreamPortraitResponse::toJson() const
 
     return val;
 }
-
 bool ShowStreamPortraitResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ShowStreamPortraitResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<StreamPortrait>& ShowStreamPortraitResponse::getStreamPortraits()
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/ListInstancesResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -37,7 +36,6 @@ web::json::value ListInstancesResponse::toJson() const
 
     return val;
 }
-
 bool ListInstancesResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ListInstancesResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<QueryInstanceResponse>& ListInstancesResponse::getInstances()
 {

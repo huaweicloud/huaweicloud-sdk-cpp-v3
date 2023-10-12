@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/GaussDBforOpenGaussDatabaseForListSchema.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -38,7 +37,6 @@ web::json::value GaussDBforOpenGaussDatabaseForListSchema::toJson() const
 
     return val;
 }
-
 bool GaussDBforOpenGaussDatabaseForListSchema::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool GaussDBforOpenGaussDatabaseForListSchema::fromJson(const web::json::value& 
     }
     return ok;
 }
+
 
 std::string GaussDBforOpenGaussDatabaseForListSchema::getSchemaName() const
 {

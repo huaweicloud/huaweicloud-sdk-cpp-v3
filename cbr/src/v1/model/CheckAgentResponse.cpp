@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/CheckAgentResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -32,7 +31,6 @@ web::json::value CheckAgentResponse::toJson() const
 
     return val;
 }
-
 bool CheckAgentResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CheckAgentResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<ProtectableAgentStatus>& CheckAgentResponse::getAgentStatus()
 {

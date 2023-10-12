@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/CheckpointCreate.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -56,7 +55,6 @@ web::json::value CheckpointCreate::toJson() const
 
     return val;
 }
-
 bool CheckpointCreate::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -117,6 +115,7 @@ bool CheckpointCreate::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string CheckpointCreate::getCreatedAt() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v1/model/DeleteStreamForbiddenRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -43,7 +42,6 @@ web::json::value DeleteStreamForbiddenRequest::toJson() const
 
     return val;
 }
-
 bool DeleteStreamForbiddenRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool DeleteStreamForbiddenRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DeleteStreamForbiddenRequest::getDomain() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/ShowBackupDownloadLinkRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -43,7 +42,6 @@ web::json::value ShowBackupDownloadLinkRequest::toJson() const
 
     return val;
 }
-
 bool ShowBackupDownloadLinkRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool ShowBackupDownloadLinkRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowBackupDownloadLinkRequest::getXLanguage() const
 {

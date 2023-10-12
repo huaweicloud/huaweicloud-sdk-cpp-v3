@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/ListNotificationTemplatesRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -48,7 +47,6 @@ web::json::value ListNotificationTemplatesRequest::toJson() const
 
     return val;
 }
-
 bool ListNotificationTemplatesRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool ListNotificationTemplatesRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListNotificationTemplatesRequest::getDomainId() const
 {

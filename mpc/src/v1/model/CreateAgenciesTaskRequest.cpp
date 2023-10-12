@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/CreateAgenciesTaskRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -32,7 +31,6 @@ web::json::value CreateAgenciesTaskRequest::toJson() const
 
     return val;
 }
-
 bool CreateAgenciesTaskRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool CreateAgenciesTaskRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 AgenciesTaskReq CreateAgenciesTaskRequest::getBody() const
 {

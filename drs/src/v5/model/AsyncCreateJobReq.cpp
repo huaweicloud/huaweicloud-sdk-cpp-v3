@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/AsyncCreateJobReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -76,7 +75,6 @@ web::json::value AsyncCreateJobReq::toJson() const
 
     return val;
 }
-
 bool AsyncCreateJobReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -191,6 +189,7 @@ bool AsyncCreateJobReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 JobBaseInfo AsyncCreateJobReq::getBaseInfo() const
 {

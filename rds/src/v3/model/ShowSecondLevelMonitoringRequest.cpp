@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/ShowSecondLevelMonitoringRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -38,7 +37,6 @@ web::json::value ShowSecondLevelMonitoringRequest::toJson() const
 
     return val;
 }
-
 bool ShowSecondLevelMonitoringRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool ShowSecondLevelMonitoringRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowSecondLevelMonitoringRequest::getInstanceId() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sdrs/v1/model/ListProtectedInstancesRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sdrs {
@@ -73,7 +72,6 @@ web::json::value ListProtectedInstancesRequest::toJson() const
 
     return val;
 }
-
 bool ListProtectedInstancesRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -161,6 +159,7 @@ bool ListProtectedInstancesRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListProtectedInstancesRequest::getServerGroupId() const
 {

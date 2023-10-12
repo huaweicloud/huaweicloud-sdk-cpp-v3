@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vod/v1/model/Parameter.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vod {
@@ -33,7 +32,6 @@ web::json::value Parameter::toJson() const
 
     return val;
 }
-
 bool Parameter::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -49,6 +47,7 @@ bool Parameter::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string Parameter::getFormat() const
 {

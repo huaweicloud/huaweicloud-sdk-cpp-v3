@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/DomainRegion.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -37,7 +36,6 @@ web::json::value DomainRegion::toJson() const
 
     return val;
 }
-
 bool DomainRegion::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool DomainRegion::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DomainRegion::getDomainName() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/OpenGaussInstanceResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -108,7 +107,6 @@ web::json::value OpenGaussInstanceResult::toJson() const
 
     return val;
 }
-
 bool OpenGaussInstanceResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -268,6 +266,7 @@ bool OpenGaussInstanceResult::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string OpenGaussInstanceResult::getId() const
 {

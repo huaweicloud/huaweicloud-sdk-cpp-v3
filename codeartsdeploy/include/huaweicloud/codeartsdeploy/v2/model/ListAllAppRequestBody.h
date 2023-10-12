@@ -2,12 +2,15 @@
 #ifndef HUAWEICLOUD_SDK_CODEARTSDEPLOY_V2_MODEL_ListAllAppRequestBody_H_
 #define HUAWEICLOUD_SDK_CODEARTSDEPLOY_V2_MODEL_ListAllAppRequestBody_H_
 
+
 #include <huaweicloud/codeartsdeploy/v2/CodeArtsDeployExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -31,10 +34,8 @@ public:
     /// ModelBase overrides
 
     void validate() override;
-
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
-
     /////////////////////////////////////////////
     /// ListAllAppRequestBody members
 
@@ -83,6 +84,24 @@ public:
     void unsetsortBy();
     void setSortBy(const std::string& value);
 
+    /// <summary>
+    /// 应用状态列表，支持查询以下状态： abort: 部署中止 failed: 部署失败 not_started: 取消执行 pending: 排队中 running: 正在部署 succeeded: 部署成功 timeout: 部署超时 not_executed: 未执行 
+    /// </summary>
+
+    std::vector<std::string>& getStates();
+    bool statesIsSet() const;
+    void unsetstates();
+    void setStates(const std::vector<std::string>& value);
+
+    /// <summary>
+    /// 应用的分组id，传入no_grouped为查询未分组的应用
+    /// </summary>
+
+    std::string getGroupId() const;
+    bool groupIdIsSet() const;
+    void unsetgroupId();
+    void setGroupId(const std::string& value);
+
 
 protected:
     std::string projectId_;
@@ -95,6 +114,10 @@ protected:
     bool sortNameIsSet_;
     std::string sortBy_;
     bool sortByIsSet_;
+    std::vector<std::string> states_;
+    bool statesIsSet_;
+    std::string groupId_;
+    bool groupIdIsSet_;
 
 };
 

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/frs/v2/model/CreateFaceSetReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Frs {
@@ -42,7 +41,6 @@ web::json::value CreateFaceSetReq::toJson() const
 
     return val;
 }
-
 bool CreateFaceSetReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool CreateFaceSetReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::map<std::string, TypeInfo>& CreateFaceSetReq::getExternalFields()
 {

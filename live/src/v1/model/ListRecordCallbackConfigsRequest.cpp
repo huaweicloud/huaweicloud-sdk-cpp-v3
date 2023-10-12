@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/live/v1/model/ListRecordCallbackConfigsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Live {
@@ -48,7 +47,6 @@ web::json::value ListRecordCallbackConfigsRequest::toJson() const
 
     return val;
 }
-
 bool ListRecordCallbackConfigsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -91,6 +89,7 @@ bool ListRecordCallbackConfigsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListRecordCallbackConfigsRequest::getPublishDomain() const
 {

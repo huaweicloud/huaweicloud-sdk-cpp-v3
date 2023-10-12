@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cbr/v1/model/SyncReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -32,7 +31,6 @@ web::json::value SyncReq::toJson() const
 
     return val;
 }
-
 bool SyncReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool SyncReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 SyncParam SyncReq::getSync() const
 {

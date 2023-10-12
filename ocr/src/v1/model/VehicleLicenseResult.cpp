@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/VehicleLicenseResult.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -56,6 +55,10 @@ VehicleLicenseResult::VehicleLicenseResult()
     codeNumber_ = "";
     codeNumberIsSet_ = false;
     textLocationIsSet_ = false;
+    energyType_ = "";
+    energyTypeIsSet_ = false;
+    frontIsSet_ = false;
+    backIsSet_ = false;
 }
 
 VehicleLicenseResult::~VehicleLicenseResult() = default;
@@ -134,10 +137,18 @@ web::json::value VehicleLicenseResult::toJson() const
     if(textLocationIsSet_) {
         val[utility::conversions::to_string_t("text_location")] = ModelBase::toJson(textLocation_);
     }
+    if(energyTypeIsSet_) {
+        val[utility::conversions::to_string_t("energy_type")] = ModelBase::toJson(energyType_);
+    }
+    if(frontIsSet_) {
+        val[utility::conversions::to_string_t("front")] = ModelBase::toJson(front_);
+    }
+    if(backIsSet_) {
+        val[utility::conversions::to_string_t("back")] = ModelBase::toJson(back_);
+    }
 
     return val;
 }
-
 bool VehicleLicenseResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -340,8 +351,36 @@ bool VehicleLicenseResult::fromJson(const web::json::value& val)
             setTextLocation(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("energy_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("energy_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEnergyType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("front"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("front"));
+        if(!fieldValue.is_null())
+        {
+            VehicleLicenseFront refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFront(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("back"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("back"));
+        if(!fieldValue.is_null())
+        {
+            VehicleLicenseback refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBack(refVal);
+        }
+    }
     return ok;
 }
+
 
 std::string VehicleLicenseResult::getNumber() const
 {
@@ -803,6 +842,69 @@ bool VehicleLicenseResult::textLocationIsSet() const
 void VehicleLicenseResult::unsettextLocation()
 {
     textLocationIsSet_ = false;
+}
+
+std::string VehicleLicenseResult::getEnergyType() const
+{
+    return energyType_;
+}
+
+void VehicleLicenseResult::setEnergyType(const std::string& value)
+{
+    energyType_ = value;
+    energyTypeIsSet_ = true;
+}
+
+bool VehicleLicenseResult::energyTypeIsSet() const
+{
+    return energyTypeIsSet_;
+}
+
+void VehicleLicenseResult::unsetenergyType()
+{
+    energyTypeIsSet_ = false;
+}
+
+VehicleLicenseFront VehicleLicenseResult::getFront() const
+{
+    return front_;
+}
+
+void VehicleLicenseResult::setFront(const VehicleLicenseFront& value)
+{
+    front_ = value;
+    frontIsSet_ = true;
+}
+
+bool VehicleLicenseResult::frontIsSet() const
+{
+    return frontIsSet_;
+}
+
+void VehicleLicenseResult::unsetfront()
+{
+    frontIsSet_ = false;
+}
+
+VehicleLicenseback VehicleLicenseResult::getBack() const
+{
+    return back_;
+}
+
+void VehicleLicenseResult::setBack(const VehicleLicenseback& value)
+{
+    back_ = value;
+    backIsSet_ = true;
+}
+
+bool VehicleLicenseResult::backIsSet() const
+{
+    return backIsSet_;
+}
+
+void VehicleLicenseResult::unsetback()
+{
+    backIsSet_ = false;
 }
 
 }

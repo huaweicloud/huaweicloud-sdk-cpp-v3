@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/ListResizeFlavorsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -32,7 +31,6 @@ web::json::value ListResizeFlavorsResponse::toJson() const
 
     return val;
 }
-
 bool ListResizeFlavorsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ListResizeFlavorsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<ListResizeFlavorsResult>& ListResizeFlavorsResponse::getFlavors()
 {

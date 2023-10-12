@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/SetBackupPolicyRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -32,7 +31,6 @@ web::json::value SetBackupPolicyRequestBody::toJson() const
 
     return val;
 }
-
 bool SetBackupPolicyRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool SetBackupPolicyRequestBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 BackupPolicy SetBackupPolicyRequestBody::getBackupPolicy() const
 {

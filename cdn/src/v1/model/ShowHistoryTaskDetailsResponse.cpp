@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cdn/v1/model/ShowHistoryTaskDetailsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cdn {
@@ -77,7 +76,6 @@ web::json::value ShowHistoryTaskDetailsResponse::toJson() const
 
     return val;
 }
-
 bool ShowHistoryTaskDetailsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -174,6 +172,7 @@ bool ShowHistoryTaskDetailsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ShowHistoryTaskDetailsResponse::getId() const
 {

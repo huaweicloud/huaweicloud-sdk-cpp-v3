@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ims/v2/model/AddImageTagRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ims {
@@ -37,7 +36,6 @@ web::json::value AddImageTagRequest::toJson() const
 
     return val;
 }
-
 bool AddImageTagRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool AddImageTagRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string AddImageTagRequest::getImageId() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sis/v1/model/TranscriberConfig.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sis {
@@ -67,7 +66,6 @@ web::json::value TranscriberConfig::toJson() const
 
     return val;
 }
-
 bool TranscriberConfig::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -146,6 +144,7 @@ bool TranscriberConfig::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string TranscriberConfig::getAudioFormat() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/EnableConfigurationResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -47,7 +46,6 @@ web::json::value EnableConfigurationResponse::toJson() const
 
     return val;
 }
-
 bool EnableConfigurationResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -90,6 +88,7 @@ bool EnableConfigurationResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string EnableConfigurationResponse::getConfigurationId() const
 {

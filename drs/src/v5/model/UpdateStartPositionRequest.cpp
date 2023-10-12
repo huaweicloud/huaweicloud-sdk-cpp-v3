@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v5/model/UpdateStartPositionRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -42,7 +41,6 @@ web::json::value UpdateStartPositionRequest::toJson() const
 
     return val;
 }
-
 bool UpdateStartPositionRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool UpdateStartPositionRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateStartPositionRequest::getJobId() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/NovaServerSchedulerHints.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -36,7 +35,6 @@ web::json::value NovaServerSchedulerHints::toJson() const
 
     return val;
 }
-
 bool NovaServerSchedulerHints::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -61,6 +59,7 @@ bool NovaServerSchedulerHints::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<std::string>& NovaServerSchedulerHints::getTenancy()
 {

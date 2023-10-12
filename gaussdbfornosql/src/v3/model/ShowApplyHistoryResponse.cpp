@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/ShowApplyHistoryResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -32,7 +31,6 @@ web::json::value ShowApplyHistoryResponse::toJson() const
 
     return val;
 }
-
 bool ShowApplyHistoryResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ShowApplyHistoryResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<ApplyHistoryRsp>& ShowApplyHistoryResponse::getHistories()
 {

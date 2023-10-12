@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/tms/v1/model/ListProvidersResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Tms {
@@ -37,7 +36,6 @@ web::json::value ListProvidersResponse::toJson() const
 
     return val;
 }
-
 bool ListProvidersResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ListProvidersResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<ProviderResponseBody>& ListProvidersResponse::getProviders()
 {

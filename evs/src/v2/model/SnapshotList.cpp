@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/evs/v2/model/SnapshotList.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Evs {
@@ -97,7 +96,6 @@ web::json::value SnapshotList::toJson() const
 
     return val;
 }
-
 bool SnapshotList::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -230,6 +228,7 @@ bool SnapshotList::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string SnapshotList::getId() const
 {

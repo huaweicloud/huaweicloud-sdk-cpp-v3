@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/eps/v1/model/Resources.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Eps {
@@ -62,7 +61,6 @@ web::json::value Resources::toJson() const
 
     return val;
 }
-
 bool Resources::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -132,6 +130,7 @@ bool Resources::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string Resources::getEnterpriseProjectId() const
 {

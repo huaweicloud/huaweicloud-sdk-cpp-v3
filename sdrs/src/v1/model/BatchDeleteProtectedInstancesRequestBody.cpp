@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sdrs/v1/model/BatchDeleteProtectedInstancesRequestBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sdrs {
@@ -42,7 +41,6 @@ web::json::value BatchDeleteProtectedInstancesRequestBody::toJson() const
 
     return val;
 }
-
 bool BatchDeleteProtectedInstancesRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool BatchDeleteProtectedInstancesRequestBody::fromJson(const web::json::value& 
     }
     return ok;
 }
+
 
 std::vector<ResourceId>& BatchDeleteProtectedInstancesRequestBody::getProtectedInstances()
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/kms/v2/model/DisableKeyResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Kms {
@@ -32,7 +31,6 @@ web::json::value DisableKeyResponse::toJson() const
 
     return val;
 }
-
 bool DisableKeyResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool DisableKeyResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 KeyStatusInfo DisableKeyResponse::getKeyInfo() const
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbfornosql/v3/model/ShowQuotasResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbfornosql {
@@ -32,7 +31,6 @@ web::json::value ShowQuotasResponse::toJson() const
 
     return val;
 }
-
 bool ShowQuotasResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ShowQuotasResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 ShowResourcesListResponseBody ShowQuotasResponse::getQuotas() const
 {

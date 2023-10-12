@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/csms/v1/model/ListProjectSecretsTagsResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Csms {
@@ -32,7 +31,6 @@ web::json::value ListProjectSecretsTagsResponse::toJson() const
 
     return val;
 }
-
 bool ListProjectSecretsTagsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool ListProjectSecretsTagsResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::vector<TagResponse>& ListProjectSecretsTagsResponse::getTags()
 {

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/UpdateAccessConfigResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -79,7 +78,6 @@ web::json::value UpdateAccessConfigResponse::toJson() const
 
     return val;
 }
-
 bool UpdateAccessConfigResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -185,6 +183,7 @@ bool UpdateAccessConfigResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateAccessConfigResponse::getAccessConfigId() const
 {

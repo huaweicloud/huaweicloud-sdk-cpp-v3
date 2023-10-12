@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/vpc/v2/model/ListSubnetsRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Vpc {
@@ -43,7 +42,6 @@ web::json::value ListSubnetsRequest::toJson() const
 
     return val;
 }
-
 bool ListSubnetsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool ListSubnetsRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int32_t ListSubnetsRequest::getLimit() const
 {

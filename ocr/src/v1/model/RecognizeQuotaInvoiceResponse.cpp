@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ocr/v1/model/RecognizeQuotaInvoiceResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -32,7 +31,6 @@ web::json::value RecognizeQuotaInvoiceResponse::toJson() const
 
     return val;
 }
-
 bool RecognizeQuotaInvoiceResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -48,6 +46,7 @@ bool RecognizeQuotaInvoiceResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 QuotaInvoiceResult RecognizeQuotaInvoiceResponse::getResult() const
 {

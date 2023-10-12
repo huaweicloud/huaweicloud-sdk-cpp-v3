@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/rds/v3/model/ConfigurationForCreation.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -46,7 +45,6 @@ web::json::value ConfigurationForCreation::toJson() const
 
     return val;
 }
-
 bool ConfigurationForCreation::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -89,6 +87,7 @@ bool ConfigurationForCreation::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ConfigurationForCreation::getName() const
 {

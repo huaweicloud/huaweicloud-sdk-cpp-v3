@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/lts/v2/model/TopnRequstBody.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -66,7 +65,6 @@ web::json::value TopnRequstBody::toJson() const
 
     return val;
 }
-
 bool TopnRequstBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -145,6 +143,7 @@ bool TopnRequstBody::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 int64_t TopnRequstBody::getEndTime() const
 {

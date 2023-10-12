@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/cts/v3/model/Lts.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cts {
@@ -43,7 +42,6 @@ web::json::value Lts::toJson() const
 
     return val;
 }
-
 bool Lts::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool Lts::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 bool Lts::isIsLtsEnabled() const
 {

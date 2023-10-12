@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ecs/v2/model/UpdateServerBlockDeviceRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ecs {
@@ -42,7 +41,6 @@ web::json::value UpdateServerBlockDeviceRequest::toJson() const
 
     return val;
 }
-
 bool UpdateServerBlockDeviceRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -76,6 +74,7 @@ bool UpdateServerBlockDeviceRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateServerBlockDeviceRequest::getServerId() const
 {

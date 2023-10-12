@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdbforopengauss/v3/model/DataStroeErrorResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -38,7 +37,6 @@ web::json::value DataStroeErrorResponse::toJson() const
 
     return val;
 }
-
 bool DataStroeErrorResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool DataStroeErrorResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string DataStroeErrorResponse::getErrorCode() const
 {

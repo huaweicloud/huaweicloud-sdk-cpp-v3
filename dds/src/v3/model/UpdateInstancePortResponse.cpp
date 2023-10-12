@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/dds/v3/model/UpdateInstancePortResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Dds {
@@ -38,7 +37,6 @@ web::json::value UpdateInstancePortResponse::toJson() const
 
     return val;
 }
-
 bool UpdateInstancePortResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -63,6 +61,7 @@ bool UpdateInstancePortResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string UpdateInstancePortResponse::getJobId() const
 {

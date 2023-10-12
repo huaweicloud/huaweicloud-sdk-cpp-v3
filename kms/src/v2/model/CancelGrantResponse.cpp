@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/kms/v2/model/CancelGrantResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Kms {
@@ -28,13 +27,13 @@ web::json::value CancelGrantResponse::toJson() const
 
     return val;
 }
-
 bool CancelGrantResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 }
 }

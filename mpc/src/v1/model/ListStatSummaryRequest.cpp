@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/mpc/v1/model/ListStatSummaryRequest.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Mpc {
@@ -43,7 +42,6 @@ web::json::value ListStatSummaryRequest::toJson() const
 
     return val;
 }
-
 bool ListStatSummaryRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -77,6 +75,7 @@ bool ListStatSummaryRequest::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string ListStatSummaryRequest::getStartTime() const
 {

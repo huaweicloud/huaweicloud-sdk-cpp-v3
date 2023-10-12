@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/ResetGaussMySqlPasswordResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -28,13 +27,13 @@ web::json::value ResetGaussMySqlPasswordResponse::toJson() const
 
     return val;
 }
-
 bool ResetGaussMySqlPasswordResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
     return ok;
 }
+
 
 }
 }

@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/sdrs/v1/model/JobEntities.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Sdrs {
@@ -62,7 +61,6 @@ web::json::value JobEntities::toJson() const
 
     return val;
 }
-
 bool JobEntities::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -132,6 +130,7 @@ bool JobEntities::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string JobEntities::getReplicationPairId() const
 {

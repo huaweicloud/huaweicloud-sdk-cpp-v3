@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/gaussdb/v3/model/ListGaussMySqlDedicatedResourcesResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdb {
@@ -37,7 +36,6 @@ web::json::value ListGaussMySqlDedicatedResourcesResponse::toJson() const
 
     return val;
 }
-
 bool ListGaussMySqlDedicatedResourcesResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -62,6 +60,7 @@ bool ListGaussMySqlDedicatedResourcesResponse::fromJson(const web::json::value& 
     }
     return ok;
 }
+
 
 std::vector<DedicatedResource>& ListGaussMySqlDedicatedResourcesResponse::getResources()
 {

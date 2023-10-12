@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/frs/v2/model/AddFacesUrlReq.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Frs {
@@ -47,7 +46,6 @@ web::json::value AddFacesUrlReq::toJson() const
 
     return val;
 }
-
 bool AddFacesUrlReq::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -90,6 +88,7 @@ bool AddFacesUrlReq::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string AddFacesUrlReq::getImageUrl() const
 {

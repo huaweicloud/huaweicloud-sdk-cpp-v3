@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/drs/v3/model/QueryStructProcessResp.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Drs {
@@ -47,7 +46,6 @@ web::json::value QueryStructProcessResp::toJson() const
 
     return val;
 }
-
 bool QueryStructProcessResp::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -90,6 +88,7 @@ bool QueryStructProcessResp::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 std::string QueryStructProcessResp::getJobId() const
 {

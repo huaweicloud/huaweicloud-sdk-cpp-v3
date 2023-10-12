@@ -1,7 +1,6 @@
 
 
 #include "huaweicloud/ivs/v2/model/DetectStandardByNameAndIdResponse.h"
-
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ivs {
@@ -36,7 +35,6 @@ web::json::value DetectStandardByNameAndIdResponse::toJson() const
 
     return val;
 }
-
 bool DetectStandardByNameAndIdResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
@@ -61,6 +59,7 @@ bool DetectStandardByNameAndIdResponse::fromJson(const web::json::value& val)
     }
     return ok;
 }
+
 
 Meta DetectStandardByNameAndIdResponse::getMeta() const
 {

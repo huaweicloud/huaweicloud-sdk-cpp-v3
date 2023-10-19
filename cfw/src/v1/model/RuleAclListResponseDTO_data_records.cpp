@@ -42,6 +42,7 @@ RuleAclListResponseDTO_data_records::RuleAclListResponseDTO_data_records()
     serviceIsSet_ = false;
     type_ = 0;
     typeIsSet_ = false;
+    tagIsSet_ = false;
 }
 
 RuleAclListResponseDTO_data_records::~RuleAclListResponseDTO_data_records() = default;
@@ -104,6 +105,9 @@ web::json::value RuleAclListResponseDTO_data_records::toJson() const
     }
     if(typeIsSet_) {
         val[utility::conversions::to_string_t("type")] = ModelBase::toJson(type_);
+    }
+    if(tagIsSet_) {
+        val[utility::conversions::to_string_t("tag")] = ModelBase::toJson(tag_);
     }
 
     return val;
@@ -263,6 +267,15 @@ bool RuleAclListResponseDTO_data_records::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("tag"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("tag"));
+        if(!fieldValue.is_null())
+        {
+            TagsVO refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTag(refVal);
         }
     }
     return ok;
@@ -624,6 +637,27 @@ bool RuleAclListResponseDTO_data_records::typeIsSet() const
 void RuleAclListResponseDTO_data_records::unsettype()
 {
     typeIsSet_ = false;
+}
+
+TagsVO RuleAclListResponseDTO_data_records::getTag() const
+{
+    return tag_;
+}
+
+void RuleAclListResponseDTO_data_records::setTag(const TagsVO& value)
+{
+    tag_ = value;
+    tagIsSet_ = true;
+}
+
+bool RuleAclListResponseDTO_data_records::tagIsSet() const
+{
+    return tagIsSet_;
+}
+
+void RuleAclListResponseDTO_data_records::unsettag()
+{
+    tagIsSet_ = false;
 }
 
 }

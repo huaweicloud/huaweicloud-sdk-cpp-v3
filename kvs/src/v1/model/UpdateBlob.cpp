@@ -18,7 +18,6 @@ UpdateBlob::UpdateBlob()
     offsetIsSet_ = false;
     len_ = 0;
     lenIsSet_ = false;
-    blobdata_ = 0;
     blobdataIsSet_ = false;
 }
 
@@ -159,12 +158,12 @@ void UpdateBlob::unsetlen()
     lenIsSet_ = false;
 }
 
-int32_t UpdateBlob::getBlobdata() const
+BsonBinary UpdateBlob::getBlobdata() const
 {
     return blobdata_;
 }
 
-void UpdateBlob::setBlobdata(int32_t value)
+void UpdateBlob::setBlobdata(const BsonBinary& value)
 {
     blobdata_ = value;
     blobdataIsSet_ = true;

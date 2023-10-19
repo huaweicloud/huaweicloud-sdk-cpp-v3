@@ -65,6 +65,15 @@ public:
     void unsetuserData();
     void setUserData(const std::string& value);
 
+    /// <summary>
+    /// 如果您已拥有操作系统或软件的许可证（一般是指按物理插槽数、物理内核数等进行认证的许可证），您可以通过自带许可（BYOL）的方式将业务完整迁移到云平台，继续使用您的许可证。 - true： 使用自有license - 其他值： 视为非法参数，接口报错
+    /// </summary>
+
+    std::string getByol() const;
+    bool byolIsSet() const;
+    void unsetbyol();
+    void setByol(const std::string& value);
+
 
 protected:
     std::string systemEncrypted_;
@@ -73,6 +82,8 @@ protected:
     bool systemCmkidIsSet_;
     std::string userData_;
     bool userDataIsSet_;
+    std::string byol_;
+    bool byolIsSet_;
 
 };
 

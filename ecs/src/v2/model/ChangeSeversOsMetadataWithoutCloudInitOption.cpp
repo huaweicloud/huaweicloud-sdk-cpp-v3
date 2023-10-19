@@ -16,6 +16,8 @@ ChangeSeversOsMetadataWithoutCloudInitOption::ChangeSeversOsMetadataWithoutCloud
     systemEncryptedIsSet_ = false;
     systemCmkid_ = "";
     systemCmkidIsSet_ = false;
+    byol_ = "";
+    byolIsSet_ = false;
 }
 
 ChangeSeversOsMetadataWithoutCloudInitOption::~ChangeSeversOsMetadataWithoutCloudInitOption() = default;
@@ -33,6 +35,9 @@ web::json::value ChangeSeversOsMetadataWithoutCloudInitOption::toJson() const
     }
     if(systemCmkidIsSet_) {
         val[utility::conversions::to_string_t("__system__cmkid")] = ModelBase::toJson(systemCmkid_);
+    }
+    if(byolIsSet_) {
+        val[utility::conversions::to_string_t("BYOL")] = ModelBase::toJson(byol_);
     }
 
     return val;
@@ -57,6 +62,15 @@ bool ChangeSeversOsMetadataWithoutCloudInitOption::fromJson(const web::json::val
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSystemCmkid(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("BYOL"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("BYOL"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setByol(refVal);
         }
     }
     return ok;
@@ -103,6 +117,27 @@ bool ChangeSeversOsMetadataWithoutCloudInitOption::systemCmkidIsSet() const
 void ChangeSeversOsMetadataWithoutCloudInitOption::unsetsystemCmkid()
 {
     systemCmkidIsSet_ = false;
+}
+
+std::string ChangeSeversOsMetadataWithoutCloudInitOption::getByol() const
+{
+    return byol_;
+}
+
+void ChangeSeversOsMetadataWithoutCloudInitOption::setByol(const std::string& value)
+{
+    byol_ = value;
+    byolIsSet_ = true;
+}
+
+bool ChangeSeversOsMetadataWithoutCloudInitOption::byolIsSet() const
+{
+    return byolIsSet_;
+}
+
+void ChangeSeversOsMetadataWithoutCloudInitOption::unsetbyol()
+{
+    byolIsSet_ = false;
 }
 
 }

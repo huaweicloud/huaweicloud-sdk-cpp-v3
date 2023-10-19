@@ -36,6 +36,8 @@ HttpQueryCfwFlowLogsResponseDTO_data_records::HttpQueryCfwFlowLogsResponseDTO_da
     dstPortIsSet_ = false;
     protocol_ = "";
     protocolIsSet_ = false;
+    dstHost_ = "";
+    dstHostIsSet_ = false;
 }
 
 HttpQueryCfwFlowLogsResponseDTO_data_records::~HttpQueryCfwFlowLogsResponseDTO_data_records() = default;
@@ -83,6 +85,9 @@ web::json::value HttpQueryCfwFlowLogsResponseDTO_data_records::toJson() const
     }
     if(protocolIsSet_) {
         val[utility::conversions::to_string_t("protocol")] = ModelBase::toJson(protocol_);
+    }
+    if(dstHostIsSet_) {
+        val[utility::conversions::to_string_t("dst_host")] = ModelBase::toJson(dstHost_);
     }
 
     return val;
@@ -197,6 +202,15 @@ bool HttpQueryCfwFlowLogsResponseDTO_data_records::fromJson(const web::json::val
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setProtocol(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("dst_host"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("dst_host"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDstHost(refVal);
         }
     }
     return ok;
@@ -453,6 +467,27 @@ bool HttpQueryCfwFlowLogsResponseDTO_data_records::protocolIsSet() const
 void HttpQueryCfwFlowLogsResponseDTO_data_records::unsetprotocol()
 {
     protocolIsSet_ = false;
+}
+
+std::string HttpQueryCfwFlowLogsResponseDTO_data_records::getDstHost() const
+{
+    return dstHost_;
+}
+
+void HttpQueryCfwFlowLogsResponseDTO_data_records::setDstHost(const std::string& value)
+{
+    dstHost_ = value;
+    dstHostIsSet_ = true;
+}
+
+bool HttpQueryCfwFlowLogsResponseDTO_data_records::dstHostIsSet() const
+{
+    return dstHostIsSet_;
+}
+
+void HttpQueryCfwFlowLogsResponseDTO_data_records::unsetdstHost()
+{
+    dstHostIsSet_ = false;
 }
 
 }

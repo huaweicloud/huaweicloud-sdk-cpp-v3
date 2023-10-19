@@ -38,6 +38,7 @@ AddRuleAclDto_rules::AddRuleAclDto_rules()
     sourceIsSet_ = false;
     destinationIsSet_ = false;
     serviceIsSet_ = false;
+    tagIsSet_ = false;
 }
 
 AddRuleAclDto_rules::~AddRuleAclDto_rules() = default;
@@ -94,6 +95,9 @@ web::json::value AddRuleAclDto_rules::toJson() const
     }
     if(serviceIsSet_) {
         val[utility::conversions::to_string_t("service")] = ModelBase::toJson(service_);
+    }
+    if(tagIsSet_) {
+        val[utility::conversions::to_string_t("tag")] = ModelBase::toJson(tag_);
     }
 
     return val;
@@ -235,6 +239,15 @@ bool AddRuleAclDto_rules::fromJson(const web::json::value& val)
             RuleServiceDto refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setService(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("tag"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("tag"));
+        if(!fieldValue.is_null())
+        {
+            TagsVO refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTag(refVal);
         }
     }
     return ok;
@@ -554,6 +567,27 @@ bool AddRuleAclDto_rules::serviceIsSet() const
 void AddRuleAclDto_rules::unsetservice()
 {
     serviceIsSet_ = false;
+}
+
+TagsVO AddRuleAclDto_rules::getTag() const
+{
+    return tag_;
+}
+
+void AddRuleAclDto_rules::setTag(const TagsVO& value)
+{
+    tag_ = value;
+    tagIsSet_ = true;
+}
+
+bool AddRuleAclDto_rules::tagIsSet() const
+{
+    return tagIsSet_;
+}
+
+void AddRuleAclDto_rules::unsettag()
+{
+    tagIsSet_ = false;
 }
 
 }

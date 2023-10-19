@@ -178,6 +178,24 @@ public:
     void unsetenterpriseProjectId();
     void setEnterpriseProjectId(const std::string& value);
 
+    /// <summary>
+    /// 资源id
+    /// </summary>
+
+    std::string getResourceId() const;
+    bool resourceIdIsSet() const;
+    void unsetresourceId();
+    void setResourceId(const std::string& value);
+
+    /// <summary>
+    /// 是否支持url过滤，true表示是，false表示不是
+    /// </summary>
+
+    bool isSupportUrlFiltering() const;
+    bool supportUrlFilteringIsSet() const;
+    void unsetsupportUrlFiltering();
+    void setSupportUrlFiltering(bool value);
+
 
 protected:
     std::string fwInstanceId_;
@@ -210,6 +228,10 @@ protected:
     bool fwInstanceNameIsSet_;
     std::string enterpriseProjectId_;
     bool enterpriseProjectIdIsSet_;
+    std::string resourceId_;
+    bool resourceIdIsSet_;
+    bool supportUrlFiltering_;
+    bool supportUrlFilteringIsSet_;
 
 };
 

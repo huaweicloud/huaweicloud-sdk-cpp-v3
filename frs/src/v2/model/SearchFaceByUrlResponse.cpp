@@ -13,6 +13,8 @@ namespace Model {
 SearchFaceByUrlResponse::SearchFaceByUrlResponse()
 {
     facesIsSet_ = false;
+    xRequestId_ = "";
+    xRequestIdIsSet_ = false;
 }
 
 SearchFaceByUrlResponse::~SearchFaceByUrlResponse() = default;
@@ -28,6 +30,9 @@ web::json::value SearchFaceByUrlResponse::toJson() const
     if(facesIsSet_) {
         val[utility::conversions::to_string_t("faces")] = ModelBase::toJson(faces_);
     }
+    if(xRequestIdIsSet_) {
+        val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
+    }
 
     return val;
 }
@@ -42,6 +47,15 @@ bool SearchFaceByUrlResponse::fromJson(const web::json::value& val)
             std::vector<SearchFace> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFaces(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Request-Id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXRequestId(refVal);
         }
     }
     return ok;
@@ -67,6 +81,27 @@ bool SearchFaceByUrlResponse::facesIsSet() const
 void SearchFaceByUrlResponse::unsetfaces()
 {
     facesIsSet_ = false;
+}
+
+std::string SearchFaceByUrlResponse::getXRequestId() const
+{
+    return xRequestId_;
+}
+
+void SearchFaceByUrlResponse::setXRequestId(const std::string& value)
+{
+    xRequestId_ = value;
+    xRequestIdIsSet_ = true;
+}
+
+bool SearchFaceByUrlResponse::xRequestIdIsSet() const
+{
+    return xRequestIdIsSet_;
+}
+
+void SearchFaceByUrlResponse::unsetxRequestId()
+{
+    xRequestIdIsSet_ = false;
 }
 
 }

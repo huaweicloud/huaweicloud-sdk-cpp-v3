@@ -67,6 +67,15 @@ public:
     void unsetfaces();
     void setFaces(const std::vector<FaceSetFace>& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    std::string getXRequestId() const;
+    bool xRequestIdIsSet() const;
+    void unsetxRequestId();
+    void setXRequestId(const std::string& value);
+
 
 protected:
     std::string faceSetId_;
@@ -75,6 +84,8 @@ protected:
     bool faceSetNameIsSet_;
     std::vector<FaceSetFace> faces_;
     bool facesIsSet_;
+    std::string xRequestId_;
+    bool xRequestIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

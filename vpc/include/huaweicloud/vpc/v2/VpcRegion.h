@@ -106,6 +106,10 @@ public:
             { 
                 "https://vpc.me-east-1.myhuaweicloud.com"
             });
+        regions["ae-ad-1"] = Region("ae-ad-1",
+            { 
+                "https://vpc.ae-ad-1.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

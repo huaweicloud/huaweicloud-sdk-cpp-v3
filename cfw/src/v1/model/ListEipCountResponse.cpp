@@ -1,0 +1,78 @@
+
+
+#include "huaweicloud/cfw/v1/model/ListEipCountResponse.h"
+namespace HuaweiCloud {
+namespace Sdk {
+namespace Cfw {
+namespace V1 {
+namespace Model {
+
+
+
+
+ListEipCountResponse::ListEipCountResponse()
+{
+    dataIsSet_ = false;
+}
+
+ListEipCountResponse::~ListEipCountResponse() = default;
+
+void ListEipCountResponse::validate()
+{
+}
+
+web::json::value ListEipCountResponse::toJson() const
+{
+    web::json::value val = web::json::value::object();
+
+    if(dataIsSet_) {
+        val[utility::conversions::to_string_t("data")] = ModelBase::toJson(data_);
+    }
+
+    return val;
+}
+bool ListEipCountResponse::fromJson(const web::json::value& val)
+{
+    bool ok = true;
+    
+    if(val.has_field(utility::conversions::to_string_t("data"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("data"));
+        if(!fieldValue.is_null())
+        {
+            EipCountRespData refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setData(refVal);
+        }
+    }
+    return ok;
+}
+
+
+EipCountRespData ListEipCountResponse::getData() const
+{
+    return data_;
+}
+
+void ListEipCountResponse::setData(const EipCountRespData& value)
+{
+    data_ = value;
+    dataIsSet_ = true;
+}
+
+bool ListEipCountResponse::dataIsSet() const
+{
+    return dataIsSet_;
+}
+
+void ListEipCountResponse::unsetdata()
+{
+    dataIsSet_ = false;
+}
+
+}
+}
+}
+}
+}
+
+

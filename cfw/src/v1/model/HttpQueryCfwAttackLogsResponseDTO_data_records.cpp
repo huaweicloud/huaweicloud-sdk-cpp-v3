@@ -48,6 +48,16 @@ HttpQueryCfwAttackLogsResponseDTO_data_records::HttpQueryCfwAttackLogsResponseDT
     app_ = "";
     appIsSet_ = false;
     packetMessagesIsSet_ = false;
+    dstHost_ = "";
+    dstHostIsSet_ = false;
+    srcRegionId_ = "";
+    srcRegionIdIsSet_ = false;
+    srcRegionName_ = "";
+    srcRegionNameIsSet_ = false;
+    dstRegionId_ = "";
+    dstRegionIdIsSet_ = false;
+    dstRegionName_ = "";
+    dstRegionNameIsSet_ = false;
 }
 
 HttpQueryCfwAttackLogsResponseDTO_data_records::~HttpQueryCfwAttackLogsResponseDTO_data_records() = default;
@@ -116,6 +126,21 @@ web::json::value HttpQueryCfwAttackLogsResponseDTO_data_records::toJson() const
     }
     if(packetMessagesIsSet_) {
         val[utility::conversions::to_string_t("packetMessages")] = ModelBase::toJson(packetMessages_);
+    }
+    if(dstHostIsSet_) {
+        val[utility::conversions::to_string_t("dst_host")] = ModelBase::toJson(dstHost_);
+    }
+    if(srcRegionIdIsSet_) {
+        val[utility::conversions::to_string_t("src_region_id")] = ModelBase::toJson(srcRegionId_);
+    }
+    if(srcRegionNameIsSet_) {
+        val[utility::conversions::to_string_t("src_region_name")] = ModelBase::toJson(srcRegionName_);
+    }
+    if(dstRegionIdIsSet_) {
+        val[utility::conversions::to_string_t("dst_region_id")] = ModelBase::toJson(dstRegionId_);
+    }
+    if(dstRegionNameIsSet_) {
+        val[utility::conversions::to_string_t("dst_region_name")] = ModelBase::toJson(dstRegionName_);
     }
 
     return val;
@@ -293,6 +318,51 @@ bool HttpQueryCfwAttackLogsResponseDTO_data_records::fromJson(const web::json::v
             std::vector<PacketMessage> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPacketMessages(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("dst_host"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("dst_host"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDstHost(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("src_region_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("src_region_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSrcRegionId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("src_region_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("src_region_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSrcRegionName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("dst_region_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("dst_region_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDstRegionId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("dst_region_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("dst_region_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDstRegionName(refVal);
         }
     }
     return ok;
@@ -696,6 +766,111 @@ bool HttpQueryCfwAttackLogsResponseDTO_data_records::packetMessagesIsSet() const
 void HttpQueryCfwAttackLogsResponseDTO_data_records::unsetpacketMessages()
 {
     packetMessagesIsSet_ = false;
+}
+
+std::string HttpQueryCfwAttackLogsResponseDTO_data_records::getDstHost() const
+{
+    return dstHost_;
+}
+
+void HttpQueryCfwAttackLogsResponseDTO_data_records::setDstHost(const std::string& value)
+{
+    dstHost_ = value;
+    dstHostIsSet_ = true;
+}
+
+bool HttpQueryCfwAttackLogsResponseDTO_data_records::dstHostIsSet() const
+{
+    return dstHostIsSet_;
+}
+
+void HttpQueryCfwAttackLogsResponseDTO_data_records::unsetdstHost()
+{
+    dstHostIsSet_ = false;
+}
+
+std::string HttpQueryCfwAttackLogsResponseDTO_data_records::getSrcRegionId() const
+{
+    return srcRegionId_;
+}
+
+void HttpQueryCfwAttackLogsResponseDTO_data_records::setSrcRegionId(const std::string& value)
+{
+    srcRegionId_ = value;
+    srcRegionIdIsSet_ = true;
+}
+
+bool HttpQueryCfwAttackLogsResponseDTO_data_records::srcRegionIdIsSet() const
+{
+    return srcRegionIdIsSet_;
+}
+
+void HttpQueryCfwAttackLogsResponseDTO_data_records::unsetsrcRegionId()
+{
+    srcRegionIdIsSet_ = false;
+}
+
+std::string HttpQueryCfwAttackLogsResponseDTO_data_records::getSrcRegionName() const
+{
+    return srcRegionName_;
+}
+
+void HttpQueryCfwAttackLogsResponseDTO_data_records::setSrcRegionName(const std::string& value)
+{
+    srcRegionName_ = value;
+    srcRegionNameIsSet_ = true;
+}
+
+bool HttpQueryCfwAttackLogsResponseDTO_data_records::srcRegionNameIsSet() const
+{
+    return srcRegionNameIsSet_;
+}
+
+void HttpQueryCfwAttackLogsResponseDTO_data_records::unsetsrcRegionName()
+{
+    srcRegionNameIsSet_ = false;
+}
+
+std::string HttpQueryCfwAttackLogsResponseDTO_data_records::getDstRegionId() const
+{
+    return dstRegionId_;
+}
+
+void HttpQueryCfwAttackLogsResponseDTO_data_records::setDstRegionId(const std::string& value)
+{
+    dstRegionId_ = value;
+    dstRegionIdIsSet_ = true;
+}
+
+bool HttpQueryCfwAttackLogsResponseDTO_data_records::dstRegionIdIsSet() const
+{
+    return dstRegionIdIsSet_;
+}
+
+void HttpQueryCfwAttackLogsResponseDTO_data_records::unsetdstRegionId()
+{
+    dstRegionIdIsSet_ = false;
+}
+
+std::string HttpQueryCfwAttackLogsResponseDTO_data_records::getDstRegionName() const
+{
+    return dstRegionName_;
+}
+
+void HttpQueryCfwAttackLogsResponseDTO_data_records::setDstRegionName(const std::string& value)
+{
+    dstRegionName_ = value;
+    dstRegionNameIsSet_ = true;
+}
+
+bool HttpQueryCfwAttackLogsResponseDTO_data_records::dstRegionNameIsSet() const
+{
+    return dstRegionNameIsSet_;
+}
+
+void HttpQueryCfwAttackLogsResponseDTO_data_records::unsetdstRegionName()
+{
+    dstRegionNameIsSet_ = false;
 }
 
 }

@@ -14,6 +14,8 @@ DetectStandardByNameAndIdResponse::DetectStandardByNameAndIdResponse()
 {
     metaIsSet_ = false;
     resultIsSet_ = false;
+    xRequestId_ = "";
+    xRequestIdIsSet_ = false;
 }
 
 DetectStandardByNameAndIdResponse::~DetectStandardByNameAndIdResponse() = default;
@@ -31,6 +33,9 @@ web::json::value DetectStandardByNameAndIdResponse::toJson() const
     }
     if(resultIsSet_) {
         val[utility::conversions::to_string_t("result")] = ModelBase::toJson(result_);
+    }
+    if(xRequestIdIsSet_) {
+        val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
     }
 
     return val;
@@ -55,6 +60,15 @@ bool DetectStandardByNameAndIdResponse::fromJson(const web::json::value& val)
             IvsStandardByNameAndIdResponseBody_result refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResult(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Request-Id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXRequestId(refVal);
         }
     }
     return ok;
@@ -101,6 +115,27 @@ bool DetectStandardByNameAndIdResponse::resultIsSet() const
 void DetectStandardByNameAndIdResponse::unsetresult()
 {
     resultIsSet_ = false;
+}
+
+std::string DetectStandardByNameAndIdResponse::getXRequestId() const
+{
+    return xRequestId_;
+}
+
+void DetectStandardByNameAndIdResponse::setXRequestId(const std::string& value)
+{
+    xRequestId_ = value;
+    xRequestIdIsSet_ = true;
+}
+
+bool DetectStandardByNameAndIdResponse::xRequestIdIsSet() const
+{
+    return xRequestIdIsSet_;
+}
+
+void DetectStandardByNameAndIdResponse::unsetxRequestId()
+{
+    xRequestIdIsSet_ = false;
 }
 
 }

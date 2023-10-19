@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -105,10 +106,10 @@ public:
     /// 存储库ID
     /// </summary>
 
-    std::string getId() const;
+    std::vector<std::string>& getId();
     bool idIsSet() const;
     void unsetid();
-    void setId(const std::string& value);
+    void setId(const std::vector<std::string>& value);
 
     /// <summary>
     /// 策略ID
@@ -153,7 +154,7 @@ protected:
     bool objectTypeIsSet_;
     std::string enterpriseProjectId_;
     bool enterpriseProjectIdIsSet_;
-    std::string id_;
+    std::vector<std::string> id_;
     bool idIsSet_;
     std::string policyId_;
     bool policyIdIsSet_;

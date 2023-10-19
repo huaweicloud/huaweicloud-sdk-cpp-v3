@@ -26,6 +26,8 @@ SubnetInfo::SubnetInfo()
     vpcIdIsSet_ = false;
     status_ = "";
     statusIsSet_ = false;
+    ipv6Enable_ = false;
+    ipv6EnableIsSet_ = false;
 }
 
 SubnetInfo::~SubnetInfo() = default;
@@ -58,6 +60,9 @@ web::json::value SubnetInfo::toJson() const
     }
     if(statusIsSet_) {
         val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
+    }
+    if(ipv6EnableIsSet_) {
+        val[utility::conversions::to_string_t("ipv6_enable")] = ModelBase::toJson(ipv6Enable_);
     }
 
     return val;
@@ -127,6 +132,15 @@ bool SubnetInfo::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("ipv6_enable"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ipv6_enable"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIpv6Enable(refVal);
         }
     }
     return ok;
@@ -278,6 +292,27 @@ bool SubnetInfo::statusIsSet() const
 void SubnetInfo::unsetstatus()
 {
     statusIsSet_ = false;
+}
+
+bool SubnetInfo::isIpv6Enable() const
+{
+    return ipv6Enable_;
+}
+
+void SubnetInfo::setIpv6Enable(bool value)
+{
+    ipv6Enable_ = value;
+    ipv6EnableIsSet_ = true;
+}
+
+bool SubnetInfo::ipv6EnableIsSet() const
+{
+    return ipv6EnableIsSet_;
+}
+
+void SubnetInfo::unsetipv6Enable()
+{
+    ipv6EnableIsSet_ = false;
 }
 
 }

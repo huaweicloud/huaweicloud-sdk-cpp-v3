@@ -82,24 +82,6 @@ HttpRequestDef SisMeta::genRequestDefForRecognizeShortAudio() {
     return reqDefBuilder;
 }
 
-HttpRequestDef SisMeta::genRequestDefForRunAudioAssessment() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef bodyParam;
-    reqDefBuilder.withRequestField(bodyParam.
-        withName("Body").
-        withLocationType(Body_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef SisMeta::genRequestDefForRunMultiModalAssessment() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef bodyParam;
-    reqDefBuilder.withRequestField(bodyParam.
-        withName("Body").
-        withLocationType(Body_));
-    return reqDefBuilder;
-}
-
 HttpRequestDef SisMeta::genRequestDefForRunTts() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;

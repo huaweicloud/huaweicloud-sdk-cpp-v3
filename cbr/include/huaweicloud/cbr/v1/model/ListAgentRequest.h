@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -69,10 +70,10 @@ public:
     /// 客户端ID
     /// </summary>
 
-    std::string getAgentId() const;
+    std::vector<std::string>& getAgentId();
     bool agentIdIsSet() const;
     void unsetagentId();
-    void setAgentId(const std::string& value);
+    void setAgentId(const std::vector<std::string>& value);
 
 
 protected:
@@ -82,7 +83,7 @@ protected:
     bool offsetIsSet_;
     std::string status_;
     bool statusIsSet_;
-    std::string agentId_;
+    std::vector<std::string> agentId_;
     bool agentIdIsSet_;
 
 #ifdef RTTR_FLAG

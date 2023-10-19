@@ -19,6 +19,11 @@ HttpRequestDef FrsMeta::genRequestDefForAddFacesByBase64() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -34,6 +39,11 @@ HttpRequestDef FrsMeta::genRequestDefForAddFacesByFile() {
                   withName("").
                   withName("Body").
                   withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -48,6 +58,11 @@ HttpRequestDef FrsMeta::genRequestDefForAddFacesByUrl() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -62,6 +77,11 @@ HttpRequestDef FrsMeta::genRequestDefForBatchDeleteFaces() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -76,6 +96,11 @@ HttpRequestDef FrsMeta::genRequestDefForCompareFaceByBase64() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -91,6 +116,11 @@ HttpRequestDef FrsMeta::genRequestDefForCompareFaceByFile() {
                   withName("").
                   withName("Body").
                   withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -105,6 +135,11 @@ HttpRequestDef FrsMeta::genRequestDefForCompareFaceByUrl() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -119,6 +154,11 @@ HttpRequestDef FrsMeta::genRequestDefForCreateFaceSet() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -132,6 +172,11 @@ HttpRequestDef FrsMeta::genRequestDefForDeleteFaceByExternalImageId() {
                   .withName("EnterpriseProjectId")
                   .withJsonTag("Enterprise-Project-Id")
                   .withLocationType(Header_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -145,6 +190,11 @@ HttpRequestDef FrsMeta::genRequestDefForDeleteFaceByFaceId() {
                   .withName("EnterpriseProjectId")
                   .withJsonTag("Enterprise-Project-Id")
                   .withLocationType(Header_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -155,6 +205,11 @@ HttpRequestDef FrsMeta::genRequestDefForDeleteFaceSet() {
                   .withName("EnterpriseProjectId")
                   .withJsonTag("Enterprise-Project-Id")
                   .withLocationType(Header_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -169,6 +224,11 @@ HttpRequestDef FrsMeta::genRequestDefForDetectFaceByBase64() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -183,6 +243,11 @@ HttpRequestDef FrsMeta::genRequestDefForDetectFaceByBase64Intl() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -198,6 +263,11 @@ HttpRequestDef FrsMeta::genRequestDefForDetectFaceByFile() {
                   withName("").
                   withName("Body").
                   withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -213,6 +283,11 @@ HttpRequestDef FrsMeta::genRequestDefForDetectFaceByFileIntl() {
                   withName("").
                   withName("Body").
                   withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -227,6 +302,11 @@ HttpRequestDef FrsMeta::genRequestDefForDetectFaceByUrl() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -241,6 +321,11 @@ HttpRequestDef FrsMeta::genRequestDefForDetectFaceByUrlIntl() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -255,6 +340,11 @@ HttpRequestDef FrsMeta::genRequestDefForDetectLiveByBase64() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -269,6 +359,11 @@ HttpRequestDef FrsMeta::genRequestDefForDetectLiveByBase64Intl() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -284,6 +379,11 @@ HttpRequestDef FrsMeta::genRequestDefForDetectLiveByFile() {
                   withName("").
                   withName("Body").
                   withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -299,6 +399,11 @@ HttpRequestDef FrsMeta::genRequestDefForDetectLiveByFileIntl() {
                   withName("").
                   withName("Body").
                   withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -313,6 +418,11 @@ HttpRequestDef FrsMeta::genRequestDefForDetectLiveByUrl() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -327,6 +437,11 @@ HttpRequestDef FrsMeta::genRequestDefForDetectLiveByUrlIntl() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -341,6 +456,11 @@ HttpRequestDef FrsMeta::genRequestDefForDetectLiveFaceByBase64() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -356,6 +476,11 @@ HttpRequestDef FrsMeta::genRequestDefForDetectLiveFaceByFile() {
                   withName("").
                   withName("Body").
                   withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -370,6 +495,11 @@ HttpRequestDef FrsMeta::genRequestDefForDetectLiveFaceByUrl() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -384,6 +514,11 @@ HttpRequestDef FrsMeta::genRequestDefForSearchFaceByBase64() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -398,6 +533,11 @@ HttpRequestDef FrsMeta::genRequestDefForSearchFaceByFaceId() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -413,6 +553,11 @@ HttpRequestDef FrsMeta::genRequestDefForSearchFaceByFile() {
                   withName("").
                   withName("Body").
                   withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -427,6 +572,11 @@ HttpRequestDef FrsMeta::genRequestDefForSearchFaceByUrl() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -437,6 +587,11 @@ HttpRequestDef FrsMeta::genRequestDefForShowAllFaceSets() {
                   .withName("EnterpriseProjectId")
                   .withJsonTag("Enterprise-Project-Id")
                   .withLocationType(Header_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -447,6 +602,11 @@ HttpRequestDef FrsMeta::genRequestDefForShowFaceSet() {
                   .withName("EnterpriseProjectId")
                   .withJsonTag("Enterprise-Project-Id")
                   .withLocationType(Header_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -460,6 +620,11 @@ HttpRequestDef FrsMeta::genRequestDefForShowFacesByFaceId() {
                   .withName("EnterpriseProjectId")
                   .withJsonTag("Enterprise-Project-Id")
                   .withLocationType(Header_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -476,6 +641,11 @@ HttpRequestDef FrsMeta::genRequestDefForShowFacesByLimit() {
                   .withName("EnterpriseProjectId")
                   .withJsonTag("Enterprise-Project-Id")
                   .withLocationType(Header_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -490,6 +660,11 @@ HttpRequestDef FrsMeta::genRequestDefForUpdateFace() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 

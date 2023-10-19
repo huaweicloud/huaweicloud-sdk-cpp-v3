@@ -44,6 +44,12 @@ ListAccessControlLogsRequest::ListAccessControlLogsRequest()
     logTypeIsSet_ = false;
     enterpriseProjectId_ = "";
     enterpriseProjectIdIsSet_ = false;
+    dstHost_ = "";
+    dstHostIsSet_ = false;
+    ruleName_ = "";
+    ruleNameIsSet_ = false;
+    action_ = "";
+    actionIsSet_ = false;
 }
 
 ListAccessControlLogsRequest::~ListAccessControlLogsRequest() = default;
@@ -103,6 +109,15 @@ web::json::value ListAccessControlLogsRequest::toJson() const
     }
     if(enterpriseProjectIdIsSet_) {
         val[utility::conversions::to_string_t("enterprise_project_id")] = ModelBase::toJson(enterpriseProjectId_);
+    }
+    if(dstHostIsSet_) {
+        val[utility::conversions::to_string_t("dst_host")] = ModelBase::toJson(dstHost_);
+    }
+    if(ruleNameIsSet_) {
+        val[utility::conversions::to_string_t("rule_name")] = ModelBase::toJson(ruleName_);
+    }
+    if(actionIsSet_) {
+        val[utility::conversions::to_string_t("action")] = ModelBase::toJson(action_);
     }
 
     return val;
@@ -253,6 +268,33 @@ bool ListAccessControlLogsRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEnterpriseProjectId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("dst_host"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("dst_host"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDstHost(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("rule_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("rule_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRuleName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("action"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("action"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAction(refVal);
         }
     }
     return ok;
@@ -593,6 +635,69 @@ bool ListAccessControlLogsRequest::enterpriseProjectIdIsSet() const
 void ListAccessControlLogsRequest::unsetenterpriseProjectId()
 {
     enterpriseProjectIdIsSet_ = false;
+}
+
+std::string ListAccessControlLogsRequest::getDstHost() const
+{
+    return dstHost_;
+}
+
+void ListAccessControlLogsRequest::setDstHost(const std::string& value)
+{
+    dstHost_ = value;
+    dstHostIsSet_ = true;
+}
+
+bool ListAccessControlLogsRequest::dstHostIsSet() const
+{
+    return dstHostIsSet_;
+}
+
+void ListAccessControlLogsRequest::unsetdstHost()
+{
+    dstHostIsSet_ = false;
+}
+
+std::string ListAccessControlLogsRequest::getRuleName() const
+{
+    return ruleName_;
+}
+
+void ListAccessControlLogsRequest::setRuleName(const std::string& value)
+{
+    ruleName_ = value;
+    ruleNameIsSet_ = true;
+}
+
+bool ListAccessControlLogsRequest::ruleNameIsSet() const
+{
+    return ruleNameIsSet_;
+}
+
+void ListAccessControlLogsRequest::unsetruleName()
+{
+    ruleNameIsSet_ = false;
+}
+
+std::string ListAccessControlLogsRequest::getAction() const
+{
+    return action_;
+}
+
+void ListAccessControlLogsRequest::setAction(const std::string& value)
+{
+    action_ = value;
+    actionIsSet_ = true;
+}
+
+bool ListAccessControlLogsRequest::actionIsSet() const
+{
+    return actionIsSet_;
+}
+
+void ListAccessControlLogsRequest::unsetaction()
+{
+    actionIsSet_ = false;
 }
 
 }

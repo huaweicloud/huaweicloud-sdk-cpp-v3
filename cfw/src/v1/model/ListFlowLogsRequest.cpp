@@ -44,6 +44,8 @@ ListFlowLogsRequest::ListFlowLogsRequest()
     limitIsSet_ = false;
     enterpriseProjectId_ = "";
     enterpriseProjectIdIsSet_ = false;
+    dstHost_ = "";
+    dstHostIsSet_ = false;
 }
 
 ListFlowLogsRequest::~ListFlowLogsRequest() = default;
@@ -103,6 +105,9 @@ web::json::value ListFlowLogsRequest::toJson() const
     }
     if(enterpriseProjectIdIsSet_) {
         val[utility::conversions::to_string_t("enterprise_project_id")] = ModelBase::toJson(enterpriseProjectId_);
+    }
+    if(dstHostIsSet_) {
+        val[utility::conversions::to_string_t("dst_host")] = ModelBase::toJson(dstHost_);
     }
 
     return val;
@@ -253,6 +258,15 @@ bool ListFlowLogsRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEnterpriseProjectId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("dst_host"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("dst_host"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDstHost(refVal);
         }
     }
     return ok;
@@ -593,6 +607,27 @@ bool ListFlowLogsRequest::enterpriseProjectIdIsSet() const
 void ListFlowLogsRequest::unsetenterpriseProjectId()
 {
     enterpriseProjectIdIsSet_ = false;
+}
+
+std::string ListFlowLogsRequest::getDstHost() const
+{
+    return dstHost_;
+}
+
+void ListFlowLogsRequest::setDstHost(const std::string& value)
+{
+    dstHost_ = value;
+    dstHostIsSet_ = true;
+}
+
+bool ListFlowLogsRequest::dstHostIsSet() const
+{
+    return dstHostIsSet_;
+}
+
+void ListFlowLogsRequest::unsetdstHost()
+{
+    dstHostIsSet_ = false;
 }
 
 }

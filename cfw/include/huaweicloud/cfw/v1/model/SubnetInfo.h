@@ -101,6 +101,15 @@ public:
     void unsetstatus();
     void setStatus(const std::string& value);
 
+    /// <summary>
+    /// 是否支持ipv6，boolean值为true表示是，false表示否
+    /// </summary>
+
+    bool isIpv6Enable() const;
+    bool ipv6EnableIsSet() const;
+    void unsetipv6Enable();
+    void setIpv6Enable(bool value);
+
 
 protected:
     std::string availabilityZone_;
@@ -117,6 +126,8 @@ protected:
     bool vpcIdIsSet_;
     std::string status_;
     bool statusIsSet_;
+    bool ipv6Enable_;
+    bool ipv6EnableIsSet_;
 
 };
 

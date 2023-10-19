@@ -14,6 +14,8 @@ DetectStandardByVideoAndNameAndIdResponse::DetectStandardByVideoAndNameAndIdResp
 {
     metaIsSet_ = false;
     resultIsSet_ = false;
+    xRequestId_ = "";
+    xRequestIdIsSet_ = false;
 }
 
 DetectStandardByVideoAndNameAndIdResponse::~DetectStandardByVideoAndNameAndIdResponse() = default;
@@ -31,6 +33,9 @@ web::json::value DetectStandardByVideoAndNameAndIdResponse::toJson() const
     }
     if(resultIsSet_) {
         val[utility::conversions::to_string_t("result")] = ModelBase::toJson(result_);
+    }
+    if(xRequestIdIsSet_) {
+        val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
     }
 
     return val;
@@ -55,6 +60,15 @@ bool DetectStandardByVideoAndNameAndIdResponse::fromJson(const web::json::value&
             IvsStandardByVideoAndNameAndIdResponseBody_result refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResult(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Request-Id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXRequestId(refVal);
         }
     }
     return ok;
@@ -101,6 +115,27 @@ bool DetectStandardByVideoAndNameAndIdResponse::resultIsSet() const
 void DetectStandardByVideoAndNameAndIdResponse::unsetresult()
 {
     resultIsSet_ = false;
+}
+
+std::string DetectStandardByVideoAndNameAndIdResponse::getXRequestId() const
+{
+    return xRequestId_;
+}
+
+void DetectStandardByVideoAndNameAndIdResponse::setXRequestId(const std::string& value)
+{
+    xRequestId_ = value;
+    xRequestIdIsSet_ = true;
+}
+
+bool DetectStandardByVideoAndNameAndIdResponse::xRequestIdIsSet() const
+{
+    return xRequestIdIsSet_;
+}
+
+void DetectStandardByVideoAndNameAndIdResponse::unsetxRequestId()
+{
+    xRequestIdIsSet_ = false;
 }
 
 }

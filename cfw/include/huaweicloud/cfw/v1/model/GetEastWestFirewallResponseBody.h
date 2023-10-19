@@ -134,13 +134,31 @@ public:
     void setOffset(int32_t value);
 
     /// <summary>
-    /// 每页显示个数
+    /// 每页显示个数，范围为1-1024
     /// </summary>
 
     int32_t getLimit() const;
     bool limitIsSet() const;
     void unsetlimit();
     void setLimit(int32_t value);
+
+    /// <summary>
+    /// 防护模式
+    /// </summary>
+
+    std::string getMode() const;
+    bool modeIsSet() const;
+    void unsetmode();
+    void setMode(const std::string& value);
+
+    /// <summary>
+    /// 东西向路由限制
+    /// </summary>
+
+    int32_t getEwVpcRouteLimit() const;
+    bool ewVpcRouteLimitIsSet() const;
+    void unsetewVpcRouteLimit();
+    void setEwVpcRouteLimit(int32_t value);
 
 
 protected:
@@ -166,6 +184,10 @@ protected:
     bool offsetIsSet_;
     int32_t limit_;
     bool limitIsSet_;
+    std::string mode_;
+    bool modeIsSet_;
+    int32_t ewVpcRouteLimit_;
+    bool ewVpcRouteLimitIsSet_;
 
 };
 

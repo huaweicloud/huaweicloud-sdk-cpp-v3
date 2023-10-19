@@ -14,6 +14,8 @@ DetectExtentionByNameAndIdResponse::DetectExtentionByNameAndIdResponse()
 {
     metaIsSet_ = false;
     resultIsSet_ = false;
+    xRequestId_ = "";
+    xRequestIdIsSet_ = false;
 }
 
 DetectExtentionByNameAndIdResponse::~DetectExtentionByNameAndIdResponse() = default;
@@ -31,6 +33,9 @@ web::json::value DetectExtentionByNameAndIdResponse::toJson() const
     }
     if(resultIsSet_) {
         val[utility::conversions::to_string_t("result")] = ModelBase::toJson(result_);
+    }
+    if(xRequestIdIsSet_) {
+        val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
     }
 
     return val;
@@ -55,6 +60,15 @@ bool DetectExtentionByNameAndIdResponse::fromJson(const web::json::value& val)
             IvsExtentionByNameAndIdResponseBody_result refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResult(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Request-Id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXRequestId(refVal);
         }
     }
     return ok;
@@ -101,6 +115,27 @@ bool DetectExtentionByNameAndIdResponse::resultIsSet() const
 void DetectExtentionByNameAndIdResponse::unsetresult()
 {
     resultIsSet_ = false;
+}
+
+std::string DetectExtentionByNameAndIdResponse::getXRequestId() const
+{
+    return xRequestId_;
+}
+
+void DetectExtentionByNameAndIdResponse::setXRequestId(const std::string& value)
+{
+    xRequestId_ = value;
+    xRequestIdIsSet_ = true;
+}
+
+bool DetectExtentionByNameAndIdResponse::xRequestIdIsSet() const
+{
+    return xRequestIdIsSet_;
+}
+
+void DetectExtentionByNameAndIdResponse::unsetxRequestId()
+{
+    xRequestIdIsSet_ = false;
 }
 
 }

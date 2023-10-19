@@ -20,6 +20,10 @@ ListGaussMySqlDatabaseRequest::ListGaussMySqlDatabaseRequest()
     offsetIsSet_ = false;
     limit_ = 0;
     limitIsSet_ = false;
+    name_ = "";
+    nameIsSet_ = false;
+    charset_ = "";
+    charsetIsSet_ = false;
 }
 
 ListGaussMySqlDatabaseRequest::~ListGaussMySqlDatabaseRequest() = default;
@@ -43,6 +47,12 @@ web::json::value ListGaussMySqlDatabaseRequest::toJson() const
     }
     if(limitIsSet_) {
         val[utility::conversions::to_string_t("limit")] = ModelBase::toJson(limit_);
+    }
+    if(nameIsSet_) {
+        val[utility::conversions::to_string_t("name")] = ModelBase::toJson(name_);
+    }
+    if(charsetIsSet_) {
+        val[utility::conversions::to_string_t("charset")] = ModelBase::toJson(charset_);
     }
 
     return val;
@@ -85,6 +95,24 @@ bool ListGaussMySqlDatabaseRequest::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLimit(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("charset"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("charset"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCharset(refVal);
         }
     }
     return ok;
@@ -173,6 +201,48 @@ bool ListGaussMySqlDatabaseRequest::limitIsSet() const
 void ListGaussMySqlDatabaseRequest::unsetlimit()
 {
     limitIsSet_ = false;
+}
+
+std::string ListGaussMySqlDatabaseRequest::getName() const
+{
+    return name_;
+}
+
+void ListGaussMySqlDatabaseRequest::setName(const std::string& value)
+{
+    name_ = value;
+    nameIsSet_ = true;
+}
+
+bool ListGaussMySqlDatabaseRequest::nameIsSet() const
+{
+    return nameIsSet_;
+}
+
+void ListGaussMySqlDatabaseRequest::unsetname()
+{
+    nameIsSet_ = false;
+}
+
+std::string ListGaussMySqlDatabaseRequest::getCharset() const
+{
+    return charset_;
+}
+
+void ListGaussMySqlDatabaseRequest::setCharset(const std::string& value)
+{
+    charset_ = value;
+    charsetIsSet_ = true;
+}
+
+bool ListGaussMySqlDatabaseRequest::charsetIsSet() const
+{
+    return charsetIsSet_;
+}
+
+void ListGaussMySqlDatabaseRequest::unsetcharset()
+{
+    charsetIsSet_ = false;
 }
 
 }

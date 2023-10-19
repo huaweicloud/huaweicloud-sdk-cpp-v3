@@ -18,6 +18,8 @@ DeleteFaceByExternalImageIdResponse::DeleteFaceByExternalImageIdResponse()
     faceSetIdIsSet_ = false;
     faceSetName_ = "";
     faceSetNameIsSet_ = false;
+    xRequestId_ = "";
+    xRequestIdIsSet_ = false;
 }
 
 DeleteFaceByExternalImageIdResponse::~DeleteFaceByExternalImageIdResponse() = default;
@@ -38,6 +40,9 @@ web::json::value DeleteFaceByExternalImageIdResponse::toJson() const
     }
     if(faceSetNameIsSet_) {
         val[utility::conversions::to_string_t("face_set_name")] = ModelBase::toJson(faceSetName_);
+    }
+    if(xRequestIdIsSet_) {
+        val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
     }
 
     return val;
@@ -71,6 +76,15 @@ bool DeleteFaceByExternalImageIdResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFaceSetName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Request-Id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXRequestId(refVal);
         }
     }
     return ok;
@@ -138,6 +152,27 @@ bool DeleteFaceByExternalImageIdResponse::faceSetNameIsSet() const
 void DeleteFaceByExternalImageIdResponse::unsetfaceSetName()
 {
     faceSetNameIsSet_ = false;
+}
+
+std::string DeleteFaceByExternalImageIdResponse::getXRequestId() const
+{
+    return xRequestId_;
+}
+
+void DeleteFaceByExternalImageIdResponse::setXRequestId(const std::string& value)
+{
+    xRequestId_ = value;
+    xRequestIdIsSet_ = true;
+}
+
+bool DeleteFaceByExternalImageIdResponse::xRequestIdIsSet() const
+{
+    return xRequestIdIsSet_;
+}
+
+void DeleteFaceByExternalImageIdResponse::unsetxRequestId()
+{
+    xRequestIdIsSet_ = false;
 }
 
 }

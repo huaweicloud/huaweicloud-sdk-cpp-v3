@@ -22,6 +22,16 @@ Flavor::Flavor()
     bandwidthIsSet_ = false;
     logStorage_ = 0;
     logStorageIsSet_ = false;
+    sessionConcurrent_ = 0;
+    sessionConcurrentIsSet_ = false;
+    sessionCreate_ = 0;
+    sessionCreateIsSet_ = false;
+    totalRuleCount_ = 0;
+    totalRuleCountIsSet_ = false;
+    usedRuleCount_ = 0;
+    usedRuleCountIsSet_ = false;
+    vpcBandwith_ = 0;
+    vpcBandwithIsSet_ = false;
 }
 
 Flavor::~Flavor() = default;
@@ -48,6 +58,21 @@ web::json::value Flavor::toJson() const
     }
     if(logStorageIsSet_) {
         val[utility::conversions::to_string_t("log_storage")] = ModelBase::toJson(logStorage_);
+    }
+    if(sessionConcurrentIsSet_) {
+        val[utility::conversions::to_string_t("session_concurrent")] = ModelBase::toJson(sessionConcurrent_);
+    }
+    if(sessionCreateIsSet_) {
+        val[utility::conversions::to_string_t("session_create")] = ModelBase::toJson(sessionCreate_);
+    }
+    if(totalRuleCountIsSet_) {
+        val[utility::conversions::to_string_t("total_rule_count")] = ModelBase::toJson(totalRuleCount_);
+    }
+    if(usedRuleCountIsSet_) {
+        val[utility::conversions::to_string_t("used_rule_count")] = ModelBase::toJson(usedRuleCount_);
+    }
+    if(vpcBandwithIsSet_) {
+        val[utility::conversions::to_string_t("vpc_bandwith")] = ModelBase::toJson(vpcBandwith_);
     }
 
     return val;
@@ -99,6 +124,51 @@ bool Flavor::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLogStorage(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("session_concurrent"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("session_concurrent"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSessionConcurrent(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("session_create"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("session_create"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSessionCreate(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("total_rule_count"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("total_rule_count"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTotalRuleCount(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("used_rule_count"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("used_rule_count"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setUsedRuleCount(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("vpc_bandwith"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("vpc_bandwith"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setVpcBandwith(refVal);
         }
     }
     return ok;
@@ -208,6 +278,111 @@ bool Flavor::logStorageIsSet() const
 void Flavor::unsetlogStorage()
 {
     logStorageIsSet_ = false;
+}
+
+int32_t Flavor::getSessionConcurrent() const
+{
+    return sessionConcurrent_;
+}
+
+void Flavor::setSessionConcurrent(int32_t value)
+{
+    sessionConcurrent_ = value;
+    sessionConcurrentIsSet_ = true;
+}
+
+bool Flavor::sessionConcurrentIsSet() const
+{
+    return sessionConcurrentIsSet_;
+}
+
+void Flavor::unsetsessionConcurrent()
+{
+    sessionConcurrentIsSet_ = false;
+}
+
+int32_t Flavor::getSessionCreate() const
+{
+    return sessionCreate_;
+}
+
+void Flavor::setSessionCreate(int32_t value)
+{
+    sessionCreate_ = value;
+    sessionCreateIsSet_ = true;
+}
+
+bool Flavor::sessionCreateIsSet() const
+{
+    return sessionCreateIsSet_;
+}
+
+void Flavor::unsetsessionCreate()
+{
+    sessionCreateIsSet_ = false;
+}
+
+int32_t Flavor::getTotalRuleCount() const
+{
+    return totalRuleCount_;
+}
+
+void Flavor::setTotalRuleCount(int32_t value)
+{
+    totalRuleCount_ = value;
+    totalRuleCountIsSet_ = true;
+}
+
+bool Flavor::totalRuleCountIsSet() const
+{
+    return totalRuleCountIsSet_;
+}
+
+void Flavor::unsettotalRuleCount()
+{
+    totalRuleCountIsSet_ = false;
+}
+
+int32_t Flavor::getUsedRuleCount() const
+{
+    return usedRuleCount_;
+}
+
+void Flavor::setUsedRuleCount(int32_t value)
+{
+    usedRuleCount_ = value;
+    usedRuleCountIsSet_ = true;
+}
+
+bool Flavor::usedRuleCountIsSet() const
+{
+    return usedRuleCountIsSet_;
+}
+
+void Flavor::unsetusedRuleCount()
+{
+    usedRuleCountIsSet_ = false;
+}
+
+int32_t Flavor::getVpcBandwith() const
+{
+    return vpcBandwith_;
+}
+
+void Flavor::setVpcBandwith(int32_t value)
+{
+    vpcBandwith_ = value;
+    vpcBandwithIsSet_ = true;
+}
+
+bool Flavor::vpcBandwithIsSet() const
+{
+    return vpcBandwithIsSet_;
+}
+
+void Flavor::unsetvpcBandwith()
+{
+    vpcBandwithIsSet_ = false;
 }
 
 }

@@ -1,3 +1,265 @@
+# 3.1.55 2023-10-19
+
+### HuaweiCloud SDK CBR
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListAgent**
+    - 请求参数变更
+      - `* agent_id: string -> list<string>`
+  - **ListVault**
+    - 请求参数变更
+      - `* id: string -> list<string>`
+
+### HuaweiCloud SDK CFW
+
+- _新增特性_
+  - 支持以下接口：
+    - `ListDomainSets`
+    - `AddDomainSet`
+    - `UpdateDomainSet`
+    - `DeleteDomainSet`
+    - `ListFirewallList`
+    - `BatchUpdateAclRuleActions`
+    - `ListRuleAclTags`
+    - `AddDomains`
+    - `DeleteDomains`
+    - `ListDomains`
+    - `BatchDeleteAclRules`
+    - `BatchDeleteServiceItems`
+    - `BatchDeleteAddressItems`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListFlowLogs**
+    - 请求参数变更
+      - `+ dst_host`
+    - 响应参数变更
+      - `+ data.records.dst_host`
+  - **ListAccessControlLogs**
+    - 请求参数变更
+      - `+ dst_host`
+      - `+ rule_name`
+      - `+ action`
+    - 响应参数变更
+      - `+ data.records.src_region_id`
+      - `+ data.records.src_region_name`
+      - `+ data.records.dst_region_id`
+      - `+ data.records.dst_region_name`
+      - `+ data.records.dst_host`
+  - **ListBlackWhiteLists**
+    - 响应参数变更
+      - `+ data.records.description`
+  - **ListDomainParseDetail**
+    - 请求参数变更
+      - `+ address_type`
+  - **UpdateDnsServers**
+    - 请求参数变更
+      - `+ health_check_domain_name`
+  - **ListDnsServers**
+    - 响应参数变更
+      - `+ data.health_check_domain_name`
+  - **ListAttackLogs**
+    - 请求参数变更
+      - `+ dst_host`
+      - `+ log_type`
+    - 响应参数变更
+      - `+ data.records.dst_host`
+      - `+ data.records.src_region_id`
+      - `+ data.records.src_region_name`
+      - `+ data.records.dst_region_id`
+      - `+ data.records.dst_region_name`
+  - **UpdateAclRule**
+    - 请求参数变更
+      - `+ tag`
+      - `+ source.region_list_json`
+      - `+ source.region_list`
+      - `+ source.domain_set_id`
+      - `+ source.domain_set_name`
+      - `+ source.ip_address`
+      - `+ source.address_group`
+      - `+ source.address_group_names`
+      - `+ service.custom_service`
+      - `+ service.service_group`
+      - `+ service.service_group_names`
+  - **ListAclRules**
+    - 请求参数变更
+      - `+ tags_id`
+      - `+ source`
+      - `+ destination`
+      - `+ service`
+    - 响应参数变更
+      - `+ data.records.tag`
+      - `+ data.records.source.region_list_json`
+      - `+ data.records.source.region_list`
+      - `+ data.records.source.domain_set_id`
+      - `+ data.records.source.domain_set_name`
+      - `+ data.records.source.ip_address`
+      - `+ data.records.source.address_group`
+      - `+ data.records.source.address_group_names`
+      - `+ data.records.service.custom_service`
+      - `+ data.records.service.service_group`
+      - `+ data.records.service.service_group_names`
+  - **AddBlackWhiteList**
+    - 请求参数变更
+      - `+ description`
+  - **UpdateBlackWhiteList**
+    - 请求参数变更
+      - `+ description`
+  - **ListEipCount**
+    - 响应参数变更
+      - `+ data.eip_protected_self`
+  - **ChangeEipStatus**
+    - 响应参数变更
+      - `+ data.object_id`
+      - `+ data.fail_eip_id_list`
+      - `- data.id`
+      - `* data: object<IdObject> -> object<EIPSwitchStatusVO>`
+  - **ListEastWestFirewall**
+    - 响应参数变更
+      - `+ data.mode`
+      - `+ data.ew_vpc_route_limit`
+      - `+ data.er_associated_subnet.ipv6_enable`
+      - `+ data.protect_infos.protected_resource_mode`
+  - **AddAclRule**
+    - 请求参数变更
+      - `+ rules.tag`
+      - `+ rules.source.region_list_json`
+      - `+ rules.source.region_list`
+      - `+ rules.source.domain_set_id`
+      - `+ rules.source.domain_set_name`
+      - `+ rules.source.ip_address`
+      - `+ rules.source.address_group`
+      - `+ rules.source.address_group_names`
+      - `+ rules.service.custom_service`
+      - `+ rules.service.service_group`
+      - `+ rules.service.service_group_names`
+  - **ListEips**
+    - 请求参数变更
+      - `+ tags`
+    - 响应参数变更
+      - `+ data.records.object_id`
+      - `+ data.records.tags`
+      - `+ data.records.domain_id`
+      - `+ data.records.owner`
+      - `+ data.records.fw_domain_id`
+  - **AddAddressItem**
+    - 响应参数变更
+      - `+ data.covered_ip`
+  - **ListFirewallDetail**
+    - 响应参数变更
+      - `+ data.records.resource_id`
+      - `+ data.records.support_url_filtering`
+      - `+ data.records.flavor.session_concurrent`
+      - `+ data.records.flavor.session_create`
+      - `+ data.records.flavor.total_rule_count`
+      - `+ data.records.flavor.used_rule_count`
+      - `+ data.records.flavor.vpc_bandwith`
+
+### HuaweiCloud SDK CodeArtsBuild
+
+- _新增特性_
+  - 支持以下接口：
+    - `DownloadLogByRecordId`
+    - `ShowRecordInfo`
+    - `StopBuildJob`
+    - `DeleteBuildJob`
+    - `DisableBuildJob`
+    - `ResumeBuildJob`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK ECS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ReinstallServerWithCloudInit**
+    - 请求参数变更
+      - `+ os-reinstall.metadata.BYOL`
+  - **ChangeServerOsWithCloudInit**
+    - 请求参数变更
+      - `+ os-change.metadata.BYOL`
+  - **ChangeServerOsWithoutCloudInit**
+    - 请求参数变更
+      - `+ os-change.metadata.BYOL`
+
+### HuaweiCloud SDK GaussDB
+
+- _新增特性_
+  - 支持以下接口：
+    - `UpdateProxyNewConfigurations`
+    - `CopyConfigurations`
+    - `ListConfigurationsDifferences`
+    - `ListConfigurationsInstances`
+    - `ListModifyHistory`
+    - `ListEnterpriseProjects`
+    - `SwitchAccessControl`
+    - `CreateAccessControl`
+    - `DeleteScheduleTasK`
+    - `ListInstanceConfigurations`
+    - `ShowGaussMySqlIncrementalBackupList`
+    - `UpdateBackupOffsitePolicy`
+    - `CreateRestoreTables`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListGaussMySqlDatabase**
+    - 请求参数变更
+      - `+ name`
+      - `+ charset`
+
+### HuaweiCloud SDK KVS
+
+- _新增特性_
+  - 支持接口`ListTable`、`BatchGetKv`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **UpdateKv**
+    - 请求参数变更
+      - `* UpdateBlob.Blobdata: int32 -> bson-binary`
+  - **BatchWriteKv**
+    - 请求参数变更
+      - `+ TableOpers.KvOpers.GetKv`
+
+### HuaweiCloud SDK LTS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListStructuredLogsWithTimeRange**
+    - 响应参数变更
+      - `+ result`
+      - `- context`
+
+### HuaweiCloud SDK SIS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 移除接口`RunAudioAssessment`、`RunMultiModalAssessment`
+
+### HuaweiCloud SDK VPC
+
+- _新增特性_
+  - 支持接口`BatchCreateSecurityGroupRules`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.1.54 2023-10-12
 
 ### HuaweiCloud SDK CDN

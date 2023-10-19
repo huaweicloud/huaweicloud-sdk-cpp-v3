@@ -74,6 +74,24 @@ public:
     void unsetlimit();
     void setLimit(int32_t value);
 
+    /// <summary>
+    /// 数据库名称。
+    /// </summary>
+
+    std::string getName() const;
+    bool nameIsSet() const;
+    void unsetname();
+    void setName(const std::string& value);
+
+    /// <summary>
+    /// 数据库使用的字符集，如utf8mb4、gbk等。
+    /// </summary>
+
+    std::string getCharset() const;
+    bool charsetIsSet() const;
+    void unsetcharset();
+    void setCharset(const std::string& value);
+
 
 protected:
     std::string xLanguage_;
@@ -84,6 +102,10 @@ protected:
     bool offsetIsSet_;
     int32_t limit_;
     bool limitIsSet_;
+    std::string name_;
+    bool nameIsSet_;
+    std::string charset_;
+    bool charsetIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

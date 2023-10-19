@@ -24,6 +24,8 @@ EwProtectResourceInfo::EwProtectResourceInfo()
     protectedResourceNatIdIsSet_ = false;
     protectedResourceProjectId_ = "";
     protectedResourceProjectIdIsSet_ = false;
+    protectedResourceMode_ = "";
+    protectedResourceModeIsSet_ = false;
 }
 
 EwProtectResourceInfo::~EwProtectResourceInfo() = default;
@@ -53,6 +55,9 @@ web::json::value EwProtectResourceInfo::toJson() const
     }
     if(protectedResourceProjectIdIsSet_) {
         val[utility::conversions::to_string_t("protected_resource_project_id")] = ModelBase::toJson(protectedResourceProjectId_);
+    }
+    if(protectedResourceModeIsSet_) {
+        val[utility::conversions::to_string_t("protected_resource_mode")] = ModelBase::toJson(protectedResourceMode_);
     }
 
     return val;
@@ -113,6 +118,15 @@ bool EwProtectResourceInfo::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setProtectedResourceProjectId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("protected_resource_mode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("protected_resource_mode"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProtectedResourceMode(refVal);
         }
     }
     return ok;
@@ -243,6 +257,27 @@ bool EwProtectResourceInfo::protectedResourceProjectIdIsSet() const
 void EwProtectResourceInfo::unsetprotectedResourceProjectId()
 {
     protectedResourceProjectIdIsSet_ = false;
+}
+
+std::string EwProtectResourceInfo::getProtectedResourceMode() const
+{
+    return protectedResourceMode_;
+}
+
+void EwProtectResourceInfo::setProtectedResourceMode(const std::string& value)
+{
+    protectedResourceMode_ = value;
+    protectedResourceModeIsSet_ = true;
+}
+
+bool EwProtectResourceInfo::protectedResourceModeIsSet() const
+{
+    return protectedResourceModeIsSet_;
+}
+
+void EwProtectResourceInfo::unsetprotectedResourceMode()
+{
+    protectedResourceModeIsSet_ = false;
 }
 
 }

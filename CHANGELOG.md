@@ -1,3 +1,265 @@
+# 3.1.55 2023-10-19
+
+### HuaweiCloud SDK CBR
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListAgent**
+    - changes of request param
+      - `* agent_id: string -> list<string>`
+  - **ListVault**
+    - changes of request param
+      - `* id: string -> list<string>`
+
+### HuaweiCloud SDK CFW
+
+- _Features_
+  - Support the following interfaces：
+    - `ListDomainSets`
+    - `AddDomainSet`
+    - `UpdateDomainSet`
+    - `DeleteDomainSet`
+    - `ListFirewallList`
+    - `BatchUpdateAclRuleActions`
+    - `ListRuleAclTags`
+    - `AddDomains`
+    - `DeleteDomains`
+    - `ListDomains`
+    - `BatchDeleteAclRules`
+    - `BatchDeleteServiceItems`
+    - `BatchDeleteAddressItems`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListFlowLogs**
+    - changes of request param
+      - `+ dst_host`
+    - changes of response param
+      - `+ data.records.dst_host`
+  - **ListAccessControlLogs**
+    - changes of request param
+      - `+ dst_host`
+      - `+ rule_name`
+      - `+ action`
+    - changes of response param
+      - `+ data.records.src_region_id`
+      - `+ data.records.src_region_name`
+      - `+ data.records.dst_region_id`
+      - `+ data.records.dst_region_name`
+      - `+ data.records.dst_host`
+  - **ListBlackWhiteLists**
+    - changes of response param
+      - `+ data.records.description`
+  - **ListDomainParseDetail**
+    - changes of request param
+      - `+ address_type`
+  - **UpdateDnsServers**
+    - changes of request param
+      - `+ health_check_domain_name`
+  - **ListDnsServers**
+    - changes of response param
+      - `+ data.health_check_domain_name`
+  - **ListAttackLogs**
+    - changes of request param
+      - `+ dst_host`
+      - `+ log_type`
+    - changes of response param
+      - `+ data.records.dst_host`
+      - `+ data.records.src_region_id`
+      - `+ data.records.src_region_name`
+      - `+ data.records.dst_region_id`
+      - `+ data.records.dst_region_name`
+  - **UpdateAclRule**
+    - changes of request param
+      - `+ tag`
+      - `+ source.region_list_json`
+      - `+ source.region_list`
+      - `+ source.domain_set_id`
+      - `+ source.domain_set_name`
+      - `+ source.ip_address`
+      - `+ source.address_group`
+      - `+ source.address_group_names`
+      - `+ service.custom_service`
+      - `+ service.service_group`
+      - `+ service.service_group_names`
+  - **ListAclRules**
+    - changes of request param
+      - `+ tags_id`
+      - `+ source`
+      - `+ destination`
+      - `+ service`
+    - changes of response param
+      - `+ data.records.tag`
+      - `+ data.records.source.region_list_json`
+      - `+ data.records.source.region_list`
+      - `+ data.records.source.domain_set_id`
+      - `+ data.records.source.domain_set_name`
+      - `+ data.records.source.ip_address`
+      - `+ data.records.source.address_group`
+      - `+ data.records.source.address_group_names`
+      - `+ data.records.service.custom_service`
+      - `+ data.records.service.service_group`
+      - `+ data.records.service.service_group_names`
+  - **AddBlackWhiteList**
+    - changes of request param
+      - `+ description`
+  - **UpdateBlackWhiteList**
+    - changes of request param
+      - `+ description`
+  - **ListEipCount**
+    - changes of response param
+      - `+ data.eip_protected_self`
+  - **ChangeEipStatus**
+    - changes of response param
+      - `+ data.object_id`
+      - `+ data.fail_eip_id_list`
+      - `- data.id`
+      - `* data: object<IdObject> -> object<EIPSwitchStatusVO>`
+  - **ListEastWestFirewall**
+    - changes of response param
+      - `+ data.mode`
+      - `+ data.ew_vpc_route_limit`
+      - `+ data.er_associated_subnet.ipv6_enable`
+      - `+ data.protect_infos.protected_resource_mode`
+  - **AddAclRule**
+    - changes of request param
+      - `+ rules.tag`
+      - `+ rules.source.region_list_json`
+      - `+ rules.source.region_list`
+      - `+ rules.source.domain_set_id`
+      - `+ rules.source.domain_set_name`
+      - `+ rules.source.ip_address`
+      - `+ rules.source.address_group`
+      - `+ rules.source.address_group_names`
+      - `+ rules.service.custom_service`
+      - `+ rules.service.service_group`
+      - `+ rules.service.service_group_names`
+  - **ListEips**
+    - changes of request param
+      - `+ tags`
+    - changes of response param
+      - `+ data.records.object_id`
+      - `+ data.records.tags`
+      - `+ data.records.domain_id`
+      - `+ data.records.owner`
+      - `+ data.records.fw_domain_id`
+  - **AddAddressItem**
+    - changes of response param
+      - `+ data.covered_ip`
+  - **ListFirewallDetail**
+    - changes of response param
+      - `+ data.records.resource_id`
+      - `+ data.records.support_url_filtering`
+      - `+ data.records.flavor.session_concurrent`
+      - `+ data.records.flavor.session_create`
+      - `+ data.records.flavor.total_rule_count`
+      - `+ data.records.flavor.used_rule_count`
+      - `+ data.records.flavor.vpc_bandwith`
+
+### HuaweiCloud SDK CodeArtsBuild
+
+- _Features_
+  - Support the following interfaces：
+    - `DownloadLogByRecordId`
+    - `ShowRecordInfo`
+    - `StopBuildJob`
+    - `DeleteBuildJob`
+    - `DisableBuildJob`
+    - `ResumeBuildJob`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK ECS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ReinstallServerWithCloudInit**
+    - changes of request param
+      - `+ os-reinstall.metadata.BYOL`
+  - **ChangeServerOsWithCloudInit**
+    - changes of request param
+      - `+ os-change.metadata.BYOL`
+  - **ChangeServerOsWithoutCloudInit**
+    - changes of request param
+      - `+ os-change.metadata.BYOL`
+
+### HuaweiCloud SDK GaussDB
+
+- _Features_
+  - Support the following interfaces：
+    - `UpdateProxyNewConfigurations`
+    - `CopyConfigurations`
+    - `ListConfigurationsDifferences`
+    - `ListConfigurationsInstances`
+    - `ListModifyHistory`
+    - `ListEnterpriseProjects`
+    - `SwitchAccessControl`
+    - `CreateAccessControl`
+    - `DeleteScheduleTasK`
+    - `ListInstanceConfigurations`
+    - `ShowGaussMySqlIncrementalBackupList`
+    - `UpdateBackupOffsitePolicy`
+    - `CreateRestoreTables`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListGaussMySqlDatabase**
+    - changes of request param
+      - `+ name`
+      - `+ charset`
+
+### HuaweiCloud SDK KVS
+
+- _Features_
+  - Support the interfaces `ListTable`, `BatchGetKv`
+- _Bug Fix_
+  - None
+- _Change_
+  - **UpdateKv**
+    - changes of request param
+      - `* UpdateBlob.Blobdata: int32 -> bson-binary`
+  - **BatchWriteKv**
+    - changes of request param
+      - `+ TableOpers.KvOpers.GetKv`
+
+### HuaweiCloud SDK LTS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListStructuredLogsWithTimeRange**
+    - changes of response param
+      - `+ result`
+      - `- context`
+
+### HuaweiCloud SDK SIS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the interfaces `RunAudioAssessment`, `RunMultiModalAssessment`
+
+### HuaweiCloud SDK VPC
+
+- _Features_
+  - Support the interface `BatchCreateSecurityGroupRules`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.54 2023-10-12
 
 ### HuaweiCloud SDK CDN

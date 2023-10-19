@@ -15,6 +15,7 @@ OperItem::OperItem()
 {
     putKvIsSet_ = false;
     deleteKvIsSet_ = false;
+    getKvIsSet_ = false;
 }
 
 OperItem::~OperItem() = default;
@@ -30,6 +31,9 @@ bool OperItem::toBson(Builder &builder) const
         return false;
     }
     if (deleteKvIsSet_ && !bson_append(builder, "DeleteKv", deleteKv_)) {
+        return false;
+    }
+    if (getKvIsSet_ && !bson_append(builder, "GetKv", getKv_)) {
         return false;
     }
 
@@ -57,6 +61,15 @@ bool OperItem::fromBson(const Viewer &viewer)
                 return false;
             }
             deleteKvIsSet_ = true;
+            ++it;
+            continue;
+        }
+        
+        if (key == "GetKv") {
+            if (!bson_get(it, getKv_)) {
+                return false;
+            }
+            getKvIsSet_ = true;
             ++it;
             continue;
         }
@@ -107,6 +120,27 @@ bool OperItem::deleteKvIsSet() const
 void OperItem::unsetdeleteKv()
 {
     deleteKvIsSet_ = false;
+}
+
+GetKv OperItem::getGetKv() const
+{
+    return getKv_;
+}
+
+void OperItem::setGetKv(const GetKv& value)
+{
+    getKv_ = value;
+    getKvIsSet_ = true;
+}
+
+bool OperItem::getKvIsSet() const
+{
+    return getKvIsSet_;
+}
+
+void OperItem::unsetgetKv()
+{
+    getKvIsSet_ = false;
 }
 
 }

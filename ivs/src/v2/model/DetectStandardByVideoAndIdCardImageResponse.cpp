@@ -14,6 +14,8 @@ DetectStandardByVideoAndIdCardImageResponse::DetectStandardByVideoAndIdCardImage
 {
     metaIsSet_ = false;
     resultIsSet_ = false;
+    xRequestId_ = "";
+    xRequestIdIsSet_ = false;
 }
 
 DetectStandardByVideoAndIdCardImageResponse::~DetectStandardByVideoAndIdCardImageResponse() = default;
@@ -31,6 +33,9 @@ web::json::value DetectStandardByVideoAndIdCardImageResponse::toJson() const
     }
     if(resultIsSet_) {
         val[utility::conversions::to_string_t("result")] = ModelBase::toJson(result_);
+    }
+    if(xRequestIdIsSet_) {
+        val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
     }
 
     return val;
@@ -55,6 +60,15 @@ bool DetectStandardByVideoAndIdCardImageResponse::fromJson(const web::json::valu
             IvsStandardByVideoAndIdCardImageResponseBody_result refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResult(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Request-Id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXRequestId(refVal);
         }
     }
     return ok;
@@ -101,6 +115,27 @@ bool DetectStandardByVideoAndIdCardImageResponse::resultIsSet() const
 void DetectStandardByVideoAndIdCardImageResponse::unsetresult()
 {
     resultIsSet_ = false;
+}
+
+std::string DetectStandardByVideoAndIdCardImageResponse::getXRequestId() const
+{
+    return xRequestId_;
+}
+
+void DetectStandardByVideoAndIdCardImageResponse::setXRequestId(const std::string& value)
+{
+    xRequestId_ = value;
+    xRequestIdIsSet_ = true;
+}
+
+bool DetectStandardByVideoAndIdCardImageResponse::xRequestIdIsSet() const
+{
+    return xRequestIdIsSet_;
+}
+
+void DetectStandardByVideoAndIdCardImageResponse::unsetxRequestId()
+{
+    xRequestIdIsSet_ = false;
 }
 
 }

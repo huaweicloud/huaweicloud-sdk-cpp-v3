@@ -212,6 +212,51 @@ public:
     void unsetpacketMessages();
     void setPacketMessages(const std::vector<PacketMessage>& value);
 
+    /// <summary>
+    /// 目标主机
+    /// </summary>
+
+    std::string getDstHost() const;
+    bool dstHostIsSet() const;
+    void unsetdstHost();
+    void setDstHost(const std::string& value);
+
+    /// <summary>
+    /// 源区域id
+    /// </summary>
+
+    std::string getSrcRegionId() const;
+    bool srcRegionIdIsSet() const;
+    void unsetsrcRegionId();
+    void setSrcRegionId(const std::string& value);
+
+    /// <summary>
+    /// 源区域名称
+    /// </summary>
+
+    std::string getSrcRegionName() const;
+    bool srcRegionNameIsSet() const;
+    void unsetsrcRegionName();
+    void setSrcRegionName(const std::string& value);
+
+    /// <summary>
+    /// 目的区域id
+    /// </summary>
+
+    std::string getDstRegionId() const;
+    bool dstRegionIdIsSet() const;
+    void unsetdstRegionId();
+    void setDstRegionId(const std::string& value);
+
+    /// <summary>
+    /// 目的区域名称
+    /// </summary>
+
+    std::string getDstRegionName() const;
+    bool dstRegionNameIsSet() const;
+    void unsetdstRegionName();
+    void setDstRegionName(const std::string& value);
+
 
 protected:
     std::string direction_;
@@ -252,6 +297,16 @@ protected:
     bool appIsSet_;
     std::vector<PacketMessage> packetMessages_;
     bool packetMessagesIsSet_;
+    std::string dstHost_;
+    bool dstHostIsSet_;
+    std::string srcRegionId_;
+    bool srcRegionIdIsSet_;
+    std::string srcRegionName_;
+    bool srcRegionNameIsSet_;
+    std::string dstRegionId_;
+    bool dstRegionIdIsSet_;
+    std::string dstRegionName_;
+    bool dstRegionNameIsSet_;
 
 };
 

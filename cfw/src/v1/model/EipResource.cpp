@@ -36,6 +36,16 @@ EipResource::EipResource()
     fwInstanceIdIsSet_ = false;
     fwEnterpriseProjectId_ = "";
     fwEnterpriseProjectIdIsSet_ = false;
+    objectId_ = "";
+    objectIdIsSet_ = false;
+    tags_ = "";
+    tagsIsSet_ = false;
+    domainId_ = "";
+    domainIdIsSet_ = false;
+    owner_ = "";
+    ownerIsSet_ = false;
+    fwDomainId_ = "";
+    fwDomainIdIsSet_ = false;
 }
 
 EipResource::~EipResource() = default;
@@ -83,6 +93,21 @@ web::json::value EipResource::toJson() const
     }
     if(fwEnterpriseProjectIdIsSet_) {
         val[utility::conversions::to_string_t("fw_enterprise_project_id")] = ModelBase::toJson(fwEnterpriseProjectId_);
+    }
+    if(objectIdIsSet_) {
+        val[utility::conversions::to_string_t("object_id")] = ModelBase::toJson(objectId_);
+    }
+    if(tagsIsSet_) {
+        val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
+    }
+    if(domainIdIsSet_) {
+        val[utility::conversions::to_string_t("domain_id")] = ModelBase::toJson(domainId_);
+    }
+    if(ownerIsSet_) {
+        val[utility::conversions::to_string_t("owner")] = ModelBase::toJson(owner_);
+    }
+    if(fwDomainIdIsSet_) {
+        val[utility::conversions::to_string_t("fw_domain_id")] = ModelBase::toJson(fwDomainId_);
     }
 
     return val;
@@ -197,6 +222,51 @@ bool EipResource::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFwEnterpriseProjectId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("object_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("object_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setObjectId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("tags"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("tags"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTags(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("domain_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("domain_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDomainId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("owner"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("owner"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setOwner(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("fw_domain_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("fw_domain_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFwDomainId(refVal);
         }
     }
     return ok;
@@ -453,6 +523,111 @@ bool EipResource::fwEnterpriseProjectIdIsSet() const
 void EipResource::unsetfwEnterpriseProjectId()
 {
     fwEnterpriseProjectIdIsSet_ = false;
+}
+
+std::string EipResource::getObjectId() const
+{
+    return objectId_;
+}
+
+void EipResource::setObjectId(const std::string& value)
+{
+    objectId_ = value;
+    objectIdIsSet_ = true;
+}
+
+bool EipResource::objectIdIsSet() const
+{
+    return objectIdIsSet_;
+}
+
+void EipResource::unsetobjectId()
+{
+    objectIdIsSet_ = false;
+}
+
+std::string EipResource::getTags() const
+{
+    return tags_;
+}
+
+void EipResource::setTags(const std::string& value)
+{
+    tags_ = value;
+    tagsIsSet_ = true;
+}
+
+bool EipResource::tagsIsSet() const
+{
+    return tagsIsSet_;
+}
+
+void EipResource::unsettags()
+{
+    tagsIsSet_ = false;
+}
+
+std::string EipResource::getDomainId() const
+{
+    return domainId_;
+}
+
+void EipResource::setDomainId(const std::string& value)
+{
+    domainId_ = value;
+    domainIdIsSet_ = true;
+}
+
+bool EipResource::domainIdIsSet() const
+{
+    return domainIdIsSet_;
+}
+
+void EipResource::unsetdomainId()
+{
+    domainIdIsSet_ = false;
+}
+
+std::string EipResource::getOwner() const
+{
+    return owner_;
+}
+
+void EipResource::setOwner(const std::string& value)
+{
+    owner_ = value;
+    ownerIsSet_ = true;
+}
+
+bool EipResource::ownerIsSet() const
+{
+    return ownerIsSet_;
+}
+
+void EipResource::unsetowner()
+{
+    ownerIsSet_ = false;
+}
+
+std::string EipResource::getFwDomainId() const
+{
+    return fwDomainId_;
+}
+
+void EipResource::setFwDomainId(const std::string& value)
+{
+    fwDomainId_ = value;
+    fwDomainIdIsSet_ = true;
+}
+
+bool EipResource::fwDomainIdIsSet() const
+{
+    return fwDomainIdIsSet_;
+}
+
+void EipResource::unsetfwDomainId()
+{
+    fwDomainIdIsSet_ = false;
 }
 
 }

@@ -101,6 +101,15 @@ public:
     void unsetobjectId();
     void setObjectId(const std::string& value);
 
+    /// <summary>
+    /// 描述
+    /// </summary>
+
+    std::string getDescription() const;
+    bool descriptionIsSet() const;
+    void unsetdescription();
+    void setDescription(const std::string& value);
+
 
 protected:
     int32_t direction_;
@@ -117,6 +126,8 @@ protected:
     bool listTypeIsSet_;
     std::string objectId_;
     bool objectIdIsSet_;
+    std::string description_;
+    bool descriptionIsSet_;
 
 };
 

@@ -79,7 +79,7 @@ After the preceding commands completed, **the installation directory of C++ SDK*
 ``` bash
 vcpkg install curl cpprestsdk boost openssl spdlog
 ```
-For services that use BSON (kvs), install `libbson` and configure LIBBSON_INCLUDE_DIRS and LIBBSON_LIBRARY_DIRS to specify the header file path and library file path, respectively.
+For services that use BSON (kvs), install `libbson` and configure LIBBSON_DIR to specify libbson root path.
 ``` bash
 vcpkg install libbson
 ```

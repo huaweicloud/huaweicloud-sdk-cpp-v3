@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <string>
 #include <huaweicloud/cfw/v1/model/UpdateDnsServersRequestBody_dns_server.h>
 #include <vector>
 
@@ -48,10 +49,21 @@ public:
     void unsetdnsServer();
     void setDnsServer(const std::vector<UpdateDnsServersRequestBody_dns_server>& value);
 
+    /// <summary>
+    /// 健康检查域名
+    /// </summary>
+
+    std::string getHealthCheckDomainName() const;
+    bool healthCheckDomainNameIsSet() const;
+    void unsethealthCheckDomainName();
+    void setHealthCheckDomainName(const std::string& value);
+
 
 protected:
     std::vector<UpdateDnsServersRequestBody_dns_server> dnsServer_;
     bool dnsServerIsSet_;
+    std::string healthCheckDomainName_;
+    bool healthCheckDomainNameIsSet_;
 
 };
 

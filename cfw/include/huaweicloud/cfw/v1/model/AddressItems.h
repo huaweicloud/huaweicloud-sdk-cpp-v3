@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/cfw/v1/model/CoveredIPVO.h>
 #include <huaweicloud/cfw/v1/model/IdObject.h>
 #include <vector>
 
@@ -48,10 +49,21 @@ public:
     void unsetitems();
     void setItems(const std::vector<IdObject>& value);
 
+    /// <summary>
+    /// 覆盖ip列表
+    /// </summary>
+
+    std::vector<CoveredIPVO>& getCoveredIp();
+    bool coveredIpIsSet() const;
+    void unsetcoveredIp();
+    void setCoveredIp(const std::vector<CoveredIPVO>& value);
+
 
 protected:
     std::vector<IdObject> items_;
     bool itemsIsSet_;
+    std::vector<CoveredIPVO> coveredIp_;
+    bool coveredIpIsSet_;
 
 };
 

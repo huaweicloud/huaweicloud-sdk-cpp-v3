@@ -92,6 +92,15 @@ public:
     void unsetprotectedResourceProjectId();
     void setProtectedResourceProjectId(const std::string& value);
 
+    /// <summary>
+    /// 防护资源模式
+    /// </summary>
+
+    std::string getProtectedResourceMode() const;
+    bool protectedResourceModeIsSet() const;
+    void unsetprotectedResourceMode();
+    void setProtectedResourceMode(const std::string& value);
+
 
 protected:
     int32_t protectedResourceType_;
@@ -106,6 +115,8 @@ protected:
     bool protectedResourceNatIdIsSet_;
     std::string protectedResourceProjectId_;
     bool protectedResourceProjectIdIsSet_;
+    std::string protectedResourceMode_;
+    bool protectedResourceModeIsSet_;
 
 };
 

@@ -72,10 +72,10 @@ public:
     /// 
     /// </summary>
 
-    int32_t getBlobdata() const;
+    BsonBinary getBlobdata() const;
     bool blobdataIsSet() const;
     void unsetblobdata();
-    void setBlobdata(int32_t value);
+    void setBlobdata(const BsonBinary& value);
 
 
 protected:
@@ -85,7 +85,7 @@ protected:
     bool offsetIsSet_;
     int32_t len_;
     bool lenIsSet_;
-    int32_t blobdata_;
+    BsonBinary blobdata_;
     bool blobdataIsSet_;
 
 };

@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/ivs/v2/model/IvsStandardByIdCardImageResponseBody_result.h>
+#include <string>
 #include <huaweicloud/ivs/v2/model/Meta.h>
 
 namespace HuaweiCloud {
@@ -57,12 +58,23 @@ public:
     void unsetresult();
     void setResult(const IvsStandardByIdCardImageResponseBody_result& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    std::string getXRequestId() const;
+    bool xRequestIdIsSet() const;
+    void unsetxRequestId();
+    void setXRequestId(const std::string& value);
+
 
 protected:
     Meta meta_;
     bool metaIsSet_;
     IvsStandardByIdCardImageResponseBody_result result_;
     bool resultIsSet_;
+    std::string xRequestId_;
+    bool xRequestIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

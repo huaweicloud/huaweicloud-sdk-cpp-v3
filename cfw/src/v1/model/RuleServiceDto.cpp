@@ -24,6 +24,9 @@ RuleServiceDto::RuleServiceDto()
     serviceSetIdIsSet_ = false;
     serviceSetName_ = "";
     serviceSetNameIsSet_ = false;
+    customServiceIsSet_ = false;
+    serviceGroupIsSet_ = false;
+    serviceGroupNamesIsSet_ = false;
 }
 
 RuleServiceDto::~RuleServiceDto() = default;
@@ -53,6 +56,15 @@ web::json::value RuleServiceDto::toJson() const
     }
     if(serviceSetNameIsSet_) {
         val[utility::conversions::to_string_t("service_set_name")] = ModelBase::toJson(serviceSetName_);
+    }
+    if(customServiceIsSet_) {
+        val[utility::conversions::to_string_t("custom_service")] = ModelBase::toJson(customService_);
+    }
+    if(serviceGroupIsSet_) {
+        val[utility::conversions::to_string_t("service_group")] = ModelBase::toJson(serviceGroup_);
+    }
+    if(serviceGroupNamesIsSet_) {
+        val[utility::conversions::to_string_t("service_group_names")] = ModelBase::toJson(serviceGroupNames_);
     }
 
     return val;
@@ -113,6 +125,33 @@ bool RuleServiceDto::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setServiceSetName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("custom_service"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("custom_service"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<ServiceItem> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCustomService(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("service_group"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("service_group"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setServiceGroup(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("service_group_names"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("service_group_names"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<AddressGroupVO> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setServiceGroupNames(refVal);
         }
     }
     return ok;
@@ -243,6 +282,69 @@ bool RuleServiceDto::serviceSetNameIsSet() const
 void RuleServiceDto::unsetserviceSetName()
 {
     serviceSetNameIsSet_ = false;
+}
+
+std::vector<ServiceItem>& RuleServiceDto::getCustomService()
+{
+    return customService_;
+}
+
+void RuleServiceDto::setCustomService(const std::vector<ServiceItem>& value)
+{
+    customService_ = value;
+    customServiceIsSet_ = true;
+}
+
+bool RuleServiceDto::customServiceIsSet() const
+{
+    return customServiceIsSet_;
+}
+
+void RuleServiceDto::unsetcustomService()
+{
+    customServiceIsSet_ = false;
+}
+
+std::vector<std::string>& RuleServiceDto::getServiceGroup()
+{
+    return serviceGroup_;
+}
+
+void RuleServiceDto::setServiceGroup(const std::vector<std::string>& value)
+{
+    serviceGroup_ = value;
+    serviceGroupIsSet_ = true;
+}
+
+bool RuleServiceDto::serviceGroupIsSet() const
+{
+    return serviceGroupIsSet_;
+}
+
+void RuleServiceDto::unsetserviceGroup()
+{
+    serviceGroupIsSet_ = false;
+}
+
+std::vector<AddressGroupVO>& RuleServiceDto::getServiceGroupNames()
+{
+    return serviceGroupNames_;
+}
+
+void RuleServiceDto::setServiceGroupNames(const std::vector<AddressGroupVO>& value)
+{
+    serviceGroupNames_ = value;
+    serviceGroupNamesIsSet_ = true;
+}
+
+bool RuleServiceDto::serviceGroupNamesIsSet() const
+{
+    return serviceGroupNamesIsSet_;
+}
+
+void RuleServiceDto::unsetserviceGroupNames()
+{
+    serviceGroupNamesIsSet_ = false;
 }
 
 }

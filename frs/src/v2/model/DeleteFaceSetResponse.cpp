@@ -14,6 +14,8 @@ DeleteFaceSetResponse::DeleteFaceSetResponse()
 {
     faceSetName_ = "";
     faceSetNameIsSet_ = false;
+    xRequestId_ = "";
+    xRequestIdIsSet_ = false;
 }
 
 DeleteFaceSetResponse::~DeleteFaceSetResponse() = default;
@@ -29,6 +31,9 @@ web::json::value DeleteFaceSetResponse::toJson() const
     if(faceSetNameIsSet_) {
         val[utility::conversions::to_string_t("face_set_name")] = ModelBase::toJson(faceSetName_);
     }
+    if(xRequestIdIsSet_) {
+        val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
+    }
 
     return val;
 }
@@ -43,6 +48,15 @@ bool DeleteFaceSetResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFaceSetName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Request-Id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXRequestId(refVal);
         }
     }
     return ok;
@@ -68,6 +82,27 @@ bool DeleteFaceSetResponse::faceSetNameIsSet() const
 void DeleteFaceSetResponse::unsetfaceSetName()
 {
     faceSetNameIsSet_ = false;
+}
+
+std::string DeleteFaceSetResponse::getXRequestId() const
+{
+    return xRequestId_;
+}
+
+void DeleteFaceSetResponse::setXRequestId(const std::string& value)
+{
+    xRequestId_ = value;
+    xRequestIdIsSet_ = true;
+}
+
+bool DeleteFaceSetResponse::xRequestIdIsSet() const
+{
+    return xRequestIdIsSet_;
+}
+
+void DeleteFaceSetResponse::unsetxRequestId()
+{
+    xRequestIdIsSet_ = false;
 }
 
 }

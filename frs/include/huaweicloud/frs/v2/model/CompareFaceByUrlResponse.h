@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/frs/v2/model/CompareFace.h>
+#include <string>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -65,6 +66,15 @@ public:
     void unsetsimilarity();
     void setSimilarity(double value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    std::string getXRequestId() const;
+    bool xRequestIdIsSet() const;
+    void unsetxRequestId();
+    void setXRequestId(const std::string& value);
+
 
 protected:
     CompareFace image1Face_;
@@ -73,6 +83,8 @@ protected:
     bool image2FaceIsSet_;
     double similarity_;
     bool similarityIsSet_;
+    std::string xRequestId_;
+    bool xRequestIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

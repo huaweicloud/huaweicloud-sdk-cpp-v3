@@ -17,6 +17,8 @@ ShowFacesByLimitResponse::ShowFacesByLimitResponse()
     faceSetName_ = "";
     faceSetNameIsSet_ = false;
     facesIsSet_ = false;
+    xRequestId_ = "";
+    xRequestIdIsSet_ = false;
 }
 
 ShowFacesByLimitResponse::~ShowFacesByLimitResponse() = default;
@@ -37,6 +39,9 @@ web::json::value ShowFacesByLimitResponse::toJson() const
     }
     if(facesIsSet_) {
         val[utility::conversions::to_string_t("faces")] = ModelBase::toJson(faces_);
+    }
+    if(xRequestIdIsSet_) {
+        val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
     }
 
     return val;
@@ -70,6 +75,15 @@ bool ShowFacesByLimitResponse::fromJson(const web::json::value& val)
             std::vector<FaceSetFace> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFaces(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Request-Id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXRequestId(refVal);
         }
     }
     return ok;
@@ -137,6 +151,27 @@ bool ShowFacesByLimitResponse::facesIsSet() const
 void ShowFacesByLimitResponse::unsetfaces()
 {
     facesIsSet_ = false;
+}
+
+std::string ShowFacesByLimitResponse::getXRequestId() const
+{
+    return xRequestId_;
+}
+
+void ShowFacesByLimitResponse::setXRequestId(const std::string& value)
+{
+    xRequestId_ = value;
+    xRequestIdIsSet_ = true;
+}
+
+bool ShowFacesByLimitResponse::xRequestIdIsSet() const
+{
+    return xRequestIdIsSet_;
+}
+
+void ShowFacesByLimitResponse::unsetxRequestId()
+{
+    xRequestIdIsSet_ = false;
 }
 
 }

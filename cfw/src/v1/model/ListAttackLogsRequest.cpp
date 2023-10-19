@@ -52,6 +52,10 @@ ListAttackLogsRequest::ListAttackLogsRequest()
     sourceIsSet_ = false;
     enterpriseProjectId_ = "";
     enterpriseProjectIdIsSet_ = false;
+    dstHost_ = "";
+    dstHostIsSet_ = false;
+    logType_ = "";
+    logTypeIsSet_ = false;
 }
 
 ListAttackLogsRequest::~ListAttackLogsRequest() = default;
@@ -123,6 +127,12 @@ web::json::value ListAttackLogsRequest::toJson() const
     }
     if(enterpriseProjectIdIsSet_) {
         val[utility::conversions::to_string_t("enterprise_project_id")] = ModelBase::toJson(enterpriseProjectId_);
+    }
+    if(dstHostIsSet_) {
+        val[utility::conversions::to_string_t("dst_host")] = ModelBase::toJson(dstHost_);
+    }
+    if(logTypeIsSet_) {
+        val[utility::conversions::to_string_t("log_type")] = ModelBase::toJson(logType_);
     }
 
     return val;
@@ -309,6 +319,24 @@ bool ListAttackLogsRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEnterpriseProjectId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("dst_host"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("dst_host"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDstHost(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("log_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("log_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLogType(refVal);
         }
     }
     return ok;
@@ -733,6 +761,48 @@ bool ListAttackLogsRequest::enterpriseProjectIdIsSet() const
 void ListAttackLogsRequest::unsetenterpriseProjectId()
 {
     enterpriseProjectIdIsSet_ = false;
+}
+
+std::string ListAttackLogsRequest::getDstHost() const
+{
+    return dstHost_;
+}
+
+void ListAttackLogsRequest::setDstHost(const std::string& value)
+{
+    dstHost_ = value;
+    dstHostIsSet_ = true;
+}
+
+bool ListAttackLogsRequest::dstHostIsSet() const
+{
+    return dstHostIsSet_;
+}
+
+void ListAttackLogsRequest::unsetdstHost()
+{
+    dstHostIsSet_ = false;
+}
+
+std::string ListAttackLogsRequest::getLogType() const
+{
+    return logType_;
+}
+
+void ListAttackLogsRequest::setLogType(const std::string& value)
+{
+    logType_ = value;
+    logTypeIsSet_ = true;
+}
+
+bool ListAttackLogsRequest::logTypeIsSet() const
+{
+    return logTypeIsSet_;
+}
+
+void ListAttackLogsRequest::unsetlogType()
+{
+    logTypeIsSet_ = false;
 }
 
 }

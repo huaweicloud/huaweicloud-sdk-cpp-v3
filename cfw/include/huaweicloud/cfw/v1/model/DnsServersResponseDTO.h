@@ -74,6 +74,15 @@ public:
     void unsetserverIp();
     void setServerIp(const std::string& value);
 
+    /// <summary>
+    /// 健康检查域名
+    /// </summary>
+
+    std::string getHealthCheckDomainName() const;
+    bool healthCheckDomainNameIsSet() const;
+    void unsethealthCheckDomainName();
+    void setHealthCheckDomainName(const std::string& value);
+
 
 protected:
     int32_t id_;
@@ -84,6 +93,8 @@ protected:
     bool isCustomizedIsSet_;
     std::string serverIp_;
     bool serverIpIsSet_;
+    std::string healthCheckDomainName_;
+    bool healthCheckDomainNameIsSet_;
 
 };
 

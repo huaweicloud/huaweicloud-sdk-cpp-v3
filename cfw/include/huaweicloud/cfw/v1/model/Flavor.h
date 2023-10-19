@@ -82,6 +82,51 @@ public:
     void unsetlogStorage();
     void setLogStorage(int32_t value);
 
+    /// <summary>
+    /// 目前的会话数
+    /// </summary>
+
+    int32_t getSessionConcurrent() const;
+    bool sessionConcurrentIsSet() const;
+    void unsetsessionConcurrent();
+    void setSessionConcurrent(int32_t value);
+
+    /// <summary>
+    /// 创建会话数
+    /// </summary>
+
+    int32_t getSessionCreate() const;
+    bool sessionCreateIsSet() const;
+    void unsetsessionCreate();
+    void setSessionCreate(int32_t value);
+
+    /// <summary>
+    /// 总计规则数
+    /// </summary>
+
+    int32_t getTotalRuleCount() const;
+    bool totalRuleCountIsSet() const;
+    void unsettotalRuleCount();
+    void setTotalRuleCount(int32_t value);
+
+    /// <summary>
+    /// 已使用规则数
+    /// </summary>
+
+    int32_t getUsedRuleCount() const;
+    bool usedRuleCountIsSet() const;
+    void unsetusedRuleCount();
+    void setUsedRuleCount(int32_t value);
+
+    /// <summary>
+    /// vpc间带宽
+    /// </summary>
+
+    int32_t getVpcBandwith() const;
+    bool vpcBandwithIsSet() const;
+    void unsetvpcBandwith();
+    void setVpcBandwith(int32_t value);
+
 
 protected:
     int32_t version_;
@@ -94,6 +139,16 @@ protected:
     bool bandwidthIsSet_;
     int32_t logStorage_;
     bool logStorageIsSet_;
+    int32_t sessionConcurrent_;
+    bool sessionConcurrentIsSet_;
+    int32_t sessionCreate_;
+    bool sessionCreateIsSet_;
+    int32_t totalRuleCount_;
+    bool totalRuleCountIsSet_;
+    int32_t usedRuleCount_;
+    bool usedRuleCountIsSet_;
+    int32_t vpcBandwith_;
+    bool vpcBandwithIsSet_;
 
 };
 

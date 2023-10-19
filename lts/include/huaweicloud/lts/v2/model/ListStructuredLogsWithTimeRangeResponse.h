@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <string>
+#include <huaweicloud/core/utils/Object.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -43,15 +43,15 @@ public:
     /// 查询结构化日志结果信息。 此处仅为示例，具体参数名称取决于查询的字段。
     /// </summary>
 
-    std::vector<std::string>& getContext();
-    bool contextIsSet() const;
-    void unsetcontext();
-    void setContext(const std::vector<std::string>& value);
+    std::vector<Object>& getResult();
+    bool resultIsSet() const;
+    void unsetresult();
+    void setResult(const std::vector<Object>& value);
 
 
 protected:
-    std::vector<std::string> context_;
-    bool contextIsSet_;
+    std::vector<Object> result_;
+    bool resultIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

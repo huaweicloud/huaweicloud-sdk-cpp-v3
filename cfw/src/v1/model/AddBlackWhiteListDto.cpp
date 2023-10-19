@@ -26,6 +26,8 @@ AddBlackWhiteListDto::AddBlackWhiteListDto()
     protocolIsSet_ = false;
     port_ = "";
     portIsSet_ = false;
+    description_ = "";
+    descriptionIsSet_ = false;
 }
 
 AddBlackWhiteListDto::~AddBlackWhiteListDto() = default;
@@ -58,6 +60,9 @@ web::json::value AddBlackWhiteListDto::toJson() const
     }
     if(portIsSet_) {
         val[utility::conversions::to_string_t("port")] = ModelBase::toJson(port_);
+    }
+    if(descriptionIsSet_) {
+        val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
     }
 
     return val;
@@ -127,6 +132,15 @@ bool AddBlackWhiteListDto::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPort(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("description"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("description"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDescription(refVal);
         }
     }
     return ok;
@@ -278,6 +292,27 @@ bool AddBlackWhiteListDto::portIsSet() const
 void AddBlackWhiteListDto::unsetport()
 {
     portIsSet_ = false;
+}
+
+std::string AddBlackWhiteListDto::getDescription() const
+{
+    return description_;
+}
+
+void AddBlackWhiteListDto::setDescription(const std::string& value)
+{
+    description_ = value;
+    descriptionIsSet_ = true;
+}
+
+bool AddBlackWhiteListDto::descriptionIsSet() const
+{
+    return descriptionIsSet_;
+}
+
+void AddBlackWhiteListDto::unsetdescription()
+{
+    descriptionIsSet_ = false;
 }
 
 }

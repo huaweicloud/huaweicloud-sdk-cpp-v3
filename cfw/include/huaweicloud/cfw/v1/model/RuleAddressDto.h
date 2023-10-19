@@ -10,6 +10,9 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <huaweicloud/cfw/v1/model/AddressGroupVO.h>
+#include <huaweicloud/cfw/v1/model/IpRegionDto.h>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -92,6 +95,69 @@ public:
     void unsetdomainAddressName();
     void setDomainAddressName(const std::string& value);
 
+    /// <summary>
+    /// 规则region列表json值
+    /// </summary>
+
+    std::string getRegionListJson() const;
+    bool regionListJsonIsSet() const;
+    void unsetregionListJson();
+    void setRegionListJson(const std::string& value);
+
+    /// <summary>
+    /// 规则region列表
+    /// </summary>
+
+    std::vector<IpRegionDto>& getRegionList();
+    bool regionListIsSet() const;
+    void unsetregionList();
+    void setRegionList(const std::vector<IpRegionDto>& value);
+
+    /// <summary>
+    /// 域名组id
+    /// </summary>
+
+    std::string getDomainSetId() const;
+    bool domainSetIdIsSet() const;
+    void unsetdomainSetId();
+    void setDomainSetId(const std::string& value);
+
+    /// <summary>
+    /// 域名组名称
+    /// </summary>
+
+    std::string getDomainSetName() const;
+    bool domainSetNameIsSet() const;
+    void unsetdomainSetName();
+    void setDomainSetName(const std::string& value);
+
+    /// <summary>
+    /// IP地址列表
+    /// </summary>
+
+    std::vector<std::string>& getIpAddress();
+    bool ipAddressIsSet() const;
+    void unsetipAddress();
+    void setIpAddress(const std::vector<std::string>& value);
+
+    /// <summary>
+    /// 地址组列表
+    /// </summary>
+
+    std::vector<std::string>& getAddressGroup();
+    bool addressGroupIsSet() const;
+    void unsetaddressGroup();
+    void setAddressGroup(const std::vector<std::string>& value);
+
+    /// <summary>
+    /// 地址组名称列表
+    /// </summary>
+
+    std::vector<AddressGroupVO>& getAddressGroupNames();
+    bool addressGroupNamesIsSet() const;
+    void unsetaddressGroupNames();
+    void setAddressGroupNames(const std::vector<AddressGroupVO>& value);
+
 
 protected:
     int32_t type_;
@@ -106,6 +172,20 @@ protected:
     bool addressSetNameIsSet_;
     std::string domainAddressName_;
     bool domainAddressNameIsSet_;
+    std::string regionListJson_;
+    bool regionListJsonIsSet_;
+    std::vector<IpRegionDto> regionList_;
+    bool regionListIsSet_;
+    std::string domainSetId_;
+    bool domainSetIdIsSet_;
+    std::string domainSetName_;
+    bool domainSetNameIsSet_;
+    std::vector<std::string> ipAddress_;
+    bool ipAddressIsSet_;
+    std::vector<std::string> addressGroup_;
+    bool addressGroupIsSet_;
+    std::vector<AddressGroupVO> addressGroupNames_;
+    bool addressGroupNamesIsSet_;
 
 };
 

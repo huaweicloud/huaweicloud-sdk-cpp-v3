@@ -146,6 +146,15 @@ public:
     void unsetprotocol();
     void setProtocol(const std::string& value);
 
+    /// <summary>
+    /// 目标主机
+    /// </summary>
+
+    std::string getDstHost() const;
+    bool dstHostIsSet() const;
+    void unsetdstHost();
+    void setDstHost(const std::string& value);
+
 
 protected:
     int32_t bytes_;
@@ -172,6 +181,8 @@ protected:
     bool dstPortIsSet_;
     std::string protocol_;
     bool protocolIsSet_;
+    std::string dstHost_;
+    bool dstHostIsSet_;
 
 };
 

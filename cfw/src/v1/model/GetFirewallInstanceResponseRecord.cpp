@@ -38,6 +38,10 @@ GetFirewallInstanceResponseRecord::GetFirewallInstanceResponseRecord()
     fwInstanceNameIsSet_ = false;
     enterpriseProjectId_ = "";
     enterpriseProjectIdIsSet_ = false;
+    resourceId_ = "";
+    resourceIdIsSet_ = false;
+    supportUrlFiltering_ = false;
+    supportUrlFilteringIsSet_ = false;
 }
 
 GetFirewallInstanceResponseRecord::~GetFirewallInstanceResponseRecord() = default;
@@ -94,6 +98,12 @@ web::json::value GetFirewallInstanceResponseRecord::toJson() const
     }
     if(enterpriseProjectIdIsSet_) {
         val[utility::conversions::to_string_t("enterprise_project_id")] = ModelBase::toJson(enterpriseProjectId_);
+    }
+    if(resourceIdIsSet_) {
+        val[utility::conversions::to_string_t("resource_id")] = ModelBase::toJson(resourceId_);
+    }
+    if(supportUrlFilteringIsSet_) {
+        val[utility::conversions::to_string_t("support_url_filtering")] = ModelBase::toJson(supportUrlFiltering_);
     }
 
     return val;
@@ -235,6 +245,24 @@ bool GetFirewallInstanceResponseRecord::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEnterpriseProjectId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("resource_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("resource_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setResourceId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("support_url_filtering"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("support_url_filtering"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSupportUrlFiltering(refVal);
         }
     }
     return ok;
@@ -554,6 +582,48 @@ bool GetFirewallInstanceResponseRecord::enterpriseProjectIdIsSet() const
 void GetFirewallInstanceResponseRecord::unsetenterpriseProjectId()
 {
     enterpriseProjectIdIsSet_ = false;
+}
+
+std::string GetFirewallInstanceResponseRecord::getResourceId() const
+{
+    return resourceId_;
+}
+
+void GetFirewallInstanceResponseRecord::setResourceId(const std::string& value)
+{
+    resourceId_ = value;
+    resourceIdIsSet_ = true;
+}
+
+bool GetFirewallInstanceResponseRecord::resourceIdIsSet() const
+{
+    return resourceIdIsSet_;
+}
+
+void GetFirewallInstanceResponseRecord::unsetresourceId()
+{
+    resourceIdIsSet_ = false;
+}
+
+bool GetFirewallInstanceResponseRecord::isSupportUrlFiltering() const
+{
+    return supportUrlFiltering_;
+}
+
+void GetFirewallInstanceResponseRecord::setSupportUrlFiltering(bool value)
+{
+    supportUrlFiltering_ = value;
+    supportUrlFilteringIsSet_ = true;
+}
+
+bool GetFirewallInstanceResponseRecord::supportUrlFilteringIsSet() const
+{
+    return supportUrlFilteringIsSet_;
+}
+
+void GetFirewallInstanceResponseRecord::unsetsupportUrlFiltering()
+{
+    supportUrlFilteringIsSet_ = false;
 }
 
 }

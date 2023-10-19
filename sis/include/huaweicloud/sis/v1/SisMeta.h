@@ -19,8 +19,6 @@ public:
     static HttpRequestDef genRequestDefForPushTranscriberJobs();
     static HttpRequestDef genRequestDefForRecognizeFlashAsr();
     static HttpRequestDef genRequestDefForRecognizeShortAudio();
-    static HttpRequestDef genRequestDefForRunAudioAssessment();
-    static HttpRequestDef genRequestDefForRunMultiModalAssessment();
     static HttpRequestDef genRequestDefForRunTts();
     static HttpRequestDef genRequestDefForShowVocabularies();
     static HttpRequestDef genRequestDefForShowVocabulary();

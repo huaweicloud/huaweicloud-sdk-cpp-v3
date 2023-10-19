@@ -29,6 +29,10 @@ GetEastWestFirewallResponseBody::GetEastWestFirewallResponseBody()
     offsetIsSet_ = false;
     limit_ = 0;
     limitIsSet_ = false;
+    mode_ = "";
+    modeIsSet_ = false;
+    ewVpcRouteLimit_ = 0;
+    ewVpcRouteLimitIsSet_ = false;
 }
 
 GetEastWestFirewallResponseBody::~GetEastWestFirewallResponseBody() = default;
@@ -73,6 +77,12 @@ web::json::value GetEastWestFirewallResponseBody::toJson() const
     }
     if(limitIsSet_) {
         val[utility::conversions::to_string_t("limit")] = ModelBase::toJson(limit_);
+    }
+    if(modeIsSet_) {
+        val[utility::conversions::to_string_t("mode")] = ModelBase::toJson(mode_);
+    }
+    if(ewVpcRouteLimitIsSet_) {
+        val[utility::conversions::to_string_t("ew_vpc_route_limit")] = ModelBase::toJson(ewVpcRouteLimit_);
     }
 
     return val;
@@ -178,6 +188,24 @@ bool GetEastWestFirewallResponseBody::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLimit(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("mode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("mode"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("ew_vpc_route_limit"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ew_vpc_route_limit"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEwVpcRouteLimit(refVal);
         }
     }
     return ok;
@@ -413,6 +441,48 @@ bool GetEastWestFirewallResponseBody::limitIsSet() const
 void GetEastWestFirewallResponseBody::unsetlimit()
 {
     limitIsSet_ = false;
+}
+
+std::string GetEastWestFirewallResponseBody::getMode() const
+{
+    return mode_;
+}
+
+void GetEastWestFirewallResponseBody::setMode(const std::string& value)
+{
+    mode_ = value;
+    modeIsSet_ = true;
+}
+
+bool GetEastWestFirewallResponseBody::modeIsSet() const
+{
+    return modeIsSet_;
+}
+
+void GetEastWestFirewallResponseBody::unsetmode()
+{
+    modeIsSet_ = false;
+}
+
+int32_t GetEastWestFirewallResponseBody::getEwVpcRouteLimit() const
+{
+    return ewVpcRouteLimit_;
+}
+
+void GetEastWestFirewallResponseBody::setEwVpcRouteLimit(int32_t value)
+{
+    ewVpcRouteLimit_ = value;
+    ewVpcRouteLimitIsSet_ = true;
+}
+
+bool GetEastWestFirewallResponseBody::ewVpcRouteLimitIsSet() const
+{
+    return ewVpcRouteLimitIsSet_;
+}
+
+void GetEastWestFirewallResponseBody::unsetewVpcRouteLimit()
+{
+    ewVpcRouteLimitIsSet_ = false;
 }
 
 }

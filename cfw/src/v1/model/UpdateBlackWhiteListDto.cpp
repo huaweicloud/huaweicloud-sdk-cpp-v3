@@ -26,6 +26,8 @@ UpdateBlackWhiteListDto::UpdateBlackWhiteListDto()
     listTypeIsSet_ = false;
     objectId_ = "";
     objectIdIsSet_ = false;
+    description_ = "";
+    descriptionIsSet_ = false;
 }
 
 UpdateBlackWhiteListDto::~UpdateBlackWhiteListDto() = default;
@@ -58,6 +60,9 @@ web::json::value UpdateBlackWhiteListDto::toJson() const
     }
     if(objectIdIsSet_) {
         val[utility::conversions::to_string_t("object_id")] = ModelBase::toJson(objectId_);
+    }
+    if(descriptionIsSet_) {
+        val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
     }
 
     return val;
@@ -127,6 +132,15 @@ bool UpdateBlackWhiteListDto::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setObjectId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("description"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("description"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDescription(refVal);
         }
     }
     return ok;
@@ -278,6 +292,27 @@ bool UpdateBlackWhiteListDto::objectIdIsSet() const
 void UpdateBlackWhiteListDto::unsetobjectId()
 {
     objectIdIsSet_ = false;
+}
+
+std::string UpdateBlackWhiteListDto::getDescription() const
+{
+    return description_;
+}
+
+void UpdateBlackWhiteListDto::setDescription(const std::string& value)
+{
+    description_ = value;
+    descriptionIsSet_ = true;
+}
+
+bool UpdateBlackWhiteListDto::descriptionIsSet() const
+{
+    return descriptionIsSet_;
+}
+
+void UpdateBlackWhiteListDto::unsetdescription()
+{
+    descriptionIsSet_ = false;
 }
 
 }

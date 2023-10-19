@@ -48,7 +48,7 @@ public:
     void setObjectId(const std::string& value);
 
     /// <summary>
-    /// 补丁类型，1-基础补丁 2&#x3D;虚拟补丁
+    /// 补丁类型，仅支持虚拟补丁，值为2。
     /// </summary>
 
     int32_t getIpsType() const;

@@ -14,6 +14,8 @@ DetectLiveByBase64IntlResponse::DetectLiveByBase64IntlResponse()
 {
     videoResultIsSet_ = false;
     warningListIsSet_ = false;
+    xRequestId_ = "";
+    xRequestIdIsSet_ = false;
 }
 
 DetectLiveByBase64IntlResponse::~DetectLiveByBase64IntlResponse() = default;
@@ -31,6 +33,9 @@ web::json::value DetectLiveByBase64IntlResponse::toJson() const
     }
     if(warningListIsSet_) {
         val[utility::conversions::to_string_t("warning-list")] = ModelBase::toJson(warningList_);
+    }
+    if(xRequestIdIsSet_) {
+        val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
     }
 
     return val;
@@ -55,6 +60,15 @@ bool DetectLiveByBase64IntlResponse::fromJson(const web::json::value& val)
             std::vector<WarningList> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setWarningList(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Request-Id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXRequestId(refVal);
         }
     }
     return ok;
@@ -101,6 +115,27 @@ bool DetectLiveByBase64IntlResponse::warningListIsSet() const
 void DetectLiveByBase64IntlResponse::unsetwarningList()
 {
     warningListIsSet_ = false;
+}
+
+std::string DetectLiveByBase64IntlResponse::getXRequestId() const
+{
+    return xRequestId_;
+}
+
+void DetectLiveByBase64IntlResponse::setXRequestId(const std::string& value)
+{
+    xRequestId_ = value;
+    xRequestIdIsSet_ = true;
+}
+
+bool DetectLiveByBase64IntlResponse::xRequestIdIsSet() const
+{
+    return xRequestIdIsSet_;
+}
+
+void DetectLiveByBase64IntlResponse::unsetxRequestId()
+{
+    xRequestIdIsSet_ = false;
 }
 
 }

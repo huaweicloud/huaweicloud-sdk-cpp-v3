@@ -138,7 +138,7 @@ public:
     void setOffset(int32_t value);
 
     /// <summary>
-    /// 每页显示个数
+    /// 每页显示个数，范围为1-1024
     /// </summary>
 
     int32_t getLimit() const;
@@ -218,6 +218,24 @@ public:
     void unsetenterpriseProjectId();
     void setEnterpriseProjectId(const std::string& value);
 
+    /// <summary>
+    /// 目标主机
+    /// </summary>
+
+    std::string getDstHost() const;
+    bool dstHostIsSet() const;
+    void unsetdstHost();
+    void setDstHost(const std::string& value);
+
+    /// <summary>
+    /// log_type
+    /// </summary>
+
+    std::string getLogType() const;
+    bool logTypeIsSet() const;
+    void unsetlogType();
+    void setLogType(const std::string& value);
+
 
 protected:
     int64_t startTime_;
@@ -260,6 +278,10 @@ protected:
     bool sourceIsSet_;
     std::string enterpriseProjectId_;
     bool enterpriseProjectIdIsSet_;
+    std::string dstHost_;
+    bool dstHostIsSet_;
+    std::string logType_;
+    bool logTypeIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

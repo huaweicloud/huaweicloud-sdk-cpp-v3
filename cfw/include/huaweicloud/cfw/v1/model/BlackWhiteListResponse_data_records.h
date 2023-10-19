@@ -92,6 +92,15 @@ public:
     void unsetport();
     void setPort(const std::string& value);
 
+    /// <summary>
+    /// 描述
+    /// </summary>
+
+    std::string getDescription() const;
+    bool descriptionIsSet() const;
+    void unsetdescription();
+    void setDescription(const std::string& value);
+
 
 protected:
     std::string listId_;
@@ -106,6 +115,8 @@ protected:
     bool protocolIsSet_;
     std::string port_;
     bool portIsSet_;
+    std::string description_;
+    bool descriptionIsSet_;
 
 };
 

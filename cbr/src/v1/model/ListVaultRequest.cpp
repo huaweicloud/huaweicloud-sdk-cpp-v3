@@ -26,7 +26,6 @@ ListVaultRequest::ListVaultRequest()
     objectTypeIsSet_ = false;
     enterpriseProjectId_ = "";
     enterpriseProjectIdIsSet_ = false;
-    id_ = "";
     idIsSet_ = false;
     policyId_ = "";
     policyIdIsSet_ = false;
@@ -153,7 +152,7 @@ bool ListVaultRequest::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("id"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setId(refVal);
         }
@@ -336,12 +335,12 @@ void ListVaultRequest::unsetenterpriseProjectId()
     enterpriseProjectIdIsSet_ = false;
 }
 
-std::string ListVaultRequest::getId() const
+std::vector<std::string>& ListVaultRequest::getId()
 {
     return id_;
 }
 
-void ListVaultRequest::setId(const std::string& value)
+void ListVaultRequest::setId(const std::vector<std::string>& value)
 {
     id_ = value;
     idIsSet_ = true;

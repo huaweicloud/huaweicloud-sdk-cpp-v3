@@ -40,7 +40,7 @@ public:
     /// GetFirewallInstanceData members
 
     /// <summary>
-    /// 每页显示个数
+    /// 每页显示个数，范围为1-1024
     /// </summary>
 
     int32_t getLimit() const;

@@ -20,6 +20,8 @@ DnsServersResponseDTO::DnsServersResponseDTO()
     isCustomizedIsSet_ = false;
     serverIp_ = "";
     serverIpIsSet_ = false;
+    healthCheckDomainName_ = "";
+    healthCheckDomainNameIsSet_ = false;
 }
 
 DnsServersResponseDTO::~DnsServersResponseDTO() = default;
@@ -43,6 +45,9 @@ web::json::value DnsServersResponseDTO::toJson() const
     }
     if(serverIpIsSet_) {
         val[utility::conversions::to_string_t("server_ip")] = ModelBase::toJson(serverIp_);
+    }
+    if(healthCheckDomainNameIsSet_) {
+        val[utility::conversions::to_string_t("health_check_domain_name")] = ModelBase::toJson(healthCheckDomainName_);
     }
 
     return val;
@@ -85,6 +90,15 @@ bool DnsServersResponseDTO::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setServerIp(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("health_check_domain_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("health_check_domain_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHealthCheckDomainName(refVal);
         }
     }
     return ok;
@@ -173,6 +187,27 @@ bool DnsServersResponseDTO::serverIpIsSet() const
 void DnsServersResponseDTO::unsetserverIp()
 {
     serverIpIsSet_ = false;
+}
+
+std::string DnsServersResponseDTO::getHealthCheckDomainName() const
+{
+    return healthCheckDomainName_;
+}
+
+void DnsServersResponseDTO::setHealthCheckDomainName(const std::string& value)
+{
+    healthCheckDomainName_ = value;
+    healthCheckDomainNameIsSet_ = true;
+}
+
+bool DnsServersResponseDTO::healthCheckDomainNameIsSet() const
+{
+    return healthCheckDomainNameIsSet_;
+}
+
+void DnsServersResponseDTO::unsethealthCheckDomainName()
+{
+    healthCheckDomainNameIsSet_ = false;
 }
 
 }

@@ -14,6 +14,8 @@ DetectStandardByIdCardImageResponse::DetectStandardByIdCardImageResponse()
 {
     metaIsSet_ = false;
     resultIsSet_ = false;
+    xRequestId_ = "";
+    xRequestIdIsSet_ = false;
 }
 
 DetectStandardByIdCardImageResponse::~DetectStandardByIdCardImageResponse() = default;
@@ -31,6 +33,9 @@ web::json::value DetectStandardByIdCardImageResponse::toJson() const
     }
     if(resultIsSet_) {
         val[utility::conversions::to_string_t("result")] = ModelBase::toJson(result_);
+    }
+    if(xRequestIdIsSet_) {
+        val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
     }
 
     return val;
@@ -55,6 +60,15 @@ bool DetectStandardByIdCardImageResponse::fromJson(const web::json::value& val)
             IvsStandardByIdCardImageResponseBody_result refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResult(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Request-Id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXRequestId(refVal);
         }
     }
     return ok;
@@ -101,6 +115,27 @@ bool DetectStandardByIdCardImageResponse::resultIsSet() const
 void DetectStandardByIdCardImageResponse::unsetresult()
 {
     resultIsSet_ = false;
+}
+
+std::string DetectStandardByIdCardImageResponse::getXRequestId() const
+{
+    return xRequestId_;
+}
+
+void DetectStandardByIdCardImageResponse::setXRequestId(const std::string& value)
+{
+    xRequestId_ = value;
+    xRequestIdIsSet_ = true;
+}
+
+bool DetectStandardByIdCardImageResponse::xRequestIdIsSet() const
+{
+    return xRequestIdIsSet_;
+}
+
+void DetectStandardByIdCardImageResponse::unsetxRequestId()
+{
+    xRequestIdIsSet_ = false;
 }
 
 }

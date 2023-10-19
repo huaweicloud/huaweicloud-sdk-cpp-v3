@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/cfw/v1/model/RuleAddressDto.h>
+#include <huaweicloud/cfw/v1/model/TagsVO.h>
 #include <string>
 #include <huaweicloud/cfw/v1/model/RuleServiceDto.h>
 #include <huaweicloud/cfw/v1/model/OrderRuleAclDto.h>
@@ -194,6 +195,15 @@ public:
     void unsettype();
     void setType(int32_t value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    TagsVO getTag() const;
+    bool tagIsSet() const;
+    void unsettag();
+    void setTag(const TagsVO& value);
+
 
 protected:
     std::string ruleId_;
@@ -230,6 +240,8 @@ protected:
     bool serviceIsSet_;
     int32_t type_;
     bool typeIsSet_;
+    TagsVO tag_;
+    bool tagIsSet_;
 
 };
 

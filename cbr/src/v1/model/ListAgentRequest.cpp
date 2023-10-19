@@ -18,7 +18,6 @@ ListAgentRequest::ListAgentRequest()
     offsetIsSet_ = false;
     status_ = "";
     statusIsSet_ = false;
-    agentId_ = "";
     agentIdIsSet_ = false;
 }
 
@@ -82,7 +81,7 @@ bool ListAgentRequest::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("agent_id"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAgentId(refVal);
         }
@@ -154,12 +153,12 @@ void ListAgentRequest::unsetstatus()
     statusIsSet_ = false;
 }
 
-std::string ListAgentRequest::getAgentId() const
+std::vector<std::string>& ListAgentRequest::getAgentId()
 {
     return agentId_;
 }
 
-void ListAgentRequest::setAgentId(const std::string& value)
+void ListAgentRequest::setAgentId(const std::vector<std::string>& value)
 {
     agentId_ = value;
     agentIdIsSet_ = true;

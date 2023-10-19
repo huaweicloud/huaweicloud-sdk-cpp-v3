@@ -106,6 +106,14 @@ public:
             { 
                 "https://cbr.tr-west-1.myhuaweicloud.com"
             });
+        regions["me-east-1"] = Region("me-east-1",
+            { 
+                "https://cbr.me-east-1.myhuaweicloud.com"
+            });
+        regions["ae-ad-1"] = Region("ae-ad-1",
+            { 
+                "https://cbr.ae-ad-1.g42cloud.com"
+            });
         return regions;
     }
 private:

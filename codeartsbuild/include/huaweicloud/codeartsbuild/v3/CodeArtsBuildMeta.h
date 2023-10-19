@@ -13,7 +13,11 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 
 class HUAWEICLOUD_CODEARTSBUILD_V3_EXPORT  CodeArtsBuildMeta {
 public:
+    static HttpRequestDef genRequestDefForDeleteBuildJob();
+    static HttpRequestDef genRequestDefForDisableBuildJob();
     static HttpRequestDef genRequestDefForDownloadKeystore();
+    static HttpRequestDef genRequestDefForDownloadLogByRecordId();
+    static HttpRequestDef genRequestDefForResumeBuildJob();
     static HttpRequestDef genRequestDefForRunJob();
     static HttpRequestDef genRequestDefForShowHistoryDetails();
     static HttpRequestDef genRequestDefForShowJobListByProjectId();
@@ -22,6 +26,8 @@ public:
     static HttpRequestDef genRequestDefForShowLastHistory();
     static HttpRequestDef genRequestDefForShowListHistory();
     static HttpRequestDef genRequestDefForShowListPeriodHistory();
+    static HttpRequestDef genRequestDefForShowRecordInfo();
+    static HttpRequestDef genRequestDefForStopBuildJob();
 };
 
 }

@@ -16,6 +16,8 @@ CompareFaceByUrlResponse::CompareFaceByUrlResponse()
     image2FaceIsSet_ = false;
     similarity_ = 0.0;
     similarityIsSet_ = false;
+    xRequestId_ = "";
+    xRequestIdIsSet_ = false;
 }
 
 CompareFaceByUrlResponse::~CompareFaceByUrlResponse() = default;
@@ -36,6 +38,9 @@ web::json::value CompareFaceByUrlResponse::toJson() const
     }
     if(similarityIsSet_) {
         val[utility::conversions::to_string_t("similarity")] = ModelBase::toJson(similarity_);
+    }
+    if(xRequestIdIsSet_) {
+        val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
     }
 
     return val;
@@ -69,6 +74,15 @@ bool CompareFaceByUrlResponse::fromJson(const web::json::value& val)
             double refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSimilarity(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Request-Id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXRequestId(refVal);
         }
     }
     return ok;
@@ -136,6 +150,27 @@ bool CompareFaceByUrlResponse::similarityIsSet() const
 void CompareFaceByUrlResponse::unsetsimilarity()
 {
     similarityIsSet_ = false;
+}
+
+std::string CompareFaceByUrlResponse::getXRequestId() const
+{
+    return xRequestId_;
+}
+
+void CompareFaceByUrlResponse::setXRequestId(const std::string& value)
+{
+    xRequestId_ = value;
+    xRequestIdIsSet_ = true;
+}
+
+bool CompareFaceByUrlResponse::xRequestIdIsSet() const
+{
+    return xRequestIdIsSet_;
+}
+
+void CompareFaceByUrlResponse::unsetxRequestId()
+{
+    xRequestIdIsSet_ = false;
 }
 
 }

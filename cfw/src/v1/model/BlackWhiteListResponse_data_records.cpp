@@ -24,6 +24,8 @@ BlackWhiteListResponse_data_records::BlackWhiteListResponse_data_records()
     protocolIsSet_ = false;
     port_ = "";
     portIsSet_ = false;
+    description_ = "";
+    descriptionIsSet_ = false;
 }
 
 BlackWhiteListResponse_data_records::~BlackWhiteListResponse_data_records() = default;
@@ -53,6 +55,9 @@ web::json::value BlackWhiteListResponse_data_records::toJson() const
     }
     if(portIsSet_) {
         val[utility::conversions::to_string_t("port")] = ModelBase::toJson(port_);
+    }
+    if(descriptionIsSet_) {
+        val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
     }
 
     return val;
@@ -113,6 +118,15 @@ bool BlackWhiteListResponse_data_records::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPort(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("description"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("description"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDescription(refVal);
         }
     }
     return ok;
@@ -243,6 +257,27 @@ bool BlackWhiteListResponse_data_records::portIsSet() const
 void BlackWhiteListResponse_data_records::unsetport()
 {
     portIsSet_ = false;
+}
+
+std::string BlackWhiteListResponse_data_records::getDescription() const
+{
+    return description_;
+}
+
+void BlackWhiteListResponse_data_records::setDescription(const std::string& value)
+{
+    description_ = value;
+    descriptionIsSet_ = true;
+}
+
+bool BlackWhiteListResponse_data_records::descriptionIsSet() const
+{
+    return descriptionIsSet_;
+}
+
+void BlackWhiteListResponse_data_records::unsetdescription()
+{
+    descriptionIsSet_ = false;
 }
 
 }

@@ -13,6 +13,8 @@ namespace Model {
 UpdateDnsServersRequestBody::UpdateDnsServersRequestBody()
 {
     dnsServerIsSet_ = false;
+    healthCheckDomainName_ = "";
+    healthCheckDomainNameIsSet_ = false;
 }
 
 UpdateDnsServersRequestBody::~UpdateDnsServersRequestBody() = default;
@@ -28,6 +30,9 @@ web::json::value UpdateDnsServersRequestBody::toJson() const
     if(dnsServerIsSet_) {
         val[utility::conversions::to_string_t("dns_server")] = ModelBase::toJson(dnsServer_);
     }
+    if(healthCheckDomainNameIsSet_) {
+        val[utility::conversions::to_string_t("health_check_domain_name")] = ModelBase::toJson(healthCheckDomainName_);
+    }
 
     return val;
 }
@@ -42,6 +47,15 @@ bool UpdateDnsServersRequestBody::fromJson(const web::json::value& val)
             std::vector<UpdateDnsServersRequestBody_dns_server> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDnsServer(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("health_check_domain_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("health_check_domain_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHealthCheckDomainName(refVal);
         }
     }
     return ok;
@@ -67,6 +81,27 @@ bool UpdateDnsServersRequestBody::dnsServerIsSet() const
 void UpdateDnsServersRequestBody::unsetdnsServer()
 {
     dnsServerIsSet_ = false;
+}
+
+std::string UpdateDnsServersRequestBody::getHealthCheckDomainName() const
+{
+    return healthCheckDomainName_;
+}
+
+void UpdateDnsServersRequestBody::setHealthCheckDomainName(const std::string& value)
+{
+    healthCheckDomainName_ = value;
+    healthCheckDomainNameIsSet_ = true;
+}
+
+bool UpdateDnsServersRequestBody::healthCheckDomainNameIsSet() const
+{
+    return healthCheckDomainNameIsSet_;
+}
+
+void UpdateDnsServersRequestBody::unsethealthCheckDomainName()
+{
+    healthCheckDomainNameIsSet_ = false;
 }
 
 }

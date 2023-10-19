@@ -13,6 +13,7 @@ namespace Model {
 AddressItems::AddressItems()
 {
     itemsIsSet_ = false;
+    coveredIpIsSet_ = false;
 }
 
 AddressItems::~AddressItems() = default;
@@ -28,6 +29,9 @@ web::json::value AddressItems::toJson() const
     if(itemsIsSet_) {
         val[utility::conversions::to_string_t("items")] = ModelBase::toJson(items_);
     }
+    if(coveredIpIsSet_) {
+        val[utility::conversions::to_string_t("covered_ip")] = ModelBase::toJson(coveredIp_);
+    }
 
     return val;
 }
@@ -42,6 +46,15 @@ bool AddressItems::fromJson(const web::json::value& val)
             std::vector<IdObject> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setItems(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("covered_ip"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("covered_ip"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<CoveredIPVO> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCoveredIp(refVal);
         }
     }
     return ok;
@@ -67,6 +80,27 @@ bool AddressItems::itemsIsSet() const
 void AddressItems::unsetitems()
 {
     itemsIsSet_ = false;
+}
+
+std::vector<CoveredIPVO>& AddressItems::getCoveredIp()
+{
+    return coveredIp_;
+}
+
+void AddressItems::setCoveredIp(const std::vector<CoveredIPVO>& value)
+{
+    coveredIp_ = value;
+    coveredIpIsSet_ = true;
+}
+
+bool AddressItems::coveredIpIsSet() const
+{
+    return coveredIpIsSet_;
+}
+
+void AddressItems::unsetcoveredIp()
+{
+    coveredIpIsSet_ = false;
 }
 
 }

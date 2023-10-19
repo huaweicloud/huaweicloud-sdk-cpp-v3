@@ -13,6 +13,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/kvs/v1/model/PutKv.h>
+#include <huaweicloud/kvs/v1/model/GetKv.h>
 #include <huaweicloud/kvs/v1/model/DeleteKv.h>
 
 namespace HuaweiCloud {
@@ -60,12 +61,23 @@ public:
     void unsetdeleteKv();
     void setDeleteKv(const DeleteKv& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    GetKv getGetKv() const;
+    bool getKvIsSet() const;
+    void unsetgetKv();
+    void setGetKv(const GetKv& value);
+
 
 protected:
     PutKv putKv_;
     bool putKvIsSet_;
     DeleteKv deleteKv_;
     bool deleteKvIsSet_;
+    GetKv getKv_;
+    bool getKvIsSet_;
 
 };
 

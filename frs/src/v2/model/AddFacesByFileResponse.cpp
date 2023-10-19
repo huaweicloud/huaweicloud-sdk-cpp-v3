@@ -17,6 +17,8 @@ AddFacesByFileResponse::AddFacesByFileResponse()
     faceSetName_ = "";
     faceSetNameIsSet_ = false;
     facesIsSet_ = false;
+    xRequestId_ = "";
+    xRequestIdIsSet_ = false;
 }
 
 AddFacesByFileResponse::~AddFacesByFileResponse() = default;
@@ -37,6 +39,9 @@ web::json::value AddFacesByFileResponse::toJson() const
     }
     if(facesIsSet_) {
         val[utility::conversions::to_string_t("faces")] = ModelBase::toJson(faces_);
+    }
+    if(xRequestIdIsSet_) {
+        val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
     }
 
     return val;
@@ -70,6 +75,15 @@ bool AddFacesByFileResponse::fromJson(const web::json::value& val)
             std::vector<FaceSetFace> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFaces(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Request-Id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXRequestId(refVal);
         }
     }
     return ok;
@@ -137,6 +151,27 @@ bool AddFacesByFileResponse::facesIsSet() const
 void AddFacesByFileResponse::unsetfaces()
 {
     facesIsSet_ = false;
+}
+
+std::string AddFacesByFileResponse::getXRequestId() const
+{
+    return xRequestId_;
+}
+
+void AddFacesByFileResponse::setXRequestId(const std::string& value)
+{
+    xRequestId_ = value;
+    xRequestIdIsSet_ = true;
+}
+
+bool AddFacesByFileResponse::xRequestIdIsSet() const
+{
+    return xRequestIdIsSet_;
+}
+
+void AddFacesByFileResponse::unsetxRequestId()
+{
+    xRequestIdIsSet_ = false;
 }
 
 }

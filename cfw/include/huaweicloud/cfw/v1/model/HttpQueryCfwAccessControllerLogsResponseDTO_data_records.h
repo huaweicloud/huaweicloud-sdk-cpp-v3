@@ -75,6 +75,42 @@ public:
     void setHitTime(int32_t value);
 
     /// <summary>
+    /// 源区域id
+    /// </summary>
+
+    std::string getSrcRegionId() const;
+    bool srcRegionIdIsSet() const;
+    void unsetsrcRegionId();
+    void setSrcRegionId(const std::string& value);
+
+    /// <summary>
+    /// 源区域name
+    /// </summary>
+
+    std::string getSrcRegionName() const;
+    bool srcRegionNameIsSet() const;
+    void unsetsrcRegionName();
+    void setSrcRegionName(const std::string& value);
+
+    /// <summary>
+    /// 目的区域id
+    /// </summary>
+
+    std::string getDstRegionId() const;
+    bool dstRegionIdIsSet() const;
+    void unsetdstRegionId();
+    void setDstRegionId(const std::string& value);
+
+    /// <summary>
+    /// 目的区域name
+    /// </summary>
+
+    std::string getDstRegionName() const;
+    bool dstRegionNameIsSet() const;
+    void unsetdstRegionName();
+    void setDstRegionName(const std::string& value);
+
+    /// <summary>
     /// 文档ID
     /// </summary>
 
@@ -137,6 +173,15 @@ public:
     void unsetapp();
     void setApp(const std::string& value);
 
+    /// <summary>
+    /// 目标主机
+    /// </summary>
+
+    std::string getDstHost() const;
+    bool dstHostIsSet() const;
+    void unsetdstHost();
+    void setDstHost(const std::string& value);
+
 
 protected:
     std::string action_;
@@ -147,6 +192,14 @@ protected:
     bool ruleIdIsSet_;
     int32_t hitTime_;
     bool hitTimeIsSet_;
+    std::string srcRegionId_;
+    bool srcRegionIdIsSet_;
+    std::string srcRegionName_;
+    bool srcRegionNameIsSet_;
+    std::string dstRegionId_;
+    bool dstRegionIdIsSet_;
+    std::string dstRegionName_;
+    bool dstRegionNameIsSet_;
     std::string logId_;
     bool logIdIsSet_;
     std::string srcIp_;
@@ -161,6 +214,8 @@ protected:
     bool protocolIsSet_;
     std::string app_;
     bool appIsSet_;
+    std::string dstHost_;
+    bool dstHostIsSet_;
 
 };
 

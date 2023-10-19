@@ -15,6 +15,8 @@ class HUAWEICLOUD_KVS_V1_EXPORT  KvsMeta {
 public:
     static HttpRequestDef genRequestDefForCreateTable();
     static HttpRequestDef genRequestDefForDescribeTable();
+    static HttpRequestDef genRequestDefForListTable();
+    static HttpRequestDef genRequestDefForBatchGetKv();
     static HttpRequestDef genRequestDefForBatchWriteKv();
     static HttpRequestDef genRequestDefForDeleteKv();
     static HttpRequestDef genRequestDefForGetKv();

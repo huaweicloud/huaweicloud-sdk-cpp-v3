@@ -15,8 +15,14 @@
 #include <huaweicloud/kvs/v1/model/DescribeTableRequest.h>
 #include <huaweicloud/kvs/v1/model/DescribeTableRequestBody.h>
 #include <huaweicloud/kvs/v1/model/DescribeTableResponse.h>
+#include <huaweicloud/kvs/v1/model/ListTableRequest.h>
+#include <huaweicloud/kvs/v1/model/ListTableRequestBody.h>
+#include <huaweicloud/kvs/v1/model/ListTableResponse.h>
 #include <string>
 
+#include <huaweicloud/kvs/v1/model/BatchGetKvRequest.h>
+#include <huaweicloud/kvs/v1/model/BatchGetKvRequestBody.h>
+#include <huaweicloud/kvs/v1/model/BatchGetKvResponse.h>
 #include <huaweicloud/kvs/v1/model/BatchWriteKvRequest.h>
 #include <huaweicloud/kvs/v1/model/BatchWriteKvRequestBody.h>
 #include <huaweicloud/kvs/v1/model/BatchWriteKvResponse.h>
@@ -83,7 +89,23 @@ public:
     std::shared_ptr<DescribeTableResponse> describeTable(
         DescribeTableRequest &request
     );
+    // 列出所有表
+    //
+    // list table
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListTableResponse> listTable(
+        ListTableRequest &request
+    );
 
+    // 批量查询kv
+    //
+    // batch get kv
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchGetKvResponse> batchGetKv(
+        BatchGetKvRequest &request
+    );
     // 持同一个store的同一张表的put-kv操作和delete-kv操作， 最多携带25个操作，body部分不超过8MB
     //
     // batch write kv

@@ -18,6 +18,8 @@ EipCountRespData::EipCountRespData()
     eipTotalIsSet_ = false;
     eipProtected_ = 0;
     eipProtectedIsSet_ = false;
+    eipProtectedSelf_ = 0;
+    eipProtectedSelfIsSet_ = false;
 }
 
 EipCountRespData::~EipCountRespData() = default;
@@ -38,6 +40,9 @@ web::json::value EipCountRespData::toJson() const
     }
     if(eipProtectedIsSet_) {
         val[utility::conversions::to_string_t("eip_protected")] = ModelBase::toJson(eipProtected_);
+    }
+    if(eipProtectedSelfIsSet_) {
+        val[utility::conversions::to_string_t("eip_protected_self")] = ModelBase::toJson(eipProtectedSelf_);
     }
 
     return val;
@@ -71,6 +76,15 @@ bool EipCountRespData::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEipProtected(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("eip_protected_self"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("eip_protected_self"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEipProtectedSelf(refVal);
         }
     }
     return ok;
@@ -138,6 +152,27 @@ bool EipCountRespData::eipProtectedIsSet() const
 void EipCountRespData::unseteipProtected()
 {
     eipProtectedIsSet_ = false;
+}
+
+int32_t EipCountRespData::getEipProtectedSelf() const
+{
+    return eipProtectedSelf_;
+}
+
+void EipCountRespData::setEipProtectedSelf(int32_t value)
+{
+    eipProtectedSelf_ = value;
+    eipProtectedSelfIsSet_ = true;
+}
+
+bool EipCountRespData::eipProtectedSelfIsSet() const
+{
+    return eipProtectedSelfIsSet_;
+}
+
+void EipCountRespData::unseteipProtectedSelf()
+{
+    eipProtectedSelfIsSet_ = false;
 }
 
 }

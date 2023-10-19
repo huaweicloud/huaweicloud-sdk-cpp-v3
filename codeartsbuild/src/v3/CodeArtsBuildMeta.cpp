@@ -8,6 +8,16 @@ namespace V3 {
 
 using namespace HuaweiCloud::Sdk::Core::Http;
 
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForDeleteBuildJob() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForDisableBuildJob() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef CodeArtsBuildMeta::genRequestDefForDownloadKeystore() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("FileName")
@@ -16,6 +26,16 @@ HttpRequestDef CodeArtsBuildMeta::genRequestDefForDownloadKeystore() {
     reqDefBuilder.withRequestField(FieldDef().withName("DomainId")
                   .withJsonTag("domain_id")
                   .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForDownloadLogByRecordId() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForResumeBuildJob() {
+    HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
 
@@ -96,6 +116,16 @@ HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowListPeriodHistory() {
     reqDefBuilder.withRequestField(FieldDef().withName("EndTime")
                   .withJsonTag("end_time")
                   .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowRecordInfo() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForStopBuildJob() {
+    HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
 

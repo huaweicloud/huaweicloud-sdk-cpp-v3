@@ -52,7 +52,7 @@ make
 sudo make install
 ```
 
-对于使用bson编码的服务(kvs)，需要安装libbson，编译sdk时设置LIBBSON_INCLUDE_DIRS和LIBBSON_LIBRARY_DIRS指定头文件和库文件路径
+对于使用bson编码的服务(kvs)，需要安装libbson，编译sdk时设置LIBBSON_DIR指定libbson根目录
 ``` bash
 sudo apt-get install libbson-1.0
 ```

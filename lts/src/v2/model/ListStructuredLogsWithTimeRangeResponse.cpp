@@ -12,7 +12,7 @@ namespace Model {
 
 ListStructuredLogsWithTimeRangeResponse::ListStructuredLogsWithTimeRangeResponse()
 {
-    contextIsSet_ = false;
+    resultIsSet_ = false;
 }
 
 ListStructuredLogsWithTimeRangeResponse::~ListStructuredLogsWithTimeRangeResponse() = default;
@@ -25,8 +25,8 @@ web::json::value ListStructuredLogsWithTimeRangeResponse::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(contextIsSet_) {
-        val[utility::conversions::to_string_t("context")] = ModelBase::toJson(context_);
+    if(resultIsSet_) {
+        val[utility::conversions::to_string_t("result")] = ModelBase::toJson(result_);
     }
 
     return val;
@@ -35,38 +35,38 @@ bool ListStructuredLogsWithTimeRangeResponse::fromJson(const web::json::value& v
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("context"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("context"));
+    if(val.has_field(utility::conversions::to_string_t("result"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("result"));
         if(!fieldValue.is_null())
         {
-            std::vector<std::string> refVal;
+            std::vector<Object> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setContext(refVal);
+            setResult(refVal);
         }
     }
     return ok;
 }
 
 
-std::vector<std::string>& ListStructuredLogsWithTimeRangeResponse::getContext()
+std::vector<Object>& ListStructuredLogsWithTimeRangeResponse::getResult()
 {
-    return context_;
+    return result_;
 }
 
-void ListStructuredLogsWithTimeRangeResponse::setContext(const std::vector<std::string>& value)
+void ListStructuredLogsWithTimeRangeResponse::setResult(const std::vector<Object>& value)
 {
-    context_ = value;
-    contextIsSet_ = true;
+    result_ = value;
+    resultIsSet_ = true;
 }
 
-bool ListStructuredLogsWithTimeRangeResponse::contextIsSet() const
+bool ListStructuredLogsWithTimeRangeResponse::resultIsSet() const
 {
-    return contextIsSet_;
+    return resultIsSet_;
 }
 
-void ListStructuredLogsWithTimeRangeResponse::unsetcontext()
+void ListStructuredLogsWithTimeRangeResponse::unsetresult()
 {
-    contextIsSet_ = false;
+    resultIsSet_ = false;
 }
 
 }

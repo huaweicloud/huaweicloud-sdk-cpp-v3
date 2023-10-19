@@ -18,6 +18,8 @@ ReinstallSeverMetadata::ReinstallSeverMetadata()
     systemCmkidIsSet_ = false;
     userData_ = "";
     userDataIsSet_ = false;
+    byol_ = "";
+    byolIsSet_ = false;
 }
 
 ReinstallSeverMetadata::~ReinstallSeverMetadata() = default;
@@ -38,6 +40,9 @@ web::json::value ReinstallSeverMetadata::toJson() const
     }
     if(userDataIsSet_) {
         val[utility::conversions::to_string_t("user_data")] = ModelBase::toJson(userData_);
+    }
+    if(byolIsSet_) {
+        val[utility::conversions::to_string_t("BYOL")] = ModelBase::toJson(byol_);
     }
 
     return val;
@@ -71,6 +76,15 @@ bool ReinstallSeverMetadata::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setUserData(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("BYOL"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("BYOL"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setByol(refVal);
         }
     }
     return ok;
@@ -138,6 +152,27 @@ bool ReinstallSeverMetadata::userDataIsSet() const
 void ReinstallSeverMetadata::unsetuserData()
 {
     userDataIsSet_ = false;
+}
+
+std::string ReinstallSeverMetadata::getByol() const
+{
+    return byol_;
+}
+
+void ReinstallSeverMetadata::setByol(const std::string& value)
+{
+    byol_ = value;
+    byolIsSet_ = true;
+}
+
+bool ReinstallSeverMetadata::byolIsSet() const
+{
+    return byolIsSet_;
+}
+
+void ReinstallSeverMetadata::unsetbyol()
+{
+    byolIsSet_ = false;
 }
 
 }

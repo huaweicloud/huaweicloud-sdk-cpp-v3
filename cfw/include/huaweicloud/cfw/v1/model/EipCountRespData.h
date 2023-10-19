@@ -57,13 +57,22 @@ public:
     void setEipTotal(int32_t value);
 
     /// <summary>
-    /// EIP防护数
+    /// 该账号下所有墙防护EIP总数量
     /// </summary>
 
     int32_t getEipProtected() const;
     bool eipProtectedIsSet() const;
     void unseteipProtected();
     void setEipProtected(int32_t value);
+
+    /// <summary>
+    /// 该当前防火墙防护EIP数量
+    /// </summary>
+
+    int32_t getEipProtectedSelf() const;
+    bool eipProtectedSelfIsSet() const;
+    void unseteipProtectedSelf();
+    void setEipProtectedSelf(int32_t value);
 
 
 protected:
@@ -73,6 +82,8 @@ protected:
     bool eipTotalIsSet_;
     int32_t eipProtected_;
     bool eipProtectedIsSet_;
+    int32_t eipProtectedSelf_;
+    bool eipProtectedSelfIsSet_;
 
 };
 

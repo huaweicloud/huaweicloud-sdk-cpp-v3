@@ -14,8 +14,6 @@
 #include <huaweicloud/sis/v1/model/DeleteVocabularyResponse.h>
 #include <huaweicloud/sis/v1/model/PostCreateVocabReq.h>
 #include <huaweicloud/sis/v1/model/PostCustomTTSReq.h>
-#include <huaweicloud/sis/v1/model/PostMultiModalAssessmentReq.h>
-#include <huaweicloud/sis/v1/model/PostShortAudioAssessmentReq.h>
 #include <huaweicloud/sis/v1/model/PostShortAudioReq.h>
 #include <huaweicloud/sis/v1/model/PostTranscriberJobs.h>
 #include <huaweicloud/sis/v1/model/PushTranscriberJobsRequest.h>
@@ -25,10 +23,6 @@
 #include <huaweicloud/sis/v1/model/RecognizeFlashAsrResponse.h>
 #include <huaweicloud/sis/v1/model/RecognizeShortAudioRequest.h>
 #include <huaweicloud/sis/v1/model/RecognizeShortAudioResponse.h>
-#include <huaweicloud/sis/v1/model/RunAudioAssessmentRequest.h>
-#include <huaweicloud/sis/v1/model/RunAudioAssessmentResponse.h>
-#include <huaweicloud/sis/v1/model/RunMultiModalAssessmentRequest.h>
-#include <huaweicloud/sis/v1/model/RunMultiModalAssessmentResponse.h>
 #include <huaweicloud/sis/v1/model/RunTtsRequest.h>
 #include <huaweicloud/sis/v1/model/RunTtsResponse.h>
 #include <huaweicloud/sis/v1/model/ShowVocabulariesParams.h>
@@ -121,22 +115,6 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<RecognizeShortAudioResponse> recognizeShortAudio(
         RecognizeShortAudioRequest &request
-    );
-    // 语音评测
-    //
-    // 口语评测接口，基于一小段朗读语音和预期文本，评价朗读者发音质量。当前仅支持华北-北京四。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<RunAudioAssessmentResponse> runAudioAssessment(
-        RunAudioAssessmentRequest &request
-    );
-    // 多模态评测
-    //
-    // 多模态评测接口，根据朗读视频数据、视频对应的音频数据和试题文本，综合给出朗读者口语的评测分数。当前仅支持华北-北京四。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<RunMultiModalAssessmentResponse> runMultiModalAssessment(
-        RunMultiModalAssessmentRequest &request
     );
     // 语音合成
     //

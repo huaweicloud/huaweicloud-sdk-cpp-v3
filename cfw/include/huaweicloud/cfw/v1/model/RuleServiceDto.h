@@ -9,7 +9,10 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/cfw/v1/model/ServiceItem.h>
 #include <string>
+#include <huaweicloud/cfw/v1/model/AddressGroupVO.h>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -92,6 +95,33 @@ public:
     void unsetserviceSetName();
     void setServiceSetName(const std::string& value);
 
+    /// <summary>
+    /// 自定义服务
+    /// </summary>
+
+    std::vector<ServiceItem>& getCustomService();
+    bool customServiceIsSet() const;
+    void unsetcustomService();
+    void setCustomService(const std::vector<ServiceItem>& value);
+
+    /// <summary>
+    /// 服务组列表
+    /// </summary>
+
+    std::vector<std::string>& getServiceGroup();
+    bool serviceGroupIsSet() const;
+    void unsetserviceGroup();
+    void setServiceGroup(const std::vector<std::string>& value);
+
+    /// <summary>
+    /// 服务组名称列表
+    /// </summary>
+
+    std::vector<AddressGroupVO>& getServiceGroupNames();
+    bool serviceGroupNamesIsSet() const;
+    void unsetserviceGroupNames();
+    void setServiceGroupNames(const std::vector<AddressGroupVO>& value);
+
 
 protected:
     int32_t type_;
@@ -106,6 +136,12 @@ protected:
     bool serviceSetIdIsSet_;
     std::string serviceSetName_;
     bool serviceSetNameIsSet_;
+    std::vector<ServiceItem> customService_;
+    bool customServiceIsSet_;
+    std::vector<std::string> serviceGroup_;
+    bool serviceGroupIsSet_;
+    std::vector<AddressGroupVO> serviceGroupNames_;
+    bool serviceGroupNamesIsSet_;
 
 };
 

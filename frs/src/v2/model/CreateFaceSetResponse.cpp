@@ -13,6 +13,8 @@ namespace Model {
 CreateFaceSetResponse::CreateFaceSetResponse()
 {
     faceSetInfoIsSet_ = false;
+    xRequestId_ = "";
+    xRequestIdIsSet_ = false;
 }
 
 CreateFaceSetResponse::~CreateFaceSetResponse() = default;
@@ -28,6 +30,9 @@ web::json::value CreateFaceSetResponse::toJson() const
     if(faceSetInfoIsSet_) {
         val[utility::conversions::to_string_t("face_set_info")] = ModelBase::toJson(faceSetInfo_);
     }
+    if(xRequestIdIsSet_) {
+        val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
+    }
 
     return val;
 }
@@ -42,6 +47,15 @@ bool CreateFaceSetResponse::fromJson(const web::json::value& val)
             FaceSetInfo refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFaceSetInfo(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Request-Id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXRequestId(refVal);
         }
     }
     return ok;
@@ -67,6 +81,27 @@ bool CreateFaceSetResponse::faceSetInfoIsSet() const
 void CreateFaceSetResponse::unsetfaceSetInfo()
 {
     faceSetInfoIsSet_ = false;
+}
+
+std::string CreateFaceSetResponse::getXRequestId() const
+{
+    return xRequestId_;
+}
+
+void CreateFaceSetResponse::setXRequestId(const std::string& value)
+{
+    xRequestId_ = value;
+    xRequestIdIsSet_ = true;
+}
+
+bool CreateFaceSetResponse::xRequestIdIsSet() const
+{
+    return xRequestIdIsSet_;
+}
+
+void CreateFaceSetResponse::unsetxRequestId()
+{
+    xRequestIdIsSet_ = false;
 }
 
 }

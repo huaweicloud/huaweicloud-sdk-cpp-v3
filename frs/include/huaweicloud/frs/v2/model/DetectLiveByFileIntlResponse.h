@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/frs/v2/model/WarningList.h>
+#include <string>
 #include <huaweicloud/frs/v2/model/LiveDetectResp_videoresult.h>
 #include <vector>
 
@@ -58,12 +59,23 @@ public:
     void unsetwarningList();
     void setWarningList(const std::vector<WarningList>& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    std::string getXRequestId() const;
+    bool xRequestIdIsSet() const;
+    void unsetxRequestId();
+    void setXRequestId(const std::string& value);
+
 
 protected:
     LiveDetectResp_videoresult videoResult_;
     bool videoResultIsSet_;
     std::vector<WarningList> warningList_;
     bool warningListIsSet_;
+    std::string xRequestId_;
+    bool xRequestIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

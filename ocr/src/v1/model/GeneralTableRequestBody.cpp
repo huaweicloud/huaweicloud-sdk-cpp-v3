@@ -26,6 +26,8 @@ GeneralTableRequestBody::GeneralTableRequestBody()
     returnExcelIsSet_ = false;
     returnRectificationMatrix_ = false;
     returnRectificationMatrixIsSet_ = false;
+    withBorders_ = false;
+    withBordersIsSet_ = false;
 }
 
 GeneralTableRequestBody::~GeneralTableRequestBody() = default;
@@ -58,6 +60,9 @@ web::json::value GeneralTableRequestBody::toJson() const
     }
     if(returnRectificationMatrixIsSet_) {
         val[utility::conversions::to_string_t("return_rectification_matrix")] = ModelBase::toJson(returnRectificationMatrix_);
+    }
+    if(withBordersIsSet_) {
+        val[utility::conversions::to_string_t("with_borders")] = ModelBase::toJson(withBorders_);
     }
 
     return val;
@@ -127,6 +132,15 @@ bool GeneralTableRequestBody::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setReturnRectificationMatrix(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("with_borders"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("with_borders"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setWithBorders(refVal);
         }
     }
     return ok;
@@ -278,6 +292,27 @@ bool GeneralTableRequestBody::returnRectificationMatrixIsSet() const
 void GeneralTableRequestBody::unsetreturnRectificationMatrix()
 {
     returnRectificationMatrixIsSet_ = false;
+}
+
+bool GeneralTableRequestBody::isWithBorders() const
+{
+    return withBorders_;
+}
+
+void GeneralTableRequestBody::setWithBorders(bool value)
+{
+    withBorders_ = value;
+    withBordersIsSet_ = true;
+}
+
+bool GeneralTableRequestBody::withBordersIsSet() const
+{
+    return withBordersIsSet_;
+}
+
+void GeneralTableRequestBody::unsetwithBorders()
+{
+    withBordersIsSet_ = false;
 }
 
 }

@@ -501,6 +501,14 @@ HttpRequestDef RdsMeta::genRequestDefForListFlavors() {
     return reqDefBuilder;
 }
 
+HttpRequestDef RdsMeta::genRequestDefForListInstanceDiagnosis() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Engine")
+                  .withJsonTag("engine")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef RdsMeta::genRequestDefForListInstanceParamHistories() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Offset")
@@ -565,6 +573,23 @@ HttpRequestDef RdsMeta::genRequestDefForListInstances() {
                   .withName("XLanguage")
                   .withJsonTag("X-Language")
                   .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef RdsMeta::genRequestDefForListInstancesInfoDiagnosis() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Engine")
+                  .withJsonTag("engine")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Diagnosis")
+                  .withJsonTag("diagnosis")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 

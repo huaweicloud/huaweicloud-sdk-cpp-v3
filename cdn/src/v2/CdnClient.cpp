@@ -73,6 +73,94 @@ std::shared_ptr<BatchCopyDomainResponse> CdnClient::batchCopyDomain(BatchCopyDom
 
     return localVarResult;
 }
+std::shared_ptr<CreatePreheatingTasksResponse> CdnClient::createPreheatingTasks(CreatePreheatingTasksRequest &request)
+{
+    std::string localVarPath = "/v1.0/cdn/content/preheating-tasks";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarQueryParams["enterprise_project_id"] = parameterToString(request.getEnterpriseProjectId());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForCreatePreheatingTasks());
+
+    std::shared_ptr<CreatePreheatingTasksResponse> localVarResult = std::make_shared<CreatePreheatingTasksResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<CreateRefreshTasksResponse> CdnClient::createRefreshTasks(CreateRefreshTasksRequest &request)
+{
+    std::string localVarPath = "/v1.0/cdn/content/refresh-tasks";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarQueryParams["enterprise_project_id"] = parameterToString(request.getEnterpriseProjectId());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForCreateRefreshTasks());
+
+    std::shared_ptr<CreateRefreshTasksResponse> localVarResult = std::make_shared<CreateRefreshTasksResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<DownloadRegionCarrierExcelResponse> CdnClient::downloadRegionCarrierExcel(DownloadRegionCarrierExcelRequest &request)
 {
     std::string localVarPath = "/v1.0/cdn/statistics/region-carrier-excel";
@@ -554,6 +642,113 @@ std::shared_ptr<ShowDomainStatsResponse> CdnClient::showDomainStats(ShowDomainSt
 
     return localVarResult;
 }
+std::shared_ptr<ShowHistoryTaskDetailsResponse> CdnClient::showHistoryTaskDetails(ShowHistoryTaskDetailsRequest &request)
+{
+    std::string localVarPath = "/v1.0/cdn/historytasks/{history_tasks_id}/detail";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["history_tasks_id"] = parameterToString(request.getHistoryTasksId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarQueryParams["enterprise_project_id"] = parameterToString(request.getEnterpriseProjectId());
+    }
+    if (request.pageSizeIsSet()) {
+        localVarQueryParams["page_size"] = parameterToString(request.getPageSize());
+    }
+    if (request.pageNumberIsSet()) {
+        localVarQueryParams["page_number"] = parameterToString(request.getPageNumber());
+    }
+    if (request.statusIsSet()) {
+        localVarQueryParams["status"] = parameterToString(request.getStatus());
+    }
+    if (request.urlIsSet()) {
+        localVarQueryParams["url"] = parameterToString(request.getUrl());
+    }
+    if (request.createTimeIsSet()) {
+        localVarQueryParams["create_time"] = parameterToString(request.getCreateTime());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForShowHistoryTaskDetails());
+
+    std::shared_ptr<ShowHistoryTaskDetailsResponse> localVarResult = std::make_shared<ShowHistoryTaskDetailsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowHistoryTasksResponse> CdnClient::showHistoryTasks(ShowHistoryTasksRequest &request)
+{
+    std::string localVarPath = "/v1.0/cdn/historytasks";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarQueryParams["enterprise_project_id"] = parameterToString(request.getEnterpriseProjectId());
+    }
+    if (request.pageSizeIsSet()) {
+        localVarQueryParams["page_size"] = parameterToString(request.getPageSize());
+    }
+    if (request.pageNumberIsSet()) {
+        localVarQueryParams["page_number"] = parameterToString(request.getPageNumber());
+    }
+    if (request.statusIsSet()) {
+        localVarQueryParams["status"] = parameterToString(request.getStatus());
+    }
+    if (request.startDateIsSet()) {
+        localVarQueryParams["start_date"] = parameterToString(request.getStartDate());
+    }
+    if (request.endDateIsSet()) {
+        localVarQueryParams["end_date"] = parameterToString(request.getEndDate());
+    }
+    if (request.orderFieldIsSet()) {
+        localVarQueryParams["order_field"] = parameterToString(request.getOrderField());
+    }
+    if (request.orderTypeIsSet()) {
+        localVarQueryParams["order_type"] = parameterToString(request.getOrderType());
+    }
+    if (request.fileTypeIsSet()) {
+        localVarQueryParams["file_type"] = parameterToString(request.getFileType());
+    }
+    if (request.taskTypeIsSet()) {
+        localVarQueryParams["task_type"] = parameterToString(request.getTaskType());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForShowHistoryTasks());
+
+    std::shared_ptr<ShowHistoryTasksResponse> localVarResult = std::make_shared<ShowHistoryTasksResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowTopDomainNamesResponse> CdnClient::showTopDomainNames(ShowTopDomainNamesRequest &request)
 {
     std::string localVarPath = "/v1/cdn/statistics/top-domain-names";
@@ -642,6 +837,59 @@ std::shared_ptr<ShowTopUrlResponse> CdnClient::showTopUrl(ShowTopUrlRequest &req
         localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForShowTopUrl());
 
     std::shared_ptr<ShowTopUrlResponse> localVarResult = std::make_shared<ShowTopUrlResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowUrlTaskInfoResponse> CdnClient::showUrlTaskInfo(ShowUrlTaskInfoRequest &request)
+{
+    std::string localVarPath = "/v1.0/cdn/contentgateway/url-tasks";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.startTimeIsSet()) {
+        localVarQueryParams["start_time"] = parameterToString(request.getStartTime());
+    }
+    if (request.endTimeIsSet()) {
+        localVarQueryParams["end_time"] = parameterToString(request.getEndTime());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.urlIsSet()) {
+        localVarQueryParams["url"] = parameterToString(request.getUrl());
+    }
+    if (request.taskTypeIsSet()) {
+        localVarQueryParams["task_type"] = parameterToString(request.getTaskType());
+    }
+    if (request.statusIsSet()) {
+        localVarQueryParams["status"] = parameterToString(request.getStatus());
+    }
+    if (request.fileTypeIsSet()) {
+        localVarQueryParams["file_type"] = parameterToString(request.getFileType());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForShowUrlTaskInfo());
+
+    std::shared_ptr<ShowUrlTaskInfoResponse> localVarResult = std::make_shared<ShowUrlTaskInfoResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

@@ -14,6 +14,8 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 class HUAWEICLOUD_CDN_V2_EXPORT  CdnMeta {
 public:
     static HttpRequestDef genRequestDefForBatchCopyDomain();
+    static HttpRequestDef genRequestDefForCreatePreheatingTasks();
+    static HttpRequestDef genRequestDefForCreateRefreshTasks();
     static HttpRequestDef genRequestDefForDownloadRegionCarrierExcel();
     static HttpRequestDef genRequestDefForDownloadStatisticsExcel();
     static HttpRequestDef genRequestDefForListDomains();
@@ -24,8 +26,11 @@ public:
     static HttpRequestDef genRequestDefForShowDomainFullConfig();
     static HttpRequestDef genRequestDefForShowDomainLocationStats();
     static HttpRequestDef genRequestDefForShowDomainStats();
+    static HttpRequestDef genRequestDefForShowHistoryTaskDetails();
+    static HttpRequestDef genRequestDefForShowHistoryTasks();
     static HttpRequestDef genRequestDefForShowTopDomainNames();
     static HttpRequestDef genRequestDefForShowTopUrl();
+    static HttpRequestDef genRequestDefForShowUrlTaskInfo();
     static HttpRequestDef genRequestDefForUpdateDomainFullConfig();
 };
 

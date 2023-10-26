@@ -112,7 +112,7 @@ public:
             });
         regions["ae-ad-1"] = Region("ae-ad-1",
             { 
-                "https://cbr.ae-ad-1.g42cloud.com"
+                "https://cbr.ae-ad-1.myhuaweicloud.com"
             });
         return regions;
     }

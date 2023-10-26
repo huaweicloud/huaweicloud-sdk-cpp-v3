@@ -39,7 +39,7 @@ public:
     /// CreateRefreshTasksResponse members
 
     /// <summary>
-    /// 任务ID
+    /// 任务ID。
     /// </summary>
 
     std::string getRefreshTask() const;

@@ -39,7 +39,7 @@ public:
     /// Urls members
 
     /// <summary>
-    /// urlid
+    /// url id。
     /// </summary>
 
     int64_t getId() const;
@@ -57,7 +57,7 @@ public:
     void setUrl(const std::string& value);
 
     /// <summary>
-    /// url状态。
+    /// url状态，状态类型：processing：处理中；succeed：完成；failed：失败；waiting：等待；refreshing：刷新中; preheating : 预热中。
     /// </summary>
 
     std::string getStatus() const;
@@ -66,7 +66,7 @@ public:
     void setStatus(const std::string& value);
 
     /// <summary>
-    /// 任务类型。
+    /// 任务类型，REFRESH：刷新任务；PREHEATING：预热任务。
     /// </summary>
 
     std::string getType() const;
@@ -102,7 +102,7 @@ public:
     void setCreateTime(int64_t value);
 
     /// <summary>
-    /// 文件类型，目录还是文件。
+    /// 文件类型，directory：目录，或file：文件。
     /// </summary>
 
     std::string getFileType() const;

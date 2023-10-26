@@ -50,7 +50,7 @@ public:
     void setTotal(int32_t value);
 
     /// <summary>
-    /// 查询当前页总数。
+    /// 当前查询到的总页数。
     /// </summary>
 
     int32_t getCount() const;

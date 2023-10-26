@@ -1,3 +1,44 @@
+# 3.1.56 2023-10-26
+
+### HuaweiCloud SDK CDN
+
+- _Features_
+  - Support the following interfaces：
+    - `CreateRefreshTasks`
+    - `CreatePreheatingTasks`
+    - `ShowHistoryTasks`
+    - `ShowHistoryTaskDetails`
+    - `ShowUrlTaskInfo`
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateRefreshTasks**
+    - changes of request param
+      - `+ refresh_task.zh_url_encode`
+  - **CreatePreheatingTasks**
+    - changes of request param
+      - `+ preheating_task.zh_url_encode`
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **RecognizeGeneralTable**
+    - changes of request param
+      - `+ with_borders`
+
+### HuaweiCloud SDK RDS
+
+- _Features_
+  - Support the interfaces `ListInstanceDiagnosis`, `ListInstancesInfoDiagnosis`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.55 2023-10-19
 
 ### HuaweiCloud SDK CBR

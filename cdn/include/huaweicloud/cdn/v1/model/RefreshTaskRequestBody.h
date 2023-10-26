@@ -40,7 +40,7 @@ public:
     /// RefreshTaskRequestBody members
 
     /// <summary>
-    /// 刷新的类型，其值可以为file 或directory，默认为file
+    /// 刷新的类型，其值可以为file：文件，或directory：目录，默认为file。
     /// </summary>
 
     std::string getType() const;
@@ -58,7 +58,16 @@ public:
     void setMode(const std::string& value);
 
     /// <summary>
-    /// 输入URL必须带有“http://”或“https://”，多个URL用逗号分隔，单个url的长度限制为4096字符，单次最多输入1000个url。 &gt;   如果您需要刷新的URL中有中文，请同时刷新中文URL和转码后的URL。
+    /// 是否对url中的中文字符进行编码后刷新，false代表不开启，true代表开启，开启后仅刷新转码后的URL。
+    /// </summary>
+
+    bool isZhUrlEncode() const;
+    bool zhUrlEncodeIsSet() const;
+    void unsetzhUrlEncode();
+    void setZhUrlEncode(bool value);
+
+    /// <summary>
+    /// 需要刷新的URL必须带有“http://”或“https://”，多个URL用逗号分隔，单个url的长度限制为4096字符，单次最多输入1000个url，如果输入的是目录，支持100个目录刷新。  &gt;   如果您需要刷新的URL中有中文，请同时刷新中文URL和转码后的URL。 
     /// </summary>
 
     std::vector<std::string>& getUrls();
@@ -72,6 +81,8 @@ protected:
     bool typeIsSet_;
     std::string mode_;
     bool modeIsSet_;
+    bool zhUrlEncode_;
+    bool zhUrlEncodeIsSet_;
     std::vector<std::string> urls_;
     bool urlsIsSet_;
 

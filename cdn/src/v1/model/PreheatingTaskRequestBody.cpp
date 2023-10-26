@@ -12,6 +12,8 @@ namespace Model {
 
 PreheatingTaskRequestBody::PreheatingTaskRequestBody()
 {
+    zhUrlEncode_ = false;
+    zhUrlEncodeIsSet_ = false;
     urlsIsSet_ = false;
 }
 
@@ -25,6 +27,9 @@ web::json::value PreheatingTaskRequestBody::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(zhUrlEncodeIsSet_) {
+        val[utility::conversions::to_string_t("zh_url_encode")] = ModelBase::toJson(zhUrlEncode_);
+    }
     if(urlsIsSet_) {
         val[utility::conversions::to_string_t("urls")] = ModelBase::toJson(urls_);
     }
@@ -35,6 +40,15 @@ bool PreheatingTaskRequestBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("zh_url_encode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("zh_url_encode"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setZhUrlEncode(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("urls"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("urls"));
         if(!fieldValue.is_null())
@@ -47,6 +61,27 @@ bool PreheatingTaskRequestBody::fromJson(const web::json::value& val)
     return ok;
 }
 
+
+bool PreheatingTaskRequestBody::isZhUrlEncode() const
+{
+    return zhUrlEncode_;
+}
+
+void PreheatingTaskRequestBody::setZhUrlEncode(bool value)
+{
+    zhUrlEncode_ = value;
+    zhUrlEncodeIsSet_ = true;
+}
+
+bool PreheatingTaskRequestBody::zhUrlEncodeIsSet() const
+{
+    return zhUrlEncodeIsSet_;
+}
+
+void PreheatingTaskRequestBody::unsetzhUrlEncode()
+{
+    zhUrlEncodeIsSet_ = false;
+}
 
 std::vector<std::string>& PreheatingTaskRequestBody::getUrls()
 {

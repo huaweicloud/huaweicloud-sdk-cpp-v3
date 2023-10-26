@@ -101,6 +101,15 @@ public:
     void unsetreturnRectificationMatrix();
     void setReturnRectificationMatrix(bool value);
 
+    /// <summary>
+    /// 可选值包括： - true：输入图像仅包含有线表格，仅进行有线表格识别。 - false: 输入图像可能包含无线表格，同时进行有线表格与无线表格识别。  未传入该参数时默认为false，即同时进行有线表格与无线表格识别。当确认输入仅包含有线表格时，该参数设为true可达到更优识别效果。 
+    /// </summary>
+
+    bool isWithBorders() const;
+    bool withBordersIsSet() const;
+    void unsetwithBorders();
+    void setWithBorders(bool value);
+
 
 protected:
     std::string image_;
@@ -117,6 +126,8 @@ protected:
     bool returnExcelIsSet_;
     bool returnRectificationMatrix_;
     bool returnRectificationMatrixIsSet_;
+    bool withBorders_;
+    bool withBordersIsSet_;
 
 };
 

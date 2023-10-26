@@ -48,7 +48,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 任务的类型， 其值可以为refresh或preheating。
+    /// 任务的类型， 其值可以为refresh：刷新任务，或preheating：预热任务。
     /// </summary>
 
     std::string getTaskType() const;

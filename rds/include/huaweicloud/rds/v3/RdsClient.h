@@ -102,10 +102,14 @@
 #include <huaweicloud/rds/v3/model/ListErrorlogForLtsResponse.h>
 #include <huaweicloud/rds/v3/model/ListFlavorsRequest.h>
 #include <huaweicloud/rds/v3/model/ListFlavorsResponse.h>
+#include <huaweicloud/rds/v3/model/ListInstanceDiagnosisRequest.h>
+#include <huaweicloud/rds/v3/model/ListInstanceDiagnosisResponse.h>
 #include <huaweicloud/rds/v3/model/ListInstanceParamHistoriesRequest.h>
 #include <huaweicloud/rds/v3/model/ListInstanceParamHistoriesResponse.h>
 #include <huaweicloud/rds/v3/model/ListInstanceTagsRequest.h>
 #include <huaweicloud/rds/v3/model/ListInstanceTagsResponse.h>
+#include <huaweicloud/rds/v3/model/ListInstancesInfoDiagnosisRequest.h>
+#include <huaweicloud/rds/v3/model/ListInstancesInfoDiagnosisResponse.h>
 #include <huaweicloud/rds/v3/model/ListInstancesRecommendationRequest.h>
 #include <huaweicloud/rds/v3/model/ListInstancesRecommendationResponse.h>
 #include <huaweicloud/rds/v3/model/ListInstancesRequest.h>
@@ -738,6 +742,14 @@ public:
     std::shared_ptr<ListFlavorsResponse> listFlavors(
         ListFlavorsRequest &request
     );
+    // 获取诊断后的实例数量
+    //
+    // 获取诊断后的实例数量
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListInstanceDiagnosisResponse> listInstanceDiagnosis(
+        ListInstanceDiagnosisRequest &request
+    );
     // 查询实例参数修改历史
     //
     // 实例参数修改历史。
@@ -761,6 +773,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListInstancesResponse> listInstances(
         ListInstancesRequest &request
+    );
+    // 获取指定诊断项的诊断结果
+    //
+    // 获取指定诊断项的诊断结果
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListInstancesInfoDiagnosisResponse> listInstancesInfoDiagnosis(
+        ListInstancesInfoDiagnosisRequest &request
     );
     // 查询购买推荐
     //

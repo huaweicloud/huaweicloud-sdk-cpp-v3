@@ -1465,6 +1465,38 @@ std::shared_ptr<ListFlavorsResponse> RdsClient::listFlavors(ListFlavorsRequest &
 
     return localVarResult;
 }
+std::shared_ptr<ListInstanceDiagnosisResponse> RdsClient::listInstanceDiagnosis(ListInstanceDiagnosisRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/diagnosis";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.engineIsSet()) {
+        localVarQueryParams["engine"] = parameterToString(request.getEngine());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, RdsMeta::genRequestDefForListInstanceDiagnosis());
+
+    std::shared_ptr<ListInstanceDiagnosisResponse> localVarResult = std::make_shared<ListInstanceDiagnosisResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListInstanceParamHistoriesResponse> RdsClient::listInstanceParamHistories(ListInstanceParamHistoriesRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/configuration-histories";
@@ -1596,6 +1628,47 @@ std::shared_ptr<ListInstancesResponse> RdsClient::listInstances(ListInstancesReq
         localVarHeaderParams, localVarHttpBody, RdsMeta::genRequestDefForListInstances());
 
     std::shared_ptr<ListInstancesResponse> localVarResult = std::make_shared<ListInstancesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListInstancesInfoDiagnosisResponse> RdsClient::listInstancesInfoDiagnosis(ListInstancesInfoDiagnosisRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/diagnosis/info";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.engineIsSet()) {
+        localVarQueryParams["engine"] = parameterToString(request.getEngine());
+    }
+    if (request.diagnosisIsSet()) {
+        localVarQueryParams["diagnosis"] = parameterToString(request.getDiagnosis());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, RdsMeta::genRequestDefForListInstancesInfoDiagnosis());
+
+    std::shared_ptr<ListInstancesInfoDiagnosisResponse> localVarResult = std::make_shared<ListInstancesInfoDiagnosisResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

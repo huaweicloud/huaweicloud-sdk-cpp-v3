@@ -39,7 +39,7 @@ public:
     /// CreatePreheatingTasksResponse members
 
     /// <summary>
-    /// 任务ID
+    /// 任务ID。
     /// </summary>
 
     std::string getPreheatingTask() const;

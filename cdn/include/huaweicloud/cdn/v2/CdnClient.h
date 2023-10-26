@@ -10,6 +10,10 @@
 #include <huaweicloud/cdn/v2/model/BatchCopyDomainRequest.h>
 #include <huaweicloud/cdn/v2/model/BatchCopyDomainResponse.h>
 #include <huaweicloud/cdn/v2/model/BatchCopyErrorRsp.h>
+#include <huaweicloud/cdn/v2/model/CreatePreheatingTasksRequest.h>
+#include <huaweicloud/cdn/v2/model/CreatePreheatingTasksResponse.h>
+#include <huaweicloud/cdn/v2/model/CreateRefreshTasksRequest.h>
+#include <huaweicloud/cdn/v2/model/CreateRefreshTasksResponse.h>
 #include <huaweicloud/cdn/v2/model/DownloadRegionCarrierExcelRequest.h>
 #include <huaweicloud/cdn/v2/model/DownloadRegionCarrierExcelResponse.h>
 #include <huaweicloud/cdn/v2/model/DownloadStatisticsExcelRequest.h>
@@ -18,6 +22,8 @@
 #include <huaweicloud/cdn/v2/model/ListDomainsRequest.h>
 #include <huaweicloud/cdn/v2/model/ListDomainsResponse.h>
 #include <huaweicloud/cdn/v2/model/ModifyDomainConfigRequestBody.h>
+#include <huaweicloud/cdn/v2/model/PreheatingTaskRequest.h>
+#include <huaweicloud/cdn/v2/model/RefreshTaskRequest.h>
 #include <huaweicloud/cdn/v2/model/SetChargeModesBody.h>
 #include <huaweicloud/cdn/v2/model/SetChargeModesRequest.h>
 #include <huaweicloud/cdn/v2/model/SetChargeModesResponse.h>
@@ -33,10 +39,16 @@
 #include <huaweicloud/cdn/v2/model/ShowDomainLocationStatsResponse.h>
 #include <huaweicloud/cdn/v2/model/ShowDomainStatsRequest.h>
 #include <huaweicloud/cdn/v2/model/ShowDomainStatsResponse.h>
+#include <huaweicloud/cdn/v2/model/ShowHistoryTaskDetailsRequest.h>
+#include <huaweicloud/cdn/v2/model/ShowHistoryTaskDetailsResponse.h>
+#include <huaweicloud/cdn/v2/model/ShowHistoryTasksRequest.h>
+#include <huaweicloud/cdn/v2/model/ShowHistoryTasksResponse.h>
 #include <huaweicloud/cdn/v2/model/ShowTopDomainNamesRequest.h>
 #include <huaweicloud/cdn/v2/model/ShowTopDomainNamesResponse.h>
 #include <huaweicloud/cdn/v2/model/ShowTopUrlRequest.h>
 #include <huaweicloud/cdn/v2/model/ShowTopUrlResponse.h>
+#include <huaweicloud/cdn/v2/model/ShowUrlTaskInfoRequest.h>
+#include <huaweicloud/cdn/v2/model/ShowUrlTaskInfoResponse.h>
 #include <huaweicloud/cdn/v2/model/UpdateDomainFullConfigRequest.h>
 #include <huaweicloud/cdn/v2/model/UpdateDomainFullConfigResponse.h>
 #include <string>
@@ -73,6 +85,22 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<BatchCopyDomainResponse> batchCopyDomain(
         BatchCopyDomainRequest &request
+    );
+    // 创建预热缓存任务
+    //
+    // 创建预热任务。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreatePreheatingTasksResponse> createPreheatingTasks(
+        CreatePreheatingTasksRequest &request
+    );
+    // 创建刷新缓存任务
+    //
+    // 创建刷新缓存任务。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateRefreshTasksResponse> createRefreshTasks(
+        CreateRefreshTasksRequest &request
     );
     // 下载区域运营商指标数据表格文件
     //
@@ -226,6 +254,22 @@ public:
     std::shared_ptr<ShowDomainStatsResponse> showDomainStats(
         ShowDomainStatsRequest &request
     );
+    // 查询刷新预热任务详情
+    //
+    // 查询刷新预热任务详情。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowHistoryTaskDetailsResponse> showHistoryTaskDetails(
+        ShowHistoryTaskDetailsRequest &request
+    );
+    // 查询刷新预热任务
+    //
+    // 查询刷新预热任务。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowHistoryTasksResponse> showHistoryTasks(
+        ShowHistoryTasksRequest &request
+    );
     // 查询TOP域名
     //
     // - 查询TOP域名。
@@ -265,6 +309,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowTopUrlResponse> showTopUrl(
         ShowTopUrlRequest &request
+    );
+    // 查询刷新预热URL记录
+    //
+    // 查询刷新预热URL记录。如需此接口，请提交工单开通。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowUrlTaskInfoResponse> showUrlTaskInfo(
+        ShowUrlTaskInfoRequest &request
     );
     // 修改域名全量配置接口
     //

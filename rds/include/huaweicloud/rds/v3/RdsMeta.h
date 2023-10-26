@@ -47,9 +47,11 @@ public:
     static HttpRequestDef genRequestDefForListErrorLogsNew();
     static HttpRequestDef genRequestDefForListErrorlogForLts();
     static HttpRequestDef genRequestDefForListFlavors();
+    static HttpRequestDef genRequestDefForListInstanceDiagnosis();
     static HttpRequestDef genRequestDefForListInstanceParamHistories();
     static HttpRequestDef genRequestDefForListInstanceTags();
     static HttpRequestDef genRequestDefForListInstances();
+    static HttpRequestDef genRequestDefForListInstancesInfoDiagnosis();
     static HttpRequestDef genRequestDefForListInstancesRecommendation();
     static HttpRequestDef genRequestDefForListInstancesResourceMetrics();
     static HttpRequestDef genRequestDefForListInstancesSupportFastRestore();

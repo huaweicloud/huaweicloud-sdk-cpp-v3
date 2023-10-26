@@ -40,7 +40,16 @@ public:
     /// PreheatingTaskRequestBody members
 
     /// <summary>
-    /// 输入URL必须带有“http://”或“https://”，多个URL用逗号分隔，目前不支持对目录的预热，单个url的长度限制为4096字符,单次最多输入1000个url。
+    /// 是否对url中的中文字符进行编码后预热，false代表不开启，true代表开启，开启后仅预热转码后的URL。
+    /// </summary>
+
+    bool isZhUrlEncode() const;
+    bool zhUrlEncodeIsSet() const;
+    void unsetzhUrlEncode();
+    void setZhUrlEncode(bool value);
+
+    /// <summary>
+    /// 需要预热的URL必须带有“http://”或“https://”，多个URL用逗号分隔，目前不支持对目录的预热，单个url的长度限制为4096字符,单次最多输入1000个url。
     /// </summary>
 
     std::vector<std::string>& getUrls();
@@ -50,6 +59,8 @@ public:
 
 
 protected:
+    bool zhUrlEncode_;
+    bool zhUrlEncodeIsSet_;
     std::vector<std::string> urls_;
     bool urlsIsSet_;
 

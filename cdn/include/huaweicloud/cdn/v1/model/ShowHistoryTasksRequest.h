@@ -93,7 +93,7 @@ public:
     void setEndDate(int64_t value);
 
     /// <summary>
-    /// 用来排序的字段，支持的字段有“task_type”，“total”，“processing”， “succeed”，“failed”，“create_time”。order_field和order_type必须同时传值，否则使用默认值\&quot;create_time\&quot; 和 \&quot;desc\&quot;。
+    /// 用来排序的字段，支持的字段有“task_type”：任务的类型，“total”：url总数，“processing”：处理中的url个数， “succeed”：成功处理的url个数，“failed”：处理失败的url个数，“create_time”：任务的创建时间。order_field和order_type必须同时传值，否则使用默认值\&quot;create_time\&quot; 和 \&quot;desc\&quot;：降序。
     /// </summary>
 
     std::string getOrderField() const;
@@ -102,7 +102,7 @@ public:
     void setOrderField(const std::string& value);
 
     /// <summary>
-    /// desc 或者asc。默认值desc。
+    /// desc：降序，或者asc：升序。默认值desc。
     /// </summary>
 
     std::string getOrderType() const;
@@ -111,7 +111,7 @@ public:
     void setOrderType(const std::string& value);
 
     /// <summary>
-    /// file：文件,directory：目录。
+    /// 默认是文件file。file：文件,directory：目录。
     /// </summary>
 
     std::string getFileType() const;

@@ -39,7 +39,7 @@ public:
     /// ShowUrlTaskInfoRequest members
 
     /// <summary>
-    /// 起始时间戳（毫秒），默认当天00:00
+    /// 起始时间戳（毫秒），默认当天00:00。
     /// </summary>
 
     int64_t getStartTime() const;
@@ -48,7 +48,7 @@ public:
     void setStartTime(int64_t value);
 
     /// <summary>
-    /// 结束时间戳（毫秒），默认次日00:00
+    /// 结束时间戳（毫秒），默认次日00:00。
     /// </summary>
 
     int64_t getEndTime() const;
@@ -57,7 +57,7 @@ public:
     void setEndTime(int64_t value);
 
     /// <summary>
-    /// 偏移量
+    /// 偏移量：特定数据字段与起始数据字段位置的距离。
     /// </summary>
 
     int32_t getOffset() const;
@@ -66,7 +66,7 @@ public:
     void setOffset(int32_t value);
 
     /// <summary>
-    /// 单次查询数据条数，上限为100
+    /// 单次查询数据条数，上限为100。
     /// </summary>
 
     int32_t getLimit() const;
@@ -75,7 +75,7 @@ public:
     void setLimit(int32_t value);
 
     /// <summary>
-    /// 刷新预热url
+    /// 刷新预热url。
     /// </summary>
 
     std::string getUrl() const;
@@ -84,7 +84,7 @@ public:
     void setUrl(const std::string& value);
 
     /// <summary>
-    /// 任务类型，REFRESH：刷新任务；PREHEATING：预热任务
+    /// 任务类型，REFRESH：刷新任务；PREHEATING：预热任务。
     /// </summary>
 
     std::string getTaskType() const;
@@ -93,7 +93,7 @@ public:
     void setTaskType(const std::string& value);
 
     /// <summary>
-    /// url状态，状态类型：processing：处理中；succeed：完成；failed：失败；waiting：等待；refreshing：刷新中; preheating : 预热中
+    /// url状态，状态类型：processing：处理中；succeed：完成；failed：失败；waiting：等待；refreshing：刷新中; preheating : 预热中。
     /// </summary>
 
     std::string getStatus() const;
@@ -102,7 +102,7 @@ public:
     void setStatus(const std::string& value);
 
     /// <summary>
-    /// 文件类型，file:文件;directory:目录
+    /// 文件类型，file:文件;directory:目录。
     /// </summary>
 
     std::string getFileType() const;

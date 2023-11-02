@@ -32,6 +32,7 @@ public:
     static HttpRequestDef genRequestDefForListSecretVersions();
     static HttpRequestDef genRequestDefForListSecrets();
     static HttpRequestDef genRequestDefForRestoreSecret();
+    static HttpRequestDef genRequestDefForRotateSecret();
     static HttpRequestDef genRequestDefForShowSecret();
     static HttpRequestDef genRequestDefForShowSecretEvent();
     static HttpRequestDef genRequestDefForShowSecretStage();

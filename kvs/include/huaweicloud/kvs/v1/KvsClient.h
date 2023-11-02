@@ -18,6 +18,9 @@
 #include <huaweicloud/kvs/v1/model/ListTableRequest.h>
 #include <huaweicloud/kvs/v1/model/ListTableRequestBody.h>
 #include <huaweicloud/kvs/v1/model/ListTableResponse.h>
+#include <huaweicloud/kvs/v1/model/RenameKvRequest.h>
+#include <huaweicloud/kvs/v1/model/RenameKvRequestBody.h>
+#include <huaweicloud/kvs/v1/model/RenameKvResponse.h>
 #include <string>
 
 #include <huaweicloud/kvs/v1/model/BatchGetKvRequest.h>
@@ -35,9 +38,6 @@
 #include <huaweicloud/kvs/v1/model/PutKvRequest.h>
 #include <huaweicloud/kvs/v1/model/PutKvRequestBody.h>
 #include <huaweicloud/kvs/v1/model/PutKvResponse.h>
-#include <huaweicloud/kvs/v1/model/RenameKvRequest.h>
-#include <huaweicloud/kvs/v1/model/RenameKvRequestBody.h>
-#include <huaweicloud/kvs/v1/model/RenameKvResponse.h>
 #include <huaweicloud/kvs/v1/model/ScanKvRequest.h>
 #include <huaweicloud/kvs/v1/model/ScanKvRequestBody.h>
 #include <huaweicloud/kvs/v1/model/ScanKvResponse.h>
@@ -97,6 +97,14 @@ public:
     std::shared_ptr<ListTableResponse> listTable(
         ListTableRequest &request
     );
+    // 更新指定kv的sortkey 并更新部分字段
+    //
+    // rename kv
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<RenameKvResponse> renameKv(
+        RenameKvRequest &request
+    );
 
     // 批量查询kv
     //
@@ -137,14 +145,6 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<PutKvResponse> putKv(
         PutKvRequest &request
-    );
-    // 更新指定kv的sortkey 并更新部分字段
-    //
-    // rename kv
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<RenameKvResponse> renameKv(
-        RenameKvRequest &request
     );
     // 对指定table 扫描主索引或者指定二级索引进行扫描，可指定filter过滤需要返回的doc
     //

@@ -85,7 +85,7 @@ public:
     void setStatus(const std::string& value);
 
     /// <summary>
-    /// 备份花费时间(单位：minutes)
+    /// 备份花费时间（单位：minutes）
     /// </summary>
 
     int32_t getTakeUpTime() const;
@@ -103,7 +103,7 @@ public:
     void setType(const std::string& value);
 
     /// <summary>
-    /// 备份大小，(单位：MB)
+    /// 备份大小（单位：MB）。
     /// </summary>
 
     int64_t getSize() const;
@@ -121,7 +121,7 @@ public:
     void setDatastore(const MysqlDatastoreInBackup& value);
 
     /// <summary>
-    /// 实例ID。
+    /// 实例ID，严格匹配UUID规则。
     /// </summary>
 
     std::string getInstanceId() const;
@@ -130,7 +130,16 @@ public:
     void setInstanceId(const std::string& value);
 
     /// <summary>
-    /// 备份级别。当开启一级备份开关时，返回该参数。  取值： - 0：备份正在创建中或者备份失败。 - 1：一级备份。 - 2：二级备份。
+    /// 实例名称。
+    /// </summary>
+
+    std::string getInstanceName() const;
+    bool instanceNameIsSet() const;
+    void unsetinstanceName();
+    void setInstanceName(const std::string& value);
+
+    /// <summary>
+    /// 备份级别。当开启一级备份开关时，返回该参数。
     /// </summary>
 
     std::string getBackupLevel() const;
@@ -139,7 +148,7 @@ public:
     void setBackupLevel(const std::string& value);
 
     /// <summary>
-    /// 备份文件描述信息
+    /// 备份文件描述信息。
     /// </summary>
 
     std::string getDescription() const;
@@ -169,6 +178,8 @@ protected:
     bool datastoreIsSet_;
     std::string instanceId_;
     bool instanceIdIsSet_;
+    std::string instanceName_;
+    bool instanceNameIsSet_;
     std::string backupLevel_;
     bool backupLevelIsSet_;
     std::string description_;

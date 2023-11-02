@@ -1,3 +1,73 @@
+# 3.1.57 2023-11-02
+
+### HuaweiCloud SDK CSMS
+
+- _新增特性_
+  - 支持接口`RotateSecret`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK DRS
+
+- _新增特性_
+  - 支持接口`CollectPositionAsync`、`ShowPositionResult`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK GaussDB
+
+- _新增特性_
+  - 支持以下接口：
+    - `ShowIntelligentDiagnosisAbnormalCountOfInstances`
+    - `ShowIntelligentDiagnosisInstanceInfosPerMetric`
+    - `ShrinkGaussMySqlProxy`
+    - `ShowInstanceDatabaseVersion`
+    - `CopyInstanceConfigurations`
+    - `ShowAutoScalingPolicy`
+    - `UpdateAutoScalingPolicy`
+    - `CheckResource`
+    - `UpdateInstanceConfigurations`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **DeleteGaussMySqlBackup**
+    - 响应参数变更
+      - `+ backup_id`
+      - `+ backup_name`
+      - `- job_id`
+  - **CreateGaussMySqlProxy**
+    - 请求参数变更
+      - `+ subnet_id`
+  - **ShowGaussMySqlBackupList**
+    - 请求参数变更
+      - `+ name`
+      - `+ instance_name`
+    - 响应参数变更
+      - `+ backups.instance_name`
+      - `- backups.status: enum value [BUILDING,COMPLETED,FAILED,AVAILABLE]`
+      - `- backups.type: enum value [auto,manual]`
+  - **ShowGaussMySqlProxyList**
+    - 响应参数变更
+      - `+ proxy_list.proxy.subnet_id`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _新增特性_
+  - 支持接口`DeleteDatabase`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListInstances**
+    - 请求参数变更
+      - `+ charge_mode`
+  - **ListInstancesDetails**
+    - 请求参数变更
+      - `+ charge_mode`
+
 # 3.1.56 2023-10-26
 
 ### HuaweiCloud SDK CDN

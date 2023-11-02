@@ -23,6 +23,8 @@ OpenMysqlProxyRequestBody::OpenMysqlProxyRequestBody()
     routeMode_ = 0;
     routeModeIsSet_ = false;
     nodesReadWeightIsSet_ = false;
+    subnetId_ = "";
+    subnetIdIsSet_ = false;
 }
 
 OpenMysqlProxyRequestBody::~OpenMysqlProxyRequestBody() = default;
@@ -52,6 +54,9 @@ web::json::value OpenMysqlProxyRequestBody::toJson() const
     }
     if(nodesReadWeightIsSet_) {
         val[utility::conversions::to_string_t("nodes_read_weight")] = ModelBase::toJson(nodesReadWeight_);
+    }
+    if(subnetIdIsSet_) {
+        val[utility::conversions::to_string_t("subnet_id")] = ModelBase::toJson(subnetId_);
     }
 
     return val;
@@ -112,6 +117,15 @@ bool OpenMysqlProxyRequestBody::fromJson(const web::json::value& val)
             std::vector<NodesWeight> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setNodesReadWeight(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("subnet_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("subnet_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSubnetId(refVal);
         }
     }
     return ok;
@@ -242,6 +256,27 @@ bool OpenMysqlProxyRequestBody::nodesReadWeightIsSet() const
 void OpenMysqlProxyRequestBody::unsetnodesReadWeight()
 {
     nodesReadWeightIsSet_ = false;
+}
+
+std::string OpenMysqlProxyRequestBody::getSubnetId() const
+{
+    return subnetId_;
+}
+
+void OpenMysqlProxyRequestBody::setSubnetId(const std::string& value)
+{
+    subnetId_ = value;
+    subnetIdIsSet_ = true;
+}
+
+bool OpenMysqlProxyRequestBody::subnetIdIsSet() const
+{
+    return subnetIdIsSet_;
+}
+
+void OpenMysqlProxyRequestBody::unsetsubnetId()
+{
+    subnetIdIsSet_ = false;
 }
 
 }

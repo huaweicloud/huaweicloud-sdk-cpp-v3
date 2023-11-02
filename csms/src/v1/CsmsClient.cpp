@@ -703,6 +703,36 @@ std::shared_ptr<RestoreSecretResponse> CsmsClient::restoreSecret(RestoreSecretRe
 
     return localVarResult;
 }
+std::shared_ptr<RotateSecretResponse> CsmsClient::rotateSecret(RotateSecretRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/secrets/{secret_name}/rotate";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["secret_name"] = parameterToString(request.getSecretName());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CsmsMeta::genRequestDefForRotateSecret());
+
+    std::shared_ptr<RotateSecretResponse> localVarResult = std::make_shared<RotateSecretResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowSecretResponse> CsmsClient::showSecret(ShowSecretRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/secrets/{secret_name}";

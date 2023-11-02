@@ -53,6 +53,8 @@ MysqlProxyV3::MysqlProxyV3()
     balanceRouteModeEnabledIsSet_ = false;
     consistenceMode_ = "";
     consistenceModeIsSet_ = false;
+    subnetId_ = "";
+    subnetIdIsSet_ = false;
 }
 
 MysqlProxyV3::~MysqlProxyV3() = default;
@@ -127,6 +129,9 @@ web::json::value MysqlProxyV3::toJson() const
     }
     if(consistenceModeIsSet_) {
         val[utility::conversions::to_string_t("consistence_mode")] = ModelBase::toJson(consistenceMode_);
+    }
+    if(subnetIdIsSet_) {
+        val[utility::conversions::to_string_t("subnet_id")] = ModelBase::toJson(subnetId_);
     }
 
     return val;
@@ -322,6 +327,15 @@ bool MysqlProxyV3::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setConsistenceMode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("subnet_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("subnet_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSubnetId(refVal);
         }
     }
     return ok;
@@ -767,6 +781,27 @@ bool MysqlProxyV3::consistenceModeIsSet() const
 void MysqlProxyV3::unsetconsistenceMode()
 {
     consistenceModeIsSet_ = false;
+}
+
+std::string MysqlProxyV3::getSubnetId() const
+{
+    return subnetId_;
+}
+
+void MysqlProxyV3::setSubnetId(const std::string& value)
+{
+    subnetId_ = value;
+    subnetIdIsSet_ = true;
+}
+
+bool MysqlProxyV3::subnetIdIsSet() const
+{
+    return subnetIdIsSet_;
+}
+
+void MysqlProxyV3::unsetsubnetId()
+{
+    subnetIdIsSet_ = false;
 }
 
 }

@@ -1,3 +1,73 @@
+# 3.1.57 2023-11-02
+
+### HuaweiCloud SDK CSMS
+
+- _Features_
+  - Support the interface `RotateSecret`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK DRS
+
+- _Features_
+  - Support the interfaces `CollectPositionAsync`, `ShowPositionResult`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK GaussDB
+
+- _Features_
+  - Support the following interfaces：
+    - `ShowIntelligentDiagnosisAbnormalCountOfInstances`
+    - `ShowIntelligentDiagnosisInstanceInfosPerMetric`
+    - `ShrinkGaussMySqlProxy`
+    - `ShowInstanceDatabaseVersion`
+    - `CopyInstanceConfigurations`
+    - `ShowAutoScalingPolicy`
+    - `UpdateAutoScalingPolicy`
+    - `CheckResource`
+    - `UpdateInstanceConfigurations`
+- _Bug Fix_
+  - None
+- _Change_
+  - **DeleteGaussMySqlBackup**
+    - changes of response param
+      - `+ backup_id`
+      - `+ backup_name`
+      - `- job_id`
+  - **CreateGaussMySqlProxy**
+    - changes of request param
+      - `+ subnet_id`
+  - **ShowGaussMySqlBackupList**
+    - changes of request param
+      - `+ name`
+      - `+ instance_name`
+    - changes of response param
+      - `+ backups.instance_name`
+      - `- backups.status: enum value [BUILDING,COMPLETED,FAILED,AVAILABLE]`
+      - `- backups.type: enum value [auto,manual]`
+  - **ShowGaussMySqlProxyList**
+    - changes of response param
+      - `+ proxy_list.proxy.subnet_id`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _Features_
+  - Support the interface `DeleteDatabase`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListInstances**
+    - changes of request param
+      - `+ charge_mode`
+  - **ListInstancesDetails**
+    - changes of request param
+      - `+ charge_mode`
+
 # 3.1.56 2023-10-26
 
 ### HuaweiCloud SDK CDN

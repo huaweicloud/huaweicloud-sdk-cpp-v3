@@ -48,7 +48,7 @@ public:
     void setXLanguage(const std::string& value);
 
     /// <summary>
-    /// 备份文件ID。
+    /// 备份文件ID。  获取方法参见[查询备份列表](https://support.huaweicloud.com/api-gaussdbformysql/ShowGaussMySqlBackupList.html)。
     /// </summary>
 
     std::string getBackupId() const;

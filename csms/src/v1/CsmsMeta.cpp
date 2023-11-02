@@ -152,6 +152,11 @@ HttpRequestDef CsmsMeta::genRequestDefForRestoreSecret() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CsmsMeta::genRequestDefForRotateSecret() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef CsmsMeta::genRequestDefForShowSecret() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;

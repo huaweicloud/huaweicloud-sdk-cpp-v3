@@ -51,6 +51,8 @@
 #include <huaweicloud/csms/v1/model/ListSecretsResponse.h>
 #include <huaweicloud/csms/v1/model/RestoreSecretRequest.h>
 #include <huaweicloud/csms/v1/model/RestoreSecretResponse.h>
+#include <huaweicloud/csms/v1/model/RotateSecretRequest.h>
+#include <huaweicloud/csms/v1/model/RotateSecretResponse.h>
 #include <huaweicloud/csms/v1/model/ShowSecretEventRequest.h>
 #include <huaweicloud/csms/v1/model/ShowSecretEventResponse.h>
 #include <huaweicloud/csms/v1/model/ShowSecretRequest.h>
@@ -255,6 +257,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<RestoreSecretResponse> restoreSecret(
         RestoreSecretRequest &request
+    );
+    // 轮转凭据
+    //
+    // 立即执行轮转凭据。在指定的凭据中，创建一个新的凭据版本，用于加密存储后台随机产生的凭据值。同时将新创建的凭据版本标记为SYSCURRENT状态。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<RotateSecretResponse> rotateSecret(
+        RotateSecretRequest &request
     );
     // 查询凭据
     //

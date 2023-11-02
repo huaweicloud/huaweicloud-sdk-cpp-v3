@@ -601,6 +601,42 @@ std::shared_ptr<DeleteConfigurationResponse> GaussDBforopenGaussClient::deleteCo
 
     return localVarResult;
 }
+std::shared_ptr<DeleteDatabaseResponse> GaussDBforopenGaussClient::deleteDatabase(DeleteDatabaseRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/database";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.databaseNameIsSet()) {
+        localVarQueryParams["database_name"] = parameterToString(request.getDatabaseName());
+    }
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, GaussDBforopenGaussMeta::genRequestDefForDeleteDatabase());
+
+    std::shared_ptr<DeleteDatabaseResponse> localVarResult = std::make_shared<DeleteDatabaseResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<DeleteInstanceResponse> GaussDBforopenGaussClient::deleteInstance(DeleteInstanceRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/instances/{instance_id}";
@@ -1558,6 +1594,9 @@ std::shared_ptr<ListInstancesResponse> GaussDBforopenGaussClient::listInstances(
     if (request.tagsIsSet()) {
         localVarQueryParams["tags"] = parameterToString(request.getTags());
     }
+    if (request.chargeModeIsSet()) {
+        localVarQueryParams["charge_mode"] = parameterToString(request.getChargeMode());
+    }
     if (request.xLanguageIsSet()) {
         localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
     }
@@ -1616,6 +1655,9 @@ std::shared_ptr<ListInstancesDetailsResponse> GaussDBforopenGaussClient::listIns
     }
     if (request.tagsIsSet()) {
         localVarQueryParams["tags"] = parameterToString(request.getTags());
+    }
+    if (request.chargeModeIsSet()) {
+        localVarQueryParams["charge_mode"] = parameterToString(request.getChargeMode());
     }
     if (request.xLanguageIsSet()) {
         localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());

@@ -19,7 +19,9 @@ public:
     static HttpRequestDef genRequestDefForCancelScheduleTask();
     static HttpRequestDef genRequestDefForChangeGaussMySqlInstanceSpecification();
     static HttpRequestDef genRequestDefForChangeGaussMySqlProxySpecification();
+    static HttpRequestDef genRequestDefForCheckResource();
     static HttpRequestDef genRequestDefForCopyConfigurations();
+    static HttpRequestDef genRequestDefForCopyInstanceConfigurations();
     static HttpRequestDef genRequestDefForCreateAccessControl();
     static HttpRequestDef genRequestDefForCreateGaussMySqlBackup();
     static HttpRequestDef genRequestDefForCreateGaussMySqlConfiguration();
@@ -74,6 +76,7 @@ public:
     static HttpRequestDef genRequestDefForSetGaussMySqlProxyWeight();
     static HttpRequestDef genRequestDefForSetGaussMySqlQuotas();
     static HttpRequestDef genRequestDefForShowAuditLog();
+    static HttpRequestDef genRequestDefForShowAutoScalingPolicy();
     static HttpRequestDef genRequestDefForShowBackupRestoreTime();
     static HttpRequestDef genRequestDefForShowDedicatedResourceInfo();
     static HttpRequestDef genRequestDefForShowGaussMySqlBackupList();
@@ -88,11 +91,16 @@ public:
     static HttpRequestDef genRequestDefForShowGaussMySqlProxyFlavors();
     static HttpRequestDef genRequestDefForShowGaussMySqlProxyList();
     static HttpRequestDef genRequestDefForShowGaussMySqlQuotas();
+    static HttpRequestDef genRequestDefForShowInstanceDatabaseVersion();
     static HttpRequestDef genRequestDefForShowInstanceMonitorExtend();
+    static HttpRequestDef genRequestDefForShowIntelligentDiagnosisAbnormalCountOfInstances();
+    static HttpRequestDef genRequestDefForShowIntelligentDiagnosisInstanceInfosPerMetric();
+    static HttpRequestDef genRequestDefForShrinkGaussMySqlProxy();
     static HttpRequestDef genRequestDefForSwitchAccessControl();
     static HttpRequestDef genRequestDefForSwitchGaussMySqlConfiguration();
     static HttpRequestDef genRequestDefForSwitchGaussMySqlInstanceSsl();
     static HttpRequestDef genRequestDefForUpdateAuditLog();
+    static HttpRequestDef genRequestDefForUpdateAutoScalingPolicy();
     static HttpRequestDef genRequestDefForUpdateBackupOffsitePolicy();
     static HttpRequestDef genRequestDefForUpdateGaussMySqlBackupPolicy();
     static HttpRequestDef genRequestDefForUpdateGaussMySqlConfiguration();
@@ -106,6 +114,7 @@ public:
     static HttpRequestDef genRequestDefForUpdateGaussMySqlInstancePort();
     static HttpRequestDef genRequestDefForUpdateGaussMySqlInstanceSecurityGroup();
     static HttpRequestDef genRequestDefForUpdateGaussMySqlQuotas();
+    static HttpRequestDef genRequestDefForUpdateInstanceConfigurations();
     static HttpRequestDef genRequestDefForUpdateInstanceMonitor();
     static HttpRequestDef genRequestDefForUpdateProxyConnectionPoolType();
     static HttpRequestDef genRequestDefForUpdateProxyNewConfigurations();

@@ -48,7 +48,7 @@ public:
     void setXLanguage(const std::string& value);
 
     /// <summary>
-    /// 参数组ID。  通过调用[查询实例详情信息](https://support.huaweicloud.com/api-gaussdb/ShowGaussMySqlInstanceInfo.html)接口获取。  请求响应成功后在响应消息体中包含的“configuration_id”的值即为configuration_id值。
+    /// 参数组ID。  通过调用[查询实例详情信息](https://support.huaweicloud.com/api-gaussdbformysql/ShowGaussMySqlInstanceInfo.html)接口获取。  请求响应成功后在响应消息体中包含的“configuration_id”的值即为configuration_id值。
     /// </summary>
 
     std::string getConfigurationId() const;

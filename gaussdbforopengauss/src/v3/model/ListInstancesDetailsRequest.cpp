@@ -31,6 +31,8 @@ ListInstancesDetailsRequest::ListInstancesDetailsRequest()
     limit_ = 0;
     limitIsSet_ = false;
     tagsIsSet_ = false;
+    chargeMode_ = "";
+    chargeModeIsSet_ = false;
 }
 
 ListInstancesDetailsRequest::~ListInstancesDetailsRequest() = default;
@@ -72,6 +74,9 @@ web::json::value ListInstancesDetailsRequest::toJson() const
     }
     if(tagsIsSet_) {
         val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
+    }
+    if(chargeModeIsSet_) {
+        val[utility::conversions::to_string_t("charge_mode")] = ModelBase::toJson(chargeMode_);
     }
 
     return val;
@@ -168,6 +173,15 @@ bool ListInstancesDetailsRequest::fromJson(const web::json::value& val)
             std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTags(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("charge_mode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("charge_mode"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setChargeMode(refVal);
         }
     }
     return ok;
@@ -382,6 +396,27 @@ bool ListInstancesDetailsRequest::tagsIsSet() const
 void ListInstancesDetailsRequest::unsettags()
 {
     tagsIsSet_ = false;
+}
+
+std::string ListInstancesDetailsRequest::getChargeMode() const
+{
+    return chargeMode_;
+}
+
+void ListInstancesDetailsRequest::setChargeMode(const std::string& value)
+{
+    chargeMode_ = value;
+    chargeModeIsSet_ = true;
+}
+
+bool ListInstancesDetailsRequest::chargeModeIsSet() const
+{
+    return chargeModeIsSet_;
+}
+
+void ListInstancesDetailsRequest::unsetchargeMode()
+{
+    chargeModeIsSet_ = false;
 }
 
 }

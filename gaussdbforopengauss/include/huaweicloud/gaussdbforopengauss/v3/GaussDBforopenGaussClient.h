@@ -41,6 +41,8 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/DeleteBackupErrorResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/DeleteConfigurationRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/DeleteConfigurationResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/DeleteDatabaseRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/DeleteDatabaseResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/DeleteInstanceRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/DeleteInstanceResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/DeleteJobRequest.h>
@@ -315,6 +317,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteConfigurationResponse> deleteConfiguration(
         DeleteConfigurationRequest &request
+    );
+    // 删除数据库
+    //
+    // 删除指定实例的数据库。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteDatabaseResponse> deleteDatabase(
+        DeleteDatabaseRequest &request
     );
     // 删除实例
     //

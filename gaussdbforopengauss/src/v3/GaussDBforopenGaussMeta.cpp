@@ -186,6 +186,19 @@ HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForDeleteConfiguration() {
     return reqDefBuilder;
 }
 
+HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForDeleteDatabase() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("DatabaseName")
+                  .withJsonTag("database_name")
+                  .withLocationType(Query_));
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForDeleteInstance() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
@@ -602,6 +615,9 @@ HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListInstances() {
     reqDefBuilder.withRequestField(FieldDef().withName("Tags")
                   .withJsonTag("tags")
                   .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ChargeMode")
+                  .withJsonTag("charge_mode")
+                  .withLocationType(Query_));
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage
                   .withName("XLanguage")
@@ -638,6 +654,9 @@ HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListInstancesDetails() {
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("Tags")
                   .withJsonTag("tags")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ChargeMode")
+                  .withJsonTag("charge_mode")
                   .withLocationType(Query_));
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage

@@ -145,6 +145,20 @@ HttpRequestDef DrsMeta::genRequestDefForCollectDbObjectsInfo() {
     return reqDefBuilder;
 }
 
+HttpRequestDef DrsMeta::genRequestDefForCollectPositionAsync() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef DrsMeta::genRequestDefForCommitAsyncJob() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
@@ -695,6 +709,19 @@ HttpRequestDef DrsMeta::genRequestDefForShowObjectMapping() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef DrsMeta::genRequestDefForShowPositionResult() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("QueryId")
+                  .withJsonTag("query_id")
+                  .withLocationType(Query_));
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 

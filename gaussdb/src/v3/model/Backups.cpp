@@ -31,6 +31,8 @@ Backups::Backups()
     datastoreIsSet_ = false;
     instanceId_ = "";
     instanceIdIsSet_ = false;
+    instanceName_ = "";
+    instanceNameIsSet_ = false;
     backupLevel_ = "";
     backupLevelIsSet_ = false;
     description_ = "";
@@ -76,6 +78,9 @@ web::json::value Backups::toJson() const
     }
     if(instanceIdIsSet_) {
         val[utility::conversions::to_string_t("instance_id")] = ModelBase::toJson(instanceId_);
+    }
+    if(instanceNameIsSet_) {
+        val[utility::conversions::to_string_t("instance_name")] = ModelBase::toJson(instanceName_);
     }
     if(backupLevelIsSet_) {
         val[utility::conversions::to_string_t("backup_level")] = ModelBase::toJson(backupLevel_);
@@ -178,6 +183,15 @@ bool Backups::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setInstanceId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("instance_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("instance_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setInstanceName(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("backup_level"))) {
@@ -410,6 +424,27 @@ bool Backups::instanceIdIsSet() const
 void Backups::unsetinstanceId()
 {
     instanceIdIsSet_ = false;
+}
+
+std::string Backups::getInstanceName() const
+{
+    return instanceName_;
+}
+
+void Backups::setInstanceName(const std::string& value)
+{
+    instanceName_ = value;
+    instanceNameIsSet_ = true;
+}
+
+bool Backups::instanceNameIsSet() const
+{
+    return instanceNameIsSet_;
+}
+
+void Backups::unsetinstanceName()
+{
+    instanceNameIsSet_ = false;
 }
 
 std::string Backups::getBackupLevel() const

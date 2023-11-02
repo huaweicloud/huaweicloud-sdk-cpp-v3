@@ -22,6 +22,7 @@ public:
     static HttpRequestDef genRequestDefForCollectColumns();
     static HttpRequestDef genRequestDefForCollectDbObjectsAsync();
     static HttpRequestDef genRequestDefForCollectDbObjectsInfo();
+    static HttpRequestDef genRequestDefForCollectPositionAsync();
     static HttpRequestDef genRequestDefForCommitAsyncJob();
     static HttpRequestDef genRequestDefForCopyJob();
     static HttpRequestDef genRequestDefForCreateJob();
@@ -56,6 +57,7 @@ public:
     static HttpRequestDef genRequestDefForShowMetering();
     static HttpRequestDef genRequestDefForShowMonitorData();
     static HttpRequestDef genRequestDefForShowObjectMapping();
+    static HttpRequestDef genRequestDefForShowPositionResult();
     static HttpRequestDef genRequestDefForShowProgressData();
     static HttpRequestDef genRequestDefForShowSupportObjectType();
     static HttpRequestDef genRequestDefForShowUpdateObjectSavingStatus();

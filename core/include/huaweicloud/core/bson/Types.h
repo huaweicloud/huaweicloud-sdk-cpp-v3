@@ -25,6 +25,8 @@
 #include <cstring>
 #include <string>
 #include <utility>
+#include <map>
+#include <functional>
 
 #include <huaweicloud/core/bson/Document.h>
 #include <huaweicloud/core/bson/Oid.h>
@@ -474,6 +476,7 @@ private:
 
     std::string key_{};
     bson_value_t raw_{};
+    static std::map<int, std::function<bool(const bson_value_t&, const Element&)>> condition_map_;
 };
 
 } // namespace Bson

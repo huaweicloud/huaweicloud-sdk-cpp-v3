@@ -28,6 +28,10 @@ ShowGaussMySqlBackupListRequest::ShowGaussMySqlBackupListRequest()
     beginTimeIsSet_ = false;
     endTime_ = "";
     endTimeIsSet_ = false;
+    name_ = "";
+    nameIsSet_ = false;
+    instanceName_ = "";
+    instanceNameIsSet_ = false;
 }
 
 ShowGaussMySqlBackupListRequest::~ShowGaussMySqlBackupListRequest() = default;
@@ -63,6 +67,12 @@ web::json::value ShowGaussMySqlBackupListRequest::toJson() const
     }
     if(endTimeIsSet_) {
         val[utility::conversions::to_string_t("end_time")] = ModelBase::toJson(endTime_);
+    }
+    if(nameIsSet_) {
+        val[utility::conversions::to_string_t("name")] = ModelBase::toJson(name_);
+    }
+    if(instanceNameIsSet_) {
+        val[utility::conversions::to_string_t("instance_name")] = ModelBase::toJson(instanceName_);
     }
 
     return val;
@@ -141,6 +151,24 @@ bool ShowGaussMySqlBackupListRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEndTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("instance_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("instance_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setInstanceName(refVal);
         }
     }
     return ok;
@@ -313,6 +341,48 @@ bool ShowGaussMySqlBackupListRequest::endTimeIsSet() const
 void ShowGaussMySqlBackupListRequest::unsetendTime()
 {
     endTimeIsSet_ = false;
+}
+
+std::string ShowGaussMySqlBackupListRequest::getName() const
+{
+    return name_;
+}
+
+void ShowGaussMySqlBackupListRequest::setName(const std::string& value)
+{
+    name_ = value;
+    nameIsSet_ = true;
+}
+
+bool ShowGaussMySqlBackupListRequest::nameIsSet() const
+{
+    return nameIsSet_;
+}
+
+void ShowGaussMySqlBackupListRequest::unsetname()
+{
+    nameIsSet_ = false;
+}
+
+std::string ShowGaussMySqlBackupListRequest::getInstanceName() const
+{
+    return instanceName_;
+}
+
+void ShowGaussMySqlBackupListRequest::setInstanceName(const std::string& value)
+{
+    instanceName_ = value;
+    instanceNameIsSet_ = true;
+}
+
+bool ShowGaussMySqlBackupListRequest::instanceNameIsSet() const
+{
+    return instanceNameIsSet_;
+}
+
+void ShowGaussMySqlBackupListRequest::unsetinstanceName()
+{
+    instanceNameIsSet_ = false;
 }
 
 }

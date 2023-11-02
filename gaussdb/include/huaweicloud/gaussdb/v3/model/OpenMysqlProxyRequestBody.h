@@ -86,13 +86,22 @@ public:
     void setRouteMode(int32_t value);
 
     /// <summary>
-    /// 数据库节点的读权重设置。
+    /// 数据库节点的读权重设置。  在proxy_mode为readonly时，只能为只读节点选择权重。
     /// </summary>
 
     std::vector<NodesWeight>& getNodesReadWeight();
     bool nodesReadWeightIsSet() const;
     void unsetnodesReadWeight();
     void setNodesReadWeight(const std::vector<NodesWeight>& value);
+
+    /// <summary>
+    /// 数据库VPC下的子网ID。
+    /// </summary>
+
+    std::string getSubnetId() const;
+    bool subnetIdIsSet() const;
+    void unsetsubnetId();
+    void setSubnetId(const std::string& value);
 
 
 protected:
@@ -108,6 +117,8 @@ protected:
     bool routeModeIsSet_;
     std::vector<NodesWeight> nodesReadWeight_;
     bool nodesReadWeightIsSet_;
+    std::string subnetId_;
+    bool subnetIdIsSet_;
 
 };
 

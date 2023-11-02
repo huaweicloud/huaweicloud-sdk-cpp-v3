@@ -12,8 +12,10 @@ namespace Model {
 
 DeleteGaussMySqlBackupResponse::DeleteGaussMySqlBackupResponse()
 {
-    jobId_ = "";
-    jobIdIsSet_ = false;
+    backupId_ = "";
+    backupIdIsSet_ = false;
+    backupName_ = "";
+    backupNameIsSet_ = false;
 }
 
 DeleteGaussMySqlBackupResponse::~DeleteGaussMySqlBackupResponse() = default;
@@ -26,8 +28,11 @@ web::json::value DeleteGaussMySqlBackupResponse::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(jobIdIsSet_) {
-        val[utility::conversions::to_string_t("job_id")] = ModelBase::toJson(jobId_);
+    if(backupIdIsSet_) {
+        val[utility::conversions::to_string_t("backup_id")] = ModelBase::toJson(backupId_);
+    }
+    if(backupNameIsSet_) {
+        val[utility::conversions::to_string_t("backup_name")] = ModelBase::toJson(backupName_);
     }
 
     return val;
@@ -36,38 +41,68 @@ bool DeleteGaussMySqlBackupResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("job_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("job_id"));
+    if(val.has_field(utility::conversions::to_string_t("backup_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("backup_id"));
         if(!fieldValue.is_null())
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setJobId(refVal);
+            setBackupId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("backup_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("backup_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBackupName(refVal);
         }
     }
     return ok;
 }
 
 
-std::string DeleteGaussMySqlBackupResponse::getJobId() const
+std::string DeleteGaussMySqlBackupResponse::getBackupId() const
 {
-    return jobId_;
+    return backupId_;
 }
 
-void DeleteGaussMySqlBackupResponse::setJobId(const std::string& value)
+void DeleteGaussMySqlBackupResponse::setBackupId(const std::string& value)
 {
-    jobId_ = value;
-    jobIdIsSet_ = true;
+    backupId_ = value;
+    backupIdIsSet_ = true;
 }
 
-bool DeleteGaussMySqlBackupResponse::jobIdIsSet() const
+bool DeleteGaussMySqlBackupResponse::backupIdIsSet() const
 {
-    return jobIdIsSet_;
+    return backupIdIsSet_;
 }
 
-void DeleteGaussMySqlBackupResponse::unsetjobId()
+void DeleteGaussMySqlBackupResponse::unsetbackupId()
 {
-    jobIdIsSet_ = false;
+    backupIdIsSet_ = false;
+}
+
+std::string DeleteGaussMySqlBackupResponse::getBackupName() const
+{
+    return backupName_;
+}
+
+void DeleteGaussMySqlBackupResponse::setBackupName(const std::string& value)
+{
+    backupName_ = value;
+    backupNameIsSet_ = true;
+}
+
+bool DeleteGaussMySqlBackupResponse::backupNameIsSet() const
+{
+    return backupNameIsSet_;
+}
+
+void DeleteGaussMySqlBackupResponse::unsetbackupName()
+{
+    backupNameIsSet_ = false;
 }
 
 }

@@ -33,6 +33,8 @@
 #include <huaweicloud/drs/v5/model/CollectDbObjectsAsyncResponse.h>
 #include <huaweicloud/drs/v5/model/CollectDbObjectsInfoRequest.h>
 #include <huaweicloud/drs/v5/model/CollectDbObjectsInfoResponse.h>
+#include <huaweicloud/drs/v5/model/CollectPositionAsyncRequest.h>
+#include <huaweicloud/drs/v5/model/CollectPositionAsyncResponse.h>
 #include <huaweicloud/drs/v5/model/CommitAsyncJobRequest.h>
 #include <huaweicloud/drs/v5/model/CommitAsyncJobResponse.h>
 #include <huaweicloud/drs/v5/model/CopyJobRequest.h>
@@ -69,6 +71,7 @@
 #include <huaweicloud/drs/v5/model/ListProjectTagsResponse.h>
 #include <huaweicloud/drs/v5/model/ModifyStartPositionReq.h>
 #include <huaweicloud/drs/v5/model/QueryColumnReq.h>
+#include <huaweicloud/drs/v5/model/QueryDbPositionReq.h>
 #include <huaweicloud/drs/v5/model/QuerySelectObjectInfoReq.h>
 #include <huaweicloud/drs/v5/model/QueryUserSelectedObjectInfoReq.h>
 #include <huaweicloud/drs/v5/model/ShowActionsRequest.h>
@@ -109,6 +112,8 @@
 #include <huaweicloud/drs/v5/model/ShowMonitorDataResponse.h>
 #include <huaweicloud/drs/v5/model/ShowObjectMappingRequest.h>
 #include <huaweicloud/drs/v5/model/ShowObjectMappingResponse.h>
+#include <huaweicloud/drs/v5/model/ShowPositionResultRequest.h>
+#include <huaweicloud/drs/v5/model/ShowPositionResultResponse.h>
 #include <huaweicloud/drs/v5/model/ShowProgressDataRequest.h>
 #include <huaweicloud/drs/v5/model/ShowProgressDataResponse.h>
 #include <huaweicloud/drs/v5/model/ShowSupportObjectTypeRequest.h>
@@ -236,6 +241,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CollectDbObjectsInfoResponse> collectDbObjectsInfo(
         CollectDbObjectsInfoRequest &request
+    );
+    // 采集数据库位点信息
+    //
+    // 采集数据库位点信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CollectPositionAsyncResponse> collectPositionAsync(
+        CollectPositionAsyncRequest &request
     );
     // 提交批量创建异步任务
     //
@@ -510,6 +523,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowObjectMappingResponse> showObjectMapping(
         ShowObjectMappingRequest &request
+    );
+    // 获取查询数据库位点的结果
+    //
+    // 获取查询数据库位点的结果
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowPositionResultResponse> showPositionResult(
+        ShowPositionResultRequest &request
     );
     // 查询数据级流式对比列表
     //

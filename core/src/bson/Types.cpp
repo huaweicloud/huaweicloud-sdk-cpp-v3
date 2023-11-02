@@ -32,6 +32,95 @@ namespace Bson {
         throw SdkException("Bson value type is not "#TYPE); \
     }
 
+std::map<int, std::function<bool(const bson_value_t&, const Element&)>> Element::condition_map_ = {
+    {BSON_TYPE_EOD, [](const bson_value_t &raw, const Element &other) {
+        return true;
+    }},
+    {BSON_TYPE_DOUBLE, [](const bson_value_t &raw, const Element &other) {
+        return raw.value.v_double == other.raw_.value.v_double;
+    }},
+    {BSON_TYPE_UTF8, [](const bson_value_t &raw, const Element &other) {
+        return raw.value.v_utf8.len == other.raw_.value.v_utf8.len
+               && 0 == memcmp(raw.value.v_utf8.str, other.raw_.value.v_utf8.str, raw.value.v_utf8.len);
+    }},
+    {BSON_TYPE_DOCUMENT, [](const bson_value_t &raw, const Element &other) {
+        return raw.value.v_doc.data_len == other.raw_.value.v_doc.data_len
+               && 0 == memcmp(raw.value.v_doc.data, other.raw_.value.v_doc.data, raw.value.v_doc.data_len);
+    }},
+    {BSON_TYPE_ARRAY, [](const bson_value_t &raw, const Element &other) {
+        return raw.value.v_doc.data_len == other.raw_.value.v_doc.data_len
+               && 0 == memcmp(raw.value.v_doc.data, other.raw_.value.v_doc.data, raw.value.v_doc.data_len);
+    }},
+    {BSON_TYPE_BINARY, [](const bson_value_t &raw, const Element &other) {
+        return raw.value.v_binary.subtype == other.raw_.value.v_binary.subtype
+               && raw.value.v_binary.data_len == other.raw_.value.v_binary.data_len
+               && 0 == memcmp(raw.value.v_binary.data, other.raw_.value.v_binary.data,
+                              raw.value.v_binary.data_len);
+    }},
+    {BSON_TYPE_EOD, [](const bson_value_t &raw, const Element &other) {
+        return true;
+    }},
+    {BSON_TYPE_OID, [](const bson_value_t &raw, const Element &other) {
+        return 0 == bson_oid_compare(&raw.value.v_oid, &other.raw_.value.v_oid);
+    }},
+    {BSON_TYPE_BOOL, [](const bson_value_t &raw, const Element &other) {
+        return raw.value.v_bool == other.raw_.value.v_bool;
+    }},
+    {BSON_TYPE_DATE_TIME, [](const bson_value_t &raw, const Element &other) {
+        return raw.value.v_datetime == other.raw_.value.v_datetime;
+    }},
+    {BSON_TYPE_NULL, [](const bson_value_t &raw, const Element &other) {
+        return true;
+    }},
+    {BSON_TYPE_REGEX, [](const bson_value_t &raw, const Element &other) {
+        return 0 == strcmp(raw.value.v_regex.regex, other.raw_.value.v_regex.regex)
+               && 0 == strcmp(raw.value.v_regex.options, other.raw_.value.v_regex.options);
+    }},
+    {BSON_TYPE_DBPOINTER, [](const bson_value_t &raw, const Element &other) {
+        return raw.value.v_dbpointer.collection_len == other.raw_.value.v_dbpointer.collection_len
+               && 0 == memcmp(raw.value.v_dbpointer.collection, other.raw_.value.v_dbpointer.collection,
+                              raw.value.v_dbpointer.collection_len)
+               && 0 == bson_oid_compare(&raw.value.v_dbpointer.oid, &other.raw_.value.v_dbpointer.oid);
+    }},
+    {BSON_TYPE_CODE, [](const bson_value_t &raw, const Element &other) {
+        return raw.value.v_code.code_len == other.raw_.value.v_code.code_len
+               && 0 == memcmp(raw.value.v_code.code, other.raw_.value.v_code.code, raw.value.v_code.code_len);
+    }},
+    {BSON_TYPE_SYMBOL, [](const bson_value_t &raw, const Element &other) {
+        return raw.value.v_symbol.len == other.raw_.value.v_symbol.len
+               && 0 == memcmp(raw.value.v_symbol.symbol, other.raw_.value.v_symbol.symbol,
+                              raw.value.v_symbol.len);
+    }},
+    {BSON_TYPE_CODEWSCOPE, [](const bson_value_t &raw, const Element &other) {
+        return raw.value.v_codewscope.code_len == other.raw_.value.v_codewscope.code_len
+               && 0 == memcmp(raw.value.v_codewscope.code, other.raw_.value.v_codewscope.code,
+                              raw.value.v_codewscope.code_len)
+               && raw.value.v_codewscope.scope_len == other.raw_.value.v_codewscope.scope_len
+               && 0 == memcmp(raw.value.v_codewscope.scope_data, other.raw_.value.v_codewscope.scope_data,
+                              raw.value.v_codewscope.scope_len);
+    }},
+    {BSON_TYPE_TIMESTAMP, [](const bson_value_t &raw, const Element &other) {
+        return raw.value.v_timestamp.timestamp == other.raw_.value.v_timestamp.timestamp
+               && raw.value.v_timestamp.increment == other.raw_.value.v_timestamp.increment;
+    }},
+    {BSON_TYPE_INT32, [](const bson_value_t &raw, const Element &other) {
+        return raw.value.v_int32 == other.raw_.value.v_int32;
+    }},
+    {BSON_TYPE_INT64, [](const bson_value_t &raw, const Element &other) {
+        return raw.value.v_int64 == other.raw_.value.v_int64;
+    }},
+    {BSON_TYPE_DECIMAL128, [](const bson_value_t &raw, const Element &other) {
+        return raw.value.v_decimal128.high == other.raw_.value.v_decimal128.high
+               && raw.value.v_decimal128.low == other.raw_.value.v_decimal128.low;
+    }},
+    {BSON_TYPE_MAXKEY, [](const bson_value_t &raw, const Element &other) {
+        return true;
+    }},
+    {BSON_TYPE_MINKEY, [](const bson_value_t &raw, const Element &other) {
+        return true;
+    }},
+};
+
 Element::Element(const Element &other) : key_(other.key_) {
     if (other.raw_.value_type != BSON_TYPE_EOD) {
         bson_value_copy(&other.raw_, &raw_);
@@ -57,72 +146,13 @@ bool Element::operator==(const Element &other) const {
     if (raw_.value_type != other.raw_.value_type) {
         return false;
     }
-
-    switch (raw_.value_type) {
-        case BSON_TYPE_EOD:
-            return true;
-        case BSON_TYPE_DOUBLE:
-            return raw_.value.v_double == other.raw_.value.v_double;
-        case BSON_TYPE_UTF8:
-            return raw_.value.v_utf8.len == other.raw_.value.v_utf8.len
-                   && 0 == memcmp(raw_.value.v_utf8.str, other.raw_.value.v_utf8.str, raw_.value.v_utf8.len);
-        case BSON_TYPE_DOCUMENT:
-        case BSON_TYPE_ARRAY:
-            return raw_.value.v_doc.data_len == other.raw_.value.v_doc.data_len
-                   && 0 == memcmp(raw_.value.v_doc.data, other.raw_.value.v_doc.data, raw_.value.v_doc.data_len);
-        case BSON_TYPE_BINARY:
-            return raw_.value.v_binary.subtype == other.raw_.value.v_binary.subtype
-                   && raw_.value.v_binary.data_len == other.raw_.value.v_binary.data_len
-                   && 0 == memcmp(raw_.value.v_binary.data, other.raw_.value.v_binary.data,
-                                  raw_.value.v_binary.data_len);
-        case BSON_TYPE_UNDEFINED:
-            return true;
-        case BSON_TYPE_OID:
-            return 0 == bson_oid_compare(&raw_.value.v_oid, &other.raw_.value.v_oid);
-        case BSON_TYPE_BOOL:
-            return raw_.value.v_bool == other.raw_.value.v_bool;
-        case BSON_TYPE_DATE_TIME:
-            return raw_.value.v_datetime == other.raw_.value.v_datetime;
-        case BSON_TYPE_NULL:
-            return true;
-        case BSON_TYPE_REGEX:
-            return 0 == strcmp(raw_.value.v_regex.regex, other.raw_.value.v_regex.regex)
-                   && 0 == strcmp(raw_.value.v_regex.options, other.raw_.value.v_regex.options);
-        case BSON_TYPE_DBPOINTER:
-            return raw_.value.v_dbpointer.collection_len == other.raw_.value.v_dbpointer.collection_len
-                   && 0 == memcmp(raw_.value.v_dbpointer.collection, other.raw_.value.v_dbpointer.collection,
-                                  raw_.value.v_dbpointer.collection_len)
-                   && 0 == bson_oid_compare(&raw_.value.v_dbpointer.oid, &other.raw_.value.v_dbpointer.oid);
-        case BSON_TYPE_CODE:
-            return raw_.value.v_code.code_len == other.raw_.value.v_code.code_len
-                   && 0 == memcmp(raw_.value.v_code.code, other.raw_.value.v_code.code, raw_.value.v_code.code_len);
-        case BSON_TYPE_SYMBOL:
-            return raw_.value.v_symbol.len == other.raw_.value.v_symbol.len
-                   && 0 == memcmp(raw_.value.v_symbol.symbol, other.raw_.value.v_symbol.symbol,
-                                  raw_.value.v_symbol.len);
-        case BSON_TYPE_CODEWSCOPE:
-            return raw_.value.v_codewscope.code_len == other.raw_.value.v_codewscope.code_len
-                   && 0 == memcmp(raw_.value.v_codewscope.code, other.raw_.value.v_codewscope.code,
-                                  raw_.value.v_codewscope.code_len)
-                   && raw_.value.v_codewscope.scope_len == other.raw_.value.v_codewscope.scope_len
-                   && 0 == memcmp(raw_.value.v_codewscope.scope_data, other.raw_.value.v_codewscope.scope_data,
-                                  raw_.value.v_codewscope.scope_len);
-        case BSON_TYPE_INT32:
-            return raw_.value.v_int32 == other.raw_.value.v_int32;
-        case BSON_TYPE_TIMESTAMP:
-            return raw_.value.v_timestamp.timestamp == other.raw_.value.v_timestamp.timestamp
-                   && raw_.value.v_timestamp.increment == other.raw_.value.v_timestamp.increment;
-        case BSON_TYPE_INT64:
-            return raw_.value.v_int64 == other.raw_.value.v_int64;
-        case BSON_TYPE_DECIMAL128:
-            return raw_.value.v_decimal128.high == other.raw_.value.v_decimal128.high
-                   && raw_.value.v_decimal128.low == other.raw_.value.v_decimal128.low;
-        case BSON_TYPE_MAXKEY:
-        case BSON_TYPE_MINKEY:
-            return true;
+    auto it = Element::condition_map_.find(raw_.value_type);
+    if (it != Element::condition_map_.end()) {
+        auto condition_lambda = it->second;
+        return condition_lambda(raw_, other);
+    } else {
+        return true;
     }
-
-    return true;
 }
 
 bool Element::operator!=(const Element &other) const {

@@ -39,7 +39,7 @@ public:
     /// ShowGaussMySqlBackupListRequest members
 
     /// <summary>
-    /// 语言。
+    /// 请求语言类型。默认en-us。 取值范围： - en-us - zh-cn
     /// </summary>
 
     std::string getXLanguage() const;
@@ -48,7 +48,7 @@ public:
     void setXLanguage(const std::string& value);
 
     /// <summary>
-    /// 实例ID。
+    /// 实例ID，严格匹配UUID规则。
     /// </summary>
 
     std::string getInstanceId() const;
@@ -66,7 +66,7 @@ public:
     void setBackupId(const std::string& value);
 
     /// <summary>
-    /// 备份类型，取值：  - \&quot;auto\&quot;：自动全量备份。 - \&quot;manual\&quot;：手动全量备份。
+    /// 备份类型。  取值范围： - auto：自动全量备份。 - manual：手动全量备份。
     /// </summary>
 
     std::string getBackupType() const;
@@ -110,6 +110,24 @@ public:
     void unsetendTime();
     void setEndTime(const std::string& value);
 
+    /// <summary>
+    /// 备份名称。
+    /// </summary>
+
+    std::string getName() const;
+    bool nameIsSet() const;
+    void unsetname();
+    void setName(const std::string& value);
+
+    /// <summary>
+    /// 实例名称。
+    /// </summary>
+
+    std::string getInstanceName() const;
+    bool instanceNameIsSet() const;
+    void unsetinstanceName();
+    void setInstanceName(const std::string& value);
+
 
 protected:
     std::string xLanguage_;
@@ -128,6 +146,10 @@ protected:
     bool beginTimeIsSet_;
     std::string endTime_;
     bool endTimeIsSet_;
+    std::string name_;
+    bool nameIsSet_;
+    std::string instanceName_;
+    bool instanceNameIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

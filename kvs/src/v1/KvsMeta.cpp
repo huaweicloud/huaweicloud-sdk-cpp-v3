@@ -44,6 +44,18 @@ HttpRequestDef KvsMeta::genRequestDefForListTable() {
     return reqDefBuilder;
 }
 
+HttpRequestDef KvsMeta::genRequestDefForRenameKv() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("StoreName")
+                  .withJsonTag("store_name")
+                  .withLocationType(Cname));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef KvsMeta::genRequestDefForBatchGetKv() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("StoreName")
@@ -93,18 +105,6 @@ HttpRequestDef KvsMeta::genRequestDefForGetKv() {
 }
 
 HttpRequestDef KvsMeta::genRequestDefForPutKv() {
-    HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withRequestField(FieldDef().withName("StoreName")
-                  .withJsonTag("store_name")
-                  .withLocationType(Cname));
-    FieldDef bodyParam;
-    reqDefBuilder.withRequestField(bodyParam.
-        withName("Body").
-        withLocationType(Body_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef KvsMeta::genRequestDefForRenameKv() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("StoreName")
                   .withJsonTag("store_name")

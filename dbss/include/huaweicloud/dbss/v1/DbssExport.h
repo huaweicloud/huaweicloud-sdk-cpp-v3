@@ -1,0 +1,16 @@
+#ifndef HUAWEICLOUD_SDK_DBSS_V1_DbssExport_H_
+#define HUAWEICLOUD_SDK_DBSS_V1_DbssExport_H_
+
+#include <huaweicloud/core/EXPORT.h>
+
+#if defined(HUAWEICLOUD_SHARED)
+#	if defined(HUAWEICLOUD_DBSS_V1_SHARED)
+#		define HUAWEICLOUD_DBSS_V1_EXPORT HUAWEICLOUD_EXPORT
+#	else
+#		define HUAWEICLOUD_DBSS_V1_EXPORT HUAWEICLOUD_IMPORT
+#	endif
+#else
+#	define HUAWEICLOUD_DBSS_V1_EXPORT
+#endif
+
+#endif // !HUAWEICLOUD_SDK_DBSS_V1_DbssExport_H_

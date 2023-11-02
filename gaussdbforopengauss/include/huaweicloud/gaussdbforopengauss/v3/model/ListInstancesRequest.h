@@ -129,6 +129,15 @@ public:
     void unsettags();
     void setTags(const std::vector<std::string>& value);
 
+    /// <summary>
+    /// 计费模式。  取值范围：   postPaid：后付费，即按需付费。  prePaid：预付费，即包年/包月。
+    /// </summary>
+
+    std::string getChargeMode() const;
+    bool chargeModeIsSet() const;
+    void unsetchargeMode();
+    void setChargeMode(const std::string& value);
+
 
 protected:
     std::string xLanguage_;
@@ -151,6 +160,8 @@ protected:
     bool limitIsSet_;
     std::vector<std::string> tags_;
     bool tagsIsSet_;
+    std::string chargeMode_;
+    bool chargeModeIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

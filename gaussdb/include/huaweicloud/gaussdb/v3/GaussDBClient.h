@@ -22,10 +22,16 @@
 #include <huaweicloud/gaussdb/v3/model/ChangeGaussMySqlInstanceSpecificationResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ChangeGaussMySqlProxySpecificationRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ChangeGaussMySqlProxySpecificationResponse.h>
+#include <huaweicloud/gaussdb/v3/model/CheckResourceRequest.h>
+#include <huaweicloud/gaussdb/v3/model/CheckResourceRequestBody.h>
+#include <huaweicloud/gaussdb/v3/model/CheckResourceResponse.h>
 #include <huaweicloud/gaussdb/v3/model/CloseMysqlProxyRequestBody.h>
 #include <huaweicloud/gaussdb/v3/model/CopyConfigurationsRequest.h>
 #include <huaweicloud/gaussdb/v3/model/CopyConfigurationsRequestBody.h>
 #include <huaweicloud/gaussdb/v3/model/CopyConfigurationsResponse.h>
+#include <huaweicloud/gaussdb/v3/model/CopyInstanceConfigurationsRequest.h>
+#include <huaweicloud/gaussdb/v3/model/CopyInstanceConfigurationsRequestBody.h>
+#include <huaweicloud/gaussdb/v3/model/CopyInstanceConfigurationsResponse.h>
 #include <huaweicloud/gaussdb/v3/model/CreateAccessControlRequest.h>
 #include <huaweicloud/gaussdb/v3/model/CreateAccessControlRequestBody.h>
 #include <huaweicloud/gaussdb/v3/model/CreateAccessControlResponse.h>
@@ -174,6 +180,8 @@
 #include <huaweicloud/gaussdb/v3/model/SetQuotasRequestBody.h>
 #include <huaweicloud/gaussdb/v3/model/ShowAuditLogRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ShowAuditLogResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ShowAutoScalingPolicyRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ShowAutoScalingPolicyResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowBackupRestoreTimeRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ShowBackupRestoreTimeResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowDedicatedResourceInfoRequest.h>
@@ -202,8 +210,17 @@
 #include <huaweicloud/gaussdb/v3/model/ShowGaussMySqlProxyListResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowGaussMySqlQuotasRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ShowGaussMySqlQuotasResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ShowInstanceDatabaseVersionRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ShowInstanceDatabaseVersionResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowInstanceMonitorExtendRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ShowInstanceMonitorExtendResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ShowIntelligentDiagnosisAbnormalCountOfInstancesRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ShowIntelligentDiagnosisAbnormalCountOfInstancesResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ShowIntelligentDiagnosisInstanceInfosPerMetricRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ShowIntelligentDiagnosisInstanceInfosPerMetricResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ShrinkGaussMySqlProxyRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ShrinkGaussMySqlProxyRequestBody.h>
+#include <huaweicloud/gaussdb/v3/model/ShrinkGaussMySqlProxyResponse.h>
 #include <huaweicloud/gaussdb/v3/model/SwitchAccessControlRequest.h>
 #include <huaweicloud/gaussdb/v3/model/SwitchAccessControlRequestBody.h>
 #include <huaweicloud/gaussdb/v3/model/SwitchAccessControlResponse.h>
@@ -219,6 +236,9 @@
 #include <huaweicloud/gaussdb/v3/model/TaurusSwitchoverRequest.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateAuditLogRequest.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateAuditLogResponse.h>
+#include <huaweicloud/gaussdb/v3/model/UpdateAutoScalingPolicyRequest.h>
+#include <huaweicloud/gaussdb/v3/model/UpdateAutoScalingPolicyRequestBody.h>
+#include <huaweicloud/gaussdb/v3/model/UpdateAutoScalingPolicyResponse.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateBackupOffsitePolicyRequest.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateBackupOffsitePolicyRequestBody.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateBackupOffsitePolicyResponse.h>
@@ -249,6 +269,9 @@
 #include <huaweicloud/gaussdb/v3/model/UpdateGaussMySqlInstanceSecurityGroupResponse.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateGaussMySqlQuotasRequest.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateGaussMySqlQuotasResponse.h>
+#include <huaweicloud/gaussdb/v3/model/UpdateInstanceConfigurationsRequest.h>
+#include <huaweicloud/gaussdb/v3/model/UpdateInstanceConfigurationsRequestBody.h>
+#include <huaweicloud/gaussdb/v3/model/UpdateInstanceConfigurationsResponse.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateInstanceMonitorRequest.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateInstanceMonitorResponse.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateProxyConnectionPoolTypeRequest.h>
@@ -355,6 +378,14 @@ public:
     std::shared_ptr<ChangeGaussMySqlProxySpecificationResponse> changeGaussMySqlProxySpecification(
         ChangeGaussMySqlProxySpecificationRequest &request
     );
+    // 资源预校验
+    //
+    // 资源预校验。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CheckResourceResponse> checkResource(
+        CheckResourceRequest &request
+    );
     // 复制参数组
     //
     // 复制参数组。
@@ -362,6 +393,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CopyConfigurationsResponse> copyConfigurations(
         CopyConfigurationsRequest &request
+    );
+    // 复制实例参数组
+    //
+    // 复制实例参数组。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CopyInstanceConfigurationsResponse> copyInstanceConfigurations(
+        CopyInstanceConfigurationsRequest &request
     );
     // 设置访问控制规则
     //
@@ -796,6 +835,14 @@ public:
     std::shared_ptr<ShowAuditLogResponse> showAuditLog(
         ShowAuditLogRequest &request
     );
+    // 查询自动变配
+    //
+    // 查询自动变配。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowAutoScalingPolicyResponse> showAutoScalingPolicy(
+        ShowAutoScalingPolicyRequest &request
+    );
     // 查询可恢复时间段
     //
     // 查询实例的可恢复时间段。
@@ -812,9 +859,9 @@ public:
     std::shared_ptr<ShowDedicatedResourceInfoResponse> showDedicatedResourceInfo(
         ShowDedicatedResourceInfoRequest &request
     );
-    // 查询备份列表
+    // 查询全量备份列表
     //
-    // 查询备份列表。
+    // 查询全量备份列表。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowGaussMySqlBackupListResponse> showGaussMySqlBackupList(
@@ -908,6 +955,14 @@ public:
     std::shared_ptr<ShowGaussMySqlQuotasResponse> showGaussMySqlQuotas(
         ShowGaussMySqlQuotasRequest &request
     );
+    // 查询内核版本信息
+    //
+    // 查询内核版本信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowInstanceDatabaseVersionResponse> showInstanceDatabaseVersion(
+        ShowInstanceDatabaseVersionRequest &request
+    );
     // 查询实例秒级监控
     //
     // 查询实例秒级监控信息。
@@ -915,6 +970,31 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowInstanceMonitorExtendResponse> showInstanceMonitorExtend(
         ShowInstanceMonitorExtendRequest &request
+    );
+    // 获取各指标的异常实例数
+    //
+    // 获取各指标的异常实例数。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowIntelligentDiagnosisAbnormalCountOfInstancesResponse> showIntelligentDiagnosisAbnormalCountOfInstances(
+        ShowIntelligentDiagnosisAbnormalCountOfInstancesRequest &request
+    );
+    // 获取某个指标的异常实例信息
+    //
+    // 获取某个指标的异常实例信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowIntelligentDiagnosisInstanceInfosPerMetricResponse> showIntelligentDiagnosisInstanceInfosPerMetric(
+        ShowIntelligentDiagnosisInstanceInfosPerMetricRequest &request
+    );
+    // 减少数据库代理节点的数量
+    //
+    // 缩容数据库代理节点的数量。
+    // DeC专属云账号暂不支持数据库代理。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShrinkGaussMySqlProxyResponse> shrinkGaussMySqlProxy(
+        ShrinkGaussMySqlProxyRequest &request
     );
     // 开启或关闭访问控制
     //
@@ -947,6 +1027,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateAuditLogResponse> updateAuditLog(
         UpdateAuditLogRequest &request
+    );
+    // 设置自动变配
+    //
+    // 设置自动变配。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateAutoScalingPolicyResponse> updateAutoScalingPolicy(
+        UpdateAutoScalingPolicyRequest &request
     );
     // 设置跨区备份策略
     //
@@ -1051,6 +1139,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateGaussMySqlQuotasResponse> updateGaussMySqlQuotas(
         UpdateGaussMySqlQuotasRequest &request
+    );
+    // 修改指定实例的参数
+    //
+    // 修改指定实例的参数。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateInstanceConfigurationsResponse> updateInstanceConfigurations(
+        UpdateInstanceConfigurationsRequest &request
     );
     // 设置实例秒级监控
     //

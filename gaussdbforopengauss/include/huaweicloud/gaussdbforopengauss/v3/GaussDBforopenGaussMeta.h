@@ -26,6 +26,7 @@ public:
     static HttpRequestDef genRequestDefForCreateManualBackup();
     static HttpRequestDef genRequestDefForCreateRestoreInstance();
     static HttpRequestDef genRequestDefForDeleteConfiguration();
+    static HttpRequestDef genRequestDefForDeleteDatabase();
     static HttpRequestDef genRequestDefForDeleteInstance();
     static HttpRequestDef genRequestDefForDeleteJob();
     static HttpRequestDef genRequestDefForDeleteManualBackup();

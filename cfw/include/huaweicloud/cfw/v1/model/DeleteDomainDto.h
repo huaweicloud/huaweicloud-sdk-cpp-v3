@@ -49,15 +49,6 @@ public:
     void setObjectId(const std::string& value);
 
     /// <summary>
-    /// 域名组id
-    /// </summary>
-
-    std::string getDomainSetId() const;
-    bool domainSetIdIsSet() const;
-    void unsetdomainSetId();
-    void setDomainSetId(const std::string& value);
-
-    /// <summary>
     /// 域名地址组
     /// </summary>
 
@@ -70,8 +61,6 @@ public:
 protected:
     std::string objectId_;
     bool objectIdIsSet_;
-    std::string domainSetId_;
-    bool domainSetIdIsSet_;
     std::vector<std::string> domainAddressIds_;
     bool domainAddressIdsIsSet_;
 

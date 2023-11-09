@@ -12,6 +12,8 @@ namespace Model {
 
 AddDomainsRequest::AddDomainsRequest()
 {
+    setId_ = "";
+    setIdIsSet_ = false;
     enterpriseProjectId_ = "";
     enterpriseProjectIdIsSet_ = false;
     fwInstanceId_ = "";
@@ -29,6 +31,9 @@ web::json::value AddDomainsRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(setIdIsSet_) {
+        val[utility::conversions::to_string_t("set_id")] = ModelBase::toJson(setId_);
+    }
     if(enterpriseProjectIdIsSet_) {
         val[utility::conversions::to_string_t("enterprise_project_id")] = ModelBase::toJson(enterpriseProjectId_);
     }
@@ -45,6 +50,15 @@ bool AddDomainsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("set_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("set_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSetId(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("enterprise_project_id"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enterprise_project_id"));
         if(!fieldValue.is_null())
@@ -75,6 +89,27 @@ bool AddDomainsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
+
+std::string AddDomainsRequest::getSetId() const
+{
+    return setId_;
+}
+
+void AddDomainsRequest::setSetId(const std::string& value)
+{
+    setId_ = value;
+    setIdIsSet_ = true;
+}
+
+bool AddDomainsRequest::setIdIsSet() const
+{
+    return setIdIsSet_;
+}
+
+void AddDomainsRequest::unsetsetId()
+{
+    setIdIsSet_ = false;
+}
 
 std::string AddDomainsRequest::getEnterpriseProjectId() const
 {

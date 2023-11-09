@@ -39,15 +39,6 @@ public:
     /// DomainSetInfoDto members
 
     /// <summary>
-    /// 域名组id
-    /// </summary>
-
-    std::string getDomainSetId() const;
-    bool domainSetIdIsSet() const;
-    void unsetdomainSetId();
-    void setDomainSetId(const std::string& value);
-
-    /// <summary>
     /// 域名
     /// </summary>
 
@@ -67,8 +58,6 @@ public:
 
 
 protected:
-    std::string domainSetId_;
-    bool domainSetIdIsSet_;
     std::string domainName_;
     bool domainNameIsSet_;
     std::string description_;

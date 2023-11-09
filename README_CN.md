@@ -115,7 +115,8 @@ vcpkg install libbson
 
 - 使用如下代码同步查询指定 Region 下的 VPC 列表，实际使用中请将 `VpcClient` 替换为您使用的产品/服务相应的 `{Service}Client`。
 
-- 调用前请根据实际情况替换如下变量：`{your ak string}`、 `{your sk string}`、 `{your endpoint}` 以及 `{your project id}`。
+- 认证用的ak和sk硬编码到代码中或者明文存储都有很大的安全风险，建议在配置文件或者环境变量中密文存放，使用时解密，确保安全。
+- 本示例中的ak和sk保存在环境变量中，运行本示例前请先配置环境变量`HUAWEICLOUD_SDK_AK`和`HUAWEICLOUD_SDK_SK`。
 
 ``` cpp
 #include <cstdio>
@@ -129,16 +130,32 @@ using namespace HuaweiCloud::Sdk::Core;
 using namespace HuaweiCloud::Sdk::Core::Exception;
 
 int main(void)
-{
-    // Initialize HTTP config
-    HttpConfig httpConfig = HttpConfig();
-
+{   
+    std::string ak;
+    std::string sk;
+#if defined(WIN32) || defined(__WIN32__) || defined(_WIN32) || defined(_MSC_VER)
+    ak = getenv("HUAWEICLOUD_SDK_AK");
+    sk = getenv("HUAWEICLOUD_SDK_SK");    
+#elif defined(linux) || defined(__linux) || defined(__linux__)
+    char* envVar; 
+    #define INIT_ENV_VAR(ID, NAME)               \
+    do {                                     \
+        if (envVar = secure_getenv(#NAME)) { \
+            ID = std::string(envVar);        \
+        }                                    \
+    } while (0)
+    INIT_ENV_VAR(ak, HUAWEICLOUD_SDK_AK);
+    INIT_ENV_VAR(sk, HUAWEICLOUD_SDK_SK);
+    #undef INIT_ENV_VAR
+#endif
     // Initialize AK/SK module
     auto basicCredentials = std::make_unique<BasicCredentials>();
-    basicCredentials->withAk("{your ak string}")
-            .withSk("{your sk string}")
+    basicCredentials->withAk(ak)
+            .withSk(sk)
             .withProjectId("{your project id}");
-    
+     
+    // Initialize HTTP config
+    HttpConfig httpConfig = HttpConfig();
     // Configure VpcClient instance
     std::unique_ptr<Vpc::V2::VpcClient> vpcApi_v2 = Vpc::V2::VpcClient::newBuilder()
             .withCredentials(std::unique_ptr<Credentials>(basicCredentials.release()))

@@ -1,3 +1,14 @@
+# 3.1.58 2023-11-09
+
+### HuaweiCloud SDK TICS
+
+- _Features_
+  - Support `TICS`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.57 2023-11-02
 
 ### HuaweiCloud SDK CSMS

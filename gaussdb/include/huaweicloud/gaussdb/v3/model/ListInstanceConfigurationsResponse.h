@@ -50,7 +50,7 @@ public:
     void setConfigurations(const ParameterConfigurationInfo& value);
 
     /// <summary>
-    /// 配置信息的总数。
+    /// 参数信息的总数。
     /// </summary>
 
     int64_t getTotalCount() const;

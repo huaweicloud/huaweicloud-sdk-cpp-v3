@@ -222,13 +222,14 @@ std::shared_ptr<AddDomainSetResponse> CfwClient::addDomainSet(AddDomainSetReques
 }
 std::shared_ptr<AddDomainsResponse> CfwClient::addDomains(AddDomainsRequest &request)
 {
-    std::string localVarPath = "/v1/{project_id}/domain-set/domains";
+    std::string localVarPath = "/v1/{project_id}/domain-set/domains/{set_id}";
 
     std::map<std::string, std::string> localVarQueryParams;
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
 
+    localVarPathParams["set_id"] = parameterToString(request.getSetId());
 
     bool isJson = false;
     bool isMultiPart = false;
@@ -648,13 +649,14 @@ std::shared_ptr<DeleteDomainSetResponse> CfwClient::deleteDomainSet(DeleteDomain
 }
 std::shared_ptr<DeleteDomainsResponse> CfwClient::deleteDomains(DeleteDomainsRequest &request)
 {
-    std::string localVarPath = "/v1/{project_id}/domain-set/domains";
+    std::string localVarPath = "/v1/{project_id}/domain-set/domains/{set_id}";
 
     std::map<std::string, std::string> localVarQueryParams;
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
 
+    localVarPathParams["set_id"] = parameterToString(request.getSetId());
 
     bool isJson = false;
     bool isMultiPart = false;

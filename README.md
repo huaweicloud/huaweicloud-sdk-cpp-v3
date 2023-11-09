@@ -115,7 +115,8 @@ is `C:\Program File (x86)\huaweicloud-sdk-cpp-v3`.
 - The following example shows how to query a list of VPC in a specific region, you need to substitute your
   real `{Service}Client` for `VpcClient` in actual use.
 
-- Substitute the values for `{your ak string}`, `{your sk string}`, `{your endpoint}` and `{your project id}`.
+- - Hard-coding ak and sk for authentication into the code or storing it in plain text has a great security risk. It is recommended to store the ciphertext in the profile or environment variables and decrypt it when used to ensure security.
+- In this example, ak and sk are stored in environment variables. Please configure the environment variables `HUAWEICLOUD_SDK_AK` and `HUAWEICLOUD_SDK_SK` before running this example.
 
 ``` cpp
 #include <cstdio>
@@ -129,16 +130,35 @@ using namespace HuaweiCloud::Sdk::Core;
 using namespace HuaweiCloud::Sdk::Core::Exception;
 
 int main(void)
-{
-    // Initialize HTTP config
-    HttpConfig httpConfig = HttpConfig();
-
+{   
+    //Do not hard-code authentication information into the code, as this may pose a security risk
+    //Authentication can be configured through environment variables and other methods. Please refer to Chapter 2.4 Authentication Management 
+    std::string ak;
+    std::string sk;
+#if defined(WIN32) || defined(__WIN32__) || defined(_WIN32) || defined(_MSC_VER)
+    ak = getenv("HUAWEICLOUD_SDK_AK");
+    sk = getenv("HUAWEICLOUD_SDK_SK");    
+#elif defined(linux) || defined(__linux) || defined(__linux__)
+    char* envVar; 
+    #define INIT_ENV_VAR(ID, NAME)               \
+    do {                                     \
+        if (envVar = secure_getenv(#NAME)) { \
+            ID = std::string(envVar);        \
+        }                                    \
+    } while (0)
+    INIT_ENV_VAR(ak, HUAWEICLOUD_SDK_AK);
+    INIT_ENV_VAR(sk, HUAWEICLOUD_SDK_SK);
+    #undef INIT_ENV_VAR
+#endif
+    
     // Initialize AK/SK module
     auto basicCredentials = std::make_unique<BasicCredentials>();
-    basicCredentials->withAk("{your ak string}")
-            .withSk("{your sk string}")
+    basicCredentials->withAk(ak)
+            .withSk(sk)
             .withProjectId("{your project id}");
     
+    // Initialize HTTP config
+    HttpConfig httpConfig = HttpConfig();
     // Configure VpcClient instance
     std::unique_ptr<Vpc::V2::VpcClient> vpcApi_v2 = Vpc::V2::VpcClient::newBuilder()
             .withCredentials(std::unique_ptr<Credentials>(basicCredentials.release()))

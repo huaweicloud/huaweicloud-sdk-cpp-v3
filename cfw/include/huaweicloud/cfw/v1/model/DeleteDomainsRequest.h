@@ -40,6 +40,15 @@ public:
     /// DeleteDomainsRequest members
 
     /// <summary>
+    /// 域名组id
+    /// </summary>
+
+    std::string getSetId() const;
+    bool setIdIsSet() const;
+    void unsetsetId();
+    void setSetId(const std::string& value);
+
+    /// <summary>
     /// 企业项目id，用户支持企业项目后，由企业项目生成的id。
     /// </summary>
 
@@ -59,6 +68,8 @@ public:
 
 
 protected:
+    std::string setId_;
+    bool setIdIsSet_;
     std::string enterpriseProjectId_;
     bool enterpriseProjectIdIsSet_;
     DeleteDomainDto body_;

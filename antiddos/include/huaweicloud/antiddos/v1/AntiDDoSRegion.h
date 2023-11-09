@@ -50,6 +50,10 @@ public:
             { 
                 "https://antiddos.cn-south-2.myhuaweicloud.com"
             });
+        regions["cn-south-4"] = Region("cn-south-4",
+            { 
+                "https://antiddos.cn-south-4.myhuaweicloud.com"
+            });
         regions["cn-southwest-2"] = Region("cn-southwest-2",
             { 
                 "https://antiddos.cn-southwest-2.myhuaweicloud.com"

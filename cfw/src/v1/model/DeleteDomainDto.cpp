@@ -14,8 +14,6 @@ DeleteDomainDto::DeleteDomainDto()
 {
     objectId_ = "";
     objectIdIsSet_ = false;
-    domainSetId_ = "";
-    domainSetIdIsSet_ = false;
     domainAddressIdsIsSet_ = false;
 }
 
@@ -31,9 +29,6 @@ web::json::value DeleteDomainDto::toJson() const
 
     if(objectIdIsSet_) {
         val[utility::conversions::to_string_t("object_id")] = ModelBase::toJson(objectId_);
-    }
-    if(domainSetIdIsSet_) {
-        val[utility::conversions::to_string_t("domain_set_id")] = ModelBase::toJson(domainSetId_);
     }
     if(domainAddressIdsIsSet_) {
         val[utility::conversions::to_string_t("domain_address_ids")] = ModelBase::toJson(domainAddressIds_);
@@ -52,15 +47,6 @@ bool DeleteDomainDto::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setObjectId(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("domain_set_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("domain_set_id"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setDomainSetId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("domain_address_ids"))) {
@@ -95,27 +81,6 @@ bool DeleteDomainDto::objectIdIsSet() const
 void DeleteDomainDto::unsetobjectId()
 {
     objectIdIsSet_ = false;
-}
-
-std::string DeleteDomainDto::getDomainSetId() const
-{
-    return domainSetId_;
-}
-
-void DeleteDomainDto::setDomainSetId(const std::string& value)
-{
-    domainSetId_ = value;
-    domainSetIdIsSet_ = true;
-}
-
-bool DeleteDomainDto::domainSetIdIsSet() const
-{
-    return domainSetIdIsSet_;
-}
-
-void DeleteDomainDto::unsetdomainSetId()
-{
-    domainSetIdIsSet_ = false;
 }
 
 std::vector<std::string>& DeleteDomainDto::getDomainAddressIds()

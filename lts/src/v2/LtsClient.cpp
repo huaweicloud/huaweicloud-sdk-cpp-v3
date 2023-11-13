@@ -2644,7 +2644,7 @@ std::shared_ptr<UpdateLogGroupResponse> LtsClient::updateLogGroup(UpdateLogGroup
 }
 std::shared_ptr<UpdateLogStreamResponse> LtsClient::updateLogStream(UpdateLogStreamRequest &request)
 {
-    std::string localVarPath = "/v2/{project_id}/groups/{log_group_id}/streams_ttl/{log_stream_id}";
+    std::string localVarPath = "/v2/{project_id}/groups/{log_group_id}/streams-ttl/{log_stream_id}";
 
     std::map<std::string, std::string> localVarQueryParams;
     std::map<std::string, std::string> localVarHeaderParams;

@@ -17,6 +17,8 @@ public:
     static HttpRequestDef genRequestDefForApplyConfigurationAsync();
     static HttpRequestDef genRequestDefForAttachEip();
     static HttpRequestDef genRequestDefForBatchDeleteManualBackup();
+    static HttpRequestDef genRequestDefForBatchRestoreDatabase();
+    static HttpRequestDef genRequestDefForBatchRestorePostgreSqlTables();
     static HttpRequestDef genRequestDefForBatchTagAddAction();
     static HttpRequestDef genRequestDefForBatchTagDelAction();
     static HttpRequestDef genRequestDefForChangeFailoverMode();
@@ -47,13 +49,12 @@ public:
     static HttpRequestDef genRequestDefForListErrorLogsNew();
     static HttpRequestDef genRequestDefForListErrorlogForLts();
     static HttpRequestDef genRequestDefForListFlavors();
+    static HttpRequestDef genRequestDefForListHistoryDatabase();
     static HttpRequestDef genRequestDefForListInstanceDiagnosis();
     static HttpRequestDef genRequestDefForListInstanceParamHistories();
     static HttpRequestDef genRequestDefForListInstanceTags();
     static HttpRequestDef genRequestDefForListInstances();
     static HttpRequestDef genRequestDefForListInstancesInfoDiagnosis();
-    static HttpRequestDef genRequestDefForListInstancesRecommendation();
-    static HttpRequestDef genRequestDefForListInstancesResourceMetrics();
     static HttpRequestDef genRequestDefForListInstancesSupportFastRestore();
     static HttpRequestDef genRequestDefForListJobInfo();
     static HttpRequestDef genRequestDefForListJobInfoDetail();
@@ -62,6 +63,7 @@ public:
     static HttpRequestDef genRequestDefForListOffSiteRestoreTimes();
     static HttpRequestDef genRequestDefForListPostgresqlHbaInfo();
     static HttpRequestDef genRequestDefForListPostgresqlHbaInfoHistory();
+    static HttpRequestDef genRequestDefForListPostgresqlListHistoryTables();
     static HttpRequestDef genRequestDefForListPredefinedTag();
     static HttpRequestDef genRequestDefForListProjectTags();
     static HttpRequestDef genRequestDefForListRecycleInstances();

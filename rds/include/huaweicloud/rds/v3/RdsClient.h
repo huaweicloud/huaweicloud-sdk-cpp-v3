@@ -16,6 +16,10 @@
 #include <huaweicloud/rds/v3/model/BatchDeleteBackupRequestBody.h>
 #include <huaweicloud/rds/v3/model/BatchDeleteManualBackupRequest.h>
 #include <huaweicloud/rds/v3/model/BatchDeleteManualBackupResponse.h>
+#include <huaweicloud/rds/v3/model/BatchRestoreDatabaseRequest.h>
+#include <huaweicloud/rds/v3/model/BatchRestoreDatabaseResponse.h>
+#include <huaweicloud/rds/v3/model/BatchRestorePostgreSqlTablesRequest.h>
+#include <huaweicloud/rds/v3/model/BatchRestorePostgreSqlTablesResponse.h>
 #include <huaweicloud/rds/v3/model/BatchTagActionAddRequestBody.h>
 #include <huaweicloud/rds/v3/model/BatchTagActionDelRequestBody.h>
 #include <huaweicloud/rds/v3/model/BatchTagAddActionRequest.h>
@@ -71,7 +75,6 @@
 #include <huaweicloud/rds/v3/model/EnableConfigurationResponse.h>
 #include <huaweicloud/rds/v3/model/EnlargeVolumeRequestBody.h>
 #include <huaweicloud/rds/v3/model/ErrorResponse.h>
-#include <huaweicloud/rds/v3/model/ErrorRsp.h>
 #include <huaweicloud/rds/v3/model/ErrorlogForLtsRequest.h>
 #include <huaweicloud/rds/v3/model/FailoverModeRequest.h>
 #include <huaweicloud/rds/v3/model/FailoverRequest.h>
@@ -102,6 +105,8 @@
 #include <huaweicloud/rds/v3/model/ListErrorlogForLtsResponse.h>
 #include <huaweicloud/rds/v3/model/ListFlavorsRequest.h>
 #include <huaweicloud/rds/v3/model/ListFlavorsResponse.h>
+#include <huaweicloud/rds/v3/model/ListHistoryDatabaseRequest.h>
+#include <huaweicloud/rds/v3/model/ListHistoryDatabaseResponse.h>
 #include <huaweicloud/rds/v3/model/ListInstanceDiagnosisRequest.h>
 #include <huaweicloud/rds/v3/model/ListInstanceDiagnosisResponse.h>
 #include <huaweicloud/rds/v3/model/ListInstanceParamHistoriesRequest.h>
@@ -110,11 +115,7 @@
 #include <huaweicloud/rds/v3/model/ListInstanceTagsResponse.h>
 #include <huaweicloud/rds/v3/model/ListInstancesInfoDiagnosisRequest.h>
 #include <huaweicloud/rds/v3/model/ListInstancesInfoDiagnosisResponse.h>
-#include <huaweicloud/rds/v3/model/ListInstancesRecommendationRequest.h>
-#include <huaweicloud/rds/v3/model/ListInstancesRecommendationResponse.h>
 #include <huaweicloud/rds/v3/model/ListInstancesRequest.h>
-#include <huaweicloud/rds/v3/model/ListInstancesResourceMetricsRequest.h>
-#include <huaweicloud/rds/v3/model/ListInstancesResourceMetricsResponse.h>
 #include <huaweicloud/rds/v3/model/ListInstancesResponse.h>
 #include <huaweicloud/rds/v3/model/ListInstancesSupportFastRestoreRequest.h>
 #include <huaweicloud/rds/v3/model/ListInstancesSupportFastRestoreRequestBody.h>
@@ -133,6 +134,8 @@
 #include <huaweicloud/rds/v3/model/ListPostgresqlHbaInfoHistoryResponse.h>
 #include <huaweicloud/rds/v3/model/ListPostgresqlHbaInfoRequest.h>
 #include <huaweicloud/rds/v3/model/ListPostgresqlHbaInfoResponse.h>
+#include <huaweicloud/rds/v3/model/ListPostgresqlListHistoryTablesRequest.h>
+#include <huaweicloud/rds/v3/model/ListPostgresqlListHistoryTablesResponse.h>
 #include <huaweicloud/rds/v3/model/ListPredefinedTagRequest.h>
 #include <huaweicloud/rds/v3/model/ListPredefinedTagResponse.h>
 #include <huaweicloud/rds/v3/model/ListProjectTagsRequest.h>
@@ -169,6 +172,10 @@
 #include <huaweicloud/rds/v3/model/ModifyPostgresqlHbaConfResponse.h>
 #include <huaweicloud/core/utils/Object.h>
 #include <huaweicloud/rds/v3/model/OpsWindowRequest.h>
+#include <huaweicloud/rds/v3/model/PostgreSQLHistoryDatabaseRequest.h>
+#include <huaweicloud/rds/v3/model/PostgreSQLHistoryTableRequest.h>
+#include <huaweicloud/rds/v3/model/PostgreSQLRestoreDatabaseRequest.h>
+#include <huaweicloud/rds/v3/model/PostgreSQLRestoreTableRequest.h>
 #include <huaweicloud/rds/v3/model/PostgresqlHbaConf.h>
 #include <huaweicloud/rds/v3/model/PostgresqlHbaHistory.h>
 #include <huaweicloud/rds/v3/model/RecyclePolicyRequestBody.h>
@@ -503,6 +510,22 @@ public:
     std::shared_ptr<BatchDeleteManualBackupResponse> batchDeleteManualBackup(
         BatchDeleteManualBackupRequest &request
     );
+    // 库级时间点恢复
+    //
+    // 库级时间点恢复
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchRestoreDatabaseResponse> batchRestoreDatabase(
+        BatchRestoreDatabaseRequest &request
+    );
+    // 表级时间点恢复（PostgreSQL）
+    //
+    // 表级时间点恢复（PostgreSQL）
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchRestorePostgreSqlTablesResponse> batchRestorePostgreSqlTables(
+        BatchRestorePostgreSqlTablesRequest &request
+    );
     // 批量添加标签
     //
     // 批量添加标签。
@@ -742,6 +765,14 @@ public:
     std::shared_ptr<ListFlavorsResponse> listFlavors(
         ListFlavorsRequest &request
     );
+    // 查询指定时间点可恢复的库
+    //
+    // 查询指定时间点可恢复的库
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListHistoryDatabaseResponse> listHistoryDatabase(
+        ListHistoryDatabaseRequest &request
+    );
     // 获取诊断后的实例数量
     //
     // 获取诊断后的实例数量
@@ -781,22 +812,6 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListInstancesInfoDiagnosisResponse> listInstancesInfoDiagnosis(
         ListInstancesInfoDiagnosisRequest &request
-    );
-    // 查询购买推荐
-    //
-    // 查询购买推荐
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ListInstancesRecommendationResponse> listInstancesRecommendation(
-        ListInstancesRecommendationRequest &request
-    );
-    // 查询监控大盘列表
-    //
-    // 查询监控大盘列表
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ListInstancesResourceMetricsResponse> listInstancesResourceMetrics(
-        ListInstancesResourceMetricsRequest &request
     );
     // 获取实例是否能使用极速恢复
     //
@@ -864,6 +879,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListPostgresqlHbaInfoHistoryResponse> listPostgresqlHbaInfoHistory(
         ListPostgresqlHbaInfoHistoryRequest &request
+    );
+    // 查询指定时间点可恢复的表(PostgreSQL)
+    //
+    // 查询指定时间点可恢复的表(PostgreSQL)
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListPostgresqlListHistoryTablesResponse> listPostgresqlListHistoryTables(
+        ListPostgresqlListHistoryTablesRequest &request
     );
     // 
     //

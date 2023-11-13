@@ -26,6 +26,8 @@ CreatefavoriteReqbody::CreatefavoriteReqbody()
     logStreamIdIsSet_ = false;
     logStreamName_ = "";
     logStreamNameIsSet_ = false;
+    isGlobal_ = false;
+    isGlobalIsSet_ = false;
 }
 
 CreatefavoriteReqbody::~CreatefavoriteReqbody() = default;
@@ -58,6 +60,9 @@ web::json::value CreatefavoriteReqbody::toJson() const
     }
     if(logStreamNameIsSet_) {
         val[utility::conversions::to_string_t("log_stream_name")] = ModelBase::toJson(logStreamName_);
+    }
+    if(isGlobalIsSet_) {
+        val[utility::conversions::to_string_t("is_global")] = ModelBase::toJson(isGlobal_);
     }
 
     return val;
@@ -127,6 +132,15 @@ bool CreatefavoriteReqbody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLogStreamName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_global"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_global"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsGlobal(refVal);
         }
     }
     return ok;
@@ -278,6 +292,27 @@ bool CreatefavoriteReqbody::logStreamNameIsSet() const
 void CreatefavoriteReqbody::unsetlogStreamName()
 {
     logStreamNameIsSet_ = false;
+}
+
+bool CreatefavoriteReqbody::isIsGlobal() const
+{
+    return isGlobal_;
+}
+
+void CreatefavoriteReqbody::setIsGlobal(bool value)
+{
+    isGlobal_ = value;
+    isGlobalIsSet_ = true;
+}
+
+bool CreatefavoriteReqbody::isGlobalIsSet() const
+{
+    return isGlobalIsSet_;
+}
+
+void CreatefavoriteReqbody::unsetisGlobal()
+{
+    isGlobalIsSet_ = false;
 }
 
 }

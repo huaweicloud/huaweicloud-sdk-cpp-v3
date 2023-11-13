@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_RDS_V3_MODEL_InstanceState_H_
-#define HUAWEICLOUD_SDK_RDS_V3_MODEL_InstanceState_H_
+#ifndef HUAWEICLOUD_SDK_RDS_V3_MODEL_PostgreSQLRestoreTable_H_
+#define HUAWEICLOUD_SDK_RDS_V3_MODEL_PostgreSQLRestoreTable_H_
 
 
 #include <huaweicloud/rds/v3/RdsExport.h>
@@ -20,14 +20,14 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 实例状态
+/// 恢复表信息
 /// </summary>
-class HUAWEICLOUD_RDS_V3_EXPORT  InstanceState
+class HUAWEICLOUD_RDS_V3_EXPORT  PostgreSQLRestoreTable
     : public ModelBase
 {
 public:
-    InstanceState();
-    virtual ~InstanceState();
+    PostgreSQLRestoreTable();
+    virtual ~PostgreSQLRestoreTable();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -36,32 +36,32 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// InstanceState members
+    /// PostgreSQLRestoreTable members
 
     /// <summary>
-    /// 实例状态
+    /// 恢复前表名
     /// </summary>
 
-    std::string getStatus() const;
-    bool statusIsSet() const;
-    void unsetstatus();
-    void setStatus(const std::string& value);
+    std::string getOldName() const;
+    bool oldNameIsSet() const;
+    void unsetoldName();
+    void setOldName(const std::string& value);
 
     /// <summary>
-    /// 参数变更，是否需要重启
+    /// 恢复后表名
     /// </summary>
 
-    bool isWaitRestartForParams() const;
-    bool waitRestartForParamsIsSet() const;
-    void unsetwaitRestartForParams();
-    void setWaitRestartForParams(bool value);
+    std::string getNewName() const;
+    bool newNameIsSet() const;
+    void unsetnewName();
+    void setNewName(const std::string& value);
 
 
 protected:
-    std::string status_;
-    bool statusIsSet_;
-    bool waitRestartForParams_;
-    bool waitRestartForParamsIsSet_;
+    std::string oldName_;
+    bool oldNameIsSet_;
+    std::string newName_;
+    bool newNameIsSet_;
 
 };
 
@@ -72,4 +72,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_RDS_V3_MODEL_InstanceState_H_
+#endif // HUAWEICLOUD_SDK_RDS_V3_MODEL_PostgreSQLRestoreTable_H_

@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_RDS_V3_MODEL_ErrorRsp_H_
-#define HUAWEICLOUD_SDK_RDS_V3_MODEL_ErrorRsp_H_
+#ifndef HUAWEICLOUD_SDK_RDS_V3_MODEL_PostgreSQLHistoryTable_H_
+#define HUAWEICLOUD_SDK_RDS_V3_MODEL_PostgreSQLHistoryTable_H_
 
 
 #include <huaweicloud/rds/v3/RdsExport.h>
@@ -20,14 +20,14 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 失败时返回的对象。
+/// PostgreSQL查询可恢复表的表信息
 /// </summary>
-class HUAWEICLOUD_RDS_V3_EXPORT  ErrorRsp
+class HUAWEICLOUD_RDS_V3_EXPORT  PostgreSQLHistoryTable
     : public ModelBase
 {
 public:
-    ErrorRsp();
-    virtual ~ErrorRsp();
+    PostgreSQLHistoryTable();
+    virtual ~PostgreSQLHistoryTable();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -36,32 +36,21 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// ErrorRsp members
+    /// PostgreSQLHistoryTable members
 
     /// <summary>
-    /// 错误码。
+    /// 表名
     /// </summary>
 
-    std::string getErrorCode() const;
-    bool errorCodeIsSet() const;
-    void unseterrorCode();
-    void setErrorCode(const std::string& value);
-
-    /// <summary>
-    /// 错误描述。
-    /// </summary>
-
-    std::string getErrorMsg() const;
-    bool errorMsgIsSet() const;
-    void unseterrorMsg();
-    void setErrorMsg(const std::string& value);
+    std::string getName() const;
+    bool nameIsSet() const;
+    void unsetname();
+    void setName(const std::string& value);
 
 
 protected:
-    std::string errorCode_;
-    bool errorCodeIsSet_;
-    std::string errorMsg_;
-    bool errorMsgIsSet_;
+    std::string name_;
+    bool nameIsSet_;
 
 };
 
@@ -72,4 +61,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_RDS_V3_MODEL_ErrorRsp_H_
+#endif // HUAWEICLOUD_SDK_RDS_V3_MODEL_PostgreSQLHistoryTable_H_

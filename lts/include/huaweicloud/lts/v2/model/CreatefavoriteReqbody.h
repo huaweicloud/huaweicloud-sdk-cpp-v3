@@ -101,6 +101,15 @@ public:
     void unsetlogStreamName();
     void setLogStreamName(const std::string& value);
 
+    /// <summary>
+    /// 是否支持全局化，必填true，否则创建不了收藏
+    /// </summary>
+
+    bool isIsGlobal() const;
+    bool isGlobalIsSet() const;
+    void unsetisGlobal();
+    void setIsGlobal(bool value);
+
 
 protected:
     std::string epsId_;
@@ -117,6 +126,8 @@ protected:
     bool logStreamIdIsSet_;
     std::string logStreamName_;
     bool logStreamNameIsSet_;
+    bool isGlobal_;
+    bool isGlobalIsSet_;
 
 };
 

@@ -110,6 +110,10 @@ public:
             { 
                 "https://ecs.ae-ad-1.myhuaweicloud.com"
             });
+        regions["eu-west-101"] = Region("eu-west-101",
+            { 
+                "https://ecs.eu-west-101.myhuaweicloud.eu"
+            });
         return regions;
     }
 private:

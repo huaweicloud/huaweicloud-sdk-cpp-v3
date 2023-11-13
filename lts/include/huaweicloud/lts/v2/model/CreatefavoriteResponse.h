@@ -119,6 +119,15 @@ public:
     void unsetprojectId();
     void setProjectId(const std::string& value);
 
+    /// <summary>
+    /// 是否开启日志收藏
+    /// </summary>
+
+    bool isIsGlobal() const;
+    bool isGlobalIsSet() const;
+    void unsetisGlobal();
+    void setIsGlobal(bool value);
+
 
 protected:
     int64_t createTime_;
@@ -139,6 +148,8 @@ protected:
     bool logStreamNameIsSet_;
     std::string projectId_;
     bool projectIdIsSet_;
+    bool isGlobal_;
+    bool isGlobalIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

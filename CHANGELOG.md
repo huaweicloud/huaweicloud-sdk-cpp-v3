@@ -1,3 +1,27 @@
+# 3.1.59 2023-11-13
+
+### HuaweiCloud SDK LTS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **Createfavorite**
+    - changes of request param
+      - `+ is_global`
+    - changes of response param
+      - `+ is_global`
+
+### HuaweiCloud SDK RDS
+
+- _Features_
+  - Support the interfaces `ListPostgresqlListHistoryTables`, `ListHistoryDatabase`, `BatchRestorePostgreSqlTables`, `BatchRestoreDatabase`
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the interfaces `ListInstancesResourceMetrics`, `ListInstancesRecommendation`
+
 # 3.1.58 2023-11-09
 
 ### HuaweiCloud SDK TICS

@@ -30,6 +30,8 @@ CreatefavoriteResponse::CreatefavoriteResponse()
     logStreamNameIsSet_ = false;
     projectId_ = "";
     projectIdIsSet_ = false;
+    isGlobal_ = false;
+    isGlobalIsSet_ = false;
 }
 
 CreatefavoriteResponse::~CreatefavoriteResponse() = default;
@@ -68,6 +70,9 @@ web::json::value CreatefavoriteResponse::toJson() const
     }
     if(projectIdIsSet_) {
         val[utility::conversions::to_string_t("project_id")] = ModelBase::toJson(projectId_);
+    }
+    if(isGlobalIsSet_) {
+        val[utility::conversions::to_string_t("is_global")] = ModelBase::toJson(isGlobal_);
     }
 
     return val;
@@ -155,6 +160,15 @@ bool CreatefavoriteResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setProjectId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_global"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_global"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsGlobal(refVal);
         }
     }
     return ok;
@@ -348,6 +362,27 @@ bool CreatefavoriteResponse::projectIdIsSet() const
 void CreatefavoriteResponse::unsetprojectId()
 {
     projectIdIsSet_ = false;
+}
+
+bool CreatefavoriteResponse::isIsGlobal() const
+{
+    return isGlobal_;
+}
+
+void CreatefavoriteResponse::setIsGlobal(bool value)
+{
+    isGlobal_ = value;
+    isGlobalIsSet_ = true;
+}
+
+bool CreatefavoriteResponse::isGlobalIsSet() const
+{
+    return isGlobalIsSet_;
+}
+
+void CreatefavoriteResponse::unsetisGlobal()
+{
+    isGlobalIsSet_ = false;
 }
 
 }

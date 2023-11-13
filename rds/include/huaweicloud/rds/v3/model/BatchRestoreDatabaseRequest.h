@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_RDS_V3_MODEL_ListInstancesRecommendationRequest_H_
-#define HUAWEICLOUD_SDK_RDS_V3_MODEL_ListInstancesRecommendationRequest_H_
+#ifndef HUAWEICLOUD_SDK_RDS_V3_MODEL_BatchRestoreDatabaseRequest_H_
+#define HUAWEICLOUD_SDK_RDS_V3_MODEL_BatchRestoreDatabaseRequest_H_
 
 
 #include <huaweicloud/rds/v3/RdsExport.h>
@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <string>
+#include <huaweicloud/rds/v3/model/PostgreSQLRestoreDatabaseRequest.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -22,12 +22,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// Request Object
 /// </summary>
-class HUAWEICLOUD_RDS_V3_EXPORT  ListInstancesRecommendationRequest
+class HUAWEICLOUD_RDS_V3_EXPORT  BatchRestoreDatabaseRequest
     : public ModelBase
 {
 public:
-    ListInstancesRecommendationRequest();
-    virtual ~ListInstancesRecommendationRequest();
+    BatchRestoreDatabaseRequest();
+    virtual ~BatchRestoreDatabaseRequest();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -36,26 +36,26 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// ListInstancesRecommendationRequest members
+    /// BatchRestoreDatabaseRequest members
 
     /// <summary>
-    /// 引擎类型
+    /// 
     /// </summary>
 
-    std::string getEngine() const;
-    bool engineIsSet() const;
-    void unsetengine();
-    void setEngine(const std::string& value);
+    PostgreSQLRestoreDatabaseRequest getBody() const;
+    bool bodyIsSet() const;
+    void unsetbody();
+    void setBody(const PostgreSQLRestoreDatabaseRequest& value);
 
 
 protected:
-    std::string engine_;
-    bool engineIsSet_;
+    PostgreSQLRestoreDatabaseRequest body_;
+    bool bodyIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()
 public:
-    ListInstancesRecommendationRequest& dereference_from_shared_ptr(std::shared_ptr<ListInstancesRecommendationRequest> ptr) {
+    BatchRestoreDatabaseRequest& dereference_from_shared_ptr(std::shared_ptr<BatchRestoreDatabaseRequest> ptr) {
         return *ptr;
     }
 #endif
@@ -68,4 +68,4 @@ public:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_RDS_V3_MODEL_ListInstancesRecommendationRequest_H_
+#endif // HUAWEICLOUD_SDK_RDS_V3_MODEL_BatchRestoreDatabaseRequest_H_

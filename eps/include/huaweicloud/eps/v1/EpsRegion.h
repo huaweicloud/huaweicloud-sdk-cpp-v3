@@ -26,6 +26,10 @@ public:
             { 
                 "https://eps.myhuaweicloud.com"
             });
+        regions["eu-west-101"] = Region("eu-west-101",
+            { 
+                "https://eps.eu-west-101.myhuaweicloud.eu"
+            });
         return regions;
     }
 private:

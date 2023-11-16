@@ -12,7 +12,7 @@ namespace Model {
 
 MysqlVolumeResp::MysqlVolumeResp()
 {
-    size_ = "";
+    size_ = 0;
     sizeIsSet_ = false;
 }
 
@@ -40,7 +40,7 @@ bool MysqlVolumeResp::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("size"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSize(refVal);
         }
@@ -49,12 +49,12 @@ bool MysqlVolumeResp::fromJson(const web::json::value& val)
 }
 
 
-std::string MysqlVolumeResp::getSize() const
+int32_t MysqlVolumeResp::getSize() const
 {
     return size_;
 }
 
-void MysqlVolumeResp::setSize(const std::string& value)
+void MysqlVolumeResp::setSize(int32_t value)
 {
     size_ = value;
     sizeIsSet_ = true;

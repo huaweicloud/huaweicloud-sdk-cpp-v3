@@ -12,18 +12,24 @@ namespace Model {
 
 ConfigsGetBody::ConfigsGetBody()
 {
+    businessType_ = "";
+    businessTypeIsSet_ = false;
+    serviceArea_ = "";
+    serviceAreaIsSet_ = false;
+    remark_ = "";
+    remarkIsSet_ = false;
     originRequestHeaderIsSet_ = false;
     httpResponseHeaderIsSet_ = false;
     urlAuthIsSet_ = false;
     httpsIsSet_ = false;
     sourcesIsSet_ = false;
+    originProtocol_ = "";
+    originProtocolIsSet_ = false;
     originFollow302Status_ = "";
     originFollow302StatusIsSet_ = false;
     cacheRulesIsSet_ = false;
     ipFilterIsSet_ = false;
     refererIsSet_ = false;
-    originProtocol_ = "";
-    originProtocolIsSet_ = false;
     forceRedirectIsSet_ = false;
     compressIsSet_ = false;
     cacheUrlParameterFilterIsSet_ = false;
@@ -34,6 +40,18 @@ ConfigsGetBody::ConfigsGetBody()
     originRangeStatusIsSet_ = false;
     userAgentFilterIsSet_ = false;
     originRequestUrlRewriteIsSet_ = false;
+    flexibleOriginIsSet_ = false;
+    sliceEtagStatus_ = "";
+    sliceEtagStatusIsSet_ = false;
+    originReceiveTimeout_ = 0;
+    originReceiveTimeoutIsSet_ = false;
+    remoteAuthIsSet_ = false;
+    websocketIsSet_ = false;
+    videoSeekIsSet_ = false;
+    requestLimitRulesIsSet_ = false;
+    ipFrequencyLimitIsSet_ = false;
+    hstsIsSet_ = false;
+    quicIsSet_ = false;
     errorCodeRedirectRulesIsSet_ = false;
 }
 
@@ -47,6 +65,15 @@ web::json::value ConfigsGetBody::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(businessTypeIsSet_) {
+        val[utility::conversions::to_string_t("business_type")] = ModelBase::toJson(businessType_);
+    }
+    if(serviceAreaIsSet_) {
+        val[utility::conversions::to_string_t("service_area")] = ModelBase::toJson(serviceArea_);
+    }
+    if(remarkIsSet_) {
+        val[utility::conversions::to_string_t("remark")] = ModelBase::toJson(remark_);
+    }
     if(originRequestHeaderIsSet_) {
         val[utility::conversions::to_string_t("origin_request_header")] = ModelBase::toJson(originRequestHeader_);
     }
@@ -62,6 +89,9 @@ web::json::value ConfigsGetBody::toJson() const
     if(sourcesIsSet_) {
         val[utility::conversions::to_string_t("sources")] = ModelBase::toJson(sources_);
     }
+    if(originProtocolIsSet_) {
+        val[utility::conversions::to_string_t("origin_protocol")] = ModelBase::toJson(originProtocol_);
+    }
     if(originFollow302StatusIsSet_) {
         val[utility::conversions::to_string_t("origin_follow302_status")] = ModelBase::toJson(originFollow302Status_);
     }
@@ -73,9 +103,6 @@ web::json::value ConfigsGetBody::toJson() const
     }
     if(refererIsSet_) {
         val[utility::conversions::to_string_t("referer")] = ModelBase::toJson(referer_);
-    }
-    if(originProtocolIsSet_) {
-        val[utility::conversions::to_string_t("origin_protocol")] = ModelBase::toJson(originProtocol_);
     }
     if(forceRedirectIsSet_) {
         val[utility::conversions::to_string_t("force_redirect")] = ModelBase::toJson(forceRedirect_);
@@ -101,6 +128,36 @@ web::json::value ConfigsGetBody::toJson() const
     if(originRequestUrlRewriteIsSet_) {
         val[utility::conversions::to_string_t("origin_request_url_rewrite")] = ModelBase::toJson(originRequestUrlRewrite_);
     }
+    if(flexibleOriginIsSet_) {
+        val[utility::conversions::to_string_t("flexible_origin")] = ModelBase::toJson(flexibleOrigin_);
+    }
+    if(sliceEtagStatusIsSet_) {
+        val[utility::conversions::to_string_t("slice_etag_status")] = ModelBase::toJson(sliceEtagStatus_);
+    }
+    if(originReceiveTimeoutIsSet_) {
+        val[utility::conversions::to_string_t("origin_receive_timeout")] = ModelBase::toJson(originReceiveTimeout_);
+    }
+    if(remoteAuthIsSet_) {
+        val[utility::conversions::to_string_t("remote_auth")] = ModelBase::toJson(remoteAuth_);
+    }
+    if(websocketIsSet_) {
+        val[utility::conversions::to_string_t("websocket")] = ModelBase::toJson(websocket_);
+    }
+    if(videoSeekIsSet_) {
+        val[utility::conversions::to_string_t("video_seek")] = ModelBase::toJson(videoSeek_);
+    }
+    if(requestLimitRulesIsSet_) {
+        val[utility::conversions::to_string_t("request_limit_rules")] = ModelBase::toJson(requestLimitRules_);
+    }
+    if(ipFrequencyLimitIsSet_) {
+        val[utility::conversions::to_string_t("ip_frequency_limit")] = ModelBase::toJson(ipFrequencyLimit_);
+    }
+    if(hstsIsSet_) {
+        val[utility::conversions::to_string_t("hsts")] = ModelBase::toJson(hsts_);
+    }
+    if(quicIsSet_) {
+        val[utility::conversions::to_string_t("quic")] = ModelBase::toJson(quic_);
+    }
     if(errorCodeRedirectRulesIsSet_) {
         val[utility::conversions::to_string_t("error_code_redirect_rules")] = ModelBase::toJson(errorCodeRedirectRules_);
     }
@@ -111,6 +168,33 @@ bool ConfigsGetBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("business_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("business_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBusinessType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("service_area"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("service_area"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setServiceArea(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("remark"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("remark"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRemark(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("origin_request_header"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("origin_request_header"));
         if(!fieldValue.is_null())
@@ -156,6 +240,15 @@ bool ConfigsGetBody::fromJson(const web::json::value& val)
             setSources(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("origin_protocol"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("origin_protocol"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setOriginProtocol(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("origin_follow302_status"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("origin_follow302_status"));
         if(!fieldValue.is_null())
@@ -190,15 +283,6 @@ bool ConfigsGetBody::fromJson(const web::json::value& val)
             RefererConfig refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setReferer(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("origin_protocol"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("origin_protocol"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOriginProtocol(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("force_redirect"))) {
@@ -273,6 +357,96 @@ bool ConfigsGetBody::fromJson(const web::json::value& val)
             setOriginRequestUrlRewrite(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("flexible_origin"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("flexible_origin"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<FlexibleOrigins> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFlexibleOrigin(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("slice_etag_status"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("slice_etag_status"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSliceEtagStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("origin_receive_timeout"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("origin_receive_timeout"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setOriginReceiveTimeout(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("remote_auth"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("remote_auth"));
+        if(!fieldValue.is_null())
+        {
+            CommonRemoteAuth refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRemoteAuth(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("websocket"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("websocket"));
+        if(!fieldValue.is_null())
+        {
+            WebSocketSeek refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setWebsocket(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("video_seek"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("video_seek"));
+        if(!fieldValue.is_null())
+        {
+            VideoSeek refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setVideoSeek(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("request_limit_rules"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("request_limit_rules"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<RequestLimitRules> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRequestLimitRules(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("ip_frequency_limit"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ip_frequency_limit"));
+        if(!fieldValue.is_null())
+        {
+            IpFrequencyLimitQuery refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIpFrequencyLimit(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("hsts"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("hsts"));
+        if(!fieldValue.is_null())
+        {
+            HstsQuery refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHsts(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("quic"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("quic"));
+        if(!fieldValue.is_null())
+        {
+            Quic refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setQuic(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("error_code_redirect_rules"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("error_code_redirect_rules"));
         if(!fieldValue.is_null())
@@ -285,6 +459,69 @@ bool ConfigsGetBody::fromJson(const web::json::value& val)
     return ok;
 }
 
+
+std::string ConfigsGetBody::getBusinessType() const
+{
+    return businessType_;
+}
+
+void ConfigsGetBody::setBusinessType(const std::string& value)
+{
+    businessType_ = value;
+    businessTypeIsSet_ = true;
+}
+
+bool ConfigsGetBody::businessTypeIsSet() const
+{
+    return businessTypeIsSet_;
+}
+
+void ConfigsGetBody::unsetbusinessType()
+{
+    businessTypeIsSet_ = false;
+}
+
+std::string ConfigsGetBody::getServiceArea() const
+{
+    return serviceArea_;
+}
+
+void ConfigsGetBody::setServiceArea(const std::string& value)
+{
+    serviceArea_ = value;
+    serviceAreaIsSet_ = true;
+}
+
+bool ConfigsGetBody::serviceAreaIsSet() const
+{
+    return serviceAreaIsSet_;
+}
+
+void ConfigsGetBody::unsetserviceArea()
+{
+    serviceAreaIsSet_ = false;
+}
+
+std::string ConfigsGetBody::getRemark() const
+{
+    return remark_;
+}
+
+void ConfigsGetBody::setRemark(const std::string& value)
+{
+    remark_ = value;
+    remarkIsSet_ = true;
+}
+
+bool ConfigsGetBody::remarkIsSet() const
+{
+    return remarkIsSet_;
+}
+
+void ConfigsGetBody::unsetremark()
+{
+    remarkIsSet_ = false;
+}
 
 std::vector<OriginRequestHeader>& ConfigsGetBody::getOriginRequestHeader()
 {
@@ -391,6 +628,27 @@ void ConfigsGetBody::unsetsources()
     sourcesIsSet_ = false;
 }
 
+std::string ConfigsGetBody::getOriginProtocol() const
+{
+    return originProtocol_;
+}
+
+void ConfigsGetBody::setOriginProtocol(const std::string& value)
+{
+    originProtocol_ = value;
+    originProtocolIsSet_ = true;
+}
+
+bool ConfigsGetBody::originProtocolIsSet() const
+{
+    return originProtocolIsSet_;
+}
+
+void ConfigsGetBody::unsetoriginProtocol()
+{
+    originProtocolIsSet_ = false;
+}
+
 std::string ConfigsGetBody::getOriginFollow302Status() const
 {
     return originFollow302Status_;
@@ -473,27 +731,6 @@ bool ConfigsGetBody::refererIsSet() const
 void ConfigsGetBody::unsetreferer()
 {
     refererIsSet_ = false;
-}
-
-std::string ConfigsGetBody::getOriginProtocol() const
-{
-    return originProtocol_;
-}
-
-void ConfigsGetBody::setOriginProtocol(const std::string& value)
-{
-    originProtocol_ = value;
-    originProtocolIsSet_ = true;
-}
-
-bool ConfigsGetBody::originProtocolIsSet() const
-{
-    return originProtocolIsSet_;
-}
-
-void ConfigsGetBody::unsetoriginProtocol()
-{
-    originProtocolIsSet_ = false;
 }
 
 ForceRedirectConfig ConfigsGetBody::getForceRedirect() const
@@ -662,6 +899,216 @@ bool ConfigsGetBody::originRequestUrlRewriteIsSet() const
 void ConfigsGetBody::unsetoriginRequestUrlRewrite()
 {
     originRequestUrlRewriteIsSet_ = false;
+}
+
+std::vector<FlexibleOrigins>& ConfigsGetBody::getFlexibleOrigin()
+{
+    return flexibleOrigin_;
+}
+
+void ConfigsGetBody::setFlexibleOrigin(const std::vector<FlexibleOrigins>& value)
+{
+    flexibleOrigin_ = value;
+    flexibleOriginIsSet_ = true;
+}
+
+bool ConfigsGetBody::flexibleOriginIsSet() const
+{
+    return flexibleOriginIsSet_;
+}
+
+void ConfigsGetBody::unsetflexibleOrigin()
+{
+    flexibleOriginIsSet_ = false;
+}
+
+std::string ConfigsGetBody::getSliceEtagStatus() const
+{
+    return sliceEtagStatus_;
+}
+
+void ConfigsGetBody::setSliceEtagStatus(const std::string& value)
+{
+    sliceEtagStatus_ = value;
+    sliceEtagStatusIsSet_ = true;
+}
+
+bool ConfigsGetBody::sliceEtagStatusIsSet() const
+{
+    return sliceEtagStatusIsSet_;
+}
+
+void ConfigsGetBody::unsetsliceEtagStatus()
+{
+    sliceEtagStatusIsSet_ = false;
+}
+
+int32_t ConfigsGetBody::getOriginReceiveTimeout() const
+{
+    return originReceiveTimeout_;
+}
+
+void ConfigsGetBody::setOriginReceiveTimeout(int32_t value)
+{
+    originReceiveTimeout_ = value;
+    originReceiveTimeoutIsSet_ = true;
+}
+
+bool ConfigsGetBody::originReceiveTimeoutIsSet() const
+{
+    return originReceiveTimeoutIsSet_;
+}
+
+void ConfigsGetBody::unsetoriginReceiveTimeout()
+{
+    originReceiveTimeoutIsSet_ = false;
+}
+
+CommonRemoteAuth ConfigsGetBody::getRemoteAuth() const
+{
+    return remoteAuth_;
+}
+
+void ConfigsGetBody::setRemoteAuth(const CommonRemoteAuth& value)
+{
+    remoteAuth_ = value;
+    remoteAuthIsSet_ = true;
+}
+
+bool ConfigsGetBody::remoteAuthIsSet() const
+{
+    return remoteAuthIsSet_;
+}
+
+void ConfigsGetBody::unsetremoteAuth()
+{
+    remoteAuthIsSet_ = false;
+}
+
+WebSocketSeek ConfigsGetBody::getWebsocket() const
+{
+    return websocket_;
+}
+
+void ConfigsGetBody::setWebsocket(const WebSocketSeek& value)
+{
+    websocket_ = value;
+    websocketIsSet_ = true;
+}
+
+bool ConfigsGetBody::websocketIsSet() const
+{
+    return websocketIsSet_;
+}
+
+void ConfigsGetBody::unsetwebsocket()
+{
+    websocketIsSet_ = false;
+}
+
+VideoSeek ConfigsGetBody::getVideoSeek() const
+{
+    return videoSeek_;
+}
+
+void ConfigsGetBody::setVideoSeek(const VideoSeek& value)
+{
+    videoSeek_ = value;
+    videoSeekIsSet_ = true;
+}
+
+bool ConfigsGetBody::videoSeekIsSet() const
+{
+    return videoSeekIsSet_;
+}
+
+void ConfigsGetBody::unsetvideoSeek()
+{
+    videoSeekIsSet_ = false;
+}
+
+std::vector<RequestLimitRules>& ConfigsGetBody::getRequestLimitRules()
+{
+    return requestLimitRules_;
+}
+
+void ConfigsGetBody::setRequestLimitRules(const std::vector<RequestLimitRules>& value)
+{
+    requestLimitRules_ = value;
+    requestLimitRulesIsSet_ = true;
+}
+
+bool ConfigsGetBody::requestLimitRulesIsSet() const
+{
+    return requestLimitRulesIsSet_;
+}
+
+void ConfigsGetBody::unsetrequestLimitRules()
+{
+    requestLimitRulesIsSet_ = false;
+}
+
+IpFrequencyLimitQuery ConfigsGetBody::getIpFrequencyLimit() const
+{
+    return ipFrequencyLimit_;
+}
+
+void ConfigsGetBody::setIpFrequencyLimit(const IpFrequencyLimitQuery& value)
+{
+    ipFrequencyLimit_ = value;
+    ipFrequencyLimitIsSet_ = true;
+}
+
+bool ConfigsGetBody::ipFrequencyLimitIsSet() const
+{
+    return ipFrequencyLimitIsSet_;
+}
+
+void ConfigsGetBody::unsetipFrequencyLimit()
+{
+    ipFrequencyLimitIsSet_ = false;
+}
+
+HstsQuery ConfigsGetBody::getHsts() const
+{
+    return hsts_;
+}
+
+void ConfigsGetBody::setHsts(const HstsQuery& value)
+{
+    hsts_ = value;
+    hstsIsSet_ = true;
+}
+
+bool ConfigsGetBody::hstsIsSet() const
+{
+    return hstsIsSet_;
+}
+
+void ConfigsGetBody::unsethsts()
+{
+    hstsIsSet_ = false;
+}
+
+Quic ConfigsGetBody::getQuic() const
+{
+    return quic_;
+}
+
+void ConfigsGetBody::setQuic(const Quic& value)
+{
+    quic_ = value;
+    quicIsSet_ = true;
+}
+
+bool ConfigsGetBody::quicIsSet() const
+{
+    return quicIsSet_;
+}
+
+void ConfigsGetBody::unsetquic()
+{
+    quicIsSet_ = false;
 }
 
 std::vector<ErrorCodeRedirectRules>& ConfigsGetBody::getErrorCodeRedirectRules()

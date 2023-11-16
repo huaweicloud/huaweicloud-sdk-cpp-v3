@@ -35,6 +35,7 @@
 #include <huaweicloud/ocr/v1/model/MyanmarIdcardRequestBody.h>
 #include <huaweicloud/ocr/v1/model/PassportRequestBody.h>
 #include <huaweicloud/ocr/v1/model/PcrTestRecordRequestBody.h>
+#include <huaweicloud/ocr/v1/model/PeruIdCardRequestBody.h>
 #include <huaweicloud/ocr/v1/model/QualificationCertificateRequestBody.h>
 #include <huaweicloud/ocr/v1/model/QuotaInvoiceRequestBody.h>
 #include <huaweicloud/ocr/v1/model/RealEstateCertificateRequestBody.h>
@@ -96,6 +97,8 @@
 #include <huaweicloud/ocr/v1/model/RecognizePassportResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizePcrTestRecordRequest.h>
 #include <huaweicloud/ocr/v1/model/RecognizePcrTestRecordResponse.h>
+#include <huaweicloud/ocr/v1/model/RecognizePeruIdCardRequest.h>
+#include <huaweicloud/ocr/v1/model/RecognizePeruIdCardResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeQualificationCertificateRequest.h>
 #include <huaweicloud/ocr/v1/model/RecognizeQualificationCertificateResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeQuotaInvoiceRequest.h>
@@ -457,6 +460,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<RecognizePcrTestRecordResponse> recognizePcrTestRecord(
         RecognizePcrTestRecordRequest &request
+    );
+    // 秘鲁身份证识别
+    //
+    // 识别秘鲁身份证图片中的文字内容，并将识别的结构化结果返回给用户。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<RecognizePeruIdCardResponse> recognizePeruIdCard(
+        RecognizePeruIdCardRequest &request
     );
     // 道路运输从业资格证识别
     //

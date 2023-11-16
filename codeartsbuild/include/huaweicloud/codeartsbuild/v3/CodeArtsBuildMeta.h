@@ -13,11 +13,19 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 
 class HUAWEICLOUD_CODEARTSBUILD_V3_EXPORT  CodeArtsBuildMeta {
 public:
+    static HttpRequestDef genRequestDefForCreateBuildJob();
+    static HttpRequestDef genRequestDefForCreateTemplates();
     static HttpRequestDef genRequestDefForDeleteBuildJob();
+    static HttpRequestDef genRequestDefForDeleteTemplates();
     static HttpRequestDef genRequestDefForDisableBuildJob();
+    static HttpRequestDef genRequestDefForDisableNotice();
+    static HttpRequestDef genRequestDefForDownloadBuildLog();
     static HttpRequestDef genRequestDefForDownloadKeystore();
-    static HttpRequestDef genRequestDefForDownloadLogByRecordId();
-    static HttpRequestDef genRequestDefForResumeBuildJob();
+    static HttpRequestDef genRequestDefForDownloadTaskLog();
+    static HttpRequestDef genRequestDefForEnableBuildJob();
+    static HttpRequestDef genRequestDefForListJobConfig();
+    static HttpRequestDef genRequestDefForListNotice();
+    static HttpRequestDef genRequestDefForListTemplates();
     static HttpRequestDef genRequestDefForRunJob();
     static HttpRequestDef genRequestDefForShowHistoryDetails();
     static HttpRequestDef genRequestDefForShowJobListByProjectId();
@@ -26,8 +34,15 @@ public:
     static HttpRequestDef genRequestDefForShowLastHistory();
     static HttpRequestDef genRequestDefForShowListHistory();
     static HttpRequestDef genRequestDefForShowListPeriodHistory();
-    static HttpRequestDef genRequestDefForShowRecordInfo();
+    static HttpRequestDef genRequestDefForShowOutputInfo();
+    static HttpRequestDef genRequestDefForShowRecordDetail();
     static HttpRequestDef genRequestDefForStopBuildJob();
+    static HttpRequestDef genRequestDefForUpdateBuildJob();
+    static HttpRequestDef genRequestDefForUpdateNotice();
+    static HttpRequestDef genRequestDefForDownloadLogByRecordId();
+    static HttpRequestDef genRequestDefForShowFlowGraph();
+    static HttpRequestDef genRequestDefForShowRecordInfo();
+    static HttpRequestDef genRequestDefForStopJob();
 };
 
 }

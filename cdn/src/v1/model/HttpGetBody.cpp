@@ -18,12 +18,18 @@ HttpGetBody::HttpGetBody()
     certificateNameIsSet_ = false;
     certificateValue_ = "";
     certificateValueIsSet_ = false;
+    expireTime_ = 0L;
+    expireTimeIsSet_ = false;
     certificateSource_ = 0;
     certificateSourceIsSet_ = false;
+    certificateType_ = "";
+    certificateTypeIsSet_ = false;
     http2Status_ = "";
     http2StatusIsSet_ = false;
     tlsVersion_ = "";
     tlsVersionIsSet_ = false;
+    ocspStaplingStatus_ = "";
+    ocspStaplingStatusIsSet_ = false;
 }
 
 HttpGetBody::~HttpGetBody() = default;
@@ -45,14 +51,23 @@ web::json::value HttpGetBody::toJson() const
     if(certificateValueIsSet_) {
         val[utility::conversions::to_string_t("certificate_value")] = ModelBase::toJson(certificateValue_);
     }
+    if(expireTimeIsSet_) {
+        val[utility::conversions::to_string_t("expire_time")] = ModelBase::toJson(expireTime_);
+    }
     if(certificateSourceIsSet_) {
         val[utility::conversions::to_string_t("certificate_source")] = ModelBase::toJson(certificateSource_);
+    }
+    if(certificateTypeIsSet_) {
+        val[utility::conversions::to_string_t("certificate_type")] = ModelBase::toJson(certificateType_);
     }
     if(http2StatusIsSet_) {
         val[utility::conversions::to_string_t("http2_status")] = ModelBase::toJson(http2Status_);
     }
     if(tlsVersionIsSet_) {
         val[utility::conversions::to_string_t("tls_version")] = ModelBase::toJson(tlsVersion_);
+    }
+    if(ocspStaplingStatusIsSet_) {
+        val[utility::conversions::to_string_t("ocsp_stapling_status")] = ModelBase::toJson(ocspStaplingStatus_);
     }
 
     return val;
@@ -88,6 +103,15 @@ bool HttpGetBody::fromJson(const web::json::value& val)
             setCertificateValue(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("expire_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("expire_time"));
+        if(!fieldValue.is_null())
+        {
+            int64_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setExpireTime(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("certificate_source"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("certificate_source"));
         if(!fieldValue.is_null())
@@ -95,6 +119,15 @@ bool HttpGetBody::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCertificateSource(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("certificate_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("certificate_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCertificateType(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("http2_status"))) {
@@ -113,6 +146,15 @@ bool HttpGetBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTlsVersion(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("ocsp_stapling_status"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ocsp_stapling_status"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setOcspStaplingStatus(refVal);
         }
     }
     return ok;
@@ -182,6 +224,27 @@ void HttpGetBody::unsetcertificateValue()
     certificateValueIsSet_ = false;
 }
 
+int64_t HttpGetBody::getExpireTime() const
+{
+    return expireTime_;
+}
+
+void HttpGetBody::setExpireTime(int64_t value)
+{
+    expireTime_ = value;
+    expireTimeIsSet_ = true;
+}
+
+bool HttpGetBody::expireTimeIsSet() const
+{
+    return expireTimeIsSet_;
+}
+
+void HttpGetBody::unsetexpireTime()
+{
+    expireTimeIsSet_ = false;
+}
+
 int32_t HttpGetBody::getCertificateSource() const
 {
     return certificateSource_;
@@ -201,6 +264,27 @@ bool HttpGetBody::certificateSourceIsSet() const
 void HttpGetBody::unsetcertificateSource()
 {
     certificateSourceIsSet_ = false;
+}
+
+std::string HttpGetBody::getCertificateType() const
+{
+    return certificateType_;
+}
+
+void HttpGetBody::setCertificateType(const std::string& value)
+{
+    certificateType_ = value;
+    certificateTypeIsSet_ = true;
+}
+
+bool HttpGetBody::certificateTypeIsSet() const
+{
+    return certificateTypeIsSet_;
+}
+
+void HttpGetBody::unsetcertificateType()
+{
+    certificateTypeIsSet_ = false;
 }
 
 std::string HttpGetBody::getHttp2Status() const
@@ -243,6 +327,27 @@ bool HttpGetBody::tlsVersionIsSet() const
 void HttpGetBody::unsettlsVersion()
 {
     tlsVersionIsSet_ = false;
+}
+
+std::string HttpGetBody::getOcspStaplingStatus() const
+{
+    return ocspStaplingStatus_;
+}
+
+void HttpGetBody::setOcspStaplingStatus(const std::string& value)
+{
+    ocspStaplingStatus_ = value;
+    ocspStaplingStatusIsSet_ = true;
+}
+
+bool HttpGetBody::ocspStaplingStatusIsSet() const
+{
+    return ocspStaplingStatusIsSet_;
+}
+
+void HttpGetBody::unsetocspStaplingStatus()
+{
+    ocspStaplingStatusIsSet_ = false;
 }
 
 }

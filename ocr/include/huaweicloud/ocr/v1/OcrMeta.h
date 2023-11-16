@@ -42,6 +42,7 @@ public:
     static HttpRequestDef genRequestDefForRecognizeMyanmarIdcard();
     static HttpRequestDef genRequestDefForRecognizePassport();
     static HttpRequestDef genRequestDefForRecognizePcrTestRecord();
+    static HttpRequestDef genRequestDefForRecognizePeruIdCard();
     static HttpRequestDef genRequestDefForRecognizeQualificationCertificate();
     static HttpRequestDef genRequestDefForRecognizeQuotaInvoice();
     static HttpRequestDef genRequestDefForRecognizeRealEstateCertificate();

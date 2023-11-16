@@ -14,8 +14,8 @@ SysTag::SysTag()
 {
     key_ = "";
     keyIsSet_ = false;
-    values_ = "";
-    valuesIsSet_ = false;
+    value_ = "";
+    valueIsSet_ = false;
 }
 
 SysTag::~SysTag() = default;
@@ -31,8 +31,8 @@ web::json::value SysTag::toJson() const
     if(keyIsSet_) {
         val[utility::conversions::to_string_t("key")] = ModelBase::toJson(key_);
     }
-    if(valuesIsSet_) {
-        val[utility::conversions::to_string_t("values")] = ModelBase::toJson(values_);
+    if(valueIsSet_) {
+        val[utility::conversions::to_string_t("value")] = ModelBase::toJson(value_);
     }
 
     return val;
@@ -50,13 +50,13 @@ bool SysTag::fromJson(const web::json::value& val)
             setKey(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("values"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("values"));
+    if(val.has_field(utility::conversions::to_string_t("value"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("value"));
         if(!fieldValue.is_null())
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setValues(refVal);
+            setValue(refVal);
         }
     }
     return ok;
@@ -84,25 +84,25 @@ void SysTag::unsetkey()
     keyIsSet_ = false;
 }
 
-std::string SysTag::getValues() const
+std::string SysTag::getValue() const
 {
-    return values_;
+    return value_;
 }
 
-void SysTag::setValues(const std::string& value)
+void SysTag::setValue(const std::string& value)
 {
-    values_ = value;
-    valuesIsSet_ = true;
+    value_ = value;
+    valueIsSet_ = true;
 }
 
-bool SysTag::valuesIsSet() const
+bool SysTag::valueIsSet() const
 {
-    return valuesIsSet_;
+    return valueIsSet_;
 }
 
-void SysTag::unsetvalues()
+void SysTag::unsetvalue()
 {
-    valuesIsSet_ = false;
+    valueIsSet_ = false;
 }
 
 }

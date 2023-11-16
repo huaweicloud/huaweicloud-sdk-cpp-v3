@@ -354,7 +354,7 @@ public:
     std::shared_ptr<CreateTransferResponse> createTransfer(
         CreateTransferRequest &request
     );
-    // 查询Demo
+    // 创建日志收藏
     //
     // 创建日志收藏
     // 

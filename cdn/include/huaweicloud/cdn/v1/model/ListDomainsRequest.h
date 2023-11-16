@@ -75,7 +75,7 @@ public:
     void setServiceArea(const std::string& value);
 
     /// <summary>
-    /// 每页加速域名的数量，取值范围1-10000，不设值时默认值为30。
+    /// 每页加速域名的数量，取值范围1-10000，默认值为30。
     /// </summary>
 
     int32_t getPageSize() const;
@@ -84,7 +84,7 @@ public:
     void setPageSize(int32_t value);
 
     /// <summary>
-    /// 查询的页码，即：从哪一页开始查询。取值范围1-65535，不设值时默认值为1。
+    /// 查询的页码，即：从哪一页开始查询，取值范围1-65535，默认值为1。
     /// </summary>
 
     int32_t getPageNumber() const;

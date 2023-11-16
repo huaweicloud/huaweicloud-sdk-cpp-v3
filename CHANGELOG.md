@@ -1,3 +1,137 @@
+# 3.1.60 2023-11-16
+
+### HuaweiCloud SDK CDN
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowDomainFullConfig**
+    - changes of response param
+      - `+ configs.business_type`
+      - `+ configs.service_area`
+      - `+ configs.remark`
+      - `+ configs.flexible_origin`
+      - `+ configs.slice_etag_status`
+      - `+ configs.origin_receive_timeout`
+      - `+ configs.remote_auth`
+      - `+ configs.websocket`
+      - `+ configs.video_seek`
+      - `+ configs.request_limit_rules`
+      - `+ configs.ip_frequency_limit`
+      - `+ configs.hsts`
+      - `+ configs.quic`
+      - `+ configs.url_auth.sign_method`
+      - `+ configs.url_auth.match_type`
+      - `+ configs.url_auth.inherit_config`
+      - `+ configs.url_auth.key`
+      - `+ configs.url_auth.backup_key`
+      - `+ configs.url_auth.sign_arg`
+      - `+ configs.https.expire_time`
+      - `+ configs.https.certificate_type`
+      - `+ configs.https.ocsp_stapling_status`
+      - `+ configs.sources.weight`
+      - `+ configs.sources.obs_bucket_type`
+      - `+ configs.sources.bucket_access_key`
+      - `+ configs.sources.bucket_secret_key`
+      - `+ configs.sources.bucket_region`
+      - `+ configs.sources.bucket_name`
+      - `+ configs.compress.file_type`
+      - `+ configs.user_agent_filter.ua_list`
+  - **UpdateDomainFullConfig**
+    - changes of request param
+      - `+ configs.sources.weight`
+      - `+ configs.sources.obs_bucket_type`
+      - `+ configs.sources.bucket_access_key`
+      - `+ configs.sources.bucket_secret_key`
+      - `+ configs.sources.bucket_region`
+      - `+ configs.sources.bucket_name`
+      - `+ configs.compress.file_type`
+      - `+ configs.user_agent_filter.ua_list`
+
+### HuaweiCloud SDK CodeArtsBuild
+
+- _Features_
+  - Support the following APIs:
+    - `DownloadBuildLog`
+    - `DownloadTaskLog`
+    - `ShowFlowGraph`
+    - `ShowRecordDetail`
+    - `ShowOutputInfo`
+    - `StopJob`
+    - `CreateBuildJob`
+    - `UpdateBuildJob`
+    - `ListTemplates`
+    - `CreateTemplates`
+    - `DeleteTemplates`
+    - `ListNotice`
+    - `UpdateNotice`
+    - `DisableNotice`
+    - `ListJobConfig`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowRecordInfo**
+    - changes of response param
+      - `+ result.duration`
+
+### HuaweiCloud SDK CSMS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListSecretTags**
+    - changes of response param
+      - `+ sys_tags.value`
+      - `- sys_tags.values`
+  - **ListNotificationRecords**
+    - changes of request param
+      - `+ limit`
+      - `+ marker`
+
+### HuaweiCloud SDK GaussDB
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateGaussMySqlInstance**
+    - changes of response param
+      - `* instance.volume.size: string -> int32`
+
+### HuaweiCloud SDK LTS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListTopnTrafficStatistics**
+    - changes of response param
+      - `+ results.cold_storage`
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - Support the API `RecognizePeruIdCard`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK RDS
+
+- _Features_
+  - Support the API `RevokePostgresqlDbPrivilege`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.59 2023-11-13
 
 ### HuaweiCloud SDK LTS

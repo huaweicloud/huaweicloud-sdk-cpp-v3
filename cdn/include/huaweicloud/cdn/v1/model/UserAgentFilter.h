@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -56,12 +57,23 @@ public:
     void unsetvalue();
     void setValue(const std::string& value);
 
+    /// <summary>
+    /// 配置UA黑白名单，当type&#x3D;off时，非必传。最多配置10条规则，单条规则不超过100个字符,同时配置value和ua_list时，ua_list生效。 
+    /// </summary>
+
+    std::vector<std::string>& getUaList();
+    bool uaListIsSet() const;
+    void unsetuaList();
+    void setUaList(const std::vector<std::string>& value);
+
 
 protected:
     std::string type_;
     bool typeIsSet_;
     std::string value_;
     bool valueIsSet_;
+    std::vector<std::string> uaList_;
+    bool uaListIsSet_;
 
 };
 

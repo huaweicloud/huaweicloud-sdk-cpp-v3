@@ -32,6 +32,8 @@ ResultsTopnBody::ResultsTopnBody()
     seniorTransferIsSet_ = false;
     isAgencyTransfer_ = false;
     isAgencyTransferIsSet_ = false;
+    coldStorage_ = 0.0;
+    coldStorageIsSet_ = false;
 }
 
 ResultsTopnBody::~ResultsTopnBody() = default;
@@ -73,6 +75,9 @@ web::json::value ResultsTopnBody::toJson() const
     }
     if(isAgencyTransferIsSet_) {
         val[utility::conversions::to_string_t("is_agency_transfer")] = ModelBase::toJson(isAgencyTransfer_);
+    }
+    if(coldStorageIsSet_) {
+        val[utility::conversions::to_string_t("cold_storage")] = ModelBase::toJson(coldStorage_);
     }
 
     return val;
@@ -169,6 +174,15 @@ bool ResultsTopnBody::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsAgencyTransfer(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("cold_storage"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("cold_storage"));
+        if(!fieldValue.is_null())
+        {
+            double refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setColdStorage(refVal);
         }
     }
     return ok;
@@ -383,6 +397,27 @@ bool ResultsTopnBody::isAgencyTransferIsSet() const
 void ResultsTopnBody::unsetisAgencyTransfer()
 {
     isAgencyTransferIsSet_ = false;
+}
+
+double ResultsTopnBody::getColdStorage() const
+{
+    return coldStorage_;
+}
+
+void ResultsTopnBody::setColdStorage(double value)
+{
+    coldStorage_ = value;
+    coldStorageIsSet_ = true;
+}
+
+bool ResultsTopnBody::coldStorageIsSet() const
+{
+    return coldStorageIsSet_;
+}
+
+void ResultsTopnBody::unsetcoldStorage()
+{
+    coldStorageIsSet_ = false;
 }
 
 }

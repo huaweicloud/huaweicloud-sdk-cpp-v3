@@ -16,6 +16,8 @@ Compress::Compress()
     statusIsSet_ = false;
     type_ = "";
     typeIsSet_ = false;
+    fileType_ = "";
+    fileTypeIsSet_ = false;
 }
 
 Compress::~Compress() = default;
@@ -33,6 +35,9 @@ web::json::value Compress::toJson() const
     }
     if(typeIsSet_) {
         val[utility::conversions::to_string_t("type")] = ModelBase::toJson(type_);
+    }
+    if(fileTypeIsSet_) {
+        val[utility::conversions::to_string_t("file_type")] = ModelBase::toJson(fileType_);
     }
 
     return val;
@@ -57,6 +62,15 @@ bool Compress::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("file_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("file_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFileType(refVal);
         }
     }
     return ok;
@@ -103,6 +117,27 @@ bool Compress::typeIsSet() const
 void Compress::unsettype()
 {
     typeIsSet_ = false;
+}
+
+std::string Compress::getFileType() const
+{
+    return fileType_;
+}
+
+void Compress::setFileType(const std::string& value)
+{
+    fileType_ = value;
+    fileTypeIsSet_ = true;
+}
+
+bool Compress::fileTypeIsSet() const
+{
+    return fileTypeIsSet_;
+}
+
+void Compress::unsetfileType()
+{
+    fileTypeIsSet_ = false;
 }
 
 }

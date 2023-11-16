@@ -9,7 +9,6 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <string>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -42,14 +41,14 @@ public:
     /// 磁盘大小。单位GB。  取值范围：10~128000，为10的整数倍。
     /// </summary>
 
-    std::string getSize() const;
+    int32_t getSize() const;
     bool sizeIsSet() const;
     void unsetsize();
-    void setSize(const std::string& value);
+    void setSize(int32_t value);
 
 
 protected:
-    std::string size_;
+    int32_t size_;
     bool sizeIsSet_;
 
 };

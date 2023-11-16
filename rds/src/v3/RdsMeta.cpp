@@ -2037,6 +2037,15 @@ HttpRequestDef RdsMeta::genRequestDefForListPostgresqlExtension() {
     return reqDefBuilder;
 }
 
+HttpRequestDef RdsMeta::genRequestDefForRevokePostgresqlDbPrivilege() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef RdsMeta::genRequestDefForSearchQueryScaleComputeFlavors() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Offset")

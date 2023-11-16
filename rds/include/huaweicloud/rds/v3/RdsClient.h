@@ -386,6 +386,9 @@
 #include <huaweicloud/rds/v3/model/PostgresqlDatabaseSchemaReq.h>
 #include <huaweicloud/rds/v3/model/PostgresqlGrantRequest.h>
 #include <huaweicloud/rds/v3/model/PostgresqlUserForCreation.h>
+#include <huaweicloud/rds/v3/model/RevokePostgresqlDbPrivilegeRequest.h>
+#include <huaweicloud/rds/v3/model/RevokePostgresqlDbPrivilegeRequestBody.h>
+#include <huaweicloud/rds/v3/model/RevokePostgresqlDbPrivilegeResponse.h>
 #include <huaweicloud/rds/v3/model/ScaleProxyRequestBody.h>
 #include <huaweicloud/rds/v3/model/SearchQueryScaleComputeFlavorsRequest.h>
 #include <huaweicloud/rds/v3/model/SearchQueryScaleComputeFlavorsResponse.h>
@@ -1659,6 +1662,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListPostgresqlExtensionResponse> listPostgresqlExtension(
         ListPostgresqlExtensionRequest &request
+    );
+    // 解除数据库帐号权限
+    //
+    // 解除数据库帐号权限
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<RevokePostgresqlDbPrivilegeResponse> revokePostgresqlDbPrivilege(
+        RevokePostgresqlDbPrivilegeRequest &request
     );
     // 查询数据库代理可变更的规格
     //

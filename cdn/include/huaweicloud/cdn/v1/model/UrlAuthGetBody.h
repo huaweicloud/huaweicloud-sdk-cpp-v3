@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/cdn/v1/model/InheritConfigQuery.h>
 #include <string>
 
 namespace HuaweiCloud {
@@ -39,7 +40,7 @@ public:
     /// UrlAuthGetBody members
 
     /// <summary>
-    /// 是否开启URL鉴权，off：开启,on：关闭。
+    /// 是否开启URL鉴权，on：开启,off：关闭。
     /// </summary>
 
     std::string getStatus() const;
@@ -57,15 +58,6 @@ public:
     void setType(const std::string& value);
 
     /// <summary>
-    /// 时间格式， dec：十进制, hex：十六进制。
-    /// </summary>
-
-    std::string getTimeFormat() const;
-    bool timeFormatIsSet() const;
-    void unsettimeFormat();
-    void setTimeFormat(const std::string& value);
-
-    /// <summary>
     /// 过期时间，单位：秒。
     /// </summary>
 
@@ -74,16 +66,91 @@ public:
     void unsetexpireTime();
     void setExpireTime(int32_t value);
 
+    /// <summary>
+    /// 加密算法。
+    /// </summary>
+
+    std::string getSignMethod() const;
+    bool signMethodIsSet() const;
+    void unsetsignMethod();
+    void setSignMethod(const std::string& value);
+
+    /// <summary>
+    /// 鉴权范围。
+    /// </summary>
+
+    std::string getMatchType() const;
+    bool matchTypeIsSet() const;
+    void unsetmatchType();
+    void setMatchType(const std::string& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    InheritConfigQuery getInheritConfig() const;
+    bool inheritConfigIsSet() const;
+    void unsetinheritConfig();
+    void setInheritConfig(const InheritConfigQuery& value);
+
+    /// <summary>
+    /// 鉴权KEY。
+    /// </summary>
+
+    std::string getKey() const;
+    bool keyIsSet() const;
+    void unsetkey();
+    void setKey(const std::string& value);
+
+    /// <summary>
+    /// 鉴权KEY（备）。
+    /// </summary>
+
+    std::string getBackupKey() const;
+    bool backupKeyIsSet() const;
+    void unsetbackupKey();
+    void setBackupKey(const std::string& value);
+
+    /// <summary>
+    /// 鉴权参数。
+    /// </summary>
+
+    std::string getSignArg() const;
+    bool signArgIsSet() const;
+    void unsetsignArg();
+    void setSignArg(const std::string& value);
+
+    /// <summary>
+    /// 时间格式， dec：十进制, hex：十六进制。
+    /// </summary>
+
+    std::string getTimeFormat() const;
+    bool timeFormatIsSet() const;
+    void unsettimeFormat();
+    void setTimeFormat(const std::string& value);
+
 
 protected:
     std::string status_;
     bool statusIsSet_;
     std::string type_;
     bool typeIsSet_;
-    std::string timeFormat_;
-    bool timeFormatIsSet_;
     int32_t expireTime_;
     bool expireTimeIsSet_;
+    std::string signMethod_;
+    bool signMethodIsSet_;
+    std::string matchType_;
+    bool matchTypeIsSet_;
+    InheritConfigQuery inheritConfig_;
+    bool inheritConfigIsSet_;
+    std::string key_;
+    bool keyIsSet_;
+    std::string backupKey_;
+    bool backupKeyIsSet_;
+    std::string signArg_;
+    bool signArgIsSet_;
+    std::string timeFormat_;
+    bool timeFormatIsSet_;
 
 };
 

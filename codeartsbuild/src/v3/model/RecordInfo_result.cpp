@@ -66,6 +66,8 @@ RecordInfo_result::RecordInfo_result()
     runnableTimeIsSet_ = false;
     finishTime_ = "";
     finishTimeIsSet_ = false;
+    duration_ = 0.0f;
+    durationIsSet_ = false;
     recordStatus_ = "";
     recordStatusIsSet_ = false;
     usePrivateSlave_ = 0;
@@ -168,6 +170,9 @@ web::json::value RecordInfo_result::toJson() const
     }
     if(finishTimeIsSet_) {
         val[utility::conversions::to_string_t("finish_time")] = ModelBase::toJson(finishTime_);
+    }
+    if(durationIsSet_) {
+        val[utility::conversions::to_string_t("duration")] = ModelBase::toJson(duration_);
     }
     if(recordStatusIsSet_) {
         val[utility::conversions::to_string_t("record_status")] = ModelBase::toJson(recordStatus_);
@@ -432,6 +437,15 @@ bool RecordInfo_result::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFinishTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("duration"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("duration"));
+        if(!fieldValue.is_null())
+        {
+            float refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDuration(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("record_status"))) {
@@ -1048,6 +1062,27 @@ bool RecordInfo_result::finishTimeIsSet() const
 void RecordInfo_result::unsetfinishTime()
 {
     finishTimeIsSet_ = false;
+}
+
+float RecordInfo_result::getDuration() const
+{
+    return duration_;
+}
+
+void RecordInfo_result::setDuration(float value)
+{
+    duration_ = value;
+    durationIsSet_ = true;
+}
+
+bool RecordInfo_result::durationIsSet() const
+{
+    return durationIsSet_;
+}
+
+void RecordInfo_result::unsetduration()
+{
+    durationIsSet_ = false;
 }
 
 std::string RecordInfo_result::getRecordStatus() const

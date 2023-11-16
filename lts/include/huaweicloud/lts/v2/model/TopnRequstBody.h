@@ -68,7 +68,7 @@ public:
     void setResourceType(const std::string& value);
 
     /// <summary>
-    /// 排序依据，index/write/storage/basicTransfer/seniorTransfer，必须是search_list中存在的数据
+    /// 排序依据，index/write/storage/basicTransfer/seniorTransfer/coldStorage，必须是search_list中存在的数据
     /// </summary>
 
     std::string getSortBy() const;
@@ -104,7 +104,7 @@ public:
     void setFilter(const std::map<std::string, std::string>& value);
 
     /// <summary>
-    /// 查询数据类型，字符串数组可多种搭配，只能在index/write/storage/basicTransfer/seniorTransfer中选填
+    /// 查询数据类型，字符串数组可多种搭配，只能在index/write/storage/basicTransfer/seniorTransfer/coldStorage中选填
     /// </summary>
 
     std::vector<std::string>& getSearchList();

@@ -102,6 +102,10 @@ public:
             { 
                 "https://kms.tr-west-1.myhuaweicloud.com"
             });
+        regions["ae-ad-1"] = Region("ae-ad-1",
+            { 
+                "https://kms.ae-ad-1.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

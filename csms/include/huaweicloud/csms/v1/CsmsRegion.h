@@ -34,6 +34,10 @@ public:
             { 
                 "https://kms.cn-north-2.myhuaweicloud.com"
             });
+        regions["cn-north-9"] = Region("cn-north-9",
+            { 
+                "https://kms.cn-north-9.myhuaweicloud.com"
+            });
         regions["cn-east-2"] = Region("cn-east-2",
             { 
                 "https://kms.cn-east-2.myhuaweicloud.com"
@@ -58,6 +62,10 @@ public:
             { 
                 "https://kms.ap-southeast-3.myhuaweicloud.com"
             });
+        regions["ap-southeast-4"] = Region("ap-southeast-4",
+            { 
+                "https://kms.ap-southeast-4.myhuaweicloud.com"
+            });
         regions["la-south-2"] = Region("la-south-2",
             { 
                 "https://kms.la-south-2.myhuaweicloud.com"
@@ -74,6 +82,10 @@ public:
             { 
                 "https://kms.ap-southeast-2.myhuaweicloud.com"
             });
+        regions["na-mexico-1"] = Region("na-mexico-1",
+            { 
+                "https://kms.na-mexico-1.myhuaweicloud.com"
+            });
         regions["cn-south-2"] = Region("cn-south-2",
             { 
                 "https://kms.cn-south-2.myhuaweicloud.com"
@@ -85,6 +97,10 @@ public:
         regions["tr-west-1"] = Region("tr-west-1",
             { 
                 "https://kms.tr-west-1.myhuaweicloud.com"
+            });
+        regions["ae-ad-1"] = Region("ae-ad-1",
+            { 
+                "https://kms.ae-ad-1.myhuaweicloud.com"
             });
         return regions;
     }

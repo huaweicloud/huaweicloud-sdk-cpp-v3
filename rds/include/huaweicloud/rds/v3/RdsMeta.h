@@ -159,6 +159,7 @@ public:
     static HttpRequestDef genRequestDefForListPostgresqlDatabases();
     static HttpRequestDef genRequestDefForListPostgresqlDbUserPaginated();
     static HttpRequestDef genRequestDefForListPostgresqlExtension();
+    static HttpRequestDef genRequestDefForRevokePostgresqlDbPrivilege();
     static HttpRequestDef genRequestDefForSearchQueryScaleComputeFlavors();
     static HttpRequestDef genRequestDefForSearchQueryScaleFlavors();
     static HttpRequestDef genRequestDefForSetDatabaseUserPrivilege();

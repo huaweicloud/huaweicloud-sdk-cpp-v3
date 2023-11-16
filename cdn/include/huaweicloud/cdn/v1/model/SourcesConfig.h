@@ -39,6 +39,15 @@ public:
     /// SourcesConfig members
 
     /// <summary>
+    /// 源站类型， - ipaddr：源站IP； - domain：源站域名； - obs_bucket：OBS桶域名； - third_bucket：第三方桶。
+    /// </summary>
+
+    std::string getOriginType() const;
+    bool originTypeIsSet() const;
+    void unsetoriginType();
+    void setOriginType(const std::string& value);
+
+    /// <summary>
     /// 源站IP或者域名。
     /// </summary>
 
@@ -48,16 +57,7 @@ public:
     void setOriginAddr(const std::string& value);
 
     /// <summary>
-    /// 源站类型， ipaddr：源站IP，domain：源站域名，obs_bucket：OBS桶域名。
-    /// </summary>
-
-    std::string getOriginType() const;
-    bool originTypeIsSet() const;
-    void unsetoriginType();
-    void setOriginType(const std::string& value);
-
-    /// <summary>
-    /// 源站优先级（70：主，30：备）。
+    /// 源站优先级，70：主，30：备。
     /// </summary>
 
     int32_t getPriority() const;
@@ -66,7 +66,16 @@ public:
     void setPriority(int32_t value);
 
     /// <summary>
-    /// 是否开启Obs静态网站托管，源站类型为obs_bucket时传递(off：关闭，on：开启)。
+    /// 权重，取值范围1-100。
+    /// </summary>
+
+    int32_t getWeight() const;
+    bool weightIsSet() const;
+    void unsetweight();
+    void setWeight(int32_t value);
+
+    /// <summary>
+    /// 是否开启OBS静态网站托管，源站类型为obs_bucket时传递，off：关闭，on：开启。
     /// </summary>
 
     std::string getObsWebHostingStatus() const;
@@ -75,7 +84,7 @@ public:
     void setObsWebHostingStatus(const std::string& value);
 
     /// <summary>
-    /// HTTP端口，默认80。
+    /// HTTP端口，默认80,端口取值取值范围1-65535。
     /// </summary>
 
     int32_t getHttpPort() const;
@@ -84,7 +93,7 @@ public:
     void setHttpPort(int32_t value);
 
     /// <summary>
-    /// HTTPS端口，默认443。
+    /// HTTPS端口，默认443,端口取值取值范围1-65535。
     /// </summary>
 
     int32_t getHttpsPort() const;
@@ -101,14 +110,61 @@ public:
     void unsethostName();
     void setHostName(const std::string& value);
 
+    /// <summary>
+    /// OBS桶源站类型： - “private” 私有桶； - “public” 公有桶，默认为公有桶。
+    /// </summary>
+
+    std::string getObsBucketType() const;
+    bool obsBucketTypeIsSet() const;
+    void unsetobsBucketType();
+    void setObsBucketType(const std::string& value);
+
+    /// <summary>
+    /// 第三方对象存储访问密钥。  &gt; 源站类型为第三方桶时必填
+    /// </summary>
+
+    std::string getBucketAccessKey() const;
+    bool bucketAccessKeyIsSet() const;
+    void unsetbucketAccessKey();
+    void setBucketAccessKey(const std::string& value);
+
+    /// <summary>
+    /// 第三方对象存储密钥。  &gt; 源站类型为第三方桶时必填
+    /// </summary>
+
+    std::string getBucketSecretKey() const;
+    bool bucketSecretKeyIsSet() const;
+    void unsetbucketSecretKey();
+    void setBucketSecretKey(const std::string& value);
+
+    /// <summary>
+    /// 第三方对象存储区域。  &gt; 源站类型为第三方桶时必填
+    /// </summary>
+
+    std::string getBucketRegion() const;
+    bool bucketRegionIsSet() const;
+    void unsetbucketRegion();
+    void setBucketRegion(const std::string& value);
+
+    /// <summary>
+    /// 第三方对象存储名称。  &gt; 源站类型为第三方桶时必填
+    /// </summary>
+
+    std::string getBucketName() const;
+    bool bucketNameIsSet() const;
+    void unsetbucketName();
+    void setBucketName(const std::string& value);
+
 
 protected:
-    std::string originAddr_;
-    bool originAddrIsSet_;
     std::string originType_;
     bool originTypeIsSet_;
+    std::string originAddr_;
+    bool originAddrIsSet_;
     int32_t priority_;
     bool priorityIsSet_;
+    int32_t weight_;
+    bool weightIsSet_;
     std::string obsWebHostingStatus_;
     bool obsWebHostingStatusIsSet_;
     int32_t httpPort_;
@@ -117,6 +173,16 @@ protected:
     bool httpsPortIsSet_;
     std::string hostName_;
     bool hostNameIsSet_;
+    std::string obsBucketType_;
+    bool obsBucketTypeIsSet_;
+    std::string bucketAccessKey_;
+    bool bucketAccessKeyIsSet_;
+    std::string bucketSecretKey_;
+    bool bucketSecretKeyIsSet_;
+    std::string bucketRegion_;
+    bool bucketRegionIsSet_;
+    std::string bucketName_;
+    bool bucketNameIsSet_;
 
 };
 

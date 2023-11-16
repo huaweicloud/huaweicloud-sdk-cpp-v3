@@ -16,6 +16,7 @@ UserAgentFilter::UserAgentFilter()
     typeIsSet_ = false;
     value_ = "";
     valueIsSet_ = false;
+    uaListIsSet_ = false;
 }
 
 UserAgentFilter::~UserAgentFilter() = default;
@@ -33,6 +34,9 @@ web::json::value UserAgentFilter::toJson() const
     }
     if(valueIsSet_) {
         val[utility::conversions::to_string_t("value")] = ModelBase::toJson(value_);
+    }
+    if(uaListIsSet_) {
+        val[utility::conversions::to_string_t("ua_list")] = ModelBase::toJson(uaList_);
     }
 
     return val;
@@ -57,6 +61,15 @@ bool UserAgentFilter::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setValue(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("ua_list"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ua_list"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setUaList(refVal);
         }
     }
     return ok;
@@ -103,6 +116,27 @@ bool UserAgentFilter::valueIsSet() const
 void UserAgentFilter::unsetvalue()
 {
     valueIsSet_ = false;
+}
+
+std::vector<std::string>& UserAgentFilter::getUaList()
+{
+    return uaList_;
+}
+
+void UserAgentFilter::setUaList(const std::vector<std::string>& value)
+{
+    uaList_ = value;
+    uaListIsSet_ = true;
+}
+
+bool UserAgentFilter::uaListIsSet() const
+{
+    return uaListIsSet_;
+}
+
+void UserAgentFilter::unsetuaList()
+{
+    uaListIsSet_ = false;
 }
 
 }

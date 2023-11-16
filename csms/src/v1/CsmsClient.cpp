@@ -450,6 +450,12 @@ std::shared_ptr<ListNotificationRecordsResponse> CsmsClient::listNotificationRec
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.markerIsSet()) {
+        localVarQueryParams["marker"] = parameterToString(request.getMarker());
+    }
 
     std::string localVarHttpBody;
 

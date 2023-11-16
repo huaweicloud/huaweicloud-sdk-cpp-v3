@@ -128,6 +128,15 @@ public:
     void unsetisAgencyTransfer();
     void setIsAgencyTransfer(bool value);
 
+    /// <summary>
+    /// 冷存储量
+    /// </summary>
+
+    double getColdStorage() const;
+    bool coldStorageIsSet() const;
+    void unsetcoldStorage();
+    void setColdStorage(double value);
+
 
 protected:
     double indexTraffic_;
@@ -150,6 +159,8 @@ protected:
     bool seniorTransferIsSet_;
     bool isAgencyTransfer_;
     bool isAgencyTransferIsSet_;
+    double coldStorage_;
+    bool coldStorageIsSet_;
 
 };
 

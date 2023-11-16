@@ -1308,6 +1308,50 @@ std::shared_ptr<RecognizePcrTestRecordResponse> OcrClient::recognizePcrTestRecor
 
     return localVarResult;
 }
+std::shared_ptr<RecognizePeruIdCardResponse> OcrClient::recognizePeruIdCard(RecognizePeruIdCardRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/ocr/peru-id-card";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarHeaderParams["Enterprise-Project-Id"] = parameterToString(request.getEnterpriseProjectId());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, OcrMeta::genRequestDefForRecognizePeruIdCard());
+
+    std::shared_ptr<RecognizePeruIdCardResponse> localVarResult = std::make_shared<RecognizePeruIdCardResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<RecognizeQualificationCertificateResponse> OcrClient::recognizeQualificationCertificate(RecognizeQualificationCertificateRequest &request)
 {
     std::string localVarPath = "/v2/{project_id}/ocr/transportation-qualification-certificate";

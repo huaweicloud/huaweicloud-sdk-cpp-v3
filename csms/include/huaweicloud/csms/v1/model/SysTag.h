@@ -51,17 +51,17 @@ public:
     /// 标签值。
     /// </summary>
 
-    std::string getValues() const;
-    bool valuesIsSet() const;
-    void unsetvalues();
-    void setValues(const std::string& value);
+    std::string getValue() const;
+    bool valueIsSet() const;
+    void unsetvalue();
+    void setValue(const std::string& value);
 
 
 protected:
     std::string key_;
     bool keyIsSet_;
-    std::string values_;
-    bool valuesIsSet_;
+    std::string value_;
+    bool valueIsSet_;
 
 };
 

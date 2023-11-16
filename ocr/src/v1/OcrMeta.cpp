@@ -414,6 +414,20 @@ HttpRequestDef OcrMeta::genRequestDefForRecognizePcrTestRecord() {
     return reqDefBuilder;
 }
 
+HttpRequestDef OcrMeta::genRequestDefForRecognizePeruIdCard() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamEnterpriseProjectId;
+    reqDefBuilder.withRequestField(headerParamEnterpriseProjectId
+                  .withName("EnterpriseProjectId")
+                  .withJsonTag("Enterprise-Project-Id")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef OcrMeta::genRequestDefForRecognizeQualificationCertificate() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamEnterpriseProjectId;

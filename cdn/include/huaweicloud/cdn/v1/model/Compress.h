@@ -48,7 +48,7 @@ public:
     void setStatus(const std::string& value);
 
     /// <summary>
-    /// 智能压缩类型（gzip：gzip压缩，br：br压缩）。
+    /// 智能压缩类型（gzip：gzip压缩，brotli：brotli压缩）。
     /// </summary>
 
     std::string getType() const;
@@ -56,12 +56,23 @@ public:
     void unsettype();
     void setType(const std::string& value);
 
+    /// <summary>
+    /// 压缩格式，内容总长度不可超过200个字符，  多种格式用“,”分割，每组内容不可超过50个字符， 开启状态下，首次传空时默认值为.js,.html,.css,.xml,.json,.shtml,.htm，否则为上次设置的结果。
+    /// </summary>
+
+    std::string getFileType() const;
+    bool fileTypeIsSet() const;
+    void unsetfileType();
+    void setFileType(const std::string& value);
+
 
 protected:
     std::string status_;
     bool statusIsSet_;
     std::string type_;
     bool typeIsSet_;
+    std::string fileType_;
+    bool fileTypeIsSet_;
 
 };
 

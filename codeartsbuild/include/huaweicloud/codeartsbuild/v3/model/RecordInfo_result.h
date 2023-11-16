@@ -282,6 +282,15 @@ public:
     void setFinishTime(const std::string& value);
 
     /// <summary>
+    /// 构建时长
+    /// </summary>
+
+    float getDuration() const;
+    bool durationIsSet() const;
+    void unsetduration();
+    void setDuration(float value);
+
+    /// <summary>
     /// record状态
     /// </summary>
 
@@ -382,6 +391,8 @@ protected:
     bool runnableTimeIsSet_;
     std::string finishTime_;
     bool finishTimeIsSet_;
+    float duration_;
+    bool durationIsSet_;
     std::string recordStatus_;
     bool recordStatusIsSet_;
     int32_t usePrivateSlave_;

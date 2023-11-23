@@ -39,7 +39,7 @@ public:
     /// DeleteManualBackupRequest members
 
     /// <summary>
-    /// 备份文件ID。
+    /// 备份ID。
     /// </summary>
 
     std::string getBackupId() const;

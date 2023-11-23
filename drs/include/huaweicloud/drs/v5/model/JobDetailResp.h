@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/drs/v5/model/ConnectionManagement.h>
 #include <huaweicloud/drs/v5/model/SpeedLimitInfo.h>
 #include <huaweicloud/drs/v5/model/QueryMetricResult.h>
 #include <huaweicloud/drs/v5/model/QueryNetworkResult.h>
@@ -292,6 +293,15 @@ public:
     void unsettaskVersion();
     void setTaskVersion(const std::string& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    ConnectionManagement getConnectionManagement() const;
+    bool connectionManagementIsSet() const;
+    void unsetconnectionManagement();
+    void setConnectionManagement(const ConnectionManagement& value);
+
 
 protected:
     std::string id_;
@@ -346,6 +356,8 @@ protected:
     bool instanceFeaturesIsSet_;
     std::string taskVersion_;
     bool taskVersionIsSet_;
+    ConnectionManagement connectionManagement_;
+    bool connectionManagementIsSet_;
 
 };
 

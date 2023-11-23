@@ -57,13 +57,22 @@ public:
     void setCodec(const std::string& value);
 
     /// <summary>
-    /// 视频时长。  若视频的原时长为非整数，则该字段值为原时长的向上取整。
+    /// 视频时长。  若视频的原时长为非整数，则该字段值为原时长的向下取整。 若视频的原时长小于1，则该字段值为1。
     /// </summary>
 
     int64_t getDuration() const;
     bool durationIsSet() const;
     void unsetduration();
     void setDuration(int64_t value);
+
+    /// <summary>
+    /// 视频时长，单位毫秒。
+    /// </summary>
+
+    int64_t getDurationMs() const;
+    bool durationMsIsSet() const;
+    void unsetdurationMs();
+    void setDurationMs(int64_t value);
 
     /// <summary>
     /// 视频文件大小。  单位：字节。
@@ -136,6 +145,8 @@ protected:
     bool codecIsSet_;
     int64_t duration_;
     bool durationIsSet_;
+    int64_t durationMs_;
+    bool durationMsIsSet_;
     int64_t videoSize_;
     bool videoSizeIsSet_;
     int64_t width_;

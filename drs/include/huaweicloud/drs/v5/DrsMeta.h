@@ -26,6 +26,7 @@ public:
     static HttpRequestDef genRequestDefForCommitAsyncJob();
     static HttpRequestDef genRequestDefForCopyJob();
     static HttpRequestDef genRequestDefForCreateJob();
+    static HttpRequestDef genRequestDefForDeleteJdbcDriver();
     static HttpRequestDef genRequestDefForDeleteJob();
     static HttpRequestDef genRequestDefForDownloadBatchCreateTemplate();
     static HttpRequestDef genRequestDefForDownloadDbObjectTemplate();
@@ -35,6 +36,7 @@ public:
     static HttpRequestDef genRequestDefForListAsyncJobDetail();
     static HttpRequestDef genRequestDefForListAsyncJobs();
     static HttpRequestDef genRequestDefForListDbObjects();
+    static HttpRequestDef genRequestDefForListJdbcDrivers();
     static HttpRequestDef genRequestDefForListJobs();
     static HttpRequestDef genRequestDefForListLinks();
     static HttpRequestDef genRequestDefForListProjectTags();
@@ -62,11 +64,13 @@ public:
     static HttpRequestDef genRequestDefForShowSupportObjectType();
     static HttpRequestDef genRequestDefForShowUpdateObjectSavingStatus();
     static HttpRequestDef genRequestDefForStopJobAction();
+    static HttpRequestDef genRequestDefForSyncJdbcDriver();
     static HttpRequestDef genRequestDefForUpdateBatchAsyncJobs();
     static HttpRequestDef genRequestDefForUpdateDataProgress();
     static HttpRequestDef genRequestDefForUpdateJob();
     static HttpRequestDef genRequestDefForUpdateStartPosition();
     static HttpRequestDef genRequestDefForUploadDbObjectTemplate();
+    static HttpRequestDef genRequestDefForUploadJdbcDriver();
     static HttpRequestDef genRequestDefForValidateJobName();
 };
 

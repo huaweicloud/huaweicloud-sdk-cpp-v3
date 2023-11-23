@@ -53,12 +53,21 @@
 #include <huaweicloud/gaussdbfornosql/v3/model/DeleteEnlargeFailNodeResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/DeleteInstanceRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/DeleteInstanceResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/DeleteInstancesSessionRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/DeleteInstancesSessionRequestBody.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/DeleteInstancesSessionResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/DeleteLtsConfigsRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/DeleteLtsConfigsRequestBody.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/DeleteLtsConfigsResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ErrorResponseBody.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ExpandInstanceNodeRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ExpandInstanceNodeRequestBody.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ExpandInstanceNodeResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListAvailableFlavorInfosRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListAvailableFlavorInfosResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ListCassandraSlowLogsRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ListCassandraSlowLogsRequestBody.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ListCassandraSlowLogsResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListConfigurationDatastoresRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListConfigurationDatastoresResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListConfigurationTemplatesRequest.h>
@@ -88,10 +97,29 @@
 #include <huaweicloud/gaussdbfornosql/v3/model/ListInstancesByTagsResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListInstancesRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListInstancesResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ListInstancesSessionRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ListInstancesSessionResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ListInstancesSessionStatisticsRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ListInstancesSessionStatisticsResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ListLtsConfigsRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ListLtsConfigsResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ListMongodbErrorLogsRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ListMongodbErrorLogsRequestBody.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ListMongodbErrorLogsResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ListMongodbSlowLogsRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ListMongodbSlowLogsRequestBody.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ListMongodbSlowLogsResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListProjectTagsRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListProjectTagsResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListRecycleInstancesRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListRecycleInstancesResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ListRedisSlowLogsRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ListRedisSlowLogsRequestBody.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ListRedisSlowLogsResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ListRestoreDatabasesRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ListRestoreDatabasesResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ListRestoreTablesRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ListRestoreTablesResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListRestoreTimeRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListRestoreTimeResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListSlowLogsRequest.h>
@@ -122,6 +150,8 @@
 #include <huaweicloud/gaussdbfornosql/v3/model/RenameHighRiskCommandsRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ResetDbUserPasswordRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ResetDbUserPasswordResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ResetParamGroupTemplateRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ResetParamGroupTemplateResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ResetPasswordRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ResetPasswordRequestBody.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ResetPasswordResponse.h>
@@ -139,6 +169,9 @@
 #include <huaweicloud/gaussdbfornosql/v3/model/RestoreExistingInstanceRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/RestoreExistingInstanceResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/RestoreRequestBody.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/SaveLtsConfigsRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/SaveLtsConfigsRequestBody.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/SaveLtsConfigsResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/SetAutoEnlargePolicyRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/SetAutoEnlargePolicyResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/SetAutoPolicyRequestBody.h>
@@ -161,6 +194,8 @@
 #include <huaweicloud/gaussdbfornosql/v3/model/ShowBackupPolicyResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ShowConfigurationDetailRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ShowConfigurationDetailResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ShowElbIpGroupRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ShowElbIpGroupResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ShowErrorLogRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ShowErrorLogResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ShowHighRiskCommandsRequest.h>
@@ -188,6 +223,9 @@
 #include <huaweicloud/gaussdbfornosql/v3/model/ShrinkInstanceNodeRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ShrinkInstanceNodeRequestBody.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ShrinkInstanceNodeResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/SwitchIpGroupRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/SwitchIpGroupRequestBody.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/SwitchIpGroupResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/SwitchSlowlogDesensitizationRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/SwitchSlowlogDesensitizationRequestBody.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/SwitchSlowlogDesensitizationResponse.h>
@@ -395,6 +433,22 @@ public:
     std::shared_ptr<DeleteInstanceResponse> deleteInstance(
         DeleteInstanceRequest &request
     );
+    // 关闭实例节点会话
+    //
+    // 关闭实例节点会话。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteInstancesSessionResponse> deleteInstancesSession(
+        DeleteInstancesSessionRequest &request
+    );
+    // 解除关联LTS日志流
+    //
+    // 将实例日志与LTS日志流解除关联，后台将取消上传实例日志到的LTS日志流里。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteLtsConfigsResponse> deleteLtsConfigs(
+        DeleteLtsConfigsRequest &request
+    );
     // 扩容指定集群实例的节点数量
     //
     // 扩容指定集群实例的节点数量。
@@ -410,6 +464,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListAvailableFlavorInfosResponse> listAvailableFlavorInfos(
         ListAvailableFlavorInfosRequest &request
+    );
+    // 查询GeminiDB(for Cassandra)数据库慢日志
+    //
+    // 查询GeminiDB(for Cassandra)数据库慢日志信息，支持日志关键字搜索。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListCassandraSlowLogsResponse> listCassandraSlowLogs(
+        ListCassandraSlowLogsRequest &request
     );
     // 查询支持参数模板的引擎信息
     //
@@ -523,6 +585,46 @@ public:
     std::shared_ptr<ListInstancesByTagsResponse> listInstancesByTags(
         ListInstancesByTagsRequest &request
     );
+    // 获取节点会话列表
+    //
+    // 获取节点会话列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListInstancesSessionResponse> listInstancesSession(
+        ListInstancesSessionRequest &request
+    );
+    // 查询实例节点会话统计信息
+    //
+    // 查询实例节点会话统计信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListInstancesSessionStatisticsResponse> listInstancesSessionStatistics(
+        ListInstancesSessionStatisticsRequest &request
+    );
+    // 查询LTS日志配置信息
+    //
+    // 分页查询实例关联的LTS日志配置信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListLtsConfigsResponse> listLtsConfigs(
+        ListLtsConfigsRequest &request
+    );
+    // 查询GeminiDB(for Mongo)数据库错误日志
+    //
+    // 查询GeminiDB(for Mongo)数据库错误日志信息，支持日志关键字搜索。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListMongodbErrorLogsResponse> listMongodbErrorLogs(
+        ListMongodbErrorLogsRequest &request
+    );
+    // 查询GeminiDB(for Mongo)数据库慢日志
+    //
+    // 查询GeminiDB(for Mongo)数据库慢日志信息，支持日志关键字搜索。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListMongodbSlowLogsResponse> listMongodbSlowLogs(
+        ListMongodbSlowLogsRequest &request
+    );
     // 查询项目标签
     //
     // 查询指定项目的标签信息。
@@ -538,6 +640,30 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListRecycleInstancesResponse> listRecycleInstances(
         ListRecycleInstancesRequest &request
+    );
+    // 查询GeminiDB(for Redis)数据库慢日志
+    //
+    // 查询GeminiDB(for Redis)数据库慢日志信息，支持日志关键字搜索。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListRedisSlowLogsResponse> listRedisSlowLogs(
+        ListRedisSlowLogsRequest &request
+    );
+    // 获取GeminiDB(for Cassandra)实例表级恢复的数据库信息
+    //
+    // 获取GeminiDB(for Cassandra)实例表级恢复的数据库信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListRestoreDatabasesResponse> listRestoreDatabases(
+        ListRestoreDatabasesRequest &request
+    );
+    // 获取GeminiDB(for Cassandra)实例表级恢复的表信息
+    //
+    // 获取GeminiDB(for Cassandra)实例表级恢复的表信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListRestoreTablesResponse> listRestoreTables(
+        ListRestoreTablesRequest &request
     );
     // 查询实例可恢复的时间段
     //
@@ -613,6 +739,14 @@ public:
     std::shared_ptr<ResetDbUserPasswordResponse> resetDbUserPassword(
         ResetDbUserPasswordRequest &request
     );
+    // 重置自定义参数模板
+    //
+    // 重置自定义参数模板
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ResetParamGroupTemplateResponse> resetParamGroupTemplate(
+        ResetParamGroupTemplateRequest &request
+    );
     // 修改实例的管理员密码
     //
     // 修改实例的管理员密码。
@@ -660,6 +794,16 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<RestoreExistingInstanceResponse> restoreExistingInstance(
         RestoreExistingInstanceRequest &request
+    );
+    // 关联LTS日志流
+    //
+    // - 将实例日志与LTS日志流关联，后台将自动上传实例日志到关联的LTS日志流里。
+    // - 关联成功后，会产生一定费用，具体计费可参考云日志服务（LTS）的定价详情。
+    // - 系统会为当前选择的日志流创建对应日志类型的结构化配置，若该日志流已存在其他日志类型的结构化配置，系统会进行覆盖。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SaveLtsConfigsResponse> saveLtsConfigs(
+        SaveLtsConfigsRequest &request
     );
     // 设置磁盘自动扩容策略
     //
@@ -740,6 +884,14 @@ public:
     std::shared_ptr<ShowConfigurationDetailResponse> showConfigurationDetail(
         ShowConfigurationDetailRequest &request
     );
+    // 查询实例负载均衡的IP访问黑白名单
+    //
+    // 查询实例负载均衡的IP访问黑白名单。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowElbIpGroupResponse> showElbIpGroup(
+        ShowElbIpGroupRequest &request
+    );
     // 查询数据库错误日志信息
     //
     // 查询数据库错误日志
@@ -806,7 +958,7 @@ public:
     );
     // 查询配额
     //
-    // 查询单租户在GaussDBforNoSQL服务下的资源配额。
+    // 查询单租户在GeminiDB服务下的资源配额。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowQuotasResponse> showQuotas(
@@ -843,6 +995,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShrinkInstanceNodeResponse> shrinkInstanceNode(
         ShrinkInstanceNodeRequest &request
+    );
+    // 设置实例负载均衡的IP访问黑白名单
+    //
+    // 设置实例负载均衡的IP访问黑白名单，黑名单、白名单只能选一种，每次调用此接口覆盖之前的设置。关闭后不限制连接的源IP地址。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SwitchIpGroupResponse> switchIpGroup(
+        SwitchIpGroupRequest &request
     );
     // 设置慢日志脱敏状态
     //

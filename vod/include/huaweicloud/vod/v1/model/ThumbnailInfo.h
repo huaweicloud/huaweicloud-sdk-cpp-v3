@@ -59,6 +59,15 @@ public:
     void setDots(const std::vector<ThumbnailRsp>& value);
 
     /// <summary>
+    /// 视频截图信息，截图类型为数量。
+    /// </summary>
+
+    std::vector<ThumbnailRsp>& getQuantity();
+    bool quantityIsSet() const;
+    void unsetquantity();
+    void setQuantity(const std::vector<ThumbnailRsp>& value);
+
+    /// <summary>
     /// 执行情况描述。
     /// </summary>
 
@@ -82,6 +91,8 @@ protected:
     bool sampleIsSet_;
     std::vector<ThumbnailRsp> dots_;
     bool dotsIsSet_;
+    std::vector<ThumbnailRsp> quantity_;
+    bool quantityIsSet_;
     std::string execDesc_;
     bool execDescIsSet_;
     std::string thumbnailStatus_;

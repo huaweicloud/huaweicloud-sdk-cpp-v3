@@ -39,7 +39,7 @@ public:
     /// RecycleDatastore members
 
     /// <summary>
-    /// 数据库类型。   - 取值为“cassandra”，表示GaussDB(for Cassandra)数据库实例。   - 取值为“mongodb”，表示GaussDB(for Mongo)数据库实例。   - 取值为“influxdb”，表示GaussDB(for Influx)数据库实例。   - 取值为“redis”，表示GaussDB(for Redis)数据库实例。
+    /// 数据库类型。   - 取值为“cassandra”，表示GeminiDB Cassandra数据库实例。   - 取值为“mongodb”，表示GeminiDB Mongo数据库实例。   - 取值为“influxdb”，表示GeminiDB Influx数据库实例。   - 取值为“redis”，表示GeminiDB Redis数据库实例。
     /// </summary>
 
     std::string getType() const;

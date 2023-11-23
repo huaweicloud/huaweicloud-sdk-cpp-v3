@@ -29,13 +29,17 @@ public:
     static HttpRequestDef genRequestDefForCreateDatabaseUser();
     static HttpRequestDef genRequestDefForCreateInstance();
     static HttpRequestDef genRequestDefForCreateIp();
+    static HttpRequestDef genRequestDefForCreateKillOpRule();
     static HttpRequestDef genRequestDefForCreateManualBackup();
     static HttpRequestDef genRequestDefForDeleteAuditLog();
     static HttpRequestDef genRequestDefForDeleteConfiguration();
     static HttpRequestDef genRequestDefForDeleteDatabaseRole();
     static HttpRequestDef genRequestDefForDeleteDatabaseUser();
     static HttpRequestDef genRequestDefForDeleteInstance();
+    static HttpRequestDef genRequestDefForDeleteKillOpRuleList();
+    static HttpRequestDef genRequestDefForDeleteLtsConfig();
     static HttpRequestDef genRequestDefForDeleteManualBackup();
+    static HttpRequestDef genRequestDefForDeleteReadonlyNode();
     static HttpRequestDef genRequestDefForDeleteSession();
     static HttpRequestDef genRequestDefForDownloadErrorlog();
     static HttpRequestDef genRequestDefForDownloadSlowlog();
@@ -55,6 +59,8 @@ public:
     static HttpRequestDef genRequestDefForListInstanceTags();
     static HttpRequestDef genRequestDefForListInstances();
     static HttpRequestDef genRequestDefForListInstancesByTags();
+    static HttpRequestDef genRequestDefForListLtsConfigs();
+    static HttpRequestDef genRequestDefForListLtsErrorLogs();
     static HttpRequestDef genRequestDefForListLtsSlowLogs();
     static HttpRequestDef genRequestDefForListProjectTags();
     static HttpRequestDef genRequestDefForListRecycleInstances();
@@ -90,6 +96,7 @@ public:
     static HttpRequestDef genRequestDefForShowDiskUsage();
     static HttpRequestDef genRequestDefForShowEntityConfiguration();
     static HttpRequestDef genRequestDefForShowJobDetail();
+    static HttpRequestDef genRequestDefForShowKillOpRuleRuleList();
     static HttpRequestDef genRequestDefForShowQuotas();
     static HttpRequestDef genRequestDefForShowRecyclePolicy();
     static HttpRequestDef genRequestDefForShowReplSetName();
@@ -98,7 +105,9 @@ public:
     static HttpRequestDef genRequestDefForShowSlowlogDesensitizationSwitch();
     static HttpRequestDef genRequestDefForShowUpgradeDuration();
     static HttpRequestDef genRequestDefForShrinkInstanceNodes();
+    static HttpRequestDef genRequestDefForStopBackup();
     static HttpRequestDef genRequestDefForSwitchConfiguration();
+    static HttpRequestDef genRequestDefForSwitchInstancePrimary();
     static HttpRequestDef genRequestDefForSwitchSecondLevelMonitoring();
     static HttpRequestDef genRequestDefForSwitchSlowlogDesensitization();
     static HttpRequestDef genRequestDefForSwitchSsl();
@@ -109,6 +118,8 @@ public:
     static HttpRequestDef genRequestDefForUpdateInstanceName();
     static HttpRequestDef genRequestDefForUpdateInstancePort();
     static HttpRequestDef genRequestDefForUpdateInstanceRemark();
+    static HttpRequestDef genRequestDefForUpdateKillOpRule();
+    static HttpRequestDef genRequestDefForUpdateLtsConfig();
     static HttpRequestDef genRequestDefForUpdateReplSetName();
     static HttpRequestDef genRequestDefForUpdateSecurityGroup();
     static HttpRequestDef genRequestDefForUpgradeDatabaseVersion();

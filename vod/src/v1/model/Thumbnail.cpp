@@ -14,6 +14,10 @@ Thumbnail::Thumbnail()
 {
     type_ = "";
     typeIsSet_ = false;
+    quantity_ = 0;
+    quantityIsSet_ = false;
+    quantityTime_ = 0;
+    quantityTimeIsSet_ = false;
     time_ = 0;
     timeIsSet_ = false;
     dotsIsSet_ = false;
@@ -39,6 +43,12 @@ web::json::value Thumbnail::toJson() const
 
     if(typeIsSet_) {
         val[utility::conversions::to_string_t("type")] = ModelBase::toJson(type_);
+    }
+    if(quantityIsSet_) {
+        val[utility::conversions::to_string_t("quantity")] = ModelBase::toJson(quantity_);
+    }
+    if(quantityTimeIsSet_) {
+        val[utility::conversions::to_string_t("quantity_time")] = ModelBase::toJson(quantityTime_);
     }
     if(timeIsSet_) {
         val[utility::conversions::to_string_t("time")] = ModelBase::toJson(time_);
@@ -72,6 +82,24 @@ bool Thumbnail::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("quantity"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("quantity"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setQuantity(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("quantity_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("quantity_time"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setQuantityTime(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("time"))) {
@@ -151,6 +179,48 @@ bool Thumbnail::typeIsSet() const
 void Thumbnail::unsettype()
 {
     typeIsSet_ = false;
+}
+
+int32_t Thumbnail::getQuantity() const
+{
+    return quantity_;
+}
+
+void Thumbnail::setQuantity(int32_t value)
+{
+    quantity_ = value;
+    quantityIsSet_ = true;
+}
+
+bool Thumbnail::quantityIsSet() const
+{
+    return quantityIsSet_;
+}
+
+void Thumbnail::unsetquantity()
+{
+    quantityIsSet_ = false;
+}
+
+int32_t Thumbnail::getQuantityTime() const
+{
+    return quantityTime_;
+}
+
+void Thumbnail::setQuantityTime(int32_t value)
+{
+    quantityTime_ = value;
+    quantityTimeIsSet_ = true;
+}
+
+bool Thumbnail::quantityTimeIsSet() const
+{
+    return quantityTimeIsSet_;
+}
+
+void Thumbnail::unsetquantityTime()
+{
+    quantityTimeIsSet_ = false;
 }
 
 int32_t Thumbnail::getTime() const

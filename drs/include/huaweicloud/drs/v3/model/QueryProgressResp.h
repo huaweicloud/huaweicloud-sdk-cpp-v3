@@ -60,13 +60,22 @@ public:
     void setProgress(const std::string& value);
 
     /// <summary>
-    /// 增量迁移时延
+    /// 增量迁移时延。单位：s
     /// </summary>
 
     std::string getIncreTransDelay() const;
     bool increTransDelayIsSet() const;
     void unsetincreTransDelay();
     void setIncreTransDelay(const std::string& value);
+
+    /// <summary>
+    /// 增量迁移时延。单位：ms
+    /// </summary>
+
+    std::string getIncreTransDelayMillis() const;
+    bool increTransDelayMillisIsSet() const;
+    void unsetincreTransDelayMillis();
+    void setIncreTransDelayMillis(const std::string& value);
 
     /// <summary>
     /// 迁移模式。 - FULL_TRANS: 全量 - INCR_TRANS: 增量 - FULL_INCR_TRANS: 全量+增量
@@ -139,6 +148,8 @@ protected:
     bool progressIsSet_;
     std::string increTransDelay_;
     bool increTransDelayIsSet_;
+    std::string increTransDelayMillis_;
+    bool increTransDelayMillisIsSet_;
     std::string taskMode_;
     bool taskModeIsSet_;
     std::string transferStatus_;

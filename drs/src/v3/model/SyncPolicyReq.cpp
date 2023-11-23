@@ -42,6 +42,10 @@ SyncPolicyReq::SyncPolicyReq()
     exportSnapshotIsSet_ = false;
     slotName_ = "";
     slotNameIsSet_ = false;
+    fileAndPosition_ = "";
+    fileAndPositionIsSet_ = false;
+    gtidSet_ = "";
+    gtidSetIsSet_ = false;
 }
 
 SyncPolicyReq::~SyncPolicyReq() = default;
@@ -98,6 +102,12 @@ web::json::value SyncPolicyReq::toJson() const
     }
     if(slotNameIsSet_) {
         val[utility::conversions::to_string_t("slot_name")] = ModelBase::toJson(slotName_);
+    }
+    if(fileAndPositionIsSet_) {
+        val[utility::conversions::to_string_t("file_and_position")] = ModelBase::toJson(fileAndPosition_);
+    }
+    if(gtidSetIsSet_) {
+        val[utility::conversions::to_string_t("gtid_set")] = ModelBase::toJson(gtidSet_);
     }
 
     return val;
@@ -239,6 +249,24 @@ bool SyncPolicyReq::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSlotName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("file_and_position"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("file_and_position"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFileAndPosition(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("gtid_set"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("gtid_set"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setGtidSet(refVal);
         }
     }
     return ok;
@@ -558,6 +586,48 @@ bool SyncPolicyReq::slotNameIsSet() const
 void SyncPolicyReq::unsetslotName()
 {
     slotNameIsSet_ = false;
+}
+
+std::string SyncPolicyReq::getFileAndPosition() const
+{
+    return fileAndPosition_;
+}
+
+void SyncPolicyReq::setFileAndPosition(const std::string& value)
+{
+    fileAndPosition_ = value;
+    fileAndPositionIsSet_ = true;
+}
+
+bool SyncPolicyReq::fileAndPositionIsSet() const
+{
+    return fileAndPositionIsSet_;
+}
+
+void SyncPolicyReq::unsetfileAndPosition()
+{
+    fileAndPositionIsSet_ = false;
+}
+
+std::string SyncPolicyReq::getGtidSet() const
+{
+    return gtidSet_;
+}
+
+void SyncPolicyReq::setGtidSet(const std::string& value)
+{
+    gtidSet_ = value;
+    gtidSetIsSet_ = true;
+}
+
+bool SyncPolicyReq::gtidSetIsSet() const
+{
+    return gtidSetIsSet_;
+}
+
+void SyncPolicyReq::unsetgtidSet()
+{
+    gtidSetIsSet_ = false;
 }
 
 }

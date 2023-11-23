@@ -1,3 +1,188 @@
+# 3.1.61 2023-11-23
+
+### HuaweiCloud SDK DDS
+
+- _Features_
+  - Support the following APIs:
+    - `ListLtsConfigs`
+    - `UpdateLtsConfig`
+    - `DeleteLtsConfig`
+    - `ListLtsErrorLogs`
+    - `ShowKillOpRuleRuleList`
+    - `UpdateKillOpRule`
+    - `CreateKillOpRule`
+    - `DeleteKillOpRuleList`
+    - `SwitchInstancePrimary`
+    - `DeleteReadonlyNode`
+    - `StopBackup`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK DRS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **BatchDeleteJobs**
+    - changes of request param
+      - `+ jobs.is_show_breakpoint_position`
+  - **BatchSetPolicy**
+    - changes of request param
+      - `+ jobs.file_and_position`
+      - `+ jobs.gtid_set`
+  - **BatchListProgresses**
+    - changes of response param
+      - `+ results.incre_trans_delay_millis`
+  - **ShowJobList**
+    - changes of request param
+      - `+ instance_ids`
+      - `+ instance_ip`
+
+### HuaweiCloud SDK DRS
+
+- _Features_
+  - Support the APIs `UploadJdbcDriver`, `ListJdbcDrivers`, `DeleteJdbcDriver`, `SyncJdbcDriver`
+- _Bug Fix_
+  - None
+- _Change_
+  - **BatchCreateJobsAsync**
+    - changes of request param
+      - `+ jobs.policy_config.dml_types`
+  - **ListAsyncJobDetail**
+    - changes of response param
+      - `+ jobs.connection_management`
+      - `+ jobs.policy_config.dml_types`
+  - **UpdateBatchAsyncJobs**
+    - changes of request param
+      - `+ jobs.params.policy_config.dml_types`
+  - **ShowJobDetail**
+    - changes of response param
+      - `+ job.connection_management`
+      - `+ job.policy_config.dml_types`
+  - **UpdateJob**
+    - changes of request param
+      - `+ job.params.policy_config.dml_types`
+
+### HuaweiCloud SDK GaussDB
+
+- _Features_
+  - Support the API `ShowRestoreTables`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _Features_
+  - Support the following APIs:
+    - `ShowElbIpGroup`
+    - `SwitchIpGroup`
+    - `ListInstancesSession`
+    - `DeleteInstancesSession`
+    - `ListInstancesSessionStatistics`
+    - `ResetParamGroupTemplate`
+    - `ListRedisSlowLogs`
+    - `ListCassandraSlowLogs`
+    - `ListMongodbSlowLogs`
+    - `ListLtsConfigs`
+    - `SaveLtsConfigs`
+    - `DeleteLtsConfigs`
+    - `ListRestoreDatabases`
+    - `ListRestoreTables`
+    - `ListMongodbErrorLogs`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **RecognizeIdCard**
+    - changes of request param
+      - `+ return_portrait_location`
+    - changes of response param
+      - `+ result.portrait_location`
+
+### HuaweiCloud SDK RDS
+
+- _Features_
+  - Support the following APIs:
+    - `UpgradeDbMajorVersion`
+    - `ShowAvailableVersion`
+    - `UpgradeDbMajorVersionPreCheck`
+    - `ListInspectionHistories`
+    - `ListUpgradeHistories`
+    - `ShowUpgradeDbMajorVersionStatus`
+    - `UpdateTdeStatus`
+    - `ShowTdeStatus`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK VOD
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateAssetByFileUpload**
+    - changes of request param
+      - `+ thumbnail.quantity`
+      - `+ thumbnail.quantity_time`
+      - `+ thumbnail.type: enum value [quantity]`
+  - **PublishAssetFromObs**
+    - changes of request param
+      - `+ thumbnail.quantity`
+      - `+ thumbnail.quantity_time`
+      - `+ thumbnail.type: enum value [quantity]`
+  - **CreateAssetProcessTask**
+    - changes of request param
+      - `+ thumbnail.quantity`
+      - `+ thumbnail.quantity_time`
+      - `+ thumbnail.type: enum value [quantity]`
+  - **ListTopStatistics**
+    - changes of response param
+      - `+ top_urls.duration_ms`
+  - **UploadMetaDataByUrl**
+    - changes of request param
+      - `+ upload_metadatas.thumbnail.quantity`
+      - `+ upload_metadatas.thumbnail.quantity_time`
+      - `+ upload_metadatas.thumbnail.type: enum value [quantity]`
+  - **ListAssetList**
+    - changes of response param
+      - `+ assets.duration_ms`
+  - **ShowTakeOverAssetDetails**
+    - changes of response param
+      - `+ base_info.meta_data.duration_ms`
+  - **PublishAssets**
+    - changes of response param
+      - `+ asset_info_array.base_info.meta_data.duration_ms`
+  - **UnpublishAssets**
+    - changes of response param
+      - `+ asset_info_array.base_info.meta_data.duration_ms`
+  - **ShowAssetMeta**
+    - changes of response param
+      - `+ asset_info_array.base_info.meta_data.duration_ms`
+  - **ShowAssetDetail**
+    - changes of response param
+      - `+ base_info.meta_data.duration_ms`
+      - `+ thumbnail_info.quantity`
+  - **ShowTakeOverTaskDetails**
+    - changes of response param
+      - `+ assets.base_info.meta_data.duration_ms`
+
 # 3.1.60 2023-11-16
 
 ### HuaweiCloud SDK CDN

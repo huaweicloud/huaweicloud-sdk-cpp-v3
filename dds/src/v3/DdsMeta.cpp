@@ -153,6 +153,15 @@ HttpRequestDef DdsMeta::genRequestDefForCreateIp() {
     return reqDefBuilder;
 }
 
+HttpRequestDef DdsMeta::genRequestDefForCreateKillOpRule() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef DdsMeta::genRequestDefForCreateManualBackup() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -204,8 +213,35 @@ HttpRequestDef DdsMeta::genRequestDefForDeleteInstance() {
     return reqDefBuilder;
 }
 
+HttpRequestDef DdsMeta::genRequestDefForDeleteKillOpRuleList() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef DdsMeta::genRequestDefForDeleteLtsConfig() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef DdsMeta::genRequestDefForDeleteManualBackup() {
     HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef DdsMeta::genRequestDefForDeleteReadonlyNode() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
     return reqDefBuilder;
 }
 
@@ -463,6 +499,26 @@ HttpRequestDef DdsMeta::genRequestDefForListInstances() {
 }
 
 HttpRequestDef DdsMeta::genRequestDefForListInstancesByTags() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef DdsMeta::genRequestDefForListLtsConfigs() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef DdsMeta::genRequestDefForListLtsErrorLogs() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
@@ -862,6 +918,29 @@ HttpRequestDef DdsMeta::genRequestDefForShowJobDetail() {
     return reqDefBuilder;
 }
 
+HttpRequestDef DdsMeta::genRequestDefForShowKillOpRuleRuleList() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("OperationTypes")
+                  .withJsonTag("operation_types")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Namespaces")
+                  .withJsonTag("namespaces")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Status")
+                  .withJsonTag("status")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("PlanSummary")
+                  .withJsonTag("plan_summary")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef DdsMeta::genRequestDefForShowQuotas() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
@@ -921,12 +1000,26 @@ HttpRequestDef DdsMeta::genRequestDefForShrinkInstanceNodes() {
     return reqDefBuilder;
 }
 
+HttpRequestDef DdsMeta::genRequestDefForStopBackup() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef DdsMeta::genRequestDefForSwitchConfiguration() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef DdsMeta::genRequestDefForSwitchInstancePrimary() {
+    HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
 
@@ -1009,6 +1102,24 @@ HttpRequestDef DdsMeta::genRequestDefForUpdateInstancePort() {
 }
 
 HttpRequestDef DdsMeta::genRequestDefForUpdateInstanceRemark() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef DdsMeta::genRequestDefForUpdateKillOpRule() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef DdsMeta::genRequestDefForUpdateLtsConfig() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.

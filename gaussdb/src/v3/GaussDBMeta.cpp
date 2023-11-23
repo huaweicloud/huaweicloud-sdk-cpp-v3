@@ -1227,6 +1227,28 @@ HttpRequestDef GaussDBMeta::genRequestDefForShowIntelligentDiagnosisInstanceInfo
     return reqDefBuilder;
 }
 
+HttpRequestDef GaussDBMeta::genRequestDefForShowRestoreTables() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("RestoreTime")
+                  .withJsonTag("restore_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("LastTableInfo")
+                  .withJsonTag("last_table_info")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("DatabaseName")
+                  .withJsonTag("database_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("TableName")
+                  .withJsonTag("table_name")
+                  .withLocationType(Query_));
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef GaussDBMeta::genRequestDefForShrinkGaussMySqlProxy() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;

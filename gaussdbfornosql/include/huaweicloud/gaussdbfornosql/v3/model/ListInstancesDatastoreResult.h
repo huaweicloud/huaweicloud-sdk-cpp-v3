@@ -66,7 +66,7 @@ public:
     void setPatchAvailable(bool value);
 
     /// <summary>
-    /// 数据库的完整版本号(目前只有GaussDB(for Cassandra)支持)。
+    /// 数据库的完整版本号(目前只有GeminiDB Cassandra支持)。
     /// </summary>
 
     std::string getWholeVersion() const;

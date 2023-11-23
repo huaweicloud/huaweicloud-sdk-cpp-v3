@@ -218,6 +218,8 @@
 #include <huaweicloud/gaussdb/v3/model/ShowIntelligentDiagnosisAbnormalCountOfInstancesResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowIntelligentDiagnosisInstanceInfosPerMetricRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ShowIntelligentDiagnosisInstanceInfosPerMetricResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ShowRestoreTablesRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ShowRestoreTablesResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShrinkGaussMySqlProxyRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ShrinkGaussMySqlProxyRequestBody.h>
 #include <huaweicloud/gaussdb/v3/model/ShrinkGaussMySqlProxyResponse.h>
@@ -986,6 +988,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowIntelligentDiagnosisInstanceInfosPerMetricResponse> showIntelligentDiagnosisInstanceInfosPerMetric(
         ShowIntelligentDiagnosisInstanceInfosPerMetricRequest &request
+    );
+    // 查询表级时间点恢复可选表
+    //
+    // 查询表级时间点恢复可选表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowRestoreTablesResponse> showRestoreTables(
+        ShowRestoreTablesRequest &request
     );
     // 减少数据库代理节点的数量
     //

@@ -42,6 +42,9 @@
 #include <huaweicloud/drs/v5/model/CreateJobRequest.h>
 #include <huaweicloud/drs/v5/model/CreateJobResponse.h>
 #include <huaweicloud/drs/v5/model/DataProcessReq.h>
+#include <huaweicloud/drs/v5/model/DeleteDriverReq.h>
+#include <huaweicloud/drs/v5/model/DeleteJdbcDriverRequest.h>
+#include <huaweicloud/drs/v5/model/DeleteJdbcDriverResponse.h>
 #include <huaweicloud/drs/v5/model/DeleteJobRequest.h>
 #include <huaweicloud/drs/v5/model/DeleteJobResponse.h>
 #include <huaweicloud/drs/v5/model/DownloadBatchCreateTemplateRequest.h>
@@ -63,6 +66,8 @@
 #include <huaweicloud/drs/v5/model/ListAsyncJobsResponse.h>
 #include <huaweicloud/drs/v5/model/ListDbObjectsRequest.h>
 #include <huaweicloud/drs/v5/model/ListDbObjectsResponse.h>
+#include <huaweicloud/drs/v5/model/ListJdbcDriversRequest.h>
+#include <huaweicloud/drs/v5/model/ListJdbcDriversResponse.h>
 #include <huaweicloud/drs/v5/model/ListJobsRequest.h>
 #include <huaweicloud/drs/v5/model/ListJobsResponse.h>
 #include <huaweicloud/drs/v5/model/ListLinksRequest.h>
@@ -125,10 +130,13 @@
 #include <huaweicloud/drs/v5/model/StopJobActionReq.h>
 #include <huaweicloud/drs/v5/model/StopJobActionRequest.h>
 #include <huaweicloud/drs/v5/model/StopJobActionResponse.h>
+#include <huaweicloud/drs/v5/model/SyncJdbcDriverRequest.h>
+#include <huaweicloud/drs/v5/model/SyncJdbcDriverResponse.h>
 #include <huaweicloud/drs/v5/model/UpdateBatchAsyncJobsRequest.h>
 #include <huaweicloud/drs/v5/model/UpdateBatchAsyncJobsResponse.h>
 #include <huaweicloud/drs/v5/model/UpdateDataProgressRequest.h>
 #include <huaweicloud/drs/v5/model/UpdateDataProgressResponse.h>
+#include <huaweicloud/drs/v5/model/UpdateDriverReq.h>
 #include <huaweicloud/drs/v5/model/UpdateJobRequest.h>
 #include <huaweicloud/drs/v5/model/UpdateJobResponse.h>
 #include <huaweicloud/drs/v5/model/UpdateStartPositionRequest.h>
@@ -136,6 +144,9 @@
 #include <huaweicloud/drs/v5/model/UploadDbObjectTemplateRequest.h>
 #include <huaweicloud/drs/v5/model/UploadDbObjectTemplateRequestBody.h>
 #include <huaweicloud/drs/v5/model/UploadDbObjectTemplateResponse.h>
+#include <huaweicloud/drs/v5/model/UploadJdbcDriverRequest.h>
+#include <huaweicloud/drs/v5/model/UploadJdbcDriverRequestBody.h>
+#include <huaweicloud/drs/v5/model/UploadJdbcDriverResponse.h>
 #include <huaweicloud/drs/v5/model/ValidateJobNameRequest.h>
 #include <huaweicloud/drs/v5/model/ValidateJobNameResponse.h>
 #include <string>
@@ -274,6 +285,14 @@ public:
     std::shared_ptr<CreateJobResponse> createJob(
         CreateJobRequest &request
     );
+    // 删除驱动文件
+    //
+    // 删除驱动文件。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteJdbcDriverResponse> deleteJdbcDriver(
+        DeleteJdbcDriverRequest &request
+    );
     // 删除指定ID任务
     //
     // 删除租户指定ID任务。
@@ -345,6 +364,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListDbObjectsResponse> listDbObjects(
         ListDbObjectsRequest &request
+    );
+    // 查询驱动文件列表
+    //
+    // 查询驱动文件列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListJdbcDriversResponse> listJdbcDrivers(
+        ListJdbcDriversRequest &request
     );
     // 查询任务列表
     //
@@ -568,6 +595,14 @@ public:
     std::shared_ptr<StopJobActionResponse> stopJobAction(
         StopJobActionRequest &request
     );
+    // 同步驱动文件
+    //
+    // 同步驱动文件。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SyncJdbcDriverResponse> syncJdbcDriver(
+        SyncJdbcDriverRequest &request
+    );
     // 更新指定ID批量异步任务详情
     //
     // 更新租户指定ID批量异步任务详情。
@@ -609,6 +644,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UploadDbObjectTemplateResponse> uploadDbObjectTemplate(
         UploadDbObjectTemplateRequest &request
+    );
+    // 上传驱动文件
+    //
+    // 上传驱动文件。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UploadJdbcDriverResponse> uploadJdbcDriver(
+        UploadJdbcDriverRequest &request
     );
     // 任务名称校验
     //

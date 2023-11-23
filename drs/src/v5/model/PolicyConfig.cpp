@@ -28,6 +28,8 @@ PolicyConfig::PolicyConfig()
     syncTypePolicyIsSet_ = false;
     incrementReadMode_ = "";
     incrementReadModeIsSet_ = false;
+    dmlTypes_ = "";
+    dmlTypesIsSet_ = false;
 }
 
 PolicyConfig::~PolicyConfig() = default;
@@ -63,6 +65,9 @@ web::json::value PolicyConfig::toJson() const
     }
     if(incrementReadModeIsSet_) {
         val[utility::conversions::to_string_t("increment_read_mode")] = ModelBase::toJson(incrementReadMode_);
+    }
+    if(dmlTypesIsSet_) {
+        val[utility::conversions::to_string_t("dml_types")] = ModelBase::toJson(dmlTypes_);
     }
 
     return val;
@@ -141,6 +146,15 @@ bool PolicyConfig::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIncrementReadMode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("dml_types"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("dml_types"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDmlTypes(refVal);
         }
     }
     return ok;
@@ -313,6 +327,27 @@ bool PolicyConfig::incrementReadModeIsSet() const
 void PolicyConfig::unsetincrementReadMode()
 {
     incrementReadModeIsSet_ = false;
+}
+
+std::string PolicyConfig::getDmlTypes() const
+{
+    return dmlTypes_;
+}
+
+void PolicyConfig::setDmlTypes(const std::string& value)
+{
+    dmlTypes_ = value;
+    dmlTypesIsSet_ = true;
+}
+
+bool PolicyConfig::dmlTypesIsSet() const
+{
+    return dmlTypesIsSet_;
+}
+
+void PolicyConfig::unsetdmlTypes()
+{
+    dmlTypesIsSet_ = false;
 }
 
 }

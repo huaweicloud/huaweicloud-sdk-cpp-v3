@@ -18,6 +18,8 @@ QueryProgressResp::QueryProgressResp()
     progressIsSet_ = false;
     increTransDelay_ = "";
     increTransDelayIsSet_ = false;
+    increTransDelayMillis_ = "";
+    increTransDelayMillisIsSet_ = false;
     taskMode_ = "";
     taskModeIsSet_ = false;
     transferStatus_ = "";
@@ -51,6 +53,9 @@ web::json::value QueryProgressResp::toJson() const
     }
     if(increTransDelayIsSet_) {
         val[utility::conversions::to_string_t("incre_trans_delay")] = ModelBase::toJson(increTransDelay_);
+    }
+    if(increTransDelayMillisIsSet_) {
+        val[utility::conversions::to_string_t("incre_trans_delay_millis")] = ModelBase::toJson(increTransDelayMillis_);
     }
     if(taskModeIsSet_) {
         val[utility::conversions::to_string_t("task_mode")] = ModelBase::toJson(taskMode_);
@@ -105,6 +110,15 @@ bool QueryProgressResp::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIncreTransDelay(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("incre_trans_delay_millis"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("incre_trans_delay_millis"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIncreTransDelayMillis(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("task_mode"))) {
@@ -235,6 +249,27 @@ bool QueryProgressResp::increTransDelayIsSet() const
 void QueryProgressResp::unsetincreTransDelay()
 {
     increTransDelayIsSet_ = false;
+}
+
+std::string QueryProgressResp::getIncreTransDelayMillis() const
+{
+    return increTransDelayMillis_;
+}
+
+void QueryProgressResp::setIncreTransDelayMillis(const std::string& value)
+{
+    increTransDelayMillis_ = value;
+    increTransDelayMillisIsSet_ = true;
+}
+
+bool QueryProgressResp::increTransDelayMillisIsSet() const
+{
+    return increTransDelayMillisIsSet_;
+}
+
+void QueryProgressResp::unsetincreTransDelayMillis()
+{
+    increTransDelayMillisIsSet_ = false;
 }
 
 std::string QueryProgressResp::getTaskMode() const

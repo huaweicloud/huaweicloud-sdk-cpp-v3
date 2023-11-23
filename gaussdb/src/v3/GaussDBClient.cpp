@@ -3434,6 +3434,51 @@ std::shared_ptr<ShowIntelligentDiagnosisInstanceInfosPerMetricResponse> GaussDBC
 
     return localVarResult;
 }
+std::shared_ptr<ShowRestoreTablesResponse> GaussDBClient::showRestoreTables(ShowRestoreTablesRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/backups/restore/tables";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.restoreTimeIsSet()) {
+        localVarQueryParams["restore_time"] = parameterToString(request.getRestoreTime());
+    }
+    if (request.lastTableInfoIsSet()) {
+        localVarQueryParams["last_table_info"] = parameterToString(request.getLastTableInfo());
+    }
+    if (request.databaseNameIsSet()) {
+        localVarQueryParams["database_name"] = parameterToString(request.getDatabaseName());
+    }
+    if (request.tableNameIsSet()) {
+        localVarQueryParams["table_name"] = parameterToString(request.getTableName());
+    }
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, GaussDBMeta::genRequestDefForShowRestoreTables());
+
+    std::shared_ptr<ShowRestoreTablesResponse> localVarResult = std::make_shared<ShowRestoreTablesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShrinkGaussMySqlProxyResponse> GaussDBClient::shrinkGaussMySqlProxy(ShrinkGaussMySqlProxyRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/reduce";

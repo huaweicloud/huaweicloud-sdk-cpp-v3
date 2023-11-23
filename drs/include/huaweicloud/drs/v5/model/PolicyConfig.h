@@ -110,6 +110,15 @@ public:
     void unsetincrementReadMode();
     void setIncrementReadMode(const std::string& value);
 
+    /// <summary>
+    /// DML同步类型。
+    /// </summary>
+
+    std::string getDmlTypes() const;
+    bool dmlTypesIsSet() const;
+    void unsetdmlTypes();
+    void setDmlTypes(const std::string& value);
+
 
 protected:
     std::string filterDdlPolicy_;
@@ -128,6 +137,8 @@ protected:
     bool syncTypePolicyIsSet_;
     std::string incrementReadMode_;
     bool incrementReadModeIsSet_;
+    std::string dmlTypes_;
+    bool dmlTypesIsSet_;
 
 };
 

@@ -40,7 +40,7 @@ public:
     /// Thumbnail members
 
     /// <summary>
-    /// 截图类型。  取值如下： - time：每次进行截图的间隔时间。 - dots: 按照指定的时间点截图。
+    /// 截图类型。  取值如下： - time：每次进行截图的间隔时间。 - dots: 按照指定的时间点截图。 - quantity： 按照指定张数，根据视频时长等分视频截图。
     /// </summary>
 
     std::string getType() const;
@@ -49,7 +49,25 @@ public:
     void setType(const std::string& value);
 
     /// <summary>
-    /// **type**取值为time时必填。根据时间间隔采样时的时间间隔值。  取值范围：[1,12]之间的整数。  单位：秒。
+    /// **type**取值为quantity时必填。 按照指定张数，根据视频时长等分视频截图。 取值范围：[1,10]之间的整数。
+    /// </summary>
+
+    int32_t getQuantity() const;
+    bool quantityIsSet() const;
+    void unsetquantity();
+    void setQuantity(int32_t value);
+
+    /// <summary>
+    /// **type**取值为quantity时选填。 按照指定时间间隔取指定张数截图。 取值范围：[0,2147483647]之间的整数。
+    /// </summary>
+
+    int32_t getQuantityTime() const;
+    bool quantityTimeIsSet() const;
+    void unsetquantityTime();
+    void setQuantityTime(int32_t value);
+
+    /// <summary>
+    /// 根据时间间隔采样时的时间间隔值。单位：秒。 **type**取值为time时。 默认值：12 取值范围：[0,100]之间的整数。
     /// </summary>
 
     int32_t getTime() const;
@@ -106,6 +124,10 @@ public:
 protected:
     std::string type_;
     bool typeIsSet_;
+    int32_t quantity_;
+    bool quantityIsSet_;
+    int32_t quantityTime_;
+    bool quantityTimeIsSet_;
     int32_t time_;
     bool timeIsSet_;
     std::vector<int32_t> dots_;

@@ -56,12 +56,23 @@ public:
     void unsetjobId();
     void setJobId(const std::string& value);
 
+    /// <summary>
+    /// MySQL为源，实时迁移，实时同步，数据订阅，实时灾备结束任务时是否展示断点信息
+    /// </summary>
+
+    bool isIsShowBreakpointPosition() const;
+    bool isShowBreakpointPositionIsSet() const;
+    void unsetisShowBreakpointPosition();
+    void setIsShowBreakpointPosition(bool value);
+
 
 protected:
     std::string deleteType_;
     bool deleteTypeIsSet_;
     std::string jobId_;
     bool jobIdIsSet_;
+    bool isShowBreakpointPosition_;
+    bool isShowBreakpointPositionIsSet_;
 
 };
 

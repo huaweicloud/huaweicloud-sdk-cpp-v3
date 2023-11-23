@@ -50,6 +50,7 @@ public:
     static HttpRequestDef genRequestDefForListErrorlogForLts();
     static HttpRequestDef genRequestDefForListFlavors();
     static HttpRequestDef genRequestDefForListHistoryDatabase();
+    static HttpRequestDef genRequestDefForListInspectionHistories();
     static HttpRequestDef genRequestDefForListInstanceDiagnosis();
     static HttpRequestDef genRequestDefForListInstanceParamHistories();
     static HttpRequestDef genRequestDefForListInstanceTags();
@@ -77,6 +78,7 @@ public:
     static HttpRequestDef genRequestDefForListSlowlogStatistics();
     static HttpRequestDef genRequestDefForListSslCertDownloadLink();
     static HttpRequestDef genRequestDefForListStorageTypes();
+    static HttpRequestDef genRequestDefForListUpgradeHistories();
     static HttpRequestDef genRequestDefForListXellogFiles();
     static HttpRequestDef genRequestDefForMigrateFollower();
     static HttpRequestDef genRequestDefForModifyPostgresqlHbaConf();
@@ -95,6 +97,7 @@ public:
     static HttpRequestDef genRequestDefForShowAuditlogDownloadLink();
     static HttpRequestDef genRequestDefForShowAuditlogPolicy();
     static HttpRequestDef genRequestDefForShowAutoEnlargePolicy();
+    static HttpRequestDef genRequestDefForShowAvailableVersion();
     static HttpRequestDef genRequestDefForShowBackupDownloadLink();
     static HttpRequestDef genRequestDefForShowBackupPolicy();
     static HttpRequestDef genRequestDefForShowBinlogClearPolicy();
@@ -108,6 +111,8 @@ public:
     static HttpRequestDef genRequestDefForShowRecyclePolicy();
     static HttpRequestDef genRequestDefForShowReplicationStatus();
     static HttpRequestDef genRequestDefForShowSecondLevelMonitoring();
+    static HttpRequestDef genRequestDefForShowTdeStatus();
+    static HttpRequestDef genRequestDefForShowUpgradeDbMajorVersionStatus();
     static HttpRequestDef genRequestDefForStartFailover();
     static HttpRequestDef genRequestDefForStartInstanceEnlargeVolumeAction();
     static HttpRequestDef genRequestDefForStartInstanceRestartAction();
@@ -125,6 +130,9 @@ public:
     static HttpRequestDef genRequestDefForUpdateInstanceName();
     static HttpRequestDef genRequestDefForUpdatePort();
     static HttpRequestDef genRequestDefForUpdatePostgresqlInstanceAlias();
+    static HttpRequestDef genRequestDefForUpdateTdeStatus();
+    static HttpRequestDef genRequestDefForUpgradeDbMajorVersion();
+    static HttpRequestDef genRequestDefForUpgradeDbMajorVersionPreCheck();
     static HttpRequestDef genRequestDefForUpgradeDbVersion();
     static HttpRequestDef genRequestDefForUpgradeDbVersionNew();
     static HttpRequestDef genRequestDefForListApiVersion();

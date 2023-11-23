@@ -1,3 +1,188 @@
+# 3.1.61 2023-11-23
+
+### HuaweiCloud SDK DDS
+
+- _新增特性_
+  - 支持以下接口：
+    - `ListLtsConfigs`
+    - `UpdateLtsConfig`
+    - `DeleteLtsConfig`
+    - `ListLtsErrorLogs`
+    - `ShowKillOpRuleRuleList`
+    - `UpdateKillOpRule`
+    - `CreateKillOpRule`
+    - `DeleteKillOpRuleList`
+    - `SwitchInstancePrimary`
+    - `DeleteReadonlyNode`
+    - `StopBackup`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK DRS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **BatchDeleteJobs**
+    - 请求参数变更
+      - `+ jobs.is_show_breakpoint_position`
+  - **BatchSetPolicy**
+    - 请求参数变更
+      - `+ jobs.file_and_position`
+      - `+ jobs.gtid_set`
+  - **BatchListProgresses**
+    - 响应参数变更
+      - `+ results.incre_trans_delay_millis`
+  - **ShowJobList**
+    - 请求参数变更
+      - `+ instance_ids`
+      - `+ instance_ip`
+
+### HuaweiCloud SDK DRS
+
+- _新增特性_
+  - 支持接口`UploadJdbcDriver`、`ListJdbcDrivers`、`DeleteJdbcDriver`、`SyncJdbcDriver`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **BatchCreateJobsAsync**
+    - 请求参数变更
+      - `+ jobs.policy_config.dml_types`
+  - **ListAsyncJobDetail**
+    - 响应参数变更
+      - `+ jobs.connection_management`
+      - `+ jobs.policy_config.dml_types`
+  - **UpdateBatchAsyncJobs**
+    - 请求参数变更
+      - `+ jobs.params.policy_config.dml_types`
+  - **ShowJobDetail**
+    - 响应参数变更
+      - `+ job.connection_management`
+      - `+ job.policy_config.dml_types`
+  - **UpdateJob**
+    - 请求参数变更
+      - `+ job.params.policy_config.dml_types`
+
+### HuaweiCloud SDK GaussDB
+
+- _新增特性_
+  - 支持接口`ShowRestoreTables`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _新增特性_
+  - 支持以下接口：
+    - `ShowElbIpGroup`
+    - `SwitchIpGroup`
+    - `ListInstancesSession`
+    - `DeleteInstancesSession`
+    - `ListInstancesSessionStatistics`
+    - `ResetParamGroupTemplate`
+    - `ListRedisSlowLogs`
+    - `ListCassandraSlowLogs`
+    - `ListMongodbSlowLogs`
+    - `ListLtsConfigs`
+    - `SaveLtsConfigs`
+    - `DeleteLtsConfigs`
+    - `ListRestoreDatabases`
+    - `ListRestoreTables`
+    - `ListMongodbErrorLogs`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RecognizeIdCard**
+    - 请求参数变更
+      - `+ return_portrait_location`
+    - 响应参数变更
+      - `+ result.portrait_location`
+
+### HuaweiCloud SDK RDS
+
+- _新增特性_
+  - 支持以下接口：
+    - `UpgradeDbMajorVersion`
+    - `ShowAvailableVersion`
+    - `UpgradeDbMajorVersionPreCheck`
+    - `ListInspectionHistories`
+    - `ListUpgradeHistories`
+    - `ShowUpgradeDbMajorVersionStatus`
+    - `UpdateTdeStatus`
+    - `ShowTdeStatus`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK VOD
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateAssetByFileUpload**
+    - 请求参数变更
+      - `+ thumbnail.quantity`
+      - `+ thumbnail.quantity_time`
+      - `+ thumbnail.type: enum value [quantity]`
+  - **PublishAssetFromObs**
+    - 请求参数变更
+      - `+ thumbnail.quantity`
+      - `+ thumbnail.quantity_time`
+      - `+ thumbnail.type: enum value [quantity]`
+  - **CreateAssetProcessTask**
+    - 请求参数变更
+      - `+ thumbnail.quantity`
+      - `+ thumbnail.quantity_time`
+      - `+ thumbnail.type: enum value [quantity]`
+  - **ListTopStatistics**
+    - 响应参数变更
+      - `+ top_urls.duration_ms`
+  - **UploadMetaDataByUrl**
+    - 请求参数变更
+      - `+ upload_metadatas.thumbnail.quantity`
+      - `+ upload_metadatas.thumbnail.quantity_time`
+      - `+ upload_metadatas.thumbnail.type: enum value [quantity]`
+  - **ListAssetList**
+    - 响应参数变更
+      - `+ assets.duration_ms`
+  - **ShowTakeOverAssetDetails**
+    - 响应参数变更
+      - `+ base_info.meta_data.duration_ms`
+  - **PublishAssets**
+    - 响应参数变更
+      - `+ asset_info_array.base_info.meta_data.duration_ms`
+  - **UnpublishAssets**
+    - 响应参数变更
+      - `+ asset_info_array.base_info.meta_data.duration_ms`
+  - **ShowAssetMeta**
+    - 响应参数变更
+      - `+ asset_info_array.base_info.meta_data.duration_ms`
+  - **ShowAssetDetail**
+    - 响应参数变更
+      - `+ base_info.meta_data.duration_ms`
+      - `+ thumbnail_info.quantity`
+  - **ShowTakeOverTaskDetails**
+    - 响应参数变更
+      - `+ assets.base_info.meta_data.duration_ms`
+
 # 3.1.60 2023-11-16
 
 ### HuaweiCloud SDK CDN

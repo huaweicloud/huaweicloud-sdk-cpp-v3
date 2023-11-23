@@ -16,6 +16,8 @@ DeleteJobReq::DeleteJobReq()
     deleteTypeIsSet_ = false;
     jobId_ = "";
     jobIdIsSet_ = false;
+    isShowBreakpointPosition_ = false;
+    isShowBreakpointPositionIsSet_ = false;
 }
 
 DeleteJobReq::~DeleteJobReq() = default;
@@ -33,6 +35,9 @@ web::json::value DeleteJobReq::toJson() const
     }
     if(jobIdIsSet_) {
         val[utility::conversions::to_string_t("job_id")] = ModelBase::toJson(jobId_);
+    }
+    if(isShowBreakpointPositionIsSet_) {
+        val[utility::conversions::to_string_t("is_show_breakpoint_position")] = ModelBase::toJson(isShowBreakpointPosition_);
     }
 
     return val;
@@ -57,6 +62,15 @@ bool DeleteJobReq::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setJobId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_show_breakpoint_position"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_show_breakpoint_position"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsShowBreakpointPosition(refVal);
         }
     }
     return ok;
@@ -103,6 +117,27 @@ bool DeleteJobReq::jobIdIsSet() const
 void DeleteJobReq::unsetjobId()
 {
     jobIdIsSet_ = false;
+}
+
+bool DeleteJobReq::isIsShowBreakpointPosition() const
+{
+    return isShowBreakpointPosition_;
+}
+
+void DeleteJobReq::setIsShowBreakpointPosition(bool value)
+{
+    isShowBreakpointPosition_ = value;
+    isShowBreakpointPositionIsSet_ = true;
+}
+
+bool DeleteJobReq::isShowBreakpointPositionIsSet() const
+{
+    return isShowBreakpointPositionIsSet_;
+}
+
+void DeleteJobReq::unsetisShowBreakpointPosition()
+{
+    isShowBreakpointPositionIsSet_ = false;
 }
 
 }

@@ -52,6 +52,9 @@
 #include <huaweicloud/dds/v3/model/CreateIpRequest.h>
 #include <huaweicloud/dds/v3/model/CreateIpRequestBody.h>
 #include <huaweicloud/dds/v3/model/CreateIpResponse.h>
+#include <huaweicloud/dds/v3/model/CreateKillOpRuleRequest.h>
+#include <huaweicloud/dds/v3/model/CreateKillOpRuleRequestBody.h>
+#include <huaweicloud/dds/v3/model/CreateKillOpRuleResponse.h>
 #include <huaweicloud/dds/v3/model/CreateManualBackupRequest.h>
 #include <huaweicloud/dds/v3/model/CreateManualBackupRequestBody.h>
 #include <huaweicloud/dds/v3/model/CreateManualBackupResponse.h>
@@ -68,8 +71,17 @@
 #include <huaweicloud/dds/v3/model/DeleteDatabaseUserResponse.h>
 #include <huaweicloud/dds/v3/model/DeleteInstanceRequest.h>
 #include <huaweicloud/dds/v3/model/DeleteInstanceResponse.h>
+#include <huaweicloud/dds/v3/model/DeleteKillOpRuleListRequest.h>
+#include <huaweicloud/dds/v3/model/DeleteKillOpRuleListRequestBody.h>
+#include <huaweicloud/dds/v3/model/DeleteKillOpRuleListResponse.h>
+#include <huaweicloud/dds/v3/model/DeleteLtsConfigRequest.h>
+#include <huaweicloud/dds/v3/model/DeleteLtsConfigRequestBody.h>
+#include <huaweicloud/dds/v3/model/DeleteLtsConfigResponse.h>
 #include <huaweicloud/dds/v3/model/DeleteManualBackupRequest.h>
 #include <huaweicloud/dds/v3/model/DeleteManualBackupResponse.h>
+#include <huaweicloud/dds/v3/model/DeleteReadonlyNodeRequest.h>
+#include <huaweicloud/dds/v3/model/DeleteReadonlyNodeRequestBody.h>
+#include <huaweicloud/dds/v3/model/DeleteReadonlyNodeResponse.h>
 #include <huaweicloud/dds/v3/model/DeleteSessionRequest.h>
 #include <huaweicloud/dds/v3/model/DeleteSessionRequestBody.h>
 #include <huaweicloud/dds/v3/model/DeleteSessionResponse.h>
@@ -116,6 +128,11 @@
 #include <huaweicloud/dds/v3/model/ListInstancesByTagsResponse.h>
 #include <huaweicloud/dds/v3/model/ListInstancesRequest.h>
 #include <huaweicloud/dds/v3/model/ListInstancesResponse.h>
+#include <huaweicloud/dds/v3/model/ListLtsConfigsRequest.h>
+#include <huaweicloud/dds/v3/model/ListLtsConfigsResponse.h>
+#include <huaweicloud/dds/v3/model/ListLtsErrorLogsRequest.h>
+#include <huaweicloud/dds/v3/model/ListLtsErrorLogsRequestBody.h>
+#include <huaweicloud/dds/v3/model/ListLtsErrorLogsResponse.h>
 #include <huaweicloud/dds/v3/model/ListLtsSlowLogsRequest.h>
 #include <huaweicloud/dds/v3/model/ListLtsSlowLogsRequestBody.h>
 #include <huaweicloud/dds/v3/model/ListLtsSlowLogsResponse.h>
@@ -202,6 +219,8 @@
 #include <huaweicloud/dds/v3/model/ShowEntityConfigurationResponse.h>
 #include <huaweicloud/dds/v3/model/ShowJobDetailRequest.h>
 #include <huaweicloud/dds/v3/model/ShowJobDetailResponse.h>
+#include <huaweicloud/dds/v3/model/ShowKillOpRuleRuleListRequest.h>
+#include <huaweicloud/dds/v3/model/ShowKillOpRuleRuleListResponse.h>
 #include <huaweicloud/dds/v3/model/ShowQuotasRequest.h>
 #include <huaweicloud/dds/v3/model/ShowQuotasResponse.h>
 #include <huaweicloud/dds/v3/model/ShowRecyclePolicyRequest.h>
@@ -218,8 +237,13 @@
 #include <huaweicloud/dds/v3/model/ShowUpgradeDurationResponse.h>
 #include <huaweicloud/dds/v3/model/ShrinkInstanceNodesRequest.h>
 #include <huaweicloud/dds/v3/model/ShrinkInstanceNodesResponse.h>
+#include <huaweicloud/dds/v3/model/StopBackupRequest.h>
+#include <huaweicloud/dds/v3/model/StopBackupRequestBody.h>
+#include <huaweicloud/dds/v3/model/StopBackupResponse.h>
 #include <huaweicloud/dds/v3/model/SwitchConfigurationRequest.h>
 #include <huaweicloud/dds/v3/model/SwitchConfigurationResponse.h>
+#include <huaweicloud/dds/v3/model/SwitchInstancePrimaryRequest.h>
+#include <huaweicloud/dds/v3/model/SwitchInstancePrimaryResponse.h>
 #include <huaweicloud/dds/v3/model/SwitchSecondLevelMonitoringRequest.h>
 #include <huaweicloud/dds/v3/model/SwitchSecondLevelMonitoringRequestBody.h>
 #include <huaweicloud/dds/v3/model/SwitchSecondLevelMonitoringResponse.h>
@@ -245,6 +269,12 @@
 #include <huaweicloud/dds/v3/model/UpdateInstanceRemarkRequest.h>
 #include <huaweicloud/dds/v3/model/UpdateInstanceRemarkRequestBody.h>
 #include <huaweicloud/dds/v3/model/UpdateInstanceRemarkResponse.h>
+#include <huaweicloud/dds/v3/model/UpdateKillOpRuleRequest.h>
+#include <huaweicloud/dds/v3/model/UpdateKillOpRuleRequestBody.h>
+#include <huaweicloud/dds/v3/model/UpdateKillOpRuleResponse.h>
+#include <huaweicloud/dds/v3/model/UpdateLtsConfigRequest.h>
+#include <huaweicloud/dds/v3/model/UpdateLtsConfigRequestBody.h>
+#include <huaweicloud/dds/v3/model/UpdateLtsConfigResponse.h>
 #include <huaweicloud/dds/v3/model/UpdateNameRequestBody.h>
 #include <huaweicloud/dds/v3/model/UpdatePortRequestBody.h>
 #include <huaweicloud/dds/v3/model/UpdateReplSetNameRequest.h>
@@ -416,6 +446,14 @@ public:
     std::shared_ptr<CreateIpResponse> createIp(
         CreateIpRequest &request
     );
+    // 创建killOp规则
+    //
+    // 创建killOp规则。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateKillOpRuleResponse> createKillOpRule(
+        CreateKillOpRuleRequest &request
+    );
     // 创建手动备份
     //
     // 创建数据库实例的手动备份。
@@ -464,6 +502,22 @@ public:
     std::shared_ptr<DeleteInstanceResponse> deleteInstance(
         DeleteInstanceRequest &request
     );
+    // 删除killOp规则
+    //
+    // 删除killOp规则。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteKillOpRuleListResponse> deleteKillOpRuleList(
+        DeleteKillOpRuleListRequest &request
+    );
+    // 解除关联LTS日志流
+    //
+    // 将实例日志与LTS日志流解除关联，后台将取消上传实例日志到的LTS日志流里。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteLtsConfigResponse> deleteLtsConfig(
+        DeleteLtsConfigRequest &request
+    );
     // 删除手动备份
     //
     // 删除数据库实例的手动备份。
@@ -471,6 +525,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteManualBackupResponse> deleteManualBackup(
         DeleteManualBackupRequest &request
+    );
+    // 删除只读节点
+    //
+    // 当副本集添加了只读节点后，需要删除对应的只读节点需要调用此API。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteReadonlyNodeResponse> deleteReadonlyNode(
+        DeleteReadonlyNodeRequest &request
     );
     // 终结实例节点会话
     //
@@ -623,6 +685,22 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListInstancesByTagsResponse> listInstancesByTags(
         ListInstancesByTagsRequest &request
+    );
+    // 查询LTS日志配置信息
+    //
+    // 查询LTS日志配置信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListLtsConfigsResponse> listLtsConfigs(
+        ListLtsConfigsRequest &request
+    );
+    // 查询数据库错误日志
+    //
+    // 查询数据库错误日志信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListLtsErrorLogsResponse> listLtsErrorLogs(
+        ListLtsErrorLogsRequest &request
     );
     // 查询数据库慢日志
     //
@@ -904,6 +982,14 @@ public:
     std::shared_ptr<ShowJobDetailResponse> showJobDetail(
         ShowJobDetailRequest &request
     );
+    // 获取killOp规则列表
+    //
+    // 获取killOp规则列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowKillOpRuleRuleListResponse> showKillOpRuleRuleList(
+        ShowKillOpRuleRuleListRequest &request
+    );
     // 查询配额
     //
     // 查询单租户在DDS服务下的资源配额，包括单节点实例配额、副本集实例配额、集群实例配额等。
@@ -968,6 +1054,14 @@ public:
     std::shared_ptr<ShrinkInstanceNodesResponse> shrinkInstanceNodes(
         ShrinkInstanceNodesRequest &request
     );
+    // 停止备份
+    //
+    // 支持紧急情况下停止备份功能。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<StopBackupResponse> stopBackup(
+        StopBackupRequest &request
+    );
     // 应用参数模板
     //
     // 指定实例变更参数模板。
@@ -975,6 +1069,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<SwitchConfigurationResponse> switchConfiguration(
         SwitchConfigurationRequest &request
+    );
+    // 强制备节点升主
+    //
+    // 支持副本集、shard和config备节点强制升主。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SwitchInstancePrimaryResponse> switchInstancePrimary(
+        SwitchInstancePrimaryRequest &request
     );
     // 开启/关闭秒级监控
     //
@@ -1055,6 +1157,24 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateInstanceRemarkResponse> updateInstanceRemark(
         UpdateInstanceRemarkRequest &request
+    );
+    // 启用/禁用killOp规则
+    //
+    // 启用/禁用killOp规则。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateKillOpRuleResponse> updateKillOpRule(
+        UpdateKillOpRuleRequest &request
+    );
+    // 关联LTS日志流
+    //
+    // 将实例日志与LTS日志流关联，后台将自动上传实例日志到关联的LTS日志流里。
+    // 关联成功后，会产生一定费用，具体计费可参考云日志服务（LTS）的定价详情。
+    // 系统会为当前选择的日志流创建对应日志类型的结构化配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateLtsConfigResponse> updateLtsConfig(
+        UpdateLtsConfigRequest &request
     );
     // 修改数据库复制集名称
     //

@@ -66,7 +66,7 @@ public:
     void setStatus(const std::string& value);
 
     /// <summary>
-    /// 节点角色。 该参数仅对GaussDB(for Mongo)引擎的副本集实例有效。
+    /// 节点角色。 该参数仅对GeminiDB Mongo引擎的副本集实例有效。
     /// </summary>
 
     std::string getRole() const;

@@ -93,13 +93,22 @@ public:
     void setDetectReproduce(bool value);
 
     /// <summary>
-    /// 返回判断身份证图像是否是黑白复印件的开关，默认false，可选值如下所示：  - true ：返回身份证图像是否是复印件  - false : 不返回身份证图像是否是复印件             
+    /// 返回判断身份证图像是否是黑白复印件的开关，默认false，可选值如下所示：  - true ：返回身份证图像是否是复印件  - false : 不返回身份证图像是否是复印件 
     /// </summary>
 
     bool isDetectCopy() const;
     bool detectCopyIsSet() const;
     void unsetdetectCopy();
     void setDetectCopy(bool value);
+
+    /// <summary>
+    /// 返回头像位置信息的开关，默认false，可选值如下所示：  - true ：开启返回头像位置信息的功能 - false : 关闭返回头像位置信息的功能 
+    /// </summary>
+
+    bool isReturnPortraitLocation() const;
+    bool returnPortraitLocationIsSet() const;
+    void unsetreturnPortraitLocation();
+    void setReturnPortraitLocation(bool value);
 
 
 protected:
@@ -117,6 +126,8 @@ protected:
     bool detectReproduceIsSet_;
     bool detectCopy_;
     bool detectCopyIsSet_;
+    bool returnPortraitLocation_;
+    bool returnPortraitLocationIsSet_;
 
 };
 

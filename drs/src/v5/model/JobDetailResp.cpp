@@ -44,6 +44,7 @@ JobDetailResp::JobDetailResp()
     instanceFeaturesIsSet_ = false;
     taskVersion_ = "";
     taskVersionIsSet_ = false;
+    connectionManagementIsSet_ = false;
 }
 
 JobDetailResp::~JobDetailResp() = default;
@@ -133,6 +134,9 @@ web::json::value JobDetailResp::toJson() const
     }
     if(taskVersionIsSet_) {
         val[utility::conversions::to_string_t("task_version")] = ModelBase::toJson(taskVersion_);
+    }
+    if(connectionManagementIsSet_) {
+        val[utility::conversions::to_string_t("connection_management")] = ModelBase::toJson(connectionManagement_);
     }
 
     return val;
@@ -373,6 +377,15 @@ bool JobDetailResp::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTaskVersion(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("connection_management"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("connection_management"));
+        if(!fieldValue.is_null())
+        {
+            ConnectionManagement refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setConnectionManagement(refVal);
         }
     }
     return ok;
@@ -923,6 +936,27 @@ bool JobDetailResp::taskVersionIsSet() const
 void JobDetailResp::unsettaskVersion()
 {
     taskVersionIsSet_ = false;
+}
+
+ConnectionManagement JobDetailResp::getConnectionManagement() const
+{
+    return connectionManagement_;
+}
+
+void JobDetailResp::setConnectionManagement(const ConnectionManagement& value)
+{
+    connectionManagement_ = value;
+    connectionManagementIsSet_ = true;
+}
+
+bool JobDetailResp::connectionManagementIsSet() const
+{
+    return connectionManagementIsSet_;
+}
+
+void JobDetailResp::unsetconnectionManagement()
+{
+    connectionManagementIsSet_ = false;
 }
 
 }

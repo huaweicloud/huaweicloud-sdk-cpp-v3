@@ -14,6 +14,7 @@ ThumbnailInfo::ThumbnailInfo()
 {
     sampleIsSet_ = false;
     dotsIsSet_ = false;
+    quantityIsSet_ = false;
     execDesc_ = "";
     execDescIsSet_ = false;
     thumbnailStatus_ = "";
@@ -35,6 +36,9 @@ web::json::value ThumbnailInfo::toJson() const
     }
     if(dotsIsSet_) {
         val[utility::conversions::to_string_t("dots")] = ModelBase::toJson(dots_);
+    }
+    if(quantityIsSet_) {
+        val[utility::conversions::to_string_t("quantity")] = ModelBase::toJson(quantity_);
     }
     if(execDescIsSet_) {
         val[utility::conversions::to_string_t("exec_desc")] = ModelBase::toJson(execDesc_);
@@ -65,6 +69,15 @@ bool ThumbnailInfo::fromJson(const web::json::value& val)
             std::vector<ThumbnailRsp> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDots(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("quantity"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("quantity"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<ThumbnailRsp> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setQuantity(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("exec_desc"))) {
@@ -129,6 +142,27 @@ bool ThumbnailInfo::dotsIsSet() const
 void ThumbnailInfo::unsetdots()
 {
     dotsIsSet_ = false;
+}
+
+std::vector<ThumbnailRsp>& ThumbnailInfo::getQuantity()
+{
+    return quantity_;
+}
+
+void ThumbnailInfo::setQuantity(const std::vector<ThumbnailRsp>& value)
+{
+    quantity_ = value;
+    quantityIsSet_ = true;
+}
+
+bool ThumbnailInfo::quantityIsSet() const
+{
+    return quantityIsSet_;
+}
+
+void ThumbnailInfo::unsetquantity()
+{
+    quantityIsSet_ = false;
 }
 
 std::string ThumbnailInfo::getExecDesc() const

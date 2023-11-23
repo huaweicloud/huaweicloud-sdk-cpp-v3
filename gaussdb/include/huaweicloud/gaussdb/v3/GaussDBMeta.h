@@ -95,6 +95,7 @@ public:
     static HttpRequestDef genRequestDefForShowInstanceMonitorExtend();
     static HttpRequestDef genRequestDefForShowIntelligentDiagnosisAbnormalCountOfInstances();
     static HttpRequestDef genRequestDefForShowIntelligentDiagnosisInstanceInfosPerMetric();
+    static HttpRequestDef genRequestDefForShowRestoreTables();
     static HttpRequestDef genRequestDefForShrinkGaussMySqlProxy();
     static HttpRequestDef genRequestDefForSwitchAccessControl();
     static HttpRequestDef genRequestDefForSwitchGaussMySqlConfiguration();

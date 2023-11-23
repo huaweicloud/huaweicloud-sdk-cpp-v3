@@ -1,0 +1,78 @@
+
+
+#include "huaweicloud/dds/v3/model/DeleteLtsConfigRequest.h"
+namespace HuaweiCloud {
+namespace Sdk {
+namespace Dds {
+namespace V3 {
+namespace Model {
+
+
+
+
+DeleteLtsConfigRequest::DeleteLtsConfigRequest()
+{
+    bodyIsSet_ = false;
+}
+
+DeleteLtsConfigRequest::~DeleteLtsConfigRequest() = default;
+
+void DeleteLtsConfigRequest::validate()
+{
+}
+
+web::json::value DeleteLtsConfigRequest::toJson() const
+{
+    web::json::value val = web::json::value::object();
+
+    if(bodyIsSet_) {
+        val[utility::conversions::to_string_t("body")] = ModelBase::toJson(body_);
+    }
+
+    return val;
+}
+bool DeleteLtsConfigRequest::fromJson(const web::json::value& val)
+{
+    bool ok = true;
+    
+    if(val.has_field(utility::conversions::to_string_t("body"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
+        if(!fieldValue.is_null())
+        {
+            DeleteLtsConfigRequestBody refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBody(refVal);
+        }
+    }
+    return ok;
+}
+
+
+DeleteLtsConfigRequestBody DeleteLtsConfigRequest::getBody() const
+{
+    return body_;
+}
+
+void DeleteLtsConfigRequest::setBody(const DeleteLtsConfigRequestBody& value)
+{
+    body_ = value;
+    bodyIsSet_ = true;
+}
+
+bool DeleteLtsConfigRequest::bodyIsSet() const
+{
+    return bodyIsSet_;
+}
+
+void DeleteLtsConfigRequest::unsetbody()
+{
+    bodyIsSet_ = false;
+}
+
+}
+}
+}
+}
+}
+
+

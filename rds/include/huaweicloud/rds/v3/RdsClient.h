@@ -107,6 +107,8 @@
 #include <huaweicloud/rds/v3/model/ListFlavorsResponse.h>
 #include <huaweicloud/rds/v3/model/ListHistoryDatabaseRequest.h>
 #include <huaweicloud/rds/v3/model/ListHistoryDatabaseResponse.h>
+#include <huaweicloud/rds/v3/model/ListInspectionHistoriesRequest.h>
+#include <huaweicloud/rds/v3/model/ListInspectionHistoriesResponse.h>
 #include <huaweicloud/rds/v3/model/ListInstanceDiagnosisRequest.h>
 #include <huaweicloud/rds/v3/model/ListInstanceDiagnosisResponse.h>
 #include <huaweicloud/rds/v3/model/ListInstanceParamHistoriesRequest.h>
@@ -162,6 +164,8 @@
 #include <huaweicloud/rds/v3/model/ListSslCertDownloadLinkResponse.h>
 #include <huaweicloud/rds/v3/model/ListStorageTypesRequest.h>
 #include <huaweicloud/rds/v3/model/ListStorageTypesResponse.h>
+#include <huaweicloud/rds/v3/model/ListUpgradeHistoriesRequest.h>
+#include <huaweicloud/rds/v3/model/ListUpgradeHistoriesResponse.h>
 #include <huaweicloud/rds/v3/model/ListXellogFilesRequest.h>
 #include <huaweicloud/rds/v3/model/ListXellogFilesResponse.h>
 #include <huaweicloud/rds/v3/model/MigrateFollowerRequest.h>
@@ -178,6 +182,7 @@
 #include <huaweicloud/rds/v3/model/PostgreSQLRestoreTableRequest.h>
 #include <huaweicloud/rds/v3/model/PostgresqlHbaConf.h>
 #include <huaweicloud/rds/v3/model/PostgresqlHbaHistory.h>
+#include <huaweicloud/rds/v3/model/PostgresqlPreCheckUpgradeMajorVersionReq.h>
 #include <huaweicloud/rds/v3/model/RecyclePolicyRequestBody.h>
 #include <huaweicloud/rds/v3/model/ResizeFlavorRequest.h>
 #include <huaweicloud/rds/v3/model/RestoreExistInstanceRequest.h>
@@ -219,6 +224,8 @@
 #include <huaweicloud/rds/v3/model/ShowAuditlogPolicyResponse.h>
 #include <huaweicloud/rds/v3/model/ShowAutoEnlargePolicyRequest.h>
 #include <huaweicloud/rds/v3/model/ShowAutoEnlargePolicyResponse.h>
+#include <huaweicloud/rds/v3/model/ShowAvailableVersionRequest.h>
+#include <huaweicloud/rds/v3/model/ShowAvailableVersionResponse.h>
 #include <huaweicloud/rds/v3/model/ShowBackupDownloadLinkRequest.h>
 #include <huaweicloud/rds/v3/model/ShowBackupDownloadLinkResponse.h>
 #include <huaweicloud/rds/v3/model/ShowBackupPolicyRequest.h>
@@ -245,6 +252,10 @@
 #include <huaweicloud/rds/v3/model/ShowReplicationStatusResponse.h>
 #include <huaweicloud/rds/v3/model/ShowSecondLevelMonitoringRequest.h>
 #include <huaweicloud/rds/v3/model/ShowSecondLevelMonitoringResponse.h>
+#include <huaweicloud/rds/v3/model/ShowTdeStatusRequest.h>
+#include <huaweicloud/rds/v3/model/ShowTdeStatusResponse.h>
+#include <huaweicloud/rds/v3/model/ShowUpgradeDbMajorVersionStatusRequest.h>
+#include <huaweicloud/rds/v3/model/ShowUpgradeDbMajorVersionStatusResponse.h>
 #include <huaweicloud/rds/v3/model/SimplifiedInstancesRequest.h>
 #include <huaweicloud/rds/v3/model/Single2Ha.h>
 #include <huaweicloud/rds/v3/model/SlowLogStatisticsForLtsRequest.h>
@@ -288,10 +299,18 @@
 #include <huaweicloud/rds/v3/model/UpdatePostgresqlInstanceAliasRequest.h>
 #include <huaweicloud/rds/v3/model/UpdatePostgresqlInstanceAliasResponse.h>
 #include <huaweicloud/rds/v3/model/UpdateRdsInstanceAliasRequest.h>
+#include <huaweicloud/rds/v3/model/UpdateTdeStatusRequest.h>
+#include <huaweicloud/rds/v3/model/UpdateTdeStatusRequestBody.h>
+#include <huaweicloud/rds/v3/model/UpdateTdeStatusResponse.h>
+#include <huaweicloud/rds/v3/model/UpgradeDbMajorVersionPreCheckRequest.h>
+#include <huaweicloud/rds/v3/model/UpgradeDbMajorVersionPreCheckResponse.h>
+#include <huaweicloud/rds/v3/model/UpgradeDbMajorVersionRequest.h>
+#include <huaweicloud/rds/v3/model/UpgradeDbMajorVersionResponse.h>
 #include <huaweicloud/rds/v3/model/UpgradeDbVersionNewRequest.h>
 #include <huaweicloud/rds/v3/model/UpgradeDbVersionNewResponse.h>
 #include <huaweicloud/rds/v3/model/UpgradeDbVersionRequest.h>
 #include <huaweicloud/rds/v3/model/UpgradeDbVersionResponse.h>
+#include <huaweicloud/rds/v3/model/UpgradePgMajorVersion.h>
 #include <string>
 #include <vector>
 #include <cpprest/details/basic_types.h>
@@ -776,6 +795,14 @@ public:
     std::shared_ptr<ListHistoryDatabaseResponse> listHistoryDatabase(
         ListHistoryDatabaseRequest &request
     );
+    // 
+    //
+    // 查询实例大版本升级检查历史。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListInspectionHistoriesResponse> listInspectionHistories(
+        ListInspectionHistoriesRequest &request
+    );
     // 获取诊断后的实例数量
     //
     // 获取诊断后的实例数量
@@ -997,6 +1024,14 @@ public:
     std::shared_ptr<ListStorageTypesResponse> listStorageTypes(
         ListStorageTypesRequest &request
     );
+    // 
+    //
+    // 查询实例大版本升级历史信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListUpgradeHistoriesResponse> listUpgradeHistories(
+        ListUpgradeHistoriesRequest &request
+    );
     // 查询扩展日志文件列表
     //
     // 查询扩展日志文件列表。
@@ -1146,6 +1181,14 @@ public:
     std::shared_ptr<ShowAutoEnlargePolicyResponse> showAutoEnlargePolicy(
         ShowAutoEnlargePolicyRequest &request
     );
+    // 
+    //
+    // 查询实例可升级的目标版本
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowAvailableVersionResponse> showAvailableVersion(
+        ShowAvailableVersionRequest &request
+    );
     // 获取备份下载链接
     //
     // 获取备份下载链接。
@@ -1249,6 +1292,22 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowSecondLevelMonitoringResponse> showSecondLevelMonitoring(
         ShowSecondLevelMonitoringRequest &request
+    );
+    // 根据实例id查询sqlserver TDE状态
+    //
+    // 根据实例id查询sqlserver TDE状态
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowTdeStatusResponse> showTdeStatus(
+        ShowTdeStatusRequest &request
+    );
+    // 
+    //
+    // 查询大版本检查状态或升级状态。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowUpgradeDbMajorVersionStatusResponse> showUpgradeDbMajorVersionStatus(
+        ShowUpgradeDbMajorVersionStatusRequest &request
     );
     // 手动倒换主备
     //
@@ -1385,6 +1444,30 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdatePostgresqlInstanceAliasResponse> updatePostgresqlInstanceAlias(
         UpdatePostgresqlInstanceAliasRequest &request
+    );
+    // sqlserverTDE开关
+    //
+    // sqlserverTDE开关。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateTdeStatusResponse> updateTdeStatus(
+        UpdateTdeStatusRequest &request
+    );
+    // 
+    //
+    // PostgreSQL数据库升级大版本。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpgradeDbMajorVersionResponse> upgradeDbMajorVersion(
+        UpgradeDbMajorVersionRequest &request
+    );
+    // 
+    //
+    // 大版本升级前进行升级检查。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpgradeDbMajorVersionPreCheckResponse> upgradeDbMajorVersionPreCheck(
+        UpgradeDbMajorVersionPreCheckRequest &request
     );
     // 升级内核小版本
     //

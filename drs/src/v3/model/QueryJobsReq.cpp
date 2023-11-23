@@ -31,6 +31,9 @@ QueryJobsReq::QueryJobsReq()
     status_ = "";
     statusIsSet_ = false;
     tagsIsSet_ = false;
+    instanceIdsIsSet_ = false;
+    instanceIp_ = "";
+    instanceIpIsSet_ = false;
 }
 
 QueryJobsReq::~QueryJobsReq() = default;
@@ -72,6 +75,12 @@ web::json::value QueryJobsReq::toJson() const
     }
     if(tagsIsSet_) {
         val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
+    }
+    if(instanceIdsIsSet_) {
+        val[utility::conversions::to_string_t("instance_ids")] = ModelBase::toJson(instanceIds_);
+    }
+    if(instanceIpIsSet_) {
+        val[utility::conversions::to_string_t("instance_ip")] = ModelBase::toJson(instanceIp_);
     }
 
     return val;
@@ -168,6 +177,24 @@ bool QueryJobsReq::fromJson(const web::json::value& val)
             std::map<std::string, std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTags(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("instance_ids"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("instance_ids"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setInstanceIds(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("instance_ip"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("instance_ip"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setInstanceIp(refVal);
         }
     }
     return ok;
@@ -382,6 +409,48 @@ bool QueryJobsReq::tagsIsSet() const
 void QueryJobsReq::unsettags()
 {
     tagsIsSet_ = false;
+}
+
+std::vector<std::string>& QueryJobsReq::getInstanceIds()
+{
+    return instanceIds_;
+}
+
+void QueryJobsReq::setInstanceIds(const std::vector<std::string>& value)
+{
+    instanceIds_ = value;
+    instanceIdsIsSet_ = true;
+}
+
+bool QueryJobsReq::instanceIdsIsSet() const
+{
+    return instanceIdsIsSet_;
+}
+
+void QueryJobsReq::unsetinstanceIds()
+{
+    instanceIdsIsSet_ = false;
+}
+
+std::string QueryJobsReq::getInstanceIp() const
+{
+    return instanceIp_;
+}
+
+void QueryJobsReq::setInstanceIp(const std::string& value)
+{
+    instanceIp_ = value;
+    instanceIpIsSet_ = true;
+}
+
+bool QueryJobsReq::instanceIpIsSet() const
+{
+    return instanceIpIsSet_;
+}
+
+void QueryJobsReq::unsetinstanceIp()
+{
+    instanceIpIsSet_ = false;
 }
 
 }

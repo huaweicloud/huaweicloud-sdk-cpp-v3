@@ -36,6 +36,7 @@ IdCardResult::IdCardResult()
     detectReproduceResultIsSet_ = false;
     detectCopyResult_ = false;
     detectCopyResultIsSet_ = false;
+    portraitLocationIsSet_ = false;
 }
 
 IdCardResult::~IdCardResult() = default;
@@ -86,6 +87,9 @@ web::json::value IdCardResult::toJson() const
     }
     if(detectCopyResultIsSet_) {
         val[utility::conversions::to_string_t("detect_copy_result")] = ModelBase::toJson(detectCopyResult_);
+    }
+    if(portraitLocationIsSet_) {
+        val[utility::conversions::to_string_t("portrait_location")] = ModelBase::toJson(portraitLocation_);
     }
 
     return val;
@@ -209,6 +213,15 @@ bool IdCardResult::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDetectCopyResult(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("portrait_location"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("portrait_location"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::vector<int32_t>> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPortraitLocation(refVal);
         }
     }
     return ok;
@@ -486,6 +499,27 @@ bool IdCardResult::detectCopyResultIsSet() const
 void IdCardResult::unsetdetectCopyResult()
 {
     detectCopyResultIsSet_ = false;
+}
+
+std::vector<std::vector<int32_t>>& IdCardResult::getPortraitLocation()
+{
+    return portraitLocation_;
+}
+
+void IdCardResult::setPortraitLocation(const std::vector<std::vector<int32_t>>& value)
+{
+    portraitLocation_ = value;
+    portraitLocationIsSet_ = true;
+}
+
+bool IdCardResult::portraitLocationIsSet() const
+{
+    return portraitLocationIsSet_;
+}
+
+void IdCardResult::unsetportraitLocation()
+{
+    portraitLocationIsSet_ = false;
 }
 
 }

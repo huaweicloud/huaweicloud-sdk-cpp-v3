@@ -86,7 +86,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 数据库实例类型。 GaussDB(for Cassandra)集群类型为\&quot;Cluster\&quot;。 GaussDB(for Mongo)副本集类型为\&quot;ReplicaSet\&quot;。 GaussDB(for Mongo)集群类型为\&quot;Sharding\&quot;。 GaussDB(for Influx)集群类型为\&quot;Cluster\&quot;。 GaussDB(for Influx)单节点类型为\&quot;InfluxdbSingle\&quot;。
+    /// 数据库实例类型。 GeminiDB Cassandra集群类型为\&quot;Cluster\&quot;。 GeminiDB Mongo副本集类型为\&quot;ReplicaSet\&quot;。 GeminiDB Mongo集群类型为\&quot;Sharding\&quot;。 GeminiDB Influx集群类型为\&quot;Cluster\&quot;。 GeminiDB Influx单节点类型为\&quot;InfluxdbSingle\&quot;。 GeminiDB Redis集群类型为“Cluster”。 GeminiDB Redis主备类型为“Replication”。
     /// </summary>
 
     std::string getMode() const;

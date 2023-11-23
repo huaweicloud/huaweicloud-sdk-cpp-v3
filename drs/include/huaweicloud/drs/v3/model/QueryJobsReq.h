@@ -130,6 +130,24 @@ public:
     void unsettags();
     void setTags(const std::map<std::string, std::string>& value);
 
+    /// <summary>
+    /// 数据库实例ID列表，最多支持10个
+    /// </summary>
+
+    std::vector<std::string>& getInstanceIds();
+    bool instanceIdsIsSet() const;
+    void unsetinstanceIds();
+    void setInstanceIds(const std::vector<std::string>& value);
+
+    /// <summary>
+    /// DRS绑定数据库实例IP
+    /// </summary>
+
+    std::string getInstanceIp() const;
+    bool instanceIpIsSet() const;
+    void unsetinstanceIp();
+    void setInstanceIp(const std::string& value);
+
 
 protected:
     int32_t curPage_;
@@ -152,6 +170,10 @@ protected:
     bool statusIsSet_;
     std::map<std::string, std::string> tags_;
     bool tagsIsSet_;
+    std::vector<std::string> instanceIds_;
+    bool instanceIdsIsSet_;
+    std::string instanceIp_;
+    bool instanceIpIsSet_;
 
 };
 

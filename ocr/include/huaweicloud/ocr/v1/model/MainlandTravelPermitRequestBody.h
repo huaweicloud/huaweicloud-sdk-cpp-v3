@@ -57,7 +57,7 @@ public:
     void setUrl(const std::string& value);
 
     /// <summary>
-    /// 是否返回头像内容开关，可选值如下所示： - true: 返回身份证头像照片的 base64 编码 - false: 不返回身份证头像照片的 base64 编码 未传入该参数时默认为“false”，即不返回身份证头像照片的 base64 编码。 
+    /// 是否返回头像内容开关，可选值如下所示： - true: 返回通行证头像照片的 base64 编码 - false: 不返回通行证头像照片的 base64 编码 未传入该参数时默认为“false”，即不返回身份证头像照片的 base64 编码。 
     /// </summary>
 
     bool isReturnPortraitImage() const;
@@ -66,7 +66,7 @@ public:
     void setReturnPortraitImage(bool value);
 
     /// <summary>
-    /// 是否返回头像坐标的开关，可选值如下所示： - true: 返回身份证头像的位置坐标 - false: 不返回身份证头像的位置坐标 未传入该参数时默认为“false”，即不返回身份证的头像坐标。 
+    /// 是否返回头像坐标的开关，可选值如下所示： - true: 返回通行证头像的位置坐标 - false: 不返回通行证头像的位置坐标 未传入该参数时默认为“false”，即不返回身份证的头像坐标。 
     /// </summary>
 
     bool isReturnPortraitLocation() const;

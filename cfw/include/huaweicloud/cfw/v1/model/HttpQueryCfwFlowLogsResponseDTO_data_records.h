@@ -69,19 +69,19 @@ public:
     /// 开始时间
     /// </summary>
 
-    int32_t getStartTime() const;
+    int64_t getStartTime() const;
     bool startTimeIsSet() const;
     void unsetstartTime();
-    void setStartTime(int32_t value);
+    void setStartTime(int64_t value);
 
     /// <summary>
     /// 结束时间
     /// </summary>
 
-    int32_t getEndTime() const;
+    int64_t getEndTime() const;
     bool endTimeIsSet() const;
     void unsetendTime();
-    void setEndTime(int32_t value);
+    void setEndTime(int64_t value);
 
     /// <summary>
     /// 文档ID
@@ -105,10 +105,10 @@ public:
     /// 源端口
     /// </summary>
 
-    std::string getSrcPort() const;
+    int32_t getSrcPort() const;
     bool srcPortIsSet() const;
     void unsetsrcPort();
-    void setSrcPort(const std::string& value);
+    void setSrcPort(int32_t value);
 
     /// <summary>
     /// 目的IP
@@ -132,10 +132,10 @@ public:
     /// 目的端口
     /// </summary>
 
-    std::string getDstPort() const;
+    int32_t getDstPort() const;
     bool dstPortIsSet() const;
     void unsetdstPort();
-    void setDstPort(const std::string& value);
+    void setDstPort(int32_t value);
 
     /// <summary>
     /// 协议类型:TCP为6,UDP为17,ICMP为1,ICMPV6为58,ANY为-1,手动类型不为空，自动类型为空
@@ -163,21 +163,21 @@ protected:
     bool directionIsSet_;
     int32_t packets_;
     bool packetsIsSet_;
-    int32_t startTime_;
+    int64_t startTime_;
     bool startTimeIsSet_;
-    int32_t endTime_;
+    int64_t endTime_;
     bool endTimeIsSet_;
     std::string logId_;
     bool logIdIsSet_;
     std::string srcIp_;
     bool srcIpIsSet_;
-    std::string srcPort_;
+    int32_t srcPort_;
     bool srcPortIsSet_;
     std::string dstIp_;
     bool dstIpIsSet_;
     std::string app_;
     bool appIsSet_;
-    std::string dstPort_;
+    int32_t dstPort_;
     bool dstPortIsSet_;
     std::string protocol_;
     bool protocolIsSet_;

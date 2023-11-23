@@ -10,7 +10,6 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/cfw/v1/model/PacketMessage.h>
-#include <huaweicloud/cfw/v1/model/Packet.h>
 #include <string>
 #include <vector>
 
@@ -63,10 +62,10 @@ public:
     /// 事件时间
     /// </summary>
 
-    std::string getEventTime() const;
+    int64_t getEventTime() const;
     bool eventTimeIsSet() const;
     void unseteventTime();
-    void setEventTime(const std::string& value);
+    void setEventTime(int64_t value);
 
     /// <summary>
     /// 攻击类型
@@ -117,10 +116,10 @@ public:
     /// 攻击规则id
     /// </summary>
 
-    int32_t getAttackRuleId() const;
+    std::string getAttackRuleId() const;
     bool attackRuleIdIsSet() const;
     void unsetattackRuleId();
-    void setAttackRuleId(int32_t value);
+    void setAttackRuleId(const std::string& value);
 
     /// <summary>
     /// 命中时间
@@ -186,13 +185,13 @@ public:
     void setProtocol(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 攻击日志报文
     /// </summary>
 
-    Packet getPacket() const;
+    std::string getPacket() const;
     bool packetIsSet() const;
     void unsetpacket();
-    void setPacket(const Packet& value);
+    void setPacket(const std::string& value);
 
     /// <summary>
     /// 应用协议
@@ -263,7 +262,7 @@ protected:
     bool directionIsSet_;
     std::string action_;
     bool actionIsSet_;
-    std::string eventTime_;
+    int64_t eventTime_;
     bool eventTimeIsSet_;
     std::string attackType_;
     bool attackTypeIsSet_;
@@ -275,7 +274,7 @@ protected:
     bool sourceIsSet_;
     int64_t packetLength_;
     bool packetLengthIsSet_;
-    int32_t attackRuleId_;
+    std::string attackRuleId_;
     bool attackRuleIdIsSet_;
     int32_t hitTime_;
     bool hitTimeIsSet_;
@@ -291,7 +290,7 @@ protected:
     bool dstPortIsSet_;
     std::string protocol_;
     bool protocolIsSet_;
-    Packet packet_;
+    std::string packet_;
     bool packetIsSet_;
     std::string app_;
     bool appIsSet_;

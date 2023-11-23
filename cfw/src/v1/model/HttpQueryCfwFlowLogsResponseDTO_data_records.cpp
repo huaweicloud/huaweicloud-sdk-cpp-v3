@@ -18,21 +18,21 @@ HttpQueryCfwFlowLogsResponseDTO_data_records::HttpQueryCfwFlowLogsResponseDTO_da
     directionIsSet_ = false;
     packets_ = 0;
     packetsIsSet_ = false;
-    startTime_ = 0;
+    startTime_ = 0L;
     startTimeIsSet_ = false;
-    endTime_ = 0;
+    endTime_ = 0L;
     endTimeIsSet_ = false;
     logId_ = "";
     logIdIsSet_ = false;
     srcIp_ = "";
     srcIpIsSet_ = false;
-    srcPort_ = "";
+    srcPort_ = 0;
     srcPortIsSet_ = false;
     dstIp_ = "";
     dstIpIsSet_ = false;
     app_ = "";
     appIsSet_ = false;
-    dstPort_ = "";
+    dstPort_ = 0;
     dstPortIsSet_ = false;
     protocol_ = "";
     protocolIsSet_ = false;
@@ -127,7 +127,7 @@ bool HttpQueryCfwFlowLogsResponseDTO_data_records::fromJson(const web::json::val
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("start_time"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setStartTime(refVal);
         }
@@ -136,7 +136,7 @@ bool HttpQueryCfwFlowLogsResponseDTO_data_records::fromJson(const web::json::val
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("end_time"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEndTime(refVal);
         }
@@ -163,7 +163,7 @@ bool HttpQueryCfwFlowLogsResponseDTO_data_records::fromJson(const web::json::val
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("src_port"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSrcPort(refVal);
         }
@@ -190,7 +190,7 @@ bool HttpQueryCfwFlowLogsResponseDTO_data_records::fromJson(const web::json::val
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("dst_port"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDstPort(refVal);
         }
@@ -280,12 +280,12 @@ void HttpQueryCfwFlowLogsResponseDTO_data_records::unsetpackets()
     packetsIsSet_ = false;
 }
 
-int32_t HttpQueryCfwFlowLogsResponseDTO_data_records::getStartTime() const
+int64_t HttpQueryCfwFlowLogsResponseDTO_data_records::getStartTime() const
 {
     return startTime_;
 }
 
-void HttpQueryCfwFlowLogsResponseDTO_data_records::setStartTime(int32_t value)
+void HttpQueryCfwFlowLogsResponseDTO_data_records::setStartTime(int64_t value)
 {
     startTime_ = value;
     startTimeIsSet_ = true;
@@ -301,12 +301,12 @@ void HttpQueryCfwFlowLogsResponseDTO_data_records::unsetstartTime()
     startTimeIsSet_ = false;
 }
 
-int32_t HttpQueryCfwFlowLogsResponseDTO_data_records::getEndTime() const
+int64_t HttpQueryCfwFlowLogsResponseDTO_data_records::getEndTime() const
 {
     return endTime_;
 }
 
-void HttpQueryCfwFlowLogsResponseDTO_data_records::setEndTime(int32_t value)
+void HttpQueryCfwFlowLogsResponseDTO_data_records::setEndTime(int64_t value)
 {
     endTime_ = value;
     endTimeIsSet_ = true;
@@ -364,12 +364,12 @@ void HttpQueryCfwFlowLogsResponseDTO_data_records::unsetsrcIp()
     srcIpIsSet_ = false;
 }
 
-std::string HttpQueryCfwFlowLogsResponseDTO_data_records::getSrcPort() const
+int32_t HttpQueryCfwFlowLogsResponseDTO_data_records::getSrcPort() const
 {
     return srcPort_;
 }
 
-void HttpQueryCfwFlowLogsResponseDTO_data_records::setSrcPort(const std::string& value)
+void HttpQueryCfwFlowLogsResponseDTO_data_records::setSrcPort(int32_t value)
 {
     srcPort_ = value;
     srcPortIsSet_ = true;
@@ -427,12 +427,12 @@ void HttpQueryCfwFlowLogsResponseDTO_data_records::unsetapp()
     appIsSet_ = false;
 }
 
-std::string HttpQueryCfwFlowLogsResponseDTO_data_records::getDstPort() const
+int32_t HttpQueryCfwFlowLogsResponseDTO_data_records::getDstPort() const
 {
     return dstPort_;
 }
 
-void HttpQueryCfwFlowLogsResponseDTO_data_records::setDstPort(const std::string& value)
+void HttpQueryCfwFlowLogsResponseDTO_data_records::setDstPort(int32_t value)
 {
     dstPort_ = value;
     dstPortIsSet_ = true;

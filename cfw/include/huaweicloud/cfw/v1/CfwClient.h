@@ -21,6 +21,8 @@
 #include <huaweicloud/cfw/v1/model/AddDomainSetResponse.h>
 #include <huaweicloud/cfw/v1/model/AddDomainsRequest.h>
 #include <huaweicloud/cfw/v1/model/AddDomainsResponse.h>
+#include <huaweicloud/cfw/v1/model/AddLogConfigRequest.h>
+#include <huaweicloud/cfw/v1/model/AddLogConfigResponse.h>
 #include <huaweicloud/cfw/v1/model/AddServiceItemsRequest.h>
 #include <huaweicloud/cfw/v1/model/AddServiceItemsResponse.h>
 #include <huaweicloud/cfw/v1/model/AddServiceItemsUsingPOSTRequestBody.h>
@@ -34,6 +36,9 @@
 #include <huaweicloud/cfw/v1/model/ChangeEastWestFirewallStatusRequest.h>
 #include <huaweicloud/cfw/v1/model/ChangeEastWestFirewallStatusResponse.h>
 #include <huaweicloud/cfw/v1/model/ChangeProtectStatusRequestBody.h>
+#include <huaweicloud/cfw/v1/model/CreateEastWestFirewallRequest.h>
+#include <huaweicloud/cfw/v1/model/CreateEastWestFirewallRequestBody.h>
+#include <huaweicloud/cfw/v1/model/CreateEastWestFirewallResponse.h>
 #include <huaweicloud/cfw/v1/model/DeleteAddressItemRequest.h>
 #include <huaweicloud/cfw/v1/model/DeleteAddressItemResponse.h>
 #include <huaweicloud/cfw/v1/model/DeleteAddressItemsInfoDto.h>
@@ -79,6 +84,8 @@
 #include <huaweicloud/cfw/v1/model/ListFirewallListResponse.h>
 #include <huaweicloud/cfw/v1/model/ListFlowLogsRequest.h>
 #include <huaweicloud/cfw/v1/model/ListFlowLogsResponse.h>
+#include <huaweicloud/cfw/v1/model/ListLogConfigRequest.h>
+#include <huaweicloud/cfw/v1/model/ListLogConfigResponse.h>
 #include <huaweicloud/cfw/v1/model/ListProtectedVpcsRequest.h>
 #include <huaweicloud/cfw/v1/model/ListProtectedVpcsResponse.h>
 #include <huaweicloud/cfw/v1/model/ListServiceItemsRequest.h>
@@ -87,6 +94,7 @@
 #include <huaweicloud/cfw/v1/model/ListServiceSetDetailResponse.h>
 #include <huaweicloud/cfw/v1/model/ListServiceSetsRequest.h>
 #include <huaweicloud/cfw/v1/model/ListServiceSetsResponse.h>
+#include <huaweicloud/cfw/v1/model/LogConfigDto.h>
 #include <huaweicloud/cfw/v1/model/QueryFireWallInstanceDto.h>
 #include <huaweicloud/cfw/v1/model/UpdateAddressSetDto.h>
 #include <huaweicloud/cfw/v1/model/UpdateAddressSetRequest.h>
@@ -100,6 +108,8 @@
 #include <huaweicloud/cfw/v1/model/UpdateDomainSetInfoDto.h>
 #include <huaweicloud/cfw/v1/model/UpdateDomainSetRequest.h>
 #include <huaweicloud/cfw/v1/model/UpdateDomainSetResponse.h>
+#include <huaweicloud/cfw/v1/model/UpdateLogConfigRequest.h>
+#include <huaweicloud/cfw/v1/model/UpdateLogConfigResponse.h>
 #include <huaweicloud/cfw/v1/model/UpdateServiceSetRequest.h>
 #include <huaweicloud/cfw/v1/model/UpdateServiceSetResponse.h>
 #include <huaweicloud/cfw/v1/model/UpdateServiceSetUsingPUTRequestBody.h>
@@ -205,6 +215,7 @@ public:
     );
     // 添加域名组
     //
+    // 添加域名组
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<AddDomainSetResponse> addDomainSet(
@@ -217,6 +228,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<AddDomainsResponse> addDomains(
         AddDomainsRequest &request
+    );
+    // 创建日志配置
+    //
+    // 创建日志配置
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<AddLogConfigResponse> addLogConfig(
+        AddLogConfigRequest &request
     );
     // 新建服务成员
     //
@@ -236,6 +255,7 @@ public:
     );
     // 批量删除地址组成员
     //
+    // 批量删除地址组成员
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<BatchDeleteAddressItemsResponse> batchDeleteAddressItems(
@@ -243,6 +263,7 @@ public:
     );
     // 批量删除服务组成员信息
     //
+    // 批量删除服务组成员信息
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<BatchDeleteServiceItemsResponse> batchDeleteServiceItems(
@@ -255,6 +276,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ChangeEastWestFirewallStatusResponse> changeEastWestFirewallStatus(
         ChangeEastWestFirewallStatusRequest &request
+    );
+    // 创建东西向防火墙
+    //
+    // 创建东西向防火墙
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateEastWestFirewallResponse> createEastWestFirewall(
+        CreateEastWestFirewallRequest &request
     );
     // 删除地址组成员
     //
@@ -282,6 +311,7 @@ public:
     );
     // 删除域名组
     //
+    // 删除域名组
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteDomainSetResponse> deleteDomainSet(
@@ -423,6 +453,14 @@ public:
     std::shared_ptr<ListFlowLogsResponse> listFlowLogs(
         ListFlowLogsRequest &request
     );
+    // 获取日志配置
+    //
+    // 获取日志配置
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListLogConfigResponse> listLogConfig(
+        ListLogConfigRequest &request
+    );
     // 查询防护VPC数
     //
     // 查询防护vpc信息
@@ -481,10 +519,19 @@ public:
     );
     // 更新域名组
     //
+    // 更新域名组
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateDomainSetResponse> updateDomainSet(
         UpdateDomainSetRequest &request
+    );
+    // 更新日志配置
+    //
+    // 更新日志配置
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateLogConfigResponse> updateLogConfig(
+        UpdateLogConfigRequest &request
     );
     // 修改服务组
     //
@@ -513,6 +560,7 @@ public:
     );
     // 批量更新规则动作
     //
+    // 批量更新规则动作
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<BatchUpdateAclRuleActionsResponse> batchUpdateAclRuleActions(
@@ -552,6 +600,7 @@ public:
     );
     // 查询规则标签
     //
+    // 查询规则标签
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListRuleAclTagsResponse> listRuleAclTags(
@@ -576,7 +625,7 @@ public:
 
     // 弹性IP开启关闭
     //
-    // 开启关闭EIP,客户购买EIP后首次开启EIP防护前需使用ListEips同步EIP资产，sync字段设置为1。
+    // 开启关闭EIP，客户购买EIP后首次开启EIP防护前需使用ListEips同步EIP资产，sync字段设置为1。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ChangeEipStatusResponse> changeEipStatus(

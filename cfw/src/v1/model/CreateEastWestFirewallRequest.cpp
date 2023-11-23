@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/cfw/v1/model/ChangeIpsSwitchStatusRequest.h"
+#include "huaweicloud/cfw/v1/model/CreateEastWestFirewallRequest.h"
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -10,24 +10,22 @@ namespace Model {
 
 
 
-ChangeIpsSwitchStatusRequest::ChangeIpsSwitchStatusRequest()
+CreateEastWestFirewallRequest::CreateEastWestFirewallRequest()
 {
     enterpriseProjectId_ = "";
     enterpriseProjectIdIsSet_ = false;
     fwInstanceId_ = "";
     fwInstanceIdIsSet_ = false;
-    xLanguage_ = "";
-    xLanguageIsSet_ = false;
     bodyIsSet_ = false;
 }
 
-ChangeIpsSwitchStatusRequest::~ChangeIpsSwitchStatusRequest() = default;
+CreateEastWestFirewallRequest::~CreateEastWestFirewallRequest() = default;
 
-void ChangeIpsSwitchStatusRequest::validate()
+void CreateEastWestFirewallRequest::validate()
 {
 }
 
-web::json::value ChangeIpsSwitchStatusRequest::toJson() const
+web::json::value CreateEastWestFirewallRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -37,16 +35,13 @@ web::json::value ChangeIpsSwitchStatusRequest::toJson() const
     if(fwInstanceIdIsSet_) {
         val[utility::conversions::to_string_t("fw_instance_id")] = ModelBase::toJson(fwInstanceId_);
     }
-    if(xLanguageIsSet_) {
-        val[utility::conversions::to_string_t("X-Language")] = ModelBase::toJson(xLanguage_);
-    }
     if(bodyIsSet_) {
         val[utility::conversions::to_string_t("body")] = ModelBase::toJson(body_);
     }
 
     return val;
 }
-bool ChangeIpsSwitchStatusRequest::fromJson(const web::json::value& val)
+bool CreateEastWestFirewallRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -68,20 +63,11 @@ bool ChangeIpsSwitchStatusRequest::fromJson(const web::json::value& val)
             setFwInstanceId(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("X-Language"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Language"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setXLanguage(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("body"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
         if(!fieldValue.is_null())
         {
-            IpsSwitchDTO refVal;
+            CreateEastWestFirewallRequestBody refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBody(refVal);
         }
@@ -90,86 +76,65 @@ bool ChangeIpsSwitchStatusRequest::fromJson(const web::json::value& val)
 }
 
 
-std::string ChangeIpsSwitchStatusRequest::getEnterpriseProjectId() const
+std::string CreateEastWestFirewallRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;
 }
 
-void ChangeIpsSwitchStatusRequest::setEnterpriseProjectId(const std::string& value)
+void CreateEastWestFirewallRequest::setEnterpriseProjectId(const std::string& value)
 {
     enterpriseProjectId_ = value;
     enterpriseProjectIdIsSet_ = true;
 }
 
-bool ChangeIpsSwitchStatusRequest::enterpriseProjectIdIsSet() const
+bool CreateEastWestFirewallRequest::enterpriseProjectIdIsSet() const
 {
     return enterpriseProjectIdIsSet_;
 }
 
-void ChangeIpsSwitchStatusRequest::unsetenterpriseProjectId()
+void CreateEastWestFirewallRequest::unsetenterpriseProjectId()
 {
     enterpriseProjectIdIsSet_ = false;
 }
 
-std::string ChangeIpsSwitchStatusRequest::getFwInstanceId() const
+std::string CreateEastWestFirewallRequest::getFwInstanceId() const
 {
     return fwInstanceId_;
 }
 
-void ChangeIpsSwitchStatusRequest::setFwInstanceId(const std::string& value)
+void CreateEastWestFirewallRequest::setFwInstanceId(const std::string& value)
 {
     fwInstanceId_ = value;
     fwInstanceIdIsSet_ = true;
 }
 
-bool ChangeIpsSwitchStatusRequest::fwInstanceIdIsSet() const
+bool CreateEastWestFirewallRequest::fwInstanceIdIsSet() const
 {
     return fwInstanceIdIsSet_;
 }
 
-void ChangeIpsSwitchStatusRequest::unsetfwInstanceId()
+void CreateEastWestFirewallRequest::unsetfwInstanceId()
 {
     fwInstanceIdIsSet_ = false;
 }
 
-std::string ChangeIpsSwitchStatusRequest::getXLanguage() const
-{
-    return xLanguage_;
-}
-
-void ChangeIpsSwitchStatusRequest::setXLanguage(const std::string& value)
-{
-    xLanguage_ = value;
-    xLanguageIsSet_ = true;
-}
-
-bool ChangeIpsSwitchStatusRequest::xLanguageIsSet() const
-{
-    return xLanguageIsSet_;
-}
-
-void ChangeIpsSwitchStatusRequest::unsetxLanguage()
-{
-    xLanguageIsSet_ = false;
-}
-
-IpsSwitchDTO ChangeIpsSwitchStatusRequest::getBody() const
+CreateEastWestFirewallRequestBody CreateEastWestFirewallRequest::getBody() const
 {
     return body_;
 }
 
-void ChangeIpsSwitchStatusRequest::setBody(const IpsSwitchDTO& value)
+void CreateEastWestFirewallRequest::setBody(const CreateEastWestFirewallRequestBody& value)
 {
     body_ = value;
     bodyIsSet_ = true;
 }
 
-bool ChangeIpsSwitchStatusRequest::bodyIsSet() const
+bool CreateEastWestFirewallRequest::bodyIsSet() const
 {
     return bodyIsSet_;
 }
 
-void ChangeIpsSwitchStatusRequest::unsetbody()
+void CreateEastWestFirewallRequest::unsetbody()
 {
     bodyIsSet_ = false;
 }

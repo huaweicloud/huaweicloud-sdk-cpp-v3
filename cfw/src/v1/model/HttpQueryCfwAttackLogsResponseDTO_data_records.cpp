@@ -16,7 +16,7 @@ HttpQueryCfwAttackLogsResponseDTO_data_records::HttpQueryCfwAttackLogsResponseDT
     directionIsSet_ = false;
     action_ = "";
     actionIsSet_ = false;
-    eventTime_ = "";
+    eventTime_ = 0L;
     eventTimeIsSet_ = false;
     attackType_ = "";
     attackTypeIsSet_ = false;
@@ -28,7 +28,7 @@ HttpQueryCfwAttackLogsResponseDTO_data_records::HttpQueryCfwAttackLogsResponseDT
     sourceIsSet_ = false;
     packetLength_ = 0L;
     packetLengthIsSet_ = false;
-    attackRuleId_ = 0;
+    attackRuleId_ = "";
     attackRuleIdIsSet_ = false;
     hitTime_ = 0;
     hitTimeIsSet_ = false;
@@ -44,6 +44,7 @@ HttpQueryCfwAttackLogsResponseDTO_data_records::HttpQueryCfwAttackLogsResponseDT
     dstPortIsSet_ = false;
     protocol_ = "";
     protocolIsSet_ = false;
+    packet_ = "";
     packetIsSet_ = false;
     app_ = "";
     appIsSet_ = false;
@@ -171,7 +172,7 @@ bool HttpQueryCfwAttackLogsResponseDTO_data_records::fromJson(const web::json::v
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("event_time"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEventTime(refVal);
         }
@@ -225,7 +226,7 @@ bool HttpQueryCfwAttackLogsResponseDTO_data_records::fromJson(const web::json::v
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("attack_rule_id"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAttackRuleId(refVal);
         }
@@ -297,7 +298,7 @@ bool HttpQueryCfwAttackLogsResponseDTO_data_records::fromJson(const web::json::v
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("packet"));
         if(!fieldValue.is_null())
         {
-            Packet refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPacket(refVal);
         }
@@ -411,12 +412,12 @@ void HttpQueryCfwAttackLogsResponseDTO_data_records::unsetaction()
     actionIsSet_ = false;
 }
 
-std::string HttpQueryCfwAttackLogsResponseDTO_data_records::getEventTime() const
+int64_t HttpQueryCfwAttackLogsResponseDTO_data_records::getEventTime() const
 {
     return eventTime_;
 }
 
-void HttpQueryCfwAttackLogsResponseDTO_data_records::setEventTime(const std::string& value)
+void HttpQueryCfwAttackLogsResponseDTO_data_records::setEventTime(int64_t value)
 {
     eventTime_ = value;
     eventTimeIsSet_ = true;
@@ -537,12 +538,12 @@ void HttpQueryCfwAttackLogsResponseDTO_data_records::unsetpacketLength()
     packetLengthIsSet_ = false;
 }
 
-int32_t HttpQueryCfwAttackLogsResponseDTO_data_records::getAttackRuleId() const
+std::string HttpQueryCfwAttackLogsResponseDTO_data_records::getAttackRuleId() const
 {
     return attackRuleId_;
 }
 
-void HttpQueryCfwAttackLogsResponseDTO_data_records::setAttackRuleId(int32_t value)
+void HttpQueryCfwAttackLogsResponseDTO_data_records::setAttackRuleId(const std::string& value)
 {
     attackRuleId_ = value;
     attackRuleIdIsSet_ = true;
@@ -705,12 +706,12 @@ void HttpQueryCfwAttackLogsResponseDTO_data_records::unsetprotocol()
     protocolIsSet_ = false;
 }
 
-Packet HttpQueryCfwAttackLogsResponseDTO_data_records::getPacket() const
+std::string HttpQueryCfwAttackLogsResponseDTO_data_records::getPacket() const
 {
     return packet_;
 }
 
-void HttpQueryCfwAttackLogsResponseDTO_data_records::setPacket(const Packet& value)
+void HttpQueryCfwAttackLogsResponseDTO_data_records::setPacket(const std::string& value)
 {
     packet_ = value;
     packetIsSet_ = true;

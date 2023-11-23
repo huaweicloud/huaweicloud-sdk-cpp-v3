@@ -187,7 +187,7 @@ public:
     void setService(const RuleServiceDto& value);
 
     /// <summary>
-    /// 规则type，0：互联网规则，1：vpc规则，2nat规则
+    /// 规则type，0：互联网规则，1：vpc规则，2：nat规则
     /// </summary>
 
     int32_t getType() const;

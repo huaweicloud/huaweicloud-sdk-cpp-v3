@@ -39,7 +39,7 @@ public:
     /// ErInstance members
 
     /// <summary>
-    /// Er实例id
+    /// ER实例id
     /// </summary>
 
     std::string getId() const;
@@ -48,7 +48,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// Er名称
+    /// ER名称
     /// </summary>
 
     std::string getName() const;
@@ -57,7 +57,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// Er状态
+    /// ER状态
     /// </summary>
 
     std::string getState() const;

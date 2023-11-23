@@ -18,7 +18,7 @@ HttpQueryCfwAccessControllerLogsResponseDTO_data_records::HttpQueryCfwAccessCont
     ruleNameIsSet_ = false;
     ruleId_ = "";
     ruleIdIsSet_ = false;
-    hitTime_ = 0;
+    hitTime_ = 0L;
     hitTimeIsSet_ = false;
     srcRegionId_ = "";
     srcRegionIdIsSet_ = false;
@@ -32,11 +32,11 @@ HttpQueryCfwAccessControllerLogsResponseDTO_data_records::HttpQueryCfwAccessCont
     logIdIsSet_ = false;
     srcIp_ = "";
     srcIpIsSet_ = false;
-    srcPort_ = "";
+    srcPort_ = 0;
     srcPortIsSet_ = false;
     dstIp_ = "";
     dstIpIsSet_ = false;
-    dstPort_ = "";
+    dstPort_ = 0;
     dstPortIsSet_ = false;
     protocol_ = "";
     protocolIsSet_ = false;
@@ -142,7 +142,7 @@ bool HttpQueryCfwAccessControllerLogsResponseDTO_data_records::fromJson(const we
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("hit_time"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setHitTime(refVal);
         }
@@ -205,7 +205,7 @@ bool HttpQueryCfwAccessControllerLogsResponseDTO_data_records::fromJson(const we
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("src_port"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSrcPort(refVal);
         }
@@ -223,7 +223,7 @@ bool HttpQueryCfwAccessControllerLogsResponseDTO_data_records::fromJson(const we
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("dst_port"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDstPort(refVal);
         }
@@ -322,12 +322,12 @@ void HttpQueryCfwAccessControllerLogsResponseDTO_data_records::unsetruleId()
     ruleIdIsSet_ = false;
 }
 
-int32_t HttpQueryCfwAccessControllerLogsResponseDTO_data_records::getHitTime() const
+int64_t HttpQueryCfwAccessControllerLogsResponseDTO_data_records::getHitTime() const
 {
     return hitTime_;
 }
 
-void HttpQueryCfwAccessControllerLogsResponseDTO_data_records::setHitTime(int32_t value)
+void HttpQueryCfwAccessControllerLogsResponseDTO_data_records::setHitTime(int64_t value)
 {
     hitTime_ = value;
     hitTimeIsSet_ = true;
@@ -469,12 +469,12 @@ void HttpQueryCfwAccessControllerLogsResponseDTO_data_records::unsetsrcIp()
     srcIpIsSet_ = false;
 }
 
-std::string HttpQueryCfwAccessControllerLogsResponseDTO_data_records::getSrcPort() const
+int32_t HttpQueryCfwAccessControllerLogsResponseDTO_data_records::getSrcPort() const
 {
     return srcPort_;
 }
 
-void HttpQueryCfwAccessControllerLogsResponseDTO_data_records::setSrcPort(const std::string& value)
+void HttpQueryCfwAccessControllerLogsResponseDTO_data_records::setSrcPort(int32_t value)
 {
     srcPort_ = value;
     srcPortIsSet_ = true;
@@ -511,12 +511,12 @@ void HttpQueryCfwAccessControllerLogsResponseDTO_data_records::unsetdstIp()
     dstIpIsSet_ = false;
 }
 
-std::string HttpQueryCfwAccessControllerLogsResponseDTO_data_records::getDstPort() const
+int32_t HttpQueryCfwAccessControllerLogsResponseDTO_data_records::getDstPort() const
 {
     return dstPort_;
 }
 
-void HttpQueryCfwAccessControllerLogsResponseDTO_data_records::setDstPort(const std::string& value)
+void HttpQueryCfwAccessControllerLogsResponseDTO_data_records::setDstPort(int32_t value)
 {
     dstPort_ = value;
     dstPortIsSet_ = true;

@@ -83,6 +83,21 @@ HttpRequestDef CfwMeta::genRequestDefForAddDomains() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CfwMeta::genRequestDefForAddLogConfig() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("FwInstanceId")
+                  .withJsonTag("fw_instance_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
+                  .withJsonTag("enterprise_project_id")
+                  .withLocationType(Query_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CfwMeta::genRequestDefForAddServiceItems() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
@@ -144,6 +159,21 @@ HttpRequestDef CfwMeta::genRequestDefForBatchDeleteServiceItems() {
 }
 
 HttpRequestDef CfwMeta::genRequestDefForChangeEastWestFirewallStatus() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
+                  .withJsonTag("enterprise_project_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("FwInstanceId")
+                  .withJsonTag("fw_instance_id")
+                  .withLocationType(Query_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CfwMeta::genRequestDefForCreateEastWestFirewall() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
                   .withJsonTag("enterprise_project_id")
@@ -661,6 +691,17 @@ HttpRequestDef CfwMeta::genRequestDefForListFlowLogs() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CfwMeta::genRequestDefForListLogConfig() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("FwInstanceId")
+                  .withJsonTag("fw_instance_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
+                  .withJsonTag("enterprise_project_id")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CfwMeta::genRequestDefForListProtectedVpcs() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("ObjectId")
@@ -784,6 +825,21 @@ HttpRequestDef CfwMeta::genRequestDefForUpdateDomainSet() {
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("FwInstanceId")
                   .withJsonTag("fw_instance_id")
+                  .withLocationType(Query_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CfwMeta::genRequestDefForUpdateLogConfig() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("FwInstanceId")
+                  .withJsonTag("fw_instance_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
+                  .withJsonTag("enterprise_project_id")
                   .withLocationType(Query_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
@@ -1086,6 +1142,11 @@ HttpRequestDef CfwMeta::genRequestDefForChangeIpsSwitchStatus() {
     reqDefBuilder.withRequestField(FieldDef().withName("FwInstanceId")
                   .withJsonTag("fw_instance_id")
                   .withLocationType(Query_));
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").

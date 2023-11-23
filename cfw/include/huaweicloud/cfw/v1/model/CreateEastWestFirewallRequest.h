@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_CFW_V1_MODEL_ChangeIpsSwitchStatusRequest_H_
-#define HUAWEICLOUD_SDK_CFW_V1_MODEL_ChangeIpsSwitchStatusRequest_H_
+#ifndef HUAWEICLOUD_SDK_CFW_V1_MODEL_CreateEastWestFirewallRequest_H_
+#define HUAWEICLOUD_SDK_CFW_V1_MODEL_CreateEastWestFirewallRequest_H_
 
 
 #include <huaweicloud/cfw/v1/CfwExport.h>
@@ -9,8 +9,8 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/cfw/v1/model/IpsSwitchDTO.h>
 #include <string>
+#include <huaweicloud/cfw/v1/model/CreateEastWestFirewallRequestBody.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -23,12 +23,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// Request Object
 /// </summary>
-class HUAWEICLOUD_CFW_V1_EXPORT  ChangeIpsSwitchStatusRequest
+class HUAWEICLOUD_CFW_V1_EXPORT  CreateEastWestFirewallRequest
     : public ModelBase
 {
 public:
-    ChangeIpsSwitchStatusRequest();
-    virtual ~ChangeIpsSwitchStatusRequest();
+    CreateEastWestFirewallRequest();
+    virtual ~CreateEastWestFirewallRequest();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -37,7 +37,7 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// ChangeIpsSwitchStatusRequest members
+    /// CreateEastWestFirewallRequest members
 
     /// <summary>
     /// 企业项目id，用户支持企业项目后，由企业项目生成的id。
@@ -58,22 +58,13 @@ public:
     void setFwInstanceId(const std::string& value);
 
     /// <summary>
-    /// 语言头部，默认为zh-cn，如需使用英文，请选择en-us
-    /// </summary>
-
-    std::string getXLanguage() const;
-    bool xLanguageIsSet() const;
-    void unsetxLanguage();
-    void setXLanguage(const std::string& value);
-
-    /// <summary>
     /// 
     /// </summary>
 
-    IpsSwitchDTO getBody() const;
+    CreateEastWestFirewallRequestBody getBody() const;
     bool bodyIsSet() const;
     void unsetbody();
-    void setBody(const IpsSwitchDTO& value);
+    void setBody(const CreateEastWestFirewallRequestBody& value);
 
 
 protected:
@@ -81,15 +72,13 @@ protected:
     bool enterpriseProjectIdIsSet_;
     std::string fwInstanceId_;
     bool fwInstanceIdIsSet_;
-    std::string xLanguage_;
-    bool xLanguageIsSet_;
-    IpsSwitchDTO body_;
+    CreateEastWestFirewallRequestBody body_;
     bool bodyIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()
 public:
-    ChangeIpsSwitchStatusRequest& dereference_from_shared_ptr(std::shared_ptr<ChangeIpsSwitchStatusRequest> ptr) {
+    CreateEastWestFirewallRequest& dereference_from_shared_ptr(std::shared_ptr<CreateEastWestFirewallRequest> ptr) {
         return *ptr;
     }
 #endif
@@ -102,4 +91,4 @@ public:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_CFW_V1_MODEL_ChangeIpsSwitchStatusRequest_H_
+#endif // HUAWEICLOUD_SDK_CFW_V1_MODEL_CreateEastWestFirewallRequest_H_

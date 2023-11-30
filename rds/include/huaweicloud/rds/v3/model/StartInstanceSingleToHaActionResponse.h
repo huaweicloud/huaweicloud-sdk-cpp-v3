@@ -39,7 +39,7 @@ public:
     /// StartInstanceSingleToHaActionResponse members
 
     /// <summary>
-    /// 任务ID。
+    /// 单机转主备的任务id。 仅按需实例单机转主备时会返回该参数。
     /// </summary>
 
     std::string getJobId() const;
@@ -47,10 +47,21 @@ public:
     void unsetjobId();
     void setJobId(const std::string& value);
 
+    /// <summary>
+    /// 订单号，包年包月单机转主备时返回该参数。
+    /// </summary>
+
+    std::string getOrderId() const;
+    bool orderIdIsSet() const;
+    void unsetorderId();
+    void setOrderId(const std::string& value);
+
 
 protected:
     std::string jobId_;
     bool jobIdIsSet_;
+    std::string orderId_;
+    bool orderIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

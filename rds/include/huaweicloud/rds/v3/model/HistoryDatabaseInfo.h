@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_RDS_V3_MODEL_PostgreSQLHistoryDatabaseInstance_H_
-#define HUAWEICLOUD_SDK_RDS_V3_MODEL_PostgreSQLHistoryDatabaseInstance_H_
+#ifndef HUAWEICLOUD_SDK_RDS_V3_MODEL_HistoryDatabaseInfo_H_
+#define HUAWEICLOUD_SDK_RDS_V3_MODEL_HistoryDatabaseInfo_H_
 
 
 #include <huaweicloud/rds/v3/RdsExport.h>
@@ -10,8 +10,6 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
-#include <huaweicloud/rds/v3/model/PostgreSQLHistoryDatabaseInfo.h>
-#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -22,14 +20,14 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// PostgreSQL查询可恢复库的实例信息
+/// PostgreSQL查询可恢复库的数据库库信息
 /// </summary>
-class HUAWEICLOUD_RDS_V3_EXPORT  PostgreSQLHistoryDatabaseInstance
+class HUAWEICLOUD_RDS_V3_EXPORT  HistoryDatabaseInfo
     : public ModelBase
 {
 public:
-    PostgreSQLHistoryDatabaseInstance();
-    virtual ~PostgreSQLHistoryDatabaseInstance();
+    HistoryDatabaseInfo();
+    virtual ~HistoryDatabaseInfo();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -38,19 +36,10 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// PostgreSQLHistoryDatabaseInstance members
+    /// HistoryDatabaseInfo members
 
     /// <summary>
-    /// 实例ID
-    /// </summary>
-
-    std::string getId() const;
-    bool idIsSet() const;
-    void unsetid();
-    void setId(const std::string& value);
-
-    /// <summary>
-    /// 实例名称
+    /// 数据库名
     /// </summary>
 
     std::string getName() const;
@@ -67,25 +56,12 @@ public:
     void unsettotalTables();
     void setTotalTables(int32_t value);
 
-    /// <summary>
-    /// 数据库信息
-    /// </summary>
-
-    std::vector<PostgreSQLHistoryDatabaseInfo>& getDatabases();
-    bool databasesIsSet() const;
-    void unsetdatabases();
-    void setDatabases(const std::vector<PostgreSQLHistoryDatabaseInfo>& value);
-
 
 protected:
-    std::string id_;
-    bool idIsSet_;
     std::string name_;
     bool nameIsSet_;
     int32_t totalTables_;
     bool totalTablesIsSet_;
-    std::vector<PostgreSQLHistoryDatabaseInfo> databases_;
-    bool databasesIsSet_;
 
 };
 
@@ -96,4 +72,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_RDS_V3_MODEL_PostgreSQLHistoryDatabaseInstance_H_
+#endif // HUAWEICLOUD_SDK_RDS_V3_MODEL_HistoryDatabaseInfo_H_

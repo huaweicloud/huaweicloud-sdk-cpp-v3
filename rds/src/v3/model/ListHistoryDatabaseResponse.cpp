@@ -67,7 +67,7 @@ bool ListHistoryDatabaseResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("instances"));
         if(!fieldValue.is_null())
         {
-            std::vector<PostgreSQLHistoryDatabaseInstance> refVal;
+            std::vector<HistoryDatabaseInstance> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setInstances(refVal);
         }
@@ -118,12 +118,12 @@ void ListHistoryDatabaseResponse::unsettableLimit()
     tableLimitIsSet_ = false;
 }
 
-std::vector<PostgreSQLHistoryDatabaseInstance>& ListHistoryDatabaseResponse::getInstances()
+std::vector<HistoryDatabaseInstance>& ListHistoryDatabaseResponse::getInstances()
 {
     return instances_;
 }
 
-void ListHistoryDatabaseResponse::setInstances(const std::vector<PostgreSQLHistoryDatabaseInstance>& value)
+void ListHistoryDatabaseResponse::setInstances(const std::vector<HistoryDatabaseInstance>& value)
 {
     instances_ = value;
     instancesIsSet_ = true;

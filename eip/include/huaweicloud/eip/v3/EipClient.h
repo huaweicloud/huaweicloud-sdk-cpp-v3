@@ -8,8 +8,12 @@
 
 #include <huaweicloud/eip/v3/model/ListBandwidthRequest.h>
 #include <huaweicloud/eip/v3/model/ListBandwidthResponse.h>
+#include <huaweicloud/eip/v3/model/ListBandwidthsLimitRequest.h>
+#include <huaweicloud/eip/v3/model/ListBandwidthsLimitResponse.h>
 #include <huaweicloud/eip/v3/model/ListCommonPoolsRequest.h>
 #include <huaweicloud/eip/v3/model/ListCommonPoolsResponse.h>
+#include <huaweicloud/eip/v3/model/ListEipBandwidthsRequest.h>
+#include <huaweicloud/eip/v3/model/ListEipBandwidthsResponse.h>
 #include <huaweicloud/eip/v3/model/ListPublicBorderGroupsRequest.h>
 #include <huaweicloud/eip/v3/model/ListPublicBorderGroupsResponse.h>
 #include <huaweicloud/eip/v3/model/ListPublicipPoolRequest.h>
@@ -53,6 +57,9 @@
 #include <huaweicloud/eip/v3/model/UpdateAssociatePublicipResponse.h>
 #include <huaweicloud/eip/v3/model/UpdateDisassociatePublicipRequest.h>
 #include <huaweicloud/eip/v3/model/UpdateDisassociatePublicipResponse.h>
+#include <huaweicloud/eip/v3/model/UpdatePublicipRequest.h>
+#include <huaweicloud/eip/v3/model/UpdatePublicipResponse.h>
+#include <huaweicloud/eip/v3/model/UpdatePublicipsRequestBody.h>
 #include <string>
 
 #include <cpprest/details/basic_types.h>
@@ -87,6 +94,14 @@ public:
     std::shared_ptr<ListBandwidthResponse> listBandwidth(
         ListBandwidthRequest &request
     );
+    // 查看租户带宽限制
+    //
+    // 获取EIP带宽限制列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListBandwidthsLimitResponse> listBandwidthsLimit(
+        ListBandwidthsLimitRequest &request
+    );
     // 查询公共池列表
     //
     // 查询公共池列表
@@ -94,6 +109,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListCommonPoolsResponse> listCommonPools(
         ListCommonPoolsRequest &request
+    );
+    // 查询带宽列表
+    //
+    // 查询带宽列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListEipBandwidthsResponse> listEipBandwidths(
+        ListEipBandwidthsRequest &request
     );
     // 查询公共池分组列表
     //
@@ -231,6 +254,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateDisassociatePublicipResponse> updateDisassociatePublicip(
         UpdateDisassociatePublicipRequest &request
+    );
+    // 更新弹性公网IP
+    //
+    // 更新弹性公网IP
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdatePublicipResponse> updatePublicip(
+        UpdatePublicipRequest &request
     );
 
 

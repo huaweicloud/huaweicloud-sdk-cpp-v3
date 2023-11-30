@@ -209,6 +209,8 @@
 #include <huaweicloud/rds/v3/model/SetBackupPolicyResponse.h>
 #include <huaweicloud/rds/v3/model/SetBinlogClearPolicyRequest.h>
 #include <huaweicloud/rds/v3/model/SetBinlogClearPolicyResponse.h>
+#include <huaweicloud/rds/v3/model/SetInstancesDbShrinkRequest.h>
+#include <huaweicloud/rds/v3/model/SetInstancesDbShrinkResponse.h>
 #include <huaweicloud/rds/v3/model/SetOffSiteBackupPolicyRequest.h>
 #include <huaweicloud/rds/v3/model/SetOffSiteBackupPolicyRequestBody.h>
 #include <huaweicloud/rds/v3/model/SetOffSiteBackupPolicyResponse.h>
@@ -282,6 +284,7 @@
 #include <huaweicloud/rds/v3/model/SwitchSslResponse.h>
 #include <huaweicloud/rds/v3/model/UpdateConfigurationRequest.h>
 #include <huaweicloud/rds/v3/model/UpdateConfigurationResponse.h>
+#include <huaweicloud/rds/v3/model/UpdateDBShrinkRequestBody.h>
 #include <huaweicloud/rds/v3/model/UpdateDataIpRequest.h>
 #include <huaweicloud/rds/v3/model/UpdateDataIpResponse.h>
 #include <huaweicloud/rds/v3/model/UpdateDbPortRequest.h>
@@ -1122,6 +1125,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<SetBinlogClearPolicyResponse> setBinlogClearPolicy(
         SetBinlogClearPolicyRequest &request
+    );
+    // 收缩数据库日志
+    //
+    // 收缩数据库日志
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SetInstancesDbShrinkResponse> setInstancesDbShrink(
+        SetInstancesDbShrinkRequest &request
     );
     // 设置跨区域备份策略
     //

@@ -57,6 +57,24 @@ public:
     void setAudioFormat(const std::string& value);
 
     /// <summary>
+    /// obs桶名
+    /// </summary>
+
+    std::string getObsBucketName() const;
+    bool obsBucketNameIsSet() const;
+    void unsetobsBucketName();
+    void setObsBucketName(const std::string& value);
+
+    /// <summary>
+    /// obs对象key，经过urlencode编码，长度不超过1024个字符
+    /// </summary>
+
+    std::string getObsObjectKey() const;
+    bool obsObjectKeyIsSet() const;
+    void unsetobsObjectKey();
+    void setObsObjectKey(const std::string& value);
+
+    /// <summary>
     /// 是否加标点， 可以为 yes, 默认no
     /// </summary>
 
@@ -93,24 +111,6 @@ public:
     void setVocabularyId(const std::string& value);
 
     /// <summary>
-    /// obs桶名
-    /// </summary>
-
-    std::string getObsBucketName() const;
-    bool obsBucketNameIsSet() const;
-    void unsetobsBucketName();
-    void setObsBucketName(const std::string& value);
-
-    /// <summary>
-    /// obs对象key，经过urlencode编码，长度不超过1024个字符
-    /// </summary>
-
-    std::string getObsObjectKey() const;
-    bool obsObjectKeyIsSet() const;
-    void unsetobsObjectKey();
-    void setObsObjectKey(const std::string& value);
-
-    /// <summary>
     /// 表示是否在识别中只识别首个声道的音频数据，取值为“yes”和“no”，默认为“no”。
     /// </summary>
 
@@ -125,6 +125,10 @@ protected:
     bool propertyIsSet_;
     std::string audioFormat_;
     bool audioFormatIsSet_;
+    std::string obsBucketName_;
+    bool obsBucketNameIsSet_;
+    std::string obsObjectKey_;
+    bool obsObjectKeyIsSet_;
     std::string addPunc_;
     bool addPuncIsSet_;
     std::string digitNorm_;
@@ -133,10 +137,6 @@ protected:
     bool needWordInfoIsSet_;
     std::string vocabularyId_;
     bool vocabularyIdIsSet_;
-    std::string obsBucketName_;
-    bool obsBucketNameIsSet_;
-    std::string obsObjectKey_;
-    bool obsObjectKeyIsSet_;
     std::string firstChannelOnly_;
     bool firstChannelOnlyIsSet_;
 

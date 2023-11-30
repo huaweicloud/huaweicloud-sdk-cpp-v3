@@ -69,10 +69,10 @@ public:
     /// 检查成功时，检查报告到期时间，格式为“yyyy-mm-ddThh:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量，例如偏移1个小时显示为+0100。 该字段仅在action为check时返回。
     /// </summary>
 
-    std::string getReportExpirationTime() const;
-    bool reportExpirationTimeIsSet() const;
-    void unsetreportExpirationTime();
-    void setReportExpirationTime(const std::string& value);
+    std::string getCheckExpirationTime() const;
+    bool checkExpirationTimeIsSet() const;
+    void unsetcheckExpirationTime();
+    void setCheckExpirationTime(const std::string& value);
 
     /// <summary>
     /// 预检查或升级报告信息。
@@ -91,8 +91,8 @@ protected:
     bool targetVersionIsSet_;
     std::string startTime_;
     bool startTimeIsSet_;
-    std::string reportExpirationTime_;
-    bool reportExpirationTimeIsSet_;
+    std::string checkExpirationTime_;
+    bool checkExpirationTimeIsSet_;
     std::string detail_;
     bool detailIsSet_;
 

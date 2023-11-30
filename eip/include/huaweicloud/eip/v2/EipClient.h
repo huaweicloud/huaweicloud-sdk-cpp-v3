@@ -12,6 +12,8 @@
 #include <huaweicloud/eip/v2/model/BatchCreateBandwidthRequestBody.h>
 #include <huaweicloud/eip/v2/model/BatchCreateSharedBandwidthsRequest.h>
 #include <huaweicloud/eip/v2/model/BatchCreateSharedBandwidthsResponse.h>
+#include <huaweicloud/eip/v2/model/BatchModifyBandwidthRequest.h>
+#include <huaweicloud/eip/v2/model/BatchModifyBandwidthResponse.h>
 #include <huaweicloud/eip/v2/model/BwChangeToPeriodReq.h>
 #include <huaweicloud/eip/v2/model/ChangeBandwidthToPeriodRequest.h>
 #include <huaweicloud/eip/v2/model/ChangeBandwidthToPeriodResponse.h>
@@ -26,6 +28,7 @@
 #include <huaweicloud/eip/v2/model/ListBandwidthsResponse.h>
 #include <huaweicloud/eip/v2/model/ListQuotasRequest.h>
 #include <huaweicloud/eip/v2/model/ListQuotasResponse.h>
+#include <huaweicloud/eip/v2/model/ModifyBandwidthRequestBody.h>
 #include <huaweicloud/eip/v2/model/RemovePublicipsFromSharedBandwidthRequest.h>
 #include <huaweicloud/eip/v2/model/RemovePublicipsFromSharedBandwidthRequestBody.h>
 #include <huaweicloud/eip/v2/model/RemovePublicipsFromSharedBandwidthResponse.h>
@@ -148,6 +151,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<BatchCreateSharedBandwidthsResponse> batchCreateSharedBandwidths(
         BatchCreateSharedBandwidthsRequest &request
+    );
+    // 批量更新带宽
+    //
+    // 批量更新带宽，共享带宽和包周期带宽该接口不适用。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchModifyBandwidthResponse> batchModifyBandwidth(
+        BatchModifyBandwidthRequest &request
     );
     // 按需转包API
     //

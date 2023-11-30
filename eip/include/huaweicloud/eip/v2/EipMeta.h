@@ -15,6 +15,7 @@ class HUAWEICLOUD_EIP_V2_EXPORT  EipMeta {
 public:
     static HttpRequestDef genRequestDefForAddPublicipsIntoSharedBandwidth();
     static HttpRequestDef genRequestDefForBatchCreateSharedBandwidths();
+    static HttpRequestDef genRequestDefForBatchModifyBandwidth();
     static HttpRequestDef genRequestDefForChangeBandwidthToPeriod();
     static HttpRequestDef genRequestDefForCreateSharedBandwidth();
     static HttpRequestDef genRequestDefForDeleteSharedBandwidth();

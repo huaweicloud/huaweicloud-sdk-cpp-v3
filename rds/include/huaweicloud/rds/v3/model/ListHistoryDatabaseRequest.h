@@ -40,13 +40,13 @@ public:
     /// ListHistoryDatabaseRequest members
 
     /// <summary>
-    /// 数据库引擎。支持的引擎如下，不区分大小写：postgresql
+    /// 数据库引擎。支持的引擎如下，不区分大小写：postgresql,mysql
     /// </summary>
 
-    std::string getDatabaseName() const;
-    bool databaseNameIsSet() const;
-    void unsetdatabaseName();
-    void setDatabaseName(const std::string& value);
+    std::string getEngine() const;
+    bool engineIsSet() const;
+    void unsetengine();
+    void setEngine(const std::string& value);
 
     /// <summary>
     /// 语言
@@ -68,8 +68,8 @@ public:
 
 
 protected:
-    std::string databaseName_;
-    bool databaseNameIsSet_;
+    std::string engine_;
+    bool engineIsSet_;
     std::string xLanguage_;
     bool xLanguageIsSet_;
     PostgreSQLHistoryDatabaseRequest body_;

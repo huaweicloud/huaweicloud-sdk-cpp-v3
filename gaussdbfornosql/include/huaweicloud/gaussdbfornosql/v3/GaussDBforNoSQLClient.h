@@ -86,6 +86,9 @@
 #include <huaweicloud/gaussdbfornosql/v3/model/ListFlavorInfosResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListFlavorsRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListFlavorsResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ListInfluxdbSlowLogsRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ListInfluxdbSlowLogsRequestBody.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ListInfluxdbSlowLogsResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListInstanceDatabasesRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListInstanceDatabasesResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListInstanceTagsRequest.h>
@@ -544,6 +547,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListFlavorsResponse> listFlavors(
         ListFlavorsRequest &request
+    );
+    // 查询GeminiDB(for influxdb)数据库慢日志
+    //
+    // 查询GeminiDB(for influxdb)数据库慢日志信息，支持日志关键字搜索。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListInfluxdbSlowLogsResponse> listInfluxdbSlowLogs(
+        ListInfluxdbSlowLogsRequest &request
     );
     // 获取Redis实例数据库列表
     //

@@ -45,6 +45,7 @@ public:
     static HttpRequestDef genRequestDefForListEpsQuotas();
     static HttpRequestDef genRequestDefForListFlavorInfos();
     static HttpRequestDef genRequestDefForListFlavors();
+    static HttpRequestDef genRequestDefForListInfluxdbSlowLogs();
     static HttpRequestDef genRequestDefForListInstanceDatabases();
     static HttpRequestDef genRequestDefForListInstanceTags();
     static HttpRequestDef genRequestDefForListInstances();

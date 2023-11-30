@@ -1,3 +1,65 @@
+# 3.1.63 2023-11-30
+
+### HuaweiCloud SDK EIP
+
+- _新增特性_
+  - 支持接口`BatchModifyBandwidth`、`ListEipBandwidths`、`ListBandwidthsLimit`、`UpdatePublicip`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _新增特性_
+  - 支持接口`ListInfluxdbSlowLogs`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListLtsConfigs**
+    - 响应参数变更
+      - `+ instance_lts_configs.instance.supported_log_types`
+
+### HuaweiCloud SDK RDS
+
+- _新增特性_
+  - 支持接口`SetInstancesDbShrink`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **UpgradeDbMajorVersion**
+    - 响应参数变更
+      - `+ job_id`
+  - **ShowUpgradeDbMajorVersionStatus**
+    - 响应参数变更
+      - `+ check_expiration_time`
+      - `- report_expiration_time`
+  - **StartResizeFlavorAction**
+    - 响应参数变更
+      - `+ order_id`
+  - **StartInstanceEnlargeVolumeAction**
+    - 响应参数变更
+      - `+ order_id`
+  - **StartInstanceSingleToHaAction**
+    - 响应参数变更
+      - `+ order_id`
+  - **ListHistoryDatabase**
+    - 请求参数变更
+      - `+ engine`
+      - `- database_name`
+
+### HuaweiCloud SDK SIS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RecognizeFlashAsr**
+    - 请求参数变更
+      - `* obs_bucket_name: optional -> required`
+      - `* obs_object_key: optional -> required`
+
 # 3.1.62 2023-11-23
 
 ### HuaweiCloud SDK CFW

@@ -49,6 +49,12 @@ HttpRequestDef SisMeta::genRequestDefForRecognizeFlashAsr() {
     reqDefBuilder.withRequestField(FieldDef().withName("AudioFormat")
                   .withJsonTag("audio_format")
                   .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ObsBucketName")
+                  .withJsonTag("obs_bucket_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ObsObjectKey")
+                  .withJsonTag("obs_object_key")
+                  .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("AddPunc")
                   .withJsonTag("add_punc")
                   .withLocationType(Query_));
@@ -60,12 +66,6 @@ HttpRequestDef SisMeta::genRequestDefForRecognizeFlashAsr() {
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("VocabularyId")
                   .withJsonTag("vocabulary_id")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("ObsBucketName")
-                  .withJsonTag("obs_bucket_name")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("ObsObjectKey")
-                  .withJsonTag("obs_object_key")
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("FirstChannelOnly")
                   .withJsonTag("first_channel_only")

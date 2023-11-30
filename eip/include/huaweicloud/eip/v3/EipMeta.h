@@ -14,7 +14,9 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 class HUAWEICLOUD_EIP_V3_EXPORT  EipMeta {
 public:
     static HttpRequestDef genRequestDefForListBandwidth();
+    static HttpRequestDef genRequestDefForListBandwidthsLimit();
     static HttpRequestDef genRequestDefForListCommonPools();
+    static HttpRequestDef genRequestDefForListEipBandwidths();
     static HttpRequestDef genRequestDefForListPublicBorderGroups();
     static HttpRequestDef genRequestDefForListPublicipPool();
     static HttpRequestDef genRequestDefForListShareBandwidthTypes();
@@ -32,6 +34,7 @@ public:
     static HttpRequestDef genRequestDefForShowPublicip();
     static HttpRequestDef genRequestDefForUpdateAssociatePublicip();
     static HttpRequestDef genRequestDefForUpdateDisassociatePublicip();
+    static HttpRequestDef genRequestDefForUpdatePublicip();
 };
 
 }

@@ -12,8 +12,8 @@ namespace Model {
 
 UpgradeDbMajorVersionResponse::UpgradeDbMajorVersionResponse()
 {
-    body_ = "";
-    bodyIsSet_ = false;
+    jobId_ = "";
+    jobIdIsSet_ = false;
 }
 
 UpgradeDbMajorVersionResponse::~UpgradeDbMajorVersionResponse() = default;
@@ -26,8 +26,8 @@ web::json::value UpgradeDbMajorVersionResponse::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(bodyIsSet_) {
-        val[utility::conversions::to_string_t("body")] = ModelBase::toJson(body_);
+    if(jobIdIsSet_) {
+        val[utility::conversions::to_string_t("job_id")] = ModelBase::toJson(jobId_);
     }
 
     return val;
@@ -36,38 +36,38 @@ bool UpgradeDbMajorVersionResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("body"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
+    if(val.has_field(utility::conversions::to_string_t("job_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("job_id"));
         if(!fieldValue.is_null())
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setBody(refVal);
+            setJobId(refVal);
         }
     }
     return ok;
 }
 
 
-std::string UpgradeDbMajorVersionResponse::getBody() const
+std::string UpgradeDbMajorVersionResponse::getJobId() const
 {
-    return body_;
+    return jobId_;
 }
 
-void UpgradeDbMajorVersionResponse::setBody(const std::string& value)
+void UpgradeDbMajorVersionResponse::setJobId(const std::string& value)
 {
-    body_ = value;
-    bodyIsSet_ = true;
+    jobId_ = value;
+    jobIdIsSet_ = true;
 }
 
-bool UpgradeDbMajorVersionResponse::bodyIsSet() const
+bool UpgradeDbMajorVersionResponse::jobIdIsSet() const
 {
-    return bodyIsSet_;
+    return jobIdIsSet_;
 }
 
-void UpgradeDbMajorVersionResponse::unsetbody()
+void UpgradeDbMajorVersionResponse::unsetjobId()
 {
-    bodyIsSet_ = false;
+    jobIdIsSet_ = false;
 }
 
 }

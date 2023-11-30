@@ -9,8 +9,8 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/rds/v3/model/RestoreDatabaseInstance.h>
 #include <vector>
-#include <huaweicloud/rds/v3/model/PostgreSQLRestoreDatabaseInstance.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -43,14 +43,14 @@ public:
     /// 库级恢复实例信息
     /// </summary>
 
-    std::vector<PostgreSQLRestoreDatabaseInstance>& getInstances();
+    std::vector<RestoreDatabaseInstance>& getInstances();
     bool instancesIsSet() const;
     void unsetinstances();
-    void setInstances(const std::vector<PostgreSQLRestoreDatabaseInstance>& value);
+    void setInstances(const std::vector<RestoreDatabaseInstance>& value);
 
 
 protected:
-    std::vector<PostgreSQLRestoreDatabaseInstance> instances_;
+    std::vector<RestoreDatabaseInstance> instances_;
     bool instancesIsSet_;
 
 };

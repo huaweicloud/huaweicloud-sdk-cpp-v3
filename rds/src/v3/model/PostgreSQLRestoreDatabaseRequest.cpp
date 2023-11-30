@@ -39,7 +39,7 @@ bool PostgreSQLRestoreDatabaseRequest::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("instances"));
         if(!fieldValue.is_null())
         {
-            std::vector<PostgreSQLRestoreDatabaseInstance> refVal;
+            std::vector<RestoreDatabaseInstance> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setInstances(refVal);
         }
@@ -48,12 +48,12 @@ bool PostgreSQLRestoreDatabaseRequest::fromJson(const web::json::value& val)
 }
 
 
-std::vector<PostgreSQLRestoreDatabaseInstance>& PostgreSQLRestoreDatabaseRequest::getInstances()
+std::vector<RestoreDatabaseInstance>& PostgreSQLRestoreDatabaseRequest::getInstances()
 {
     return instances_;
 }
 
-void PostgreSQLRestoreDatabaseRequest::setInstances(const std::vector<PostgreSQLRestoreDatabaseInstance>& value)
+void PostgreSQLRestoreDatabaseRequest::setInstances(const std::vector<RestoreDatabaseInstance>& value)
 {
     instances_ = value;
     instancesIsSet_ = true;

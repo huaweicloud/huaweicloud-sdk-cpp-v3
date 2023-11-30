@@ -199,6 +199,12 @@ std::shared_ptr<RecognizeFlashAsrResponse> SisClient::recognizeFlashAsr(Recogniz
     if (request.audioFormatIsSet()) {
         localVarQueryParams["audio_format"] = parameterToString(request.getAudioFormat());
     }
+    if (request.obsBucketNameIsSet()) {
+        localVarQueryParams["obs_bucket_name"] = parameterToString(request.getObsBucketName());
+    }
+    if (request.obsObjectKeyIsSet()) {
+        localVarQueryParams["obs_object_key"] = parameterToString(request.getObsObjectKey());
+    }
     if (request.addPuncIsSet()) {
         localVarQueryParams["add_punc"] = parameterToString(request.getAddPunc());
     }
@@ -210,12 +216,6 @@ std::shared_ptr<RecognizeFlashAsrResponse> SisClient::recognizeFlashAsr(Recogniz
     }
     if (request.vocabularyIdIsSet()) {
         localVarQueryParams["vocabulary_id"] = parameterToString(request.getVocabularyId());
-    }
-    if (request.obsBucketNameIsSet()) {
-        localVarQueryParams["obs_bucket_name"] = parameterToString(request.getObsBucketName());
-    }
-    if (request.obsObjectKeyIsSet()) {
-        localVarQueryParams["obs_object_key"] = parameterToString(request.getObsObjectKey());
     }
     if (request.firstChannelOnlyIsSet()) {
         localVarQueryParams["first_channel_only"] = parameterToString(request.getFirstChannelOnly());

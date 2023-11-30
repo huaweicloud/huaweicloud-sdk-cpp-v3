@@ -61,6 +61,29 @@ HttpRequestDef EipMeta::genRequestDefForListBandwidth() {
     return reqDefBuilder;
 }
 
+HttpRequestDef EipMeta::genRequestDefForListBandwidthsLimit() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Marker")
+                  .withJsonTag("marker")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("PageReverse")
+                  .withJsonTag("page_reverse")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Fields")
+                  .withJsonTag("fields")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ChargeMode")
+                  .withJsonTag("charge_mode")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef EipMeta::genRequestDefForListCommonPools() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Fields")
@@ -77,6 +100,62 @@ HttpRequestDef EipMeta::genRequestDefForListCommonPools() {
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("PublicBorderGroup")
                   .withJsonTag("public_border_group")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef EipMeta::genRequestDefForListEipBandwidths() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Marker")
+                  .withJsonTag("marker")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Id")
+                  .withJsonTag("id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("BandwidthType")
+                  .withJsonTag("bandwidth_type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Name")
+                  .withJsonTag("name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("NameLike")
+                  .withJsonTag("name_like")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("TenantId")
+                  .withJsonTag("tenant_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("IngressSize")
+                  .withJsonTag("ingress_size")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("AdminState")
+                  .withJsonTag("admin_state")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("BillingInfo")
+                  .withJsonTag("billing_info")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Tags")
+                  .withJsonTag("tags")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EnableBandwidthRules")
+                  .withJsonTag("enable_bandwidth_rules")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("RuleQuota")
+                  .withJsonTag("rule_quota")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("PublicBorderGroup")
+                  .withJsonTag("public_border_group")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ChargeMode")
+                  .withJsonTag("charge_mode")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Size")
+                  .withJsonTag("size")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Type")
+                  .withJsonTag("type")
                   .withLocationType(Query_));
     return reqDefBuilder;
 }
@@ -391,6 +470,15 @@ HttpRequestDef EipMeta::genRequestDefForUpdateAssociatePublicip() {
 }
 
 HttpRequestDef EipMeta::genRequestDefForUpdateDisassociatePublicip() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef EipMeta::genRequestDefForUpdatePublicip() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.

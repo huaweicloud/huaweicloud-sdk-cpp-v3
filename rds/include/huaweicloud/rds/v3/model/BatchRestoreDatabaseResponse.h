@@ -9,8 +9,8 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/rds/v3/model/PostgreSQLRestoreResult.h>
 #include <vector>
+#include <huaweicloud/rds/v3/model/RestoreResult.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -43,14 +43,14 @@ public:
     /// 表信息
     /// </summary>
 
-    std::vector<PostgreSQLRestoreResult>& getRestoreResult();
+    std::vector<RestoreResult>& getRestoreResult();
     bool restoreResultIsSet() const;
     void unsetrestoreResult();
-    void setRestoreResult(const std::vector<PostgreSQLRestoreResult>& value);
+    void setRestoreResult(const std::vector<RestoreResult>& value);
 
 
 protected:
-    std::vector<PostgreSQLRestoreResult> restoreResult_;
+    std::vector<RestoreResult> restoreResult_;
     bool restoreResultIsSet_;
 
 #ifdef RTTR_FLAG

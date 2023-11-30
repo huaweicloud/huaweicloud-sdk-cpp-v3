@@ -39,18 +39,18 @@ public:
     /// UpgradeDbMajorVersionResponse members
 
     /// <summary>
-    /// 
+    /// 任务ID。
     /// </summary>
 
-    std::string getBody() const;
-    bool bodyIsSet() const;
-    void unsetbody();
-    void setBody(const std::string& value);
+    std::string getJobId() const;
+    bool jobIdIsSet() const;
+    void unsetjobId();
+    void setJobId(const std::string& value);
 
 
 protected:
-    std::string body_;
-    bool bodyIsSet_;
+    std::string jobId_;
+    bool jobIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

@@ -16,6 +16,10 @@ RecognizeFlashAsrRequest::RecognizeFlashAsrRequest()
     propertyIsSet_ = false;
     audioFormat_ = "";
     audioFormatIsSet_ = false;
+    obsBucketName_ = "";
+    obsBucketNameIsSet_ = false;
+    obsObjectKey_ = "";
+    obsObjectKeyIsSet_ = false;
     addPunc_ = "";
     addPuncIsSet_ = false;
     digitNorm_ = "";
@@ -24,10 +28,6 @@ RecognizeFlashAsrRequest::RecognizeFlashAsrRequest()
     needWordInfoIsSet_ = false;
     vocabularyId_ = "";
     vocabularyIdIsSet_ = false;
-    obsBucketName_ = "";
-    obsBucketNameIsSet_ = false;
-    obsObjectKey_ = "";
-    obsObjectKeyIsSet_ = false;
     firstChannelOnly_ = "";
     firstChannelOnlyIsSet_ = false;
 }
@@ -48,6 +48,12 @@ web::json::value RecognizeFlashAsrRequest::toJson() const
     if(audioFormatIsSet_) {
         val[utility::conversions::to_string_t("audio_format")] = ModelBase::toJson(audioFormat_);
     }
+    if(obsBucketNameIsSet_) {
+        val[utility::conversions::to_string_t("obs_bucket_name")] = ModelBase::toJson(obsBucketName_);
+    }
+    if(obsObjectKeyIsSet_) {
+        val[utility::conversions::to_string_t("obs_object_key")] = ModelBase::toJson(obsObjectKey_);
+    }
     if(addPuncIsSet_) {
         val[utility::conversions::to_string_t("add_punc")] = ModelBase::toJson(addPunc_);
     }
@@ -59,12 +65,6 @@ web::json::value RecognizeFlashAsrRequest::toJson() const
     }
     if(vocabularyIdIsSet_) {
         val[utility::conversions::to_string_t("vocabulary_id")] = ModelBase::toJson(vocabularyId_);
-    }
-    if(obsBucketNameIsSet_) {
-        val[utility::conversions::to_string_t("obs_bucket_name")] = ModelBase::toJson(obsBucketName_);
-    }
-    if(obsObjectKeyIsSet_) {
-        val[utility::conversions::to_string_t("obs_object_key")] = ModelBase::toJson(obsObjectKey_);
     }
     if(firstChannelOnlyIsSet_) {
         val[utility::conversions::to_string_t("first_channel_only")] = ModelBase::toJson(firstChannelOnly_);
@@ -92,6 +92,24 @@ bool RecognizeFlashAsrRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAudioFormat(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("obs_bucket_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("obs_bucket_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setObsBucketName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("obs_object_key"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("obs_object_key"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setObsObjectKey(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("add_punc"))) {
@@ -128,24 +146,6 @@ bool RecognizeFlashAsrRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setVocabularyId(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("obs_bucket_name"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("obs_bucket_name"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setObsBucketName(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("obs_object_key"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("obs_object_key"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setObsObjectKey(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("first_channel_only"))) {
@@ -201,6 +201,48 @@ bool RecognizeFlashAsrRequest::audioFormatIsSet() const
 void RecognizeFlashAsrRequest::unsetaudioFormat()
 {
     audioFormatIsSet_ = false;
+}
+
+std::string RecognizeFlashAsrRequest::getObsBucketName() const
+{
+    return obsBucketName_;
+}
+
+void RecognizeFlashAsrRequest::setObsBucketName(const std::string& value)
+{
+    obsBucketName_ = value;
+    obsBucketNameIsSet_ = true;
+}
+
+bool RecognizeFlashAsrRequest::obsBucketNameIsSet() const
+{
+    return obsBucketNameIsSet_;
+}
+
+void RecognizeFlashAsrRequest::unsetobsBucketName()
+{
+    obsBucketNameIsSet_ = false;
+}
+
+std::string RecognizeFlashAsrRequest::getObsObjectKey() const
+{
+    return obsObjectKey_;
+}
+
+void RecognizeFlashAsrRequest::setObsObjectKey(const std::string& value)
+{
+    obsObjectKey_ = value;
+    obsObjectKeyIsSet_ = true;
+}
+
+bool RecognizeFlashAsrRequest::obsObjectKeyIsSet() const
+{
+    return obsObjectKeyIsSet_;
+}
+
+void RecognizeFlashAsrRequest::unsetobsObjectKey()
+{
+    obsObjectKeyIsSet_ = false;
 }
 
 std::string RecognizeFlashAsrRequest::getAddPunc() const
@@ -285,48 +327,6 @@ bool RecognizeFlashAsrRequest::vocabularyIdIsSet() const
 void RecognizeFlashAsrRequest::unsetvocabularyId()
 {
     vocabularyIdIsSet_ = false;
-}
-
-std::string RecognizeFlashAsrRequest::getObsBucketName() const
-{
-    return obsBucketName_;
-}
-
-void RecognizeFlashAsrRequest::setObsBucketName(const std::string& value)
-{
-    obsBucketName_ = value;
-    obsBucketNameIsSet_ = true;
-}
-
-bool RecognizeFlashAsrRequest::obsBucketNameIsSet() const
-{
-    return obsBucketNameIsSet_;
-}
-
-void RecognizeFlashAsrRequest::unsetobsBucketName()
-{
-    obsBucketNameIsSet_ = false;
-}
-
-std::string RecognizeFlashAsrRequest::getObsObjectKey() const
-{
-    return obsObjectKey_;
-}
-
-void RecognizeFlashAsrRequest::setObsObjectKey(const std::string& value)
-{
-    obsObjectKey_ = value;
-    obsObjectKeyIsSet_ = true;
-}
-
-bool RecognizeFlashAsrRequest::obsObjectKeyIsSet() const
-{
-    return obsObjectKeyIsSet_;
-}
-
-void RecognizeFlashAsrRequest::unsetobsObjectKey()
-{
-    obsObjectKeyIsSet_ = false;
 }
 
 std::string RecognizeFlashAsrRequest::getFirstChannelOnly() const

@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/rds/v3/model/PostgreSQLHistoryDatabaseInfo.h"
+#include "huaweicloud/rds/v3/model/HistoryDatabaseInfo.h"
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -10,7 +10,7 @@ namespace Model {
 
 
 
-PostgreSQLHistoryDatabaseInfo::PostgreSQLHistoryDatabaseInfo()
+HistoryDatabaseInfo::HistoryDatabaseInfo()
 {
     name_ = "";
     nameIsSet_ = false;
@@ -18,13 +18,13 @@ PostgreSQLHistoryDatabaseInfo::PostgreSQLHistoryDatabaseInfo()
     totalTablesIsSet_ = false;
 }
 
-PostgreSQLHistoryDatabaseInfo::~PostgreSQLHistoryDatabaseInfo() = default;
+HistoryDatabaseInfo::~HistoryDatabaseInfo() = default;
 
-void PostgreSQLHistoryDatabaseInfo::validate()
+void HistoryDatabaseInfo::validate()
 {
 }
 
-web::json::value PostgreSQLHistoryDatabaseInfo::toJson() const
+web::json::value HistoryDatabaseInfo::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -37,7 +37,7 @@ web::json::value PostgreSQLHistoryDatabaseInfo::toJson() const
 
     return val;
 }
-bool PostgreSQLHistoryDatabaseInfo::fromJson(const web::json::value& val)
+bool HistoryDatabaseInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -63,44 +63,44 @@ bool PostgreSQLHistoryDatabaseInfo::fromJson(const web::json::value& val)
 }
 
 
-std::string PostgreSQLHistoryDatabaseInfo::getName() const
+std::string HistoryDatabaseInfo::getName() const
 {
     return name_;
 }
 
-void PostgreSQLHistoryDatabaseInfo::setName(const std::string& value)
+void HistoryDatabaseInfo::setName(const std::string& value)
 {
     name_ = value;
     nameIsSet_ = true;
 }
 
-bool PostgreSQLHistoryDatabaseInfo::nameIsSet() const
+bool HistoryDatabaseInfo::nameIsSet() const
 {
     return nameIsSet_;
 }
 
-void PostgreSQLHistoryDatabaseInfo::unsetname()
+void HistoryDatabaseInfo::unsetname()
 {
     nameIsSet_ = false;
 }
 
-int32_t PostgreSQLHistoryDatabaseInfo::getTotalTables() const
+int32_t HistoryDatabaseInfo::getTotalTables() const
 {
     return totalTables_;
 }
 
-void PostgreSQLHistoryDatabaseInfo::setTotalTables(int32_t value)
+void HistoryDatabaseInfo::setTotalTables(int32_t value)
 {
     totalTables_ = value;
     totalTablesIsSet_ = true;
 }
 
-bool PostgreSQLHistoryDatabaseInfo::totalTablesIsSet() const
+bool HistoryDatabaseInfo::totalTablesIsSet() const
 {
     return totalTablesIsSet_;
 }
 
-void PostgreSQLHistoryDatabaseInfo::unsettotalTables()
+void HistoryDatabaseInfo::unsettotalTables()
 {
     totalTablesIsSet_ = false;
 }

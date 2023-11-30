@@ -26,6 +26,15 @@ HttpRequestDef EipMeta::genRequestDefForBatchCreateSharedBandwidths() {
     return reqDefBuilder;
 }
 
+HttpRequestDef EipMeta::genRequestDefForBatchModifyBandwidth() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef EipMeta::genRequestDefForChangeBandwidthToPeriod() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;

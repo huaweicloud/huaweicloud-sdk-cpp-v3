@@ -103,6 +103,15 @@ public:
     void unsetenterpriseProjectId();
     void setEnterpriseProjectId(const std::string& value);
 
+    /// <summary>
+    /// 日志类型。slow_log表示慢日志，audit_log表示审计日志。
+    /// </summary>
+
+    std::string getSupportedLogTypes() const;
+    bool supportedLogTypesIsSet() const;
+    void unsetsupportedLogTypes();
+    void setSupportedLogTypes(const std::string& value);
+
 
 protected:
     std::string id_;
@@ -119,6 +128,8 @@ protected:
     bool actionsIsSet_;
     std::string enterpriseProjectId_;
     bool enterpriseProjectIdIsSet_;
+    std::string supportedLogTypes_;
+    bool supportedLogTypesIsSet_;
 
 };
 

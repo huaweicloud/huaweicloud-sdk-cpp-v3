@@ -1,3 +1,65 @@
+# 3.1.63 2023-11-30
+
+### HuaweiCloud SDK EIP
+
+- _Features_
+  - Support the APIs `BatchModifyBandwidth`, `ListEipBandwidths`, `ListBandwidthsLimit`, `UpdatePublicip`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _Features_
+  - Support the API `ListInfluxdbSlowLogs`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListLtsConfigs**
+    - changes of response param
+      - `+ instance_lts_configs.instance.supported_log_types`
+
+### HuaweiCloud SDK RDS
+
+- _Features_
+  - Support the API `SetInstancesDbShrink`
+- _Bug Fix_
+  - None
+- _Change_
+  - **UpgradeDbMajorVersion**
+    - changes of response param
+      - `+ job_id`
+  - **ShowUpgradeDbMajorVersionStatus**
+    - changes of response param
+      - `+ check_expiration_time`
+      - `- report_expiration_time`
+  - **StartResizeFlavorAction**
+    - changes of response param
+      - `+ order_id`
+  - **StartInstanceEnlargeVolumeAction**
+    - changes of response param
+      - `+ order_id`
+  - **StartInstanceSingleToHaAction**
+    - changes of response param
+      - `+ order_id`
+  - **ListHistoryDatabase**
+    - changes of request param
+      - `+ engine`
+      - `- database_name`
+
+### HuaweiCloud SDK SIS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **RecognizeFlashAsr**
+    - changes of request param
+      - `* obs_bucket_name: optional -> required`
+      - `* obs_object_key: optional -> required`
+
 # 3.1.62 2023-11-23
 
 ### HuaweiCloud SDK CFW

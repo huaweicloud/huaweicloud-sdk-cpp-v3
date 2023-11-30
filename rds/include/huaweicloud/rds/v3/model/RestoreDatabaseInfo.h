@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_RDS_V3_MODEL_PostgreSQLRestoreDatabaseInfo_H_
-#define HUAWEICLOUD_SDK_RDS_V3_MODEL_PostgreSQLRestoreDatabaseInfo_H_
+#ifndef HUAWEICLOUD_SDK_RDS_V3_MODEL_RestoreDatabaseInfo_H_
+#define HUAWEICLOUD_SDK_RDS_V3_MODEL_RestoreDatabaseInfo_H_
 
 
 #include <huaweicloud/rds/v3/RdsExport.h>
@@ -22,12 +22,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// 库级恢复数据库信息
 /// </summary>
-class HUAWEICLOUD_RDS_V3_EXPORT  PostgreSQLRestoreDatabaseInfo
+class HUAWEICLOUD_RDS_V3_EXPORT  RestoreDatabaseInfo
     : public ModelBase
 {
 public:
-    PostgreSQLRestoreDatabaseInfo();
-    virtual ~PostgreSQLRestoreDatabaseInfo();
+    RestoreDatabaseInfo();
+    virtual ~RestoreDatabaseInfo();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -36,7 +36,7 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// PostgreSQLRestoreDatabaseInfo members
+    /// RestoreDatabaseInfo members
 
     /// <summary>
     /// 恢复前库名
@@ -72,4 +72,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_RDS_V3_MODEL_PostgreSQLRestoreDatabaseInfo_H_
+#endif // HUAWEICLOUD_SDK_RDS_V3_MODEL_RestoreDatabaseInfo_H_

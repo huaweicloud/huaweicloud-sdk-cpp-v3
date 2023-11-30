@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_RDS_V3_MODEL_PostgreSQLRestoreDatabaseInstance_H_
-#define HUAWEICLOUD_SDK_RDS_V3_MODEL_PostgreSQLRestoreDatabaseInstance_H_
+#ifndef HUAWEICLOUD_SDK_RDS_V3_MODEL_RestoreDatabaseInstance_H_
+#define HUAWEICLOUD_SDK_RDS_V3_MODEL_RestoreDatabaseInstance_H_
 
 
 #include <huaweicloud/rds/v3/RdsExport.h>
@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/rds/v3/model/PostgreSQLRestoreDatabaseInfo.h>
+#include <huaweicloud/rds/v3/model/RestoreDatabaseInfo.h>
 #include <string>
 #include <vector>
 
@@ -24,12 +24,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// 查询可恢复库的响应信息
 /// </summary>
-class HUAWEICLOUD_RDS_V3_EXPORT  PostgreSQLRestoreDatabaseInstance
+class HUAWEICLOUD_RDS_V3_EXPORT  RestoreDatabaseInstance
     : public ModelBase
 {
 public:
-    PostgreSQLRestoreDatabaseInstance();
-    virtual ~PostgreSQLRestoreDatabaseInstance();
+    RestoreDatabaseInstance();
+    virtual ~RestoreDatabaseInstance();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -38,7 +38,7 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// PostgreSQLRestoreDatabaseInstance members
+    /// RestoreDatabaseInstance members
 
     /// <summary>
     /// 恢复时间
@@ -62,10 +62,10 @@ public:
     /// 库信息
     /// </summary>
 
-    std::vector<PostgreSQLRestoreDatabaseInfo>& getDatabases();
+    std::vector<RestoreDatabaseInfo>& getDatabases();
     bool databasesIsSet() const;
     void unsetdatabases();
-    void setDatabases(const std::vector<PostgreSQLRestoreDatabaseInfo>& value);
+    void setDatabases(const std::vector<RestoreDatabaseInfo>& value);
 
 
 protected:
@@ -73,7 +73,7 @@ protected:
     bool restoreTimeIsSet_;
     std::string instanceId_;
     bool instanceIdIsSet_;
-    std::vector<PostgreSQLRestoreDatabaseInfo> databases_;
+    std::vector<RestoreDatabaseInfo> databases_;
     bool databasesIsSet_;
 
 };
@@ -85,4 +85,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_RDS_V3_MODEL_PostgreSQLRestoreDatabaseInstance_H_
+#endif // HUAWEICLOUD_SDK_RDS_V3_MODEL_RestoreDatabaseInstance_H_

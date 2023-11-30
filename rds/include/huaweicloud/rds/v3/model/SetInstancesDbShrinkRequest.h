@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_RDS_V3_MODEL_PostgreSQLRestoreResult_H_
-#define HUAWEICLOUD_SDK_RDS_V3_MODEL_PostgreSQLRestoreResult_H_
+#ifndef HUAWEICLOUD_SDK_RDS_V3_MODEL_SetInstancesDbShrinkRequest_H_
+#define HUAWEICLOUD_SDK_RDS_V3_MODEL_SetInstancesDbShrinkRequest_H_
 
 
 #include <huaweicloud/rds/v3/RdsExport.h>
@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <huaweicloud/rds/v3/model/UpdateDBShrinkRequestBody.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -20,14 +21,14 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 表级时间点恢复的请求信息
+/// Request Object
 /// </summary>
-class HUAWEICLOUD_RDS_V3_EXPORT  PostgreSQLRestoreResult
+class HUAWEICLOUD_RDS_V3_EXPORT  SetInstancesDbShrinkRequest
     : public ModelBase
 {
 public:
-    PostgreSQLRestoreResult();
-    virtual ~PostgreSQLRestoreResult();
+    SetInstancesDbShrinkRequest();
+    virtual ~SetInstancesDbShrinkRequest();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -36,7 +37,7 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// PostgreSQLRestoreResult members
+    /// SetInstancesDbShrinkRequest members
 
     /// <summary>
     /// 实例ID
@@ -48,21 +49,28 @@ public:
     void setInstanceId(const std::string& value);
 
     /// <summary>
-    /// 工作流id
+    /// 
     /// </summary>
 
-    std::string getJobId() const;
-    bool jobIdIsSet() const;
-    void unsetjobId();
-    void setJobId(const std::string& value);
+    UpdateDBShrinkRequestBody getBody() const;
+    bool bodyIsSet() const;
+    void unsetbody();
+    void setBody(const UpdateDBShrinkRequestBody& value);
 
 
 protected:
     std::string instanceId_;
     bool instanceIdIsSet_;
-    std::string jobId_;
-    bool jobIdIsSet_;
+    UpdateDBShrinkRequestBody body_;
+    bool bodyIsSet_;
 
+#ifdef RTTR_FLAG
+    RTTR_ENABLE()
+public:
+    SetInstancesDbShrinkRequest& dereference_from_shared_ptr(std::shared_ptr<SetInstancesDbShrinkRequest> ptr) {
+        return *ptr;
+    }
+#endif
 };
 
 
@@ -72,4 +80,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_RDS_V3_MODEL_PostgreSQLRestoreResult_H_
+#endif // HUAWEICLOUD_SDK_RDS_V3_MODEL_SetInstancesDbShrinkRequest_H_

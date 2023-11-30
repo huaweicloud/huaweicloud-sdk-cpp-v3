@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/rds/v3/model/PostgreSQLHistoryDatabaseInstance.h"
+#include "huaweicloud/rds/v3/model/HistoryDatabaseInstance.h"
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -10,7 +10,7 @@ namespace Model {
 
 
 
-PostgreSQLHistoryDatabaseInstance::PostgreSQLHistoryDatabaseInstance()
+HistoryDatabaseInstance::HistoryDatabaseInstance()
 {
     id_ = "";
     idIsSet_ = false;
@@ -21,13 +21,13 @@ PostgreSQLHistoryDatabaseInstance::PostgreSQLHistoryDatabaseInstance()
     databasesIsSet_ = false;
 }
 
-PostgreSQLHistoryDatabaseInstance::~PostgreSQLHistoryDatabaseInstance() = default;
+HistoryDatabaseInstance::~HistoryDatabaseInstance() = default;
 
-void PostgreSQLHistoryDatabaseInstance::validate()
+void HistoryDatabaseInstance::validate()
 {
 }
 
-web::json::value PostgreSQLHistoryDatabaseInstance::toJson() const
+web::json::value HistoryDatabaseInstance::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -46,7 +46,7 @@ web::json::value PostgreSQLHistoryDatabaseInstance::toJson() const
 
     return val;
 }
-bool PostgreSQLHistoryDatabaseInstance::fromJson(const web::json::value& val)
+bool HistoryDatabaseInstance::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -81,7 +81,7 @@ bool PostgreSQLHistoryDatabaseInstance::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("databases"));
         if(!fieldValue.is_null())
         {
-            std::vector<PostgreSQLHistoryDatabaseInfo> refVal;
+            std::vector<HistoryDatabaseInfo> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDatabases(refVal);
         }
@@ -90,86 +90,86 @@ bool PostgreSQLHistoryDatabaseInstance::fromJson(const web::json::value& val)
 }
 
 
-std::string PostgreSQLHistoryDatabaseInstance::getId() const
+std::string HistoryDatabaseInstance::getId() const
 {
     return id_;
 }
 
-void PostgreSQLHistoryDatabaseInstance::setId(const std::string& value)
+void HistoryDatabaseInstance::setId(const std::string& value)
 {
     id_ = value;
     idIsSet_ = true;
 }
 
-bool PostgreSQLHistoryDatabaseInstance::idIsSet() const
+bool HistoryDatabaseInstance::idIsSet() const
 {
     return idIsSet_;
 }
 
-void PostgreSQLHistoryDatabaseInstance::unsetid()
+void HistoryDatabaseInstance::unsetid()
 {
     idIsSet_ = false;
 }
 
-std::string PostgreSQLHistoryDatabaseInstance::getName() const
+std::string HistoryDatabaseInstance::getName() const
 {
     return name_;
 }
 
-void PostgreSQLHistoryDatabaseInstance::setName(const std::string& value)
+void HistoryDatabaseInstance::setName(const std::string& value)
 {
     name_ = value;
     nameIsSet_ = true;
 }
 
-bool PostgreSQLHistoryDatabaseInstance::nameIsSet() const
+bool HistoryDatabaseInstance::nameIsSet() const
 {
     return nameIsSet_;
 }
 
-void PostgreSQLHistoryDatabaseInstance::unsetname()
+void HistoryDatabaseInstance::unsetname()
 {
     nameIsSet_ = false;
 }
 
-int32_t PostgreSQLHistoryDatabaseInstance::getTotalTables() const
+int32_t HistoryDatabaseInstance::getTotalTables() const
 {
     return totalTables_;
 }
 
-void PostgreSQLHistoryDatabaseInstance::setTotalTables(int32_t value)
+void HistoryDatabaseInstance::setTotalTables(int32_t value)
 {
     totalTables_ = value;
     totalTablesIsSet_ = true;
 }
 
-bool PostgreSQLHistoryDatabaseInstance::totalTablesIsSet() const
+bool HistoryDatabaseInstance::totalTablesIsSet() const
 {
     return totalTablesIsSet_;
 }
 
-void PostgreSQLHistoryDatabaseInstance::unsettotalTables()
+void HistoryDatabaseInstance::unsettotalTables()
 {
     totalTablesIsSet_ = false;
 }
 
-std::vector<PostgreSQLHistoryDatabaseInfo>& PostgreSQLHistoryDatabaseInstance::getDatabases()
+std::vector<HistoryDatabaseInfo>& HistoryDatabaseInstance::getDatabases()
 {
     return databases_;
 }
 
-void PostgreSQLHistoryDatabaseInstance::setDatabases(const std::vector<PostgreSQLHistoryDatabaseInfo>& value)
+void HistoryDatabaseInstance::setDatabases(const std::vector<HistoryDatabaseInfo>& value)
 {
     databases_ = value;
     databasesIsSet_ = true;
 }
 
-bool PostgreSQLHistoryDatabaseInstance::databasesIsSet() const
+bool HistoryDatabaseInstance::databasesIsSet() const
 {
     return databasesIsSet_;
 }
 
-void PostgreSQLHistoryDatabaseInstance::unsetdatabases()
+void HistoryDatabaseInstance::unsetdatabases()
 {
     databasesIsSet_ = false;
 }

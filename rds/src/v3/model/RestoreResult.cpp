@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/rds/v3/model/PostgreSQLRestoreResult.h"
+#include "huaweicloud/rds/v3/model/RestoreResult.h"
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -10,7 +10,7 @@ namespace Model {
 
 
 
-PostgreSQLRestoreResult::PostgreSQLRestoreResult()
+RestoreResult::RestoreResult()
 {
     instanceId_ = "";
     instanceIdIsSet_ = false;
@@ -18,13 +18,13 @@ PostgreSQLRestoreResult::PostgreSQLRestoreResult()
     jobIdIsSet_ = false;
 }
 
-PostgreSQLRestoreResult::~PostgreSQLRestoreResult() = default;
+RestoreResult::~RestoreResult() = default;
 
-void PostgreSQLRestoreResult::validate()
+void RestoreResult::validate()
 {
 }
 
-web::json::value PostgreSQLRestoreResult::toJson() const
+web::json::value RestoreResult::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -37,7 +37,7 @@ web::json::value PostgreSQLRestoreResult::toJson() const
 
     return val;
 }
-bool PostgreSQLRestoreResult::fromJson(const web::json::value& val)
+bool RestoreResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -63,44 +63,44 @@ bool PostgreSQLRestoreResult::fromJson(const web::json::value& val)
 }
 
 
-std::string PostgreSQLRestoreResult::getInstanceId() const
+std::string RestoreResult::getInstanceId() const
 {
     return instanceId_;
 }
 
-void PostgreSQLRestoreResult::setInstanceId(const std::string& value)
+void RestoreResult::setInstanceId(const std::string& value)
 {
     instanceId_ = value;
     instanceIdIsSet_ = true;
 }
 
-bool PostgreSQLRestoreResult::instanceIdIsSet() const
+bool RestoreResult::instanceIdIsSet() const
 {
     return instanceIdIsSet_;
 }
 
-void PostgreSQLRestoreResult::unsetinstanceId()
+void RestoreResult::unsetinstanceId()
 {
     instanceIdIsSet_ = false;
 }
 
-std::string PostgreSQLRestoreResult::getJobId() const
+std::string RestoreResult::getJobId() const
 {
     return jobId_;
 }
 
-void PostgreSQLRestoreResult::setJobId(const std::string& value)
+void RestoreResult::setJobId(const std::string& value)
 {
     jobId_ = value;
     jobIdIsSet_ = true;
 }
 
-bool PostgreSQLRestoreResult::jobIdIsSet() const
+bool RestoreResult::jobIdIsSet() const
 {
     return jobIdIsSet_;
 }
 
-void PostgreSQLRestoreResult::unsetjobId()
+void RestoreResult::unsetjobId()
 {
     jobIdIsSet_ = false;
 }

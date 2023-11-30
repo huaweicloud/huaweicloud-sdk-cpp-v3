@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/rds/v3/model/PostgreSQLHistoryDatabaseInstance.h>
+#include <huaweicloud/rds/v3/model/HistoryDatabaseInstance.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -61,10 +61,10 @@ public:
     /// 实例信息
     /// </summary>
 
-    std::vector<PostgreSQLHistoryDatabaseInstance>& getInstances();
+    std::vector<HistoryDatabaseInstance>& getInstances();
     bool instancesIsSet() const;
     void unsetinstances();
-    void setInstances(const std::vector<PostgreSQLHistoryDatabaseInstance>& value);
+    void setInstances(const std::vector<HistoryDatabaseInstance>& value);
 
 
 protected:
@@ -72,7 +72,7 @@ protected:
     bool databaseLimitIsSet_;
     int32_t tableLimit_;
     bool tableLimitIsSet_;
-    std::vector<PostgreSQLHistoryDatabaseInstance> instances_;
+    std::vector<HistoryDatabaseInstance> instances_;
     bool instancesIsSet_;
 
 #ifdef RTTR_FLAG

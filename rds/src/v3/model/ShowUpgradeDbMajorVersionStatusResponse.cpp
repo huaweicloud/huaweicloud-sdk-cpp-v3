@@ -18,8 +18,8 @@ ShowUpgradeDbMajorVersionStatusResponse::ShowUpgradeDbMajorVersionStatusResponse
     targetVersionIsSet_ = false;
     startTime_ = "";
     startTimeIsSet_ = false;
-    reportExpirationTime_ = "";
-    reportExpirationTimeIsSet_ = false;
+    checkExpirationTime_ = "";
+    checkExpirationTimeIsSet_ = false;
     detail_ = "";
     detailIsSet_ = false;
 }
@@ -43,8 +43,8 @@ web::json::value ShowUpgradeDbMajorVersionStatusResponse::toJson() const
     if(startTimeIsSet_) {
         val[utility::conversions::to_string_t("start_time")] = ModelBase::toJson(startTime_);
     }
-    if(reportExpirationTimeIsSet_) {
-        val[utility::conversions::to_string_t("report_expiration_time")] = ModelBase::toJson(reportExpirationTime_);
+    if(checkExpirationTimeIsSet_) {
+        val[utility::conversions::to_string_t("check_expiration_time")] = ModelBase::toJson(checkExpirationTime_);
     }
     if(detailIsSet_) {
         val[utility::conversions::to_string_t("detail")] = ModelBase::toJson(detail_);
@@ -83,13 +83,13 @@ bool ShowUpgradeDbMajorVersionStatusResponse::fromJson(const web::json::value& v
             setStartTime(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("report_expiration_time"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("report_expiration_time"));
+    if(val.has_field(utility::conversions::to_string_t("check_expiration_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("check_expiration_time"));
         if(!fieldValue.is_null())
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setReportExpirationTime(refVal);
+            setCheckExpirationTime(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("detail"))) {
@@ -168,25 +168,25 @@ void ShowUpgradeDbMajorVersionStatusResponse::unsetstartTime()
     startTimeIsSet_ = false;
 }
 
-std::string ShowUpgradeDbMajorVersionStatusResponse::getReportExpirationTime() const
+std::string ShowUpgradeDbMajorVersionStatusResponse::getCheckExpirationTime() const
 {
-    return reportExpirationTime_;
+    return checkExpirationTime_;
 }
 
-void ShowUpgradeDbMajorVersionStatusResponse::setReportExpirationTime(const std::string& value)
+void ShowUpgradeDbMajorVersionStatusResponse::setCheckExpirationTime(const std::string& value)
 {
-    reportExpirationTime_ = value;
-    reportExpirationTimeIsSet_ = true;
+    checkExpirationTime_ = value;
+    checkExpirationTimeIsSet_ = true;
 }
 
-bool ShowUpgradeDbMajorVersionStatusResponse::reportExpirationTimeIsSet() const
+bool ShowUpgradeDbMajorVersionStatusResponse::checkExpirationTimeIsSet() const
 {
-    return reportExpirationTimeIsSet_;
+    return checkExpirationTimeIsSet_;
 }
 
-void ShowUpgradeDbMajorVersionStatusResponse::unsetreportExpirationTime()
+void ShowUpgradeDbMajorVersionStatusResponse::unsetcheckExpirationTime()
 {
-    reportExpirationTimeIsSet_ = false;
+    checkExpirationTimeIsSet_ = false;
 }
 
 std::string ShowUpgradeDbMajorVersionStatusResponse::getDetail() const

@@ -39,7 +39,7 @@ public:
     /// StartResizeFlavorActionResponse members
 
     /// <summary>
-    /// 任务ID。
+    /// 规格变更的任务id。 仅规格变更按需实例时会返回该参数。
     /// </summary>
 
     std::string getJobId() const;
@@ -47,10 +47,21 @@ public:
     void unsetjobId();
     void setJobId(const std::string& value);
 
+    /// <summary>
+    /// 订单号，规格变更包年包月时返回该参数。
+    /// </summary>
+
+    std::string getOrderId() const;
+    bool orderIdIsSet() const;
+    void unsetorderId();
+    void setOrderId(const std::string& value);
+
 
 protected:
     std::string jobId_;
     bool jobIdIsSet_;
+    std::string orderId_;
+    bool orderIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

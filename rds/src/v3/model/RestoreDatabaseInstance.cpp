@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/rds/v3/model/PostgreSQLRestoreDatabaseInstance.h"
+#include "huaweicloud/rds/v3/model/RestoreDatabaseInstance.h"
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -10,7 +10,7 @@ namespace Model {
 
 
 
-PostgreSQLRestoreDatabaseInstance::PostgreSQLRestoreDatabaseInstance()
+RestoreDatabaseInstance::RestoreDatabaseInstance()
 {
     restoreTime_ = 0L;
     restoreTimeIsSet_ = false;
@@ -19,13 +19,13 @@ PostgreSQLRestoreDatabaseInstance::PostgreSQLRestoreDatabaseInstance()
     databasesIsSet_ = false;
 }
 
-PostgreSQLRestoreDatabaseInstance::~PostgreSQLRestoreDatabaseInstance() = default;
+RestoreDatabaseInstance::~RestoreDatabaseInstance() = default;
 
-void PostgreSQLRestoreDatabaseInstance::validate()
+void RestoreDatabaseInstance::validate()
 {
 }
 
-web::json::value PostgreSQLRestoreDatabaseInstance::toJson() const
+web::json::value RestoreDatabaseInstance::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -41,7 +41,7 @@ web::json::value PostgreSQLRestoreDatabaseInstance::toJson() const
 
     return val;
 }
-bool PostgreSQLRestoreDatabaseInstance::fromJson(const web::json::value& val)
+bool RestoreDatabaseInstance::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -67,7 +67,7 @@ bool PostgreSQLRestoreDatabaseInstance::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("databases"));
         if(!fieldValue.is_null())
         {
-            std::vector<PostgreSQLRestoreDatabaseInfo> refVal;
+            std::vector<RestoreDatabaseInfo> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDatabases(refVal);
         }
@@ -76,65 +76,65 @@ bool PostgreSQLRestoreDatabaseInstance::fromJson(const web::json::value& val)
 }
 
 
-int64_t PostgreSQLRestoreDatabaseInstance::getRestoreTime() const
+int64_t RestoreDatabaseInstance::getRestoreTime() const
 {
     return restoreTime_;
 }
 
-void PostgreSQLRestoreDatabaseInstance::setRestoreTime(int64_t value)
+void RestoreDatabaseInstance::setRestoreTime(int64_t value)
 {
     restoreTime_ = value;
     restoreTimeIsSet_ = true;
 }
 
-bool PostgreSQLRestoreDatabaseInstance::restoreTimeIsSet() const
+bool RestoreDatabaseInstance::restoreTimeIsSet() const
 {
     return restoreTimeIsSet_;
 }
 
-void PostgreSQLRestoreDatabaseInstance::unsetrestoreTime()
+void RestoreDatabaseInstance::unsetrestoreTime()
 {
     restoreTimeIsSet_ = false;
 }
 
-std::string PostgreSQLRestoreDatabaseInstance::getInstanceId() const
+std::string RestoreDatabaseInstance::getInstanceId() const
 {
     return instanceId_;
 }
 
-void PostgreSQLRestoreDatabaseInstance::setInstanceId(const std::string& value)
+void RestoreDatabaseInstance::setInstanceId(const std::string& value)
 {
     instanceId_ = value;
     instanceIdIsSet_ = true;
 }
 
-bool PostgreSQLRestoreDatabaseInstance::instanceIdIsSet() const
+bool RestoreDatabaseInstance::instanceIdIsSet() const
 {
     return instanceIdIsSet_;
 }
 
-void PostgreSQLRestoreDatabaseInstance::unsetinstanceId()
+void RestoreDatabaseInstance::unsetinstanceId()
 {
     instanceIdIsSet_ = false;
 }
 
-std::vector<PostgreSQLRestoreDatabaseInfo>& PostgreSQLRestoreDatabaseInstance::getDatabases()
+std::vector<RestoreDatabaseInfo>& RestoreDatabaseInstance::getDatabases()
 {
     return databases_;
 }
 
-void PostgreSQLRestoreDatabaseInstance::setDatabases(const std::vector<PostgreSQLRestoreDatabaseInfo>& value)
+void RestoreDatabaseInstance::setDatabases(const std::vector<RestoreDatabaseInfo>& value)
 {
     databases_ = value;
     databasesIsSet_ = true;
 }
 
-bool PostgreSQLRestoreDatabaseInstance::databasesIsSet() const
+bool RestoreDatabaseInstance::databasesIsSet() const
 {
     return databasesIsSet_;
 }
 
-void PostgreSQLRestoreDatabaseInstance::unsetdatabases()
+void RestoreDatabaseInstance::unsetdatabases()
 {
     databasesIsSet_ = false;
 }

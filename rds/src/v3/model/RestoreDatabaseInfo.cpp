@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/rds/v3/model/PostgreSQLRestoreDatabaseInfo.h"
+#include "huaweicloud/rds/v3/model/RestoreDatabaseInfo.h"
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Rds {
@@ -10,7 +10,7 @@ namespace Model {
 
 
 
-PostgreSQLRestoreDatabaseInfo::PostgreSQLRestoreDatabaseInfo()
+RestoreDatabaseInfo::RestoreDatabaseInfo()
 {
     oldName_ = "";
     oldNameIsSet_ = false;
@@ -18,13 +18,13 @@ PostgreSQLRestoreDatabaseInfo::PostgreSQLRestoreDatabaseInfo()
     newNameIsSet_ = false;
 }
 
-PostgreSQLRestoreDatabaseInfo::~PostgreSQLRestoreDatabaseInfo() = default;
+RestoreDatabaseInfo::~RestoreDatabaseInfo() = default;
 
-void PostgreSQLRestoreDatabaseInfo::validate()
+void RestoreDatabaseInfo::validate()
 {
 }
 
-web::json::value PostgreSQLRestoreDatabaseInfo::toJson() const
+web::json::value RestoreDatabaseInfo::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -37,7 +37,7 @@ web::json::value PostgreSQLRestoreDatabaseInfo::toJson() const
 
     return val;
 }
-bool PostgreSQLRestoreDatabaseInfo::fromJson(const web::json::value& val)
+bool RestoreDatabaseInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -63,44 +63,44 @@ bool PostgreSQLRestoreDatabaseInfo::fromJson(const web::json::value& val)
 }
 
 
-std::string PostgreSQLRestoreDatabaseInfo::getOldName() const
+std::string RestoreDatabaseInfo::getOldName() const
 {
     return oldName_;
 }
 
-void PostgreSQLRestoreDatabaseInfo::setOldName(const std::string& value)
+void RestoreDatabaseInfo::setOldName(const std::string& value)
 {
     oldName_ = value;
     oldNameIsSet_ = true;
 }
 
-bool PostgreSQLRestoreDatabaseInfo::oldNameIsSet() const
+bool RestoreDatabaseInfo::oldNameIsSet() const
 {
     return oldNameIsSet_;
 }
 
-void PostgreSQLRestoreDatabaseInfo::unsetoldName()
+void RestoreDatabaseInfo::unsetoldName()
 {
     oldNameIsSet_ = false;
 }
 
-std::string PostgreSQLRestoreDatabaseInfo::getNewName() const
+std::string RestoreDatabaseInfo::getNewName() const
 {
     return newName_;
 }
 
-void PostgreSQLRestoreDatabaseInfo::setNewName(const std::string& value)
+void RestoreDatabaseInfo::setNewName(const std::string& value)
 {
     newName_ = value;
     newNameIsSet_ = true;
 }
 
-bool PostgreSQLRestoreDatabaseInfo::newNameIsSet() const
+bool RestoreDatabaseInfo::newNameIsSet() const
 {
     return newNameIsSet_;
 }
 
-void PostgreSQLRestoreDatabaseInfo::unsetnewName()
+void RestoreDatabaseInfo::unsetnewName()
 {
     newNameIsSet_ = false;
 }

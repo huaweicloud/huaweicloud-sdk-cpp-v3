@@ -39,7 +39,7 @@ bool BatchRestoreDatabaseResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("restore_result"));
         if(!fieldValue.is_null())
         {
-            std::vector<PostgreSQLRestoreResult> refVal;
+            std::vector<RestoreResult> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRestoreResult(refVal);
         }
@@ -48,12 +48,12 @@ bool BatchRestoreDatabaseResponse::fromJson(const web::json::value& val)
 }
 
 
-std::vector<PostgreSQLRestoreResult>& BatchRestoreDatabaseResponse::getRestoreResult()
+std::vector<RestoreResult>& BatchRestoreDatabaseResponse::getRestoreResult()
 {
     return restoreResult_;
 }
 
-void BatchRestoreDatabaseResponse::setRestoreResult(const std::vector<PostgreSQLRestoreResult>& value)
+void BatchRestoreDatabaseResponse::setRestoreResult(const std::vector<RestoreResult>& value)
 {
     restoreResult_ = value;
     restoreResultIsSet_ = true;

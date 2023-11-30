@@ -12,8 +12,8 @@ namespace Model {
 
 ListHistoryDatabaseRequest::ListHistoryDatabaseRequest()
 {
-    databaseName_ = "";
-    databaseNameIsSet_ = false;
+    engine_ = "";
+    engineIsSet_ = false;
     xLanguage_ = "";
     xLanguageIsSet_ = false;
     bodyIsSet_ = false;
@@ -29,8 +29,8 @@ web::json::value ListHistoryDatabaseRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(databaseNameIsSet_) {
-        val[utility::conversions::to_string_t("database_name")] = ModelBase::toJson(databaseName_);
+    if(engineIsSet_) {
+        val[utility::conversions::to_string_t("engine")] = ModelBase::toJson(engine_);
     }
     if(xLanguageIsSet_) {
         val[utility::conversions::to_string_t("X-Language")] = ModelBase::toJson(xLanguage_);
@@ -45,13 +45,13 @@ bool ListHistoryDatabaseRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("database_name"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("database_name"));
+    if(val.has_field(utility::conversions::to_string_t("engine"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("engine"));
         if(!fieldValue.is_null())
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setDatabaseName(refVal);
+            setEngine(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("X-Language"))) {
@@ -76,25 +76,25 @@ bool ListHistoryDatabaseRequest::fromJson(const web::json::value& val)
 }
 
 
-std::string ListHistoryDatabaseRequest::getDatabaseName() const
+std::string ListHistoryDatabaseRequest::getEngine() const
 {
-    return databaseName_;
+    return engine_;
 }
 
-void ListHistoryDatabaseRequest::setDatabaseName(const std::string& value)
+void ListHistoryDatabaseRequest::setEngine(const std::string& value)
 {
-    databaseName_ = value;
-    databaseNameIsSet_ = true;
+    engine_ = value;
+    engineIsSet_ = true;
 }
 
-bool ListHistoryDatabaseRequest::databaseNameIsSet() const
+bool ListHistoryDatabaseRequest::engineIsSet() const
 {
-    return databaseNameIsSet_;
+    return engineIsSet_;
 }
 
-void ListHistoryDatabaseRequest::unsetdatabaseName()
+void ListHistoryDatabaseRequest::unsetengine()
 {
-    databaseNameIsSet_ = false;
+    engineIsSet_ = false;
 }
 
 std::string ListHistoryDatabaseRequest::getXLanguage() const

@@ -107,10 +107,10 @@ public:
     /// 日志类型。slow_log表示慢日志，audit_log表示审计日志。
     /// </summary>
 
-    std::string getSupportedLogTypes() const;
+    std::vector<std::string>& getSupportedLogTypes();
     bool supportedLogTypesIsSet() const;
     void unsetsupportedLogTypes();
-    void setSupportedLogTypes(const std::string& value);
+    void setSupportedLogTypes(const std::vector<std::string>& value);
 
 
 protected:
@@ -128,7 +128,7 @@ protected:
     bool actionsIsSet_;
     std::string enterpriseProjectId_;
     bool enterpriseProjectIdIsSet_;
-    std::string supportedLogTypes_;
+    std::vector<std::string> supportedLogTypes_;
     bool supportedLogTypesIsSet_;
 
 };

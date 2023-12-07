@@ -68,6 +68,7 @@ public:
     static HttpRequestDef genRequestDefForModifyPort();
     static HttpRequestDef genRequestDefForModifyPublicIp();
     static HttpRequestDef genRequestDefForModifyVolume();
+    static HttpRequestDef genRequestDefForOfflineNodes();
     static HttpRequestDef genRequestDefForPauseResumeDataSynchronization();
     static HttpRequestDef genRequestDefForResetDbUserPassword();
     static HttpRequestDef genRequestDefForResetParamGroupTemplate();

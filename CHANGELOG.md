@@ -1,3 +1,27 @@
+# 3.1.64 2023-12-07
+
+### HuaweiCloud SDK GaussDB
+
+- _Features_
+  - Support the APIs `ListGaussMySqlInstancesUnifyStatus`, `ShowGaussMySqlInstanceInfoUnifyStatus`, `ListGaussMySqlInstanceDetailInfoUnifyStatus`, `SwitchGaussMySqlProxySsl`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowGaussMySqlProxyList**
+    - changes of response param
+      - `+ proxy_list.proxy.ssl_option`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _Features_
+  - Support the API `OfflineNodes`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListLtsConfigs**
+    - changes of response param
+      - `* instance_lts_configs.instance.supported_log_types: string -> list<string>`
+
 # 3.1.63 2023-11-30
 
 ### HuaweiCloud SDK EIP

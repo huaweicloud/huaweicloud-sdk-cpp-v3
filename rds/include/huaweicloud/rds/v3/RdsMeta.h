@@ -90,7 +90,6 @@ public:
     static HttpRequestDef genRequestDefForSetAutoEnlargePolicy();
     static HttpRequestDef genRequestDefForSetBackupPolicy();
     static HttpRequestDef genRequestDefForSetBinlogClearPolicy();
-    static HttpRequestDef genRequestDefForSetInstancesDbShrink();
     static HttpRequestDef genRequestDefForSetOffSiteBackupPolicy();
     static HttpRequestDef genRequestDefForSetSecondLevelMonitor();
     static HttpRequestDef genRequestDefForSetSecurityGroup();
@@ -195,6 +194,7 @@ public:
     static HttpRequestDef genRequestDefForListSqlserverDbUsers();
     static HttpRequestDef genRequestDefForModifyCollation();
     static HttpRequestDef genRequestDefForRevokeSqlserverDbUserPrivilege();
+    static HttpRequestDef genRequestDefForSetInstancesDbShrink();
 };
 
 }

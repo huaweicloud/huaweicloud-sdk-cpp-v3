@@ -113,8 +113,12 @@
 #include <huaweicloud/gaussdb/v3/model/ListGaussMySqlDedicatedResourcesResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ListGaussMySqlInstanceDetailInfoRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ListGaussMySqlInstanceDetailInfoResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ListGaussMySqlInstanceDetailInfoUnifyStatusRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ListGaussMySqlInstanceDetailInfoUnifyStatusResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ListGaussMySqlInstancesRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ListGaussMySqlInstancesResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ListGaussMySqlInstancesUnifyStatusRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ListGaussMySqlInstancesUnifyStatusResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ListImmediateJobsRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ListImmediateJobsResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ListInstanceConfigurationsRequest.h>
@@ -200,6 +204,8 @@
 #include <huaweicloud/gaussdb/v3/model/ShowGaussMySqlIncrementalBackupListResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowGaussMySqlInstanceInfoRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ShowGaussMySqlInstanceInfoResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ShowGaussMySqlInstanceInfoUnifyStatusRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ShowGaussMySqlInstanceInfoUnifyStatusResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowGaussMySqlJobInfoRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ShowGaussMySqlJobInfoResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowGaussMySqlProjectQuotasRequest.h>
@@ -230,6 +236,9 @@
 #include <huaweicloud/gaussdb/v3/model/SwitchGaussMySqlConfigurationResponse.h>
 #include <huaweicloud/gaussdb/v3/model/SwitchGaussMySqlInstanceSslRequest.h>
 #include <huaweicloud/gaussdb/v3/model/SwitchGaussMySqlInstanceSslResponse.h>
+#include <huaweicloud/gaussdb/v3/model/SwitchGaussMySqlProxySslRequest.h>
+#include <huaweicloud/gaussdb/v3/model/SwitchGaussMySqlProxySslResponse.h>
+#include <huaweicloud/gaussdb/v3/model/SwitchProxySSLRequest.h>
 #include <huaweicloud/gaussdb/v3/model/SwitchSSLRequest.h>
 #include <huaweicloud/gaussdb/v3/model/TaurusModifyInstanceMonitorRequestBody.h>
 #include <huaweicloud/gaussdb/v3/model/TaurusModifyProxyWeightRequest.h>
@@ -677,6 +686,14 @@ public:
     std::shared_ptr<ListGaussMySqlInstanceDetailInfoResponse> listGaussMySqlInstanceDetailInfo(
         ListGaussMySqlInstanceDetailInfoRequest &request
     );
+    // 批量查询实例详情
+    //
+    // 批量查询实例详情。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListGaussMySqlInstanceDetailInfoUnifyStatusResponse> listGaussMySqlInstanceDetailInfoUnifyStatus(
+        ListGaussMySqlInstanceDetailInfoUnifyStatusRequest &request
+    );
     // 查询实例列表
     //
     // 根据指定条件查询实例列表。
@@ -684,6 +701,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListGaussMySqlInstancesResponse> listGaussMySqlInstances(
         ListGaussMySqlInstancesRequest &request
+    );
+    // 查询实例列表
+    //
+    // 根据指定条件查询实例列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListGaussMySqlInstancesUnifyStatusResponse> listGaussMySqlInstancesUnifyStatus(
+        ListGaussMySqlInstancesUnifyStatusRequest &request
     );
     // 获取即时任务列表
     //
@@ -917,6 +942,14 @@ public:
     std::shared_ptr<ShowGaussMySqlInstanceInfoResponse> showGaussMySqlInstanceInfo(
         ShowGaussMySqlInstanceInfoRequest &request
     );
+    // 查询实例详情信息
+    //
+    // 查询实例详情信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowGaussMySqlInstanceInfoUnifyStatusResponse> showGaussMySqlInstanceInfoUnifyStatus(
+        ShowGaussMySqlInstanceInfoUnifyStatusRequest &request
+    );
     // 获取指定ID的任务信息
     //
     // 获取GaussDB(for MySQL)任务中心指定ID的任务信息。
@@ -1029,6 +1062,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<SwitchGaussMySqlInstanceSslResponse> switchGaussMySqlInstanceSsl(
         SwitchGaussMySqlInstanceSslRequest &request
+    );
+    // 开关数据库代理SSL
+    //
+    // 为数据库代理设置SSL数据加密。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SwitchGaussMySqlProxySslResponse> switchGaussMySqlProxySsl(
+        SwitchGaussMySqlProxySslRequest &request
     );
     // 开启或者关闭全量SQL
     //

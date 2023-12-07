@@ -24,7 +24,6 @@ LogInstanceInfo::LogInstanceInfo()
     actionsIsSet_ = false;
     enterpriseProjectId_ = "";
     enterpriseProjectIdIsSet_ = false;
-    supportedLogTypes_ = "";
     supportedLogTypesIsSet_ = false;
 }
 
@@ -136,7 +135,7 @@ bool LogInstanceInfo::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("supported_log_types"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSupportedLogTypes(refVal);
         }
@@ -292,12 +291,12 @@ void LogInstanceInfo::unsetenterpriseProjectId()
     enterpriseProjectIdIsSet_ = false;
 }
 
-std::string LogInstanceInfo::getSupportedLogTypes() const
+std::vector<std::string>& LogInstanceInfo::getSupportedLogTypes()
 {
     return supportedLogTypes_;
 }
 
-void LogInstanceInfo::setSupportedLogTypes(const std::string& value)
+void LogInstanceInfo::setSupportedLogTypes(const std::vector<std::string>& value)
 {
     supportedLogTypes_ = value;
     supportedLogTypesIsSet_ = true;

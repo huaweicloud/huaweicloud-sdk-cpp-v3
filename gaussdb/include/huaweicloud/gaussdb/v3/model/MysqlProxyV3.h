@@ -238,6 +238,15 @@ public:
     void unsetsubnetId();
     void setSubnetId(const std::string& value);
 
+    /// <summary>
+    /// SSL数据加密开关设置。  取值范围： - true: 开启SSL数据加密。 - false: 关闭SSL数据加密。
+    /// </summary>
+
+    std::string getSslOption() const;
+    bool sslOptionIsSet() const;
+    void unsetsslOption();
+    void setSslOption(const std::string& value);
+
 
 protected:
     std::string poolId_;
@@ -284,6 +293,8 @@ protected:
     bool consistenceModeIsSet_;
     std::string subnetId_;
     bool subnetIdIsSet_;
+    std::string sslOption_;
+    bool sslOptionIsSet_;
 
 };
 

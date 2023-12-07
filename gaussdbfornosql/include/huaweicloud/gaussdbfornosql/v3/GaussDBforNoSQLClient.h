@@ -142,6 +142,10 @@
 #include <huaweicloud/gaussdbfornosql/v3/model/ModifyVolumeResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/NoSqlCreateBackupRequestBody.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/NoSqlModiflyEpsQuotasRequestBody.h>
+#include <huaweicloud/core/utils/Object.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/OfflineNodesRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/OfflineNodesRequestBody.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/OfflineNodesResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/PauseResumeDataSynchronizationRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/PauseResumeDataSynchronizationResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/PrecheckDisasterRecoveryOperationBody.h>
@@ -731,6 +735,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ModifyVolumeResponse> modifyVolume(
         ModifyVolumeRequest &request
+    );
+    // 支持节点的开关机
+    //
+    // 当底层故障导致节点无法正常工作时，可以对该节点执行关机操作，关机后会由其他节点接管业务。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<OfflineNodesResponse> offlineNodes(
+        OfflineNodesRequest &request
     );
     // 暂停/恢复具备容灾关系的实例数据同步
     //

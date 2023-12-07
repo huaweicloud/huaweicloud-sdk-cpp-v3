@@ -576,6 +576,15 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForModifyVolume() {
     return reqDefBuilder;
 }
 
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForOfflineNodes() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForPauseResumeDataSynchronization() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;

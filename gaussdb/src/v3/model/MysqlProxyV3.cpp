@@ -55,6 +55,8 @@ MysqlProxyV3::MysqlProxyV3()
     consistenceModeIsSet_ = false;
     subnetId_ = "";
     subnetIdIsSet_ = false;
+    sslOption_ = "";
+    sslOptionIsSet_ = false;
 }
 
 MysqlProxyV3::~MysqlProxyV3() = default;
@@ -132,6 +134,9 @@ web::json::value MysqlProxyV3::toJson() const
     }
     if(subnetIdIsSet_) {
         val[utility::conversions::to_string_t("subnet_id")] = ModelBase::toJson(subnetId_);
+    }
+    if(sslOptionIsSet_) {
+        val[utility::conversions::to_string_t("ssl_option")] = ModelBase::toJson(sslOption_);
     }
 
     return val;
@@ -336,6 +341,15 @@ bool MysqlProxyV3::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSubnetId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("ssl_option"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ssl_option"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSslOption(refVal);
         }
     }
     return ok;
@@ -802,6 +816,27 @@ bool MysqlProxyV3::subnetIdIsSet() const
 void MysqlProxyV3::unsetsubnetId()
 {
     subnetIdIsSet_ = false;
+}
+
+std::string MysqlProxyV3::getSslOption() const
+{
+    return sslOption_;
+}
+
+void MysqlProxyV3::setSslOption(const std::string& value)
+{
+    sslOption_ = value;
+    sslOptionIsSet_ = true;
+}
+
+bool MysqlProxyV3::sslOptionIsSet() const
+{
+    return sslOptionIsSet_;
+}
+
+void MysqlProxyV3::unsetsslOption()
+{
+    sslOptionIsSet_ = false;
 }
 
 }

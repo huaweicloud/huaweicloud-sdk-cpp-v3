@@ -1829,6 +1829,41 @@ std::shared_ptr<ListGaussMySqlInstanceDetailInfoResponse> GaussDBClient::listGau
 
     return localVarResult;
 }
+std::shared_ptr<ListGaussMySqlInstanceDetailInfoUnifyStatusResponse> GaussDBClient::listGaussMySqlInstanceDetailInfoUnifyStatus(ListGaussMySqlInstanceDetailInfoUnifyStatusRequest &request)
+{
+    std::string localVarPath = "/v3.1/{project_id}/instances/details";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.instanceIdsIsSet()) {
+        localVarQueryParams["instance_ids"] = parameterToString(request.getInstanceIds());
+    }
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, GaussDBMeta::genRequestDefForListGaussMySqlInstanceDetailInfoUnifyStatus());
+
+    std::shared_ptr<ListGaussMySqlInstanceDetailInfoUnifyStatusResponse> localVarResult = std::make_shared<ListGaussMySqlInstanceDetailInfoUnifyStatusResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListGaussMySqlInstancesResponse> GaussDBClient::listGaussMySqlInstances(ListGaussMySqlInstancesRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/instances";
@@ -1891,6 +1926,74 @@ std::shared_ptr<ListGaussMySqlInstancesResponse> GaussDBClient::listGaussMySqlIn
         localVarHeaderParams, localVarHttpBody, GaussDBMeta::genRequestDefForListGaussMySqlInstances());
 
     std::shared_ptr<ListGaussMySqlInstancesResponse> localVarResult = std::make_shared<ListGaussMySqlInstancesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListGaussMySqlInstancesUnifyStatusResponse> GaussDBClient::listGaussMySqlInstancesUnifyStatus(ListGaussMySqlInstancesUnifyStatusRequest &request)
+{
+    std::string localVarPath = "/v3.1/{project_id}/instances";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.idIsSet()) {
+        localVarQueryParams["id"] = parameterToString(request.getId());
+    }
+    if (request.nameIsSet()) {
+        localVarQueryParams["name"] = parameterToString(request.getName());
+    }
+    if (request.typeIsSet()) {
+        localVarQueryParams["type"] = parameterToString(request.getType());
+    }
+    if (request.datastoreTypeIsSet()) {
+        localVarQueryParams["datastore_type"] = parameterToString(request.getDatastoreType());
+    }
+    if (request.vpcIdIsSet()) {
+        localVarQueryParams["vpc_id"] = parameterToString(request.getVpcId());
+    }
+    if (request.subnetIdIsSet()) {
+        localVarQueryParams["subnet_id"] = parameterToString(request.getSubnetId());
+    }
+    if (request.privateIpIsSet()) {
+        localVarQueryParams["private_ip"] = parameterToString(request.getPrivateIp());
+    }
+    if (request.readonlyPrivateIpIsSet()) {
+        localVarQueryParams["readonly_private_ip"] = parameterToString(request.getReadonlyPrivateIp());
+    }
+    if (request.proxyIpIsSet()) {
+        localVarQueryParams["proxy_ip"] = parameterToString(request.getProxyIp());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.tagsIsSet()) {
+        localVarQueryParams["tags"] = parameterToString(request.getTags());
+    }
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, GaussDBMeta::genRequestDefForListGaussMySqlInstancesUnifyStatus());
+
+    std::shared_ptr<ListGaussMySqlInstancesUnifyStatusResponse> localVarResult = std::make_shared<ListGaussMySqlInstancesUnifyStatusResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -3112,6 +3215,39 @@ std::shared_ptr<ShowGaussMySqlInstanceInfoResponse> GaussDBClient::showGaussMySq
 
     return localVarResult;
 }
+std::shared_ptr<ShowGaussMySqlInstanceInfoUnifyStatusResponse> GaussDBClient::showGaussMySqlInstanceInfoUnifyStatus(ShowGaussMySqlInstanceInfoUnifyStatusRequest &request)
+{
+    std::string localVarPath = "/v3.1/{project_id}/instances/{instance_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, GaussDBMeta::genRequestDefForShowGaussMySqlInstanceInfoUnifyStatus());
+
+    std::shared_ptr<ShowGaussMySqlInstanceInfoUnifyStatusResponse> localVarResult = std::make_shared<ShowGaussMySqlInstanceInfoUnifyStatusResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowGaussMySqlJobInfoResponse> GaussDBClient::showGaussMySqlJobInfo(ShowGaussMySqlJobInfoRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/jobs";
@@ -3649,6 +3785,52 @@ std::shared_ptr<SwitchGaussMySqlInstanceSslResponse> GaussDBClient::switchGaussM
         localVarHeaderParams, localVarHttpBody, GaussDBMeta::genRequestDefForSwitchGaussMySqlInstanceSsl());
 
     std::shared_ptr<SwitchGaussMySqlInstanceSslResponse> localVarResult = std::make_shared<SwitchGaussMySqlInstanceSslResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<SwitchGaussMySqlProxySslResponse> GaussDBClient::switchGaussMySqlProxySsl(SwitchGaussMySqlProxySslRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/ssl";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+    localVarPathParams["proxy_id"] = parameterToString(request.getProxyId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, GaussDBMeta::genRequestDefForSwitchGaussMySqlProxySsl());
+
+    std::shared_ptr<SwitchGaussMySqlProxySslResponse> localVarResult = std::make_shared<SwitchGaussMySqlProxySslResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

@@ -39,6 +39,10 @@ UpdateKeywordsAlarmRuleResponse::UpdateKeywordsAlarmRuleResponse()
     conditionExpressionIsSet_ = false;
     indexId_ = "";
     indexIdIsSet_ = false;
+    notificationFrequency_ = 0;
+    notificationFrequencyIsSet_ = false;
+    alarmActionRuleName_ = "";
+    alarmActionRuleNameIsSet_ = false;
 }
 
 UpdateKeywordsAlarmRuleResponse::~UpdateKeywordsAlarmRuleResponse() = default;
@@ -96,6 +100,12 @@ web::json::value UpdateKeywordsAlarmRuleResponse::toJson() const
     if(indexIdIsSet_) {
         val[utility::conversions::to_string_t("indexId")] = ModelBase::toJson(indexId_);
     }
+    if(notificationFrequencyIsSet_) {
+        val[utility::conversions::to_string_t("notification_frequency")] = ModelBase::toJson(notificationFrequency_);
+    }
+    if(alarmActionRuleNameIsSet_) {
+        val[utility::conversions::to_string_t("alarm_action_rule_name")] = ModelBase::toJson(alarmActionRuleName_);
+    }
 
     return val;
 }
@@ -134,7 +144,7 @@ bool UpdateKeywordsAlarmRuleResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("keywords_requests"));
         if(!fieldValue.is_null())
         {
-            std::vector<KeywordsRequest> refVal;
+            std::vector<KeywordsResBody> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setKeywordsRequests(refVal);
         }
@@ -143,7 +153,7 @@ bool UpdateKeywordsAlarmRuleResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("frequency"));
         if(!fieldValue.is_null())
         {
-            Frequency refVal;
+            FrequencyRespBody refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFrequency(refVal);
         }
@@ -238,6 +248,24 @@ bool UpdateKeywordsAlarmRuleResponse::fromJson(const web::json::value& val)
             setIndexId(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("notification_frequency"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("notification_frequency"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setNotificationFrequency(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("alarm_action_rule_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("alarm_action_rule_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAlarmActionRuleName(refVal);
+        }
+    }
     return ok;
 }
 
@@ -305,12 +333,12 @@ void UpdateKeywordsAlarmRuleResponse::unsetkeywordsAlarmRuleDescription()
     keywordsAlarmRuleDescriptionIsSet_ = false;
 }
 
-std::vector<KeywordsRequest>& UpdateKeywordsAlarmRuleResponse::getKeywordsRequests()
+std::vector<KeywordsResBody>& UpdateKeywordsAlarmRuleResponse::getKeywordsRequests()
 {
     return keywordsRequests_;
 }
 
-void UpdateKeywordsAlarmRuleResponse::setKeywordsRequests(const std::vector<KeywordsRequest>& value)
+void UpdateKeywordsAlarmRuleResponse::setKeywordsRequests(const std::vector<KeywordsResBody>& value)
 {
     keywordsRequests_ = value;
     keywordsRequestsIsSet_ = true;
@@ -326,12 +354,12 @@ void UpdateKeywordsAlarmRuleResponse::unsetkeywordsRequests()
     keywordsRequestsIsSet_ = false;
 }
 
-Frequency UpdateKeywordsAlarmRuleResponse::getFrequency() const
+FrequencyRespBody UpdateKeywordsAlarmRuleResponse::getFrequency() const
 {
     return frequency_;
 }
 
-void UpdateKeywordsAlarmRuleResponse::setFrequency(const Frequency& value)
+void UpdateKeywordsAlarmRuleResponse::setFrequency(const FrequencyRespBody& value)
 {
     frequency_ = value;
     frequencyIsSet_ = true;
@@ -555,6 +583,48 @@ bool UpdateKeywordsAlarmRuleResponse::indexIdIsSet() const
 void UpdateKeywordsAlarmRuleResponse::unsetindexId()
 {
     indexIdIsSet_ = false;
+}
+
+int32_t UpdateKeywordsAlarmRuleResponse::getNotificationFrequency() const
+{
+    return notificationFrequency_;
+}
+
+void UpdateKeywordsAlarmRuleResponse::setNotificationFrequency(int32_t value)
+{
+    notificationFrequency_ = value;
+    notificationFrequencyIsSet_ = true;
+}
+
+bool UpdateKeywordsAlarmRuleResponse::notificationFrequencyIsSet() const
+{
+    return notificationFrequencyIsSet_;
+}
+
+void UpdateKeywordsAlarmRuleResponse::unsetnotificationFrequency()
+{
+    notificationFrequencyIsSet_ = false;
+}
+
+std::string UpdateKeywordsAlarmRuleResponse::getAlarmActionRuleName() const
+{
+    return alarmActionRuleName_;
+}
+
+void UpdateKeywordsAlarmRuleResponse::setAlarmActionRuleName(const std::string& value)
+{
+    alarmActionRuleName_ = value;
+    alarmActionRuleNameIsSet_ = true;
+}
+
+bool UpdateKeywordsAlarmRuleResponse::alarmActionRuleNameIsSet() const
+{
+    return alarmActionRuleNameIsSet_;
+}
+
+void UpdateKeywordsAlarmRuleResponse::unsetalarmActionRuleName()
+{
+    alarmActionRuleNameIsSet_ = false;
 }
 
 }

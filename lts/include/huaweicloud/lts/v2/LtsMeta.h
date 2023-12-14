@@ -14,6 +14,7 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 class HUAWEICLOUD_LTS_V2_EXPORT  LtsMeta {
 public:
     static HttpRequestDef genRequestDefForCreateAccessConfig();
+    static HttpRequestDef genRequestDefForCreateAgencyAccess();
     static HttpRequestDef genRequestDefForCreateDashBoard();
     static HttpRequestDef genRequestDefForCreateDashboardGroup();
     static HttpRequestDef genRequestDefForCreateHostGroup();

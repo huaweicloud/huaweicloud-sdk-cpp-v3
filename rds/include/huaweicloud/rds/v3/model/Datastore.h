@@ -57,7 +57,7 @@ public:
     void setVersion(const std::string& value);
 
     /// <summary>
-    /// 数据库完整版本号。仅在数据库引擎是”PostgreSQL”时返回。
+    /// 数据库完整版本号。仅在数据库引擎是”MySQL”和”PostgreSQL”时返回。
     /// </summary>
 
     std::string getCompleteVersion() const;

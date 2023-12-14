@@ -25,11 +25,13 @@ public:
     static HttpRequestDef genRequestDefForBatchDeleteServiceItems();
     static HttpRequestDef genRequestDefForChangeEastWestFirewallStatus();
     static HttpRequestDef genRequestDefForCreateEastWestFirewall();
+    static HttpRequestDef genRequestDefForCreateFirewall();
     static HttpRequestDef genRequestDefForDeleteAddressItem();
     static HttpRequestDef genRequestDefForDeleteAddressSet();
     static HttpRequestDef genRequestDefForDeleteBlackWhiteList();
     static HttpRequestDef genRequestDefForDeleteDomainSet();
     static HttpRequestDef genRequestDefForDeleteDomains();
+    static HttpRequestDef genRequestDefForDeleteFirewall();
     static HttpRequestDef genRequestDefForDeleteServiceItem();
     static HttpRequestDef genRequestDefForDeleteServiceSet();
     static HttpRequestDef genRequestDefForListAccessControlLogs();
@@ -46,6 +48,7 @@ public:
     static HttpRequestDef genRequestDefForListFirewallDetail();
     static HttpRequestDef genRequestDefForListFirewallList();
     static HttpRequestDef genRequestDefForListFlowLogs();
+    static HttpRequestDef genRequestDefForListJob();
     static HttpRequestDef genRequestDefForListLogConfig();
     static HttpRequestDef genRequestDefForListProtectedVpcs();
     static HttpRequestDef genRequestDefForListServiceItems();

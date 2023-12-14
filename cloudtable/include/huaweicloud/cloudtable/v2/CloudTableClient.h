@@ -32,6 +32,11 @@
 #include <huaweicloud/cloudtable/v2/model/UpdateClusterSettingResponse.h>
 #include <string>
 
+#include <huaweicloud/cloudtable/v2/model/CreateCloudTableClusterRequest.h>
+#include <huaweicloud/cloudtable/v2/model/CreateCloudTableClusterResponse.h>
+#include <huaweicloud/cloudtable/v2/model/CreateClusterRequestBody.h>
+#include <string>
+
 #include <cpprest/details/basic_types.h>
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/utils/Object.h>
@@ -135,6 +140,20 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateClusterSettingResponse> updateClusterSetting(
         UpdateClusterSettingRequest &request
+    );
+
+    // 创建CloudTable集群
+    //
+    // 创建一个CloudTable集群。
+    // 使用接口前，您需要先获取如下资源信息。
+    // - 通过VPC创建或查询VPC、子网
+    // - 通过安全组创建或查询可用的security_group_id
+    // 
+    // 本接口是一个同步接口，当创建CloudTable集群成功后会返回集群id。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateCloudTableClusterResponse> createCloudTableCluster(
+        CreateCloudTableClusterRequest &request
     );
 
 

@@ -597,6 +597,53 @@ std::shared_ptr<CreateEastWestFirewallResponse> CfwClient::createEastWestFirewal
 
     return localVarResult;
 }
+std::shared_ptr<CreateFirewallResponse> CfwClient::createFirewall(CreateFirewallRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/firewall";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xClientTokenIsSet()) {
+        localVarHeaderParams["X-Client-Token"] = parameterToString(request.getXClientToken());
+    }
+    if (request.xTraceIdIsSet()) {
+        localVarHeaderParams["X-Trace-Id"] = parameterToString(request.getXTraceId());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CfwMeta::genRequestDefForCreateFirewall());
+
+    std::shared_ptr<CreateFirewallResponse> localVarResult = std::make_shared<CreateFirewallResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<DeleteAddressItemResponse> CfwClient::deleteAddressItem(DeleteAddressItemRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/address-items/{item_id}";
@@ -783,6 +830,36 @@ std::shared_ptr<DeleteDomainsResponse> CfwClient::deleteDomains(DeleteDomainsReq
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
+
+    return localVarResult;
+}
+std::shared_ptr<DeleteFirewallResponse> CfwClient::deleteFirewall(DeleteFirewallRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/firewall/{resource_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["resource_id"] = parameterToString(request.getResourceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CfwMeta::genRequestDefForDeleteFirewall());
+
+    std::shared_ptr<DeleteFirewallResponse> localVarResult = std::make_shared<DeleteFirewallResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }
@@ -1624,6 +1701,36 @@ std::shared_ptr<ListFlowLogsResponse> CfwClient::listFlowLogs(ListFlowLogsReques
         localVarHeaderParams, localVarHttpBody, CfwMeta::genRequestDefForListFlowLogs());
 
     std::shared_ptr<ListFlowLogsResponse> localVarResult = std::make_shared<ListFlowLogsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListJobResponse> CfwClient::listJob(ListJobRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/jobs/{job_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["job_id"] = parameterToString(request.getJobId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CfwMeta::genRequestDefForListJob());
+
+    std::shared_ptr<ListJobResponse> localVarResult = std::make_shared<ListJobResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

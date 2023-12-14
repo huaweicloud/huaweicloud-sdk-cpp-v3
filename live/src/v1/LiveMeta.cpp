@@ -93,6 +93,15 @@ HttpRequestDef LiveMeta::genRequestDefForCreateTranscodingsTemplate() {
     return reqDefBuilder;
 }
 
+HttpRequestDef LiveMeta::genRequestDefForCreateUrlAuthchain() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef LiveMeta::genRequestDefForDeleteDomain() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Domain")
@@ -116,6 +125,14 @@ HttpRequestDef LiveMeta::genRequestDefForDeleteDomainMapping() {
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("PushDomain")
                   .withJsonTag("push_domain")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LiveMeta::genRequestDefForDeletePublishTemplate() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Domain")
+                  .withJsonTag("domain")
                   .withLocationType(Query_));
     return reqDefBuilder;
 }
@@ -166,6 +183,40 @@ HttpRequestDef LiveMeta::genRequestDefForDeleteTranscodingsTemplate() {
     return reqDefBuilder;
 }
 
+HttpRequestDef LiveMeta::genRequestDefForListDelayConfig() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("PlayDomain")
+                  .withJsonTag("play_domain")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LiveMeta::genRequestDefForListGeoBlockingConfig() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("PlayDomain")
+                  .withJsonTag("play_domain")
+                  .withLocationType(Query_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LiveMeta::genRequestDefForListIpAuthList() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Domain")
+                  .withJsonTag("domain")
+                  .withLocationType(Query_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef LiveMeta::genRequestDefForListLiveSampleLogs() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("PlayDomain")
@@ -196,6 +247,14 @@ HttpRequestDef LiveMeta::genRequestDefForListLiveStreamsOnline() {
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("Stream")
                   .withJsonTag("stream")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LiveMeta::genRequestDefForListPublishTemplate() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Domain")
+                  .withJsonTag("domain")
                   .withLocationType(Query_));
     return reqDefBuilder;
 }
@@ -347,6 +406,14 @@ HttpRequestDef LiveMeta::genRequestDefForShowDomainKeyChain() {
     return reqDefBuilder;
 }
 
+HttpRequestDef LiveMeta::genRequestDefForShowPullSourcesConfig() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("PlayDomain")
+                  .withJsonTag("play_domain")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef LiveMeta::genRequestDefForShowRecordCallbackConfig() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
@@ -374,6 +441,15 @@ HttpRequestDef LiveMeta::genRequestDefForShowTranscodingsTemplate() {
     return reqDefBuilder;
 }
 
+HttpRequestDef LiveMeta::genRequestDefForUpdateDelayConfig() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef LiveMeta::genRequestDefForUpdateDomain() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -397,6 +473,58 @@ HttpRequestDef LiveMeta::genRequestDefForUpdateDomainKeyChain() {
     reqDefBuilder.withRequestField(FieldDef().withName("Domain")
                   .withJsonTag("domain")
                   .withLocationType(Query_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LiveMeta::genRequestDefForUpdateGeoBlockingConfig() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("PlayDomain")
+                  .withJsonTag("play_domain")
+                  .withLocationType(Query_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LiveMeta::genRequestDefForUpdateIpAuthList() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LiveMeta::genRequestDefForUpdatePublishTemplate() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Domain")
+                  .withJsonTag("domain")
+                  .withLocationType(Query_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LiveMeta::genRequestDefForUpdatePullSourcesConfig() {
+    HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").

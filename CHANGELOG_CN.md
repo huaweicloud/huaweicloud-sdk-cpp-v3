@@ -1,3 +1,114 @@
+# 3.1.65 2023-12-14
+
+### HuaweiCloud SDK CFW
+
+- _新增特性_
+  - 支持接口`CreateFirewall`、`ListJob`、`DeleteFirewall`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK CloudTable
+
+- _新增特性_
+  - 支持接口`CreateCloudTableCluster`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK Live
+
+- _新增特性_
+  - 支持以下接口：
+    - `ListDelayConfig`
+    - `UpdateDelayConfig`
+    - `ShowPullSourcesConfig`
+    - `UpdatePullSourcesConfig`
+    - `ListGeoBlockingConfig`
+    - `UpdateGeoBlockingConfig`
+    - `CreateUrlAuthchain`
+    - `ListIpAuthList`
+    - `UpdateIpAuthList`
+    - `ListPublishTemplate`
+    - `UpdatePublishTemplate`
+    - `DeletePublishTemplate`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListRecordContents**
+    - 请求参数变更
+      - `+ record_type: enum value [PLAN_RECORD,ON_DEMAND_RECORD]`
+    - 响应参数变更
+      - `- record_contents.record_type: enum value [PLAN_RECORD,ON_DEMAND_RECORD]`
+
+### HuaweiCloud SDK LTS
+
+- _新增特性_
+  - 支持接口`CreateAgencyAccess`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListSqlAlarmRules**
+    - 响应参数变更
+      - `+ sql_alarm_rules.is_css_sql`
+      - `+ sql_alarm_rules.notification_frequency`
+      - `+ sql_alarm_rules.alarm_action_rule_name`
+      - `+ sql_alarm_rules.status: enum value [RUNNING 启用,STOPPING 停止]`
+      - `- sql_alarm_rules.status: enum value [RUNNING,STOPPING]`
+      - `* sql_alarm_rules.frequency: object<Frequency> -> object<FrequencyRespBody>`
+  - **UpdateSqlAlarmRule**
+    - 请求参数变更
+      - `+ is_css_sql`
+      - `+ notification_frequency`
+      - `+ alarm_action_rule_name`
+      - `* frequency: object<Frequency> -> object<CreateSqlAlarmRuleFrequency>`
+    - 响应参数变更
+      - `+ is_css_sql`
+      - `+ alarm_action_rule_name`
+      - `+ notification_frequency`
+      - `+ language: enum value [zh-cn,en-us]`
+      - `* frequency: object<Frequency> -> object<FrequencyRespBody>`
+  - **CreateSqlAlarmRule**
+    - 请求参数变更
+      - `+ is_css_sql`
+      - `+ notification_frequency`
+      - `+ alarm_action_rule_name`
+      - `* frequency: object<Frequency> -> object<CreateSqlAlarmRuleFrequency>`
+  - **ListKeywordsAlarmRules**
+    - 响应参数变更
+      - `+ keywords_alarm_rules.notification_frequency`
+      - `+ keywords_alarm_rules.alarm_action_rule_name`
+      - `+ keywords_alarm_rules.status: enum value [RUNNING  启用,STOPPING  停止]`
+      - `- keywords_alarm_rules.status: enum value [RUNNING,STOPPING]`
+  - **UpdateKeywordsAlarmRule**
+    - 请求参数变更
+      - `+ notification_frequency`
+      - `+ alarm_action_rule_name`
+    - 响应参数变更
+      - `+ alarm_action_rule_name`
+      - `+ notification_frequency`
+      - `+ language: enum value [zh-cn,en-us]`
+      - `- keywords_requests.search_time_range_unit: enum value [minute]`
+      - `* keywords_requests: list<KeywordsRequest> -> list<KeywordsResBody>`
+      - `* frequency: object<Frequency> -> object<FrequencyRespBody>`
+  - **CreateKeywordsAlarmRule**
+    - 请求参数变更
+      - `+ notification_frequency`
+      - `+ alarm_action_rule_name`
+      - `+ keywords_alarm_level: enum value [Critical]`
+      - `- keywords_alarm_level: enum value [CRITICAL]`
+
+### HuaweiCloud SDK RDS
+
+- _新增特性_
+  - 支持接口`ListLogLtsConfigs`、`SetLogLtsConfigs`、`DeleteLogLtsConfigs`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.1.64 2023-12-07
 
 ### HuaweiCloud SDK GaussDB

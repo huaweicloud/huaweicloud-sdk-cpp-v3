@@ -6,6 +6,7 @@
 #include <huaweicloud/core/ClientBuilder.h>
 
 
+#include <huaweicloud/rds/v3/model/AddLogConfigResponseBody.h>
 #include <huaweicloud/rds/v3/model/AddPostgresqlHbaConfRequest.h>
 #include <huaweicloud/rds/v3/model/AddPostgresqlHbaConfResponse.h>
 #include <huaweicloud/rds/v3/model/ApplyConfigurationAsyncRequest.h>
@@ -65,6 +66,9 @@
 #include <huaweicloud/rds/v3/model/DeleteInstanceResponse.h>
 #include <huaweicloud/rds/v3/model/DeleteJobRequest.h>
 #include <huaweicloud/rds/v3/model/DeleteJobResponse.h>
+#include <huaweicloud/rds/v3/model/DeleteLogConfigResponseBody.h>
+#include <huaweicloud/rds/v3/model/DeleteLogLtsConfigsRequest.h>
+#include <huaweicloud/rds/v3/model/DeleteLogLtsConfigsResponse.h>
 #include <huaweicloud/rds/v3/model/DeleteManualBackupRequest.h>
 #include <huaweicloud/rds/v3/model/DeleteManualBackupResponse.h>
 #include <huaweicloud/rds/v3/model/DeletePostgresqlHbaConfRequest.h>
@@ -126,6 +130,8 @@
 #include <huaweicloud/rds/v3/model/ListJobInfoDetailResponse.h>
 #include <huaweicloud/rds/v3/model/ListJobInfoRequest.h>
 #include <huaweicloud/rds/v3/model/ListJobInfoResponse.h>
+#include <huaweicloud/rds/v3/model/ListLogLtsConfigsRequest.h>
+#include <huaweicloud/rds/v3/model/ListLogLtsConfigsResponse.h>
 #include <huaweicloud/rds/v3/model/ListOffSiteBackupsRequest.h>
 #include <huaweicloud/rds/v3/model/ListOffSiteBackupsResponse.h>
 #include <huaweicloud/rds/v3/model/ListOffSiteInstancesRequest.h>
@@ -209,6 +215,8 @@
 #include <huaweicloud/rds/v3/model/SetBackupPolicyResponse.h>
 #include <huaweicloud/rds/v3/model/SetBinlogClearPolicyRequest.h>
 #include <huaweicloud/rds/v3/model/SetBinlogClearPolicyResponse.h>
+#include <huaweicloud/rds/v3/model/SetLogLtsConfigsRequest.h>
+#include <huaweicloud/rds/v3/model/SetLogLtsConfigsResponse.h>
 #include <huaweicloud/rds/v3/model/SetOffSiteBackupPolicyRequest.h>
 #include <huaweicloud/rds/v3/model/SetOffSiteBackupPolicyRequestBody.h>
 #include <huaweicloud/rds/v3/model/SetOffSiteBackupPolicyResponse.h>
@@ -670,6 +678,14 @@ public:
     std::shared_ptr<DeleteJobResponse> deleteJob(
         DeleteJobRequest &request
     );
+    // 
+    //
+    // 解除LTS配置信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteLogLtsConfigsResponse> deleteLogLtsConfigs(
+        DeleteLogLtsConfigsRequest &request
+    );
     // 删除手动备份
     //
     // 删除手动备份。
@@ -871,6 +887,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListJobInfoDetailResponse> listJobInfoDetail(
         ListJobInfoDetailRequest &request
+    );
+    // 
+    //
+    // 获取LTS配置信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListLogLtsConfigsResponse> listLogLtsConfigs(
+        ListLogLtsConfigsRequest &request
     );
     // 查询跨区域备份列表
     //
@@ -1125,6 +1149,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<SetBinlogClearPolicyResponse> setBinlogClearPolicy(
         SetBinlogClearPolicyRequest &request
+    );
+    // 
+    //
+    // 关联LTS配置信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SetLogLtsConfigsResponse> setLogLtsConfigs(
+        SetLogLtsConfigsRequest &request
     );
     // 设置跨区域备份策略
     //

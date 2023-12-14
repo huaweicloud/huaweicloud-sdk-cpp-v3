@@ -39,6 +39,9 @@
 #include <huaweicloud/cfw/v1/model/CreateEastWestFirewallRequest.h>
 #include <huaweicloud/cfw/v1/model/CreateEastWestFirewallRequestBody.h>
 #include <huaweicloud/cfw/v1/model/CreateEastWestFirewallResponse.h>
+#include <huaweicloud/cfw/v1/model/CreateFirewallReq.h>
+#include <huaweicloud/cfw/v1/model/CreateFirewallRequest.h>
+#include <huaweicloud/cfw/v1/model/CreateFirewallResponse.h>
 #include <huaweicloud/cfw/v1/model/DeleteAddressItemRequest.h>
 #include <huaweicloud/cfw/v1/model/DeleteAddressItemResponse.h>
 #include <huaweicloud/cfw/v1/model/DeleteAddressItemsInfoDto.h>
@@ -51,6 +54,8 @@
 #include <huaweicloud/cfw/v1/model/DeleteDomainSetResponse.h>
 #include <huaweicloud/cfw/v1/model/DeleteDomainsRequest.h>
 #include <huaweicloud/cfw/v1/model/DeleteDomainsResponse.h>
+#include <huaweicloud/cfw/v1/model/DeleteFirewallRequest.h>
+#include <huaweicloud/cfw/v1/model/DeleteFirewallResponse.h>
 #include <huaweicloud/cfw/v1/model/DeleteServiceItemDto.h>
 #include <huaweicloud/cfw/v1/model/DeleteServiceItemRequest.h>
 #include <huaweicloud/cfw/v1/model/DeleteServiceItemResponse.h>
@@ -84,6 +89,8 @@
 #include <huaweicloud/cfw/v1/model/ListFirewallListResponse.h>
 #include <huaweicloud/cfw/v1/model/ListFlowLogsRequest.h>
 #include <huaweicloud/cfw/v1/model/ListFlowLogsResponse.h>
+#include <huaweicloud/cfw/v1/model/ListJobRequest.h>
+#include <huaweicloud/cfw/v1/model/ListJobResponse.h>
 #include <huaweicloud/cfw/v1/model/ListLogConfigRequest.h>
 #include <huaweicloud/cfw/v1/model/ListLogConfigResponse.h>
 #include <huaweicloud/cfw/v1/model/ListProtectedVpcsRequest.h>
@@ -285,6 +292,14 @@ public:
     std::shared_ptr<CreateEastWestFirewallResponse> createEastWestFirewall(
         CreateEastWestFirewallRequest &request
     );
+    // 创建防火墙
+    //
+    // 创建防火墙
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateFirewallResponse> createFirewall(
+        CreateFirewallRequest &request
+    );
     // 删除地址组成员
     //
     // 删除地址组成员
@@ -324,6 +339,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteDomainsResponse> deleteDomains(
         DeleteDomainsRequest &request
+    );
+    // 删除防火墙
+    //
+    // 删除防火墙，仅按需生效
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteFirewallResponse> deleteFirewall(
+        DeleteFirewallRequest &request
     );
     // 删除服务成员
     //
@@ -452,6 +475,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListFlowLogsResponse> listFlowLogs(
         ListFlowLogsRequest &request
+    );
+    // 获取CFW任务执行状态
+    //
+    // 获取CFW任务执行状态
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListJobResponse> listJob(
+        ListJobRequest &request
     );
     // 获取日志配置
     //

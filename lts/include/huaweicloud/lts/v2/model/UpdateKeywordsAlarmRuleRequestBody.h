@@ -168,6 +168,24 @@ public:
     void unsetrecoveryPolicy();
     void setRecoveryPolicy(int32_t value);
 
+    /// <summary>
+    /// 通知频率,单位(分钟)
+    /// </summary>
+
+    int32_t getNotificationFrequency() const;
+    bool notificationFrequencyIsSet() const;
+    void unsetnotificationFrequency();
+    void setNotificationFrequency(int32_t value);
+
+    /// <summary>
+    /// 告警行动规则名称 &gt;alarm_action_rule_name和notification_save_rule可以选填一个，如果都填，优先选择alarm_action_rule_name
+    /// </summary>
+
+    std::string getAlarmActionRuleName() const;
+    bool alarmActionRuleNameIsSet() const;
+    void unsetalarmActionRuleName();
+    void setAlarmActionRuleName(const std::string& value);
+
 
 protected:
     std::string keywordsAlarmRuleId_;
@@ -198,6 +216,10 @@ protected:
     bool whetherRecoveryPolicyIsSet_;
     int32_t recoveryPolicy_;
     bool recoveryPolicyIsSet_;
+    int32_t notificationFrequency_;
+    bool notificationFrequencyIsSet_;
+    std::string alarmActionRuleName_;
+    bool alarmActionRuleNameIsSet_;
 
 };
 

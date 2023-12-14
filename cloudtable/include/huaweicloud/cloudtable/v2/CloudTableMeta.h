@@ -22,6 +22,7 @@ public:
     static HttpRequestDef genRequestDefForShowClusterDetail();
     static HttpRequestDef genRequestDefForShowClusterSetting();
     static HttpRequestDef genRequestDefForUpdateClusterSetting();
+    static HttpRequestDef genRequestDefForCreateCloudTableCluster();
 };
 
 }

@@ -22,6 +22,23 @@ HttpRequestDef LtsMeta::genRequestDefForCreateAccessConfig() {
     return reqDefBuilder;
 }
 
+HttpRequestDef LtsMeta::genRequestDefForCreateAgencyAccess() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamContentType;
+    reqDefBuilder.withRequestField(headerParamContentType
+                  .withName("ContentType")
+                  .withJsonTag("Content-Type")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+            withName("Body").
+            withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef LtsMeta::genRequestDefForCreateDashBoard() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamContentType;

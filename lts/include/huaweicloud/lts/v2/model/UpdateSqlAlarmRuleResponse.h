@@ -12,8 +12,8 @@
 #include <huaweicloud/lts/v2/model/SqlRequest.h>
 #include <huaweicloud/lts/v2/model/Topics.h>
 #include <string>
+#include <huaweicloud/lts/v2/model/FrequencyRespBody.h>
 #include <vector>
-#include <huaweicloud/lts/v2/model/Frequency.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -43,16 +43,25 @@ public:
     /// UpdateSqlAlarmRuleResponse members
 
     /// <summary>
-    /// 测试
+    /// SQL告警名称
     /// </summary>
 
-    std::string getId() const;
-    bool idIsSet() const;
-    void unsetid();
-    void setId(const std::string& value);
+    std::string getSqlAlarmRuleName() const;
+    bool sqlAlarmRuleNameIsSet() const;
+    void unsetsqlAlarmRuleName();
+    void setSqlAlarmRuleName(const std::string& value);
 
     /// <summary>
-    /// 测试
+    /// 是否管道符sql查询
+    /// </summary>
+
+    bool isIsCssSql() const;
+    bool isCssSqlIsSet() const;
+    void unsetisCssSql();
+    void setIsCssSql(bool value);
+
+    /// <summary>
+    /// 索引id
     /// </summary>
 
     std::string getIndexId() const;
@@ -61,31 +70,13 @@ public:
     void setIndexId(const std::string& value);
 
     /// <summary>
-    /// 测试
-    /// </summary>
-
-    std::string getLanguage() const;
-    bool languageIsSet() const;
-    void unsetlanguage();
-    void setLanguage(const std::string& value);
-
-    /// <summary>
-    /// 测试
+    /// 项目id
     /// </summary>
 
     std::string getProjectId() const;
     bool projectIdIsSet() const;
     void unsetprojectId();
     void setProjectId(const std::string& value);
-
-    /// <summary>
-    /// SQL告警名称
-    /// </summary>
-
-    std::string getSqlAlarmRuleName() const;
-    bool sqlAlarmRuleNameIsSet() const;
-    void unsetsqlAlarmRuleName();
-    void setSqlAlarmRuleName(const std::string& value);
 
     /// <summary>
     /// SQL告警规则id
@@ -118,10 +109,10 @@ public:
     /// 
     /// </summary>
 
-    Frequency getFrequency() const;
+    FrequencyRespBody getFrequency() const;
     bool frequencyIsSet() const;
     void unsetfrequency();
-    void setFrequency(const Frequency& value);
+    void setFrequency(const FrequencyRespBody& value);
 
     /// <summary>
     /// 条件表达式
@@ -160,7 +151,7 @@ public:
     void setDomainId(const std::string& value);
 
     /// <summary>
-    /// 创建时间(毫秒时间戳)
+    /// 创建时间（毫秒时间戳）
     /// </summary>
 
     int64_t getCreateTime() const;
@@ -169,7 +160,7 @@ public:
     void setCreateTime(int64_t value);
 
     /// <summary>
-    /// 更新时间(毫秒时间戳)
+    /// 更新时间（毫秒时间戳）
     /// </summary>
 
     int64_t getUpdateTime() const;
@@ -186,25 +177,59 @@ public:
     void unsettopics();
     void setTopics(const std::vector<Topics>& value);
 
+    /// <summary>
+    /// 邮件附加信息语言
+    /// </summary>
+
+    std::string getLanguage() const;
+    bool languageIsSet() const;
+    void unsetlanguage();
+    void setLanguage(const std::string& value);
+
+    /// <summary>
+    /// 规则ID。
+    /// </summary>
+
+    std::string getId() const;
+    bool idIsSet() const;
+    void unsetid();
+    void setId(const std::string& value);
+
+    /// <summary>
+    /// 通知频率,单位(分钟)
+    /// </summary>
+
+    int32_t getNotificationFrequency() const;
+    bool notificationFrequencyIsSet() const;
+    void unsetnotificationFrequency();
+    void setNotificationFrequency(int32_t value);
+
+    /// <summary>
+    /// 告警行动规则名称 &gt;alarm_action_rule_name和notification_save_rule可以选填一个，如果都填，优先选择alarm_action_rule_name
+    /// </summary>
+
+    std::string getAlarmActionRuleName() const;
+    bool alarmActionRuleNameIsSet() const;
+    void unsetalarmActionRuleName();
+    void setAlarmActionRuleName(const std::string& value);
+
 
 protected:
-    std::string id_;
-    bool idIsSet_;
-    std::string indexId_;
-    bool indexIdIsSet_;
-    std::string language_;
-    bool languageIsSet_;
-    std::string projectId_;
-    bool projectIdIsSet_;
     std::string sqlAlarmRuleName_;
     bool sqlAlarmRuleNameIsSet_;
+    bool isCssSql_;
+    bool isCssSqlIsSet_;
+    std::string indexId_;
+    bool indexIdIsSet_;
+    std::string projectId_;
+    bool projectIdIsSet_;
     std::string sqlAlarmRuleId_;
     bool sqlAlarmRuleIdIsSet_;
     std::string sqlAlarmRuleDescription_;
     bool sqlAlarmRuleDescriptionIsSet_;
     std::vector<SqlRequest> sqlRequests_;
     bool sqlRequestsIsSet_;
-    Frequency frequency_;
+    FrequencyRespBody frequency_;
     bool frequencyIsSet_;
     std::string conditionExpression_;
     bool conditionExpressionIsSet_;
@@ -220,6 +245,14 @@ protected:
     bool updateTimeIsSet_;
     std::vector<Topics> topics_;
     bool topicsIsSet_;
+    std::string language_;
+    bool languageIsSet_;
+    std::string id_;
+    bool idIsSet_;
+    int32_t notificationFrequency_;
+    bool notificationFrequencyIsSet_;
+    std::string alarmActionRuleName_;
+    bool alarmActionRuleNameIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

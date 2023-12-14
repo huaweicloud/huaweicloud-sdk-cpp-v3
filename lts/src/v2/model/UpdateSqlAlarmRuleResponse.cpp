@@ -12,16 +12,14 @@ namespace Model {
 
 UpdateSqlAlarmRuleResponse::UpdateSqlAlarmRuleResponse()
 {
-    id_ = "";
-    idIsSet_ = false;
-    indexId_ = "";
-    indexIdIsSet_ = false;
-    language_ = "";
-    languageIsSet_ = false;
-    projectId_ = "";
-    projectIdIsSet_ = false;
     sqlAlarmRuleName_ = "";
     sqlAlarmRuleNameIsSet_ = false;
+    isCssSql_ = false;
+    isCssSqlIsSet_ = false;
+    indexId_ = "";
+    indexIdIsSet_ = false;
+    projectId_ = "";
+    projectIdIsSet_ = false;
     sqlAlarmRuleId_ = "";
     sqlAlarmRuleIdIsSet_ = false;
     sqlAlarmRuleDescription_ = "";
@@ -41,6 +39,14 @@ UpdateSqlAlarmRuleResponse::UpdateSqlAlarmRuleResponse()
     updateTime_ = 0L;
     updateTimeIsSet_ = false;
     topicsIsSet_ = false;
+    language_ = "";
+    languageIsSet_ = false;
+    id_ = "";
+    idIsSet_ = false;
+    notificationFrequency_ = 0;
+    notificationFrequencyIsSet_ = false;
+    alarmActionRuleName_ = "";
+    alarmActionRuleNameIsSet_ = false;
 }
 
 UpdateSqlAlarmRuleResponse::~UpdateSqlAlarmRuleResponse() = default;
@@ -53,20 +59,17 @@ web::json::value UpdateSqlAlarmRuleResponse::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(idIsSet_) {
-        val[utility::conversions::to_string_t("id")] = ModelBase::toJson(id_);
+    if(sqlAlarmRuleNameIsSet_) {
+        val[utility::conversions::to_string_t("sql_alarm_rule_name")] = ModelBase::toJson(sqlAlarmRuleName_);
+    }
+    if(isCssSqlIsSet_) {
+        val[utility::conversions::to_string_t("is_css_sql")] = ModelBase::toJson(isCssSql_);
     }
     if(indexIdIsSet_) {
         val[utility::conversions::to_string_t("indexId")] = ModelBase::toJson(indexId_);
     }
-    if(languageIsSet_) {
-        val[utility::conversions::to_string_t("language")] = ModelBase::toJson(language_);
-    }
     if(projectIdIsSet_) {
         val[utility::conversions::to_string_t("projectId")] = ModelBase::toJson(projectId_);
-    }
-    if(sqlAlarmRuleNameIsSet_) {
-        val[utility::conversions::to_string_t("sql_alarm_rule_name")] = ModelBase::toJson(sqlAlarmRuleName_);
     }
     if(sqlAlarmRuleIdIsSet_) {
         val[utility::conversions::to_string_t("sql_alarm_rule_id")] = ModelBase::toJson(sqlAlarmRuleId_);
@@ -101,6 +104,18 @@ web::json::value UpdateSqlAlarmRuleResponse::toJson() const
     if(topicsIsSet_) {
         val[utility::conversions::to_string_t("topics")] = ModelBase::toJson(topics_);
     }
+    if(languageIsSet_) {
+        val[utility::conversions::to_string_t("language")] = ModelBase::toJson(language_);
+    }
+    if(idIsSet_) {
+        val[utility::conversions::to_string_t("id")] = ModelBase::toJson(id_);
+    }
+    if(notificationFrequencyIsSet_) {
+        val[utility::conversions::to_string_t("notification_frequency")] = ModelBase::toJson(notificationFrequency_);
+    }
+    if(alarmActionRuleNameIsSet_) {
+        val[utility::conversions::to_string_t("alarm_action_rule_name")] = ModelBase::toJson(alarmActionRuleName_);
+    }
 
     return val;
 }
@@ -108,13 +123,22 @@ bool UpdateSqlAlarmRuleResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("id"));
+    if(val.has_field(utility::conversions::to_string_t("sql_alarm_rule_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sql_alarm_rule_name"));
         if(!fieldValue.is_null())
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setId(refVal);
+            setSqlAlarmRuleName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_css_sql"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_css_sql"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsCssSql(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("indexId"))) {
@@ -126,15 +150,6 @@ bool UpdateSqlAlarmRuleResponse::fromJson(const web::json::value& val)
             setIndexId(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("language"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("language"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setLanguage(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("projectId"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("projectId"));
         if(!fieldValue.is_null())
@@ -142,15 +157,6 @@ bool UpdateSqlAlarmRuleResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setProjectId(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("sql_alarm_rule_name"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sql_alarm_rule_name"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setSqlAlarmRuleName(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("sql_alarm_rule_id"))) {
@@ -184,7 +190,7 @@ bool UpdateSqlAlarmRuleResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("frequency"));
         if(!fieldValue.is_null())
         {
-            Frequency refVal;
+            FrequencyRespBody refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFrequency(refVal);
         }
@@ -252,29 +258,86 @@ bool UpdateSqlAlarmRuleResponse::fromJson(const web::json::value& val)
             setTopics(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("language"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("language"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLanguage(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("notification_frequency"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("notification_frequency"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setNotificationFrequency(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("alarm_action_rule_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("alarm_action_rule_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAlarmActionRuleName(refVal);
+        }
+    }
     return ok;
 }
 
 
-std::string UpdateSqlAlarmRuleResponse::getId() const
+std::string UpdateSqlAlarmRuleResponse::getSqlAlarmRuleName() const
 {
-    return id_;
+    return sqlAlarmRuleName_;
 }
 
-void UpdateSqlAlarmRuleResponse::setId(const std::string& value)
+void UpdateSqlAlarmRuleResponse::setSqlAlarmRuleName(const std::string& value)
 {
-    id_ = value;
-    idIsSet_ = true;
+    sqlAlarmRuleName_ = value;
+    sqlAlarmRuleNameIsSet_ = true;
 }
 
-bool UpdateSqlAlarmRuleResponse::idIsSet() const
+bool UpdateSqlAlarmRuleResponse::sqlAlarmRuleNameIsSet() const
 {
-    return idIsSet_;
+    return sqlAlarmRuleNameIsSet_;
 }
 
-void UpdateSqlAlarmRuleResponse::unsetid()
+void UpdateSqlAlarmRuleResponse::unsetsqlAlarmRuleName()
 {
-    idIsSet_ = false;
+    sqlAlarmRuleNameIsSet_ = false;
+}
+
+bool UpdateSqlAlarmRuleResponse::isIsCssSql() const
+{
+    return isCssSql_;
+}
+
+void UpdateSqlAlarmRuleResponse::setIsCssSql(bool value)
+{
+    isCssSql_ = value;
+    isCssSqlIsSet_ = true;
+}
+
+bool UpdateSqlAlarmRuleResponse::isCssSqlIsSet() const
+{
+    return isCssSqlIsSet_;
+}
+
+void UpdateSqlAlarmRuleResponse::unsetisCssSql()
+{
+    isCssSqlIsSet_ = false;
 }
 
 std::string UpdateSqlAlarmRuleResponse::getIndexId() const
@@ -298,27 +361,6 @@ void UpdateSqlAlarmRuleResponse::unsetindexId()
     indexIdIsSet_ = false;
 }
 
-std::string UpdateSqlAlarmRuleResponse::getLanguage() const
-{
-    return language_;
-}
-
-void UpdateSqlAlarmRuleResponse::setLanguage(const std::string& value)
-{
-    language_ = value;
-    languageIsSet_ = true;
-}
-
-bool UpdateSqlAlarmRuleResponse::languageIsSet() const
-{
-    return languageIsSet_;
-}
-
-void UpdateSqlAlarmRuleResponse::unsetlanguage()
-{
-    languageIsSet_ = false;
-}
-
 std::string UpdateSqlAlarmRuleResponse::getProjectId() const
 {
     return projectId_;
@@ -338,27 +380,6 @@ bool UpdateSqlAlarmRuleResponse::projectIdIsSet() const
 void UpdateSqlAlarmRuleResponse::unsetprojectId()
 {
     projectIdIsSet_ = false;
-}
-
-std::string UpdateSqlAlarmRuleResponse::getSqlAlarmRuleName() const
-{
-    return sqlAlarmRuleName_;
-}
-
-void UpdateSqlAlarmRuleResponse::setSqlAlarmRuleName(const std::string& value)
-{
-    sqlAlarmRuleName_ = value;
-    sqlAlarmRuleNameIsSet_ = true;
-}
-
-bool UpdateSqlAlarmRuleResponse::sqlAlarmRuleNameIsSet() const
-{
-    return sqlAlarmRuleNameIsSet_;
-}
-
-void UpdateSqlAlarmRuleResponse::unsetsqlAlarmRuleName()
-{
-    sqlAlarmRuleNameIsSet_ = false;
 }
 
 std::string UpdateSqlAlarmRuleResponse::getSqlAlarmRuleId() const
@@ -424,12 +445,12 @@ void UpdateSqlAlarmRuleResponse::unsetsqlRequests()
     sqlRequestsIsSet_ = false;
 }
 
-Frequency UpdateSqlAlarmRuleResponse::getFrequency() const
+FrequencyRespBody UpdateSqlAlarmRuleResponse::getFrequency() const
 {
     return frequency_;
 }
 
-void UpdateSqlAlarmRuleResponse::setFrequency(const Frequency& value)
+void UpdateSqlAlarmRuleResponse::setFrequency(const FrequencyRespBody& value)
 {
     frequency_ = value;
     frequencyIsSet_ = true;
@@ -590,6 +611,90 @@ bool UpdateSqlAlarmRuleResponse::topicsIsSet() const
 void UpdateSqlAlarmRuleResponse::unsettopics()
 {
     topicsIsSet_ = false;
+}
+
+std::string UpdateSqlAlarmRuleResponse::getLanguage() const
+{
+    return language_;
+}
+
+void UpdateSqlAlarmRuleResponse::setLanguage(const std::string& value)
+{
+    language_ = value;
+    languageIsSet_ = true;
+}
+
+bool UpdateSqlAlarmRuleResponse::languageIsSet() const
+{
+    return languageIsSet_;
+}
+
+void UpdateSqlAlarmRuleResponse::unsetlanguage()
+{
+    languageIsSet_ = false;
+}
+
+std::string UpdateSqlAlarmRuleResponse::getId() const
+{
+    return id_;
+}
+
+void UpdateSqlAlarmRuleResponse::setId(const std::string& value)
+{
+    id_ = value;
+    idIsSet_ = true;
+}
+
+bool UpdateSqlAlarmRuleResponse::idIsSet() const
+{
+    return idIsSet_;
+}
+
+void UpdateSqlAlarmRuleResponse::unsetid()
+{
+    idIsSet_ = false;
+}
+
+int32_t UpdateSqlAlarmRuleResponse::getNotificationFrequency() const
+{
+    return notificationFrequency_;
+}
+
+void UpdateSqlAlarmRuleResponse::setNotificationFrequency(int32_t value)
+{
+    notificationFrequency_ = value;
+    notificationFrequencyIsSet_ = true;
+}
+
+bool UpdateSqlAlarmRuleResponse::notificationFrequencyIsSet() const
+{
+    return notificationFrequencyIsSet_;
+}
+
+void UpdateSqlAlarmRuleResponse::unsetnotificationFrequency()
+{
+    notificationFrequencyIsSet_ = false;
+}
+
+std::string UpdateSqlAlarmRuleResponse::getAlarmActionRuleName() const
+{
+    return alarmActionRuleName_;
+}
+
+void UpdateSqlAlarmRuleResponse::setAlarmActionRuleName(const std::string& value)
+{
+    alarmActionRuleName_ = value;
+    alarmActionRuleNameIsSet_ = true;
+}
+
+bool UpdateSqlAlarmRuleResponse::alarmActionRuleNameIsSet() const
+{
+    return alarmActionRuleNameIsSet_;
+}
+
+void UpdateSqlAlarmRuleResponse::unsetalarmActionRuleName()
+{
+    alarmActionRuleNameIsSet_ = false;
 }
 
 }

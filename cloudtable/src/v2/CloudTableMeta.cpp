@@ -122,6 +122,20 @@ HttpRequestDef CloudTableMeta::genRequestDefForUpdateClusterSetting() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CloudTableMeta::genRequestDefForCreateCloudTableCluster() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 
 }
 }

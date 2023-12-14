@@ -33,6 +33,10 @@ CreateKeywordsAlarmRuleRequestBody::CreateKeywordsAlarmRuleRequestBody()
     whetherRecoveryPolicyIsSet_ = false;
     recoveryPolicy_ = 0;
     recoveryPolicyIsSet_ = false;
+    notificationFrequency_ = 0;
+    notificationFrequencyIsSet_ = false;
+    alarmActionRuleName_ = "";
+    alarmActionRuleNameIsSet_ = false;
 }
 
 CreateKeywordsAlarmRuleRequestBody::~CreateKeywordsAlarmRuleRequestBody() = default;
@@ -80,6 +84,12 @@ web::json::value CreateKeywordsAlarmRuleRequestBody::toJson() const
     }
     if(recoveryPolicyIsSet_) {
         val[utility::conversions::to_string_t("recovery_policy")] = ModelBase::toJson(recoveryPolicy_);
+    }
+    if(notificationFrequencyIsSet_) {
+        val[utility::conversions::to_string_t("notification_frequency")] = ModelBase::toJson(notificationFrequency_);
+    }
+    if(alarmActionRuleNameIsSet_) {
+        val[utility::conversions::to_string_t("alarm_action_rule_name")] = ModelBase::toJson(alarmActionRuleName_);
     }
 
     return val;
@@ -194,6 +204,24 @@ bool CreateKeywordsAlarmRuleRequestBody::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRecoveryPolicy(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("notification_frequency"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("notification_frequency"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setNotificationFrequency(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("alarm_action_rule_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("alarm_action_rule_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAlarmActionRuleName(refVal);
         }
     }
     return ok;
@@ -450,6 +478,48 @@ bool CreateKeywordsAlarmRuleRequestBody::recoveryPolicyIsSet() const
 void CreateKeywordsAlarmRuleRequestBody::unsetrecoveryPolicy()
 {
     recoveryPolicyIsSet_ = false;
+}
+
+int32_t CreateKeywordsAlarmRuleRequestBody::getNotificationFrequency() const
+{
+    return notificationFrequency_;
+}
+
+void CreateKeywordsAlarmRuleRequestBody::setNotificationFrequency(int32_t value)
+{
+    notificationFrequency_ = value;
+    notificationFrequencyIsSet_ = true;
+}
+
+bool CreateKeywordsAlarmRuleRequestBody::notificationFrequencyIsSet() const
+{
+    return notificationFrequencyIsSet_;
+}
+
+void CreateKeywordsAlarmRuleRequestBody::unsetnotificationFrequency()
+{
+    notificationFrequencyIsSet_ = false;
+}
+
+std::string CreateKeywordsAlarmRuleRequestBody::getAlarmActionRuleName() const
+{
+    return alarmActionRuleName_;
+}
+
+void CreateKeywordsAlarmRuleRequestBody::setAlarmActionRuleName(const std::string& value)
+{
+    alarmActionRuleName_ = value;
+    alarmActionRuleNameIsSet_ = true;
+}
+
+bool CreateKeywordsAlarmRuleRequestBody::alarmActionRuleNameIsSet() const
+{
+    return alarmActionRuleNameIsSet_;
+}
+
+void CreateKeywordsAlarmRuleRequestBody::unsetalarmActionRuleName()
+{
+    alarmActionRuleNameIsSet_ = false;
 }
 
 }

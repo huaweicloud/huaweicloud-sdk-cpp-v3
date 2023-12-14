@@ -9,6 +9,8 @@
 #include <huaweicloud/lts/v2/model/CreateAccessConfigRequest.h>
 #include <huaweicloud/lts/v2/model/CreateAccessConfigRequestBody.h>
 #include <huaweicloud/lts/v2/model/CreateAccessConfigResponse.h>
+#include <huaweicloud/lts/v2/model/CreateAgencyAccessRequest.h>
+#include <huaweicloud/lts/v2/model/CreateAgencyAccessResponse.h>
 #include <huaweicloud/lts/v2/model/CreateDashBoardReqBody.h>
 #include <huaweicloud/lts/v2/model/CreateDashBoardRequest.h>
 #include <huaweicloud/lts/v2/model/CreateDashBoardResponse.h>
@@ -86,6 +88,7 @@
 #include <huaweicloud/lts/v2/model/GetAccessConfigListRequestBody.h>
 #include <huaweicloud/lts/v2/model/GetHostGroupListRequestBody.h>
 #include <huaweicloud/lts/v2/model/GetHostListRequestBody.h>
+#include <huaweicloud/lts/v2/model/LTSAccessConfigInfoRespon200.h>
 #include <huaweicloud/lts/v2/model/ListAccessConfigRequest.h>
 #include <huaweicloud/lts/v2/model/ListAccessConfigResponse.h>
 #include <huaweicloud/lts/v2/model/ListActiveOrHistoryAlarmsRequest.h>
@@ -136,6 +139,7 @@
 #include <huaweicloud/lts/v2/model/ListTransfersRequest.h>
 #include <huaweicloud/lts/v2/model/ListTransfersResponse.h>
 #include <huaweicloud/lts/v2/model/LtsStructTemplateInfo.h>
+#include <huaweicloud/lts/v2/model/PreviewAgencyLogAccessReqListBody.h>
 #include <huaweicloud/lts/v2/model/PreviewTemplateBody.h>
 #include <huaweicloud/lts/v2/model/QueryLogKeyWordCountRequestBody.h>
 #include <huaweicloud/lts/v2/model/QueryLtsLogParams.h>
@@ -249,6 +253,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateAccessConfigResponse> createAccessConfig(
         CreateAccessConfigRequest &request
+    );
+    // 新建跨账号日志接入
+    //
+    // 新建跨账号日志接入
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateAgencyAccessResponse> createAgencyAccess(
+        CreateAgencyAccessRequest &request
     );
     // 创建仪表盘
     //

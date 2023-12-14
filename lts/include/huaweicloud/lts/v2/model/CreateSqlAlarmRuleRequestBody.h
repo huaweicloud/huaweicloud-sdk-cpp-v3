@@ -9,11 +9,11 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/lts/v2/model/CreateSqlAlarmRuleFrequency.h>
 #include <huaweicloud/lts/v2/model/SqlRequest.h>
 #include <huaweicloud/lts/v2/model/SqlNotificationSaveRule.h>
 #include <string>
 #include <vector>
-#include <huaweicloud/lts/v2/model/Frequency.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -52,6 +52,15 @@ public:
     void setSqlAlarmRuleName(const std::string& value);
 
     /// <summary>
+    /// 是否管道符sql查询
+    /// </summary>
+
+    bool isIsCssSql() const;
+    bool isCssSqlIsSet() const;
+    void unsetisCssSql();
+    void setIsCssSql(bool value);
+
+    /// <summary>
     /// SQL告警信息描述
     /// </summary>
 
@@ -73,10 +82,10 @@ public:
     /// 
     /// </summary>
 
-    Frequency getFrequency() const;
+    CreateSqlAlarmRuleFrequency getFrequency() const;
     bool frequencyIsSet() const;
     void unsetfrequency();
-    void setFrequency(const Frequency& value);
+    void setFrequency(const CreateSqlAlarmRuleFrequency& value);
 
     /// <summary>
     /// 条件表达式
@@ -159,15 +168,35 @@ public:
     void unsetrecoveryPolicy();
     void setRecoveryPolicy(int32_t value);
 
+    /// <summary>
+    /// 通知频率,单位(分钟)
+    /// </summary>
+
+    int32_t getNotificationFrequency() const;
+    bool notificationFrequencyIsSet() const;
+    void unsetnotificationFrequency();
+    void setNotificationFrequency(int32_t value);
+
+    /// <summary>
+    /// 告警行动规则名称 &gt;alarm_action_rule_name和notification_save_rule可以选填一个，如果都填，优先选择alarm_action_rule_name
+    /// </summary>
+
+    std::string getAlarmActionRuleName() const;
+    bool alarmActionRuleNameIsSet() const;
+    void unsetalarmActionRuleName();
+    void setAlarmActionRuleName(const std::string& value);
+
 
 protected:
     std::string sqlAlarmRuleName_;
     bool sqlAlarmRuleNameIsSet_;
+    bool isCssSql_;
+    bool isCssSqlIsSet_;
     std::string sqlAlarmRuleDescription_;
     bool sqlAlarmRuleDescriptionIsSet_;
     std::vector<SqlRequest> sqlRequests_;
     bool sqlRequestsIsSet_;
-    Frequency frequency_;
+    CreateSqlAlarmRuleFrequency frequency_;
     bool frequencyIsSet_;
     std::string conditionExpression_;
     bool conditionExpressionIsSet_;
@@ -187,6 +216,10 @@ protected:
     bool whetherRecoveryPolicyIsSet_;
     int32_t recoveryPolicy_;
     bool recoveryPolicyIsSet_;
+    int32_t notificationFrequency_;
+    bool notificationFrequencyIsSet_;
+    std::string alarmActionRuleName_;
+    bool alarmActionRuleNameIsSet_;
 
 };
 

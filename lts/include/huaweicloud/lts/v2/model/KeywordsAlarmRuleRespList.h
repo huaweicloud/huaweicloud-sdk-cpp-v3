@@ -133,7 +133,7 @@ public:
     void setDomainId(const std::string& value);
 
     /// <summary>
-    /// 创建时间(毫秒时间戳)
+    /// 创建时间（毫秒时间戳）
     /// </summary>
 
     int64_t getCreateTime() const;
@@ -142,7 +142,7 @@ public:
     void setCreateTime(int64_t value);
 
     /// <summary>
-    /// 更新时间(毫秒时间戳)
+    /// 更新时间（毫秒时间戳）
     /// </summary>
 
     int64_t getUpdateTime() const;
@@ -151,7 +151,7 @@ public:
     void setUpdateTime(int64_t value);
 
     /// <summary>
-    /// 主题
+    /// 通知主题
     /// </summary>
 
     std::vector<Topics>& getTopics();
@@ -160,7 +160,7 @@ public:
     void setTopics(const std::vector<Topics>& value);
 
     /// <summary>
-    /// 
+    /// 消息模板名称
     /// </summary>
 
     std::string getTemplateName() const;
@@ -169,7 +169,7 @@ public:
     void setTemplateName(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 告警状态
     /// </summary>
 
     std::string getStatus() const;
@@ -178,7 +178,7 @@ public:
     void setStatus(const std::string& value);
 
     /// <summary>
-    /// 触发条件：触发次数;默认为1
+    /// 触发条件：触发周期;默认为1
     /// </summary>
 
     int32_t getTriggerConditionCount() const;
@@ -187,7 +187,7 @@ public:
     void setTriggerConditionCount(int32_t value);
 
     /// <summary>
-    /// 触发条件：触发周期;默认为1
+    /// 触发条件：触发次数;默认为1
     /// </summary>
 
     int32_t getTriggerConditionFrequency() const;
@@ -212,6 +212,24 @@ public:
     bool recoveryPolicyIsSet() const;
     void unsetrecoveryPolicy();
     void setRecoveryPolicy(int32_t value);
+
+    /// <summary>
+    /// 通知频率,单位(分钟)
+    /// </summary>
+
+    int32_t getNotificationFrequency() const;
+    bool notificationFrequencyIsSet() const;
+    void unsetnotificationFrequency();
+    void setNotificationFrequency(int32_t value);
+
+    /// <summary>
+    /// 告警行动规则名称 &gt;alarm_action_rule_name和notification_save_rule可以选填一个，如果都填，优先选择alarm_action_rule_name
+    /// </summary>
+
+    std::string getAlarmActionRuleName() const;
+    bool alarmActionRuleNameIsSet() const;
+    void unsetalarmActionRuleName();
+    void setAlarmActionRuleName(const std::string& value);
 
 
 protected:
@@ -253,6 +271,10 @@ protected:
     bool whetherRecoveryPolicyIsSet_;
     int32_t recoveryPolicy_;
     bool recoveryPolicyIsSet_;
+    int32_t notificationFrequency_;
+    bool notificationFrequencyIsSet_;
+    std::string alarmActionRuleName_;
+    bool alarmActionRuleNameIsSet_;
 
 };
 

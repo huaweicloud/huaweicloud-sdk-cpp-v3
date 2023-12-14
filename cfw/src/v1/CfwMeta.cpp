@@ -188,6 +188,25 @@ HttpRequestDef CfwMeta::genRequestDefForCreateEastWestFirewall() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CfwMeta::genRequestDefForCreateFirewall() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXClientToken;
+    reqDefBuilder.withRequestField(headerParamXClientToken
+                  .withName("XClientToken")
+                  .withJsonTag("X-Client-Token")
+                  .withLocationType(Header_));
+    FieldDef headerParamXTraceId;
+    reqDefBuilder.withRequestField(headerParamXTraceId
+                  .withName("XTraceId")
+                  .withJsonTag("X-Trace-Id")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CfwMeta::genRequestDefForDeleteAddressItem() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
@@ -241,6 +260,11 @@ HttpRequestDef CfwMeta::genRequestDefForDeleteDomains() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CfwMeta::genRequestDefForDeleteFirewall() {
+    HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
 
@@ -688,6 +712,11 @@ HttpRequestDef CfwMeta::genRequestDefForListFlowLogs() {
     reqDefBuilder.withRequestField(FieldDef().withName("DstHost")
                   .withJsonTag("dst_host")
                   .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CfwMeta::genRequestDefForListJob() {
+    HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
 

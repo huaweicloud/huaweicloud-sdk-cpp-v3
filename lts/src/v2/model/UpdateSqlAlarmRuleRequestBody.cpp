@@ -16,6 +16,8 @@ UpdateSqlAlarmRuleRequestBody::UpdateSqlAlarmRuleRequestBody()
     sqlAlarmRuleIdIsSet_ = false;
     sqlAlarmRuleName_ = "";
     sqlAlarmRuleNameIsSet_ = false;
+    isCssSql_ = false;
+    isCssSqlIsSet_ = false;
     sqlAlarmRuleDescription_ = "";
     sqlAlarmRuleDescriptionIsSet_ = false;
     sqlRequestsIsSet_ = false;
@@ -39,6 +41,10 @@ UpdateSqlAlarmRuleRequestBody::UpdateSqlAlarmRuleRequestBody()
     whetherRecoveryPolicyIsSet_ = false;
     recoveryPolicy_ = 0;
     recoveryPolicyIsSet_ = false;
+    notificationFrequency_ = 0;
+    notificationFrequencyIsSet_ = false;
+    alarmActionRuleName_ = "";
+    alarmActionRuleNameIsSet_ = false;
 }
 
 UpdateSqlAlarmRuleRequestBody::~UpdateSqlAlarmRuleRequestBody() = default;
@@ -56,6 +62,9 @@ web::json::value UpdateSqlAlarmRuleRequestBody::toJson() const
     }
     if(sqlAlarmRuleNameIsSet_) {
         val[utility::conversions::to_string_t("sql_alarm_rule_name")] = ModelBase::toJson(sqlAlarmRuleName_);
+    }
+    if(isCssSqlIsSet_) {
+        val[utility::conversions::to_string_t("is_css_sql")] = ModelBase::toJson(isCssSql_);
     }
     if(sqlAlarmRuleDescriptionIsSet_) {
         val[utility::conversions::to_string_t("sql_alarm_rule_description")] = ModelBase::toJson(sqlAlarmRuleDescription_);
@@ -96,6 +105,12 @@ web::json::value UpdateSqlAlarmRuleRequestBody::toJson() const
     if(recoveryPolicyIsSet_) {
         val[utility::conversions::to_string_t("recovery_policy")] = ModelBase::toJson(recoveryPolicy_);
     }
+    if(notificationFrequencyIsSet_) {
+        val[utility::conversions::to_string_t("notification_frequency")] = ModelBase::toJson(notificationFrequency_);
+    }
+    if(alarmActionRuleNameIsSet_) {
+        val[utility::conversions::to_string_t("alarm_action_rule_name")] = ModelBase::toJson(alarmActionRuleName_);
+    }
 
     return val;
 }
@@ -121,6 +136,15 @@ bool UpdateSqlAlarmRuleRequestBody::fromJson(const web::json::value& val)
             setSqlAlarmRuleName(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("is_css_sql"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_css_sql"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsCssSql(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("sql_alarm_rule_description"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sql_alarm_rule_description"));
         if(!fieldValue.is_null())
@@ -143,7 +167,7 @@ bool UpdateSqlAlarmRuleRequestBody::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("frequency"));
         if(!fieldValue.is_null())
         {
-            Frequency refVal;
+            CreateSqlAlarmRuleFrequency refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFrequency(refVal);
         }
@@ -238,6 +262,24 @@ bool UpdateSqlAlarmRuleRequestBody::fromJson(const web::json::value& val)
             setRecoveryPolicy(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("notification_frequency"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("notification_frequency"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setNotificationFrequency(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("alarm_action_rule_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("alarm_action_rule_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAlarmActionRuleName(refVal);
+        }
+    }
     return ok;
 }
 
@@ -284,6 +326,27 @@ void UpdateSqlAlarmRuleRequestBody::unsetsqlAlarmRuleName()
     sqlAlarmRuleNameIsSet_ = false;
 }
 
+bool UpdateSqlAlarmRuleRequestBody::isIsCssSql() const
+{
+    return isCssSql_;
+}
+
+void UpdateSqlAlarmRuleRequestBody::setIsCssSql(bool value)
+{
+    isCssSql_ = value;
+    isCssSqlIsSet_ = true;
+}
+
+bool UpdateSqlAlarmRuleRequestBody::isCssSqlIsSet() const
+{
+    return isCssSqlIsSet_;
+}
+
+void UpdateSqlAlarmRuleRequestBody::unsetisCssSql()
+{
+    isCssSqlIsSet_ = false;
+}
+
 std::string UpdateSqlAlarmRuleRequestBody::getSqlAlarmRuleDescription() const
 {
     return sqlAlarmRuleDescription_;
@@ -326,12 +389,12 @@ void UpdateSqlAlarmRuleRequestBody::unsetsqlRequests()
     sqlRequestsIsSet_ = false;
 }
 
-Frequency UpdateSqlAlarmRuleRequestBody::getFrequency() const
+CreateSqlAlarmRuleFrequency UpdateSqlAlarmRuleRequestBody::getFrequency() const
 {
     return frequency_;
 }
 
-void UpdateSqlAlarmRuleRequestBody::setFrequency(const Frequency& value)
+void UpdateSqlAlarmRuleRequestBody::setFrequency(const CreateSqlAlarmRuleFrequency& value)
 {
     frequency_ = value;
     frequencyIsSet_ = true;
@@ -555,6 +618,48 @@ bool UpdateSqlAlarmRuleRequestBody::recoveryPolicyIsSet() const
 void UpdateSqlAlarmRuleRequestBody::unsetrecoveryPolicy()
 {
     recoveryPolicyIsSet_ = false;
+}
+
+int32_t UpdateSqlAlarmRuleRequestBody::getNotificationFrequency() const
+{
+    return notificationFrequency_;
+}
+
+void UpdateSqlAlarmRuleRequestBody::setNotificationFrequency(int32_t value)
+{
+    notificationFrequency_ = value;
+    notificationFrequencyIsSet_ = true;
+}
+
+bool UpdateSqlAlarmRuleRequestBody::notificationFrequencyIsSet() const
+{
+    return notificationFrequencyIsSet_;
+}
+
+void UpdateSqlAlarmRuleRequestBody::unsetnotificationFrequency()
+{
+    notificationFrequencyIsSet_ = false;
+}
+
+std::string UpdateSqlAlarmRuleRequestBody::getAlarmActionRuleName() const
+{
+    return alarmActionRuleName_;
+}
+
+void UpdateSqlAlarmRuleRequestBody::setAlarmActionRuleName(const std::string& value)
+{
+    alarmActionRuleName_ = value;
+    alarmActionRuleNameIsSet_ = true;
+}
+
+bool UpdateSqlAlarmRuleRequestBody::alarmActionRuleNameIsSet() const
+{
+    return alarmActionRuleNameIsSet_;
+}
+
+void UpdateSqlAlarmRuleRequestBody::unsetalarmActionRuleName()
+{
+    alarmActionRuleNameIsSet_ = false;
 }
 
 }

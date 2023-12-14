@@ -8,6 +8,7 @@
 
 #include <huaweicloud/live/v1/model/BatchShowIpBelongsRequest.h>
 #include <huaweicloud/live/v1/model/BatchShowIpBelongsResponse.h>
+#include <huaweicloud/live/v1/model/CallbackUrl.h>
 #include <huaweicloud/live/v1/model/CreateDomainMappingRequest.h>
 #include <huaweicloud/live/v1/model/CreateDomainMappingResponse.h>
 #include <huaweicloud/live/v1/model/CreateDomainRequest.h>
@@ -24,12 +25,17 @@
 #include <huaweicloud/live/v1/model/CreateStreamForbiddenResponse.h>
 #include <huaweicloud/live/v1/model/CreateTranscodingsTemplateRequest.h>
 #include <huaweicloud/live/v1/model/CreateTranscodingsTemplateResponse.h>
+#include <huaweicloud/live/v1/model/CreateUrlAuthchainReq.h>
+#include <huaweicloud/live/v1/model/CreateUrlAuthchainRequest.h>
+#include <huaweicloud/live/v1/model/CreateUrlAuthchainResponse.h>
 #include <huaweicloud/live/v1/model/DeleteDomainKeyChainRequest.h>
 #include <huaweicloud/live/v1/model/DeleteDomainKeyChainResponse.h>
 #include <huaweicloud/live/v1/model/DeleteDomainMappingRequest.h>
 #include <huaweicloud/live/v1/model/DeleteDomainMappingResponse.h>
 #include <huaweicloud/live/v1/model/DeleteDomainRequest.h>
 #include <huaweicloud/live/v1/model/DeleteDomainResponse.h>
+#include <huaweicloud/live/v1/model/DeletePublishTemplateRequest.h>
+#include <huaweicloud/live/v1/model/DeletePublishTemplateResponse.h>
 #include <huaweicloud/live/v1/model/DeleteRecordCallbackConfigRequest.h>
 #include <huaweicloud/live/v1/model/DeleteRecordCallbackConfigResponse.h>
 #include <huaweicloud/live/v1/model/DeleteRecordRuleRequest.h>
@@ -42,11 +48,21 @@
 #include <huaweicloud/live/v1/model/DeleteTranscodingsTemplateResponse.h>
 #include <huaweicloud/live/v1/model/DomainIpv6SwitchReq.h>
 #include <huaweicloud/live/v1/model/DomainMapping.h>
+#include <huaweicloud/live/v1/model/GeoBlockingConfigInfo.h>
+#include <huaweicloud/live/v1/model/IPAuthInfo.h>
 #include <huaweicloud/live/v1/model/KeyChainInfo.h>
+#include <huaweicloud/live/v1/model/ListDelayConfigRequest.h>
+#include <huaweicloud/live/v1/model/ListDelayConfigResponse.h>
+#include <huaweicloud/live/v1/model/ListGeoBlockingConfigRequest.h>
+#include <huaweicloud/live/v1/model/ListGeoBlockingConfigResponse.h>
+#include <huaweicloud/live/v1/model/ListIpAuthListRequest.h>
+#include <huaweicloud/live/v1/model/ListIpAuthListResponse.h>
 #include <huaweicloud/live/v1/model/ListLiveSampleLogsRequest.h>
 #include <huaweicloud/live/v1/model/ListLiveSampleLogsResponse.h>
 #include <huaweicloud/live/v1/model/ListLiveStreamsOnlineRequest.h>
 #include <huaweicloud/live/v1/model/ListLiveStreamsOnlineResponse.h>
+#include <huaweicloud/live/v1/model/ListPublishTemplateRequest.h>
+#include <huaweicloud/live/v1/model/ListPublishTemplateResponse.h>
 #include <huaweicloud/live/v1/model/ListRecordCallbackConfigsRequest.h>
 #include <huaweicloud/live/v1/model/ListRecordCallbackConfigsResponse.h>
 #include <huaweicloud/live/v1/model/ListRecordContentsRequest.h>
@@ -60,6 +76,8 @@
 #include <huaweicloud/live/v1/model/LiveDomainCreateReq.h>
 #include <huaweicloud/live/v1/model/LiveDomainModifyReq.h>
 #include <huaweicloud/live/v1/model/LiveSnapshotConfig.h>
+#include <huaweicloud/live/v1/model/ModifyDelayConfig.h>
+#include <huaweicloud/live/v1/model/ModifyPullSourcesConfig.h>
 #include <huaweicloud/live/v1/model/RecordCallbackConfigRequest.h>
 #include <huaweicloud/live/v1/model/RecordControlInfo.h>
 #include <huaweicloud/live/v1/model/RecordIndexRequestBody.h>
@@ -70,6 +88,8 @@
 #include <huaweicloud/live/v1/model/ShowDomainKeyChainResponse.h>
 #include <huaweicloud/live/v1/model/ShowDomainRequest.h>
 #include <huaweicloud/live/v1/model/ShowDomainResponse.h>
+#include <huaweicloud/live/v1/model/ShowPullSourcesConfigRequest.h>
+#include <huaweicloud/live/v1/model/ShowPullSourcesConfigResponse.h>
 #include <huaweicloud/live/v1/model/ShowRecordCallbackConfigRequest.h>
 #include <huaweicloud/live/v1/model/ShowRecordCallbackConfigResponse.h>
 #include <huaweicloud/live/v1/model/ShowRecordRuleRequest.h>
@@ -78,12 +98,22 @@
 #include <huaweicloud/live/v1/model/ShowTranscodingsTemplateResponse.h>
 #include <huaweicloud/live/v1/model/StreamForbiddenSetting.h>
 #include <huaweicloud/live/v1/model/StreamTranscodingTemplate.h>
+#include <huaweicloud/live/v1/model/UpdateDelayConfigRequest.h>
+#include <huaweicloud/live/v1/model/UpdateDelayConfigResponse.h>
 #include <huaweicloud/live/v1/model/UpdateDomainIp6SwitchRequest.h>
 #include <huaweicloud/live/v1/model/UpdateDomainIp6SwitchResponse.h>
 #include <huaweicloud/live/v1/model/UpdateDomainKeyChainRequest.h>
 #include <huaweicloud/live/v1/model/UpdateDomainKeyChainResponse.h>
 #include <huaweicloud/live/v1/model/UpdateDomainRequest.h>
 #include <huaweicloud/live/v1/model/UpdateDomainResponse.h>
+#include <huaweicloud/live/v1/model/UpdateGeoBlockingConfigRequest.h>
+#include <huaweicloud/live/v1/model/UpdateGeoBlockingConfigResponse.h>
+#include <huaweicloud/live/v1/model/UpdateIpAuthListRequest.h>
+#include <huaweicloud/live/v1/model/UpdateIpAuthListResponse.h>
+#include <huaweicloud/live/v1/model/UpdatePublishTemplateRequest.h>
+#include <huaweicloud/live/v1/model/UpdatePublishTemplateResponse.h>
+#include <huaweicloud/live/v1/model/UpdatePullSourcesConfigRequest.h>
+#include <huaweicloud/live/v1/model/UpdatePullSourcesConfigResponse.h>
 #include <huaweicloud/live/v1/model/UpdateRecordCallbackConfigRequest.h>
 #include <huaweicloud/live/v1/model/UpdateRecordCallbackConfigResponse.h>
 #include <huaweicloud/live/v1/model/UpdateRecordRuleRequest.h>
@@ -206,6 +236,14 @@ public:
     std::shared_ptr<CreateTranscodingsTemplateResponse> createTranscodingsTemplate(
         CreateTranscodingsTemplateRequest &request
     );
+    // 生成URL鉴权串
+    //
+    // 生成URL鉴权串
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateUrlAuthchainResponse> createUrlAuthchain(
+        CreateUrlAuthchainRequest &request
+    );
     // 删除直播域名
     //
     // 删除域名。只有在域名停用（off）状态时才能删除。
@@ -229,6 +267,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteDomainMappingResponse> deleteDomainMapping(
         DeleteDomainMappingRequest &request
+    );
+    // 删除直播推流通知配置
+    //
+    // 删除直播推流通知配置
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeletePublishTemplateResponse> deletePublishTemplate(
+        DeletePublishTemplateRequest &request
     );
     // 删除录制回调配置
     //
@@ -270,6 +316,33 @@ public:
     std::shared_ptr<DeleteTranscodingsTemplateResponse> deleteTranscodingsTemplate(
         DeleteTranscodingsTemplateRequest &request
     );
+    // 查询播放域名延时配置
+    //
+    // 查询播放域名延时配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListDelayConfigResponse> listDelayConfig(
+        ListDelayConfigRequest &request
+    );
+    // 获取地域限制配置列表
+    //
+    // 查询播放域名的地域限制列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListGeoBlockingConfigResponse> listGeoBlockingConfig(
+        ListGeoBlockingConfigRequest &request
+    );
+    // 查询IP黑/白名单
+    //
+    // 查询推流/播放域名的IP黑/白名单。
+    // - 黑名单模式：禁止指定的IP或网段
+    // - 白名单模式：仅允许指定的IP或网段
+    // - 默认：全放通。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListIpAuthListResponse> listIpAuthList(
+        ListIpAuthListRequest &request
+    );
     // 获取直播播放日志
     //
     // 获取直播播放日志，基于域名以5分钟粒度进行打包，日志内容以 \&quot;|\&quot; 进行分隔。
@@ -285,6 +358,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListLiveStreamsOnlineResponse> listLiveStreamsOnline(
         ListLiveStreamsOnlineRequest &request
+    );
+    // 查询直播推流通知配置
+    //
+    // 查询直播推流通知配置
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListPublishTemplateResponse> listPublishTemplate(
+        ListPublishTemplateRequest &request
     );
     // 查询录制回调配置列表
     //
@@ -350,6 +431,14 @@ public:
     std::shared_ptr<ShowDomainKeyChainResponse> showDomainKeyChain(
         ShowDomainKeyChainRequest &request
     );
+    // 查询直播拉流回源配置
+    //
+    // 查询直播拉流回源配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowPullSourcesConfigResponse> showPullSourcesConfig(
+        ShowPullSourcesConfigRequest &request
+    );
     // 查询录制回调配置
     //
     // 查询录制回调配置接口
@@ -374,6 +463,14 @@ public:
     std::shared_ptr<ShowTranscodingsTemplateResponse> showTranscodingsTemplate(
         ShowTranscodingsTemplateRequest &request
     );
+    // 修改播放域名延时配置
+    //
+    // 修改播放域名延时配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateDelayConfigResponse> updateDelayConfig(
+        UpdateDelayConfigRequest &request
+    );
     // 修改直播域名
     //
     // 修改直播播放、RTMP推流加速域名相关信息
@@ -397,6 +494,41 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateDomainKeyChainResponse> updateDomainKeyChain(
         UpdateDomainKeyChainRequest &request
+    );
+    // 修改地域限制配置
+    //
+    // 修改播放域名的地域限制，选中地域允许接入。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateGeoBlockingConfigResponse> updateGeoBlockingConfig(
+        UpdateGeoBlockingConfigRequest &request
+    );
+    // 修改IP黑/白名单
+    //
+    // 修改推流/播放域名的IP黑/白名单，当前仅支持ipv4。
+    // - 黑名单模式：禁止指定的IP或网段
+    // - 白名单模式：仅允许指定的IP或网段
+    // - 默认：全放通。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateIpAuthListResponse> updateIpAuthList(
+        UpdateIpAuthListRequest &request
+    );
+    // 新增、覆盖直播推流通知配置
+    //
+    // 新增、覆盖直播推流通知配置
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdatePublishTemplateResponse> updatePublishTemplate(
+        UpdatePublishTemplateRequest &request
+    );
+    // 修改直播拉流回源配置
+    //
+    // 修改直播拉流回源配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdatePullSourcesConfigResponse> updatePullSourcesConfig(
+        UpdatePullSourcesConfigRequest &request
     );
     // 修改录制回调配置
     //

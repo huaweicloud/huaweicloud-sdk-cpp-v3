@@ -34,6 +34,7 @@ public:
     static HttpRequestDef genRequestDefForDeleteConfiguration();
     static HttpRequestDef genRequestDefForDeleteInstance();
     static HttpRequestDef genRequestDefForDeleteJob();
+    static HttpRequestDef genRequestDefForDeleteLogLtsConfigs();
     static HttpRequestDef genRequestDefForDeleteManualBackup();
     static HttpRequestDef genRequestDefForDeletePostgresqlHbaConf();
     static HttpRequestDef genRequestDefForDownloadSlowlog();
@@ -59,6 +60,7 @@ public:
     static HttpRequestDef genRequestDefForListInstancesSupportFastRestore();
     static HttpRequestDef genRequestDefForListJobInfo();
     static HttpRequestDef genRequestDefForListJobInfoDetail();
+    static HttpRequestDef genRequestDefForListLogLtsConfigs();
     static HttpRequestDef genRequestDefForListOffSiteBackups();
     static HttpRequestDef genRequestDefForListOffSiteInstances();
     static HttpRequestDef genRequestDefForListOffSiteRestoreTimes();
@@ -90,6 +92,7 @@ public:
     static HttpRequestDef genRequestDefForSetAutoEnlargePolicy();
     static HttpRequestDef genRequestDefForSetBackupPolicy();
     static HttpRequestDef genRequestDefForSetBinlogClearPolicy();
+    static HttpRequestDef genRequestDefForSetLogLtsConfigs();
     static HttpRequestDef genRequestDefForSetOffSiteBackupPolicy();
     static HttpRequestDef genRequestDefForSetSecondLevelMonitor();
     static HttpRequestDef genRequestDefForSetSecurityGroup();

@@ -1,3 +1,174 @@
+# 3.1.66 2023-12-21
+
+### HuaweiCloud SDK CloudTable
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateCloudTableCluster**
+    - 请求参数变更
+      - `+ cluster_name`
+      - `+ datastore`
+      - `+ availability_zone`
+      - `+ nics`
+      - `+ cluster_info`
+      - `+ enterprise_project_id`
+      - `+ vpc_id`
+      - `+ dbuser`
+      - `+ dbuserpwd`
+      - `- cluster`
+      - `* body: object<CreateClusterRequestBody> -> object<CreateClusterReqBody>`
+    - 响应参数变更
+      - `+ jobId`
+      - `+ getJobEndpoint`
+  - **CreateCluster**
+    - 请求参数变更
+      - `* cluster.instance.nics: list<Nics> -> list<nic>`
+
+### HuaweiCloud SDK DRS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **BatchCreateJobs**
+    - 请求参数变更
+      - `+ jobs.engine_type: enum value [mysql-to-kafka,taurus-to-kafka,gaussdbv5ha-to-kafka]`
+      - `+ jobs.source_endpoint.db_type: enum value [taurus]`
+  - **BatchValidateConnections**
+    - 请求参数变更
+      - `+ jobs.db_type: enum value [taurus]`
+  - **ShowJobList**
+    - 请求参数变更
+      - `+ engine_type: enum value [gaussdbv5,postgresql,mysql-to-kafka,taurus-to-kafka,gaussdbv5ha-to-kafka]`
+  - **BatchUpdateJob**
+    - 请求参数变更
+      - `+ jobs.engine_type: enum value [gaussdbv5,postgresql,mysql-to-kafka,taurus-to-kafka,gaussdbv5ha-to-kafka]`
+      - `+ jobs.source_endpoint.db_type: enum value [taurus]`
+  - **BatchListJobDetails**
+    - 响应参数变更
+      - `+ results.source_endpoint.db_type: enum value [taurus]`
+      - `+ results.inst_info.engine_type: enum value [gaussdbv5,postgresql,mysql-to-kafka,taurus-to-kafka,gaussdbv5ha-to-kafka]`
+  - **ShowJobDetail**
+    - 请求参数变更
+      - `+ type: enum value [compare]`
+      - `+ type: enum value [comapre]`
+      - `+ query_type: enum value [diff]`
+
+### HuaweiCloud SDK ECS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **BatchCreateServerTags**
+    - 请求参数变更
+      - `* tags: list<ServerTag> -> list<BatchAddServerTag>`
+  - **UpdateServer**
+    - 请求参数变更
+      - `+ server.user_data`
+
+### HuaweiCloud SDK EIP
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 移除接口`UpdateDisassociatePublicip`、`UpdateAssociatePublicip`
+
+### HuaweiCloud SDK IVS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **DetectStandardByNameAndId**
+    - 请求参数变更
+      - `+ data.req_data.detail`
+      - `+ data.req_data.crop`
+  - **DetectStandardByIdCardImage**
+    - 请求参数变更
+      - `+ data.req_data.detail`
+      - `+ data.req_data.crop`
+  - **DetectStandardByVideoAndIdCardImage**
+    - 请求参数变更
+      - `+ data.req_data.detail`
+  - **DetectStandardByVideoAndNameAndId**
+    - 请求参数变更
+      - `+ data.req_data.detail`
+
+### HuaweiCloud SDK MPC
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateTranscodingTask**
+    - 请求参数变更
+      - `+ video_process.hls_storage_type`
+
+### HuaweiCloud SDK TICS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowAgentDetail**
+    - 响应参数变更
+      - `* agent_deploy.aom_flag: byte -> boolean`
+      - `* agent_deploy.bcs_flag: byte -> boolean`
+      - `* agent_deploy.high_avail: byte -> boolean`
+      - `+ agent_deploy_detail.ief_instance_id`
+      - `+ agent_deploy_node.agent_vpcep_eps_id`
+      - `+ agent_deploy_node.league_server_ip_security_group_rule`
+      - `+ agent_deploy_node.league_server_snat_ip`
+      - `+ agent_deploy_node.server_to_agent_vpcep_epi_id`
+      - `+ agent_deploy_node.server_to_agent_vpcep_epi_ip`
+      - `+ agent_deploy_node.snat_rule_id`
+
+### HuaweiCloud SDK VOD
+
+- _新增特性_
+  - 支持接口`ListAssetDailySummaryLog`、`UpdateStorageMode`、`ShowVodRetrieval`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowTakeOverAssetDetails**
+    - 响应参数变更
+      - `+ transcode_info.output.group_id`
+      - `+ transcode_info.output.group_name`
+  - **PublishAssets**
+    - 响应参数变更
+      - `+ asset_info_array.is_multi_transcode`
+      - `+ asset_info_array.play_info_array.group_id`
+      - `+ asset_info_array.play_info_array.group_name`
+  - **UnpublishAssets**
+    - 响应参数变更
+      - `+ asset_info_array.is_multi_transcode`
+      - `+ asset_info_array.play_info_array.group_id`
+      - `+ asset_info_array.play_info_array.group_name`
+  - **ShowAssetMeta**
+    - 响应参数变更
+      - `+ asset_info_array.is_multi_transcode`
+      - `+ asset_info_array.play_info_array.group_id`
+      - `+ asset_info_array.play_info_array.group_name`
+  - **ShowAssetDetail**
+    - 响应参数变更
+      - `+ transcode_info.output.group_id`
+      - `+ transcode_info.output.group_name`
+  - **ShowTakeOverTaskDetails**
+    - 响应参数变更
+      - `+ assets.transcode_info.output.group_id`
+      - `+ assets.transcode_info.output.group_name`
+
 # 3.1.65 2023-12-14
 
 ### HuaweiCloud SDK CFW

@@ -22,6 +22,8 @@ StandardReqDataByVideoAndNameAndId::StandardReqDataByVideoAndNameAndId()
     actionsIsSet_ = false;
     nodThreshold_ = 0.0;
     nodThresholdIsSet_ = false;
+    detail_ = false;
+    detailIsSet_ = false;
 }
 
 StandardReqDataByVideoAndNameAndId::~StandardReqDataByVideoAndNameAndId() = default;
@@ -48,6 +50,9 @@ web::json::value StandardReqDataByVideoAndNameAndId::toJson() const
     }
     if(nodThresholdIsSet_) {
         val[utility::conversions::to_string_t("nod_threshold")] = ModelBase::toJson(nodThreshold_);
+    }
+    if(detailIsSet_) {
+        val[utility::conversions::to_string_t("detail")] = ModelBase::toJson(detail_);
     }
 
     return val;
@@ -99,6 +104,15 @@ bool StandardReqDataByVideoAndNameAndId::fromJson(const web::json::value& val)
             double refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setNodThreshold(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("detail"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("detail"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDetail(refVal);
         }
     }
     return ok;
@@ -208,6 +222,27 @@ bool StandardReqDataByVideoAndNameAndId::nodThresholdIsSet() const
 void StandardReqDataByVideoAndNameAndId::unsetnodThreshold()
 {
     nodThresholdIsSet_ = false;
+}
+
+bool StandardReqDataByVideoAndNameAndId::isDetail() const
+{
+    return detail_;
+}
+
+void StandardReqDataByVideoAndNameAndId::setDetail(bool value)
+{
+    detail_ = value;
+    detailIsSet_ = true;
+}
+
+bool StandardReqDataByVideoAndNameAndId::detailIsSet() const
+{
+    return detailIsSet_;
+}
+
+void StandardReqDataByVideoAndNameAndId::unsetdetail()
+{
+    detailIsSet_ = false;
 }
 
 }

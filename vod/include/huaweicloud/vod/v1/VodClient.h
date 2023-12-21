@@ -63,6 +63,8 @@
 #include <huaweicloud/vod/v1/model/ExtractAudioTaskReq.h>
 #include <huaweicloud/vod/v1/model/ListAssetCategoryRequest.h>
 #include <huaweicloud/vod/v1/model/ListAssetCategoryResponse.h>
+#include <huaweicloud/vod/v1/model/ListAssetDailySummaryLogRequest.h>
+#include <huaweicloud/vod/v1/model/ListAssetDailySummaryLogResponse.h>
 #include <huaweicloud/vod/v1/model/ListAssetListRequest.h>
 #include <huaweicloud/vod/v1/model/ListAssetListResponse.h>
 #include <huaweicloud/vod/v1/model/ListDomainLogsRequest.h>
@@ -142,9 +144,17 @@
 #include <huaweicloud/vod/v1/model/ShowTakeOverTaskDetailsResponse.h>
 #include <string>
 
+#include <huaweicloud/vod/v1/model/ShowVodRetrievalRequest.h>
+#include <huaweicloud/vod/v1/model/ShowVodRetrievalResponse.h>
+#include <string>
+
 #include <huaweicloud/vod/v1/model/ModifySubtitleRequest.h>
 #include <huaweicloud/vod/v1/model/ModifySubtitleResponse.h>
 #include <huaweicloud/vod/v1/model/SubtitleModifyReq.h>
+
+#include <huaweicloud/vod/v1/model/UpdateStorageModeReq.h>
+#include <huaweicloud/vod/v1/model/UpdateStorageModeRequest.h>
+#include <huaweicloud/vod/v1/model/UpdateStorageModeResponse.h>
 
 #include <cpprest/details/basic_types.h>
 #include <huaweicloud/core/utils/ModelBase.h>
@@ -359,6 +369,18 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListAssetCategoryResponse> listAssetCategory(
         ListAssetCategoryRequest &request
+    );
+    // 查询媒资日播放统计数据
+    //
+    // 查询媒资日播放统计数据。
+    // 
+    // 使用媒资日播放统计查询API前，需要先提交工单开通统计功能，才能触发统计任务。
+    // 
+    // 支持查询最近一年的播放统计数据。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListAssetDailySummaryLogResponse> listAssetDailySummaryLog(
+        ListAssetDailySummaryLogRequest &request
     );
     // 查询媒资列表
     //
@@ -614,6 +636,19 @@ public:
         ShowTakeOverTaskDetailsRequest &request
     );
 
+    // 查询取回数据信息
+    //
+    // ## 典型场景 ##
+    //  用于查询点播低频和归档取回量统计数据。&lt;br/&gt;
+    // 
+    // ## 接口功能 ##
+    //  用于查询点播低频和归档取回量统计数据。&lt;br/&gt;
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowVodRetrievalResponse> showVodRetrieval(
+        ShowVodRetrievalRequest &request
+    );
+
     // 多字幕封装
     //
     // 多字幕封装，仅支持 HLS VTT格式
@@ -621,6 +656,16 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ModifySubtitleResponse> modifySubtitle(
         ModifySubtitleRequest &request
+    );
+
+    // 修改媒资文件在obs的存储模式
+    //
+    // ## 接口功能 ##
+    //   修改媒资文件在obs的存储模式&lt;br/&gt;
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateStorageModeResponse> updateStorageMode(
+        UpdateStorageModeRequest &request
     );
 
 

@@ -32,8 +32,6 @@ public:
     static HttpRequestDef genRequestDefForEnableNat64();
     static HttpRequestDef genRequestDefForListPublicips();
     static HttpRequestDef genRequestDefForShowPublicip();
-    static HttpRequestDef genRequestDefForUpdateAssociatePublicip();
-    static HttpRequestDef genRequestDefForUpdateDisassociatePublicip();
     static HttpRequestDef genRequestDefForUpdatePublicip();
 };
 

@@ -86,7 +86,7 @@ bool Instance::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("nics"));
         if(!fieldValue.is_null())
         {
-            std::vector<Nics> refVal;
+            std::vector<Nic> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setNics(refVal);
         }
@@ -167,12 +167,12 @@ void Instance::unsetlemonNum()
     lemonNumIsSet_ = false;
 }
 
-std::vector<Nics>& Instance::getNics()
+std::vector<Nic>& Instance::getNics()
 {
     return nics_;
 }
 
-void Instance::setNics(const std::vector<Nics>& value)
+void Instance::setNics(const std::vector<Nic>& value)
 {
     nics_ = value;
     nicsIsSet_ = true;

@@ -47,10 +47,32 @@ public:
     void unsetclusterId();
     void setClusterId(const std::string& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    std::string getJobId() const;
+    bool jobIdIsSet() const;
+    void unsetjobId();
+    void setJobId(const std::string& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    std::string getGetJobEndpoint() const;
+    bool getJobEndpointIsSet() const;
+    void unsetgetJobEndpoint();
+    void setGetJobEndpoint(const std::string& value);
+
 
 protected:
     std::string clusterId_;
     bool clusterIdIsSet_;
+    std::string jobId_;
+    bool jobIdIsSet_;
+    std::string getJobEndpoint_;
+    bool getJobEndpointIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

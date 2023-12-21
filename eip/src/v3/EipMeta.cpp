@@ -460,24 +460,6 @@ HttpRequestDef EipMeta::genRequestDefForShowPublicip() {
     return reqDefBuilder;
 }
 
-HttpRequestDef EipMeta::genRequestDefForUpdateAssociatePublicip() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef bodyParam;
-    reqDefBuilder.withRequestField(bodyParam.
-        withName("Body").
-        withLocationType(Body_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef EipMeta::genRequestDefForUpdateDisassociatePublicip() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef bodyParam;
-    reqDefBuilder.withRequestField(bodyParam.
-        withName("Body").
-        withLocationType(Body_));
-    return reqDefBuilder;
-}
-
 HttpRequestDef EipMeta::genRequestDefForUpdatePublicip() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;

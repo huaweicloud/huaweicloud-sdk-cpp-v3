@@ -26,6 +26,8 @@ TicsAgentDeployDetail::TicsAgentDeployDetail()
     consolePortIsSet_ = false;
     hostPath_ = "";
     hostPathIsSet_ = false;
+    iefInstanceId_ = "";
+    iefInstanceIdIsSet_ = false;
     namespaceName_ = "";
     namespaceNameIsSet_ = false;
     obsPvcName_ = "";
@@ -68,6 +70,9 @@ web::json::value TicsAgentDeployDetail::toJson() const
     }
     if(hostPathIsSet_) {
         val[utility::conversions::to_string_t("host_path")] = ModelBase::toJson(hostPath_);
+    }
+    if(iefInstanceIdIsSet_) {
+        val[utility::conversions::to_string_t("ief_instance_id")] = ModelBase::toJson(iefInstanceId_);
     }
     if(namespaceNameIsSet_) {
         val[utility::conversions::to_string_t("namespace_name")] = ModelBase::toJson(namespaceName_);
@@ -152,6 +157,15 @@ bool TicsAgentDeployDetail::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setHostPath(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("ief_instance_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ief_instance_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIefInstanceId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("namespace_name"))) {
@@ -348,6 +362,27 @@ bool TicsAgentDeployDetail::hostPathIsSet() const
 void TicsAgentDeployDetail::unsethostPath()
 {
     hostPathIsSet_ = false;
+}
+
+std::string TicsAgentDeployDetail::getIefInstanceId() const
+{
+    return iefInstanceId_;
+}
+
+void TicsAgentDeployDetail::setIefInstanceId(const std::string& value)
+{
+    iefInstanceId_ = value;
+    iefInstanceIdIsSet_ = true;
+}
+
+bool TicsAgentDeployDetail::iefInstanceIdIsSet() const
+{
+    return iefInstanceIdIsSet_;
+}
+
+void TicsAgentDeployDetail::unsetiefInstanceId()
+{
+    iefInstanceIdIsSet_ = false;
 }
 
 std::string TicsAgentDeployDetail::getNamespaceName() const

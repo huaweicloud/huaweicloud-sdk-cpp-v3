@@ -83,6 +83,15 @@ public:
     void unsetnodThreshold();
     void setNodThreshold(double value);
 
+    /// <summary>
+    /// 响应参数similarity是否详细显示，默认为false。 - true表示响应中的similarity为0~1000的小数。 - false表示响应中的similarity为0~100的整数。
+    /// </summary>
+
+    bool isDetail() const;
+    bool detailIsSet() const;
+    void unsetdetail();
+    void setDetail(bool value);
+
 
 protected:
     std::string verificationName_;
@@ -95,6 +104,8 @@ protected:
     bool actionsIsSet_;
     double nodThreshold_;
     bool nodThresholdIsSet_;
+    bool detail_;
+    bool detailIsSet_;
 
 };
 

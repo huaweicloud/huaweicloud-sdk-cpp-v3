@@ -53,7 +53,7 @@ bool BatchCreateServerTagsRequestBody::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("tags"));
         if(!fieldValue.is_null())
         {
-            std::vector<ServerTag> refVal;
+            std::vector<BatchAddServerTag> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTags(refVal);
         }
@@ -83,12 +83,12 @@ void BatchCreateServerTagsRequestBody::unsetaction()
     actionIsSet_ = false;
 }
 
-std::vector<ServerTag>& BatchCreateServerTagsRequestBody::getTags()
+std::vector<BatchAddServerTag>& BatchCreateServerTagsRequestBody::getTags()
 {
     return tags_;
 }
 
-void BatchCreateServerTagsRequestBody::setTags(const std::vector<ServerTag>& value)
+void BatchCreateServerTagsRequestBody::setTags(const std::vector<BatchAddServerTag>& value)
 {
     tags_ = value;
     tagsIsSet_ = true;

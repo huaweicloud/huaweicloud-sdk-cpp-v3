@@ -57,6 +57,15 @@ public:
     void setHlsInitInterval(int32_t value);
 
     /// <summary>
+    /// hls的音视频流存储方式。  - composite：存储在同一个文件中。 - separate：存储在不同的文件中 
+    /// </summary>
+
+    std::string getHlsStorageType() const;
+    bool hlsStorageTypeIsSet() const;
+    void unsethlsStorageType();
+    void setHlsStorageType(const std::string& value);
+
+    /// <summary>
     /// 视频顺时针旋转角度。  - 0：表示不旋转 - 1：表示顺时针旋转90度 - 2：表示顺时针旋转180度 - 3：表示顺时针旋转270度 
     /// </summary>
 
@@ -89,6 +98,8 @@ protected:
     bool hlsInitCountIsSet_;
     int32_t hlsInitInterval_;
     bool hlsInitIntervalIsSet_;
+    std::string hlsStorageType_;
+    bool hlsStorageTypeIsSet_;
     int32_t rotate_;
     bool rotateIsSet_;
     std::string adaptation_;

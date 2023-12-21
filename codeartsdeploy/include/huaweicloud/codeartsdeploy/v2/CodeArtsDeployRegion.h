@@ -54,6 +54,10 @@ public:
             { 
                 "https://codearts-deploy.la-north-2.myhuaweicloud.com"
             });
+        regions["tr-west-1"] = Region("tr-west-1",
+            { 
+                "https://codearts-deploy.tr-west-1.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

@@ -16,6 +16,10 @@ Output::Output()
     playTypeIsSet_ = false;
     url_ = "";
     urlIsSet_ = false;
+    groupId_ = "";
+    groupIdIsSet_ = false;
+    groupName_ = "";
+    groupNameIsSet_ = false;
     encrypted_ = 0;
     encryptedIsSet_ = false;
     quality_ = "";
@@ -38,6 +42,12 @@ web::json::value Output::toJson() const
     }
     if(urlIsSet_) {
         val[utility::conversions::to_string_t("url")] = ModelBase::toJson(url_);
+    }
+    if(groupIdIsSet_) {
+        val[utility::conversions::to_string_t("group_id")] = ModelBase::toJson(groupId_);
+    }
+    if(groupNameIsSet_) {
+        val[utility::conversions::to_string_t("group_name")] = ModelBase::toJson(groupName_);
     }
     if(encryptedIsSet_) {
         val[utility::conversions::to_string_t("encrypted")] = ModelBase::toJson(encrypted_);
@@ -71,6 +81,24 @@ bool Output::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setUrl(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("group_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("group_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setGroupId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("group_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("group_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setGroupName(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("encrypted"))) {
@@ -144,6 +172,48 @@ bool Output::urlIsSet() const
 void Output::unseturl()
 {
     urlIsSet_ = false;
+}
+
+std::string Output::getGroupId() const
+{
+    return groupId_;
+}
+
+void Output::setGroupId(const std::string& value)
+{
+    groupId_ = value;
+    groupIdIsSet_ = true;
+}
+
+bool Output::groupIdIsSet() const
+{
+    return groupIdIsSet_;
+}
+
+void Output::unsetgroupId()
+{
+    groupIdIsSet_ = false;
+}
+
+std::string Output::getGroupName() const
+{
+    return groupName_;
+}
+
+void Output::setGroupName(const std::string& value)
+{
+    groupName_ = value;
+    groupNameIsSet_ = true;
+}
+
+bool Output::groupNameIsSet() const
+{
+    return groupNameIsSet_;
+}
+
+void Output::unsetgroupName()
+{
+    groupNameIsSet_ = false;
 }
 
 int32_t Output::getEncrypted() const

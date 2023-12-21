@@ -36,6 +36,7 @@ public:
     static HttpRequestDef genRequestDefForDeleteTranscodeTemplate();
     static HttpRequestDef genRequestDefForDeleteWatermarkTemplate();
     static HttpRequestDef genRequestDefForListAssetCategory();
+    static HttpRequestDef genRequestDefForListAssetDailySummaryLog();
     static HttpRequestDef genRequestDefForListAssetList();
     static HttpRequestDef genRequestDefForListDomainLogs();
     static HttpRequestDef genRequestDefForListTemplateGroup();
@@ -66,7 +67,9 @@ public:
     static HttpRequestDef genRequestDefForListTakeOverTask();
     static HttpRequestDef genRequestDefForShowTakeOverAssetDetails();
     static HttpRequestDef genRequestDefForShowTakeOverTaskDetails();
+    static HttpRequestDef genRequestDefForShowVodRetrieval();
     static HttpRequestDef genRequestDefForModifySubtitle();
+    static HttpRequestDef genRequestDefForUpdateStorageMode();
 };
 
 }

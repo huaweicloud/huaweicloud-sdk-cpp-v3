@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/cloudtable/v2/model/Nics.h"
+#include "huaweicloud/cloudtable/v2/model/Nic.h"
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cloudtable {
@@ -10,7 +10,7 @@ namespace Model {
 
 
 
-Nics::Nics()
+Nic::Nic()
 {
     netId_ = "";
     netIdIsSet_ = false;
@@ -18,13 +18,13 @@ Nics::Nics()
     securityGroupIdIsSet_ = false;
 }
 
-Nics::~Nics() = default;
+Nic::~Nic() = default;
 
-void Nics::validate()
+void Nic::validate()
 {
 }
 
-web::json::value Nics::toJson() const
+web::json::value Nic::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -37,7 +37,7 @@ web::json::value Nics::toJson() const
 
     return val;
 }
-bool Nics::fromJson(const web::json::value& val)
+bool Nic::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -63,44 +63,44 @@ bool Nics::fromJson(const web::json::value& val)
 }
 
 
-std::string Nics::getNetId() const
+std::string Nic::getNetId() const
 {
     return netId_;
 }
 
-void Nics::setNetId(const std::string& value)
+void Nic::setNetId(const std::string& value)
 {
     netId_ = value;
     netIdIsSet_ = true;
 }
 
-bool Nics::netIdIsSet() const
+bool Nic::netIdIsSet() const
 {
     return netIdIsSet_;
 }
 
-void Nics::unsetnetId()
+void Nic::unsetnetId()
 {
     netIdIsSet_ = false;
 }
 
-std::string Nics::getSecurityGroupId() const
+std::string Nic::getSecurityGroupId() const
 {
     return securityGroupId_;
 }
 
-void Nics::setSecurityGroupId(const std::string& value)
+void Nic::setSecurityGroupId(const std::string& value)
 {
     securityGroupId_ = value;
     securityGroupIdIsSet_ = true;
 }
 
-bool Nics::securityGroupIdIsSet() const
+bool Nic::securityGroupIdIsSet() const
 {
     return securityGroupIdIsSet_;
 }
 
-void Nics::unsetsecurityGroupId()
+void Nic::unsetsecurityGroupId()
 {
     securityGroupIdIsSet_ = false;
 }

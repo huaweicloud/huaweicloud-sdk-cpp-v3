@@ -505,7 +505,7 @@ public:
     std::shared_ptr<ListResizeFlavorsResponse> listResizeFlavors(
         ListResizeFlavorsRequest &request
     );
-    // 查询弹性云服务器磁盘信息
+    // 查询弹性云服务器挂载磁盘列表详情信息
     //
     // 查询弹性云服务器挂载的磁盘信息。
     // 

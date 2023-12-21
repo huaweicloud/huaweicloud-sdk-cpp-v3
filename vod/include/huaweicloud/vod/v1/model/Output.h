@@ -58,6 +58,24 @@ public:
     void setUrl(const std::string& value);
 
     /// <summary>
+    /// 所属转码组Id
+    /// </summary>
+
+    std::string getGroupId() const;
+    bool groupIdIsSet() const;
+    void unsetgroupId();
+    void setGroupId(const std::string& value);
+
+    /// <summary>
+    /// 所属转码组名称
+    /// </summary>
+
+    std::string getGroupName() const;
+    bool groupNameIsSet() const;
+    void unsetgroupName();
+    void setGroupName(const std::string& value);
+
+    /// <summary>
     /// 标记流是否已被加密。  取值如下： - 0：表示未加密。 - 1：表示已被加密。
     /// </summary>
 
@@ -90,6 +108,10 @@ protected:
     bool playTypeIsSet_;
     std::string url_;
     bool urlIsSet_;
+    std::string groupId_;
+    bool groupIdIsSet_;
+    std::string groupName_;
+    bool groupNameIsSet_;
     int32_t encrypted_;
     bool encryptedIsSet_;
     std::string quality_;

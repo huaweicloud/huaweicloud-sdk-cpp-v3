@@ -10,7 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
-#include <huaweicloud/cloudtable/v2/model/Nics.h>
+#include <huaweicloud/cloudtable/v2/model/Nic.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -71,10 +71,10 @@ public:
     /// 集群所在网络信息。
     /// </summary>
 
-    std::vector<Nics>& getNics();
+    std::vector<Nic>& getNics();
     bool nicsIsSet() const;
     void unsetnics();
-    void setNics(const std::vector<Nics>& value);
+    void setNics(const std::vector<Nic>& value);
 
     /// <summary>
     /// CloudTable集群TSD节点数目，至少为2。
@@ -93,7 +93,7 @@ protected:
     bool cuNumIsSet_;
     int32_t lemonNum_;
     bool lemonNumIsSet_;
-    std::vector<Nics> nics_;
+    std::vector<Nic> nics_;
     bool nicsIsSet_;
     int32_t tsdNum_;
     bool tsdNumIsSet_;

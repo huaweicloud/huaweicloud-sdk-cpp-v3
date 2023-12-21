@@ -14,8 +14,14 @@ TicsAgentNodeInfo::TicsAgentNodeInfo()
 {
     agentId_ = "";
     agentIdIsSet_ = false;
+    agentVpcepEpsId_ = "";
+    agentVpcepEpsIdIsSet_ = false;
     ecsServerId_ = "";
     ecsServerIdIsSet_ = false;
+    leagueServerIpSecurityGroupRule_ = "";
+    leagueServerIpSecurityGroupRuleIsSet_ = false;
+    leagueServerSnatIp_ = "";
+    leagueServerSnatIpIsSet_ = false;
     natEip_ = "";
     natEipIsSet_ = false;
     natEipId_ = "";
@@ -28,6 +34,12 @@ TicsAgentNodeInfo::TicsAgentNodeInfo()
     nodeIpIsSet_ = false;
     nodeName_ = "";
     nodeNameIsSet_ = false;
+    serverToAgentVpcepEpiId_ = "";
+    serverToAgentVpcepEpiIdIsSet_ = false;
+    serverToAgentVpcepEpiIp_ = "";
+    serverToAgentVpcepEpiIpIsSet_ = false;
+    snatRuleId_ = "";
+    snatRuleIdIsSet_ = false;
 }
 
 TicsAgentNodeInfo::~TicsAgentNodeInfo() = default;
@@ -43,8 +55,17 @@ web::json::value TicsAgentNodeInfo::toJson() const
     if(agentIdIsSet_) {
         val[utility::conversions::to_string_t("agent_id")] = ModelBase::toJson(agentId_);
     }
+    if(agentVpcepEpsIdIsSet_) {
+        val[utility::conversions::to_string_t("agent_vpcep_eps_id")] = ModelBase::toJson(agentVpcepEpsId_);
+    }
     if(ecsServerIdIsSet_) {
         val[utility::conversions::to_string_t("ecs_server_id")] = ModelBase::toJson(ecsServerId_);
+    }
+    if(leagueServerIpSecurityGroupRuleIsSet_) {
+        val[utility::conversions::to_string_t("league_server_ip_security_group_rule")] = ModelBase::toJson(leagueServerIpSecurityGroupRule_);
+    }
+    if(leagueServerSnatIpIsSet_) {
+        val[utility::conversions::to_string_t("league_server_snat_ip")] = ModelBase::toJson(leagueServerSnatIp_);
     }
     if(natEipIsSet_) {
         val[utility::conversions::to_string_t("nat_eip")] = ModelBase::toJson(natEip_);
@@ -64,6 +85,15 @@ web::json::value TicsAgentNodeInfo::toJson() const
     if(nodeNameIsSet_) {
         val[utility::conversions::to_string_t("node_name")] = ModelBase::toJson(nodeName_);
     }
+    if(serverToAgentVpcepEpiIdIsSet_) {
+        val[utility::conversions::to_string_t("server_to_agent_vpcep_epi_id")] = ModelBase::toJson(serverToAgentVpcepEpiId_);
+    }
+    if(serverToAgentVpcepEpiIpIsSet_) {
+        val[utility::conversions::to_string_t("server_to_agent_vpcep_epi_ip")] = ModelBase::toJson(serverToAgentVpcepEpiIp_);
+    }
+    if(snatRuleIdIsSet_) {
+        val[utility::conversions::to_string_t("snat_rule_id")] = ModelBase::toJson(snatRuleId_);
+    }
 
     return val;
 }
@@ -80,6 +110,15 @@ bool TicsAgentNodeInfo::fromJson(const web::json::value& val)
             setAgentId(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("agent_vpcep_eps_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("agent_vpcep_eps_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAgentVpcepEpsId(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("ecs_server_id"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ecs_server_id"));
         if(!fieldValue.is_null())
@@ -87,6 +126,24 @@ bool TicsAgentNodeInfo::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEcsServerId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("league_server_ip_security_group_rule"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("league_server_ip_security_group_rule"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLeagueServerIpSecurityGroupRule(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("league_server_snat_ip"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("league_server_snat_ip"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLeagueServerSnatIp(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("nat_eip"))) {
@@ -143,6 +200,33 @@ bool TicsAgentNodeInfo::fromJson(const web::json::value& val)
             setNodeName(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("server_to_agent_vpcep_epi_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("server_to_agent_vpcep_epi_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setServerToAgentVpcepEpiId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("server_to_agent_vpcep_epi_ip"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("server_to_agent_vpcep_epi_ip"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setServerToAgentVpcepEpiIp(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("snat_rule_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("snat_rule_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSnatRuleId(refVal);
+        }
+    }
     return ok;
 }
 
@@ -168,6 +252,27 @@ void TicsAgentNodeInfo::unsetagentId()
     agentIdIsSet_ = false;
 }
 
+std::string TicsAgentNodeInfo::getAgentVpcepEpsId() const
+{
+    return agentVpcepEpsId_;
+}
+
+void TicsAgentNodeInfo::setAgentVpcepEpsId(const std::string& value)
+{
+    agentVpcepEpsId_ = value;
+    agentVpcepEpsIdIsSet_ = true;
+}
+
+bool TicsAgentNodeInfo::agentVpcepEpsIdIsSet() const
+{
+    return agentVpcepEpsIdIsSet_;
+}
+
+void TicsAgentNodeInfo::unsetagentVpcepEpsId()
+{
+    agentVpcepEpsIdIsSet_ = false;
+}
+
 std::string TicsAgentNodeInfo::getEcsServerId() const
 {
     return ecsServerId_;
@@ -187,6 +292,48 @@ bool TicsAgentNodeInfo::ecsServerIdIsSet() const
 void TicsAgentNodeInfo::unsetecsServerId()
 {
     ecsServerIdIsSet_ = false;
+}
+
+std::string TicsAgentNodeInfo::getLeagueServerIpSecurityGroupRule() const
+{
+    return leagueServerIpSecurityGroupRule_;
+}
+
+void TicsAgentNodeInfo::setLeagueServerIpSecurityGroupRule(const std::string& value)
+{
+    leagueServerIpSecurityGroupRule_ = value;
+    leagueServerIpSecurityGroupRuleIsSet_ = true;
+}
+
+bool TicsAgentNodeInfo::leagueServerIpSecurityGroupRuleIsSet() const
+{
+    return leagueServerIpSecurityGroupRuleIsSet_;
+}
+
+void TicsAgentNodeInfo::unsetleagueServerIpSecurityGroupRule()
+{
+    leagueServerIpSecurityGroupRuleIsSet_ = false;
+}
+
+std::string TicsAgentNodeInfo::getLeagueServerSnatIp() const
+{
+    return leagueServerSnatIp_;
+}
+
+void TicsAgentNodeInfo::setLeagueServerSnatIp(const std::string& value)
+{
+    leagueServerSnatIp_ = value;
+    leagueServerSnatIpIsSet_ = true;
+}
+
+bool TicsAgentNodeInfo::leagueServerSnatIpIsSet() const
+{
+    return leagueServerSnatIpIsSet_;
+}
+
+void TicsAgentNodeInfo::unsetleagueServerSnatIp()
+{
+    leagueServerSnatIpIsSet_ = false;
 }
 
 std::string TicsAgentNodeInfo::getNatEip() const
@@ -313,6 +460,69 @@ bool TicsAgentNodeInfo::nodeNameIsSet() const
 void TicsAgentNodeInfo::unsetnodeName()
 {
     nodeNameIsSet_ = false;
+}
+
+std::string TicsAgentNodeInfo::getServerToAgentVpcepEpiId() const
+{
+    return serverToAgentVpcepEpiId_;
+}
+
+void TicsAgentNodeInfo::setServerToAgentVpcepEpiId(const std::string& value)
+{
+    serverToAgentVpcepEpiId_ = value;
+    serverToAgentVpcepEpiIdIsSet_ = true;
+}
+
+bool TicsAgentNodeInfo::serverToAgentVpcepEpiIdIsSet() const
+{
+    return serverToAgentVpcepEpiIdIsSet_;
+}
+
+void TicsAgentNodeInfo::unsetserverToAgentVpcepEpiId()
+{
+    serverToAgentVpcepEpiIdIsSet_ = false;
+}
+
+std::string TicsAgentNodeInfo::getServerToAgentVpcepEpiIp() const
+{
+    return serverToAgentVpcepEpiIp_;
+}
+
+void TicsAgentNodeInfo::setServerToAgentVpcepEpiIp(const std::string& value)
+{
+    serverToAgentVpcepEpiIp_ = value;
+    serverToAgentVpcepEpiIpIsSet_ = true;
+}
+
+bool TicsAgentNodeInfo::serverToAgentVpcepEpiIpIsSet() const
+{
+    return serverToAgentVpcepEpiIpIsSet_;
+}
+
+void TicsAgentNodeInfo::unsetserverToAgentVpcepEpiIp()
+{
+    serverToAgentVpcepEpiIpIsSet_ = false;
+}
+
+std::string TicsAgentNodeInfo::getSnatRuleId() const
+{
+    return snatRuleId_;
+}
+
+void TicsAgentNodeInfo::setSnatRuleId(const std::string& value)
+{
+    snatRuleId_ = value;
+    snatRuleIdIsSet_ = true;
+}
+
+bool TicsAgentNodeInfo::snatRuleIdIsSet() const
+{
+    return snatRuleIdIsSet_;
+}
+
+void TicsAgentNodeInfo::unsetsnatRuleId()
+{
+    snatRuleIdIsSet_ = false;
 }
 
 }

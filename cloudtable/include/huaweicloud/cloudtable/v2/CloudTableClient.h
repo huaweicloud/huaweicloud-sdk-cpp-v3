@@ -34,7 +34,7 @@
 
 #include <huaweicloud/cloudtable/v2/model/CreateCloudTableClusterRequest.h>
 #include <huaweicloud/cloudtable/v2/model/CreateCloudTableClusterResponse.h>
-#include <huaweicloud/cloudtable/v2/model/CreateClusterRequestBody.h>
+#include <huaweicloud/cloudtable/v2/model/CreateClusterReqBody.h>
 #include <string>
 
 #include <cpprest/details/basic_types.h>

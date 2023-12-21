@@ -960,6 +960,50 @@ std::shared_ptr<ListAssetCategoryResponse> VodClient::listAssetCategory(ListAsse
 
     return localVarResult;
 }
+std::shared_ptr<ListAssetDailySummaryLogResponse> VodClient::listAssetDailySummaryLog(ListAssetDailySummaryLogRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/asset/daily-summary";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.startTimeIsSet()) {
+        localVarQueryParams["start_time"] = parameterToString(request.getStartTime());
+    }
+    if (request.endTimeIsSet()) {
+        localVarQueryParams["end_time"] = parameterToString(request.getEndTime());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.xSdkDateIsSet()) {
+        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, VodMeta::genRequestDefForListAssetDailySummaryLog());
+
+    std::shared_ptr<ListAssetDailySummaryLogResponse> localVarResult = std::make_shared<ListAssetDailySummaryLogResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListAssetListResponse> VodClient::listAssetList(ListAssetListRequest &request)
 {
     std::string localVarPath = "/v1.0/{project_id}/asset/list";
@@ -2289,6 +2333,44 @@ std::shared_ptr<ShowTakeOverTaskDetailsResponse> VodClient::showTakeOverTaskDeta
 
     return localVarResult;
 }
+std::shared_ptr<ShowVodRetrievalResponse> VodClient::showVodRetrieval(ShowVodRetrievalRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/asset/vod-retrieval";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.startTimeIsSet()) {
+        localVarQueryParams["start_time"] = parameterToString(request.getStartTime());
+    }
+    if (request.endTimeIsSet()) {
+        localVarQueryParams["end_time"] = parameterToString(request.getEndTime());
+    }
+    if (request.intervalIsSet()) {
+        localVarQueryParams["interval"] = parameterToString(request.getInterval());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, VodMeta::genRequestDefForShowVodRetrieval());
+
+    std::shared_ptr<ShowVodRetrievalResponse> localVarResult = std::make_shared<ShowVodRetrievalResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ModifySubtitleResponse> VodClient::modifySubtitle(ModifySubtitleRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/asset/subtitles";
@@ -2318,6 +2400,47 @@ std::shared_ptr<ModifySubtitleResponse> VodClient::modifySubtitle(ModifySubtitle
         localVarHeaderParams, localVarHttpBody, VodMeta::genRequestDefForModifySubtitle());
 
     std::shared_ptr<ModifySubtitleResponse> localVarResult = std::make_shared<ModifySubtitleResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateStorageModeResponse> VodClient::updateStorageMode(UpdateStorageModeRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/asset/storage-mode";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, VodMeta::genRequestDefForUpdateStorageMode());
+
+    std::shared_ptr<UpdateStorageModeResponse> localVarResult = std::make_shared<UpdateStorageModeResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

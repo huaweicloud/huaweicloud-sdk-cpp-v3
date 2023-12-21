@@ -22,6 +22,8 @@ ReqDataByVideoAndIdCardImage::ReqDataByVideoAndIdCardImage()
     actionsIsSet_ = false;
     nodThreshold_ = 0.0;
     nodThresholdIsSet_ = false;
+    detail_ = false;
+    detailIsSet_ = false;
 }
 
 ReqDataByVideoAndIdCardImage::~ReqDataByVideoAndIdCardImage() = default;
@@ -48,6 +50,9 @@ web::json::value ReqDataByVideoAndIdCardImage::toJson() const
     }
     if(nodThresholdIsSet_) {
         val[utility::conversions::to_string_t("nod_threshold")] = ModelBase::toJson(nodThreshold_);
+    }
+    if(detailIsSet_) {
+        val[utility::conversions::to_string_t("detail")] = ModelBase::toJson(detail_);
     }
 
     return val;
@@ -99,6 +104,15 @@ bool ReqDataByVideoAndIdCardImage::fromJson(const web::json::value& val)
             double refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setNodThreshold(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("detail"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("detail"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDetail(refVal);
         }
     }
     return ok;
@@ -208,6 +222,27 @@ bool ReqDataByVideoAndIdCardImage::nodThresholdIsSet() const
 void ReqDataByVideoAndIdCardImage::unsetnodThreshold()
 {
     nodThresholdIsSet_ = false;
+}
+
+bool ReqDataByVideoAndIdCardImage::isDetail() const
+{
+    return detail_;
+}
+
+void ReqDataByVideoAndIdCardImage::setDetail(bool value)
+{
+    detail_ = value;
+    detailIsSet_ = true;
+}
+
+bool ReqDataByVideoAndIdCardImage::detailIsSet() const
+{
+    return detailIsSet_;
+}
+
+void ReqDataByVideoAndIdCardImage::unsetdetail()
+{
+    detailIsSet_ = false;
 }
 
 }

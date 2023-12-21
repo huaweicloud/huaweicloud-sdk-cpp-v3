@@ -53,7 +53,7 @@ bool CreateCloudTableClusterRequest::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
         if(!fieldValue.is_null())
         {
-            CreateClusterRequestBody refVal;
+            CreateClusterReqBody refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBody(refVal);
         }
@@ -83,12 +83,12 @@ void CreateCloudTableClusterRequest::unsetxLanguage()
     xLanguageIsSet_ = false;
 }
 
-CreateClusterRequestBody CreateCloudTableClusterRequest::getBody() const
+CreateClusterReqBody CreateCloudTableClusterRequest::getBody() const
 {
     return body_;
 }
 
-void CreateCloudTableClusterRequest::setBody(const CreateClusterRequestBody& value)
+void CreateCloudTableClusterRequest::setBody(const CreateClusterReqBody& value)
 {
     body_ = value;
     bodyIsSet_ = true;

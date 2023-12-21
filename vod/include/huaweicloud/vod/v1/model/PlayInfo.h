@@ -49,6 +49,24 @@ public:
     void setPlayType(const std::string& value);
 
     /// <summary>
+    /// 所属转码组Id
+    /// </summary>
+
+    std::string getGroupId() const;
+    bool groupIdIsSet() const;
+    void unsetgroupId();
+    void setGroupId(const std::string& value);
+
+    /// <summary>
+    /// 所属转码组名称
+    /// </summary>
+
+    std::string getGroupName() const;
+    bool groupNameIsSet() const;
+    void unsetgroupName();
+    void setGroupName(const std::string& value);
+
+    /// <summary>
     /// 播放URL。
     /// </summary>
 
@@ -79,6 +97,10 @@ public:
 protected:
     std::string playType_;
     bool playTypeIsSet_;
+    std::string groupId_;
+    bool groupIdIsSet_;
+    std::string groupName_;
+    bool groupNameIsSet_;
     std::string url_;
     bool urlIsSet_;
     int32_t encrypted_;

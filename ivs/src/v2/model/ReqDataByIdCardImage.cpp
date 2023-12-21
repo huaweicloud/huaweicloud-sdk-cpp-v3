@@ -18,6 +18,10 @@ ReqDataByIdCardImage::ReqDataByIdCardImage()
     idcardImage2IsSet_ = false;
     faceImage_ = "";
     faceImageIsSet_ = false;
+    detail_ = false;
+    detailIsSet_ = false;
+    crop_ = false;
+    cropIsSet_ = false;
 }
 
 ReqDataByIdCardImage::~ReqDataByIdCardImage() = default;
@@ -38,6 +42,12 @@ web::json::value ReqDataByIdCardImage::toJson() const
     }
     if(faceImageIsSet_) {
         val[utility::conversions::to_string_t("face_image")] = ModelBase::toJson(faceImage_);
+    }
+    if(detailIsSet_) {
+        val[utility::conversions::to_string_t("detail")] = ModelBase::toJson(detail_);
+    }
+    if(cropIsSet_) {
+        val[utility::conversions::to_string_t("crop")] = ModelBase::toJson(crop_);
     }
 
     return val;
@@ -71,6 +81,24 @@ bool ReqDataByIdCardImage::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFaceImage(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("detail"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("detail"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDetail(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("crop"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("crop"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCrop(refVal);
         }
     }
     return ok;
@@ -138,6 +166,48 @@ bool ReqDataByIdCardImage::faceImageIsSet() const
 void ReqDataByIdCardImage::unsetfaceImage()
 {
     faceImageIsSet_ = false;
+}
+
+bool ReqDataByIdCardImage::isDetail() const
+{
+    return detail_;
+}
+
+void ReqDataByIdCardImage::setDetail(bool value)
+{
+    detail_ = value;
+    detailIsSet_ = true;
+}
+
+bool ReqDataByIdCardImage::detailIsSet() const
+{
+    return detailIsSet_;
+}
+
+void ReqDataByIdCardImage::unsetdetail()
+{
+    detailIsSet_ = false;
+}
+
+bool ReqDataByIdCardImage::isCrop() const
+{
+    return crop_;
+}
+
+void ReqDataByIdCardImage::setCrop(bool value)
+{
+    crop_ = value;
+    cropIsSet_ = true;
+}
+
+bool ReqDataByIdCardImage::cropIsSet() const
+{
+    return cropIsSet_;
+}
+
+void ReqDataByIdCardImage::unsetcrop()
+{
+    cropIsSet_ = false;
 }
 
 }

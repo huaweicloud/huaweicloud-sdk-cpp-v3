@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_CLOUDTABLE_V2_MODEL_Nics_H_
-#define HUAWEICLOUD_SDK_CLOUDTABLE_V2_MODEL_Nics_H_
+#ifndef HUAWEICLOUD_SDK_CLOUDTABLE_V2_MODEL_Nic_H_
+#define HUAWEICLOUD_SDK_CLOUDTABLE_V2_MODEL_Nic_H_
 
 
 #include <huaweicloud/cloudtable/v2/CloudTableExport.h>
@@ -20,14 +20,14 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 集群所在的网络信息以及安全组信息。
+/// 
 /// </summary>
-class HUAWEICLOUD_CLOUDTABLE_V2_EXPORT  Nics
+class HUAWEICLOUD_CLOUDTABLE_V2_EXPORT  Nic
     : public ModelBase
 {
 public:
-    Nics();
-    virtual ~Nics();
+    Nic();
+    virtual ~Nic();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -36,10 +36,10 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// Nics members
+    /// Nic members
 
     /// <summary>
-    /// CloudTable集群所在网络ID。
+    /// 子网ID
     /// </summary>
 
     std::string getNetId() const;
@@ -48,7 +48,7 @@ public:
     void setNetId(const std::string& value);
 
     /// <summary>
-    /// CloudTable所在安全组对应的ID。
+    /// 安全组ID
     /// </summary>
 
     std::string getSecurityGroupId() const;
@@ -72,4 +72,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_CLOUDTABLE_V2_MODEL_Nics_H_
+#endif // HUAWEICLOUD_SDK_CLOUDTABLE_V2_MODEL_Nic_H_

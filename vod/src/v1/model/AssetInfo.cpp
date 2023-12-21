@@ -18,6 +18,8 @@ AssetInfo::AssetInfo()
     statusIsSet_ = false;
     description_ = "";
     descriptionIsSet_ = false;
+    isMultiTranscode_ = false;
+    isMultiTranscodeIsSet_ = false;
     baseInfoIsSet_ = false;
     playInfoArrayIsSet_ = false;
 }
@@ -40,6 +42,9 @@ web::json::value AssetInfo::toJson() const
     }
     if(descriptionIsSet_) {
         val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
+    }
+    if(isMultiTranscodeIsSet_) {
+        val[utility::conversions::to_string_t("is_multi_transcode")] = ModelBase::toJson(isMultiTranscode_);
     }
     if(baseInfoIsSet_) {
         val[utility::conversions::to_string_t("base_info")] = ModelBase::toJson(baseInfo_);
@@ -79,6 +84,15 @@ bool AssetInfo::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDescription(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_multi_transcode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_multi_transcode"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsMultiTranscode(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("base_info"))) {
@@ -164,6 +178,27 @@ bool AssetInfo::descriptionIsSet() const
 void AssetInfo::unsetdescription()
 {
     descriptionIsSet_ = false;
+}
+
+bool AssetInfo::isIsMultiTranscode() const
+{
+    return isMultiTranscode_;
+}
+
+void AssetInfo::setIsMultiTranscode(bool value)
+{
+    isMultiTranscode_ = value;
+    isMultiTranscodeIsSet_ = true;
+}
+
+bool AssetInfo::isMultiTranscodeIsSet() const
+{
+    return isMultiTranscodeIsSet_;
+}
+
+void AssetInfo::unsetisMultiTranscode()
+{
+    isMultiTranscodeIsSet_ = false;
 }
 
 BaseInfo AssetInfo::getBaseInfo() const

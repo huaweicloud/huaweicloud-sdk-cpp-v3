@@ -65,6 +65,24 @@ public:
     void unsetfaceImage();
     void setFaceImage(const std::string& value);
 
+    /// <summary>
+    /// 响应参数similarity是否详细显示，默认为false。 - true表示响应中的similarity为0~1000的小数。 - false表示响应中的similarity为0~100的整数。
+    /// </summary>
+
+    bool isDetail() const;
+    bool detailIsSet() const;
+    void unsetdetail();
+    void setDetail(bool value);
+
+    /// <summary>
+    /// 是否允许对入参face_image进行人脸检测及图片裁剪，默认为true，表示允许。
+    /// </summary>
+
+    bool isCrop() const;
+    bool cropIsSet() const;
+    void unsetcrop();
+    void setCrop(bool value);
+
 
 protected:
     std::string idcardImage1_;
@@ -73,6 +91,10 @@ protected:
     bool idcardImage2IsSet_;
     std::string faceImage_;
     bool faceImageIsSet_;
+    bool detail_;
+    bool detailIsSet_;
+    bool crop_;
+    bool cropIsSet_;
 
 };
 

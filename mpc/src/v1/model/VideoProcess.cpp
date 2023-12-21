@@ -16,6 +16,8 @@ VideoProcess::VideoProcess()
     hlsInitCountIsSet_ = false;
     hlsInitInterval_ = 0;
     hlsInitIntervalIsSet_ = false;
+    hlsStorageType_ = "";
+    hlsStorageTypeIsSet_ = false;
     rotate_ = 0;
     rotateIsSet_ = false;
     adaptation_ = "";
@@ -39,6 +41,9 @@ web::json::value VideoProcess::toJson() const
     }
     if(hlsInitIntervalIsSet_) {
         val[utility::conversions::to_string_t("hls_init_interval")] = ModelBase::toJson(hlsInitInterval_);
+    }
+    if(hlsStorageTypeIsSet_) {
+        val[utility::conversions::to_string_t("hls_storage_type")] = ModelBase::toJson(hlsStorageType_);
     }
     if(rotateIsSet_) {
         val[utility::conversions::to_string_t("rotate")] = ModelBase::toJson(rotate_);
@@ -72,6 +77,15 @@ bool VideoProcess::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setHlsInitInterval(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("hls_storage_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("hls_storage_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHlsStorageType(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("rotate"))) {
@@ -145,6 +159,27 @@ bool VideoProcess::hlsInitIntervalIsSet() const
 void VideoProcess::unsethlsInitInterval()
 {
     hlsInitIntervalIsSet_ = false;
+}
+
+std::string VideoProcess::getHlsStorageType() const
+{
+    return hlsStorageType_;
+}
+
+void VideoProcess::setHlsStorageType(const std::string& value)
+{
+    hlsStorageType_ = value;
+    hlsStorageTypeIsSet_ = true;
+}
+
+bool VideoProcess::hlsStorageTypeIsSet() const
+{
+    return hlsStorageTypeIsSet_;
+}
+
+void VideoProcess::unsethlsStorageType()
+{
+    hlsStorageTypeIsSet_ = false;
 }
 
 int32_t VideoProcess::getRotate() const

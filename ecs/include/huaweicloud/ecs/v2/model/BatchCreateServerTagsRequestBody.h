@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/ecs/v2/model/ServerTag.h>
+#include <huaweicloud/ecs/v2/model/BatchAddServerTag.h>
 #include <string>
 #include <vector>
 
@@ -53,16 +53,16 @@ public:
     /// 标签列表。
     /// </summary>
 
-    std::vector<ServerTag>& getTags();
+    std::vector<BatchAddServerTag>& getTags();
     bool tagsIsSet() const;
     void unsettags();
-    void setTags(const std::vector<ServerTag>& value);
+    void setTags(const std::vector<BatchAddServerTag>& value);
 
 
 protected:
     std::string action_;
     bool actionIsSet_;
-    std::vector<ServerTag> tags_;
+    std::vector<BatchAddServerTag> tags_;
     bool tagsIsSet_;
 
 };

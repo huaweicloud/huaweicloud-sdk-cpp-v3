@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/cloudtable/v2/model/CreateClusterRequestBody.h>
+#include <huaweicloud/cloudtable/v2/model/CreateClusterReqBody.h>
 #include <string>
 
 namespace HuaweiCloud {
@@ -52,16 +52,16 @@ public:
     /// 
     /// </summary>
 
-    CreateClusterRequestBody getBody() const;
+    CreateClusterReqBody getBody() const;
     bool bodyIsSet() const;
     void unsetbody();
-    void setBody(const CreateClusterRequestBody& value);
+    void setBody(const CreateClusterReqBody& value);
 
 
 protected:
     std::string xLanguage_;
     bool xLanguageIsSet_;
-    CreateClusterRequestBody body_;
+    CreateClusterReqBody body_;
     bool bodyIsSet_;
 
 #ifdef RTTR_FLAG

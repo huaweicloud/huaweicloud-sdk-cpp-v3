@@ -16,7 +16,9 @@ TicsAgentDeploy::TicsAgentDeploy()
     agentIdIsSet_ = false;
     agentName_ = "";
     agentNameIsSet_ = false;
+    aomFlag_ = false;
     aomFlagIsSet_ = false;
+    bcsFlag_ = false;
     bcsFlagIsSet_ = false;
     cceVersion_ = "";
     cceVersionIsSet_ = false;
@@ -36,6 +38,7 @@ TicsAgentDeploy::TicsAgentDeploy()
     deployTypeIsSet_ = false;
     deploymentEventInformation_ = "";
     deploymentEventInformationIsSet_ = false;
+    highAvail_ = false;
     highAvailIsSet_ = false;
     imageId_ = "";
     imageIdIsSet_ = false;
@@ -160,7 +163,7 @@ bool TicsAgentDeploy::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("aom_flag"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAomFlag(refVal);
         }
@@ -169,7 +172,7 @@ bool TicsAgentDeploy::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("bcs_flag"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBcsFlag(refVal);
         }
@@ -259,7 +262,7 @@ bool TicsAgentDeploy::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("high_avail"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setHighAvail(refVal);
         }
@@ -382,12 +385,12 @@ void TicsAgentDeploy::unsetagentName()
     agentNameIsSet_ = false;
 }
 
-std::string TicsAgentDeploy::getAomFlag() const
+bool TicsAgentDeploy::isAomFlag() const
 {
     return aomFlag_;
 }
 
-void TicsAgentDeploy::setAomFlag(const std::string& value)
+void TicsAgentDeploy::setAomFlag(bool value)
 {
     aomFlag_ = value;
     aomFlagIsSet_ = true;
@@ -403,12 +406,12 @@ void TicsAgentDeploy::unsetaomFlag()
     aomFlagIsSet_ = false;
 }
 
-std::string TicsAgentDeploy::getBcsFlag() const
+bool TicsAgentDeploy::isBcsFlag() const
 {
     return bcsFlag_;
 }
 
-void TicsAgentDeploy::setBcsFlag(const std::string& value)
+void TicsAgentDeploy::setBcsFlag(bool value)
 {
     bcsFlag_ = value;
     bcsFlagIsSet_ = true;
@@ -613,12 +616,12 @@ void TicsAgentDeploy::unsetdeploymentEventInformation()
     deploymentEventInformationIsSet_ = false;
 }
 
-std::string TicsAgentDeploy::getHighAvail() const
+bool TicsAgentDeploy::isHighAvail() const
 {
     return highAvail_;
 }
 
-void TicsAgentDeploy::setHighAvail(const std::string& value)
+void TicsAgentDeploy::setHighAvail(bool value)
 {
     highAvail_ = value;
     highAvailIsSet_ = true;

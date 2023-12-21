@@ -44,7 +44,6 @@
 #include <huaweicloud/eip/v3/model/DisableNat64Request.h>
 #include <huaweicloud/eip/v3/model/DisableNat64Response.h>
 #include <huaweicloud/eip/v3/model/DisassociatePublicipsRequest.h>
-#include <huaweicloud/eip/v3/model/DisassociatePublicipsRequestBody.h>
 #include <huaweicloud/eip/v3/model/DisassociatePublicipsResponse.h>
 #include <huaweicloud/eip/v3/model/EipResourcesAvailableV3RequestBody.h>
 #include <huaweicloud/eip/v3/model/EnableNat64Request.h>
@@ -53,10 +52,6 @@
 #include <huaweicloud/eip/v3/model/ListPublicipsResponse.h>
 #include <huaweicloud/eip/v3/model/ShowPublicipRequest.h>
 #include <huaweicloud/eip/v3/model/ShowPublicipResponse.h>
-#include <huaweicloud/eip/v3/model/UpdateAssociatePublicipRequest.h>
-#include <huaweicloud/eip/v3/model/UpdateAssociatePublicipResponse.h>
-#include <huaweicloud/eip/v3/model/UpdateDisassociatePublicipRequest.h>
-#include <huaweicloud/eip/v3/model/UpdateDisassociatePublicipResponse.h>
 #include <huaweicloud/eip/v3/model/UpdatePublicipRequest.h>
 #include <huaweicloud/eip/v3/model/UpdatePublicipResponse.h>
 #include <huaweicloud/eip/v3/model/UpdatePublicipsRequestBody.h>
@@ -238,22 +233,6 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowPublicipResponse> showPublicip(
         ShowPublicipRequest &request
-    );
-    // 绑定弹性公网IP
-    //
-    // 绑定弹性公网IP
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<UpdateAssociatePublicipResponse> updateAssociatePublicip(
-        UpdateAssociatePublicipRequest &request
-    );
-    // 解绑弹性公网IP
-    //
-    // 解绑弹性公网IP
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<UpdateDisassociatePublicipResponse> updateDisassociatePublicip(
-        UpdateDisassociatePublicipRequest &request
     );
     // 更新弹性公网IP
     //

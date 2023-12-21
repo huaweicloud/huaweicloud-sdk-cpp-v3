@@ -90,6 +90,14 @@ public:
             { 
                 "https://cfw.tr-west-1.myhuaweicloud.com"
             });
+        regions["me-east-1"] = Region("me-east-1",
+            { 
+                "https://cfw.me-east-1.myhuaweicloud.com"
+            });
+        regions["cn-north-11"] = Region("cn-north-11",
+            { 
+                "https://cfw.cn-north-11.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

@@ -102,6 +102,15 @@ public:
     void setHostPath(const std::string& value);
 
     /// <summary>
+    /// ief白金版实例id, 仅IEF高可用部署有值
+    /// </summary>
+
+    std::string getIefInstanceId() const;
+    bool iefInstanceIdIsSet() const;
+    void unsetiefInstanceId();
+    void setIefInstanceId(const std::string& value);
+
+    /// <summary>
     /// 命名空间名称
     /// </summary>
 
@@ -162,6 +171,8 @@ protected:
     bool consolePortIsSet_;
     std::string hostPath_;
     bool hostPathIsSet_;
+    std::string iefInstanceId_;
+    bool iefInstanceIdIsSet_;
     std::string namespaceName_;
     bool namespaceNameIsSet_;
     std::string obsPvcName_;

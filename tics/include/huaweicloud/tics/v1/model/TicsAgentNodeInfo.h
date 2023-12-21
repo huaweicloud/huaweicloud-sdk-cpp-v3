@@ -48,6 +48,15 @@ public:
     void setAgentId(const std::string& value);
 
     /// <summary>
+    /// 无eip场景下,agent的eps id
+    /// </summary>
+
+    std::string getAgentVpcepEpsId() const;
+    bool agentVpcepEpsIdIsSet() const;
+    void unsetagentVpcepEpsId();
+    void setAgentVpcepEpsId(const std::string& value);
+
+    /// <summary>
     /// 弹性云服务器Id，IEF部署同node_id
     /// </summary>
 
@@ -55,6 +64,24 @@ public:
     bool ecsServerIdIsSet() const;
     void unsetecsServerId();
     void setEcsServerId(const std::string& value);
+
+    /// <summary>
+    /// 入方向安全组规则ID
+    /// </summary>
+
+    std::string getLeagueServerIpSecurityGroupRule() const;
+    bool leagueServerIpSecurityGroupRuleIsSet() const;
+    void unsetleagueServerIpSecurityGroupRule();
+    void setLeagueServerIpSecurityGroupRule(const std::string& value);
+
+    /// <summary>
+    /// 联盟server组件的ip，为server的snatip，设置代理节点的入方向安全组规则
+    /// </summary>
+
+    std::string getLeagueServerSnatIp() const;
+    bool leagueServerSnatIpIsSet() const;
+    void unsetleagueServerSnatIp();
+    void setLeagueServerSnatIp(const std::string& value);
 
     /// <summary>
     /// 可信节点绑定的网关的ip，CCE部署时会返回该值
@@ -110,12 +137,45 @@ public:
     void unsetnodeName();
     void setNodeName(const std::string& value);
 
+    /// <summary>
+    /// 无eip场景下,server访问agent的epi id
+    /// </summary>
+
+    std::string getServerToAgentVpcepEpiId() const;
+    bool serverToAgentVpcepEpiIdIsSet() const;
+    void unsetserverToAgentVpcepEpiId();
+    void setServerToAgentVpcepEpiId(const std::string& value);
+
+    /// <summary>
+    /// 无eip场景下,server访问agent的ip
+    /// </summary>
+
+    std::string getServerToAgentVpcepEpiIp() const;
+    bool serverToAgentVpcepEpiIpIsSet() const;
+    void unsetserverToAgentVpcepEpiIp();
+    void setServerToAgentVpcepEpiIp(const std::string& value);
+
+    /// <summary>
+    /// 节点绑定的snat id
+    /// </summary>
+
+    std::string getSnatRuleId() const;
+    bool snatRuleIdIsSet() const;
+    void unsetsnatRuleId();
+    void setSnatRuleId(const std::string& value);
+
 
 protected:
     std::string agentId_;
     bool agentIdIsSet_;
+    std::string agentVpcepEpsId_;
+    bool agentVpcepEpsIdIsSet_;
     std::string ecsServerId_;
     bool ecsServerIdIsSet_;
+    std::string leagueServerIpSecurityGroupRule_;
+    bool leagueServerIpSecurityGroupRuleIsSet_;
+    std::string leagueServerSnatIp_;
+    bool leagueServerSnatIpIsSet_;
     std::string natEip_;
     bool natEipIsSet_;
     std::string natEipId_;
@@ -128,6 +188,12 @@ protected:
     bool nodeIpIsSet_;
     std::string nodeName_;
     bool nodeNameIsSet_;
+    std::string serverToAgentVpcepEpiId_;
+    bool serverToAgentVpcepEpiIdIsSet_;
+    std::string serverToAgentVpcepEpiIp_;
+    bool serverToAgentVpcepEpiIpIsSet_;
+    std::string snatRuleId_;
+    bool snatRuleIdIsSet_;
 
 };
 

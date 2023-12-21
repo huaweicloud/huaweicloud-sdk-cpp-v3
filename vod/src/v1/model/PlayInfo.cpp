@@ -14,6 +14,10 @@ PlayInfo::PlayInfo()
 {
     playType_ = "";
     playTypeIsSet_ = false;
+    groupId_ = "";
+    groupIdIsSet_ = false;
+    groupName_ = "";
+    groupNameIsSet_ = false;
     url_ = "";
     urlIsSet_ = false;
     encrypted_ = 0;
@@ -33,6 +37,12 @@ web::json::value PlayInfo::toJson() const
 
     if(playTypeIsSet_) {
         val[utility::conversions::to_string_t("play_type")] = ModelBase::toJson(playType_);
+    }
+    if(groupIdIsSet_) {
+        val[utility::conversions::to_string_t("group_id")] = ModelBase::toJson(groupId_);
+    }
+    if(groupNameIsSet_) {
+        val[utility::conversions::to_string_t("group_name")] = ModelBase::toJson(groupName_);
     }
     if(urlIsSet_) {
         val[utility::conversions::to_string_t("url")] = ModelBase::toJson(url_);
@@ -57,6 +67,24 @@ bool PlayInfo::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPlayType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("group_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("group_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setGroupId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("group_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("group_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setGroupName(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("url"))) {
@@ -109,6 +137,48 @@ bool PlayInfo::playTypeIsSet() const
 void PlayInfo::unsetplayType()
 {
     playTypeIsSet_ = false;
+}
+
+std::string PlayInfo::getGroupId() const
+{
+    return groupId_;
+}
+
+void PlayInfo::setGroupId(const std::string& value)
+{
+    groupId_ = value;
+    groupIdIsSet_ = true;
+}
+
+bool PlayInfo::groupIdIsSet() const
+{
+    return groupIdIsSet_;
+}
+
+void PlayInfo::unsetgroupId()
+{
+    groupIdIsSet_ = false;
+}
+
+std::string PlayInfo::getGroupName() const
+{
+    return groupName_;
+}
+
+void PlayInfo::setGroupName(const std::string& value)
+{
+    groupName_ = value;
+    groupNameIsSet_ = true;
+}
+
+bool PlayInfo::groupNameIsSet() const
+{
+    return groupNameIsSet_;
+}
+
+void PlayInfo::unsetgroupName()
+{
+    groupNameIsSet_ = false;
 }
 
 std::string PlayInfo::getUrl() const

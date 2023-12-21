@@ -69,6 +69,15 @@ public:
     void setDescription(const std::string& value);
 
     /// <summary>
+    /// 是否是多转码模式 
+    /// </summary>
+
+    bool isIsMultiTranscode() const;
+    bool isMultiTranscodeIsSet() const;
+    void unsetisMultiTranscode();
+    void setIsMultiTranscode(bool value);
+
+    /// <summary>
     /// 
     /// </summary>
 
@@ -94,6 +103,8 @@ protected:
     bool statusIsSet_;
     std::string description_;
     bool descriptionIsSet_;
+    bool isMultiTranscode_;
+    bool isMultiTranscodeIsSet_;
     BaseInfo baseInfo_;
     bool baseInfoIsSet_;
     std::vector<PlayInfo> playInfoArray_;

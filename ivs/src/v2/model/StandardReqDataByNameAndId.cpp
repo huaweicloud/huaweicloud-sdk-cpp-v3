@@ -18,6 +18,10 @@ StandardReqDataByNameAndId::StandardReqDataByNameAndId()
     verificationIdIsSet_ = false;
     faceImage_ = "";
     faceImageIsSet_ = false;
+    detail_ = false;
+    detailIsSet_ = false;
+    crop_ = false;
+    cropIsSet_ = false;
 }
 
 StandardReqDataByNameAndId::~StandardReqDataByNameAndId() = default;
@@ -38,6 +42,12 @@ web::json::value StandardReqDataByNameAndId::toJson() const
     }
     if(faceImageIsSet_) {
         val[utility::conversions::to_string_t("face_image")] = ModelBase::toJson(faceImage_);
+    }
+    if(detailIsSet_) {
+        val[utility::conversions::to_string_t("detail")] = ModelBase::toJson(detail_);
+    }
+    if(cropIsSet_) {
+        val[utility::conversions::to_string_t("crop")] = ModelBase::toJson(crop_);
     }
 
     return val;
@@ -71,6 +81,24 @@ bool StandardReqDataByNameAndId::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFaceImage(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("detail"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("detail"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDetail(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("crop"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("crop"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCrop(refVal);
         }
     }
     return ok;
@@ -138,6 +166,48 @@ bool StandardReqDataByNameAndId::faceImageIsSet() const
 void StandardReqDataByNameAndId::unsetfaceImage()
 {
     faceImageIsSet_ = false;
+}
+
+bool StandardReqDataByNameAndId::isDetail() const
+{
+    return detail_;
+}
+
+void StandardReqDataByNameAndId::setDetail(bool value)
+{
+    detail_ = value;
+    detailIsSet_ = true;
+}
+
+bool StandardReqDataByNameAndId::detailIsSet() const
+{
+    return detailIsSet_;
+}
+
+void StandardReqDataByNameAndId::unsetdetail()
+{
+    detailIsSet_ = false;
+}
+
+bool StandardReqDataByNameAndId::isCrop() const
+{
+    return crop_;
+}
+
+void StandardReqDataByNameAndId::setCrop(bool value)
+{
+    crop_ = value;
+    cropIsSet_ = true;
+}
+
+bool StandardReqDataByNameAndId::cropIsSet() const
+{
+    return cropIsSet_;
+}
+
+void StandardReqDataByNameAndId::unsetcrop()
+{
+    cropIsSet_ = false;
 }
 
 }

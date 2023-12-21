@@ -61,19 +61,19 @@ public:
     /// 是否开启aom监控
     /// </summary>
 
-    std::string getAomFlag() const;
+    bool isAomFlag() const;
     bool aomFlagIsSet() const;
     void unsetaomFlag();
-    void setAomFlag(const std::string& value);
+    void setAomFlag(bool value);
 
     /// <summary>
     /// 是否使用区块链存证
     /// </summary>
 
-    std::string getBcsFlag() const;
+    bool isBcsFlag() const;
     bool bcsFlagIsSet() const;
     void unsetbcsFlag();
-    void setBcsFlag(const std::string& value);
+    void setBcsFlag(bool value);
 
     /// <summary>
     /// 可信节点使用cce集群的版本
@@ -160,10 +160,10 @@ public:
     /// 可信节点是否高可用部署
     /// </summary>
 
-    std::string getHighAvail() const;
+    bool isHighAvail() const;
     bool highAvailIsSet() const;
     void unsethighAvail();
-    void setHighAvail(const std::string& value);
+    void setHighAvail(bool value);
 
     /// <summary>
     /// 可信节点部署使用的镜像Id
@@ -243,9 +243,9 @@ protected:
     bool agentIdIsSet_;
     std::string agentName_;
     bool agentNameIsSet_;
-    std::string aomFlag_;
+    bool aomFlag_;
     bool aomFlagIsSet_;
-    std::string bcsFlag_;
+    bool bcsFlag_;
     bool bcsFlagIsSet_;
     std::string cceVersion_;
     bool cceVersionIsSet_;
@@ -265,7 +265,7 @@ protected:
     bool deployTypeIsSet_;
     std::string deploymentEventInformation_;
     bool deploymentEventInformationIsSet_;
-    std::string highAvail_;
+    bool highAvail_;
     bool highAvailIsSet_;
     std::string imageId_;
     bool imageIdIsSet_;

@@ -61,6 +61,15 @@ public:
     void setKeywordsAlarmRuleName(const std::string& value);
 
     /// <summary>
+    /// 规则名称
+    /// </summary>
+
+    std::string getAlarmRuleAlias() const;
+    bool alarmRuleAliasIsSet() const;
+    void unsetalarmRuleAlias();
+    void setAlarmRuleAlias(const std::string& value);
+
+    /// <summary>
     /// 关键词告警信息描述
     /// </summary>
 
@@ -192,6 +201,8 @@ protected:
     bool keywordsAlarmRuleIdIsSet_;
     std::string keywordsAlarmRuleName_;
     bool keywordsAlarmRuleNameIsSet_;
+    std::string alarmRuleAlias_;
+    bool alarmRuleAliasIsSet_;
     std::string keywordsAlarmRuleDescription_;
     bool keywordsAlarmRuleDescriptionIsSet_;
     std::vector<KeywordsRequest> keywordsRequests_;

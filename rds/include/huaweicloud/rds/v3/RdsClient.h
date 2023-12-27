@@ -284,6 +284,8 @@
 #include <huaweicloud/rds/v3/model/StartResizeFlavorActionResponse.h>
 #include <huaweicloud/rds/v3/model/StartupInstanceRequest.h>
 #include <huaweicloud/rds/v3/model/StartupInstanceResponse.h>
+#include <huaweicloud/rds/v3/model/StopBackupRequest.h>
+#include <huaweicloud/rds/v3/model/StopBackupResponse.h>
 #include <huaweicloud/rds/v3/model/StopInstanceRequest.h>
 #include <huaweicloud/rds/v3/model/StopInstanceResponse.h>
 #include <huaweicloud/rds/v3/model/SwitchSslRequest.h>
@@ -480,6 +482,8 @@
 #include <huaweicloud/rds/v3/model/RevokeSqlserverDbUserPrivilegeResponse.h>
 #include <huaweicloud/rds/v3/model/SetInstancesDbShrinkRequest.h>
 #include <huaweicloud/rds/v3/model/SetInstancesDbShrinkResponse.h>
+#include <huaweicloud/rds/v3/model/SetInstancesNewDbShrinkRequest.h>
+#include <huaweicloud/rds/v3/model/SetInstancesNewDbShrinkResponse.h>
 #include <huaweicloud/rds/v3/model/SqlserverDatabaseForCreation.h>
 #include <huaweicloud/rds/v3/model/SqlserverGrantRequest.h>
 #include <huaweicloud/rds/v3/model/SqlserverRevokeRequest.h>
@@ -1400,6 +1404,14 @@ public:
     std::shared_ptr<StartupInstanceResponse> startupInstance(
         StartupInstanceRequest &request
     );
+    // 停止备份
+    //
+    // 停止创建备份
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<StopBackupResponse> stopBackup(
+        StopBackupRequest &request
+    );
     // 停止实例
     //
     // 实例进行关机，通过暂时停止按需实例以节省费用，实例默认停止七天。
@@ -2009,6 +2021,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<SetInstancesDbShrinkResponse> setInstancesDbShrink(
         SetInstancesDbShrinkRequest &request
+    );
+    // 收缩数据库日志
+    //
+    // 收缩数据库日志
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SetInstancesNewDbShrinkResponse> setInstancesNewDbShrink(
+        SetInstancesNewDbShrinkRequest &request
     );
 
 

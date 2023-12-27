@@ -3081,6 +3081,36 @@ std::shared_ptr<ShowBackupPolicyResponse> DdsClient::showBackupPolicy(ShowBackup
 
     return localVarResult;
 }
+std::shared_ptr<ShowClientNetworkResponse> DdsClient::showClientNetwork(ShowClientNetworkRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/client-network";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, DdsMeta::genRequestDefForShowClientNetwork());
+
+    std::shared_ptr<ShowClientNetworkResponse> localVarResult = std::make_shared<ShowClientNetworkResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowConfigurationAppliedHistoryResponse> DdsClient::showConfigurationAppliedHistory(ShowConfigurationAppliedHistoryRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/configurations/{config_id}/applied-histories";

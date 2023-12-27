@@ -205,6 +205,8 @@
 #include <huaweicloud/dds/v3/model/ShowBackupDownloadLinkResponse.h>
 #include <huaweicloud/dds/v3/model/ShowBackupPolicyRequest.h>
 #include <huaweicloud/dds/v3/model/ShowBackupPolicyResponse.h>
+#include <huaweicloud/dds/v3/model/ShowClientNetworkRequest.h>
+#include <huaweicloud/dds/v3/model/ShowClientNetworkResponse.h>
 #include <huaweicloud/dds/v3/model/ShowConfigurationAppliedHistoryRequest.h>
 #include <huaweicloud/dds/v3/model/ShowConfigurationAppliedHistoryResponse.h>
 #include <huaweicloud/dds/v3/model/ShowConfigurationModifyHistoryRequest.h>
@@ -925,6 +927,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowBackupPolicyResponse> showBackupPolicy(
         ShowBackupPolicyRequest &request
+    );
+    // 查询副本集跨网段访问配置
+    //
+    // 查询副本集跨网段访问配置
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowClientNetworkResponse> showClientNetwork(
+        ShowClientNetworkRequest &request
     );
     // 查询参数模板被应用历史
     //

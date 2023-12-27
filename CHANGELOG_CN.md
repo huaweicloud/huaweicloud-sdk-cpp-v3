@@ -1,3 +1,58 @@
+# 3.1.67 2023-12-27
+
+### HuaweiCloud SDK AAD
+
+- _新增特性_
+  - 支持以下接口：
+    - `CreateAadDomain`
+    - `CreateCertificate`
+    - `ModifyDomainWebSwitch`
+    - `ListSourceIps`
+    - `AddBlackWhiteIpList`
+    - `DeleteBlackWhiteIpList`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK CSMS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListResourceInstances**
+    - 响应参数变更
+      - `+ resources.sys_tags`
+
+### HuaweiCloud SDK DDS
+
+- _新增特性_
+  - 支持接口`ShowClientNetwork`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _新增特性_
+  - 支持接口`ListJobs`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK RDS
+
+- _新增特性_
+  - 支持接口`SetInstancesNewDbShrink`、`StopBackup`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.1.66 2023-12-21
 
 ### HuaweiCloud SDK CloudTable

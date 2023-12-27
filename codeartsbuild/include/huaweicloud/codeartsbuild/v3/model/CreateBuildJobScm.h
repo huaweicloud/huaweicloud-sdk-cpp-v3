@@ -75,7 +75,7 @@ public:
     void setWebUrl(const std::string& value);
 
     /// <summary>
-    /// 仓库类别，codehub还是github等等
+    /// 仓库类别，Repo、Github等
     /// </summary>
 
     std::string getScmType() const;

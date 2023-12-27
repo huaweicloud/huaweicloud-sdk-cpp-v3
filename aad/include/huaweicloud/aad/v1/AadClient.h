@@ -19,6 +19,8 @@
 #include <huaweicloud/aad/v1/model/ShowUnblockRecordResponse.h>
 #include <string>
 
+#include <huaweicloud/aad/v1/model/AddBlackWhiteIpListRequest.h>
+#include <huaweicloud/aad/v1/model/AddBlackWhiteIpListResponse.h>
 #include <huaweicloud/aad/v1/model/AddPolicyBlackAndWhiteIpListRequest.h>
 #include <huaweicloud/aad/v1/model/AddPolicyBlackAndWhiteIpListResponse.h>
 #include <huaweicloud/aad/v1/model/AlarmBody.h>
@@ -30,12 +32,21 @@
 #include <huaweicloud/aad/v1/model/BatchDeleteInstanceIpRuleResponse.h>
 #include <huaweicloud/aad/v1/model/BatchIdBody.h>
 #include <huaweicloud/aad/v1/model/BatchTransferRuleBody.h>
+#include <huaweicloud/aad/v1/model/BlackWhiteIpListRequest.h>
 #include <huaweicloud/aad/v1/model/BlackWhiteIpRequestBody.h>
+#include <huaweicloud/aad/v1/model/CadDomainSwitchRequest.h>
+#include <huaweicloud/aad/v1/model/CertificateBody.h>
+#include <huaweicloud/aad/v1/model/CreateAadDomainRequest.h>
+#include <huaweicloud/aad/v1/model/CreateAadDomainResponse.h>
+#include <huaweicloud/aad/v1/model/CreateCertificateRequest.h>
+#include <huaweicloud/aad/v1/model/CreateCertificateResponse.h>
 #include <huaweicloud/aad/v1/model/CreatePolicyRequest.h>
 #include <huaweicloud/aad/v1/model/CreatePolicyRequestBody.h>
 #include <huaweicloud/aad/v1/model/CreatePolicyResponse.h>
 #include <huaweicloud/aad/v1/model/DeleteAlarmConfigRequest.h>
 #include <huaweicloud/aad/v1/model/DeleteAlarmConfigResponse.h>
+#include <huaweicloud/aad/v1/model/DeleteBlackWhiteIpListRequest.h>
+#include <huaweicloud/aad/v1/model/DeleteBlackWhiteIpListResponse.h>
 #include <huaweicloud/aad/v1/model/DeletePolicyBlackAndWhiteIpListRequest.h>
 #include <huaweicloud/aad/v1/model/DeletePolicyBlackAndWhiteIpListResponse.h>
 #include <huaweicloud/aad/v1/model/DeletePolicyRequest.h>
@@ -43,6 +54,7 @@
 #include <huaweicloud/aad/v1/model/DisassociateIpFromPolicyRequest.h>
 #include <huaweicloud/aad/v1/model/DisassociateIpFromPolicyResponse.h>
 #include <huaweicloud/aad/v1/model/DomainRealServerInfo.h>
+#include <huaweicloud/aad/v1/model/HostBody.h>
 #include <huaweicloud/aad/v1/model/IpBindingBody.h>
 #include <huaweicloud/aad/v1/model/ListDomainRequest.h>
 #include <huaweicloud/aad/v1/model/ListDomainResponse.h>
@@ -60,8 +72,12 @@
 #include <huaweicloud/aad/v1/model/ListPolicyResponse.h>
 #include <huaweicloud/aad/v1/model/ListProtectedIpRequest.h>
 #include <huaweicloud/aad/v1/model/ListProtectedIpResponse.h>
+#include <huaweicloud/aad/v1/model/ListSourceIpsRequest.h>
+#include <huaweicloud/aad/v1/model/ListSourceIpsResponse.h>
 #include <huaweicloud/aad/v1/model/ListUnboundProtectedIpRequest.h>
 #include <huaweicloud/aad/v1/model/ListUnboundProtectedIpResponse.h>
+#include <huaweicloud/aad/v1/model/ModifyDomainWebSwitchRequest.h>
+#include <huaweicloud/aad/v1/model/ModifyDomainWebSwitchResponse.h>
 #include <huaweicloud/aad/v1/model/ShowAlarmConfigRequest.h>
 #include <huaweicloud/aad/v1/model/ShowAlarmConfigResponse.h>
 #include <huaweicloud/aad/v1/model/ShowPolicyRequest.h>
@@ -152,6 +168,14 @@ public:
         ShowUnblockRecordRequest &request
     );
 
+    // 高防实例添加黑白名单
+    //
+    // 高防实例添加黑白名单
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<AddBlackWhiteIpListResponse> addBlackWhiteIpList(
+        AddBlackWhiteIpListRequest &request
+    );
     // 策略添加黑白名单
     //
     // 策略添加黑白名单
@@ -184,6 +208,22 @@ public:
     std::shared_ptr<BatchDeleteInstanceIpRuleResponse> batchDeleteInstanceIpRule(
         BatchDeleteInstanceIpRuleRequest &request
     );
+    // 创建防护域名
+    //
+    // 创建防护域名
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateAadDomainResponse> createAadDomain(
+        CreateAadDomainRequest &request
+    );
+    // 上传/修改域名对应证书
+    //
+    // 上传/修改域名对应证书
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateCertificateResponse> createCertificate(
+        CreateCertificateRequest &request
+    );
     // 创建策略
     //
     // 创建策略
@@ -199,6 +239,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteAlarmConfigResponse> deleteAlarmConfig(
         DeleteAlarmConfigRequest &request
+    );
+    // 高防实例删除黑白名单
+    //
+    // 高防实例删除黑白名单
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteBlackWhiteIpListResponse> deleteBlackWhiteIpList(
+        DeleteBlackWhiteIpListRequest &request
     );
     // 删除策略
     //
@@ -288,6 +336,14 @@ public:
     std::shared_ptr<ListProtectedIpResponse> listProtectedIp(
         ListProtectedIpRequest &request
     );
+    // 查询高防回源IP段列表
+    //
+    // 查询高防回源IP段列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListSourceIpsResponse> listSourceIps(
+        ListSourceIpsRequest &request
+    );
     // 查询可绑定的防护对象列表
     //
     // 查询可绑定的防护对象列表
@@ -295,6 +351,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListUnboundProtectedIpResponse> listUnboundProtectedIp(
         ListUnboundProtectedIpRequest &request
+    );
+    // 修改域名WEB基础防护开关/CC防护开关
+    //
+    // 修改域名WEB基础防护开关/CC防护开关
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ModifyDomainWebSwitchResponse> modifyDomainWebSwitch(
+        ModifyDomainWebSwitchRequest &request
     );
     // 查询告警配置
     //

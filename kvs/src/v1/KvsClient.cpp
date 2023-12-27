@@ -34,7 +34,7 @@ ClientBuilder<KvsClient> KvsClient::newBuilder()
 }
 std::shared_ptr<CreateTableResponse> KvsClient::createTable(CreateTableRequest &request)
 {
-    std::string localVarPath = "/v1/{project_id}/create-table";
+    std::string localVarPath = "/v1/create-table";
 
     std::map<std::string, std::string> localVarQueryParams;
     std::map<std::string, std::string> localVarHeaderParams;
@@ -80,7 +80,7 @@ std::shared_ptr<CreateTableResponse> KvsClient::createTable(CreateTableRequest &
 }
 std::shared_ptr<DescribeTableResponse> KvsClient::describeTable(DescribeTableRequest &request)
 {
-    std::string localVarPath = "/v1/{project_id}/describe-table";
+    std::string localVarPath = "/v1/describe-table";
 
     std::map<std::string, std::string> localVarQueryParams;
     std::map<std::string, std::string> localVarHeaderParams;
@@ -126,7 +126,7 @@ std::shared_ptr<DescribeTableResponse> KvsClient::describeTable(DescribeTableReq
 }
 std::shared_ptr<ListTableResponse> KvsClient::listTable(ListTableRequest &request)
 {
-    std::string localVarPath = "/v1/{project_id}/list-table";
+    std::string localVarPath = "/v1/list-table";
 
     std::map<std::string, std::string> localVarQueryParams;
     std::map<std::string, std::string> localVarHeaderParams;
@@ -172,7 +172,7 @@ std::shared_ptr<ListTableResponse> KvsClient::listTable(ListTableRequest &reques
 }
 std::shared_ptr<RenameKvResponse> KvsClient::renameKv(RenameKvRequest &request)
 {
-    std::string localVarPath = "/v1/{project_id}/rename-kv";
+    std::string localVarPath = "/v1/rename-kv";
 
     std::map<std::string, std::string> localVarQueryParams;
     std::map<std::string, std::string> localVarHeaderParams;
@@ -218,7 +218,7 @@ std::shared_ptr<RenameKvResponse> KvsClient::renameKv(RenameKvRequest &request)
 }
 std::shared_ptr<BatchGetKvResponse> KvsClient::batchGetKv(BatchGetKvRequest &request)
 {
-    std::string localVarPath = "/v1/{project_id}/batch-get-kv";
+    std::string localVarPath = "/v1/batch-get-kv";
 
     std::map<std::string, std::string> localVarQueryParams;
     std::map<std::string, std::string> localVarHeaderParams;
@@ -264,7 +264,7 @@ std::shared_ptr<BatchGetKvResponse> KvsClient::batchGetKv(BatchGetKvRequest &req
 }
 std::shared_ptr<BatchWriteKvResponse> KvsClient::batchWriteKv(BatchWriteKvRequest &request)
 {
-    std::string localVarPath = "/v1/{project_id}/batch-write-kv";
+    std::string localVarPath = "/v1/batch-write-kv";
 
     std::map<std::string, std::string> localVarQueryParams;
     std::map<std::string, std::string> localVarHeaderParams;
@@ -310,7 +310,7 @@ std::shared_ptr<BatchWriteKvResponse> KvsClient::batchWriteKv(BatchWriteKvReques
 }
 std::shared_ptr<DeleteKvResponse> KvsClient::deleteKv(DeleteKvRequest &request)
 {
-    std::string localVarPath = "/v1/{project_id}/delete-kv";
+    std::string localVarPath = "/v1/delete-kv";
 
     std::map<std::string, std::string> localVarQueryParams;
     std::map<std::string, std::string> localVarHeaderParams;
@@ -356,7 +356,7 @@ std::shared_ptr<DeleteKvResponse> KvsClient::deleteKv(DeleteKvRequest &request)
 }
 std::shared_ptr<GetKvResponse> KvsClient::getKv(GetKvRequest &request)
 {
-    std::string localVarPath = "/v1/{project_id}/get-kv";
+    std::string localVarPath = "/v1/get-kv";
 
     std::map<std::string, std::string> localVarQueryParams;
     std::map<std::string, std::string> localVarHeaderParams;
@@ -402,7 +402,7 @@ std::shared_ptr<GetKvResponse> KvsClient::getKv(GetKvRequest &request)
 }
 std::shared_ptr<PutKvResponse> KvsClient::putKv(PutKvRequest &request)
 {
-    std::string localVarPath = "/v1/{project_id}/put-kv";
+    std::string localVarPath = "/v1/put-kv";
 
     std::map<std::string, std::string> localVarQueryParams;
     std::map<std::string, std::string> localVarHeaderParams;
@@ -448,7 +448,7 @@ std::shared_ptr<PutKvResponse> KvsClient::putKv(PutKvRequest &request)
 }
 std::shared_ptr<ScanKvResponse> KvsClient::scanKv(ScanKvRequest &request)
 {
-    std::string localVarPath = "/v1/{project_id}/scan-kv";
+    std::string localVarPath = "/v1/scan-kv";
 
     std::map<std::string, std::string> localVarQueryParams;
     std::map<std::string, std::string> localVarHeaderParams;
@@ -494,7 +494,7 @@ std::shared_ptr<ScanKvResponse> KvsClient::scanKv(ScanKvRequest &request)
 }
 std::shared_ptr<ScanSkeyKvResponse> KvsClient::scanSkeyKv(ScanSkeyKvRequest &request)
 {
-    std::string localVarPath = "/v1/{project_id}/scan-skey-kv";
+    std::string localVarPath = "/v1/scan-skey-kv";
 
     std::map<std::string, std::string> localVarQueryParams;
     std::map<std::string, std::string> localVarHeaderParams;
@@ -540,7 +540,7 @@ std::shared_ptr<ScanSkeyKvResponse> KvsClient::scanSkeyKv(ScanSkeyKvRequest &req
 }
 std::shared_ptr<UpdateKvResponse> KvsClient::updateKv(UpdateKvRequest &request)
 {
-    std::string localVarPath = "/v1/{project_id}/update-kv";
+    std::string localVarPath = "/v1/update-kv";
 
     std::map<std::string, std::string> localVarQueryParams;
     std::map<std::string, std::string> localVarHeaderParams;

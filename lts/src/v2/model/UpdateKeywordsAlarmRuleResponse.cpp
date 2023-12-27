@@ -16,6 +16,8 @@ UpdateKeywordsAlarmRuleResponse::UpdateKeywordsAlarmRuleResponse()
     keywordsAlarmRuleIdIsSet_ = false;
     keywordsAlarmRuleName_ = "";
     keywordsAlarmRuleNameIsSet_ = false;
+    alarmRuleAlias_ = "";
+    alarmRuleAliasIsSet_ = false;
     keywordsAlarmRuleDescription_ = "";
     keywordsAlarmRuleDescriptionIsSet_ = false;
     keywordsRequestsIsSet_ = false;
@@ -60,6 +62,9 @@ web::json::value UpdateKeywordsAlarmRuleResponse::toJson() const
     }
     if(keywordsAlarmRuleNameIsSet_) {
         val[utility::conversions::to_string_t("keywords_alarm_rule_name")] = ModelBase::toJson(keywordsAlarmRuleName_);
+    }
+    if(alarmRuleAliasIsSet_) {
+        val[utility::conversions::to_string_t("alarm_rule_alias")] = ModelBase::toJson(alarmRuleAlias_);
     }
     if(keywordsAlarmRuleDescriptionIsSet_) {
         val[utility::conversions::to_string_t("keywords_alarm_rule_description")] = ModelBase::toJson(keywordsAlarmRuleDescription_);
@@ -129,6 +134,15 @@ bool UpdateKeywordsAlarmRuleResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setKeywordsAlarmRuleName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("alarm_rule_alias"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("alarm_rule_alias"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAlarmRuleAlias(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("keywords_alarm_rule_description"))) {
@@ -310,6 +324,27 @@ bool UpdateKeywordsAlarmRuleResponse::keywordsAlarmRuleNameIsSet() const
 void UpdateKeywordsAlarmRuleResponse::unsetkeywordsAlarmRuleName()
 {
     keywordsAlarmRuleNameIsSet_ = false;
+}
+
+std::string UpdateKeywordsAlarmRuleResponse::getAlarmRuleAlias() const
+{
+    return alarmRuleAlias_;
+}
+
+void UpdateKeywordsAlarmRuleResponse::setAlarmRuleAlias(const std::string& value)
+{
+    alarmRuleAlias_ = value;
+    alarmRuleAliasIsSet_ = true;
+}
+
+bool UpdateKeywordsAlarmRuleResponse::alarmRuleAliasIsSet() const
+{
+    return alarmRuleAliasIsSet_;
+}
+
+void UpdateKeywordsAlarmRuleResponse::unsetalarmRuleAlias()
+{
+    alarmRuleAliasIsSet_ = false;
 }
 
 std::string UpdateKeywordsAlarmRuleResponse::getKeywordsAlarmRuleDescription() const

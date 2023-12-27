@@ -49,7 +49,7 @@ bool ListTemplatesResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("result"));
         if(!fieldValue.is_null())
         {
-            std::vector<QueryTemplatesResult> refVal;
+            QueryTemplatesResult refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResult(refVal);
         }
@@ -76,12 +76,12 @@ bool ListTemplatesResponse::fromJson(const web::json::value& val)
 }
 
 
-std::vector<QueryTemplatesResult>& ListTemplatesResponse::getResult()
+QueryTemplatesResult ListTemplatesResponse::getResult() const
 {
     return result_;
 }
 
-void ListTemplatesResponse::setResult(const std::vector<QueryTemplatesResult>& value)
+void ListTemplatesResponse::setResult(const QueryTemplatesResult& value)
 {
     result_ = value;
     resultIsSet_ = true;

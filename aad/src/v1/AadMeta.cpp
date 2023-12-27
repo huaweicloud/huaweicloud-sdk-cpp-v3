@@ -43,6 +43,15 @@ HttpRequestDef AadMeta::genRequestDefForShowUnblockRecord() {
     return reqDefBuilder;
 }
 
+HttpRequestDef AadMeta::genRequestDefForAddBlackWhiteIpList() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef AadMeta::genRequestDefForAddPolicyBlackAndWhiteIpList() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -79,6 +88,24 @@ HttpRequestDef AadMeta::genRequestDefForBatchDeleteInstanceIpRule() {
     return reqDefBuilder;
 }
 
+HttpRequestDef AadMeta::genRequestDefForCreateAadDomain() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef AadMeta::genRequestDefForCreateCertificate() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef AadMeta::genRequestDefForCreatePolicy() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -90,6 +117,15 @@ HttpRequestDef AadMeta::genRequestDefForCreatePolicy() {
 
 HttpRequestDef AadMeta::genRequestDefForDeleteAlarmConfig() {
     HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef AadMeta::genRequestDefForDeleteBlackWhiteIpList() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
     return reqDefBuilder;
 }
 
@@ -189,6 +225,11 @@ HttpRequestDef AadMeta::genRequestDefForListProtectedIp() {
     return reqDefBuilder;
 }
 
+HttpRequestDef AadMeta::genRequestDefForListSourceIps() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef AadMeta::genRequestDefForListUnboundProtectedIp() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Offset")
@@ -197,6 +238,15 @@ HttpRequestDef AadMeta::genRequestDefForListUnboundProtectedIp() {
     reqDefBuilder.withRequestField(FieldDef().withName("Limit")
                   .withJsonTag("limit")
                   .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef AadMeta::genRequestDefForModifyDomainWebSwitch() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
     return reqDefBuilder;
 }
 

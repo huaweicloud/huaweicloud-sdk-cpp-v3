@@ -29,6 +29,8 @@
 #include <huaweicloud/lts/v2/model/CreateLogGroupParams.h>
 #include <huaweicloud/lts/v2/model/CreateLogGroupRequest.h>
 #include <huaweicloud/lts/v2/model/CreateLogGroupResponse.h>
+#include <huaweicloud/lts/v2/model/CreateLogStreamIndexRequest.h>
+#include <huaweicloud/lts/v2/model/CreateLogStreamIndexResponse.h>
 #include <huaweicloud/lts/v2/model/CreateLogStreamParams.h>
 #include <huaweicloud/lts/v2/model/CreateLogStreamRequest.h>
 #include <huaweicloud/lts/v2/model/CreateLogStreamResponse.h>
@@ -89,6 +91,7 @@
 #include <huaweicloud/lts/v2/model/GetHostGroupListRequestBody.h>
 #include <huaweicloud/lts/v2/model/GetHostListRequestBody.h>
 #include <huaweicloud/lts/v2/model/LTSAccessConfigInfoRespon200.h>
+#include <huaweicloud/lts/v2/model/LTSIndexConfigInfo.h>
 #include <huaweicloud/lts/v2/model/ListAccessConfigRequest.h>
 #include <huaweicloud/lts/v2/model/ListAccessConfigResponse.h>
 #include <huaweicloud/lts/v2/model/ListActiveOrHistoryAlarmsRequest.h>
@@ -145,6 +148,7 @@
 #include <huaweicloud/lts/v2/model/QueryLtsLogParams.h>
 #include <huaweicloud/lts/v2/model/QueryLtsStructLogParams.h>
 #include <huaweicloud/lts/v2/model/QueryLtsStructLogParamsNew.h>
+#include <huaweicloud/lts/v2/model/QueryLtsStructLogResponseBodyNew.h>
 #include <huaweicloud/lts/v2/model/RegisterDmsKafkaInstanceRequest.h>
 #include <huaweicloud/lts/v2/model/RegisterDmsKafkaInstanceRequestBody.h>
 #include <huaweicloud/lts/v2/model/RegisterDmsKafkaInstanceResponse.h>
@@ -317,6 +321,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateLogStreamResponse> createLogStream(
         CreateLogStreamRequest &request
+    );
+    // 向指定流创建索引
+    //
+    // 向指定流创建索引
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateLogStreamIndexResponse> createLogStreamIndex(
+        CreateLogStreamIndexRequest &request
     );
     // 创建消息模板
     //

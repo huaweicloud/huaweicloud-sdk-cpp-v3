@@ -18,12 +18,16 @@ public:
     static HttpRequestDef genRequestDefForListUnblockQuotaStatistics();
     static HttpRequestDef genRequestDefForShowBlockStatistics();
     static HttpRequestDef genRequestDefForShowUnblockRecord();
+    static HttpRequestDef genRequestDefForAddBlackWhiteIpList();
     static HttpRequestDef genRequestDefForAddPolicyBlackAndWhiteIpList();
     static HttpRequestDef genRequestDefForAssociateIpToPolicy();
     static HttpRequestDef genRequestDefForBatchCreateInstanceIpRule();
     static HttpRequestDef genRequestDefForBatchDeleteInstanceIpRule();
+    static HttpRequestDef genRequestDefForCreateAadDomain();
+    static HttpRequestDef genRequestDefForCreateCertificate();
     static HttpRequestDef genRequestDefForCreatePolicy();
     static HttpRequestDef genRequestDefForDeleteAlarmConfig();
+    static HttpRequestDef genRequestDefForDeleteBlackWhiteIpList();
     static HttpRequestDef genRequestDefForDeletePolicy();
     static HttpRequestDef genRequestDefForDeletePolicyBlackAndWhiteIpList();
     static HttpRequestDef genRequestDefForDisassociateIpFromPolicy();
@@ -35,7 +39,9 @@ public:
     static HttpRequestDef genRequestDefForListPeak();
     static HttpRequestDef genRequestDefForListPolicy();
     static HttpRequestDef genRequestDefForListProtectedIp();
+    static HttpRequestDef genRequestDefForListSourceIps();
     static HttpRequestDef genRequestDefForListUnboundProtectedIp();
+    static HttpRequestDef genRequestDefForModifyDomainWebSwitch();
     static HttpRequestDef genRequestDefForShowAlarmConfig();
     static HttpRequestDef genRequestDefForShowPolicy();
     static HttpRequestDef genRequestDefForUpdateAlarmConfig();

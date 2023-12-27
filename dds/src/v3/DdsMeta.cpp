@@ -857,6 +857,11 @@ HttpRequestDef DdsMeta::genRequestDefForShowBackupPolicy() {
     return reqDefBuilder;
 }
 
+HttpRequestDef DdsMeta::genRequestDefForShowClientNetwork() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef DdsMeta::genRequestDefForShowConfigurationAppliedHistory() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Offset")

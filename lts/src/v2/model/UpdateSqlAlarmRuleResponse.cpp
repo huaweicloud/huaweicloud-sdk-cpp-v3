@@ -14,6 +14,8 @@ UpdateSqlAlarmRuleResponse::UpdateSqlAlarmRuleResponse()
 {
     sqlAlarmRuleName_ = "";
     sqlAlarmRuleNameIsSet_ = false;
+    alarmRuleAlias_ = "";
+    alarmRuleAliasIsSet_ = false;
     isCssSql_ = false;
     isCssSqlIsSet_ = false;
     indexId_ = "";
@@ -61,6 +63,9 @@ web::json::value UpdateSqlAlarmRuleResponse::toJson() const
 
     if(sqlAlarmRuleNameIsSet_) {
         val[utility::conversions::to_string_t("sql_alarm_rule_name")] = ModelBase::toJson(sqlAlarmRuleName_);
+    }
+    if(alarmRuleAliasIsSet_) {
+        val[utility::conversions::to_string_t("alarm_rule_alias")] = ModelBase::toJson(alarmRuleAlias_);
     }
     if(isCssSqlIsSet_) {
         val[utility::conversions::to_string_t("is_css_sql")] = ModelBase::toJson(isCssSql_);
@@ -130,6 +135,15 @@ bool UpdateSqlAlarmRuleResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSqlAlarmRuleName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("alarm_rule_alias"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("alarm_rule_alias"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAlarmRuleAlias(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("is_css_sql"))) {
@@ -317,6 +331,27 @@ bool UpdateSqlAlarmRuleResponse::sqlAlarmRuleNameIsSet() const
 void UpdateSqlAlarmRuleResponse::unsetsqlAlarmRuleName()
 {
     sqlAlarmRuleNameIsSet_ = false;
+}
+
+std::string UpdateSqlAlarmRuleResponse::getAlarmRuleAlias() const
+{
+    return alarmRuleAlias_;
+}
+
+void UpdateSqlAlarmRuleResponse::setAlarmRuleAlias(const std::string& value)
+{
+    alarmRuleAlias_ = value;
+    alarmRuleAliasIsSet_ = true;
+}
+
+bool UpdateSqlAlarmRuleResponse::alarmRuleAliasIsSet() const
+{
+    return alarmRuleAliasIsSet_;
+}
+
+void UpdateSqlAlarmRuleResponse::unsetalarmRuleAlias()
+{
+    alarmRuleAliasIsSet_ = false;
 }
 
 bool UpdateSqlAlarmRuleResponse::isIsCssSql() const

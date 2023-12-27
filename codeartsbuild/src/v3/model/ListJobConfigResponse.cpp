@@ -49,7 +49,7 @@ bool ListJobConfigResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("result"));
         if(!fieldValue.is_null())
         {
-            std::vector<CreateBuildJobRequestBody> refVal;
+            CreateBuildJobRequestBody refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResult(refVal);
         }
@@ -76,12 +76,12 @@ bool ListJobConfigResponse::fromJson(const web::json::value& val)
 }
 
 
-std::vector<CreateBuildJobRequestBody>& ListJobConfigResponse::getResult()
+CreateBuildJobRequestBody ListJobConfigResponse::getResult() const
 {
     return result_;
 }
 
-void ListJobConfigResponse::setResult(const std::vector<CreateBuildJobRequestBody>& value)
+void ListJobConfigResponse::setResult(const CreateBuildJobRequestBody& value)
 {
     result_ = value;
     resultIsSet_ = true;

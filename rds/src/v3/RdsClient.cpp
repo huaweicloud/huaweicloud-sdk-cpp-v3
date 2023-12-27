@@ -4528,6 +4528,39 @@ std::shared_ptr<StartupInstanceResponse> RdsClient::startupInstance(StartupInsta
 
     return localVarResult;
 }
+std::shared_ptr<StopBackupResponse> RdsClient::stopBackup(StopBackupRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/backups/stop";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, RdsMeta::genRequestDefForStopBackup());
+
+    std::shared_ptr<StopBackupResponse> localVarResult = std::make_shared<StopBackupResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<StopInstanceResponse> RdsClient::stopInstance(StopInstanceRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/action/shutdown";
@@ -7651,6 +7684,48 @@ std::shared_ptr<SetInstancesDbShrinkResponse> RdsClient::setInstancesDbShrink(Se
         localVarHeaderParams, localVarHttpBody, RdsMeta::genRequestDefForSetInstancesDbShrink());
 
     std::shared_ptr<SetInstancesDbShrinkResponse> localVarResult = std::make_shared<SetInstancesDbShrinkResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<SetInstancesNewDbShrinkResponse> RdsClient::setInstancesNewDbShrink(SetInstancesNewDbShrinkRequest &request)
+{
+    std::string localVarPath = "/v3.1/{project_id}/instances/{instance_id}/db-shrink";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, RdsMeta::genRequestDefForSetInstancesNewDbShrink());
+
+    std::shared_ptr<SetInstancesNewDbShrinkResponse> localVarResult = std::make_shared<SetInstancesNewDbShrinkResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

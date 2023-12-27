@@ -61,6 +61,15 @@ public:
     void setSqlAlarmRuleName(const std::string& value);
 
     /// <summary>
+    /// 规则名称
+    /// </summary>
+
+    std::string getAlarmRuleAlias() const;
+    bool alarmRuleAliasIsSet() const;
+    void unsetalarmRuleAlias();
+    void setAlarmRuleAlias(const std::string& value);
+
+    /// <summary>
     /// 是否管道符sql查询
     /// </summary>
 
@@ -210,6 +219,8 @@ protected:
     bool sqlAlarmRuleIdIsSet_;
     std::string sqlAlarmRuleName_;
     bool sqlAlarmRuleNameIsSet_;
+    std::string alarmRuleAlias_;
+    bool alarmRuleAliasIsSet_;
     bool isCssSql_;
     bool isCssSqlIsSet_;
     std::string sqlAlarmRuleDescription_;

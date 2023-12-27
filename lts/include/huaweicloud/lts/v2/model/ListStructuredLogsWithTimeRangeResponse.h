@@ -10,7 +10,6 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/core/utils/Object.h>
-#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -40,18 +39,18 @@ public:
     /// ListStructuredLogsWithTimeRangeResponse members
 
     /// <summary>
-    /// 查询结构化日志结果信息。 此处仅为示例，具体参数名称取决于查询的字段。
+    /// 此参数在请求实体中，采用json字符串格式。
     /// </summary>
 
-    std::vector<Object>& getResult();
-    bool resultIsSet() const;
-    void unsetresult();
-    void setResult(const std::vector<Object>& value);
+    Object getBody() const;
+    bool bodyIsSet() const;
+    void unsetbody();
+    void setBody(const Object& value);
 
 
 protected:
-    std::vector<Object> result_;
-    bool resultIsSet_;
+    Object body_;
+    bool bodyIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

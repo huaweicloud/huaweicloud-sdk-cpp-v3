@@ -48,7 +48,7 @@ public:
     void setRecordId(const std::string& value);
 
     /// <summary>
-    /// 记录ID,36位数字、小写字母、&#39;-&#39;组组合。
+    /// 步骤名称
     /// </summary>
 
     std::string getTaskName() const;

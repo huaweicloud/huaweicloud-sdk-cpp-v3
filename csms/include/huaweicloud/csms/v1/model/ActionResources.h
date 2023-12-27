@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/csms/v1/model/SysTag.h>
 #include <huaweicloud/csms/v1/model/TagItem.h>
 #include <string>
 #include <huaweicloud/csms/v1/model/Secret.h>
@@ -77,6 +78,15 @@ public:
     void unsettags();
     void setTags(const std::vector<TagItem>& value);
 
+    /// <summary>
+    /// 系统标签列表，没有标签，数组默认为空
+    /// </summary>
+
+    std::vector<SysTag>& getSysTags();
+    bool sysTagsIsSet() const;
+    void unsetsysTags();
+    void setSysTags(const std::vector<SysTag>& value);
+
 
 protected:
     std::string resourceId_;
@@ -87,6 +97,8 @@ protected:
     bool resourceNameIsSet_;
     std::vector<TagItem> tags_;
     bool tagsIsSet_;
+    std::vector<SysTag> sysTags_;
+    bool sysTagsIsSet_;
 
 };
 

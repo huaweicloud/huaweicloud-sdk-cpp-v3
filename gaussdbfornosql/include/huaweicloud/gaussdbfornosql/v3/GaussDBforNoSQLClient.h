@@ -104,6 +104,8 @@
 #include <huaweicloud/gaussdbfornosql/v3/model/ListInstancesSessionResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListInstancesSessionStatisticsRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListInstancesSessionStatisticsResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ListJobsRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ListJobsResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListLtsConfigsRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListLtsConfigsResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListMongodbErrorLogsRequest.h>
@@ -615,6 +617,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListInstancesSessionStatisticsResponse> listInstancesSessionStatistics(
         ListInstancesSessionStatisticsRequest &request
+    );
+    // 查询任务列表和详情
+    //
+    // 查询任务列表和详情，默认查询任务列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListJobsResponse> listJobs(
+        ListJobsRequest &request
     );
     // 查询LTS日志配置信息
     //

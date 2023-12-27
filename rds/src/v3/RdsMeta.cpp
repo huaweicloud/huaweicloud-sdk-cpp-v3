@@ -1582,6 +1582,16 @@ HttpRequestDef RdsMeta::genRequestDefForStartupInstance() {
     return reqDefBuilder;
 }
 
+HttpRequestDef RdsMeta::genRequestDefForStopBackup() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef RdsMeta::genRequestDefForStopInstance() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
@@ -2559,6 +2569,15 @@ HttpRequestDef RdsMeta::genRequestDefForRevokeSqlserverDbUserPrivilege() {
 }
 
 HttpRequestDef RdsMeta::genRequestDefForSetInstancesDbShrink() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef RdsMeta::genRequestDefForSetInstancesNewDbShrink() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.

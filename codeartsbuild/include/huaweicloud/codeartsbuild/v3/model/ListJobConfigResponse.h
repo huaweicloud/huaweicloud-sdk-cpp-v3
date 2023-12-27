@@ -11,7 +11,6 @@
 
 #include <huaweicloud/codeartsbuild/v3/model/CreateBuildJobRequestBody.h>
 #include <string>
-#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -41,13 +40,13 @@ public:
     /// ListJobConfigResponse members
 
     /// <summary>
-    /// 查询模板结果
+    /// 
     /// </summary>
 
-    std::vector<CreateBuildJobRequestBody>& getResult();
+    CreateBuildJobRequestBody getResult() const;
     bool resultIsSet() const;
     void unsetresult();
-    void setResult(const std::vector<CreateBuildJobRequestBody>& value);
+    void setResult(const CreateBuildJobRequestBody& value);
 
     /// <summary>
     /// 返回错误信息
@@ -69,7 +68,7 @@ public:
 
 
 protected:
-    std::vector<CreateBuildJobRequestBody> result_;
+    CreateBuildJobRequestBody result_;
     bool resultIsSet_;
     std::string error_;
     bool errorIsSet_;

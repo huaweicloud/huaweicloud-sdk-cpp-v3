@@ -12,7 +12,7 @@ namespace Model {
 
 ListStructuredLogsWithTimeRangeResponse::ListStructuredLogsWithTimeRangeResponse()
 {
-    resultIsSet_ = false;
+    bodyIsSet_ = false;
 }
 
 ListStructuredLogsWithTimeRangeResponse::~ListStructuredLogsWithTimeRangeResponse() = default;
@@ -25,8 +25,8 @@ web::json::value ListStructuredLogsWithTimeRangeResponse::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(resultIsSet_) {
-        val[utility::conversions::to_string_t("result")] = ModelBase::toJson(result_);
+    if(bodyIsSet_) {
+        val[utility::conversions::to_string_t("body")] = ModelBase::toJson(body_);
     }
 
     return val;
@@ -35,38 +35,38 @@ bool ListStructuredLogsWithTimeRangeResponse::fromJson(const web::json::value& v
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("result"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("result"));
+    if(val.has_field(utility::conversions::to_string_t("body"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
         if(!fieldValue.is_null())
         {
-            std::vector<Object> refVal;
+            Object refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setResult(refVal);
+            setBody(refVal);
         }
     }
     return ok;
 }
 
 
-std::vector<Object>& ListStructuredLogsWithTimeRangeResponse::getResult()
+Object ListStructuredLogsWithTimeRangeResponse::getBody() const
 {
-    return result_;
+    return body_;
 }
 
-void ListStructuredLogsWithTimeRangeResponse::setResult(const std::vector<Object>& value)
+void ListStructuredLogsWithTimeRangeResponse::setBody(const Object& value)
 {
-    result_ = value;
-    resultIsSet_ = true;
+    body_ = value;
+    bodyIsSet_ = true;
 }
 
-bool ListStructuredLogsWithTimeRangeResponse::resultIsSet() const
+bool ListStructuredLogsWithTimeRangeResponse::bodyIsSet() const
 {
-    return resultIsSet_;
+    return bodyIsSet_;
 }
 
-void ListStructuredLogsWithTimeRangeResponse::unsetresult()
+void ListStructuredLogsWithTimeRangeResponse::unsetbody()
 {
-    resultIsSet_ = false;
+    bodyIsSet_ = false;
 }
 
 }

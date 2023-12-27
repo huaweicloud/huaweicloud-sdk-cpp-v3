@@ -123,6 +123,7 @@ public:
     static HttpRequestDef genRequestDefForStartRecyclePolicy();
     static HttpRequestDef genRequestDefForStartResizeFlavorAction();
     static HttpRequestDef genRequestDefForStartupInstance();
+    static HttpRequestDef genRequestDefForStopBackup();
     static HttpRequestDef genRequestDefForStopInstance();
     static HttpRequestDef genRequestDefForSwitchSsl();
     static HttpRequestDef genRequestDefForUpdateConfiguration();
@@ -198,6 +199,7 @@ public:
     static HttpRequestDef genRequestDefForModifyCollation();
     static HttpRequestDef genRequestDefForRevokeSqlserverDbUserPrivilege();
     static HttpRequestDef genRequestDefForSetInstancesDbShrink();
+    static HttpRequestDef genRequestDefForSetInstancesNewDbShrink();
 };
 
 }

@@ -89,6 +89,7 @@ public:
     static HttpRequestDef genRequestDefForShowAuditlogPolicy();
     static HttpRequestDef genRequestDefForShowBackupDownloadLink();
     static HttpRequestDef genRequestDefForShowBackupPolicy();
+    static HttpRequestDef genRequestDefForShowClientNetwork();
     static HttpRequestDef genRequestDefForShowConfigurationAppliedHistory();
     static HttpRequestDef genRequestDefForShowConfigurationModifyHistory();
     static HttpRequestDef genRequestDefForShowConfigurationParameter();

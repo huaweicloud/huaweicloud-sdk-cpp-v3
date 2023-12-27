@@ -137,6 +137,20 @@ HttpRequestDef LtsMeta::genRequestDefForCreateLogStream() {
     return reqDefBuilder;
 }
 
+HttpRequestDef LtsMeta::genRequestDefForCreateLogStreamIndex() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamContentType;
+    reqDefBuilder.withRequestField(headerParamContentType
+                  .withName("ContentType")
+                  .withJsonTag("Content-Type")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef LtsMeta::genRequestDefForCreateNotificationTemplate() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamContentType;

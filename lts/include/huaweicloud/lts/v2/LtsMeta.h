@@ -22,6 +22,7 @@ public:
     static HttpRequestDef genRequestDefForCreateLogDumpObs();
     static HttpRequestDef genRequestDefForCreateLogGroup();
     static HttpRequestDef genRequestDefForCreateLogStream();
+    static HttpRequestDef genRequestDefForCreateLogStreamIndex();
     static HttpRequestDef genRequestDefForCreateNotificationTemplate();
     static HttpRequestDef genRequestDefForCreateSearchCriterias();
     static HttpRequestDef genRequestDefForCreateStructConfig();

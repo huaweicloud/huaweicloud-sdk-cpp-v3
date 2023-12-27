@@ -24,7 +24,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 更新构建作业配置接口请求体
+/// 更新构建任务请求体
 /// </summary>
 class HUAWEICLOUD_CODEARTSBUILD_V3_EXPORT  UpdateBuildJobRequestBody
     : public ModelBase

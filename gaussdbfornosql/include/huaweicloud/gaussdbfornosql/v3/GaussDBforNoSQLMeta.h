@@ -53,6 +53,7 @@ public:
     static HttpRequestDef genRequestDefForListInstancesByTags();
     static HttpRequestDef genRequestDefForListInstancesSession();
     static HttpRequestDef genRequestDefForListInstancesSessionStatistics();
+    static HttpRequestDef genRequestDefForListJobs();
     static HttpRequestDef genRequestDefForListLtsConfigs();
     static HttpRequestDef genRequestDefForListMongodbErrorLogs();
     static HttpRequestDef genRequestDefForListMongodbSlowLogs();

@@ -11,7 +11,6 @@
 
 #include <huaweicloud/codeartsbuild/v3/model/CreateTemplatesItems.h>
 #include <string>
-#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -41,13 +40,13 @@ public:
     /// CreateTemplatesResponse members
 
     /// <summary>
-    /// 查询模板结果
+    /// 
     /// </summary>
 
-    std::vector<CreateTemplatesItems>& getResult();
+    CreateTemplatesItems getResult() const;
     bool resultIsSet() const;
     void unsetresult();
-    void setResult(const std::vector<CreateTemplatesItems>& value);
+    void setResult(const CreateTemplatesItems& value);
 
     /// <summary>
     /// 返回错误信息
@@ -69,7 +68,7 @@ public:
 
 
 protected:
-    std::vector<CreateTemplatesItems> result_;
+    CreateTemplatesItems result_;
     bool resultIsSet_;
     std::string error_;
     bool errorIsSet_;

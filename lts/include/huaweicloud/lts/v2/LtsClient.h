@@ -142,13 +142,13 @@
 #include <huaweicloud/lts/v2/model/ListTransfersRequest.h>
 #include <huaweicloud/lts/v2/model/ListTransfersResponse.h>
 #include <huaweicloud/lts/v2/model/LtsStructTemplateInfo.h>
+#include <huaweicloud/core/utils/Object.h>
 #include <huaweicloud/lts/v2/model/PreviewAgencyLogAccessReqListBody.h>
 #include <huaweicloud/lts/v2/model/PreviewTemplateBody.h>
 #include <huaweicloud/lts/v2/model/QueryLogKeyWordCountRequestBody.h>
 #include <huaweicloud/lts/v2/model/QueryLtsLogParams.h>
 #include <huaweicloud/lts/v2/model/QueryLtsStructLogParams.h>
 #include <huaweicloud/lts/v2/model/QueryLtsStructLogParamsNew.h>
-#include <huaweicloud/lts/v2/model/QueryLtsStructLogResponseBodyNew.h>
 #include <huaweicloud/lts/v2/model/RegisterDmsKafkaInstanceRequest.h>
 #include <huaweicloud/lts/v2/model/RegisterDmsKafkaInstanceRequestBody.h>
 #include <huaweicloud/lts/v2/model/RegisterDmsKafkaInstanceResponse.h>

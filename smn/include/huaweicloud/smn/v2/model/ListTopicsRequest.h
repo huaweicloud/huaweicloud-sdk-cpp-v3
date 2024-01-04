@@ -75,7 +75,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 检索的主题名称，模糊匹配，按照startwith模式进行匹配。
+    /// 检索的主题名称，模糊匹配。
     /// </summary>
 
     std::string getFuzzyName() const;
@@ -92,6 +92,15 @@ public:
     void unsettopicId();
     void setTopicId(const std::string& value);
 
+    /// <summary>
+    /// 检索的主题显示名。模糊匹配。参数字节长度不能大于192字节。
+    /// </summary>
+
+    std::string getFuzzyDisplayName() const;
+    bool fuzzyDisplayNameIsSet() const;
+    void unsetfuzzyDisplayName();
+    void setFuzzyDisplayName(const std::string& value);
+
 
 protected:
     int32_t offset_;
@@ -106,6 +115,8 @@ protected:
     bool fuzzyNameIsSet_;
     std::string topicId_;
     bool topicIdIsSet_;
+    std::string fuzzyDisplayName_;
+    bool fuzzyDisplayNameIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

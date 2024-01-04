@@ -1,3 +1,87 @@
+# 3.1.68 2024-01-04
+
+### HuaweiCloud SDK MPC
+
+- _新增特性_
+  - 支持接口`ShowTenantAccessInfo`、`UpdateTenantAccessInfo`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK RDS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **SetOffSiteBackupPolicy**
+    - 请求参数变更
+      - `* policy_para: list<OffSiteBackupPolicy> -> object<OffSiteBackupPolicy>`
+
+### HuaweiCloud SDK SMN
+
+- _新增特性_
+  - 支持以下接口：
+    - `PublishHttpDetect`
+    - `ShowHttpDetectResult`
+    - `BatchUpdateSubscriptionsFilterPolices`
+    - `BatchCreateSubscriptionsFilterPolices`
+    - `BatchDeleteSubscriptionsFilterPolices`
+    - `AddSubscriptionFromSubscriptionUser`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 废弃以下接口：
+    - `ListApplicationAttributes`
+    - `UpdateApplication`
+    - `DeleteApplication`
+    - `ListApplicationEndpointAttributes`
+    - `UpdateApplicationEndpoint`
+    - `DeleteApplicationEndpoint`
+    - `PublishAppMessage`
+    - `CreateApplication`
+    - `ListApplications`
+    - `CreateApplicationEndpoint`
+    - `ListApplicationEndpoints`
+  - **PublishMessage**
+    - 请求参数变更
+      - `+ message_attributes`
+  - **ListTopics**
+    - 请求参数变更
+      - `+ fuzzy_display_name`
+  - **ListSubscriptions**
+    - 请求参数变更
+      - `+ fuzzy_remark`
+    - 响应参数变更
+      - `+ subscriptions.filter_polices`
+  - **ListSubscriptionsByTopic**
+    - 请求参数变更
+      - `+ fuzzy_remark`
+    - 响应参数变更
+      - `+ subscriptions.filter_polices`
+
+### HuaweiCloud SDK VPC
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListPorts**
+    - 响应参数变更
+      - `+ ports.ipv6_bandwidth_id`
+  - **CreatePort**
+    - 响应参数变更
+      - `+ port.ipv6_bandwidth_id`
+  - **ShowPort**
+    - 响应参数变更
+      - `+ port.ipv6_bandwidth_id`
+  - **UpdatePort**
+    - 响应参数变更
+      - `+ port.ipv6_bandwidth_id`
+
 # 3.1.67 2023-12-27
 
 ### HuaweiCloud SDK AAD

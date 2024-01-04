@@ -136,6 +136,13 @@
 #include <huaweicloud/mpc/v1/model/UpdateTemplateGroupResponse.h>
 #include <string>
 
+#include <huaweicloud/mpc/v1/model/ShowTenantAccessInfoRequest.h>
+#include <huaweicloud/mpc/v1/model/ShowTenantAccessInfoResponse.h>
+#include <huaweicloud/mpc/v1/model/UpdateTenantAccessInfoReq.h>
+#include <huaweicloud/mpc/v1/model/UpdateTenantAccessInfoRequest.h>
+#include <huaweicloud/mpc/v1/model/UpdateTenantAccessInfoResponse.h>
+#include <string>
+
 #include <huaweicloud/mpc/v1/model/CreateThumbReq.h>
 #include <huaweicloud/mpc/v1/model/CreateThumbnailsTaskRequest.h>
 #include <huaweicloud/mpc/v1/model/CreateThumbnailsTaskResponse.h>
@@ -617,6 +624,23 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateTemplateGroupResponse> updateTemplateGroup(
         UpdateTemplateGroupRequest &request
+    );
+
+    // 租户查询服务开通状态信息
+    //
+    // 租户查询媒体转码服务开通状态信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowTenantAccessInfoResponse> showTenantAccessInfo(
+        ShowTenantAccessInfoRequest &request
+    );
+    // 租户开通媒体转码服务
+    //
+    // 租户开通媒体转码服务。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateTenantAccessInfoResponse> updateTenantAccessInfo(
+        UpdateTenantAccessInfoRequest &request
     );
 
     // 新建截图任务

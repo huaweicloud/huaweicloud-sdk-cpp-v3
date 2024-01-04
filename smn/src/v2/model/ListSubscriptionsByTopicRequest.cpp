@@ -18,6 +18,8 @@ ListSubscriptionsByTopicRequest::ListSubscriptionsByTopicRequest()
     offsetIsSet_ = false;
     limit_ = 0;
     limitIsSet_ = false;
+    fuzzyRemark_ = "";
+    fuzzyRemarkIsSet_ = false;
 }
 
 ListSubscriptionsByTopicRequest::~ListSubscriptionsByTopicRequest() = default;
@@ -38,6 +40,9 @@ web::json::value ListSubscriptionsByTopicRequest::toJson() const
     }
     if(limitIsSet_) {
         val[utility::conversions::to_string_t("limit")] = ModelBase::toJson(limit_);
+    }
+    if(fuzzyRemarkIsSet_) {
+        val[utility::conversions::to_string_t("fuzzy_remark")] = ModelBase::toJson(fuzzyRemark_);
     }
 
     return val;
@@ -71,6 +76,15 @@ bool ListSubscriptionsByTopicRequest::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLimit(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("fuzzy_remark"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("fuzzy_remark"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFuzzyRemark(refVal);
         }
     }
     return ok;
@@ -138,6 +152,27 @@ bool ListSubscriptionsByTopicRequest::limitIsSet() const
 void ListSubscriptionsByTopicRequest::unsetlimit()
 {
     limitIsSet_ = false;
+}
+
+std::string ListSubscriptionsByTopicRequest::getFuzzyRemark() const
+{
+    return fuzzyRemark_;
+}
+
+void ListSubscriptionsByTopicRequest::setFuzzyRemark(const std::string& value)
+{
+    fuzzyRemark_ = value;
+    fuzzyRemarkIsSet_ = true;
+}
+
+bool ListSubscriptionsByTopicRequest::fuzzyRemarkIsSet() const
+{
+    return fuzzyRemarkIsSet_;
+}
+
+void ListSubscriptionsByTopicRequest::unsetfuzzyRemark()
+{
+    fuzzyRemarkIsSet_ = false;
 }
 
 }

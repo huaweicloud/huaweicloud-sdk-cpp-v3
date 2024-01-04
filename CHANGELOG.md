@@ -1,3 +1,87 @@
+# 3.1.68 2024-01-04
+
+### HuaweiCloud SDK MPC
+
+- _Features_
+  - Support the APIs `ShowTenantAccessInfo`, `UpdateTenantAccessInfo`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK RDS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **SetOffSiteBackupPolicy**
+    - changes of request param
+      - `* policy_para: list<OffSiteBackupPolicy> -> object<OffSiteBackupPolicy>`
+
+### HuaweiCloud SDK SMN
+
+- _Features_
+  - Support the following APIs:
+    - `PublishHttpDetect`
+    - `ShowHttpDetectResult`
+    - `BatchUpdateSubscriptionsFilterPolices`
+    - `BatchCreateSubscriptionsFilterPolices`
+    - `BatchDeleteSubscriptionsFilterPolices`
+    - `AddSubscriptionFromSubscriptionUser`
+- _Bug Fix_
+  - None
+- _Change_
+  - Deprecate the following APIs:
+    - `ListApplicationAttributes`
+    - `UpdateApplication`
+    - `DeleteApplication`
+    - `ListApplicationEndpointAttributes`
+    - `UpdateApplicationEndpoint`
+    - `DeleteApplicationEndpoint`
+    - `PublishAppMessage`
+    - `CreateApplication`
+    - `ListApplications`
+    - `CreateApplicationEndpoint`
+    - `ListApplicationEndpoints`
+  - **PublishMessage**
+    - changes of request param
+      - `+ message_attributes`
+  - **ListTopics**
+    - changes of request param
+      - `+ fuzzy_display_name`
+  - **ListSubscriptions**
+    - changes of request param
+      - `+ fuzzy_remark`
+    - changes of response param
+      - `+ subscriptions.filter_polices`
+  - **ListSubscriptionsByTopic**
+    - changes of request param
+      - `+ fuzzy_remark`
+    - changes of response param
+      - `+ subscriptions.filter_polices`
+
+### HuaweiCloud SDK VPC
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListPorts**
+    - changes of response param
+      - `+ ports.ipv6_bandwidth_id`
+  - **CreatePort**
+    - changes of response param
+      - `+ port.ipv6_bandwidth_id`
+  - **ShowPort**
+    - changes of response param
+      - `+ port.ipv6_bandwidth_id`
+  - **UpdatePort**
+    - changes of response param
+      - `+ port.ipv6_bandwidth_id`
+
 # 3.1.67 2023-12-27
 
 ### HuaweiCloud SDK AAD

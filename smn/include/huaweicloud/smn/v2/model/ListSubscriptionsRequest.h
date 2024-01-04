@@ -83,6 +83,15 @@ public:
     void unsetendpoint();
     void setEndpoint(const std::string& value);
 
+    /// <summary>
+    /// 检索的订阅备注字段，模糊匹配。最大长度限制为128个字节。
+    /// </summary>
+
+    std::string getFuzzyRemark() const;
+    bool fuzzyRemarkIsSet() const;
+    void unsetfuzzyRemark();
+    void setFuzzyRemark(const std::string& value);
+
 
 protected:
     int32_t offset_;
@@ -95,6 +104,8 @@ protected:
     bool statusIsSet_;
     std::string endpoint_;
     bool endpointIsSet_;
+    std::string fuzzyRemark_;
+    bool fuzzyRemarkIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

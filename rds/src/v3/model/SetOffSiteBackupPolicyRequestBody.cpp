@@ -39,7 +39,7 @@ bool SetOffSiteBackupPolicyRequestBody::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("policy_para"));
         if(!fieldValue.is_null())
         {
-            std::vector<OffSiteBackupPolicy> refVal;
+            OffSiteBackupPolicy refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPolicyPara(refVal);
         }
@@ -48,12 +48,12 @@ bool SetOffSiteBackupPolicyRequestBody::fromJson(const web::json::value& val)
 }
 
 
-std::vector<OffSiteBackupPolicy>& SetOffSiteBackupPolicyRequestBody::getPolicyPara()
+OffSiteBackupPolicy SetOffSiteBackupPolicyRequestBody::getPolicyPara() const
 {
     return policyPara_;
 }
 
-void SetOffSiteBackupPolicyRequestBody::setPolicyPara(const std::vector<OffSiteBackupPolicy>& value)
+void SetOffSiteBackupPolicyRequestBody::setPolicyPara(const OffSiteBackupPolicy& value)
 {
     policyPara_ = value;
     policyParaIsSet_ = true;

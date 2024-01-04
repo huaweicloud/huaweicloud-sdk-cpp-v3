@@ -26,6 +26,7 @@ ListSubscriptionsItem::ListSubscriptionsItem()
     remarkIsSet_ = false;
     status_ = 0;
     statusIsSet_ = false;
+    filterPolicesIsSet_ = false;
 }
 
 ListSubscriptionsItem::~ListSubscriptionsItem() = default;
@@ -58,6 +59,9 @@ web::json::value ListSubscriptionsItem::toJson() const
     }
     if(statusIsSet_) {
         val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
+    }
+    if(filterPolicesIsSet_) {
+        val[utility::conversions::to_string_t("filter_polices")] = ModelBase::toJson(filterPolices_);
     }
 
     return val;
@@ -127,6 +131,15 @@ bool ListSubscriptionsItem::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("filter_polices"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("filter_polices"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<SubscriptionsFilterPolicy> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFilterPolices(refVal);
         }
     }
     return ok;
@@ -278,6 +291,27 @@ bool ListSubscriptionsItem::statusIsSet() const
 void ListSubscriptionsItem::unsetstatus()
 {
     statusIsSet_ = false;
+}
+
+std::vector<SubscriptionsFilterPolicy>& ListSubscriptionsItem::getFilterPolices()
+{
+    return filterPolices_;
+}
+
+void ListSubscriptionsItem::setFilterPolices(const std::vector<SubscriptionsFilterPolicy>& value)
+{
+    filterPolices_ = value;
+    filterPolicesIsSet_ = true;
+}
+
+bool ListSubscriptionsItem::filterPolicesIsSet() const
+{
+    return filterPolicesIsSet_;
+}
+
+void ListSubscriptionsItem::unsetfilterPolices()
+{
+    filterPolicesIsSet_ = false;
 }
 
 }

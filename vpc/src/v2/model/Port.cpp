@@ -51,6 +51,8 @@ Port::Port()
     zoneIdIsSet_ = false;
     enableEfi_ = false;
     enableEfiIsSet_ = false;
+    ipv6BandwidthId_ = "";
+    ipv6BandwidthIdIsSet_ = false;
 }
 
 Port::~Port() = default;
@@ -131,6 +133,9 @@ web::json::value Port::toJson() const
     }
     if(enableEfiIsSet_) {
         val[utility::conversions::to_string_t("enable_efi")] = ModelBase::toJson(enableEfi_);
+    }
+    if(ipv6BandwidthIdIsSet_) {
+        val[utility::conversions::to_string_t("ipv6_bandwidth_id")] = ModelBase::toJson(ipv6BandwidthId_);
     }
 
     return val;
@@ -344,6 +349,15 @@ bool Port::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEnableEfi(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("ipv6_bandwidth_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ipv6_bandwidth_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIpv6BandwidthId(refVal);
         }
     }
     return ok;
@@ -831,6 +845,27 @@ bool Port::enableEfiIsSet() const
 void Port::unsetenableEfi()
 {
     enableEfiIsSet_ = false;
+}
+
+std::string Port::getIpv6BandwidthId() const
+{
+    return ipv6BandwidthId_;
+}
+
+void Port::setIpv6BandwidthId(const std::string& value)
+{
+    ipv6BandwidthId_ = value;
+    ipv6BandwidthIdIsSet_ = true;
+}
+
+bool Port::ipv6BandwidthIdIsSet() const
+{
+    return ipv6BandwidthIdIsSet_;
+}
+
+void Port::unsetipv6BandwidthId()
+{
+    ipv6BandwidthIdIsSet_ = false;
 }
 
 }

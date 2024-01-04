@@ -527,6 +527,30 @@ HttpRequestDef MpcMeta::genRequestDefForUpdateTemplateGroup() {
     return reqDefBuilder;
 }
 
+HttpRequestDef MpcMeta::genRequestDefForShowTenantAccessInfo() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("x-language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef MpcMeta::genRequestDefForUpdateTenantAccessInfo() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("x-language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef MpcMeta::genRequestDefForCreateThumbnailsTask() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;

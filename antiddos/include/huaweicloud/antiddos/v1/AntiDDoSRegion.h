@@ -106,6 +106,10 @@ public:
             { 
                 "https://antiddos.ae-ad-1.myhuaweicloud.com"
             });
+        regions["eu-west-0"] = Region("eu-west-0",
+            { 
+                "https://antiddos.eu-west-0.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

@@ -9,7 +9,9 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/smn/v2/model/SubscriptionsFilterPolicy.h>
 #include <string>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -101,6 +103,15 @@ public:
     void unsetstatus();
     void setStatus(int32_t value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    std::vector<SubscriptionsFilterPolicy>& getFilterPolices();
+    bool filterPolicesIsSet() const;
+    void unsetfilterPolices();
+    void setFilterPolices(const std::vector<SubscriptionsFilterPolicy>& value);
+
 
 protected:
     std::string topicUrn_;
@@ -117,6 +128,8 @@ protected:
     bool remarkIsSet_;
     int32_t status_;
     bool statusIsSet_;
+    std::vector<SubscriptionsFilterPolicy> filterPolices_;
+    bool filterPolicesIsSet_;
 
 };
 

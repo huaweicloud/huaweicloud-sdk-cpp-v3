@@ -22,6 +22,8 @@ ListSubscriptionsRequest::ListSubscriptionsRequest()
     statusIsSet_ = false;
     endpoint_ = "";
     endpointIsSet_ = false;
+    fuzzyRemark_ = "";
+    fuzzyRemarkIsSet_ = false;
 }
 
 ListSubscriptionsRequest::~ListSubscriptionsRequest() = default;
@@ -48,6 +50,9 @@ web::json::value ListSubscriptionsRequest::toJson() const
     }
     if(endpointIsSet_) {
         val[utility::conversions::to_string_t("endpoint")] = ModelBase::toJson(endpoint_);
+    }
+    if(fuzzyRemarkIsSet_) {
+        val[utility::conversions::to_string_t("fuzzy_remark")] = ModelBase::toJson(fuzzyRemark_);
     }
 
     return val;
@@ -99,6 +104,15 @@ bool ListSubscriptionsRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEndpoint(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("fuzzy_remark"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("fuzzy_remark"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFuzzyRemark(refVal);
         }
     }
     return ok;
@@ -208,6 +222,27 @@ bool ListSubscriptionsRequest::endpointIsSet() const
 void ListSubscriptionsRequest::unsetendpoint()
 {
     endpointIsSet_ = false;
+}
+
+std::string ListSubscriptionsRequest::getFuzzyRemark() const
+{
+    return fuzzyRemark_;
+}
+
+void ListSubscriptionsRequest::setFuzzyRemark(const std::string& value)
+{
+    fuzzyRemark_ = value;
+    fuzzyRemarkIsSet_ = true;
+}
+
+bool ListSubscriptionsRequest::fuzzyRemarkIsSet() const
+{
+    return fuzzyRemarkIsSet_;
+}
+
+void ListSubscriptionsRequest::unsetfuzzyRemark()
+{
+    fuzzyRemarkIsSet_ = false;
 }
 
 }

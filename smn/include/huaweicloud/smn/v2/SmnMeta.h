@@ -14,7 +14,11 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 class HUAWEICLOUD_SMN_V2_EXPORT  SmnMeta {
 public:
     static HttpRequestDef genRequestDefForAddSubscription();
+    static HttpRequestDef genRequestDefForAddSubscriptionFromSubscriptionUser();
     static HttpRequestDef genRequestDefForBatchCreateOrDeleteResourceTags();
+    static HttpRequestDef genRequestDefForBatchCreateSubscriptionsFilterPolices();
+    static HttpRequestDef genRequestDefForBatchDeleteSubscriptionsFilterPolices();
+    static HttpRequestDef genRequestDefForBatchUpdateSubscriptionsFilterPolices();
     static HttpRequestDef genRequestDefForCancelSubscription();
     static HttpRequestDef genRequestDefForCreateLogtank();
     static HttpRequestDef genRequestDefForCreateMessageTemplate();
@@ -39,7 +43,9 @@ public:
     static HttpRequestDef genRequestDefForListTopics();
     static HttpRequestDef genRequestDefForListVersion();
     static HttpRequestDef genRequestDefForListVersions();
+    static HttpRequestDef genRequestDefForPublishHttpDetect();
     static HttpRequestDef genRequestDefForPublishMessage();
+    static HttpRequestDef genRequestDefForShowHttpDetectResult();
     static HttpRequestDef genRequestDefForUpdateLogtank();
     static HttpRequestDef genRequestDefForUpdateMessageTemplate();
     static HttpRequestDef genRequestDefForUpdateSubscription();

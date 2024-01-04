@@ -39,7 +39,7 @@ public:
     /// ListStructuredLogsWithTimeRangeResponse members
 
     /// <summary>
-    /// 此参数在请求实体中，采用json字符串格式。
+    /// 
     /// </summary>
 
     Object getBody() const;

@@ -17,7 +17,43 @@ HttpRequestDef SmnMeta::genRequestDefForAddSubscription() {
     return reqDefBuilder;
 }
 
+HttpRequestDef SmnMeta::genRequestDefForAddSubscriptionFromSubscriptionUser() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef SmnMeta::genRequestDefForBatchCreateOrDeleteResourceTags() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef SmnMeta::genRequestDefForBatchCreateSubscriptionsFilterPolices() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef SmnMeta::genRequestDefForBatchDeleteSubscriptionsFilterPolices() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef SmnMeta::genRequestDefForBatchUpdateSubscriptionsFilterPolices() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
@@ -160,6 +196,9 @@ HttpRequestDef SmnMeta::genRequestDefForListSubscriptions() {
     reqDefBuilder.withRequestField(FieldDef().withName("Endpoint")
                   .withJsonTag("endpoint")
                   .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("FuzzyRemark")
+                  .withJsonTag("fuzzy_remark")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 
@@ -170,6 +209,9 @@ HttpRequestDef SmnMeta::genRequestDefForListSubscriptionsByTopic() {
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("Limit")
                   .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("FuzzyRemark")
+                  .withJsonTag("fuzzy_remark")
                   .withLocationType(Query_));
     return reqDefBuilder;
 }
@@ -207,6 +249,9 @@ HttpRequestDef SmnMeta::genRequestDefForListTopics() {
     reqDefBuilder.withRequestField(FieldDef().withName("TopicId")
                   .withJsonTag("topic_id")
                   .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("FuzzyDisplayName")
+                  .withJsonTag("fuzzy_display_name")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 
@@ -220,12 +265,26 @@ HttpRequestDef SmnMeta::genRequestDefForListVersions() {
     return reqDefBuilder;
 }
 
+HttpRequestDef SmnMeta::genRequestDefForPublishHttpDetect() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef SmnMeta::genRequestDefForPublishMessage() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef SmnMeta::genRequestDefForShowHttpDetectResult() {
+    HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
 

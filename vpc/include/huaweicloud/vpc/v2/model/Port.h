@@ -252,6 +252,15 @@ public:
     void unsetenableEfi();
     void setEnableEfi(bool value);
 
+    /// <summary>
+    /// 功能说明：IPv6网卡绑定的共享带宽ID 约束：只有IPv6网卡绑定了共享带宽，才会显示此参数
+    /// </summary>
+
+    std::string getIpv6BandwidthId() const;
+    bool ipv6BandwidthIdIsSet() const;
+    void unsetipv6BandwidthId();
+    void setIpv6BandwidthId(const std::string& value);
+
 
 protected:
     std::string id_;
@@ -300,6 +309,8 @@ protected:
     bool zoneIdIsSet_;
     bool enableEfi_;
     bool enableEfiIsSet_;
+    std::string ipv6BandwidthId_;
+    bool ipv6BandwidthIdIsSet_;
 
 };
 

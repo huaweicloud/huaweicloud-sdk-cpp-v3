@@ -65,6 +65,15 @@ public:
     void unsetlimit();
     void setLimit(int32_t value);
 
+    /// <summary>
+    /// 检索的订阅备注字段，模糊匹配。最大长度限制为128字节。
+    /// </summary>
+
+    std::string getFuzzyRemark() const;
+    bool fuzzyRemarkIsSet() const;
+    void unsetfuzzyRemark();
+    void setFuzzyRemark(const std::string& value);
+
 
 protected:
     std::string topicUrn_;
@@ -73,6 +82,8 @@ protected:
     bool offsetIsSet_;
     int32_t limit_;
     bool limitIsSet_;
+    std::string fuzzyRemark_;
+    bool fuzzyRemarkIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

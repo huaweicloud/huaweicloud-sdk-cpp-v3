@@ -1,9 +1,9 @@
 
-#ifndef HUAWEICLOUD_SDK_LTS_V2_MODEL_QueryLtsStructLogResponseBodyNew_H_
-#define HUAWEICLOUD_SDK_LTS_V2_MODEL_QueryLtsStructLogResponseBodyNew_H_
+#ifndef HUAWEICLOUD_SDK_MPC_V1_MODEL_UpdateTenantAccessInfoResponse_H_
+#define HUAWEICLOUD_SDK_MPC_V1_MODEL_UpdateTenantAccessInfoResponse_H_
 
 
-#include <huaweicloud/lts/v2/LtsExport.h>
+#include <huaweicloud/mpc/v1/MpcExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/utils/Utils.h>
@@ -12,21 +12,21 @@
 
 namespace HuaweiCloud {
 namespace Sdk {
-namespace Lts {
-namespace V2 {
+namespace Mpc {
+namespace V1 {
 namespace Model {
 
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 此参数在请求实体中，采用json字符串格式。
+/// Response Object
 /// </summary>
-class HUAWEICLOUD_LTS_V2_EXPORT  QueryLtsStructLogResponseBodyNew
-    : public ModelBase
+class HUAWEICLOUD_MPC_V1_EXPORT  UpdateTenantAccessInfoResponse
+    : public ModelBase, public HttpResponse
 {
 public:
-    QueryLtsStructLogResponseBodyNew();
-    virtual ~QueryLtsStructLogResponseBodyNew();
+    UpdateTenantAccessInfoResponse();
+    virtual ~UpdateTenantAccessInfoResponse();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -35,11 +35,14 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// QueryLtsStructLogResponseBodyNew members
+    /// UpdateTenantAccessInfoResponse members
 
 
 protected:
 
+#ifdef RTTR_FLAG
+    RTTR_ENABLE()
+#endif
 };
 
 
@@ -49,4 +52,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_LTS_V2_MODEL_QueryLtsStructLogResponseBodyNew_H_
+#endif // HUAWEICLOUD_SDK_MPC_V1_MODEL_UpdateTenantAccessInfoResponse_H_

@@ -23,6 +23,7 @@ PublishMessageRequestBody::PublishMessageRequestBody()
     tagsIsSet_ = false;
     timeToLive_ = "";
     timeToLiveIsSet_ = false;
+    messageAttributesIsSet_ = false;
 }
 
 PublishMessageRequestBody::~PublishMessageRequestBody() = default;
@@ -52,6 +53,9 @@ web::json::value PublishMessageRequestBody::toJson() const
     }
     if(timeToLiveIsSet_) {
         val[utility::conversions::to_string_t("time_to_live")] = ModelBase::toJson(timeToLive_);
+    }
+    if(messageAttributesIsSet_) {
+        val[utility::conversions::to_string_t("message_attributes")] = ModelBase::toJson(messageAttributes_);
     }
 
     return val;
@@ -112,6 +116,15 @@ bool PublishMessageRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTimeToLive(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("message_attributes"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("message_attributes"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<MessageAttribute> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMessageAttributes(refVal);
         }
     }
     return ok;
@@ -242,6 +255,27 @@ bool PublishMessageRequestBody::timeToLiveIsSet() const
 void PublishMessageRequestBody::unsettimeToLive()
 {
     timeToLiveIsSet_ = false;
+}
+
+std::vector<MessageAttribute>& PublishMessageRequestBody::getMessageAttributes()
+{
+    return messageAttributes_;
+}
+
+void PublishMessageRequestBody::setMessageAttributes(const std::vector<MessageAttribute>& value)
+{
+    messageAttributes_ = value;
+    messageAttributesIsSet_ = true;
+}
+
+bool PublishMessageRequestBody::messageAttributesIsSet() const
+{
+    return messageAttributesIsSet_;
+}
+
+void PublishMessageRequestBody::unsetmessageAttributes()
+{
+    messageAttributesIsSet_ = false;
 }
 
 }

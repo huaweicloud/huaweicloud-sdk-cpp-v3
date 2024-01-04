@@ -10,7 +10,6 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/rds/v3/model/OffSiteBackupPolicy.h>
-#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -40,17 +39,17 @@ public:
     /// SetOffSiteBackupPolicyRequestBody members
 
     /// <summary>
-    /// 备份策略对象，包括备份类型、备份保留天数、目标区域ID和目标project ID。
+    /// 
     /// </summary>
 
-    std::vector<OffSiteBackupPolicy>& getPolicyPara();
+    OffSiteBackupPolicy getPolicyPara() const;
     bool policyParaIsSet() const;
     void unsetpolicyPara();
-    void setPolicyPara(const std::vector<OffSiteBackupPolicy>& value);
+    void setPolicyPara(const OffSiteBackupPolicy& value);
 
 
 protected:
-    std::vector<OffSiteBackupPolicy> policyPara_;
+    OffSiteBackupPolicy policyPara_;
     bool policyParaIsSet_;
 
 };

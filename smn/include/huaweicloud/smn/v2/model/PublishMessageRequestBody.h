@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/smn/v2/model/MessageAttribute.h>
 #include <string>
 #include <map>
 #include <vector>
@@ -94,6 +95,15 @@ public:
     void unsettimeToLive();
     void setTimeToLive(const std::string& value);
 
+    /// <summary>
+    /// 消息属性列表
+    /// </summary>
+
+    std::vector<MessageAttribute>& getMessageAttributes();
+    bool messageAttributesIsSet() const;
+    void unsetmessageAttributes();
+    void setMessageAttributes(const std::vector<MessageAttribute>& value);
+
 
 protected:
     std::string subject_;
@@ -108,6 +118,8 @@ protected:
     bool tagsIsSet_;
     std::string timeToLive_;
     bool timeToLiveIsSet_;
+    std::vector<MessageAttribute> messageAttributes_;
+    bool messageAttributesIsSet_;
 
 };
 

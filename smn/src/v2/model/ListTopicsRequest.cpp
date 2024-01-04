@@ -24,6 +24,8 @@ ListTopicsRequest::ListTopicsRequest()
     fuzzyNameIsSet_ = false;
     topicId_ = "";
     topicIdIsSet_ = false;
+    fuzzyDisplayName_ = "";
+    fuzzyDisplayNameIsSet_ = false;
 }
 
 ListTopicsRequest::~ListTopicsRequest() = default;
@@ -53,6 +55,9 @@ web::json::value ListTopicsRequest::toJson() const
     }
     if(topicIdIsSet_) {
         val[utility::conversions::to_string_t("topic_id")] = ModelBase::toJson(topicId_);
+    }
+    if(fuzzyDisplayNameIsSet_) {
+        val[utility::conversions::to_string_t("fuzzy_display_name")] = ModelBase::toJson(fuzzyDisplayName_);
     }
 
     return val;
@@ -113,6 +118,15 @@ bool ListTopicsRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTopicId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("fuzzy_display_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("fuzzy_display_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFuzzyDisplayName(refVal);
         }
     }
     return ok;
@@ -243,6 +257,27 @@ bool ListTopicsRequest::topicIdIsSet() const
 void ListTopicsRequest::unsettopicId()
 {
     topicIdIsSet_ = false;
+}
+
+std::string ListTopicsRequest::getFuzzyDisplayName() const
+{
+    return fuzzyDisplayName_;
+}
+
+void ListTopicsRequest::setFuzzyDisplayName(const std::string& value)
+{
+    fuzzyDisplayName_ = value;
+    fuzzyDisplayNameIsSet_ = true;
+}
+
+bool ListTopicsRequest::fuzzyDisplayNameIsSet() const
+{
+    return fuzzyDisplayNameIsSet_;
+}
+
+void ListTopicsRequest::unsetfuzzyDisplayName()
+{
+    fuzzyDisplayNameIsSet_ = false;
 }
 
 }

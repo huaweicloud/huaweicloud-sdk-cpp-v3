@@ -58,6 +58,8 @@ public:
     static HttpRequestDef genRequestDefForDeleteTemplateGroup();
     static HttpRequestDef genRequestDefForListTemplateGroup();
     static HttpRequestDef genRequestDefForUpdateTemplateGroup();
+    static HttpRequestDef genRequestDefForShowTenantAccessInfo();
+    static HttpRequestDef genRequestDefForUpdateTenantAccessInfo();
     static HttpRequestDef genRequestDefForCreateThumbnailsTask();
     static HttpRequestDef genRequestDefForDeleteThumbnailsTask();
     static HttpRequestDef genRequestDefForListThumbnailsTask();

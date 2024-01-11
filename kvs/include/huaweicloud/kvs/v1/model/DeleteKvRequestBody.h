@@ -12,9 +12,9 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/kvs/v1/model/ConditionExpression.h>
-#include <huaweicloud/kvs/v1/model/ReturnPartialBlob.h>
+#include <huaweicloud/kvs/v1/model/Condition_expression.h>
 #include <string>
+#include <huaweicloud/kvs/v1/model/Projection_blob.h>
 #include <huaweicloud/core/bson/Bson.h>
 #include <vector>
 
@@ -46,7 +46,7 @@ public:
     /// DeleteKvRequestBody members
 
     /// <summary>
-    /// 
+    /// 表名，仓内唯一。 - 长度：[3, 63] - 取值字符限制：[a-z0-9_-]+
     /// </summary>
 
     std::string getTableName() const;
@@ -55,7 +55,7 @@ public:
     void setTableName(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 用户自定义的主键名及值。 &gt; 内容字段为主键字段名和值，组合索引多个元素。
     /// </summary>
 
     Document getPrimaryKey() const;
@@ -67,22 +67,13 @@ public:
     /// 
     /// </summary>
 
-    ConditionExpression getConditionExpression() const;
+    Condition_expression getConditionExpression() const;
     bool conditionExpressionIsSet() const;
     void unsetconditionExpression();
-    void setConditionExpression(const ConditionExpression& value);
+    void setConditionExpression(const Condition_expression& value);
 
     /// <summary>
-    /// 
-    /// </summary>
-
-    Document getExpressionVarDefine() const;
-    bool expressionVarDefineIsSet() const;
-    void unsetexpressionVarDefine();
-    void setExpressionVarDefine(const Document& value);
-
-    /// <summary>
-    /// 
+    /// 对kv_doc有效，返回哪些字段列表，默认全部。
     /// </summary>
 
     std::vector<std::string>& getProjectionFields();
@@ -94,10 +85,10 @@ public:
     /// 
     /// </summary>
 
-    ReturnPartialBlob getReturnPartialBlob() const;
-    bool returnPartialBlobIsSet() const;
-    void unsetreturnPartialBlob();
-    void setReturnPartialBlob(const ReturnPartialBlob& value);
+    Projection_blob getProjectionBlob() const;
+    bool projectionBlobIsSet() const;
+    void unsetprojectionBlob();
+    void setProjectionBlob(const Projection_blob& value);
 
 
 protected:
@@ -105,14 +96,12 @@ protected:
     bool tableNameIsSet_;
     Document primaryKey_;
     bool primaryKeyIsSet_;
-    ConditionExpression conditionExpression_;
+    Condition_expression conditionExpression_;
     bool conditionExpressionIsSet_;
-    Document expressionVarDefine_;
-    bool expressionVarDefineIsSet_;
     std::vector<std::string> projectionFields_;
     bool projectionFieldsIsSet_;
-    ReturnPartialBlob returnPartialBlob_;
-    bool returnPartialBlobIsSet_;
+    Projection_blob projectionBlob_;
+    bool projectionBlobIsSet_;
 
 };
 

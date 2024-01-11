@@ -26,7 +26,7 @@ void DescribeTableRequestBody::validate()
 bool DescribeTableRequestBody::toBson(Builder &builder) const
 {
 
-    if (tableNameIsSet_ && !bson_append(builder, "TableName", tableName_)) {
+    if (tableNameIsSet_ && !bson_append(builder, "table_name", tableName_)) {
         return false;
     }
 
@@ -40,7 +40,7 @@ bool DescribeTableRequestBody::fromBson(const Viewer &viewer)
     while (it != viewer.end()) {
         const std::string &key = it->key();
         
-        if (key == "TableName") {
+        if (key == "table_name") {
             if (!bson_get(it, tableName_)) {
                 return false;
             }

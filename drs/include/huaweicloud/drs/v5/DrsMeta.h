@@ -14,7 +14,9 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 class HUAWEICLOUD_DRS_V5_EXPORT  DrsMeta {
 public:
     static HttpRequestDef genRequestDefForBatchCreateJobsAsync();
+    static HttpRequestDef genRequestDefForBatchCreateTags();
     static HttpRequestDef genRequestDefForBatchDeleteJobsById();
+    static HttpRequestDef genRequestDefForBatchDeleteTags();
     static HttpRequestDef genRequestDefForBatchExecuteJobActions();
     static HttpRequestDef genRequestDefForBatchStopJobsAction();
     static HttpRequestDef genRequestDefForBatchTagAction();
@@ -25,6 +27,7 @@ public:
     static HttpRequestDef genRequestDefForCollectPositionAsync();
     static HttpRequestDef genRequestDefForCommitAsyncJob();
     static HttpRequestDef genRequestDefForCopyJob();
+    static HttpRequestDef genRequestDefForCountInstanceByTags();
     static HttpRequestDef genRequestDefForCreateJob();
     static HttpRequestDef genRequestDefForDeleteJdbcDriver();
     static HttpRequestDef genRequestDefForDeleteJob();
@@ -36,10 +39,15 @@ public:
     static HttpRequestDef genRequestDefForListAsyncJobDetail();
     static HttpRequestDef genRequestDefForListAsyncJobs();
     static HttpRequestDef genRequestDefForListDbObjects();
+    static HttpRequestDef genRequestDefForListInstanceByTags();
+    static HttpRequestDef genRequestDefForListInstanceTags();
     static HttpRequestDef genRequestDefForListJdbcDrivers();
+    static HttpRequestDef genRequestDefForListJobHistoryParameters();
+    static HttpRequestDef genRequestDefForListJobParameters();
     static HttpRequestDef genRequestDefForListJobs();
     static HttpRequestDef genRequestDefForListLinks();
     static HttpRequestDef genRequestDefForListProjectTags();
+    static HttpRequestDef genRequestDefForListTags();
     static HttpRequestDef genRequestDefForShowActions();
     static HttpRequestDef genRequestDefForShowColumnInfoResult();
     static HttpRequestDef genRequestDefForShowComparePolicy();
@@ -68,6 +76,7 @@ public:
     static HttpRequestDef genRequestDefForUpdateBatchAsyncJobs();
     static HttpRequestDef genRequestDefForUpdateDataProgress();
     static HttpRequestDef genRequestDefForUpdateJob();
+    static HttpRequestDef genRequestDefForUpdateJobConfigurations();
     static HttpRequestDef genRequestDefForUpdateStartPosition();
     static HttpRequestDef genRequestDefForUploadDbObjectTemplate();
     static HttpRequestDef genRequestDefForUploadJdbcDriver();

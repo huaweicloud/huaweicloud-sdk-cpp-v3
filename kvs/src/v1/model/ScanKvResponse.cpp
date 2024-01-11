@@ -18,7 +18,7 @@ ScanKvResponse::ScanKvResponse()
     filteredCount_ = 0;
     filteredCountIsSet_ = false;
     cursorKeyIsSet_ = false;
-    kvArrayIsSet_ = false;
+    returnedKvItemsIsSet_ = false;
 }
 
 ScanKvResponse::~ScanKvResponse() = default;
@@ -30,16 +30,16 @@ void ScanKvResponse::validate()
 bool ScanKvResponse::toBson(Builder &builder) const
 {
 
-    if (returnedCountIsSet_ && !bson_append(builder, "ReturnedCount", returnedCount_)) {
+    if (returnedCountIsSet_ && !bson_append(builder, "returned_count", returnedCount_)) {
         return false;
     }
-    if (filteredCountIsSet_ && !bson_append(builder, "FilteredCount", filteredCount_)) {
+    if (filteredCountIsSet_ && !bson_append(builder, "filtered_count", filteredCount_)) {
         return false;
     }
-    if (cursorKeyIsSet_ && !bson_append(builder, "CursorKey", cursorKey_)) {
+    if (cursorKeyIsSet_ && !bson_append(builder, "cursor_key", cursorKey_)) {
         return false;
     }
-    if (kvArrayIsSet_ && !bson_append(builder, "KvArray", kvArray_)) {
+    if (returnedKvItemsIsSet_ && !bson_append(builder, "returned_kv_items", returnedKvItems_)) {
         return false;
     }
 
@@ -53,7 +53,7 @@ bool ScanKvResponse::fromBson(const Viewer &viewer)
     while (it != viewer.end()) {
         const std::string &key = it->key();
         
-        if (key == "ReturnedCount") {
+        if (key == "returned_count") {
             if (!bson_get(it, returnedCount_)) {
                 return false;
             }
@@ -62,7 +62,7 @@ bool ScanKvResponse::fromBson(const Viewer &viewer)
             continue;
         }
         
-        if (key == "FilteredCount") {
+        if (key == "filtered_count") {
             if (!bson_get(it, filteredCount_)) {
                 return false;
             }
@@ -71,7 +71,7 @@ bool ScanKvResponse::fromBson(const Viewer &viewer)
             continue;
         }
         
-        if (key == "CursorKey") {
+        if (key == "cursor_key") {
             if (!bson_get(it, cursorKey_)) {
                 return false;
             }
@@ -80,11 +80,11 @@ bool ScanKvResponse::fromBson(const Viewer &viewer)
             continue;
         }
         
-        if (key == "KvArray") {
-            if (!bson_get(it, kvArray_)) {
+        if (key == "returned_kv_items") {
+            if (!bson_get(it, returnedKvItems_)) {
                 return false;
             }
-            kvArrayIsSet_ = true;
+            returnedKvItemsIsSet_ = true;
             ++it;
             continue;
         }
@@ -158,25 +158,25 @@ void ScanKvResponse::unsetcursorKey()
     cursorKeyIsSet_ = false;
 }
 
-std::vector<KvItem>& ScanKvResponse::getKvArray()
+std::vector<Returned_kv_item>& ScanKvResponse::getReturnedKvItems()
 {
-    return kvArray_;
+    return returnedKvItems_;
 }
 
-void ScanKvResponse::setKvArray(const std::vector<KvItem>& value)
+void ScanKvResponse::setReturnedKvItems(const std::vector<Returned_kv_item>& value)
 {
-    kvArray_ = value;
-    kvArrayIsSet_ = true;
+    returnedKvItems_ = value;
+    returnedKvItemsIsSet_ = true;
 }
 
-bool ScanKvResponse::kvArrayIsSet() const
+bool ScanKvResponse::returnedKvItemsIsSet() const
 {
-    return kvArrayIsSet_;
+    return returnedKvItemsIsSet_;
 }
 
-void ScanKvResponse::unsetkvArray()
+void ScanKvResponse::unsetreturnedKvItems()
 {
-    kvArrayIsSet_ = false;
+    returnedKvItemsIsSet_ = false;
 }
 
 }

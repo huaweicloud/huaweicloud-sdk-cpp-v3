@@ -16,6 +16,8 @@ QueryTranscodingsTaskResponse::QueryTranscodingsTaskResponse()
     taskIdIsSet_ = false;
     status_ = "";
     statusIsSet_ = false;
+    progress_ = 0;
+    progressIsSet_ = false;
     createTime_ = "";
     createTimeIsSet_ = false;
     endTime_ = "";
@@ -55,6 +57,9 @@ web::json::value QueryTranscodingsTaskResponse::toJson() const
     }
     if(statusIsSet_) {
         val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
+    }
+    if(progressIsSet_) {
+        val[utility::conversions::to_string_t("progress")] = ModelBase::toJson(progress_);
     }
     if(createTimeIsSet_) {
         val[utility::conversions::to_string_t("create_time")] = ModelBase::toJson(createTime_);
@@ -124,6 +129,15 @@ bool QueryTranscodingsTaskResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("progress"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("progress"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProgress(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("create_time"))) {
@@ -305,6 +319,27 @@ bool QueryTranscodingsTaskResponse::statusIsSet() const
 void QueryTranscodingsTaskResponse::unsetstatus()
 {
     statusIsSet_ = false;
+}
+
+int32_t QueryTranscodingsTaskResponse::getProgress() const
+{
+    return progress_;
+}
+
+void QueryTranscodingsTaskResponse::setProgress(int32_t value)
+{
+    progress_ = value;
+    progressIsSet_ = true;
+}
+
+bool QueryTranscodingsTaskResponse::progressIsSet() const
+{
+    return progressIsSet_;
+}
+
+void QueryTranscodingsTaskResponse::unsetprogress()
+{
+    progressIsSet_ = false;
 }
 
 std::string QueryTranscodingsTaskResponse::getCreateTime() const

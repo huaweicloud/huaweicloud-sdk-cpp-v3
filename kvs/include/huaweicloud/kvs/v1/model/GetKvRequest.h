@@ -43,7 +43,7 @@ public:
     /// GetKvRequest members
 
     /// <summary>
-    /// store name
+    /// 仓名
     /// </summary>
 
     std::string getStoreName() const;

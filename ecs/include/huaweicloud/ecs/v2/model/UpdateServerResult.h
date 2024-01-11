@@ -224,6 +224,15 @@ public:
     void setStatus(const std::string& value);
 
     /// <summary>
+    /// 创建弹性云服务器时指定的user_data（编码过后的信息）。
+    /// </summary>
+
+    std::string getOSEXTSRVATTRuserData() const;
+    bool oSEXTSRVATTRuserDataIsSet() const;
+    void unsetoSEXTSRVATTRuserData();
+    void setOSEXTSRVATTRuserData(const std::string& value);
+
+    /// <summary>
     /// 弹性云服务器的主机名。
     /// </summary>
 
@@ -274,6 +283,8 @@ protected:
     bool tagsIsSet_;
     std::string status_;
     bool statusIsSet_;
+    std::string oSEXTSRVATTRuserData_;
+    bool oSEXTSRVATTRuserDataIsSet_;
     std::string oSEXTSRVATTRhostname_;
     bool oSEXTSRVATTRhostnameIsSet_;
 

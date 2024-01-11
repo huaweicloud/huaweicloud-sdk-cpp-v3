@@ -12,7 +12,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/kvs/v1/model/KvBlobAttr.h>
+#include <huaweicloud/kvs/v1/model/Kv_blob_attr.h>
 #include <huaweicloud/core/bson/Bson.h>
 
 namespace HuaweiCloud {
@@ -43,7 +43,7 @@ public:
     /// RenameKvResponse members
 
     /// <summary>
-    /// 
+    /// 用户自定义的主键名及值。
     /// </summary>
 
     Document getOldPrimaryKey() const;
@@ -55,28 +55,17 @@ public:
     /// 
     /// </summary>
 
-    KvBlobAttr getKvBlobAttr() const;
+    Kv_blob_attr getKvBlobAttr() const;
     bool kvBlobAttrIsSet() const;
     void unsetkvBlobAttr();
-    void setKvBlobAttr(const KvBlobAttr& value);
-
-    /// <summary>
-    /// 
-    /// </summary>
-
-    Document getKvDoc() const;
-    bool kvDocIsSet() const;
-    void unsetkvDoc();
-    void setKvDoc(const Document& value);
+    void setKvBlobAttr(const Kv_blob_attr& value);
 
 
 protected:
     Document oldPrimaryKey_;
     bool oldPrimaryKeyIsSet_;
-    KvBlobAttr kvBlobAttr_;
+    Kv_blob_attr kvBlobAttr_;
     bool kvBlobAttrIsSet_;
-    Document kvDoc_;
-    bool kvDocIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

@@ -28,10 +28,10 @@ void Fail::validate()
 bool Fail::toBson(Builder &builder) const
 {
 
-    if (operIdIsSet_ && !bson_append(builder, "OperId", operId_)) {
+    if (operIdIsSet_ && !bson_append(builder, "oper_id", operId_)) {
         return false;
     }
-    if (statusIsSet_ && !bson_append(builder, "Status", status_)) {
+    if (statusIsSet_ && !bson_append(builder, "status", status_)) {
         return false;
     }
 
@@ -45,7 +45,7 @@ bool Fail::fromBson(const Viewer &viewer)
     while (it != viewer.end()) {
         const std::string &key = it->key();
         
-        if (key == "OperId") {
+        if (key == "oper_id") {
             if (!bson_get(it, operId_)) {
                 return false;
             }
@@ -54,7 +54,7 @@ bool Fail::fromBson(const Viewer &viewer)
             continue;
         }
         
-        if (key == "Status") {
+        if (key == "status") {
             if (!bson_get(it, status_)) {
                 return false;
             }

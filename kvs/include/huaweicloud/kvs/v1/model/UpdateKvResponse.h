@@ -13,7 +13,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/core/bson/Bson.h>
-#include <huaweicloud/kvs/v1/model/KvBlobData.h>
+#include <huaweicloud/kvs/v1/model/Kv_blob_data.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -46,26 +46,26 @@ public:
     /// 
     /// </summary>
 
-    KvBlobData getKvBlobData() const;
+    Kv_blob_data getKvBlobData() const;
     bool kvBlobDataIsSet() const;
     void unsetkvBlobData();
-    void setKvBlobData(const KvBlobData& value);
+    void setKvBlobData(const Kv_blob_data& value);
 
     /// <summary>
-    /// 
+    /// 对kv_doc有效，返回文档所有字段。
     /// </summary>
 
-    Document getKvFields() const;
-    bool kvFieldsIsSet() const;
-    void unsetkvFields();
-    void setKvFields(const Document& value);
+    Document getKvDoc() const;
+    bool kvDocIsSet() const;
+    void unsetkvDoc();
+    void setKvDoc(const Document& value);
 
 
 protected:
-    KvBlobData kvBlobData_;
+    Kv_blob_data kvBlobData_;
     bool kvBlobDataIsSet_;
-    Document kvFields_;
-    bool kvFieldsIsSet_;
+    Document kvDoc_;
+    bool kvDocIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

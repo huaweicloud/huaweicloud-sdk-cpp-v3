@@ -46,10 +46,21 @@ public:
     void unsetisTargetReadonly();
     void setIsTargetReadonly(bool value);
 
+    /// <summary>
+    /// Redis集群到GeminiDB Redis迁移场景填写，连接源端Redis集群的子任务个数，输入值在1到16之间，且输入值不能大于源端Redis集群的分片个数，请根据源端Redis集群的规模合理选择。建议集群的每4个分片设置1个源端分片个数，即每1个子任务连接源端集群的4个分片。
+    /// </summary>
+
+    int32_t getNodeNum() const;
+    bool nodeNumIsSet() const;
+    void unsetnodeNum();
+    void setNodeNum(int32_t value);
+
 
 protected:
     bool isTargetReadonly_;
     bool isTargetReadonlyIsSet_;
+    int32_t nodeNum_;
+    bool nodeNumIsSet_;
 
 };
 

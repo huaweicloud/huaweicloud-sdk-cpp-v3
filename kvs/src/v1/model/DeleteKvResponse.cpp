@@ -26,10 +26,10 @@ void DeleteKvResponse::validate()
 bool DeleteKvResponse::toBson(Builder &builder) const
 {
 
-    if (kvBlobDataIsSet_ && !bson_append(builder, "KvBlobData", kvBlobData_)) {
+    if (kvBlobDataIsSet_ && !bson_append(builder, "kv_blob_data", kvBlobData_)) {
         return false;
     }
-    if (kvDocIsSet_ && !bson_append(builder, "KvDoc", kvDoc_)) {
+    if (kvDocIsSet_ && !bson_append(builder, "kv_doc", kvDoc_)) {
         return false;
     }
 
@@ -43,7 +43,7 @@ bool DeleteKvResponse::fromBson(const Viewer &viewer)
     while (it != viewer.end()) {
         const std::string &key = it->key();
         
-        if (key == "KvBlobData") {
+        if (key == "kv_blob_data") {
             if (!bson_get(it, kvBlobData_)) {
                 return false;
             }
@@ -52,7 +52,7 @@ bool DeleteKvResponse::fromBson(const Viewer &viewer)
             continue;
         }
         
-        if (key == "KvDoc") {
+        if (key == "kv_doc") {
             if (!bson_get(it, kvDoc_)) {
                 return false;
             }
@@ -67,12 +67,12 @@ bool DeleteKvResponse::fromBson(const Viewer &viewer)
     return true;
 }
 
-KvBlobData DeleteKvResponse::getKvBlobData() const
+Kv_blob_data DeleteKvResponse::getKvBlobData() const
 {
     return kvBlobData_;
 }
 
-void DeleteKvResponse::setKvBlobData(const KvBlobData& value)
+void DeleteKvResponse::setKvBlobData(const Kv_blob_data& value)
 {
     kvBlobData_ = value;
     kvBlobDataIsSet_ = true;

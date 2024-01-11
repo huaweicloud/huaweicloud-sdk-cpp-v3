@@ -16,9 +16,9 @@ DescribeTableResponse::DescribeTableResponse()
     tableName_ = "";
     tableNameIsSet_ = false;
     primaryKeySchemaIsSet_ = false;
-    local2ndIndexSchemaIsSet_ = false;
-    global2ndIndexSchemaIsSet_ = false;
-    runtimeInfoIsSet_ = false;
+    localSecondaryIndexSchemaIsSet_ = false;
+    globalSecondaryIndexSchemaIsSet_ = false;
+    runTimeInfoIsSet_ = false;
 }
 
 DescribeTableResponse::~DescribeTableResponse() = default;
@@ -30,19 +30,19 @@ void DescribeTableResponse::validate()
 bool DescribeTableResponse::toBson(Builder &builder) const
 {
 
-    if (tableNameIsSet_ && !bson_append(builder, "TableName", tableName_)) {
+    if (tableNameIsSet_ && !bson_append(builder, "table_name", tableName_)) {
         return false;
     }
-    if (primaryKeySchemaIsSet_ && !bson_append(builder, "PrimaryKeySchema", primaryKeySchema_)) {
+    if (primaryKeySchemaIsSet_ && !bson_append(builder, "primary_key_schema", primaryKeySchema_)) {
         return false;
     }
-    if (local2ndIndexSchemaIsSet_ && !bson_append(builder, "Local2ndIndexSchema", local2ndIndexSchema_)) {
+    if (localSecondaryIndexSchemaIsSet_ && !bson_append(builder, "local_secondary_index_schema", localSecondaryIndexSchema_)) {
         return false;
     }
-    if (global2ndIndexSchemaIsSet_ && !bson_append(builder, "Global2ndIndexSchema", global2ndIndexSchema_)) {
+    if (globalSecondaryIndexSchemaIsSet_ && !bson_append(builder, "global_secondary_index_schema", globalSecondaryIndexSchema_)) {
         return false;
     }
-    if (runtimeInfoIsSet_ && !bson_append(builder, "RuntimeInfo", runtimeInfo_)) {
+    if (runTimeInfoIsSet_ && !bson_append(builder, "run_time_info", runTimeInfo_)) {
         return false;
     }
 
@@ -56,7 +56,7 @@ bool DescribeTableResponse::fromBson(const Viewer &viewer)
     while (it != viewer.end()) {
         const std::string &key = it->key();
         
-        if (key == "TableName") {
+        if (key == "table_name") {
             if (!bson_get(it, tableName_)) {
                 return false;
             }
@@ -65,7 +65,7 @@ bool DescribeTableResponse::fromBson(const Viewer &viewer)
             continue;
         }
         
-        if (key == "PrimaryKeySchema") {
+        if (key == "primary_key_schema") {
             if (!bson_get(it, primaryKeySchema_)) {
                 return false;
             }
@@ -74,29 +74,29 @@ bool DescribeTableResponse::fromBson(const Viewer &viewer)
             continue;
         }
         
-        if (key == "Local2ndIndexSchema") {
-            if (!bson_get(it, local2ndIndexSchema_)) {
+        if (key == "local_secondary_index_schema") {
+            if (!bson_get(it, localSecondaryIndexSchema_)) {
                 return false;
             }
-            local2ndIndexSchemaIsSet_ = true;
+            localSecondaryIndexSchemaIsSet_ = true;
             ++it;
             continue;
         }
         
-        if (key == "Global2ndIndexSchema") {
-            if (!bson_get(it, global2ndIndexSchema_)) {
+        if (key == "global_secondary_index_schema") {
+            if (!bson_get(it, globalSecondaryIndexSchema_)) {
                 return false;
             }
-            global2ndIndexSchemaIsSet_ = true;
+            globalSecondaryIndexSchemaIsSet_ = true;
             ++it;
             continue;
         }
         
-        if (key == "RuntimeInfo") {
-            if (!bson_get(it, runtimeInfo_)) {
+        if (key == "run_time_info") {
+            if (!bson_get(it, runTimeInfo_)) {
                 return false;
             }
-            runtimeInfoIsSet_ = true;
+            runTimeInfoIsSet_ = true;
             ++it;
             continue;
         }
@@ -128,12 +128,12 @@ void DescribeTableResponse::unsettableName()
     tableNameIsSet_ = false;
 }
 
-PrimaryKeySchema DescribeTableResponse::getPrimaryKeySchema() const
+Primary_key_schema DescribeTableResponse::getPrimaryKeySchema() const
 {
     return primaryKeySchema_;
 }
 
-void DescribeTableResponse::setPrimaryKeySchema(const PrimaryKeySchema& value)
+void DescribeTableResponse::setPrimaryKeySchema(const Primary_key_schema& value)
 {
     primaryKeySchema_ = value;
     primaryKeySchemaIsSet_ = true;
@@ -149,67 +149,67 @@ void DescribeTableResponse::unsetprimaryKeySchema()
     primaryKeySchemaIsSet_ = false;
 }
 
-std::vector<LsiIndex>& DescribeTableResponse::getLocal2ndIndexSchema()
+std::vector<Secondary_index>& DescribeTableResponse::getLocalSecondaryIndexSchema()
 {
-    return local2ndIndexSchema_;
+    return localSecondaryIndexSchema_;
 }
 
-void DescribeTableResponse::setLocal2ndIndexSchema(const std::vector<LsiIndex>& value)
+void DescribeTableResponse::setLocalSecondaryIndexSchema(const std::vector<Secondary_index>& value)
 {
-    local2ndIndexSchema_ = value;
-    local2ndIndexSchemaIsSet_ = true;
+    localSecondaryIndexSchema_ = value;
+    localSecondaryIndexSchemaIsSet_ = true;
 }
 
-bool DescribeTableResponse::local2ndIndexSchemaIsSet() const
+bool DescribeTableResponse::localSecondaryIndexSchemaIsSet() const
 {
-    return local2ndIndexSchemaIsSet_;
+    return localSecondaryIndexSchemaIsSet_;
 }
 
-void DescribeTableResponse::unsetlocal2ndIndexSchema()
+void DescribeTableResponse::unsetlocalSecondaryIndexSchema()
 {
-    local2ndIndexSchemaIsSet_ = false;
+    localSecondaryIndexSchemaIsSet_ = false;
 }
 
-std::vector<GsiIndex>& DescribeTableResponse::getGlobal2ndIndexSchema()
+std::vector<Global_secondary_index>& DescribeTableResponse::getGlobalSecondaryIndexSchema()
 {
-    return global2ndIndexSchema_;
+    return globalSecondaryIndexSchema_;
 }
 
-void DescribeTableResponse::setGlobal2ndIndexSchema(const std::vector<GsiIndex>& value)
+void DescribeTableResponse::setGlobalSecondaryIndexSchema(const std::vector<Global_secondary_index>& value)
 {
-    global2ndIndexSchema_ = value;
-    global2ndIndexSchemaIsSet_ = true;
+    globalSecondaryIndexSchema_ = value;
+    globalSecondaryIndexSchemaIsSet_ = true;
 }
 
-bool DescribeTableResponse::global2ndIndexSchemaIsSet() const
+bool DescribeTableResponse::globalSecondaryIndexSchemaIsSet() const
 {
-    return global2ndIndexSchemaIsSet_;
+    return globalSecondaryIndexSchemaIsSet_;
 }
 
-void DescribeTableResponse::unsetglobal2ndIndexSchema()
+void DescribeTableResponse::unsetglobalSecondaryIndexSchema()
 {
-    global2ndIndexSchemaIsSet_ = false;
+    globalSecondaryIndexSchemaIsSet_ = false;
 }
 
-RuntimeInfo DescribeTableResponse::getRuntimeInfo() const
+Run_time_info DescribeTableResponse::getRunTimeInfo() const
 {
-    return runtimeInfo_;
+    return runTimeInfo_;
 }
 
-void DescribeTableResponse::setRuntimeInfo(const RuntimeInfo& value)
+void DescribeTableResponse::setRunTimeInfo(const Run_time_info& value)
 {
-    runtimeInfo_ = value;
-    runtimeInfoIsSet_ = true;
+    runTimeInfo_ = value;
+    runTimeInfoIsSet_ = true;
 }
 
-bool DescribeTableResponse::runtimeInfoIsSet() const
+bool DescribeTableResponse::runTimeInfoIsSet() const
 {
-    return runtimeInfoIsSet_;
+    return runTimeInfoIsSet_;
 }
 
-void DescribeTableResponse::unsetruntimeInfo()
+void DescribeTableResponse::unsetrunTimeInfo()
 {
-    runtimeInfoIsSet_ = false;
+    runTimeInfoIsSet_ = false;
 }
 
 }

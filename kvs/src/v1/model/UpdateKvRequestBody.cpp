@@ -21,7 +21,7 @@ UpdateKvRequestBody::UpdateKvRequestBody()
     updateFieldsIsSet_ = false;
     projectionFieldsIsSet_ = false;
     updateBlobIsSet_ = false;
-    returnPartialBlobIsSet_ = false;
+    projectionBlobIsSet_ = false;
 }
 
 UpdateKvRequestBody::~UpdateKvRequestBody() = default;
@@ -33,28 +33,28 @@ void UpdateKvRequestBody::validate()
 bool UpdateKvRequestBody::toBson(Builder &builder) const
 {
 
-    if (tableNameIsSet_ && !bson_append(builder, "TableName", tableName_)) {
+    if (tableNameIsSet_ && !bson_append(builder, "table_name", tableName_)) {
         return false;
     }
-    if (primaryKeyIsSet_ && !bson_append(builder, "PrimaryKey", primaryKey_)) {
+    if (primaryKeyIsSet_ && !bson_append(builder, "primary_key", primaryKey_)) {
         return false;
     }
-    if (conditionExpressionIsSet_ && !bson_append(builder, "ConditionExpression", conditionExpression_)) {
+    if (conditionExpressionIsSet_ && !bson_append(builder, "condition_expression", conditionExpression_)) {
         return false;
     }
-    if (kvOptionsIsSet_ && !bson_append(builder, "KvOptions", kvOptions_)) {
+    if (kvOptionsIsSet_ && !bson_append(builder, "kv_options", kvOptions_)) {
         return false;
     }
-    if (updateFieldsIsSet_ && !bson_append(builder, "UpdateFields", updateFields_)) {
+    if (updateFieldsIsSet_ && !bson_append(builder, "update_fields", updateFields_)) {
         return false;
     }
-    if (projectionFieldsIsSet_ && !bson_append(builder, "ProjectionFields", projectionFields_)) {
+    if (projectionFieldsIsSet_ && !bson_append(builder, "projection_fields", projectionFields_)) {
         return false;
     }
-    if (updateBlobIsSet_ && !bson_append(builder, "UpdateBlob", updateBlob_)) {
+    if (updateBlobIsSet_ && !bson_append(builder, "update_blob", updateBlob_)) {
         return false;
     }
-    if (returnPartialBlobIsSet_ && !bson_append(builder, "ReturnPartialBlob", returnPartialBlob_)) {
+    if (projectionBlobIsSet_ && !bson_append(builder, "projection_blob", projectionBlob_)) {
         return false;
     }
 
@@ -68,7 +68,7 @@ bool UpdateKvRequestBody::fromBson(const Viewer &viewer)
     while (it != viewer.end()) {
         const std::string &key = it->key();
         
-        if (key == "TableName") {
+        if (key == "table_name") {
             if (!bson_get(it, tableName_)) {
                 return false;
             }
@@ -77,7 +77,7 @@ bool UpdateKvRequestBody::fromBson(const Viewer &viewer)
             continue;
         }
         
-        if (key == "PrimaryKey") {
+        if (key == "primary_key") {
             if (!bson_get(it, primaryKey_)) {
                 return false;
             }
@@ -86,7 +86,7 @@ bool UpdateKvRequestBody::fromBson(const Viewer &viewer)
             continue;
         }
         
-        if (key == "ConditionExpression") {
+        if (key == "condition_expression") {
             if (!bson_get(it, conditionExpression_)) {
                 return false;
             }
@@ -95,7 +95,7 @@ bool UpdateKvRequestBody::fromBson(const Viewer &viewer)
             continue;
         }
         
-        if (key == "KvOptions") {
+        if (key == "kv_options") {
             if (!bson_get(it, kvOptions_)) {
                 return false;
             }
@@ -104,7 +104,7 @@ bool UpdateKvRequestBody::fromBson(const Viewer &viewer)
             continue;
         }
         
-        if (key == "UpdateFields") {
+        if (key == "update_fields") {
             if (!bson_get(it, updateFields_)) {
                 return false;
             }
@@ -113,7 +113,7 @@ bool UpdateKvRequestBody::fromBson(const Viewer &viewer)
             continue;
         }
         
-        if (key == "ProjectionFields") {
+        if (key == "projection_fields") {
             if (!bson_get(it, projectionFields_)) {
                 return false;
             }
@@ -122,7 +122,7 @@ bool UpdateKvRequestBody::fromBson(const Viewer &viewer)
             continue;
         }
         
-        if (key == "UpdateBlob") {
+        if (key == "update_blob") {
             if (!bson_get(it, updateBlob_)) {
                 return false;
             }
@@ -131,11 +131,11 @@ bool UpdateKvRequestBody::fromBson(const Viewer &viewer)
             continue;
         }
         
-        if (key == "ReturnPartialBlob") {
-            if (!bson_get(it, returnPartialBlob_)) {
+        if (key == "projection_blob") {
+            if (!bson_get(it, projectionBlob_)) {
                 return false;
             }
-            returnPartialBlobIsSet_ = true;
+            projectionBlobIsSet_ = true;
             ++it;
             continue;
         }
@@ -188,12 +188,12 @@ void UpdateKvRequestBody::unsetprimaryKey()
     primaryKeyIsSet_ = false;
 }
 
-ConditionExpression UpdateKvRequestBody::getConditionExpression() const
+Condition_expression UpdateKvRequestBody::getConditionExpression() const
 {
     return conditionExpression_;
 }
 
-void UpdateKvRequestBody::setConditionExpression(const ConditionExpression& value)
+void UpdateKvRequestBody::setConditionExpression(const Condition_expression& value)
 {
     conditionExpression_ = value;
     conditionExpressionIsSet_ = true;
@@ -209,12 +209,12 @@ void UpdateKvRequestBody::unsetconditionExpression()
     conditionExpressionIsSet_ = false;
 }
 
-KvOptions UpdateKvRequestBody::getKvOptions() const
+Kv_options UpdateKvRequestBody::getKvOptions() const
 {
     return kvOptions_;
 }
 
-void UpdateKvRequestBody::setKvOptions(const KvOptions& value)
+void UpdateKvRequestBody::setKvOptions(const Kv_options& value)
 {
     kvOptions_ = value;
     kvOptionsIsSet_ = true;
@@ -230,12 +230,12 @@ void UpdateKvRequestBody::unsetkvOptions()
     kvOptionsIsSet_ = false;
 }
 
-UpdateFields UpdateKvRequestBody::getUpdateFields() const
+Update_fields UpdateKvRequestBody::getUpdateFields() const
 {
     return updateFields_;
 }
 
-void UpdateKvRequestBody::setUpdateFields(const UpdateFields& value)
+void UpdateKvRequestBody::setUpdateFields(const Update_fields& value)
 {
     updateFields_ = value;
     updateFieldsIsSet_ = true;
@@ -272,12 +272,12 @@ void UpdateKvRequestBody::unsetprojectionFields()
     projectionFieldsIsSet_ = false;
 }
 
-UpdateBlob UpdateKvRequestBody::getUpdateBlob() const
+Update_blob UpdateKvRequestBody::getUpdateBlob() const
 {
     return updateBlob_;
 }
 
-void UpdateKvRequestBody::setUpdateBlob(const UpdateBlob& value)
+void UpdateKvRequestBody::setUpdateBlob(const Update_blob& value)
 {
     updateBlob_ = value;
     updateBlobIsSet_ = true;
@@ -293,25 +293,25 @@ void UpdateKvRequestBody::unsetupdateBlob()
     updateBlobIsSet_ = false;
 }
 
-ReturnPartialBlob UpdateKvRequestBody::getReturnPartialBlob() const
+Projection_blob UpdateKvRequestBody::getProjectionBlob() const
 {
-    return returnPartialBlob_;
+    return projectionBlob_;
 }
 
-void UpdateKvRequestBody::setReturnPartialBlob(const ReturnPartialBlob& value)
+void UpdateKvRequestBody::setProjectionBlob(const Projection_blob& value)
 {
-    returnPartialBlob_ = value;
-    returnPartialBlobIsSet_ = true;
+    projectionBlob_ = value;
+    projectionBlobIsSet_ = true;
 }
 
-bool UpdateKvRequestBody::returnPartialBlobIsSet() const
+bool UpdateKvRequestBody::projectionBlobIsSet() const
 {
-    return returnPartialBlobIsSet_;
+    return projectionBlobIsSet_;
 }
 
-void UpdateKvRequestBody::unsetreturnPartialBlob()
+void UpdateKvRequestBody::unsetprojectionBlob()
 {
-    returnPartialBlobIsSet_ = false;
+    projectionBlobIsSet_ = false;
 }
 
 }

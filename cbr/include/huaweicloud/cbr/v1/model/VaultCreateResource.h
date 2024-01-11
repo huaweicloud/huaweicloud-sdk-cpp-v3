@@ -251,6 +251,15 @@ public:
     void unsetfrozen();
     void setFrozen(bool value);
 
+    /// <summary>
+    /// 用于标识SMB服务
+    /// </summary>
+
+    std::string getSysLockSourceService() const;
+    bool sysLockSourceServiceIsSet() const;
+    void unsetsysLockSourceService();
+    void setSysLockSourceService(const std::string& value);
+
 
 protected:
     Billing billing_;
@@ -299,6 +308,8 @@ protected:
     bool cbcDeleteCountIsSet_;
     bool frozen_;
     bool frozenIsSet_;
+    std::string sysLockSourceService_;
+    bool sysLockSourceServiceIsSet_;
 
 };
 

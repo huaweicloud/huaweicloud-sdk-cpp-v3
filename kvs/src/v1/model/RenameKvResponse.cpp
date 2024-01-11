@@ -15,7 +15,6 @@ RenameKvResponse::RenameKvResponse()
 {
     oldPrimaryKeyIsSet_ = false;
     kvBlobAttrIsSet_ = false;
-    kvDocIsSet_ = false;
 }
 
 RenameKvResponse::~RenameKvResponse() = default;
@@ -27,13 +26,10 @@ void RenameKvResponse::validate()
 bool RenameKvResponse::toBson(Builder &builder) const
 {
 
-    if (oldPrimaryKeyIsSet_ && !bson_append(builder, "OldPrimaryKey", oldPrimaryKey_)) {
+    if (oldPrimaryKeyIsSet_ && !bson_append(builder, "old_primary_key", oldPrimaryKey_)) {
         return false;
     }
-    if (kvBlobAttrIsSet_ && !bson_append(builder, "KvBlobAttr", kvBlobAttr_)) {
-        return false;
-    }
-    if (kvDocIsSet_ && !bson_append(builder, "KvDoc", kvDoc_)) {
+    if (kvBlobAttrIsSet_ && !bson_append(builder, "kv_blob_attr", kvBlobAttr_)) {
         return false;
     }
 
@@ -47,7 +43,7 @@ bool RenameKvResponse::fromBson(const Viewer &viewer)
     while (it != viewer.end()) {
         const std::string &key = it->key();
         
-        if (key == "OldPrimaryKey") {
+        if (key == "old_primary_key") {
             if (!bson_get(it, oldPrimaryKey_)) {
                 return false;
             }
@@ -56,20 +52,11 @@ bool RenameKvResponse::fromBson(const Viewer &viewer)
             continue;
         }
         
-        if (key == "KvBlobAttr") {
+        if (key == "kv_blob_attr") {
             if (!bson_get(it, kvBlobAttr_)) {
                 return false;
             }
             kvBlobAttrIsSet_ = true;
-            ++it;
-            continue;
-        }
-        
-        if (key == "KvDoc") {
-            if (!bson_get(it, kvDoc_)) {
-                return false;
-            }
-            kvDocIsSet_ = true;
             ++it;
             continue;
         }
@@ -101,12 +88,12 @@ void RenameKvResponse::unsetoldPrimaryKey()
     oldPrimaryKeyIsSet_ = false;
 }
 
-KvBlobAttr RenameKvResponse::getKvBlobAttr() const
+Kv_blob_attr RenameKvResponse::getKvBlobAttr() const
 {
     return kvBlobAttr_;
 }
 
-void RenameKvResponse::setKvBlobAttr(const KvBlobAttr& value)
+void RenameKvResponse::setKvBlobAttr(const Kv_blob_attr& value)
 {
     kvBlobAttr_ = value;
     kvBlobAttrIsSet_ = true;
@@ -120,27 +107,6 @@ bool RenameKvResponse::kvBlobAttrIsSet() const
 void RenameKvResponse::unsetkvBlobAttr()
 {
     kvBlobAttrIsSet_ = false;
-}
-
-Document RenameKvResponse::getKvDoc() const
-{
-    return kvDoc_;
-}
-
-void RenameKvResponse::setKvDoc(const Document& value)
-{
-    kvDoc_ = value;
-    kvDocIsSet_ = true;
-}
-
-bool RenameKvResponse::kvDocIsSet() const
-{
-    return kvDocIsSet_;
-}
-
-void RenameKvResponse::unsetkvDoc()
-{
-    kvDocIsSet_ = false;
 }
 
 }

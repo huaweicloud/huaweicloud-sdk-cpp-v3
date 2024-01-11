@@ -627,6 +627,9 @@ HttpRequestDef RdsMeta::genRequestDefForListInstances() {
     reqDefBuilder.withRequestField(FieldDef().withName("DatastoreType")
                   .withJsonTag("datastore_type")
                   .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EpsId")
+                  .withJsonTag("eps_id")
+                  .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("VpcId")
                   .withJsonTag("vpc_id")
                   .withLocationType(Query_));

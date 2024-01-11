@@ -13,8 +13,8 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/core/bson/Bson.h>
-#include <huaweicloud/kvs/v1/model/KvItem.h>
 #include <vector>
+#include <huaweicloud/kvs/v1/model/Returned_kv_item.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -44,7 +44,7 @@ public:
     /// ScanSkeyKvResponse members
 
     /// <summary>
-    /// 
+    /// 返回的文档数量，为_0_不表示结束。 - 如果filtered_count超过_500_仍无匹配，则返回_0。 -  长度：4
     /// </summary>
 
     int32_t getReturnedCount() const;
@@ -53,7 +53,7 @@ public:
     void setReturnedCount(int32_t value);
 
     /// <summary>
-    /// 
+    /// 被过滤掉的文档数量 - 长度：4
     /// </summary>
 
     int32_t getFilteredCount() const;
@@ -62,7 +62,7 @@ public:
     void setFilteredCount(int32_t value);
 
     /// <summary>
-    /// 
+    /// 下次请求时的start_key。 &gt; 该值为空时，表示指定范围或者指定filter条件所有kv已经返回。
     /// </summary>
 
     Document getCursorSortKey() const;
@@ -71,13 +71,13 @@ public:
     void setCursorSortKey(const Document& value);
 
     /// <summary>
-    /// 
+    /// 返回的kv列表，与scan_kv的kv_array相同。
     /// </summary>
 
-    std::vector<KvItem>& getKvArray();
-    bool kvArrayIsSet() const;
-    void unsetkvArray();
-    void setKvArray(const std::vector<KvItem>& value);
+    std::vector<Returned_kv_item>& getReturnedKvItems();
+    bool returnedKvItemsIsSet() const;
+    void unsetreturnedKvItems();
+    void setReturnedKvItems(const std::vector<Returned_kv_item>& value);
 
 
 protected:
@@ -87,8 +87,8 @@ protected:
     bool filteredCountIsSet_;
     Document cursorSortKey_;
     bool cursorSortKeyIsSet_;
-    std::vector<KvItem> kvArray_;
-    bool kvArrayIsSet_;
+    std::vector<Returned_kv_item> returnedKvItems_;
+    bool returnedKvItemsIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

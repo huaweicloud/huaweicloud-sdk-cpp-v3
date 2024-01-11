@@ -12,13 +12,13 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/kvs/v1/model/ConditionExpression.h>
-#include <huaweicloud/kvs/v1/model/KvOptions.h>
-#include <huaweicloud/kvs/v1/model/ReturnPartialBlob.h>
+#include <huaweicloud/kvs/v1/model/Kv_options.h>
+#include <huaweicloud/kvs/v1/model/Update_fields.h>
+#include <huaweicloud/kvs/v1/model/Condition_expression.h>
 #include <string>
-#include <huaweicloud/kvs/v1/model/UpdateBlob.h>
+#include <huaweicloud/kvs/v1/model/Projection_blob.h>
+#include <huaweicloud/kvs/v1/model/Update_blob.h>
 #include <huaweicloud/core/bson/Bson.h>
-#include <huaweicloud/kvs/v1/model/UpdateFields.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -49,7 +49,7 @@ public:
     /// UpdateKvRequestBody members
 
     /// <summary>
-    /// 
+    /// 表名，仓内唯一。 - 长度：[3, 63] - 取值字符限制：[a-z0-9_-]+
     /// </summary>
 
     std::string getTableName() const;
@@ -58,7 +58,7 @@ public:
     void setTableName(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 用户自定义的主键名及值。 &gt; 内容字段：主键字段名和值，组合索引多个元素。
     /// </summary>
 
     Document getPrimaryKey() const;
@@ -70,31 +70,31 @@ public:
     /// 
     /// </summary>
 
-    ConditionExpression getConditionExpression() const;
+    Condition_expression getConditionExpression() const;
     bool conditionExpressionIsSet() const;
     void unsetconditionExpression();
-    void setConditionExpression(const ConditionExpression& value);
+    void setConditionExpression(const Condition_expression& value);
 
     /// <summary>
     /// 
     /// </summary>
 
-    KvOptions getKvOptions() const;
+    Kv_options getKvOptions() const;
     bool kvOptionsIsSet() const;
     void unsetkvOptions();
-    void setKvOptions(const KvOptions& value);
+    void setKvOptions(const Kv_options& value);
 
     /// <summary>
     /// 
     /// </summary>
 
-    UpdateFields getUpdateFields() const;
+    Update_fields getUpdateFields() const;
     bool updateFieldsIsSet() const;
     void unsetupdateFields();
-    void setUpdateFields(const UpdateFields& value);
+    void setUpdateFields(const Update_fields& value);
 
     /// <summary>
-    /// 
+    /// 对kv_doc有效，返回哪些字段列表，默认全部。 &gt; 字段名或嵌套字段路径用&#39;/&#39;分割 ，e_name为下标。
     /// </summary>
 
     std::vector<std::string>& getProjectionFields();
@@ -106,19 +106,19 @@ public:
     /// 
     /// </summary>
 
-    UpdateBlob getUpdateBlob() const;
+    Update_blob getUpdateBlob() const;
     bool updateBlobIsSet() const;
     void unsetupdateBlob();
-    void setUpdateBlob(const UpdateBlob& value);
+    void setUpdateBlob(const Update_blob& value);
 
     /// <summary>
     /// 
     /// </summary>
 
-    ReturnPartialBlob getReturnPartialBlob() const;
-    bool returnPartialBlobIsSet() const;
-    void unsetreturnPartialBlob();
-    void setReturnPartialBlob(const ReturnPartialBlob& value);
+    Projection_blob getProjectionBlob() const;
+    bool projectionBlobIsSet() const;
+    void unsetprojectionBlob();
+    void setProjectionBlob(const Projection_blob& value);
 
 
 protected:
@@ -126,18 +126,18 @@ protected:
     bool tableNameIsSet_;
     Document primaryKey_;
     bool primaryKeyIsSet_;
-    ConditionExpression conditionExpression_;
+    Condition_expression conditionExpression_;
     bool conditionExpressionIsSet_;
-    KvOptions kvOptions_;
+    Kv_options kvOptions_;
     bool kvOptionsIsSet_;
-    UpdateFields updateFields_;
+    Update_fields updateFields_;
     bool updateFieldsIsSet_;
     std::vector<std::string> projectionFields_;
     bool projectionFieldsIsSet_;
-    UpdateBlob updateBlob_;
+    Update_blob updateBlob_;
     bool updateBlobIsSet_;
-    ReturnPartialBlob returnPartialBlob_;
-    bool returnPartialBlobIsSet_;
+    Projection_blob projectionBlob_;
+    bool projectionBlobIsSet_;
 
 };
 

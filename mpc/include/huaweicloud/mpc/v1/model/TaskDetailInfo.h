@@ -60,6 +60,15 @@ public:
     void setStatus(const std::string& value);
 
     /// <summary>
+    /// 任务执行进度百分比, 取值范围：[0, 100]。 
+    /// </summary>
+
+    int32_t getProgress() const;
+    bool progressIsSet() const;
+    void unsetprogress();
+    void setProgress(int32_t value);
+
+    /// <summary>
     /// 转码任务启动时间 
     /// </summary>
 
@@ -155,6 +164,8 @@ protected:
     bool taskIdIsSet_;
     std::string status_;
     bool statusIsSet_;
+    int32_t progress_;
+    bool progressIsSet_;
     std::string createTime_;
     bool createTimeIsSet_;
     std::string startTime_;

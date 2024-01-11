@@ -20,6 +20,8 @@ IdcardVerificationResult::IdcardVerificationResult()
     validSexIsSet_ = false;
     validDate_ = false;
     validDateIsSet_ = false;
+    validValidityPeriod_ = false;
+    validValidityPeriodIsSet_ = false;
 }
 
 IdcardVerificationResult::~IdcardVerificationResult() = default;
@@ -43,6 +45,9 @@ web::json::value IdcardVerificationResult::toJson() const
     }
     if(validDateIsSet_) {
         val[utility::conversions::to_string_t("valid_date")] = ModelBase::toJson(validDate_);
+    }
+    if(validValidityPeriodIsSet_) {
+        val[utility::conversions::to_string_t("valid_validity_period")] = ModelBase::toJson(validValidityPeriod_);
     }
 
     return val;
@@ -85,6 +90,15 @@ bool IdcardVerificationResult::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setValidDate(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("valid_validity_period"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("valid_validity_period"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setValidValidityPeriod(refVal);
         }
     }
     return ok;
@@ -173,6 +187,27 @@ bool IdcardVerificationResult::validDateIsSet() const
 void IdcardVerificationResult::unsetvalidDate()
 {
     validDateIsSet_ = false;
+}
+
+bool IdcardVerificationResult::isValidValidityPeriod() const
+{
+    return validValidityPeriod_;
+}
+
+void IdcardVerificationResult::setValidValidityPeriod(bool value)
+{
+    validValidityPeriod_ = value;
+    validValidityPeriodIsSet_ = true;
+}
+
+bool IdcardVerificationResult::validValidityPeriodIsSet() const
+{
+    return validValidityPeriodIsSet_;
+}
+
+void IdcardVerificationResult::unsetvalidValidityPeriod()
+{
+    validValidityPeriodIsSet_ = false;
 }
 
 }

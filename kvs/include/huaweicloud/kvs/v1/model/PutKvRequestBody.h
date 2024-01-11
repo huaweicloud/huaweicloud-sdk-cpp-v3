@@ -12,9 +12,9 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/kvs/v1/model/ConditionExpression.h>
-#include <huaweicloud/kvs/v1/model/KvBlob.h>
+#include <huaweicloud/kvs/v1/model/Condition_expression.h>
 #include <string>
+#include <huaweicloud/kvs/v1/model/Kv_blob.h>
 #include <huaweicloud/core/bson/Bson.h>
 
 namespace HuaweiCloud {
@@ -45,7 +45,7 @@ public:
     /// PutKvRequestBody members
 
     /// <summary>
-    /// 
+    /// 表名，仓内唯一。 - 长度：[3, 63] - 取值字符限制：[a-z0-9_-]+
     /// </summary>
 
     std::string getTableName() const;
@@ -57,13 +57,13 @@ public:
     /// 
     /// </summary>
 
-    ConditionExpression getConditionExpression() const;
+    Condition_expression getConditionExpression() const;
     bool conditionExpressionIsSet() const;
     void unsetconditionExpression();
-    void setConditionExpression(const ConditionExpression& value);
+    void setConditionExpression(const Condition_expression& value);
 
     /// <summary>
-    /// 
+    /// 用户文档。
     /// </summary>
 
     Document getKvDoc() const;
@@ -75,20 +75,20 @@ public:
     /// 
     /// </summary>
 
-    KvBlob getKvBlob() const;
+    Kv_blob getKvBlob() const;
     bool kvBlobIsSet() const;
     void unsetkvBlob();
-    void setKvBlob(const KvBlob& value);
+    void setKvBlob(const Kv_blob& value);
 
 
 protected:
     std::string tableName_;
     bool tableNameIsSet_;
-    ConditionExpression conditionExpression_;
+    Condition_expression conditionExpression_;
     bool conditionExpressionIsSet_;
     Document kvDoc_;
     bool kvDocIsSet_;
-    KvBlob kvBlob_;
+    Kv_blob kvBlob_;
     bool kvBlobIsSet_;
 
 };

@@ -42,7 +42,7 @@ public:
     /// DescribeTableRequestBody members
 
     /// <summary>
-    /// 
+    /// 表名。 - 长度：[3, 63] - 取值字符限制：[a-zA-Z0-9_-]+
     /// </summary>
 
     std::string getTableName() const;

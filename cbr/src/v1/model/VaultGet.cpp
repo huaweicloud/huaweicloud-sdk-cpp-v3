@@ -40,6 +40,8 @@ VaultGet::VaultGet()
     smnNotifyIsSet_ = false;
     threshold_ = 0;
     thresholdIsSet_ = false;
+    sysLockSourceService_ = "";
+    sysLockSourceServiceIsSet_ = false;
     updatedAt_ = "";
     updatedAtIsSet_ = false;
     version_ = "";
@@ -103,6 +105,9 @@ web::json::value VaultGet::toJson() const
     }
     if(thresholdIsSet_) {
         val[utility::conversions::to_string_t("threshold")] = ModelBase::toJson(threshold_);
+    }
+    if(sysLockSourceServiceIsSet_) {
+        val[utility::conversions::to_string_t("sys_lock_source_service")] = ModelBase::toJson(sysLockSourceService_);
     }
     if(updatedAtIsSet_) {
         val[utility::conversions::to_string_t("updated_at")] = ModelBase::toJson(updatedAt_);
@@ -259,6 +264,15 @@ bool VaultGet::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setThreshold(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("sys_lock_source_service"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sys_lock_source_service"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSysLockSourceService(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("updated_at"))) {
@@ -617,6 +631,27 @@ bool VaultGet::thresholdIsSet() const
 void VaultGet::unsetthreshold()
 {
     thresholdIsSet_ = false;
+}
+
+std::string VaultGet::getSysLockSourceService() const
+{
+    return sysLockSourceService_;
+}
+
+void VaultGet::setSysLockSourceService(const std::string& value)
+{
+    sysLockSourceService_ = value;
+    sysLockSourceServiceIsSet_ = true;
+}
+
+bool VaultGet::sysLockSourceServiceIsSet() const
+{
+    return sysLockSourceServiceIsSet_;
+}
+
+void VaultGet::unsetsysLockSourceService()
+{
+    sysLockSourceServiceIsSet_ = false;
 }
 
 std::string VaultGet::getUpdatedAt() const

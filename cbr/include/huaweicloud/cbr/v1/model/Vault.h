@@ -187,6 +187,15 @@ public:
     void unsetthreshold();
     void setThreshold(int32_t value);
 
+    /// <summary>
+    /// 用于标识SMB服务
+    /// </summary>
+
+    std::string getSysLockSourceService() const;
+    bool sysLockSourceServiceIsSet() const;
+    void unsetsysLockSourceService();
+    void setSysLockSourceService(const std::string& value);
+
 
 protected:
     Billing billing_;
@@ -221,6 +230,8 @@ protected:
     bool smnNotifyIsSet_;
     int32_t threshold_;
     bool thresholdIsSet_;
+    std::string sysLockSourceService_;
+    bool sysLockSourceServiceIsSet_;
 
 };
 

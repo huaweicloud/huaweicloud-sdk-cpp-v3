@@ -32,11 +32,26 @@ IdCardResult::IdCardResult()
     validToIsSet_ = false;
     verificationResultIsSet_ = false;
     textLocationIsSet_ = false;
+    portraitLocationIsSet_ = false;
     detectReproduceResult_ = false;
     detectReproduceResultIsSet_ = false;
     detectCopyResult_ = false;
     detectCopyResultIsSet_ = false;
-    portraitLocationIsSet_ = false;
+    detectTamperingResult_ = false;
+    detectTamperingResultIsSet_ = false;
+    detectBorderIntegrityResult_ = false;
+    detectBorderIntegrityResultIsSet_ = false;
+    detectBlockingWithinBorderResult_ = false;
+    detectBlockingWithinBorderResultIsSet_ = false;
+    detectBlurResult_ = false;
+    detectBlurResultIsSet_ = false;
+    detectInterimResult_ = false;
+    detectInterimResultIsSet_ = false;
+    detectGlareResult_ = false;
+    detectGlareResultIsSet_ = false;
+    scoreInfoIsSet_ = false;
+    frontIsSet_ = false;
+    backIsSet_ = false;
 }
 
 IdCardResult::~IdCardResult() = default;
@@ -82,14 +97,41 @@ web::json::value IdCardResult::toJson() const
     if(textLocationIsSet_) {
         val[utility::conversions::to_string_t("text_location")] = ModelBase::toJson(textLocation_);
     }
+    if(portraitLocationIsSet_) {
+        val[utility::conversions::to_string_t("portrait_location")] = ModelBase::toJson(portraitLocation_);
+    }
     if(detectReproduceResultIsSet_) {
         val[utility::conversions::to_string_t("detect_reproduce_result")] = ModelBase::toJson(detectReproduceResult_);
     }
     if(detectCopyResultIsSet_) {
         val[utility::conversions::to_string_t("detect_copy_result")] = ModelBase::toJson(detectCopyResult_);
     }
-    if(portraitLocationIsSet_) {
-        val[utility::conversions::to_string_t("portrait_location")] = ModelBase::toJson(portraitLocation_);
+    if(detectTamperingResultIsSet_) {
+        val[utility::conversions::to_string_t("detect_tampering_result")] = ModelBase::toJson(detectTamperingResult_);
+    }
+    if(detectBorderIntegrityResultIsSet_) {
+        val[utility::conversions::to_string_t("detect_border_integrity_result")] = ModelBase::toJson(detectBorderIntegrityResult_);
+    }
+    if(detectBlockingWithinBorderResultIsSet_) {
+        val[utility::conversions::to_string_t("detect_blocking_within_border_result")] = ModelBase::toJson(detectBlockingWithinBorderResult_);
+    }
+    if(detectBlurResultIsSet_) {
+        val[utility::conversions::to_string_t("detect_blur_result")] = ModelBase::toJson(detectBlurResult_);
+    }
+    if(detectInterimResultIsSet_) {
+        val[utility::conversions::to_string_t("detect_interim_result")] = ModelBase::toJson(detectInterimResult_);
+    }
+    if(detectGlareResultIsSet_) {
+        val[utility::conversions::to_string_t("detect_glare_result")] = ModelBase::toJson(detectGlareResult_);
+    }
+    if(scoreInfoIsSet_) {
+        val[utility::conversions::to_string_t("score_info")] = ModelBase::toJson(scoreInfo_);
+    }
+    if(frontIsSet_) {
+        val[utility::conversions::to_string_t("front")] = ModelBase::toJson(front_);
+    }
+    if(backIsSet_) {
+        val[utility::conversions::to_string_t("back")] = ModelBase::toJson(back_);
     }
 
     return val;
@@ -197,6 +239,15 @@ bool IdCardResult::fromJson(const web::json::value& val)
             setTextLocation(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("portrait_location"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("portrait_location"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::vector<int32_t>> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPortraitLocation(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("detect_reproduce_result"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("detect_reproduce_result"));
         if(!fieldValue.is_null())
@@ -215,13 +266,85 @@ bool IdCardResult::fromJson(const web::json::value& val)
             setDetectCopyResult(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("portrait_location"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("portrait_location"));
+    if(val.has_field(utility::conversions::to_string_t("detect_tampering_result"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("detect_tampering_result"));
         if(!fieldValue.is_null())
         {
-            std::vector<std::vector<int32_t>> refVal;
+            bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setPortraitLocation(refVal);
+            setDetectTamperingResult(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("detect_border_integrity_result"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("detect_border_integrity_result"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDetectBorderIntegrityResult(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("detect_blocking_within_border_result"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("detect_blocking_within_border_result"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDetectBlockingWithinBorderResult(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("detect_blur_result"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("detect_blur_result"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDetectBlurResult(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("detect_interim_result"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("detect_interim_result"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDetectInterimResult(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("detect_glare_result"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("detect_glare_result"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDetectGlareResult(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("score_info"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("score_info"));
+        if(!fieldValue.is_null())
+        {
+            IdcardScoreInfoResult refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setScoreInfo(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("front"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("front"));
+        if(!fieldValue.is_null())
+        {
+            IdcardFrontResult refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFront(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("back"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("back"));
+        if(!fieldValue.is_null())
+        {
+            IdcardBackResult refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBack(refVal);
         }
     }
     return ok;
@@ -459,6 +582,27 @@ void IdCardResult::unsettextLocation()
     textLocationIsSet_ = false;
 }
 
+std::vector<std::vector<int32_t>>& IdCardResult::getPortraitLocation()
+{
+    return portraitLocation_;
+}
+
+void IdCardResult::setPortraitLocation(const std::vector<std::vector<int32_t>>& value)
+{
+    portraitLocation_ = value;
+    portraitLocationIsSet_ = true;
+}
+
+bool IdCardResult::portraitLocationIsSet() const
+{
+    return portraitLocationIsSet_;
+}
+
+void IdCardResult::unsetportraitLocation()
+{
+    portraitLocationIsSet_ = false;
+}
+
 bool IdCardResult::isDetectReproduceResult() const
 {
     return detectReproduceResult_;
@@ -501,25 +645,193 @@ void IdCardResult::unsetdetectCopyResult()
     detectCopyResultIsSet_ = false;
 }
 
-std::vector<std::vector<int32_t>>& IdCardResult::getPortraitLocation()
+bool IdCardResult::isDetectTamperingResult() const
 {
-    return portraitLocation_;
+    return detectTamperingResult_;
 }
 
-void IdCardResult::setPortraitLocation(const std::vector<std::vector<int32_t>>& value)
+void IdCardResult::setDetectTamperingResult(bool value)
 {
-    portraitLocation_ = value;
-    portraitLocationIsSet_ = true;
+    detectTamperingResult_ = value;
+    detectTamperingResultIsSet_ = true;
 }
 
-bool IdCardResult::portraitLocationIsSet() const
+bool IdCardResult::detectTamperingResultIsSet() const
 {
-    return portraitLocationIsSet_;
+    return detectTamperingResultIsSet_;
 }
 
-void IdCardResult::unsetportraitLocation()
+void IdCardResult::unsetdetectTamperingResult()
 {
-    portraitLocationIsSet_ = false;
+    detectTamperingResultIsSet_ = false;
+}
+
+bool IdCardResult::isDetectBorderIntegrityResult() const
+{
+    return detectBorderIntegrityResult_;
+}
+
+void IdCardResult::setDetectBorderIntegrityResult(bool value)
+{
+    detectBorderIntegrityResult_ = value;
+    detectBorderIntegrityResultIsSet_ = true;
+}
+
+bool IdCardResult::detectBorderIntegrityResultIsSet() const
+{
+    return detectBorderIntegrityResultIsSet_;
+}
+
+void IdCardResult::unsetdetectBorderIntegrityResult()
+{
+    detectBorderIntegrityResultIsSet_ = false;
+}
+
+bool IdCardResult::isDetectBlockingWithinBorderResult() const
+{
+    return detectBlockingWithinBorderResult_;
+}
+
+void IdCardResult::setDetectBlockingWithinBorderResult(bool value)
+{
+    detectBlockingWithinBorderResult_ = value;
+    detectBlockingWithinBorderResultIsSet_ = true;
+}
+
+bool IdCardResult::detectBlockingWithinBorderResultIsSet() const
+{
+    return detectBlockingWithinBorderResultIsSet_;
+}
+
+void IdCardResult::unsetdetectBlockingWithinBorderResult()
+{
+    detectBlockingWithinBorderResultIsSet_ = false;
+}
+
+bool IdCardResult::isDetectBlurResult() const
+{
+    return detectBlurResult_;
+}
+
+void IdCardResult::setDetectBlurResult(bool value)
+{
+    detectBlurResult_ = value;
+    detectBlurResultIsSet_ = true;
+}
+
+bool IdCardResult::detectBlurResultIsSet() const
+{
+    return detectBlurResultIsSet_;
+}
+
+void IdCardResult::unsetdetectBlurResult()
+{
+    detectBlurResultIsSet_ = false;
+}
+
+bool IdCardResult::isDetectInterimResult() const
+{
+    return detectInterimResult_;
+}
+
+void IdCardResult::setDetectInterimResult(bool value)
+{
+    detectInterimResult_ = value;
+    detectInterimResultIsSet_ = true;
+}
+
+bool IdCardResult::detectInterimResultIsSet() const
+{
+    return detectInterimResultIsSet_;
+}
+
+void IdCardResult::unsetdetectInterimResult()
+{
+    detectInterimResultIsSet_ = false;
+}
+
+bool IdCardResult::isDetectGlareResult() const
+{
+    return detectGlareResult_;
+}
+
+void IdCardResult::setDetectGlareResult(bool value)
+{
+    detectGlareResult_ = value;
+    detectGlareResultIsSet_ = true;
+}
+
+bool IdCardResult::detectGlareResultIsSet() const
+{
+    return detectGlareResultIsSet_;
+}
+
+void IdCardResult::unsetdetectGlareResult()
+{
+    detectGlareResultIsSet_ = false;
+}
+
+IdcardScoreInfoResult IdCardResult::getScoreInfo() const
+{
+    return scoreInfo_;
+}
+
+void IdCardResult::setScoreInfo(const IdcardScoreInfoResult& value)
+{
+    scoreInfo_ = value;
+    scoreInfoIsSet_ = true;
+}
+
+bool IdCardResult::scoreInfoIsSet() const
+{
+    return scoreInfoIsSet_;
+}
+
+void IdCardResult::unsetscoreInfo()
+{
+    scoreInfoIsSet_ = false;
+}
+
+IdcardFrontResult IdCardResult::getFront() const
+{
+    return front_;
+}
+
+void IdCardResult::setFront(const IdcardFrontResult& value)
+{
+    front_ = value;
+    frontIsSet_ = true;
+}
+
+bool IdCardResult::frontIsSet() const
+{
+    return frontIsSet_;
+}
+
+void IdCardResult::unsetfront()
+{
+    frontIsSet_ = false;
+}
+
+IdcardBackResult IdCardResult::getBack() const
+{
+    return back_;
+}
+
+void IdCardResult::setBack(const IdcardBackResult& value)
+{
+    back_ = value;
+    backIsSet_ = true;
+}
+
+bool IdCardResult::backIsSet() const
+{
+    return backIsSet_;
+}
+
+void IdCardResult::unsetback()
+{
+    backIsSet_ = false;
 }
 
 }

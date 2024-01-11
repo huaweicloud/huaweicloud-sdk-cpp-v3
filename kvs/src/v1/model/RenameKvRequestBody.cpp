@@ -19,7 +19,6 @@ RenameKvRequestBody::RenameKvRequestBody()
     newSortKeyIsSet_ = false;
     kvOptionsIsSet_ = false;
     updateBlobAttrIsSet_ = false;
-    returnBlobAttrIsSet_ = false;
 }
 
 RenameKvRequestBody::~RenameKvRequestBody() = default;
@@ -31,22 +30,19 @@ void RenameKvRequestBody::validate()
 bool RenameKvRequestBody::toBson(Builder &builder) const
 {
 
-    if (tableNameIsSet_ && !bson_append(builder, "TableName", tableName_)) {
+    if (tableNameIsSet_ && !bson_append(builder, "table_name", tableName_)) {
         return false;
     }
-    if (primaryKeyIsSet_ && !bson_append(builder, "PrimaryKey", primaryKey_)) {
+    if (primaryKeyIsSet_ && !bson_append(builder, "primary_key", primaryKey_)) {
         return false;
     }
-    if (newSortKeyIsSet_ && !bson_append(builder, "NewSortKey", newSortKey_)) {
+    if (newSortKeyIsSet_ && !bson_append(builder, "new_sort_key", newSortKey_)) {
         return false;
     }
-    if (kvOptionsIsSet_ && !bson_append(builder, "KvOptions", kvOptions_)) {
+    if (kvOptionsIsSet_ && !bson_append(builder, "kv_options", kvOptions_)) {
         return false;
     }
-    if (updateBlobAttrIsSet_ && !bson_append(builder, "UpdateBlobAttr", updateBlobAttr_)) {
-        return false;
-    }
-    if (returnBlobAttrIsSet_ && !bson_append(builder, "ReturnBlobAttr", returnBlobAttr_)) {
+    if (updateBlobAttrIsSet_ && !bson_append(builder, "update_blob_attr", updateBlobAttr_)) {
         return false;
     }
 
@@ -60,7 +56,7 @@ bool RenameKvRequestBody::fromBson(const Viewer &viewer)
     while (it != viewer.end()) {
         const std::string &key = it->key();
         
-        if (key == "TableName") {
+        if (key == "table_name") {
             if (!bson_get(it, tableName_)) {
                 return false;
             }
@@ -69,7 +65,7 @@ bool RenameKvRequestBody::fromBson(const Viewer &viewer)
             continue;
         }
         
-        if (key == "PrimaryKey") {
+        if (key == "primary_key") {
             if (!bson_get(it, primaryKey_)) {
                 return false;
             }
@@ -78,7 +74,7 @@ bool RenameKvRequestBody::fromBson(const Viewer &viewer)
             continue;
         }
         
-        if (key == "NewSortKey") {
+        if (key == "new_sort_key") {
             if (!bson_get(it, newSortKey_)) {
                 return false;
             }
@@ -87,7 +83,7 @@ bool RenameKvRequestBody::fromBson(const Viewer &viewer)
             continue;
         }
         
-        if (key == "KvOptions") {
+        if (key == "kv_options") {
             if (!bson_get(it, kvOptions_)) {
                 return false;
             }
@@ -96,20 +92,11 @@ bool RenameKvRequestBody::fromBson(const Viewer &viewer)
             continue;
         }
         
-        if (key == "UpdateBlobAttr") {
+        if (key == "update_blob_attr") {
             if (!bson_get(it, updateBlobAttr_)) {
                 return false;
             }
             updateBlobAttrIsSet_ = true;
-            ++it;
-            continue;
-        }
-        
-        if (key == "ReturnBlobAttr") {
-            if (!bson_get(it, returnBlobAttr_)) {
-                return false;
-            }
-            returnBlobAttrIsSet_ = true;
             ++it;
             continue;
         }
@@ -183,12 +170,12 @@ void RenameKvRequestBody::unsetnewSortKey()
     newSortKeyIsSet_ = false;
 }
 
-KvOptions RenameKvRequestBody::getKvOptions() const
+Kv_options RenameKvRequestBody::getKvOptions() const
 {
     return kvOptions_;
 }
 
-void RenameKvRequestBody::setKvOptions(const KvOptions& value)
+void RenameKvRequestBody::setKvOptions(const Kv_options& value)
 {
     kvOptions_ = value;
     kvOptionsIsSet_ = true;
@@ -204,12 +191,12 @@ void RenameKvRequestBody::unsetkvOptions()
     kvOptionsIsSet_ = false;
 }
 
-UpdateBlobAttr RenameKvRequestBody::getUpdateBlobAttr() const
+Update_blob_attr RenameKvRequestBody::getUpdateBlobAttr() const
 {
     return updateBlobAttr_;
 }
 
-void RenameKvRequestBody::setUpdateBlobAttr(const UpdateBlobAttr& value)
+void RenameKvRequestBody::setUpdateBlobAttr(const Update_blob_attr& value)
 {
     updateBlobAttr_ = value;
     updateBlobAttrIsSet_ = true;
@@ -223,27 +210,6 @@ bool RenameKvRequestBody::updateBlobAttrIsSet() const
 void RenameKvRequestBody::unsetupdateBlobAttr()
 {
     updateBlobAttrIsSet_ = false;
-}
-
-ReturnBlobAttr RenameKvRequestBody::getReturnBlobAttr() const
-{
-    return returnBlobAttr_;
-}
-
-void RenameKvRequestBody::setReturnBlobAttr(const ReturnBlobAttr& value)
-{
-    returnBlobAttr_ = value;
-    returnBlobAttrIsSet_ = true;
-}
-
-bool RenameKvRequestBody::returnBlobAttrIsSet() const
-{
-    return returnBlobAttrIsSet_;
-}
-
-void RenameKvRequestBody::unsetreturnBlobAttr()
-{
-    returnBlobAttrIsSet_ = false;
 }
 
 }

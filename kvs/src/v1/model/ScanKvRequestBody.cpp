@@ -15,18 +15,15 @@ ScanKvRequestBody::ScanKvRequestBody()
 {
     tableName_ = "";
     tableNameIsSet_ = false;
-    strongConsistent_ = false;
-    strongConsistentIsSet_ = false;
-    hintIndex_ = "";
-    hintIndexIsSet_ = false;
-    limitNum_ = 0;
-    limitNumIsSet_ = false;
+    hintIndexName_ = "";
+    hintIndexNameIsSet_ = false;
+    limit_ = 0;
+    limitIsSet_ = false;
     startKeyIsSet_ = false;
     endKeyIsSet_ = false;
     filterExpressionIsSet_ = false;
-    filterVarDefineIsSet_ = false;
     projectionFieldsIsSet_ = false;
-    returnPartialBlobIsSet_ = false;
+    projectionBlobIsSet_ = false;
 }
 
 ScanKvRequestBody::~ScanKvRequestBody() = default;
@@ -38,34 +35,28 @@ void ScanKvRequestBody::validate()
 bool ScanKvRequestBody::toBson(Builder &builder) const
 {
 
-    if (tableNameIsSet_ && !bson_append(builder, "TableName", tableName_)) {
+    if (tableNameIsSet_ && !bson_append(builder, "table_name", tableName_)) {
         return false;
     }
-    if (strongConsistentIsSet_ && !bson_append(builder, "StrongConsistent", strongConsistent_)) {
+    if (hintIndexNameIsSet_ && !bson_append(builder, "hint_index_name", hintIndexName_)) {
         return false;
     }
-    if (hintIndexIsSet_ && !bson_append(builder, "HintIndex", hintIndex_)) {
+    if (limitIsSet_ && !bson_append(builder, "limit", limit_)) {
         return false;
     }
-    if (limitNumIsSet_ && !bson_append(builder, "LimitNum", limitNum_)) {
+    if (startKeyIsSet_ && !bson_append(builder, "start_key", startKey_)) {
         return false;
     }
-    if (startKeyIsSet_ && !bson_append(builder, "StartKey", startKey_)) {
+    if (endKeyIsSet_ && !bson_append(builder, "end_key", endKey_)) {
         return false;
     }
-    if (endKeyIsSet_ && !bson_append(builder, "EndKey", endKey_)) {
+    if (filterExpressionIsSet_ && !bson_append(builder, "filter_expression", filterExpression_)) {
         return false;
     }
-    if (filterExpressionIsSet_ && !bson_append(builder, "FilterExpression", filterExpression_)) {
+    if (projectionFieldsIsSet_ && !bson_append(builder, "projection_fields", projectionFields_)) {
         return false;
     }
-    if (filterVarDefineIsSet_ && !bson_append(builder, "FilterVarDefine", filterVarDefine_)) {
-        return false;
-    }
-    if (projectionFieldsIsSet_ && !bson_append(builder, "ProjectionFields", projectionFields_)) {
-        return false;
-    }
-    if (returnPartialBlobIsSet_ && !bson_append(builder, "ReturnPartialBlob", returnPartialBlob_)) {
+    if (projectionBlobIsSet_ && !bson_append(builder, "projection_blob", projectionBlob_)) {
         return false;
     }
 
@@ -79,7 +70,7 @@ bool ScanKvRequestBody::fromBson(const Viewer &viewer)
     while (it != viewer.end()) {
         const std::string &key = it->key();
         
-        if (key == "TableName") {
+        if (key == "table_name") {
             if (!bson_get(it, tableName_)) {
                 return false;
             }
@@ -88,34 +79,25 @@ bool ScanKvRequestBody::fromBson(const Viewer &viewer)
             continue;
         }
         
-        if (key == "StrongConsistent") {
-            if (!bson_get(it, strongConsistent_)) {
+        if (key == "hint_index_name") {
+            if (!bson_get(it, hintIndexName_)) {
                 return false;
             }
-            strongConsistentIsSet_ = true;
+            hintIndexNameIsSet_ = true;
             ++it;
             continue;
         }
         
-        if (key == "HintIndex") {
-            if (!bson_get(it, hintIndex_)) {
+        if (key == "limit") {
+            if (!bson_get(it, limit_)) {
                 return false;
             }
-            hintIndexIsSet_ = true;
+            limitIsSet_ = true;
             ++it;
             continue;
         }
         
-        if (key == "LimitNum") {
-            if (!bson_get(it, limitNum_)) {
-                return false;
-            }
-            limitNumIsSet_ = true;
-            ++it;
-            continue;
-        }
-        
-        if (key == "StartKey") {
+        if (key == "start_key") {
             if (!bson_get(it, startKey_)) {
                 return false;
             }
@@ -124,7 +106,7 @@ bool ScanKvRequestBody::fromBson(const Viewer &viewer)
             continue;
         }
         
-        if (key == "EndKey") {
+        if (key == "end_key") {
             if (!bson_get(it, endKey_)) {
                 return false;
             }
@@ -133,7 +115,7 @@ bool ScanKvRequestBody::fromBson(const Viewer &viewer)
             continue;
         }
         
-        if (key == "FilterExpression") {
+        if (key == "filter_expression") {
             if (!bson_get(it, filterExpression_)) {
                 return false;
             }
@@ -142,16 +124,7 @@ bool ScanKvRequestBody::fromBson(const Viewer &viewer)
             continue;
         }
         
-        if (key == "FilterVarDefine") {
-            if (!bson_get(it, filterVarDefine_)) {
-                return false;
-            }
-            filterVarDefineIsSet_ = true;
-            ++it;
-            continue;
-        }
-        
-        if (key == "ProjectionFields") {
+        if (key == "projection_fields") {
             if (!bson_get(it, projectionFields_)) {
                 return false;
             }
@@ -160,11 +133,11 @@ bool ScanKvRequestBody::fromBson(const Viewer &viewer)
             continue;
         }
         
-        if (key == "ReturnPartialBlob") {
-            if (!bson_get(it, returnPartialBlob_)) {
+        if (key == "projection_blob") {
+            if (!bson_get(it, projectionBlob_)) {
                 return false;
             }
-            returnPartialBlobIsSet_ = true;
+            projectionBlobIsSet_ = true;
             ++it;
             continue;
         }
@@ -196,67 +169,46 @@ void ScanKvRequestBody::unsettableName()
     tableNameIsSet_ = false;
 }
 
-bool ScanKvRequestBody::isStrongConsistent() const
+std::string ScanKvRequestBody::getHintIndexName() const
 {
-    return strongConsistent_;
+    return hintIndexName_;
 }
 
-void ScanKvRequestBody::setStrongConsistent(bool value)
+void ScanKvRequestBody::setHintIndexName(const std::string& value)
 {
-    strongConsistent_ = value;
-    strongConsistentIsSet_ = true;
+    hintIndexName_ = value;
+    hintIndexNameIsSet_ = true;
 }
 
-bool ScanKvRequestBody::strongConsistentIsSet() const
+bool ScanKvRequestBody::hintIndexNameIsSet() const
 {
-    return strongConsistentIsSet_;
+    return hintIndexNameIsSet_;
 }
 
-void ScanKvRequestBody::unsetstrongConsistent()
+void ScanKvRequestBody::unsethintIndexName()
 {
-    strongConsistentIsSet_ = false;
+    hintIndexNameIsSet_ = false;
 }
 
-std::string ScanKvRequestBody::getHintIndex() const
+int32_t ScanKvRequestBody::getLimit() const
 {
-    return hintIndex_;
+    return limit_;
 }
 
-void ScanKvRequestBody::setHintIndex(const std::string& value)
+void ScanKvRequestBody::setLimit(int32_t value)
 {
-    hintIndex_ = value;
-    hintIndexIsSet_ = true;
+    limit_ = value;
+    limitIsSet_ = true;
 }
 
-bool ScanKvRequestBody::hintIndexIsSet() const
+bool ScanKvRequestBody::limitIsSet() const
 {
-    return hintIndexIsSet_;
+    return limitIsSet_;
 }
 
-void ScanKvRequestBody::unsethintIndex()
+void ScanKvRequestBody::unsetlimit()
 {
-    hintIndexIsSet_ = false;
-}
-
-int32_t ScanKvRequestBody::getLimitNum() const
-{
-    return limitNum_;
-}
-
-void ScanKvRequestBody::setLimitNum(int32_t value)
-{
-    limitNum_ = value;
-    limitNumIsSet_ = true;
-}
-
-bool ScanKvRequestBody::limitNumIsSet() const
-{
-    return limitNumIsSet_;
-}
-
-void ScanKvRequestBody::unsetlimitNum()
-{
-    limitNumIsSet_ = false;
+    limitIsSet_ = false;
 }
 
 Document ScanKvRequestBody::getStartKey() const
@@ -301,12 +253,12 @@ void ScanKvRequestBody::unsetendKey()
     endKeyIsSet_ = false;
 }
 
-ConditionExpression ScanKvRequestBody::getFilterExpression() const
+Condition_expression ScanKvRequestBody::getFilterExpression() const
 {
     return filterExpression_;
 }
 
-void ScanKvRequestBody::setFilterExpression(const ConditionExpression& value)
+void ScanKvRequestBody::setFilterExpression(const Condition_expression& value)
 {
     filterExpression_ = value;
     filterExpressionIsSet_ = true;
@@ -320,27 +272,6 @@ bool ScanKvRequestBody::filterExpressionIsSet() const
 void ScanKvRequestBody::unsetfilterExpression()
 {
     filterExpressionIsSet_ = false;
-}
-
-Document ScanKvRequestBody::getFilterVarDefine() const
-{
-    return filterVarDefine_;
-}
-
-void ScanKvRequestBody::setFilterVarDefine(const Document& value)
-{
-    filterVarDefine_ = value;
-    filterVarDefineIsSet_ = true;
-}
-
-bool ScanKvRequestBody::filterVarDefineIsSet() const
-{
-    return filterVarDefineIsSet_;
-}
-
-void ScanKvRequestBody::unsetfilterVarDefine()
-{
-    filterVarDefineIsSet_ = false;
 }
 
 std::vector<std::string>& ScanKvRequestBody::getProjectionFields()
@@ -364,25 +295,25 @@ void ScanKvRequestBody::unsetprojectionFields()
     projectionFieldsIsSet_ = false;
 }
 
-ReturnPartialBlob ScanKvRequestBody::getReturnPartialBlob() const
+Projection_blob ScanKvRequestBody::getProjectionBlob() const
 {
-    return returnPartialBlob_;
+    return projectionBlob_;
 }
 
-void ScanKvRequestBody::setReturnPartialBlob(const ReturnPartialBlob& value)
+void ScanKvRequestBody::setProjectionBlob(const Projection_blob& value)
 {
-    returnPartialBlob_ = value;
-    returnPartialBlobIsSet_ = true;
+    projectionBlob_ = value;
+    projectionBlobIsSet_ = true;
 }
 
-bool ScanKvRequestBody::returnPartialBlobIsSet() const
+bool ScanKvRequestBody::projectionBlobIsSet() const
 {
-    return returnPartialBlobIsSet_;
+    return projectionBlobIsSet_;
 }
 
-void ScanKvRequestBody::unsetreturnPartialBlob()
+void ScanKvRequestBody::unsetprojectionBlob()
 {
-    returnPartialBlobIsSet_ = false;
+    projectionBlobIsSet_ = false;
 }
 
 }

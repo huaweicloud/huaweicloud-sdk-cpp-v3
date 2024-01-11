@@ -16,6 +16,8 @@ TaskDetailInfo::TaskDetailInfo()
     taskIdIsSet_ = false;
     status_ = "";
     statusIsSet_ = false;
+    progress_ = 0;
+    progressIsSet_ = false;
     createTime_ = "";
     createTimeIsSet_ = false;
     startTime_ = "";
@@ -49,6 +51,9 @@ web::json::value TaskDetailInfo::toJson() const
     }
     if(statusIsSet_) {
         val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
+    }
+    if(progressIsSet_) {
+        val[utility::conversions::to_string_t("progress")] = ModelBase::toJson(progress_);
     }
     if(createTimeIsSet_) {
         val[utility::conversions::to_string_t("create_time")] = ModelBase::toJson(createTime_);
@@ -103,6 +108,15 @@ bool TaskDetailInfo::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("progress"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("progress"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProgress(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("create_time"))) {
@@ -239,6 +253,27 @@ bool TaskDetailInfo::statusIsSet() const
 void TaskDetailInfo::unsetstatus()
 {
     statusIsSet_ = false;
+}
+
+int32_t TaskDetailInfo::getProgress() const
+{
+    return progress_;
+}
+
+void TaskDetailInfo::setProgress(int32_t value)
+{
+    progress_ = value;
+    progressIsSet_ = true;
+}
+
+bool TaskDetailInfo::progressIsSet() const
+{
+    return progressIsSet_;
+}
+
+void TaskDetailInfo::unsetprogress()
+{
+    progressIsSet_ = false;
 }
 
 std::string TaskDetailInfo::getCreateTime() const

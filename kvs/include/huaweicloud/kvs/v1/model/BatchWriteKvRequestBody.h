@@ -12,7 +12,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/kvs/v1/model/TableBatch.h>
+#include <huaweicloud/kvs/v1/model/Table_batch.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -43,17 +43,17 @@ public:
     /// BatchWriteKvRequestBody members
 
     /// <summary>
-    /// 
+    /// 行操作数组，可以是多个表的操作。
     /// </summary>
 
-    std::vector<TableBatch>& getTableOpers();
+    std::vector<Table_batch>& getTableOpers();
     bool tableOpersIsSet() const;
     void unsettableOpers();
-    void setTableOpers(const std::vector<TableBatch>& value);
+    void setTableOpers(const std::vector<Table_batch>& value);
 
 
 protected:
-    std::vector<TableBatch> tableOpers_;
+    std::vector<Table_batch> tableOpers_;
     bool tableOpersIsSet_;
 
 };

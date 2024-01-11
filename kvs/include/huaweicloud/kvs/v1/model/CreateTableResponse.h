@@ -12,12 +12,12 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/kvs/v1/model/GsiIndex.h>
-#include <huaweicloud/kvs/v1/model/LsiIndex.h>
-#include <huaweicloud/kvs/v1/model/PreSplitKeyOptions.h>
+#include <huaweicloud/kvs/v1/model/Secondary_index.h>
+#include <huaweicloud/kvs/v1/model/Primary_key_schema.h>
+#include <huaweicloud/kvs/v1/model/Pre_split_key_options.h>
 #include <string>
-#include <huaweicloud/kvs/v1/model/PrimaryKeySchema.h>
 #include <vector>
+#include <huaweicloud/kvs/v1/model/Global_secondary_index.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -47,7 +47,7 @@ public:
     /// CreateTableResponse members
 
     /// <summary>
-    /// 
+    /// 表名，仓内唯一。
     /// </summary>
 
     std::string getTableName() const;
@@ -59,60 +59,49 @@ public:
     /// 
     /// </summary>
 
-    bool isTemporary() const;
-    bool temporaryIsSet() const;
-    void unsettemporary();
-    void setTemporary(bool value);
-
-    /// <summary>
-    /// 
-    /// </summary>
-
-    PrimaryKeySchema getPrimaryKeySchema() const;
+    Primary_key_schema getPrimaryKeySchema() const;
     bool primaryKeySchemaIsSet() const;
     void unsetprimaryKeySchema();
-    void setPrimaryKeySchema(const PrimaryKeySchema& value);
+    void setPrimaryKeySchema(const Primary_key_schema& value);
+
+    /// <summary>
+    /// 本地二级索引模板，可以多个。
+    /// </summary>
+
+    std::vector<Secondary_index>& getLocalSecondaryIndexSchema();
+    bool localSecondaryIndexSchemaIsSet() const;
+    void unsetlocalSecondaryIndexSchema();
+    void setLocalSecondaryIndexSchema(const std::vector<Secondary_index>& value);
+
+    /// <summary>
+    /// 全局二级索引模板。
+    /// </summary>
+
+    std::vector<Global_secondary_index>& getGlobalSecondaryIndexSchema();
+    bool globalSecondaryIndexSchemaIsSet() const;
+    void unsetglobalSecondaryIndexSchema();
+    void setGlobalSecondaryIndexSchema(const std::vector<Global_secondary_index>& value);
 
     /// <summary>
     /// 
     /// </summary>
 
-    std::vector<LsiIndex>& getLocal2ndIndexSchema();
-    bool local2ndIndexSchemaIsSet() const;
-    void unsetlocal2ndIndexSchema();
-    void setLocal2ndIndexSchema(const std::vector<LsiIndex>& value);
-
-    /// <summary>
-    /// 
-    /// </summary>
-
-    std::vector<GsiIndex>& getGlobal2ndIndexSchema();
-    bool global2ndIndexSchemaIsSet() const;
-    void unsetglobal2ndIndexSchema();
-    void setGlobal2ndIndexSchema(const std::vector<GsiIndex>& value);
-
-    /// <summary>
-    /// 
-    /// </summary>
-
-    PreSplitKeyOptions getPreSplitKeyOptions() const;
+    Pre_split_key_options getPreSplitKeyOptions() const;
     bool preSplitKeyOptionsIsSet() const;
     void unsetpreSplitKeyOptions();
-    void setPreSplitKeyOptions(const PreSplitKeyOptions& value);
+    void setPreSplitKeyOptions(const Pre_split_key_options& value);
 
 
 protected:
     std::string tableName_;
     bool tableNameIsSet_;
-    bool temporary_;
-    bool temporaryIsSet_;
-    PrimaryKeySchema primaryKeySchema_;
+    Primary_key_schema primaryKeySchema_;
     bool primaryKeySchemaIsSet_;
-    std::vector<LsiIndex> local2ndIndexSchema_;
-    bool local2ndIndexSchemaIsSet_;
-    std::vector<GsiIndex> global2ndIndexSchema_;
-    bool global2ndIndexSchemaIsSet_;
-    PreSplitKeyOptions preSplitKeyOptions_;
+    std::vector<Secondary_index> localSecondaryIndexSchema_;
+    bool localSecondaryIndexSchemaIsSet_;
+    std::vector<Global_secondary_index> globalSecondaryIndexSchema_;
+    bool globalSecondaryIndexSchemaIsSet_;
+    Pre_split_key_options preSplitKeyOptions_;
     bool preSplitKeyOptionsIsSet_;
 
 #ifdef RTTR_FLAG

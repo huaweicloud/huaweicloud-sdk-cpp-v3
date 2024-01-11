@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/drs/v3/model/CustomizedDns.h>
 #include <huaweicloud/drs/v3/model/KafkaSecurity.h>
 #include <string>
 
@@ -219,6 +220,15 @@ public:
     void unsetkafkaSecurityConfig();
     void setKafkaSecurityConfig(const KafkaSecurity& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    CustomizedDns getCustomizedDns() const;
+    bool customizedDnsIsSet() const;
+    void unsetcustomizedDns();
+    void setCustomizedDns(const CustomizedDns& value);
+
 
 protected:
     std::string id_;
@@ -261,6 +271,8 @@ protected:
     bool dbNameIsSet_;
     KafkaSecurity kafkaSecurityConfig_;
     bool kafkaSecurityConfigIsSet_;
+    CustomizedDns customizedDns_;
+    bool customizedDnsIsSet_;
 
 };
 

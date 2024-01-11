@@ -19,6 +19,8 @@ ListExternalVaultResponse::ListExternalVaultResponse()
     limitIsSet_ = false;
     offset_ = 0;
     offsetIsSet_ = false;
+    sysLockSourceService_ = "";
+    sysLockSourceServiceIsSet_ = false;
 }
 
 ListExternalVaultResponse::~ListExternalVaultResponse() = default;
@@ -42,6 +44,9 @@ web::json::value ListExternalVaultResponse::toJson() const
     }
     if(offsetIsSet_) {
         val[utility::conversions::to_string_t("offset")] = ModelBase::toJson(offset_);
+    }
+    if(sysLockSourceServiceIsSet_) {
+        val[utility::conversions::to_string_t("sys_lock_source_service")] = ModelBase::toJson(sysLockSourceService_);
     }
 
     return val;
@@ -84,6 +89,15 @@ bool ListExternalVaultResponse::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setOffset(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("sys_lock_source_service"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sys_lock_source_service"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSysLockSourceService(refVal);
         }
     }
     return ok;
@@ -172,6 +186,27 @@ bool ListExternalVaultResponse::offsetIsSet() const
 void ListExternalVaultResponse::unsetoffset()
 {
     offsetIsSet_ = false;
+}
+
+std::string ListExternalVaultResponse::getSysLockSourceService() const
+{
+    return sysLockSourceService_;
+}
+
+void ListExternalVaultResponse::setSysLockSourceService(const std::string& value)
+{
+    sysLockSourceService_ = value;
+    sysLockSourceServiceIsSet_ = true;
+}
+
+bool ListExternalVaultResponse::sysLockSourceServiceIsSet() const
+{
+    return sysLockSourceServiceIsSet_;
+}
+
+void ListExternalVaultResponse::unsetsysLockSourceService()
+{
+    sysLockSourceServiceIsSet_ = false;
 }
 
 }

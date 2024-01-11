@@ -553,6 +553,11 @@ HttpRequestDef EcsMeta::genRequestDefForNovaShowServer() {
     return reqDefBuilder;
 }
 
+HttpRequestDef EcsMeta::genRequestDefForNovaShowServerInterface() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef EcsMeta::genRequestDefForRegisterServerAutoRecovery() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;

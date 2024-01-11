@@ -59,6 +59,15 @@ public:
     void setInstanceId(const std::string& value);
 
     /// <summary>
+    /// 是否使用极速恢复，可先根据”获取实例是否能使用极速恢复“接口判断本次恢复是否能使用极速恢复。 如果实例使用了XA事务，采用极速恢复的方式会导致恢复失败！
+    /// </summary>
+
+    bool isIsFastRestore() const;
+    bool isFastRestoreIsSet() const;
+    void unsetisFastRestore();
+    void setIsFastRestore(bool value);
+
+    /// <summary>
     /// 库信息
     /// </summary>
 
@@ -73,6 +82,8 @@ protected:
     bool restoreTimeIsSet_;
     std::string instanceId_;
     bool instanceIdIsSet_;
+    bool isFastRestore_;
+    bool isFastRestoreIsSet_;
     std::vector<RestoreDatabaseInfo> databases_;
     bool databasesIsSet_;
 

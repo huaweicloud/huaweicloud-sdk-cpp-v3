@@ -25,7 +25,7 @@ void BatchWriteKvResponse::validate()
 bool BatchWriteKvResponse::toBson(Builder &builder) const
 {
 
-    if (unprocessedOpersIsSet_ && !bson_append(builder, "UnprocessedOpers", unprocessedOpers_)) {
+    if (unprocessedOpersIsSet_ && !bson_append(builder, "unprocessed_opers", unprocessedOpers_)) {
         return false;
     }
 
@@ -39,7 +39,7 @@ bool BatchWriteKvResponse::fromBson(const Viewer &viewer)
     while (it != viewer.end()) {
         const std::string &key = it->key();
         
-        if (key == "UnprocessedOpers") {
+        if (key == "unprocessed_opers") {
             if (!bson_get(it, unprocessedOpers_)) {
                 return false;
             }
@@ -54,12 +54,12 @@ bool BatchWriteKvResponse::fromBson(const Viewer &viewer)
     return true;
 }
 
-std::vector<TableOperIds>& BatchWriteKvResponse::getUnprocessedOpers()
+std::vector<Table_oper_ids>& BatchWriteKvResponse::getUnprocessedOpers()
 {
     return unprocessedOpers_;
 }
 
-void BatchWriteKvResponse::setUnprocessedOpers(const std::vector<TableOperIds>& value)
+void BatchWriteKvResponse::setUnprocessedOpers(const std::vector<Table_oper_ids>& value)
 {
     unprocessedOpers_ = value;
     unprocessedOpersIsSet_ = true;

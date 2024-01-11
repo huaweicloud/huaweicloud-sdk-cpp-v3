@@ -42,7 +42,7 @@ public:
     /// Field members
 
     /// <summary>
-    /// 
+    /// 字段名。
     /// </summary>
 
     std::string getName() const;
@@ -51,7 +51,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 
+    /// bool值预留无意义。
     /// </summary>
 
     bool isOrder() const;

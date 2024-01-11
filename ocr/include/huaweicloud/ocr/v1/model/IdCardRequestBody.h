@@ -57,7 +57,7 @@ public:
     void setUrl(const std::string& value);
 
     /// <summary>
-    ///  - front：身份证正面。 - back：身份证背面。  &gt; 说明： 如果参数值为空或无该参数，系统自动识别，建议填写，准确率更高。 
+    ///  - front：身份证人像面。 - back：身份证国徽面。 - double_side：身份证双面信息 &gt; 说明： 如果参数值为空或无该参数，系统自动识别，建议填写，准确率更高。 
     /// </summary>
 
     std::string getSide() const;
@@ -84,7 +84,7 @@ public:
     void setReturnTextLocation(bool value);
 
     /// <summary>
-    /// 返回判断身份证图像是否经过翻拍的开关，默认false，可选值如下所示：  - true ：返回身份证图像是否经过翻拍  - false：不返回身份证图像是否经过翻拍 
+    /// 返回判断身份证图像是否经过翻拍的开关，默认false，可选值如下所示：  - true ：开启判断身份证图像是否经过翻拍功能  - false：关闭判断身份证图像是否经过翻拍功能 
     /// </summary>
 
     bool isDetectReproduce() const;
@@ -93,7 +93,7 @@ public:
     void setDetectReproduce(bool value);
 
     /// <summary>
-    /// 返回判断身份证图像是否是黑白复印件的开关，默认false，可选值如下所示：  - true ：返回身份证图像是否是复印件  - false : 不返回身份证图像是否是复印件 
+    /// 返回判断身份证图像是否是黑白复印件的开关，默认false，可选值如下所示：  - true ：开启判断身份证图像是否是复印件功能  - false : 关闭身份证图像是否是复印件功能 
     /// </summary>
 
     bool isDetectCopy() const;
@@ -109,6 +109,60 @@ public:
     bool returnPortraitLocationIsSet() const;
     void unsetreturnPortraitLocation();
     void setReturnPortraitLocation(bool value);
+
+    /// <summary>
+    /// 身份证图像PS告警功能开关，默认false，可选值如下：  - true ：开启身份证图像PS告警功能 - false : 关闭身份证图像告警功能 
+    /// </summary>
+
+    bool isDetectTampering() const;
+    bool detectTamperingIsSet() const;
+    void unsetdetectTampering();
+    void setDetectTampering(bool value);
+
+    /// <summary>
+    /// 身份证图像边框完整性告警功能开关，默认false，可选值如下：  - true ：打开身份证图像边框完整性告警功能 - false : 关闭身份证图像边框完整性告警功能 
+    /// </summary>
+
+    bool isDetectBorderIntegrity() const;
+    bool detectBorderIntegrityIsSet() const;
+    void unsetdetectBorderIntegrity();
+    void setDetectBorderIntegrity(bool value);
+
+    /// <summary>
+    /// 身份证图像边框内部是否有异物遮挡的告警功能开关，默认false，可选值如下：  - true ：开启身份证边框内部异物遮挡告警功能 - false : 关闭身份证边框内部异物遮挡告警功能 
+    /// </summary>
+
+    bool isDetectBlockingWithinBorder() const;
+    bool detectBlockingWithinBorderIsSet() const;
+    void unsetdetectBlockingWithinBorder();
+    void setDetectBlockingWithinBorder(bool value);
+
+    /// <summary>
+    /// 身份证图像模糊告警功能的开关，默认false，可选值如下：  - true ：开启身份证图像模糊告警功能 - false : 关闭身份证图像模糊告警功能 
+    /// </summary>
+
+    bool isDetectBlur() const;
+    bool detectBlurIsSet() const;
+    void unsetdetectBlur();
+    void setDetectBlur(bool value);
+
+    /// <summary>
+    /// 临时身份证告警功能开关，默认false，可选值如下：  - true ：开启临时身份证告警功能 - false : 关闭临时身份证告警功能 
+    /// </summary>
+
+    bool isDetectInterim() const;
+    bool detectInterimIsSet() const;
+    void unsetdetectInterim();
+    void setDetectInterim(bool value);
+
+    /// <summary>
+    /// 身份证反光告警功能开关，默认false，可选值如下：  - true ：开启身份证反光告警功能  - false : 关闭身份证反光告警功能 
+    /// </summary>
+
+    bool isDetectGlare() const;
+    bool detectGlareIsSet() const;
+    void unsetdetectGlare();
+    void setDetectGlare(bool value);
 
 
 protected:
@@ -128,6 +182,18 @@ protected:
     bool detectCopyIsSet_;
     bool returnPortraitLocation_;
     bool returnPortraitLocationIsSet_;
+    bool detectTampering_;
+    bool detectTamperingIsSet_;
+    bool detectBorderIntegrity_;
+    bool detectBorderIntegrityIsSet_;
+    bool detectBlockingWithinBorder_;
+    bool detectBlockingWithinBorderIsSet_;
+    bool detectBlur_;
+    bool detectBlurIsSet_;
+    bool detectInterim_;
+    bool detectInterimIsSet_;
+    bool detectGlare_;
+    bool detectGlareIsSet_;
 
 };
 

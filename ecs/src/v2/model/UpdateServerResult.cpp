@@ -47,6 +47,8 @@ UpdateServerResult::UpdateServerResult()
     tagsIsSet_ = false;
     status_ = "";
     statusIsSet_ = false;
+    oSEXTSRVATTRuserData_ = "";
+    oSEXTSRVATTRuserDataIsSet_ = false;
     oSEXTSRVATTRhostname_ = "";
     oSEXTSRVATTRhostnameIsSet_ = false;
 }
@@ -120,6 +122,9 @@ web::json::value UpdateServerResult::toJson() const
     }
     if(statusIsSet_) {
         val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
+    }
+    if(oSEXTSRVATTRuserDataIsSet_) {
+        val[utility::conversions::to_string_t("OS-EXT-SRV-ATTR:user_data")] = ModelBase::toJson(oSEXTSRVATTRuserData_);
     }
     if(oSEXTSRVATTRhostnameIsSet_) {
         val[utility::conversions::to_string_t("OS-EXT-SRV-ATTR:hostname")] = ModelBase::toJson(oSEXTSRVATTRhostname_);
@@ -309,6 +314,15 @@ bool UpdateServerResult::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("OS-EXT-SRV-ATTR:user_data"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("OS-EXT-SRV-ATTR:user_data"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setOSEXTSRVATTRuserData(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("OS-EXT-SRV-ATTR:hostname"))) {
@@ -742,6 +756,27 @@ bool UpdateServerResult::statusIsSet() const
 void UpdateServerResult::unsetstatus()
 {
     statusIsSet_ = false;
+}
+
+std::string UpdateServerResult::getOSEXTSRVATTRuserData() const
+{
+    return oSEXTSRVATTRuserData_;
+}
+
+void UpdateServerResult::setOSEXTSRVATTRuserData(const std::string& value)
+{
+    oSEXTSRVATTRuserData_ = value;
+    oSEXTSRVATTRuserDataIsSet_ = true;
+}
+
+bool UpdateServerResult::oSEXTSRVATTRuserDataIsSet() const
+{
+    return oSEXTSRVATTRuserDataIsSet_;
+}
+
+void UpdateServerResult::unsetoSEXTSRVATTRuserData()
+{
+    oSEXTSRVATTRuserDataIsSet_ = false;
 }
 
 std::string UpdateServerResult::getOSEXTSRVATTRhostname() const

@@ -7,14 +7,20 @@
 
 
 #include <huaweicloud/drs/v5/model/ApiHttpNullResp.h>
+#include <huaweicloud/drs/v5/model/BatchAddTagReq.h>
 #include <huaweicloud/drs/v5/model/BatchAsyncCreateJobReq.h>
 #include <huaweicloud/drs/v5/model/BatchAsyncUpdateJobReq.h>
 #include <huaweicloud/drs/v5/model/BatchCreateJobsAsyncRequest.h>
 #include <huaweicloud/drs/v5/model/BatchCreateJobsAsyncResponse.h>
+#include <huaweicloud/drs/v5/model/BatchCreateTagsRequest.h>
+#include <huaweicloud/drs/v5/model/BatchCreateTagsResponse.h>
 #include <huaweicloud/drs/v5/model/BatchDealResourceTagReq.h>
 #include <huaweicloud/drs/v5/model/BatchDeleteJobReq.h>
 #include <huaweicloud/drs/v5/model/BatchDeleteJobsByIdRequest.h>
 #include <huaweicloud/drs/v5/model/BatchDeleteJobsByIdResponse.h>
+#include <huaweicloud/drs/v5/model/BatchDeleteTagReq.h>
+#include <huaweicloud/drs/v5/model/BatchDeleteTagsRequest.h>
+#include <huaweicloud/drs/v5/model/BatchDeleteTagsResponse.h>
 #include <huaweicloud/drs/v5/model/BatchExecuteJobActionsRequest.h>
 #include <huaweicloud/drs/v5/model/BatchExecuteJobActionsResponse.h>
 #include <huaweicloud/drs/v5/model/BatchJobActionReq.h>
@@ -39,6 +45,8 @@
 #include <huaweicloud/drs/v5/model/CommitAsyncJobResponse.h>
 #include <huaweicloud/drs/v5/model/CopyJobRequest.h>
 #include <huaweicloud/drs/v5/model/CopyJobResponse.h>
+#include <huaweicloud/drs/v5/model/CountInstanceByTagsRequest.h>
+#include <huaweicloud/drs/v5/model/CountInstanceByTagsResponse.h>
 #include <huaweicloud/drs/v5/model/CreateJobRequest.h>
 #include <huaweicloud/drs/v5/model/CreateJobResponse.h>
 #include <huaweicloud/drs/v5/model/DataProcessReq.h>
@@ -66,17 +74,29 @@
 #include <huaweicloud/drs/v5/model/ListAsyncJobsResponse.h>
 #include <huaweicloud/drs/v5/model/ListDbObjectsRequest.h>
 #include <huaweicloud/drs/v5/model/ListDbObjectsResponse.h>
+#include <huaweicloud/drs/v5/model/ListInstanceByTagsRequest.h>
+#include <huaweicloud/drs/v5/model/ListInstanceByTagsResponse.h>
+#include <huaweicloud/drs/v5/model/ListInstanceTagsRequest.h>
+#include <huaweicloud/drs/v5/model/ListInstanceTagsResponse.h>
 #include <huaweicloud/drs/v5/model/ListJdbcDriversRequest.h>
 #include <huaweicloud/drs/v5/model/ListJdbcDriversResponse.h>
+#include <huaweicloud/drs/v5/model/ListJobHistoryParametersRequest.h>
+#include <huaweicloud/drs/v5/model/ListJobHistoryParametersResponse.h>
+#include <huaweicloud/drs/v5/model/ListJobParametersRequest.h>
+#include <huaweicloud/drs/v5/model/ListJobParametersResponse.h>
 #include <huaweicloud/drs/v5/model/ListJobsRequest.h>
 #include <huaweicloud/drs/v5/model/ListJobsResponse.h>
 #include <huaweicloud/drs/v5/model/ListLinksRequest.h>
 #include <huaweicloud/drs/v5/model/ListLinksResponse.h>
 #include <huaweicloud/drs/v5/model/ListProjectTagsRequest.h>
 #include <huaweicloud/drs/v5/model/ListProjectTagsResponse.h>
+#include <huaweicloud/drs/v5/model/ListTagsRequest.h>
+#include <huaweicloud/drs/v5/model/ListTagsResponse.h>
+#include <huaweicloud/drs/v5/model/ModifyParameterReq.h>
 #include <huaweicloud/drs/v5/model/ModifyStartPositionReq.h>
 #include <huaweicloud/drs/v5/model/QueryColumnReq.h>
 #include <huaweicloud/drs/v5/model/QueryDbPositionReq.h>
+#include <huaweicloud/drs/v5/model/QueryInstanceByTagReq.h>
 #include <huaweicloud/drs/v5/model/QuerySelectObjectInfoReq.h>
 #include <huaweicloud/drs/v5/model/QueryUserSelectedObjectInfoReq.h>
 #include <huaweicloud/drs/v5/model/ShowActionsRequest.h>
@@ -137,6 +157,8 @@
 #include <huaweicloud/drs/v5/model/UpdateDataProgressRequest.h>
 #include <huaweicloud/drs/v5/model/UpdateDataProgressResponse.h>
 #include <huaweicloud/drs/v5/model/UpdateDriverReq.h>
+#include <huaweicloud/drs/v5/model/UpdateJobConfigurationsRequest.h>
+#include <huaweicloud/drs/v5/model/UpdateJobConfigurationsResponse.h>
 #include <huaweicloud/drs/v5/model/UpdateJobRequest.h>
 #include <huaweicloud/drs/v5/model/UpdateJobResponse.h>
 #include <huaweicloud/drs/v5/model/UpdateStartPositionRequest.h>
@@ -183,6 +205,14 @@ public:
     std::shared_ptr<BatchCreateJobsAsyncResponse> batchCreateJobsAsync(
         BatchCreateJobsAsyncRequest &request
     );
+    // 批量添加资源标签
+    //
+    // 批量添加资源标签。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchCreateTagsResponse> batchCreateTags(
+        BatchCreateTagsRequest &request
+    );
     // 批量删除任务
     //
     // 批量删除租户指定ID任务。
@@ -190,6 +220,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<BatchDeleteJobsByIdResponse> batchDeleteJobsById(
         BatchDeleteJobsByIdRequest &request
+    );
+    // 批量删除资源标签
+    //
+    // 为指定实例批量删除标签。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchDeleteTagsResponse> batchDeleteTags(
+        BatchDeleteTagsRequest &request
     );
     // 批量操作指定ID任务
     //
@@ -276,6 +314,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CopyJobResponse> copyJob(
         CopyJobRequest &request
+    );
+    // 查询资源实例数量
+    //
+    // 查询资源实例数量。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CountInstanceByTagsResponse> countInstanceByTags(
+        CountInstanceByTagsRequest &request
     );
     // 创建任务
     //
@@ -365,6 +411,22 @@ public:
     std::shared_ptr<ListDbObjectsResponse> listDbObjects(
         ListDbObjectsRequest &request
     );
+    // 查询资源实例列表
+    //
+    // 查询资源实例列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListInstanceByTagsResponse> listInstanceByTags(
+        ListInstanceByTagsRequest &request
+    );
+    // 查询资源标签
+    //
+    // 查询指定实例的标签信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListInstanceTagsResponse> listInstanceTags(
+        ListInstanceTagsRequest &request
+    );
     // 查询驱动文件列表
     //
     // 查询驱动文件列表。
@@ -372,6 +434,24 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListJdbcDriversResponse> listJdbcDrivers(
         ListJdbcDriversRequest &request
+    );
+    // 查询任务的参数配置修改历史
+    //
+    // 查询任务的参数配置修改历史
+    // - 仅engine_type为mysql、mysql-to-pgl、mysql-to-gaussdbv5、mysql-to-gaussdbv5ha、mysql-to-dws、mysql-to-taurus、mysql-to-kafka、mysql-to-elasticsearch、mysql-to-oracle且任务状态只能为配置中、全量中、增量中、全量失败、增量失败、暂停中的实时同步任务支持。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListJobHistoryParametersResponse> listJobHistoryParameters(
+        ListJobHistoryParametersRequest &request
+    );
+    // 查询任务参数配置列表
+    //
+    // 查询任务的参数配置列表信息
+    // - 仅engine_type为mysql、mysql-to-pgl、mysql-to-gaussdbv5、mysql-to-gaussdbv5ha、mysql-to-dws、mysql-to-taurus、mysql-to-kafka、mysql-to-elasticsearch、mysql-to-oracle且任务状态只能为配置中、全量中、增量中、全量失败、增量失败、暂停中的实时同步任务支持。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListJobParametersResponse> listJobParameters(
+        ListJobParametersRequest &request
     );
     // 查询任务列表
     //
@@ -396,6 +476,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListProjectTagsResponse> listProjectTags(
         ListProjectTagsRequest &request
+    );
+    // 查询项目标签
+    //
+    // 查询租户在指定Project中实例类型的所有资源标签集合。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListTagsResponse> listTags(
+        ListTagsRequest &request
     );
     // 获取指定任务操作信息
     //
@@ -563,7 +651,7 @@ public:
     //
     // 查询不同迁移对象类型的迁移进度。
     // 说明：
-    // - 目前仅MySQL-&gt;MySQL、MySQL-&gt;GaussDB(for MySQL)、MongoDB-&gt;DDS、DDS-&gt;MongoDB的迁移支持查看迁移明细。
+    // - 目前仅MySQL-&gt;MySQL、MySQL-&gt;GaussDB(for MySQL)、MongoDB-&gt;DDS、DDS-&gt;MongoDB的实时迁移和所有实时同步链路支持查看迁移明细。
     // - 在任务未结束前，不能修改源库和目标库的所有用户、密码和用户权限等。
     // - 全量、增量完成不代表任务结束，如果存在触发器和事件将会进行迁移。
     // 
@@ -627,6 +715,15 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateJobResponse> updateJob(
         UpdateJobRequest &request
+    );
+    // 更新任务的参数信息
+    //
+    // 更新任务的参数信息。
+    // - 仅engine_type为mysql、mysql-to-pgl、mysql-to-gaussdbv5、mysql-to-gaussdbv5ha、mysql-to-dws、mysql-to-taurus、mysql-to-kafka、mysql-to-elasticsearch、mysql-to-oracle且任务状态只能为配置中、全量中、增量中、全量失败、增量失败、暂停中的实时同步任务支持。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateJobConfigurationsResponse> updateJobConfigurations(
+        UpdateJobConfigurationsRequest &request
     );
     // 更新增量任务启动位点
     //

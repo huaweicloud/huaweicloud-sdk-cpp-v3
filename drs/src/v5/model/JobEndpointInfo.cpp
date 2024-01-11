@@ -23,6 +23,7 @@ JobEndpointInfo::JobEndpointInfo()
     vpcIsSet_ = false;
     configIsSet_ = false;
     sslIsSet_ = false;
+    customizedDnsIsSet_ = false;
 }
 
 JobEndpointInfo::~JobEndpointInfo() = default;
@@ -58,6 +59,9 @@ web::json::value JobEndpointInfo::toJson() const
     }
     if(sslIsSet_) {
         val[utility::conversions::to_string_t("ssl")] = ModelBase::toJson(ssl_);
+    }
+    if(customizedDnsIsSet_) {
+        val[utility::conversions::to_string_t("customized_dns")] = ModelBase::toJson(customizedDns_);
     }
 
     return val;
@@ -136,6 +140,15 @@ bool JobEndpointInfo::fromJson(const web::json::value& val)
             EndpointSslConfig refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSsl(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("customized_dns"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("customized_dns"));
+        if(!fieldValue.is_null())
+        {
+            CustomizedDns refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCustomizedDns(refVal);
         }
     }
     return ok;
@@ -308,6 +321,27 @@ bool JobEndpointInfo::sslIsSet() const
 void JobEndpointInfo::unsetssl()
 {
     sslIsSet_ = false;
+}
+
+CustomizedDns JobEndpointInfo::getCustomizedDns() const
+{
+    return customizedDns_;
+}
+
+void JobEndpointInfo::setCustomizedDns(const CustomizedDns& value)
+{
+    customizedDns_ = value;
+    customizedDnsIsSet_ = true;
+}
+
+bool JobEndpointInfo::customizedDnsIsSet() const
+{
+    return customizedDnsIsSet_;
+}
+
+void JobEndpointInfo::unsetcustomizedDns()
+{
+    customizedDnsIsSet_ = false;
 }
 
 }

@@ -25,7 +25,7 @@ void BatchWriteKvRequestBody::validate()
 bool BatchWriteKvRequestBody::toBson(Builder &builder) const
 {
 
-    if (tableOpersIsSet_ && !bson_append(builder, "TableOpers", tableOpers_)) {
+    if (tableOpersIsSet_ && !bson_append(builder, "table_opers", tableOpers_)) {
         return false;
     }
 
@@ -39,7 +39,7 @@ bool BatchWriteKvRequestBody::fromBson(const Viewer &viewer)
     while (it != viewer.end()) {
         const std::string &key = it->key();
         
-        if (key == "TableOpers") {
+        if (key == "table_opers") {
             if (!bson_get(it, tableOpers_)) {
                 return false;
             }
@@ -54,12 +54,12 @@ bool BatchWriteKvRequestBody::fromBson(const Viewer &viewer)
     return true;
 }
 
-std::vector<TableBatch>& BatchWriteKvRequestBody::getTableOpers()
+std::vector<Table_batch>& BatchWriteKvRequestBody::getTableOpers()
 {
     return tableOpers_;
 }
 
-void BatchWriteKvRequestBody::setTableOpers(const std::vector<TableBatch>& value)
+void BatchWriteKvRequestBody::setTableOpers(const std::vector<Table_batch>& value)
 {
     tableOpers_ = value;
     tableOpersIsSet_ = true;

@@ -42,7 +42,7 @@ public:
     /// ListTableRequestBody members
 
     /// <summary>
-    /// 
+    /// 上次返回游标位置，本次响应包含该table，空表示遍历完。 - 长度：[3, 63] - 取值字符限制：[a-z0-9_-]+ &gt; 如果为空，表示后面无更多。
     /// </summary>
 
     std::string getCursorName() const;
@@ -51,20 +51,20 @@ public:
     void setCursorName(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 响应返回的表个数。 - 长度：最大_100
     /// </summary>
 
-    int32_t getLimitNum() const;
-    bool limitNumIsSet() const;
-    void unsetlimitNum();
-    void setLimitNum(int32_t value);
+    int32_t getLimit() const;
+    bool limitIsSet() const;
+    void unsetlimit();
+    void setLimit(int32_t value);
 
 
 protected:
     std::string cursorName_;
     bool cursorNameIsSet_;
-    int32_t limitNum_;
-    bool limitNumIsSet_;
+    int32_t limit_;
+    bool limitIsSet_;
 
 };
 

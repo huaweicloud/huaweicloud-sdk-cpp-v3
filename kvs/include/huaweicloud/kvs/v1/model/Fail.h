@@ -23,7 +23,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 
+/// 失败的操作指示。
 /// </summary>
 class HUAWEICLOUD_KVS_V1_EXPORT  Fail
     : public ModelBase
@@ -42,7 +42,7 @@ public:
     /// Fail members
 
     /// <summary>
-    /// 
+    /// 失败的操作标识，1_个或多个。
     /// </summary>
 
     int32_t getOperId() const;
@@ -51,7 +51,7 @@ public:
     void setOperId(int32_t value);
 
     /// <summary>
-    /// 
+    /// 处理失败操作提示。
     /// </summary>
 
     std::string getStatus() const;

@@ -51,6 +51,7 @@ TestEndPoint::TestEndPoint()
     dbName_ = "";
     dbNameIsSet_ = false;
     kafkaSecurityConfigIsSet_ = false;
+    customizedDnsIsSet_ = false;
 }
 
 TestEndPoint::~TestEndPoint() = default;
@@ -122,6 +123,9 @@ web::json::value TestEndPoint::toJson() const
     }
     if(kafkaSecurityConfigIsSet_) {
         val[utility::conversions::to_string_t("kafka_security_config")] = ModelBase::toJson(kafkaSecurityConfig_);
+    }
+    if(customizedDnsIsSet_) {
+        val[utility::conversions::to_string_t("customized_dns")] = ModelBase::toJson(customizedDns_);
     }
 
     return val;
@@ -308,6 +312,15 @@ bool TestEndPoint::fromJson(const web::json::value& val)
             KafkaSecurity refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setKafkaSecurityConfig(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("customized_dns"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("customized_dns"));
+        if(!fieldValue.is_null())
+        {
+            CustomizedDns refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCustomizedDns(refVal);
         }
     }
     return ok;
@@ -732,6 +745,27 @@ bool TestEndPoint::kafkaSecurityConfigIsSet() const
 void TestEndPoint::unsetkafkaSecurityConfig()
 {
     kafkaSecurityConfigIsSet_ = false;
+}
+
+CustomizedDns TestEndPoint::getCustomizedDns() const
+{
+    return customizedDns_;
+}
+
+void TestEndPoint::setCustomizedDns(const CustomizedDns& value)
+{
+    customizedDns_ = value;
+    customizedDnsIsSet_ = true;
+}
+
+bool TestEndPoint::customizedDnsIsSet() const
+{
+    return customizedDnsIsSet_;
+}
+
+void TestEndPoint::unsetcustomizedDns()
+{
+    customizedDnsIsSet_ = false;
 }
 
 }

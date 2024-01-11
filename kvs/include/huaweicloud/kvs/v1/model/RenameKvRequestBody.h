@@ -12,11 +12,10 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/kvs/v1/model/KvOptions.h>
-#include <huaweicloud/kvs/v1/model/ReturnBlobAttr.h>
+#include <huaweicloud/kvs/v1/model/Update_blob_attr.h>
+#include <huaweicloud/kvs/v1/model/Kv_options.h>
 #include <string>
 #include <huaweicloud/core/bson/Bson.h>
-#include <huaweicloud/kvs/v1/model/UpdateBlobAttr.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -46,7 +45,7 @@ public:
     /// RenameKvRequestBody members
 
     /// <summary>
-    /// 
+    /// 表名，仓内唯一。 - 长度：[3, 63] - 取值字符限制：[a-z0-9_-]+
     /// </summary>
 
     std::string getTableName() const;
@@ -55,7 +54,7 @@ public:
     void setTableName(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 用户自定义的主键名及值。
     /// </summary>
 
     Document getPrimaryKey() const;
@@ -64,7 +63,7 @@ public:
     void setPrimaryKey(const Document& value);
 
     /// <summary>
-    /// 
+    /// 对kv_doc和kv_blob有效，数组元素为_sortkey的字段。
     /// </summary>
 
     Document getNewSortKey() const;
@@ -76,28 +75,19 @@ public:
     /// 
     /// </summary>
 
-    KvOptions getKvOptions() const;
+    Kv_options getKvOptions() const;
     bool kvOptionsIsSet() const;
     void unsetkvOptions();
-    void setKvOptions(const KvOptions& value);
+    void setKvOptions(const Kv_options& value);
 
     /// <summary>
     /// 
     /// </summary>
 
-    UpdateBlobAttr getUpdateBlobAttr() const;
+    Update_blob_attr getUpdateBlobAttr() const;
     bool updateBlobAttrIsSet() const;
     void unsetupdateBlobAttr();
-    void setUpdateBlobAttr(const UpdateBlobAttr& value);
-
-    /// <summary>
-    /// 
-    /// </summary>
-
-    ReturnBlobAttr getReturnBlobAttr() const;
-    bool returnBlobAttrIsSet() const;
-    void unsetreturnBlobAttr();
-    void setReturnBlobAttr(const ReturnBlobAttr& value);
+    void setUpdateBlobAttr(const Update_blob_attr& value);
 
 
 protected:
@@ -107,12 +97,10 @@ protected:
     bool primaryKeyIsSet_;
     Document newSortKey_;
     bool newSortKeyIsSet_;
-    KvOptions kvOptions_;
+    Kv_options kvOptions_;
     bool kvOptionsIsSet_;
-    UpdateBlobAttr updateBlobAttr_;
+    Update_blob_attr updateBlobAttr_;
     bool updateBlobAttrIsSet_;
-    ReturnBlobAttr returnBlobAttr_;
-    bool returnBlobAttrIsSet_;
 
 };
 

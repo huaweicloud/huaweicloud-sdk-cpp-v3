@@ -15,12 +15,12 @@
 #include <huaweicloud/kvs/v1/model/DescribeTableRequest.h>
 #include <huaweicloud/kvs/v1/model/DescribeTableRequestBody.h>
 #include <huaweicloud/kvs/v1/model/DescribeTableResponse.h>
+#include <huaweicloud/kvs/v1/model/ListStoreRequest.h>
+#include <huaweicloud/kvs/v1/model/ListStoreRequestBody.h>
+#include <huaweicloud/kvs/v1/model/ListStoreResponse.h>
 #include <huaweicloud/kvs/v1/model/ListTableRequest.h>
 #include <huaweicloud/kvs/v1/model/ListTableRequestBody.h>
 #include <huaweicloud/kvs/v1/model/ListTableResponse.h>
-#include <huaweicloud/kvs/v1/model/RenameKvRequest.h>
-#include <huaweicloud/kvs/v1/model/RenameKvRequestBody.h>
-#include <huaweicloud/kvs/v1/model/RenameKvResponse.h>
 #include <string>
 
 #include <huaweicloud/kvs/v1/model/BatchGetKvRequest.h>
@@ -38,12 +38,21 @@
 #include <huaweicloud/kvs/v1/model/PutKvRequest.h>
 #include <huaweicloud/kvs/v1/model/PutKvRequestBody.h>
 #include <huaweicloud/kvs/v1/model/PutKvResponse.h>
+#include <huaweicloud/kvs/v1/model/RenameKvRequest.h>
+#include <huaweicloud/kvs/v1/model/RenameKvRequestBody.h>
+#include <huaweicloud/kvs/v1/model/RenameKvResponse.h>
 #include <huaweicloud/kvs/v1/model/ScanKvRequest.h>
 #include <huaweicloud/kvs/v1/model/ScanKvRequestBody.h>
 #include <huaweicloud/kvs/v1/model/ScanKvResponse.h>
 #include <huaweicloud/kvs/v1/model/ScanSkeyKvRequest.h>
 #include <huaweicloud/kvs/v1/model/ScanSkeyKvRequestBody.h>
 #include <huaweicloud/kvs/v1/model/ScanSkeyKvResponse.h>
+#include <huaweicloud/kvs/v1/model/TransactGetKvRequest.h>
+#include <huaweicloud/kvs/v1/model/TransactGetKvRequestBody.h>
+#include <huaweicloud/kvs/v1/model/TransactGetKvResponse.h>
+#include <huaweicloud/kvs/v1/model/TransactWriteSkeyKvRequest.h>
+#include <huaweicloud/kvs/v1/model/TransactWriteSkeyKvRequestBody.h>
+#include <huaweicloud/kvs/v1/model/TransactWriteSkeyKvResponse.h>
 #include <huaweicloud/kvs/v1/model/UpdateKvRequest.h>
 #include <huaweicloud/kvs/v1/model/UpdateKvRequestBody.h>
 #include <huaweicloud/kvs/v1/model/UpdateKvResponse.h>
@@ -75,96 +84,121 @@ public:
 
     // 创建表
     //
-    // create table
+    // 在指定仓内创建表，表名在仓内唯一； 创建表时，指定主键模板及本地二级索引模板及全局二级索引模板。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateTableResponse> createTable(
         CreateTableRequest &request
     );
-    // 指定查询表的属性信息
+    // 查询表
     //
-    // describe table
+    // 指定仓查询表属性，如容量，规模，配额。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DescribeTableResponse> describeTable(
         DescribeTableRequest &request
     );
-    // 列出所有表
+    // 列举仓
     //
-    // list table
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListStoreResponse> listStore(
+        ListStoreRequest &request
+    );
+    // 列举表
+    //
+    // 指定仓列举创建的所有表。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListTableResponse> listTable(
         ListTableRequest &request
     );
-    // 更新指定kv的sortkey 并更新部分字段
-    //
-    // rename kv
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<RenameKvResponse> renameKv(
-        RenameKvRequest &request
-    );
 
-    // 批量查询kv
+    // 批量读请求
     //
-    // batch get kv
+    // 批量读请求，其中可以携带一或多个表的不同kv的查询操作。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<BatchGetKvResponse> batchGetKv(
         BatchGetKvRequest &request
     );
-    // 持同一个store的同一张表的put-kv操作和delete-kv操作， 最多携带25个操作，body部分不超过8MB
+    // 批量写请求
     //
-    // batch write kv
+    // 批量写请求，其中可以携带一或多个表的不同kv的写操作，上传kv/删除kv。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<BatchWriteKvResponse> batchWriteKv(
         BatchWriteKvRequest &request
     );
-    // 删除指定的kv文档，默认不会返回kv文档内容
+    // 删除单个kv
     //
-    // delete kv
+    // 指定表，指定主键，删除该文档；允许指定条件执行。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteKvResponse> deleteKv(
         DeleteKvRequest &request
     );
-    // 下载一个kv文档的全部内容，或者部分字段的内容
+    // 查询单个kv
     //
-    // get kv
+    // 下载一个kv文档的全部内容，或者部分字段的内容。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<GetKvResponse> getKv(
         GetKvRequest &request
     );
-    // 上传一个kv文档
+    // 上传单个kv
     //
-    // put kv
+    // 指定表，新建kv或覆盖已有kv，且满足表的key schema描述；允许指定条件执行。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<PutKvResponse> putKv(
         PutKvRequest &request
     );
-    // 对指定table 扫描主索引或者指定二级索引进行扫描，可指定filter过滤需要返回的doc
+    // 排序键更名
     //
-    // scan kv
+    // 更新指定KvBlob的分区键和属性信息
+    // 1.rename-kv只支持对KvBlob生效，否则返回400 BadReqeust；
+    // 2.rename-kv同时只能增加对Xattr字段修改，不支持内容修改。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<RenameKvResponse> renameKv(
+        RenameKvRequest &request
+    );
+    // 扫描所有kv
+    //
+    // 指定表，扫描表下所有kv；允许指定过滤条件。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ScanKvResponse> scanKv(
         ScanKvRequest &request
     );
-    // 与scan-kv类似，query-skey-kv必须指定shardkey
+    // 扫描分区键内kv
     //
-    // scan skey kv
+    // 指定表及分区键，携带条件查询kv；允许指定过滤条件。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ScanSkeyKvResponse> scanSkeyKv(
         ScanSkeyKvRequest &request
     );
-    // 允许参数控制并返回删除前的kv文档内容,更新指定的kv文档,默认不会返回kv文档内容
+    // 事务读请求
     //
-    // update kv
+    // 事务读请求，其中可以携带1或多个table的不同kv的读操作
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<TransactGetKvResponse> transactGetKv(
+        TransactGetKvRequest &request
+    );
+    // 指定分区键下事务写请求
+    //
+    // transact-write-skey-kv支持对某个表指定分区键下的kv的操作，kv条数最大100,000，body最大不超过16MB，该操作保证原子性。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<TransactWriteSkeyKvResponse> transactWriteSkeyKv(
+        TransactWriteSkeyKvRequest &request
+    );
+    // 更新单个kv
+    //
+    // 指定表，指定主键，指定更新文档的部分内容，如果是自描述文档，指定字段名；如果是二进制文档，指定偏移位置和长度；允许指定条件执行。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateKvResponse> updateKv(

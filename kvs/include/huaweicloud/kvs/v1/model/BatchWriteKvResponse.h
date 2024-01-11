@@ -12,7 +12,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/kvs/v1/model/TableOperIds.h>
+#include <huaweicloud/kvs/v1/model/Table_oper_ids.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -43,17 +43,17 @@ public:
     /// BatchWriteKvResponse members
 
     /// <summary>
-    /// 
+    /// 未处理的操作列表。
     /// </summary>
 
-    std::vector<TableOperIds>& getUnprocessedOpers();
+    std::vector<Table_oper_ids>& getUnprocessedOpers();
     bool unprocessedOpersIsSet() const;
     void unsetunprocessedOpers();
-    void setUnprocessedOpers(const std::vector<TableOperIds>& value);
+    void setUnprocessedOpers(const std::vector<Table_oper_ids>& value);
 
 
 protected:
-    std::vector<TableOperIds> unprocessedOpers_;
+    std::vector<Table_oper_ids> unprocessedOpers_;
     bool unprocessedOpersIsSet_;
 
 #ifdef RTTR_FLAG

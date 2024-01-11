@@ -15,7 +15,7 @@ ListTableResponse::ListTableResponse()
 {
     cursorName_ = "";
     cursorNameIsSet_ = false;
-    tableNameListIsSet_ = false;
+    tableNamesIsSet_ = false;
 }
 
 ListTableResponse::~ListTableResponse() = default;
@@ -27,10 +27,10 @@ void ListTableResponse::validate()
 bool ListTableResponse::toBson(Builder &builder) const
 {
 
-    if (cursorNameIsSet_ && !bson_append(builder, "CursorName", cursorName_)) {
+    if (cursorNameIsSet_ && !bson_append(builder, "cursor_name", cursorName_)) {
         return false;
     }
-    if (tableNameListIsSet_ && !bson_append(builder, "TableNameList", tableNameList_)) {
+    if (tableNamesIsSet_ && !bson_append(builder, "table_names", tableNames_)) {
         return false;
     }
 
@@ -44,7 +44,7 @@ bool ListTableResponse::fromBson(const Viewer &viewer)
     while (it != viewer.end()) {
         const std::string &key = it->key();
         
-        if (key == "CursorName") {
+        if (key == "cursor_name") {
             if (!bson_get(it, cursorName_)) {
                 return false;
             }
@@ -53,11 +53,11 @@ bool ListTableResponse::fromBson(const Viewer &viewer)
             continue;
         }
         
-        if (key == "TableNameList") {
-            if (!bson_get(it, tableNameList_)) {
+        if (key == "table_names") {
+            if (!bson_get(it, tableNames_)) {
                 return false;
             }
-            tableNameListIsSet_ = true;
+            tableNamesIsSet_ = true;
             ++it;
             continue;
         }
@@ -89,25 +89,25 @@ void ListTableResponse::unsetcursorName()
     cursorNameIsSet_ = false;
 }
 
-std::vector<std::string>& ListTableResponse::getTableNameList()
+std::vector<std::string>& ListTableResponse::getTableNames()
 {
-    return tableNameList_;
+    return tableNames_;
 }
 
-void ListTableResponse::setTableNameList(const std::vector<std::string>& value)
+void ListTableResponse::setTableNames(const std::vector<std::string>& value)
 {
-    tableNameList_ = value;
-    tableNameListIsSet_ = true;
+    tableNames_ = value;
+    tableNamesIsSet_ = true;
 }
 
-bool ListTableResponse::tableNameListIsSet() const
+bool ListTableResponse::tableNamesIsSet() const
 {
-    return tableNameListIsSet_;
+    return tableNamesIsSet_;
 }
 
-void ListTableResponse::unsettableNameList()
+void ListTableResponse::unsettableNames()
 {
-    tableNameListIsSet_ = false;
+    tableNamesIsSet_ = false;
 }
 
 }

@@ -12,7 +12,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/kvs/v1/model/TableBatchGet.h>
+#include <huaweicloud/kvs/v1/model/Batch_get_kv_of_table.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -43,18 +43,18 @@ public:
     /// BatchGetKvRequestBody members
 
     /// <summary>
-    /// 
+    /// 按照table分类组织的get操作。
     /// </summary>
 
-    std::vector<TableBatchGet>& getTableOpers();
-    bool tableOpersIsSet() const;
-    void unsettableOpers();
-    void setTableOpers(const std::vector<TableBatchGet>& value);
+    std::vector<Batch_get_kv_of_table>& getBatchGetKvOpers();
+    bool batchGetKvOpersIsSet() const;
+    void unsetbatchGetKvOpers();
+    void setBatchGetKvOpers(const std::vector<Batch_get_kv_of_table>& value);
 
 
 protected:
-    std::vector<TableBatchGet> tableOpers_;
-    bool tableOpersIsSet_;
+    std::vector<Batch_get_kv_of_table> batchGetKvOpers_;
+    bool batchGetKvOpersIsSet_;
 
 };
 

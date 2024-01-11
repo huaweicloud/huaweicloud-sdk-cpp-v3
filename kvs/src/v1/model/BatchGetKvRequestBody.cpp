@@ -13,7 +13,7 @@ namespace Model {
 
 BatchGetKvRequestBody::BatchGetKvRequestBody()
 {
-    tableOpersIsSet_ = false;
+    batchGetKvOpersIsSet_ = false;
 }
 
 BatchGetKvRequestBody::~BatchGetKvRequestBody() = default;
@@ -25,7 +25,7 @@ void BatchGetKvRequestBody::validate()
 bool BatchGetKvRequestBody::toBson(Builder &builder) const
 {
 
-    if (tableOpersIsSet_ && !bson_append(builder, "TableOpers", tableOpers_)) {
+    if (batchGetKvOpersIsSet_ && !bson_append(builder, "batch_get_kv_opers", batchGetKvOpers_)) {
         return false;
     }
 
@@ -39,11 +39,11 @@ bool BatchGetKvRequestBody::fromBson(const Viewer &viewer)
     while (it != viewer.end()) {
         const std::string &key = it->key();
         
-        if (key == "TableOpers") {
-            if (!bson_get(it, tableOpers_)) {
+        if (key == "batch_get_kv_opers") {
+            if (!bson_get(it, batchGetKvOpers_)) {
                 return false;
             }
-            tableOpersIsSet_ = true;
+            batchGetKvOpersIsSet_ = true;
             ++it;
             continue;
         }
@@ -54,25 +54,25 @@ bool BatchGetKvRequestBody::fromBson(const Viewer &viewer)
     return true;
 }
 
-std::vector<TableBatchGet>& BatchGetKvRequestBody::getTableOpers()
+std::vector<Batch_get_kv_of_table>& BatchGetKvRequestBody::getBatchGetKvOpers()
 {
-    return tableOpers_;
+    return batchGetKvOpers_;
 }
 
-void BatchGetKvRequestBody::setTableOpers(const std::vector<TableBatchGet>& value)
+void BatchGetKvRequestBody::setBatchGetKvOpers(const std::vector<Batch_get_kv_of_table>& value)
 {
-    tableOpers_ = value;
-    tableOpersIsSet_ = true;
+    batchGetKvOpers_ = value;
+    batchGetKvOpersIsSet_ = true;
 }
 
-bool BatchGetKvRequestBody::tableOpersIsSet() const
+bool BatchGetKvRequestBody::batchGetKvOpersIsSet() const
 {
-    return tableOpersIsSet_;
+    return batchGetKvOpersIsSet_;
 }
 
-void BatchGetKvRequestBody::unsettableOpers()
+void BatchGetKvRequestBody::unsetbatchGetKvOpers()
 {
-    tableOpersIsSet_ = false;
+    batchGetKvOpersIsSet_ = false;
 }
 
 }

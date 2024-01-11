@@ -40,6 +40,8 @@ Vault::Vault()
     smnNotifyIsSet_ = false;
     threshold_ = 0;
     thresholdIsSet_ = false;
+    sysLockSourceService_ = "";
+    sysLockSourceServiceIsSet_ = false;
 }
 
 Vault::~Vault() = default;
@@ -99,6 +101,9 @@ web::json::value Vault::toJson() const
     }
     if(thresholdIsSet_) {
         val[utility::conversions::to_string_t("threshold")] = ModelBase::toJson(threshold_);
+    }
+    if(sysLockSourceServiceIsSet_) {
+        val[utility::conversions::to_string_t("sys_lock_source_service")] = ModelBase::toJson(sysLockSourceService_);
     }
 
     return val;
@@ -249,6 +254,15 @@ bool Vault::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setThreshold(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("sys_lock_source_service"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sys_lock_source_service"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSysLockSourceService(refVal);
         }
     }
     return ok;
@@ -589,6 +603,27 @@ bool Vault::thresholdIsSet() const
 void Vault::unsetthreshold()
 {
     thresholdIsSet_ = false;
+}
+
+std::string Vault::getSysLockSourceService() const
+{
+    return sysLockSourceService_;
+}
+
+void Vault::setSysLockSourceService(const std::string& value)
+{
+    sysLockSourceService_ = value;
+    sysLockSourceServiceIsSet_ = true;
+}
+
+bool Vault::sysLockSourceServiceIsSet() const
+{
+    return sysLockSourceServiceIsSet_;
+}
+
+void Vault::unsetsysLockSourceService()
+{
+    sysLockSourceServiceIsSet_ = false;
 }
 
 }

@@ -1826,6 +1826,9 @@ std::shared_ptr<ListInstancesResponse> RdsClient::listInstances(ListInstancesReq
     if (request.datastoreTypeIsSet()) {
         localVarQueryParams["datastore_type"] = parameterToString(request.getDatastoreType());
     }
+    if (request.epsIdIsSet()) {
+        localVarQueryParams["eps_id"] = parameterToString(request.getEpsId());
+    }
     if (request.vpcIdIsSet()) {
         localVarQueryParams["vpc_id"] = parameterToString(request.getVpcId());
     }

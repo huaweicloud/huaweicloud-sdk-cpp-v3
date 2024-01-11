@@ -12,8 +12,8 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/kvs/v1/model/TableBatchItem.h>
-#include <huaweicloud/kvs/v1/model/ExceptItem.h>
+#include <huaweicloud/kvs/v1/model/Exception_opers_of_table.h>
+#include <huaweicloud/kvs/v1/model/Returned_kv_items_of_table.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -44,29 +44,29 @@ public:
     /// BatchGetKvResponse members
 
     /// <summary>
-    /// 
+    /// 异常处理的操作，按照table分类组织。
     /// </summary>
 
-    std::vector<ExceptItem>& getExceptions();
-    bool exceptionsIsSet() const;
-    void unsetexceptions();
-    void setExceptions(const std::vector<ExceptItem>& value);
+    std::vector<Exception_opers_of_table>& getExceptionOpers();
+    bool exceptionOpersIsSet() const;
+    void unsetexceptionOpers();
+    void setExceptionOpers(const std::vector<Exception_opers_of_table>& value);
 
     /// <summary>
-    /// 
+    /// 返回的kvdoc列表，按照table分类组织。
     /// </summary>
 
-    std::vector<TableBatchItem>& getTableKvArray();
-    bool tableKvArrayIsSet() const;
-    void unsettableKvArray();
-    void setTableKvArray(const std::vector<TableBatchItem>& value);
+    std::vector<Returned_kv_items_of_table>& getReturnedKvItemsOfAll();
+    bool returnedKvItemsOfAllIsSet() const;
+    void unsetreturnedKvItemsOfAll();
+    void setReturnedKvItemsOfAll(const std::vector<Returned_kv_items_of_table>& value);
 
 
 protected:
-    std::vector<ExceptItem> exceptions_;
-    bool exceptionsIsSet_;
-    std::vector<TableBatchItem> tableKvArray_;
-    bool tableKvArrayIsSet_;
+    std::vector<Exception_opers_of_table> exceptionOpers_;
+    bool exceptionOpersIsSet_;
+    std::vector<Returned_kv_items_of_table> returnedKvItemsOfAll_;
+    bool returnedKvItemsOfAllIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

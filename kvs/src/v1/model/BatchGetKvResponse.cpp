@@ -13,8 +13,8 @@ namespace Model {
 
 BatchGetKvResponse::BatchGetKvResponse()
 {
-    exceptionsIsSet_ = false;
-    tableKvArrayIsSet_ = false;
+    exceptionOpersIsSet_ = false;
+    returnedKvItemsOfAllIsSet_ = false;
 }
 
 BatchGetKvResponse::~BatchGetKvResponse() = default;
@@ -26,10 +26,10 @@ void BatchGetKvResponse::validate()
 bool BatchGetKvResponse::toBson(Builder &builder) const
 {
 
-    if (exceptionsIsSet_ && !bson_append(builder, "Exceptions", exceptions_)) {
+    if (exceptionOpersIsSet_ && !bson_append(builder, "exception_opers", exceptionOpers_)) {
         return false;
     }
-    if (tableKvArrayIsSet_ && !bson_append(builder, "TableKvArray", tableKvArray_)) {
+    if (returnedKvItemsOfAllIsSet_ && !bson_append(builder, "returned_kv_items_of_all", returnedKvItemsOfAll_)) {
         return false;
     }
 
@@ -43,20 +43,20 @@ bool BatchGetKvResponse::fromBson(const Viewer &viewer)
     while (it != viewer.end()) {
         const std::string &key = it->key();
         
-        if (key == "Exceptions") {
-            if (!bson_get(it, exceptions_)) {
+        if (key == "exception_opers") {
+            if (!bson_get(it, exceptionOpers_)) {
                 return false;
             }
-            exceptionsIsSet_ = true;
+            exceptionOpersIsSet_ = true;
             ++it;
             continue;
         }
         
-        if (key == "TableKvArray") {
-            if (!bson_get(it, tableKvArray_)) {
+        if (key == "returned_kv_items_of_all") {
+            if (!bson_get(it, returnedKvItemsOfAll_)) {
                 return false;
             }
-            tableKvArrayIsSet_ = true;
+            returnedKvItemsOfAllIsSet_ = true;
             ++it;
             continue;
         }
@@ -67,46 +67,46 @@ bool BatchGetKvResponse::fromBson(const Viewer &viewer)
     return true;
 }
 
-std::vector<ExceptItem>& BatchGetKvResponse::getExceptions()
+std::vector<Exception_opers_of_table>& BatchGetKvResponse::getExceptionOpers()
 {
-    return exceptions_;
+    return exceptionOpers_;
 }
 
-void BatchGetKvResponse::setExceptions(const std::vector<ExceptItem>& value)
+void BatchGetKvResponse::setExceptionOpers(const std::vector<Exception_opers_of_table>& value)
 {
-    exceptions_ = value;
-    exceptionsIsSet_ = true;
+    exceptionOpers_ = value;
+    exceptionOpersIsSet_ = true;
 }
 
-bool BatchGetKvResponse::exceptionsIsSet() const
+bool BatchGetKvResponse::exceptionOpersIsSet() const
 {
-    return exceptionsIsSet_;
+    return exceptionOpersIsSet_;
 }
 
-void BatchGetKvResponse::unsetexceptions()
+void BatchGetKvResponse::unsetexceptionOpers()
 {
-    exceptionsIsSet_ = false;
+    exceptionOpersIsSet_ = false;
 }
 
-std::vector<TableBatchItem>& BatchGetKvResponse::getTableKvArray()
+std::vector<Returned_kv_items_of_table>& BatchGetKvResponse::getReturnedKvItemsOfAll()
 {
-    return tableKvArray_;
+    return returnedKvItemsOfAll_;
 }
 
-void BatchGetKvResponse::setTableKvArray(const std::vector<TableBatchItem>& value)
+void BatchGetKvResponse::setReturnedKvItemsOfAll(const std::vector<Returned_kv_items_of_table>& value)
 {
-    tableKvArray_ = value;
-    tableKvArrayIsSet_ = true;
+    returnedKvItemsOfAll_ = value;
+    returnedKvItemsOfAllIsSet_ = true;
 }
 
-bool BatchGetKvResponse::tableKvArrayIsSet() const
+bool BatchGetKvResponse::returnedKvItemsOfAllIsSet() const
 {
-    return tableKvArrayIsSet_;
+    return returnedKvItemsOfAllIsSet_;
 }
 
-void BatchGetKvResponse::unsettableKvArray()
+void BatchGetKvResponse::unsetreturnedKvItemsOfAll()
 {
-    tableKvArrayIsSet_ = false;
+    returnedKvItemsOfAllIsSet_ = false;
 }
 
 }

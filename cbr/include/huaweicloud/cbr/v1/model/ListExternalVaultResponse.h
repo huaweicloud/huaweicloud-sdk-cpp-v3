@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <string>
 #include <huaweicloud/cbr/v1/model/Vault.h>
 #include <vector>
 
@@ -75,6 +76,15 @@ public:
     void unsetoffset();
     void setOffset(int32_t value);
 
+    /// <summary>
+    /// 用于标识SMB服务
+    /// </summary>
+
+    std::string getSysLockSourceService() const;
+    bool sysLockSourceServiceIsSet() const;
+    void unsetsysLockSourceService();
+    void setSysLockSourceService(const std::string& value);
+
 
 protected:
     std::vector<Vault> vaults_;
@@ -85,6 +95,8 @@ protected:
     bool limitIsSet_;
     int32_t offset_;
     bool offsetIsSet_;
+    std::string sysLockSourceService_;
+    bool sysLockSourceServiceIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

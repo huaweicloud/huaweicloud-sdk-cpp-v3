@@ -28,6 +28,18 @@ IdCardRequestBody::IdCardRequestBody()
     detectCopyIsSet_ = false;
     returnPortraitLocation_ = false;
     returnPortraitLocationIsSet_ = false;
+    detectTampering_ = false;
+    detectTamperingIsSet_ = false;
+    detectBorderIntegrity_ = false;
+    detectBorderIntegrityIsSet_ = false;
+    detectBlockingWithinBorder_ = false;
+    detectBlockingWithinBorderIsSet_ = false;
+    detectBlur_ = false;
+    detectBlurIsSet_ = false;
+    detectInterim_ = false;
+    detectInterimIsSet_ = false;
+    detectGlare_ = false;
+    detectGlareIsSet_ = false;
 }
 
 IdCardRequestBody::~IdCardRequestBody() = default;
@@ -63,6 +75,24 @@ web::json::value IdCardRequestBody::toJson() const
     }
     if(returnPortraitLocationIsSet_) {
         val[utility::conversions::to_string_t("return_portrait_location")] = ModelBase::toJson(returnPortraitLocation_);
+    }
+    if(detectTamperingIsSet_) {
+        val[utility::conversions::to_string_t("detect_tampering")] = ModelBase::toJson(detectTampering_);
+    }
+    if(detectBorderIntegrityIsSet_) {
+        val[utility::conversions::to_string_t("detect_border_integrity")] = ModelBase::toJson(detectBorderIntegrity_);
+    }
+    if(detectBlockingWithinBorderIsSet_) {
+        val[utility::conversions::to_string_t("detect_blocking_within_border")] = ModelBase::toJson(detectBlockingWithinBorder_);
+    }
+    if(detectBlurIsSet_) {
+        val[utility::conversions::to_string_t("detect_blur")] = ModelBase::toJson(detectBlur_);
+    }
+    if(detectInterimIsSet_) {
+        val[utility::conversions::to_string_t("detect_interim")] = ModelBase::toJson(detectInterim_);
+    }
+    if(detectGlareIsSet_) {
+        val[utility::conversions::to_string_t("detect_glare")] = ModelBase::toJson(detectGlare_);
     }
 
     return val;
@@ -141,6 +171,60 @@ bool IdCardRequestBody::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setReturnPortraitLocation(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("detect_tampering"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("detect_tampering"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDetectTampering(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("detect_border_integrity"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("detect_border_integrity"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDetectBorderIntegrity(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("detect_blocking_within_border"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("detect_blocking_within_border"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDetectBlockingWithinBorder(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("detect_blur"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("detect_blur"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDetectBlur(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("detect_interim"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("detect_interim"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDetectInterim(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("detect_glare"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("detect_glare"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDetectGlare(refVal);
         }
     }
     return ok;
@@ -313,6 +397,132 @@ bool IdCardRequestBody::returnPortraitLocationIsSet() const
 void IdCardRequestBody::unsetreturnPortraitLocation()
 {
     returnPortraitLocationIsSet_ = false;
+}
+
+bool IdCardRequestBody::isDetectTampering() const
+{
+    return detectTampering_;
+}
+
+void IdCardRequestBody::setDetectTampering(bool value)
+{
+    detectTampering_ = value;
+    detectTamperingIsSet_ = true;
+}
+
+bool IdCardRequestBody::detectTamperingIsSet() const
+{
+    return detectTamperingIsSet_;
+}
+
+void IdCardRequestBody::unsetdetectTampering()
+{
+    detectTamperingIsSet_ = false;
+}
+
+bool IdCardRequestBody::isDetectBorderIntegrity() const
+{
+    return detectBorderIntegrity_;
+}
+
+void IdCardRequestBody::setDetectBorderIntegrity(bool value)
+{
+    detectBorderIntegrity_ = value;
+    detectBorderIntegrityIsSet_ = true;
+}
+
+bool IdCardRequestBody::detectBorderIntegrityIsSet() const
+{
+    return detectBorderIntegrityIsSet_;
+}
+
+void IdCardRequestBody::unsetdetectBorderIntegrity()
+{
+    detectBorderIntegrityIsSet_ = false;
+}
+
+bool IdCardRequestBody::isDetectBlockingWithinBorder() const
+{
+    return detectBlockingWithinBorder_;
+}
+
+void IdCardRequestBody::setDetectBlockingWithinBorder(bool value)
+{
+    detectBlockingWithinBorder_ = value;
+    detectBlockingWithinBorderIsSet_ = true;
+}
+
+bool IdCardRequestBody::detectBlockingWithinBorderIsSet() const
+{
+    return detectBlockingWithinBorderIsSet_;
+}
+
+void IdCardRequestBody::unsetdetectBlockingWithinBorder()
+{
+    detectBlockingWithinBorderIsSet_ = false;
+}
+
+bool IdCardRequestBody::isDetectBlur() const
+{
+    return detectBlur_;
+}
+
+void IdCardRequestBody::setDetectBlur(bool value)
+{
+    detectBlur_ = value;
+    detectBlurIsSet_ = true;
+}
+
+bool IdCardRequestBody::detectBlurIsSet() const
+{
+    return detectBlurIsSet_;
+}
+
+void IdCardRequestBody::unsetdetectBlur()
+{
+    detectBlurIsSet_ = false;
+}
+
+bool IdCardRequestBody::isDetectInterim() const
+{
+    return detectInterim_;
+}
+
+void IdCardRequestBody::setDetectInterim(bool value)
+{
+    detectInterim_ = value;
+    detectInterimIsSet_ = true;
+}
+
+bool IdCardRequestBody::detectInterimIsSet() const
+{
+    return detectInterimIsSet_;
+}
+
+void IdCardRequestBody::unsetdetectInterim()
+{
+    detectInterimIsSet_ = false;
+}
+
+bool IdCardRequestBody::isDetectGlare() const
+{
+    return detectGlare_;
+}
+
+void IdCardRequestBody::setDetectGlare(bool value)
+{
+    detectGlare_ = value;
+    detectGlareIsSet_ = true;
+}
+
+bool IdCardRequestBody::detectGlareIsSet() const
+{
+    return detectGlareIsSet_;
+}
+
+void IdCardRequestBody::unsetdetectGlare()
+{
+    detectGlareIsSet_ = false;
 }
 
 }

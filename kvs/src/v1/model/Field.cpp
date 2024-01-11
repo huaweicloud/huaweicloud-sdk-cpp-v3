@@ -28,10 +28,10 @@ void Field::validate()
 bool Field::toBson(Builder &builder) const
 {
 
-    if (nameIsSet_ && !bson_append(builder, "Name", name_)) {
+    if (nameIsSet_ && !bson_append(builder, "name", name_)) {
         return false;
     }
-    if (orderIsSet_ && !bson_append(builder, "Order", order_)) {
+    if (orderIsSet_ && !bson_append(builder, "order", order_)) {
         return false;
     }
 
@@ -45,7 +45,7 @@ bool Field::fromBson(const Viewer &viewer)
     while (it != viewer.end()) {
         const std::string &key = it->key();
         
-        if (key == "Name") {
+        if (key == "name") {
             if (!bson_get(it, name_)) {
                 return false;
             }
@@ -54,7 +54,7 @@ bool Field::fromBson(const Viewer &viewer)
             continue;
         }
         
-        if (key == "Order") {
+        if (key == "order") {
             if (!bson_get(it, order_)) {
                 return false;
             }

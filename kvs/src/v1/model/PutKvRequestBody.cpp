@@ -29,16 +29,16 @@ void PutKvRequestBody::validate()
 bool PutKvRequestBody::toBson(Builder &builder) const
 {
 
-    if (tableNameIsSet_ && !bson_append(builder, "TableName", tableName_)) {
+    if (tableNameIsSet_ && !bson_append(builder, "table_name", tableName_)) {
         return false;
     }
-    if (conditionExpressionIsSet_ && !bson_append(builder, "ConditionExpression", conditionExpression_)) {
+    if (conditionExpressionIsSet_ && !bson_append(builder, "condition_expression", conditionExpression_)) {
         return false;
     }
-    if (kvDocIsSet_ && !bson_append(builder, "KvDoc", kvDoc_)) {
+    if (kvDocIsSet_ && !bson_append(builder, "kv_doc", kvDoc_)) {
         return false;
     }
-    if (kvBlobIsSet_ && !bson_append(builder, "KvBlob", kvBlob_)) {
+    if (kvBlobIsSet_ && !bson_append(builder, "kv_blob", kvBlob_)) {
         return false;
     }
 
@@ -52,7 +52,7 @@ bool PutKvRequestBody::fromBson(const Viewer &viewer)
     while (it != viewer.end()) {
         const std::string &key = it->key();
         
-        if (key == "TableName") {
+        if (key == "table_name") {
             if (!bson_get(it, tableName_)) {
                 return false;
             }
@@ -61,7 +61,7 @@ bool PutKvRequestBody::fromBson(const Viewer &viewer)
             continue;
         }
         
-        if (key == "ConditionExpression") {
+        if (key == "condition_expression") {
             if (!bson_get(it, conditionExpression_)) {
                 return false;
             }
@@ -70,7 +70,7 @@ bool PutKvRequestBody::fromBson(const Viewer &viewer)
             continue;
         }
         
-        if (key == "KvDoc") {
+        if (key == "kv_doc") {
             if (!bson_get(it, kvDoc_)) {
                 return false;
             }
@@ -79,7 +79,7 @@ bool PutKvRequestBody::fromBson(const Viewer &viewer)
             continue;
         }
         
-        if (key == "KvBlob") {
+        if (key == "kv_blob") {
             if (!bson_get(it, kvBlob_)) {
                 return false;
             }
@@ -115,12 +115,12 @@ void PutKvRequestBody::unsettableName()
     tableNameIsSet_ = false;
 }
 
-ConditionExpression PutKvRequestBody::getConditionExpression() const
+Condition_expression PutKvRequestBody::getConditionExpression() const
 {
     return conditionExpression_;
 }
 
-void PutKvRequestBody::setConditionExpression(const ConditionExpression& value)
+void PutKvRequestBody::setConditionExpression(const Condition_expression& value)
 {
     conditionExpression_ = value;
     conditionExpressionIsSet_ = true;
@@ -157,12 +157,12 @@ void PutKvRequestBody::unsetkvDoc()
     kvDocIsSet_ = false;
 }
 
-KvBlob PutKvRequestBody::getKvBlob() const
+Kv_blob PutKvRequestBody::getKvBlob() const
 {
     return kvBlob_;
 }
 
-void PutKvRequestBody::setKvBlob(const KvBlob& value)
+void PutKvRequestBody::setKvBlob(const Kv_blob& value)
 {
     kvBlob_ = value;
     kvBlobIsSet_ = true;

@@ -43,7 +43,7 @@ public:
     /// ListTableResponse members
 
     /// <summary>
-    /// 
+    /// 本次响应后的游标位置，下次请求时携带，如果为空，表示后面无更多 - 长度：[3, 63] - 取值字符限制：[a-z0-9_-]+ &gt; 如果为空，表示后面无更多。
     /// </summary>
 
     std::string getCursorName() const;
@@ -52,20 +52,20 @@ public:
     void setCursorName(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 返回的表名列表。 - 长度：最大_100
     /// </summary>
 
-    std::vector<std::string>& getTableNameList();
-    bool tableNameListIsSet() const;
-    void unsettableNameList();
-    void setTableNameList(const std::vector<std::string>& value);
+    std::vector<std::string>& getTableNames();
+    bool tableNamesIsSet() const;
+    void unsettableNames();
+    void setTableNames(const std::vector<std::string>& value);
 
 
 protected:
     std::string cursorName_;
     bool cursorNameIsSet_;
-    std::vector<std::string> tableNameList_;
-    bool tableNameListIsSet_;
+    std::vector<std::string> tableNames_;
+    bool tableNamesIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

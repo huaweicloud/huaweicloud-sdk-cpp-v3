@@ -15,11 +15,9 @@ CreateTableRequestBody::CreateTableRequestBody()
 {
     tableName_ = "";
     tableNameIsSet_ = false;
-    temporary_ = false;
-    temporaryIsSet_ = false;
     primaryKeySchemaIsSet_ = false;
-    local2ndIndexSchemaIsSet_ = false;
-    global2ndIndexSchemaIsSet_ = false;
+    localSecondaryIndexSchemaIsSet_ = false;
+    globalSecondaryIndexSchemaIsSet_ = false;
     preSplitKeyOptionsIsSet_ = false;
 }
 
@@ -32,22 +30,19 @@ void CreateTableRequestBody::validate()
 bool CreateTableRequestBody::toBson(Builder &builder) const
 {
 
-    if (tableNameIsSet_ && !bson_append(builder, "TableName", tableName_)) {
+    if (tableNameIsSet_ && !bson_append(builder, "table_name", tableName_)) {
         return false;
     }
-    if (temporaryIsSet_ && !bson_append(builder, "Temporary", temporary_)) {
+    if (primaryKeySchemaIsSet_ && !bson_append(builder, "primary_key_schema", primaryKeySchema_)) {
         return false;
     }
-    if (primaryKeySchemaIsSet_ && !bson_append(builder, "PrimaryKeySchema", primaryKeySchema_)) {
+    if (localSecondaryIndexSchemaIsSet_ && !bson_append(builder, "local_secondary_index_schema", localSecondaryIndexSchema_)) {
         return false;
     }
-    if (local2ndIndexSchemaIsSet_ && !bson_append(builder, "Local2ndIndexSchema", local2ndIndexSchema_)) {
+    if (globalSecondaryIndexSchemaIsSet_ && !bson_append(builder, "global_secondary_index_schema", globalSecondaryIndexSchema_)) {
         return false;
     }
-    if (global2ndIndexSchemaIsSet_ && !bson_append(builder, "Global2ndIndexSchema", global2ndIndexSchema_)) {
-        return false;
-    }
-    if (preSplitKeyOptionsIsSet_ && !bson_append(builder, "PreSplitKeyOptions", preSplitKeyOptions_)) {
+    if (preSplitKeyOptionsIsSet_ && !bson_append(builder, "pre_split_key_options", preSplitKeyOptions_)) {
         return false;
     }
 
@@ -61,7 +56,7 @@ bool CreateTableRequestBody::fromBson(const Viewer &viewer)
     while (it != viewer.end()) {
         const std::string &key = it->key();
         
-        if (key == "TableName") {
+        if (key == "table_name") {
             if (!bson_get(it, tableName_)) {
                 return false;
             }
@@ -70,16 +65,7 @@ bool CreateTableRequestBody::fromBson(const Viewer &viewer)
             continue;
         }
         
-        if (key == "Temporary") {
-            if (!bson_get(it, temporary_)) {
-                return false;
-            }
-            temporaryIsSet_ = true;
-            ++it;
-            continue;
-        }
-        
-        if (key == "PrimaryKeySchema") {
+        if (key == "primary_key_schema") {
             if (!bson_get(it, primaryKeySchema_)) {
                 return false;
             }
@@ -88,25 +74,25 @@ bool CreateTableRequestBody::fromBson(const Viewer &viewer)
             continue;
         }
         
-        if (key == "Local2ndIndexSchema") {
-            if (!bson_get(it, local2ndIndexSchema_)) {
+        if (key == "local_secondary_index_schema") {
+            if (!bson_get(it, localSecondaryIndexSchema_)) {
                 return false;
             }
-            local2ndIndexSchemaIsSet_ = true;
+            localSecondaryIndexSchemaIsSet_ = true;
             ++it;
             continue;
         }
         
-        if (key == "Global2ndIndexSchema") {
-            if (!bson_get(it, global2ndIndexSchema_)) {
+        if (key == "global_secondary_index_schema") {
+            if (!bson_get(it, globalSecondaryIndexSchema_)) {
                 return false;
             }
-            global2ndIndexSchemaIsSet_ = true;
+            globalSecondaryIndexSchemaIsSet_ = true;
             ++it;
             continue;
         }
         
-        if (key == "PreSplitKeyOptions") {
+        if (key == "pre_split_key_options") {
             if (!bson_get(it, preSplitKeyOptions_)) {
                 return false;
             }
@@ -142,33 +128,12 @@ void CreateTableRequestBody::unsettableName()
     tableNameIsSet_ = false;
 }
 
-bool CreateTableRequestBody::isTemporary() const
-{
-    return temporary_;
-}
-
-void CreateTableRequestBody::setTemporary(bool value)
-{
-    temporary_ = value;
-    temporaryIsSet_ = true;
-}
-
-bool CreateTableRequestBody::temporaryIsSet() const
-{
-    return temporaryIsSet_;
-}
-
-void CreateTableRequestBody::unsettemporary()
-{
-    temporaryIsSet_ = false;
-}
-
-PrimaryKeySchema CreateTableRequestBody::getPrimaryKeySchema() const
+Primary_key_schema CreateTableRequestBody::getPrimaryKeySchema() const
 {
     return primaryKeySchema_;
 }
 
-void CreateTableRequestBody::setPrimaryKeySchema(const PrimaryKeySchema& value)
+void CreateTableRequestBody::setPrimaryKeySchema(const Primary_key_schema& value)
 {
     primaryKeySchema_ = value;
     primaryKeySchemaIsSet_ = true;
@@ -184,54 +149,54 @@ void CreateTableRequestBody::unsetprimaryKeySchema()
     primaryKeySchemaIsSet_ = false;
 }
 
-std::vector<LsiIndex>& CreateTableRequestBody::getLocal2ndIndexSchema()
+std::vector<Secondary_index>& CreateTableRequestBody::getLocalSecondaryIndexSchema()
 {
-    return local2ndIndexSchema_;
+    return localSecondaryIndexSchema_;
 }
 
-void CreateTableRequestBody::setLocal2ndIndexSchema(const std::vector<LsiIndex>& value)
+void CreateTableRequestBody::setLocalSecondaryIndexSchema(const std::vector<Secondary_index>& value)
 {
-    local2ndIndexSchema_ = value;
-    local2ndIndexSchemaIsSet_ = true;
+    localSecondaryIndexSchema_ = value;
+    localSecondaryIndexSchemaIsSet_ = true;
 }
 
-bool CreateTableRequestBody::local2ndIndexSchemaIsSet() const
+bool CreateTableRequestBody::localSecondaryIndexSchemaIsSet() const
 {
-    return local2ndIndexSchemaIsSet_;
+    return localSecondaryIndexSchemaIsSet_;
 }
 
-void CreateTableRequestBody::unsetlocal2ndIndexSchema()
+void CreateTableRequestBody::unsetlocalSecondaryIndexSchema()
 {
-    local2ndIndexSchemaIsSet_ = false;
+    localSecondaryIndexSchemaIsSet_ = false;
 }
 
-std::vector<GsiIndex>& CreateTableRequestBody::getGlobal2ndIndexSchema()
+std::vector<Global_secondary_index>& CreateTableRequestBody::getGlobalSecondaryIndexSchema()
 {
-    return global2ndIndexSchema_;
+    return globalSecondaryIndexSchema_;
 }
 
-void CreateTableRequestBody::setGlobal2ndIndexSchema(const std::vector<GsiIndex>& value)
+void CreateTableRequestBody::setGlobalSecondaryIndexSchema(const std::vector<Global_secondary_index>& value)
 {
-    global2ndIndexSchema_ = value;
-    global2ndIndexSchemaIsSet_ = true;
+    globalSecondaryIndexSchema_ = value;
+    globalSecondaryIndexSchemaIsSet_ = true;
 }
 
-bool CreateTableRequestBody::global2ndIndexSchemaIsSet() const
+bool CreateTableRequestBody::globalSecondaryIndexSchemaIsSet() const
 {
-    return global2ndIndexSchemaIsSet_;
+    return globalSecondaryIndexSchemaIsSet_;
 }
 
-void CreateTableRequestBody::unsetglobal2ndIndexSchema()
+void CreateTableRequestBody::unsetglobalSecondaryIndexSchema()
 {
-    global2ndIndexSchemaIsSet_ = false;
+    globalSecondaryIndexSchemaIsSet_ = false;
 }
 
-PreSplitKeyOptions CreateTableRequestBody::getPreSplitKeyOptions() const
+Pre_split_key_options CreateTableRequestBody::getPreSplitKeyOptions() const
 {
     return preSplitKeyOptions_;
 }
 
-void CreateTableRequestBody::setPreSplitKeyOptions(const PreSplitKeyOptions& value)
+void CreateTableRequestBody::setPreSplitKeyOptions(const Pre_split_key_options& value)
 {
     preSplitKeyOptions_ = value;
     preSplitKeyOptionsIsSet_ = true;

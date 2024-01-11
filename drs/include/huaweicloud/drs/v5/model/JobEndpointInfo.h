@@ -14,6 +14,7 @@
 #include <huaweicloud/drs/v5/model/BaseEndpointConfig.h>
 #include <huaweicloud/drs/v5/model/EndpointSslConfig.h>
 #include <string>
+#include <huaweicloud/drs/v5/model/CustomizedDns.h>
 #include <huaweicloud/drs/v5/model/CloudVpcInfo.h>
 
 namespace HuaweiCloud {
@@ -44,7 +45,7 @@ public:
     /// JobEndpointInfo members
 
     /// <summary>
-    /// 数据库类型。取值：  - oracle：Oracle。 - gaussdbv5：GaussDB分布式版。
+    /// 数据库类型。取值：  - oracle：Oracle。 - gaussdbv5：GaussDB分布式版。 - redis：Redis。 - rediscluster：Redis集群版。 - gaussredis: GeminiDB Redis。
     /// </summary>
 
     std::string getDbType() const;
@@ -115,6 +116,15 @@ public:
     void unsetssl();
     void setSsl(const EndpointSslConfig& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    CustomizedDns getCustomizedDns() const;
+    bool customizedDnsIsSet() const;
+    void unsetcustomizedDns();
+    void setCustomizedDns(const CustomizedDns& value);
+
 
 protected:
     std::string dbType_;
@@ -133,6 +143,8 @@ protected:
     bool configIsSet_;
     EndpointSslConfig ssl_;
     bool sslIsSet_;
+    CustomizedDns customizedDns_;
+    bool customizedDnsIsSet_;
 
 };
 

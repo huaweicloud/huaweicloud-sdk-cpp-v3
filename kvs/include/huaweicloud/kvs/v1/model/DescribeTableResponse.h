@@ -12,12 +12,12 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/kvs/v1/model/GsiIndex.h>
-#include <huaweicloud/kvs/v1/model/LsiIndex.h>
+#include <huaweicloud/kvs/v1/model/Secondary_index.h>
+#include <huaweicloud/kvs/v1/model/Primary_key_schema.h>
 #include <string>
-#include <huaweicloud/kvs/v1/model/RuntimeInfo.h>
-#include <huaweicloud/kvs/v1/model/PrimaryKeySchema.h>
+#include <huaweicloud/kvs/v1/model/Run_time_info.h>
 #include <vector>
+#include <huaweicloud/kvs/v1/model/Global_secondary_index.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -47,7 +47,7 @@ public:
     /// DescribeTableResponse members
 
     /// <summary>
-    /// 
+    /// 表名。 - 长度：[3, 63] - 取值字符限制：[a-z0-9_-]+
     /// </summary>
 
     std::string getTableName() const;
@@ -59,50 +59,50 @@ public:
     /// 
     /// </summary>
 
-    PrimaryKeySchema getPrimaryKeySchema() const;
+    Primary_key_schema getPrimaryKeySchema() const;
     bool primaryKeySchemaIsSet() const;
     void unsetprimaryKeySchema();
-    void setPrimaryKeySchema(const PrimaryKeySchema& value);
+    void setPrimaryKeySchema(const Primary_key_schema& value);
+
+    /// <summary>
+    /// 本地二级索引模板，可以多个。
+    /// </summary>
+
+    std::vector<Secondary_index>& getLocalSecondaryIndexSchema();
+    bool localSecondaryIndexSchemaIsSet() const;
+    void unsetlocalSecondaryIndexSchema();
+    void setLocalSecondaryIndexSchema(const std::vector<Secondary_index>& value);
+
+    /// <summary>
+    /// 全局二级索引模板。
+    /// </summary>
+
+    std::vector<Global_secondary_index>& getGlobalSecondaryIndexSchema();
+    bool globalSecondaryIndexSchemaIsSet() const;
+    void unsetglobalSecondaryIndexSchema();
+    void setGlobalSecondaryIndexSchema(const std::vector<Global_secondary_index>& value);
 
     /// <summary>
     /// 
     /// </summary>
 
-    std::vector<LsiIndex>& getLocal2ndIndexSchema();
-    bool local2ndIndexSchemaIsSet() const;
-    void unsetlocal2ndIndexSchema();
-    void setLocal2ndIndexSchema(const std::vector<LsiIndex>& value);
-
-    /// <summary>
-    /// 
-    /// </summary>
-
-    std::vector<GsiIndex>& getGlobal2ndIndexSchema();
-    bool global2ndIndexSchemaIsSet() const;
-    void unsetglobal2ndIndexSchema();
-    void setGlobal2ndIndexSchema(const std::vector<GsiIndex>& value);
-
-    /// <summary>
-    /// 
-    /// </summary>
-
-    RuntimeInfo getRuntimeInfo() const;
-    bool runtimeInfoIsSet() const;
-    void unsetruntimeInfo();
-    void setRuntimeInfo(const RuntimeInfo& value);
+    Run_time_info getRunTimeInfo() const;
+    bool runTimeInfoIsSet() const;
+    void unsetrunTimeInfo();
+    void setRunTimeInfo(const Run_time_info& value);
 
 
 protected:
     std::string tableName_;
     bool tableNameIsSet_;
-    PrimaryKeySchema primaryKeySchema_;
+    Primary_key_schema primaryKeySchema_;
     bool primaryKeySchemaIsSet_;
-    std::vector<LsiIndex> local2ndIndexSchema_;
-    bool local2ndIndexSchemaIsSet_;
-    std::vector<GsiIndex> global2ndIndexSchema_;
-    bool global2ndIndexSchemaIsSet_;
-    RuntimeInfo runtimeInfo_;
-    bool runtimeInfoIsSet_;
+    std::vector<Secondary_index> localSecondaryIndexSchema_;
+    bool localSecondaryIndexSchemaIsSet_;
+    std::vector<Global_secondary_index> globalSecondaryIndexSchema_;
+    bool globalSecondaryIndexSchemaIsSet_;
+    Run_time_info runTimeInfo_;
+    bool runTimeInfoIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

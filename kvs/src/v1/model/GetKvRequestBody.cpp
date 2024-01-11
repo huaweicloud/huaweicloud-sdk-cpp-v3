@@ -15,11 +15,9 @@ GetKvRequestBody::GetKvRequestBody()
 {
     tableName_ = "";
     tableNameIsSet_ = false;
-    consistency_ = false;
-    consistencyIsSet_ = false;
     primaryKeyIsSet_ = false;
     projectionFieldsIsSet_ = false;
-    returnPartialBlobIsSet_ = false;
+    projectionBlobIsSet_ = false;
 }
 
 GetKvRequestBody::~GetKvRequestBody() = default;
@@ -31,19 +29,16 @@ void GetKvRequestBody::validate()
 bool GetKvRequestBody::toBson(Builder &builder) const
 {
 
-    if (tableNameIsSet_ && !bson_append(builder, "TableName", tableName_)) {
+    if (tableNameIsSet_ && !bson_append(builder, "table_name", tableName_)) {
         return false;
     }
-    if (consistencyIsSet_ && !bson_append(builder, "Consistency", consistency_)) {
+    if (primaryKeyIsSet_ && !bson_append(builder, "primary_key", primaryKey_)) {
         return false;
     }
-    if (primaryKeyIsSet_ && !bson_append(builder, "PrimaryKey", primaryKey_)) {
+    if (projectionFieldsIsSet_ && !bson_append(builder, "projection_fields", projectionFields_)) {
         return false;
     }
-    if (projectionFieldsIsSet_ && !bson_append(builder, "ProjectionFields", projectionFields_)) {
-        return false;
-    }
-    if (returnPartialBlobIsSet_ && !bson_append(builder, "ReturnPartialBlob", returnPartialBlob_)) {
+    if (projectionBlobIsSet_ && !bson_append(builder, "projection_blob", projectionBlob_)) {
         return false;
     }
 
@@ -57,7 +52,7 @@ bool GetKvRequestBody::fromBson(const Viewer &viewer)
     while (it != viewer.end()) {
         const std::string &key = it->key();
         
-        if (key == "TableName") {
+        if (key == "table_name") {
             if (!bson_get(it, tableName_)) {
                 return false;
             }
@@ -66,16 +61,7 @@ bool GetKvRequestBody::fromBson(const Viewer &viewer)
             continue;
         }
         
-        if (key == "Consistency") {
-            if (!bson_get(it, consistency_)) {
-                return false;
-            }
-            consistencyIsSet_ = true;
-            ++it;
-            continue;
-        }
-        
-        if (key == "PrimaryKey") {
+        if (key == "primary_key") {
             if (!bson_get(it, primaryKey_)) {
                 return false;
             }
@@ -84,7 +70,7 @@ bool GetKvRequestBody::fromBson(const Viewer &viewer)
             continue;
         }
         
-        if (key == "ProjectionFields") {
+        if (key == "projection_fields") {
             if (!bson_get(it, projectionFields_)) {
                 return false;
             }
@@ -93,11 +79,11 @@ bool GetKvRequestBody::fromBson(const Viewer &viewer)
             continue;
         }
         
-        if (key == "ReturnPartialBlob") {
-            if (!bson_get(it, returnPartialBlob_)) {
+        if (key == "projection_blob") {
+            if (!bson_get(it, projectionBlob_)) {
                 return false;
             }
-            returnPartialBlobIsSet_ = true;
+            projectionBlobIsSet_ = true;
             ++it;
             continue;
         }
@@ -127,27 +113,6 @@ bool GetKvRequestBody::tableNameIsSet() const
 void GetKvRequestBody::unsettableName()
 {
     tableNameIsSet_ = false;
-}
-
-bool GetKvRequestBody::isConsistency() const
-{
-    return consistency_;
-}
-
-void GetKvRequestBody::setConsistency(bool value)
-{
-    consistency_ = value;
-    consistencyIsSet_ = true;
-}
-
-bool GetKvRequestBody::consistencyIsSet() const
-{
-    return consistencyIsSet_;
-}
-
-void GetKvRequestBody::unsetconsistency()
-{
-    consistencyIsSet_ = false;
 }
 
 Document GetKvRequestBody::getPrimaryKey() const
@@ -192,25 +157,25 @@ void GetKvRequestBody::unsetprojectionFields()
     projectionFieldsIsSet_ = false;
 }
 
-ReturnPartialBlob GetKvRequestBody::getReturnPartialBlob() const
+Projection_blob GetKvRequestBody::getProjectionBlob() const
 {
-    return returnPartialBlob_;
+    return projectionBlob_;
 }
 
-void GetKvRequestBody::setReturnPartialBlob(const ReturnPartialBlob& value)
+void GetKvRequestBody::setProjectionBlob(const Projection_blob& value)
 {
-    returnPartialBlob_ = value;
-    returnPartialBlobIsSet_ = true;
+    projectionBlob_ = value;
+    projectionBlobIsSet_ = true;
 }
 
-bool GetKvRequestBody::returnPartialBlobIsSet() const
+bool GetKvRequestBody::projectionBlobIsSet() const
 {
-    return returnPartialBlobIsSet_;
+    return projectionBlobIsSet_;
 }
 
-void GetKvRequestBody::unsetreturnPartialBlob()
+void GetKvRequestBody::unsetprojectionBlob()
 {
-    returnPartialBlobIsSet_ = false;
+    projectionBlobIsSet_ = false;
 }
 
 }

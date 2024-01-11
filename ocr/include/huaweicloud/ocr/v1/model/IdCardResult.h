@@ -9,7 +9,10 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/ocr/v1/model/IdcardFrontResult.h>
 #include <huaweicloud/core/utils/Object.h>
+#include <huaweicloud/ocr/v1/model/IdcardBackResult.h>
+#include <huaweicloud/ocr/v1/model/IdcardScoreInfoResult.h>
 #include <string>
 #include <huaweicloud/ocr/v1/model/IdcardVerificationResult.h>
 #include <vector>
@@ -132,7 +135,7 @@ public:
     void setVerificationResult(const IdcardVerificationResult& value);
 
     /// <summary>
-    /// 文本框在原图位置。输出左上、右上、右下、左下四个点坐标。当“return_text_location”设置为“true”时才返回。 
+    /// 文本框在原图位置。输出左上、右上、右下、左下四个点坐标。 仅return_text_location设置为true时才返回。 
     /// </summary>
 
     Object getTextLocation() const;
@@ -141,7 +144,16 @@ public:
     void setTextLocation(const Object& value);
 
     /// <summary>
-    /// 判断身份证图像是否经过翻拍，“true”表示是翻拍，“false”表示未经过翻拍。仅在输入参数detect_reproduce为true时，返回该字段。 
+    /// 身份证头像位置信息的结果。 仅在输入参数return_portrait_location为true时，返回该字段，当输入身份证背面时返回为空列表。 
+    /// </summary>
+
+    std::vector<std::vector<int32_t>>& getPortraitLocation();
+    bool portraitLocationIsSet() const;
+    void unsetportraitLocation();
+    void setPortraitLocation(const std::vector<std::vector<int32_t>>& value);
+
+    /// <summary>
+    /// 身份证图像是否翻拍告警结果。 - true：表示身份证图片经过翻拍。 - false：表示身份证图片未经过翻拍。 仅在输入参数detect_reproduce为true时，返回该字段。 
     /// </summary>
 
     bool isDetectReproduceResult() const;
@@ -150,7 +162,7 @@ public:
     void setDetectReproduceResult(bool value);
 
     /// <summary>
-    /// 判断身份证图像是黑白复印件还是原件，“true”表示是复印件，“false”表示是原件。仅在输入参数detect_copy为true时，返回该字段。 
+    /// 身份证图像是否黑白复印件告警结果。 - true：表示身份证图片是复印件。 - false”表示身份证图片是原件。 仅在输入参数detect_copy为true时，返回该字段。 
     /// </summary>
 
     bool isDetectCopyResult() const;
@@ -159,13 +171,85 @@ public:
     void setDetectCopyResult(bool value);
 
     /// <summary>
-    /// 身份证头像位置信息的结果，仅在输入参数“return_portrait_location”为true时，返回该字段，当输入身份证背面时返回为空列表。 
+    /// 身份证图片是否PS告警结果。 - true：表示身份证经过PS。 - false：表示未经过PS。 仅在传入参数detect_tampering为true时，返回该字段。 
     /// </summary>
 
-    std::vector<std::vector<int32_t>>& getPortraitLocation();
-    bool portraitLocationIsSet() const;
-    void unsetportraitLocation();
-    void setPortraitLocation(const std::vector<std::vector<int32_t>>& value);
+    bool isDetectTamperingResult() const;
+    bool detectTamperingResultIsSet() const;
+    void unsetdetectTamperingResult();
+    void setDetectTamperingResult(bool value);
+
+    /// <summary>
+    /// 身份证图片边框完整性告警结果。 - true：表示边框不完整 - false：表示边框完整。 仅在输入参数detect_border_integrity为true时，返回该字段。 
+    /// </summary>
+
+    bool isDetectBorderIntegrityResult() const;
+    bool detectBorderIntegrityResultIsSet() const;
+    void unsetdetectBorderIntegrityResult();
+    void setDetectBorderIntegrityResult(bool value);
+
+    /// <summary>
+    /// 身份证图像框内是否存在遮挡的告警结果。 - true：表示边框内部存在遮挡。 - false：表示边框内部不存在遮挡。 仅在输入参数detect_blocking_within_border为true时，返回该字段。 
+    /// </summary>
+
+    bool isDetectBlockingWithinBorderResult() const;
+    bool detectBlockingWithinBorderResultIsSet() const;
+    void unsetdetectBlockingWithinBorderResult();
+    void setDetectBlockingWithinBorderResult(bool value);
+
+    /// <summary>
+    /// 身份证模糊告警结果。 - true：表示身份证图片较模糊。 - false：表示身份证清晰。 仅在输入参数detect_blur为true时，返回该字段。 
+    /// </summary>
+
+    bool isDetectBlurResult() const;
+    bool detectBlurResultIsSet() const;
+    void unsetdetectBlurResult();
+    void setDetectBlurResult(bool value);
+
+    /// <summary>
+    /// 临时身份证告警结果。 - true：表示是临时身份证。 - false：表示非临时身份证。 仅在输入参数detect_interim为true时，返回该字段。 
+    /// </summary>
+
+    bool isDetectInterimResult() const;
+    bool detectInterimResultIsSet() const;
+    void unsetdetectInterimResult();
+    void setDetectInterimResult(bool value);
+
+    /// <summary>
+    /// 身份证反光告警结果。 - true：表示身份证图片存在反光。 - false：表示是身份证不存在反光。 仅在输入参数detect_glare为true时，返回该字段。 
+    /// </summary>
+
+    bool isDetectGlareResult() const;
+    bool detectGlareResultIsSet() const;
+    void unsetdetectGlareResult();
+    void setDetectGlareResult(bool value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    IdcardScoreInfoResult getScoreInfo() const;
+    bool scoreInfoIsSet() const;
+    void unsetscoreInfo();
+    void setScoreInfo(const IdcardScoreInfoResult& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    IdcardFrontResult getFront() const;
+    bool frontIsSet() const;
+    void unsetfront();
+    void setFront(const IdcardFrontResult& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    IdcardBackResult getBack() const;
+    bool backIsSet() const;
+    void unsetback();
+    void setBack(const IdcardBackResult& value);
 
 
 protected:
@@ -191,12 +275,30 @@ protected:
     bool verificationResultIsSet_;
     Object textLocation_;
     bool textLocationIsSet_;
+    std::vector<std::vector<int32_t>> portraitLocation_;
+    bool portraitLocationIsSet_;
     bool detectReproduceResult_;
     bool detectReproduceResultIsSet_;
     bool detectCopyResult_;
     bool detectCopyResultIsSet_;
-    std::vector<std::vector<int32_t>> portraitLocation_;
-    bool portraitLocationIsSet_;
+    bool detectTamperingResult_;
+    bool detectTamperingResultIsSet_;
+    bool detectBorderIntegrityResult_;
+    bool detectBorderIntegrityResultIsSet_;
+    bool detectBlockingWithinBorderResult_;
+    bool detectBlockingWithinBorderResultIsSet_;
+    bool detectBlurResult_;
+    bool detectBlurResultIsSet_;
+    bool detectInterimResult_;
+    bool detectInterimResultIsSet_;
+    bool detectGlareResult_;
+    bool detectGlareResultIsSet_;
+    IdcardScoreInfoResult scoreInfo_;
+    bool scoreInfoIsSet_;
+    IdcardFrontResult front_;
+    bool frontIsSet_;
+    IdcardBackResult back_;
+    bool backIsSet_;
 
 };
 

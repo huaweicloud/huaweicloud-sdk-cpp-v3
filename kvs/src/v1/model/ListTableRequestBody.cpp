@@ -15,8 +15,8 @@ ListTableRequestBody::ListTableRequestBody()
 {
     cursorName_ = "";
     cursorNameIsSet_ = false;
-    limitNum_ = 0;
-    limitNumIsSet_ = false;
+    limit_ = 0;
+    limitIsSet_ = false;
 }
 
 ListTableRequestBody::~ListTableRequestBody() = default;
@@ -28,10 +28,10 @@ void ListTableRequestBody::validate()
 bool ListTableRequestBody::toBson(Builder &builder) const
 {
 
-    if (cursorNameIsSet_ && !bson_append(builder, "CursorName", cursorName_)) {
+    if (cursorNameIsSet_ && !bson_append(builder, "cursor_name", cursorName_)) {
         return false;
     }
-    if (limitNumIsSet_ && !bson_append(builder, "LimitNum", limitNum_)) {
+    if (limitIsSet_ && !bson_append(builder, "limit", limit_)) {
         return false;
     }
 
@@ -45,7 +45,7 @@ bool ListTableRequestBody::fromBson(const Viewer &viewer)
     while (it != viewer.end()) {
         const std::string &key = it->key();
         
-        if (key == "CursorName") {
+        if (key == "cursor_name") {
             if (!bson_get(it, cursorName_)) {
                 return false;
             }
@@ -54,11 +54,11 @@ bool ListTableRequestBody::fromBson(const Viewer &viewer)
             continue;
         }
         
-        if (key == "LimitNum") {
-            if (!bson_get(it, limitNum_)) {
+        if (key == "limit") {
+            if (!bson_get(it, limit_)) {
                 return false;
             }
-            limitNumIsSet_ = true;
+            limitIsSet_ = true;
             ++it;
             continue;
         }
@@ -90,25 +90,25 @@ void ListTableRequestBody::unsetcursorName()
     cursorNameIsSet_ = false;
 }
 
-int32_t ListTableRequestBody::getLimitNum() const
+int32_t ListTableRequestBody::getLimit() const
 {
-    return limitNum_;
+    return limit_;
 }
 
-void ListTableRequestBody::setLimitNum(int32_t value)
+void ListTableRequestBody::setLimit(int32_t value)
 {
-    limitNum_ = value;
-    limitNumIsSet_ = true;
+    limit_ = value;
+    limitIsSet_ = true;
 }
 
-bool ListTableRequestBody::limitNumIsSet() const
+bool ListTableRequestBody::limitIsSet() const
 {
-    return limitNumIsSet_;
+    return limitIsSet_;
 }
 
-void ListTableRequestBody::unsetlimitNum()
+void ListTableRequestBody::unsetlimit()
 {
-    limitNumIsSet_ = false;
+    limitIsSet_ = false;
 }
 
 }

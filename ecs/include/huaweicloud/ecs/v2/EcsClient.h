@@ -131,6 +131,8 @@
 #include <huaweicloud/ecs/v2/model/NovaListServersDetailsResponse.h>
 #include <huaweicloud/ecs/v2/model/NovaShowKeypairRequest.h>
 #include <huaweicloud/ecs/v2/model/NovaShowKeypairResponse.h>
+#include <huaweicloud/ecs/v2/model/NovaShowServerInterfaceRequest.h>
+#include <huaweicloud/ecs/v2/model/NovaShowServerInterfaceResponse.h>
 #include <huaweicloud/ecs/v2/model/NovaShowServerRequest.h>
 #include <huaweicloud/ecs/v2/model/NovaShowServerResponse.h>
 #include <huaweicloud/ecs/v2/model/RegisterServerAutoRecoveryRequest.h>
@@ -680,6 +682,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<NovaShowServerResponse> novaShowServer(
         NovaShowServerRequest &request
+    );
+    // 查询指定云服务器网卡信息
+    //
+    // 根据网卡ID，查询云服务器网卡信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<NovaShowServerInterfaceResponse> novaShowServerInterface(
+        NovaShowServerInterfaceRequest &request
     );
     // 管理云服务器自动恢复动作
     //

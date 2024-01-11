@@ -189,6 +189,15 @@ public:
     void setThreshold(int32_t value);
 
     /// <summary>
+    /// 用于标识SMB服务
+    /// </summary>
+
+    std::string getSysLockSourceService() const;
+    bool sysLockSourceServiceIsSet() const;
+    void unsetsysLockSourceService();
+    void setSysLockSourceService(const std::string& value);
+
+    /// <summary>
     /// 更新时间,例如:\&quot;2020-02-05T10:38:34.209782\&quot;
     /// </summary>
 
@@ -240,6 +249,8 @@ protected:
     bool smnNotifyIsSet_;
     int32_t threshold_;
     bool thresholdIsSet_;
+    std::string sysLockSourceService_;
+    bool sysLockSourceServiceIsSet_;
     std::string updatedAt_;
     bool updatedAtIsSet_;
     std::string version_;

@@ -17,9 +17,8 @@ DeleteKvRequestBody::DeleteKvRequestBody()
     tableNameIsSet_ = false;
     primaryKeyIsSet_ = false;
     conditionExpressionIsSet_ = false;
-    expressionVarDefineIsSet_ = false;
     projectionFieldsIsSet_ = false;
-    returnPartialBlobIsSet_ = false;
+    projectionBlobIsSet_ = false;
 }
 
 DeleteKvRequestBody::~DeleteKvRequestBody() = default;
@@ -31,22 +30,19 @@ void DeleteKvRequestBody::validate()
 bool DeleteKvRequestBody::toBson(Builder &builder) const
 {
 
-    if (tableNameIsSet_ && !bson_append(builder, "TableName", tableName_)) {
+    if (tableNameIsSet_ && !bson_append(builder, "table_name", tableName_)) {
         return false;
     }
-    if (primaryKeyIsSet_ && !bson_append(builder, "PrimaryKey", primaryKey_)) {
+    if (primaryKeyIsSet_ && !bson_append(builder, "primary_key", primaryKey_)) {
         return false;
     }
-    if (conditionExpressionIsSet_ && !bson_append(builder, "ConditionExpression", conditionExpression_)) {
+    if (conditionExpressionIsSet_ && !bson_append(builder, "condition_expression", conditionExpression_)) {
         return false;
     }
-    if (expressionVarDefineIsSet_ && !bson_append(builder, "ExpressionVarDefine", expressionVarDefine_)) {
+    if (projectionFieldsIsSet_ && !bson_append(builder, "projection_fields", projectionFields_)) {
         return false;
     }
-    if (projectionFieldsIsSet_ && !bson_append(builder, "ProjectionFields", projectionFields_)) {
-        return false;
-    }
-    if (returnPartialBlobIsSet_ && !bson_append(builder, "ReturnPartialBlob", returnPartialBlob_)) {
+    if (projectionBlobIsSet_ && !bson_append(builder, "projection_blob", projectionBlob_)) {
         return false;
     }
 
@@ -60,7 +56,7 @@ bool DeleteKvRequestBody::fromBson(const Viewer &viewer)
     while (it != viewer.end()) {
         const std::string &key = it->key();
         
-        if (key == "TableName") {
+        if (key == "table_name") {
             if (!bson_get(it, tableName_)) {
                 return false;
             }
@@ -69,7 +65,7 @@ bool DeleteKvRequestBody::fromBson(const Viewer &viewer)
             continue;
         }
         
-        if (key == "PrimaryKey") {
+        if (key == "primary_key") {
             if (!bson_get(it, primaryKey_)) {
                 return false;
             }
@@ -78,7 +74,7 @@ bool DeleteKvRequestBody::fromBson(const Viewer &viewer)
             continue;
         }
         
-        if (key == "ConditionExpression") {
+        if (key == "condition_expression") {
             if (!bson_get(it, conditionExpression_)) {
                 return false;
             }
@@ -87,16 +83,7 @@ bool DeleteKvRequestBody::fromBson(const Viewer &viewer)
             continue;
         }
         
-        if (key == "ExpressionVarDefine") {
-            if (!bson_get(it, expressionVarDefine_)) {
-                return false;
-            }
-            expressionVarDefineIsSet_ = true;
-            ++it;
-            continue;
-        }
-        
-        if (key == "ProjectionFields") {
+        if (key == "projection_fields") {
             if (!bson_get(it, projectionFields_)) {
                 return false;
             }
@@ -105,11 +92,11 @@ bool DeleteKvRequestBody::fromBson(const Viewer &viewer)
             continue;
         }
         
-        if (key == "ReturnPartialBlob") {
-            if (!bson_get(it, returnPartialBlob_)) {
+        if (key == "projection_blob") {
+            if (!bson_get(it, projectionBlob_)) {
                 return false;
             }
-            returnPartialBlobIsSet_ = true;
+            projectionBlobIsSet_ = true;
             ++it;
             continue;
         }
@@ -162,12 +149,12 @@ void DeleteKvRequestBody::unsetprimaryKey()
     primaryKeyIsSet_ = false;
 }
 
-ConditionExpression DeleteKvRequestBody::getConditionExpression() const
+Condition_expression DeleteKvRequestBody::getConditionExpression() const
 {
     return conditionExpression_;
 }
 
-void DeleteKvRequestBody::setConditionExpression(const ConditionExpression& value)
+void DeleteKvRequestBody::setConditionExpression(const Condition_expression& value)
 {
     conditionExpression_ = value;
     conditionExpressionIsSet_ = true;
@@ -181,27 +168,6 @@ bool DeleteKvRequestBody::conditionExpressionIsSet() const
 void DeleteKvRequestBody::unsetconditionExpression()
 {
     conditionExpressionIsSet_ = false;
-}
-
-Document DeleteKvRequestBody::getExpressionVarDefine() const
-{
-    return expressionVarDefine_;
-}
-
-void DeleteKvRequestBody::setExpressionVarDefine(const Document& value)
-{
-    expressionVarDefine_ = value;
-    expressionVarDefineIsSet_ = true;
-}
-
-bool DeleteKvRequestBody::expressionVarDefineIsSet() const
-{
-    return expressionVarDefineIsSet_;
-}
-
-void DeleteKvRequestBody::unsetexpressionVarDefine()
-{
-    expressionVarDefineIsSet_ = false;
 }
 
 std::vector<std::string>& DeleteKvRequestBody::getProjectionFields()
@@ -225,25 +191,25 @@ void DeleteKvRequestBody::unsetprojectionFields()
     projectionFieldsIsSet_ = false;
 }
 
-ReturnPartialBlob DeleteKvRequestBody::getReturnPartialBlob() const
+Projection_blob DeleteKvRequestBody::getProjectionBlob() const
 {
-    return returnPartialBlob_;
+    return projectionBlob_;
 }
 
-void DeleteKvRequestBody::setReturnPartialBlob(const ReturnPartialBlob& value)
+void DeleteKvRequestBody::setProjectionBlob(const Projection_blob& value)
 {
-    returnPartialBlob_ = value;
-    returnPartialBlobIsSet_ = true;
+    projectionBlob_ = value;
+    projectionBlobIsSet_ = true;
 }
 
-bool DeleteKvRequestBody::returnPartialBlobIsSet() const
+bool DeleteKvRequestBody::projectionBlobIsSet() const
 {
-    return returnPartialBlobIsSet_;
+    return projectionBlobIsSet_;
 }
 
-void DeleteKvRequestBody::unsetreturnPartialBlob()
+void DeleteKvRequestBody::unsetprojectionBlob()
 {
-    returnPartialBlobIsSet_ = false;
+    projectionBlobIsSet_ = false;
 }
 
 }

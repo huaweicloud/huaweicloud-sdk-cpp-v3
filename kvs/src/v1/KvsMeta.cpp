@@ -32,11 +32,8 @@ HttpRequestDef KvsMeta::genRequestDefForDescribeTable() {
     return reqDefBuilder;
 }
 
-HttpRequestDef KvsMeta::genRequestDefForListTable() {
+HttpRequestDef KvsMeta::genRequestDefForListStore() {
     HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withRequestField(FieldDef().withName("StoreName")
-                  .withJsonTag("store_name")
-                  .withLocationType(Cname));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
@@ -44,7 +41,7 @@ HttpRequestDef KvsMeta::genRequestDefForListTable() {
     return reqDefBuilder;
 }
 
-HttpRequestDef KvsMeta::genRequestDefForRenameKv() {
+HttpRequestDef KvsMeta::genRequestDefForListTable() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("StoreName")
                   .withJsonTag("store_name")
@@ -116,6 +113,18 @@ HttpRequestDef KvsMeta::genRequestDefForPutKv() {
     return reqDefBuilder;
 }
 
+HttpRequestDef KvsMeta::genRequestDefForRenameKv() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("StoreName")
+                  .withJsonTag("store_name")
+                  .withLocationType(Cname));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef KvsMeta::genRequestDefForScanKv() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("StoreName")
@@ -129,6 +138,30 @@ HttpRequestDef KvsMeta::genRequestDefForScanKv() {
 }
 
 HttpRequestDef KvsMeta::genRequestDefForScanSkeyKv() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("StoreName")
+                  .withJsonTag("store_name")
+                  .withLocationType(Cname));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef KvsMeta::genRequestDefForTransactGetKv() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("StoreName")
+                  .withJsonTag("store_name")
+                  .withLocationType(Cname));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef KvsMeta::genRequestDefForTransactWriteSkeyKv() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("StoreName")
                   .withJsonTag("store_name")

@@ -90,6 +90,30 @@ public:
             { 
                 "https://dbss.cn-north-9.myhuaweicloud.com"
             });
+        regions["cn-north-11"] = Region("cn-north-11",
+            { 
+                "https://dbss.cn-north-11.myhuaweicloud.com"
+            });
+        regions["me-east-1"] = Region("me-east-1",
+            { 
+                "https://dbss.me-east-1.myhuaweicloud.com"
+            });
+        regions["cn-south-4"] = Region("cn-south-4",
+            { 
+                "https://dbss.cn-south-4.myhuaweicloud.com"
+            });
+        regions["ap-southeast-4"] = Region("ap-southeast-4",
+            { 
+                "https://dbss.ap-southeast-4.myhuaweicloud.com"
+            });
+        regions["tr-west-1"] = Region("tr-west-1",
+            { 
+                "https://dbss.tr-west-1.myhuaweicloud.com"
+            });
+        regions["cn-east-5"] = Region("cn-east-5",
+            { 
+                "https://dbss.cn-east-5.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

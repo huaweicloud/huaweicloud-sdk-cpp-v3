@@ -14,7 +14,7 @@ namespace Model {
 UpdateKvResponse::UpdateKvResponse()
 {
     kvBlobDataIsSet_ = false;
-    kvFieldsIsSet_ = false;
+    kvDocIsSet_ = false;
 }
 
 UpdateKvResponse::~UpdateKvResponse() = default;
@@ -26,10 +26,10 @@ void UpdateKvResponse::validate()
 bool UpdateKvResponse::toBson(Builder &builder) const
 {
 
-    if (kvBlobDataIsSet_ && !bson_append(builder, "KvBlobData", kvBlobData_)) {
+    if (kvBlobDataIsSet_ && !bson_append(builder, "kv_blob_data", kvBlobData_)) {
         return false;
     }
-    if (kvFieldsIsSet_ && !bson_append(builder, "KvFields", kvFields_)) {
+    if (kvDocIsSet_ && !bson_append(builder, "kv_doc", kvDoc_)) {
         return false;
     }
 
@@ -43,7 +43,7 @@ bool UpdateKvResponse::fromBson(const Viewer &viewer)
     while (it != viewer.end()) {
         const std::string &key = it->key();
         
-        if (key == "KvBlobData") {
+        if (key == "kv_blob_data") {
             if (!bson_get(it, kvBlobData_)) {
                 return false;
             }
@@ -52,11 +52,11 @@ bool UpdateKvResponse::fromBson(const Viewer &viewer)
             continue;
         }
         
-        if (key == "KvFields") {
-            if (!bson_get(it, kvFields_)) {
+        if (key == "kv_doc") {
+            if (!bson_get(it, kvDoc_)) {
                 return false;
             }
-            kvFieldsIsSet_ = true;
+            kvDocIsSet_ = true;
             ++it;
             continue;
         }
@@ -67,12 +67,12 @@ bool UpdateKvResponse::fromBson(const Viewer &viewer)
     return true;
 }
 
-KvBlobData UpdateKvResponse::getKvBlobData() const
+Kv_blob_data UpdateKvResponse::getKvBlobData() const
 {
     return kvBlobData_;
 }
 
-void UpdateKvResponse::setKvBlobData(const KvBlobData& value)
+void UpdateKvResponse::setKvBlobData(const Kv_blob_data& value)
 {
     kvBlobData_ = value;
     kvBlobDataIsSet_ = true;
@@ -88,25 +88,25 @@ void UpdateKvResponse::unsetkvBlobData()
     kvBlobDataIsSet_ = false;
 }
 
-Document UpdateKvResponse::getKvFields() const
+Document UpdateKvResponse::getKvDoc() const
 {
-    return kvFields_;
+    return kvDoc_;
 }
 
-void UpdateKvResponse::setKvFields(const Document& value)
+void UpdateKvResponse::setKvDoc(const Document& value)
 {
-    kvFields_ = value;
-    kvFieldsIsSet_ = true;
+    kvDoc_ = value;
+    kvDocIsSet_ = true;
 }
 
-bool UpdateKvResponse::kvFieldsIsSet() const
+bool UpdateKvResponse::kvDocIsSet() const
 {
-    return kvFieldsIsSet_;
+    return kvDocIsSet_;
 }
 
-void UpdateKvResponse::unsetkvFields()
+void UpdateKvResponse::unsetkvDoc()
 {
-    kvFieldsIsSet_ = false;
+    kvDocIsSet_ = false;
 }
 
 }

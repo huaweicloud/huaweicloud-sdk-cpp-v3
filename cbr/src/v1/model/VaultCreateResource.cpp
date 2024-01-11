@@ -53,6 +53,8 @@ VaultCreateResource::VaultCreateResource()
     cbcDeleteCountIsSet_ = false;
     frozen_ = false;
     frozenIsSet_ = false;
+    sysLockSourceService_ = "";
+    sysLockSourceServiceIsSet_ = false;
 }
 
 VaultCreateResource::~VaultCreateResource() = default;
@@ -133,6 +135,9 @@ web::json::value VaultCreateResource::toJson() const
     }
     if(frozenIsSet_) {
         val[utility::conversions::to_string_t("frozen")] = ModelBase::toJson(frozen_);
+    }
+    if(sysLockSourceServiceIsSet_) {
+        val[utility::conversions::to_string_t("sys_lock_source_service")] = ModelBase::toJson(sysLockSourceService_);
     }
 
     return val;
@@ -346,6 +351,15 @@ bool VaultCreateResource::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFrozen(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("sys_lock_source_service"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sys_lock_source_service"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSysLockSourceService(refVal);
         }
     }
     return ok;
@@ -833,6 +847,27 @@ bool VaultCreateResource::frozenIsSet() const
 void VaultCreateResource::unsetfrozen()
 {
     frozenIsSet_ = false;
+}
+
+std::string VaultCreateResource::getSysLockSourceService() const
+{
+    return sysLockSourceService_;
+}
+
+void VaultCreateResource::setSysLockSourceService(const std::string& value)
+{
+    sysLockSourceService_ = value;
+    sysLockSourceServiceIsSet_ = true;
+}
+
+bool VaultCreateResource::sysLockSourceServiceIsSet() const
+{
+    return sysLockSourceServiceIsSet_;
+}
+
+void VaultCreateResource::unsetsysLockSourceService()
+{
+    sysLockSourceServiceIsSet_ = false;
 }
 
 }

@@ -62,6 +62,7 @@ public:
     static HttpRequestDef genRequestDefForNovaListServersDetails();
     static HttpRequestDef genRequestDefForNovaShowKeypair();
     static HttpRequestDef genRequestDefForNovaShowServer();
+    static HttpRequestDef genRequestDefForNovaShowServerInterface();
     static HttpRequestDef genRequestDefForRegisterServerAutoRecovery();
     static HttpRequestDef genRequestDefForRegisterServerMonitor();
     static HttpRequestDef genRequestDefForReinstallServerWithCloudInit();

@@ -16,6 +16,8 @@ RestoreDatabaseInstance::RestoreDatabaseInstance()
     restoreTimeIsSet_ = false;
     instanceId_ = "";
     instanceIdIsSet_ = false;
+    isFastRestore_ = false;
+    isFastRestoreIsSet_ = false;
     databasesIsSet_ = false;
 }
 
@@ -34,6 +36,9 @@ web::json::value RestoreDatabaseInstance::toJson() const
     }
     if(instanceIdIsSet_) {
         val[utility::conversions::to_string_t("instance_id")] = ModelBase::toJson(instanceId_);
+    }
+    if(isFastRestoreIsSet_) {
+        val[utility::conversions::to_string_t("is_fast_restore")] = ModelBase::toJson(isFastRestore_);
     }
     if(databasesIsSet_) {
         val[utility::conversions::to_string_t("databases")] = ModelBase::toJson(databases_);
@@ -61,6 +66,15 @@ bool RestoreDatabaseInstance::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setInstanceId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_fast_restore"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_fast_restore"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsFastRestore(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("databases"))) {
@@ -116,6 +130,27 @@ bool RestoreDatabaseInstance::instanceIdIsSet() const
 void RestoreDatabaseInstance::unsetinstanceId()
 {
     instanceIdIsSet_ = false;
+}
+
+bool RestoreDatabaseInstance::isIsFastRestore() const
+{
+    return isFastRestore_;
+}
+
+void RestoreDatabaseInstance::setIsFastRestore(bool value)
+{
+    isFastRestore_ = value;
+    isFastRestoreIsSet_ = true;
+}
+
+bool RestoreDatabaseInstance::isFastRestoreIsSet() const
+{
+    return isFastRestoreIsSet_;
+}
+
+void RestoreDatabaseInstance::unsetisFastRestore()
+{
+    isFastRestoreIsSet_ = false;
 }
 
 std::vector<RestoreDatabaseInfo>& RestoreDatabaseInstance::getDatabases()

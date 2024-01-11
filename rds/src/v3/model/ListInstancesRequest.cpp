@@ -22,6 +22,8 @@ ListInstancesRequest::ListInstancesRequest()
     typeIsSet_ = false;
     datastoreType_ = "";
     datastoreTypeIsSet_ = false;
+    epsId_ = "";
+    epsIdIsSet_ = false;
     vpcId_ = "";
     vpcIdIsSet_ = false;
     subnetId_ = "";
@@ -58,6 +60,9 @@ web::json::value ListInstancesRequest::toJson() const
     }
     if(datastoreTypeIsSet_) {
         val[utility::conversions::to_string_t("datastore_type")] = ModelBase::toJson(datastoreType_);
+    }
+    if(epsIdIsSet_) {
+        val[utility::conversions::to_string_t("eps_id")] = ModelBase::toJson(epsId_);
     }
     if(vpcIdIsSet_) {
         val[utility::conversions::to_string_t("vpc_id")] = ModelBase::toJson(vpcId_);
@@ -124,6 +129,15 @@ bool ListInstancesRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDatastoreType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("eps_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("eps_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEpsId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("vpc_id"))) {
@@ -278,6 +292,27 @@ bool ListInstancesRequest::datastoreTypeIsSet() const
 void ListInstancesRequest::unsetdatastoreType()
 {
     datastoreTypeIsSet_ = false;
+}
+
+std::string ListInstancesRequest::getEpsId() const
+{
+    return epsId_;
+}
+
+void ListInstancesRequest::setEpsId(const std::string& value)
+{
+    epsId_ = value;
+    epsIdIsSet_ = true;
+}
+
+bool ListInstancesRequest::epsIdIsSet() const
+{
+    return epsIdIsSet_;
+}
+
+void ListInstancesRequest::unsetepsId()
+{
+    epsIdIsSet_ = false;
 }
 
 std::string ListInstancesRequest::getVpcId() const

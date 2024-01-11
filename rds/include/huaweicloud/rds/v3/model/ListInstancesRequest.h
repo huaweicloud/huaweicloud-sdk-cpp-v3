@@ -84,6 +84,15 @@ public:
     void setDatastoreType(const std::string& value);
 
     /// <summary>
+    /// 企业项目id。
+    /// </summary>
+
+    std::string getEpsId() const;
+    bool epsIdIsSet() const;
+    void unsetepsId();
+    void setEpsId(const std::string& value);
+
+    /// <summary>
     /// 虚拟私有云ID。
     /// </summary>
 
@@ -140,6 +149,8 @@ protected:
     bool typeIsSet_;
     std::string datastoreType_;
     bool datastoreTypeIsSet_;
+    std::string epsId_;
+    bool epsIdIsSet_;
     std::string vpcId_;
     bool vpcIdIsSet_;
     std::string subnetId_;

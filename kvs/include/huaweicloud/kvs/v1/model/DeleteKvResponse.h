@@ -13,7 +13,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/core/bson/Bson.h>
-#include <huaweicloud/kvs/v1/model/KvBlobData.h>
+#include <huaweicloud/kvs/v1/model/Kv_blob_data.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -46,13 +46,13 @@ public:
     /// 
     /// </summary>
 
-    KvBlobData getKvBlobData() const;
+    Kv_blob_data getKvBlobData() const;
     bool kvBlobDataIsSet() const;
     void unsetkvBlobData();
-    void setKvBlobData(const KvBlobData& value);
+    void setKvBlobData(const Kv_blob_data& value);
 
     /// <summary>
-    /// 
+    /// 对kv_doc有效。
     /// </summary>
 
     Document getKvDoc() const;
@@ -62,7 +62,7 @@ public:
 
 
 protected:
-    KvBlobData kvBlobData_;
+    Kv_blob_data kvBlobData_;
     bool kvBlobDataIsSet_;
     Document kvDoc_;
     bool kvDocIsSet_;

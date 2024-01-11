@@ -1,3 +1,409 @@
+# 3.1.69 2024-01-11
+
+### HuaweiCloud SDK DRS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **BatchValidateConnections**
+    - changes of request param
+      - `+ jobs.customized_dns`
+
+### HuaweiCloud SDK DRS
+
+- _Features_
+  - Support the following APIs:
+    - `BatchCreateTags`
+    - `BatchDeleteTags`
+    - `ListInstanceByTags`
+    - `CountInstanceByTags`
+    - `ListInstanceTags`
+    - `ListTags`
+    - `UpdateJobConfigurations`
+    - `ListJobParameters`
+    - `ListJobHistoryParameters`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListLinks**
+    - changes of response param
+      - `+ job_links.engine_type: enum value [redis-to-gaussredis,rediscluster-to-gaussredis]`
+  - **ListJobs**
+    - changes of request param
+      - `+ engine_type: enum value [redis-to-gaussredis,rediscluster-to-gaussredis]`
+    - changes of response param
+      - `+ jobs.engine_type: enum value [redis-to-gaussredis,rediscluster-to-gaussredis]`
+      - `+ jobs.children.engine_type: enum value [redis-to-gaussredis,rediscluster-to-gaussredis]`
+  - **CreateJob**
+    - changes of request param
+      - `+ job.base_info.engine_type: enum value [redis-to-gaussredis,rediscluster-to-gaussredis]`
+      - `+ job.source_endpoint.customized_dns`
+      - `+ job.source_endpoint.db_type: enum value [redis,rediscluster,gaussredis]`
+      - `+ job.source_endpoint.endpoint.endpoint_name: enum value [redis,ecs_redis,rediscluster,ecs_rediscluster,cloud_gaussdb_redis]`
+      - `+ job.source_endpoint.config.node_num`
+  - **BatchCreateJobsAsync**
+    - changes of request param
+      - `+ jobs.base_info.engine_type: enum value [redis-to-gaussredis,rediscluster-to-gaussredis]`
+      - `+ jobs.source_endpoint.customized_dns`
+      - `+ jobs.source_endpoint.db_type: enum value [redis,rediscluster,gaussredis]`
+      - `+ jobs.source_endpoint.endpoint.endpoint_name: enum value [redis,ecs_redis,rediscluster,ecs_rediscluster,cloud_gaussdb_redis]`
+      - `+ jobs.source_endpoint.config.node_num`
+  - **ListAsyncJobDetail**
+    - changes of response param
+      - `+ jobs.base_info.engine_type: enum value [redis-to-gaussredis,rediscluster-to-gaussredis]`
+      - `+ jobs.source_endpoint.customized_dns`
+      - `+ jobs.source_endpoint.db_type: enum value [redis,rediscluster,gaussredis]`
+      - `+ jobs.source_endpoint.endpoint.endpoint_name: enum value [redis,ecs_redis,rediscluster,ecs_rediscluster,cloud_gaussdb_redis]`
+      - `+ jobs.source_endpoint.config.node_num`
+  - **UpdateBatchAsyncJobs**
+    - changes of request param
+      - `+ jobs.params.base_info.engine_type: enum value [redis-to-gaussredis,rediscluster-to-gaussredis]`
+      - `+ jobs.params.source_endpoint.customized_dns`
+      - `+ jobs.params.source_endpoint.db_type: enum value [redis,rediscluster,gaussredis]`
+      - `+ jobs.params.source_endpoint.endpoint.endpoint_name: enum value [redis,ecs_redis,rediscluster,ecs_rediscluster,cloud_gaussdb_redis]`
+      - `+ jobs.params.source_endpoint.config.node_num`
+  - **ShowJobDetail**
+    - changes of response param
+      - `+ job.base_info.engine_type: enum value [redis-to-gaussredis,rediscluster-to-gaussredis]`
+      - `+ job.source_endpoint.customized_dns`
+      - `+ job.source_endpoint.db_type: enum value [redis,rediscluster,gaussredis]`
+      - `+ job.source_endpoint.endpoint.endpoint_name: enum value [redis,ecs_redis,rediscluster,ecs_rediscluster,cloud_gaussdb_redis]`
+      - `+ job.source_endpoint.config.node_num`
+  - **UpdateJob**
+    - changes of request param
+      - `+ job.params.base_info.engine_type: enum value [redis-to-gaussredis,rediscluster-to-gaussredis]`
+      - `+ job.params.source_endpoint.customized_dns`
+      - `+ job.params.source_endpoint.db_type: enum value [redis,rediscluster,gaussredis]`
+      - `+ job.params.source_endpoint.endpoint.endpoint_name: enum value [redis,ecs_redis,rediscluster,ecs_rediscluster,cloud_gaussdb_redis]`
+      - `+ job.params.source_endpoint.config.node_num`
+  - **ExecuteJobAction**
+    - changes of request param
+      - `+ job.action_name: enum value [column_limit,reload_parameters]`
+      - `+ job.action_params.endpoints.customized_dns`
+      - `+ job.action_params.endpoints.db_type: enum value [redis,rediscluster,gaussredis]`
+      - `+ job.action_params.endpoints.endpoint.endpoint_name: enum value [redis,ecs_redis,rediscluster,ecs_rediscluster,cloud_gaussdb_redis]`
+      - `+ job.action_params.endpoints.config.node_num`
+  - **BatchExecuteJobActions**
+    - changes of request param
+      - `+ jobs.action_name: enum value [column_limit,reload_parameters]`
+      - `+ jobs.action_params.endpoints.customized_dns`
+      - `+ jobs.action_params.endpoints.db_type: enum value [redis,rediscluster,gaussredis]`
+      - `+ jobs.action_params.endpoints.endpoint.endpoint_name: enum value [redis,ecs_redis,rediscluster,ecs_rediscluster,cloud_gaussdb_redis]`
+      - `+ jobs.action_params.endpoints.config.node_num`
+
+### HuaweiCloud SDK ECS
+
+- _Features_
+  - Support the API `NovaShowServerInterface`
+- _Bug Fix_
+  - None
+- _Change_
+  - **UpdateServer**
+    - changes of response param
+      - `+ server.OS-EXT-SRV-ATTR:user_data`
+
+### HuaweiCloud SDK KVS
+
+- _Features_
+  - Support the APIs `ListStore`, `TransactWriteSkeyKv`, `TransactGetKv`
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateTable**
+    - changes of request param
+      - `+ global_secondary_index_schema`
+      - `+ pre_split_key_options`
+      - `+ local_secondary_index_schema`
+      - `+ table_name`
+      - `+ primary_key_schema`
+      - `- TableName`
+      - `- Temporary`
+      - `- Global2ndIndexSchema`
+      - `- PrimaryKeySchema`
+      - `- Local2ndIndexSchema`
+      - `- PreSplitKeyOptions`
+    - changes of response param
+      - `+ global_secondary_index_schema`
+      - `+ pre_split_key_options`
+      - `+ local_secondary_index_schema`
+      - `+ table_name`
+      - `+ primary_key_schema`
+      - `- TableName`
+      - `- Temporary`
+      - `- Global2ndIndexSchema`
+      - `- PrimaryKeySchema`
+      - `- Local2ndIndexSchema`
+      - `- PreSplitKeyOptions`
+  - **DescribeTable**
+    - changes of request param
+      - `+ table_name`
+      - `- TableName`
+    - changes of response param
+      - `+ run_time_info`
+      - `+ global_secondary_index_schema`
+      - `+ local_secondary_index_schema`
+      - `+ table_name`
+      - `+ primary_key_schema`
+      - `- TableName`
+      - `- Global2ndIndexSchema`
+      - `- RuntimeInfo`
+      - `- PrimaryKeySchema`
+      - `- Local2ndIndexSchema`
+  - **ListTable**
+    - changes of request param
+      - `+ cursor_name`
+      - `+ limit`
+      - `- CursorName`
+      - `- LimitNum`
+    - changes of response param
+      - `+ table_names`
+      - `+ cursor_name`
+      - `- CursorName`
+      - `- TableNameList`
+  - **PutKv**
+    - changes of request param
+      - `+ table_name`
+      - `+ condition_expression`
+      - `+ kv_doc`
+      - `+ kv_blob`
+      - `- TableName`
+      - `- ConditionExpression`
+      - `- KvDoc`
+      - `- KvBlob`
+  - **GetKv**
+    - changes of request param
+      - `+ table_name`
+      - `+ primary_key`
+      - `+ projection_fields`
+      - `+ projection_blob`
+      - `- TableName`
+      - `- Consistency`
+      - `- PrimaryKey`
+      - `- ProjectionFields`
+      - `- ReturnPartialBlob`
+    - changes of response param
+      - `+ kv_doc`
+      - `+ kv_blob_data`
+      - `- KvDoc`
+      - `- KvBlobData`
+  - **UpdateKv**
+    - changes of request param
+      - `+ table_name`
+      - `+ primary_key`
+      - `+ condition_expression`
+      - `+ kv_options`
+      - `+ update_fields`
+      - `+ projection_fields`
+      - `+ update_blob`
+      - `+ projection_blob`
+      - `- TableName`
+      - `- PrimaryKey`
+      - `- ConditionExpression`
+      - `- KvOptions`
+      - `- UpdateFields`
+      - `- ProjectionFields`
+      - `- UpdateBlob`
+      - `- ReturnPartialBlob`
+    - changes of response param
+      - `+ kv_doc`
+      - `+ kv_blob_data`
+      - `- KvFields`
+      - `- KvBlobData`
+  - **DeleteKv**
+    - changes of request param
+      - `+ table_name`
+      - `+ primary_key`
+      - `+ condition_expression`
+      - `+ projection_fields`
+      - `+ projection_blob`
+      - `- TableName`
+      - `- PrimaryKey`
+      - `- ConditionExpression`
+      - `- ExpressionVarDefine`
+      - `- ProjectionFields`
+      - `- ReturnPartialBlob`
+    - changes of response param
+      - `+ kv_doc`
+      - `+ kv_blob_data`
+      - `- KvDoc`
+      - `- KvBlobData`
+  - **ScanKv**
+    - changes of request param
+      - `+ table_name`
+      - `+ hint_index_name`
+      - `+ limit`
+      - `+ start_key`
+      - `+ end_key`
+      - `+ filter_expression`
+      - `+ projection_fields`
+      - `+ projection_blob`
+      - `- TableName`
+      - `- StrongConsistent`
+      - `- HintIndex`
+      - `- LimitNum`
+      - `- StartKey`
+      - `- EndKey`
+      - `- FilterExpression`
+      - `- FilterVarDefine`
+      - `- ProjectionFields`
+      - `- ReturnPartialBlob`
+    - changes of response param
+      - `+ returned_count`
+      - `+ returned_kv_items`
+      - `+ cursor_key`
+      - `+ filtered_count`
+      - `- KvArray`
+      - `- ReturnedCount`
+      - `- CursorKey`
+      - `- FilteredCount`
+  - **ScanSkeyKv**
+    - changes of request param
+      - `+ table_name`
+      - `+ hint_index_name`
+      - `+ limit`
+      - `+ shard_key`
+      - `+ start_sort_key`
+      - `+ end_sort_key`
+      - `+ filter_expression`
+      - `+ projection_fields`
+      - `+ projection_blob`
+      - `- TableName`
+      - `- StrongConsistent`
+      - `- HintIndex`
+      - `- LimitNum`
+      - `- ShardKey`
+      - `- StartSortKey`
+      - `- EndSortKey`
+      - `- FilterExpression`
+      - `- FilterVarDefine`
+      - `- ProjectionFields`
+      - `- ReturnPartialBlob`
+    - changes of response param
+      - `+ returned_count`
+      - `+ returned_kv_items`
+      - `+ cursor_sort_key`
+      - `+ filtered_count`
+      - `- CursorSortKey`
+      - `- KvArray`
+      - `- ReturnedCount`
+      - `- FilteredCount`
+  - **BatchWriteKv**
+    - changes of request param
+      - `+ table_opers`
+      - `- TableOpers`
+    - changes of response param
+      - `+ unprocessed_opers`
+      - `- UnprocessedOpers`
+  - **RenameKv**
+    - changes of request param
+      - `+ table_name`
+      - `+ primary_key`
+      - `+ new_sort_key`
+      - `+ kv_options`
+      - `+ update_blob_attr`
+      - `- TableName`
+      - `- PrimaryKey`
+      - `- NewSortKey`
+      - `- KvOptions`
+      - `- UpdateBlobAttr`
+      - `- ReturnBlobAttr`
+    - changes of response param
+      - `+ old_primary_key`
+      - `+ kv_blob_attr`
+      - `- KvBlobAttr`
+      - `- KvDoc`
+      - `- OldPrimaryKey`
+  - **BatchGetKv**
+    - changes of request param
+      - `+ batch_get_kv_opers`
+      - `- TableOpers`
+    - changes of response param
+      - `+ returned_kv_items_of_all`
+      - `+ exception_opers`
+      - `- Exceptions`
+      - `- TableKvArray`
+
+### HuaweiCloud SDK MPC
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListTranscodingTask**
+    - changes of response param
+      - `+ task_array.progress`
+  - **ListTranscodeDetail**
+    - changes of response param
+      - `+ task_array.progress`
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **RecognizeIdCard**
+    - changes of request param
+      - `+ detect_tampering`
+      - `+ detect_border_integrity`
+      - `+ detect_blocking_within_border`
+      - `+ detect_blur`
+      - `+ detect_interim`
+      - `+ detect_glare`
+    - changes of response param
+      - `+ result.detect_tampering_result`
+      - `+ result.detect_border_integrity_result`
+      - `+ result.detect_blocking_within_border_result`
+      - `+ result.detect_blur_result`
+      - `+ result.detect_interim_result`
+      - `+ result.detect_glare_result`
+      - `+ result.score_info`
+      - `+ result.front`
+      - `+ result.back`
+      - `+ result.verification_result.valid_validity_period`
+
+### HuaweiCloud SDK RDS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListInstances**
+    - changes of request param
+      - `+ eps_id`
+  - **BatchRestoreDatabase**
+    - changes of request param
+      - `+ instances.is_fast_restore`
+
+### HuaweiCloud SDK VPC
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowAddressGroup**
+    - changes of response param
+      - `+ address_group.ip_extra_set`
+  - **UpdateAddressGroup**
+    - changes of request param
+      - `+ address_group.ip_extra_set`
+    - changes of response param
+      - `+ address_group.ip_extra_set`
+  - **ListAddressGroup**
+    - changes of response param
+      - `+ address_groups.ip_extra_set`
+  - **CreateAddressGroup**
+    - changes of request param
+      - `+ address_group.ip_extra_set`
+    - changes of response param
+      - `+ address_group.ip_extra_set`
+
 # 3.1.68 2024-01-04
 
 ### HuaweiCloud SDK MPC

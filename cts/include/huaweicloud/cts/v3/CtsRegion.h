@@ -152,6 +152,10 @@ public:
 
                 "https://cts.tr-west-1.myhuaweicloud.cn"
             });
+        regions["me-east-1"] = Region("me-east-1",
+            { 
+                "https://cts.me-east-1.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

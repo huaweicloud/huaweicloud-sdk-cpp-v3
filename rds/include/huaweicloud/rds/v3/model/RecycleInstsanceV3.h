@@ -182,6 +182,15 @@ public:
     void unsetrecycleStatus();
     void setRecycleStatus(const std::string& value);
 
+    /// <summary>
+    /// 是否为serverless实例 - false 不是serverless实例 - true 是serverless实例
+    /// </summary>
+
+    bool isIsServerless() const;
+    bool isServerlessIsSet() const;
+    void unsetisServerless();
+    void setIsServerless(bool value);
+
 
 protected:
     std::string id_;
@@ -216,6 +225,8 @@ protected:
     bool recycleBackupIdIsSet_;
     std::string recycleStatus_;
     bool recycleStatusIsSet_;
+    bool isServerless_;
+    bool isServerlessIsSet_;
 
 };
 

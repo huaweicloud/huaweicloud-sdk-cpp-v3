@@ -9,6 +9,8 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <string>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -46,10 +48,32 @@ public:
     void unsetkeepDays();
     void setKeepDays(int32_t value);
 
+    /// <summary>
+    /// 审计记录的操作类型，动态范围。空表示不过滤任何操作类型。
+    /// </summary>
+
+    std::vector<std::string>& getAuditTypes();
+    bool auditTypesIsSet() const;
+    void unsetauditTypes();
+    void setAuditTypes(const std::vector<std::string>& value);
+
+    /// <summary>
+    /// 审计记录的所有操作类型。
+    /// </summary>
+
+    std::string getAllAuditLogAction() const;
+    bool allAuditLogActionIsSet() const;
+    void unsetallAuditLogAction();
+    void setAllAuditLogAction(const std::string& value);
+
 
 protected:
     int32_t keepDays_;
     bool keepDaysIsSet_;
+    std::vector<std::string> auditTypes_;
+    bool auditTypesIsSet_;
+    std::string allAuditLogAction_;
+    bool allAuditLogActionIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

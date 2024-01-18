@@ -267,10 +267,11 @@ HttpConfig httpConfig = HttpConfig();
 ``` cpp
 // Use network proxy if needed
 httpConfig.setProxyProtocol("http");
-httpConfig.setProxyHost("proxy.huawei.com");
+httpConfig.setProxyHost("proxy.com");
 httpConfig.setProxyPort("8080");
-httpConfig.setProxyUser("username");
-httpConfig.setProxyPassword("password");
+// In this example, username and password are stored in environment variables. Please configure the environment variables PROXY_USERNAME and PROXY_PASSWORD before running this example.
+httpConfig.setProxyUser(getenv("USENAME"));
+httpConfig.setProxyPassword(getenv("PASSWORD"));
 ```
 
 #### 1.3 Timeout Configuration [:top:](#user-manual-top)

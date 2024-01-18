@@ -18,6 +18,7 @@ public:
     static HttpRequestDef genRequestDefForCreateRefreshTasks();
     static HttpRequestDef genRequestDefForDownloadRegionCarrierExcel();
     static HttpRequestDef genRequestDefForDownloadStatisticsExcel();
+    static HttpRequestDef genRequestDefForListCdnDomainTopRefers();
     static HttpRequestDef genRequestDefForListDomains();
     static HttpRequestDef genRequestDefForSetChargeModes();
     static HttpRequestDef genRequestDefForShowBandwidthCalc();

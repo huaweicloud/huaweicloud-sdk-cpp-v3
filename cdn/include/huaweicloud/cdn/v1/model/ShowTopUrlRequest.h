@@ -75,7 +75,7 @@ public:
     void setDomainName(const std::string& value);
 
     /// <summary>
-    /// mainland_china(中国大陆)，outside_mainland_china(中国大陆境外)，默认为mainland_china。
+    /// mainland_china(中国大陆)，outside_mainland_china(中国大陆境外)，默认为global(全球)。
     /// </summary>
 
     std::string getServiceArea() const;

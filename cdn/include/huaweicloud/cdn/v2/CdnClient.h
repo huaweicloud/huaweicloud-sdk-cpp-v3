@@ -19,6 +19,8 @@
 #include <huaweicloud/cdn/v2/model/DownloadStatisticsExcelRequest.h>
 #include <huaweicloud/cdn/v2/model/DownloadStatisticsExcelResponse.h>
 #include <huaweicloud/cdn/v2/model/ErrRsp.h>
+#include <huaweicloud/cdn/v2/model/ListCdnDomainTopRefersRequest.h>
+#include <huaweicloud/cdn/v2/model/ListCdnDomainTopRefersResponse.h>
 #include <huaweicloud/cdn/v2/model/ListDomainsRequest.h>
 #include <huaweicloud/cdn/v2/model/ListDomainsResponse.h>
 #include <huaweicloud/cdn/v2/model/ModifyDomainConfigRequestBody.h>
@@ -137,6 +139,20 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DownloadStatisticsExcelResponse> downloadStatisticsExcel(
         DownloadStatisticsExcelRequest &request
+    );
+    // 查询统计TOP100 referer数据明细
+    //
+    // - 查询TOP100 referer数据。
+    // 
+    // - 支持查询90天内的数据。
+    // 
+    // - 查询跨度不能超过31天。
+    // 
+    // - 单租户调用频率：2次/s。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListCdnDomainTopRefersResponse> listCdnDomainTopRefers(
+        ListCdnDomainTopRefersRequest &request
     );
     // 查询加速域名
     //

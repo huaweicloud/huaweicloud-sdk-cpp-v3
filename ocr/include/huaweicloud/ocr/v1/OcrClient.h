@@ -105,6 +105,8 @@
 #include <huaweicloud/ocr/v1/model/RecognizeQuotaInvoiceResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeRealEstateCertificateRequest.h>
 #include <huaweicloud/ocr/v1/model/RecognizeRealEstateCertificateResponse.h>
+#include <huaweicloud/ocr/v1/model/RecognizeSealRequest.h>
+#include <huaweicloud/ocr/v1/model/RecognizeSealResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeSmartDocumentRecognizerRequest.h>
 #include <huaweicloud/ocr/v1/model/RecognizeSmartDocumentRecognizerResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeTaxiInvoiceRequest.h>
@@ -131,6 +133,7 @@
 #include <huaweicloud/ocr/v1/model/RecognizeWaybillElectronicResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeWebImageRequest.h>
 #include <huaweicloud/ocr/v1/model/RecognizeWebImageResponse.h>
+#include <huaweicloud/ocr/v1/model/SealRequestBody.h>
 #include <huaweicloud/ocr/v1/model/SmartDocumentRecognizerRequestBody.h>
 #include <huaweicloud/ocr/v1/model/TaxiInvoiceRequestBody.h>
 #include <huaweicloud/ocr/v1/model/ThailandIdcardRequestBody.h>
@@ -497,6 +500,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<RecognizeRealEstateCertificateResponse> recognizeRealEstateCertificate(
         RecognizeRealEstateCertificateRequest &request
+    );
+    // 印章识别
+    //
+    // 检测和识别合同文件或常用票据中的印章，并可擦除和提取图片中的印章，通过JSON格式返回印章检测、识别、擦除和提取的结果。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<RecognizeSealResponse> recognizeSeal(
+        RecognizeSealRequest &request
     );
     // 智能文档解析
     //

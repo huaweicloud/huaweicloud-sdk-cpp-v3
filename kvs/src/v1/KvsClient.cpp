@@ -581,52 +581,6 @@ std::shared_ptr<ScanSkeyKvResponse> KvsClient::scanSkeyKv(ScanSkeyKvRequest &req
 
     return localVarResult;
 }
-std::shared_ptr<TransactGetKvResponse> KvsClient::transactGetKv(TransactGetKvRequest &request)
-{
-    std::string localVarPath = "/v1/transact-get-kv";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/bson", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.storeNameIsSet()) {
-        localVarQueryParams["store_name"] = parameterToString(request.getStoreName());
-    }
-
-    std::string localVarHttpBody;
-    if (isBson) {
-        spdlog::info("parse bson format request");
-        Builder builder = Builder::document();
-        request.getBody().toBson(builder);
-        Document doc = builder << Builder::DocumentEnd;
-        localVarHttpBody.assign((const char *)doc.data(), doc.length());
-    }
-
-    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, KvsMeta::genRequestDefForTransactGetKv());
-
-    std::shared_ptr<TransactGetKvResponse> localVarResult = std::make_shared<TransactGetKvResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-    if (!res->getHttpBody().empty()) {
-        spdlog::info("parse bson format response");
-        const std::string &body = localVarResult->getHttpBodyRef();
-        Document doc((const uint8_t *)body.data(), body.length());
-        Viewer viewer(doc);
-        localVarResult->fromBson(viewer);
-    }
-
-    return localVarResult;
-}
 std::shared_ptr<TransactWriteSkeyKvResponse> KvsClient::transactWriteSkeyKv(TransactWriteSkeyKvRequest &request)
 {
     std::string localVarPath = "/v1/transact-write-skey-kv";

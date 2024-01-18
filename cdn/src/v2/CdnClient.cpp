@@ -273,6 +273,56 @@ std::shared_ptr<DownloadStatisticsExcelResponse> CdnClient::downloadStatisticsEx
 
     return localVarResult;
 }
+std::shared_ptr<ListCdnDomainTopRefersResponse> CdnClient::listCdnDomainTopRefers(ListCdnDomainTopRefersRequest &request)
+{
+    std::string localVarPath = "/v1.0/cdn/statistics/top-refers";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.startTimeIsSet()) {
+        localVarQueryParams["start_time"] = parameterToString(request.getStartTime());
+    }
+    if (request.endTimeIsSet()) {
+        localVarQueryParams["end_time"] = parameterToString(request.getEndTime());
+    }
+    if (request.domainNameIsSet()) {
+        localVarQueryParams["domain_name"] = parameterToString(request.getDomainName());
+    }
+    if (request.statTypeIsSet()) {
+        localVarQueryParams["stat_type"] = parameterToString(request.getStatType());
+    }
+    if (request.serviceAreaIsSet()) {
+        localVarQueryParams["service_area"] = parameterToString(request.getServiceArea());
+    }
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarQueryParams["enterprise_project_id"] = parameterToString(request.getEnterpriseProjectId());
+    }
+    if (request.includeRatioIsSet()) {
+        localVarQueryParams["include_ratio"] = parameterToString(request.isIncludeRatio());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForListCdnDomainTopRefers());
+
+    std::shared_ptr<ListCdnDomainTopRefersResponse> localVarResult = std::make_shared<ListCdnDomainTopRefersResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListDomainsResponse> CdnClient::listDomains(ListDomainsRequest &request)
 {
     std::string localVarPath = "/v1.0/cdn/domains";

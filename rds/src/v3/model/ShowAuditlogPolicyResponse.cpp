@@ -14,6 +14,9 @@ ShowAuditlogPolicyResponse::ShowAuditlogPolicyResponse()
 {
     keepDays_ = 0;
     keepDaysIsSet_ = false;
+    auditTypesIsSet_ = false;
+    allAuditLogAction_ = "";
+    allAuditLogActionIsSet_ = false;
 }
 
 ShowAuditlogPolicyResponse::~ShowAuditlogPolicyResponse() = default;
@@ -29,6 +32,12 @@ web::json::value ShowAuditlogPolicyResponse::toJson() const
     if(keepDaysIsSet_) {
         val[utility::conversions::to_string_t("keep_days")] = ModelBase::toJson(keepDays_);
     }
+    if(auditTypesIsSet_) {
+        val[utility::conversions::to_string_t("audit_types")] = ModelBase::toJson(auditTypes_);
+    }
+    if(allAuditLogActionIsSet_) {
+        val[utility::conversions::to_string_t("all_audit_log_action")] = ModelBase::toJson(allAuditLogAction_);
+    }
 
     return val;
 }
@@ -43,6 +52,24 @@ bool ShowAuditlogPolicyResponse::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setKeepDays(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("audit_types"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("audit_types"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAuditTypes(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("all_audit_log_action"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("all_audit_log_action"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAllAuditLogAction(refVal);
         }
     }
     return ok;
@@ -68,6 +95,48 @@ bool ShowAuditlogPolicyResponse::keepDaysIsSet() const
 void ShowAuditlogPolicyResponse::unsetkeepDays()
 {
     keepDaysIsSet_ = false;
+}
+
+std::vector<std::string>& ShowAuditlogPolicyResponse::getAuditTypes()
+{
+    return auditTypes_;
+}
+
+void ShowAuditlogPolicyResponse::setAuditTypes(const std::vector<std::string>& value)
+{
+    auditTypes_ = value;
+    auditTypesIsSet_ = true;
+}
+
+bool ShowAuditlogPolicyResponse::auditTypesIsSet() const
+{
+    return auditTypesIsSet_;
+}
+
+void ShowAuditlogPolicyResponse::unsetauditTypes()
+{
+    auditTypesIsSet_ = false;
+}
+
+std::string ShowAuditlogPolicyResponse::getAllAuditLogAction() const
+{
+    return allAuditLogAction_;
+}
+
+void ShowAuditlogPolicyResponse::setAllAuditLogAction(const std::string& value)
+{
+    allAuditLogAction_ = value;
+    allAuditLogActionIsSet_ = true;
+}
+
+bool ShowAuditlogPolicyResponse::allAuditLogActionIsSet() const
+{
+    return allAuditLogActionIsSet_;
+}
+
+void ShowAuditlogPolicyResponse::unsetallAuditLogAction()
+{
+    allAuditLogActionIsSet_ = false;
 }
 
 }

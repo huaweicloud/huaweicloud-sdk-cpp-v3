@@ -264,10 +264,11 @@ HttpConfig httpConfig = HttpConfig();
 ``` cpp
 // 根据需要配置网络代理
 httpConfig.setProxyProtocol("http");
-httpConfig.setProxyHost("proxy.huawei.com");
+httpConfig.setProxyHost("proxy");
 httpConfig.setProxyPort("8080");
-httpConfig.setProxyUser("username");
-httpConfig.setProxyPassword("password");
+// 本示例中的账号和密码保存在环境变量中，运行本示例前请先在本地环境中配置环境变量PROXY_USERNAME和PROXY_PASSWORD
+httpConfig.setProxyUser(getenv("USENAME"));
+httpConfig.setProxyPassword(getenv("PASSWORD"));
 ```
 
 #### 1.3 超时配置 [:top:](#用户手册-top)
@@ -557,3 +558,5 @@ add_subdirectory(ecs/src/v2)
 ``` cmake
 # SET ENABLE_BSON IS ON
 option(ENABLE_BSON "Enable bson library" ON)
+
+```

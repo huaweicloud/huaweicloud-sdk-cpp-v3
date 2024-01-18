@@ -46,6 +46,7 @@ public:
     static HttpRequestDef genRequestDefForRecognizeQualificationCertificate();
     static HttpRequestDef genRequestDefForRecognizeQuotaInvoice();
     static HttpRequestDef genRequestDefForRecognizeRealEstateCertificate();
+    static HttpRequestDef genRequestDefForRecognizeSeal();
     static HttpRequestDef genRequestDefForRecognizeSmartDocumentRecognizer();
     static HttpRequestDef genRequestDefForRecognizeTaxiInvoice();
     static HttpRequestDef genRequestDefForRecognizeThailandIdcard();

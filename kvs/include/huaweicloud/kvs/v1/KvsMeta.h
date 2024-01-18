@@ -25,7 +25,6 @@ public:
     static HttpRequestDef genRequestDefForRenameKv();
     static HttpRequestDef genRequestDefForScanKv();
     static HttpRequestDef genRequestDefForScanSkeyKv();
-    static HttpRequestDef genRequestDefForTransactGetKv();
     static HttpRequestDef genRequestDefForTransactWriteSkeyKv();
     static HttpRequestDef genRequestDefForUpdateKv();
 };

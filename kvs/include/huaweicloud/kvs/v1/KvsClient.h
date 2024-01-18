@@ -47,9 +47,6 @@
 #include <huaweicloud/kvs/v1/model/ScanSkeyKvRequest.h>
 #include <huaweicloud/kvs/v1/model/ScanSkeyKvRequestBody.h>
 #include <huaweicloud/kvs/v1/model/ScanSkeyKvResponse.h>
-#include <huaweicloud/kvs/v1/model/TransactGetKvRequest.h>
-#include <huaweicloud/kvs/v1/model/TransactGetKvRequestBody.h>
-#include <huaweicloud/kvs/v1/model/TransactGetKvResponse.h>
 #include <huaweicloud/kvs/v1/model/TransactWriteSkeyKvRequest.h>
 #include <huaweicloud/kvs/v1/model/TransactWriteSkeyKvRequestBody.h>
 #include <huaweicloud/kvs/v1/model/TransactWriteSkeyKvResponse.h>
@@ -179,14 +176,6 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ScanSkeyKvResponse> scanSkeyKv(
         ScanSkeyKvRequest &request
-    );
-    // 事务读请求
-    //
-    // 事务读请求，其中可以携带1或多个table的不同kv的读操作
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<TransactGetKvResponse> transactGetKv(
-        TransactGetKvRequest &request
     );
     // 指定分区键下事务写请求
     //

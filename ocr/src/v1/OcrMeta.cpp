@@ -470,6 +470,20 @@ HttpRequestDef OcrMeta::genRequestDefForRecognizeRealEstateCertificate() {
     return reqDefBuilder;
 }
 
+HttpRequestDef OcrMeta::genRequestDefForRecognizeSeal() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamEnterpriseProjectId;
+    reqDefBuilder.withRequestField(headerParamEnterpriseProjectId
+                  .withName("EnterpriseProjectId")
+                  .withJsonTag("Enterprise-Project-Id")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef OcrMeta::genRequestDefForRecognizeSmartDocumentRecognizer() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamEnterpriseProjectId;

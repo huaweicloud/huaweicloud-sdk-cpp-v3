@@ -1,3 +1,66 @@
+# 3.1.70 2024-01-18
+
+### HuaweiCloud SDK CDN
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowTopUrl**
+    - changes of request param
+      - `+ service_area: enum value [global]`
+
+### HuaweiCloud SDK CDN
+
+- _Features_
+  - Support the API `ListCdnDomainTopRefers`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK KVS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the API `TransactGetKv`
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - Support the API `RecognizeSeal`
+- _Bug Fix_
+  - None
+- _Change_
+  - **RecognizeFlightItinerary**
+    - changes of response param
+      - `+ result.tax`
+      - `+ result.tax_rate`
+      - `+ result.buyer_name`
+      - `+ result.buyer_id`
+      - `+ result.number`
+      - `+ result.international_flag`
+      - `+ result.issue_status`
+
+### HuaweiCloud SDK RDS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowAuditlogPolicy**
+    - changes of response param
+      - `+ all_audit_log_action`
+      - `+ audit_types`
+  - **ListRecycleInstances**
+    - changes of response param
+      - `+ instances.is_serverless`
+
 # 3.1.69 2024-01-11
 
 ### HuaweiCloud SDK DRS

@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_CDN_V2_MODEL_ShowTopUrlRequest_H_
-#define HUAWEICLOUD_SDK_CDN_V2_MODEL_ShowTopUrlRequest_H_
+#ifndef HUAWEICLOUD_SDK_CDN_V2_MODEL_ListCdnDomainTopRefersRequest_H_
+#define HUAWEICLOUD_SDK_CDN_V2_MODEL_ListCdnDomainTopRefersRequest_H_
 
 
 #include <huaweicloud/cdn/v2/CdnExport.h>
@@ -22,12 +22,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// Request Object
 /// </summary>
-class HUAWEICLOUD_CDN_V2_EXPORT  ShowTopUrlRequest
+class HUAWEICLOUD_CDN_V2_EXPORT  ListCdnDomainTopRefersRequest
     : public ModelBase
 {
 public:
-    ShowTopUrlRequest();
-    virtual ~ShowTopUrlRequest();
+    ListCdnDomainTopRefersRequest();
+    virtual ~ListCdnDomainTopRefersRequest();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -36,10 +36,10 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// ShowTopUrlRequest members
+    /// ListCdnDomainTopRefersRequest members
 
     /// <summary>
-    /// 查询起始时间戳，只能传0点毫秒时间戳
+    /// 查询起始时间戳，需与结束时间戳同时指定，左闭右开，设置方式如下： - interval为300时，start_time设置为整5分钟时刻点，如：1631240100000(对应2021-09-10 10:15:00) - interval为3600时，start_time设置为整小时时刻点，如：1631239200000(对应2021-09-10 10:00:00) - interval为86400时，start_time设置为东8区零点时刻点，如：1631203200000(对应2021-09-10 00:00:00)
     /// </summary>
 
     int64_t getStartTime() const;
@@ -48,7 +48,7 @@ public:
     void setStartTime(int64_t value);
 
     /// <summary>
-    /// 查询结束时间戳，只能传0点毫秒时间戳
+    /// 查询结束时间戳，需与开始时间戳同时指定，左闭右开，设置方式如下： - interval为300时，end_time设置为整5分钟时刻点，如：1631243700000(对应2021-09-10 11:15:00) - interval为3600时，end_time设置为整小时时刻点，如：1631325600000(对应2021-09-11 10:00:00) - interval为86400时，end_time设置为东8区零点时刻点，如：1631376000000(对应2021-09-12 00:00:00)
     /// </summary>
 
     int64_t getEndTime() const;
@@ -66,7 +66,7 @@ public:
     void setDomainName(const std::string& value);
 
     /// <summary>
-    /// - 参数类型支持：flux(流量),req_num(请求数)
+    /// - 统计指标类型 - 目前只支持flux（流量），req_num（请求数）
     /// </summary>
 
     std::string getStatType() const;
@@ -92,6 +92,15 @@ public:
     void unsetenterpriseProjectId();
     void setEnterpriseProjectId(const std::string& value);
 
+    /// <summary>
+    /// 是否包含百分比数据，默认false
+    /// </summary>
+
+    bool isIncludeRatio() const;
+    bool includeRatioIsSet() const;
+    void unsetincludeRatio();
+    void setIncludeRatio(bool value);
+
 
 protected:
     int64_t startTime_;
@@ -106,11 +115,13 @@ protected:
     bool serviceAreaIsSet_;
     std::string enterpriseProjectId_;
     bool enterpriseProjectIdIsSet_;
+    bool includeRatio_;
+    bool includeRatioIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()
 public:
-    ShowTopUrlRequest& dereference_from_shared_ptr(std::shared_ptr<ShowTopUrlRequest> ptr) {
+    ListCdnDomainTopRefersRequest& dereference_from_shared_ptr(std::shared_ptr<ListCdnDomainTopRefersRequest> ptr) {
         return *ptr;
     }
 #endif
@@ -123,4 +134,4 @@ public:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_CDN_V2_MODEL_ShowTopUrlRequest_H_
+#endif // HUAWEICLOUD_SDK_CDN_V2_MODEL_ListCdnDomainTopRefersRequest_H_

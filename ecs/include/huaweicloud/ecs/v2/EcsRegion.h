@@ -114,6 +114,14 @@ public:
             { 
                 "https://ecs.eu-west-101.myhuaweicloud.eu"
             });
+        regions["cn-east-5"] = Region("cn-east-5",
+            { 
+                "https://ecs.cn-east-5.myhuaweicloud.com"
+            });
+        regions["eu-west-0"] = Region("eu-west-0",
+            { 
+                "https://ecs.eu-west-0.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

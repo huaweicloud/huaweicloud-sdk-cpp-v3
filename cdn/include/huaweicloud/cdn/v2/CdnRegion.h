@@ -30,6 +30,10 @@ public:
             { 
                 "https://cdn.myhuaweicloud.com"
             });
+        regions["eu-west-101"] = Region("eu-west-101",
+            { 
+                "https://cdn.myhuaweicloud.eu"
+            });
         return regions;
     }
 private:

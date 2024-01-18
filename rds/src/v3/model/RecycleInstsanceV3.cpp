@@ -44,6 +44,8 @@ RecycleInstsanceV3::RecycleInstsanceV3()
     recycleBackupIdIsSet_ = false;
     recycleStatus_ = "";
     recycleStatusIsSet_ = false;
+    isServerless_ = false;
+    isServerlessIsSet_ = false;
 }
 
 RecycleInstsanceV3::~RecycleInstsanceV3() = default;
@@ -103,6 +105,9 @@ web::json::value RecycleInstsanceV3::toJson() const
     }
     if(recycleStatusIsSet_) {
         val[utility::conversions::to_string_t("recycle_status")] = ModelBase::toJson(recycleStatus_);
+    }
+    if(isServerlessIsSet_) {
+        val[utility::conversions::to_string_t("is_serverless")] = ModelBase::toJson(isServerless_);
     }
 
     return val;
@@ -253,6 +258,15 @@ bool RecycleInstsanceV3::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRecycleStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_serverless"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_serverless"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsServerless(refVal);
         }
     }
     return ok;
@@ -593,6 +607,27 @@ bool RecycleInstsanceV3::recycleStatusIsSet() const
 void RecycleInstsanceV3::unsetrecycleStatus()
 {
     recycleStatusIsSet_ = false;
+}
+
+bool RecycleInstsanceV3::isIsServerless() const
+{
+    return isServerless_;
+}
+
+void RecycleInstsanceV3::setIsServerless(bool value)
+{
+    isServerless_ = value;
+    isServerlessIsSet_ = true;
+}
+
+bool RecycleInstsanceV3::isServerlessIsSet() const
+{
+    return isServerlessIsSet_;
+}
+
+void RecycleInstsanceV3::unsetisServerless()
+{
+    isServerlessIsSet_ = false;
 }
 
 }

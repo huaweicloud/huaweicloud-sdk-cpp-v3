@@ -195,6 +195,69 @@ public:
     void setIssueDate(const std::string& value);
 
     /// <summary>
+    /// 增值税税额 
+    /// </summary>
+
+    std::string getTax() const;
+    bool taxIsSet() const;
+    void unsettax();
+    void setTax(const std::string& value);
+
+    /// <summary>
+    /// 增值税税率 
+    /// </summary>
+
+    std::string getTaxRate() const;
+    bool taxRateIsSet() const;
+    void unsettaxRate();
+    void setTaxRate(const std::string& value);
+
+    /// <summary>
+    /// 购买方名称 
+    /// </summary>
+
+    std::string getBuyerName() const;
+    bool buyerNameIsSet() const;
+    void unsetbuyerName();
+    void setBuyerName(const std::string& value);
+
+    /// <summary>
+    /// 购买方纳税人识别号 
+    /// </summary>
+
+    std::string getBuyerId() const;
+    bool buyerIdIsSet() const;
+    void unsetbuyerId();
+    void setBuyerId(const std::string& value);
+
+    /// <summary>
+    /// 发票号码 
+    /// </summary>
+
+    std::string getNumber() const;
+    bool numberIsSet() const;
+    void unsetnumber();
+    void setNumber(const std::string& value);
+
+    /// <summary>
+    /// 国内国际标签 
+    /// </summary>
+
+    std::string getInternationalFlag() const;
+    bool internationalFlagIsSet() const;
+    void unsetinternationalFlag();
+    void setInternationalFlag(const std::string& value);
+
+    /// <summary>
+    /// 开具状态 
+    /// </summary>
+
+    std::string getIssueStatus() const;
+    bool issueStatusIsSet() const;
+    void unsetissueStatus();
+    void setIssueStatus(const std::string& value);
+
+    /// <summary>
     /// 机票行程列表。 
     /// </summary>
 
@@ -248,6 +311,20 @@ protected:
     bool issueOrganizationIsSet_;
     std::string issueDate_;
     bool issueDateIsSet_;
+    std::string tax_;
+    bool taxIsSet_;
+    std::string taxRate_;
+    bool taxRateIsSet_;
+    std::string buyerName_;
+    bool buyerNameIsSet_;
+    std::string buyerId_;
+    bool buyerIdIsSet_;
+    std::string number_;
+    bool numberIsSet_;
+    std::string internationalFlag_;
+    bool internationalFlagIsSet_;
+    std::string issueStatus_;
+    bool issueStatusIsSet_;
     std::vector<ItineraryList> itineraryList_;
     bool itineraryListIsSet_;
     Object confidence_;

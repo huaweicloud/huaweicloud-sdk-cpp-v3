@@ -149,18 +149,6 @@ HttpRequestDef KvsMeta::genRequestDefForScanSkeyKv() {
     return reqDefBuilder;
 }
 
-HttpRequestDef KvsMeta::genRequestDefForTransactGetKv() {
-    HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withRequestField(FieldDef().withName("StoreName")
-                  .withJsonTag("store_name")
-                  .withLocationType(Cname));
-    FieldDef bodyParam;
-    reqDefBuilder.withRequestField(bodyParam.
-        withName("Body").
-        withLocationType(Body_));
-    return reqDefBuilder;
-}
-
 HttpRequestDef KvsMeta::genRequestDefForTransactWriteSkeyKv() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("StoreName")

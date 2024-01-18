@@ -105,6 +105,32 @@ HttpRequestDef CdnMeta::genRequestDefForDownloadStatisticsExcel() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CdnMeta::genRequestDefForListCdnDomainTopRefers() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("StartTime")
+                  .withJsonTag("start_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EndTime")
+                  .withJsonTag("end_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("DomainName")
+                  .withJsonTag("domain_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("StatType")
+                  .withJsonTag("stat_type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ServiceArea")
+                  .withJsonTag("service_area")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
+                  .withJsonTag("enterprise_project_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("IncludeRatio")
+                  .withJsonTag("include_ratio")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CdnMeta::genRequestDefForListDomains() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("DomainName")

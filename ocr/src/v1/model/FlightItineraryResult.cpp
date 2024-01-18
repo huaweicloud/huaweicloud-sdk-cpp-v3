@@ -46,6 +46,20 @@ FlightItineraryResult::FlightItineraryResult()
     issueOrganizationIsSet_ = false;
     issueDate_ = "";
     issueDateIsSet_ = false;
+    tax_ = "";
+    taxIsSet_ = false;
+    taxRate_ = "";
+    taxRateIsSet_ = false;
+    buyerName_ = "";
+    buyerNameIsSet_ = false;
+    buyerId_ = "";
+    buyerIdIsSet_ = false;
+    number_ = "";
+    numberIsSet_ = false;
+    internationalFlag_ = "";
+    internationalFlagIsSet_ = false;
+    issueStatus_ = "";
+    issueStatusIsSet_ = false;
     itineraryListIsSet_ = false;
     confidenceIsSet_ = false;
 }
@@ -110,6 +124,27 @@ web::json::value FlightItineraryResult::toJson() const
     }
     if(issueDateIsSet_) {
         val[utility::conversions::to_string_t("issue_date")] = ModelBase::toJson(issueDate_);
+    }
+    if(taxIsSet_) {
+        val[utility::conversions::to_string_t("tax")] = ModelBase::toJson(tax_);
+    }
+    if(taxRateIsSet_) {
+        val[utility::conversions::to_string_t("tax_rate")] = ModelBase::toJson(taxRate_);
+    }
+    if(buyerNameIsSet_) {
+        val[utility::conversions::to_string_t("buyer_name")] = ModelBase::toJson(buyerName_);
+    }
+    if(buyerIdIsSet_) {
+        val[utility::conversions::to_string_t("buyer_id")] = ModelBase::toJson(buyerId_);
+    }
+    if(numberIsSet_) {
+        val[utility::conversions::to_string_t("number")] = ModelBase::toJson(number_);
+    }
+    if(internationalFlagIsSet_) {
+        val[utility::conversions::to_string_t("international_flag")] = ModelBase::toJson(internationalFlag_);
+    }
+    if(issueStatusIsSet_) {
+        val[utility::conversions::to_string_t("issue_status")] = ModelBase::toJson(issueStatus_);
     }
     if(itineraryListIsSet_) {
         val[utility::conversions::to_string_t("itinerary_list")] = ModelBase::toJson(itineraryList_);
@@ -275,6 +310,69 @@ bool FlightItineraryResult::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIssueDate(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("tax"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("tax"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTax(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("tax_rate"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("tax_rate"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTaxRate(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("buyer_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("buyer_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBuyerName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("buyer_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("buyer_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBuyerId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("number"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("number"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setNumber(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("international_flag"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("international_flag"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setInternationalFlag(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("issue_status"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("issue_status"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIssueStatus(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("itinerary_list"))) {
@@ -654,6 +752,153 @@ bool FlightItineraryResult::issueDateIsSet() const
 void FlightItineraryResult::unsetissueDate()
 {
     issueDateIsSet_ = false;
+}
+
+std::string FlightItineraryResult::getTax() const
+{
+    return tax_;
+}
+
+void FlightItineraryResult::setTax(const std::string& value)
+{
+    tax_ = value;
+    taxIsSet_ = true;
+}
+
+bool FlightItineraryResult::taxIsSet() const
+{
+    return taxIsSet_;
+}
+
+void FlightItineraryResult::unsettax()
+{
+    taxIsSet_ = false;
+}
+
+std::string FlightItineraryResult::getTaxRate() const
+{
+    return taxRate_;
+}
+
+void FlightItineraryResult::setTaxRate(const std::string& value)
+{
+    taxRate_ = value;
+    taxRateIsSet_ = true;
+}
+
+bool FlightItineraryResult::taxRateIsSet() const
+{
+    return taxRateIsSet_;
+}
+
+void FlightItineraryResult::unsettaxRate()
+{
+    taxRateIsSet_ = false;
+}
+
+std::string FlightItineraryResult::getBuyerName() const
+{
+    return buyerName_;
+}
+
+void FlightItineraryResult::setBuyerName(const std::string& value)
+{
+    buyerName_ = value;
+    buyerNameIsSet_ = true;
+}
+
+bool FlightItineraryResult::buyerNameIsSet() const
+{
+    return buyerNameIsSet_;
+}
+
+void FlightItineraryResult::unsetbuyerName()
+{
+    buyerNameIsSet_ = false;
+}
+
+std::string FlightItineraryResult::getBuyerId() const
+{
+    return buyerId_;
+}
+
+void FlightItineraryResult::setBuyerId(const std::string& value)
+{
+    buyerId_ = value;
+    buyerIdIsSet_ = true;
+}
+
+bool FlightItineraryResult::buyerIdIsSet() const
+{
+    return buyerIdIsSet_;
+}
+
+void FlightItineraryResult::unsetbuyerId()
+{
+    buyerIdIsSet_ = false;
+}
+
+std::string FlightItineraryResult::getNumber() const
+{
+    return number_;
+}
+
+void FlightItineraryResult::setNumber(const std::string& value)
+{
+    number_ = value;
+    numberIsSet_ = true;
+}
+
+bool FlightItineraryResult::numberIsSet() const
+{
+    return numberIsSet_;
+}
+
+void FlightItineraryResult::unsetnumber()
+{
+    numberIsSet_ = false;
+}
+
+std::string FlightItineraryResult::getInternationalFlag() const
+{
+    return internationalFlag_;
+}
+
+void FlightItineraryResult::setInternationalFlag(const std::string& value)
+{
+    internationalFlag_ = value;
+    internationalFlagIsSet_ = true;
+}
+
+bool FlightItineraryResult::internationalFlagIsSet() const
+{
+    return internationalFlagIsSet_;
+}
+
+void FlightItineraryResult::unsetinternationalFlag()
+{
+    internationalFlagIsSet_ = false;
+}
+
+std::string FlightItineraryResult::getIssueStatus() const
+{
+    return issueStatus_;
+}
+
+void FlightItineraryResult::setIssueStatus(const std::string& value)
+{
+    issueStatus_ = value;
+    issueStatusIsSet_ = true;
+}
+
+bool FlightItineraryResult::issueStatusIsSet() const
+{
+    return issueStatusIsSet_;
+}
+
+void FlightItineraryResult::unsetissueStatus()
+{
+    issueStatusIsSet_ = false;
 }
 
 std::vector<ItineraryList>& FlightItineraryResult::getItineraryList()

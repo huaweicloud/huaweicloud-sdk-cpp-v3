@@ -18,6 +18,8 @@ AutoClassificationRequestBody::AutoClassificationRequestBody()
     urlIsSet_ = false;
     typeListIsSet_ = false;
     extendedParametersIsSet_ = false;
+    detectSeal_ = false;
+    detectSealIsSet_ = false;
 }
 
 AutoClassificationRequestBody::~AutoClassificationRequestBody() = default;
@@ -41,6 +43,9 @@ web::json::value AutoClassificationRequestBody::toJson() const
     }
     if(extendedParametersIsSet_) {
         val[utility::conversions::to_string_t("extended_parameters")] = ModelBase::toJson(extendedParameters_);
+    }
+    if(detectSealIsSet_) {
+        val[utility::conversions::to_string_t("detect_seal")] = ModelBase::toJson(detectSeal_);
     }
 
     return val;
@@ -83,6 +88,15 @@ bool AutoClassificationRequestBody::fromJson(const web::json::value& val)
             Object refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setExtendedParameters(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("detect_seal"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("detect_seal"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDetectSeal(refVal);
         }
     }
     return ok;
@@ -171,6 +185,27 @@ bool AutoClassificationRequestBody::extendedParametersIsSet() const
 void AutoClassificationRequestBody::unsetextendedParameters()
 {
     extendedParametersIsSet_ = false;
+}
+
+bool AutoClassificationRequestBody::isDetectSeal() const
+{
+    return detectSeal_;
+}
+
+void AutoClassificationRequestBody::setDetectSeal(bool value)
+{
+    detectSeal_ = value;
+    detectSealIsSet_ = true;
+}
+
+bool AutoClassificationRequestBody::detectSealIsSet() const
+{
+    return detectSealIsSet_;
+}
+
+void AutoClassificationRequestBody::unsetdetectSeal()
+{
+    detectSealIsSet_ = false;
 }
 
 }

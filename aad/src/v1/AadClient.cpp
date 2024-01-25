@@ -452,47 +452,6 @@ std::shared_ptr<CreateAadDomainResponse> AadClient::createAadDomain(CreateAadDom
 
     return localVarResult;
 }
-std::shared_ptr<CreateCertificateResponse> AadClient::createCertificate(CreateCertificateRequest &request)
-{
-    std::string localVarPath = "/v1/{project_id}/aad/external/domains/certificate";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-
-    std::string localVarHttpBody;
-    if (isJson) {
-        // handle json input
-        web::json::value localVarJson;
-        localVarJson = ModelBase::toJson(request.getBody());
-        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
-    }
-
-    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, AadMeta::genRequestDefForCreateCertificate());
-
-    std::shared_ptr<CreateCertificateResponse> localVarResult = std::make_shared<CreateCertificateResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-    if (!res->getHttpBody().empty()) {
-        spdlog::info("parse json format response");
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
-
-    return localVarResult;
-}
 std::shared_ptr<CreatePolicyResponse> AadClient::createPolicy(CreatePolicyRequest &request)
 {
     std::string localVarPath = "/v1/cnad/policies";
@@ -1082,6 +1041,47 @@ std::shared_ptr<ModifyDomainWebSwitchResponse> AadClient::modifyDomainWebSwitch(
         localVarHeaderParams, localVarHttpBody, AadMeta::genRequestDefForModifyDomainWebSwitch());
 
     std::shared_ptr<ModifyDomainWebSwitchResponse> localVarResult = std::make_shared<ModifyDomainWebSwitchResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<SetCertForDomainResponse> AadClient::setCertForDomain(SetCertForDomainRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/aad/external/domains/certificate";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, AadMeta::genRequestDefForSetCertForDomain());
+
+    std::shared_ptr<SetCertForDomainResponse> localVarResult = std::make_shared<SetCertForDomainResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

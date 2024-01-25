@@ -20,6 +20,8 @@ ListFlavorsRequest::ListFlavorsRequest()
     versionNameIsSet_ = false;
     specCode_ = "";
     specCodeIsSet_ = false;
+    isServerless_ = "";
+    isServerlessIsSet_ = false;
 }
 
 ListFlavorsRequest::~ListFlavorsRequest() = default;
@@ -43,6 +45,9 @@ web::json::value ListFlavorsRequest::toJson() const
     }
     if(specCodeIsSet_) {
         val[utility::conversions::to_string_t("spec_code")] = ModelBase::toJson(specCode_);
+    }
+    if(isServerlessIsSet_) {
+        val[utility::conversions::to_string_t("is_serverless")] = ModelBase::toJson(isServerless_);
     }
 
     return val;
@@ -85,6 +90,15 @@ bool ListFlavorsRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSpecCode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_serverless"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_serverless"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsServerless(refVal);
         }
     }
     return ok;
@@ -173,6 +187,27 @@ bool ListFlavorsRequest::specCodeIsSet() const
 void ListFlavorsRequest::unsetspecCode()
 {
     specCodeIsSet_ = false;
+}
+
+std::string ListFlavorsRequest::getIsServerless() const
+{
+    return isServerless_;
+}
+
+void ListFlavorsRequest::setIsServerless(const std::string& value)
+{
+    isServerless_ = value;
+    isServerlessIsSet_ = true;
+}
+
+bool ListFlavorsRequest::isServerlessIsSet() const
+{
+    return isServerlessIsSet_;
+}
+
+void ListFlavorsRequest::unsetisServerless()
+{
+    isServerlessIsSet_ = false;
 }
 
 }

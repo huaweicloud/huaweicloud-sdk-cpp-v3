@@ -114,6 +114,10 @@ public:
             { 
                 "https://vpc.eu-west-0.myhuaweicloud.com"
             });
+        regions["ru-northwest-2"] = Region("ru-northwest-2",
+            { 
+                "https://vpc.ru-northwest-2.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

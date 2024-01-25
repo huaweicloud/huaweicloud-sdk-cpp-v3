@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_AAD_V1_MODEL_CreateCertificateResponse_H_
-#define HUAWEICLOUD_SDK_AAD_V1_MODEL_CreateCertificateResponse_H_
+#ifndef HUAWEICLOUD_SDK_AAD_V1_MODEL_SetCertForDomainResponse_H_
+#define HUAWEICLOUD_SDK_AAD_V1_MODEL_SetCertForDomainResponse_H_
 
 
 #include <huaweicloud/aad/v1/AadExport.h>
@@ -21,12 +21,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// Response Object
 /// </summary>
-class HUAWEICLOUD_AAD_V1_EXPORT  CreateCertificateResponse
+class HUAWEICLOUD_AAD_V1_EXPORT  SetCertForDomainResponse
     : public ModelBase, public HttpResponse
 {
 public:
-    CreateCertificateResponse();
-    virtual ~CreateCertificateResponse();
+    SetCertForDomainResponse();
+    virtual ~SetCertForDomainResponse();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -35,7 +35,7 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// CreateCertificateResponse members
+    /// SetCertForDomainResponse members
 
 
 protected:
@@ -52,4 +52,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_AAD_V1_MODEL_CreateCertificateResponse_H_
+#endif // HUAWEICLOUD_SDK_AAD_V1_MODEL_SetCertForDomainResponse_H_

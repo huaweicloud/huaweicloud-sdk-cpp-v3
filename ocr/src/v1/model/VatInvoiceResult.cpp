@@ -77,8 +77,43 @@ VatInvoiceResult::VatInvoiceResult()
     issuerIsSet_ = false;
     sellerSealIsSet_ = false;
     itemListIsSet_ = false;
+    province_ = "";
+    provinceIsSet_ = false;
+    city_ = "";
+    cityIsSet_ = false;
     confidenceIsSet_ = false;
     textLocationIsSet_ = false;
+    belongBuyerName_ = "";
+    belongBuyerNameIsSet_ = false;
+    belongSellerName_ = "";
+    belongSellerNameIsSet_ = false;
+    belongVatCode_ = "";
+    belongVatCodeIsSet_ = false;
+    belongNumber_ = "";
+    belongNumberIsSet_ = false;
+    belongPages_ = "";
+    belongPagesIsSet_ = false;
+    belongCurrentPage_ = "";
+    belongCurrentPageIsSet_ = false;
+    belongRemarks_ = "";
+    belongRemarksIsSet_ = false;
+    belongIssueDate_ = "";
+    belongIssueDateIsSet_ = false;
+    salesMark_ = false;
+    salesMarkIsSet_ = false;
+    belongSumAmount_ = "";
+    belongSumAmountIsSet_ = false;
+    belongSumTax_ = "";
+    belongSumTaxIsSet_ = false;
+    belongSubtotalAmount_ = "";
+    belongSubtotalAmountIsSet_ = false;
+    belongSubtotalTax_ = "";
+    belongSubtotalTaxIsSet_ = false;
+    belongDiscountAmount_ = "";
+    belongDiscountAmountIsSet_ = false;
+    belongDiscountTax_ = "";
+    belongDiscountTaxIsSet_ = false;
+    belongItemListIsSet_ = false;
 }
 
 VatInvoiceResult::~VatInvoiceResult() = default;
@@ -193,11 +228,65 @@ web::json::value VatInvoiceResult::toJson() const
     if(itemListIsSet_) {
         val[utility::conversions::to_string_t("item_list")] = ModelBase::toJson(itemList_);
     }
+    if(provinceIsSet_) {
+        val[utility::conversions::to_string_t("province")] = ModelBase::toJson(province_);
+    }
+    if(cityIsSet_) {
+        val[utility::conversions::to_string_t("city")] = ModelBase::toJson(city_);
+    }
     if(confidenceIsSet_) {
         val[utility::conversions::to_string_t("confidence")] = ModelBase::toJson(confidence_);
     }
     if(textLocationIsSet_) {
         val[utility::conversions::to_string_t("text_location")] = ModelBase::toJson(textLocation_);
+    }
+    if(belongBuyerNameIsSet_) {
+        val[utility::conversions::to_string_t("belong_buyer_name")] = ModelBase::toJson(belongBuyerName_);
+    }
+    if(belongSellerNameIsSet_) {
+        val[utility::conversions::to_string_t("belong_seller_name")] = ModelBase::toJson(belongSellerName_);
+    }
+    if(belongVatCodeIsSet_) {
+        val[utility::conversions::to_string_t("belong_vat_code")] = ModelBase::toJson(belongVatCode_);
+    }
+    if(belongNumberIsSet_) {
+        val[utility::conversions::to_string_t("belong_number")] = ModelBase::toJson(belongNumber_);
+    }
+    if(belongPagesIsSet_) {
+        val[utility::conversions::to_string_t("belong_pages")] = ModelBase::toJson(belongPages_);
+    }
+    if(belongCurrentPageIsSet_) {
+        val[utility::conversions::to_string_t("belong_current_page")] = ModelBase::toJson(belongCurrentPage_);
+    }
+    if(belongRemarksIsSet_) {
+        val[utility::conversions::to_string_t("belong_remarks")] = ModelBase::toJson(belongRemarks_);
+    }
+    if(belongIssueDateIsSet_) {
+        val[utility::conversions::to_string_t("belong_issue_date")] = ModelBase::toJson(belongIssueDate_);
+    }
+    if(salesMarkIsSet_) {
+        val[utility::conversions::to_string_t("sales_mark")] = ModelBase::toJson(salesMark_);
+    }
+    if(belongSumAmountIsSet_) {
+        val[utility::conversions::to_string_t("belong_sum_amount")] = ModelBase::toJson(belongSumAmount_);
+    }
+    if(belongSumTaxIsSet_) {
+        val[utility::conversions::to_string_t("belong_sum_tax")] = ModelBase::toJson(belongSumTax_);
+    }
+    if(belongSubtotalAmountIsSet_) {
+        val[utility::conversions::to_string_t("belong_subtotal_amount")] = ModelBase::toJson(belongSubtotalAmount_);
+    }
+    if(belongSubtotalTaxIsSet_) {
+        val[utility::conversions::to_string_t("belong_subtotal_tax")] = ModelBase::toJson(belongSubtotalTax_);
+    }
+    if(belongDiscountAmountIsSet_) {
+        val[utility::conversions::to_string_t("belong_discount_amount")] = ModelBase::toJson(belongDiscountAmount_);
+    }
+    if(belongDiscountTaxIsSet_) {
+        val[utility::conversions::to_string_t("belong_discount_tax")] = ModelBase::toJson(belongDiscountTax_);
+    }
+    if(belongItemListIsSet_) {
+        val[utility::conversions::to_string_t("belong_item_list")] = ModelBase::toJson(belongItemList_);
     }
 
     return val;
@@ -512,6 +601,24 @@ bool VatInvoiceResult::fromJson(const web::json::value& val)
             setItemList(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("province"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("province"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProvince(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("city"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("city"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCity(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("confidence"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("confidence"));
         if(!fieldValue.is_null())
@@ -528,6 +635,150 @@ bool VatInvoiceResult::fromJson(const web::json::value& val)
             Object refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTextLocation(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("belong_buyer_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("belong_buyer_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBelongBuyerName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("belong_seller_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("belong_seller_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBelongSellerName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("belong_vat_code"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("belong_vat_code"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBelongVatCode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("belong_number"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("belong_number"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBelongNumber(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("belong_pages"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("belong_pages"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBelongPages(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("belong_current_page"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("belong_current_page"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBelongCurrentPage(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("belong_remarks"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("belong_remarks"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBelongRemarks(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("belong_issue_date"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("belong_issue_date"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBelongIssueDate(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("sales_mark"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sales_mark"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSalesMark(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("belong_sum_amount"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("belong_sum_amount"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBelongSumAmount(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("belong_sum_tax"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("belong_sum_tax"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBelongSumTax(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("belong_subtotal_amount"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("belong_subtotal_amount"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBelongSubtotalAmount(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("belong_subtotal_tax"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("belong_subtotal_tax"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBelongSubtotalTax(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("belong_discount_amount"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("belong_discount_amount"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBelongDiscountAmount(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("belong_discount_tax"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("belong_discount_tax"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBelongDiscountTax(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("belong_item_list"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("belong_item_list"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<BelongItemList> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBelongItemList(refVal);
         }
     }
     return ok;
@@ -1248,6 +1499,48 @@ void VatInvoiceResult::unsetitemList()
     itemListIsSet_ = false;
 }
 
+std::string VatInvoiceResult::getProvince() const
+{
+    return province_;
+}
+
+void VatInvoiceResult::setProvince(const std::string& value)
+{
+    province_ = value;
+    provinceIsSet_ = true;
+}
+
+bool VatInvoiceResult::provinceIsSet() const
+{
+    return provinceIsSet_;
+}
+
+void VatInvoiceResult::unsetprovince()
+{
+    provinceIsSet_ = false;
+}
+
+std::string VatInvoiceResult::getCity() const
+{
+    return city_;
+}
+
+void VatInvoiceResult::setCity(const std::string& value)
+{
+    city_ = value;
+    cityIsSet_ = true;
+}
+
+bool VatInvoiceResult::cityIsSet() const
+{
+    return cityIsSet_;
+}
+
+void VatInvoiceResult::unsetcity()
+{
+    cityIsSet_ = false;
+}
+
 Object VatInvoiceResult::getConfidence() const
 {
     return confidence_;
@@ -1288,6 +1581,342 @@ bool VatInvoiceResult::textLocationIsSet() const
 void VatInvoiceResult::unsettextLocation()
 {
     textLocationIsSet_ = false;
+}
+
+std::string VatInvoiceResult::getBelongBuyerName() const
+{
+    return belongBuyerName_;
+}
+
+void VatInvoiceResult::setBelongBuyerName(const std::string& value)
+{
+    belongBuyerName_ = value;
+    belongBuyerNameIsSet_ = true;
+}
+
+bool VatInvoiceResult::belongBuyerNameIsSet() const
+{
+    return belongBuyerNameIsSet_;
+}
+
+void VatInvoiceResult::unsetbelongBuyerName()
+{
+    belongBuyerNameIsSet_ = false;
+}
+
+std::string VatInvoiceResult::getBelongSellerName() const
+{
+    return belongSellerName_;
+}
+
+void VatInvoiceResult::setBelongSellerName(const std::string& value)
+{
+    belongSellerName_ = value;
+    belongSellerNameIsSet_ = true;
+}
+
+bool VatInvoiceResult::belongSellerNameIsSet() const
+{
+    return belongSellerNameIsSet_;
+}
+
+void VatInvoiceResult::unsetbelongSellerName()
+{
+    belongSellerNameIsSet_ = false;
+}
+
+std::string VatInvoiceResult::getBelongVatCode() const
+{
+    return belongVatCode_;
+}
+
+void VatInvoiceResult::setBelongVatCode(const std::string& value)
+{
+    belongVatCode_ = value;
+    belongVatCodeIsSet_ = true;
+}
+
+bool VatInvoiceResult::belongVatCodeIsSet() const
+{
+    return belongVatCodeIsSet_;
+}
+
+void VatInvoiceResult::unsetbelongVatCode()
+{
+    belongVatCodeIsSet_ = false;
+}
+
+std::string VatInvoiceResult::getBelongNumber() const
+{
+    return belongNumber_;
+}
+
+void VatInvoiceResult::setBelongNumber(const std::string& value)
+{
+    belongNumber_ = value;
+    belongNumberIsSet_ = true;
+}
+
+bool VatInvoiceResult::belongNumberIsSet() const
+{
+    return belongNumberIsSet_;
+}
+
+void VatInvoiceResult::unsetbelongNumber()
+{
+    belongNumberIsSet_ = false;
+}
+
+std::string VatInvoiceResult::getBelongPages() const
+{
+    return belongPages_;
+}
+
+void VatInvoiceResult::setBelongPages(const std::string& value)
+{
+    belongPages_ = value;
+    belongPagesIsSet_ = true;
+}
+
+bool VatInvoiceResult::belongPagesIsSet() const
+{
+    return belongPagesIsSet_;
+}
+
+void VatInvoiceResult::unsetbelongPages()
+{
+    belongPagesIsSet_ = false;
+}
+
+std::string VatInvoiceResult::getBelongCurrentPage() const
+{
+    return belongCurrentPage_;
+}
+
+void VatInvoiceResult::setBelongCurrentPage(const std::string& value)
+{
+    belongCurrentPage_ = value;
+    belongCurrentPageIsSet_ = true;
+}
+
+bool VatInvoiceResult::belongCurrentPageIsSet() const
+{
+    return belongCurrentPageIsSet_;
+}
+
+void VatInvoiceResult::unsetbelongCurrentPage()
+{
+    belongCurrentPageIsSet_ = false;
+}
+
+std::string VatInvoiceResult::getBelongRemarks() const
+{
+    return belongRemarks_;
+}
+
+void VatInvoiceResult::setBelongRemarks(const std::string& value)
+{
+    belongRemarks_ = value;
+    belongRemarksIsSet_ = true;
+}
+
+bool VatInvoiceResult::belongRemarksIsSet() const
+{
+    return belongRemarksIsSet_;
+}
+
+void VatInvoiceResult::unsetbelongRemarks()
+{
+    belongRemarksIsSet_ = false;
+}
+
+std::string VatInvoiceResult::getBelongIssueDate() const
+{
+    return belongIssueDate_;
+}
+
+void VatInvoiceResult::setBelongIssueDate(const std::string& value)
+{
+    belongIssueDate_ = value;
+    belongIssueDateIsSet_ = true;
+}
+
+bool VatInvoiceResult::belongIssueDateIsSet() const
+{
+    return belongIssueDateIsSet_;
+}
+
+void VatInvoiceResult::unsetbelongIssueDate()
+{
+    belongIssueDateIsSet_ = false;
+}
+
+bool VatInvoiceResult::isSalesMark() const
+{
+    return salesMark_;
+}
+
+void VatInvoiceResult::setSalesMark(bool value)
+{
+    salesMark_ = value;
+    salesMarkIsSet_ = true;
+}
+
+bool VatInvoiceResult::salesMarkIsSet() const
+{
+    return salesMarkIsSet_;
+}
+
+void VatInvoiceResult::unsetsalesMark()
+{
+    salesMarkIsSet_ = false;
+}
+
+std::string VatInvoiceResult::getBelongSumAmount() const
+{
+    return belongSumAmount_;
+}
+
+void VatInvoiceResult::setBelongSumAmount(const std::string& value)
+{
+    belongSumAmount_ = value;
+    belongSumAmountIsSet_ = true;
+}
+
+bool VatInvoiceResult::belongSumAmountIsSet() const
+{
+    return belongSumAmountIsSet_;
+}
+
+void VatInvoiceResult::unsetbelongSumAmount()
+{
+    belongSumAmountIsSet_ = false;
+}
+
+std::string VatInvoiceResult::getBelongSumTax() const
+{
+    return belongSumTax_;
+}
+
+void VatInvoiceResult::setBelongSumTax(const std::string& value)
+{
+    belongSumTax_ = value;
+    belongSumTaxIsSet_ = true;
+}
+
+bool VatInvoiceResult::belongSumTaxIsSet() const
+{
+    return belongSumTaxIsSet_;
+}
+
+void VatInvoiceResult::unsetbelongSumTax()
+{
+    belongSumTaxIsSet_ = false;
+}
+
+std::string VatInvoiceResult::getBelongSubtotalAmount() const
+{
+    return belongSubtotalAmount_;
+}
+
+void VatInvoiceResult::setBelongSubtotalAmount(const std::string& value)
+{
+    belongSubtotalAmount_ = value;
+    belongSubtotalAmountIsSet_ = true;
+}
+
+bool VatInvoiceResult::belongSubtotalAmountIsSet() const
+{
+    return belongSubtotalAmountIsSet_;
+}
+
+void VatInvoiceResult::unsetbelongSubtotalAmount()
+{
+    belongSubtotalAmountIsSet_ = false;
+}
+
+std::string VatInvoiceResult::getBelongSubtotalTax() const
+{
+    return belongSubtotalTax_;
+}
+
+void VatInvoiceResult::setBelongSubtotalTax(const std::string& value)
+{
+    belongSubtotalTax_ = value;
+    belongSubtotalTaxIsSet_ = true;
+}
+
+bool VatInvoiceResult::belongSubtotalTaxIsSet() const
+{
+    return belongSubtotalTaxIsSet_;
+}
+
+void VatInvoiceResult::unsetbelongSubtotalTax()
+{
+    belongSubtotalTaxIsSet_ = false;
+}
+
+std::string VatInvoiceResult::getBelongDiscountAmount() const
+{
+    return belongDiscountAmount_;
+}
+
+void VatInvoiceResult::setBelongDiscountAmount(const std::string& value)
+{
+    belongDiscountAmount_ = value;
+    belongDiscountAmountIsSet_ = true;
+}
+
+bool VatInvoiceResult::belongDiscountAmountIsSet() const
+{
+    return belongDiscountAmountIsSet_;
+}
+
+void VatInvoiceResult::unsetbelongDiscountAmount()
+{
+    belongDiscountAmountIsSet_ = false;
+}
+
+std::string VatInvoiceResult::getBelongDiscountTax() const
+{
+    return belongDiscountTax_;
+}
+
+void VatInvoiceResult::setBelongDiscountTax(const std::string& value)
+{
+    belongDiscountTax_ = value;
+    belongDiscountTaxIsSet_ = true;
+}
+
+bool VatInvoiceResult::belongDiscountTaxIsSet() const
+{
+    return belongDiscountTaxIsSet_;
+}
+
+void VatInvoiceResult::unsetbelongDiscountTax()
+{
+    belongDiscountTaxIsSet_ = false;
+}
+
+std::vector<BelongItemList>& VatInvoiceResult::getBelongItemList()
+{
+    return belongItemList_;
+}
+
+void VatInvoiceResult::setBelongItemList(const std::vector<BelongItemList>& value)
+{
+    belongItemList_ = value;
+    belongItemListIsSet_ = true;
+}
+
+bool VatInvoiceResult::belongItemListIsSet() const
+{
+    return belongItemListIsSet_;
+}
+
+void VatInvoiceResult::unsetbelongItemList()
+{
+    belongItemListIsSet_ = false;
 }
 
 }

@@ -58,6 +58,7 @@ InstanceRequest::InstanceRequest()
     dryRunIsSet_ = false;
     count_ = 0;
     countIsSet_ = false;
+    serverlessInfoIsSet_ = false;
 }
 
 InstanceRequest::~InstanceRequest() = default;
@@ -150,6 +151,9 @@ web::json::value InstanceRequest::toJson() const
     }
     if(countIsSet_) {
         val[utility::conversions::to_string_t("count")] = ModelBase::toJson(count_);
+    }
+    if(serverlessInfoIsSet_) {
+        val[utility::conversions::to_string_t("serverless_info")] = ModelBase::toJson(serverlessInfo_);
     }
 
     return val;
@@ -399,6 +403,15 @@ bool InstanceRequest::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCount(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("serverless_info"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("serverless_info"));
+        if(!fieldValue.is_null())
+        {
+            ServerlessInfo refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setServerlessInfo(refVal);
         }
     }
     return ok;
@@ -970,6 +983,27 @@ bool InstanceRequest::countIsSet() const
 void InstanceRequest::unsetcount()
 {
     countIsSet_ = false;
+}
+
+ServerlessInfo InstanceRequest::getServerlessInfo() const
+{
+    return serverlessInfo_;
+}
+
+void InstanceRequest::setServerlessInfo(const ServerlessInfo& value)
+{
+    serverlessInfo_ = value;
+    serverlessInfoIsSet_ = true;
+}
+
+bool InstanceRequest::serverlessInfoIsSet() const
+{
+    return serverlessInfoIsSet_;
+}
+
+void InstanceRequest::unsetserverlessInfo()
+{
+    serverlessInfoIsSet_ = false;
 }
 
 }

@@ -15,6 +15,7 @@ MysqlCreateReadonlyNodeRequest::MysqlCreateReadonlyNodeRequest()
     prioritiesIsSet_ = false;
     isAutoPay_ = "";
     isAutoPayIsSet_ = false;
+    availabilityZonesIsSet_ = false;
 }
 
 MysqlCreateReadonlyNodeRequest::~MysqlCreateReadonlyNodeRequest() = default;
@@ -32,6 +33,9 @@ web::json::value MysqlCreateReadonlyNodeRequest::toJson() const
     }
     if(isAutoPayIsSet_) {
         val[utility::conversions::to_string_t("is_auto_pay")] = ModelBase::toJson(isAutoPay_);
+    }
+    if(availabilityZonesIsSet_) {
+        val[utility::conversions::to_string_t("availability_zones")] = ModelBase::toJson(availabilityZones_);
     }
 
     return val;
@@ -56,6 +60,15 @@ bool MysqlCreateReadonlyNodeRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsAutoPay(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("availability_zones"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("availability_zones"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAvailabilityZones(refVal);
         }
     }
     return ok;
@@ -102,6 +115,27 @@ bool MysqlCreateReadonlyNodeRequest::isAutoPayIsSet() const
 void MysqlCreateReadonlyNodeRequest::unsetisAutoPay()
 {
     isAutoPayIsSet_ = false;
+}
+
+std::vector<std::string>& MysqlCreateReadonlyNodeRequest::getAvailabilityZones()
+{
+    return availabilityZones_;
+}
+
+void MysqlCreateReadonlyNodeRequest::setAvailabilityZones(const std::vector<std::string>& value)
+{
+    availabilityZones_ = value;
+    availabilityZonesIsSet_ = true;
+}
+
+bool MysqlCreateReadonlyNodeRequest::availabilityZonesIsSet() const
+{
+    return availabilityZonesIsSet_;
+}
+
+void MysqlCreateReadonlyNodeRequest::unsetavailabilityZones()
+{
+    availabilityZonesIsSet_ = false;
 }
 
 }

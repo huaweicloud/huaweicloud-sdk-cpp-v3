@@ -1576,6 +1576,9 @@ std::shared_ptr<ListFlavorsResponse> RdsClient::listFlavors(ListFlavorsRequest &
     if (request.specCodeIsSet()) {
         localVarQueryParams["spec_code"] = parameterToString(request.getSpecCode());
     }
+    if (request.isServerlessIsSet()) {
+        localVarQueryParams["is_serverless"] = parameterToString(request.getIsServerless());
+    }
     if (request.xLanguageIsSet()) {
         localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
     }

@@ -525,6 +525,9 @@ HttpRequestDef RdsMeta::genRequestDefForListFlavors() {
     reqDefBuilder.withRequestField(FieldDef().withName("SpecCode")
                   .withJsonTag("spec_code")
                   .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("IsServerless")
+                  .withJsonTag("is_serverless")
+                  .withLocationType(Query_));
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage
                   .withName("XLanguage")

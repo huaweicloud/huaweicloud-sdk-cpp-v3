@@ -97,15 +97,6 @@ HttpRequestDef AadMeta::genRequestDefForCreateAadDomain() {
     return reqDefBuilder;
 }
 
-HttpRequestDef AadMeta::genRequestDefForCreateCertificate() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef bodyParam;
-    reqDefBuilder.withRequestField(bodyParam.
-        withName("Body").
-        withLocationType(Body_));
-    return reqDefBuilder;
-}
-
 HttpRequestDef AadMeta::genRequestDefForCreatePolicy() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -242,6 +233,15 @@ HttpRequestDef AadMeta::genRequestDefForListUnboundProtectedIp() {
 }
 
 HttpRequestDef AadMeta::genRequestDefForModifyDomainWebSwitch() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef AadMeta::genRequestDefForSetCertForDomain() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.

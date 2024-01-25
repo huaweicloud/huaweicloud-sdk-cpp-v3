@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/aad/v1/model/CreateCertificateRequest.h"
+#include "huaweicloud/aad/v1/model/SetCertForDomainRequest.h"
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Aad {
@@ -10,18 +10,18 @@ namespace Model {
 
 
 
-CreateCertificateRequest::CreateCertificateRequest()
+SetCertForDomainRequest::SetCertForDomainRequest()
 {
     bodyIsSet_ = false;
 }
 
-CreateCertificateRequest::~CreateCertificateRequest() = default;
+SetCertForDomainRequest::~SetCertForDomainRequest() = default;
 
-void CreateCertificateRequest::validate()
+void SetCertForDomainRequest::validate()
 {
 }
 
-web::json::value CreateCertificateRequest::toJson() const
+web::json::value SetCertForDomainRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -31,7 +31,7 @@ web::json::value CreateCertificateRequest::toJson() const
 
     return val;
 }
-bool CreateCertificateRequest::fromJson(const web::json::value& val)
+bool SetCertForDomainRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -48,23 +48,23 @@ bool CreateCertificateRequest::fromJson(const web::json::value& val)
 }
 
 
-CertificateBody CreateCertificateRequest::getBody() const
+CertificateBody SetCertForDomainRequest::getBody() const
 {
     return body_;
 }
 
-void CreateCertificateRequest::setBody(const CertificateBody& value)
+void SetCertForDomainRequest::setBody(const CertificateBody& value)
 {
     body_ = value;
     bodyIsSet_ = true;
 }
 
-bool CreateCertificateRequest::bodyIsSet() const
+bool SetCertForDomainRequest::bodyIsSet() const
 {
     return bodyIsSet_;
 }
 
-void CreateCertificateRequest::unsetbody()
+void SetCertForDomainRequest::unsetbody()
 {
     bodyIsSet_ = false;
 }

@@ -17,6 +17,7 @@
 #include <huaweicloud/rds/v3/model/NodeResponse.h>
 #include <huaweicloud/rds/v3/model/HaResponse.h>
 #include <huaweicloud/rds/v3/model/Datastore.h>
+#include <huaweicloud/rds/v3/model/ServerlessInfoResponse.h>
 #include <vector>
 #include <huaweicloud/rds/v3/model/ChargeInfoResponse.h>
 
@@ -416,6 +417,15 @@ public:
     void unsetexpirationTime();
     void setExpirationTime(const std::string& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    ServerlessInfoResponse getServerlessInfo() const;
+    bool serverlessInfoIsSet() const;
+    void unsetserverlessInfo();
+    void setServerlessInfo(const ServerlessInfoResponse& value);
+
 
 protected:
     std::string id_;
@@ -500,6 +510,8 @@ protected:
     bool maxIopsIsSet_;
     std::string expirationTime_;
     bool expirationTimeIsSet_;
+    ServerlessInfoResponse serverlessInfo_;
+    bool serverlessInfoIsSet_;
 
 };
 

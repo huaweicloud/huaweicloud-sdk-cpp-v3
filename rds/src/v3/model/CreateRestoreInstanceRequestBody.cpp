@@ -54,6 +54,7 @@ CreateRestoreInstanceRequestBody::CreateRestoreInstanceRequestBody()
     collationIsSet_ = false;
     tagsIsSet_ = false;
     unchangeableParamIsSet_ = false;
+    serverlessInfoIsSet_ = false;
     dryRun_ = false;
     dryRunIsSet_ = false;
 }
@@ -142,6 +143,9 @@ web::json::value CreateRestoreInstanceRequestBody::toJson() const
     }
     if(unchangeableParamIsSet_) {
         val[utility::conversions::to_string_t("unchangeable_param")] = ModelBase::toJson(unchangeableParam_);
+    }
+    if(serverlessInfoIsSet_) {
+        val[utility::conversions::to_string_t("serverless_info")] = ModelBase::toJson(serverlessInfo_);
     }
     if(dryRunIsSet_) {
         val[utility::conversions::to_string_t("dry_run")] = ModelBase::toJson(dryRun_);
@@ -376,6 +380,15 @@ bool CreateRestoreInstanceRequestBody::fromJson(const web::json::value& val)
             UnchangeableParam refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setUnchangeableParam(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("serverless_info"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("serverless_info"));
+        if(!fieldValue.is_null())
+        {
+            ServerlessInfo refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setServerlessInfo(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("dry_run"))) {
@@ -914,6 +927,27 @@ bool CreateRestoreInstanceRequestBody::unchangeableParamIsSet() const
 void CreateRestoreInstanceRequestBody::unsetunchangeableParam()
 {
     unchangeableParamIsSet_ = false;
+}
+
+ServerlessInfo CreateRestoreInstanceRequestBody::getServerlessInfo() const
+{
+    return serverlessInfo_;
+}
+
+void CreateRestoreInstanceRequestBody::setServerlessInfo(const ServerlessInfo& value)
+{
+    serverlessInfo_ = value;
+    serverlessInfoIsSet_ = true;
+}
+
+bool CreateRestoreInstanceRequestBody::serverlessInfoIsSet() const
+{
+    return serverlessInfoIsSet_;
+}
+
+void CreateRestoreInstanceRequestBody::unsetserverlessInfo()
+{
+    serverlessInfoIsSet_ = false;
 }
 
 bool CreateRestoreInstanceRequestBody::isDryRun() const

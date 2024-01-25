@@ -26,6 +26,10 @@ public:
             { 
                 "https://aad.myhuaweicloud.com"
             });
+        regions["ap-southeast-1"] = Region("ap-southeast-1",
+            { 
+                "https://aad.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

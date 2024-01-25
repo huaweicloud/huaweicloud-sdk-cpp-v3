@@ -122,7 +122,7 @@ public:
     void setClusterType(const std::string& value);
 
     /// <summary>
-    /// 数据镜像的ID，UUID格式。
+    /// 云服务器数据盘对应的存储池的ID。
     /// </summary>
 
     std::string getClusterId() const;

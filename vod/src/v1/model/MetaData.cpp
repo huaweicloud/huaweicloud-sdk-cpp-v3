@@ -18,8 +18,6 @@ MetaData::MetaData()
     codecIsSet_ = false;
     duration_ = 0L;
     durationIsSet_ = false;
-    durationMs_ = 0L;
-    durationMsIsSet_ = false;
     videoSize_ = 0L;
     videoSizeIsSet_ = false;
     width_ = 0L;
@@ -54,9 +52,6 @@ web::json::value MetaData::toJson() const
     }
     if(durationIsSet_) {
         val[utility::conversions::to_string_t("duration")] = ModelBase::toJson(duration_);
-    }
-    if(durationMsIsSet_) {
-        val[utility::conversions::to_string_t("duration_ms")] = ModelBase::toJson(durationMs_);
     }
     if(videoSizeIsSet_) {
         val[utility::conversions::to_string_t("video_size")] = ModelBase::toJson(videoSize_);
@@ -111,15 +106,6 @@ bool MetaData::fromJson(const web::json::value& val)
             int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDuration(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("duration_ms"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("duration_ms"));
-        if(!fieldValue.is_null())
-        {
-            int64_t refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setDurationMs(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("video_size"))) {
@@ -250,27 +236,6 @@ bool MetaData::durationIsSet() const
 void MetaData::unsetduration()
 {
     durationIsSet_ = false;
-}
-
-int64_t MetaData::getDurationMs() const
-{
-    return durationMs_;
-}
-
-void MetaData::setDurationMs(int64_t value)
-{
-    durationMs_ = value;
-    durationMsIsSet_ = true;
-}
-
-bool MetaData::durationMsIsSet() const
-{
-    return durationMsIsSet_;
-}
-
-void MetaData::unsetdurationMs()
-{
-    durationMsIsSet_ = false;
 }
 
 int64_t MetaData::getVideoSize() const

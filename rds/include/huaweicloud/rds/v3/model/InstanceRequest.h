@@ -13,6 +13,7 @@
 #include <huaweicloud/rds/v3/model/BackupStrategy.h>
 #include <huaweicloud/rds/v3/model/Volume.h>
 #include <huaweicloud/rds/v3/model/Ha.h>
+#include <huaweicloud/rds/v3/model/ServerlessInfo.h>
 #include <string>
 #include <huaweicloud/rds/v3/model/RestorePoint.h>
 #include <huaweicloud/rds/v3/model/UnchangeableParam.h>
@@ -290,6 +291,15 @@ public:
     void unsetcount();
     void setCount(int32_t value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    ServerlessInfo getServerlessInfo() const;
+    bool serverlessInfoIsSet() const;
+    void unsetserverlessInfo();
+    void setServerlessInfo(const ServerlessInfo& value);
+
 
 protected:
     std::string name_;
@@ -346,6 +356,8 @@ protected:
     bool dryRunIsSet_;
     int32_t count_;
     bool countIsSet_;
+    ServerlessInfo serverlessInfo_;
+    bool serverlessInfoIsSet_;
 
 };
 

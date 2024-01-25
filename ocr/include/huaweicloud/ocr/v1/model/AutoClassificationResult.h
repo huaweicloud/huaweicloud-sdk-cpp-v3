@@ -77,6 +77,15 @@ public:
     void unsetlocation();
     void setLocation(const std::vector<std::vector<int32_t>>& value);
 
+    /// <summary>
+    /// 对应票证中是否含有印章。可选值包括： -  true：该票证中含有印章。 -  false：该票证中不含有印章。 
+    /// </summary>
+
+    bool isSealMark() const;
+    bool sealMarkIsSet() const;
+    void unsetsealMark();
+    void setSealMark(bool value);
+
 
 protected:
     AutoClassificationResult_status status_;
@@ -87,6 +96,8 @@ protected:
     bool typeIsSet_;
     std::vector<std::vector<int32_t>> location_;
     bool locationIsSet_;
+    bool sealMark_;
+    bool sealMarkIsSet_;
 
 };
 

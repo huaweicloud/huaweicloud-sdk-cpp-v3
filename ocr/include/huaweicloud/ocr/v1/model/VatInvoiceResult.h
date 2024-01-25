@@ -13,6 +13,7 @@
 #include <string>
 #include <huaweicloud/ocr/v1/model/ItemList.h>
 #include <vector>
+#include <huaweicloud/ocr/v1/model/BelongItemList.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -348,6 +349,24 @@ public:
     void setItemList(const std::vector<ItemList>& value);
 
     /// <summary>
+    /// 省。 
+    /// </summary>
+
+    std::string getProvince() const;
+    bool provinceIsSet() const;
+    void unsetprovince();
+    void setProvince(const std::string& value);
+
+    /// <summary>
+    /// 市。 
+    /// </summary>
+
+    std::string getCity() const;
+    bool cityIsSet() const;
+    void unsetcity();
+    void setCity(const std::string& value);
+
+    /// <summary>
     /// 各个字段的置信度。 当“advanced_mode”设置为“true”时才返回。 
     /// </summary>
 
@@ -364,6 +383,150 @@ public:
     bool textLocationIsSet() const;
     void unsettextLocation();
     void setTextLocation(const Object& value);
+
+    /// <summary>
+    /// 销货清单的购买方名称。 当传入图片为发票销货清单时返回此字段。 
+    /// </summary>
+
+    std::string getBelongBuyerName() const;
+    bool belongBuyerNameIsSet() const;
+    void unsetbelongBuyerName();
+    void setBelongBuyerName(const std::string& value);
+
+    /// <summary>
+    /// 销货清单的销售方名称。 当传入图片为发票销货清单时返回此字段。 
+    /// </summary>
+
+    std::string getBelongSellerName() const;
+    bool belongSellerNameIsSet() const;
+    void unsetbelongSellerName();
+    void setBelongSellerName(const std::string& value);
+
+    /// <summary>
+    /// 所属的增值税发票代码。 当传入图片为发票销货清单时返回此字段。 
+    /// </summary>
+
+    std::string getBelongVatCode() const;
+    bool belongVatCodeIsSet() const;
+    void unsetbelongVatCode();
+    void setBelongVatCode(const std::string& value);
+
+    /// <summary>
+    /// 销货清单的开票号码。 当传入图片为发票销货清单时返回此字段。 
+    /// </summary>
+
+    std::string getBelongNumber() const;
+    bool belongNumberIsSet() const;
+    void unsetbelongNumber();
+    void setBelongNumber(const std::string& value);
+
+    /// <summary>
+    /// 销货清单的总页码数。 当传入图片为发票销货清单时返回此字段。 
+    /// </summary>
+
+    std::string getBelongPages() const;
+    bool belongPagesIsSet() const;
+    void unsetbelongPages();
+    void setBelongPages(const std::string& value);
+
+    /// <summary>
+    /// 销货清单的当前页码。 当传入图片为发票销货清单时返回此字段。 
+    /// </summary>
+
+    std::string getBelongCurrentPage() const;
+    bool belongCurrentPageIsSet() const;
+    void unsetbelongCurrentPage();
+    void setBelongCurrentPage(const std::string& value);
+
+    /// <summary>
+    /// 销货清单的备注。 当传入图片为发票销货清单时返回此字段。 
+    /// </summary>
+
+    std::string getBelongRemarks() const;
+    bool belongRemarksIsSet() const;
+    void unsetbelongRemarks();
+    void setBelongRemarks(const std::string& value);
+
+    /// <summary>
+    /// 销货清单的填开日期。 当传入图片为发票销货清单时返回此字段。 
+    /// </summary>
+
+    std::string getBelongIssueDate() const;
+    bool belongIssueDateIsSet() const;
+    void unsetbelongIssueDate();
+    void setBelongIssueDate(const std::string& value);
+
+    /// <summary>
+    /// 是否是销货清单，可选值为： - true：输入图片是销货清单。 - false：输入图片不是销货清单。 
+    /// </summary>
+
+    bool isSalesMark() const;
+    bool salesMarkIsSet() const;
+    void unsetsalesMark();
+    void setSalesMark(bool value);
+
+    /// <summary>
+    /// 销货清单的小计金额。 当传入图片为发票销货清单时返回此字段。 
+    /// </summary>
+
+    std::string getBelongSumAmount() const;
+    bool belongSumAmountIsSet() const;
+    void unsetbelongSumAmount();
+    void setBelongSumAmount(const std::string& value);
+
+    /// <summary>
+    /// 销货清单的小计税额。 当传入图片为发票销货清单时返回此字段。 
+    /// </summary>
+
+    std::string getBelongSumTax() const;
+    bool belongSumTaxIsSet() const;
+    void unsetbelongSumTax();
+    void setBelongSumTax(const std::string& value);
+
+    /// <summary>
+    /// 销货清单的总计或者合计金额。 当传入图片为发票销货清单时返回此字段。 
+    /// </summary>
+
+    std::string getBelongSubtotalAmount() const;
+    bool belongSubtotalAmountIsSet() const;
+    void unsetbelongSubtotalAmount();
+    void setBelongSubtotalAmount(const std::string& value);
+
+    /// <summary>
+    /// 销货清单的总计税额。 当传入图片为发票销货清单时返回此字段。 
+    /// </summary>
+
+    std::string getBelongSubtotalTax() const;
+    bool belongSubtotalTaxIsSet() const;
+    void unsetbelongSubtotalTax();
+    void setBelongSubtotalTax(const std::string& value);
+
+    /// <summary>
+    /// 销货清单的折扣金额。 当传入图片为发票销货清单时返回此字段。 
+    /// </summary>
+
+    std::string getBelongDiscountAmount() const;
+    bool belongDiscountAmountIsSet() const;
+    void unsetbelongDiscountAmount();
+    void setBelongDiscountAmount(const std::string& value);
+
+    /// <summary>
+    /// 销货清单的折扣税额。 当传入图片为发票销货清单时返回此字段。 
+    /// </summary>
+
+    std::string getBelongDiscountTax() const;
+    bool belongDiscountTaxIsSet() const;
+    void unsetbelongDiscountTax();
+    void setBelongDiscountTax(const std::string& value);
+
+    /// <summary>
+    /// 销货清单的货物（劳务）名称列表。 当传入图片为发票销货清单时返回此字段。 
+    /// </summary>
+
+    std::vector<BelongItemList>& getBelongItemList();
+    bool belongItemListIsSet() const;
+    void unsetbelongItemList();
+    void setBelongItemList(const std::vector<BelongItemList>& value);
 
 
 protected:
@@ -435,10 +598,46 @@ protected:
     bool sellerSealIsSet_;
     std::vector<ItemList> itemList_;
     bool itemListIsSet_;
+    std::string province_;
+    bool provinceIsSet_;
+    std::string city_;
+    bool cityIsSet_;
     Object confidence_;
     bool confidenceIsSet_;
     Object textLocation_;
     bool textLocationIsSet_;
+    std::string belongBuyerName_;
+    bool belongBuyerNameIsSet_;
+    std::string belongSellerName_;
+    bool belongSellerNameIsSet_;
+    std::string belongVatCode_;
+    bool belongVatCodeIsSet_;
+    std::string belongNumber_;
+    bool belongNumberIsSet_;
+    std::string belongPages_;
+    bool belongPagesIsSet_;
+    std::string belongCurrentPage_;
+    bool belongCurrentPageIsSet_;
+    std::string belongRemarks_;
+    bool belongRemarksIsSet_;
+    std::string belongIssueDate_;
+    bool belongIssueDateIsSet_;
+    bool salesMark_;
+    bool salesMarkIsSet_;
+    std::string belongSumAmount_;
+    bool belongSumAmountIsSet_;
+    std::string belongSumTax_;
+    bool belongSumTaxIsSet_;
+    std::string belongSubtotalAmount_;
+    bool belongSubtotalAmountIsSet_;
+    std::string belongSubtotalTax_;
+    bool belongSubtotalTaxIsSet_;
+    std::string belongDiscountAmount_;
+    bool belongDiscountAmountIsSet_;
+    std::string belongDiscountTax_;
+    bool belongDiscountTaxIsSet_;
+    std::vector<BelongItemList> belongItemList_;
+    bool belongItemListIsSet_;
 
 };
 

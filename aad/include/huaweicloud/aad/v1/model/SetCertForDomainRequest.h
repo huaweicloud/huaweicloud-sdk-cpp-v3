@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_AAD_V1_MODEL_CreateCertificateRequest_H_
-#define HUAWEICLOUD_SDK_AAD_V1_MODEL_CreateCertificateRequest_H_
+#ifndef HUAWEICLOUD_SDK_AAD_V1_MODEL_SetCertForDomainRequest_H_
+#define HUAWEICLOUD_SDK_AAD_V1_MODEL_SetCertForDomainRequest_H_
 
 
 #include <huaweicloud/aad/v1/AadExport.h>
@@ -22,12 +22,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// Request Object
 /// </summary>
-class HUAWEICLOUD_AAD_V1_EXPORT  CreateCertificateRequest
+class HUAWEICLOUD_AAD_V1_EXPORT  SetCertForDomainRequest
     : public ModelBase
 {
 public:
-    CreateCertificateRequest();
-    virtual ~CreateCertificateRequest();
+    SetCertForDomainRequest();
+    virtual ~SetCertForDomainRequest();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -36,7 +36,7 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// CreateCertificateRequest members
+    /// SetCertForDomainRequest members
 
     /// <summary>
     /// 
@@ -55,7 +55,7 @@ protected:
 #ifdef RTTR_FLAG
     RTTR_ENABLE()
 public:
-    CreateCertificateRequest& dereference_from_shared_ptr(std::shared_ptr<CreateCertificateRequest> ptr) {
+    SetCertForDomainRequest& dereference_from_shared_ptr(std::shared_ptr<SetCertForDomainRequest> ptr) {
         return *ptr;
     }
 #endif
@@ -68,4 +68,4 @@ public:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_AAD_V1_MODEL_CreateCertificateRequest_H_
+#endif // HUAWEICLOUD_SDK_AAD_V1_MODEL_SetCertForDomainRequest_H_

@@ -66,15 +66,6 @@ public:
     void setDuration(int64_t value);
 
     /// <summary>
-    /// 视频时长，单位毫秒。
-    /// </summary>
-
-    int64_t getDurationMs() const;
-    bool durationMsIsSet() const;
-    void unsetdurationMs();
-    void setDurationMs(int64_t value);
-
-    /// <summary>
     /// 视频文件大小。  单位：字节。
     /// </summary>
 
@@ -145,8 +136,6 @@ protected:
     bool codecIsSet_;
     int64_t duration_;
     bool durationIsSet_;
-    int64_t durationMs_;
-    bool durationMsIsSet_;
     int64_t videoSize_;
     bool videoSizeIsSet_;
     int64_t width_;

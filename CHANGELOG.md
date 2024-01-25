@@ -1,3 +1,107 @@
+# 3.1.71 2024-01-25
+
+### HuaweiCloud SDK GaussDB
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateGaussMySqlReadonlyNode**
+    - changes of request param
+      - `+ availability_zones`
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **RecognizeAutoClassification**
+    - changes of request param
+      - `+ detect_seal`
+    - changes of response param
+      - `+ result.seal_mark`
+  - **RecognizeVatInvoice**
+    - changes of response param
+      - `+ result.province`
+      - `+ result.city`
+      - `+ result.belong_buyer_name`
+      - `+ result.belong_seller_name`
+      - `+ result.belong_vat_code`
+      - `+ result.belong_number`
+      - `+ result.belong_pages`
+      - `+ result.belong_current_page`
+      - `+ result.belong_remarks`
+      - `+ result.belong_issue_date`
+      - `+ result.sales_mark`
+      - `+ result.belong_sum_amount`
+      - `+ result.belong_sum_tax`
+      - `+ result.belong_subtotal_amount`
+      - `+ result.belong_subtotal_tax`
+      - `+ result.belong_discount_amount`
+      - `+ result.belong_discount_tax`
+      - `+ result.belong_item_list`
+
+### HuaweiCloud SDK RDS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListFlavors**
+    - changes of request param
+      - `+ is_serverless`
+  - **ListInstances**
+    - changes of response param
+      - `+ instances.serverless_info`
+  - **CreateInstance**
+    - changes of request param
+      - `+ serverless_info`
+  - **CreateRestoreInstance**
+    - changes of request param
+      - `+ serverless_info`
+
+### HuaweiCloud SDK VOD
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateAssetByFileUpload**
+    - changes of request param
+      - `* category_id: string -> int32`
+  - **CreateAssetProcessTask**
+    - changes of request param
+      - `+ hls_storage_type`
+  - **ListTopStatistics**
+    - changes of response param
+      - `- top_urls.duration_ms`
+  - **ListAssetList**
+    - changes of response param
+      - `- assets.duration_ms`
+  - **ShowTakeOverAssetDetails**
+    - changes of response param
+      - `- base_info.meta_data.duration_ms`
+  - **PublishAssets**
+    - changes of response param
+      - `- asset_info_array.base_info.meta_data.duration_ms`
+  - **UnpublishAssets**
+    - changes of response param
+      - `- asset_info_array.base_info.meta_data.duration_ms`
+  - **ShowAssetMeta**
+    - changes of response param
+      - `- asset_info_array.base_info.meta_data.duration_ms`
+  - **ShowAssetDetail**
+    - changes of response param
+      - `- base_info.meta_data.duration_ms`
+  - **ShowTakeOverTaskDetails**
+    - changes of response param
+      - `- assets.base_info.meta_data.duration_ms`
+
 # 3.1.70 2024-01-18
 
 ### HuaweiCloud SDK CDN

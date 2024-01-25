@@ -17,6 +17,8 @@ AutoClassificationResult::AutoClassificationResult()
     type_ = "";
     typeIsSet_ = false;
     locationIsSet_ = false;
+    sealMark_ = false;
+    sealMarkIsSet_ = false;
 }
 
 AutoClassificationResult::~AutoClassificationResult() = default;
@@ -40,6 +42,9 @@ web::json::value AutoClassificationResult::toJson() const
     }
     if(locationIsSet_) {
         val[utility::conversions::to_string_t("location")] = ModelBase::toJson(location_);
+    }
+    if(sealMarkIsSet_) {
+        val[utility::conversions::to_string_t("seal_mark")] = ModelBase::toJson(sealMark_);
     }
 
     return val;
@@ -82,6 +87,15 @@ bool AutoClassificationResult::fromJson(const web::json::value& val)
             std::vector<std::vector<int32_t>> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLocation(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("seal_mark"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("seal_mark"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSealMark(refVal);
         }
     }
     return ok;
@@ -170,6 +184,27 @@ bool AutoClassificationResult::locationIsSet() const
 void AutoClassificationResult::unsetlocation()
 {
     locationIsSet_ = false;
+}
+
+bool AutoClassificationResult::isSealMark() const
+{
+    return sealMark_;
+}
+
+void AutoClassificationResult::setSealMark(bool value)
+{
+    sealMark_ = value;
+    sealMarkIsSet_ = true;
+}
+
+bool AutoClassificationResult::sealMarkIsSet() const
+{
+    return sealMarkIsSet_;
+}
+
+void AutoClassificationResult::unsetsealMark()
+{
+    sealMarkIsSet_ = false;
 }
 
 }

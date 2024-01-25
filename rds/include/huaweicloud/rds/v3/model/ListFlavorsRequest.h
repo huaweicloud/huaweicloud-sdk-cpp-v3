@@ -74,6 +74,15 @@ public:
     void unsetspecCode();
     void setSpecCode(const std::string& value);
 
+    /// <summary>
+    /// 是否查询serverless规格。取值范围如下，区分大小写： true：查询serverless规格 false：查询非serverless规格 默认值 false。
+    /// </summary>
+
+    std::string getIsServerless() const;
+    bool isServerlessIsSet() const;
+    void unsetisServerless();
+    void setIsServerless(const std::string& value);
+
 
 protected:
     std::string xLanguage_;
@@ -84,6 +93,8 @@ protected:
     bool versionNameIsSet_;
     std::string specCode_;
     bool specCodeIsSet_;
+    std::string isServerless_;
+    bool isServerlessIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

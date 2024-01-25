@@ -20,7 +20,7 @@ CreateAssetByFileUploadReq::CreateAssetByFileUploadReq()
     videoNameIsSet_ = false;
     videoType_ = "";
     videoTypeIsSet_ = false;
-    categoryId_ = "";
+    categoryId_ = 0;
     categoryIdIsSet_ = false;
     videoMd5_ = "";
     videoMd5IsSet_ = false;
@@ -153,7 +153,7 @@ bool CreateAssetByFileUploadReq::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("category_id"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCategoryId(refVal);
         }
@@ -354,12 +354,12 @@ void CreateAssetByFileUploadReq::unsetvideoType()
     videoTypeIsSet_ = false;
 }
 
-std::string CreateAssetByFileUploadReq::getCategoryId() const
+int32_t CreateAssetByFileUploadReq::getCategoryId() const
 {
     return categoryId_;
 }
 
-void CreateAssetByFileUploadReq::setCategoryId(const std::string& value)
+void CreateAssetByFileUploadReq::setCategoryId(int32_t value)
 {
     categoryId_ = value;
     categoryIdIsSet_ = true;

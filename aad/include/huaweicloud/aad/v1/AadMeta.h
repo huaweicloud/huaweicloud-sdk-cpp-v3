@@ -24,7 +24,6 @@ public:
     static HttpRequestDef genRequestDefForBatchCreateInstanceIpRule();
     static HttpRequestDef genRequestDefForBatchDeleteInstanceIpRule();
     static HttpRequestDef genRequestDefForCreateAadDomain();
-    static HttpRequestDef genRequestDefForCreateCertificate();
     static HttpRequestDef genRequestDefForCreatePolicy();
     static HttpRequestDef genRequestDefForDeleteAlarmConfig();
     static HttpRequestDef genRequestDefForDeleteBlackWhiteIpList();
@@ -42,6 +41,7 @@ public:
     static HttpRequestDef genRequestDefForListSourceIps();
     static HttpRequestDef genRequestDefForListUnboundProtectedIp();
     static HttpRequestDef genRequestDefForModifyDomainWebSwitch();
+    static HttpRequestDef genRequestDefForSetCertForDomain();
     static HttpRequestDef genRequestDefForShowAlarmConfig();
     static HttpRequestDef genRequestDefForShowPolicy();
     static HttpRequestDef genRequestDefForUpdateAlarmConfig();

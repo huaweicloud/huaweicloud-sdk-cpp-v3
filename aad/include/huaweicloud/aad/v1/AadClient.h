@@ -38,8 +38,6 @@
 #include <huaweicloud/aad/v1/model/CertificateBody.h>
 #include <huaweicloud/aad/v1/model/CreateAadDomainRequest.h>
 #include <huaweicloud/aad/v1/model/CreateAadDomainResponse.h>
-#include <huaweicloud/aad/v1/model/CreateCertificateRequest.h>
-#include <huaweicloud/aad/v1/model/CreateCertificateResponse.h>
 #include <huaweicloud/aad/v1/model/CreatePolicyRequest.h>
 #include <huaweicloud/aad/v1/model/CreatePolicyRequestBody.h>
 #include <huaweicloud/aad/v1/model/CreatePolicyResponse.h>
@@ -78,6 +76,8 @@
 #include <huaweicloud/aad/v1/model/ListUnboundProtectedIpResponse.h>
 #include <huaweicloud/aad/v1/model/ModifyDomainWebSwitchRequest.h>
 #include <huaweicloud/aad/v1/model/ModifyDomainWebSwitchResponse.h>
+#include <huaweicloud/aad/v1/model/SetCertForDomainRequest.h>
+#include <huaweicloud/aad/v1/model/SetCertForDomainResponse.h>
 #include <huaweicloud/aad/v1/model/ShowAlarmConfigRequest.h>
 #include <huaweicloud/aad/v1/model/ShowAlarmConfigResponse.h>
 #include <huaweicloud/aad/v1/model/ShowPolicyRequest.h>
@@ -216,14 +216,6 @@ public:
     std::shared_ptr<CreateAadDomainResponse> createAadDomain(
         CreateAadDomainRequest &request
     );
-    // 上传/修改域名对应证书
-    //
-    // 上传/修改域名对应证书
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<CreateCertificateResponse> createCertificate(
-        CreateCertificateRequest &request
-    );
     // 创建策略
     //
     // 创建策略
@@ -359,6 +351,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ModifyDomainWebSwitchResponse> modifyDomainWebSwitch(
         ModifyDomainWebSwitchRequest &request
+    );
+    // 上传/修改域名对应证书
+    //
+    // 上传/修改域名对应证书
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SetCertForDomainResponse> setCertForDomain(
+        SetCertForDomainRequest &request
     );
     // 查询告警配置
     //

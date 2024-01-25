@@ -13,6 +13,7 @@
 #include <huaweicloud/rds/v3/model/BackupStrategy.h>
 #include <huaweicloud/rds/v3/model/Volume.h>
 #include <huaweicloud/rds/v3/model/Ha.h>
+#include <huaweicloud/rds/v3/model/ServerlessInfo.h>
 #include <string>
 #include <huaweicloud/rds/v3/model/RestorePoint.h>
 #include <huaweicloud/rds/v3/model/UnchangeableParam.h>
@@ -273,6 +274,15 @@ public:
     void setUnchangeableParam(const UnchangeableParam& value);
 
     /// <summary>
+    /// 
+    /// </summary>
+
+    ServerlessInfo getServerlessInfo() const;
+    bool serverlessInfoIsSet() const;
+    void unsetserverlessInfo();
+    void setServerlessInfo(const ServerlessInfo& value);
+
+    /// <summary>
     /// 是否只预检此次请求，仅支持MySQL。 - true：发送参数检查请求，不会创建实例。   - 检查通过：返回202状态码。   - 检查不通过：返回对应错误码，详情请参考错误码。 - false：发送正常请求，通过检查后，并且执行创建实例的请求。
     /// </summary>
 
@@ -333,6 +343,8 @@ protected:
     bool tagsIsSet_;
     UnchangeableParam unchangeableParam_;
     bool unchangeableParamIsSet_;
+    ServerlessInfo serverlessInfo_;
+    bool serverlessInfoIsSet_;
     bool dryRun_;
     bool dryRunIsSet_;
 

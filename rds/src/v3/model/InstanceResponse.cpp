@@ -82,6 +82,7 @@ InstanceResponse::InstanceResponse()
     maxIopsIsSet_ = false;
     expirationTime_ = "";
     expirationTimeIsSet_ = false;
+    serverlessInfoIsSet_ = false;
 }
 
 InstanceResponse::~InstanceResponse() = default;
@@ -216,6 +217,9 @@ web::json::value InstanceResponse::toJson() const
     }
     if(expirationTimeIsSet_) {
         val[utility::conversions::to_string_t("expiration_time")] = ModelBase::toJson(expirationTime_);
+    }
+    if(serverlessInfoIsSet_) {
+        val[utility::conversions::to_string_t("serverless_info")] = ModelBase::toJson(serverlessInfo_);
     }
 
     return val;
@@ -591,6 +595,15 @@ bool InstanceResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setExpirationTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("serverless_info"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("serverless_info"));
+        if(!fieldValue.is_null())
+        {
+            ServerlessInfoResponse refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setServerlessInfo(refVal);
         }
     }
     return ok;
@@ -1456,6 +1469,27 @@ bool InstanceResponse::expirationTimeIsSet() const
 void InstanceResponse::unsetexpirationTime()
 {
     expirationTimeIsSet_ = false;
+}
+
+ServerlessInfoResponse InstanceResponse::getServerlessInfo() const
+{
+    return serverlessInfo_;
+}
+
+void InstanceResponse::setServerlessInfo(const ServerlessInfoResponse& value)
+{
+    serverlessInfo_ = value;
+    serverlessInfoIsSet_ = true;
+}
+
+bool InstanceResponse::serverlessInfoIsSet() const
+{
+    return serverlessInfoIsSet_;
+}
+
+void InstanceResponse::unsetserverlessInfo()
+{
+    serverlessInfoIsSet_ = false;
 }
 
 }

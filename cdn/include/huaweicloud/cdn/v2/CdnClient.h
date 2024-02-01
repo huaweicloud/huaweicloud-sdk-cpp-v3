@@ -45,6 +45,8 @@
 #include <huaweicloud/cdn/v2/model/ShowHistoryTaskDetailsResponse.h>
 #include <huaweicloud/cdn/v2/model/ShowHistoryTasksRequest.h>
 #include <huaweicloud/cdn/v2/model/ShowHistoryTasksResponse.h>
+#include <huaweicloud/cdn/v2/model/ShowLogsRequest.h>
+#include <huaweicloud/cdn/v2/model/ShowLogsResponse.h>
 #include <huaweicloud/cdn/v2/model/ShowTopDomainNamesRequest.h>
 #include <huaweicloud/cdn/v2/model/ShowTopDomainNamesResponse.h>
 #include <huaweicloud/cdn/v2/model/ShowTopUrlRequest.h>
@@ -285,6 +287,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowHistoryTasksResponse> showHistoryTasks(
         ShowHistoryTasksRequest &request
+    );
+    // 日志查询
+    //
+    // 查询日志下载链接，支持查询30天内的日志信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowLogsResponse> showLogs(
+        ShowLogsRequest &request
     );
     // 查询TOP域名
     //

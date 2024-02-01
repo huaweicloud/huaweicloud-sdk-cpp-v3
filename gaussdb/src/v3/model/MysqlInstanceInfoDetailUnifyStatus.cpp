@@ -66,6 +66,7 @@ MysqlInstanceInfoDetailUnifyStatus::MysqlInstanceInfoDetailUnifyStatus()
     dedicatedResourceId_ = "";
     dedicatedResourceIdIsSet_ = false;
     proxiesIsSet_ = false;
+    tdeInfoIsSet_ = false;
 }
 
 MysqlInstanceInfoDetailUnifyStatus::~MysqlInstanceInfoDetailUnifyStatus() = default;
@@ -170,6 +171,9 @@ web::json::value MysqlInstanceInfoDetailUnifyStatus::toJson() const
     }
     if(proxiesIsSet_) {
         val[utility::conversions::to_string_t("proxies")] = ModelBase::toJson(proxies_);
+    }
+    if(tdeInfoIsSet_) {
+        val[utility::conversions::to_string_t("tde_info")] = ModelBase::toJson(tdeInfo_);
     }
 
     return val;
@@ -455,6 +459,15 @@ bool MysqlInstanceInfoDetailUnifyStatus::fromJson(const web::json::value& val)
             std::vector<MysqlProxyInfo> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setProxies(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("tde_info"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("tde_info"));
+        if(!fieldValue.is_null())
+        {
+            MysqlTdeInfo refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTdeInfo(refVal);
         }
     }
     return ok;
@@ -1110,6 +1123,27 @@ bool MysqlInstanceInfoDetailUnifyStatus::proxiesIsSet() const
 void MysqlInstanceInfoDetailUnifyStatus::unsetproxies()
 {
     proxiesIsSet_ = false;
+}
+
+MysqlTdeInfo MysqlInstanceInfoDetailUnifyStatus::getTdeInfo() const
+{
+    return tdeInfo_;
+}
+
+void MysqlInstanceInfoDetailUnifyStatus::setTdeInfo(const MysqlTdeInfo& value)
+{
+    tdeInfo_ = value;
+    tdeInfoIsSet_ = true;
+}
+
+bool MysqlInstanceInfoDetailUnifyStatus::tdeInfoIsSet() const
+{
+    return tdeInfoIsSet_;
+}
+
+void MysqlInstanceInfoDetailUnifyStatus::unsettdeInfo()
+{
+    tdeInfoIsSet_ = false;
 }
 
 }

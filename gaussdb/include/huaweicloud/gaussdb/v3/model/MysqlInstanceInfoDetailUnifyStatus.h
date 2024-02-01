@@ -17,6 +17,7 @@
 #include <vector>
 #include <huaweicloud/gaussdb/v3/model/MysqlDatastoreWithKernelVersion.h>
 #include <huaweicloud/gaussdb/v3/model/MysqlInstanceNodeInfo.h>
+#include <huaweicloud/gaussdb/v3/model/MysqlTdeInfo.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -324,6 +325,15 @@ public:
     void unsetproxies();
     void setProxies(const std::vector<MysqlProxyInfo>& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    MysqlTdeInfo getTdeInfo() const;
+    bool tdeInfoIsSet() const;
+    void unsettdeInfo();
+    void setTdeInfo(const MysqlTdeInfo& value);
+
 
 protected:
     std::string id_;
@@ -388,6 +398,8 @@ protected:
     bool dedicatedResourceIdIsSet_;
     std::vector<MysqlProxyInfo> proxies_;
     bool proxiesIsSet_;
+    MysqlTdeInfo tdeInfo_;
+    bool tdeInfoIsSet_;
 
 };
 

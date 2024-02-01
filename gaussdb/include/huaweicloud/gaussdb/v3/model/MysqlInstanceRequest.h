@@ -17,6 +17,7 @@
 #include <huaweicloud/gaussdb/v3/model/MysqlTags.h>
 #include <huaweicloud/gaussdb/v3/model/MysqlDatastoreInReq.h>
 #include <vector>
+#include <huaweicloud/gaussdb/v3/model/MysqlTdeInfo.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -243,6 +244,15 @@ public:
     void unsetrestorePoint();
     void setRestorePoint(const MysqlRestorePoint& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    MysqlTdeInfo getTdeInfo() const;
+    bool tdeInfoIsSet() const;
+    void unsettdeInfo();
+    void setTdeInfo(const MysqlTdeInfo& value);
+
 
 protected:
     MysqlChargeInfo chargeInfo_;
@@ -289,6 +299,8 @@ protected:
     bool dedicatedResourceIdIsSet_;
     MysqlRestorePoint restorePoint_;
     bool restorePointIsSet_;
+    MysqlTdeInfo tdeInfo_;
+    bool tdeInfoIsSet_;
 
 };
 

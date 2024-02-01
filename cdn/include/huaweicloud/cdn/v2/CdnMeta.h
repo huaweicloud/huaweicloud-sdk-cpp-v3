@@ -29,6 +29,7 @@ public:
     static HttpRequestDef genRequestDefForShowDomainStats();
     static HttpRequestDef genRequestDefForShowHistoryTaskDetails();
     static HttpRequestDef genRequestDefForShowHistoryTasks();
+    static HttpRequestDef genRequestDefForShowLogs();
     static HttpRequestDef genRequestDefForShowTopDomainNames();
     static HttpRequestDef genRequestDefForShowTopUrl();
     static HttpRequestDef genRequestDefForShowUrlTaskInfo();

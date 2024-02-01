@@ -102,7 +102,7 @@ public:
     void setDatabase(const std::string& value);
 
     /// <summary>
-    /// 帐号。
+    /// 账号。
     /// </summary>
 
     std::string getUsers() const;

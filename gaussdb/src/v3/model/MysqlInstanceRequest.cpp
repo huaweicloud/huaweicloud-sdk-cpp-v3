@@ -50,6 +50,7 @@ MysqlInstanceRequest::MysqlInstanceRequest()
     dedicatedResourceId_ = "";
     dedicatedResourceIdIsSet_ = false;
     restorePointIsSet_ = false;
+    tdeInfoIsSet_ = false;
 }
 
 MysqlInstanceRequest::~MysqlInstanceRequest() = default;
@@ -127,6 +128,9 @@ web::json::value MysqlInstanceRequest::toJson() const
     }
     if(restorePointIsSet_) {
         val[utility::conversions::to_string_t("restore_point")] = ModelBase::toJson(restorePoint_);
+    }
+    if(tdeInfoIsSet_) {
+        val[utility::conversions::to_string_t("tde_info")] = ModelBase::toJson(tdeInfo_);
     }
 
     return val;
@@ -331,6 +335,15 @@ bool MysqlInstanceRequest::fromJson(const web::json::value& val)
             MysqlRestorePoint refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRestorePoint(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("tde_info"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("tde_info"));
+        if(!fieldValue.is_null())
+        {
+            MysqlTdeInfo refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTdeInfo(refVal);
         }
     }
     return ok;
@@ -797,6 +810,27 @@ bool MysqlInstanceRequest::restorePointIsSet() const
 void MysqlInstanceRequest::unsetrestorePoint()
 {
     restorePointIsSet_ = false;
+}
+
+MysqlTdeInfo MysqlInstanceRequest::getTdeInfo() const
+{
+    return tdeInfo_;
+}
+
+void MysqlInstanceRequest::setTdeInfo(const MysqlTdeInfo& value)
+{
+    tdeInfo_ = value;
+    tdeInfoIsSet_ = true;
+}
+
+bool MysqlInstanceRequest::tdeInfoIsSet() const
+{
+    return tdeInfoIsSet_;
+}
+
+void MysqlInstanceRequest::unsettdeInfo()
+{
+    tdeInfoIsSet_ = false;
 }
 
 }

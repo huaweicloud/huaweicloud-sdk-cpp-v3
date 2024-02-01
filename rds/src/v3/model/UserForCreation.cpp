@@ -18,6 +18,8 @@ UserForCreation::UserForCreation()
     passwordIsSet_ = false;
     comment_ = "";
     commentIsSet_ = false;
+    isPrivilege_ = false;
+    isPrivilegeIsSet_ = false;
     hostsIsSet_ = false;
     databasesIsSet_ = false;
 }
@@ -40,6 +42,9 @@ web::json::value UserForCreation::toJson() const
     }
     if(commentIsSet_) {
         val[utility::conversions::to_string_t("comment")] = ModelBase::toJson(comment_);
+    }
+    if(isPrivilegeIsSet_) {
+        val[utility::conversions::to_string_t("is_privilege")] = ModelBase::toJson(isPrivilege_);
     }
     if(hostsIsSet_) {
         val[utility::conversions::to_string_t("hosts")] = ModelBase::toJson(hosts_);
@@ -79,6 +84,15 @@ bool UserForCreation::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setComment(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_privilege"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_privilege"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsPrivilege(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("hosts"))) {
@@ -164,6 +178,27 @@ bool UserForCreation::commentIsSet() const
 void UserForCreation::unsetcomment()
 {
     commentIsSet_ = false;
+}
+
+bool UserForCreation::isIsPrivilege() const
+{
+    return isPrivilege_;
+}
+
+void UserForCreation::setIsPrivilege(bool value)
+{
+    isPrivilege_ = value;
+    isPrivilegeIsSet_ = true;
+}
+
+bool UserForCreation::isPrivilegeIsSet() const
+{
+    return isPrivilegeIsSet_;
+}
+
+void UserForCreation::unsetisPrivilege()
+{
+    isPrivilegeIsSet_ = false;
 }
 
 std::vector<std::string>& UserForCreation::getHosts()

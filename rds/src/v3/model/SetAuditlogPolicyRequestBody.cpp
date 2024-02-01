@@ -16,6 +16,7 @@ SetAuditlogPolicyRequestBody::SetAuditlogPolicyRequestBody()
     keepDaysIsSet_ = false;
     reserveAuditlogs_ = false;
     reserveAuditlogsIsSet_ = false;
+    auditTypesIsSet_ = false;
 }
 
 SetAuditlogPolicyRequestBody::~SetAuditlogPolicyRequestBody() = default;
@@ -33,6 +34,9 @@ web::json::value SetAuditlogPolicyRequestBody::toJson() const
     }
     if(reserveAuditlogsIsSet_) {
         val[utility::conversions::to_string_t("reserve_auditlogs")] = ModelBase::toJson(reserveAuditlogs_);
+    }
+    if(auditTypesIsSet_) {
+        val[utility::conversions::to_string_t("audit_types")] = ModelBase::toJson(auditTypes_);
     }
 
     return val;
@@ -57,6 +61,15 @@ bool SetAuditlogPolicyRequestBody::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setReserveAuditlogs(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("audit_types"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("audit_types"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAuditTypes(refVal);
         }
     }
     return ok;
@@ -103,6 +116,27 @@ bool SetAuditlogPolicyRequestBody::reserveAuditlogsIsSet() const
 void SetAuditlogPolicyRequestBody::unsetreserveAuditlogs()
 {
     reserveAuditlogsIsSet_ = false;
+}
+
+std::vector<std::string>& SetAuditlogPolicyRequestBody::getAuditTypes()
+{
+    return auditTypes_;
+}
+
+void SetAuditlogPolicyRequestBody::setAuditTypes(const std::vector<std::string>& value)
+{
+    auditTypes_ = value;
+    auditTypesIsSet_ = true;
+}
+
+bool SetAuditlogPolicyRequestBody::auditTypesIsSet() const
+{
+    return auditTypesIsSet_;
+}
+
+void SetAuditlogPolicyRequestBody::unsetauditTypes()
+{
+    auditTypesIsSet_ = false;
 }
 
 }

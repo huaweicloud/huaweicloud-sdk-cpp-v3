@@ -68,6 +68,15 @@ public:
     void setComment(const std::string& value);
 
     /// <summary>
+    /// 是否创建高权限用户。 • 若为true，则不用传hosts、databases参数。
+    /// </summary>
+
+    bool isIsPrivilege() const;
+    bool isPrivilegeIsSet() const;
+    void unsetisPrivilege();
+    void setIsPrivilege(bool value);
+
+    /// <summary>
     /// 授权用户登录主机IP列表 • 若IP地址为%，则表示允许所有地址访问MySQL实例。 • 若IP地址为“10.10.10.%”，则表示10.10.10.X的IP地址都可以访问该MySQL实例。 • 支持添加多个IP地址。
     /// </summary>
 
@@ -93,6 +102,8 @@ protected:
     bool passwordIsSet_;
     std::string comment_;
     bool commentIsSet_;
+    bool isPrivilege_;
+    bool isPrivilegeIsSet_;
     std::vector<std::string> hosts_;
     bool hostsIsSet_;
     std::vector<DatabaseWithPrivilegeObject> databases_;

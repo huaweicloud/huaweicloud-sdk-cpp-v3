@@ -1,3 +1,70 @@
+# 3.1.73 2024-02-07
+
+### HuaweiCloud SDK GEIP
+
+- _Features_
+  - Support `GEIP`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK EIP
+
+- _Features_
+  - Support the following APIs:
+    - `ListTenantVpcIgws`
+    - `CreateTenantVpcIgw`
+    - `ShowInternalVpcIgw`
+    - `UpdateTenantVpcIgw`
+    - `DeleteTenantVpcIgw`
+    - `ListProjectGeipBindings`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK GaussDB
+
+- _Features_
+  - Support the API `UpdateNewNodeAutoAddSwitch`
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateGaussMySqlProxy**
+    - changes of request param
+      - `+ new_node_auto_add_status`
+      - `+ new_node_weight`
+  - **ShowGaussMySqlProxyList**
+    - changes of response param
+      - `+ proxy_list.proxy.new_node_auto_add_status`
+      - `+ proxy_list.proxy.new_node_weight`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _Features_
+  - Support the API `StopBackup`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK RDS
+
+- _Features_
+  - Support the following APIs:
+    - `UpdateDatabaseOwner`
+    - `ExecutePrivilegeDatabaseUserRole`
+    - `ExecuteRevokeDatabaseUserRole`
+    - `ListDatabaseUserRole`
+    - `UpdatePostgresqlExtension`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListPostgresqlExtension**
+    - changes of response param
+      - `+ extensions.version_update`
+
 # 3.1.72 2024-02-01
 
 ### HuaweiCloud SDK CDN

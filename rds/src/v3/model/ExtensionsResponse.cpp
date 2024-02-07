@@ -18,6 +18,8 @@ ExtensionsResponse::ExtensionsResponse()
     databaseNameIsSet_ = false;
     version_ = "";
     versionIsSet_ = false;
+    versionUpdate_ = "";
+    versionUpdateIsSet_ = false;
     sharedPreloadLibraries_ = "";
     sharedPreloadLibrariesIsSet_ = false;
     created_ = false;
@@ -44,6 +46,9 @@ web::json::value ExtensionsResponse::toJson() const
     }
     if(versionIsSet_) {
         val[utility::conversions::to_string_t("version")] = ModelBase::toJson(version_);
+    }
+    if(versionUpdateIsSet_) {
+        val[utility::conversions::to_string_t("version_update")] = ModelBase::toJson(versionUpdate_);
     }
     if(sharedPreloadLibrariesIsSet_) {
         val[utility::conversions::to_string_t("shared_preload_libraries")] = ModelBase::toJson(sharedPreloadLibraries_);
@@ -86,6 +91,15 @@ bool ExtensionsResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setVersion(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("version_update"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("version_update"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setVersionUpdate(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("shared_preload_libraries"))) {
@@ -180,6 +194,27 @@ bool ExtensionsResponse::versionIsSet() const
 void ExtensionsResponse::unsetversion()
 {
     versionIsSet_ = false;
+}
+
+std::string ExtensionsResponse::getVersionUpdate() const
+{
+    return versionUpdate_;
+}
+
+void ExtensionsResponse::setVersionUpdate(const std::string& value)
+{
+    versionUpdate_ = value;
+    versionUpdateIsSet_ = true;
+}
+
+bool ExtensionsResponse::versionUpdateIsSet() const
+{
+    return versionUpdateIsSet_;
+}
+
+void ExtensionsResponse::unsetversionUpdate()
+{
+    versionUpdateIsSet_ = false;
 }
 
 std::string ExtensionsResponse::getSharedPreloadLibraries() const

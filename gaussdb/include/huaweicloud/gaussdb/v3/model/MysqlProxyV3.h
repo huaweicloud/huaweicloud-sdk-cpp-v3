@@ -247,6 +247,24 @@ public:
     void unsetsslOption();
     void setSslOption(const std::string& value);
 
+    /// <summary>
+    /// 新增节点是否自动加入该Proxy。  取值范围： - ON：自动加入。 - OFF：不自动加入。
+    /// </summary>
+
+    std::string getNewNodeAutoAddStatus() const;
+    bool newNodeAutoAddStatusIsSet() const;
+    void unsetnewNodeAutoAddStatus();
+    void setNewNodeAutoAddStatus(const std::string& value);
+
+    /// <summary>
+    /// 新增节点的读权重。
+    /// </summary>
+
+    int32_t getNewNodeWeight() const;
+    bool newNodeWeightIsSet() const;
+    void unsetnewNodeWeight();
+    void setNewNodeWeight(int32_t value);
+
 
 protected:
     std::string poolId_;
@@ -295,6 +313,10 @@ protected:
     bool subnetIdIsSet_;
     std::string sslOption_;
     bool sslOptionIsSet_;
+    std::string newNodeAutoAddStatus_;
+    bool newNodeAutoAddStatusIsSet_;
+    int32_t newNodeWeight_;
+    bool newNodeWeightIsSet_;
 
 };
 

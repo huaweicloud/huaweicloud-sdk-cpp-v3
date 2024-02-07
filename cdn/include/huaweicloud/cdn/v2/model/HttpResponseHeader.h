@@ -39,7 +39,7 @@ public:
     /// HttpResponseHeader members
 
     /// <summary>
-    /// 设置HTTP响应头参数。取值：\&quot;Content-Disposition\&quot;, \&quot;Content-Language\&quot;, \&quot;Access-Control-Allow-Origin\&quot;,\&quot;Access-Control-Allow-Methods\&quot;, \&quot;Access-Control-Max-Age\&quot;, \&quot;Access-Control-Expose-Headers\&quot;或自定义头部。格式要求：长度1~100，以字母开头，可以使用字母、数字和短横杠。
+    /// 设置HTTP响应头参数。取值：\&quot;Content-Disposition\&quot;, \&quot;Content-Language\&quot;, \&quot;Access-Control-Allow-Origin\&quot;,\&quot;Access-Control-Allow-Methods\&quot;, \&quot;Access-Control-Max-Age\&quot;, \&quot;Access-Control-Expose-Headers\&quot;或自定义头部。格式要求：长度1-100，以字母开头，可以使用字母、数字和短横杠。
     /// </summary>
 
     std::string getName() const;
@@ -48,7 +48,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 设置HTTP响应头参数的值。自定义HTTP响应头参数长度范围1~256，支持字母、数字和特定字符（.-_*#!&amp;+|^~&#39;\&quot;/:;,&#x3D;@?&lt;&gt;）。
+    /// 设置HTTP响应头参数的值。自定义HTTP响应头参数长度范围1-256，支持字母、数字和特定字符（.-_*#!&amp;+|^~&#39;\&quot;/:;,&#x3D;@?&lt;&gt;）。
     /// </summary>
 
     std::string getValue() const;

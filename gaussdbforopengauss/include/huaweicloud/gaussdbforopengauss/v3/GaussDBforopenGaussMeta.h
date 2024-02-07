@@ -81,6 +81,7 @@ public:
     static HttpRequestDef genRequestDefForShowProjectQuotas();
     static HttpRequestDef genRequestDefForShowRecyclePolicy();
     static HttpRequestDef genRequestDefForShowSslCertDownloadLink();
+    static HttpRequestDef genRequestDefForStopBackup();
     static HttpRequestDef genRequestDefForSwitchConfiguration();
     static HttpRequestDef genRequestDefForSwitchShard();
     static HttpRequestDef genRequestDefForUpdateInstanceConfiguration();

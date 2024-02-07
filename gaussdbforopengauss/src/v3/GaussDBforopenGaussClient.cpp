@@ -2774,6 +2774,39 @@ std::shared_ptr<ShowSslCertDownloadLinkResponse> GaussDBforopenGaussClient::show
 
     return localVarResult;
 }
+std::shared_ptr<StopBackupResponse> GaussDBforopenGaussClient::stopBackup(StopBackupRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/backups/stop";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, GaussDBforopenGaussMeta::genRequestDefForStopBackup());
+
+    std::shared_ptr<StopBackupResponse> localVarResult = std::make_shared<StopBackupResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<SwitchConfigurationResponse> GaussDBforopenGaussClient::switchConfiguration(SwitchConfigurationRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/configurations/{config_id}/apply";

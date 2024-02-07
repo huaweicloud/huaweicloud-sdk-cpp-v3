@@ -18,23 +18,40 @@ DomainsWithPort::DomainsWithPort()
     domainNameIsSet_ = false;
     businessType_ = "";
     businessTypeIsSet_ = false;
+    userDomainId_ = "";
+    userDomainIdIsSet_ = false;
     domainStatus_ = "";
     domainStatusIsSet_ = false;
     cname_ = "";
     cnameIsSet_ = false;
     sourcesIsSet_ = false;
+    domainOriginHostIsSet_ = false;
     httpsStatus_ = 0;
     httpsStatusIsSet_ = false;
     createTime_ = 0L;
     createTimeIsSet_ = false;
-    updateTime_ = 0L;
-    updateTimeIsSet_ = false;
+    modifyTime_ = 0L;
+    modifyTimeIsSet_ = false;
     disabled_ = 0;
     disabledIsSet_ = false;
     locked_ = 0;
     lockedIsSet_ = false;
+    autoRefreshPreheat_ = 0;
+    autoRefreshPreheatIsSet_ = false;
     serviceArea_ = "";
     serviceAreaIsSet_ = false;
+    rangeStatus_ = "";
+    rangeStatusIsSet_ = false;
+    followStatus_ = "";
+    followStatusIsSet_ = false;
+    originStatus_ = "";
+    originStatusIsSet_ = false;
+    bannedReason_ = "";
+    bannedReasonIsSet_ = false;
+    lockedReason_ = "";
+    lockedReasonIsSet_ = false;
+    enterpriseProjectId_ = "";
+    enterpriseProjectIdIsSet_ = false;
 }
 
 DomainsWithPort::~DomainsWithPort() = default;
@@ -56,6 +73,9 @@ web::json::value DomainsWithPort::toJson() const
     if(businessTypeIsSet_) {
         val[utility::conversions::to_string_t("business_type")] = ModelBase::toJson(businessType_);
     }
+    if(userDomainIdIsSet_) {
+        val[utility::conversions::to_string_t("user_domain_id")] = ModelBase::toJson(userDomainId_);
+    }
     if(domainStatusIsSet_) {
         val[utility::conversions::to_string_t("domain_status")] = ModelBase::toJson(domainStatus_);
     }
@@ -65,14 +85,17 @@ web::json::value DomainsWithPort::toJson() const
     if(sourcesIsSet_) {
         val[utility::conversions::to_string_t("sources")] = ModelBase::toJson(sources_);
     }
+    if(domainOriginHostIsSet_) {
+        val[utility::conversions::to_string_t("domain_origin_host")] = ModelBase::toJson(domainOriginHost_);
+    }
     if(httpsStatusIsSet_) {
         val[utility::conversions::to_string_t("https_status")] = ModelBase::toJson(httpsStatus_);
     }
     if(createTimeIsSet_) {
         val[utility::conversions::to_string_t("create_time")] = ModelBase::toJson(createTime_);
     }
-    if(updateTimeIsSet_) {
-        val[utility::conversions::to_string_t("update_time")] = ModelBase::toJson(updateTime_);
+    if(modifyTimeIsSet_) {
+        val[utility::conversions::to_string_t("modify_time")] = ModelBase::toJson(modifyTime_);
     }
     if(disabledIsSet_) {
         val[utility::conversions::to_string_t("disabled")] = ModelBase::toJson(disabled_);
@@ -80,8 +103,29 @@ web::json::value DomainsWithPort::toJson() const
     if(lockedIsSet_) {
         val[utility::conversions::to_string_t("locked")] = ModelBase::toJson(locked_);
     }
+    if(autoRefreshPreheatIsSet_) {
+        val[utility::conversions::to_string_t("auto_refresh_preheat")] = ModelBase::toJson(autoRefreshPreheat_);
+    }
     if(serviceAreaIsSet_) {
         val[utility::conversions::to_string_t("service_area")] = ModelBase::toJson(serviceArea_);
+    }
+    if(rangeStatusIsSet_) {
+        val[utility::conversions::to_string_t("range_status")] = ModelBase::toJson(rangeStatus_);
+    }
+    if(followStatusIsSet_) {
+        val[utility::conversions::to_string_t("follow_status")] = ModelBase::toJson(followStatus_);
+    }
+    if(originStatusIsSet_) {
+        val[utility::conversions::to_string_t("origin_status")] = ModelBase::toJson(originStatus_);
+    }
+    if(bannedReasonIsSet_) {
+        val[utility::conversions::to_string_t("banned_reason")] = ModelBase::toJson(bannedReason_);
+    }
+    if(lockedReasonIsSet_) {
+        val[utility::conversions::to_string_t("locked_reason")] = ModelBase::toJson(lockedReason_);
+    }
+    if(enterpriseProjectIdIsSet_) {
+        val[utility::conversions::to_string_t("enterprise_project_id")] = ModelBase::toJson(enterpriseProjectId_);
     }
 
     return val;
@@ -117,6 +161,15 @@ bool DomainsWithPort::fromJson(const web::json::value& val)
             setBusinessType(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("user_domain_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("user_domain_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setUserDomainId(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("domain_status"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("domain_status"));
         if(!fieldValue.is_null())
@@ -139,9 +192,18 @@ bool DomainsWithPort::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sources"));
         if(!fieldValue.is_null())
         {
-            std::vector<SourcesDomainConfig> refVal;
+            std::vector<SourceWithPort> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSources(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("domain_origin_host"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("domain_origin_host"));
+        if(!fieldValue.is_null())
+        {
+            DomainOriginHost refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDomainOriginHost(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("https_status"))) {
@@ -162,13 +224,13 @@ bool DomainsWithPort::fromJson(const web::json::value& val)
             setCreateTime(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("update_time"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("update_time"));
+    if(val.has_field(utility::conversions::to_string_t("modify_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("modify_time"));
         if(!fieldValue.is_null())
         {
             int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setUpdateTime(refVal);
+            setModifyTime(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("disabled"))) {
@@ -189,6 +251,15 @@ bool DomainsWithPort::fromJson(const web::json::value& val)
             setLocked(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("auto_refresh_preheat"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("auto_refresh_preheat"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAutoRefreshPreheat(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("service_area"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("service_area"));
         if(!fieldValue.is_null())
@@ -196,6 +267,60 @@ bool DomainsWithPort::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setServiceArea(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("range_status"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("range_status"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRangeStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("follow_status"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("follow_status"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFollowStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("origin_status"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("origin_status"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setOriginStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("banned_reason"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("banned_reason"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBannedReason(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("locked_reason"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("locked_reason"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLockedReason(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("enterprise_project_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enterprise_project_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEnterpriseProjectId(refVal);
         }
     }
     return ok;
@@ -265,6 +390,27 @@ void DomainsWithPort::unsetbusinessType()
     businessTypeIsSet_ = false;
 }
 
+std::string DomainsWithPort::getUserDomainId() const
+{
+    return userDomainId_;
+}
+
+void DomainsWithPort::setUserDomainId(const std::string& value)
+{
+    userDomainId_ = value;
+    userDomainIdIsSet_ = true;
+}
+
+bool DomainsWithPort::userDomainIdIsSet() const
+{
+    return userDomainIdIsSet_;
+}
+
+void DomainsWithPort::unsetuserDomainId()
+{
+    userDomainIdIsSet_ = false;
+}
+
 std::string DomainsWithPort::getDomainStatus() const
 {
     return domainStatus_;
@@ -307,12 +453,12 @@ void DomainsWithPort::unsetcname()
     cnameIsSet_ = false;
 }
 
-std::vector<SourcesDomainConfig>& DomainsWithPort::getSources()
+std::vector<SourceWithPort>& DomainsWithPort::getSources()
 {
     return sources_;
 }
 
-void DomainsWithPort::setSources(const std::vector<SourcesDomainConfig>& value)
+void DomainsWithPort::setSources(const std::vector<SourceWithPort>& value)
 {
     sources_ = value;
     sourcesIsSet_ = true;
@@ -326,6 +472,27 @@ bool DomainsWithPort::sourcesIsSet() const
 void DomainsWithPort::unsetsources()
 {
     sourcesIsSet_ = false;
+}
+
+DomainOriginHost DomainsWithPort::getDomainOriginHost() const
+{
+    return domainOriginHost_;
+}
+
+void DomainsWithPort::setDomainOriginHost(const DomainOriginHost& value)
+{
+    domainOriginHost_ = value;
+    domainOriginHostIsSet_ = true;
+}
+
+bool DomainsWithPort::domainOriginHostIsSet() const
+{
+    return domainOriginHostIsSet_;
+}
+
+void DomainsWithPort::unsetdomainOriginHost()
+{
+    domainOriginHostIsSet_ = false;
 }
 
 int32_t DomainsWithPort::getHttpsStatus() const
@@ -370,25 +537,25 @@ void DomainsWithPort::unsetcreateTime()
     createTimeIsSet_ = false;
 }
 
-int64_t DomainsWithPort::getUpdateTime() const
+int64_t DomainsWithPort::getModifyTime() const
 {
-    return updateTime_;
+    return modifyTime_;
 }
 
-void DomainsWithPort::setUpdateTime(int64_t value)
+void DomainsWithPort::setModifyTime(int64_t value)
 {
-    updateTime_ = value;
-    updateTimeIsSet_ = true;
+    modifyTime_ = value;
+    modifyTimeIsSet_ = true;
 }
 
-bool DomainsWithPort::updateTimeIsSet() const
+bool DomainsWithPort::modifyTimeIsSet() const
 {
-    return updateTimeIsSet_;
+    return modifyTimeIsSet_;
 }
 
-void DomainsWithPort::unsetupdateTime()
+void DomainsWithPort::unsetmodifyTime()
 {
-    updateTimeIsSet_ = false;
+    modifyTimeIsSet_ = false;
 }
 
 int32_t DomainsWithPort::getDisabled() const
@@ -433,6 +600,27 @@ void DomainsWithPort::unsetlocked()
     lockedIsSet_ = false;
 }
 
+int32_t DomainsWithPort::getAutoRefreshPreheat() const
+{
+    return autoRefreshPreheat_;
+}
+
+void DomainsWithPort::setAutoRefreshPreheat(int32_t value)
+{
+    autoRefreshPreheat_ = value;
+    autoRefreshPreheatIsSet_ = true;
+}
+
+bool DomainsWithPort::autoRefreshPreheatIsSet() const
+{
+    return autoRefreshPreheatIsSet_;
+}
+
+void DomainsWithPort::unsetautoRefreshPreheat()
+{
+    autoRefreshPreheatIsSet_ = false;
+}
+
 std::string DomainsWithPort::getServiceArea() const
 {
     return serviceArea_;
@@ -452,6 +640,132 @@ bool DomainsWithPort::serviceAreaIsSet() const
 void DomainsWithPort::unsetserviceArea()
 {
     serviceAreaIsSet_ = false;
+}
+
+std::string DomainsWithPort::getRangeStatus() const
+{
+    return rangeStatus_;
+}
+
+void DomainsWithPort::setRangeStatus(const std::string& value)
+{
+    rangeStatus_ = value;
+    rangeStatusIsSet_ = true;
+}
+
+bool DomainsWithPort::rangeStatusIsSet() const
+{
+    return rangeStatusIsSet_;
+}
+
+void DomainsWithPort::unsetrangeStatus()
+{
+    rangeStatusIsSet_ = false;
+}
+
+std::string DomainsWithPort::getFollowStatus() const
+{
+    return followStatus_;
+}
+
+void DomainsWithPort::setFollowStatus(const std::string& value)
+{
+    followStatus_ = value;
+    followStatusIsSet_ = true;
+}
+
+bool DomainsWithPort::followStatusIsSet() const
+{
+    return followStatusIsSet_;
+}
+
+void DomainsWithPort::unsetfollowStatus()
+{
+    followStatusIsSet_ = false;
+}
+
+std::string DomainsWithPort::getOriginStatus() const
+{
+    return originStatus_;
+}
+
+void DomainsWithPort::setOriginStatus(const std::string& value)
+{
+    originStatus_ = value;
+    originStatusIsSet_ = true;
+}
+
+bool DomainsWithPort::originStatusIsSet() const
+{
+    return originStatusIsSet_;
+}
+
+void DomainsWithPort::unsetoriginStatus()
+{
+    originStatusIsSet_ = false;
+}
+
+std::string DomainsWithPort::getBannedReason() const
+{
+    return bannedReason_;
+}
+
+void DomainsWithPort::setBannedReason(const std::string& value)
+{
+    bannedReason_ = value;
+    bannedReasonIsSet_ = true;
+}
+
+bool DomainsWithPort::bannedReasonIsSet() const
+{
+    return bannedReasonIsSet_;
+}
+
+void DomainsWithPort::unsetbannedReason()
+{
+    bannedReasonIsSet_ = false;
+}
+
+std::string DomainsWithPort::getLockedReason() const
+{
+    return lockedReason_;
+}
+
+void DomainsWithPort::setLockedReason(const std::string& value)
+{
+    lockedReason_ = value;
+    lockedReasonIsSet_ = true;
+}
+
+bool DomainsWithPort::lockedReasonIsSet() const
+{
+    return lockedReasonIsSet_;
+}
+
+void DomainsWithPort::unsetlockedReason()
+{
+    lockedReasonIsSet_ = false;
+}
+
+std::string DomainsWithPort::getEnterpriseProjectId() const
+{
+    return enterpriseProjectId_;
+}
+
+void DomainsWithPort::setEnterpriseProjectId(const std::string& value)
+{
+    enterpriseProjectId_ = value;
+    enterpriseProjectIdIsSet_ = true;
+}
+
+bool DomainsWithPort::enterpriseProjectIdIsSet() const
+{
+    return enterpriseProjectIdIsSet_;
+}
+
+void DomainsWithPort::unsetenterpriseProjectId()
+{
+    enterpriseProjectIdIsSet_ = false;
 }
 
 }

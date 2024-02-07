@@ -1052,6 +1052,16 @@ HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForShowSslCertDownloadLink(
     return reqDefBuilder;
 }
 
+HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForStopBackup() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForSwitchConfiguration() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;

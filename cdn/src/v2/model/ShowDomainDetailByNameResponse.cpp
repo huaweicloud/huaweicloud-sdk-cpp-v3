@@ -39,7 +39,7 @@ bool ShowDomainDetailByNameResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("domain"));
         if(!fieldValue.is_null())
         {
-            DomainsWithPort refVal;
+            DomainsDetail refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDomain(refVal);
         }
@@ -48,12 +48,12 @@ bool ShowDomainDetailByNameResponse::fromJson(const web::json::value& val)
 }
 
 
-DomainsWithPort ShowDomainDetailByNameResponse::getDomain() const
+DomainsDetail ShowDomainDetailByNameResponse::getDomain() const
 {
     return domain_;
 }
 
-void ShowDomainDetailByNameResponse::setDomain(const DomainsWithPort& value)
+void ShowDomainDetailByNameResponse::setDomain(const DomainsDetail& value)
 {
     domain_ = value;
     domainIsSet_ = true;

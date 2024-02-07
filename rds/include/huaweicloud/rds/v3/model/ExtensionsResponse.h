@@ -66,6 +66,15 @@ public:
     void setVersion(const std::string& value);
 
     /// <summary>
+    /// 可更新插件版本
+    /// </summary>
+
+    std::string getVersionUpdate() const;
+    bool versionUpdateIsSet() const;
+    void unsetversionUpdate();
+    void setVersionUpdate(const std::string& value);
+
+    /// <summary>
     /// 依赖预加载库。
     /// </summary>
 
@@ -100,6 +109,8 @@ protected:
     bool databaseNameIsSet_;
     std::string version_;
     bool versionIsSet_;
+    std::string versionUpdate_;
+    bool versionUpdateIsSet_;
     std::string sharedPreloadLibraries_;
     bool sharedPreloadLibrariesIsSet_;
     bool created_;

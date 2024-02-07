@@ -285,6 +285,9 @@
 #include <huaweicloud/gaussdb/v3/model/UpdateInstanceConfigurationsResponse.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateInstanceMonitorRequest.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateInstanceMonitorResponse.h>
+#include <huaweicloud/gaussdb/v3/model/UpdateNewNodeAutoAddSwitchRequest.h>
+#include <huaweicloud/gaussdb/v3/model/UpdateNewNodeAutoAddSwitchRequestBody.h>
+#include <huaweicloud/gaussdb/v3/model/UpdateNewNodeAutoAddSwitchResponse.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateProxyConnectionPoolTypeRequest.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateProxyConnectionPoolTypeResponse.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateProxyNewConfigRequestBody.h>
@@ -1206,6 +1209,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateInstanceMonitorResponse> updateInstanceMonitor(
         UpdateInstanceMonitorRequest &request
+    );
+    // 开启或关闭新增节点自动加入该Proxy
+    //
+    // 开启或关闭新增节点自动加入该Proxy。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateNewNodeAutoAddSwitchResponse> updateNewNodeAutoAddSwitch(
+        UpdateNewNodeAutoAddSwitchRequest &request
     );
     // 更改数据库代理连接池类型
     //

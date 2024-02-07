@@ -10,14 +10,29 @@
 #include <huaweicloud/cdn/v2/model/BatchCopyDomainRequest.h>
 #include <huaweicloud/cdn/v2/model/BatchCopyDomainResponse.h>
 #include <huaweicloud/cdn/v2/model/BatchCopyErrorRsp.h>
+#include <huaweicloud/cdn/v2/model/BatchDeleteTagsRequest.h>
+#include <huaweicloud/cdn/v2/model/BatchDeleteTagsResponse.h>
+#include <huaweicloud/cdn/v2/model/CreateDomainRequest.h>
+#include <huaweicloud/cdn/v2/model/CreateDomainRequestBody.h>
+#include <huaweicloud/cdn/v2/model/CreateDomainResponse.h>
 #include <huaweicloud/cdn/v2/model/CreatePreheatingTasksRequest.h>
 #include <huaweicloud/cdn/v2/model/CreatePreheatingTasksResponse.h>
 #include <huaweicloud/cdn/v2/model/CreateRefreshTasksRequest.h>
 #include <huaweicloud/cdn/v2/model/CreateRefreshTasksResponse.h>
+#include <huaweicloud/cdn/v2/model/CreateTagsRequest.h>
+#include <huaweicloud/cdn/v2/model/CreateTagsRequestBody.h>
+#include <huaweicloud/cdn/v2/model/CreateTagsResponse.h>
+#include <huaweicloud/cdn/v2/model/DeleteDomainRequest.h>
+#include <huaweicloud/cdn/v2/model/DeleteDomainResponse.h>
+#include <huaweicloud/cdn/v2/model/DeleteTagsRequestBody.h>
+#include <huaweicloud/cdn/v2/model/DisableDomainRequest.h>
+#include <huaweicloud/cdn/v2/model/DisableDomainResponse.h>
 #include <huaweicloud/cdn/v2/model/DownloadRegionCarrierExcelRequest.h>
 #include <huaweicloud/cdn/v2/model/DownloadRegionCarrierExcelResponse.h>
 #include <huaweicloud/cdn/v2/model/DownloadStatisticsExcelRequest.h>
 #include <huaweicloud/cdn/v2/model/DownloadStatisticsExcelResponse.h>
+#include <huaweicloud/cdn/v2/model/EnableDomainRequest.h>
+#include <huaweicloud/cdn/v2/model/EnableDomainResponse.h>
 #include <huaweicloud/cdn/v2/model/ErrRsp.h>
 #include <huaweicloud/cdn/v2/model/ListCdnDomainTopRefersRequest.h>
 #include <huaweicloud/cdn/v2/model/ListCdnDomainTopRefersResponse.h>
@@ -31,6 +46,8 @@
 #include <huaweicloud/cdn/v2/model/SetChargeModesResponse.h>
 #include <huaweicloud/cdn/v2/model/ShowBandwidthCalcRequest.h>
 #include <huaweicloud/cdn/v2/model/ShowBandwidthCalcResponse.h>
+#include <huaweicloud/cdn/v2/model/ShowCertificatesHttpsInfoRequest.h>
+#include <huaweicloud/cdn/v2/model/ShowCertificatesHttpsInfoResponse.h>
 #include <huaweicloud/cdn/v2/model/ShowChargeModesRequest.h>
 #include <huaweicloud/cdn/v2/model/ShowChargeModesResponse.h>
 #include <huaweicloud/cdn/v2/model/ShowDomainDetailByNameRequest.h>
@@ -45,16 +62,31 @@
 #include <huaweicloud/cdn/v2/model/ShowHistoryTaskDetailsResponse.h>
 #include <huaweicloud/cdn/v2/model/ShowHistoryTasksRequest.h>
 #include <huaweicloud/cdn/v2/model/ShowHistoryTasksResponse.h>
+#include <huaweicloud/cdn/v2/model/ShowIpInfoRequest.h>
+#include <huaweicloud/cdn/v2/model/ShowIpInfoResponse.h>
 #include <huaweicloud/cdn/v2/model/ShowLogsRequest.h>
 #include <huaweicloud/cdn/v2/model/ShowLogsResponse.h>
+#include <huaweicloud/cdn/v2/model/ShowTagsRequest.h>
+#include <huaweicloud/cdn/v2/model/ShowTagsResponse.h>
 #include <huaweicloud/cdn/v2/model/ShowTopDomainNamesRequest.h>
 #include <huaweicloud/cdn/v2/model/ShowTopDomainNamesResponse.h>
 #include <huaweicloud/cdn/v2/model/ShowTopUrlRequest.h>
 #include <huaweicloud/cdn/v2/model/ShowTopUrlResponse.h>
 #include <huaweicloud/cdn/v2/model/ShowUrlTaskInfoRequest.h>
 #include <huaweicloud/cdn/v2/model/ShowUrlTaskInfoResponse.h>
+#include <huaweicloud/cdn/v2/model/ShowVerifyDomainOwnerInfoRequest.h>
+#include <huaweicloud/cdn/v2/model/ShowVerifyDomainOwnerInfoResponse.h>
 #include <huaweicloud/cdn/v2/model/UpdateDomainFullConfigRequest.h>
 #include <huaweicloud/cdn/v2/model/UpdateDomainFullConfigResponse.h>
+#include <huaweicloud/cdn/v2/model/UpdateDomainMultiCertificatesRequest.h>
+#include <huaweicloud/cdn/v2/model/UpdateDomainMultiCertificatesRequestBody.h>
+#include <huaweicloud/cdn/v2/model/UpdateDomainMultiCertificatesResponse.h>
+#include <huaweicloud/cdn/v2/model/UpdatePrivateBucketAccessBody.h>
+#include <huaweicloud/cdn/v2/model/UpdatePrivateBucketAccessRequest.h>
+#include <huaweicloud/cdn/v2/model/UpdatePrivateBucketAccessResponse.h>
+#include <huaweicloud/cdn/v2/model/VerifyDomainOwnerRequest.h>
+#include <huaweicloud/cdn/v2/model/VerifyDomainOwnerRequestBody.h>
+#include <huaweicloud/cdn/v2/model/VerifyDomainOwnerResponse.h>
 #include <string>
 
 #include <cpprest/details/basic_types.h>
@@ -90,6 +122,22 @@ public:
     std::shared_ptr<BatchCopyDomainResponse> batchCopyDomain(
         BatchCopyDomainRequest &request
     );
+    // 删除资源标签配置接口
+    //
+    // 用于删除资源标签。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchDeleteTagsResponse> batchDeleteTags(
+        BatchDeleteTagsRequest &request
+    );
+    // 创建加速域名
+    //
+    // 创建加速域名。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateDomainResponse> createDomain(
+        CreateDomainRequest &request
+    );
     // 创建预热缓存任务
     //
     // 创建预热任务。
@@ -105,6 +153,30 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateRefreshTasksResponse> createRefreshTasks(
         CreateRefreshTasksRequest &request
+    );
+    // 创建资源标签配置接口
+    //
+    // 用于创建资源标签。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateTagsResponse> createTags(
+        CreateTagsRequest &request
+    );
+    // 删除加速域名
+    //
+    // 删除加速域名。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteDomainResponse> deleteDomain(
+        DeleteDomainRequest &request
+    );
+    // 停用加速域名
+    //
+    // 停用加速域名。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DisableDomainResponse> disableDomain(
+        DisableDomainRequest &request
     );
     // 下载区域运营商指标数据表格文件
     //
@@ -141,6 +213,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DownloadStatisticsExcelResponse> downloadStatisticsExcel(
         DownloadStatisticsExcelRequest &request
+    );
+    // 启用加速域名
+    //
+    // 启用加速域名。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<EnableDomainResponse> enableDomain(
+        EnableDomainRequest &request
     );
     // 查询统计TOP100 referer数据明细
     //
@@ -199,6 +279,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowBandwidthCalcResponse> showBandwidthCalc(
         ShowBandwidthCalcRequest &request
+    );
+    // 查询所有绑定HTTPS证书的域名信息
+    //
+    // 查询所有绑定HTTPS证书的域名信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowCertificatesHttpsInfoResponse> showCertificatesHttpsInfo(
+        ShowCertificatesHttpsInfoRequest &request
     );
     // 查询用户计费模式
     //
@@ -288,6 +376,14 @@ public:
     std::shared_ptr<ShowHistoryTasksResponse> showHistoryTasks(
         ShowHistoryTasksRequest &request
     );
+    // 查询IP归属信息
+    //
+    // 查询IP归属信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowIpInfoResponse> showIpInfo(
+        ShowIpInfoRequest &request
+    );
     // 日志查询
     //
     // 查询日志下载链接，支持查询30天内的日志信息。
@@ -295,6 +391,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowLogsResponse> showLogs(
         ShowLogsRequest &request
+    );
+    // 查询资源标签列表配置接口
+    //
+    // 用于查询资源标签列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowTagsResponse> showTags(
+        ShowTagsRequest &request
     );
     // 查询TOP域名
     //
@@ -344,6 +448,14 @@ public:
     std::shared_ptr<ShowUrlTaskInfoResponse> showUrlTaskInfo(
         ShowUrlTaskInfoRequest &request
     );
+    // 查询域名归属校验信息
+    //
+    // 用于查询域名归属校验信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowVerifyDomainOwnerInfoResponse> showVerifyDomainOwnerInfo(
+        ShowVerifyDomainOwnerInfoRequest &request
+    );
     // 修改域名全量配置接口
     //
     // 修改域名配置接口，支持修改业务类型、服务范围、备注、IPv6开关、回源方式、回源URL改写、高级回源、Range回源、回源跟随、回源是否校验Etag、回源超时时间、回源请求头、HTTPS配置、TLS版本配置、强制跳转、HSTS、HTTP/2、OCSP Stapling、QUIC、缓存规则、状态码缓存时间、防盗链、IP黑白名单、Use-Agent黑白名单、URL鉴权配置、远程鉴权配置、IP访问限频、HTTP header配置、自定义错误页面配置、智能压缩、请求限速配置、WebSocket配置、视频拖拽。
@@ -351,6 +463,30 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateDomainFullConfigResponse> updateDomainFullConfig(
         UpdateDomainFullConfigRequest &request
+    );
+    // 一个证书批量设置多个域名
+    //
+    // 一个证书配置多个域名，设置域名强制https回源参数。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateDomainMultiCertificatesResponse> updateDomainMultiCertificates(
+        UpdateDomainMultiCertificatesRequest &request
+    );
+    // 修改私有桶开启关闭状态
+    //
+    // 修改私有桶开启关闭状态。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdatePrivateBucketAccessResponse> updatePrivateBucketAccess(
+        UpdatePrivateBucketAccessRequest &request
+    );
+    // 域名归属校验
+    //
+    // 用于域名归属校验
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<VerifyDomainOwnerResponse> verifyDomainOwner(
+        VerifyDomainOwnerRequest &request
     );
 
 

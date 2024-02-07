@@ -173,6 +173,8 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowRecyclePolicyResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowSslCertDownloadLinkRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowSslCertDownloadLinkResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/StopBackupRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/StopBackupResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/SwitchConfigurationRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/SwitchConfigurationResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/SwitchShardRequest.h>
@@ -757,6 +759,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowSslCertDownloadLinkResponse> showSslCertDownloadLink(
         ShowSslCertDownloadLinkRequest &request
+    );
+    // 停止备份
+    //
+    // 停止进行中的备份，包括全备和差备。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<StopBackupResponse> stopBackup(
+        StopBackupRequest &request
     );
     // 应用参数模板
     //

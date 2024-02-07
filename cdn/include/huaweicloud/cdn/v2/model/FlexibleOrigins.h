@@ -59,7 +59,7 @@ public:
     void setMatchPattern(const std::string& value);
 
     /// <summary>
-    /// 优先级取值范围为1~100，数值越大优先级越高。
+    /// 优先级取值范围为1-100，数值越大优先级越高。
     /// </summary>
 
     int32_t getPriority() const;

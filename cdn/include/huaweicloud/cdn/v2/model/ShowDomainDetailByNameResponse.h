@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/cdn/v2/model/DomainsWithPort.h>
+#include <huaweicloud/cdn/v2/model/DomainsDetail.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -42,14 +42,14 @@ public:
     /// 
     /// </summary>
 
-    DomainsWithPort getDomain() const;
+    DomainsDetail getDomain() const;
     bool domainIsSet() const;
     void unsetdomain();
-    void setDomain(const DomainsWithPort& value);
+    void setDomain(const DomainsDetail& value);
 
 
 protected:
-    DomainsWithPort domain_;
+    DomainsDetail domain_;
     bool domainIsSet_;
 
 #ifdef RTTR_FLAG

@@ -57,6 +57,10 @@ MysqlProxyV3::MysqlProxyV3()
     subnetIdIsSet_ = false;
     sslOption_ = "";
     sslOptionIsSet_ = false;
+    newNodeAutoAddStatus_ = "";
+    newNodeAutoAddStatusIsSet_ = false;
+    newNodeWeight_ = 0;
+    newNodeWeightIsSet_ = false;
 }
 
 MysqlProxyV3::~MysqlProxyV3() = default;
@@ -137,6 +141,12 @@ web::json::value MysqlProxyV3::toJson() const
     }
     if(sslOptionIsSet_) {
         val[utility::conversions::to_string_t("ssl_option")] = ModelBase::toJson(sslOption_);
+    }
+    if(newNodeAutoAddStatusIsSet_) {
+        val[utility::conversions::to_string_t("new_node_auto_add_status")] = ModelBase::toJson(newNodeAutoAddStatus_);
+    }
+    if(newNodeWeightIsSet_) {
+        val[utility::conversions::to_string_t("new_node_weight")] = ModelBase::toJson(newNodeWeight_);
     }
 
     return val;
@@ -350,6 +360,24 @@ bool MysqlProxyV3::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSslOption(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("new_node_auto_add_status"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("new_node_auto_add_status"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setNewNodeAutoAddStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("new_node_weight"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("new_node_weight"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setNewNodeWeight(refVal);
         }
     }
     return ok;
@@ -837,6 +865,48 @@ bool MysqlProxyV3::sslOptionIsSet() const
 void MysqlProxyV3::unsetsslOption()
 {
     sslOptionIsSet_ = false;
+}
+
+std::string MysqlProxyV3::getNewNodeAutoAddStatus() const
+{
+    return newNodeAutoAddStatus_;
+}
+
+void MysqlProxyV3::setNewNodeAutoAddStatus(const std::string& value)
+{
+    newNodeAutoAddStatus_ = value;
+    newNodeAutoAddStatusIsSet_ = true;
+}
+
+bool MysqlProxyV3::newNodeAutoAddStatusIsSet() const
+{
+    return newNodeAutoAddStatusIsSet_;
+}
+
+void MysqlProxyV3::unsetnewNodeAutoAddStatus()
+{
+    newNodeAutoAddStatusIsSet_ = false;
+}
+
+int32_t MysqlProxyV3::getNewNodeWeight() const
+{
+    return newNodeWeight_;
+}
+
+void MysqlProxyV3::setNewNodeWeight(int32_t value)
+{
+    newNodeWeight_ = value;
+    newNodeWeightIsSet_ = true;
+}
+
+bool MysqlProxyV3::newNodeWeightIsSet() const
+{
+    return newNodeWeightIsSet_;
+}
+
+void MysqlProxyV3::unsetnewNodeWeight()
+{
+    newNodeWeightIsSet_ = false;
 }
 
 }

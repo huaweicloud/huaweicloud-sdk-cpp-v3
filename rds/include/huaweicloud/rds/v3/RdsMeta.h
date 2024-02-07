@@ -89,7 +89,6 @@ public:
     static HttpRequestDef genRequestDefForMigrateFollower();
     static HttpRequestDef genRequestDefForModifyPostgresqlHbaConf();
     static HttpRequestDef genRequestDefForModifyRdSforMySqlProxyRouteMode();
-    static HttpRequestDef genRequestDefForRestartRdSforMysqlProxy();
     static HttpRequestDef genRequestDefForRestoreExistInstance();
     static HttpRequestDef genRequestDefForRestoreTables();
     static HttpRequestDef genRequestDefForRestoreTablesNew();
@@ -98,6 +97,7 @@ public:
     static HttpRequestDef genRequestDefForSetAutoEnlargePolicy();
     static HttpRequestDef genRequestDefForSetBackupPolicy();
     static HttpRequestDef genRequestDefForSetBinlogClearPolicy();
+    static HttpRequestDef genRequestDefForSetInstancesProxyRestart();
     static HttpRequestDef genRequestDefForSetLogLtsConfigs();
     static HttpRequestDef genRequestDefForSetOffSiteBackupPolicy();
     static HttpRequestDef genRequestDefForSetSecondLevelMonitor();
@@ -177,6 +177,9 @@ public:
     static HttpRequestDef genRequestDefForDeletePostgresqlDatabase();
     static HttpRequestDef genRequestDefForDeletePostgresqlDbUser();
     static HttpRequestDef genRequestDefForDeletePostgresqlExtension();
+    static HttpRequestDef genRequestDefForExecutePrivilegeDatabaseUserRole();
+    static HttpRequestDef genRequestDefForExecuteRevokeDatabaseUserRole();
+    static HttpRequestDef genRequestDefForListDatabaseUserRole();
     static HttpRequestDef genRequestDefForListPostgresqlDatabaseSchemas();
     static HttpRequestDef genRequestDefForListPostgresqlDatabases();
     static HttpRequestDef genRequestDefForListPostgresqlDbUserPaginated();
@@ -190,9 +193,11 @@ public:
     static HttpRequestDef genRequestDefForShowPostgresqlParamValue();
     static HttpRequestDef genRequestDefForStartDatabaseProxy();
     static HttpRequestDef genRequestDefForStopDatabaseProxy();
+    static HttpRequestDef genRequestDefForUpdateDatabaseOwner();
     static HttpRequestDef genRequestDefForUpdateDbUserPrivilege();
     static HttpRequestDef genRequestDefForUpdatePostgresqlDatabase();
     static HttpRequestDef genRequestDefForUpdatePostgresqlDbUserComment();
+    static HttpRequestDef genRequestDefForUpdatePostgresqlExtension();
     static HttpRequestDef genRequestDefForUpdatePostgresqlParameterValue();
     static HttpRequestDef genRequestDefForUpdateReadWeight();
     static HttpRequestDef genRequestDefForAllowSqlserverDbUserPrivilege();

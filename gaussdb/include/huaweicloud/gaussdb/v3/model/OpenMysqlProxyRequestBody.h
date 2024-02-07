@@ -103,6 +103,24 @@ public:
     void unsetsubnetId();
     void setSubnetId(const std::string& value);
 
+    /// <summary>
+    /// 是否开启新增节点自动加入该Proxy。如果需要设置是否开启新增节点自动加入该Proxy，请联系客服人员添加白名单，加入白名单后，方可输入该字段。  取值范围： - ON：开启。 - OFF：关闭。
+    /// </summary>
+
+    std::string getNewNodeAutoAddStatus() const;
+    bool newNodeAutoAddStatusIsSet() const;
+    void unsetnewNodeAutoAddStatus();
+    void setNewNodeAutoAddStatus(const std::string& value);
+
+    /// <summary>
+    /// 新增节点的读权重：    - 如果路由模式为0，新增节点自动加入为ON，取值为0~1000。 - 如果路由模式不为0或新增节点自动加入为OFF，则可不输入读权重。
+    /// </summary>
+
+    int32_t getNewNodeWeight() const;
+    bool newNodeWeightIsSet() const;
+    void unsetnewNodeWeight();
+    void setNewNodeWeight(int32_t value);
+
 
 protected:
     std::string flavorRef_;
@@ -119,6 +137,10 @@ protected:
     bool nodesReadWeightIsSet_;
     std::string subnetId_;
     bool subnetIdIsSet_;
+    std::string newNodeAutoAddStatus_;
+    bool newNodeAutoAddStatusIsSet_;
+    int32_t newNodeWeight_;
+    bool newNodeWeightIsSet_;
 
 };
 

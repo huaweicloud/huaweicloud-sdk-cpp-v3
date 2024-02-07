@@ -205,8 +205,6 @@
 #include <huaweicloud/rds/v3/model/RecyclePolicyRequestBody.h>
 #include <huaweicloud/rds/v3/model/ReduceVolumeRequestBody.h>
 #include <huaweicloud/rds/v3/model/ResizeFlavorRequest.h>
-#include <huaweicloud/rds/v3/model/RestartRdSforMysqlProxyRequest.h>
-#include <huaweicloud/rds/v3/model/RestartRdSforMysqlProxyResponse.h>
 #include <huaweicloud/rds/v3/model/RestoreExistInstanceRequest.h>
 #include <huaweicloud/rds/v3/model/RestoreExistInstanceResponse.h>
 #include <huaweicloud/rds/v3/model/RestoreExistingInstanceRequestBody.h>
@@ -231,6 +229,8 @@
 #include <huaweicloud/rds/v3/model/SetBackupPolicyResponse.h>
 #include <huaweicloud/rds/v3/model/SetBinlogClearPolicyRequest.h>
 #include <huaweicloud/rds/v3/model/SetBinlogClearPolicyResponse.h>
+#include <huaweicloud/rds/v3/model/SetInstancesProxyRestartRequest.h>
+#include <huaweicloud/rds/v3/model/SetInstancesProxyRestartResponse.h>
 #include <huaweicloud/rds/v3/model/SetLogLtsConfigsRequest.h>
 #include <huaweicloud/rds/v3/model/SetLogLtsConfigsResponse.h>
 #include <huaweicloud/rds/v3/model/SetOffSiteBackupPolicyRequest.h>
@@ -416,6 +416,7 @@
 #include <huaweicloud/rds/v3/model/CreatePostgresqlDbUserResponse.h>
 #include <huaweicloud/rds/v3/model/CreatePostgresqlExtensionRequest.h>
 #include <huaweicloud/rds/v3/model/CreatePostgresqlExtensionResponse.h>
+#include <huaweicloud/rds/v3/model/DatabaseUserRoleRequest.h>
 #include <huaweicloud/rds/v3/model/DbUserPrivilegeRequest.h>
 #include <huaweicloud/rds/v3/model/DbUserPwdRequest.h>
 #include <huaweicloud/rds/v3/model/DeletePostgresqlDatabaseRequest.h>
@@ -425,7 +426,13 @@
 #include <huaweicloud/rds/v3/model/DeletePostgresqlExtensionRequest.h>
 #include <huaweicloud/rds/v3/model/DeletePostgresqlExtensionResponse.h>
 #include <huaweicloud/rds/v3/model/ErrorResponse.h>
+#include <huaweicloud/rds/v3/model/ExecutePrivilegeDatabaseUserRoleRequest.h>
+#include <huaweicloud/rds/v3/model/ExecutePrivilegeDatabaseUserRoleResponse.h>
+#include <huaweicloud/rds/v3/model/ExecuteRevokeDatabaseUserRoleRequest.h>
+#include <huaweicloud/rds/v3/model/ExecuteRevokeDatabaseUserRoleResponse.h>
 #include <huaweicloud/rds/v3/model/ExtensionRequest.h>
+#include <huaweicloud/rds/v3/model/ListDatabaseUserRoleRequest.h>
+#include <huaweicloud/rds/v3/model/ListDatabaseUserRoleResponse.h>
 #include <huaweicloud/rds/v3/model/ListPostgresqlDatabaseSchemasRequest.h>
 #include <huaweicloud/rds/v3/model/ListPostgresqlDatabaseSchemasResponse.h>
 #include <huaweicloud/rds/v3/model/ListPostgresqlDatabasesRequest.h>
@@ -462,6 +469,9 @@
 #include <huaweicloud/rds/v3/model/StartDatabaseProxyResponse.h>
 #include <huaweicloud/rds/v3/model/StopDatabaseProxyRequest.h>
 #include <huaweicloud/rds/v3/model/StopDatabaseProxyResponse.h>
+#include <huaweicloud/rds/v3/model/UpdateDatabaseOwnerRequest.h>
+#include <huaweicloud/rds/v3/model/UpdateDatabaseOwnerRequestBody.h>
+#include <huaweicloud/rds/v3/model/UpdateDatabaseOwnerResponse.h>
 #include <huaweicloud/rds/v3/model/UpdateDatabaseReq.h>
 #include <huaweicloud/rds/v3/model/UpdateDbUserPrivilegeRequest.h>
 #include <huaweicloud/rds/v3/model/UpdateDbUserPrivilegeResponse.h>
@@ -470,6 +480,8 @@
 #include <huaweicloud/rds/v3/model/UpdatePostgresqlDatabaseResponse.h>
 #include <huaweicloud/rds/v3/model/UpdatePostgresqlDbUserCommentRequest.h>
 #include <huaweicloud/rds/v3/model/UpdatePostgresqlDbUserCommentResponse.h>
+#include <huaweicloud/rds/v3/model/UpdatePostgresqlExtensionRequest.h>
+#include <huaweicloud/rds/v3/model/UpdatePostgresqlExtensionResponse.h>
 #include <huaweicloud/rds/v3/model/UpdatePostgresqlParameterValueRequest.h>
 #include <huaweicloud/rds/v3/model/UpdatePostgresqlParameterValueResponse.h>
 #include <huaweicloud/rds/v3/model/UpdateReadWeightRequest.h>
@@ -1154,14 +1166,6 @@ public:
     std::shared_ptr<ModifyRdSforMySqlProxyRouteModeResponse> modifyRdSforMySqlProxyRouteMode(
         ModifyRdSforMySqlProxyRouteModeRequest &request
     );
-    // 重启数据库代理
-    //
-    // 重启数据库代理。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<RestartRdSforMysqlProxyResponse> restartRdSforMysqlProxy(
-        RestartRdSforMysqlProxyRequest &request
-    );
     // 恢复到已有实例
     //
     // 恢复到已有实例。
@@ -1227,6 +1231,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<SetBinlogClearPolicyResponse> setBinlogClearPolicy(
         SetBinlogClearPolicyRequest &request
+    );
+    // 重启数据库代理
+    //
+    // 重启数据库代理。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SetInstancesProxyRestartResponse> setInstancesProxyRestart(
+        SetInstancesProxyRestartRequest &request
     );
     // 
     //
@@ -1867,6 +1879,30 @@ public:
     std::shared_ptr<DeletePostgresqlExtensionResponse> deletePostgresqlExtension(
         DeletePostgresqlExtensionRequest &request
     );
+    // 授予用户角色
+    //
+    // 授予用户角色
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ExecutePrivilegeDatabaseUserRoleResponse> executePrivilegeDatabaseUserRole(
+        ExecutePrivilegeDatabaseUserRoleRequest &request
+    );
+    // 撤回用户角色
+    //
+    // 撤回用户角色
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ExecuteRevokeDatabaseUserRoleResponse> executeRevokeDatabaseUserRole(
+        ExecuteRevokeDatabaseUserRoleRequest &request
+    );
+    // 查询数据库角色信息
+    //
+    // 查询数据库角色信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListDatabaseUserRoleResponse> listDatabaseUserRole(
+        ListDatabaseUserRoleRequest &request
+    );
     // 查询数据库SCHEMA列表
     //
     // 查询指定实例的数据库SCHEMA列表。
@@ -1975,6 +2011,14 @@ public:
     std::shared_ptr<StopDatabaseProxyResponse> stopDatabaseProxy(
         StopDatabaseProxyRequest &request
     );
+    // 修改数据库owner
+    //
+    // 修改数据库owner
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateDatabaseOwnerResponse> updateDatabaseOwner(
+        UpdateDatabaseOwnerRequest &request
+    );
     // 
     //
     // 数据库帐号授权。
@@ -1998,6 +2042,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdatePostgresqlDbUserCommentResponse> updatePostgresqlDbUserComment(
         UpdatePostgresqlDbUserCommentRequest &request
+    );
+    // 更新插件
+    //
+    // 在指定数据库上更新插件。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdatePostgresqlExtensionResponse> updatePostgresqlExtension(
+        UpdatePostgresqlExtensionRequest &request
     );
     // 修改实例指定参数的值
     //

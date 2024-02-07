@@ -24,6 +24,24 @@
 #include <huaweicloud/eip/v3/model/ShowPublicipPoolResponse.h>
 #include <string>
 
+#include <huaweicloud/eip/v3/model/ListProjectGeipBindingsRequest.h>
+#include <huaweicloud/eip/v3/model/ListProjectGeipBindingsResponse.h>
+#include <string>
+
+#include <huaweicloud/eip/v3/model/CreateTenantVpcIgwRequest.h>
+#include <huaweicloud/eip/v3/model/CreateTenantVpcIgwRequestBody.h>
+#include <huaweicloud/eip/v3/model/CreateTenantVpcIgwResponse.h>
+#include <huaweicloud/eip/v3/model/DeleteTenantVpcIgwRequest.h>
+#include <huaweicloud/eip/v3/model/DeleteTenantVpcIgwResponse.h>
+#include <huaweicloud/eip/v3/model/ListTenantVpcIgwsRequest.h>
+#include <huaweicloud/eip/v3/model/ListTenantVpcIgwsResponse.h>
+#include <huaweicloud/eip/v3/model/ShowInternalVpcIgwRequest.h>
+#include <huaweicloud/eip/v3/model/ShowInternalVpcIgwResponse.h>
+#include <huaweicloud/eip/v3/model/UpdateTenantVpcIgwRequest.h>
+#include <huaweicloud/eip/v3/model/UpdateTenantVpcIgwRequestBody.h>
+#include <huaweicloud/eip/v3/model/UpdateTenantVpcIgwResponse.h>
+#include <string>
+
 #include <huaweicloud/eip/v3/model/AssociatePublicipsRequest.h>
 #include <huaweicloud/eip/v3/model/AssociatePublicipsRequestBody.h>
 #include <huaweicloud/eip/v3/model/AssociatePublicipsResponse.h>
@@ -144,6 +162,56 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowPublicipPoolResponse> showPublicipPool(
         ShowPublicipPoolRequest &request
+    );
+
+    // 查询GEIP与实例绑定关系的租户列表
+    //
+    // 查询GEIP与实例绑定关系的租户列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListProjectGeipBindingsResponse> listProjectGeipBindings(
+        ListProjectGeipBindingsRequest &request
+    );
+
+    // 创建虚拟igw
+    //
+    // 创建虚拟igw
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateTenantVpcIgwResponse> createTenantVpcIgw(
+        CreateTenantVpcIgwRequest &request
+    );
+    // 删除虚拟igw
+    //
+    // 删除虚拟igw
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteTenantVpcIgwResponse> deleteTenantVpcIgw(
+        DeleteTenantVpcIgwRequest &request
+    );
+    // 查询指定租户下的虚拟igw列表
+    //
+    // 查询指定租户下的虚拟igw列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListTenantVpcIgwsResponse> listTenantVpcIgws(
+        ListTenantVpcIgwsRequest &request
+    );
+    // 查询虚拟igw详情
+    //
+    // 查询虚拟igw详情
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowInternalVpcIgwResponse> showInternalVpcIgw(
+        ShowInternalVpcIgwRequest &request
+    );
+    // 修改虚拟igw
+    //
+    // 修改虚拟igw
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateTenantVpcIgwResponse> updateTenantVpcIgw(
+        UpdateTenantVpcIgwRequest &request
     );
 
     // 绑定弹性公网IP

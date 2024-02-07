@@ -1179,16 +1179,6 @@ HttpRequestDef RdsMeta::genRequestDefForModifyRdSforMySqlProxyRouteMode() {
     return reqDefBuilder;
 }
 
-HttpRequestDef RdsMeta::genRequestDefForRestartRdSforMysqlProxy() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef headerParamXLanguage;
-    reqDefBuilder.withRequestField(headerParamXLanguage
-                  .withName("XLanguage")
-                  .withJsonTag("X-Language")
-                  .withLocationType(Header_));
-    return reqDefBuilder;
-}
-
 HttpRequestDef RdsMeta::genRequestDefForRestoreExistInstance() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
@@ -1298,6 +1288,16 @@ HttpRequestDef RdsMeta::genRequestDefForSetBinlogClearPolicy() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef RdsMeta::genRequestDefForSetInstancesProxyRestart() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -2263,6 +2263,32 @@ HttpRequestDef RdsMeta::genRequestDefForDeletePostgresqlExtension() {
     return reqDefBuilder;
 }
 
+HttpRequestDef RdsMeta::genRequestDefForExecutePrivilegeDatabaseUserRole() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef RdsMeta::genRequestDefForExecuteRevokeDatabaseUserRole() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef RdsMeta::genRequestDefForListDatabaseUserRole() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("UserName")
+                  .withJsonTag("user_name")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef RdsMeta::genRequestDefForListPostgresqlDatabaseSchemas() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("DbName")
@@ -2440,6 +2466,15 @@ HttpRequestDef RdsMeta::genRequestDefForStopDatabaseProxy() {
     return reqDefBuilder;
 }
 
+HttpRequestDef RdsMeta::genRequestDefForUpdateDatabaseOwner() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef RdsMeta::genRequestDefForUpdateDbUserPrivilege() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -2465,6 +2500,20 @@ HttpRequestDef RdsMeta::genRequestDefForUpdatePostgresqlDatabase() {
 
 HttpRequestDef RdsMeta::genRequestDefForUpdatePostgresqlDbUserComment() {
     HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef RdsMeta::genRequestDefForUpdatePostgresqlExtension() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").

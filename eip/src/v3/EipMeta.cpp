@@ -255,6 +255,143 @@ HttpRequestDef EipMeta::genRequestDefForShowPublicipPool() {
     return reqDefBuilder;
 }
 
+HttpRequestDef EipMeta::genRequestDefForListProjectGeipBindings() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Fields")
+                  .withJsonTag("fields")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("GeipId")
+                  .withJsonTag("geip_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("GeipIpAddress")
+                  .withJsonTag("geip_ip_address")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("PublicBorderGroup")
+                  .withJsonTag("public_border_group")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("InstanceType")
+                  .withJsonTag("instance_type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("InstanceId")
+                  .withJsonTag("instance_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("InstanceVpcId")
+                  .withJsonTag("instance_vpc_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("GcbandwidthPeriodid")
+                  .withJsonTag("gcbandwidth.id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("GcbandwidthPeriodadminStatus")
+                  .withJsonTag("gcbandwidth.admin_status")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("GcbandwidthPeriodsize")
+                  .withJsonTag("gcbandwidth.size")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("GcbandwidthPeriodslaLevel")
+                  .withJsonTag("gcbandwidth.sla_level")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("GcbandwidthPerioddscp")
+                  .withJsonTag("gcbandwidth.dscp")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("VnicPeriodprivateIpAddress")
+                  .withJsonTag("vnic.private_ip_address")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("VnicPeriodvpcId")
+                  .withJsonTag("vnic.vpc_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("VnicPeriodportId")
+                  .withJsonTag("vnic.port_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("VnicPerioddeviceId")
+                  .withJsonTag("vnic.device_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("VnicPerioddeviceOwner")
+                  .withJsonTag("vnic.device_owner")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("VnicPerioddeviceOwnerPrefixlike")
+                  .withJsonTag("vnic.device_owner_prefixlike")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("VnicPeriodinstanceType")
+                  .withJsonTag("vnic.instance_type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("VnicPeriodinstanceId")
+                  .withJsonTag("vnic.instance_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("SortKey")
+                  .withJsonTag("sort_key")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("SortDir")
+                  .withJsonTag("sort_dir")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef EipMeta::genRequestDefForCreateTenantVpcIgw() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Fields")
+                  .withJsonTag("fields")
+                  .withLocationType(Query_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef EipMeta::genRequestDefForDeleteTenantVpcIgw() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef EipMeta::genRequestDefForListTenantVpcIgws() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Fields")
+                  .withJsonTag("fields")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Id")
+                  .withJsonTag("id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("VpcId")
+                  .withJsonTag("vpc_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Name")
+                  .withJsonTag("name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("SortKey")
+                  .withJsonTag("sort_key")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("SortDir")
+                  .withJsonTag("sort_dir")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef EipMeta::genRequestDefForShowInternalVpcIgw() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Fields")
+                  .withJsonTag("fields")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef EipMeta::genRequestDefForUpdateTenantVpcIgw() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Fields")
+                  .withJsonTag("fields")
+                  .withLocationType(Query_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef EipMeta::genRequestDefForAssociatePublicips() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;

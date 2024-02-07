@@ -121,6 +121,7 @@ public:
     static HttpRequestDef genRequestDefForUpdateGaussMySqlQuotas();
     static HttpRequestDef genRequestDefForUpdateInstanceConfigurations();
     static HttpRequestDef genRequestDefForUpdateInstanceMonitor();
+    static HttpRequestDef genRequestDefForUpdateNewNodeAutoAddSwitch();
     static HttpRequestDef genRequestDefForUpdateProxyConnectionPoolType();
     static HttpRequestDef genRequestDefForUpdateProxyNewConfigurations();
     static HttpRequestDef genRequestDefForUpdateProxyPort();

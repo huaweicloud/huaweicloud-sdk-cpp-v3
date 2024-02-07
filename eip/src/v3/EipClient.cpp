@@ -472,6 +472,306 @@ std::shared_ptr<ShowPublicipPoolResponse> EipClient::showPublicipPool(ShowPublic
 
     return localVarResult;
 }
+std::shared_ptr<ListProjectGeipBindingsResponse> EipClient::listProjectGeipBindings(ListProjectGeipBindingsRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/geip/bindings";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.fieldsIsSet()) {
+        localVarQueryParams["fields"] = parameterToString(request.getFields());
+    }
+    if (request.geipIdIsSet()) {
+        localVarQueryParams["geip_id"] = parameterToString(request.getGeipId());
+    }
+    if (request.geipIpAddressIsSet()) {
+        localVarQueryParams["geip_ip_address"] = parameterToString(request.getGeipIpAddress());
+    }
+    if (request.publicBorderGroupIsSet()) {
+        localVarQueryParams["public_border_group"] = parameterToString(request.getPublicBorderGroup());
+    }
+    if (request.instanceTypeIsSet()) {
+        localVarQueryParams["instance_type"] = parameterToString(request.getInstanceType());
+    }
+    if (request.instanceIdIsSet()) {
+        localVarQueryParams["instance_id"] = parameterToString(request.getInstanceId());
+    }
+    if (request.instanceVpcIdIsSet()) {
+        localVarQueryParams["instance_vpc_id"] = parameterToString(request.getInstanceVpcId());
+    }
+    if (request.gcbandwidthPeriodidIsSet()) {
+        localVarQueryParams["gcbandwidth.id"] = parameterToString(request.getGcbandwidthPeriodid());
+    }
+    if (request.gcbandwidthPeriodadminStatusIsSet()) {
+        localVarQueryParams["gcbandwidth.admin_status"] = parameterToString(request.getGcbandwidthPeriodadminStatus());
+    }
+    if (request.gcbandwidthPeriodsizeIsSet()) {
+        localVarQueryParams["gcbandwidth.size"] = parameterToString(request.getGcbandwidthPeriodsize());
+    }
+    if (request.gcbandwidthPeriodslaLevelIsSet()) {
+        localVarQueryParams["gcbandwidth.sla_level"] = parameterToString(request.getGcbandwidthPeriodslaLevel());
+    }
+    if (request.gcbandwidthPerioddscpIsSet()) {
+        localVarQueryParams["gcbandwidth.dscp"] = parameterToString(request.getGcbandwidthPerioddscp());
+    }
+    if (request.vnicPeriodprivateIpAddressIsSet()) {
+        localVarQueryParams["vnic.private_ip_address"] = parameterToString(request.getVnicPeriodprivateIpAddress());
+    }
+    if (request.vnicPeriodvpcIdIsSet()) {
+        localVarQueryParams["vnic.vpc_id"] = parameterToString(request.getVnicPeriodvpcId());
+    }
+    if (request.vnicPeriodportIdIsSet()) {
+        localVarQueryParams["vnic.port_id"] = parameterToString(request.getVnicPeriodportId());
+    }
+    if (request.vnicPerioddeviceIdIsSet()) {
+        localVarQueryParams["vnic.device_id"] = parameterToString(request.getVnicPerioddeviceId());
+    }
+    if (request.vnicPerioddeviceOwnerIsSet()) {
+        localVarQueryParams["vnic.device_owner"] = parameterToString(request.getVnicPerioddeviceOwner());
+    }
+    if (request.vnicPerioddeviceOwnerPrefixlikeIsSet()) {
+        localVarQueryParams["vnic.device_owner_prefixlike"] = parameterToString(request.getVnicPerioddeviceOwnerPrefixlike());
+    }
+    if (request.vnicPeriodinstanceTypeIsSet()) {
+        localVarQueryParams["vnic.instance_type"] = parameterToString(request.getVnicPeriodinstanceType());
+    }
+    if (request.vnicPeriodinstanceIdIsSet()) {
+        localVarQueryParams["vnic.instance_id"] = parameterToString(request.getVnicPeriodinstanceId());
+    }
+    if (request.sortKeyIsSet()) {
+        localVarQueryParams["sort_key"] = parameterToString(request.getSortKey());
+    }
+    if (request.sortDirIsSet()) {
+        localVarQueryParams["sort_dir"] = parameterToString(request.getSortDir());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EipMeta::genRequestDefForListProjectGeipBindings());
+
+    std::shared_ptr<ListProjectGeipBindingsResponse> localVarResult = std::make_shared<ListProjectGeipBindingsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<CreateTenantVpcIgwResponse> EipClient::createTenantVpcIgw(CreateTenantVpcIgwRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/geip/vpc-igws";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.fieldsIsSet()) {
+        localVarQueryParams["fields"] = parameterToString(request.getFields());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EipMeta::genRequestDefForCreateTenantVpcIgw());
+
+    std::shared_ptr<CreateTenantVpcIgwResponse> localVarResult = std::make_shared<CreateTenantVpcIgwResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<DeleteTenantVpcIgwResponse> EipClient::deleteTenantVpcIgw(DeleteTenantVpcIgwRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/geip/vpc-igws/{vpc_igw_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["vpc_igw_id"] = parameterToString(request.getVpcIgwId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EipMeta::genRequestDefForDeleteTenantVpcIgw());
+
+    std::shared_ptr<DeleteTenantVpcIgwResponse> localVarResult = std::make_shared<DeleteTenantVpcIgwResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListTenantVpcIgwsResponse> EipClient::listTenantVpcIgws(ListTenantVpcIgwsRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/geip/vpc-igws";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.fieldsIsSet()) {
+        localVarQueryParams["fields"] = parameterToString(request.getFields());
+    }
+    if (request.idIsSet()) {
+        localVarQueryParams["id"] = parameterToString(request.getId());
+    }
+    if (request.vpcIdIsSet()) {
+        localVarQueryParams["vpc_id"] = parameterToString(request.getVpcId());
+    }
+    if (request.nameIsSet()) {
+        localVarQueryParams["name"] = parameterToString(request.getName());
+    }
+    if (request.sortKeyIsSet()) {
+        localVarQueryParams["sort_key"] = parameterToString(request.getSortKey());
+    }
+    if (request.sortDirIsSet()) {
+        localVarQueryParams["sort_dir"] = parameterToString(request.getSortDir());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EipMeta::genRequestDefForListTenantVpcIgws());
+
+    std::shared_ptr<ListTenantVpcIgwsResponse> localVarResult = std::make_shared<ListTenantVpcIgwsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowInternalVpcIgwResponse> EipClient::showInternalVpcIgw(ShowInternalVpcIgwRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/geip/vpc-igws/{vpc_igw_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["vpc_igw_id"] = parameterToString(request.getVpcIgwId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.fieldsIsSet()) {
+        localVarQueryParams["fields"] = parameterToString(request.getFields());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EipMeta::genRequestDefForShowInternalVpcIgw());
+
+    std::shared_ptr<ShowInternalVpcIgwResponse> localVarResult = std::make_shared<ShowInternalVpcIgwResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateTenantVpcIgwResponse> EipClient::updateTenantVpcIgw(UpdateTenantVpcIgwRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/geip/vpc-igws/{vpc_igw_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["vpc_igw_id"] = parameterToString(request.getVpcIgwId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.fieldsIsSet()) {
+        localVarQueryParams["fields"] = parameterToString(request.getFields());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EipMeta::genRequestDefForUpdateTenantVpcIgw());
+
+    std::shared_ptr<UpdateTenantVpcIgwResponse> localVarResult = std::make_shared<UpdateTenantVpcIgwResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<AssociatePublicipsResponse> EipClient::associatePublicips(AssociatePublicipsRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/eip/publicips/{publicip_id}/associate-instance";

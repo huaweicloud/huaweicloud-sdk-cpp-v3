@@ -562,6 +562,15 @@ public:
     void setSupportAgentList(const std::string& value);
 
     /// <summary>
+    /// 对外展示名称。
+    /// </summary>
+
+    std::string getImageDisplayname() const;
+    bool imageDisplaynameIsSet() const;
+    void unsetimageDisplayname();
+    void setImageDisplayname(const std::string& value);
+
+    /// <summary>
     /// 是否是AMD架构类型的镜像。取值为“true”或者“false”。
     /// </summary>
 
@@ -688,6 +697,8 @@ protected:
     bool activeAtIsSet_;
     std::string supportAgentList_;
     bool supportAgentListIsSet_;
+    std::string imageDisplayname_;
+    bool imageDisplaynameIsSet_;
     std::string supportAmd_;
     bool supportAmdIsSet_;
 

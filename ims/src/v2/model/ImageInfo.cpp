@@ -127,6 +127,8 @@ ImageInfo::ImageInfo()
     activeAtIsSet_ = false;
     supportAgentList_ = "";
     supportAgentListIsSet_ = false;
+    imageDisplayname_ = "";
+    imageDisplaynameIsSet_ = false;
     supportAmd_ = "";
     supportAmdIsSet_ = false;
 }
@@ -314,6 +316,9 @@ web::json::value ImageInfo::toJson() const
     }
     if(supportAgentListIsSet_) {
         val[utility::conversions::to_string_t("__support_agent_list")] = ModelBase::toJson(supportAgentList_);
+    }
+    if(imageDisplaynameIsSet_) {
+        val[utility::conversions::to_string_t("__image_displayname")] = ModelBase::toJson(imageDisplayname_);
     }
     if(supportAmdIsSet_) {
         val[utility::conversions::to_string_t("__support_amd")] = ModelBase::toJson(supportAmd_);
@@ -845,6 +850,15 @@ bool ImageInfo::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSupportAgentList(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("__image_displayname"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("__image_displayname"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setImageDisplayname(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("__support_amd"))) {
@@ -2076,6 +2090,27 @@ bool ImageInfo::supportAgentListIsSet() const
 void ImageInfo::unsetsupportAgentList()
 {
     supportAgentListIsSet_ = false;
+}
+
+std::string ImageInfo::getImageDisplayname() const
+{
+    return imageDisplayname_;
+}
+
+void ImageInfo::setImageDisplayname(const std::string& value)
+{
+    imageDisplayname_ = value;
+    imageDisplaynameIsSet_ = true;
+}
+
+bool ImageInfo::imageDisplaynameIsSet() const
+{
+    return imageDisplaynameIsSet_;
+}
+
+void ImageInfo::unsetimageDisplayname()
+{
+    imageDisplaynameIsSet_ = false;
 }
 
 std::string ImageInfo::getSupportAmd() const

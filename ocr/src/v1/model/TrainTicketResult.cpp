@@ -46,6 +46,42 @@ TrainTicketResult::TrainTicketResult()
     logIdIsSet_ = false;
     saleLocation_ = "";
     saleLocationIsSet_ = false;
+    invoiceStyle_ = "";
+    invoiceStyleIsSet_ = false;
+    issueDate_ = "";
+    issueDateIsSet_ = false;
+    discountMark_ = "";
+    discountMarkIsSet_ = false;
+    serialNumber_ = "";
+    serialNumberIsSet_ = false;
+    taxAmount_ = "";
+    taxAmountIsSet_ = false;
+    taxRate_ = "";
+    taxRateIsSet_ = false;
+    airConditioning_ = "";
+    airConditioningIsSet_ = false;
+    originalInvoiceNumber_ = "";
+    originalInvoiceNumberIsSet_ = false;
+    unifiedSocialCreditCode_ = "";
+    unifiedSocialCreditCodeIsSet_ = false;
+    buyerName_ = "";
+    buyerNameIsSet_ = false;
+    totalAmountExcludingTax_ = "";
+    totalAmountExcludingTaxIsSet_ = false;
+    invoiceNumber_ = "";
+    invoiceNumberIsSet_ = false;
+    sealMark_ = false;
+    sealMarkIsSet_ = false;
+    title_ = "";
+    titleIsSet_ = false;
+    area_ = "";
+    areaIsSet_ = false;
+    receiptNumber_ = "";
+    receiptNumberIsSet_ = false;
+    amountInFigures_ = "";
+    amountInFiguresIsSet_ = false;
+    amountInWords_ = "";
+    amountInWordsIsSet_ = false;
     confidenceIsSet_ = false;
     textLocationIsSet_ = false;
 }
@@ -110,6 +146,60 @@ web::json::value TrainTicketResult::toJson() const
     }
     if(saleLocationIsSet_) {
         val[utility::conversions::to_string_t("sale_location")] = ModelBase::toJson(saleLocation_);
+    }
+    if(invoiceStyleIsSet_) {
+        val[utility::conversions::to_string_t("invoice_style")] = ModelBase::toJson(invoiceStyle_);
+    }
+    if(issueDateIsSet_) {
+        val[utility::conversions::to_string_t("issue_date")] = ModelBase::toJson(issueDate_);
+    }
+    if(discountMarkIsSet_) {
+        val[utility::conversions::to_string_t("discount_mark")] = ModelBase::toJson(discountMark_);
+    }
+    if(serialNumberIsSet_) {
+        val[utility::conversions::to_string_t("serial_number")] = ModelBase::toJson(serialNumber_);
+    }
+    if(taxAmountIsSet_) {
+        val[utility::conversions::to_string_t("tax_amount")] = ModelBase::toJson(taxAmount_);
+    }
+    if(taxRateIsSet_) {
+        val[utility::conversions::to_string_t("tax_rate")] = ModelBase::toJson(taxRate_);
+    }
+    if(airConditioningIsSet_) {
+        val[utility::conversions::to_string_t("air_conditioning")] = ModelBase::toJson(airConditioning_);
+    }
+    if(originalInvoiceNumberIsSet_) {
+        val[utility::conversions::to_string_t("original_invoice_number")] = ModelBase::toJson(originalInvoiceNumber_);
+    }
+    if(unifiedSocialCreditCodeIsSet_) {
+        val[utility::conversions::to_string_t("unified_social_credit_code")] = ModelBase::toJson(unifiedSocialCreditCode_);
+    }
+    if(buyerNameIsSet_) {
+        val[utility::conversions::to_string_t("buyer_name")] = ModelBase::toJson(buyerName_);
+    }
+    if(totalAmountExcludingTaxIsSet_) {
+        val[utility::conversions::to_string_t("total_amount_excluding_tax")] = ModelBase::toJson(totalAmountExcludingTax_);
+    }
+    if(invoiceNumberIsSet_) {
+        val[utility::conversions::to_string_t("invoice_number")] = ModelBase::toJson(invoiceNumber_);
+    }
+    if(sealMarkIsSet_) {
+        val[utility::conversions::to_string_t("seal_mark")] = ModelBase::toJson(sealMark_);
+    }
+    if(titleIsSet_) {
+        val[utility::conversions::to_string_t("title")] = ModelBase::toJson(title_);
+    }
+    if(areaIsSet_) {
+        val[utility::conversions::to_string_t("area")] = ModelBase::toJson(area_);
+    }
+    if(receiptNumberIsSet_) {
+        val[utility::conversions::to_string_t("receipt_number")] = ModelBase::toJson(receiptNumber_);
+    }
+    if(amountInFiguresIsSet_) {
+        val[utility::conversions::to_string_t("amount_in_figures")] = ModelBase::toJson(amountInFigures_);
+    }
+    if(amountInWordsIsSet_) {
+        val[utility::conversions::to_string_t("amount_in_words")] = ModelBase::toJson(amountInWords_);
     }
     if(confidenceIsSet_) {
         val[utility::conversions::to_string_t("confidence")] = ModelBase::toJson(confidence_);
@@ -275,6 +365,168 @@ bool TrainTicketResult::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSaleLocation(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("invoice_style"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("invoice_style"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setInvoiceStyle(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("issue_date"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("issue_date"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIssueDate(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("discount_mark"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("discount_mark"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDiscountMark(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("serial_number"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("serial_number"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSerialNumber(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("tax_amount"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("tax_amount"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTaxAmount(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("tax_rate"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("tax_rate"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTaxRate(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("air_conditioning"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("air_conditioning"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAirConditioning(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("original_invoice_number"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("original_invoice_number"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setOriginalInvoiceNumber(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("unified_social_credit_code"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("unified_social_credit_code"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setUnifiedSocialCreditCode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("buyer_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("buyer_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBuyerName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("total_amount_excluding_tax"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("total_amount_excluding_tax"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTotalAmountExcludingTax(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("invoice_number"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("invoice_number"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setInvoiceNumber(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("seal_mark"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("seal_mark"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSealMark(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("title"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("title"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTitle(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("area"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("area"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setArea(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("receipt_number"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("receipt_number"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setReceiptNumber(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("amount_in_figures"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("amount_in_figures"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAmountInFigures(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("amount_in_words"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("amount_in_words"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAmountInWords(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("confidence"))) {
@@ -654,6 +906,384 @@ bool TrainTicketResult::saleLocationIsSet() const
 void TrainTicketResult::unsetsaleLocation()
 {
     saleLocationIsSet_ = false;
+}
+
+std::string TrainTicketResult::getInvoiceStyle() const
+{
+    return invoiceStyle_;
+}
+
+void TrainTicketResult::setInvoiceStyle(const std::string& value)
+{
+    invoiceStyle_ = value;
+    invoiceStyleIsSet_ = true;
+}
+
+bool TrainTicketResult::invoiceStyleIsSet() const
+{
+    return invoiceStyleIsSet_;
+}
+
+void TrainTicketResult::unsetinvoiceStyle()
+{
+    invoiceStyleIsSet_ = false;
+}
+
+std::string TrainTicketResult::getIssueDate() const
+{
+    return issueDate_;
+}
+
+void TrainTicketResult::setIssueDate(const std::string& value)
+{
+    issueDate_ = value;
+    issueDateIsSet_ = true;
+}
+
+bool TrainTicketResult::issueDateIsSet() const
+{
+    return issueDateIsSet_;
+}
+
+void TrainTicketResult::unsetissueDate()
+{
+    issueDateIsSet_ = false;
+}
+
+std::string TrainTicketResult::getDiscountMark() const
+{
+    return discountMark_;
+}
+
+void TrainTicketResult::setDiscountMark(const std::string& value)
+{
+    discountMark_ = value;
+    discountMarkIsSet_ = true;
+}
+
+bool TrainTicketResult::discountMarkIsSet() const
+{
+    return discountMarkIsSet_;
+}
+
+void TrainTicketResult::unsetdiscountMark()
+{
+    discountMarkIsSet_ = false;
+}
+
+std::string TrainTicketResult::getSerialNumber() const
+{
+    return serialNumber_;
+}
+
+void TrainTicketResult::setSerialNumber(const std::string& value)
+{
+    serialNumber_ = value;
+    serialNumberIsSet_ = true;
+}
+
+bool TrainTicketResult::serialNumberIsSet() const
+{
+    return serialNumberIsSet_;
+}
+
+void TrainTicketResult::unsetserialNumber()
+{
+    serialNumberIsSet_ = false;
+}
+
+std::string TrainTicketResult::getTaxAmount() const
+{
+    return taxAmount_;
+}
+
+void TrainTicketResult::setTaxAmount(const std::string& value)
+{
+    taxAmount_ = value;
+    taxAmountIsSet_ = true;
+}
+
+bool TrainTicketResult::taxAmountIsSet() const
+{
+    return taxAmountIsSet_;
+}
+
+void TrainTicketResult::unsettaxAmount()
+{
+    taxAmountIsSet_ = false;
+}
+
+std::string TrainTicketResult::getTaxRate() const
+{
+    return taxRate_;
+}
+
+void TrainTicketResult::setTaxRate(const std::string& value)
+{
+    taxRate_ = value;
+    taxRateIsSet_ = true;
+}
+
+bool TrainTicketResult::taxRateIsSet() const
+{
+    return taxRateIsSet_;
+}
+
+void TrainTicketResult::unsettaxRate()
+{
+    taxRateIsSet_ = false;
+}
+
+std::string TrainTicketResult::getAirConditioning() const
+{
+    return airConditioning_;
+}
+
+void TrainTicketResult::setAirConditioning(const std::string& value)
+{
+    airConditioning_ = value;
+    airConditioningIsSet_ = true;
+}
+
+bool TrainTicketResult::airConditioningIsSet() const
+{
+    return airConditioningIsSet_;
+}
+
+void TrainTicketResult::unsetairConditioning()
+{
+    airConditioningIsSet_ = false;
+}
+
+std::string TrainTicketResult::getOriginalInvoiceNumber() const
+{
+    return originalInvoiceNumber_;
+}
+
+void TrainTicketResult::setOriginalInvoiceNumber(const std::string& value)
+{
+    originalInvoiceNumber_ = value;
+    originalInvoiceNumberIsSet_ = true;
+}
+
+bool TrainTicketResult::originalInvoiceNumberIsSet() const
+{
+    return originalInvoiceNumberIsSet_;
+}
+
+void TrainTicketResult::unsetoriginalInvoiceNumber()
+{
+    originalInvoiceNumberIsSet_ = false;
+}
+
+std::string TrainTicketResult::getUnifiedSocialCreditCode() const
+{
+    return unifiedSocialCreditCode_;
+}
+
+void TrainTicketResult::setUnifiedSocialCreditCode(const std::string& value)
+{
+    unifiedSocialCreditCode_ = value;
+    unifiedSocialCreditCodeIsSet_ = true;
+}
+
+bool TrainTicketResult::unifiedSocialCreditCodeIsSet() const
+{
+    return unifiedSocialCreditCodeIsSet_;
+}
+
+void TrainTicketResult::unsetunifiedSocialCreditCode()
+{
+    unifiedSocialCreditCodeIsSet_ = false;
+}
+
+std::string TrainTicketResult::getBuyerName() const
+{
+    return buyerName_;
+}
+
+void TrainTicketResult::setBuyerName(const std::string& value)
+{
+    buyerName_ = value;
+    buyerNameIsSet_ = true;
+}
+
+bool TrainTicketResult::buyerNameIsSet() const
+{
+    return buyerNameIsSet_;
+}
+
+void TrainTicketResult::unsetbuyerName()
+{
+    buyerNameIsSet_ = false;
+}
+
+std::string TrainTicketResult::getTotalAmountExcludingTax() const
+{
+    return totalAmountExcludingTax_;
+}
+
+void TrainTicketResult::setTotalAmountExcludingTax(const std::string& value)
+{
+    totalAmountExcludingTax_ = value;
+    totalAmountExcludingTaxIsSet_ = true;
+}
+
+bool TrainTicketResult::totalAmountExcludingTaxIsSet() const
+{
+    return totalAmountExcludingTaxIsSet_;
+}
+
+void TrainTicketResult::unsettotalAmountExcludingTax()
+{
+    totalAmountExcludingTaxIsSet_ = false;
+}
+
+std::string TrainTicketResult::getInvoiceNumber() const
+{
+    return invoiceNumber_;
+}
+
+void TrainTicketResult::setInvoiceNumber(const std::string& value)
+{
+    invoiceNumber_ = value;
+    invoiceNumberIsSet_ = true;
+}
+
+bool TrainTicketResult::invoiceNumberIsSet() const
+{
+    return invoiceNumberIsSet_;
+}
+
+void TrainTicketResult::unsetinvoiceNumber()
+{
+    invoiceNumberIsSet_ = false;
+}
+
+bool TrainTicketResult::isSealMark() const
+{
+    return sealMark_;
+}
+
+void TrainTicketResult::setSealMark(bool value)
+{
+    sealMark_ = value;
+    sealMarkIsSet_ = true;
+}
+
+bool TrainTicketResult::sealMarkIsSet() const
+{
+    return sealMarkIsSet_;
+}
+
+void TrainTicketResult::unsetsealMark()
+{
+    sealMarkIsSet_ = false;
+}
+
+std::string TrainTicketResult::getTitle() const
+{
+    return title_;
+}
+
+void TrainTicketResult::setTitle(const std::string& value)
+{
+    title_ = value;
+    titleIsSet_ = true;
+}
+
+bool TrainTicketResult::titleIsSet() const
+{
+    return titleIsSet_;
+}
+
+void TrainTicketResult::unsettitle()
+{
+    titleIsSet_ = false;
+}
+
+std::string TrainTicketResult::getArea() const
+{
+    return area_;
+}
+
+void TrainTicketResult::setArea(const std::string& value)
+{
+    area_ = value;
+    areaIsSet_ = true;
+}
+
+bool TrainTicketResult::areaIsSet() const
+{
+    return areaIsSet_;
+}
+
+void TrainTicketResult::unsetarea()
+{
+    areaIsSet_ = false;
+}
+
+std::string TrainTicketResult::getReceiptNumber() const
+{
+    return receiptNumber_;
+}
+
+void TrainTicketResult::setReceiptNumber(const std::string& value)
+{
+    receiptNumber_ = value;
+    receiptNumberIsSet_ = true;
+}
+
+bool TrainTicketResult::receiptNumberIsSet() const
+{
+    return receiptNumberIsSet_;
+}
+
+void TrainTicketResult::unsetreceiptNumber()
+{
+    receiptNumberIsSet_ = false;
+}
+
+std::string TrainTicketResult::getAmountInFigures() const
+{
+    return amountInFigures_;
+}
+
+void TrainTicketResult::setAmountInFigures(const std::string& value)
+{
+    amountInFigures_ = value;
+    amountInFiguresIsSet_ = true;
+}
+
+bool TrainTicketResult::amountInFiguresIsSet() const
+{
+    return amountInFiguresIsSet_;
+}
+
+void TrainTicketResult::unsetamountInFigures()
+{
+    amountInFiguresIsSet_ = false;
+}
+
+std::string TrainTicketResult::getAmountInWords() const
+{
+    return amountInWords_;
+}
+
+void TrainTicketResult::setAmountInWords(const std::string& value)
+{
+    amountInWords_ = value;
+    amountInWordsIsSet_ = true;
+}
+
+bool TrainTicketResult::amountInWordsIsSet() const
+{
+    return amountInWordsIsSet_;
+}
+
+void TrainTicketResult::unsetamountInWords()
+{
+    amountInWordsIsSet_ = false;
 }
 
 Object TrainTicketResult::getConfidence() const

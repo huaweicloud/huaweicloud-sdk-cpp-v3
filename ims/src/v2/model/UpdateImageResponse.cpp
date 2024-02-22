@@ -127,6 +127,8 @@ UpdateImageResponse::UpdateImageResponse()
     activeAtIsSet_ = false;
     supportAgentList_ = "";
     supportAgentListIsSet_ = false;
+    imageDisplayname_ = "";
+    imageDisplaynameIsSet_ = false;
     supportAmd_ = "";
     supportAmdIsSet_ = false;
 }
@@ -314,6 +316,9 @@ web::json::value UpdateImageResponse::toJson() const
     }
     if(supportAgentListIsSet_) {
         val[utility::conversions::to_string_t("__support_agent_list")] = ModelBase::toJson(supportAgentList_);
+    }
+    if(imageDisplaynameIsSet_) {
+        val[utility::conversions::to_string_t("__image_displayname")] = ModelBase::toJson(imageDisplayname_);
     }
     if(supportAmdIsSet_) {
         val[utility::conversions::to_string_t("__support_amd")] = ModelBase::toJson(supportAmd_);
@@ -845,6 +850,15 @@ bool UpdateImageResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSupportAgentList(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("__image_displayname"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("__image_displayname"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setImageDisplayname(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("__support_amd"))) {
@@ -2076,6 +2090,27 @@ bool UpdateImageResponse::supportAgentListIsSet() const
 void UpdateImageResponse::unsetsupportAgentList()
 {
     supportAgentListIsSet_ = false;
+}
+
+std::string UpdateImageResponse::getImageDisplayname() const
+{
+    return imageDisplayname_;
+}
+
+void UpdateImageResponse::setImageDisplayname(const std::string& value)
+{
+    imageDisplayname_ = value;
+    imageDisplaynameIsSet_ = true;
+}
+
+bool UpdateImageResponse::imageDisplaynameIsSet() const
+{
+    return imageDisplaynameIsSet_;
+}
+
+void UpdateImageResponse::unsetimageDisplayname()
+{
+    imageDisplaynameIsSet_ = false;
 }
 
 std::string UpdateImageResponse::getSupportAmd() const

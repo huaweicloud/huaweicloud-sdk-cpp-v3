@@ -98,6 +98,18 @@ public:
             { 
                 "https://smn.tr-west-1.myhuaweicloud.com"
             });
+        regions["eu-west-101"] = Region("eu-west-101",
+            { 
+                "https://smn.eu-west-101.myhuaweicloud.eu"
+            });
+        regions["eu-west-0"] = Region("eu-west-0",
+            { 
+                "https://smn.eu-west-0.myhuaweicloud.com"
+            });
+        regions["my-kualalumpur-1"] = Region("my-kualalumpur-1",
+            { 
+                "https://smn.my-kualalumpur-1.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

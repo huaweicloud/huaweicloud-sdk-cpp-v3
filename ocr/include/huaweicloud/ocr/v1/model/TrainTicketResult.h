@@ -193,6 +193,168 @@ public:
     void setSaleLocation(const std::string& value);
 
     /// <summary>
+    /// 类型。包含以下几种类型： - paper：纸质火车票 - electronic：电子发票 - refund_old：旧版退票凭证 - refund_new：新版退票凭证 
+    /// </summary>
+
+    std::string getInvoiceStyle() const;
+    bool invoiceStyleIsSet() const;
+    void unsetinvoiceStyle();
+    void setInvoiceStyle(const std::string& value);
+
+    /// <summary>
+    /// 开票时间 
+    /// </summary>
+
+    std::string getIssueDate() const;
+    bool issueDateIsSet() const;
+    void unsetissueDate();
+    void setIssueDate(const std::string& value);
+
+    /// <summary>
+    /// 打折标识 
+    /// </summary>
+
+    std::string getDiscountMark() const;
+    bool discountMarkIsSet() const;
+    void unsetdiscountMark();
+    void setDiscountMark(const std::string& value);
+
+    /// <summary>
+    /// 电子客票号 
+    /// </summary>
+
+    std::string getSerialNumber() const;
+    bool serialNumberIsSet() const;
+    void unsetserialNumber();
+    void setSerialNumber(const std::string& value);
+
+    /// <summary>
+    /// 税金价格 
+    /// </summary>
+
+    std::string getTaxAmount() const;
+    bool taxAmountIsSet() const;
+    void unsettaxAmount();
+    void setTaxAmount(const std::string& value);
+
+    /// <summary>
+    /// 税率 
+    /// </summary>
+
+    std::string getTaxRate() const;
+    bool taxRateIsSet() const;
+    void unsettaxRate();
+    void setTaxRate(const std::string& value);
+
+    /// <summary>
+    /// 是否是空调车厢 
+    /// </summary>
+
+    std::string getAirConditioning() const;
+    bool airConditioningIsSet() const;
+    void unsetairConditioning();
+    void setAirConditioning(const std::string& value);
+
+    /// <summary>
+    /// 原发票号码 
+    /// </summary>
+
+    std::string getOriginalInvoiceNumber() const;
+    bool originalInvoiceNumberIsSet() const;
+    void unsetoriginalInvoiceNumber();
+    void setOriginalInvoiceNumber(const std::string& value);
+
+    /// <summary>
+    /// 统一社会信用号码 
+    /// </summary>
+
+    std::string getUnifiedSocialCreditCode() const;
+    bool unifiedSocialCreditCodeIsSet() const;
+    void unsetunifiedSocialCreditCode();
+    void setUnifiedSocialCreditCode(const std::string& value);
+
+    /// <summary>
+    /// 购买方名称 
+    /// </summary>
+
+    std::string getBuyerName() const;
+    bool buyerNameIsSet() const;
+    void unsetbuyerName();
+    void setBuyerName(const std::string& value);
+
+    /// <summary>
+    /// 不含税价格 
+    /// </summary>
+
+    std::string getTotalAmountExcludingTax() const;
+    bool totalAmountExcludingTaxIsSet() const;
+    void unsettotalAmountExcludingTax();
+    void setTotalAmountExcludingTax(const std::string& value);
+
+    /// <summary>
+    /// 发票号码 
+    /// </summary>
+
+    std::string getInvoiceNumber() const;
+    bool invoiceNumberIsSet() const;
+    void unsetinvoiceNumber();
+    void setInvoiceNumber(const std::string& value);
+
+    /// <summary>
+    /// 是否有印章，True表示有印章，False表示不含印章，字段默认为False 
+    /// </summary>
+
+    bool isSealMark() const;
+    bool sealMarkIsSet() const;
+    void unsetsealMark();
+    void setSealMark(bool value);
+
+    /// <summary>
+    /// 标题 
+    /// </summary>
+
+    std::string getTitle() const;
+    bool titleIsSet() const;
+    void unsettitle();
+    void setTitle(const std::string& value);
+
+    /// <summary>
+    /// 地区 
+    /// </summary>
+
+    std::string getArea() const;
+    bool areaIsSet() const;
+    void unsetarea();
+    void setArea(const std::string& value);
+
+    /// <summary>
+    /// 收据编码 
+    /// </summary>
+
+    std::string getReceiptNumber() const;
+    bool receiptNumberIsSet() const;
+    void unsetreceiptNumber();
+    void setReceiptNumber(const std::string& value);
+
+    /// <summary>
+    /// 小写票据金额 
+    /// </summary>
+
+    std::string getAmountInFigures() const;
+    bool amountInFiguresIsSet() const;
+    void unsetamountInFigures();
+    void setAmountInFigures(const std::string& value);
+
+    /// <summary>
+    /// 大写票据金额 
+    /// </summary>
+
+    std::string getAmountInWords() const;
+    bool amountInWordsIsSet() const;
+    void unsetamountInWords();
+    void setAmountInWords(const std::string& value);
+
+    /// <summary>
     /// 相关字段的置信度信息，置信度越大，表示本次识别的对应字段的可靠性越高，在统计意义上，置信度越大，准确率越高。 置信度由算法给出，不直接等价于对应字段的准确率。
     /// </summary>
 
@@ -246,6 +408,42 @@ protected:
     bool logIdIsSet_;
     std::string saleLocation_;
     bool saleLocationIsSet_;
+    std::string invoiceStyle_;
+    bool invoiceStyleIsSet_;
+    std::string issueDate_;
+    bool issueDateIsSet_;
+    std::string discountMark_;
+    bool discountMarkIsSet_;
+    std::string serialNumber_;
+    bool serialNumberIsSet_;
+    std::string taxAmount_;
+    bool taxAmountIsSet_;
+    std::string taxRate_;
+    bool taxRateIsSet_;
+    std::string airConditioning_;
+    bool airConditioningIsSet_;
+    std::string originalInvoiceNumber_;
+    bool originalInvoiceNumberIsSet_;
+    std::string unifiedSocialCreditCode_;
+    bool unifiedSocialCreditCodeIsSet_;
+    std::string buyerName_;
+    bool buyerNameIsSet_;
+    std::string totalAmountExcludingTax_;
+    bool totalAmountExcludingTaxIsSet_;
+    std::string invoiceNumber_;
+    bool invoiceNumberIsSet_;
+    bool sealMark_;
+    bool sealMarkIsSet_;
+    std::string title_;
+    bool titleIsSet_;
+    std::string area_;
+    bool areaIsSet_;
+    std::string receiptNumber_;
+    bool receiptNumberIsSet_;
+    std::string amountInFigures_;
+    bool amountInFiguresIsSet_;
+    std::string amountInWords_;
+    bool amountInWordsIsSet_;
     Object confidence_;
     bool confidenceIsSet_;
     Object textLocation_;

@@ -66,6 +66,15 @@ public:
     void setHaMode(const std::string& value);
 
     /// <summary>
+    /// 引擎名称
+    /// </summary>
+
+    std::string getEngineName() const;
+    bool engineNameIsSet() const;
+    void unsetengineName();
+    void setEngineName(const std::string& value);
+
+    /// <summary>
     /// 引擎版本号。
     /// </summary>
 
@@ -111,6 +120,15 @@ public:
     void setVolumeType(const std::string& value);
 
     /// <summary>
+    /// 磁盘大小
+    /// </summary>
+
+    std::string getVolumeSize() const;
+    bool volumeSizeIsSet() const;
+    void unsetvolumeSize();
+    void setVolumeSize(const std::string& value);
+
+    /// <summary>
     /// 数据vip。
     /// </summary>
 
@@ -127,6 +145,24 @@ public:
     bool enterpriseProjectIdIsSet() const;
     void unsetenterpriseProjectId();
     void setEnterpriseProjectId(const std::string& value);
+
+    /// <summary>
+    /// 企业项目名称
+    /// </summary>
+
+    std::string getEnterpriseProjectName() const;
+    bool enterpriseProjectNameIsSet() const;
+    void unsetenterpriseProjectName();
+    void setEnterpriseProjectName(const std::string& value);
+
+    /// <summary>
+    /// 备份级别
+    /// </summary>
+
+    std::string getBackupLevel() const;
+    bool backupLevelIsSet() const;
+    void unsetbackupLevel();
+    void setBackupLevel(const std::string& value);
 
     /// <summary>
     /// 备份ID。（指删除实例时产生备份信息中的备份ID）。
@@ -163,6 +199,8 @@ protected:
     bool nameIsSet_;
     std::string haMode_;
     bool haModeIsSet_;
+    std::string engineName_;
+    bool engineNameIsSet_;
     std::string engineVersion_;
     bool engineVersionIsSet_;
     std::string payModel_;
@@ -173,10 +211,16 @@ protected:
     bool deletedAtIsSet_;
     std::string volumeType_;
     bool volumeTypeIsSet_;
+    std::string volumeSize_;
+    bool volumeSizeIsSet_;
     std::string dataVip_;
     bool dataVipIsSet_;
     std::string enterpriseProjectId_;
     bool enterpriseProjectIdIsSet_;
+    std::string enterpriseProjectName_;
+    bool enterpriseProjectNameIsSet_;
+    std::string backupLevel_;
+    bool backupLevelIsSet_;
     std::string recycleBackupId_;
     bool recycleBackupIdIsSet_;
     std::string recycleStatus_;

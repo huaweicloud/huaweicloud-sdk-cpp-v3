@@ -17,6 +17,10 @@ ModifyGaussMySqlProxyRouteModeRequestBody::ModifyGaussMySqlProxyRouteModeRequest
     masterWeight_ = 0;
     masterWeightIsSet_ = false;
     readonlyNodesIsSet_ = false;
+    newNodeAutoAddStatus_ = "";
+    newNodeAutoAddStatusIsSet_ = false;
+    newNodeWeight_ = 0;
+    newNodeWeightIsSet_ = false;
 }
 
 ModifyGaussMySqlProxyRouteModeRequestBody::~ModifyGaussMySqlProxyRouteModeRequestBody() = default;
@@ -37,6 +41,12 @@ web::json::value ModifyGaussMySqlProxyRouteModeRequestBody::toJson() const
     }
     if(readonlyNodesIsSet_) {
         val[utility::conversions::to_string_t("readonly_nodes")] = ModelBase::toJson(readonlyNodes_);
+    }
+    if(newNodeAutoAddStatusIsSet_) {
+        val[utility::conversions::to_string_t("new_node_auto_add_status")] = ModelBase::toJson(newNodeAutoAddStatus_);
+    }
+    if(newNodeWeightIsSet_) {
+        val[utility::conversions::to_string_t("new_node_weight")] = ModelBase::toJson(newNodeWeight_);
     }
 
     return val;
@@ -70,6 +80,24 @@ bool ModifyGaussMySqlProxyRouteModeRequestBody::fromJson(const web::json::value&
             std::vector<ModifyProxyRouteWeightReadonlyNode> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setReadonlyNodes(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("new_node_auto_add_status"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("new_node_auto_add_status"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setNewNodeAutoAddStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("new_node_weight"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("new_node_weight"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setNewNodeWeight(refVal);
         }
     }
     return ok;
@@ -137,6 +165,48 @@ bool ModifyGaussMySqlProxyRouteModeRequestBody::readonlyNodesIsSet() const
 void ModifyGaussMySqlProxyRouteModeRequestBody::unsetreadonlyNodes()
 {
     readonlyNodesIsSet_ = false;
+}
+
+std::string ModifyGaussMySqlProxyRouteModeRequestBody::getNewNodeAutoAddStatus() const
+{
+    return newNodeAutoAddStatus_;
+}
+
+void ModifyGaussMySqlProxyRouteModeRequestBody::setNewNodeAutoAddStatus(const std::string& value)
+{
+    newNodeAutoAddStatus_ = value;
+    newNodeAutoAddStatusIsSet_ = true;
+}
+
+bool ModifyGaussMySqlProxyRouteModeRequestBody::newNodeAutoAddStatusIsSet() const
+{
+    return newNodeAutoAddStatusIsSet_;
+}
+
+void ModifyGaussMySqlProxyRouteModeRequestBody::unsetnewNodeAutoAddStatus()
+{
+    newNodeAutoAddStatusIsSet_ = false;
+}
+
+int32_t ModifyGaussMySqlProxyRouteModeRequestBody::getNewNodeWeight() const
+{
+    return newNodeWeight_;
+}
+
+void ModifyGaussMySqlProxyRouteModeRequestBody::setNewNodeWeight(int32_t value)
+{
+    newNodeWeight_ = value;
+    newNodeWeightIsSet_ = true;
+}
+
+bool ModifyGaussMySqlProxyRouteModeRequestBody::newNodeWeightIsSet() const
+{
+    return newNodeWeightIsSet_;
+}
+
+void ModifyGaussMySqlProxyRouteModeRequestBody::unsetnewNodeWeight()
+{
+    newNodeWeightIsSet_ = false;
 }
 
 }

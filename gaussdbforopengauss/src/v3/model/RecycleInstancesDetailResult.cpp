@@ -18,6 +18,8 @@ RecycleInstancesDetailResult::RecycleInstancesDetailResult()
     nameIsSet_ = false;
     haMode_ = "";
     haModeIsSet_ = false;
+    engineName_ = "";
+    engineNameIsSet_ = false;
     engineVersion_ = "";
     engineVersionIsSet_ = false;
     payModel_ = "";
@@ -28,10 +30,16 @@ RecycleInstancesDetailResult::RecycleInstancesDetailResult()
     deletedAtIsSet_ = false;
     volumeType_ = "";
     volumeTypeIsSet_ = false;
+    volumeSize_ = "";
+    volumeSizeIsSet_ = false;
     dataVip_ = "";
     dataVipIsSet_ = false;
     enterpriseProjectId_ = "";
     enterpriseProjectIdIsSet_ = false;
+    enterpriseProjectName_ = "";
+    enterpriseProjectNameIsSet_ = false;
+    backupLevel_ = "";
+    backupLevelIsSet_ = false;
     recycleBackupId_ = "";
     recycleBackupIdIsSet_ = false;
     recycleStatus_ = "";
@@ -59,6 +67,9 @@ web::json::value RecycleInstancesDetailResult::toJson() const
     if(haModeIsSet_) {
         val[utility::conversions::to_string_t("ha_mode")] = ModelBase::toJson(haMode_);
     }
+    if(engineNameIsSet_) {
+        val[utility::conversions::to_string_t("engine_name")] = ModelBase::toJson(engineName_);
+    }
     if(engineVersionIsSet_) {
         val[utility::conversions::to_string_t("engine_version")] = ModelBase::toJson(engineVersion_);
     }
@@ -74,11 +85,20 @@ web::json::value RecycleInstancesDetailResult::toJson() const
     if(volumeTypeIsSet_) {
         val[utility::conversions::to_string_t("volume_type")] = ModelBase::toJson(volumeType_);
     }
+    if(volumeSizeIsSet_) {
+        val[utility::conversions::to_string_t("volume_size")] = ModelBase::toJson(volumeSize_);
+    }
     if(dataVipIsSet_) {
         val[utility::conversions::to_string_t("data_vip")] = ModelBase::toJson(dataVip_);
     }
     if(enterpriseProjectIdIsSet_) {
         val[utility::conversions::to_string_t("enterprise_project_id")] = ModelBase::toJson(enterpriseProjectId_);
+    }
+    if(enterpriseProjectNameIsSet_) {
+        val[utility::conversions::to_string_t("enterprise_project_name")] = ModelBase::toJson(enterpriseProjectName_);
+    }
+    if(backupLevelIsSet_) {
+        val[utility::conversions::to_string_t("backup_level")] = ModelBase::toJson(backupLevel_);
     }
     if(recycleBackupIdIsSet_) {
         val[utility::conversions::to_string_t("recycle_backup_id")] = ModelBase::toJson(recycleBackupId_);
@@ -121,6 +141,15 @@ bool RecycleInstancesDetailResult::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setHaMode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("engine_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("engine_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEngineName(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("engine_version"))) {
@@ -168,6 +197,15 @@ bool RecycleInstancesDetailResult::fromJson(const web::json::value& val)
             setVolumeType(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("volume_size"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("volume_size"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setVolumeSize(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("data_vip"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("data_vip"));
         if(!fieldValue.is_null())
@@ -184,6 +222,24 @@ bool RecycleInstancesDetailResult::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEnterpriseProjectId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("enterprise_project_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enterprise_project_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEnterpriseProjectName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("backup_level"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("backup_level"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBackupLevel(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("recycle_backup_id"))) {
@@ -278,6 +334,27 @@ bool RecycleInstancesDetailResult::haModeIsSet() const
 void RecycleInstancesDetailResult::unsethaMode()
 {
     haModeIsSet_ = false;
+}
+
+std::string RecycleInstancesDetailResult::getEngineName() const
+{
+    return engineName_;
+}
+
+void RecycleInstancesDetailResult::setEngineName(const std::string& value)
+{
+    engineName_ = value;
+    engineNameIsSet_ = true;
+}
+
+bool RecycleInstancesDetailResult::engineNameIsSet() const
+{
+    return engineNameIsSet_;
+}
+
+void RecycleInstancesDetailResult::unsetengineName()
+{
+    engineNameIsSet_ = false;
 }
 
 std::string RecycleInstancesDetailResult::getEngineVersion() const
@@ -385,6 +462,27 @@ void RecycleInstancesDetailResult::unsetvolumeType()
     volumeTypeIsSet_ = false;
 }
 
+std::string RecycleInstancesDetailResult::getVolumeSize() const
+{
+    return volumeSize_;
+}
+
+void RecycleInstancesDetailResult::setVolumeSize(const std::string& value)
+{
+    volumeSize_ = value;
+    volumeSizeIsSet_ = true;
+}
+
+bool RecycleInstancesDetailResult::volumeSizeIsSet() const
+{
+    return volumeSizeIsSet_;
+}
+
+void RecycleInstancesDetailResult::unsetvolumeSize()
+{
+    volumeSizeIsSet_ = false;
+}
+
 std::string RecycleInstancesDetailResult::getDataVip() const
 {
     return dataVip_;
@@ -425,6 +523,48 @@ bool RecycleInstancesDetailResult::enterpriseProjectIdIsSet() const
 void RecycleInstancesDetailResult::unsetenterpriseProjectId()
 {
     enterpriseProjectIdIsSet_ = false;
+}
+
+std::string RecycleInstancesDetailResult::getEnterpriseProjectName() const
+{
+    return enterpriseProjectName_;
+}
+
+void RecycleInstancesDetailResult::setEnterpriseProjectName(const std::string& value)
+{
+    enterpriseProjectName_ = value;
+    enterpriseProjectNameIsSet_ = true;
+}
+
+bool RecycleInstancesDetailResult::enterpriseProjectNameIsSet() const
+{
+    return enterpriseProjectNameIsSet_;
+}
+
+void RecycleInstancesDetailResult::unsetenterpriseProjectName()
+{
+    enterpriseProjectNameIsSet_ = false;
+}
+
+std::string RecycleInstancesDetailResult::getBackupLevel() const
+{
+    return backupLevel_;
+}
+
+void RecycleInstancesDetailResult::setBackupLevel(const std::string& value)
+{
+    backupLevel_ = value;
+    backupLevelIsSet_ = true;
+}
+
+bool RecycleInstancesDetailResult::backupLevelIsSet() const
+{
+    return backupLevelIsSet_;
+}
+
+void RecycleInstancesDetailResult::unsetbackupLevel()
+{
+    backupLevelIsSet_ = false;
 }
 
 std::string RecycleInstancesDetailResult::getRecycleBackupId() const

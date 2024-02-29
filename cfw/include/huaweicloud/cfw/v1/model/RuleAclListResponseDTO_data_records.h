@@ -196,6 +196,24 @@ public:
     void setType(int32_t value);
 
     /// <summary>
+    /// 创建时间
+    /// </summary>
+
+    std::string getCreatedDate() const;
+    bool createdDateIsSet() const;
+    void unsetcreatedDate();
+    void setCreatedDate(const std::string& value);
+
+    /// <summary>
+    /// 最后开启时间
+    /// </summary>
+
+    std::string getLastOpenTime() const;
+    bool lastOpenTimeIsSet() const;
+    void unsetlastOpenTime();
+    void setLastOpenTime(const std::string& value);
+
+    /// <summary>
     /// 
     /// </summary>
 
@@ -240,6 +258,10 @@ protected:
     bool serviceIsSet_;
     int32_t type_;
     bool typeIsSet_;
+    std::string createdDate_;
+    bool createdDateIsSet_;
+    std::string lastOpenTime_;
+    bool lastOpenTimeIsSet_;
     TagsVO tag_;
     bool tagIsSet_;
 

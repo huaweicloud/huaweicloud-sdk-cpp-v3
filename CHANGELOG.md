@@ -1,3 +1,138 @@
+# 3.1.75 2024-02-29
+
+### HuaweiCloud SDK CFW
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListAddressSets**
+    - changes of request param
+      - `+ query_address_set_type`
+    - changes of response param
+      - `+ data.records.object_id`
+      - `+ data.records.address_set_type`
+  - **UpdateAclRuleOrder**
+    - changes of response param
+      - `+ data.name`
+  - **AddBlackWhiteList**
+    - changes of response param
+      - `+ data.name`
+  - **UpdateBlackWhiteList**
+    - changes of response param
+      - `+ data.name`
+  - **DeleteBlackWhiteList**
+    - changes of response param
+      - `+ data.name`
+  - **ChangeIpsProtectMode**
+    - changes of response param
+      - `+ data.name`
+  - **AddServiceSet**
+    - changes of response param
+      - `+ data.name`
+  - **ListServiceSetDetail**
+    - changes of response param
+      - `+ data.service_set_type`
+  - **UpdateServiceSet**
+    - changes of response param
+      - `+ data.name`
+  - **DeleteServiceSet**
+    - changes of response param
+      - `+ data.name`
+  - **DeleteServiceItem**
+    - changes of response param
+      - `+ data.name`
+  - **CreateFirewall**
+    - changes of request param
+      - `- flavor.version: enum value [Platinum]`
+    - changes of response param
+      - `- data.flavor.version: enum value [Platinum]`
+  - **ChangeEipStatus**
+    - changes of response param
+      - `+ data.id`
+  - **DeleteAddressItem**
+    - changes of response param
+      - `+ data.name`
+  - **AddAddressSet**
+    - changes of response param
+      - `+ data.name`
+  - **ListAddressSetDetail**
+    - changes of request param
+      - `+ query_address_set_type`
+    - changes of response param
+      - `+ data.address_set_type`
+  - **UpdateAddressSet**
+    - changes of response param
+      - `* data: object<IdObject> -> object<UpdateAddressSetResponseData>`
+  - **DeleteAddressSet**
+    - changes of response param
+      - `+ data.name`
+  - **CreateEastWestFirewall**
+    - changes of response param
+      - `+ data.name`
+  - **ListEastWestFirewall**
+    - changes of response param
+      - `+ data.protect_infos.status`
+  - **AddAclRule**
+    - changes of response param
+      - `+ data.rules.name`
+  - **DeleteAclRule**
+    - changes of response param
+      - `+ data.name`
+  - **UpdateAclRule**
+    - changes of response param
+      - `+ data.name`
+  - **ListAclRules**
+    - changes of response param
+      - `+ data.records.created_date`
+      - `+ data.records.last_open_time`
+  - **AddServiceItems**
+    - changes of response param
+      - `+ data.items.name`
+  - **AddAddressItem**
+    - changes of response param
+      - `+ data.items.name`
+  - **ListServiceSets**
+    - changes of response param
+      - `+ data.records.service_set_type`
+      - `+ data.records.project_id`
+      - `+ data.records.protocols`
+  - **ListProtectedVpcs**
+    - changes of response param
+      - `+ data.total_assets`
+  - **ListFirewallDetail**
+    - changes of response param
+      - `+ data.records.is_available_obs`
+      - `+ data.records.is_support_threat_tags`
+  - **ListFirewallList**
+    - changes of response param
+      - `+ is_support_postpaid`
+      - `+ is_support_buy_professional`
+      - `+ has_ndr`
+      - `+ is_support_basic_version`
+
+### HuaweiCloud SDK KVS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the APIs `RenameKv`, `BatchGetKv`, `TransactWriteSkeyKv`
+
+### HuaweiCloud SDK LTS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateLogStream**
+    - changes of request param
+      - `+ log_stream_name_alias`
+      - `+ enterprise_project_name`
+
 # 3.1.74 2024-02-22
 
 ### HuaweiCloud SDK GaussDB

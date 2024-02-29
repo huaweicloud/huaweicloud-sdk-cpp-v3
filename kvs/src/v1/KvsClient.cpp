@@ -213,52 +213,6 @@ std::shared_ptr<ListTableResponse> KvsClient::listTable(ListTableRequest &reques
 
     return localVarResult;
 }
-std::shared_ptr<BatchGetKvResponse> KvsClient::batchGetKv(BatchGetKvRequest &request)
-{
-    std::string localVarPath = "/v1/batch-get-kv";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/bson", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.storeNameIsSet()) {
-        localVarQueryParams["store_name"] = parameterToString(request.getStoreName());
-    }
-
-    std::string localVarHttpBody;
-    if (isBson) {
-        spdlog::info("parse bson format request");
-        Builder builder = Builder::document();
-        request.getBody().toBson(builder);
-        Document doc = builder << Builder::DocumentEnd;
-        localVarHttpBody.assign((const char *)doc.data(), doc.length());
-    }
-
-    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, KvsMeta::genRequestDefForBatchGetKv());
-
-    std::shared_ptr<BatchGetKvResponse> localVarResult = std::make_shared<BatchGetKvResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-    if (!res->getHttpBody().empty()) {
-        spdlog::info("parse bson format response");
-        const std::string &body = localVarResult->getHttpBodyRef();
-        Document doc((const uint8_t *)body.data(), body.length());
-        Viewer viewer(doc);
-        localVarResult->fromBson(viewer);
-    }
-
-    return localVarResult;
-}
 std::shared_ptr<BatchWriteKvResponse> KvsClient::batchWriteKv(BatchWriteKvRequest &request)
 {
     std::string localVarPath = "/v1/batch-write-kv";
@@ -443,52 +397,6 @@ std::shared_ptr<PutKvResponse> KvsClient::putKv(PutKvRequest &request)
 
     return localVarResult;
 }
-std::shared_ptr<RenameKvResponse> KvsClient::renameKv(RenameKvRequest &request)
-{
-    std::string localVarPath = "/v1/rename-kv";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/bson", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.storeNameIsSet()) {
-        localVarQueryParams["store_name"] = parameterToString(request.getStoreName());
-    }
-
-    std::string localVarHttpBody;
-    if (isBson) {
-        spdlog::info("parse bson format request");
-        Builder builder = Builder::document();
-        request.getBody().toBson(builder);
-        Document doc = builder << Builder::DocumentEnd;
-        localVarHttpBody.assign((const char *)doc.data(), doc.length());
-    }
-
-    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, KvsMeta::genRequestDefForRenameKv());
-
-    std::shared_ptr<RenameKvResponse> localVarResult = std::make_shared<RenameKvResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-    if (!res->getHttpBody().empty()) {
-        spdlog::info("parse bson format response");
-        const std::string &body = localVarResult->getHttpBodyRef();
-        Document doc((const uint8_t *)body.data(), body.length());
-        Viewer viewer(doc);
-        localVarResult->fromBson(viewer);
-    }
-
-    return localVarResult;
-}
 std::shared_ptr<ScanKvResponse> KvsClient::scanKv(ScanKvRequest &request)
 {
     std::string localVarPath = "/v1/scan-kv";
@@ -568,52 +476,6 @@ std::shared_ptr<ScanSkeyKvResponse> KvsClient::scanSkeyKv(ScanSkeyKvRequest &req
         localVarHeaderParams, localVarHttpBody, KvsMeta::genRequestDefForScanSkeyKv());
 
     std::shared_ptr<ScanSkeyKvResponse> localVarResult = std::make_shared<ScanSkeyKvResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-    if (!res->getHttpBody().empty()) {
-        spdlog::info("parse bson format response");
-        const std::string &body = localVarResult->getHttpBodyRef();
-        Document doc((const uint8_t *)body.data(), body.length());
-        Viewer viewer(doc);
-        localVarResult->fromBson(viewer);
-    }
-
-    return localVarResult;
-}
-std::shared_ptr<TransactWriteSkeyKvResponse> KvsClient::transactWriteSkeyKv(TransactWriteSkeyKvRequest &request)
-{
-    std::string localVarPath = "/v1/transact-write-skey-kv";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/bson", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.storeNameIsSet()) {
-        localVarQueryParams["store_name"] = parameterToString(request.getStoreName());
-    }
-
-    std::string localVarHttpBody;
-    if (isBson) {
-        spdlog::info("parse bson format request");
-        Builder builder = Builder::document();
-        request.getBody().toBson(builder);
-        Document doc = builder << Builder::DocumentEnd;
-        localVarHttpBody.assign((const char *)doc.data(), doc.length());
-    }
-
-    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, KvsMeta::genRequestDefForTransactWriteSkeyKv());
-
-    std::shared_ptr<TransactWriteSkeyKvResponse> localVarResult = std::make_shared<TransactWriteSkeyKvResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

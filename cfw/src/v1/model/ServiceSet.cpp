@@ -18,10 +18,15 @@ ServiceSet::ServiceSet()
     nameIsSet_ = false;
     description_ = "";
     descriptionIsSet_ = false;
+    serviceSetType_ = 0;
+    serviceSetTypeIsSet_ = false;
     refCount_ = 0;
     refCountIsSet_ = false;
     status_ = "";
     statusIsSet_ = false;
+    projectId_ = "";
+    projectIdIsSet_ = false;
+    protocolsIsSet_ = false;
 }
 
 ServiceSet::~ServiceSet() = default;
@@ -43,11 +48,20 @@ web::json::value ServiceSet::toJson() const
     if(descriptionIsSet_) {
         val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
     }
+    if(serviceSetTypeIsSet_) {
+        val[utility::conversions::to_string_t("service_set_type")] = ModelBase::toJson(serviceSetType_);
+    }
     if(refCountIsSet_) {
         val[utility::conversions::to_string_t("ref_count")] = ModelBase::toJson(refCount_);
     }
     if(statusIsSet_) {
         val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
+    }
+    if(projectIdIsSet_) {
+        val[utility::conversions::to_string_t("project_id")] = ModelBase::toJson(projectId_);
+    }
+    if(protocolsIsSet_) {
+        val[utility::conversions::to_string_t("protocols")] = ModelBase::toJson(protocols_);
     }
 
     return val;
@@ -83,6 +97,15 @@ bool ServiceSet::fromJson(const web::json::value& val)
             setDescription(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("service_set_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("service_set_type"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setServiceSetType(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("ref_count"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ref_count"));
         if(!fieldValue.is_null())
@@ -99,6 +122,24 @@ bool ServiceSet::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("project_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("project_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProjectId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("protocols"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("protocols"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<int32_t> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProtocols(refVal);
         }
     }
     return ok;
@@ -168,6 +209,27 @@ void ServiceSet::unsetdescription()
     descriptionIsSet_ = false;
 }
 
+int32_t ServiceSet::getServiceSetType() const
+{
+    return serviceSetType_;
+}
+
+void ServiceSet::setServiceSetType(int32_t value)
+{
+    serviceSetType_ = value;
+    serviceSetTypeIsSet_ = true;
+}
+
+bool ServiceSet::serviceSetTypeIsSet() const
+{
+    return serviceSetTypeIsSet_;
+}
+
+void ServiceSet::unsetserviceSetType()
+{
+    serviceSetTypeIsSet_ = false;
+}
+
 int32_t ServiceSet::getRefCount() const
 {
     return refCount_;
@@ -208,6 +270,48 @@ bool ServiceSet::statusIsSet() const
 void ServiceSet::unsetstatus()
 {
     statusIsSet_ = false;
+}
+
+std::string ServiceSet::getProjectId() const
+{
+    return projectId_;
+}
+
+void ServiceSet::setProjectId(const std::string& value)
+{
+    projectId_ = value;
+    projectIdIsSet_ = true;
+}
+
+bool ServiceSet::projectIdIsSet() const
+{
+    return projectIdIsSet_;
+}
+
+void ServiceSet::unsetprojectId()
+{
+    projectIdIsSet_ = false;
+}
+
+std::vector<int32_t>& ServiceSet::getProtocols()
+{
+    return protocols_;
+}
+
+void ServiceSet::setProtocols(std::vector<int32_t> value)
+{
+    protocols_ = value;
+    protocolsIsSet_ = true;
+}
+
+bool ServiceSet::protocolsIsSet() const
+{
+    return protocolsIsSet_;
+}
+
+void ServiceSet::unsetprotocols()
+{
+    protocolsIsSet_ = false;
 }
 
 }

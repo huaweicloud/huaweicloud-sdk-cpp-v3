@@ -93,6 +93,15 @@ public:
     void unsetotherProtectVpcs();
     void setOtherProtectVpcs(const std::vector<VpcAttachmentDetail>& value);
 
+    /// <summary>
+    /// 所有资产数量
+    /// </summary>
+
+    int32_t getTotalAssets() const;
+    bool totalAssetsIsSet() const;
+    void unsettotalAssets();
+    void setTotalAssets(int32_t value);
+
 
 protected:
     int32_t total_;
@@ -107,6 +116,8 @@ protected:
     bool selfProtectVpcsIsSet_;
     std::vector<VpcAttachmentDetail> otherProtectVpcs_;
     bool otherProtectVpcsIsSet_;
+    int32_t totalAssets_;
+    bool totalAssetsIsSet_;
 
 };
 

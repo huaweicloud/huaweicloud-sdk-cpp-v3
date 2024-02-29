@@ -386,6 +386,9 @@ HttpRequestDef CfwMeta::genRequestDefForListAddressSetDetail() {
     reqDefBuilder.withRequestField(FieldDef().withName("FwInstanceId")
                   .withJsonTag("fw_instance_id")
                   .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("QueryAddressSetType")
+                  .withJsonTag("query_address_set_type")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 
@@ -414,6 +417,9 @@ HttpRequestDef CfwMeta::genRequestDefForListAddressSets() {
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("FwInstanceId")
                   .withJsonTag("fw_instance_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("QueryAddressSetType")
+                  .withJsonTag("query_address_set_type")
                   .withLocationType(Query_));
     return reqDefBuilder;
 }

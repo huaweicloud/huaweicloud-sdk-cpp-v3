@@ -17,15 +17,12 @@ public:
     static HttpRequestDef genRequestDefForDescribeTable();
     static HttpRequestDef genRequestDefForListStore();
     static HttpRequestDef genRequestDefForListTable();
-    static HttpRequestDef genRequestDefForBatchGetKv();
     static HttpRequestDef genRequestDefForBatchWriteKv();
     static HttpRequestDef genRequestDefForDeleteKv();
     static HttpRequestDef genRequestDefForGetKv();
     static HttpRequestDef genRequestDefForPutKv();
-    static HttpRequestDef genRequestDefForRenameKv();
     static HttpRequestDef genRequestDefForScanKv();
     static HttpRequestDef genRequestDefForScanSkeyKv();
-    static HttpRequestDef genRequestDefForTransactWriteSkeyKv();
     static HttpRequestDef genRequestDefForUpdateKv();
 };
 

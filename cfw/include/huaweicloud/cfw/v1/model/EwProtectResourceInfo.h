@@ -101,6 +101,15 @@ public:
     void unsetprotectedResourceMode();
     void setProtectedResourceMode(const std::string& value);
 
+    /// <summary>
+    /// 防护VPC的防护状态，0表示已关联，1表示未关联。
+    /// </summary>
+
+    int32_t getStatus() const;
+    bool statusIsSet() const;
+    void unsetstatus();
+    void setStatus(int32_t value);
+
 
 protected:
     int32_t protectedResourceType_;
@@ -117,6 +126,8 @@ protected:
     bool protectedResourceProjectIdIsSet_;
     std::string protectedResourceMode_;
     bool protectedResourceModeIsSet_;
+    int32_t status_;
+    bool statusIsSet_;
 
 };
 

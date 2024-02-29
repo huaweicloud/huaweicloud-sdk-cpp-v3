@@ -14,6 +14,8 @@ RuleId::RuleId()
 {
     id_ = "";
     idIsSet_ = false;
+    name_ = "";
+    nameIsSet_ = false;
 }
 
 RuleId::~RuleId() = default;
@@ -29,6 +31,9 @@ web::json::value RuleId::toJson() const
     if(idIsSet_) {
         val[utility::conversions::to_string_t("id")] = ModelBase::toJson(id_);
     }
+    if(nameIsSet_) {
+        val[utility::conversions::to_string_t("name")] = ModelBase::toJson(name_);
+    }
 
     return val;
 }
@@ -43,6 +48,15 @@ bool RuleId::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setName(refVal);
         }
     }
     return ok;
@@ -68,6 +82,27 @@ bool RuleId::idIsSet() const
 void RuleId::unsetid()
 {
     idIsSet_ = false;
+}
+
+std::string RuleId::getName() const
+{
+    return name_;
+}
+
+void RuleId::setName(const std::string& value)
+{
+    name_ = value;
+    nameIsSet_ = true;
+}
+
+bool RuleId::nameIsSet() const
+{
+    return nameIsSet_;
+}
+
+void RuleId::unsetname()
+{
+    nameIsSet_ = false;
 }
 
 }

@@ -1094,6 +1094,9 @@ std::shared_ptr<ListAddressSetDetailResponse> CfwClient::listAddressSetDetail(Li
     if (request.fwInstanceIdIsSet()) {
         localVarQueryParams["fw_instance_id"] = parameterToString(request.getFwInstanceId());
     }
+    if (request.queryAddressSetTypeIsSet()) {
+        localVarQueryParams["query_address_set_type"] = parameterToString(request.getQueryAddressSetType());
+    }
 
     std::string localVarHttpBody;
 
@@ -1146,6 +1149,9 @@ std::shared_ptr<ListAddressSetsResponse> CfwClient::listAddressSets(ListAddressS
     }
     if (request.fwInstanceIdIsSet()) {
         localVarQueryParams["fw_instance_id"] = parameterToString(request.getFwInstanceId());
+    }
+    if (request.queryAddressSetTypeIsSet()) {
+        localVarQueryParams["query_address_set_type"] = parameterToString(request.getQueryAddressSetType());
     }
 
     std::string localVarHttpBody;

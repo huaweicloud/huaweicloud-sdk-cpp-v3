@@ -15,6 +15,8 @@ EIPSwitchStatusVO::EIPSwitchStatusVO()
     objectId_ = "";
     objectIdIsSet_ = false;
     failEipIdListIsSet_ = false;
+    id_ = "";
+    idIsSet_ = false;
 }
 
 EIPSwitchStatusVO::~EIPSwitchStatusVO() = default;
@@ -32,6 +34,9 @@ web::json::value EIPSwitchStatusVO::toJson() const
     }
     if(failEipIdListIsSet_) {
         val[utility::conversions::to_string_t("fail_eip_id_list")] = ModelBase::toJson(failEipIdList_);
+    }
+    if(idIsSet_) {
+        val[utility::conversions::to_string_t("id")] = ModelBase::toJson(id_);
     }
 
     return val;
@@ -56,6 +61,15 @@ bool EIPSwitchStatusVO::fromJson(const web::json::value& val)
             std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFailEipIdList(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setId(refVal);
         }
     }
     return ok;
@@ -102,6 +116,27 @@ bool EIPSwitchStatusVO::failEipIdListIsSet() const
 void EIPSwitchStatusVO::unsetfailEipIdList()
 {
     failEipIdListIsSet_ = false;
+}
+
+std::string EIPSwitchStatusVO::getId() const
+{
+    return id_;
+}
+
+void EIPSwitchStatusVO::setId(const std::string& value)
+{
+    id_ = value;
+    idIsSet_ = true;
+}
+
+bool EIPSwitchStatusVO::idIsSet() const
+{
+    return idIsSet_;
+}
+
+void EIPSwitchStatusVO::unsetid()
+{
+    idIsSet_ = false;
 }
 
 }

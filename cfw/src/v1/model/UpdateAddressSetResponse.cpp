@@ -39,7 +39,7 @@ bool UpdateAddressSetResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("data"));
         if(!fieldValue.is_null())
         {
-            IdObject refVal;
+            UpdateAddressSetResponseData refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setData(refVal);
         }
@@ -48,12 +48,12 @@ bool UpdateAddressSetResponse::fromJson(const web::json::value& val)
 }
 
 
-IdObject UpdateAddressSetResponse::getData() const
+UpdateAddressSetResponseData UpdateAddressSetResponse::getData() const
 {
     return data_;
 }
 
-void UpdateAddressSetResponse::setData(const IdObject& value)
+void UpdateAddressSetResponse::setData(const UpdateAddressSetResponseData& value)
 {
     data_ = value;
     dataIsSet_ = true;

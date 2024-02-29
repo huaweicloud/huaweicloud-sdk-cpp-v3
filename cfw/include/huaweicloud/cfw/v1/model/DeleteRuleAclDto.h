@@ -49,7 +49,7 @@ public:
     void setObjectId(const std::string& value);
 
     /// <summary>
-    /// 规则列表
+    /// 规则ID列表
     /// </summary>
 
     std::vector<std::string>& getRuleIds();

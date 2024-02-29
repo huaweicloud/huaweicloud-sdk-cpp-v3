@@ -1,3 +1,138 @@
+# 3.1.75 2024-02-29
+
+### HuaweiCloud SDK CFW
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListAddressSets**
+    - 请求参数变更
+      - `+ query_address_set_type`
+    - 响应参数变更
+      - `+ data.records.object_id`
+      - `+ data.records.address_set_type`
+  - **UpdateAclRuleOrder**
+    - 响应参数变更
+      - `+ data.name`
+  - **AddBlackWhiteList**
+    - 响应参数变更
+      - `+ data.name`
+  - **UpdateBlackWhiteList**
+    - 响应参数变更
+      - `+ data.name`
+  - **DeleteBlackWhiteList**
+    - 响应参数变更
+      - `+ data.name`
+  - **ChangeIpsProtectMode**
+    - 响应参数变更
+      - `+ data.name`
+  - **AddServiceSet**
+    - 响应参数变更
+      - `+ data.name`
+  - **ListServiceSetDetail**
+    - 响应参数变更
+      - `+ data.service_set_type`
+  - **UpdateServiceSet**
+    - 响应参数变更
+      - `+ data.name`
+  - **DeleteServiceSet**
+    - 响应参数变更
+      - `+ data.name`
+  - **DeleteServiceItem**
+    - 响应参数变更
+      - `+ data.name`
+  - **CreateFirewall**
+    - 请求参数变更
+      - `- flavor.version: enum value [Platinum]`
+    - 响应参数变更
+      - `- data.flavor.version: enum value [Platinum]`
+  - **ChangeEipStatus**
+    - 响应参数变更
+      - `+ data.id`
+  - **DeleteAddressItem**
+    - 响应参数变更
+      - `+ data.name`
+  - **AddAddressSet**
+    - 响应参数变更
+      - `+ data.name`
+  - **ListAddressSetDetail**
+    - 请求参数变更
+      - `+ query_address_set_type`
+    - 响应参数变更
+      - `+ data.address_set_type`
+  - **UpdateAddressSet**
+    - 响应参数变更
+      - `* data: object<IdObject> -> object<UpdateAddressSetResponseData>`
+  - **DeleteAddressSet**
+    - 响应参数变更
+      - `+ data.name`
+  - **CreateEastWestFirewall**
+    - 响应参数变更
+      - `+ data.name`
+  - **ListEastWestFirewall**
+    - 响应参数变更
+      - `+ data.protect_infos.status`
+  - **AddAclRule**
+    - 响应参数变更
+      - `+ data.rules.name`
+  - **DeleteAclRule**
+    - 响应参数变更
+      - `+ data.name`
+  - **UpdateAclRule**
+    - 响应参数变更
+      - `+ data.name`
+  - **ListAclRules**
+    - 响应参数变更
+      - `+ data.records.created_date`
+      - `+ data.records.last_open_time`
+  - **AddServiceItems**
+    - 响应参数变更
+      - `+ data.items.name`
+  - **AddAddressItem**
+    - 响应参数变更
+      - `+ data.items.name`
+  - **ListServiceSets**
+    - 响应参数变更
+      - `+ data.records.service_set_type`
+      - `+ data.records.project_id`
+      - `+ data.records.protocols`
+  - **ListProtectedVpcs**
+    - 响应参数变更
+      - `+ data.total_assets`
+  - **ListFirewallDetail**
+    - 响应参数变更
+      - `+ data.records.is_available_obs`
+      - `+ data.records.is_support_threat_tags`
+  - **ListFirewallList**
+    - 响应参数变更
+      - `+ is_support_postpaid`
+      - `+ is_support_buy_professional`
+      - `+ has_ndr`
+      - `+ is_support_basic_version`
+
+### HuaweiCloud SDK KVS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 移除接口`RenameKv`、`BatchGetKv`、`TransactWriteSkeyKv`
+
+### HuaweiCloud SDK LTS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateLogStream**
+    - 请求参数变更
+      - `+ log_stream_name_alias`
+      - `+ enterprise_project_name`
+
 # 3.1.74 2024-02-22
 
 ### HuaweiCloud SDK GaussDB

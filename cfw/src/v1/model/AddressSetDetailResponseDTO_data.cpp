@@ -18,6 +18,8 @@ AddressSetDetailResponseDTO_data::AddressSetDetailResponseDTO_data()
     nameIsSet_ = false;
     description_ = "";
     descriptionIsSet_ = false;
+    addressSetType_ = 0;
+    addressSetTypeIsSet_ = false;
     addressType_ = 0;
     addressTypeIsSet_ = false;
 }
@@ -40,6 +42,9 @@ web::json::value AddressSetDetailResponseDTO_data::toJson() const
     }
     if(descriptionIsSet_) {
         val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
+    }
+    if(addressSetTypeIsSet_) {
+        val[utility::conversions::to_string_t("address_set_type")] = ModelBase::toJson(addressSetType_);
     }
     if(addressTypeIsSet_) {
         val[utility::conversions::to_string_t("address_type")] = ModelBase::toJson(addressType_);
@@ -76,6 +81,15 @@ bool AddressSetDetailResponseDTO_data::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDescription(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("address_set_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("address_set_type"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAddressSetType(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("address_type"))) {
@@ -152,6 +166,27 @@ bool AddressSetDetailResponseDTO_data::descriptionIsSet() const
 void AddressSetDetailResponseDTO_data::unsetdescription()
 {
     descriptionIsSet_ = false;
+}
+
+int32_t AddressSetDetailResponseDTO_data::getAddressSetType() const
+{
+    return addressSetType_;
+}
+
+void AddressSetDetailResponseDTO_data::setAddressSetType(int32_t value)
+{
+    addressSetType_ = value;
+    addressSetTypeIsSet_ = true;
+}
+
+bool AddressSetDetailResponseDTO_data::addressSetTypeIsSet() const
+{
+    return addressSetTypeIsSet_;
+}
+
+void AddressSetDetailResponseDTO_data::unsetaddressSetType()
+{
+    addressSetTypeIsSet_ = false;
 }
 
 int32_t AddressSetDetailResponseDTO_data::getAddressType() const

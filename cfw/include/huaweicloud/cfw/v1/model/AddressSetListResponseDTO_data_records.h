@@ -83,6 +83,24 @@ public:
     void unsetaddressType();
     void setAddressType(int32_t value);
 
+    /// <summary>
+    /// 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用查询防火墙实例接口获得，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id。具体可参考APIExlorer和帮助中心FAQ。
+    /// </summary>
+
+    std::string getObjectId() const;
+    bool objectIdIsSet() const;
+    void unsetobjectId();
+    void setObjectId(const std::string& value);
+
+    /// <summary>
+    /// 地址组类型，0表示自定义地址组，1表示预定义地址组
+    /// </summary>
+
+    int32_t getAddressSetType() const;
+    bool addressSetTypeIsSet() const;
+    void unsetaddressSetType();
+    void setAddressSetType(int32_t value);
+
 
 protected:
     std::string setId_;
@@ -95,6 +113,10 @@ protected:
     bool nameIsSet_;
     int32_t addressType_;
     bool addressTypeIsSet_;
+    std::string objectId_;
+    bool objectIdIsSet_;
+    int32_t addressSetType_;
+    bool addressSetTypeIsSet_;
 
 };
 

@@ -18,6 +18,8 @@ ListAddressSetDetailRequest::ListAddressSetDetailRequest()
     enterpriseProjectIdIsSet_ = false;
     fwInstanceId_ = "";
     fwInstanceIdIsSet_ = false;
+    queryAddressSetType_ = 0;
+    queryAddressSetTypeIsSet_ = false;
 }
 
 ListAddressSetDetailRequest::~ListAddressSetDetailRequest() = default;
@@ -38,6 +40,9 @@ web::json::value ListAddressSetDetailRequest::toJson() const
     }
     if(fwInstanceIdIsSet_) {
         val[utility::conversions::to_string_t("fw_instance_id")] = ModelBase::toJson(fwInstanceId_);
+    }
+    if(queryAddressSetTypeIsSet_) {
+        val[utility::conversions::to_string_t("query_address_set_type")] = ModelBase::toJson(queryAddressSetType_);
     }
 
     return val;
@@ -71,6 +76,15 @@ bool ListAddressSetDetailRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFwInstanceId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("query_address_set_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("query_address_set_type"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setQueryAddressSetType(refVal);
         }
     }
     return ok;
@@ -138,6 +152,27 @@ bool ListAddressSetDetailRequest::fwInstanceIdIsSet() const
 void ListAddressSetDetailRequest::unsetfwInstanceId()
 {
     fwInstanceIdIsSet_ = false;
+}
+
+int32_t ListAddressSetDetailRequest::getQueryAddressSetType() const
+{
+    return queryAddressSetType_;
+}
+
+void ListAddressSetDetailRequest::setQueryAddressSetType(int32_t value)
+{
+    queryAddressSetType_ = value;
+    queryAddressSetTypeIsSet_ = true;
+}
+
+bool ListAddressSetDetailRequest::queryAddressSetTypeIsSet() const
+{
+    return queryAddressSetTypeIsSet_;
+}
+
+void ListAddressSetDetailRequest::unsetqueryAddressSetType()
+{
+    queryAddressSetTypeIsSet_ = false;
 }
 
 }

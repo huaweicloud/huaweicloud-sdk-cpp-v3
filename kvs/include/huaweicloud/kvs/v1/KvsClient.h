@@ -23,9 +23,6 @@
 #include <huaweicloud/kvs/v1/model/ListTableResponse.h>
 #include <string>
 
-#include <huaweicloud/kvs/v1/model/BatchGetKvRequest.h>
-#include <huaweicloud/kvs/v1/model/BatchGetKvRequestBody.h>
-#include <huaweicloud/kvs/v1/model/BatchGetKvResponse.h>
 #include <huaweicloud/kvs/v1/model/BatchWriteKvRequest.h>
 #include <huaweicloud/kvs/v1/model/BatchWriteKvRequestBody.h>
 #include <huaweicloud/kvs/v1/model/BatchWriteKvResponse.h>
@@ -38,18 +35,12 @@
 #include <huaweicloud/kvs/v1/model/PutKvRequest.h>
 #include <huaweicloud/kvs/v1/model/PutKvRequestBody.h>
 #include <huaweicloud/kvs/v1/model/PutKvResponse.h>
-#include <huaweicloud/kvs/v1/model/RenameKvRequest.h>
-#include <huaweicloud/kvs/v1/model/RenameKvRequestBody.h>
-#include <huaweicloud/kvs/v1/model/RenameKvResponse.h>
 #include <huaweicloud/kvs/v1/model/ScanKvRequest.h>
 #include <huaweicloud/kvs/v1/model/ScanKvRequestBody.h>
 #include <huaweicloud/kvs/v1/model/ScanKvResponse.h>
 #include <huaweicloud/kvs/v1/model/ScanSkeyKvRequest.h>
 #include <huaweicloud/kvs/v1/model/ScanSkeyKvRequestBody.h>
 #include <huaweicloud/kvs/v1/model/ScanSkeyKvResponse.h>
-#include <huaweicloud/kvs/v1/model/TransactWriteSkeyKvRequest.h>
-#include <huaweicloud/kvs/v1/model/TransactWriteSkeyKvRequestBody.h>
-#include <huaweicloud/kvs/v1/model/TransactWriteSkeyKvResponse.h>
 #include <huaweicloud/kvs/v1/model/UpdateKvRequest.h>
 #include <huaweicloud/kvs/v1/model/UpdateKvRequestBody.h>
 #include <huaweicloud/kvs/v1/model/UpdateKvResponse.h>
@@ -111,14 +102,6 @@ public:
         ListTableRequest &request
     );
 
-    // 批量读请求
-    //
-    // 批量读请求，其中可以携带一或多个表的不同kv的查询操作。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<BatchGetKvResponse> batchGetKv(
-        BatchGetKvRequest &request
-    );
     // 批量写请求
     //
     // 批量写请求，其中可以携带一或多个表的不同kv的写操作，上传kv/删除kv。
@@ -151,16 +134,6 @@ public:
     std::shared_ptr<PutKvResponse> putKv(
         PutKvRequest &request
     );
-    // 排序键更名
-    //
-    // 更新指定KvBlob的分区键和属性信息
-    // 1.rename-kv只支持对KvBlob生效，否则返回400 BadReqeust；
-    // 2.rename-kv同时只能增加对Xattr字段修改，不支持内容修改。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<RenameKvResponse> renameKv(
-        RenameKvRequest &request
-    );
     // 扫描所有kv
     //
     // 指定表，扫描表下所有kv；允许指定过滤条件。
@@ -176,14 +149,6 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ScanSkeyKvResponse> scanSkeyKv(
         ScanSkeyKvRequest &request
-    );
-    // 指定分区键下事务写请求
-    //
-    // transact-write-skey-kv支持对某个表指定分区键下的kv的操作，kv条数最大100,000，body最大不超过16MB，该操作保证原子性。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<TransactWriteSkeyKvResponse> transactWriteSkeyKv(
-        TransactWriteSkeyKvRequest &request
     );
     // 更新单个kv
     //

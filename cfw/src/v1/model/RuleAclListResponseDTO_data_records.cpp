@@ -42,6 +42,10 @@ RuleAclListResponseDTO_data_records::RuleAclListResponseDTO_data_records()
     serviceIsSet_ = false;
     type_ = 0;
     typeIsSet_ = false;
+    createdDate_ = "";
+    createdDateIsSet_ = false;
+    lastOpenTime_ = "";
+    lastOpenTimeIsSet_ = false;
     tagIsSet_ = false;
 }
 
@@ -105,6 +109,12 @@ web::json::value RuleAclListResponseDTO_data_records::toJson() const
     }
     if(typeIsSet_) {
         val[utility::conversions::to_string_t("type")] = ModelBase::toJson(type_);
+    }
+    if(createdDateIsSet_) {
+        val[utility::conversions::to_string_t("created_date")] = ModelBase::toJson(createdDate_);
+    }
+    if(lastOpenTimeIsSet_) {
+        val[utility::conversions::to_string_t("last_open_time")] = ModelBase::toJson(lastOpenTime_);
     }
     if(tagIsSet_) {
         val[utility::conversions::to_string_t("tag")] = ModelBase::toJson(tag_);
@@ -267,6 +277,24 @@ bool RuleAclListResponseDTO_data_records::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("created_date"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("created_date"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCreatedDate(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("last_open_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("last_open_time"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLastOpenTime(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("tag"))) {
@@ -637,6 +665,48 @@ bool RuleAclListResponseDTO_data_records::typeIsSet() const
 void RuleAclListResponseDTO_data_records::unsettype()
 {
     typeIsSet_ = false;
+}
+
+std::string RuleAclListResponseDTO_data_records::getCreatedDate() const
+{
+    return createdDate_;
+}
+
+void RuleAclListResponseDTO_data_records::setCreatedDate(const std::string& value)
+{
+    createdDate_ = value;
+    createdDateIsSet_ = true;
+}
+
+bool RuleAclListResponseDTO_data_records::createdDateIsSet() const
+{
+    return createdDateIsSet_;
+}
+
+void RuleAclListResponseDTO_data_records::unsetcreatedDate()
+{
+    createdDateIsSet_ = false;
+}
+
+std::string RuleAclListResponseDTO_data_records::getLastOpenTime() const
+{
+    return lastOpenTime_;
+}
+
+void RuleAclListResponseDTO_data_records::setLastOpenTime(const std::string& value)
+{
+    lastOpenTime_ = value;
+    lastOpenTimeIsSet_ = true;
+}
+
+bool RuleAclListResponseDTO_data_records::lastOpenTimeIsSet() const
+{
+    return lastOpenTimeIsSet_;
+}
+
+void RuleAclListResponseDTO_data_records::unsetlastOpenTime()
+{
+    lastOpenTimeIsSet_ = false;
 }
 
 TagsVO RuleAclListResponseDTO_data_records::getTag() const

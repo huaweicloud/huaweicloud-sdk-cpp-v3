@@ -30,6 +30,10 @@ GetFirewallInstanceResponseRecord::GetFirewallInstanceResponseRecord()
     statusIsSet_ = false;
     isOldFirewallInstance_ = false;
     isOldFirewallInstanceIsSet_ = false;
+    isAvailableObs_ = false;
+    isAvailableObsIsSet_ = false;
+    isSupportThreatTags_ = false;
+    isSupportThreatTagsIsSet_ = false;
     supportIpv6_ = false;
     supportIpv6IsSet_ = false;
     featureToggleIsSet_ = false;
@@ -83,6 +87,12 @@ web::json::value GetFirewallInstanceResponseRecord::toJson() const
     }
     if(isOldFirewallInstanceIsSet_) {
         val[utility::conversions::to_string_t("is_old_firewall_instance")] = ModelBase::toJson(isOldFirewallInstance_);
+    }
+    if(isAvailableObsIsSet_) {
+        val[utility::conversions::to_string_t("is_available_obs")] = ModelBase::toJson(isAvailableObs_);
+    }
+    if(isSupportThreatTagsIsSet_) {
+        val[utility::conversions::to_string_t("is_support_threat_tags")] = ModelBase::toJson(isSupportThreatTags_);
     }
     if(supportIpv6IsSet_) {
         val[utility::conversions::to_string_t("support_ipv6")] = ModelBase::toJson(supportIpv6_);
@@ -200,6 +210,24 @@ bool GetFirewallInstanceResponseRecord::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsOldFirewallInstance(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_available_obs"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_available_obs"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsAvailableObs(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_support_threat_tags"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_support_threat_tags"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsSupportThreatTags(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("support_ipv6"))) {
@@ -477,6 +505,48 @@ bool GetFirewallInstanceResponseRecord::isOldFirewallInstanceIsSet() const
 void GetFirewallInstanceResponseRecord::unsetisOldFirewallInstance()
 {
     isOldFirewallInstanceIsSet_ = false;
+}
+
+bool GetFirewallInstanceResponseRecord::isIsAvailableObs() const
+{
+    return isAvailableObs_;
+}
+
+void GetFirewallInstanceResponseRecord::setIsAvailableObs(bool value)
+{
+    isAvailableObs_ = value;
+    isAvailableObsIsSet_ = true;
+}
+
+bool GetFirewallInstanceResponseRecord::isAvailableObsIsSet() const
+{
+    return isAvailableObsIsSet_;
+}
+
+void GetFirewallInstanceResponseRecord::unsetisAvailableObs()
+{
+    isAvailableObsIsSet_ = false;
+}
+
+bool GetFirewallInstanceResponseRecord::isIsSupportThreatTags() const
+{
+    return isSupportThreatTags_;
+}
+
+void GetFirewallInstanceResponseRecord::setIsSupportThreatTags(bool value)
+{
+    isSupportThreatTags_ = value;
+    isSupportThreatTagsIsSet_ = true;
+}
+
+bool GetFirewallInstanceResponseRecord::isSupportThreatTagsIsSet() const
+{
+    return isSupportThreatTagsIsSet_;
+}
+
+void GetFirewallInstanceResponseRecord::unsetisSupportThreatTags()
+{
+    isSupportThreatTagsIsSet_ = false;
 }
 
 bool GetFirewallInstanceResponseRecord::isSupportIpv6() const

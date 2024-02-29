@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_CFW_V1_MODEL_IdObject_H_
-#define HUAWEICLOUD_SDK_CFW_V1_MODEL_IdObject_H_
+#ifndef HUAWEICLOUD_SDK_CFW_V1_MODEL_UpdateAddressSetResponseData_H_
+#define HUAWEICLOUD_SDK_CFW_V1_MODEL_UpdateAddressSetResponseData_H_
 
 
 #include <huaweicloud/cfw/v1/CfwExport.h>
@@ -22,12 +22,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// 
 /// </summary>
-class HUAWEICLOUD_CFW_V1_EXPORT  IdObject
+class HUAWEICLOUD_CFW_V1_EXPORT  UpdateAddressSetResponseData
     : public ModelBase
 {
 public:
-    IdObject();
-    virtual ~IdObject();
+    UpdateAddressSetResponseData();
+    virtual ~UpdateAddressSetResponseData();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -36,10 +36,10 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// IdObject members
+    /// UpdateAddressSetResponseData members
 
     /// <summary>
-    /// id值
+    /// Id
     /// </summary>
 
     std::string getId() const;
@@ -47,21 +47,10 @@ public:
     void unsetid();
     void setId(const std::string& value);
 
-    /// <summary>
-    /// 名称
-    /// </summary>
-
-    std::string getName() const;
-    bool nameIsSet() const;
-    void unsetname();
-    void setName(const std::string& value);
-
 
 protected:
     std::string id_;
     bool idIsSet_;
-    std::string name_;
-    bool nameIsSet_;
 
 };
 
@@ -72,4 +61,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_CFW_V1_MODEL_IdObject_H_
+#endif // HUAWEICLOUD_SDK_CFW_V1_MODEL_UpdateAddressSetResponseData_H_

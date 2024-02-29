@@ -57,12 +57,23 @@ public:
     void unsetfailEipIdList();
     void setFailEipIdList(const std::vector<std::string>& value);
 
+    /// <summary>
+    /// ID
+    /// </summary>
+
+    std::string getId() const;
+    bool idIsSet() const;
+    void unsetid();
+    void setId(const std::string& value);
+
 
 protected:
     std::string objectId_;
     bool objectIdIsSet_;
     std::vector<std::string> failEipIdList_;
     bool failEipIdListIsSet_;
+    std::string id_;
+    bool idIsSet_;
 
 };
 

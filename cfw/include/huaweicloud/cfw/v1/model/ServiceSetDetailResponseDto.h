@@ -65,6 +65,15 @@ public:
     void unsetdescription();
     void setDescription(const std::string& value);
 
+    /// <summary>
+    /// 服务组类型，0表示自定义服务组，1表示预定义服务组
+    /// </summary>
+
+    int32_t getServiceSetType() const;
+    bool serviceSetTypeIsSet() const;
+    void unsetserviceSetType();
+    void setServiceSetType(int32_t value);
+
 
 protected:
     std::string id_;
@@ -73,6 +82,8 @@ protected:
     bool nameIsSet_;
     std::string description_;
     bool descriptionIsSet_;
+    int32_t serviceSetType_;
+    bool serviceSetTypeIsSet_;
 
 };
 

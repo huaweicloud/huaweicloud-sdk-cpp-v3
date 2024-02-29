@@ -21,6 +21,8 @@ VPCProtectsVo::VPCProtectsVo()
     protectVpcsIsSet_ = false;
     selfProtectVpcsIsSet_ = false;
     otherProtectVpcsIsSet_ = false;
+    totalAssets_ = 0;
+    totalAssetsIsSet_ = false;
 }
 
 VPCProtectsVo::~VPCProtectsVo() = default;
@@ -50,6 +52,9 @@ web::json::value VPCProtectsVo::toJson() const
     }
     if(otherProtectVpcsIsSet_) {
         val[utility::conversions::to_string_t("other_protect_vpcs")] = ModelBase::toJson(otherProtectVpcs_);
+    }
+    if(totalAssetsIsSet_) {
+        val[utility::conversions::to_string_t("total_assets")] = ModelBase::toJson(totalAssets_);
     }
 
     return val;
@@ -110,6 +115,15 @@ bool VPCProtectsVo::fromJson(const web::json::value& val)
             std::vector<VpcAttachmentDetail> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setOtherProtectVpcs(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("total_assets"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("total_assets"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTotalAssets(refVal);
         }
     }
     return ok;
@@ -240,6 +254,27 @@ bool VPCProtectsVo::otherProtectVpcsIsSet() const
 void VPCProtectsVo::unsetotherProtectVpcs()
 {
     otherProtectVpcsIsSet_ = false;
+}
+
+int32_t VPCProtectsVo::getTotalAssets() const
+{
+    return totalAssets_;
+}
+
+void VPCProtectsVo::setTotalAssets(int32_t value)
+{
+    totalAssets_ = value;
+    totalAssetsIsSet_ = true;
+}
+
+bool VPCProtectsVo::totalAssetsIsSet() const
+{
+    return totalAssetsIsSet_;
+}
+
+void VPCProtectsVo::unsettotalAssets()
+{
+    totalAssetsIsSet_ = false;
 }
 
 }

@@ -134,6 +134,24 @@ public:
     void setIsOldFirewallInstance(bool value);
 
     /// <summary>
+    /// 是否支持obs
+    /// </summary>
+
+    bool isIsAvailableObs() const;
+    bool isAvailableObsIsSet() const;
+    void unsetisAvailableObs();
+    void setIsAvailableObs(bool value);
+
+    /// <summary>
+    /// 是否支持威胁标签
+    /// </summary>
+
+    bool isIsSupportThreatTags() const;
+    bool isSupportThreatTagsIsSet() const;
+    void unsetisSupportThreatTags();
+    void setIsSupportThreatTags(bool value);
+
+    /// <summary>
     /// 是否支持ipv6，true表示是，false表示不是
     /// </summary>
 
@@ -218,6 +236,10 @@ protected:
     bool statusIsSet_;
     bool isOldFirewallInstance_;
     bool isOldFirewallInstanceIsSet_;
+    bool isAvailableObs_;
+    bool isAvailableObsIsSet_;
+    bool isSupportThreatTags_;
+    bool isSupportThreatTagsIsSet_;
     bool supportIpv6_;
     bool supportIpv6IsSet_;
     std::map<std::string, bool> featureToggle_;

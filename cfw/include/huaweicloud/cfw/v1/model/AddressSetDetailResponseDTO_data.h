@@ -66,6 +66,15 @@ public:
     void setDescription(const std::string& value);
 
     /// <summary>
+    /// 地址组类型，0表示自定义地址组，1表示预定义地址组
+    /// </summary>
+
+    int32_t getAddressSetType() const;
+    bool addressSetTypeIsSet() const;
+    void unsetaddressSetType();
+    void setAddressSetType(int32_t value);
+
+    /// <summary>
     /// 地址类型0 ipv4,1 ipv6
     /// </summary>
 
@@ -82,6 +91,8 @@ protected:
     bool nameIsSet_;
     std::string description_;
     bool descriptionIsSet_;
+    int32_t addressSetType_;
+    bool addressSetTypeIsSet_;
     int32_t addressType_;
     bool addressTypeIsSet_;
 

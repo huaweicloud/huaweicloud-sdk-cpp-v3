@@ -26,6 +26,8 @@ EwProtectResourceInfo::EwProtectResourceInfo()
     protectedResourceProjectIdIsSet_ = false;
     protectedResourceMode_ = "";
     protectedResourceModeIsSet_ = false;
+    status_ = 0;
+    statusIsSet_ = false;
 }
 
 EwProtectResourceInfo::~EwProtectResourceInfo() = default;
@@ -58,6 +60,9 @@ web::json::value EwProtectResourceInfo::toJson() const
     }
     if(protectedResourceModeIsSet_) {
         val[utility::conversions::to_string_t("protected_resource_mode")] = ModelBase::toJson(protectedResourceMode_);
+    }
+    if(statusIsSet_) {
+        val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
     }
 
     return val;
@@ -127,6 +132,15 @@ bool EwProtectResourceInfo::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setProtectedResourceMode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("status"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("status"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setStatus(refVal);
         }
     }
     return ok;
@@ -278,6 +292,27 @@ bool EwProtectResourceInfo::protectedResourceModeIsSet() const
 void EwProtectResourceInfo::unsetprotectedResourceMode()
 {
     protectedResourceModeIsSet_ = false;
+}
+
+int32_t EwProtectResourceInfo::getStatus() const
+{
+    return status_;
+}
+
+void EwProtectResourceInfo::setStatus(int32_t value)
+{
+    status_ = value;
+    statusIsSet_ = true;
+}
+
+bool EwProtectResourceInfo::statusIsSet() const
+{
+    return statusIsSet_;
+}
+
+void EwProtectResourceInfo::unsetstatus()
+{
+    statusIsSet_ = false;
 }
 
 }

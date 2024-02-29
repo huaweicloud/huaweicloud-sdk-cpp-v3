@@ -18,6 +18,8 @@ ServiceSetDetailResponseDto::ServiceSetDetailResponseDto()
     nameIsSet_ = false;
     description_ = "";
     descriptionIsSet_ = false;
+    serviceSetType_ = 0;
+    serviceSetTypeIsSet_ = false;
 }
 
 ServiceSetDetailResponseDto::~ServiceSetDetailResponseDto() = default;
@@ -38,6 +40,9 @@ web::json::value ServiceSetDetailResponseDto::toJson() const
     }
     if(descriptionIsSet_) {
         val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
+    }
+    if(serviceSetTypeIsSet_) {
+        val[utility::conversions::to_string_t("service_set_type")] = ModelBase::toJson(serviceSetType_);
     }
 
     return val;
@@ -71,6 +76,15 @@ bool ServiceSetDetailResponseDto::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDescription(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("service_set_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("service_set_type"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setServiceSetType(refVal);
         }
     }
     return ok;
@@ -138,6 +152,27 @@ bool ServiceSetDetailResponseDto::descriptionIsSet() const
 void ServiceSetDetailResponseDto::unsetdescription()
 {
     descriptionIsSet_ = false;
+}
+
+int32_t ServiceSetDetailResponseDto::getServiceSetType() const
+{
+    return serviceSetType_;
+}
+
+void ServiceSetDetailResponseDto::setServiceSetType(int32_t value)
+{
+    serviceSetType_ = value;
+    serviceSetTypeIsSet_ = true;
+}
+
+bool ServiceSetDetailResponseDto::serviceSetTypeIsSet() const
+{
+    return serviceSetTypeIsSet_;
+}
+
+void ServiceSetDetailResponseDto::unsetserviceSetType()
+{
+    serviceSetTypeIsSet_ = false;
 }
 
 }

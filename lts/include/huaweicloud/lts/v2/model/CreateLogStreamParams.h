@@ -67,6 +67,24 @@ public:
     void unsettags();
     void setTags(const std::vector<TagsBody>& value);
 
+    /// <summary>
+    /// 日志流名称别名
+    /// </summary>
+
+    std::string getLogStreamNameAlias() const;
+    bool logStreamNameAliasIsSet() const;
+    void unsetlogStreamNameAlias();
+    void setLogStreamNameAlias(const std::string& value);
+
+    /// <summary>
+    /// 企业项目名称 &gt;只能由中文、英文字母、数字、下划线、中划线组成，且不能使用任何大小写形式的“default”； 描述不超过512个字符。
+    /// </summary>
+
+    std::string getEnterpriseProjectName() const;
+    bool enterpriseProjectNameIsSet() const;
+    void unsetenterpriseProjectName();
+    void setEnterpriseProjectName(const std::string& value);
+
 
 protected:
     std::string logStreamName_;
@@ -75,6 +93,10 @@ protected:
     bool ttlInDaysIsSet_;
     std::vector<TagsBody> tags_;
     bool tagsIsSet_;
+    std::string logStreamNameAlias_;
+    bool logStreamNameAliasIsSet_;
+    std::string enterpriseProjectName_;
+    bool enterpriseProjectNameIsSet_;
 
 };
 

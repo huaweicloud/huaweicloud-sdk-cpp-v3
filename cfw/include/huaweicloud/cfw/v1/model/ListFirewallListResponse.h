@@ -48,6 +48,42 @@ public:
     void setUserSupportEps(bool value);
 
     /// <summary>
+    /// 是否存在ndr
+    /// </summary>
+
+    bool isHasNdr() const;
+    bool hasNdrIsSet() const;
+    void unsethasNdr();
+    void setHasNdr(bool value);
+
+    /// <summary>
+    /// 是否支持按需购买
+    /// </summary>
+
+    bool isIsSupportPostpaid() const;
+    bool isSupportPostpaidIsSet() const;
+    void unsetisSupportPostpaid();
+    void setIsSupportPostpaid(bool value);
+
+    /// <summary>
+    /// 是否支持基础版
+    /// </summary>
+
+    bool isIsSupportBasicVersion() const;
+    bool isSupportBasicVersionIsSet() const;
+    void unsetisSupportBasicVersion();
+    void setIsSupportBasicVersion(bool value);
+
+    /// <summary>
+    /// 是否支持购买专业版
+    /// </summary>
+
+    bool isIsSupportBuyProfessional() const;
+    bool isSupportBuyProfessionalIsSet() const;
+    void unsetisSupportBuyProfessional();
+    void setIsSupportBuyProfessional(bool value);
+
+    /// <summary>
     /// 
     /// </summary>
 
@@ -60,6 +96,14 @@ public:
 protected:
     bool userSupportEps_;
     bool userSupportEpsIsSet_;
+    bool hasNdr_;
+    bool hasNdrIsSet_;
+    bool isSupportPostpaid_;
+    bool isSupportPostpaidIsSet_;
+    bool isSupportBasicVersion_;
+    bool isSupportBasicVersionIsSet_;
+    bool isSupportBuyProfessional_;
+    bool isSupportBuyProfessionalIsSet_;
     HttpFirewallInstanceListResponseData data_;
     bool dataIsSet_;
 

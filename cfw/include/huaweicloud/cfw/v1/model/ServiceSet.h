@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -66,6 +67,15 @@ public:
     void setDescription(const std::string& value);
 
     /// <summary>
+    /// 服务组类型，0表示自定义服务组，1表示预定义服务组
+    /// </summary>
+
+    int32_t getServiceSetType() const;
+    bool serviceSetTypeIsSet() const;
+    void unsetserviceSetType();
+    void setServiceSetType(int32_t value);
+
+    /// <summary>
     /// 引用次数
     /// </summary>
 
@@ -83,6 +93,24 @@ public:
     void unsetstatus();
     void setStatus(const std::string& value);
 
+    /// <summary>
+    /// 项目id
+    /// </summary>
+
+    std::string getProjectId() const;
+    bool projectIdIsSet() const;
+    void unsetprojectId();
+    void setProjectId(const std::string& value);
+
+    /// <summary>
+    /// 协议类型列表
+    /// </summary>
+
+    std::vector<int32_t>& getProtocols();
+    bool protocolsIsSet() const;
+    void unsetprotocols();
+    void setProtocols(std::vector<int32_t> value);
+
 
 protected:
     std::string setId_;
@@ -91,10 +119,16 @@ protected:
     bool nameIsSet_;
     std::string description_;
     bool descriptionIsSet_;
+    int32_t serviceSetType_;
+    bool serviceSetTypeIsSet_;
     int32_t refCount_;
     bool refCountIsSet_;
     std::string status_;
     bool statusIsSet_;
+    std::string projectId_;
+    bool projectIdIsSet_;
+    std::vector<int32_t> protocols_;
+    bool protocolsIsSet_;
 
 };
 

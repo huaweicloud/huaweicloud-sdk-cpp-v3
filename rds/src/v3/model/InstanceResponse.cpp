@@ -466,7 +466,7 @@ bool InstanceResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("volume"));
         if(!fieldValue.is_null())
         {
-            Volume refVal;
+            VolumeForInstanceResponse refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setVolume(refVal);
         }
@@ -1156,12 +1156,12 @@ void InstanceResponse::unsetmem()
     memIsSet_ = false;
 }
 
-Volume InstanceResponse::getVolume() const
+VolumeForInstanceResponse InstanceResponse::getVolume() const
 {
     return volume_;
 }
 
-void InstanceResponse::setVolume(const Volume& value)
+void InstanceResponse::setVolume(const VolumeForInstanceResponse& value)
 {
     volume_ = value;
     volumeIsSet_ = true;

@@ -28,6 +28,10 @@ IdCardRequestBody::IdCardRequestBody()
     detectCopyIsSet_ = false;
     returnPortraitLocation_ = false;
     returnPortraitLocationIsSet_ = false;
+    returnPortraitImage_ = false;
+    returnPortraitImageIsSet_ = false;
+    returnAdjustedImage_ = false;
+    returnAdjustedImageIsSet_ = false;
     detectTampering_ = false;
     detectTamperingIsSet_ = false;
     detectBorderIntegrity_ = false;
@@ -75,6 +79,12 @@ web::json::value IdCardRequestBody::toJson() const
     }
     if(returnPortraitLocationIsSet_) {
         val[utility::conversions::to_string_t("return_portrait_location")] = ModelBase::toJson(returnPortraitLocation_);
+    }
+    if(returnPortraitImageIsSet_) {
+        val[utility::conversions::to_string_t("return_portrait_image")] = ModelBase::toJson(returnPortraitImage_);
+    }
+    if(returnAdjustedImageIsSet_) {
+        val[utility::conversions::to_string_t("return_adjusted_image")] = ModelBase::toJson(returnAdjustedImage_);
     }
     if(detectTamperingIsSet_) {
         val[utility::conversions::to_string_t("detect_tampering")] = ModelBase::toJson(detectTampering_);
@@ -171,6 +181,24 @@ bool IdCardRequestBody::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setReturnPortraitLocation(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("return_portrait_image"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("return_portrait_image"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setReturnPortraitImage(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("return_adjusted_image"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("return_adjusted_image"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setReturnAdjustedImage(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("detect_tampering"))) {
@@ -397,6 +425,48 @@ bool IdCardRequestBody::returnPortraitLocationIsSet() const
 void IdCardRequestBody::unsetreturnPortraitLocation()
 {
     returnPortraitLocationIsSet_ = false;
+}
+
+bool IdCardRequestBody::isReturnPortraitImage() const
+{
+    return returnPortraitImage_;
+}
+
+void IdCardRequestBody::setReturnPortraitImage(bool value)
+{
+    returnPortraitImage_ = value;
+    returnPortraitImageIsSet_ = true;
+}
+
+bool IdCardRequestBody::returnPortraitImageIsSet() const
+{
+    return returnPortraitImageIsSet_;
+}
+
+void IdCardRequestBody::unsetreturnPortraitImage()
+{
+    returnPortraitImageIsSet_ = false;
+}
+
+bool IdCardRequestBody::isReturnAdjustedImage() const
+{
+    return returnAdjustedImage_;
+}
+
+void IdCardRequestBody::setReturnAdjustedImage(bool value)
+{
+    returnAdjustedImage_ = value;
+    returnAdjustedImageIsSet_ = true;
+}
+
+bool IdCardRequestBody::returnAdjustedImageIsSet() const
+{
+    return returnAdjustedImageIsSet_;
+}
+
+void IdCardRequestBody::unsetreturnAdjustedImage()
+{
+    returnAdjustedImageIsSet_ = false;
 }
 
 bool IdCardRequestBody::isDetectTampering() const

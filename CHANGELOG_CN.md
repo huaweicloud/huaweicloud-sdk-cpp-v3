@@ -1,3 +1,53 @@
+# 3.1.76 2024-03-07
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _新增特性_
+  - 支持接口`UpdateDatabases`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RecognizeIdCard**
+    - 请求参数变更
+      - `+ return_portrait_image`
+      - `+ return_adjusted_image`
+    - 响应参数变更
+      - `+ result.portrait_image`
+      - `+ result.adjusted_image`
+      - `+ result.front.portrait_image`
+      - `+ result.front.adjusted_image`
+      - `+ result.back.adjusted_image`
+
+### HuaweiCloud SDK RDS
+
+- _新增特性_
+  - 支持以下接口：
+    - `ShowStorageUsedSpace`
+    - `SwitchSqlLimit`
+    - `UpdateSqlLimit`
+    - `ListSqlLimit`
+    - `CreateSqlLimit`
+    - `DeleteSqlLimit`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListInstances**
+    - 响应参数变更
+      - `* instances.volume: object<Volume> -> object<VolumeForInstanceResponse>`
+  - **CreateRestoreInstance**
+    - 请求参数变更
+      - `- replica_of_id`
+      - `- unchangeable_param`
+
 # 3.1.75 2024-02-29
 
 ### HuaweiCloud SDK CFW

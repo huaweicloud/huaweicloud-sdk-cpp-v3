@@ -56,6 +56,9 @@
 #include <huaweicloud/rds/v3/model/CreateRestoreInstanceRequest.h>
 #include <huaweicloud/rds/v3/model/CreateRestoreInstanceRequestBody.h>
 #include <huaweicloud/rds/v3/model/CreateRestoreInstanceResponse.h>
+#include <huaweicloud/rds/v3/model/CreateSqlLimitRequest.h>
+#include <huaweicloud/rds/v3/model/CreateSqlLimitResponse.h>
+#include <huaweicloud/rds/v3/model/CreateSqlLimitRuleReqV3.h>
 #include <huaweicloud/rds/v3/model/CreateXelLogDownloadRequest.h>
 #include <huaweicloud/rds/v3/model/CreateXelLogDownloadRequestBody.h>
 #include <huaweicloud/rds/v3/model/CreateXelLogDownloadResponse.h>
@@ -78,6 +81,9 @@
 #include <huaweicloud/rds/v3/model/DeletePostgresqlHbaConfResponse.h>
 #include <huaweicloud/rds/v3/model/DeleteRdSforMySqlProxyRequest.h>
 #include <huaweicloud/rds/v3/model/DeleteRdSforMySqlProxyResponse.h>
+#include <huaweicloud/rds/v3/model/DeleteSqlLimitRequest.h>
+#include <huaweicloud/rds/v3/model/DeleteSqlLimitResponse.h>
+#include <huaweicloud/rds/v3/model/DeleteSqlLimitRuleReqV3.h>
 #include <huaweicloud/rds/v3/model/DownloadSlowlogRequest.h>
 #include <huaweicloud/rds/v3/model/DownloadSlowlogResponse.h>
 #include <huaweicloud/rds/v3/model/EnableConfigurationRequest.h>
@@ -176,6 +182,8 @@
 #include <huaweicloud/rds/v3/model/ListSlowlogForLtsResponse.h>
 #include <huaweicloud/rds/v3/model/ListSlowlogStatisticsRequest.h>
 #include <huaweicloud/rds/v3/model/ListSlowlogStatisticsResponse.h>
+#include <huaweicloud/rds/v3/model/ListSqlLimitRequest.h>
+#include <huaweicloud/rds/v3/model/ListSqlLimitResponse.h>
 #include <huaweicloud/rds/v3/model/ListSslCertDownloadLinkRequest.h>
 #include <huaweicloud/rds/v3/model/ListSslCertDownloadLinkResponse.h>
 #include <huaweicloud/rds/v3/model/ListStorageTypesRequest.h>
@@ -278,6 +286,8 @@
 #include <huaweicloud/rds/v3/model/ShowReplicationStatusResponse.h>
 #include <huaweicloud/rds/v3/model/ShowSecondLevelMonitoringRequest.h>
 #include <huaweicloud/rds/v3/model/ShowSecondLevelMonitoringResponse.h>
+#include <huaweicloud/rds/v3/model/ShowStorageUsedSpaceRequest.h>
+#include <huaweicloud/rds/v3/model/ShowStorageUsedSpaceResponse.h>
 #include <huaweicloud/rds/v3/model/ShowTdeStatusRequest.h>
 #include <huaweicloud/rds/v3/model/ShowTdeStatusResponse.h>
 #include <huaweicloud/rds/v3/model/ShowUpgradeDbMajorVersionStatusRequest.h>
@@ -308,6 +318,9 @@
 #include <huaweicloud/rds/v3/model/StopBackupResponse.h>
 #include <huaweicloud/rds/v3/model/StopInstanceRequest.h>
 #include <huaweicloud/rds/v3/model/StopInstanceResponse.h>
+#include <huaweicloud/rds/v3/model/SwitchSqlLimitControlReqV3.h>
+#include <huaweicloud/rds/v3/model/SwitchSqlLimitRequest.h>
+#include <huaweicloud/rds/v3/model/SwitchSqlLimitResponse.h>
 #include <huaweicloud/rds/v3/model/SwitchSslRequest.h>
 #include <huaweicloud/rds/v3/model/SwitchSslResponse.h>
 #include <huaweicloud/rds/v3/model/UpdateConfigurationRequest.h>
@@ -332,6 +345,9 @@
 #include <huaweicloud/rds/v3/model/UpdatePostgresqlInstanceAliasRequest.h>
 #include <huaweicloud/rds/v3/model/UpdatePostgresqlInstanceAliasResponse.h>
 #include <huaweicloud/rds/v3/model/UpdateRdsInstanceAliasRequest.h>
+#include <huaweicloud/rds/v3/model/UpdateSqlLimitRequest.h>
+#include <huaweicloud/rds/v3/model/UpdateSqlLimitResponse.h>
+#include <huaweicloud/rds/v3/model/UpdateSqlLimitRuleReqV3.h>
 #include <huaweicloud/rds/v3/model/UpdateTdeStatusRequest.h>
 #include <huaweicloud/rds/v3/model/UpdateTdeStatusRequestBody.h>
 #include <huaweicloud/rds/v3/model/UpdateTdeStatusResponse.h>
@@ -697,6 +713,14 @@ public:
     std::shared_ptr<CreateRestoreInstanceResponse> createRestoreInstance(
         CreateRestoreInstanceRequest &request
     );
+    // 新增SQL限流
+    //
+    // 新增SQL限流
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateSqlLimitResponse> createSqlLimit(
+        CreateSqlLimitRequest &request
+    );
     // 获取扩展日志下载信息
     //
     // 获取扩展日志下载信息
@@ -759,6 +783,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteRdSforMySqlProxyResponse> deleteRdSforMySqlProxy(
         DeleteRdSforMySqlProxyRequest &request
+    );
+    // 删除SQL限流
+    //
+    // 删除SQL限流
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteSqlLimitResponse> deleteSqlLimit(
+        DeleteSqlLimitRequest &request
     );
     // 获取慢日志下载链接
     //
@@ -1109,6 +1141,14 @@ public:
     std::shared_ptr<ListSlowlogStatisticsResponse> listSlowlogStatistics(
         ListSlowlogStatisticsRequest &request
     );
+    // 查询SQL限流列表
+    //
+    // 查询SQL限流列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListSqlLimitResponse> listSqlLimit(
+        ListSqlLimitRequest &request
+    );
     // 获取SSL证书下载地址
     //
     // 获取SSL证书下载地址
@@ -1426,6 +1466,14 @@ public:
     std::shared_ptr<ShowSecondLevelMonitoringResponse> showSecondLevelMonitoring(
         ShowSecondLevelMonitoringRequest &request
     );
+    // 查询实例磁盘空间使用量
+    //
+    // 查询实例磁盘空间使用量。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowStorageUsedSpaceResponse> showStorageUsedSpace(
+        ShowStorageUsedSpaceRequest &request
+    );
     // 根据实例id查询sqlserver TDE状态
     //
     // 根据实例id查询sqlserver TDE状态
@@ -1522,6 +1570,14 @@ public:
     std::shared_ptr<StopInstanceResponse> stopInstance(
         StopInstanceRequest &request
     );
+    // 开启/关闭/禁用所有SQL限流
+    //
+    // 开启/关闭/禁用所有SQL限流
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SwitchSqlLimitResponse> switchSqlLimit(
+        SwitchSqlLimitRequest &request
+    );
     // 设置SSL数据加密
     //
     // 设置SSL数据加密。
@@ -1601,6 +1657,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdatePostgresqlInstanceAliasResponse> updatePostgresqlInstanceAlias(
         UpdatePostgresqlInstanceAliasRequest &request
+    );
+    // 修改SQL限流
+    //
+    // 修改SQL限流
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateSqlLimitResponse> updateSqlLimit(
+        UpdateSqlLimitRequest &request
     );
     // sqlserverTDE开关
     //

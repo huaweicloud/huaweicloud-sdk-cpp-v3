@@ -826,6 +826,48 @@ std::shared_ptr<CreateRestoreInstanceResponse> RdsClient::createRestoreInstance(
 
     return localVarResult;
 }
+std::shared_ptr<CreateSqlLimitResponse> RdsClient::createSqlLimit(CreateSqlLimitRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/sql-limit";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, RdsMeta::genRequestDefForCreateSqlLimit());
+
+    std::shared_ptr<CreateSqlLimitResponse> localVarResult = std::make_shared<CreateSqlLimitResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<CreateXelLogDownloadResponse> RdsClient::createXelLogDownload(CreateXelLogDownloadRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/xellog-download";
@@ -1120,6 +1162,48 @@ std::shared_ptr<DeleteRdSforMySqlProxyResponse> RdsClient::deleteRdSforMySqlProx
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<DeleteSqlLimitResponse> RdsClient::deleteSqlLimit(DeleteSqlLimitRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/sql-limit";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, RdsMeta::genRequestDefForDeleteSqlLimit());
+
+    std::shared_ptr<DeleteSqlLimitResponse> localVarResult = std::make_shared<DeleteSqlLimitResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
 
     return localVarResult;
 }
@@ -2923,6 +3007,45 @@ std::shared_ptr<ListSlowlogStatisticsResponse> RdsClient::listSlowlogStatistics(
 
     return localVarResult;
 }
+std::shared_ptr<ListSqlLimitResponse> RdsClient::listSqlLimit(ListSqlLimitRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/sql-limit";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.dbNameIsSet()) {
+        localVarQueryParams["db_name"] = parameterToString(request.getDbName());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, RdsMeta::genRequestDefForListSqlLimit());
+
+    std::shared_ptr<ListSqlLimitResponse> localVarResult = std::make_shared<ListSqlLimitResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListSslCertDownloadLinkResponse> RdsClient::listSslCertDownloadLink(ListSslCertDownloadLinkRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/ssl-cert/download-link";
@@ -4427,6 +4550,36 @@ std::shared_ptr<ShowSecondLevelMonitoringResponse> RdsClient::showSecondLevelMon
 
     return localVarResult;
 }
+std::shared_ptr<ShowStorageUsedSpaceResponse> RdsClient::showStorageUsedSpace(ShowStorageUsedSpaceRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/storage-used-space";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, RdsMeta::genRequestDefForShowStorageUsedSpace());
+
+    std::shared_ptr<ShowStorageUsedSpaceResponse> localVarResult = std::make_shared<ShowStorageUsedSpaceResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowTdeStatusResponse> RdsClient::showTdeStatus(ShowTdeStatusRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/tde-status";
@@ -4906,6 +5059,48 @@ std::shared_ptr<StopInstanceResponse> RdsClient::stopInstance(StopInstanceReques
 
     return localVarResult;
 }
+std::shared_ptr<SwitchSqlLimitResponse> RdsClient::switchSqlLimit(SwitchSqlLimitRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/sql-limit/switch";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, RdsMeta::genRequestDefForSwitchSqlLimit());
+
+    std::shared_ptr<SwitchSqlLimitResponse> localVarResult = std::make_shared<SwitchSqlLimitResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<SwitchSslResponse> RdsClient::switchSsl(SwitchSslRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/ssl";
@@ -5341,6 +5536,48 @@ std::shared_ptr<UpdatePostgresqlInstanceAliasResponse> RdsClient::updatePostgres
         localVarHeaderParams, localVarHttpBody, RdsMeta::genRequestDefForUpdatePostgresqlInstanceAlias());
 
     std::shared_ptr<UpdatePostgresqlInstanceAliasResponse> localVarResult = std::make_shared<UpdatePostgresqlInstanceAliasResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateSqlLimitResponse> RdsClient::updateSqlLimit(UpdateSqlLimitRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/sql-limit/update";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, RdsMeta::genRequestDefForUpdateSqlLimit());
+
+    std::shared_ptr<UpdateSqlLimitResponse> localVarResult = std::make_shared<UpdateSqlLimitResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

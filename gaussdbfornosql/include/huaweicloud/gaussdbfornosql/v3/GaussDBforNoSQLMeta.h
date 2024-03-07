@@ -111,6 +111,7 @@ public:
     static HttpRequestDef genRequestDefForSwitchToSlave();
     static HttpRequestDef genRequestDefForUpdateClientNetwork();
     static HttpRequestDef genRequestDefForUpdateConfiguration();
+    static HttpRequestDef genRequestDefForUpdateDatabases();
     static HttpRequestDef genRequestDefForUpdateHighRiskCommands();
     static HttpRequestDef genRequestDefForUpdateInstanceConfiguration();
     static HttpRequestDef genRequestDefForUpdateInstanceName();

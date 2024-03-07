@@ -97,6 +97,24 @@ public:
     void setNumber(const std::string& value);
 
     /// <summary>
+    /// 身份证头像图片信息的base64码结果。  &gt; 说明： - 仅在输入参数return_portrait_image为true时，返回该字段。 - 当输入为身份证背面时返回为空字符串。 
+    /// </summary>
+
+    std::string getPortraitImage() const;
+    bool portraitImageIsSet() const;
+    void unsetportraitImage();
+    void setPortraitImage(const std::string& value);
+
+    /// <summary>
+    /// 身份证卡面图片信息的base64码结果。  &gt; 说明： - 仅在输入参数return_adjusted_image为true时，返回该字段。 
+    /// </summary>
+
+    std::string getAdjustedImage() const;
+    bool adjustedImageIsSet() const;
+    void unsetadjustedImage();
+    void setAdjustedImage(const std::string& value);
+
+    /// <summary>
     /// 
     /// </summary>
 
@@ -218,6 +236,10 @@ protected:
     bool addressIsSet_;
     std::string number_;
     bool numberIsSet_;
+    std::string portraitImage_;
+    bool portraitImageIsSet_;
+    std::string adjustedImage_;
+    bool adjustedImageIsSet_;
     IdcardFrontVerificationResult verificationResult_;
     bool verificationResultIsSet_;
     Object textLocation_;

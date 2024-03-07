@@ -1009,6 +1009,15 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForUpdateConfiguration() {
     return reqDefBuilder;
 }
 
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForUpdateDatabases() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForUpdateHighRiskCommands() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;

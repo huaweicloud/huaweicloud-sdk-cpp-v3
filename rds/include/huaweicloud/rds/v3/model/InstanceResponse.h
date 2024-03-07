@@ -10,8 +10,8 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/rds/v3/model/BackupStrategyForResponse.h>
+#include <huaweicloud/rds/v3/model/VolumeForInstanceResponse.h>
 #include <huaweicloud/rds/v3/model/TagResponse.h>
-#include <huaweicloud/rds/v3/model/Volume.h>
 #include <huaweicloud/rds/v3/model/RelatedInstance.h>
 #include <string>
 #include <huaweicloud/rds/v3/model/NodeResponse.h>
@@ -286,10 +286,10 @@ public:
     /// 
     /// </summary>
 
-    Volume getVolume() const;
+    VolumeForInstanceResponse getVolume() const;
     bool volumeIsSet() const;
     void unsetvolume();
-    void setVolume(const Volume& value);
+    void setVolume(const VolumeForInstanceResponse& value);
 
     /// <summary>
     /// 区域ID。
@@ -480,7 +480,7 @@ protected:
     bool cpuIsSet_;
     std::string mem_;
     bool memIsSet_;
-    Volume volume_;
+    VolumeForInstanceResponse volume_;
     bool volumeIsSet_;
     std::string region_;
     bool regionIsSet_;

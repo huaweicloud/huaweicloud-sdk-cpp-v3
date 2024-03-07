@@ -69,6 +69,15 @@ public:
     void setValidTo(const std::string& value);
 
     /// <summary>
+    /// 身份证卡面图片信息的base64码结果。  &gt; 说明： - 仅在输入参数return_adjusted_image为true时，返回该字段。 
+    /// </summary>
+
+    std::string getAdjustedImage() const;
+    bool adjustedImageIsSet() const;
+    void unsetadjustedImage();
+    void setAdjustedImage(const std::string& value);
+
+    /// <summary>
     /// 
     /// </summary>
 
@@ -175,6 +184,8 @@ protected:
     bool validFromIsSet_;
     std::string validTo_;
     bool validToIsSet_;
+    std::string adjustedImage_;
+    bool adjustedImageIsSet_;
     IdcardBackVerificationResult verificationResult_;
     bool verificationResultIsSet_;
     Object textLocation_;

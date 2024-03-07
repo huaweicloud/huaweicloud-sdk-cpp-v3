@@ -24,6 +24,10 @@ IdcardFrontResult::IdcardFrontResult()
     addressIsSet_ = false;
     number_ = "";
     numberIsSet_ = false;
+    portraitImage_ = "";
+    portraitImageIsSet_ = false;
+    adjustedImage_ = "";
+    adjustedImageIsSet_ = false;
     verificationResultIsSet_ = false;
     textLocationIsSet_ = false;
     portraitLocationIsSet_ = false;
@@ -73,6 +77,12 @@ web::json::value IdcardFrontResult::toJson() const
     }
     if(numberIsSet_) {
         val[utility::conversions::to_string_t("number")] = ModelBase::toJson(number_);
+    }
+    if(portraitImageIsSet_) {
+        val[utility::conversions::to_string_t("portrait_image")] = ModelBase::toJson(portraitImage_);
+    }
+    if(adjustedImageIsSet_) {
+        val[utility::conversions::to_string_t("adjusted_image")] = ModelBase::toJson(adjustedImage_);
     }
     if(verificationResultIsSet_) {
         val[utility::conversions::to_string_t("verification_result")] = ModelBase::toJson(verificationResult_);
@@ -169,6 +179,24 @@ bool IdcardFrontResult::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setNumber(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("portrait_image"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("portrait_image"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPortraitImage(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("adjusted_image"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("adjusted_image"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAdjustedImage(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("verification_result"))) {
@@ -407,6 +435,48 @@ bool IdcardFrontResult::numberIsSet() const
 void IdcardFrontResult::unsetnumber()
 {
     numberIsSet_ = false;
+}
+
+std::string IdcardFrontResult::getPortraitImage() const
+{
+    return portraitImage_;
+}
+
+void IdcardFrontResult::setPortraitImage(const std::string& value)
+{
+    portraitImage_ = value;
+    portraitImageIsSet_ = true;
+}
+
+bool IdcardFrontResult::portraitImageIsSet() const
+{
+    return portraitImageIsSet_;
+}
+
+void IdcardFrontResult::unsetportraitImage()
+{
+    portraitImageIsSet_ = false;
+}
+
+std::string IdcardFrontResult::getAdjustedImage() const
+{
+    return adjustedImage_;
+}
+
+void IdcardFrontResult::setAdjustedImage(const std::string& value)
+{
+    adjustedImage_ = value;
+    adjustedImageIsSet_ = true;
+}
+
+bool IdcardFrontResult::adjustedImageIsSet() const
+{
+    return adjustedImageIsSet_;
+}
+
+void IdcardFrontResult::unsetadjustedImage()
+{
+    adjustedImageIsSet_ = false;
 }
 
 IdcardFrontVerificationResult IdcardFrontResult::getVerificationResult() const

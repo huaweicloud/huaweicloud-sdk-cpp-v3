@@ -245,6 +245,15 @@ HttpRequestDef RdsMeta::genRequestDefForCreateRestoreInstance() {
     return reqDefBuilder;
 }
 
+HttpRequestDef RdsMeta::genRequestDefForCreateSqlLimit() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef RdsMeta::genRequestDefForCreateXelLogDownload() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
@@ -327,6 +336,15 @@ HttpRequestDef RdsMeta::genRequestDefForDeleteRdSforMySqlProxy() {
                   .withName("XLanguage")
                   .withJsonTag("X-Language")
                   .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef RdsMeta::genRequestDefForDeleteSqlLimit() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
     return reqDefBuilder;
 }
 
@@ -1078,6 +1096,20 @@ HttpRequestDef RdsMeta::genRequestDefForListSlowlogStatistics() {
     return reqDefBuilder;
 }
 
+HttpRequestDef RdsMeta::genRequestDefForListSqlLimit() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("DbName")
+                  .withJsonTag("db_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef RdsMeta::genRequestDefForListSslCertDownloadLink() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
@@ -1555,6 +1587,11 @@ HttpRequestDef RdsMeta::genRequestDefForShowSecondLevelMonitoring() {
     return reqDefBuilder;
 }
 
+HttpRequestDef RdsMeta::genRequestDefForShowStorageUsedSpace() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef RdsMeta::genRequestDefForShowTdeStatus() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
@@ -1701,6 +1738,15 @@ HttpRequestDef RdsMeta::genRequestDefForStopInstance() {
     return reqDefBuilder;
 }
 
+HttpRequestDef RdsMeta::genRequestDefForSwitchSqlLimit() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef RdsMeta::genRequestDefForSwitchSsl() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
@@ -1829,6 +1875,15 @@ HttpRequestDef RdsMeta::genRequestDefForUpdatePostgresqlInstanceAlias() {
                   .withName("XLanguage")
                   .withJsonTag("X-Language")
                   .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef RdsMeta::genRequestDefForUpdateSqlLimit() {
+    HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").

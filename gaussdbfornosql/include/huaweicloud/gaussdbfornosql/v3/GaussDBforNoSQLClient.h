@@ -252,6 +252,9 @@
 #include <huaweicloud/gaussdbfornosql/v3/model/UpdateConfigurationRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/UpdateConfigurationRequestBody.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/UpdateConfigurationResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/UpdateDatabasesRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/UpdateDatabasesRequestBody.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/UpdateDatabasesResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/UpdateHighRiskCommandsRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/UpdateHighRiskCommandsResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/UpdateInstanceConfigurationRequest.h>
@@ -1084,6 +1087,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateConfigurationResponse> updateConfiguration(
         UpdateConfigurationRequest &request
+    );
+    // 操作GeminDB实例数据库
+    //
+    // 操作GeminDB实例数据库
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateDatabasesResponse> updateDatabases(
+        UpdateDatabasesRequest &request
     );
     // 修改高危命令
     //

@@ -32,6 +32,10 @@ IdCardResult::IdCardResult()
     validToIsSet_ = false;
     verificationResultIsSet_ = false;
     textLocationIsSet_ = false;
+    portraitImage_ = "";
+    portraitImageIsSet_ = false;
+    adjustedImage_ = "";
+    adjustedImageIsSet_ = false;
     portraitLocationIsSet_ = false;
     detectReproduceResult_ = false;
     detectReproduceResultIsSet_ = false;
@@ -96,6 +100,12 @@ web::json::value IdCardResult::toJson() const
     }
     if(textLocationIsSet_) {
         val[utility::conversions::to_string_t("text_location")] = ModelBase::toJson(textLocation_);
+    }
+    if(portraitImageIsSet_) {
+        val[utility::conversions::to_string_t("portrait_image")] = ModelBase::toJson(portraitImage_);
+    }
+    if(adjustedImageIsSet_) {
+        val[utility::conversions::to_string_t("adjusted_image")] = ModelBase::toJson(adjustedImage_);
     }
     if(portraitLocationIsSet_) {
         val[utility::conversions::to_string_t("portrait_location")] = ModelBase::toJson(portraitLocation_);
@@ -237,6 +247,24 @@ bool IdCardResult::fromJson(const web::json::value& val)
             Object refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTextLocation(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("portrait_image"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("portrait_image"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPortraitImage(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("adjusted_image"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("adjusted_image"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAdjustedImage(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("portrait_location"))) {
@@ -580,6 +608,48 @@ bool IdCardResult::textLocationIsSet() const
 void IdCardResult::unsettextLocation()
 {
     textLocationIsSet_ = false;
+}
+
+std::string IdCardResult::getPortraitImage() const
+{
+    return portraitImage_;
+}
+
+void IdCardResult::setPortraitImage(const std::string& value)
+{
+    portraitImage_ = value;
+    portraitImageIsSet_ = true;
+}
+
+bool IdCardResult::portraitImageIsSet() const
+{
+    return portraitImageIsSet_;
+}
+
+void IdCardResult::unsetportraitImage()
+{
+    portraitImageIsSet_ = false;
+}
+
+std::string IdCardResult::getAdjustedImage() const
+{
+    return adjustedImage_;
+}
+
+void IdCardResult::setAdjustedImage(const std::string& value)
+{
+    adjustedImage_ = value;
+    adjustedImageIsSet_ = true;
+}
+
+bool IdCardResult::adjustedImageIsSet() const
+{
+    return adjustedImageIsSet_;
+}
+
+void IdCardResult::unsetadjustedImage()
+{
+    adjustedImageIsSet_ = false;
 }
 
 std::vector<std::vector<int32_t>>& IdCardResult::getPortraitLocation()

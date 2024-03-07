@@ -18,6 +18,8 @@ IdcardBackResult::IdcardBackResult()
     validFromIsSet_ = false;
     validTo_ = "";
     validToIsSet_ = false;
+    adjustedImage_ = "";
+    adjustedImageIsSet_ = false;
     verificationResultIsSet_ = false;
     textLocationIsSet_ = false;
     detectReproduceResult_ = false;
@@ -57,6 +59,9 @@ web::json::value IdcardBackResult::toJson() const
     }
     if(validToIsSet_) {
         val[utility::conversions::to_string_t("valid_to")] = ModelBase::toJson(validTo_);
+    }
+    if(adjustedImageIsSet_) {
+        val[utility::conversions::to_string_t("adjusted_image")] = ModelBase::toJson(adjustedImage_);
     }
     if(verificationResultIsSet_) {
         val[utility::conversions::to_string_t("verification_result")] = ModelBase::toJson(verificationResult_);
@@ -123,6 +128,15 @@ bool IdcardBackResult::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setValidTo(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("adjusted_image"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("adjusted_image"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAdjustedImage(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("verification_result"))) {
@@ -289,6 +303,27 @@ bool IdcardBackResult::validToIsSet() const
 void IdcardBackResult::unsetvalidTo()
 {
     validToIsSet_ = false;
+}
+
+std::string IdcardBackResult::getAdjustedImage() const
+{
+    return adjustedImage_;
+}
+
+void IdcardBackResult::setAdjustedImage(const std::string& value)
+{
+    adjustedImage_ = value;
+    adjustedImageIsSet_ = true;
+}
+
+bool IdcardBackResult::adjustedImageIsSet() const
+{
+    return adjustedImageIsSet_;
+}
+
+void IdcardBackResult::unsetadjustedImage()
+{
+    adjustedImageIsSet_ = false;
 }
 
 IdcardBackVerificationResult IdcardBackResult::getVerificationResult() const

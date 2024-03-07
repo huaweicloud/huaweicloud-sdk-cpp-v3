@@ -16,7 +16,6 @@
 #include <huaweicloud/rds/v3/model/ServerlessInfo.h>
 #include <string>
 #include <huaweicloud/rds/v3/model/RestorePoint.h>
-#include <huaweicloud/rds/v3/model/UnchangeableParam.h>
 #include <huaweicloud/rds/v3/model/Datastore.h>
 #include <vector>
 #include <huaweicloud/rds/v3/model/ChargeInfo.h>
@@ -148,7 +147,7 @@ public:
     void setVolume(const Volume& value);
 
     /// <summary>
-    /// 区域ID。创建主实例时必选，其它场景不可选。 取值参见[地区和终端节点](https://developer.huaweicloud.com/endpoint)。
+    /// 区域ID。创建主实例时必选，其它场景不可选。 取值参见[地区和终端节点](https://developer.huaweicloud.com/endpoint)。 SQL Server数据库和PostgreSQL数据库备份恢复到新实例时为必填项。
     /// </summary>
 
     std::string getRegion() const;
@@ -166,7 +165,7 @@ public:
     void setAvailabilityZone(const std::string& value);
 
     /// <summary>
-    /// 虚拟私有云ID。创建只读实例时不可选（只读实例的网络属性默认和主实例相同），其它场景必选。 获取方法如下： - 方法1：登录虚拟私有云服务的控制台界面，在虚拟私有云的详情页面查找VPC ID。 - 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考[查询VPC列表](https://support.huaweicloud.com/api-vpc/vpc_api01_0003.html)。
+    /// 虚拟私有云ID。创建只读实例时不可选（只读实例的网络属性默认和主实例相同），其它场景必选。 获取方法如下： - 方法1：登录虚拟私有云服务的控制台界面，在虚拟私有云的详情页面查找VPC ID。 - 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考[查询VPC列表](https://support.huaweicloud.com/api-vpc/vpc_api01_0003.html)。 SQL Server数据库和PostgreSQL数据库备份恢复到新实例时为必填项。
     /// </summary>
 
     std::string getVpcId() const;
@@ -175,7 +174,7 @@ public:
     void setVpcId(const std::string& value);
 
     /// <summary>
-    /// 子网的网络ID信息。创建只读实例时不可选（只读实例的网络属性默认和主实例相同），其它场景必选。 获取方法如下： - 方法1：登录虚拟私有云服务的控制台界面，单击VPC下的子网，进入子网详情页面，查找网络ID。 - 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考[查询子网列表](https://support.huaweicloud.com/api-vpc/vpc_subnet01_0003.html)。
+    /// 子网的网络ID信息。创建只读实例时不可选（只读实例的网络属性默认和主实例相同），其它场景必选。 获取方法如下： - 方法1：登录虚拟私有云服务的控制台界面，单击VPC下的子网，进入子网详情页面，查找网络ID。 - 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考[查询子网列表](https://support.huaweicloud.com/api-vpc/vpc_subnet01_0003.html)。 SQL Server数据库和PostgreSQL数据库备份恢复到新实例时为必填项。
     /// </summary>
 
     std::string getSubnetId() const;
@@ -193,7 +192,7 @@ public:
     void setDataVip(const std::string& value);
 
     /// <summary>
-    /// 安全组ID。创建只读实例时不可选（只读实例的网络属性默认和主实例相同），其它场景必选。 获取方法如下： - 方法1：登录虚拟私有云服务的控制台界面，在安全组的详情页面查找安全组ID。 - 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考[查询安全组列表](https://support.huaweicloud.com/api-vpc/vpc_sg01_0003.html)。
+    /// 安全组ID。创建只读实例时不可选（只读实例的网络属性默认和主实例相同），其它场景必选。 获取方法如下： - 方法1：登录虚拟私有云服务的控制台界面，在安全组的详情页面查找安全组ID。 - 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考[查询安全组列表](https://support.huaweicloud.com/api-vpc/vpc_sg01_0003.html)。 SQL Server数据库和PostgreSQL数据库备份恢复到新实例时为必填项。
     /// </summary>
 
     std::string getSecurityGroupId() const;
@@ -229,15 +228,6 @@ public:
     void setDsspoolId(const std::string& value);
 
     /// <summary>
-    /// 只读实例的主实例ID。创建只读实例时必选，其它场景不可选。
-    /// </summary>
-
-    std::string getReplicaOfId() const;
-    bool replicaOfIdIsSet() const;
-    void unsetreplicaOfId();
-    void setReplicaOfId(const std::string& value);
-
-    /// <summary>
     /// 
     /// </summary>
 
@@ -263,15 +253,6 @@ public:
     bool tagsIsSet() const;
     void unsettags();
     void setTags(const std::vector<TagWithKeyValue>& value);
-
-    /// <summary>
-    /// 
-    /// </summary>
-
-    UnchangeableParam getUnchangeableParam() const;
-    bool unchangeableParamIsSet() const;
-    void unsetunchangeableParam();
-    void setUnchangeableParam(const UnchangeableParam& value);
 
     /// <summary>
     /// 
@@ -333,16 +314,12 @@ protected:
     bool timeZoneIsSet_;
     std::string dsspoolId_;
     bool dsspoolIdIsSet_;
-    std::string replicaOfId_;
-    bool replicaOfIdIsSet_;
     RestorePoint restorePoint_;
     bool restorePointIsSet_;
     std::string collation_;
     bool collationIsSet_;
     std::vector<TagWithKeyValue> tags_;
     bool tagsIsSet_;
-    UnchangeableParam unchangeableParam_;
-    bool unchangeableParamIsSet_;
     ServerlessInfo serverlessInfo_;
     bool serverlessInfoIsSet_;
     bool dryRun_;

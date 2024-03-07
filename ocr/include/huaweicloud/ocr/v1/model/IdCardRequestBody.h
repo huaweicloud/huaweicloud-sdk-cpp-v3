@@ -111,6 +111,24 @@ public:
     void setReturnPortraitLocation(bool value);
 
     /// <summary>
+    /// 返回头像图片信息（base64码）的开关，默认false，可选值如下所示：  - true ：开启头像图片信息（base64码）的功能 - false : 关闭头像图片信息（base64码）的功能 
+    /// </summary>
+
+    bool isReturnPortraitImage() const;
+    bool returnPortraitImageIsSet() const;
+    void unsetreturnPortraitImage();
+    void setReturnPortraitImage(bool value);
+
+    /// <summary>
+    /// 返回身份证卡面（base64码）的开关，默认false，可选值如下所示：  - true ：开启身份证卡面（base64码）的功能 - false : 关闭身份证卡面（base64码）的功能 
+    /// </summary>
+
+    bool isReturnAdjustedImage() const;
+    bool returnAdjustedImageIsSet() const;
+    void unsetreturnAdjustedImage();
+    void setReturnAdjustedImage(bool value);
+
+    /// <summary>
     /// 身份证图像PS告警功能开关，默认false，可选值如下：  - true ：开启身份证图像PS告警功能 - false : 关闭身份证图像告警功能 
     /// </summary>
 
@@ -182,6 +200,10 @@ protected:
     bool detectCopyIsSet_;
     bool returnPortraitLocation_;
     bool returnPortraitLocationIsSet_;
+    bool returnPortraitImage_;
+    bool returnPortraitImageIsSet_;
+    bool returnAdjustedImage_;
+    bool returnAdjustedImageIsSet_;
     bool detectTampering_;
     bool detectTamperingIsSet_;
     bool detectBorderIntegrity_;

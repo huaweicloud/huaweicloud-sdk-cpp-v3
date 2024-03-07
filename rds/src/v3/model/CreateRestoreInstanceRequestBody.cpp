@@ -47,13 +47,10 @@ CreateRestoreInstanceRequestBody::CreateRestoreInstanceRequestBody()
     timeZoneIsSet_ = false;
     dsspoolId_ = "";
     dsspoolIdIsSet_ = false;
-    replicaOfId_ = "";
-    replicaOfIdIsSet_ = false;
     restorePointIsSet_ = false;
     collation_ = "";
     collationIsSet_ = false;
     tagsIsSet_ = false;
-    unchangeableParamIsSet_ = false;
     serverlessInfoIsSet_ = false;
     dryRun_ = false;
     dryRunIsSet_ = false;
@@ -129,9 +126,6 @@ web::json::value CreateRestoreInstanceRequestBody::toJson() const
     if(dsspoolIdIsSet_) {
         val[utility::conversions::to_string_t("dsspool_id")] = ModelBase::toJson(dsspoolId_);
     }
-    if(replicaOfIdIsSet_) {
-        val[utility::conversions::to_string_t("replica_of_id")] = ModelBase::toJson(replicaOfId_);
-    }
     if(restorePointIsSet_) {
         val[utility::conversions::to_string_t("restore_point")] = ModelBase::toJson(restorePoint_);
     }
@@ -140,9 +134,6 @@ web::json::value CreateRestoreInstanceRequestBody::toJson() const
     }
     if(tagsIsSet_) {
         val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
-    }
-    if(unchangeableParamIsSet_) {
-        val[utility::conversions::to_string_t("unchangeable_param")] = ModelBase::toJson(unchangeableParam_);
     }
     if(serverlessInfoIsSet_) {
         val[utility::conversions::to_string_t("serverless_info")] = ModelBase::toJson(serverlessInfo_);
@@ -337,15 +328,6 @@ bool CreateRestoreInstanceRequestBody::fromJson(const web::json::value& val)
             setDsspoolId(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("replica_of_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("replica_of_id"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setReplicaOfId(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("restore_point"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("restore_point"));
         if(!fieldValue.is_null())
@@ -371,15 +353,6 @@ bool CreateRestoreInstanceRequestBody::fromJson(const web::json::value& val)
             std::vector<TagWithKeyValue> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTags(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("unchangeable_param"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("unchangeable_param"));
-        if(!fieldValue.is_null())
-        {
-            UnchangeableParam refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setUnchangeableParam(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("serverless_info"))) {
@@ -824,27 +797,6 @@ void CreateRestoreInstanceRequestBody::unsetdsspoolId()
     dsspoolIdIsSet_ = false;
 }
 
-std::string CreateRestoreInstanceRequestBody::getReplicaOfId() const
-{
-    return replicaOfId_;
-}
-
-void CreateRestoreInstanceRequestBody::setReplicaOfId(const std::string& value)
-{
-    replicaOfId_ = value;
-    replicaOfIdIsSet_ = true;
-}
-
-bool CreateRestoreInstanceRequestBody::replicaOfIdIsSet() const
-{
-    return replicaOfIdIsSet_;
-}
-
-void CreateRestoreInstanceRequestBody::unsetreplicaOfId()
-{
-    replicaOfIdIsSet_ = false;
-}
-
 RestorePoint CreateRestoreInstanceRequestBody::getRestorePoint() const
 {
     return restorePoint_;
@@ -906,27 +858,6 @@ bool CreateRestoreInstanceRequestBody::tagsIsSet() const
 void CreateRestoreInstanceRequestBody::unsettags()
 {
     tagsIsSet_ = false;
-}
-
-UnchangeableParam CreateRestoreInstanceRequestBody::getUnchangeableParam() const
-{
-    return unchangeableParam_;
-}
-
-void CreateRestoreInstanceRequestBody::setUnchangeableParam(const UnchangeableParam& value)
-{
-    unchangeableParam_ = value;
-    unchangeableParamIsSet_ = true;
-}
-
-bool CreateRestoreInstanceRequestBody::unchangeableParamIsSet() const
-{
-    return unchangeableParamIsSet_;
-}
-
-void CreateRestoreInstanceRequestBody::unsetunchangeableParam()
-{
-    unchangeableParamIsSet_ = false;
 }
 
 ServerlessInfo CreateRestoreInstanceRequestBody::getServerlessInfo() const

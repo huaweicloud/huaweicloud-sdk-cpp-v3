@@ -14,6 +14,7 @@
 #include <string>
 #include <huaweicloud/drs/v5/model/SkipPreCheckInfo.h>
 #include <vector>
+#include <huaweicloud/drs/v5/model/PublicIpConfig.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -114,6 +115,15 @@ public:
     void unsetforceDelete();
     void setForceDelete(bool value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    PublicIpConfig getPublicIpConfig() const;
+    bool publicIpConfigIsSet() const;
+    void unsetpublicIpConfig();
+    void setPublicIpConfig(const PublicIpConfig& value);
+
 
 protected:
     std::vector<JobEndpointInfo> endpoints_;
@@ -132,6 +142,8 @@ protected:
     bool isSyncReEditIsSet_;
     bool forceDelete_;
     bool forceDeleteIsSet_;
+    PublicIpConfig publicIpConfig_;
+    bool publicIpConfigIsSet_;
 
 };
 

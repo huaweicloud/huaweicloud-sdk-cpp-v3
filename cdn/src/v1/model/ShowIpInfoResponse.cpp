@@ -13,6 +13,8 @@ namespace Model {
 ShowIpInfoResponse::ShowIpInfoResponse()
 {
     cdnIpsIsSet_ = false;
+    xRequestId_ = "";
+    xRequestIdIsSet_ = false;
 }
 
 ShowIpInfoResponse::~ShowIpInfoResponse() = default;
@@ -28,6 +30,9 @@ web::json::value ShowIpInfoResponse::toJson() const
     if(cdnIpsIsSet_) {
         val[utility::conversions::to_string_t("cdn_ips")] = ModelBase::toJson(cdnIps_);
     }
+    if(xRequestIdIsSet_) {
+        val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
+    }
 
     return val;
 }
@@ -42,6 +47,15 @@ bool ShowIpInfoResponse::fromJson(const web::json::value& val)
             std::vector<CdnIps> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCdnIps(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Request-Id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXRequestId(refVal);
         }
     }
     return ok;
@@ -67,6 +81,27 @@ bool ShowIpInfoResponse::cdnIpsIsSet() const
 void ShowIpInfoResponse::unsetcdnIps()
 {
     cdnIpsIsSet_ = false;
+}
+
+std::string ShowIpInfoResponse::getXRequestId() const
+{
+    return xRequestId_;
+}
+
+void ShowIpInfoResponse::setXRequestId(const std::string& value)
+{
+    xRequestId_ = value;
+    xRequestIdIsSet_ = true;
+}
+
+bool ShowIpInfoResponse::xRequestIdIsSet() const
+{
+    return xRequestIdIsSet_;
+}
+
+void ShowIpInfoResponse::unsetxRequestId()
+{
+    xRequestIdIsSet_ = false;
 }
 
 }

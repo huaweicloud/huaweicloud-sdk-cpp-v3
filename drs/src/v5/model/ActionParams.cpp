@@ -25,6 +25,7 @@ ActionParams::ActionParams()
     isSyncReEditIsSet_ = false;
     forceDelete_ = false;
     forceDeleteIsSet_ = false;
+    publicIpConfigIsSet_ = false;
 }
 
 ActionParams::~ActionParams() = default;
@@ -60,6 +61,9 @@ web::json::value ActionParams::toJson() const
     }
     if(forceDeleteIsSet_) {
         val[utility::conversions::to_string_t("force_delete")] = ModelBase::toJson(forceDelete_);
+    }
+    if(publicIpConfigIsSet_) {
+        val[utility::conversions::to_string_t("public_ip_config")] = ModelBase::toJson(publicIpConfig_);
     }
 
     return val;
@@ -138,6 +142,15 @@ bool ActionParams::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setForceDelete(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("public_ip_config"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("public_ip_config"));
+        if(!fieldValue.is_null())
+        {
+            PublicIpConfig refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPublicIpConfig(refVal);
         }
     }
     return ok;
@@ -310,6 +323,27 @@ bool ActionParams::forceDeleteIsSet() const
 void ActionParams::unsetforceDelete()
 {
     forceDeleteIsSet_ = false;
+}
+
+PublicIpConfig ActionParams::getPublicIpConfig() const
+{
+    return publicIpConfig_;
+}
+
+void ActionParams::setPublicIpConfig(const PublicIpConfig& value)
+{
+    publicIpConfig_ = value;
+    publicIpConfigIsSet_ = true;
+}
+
+bool ActionParams::publicIpConfigIsSet() const
+{
+    return publicIpConfigIsSet_;
+}
+
+void ActionParams::unsetpublicIpConfig()
+{
+    publicIpConfigIsSet_ = false;
 }
 
 }

@@ -24,6 +24,7 @@ AsyncCreateJobReq::AsyncCreateJobReq()
     tuningParamsIsSet_ = false;
     periodOrderIsSet_ = false;
     nodeInfoIsSet_ = false;
+    publicIpListIsSet_ = false;
 }
 
 AsyncCreateJobReq::~AsyncCreateJobReq() = default;
@@ -71,6 +72,9 @@ web::json::value AsyncCreateJobReq::toJson() const
     }
     if(nodeInfoIsSet_) {
         val[utility::conversions::to_string_t("node_info")] = ModelBase::toJson(nodeInfo_);
+    }
+    if(publicIpListIsSet_) {
+        val[utility::conversions::to_string_t("public_ip_list")] = ModelBase::toJson(publicIpList_);
     }
 
     return val;
@@ -185,6 +189,15 @@ bool AsyncCreateJobReq::fromJson(const web::json::value& val)
             JobNodeInfo refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setNodeInfo(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("public_ip_list"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("public_ip_list"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<PublicIpConfig> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPublicIpList(refVal);
         }
     }
     return ok;
@@ -441,6 +454,27 @@ bool AsyncCreateJobReq::nodeInfoIsSet() const
 void AsyncCreateJobReq::unsetnodeInfo()
 {
     nodeInfoIsSet_ = false;
+}
+
+std::vector<PublicIpConfig>& AsyncCreateJobReq::getPublicIpList()
+{
+    return publicIpList_;
+}
+
+void AsyncCreateJobReq::setPublicIpList(const std::vector<PublicIpConfig>& value)
+{
+    publicIpList_ = value;
+    publicIpListIsSet_ = true;
+}
+
+bool AsyncCreateJobReq::publicIpListIsSet() const
+{
+    return publicIpListIsSet_;
+}
+
+void AsyncCreateJobReq::unsetpublicIpList()
+{
+    publicIpListIsSet_ = false;
 }
 
 }

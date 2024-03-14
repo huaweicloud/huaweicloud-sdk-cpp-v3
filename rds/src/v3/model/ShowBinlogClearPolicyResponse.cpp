@@ -14,6 +14,8 @@ ShowBinlogClearPolicyResponse::ShowBinlogClearPolicyResponse()
 {
     binlogRetentionHours_ = 0;
     binlogRetentionHoursIsSet_ = false;
+    binlogClearType_ = "";
+    binlogClearTypeIsSet_ = false;
 }
 
 ShowBinlogClearPolicyResponse::~ShowBinlogClearPolicyResponse() = default;
@@ -29,6 +31,9 @@ web::json::value ShowBinlogClearPolicyResponse::toJson() const
     if(binlogRetentionHoursIsSet_) {
         val[utility::conversions::to_string_t("binlog_retention_hours")] = ModelBase::toJson(binlogRetentionHours_);
     }
+    if(binlogClearTypeIsSet_) {
+        val[utility::conversions::to_string_t("binlog_clear_type")] = ModelBase::toJson(binlogClearType_);
+    }
 
     return val;
 }
@@ -43,6 +48,15 @@ bool ShowBinlogClearPolicyResponse::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBinlogRetentionHours(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("binlog_clear_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("binlog_clear_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBinlogClearType(refVal);
         }
     }
     return ok;
@@ -68,6 +82,27 @@ bool ShowBinlogClearPolicyResponse::binlogRetentionHoursIsSet() const
 void ShowBinlogClearPolicyResponse::unsetbinlogRetentionHours()
 {
     binlogRetentionHoursIsSet_ = false;
+}
+
+std::string ShowBinlogClearPolicyResponse::getBinlogClearType() const
+{
+    return binlogClearType_;
+}
+
+void ShowBinlogClearPolicyResponse::setBinlogClearType(const std::string& value)
+{
+    binlogClearType_ = value;
+    binlogClearTypeIsSet_ = true;
+}
+
+bool ShowBinlogClearPolicyResponse::binlogClearTypeIsSet() const
+{
+    return binlogClearTypeIsSet_;
+}
+
+void ShowBinlogClearPolicyResponse::unsetbinlogClearType()
+{
+    binlogClearTypeIsSet_ = false;
 }
 
 }

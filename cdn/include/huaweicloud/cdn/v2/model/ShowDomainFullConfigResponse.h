@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <string>
 #include <huaweicloud/cdn/v2/model/ConfigsGetBody.h>
 
 namespace HuaweiCloud {
@@ -47,10 +48,21 @@ public:
     void unsetconfigs();
     void setConfigs(const ConfigsGetBody& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    std::string getXRequestId() const;
+    bool xRequestIdIsSet() const;
+    void unsetxRequestId();
+    void setXRequestId(const std::string& value);
+
 
 protected:
     ConfigsGetBody configs_;
     bool configsIsSet_;
+    std::string xRequestId_;
+    bool xRequestIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

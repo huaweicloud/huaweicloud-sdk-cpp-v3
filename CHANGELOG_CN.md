@@ -1,3 +1,87 @@
+# 3.1.77 2024-03-14
+
+### HuaweiCloud SDK DRS
+
+- _新增特性_
+  - 支持接口`ListAvailableNodeTypes`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **BatchSetPolicy**
+    - 请求参数变更
+      - `+ jobs.ddl_topic`
+  - **BatchCreateJobs**
+    - 请求参数变更
+      - `+ jobs.public_ip_list`
+  - **ShowJobList**
+    - 响应参数变更
+      - `+ jobs.children.job_direction: enum value [non-dbs]`
+      - `- jobs.children.job_direction: enum value [no-dbs]`
+  - **BatchListJobDetails**
+    - 响应参数变更
+      - `+ results.public_ip_list`
+      - `+ results.bind_public_ip_state`
+      - `+ results.children`
+  - **ShowUpdateObjectSavingStatus**
+    - 响应参数变更
+      - `+ job_id`
+  - **CollectDbObjectsAsync**
+    - 响应参数变更
+      - `+ job_id`
+  - **ShowDataProcessingRulesResult**
+    - 响应参数变更
+      - `+ job_id`
+  - **CollectDbObjectsInfo**
+    - 响应参数变更
+      - `+ job_id`
+  - **CollectPositionAsync**
+    - 响应参数变更
+      - `+ job_id`
+  - **CollectColumns**
+    - 响应参数变更
+      - `+ job_id`
+  - **CreateJob**
+    - 请求参数变更
+      - `+ job.public_ip_list`
+  - **BatchCreateJobsAsync**
+    - 请求参数变更
+      - `+ jobs.public_ip_list`
+  - **UpdateDataProgress**
+    - 响应参数变更
+      - `+ job_id`
+  - **CheckDataFilter**
+    - 响应参数变更
+      - `+ job_id`
+  - **ListAsyncJobDetail**
+    - 响应参数变更
+      - `+ jobs.public_ip_list`
+      - `+ jobs.bind_public_ip_state`
+      - `+ jobs.children`
+  - **ShowJobDetail**
+    - 响应参数变更
+      - `+ job.public_ip_list`
+      - `+ job.bind_public_ip_state`
+      - `+ job.children`
+  - **ExecuteJobAction**
+    - 请求参数变更
+      - `+ job.action_name: enum value [bind_eip,unbind_eip]`
+      - `+ job.action_params.public_ip_config`
+  - **BatchExecuteJobActions**
+    - 请求参数变更
+      - `+ jobs.action_name: enum value [bind_eip,unbind_eip]`
+      - `+ jobs.action_params.public_ip_config`
+
+### HuaweiCloud SDK RDS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowBinlogClearPolicy**
+    - 响应参数变更
+      - `+ binlog_clear_type`
+
 # 3.1.76 2024-03-07
 
 ### HuaweiCloud SDK GaussDBforNoSQL

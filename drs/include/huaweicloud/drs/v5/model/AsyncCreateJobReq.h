@@ -10,17 +10,18 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/drs/v5/model/SpeedLimitInfo.h>
+#include <huaweicloud/drs/v5/model/JobNodeInfo.h>
+#include <vector>
 #include <huaweicloud/drs/v5/model/DbParamInfo.h>
 #include <huaweicloud/drs/v5/model/UserMigrationInfo.h>
 #include <huaweicloud/drs/v5/model/JobEndpointInfo.h>
 #include <huaweicloud/drs/v5/model/TuningParamInfo.h>
-#include <huaweicloud/drs/v5/model/JobNodeInfo.h>
 #include <huaweicloud/drs/v5/model/PeriodOrderInfo.h>
 #include <huaweicloud/drs/v5/model/DbObject.h>
 #include <huaweicloud/drs/v5/model/JobBaseInfo.h>
-#include <vector>
 #include <huaweicloud/drs/v5/model/AlarmNotifyConfig.h>
 #include <huaweicloud/drs/v5/model/PolicyConfig.h>
+#include <huaweicloud/drs/v5/model/PublicIpConfig.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -157,6 +158,15 @@ public:
     void unsetnodeInfo();
     void setNodeInfo(const JobNodeInfo& value);
 
+    /// <summary>
+    /// 指定公网IP的信息
+    /// </summary>
+
+    std::vector<PublicIpConfig>& getPublicIpList();
+    bool publicIpListIsSet() const;
+    void unsetpublicIpList();
+    void setPublicIpList(const std::vector<PublicIpConfig>& value);
+
 
 protected:
     JobBaseInfo baseInfo_;
@@ -183,6 +193,8 @@ protected:
     bool periodOrderIsSet_;
     JobNodeInfo nodeInfo_;
     bool nodeInfoIsSet_;
+    std::vector<PublicIpConfig> publicIpList_;
+    bool publicIpListIsSet_;
 
 };
 

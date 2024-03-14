@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/cdn/v2/model/TagMap.h>
+#include <string>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -48,10 +49,21 @@ public:
     void unsettags();
     void setTags(const std::vector<TagMap>& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    std::string getXRequestId() const;
+    bool xRequestIdIsSet() const;
+    void unsetxRequestId();
+    void setXRequestId(const std::string& value);
+
 
 protected:
     std::vector<TagMap> tags_;
     bool tagsIsSet_;
+    std::string xRequestId_;
+    bool xRequestIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

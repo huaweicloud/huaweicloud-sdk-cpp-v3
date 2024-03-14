@@ -16,6 +16,8 @@ CollectPositionAsyncResponse::CollectPositionAsyncResponse()
     idIsSet_ = false;
     status_ = "";
     statusIsSet_ = false;
+    jobId_ = "";
+    jobIdIsSet_ = false;
 }
 
 CollectPositionAsyncResponse::~CollectPositionAsyncResponse() = default;
@@ -33,6 +35,9 @@ web::json::value CollectPositionAsyncResponse::toJson() const
     }
     if(statusIsSet_) {
         val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
+    }
+    if(jobIdIsSet_) {
+        val[utility::conversions::to_string_t("job_id")] = ModelBase::toJson(jobId_);
     }
 
     return val;
@@ -57,6 +62,15 @@ bool CollectPositionAsyncResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("job_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("job_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setJobId(refVal);
         }
     }
     return ok;
@@ -103,6 +117,27 @@ bool CollectPositionAsyncResponse::statusIsSet() const
 void CollectPositionAsyncResponse::unsetstatus()
 {
     statusIsSet_ = false;
+}
+
+std::string CollectPositionAsyncResponse::getJobId() const
+{
+    return jobId_;
+}
+
+void CollectPositionAsyncResponse::setJobId(const std::string& value)
+{
+    jobId_ = value;
+    jobIdIsSet_ = true;
+}
+
+bool CollectPositionAsyncResponse::jobIdIsSet() const
+{
+    return jobIdIsSet_;
+}
+
+void CollectPositionAsyncResponse::unsetjobId()
+{
+    jobIdIsSet_ = false;
 }
 
 }

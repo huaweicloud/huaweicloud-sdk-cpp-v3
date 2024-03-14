@@ -122,6 +122,10 @@ public:
             { 
                 "https://ecs.eu-west-0.myhuaweicloud.com"
             });
+        regions["my-kualalumpur-1"] = Region("my-kualalumpur-1",
+            { 
+                "https://ecs.my-kualalumpur-1.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

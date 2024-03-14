@@ -1221,6 +1221,53 @@ std::shared_ptr<CreateCompareTaskResponse> DrsClient::createCompareTask(CreateCo
 
     return localVarResult;
 }
+std::shared_ptr<ListAvailableNodeTypesResponse> DrsClient::listAvailableNodeTypes(ListAvailableNodeTypesRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/node-type";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.engineTypeIsSet()) {
+        localVarQueryParams["engine_type"] = parameterToString(request.getEngineType());
+    }
+    if (request.dbUseTypeIsSet()) {
+        localVarQueryParams["db_use_type"] = parameterToString(request.getDbUseType());
+    }
+    if (request.jobDirectionIsSet()) {
+        localVarQueryParams["job_direction"] = parameterToString(request.getJobDirection());
+    }
+    if (request.isUseSelloutInfoIsSet()) {
+        localVarQueryParams["is_use_sellout_info"] = parameterToString(request.isIsUseSelloutInfo());
+    }
+    if (request.isMultiWriteIsSet()) {
+        localVarQueryParams["is_multi_write"] = parameterToString(request.isIsMultiWrite());
+    }
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, DrsMeta::genRequestDefForListAvailableNodeTypes());
+
+    std::shared_ptr<ListAvailableNodeTypesResponse> localVarResult = std::make_shared<ListAvailableNodeTypesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListAvailableZoneResponse> DrsClient::listAvailableZone(ListAvailableZoneRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/available-zone";

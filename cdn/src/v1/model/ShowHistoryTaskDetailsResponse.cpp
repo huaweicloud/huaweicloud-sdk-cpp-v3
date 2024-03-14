@@ -31,6 +31,8 @@ ShowHistoryTaskDetailsResponse::ShowHistoryTaskDetailsResponse()
     totalIsSet_ = false;
     fileType_ = "";
     fileTypeIsSet_ = false;
+    xRequestId_ = "";
+    xRequestIdIsSet_ = false;
 }
 
 ShowHistoryTaskDetailsResponse::~ShowHistoryTaskDetailsResponse() = default;
@@ -72,6 +74,9 @@ web::json::value ShowHistoryTaskDetailsResponse::toJson() const
     }
     if(fileTypeIsSet_) {
         val[utility::conversions::to_string_t("file_type")] = ModelBase::toJson(fileType_);
+    }
+    if(xRequestIdIsSet_) {
+        val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
     }
 
     return val;
@@ -168,6 +173,15 @@ bool ShowHistoryTaskDetailsResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFileType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Request-Id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXRequestId(refVal);
         }
     }
     return ok;
@@ -382,6 +396,27 @@ bool ShowHistoryTaskDetailsResponse::fileTypeIsSet() const
 void ShowHistoryTaskDetailsResponse::unsetfileType()
 {
     fileTypeIsSet_ = false;
+}
+
+std::string ShowHistoryTaskDetailsResponse::getXRequestId() const
+{
+    return xRequestId_;
+}
+
+void ShowHistoryTaskDetailsResponse::setXRequestId(const std::string& value)
+{
+    xRequestId_ = value;
+    xRequestIdIsSet_ = true;
+}
+
+bool ShowHistoryTaskDetailsResponse::xRequestIdIsSet() const
+{
+    return xRequestIdIsSet_;
+}
+
+void ShowHistoryTaskDetailsResponse::unsetxRequestId()
+{
+    xRequestIdIsSet_ = false;
 }
 
 }

@@ -53,6 +53,7 @@ CreateJobReq::CreateJobReq()
     chargingMode_ = "";
     chargingModeIsSet_ = false;
     periodOrderIsSet_ = false;
+    publicIpListIsSet_ = false;
 }
 
 CreateJobReq::~CreateJobReq() = default;
@@ -133,6 +134,9 @@ web::json::value CreateJobReq::toJson() const
     }
     if(periodOrderIsSet_) {
         val[utility::conversions::to_string_t("period_order")] = ModelBase::toJson(periodOrder_);
+    }
+    if(publicIpListIsSet_) {
+        val[utility::conversions::to_string_t("public_ip_list")] = ModelBase::toJson(publicIpList_);
     }
 
     return val;
@@ -346,6 +350,15 @@ bool CreateJobReq::fromJson(const web::json::value& val)
             PeriodOrderInfo refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPeriodOrder(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("public_ip_list"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("public_ip_list"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<PublicIpConfig> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPublicIpList(refVal);
         }
     }
     return ok;
@@ -833,6 +846,27 @@ bool CreateJobReq::periodOrderIsSet() const
 void CreateJobReq::unsetperiodOrder()
 {
     periodOrderIsSet_ = false;
+}
+
+std::vector<PublicIpConfig>& CreateJobReq::getPublicIpList()
+{
+    return publicIpList_;
+}
+
+void CreateJobReq::setPublicIpList(const std::vector<PublicIpConfig>& value)
+{
+    publicIpList_ = value;
+    publicIpListIsSet_ = true;
+}
+
+bool CreateJobReq::publicIpListIsSet() const
+{
+    return publicIpListIsSet_;
+}
+
+void CreateJobReq::unsetpublicIpList()
+{
+    publicIpListIsSet_ = false;
 }
 
 }

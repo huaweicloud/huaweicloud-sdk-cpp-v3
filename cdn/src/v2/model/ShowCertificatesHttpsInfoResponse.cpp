@@ -15,6 +15,8 @@ ShowCertificatesHttpsInfoResponse::ShowCertificatesHttpsInfoResponse()
     total_ = 0;
     totalIsSet_ = false;
     httpsIsSet_ = false;
+    xRequestId_ = "";
+    xRequestIdIsSet_ = false;
 }
 
 ShowCertificatesHttpsInfoResponse::~ShowCertificatesHttpsInfoResponse() = default;
@@ -32,6 +34,9 @@ web::json::value ShowCertificatesHttpsInfoResponse::toJson() const
     }
     if(httpsIsSet_) {
         val[utility::conversions::to_string_t("https")] = ModelBase::toJson(https_);
+    }
+    if(xRequestIdIsSet_) {
+        val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
     }
 
     return val;
@@ -56,6 +61,15 @@ bool ShowCertificatesHttpsInfoResponse::fromJson(const web::json::value& val)
             std::vector<HttpsDetail> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setHttps(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Request-Id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXRequestId(refVal);
         }
     }
     return ok;
@@ -102,6 +116,27 @@ bool ShowCertificatesHttpsInfoResponse::httpsIsSet() const
 void ShowCertificatesHttpsInfoResponse::unsethttps()
 {
     httpsIsSet_ = false;
+}
+
+std::string ShowCertificatesHttpsInfoResponse::getXRequestId() const
+{
+    return xRequestId_;
+}
+
+void ShowCertificatesHttpsInfoResponse::setXRequestId(const std::string& value)
+{
+    xRequestId_ = value;
+    xRequestIdIsSet_ = true;
+}
+
+bool ShowCertificatesHttpsInfoResponse::xRequestIdIsSet() const
+{
+    return xRequestIdIsSet_;
+}
+
+void ShowCertificatesHttpsInfoResponse::unsetxRequestId()
+{
+    xRequestIdIsSet_ = false;
 }
 
 }

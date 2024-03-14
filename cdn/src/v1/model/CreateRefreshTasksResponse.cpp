@@ -14,6 +14,8 @@ CreateRefreshTasksResponse::CreateRefreshTasksResponse()
 {
     refreshTask_ = "";
     refreshTaskIsSet_ = false;
+    xRequestId_ = "";
+    xRequestIdIsSet_ = false;
 }
 
 CreateRefreshTasksResponse::~CreateRefreshTasksResponse() = default;
@@ -29,6 +31,9 @@ web::json::value CreateRefreshTasksResponse::toJson() const
     if(refreshTaskIsSet_) {
         val[utility::conversions::to_string_t("refresh_task")] = ModelBase::toJson(refreshTask_);
     }
+    if(xRequestIdIsSet_) {
+        val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
+    }
 
     return val;
 }
@@ -43,6 +48,15 @@ bool CreateRefreshTasksResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRefreshTask(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Request-Id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXRequestId(refVal);
         }
     }
     return ok;
@@ -68,6 +82,27 @@ bool CreateRefreshTasksResponse::refreshTaskIsSet() const
 void CreateRefreshTasksResponse::unsetrefreshTask()
 {
     refreshTaskIsSet_ = false;
+}
+
+std::string CreateRefreshTasksResponse::getXRequestId() const
+{
+    return xRequestId_;
+}
+
+void CreateRefreshTasksResponse::setXRequestId(const std::string& value)
+{
+    xRequestId_ = value;
+    xRequestIdIsSet_ = true;
+}
+
+bool CreateRefreshTasksResponse::xRequestIdIsSet() const
+{
+    return xRequestIdIsSet_;
+}
+
+void CreateRefreshTasksResponse::unsetxRequestId()
+{
+    xRequestIdIsSet_ = false;
 }
 
 }

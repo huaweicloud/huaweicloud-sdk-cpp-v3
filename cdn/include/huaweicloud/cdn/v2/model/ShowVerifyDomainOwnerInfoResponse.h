@@ -101,6 +101,15 @@ public:
     void unsetverifyContent();
     void setVerifyContent(const std::string& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    std::string getXRequestId() const;
+    bool xRequestIdIsSet() const;
+    void unsetxRequestId();
+    void setXRequestId(const std::string& value);
+
 
 protected:
     std::string dnsVerifyType_;
@@ -117,6 +126,8 @@ protected:
     bool fileVerifyFilenameIsSet_;
     std::string verifyContent_;
     bool verifyContentIsSet_;
+    std::string xRequestId_;
+    bool xRequestIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

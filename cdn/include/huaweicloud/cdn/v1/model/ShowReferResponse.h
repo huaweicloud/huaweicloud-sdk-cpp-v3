@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <string>
 #include <huaweicloud/cdn/v1/model/RefererRsp.h>
 
 namespace HuaweiCloud {
@@ -47,10 +48,21 @@ public:
     void unsetreferer();
     void setReferer(const RefererRsp& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    std::string getXRequestId() const;
+    bool xRequestIdIsSet() const;
+    void unsetxRequestId();
+    void setXRequestId(const std::string& value);
+
 
 protected:
     RefererRsp referer_;
     bool refererIsSet_;
+    std::string xRequestId_;
+    bool xRequestIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

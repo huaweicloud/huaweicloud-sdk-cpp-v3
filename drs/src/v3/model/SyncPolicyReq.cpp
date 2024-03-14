@@ -46,6 +46,8 @@ SyncPolicyReq::SyncPolicyReq()
     fileAndPositionIsSet_ = false;
     gtidSet_ = "";
     gtidSetIsSet_ = false;
+    ddlTopic_ = "";
+    ddlTopicIsSet_ = false;
 }
 
 SyncPolicyReq::~SyncPolicyReq() = default;
@@ -108,6 +110,9 @@ web::json::value SyncPolicyReq::toJson() const
     }
     if(gtidSetIsSet_) {
         val[utility::conversions::to_string_t("gtid_set")] = ModelBase::toJson(gtidSet_);
+    }
+    if(ddlTopicIsSet_) {
+        val[utility::conversions::to_string_t("ddl_topic")] = ModelBase::toJson(ddlTopic_);
     }
 
     return val;
@@ -267,6 +272,15 @@ bool SyncPolicyReq::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setGtidSet(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("ddl_topic"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ddl_topic"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDdlTopic(refVal);
         }
     }
     return ok;
@@ -628,6 +642,27 @@ bool SyncPolicyReq::gtidSetIsSet() const
 void SyncPolicyReq::unsetgtidSet()
 {
     gtidSetIsSet_ = false;
+}
+
+std::string SyncPolicyReq::getDdlTopic() const
+{
+    return ddlTopic_;
+}
+
+void SyncPolicyReq::setDdlTopic(const std::string& value)
+{
+    ddlTopic_ = value;
+    ddlTopicIsSet_ = true;
+}
+
+bool SyncPolicyReq::ddlTopicIsSet() const
+{
+    return ddlTopicIsSet_;
+}
+
+void SyncPolicyReq::unsetddlTopic()
+{
+    ddlTopicIsSet_ = false;
 }
 
 }

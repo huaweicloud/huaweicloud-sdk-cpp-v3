@@ -16,6 +16,8 @@ CollectDbObjectsInfoResponse::CollectDbObjectsInfoResponse()
     idIsSet_ = false;
     status_ = "";
     statusIsSet_ = false;
+    jobId_ = "";
+    jobIdIsSet_ = false;
 }
 
 CollectDbObjectsInfoResponse::~CollectDbObjectsInfoResponse() = default;
@@ -33,6 +35,9 @@ web::json::value CollectDbObjectsInfoResponse::toJson() const
     }
     if(statusIsSet_) {
         val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
+    }
+    if(jobIdIsSet_) {
+        val[utility::conversions::to_string_t("job_id")] = ModelBase::toJson(jobId_);
     }
 
     return val;
@@ -57,6 +62,15 @@ bool CollectDbObjectsInfoResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("job_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("job_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setJobId(refVal);
         }
     }
     return ok;
@@ -103,6 +117,27 @@ bool CollectDbObjectsInfoResponse::statusIsSet() const
 void CollectDbObjectsInfoResponse::unsetstatus()
 {
     statusIsSet_ = false;
+}
+
+std::string CollectDbObjectsInfoResponse::getJobId() const
+{
+    return jobId_;
+}
+
+void CollectDbObjectsInfoResponse::setJobId(const std::string& value)
+{
+    jobId_ = value;
+    jobIdIsSet_ = true;
+}
+
+bool CollectDbObjectsInfoResponse::jobIdIsSet() const
+{
+    return jobIdIsSet_;
+}
+
+void CollectDbObjectsInfoResponse::unsetjobId()
+{
+    jobIdIsSet_ = false;
 }
 
 }

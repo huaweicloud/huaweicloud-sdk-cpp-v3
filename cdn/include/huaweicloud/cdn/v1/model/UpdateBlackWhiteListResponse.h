@@ -66,6 +66,15 @@ public:
     void unsetdata();
     void setData(const Object& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    std::string getXRequestId() const;
+    bool xRequestIdIsSet() const;
+    void unsetxRequestId();
+    void setXRequestId(const std::string& value);
+
 
 protected:
     std::string code_;
@@ -74,6 +83,8 @@ protected:
     bool resultIsSet_;
     Object data_;
     bool dataIsSet_;
+    std::string xRequestId_;
+    bool xRequestIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

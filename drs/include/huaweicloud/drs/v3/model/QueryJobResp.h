@@ -9,17 +9,19 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/drs/v3/model/Tag.h>
 #include <huaweicloud/drs/v3/model/QuerySmnInfoResp.h>
 #include <huaweicloud/drs/v3/model/DatabaseObjectInfo.h>
 #include <string>
+#include <huaweicloud/drs/v3/model/FailedToBindEipChildInfo.h>
+#include <vector>
+#include <huaweicloud/drs/v3/model/SpeedLimitInfo.h>
+#include <huaweicloud/drs/v3/model/PublicIpConfig.h>
+#include <huaweicloud/drs/v3/model/Tag.h>
 #include <huaweicloud/drs/v3/model/PeriodOrderResp.h>
 #include <huaweicloud/drs/v3/model/DefaultRootDb.h>
 #include <huaweicloud/drs/v3/model/InstInfo.h>
-#include <vector>
 #include <huaweicloud/drs/v3/model/Endpoint.h>
 #include <huaweicloud/drs/v3/model/GetDataTransformationResp.h>
-#include <huaweicloud/drs/v3/model/SpeedLimitInfo.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -561,6 +563,33 @@ public:
     void unsettags();
     void setTags(const std::vector<Tag>& value);
 
+    /// <summary>
+    /// 指定公网Ip的信息
+    /// </summary>
+
+    std::vector<PublicIpConfig>& getPublicIpList();
+    bool publicIpListIsSet() const;
+    void unsetpublicIpList();
+    void setPublicIpList(const std::vector<PublicIpConfig>& value);
+
+    /// <summary>
+    /// 是否成功绑定公网IP
+    /// </summary>
+
+    std::string getBindPublicIpState() const;
+    bool bindPublicIpStateIsSet() const;
+    void unsetbindPublicIpState();
+    void setBindPublicIpState(const std::string& value);
+
+    /// <summary>
+    /// 多任务时，存在子任务绑定失败时，返回子任务的信息
+    /// </summary>
+
+    std::vector<FailedToBindEipChildInfo>& getChildren();
+    bool childrenIsSet() const;
+    void unsetchildren();
+    void setChildren(const std::vector<FailedToBindEipChildInfo>& value);
+
 
 protected:
     std::string id_;
@@ -677,6 +706,12 @@ protected:
     bool dataTransformationIsSet_;
     std::vector<Tag> tags_;
     bool tagsIsSet_;
+    std::vector<PublicIpConfig> publicIpList_;
+    bool publicIpListIsSet_;
+    std::string bindPublicIpState_;
+    bool bindPublicIpStateIsSet_;
+    std::vector<FailedToBindEipChildInfo> children_;
+    bool childrenIsSet_;
 
 };
 

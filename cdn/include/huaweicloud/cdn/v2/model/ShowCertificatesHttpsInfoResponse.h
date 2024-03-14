@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <string>
 #include <vector>
 #include <huaweicloud/cdn/v2/model/HttpsDetail.h>
 
@@ -57,12 +58,23 @@ public:
     void unsethttps();
     void setHttps(const std::vector<HttpsDetail>& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    std::string getXRequestId() const;
+    bool xRequestIdIsSet() const;
+    void unsetxRequestId();
+    void setXRequestId(const std::string& value);
+
 
 protected:
     int32_t total_;
     bool totalIsSet_;
     std::vector<HttpsDetail> https_;
     bool httpsIsSet_;
+    std::string xRequestId_;
+    bool xRequestIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

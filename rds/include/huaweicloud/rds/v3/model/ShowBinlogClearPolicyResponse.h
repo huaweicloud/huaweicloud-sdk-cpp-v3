@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <string>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -46,10 +47,21 @@ public:
     void unsetbinlogRetentionHours();
     void setBinlogRetentionHours(int32_t value);
 
+    /// <summary>
+    /// 二进制日志保留策略,取值：time、fast - time:表示按时长保留二进制文件 - fast:表示快速清理,不保留二进制文件
+    /// </summary>
+
+    std::string getBinlogClearType() const;
+    bool binlogClearTypeIsSet() const;
+    void unsetbinlogClearType();
+    void setBinlogClearType(const std::string& value);
+
 
 protected:
     int32_t binlogRetentionHours_;
     bool binlogRetentionHoursIsSet_;
+    std::string binlogClearType_;
+    bool binlogClearTypeIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

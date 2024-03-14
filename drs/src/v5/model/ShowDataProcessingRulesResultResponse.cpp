@@ -16,6 +16,8 @@ ShowDataProcessingRulesResultResponse::ShowDataProcessingRulesResultResponse()
     idIsSet_ = false;
     status_ = "";
     statusIsSet_ = false;
+    jobId_ = "";
+    jobIdIsSet_ = false;
 }
 
 ShowDataProcessingRulesResultResponse::~ShowDataProcessingRulesResultResponse() = default;
@@ -33,6 +35,9 @@ web::json::value ShowDataProcessingRulesResultResponse::toJson() const
     }
     if(statusIsSet_) {
         val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
+    }
+    if(jobIdIsSet_) {
+        val[utility::conversions::to_string_t("job_id")] = ModelBase::toJson(jobId_);
     }
 
     return val;
@@ -57,6 +62,15 @@ bool ShowDataProcessingRulesResultResponse::fromJson(const web::json::value& val
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("job_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("job_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setJobId(refVal);
         }
     }
     return ok;
@@ -103,6 +117,27 @@ bool ShowDataProcessingRulesResultResponse::statusIsSet() const
 void ShowDataProcessingRulesResultResponse::unsetstatus()
 {
     statusIsSet_ = false;
+}
+
+std::string ShowDataProcessingRulesResultResponse::getJobId() const
+{
+    return jobId_;
+}
+
+void ShowDataProcessingRulesResultResponse::setJobId(const std::string& value)
+{
+    jobId_ = value;
+    jobIdIsSet_ = true;
+}
+
+bool ShowDataProcessingRulesResultResponse::jobIdIsSet() const
+{
+    return jobIdIsSet_;
+}
+
+void ShowDataProcessingRulesResultResponse::unsetjobId()
+{
+    jobIdIsSet_ = false;
 }
 
 }

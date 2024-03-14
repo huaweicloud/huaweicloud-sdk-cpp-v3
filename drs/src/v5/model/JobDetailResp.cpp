@@ -45,6 +45,10 @@ JobDetailResp::JobDetailResp()
     taskVersion_ = "";
     taskVersionIsSet_ = false;
     connectionManagementIsSet_ = false;
+    publicIpListIsSet_ = false;
+    bindPublicIpState_ = "";
+    bindPublicIpStateIsSet_ = false;
+    childrenIsSet_ = false;
 }
 
 JobDetailResp::~JobDetailResp() = default;
@@ -137,6 +141,15 @@ web::json::value JobDetailResp::toJson() const
     }
     if(connectionManagementIsSet_) {
         val[utility::conversions::to_string_t("connection_management")] = ModelBase::toJson(connectionManagement_);
+    }
+    if(publicIpListIsSet_) {
+        val[utility::conversions::to_string_t("public_ip_list")] = ModelBase::toJson(publicIpList_);
+    }
+    if(bindPublicIpStateIsSet_) {
+        val[utility::conversions::to_string_t("bind_public_ip_state")] = ModelBase::toJson(bindPublicIpState_);
+    }
+    if(childrenIsSet_) {
+        val[utility::conversions::to_string_t("children")] = ModelBase::toJson(children_);
     }
 
     return val;
@@ -386,6 +399,33 @@ bool JobDetailResp::fromJson(const web::json::value& val)
             ConnectionManagement refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setConnectionManagement(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("public_ip_list"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("public_ip_list"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<PublicIpConfig> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPublicIpList(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("bind_public_ip_state"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("bind_public_ip_state"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBindPublicIpState(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("children"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("children"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<FailedToBindEipChildInfo> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setChildren(refVal);
         }
     }
     return ok;
@@ -957,6 +997,69 @@ bool JobDetailResp::connectionManagementIsSet() const
 void JobDetailResp::unsetconnectionManagement()
 {
     connectionManagementIsSet_ = false;
+}
+
+std::vector<PublicIpConfig>& JobDetailResp::getPublicIpList()
+{
+    return publicIpList_;
+}
+
+void JobDetailResp::setPublicIpList(const std::vector<PublicIpConfig>& value)
+{
+    publicIpList_ = value;
+    publicIpListIsSet_ = true;
+}
+
+bool JobDetailResp::publicIpListIsSet() const
+{
+    return publicIpListIsSet_;
+}
+
+void JobDetailResp::unsetpublicIpList()
+{
+    publicIpListIsSet_ = false;
+}
+
+std::string JobDetailResp::getBindPublicIpState() const
+{
+    return bindPublicIpState_;
+}
+
+void JobDetailResp::setBindPublicIpState(const std::string& value)
+{
+    bindPublicIpState_ = value;
+    bindPublicIpStateIsSet_ = true;
+}
+
+bool JobDetailResp::bindPublicIpStateIsSet() const
+{
+    return bindPublicIpStateIsSet_;
+}
+
+void JobDetailResp::unsetbindPublicIpState()
+{
+    bindPublicIpStateIsSet_ = false;
+}
+
+std::vector<FailedToBindEipChildInfo>& JobDetailResp::getChildren()
+{
+    return children_;
+}
+
+void JobDetailResp::setChildren(const std::vector<FailedToBindEipChildInfo>& value)
+{
+    children_ = value;
+    childrenIsSet_ = true;
+}
+
+bool JobDetailResp::childrenIsSet() const
+{
+    return childrenIsSet_;
+}
+
+void JobDetailResp::unsetchildren()
+{
+    childrenIsSet_ = false;
 }
 
 }

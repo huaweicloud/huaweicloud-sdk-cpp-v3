@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/cdn/v2/model/CdnIps.h>
+#include <string>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -48,10 +49,21 @@ public:
     void unsetcdnIps();
     void setCdnIps(const std::vector<CdnIps>& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    std::string getXRequestId() const;
+    bool xRequestIdIsSet() const;
+    void unsetxRequestId();
+    void setXRequestId(const std::string& value);
+
 
 protected:
     std::vector<CdnIps> cdnIps_;
     bool cdnIpsIsSet_;
+    std::string xRequestId_;
+    bool xRequestIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

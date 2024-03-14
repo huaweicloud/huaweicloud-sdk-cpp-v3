@@ -14,6 +14,8 @@ CreatePreheatingTasksResponse::CreatePreheatingTasksResponse()
 {
     preheatingTask_ = "";
     preheatingTaskIsSet_ = false;
+    xRequestId_ = "";
+    xRequestIdIsSet_ = false;
 }
 
 CreatePreheatingTasksResponse::~CreatePreheatingTasksResponse() = default;
@@ -29,6 +31,9 @@ web::json::value CreatePreheatingTasksResponse::toJson() const
     if(preheatingTaskIsSet_) {
         val[utility::conversions::to_string_t("preheating_task")] = ModelBase::toJson(preheatingTask_);
     }
+    if(xRequestIdIsSet_) {
+        val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
+    }
 
     return val;
 }
@@ -43,6 +48,15 @@ bool CreatePreheatingTasksResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPreheatingTask(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Request-Id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXRequestId(refVal);
         }
     }
     return ok;
@@ -68,6 +82,27 @@ bool CreatePreheatingTasksResponse::preheatingTaskIsSet() const
 void CreatePreheatingTasksResponse::unsetpreheatingTask()
 {
     preheatingTaskIsSet_ = false;
+}
+
+std::string CreatePreheatingTasksResponse::getXRequestId() const
+{
+    return xRequestId_;
+}
+
+void CreatePreheatingTasksResponse::setXRequestId(const std::string& value)
+{
+    xRequestId_ = value;
+    xRequestIdIsSet_ = true;
+}
+
+bool CreatePreheatingTasksResponse::xRequestIdIsSet() const
+{
+    return xRequestIdIsSet_;
+}
+
+void CreatePreheatingTasksResponse::unsetxRequestId()
+{
+    xRequestIdIsSet_ = false;
 }
 
 }

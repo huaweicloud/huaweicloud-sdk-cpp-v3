@@ -39,7 +39,7 @@ public:
     /// BatchJobActionReq members
 
     /// <summary>
-    /// 执行操作
+    /// 需要执行的特定操作。
     /// </summary>
 
     std::string getAction() const;
@@ -48,7 +48,7 @@ public:
     void setAction(const std::string& value);
 
     /// <summary>
-    /// 任务ID（集群模式 取父任务的任务id）
+    /// 任务ID（集群模式 取父任务的任务ID）。
     /// </summary>
 
     std::string getJobId() const;

@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/cdn/v2/model/CreateDomainResponseBodyContent.h>
+#include <string>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -47,10 +48,21 @@ public:
     void unsetdomain();
     void setDomain(const CreateDomainResponseBodyContent& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    std::string getXRequestId() const;
+    bool xRequestIdIsSet() const;
+    void unsetxRequestId();
+    void setXRequestId(const std::string& value);
+
 
 protected:
     CreateDomainResponseBodyContent domain_;
     bool domainIsSet_;
+    std::string xRequestId_;
+    bool xRequestIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

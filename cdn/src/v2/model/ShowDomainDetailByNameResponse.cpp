@@ -13,6 +13,8 @@ namespace Model {
 ShowDomainDetailByNameResponse::ShowDomainDetailByNameResponse()
 {
     domainIsSet_ = false;
+    xRequestId_ = "";
+    xRequestIdIsSet_ = false;
 }
 
 ShowDomainDetailByNameResponse::~ShowDomainDetailByNameResponse() = default;
@@ -28,6 +30,9 @@ web::json::value ShowDomainDetailByNameResponse::toJson() const
     if(domainIsSet_) {
         val[utility::conversions::to_string_t("domain")] = ModelBase::toJson(domain_);
     }
+    if(xRequestIdIsSet_) {
+        val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
+    }
 
     return val;
 }
@@ -42,6 +47,15 @@ bool ShowDomainDetailByNameResponse::fromJson(const web::json::value& val)
             DomainsDetail refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDomain(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Request-Id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXRequestId(refVal);
         }
     }
     return ok;
@@ -67,6 +81,27 @@ bool ShowDomainDetailByNameResponse::domainIsSet() const
 void ShowDomainDetailByNameResponse::unsetdomain()
 {
     domainIsSet_ = false;
+}
+
+std::string ShowDomainDetailByNameResponse::getXRequestId() const
+{
+    return xRequestId_;
+}
+
+void ShowDomainDetailByNameResponse::setXRequestId(const std::string& value)
+{
+    xRequestId_ = value;
+    xRequestIdIsSet_ = true;
+}
+
+bool ShowDomainDetailByNameResponse::xRequestIdIsSet() const
+{
+    return xRequestIdIsSet_;
+}
+
+void ShowDomainDetailByNameResponse::unsetxRequestId()
+{
+    xRequestIdIsSet_ = false;
 }
 
 }

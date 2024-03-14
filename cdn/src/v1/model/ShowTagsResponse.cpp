@@ -13,6 +13,8 @@ namespace Model {
 ShowTagsResponse::ShowTagsResponse()
 {
     tagsIsSet_ = false;
+    xRequestId_ = "";
+    xRequestIdIsSet_ = false;
 }
 
 ShowTagsResponse::~ShowTagsResponse() = default;
@@ -28,6 +30,9 @@ web::json::value ShowTagsResponse::toJson() const
     if(tagsIsSet_) {
         val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
     }
+    if(xRequestIdIsSet_) {
+        val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
+    }
 
     return val;
 }
@@ -42,6 +47,15 @@ bool ShowTagsResponse::fromJson(const web::json::value& val)
             std::vector<Map> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTags(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Request-Id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXRequestId(refVal);
         }
     }
     return ok;
@@ -67,6 +81,27 @@ bool ShowTagsResponse::tagsIsSet() const
 void ShowTagsResponse::unsettags()
 {
     tagsIsSet_ = false;
+}
+
+std::string ShowTagsResponse::getXRequestId() const
+{
+    return xRequestId_;
+}
+
+void ShowTagsResponse::setXRequestId(const std::string& value)
+{
+    xRequestId_ = value;
+    xRequestIdIsSet_ = true;
+}
+
+bool ShowTagsResponse::xRequestIdIsSet() const
+{
+    return xRequestIdIsSet_;
+}
+
+void ShowTagsResponse::unsetxRequestId()
+{
+    xRequestIdIsSet_ = false;
 }
 
 }

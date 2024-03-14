@@ -13,6 +13,8 @@ namespace Model {
 ShowDomainFullConfigResponse::ShowDomainFullConfigResponse()
 {
     configsIsSet_ = false;
+    xRequestId_ = "";
+    xRequestIdIsSet_ = false;
 }
 
 ShowDomainFullConfigResponse::~ShowDomainFullConfigResponse() = default;
@@ -28,6 +30,9 @@ web::json::value ShowDomainFullConfigResponse::toJson() const
     if(configsIsSet_) {
         val[utility::conversions::to_string_t("configs")] = ModelBase::toJson(configs_);
     }
+    if(xRequestIdIsSet_) {
+        val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
+    }
 
     return val;
 }
@@ -42,6 +47,15 @@ bool ShowDomainFullConfigResponse::fromJson(const web::json::value& val)
             ConfigsGetBody refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setConfigs(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Request-Id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXRequestId(refVal);
         }
     }
     return ok;
@@ -67,6 +81,27 @@ bool ShowDomainFullConfigResponse::configsIsSet() const
 void ShowDomainFullConfigResponse::unsetconfigs()
 {
     configsIsSet_ = false;
+}
+
+std::string ShowDomainFullConfigResponse::getXRequestId() const
+{
+    return xRequestId_;
+}
+
+void ShowDomainFullConfigResponse::setXRequestId(const std::string& value)
+{
+    xRequestId_ = value;
+    xRequestIdIsSet_ = true;
+}
+
+bool ShowDomainFullConfigResponse::xRequestIdIsSet() const
+{
+    return xRequestIdIsSet_;
+}
+
+void ShowDomainFullConfigResponse::unsetxRequestId()
+{
+    xRequestIdIsSet_ = false;
 }
 
 }

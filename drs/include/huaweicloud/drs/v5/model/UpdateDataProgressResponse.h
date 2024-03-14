@@ -56,12 +56,23 @@ public:
     void unsetstatus();
     void setStatus(const std::string& value);
 
+    /// <summary>
+    /// 任务ID
+    /// </summary>
+
+    std::string getJobId() const;
+    bool jobIdIsSet() const;
+    void unsetjobId();
+    void setJobId(const std::string& value);
+
 
 protected:
     std::string id_;
     bool idIsSet_;
     std::string status_;
     bool statusIsSet_;
+    std::string jobId_;
+    bool jobIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

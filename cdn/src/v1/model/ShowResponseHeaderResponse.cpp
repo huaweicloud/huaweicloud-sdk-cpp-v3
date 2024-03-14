@@ -13,6 +13,8 @@ namespace Model {
 ShowResponseHeaderResponse::ShowResponseHeaderResponse()
 {
     headersIsSet_ = false;
+    xRequestId_ = "";
+    xRequestIdIsSet_ = false;
 }
 
 ShowResponseHeaderResponse::~ShowResponseHeaderResponse() = default;
@@ -28,6 +30,9 @@ web::json::value ShowResponseHeaderResponse::toJson() const
     if(headersIsSet_) {
         val[utility::conversions::to_string_t("headers")] = ModelBase::toJson(headers_);
     }
+    if(xRequestIdIsSet_) {
+        val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
+    }
 
     return val;
 }
@@ -42,6 +47,15 @@ bool ShowResponseHeaderResponse::fromJson(const web::json::value& val)
             HeaderMap refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setHeaders(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Request-Id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXRequestId(refVal);
         }
     }
     return ok;
@@ -67,6 +81,27 @@ bool ShowResponseHeaderResponse::headersIsSet() const
 void ShowResponseHeaderResponse::unsetheaders()
 {
     headersIsSet_ = false;
+}
+
+std::string ShowResponseHeaderResponse::getXRequestId() const
+{
+    return xRequestId_;
+}
+
+void ShowResponseHeaderResponse::setXRequestId(const std::string& value)
+{
+    xRequestId_ = value;
+    xRequestIdIsSet_ = true;
+}
+
+bool ShowResponseHeaderResponse::xRequestIdIsSet() const
+{
+    return xRequestIdIsSet_;
+}
+
+void ShowResponseHeaderResponse::unsetxRequestId()
+{
+    xRequestIdIsSet_ = false;
 }
 
 }

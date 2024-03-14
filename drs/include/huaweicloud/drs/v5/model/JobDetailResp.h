@@ -26,11 +26,13 @@
 #include <huaweicloud/drs/v5/model/CompareResultInfo.h>
 #include <huaweicloud/drs/v5/model/QueryPreCheckResult.h>
 #include <huaweicloud/drs/v5/model/TuningParamInfo.h>
+#include <huaweicloud/drs/v5/model/FailedToBindEipChildInfo.h>
 #include <huaweicloud/drs/v5/model/PeriodOrderInfo.h>
 #include <map>
 #include <huaweicloud/drs/v5/model/JobBaseInfo.h>
 #include <huaweicloud/drs/v5/model/AlarmNotifyConfig.h>
 #include <huaweicloud/drs/v5/model/PolicyConfig.h>
+#include <huaweicloud/drs/v5/model/PublicIpConfig.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -302,6 +304,33 @@ public:
     void unsetconnectionManagement();
     void setConnectionManagement(const ConnectionManagement& value);
 
+    /// <summary>
+    /// 指定公网IP的信息
+    /// </summary>
+
+    std::vector<PublicIpConfig>& getPublicIpList();
+    bool publicIpListIsSet() const;
+    void unsetpublicIpList();
+    void setPublicIpList(const std::vector<PublicIpConfig>& value);
+
+    /// <summary>
+    /// 是否成功绑定公网IP
+    /// </summary>
+
+    std::string getBindPublicIpState() const;
+    bool bindPublicIpStateIsSet() const;
+    void unsetbindPublicIpState();
+    void setBindPublicIpState(const std::string& value);
+
+    /// <summary>
+    /// 多任务时，存在子任务绑定失败时，返回子任务的信息
+    /// </summary>
+
+    std::vector<FailedToBindEipChildInfo>& getChildren();
+    bool childrenIsSet() const;
+    void unsetchildren();
+    void setChildren(const std::vector<FailedToBindEipChildInfo>& value);
+
 
 protected:
     std::string id_;
@@ -358,6 +387,12 @@ protected:
     bool taskVersionIsSet_;
     ConnectionManagement connectionManagement_;
     bool connectionManagementIsSet_;
+    std::vector<PublicIpConfig> publicIpList_;
+    bool publicIpListIsSet_;
+    std::string bindPublicIpState_;
+    bool bindPublicIpStateIsSet_;
+    std::vector<FailedToBindEipChildInfo> children_;
+    bool childrenIsSet_;
 
 };
 

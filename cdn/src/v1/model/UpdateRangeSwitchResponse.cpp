@@ -13,6 +13,8 @@ namespace Model {
 UpdateRangeSwitchResponse::UpdateRangeSwitchResponse()
 {
     originRangeIsSet_ = false;
+    xRequestId_ = "";
+    xRequestIdIsSet_ = false;
 }
 
 UpdateRangeSwitchResponse::~UpdateRangeSwitchResponse() = default;
@@ -28,6 +30,9 @@ web::json::value UpdateRangeSwitchResponse::toJson() const
     if(originRangeIsSet_) {
         val[utility::conversions::to_string_t("origin_range")] = ModelBase::toJson(originRange_);
     }
+    if(xRequestIdIsSet_) {
+        val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
+    }
 
     return val;
 }
@@ -42,6 +47,15 @@ bool UpdateRangeSwitchResponse::fromJson(const web::json::value& val)
             OriginRangeBody refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setOriginRange(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Request-Id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXRequestId(refVal);
         }
     }
     return ok;
@@ -67,6 +81,27 @@ bool UpdateRangeSwitchResponse::originRangeIsSet() const
 void UpdateRangeSwitchResponse::unsetoriginRange()
 {
     originRangeIsSet_ = false;
+}
+
+std::string UpdateRangeSwitchResponse::getXRequestId() const
+{
+    return xRequestId_;
+}
+
+void UpdateRangeSwitchResponse::setXRequestId(const std::string& value)
+{
+    xRequestId_ = value;
+    xRequestIdIsSet_ = true;
+}
+
+bool UpdateRangeSwitchResponse::xRequestIdIsSet() const
+{
+    return xRequestIdIsSet_;
+}
+
+void UpdateRangeSwitchResponse::unsetxRequestId()
+{
+    xRequestIdIsSet_ = false;
 }
 
 }

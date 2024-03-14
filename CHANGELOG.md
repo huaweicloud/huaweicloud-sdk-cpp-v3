@@ -1,3 +1,87 @@
+# 3.1.77 2024-03-14
+
+### HuaweiCloud SDK DRS
+
+- _Features_
+  - Support the API `ListAvailableNodeTypes`
+- _Bug Fix_
+  - None
+- _Change_
+  - **BatchSetPolicy**
+    - changes of request param
+      - `+ jobs.ddl_topic`
+  - **BatchCreateJobs**
+    - changes of request param
+      - `+ jobs.public_ip_list`
+  - **ShowJobList**
+    - changes of response param
+      - `+ jobs.children.job_direction: enum value [non-dbs]`
+      - `- jobs.children.job_direction: enum value [no-dbs]`
+  - **BatchListJobDetails**
+    - changes of response param
+      - `+ results.public_ip_list`
+      - `+ results.bind_public_ip_state`
+      - `+ results.children`
+  - **ShowUpdateObjectSavingStatus**
+    - changes of response param
+      - `+ job_id`
+  - **CollectDbObjectsAsync**
+    - changes of response param
+      - `+ job_id`
+  - **ShowDataProcessingRulesResult**
+    - changes of response param
+      - `+ job_id`
+  - **CollectDbObjectsInfo**
+    - changes of response param
+      - `+ job_id`
+  - **CollectPositionAsync**
+    - changes of response param
+      - `+ job_id`
+  - **CollectColumns**
+    - changes of response param
+      - `+ job_id`
+  - **CreateJob**
+    - changes of request param
+      - `+ job.public_ip_list`
+  - **BatchCreateJobsAsync**
+    - changes of request param
+      - `+ jobs.public_ip_list`
+  - **UpdateDataProgress**
+    - changes of response param
+      - `+ job_id`
+  - **CheckDataFilter**
+    - changes of response param
+      - `+ job_id`
+  - **ListAsyncJobDetail**
+    - changes of response param
+      - `+ jobs.public_ip_list`
+      - `+ jobs.bind_public_ip_state`
+      - `+ jobs.children`
+  - **ShowJobDetail**
+    - changes of response param
+      - `+ job.public_ip_list`
+      - `+ job.bind_public_ip_state`
+      - `+ job.children`
+  - **ExecuteJobAction**
+    - changes of request param
+      - `+ job.action_name: enum value [bind_eip,unbind_eip]`
+      - `+ job.action_params.public_ip_config`
+  - **BatchExecuteJobActions**
+    - changes of request param
+      - `+ jobs.action_name: enum value [bind_eip,unbind_eip]`
+      - `+ jobs.action_params.public_ip_config`
+
+### HuaweiCloud SDK RDS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowBinlogClearPolicy**
+    - changes of response param
+      - `+ binlog_clear_type`
+
 # 3.1.76 2024-03-07
 
 ### HuaweiCloud SDK GaussDBforNoSQL

@@ -13,6 +13,8 @@ namespace Model {
 UpdateCacheRulesResponse::UpdateCacheRulesResponse()
 {
     cacheConfigIsSet_ = false;
+    xRequestId_ = "";
+    xRequestIdIsSet_ = false;
 }
 
 UpdateCacheRulesResponse::~UpdateCacheRulesResponse() = default;
@@ -28,6 +30,9 @@ web::json::value UpdateCacheRulesResponse::toJson() const
     if(cacheConfigIsSet_) {
         val[utility::conversions::to_string_t("cache_config")] = ModelBase::toJson(cacheConfig_);
     }
+    if(xRequestIdIsSet_) {
+        val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
+    }
 
     return val;
 }
@@ -42,6 +47,15 @@ bool UpdateCacheRulesResponse::fromJson(const web::json::value& val)
             CacheConfig refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCacheConfig(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Request-Id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXRequestId(refVal);
         }
     }
     return ok;
@@ -67,6 +81,27 @@ bool UpdateCacheRulesResponse::cacheConfigIsSet() const
 void UpdateCacheRulesResponse::unsetcacheConfig()
 {
     cacheConfigIsSet_ = false;
+}
+
+std::string UpdateCacheRulesResponse::getXRequestId() const
+{
+    return xRequestId_;
+}
+
+void UpdateCacheRulesResponse::setXRequestId(const std::string& value)
+{
+    xRequestId_ = value;
+    xRequestIdIsSet_ = true;
+}
+
+bool UpdateCacheRulesResponse::xRequestIdIsSet() const
+{
+    return xRequestIdIsSet_;
+}
+
+void UpdateCacheRulesResponse::unsetxRequestId()
+{
+    xRequestIdIsSet_ = false;
 }
 
 }

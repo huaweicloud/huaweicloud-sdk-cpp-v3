@@ -75,7 +75,7 @@ public:
     void setSortDir(const std::string& value);
 
     /// <summary>
-    /// 排序字段。  key的取值范围：  - flavorid：表示规格ID。 - sort_key的默认值为“flavorid”。 - name：表示规格名称。 - memory_mb：表示内存大小。 - vcpus：表示CPU大小。 - root_gb：表示系统盘大小。
+    /// 排序字段。默认值为“flavorid”。  key的取值范围：  - flavorid：表示规格ID。 - name：表示规格名称。 - memory_mb：表示内存大小。 - vcpus：表示CPU大小。 - root_gb：表示系统盘大小。
     /// </summary>
 
     std::string getSortKey() const;

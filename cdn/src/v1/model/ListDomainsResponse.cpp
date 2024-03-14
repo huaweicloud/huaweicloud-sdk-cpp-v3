@@ -15,6 +15,8 @@ ListDomainsResponse::ListDomainsResponse()
     total_ = 0;
     totalIsSet_ = false;
     domainsIsSet_ = false;
+    xRequestId_ = "";
+    xRequestIdIsSet_ = false;
 }
 
 ListDomainsResponse::~ListDomainsResponse() = default;
@@ -32,6 +34,9 @@ web::json::value ListDomainsResponse::toJson() const
     }
     if(domainsIsSet_) {
         val[utility::conversions::to_string_t("domains")] = ModelBase::toJson(domains_);
+    }
+    if(xRequestIdIsSet_) {
+        val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
     }
 
     return val;
@@ -56,6 +61,15 @@ bool ListDomainsResponse::fromJson(const web::json::value& val)
             std::vector<Domains> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDomains(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Request-Id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXRequestId(refVal);
         }
     }
     return ok;
@@ -102,6 +116,27 @@ bool ListDomainsResponse::domainsIsSet() const
 void ListDomainsResponse::unsetdomains()
 {
     domainsIsSet_ = false;
+}
+
+std::string ListDomainsResponse::getXRequestId() const
+{
+    return xRequestId_;
+}
+
+void ListDomainsResponse::setXRequestId(const std::string& value)
+{
+    xRequestId_ = value;
+    xRequestIdIsSet_ = true;
+}
+
+bool ListDomainsResponse::xRequestIdIsSet() const
+{
+    return xRequestIdIsSet_;
+}
+
+void ListDomainsResponse::unsetxRequestId()
+{
+    xRequestIdIsSet_ = false;
 }
 
 }

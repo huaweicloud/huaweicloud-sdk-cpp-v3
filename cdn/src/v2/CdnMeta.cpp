@@ -14,6 +14,11 @@ HttpRequestDef CdnMeta::genRequestDefForBatchCopyDomain() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -23,6 +28,11 @@ HttpRequestDef CdnMeta::genRequestDefForBatchDeleteTags() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -32,6 +42,11 @@ HttpRequestDef CdnMeta::genRequestDefForCreateDomain() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -44,6 +59,11 @@ HttpRequestDef CdnMeta::genRequestDefForCreatePreheatingTasks() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -56,6 +76,11 @@ HttpRequestDef CdnMeta::genRequestDefForCreateRefreshTasks() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -65,6 +90,11 @@ HttpRequestDef CdnMeta::genRequestDefForCreateTags() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -73,6 +103,11 @@ HttpRequestDef CdnMeta::genRequestDefForDeleteDomain() {
     reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
                   .withJsonTag("enterprise_project_id")
                   .withLocationType(Query_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -81,6 +116,11 @@ HttpRequestDef CdnMeta::genRequestDefForDisableDomain() {
     reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
                   .withJsonTag("enterprise_project_id")
                   .withLocationType(Query_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -153,6 +193,11 @@ HttpRequestDef CdnMeta::genRequestDefForEnableDomain() {
     reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
                   .withJsonTag("enterprise_project_id")
                   .withLocationType(Query_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -211,6 +256,11 @@ HttpRequestDef CdnMeta::genRequestDefForListDomains() {
     reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
                   .withJsonTag("enterprise_project_id")
                   .withLocationType(Query_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -263,6 +313,11 @@ HttpRequestDef CdnMeta::genRequestDefForShowCertificatesHttpsInfo() {
     reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
                   .withJsonTag("enterprise_project_id")
                   .withLocationType(Query_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -285,6 +340,11 @@ HttpRequestDef CdnMeta::genRequestDefForShowDomainDetailByName() {
     reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
                   .withJsonTag("enterprise_project_id")
                   .withLocationType(Query_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -296,6 +356,11 @@ HttpRequestDef CdnMeta::genRequestDefForShowDomainFullConfig() {
     reqDefBuilder.withRequestField(FieldDef().withName("ShowSpecialConfigs")
                   .withJsonTag("show_special_configs")
                   .withLocationType(Query_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -389,6 +454,11 @@ HttpRequestDef CdnMeta::genRequestDefForShowHistoryTaskDetails() {
     reqDefBuilder.withRequestField(FieldDef().withName("CreateTime")
                   .withJsonTag("create_time")
                   .withLocationType(Query_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -424,6 +494,11 @@ HttpRequestDef CdnMeta::genRequestDefForShowHistoryTasks() {
     reqDefBuilder.withRequestField(FieldDef().withName("TaskType")
                   .withJsonTag("task_type")
                   .withLocationType(Query_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -435,6 +510,11 @@ HttpRequestDef CdnMeta::genRequestDefForShowIpInfo() {
     reqDefBuilder.withRequestField(FieldDef().withName("Ips")
                   .withJsonTag("ips")
                   .withLocationType(Query_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -466,6 +546,11 @@ HttpRequestDef CdnMeta::genRequestDefForShowTags() {
     reqDefBuilder.withRequestField(FieldDef().withName("ResourceId")
                   .withJsonTag("resource_id")
                   .withLocationType(Query_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -551,6 +636,11 @@ HttpRequestDef CdnMeta::genRequestDefForShowUrlTaskInfo() {
 
 HttpRequestDef CdnMeta::genRequestDefForShowVerifyDomainOwnerInfo() {
     HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -563,6 +653,11 @@ HttpRequestDef CdnMeta::genRequestDefForUpdateDomainFullConfig() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -575,6 +670,11 @@ HttpRequestDef CdnMeta::genRequestDefForUpdateDomainMultiCertificates() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -587,6 +687,11 @@ HttpRequestDef CdnMeta::genRequestDefForUpdatePrivateBucketAccess() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -596,6 +701,11 @@ HttpRequestDef CdnMeta::genRequestDefForVerifyDomainOwner() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 

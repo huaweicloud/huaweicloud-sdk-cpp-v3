@@ -14,6 +14,7 @@
 #include <huaweicloud/drs/v5/model/PeriodOrderInfo.h>
 #include <huaweicloud/drs/v5/model/JobBaseInfo.h>
 #include <vector>
+#include <huaweicloud/drs/v5/model/PublicIpConfig.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -87,6 +88,15 @@ public:
     void unsetnodeInfo();
     void setNodeInfo(const JobNodeInfo& value);
 
+    /// <summary>
+    /// 指定公网IP的信息
+    /// </summary>
+
+    std::vector<PublicIpConfig>& getPublicIpList();
+    bool publicIpListIsSet() const;
+    void unsetpublicIpList();
+    void setPublicIpList(const std::vector<PublicIpConfig>& value);
+
 
 protected:
     JobBaseInfo baseInfo_;
@@ -99,6 +109,8 @@ protected:
     bool periodOrderIsSet_;
     JobNodeInfo nodeInfo_;
     bool nodeInfoIsSet_;
+    std::vector<PublicIpConfig> publicIpList_;
+    bool publicIpListIsSet_;
 
 };
 

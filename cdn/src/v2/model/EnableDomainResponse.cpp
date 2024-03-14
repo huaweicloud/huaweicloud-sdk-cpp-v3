@@ -13,6 +13,8 @@ namespace Model {
 EnableDomainResponse::EnableDomainResponse()
 {
     domainIsSet_ = false;
+    xRequestId_ = "";
+    xRequestIdIsSet_ = false;
 }
 
 EnableDomainResponse::~EnableDomainResponse() = default;
@@ -28,6 +30,9 @@ web::json::value EnableDomainResponse::toJson() const
     if(domainIsSet_) {
         val[utility::conversions::to_string_t("domain")] = ModelBase::toJson(domain_);
     }
+    if(xRequestIdIsSet_) {
+        val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
+    }
 
     return val;
 }
@@ -42,6 +47,15 @@ bool EnableDomainResponse::fromJson(const web::json::value& val)
             DomainsWithPort refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDomain(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Request-Id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXRequestId(refVal);
         }
     }
     return ok;
@@ -67,6 +81,27 @@ bool EnableDomainResponse::domainIsSet() const
 void EnableDomainResponse::unsetdomain()
 {
     domainIsSet_ = false;
+}
+
+std::string EnableDomainResponse::getXRequestId() const
+{
+    return xRequestId_;
+}
+
+void EnableDomainResponse::setXRequestId(const std::string& value)
+{
+    xRequestId_ = value;
+    xRequestIdIsSet_ = true;
+}
+
+bool EnableDomainResponse::xRequestIdIsSet() const
+{
+    return xRequestIdIsSet_;
+}
+
+void EnableDomainResponse::unsetxRequestId()
+{
+    xRequestIdIsSet_ = false;
 }
 
 }

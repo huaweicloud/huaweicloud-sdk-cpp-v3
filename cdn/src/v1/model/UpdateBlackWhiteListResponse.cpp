@@ -17,6 +17,8 @@ UpdateBlackWhiteListResponse::UpdateBlackWhiteListResponse()
     result_ = "";
     resultIsSet_ = false;
     dataIsSet_ = false;
+    xRequestId_ = "";
+    xRequestIdIsSet_ = false;
 }
 
 UpdateBlackWhiteListResponse::~UpdateBlackWhiteListResponse() = default;
@@ -37,6 +39,9 @@ web::json::value UpdateBlackWhiteListResponse::toJson() const
     }
     if(dataIsSet_) {
         val[utility::conversions::to_string_t("data")] = ModelBase::toJson(data_);
+    }
+    if(xRequestIdIsSet_) {
+        val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
     }
 
     return val;
@@ -70,6 +75,15 @@ bool UpdateBlackWhiteListResponse::fromJson(const web::json::value& val)
             Object refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setData(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Request-Id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXRequestId(refVal);
         }
     }
     return ok;
@@ -137,6 +151,27 @@ bool UpdateBlackWhiteListResponse::dataIsSet() const
 void UpdateBlackWhiteListResponse::unsetdata()
 {
     dataIsSet_ = false;
+}
+
+std::string UpdateBlackWhiteListResponse::getXRequestId() const
+{
+    return xRequestId_;
+}
+
+void UpdateBlackWhiteListResponse::setXRequestId(const std::string& value)
+{
+    xRequestId_ = value;
+    xRequestIdIsSet_ = true;
+}
+
+bool UpdateBlackWhiteListResponse::xRequestIdIsSet() const
+{
+    return xRequestIdIsSet_;
+}
+
+void UpdateBlackWhiteListResponse::unsetxRequestId()
+{
+    xRequestIdIsSet_ = false;
 }
 
 }

@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/cdn/v1/model/Follow302StatusBody.h>
+#include <string>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -47,10 +48,21 @@ public:
     void unsetfollowStatus();
     void setFollowStatus(const Follow302StatusBody& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    std::string getXRequestId() const;
+    bool xRequestIdIsSet() const;
+    void unsetxRequestId();
+    void setXRequestId(const std::string& value);
+
 
 protected:
     Follow302StatusBody followStatus_;
     bool followStatusIsSet_;
+    std::string xRequestId_;
+    bool xRequestIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

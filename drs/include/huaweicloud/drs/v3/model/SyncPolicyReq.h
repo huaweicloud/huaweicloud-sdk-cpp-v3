@@ -191,6 +191,15 @@ public:
     void unsetgtidSet();
     void setGtidSet(const std::string& value);
 
+    /// <summary>
+    /// 存储DDL的topic。Kafka为目标且ddl_trans为true时必填，取值：目标库已存在的topic名称，确保topic已存在。
+    /// </summary>
+
+    std::string getDdlTopic() const;
+    bool ddlTopicIsSet() const;
+    void unsetddlTopic();
+    void setDdlTopic(const std::string& value);
+
 
 protected:
     std::string jobId_;
@@ -227,6 +236,8 @@ protected:
     bool fileAndPositionIsSet_;
     std::string gtidSet_;
     bool gtidSetIsSet_;
+    std::string ddlTopic_;
+    bool ddlTopicIsSet_;
 
 };
 

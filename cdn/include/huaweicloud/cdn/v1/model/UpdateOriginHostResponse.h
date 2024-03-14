@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/cdn/v1/model/DomainOriginHost.h>
+#include <string>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -47,10 +48,21 @@ public:
     void unsetoriginHost();
     void setOriginHost(const DomainOriginHost& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    std::string getXRequestId() const;
+    bool xRequestIdIsSet() const;
+    void unsetxRequestId();
+    void setXRequestId(const std::string& value);
+
 
 protected:
     DomainOriginHost originHost_;
     bool originHostIsSet_;
+    std::string xRequestId_;
+    bool xRequestIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

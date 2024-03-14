@@ -57,12 +57,23 @@ public:
     void unsetipList();
     void setIpList(const std::vector<std::string>& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    std::string getXRequestId() const;
+    bool xRequestIdIsSet() const;
+    void unsetxRequestId();
+    void setXRequestId(const std::string& value);
+
 
 protected:
     int32_t type_;
     bool typeIsSet_;
     std::vector<std::string> ipList_;
     bool ipListIsSet_;
+    std::string xRequestId_;
+    bool xRequestIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

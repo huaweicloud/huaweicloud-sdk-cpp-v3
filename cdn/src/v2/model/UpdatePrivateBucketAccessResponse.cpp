@@ -14,6 +14,8 @@ UpdatePrivateBucketAccessResponse::UpdatePrivateBucketAccessResponse()
 {
     status_ = false;
     statusIsSet_ = false;
+    xRequestId_ = "";
+    xRequestIdIsSet_ = false;
 }
 
 UpdatePrivateBucketAccessResponse::~UpdatePrivateBucketAccessResponse() = default;
@@ -29,6 +31,9 @@ web::json::value UpdatePrivateBucketAccessResponse::toJson() const
     if(statusIsSet_) {
         val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
     }
+    if(xRequestIdIsSet_) {
+        val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
+    }
 
     return val;
 }
@@ -43,6 +48,15 @@ bool UpdatePrivateBucketAccessResponse::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Request-Id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXRequestId(refVal);
         }
     }
     return ok;
@@ -68,6 +82,27 @@ bool UpdatePrivateBucketAccessResponse::statusIsSet() const
 void UpdatePrivateBucketAccessResponse::unsetstatus()
 {
     statusIsSet_ = false;
+}
+
+std::string UpdatePrivateBucketAccessResponse::getXRequestId() const
+{
+    return xRequestId_;
+}
+
+void UpdatePrivateBucketAccessResponse::setXRequestId(const std::string& value)
+{
+    xRequestId_ = value;
+    xRequestIdIsSet_ = true;
+}
+
+bool UpdatePrivateBucketAccessResponse::xRequestIdIsSet() const
+{
+    return xRequestIdIsSet_;
+}
+
+void UpdatePrivateBucketAccessResponse::unsetxRequestId()
+{
+    xRequestIdIsSet_ = false;
 }
 
 }

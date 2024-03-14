@@ -26,6 +26,8 @@ ShowVerifyDomainOwnerInfoResponse::ShowVerifyDomainOwnerInfoResponse()
     fileVerifyFilenameIsSet_ = false;
     verifyContent_ = "";
     verifyContentIsSet_ = false;
+    xRequestId_ = "";
+    xRequestIdIsSet_ = false;
 }
 
 ShowVerifyDomainOwnerInfoResponse::~ShowVerifyDomainOwnerInfoResponse() = default;
@@ -58,6 +60,9 @@ web::json::value ShowVerifyDomainOwnerInfoResponse::toJson() const
     }
     if(verifyContentIsSet_) {
         val[utility::conversions::to_string_t("verify_content")] = ModelBase::toJson(verifyContent_);
+    }
+    if(xRequestIdIsSet_) {
+        val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
     }
 
     return val;
@@ -127,6 +132,15 @@ bool ShowVerifyDomainOwnerInfoResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setVerifyContent(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Request-Id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXRequestId(refVal);
         }
     }
     return ok;
@@ -278,6 +292,27 @@ bool ShowVerifyDomainOwnerInfoResponse::verifyContentIsSet() const
 void ShowVerifyDomainOwnerInfoResponse::unsetverifyContent()
 {
     verifyContentIsSet_ = false;
+}
+
+std::string ShowVerifyDomainOwnerInfoResponse::getXRequestId() const
+{
+    return xRequestId_;
+}
+
+void ShowVerifyDomainOwnerInfoResponse::setXRequestId(const std::string& value)
+{
+    xRequestId_ = value;
+    xRequestIdIsSet_ = true;
+}
+
+bool ShowVerifyDomainOwnerInfoResponse::xRequestIdIsSet() const
+{
+    return xRequestIdIsSet_;
+}
+
+void ShowVerifyDomainOwnerInfoResponse::unsetxRequestId()
+{
+    xRequestIdIsSet_ = false;
 }
 
 }

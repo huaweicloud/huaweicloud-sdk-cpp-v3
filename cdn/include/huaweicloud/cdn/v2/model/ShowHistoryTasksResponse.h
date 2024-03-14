@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <string>
 #include <huaweicloud/cdn/v2/model/TasksObject.h>
 #include <vector>
 
@@ -57,12 +58,23 @@ public:
     void unsettasks();
     void setTasks(const std::vector<TasksObject>& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    std::string getXRequestId() const;
+    bool xRequestIdIsSet() const;
+    void unsetxRequestId();
+    void setXRequestId(const std::string& value);
+
 
 protected:
     int32_t total_;
     bool totalIsSet_;
     std::vector<TasksObject> tasks_;
     bool tasksIsSet_;
+    std::string xRequestId_;
+    bool xRequestIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

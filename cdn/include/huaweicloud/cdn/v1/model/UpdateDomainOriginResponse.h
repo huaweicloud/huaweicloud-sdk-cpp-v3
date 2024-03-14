@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/cdn/v1/model/ResourceBody.h>
+#include <string>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -47,10 +48,21 @@ public:
     void unsetorigin();
     void setOrigin(const ResourceBody& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    std::string getXRequestId() const;
+    bool xRequestIdIsSet() const;
+    void unsetxRequestId();
+    void setXRequestId(const std::string& value);
+
 
 protected:
     ResourceBody origin_;
     bool originIsSet_;
+    std::string xRequestId_;
+    bool xRequestIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

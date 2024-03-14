@@ -40,6 +40,7 @@ public:
     static HttpRequestDef genRequestDefForBatchValidateClustersConnections();
     static HttpRequestDef genRequestDefForBatchValidateConnections();
     static HttpRequestDef genRequestDefForCreateCompareTask();
+    static HttpRequestDef genRequestDefForListAvailableNodeTypes();
     static HttpRequestDef genRequestDefForListAvailableZone();
     static HttpRequestDef genRequestDefForListCompareResult();
     static HttpRequestDef genRequestDefForListUsers();

@@ -386,6 +386,31 @@ HttpRequestDef DrsMeta::genRequestDefForCreateCompareTask() {
     return reqDefBuilder;
 }
 
+HttpRequestDef DrsMeta::genRequestDefForListAvailableNodeTypes() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("EngineType")
+                  .withJsonTag("engine_type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("DbUseType")
+                  .withJsonTag("db_use_type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("JobDirection")
+                  .withJsonTag("job_direction")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("IsUseSelloutInfo")
+                  .withJsonTag("is_use_sellout_info")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("IsMultiWrite")
+                  .withJsonTag("is_multi_write")
+                  .withLocationType(Query_));
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef DrsMeta::genRequestDefForListAvailableZone() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;

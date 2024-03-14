@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/drs/v3/model/PeriodOrderInfo.h>
+#include <huaweicloud/drs/v3/model/PublicIpConfig.h>
 #include <huaweicloud/drs/v3/model/ResourceTag.h>
 #include <string>
 #include <vector>
@@ -249,6 +250,15 @@ public:
     void unsetperiodOrder();
     void setPeriodOrder(const PeriodOrderInfo& value);
 
+    /// <summary>
+    /// 指定公网IP的信息
+    /// </summary>
+
+    std::vector<PublicIpConfig>& getPublicIpList();
+    bool publicIpListIsSet() const;
+    void unsetpublicIpList();
+    void setPublicIpList(const std::vector<PublicIpConfig>& value);
+
 
 protected:
     bool bindEip_;
@@ -297,6 +307,8 @@ protected:
     bool chargingModeIsSet_;
     PeriodOrderInfo periodOrder_;
     bool periodOrderIsSet_;
+    std::vector<PublicIpConfig> publicIpList_;
+    bool publicIpListIsSet_;
 
 };
 

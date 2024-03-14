@@ -85,6 +85,8 @@
 #include <huaweicloud/drs/v3/model/CreateCompareTaskReq.h>
 #include <huaweicloud/drs/v3/model/CreateCompareTaskRequest.h>
 #include <huaweicloud/drs/v3/model/CreateCompareTaskResponse.h>
+#include <huaweicloud/drs/v3/model/ListAvailableNodeTypesRequest.h>
+#include <huaweicloud/drs/v3/model/ListAvailableNodeTypesResponse.h>
 #include <huaweicloud/drs/v3/model/ListAvailableZoneRequest.h>
 #include <huaweicloud/drs/v3/model/ListAvailableZoneResponse.h>
 #include <huaweicloud/drs/v3/model/ListCompareResultRequest.h>
@@ -354,6 +356,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateCompareTaskResponse> createCompareTask(
         CreateCompareTaskRequest &request
+    );
+    // 查询可用的Node规格
+    //
+    // 查询可用的Node规格
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListAvailableNodeTypesResponse> listAvailableNodeTypes(
+        ListAvailableNodeTypesRequest &request
     );
     // 查询规格未售罄的可用区
     //

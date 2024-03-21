@@ -40,7 +40,7 @@ public:
     /// ListSupportMasks members
 
     /// <summary>
-    /// ID
+    /// 全域弹性公网IP段支持的掩码的ID
     /// </summary>
 
     std::string getId() const;
@@ -49,7 +49,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// IPv4或IPv6
+    /// - 功能说明：全域弹性公网IP的版本 - 取值范围：4、6
     /// </summary>
 
     int32_t getIpVersion() const;

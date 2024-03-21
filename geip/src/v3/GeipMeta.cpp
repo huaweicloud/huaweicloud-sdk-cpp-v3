@@ -44,7 +44,7 @@ HttpRequestDef GeipMeta::genRequestDefForBatchCreateInternetBandwidthTags() {
         withLocationType(Body_));
     reqDefBuilder.withResponseField(FieldDef().
         withName("xRequestId").
-        withJsonTag("x-request-id").
+        withJsonTag("X-Request-Id").
         withKindName("std::string").
         withLocationType(Header_));
     return reqDefBuilder;
@@ -58,7 +58,7 @@ HttpRequestDef GeipMeta::genRequestDefForBatchDeleteInternetBandwidthTags() {
         withLocationType(Body_));
     reqDefBuilder.withResponseField(FieldDef().
         withName("xRequestId").
-        withJsonTag("x-request-id").
+        withJsonTag("X-Request-Id").
         withKindName("std::string").
         withLocationType(Header_));
     return reqDefBuilder;
@@ -554,7 +554,7 @@ HttpRequestDef GeipMeta::genRequestDefForBatchCreateGeipSegmentTags() {
         withLocationType(Body_));
     reqDefBuilder.withResponseField(FieldDef().
         withName("xRequestId").
-        withJsonTag("x-request-id").
+        withJsonTag("X-Request-Id").
         withKindName("std::string").
         withLocationType(Header_));
     return reqDefBuilder;
@@ -582,7 +582,7 @@ HttpRequestDef GeipMeta::genRequestDefForBatchCreateGlobalEipTags() {
         withLocationType(Body_));
     reqDefBuilder.withResponseField(FieldDef().
         withName("xRequestId").
-        withJsonTag("x-request-id").
+        withJsonTag("X-Request-Id").
         withKindName("std::string").
         withLocationType(Header_));
     return reqDefBuilder;
@@ -596,7 +596,7 @@ HttpRequestDef GeipMeta::genRequestDefForBatchDeleteGeipSegmentTags() {
         withLocationType(Body_));
     reqDefBuilder.withResponseField(FieldDef().
         withName("xRequestId").
-        withJsonTag("x-request-id").
+        withJsonTag("X-Request-Id").
         withKindName("std::string").
         withLocationType(Header_));
     return reqDefBuilder;
@@ -610,7 +610,7 @@ HttpRequestDef GeipMeta::genRequestDefForBatchDeleteGlobalEipTags() {
         withLocationType(Body_));
     reqDefBuilder.withResponseField(FieldDef().
         withName("xRequestId").
-        withJsonTag("x-request-id").
+        withJsonTag("X-Request-Id").
         withKindName("std::string").
         withLocationType(Header_));
     return reqDefBuilder;

@@ -40,7 +40,7 @@ public:
     /// UpdateGlobalEipSegmentRequest members
 
     /// <summary>
-    /// global_eip_segment_id
+    /// 
     /// </summary>
 
     std::string getGlobalEipSegmentId() const;

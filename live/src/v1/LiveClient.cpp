@@ -2105,6 +2105,429 @@ std::shared_ptr<UpdateObsBucketAuthorityPublicResponse> LiveClient::updateObsBuc
 
     return localVarResult;
 }
+std::shared_ptr<CreateOttChannelInfoResponse> LiveClient::createOttChannelInfo(CreateOttChannelInfoRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/ott/channels";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json; charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.accessControlAllowInternalIsSet()) {
+        localVarHeaderParams["Access-Control-Allow-Internal"] = parameterToString(request.getAccessControlAllowInternal());
+    }
+    if (request.accessControlAllowExternalIsSet()) {
+        localVarHeaderParams["Access-Control-Allow-External"] = parameterToString(request.getAccessControlAllowExternal());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForCreateOttChannelInfo());
+
+    std::shared_ptr<CreateOttChannelInfoResponse> localVarResult = std::make_shared<CreateOttChannelInfoResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<DeleteOttChannelInfoResponse> LiveClient::deleteOttChannelInfo(DeleteOttChannelInfoRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/ott/channels";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.domainIsSet()) {
+        localVarQueryParams["domain"] = parameterToString(request.getDomain());
+    }
+    if (request.appNameIsSet()) {
+        localVarQueryParams["app_name"] = parameterToString(request.getAppName());
+    }
+    if (request.idIsSet()) {
+        localVarQueryParams["id"] = parameterToString(request.getId());
+    }
+    if (request.accessControlAllowInternalIsSet()) {
+        localVarHeaderParams["Access-Control-Allow-Internal"] = parameterToString(request.getAccessControlAllowInternal());
+    }
+    if (request.accessControlAllowExternalIsSet()) {
+        localVarHeaderParams["Access-Control-Allow-External"] = parameterToString(request.getAccessControlAllowExternal());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForDeleteOttChannelInfo());
+
+    std::shared_ptr<DeleteOttChannelInfoResponse> localVarResult = std::make_shared<DeleteOttChannelInfoResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListOttChannelInfoResponse> LiveClient::listOttChannelInfo(ListOttChannelInfoRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/ott/channels";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.domainIsSet()) {
+        localVarQueryParams["domain"] = parameterToString(request.getDomain());
+    }
+    if (request.appNameIsSet()) {
+        localVarQueryParams["app_name"] = parameterToString(request.getAppName());
+    }
+    if (request.idIsSet()) {
+        localVarQueryParams["id"] = parameterToString(request.getId());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.accessControlAllowInternalIsSet()) {
+        localVarHeaderParams["Access-Control-Allow-Internal"] = parameterToString(request.getAccessControlAllowInternal());
+    }
+    if (request.accessControlAllowExternalIsSet()) {
+        localVarHeaderParams["Access-Control-Allow-External"] = parameterToString(request.getAccessControlAllowExternal());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForListOttChannelInfo());
+
+    std::shared_ptr<ListOttChannelInfoResponse> localVarResult = std::make_shared<ListOttChannelInfoResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ModifyOttChannelInfoEncoderSettingsResponse> LiveClient::modifyOttChannelInfoEncoderSettings(ModifyOttChannelInfoEncoderSettingsRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/ott/channels/encorder-settings";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json; charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.accessControlAllowInternalIsSet()) {
+        localVarHeaderParams["Access-Control-Allow-Internal"] = parameterToString(request.getAccessControlAllowInternal());
+    }
+    if (request.accessControlAllowExternalIsSet()) {
+        localVarHeaderParams["Access-Control-Allow-External"] = parameterToString(request.getAccessControlAllowExternal());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForModifyOttChannelInfoEncoderSettings());
+
+    std::shared_ptr<ModifyOttChannelInfoEncoderSettingsResponse> localVarResult = std::make_shared<ModifyOttChannelInfoEncoderSettingsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<ModifyOttChannelInfoEndPointsResponse> LiveClient::modifyOttChannelInfoEndPoints(ModifyOttChannelInfoEndPointsRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/ott/channels/endpoints";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json; charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.accessControlAllowInternalIsSet()) {
+        localVarHeaderParams["Access-Control-Allow-Internal"] = parameterToString(request.getAccessControlAllowInternal());
+    }
+    if (request.accessControlAllowExternalIsSet()) {
+        localVarHeaderParams["Access-Control-Allow-External"] = parameterToString(request.getAccessControlAllowExternal());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForModifyOttChannelInfoEndPoints());
+
+    std::shared_ptr<ModifyOttChannelInfoEndPointsResponse> localVarResult = std::make_shared<ModifyOttChannelInfoEndPointsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<ModifyOttChannelInfoGeneralResponse> LiveClient::modifyOttChannelInfoGeneral(ModifyOttChannelInfoGeneralRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/ott/channels/general";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json; charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.accessControlAllowInternalIsSet()) {
+        localVarHeaderParams["Access-Control-Allow-Internal"] = parameterToString(request.getAccessControlAllowInternal());
+    }
+    if (request.accessControlAllowExternalIsSet()) {
+        localVarHeaderParams["Access-Control-Allow-External"] = parameterToString(request.getAccessControlAllowExternal());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForModifyOttChannelInfoGeneral());
+
+    std::shared_ptr<ModifyOttChannelInfoGeneralResponse> localVarResult = std::make_shared<ModifyOttChannelInfoGeneralResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<ModifyOttChannelInfoInputResponse> LiveClient::modifyOttChannelInfoInput(ModifyOttChannelInfoInputRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/ott/channels/input";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json; charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.accessControlAllowInternalIsSet()) {
+        localVarHeaderParams["Access-Control-Allow-Internal"] = parameterToString(request.getAccessControlAllowInternal());
+    }
+    if (request.accessControlAllowExternalIsSet()) {
+        localVarHeaderParams["Access-Control-Allow-External"] = parameterToString(request.getAccessControlAllowExternal());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForModifyOttChannelInfoInput());
+
+    std::shared_ptr<ModifyOttChannelInfoInputResponse> localVarResult = std::make_shared<ModifyOttChannelInfoInputResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<ModifyOttChannelInfoRecordSettingsResponse> LiveClient::modifyOttChannelInfoRecordSettings(ModifyOttChannelInfoRecordSettingsRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/ott/channels/record-settings";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json; charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.accessControlAllowInternalIsSet()) {
+        localVarHeaderParams["Access-Control-Allow-Internal"] = parameterToString(request.getAccessControlAllowInternal());
+    }
+    if (request.accessControlAllowExternalIsSet()) {
+        localVarHeaderParams["Access-Control-Allow-External"] = parameterToString(request.getAccessControlAllowExternal());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForModifyOttChannelInfoRecordSettings());
+
+    std::shared_ptr<ModifyOttChannelInfoRecordSettingsResponse> localVarResult = std::make_shared<ModifyOttChannelInfoRecordSettingsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<ModifyOttChannelInfoStatsResponse> LiveClient::modifyOttChannelInfoStats(ModifyOttChannelInfoStatsRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/ott/channels/state";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json; charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.accessControlAllowInternalIsSet()) {
+        localVarHeaderParams["Access-Control-Allow-Internal"] = parameterToString(request.getAccessControlAllowInternal());
+    }
+    if (request.accessControlAllowExternalIsSet()) {
+        localVarHeaderParams["Access-Control-Allow-External"] = parameterToString(request.getAccessControlAllowExternal());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForModifyOttChannelInfoStats());
+
+    std::shared_ptr<ModifyOttChannelInfoStatsResponse> localVarResult = std::make_shared<ModifyOttChannelInfoStatsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 #if defined(WIN32) || defined(__WIN32__) || defined(_WIN32) || defined(_MSC_VER)
 std::string LiveClient::parameterToString(utility::string_t value)
 {

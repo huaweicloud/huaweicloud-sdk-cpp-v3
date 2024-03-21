@@ -40,7 +40,7 @@ public:
     /// ShowGlobalEipSegmentRequest members
 
     /// <summary>
-    /// global_eip_segment_id
+    /// 
     /// </summary>
 
     std::string getGlobalEipSegmentId() const;
@@ -49,7 +49,7 @@ public:
     void setGlobalEipSegmentId(const std::string& value);
 
     /// <summary>
-    /// 只显示指定的字段
+    /// 
     /// </summary>
 
     std::vector<std::string>& getFields();

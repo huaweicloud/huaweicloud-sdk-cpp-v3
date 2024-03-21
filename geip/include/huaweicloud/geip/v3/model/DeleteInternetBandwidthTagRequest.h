@@ -39,7 +39,7 @@ public:
     /// DeleteInternetBandwidthTagRequest members
 
     /// <summary>
-    /// 全域公网带宽的id
+    /// 
     /// </summary>
 
     std::string getResourceId() const;
@@ -48,7 +48,7 @@ public:
     void setResourceId(const std::string& value);
 
     /// <summary>
-    /// 待删除标签的key
+    /// 
     /// </summary>
 
     std::string getTagKey() const;

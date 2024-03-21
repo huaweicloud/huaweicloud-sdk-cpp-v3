@@ -39,7 +39,7 @@ public:
     /// DeleteInternetBandwidthRequest members
 
     /// <summary>
-    /// 全域公网带宽的ID
+    /// 
     /// </summary>
 
     std::string getInternetBandwidthId() const;

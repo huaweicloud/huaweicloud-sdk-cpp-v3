@@ -51,7 +51,6 @@ DetachInternetBandwidthGlobalEips::DetachInternetBandwidthGlobalEips()
     isPrePaidIsSet_ = false;
     tagsIsSet_ = false;
     sysTagsIsSet_ = false;
-    enterpriseProjectId_ = "";
     enterpriseProjectIdIsSet_ = false;
 }
 
@@ -343,7 +342,7 @@ bool DetachInternetBandwidthGlobalEips::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enterprise_project_id"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            Object refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEnterpriseProjectId(refVal);
         }
@@ -814,12 +813,12 @@ void DetachInternetBandwidthGlobalEips::unsetsysTags()
     sysTagsIsSet_ = false;
 }
 
-std::string DetachInternetBandwidthGlobalEips::getEnterpriseProjectId() const
+Object DetachInternetBandwidthGlobalEips::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;
 }
 
-void DetachInternetBandwidthGlobalEips::setEnterpriseProjectId(const std::string& value)
+void DetachInternetBandwidthGlobalEips::setEnterpriseProjectId(const Object& value)
 {
     enterpriseProjectId_ = value;
     enterpriseProjectIdIsSet_ = true;

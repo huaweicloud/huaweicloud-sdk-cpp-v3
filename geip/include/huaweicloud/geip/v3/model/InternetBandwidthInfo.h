@@ -39,7 +39,7 @@ public:
     /// InternetBandwidthInfo members
 
     /// <summary>
-    /// ID
+    /// 全域公网带宽的ID
     /// </summary>
 
     std::string getId() const;

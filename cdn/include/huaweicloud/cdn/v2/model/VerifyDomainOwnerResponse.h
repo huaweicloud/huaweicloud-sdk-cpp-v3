@@ -39,7 +39,7 @@ public:
     /// VerifyDomainOwnerResponse members
 
     /// <summary>
-    /// 验证是否通过，true:通过，false:不通过
+    /// 验证是否通过，true：通过，false：不通过。
     /// </summary>
 
     bool isResult() const;

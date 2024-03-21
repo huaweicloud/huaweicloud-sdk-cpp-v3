@@ -40,7 +40,7 @@ public:
     /// ShowInternetBandwidthRequest members
 
     /// <summary>
-    /// 全域公网带宽的ID
+    /// 
     /// </summary>
 
     std::string getInternetBandwidthId() const;
@@ -49,7 +49,7 @@ public:
     void setInternetBandwidthId(const std::string& value);
 
     /// <summary>
-    /// 只显示指定的字段
+    /// 
     /// </summary>
 
     std::vector<std::string>& getFields();

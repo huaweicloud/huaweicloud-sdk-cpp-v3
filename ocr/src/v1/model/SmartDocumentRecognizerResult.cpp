@@ -16,6 +16,7 @@ SmartDocumentRecognizerResult::SmartDocumentRecognizerResult()
     kvResultIsSet_ = false;
     tableResultIsSet_ = false;
     layoutResultIsSet_ = false;
+    formResultIsSet_ = false;
 }
 
 SmartDocumentRecognizerResult::~SmartDocumentRecognizerResult() = default;
@@ -39,6 +40,9 @@ web::json::value SmartDocumentRecognizerResult::toJson() const
     }
     if(layoutResultIsSet_) {
         val[utility::conversions::to_string_t("layout_result")] = ModelBase::toJson(layoutResult_);
+    }
+    if(formResultIsSet_) {
+        val[utility::conversions::to_string_t("form_result")] = ModelBase::toJson(formResult_);
     }
 
     return val;
@@ -81,6 +85,15 @@ bool SmartDocumentRecognizerResult::fromJson(const web::json::value& val)
             SmartDocumentRecognizerLayoutResult refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLayoutResult(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("form_result"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("form_result"));
+        if(!fieldValue.is_null())
+        {
+            SmartDocumentRecognizerFormResult refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFormResult(refVal);
         }
     }
     return ok;
@@ -169,6 +182,27 @@ bool SmartDocumentRecognizerResult::layoutResultIsSet() const
 void SmartDocumentRecognizerResult::unsetlayoutResult()
 {
     layoutResultIsSet_ = false;
+}
+
+SmartDocumentRecognizerFormResult SmartDocumentRecognizerResult::getFormResult() const
+{
+    return formResult_;
+}
+
+void SmartDocumentRecognizerResult::setFormResult(const SmartDocumentRecognizerFormResult& value)
+{
+    formResult_ = value;
+    formResultIsSet_ = true;
+}
+
+bool SmartDocumentRecognizerResult::formResultIsSet() const
+{
+    return formResultIsSet_;
+}
+
+void SmartDocumentRecognizerResult::unsetformResult()
+{
+    formResultIsSet_ = false;
 }
 
 }

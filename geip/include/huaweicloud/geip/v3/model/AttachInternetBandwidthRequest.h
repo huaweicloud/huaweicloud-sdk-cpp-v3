@@ -40,7 +40,7 @@ public:
     /// AttachInternetBandwidthRequest members
 
     /// <summary>
-    /// global_eip_id
+    /// 
     /// </summary>
 
     std::string getGlobalEipId() const;

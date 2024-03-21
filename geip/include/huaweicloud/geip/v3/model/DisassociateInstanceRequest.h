@@ -48,7 +48,7 @@ public:
     void setIsReserveGcb(bool value);
 
     /// <summary>
-    /// global_eip_id
+    /// 
     /// </summary>
 
     std::string getGlobalEipId() const;

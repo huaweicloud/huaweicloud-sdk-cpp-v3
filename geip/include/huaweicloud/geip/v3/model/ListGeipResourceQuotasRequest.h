@@ -76,7 +76,7 @@ public:
     void setPageReverse(bool value);
 
     /// <summary>
-    /// 只显示指定的字段
+    /// 
     /// </summary>
 
     std::vector<std::string>& getFields();
@@ -85,7 +85,7 @@ public:
     void setFields(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据类型过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getType();

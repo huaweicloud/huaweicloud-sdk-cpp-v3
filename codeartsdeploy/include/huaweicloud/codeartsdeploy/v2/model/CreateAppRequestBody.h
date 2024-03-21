@@ -69,6 +69,15 @@ public:
     void setDescription(const std::string& value);
 
     /// <summary>
+    /// 分组id
+    /// </summary>
+
+    std::string getGroupId() const;
+    bool groupIdIsSet() const;
+    void unsetgroupId();
+    void setGroupId(const std::string& value);
+
+    /// <summary>
     /// 是否为草稿
     /// </summary>
 
@@ -121,6 +130,8 @@ protected:
     bool nameIsSet_;
     std::string description_;
     bool descriptionIsSet_;
+    std::string groupId_;
+    bool groupIdIsSet_;
     bool isDraft_;
     bool isDraftIsSet_;
     std::string createType_;

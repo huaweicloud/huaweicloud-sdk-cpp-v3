@@ -40,7 +40,7 @@ public:
     /// BatchDeleteGlobalEipTagsRequest members
 
     /// <summary>
-    /// 全域弹性公网IP的id
+    /// 
     /// </summary>
 
     std::string getResourceId() const;

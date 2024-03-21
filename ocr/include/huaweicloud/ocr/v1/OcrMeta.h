@@ -30,6 +30,7 @@ public:
     static HttpRequestDef genRequestDefForRecognizeHandwriting();
     static HttpRequestDef genRequestDefForRecognizeHealthCode();
     static HttpRequestDef genRequestDefForRecognizeHkIdCard();
+    static HttpRequestDef genRequestDefForRecognizeHouseholdRegister();
     static HttpRequestDef genRequestDefForRecognizeIdCard();
     static HttpRequestDef genRequestDefForRecognizeIdDocument();
     static HttpRequestDef genRequestDefForRecognizeInsurancePolicy();

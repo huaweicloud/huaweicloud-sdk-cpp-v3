@@ -39,7 +39,7 @@ public:
     /// DetachInternetBandwidthRequest members
 
     /// <summary>
-    /// global_eip_id
+    /// 
     /// </summary>
 
     std::string getGlobalEipId() const;
@@ -48,7 +48,7 @@ public:
     void setGlobalEipId(const std::string& value);
 
     /// <summary>
-    /// 是否强制解绑
+    /// 
     /// </summary>
 
     bool isForceUnbind() const;

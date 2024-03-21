@@ -40,7 +40,7 @@ public:
     /// ListInternetBandwidthLimitsRequest members
 
     /// <summary>
-    /// 只显示指定的字段
+    /// 
     /// </summary>
 
     std::vector<std::string>& getFields();
@@ -67,7 +67,7 @@ public:
     void setSortDir(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据计费模式过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getChargeMode();
@@ -76,7 +76,7 @@ public:
     void setChargeMode(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据全域公网带宽类型过滤
+    /// 
     /// </summary>
 
     std::string getType() const;

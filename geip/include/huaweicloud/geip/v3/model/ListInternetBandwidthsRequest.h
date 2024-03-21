@@ -76,7 +76,7 @@ public:
     void setPageReverse(bool value);
 
     /// <summary>
-    /// 只显示指定的字段
+    /// 
     /// </summary>
 
     std::vector<std::string>& getFields();
@@ -85,7 +85,7 @@ public:
     void setFields(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 在默认显示字段的基础上追加指定字段
+    /// 
     /// </summary>
 
     std::vector<std::string>& getExtFields();
@@ -112,7 +112,7 @@ public:
     void setSortDir(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据ID过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getId();
@@ -121,7 +121,7 @@ public:
     void setId(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据全域公网带宽大小过滤
+    /// 
     /// </summary>
 
     std::vector<int32_t>& getSize();
@@ -130,7 +130,7 @@ public:
     void setSize(std::vector<int32_t> value);
 
     /// <summary>
-    /// 根据名称过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getName();
@@ -139,7 +139,7 @@ public:
     void setName(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据名称模糊匹配
+    /// 
     /// </summary>
 
     std::string getNameLike() const;
@@ -148,7 +148,7 @@ public:
     void setNameLike(const std::string& value);
 
     /// <summary>
-    /// 根据接入点过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getAccessSite();
@@ -157,7 +157,7 @@ public:
     void setAccessSite(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据资源状态过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getStatus();
@@ -166,7 +166,7 @@ public:
     void setStatus(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据企业项目ID过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getEnterpriseProjectId();
@@ -175,7 +175,7 @@ public:
     void setEnterpriseProjectId(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据标签过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getTags();
@@ -184,7 +184,7 @@ public:
     void setTags(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据全域公网带宽类型过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getType();

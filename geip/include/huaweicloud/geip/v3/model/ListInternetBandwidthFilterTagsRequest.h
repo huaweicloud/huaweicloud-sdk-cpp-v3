@@ -40,7 +40,7 @@ public:
     /// ListInternetBandwidthFilterTagsRequest members
 
     /// <summary>
-    /// 每页条数
+    /// 
     /// </summary>
 
     std::vector<int32_t>& getLimit();
@@ -49,7 +49,7 @@ public:
     void setLimit(std::vector<int32_t> value);
 
     /// <summary>
-    /// 分页起始点
+    /// 
     /// </summary>
 
     std::vector<int32_t>& getOffset();

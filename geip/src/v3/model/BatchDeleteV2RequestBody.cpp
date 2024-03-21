@@ -52,7 +52,7 @@ bool BatchDeleteV2RequestBody::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sys_tags"));
         if(!fieldValue.is_null())
         {
-            std::vector<BatchDeleteV2RequestBody_sys_tags> refVal;
+            std::vector<BatchDeleteV2RequestBody_tags> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSysTags(refVal);
         }
@@ -82,12 +82,12 @@ void BatchDeleteV2RequestBody::unsettags()
     tagsIsSet_ = false;
 }
 
-std::vector<BatchDeleteV2RequestBody_sys_tags>& BatchDeleteV2RequestBody::getSysTags()
+std::vector<BatchDeleteV2RequestBody_tags>& BatchDeleteV2RequestBody::getSysTags()
 {
     return sysTags_;
 }
 
-void BatchDeleteV2RequestBody::setSysTags(const std::vector<BatchDeleteV2RequestBody_sys_tags>& value)
+void BatchDeleteV2RequestBody::setSysTags(const std::vector<BatchDeleteV2RequestBody_tags>& value)
 {
     sysTags_ = value;
     sysTagsIsSet_ = true;

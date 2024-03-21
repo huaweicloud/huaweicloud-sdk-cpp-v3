@@ -64,6 +64,15 @@ public:
     void unsettriggerThreshold();
     void setTriggerThreshold(int32_t value);
 
+    /// <summary>
+    /// 每次自动扩容的百分比步长，开启自定义步长功能时返回。
+    /// </summary>
+
+    int32_t getStepPercent() const;
+    bool stepPercentIsSet() const;
+    void unsetstepPercent();
+    void setStepPercent(int32_t value);
+
 
 protected:
     bool switchOption_;
@@ -72,6 +81,8 @@ protected:
     bool limitSizeIsSet_;
     int32_t triggerThreshold_;
     bool triggerThresholdIsSet_;
+    int32_t stepPercent_;
+    bool stepPercentIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

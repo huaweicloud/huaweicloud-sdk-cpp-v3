@@ -246,6 +246,20 @@ HttpRequestDef OcrMeta::genRequestDefForRecognizeHkIdCard() {
     return reqDefBuilder;
 }
 
+HttpRequestDef OcrMeta::genRequestDefForRecognizeHouseholdRegister() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamEnterpriseProjectId;
+    reqDefBuilder.withRequestField(headerParamEnterpriseProjectId
+                  .withName("EnterpriseProjectId")
+                  .withJsonTag("Enterprise-Project-Id")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef OcrMeta::genRequestDefForRecognizeIdCard() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamEnterpriseProjectId;

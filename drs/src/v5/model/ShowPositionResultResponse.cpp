@@ -16,6 +16,8 @@ ShowPositionResultResponse::ShowPositionResultResponse()
     jobIdIsSet_ = false;
     position_ = "";
     positionIsSet_ = false;
+    status_ = "";
+    statusIsSet_ = false;
 }
 
 ShowPositionResultResponse::~ShowPositionResultResponse() = default;
@@ -33,6 +35,9 @@ web::json::value ShowPositionResultResponse::toJson() const
     }
     if(positionIsSet_) {
         val[utility::conversions::to_string_t("position")] = ModelBase::toJson(position_);
+    }
+    if(statusIsSet_) {
+        val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
     }
 
     return val;
@@ -57,6 +62,15 @@ bool ShowPositionResultResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPosition(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("status"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("status"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setStatus(refVal);
         }
     }
     return ok;
@@ -103,6 +117,27 @@ bool ShowPositionResultResponse::positionIsSet() const
 void ShowPositionResultResponse::unsetposition()
 {
     positionIsSet_ = false;
+}
+
+std::string ShowPositionResultResponse::getStatus() const
+{
+    return status_;
+}
+
+void ShowPositionResultResponse::setStatus(const std::string& value)
+{
+    status_ = value;
+    statusIsSet_ = true;
+}
+
+bool ShowPositionResultResponse::statusIsSet() const
+{
+    return statusIsSet_;
+}
+
+void ShowPositionResultResponse::unsetstatus()
+{
+    statusIsSet_ = false;
 }
 
 }

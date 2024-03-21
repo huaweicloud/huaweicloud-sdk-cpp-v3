@@ -23,6 +23,7 @@
 #include <huaweicloud/ocr/v1/model/HandwritingRequestBody.h>
 #include <huaweicloud/ocr/v1/model/HealthCodeRequestBody.h>
 #include <huaweicloud/ocr/v1/model/HkIdCardRequestBody.h>
+#include <huaweicloud/ocr/v1/model/HouseholdRegisterRequestBody.h>
 #include <huaweicloud/ocr/v1/model/IdCardRequestBody.h>
 #include <huaweicloud/ocr/v1/model/IdDocumentRequestBody.h>
 #include <huaweicloud/ocr/v1/model/InsurancePolicyRequestBody.h>
@@ -73,6 +74,8 @@
 #include <huaweicloud/ocr/v1/model/RecognizeHealthCodeResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeHkIdCardRequest.h>
 #include <huaweicloud/ocr/v1/model/RecognizeHkIdCardResponse.h>
+#include <huaweicloud/ocr/v1/model/RecognizeHouseholdRegisterRequest.h>
+#include <huaweicloud/ocr/v1/model/RecognizeHouseholdRegisterResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeIdCardRequest.h>
 #include <huaweicloud/ocr/v1/model/RecognizeIdCardResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeIdDocumentRequest.h>
@@ -332,6 +335,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<RecognizeHkIdCardResponse> recognizeHkIdCard(
         RecognizeHkIdCardRequest &request
+    );
+    // 户口本识别
+    //
+    // 识别户口本中的文字信息，并返回识别的结构化结果。该接口的使用限制请参见[约束与限制](https://support.huaweicloud.com/productdesc-ocr/ocr_01_0006.html#section11)，详细使用指导请参见[OCR服务使用简介](https://support.huaweicloud.com/qs-ocr/ocr_05_0001.html)章节。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<RecognizeHouseholdRegisterResponse> recognizeHouseholdRegister(
+        RecognizeHouseholdRegisterRequest &request
     );
     // 身份证识别
     //

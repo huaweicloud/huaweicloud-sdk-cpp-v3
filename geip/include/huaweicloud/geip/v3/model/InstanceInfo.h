@@ -57,7 +57,7 @@ public:
     void setQuarkVpcEndpoint(const std::string& value);
 
     /// <summary>
-    /// 项目ID
+    /// 项目ID，获取项目ID请参见[获取项目ID](https://support.huaweicloud.com/api-vpc/vpc_api_0011.html)
     /// </summary>
 
     std::string getProjectId() const;
@@ -102,7 +102,7 @@ public:
     void setServiceId(const std::string& value);
 
     /// <summary>
-    /// 中心站点or边缘站点
+    /// - 功能说明：表示中心站点资源或者边缘站点资源 - 取值范围：center、边缘站点名称
     /// </summary>
 
     std::string getPublicBorderGroup() const;

@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -39,7 +40,7 @@ public:
     /// ShowVerifyDomainOwnerInfoResponse members
 
     /// <summary>
-    /// DNS探测类型
+    /// DNS解析类型。
     /// </summary>
 
     std::string getDnsVerifyType() const;
@@ -48,7 +49,7 @@ public:
     void setDnsVerifyType(const std::string& value);
 
     /// <summary>
-    /// DNS记录名称
+    /// DNS解析主机记录名称。
     /// </summary>
 
     std::string getDnsVerifyName() const;
@@ -57,7 +58,7 @@ public:
     void setDnsVerifyName(const std::string& value);
 
     /// <summary>
-    /// 文件探测地址
+    /// 文件校验URL地址。
     /// </summary>
 
     std::string getFileVerifyUrl() const;
@@ -66,7 +67,7 @@ public:
     void setFileVerifyUrl(const std::string& value);
 
     /// <summary>
-    /// 域名
+    /// 加速域名。
     /// </summary>
 
     std::string getDomainName() const;
@@ -75,7 +76,7 @@ public:
     void setDomainName(const std::string& value);
 
     /// <summary>
-    /// 探测域名
+    /// 校验域名。
     /// </summary>
 
     std::string getVerifyDomainName() const;
@@ -84,7 +85,7 @@ public:
     void setVerifyDomainName(const std::string& value);
 
     /// <summary>
-    /// 探测文件名
+    /// 文件校验的校验文件名。
     /// </summary>
 
     std::string getFileVerifyFilename() const;
@@ -93,13 +94,22 @@ public:
     void setFileVerifyFilename(const std::string& value);
 
     /// <summary>
-    /// 探测内容，DNS值或者文件内容，时间加uuid
+    /// 校验值，解析值或者文件内容。
     /// </summary>
 
     std::string getVerifyContent() const;
     bool verifyContentIsSet() const;
     void unsetverifyContent();
     void setVerifyContent(const std::string& value);
+
+    /// <summary>
+    /// 文件校验域名列表。
+    /// </summary>
+
+    std::vector<std::string>& getFileVerifyDomains();
+    bool fileVerifyDomainsIsSet() const;
+    void unsetfileVerifyDomains();
+    void setFileVerifyDomains(const std::vector<std::string>& value);
 
     /// <summary>
     /// 
@@ -126,6 +136,8 @@ protected:
     bool fileVerifyFilenameIsSet_;
     std::string verifyContent_;
     bool verifyContentIsSet_;
+    std::vector<std::string> fileVerifyDomains_;
+    bool fileVerifyDomainsIsSet_;
     std::string xRequestId_;
     bool xRequestIdIsSet_;
 

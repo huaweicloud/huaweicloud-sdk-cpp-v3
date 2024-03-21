@@ -40,7 +40,7 @@ public:
     /// ListInternetBandwidthLimits members
 
     /// <summary>
-    /// ID
+    /// 全域公网带宽限制的ID
     /// </summary>
 
     std::string getId() const;

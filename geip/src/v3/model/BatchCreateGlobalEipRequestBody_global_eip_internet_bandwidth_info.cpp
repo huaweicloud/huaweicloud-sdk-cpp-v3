@@ -114,7 +114,7 @@ bool BatchCreateGlobalEipRequestBody_global_eip_internet_bandwidth_info::fromJso
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("tags"));
         if(!fieldValue.is_null())
         {
-            std::vector<AssociateInstanceGlobalEipRequestBody_global_eip_gc_bandwidth_info_tags> refVal;
+            std::vector<CreateGlobalEipRequestBody_global_eip_tags> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTags(refVal);
         }
@@ -237,12 +237,12 @@ void BatchCreateGlobalEipRequestBody_global_eip_internet_bandwidth_info::unsetna
     nameIsSet_ = false;
 }
 
-std::vector<AssociateInstanceGlobalEipRequestBody_global_eip_gc_bandwidth_info_tags>& BatchCreateGlobalEipRequestBody_global_eip_internet_bandwidth_info::getTags()
+std::vector<CreateGlobalEipRequestBody_global_eip_tags>& BatchCreateGlobalEipRequestBody_global_eip_internet_bandwidth_info::getTags()
 {
     return tags_;
 }
 
-void BatchCreateGlobalEipRequestBody_global_eip_internet_bandwidth_info::setTags(const std::vector<AssociateInstanceGlobalEipRequestBody_global_eip_gc_bandwidth_info_tags>& value)
+void BatchCreateGlobalEipRequestBody_global_eip_internet_bandwidth_info::setTags(const std::vector<CreateGlobalEipRequestBody_global_eip_tags>& value)
 {
     tags_ = value;
     tagsIsSet_ = true;

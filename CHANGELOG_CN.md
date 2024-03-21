@@ -1,3 +1,121 @@
+# 3.1.78 2024-03-21
+
+### HuaweiCloud SDK CDN
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowVerifyDomainOwnerInfo**
+    - 响应参数变更
+      - `+ file_verify_domains`
+
+### HuaweiCloud SDK CodeArtsDeploy
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateApp**
+    - 请求参数变更
+      - `+ group_id`
+
+### HuaweiCloud SDK DRS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowPositionResult**
+    - 响应参数变更
+      - `+ status`
+
+### HuaweiCloud SDK GEIP
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListSupportMasks**
+    - 响应参数变更
+      - `+ support_masks.ip_version: enum value [4,6]`
+  - **ListGlobalEips**
+    - 响应参数变更
+      - `+ global_eips.ip_version: enum value [4,6]`
+  - **DetachInternetBandwidth**
+    - 响应参数变更
+      - `+ global_eip.ip_version: enum value [4,6]`
+  - **BatchCreateGlobalEip**
+    - 响应参数变更
+      - `+ global_eip.ip_version: enum value [4,6]`
+  - **ShowGlobalEip**
+    - 响应参数变更
+      - `+ global_eip.ip_version: enum value [4,6]`
+  - **AttachInternetBandwidth**
+    - 响应参数变更
+      - `+ global_eip.ip_version: enum value [4,6]`
+  - **ListGlobalEipSegments**
+    - 响应参数变更
+      - `+ global_eip_segments.ip_version: enum value [4,6]`
+  - **ShowGlobalEipSegment**
+    - 响应参数变更
+      - `+ global_eip_segment.ip_version: enum value [4,6]`
+  - **ListGeipPools**
+    - 响应参数变更
+      - `+ geip_pools.ip_version: enum value [4,6]`
+
+### HuaweiCloud SDK Live
+
+- _新增特性_
+  - 支持以下接口：
+    - `ListOttChannelInfo`
+    - `CreateOttChannelInfo`
+    - `DeleteOttChannelInfo`
+    - `ModifyOttChannelInfoEndPoints`
+    - `ModifyOttChannelInfoInput`
+    - `ModifyOttChannelInfoRecordSettings`
+    - `ModifyOttChannelInfoGeneral`
+    - `ModifyOttChannelInfoStats`
+    - `ModifyOttChannelInfoEncoderSettings`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 支持接口`RecognizeHouseholdRegister`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RecognizeSmartDocumentRecognizer**
+    - 请求参数变更
+      - `+ form`
+      - `+ kv_map`
+    - 响应参数变更
+      - `+ result.form_result`
+      - `+ result.layout_result.layout_block_list.table_id`
+      - `+ result.layout_result.layout_block_list.form_id`
+
+### HuaweiCloud SDK RDS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowAutoEnlargePolicy**
+    - 响应参数变更
+      - `+ step_percent`
+  - **SetAutoEnlargePolicy**
+    - 请求参数变更
+      - `+ step_percent`
+
 # 3.1.77 2024-03-14
 
 ### HuaweiCloud SDK DRS

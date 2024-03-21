@@ -76,7 +76,7 @@ public:
     void setPageReverse(bool value);
 
     /// <summary>
-    /// 只显示指定的字段
+    /// 
     /// </summary>
 
     std::vector<std::string>& getFields();
@@ -103,7 +103,7 @@ public:
     void setSortDir(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据ID过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getId();
@@ -112,7 +112,7 @@ public:
     void setId(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据IP版本过滤
+    /// 
     /// </summary>
 
     std::vector<int32_t>& getIpVersion();
@@ -121,7 +121,7 @@ public:
     void setIpVersion(std::vector<int32_t> value);
 
     /// <summary>
-    /// 根据掩码过滤
+    /// 
     /// </summary>
 
     std::vector<int32_t>& getMask();

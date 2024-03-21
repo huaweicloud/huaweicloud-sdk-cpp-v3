@@ -40,7 +40,7 @@ public:
     /// AddInternetBandwidthTagsRequest members
 
     /// <summary>
-    /// 全域公网带宽的id
+    /// 
     /// </summary>
 
     std::string getResourceId() const;

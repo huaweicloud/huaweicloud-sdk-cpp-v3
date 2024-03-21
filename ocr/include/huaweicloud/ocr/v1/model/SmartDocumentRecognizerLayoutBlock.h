@@ -75,6 +75,24 @@ public:
     void unsetwordsIds();
     void setWordsIds(std::vector<int32_t> value);
 
+    /// <summary>
+    /// 仅当type为\&quot;table\&quot;且入参table为True时返回该字段，表示当前逻辑表格区域对应table_result中哪一项识别结果。 
+    /// </summary>
+
+    int32_t getTableId() const;
+    bool tableIdIsSet() const;
+    void unsettableId();
+    void setTableId(int32_t value);
+
+    /// <summary>
+    /// 仅当type为\&quot;form\&quot;且入参form为True时返回该字段，表示当前有线表单区域对应form_result中哪一项识别结果。 
+    /// </summary>
+
+    int32_t getFormId() const;
+    bool formIdIsSet() const;
+    void unsetformId();
+    void setFormId(int32_t value);
+
 
 protected:
     std::vector<std::vector<int32_t>> location_;
@@ -85,6 +103,10 @@ protected:
     bool textIsSet_;
     std::vector<int32_t> wordsIds_;
     bool wordsIdsIsSet_;
+    int32_t tableId_;
+    bool tableIdIsSet_;
+    int32_t formId_;
+    bool formIdIsSet_;
 
 };
 

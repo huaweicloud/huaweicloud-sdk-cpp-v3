@@ -140,6 +140,33 @@
 #include <huaweicloud/live/v1/model/UpdateObsBucketAuthorityPublicRequest.h>
 #include <huaweicloud/live/v1/model/UpdateObsBucketAuthorityPublicResponse.h>
 
+#include <huaweicloud/live/v1/model/CreateOttChannelInfoReq.h>
+#include <huaweicloud/live/v1/model/CreateOttChannelInfoRequest.h>
+#include <huaweicloud/live/v1/model/CreateOttChannelInfoResponse.h>
+#include <huaweicloud/live/v1/model/DeleteOttChannelInfoRequest.h>
+#include <huaweicloud/live/v1/model/DeleteOttChannelInfoResponse.h>
+#include <huaweicloud/live/v1/model/ListOttChannelInfoRequest.h>
+#include <huaweicloud/live/v1/model/ListOttChannelInfoResponse.h>
+#include <huaweicloud/live/v1/model/ModifyOttChannelEncoderSettings.h>
+#include <huaweicloud/live/v1/model/ModifyOttChannelEndPointsReq.h>
+#include <huaweicloud/live/v1/model/ModifyOttChannelGeneral.h>
+#include <huaweicloud/live/v1/model/ModifyOttChannelInfoEncoderSettingsRequest.h>
+#include <huaweicloud/live/v1/model/ModifyOttChannelInfoEncoderSettingsResponse.h>
+#include <huaweicloud/live/v1/model/ModifyOttChannelInfoEndPointsRequest.h>
+#include <huaweicloud/live/v1/model/ModifyOttChannelInfoEndPointsResponse.h>
+#include <huaweicloud/live/v1/model/ModifyOttChannelInfoGeneralRequest.h>
+#include <huaweicloud/live/v1/model/ModifyOttChannelInfoGeneralResponse.h>
+#include <huaweicloud/live/v1/model/ModifyOttChannelInfoInputRequest.h>
+#include <huaweicloud/live/v1/model/ModifyOttChannelInfoInputResponse.h>
+#include <huaweicloud/live/v1/model/ModifyOttChannelInfoRecordSettingsRequest.h>
+#include <huaweicloud/live/v1/model/ModifyOttChannelInfoRecordSettingsResponse.h>
+#include <huaweicloud/live/v1/model/ModifyOttChannelInfoStatsRequest.h>
+#include <huaweicloud/live/v1/model/ModifyOttChannelInfoStatsResponse.h>
+#include <huaweicloud/live/v1/model/ModifyOttChannelInputReq.h>
+#include <huaweicloud/live/v1/model/ModifyOttChannelRecordSettings.h>
+#include <huaweicloud/live/v1/model/ModifyOttChannelState.h>
+#include <string>
+
 #include <cpprest/details/basic_types.h>
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/utils/Object.h>
@@ -603,6 +630,79 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateObsBucketAuthorityPublicResponse> updateObsBucketAuthorityPublic(
         UpdateObsBucketAuthorityPublicRequest &request
+    );
+
+    // 新建OTT频道
+    //
+    // 创建频道接口，支持创建OTT频道。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateOttChannelInfoResponse> createOttChannelInfo(
+        CreateOttChannelInfoRequest &request
+    );
+    // 删除频道信息
+    //
+    // 删除频道信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteOttChannelInfoResponse> deleteOttChannelInfo(
+        DeleteOttChannelInfoRequest &request
+    );
+    // 查询频道信息
+    //
+    // 查询频道信息，支持批量查询。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListOttChannelInfoResponse> listOttChannelInfo(
+        ListOttChannelInfoRequest &request
+    );
+    // 修改频道转码模板信息
+    //
+    // 修改频道转码模板信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ModifyOttChannelInfoEncoderSettingsResponse> modifyOttChannelInfoEncoderSettings(
+        ModifyOttChannelInfoEncoderSettingsRequest &request
+    );
+    // 修改频道打包信息
+    //
+    // 修改频道打包信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ModifyOttChannelInfoEndPointsResponse> modifyOttChannelInfoEndPoints(
+        ModifyOttChannelInfoEndPointsRequest &request
+    );
+    // 修改频道通用信息
+    //
+    // 修改频道通用信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ModifyOttChannelInfoGeneralResponse> modifyOttChannelInfoGeneral(
+        ModifyOttChannelInfoGeneralRequest &request
+    );
+    // 修改频道入流信息
+    //
+    // 修改频道入流信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ModifyOttChannelInfoInputResponse> modifyOttChannelInfoInput(
+        ModifyOttChannelInfoInputRequest &request
+    );
+    // 修改频道录制信息
+    //
+    // 修改频道录制信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ModifyOttChannelInfoRecordSettingsResponse> modifyOttChannelInfoRecordSettings(
+        ModifyOttChannelInfoRecordSettingsRequest &request
+    );
+    // 修改频道状态
+    //
+    // 修改频道状态。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ModifyOttChannelInfoStatsResponse> modifyOttChannelInfoStats(
+        ModifyOttChannelInfoStatsRequest &request
     );
 
 

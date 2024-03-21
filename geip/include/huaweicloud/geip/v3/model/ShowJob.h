@@ -40,7 +40,7 @@ public:
     /// ShowJob members
 
     /// <summary>
-    /// ID
+    /// Job的ID
     /// </summary>
 
     std::string getId() const;

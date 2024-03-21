@@ -76,7 +76,7 @@ public:
     void setPageReverse(bool value);
 
     /// <summary>
-    /// 只显示指定的字段
+    /// 
     /// </summary>
 
     std::vector<std::string>& getFields();
@@ -103,7 +103,7 @@ public:
     void setSortDir(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据ID过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getId();
@@ -112,7 +112,7 @@ public:
     void setId(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据名称过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getCode();
@@ -121,7 +121,7 @@ public:
     void setCode(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据接入点过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getAccessSite();
@@ -130,7 +130,7 @@ public:
     void setAccessSite(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据运营商线路过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getIsp();
@@ -139,7 +139,7 @@ public:
     void setIsp(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据IP版本过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getIpVersion();
@@ -148,7 +148,7 @@ public:
     void setIpVersion(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据池子状态过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getStatus();
@@ -157,7 +157,7 @@ public:
     void setStatus(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据池子里存的内容过滤。取值：GEIP-用于分配全域弹性公网IP单地址；GEIP_SEGMENT-用于分配全域弹性公网IP段
+    /// 
     /// </summary>
 
     std::vector<std::string>& getType();

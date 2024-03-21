@@ -10,8 +10,8 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
-#include <huaweicloud/geip/v3/model/AssociateInstanceGlobalEipRequestBody_global_eip_gc_bandwidth_info_tags.h>
 #include <vector>
+#include <huaweicloud/geip/v3/model/CreateGlobalEipRequestBody_global_eip_tags.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -22,7 +22,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 
+/// 全域公网带宽信息
 /// </summary>
 class HUAWEICLOUD_GEIP_V3_EXPORT  BatchCreateGlobalEipRequestBody_global_eip_internet_bandwidth_info
     : public ModelBase
@@ -41,7 +41,7 @@ public:
     /// BatchCreateGlobalEipRequestBody_global_eip_internet_bandwidth_info members
 
     /// <summary>
-    /// ID
+    /// 全域公网带宽的ID
     /// </summary>
 
     std::string getId() const;
@@ -77,7 +77,7 @@ public:
     void setSize(int32_t value);
 
     /// <summary>
-    /// 资源名称
+    /// - 功能说明：全域弹性公网IP名称 - 取值范围：1-64，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
     /// </summary>
 
     std::string getName() const;
@@ -89,10 +89,10 @@ public:
     /// 全域弹性公网IP标签
     /// </summary>
 
-    std::vector<AssociateInstanceGlobalEipRequestBody_global_eip_gc_bandwidth_info_tags>& getTags();
+    std::vector<CreateGlobalEipRequestBody_global_eip_tags>& getTags();
     bool tagsIsSet() const;
     void unsettags();
-    void setTags(const std::vector<AssociateInstanceGlobalEipRequestBody_global_eip_gc_bandwidth_info_tags>& value);
+    void setTags(const std::vector<CreateGlobalEipRequestBody_global_eip_tags>& value);
 
     /// <summary>
     /// 全域公网带宽类型
@@ -115,7 +115,7 @@ protected:
     bool sizeIsSet_;
     std::string name_;
     bool nameIsSet_;
-    std::vector<AssociateInstanceGlobalEipRequestBody_global_eip_gc_bandwidth_info_tags> tags_;
+    std::vector<CreateGlobalEipRequestBody_global_eip_tags> tags_;
     bool tagsIsSet_;
     std::string type_;
     bool typeIsSet_;

@@ -40,7 +40,7 @@ public:
     /// ShowUserDisclaimerRequest members
 
     /// <summary>
-    /// 只显示指定的字段
+    /// 
     /// </summary>
 
     std::vector<std::string>& getFields();

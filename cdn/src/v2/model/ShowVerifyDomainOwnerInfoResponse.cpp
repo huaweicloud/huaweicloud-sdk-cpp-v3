@@ -26,6 +26,7 @@ ShowVerifyDomainOwnerInfoResponse::ShowVerifyDomainOwnerInfoResponse()
     fileVerifyFilenameIsSet_ = false;
     verifyContent_ = "";
     verifyContentIsSet_ = false;
+    fileVerifyDomainsIsSet_ = false;
     xRequestId_ = "";
     xRequestIdIsSet_ = false;
 }
@@ -60,6 +61,9 @@ web::json::value ShowVerifyDomainOwnerInfoResponse::toJson() const
     }
     if(verifyContentIsSet_) {
         val[utility::conversions::to_string_t("verify_content")] = ModelBase::toJson(verifyContent_);
+    }
+    if(fileVerifyDomainsIsSet_) {
+        val[utility::conversions::to_string_t("file_verify_domains")] = ModelBase::toJson(fileVerifyDomains_);
     }
     if(xRequestIdIsSet_) {
         val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
@@ -132,6 +136,15 @@ bool ShowVerifyDomainOwnerInfoResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setVerifyContent(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("file_verify_domains"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("file_verify_domains"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFileVerifyDomains(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
@@ -292,6 +305,27 @@ bool ShowVerifyDomainOwnerInfoResponse::verifyContentIsSet() const
 void ShowVerifyDomainOwnerInfoResponse::unsetverifyContent()
 {
     verifyContentIsSet_ = false;
+}
+
+std::vector<std::string>& ShowVerifyDomainOwnerInfoResponse::getFileVerifyDomains()
+{
+    return fileVerifyDomains_;
+}
+
+void ShowVerifyDomainOwnerInfoResponse::setFileVerifyDomains(const std::vector<std::string>& value)
+{
+    fileVerifyDomains_ = value;
+    fileVerifyDomainsIsSet_ = true;
+}
+
+bool ShowVerifyDomainOwnerInfoResponse::fileVerifyDomainsIsSet() const
+{
+    return fileVerifyDomainsIsSet_;
+}
+
+void ShowVerifyDomainOwnerInfoResponse::unsetfileVerifyDomains()
+{
+    fileVerifyDomainsIsSet_ = false;
 }
 
 std::string ShowVerifyDomainOwnerInfoResponse::getXRequestId() const

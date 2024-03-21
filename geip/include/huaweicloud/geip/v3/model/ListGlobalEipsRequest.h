@@ -76,7 +76,7 @@ public:
     void setPageReverse(bool value);
 
     /// <summary>
-    /// 只显示指定的字段
+    /// 
     /// </summary>
 
     std::vector<std::string>& getFields();
@@ -103,7 +103,7 @@ public:
     void setSortDir(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据ID过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getId();
@@ -112,7 +112,7 @@ public:
     void setId(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据全域公网带宽的ID过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getInternetBandwidthId();
@@ -121,7 +121,7 @@ public:
     void setInternetBandwidthId(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据名称过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getName();
@@ -130,7 +130,7 @@ public:
     void setName(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据名称模糊匹配
+    /// 
     /// </summary>
 
     std::string getNameLike() const;
@@ -139,7 +139,7 @@ public:
     void setNameLike(const std::string& value);
 
     /// <summary>
-    /// 根据接入点过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getAccessSite();
@@ -148,7 +148,7 @@ public:
     void setAccessSite(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据全域弹性公网IP池名称过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getGeipPoolName();
@@ -157,7 +157,7 @@ public:
     void setGeipPoolName(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据运营商线路过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getIsp();
@@ -166,7 +166,7 @@ public:
     void setIsp(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据IP版本过滤
+    /// 
     /// </summary>
 
     std::vector<int32_t>& getIpVersion();
@@ -175,7 +175,7 @@ public:
     void setIpVersion(std::vector<int32_t> value);
 
     /// <summary>
-    /// 根据ip地址过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getIpAddress();
@@ -184,7 +184,7 @@ public:
     void setIpAddress(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据ipv6地址过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getIpv6Address();
@@ -193,7 +193,7 @@ public:
     void setIpv6Address(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据是否冻结过滤
+    /// 
     /// </summary>
 
     std::vector<bool>& getFreezen();
@@ -202,7 +202,7 @@ public:
     void setFreezen(std::vector<bool> value);
 
     /// <summary>
-    /// 根据是否污染过滤
+    /// 
     /// </summary>
 
     std::vector<bool>& getPolluted();
@@ -211,7 +211,7 @@ public:
     void setPolluted(std::vector<bool> value);
 
     /// <summary>
-    /// 根据是否绑定全域公网带宽过滤
+    /// 
     /// </summary>
 
     std::vector<bool>& getInternetBandwidthIsNull();
@@ -220,7 +220,7 @@ public:
     void setInternetBandwidthIsNull(std::vector<bool> value);
 
     /// <summary>
-    /// 根据是否绑定骨干带宽过滤
+    /// 
     /// </summary>
 
     std::vector<bool>& getGcbBandwidthIsNull();
@@ -229,7 +229,7 @@ public:
     void setGcbBandwidthIsNull(std::vector<bool> value);
 
     /// <summary>
-    /// 根据资源状态过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getStatus();
@@ -238,7 +238,7 @@ public:
     void setStatus(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据绑定实例所属的局点过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getAssociateInstanceInfoRegion();
@@ -247,7 +247,7 @@ public:
     void setAssociateInstanceInfoRegion(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据绑定实例的类型过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getAssociateInstanceInfoInstanceType();
@@ -256,7 +256,7 @@ public:
     void setAssociateInstanceInfoInstanceType(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据绑定实例所属的边缘信息过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getAssociateInstanceInfoPublicBorderGroup();
@@ -265,7 +265,7 @@ public:
     void setAssociateInstanceInfoPublicBorderGroup(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据绑定实例所在的站点过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getAssociateInstanceInfoInstanceSite();
@@ -274,7 +274,7 @@ public:
     void setAssociateInstanceInfoInstanceSite(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据绑定实例的ID过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getAssociateInstanceInfoInstanceId();
@@ -283,7 +283,7 @@ public:
     void setAssociateInstanceInfoInstanceId(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据绑定实例所属的项目ID过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getAssociateInstanceInfoProjectId();
@@ -292,7 +292,7 @@ public:
     void setAssociateInstanceInfoProjectId(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据绑定实例所属的服务ID过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getAssociateInstanceInfoServiceId();
@@ -301,7 +301,7 @@ public:
     void setAssociateInstanceInfoServiceId(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据绑定实例的服务类型过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getAssociateInstanceInfoServiceType();
@@ -310,7 +310,7 @@ public:
     void setAssociateInstanceInfoServiceType(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据企业项目ID过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getEnterpriseProjectId();
@@ -319,7 +319,7 @@ public:
     void setEnterpriseProjectId(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据标签过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getTags();

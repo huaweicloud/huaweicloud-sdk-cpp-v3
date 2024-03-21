@@ -39,7 +39,7 @@ public:
     /// DeleteGlobalEipTagRequest members
 
     /// <summary>
-    /// 全域弹性公网IP的id
+    /// 
     /// </summary>
 
     std::string getResourceId() const;
@@ -48,7 +48,7 @@ public:
     void setResourceId(const std::string& value);
 
     /// <summary>
-    /// 待删除标签的key
+    /// 
     /// </summary>
 
     std::string getTagKey() const;

@@ -40,7 +40,7 @@ public:
     /// ListAccessSites members
 
     /// <summary>
-    /// ID
+    /// 接入点的ID
     /// </summary>
 
     std::string getId() const;
@@ -49,7 +49,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 资源名称
+    /// - 功能说明：接入点名称 - 取值范围：1-64，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
     /// </summary>
 
     std::string getName() const;

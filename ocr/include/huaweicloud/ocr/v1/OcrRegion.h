@@ -58,6 +58,10 @@ public:
             { 
                 "https://ocr.af-south-1.myhuaweicloud.com"
             });
+        regions["la-north-2"] = Region("la-north-2",
+            { 
+                "https://ocr.la-north-2.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

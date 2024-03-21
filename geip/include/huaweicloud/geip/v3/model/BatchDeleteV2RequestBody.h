@@ -9,7 +9,6 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/geip/v3/model/BatchDeleteV2RequestBody_sys_tags.h>
 #include <vector>
 #include <huaweicloud/geip/v3/model/BatchDeleteV2RequestBody_tags.h>
 
@@ -53,16 +52,16 @@ public:
     /// 系统标签
     /// </summary>
 
-    std::vector<BatchDeleteV2RequestBody_sys_tags>& getSysTags();
+    std::vector<BatchDeleteV2RequestBody_tags>& getSysTags();
     bool sysTagsIsSet() const;
     void unsetsysTags();
-    void setSysTags(const std::vector<BatchDeleteV2RequestBody_sys_tags>& value);
+    void setSysTags(const std::vector<BatchDeleteV2RequestBody_tags>& value);
 
 
 protected:
     std::vector<BatchDeleteV2RequestBody_tags> tags_;
     bool tagsIsSet_;
-    std::vector<BatchDeleteV2RequestBody_sys_tags> sysTags_;
+    std::vector<BatchDeleteV2RequestBody_tags> sysTags_;
     bool sysTagsIsSet_;
 
 };

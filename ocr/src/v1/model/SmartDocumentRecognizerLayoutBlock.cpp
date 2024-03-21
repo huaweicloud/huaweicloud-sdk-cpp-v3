@@ -18,6 +18,10 @@ SmartDocumentRecognizerLayoutBlock::SmartDocumentRecognizerLayoutBlock()
     text_ = "";
     textIsSet_ = false;
     wordsIdsIsSet_ = false;
+    tableId_ = 0;
+    tableIdIsSet_ = false;
+    formId_ = 0;
+    formIdIsSet_ = false;
 }
 
 SmartDocumentRecognizerLayoutBlock::~SmartDocumentRecognizerLayoutBlock() = default;
@@ -41,6 +45,12 @@ web::json::value SmartDocumentRecognizerLayoutBlock::toJson() const
     }
     if(wordsIdsIsSet_) {
         val[utility::conversions::to_string_t("words_ids")] = ModelBase::toJson(wordsIds_);
+    }
+    if(tableIdIsSet_) {
+        val[utility::conversions::to_string_t("table_id")] = ModelBase::toJson(tableId_);
+    }
+    if(formIdIsSet_) {
+        val[utility::conversions::to_string_t("form_id")] = ModelBase::toJson(formId_);
     }
 
     return val;
@@ -83,6 +93,24 @@ bool SmartDocumentRecognizerLayoutBlock::fromJson(const web::json::value& val)
             std::vector<int32_t> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setWordsIds(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("table_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("table_id"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTableId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("form_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("form_id"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFormId(refVal);
         }
     }
     return ok;
@@ -171,6 +199,48 @@ bool SmartDocumentRecognizerLayoutBlock::wordsIdsIsSet() const
 void SmartDocumentRecognizerLayoutBlock::unsetwordsIds()
 {
     wordsIdsIsSet_ = false;
+}
+
+int32_t SmartDocumentRecognizerLayoutBlock::getTableId() const
+{
+    return tableId_;
+}
+
+void SmartDocumentRecognizerLayoutBlock::setTableId(int32_t value)
+{
+    tableId_ = value;
+    tableIdIsSet_ = true;
+}
+
+bool SmartDocumentRecognizerLayoutBlock::tableIdIsSet() const
+{
+    return tableIdIsSet_;
+}
+
+void SmartDocumentRecognizerLayoutBlock::unsettableId()
+{
+    tableIdIsSet_ = false;
+}
+
+int32_t SmartDocumentRecognizerLayoutBlock::getFormId() const
+{
+    return formId_;
+}
+
+void SmartDocumentRecognizerLayoutBlock::setFormId(int32_t value)
+{
+    formId_ = value;
+    formIdIsSet_ = true;
+}
+
+bool SmartDocumentRecognizerLayoutBlock::formIdIsSet() const
+{
+    return formIdIsSet_;
+}
+
+void SmartDocumentRecognizerLayoutBlock::unsetformId()
+{
+    formIdIsSet_ = false;
 }
 
 }

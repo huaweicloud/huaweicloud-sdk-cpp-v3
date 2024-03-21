@@ -614,6 +614,193 @@ HttpRequestDef LiveMeta::genRequestDefForUpdateObsBucketAuthorityPublic() {
     return reqDefBuilder;
 }
 
+HttpRequestDef LiveMeta::genRequestDefForCreateOttChannelInfo() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamAccessControlAllowInternal;
+    reqDefBuilder.withRequestField(headerParamAccessControlAllowInternal
+                  .withName("AccessControlAllowInternal")
+                  .withJsonTag("Access-Control-Allow-Internal")
+                  .withLocationType(Header_));
+    FieldDef headerParamAccessControlAllowExternal;
+    reqDefBuilder.withRequestField(headerParamAccessControlAllowExternal
+                  .withName("AccessControlAllowExternal")
+                  .withJsonTag("Access-Control-Allow-External")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LiveMeta::genRequestDefForDeleteOttChannelInfo() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Domain")
+                  .withJsonTag("domain")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("AppName")
+                  .withJsonTag("app_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Id")
+                  .withJsonTag("id")
+                  .withLocationType(Query_));
+    FieldDef headerParamAccessControlAllowInternal;
+    reqDefBuilder.withRequestField(headerParamAccessControlAllowInternal
+                  .withName("AccessControlAllowInternal")
+                  .withJsonTag("Access-Control-Allow-Internal")
+                  .withLocationType(Header_));
+    FieldDef headerParamAccessControlAllowExternal;
+    reqDefBuilder.withRequestField(headerParamAccessControlAllowExternal
+                  .withName("AccessControlAllowExternal")
+                  .withJsonTag("Access-Control-Allow-External")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LiveMeta::genRequestDefForListOttChannelInfo() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Domain")
+                  .withJsonTag("domain")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("AppName")
+                  .withJsonTag("app_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Id")
+                  .withJsonTag("id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    FieldDef headerParamAccessControlAllowInternal;
+    reqDefBuilder.withRequestField(headerParamAccessControlAllowInternal
+                  .withName("AccessControlAllowInternal")
+                  .withJsonTag("Access-Control-Allow-Internal")
+                  .withLocationType(Header_));
+    FieldDef headerParamAccessControlAllowExternal;
+    reqDefBuilder.withRequestField(headerParamAccessControlAllowExternal
+                  .withName("AccessControlAllowExternal")
+                  .withJsonTag("Access-Control-Allow-External")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LiveMeta::genRequestDefForModifyOttChannelInfoEncoderSettings() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamAccessControlAllowInternal;
+    reqDefBuilder.withRequestField(headerParamAccessControlAllowInternal
+                  .withName("AccessControlAllowInternal")
+                  .withJsonTag("Access-Control-Allow-Internal")
+                  .withLocationType(Header_));
+    FieldDef headerParamAccessControlAllowExternal;
+    reqDefBuilder.withRequestField(headerParamAccessControlAllowExternal
+                  .withName("AccessControlAllowExternal")
+                  .withJsonTag("Access-Control-Allow-External")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LiveMeta::genRequestDefForModifyOttChannelInfoEndPoints() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamAccessControlAllowInternal;
+    reqDefBuilder.withRequestField(headerParamAccessControlAllowInternal
+                  .withName("AccessControlAllowInternal")
+                  .withJsonTag("Access-Control-Allow-Internal")
+                  .withLocationType(Header_));
+    FieldDef headerParamAccessControlAllowExternal;
+    reqDefBuilder.withRequestField(headerParamAccessControlAllowExternal
+                  .withName("AccessControlAllowExternal")
+                  .withJsonTag("Access-Control-Allow-External")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LiveMeta::genRequestDefForModifyOttChannelInfoGeneral() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamAccessControlAllowInternal;
+    reqDefBuilder.withRequestField(headerParamAccessControlAllowInternal
+                  .withName("AccessControlAllowInternal")
+                  .withJsonTag("Access-Control-Allow-Internal")
+                  .withLocationType(Header_));
+    FieldDef headerParamAccessControlAllowExternal;
+    reqDefBuilder.withRequestField(headerParamAccessControlAllowExternal
+                  .withName("AccessControlAllowExternal")
+                  .withJsonTag("Access-Control-Allow-External")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LiveMeta::genRequestDefForModifyOttChannelInfoInput() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamAccessControlAllowInternal;
+    reqDefBuilder.withRequestField(headerParamAccessControlAllowInternal
+                  .withName("AccessControlAllowInternal")
+                  .withJsonTag("Access-Control-Allow-Internal")
+                  .withLocationType(Header_));
+    FieldDef headerParamAccessControlAllowExternal;
+    reqDefBuilder.withRequestField(headerParamAccessControlAllowExternal
+                  .withName("AccessControlAllowExternal")
+                  .withJsonTag("Access-Control-Allow-External")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LiveMeta::genRequestDefForModifyOttChannelInfoRecordSettings() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamAccessControlAllowInternal;
+    reqDefBuilder.withRequestField(headerParamAccessControlAllowInternal
+                  .withName("AccessControlAllowInternal")
+                  .withJsonTag("Access-Control-Allow-Internal")
+                  .withLocationType(Header_));
+    FieldDef headerParamAccessControlAllowExternal;
+    reqDefBuilder.withRequestField(headerParamAccessControlAllowExternal
+                  .withName("AccessControlAllowExternal")
+                  .withJsonTag("Access-Control-Allow-External")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LiveMeta::genRequestDefForModifyOttChannelInfoStats() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamAccessControlAllowInternal;
+    reqDefBuilder.withRequestField(headerParamAccessControlAllowInternal
+                  .withName("AccessControlAllowInternal")
+                  .withJsonTag("Access-Control-Allow-Internal")
+                  .withLocationType(Header_));
+    FieldDef headerParamAccessControlAllowExternal;
+    reqDefBuilder.withRequestField(headerParamAccessControlAllowExternal
+                  .withName("AccessControlAllowExternal")
+                  .withJsonTag("Access-Control-Allow-External")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 
 }
 }

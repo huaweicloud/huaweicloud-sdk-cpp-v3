@@ -39,7 +39,7 @@ public:
     /// GlobalConnectionBandwidthInfo members
 
     /// <summary>
-    /// 骨干带宽id
+    /// 骨干带宽的ID
     /// </summary>
 
     std::string getGcbId() const;
@@ -48,7 +48,7 @@ public:
     void setGcbId(const std::string& value);
 
     /// <summary>
-    /// 骨干带宽大小
+    /// 骨干带宽的大小
     /// </summary>
 
     int32_t getSize() const;
@@ -66,7 +66,7 @@ public:
     void setGcbType(const std::string& value);
 
     /// <summary>
-    /// 骨干带宽状态，取值：NORMAL 正常、FREEZED 冻结
+    /// - 功能说明：骨干带宽状态 - 取值范围：NORMAL 正常、FREEZED 冻结
     /// </summary>
 
     std::string getAdminState() const;
@@ -75,7 +75,7 @@ public:
     void setAdminState(const std::string& value);
 
     /// <summary>
-    /// 网络服务等级。Pt - 铂金，Au - 金牌，Ag - 银牌，Cu - 铜牌
+    /// - 功能说明：网络服务等级 - 取值范围：Pt - 铂金，Au - 金牌，Ag - 银牌，Cu - 铜牌
     /// </summary>
 
     std::string getSlaLevel() const;

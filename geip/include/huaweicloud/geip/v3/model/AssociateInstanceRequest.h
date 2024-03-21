@@ -49,7 +49,7 @@ public:
     void setBindingInstanceService(const std::string& value);
 
     /// <summary>
-    /// global_eip_id
+    /// 
     /// </summary>
 
     std::string getGlobalEipId() const;

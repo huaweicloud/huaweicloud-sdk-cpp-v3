@@ -1,3 +1,121 @@
+# 3.1.78 2024-03-21
+
+### HuaweiCloud SDK CDN
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowVerifyDomainOwnerInfo**
+    - changes of response param
+      - `+ file_verify_domains`
+
+### HuaweiCloud SDK CodeArtsDeploy
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateApp**
+    - changes of request param
+      - `+ group_id`
+
+### HuaweiCloud SDK DRS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowPositionResult**
+    - changes of response param
+      - `+ status`
+
+### HuaweiCloud SDK GEIP
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListSupportMasks**
+    - changes of response param
+      - `+ support_masks.ip_version: enum value [4,6]`
+  - **ListGlobalEips**
+    - changes of response param
+      - `+ global_eips.ip_version: enum value [4,6]`
+  - **DetachInternetBandwidth**
+    - changes of response param
+      - `+ global_eip.ip_version: enum value [4,6]`
+  - **BatchCreateGlobalEip**
+    - changes of response param
+      - `+ global_eip.ip_version: enum value [4,6]`
+  - **ShowGlobalEip**
+    - changes of response param
+      - `+ global_eip.ip_version: enum value [4,6]`
+  - **AttachInternetBandwidth**
+    - changes of response param
+      - `+ global_eip.ip_version: enum value [4,6]`
+  - **ListGlobalEipSegments**
+    - changes of response param
+      - `+ global_eip_segments.ip_version: enum value [4,6]`
+  - **ShowGlobalEipSegment**
+    - changes of response param
+      - `+ global_eip_segment.ip_version: enum value [4,6]`
+  - **ListGeipPools**
+    - changes of response param
+      - `+ geip_pools.ip_version: enum value [4,6]`
+
+### HuaweiCloud SDK Live
+
+- _Features_
+  - Support the following APIs:
+    - `ListOttChannelInfo`
+    - `CreateOttChannelInfo`
+    - `DeleteOttChannelInfo`
+    - `ModifyOttChannelInfoEndPoints`
+    - `ModifyOttChannelInfoInput`
+    - `ModifyOttChannelInfoRecordSettings`
+    - `ModifyOttChannelInfoGeneral`
+    - `ModifyOttChannelInfoStats`
+    - `ModifyOttChannelInfoEncoderSettings`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - Support the API `RecognizeHouseholdRegister`
+- _Bug Fix_
+  - None
+- _Change_
+  - **RecognizeSmartDocumentRecognizer**
+    - changes of request param
+      - `+ form`
+      - `+ kv_map`
+    - changes of response param
+      - `+ result.form_result`
+      - `+ result.layout_result.layout_block_list.table_id`
+      - `+ result.layout_result.layout_block_list.form_id`
+
+### HuaweiCloud SDK RDS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowAutoEnlargePolicy**
+    - changes of response param
+      - `+ step_percent`
+  - **SetAutoEnlargePolicy**
+    - changes of request param
+      - `+ step_percent`
+
 # 3.1.77 2024-03-14
 
 ### HuaweiCloud SDK DRS

@@ -27,7 +27,7 @@ web::json::value BatchDeleteGeipSegmentTagsResponse::toJson() const
     web::json::value val = web::json::value::object();
 
     if(xRequestIdIsSet_) {
-        val[utility::conversions::to_string_t("x-request-id")] = ModelBase::toJson(xRequestId_);
+        val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
     }
 
     return val;
@@ -36,8 +36,8 @@ bool BatchDeleteGeipSegmentTagsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("x-request-id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("x-request-id"));
+    if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Request-Id"));
         if(!fieldValue.is_null())
         {
             std::string refVal;

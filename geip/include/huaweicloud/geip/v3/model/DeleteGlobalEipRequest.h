@@ -39,7 +39,7 @@ public:
     /// DeleteGlobalEipRequest members
 
     /// <summary>
-    /// global_eip_id
+    /// 
     /// </summary>
 
     std::string getGlobalEipId() const;

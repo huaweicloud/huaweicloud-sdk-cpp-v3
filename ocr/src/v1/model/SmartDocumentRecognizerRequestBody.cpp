@@ -24,6 +24,10 @@ SmartDocumentRecognizerRequestBody::SmartDocumentRecognizerRequestBody()
     layoutIsSet_ = false;
     returnExcel_ = false;
     returnExcelIsSet_ = false;
+    form_ = false;
+    formIsSet_ = false;
+    kvMap_ = "";
+    kvMapIsSet_ = false;
 }
 
 SmartDocumentRecognizerRequestBody::~SmartDocumentRecognizerRequestBody() = default;
@@ -53,6 +57,12 @@ web::json::value SmartDocumentRecognizerRequestBody::toJson() const
     }
     if(returnExcelIsSet_) {
         val[utility::conversions::to_string_t("return_excel")] = ModelBase::toJson(returnExcel_);
+    }
+    if(formIsSet_) {
+        val[utility::conversions::to_string_t("form")] = ModelBase::toJson(form_);
+    }
+    if(kvMapIsSet_) {
+        val[utility::conversions::to_string_t("kv_map")] = ModelBase::toJson(kvMap_);
     }
 
     return val;
@@ -113,6 +123,24 @@ bool SmartDocumentRecognizerRequestBody::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setReturnExcel(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("form"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("form"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setForm(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("kv_map"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("kv_map"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setKvMap(refVal);
         }
     }
     return ok;
@@ -243,6 +271,48 @@ bool SmartDocumentRecognizerRequestBody::returnExcelIsSet() const
 void SmartDocumentRecognizerRequestBody::unsetreturnExcel()
 {
     returnExcelIsSet_ = false;
+}
+
+bool SmartDocumentRecognizerRequestBody::isForm() const
+{
+    return form_;
+}
+
+void SmartDocumentRecognizerRequestBody::setForm(bool value)
+{
+    form_ = value;
+    formIsSet_ = true;
+}
+
+bool SmartDocumentRecognizerRequestBody::formIsSet() const
+{
+    return formIsSet_;
+}
+
+void SmartDocumentRecognizerRequestBody::unsetform()
+{
+    formIsSet_ = false;
+}
+
+std::string SmartDocumentRecognizerRequestBody::getKvMap() const
+{
+    return kvMap_;
+}
+
+void SmartDocumentRecognizerRequestBody::setKvMap(const std::string& value)
+{
+    kvMap_ = value;
+    kvMapIsSet_ = true;
+}
+
+bool SmartDocumentRecognizerRequestBody::kvMapIsSet() const
+{
+    return kvMapIsSet_;
+}
+
+void SmartDocumentRecognizerRequestBody::unsetkvMap()
+{
+    kvMapIsSet_ = false;
 }
 
 }

@@ -43,7 +43,7 @@ bool BatchCreateV2RequestBody::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("tags"));
         if(!fieldValue.is_null())
         {
-            std::vector<BatchCreateV2RequestBody_tags> refVal;
+            std::vector<CreateGlobalEipRequestBody_global_eip_tags> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTags(refVal);
         }
@@ -52,7 +52,7 @@ bool BatchCreateV2RequestBody::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sys_tags"));
         if(!fieldValue.is_null())
         {
-            std::vector<BatchCreateV2RequestBody_sys_tags> refVal;
+            std::vector<CreateGlobalEipRequestBody_global_eip_tags> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSysTags(refVal);
         }
@@ -61,12 +61,12 @@ bool BatchCreateV2RequestBody::fromJson(const web::json::value& val)
 }
 
 
-std::vector<BatchCreateV2RequestBody_tags>& BatchCreateV2RequestBody::getTags()
+std::vector<CreateGlobalEipRequestBody_global_eip_tags>& BatchCreateV2RequestBody::getTags()
 {
     return tags_;
 }
 
-void BatchCreateV2RequestBody::setTags(const std::vector<BatchCreateV2RequestBody_tags>& value)
+void BatchCreateV2RequestBody::setTags(const std::vector<CreateGlobalEipRequestBody_global_eip_tags>& value)
 {
     tags_ = value;
     tagsIsSet_ = true;
@@ -82,12 +82,12 @@ void BatchCreateV2RequestBody::unsettags()
     tagsIsSet_ = false;
 }
 
-std::vector<BatchCreateV2RequestBody_sys_tags>& BatchCreateV2RequestBody::getSysTags()
+std::vector<CreateGlobalEipRequestBody_global_eip_tags>& BatchCreateV2RequestBody::getSysTags()
 {
     return sysTags_;
 }
 
-void BatchCreateV2RequestBody::setSysTags(const std::vector<BatchCreateV2RequestBody_sys_tags>& value)
+void BatchCreateV2RequestBody::setSysTags(const std::vector<CreateGlobalEipRequestBody_global_eip_tags>& value)
 {
     sysTags_ = value;
     sysTagsIsSet_ = true;

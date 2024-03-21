@@ -67,6 +67,15 @@ public:
     static HttpRequestDef genRequestDefForShowDomainHttpsCert();
     static HttpRequestDef genRequestDefForUpdateDomainHttpsCert();
     static HttpRequestDef genRequestDefForUpdateObsBucketAuthorityPublic();
+    static HttpRequestDef genRequestDefForCreateOttChannelInfo();
+    static HttpRequestDef genRequestDefForDeleteOttChannelInfo();
+    static HttpRequestDef genRequestDefForListOttChannelInfo();
+    static HttpRequestDef genRequestDefForModifyOttChannelInfoEncoderSettings();
+    static HttpRequestDef genRequestDefForModifyOttChannelInfoEndPoints();
+    static HttpRequestDef genRequestDefForModifyOttChannelInfoGeneral();
+    static HttpRequestDef genRequestDefForModifyOttChannelInfoInput();
+    static HttpRequestDef genRequestDefForModifyOttChannelInfoRecordSettings();
+    static HttpRequestDef genRequestDefForModifyOttChannelInfoStats();
 };
 
 }

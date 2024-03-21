@@ -92,6 +92,24 @@ public:
     void unsetreturnExcel();
     void setReturnExcel(bool value);
 
+    /// <summary>
+    /// 是否进行有线表单识别。有线表单指关键信息以有线单元格形式进行呈现，例如户口本、机动车发票等。若是，结果会以\&quot;form_result\&quot;这一关键字返回。 
+    /// </summary>
+
+    bool isForm() const;
+    bool formIsSet() const;
+    void unsetform();
+    void setForm(bool value);
+
+    /// <summary>
+    /// 需要传入字典的json序列化后字符串，用于对kv_result中的特定key值进行归一化映射。例如，kv_result中包含{\&quot;名称\&quot;：\&quot;小明\&quot;}的键值对，若传入{\&quot;名称\&quot;：\&quot;姓名\&quot;}的kv_map，则返回结果为{“姓名”：“小明”}。  &gt; 参数传入示例： - \&quot;kv_map\&quot;:\&quot;{\\\&quot;名称\\\&quot;:\\\&quot;姓名\\\&quot;}\&quot; 
+    /// </summary>
+
+    std::string getKvMap() const;
+    bool kvMapIsSet() const;
+    void unsetkvMap();
+    void setKvMap(const std::string& value);
+
 
 protected:
     std::string data_;
@@ -106,6 +124,10 @@ protected:
     bool layoutIsSet_;
     bool returnExcel_;
     bool returnExcelIsSet_;
+    bool form_;
+    bool formIsSet_;
+    std::string kvMap_;
+    bool kvMapIsSet_;
 
 };
 

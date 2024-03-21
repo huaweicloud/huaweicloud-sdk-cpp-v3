@@ -76,7 +76,7 @@ public:
     void setPageReverse(bool value);
 
     /// <summary>
-    /// 只显示指定的字段
+    /// 
     /// </summary>
 
     std::vector<std::string>& getFields();
@@ -103,7 +103,7 @@ public:
     void setSortDir(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据ID过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getId();
@@ -112,7 +112,7 @@ public:
     void setId(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据名称过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getCode();
@@ -121,7 +121,7 @@ public:
     void setCode(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据proxy_region过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getProxyRegion();
@@ -130,7 +130,7 @@ public:
     void setProxyRegion(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据iec_az_code过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getIecAzCode();

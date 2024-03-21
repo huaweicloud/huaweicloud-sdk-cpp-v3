@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 
+/// 标签对象
 /// </summary>
 class HUAWEICLOUD_GEIP_V3_EXPORT  CreateV2TagRequestBody
     : public ModelBase

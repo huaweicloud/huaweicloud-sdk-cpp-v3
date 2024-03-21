@@ -11,6 +11,7 @@
 
 #include <huaweicloud/geip/v3/model/InternetBandwidthInfo.h>
 #include <huaweicloud/geip/v3/model/InstanceInfo.h>
+#include <huaweicloud/core/utils/Object.h>
 #include <huaweicloud/geip/v3/model/GlobalConnectionBandwidthInfo.h>
 #include <huaweicloud/geip/v3/model/Tag.h>
 #include <string>
@@ -45,7 +46,7 @@ public:
     /// DetachInternetBandwidthGlobalEips members
 
     /// <summary>
-    /// ID
+    /// 全域弹性公网IP的ID
     /// </summary>
 
     std::string getId() const;
@@ -54,7 +55,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 资源名称
+    /// - 功能说明：全域弹性公网IP名称 - 取值范围：1-64，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
     /// </summary>
 
     std::string getName() const;
@@ -63,7 +64,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 租户ID
+    /// - 租户账号ID，获取租户账号ID请参见[租户账号ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)
     /// </summary>
 
     std::string getDomainId() const;
@@ -72,7 +73,7 @@ public:
     void setDomainId(const std::string& value);
 
     /// <summary>
-    /// 用户自定义的资源描述
+    /// - 功能说明：用户自定义的资源描述 - 约束：   - 值的长度最大512字符，由数字、字母、中文、_(下划线)、-（中划线）、.（点）组成。
     /// </summary>
 
     std::string getDescription() const;
@@ -99,7 +100,7 @@ public:
     void setGeipPoolName(const std::string& value);
 
     /// <summary>
-    /// 线路
+    /// 全域弹性公网IP所属线路
     /// </summary>
 
     std::string getIsp() const;
@@ -108,7 +109,7 @@ public:
     void setIsp(const std::string& value);
 
     /// <summary>
-    /// IPv4或IPv6
+    /// - 功能说明：全域弹性公网IP的版本 - 取值范围：4、6
     /// </summary>
 
     int32_t getIpVersion() const;
@@ -243,13 +244,13 @@ public:
     void setSysTags(const std::vector<Tag>& value);
 
     /// <summary>
-    /// 资源的企业项目id
+    /// - 企业项目ID。最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。 - 创建全域弹性公网IP时，给全域弹性公网IP绑定企业项目ID。 - 不指定该参数时，默认值是 0 - 关于企业项目ID的获取及企业项目特性的详细信息，请参见[《企业管理用户指南》](https://support.huaweicloud.com/usermanual-em/zh-cn_topic_0126101490.html)。
     /// </summary>
 
-    std::string getEnterpriseProjectId() const;
+    Object getEnterpriseProjectId() const;
     bool enterpriseProjectIdIsSet() const;
     void unsetenterpriseProjectId();
-    void setEnterpriseProjectId(const std::string& value);
+    void setEnterpriseProjectId(const Object& value);
 
 
 protected:
@@ -297,7 +298,7 @@ protected:
     bool tagsIsSet_;
     std::vector<Tag> sysTags_;
     bool sysTagsIsSet_;
-    std::string enterpriseProjectId_;
+    Object enterpriseProjectId_;
     bool enterpriseProjectIdIsSet_;
 
 };

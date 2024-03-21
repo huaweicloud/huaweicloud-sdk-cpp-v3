@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 
+/// 绑定实例的信息
 /// </summary>
 class HUAWEICLOUD_GEIP_V3_EXPORT  AssociateInstanceGlobalEipRequestBody_global_eip_associate_instance_info
     : public ModelBase
@@ -66,7 +66,7 @@ public:
     void setInstanceId(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 项目ID，获取项目ID请参见[获取项目ID](https://support.huaweicloud.com/api-vpc/vpc_api_0011.html)
     /// </summary>
 
     std::string getProjectId() const;

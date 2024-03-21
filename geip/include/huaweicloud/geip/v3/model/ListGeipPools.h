@@ -42,7 +42,7 @@ public:
     /// ListGeipPools members
 
     /// <summary>
-    /// ID
+    /// 全域弹性公网IP池的ID
     /// </summary>
 
     std::string getId() const;
@@ -51,7 +51,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 资源名称
+    /// - 功能说明：全域弹性公网IP池名称 - 取值范围：1-64，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
     /// </summary>
 
     std::string getName() const;
@@ -87,7 +87,7 @@ public:
     void setStatus(const std::string& value);
 
     /// <summary>
-    /// 线路
+    /// 全域弹性公网IP所属线路
     /// </summary>
 
     std::string getIsp() const;
@@ -96,7 +96,7 @@ public:
     void setIsp(const std::string& value);
 
     /// <summary>
-    /// IPv4或IPv6
+    /// - 功能说明：全域弹性公网IP池的版本 - 取值范围：4、6
     /// </summary>
 
     int32_t getIpVersion() const;
@@ -141,7 +141,7 @@ public:
     void setUpdatedAt(const utility::datetime& value);
 
     /// <summary>
-    /// 
+    /// 地址池支持的全域公网带宽类型资源
     /// </summary>
 
     std::vector<AllowedBandwidthTypes>& getAllowedBandwidthTypes();

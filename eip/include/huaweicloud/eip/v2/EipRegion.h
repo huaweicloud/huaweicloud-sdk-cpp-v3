@@ -110,6 +110,18 @@ public:
             { 
                 "https://vpc.eu-west-0.myhuaweicloud.com"
             });
+        regions["ae-ad-1"] = Region("ae-ad-1",
+            { 
+                "https://vpc.ae-ad-1.myhuaweicloud.com"
+            });
+        regions["ru-northwest-2"] = Region("ru-northwest-2",
+            { 
+                "https://vpc.ru-northwest-2.myhuaweicloud.com"
+            });
+        regions["my-kualalumpur-1"] = Region("my-kualalumpur-1",
+            { 
+                "https://vpc.my-kualalumpur-1.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

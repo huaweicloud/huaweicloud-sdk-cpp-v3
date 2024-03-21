@@ -18,6 +18,8 @@ ShowAutoEnlargePolicyResponse::ShowAutoEnlargePolicyResponse()
     limitSizeIsSet_ = false;
     triggerThreshold_ = 0;
     triggerThresholdIsSet_ = false;
+    stepPercent_ = 0;
+    stepPercentIsSet_ = false;
 }
 
 ShowAutoEnlargePolicyResponse::~ShowAutoEnlargePolicyResponse() = default;
@@ -38,6 +40,9 @@ web::json::value ShowAutoEnlargePolicyResponse::toJson() const
     }
     if(triggerThresholdIsSet_) {
         val[utility::conversions::to_string_t("trigger_threshold")] = ModelBase::toJson(triggerThreshold_);
+    }
+    if(stepPercentIsSet_) {
+        val[utility::conversions::to_string_t("step_percent")] = ModelBase::toJson(stepPercent_);
     }
 
     return val;
@@ -71,6 +76,15 @@ bool ShowAutoEnlargePolicyResponse::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTriggerThreshold(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("step_percent"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("step_percent"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setStepPercent(refVal);
         }
     }
     return ok;
@@ -138,6 +152,27 @@ bool ShowAutoEnlargePolicyResponse::triggerThresholdIsSet() const
 void ShowAutoEnlargePolicyResponse::unsettriggerThreshold()
 {
     triggerThresholdIsSet_ = false;
+}
+
+int32_t ShowAutoEnlargePolicyResponse::getStepPercent() const
+{
+    return stepPercent_;
+}
+
+void ShowAutoEnlargePolicyResponse::setStepPercent(int32_t value)
+{
+    stepPercent_ = value;
+    stepPercentIsSet_ = true;
+}
+
+bool ShowAutoEnlargePolicyResponse::stepPercentIsSet() const
+{
+    return stepPercentIsSet_;
+}
+
+void ShowAutoEnlargePolicyResponse::unsetstepPercent()
+{
+    stepPercentIsSet_ = false;
 }
 
 }

@@ -40,7 +40,7 @@ public:
     /// ListTenantGeipSupportInstancesRequest members
 
     /// <summary>
-    /// 接入点信息
+    /// 
     /// </summary>
 
     std::string getAccessSite() const;
@@ -49,7 +49,7 @@ public:
     void setAccessSite(const std::string& value);
 
     /// <summary>
-    /// 只显示指定的字段
+    /// 
     /// </summary>
 
     std::vector<std::string>& getFields();

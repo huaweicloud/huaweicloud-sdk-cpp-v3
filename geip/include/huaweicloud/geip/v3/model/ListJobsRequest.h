@@ -76,7 +76,7 @@ public:
     void setPageReverse(bool value);
 
     /// <summary>
-    /// 只显示指定的字段
+    /// 
     /// </summary>
 
     std::vector<std::string>& getFields();
@@ -103,7 +103,7 @@ public:
     void setSortDir(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据ID过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getId();
@@ -112,7 +112,7 @@ public:
     void setId(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据action过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getAction();
@@ -121,7 +121,7 @@ public:
     void setAction(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据job状态过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getStatus();

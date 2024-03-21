@@ -39,7 +39,7 @@ public:
     /// AttachInternetBandwidth members
 
     /// <summary>
-    /// 
+    /// 全域弹性公网IP段的ID
     /// </summary>
 
     std::string getGlobalEipSegmentId() const;

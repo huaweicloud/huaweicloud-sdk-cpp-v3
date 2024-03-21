@@ -76,7 +76,7 @@ public:
     void setPageReverse(bool value);
 
     /// <summary>
-    /// 只显示指定的字段
+    /// 
     /// </summary>
 
     std::vector<std::string>& getFields();
@@ -103,7 +103,7 @@ public:
     void setSortDir(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据ID过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getId();
@@ -112,7 +112,7 @@ public:
     void setId(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据实例类型过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getInstanceType();
@@ -121,7 +121,7 @@ public:
     void setInstanceType(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据边缘信息过滤，中心站点or边缘站点
+    /// 
     /// </summary>
 
     std::vector<std::string>& getPublicBorderGroup();
@@ -130,7 +130,7 @@ public:
     void setPublicBorderGroup(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据接入点过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getAccessSite();
@@ -139,7 +139,7 @@ public:
     void setAccessSite(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据region_id过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getRegionId();
@@ -148,7 +148,7 @@ public:
     void setRegionId(const std::vector<std::string>& value);
 
     /// <summary>
-    /// query by remote_endpoint
+    /// 
     /// </summary>
 
     std::vector<std::string>& getRemoteEndpoint();
@@ -157,7 +157,7 @@ public:
     void setRemoteEndpoint(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 根据资源状态过滤
+    /// 
     /// </summary>
 
     std::vector<std::string>& getStatus();

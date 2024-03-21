@@ -38,7 +38,7 @@ public:
     /// CountGlobalEips members
 
     /// <summary>
-    /// Global Eip Count
+    /// 全域弹性公网IP个数
     /// </summary>
 
     int32_t getCount() const;

@@ -18,6 +18,8 @@ CreateAppRequestBody::CreateAppRequestBody()
     nameIsSet_ = false;
     description_ = "";
     descriptionIsSet_ = false;
+    groupId_ = "";
+    groupIdIsSet_ = false;
     isDraft_ = false;
     isDraftIsSet_ = false;
     createType_ = "";
@@ -46,6 +48,9 @@ web::json::value CreateAppRequestBody::toJson() const
     }
     if(descriptionIsSet_) {
         val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
+    }
+    if(groupIdIsSet_) {
+        val[utility::conversions::to_string_t("group_id")] = ModelBase::toJson(groupId_);
     }
     if(isDraftIsSet_) {
         val[utility::conversions::to_string_t("is_draft")] = ModelBase::toJson(isDraft_);
@@ -94,6 +99,15 @@ bool CreateAppRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDescription(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("group_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("group_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setGroupId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("is_draft"))) {
@@ -206,6 +220,27 @@ bool CreateAppRequestBody::descriptionIsSet() const
 void CreateAppRequestBody::unsetdescription()
 {
     descriptionIsSet_ = false;
+}
+
+std::string CreateAppRequestBody::getGroupId() const
+{
+    return groupId_;
+}
+
+void CreateAppRequestBody::setGroupId(const std::string& value)
+{
+    groupId_ = value;
+    groupIdIsSet_ = true;
+}
+
+bool CreateAppRequestBody::groupIdIsSet() const
+{
+    return groupIdIsSet_;
+}
+
+void CreateAppRequestBody::unsetgroupId()
+{
+    groupIdIsSet_ = false;
 }
 
 bool CreateAppRequestBody::isIsDraft() const

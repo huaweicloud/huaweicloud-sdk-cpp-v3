@@ -54,6 +54,8 @@ BackupResp::BackupResp()
     providerId_ = "";
     providerIdIsSet_ = false;
     childrenIsSet_ = false;
+    incremental_ = false;
+    incrementalIsSet_ = false;
 }
 
 BackupResp::~BackupResp() = default;
@@ -134,6 +136,9 @@ web::json::value BackupResp::toJson() const
     }
     if(childrenIsSet_) {
         val[utility::conversions::to_string_t("children")] = ModelBase::toJson(*children_);
+    }
+    if(incrementalIsSet_) {
+        val[utility::conversions::to_string_t("incremental")] = ModelBase::toJson(incremental_);
     }
 
     return val;
@@ -347,6 +352,15 @@ bool BackupResp::fromJson(const web::json::value& val)
             std::vector<BackupResp> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setChildren(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("incremental"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("incremental"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIncremental(refVal);
         }
     }
     return ok;
@@ -834,6 +848,27 @@ bool BackupResp::childrenIsSet() const
 void BackupResp::unsetchildren()
 {
     childrenIsSet_ = false;
+}
+
+bool BackupResp::isIncremental() const
+{
+    return incremental_;
+}
+
+void BackupResp::setIncremental(bool value)
+{
+    incremental_ = value;
+    incrementalIsSet_ = true;
+}
+
+bool BackupResp::incrementalIsSet() const
+{
+    return incrementalIsSet_;
+}
+
+void BackupResp::unsetincremental()
+{
+    incrementalIsSet_ = false;
 }
 
 }

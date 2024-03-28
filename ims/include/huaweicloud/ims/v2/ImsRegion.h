@@ -112,7 +112,7 @@ public:
             });
         regions["eu-west-101"] = Region("eu-west-101",
             { 
-                "https://ims.eu-west-101.myhuaweicloud.eu"
+                "https://ims.eu-west-101.myhuaweicloud.com"
             });
         regions["cn-east-5"] = Region("cn-east-5",
             { 

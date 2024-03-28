@@ -36,6 +36,8 @@ VaultCreate::VaultCreate()
     backupNamePrefixIsSet_ = false;
     demandBilling_ = false;
     demandBillingIsSet_ = false;
+    sysLockSourceService_ = "";
+    sysLockSourceServiceIsSet_ = false;
 }
 
 VaultCreate::~VaultCreate() = default;
@@ -89,6 +91,9 @@ web::json::value VaultCreate::toJson() const
     }
     if(demandBillingIsSet_) {
         val[utility::conversions::to_string_t("demand_billing")] = ModelBase::toJson(demandBilling_);
+    }
+    if(sysLockSourceServiceIsSet_) {
+        val[utility::conversions::to_string_t("sys_lock_source_service")] = ModelBase::toJson(sysLockSourceService_);
     }
 
     return val;
@@ -221,6 +226,15 @@ bool VaultCreate::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDemandBilling(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("sys_lock_source_service"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sys_lock_source_service"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSysLockSourceService(refVal);
         }
     }
     return ok;
@@ -519,6 +533,27 @@ bool VaultCreate::demandBillingIsSet() const
 void VaultCreate::unsetdemandBilling()
 {
     demandBillingIsSet_ = false;
+}
+
+std::string VaultCreate::getSysLockSourceService() const
+{
+    return sysLockSourceService_;
+}
+
+void VaultCreate::setSysLockSourceService(const std::string& value)
+{
+    sysLockSourceService_ = value;
+    sysLockSourceServiceIsSet_ = true;
+}
+
+bool VaultCreate::sysLockSourceServiceIsSet() const
+{
+    return sysLockSourceServiceIsSet_;
+}
+
+void VaultCreate::unsetsysLockSourceService()
+{
+    sysLockSourceServiceIsSet_ = false;
 }
 
 }

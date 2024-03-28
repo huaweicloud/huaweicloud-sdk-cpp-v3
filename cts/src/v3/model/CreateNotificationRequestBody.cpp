@@ -16,6 +16,8 @@ CreateNotificationRequestBody::CreateNotificationRequestBody()
     notificationNameIsSet_ = false;
     operationType_ = "";
     operationTypeIsSet_ = false;
+    agencyName_ = "";
+    agencyNameIsSet_ = false;
     operationsIsSet_ = false;
     notifyUserListIsSet_ = false;
     topicId_ = "";
@@ -38,6 +40,9 @@ web::json::value CreateNotificationRequestBody::toJson() const
     }
     if(operationTypeIsSet_) {
         val[utility::conversions::to_string_t("operation_type")] = ModelBase::toJson(operationType_);
+    }
+    if(agencyNameIsSet_) {
+        val[utility::conversions::to_string_t("agency_name")] = ModelBase::toJson(agencyName_);
     }
     if(operationsIsSet_) {
         val[utility::conversions::to_string_t("operations")] = ModelBase::toJson(operations_);
@@ -74,6 +79,15 @@ bool CreateNotificationRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setOperationType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("agency_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("agency_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAgencyName(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("operations"))) {
@@ -156,6 +170,27 @@ bool CreateNotificationRequestBody::operationTypeIsSet() const
 void CreateNotificationRequestBody::unsetoperationType()
 {
     operationTypeIsSet_ = false;
+}
+
+std::string CreateNotificationRequestBody::getAgencyName() const
+{
+    return agencyName_;
+}
+
+void CreateNotificationRequestBody::setAgencyName(const std::string& value)
+{
+    agencyName_ = value;
+    agencyNameIsSet_ = true;
+}
+
+bool CreateNotificationRequestBody::agencyNameIsSet() const
+{
+    return agencyNameIsSet_;
+}
+
+void CreateNotificationRequestBody::unsetagencyName()
+{
+    agencyNameIsSet_ = false;
 }
 
 std::vector<Operations>& CreateNotificationRequestBody::getOperations()

@@ -448,6 +448,47 @@ std::shared_ptr<CreateCheckpointResponse> CbrClient::createCheckpoint(CreateChec
 
     return localVarResult;
 }
+std::shared_ptr<CreateOrganizationPolicyResponse> CbrClient::createOrganizationPolicy(CreateOrganizationPolicyRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/organization-policies";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CbrMeta::genRequestDefForCreateOrganizationPolicy());
+
+    std::shared_ptr<CreateOrganizationPolicyResponse> localVarResult = std::make_shared<CreateOrganizationPolicyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<CreatePolicyResponse> CbrClient::createPolicy(CreatePolicyRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/policies";
@@ -668,6 +709,36 @@ std::shared_ptr<DeleteMemberResponse> CbrClient::deleteMember(DeleteMemberReques
         localVarHeaderParams, localVarHttpBody, CbrMeta::genRequestDefForDeleteMember());
 
     std::shared_ptr<DeleteMemberResponse> localVarResult = std::make_shared<DeleteMemberResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<DeleteOrganizationPolicyResponse> CbrClient::deleteOrganizationPolicy(DeleteOrganizationPolicyRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/organization-policies/{organization_policy_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["organization_policy_id"] = parameterToString(request.getOrganizationPolicyId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CbrMeta::genRequestDefForDeleteOrganizationPolicy());
+
+    std::shared_ptr<DeleteOrganizationPolicyResponse> localVarResult = std::make_shared<DeleteOrganizationPolicyResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -1170,6 +1241,68 @@ std::shared_ptr<ListOpLogsResponse> CbrClient::listOpLogs(ListOpLogsRequest &req
         localVarHeaderParams, localVarHttpBody, CbrMeta::genRequestDefForListOpLogs());
 
     std::shared_ptr<ListOpLogsResponse> localVarResult = std::make_shared<ListOpLogsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListOrganizationPoliciesResponse> CbrClient::listOrganizationPolicies(ListOrganizationPoliciesRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/organization-policies";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.operationTypeIsSet()) {
+        localVarQueryParams["operation_type"] = parameterToString(request.getOperationType());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CbrMeta::genRequestDefForListOrganizationPolicies());
+
+    std::shared_ptr<ListOrganizationPoliciesResponse> localVarResult = std::make_shared<ListOrganizationPoliciesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListOrganizationPolicyDetailResponse> CbrClient::listOrganizationPolicyDetail(ListOrganizationPolicyDetailRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/organization-policies/{organization_policy_id}/policy-detail";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["organization_policy_id"] = parameterToString(request.getOrganizationPolicyId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CbrMeta::genRequestDefForListOrganizationPolicyDetail());
+
+    std::shared_ptr<ListOrganizationPolicyDetailResponse> localVarResult = std::make_shared<ListOrganizationPolicyDetailResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -1942,6 +2075,36 @@ std::shared_ptr<ShowOpLogResponse> CbrClient::showOpLog(ShowOpLogRequest &reques
 
     return localVarResult;
 }
+std::shared_ptr<ShowOrganizationPolicyResponse> CbrClient::showOrganizationPolicy(ShowOrganizationPolicyRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/organization-policies/{organization_policy_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["organization_policy_id"] = parameterToString(request.getOrganizationPolicyId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CbrMeta::genRequestDefForShowOrganizationPolicy());
+
+    std::shared_ptr<ShowOrganizationPolicyResponse> localVarResult = std::make_shared<ShowOrganizationPolicyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowPolicyResponse> CbrClient::showPolicy(ShowPolicyRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/policies/{policy_id}";
@@ -2419,6 +2582,48 @@ std::shared_ptr<UpdateOrderResponse> CbrClient::updateOrder(UpdateOrderRequest &
         localVarHeaderParams, localVarHttpBody, CbrMeta::genRequestDefForUpdateOrder());
 
     std::shared_ptr<UpdateOrderResponse> localVarResult = std::make_shared<UpdateOrderResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateOrganizationPolicyResponse> CbrClient::updateOrganizationPolicy(UpdateOrganizationPolicyRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/organization-policies/{organization_policy_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["organization_policy_id"] = parameterToString(request.getOrganizationPolicyId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CbrMeta::genRequestDefForUpdateOrganizationPolicy());
+
+    std::shared_ptr<UpdateOrganizationPolicyResponse> localVarResult = std::make_shared<UpdateOrganizationPolicyResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

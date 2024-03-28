@@ -19,6 +19,7 @@ public:
     static HttpRequestDef genRequestDefForBatchDeleteManualBackup();
     static HttpRequestDef genRequestDefForBatchRestoreDatabase();
     static HttpRequestDef genRequestDefForBatchRestorePostgreSqlTables();
+    static HttpRequestDef genRequestDefForBatchStopInstance();
     static HttpRequestDef genRequestDefForBatchTagAddAction();
     static HttpRequestDef genRequestDefForBatchTagDelAction();
     static HttpRequestDef genRequestDefForChangeFailoverMode();

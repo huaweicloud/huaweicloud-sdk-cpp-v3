@@ -21,6 +21,9 @@
 #include <huaweicloud/rds/v3/model/BatchRestoreDatabaseResponse.h>
 #include <huaweicloud/rds/v3/model/BatchRestorePostgreSqlTablesRequest.h>
 #include <huaweicloud/rds/v3/model/BatchRestorePostgreSqlTablesResponse.h>
+#include <huaweicloud/rds/v3/model/BatchShutdownInsReq.h>
+#include <huaweicloud/rds/v3/model/BatchStopInstanceRequest.h>
+#include <huaweicloud/rds/v3/model/BatchStopInstanceResponse.h>
 #include <huaweicloud/rds/v3/model/BatchTagActionAddRequestBody.h>
 #include <huaweicloud/rds/v3/model/BatchTagActionDelRequestBody.h>
 #include <huaweicloud/rds/v3/model/BatchTagAddActionRequest.h>
@@ -616,6 +619,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<BatchRestorePostgreSqlTablesResponse> batchRestorePostgreSqlTables(
         BatchRestorePostgreSqlTablesRequest &request
+    );
+    // 批量停止实例
+    //
+    // 批量停止实例
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchStopInstanceResponse> batchStopInstance(
+        BatchStopInstanceRequest &request
     );
     // 批量添加标签
     //

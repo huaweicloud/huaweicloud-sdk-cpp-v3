@@ -59,15 +59,6 @@ public:
     void setBootable(bool value);
 
     /// <summary>
-    /// 是否是增备
-    /// </summary>
-
-    bool isIncremental() const;
-    bool incrementalIsSet() const;
-    void unsetincremental();
-    void setIncremental(bool value);
-
-    /// <summary>
     /// 卷备份副本的快照id
     /// </summary>
 
@@ -145,8 +136,6 @@ protected:
     bool autoTriggerIsSet_;
     bool bootable_;
     bool bootableIsSet_;
-    bool incremental_;
-    bool incrementalIsSet_;
     std::string snapshotId_;
     bool snapshotIdIsSet_;
     bool supportLld_;

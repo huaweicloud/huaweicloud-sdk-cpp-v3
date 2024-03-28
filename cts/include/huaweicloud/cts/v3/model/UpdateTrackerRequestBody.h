@@ -60,6 +60,15 @@ public:
     void setTrackerName(const std::string& value);
 
     /// <summary>
+    /// 云服务委托名称。 参数值为\&quot;cts_admin_trust\&quot;时，更新追踪器会自动创建一个云服务委托：cts_admin_trust。
+    /// </summary>
+
+    std::string getAgencyName() const;
+    bool agencyNameIsSet() const;
+    void unsetagencyName();
+    void setAgencyName(const std::string& value);
+
+    /// <summary>
     /// 标识追踪器状态，该接口中可修改的状态包括正常（enabled）和停止（disabled）。如果选择修改状态为停止，则修改成功后追踪器停止记录事件。
     /// </summary>
 
@@ -146,6 +155,8 @@ protected:
     bool trackerTypeIsSet_;
     std::string trackerName_;
     bool trackerNameIsSet_;
+    std::string agencyName_;
+    bool agencyNameIsSet_;
     std::string status_;
     bool statusIsSet_;
     bool isOrganizationTracker_;

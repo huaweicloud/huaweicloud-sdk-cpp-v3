@@ -39,6 +39,8 @@
 #include <huaweicloud/cbr/v1/model/CopyCheckpointResponse.h>
 #include <huaweicloud/cbr/v1/model/CreateCheckpointRequest.h>
 #include <huaweicloud/cbr/v1/model/CreateCheckpointResponse.h>
+#include <huaweicloud/cbr/v1/model/CreateOrganizationPolicyRequest.h>
+#include <huaweicloud/cbr/v1/model/CreateOrganizationPolicyResponse.h>
 #include <huaweicloud/cbr/v1/model/CreatePolicyRequest.h>
 #include <huaweicloud/cbr/v1/model/CreatePolicyResponse.h>
 #include <huaweicloud/cbr/v1/model/CreatePostPaidVaultRequest.h>
@@ -51,6 +53,8 @@
 #include <huaweicloud/cbr/v1/model/DeleteBackupResponse.h>
 #include <huaweicloud/cbr/v1/model/DeleteMemberRequest.h>
 #include <huaweicloud/cbr/v1/model/DeleteMemberResponse.h>
+#include <huaweicloud/cbr/v1/model/DeleteOrganizationPolicyRequest.h>
+#include <huaweicloud/cbr/v1/model/DeleteOrganizationPolicyResponse.h>
 #include <huaweicloud/cbr/v1/model/DeletePolicyRequest.h>
 #include <huaweicloud/cbr/v1/model/DeletePolicyResponse.h>
 #include <huaweicloud/cbr/v1/model/DeleteVaultRequest.h>
@@ -74,6 +78,10 @@
 #include <huaweicloud/cbr/v1/model/ListExternalVaultResponse.h>
 #include <huaweicloud/cbr/v1/model/ListOpLogsRequest.h>
 #include <huaweicloud/cbr/v1/model/ListOpLogsResponse.h>
+#include <huaweicloud/cbr/v1/model/ListOrganizationPoliciesRequest.h>
+#include <huaweicloud/cbr/v1/model/ListOrganizationPoliciesResponse.h>
+#include <huaweicloud/cbr/v1/model/ListOrganizationPolicyDetailRequest.h>
+#include <huaweicloud/cbr/v1/model/ListOrganizationPolicyDetailResponse.h>
 #include <huaweicloud/cbr/v1/model/ListPoliciesRequest.h>
 #include <huaweicloud/cbr/v1/model/ListPoliciesResponse.h>
 #include <huaweicloud/cbr/v1/model/ListProjectsRequest.h>
@@ -86,6 +94,8 @@
 #include <huaweicloud/cbr/v1/model/MigrateDomainResponse.h>
 #include <huaweicloud/cbr/v1/model/MigrateVaultResourceRequest.h>
 #include <huaweicloud/cbr/v1/model/MigrateVaultResourceResponse.h>
+#include <huaweicloud/cbr/v1/model/OrganizationPolicyCreateReq.h>
+#include <huaweicloud/cbr/v1/model/OrganizationPolicyUpdateReq.h>
 #include <huaweicloud/cbr/v1/model/PolicyCreateReq.h>
 #include <huaweicloud/cbr/v1/model/PolicyUpdateReq.h>
 #include <huaweicloud/cbr/v1/model/ProtectableAgentReq.h>
@@ -117,6 +127,8 @@
 #include <huaweicloud/cbr/v1/model/ShowMigrateStatusResponse.h>
 #include <huaweicloud/cbr/v1/model/ShowOpLogRequest.h>
 #include <huaweicloud/cbr/v1/model/ShowOpLogResponse.h>
+#include <huaweicloud/cbr/v1/model/ShowOrganizationPolicyRequest.h>
+#include <huaweicloud/cbr/v1/model/ShowOrganizationPolicyResponse.h>
 #include <huaweicloud/cbr/v1/model/ShowPolicyRequest.h>
 #include <huaweicloud/cbr/v1/model/ShowPolicyResponse.h>
 #include <huaweicloud/cbr/v1/model/ShowProtectableRequest.h>
@@ -147,6 +159,8 @@
 #include <huaweicloud/cbr/v1/model/UpdateMemberStatusResponse.h>
 #include <huaweicloud/cbr/v1/model/UpdateOrderRequest.h>
 #include <huaweicloud/cbr/v1/model/UpdateOrderResponse.h>
+#include <huaweicloud/cbr/v1/model/UpdateOrganizationPolicyRequest.h>
+#include <huaweicloud/cbr/v1/model/UpdateOrganizationPolicyResponse.h>
 #include <huaweicloud/cbr/v1/model/UpdatePolicyRequest.h>
 #include <huaweicloud/cbr/v1/model/UpdatePolicyResponse.h>
 #include <huaweicloud/cbr/v1/model/UpdateVaultRequest.h>
@@ -276,6 +290,14 @@ public:
     std::shared_ptr<CreateCheckpointResponse> createCheckpoint(
         CreateCheckpointRequest &request
     );
+    // 创建组织策略
+    //
+    // 创建组织策略
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateOrganizationPolicyResponse> createOrganizationPolicy(
+        CreateOrganizationPolicyRequest &request
+    );
     // 创建策略
     //
     // 创建策略，策略分为备份策略和复制策略。
@@ -324,6 +346,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteMemberResponse> deleteMember(
         DeleteMemberRequest &request
+    );
+    // 删除组织策略
+    //
+    // 删除组织策略
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteOrganizationPolicyResponse> deleteOrganizationPolicy(
+        DeleteOrganizationPolicyRequest &request
     );
     // 删除策略
     //
@@ -412,6 +442,22 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListOpLogsResponse> listOpLogs(
         ListOpLogsRequest &request
+    );
+    // 查询组织策略列表
+    //
+    // 查询组织策略列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListOrganizationPoliciesResponse> listOrganizationPolicies(
+        ListOrganizationPoliciesRequest &request
+    );
+    // 查询组织策略部署状态列表
+    //
+    // 查询组织策略每个账号下策略部署状态列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListOrganizationPolicyDetailResponse> listOrganizationPolicyDetail(
+        ListOrganizationPolicyDetailRequest &request
     );
     // 查询策略列表
     //
@@ -573,6 +619,14 @@ public:
     std::shared_ptr<ShowOpLogResponse> showOpLog(
         ShowOpLogRequest &request
     );
+    // 查询指定组织策略
+    //
+    // 查询指定组织策略
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowOrganizationPolicyResponse> showOrganizationPolicy(
+        ShowOrganizationPolicyRequest &request
+    );
     // 查询单个策略
     //
     // 查询单个策略
@@ -687,6 +741,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateOrderResponse> updateOrder(
         UpdateOrderRequest &request
+    );
+    // 更新组织策略
+    //
+    // 更新组织策略
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateOrganizationPolicyResponse> updateOrganizationPolicy(
+        UpdateOrganizationPolicyRequest &request
     );
     // 修改策略
     //

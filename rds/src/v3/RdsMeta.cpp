@@ -77,6 +77,20 @@ HttpRequestDef RdsMeta::genRequestDefForBatchRestorePostgreSqlTables() {
     return reqDefBuilder;
 }
 
+HttpRequestDef RdsMeta::genRequestDefForBatchStopInstance() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-request-id").
+        withKindName("std::string").
+        withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef RdsMeta::genRequestDefForBatchTagAddAction() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;

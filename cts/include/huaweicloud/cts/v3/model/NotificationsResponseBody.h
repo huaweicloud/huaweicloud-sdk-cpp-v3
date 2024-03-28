@@ -61,6 +61,15 @@ public:
     void setOperationType(const std::string& value);
 
     /// <summary>
+    /// 云服务委托名称。
+    /// </summary>
+
+    std::string getAgencyName() const;
+    bool agencyNameIsSet() const;
+    void unsetagencyName();
+    void setAgencyName(const std::string& value);
+
+    /// <summary>
     /// 操作事件列表。
     /// </summary>
 
@@ -147,6 +156,8 @@ protected:
     bool notificationNameIsSet_;
     std::string operationType_;
     bool operationTypeIsSet_;
+    std::string agencyName_;
+    bool agencyNameIsSet_;
     std::vector<Operations> operations_;
     bool operationsIsSet_;
     std::vector<NotificationUsers> notifyUserList_;

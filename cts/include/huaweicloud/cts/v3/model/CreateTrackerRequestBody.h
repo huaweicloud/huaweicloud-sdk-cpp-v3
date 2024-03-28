@@ -60,6 +60,15 @@ public:
     void setTrackerName(const std::string& value);
 
     /// <summary>
+    /// 云服务委托名称。 参数值为\&quot;cts_admin_trust\&quot;时，创建追踪器会自动创建一个云服务委托：cts_admin_trust。
+    /// </summary>
+
+    std::string getAgencyName() const;
+    bool agencyNameIsSet() const;
+    void unsetagencyName();
+    void setAgencyName(const std::string& value);
+
+    /// <summary>
     /// 是否应用到我的组织。 只针对管理类追踪器。设置为true时，ORG组织下所有成员当前区域的审计日志会转储到该追踪器配置的OBS桶或者LTS日志流，但是事件列表界面不支持查看其它组织成员的审计日志。
     /// </summary>
 
@@ -137,6 +146,8 @@ protected:
     bool trackerTypeIsSet_;
     std::string trackerName_;
     bool trackerNameIsSet_;
+    std::string agencyName_;
+    bool agencyNameIsSet_;
     bool isOrganizationTracker_;
     bool isOrganizationTrackerIsSet_;
     ManagementEventSelector managementEventSelector_;

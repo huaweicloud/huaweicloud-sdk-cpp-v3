@@ -12,7 +12,7 @@ namespace Model {
 
 HttpQueryCfwFlowLogsResponseDTO_data_records::HttpQueryCfwFlowLogsResponseDTO_data_records()
 {
-    bytes_ = 0;
+    bytes_ = 0.0;
     bytesIsSet_ = false;
     direction_ = "";
     directionIsSet_ = false;
@@ -100,7 +100,7 @@ bool HttpQueryCfwFlowLogsResponseDTO_data_records::fromJson(const web::json::val
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("bytes"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            double refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBytes(refVal);
         }
@@ -217,12 +217,12 @@ bool HttpQueryCfwFlowLogsResponseDTO_data_records::fromJson(const web::json::val
 }
 
 
-int32_t HttpQueryCfwFlowLogsResponseDTO_data_records::getBytes() const
+double HttpQueryCfwFlowLogsResponseDTO_data_records::getBytes() const
 {
     return bytes_;
 }
 
-void HttpQueryCfwFlowLogsResponseDTO_data_records::setBytes(int32_t value)
+void HttpQueryCfwFlowLogsResponseDTO_data_records::setBytes(double value)
 {
     bytes_ = value;
     bytesIsSet_ = true;

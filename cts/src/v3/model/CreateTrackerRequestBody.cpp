@@ -16,6 +16,8 @@ CreateTrackerRequestBody::CreateTrackerRequestBody()
     trackerTypeIsSet_ = false;
     trackerName_ = "";
     trackerNameIsSet_ = false;
+    agencyName_ = "";
+    agencyNameIsSet_ = false;
     isOrganizationTracker_ = false;
     isOrganizationTrackerIsSet_ = false;
     managementEventSelectorIsSet_ = false;
@@ -46,6 +48,9 @@ web::json::value CreateTrackerRequestBody::toJson() const
     }
     if(trackerNameIsSet_) {
         val[utility::conversions::to_string_t("tracker_name")] = ModelBase::toJson(trackerName_);
+    }
+    if(agencyNameIsSet_) {
+        val[utility::conversions::to_string_t("agency_name")] = ModelBase::toJson(agencyName_);
     }
     if(isOrganizationTrackerIsSet_) {
         val[utility::conversions::to_string_t("is_organization_tracker")] = ModelBase::toJson(isOrganizationTracker_);
@@ -94,6 +99,15 @@ bool CreateTrackerRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTrackerName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("agency_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("agency_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAgencyName(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("is_organization_tracker"))) {
@@ -212,6 +226,27 @@ bool CreateTrackerRequestBody::trackerNameIsSet() const
 void CreateTrackerRequestBody::unsettrackerName()
 {
     trackerNameIsSet_ = false;
+}
+
+std::string CreateTrackerRequestBody::getAgencyName() const
+{
+    return agencyName_;
+}
+
+void CreateTrackerRequestBody::setAgencyName(const std::string& value)
+{
+    agencyName_ = value;
+    agencyNameIsSet_ = true;
+}
+
+bool CreateTrackerRequestBody::agencyNameIsSet() const
+{
+    return agencyNameIsSet_;
+}
+
+void CreateTrackerRequestBody::unsetagencyName()
+{
+    agencyNameIsSet_ = false;
 }
 
 bool CreateTrackerRequestBody::isIsOrganizationTracker() const

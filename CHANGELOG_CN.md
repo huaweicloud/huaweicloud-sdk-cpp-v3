@@ -1,3 +1,106 @@
+# 3.1.79 2024-03-28
+
+### HuaweiCloud SDK CBR
+
+- _新增特性_
+  - 支持以下接口：
+    - `ListOrganizationPolicies`
+    - `CreateOrganizationPolicy`
+    - `ShowOrganizationPolicy`
+    - `UpdateOrganizationPolicy`
+    - `DeleteOrganizationPolicy`
+    - `ListOrganizationPolicyDetail`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowBackup**
+    - 响应参数变更
+      - `+ backup.incremental`
+      - `- backup.extend_info.incremental`
+  - **UpdateBackup**
+    - 响应参数变更
+      - `+ backup.incremental`
+      - `- backup.extend_info.incremental`
+  - **ListBackups**
+    - 响应参数变更
+      - `+ backups.incremental`
+      - `- backups.extend_info.incremental`
+  - **ListVault**
+    - 响应参数变更
+      - `- sys_lock_source_service`
+  - **CreateVault**
+    - 请求参数变更
+      - `+ vault.sys_lock_source_service`
+  - **ListExternalVault**
+    - 响应参数变更
+      - `- sys_lock_source_service`
+
+### HuaweiCloud SDK CFW
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListFlowLogs**
+    - 响应参数变更
+      - `* data.records.bytes: int32 -> double`
+
+### HuaweiCloud SDK CTS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **UpdateTracker**
+    - 请求参数变更
+      - `+ agency_name`
+  - **CreateTracker**
+    - 请求参数变更
+      - `+ agency_name`
+    - 响应参数变更
+      - `+ agency_name`
+  - **ListTrackers**
+    - 响应参数变更
+      - `+ trackers.agency_name`
+  - **UpdateNotification**
+    - 请求参数变更
+      - `+ agency_name`
+    - 响应参数变更
+      - `+ agency_name`
+  - **CreateNotification**
+    - 请求参数变更
+      - `+ agency_name`
+    - 响应参数变更
+      - `+ agency_name`
+  - **ListNotifications**
+    - 响应参数变更
+      - `+ notifications.agency_name`
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RecognizeMvsInvoice**
+    - 响应参数变更
+      - `+ result.reverse_issue`
+  - **RecognizeThailandLicensePlate**
+    - 响应参数变更
+      - `+ result.province`
+
+### HuaweiCloud SDK RDS
+
+- _新增特性_
+  - 支持接口`BatchStopInstance`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.1.78 2024-03-21
 
 ### HuaweiCloud SDK CDN

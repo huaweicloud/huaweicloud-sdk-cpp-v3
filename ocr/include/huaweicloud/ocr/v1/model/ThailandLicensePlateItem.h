@@ -66,6 +66,15 @@ public:
     void unsetconfidence();
     void setConfidence(float value);
 
+    /// <summary>
+    /// 车牌所属府 
+    /// </summary>
+
+    std::string getProvince() const;
+    bool provinceIsSet() const;
+    void unsetprovince();
+    void setProvince(const std::string& value);
+
 
 protected:
     std::string plateNumber_;
@@ -74,6 +83,8 @@ protected:
     bool plateLocationIsSet_;
     float confidence_;
     bool confidenceIsSet_;
+    std::string province_;
+    bool provinceIsSet_;
 
 };
 

@@ -110,6 +110,8 @@ MvsInvoiceResult::MvsInvoiceResult()
     usedVehicleMarketBankAccountIsSet_ = false;
     usedVehicleMarketPhone_ = "";
     usedVehicleMarketPhoneIsSet_ = false;
+    reverseIssue_ = false;
+    reverseIssueIsSet_ = false;
     remark_ = "";
     remarkIsSet_ = false;
     drawerName_ = "";
@@ -276,6 +278,9 @@ web::json::value MvsInvoiceResult::toJson() const
     }
     if(usedVehicleMarketPhoneIsSet_) {
         val[utility::conversions::to_string_t("used_vehicle_market_phone")] = ModelBase::toJson(usedVehicleMarketPhone_);
+    }
+    if(reverseIssueIsSet_) {
+        val[utility::conversions::to_string_t("reverse_issue")] = ModelBase::toJson(reverseIssue_);
     }
     if(remarkIsSet_) {
         val[utility::conversions::to_string_t("remark")] = ModelBase::toJson(remark_);
@@ -738,6 +743,15 @@ bool MvsInvoiceResult::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setUsedVehicleMarketPhone(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("reverse_issue"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("reverse_issue"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setReverseIssue(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("remark"))) {
@@ -1816,6 +1830,27 @@ bool MvsInvoiceResult::usedVehicleMarketPhoneIsSet() const
 void MvsInvoiceResult::unsetusedVehicleMarketPhone()
 {
     usedVehicleMarketPhoneIsSet_ = false;
+}
+
+bool MvsInvoiceResult::isReverseIssue() const
+{
+    return reverseIssue_;
+}
+
+void MvsInvoiceResult::setReverseIssue(bool value)
+{
+    reverseIssue_ = value;
+    reverseIssueIsSet_ = true;
+}
+
+bool MvsInvoiceResult::reverseIssueIsSet() const
+{
+    return reverseIssueIsSet_;
+}
+
+void MvsInvoiceResult::unsetreverseIssue()
+{
+    reverseIssueIsSet_ = false;
 }
 
 std::string MvsInvoiceResult::getRemark() const

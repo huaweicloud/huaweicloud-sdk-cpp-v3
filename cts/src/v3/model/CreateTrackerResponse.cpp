@@ -32,6 +32,8 @@ CreateTrackerResponse::CreateTrackerResponse()
     projectIdIsSet_ = false;
     trackerName_ = "";
     trackerNameIsSet_ = false;
+    agencyName_ = "";
+    agencyNameIsSet_ = false;
     status_ = "";
     statusIsSet_ = false;
     detail_ = "";
@@ -84,6 +86,9 @@ web::json::value CreateTrackerResponse::toJson() const
     }
     if(trackerNameIsSet_) {
         val[utility::conversions::to_string_t("tracker_name")] = ModelBase::toJson(trackerName_);
+    }
+    if(agencyNameIsSet_) {
+        val[utility::conversions::to_string_t("agency_name")] = ModelBase::toJson(agencyName_);
     }
     if(statusIsSet_) {
         val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
@@ -204,6 +209,15 @@ bool CreateTrackerResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTrackerName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("agency_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("agency_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAgencyName(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("status"))) {
@@ -484,6 +498,27 @@ bool CreateTrackerResponse::trackerNameIsSet() const
 void CreateTrackerResponse::unsettrackerName()
 {
     trackerNameIsSet_ = false;
+}
+
+std::string CreateTrackerResponse::getAgencyName() const
+{
+    return agencyName_;
+}
+
+void CreateTrackerResponse::setAgencyName(const std::string& value)
+{
+    agencyName_ = value;
+    agencyNameIsSet_ = true;
+}
+
+bool CreateTrackerResponse::agencyNameIsSet() const
+{
+    return agencyNameIsSet_;
+}
+
+void CreateTrackerResponse::unsetagencyName()
+{
+    agencyNameIsSet_ = false;
 }
 
 std::string CreateTrackerResponse::getStatus() const

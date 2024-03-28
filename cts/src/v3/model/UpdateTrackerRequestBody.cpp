@@ -16,6 +16,8 @@ UpdateTrackerRequestBody::UpdateTrackerRequestBody()
     trackerTypeIsSet_ = false;
     trackerName_ = "";
     trackerNameIsSet_ = false;
+    agencyName_ = "";
+    agencyNameIsSet_ = false;
     status_ = "";
     statusIsSet_ = false;
     isOrganizationTracker_ = false;
@@ -48,6 +50,9 @@ web::json::value UpdateTrackerRequestBody::toJson() const
     }
     if(trackerNameIsSet_) {
         val[utility::conversions::to_string_t("tracker_name")] = ModelBase::toJson(trackerName_);
+    }
+    if(agencyNameIsSet_) {
+        val[utility::conversions::to_string_t("agency_name")] = ModelBase::toJson(agencyName_);
     }
     if(statusIsSet_) {
         val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
@@ -99,6 +104,15 @@ bool UpdateTrackerRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTrackerName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("agency_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("agency_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAgencyName(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("status"))) {
@@ -226,6 +240,27 @@ bool UpdateTrackerRequestBody::trackerNameIsSet() const
 void UpdateTrackerRequestBody::unsettrackerName()
 {
     trackerNameIsSet_ = false;
+}
+
+std::string UpdateTrackerRequestBody::getAgencyName() const
+{
+    return agencyName_;
+}
+
+void UpdateTrackerRequestBody::setAgencyName(const std::string& value)
+{
+    agencyName_ = value;
+    agencyNameIsSet_ = true;
+}
+
+bool UpdateTrackerRequestBody::agencyNameIsSet() const
+{
+    return agencyNameIsSet_;
+}
+
+void UpdateTrackerRequestBody::unsetagencyName()
+{
+    agencyNameIsSet_ = false;
 }
 
 std::string UpdateTrackerRequestBody::getStatus() const

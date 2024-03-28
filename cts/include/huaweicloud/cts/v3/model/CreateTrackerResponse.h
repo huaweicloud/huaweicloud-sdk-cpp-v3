@@ -142,6 +142,15 @@ public:
     void setTrackerName(const std::string& value);
 
     /// <summary>
+    /// 云服务委托名称。
+    /// </summary>
+
+    std::string getAgencyName() const;
+    bool agencyNameIsSet() const;
+    void unsetagencyName();
+    void setAgencyName(const std::string& value);
+
+    /// <summary>
     /// 标识追踪器状态，包括正常（enabled），停止（disabled）和异常（error）三种状态，状态为异常时需通过明细（detail）字段说明错误来源。
     /// </summary>
 
@@ -210,6 +219,8 @@ protected:
     bool projectIdIsSet_;
     std::string trackerName_;
     bool trackerNameIsSet_;
+    std::string agencyName_;
+    bool agencyNameIsSet_;
     std::string status_;
     bool statusIsSet_;
     std::string detail_;

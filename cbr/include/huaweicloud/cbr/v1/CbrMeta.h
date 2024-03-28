@@ -23,12 +23,14 @@ public:
     static HttpRequestDef genRequestDefForCopyBackup();
     static HttpRequestDef genRequestDefForCopyCheckpoint();
     static HttpRequestDef genRequestDefForCreateCheckpoint();
+    static HttpRequestDef genRequestDefForCreateOrganizationPolicy();
     static HttpRequestDef genRequestDefForCreatePolicy();
     static HttpRequestDef genRequestDefForCreatePostPaidVault();
     static HttpRequestDef genRequestDefForCreateVault();
     static HttpRequestDef genRequestDefForCreateVaultTags();
     static HttpRequestDef genRequestDefForDeleteBackup();
     static HttpRequestDef genRequestDefForDeleteMember();
+    static HttpRequestDef genRequestDefForDeleteOrganizationPolicy();
     static HttpRequestDef genRequestDefForDeletePolicy();
     static HttpRequestDef genRequestDefForDeleteVault();
     static HttpRequestDef genRequestDefForDeleteVaultTag();
@@ -40,6 +42,8 @@ public:
     static HttpRequestDef genRequestDefForListDomainProjects();
     static HttpRequestDef genRequestDefForListExternalVault();
     static HttpRequestDef genRequestDefForListOpLogs();
+    static HttpRequestDef genRequestDefForListOrganizationPolicies();
+    static HttpRequestDef genRequestDefForListOrganizationPolicyDetail();
     static HttpRequestDef genRequestDefForListPolicies();
     static HttpRequestDef genRequestDefForListProjects();
     static HttpRequestDef genRequestDefForListProtectable();
@@ -60,6 +64,7 @@ public:
     static HttpRequestDef genRequestDefForShowMetadata();
     static HttpRequestDef genRequestDefForShowMigrateStatus();
     static HttpRequestDef genRequestDefForShowOpLog();
+    static HttpRequestDef genRequestDefForShowOrganizationPolicy();
     static HttpRequestDef genRequestDefForShowPolicy();
     static HttpRequestDef genRequestDefForShowProtectable();
     static HttpRequestDef genRequestDefForShowReplicationCapabilities();
@@ -74,6 +79,7 @@ public:
     static HttpRequestDef genRequestDefForUpdateBackup();
     static HttpRequestDef genRequestDefForUpdateMemberStatus();
     static HttpRequestDef genRequestDefForUpdateOrder();
+    static HttpRequestDef genRequestDefForUpdateOrganizationPolicy();
     static HttpRequestDef genRequestDefForUpdatePolicy();
     static HttpRequestDef genRequestDefForUpdateVault();
 };

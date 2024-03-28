@@ -98,6 +98,15 @@ HttpRequestDef CbrMeta::genRequestDefForCreateCheckpoint() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CbrMeta::genRequestDefForCreateOrganizationPolicy() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CbrMeta::genRequestDefForCreatePolicy() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -140,6 +149,11 @@ HttpRequestDef CbrMeta::genRequestDefForDeleteBackup() {
 }
 
 HttpRequestDef CbrMeta::genRequestDefForDeleteMember() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef CbrMeta::genRequestDefForDeleteOrganizationPolicy() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
@@ -349,6 +363,19 @@ HttpRequestDef CbrMeta::genRequestDefForListOpLogs() {
     reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
                   .withJsonTag("enterprise_project_id")
                   .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CbrMeta::genRequestDefForListOrganizationPolicies() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("OperationType")
+                  .withJsonTag("operation_type")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CbrMeta::genRequestDefForListOrganizationPolicyDetail() {
+    HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
 
@@ -570,6 +597,11 @@ HttpRequestDef CbrMeta::genRequestDefForShowOpLog() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CbrMeta::genRequestDefForShowOrganizationPolicy() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef CbrMeta::genRequestDefForShowPolicy() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
@@ -664,6 +696,15 @@ HttpRequestDef CbrMeta::genRequestDefForUpdateMemberStatus() {
 }
 
 HttpRequestDef CbrMeta::genRequestDefForUpdateOrder() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CbrMeta::genRequestDefForUpdateOrganizationPolicy() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.

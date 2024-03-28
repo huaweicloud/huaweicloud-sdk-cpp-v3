@@ -17,6 +17,8 @@ ThailandLicensePlateItem::ThailandLicensePlateItem()
     plateLocationIsSet_ = false;
     confidence_ = 0.0f;
     confidenceIsSet_ = false;
+    province_ = "";
+    provinceIsSet_ = false;
 }
 
 ThailandLicensePlateItem::~ThailandLicensePlateItem() = default;
@@ -37,6 +39,9 @@ web::json::value ThailandLicensePlateItem::toJson() const
     }
     if(confidenceIsSet_) {
         val[utility::conversions::to_string_t("confidence")] = ModelBase::toJson(confidence_);
+    }
+    if(provinceIsSet_) {
+        val[utility::conversions::to_string_t("province")] = ModelBase::toJson(province_);
     }
 
     return val;
@@ -70,6 +75,15 @@ bool ThailandLicensePlateItem::fromJson(const web::json::value& val)
             float refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setConfidence(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("province"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("province"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProvince(refVal);
         }
     }
     return ok;
@@ -137,6 +151,27 @@ bool ThailandLicensePlateItem::confidenceIsSet() const
 void ThailandLicensePlateItem::unsetconfidence()
 {
     confidenceIsSet_ = false;
+}
+
+std::string ThailandLicensePlateItem::getProvince() const
+{
+    return province_;
+}
+
+void ThailandLicensePlateItem::setProvince(const std::string& value)
+{
+    province_ = value;
+    provinceIsSet_ = true;
+}
+
+bool ThailandLicensePlateItem::provinceIsSet() const
+{
+    return provinceIsSet_;
+}
+
+void ThailandLicensePlateItem::unsetprovince()
+{
+    provinceIsSet_ = false;
 }
 
 }

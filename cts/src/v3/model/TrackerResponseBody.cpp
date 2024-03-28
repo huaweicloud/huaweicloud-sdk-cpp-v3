@@ -22,6 +22,8 @@ TrackerResponseBody::TrackerResponseBody()
     isSupportValidateIsSet_ = false;
     isOrganizationTracker_ = false;
     isOrganizationTrackerIsSet_ = false;
+    agencyName_ = "";
+    agencyNameIsSet_ = false;
     managementEventSelectorIsSet_ = false;
     ltsIsSet_ = false;
     trackerType_ = "";
@@ -70,6 +72,9 @@ web::json::value TrackerResponseBody::toJson() const
     }
     if(isOrganizationTrackerIsSet_) {
         val[utility::conversions::to_string_t("is_organization_tracker")] = ModelBase::toJson(isOrganizationTracker_);
+    }
+    if(agencyNameIsSet_) {
+        val[utility::conversions::to_string_t("agency_name")] = ModelBase::toJson(agencyName_);
     }
     if(managementEventSelectorIsSet_) {
         val[utility::conversions::to_string_t("management_event_selector")] = ModelBase::toJson(managementEventSelector_);
@@ -160,6 +165,15 @@ bool TrackerResponseBody::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsOrganizationTracker(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("agency_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("agency_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAgencyName(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("management_event_selector"))) {
@@ -386,6 +400,27 @@ bool TrackerResponseBody::isOrganizationTrackerIsSet() const
 void TrackerResponseBody::unsetisOrganizationTracker()
 {
     isOrganizationTrackerIsSet_ = false;
+}
+
+std::string TrackerResponseBody::getAgencyName() const
+{
+    return agencyName_;
+}
+
+void TrackerResponseBody::setAgencyName(const std::string& value)
+{
+    agencyName_ = value;
+    agencyNameIsSet_ = true;
+}
+
+bool TrackerResponseBody::agencyNameIsSet() const
+{
+    return agencyNameIsSet_;
+}
+
+void TrackerResponseBody::unsetagencyName()
+{
+    agencyNameIsSet_ = false;
 }
 
 ManagementEventSelector TrackerResponseBody::getManagementEventSelector() const

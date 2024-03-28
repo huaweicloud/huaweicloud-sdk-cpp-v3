@@ -481,6 +481,15 @@ public:
     void setUsedVehicleMarketPhone(const std::string& value);
 
     /// <summary>
+    /// 二手车反向开具标识，True表示是反向开具发票，False表示不是反向开具发票。 当请求参数\&quot;type\&quot;设置为\&quot;auto\&quot;或\&quot;used\&quot;时才返回。 
+    /// </summary>
+
+    bool isReverseIssue() const;
+    bool reverseIssueIsSet() const;
+    void unsetreverseIssue();
+    void setReverseIssue(bool value);
+
+    /// <summary>
     /// 备注 
     /// </summary>
 
@@ -625,6 +634,8 @@ protected:
     bool usedVehicleMarketBankAccountIsSet_;
     std::string usedVehicleMarketPhone_;
     bool usedVehicleMarketPhoneIsSet_;
+    bool reverseIssue_;
+    bool reverseIssueIsSet_;
     std::string remark_;
     bool remarkIsSet_;
     std::string drawerName_;

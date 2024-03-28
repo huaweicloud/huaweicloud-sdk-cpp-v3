@@ -88,6 +88,15 @@ public:
     void setIsOrganizationTracker(bool value);
 
     /// <summary>
+    /// 云服务委托名称。
+    /// </summary>
+
+    std::string getAgencyName() const;
+    bool agencyNameIsSet() const;
+    void unsetagencyName();
+    void setAgencyName(const std::string& value);
+
+    /// <summary>
     /// 
     /// </summary>
 
@@ -216,6 +225,8 @@ protected:
     bool isSupportValidateIsSet_;
     bool isOrganizationTracker_;
     bool isOrganizationTrackerIsSet_;
+    std::string agencyName_;
+    bool agencyNameIsSet_;
     ManagementEventSelector managementEventSelector_;
     bool managementEventSelectorIsSet_;
     Lts lts_;

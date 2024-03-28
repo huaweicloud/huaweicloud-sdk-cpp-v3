@@ -16,6 +16,8 @@ UpdateNotificationResponse::UpdateNotificationResponse()
     notificationNameIsSet_ = false;
     operationType_ = "";
     operationTypeIsSet_ = false;
+    agencyName_ = "";
+    agencyNameIsSet_ = false;
     operationsIsSet_ = false;
     notifyUserListIsSet_ = false;
     status_ = "";
@@ -48,6 +50,9 @@ web::json::value UpdateNotificationResponse::toJson() const
     }
     if(operationTypeIsSet_) {
         val[utility::conversions::to_string_t("operation_type")] = ModelBase::toJson(operationType_);
+    }
+    if(agencyNameIsSet_) {
+        val[utility::conversions::to_string_t("agency_name")] = ModelBase::toJson(agencyName_);
     }
     if(operationsIsSet_) {
         val[utility::conversions::to_string_t("operations")] = ModelBase::toJson(operations_);
@@ -99,6 +104,15 @@ bool UpdateNotificationResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setOperationType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("agency_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("agency_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAgencyName(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("operations"))) {
@@ -226,6 +240,27 @@ bool UpdateNotificationResponse::operationTypeIsSet() const
 void UpdateNotificationResponse::unsetoperationType()
 {
     operationTypeIsSet_ = false;
+}
+
+std::string UpdateNotificationResponse::getAgencyName() const
+{
+    return agencyName_;
+}
+
+void UpdateNotificationResponse::setAgencyName(const std::string& value)
+{
+    agencyName_ = value;
+    agencyNameIsSet_ = true;
+}
+
+bool UpdateNotificationResponse::agencyNameIsSet() const
+{
+    return agencyNameIsSet_;
+}
+
+void UpdateNotificationResponse::unsetagencyName()
+{
+    agencyNameIsSet_ = false;
 }
 
 std::vector<Operations>& UpdateNotificationResponse::getOperations()

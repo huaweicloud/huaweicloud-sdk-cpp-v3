@@ -42,10 +42,10 @@ public:
     /// 字节
     /// </summary>
 
-    int32_t getBytes() const;
+    double getBytes() const;
     bool bytesIsSet() const;
     void unsetbytes();
-    void setBytes(int32_t value);
+    void setBytes(double value);
 
     /// <summary>
     /// 方向，有内到外和外到内两种
@@ -157,7 +157,7 @@ public:
 
 
 protected:
-    int32_t bytes_;
+    double bytes_;
     bool bytesIsSet_;
     std::string direction_;
     bool directionIsSet_;

@@ -96,7 +96,7 @@ public:
             });
         regions["eu-west-101"] = Region("eu-west-101",
             { 
-                "https://vpc.eu-west-101.myhuaweicloud.eu"
+                "https://vpc.eu-west-101.myhuaweicloud.com"
             });
         regions["cn-south-4"] = Region("cn-south-4",
             { 

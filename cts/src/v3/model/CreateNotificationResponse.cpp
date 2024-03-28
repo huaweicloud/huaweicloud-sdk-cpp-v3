@@ -18,6 +18,8 @@ CreateNotificationResponse::CreateNotificationResponse()
     operationTypeIsSet_ = false;
     operationsIsSet_ = false;
     notifyUserListIsSet_ = false;
+    agencyName_ = "";
+    agencyNameIsSet_ = false;
     status_ = "";
     statusIsSet_ = false;
     topicId_ = "";
@@ -54,6 +56,9 @@ web::json::value CreateNotificationResponse::toJson() const
     }
     if(notifyUserListIsSet_) {
         val[utility::conversions::to_string_t("notify_user_list")] = ModelBase::toJson(notifyUserList_);
+    }
+    if(agencyNameIsSet_) {
+        val[utility::conversions::to_string_t("agency_name")] = ModelBase::toJson(agencyName_);
     }
     if(statusIsSet_) {
         val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
@@ -117,6 +122,15 @@ bool CreateNotificationResponse::fromJson(const web::json::value& val)
             std::vector<NotificationUsers> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setNotifyUserList(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("agency_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("agency_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAgencyName(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("status"))) {
@@ -268,6 +282,27 @@ bool CreateNotificationResponse::notifyUserListIsSet() const
 void CreateNotificationResponse::unsetnotifyUserList()
 {
     notifyUserListIsSet_ = false;
+}
+
+std::string CreateNotificationResponse::getAgencyName() const
+{
+    return agencyName_;
+}
+
+void CreateNotificationResponse::setAgencyName(const std::string& value)
+{
+    agencyName_ = value;
+    agencyNameIsSet_ = true;
+}
+
+bool CreateNotificationResponse::agencyNameIsSet() const
+{
+    return agencyNameIsSet_;
+}
+
+void CreateNotificationResponse::unsetagencyName()
+{
+    agencyNameIsSet_ = false;
 }
 
 std::string CreateNotificationResponse::getStatus() const

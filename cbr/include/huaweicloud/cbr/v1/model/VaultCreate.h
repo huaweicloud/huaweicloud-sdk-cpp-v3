@@ -169,6 +169,15 @@ public:
     void unsetdemandBilling();
     void setDemandBilling(bool value);
 
+    /// <summary>
+    /// 用于标识SMB服务，您可以设置为SMB或者空
+    /// </summary>
+
+    std::string getSysLockSourceService() const;
+    bool sysLockSourceServiceIsSet() const;
+    void unsetsysLockSourceService();
+    void setSysLockSourceService(const std::string& value);
+
 
 protected:
     std::string backupPolicyId_;
@@ -199,6 +208,8 @@ protected:
     bool backupNamePrefixIsSet_;
     bool demandBilling_;
     bool demandBillingIsSet_;
+    std::string sysLockSourceService_;
+    bool sysLockSourceServiceIsSet_;
 
 };
 

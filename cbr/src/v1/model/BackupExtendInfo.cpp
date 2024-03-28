@@ -16,8 +16,6 @@ BackupExtendInfo::BackupExtendInfo()
     autoTriggerIsSet_ = false;
     bootable_ = false;
     bootableIsSet_ = false;
-    incremental_ = false;
-    incrementalIsSet_ = false;
     snapshotId_ = "";
     snapshotIdIsSet_ = false;
     supportLld_ = false;
@@ -50,9 +48,6 @@ web::json::value BackupExtendInfo::toJson() const
     }
     if(bootableIsSet_) {
         val[utility::conversions::to_string_t("bootable")] = ModelBase::toJson(bootable_);
-    }
-    if(incrementalIsSet_) {
-        val[utility::conversions::to_string_t("incremental")] = ModelBase::toJson(incremental_);
     }
     if(snapshotIdIsSet_) {
         val[utility::conversions::to_string_t("snapshot_id")] = ModelBase::toJson(snapshotId_);
@@ -101,15 +96,6 @@ bool BackupExtendInfo::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBootable(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("incremental"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("incremental"));
-        if(!fieldValue.is_null())
-        {
-            bool refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setIncremental(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("snapshot_id"))) {
@@ -228,27 +214,6 @@ bool BackupExtendInfo::bootableIsSet() const
 void BackupExtendInfo::unsetbootable()
 {
     bootableIsSet_ = false;
-}
-
-bool BackupExtendInfo::isIncremental() const
-{
-    return incremental_;
-}
-
-void BackupExtendInfo::setIncremental(bool value)
-{
-    incremental_ = value;
-    incrementalIsSet_ = true;
-}
-
-bool BackupExtendInfo::incrementalIsSet() const
-{
-    return incrementalIsSet_;
-}
-
-void BackupExtendInfo::unsetincremental()
-{
-    incrementalIsSet_ = false;
 }
 
 std::string BackupExtendInfo::getSnapshotId() const

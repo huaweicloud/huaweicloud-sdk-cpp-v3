@@ -250,6 +250,15 @@ public:
     void unsetchildren();
     void setChildren(const std::vector<BackupResp>& value);
 
+    /// <summary>
+    /// 是否是增备
+    /// </summary>
+
+    bool isIncremental() const;
+    bool incrementalIsSet() const;
+    void unsetincremental();
+    void setIncremental(bool value);
+
 
 protected:
     std::string checkpointId_;
@@ -298,6 +307,8 @@ protected:
     bool providerIdIsSet_;
     std::vector<BackupResp>* children_;
     bool childrenIsSet_;
+    bool incremental_;
+    bool incrementalIsSet_;
 
 };
 

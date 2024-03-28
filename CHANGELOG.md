@@ -1,3 +1,106 @@
+# 3.1.79 2024-03-28
+
+### HuaweiCloud SDK CBR
+
+- _Features_
+  - Support the following APIs:
+    - `ListOrganizationPolicies`
+    - `CreateOrganizationPolicy`
+    - `ShowOrganizationPolicy`
+    - `UpdateOrganizationPolicy`
+    - `DeleteOrganizationPolicy`
+    - `ListOrganizationPolicyDetail`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowBackup**
+    - changes of response param
+      - `+ backup.incremental`
+      - `- backup.extend_info.incremental`
+  - **UpdateBackup**
+    - changes of response param
+      - `+ backup.incremental`
+      - `- backup.extend_info.incremental`
+  - **ListBackups**
+    - changes of response param
+      - `+ backups.incremental`
+      - `- backups.extend_info.incremental`
+  - **ListVault**
+    - changes of response param
+      - `- sys_lock_source_service`
+  - **CreateVault**
+    - changes of request param
+      - `+ vault.sys_lock_source_service`
+  - **ListExternalVault**
+    - changes of response param
+      - `- sys_lock_source_service`
+
+### HuaweiCloud SDK CFW
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListFlowLogs**
+    - changes of response param
+      - `* data.records.bytes: int32 -> double`
+
+### HuaweiCloud SDK CTS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **UpdateTracker**
+    - changes of request param
+      - `+ agency_name`
+  - **CreateTracker**
+    - changes of request param
+      - `+ agency_name`
+    - changes of response param
+      - `+ agency_name`
+  - **ListTrackers**
+    - changes of response param
+      - `+ trackers.agency_name`
+  - **UpdateNotification**
+    - changes of request param
+      - `+ agency_name`
+    - changes of response param
+      - `+ agency_name`
+  - **CreateNotification**
+    - changes of request param
+      - `+ agency_name`
+    - changes of response param
+      - `+ agency_name`
+  - **ListNotifications**
+    - changes of response param
+      - `+ notifications.agency_name`
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **RecognizeMvsInvoice**
+    - changes of response param
+      - `+ result.reverse_issue`
+  - **RecognizeThailandLicensePlate**
+    - changes of response param
+      - `+ result.province`
+
+### HuaweiCloud SDK RDS
+
+- _Features_
+  - Support the API `BatchStopInstance`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.78 2024-03-21
 
 ### HuaweiCloud SDK CDN

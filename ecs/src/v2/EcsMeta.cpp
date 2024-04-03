@@ -558,15 +558,6 @@ HttpRequestDef EcsMeta::genRequestDefForNovaShowServerInterface() {
     return reqDefBuilder;
 }
 
-HttpRequestDef EcsMeta::genRequestDefForRegisterServerAutoRecovery() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef bodyParam;
-    reqDefBuilder.withRequestField(bodyParam.
-        withName("Body").
-        withLocationType(Body_));
-    return reqDefBuilder;
-}
-
 HttpRequestDef EcsMeta::genRequestDefForRegisterServerMonitor() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -627,11 +618,6 @@ HttpRequestDef EcsMeta::genRequestDefForShowResetPasswordFlag() {
 }
 
 HttpRequestDef EcsMeta::genRequestDefForShowServer() {
-    HttpRequestDef reqDefBuilder;
-    return reqDefBuilder;
-}
-
-HttpRequestDef EcsMeta::genRequestDefForShowServerAutoRecovery() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
@@ -703,6 +689,16 @@ HttpRequestDef EcsMeta::genRequestDefForUpdateServerMetadata() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef EcsMeta::genRequestDefForNovaListVersions() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef EcsMeta::genRequestDefForNovaShowVersion() {
+    HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
 

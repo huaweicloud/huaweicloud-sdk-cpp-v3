@@ -226,6 +226,15 @@ HttpRequestDef KmsMeta::genRequestDefForEncryptDatakey() {
     return reqDefBuilder;
 }
 
+HttpRequestDef KmsMeta::genRequestDefForGenerateMac() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef KmsMeta::genRequestDefForImportKeyMaterial() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -371,6 +380,15 @@ HttpRequestDef KmsMeta::genRequestDefForUpdateKeyRotationInterval() {
 }
 
 HttpRequestDef KmsMeta::genRequestDefForValidateSignature() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef KmsMeta::genRequestDefForVerifyMac() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.

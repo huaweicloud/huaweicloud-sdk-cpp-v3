@@ -191,6 +191,15 @@ public:
     void unsetservice();
     void setService(const std::string& value);
 
+    /// <summary>
+    /// 应用
+    /// </summary>
+
+    std::string getApplication() const;
+    bool applicationIsSet() const;
+    void unsetapplication();
+    void setApplication(const std::string& value);
+
 
 protected:
     std::string objectId_;
@@ -227,6 +236,8 @@ protected:
     bool destinationIsSet_;
     std::string service_;
     bool serviceIsSet_;
+    std::string application_;
+    bool applicationIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

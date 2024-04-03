@@ -48,6 +48,7 @@ PrePaidServer::PrePaidServer()
     serverTagsIsSet_ = false;
     description_ = "";
     descriptionIsSet_ = false;
+    cpuOptionsIsSet_ = false;
 }
 
 PrePaidServer::~PrePaidServer() = default;
@@ -128,6 +129,9 @@ web::json::value PrePaidServer::toJson() const
     }
     if(descriptionIsSet_) {
         val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
+    }
+    if(cpuOptionsIsSet_) {
+        val[utility::conversions::to_string_t("cpu_options")] = ModelBase::toJson(cpuOptions_);
     }
 
     return val;
@@ -341,6 +345,15 @@ bool PrePaidServer::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDescription(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("cpu_options"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("cpu_options"));
+        if(!fieldValue.is_null())
+        {
+            CpuOptions refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCpuOptions(refVal);
         }
     }
     return ok;
@@ -828,6 +841,27 @@ bool PrePaidServer::descriptionIsSet() const
 void PrePaidServer::unsetdescription()
 {
     descriptionIsSet_ = false;
+}
+
+CpuOptions PrePaidServer::getCpuOptions() const
+{
+    return cpuOptions_;
+}
+
+void PrePaidServer::setCpuOptions(const CpuOptions& value)
+{
+    cpuOptions_ = value;
+    cpuOptionsIsSet_ = true;
+}
+
+bool PrePaidServer::cpuOptionsIsSet() const
+{
+    return cpuOptionsIsSet_;
+}
+
+void PrePaidServer::unsetcpuOptions()
+{
+    cpuOptionsIsSet_ = false;
 }
 
 }

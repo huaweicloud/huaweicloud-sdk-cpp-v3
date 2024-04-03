@@ -63,7 +63,6 @@ public:
     static HttpRequestDef genRequestDefForNovaShowKeypair();
     static HttpRequestDef genRequestDefForNovaShowServer();
     static HttpRequestDef genRequestDefForNovaShowServerInterface();
-    static HttpRequestDef genRequestDefForRegisterServerAutoRecovery();
     static HttpRequestDef genRequestDefForRegisterServerMonitor();
     static HttpRequestDef genRequestDefForReinstallServerWithCloudInit();
     static HttpRequestDef genRequestDefForReinstallServerWithoutCloudInit();
@@ -72,7 +71,6 @@ public:
     static HttpRequestDef genRequestDefForResizeServer();
     static HttpRequestDef genRequestDefForShowResetPasswordFlag();
     static HttpRequestDef genRequestDefForShowServer();
-    static HttpRequestDef genRequestDefForShowServerAutoRecovery();
     static HttpRequestDef genRequestDefForShowServerBlockDevice();
     static HttpRequestDef genRequestDefForShowServerGroup();
     static HttpRequestDef genRequestDefForShowServerLimits();
@@ -83,6 +81,8 @@ public:
     static HttpRequestDef genRequestDefForUpdateServerAutoTerminateTime();
     static HttpRequestDef genRequestDefForUpdateServerBlockDevice();
     static HttpRequestDef genRequestDefForUpdateServerMetadata();
+    static HttpRequestDef genRequestDefForNovaListVersions();
+    static HttpRequestDef genRequestDefForNovaShowVersion();
     static HttpRequestDef genRequestDefForShowJob();
 };
 

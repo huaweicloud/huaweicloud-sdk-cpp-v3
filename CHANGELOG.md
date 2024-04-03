@@ -1,3 +1,247 @@
+# 3.1.80 2024-04-03
+
+### HuaweiCloud SDK CFW
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListFlowLogs**
+    - changes of request param
+      - `+ src_region_name`
+      - `+ dst_region_name`
+    - changes of response param
+      - `+ data.records.dst_region_id`
+      - `+ data.records.dst_region_name`
+      - `+ data.records.src_region_id`
+      - `+ data.records.src_region_name`
+  - **ListAccessControlLogs**
+    - changes of request param
+      - `+ src_region_name`
+      - `+ dst_region_name`
+  - **ListAddressSets**
+    - changes of request param
+      - `+ address_set_type`
+  - **ListAttackLogs**
+    - changes of request param
+      - `+ attack_rule_id`
+      - `+ src_region_name`
+      - `+ dst_region_name`
+  - **UpdateAclRuleOrder**
+    - changes of request param
+      - `+ bottom`
+  - **ListServiceSetDetail**
+    - changes of request param
+      - `+ query_service_set_type`
+  - **AddAclRule**
+    - changes of request param
+      - `+ rules.applications`
+      - `+ rules.applicationsJsonString`
+      - `+ rules.profile`
+      - `+ rules.sequence.bottom`
+      - `+ rules.source.address_set_type`
+      - `+ rules.source.predefined_group`
+      - `- rules.source.address_group`
+      - `- rules.source.address_group_names`
+      - `* rules.source: object<RuleAddressDto> -> object<RuleAddressDtoForRequest>`
+      - `+ rules.service.protocols`
+      - `+ rules.service.predefined_group`
+      - `+ rules.service.service_set_type`
+      - `+ rules.service.service_group_names.protocols`
+      - `+ rules.service.service_group_names.service_set_type`
+  - **UpdateAclRule**
+    - changes of request param
+      - `+ applications`
+      - `+ applicationsJsonString`
+      - `+ profile`
+      - `+ sequence.bottom`
+      - `+ source.address_set_type`
+      - `+ source.predefined_group`
+      - `+ source.address_group_names.protocols`
+      - `+ source.address_group_names.service_set_type`
+      - `+ service.protocols`
+      - `+ service.predefined_group`
+      - `+ service.service_set_type`
+  - **ListAclRules**
+    - changes of request param
+      - `+ application`
+    - changes of response param
+      - `+ data.records.sequence.bottom`
+      - `+ data.records.source.address_set_type`
+      - `+ data.records.source.predefined_group`
+      - `+ data.records.source.address_group_names.protocols`
+      - `+ data.records.source.address_group_names.service_set_type`
+      - `+ data.records.service.protocols`
+      - `+ data.records.service.predefined_group`
+      - `+ data.records.service.service_set_type`
+  - **ListServiceItems**
+    - changes of request param
+      - `+ query_service_set_type`
+  - **ListAddressItems**
+    - changes of request param
+      - `+ query_address_set_type`
+  - **ListServiceSets**
+    - changes of request param
+      - `+ query_service_set_type`
+  - **ListDomainSets**
+    - changes of response param
+      - `+ data.records.rules`
+  - **ListFirewallDetail**
+    - changes of request param
+      - `+ name`
+    - changes of response param
+      - `+ data.records.tags`
+      - `+ data.records.flavor.default_bandwidth`
+      - `+ data.records.flavor.default_eip_count`
+      - `+ data.records.flavor.default_log_storage`
+      - `+ data.records.flavor.default_vpc_count`
+  - **ListFirewallList**
+    - changes of response param
+      - `+ data.records.tags`
+      - `+ data.records.flavor.default_bandwidth`
+      - `+ data.records.flavor.default_eip_count`
+      - `+ data.records.flavor.default_log_storage`
+      - `+ data.records.flavor.default_vpc_count`
+
+### HuaweiCloud SDK ECS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the APIs `ShowServerAutoRecovery`, `RegisterServerAutoRecovery`
+  - **ResizePostPaidServer**
+    - changes of request param
+      - `+ resize.cpu_options`
+  - **ShowServer**
+    - changes of response param
+      - `+ server.cpu_options.hw:cpu_threads: enum value [1,2]`
+  - **ListServersDetails**
+    - changes of response param
+      - `+ servers.cpu_options.hw:cpu_threads: enum value [1,2]`
+  - **ChangeServerOsWithCloudInit**
+    - changes of request param
+      - `+ os-change.isAutoPay`
+  - **ChangeServerOsWithoutCloudInit**
+    - changes of request param
+      - `+ os-change.isAutoPay`
+  - **ResizeServer**
+    - changes of request param
+      - `+ resize.cpu_options`
+  - **CreateServers**
+    - changes of request param
+      - `+ server.cpu_options`
+  - **CreatePostPaidServers**
+    - changes of request param
+      - `+ server.cpu_options`
+
+### HuaweiCloud SDK EIP
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListTenantVpcIgws**
+    - changes of request param
+      - `+ offset`
+      - `+ marker`
+  - **ListProjectGeipBindings**
+    - changes of request param
+      - `+ offset`
+      - `+ marker`
+    - changes of response param
+      - `+ geip_bindings.instance_type`
+      - `+ geip_bindings.instance_id`
+      - `- geip_bindings.binding_instance_type`
+      - `- geip_bindings.binding_instance_id`
+      - `+ geip_bindings.gcbandwidth.id`
+      - `+ geip_bindings.gcbandwidth.admin_status`
+      - `+ geip_bindings.gcbandwidth.size`
+      - `+ geip_bindings.gcbandwidth.short_id`
+      - `+ geip_bindings.gcbandwidth.sla_level`
+      - `+ geip_bindings.gcbandwidth.dscp`
+      - `* geip_bindings.gcbandwidth: object -> object<BackboneBandwidthResp>`
+      - `+ geip_bindings.vnic.private_ip_address`
+      - `+ geip_bindings.vnic.device_id`
+      - `+ geip_bindings.vnic.device_owner`
+      - `+ geip_bindings.vnic.vpc_id`
+      - `+ geip_bindings.vnic.port_id`
+      - `+ geip_bindings.vnic.mac`
+      - `+ geip_bindings.vnic.vtep`
+      - `+ geip_bindings.vnic.vni`
+      - `+ geip_bindings.vnic.instance_id`
+      - `+ geip_bindings.vnic.instance_type`
+      - `+ geip_bindings.vnic.port_profile`
+      - `* geip_bindings.vnic: object -> object<InstanceVnicResp>`
+
+### HuaweiCloud SDK GEIP
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CountGlobalEips**
+    - changes of response param
+      - `+ global_eip`
+      - `- global_eips`
+      - `- page_info`
+  - **BatchCreateGlobalEip**
+    - changes of response param
+      - `+ global_eips`
+      - `- global_eip`
+  - **CountGlobalEipSegment**
+    - changes of response param
+      - `+ global_eip_segment`
+      - `- global_eip_segments`
+
+### HuaweiCloud SDK KMS
+
+- _Features_
+  - Support the APIs `GenerateMac`, `VerifyMac`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK RDS
+
+- _Features_
+  - Support the APIs `ShowReplayDelayStatus`, `SwitchLogReplay`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK VPC
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListSubNetworkInterfaces**
+    - changes of response param
+      - `+ sub_network_interfaces.security_enabled`
+  - **CreateSubNetworkInterface**
+    - changes of response param
+      - `+ sub_network_interface.security_enabled`
+  - **BatchCreateSubNetworkInterface**
+    - changes of response param
+      - `+ sub_network_interfaces.security_enabled`
+  - **ShowSubNetworkInterface**
+    - changes of response param
+      - `+ sub_network_interface.security_enabled`
+  - **UpdateSubNetworkInterface**
+    - changes of response param
+      - `+ sub_network_interface.security_enabled`
+  - **MigrateSubNetworkInterface**
+    - changes of response param
+      - `+ sub_network_interfaces.security_enabled`
+
 # 3.1.79 2024-03-28
 
 ### HuaweiCloud SDK CBR

@@ -214,6 +214,15 @@ public:
     void unsetsupportUrlFiltering();
     void setSupportUrlFiltering(bool value);
 
+    /// <summary>
+    /// 标签列表
+    /// </summary>
+
+    std::string getTags() const;
+    bool tagsIsSet() const;
+    void unsettags();
+    void setTags(const std::string& value);
+
 
 protected:
     std::string fwInstanceId_;
@@ -254,6 +263,8 @@ protected:
     bool resourceIdIsSet_;
     bool supportUrlFiltering_;
     bool supportUrlFilteringIsSet_;
+    std::string tags_;
+    bool tagsIsSet_;
 
 };
 

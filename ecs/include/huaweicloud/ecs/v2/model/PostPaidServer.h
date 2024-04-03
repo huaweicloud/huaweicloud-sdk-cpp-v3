@@ -15,6 +15,7 @@
 #include <huaweicloud/ecs/v2/model/PostPaidServerSchedulerHints.h>
 #include <huaweicloud/ecs/v2/model/PostPaidServerPublicip.h>
 #include <string>
+#include <huaweicloud/ecs/v2/model/CpuOptions.h>
 #include <huaweicloud/ecs/v2/model/PostPaidServerDataVolume.h>
 #include <map>
 #include <vector>
@@ -255,6 +256,15 @@ public:
     void unsetdescription();
     void setDescription(const std::string& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    CpuOptions getCpuOptions() const;
+    bool cpuOptionsIsSet() const;
+    void unsetcpuOptions();
+    void setCpuOptions(const CpuOptions& value);
+
 
 protected:
     std::string autoTerminateTime_;
@@ -303,6 +313,8 @@ protected:
     bool vpcidIsSet_;
     std::string description_;
     bool descriptionIsSet_;
+    CpuOptions cpuOptions_;
+    bool cpuOptionsIsSet_;
 
 };
 

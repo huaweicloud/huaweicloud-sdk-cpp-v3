@@ -83,6 +83,15 @@ public:
     void unsetfwInstanceId();
     void setFwInstanceId(const std::string& value);
 
+    /// <summary>
+    /// 防火墙名称
+    /// </summary>
+
+    std::string getName() const;
+    bool nameIsSet() const;
+    void unsetname();
+    void setName(const std::string& value);
+
 
 protected:
     int32_t offset_;
@@ -95,6 +104,8 @@ protected:
     bool enterpriseProjectIdIsSet_;
     std::string fwInstanceId_;
     bool fwInstanceIdIsSet_;
+    std::string name_;
+    bool nameIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

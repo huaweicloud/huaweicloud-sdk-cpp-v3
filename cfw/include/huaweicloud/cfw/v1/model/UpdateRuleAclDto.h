@@ -14,6 +14,8 @@
 #include <string>
 #include <huaweicloud/cfw/v1/model/RuleServiceDto.h>
 #include <huaweicloud/cfw/v1/model/OrderRuleAclDto.h>
+#include <vector>
+#include <huaweicloud/cfw/v1/model/RuleProfileDto.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -97,6 +99,24 @@ public:
     void setStatus(int32_t value);
 
     /// <summary>
+    /// 应用列表
+    /// </summary>
+
+    std::vector<std::string>& getApplications();
+    bool applicationsIsSet() const;
+    void unsetapplications();
+    void setApplications(const std::vector<std::string>& value);
+
+    /// <summary>
+    /// 应用列表转化为字符串
+    /// </summary>
+
+    std::string getApplicationsJsonString() const;
+    bool applicationsJsonStringIsSet() const;
+    void unsetapplicationsJsonString();
+    void setApplicationsJsonString(const std::string& value);
+
+    /// <summary>
     /// 描述
     /// </summary>
 
@@ -149,6 +169,15 @@ public:
     bool longConnectEnableIsSet() const;
     void unsetlongConnectEnable();
     void setLongConnectEnable(int32_t value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    RuleProfileDto getProfile() const;
+    bool profileIsSet() const;
+    void unsetprofile();
+    void setProfile(const RuleProfileDto& value);
 
     /// <summary>
     /// 
@@ -209,6 +238,10 @@ protected:
     bool actionTypeIsSet_;
     int32_t status_;
     bool statusIsSet_;
+    std::vector<std::string> applications_;
+    bool applicationsIsSet_;
+    std::string applicationsJsonString_;
+    bool applicationsJsonStringIsSet_;
     std::string description_;
     bool descriptionIsSet_;
     int64_t longConnectTimeHour_;
@@ -221,6 +254,8 @@ protected:
     bool longConnectTimeIsSet_;
     int32_t longConnectEnable_;
     bool longConnectEnableIsSet_;
+    RuleProfileDto profile_;
+    bool profileIsSet_;
     RuleAddressDto source_;
     bool sourceIsSet_;
     RuleAddressDto destination_;

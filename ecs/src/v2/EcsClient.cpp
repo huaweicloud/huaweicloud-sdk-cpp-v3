@@ -2029,48 +2029,6 @@ std::shared_ptr<NovaShowServerInterfaceResponse> EcsClient::novaShowServerInterf
 
     return localVarResult;
 }
-std::shared_ptr<RegisterServerAutoRecoveryResponse> EcsClient::registerServerAutoRecovery(RegisterServerAutoRecoveryRequest &request)
-{
-    std::string localVarPath = "/v1/{project_id}/cloudservers/{server_id}/autorecovery";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["server_id"] = parameterToString(request.getServerId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-
-    std::string localVarHttpBody;
-    if (isJson) {
-        // handle json input
-        web::json::value localVarJson;
-        localVarJson = ModelBase::toJson(request.getBody());
-        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
-    }
-
-    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, EcsMeta::genRequestDefForRegisterServerAutoRecovery());
-
-    std::shared_ptr<RegisterServerAutoRecoveryResponse> localVarResult = std::make_shared<RegisterServerAutoRecoveryResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-    if (!res->getHttpBody().empty()) {
-        spdlog::info("parse json format response");
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
-
-    return localVarResult;
-}
 std::shared_ptr<RegisterServerMonitorResponse> EcsClient::registerServerMonitor(RegisterServerMonitorRequest &request)
 {
     std::string localVarPath = "/v1.0/servers/{server_id}/action";
@@ -2377,36 +2335,6 @@ std::shared_ptr<ShowServerResponse> EcsClient::showServer(ShowServerRequest &req
         localVarHeaderParams, localVarHttpBody, EcsMeta::genRequestDefForShowServer());
 
     std::shared_ptr<ShowServerResponse> localVarResult = std::make_shared<ShowServerResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
-std::shared_ptr<ShowServerAutoRecoveryResponse> EcsClient::showServerAutoRecovery(ShowServerAutoRecoveryRequest &request)
-{
-    std::string localVarPath = "/v1/{project_id}/cloudservers/{server_id}/autorecovery";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["server_id"] = parameterToString(request.getServerId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, EcsMeta::genRequestDefForShowServerAutoRecovery());
-
-    std::shared_ptr<ShowServerAutoRecoveryResponse> localVarResult = std::make_shared<ShowServerAutoRecoveryResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -2771,6 +2699,65 @@ std::shared_ptr<UpdateServerMetadataResponse> EcsClient::updateServerMetadata(Up
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
+
+    return localVarResult;
+}
+std::shared_ptr<NovaListVersionsResponse> EcsClient::novaListVersions(NovaListVersionsRequest &request)
+{
+    std::string localVarPath = "/";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EcsMeta::genRequestDefForNovaListVersions());
+
+    std::shared_ptr<NovaListVersionsResponse> localVarResult = std::make_shared<NovaListVersionsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<NovaShowVersionResponse> EcsClient::novaShowVersion(NovaShowVersionRequest &request)
+{
+    std::string localVarPath = "/{api_version}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["api_version"] = parameterToString(request.getApiVersion());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EcsMeta::genRequestDefForNovaShowVersion());
+
+    std::shared_ptr<NovaShowVersionResponse> localVarResult = std::make_shared<NovaShowVersionResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }

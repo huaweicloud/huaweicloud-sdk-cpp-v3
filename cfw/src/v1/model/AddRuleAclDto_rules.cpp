@@ -21,6 +21,9 @@ AddRuleAclDto_rules::AddRuleAclDto_rules()
     actionTypeIsSet_ = false;
     status_ = 0;
     statusIsSet_ = false;
+    applicationsIsSet_ = false;
+    applicationsJsonString_ = "";
+    applicationsJsonStringIsSet_ = false;
     longConnectTime_ = 0L;
     longConnectTimeIsSet_ = false;
     longConnectTimeHour_ = 0L;
@@ -35,6 +38,7 @@ AddRuleAclDto_rules::AddRuleAclDto_rules()
     descriptionIsSet_ = false;
     direction_ = 0;
     directionIsSet_ = false;
+    profileIsSet_ = false;
     sourceIsSet_ = false;
     destinationIsSet_ = false;
     serviceIsSet_ = false;
@@ -66,6 +70,12 @@ web::json::value AddRuleAclDto_rules::toJson() const
     if(statusIsSet_) {
         val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
     }
+    if(applicationsIsSet_) {
+        val[utility::conversions::to_string_t("applications")] = ModelBase::toJson(applications_);
+    }
+    if(applicationsJsonStringIsSet_) {
+        val[utility::conversions::to_string_t("applicationsJsonString")] = ModelBase::toJson(applicationsJsonString_);
+    }
     if(longConnectTimeIsSet_) {
         val[utility::conversions::to_string_t("long_connect_time")] = ModelBase::toJson(longConnectTime_);
     }
@@ -86,6 +96,9 @@ web::json::value AddRuleAclDto_rules::toJson() const
     }
     if(directionIsSet_) {
         val[utility::conversions::to_string_t("direction")] = ModelBase::toJson(direction_);
+    }
+    if(profileIsSet_) {
+        val[utility::conversions::to_string_t("profile")] = ModelBase::toJson(profile_);
     }
     if(sourceIsSet_) {
         val[utility::conversions::to_string_t("source")] = ModelBase::toJson(source_);
@@ -151,6 +164,24 @@ bool AddRuleAclDto_rules::fromJson(const web::json::value& val)
             setStatus(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("applications"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("applications"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setApplications(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("applicationsJsonString"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("applicationsJsonString"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setApplicationsJsonString(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("long_connect_time"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("long_connect_time"));
         if(!fieldValue.is_null())
@@ -214,11 +245,20 @@ bool AddRuleAclDto_rules::fromJson(const web::json::value& val)
             setDirection(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("profile"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("profile"));
+        if(!fieldValue.is_null())
+        {
+            RuleProfileDto refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProfile(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("source"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("source"));
         if(!fieldValue.is_null())
         {
-            RuleAddressDto refVal;
+            RuleAddressDtoForRequest refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSource(refVal);
         }
@@ -227,7 +267,7 @@ bool AddRuleAclDto_rules::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("destination"));
         if(!fieldValue.is_null())
         {
-            RuleAddressDto refVal;
+            RuleAddressDtoForRequest refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDestination(refVal);
         }
@@ -357,6 +397,48 @@ bool AddRuleAclDto_rules::statusIsSet() const
 void AddRuleAclDto_rules::unsetstatus()
 {
     statusIsSet_ = false;
+}
+
+std::vector<std::string>& AddRuleAclDto_rules::getApplications()
+{
+    return applications_;
+}
+
+void AddRuleAclDto_rules::setApplications(const std::vector<std::string>& value)
+{
+    applications_ = value;
+    applicationsIsSet_ = true;
+}
+
+bool AddRuleAclDto_rules::applicationsIsSet() const
+{
+    return applicationsIsSet_;
+}
+
+void AddRuleAclDto_rules::unsetapplications()
+{
+    applicationsIsSet_ = false;
+}
+
+std::string AddRuleAclDto_rules::getApplicationsJsonString() const
+{
+    return applicationsJsonString_;
+}
+
+void AddRuleAclDto_rules::setApplicationsJsonString(const std::string& value)
+{
+    applicationsJsonString_ = value;
+    applicationsJsonStringIsSet_ = true;
+}
+
+bool AddRuleAclDto_rules::applicationsJsonStringIsSet() const
+{
+    return applicationsJsonStringIsSet_;
+}
+
+void AddRuleAclDto_rules::unsetapplicationsJsonString()
+{
+    applicationsJsonStringIsSet_ = false;
 }
 
 int64_t AddRuleAclDto_rules::getLongConnectTime() const
@@ -506,12 +588,33 @@ void AddRuleAclDto_rules::unsetdirection()
     directionIsSet_ = false;
 }
 
-RuleAddressDto AddRuleAclDto_rules::getSource() const
+RuleProfileDto AddRuleAclDto_rules::getProfile() const
+{
+    return profile_;
+}
+
+void AddRuleAclDto_rules::setProfile(const RuleProfileDto& value)
+{
+    profile_ = value;
+    profileIsSet_ = true;
+}
+
+bool AddRuleAclDto_rules::profileIsSet() const
+{
+    return profileIsSet_;
+}
+
+void AddRuleAclDto_rules::unsetprofile()
+{
+    profileIsSet_ = false;
+}
+
+RuleAddressDtoForRequest AddRuleAclDto_rules::getSource() const
 {
     return source_;
 }
 
-void AddRuleAclDto_rules::setSource(const RuleAddressDto& value)
+void AddRuleAclDto_rules::setSource(const RuleAddressDtoForRequest& value)
 {
     source_ = value;
     sourceIsSet_ = true;
@@ -527,12 +630,12 @@ void AddRuleAclDto_rules::unsetsource()
     sourceIsSet_ = false;
 }
 
-RuleAddressDto AddRuleAclDto_rules::getDestination() const
+RuleAddressDtoForRequest AddRuleAclDto_rules::getDestination() const
 {
     return destination_;
 }
 
-void AddRuleAclDto_rules::setDestination(const RuleAddressDto& value)
+void AddRuleAclDto_rules::setDestination(const RuleAddressDtoForRequest& value)
 {
     destination_ = value;
     destinationIsSet_ = true;

@@ -135,9 +135,6 @@
 #include <huaweicloud/ecs/v2/model/NovaShowServerInterfaceResponse.h>
 #include <huaweicloud/ecs/v2/model/NovaShowServerRequest.h>
 #include <huaweicloud/ecs/v2/model/NovaShowServerResponse.h>
-#include <huaweicloud/ecs/v2/model/RegisterServerAutoRecoveryRequest.h>
-#include <huaweicloud/ecs/v2/model/RegisterServerAutoRecoveryRequestBody.h>
-#include <huaweicloud/ecs/v2/model/RegisterServerAutoRecoveryResponse.h>
 #include <huaweicloud/ecs/v2/model/RegisterServerMonitorRequest.h>
 #include <huaweicloud/ecs/v2/model/RegisterServerMonitorRequestBody.h>
 #include <huaweicloud/ecs/v2/model/RegisterServerMonitorResponse.h>
@@ -158,8 +155,6 @@
 #include <huaweicloud/ecs/v2/model/ResizeServerResponse.h>
 #include <huaweicloud/ecs/v2/model/ShowResetPasswordFlagRequest.h>
 #include <huaweicloud/ecs/v2/model/ShowResetPasswordFlagResponse.h>
-#include <huaweicloud/ecs/v2/model/ShowServerAutoRecoveryRequest.h>
-#include <huaweicloud/ecs/v2/model/ShowServerAutoRecoveryResponse.h>
 #include <huaweicloud/ecs/v2/model/ShowServerBlockDeviceRequest.h>
 #include <huaweicloud/ecs/v2/model/ShowServerBlockDeviceResponse.h>
 #include <huaweicloud/ecs/v2/model/ShowServerGroupRequest.h>
@@ -187,6 +182,12 @@
 #include <huaweicloud/ecs/v2/model/UpdateServerRequest.h>
 #include <huaweicloud/ecs/v2/model/UpdateServerRequestBody.h>
 #include <huaweicloud/ecs/v2/model/UpdateServerResponse.h>
+#include <string>
+
+#include <huaweicloud/ecs/v2/model/NovaListVersionsRequest.h>
+#include <huaweicloud/ecs/v2/model/NovaListVersionsResponse.h>
+#include <huaweicloud/ecs/v2/model/NovaShowVersionRequest.h>
+#include <huaweicloud/ecs/v2/model/NovaShowVersionResponse.h>
 #include <string>
 
 #include <huaweicloud/ecs/v2/model/ShowJobRequest.h>
@@ -691,14 +692,6 @@ public:
     std::shared_ptr<NovaShowServerInterfaceResponse> novaShowServerInterface(
         NovaShowServerInterfaceRequest &request
     );
-    // 管理云服务器自动恢复动作
-    //
-    // 配置、删除云服务器自动恢复动作。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<RegisterServerAutoRecoveryResponse> registerServerAutoRecovery(
-        RegisterServerAutoRecoveryRequest &request
-    );
     // 注册云服务器监控
     //
     // 将云服务器添加到监控表中。
@@ -782,14 +775,6 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowServerResponse> showServer(
         ShowServerRequest &request
-    );
-    // 查询云服务器是否配置了自动恢复动作
-    //
-    // 查询云服务器是否配置了自动恢复动作。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ShowServerAutoRecoveryResponse> showServerAutoRecovery(
-        ShowServerAutoRecoveryRequest &request
     );
     // 查询弹性云服务器单个磁盘信息
     //
@@ -882,6 +867,32 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateServerMetadataResponse> updateServerMetadata(
         UpdateServerMetadataRequest &request
+    );
+
+    // 查询API版本信息列表
+    //
+    // 返回Nova当前所有可用的版本。
+    // 
+    // 为了支持功能不断扩展，Nova API支持版本号区分。Nova中有两种形式的版本号：
+    // 
+    // - \&quot;主版本号\&quot;: 具有独立的url。
+    // - \&quot;微版本号\&quot;: 通过Http请求头X-OpenStack-Nova-API-Version来使用，从2.27版本后更改为OpenStack-API-Version。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<NovaListVersionsResponse> novaListVersions(
+        NovaListVersionsRequest &request
+    );
+    // 查询指定API版本信息
+    //
+    // 返回指定版本的信息。
+    // 为了支持功能不断扩展，Nova API支持版本号区分。Nova中有两种形式的版本号：
+    // 
+    // - \&quot;主版本号\&quot;: 具有独立的url。
+    // - \&quot;微版本号\&quot;: 通过Http请求头X-OpenStack-Nova-API-Version来使用，从2.27版本后更改为OpenStack-API-Version。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<NovaShowVersionResponse> novaShowVersion(
+        NovaShowVersionRequest &request
     );
 
     // 查询任务的执行状态

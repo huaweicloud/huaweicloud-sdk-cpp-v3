@@ -209,6 +209,24 @@ public:
     void unsetaction();
     void setAction(const std::string& value);
 
+    /// <summary>
+    /// 源region名称
+    /// </summary>
+
+    std::string getSrcRegionName() const;
+    bool srcRegionNameIsSet() const;
+    void unsetsrcRegionName();
+    void setSrcRegionName(const std::string& value);
+
+    /// <summary>
+    /// 目的region名称
+    /// </summary>
+
+    std::string getDstRegionName() const;
+    bool dstRegionNameIsSet() const;
+    void unsetdstRegionName();
+    void setDstRegionName(const std::string& value);
+
 
 protected:
     std::string fwInstanceId_;
@@ -249,6 +267,10 @@ protected:
     bool ruleNameIsSet_;
     std::string action_;
     bool actionIsSet_;
+    std::string srcRegionName_;
+    bool srcRegionNameIsSet_;
+    std::string dstRegionName_;
+    bool dstRegionNameIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

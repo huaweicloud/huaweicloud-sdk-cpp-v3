@@ -18,6 +18,8 @@ ListServiceSetDetailRequest::ListServiceSetDetailRequest()
     enterpriseProjectIdIsSet_ = false;
     fwInstanceId_ = "";
     fwInstanceIdIsSet_ = false;
+    queryServiceSetType_ = 0;
+    queryServiceSetTypeIsSet_ = false;
 }
 
 ListServiceSetDetailRequest::~ListServiceSetDetailRequest() = default;
@@ -38,6 +40,9 @@ web::json::value ListServiceSetDetailRequest::toJson() const
     }
     if(fwInstanceIdIsSet_) {
         val[utility::conversions::to_string_t("fw_instance_id")] = ModelBase::toJson(fwInstanceId_);
+    }
+    if(queryServiceSetTypeIsSet_) {
+        val[utility::conversions::to_string_t("query_service_set_type")] = ModelBase::toJson(queryServiceSetType_);
     }
 
     return val;
@@ -71,6 +76,15 @@ bool ListServiceSetDetailRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFwInstanceId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("query_service_set_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("query_service_set_type"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setQueryServiceSetType(refVal);
         }
     }
     return ok;
@@ -138,6 +152,27 @@ bool ListServiceSetDetailRequest::fwInstanceIdIsSet() const
 void ListServiceSetDetailRequest::unsetfwInstanceId()
 {
     fwInstanceIdIsSet_ = false;
+}
+
+int32_t ListServiceSetDetailRequest::getQueryServiceSetType() const
+{
+    return queryServiceSetType_;
+}
+
+void ListServiceSetDetailRequest::setQueryServiceSetType(int32_t value)
+{
+    queryServiceSetType_ = value;
+    queryServiceSetTypeIsSet_ = true;
+}
+
+bool ListServiceSetDetailRequest::queryServiceSetTypeIsSet() const
+{
+    return queryServiceSetTypeIsSet_;
+}
+
+void ListServiceSetDetailRequest::unsetqueryServiceSetType()
+{
+    queryServiceSetTypeIsSet_ = false;
 }
 
 }

@@ -50,6 +50,10 @@ ListAccessControlLogsRequest::ListAccessControlLogsRequest()
     ruleNameIsSet_ = false;
     action_ = "";
     actionIsSet_ = false;
+    srcRegionName_ = "";
+    srcRegionNameIsSet_ = false;
+    dstRegionName_ = "";
+    dstRegionNameIsSet_ = false;
 }
 
 ListAccessControlLogsRequest::~ListAccessControlLogsRequest() = default;
@@ -118,6 +122,12 @@ web::json::value ListAccessControlLogsRequest::toJson() const
     }
     if(actionIsSet_) {
         val[utility::conversions::to_string_t("action")] = ModelBase::toJson(action_);
+    }
+    if(srcRegionNameIsSet_) {
+        val[utility::conversions::to_string_t("src_region_name")] = ModelBase::toJson(srcRegionName_);
+    }
+    if(dstRegionNameIsSet_) {
+        val[utility::conversions::to_string_t("dst_region_name")] = ModelBase::toJson(dstRegionName_);
     }
 
     return val;
@@ -295,6 +305,24 @@ bool ListAccessControlLogsRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAction(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("src_region_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("src_region_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSrcRegionName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("dst_region_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("dst_region_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDstRegionName(refVal);
         }
     }
     return ok;
@@ -698,6 +726,48 @@ bool ListAccessControlLogsRequest::actionIsSet() const
 void ListAccessControlLogsRequest::unsetaction()
 {
     actionIsSet_ = false;
+}
+
+std::string ListAccessControlLogsRequest::getSrcRegionName() const
+{
+    return srcRegionName_;
+}
+
+void ListAccessControlLogsRequest::setSrcRegionName(const std::string& value)
+{
+    srcRegionName_ = value;
+    srcRegionNameIsSet_ = true;
+}
+
+bool ListAccessControlLogsRequest::srcRegionNameIsSet() const
+{
+    return srcRegionNameIsSet_;
+}
+
+void ListAccessControlLogsRequest::unsetsrcRegionName()
+{
+    srcRegionNameIsSet_ = false;
+}
+
+std::string ListAccessControlLogsRequest::getDstRegionName() const
+{
+    return dstRegionName_;
+}
+
+void ListAccessControlLogsRequest::setDstRegionName(const std::string& value)
+{
+    dstRegionName_ = value;
+    dstRegionNameIsSet_ = true;
+}
+
+bool ListAccessControlLogsRequest::dstRegionNameIsSet() const
+{
+    return dstRegionNameIsSet_;
+}
+
+void ListAccessControlLogsRequest::unsetdstRegionName()
+{
+    dstRegionNameIsSet_ = false;
 }
 
 }

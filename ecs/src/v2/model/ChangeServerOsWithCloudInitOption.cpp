@@ -23,6 +23,8 @@ ChangeServerOsWithCloudInitOption::ChangeServerOsWithCloudInitOption()
     metadataIsSet_ = false;
     mode_ = "";
     modeIsSet_ = false;
+    isAutoPay_ = "";
+    isAutoPayIsSet_ = false;
 }
 
 ChangeServerOsWithCloudInitOption::~ChangeServerOsWithCloudInitOption() = default;
@@ -52,6 +54,9 @@ web::json::value ChangeServerOsWithCloudInitOption::toJson() const
     }
     if(modeIsSet_) {
         val[utility::conversions::to_string_t("mode")] = ModelBase::toJson(mode_);
+    }
+    if(isAutoPayIsSet_) {
+        val[utility::conversions::to_string_t("isAutoPay")] = ModelBase::toJson(isAutoPay_);
     }
 
     return val;
@@ -112,6 +117,15 @@ bool ChangeServerOsWithCloudInitOption::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setMode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("isAutoPay"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("isAutoPay"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsAutoPay(refVal);
         }
     }
     return ok;
@@ -242,6 +256,27 @@ bool ChangeServerOsWithCloudInitOption::modeIsSet() const
 void ChangeServerOsWithCloudInitOption::unsetmode()
 {
     modeIsSet_ = false;
+}
+
+std::string ChangeServerOsWithCloudInitOption::getIsAutoPay() const
+{
+    return isAutoPay_;
+}
+
+void ChangeServerOsWithCloudInitOption::setIsAutoPay(const std::string& value)
+{
+    isAutoPay_ = value;
+    isAutoPayIsSet_ = true;
+}
+
+bool ChangeServerOsWithCloudInitOption::isAutoPayIsSet() const
+{
+    return isAutoPayIsSet_;
+}
+
+void ChangeServerOsWithCloudInitOption::unsetisAutoPay()
+{
+    isAutoPayIsSet_ = false;
 }
 
 }

@@ -484,10 +484,15 @@
 #include <huaweicloud/rds/v3/model/ShowInformationAboutDatabaseProxyResponse.h>
 #include <huaweicloud/rds/v3/model/ShowPostgresqlParamValueRequest.h>
 #include <huaweicloud/rds/v3/model/ShowPostgresqlParamValueResponse.h>
+#include <huaweicloud/rds/v3/model/ShowReplayDelayStatusRequest.h>
+#include <huaweicloud/rds/v3/model/ShowReplayDelayStatusResponse.h>
 #include <huaweicloud/rds/v3/model/StartDatabaseProxyRequest.h>
 #include <huaweicloud/rds/v3/model/StartDatabaseProxyResponse.h>
 #include <huaweicloud/rds/v3/model/StopDatabaseProxyRequest.h>
 #include <huaweicloud/rds/v3/model/StopDatabaseProxyResponse.h>
+#include <huaweicloud/rds/v3/model/SwitchLogReplayRequest.h>
+#include <huaweicloud/rds/v3/model/SwitchLogReplayRequestBody.h>
+#include <huaweicloud/rds/v3/model/SwitchLogReplayResponse.h>
 #include <huaweicloud/rds/v3/model/UpdateDatabaseOwnerRequest.h>
 #include <huaweicloud/rds/v3/model/UpdateDatabaseOwnerRequestBody.h>
 #include <huaweicloud/rds/v3/model/UpdateDatabaseOwnerResponse.h>
@@ -2070,6 +2075,14 @@ public:
     std::shared_ptr<ShowPostgresqlParamValueResponse> showPostgresqlParamValue(
         ShowPostgresqlParamValueRequest &request
     );
+    // 获取wal日志延迟回放状态
+    //
+    // 获取wal日志延迟回放状态
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowReplayDelayStatusResponse> showReplayDelayStatus(
+        ShowReplayDelayStatusRequest &request
+    );
     // 开启数据库代理
     //
     // 为指定实例开启数据库代理。
@@ -2085,6 +2098,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<StopDatabaseProxyResponse> stopDatabaseProxy(
         StopDatabaseProxyRequest &request
+    );
+    // 中止/恢复wal日志回放
+    //
+    // 中止/恢复wal日志回放
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SwitchLogReplayResponse> switchLogReplay(
+        SwitchLogReplayRequest &request
     );
     // 修改数据库owner
     //

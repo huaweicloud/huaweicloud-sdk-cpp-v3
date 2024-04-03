@@ -39,6 +39,7 @@ public:
     static HttpRequestDef genRequestDefForEnableKeyStore();
     static HttpRequestDef genRequestDefForEncryptData();
     static HttpRequestDef genRequestDefForEncryptDatakey();
+    static HttpRequestDef genRequestDefForGenerateMac();
     static HttpRequestDef genRequestDefForImportKeyMaterial();
     static HttpRequestDef genRequestDefForListGrants();
     static HttpRequestDef genRequestDefForListKeyDetail();
@@ -58,6 +59,7 @@ public:
     static HttpRequestDef genRequestDefForUpdateKeyDescription();
     static HttpRequestDef genRequestDefForUpdateKeyRotationInterval();
     static HttpRequestDef genRequestDefForValidateSignature();
+    static HttpRequestDef genRequestDefForVerifyMac();
     static HttpRequestDef genRequestDefForShowVersion();
     static HttpRequestDef genRequestDefForShowVersions();
 };

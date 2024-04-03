@@ -119,6 +119,15 @@ public:
     void unsetqueryAddressSetType();
     void setQueryAddressSetType(int32_t value);
 
+    /// <summary>
+    /// 地址组类型，0表示自定义地址组，1表示WAF回源IP地址组，2表示DDoS回源IP地址组，3表示NAT64转换地址组
+    /// </summary>
+
+    int32_t getAddressSetType() const;
+    bool addressSetTypeIsSet() const;
+    void unsetaddressSetType();
+    void setAddressSetType(int32_t value);
+
 
 protected:
     std::string objectId_;
@@ -139,6 +148,8 @@ protected:
     bool fwInstanceIdIsSet_;
     int32_t queryAddressSetType_;
     bool queryAddressSetTypeIsSet_;
+    int32_t addressSetType_;
+    bool addressSetTypeIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

@@ -22,10 +22,10 @@ GeipBindingsInternalResp::GeipBindingsInternalResp()
     createdAtIsSet_ = false;
     updatedAt_ = "";
     updatedAtIsSet_ = false;
-    bindingInstanceType_ = "";
-    bindingInstanceTypeIsSet_ = false;
-    bindingInstanceId_ = "";
-    bindingInstanceIdIsSet_ = false;
+    instanceType_ = "";
+    instanceTypeIsSet_ = false;
+    instanceId_ = "";
+    instanceIdIsSet_ = false;
     gcbandwidthIsSet_ = false;
     vnicIsSet_ = false;
     vnListIsSet_ = false;
@@ -56,11 +56,11 @@ web::json::value GeipBindingsInternalResp::toJson() const
     if(updatedAtIsSet_) {
         val[utility::conversions::to_string_t("updated_at")] = ModelBase::toJson(updatedAt_);
     }
-    if(bindingInstanceTypeIsSet_) {
-        val[utility::conversions::to_string_t("binding_instance_type")] = ModelBase::toJson(bindingInstanceType_);
+    if(instanceTypeIsSet_) {
+        val[utility::conversions::to_string_t("instance_type")] = ModelBase::toJson(instanceType_);
     }
-    if(bindingInstanceIdIsSet_) {
-        val[utility::conversions::to_string_t("binding_instance_id")] = ModelBase::toJson(bindingInstanceId_);
+    if(instanceIdIsSet_) {
+        val[utility::conversions::to_string_t("instance_id")] = ModelBase::toJson(instanceId_);
     }
     if(gcbandwidthIsSet_) {
         val[utility::conversions::to_string_t("gcbandwidth")] = ModelBase::toJson(gcbandwidth_);
@@ -123,29 +123,29 @@ bool GeipBindingsInternalResp::fromJson(const web::json::value& val)
             setUpdatedAt(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("binding_instance_type"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("binding_instance_type"));
+    if(val.has_field(utility::conversions::to_string_t("instance_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("instance_type"));
         if(!fieldValue.is_null())
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setBindingInstanceType(refVal);
+            setInstanceType(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("binding_instance_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("binding_instance_id"));
+    if(val.has_field(utility::conversions::to_string_t("instance_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("instance_id"));
         if(!fieldValue.is_null())
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setBindingInstanceId(refVal);
+            setInstanceId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("gcbandwidth"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("gcbandwidth"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            BackboneBandwidthResp refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setGcbandwidth(refVal);
         }
@@ -154,7 +154,7 @@ bool GeipBindingsInternalResp::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("vnic"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            InstanceVnicResp refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setVnic(refVal);
         }
@@ -277,54 +277,54 @@ void GeipBindingsInternalResp::unsetupdatedAt()
     updatedAtIsSet_ = false;
 }
 
-std::string GeipBindingsInternalResp::getBindingInstanceType() const
+std::string GeipBindingsInternalResp::getInstanceType() const
 {
-    return bindingInstanceType_;
+    return instanceType_;
 }
 
-void GeipBindingsInternalResp::setBindingInstanceType(const std::string& value)
+void GeipBindingsInternalResp::setInstanceType(const std::string& value)
 {
-    bindingInstanceType_ = value;
-    bindingInstanceTypeIsSet_ = true;
+    instanceType_ = value;
+    instanceTypeIsSet_ = true;
 }
 
-bool GeipBindingsInternalResp::bindingInstanceTypeIsSet() const
+bool GeipBindingsInternalResp::instanceTypeIsSet() const
 {
-    return bindingInstanceTypeIsSet_;
+    return instanceTypeIsSet_;
 }
 
-void GeipBindingsInternalResp::unsetbindingInstanceType()
+void GeipBindingsInternalResp::unsetinstanceType()
 {
-    bindingInstanceTypeIsSet_ = false;
+    instanceTypeIsSet_ = false;
 }
 
-std::string GeipBindingsInternalResp::getBindingInstanceId() const
+std::string GeipBindingsInternalResp::getInstanceId() const
 {
-    return bindingInstanceId_;
+    return instanceId_;
 }
 
-void GeipBindingsInternalResp::setBindingInstanceId(const std::string& value)
+void GeipBindingsInternalResp::setInstanceId(const std::string& value)
 {
-    bindingInstanceId_ = value;
-    bindingInstanceIdIsSet_ = true;
+    instanceId_ = value;
+    instanceIdIsSet_ = true;
 }
 
-bool GeipBindingsInternalResp::bindingInstanceIdIsSet() const
+bool GeipBindingsInternalResp::instanceIdIsSet() const
 {
-    return bindingInstanceIdIsSet_;
+    return instanceIdIsSet_;
 }
 
-void GeipBindingsInternalResp::unsetbindingInstanceId()
+void GeipBindingsInternalResp::unsetinstanceId()
 {
-    bindingInstanceIdIsSet_ = false;
+    instanceIdIsSet_ = false;
 }
 
-Object GeipBindingsInternalResp::getGcbandwidth() const
+BackboneBandwidthResp GeipBindingsInternalResp::getGcbandwidth() const
 {
     return gcbandwidth_;
 }
 
-void GeipBindingsInternalResp::setGcbandwidth(const Object& value)
+void GeipBindingsInternalResp::setGcbandwidth(const BackboneBandwidthResp& value)
 {
     gcbandwidth_ = value;
     gcbandwidthIsSet_ = true;
@@ -340,12 +340,12 @@ void GeipBindingsInternalResp::unsetgcbandwidth()
     gcbandwidthIsSet_ = false;
 }
 
-Object GeipBindingsInternalResp::getVnic() const
+InstanceVnicResp GeipBindingsInternalResp::getVnic() const
 {
     return vnic_;
 }
 
-void GeipBindingsInternalResp::setVnic(const Object& value)
+void GeipBindingsInternalResp::setVnic(const InstanceVnicResp& value)
 {
     vnic_ = value;
     vnicIsSet_ = true;

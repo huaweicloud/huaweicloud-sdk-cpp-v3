@@ -46,6 +46,10 @@ ListFlowLogsRequest::ListFlowLogsRequest()
     enterpriseProjectIdIsSet_ = false;
     dstHost_ = "";
     dstHostIsSet_ = false;
+    srcRegionName_ = "";
+    srcRegionNameIsSet_ = false;
+    dstRegionName_ = "";
+    dstRegionNameIsSet_ = false;
 }
 
 ListFlowLogsRequest::~ListFlowLogsRequest() = default;
@@ -108,6 +112,12 @@ web::json::value ListFlowLogsRequest::toJson() const
     }
     if(dstHostIsSet_) {
         val[utility::conversions::to_string_t("dst_host")] = ModelBase::toJson(dstHost_);
+    }
+    if(srcRegionNameIsSet_) {
+        val[utility::conversions::to_string_t("src_region_name")] = ModelBase::toJson(srcRegionName_);
+    }
+    if(dstRegionNameIsSet_) {
+        val[utility::conversions::to_string_t("dst_region_name")] = ModelBase::toJson(dstRegionName_);
     }
 
     return val;
@@ -267,6 +277,24 @@ bool ListFlowLogsRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDstHost(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("src_region_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("src_region_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSrcRegionName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("dst_region_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("dst_region_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDstRegionName(refVal);
         }
     }
     return ok;
@@ -628,6 +656,48 @@ bool ListFlowLogsRequest::dstHostIsSet() const
 void ListFlowLogsRequest::unsetdstHost()
 {
     dstHostIsSet_ = false;
+}
+
+std::string ListFlowLogsRequest::getSrcRegionName() const
+{
+    return srcRegionName_;
+}
+
+void ListFlowLogsRequest::setSrcRegionName(const std::string& value)
+{
+    srcRegionName_ = value;
+    srcRegionNameIsSet_ = true;
+}
+
+bool ListFlowLogsRequest::srcRegionNameIsSet() const
+{
+    return srcRegionNameIsSet_;
+}
+
+void ListFlowLogsRequest::unsetsrcRegionName()
+{
+    srcRegionNameIsSet_ = false;
+}
+
+std::string ListFlowLogsRequest::getDstRegionName() const
+{
+    return dstRegionName_;
+}
+
+void ListFlowLogsRequest::setDstRegionName(const std::string& value)
+{
+    dstRegionName_ = value;
+    dstRegionNameIsSet_ = true;
+}
+
+bool ListFlowLogsRequest::dstRegionNameIsSet() const
+{
+    return dstRegionNameIsSet_;
+}
+
+void ListFlowLogsRequest::unsetdstRegionName()
+{
+    dstRegionNameIsSet_ = false;
 }
 
 }

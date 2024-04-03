@@ -14,7 +14,7 @@ CountGlobalEipSegmentResponse::CountGlobalEipSegmentResponse()
 {
     requestId_ = "";
     requestIdIsSet_ = false;
-    globalEipSegmentsIsSet_ = false;
+    globalEipSegmentIsSet_ = false;
     xRequestId_ = "";
     xRequestIdIsSet_ = false;
 }
@@ -32,8 +32,8 @@ web::json::value CountGlobalEipSegmentResponse::toJson() const
     if(requestIdIsSet_) {
         val[utility::conversions::to_string_t("request_id")] = ModelBase::toJson(requestId_);
     }
-    if(globalEipSegmentsIsSet_) {
-        val[utility::conversions::to_string_t("global_eip_segments")] = ModelBase::toJson(globalEipSegments_);
+    if(globalEipSegmentIsSet_) {
+        val[utility::conversions::to_string_t("global_eip_segment")] = ModelBase::toJson(globalEipSegment_);
     }
     if(xRequestIdIsSet_) {
         val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
@@ -54,13 +54,13 @@ bool CountGlobalEipSegmentResponse::fromJson(const web::json::value& val)
             setRequestId(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("global_eip_segments"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("global_eip_segments"));
+    if(val.has_field(utility::conversions::to_string_t("global_eip_segment"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("global_eip_segment"));
         if(!fieldValue.is_null())
         {
             CountGeipSegments refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setGlobalEipSegments(refVal);
+            setGlobalEipSegment(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
@@ -97,25 +97,25 @@ void CountGlobalEipSegmentResponse::unsetrequestId()
     requestIdIsSet_ = false;
 }
 
-CountGeipSegments CountGlobalEipSegmentResponse::getGlobalEipSegments() const
+CountGeipSegments CountGlobalEipSegmentResponse::getGlobalEipSegment() const
 {
-    return globalEipSegments_;
+    return globalEipSegment_;
 }
 
-void CountGlobalEipSegmentResponse::setGlobalEipSegments(const CountGeipSegments& value)
+void CountGlobalEipSegmentResponse::setGlobalEipSegment(const CountGeipSegments& value)
 {
-    globalEipSegments_ = value;
-    globalEipSegmentsIsSet_ = true;
+    globalEipSegment_ = value;
+    globalEipSegmentIsSet_ = true;
 }
 
-bool CountGlobalEipSegmentResponse::globalEipSegmentsIsSet() const
+bool CountGlobalEipSegmentResponse::globalEipSegmentIsSet() const
 {
-    return globalEipSegmentsIsSet_;
+    return globalEipSegmentIsSet_;
 }
 
-void CountGlobalEipSegmentResponse::unsetglobalEipSegments()
+void CountGlobalEipSegmentResponse::unsetglobalEipSegment()
 {
-    globalEipSegmentsIsSet_ = false;
+    globalEipSegmentIsSet_ = false;
 }
 
 std::string CountGlobalEipSegmentResponse::getXRequestId() const

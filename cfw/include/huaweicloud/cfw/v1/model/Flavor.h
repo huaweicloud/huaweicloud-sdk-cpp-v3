@@ -127,6 +127,42 @@ public:
     void unsetvpcBandwith();
     void setVpcBandwith(int32_t value);
 
+    /// <summary>
+    /// 默认防火墙带宽
+    /// </summary>
+
+    int32_t getDefaultBandwidth() const;
+    bool defaultBandwidthIsSet() const;
+    void unsetdefaultBandwidth();
+    void setDefaultBandwidth(int32_t value);
+
+    /// <summary>
+    /// 默认eip数
+    /// </summary>
+
+    int32_t getDefaultEipCount() const;
+    bool defaultEipCountIsSet() const;
+    void unsetdefaultEipCount();
+    void setDefaultEipCount(int32_t value);
+
+    /// <summary>
+    /// 默认日志存储
+    /// </summary>
+
+    int32_t getDefaultLogStorage() const;
+    bool defaultLogStorageIsSet() const;
+    void unsetdefaultLogStorage();
+    void setDefaultLogStorage(int32_t value);
+
+    /// <summary>
+    /// 默认vpc数
+    /// </summary>
+
+    int32_t getDefaultVpcCount() const;
+    bool defaultVpcCountIsSet() const;
+    void unsetdefaultVpcCount();
+    void setDefaultVpcCount(int32_t value);
+
 
 protected:
     int32_t version_;
@@ -149,6 +185,14 @@ protected:
     bool usedRuleCountIsSet_;
     int32_t vpcBandwith_;
     bool vpcBandwithIsSet_;
+    int32_t defaultBandwidth_;
+    bool defaultBandwidthIsSet_;
+    int32_t defaultEipCount_;
+    bool defaultEipCountIsSet_;
+    int32_t defaultLogStorage_;
+    bool defaultLogStorageIsSet_;
+    int32_t defaultVpcCount_;
+    bool defaultVpcCountIsSet_;
 
 };
 

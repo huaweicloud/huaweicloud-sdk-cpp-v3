@@ -92,6 +92,15 @@ public:
     void unsetfwInstanceId();
     void setFwInstanceId(const std::string& value);
 
+    /// <summary>
+    /// 查询服务组类型，0表示自定义服务组，1表示预定义服务组
+    /// </summary>
+
+    int32_t getQueryServiceSetType() const;
+    bool queryServiceSetTypeIsSet() const;
+    void unsetqueryServiceSetType();
+    void setQueryServiceSetType(int32_t value);
+
 
 protected:
     std::string setId_;
@@ -106,6 +115,8 @@ protected:
     bool enterpriseProjectIdIsSet_;
     std::string fwInstanceId_;
     bool fwInstanceIdIsSet_;
+    int32_t queryServiceSetType_;
+    bool queryServiceSetTypeIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

@@ -1057,6 +1057,47 @@ std::shared_ptr<EncryptDatakeyResponse> KmsClient::encryptDatakey(EncryptDatakey
 
     return localVarResult;
 }
+std::shared_ptr<GenerateMacResponse> KmsClient::generateMac(GenerateMacRequest &request)
+{
+    std::string localVarPath = "/v1.0/{project_id}/kms/generate-mac";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, KmsMeta::genRequestDefForGenerateMac());
+
+    std::shared_ptr<GenerateMacResponse> localVarResult = std::make_shared<GenerateMacResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<ImportKeyMaterialResponse> KmsClient::importKeyMaterial(ImportKeyMaterialRequest &request)
 {
     std::string localVarPath = "/v1.0/{project_id}/kms/import-key-material";
@@ -1761,6 +1802,47 @@ std::shared_ptr<ValidateSignatureResponse> KmsClient::validateSignature(Validate
         localVarHeaderParams, localVarHttpBody, KmsMeta::genRequestDefForValidateSignature());
 
     std::shared_ptr<ValidateSignatureResponse> localVarResult = std::make_shared<ValidateSignatureResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<VerifyMacResponse> KmsClient::verifyMac(VerifyMacRequest &request)
+{
+    std::string localVarPath = "/v1.0/{project_id}/kms/verify-mac";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, KmsMeta::genRequestDefForVerifyMac());
+
+    std::shared_ptr<VerifyMacResponse> localVarResult = std::make_shared<VerifyMacResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

@@ -39,7 +39,7 @@ public:
     /// DetachInternetBandwidth members
 
     /// <summary>
-    /// 全局IP段id
+    /// 全域弹性公网IP段ID
     /// </summary>
 
     std::string getGlobalEipSegmentId() const;

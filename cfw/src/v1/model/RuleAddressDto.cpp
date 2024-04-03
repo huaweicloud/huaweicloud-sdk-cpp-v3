@@ -34,6 +34,9 @@ RuleAddressDto::RuleAddressDto()
     ipAddressIsSet_ = false;
     addressGroupIsSet_ = false;
     addressGroupNamesIsSet_ = false;
+    addressSetType_ = 0;
+    addressSetTypeIsSet_ = false;
+    predefinedGroupIsSet_ = false;
 }
 
 RuleAddressDto::~RuleAddressDto() = default;
@@ -84,6 +87,12 @@ web::json::value RuleAddressDto::toJson() const
     }
     if(addressGroupNamesIsSet_) {
         val[utility::conversions::to_string_t("address_group_names")] = ModelBase::toJson(addressGroupNames_);
+    }
+    if(addressSetTypeIsSet_) {
+        val[utility::conversions::to_string_t("address_set_type")] = ModelBase::toJson(addressSetType_);
+    }
+    if(predefinedGroupIsSet_) {
+        val[utility::conversions::to_string_t("predefined_group")] = ModelBase::toJson(predefinedGroup_);
     }
 
     return val;
@@ -207,6 +216,24 @@ bool RuleAddressDto::fromJson(const web::json::value& val)
             std::vector<AddressGroupVO> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAddressGroupNames(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("address_set_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("address_set_type"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAddressSetType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("predefined_group"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("predefined_group"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPredefinedGroup(refVal);
         }
     }
     return ok;
@@ -484,6 +511,48 @@ bool RuleAddressDto::addressGroupNamesIsSet() const
 void RuleAddressDto::unsetaddressGroupNames()
 {
     addressGroupNamesIsSet_ = false;
+}
+
+int32_t RuleAddressDto::getAddressSetType() const
+{
+    return addressSetType_;
+}
+
+void RuleAddressDto::setAddressSetType(int32_t value)
+{
+    addressSetType_ = value;
+    addressSetTypeIsSet_ = true;
+}
+
+bool RuleAddressDto::addressSetTypeIsSet() const
+{
+    return addressSetTypeIsSet_;
+}
+
+void RuleAddressDto::unsetaddressSetType()
+{
+    addressSetTypeIsSet_ = false;
+}
+
+std::vector<std::string>& RuleAddressDto::getPredefinedGroup()
+{
+    return predefinedGroup_;
+}
+
+void RuleAddressDto::setPredefinedGroup(const std::vector<std::string>& value)
+{
+    predefinedGroup_ = value;
+    predefinedGroupIsSet_ = true;
+}
+
+bool RuleAddressDto::predefinedGroupIsSet() const
+{
+    return predefinedGroupIsSet_;
+}
+
+void RuleAddressDto::unsetpredefinedGroup()
+{
+    predefinedGroupIsSet_ = false;
 }
 
 }

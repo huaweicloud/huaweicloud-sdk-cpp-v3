@@ -66,7 +66,7 @@ public:
     void setDescription(const std::string& value);
 
     /// <summary>
-    /// 服务组类型，0表示自定义服务组，1表示预定义服务组
+    /// 服务组类型，0表示自定义服务组，1表示常用WEB服务，2表示常用远程登录和PING，3表示常用数据库
     /// </summary>
 
     int32_t getServiceSetType() const;

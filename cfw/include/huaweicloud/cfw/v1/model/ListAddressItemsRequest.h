@@ -101,6 +101,15 @@ public:
     void unsetfwInstanceId();
     void setFwInstanceId(const std::string& value);
 
+    /// <summary>
+    /// 查询地址组类型，0表示自定义地址组，1表示预定义地址组
+    /// </summary>
+
+    int32_t getQueryAddressSetType() const;
+    bool queryAddressSetTypeIsSet() const;
+    void unsetqueryAddressSetType();
+    void setQueryAddressSetType(int32_t value);
+
 
 protected:
     std::string setId_;
@@ -117,6 +126,8 @@ protected:
     bool enterpriseProjectIdIsSet_;
     std::string fwInstanceId_;
     bool fwInstanceIdIsSet_;
+    int32_t queryAddressSetType_;
+    bool queryAddressSetTypeIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

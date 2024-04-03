@@ -9,8 +9,9 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/core/utils/Object.h>
 #include <string>
+#include <huaweicloud/eip/v3/model/BackboneBandwidthResp.h>
+#include <huaweicloud/eip/v3/model/InstanceVnicResp.h>
 #include <vector>
 #include <huaweicloud/eip/v3/model/InstancevirtualListResp.h>
 
@@ -90,37 +91,37 @@ public:
     /// 绑定实例的类型
     /// </summary>
 
-    std::string getBindingInstanceType() const;
-    bool bindingInstanceTypeIsSet() const;
-    void unsetbindingInstanceType();
-    void setBindingInstanceType(const std::string& value);
+    std::string getInstanceType() const;
+    bool instanceTypeIsSet() const;
+    void unsetinstanceType();
+    void setInstanceType(const std::string& value);
 
     /// <summary>
     /// 绑定实例的id
     /// </summary>
 
-    std::string getBindingInstanceId() const;
-    bool bindingInstanceIdIsSet() const;
-    void unsetbindingInstanceId();
-    void setBindingInstanceId(const std::string& value);
+    std::string getInstanceId() const;
+    bool instanceIdIsSet() const;
+    void unsetinstanceId();
+    void setInstanceId(const std::string& value);
 
     /// <summary>
-    /// 骨干带宽对象
+    /// 
     /// </summary>
 
-    Object getGcbandwidth() const;
+    BackboneBandwidthResp getGcbandwidth() const;
     bool gcbandwidthIsSet() const;
     void unsetgcbandwidth();
-    void setGcbandwidth(const Object& value);
+    void setGcbandwidth(const BackboneBandwidthResp& value);
 
     /// <summary>
-    /// 实例port的信息
+    /// 
     /// </summary>
 
-    Object getVnic() const;
+    InstanceVnicResp getVnic() const;
     bool vnicIsSet() const;
     void unsetvnic();
-    void setVnic(const Object& value);
+    void setVnic(const InstanceVnicResp& value);
 
     /// <summary>
     /// GEIP实例的vn信息
@@ -143,13 +144,13 @@ protected:
     bool createdAtIsSet_;
     std::string updatedAt_;
     bool updatedAtIsSet_;
-    std::string bindingInstanceType_;
-    bool bindingInstanceTypeIsSet_;
-    std::string bindingInstanceId_;
-    bool bindingInstanceIdIsSet_;
-    Object gcbandwidth_;
+    std::string instanceType_;
+    bool instanceTypeIsSet_;
+    std::string instanceId_;
+    bool instanceIdIsSet_;
+    BackboneBandwidthResp gcbandwidth_;
     bool gcbandwidthIsSet_;
-    Object vnic_;
+    InstanceVnicResp vnic_;
     bool vnicIsSet_;
     std::vector<InstancevirtualListResp> vnList_;
     bool vnListIsSet_;

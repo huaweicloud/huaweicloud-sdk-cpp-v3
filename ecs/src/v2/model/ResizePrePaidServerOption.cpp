@@ -19,6 +19,7 @@ ResizePrePaidServerOption::ResizePrePaidServerOption()
     extendparamIsSet_ = false;
     mode_ = "";
     modeIsSet_ = false;
+    cpuOptionsIsSet_ = false;
 }
 
 ResizePrePaidServerOption::~ResizePrePaidServerOption() = default;
@@ -42,6 +43,9 @@ web::json::value ResizePrePaidServerOption::toJson() const
     }
     if(modeIsSet_) {
         val[utility::conversions::to_string_t("mode")] = ModelBase::toJson(mode_);
+    }
+    if(cpuOptionsIsSet_) {
+        val[utility::conversions::to_string_t("cpu_options")] = ModelBase::toJson(cpuOptions_);
     }
 
     return val;
@@ -84,6 +88,15 @@ bool ResizePrePaidServerOption::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setMode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("cpu_options"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("cpu_options"));
+        if(!fieldValue.is_null())
+        {
+            CpuOptions refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCpuOptions(refVal);
         }
     }
     return ok;
@@ -172,6 +185,27 @@ bool ResizePrePaidServerOption::modeIsSet() const
 void ResizePrePaidServerOption::unsetmode()
 {
     modeIsSet_ = false;
+}
+
+CpuOptions ResizePrePaidServerOption::getCpuOptions() const
+{
+    return cpuOptions_;
+}
+
+void ResizePrePaidServerOption::setCpuOptions(const CpuOptions& value)
+{
+    cpuOptions_ = value;
+    cpuOptionsIsSet_ = true;
+}
+
+bool ResizePrePaidServerOption::cpuOptionsIsSet() const
+{
+    return cpuOptionsIsSet_;
+}
+
+void ResizePrePaidServerOption::unsetcpuOptions()
+{
+    cpuOptionsIsSet_ = false;
 }
 
 }

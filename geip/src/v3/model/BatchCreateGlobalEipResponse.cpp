@@ -14,7 +14,7 @@ BatchCreateGlobalEipResponse::BatchCreateGlobalEipResponse()
 {
     requestId_ = "";
     requestIdIsSet_ = false;
-    globalEipIsSet_ = false;
+    globalEipsIsSet_ = false;
     xRequestId_ = "";
     xRequestIdIsSet_ = false;
 }
@@ -32,8 +32,8 @@ web::json::value BatchCreateGlobalEipResponse::toJson() const
     if(requestIdIsSet_) {
         val[utility::conversions::to_string_t("request_id")] = ModelBase::toJson(requestId_);
     }
-    if(globalEipIsSet_) {
-        val[utility::conversions::to_string_t("global_eip")] = ModelBase::toJson(globalEip_);
+    if(globalEipsIsSet_) {
+        val[utility::conversions::to_string_t("global_eips")] = ModelBase::toJson(globalEips_);
     }
     if(xRequestIdIsSet_) {
         val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
@@ -54,13 +54,13 @@ bool BatchCreateGlobalEipResponse::fromJson(const web::json::value& val)
             setRequestId(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("global_eip"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("global_eip"));
+    if(val.has_field(utility::conversions::to_string_t("global_eips"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("global_eips"));
         if(!fieldValue.is_null())
         {
-            BatchCreateGlobalEip refVal;
+            std::vector<BatchCreateGlobalEipJob> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setGlobalEip(refVal);
+            setGlobalEips(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
@@ -97,25 +97,25 @@ void BatchCreateGlobalEipResponse::unsetrequestId()
     requestIdIsSet_ = false;
 }
 
-BatchCreateGlobalEip BatchCreateGlobalEipResponse::getGlobalEip() const
+std::vector<BatchCreateGlobalEipJob>& BatchCreateGlobalEipResponse::getGlobalEips()
 {
-    return globalEip_;
+    return globalEips_;
 }
 
-void BatchCreateGlobalEipResponse::setGlobalEip(const BatchCreateGlobalEip& value)
+void BatchCreateGlobalEipResponse::setGlobalEips(const std::vector<BatchCreateGlobalEipJob>& value)
 {
-    globalEip_ = value;
-    globalEipIsSet_ = true;
+    globalEips_ = value;
+    globalEipsIsSet_ = true;
 }
 
-bool BatchCreateGlobalEipResponse::globalEipIsSet() const
+bool BatchCreateGlobalEipResponse::globalEipsIsSet() const
 {
-    return globalEipIsSet_;
+    return globalEipsIsSet_;
 }
 
-void BatchCreateGlobalEipResponse::unsetglobalEip()
+void BatchCreateGlobalEipResponse::unsetglobalEips()
 {
-    globalEipIsSet_ = false;
+    globalEipsIsSet_ = false;
 }
 
 std::string BatchCreateGlobalEipResponse::getXRequestId() const

@@ -30,6 +30,8 @@ ListAddressSetsRequest::ListAddressSetsRequest()
     fwInstanceIdIsSet_ = false;
     queryAddressSetType_ = 0;
     queryAddressSetTypeIsSet_ = false;
+    addressSetType_ = 0;
+    addressSetTypeIsSet_ = false;
 }
 
 ListAddressSetsRequest::~ListAddressSetsRequest() = default;
@@ -68,6 +70,9 @@ web::json::value ListAddressSetsRequest::toJson() const
     }
     if(queryAddressSetTypeIsSet_) {
         val[utility::conversions::to_string_t("query_address_set_type")] = ModelBase::toJson(queryAddressSetType_);
+    }
+    if(addressSetTypeIsSet_) {
+        val[utility::conversions::to_string_t("address_set_type")] = ModelBase::toJson(addressSetType_);
     }
 
     return val;
@@ -155,6 +160,15 @@ bool ListAddressSetsRequest::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setQueryAddressSetType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("address_set_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("address_set_type"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAddressSetType(refVal);
         }
     }
     return ok;
@@ -348,6 +362,27 @@ bool ListAddressSetsRequest::queryAddressSetTypeIsSet() const
 void ListAddressSetsRequest::unsetqueryAddressSetType()
 {
     queryAddressSetTypeIsSet_ = false;
+}
+
+int32_t ListAddressSetsRequest::getAddressSetType() const
+{
+    return addressSetType_;
+}
+
+void ListAddressSetsRequest::setAddressSetType(int32_t value)
+{
+    addressSetType_ = value;
+    addressSetTypeIsSet_ = true;
+}
+
+bool ListAddressSetsRequest::addressSetTypeIsSet() const
+{
+    return addressSetTypeIsSet_;
+}
+
+void ListAddressSetsRequest::unsetaddressSetType()
+{
+    addressSetTypeIsSet_ = false;
 }
 
 }

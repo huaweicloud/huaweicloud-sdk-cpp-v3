@@ -24,6 +24,8 @@ ListServiceItemsRequest::ListServiceItemsRequest()
     enterpriseProjectIdIsSet_ = false;
     fwInstanceId_ = "";
     fwInstanceIdIsSet_ = false;
+    queryServiceSetType_ = 0;
+    queryServiceSetTypeIsSet_ = false;
 }
 
 ListServiceItemsRequest::~ListServiceItemsRequest() = default;
@@ -53,6 +55,9 @@ web::json::value ListServiceItemsRequest::toJson() const
     }
     if(fwInstanceIdIsSet_) {
         val[utility::conversions::to_string_t("fw_instance_id")] = ModelBase::toJson(fwInstanceId_);
+    }
+    if(queryServiceSetTypeIsSet_) {
+        val[utility::conversions::to_string_t("query_service_set_type")] = ModelBase::toJson(queryServiceSetType_);
     }
 
     return val;
@@ -113,6 +118,15 @@ bool ListServiceItemsRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFwInstanceId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("query_service_set_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("query_service_set_type"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setQueryServiceSetType(refVal);
         }
     }
     return ok;
@@ -243,6 +257,27 @@ bool ListServiceItemsRequest::fwInstanceIdIsSet() const
 void ListServiceItemsRequest::unsetfwInstanceId()
 {
     fwInstanceIdIsSet_ = false;
+}
+
+int32_t ListServiceItemsRequest::getQueryServiceSetType() const
+{
+    return queryServiceSetType_;
+}
+
+void ListServiceItemsRequest::setQueryServiceSetType(int32_t value)
+{
+    queryServiceSetType_ = value;
+    queryServiceSetTypeIsSet_ = true;
+}
+
+bool ListServiceItemsRequest::queryServiceSetTypeIsSet() const
+{
+    return queryServiceSetTypeIsSet_;
+}
+
+void ListServiceItemsRequest::unsetqueryServiceSetType()
+{
+    queryServiceSetTypeIsSet_ = false;
 }
 
 }

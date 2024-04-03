@@ -11,8 +11,6 @@
 
 #include <huaweicloud/geip/v3/model/CountGlobalEips.h>
 #include <string>
-#include <vector>
-#include <huaweicloud/geip/v3/model/ListGlobalEipsResponseBody_page_info.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -51,22 +49,13 @@ public:
     void setRequestId(const std::string& value);
 
     /// <summary>
-    /// 全域弹性公网IP列表
-    /// </summary>
-
-    std::vector<CountGlobalEips>& getGlobalEips();
-    bool globalEipsIsSet() const;
-    void unsetglobalEips();
-    void setGlobalEips(const std::vector<CountGlobalEips>& value);
-
-    /// <summary>
     /// 
     /// </summary>
 
-    ListGlobalEipsResponseBody_page_info getPageInfo() const;
-    bool pageInfoIsSet() const;
-    void unsetpageInfo();
-    void setPageInfo(const ListGlobalEipsResponseBody_page_info& value);
+    CountGlobalEips getGlobalEip() const;
+    bool globalEipIsSet() const;
+    void unsetglobalEip();
+    void setGlobalEip(const CountGlobalEips& value);
 
     /// <summary>
     /// 
@@ -81,10 +70,8 @@ public:
 protected:
     std::string requestId_;
     bool requestIdIsSet_;
-    std::vector<CountGlobalEips> globalEips_;
-    bool globalEipsIsSet_;
-    ListGlobalEipsResponseBody_page_info pageInfo_;
-    bool pageInfoIsSet_;
+    CountGlobalEips globalEip_;
+    bool globalEipIsSet_;
     std::string xRequestId_;
     bool xRequestIdIsSet_;
 

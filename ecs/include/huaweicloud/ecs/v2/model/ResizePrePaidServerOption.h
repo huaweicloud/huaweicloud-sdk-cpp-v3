@@ -11,6 +11,7 @@
 
 #include <huaweicloud/ecs/v2/model/ResizeServerExtendParam.h>
 #include <string>
+#include <huaweicloud/ecs/v2/model/CpuOptions.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -75,6 +76,15 @@ public:
     void unsetmode();
     void setMode(const std::string& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    CpuOptions getCpuOptions() const;
+    bool cpuOptionsIsSet() const;
+    void unsetcpuOptions();
+    void setCpuOptions(const CpuOptions& value);
+
 
 protected:
     std::string flavorRef_;
@@ -85,6 +95,8 @@ protected:
     bool extendparamIsSet_;
     std::string mode_;
     bool modeIsSet_;
+    CpuOptions cpuOptions_;
+    bool cpuOptionsIsSet_;
 
 };
 

@@ -1,3 +1,247 @@
+# 3.1.80 2024-04-03
+
+### HuaweiCloud SDK CFW
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListFlowLogs**
+    - 请求参数变更
+      - `+ src_region_name`
+      - `+ dst_region_name`
+    - 响应参数变更
+      - `+ data.records.dst_region_id`
+      - `+ data.records.dst_region_name`
+      - `+ data.records.src_region_id`
+      - `+ data.records.src_region_name`
+  - **ListAccessControlLogs**
+    - 请求参数变更
+      - `+ src_region_name`
+      - `+ dst_region_name`
+  - **ListAddressSets**
+    - 请求参数变更
+      - `+ address_set_type`
+  - **ListAttackLogs**
+    - 请求参数变更
+      - `+ attack_rule_id`
+      - `+ src_region_name`
+      - `+ dst_region_name`
+  - **UpdateAclRuleOrder**
+    - 请求参数变更
+      - `+ bottom`
+  - **ListServiceSetDetail**
+    - 请求参数变更
+      - `+ query_service_set_type`
+  - **AddAclRule**
+    - 请求参数变更
+      - `+ rules.applications`
+      - `+ rules.applicationsJsonString`
+      - `+ rules.profile`
+      - `+ rules.sequence.bottom`
+      - `+ rules.source.address_set_type`
+      - `+ rules.source.predefined_group`
+      - `- rules.source.address_group`
+      - `- rules.source.address_group_names`
+      - `* rules.source: object<RuleAddressDto> -> object<RuleAddressDtoForRequest>`
+      - `+ rules.service.protocols`
+      - `+ rules.service.predefined_group`
+      - `+ rules.service.service_set_type`
+      - `+ rules.service.service_group_names.protocols`
+      - `+ rules.service.service_group_names.service_set_type`
+  - **UpdateAclRule**
+    - 请求参数变更
+      - `+ applications`
+      - `+ applicationsJsonString`
+      - `+ profile`
+      - `+ sequence.bottom`
+      - `+ source.address_set_type`
+      - `+ source.predefined_group`
+      - `+ source.address_group_names.protocols`
+      - `+ source.address_group_names.service_set_type`
+      - `+ service.protocols`
+      - `+ service.predefined_group`
+      - `+ service.service_set_type`
+  - **ListAclRules**
+    - 请求参数变更
+      - `+ application`
+    - 响应参数变更
+      - `+ data.records.sequence.bottom`
+      - `+ data.records.source.address_set_type`
+      - `+ data.records.source.predefined_group`
+      - `+ data.records.source.address_group_names.protocols`
+      - `+ data.records.source.address_group_names.service_set_type`
+      - `+ data.records.service.protocols`
+      - `+ data.records.service.predefined_group`
+      - `+ data.records.service.service_set_type`
+  - **ListServiceItems**
+    - 请求参数变更
+      - `+ query_service_set_type`
+  - **ListAddressItems**
+    - 请求参数变更
+      - `+ query_address_set_type`
+  - **ListServiceSets**
+    - 请求参数变更
+      - `+ query_service_set_type`
+  - **ListDomainSets**
+    - 响应参数变更
+      - `+ data.records.rules`
+  - **ListFirewallDetail**
+    - 请求参数变更
+      - `+ name`
+    - 响应参数变更
+      - `+ data.records.tags`
+      - `+ data.records.flavor.default_bandwidth`
+      - `+ data.records.flavor.default_eip_count`
+      - `+ data.records.flavor.default_log_storage`
+      - `+ data.records.flavor.default_vpc_count`
+  - **ListFirewallList**
+    - 响应参数变更
+      - `+ data.records.tags`
+      - `+ data.records.flavor.default_bandwidth`
+      - `+ data.records.flavor.default_eip_count`
+      - `+ data.records.flavor.default_log_storage`
+      - `+ data.records.flavor.default_vpc_count`
+
+### HuaweiCloud SDK ECS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 移除接口`ShowServerAutoRecovery`、`RegisterServerAutoRecovery`
+  - **ResizePostPaidServer**
+    - 请求参数变更
+      - `+ resize.cpu_options`
+  - **ShowServer**
+    - 响应参数变更
+      - `+ server.cpu_options.hw:cpu_threads: enum value [1,2]`
+  - **ListServersDetails**
+    - 响应参数变更
+      - `+ servers.cpu_options.hw:cpu_threads: enum value [1,2]`
+  - **ChangeServerOsWithCloudInit**
+    - 请求参数变更
+      - `+ os-change.isAutoPay`
+  - **ChangeServerOsWithoutCloudInit**
+    - 请求参数变更
+      - `+ os-change.isAutoPay`
+  - **ResizeServer**
+    - 请求参数变更
+      - `+ resize.cpu_options`
+  - **CreateServers**
+    - 请求参数变更
+      - `+ server.cpu_options`
+  - **CreatePostPaidServers**
+    - 请求参数变更
+      - `+ server.cpu_options`
+
+### HuaweiCloud SDK EIP
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListTenantVpcIgws**
+    - 请求参数变更
+      - `+ offset`
+      - `+ marker`
+  - **ListProjectGeipBindings**
+    - 请求参数变更
+      - `+ offset`
+      - `+ marker`
+    - 响应参数变更
+      - `+ geip_bindings.instance_type`
+      - `+ geip_bindings.instance_id`
+      - `- geip_bindings.binding_instance_type`
+      - `- geip_bindings.binding_instance_id`
+      - `+ geip_bindings.gcbandwidth.id`
+      - `+ geip_bindings.gcbandwidth.admin_status`
+      - `+ geip_bindings.gcbandwidth.size`
+      - `+ geip_bindings.gcbandwidth.short_id`
+      - `+ geip_bindings.gcbandwidth.sla_level`
+      - `+ geip_bindings.gcbandwidth.dscp`
+      - `* geip_bindings.gcbandwidth: object -> object<BackboneBandwidthResp>`
+      - `+ geip_bindings.vnic.private_ip_address`
+      - `+ geip_bindings.vnic.device_id`
+      - `+ geip_bindings.vnic.device_owner`
+      - `+ geip_bindings.vnic.vpc_id`
+      - `+ geip_bindings.vnic.port_id`
+      - `+ geip_bindings.vnic.mac`
+      - `+ geip_bindings.vnic.vtep`
+      - `+ geip_bindings.vnic.vni`
+      - `+ geip_bindings.vnic.instance_id`
+      - `+ geip_bindings.vnic.instance_type`
+      - `+ geip_bindings.vnic.port_profile`
+      - `* geip_bindings.vnic: object -> object<InstanceVnicResp>`
+
+### HuaweiCloud SDK GEIP
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CountGlobalEips**
+    - 响应参数变更
+      - `+ global_eip`
+      - `- global_eips`
+      - `- page_info`
+  - **BatchCreateGlobalEip**
+    - 响应参数变更
+      - `+ global_eips`
+      - `- global_eip`
+  - **CountGlobalEipSegment**
+    - 响应参数变更
+      - `+ global_eip_segment`
+      - `- global_eip_segments`
+
+### HuaweiCloud SDK KMS
+
+- _新增特性_
+  - 支持接口`GenerateMac`、`VerifyMac`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK RDS
+
+- _新增特性_
+  - 支持接口`ShowReplayDelayStatus`、`SwitchLogReplay`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK VPC
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListSubNetworkInterfaces**
+    - 响应参数变更
+      - `+ sub_network_interfaces.security_enabled`
+  - **CreateSubNetworkInterface**
+    - 响应参数变更
+      - `+ sub_network_interface.security_enabled`
+  - **BatchCreateSubNetworkInterface**
+    - 响应参数变更
+      - `+ sub_network_interfaces.security_enabled`
+  - **ShowSubNetworkInterface**
+    - 响应参数变更
+      - `+ sub_network_interface.security_enabled`
+  - **UpdateSubNetworkInterface**
+    - 响应参数变更
+      - `+ sub_network_interface.security_enabled`
+  - **MigrateSubNetworkInterface**
+    - 响应参数变更
+      - `+ sub_network_interfaces.security_enabled`
+
 # 3.1.79 2024-03-28
 
 ### HuaweiCloud SDK CBR

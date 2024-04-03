@@ -23,6 +23,9 @@ UpdateRuleAclDto::UpdateRuleAclDto()
     actionTypeIsSet_ = false;
     status_ = 0;
     statusIsSet_ = false;
+    applicationsIsSet_ = false;
+    applicationsJsonString_ = "";
+    applicationsJsonStringIsSet_ = false;
     description_ = "";
     descriptionIsSet_ = false;
     longConnectTimeHour_ = 0L;
@@ -35,6 +38,7 @@ UpdateRuleAclDto::UpdateRuleAclDto()
     longConnectTimeIsSet_ = false;
     longConnectEnable_ = 0;
     longConnectEnableIsSet_ = false;
+    profileIsSet_ = false;
     sourceIsSet_ = false;
     destinationIsSet_ = false;
     serviceIsSet_ = false;
@@ -71,6 +75,12 @@ web::json::value UpdateRuleAclDto::toJson() const
     if(statusIsSet_) {
         val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
     }
+    if(applicationsIsSet_) {
+        val[utility::conversions::to_string_t("applications")] = ModelBase::toJson(applications_);
+    }
+    if(applicationsJsonStringIsSet_) {
+        val[utility::conversions::to_string_t("applicationsJsonString")] = ModelBase::toJson(applicationsJsonString_);
+    }
     if(descriptionIsSet_) {
         val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
     }
@@ -88,6 +98,9 @@ web::json::value UpdateRuleAclDto::toJson() const
     }
     if(longConnectEnableIsSet_) {
         val[utility::conversions::to_string_t("long_connect_enable")] = ModelBase::toJson(longConnectEnable_);
+    }
+    if(profileIsSet_) {
+        val[utility::conversions::to_string_t("profile")] = ModelBase::toJson(profile_);
     }
     if(sourceIsSet_) {
         val[utility::conversions::to_string_t("source")] = ModelBase::toJson(source_);
@@ -165,6 +178,24 @@ bool UpdateRuleAclDto::fromJson(const web::json::value& val)
             setStatus(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("applications"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("applications"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setApplications(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("applicationsJsonString"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("applicationsJsonString"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setApplicationsJsonString(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("description"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("description"));
         if(!fieldValue.is_null())
@@ -217,6 +248,15 @@ bool UpdateRuleAclDto::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLongConnectEnable(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("profile"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("profile"));
+        if(!fieldValue.is_null())
+        {
+            RuleProfileDto refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProfile(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("source"))) {
@@ -394,6 +434,48 @@ void UpdateRuleAclDto::unsetstatus()
     statusIsSet_ = false;
 }
 
+std::vector<std::string>& UpdateRuleAclDto::getApplications()
+{
+    return applications_;
+}
+
+void UpdateRuleAclDto::setApplications(const std::vector<std::string>& value)
+{
+    applications_ = value;
+    applicationsIsSet_ = true;
+}
+
+bool UpdateRuleAclDto::applicationsIsSet() const
+{
+    return applicationsIsSet_;
+}
+
+void UpdateRuleAclDto::unsetapplications()
+{
+    applicationsIsSet_ = false;
+}
+
+std::string UpdateRuleAclDto::getApplicationsJsonString() const
+{
+    return applicationsJsonString_;
+}
+
+void UpdateRuleAclDto::setApplicationsJsonString(const std::string& value)
+{
+    applicationsJsonString_ = value;
+    applicationsJsonStringIsSet_ = true;
+}
+
+bool UpdateRuleAclDto::applicationsJsonStringIsSet() const
+{
+    return applicationsJsonStringIsSet_;
+}
+
+void UpdateRuleAclDto::unsetapplicationsJsonString()
+{
+    applicationsJsonStringIsSet_ = false;
+}
+
 std::string UpdateRuleAclDto::getDescription() const
 {
     return description_;
@@ -518,6 +600,27 @@ bool UpdateRuleAclDto::longConnectEnableIsSet() const
 void UpdateRuleAclDto::unsetlongConnectEnable()
 {
     longConnectEnableIsSet_ = false;
+}
+
+RuleProfileDto UpdateRuleAclDto::getProfile() const
+{
+    return profile_;
+}
+
+void UpdateRuleAclDto::setProfile(const RuleProfileDto& value)
+{
+    profile_ = value;
+    profileIsSet_ = true;
+}
+
+bool UpdateRuleAclDto::profileIsSet() const
+{
+    return profileIsSet_;
+}
+
+void UpdateRuleAclDto::unsetprofile()
+{
+    profileIsSet_ = false;
 }
 
 RuleAddressDto UpdateRuleAclDto::getSource() const

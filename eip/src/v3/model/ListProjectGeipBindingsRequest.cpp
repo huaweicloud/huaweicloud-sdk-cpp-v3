@@ -58,6 +58,10 @@ ListProjectGeipBindingsRequest::ListProjectGeipBindingsRequest()
     sortDirIsSet_ = false;
     limit_ = 0;
     limitIsSet_ = false;
+    offset_ = 0;
+    offsetIsSet_ = false;
+    marker_ = "";
+    markerIsSet_ = false;
 }
 
 ListProjectGeipBindingsRequest::~ListProjectGeipBindingsRequest() = default;
@@ -138,6 +142,12 @@ web::json::value ListProjectGeipBindingsRequest::toJson() const
     }
     if(limitIsSet_) {
         val[utility::conversions::to_string_t("limit")] = ModelBase::toJson(limit_);
+    }
+    if(offsetIsSet_) {
+        val[utility::conversions::to_string_t("offset")] = ModelBase::toJson(offset_);
+    }
+    if(markerIsSet_) {
+        val[utility::conversions::to_string_t("marker")] = ModelBase::toJson(marker_);
     }
 
     return val;
@@ -351,6 +361,24 @@ bool ListProjectGeipBindingsRequest::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLimit(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("offset"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("offset"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setOffset(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("marker"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("marker"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMarker(refVal);
         }
     }
     return ok;
@@ -838,6 +866,48 @@ bool ListProjectGeipBindingsRequest::limitIsSet() const
 void ListProjectGeipBindingsRequest::unsetlimit()
 {
     limitIsSet_ = false;
+}
+
+int32_t ListProjectGeipBindingsRequest::getOffset() const
+{
+    return offset_;
+}
+
+void ListProjectGeipBindingsRequest::setOffset(int32_t value)
+{
+    offset_ = value;
+    offsetIsSet_ = true;
+}
+
+bool ListProjectGeipBindingsRequest::offsetIsSet() const
+{
+    return offsetIsSet_;
+}
+
+void ListProjectGeipBindingsRequest::unsetoffset()
+{
+    offsetIsSet_ = false;
+}
+
+std::string ListProjectGeipBindingsRequest::getMarker() const
+{
+    return marker_;
+}
+
+void ListProjectGeipBindingsRequest::setMarker(const std::string& value)
+{
+    marker_ = value;
+    markerIsSet_ = true;
+}
+
+bool ListProjectGeipBindingsRequest::markerIsSet() const
+{
+    return markerIsSet_;
+}
+
+void ListProjectGeipBindingsRequest::unsetmarker()
+{
+    markerIsSet_ = false;
 }
 
 }

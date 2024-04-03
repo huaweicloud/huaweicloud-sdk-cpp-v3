@@ -557,6 +557,12 @@ std::shared_ptr<ListProjectGeipBindingsResponse> EipClient::listProjectGeipBindi
     if (request.limitIsSet()) {
         localVarQueryParams["limit"] = parameterToString(request.getLimit());
     }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.markerIsSet()) {
+        localVarQueryParams["marker"] = parameterToString(request.getMarker());
+    }
 
     std::string localVarHttpBody;
 
@@ -680,6 +686,12 @@ std::shared_ptr<ListTenantVpcIgwsResponse> EipClient::listTenantVpcIgws(ListTena
     }
     if (request.limitIsSet()) {
         localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.markerIsSet()) {
+        localVarQueryParams["marker"] = parameterToString(request.getMarker());
     }
 
     std::string localVarHttpBody;

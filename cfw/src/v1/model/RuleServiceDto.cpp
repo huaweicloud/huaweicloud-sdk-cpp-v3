@@ -16,6 +16,7 @@ RuleServiceDto::RuleServiceDto()
     typeIsSet_ = false;
     protocol_ = 0;
     protocolIsSet_ = false;
+    protocolsIsSet_ = false;
     sourcePort_ = "";
     sourcePortIsSet_ = false;
     destPort_ = "";
@@ -25,8 +26,11 @@ RuleServiceDto::RuleServiceDto()
     serviceSetName_ = "";
     serviceSetNameIsSet_ = false;
     customServiceIsSet_ = false;
+    predefinedGroupIsSet_ = false;
     serviceGroupIsSet_ = false;
     serviceGroupNamesIsSet_ = false;
+    serviceSetType_ = 0;
+    serviceSetTypeIsSet_ = false;
 }
 
 RuleServiceDto::~RuleServiceDto() = default;
@@ -45,6 +49,9 @@ web::json::value RuleServiceDto::toJson() const
     if(protocolIsSet_) {
         val[utility::conversions::to_string_t("protocol")] = ModelBase::toJson(protocol_);
     }
+    if(protocolsIsSet_) {
+        val[utility::conversions::to_string_t("protocols")] = ModelBase::toJson(protocols_);
+    }
     if(sourcePortIsSet_) {
         val[utility::conversions::to_string_t("source_port")] = ModelBase::toJson(sourcePort_);
     }
@@ -60,11 +67,17 @@ web::json::value RuleServiceDto::toJson() const
     if(customServiceIsSet_) {
         val[utility::conversions::to_string_t("custom_service")] = ModelBase::toJson(customService_);
     }
+    if(predefinedGroupIsSet_) {
+        val[utility::conversions::to_string_t("predefined_group")] = ModelBase::toJson(predefinedGroup_);
+    }
     if(serviceGroupIsSet_) {
         val[utility::conversions::to_string_t("service_group")] = ModelBase::toJson(serviceGroup_);
     }
     if(serviceGroupNamesIsSet_) {
         val[utility::conversions::to_string_t("service_group_names")] = ModelBase::toJson(serviceGroupNames_);
+    }
+    if(serviceSetTypeIsSet_) {
+        val[utility::conversions::to_string_t("service_set_type")] = ModelBase::toJson(serviceSetType_);
     }
 
     return val;
@@ -89,6 +102,15 @@ bool RuleServiceDto::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setProtocol(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("protocols"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("protocols"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<int32_t> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProtocols(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("source_port"))) {
@@ -136,6 +158,15 @@ bool RuleServiceDto::fromJson(const web::json::value& val)
             setCustomService(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("predefined_group"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("predefined_group"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPredefinedGroup(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("service_group"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("service_group"));
         if(!fieldValue.is_null())
@@ -152,6 +183,15 @@ bool RuleServiceDto::fromJson(const web::json::value& val)
             std::vector<AddressGroupVO> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setServiceGroupNames(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("service_set_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("service_set_type"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setServiceSetType(refVal);
         }
     }
     return ok;
@@ -198,6 +238,27 @@ bool RuleServiceDto::protocolIsSet() const
 void RuleServiceDto::unsetprotocol()
 {
     protocolIsSet_ = false;
+}
+
+std::vector<int32_t>& RuleServiceDto::getProtocols()
+{
+    return protocols_;
+}
+
+void RuleServiceDto::setProtocols(std::vector<int32_t> value)
+{
+    protocols_ = value;
+    protocolsIsSet_ = true;
+}
+
+bool RuleServiceDto::protocolsIsSet() const
+{
+    return protocolsIsSet_;
+}
+
+void RuleServiceDto::unsetprotocols()
+{
+    protocolsIsSet_ = false;
 }
 
 std::string RuleServiceDto::getSourcePort() const
@@ -305,6 +366,27 @@ void RuleServiceDto::unsetcustomService()
     customServiceIsSet_ = false;
 }
 
+std::vector<std::string>& RuleServiceDto::getPredefinedGroup()
+{
+    return predefinedGroup_;
+}
+
+void RuleServiceDto::setPredefinedGroup(const std::vector<std::string>& value)
+{
+    predefinedGroup_ = value;
+    predefinedGroupIsSet_ = true;
+}
+
+bool RuleServiceDto::predefinedGroupIsSet() const
+{
+    return predefinedGroupIsSet_;
+}
+
+void RuleServiceDto::unsetpredefinedGroup()
+{
+    predefinedGroupIsSet_ = false;
+}
+
 std::vector<std::string>& RuleServiceDto::getServiceGroup()
 {
     return serviceGroup_;
@@ -345,6 +427,27 @@ bool RuleServiceDto::serviceGroupNamesIsSet() const
 void RuleServiceDto::unsetserviceGroupNames()
 {
     serviceGroupNamesIsSet_ = false;
+}
+
+int32_t RuleServiceDto::getServiceSetType() const
+{
+    return serviceSetType_;
+}
+
+void RuleServiceDto::setServiceSetType(int32_t value)
+{
+    serviceSetType_ = value;
+    serviceSetTypeIsSet_ = true;
+}
+
+bool RuleServiceDto::serviceSetTypeIsSet() const
+{
+    return serviceSetTypeIsSet_;
+}
+
+void RuleServiceDto::unsetserviceSetType()
+{
+    serviceSetTypeIsSet_ = false;
 }
 
 }

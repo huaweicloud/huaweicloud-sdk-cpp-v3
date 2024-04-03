@@ -26,6 +26,8 @@ ListAddressItemsRequest::ListAddressItemsRequest()
     enterpriseProjectIdIsSet_ = false;
     fwInstanceId_ = "";
     fwInstanceIdIsSet_ = false;
+    queryAddressSetType_ = 0;
+    queryAddressSetTypeIsSet_ = false;
 }
 
 ListAddressItemsRequest::~ListAddressItemsRequest() = default;
@@ -58,6 +60,9 @@ web::json::value ListAddressItemsRequest::toJson() const
     }
     if(fwInstanceIdIsSet_) {
         val[utility::conversions::to_string_t("fw_instance_id")] = ModelBase::toJson(fwInstanceId_);
+    }
+    if(queryAddressSetTypeIsSet_) {
+        val[utility::conversions::to_string_t("query_address_set_type")] = ModelBase::toJson(queryAddressSetType_);
     }
 
     return val;
@@ -127,6 +132,15 @@ bool ListAddressItemsRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFwInstanceId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("query_address_set_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("query_address_set_type"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setQueryAddressSetType(refVal);
         }
     }
     return ok;
@@ -278,6 +292,27 @@ bool ListAddressItemsRequest::fwInstanceIdIsSet() const
 void ListAddressItemsRequest::unsetfwInstanceId()
 {
     fwInstanceIdIsSet_ = false;
+}
+
+int32_t ListAddressItemsRequest::getQueryAddressSetType() const
+{
+    return queryAddressSetType_;
+}
+
+void ListAddressItemsRequest::setQueryAddressSetType(int32_t value)
+{
+    queryAddressSetType_ = value;
+    queryAddressSetTypeIsSet_ = true;
+}
+
+bool ListAddressItemsRequest::queryAddressSetTypeIsSet() const
+{
+    return queryAddressSetTypeIsSet_;
+}
+
+void ListAddressItemsRequest::unsetqueryAddressSetType()
+{
+    queryAddressSetTypeIsSet_ = false;
 }
 
 }

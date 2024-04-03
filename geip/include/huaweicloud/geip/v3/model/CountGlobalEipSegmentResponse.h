@@ -52,10 +52,10 @@ public:
     /// 
     /// </summary>
 
-    CountGeipSegments getGlobalEipSegments() const;
-    bool globalEipSegmentsIsSet() const;
-    void unsetglobalEipSegments();
-    void setGlobalEipSegments(const CountGeipSegments& value);
+    CountGeipSegments getGlobalEipSegment() const;
+    bool globalEipSegmentIsSet() const;
+    void unsetglobalEipSegment();
+    void setGlobalEipSegment(const CountGeipSegments& value);
 
     /// <summary>
     /// 
@@ -70,8 +70,8 @@ public:
 protected:
     std::string requestId_;
     bool requestIdIsSet_;
-    CountGeipSegments globalEipSegments_;
-    bool globalEipSegmentsIsSet_;
+    CountGeipSegments globalEipSegment_;
+    bool globalEipSegmentIsSet_;
     std::string xRequestId_;
     bool xRequestIdIsSet_;
 

@@ -101,6 +101,24 @@ public:
     void unsetlimit();
     void setLimit(int32_t value);
 
+    /// <summary>
+    /// 分页起始点
+    /// </summary>
+
+    int32_t getOffset() const;
+    bool offsetIsSet() const;
+    void unsetoffset();
+    void setOffset(int32_t value);
+
+    /// <summary>
+    /// 分页起始点
+    /// </summary>
+
+    std::string getMarker() const;
+    bool markerIsSet() const;
+    void unsetmarker();
+    void setMarker(const std::string& value);
+
 
 protected:
     std::string fields_;
@@ -117,6 +135,10 @@ protected:
     bool sortDirIsSet_;
     int32_t limit_;
     bool limitIsSet_;
+    int32_t offset_;
+    bool offsetIsSet_;
+    std::string marker_;
+    bool markerIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

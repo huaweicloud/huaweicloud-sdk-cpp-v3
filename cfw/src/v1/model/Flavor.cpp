@@ -32,6 +32,14 @@ Flavor::Flavor()
     usedRuleCountIsSet_ = false;
     vpcBandwith_ = 0;
     vpcBandwithIsSet_ = false;
+    defaultBandwidth_ = 0;
+    defaultBandwidthIsSet_ = false;
+    defaultEipCount_ = 0;
+    defaultEipCountIsSet_ = false;
+    defaultLogStorage_ = 0;
+    defaultLogStorageIsSet_ = false;
+    defaultVpcCount_ = 0;
+    defaultVpcCountIsSet_ = false;
 }
 
 Flavor::~Flavor() = default;
@@ -73,6 +81,18 @@ web::json::value Flavor::toJson() const
     }
     if(vpcBandwithIsSet_) {
         val[utility::conversions::to_string_t("vpc_bandwith")] = ModelBase::toJson(vpcBandwith_);
+    }
+    if(defaultBandwidthIsSet_) {
+        val[utility::conversions::to_string_t("default_bandwidth")] = ModelBase::toJson(defaultBandwidth_);
+    }
+    if(defaultEipCountIsSet_) {
+        val[utility::conversions::to_string_t("default_eip_count")] = ModelBase::toJson(defaultEipCount_);
+    }
+    if(defaultLogStorageIsSet_) {
+        val[utility::conversions::to_string_t("default_log_storage")] = ModelBase::toJson(defaultLogStorage_);
+    }
+    if(defaultVpcCountIsSet_) {
+        val[utility::conversions::to_string_t("default_vpc_count")] = ModelBase::toJson(defaultVpcCount_);
     }
 
     return val;
@@ -169,6 +189,42 @@ bool Flavor::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setVpcBandwith(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("default_bandwidth"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("default_bandwidth"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDefaultBandwidth(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("default_eip_count"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("default_eip_count"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDefaultEipCount(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("default_log_storage"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("default_log_storage"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDefaultLogStorage(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("default_vpc_count"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("default_vpc_count"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDefaultVpcCount(refVal);
         }
     }
     return ok;
@@ -383,6 +439,90 @@ bool Flavor::vpcBandwithIsSet() const
 void Flavor::unsetvpcBandwith()
 {
     vpcBandwithIsSet_ = false;
+}
+
+int32_t Flavor::getDefaultBandwidth() const
+{
+    return defaultBandwidth_;
+}
+
+void Flavor::setDefaultBandwidth(int32_t value)
+{
+    defaultBandwidth_ = value;
+    defaultBandwidthIsSet_ = true;
+}
+
+bool Flavor::defaultBandwidthIsSet() const
+{
+    return defaultBandwidthIsSet_;
+}
+
+void Flavor::unsetdefaultBandwidth()
+{
+    defaultBandwidthIsSet_ = false;
+}
+
+int32_t Flavor::getDefaultEipCount() const
+{
+    return defaultEipCount_;
+}
+
+void Flavor::setDefaultEipCount(int32_t value)
+{
+    defaultEipCount_ = value;
+    defaultEipCountIsSet_ = true;
+}
+
+bool Flavor::defaultEipCountIsSet() const
+{
+    return defaultEipCountIsSet_;
+}
+
+void Flavor::unsetdefaultEipCount()
+{
+    defaultEipCountIsSet_ = false;
+}
+
+int32_t Flavor::getDefaultLogStorage() const
+{
+    return defaultLogStorage_;
+}
+
+void Flavor::setDefaultLogStorage(int32_t value)
+{
+    defaultLogStorage_ = value;
+    defaultLogStorageIsSet_ = true;
+}
+
+bool Flavor::defaultLogStorageIsSet() const
+{
+    return defaultLogStorageIsSet_;
+}
+
+void Flavor::unsetdefaultLogStorage()
+{
+    defaultLogStorageIsSet_ = false;
+}
+
+int32_t Flavor::getDefaultVpcCount() const
+{
+    return defaultVpcCount_;
+}
+
+void Flavor::setDefaultVpcCount(int32_t value)
+{
+    defaultVpcCount_ = value;
+    defaultVpcCountIsSet_ = true;
+}
+
+bool Flavor::defaultVpcCountIsSet() const
+{
+    return defaultVpcCountIsSet_;
+}
+
+void Flavor::unsetdefaultVpcCount()
+{
+    defaultVpcCountIsSet_ = false;
 }
 
 }

@@ -56,12 +56,23 @@ public:
     void unsettop();
     void setTop(int32_t value);
 
+    /// <summary>
+    /// 是否置底，0代表非置底，1代表置底
+    /// </summary>
+
+    int32_t getBottom() const;
+    bool bottomIsSet() const;
+    void unsetbottom();
+    void setBottom(int32_t value);
+
 
 protected:
     std::string destRuleId_;
     bool destRuleIdIsSet_;
     int32_t top_;
     bool topIsSet_;
+    int32_t bottom_;
+    bool bottomIsSet_;
 
 };
 

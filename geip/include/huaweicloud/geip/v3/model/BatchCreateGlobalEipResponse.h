@@ -9,8 +9,9 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/geip/v3/model/BatchCreateGlobalEipJob.h>
 #include <string>
-#include <huaweicloud/geip/v3/model/BatchCreateGlobalEip.h>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -49,13 +50,13 @@ public:
     void setRequestId(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 响应对象
     /// </summary>
 
-    BatchCreateGlobalEip getGlobalEip() const;
-    bool globalEipIsSet() const;
-    void unsetglobalEip();
-    void setGlobalEip(const BatchCreateGlobalEip& value);
+    std::vector<BatchCreateGlobalEipJob>& getGlobalEips();
+    bool globalEipsIsSet() const;
+    void unsetglobalEips();
+    void setGlobalEips(const std::vector<BatchCreateGlobalEipJob>& value);
 
     /// <summary>
     /// 
@@ -70,8 +71,8 @@ public:
 protected:
     std::string requestId_;
     bool requestIdIsSet_;
-    BatchCreateGlobalEip globalEip_;
-    bool globalEipIsSet_;
+    std::vector<BatchCreateGlobalEipJob> globalEips_;
+    bool globalEipsIsSet_;
     std::string xRequestId_;
     bool xRequestIdIsSet_;
 

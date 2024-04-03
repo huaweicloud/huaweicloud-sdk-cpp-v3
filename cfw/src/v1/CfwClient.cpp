@@ -1008,6 +1008,12 @@ std::shared_ptr<ListAccessControlLogsResponse> CfwClient::listAccessControlLogs(
     if (request.actionIsSet()) {
         localVarQueryParams["action"] = parameterToString(request.getAction());
     }
+    if (request.srcRegionNameIsSet()) {
+        localVarQueryParams["src_region_name"] = parameterToString(request.getSrcRegionName());
+    }
+    if (request.dstRegionNameIsSet()) {
+        localVarQueryParams["dst_region_name"] = parameterToString(request.getDstRegionName());
+    }
 
     std::string localVarHttpBody;
 
@@ -1057,6 +1063,9 @@ std::shared_ptr<ListAddressItemsResponse> CfwClient::listAddressItems(ListAddres
     }
     if (request.fwInstanceIdIsSet()) {
         localVarQueryParams["fw_instance_id"] = parameterToString(request.getFwInstanceId());
+    }
+    if (request.queryAddressSetTypeIsSet()) {
+        localVarQueryParams["query_address_set_type"] = parameterToString(request.getQueryAddressSetType());
     }
 
     std::string localVarHttpBody;
@@ -1153,6 +1162,9 @@ std::shared_ptr<ListAddressSetsResponse> CfwClient::listAddressSets(ListAddressS
     if (request.queryAddressSetTypeIsSet()) {
         localVarQueryParams["query_address_set_type"] = parameterToString(request.getQueryAddressSetType());
     }
+    if (request.addressSetTypeIsSet()) {
+        localVarQueryParams["address_set_type"] = parameterToString(request.getAddressSetType());
+    }
 
     std::string localVarHttpBody;
 
@@ -1247,6 +1259,15 @@ std::shared_ptr<ListAttackLogsResponse> CfwClient::listAttackLogs(ListAttackLogs
     }
     if (request.logTypeIsSet()) {
         localVarQueryParams["log_type"] = parameterToString(request.getLogType());
+    }
+    if (request.attackRuleIdIsSet()) {
+        localVarQueryParams["attack_rule_id"] = parameterToString(request.getAttackRuleId());
+    }
+    if (request.srcRegionNameIsSet()) {
+        localVarQueryParams["src_region_name"] = parameterToString(request.getSrcRegionName());
+    }
+    if (request.dstRegionNameIsSet()) {
+        localVarQueryParams["dst_region_name"] = parameterToString(request.getDstRegionName());
     }
 
     std::string localVarHttpBody;
@@ -1576,6 +1597,9 @@ std::shared_ptr<ListFirewallDetailResponse> CfwClient::listFirewallDetail(ListFi
     if (request.fwInstanceIdIsSet()) {
         localVarQueryParams["fw_instance_id"] = parameterToString(request.getFwInstanceId());
     }
+    if (request.nameIsSet()) {
+        localVarQueryParams["name"] = parameterToString(request.getName());
+    }
 
     std::string localVarHttpBody;
 
@@ -1699,6 +1723,12 @@ std::shared_ptr<ListFlowLogsResponse> CfwClient::listFlowLogs(ListFlowLogsReques
     }
     if (request.dstHostIsSet()) {
         localVarQueryParams["dst_host"] = parameterToString(request.getDstHost());
+    }
+    if (request.srcRegionNameIsSet()) {
+        localVarQueryParams["src_region_name"] = parameterToString(request.getSrcRegionName());
+    }
+    if (request.dstRegionNameIsSet()) {
+        localVarQueryParams["dst_region_name"] = parameterToString(request.getDstRegionName());
     }
 
     std::string localVarHttpBody;
@@ -1850,6 +1880,9 @@ std::shared_ptr<ListServiceItemsResponse> CfwClient::listServiceItems(ListServic
     if (request.fwInstanceIdIsSet()) {
         localVarQueryParams["fw_instance_id"] = parameterToString(request.getFwInstanceId());
     }
+    if (request.queryServiceSetTypeIsSet()) {
+        localVarQueryParams["query_service_set_type"] = parameterToString(request.getQueryServiceSetType());
+    }
 
     std::string localVarHttpBody;
 
@@ -1885,6 +1918,9 @@ std::shared_ptr<ListServiceSetDetailResponse> CfwClient::listServiceSetDetail(Li
     }
     if (request.fwInstanceIdIsSet()) {
         localVarQueryParams["fw_instance_id"] = parameterToString(request.getFwInstanceId());
+    }
+    if (request.queryServiceSetTypeIsSet()) {
+        localVarQueryParams["query_service_set_type"] = parameterToString(request.getQueryServiceSetType());
     }
 
     std::string localVarHttpBody;
@@ -1932,6 +1968,9 @@ std::shared_ptr<ListServiceSetsResponse> CfwClient::listServiceSets(ListServiceS
     }
     if (request.fwInstanceIdIsSet()) {
         localVarQueryParams["fw_instance_id"] = parameterToString(request.getFwInstanceId());
+    }
+    if (request.queryServiceSetTypeIsSet()) {
+        localVarQueryParams["query_service_set_type"] = parameterToString(request.getQueryServiceSetType());
     }
 
     std::string localVarHttpBody;
@@ -2566,6 +2605,9 @@ std::shared_ptr<ListAclRulesResponse> CfwClient::listAclRules(ListAclRulesReques
     }
     if (request.serviceIsSet()) {
         localVarQueryParams["service"] = parameterToString(request.getService());
+    }
+    if (request.applicationIsSet()) {
+        localVarQueryParams["application"] = parameterToString(request.getApplication());
     }
 
     std::string localVarHttpBody;

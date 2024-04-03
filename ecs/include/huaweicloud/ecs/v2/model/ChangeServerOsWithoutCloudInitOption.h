@@ -93,6 +93,15 @@ public:
     void unsetmetadata();
     void setMetadata(const ChangeSeversOsMetadataWithoutCloudInitOption& value);
 
+    /// <summary>
+    /// 下单订购后，是否自动从客户的账户中支付，而不需要客户手动去进行支付。
+    /// </summary>
+
+    std::string getIsAutoPay() const;
+    bool isAutoPayIsSet() const;
+    void unsetisAutoPay();
+    void setIsAutoPay(const std::string& value);
+
 
 protected:
     std::string adminpass_;
@@ -107,6 +116,8 @@ protected:
     bool modeIsSet_;
     ChangeSeversOsMetadataWithoutCloudInitOption metadata_;
     bool metadataIsSet_;
+    std::string isAutoPay_;
+    bool isAutoPayIsSet_;
 
 };
 

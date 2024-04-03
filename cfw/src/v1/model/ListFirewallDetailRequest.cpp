@@ -22,6 +22,8 @@ ListFirewallDetailRequest::ListFirewallDetailRequest()
     enterpriseProjectIdIsSet_ = false;
     fwInstanceId_ = "";
     fwInstanceIdIsSet_ = false;
+    name_ = "";
+    nameIsSet_ = false;
 }
 
 ListFirewallDetailRequest::~ListFirewallDetailRequest() = default;
@@ -48,6 +50,9 @@ web::json::value ListFirewallDetailRequest::toJson() const
     }
     if(fwInstanceIdIsSet_) {
         val[utility::conversions::to_string_t("fw_instance_id")] = ModelBase::toJson(fwInstanceId_);
+    }
+    if(nameIsSet_) {
+        val[utility::conversions::to_string_t("name")] = ModelBase::toJson(name_);
     }
 
     return val;
@@ -99,6 +104,15 @@ bool ListFirewallDetailRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFwInstanceId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setName(refVal);
         }
     }
     return ok;
@@ -208,6 +222,27 @@ bool ListFirewallDetailRequest::fwInstanceIdIsSet() const
 void ListFirewallDetailRequest::unsetfwInstanceId()
 {
     fwInstanceIdIsSet_ = false;
+}
+
+std::string ListFirewallDetailRequest::getName() const
+{
+    return name_;
+}
+
+void ListFirewallDetailRequest::setName(const std::string& value)
+{
+    name_ = value;
+    nameIsSet_ = true;
+}
+
+bool ListFirewallDetailRequest::nameIsSet() const
+{
+    return nameIsSet_;
+}
+
+void ListFirewallDetailRequest::unsetname()
+{
+    nameIsSet_ = false;
 }
 
 }

@@ -75,7 +75,7 @@ public:
     void setType(const std::string& value);
 
     /// <summary>
-    /// 运行时间，单位为 ms。
+    /// 运行时间，单位为 us。
     /// </summary>
 
     std::string getCostTime() const;

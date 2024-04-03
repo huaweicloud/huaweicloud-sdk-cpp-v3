@@ -9,11 +9,13 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/cfw/v1/model/RuleAddressDto.h>
 #include <huaweicloud/cfw/v1/model/TagsVO.h>
 #include <string>
 #include <huaweicloud/cfw/v1/model/RuleServiceDto.h>
+#include <huaweicloud/cfw/v1/model/RuleAddressDtoForRequest.h>
 #include <huaweicloud/cfw/v1/model/OrderRuleAclDto.h>
+#include <vector>
+#include <huaweicloud/cfw/v1/model/RuleProfileDto.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -88,6 +90,24 @@ public:
     void setStatus(int32_t value);
 
     /// <summary>
+    /// 应用列表
+    /// </summary>
+
+    std::vector<std::string>& getApplications();
+    bool applicationsIsSet() const;
+    void unsetapplications();
+    void setApplications(const std::vector<std::string>& value);
+
+    /// <summary>
+    /// 应用列表转化json字符串
+    /// </summary>
+
+    std::string getApplicationsJsonString() const;
+    bool applicationsJsonStringIsSet() const;
+    void unsetapplicationsJsonString();
+    void setApplicationsJsonString(const std::string& value);
+
+    /// <summary>
     /// 长连接时长
     /// </summary>
 
@@ -154,19 +174,28 @@ public:
     /// 
     /// </summary>
 
-    RuleAddressDto getSource() const;
-    bool sourceIsSet() const;
-    void unsetsource();
-    void setSource(const RuleAddressDto& value);
+    RuleProfileDto getProfile() const;
+    bool profileIsSet() const;
+    void unsetprofile();
+    void setProfile(const RuleProfileDto& value);
 
     /// <summary>
     /// 
     /// </summary>
 
-    RuleAddressDto getDestination() const;
+    RuleAddressDtoForRequest getSource() const;
+    bool sourceIsSet() const;
+    void unsetsource();
+    void setSource(const RuleAddressDtoForRequest& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    RuleAddressDtoForRequest getDestination() const;
     bool destinationIsSet() const;
     void unsetdestination();
-    void setDestination(const RuleAddressDto& value);
+    void setDestination(const RuleAddressDtoForRequest& value);
 
     /// <summary>
     /// 
@@ -198,6 +227,10 @@ protected:
     bool actionTypeIsSet_;
     int32_t status_;
     bool statusIsSet_;
+    std::vector<std::string> applications_;
+    bool applicationsIsSet_;
+    std::string applicationsJsonString_;
+    bool applicationsJsonStringIsSet_;
     int64_t longConnectTime_;
     bool longConnectTimeIsSet_;
     int64_t longConnectTimeHour_;
@@ -212,9 +245,11 @@ protected:
     bool descriptionIsSet_;
     int32_t direction_;
     bool directionIsSet_;
-    RuleAddressDto source_;
+    RuleProfileDto profile_;
+    bool profileIsSet_;
+    RuleAddressDtoForRequest source_;
     bool sourceIsSet_;
-    RuleAddressDto destination_;
+    RuleAddressDtoForRequest destination_;
     bool destinationIsSet_;
     RuleServiceDto service_;
     bool serviceIsSet_;

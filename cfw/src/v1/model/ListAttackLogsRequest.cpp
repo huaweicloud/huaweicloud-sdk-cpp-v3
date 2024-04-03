@@ -56,6 +56,12 @@ ListAttackLogsRequest::ListAttackLogsRequest()
     dstHostIsSet_ = false;
     logType_ = "";
     logTypeIsSet_ = false;
+    attackRuleId_ = "";
+    attackRuleIdIsSet_ = false;
+    srcRegionName_ = "";
+    srcRegionNameIsSet_ = false;
+    dstRegionName_ = "";
+    dstRegionNameIsSet_ = false;
 }
 
 ListAttackLogsRequest::~ListAttackLogsRequest() = default;
@@ -133,6 +139,15 @@ web::json::value ListAttackLogsRequest::toJson() const
     }
     if(logTypeIsSet_) {
         val[utility::conversions::to_string_t("log_type")] = ModelBase::toJson(logType_);
+    }
+    if(attackRuleIdIsSet_) {
+        val[utility::conversions::to_string_t("attack_rule_id")] = ModelBase::toJson(attackRuleId_);
+    }
+    if(srcRegionNameIsSet_) {
+        val[utility::conversions::to_string_t("src_region_name")] = ModelBase::toJson(srcRegionName_);
+    }
+    if(dstRegionNameIsSet_) {
+        val[utility::conversions::to_string_t("dst_region_name")] = ModelBase::toJson(dstRegionName_);
     }
 
     return val;
@@ -337,6 +352,33 @@ bool ListAttackLogsRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLogType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("attack_rule_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("attack_rule_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAttackRuleId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("src_region_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("src_region_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSrcRegionName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("dst_region_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("dst_region_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDstRegionName(refVal);
         }
     }
     return ok;
@@ -803,6 +845,69 @@ bool ListAttackLogsRequest::logTypeIsSet() const
 void ListAttackLogsRequest::unsetlogType()
 {
     logTypeIsSet_ = false;
+}
+
+std::string ListAttackLogsRequest::getAttackRuleId() const
+{
+    return attackRuleId_;
+}
+
+void ListAttackLogsRequest::setAttackRuleId(const std::string& value)
+{
+    attackRuleId_ = value;
+    attackRuleIdIsSet_ = true;
+}
+
+bool ListAttackLogsRequest::attackRuleIdIsSet() const
+{
+    return attackRuleIdIsSet_;
+}
+
+void ListAttackLogsRequest::unsetattackRuleId()
+{
+    attackRuleIdIsSet_ = false;
+}
+
+std::string ListAttackLogsRequest::getSrcRegionName() const
+{
+    return srcRegionName_;
+}
+
+void ListAttackLogsRequest::setSrcRegionName(const std::string& value)
+{
+    srcRegionName_ = value;
+    srcRegionNameIsSet_ = true;
+}
+
+bool ListAttackLogsRequest::srcRegionNameIsSet() const
+{
+    return srcRegionNameIsSet_;
+}
+
+void ListAttackLogsRequest::unsetsrcRegionName()
+{
+    srcRegionNameIsSet_ = false;
+}
+
+std::string ListAttackLogsRequest::getDstRegionName() const
+{
+    return dstRegionName_;
+}
+
+void ListAttackLogsRequest::setDstRegionName(const std::string& value)
+{
+    dstRegionName_ = value;
+    dstRegionNameIsSet_ = true;
+}
+
+bool ListAttackLogsRequest::dstRegionNameIsSet() const
+{
+    return dstRegionNameIsSet_;
+}
+
+void ListAttackLogsRequest::unsetdstRegionName()
+{
+    dstRegionNameIsSet_ = false;
 }
 
 }

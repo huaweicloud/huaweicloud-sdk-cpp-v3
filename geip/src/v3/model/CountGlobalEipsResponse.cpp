@@ -14,8 +14,7 @@ CountGlobalEipsResponse::CountGlobalEipsResponse()
 {
     requestId_ = "";
     requestIdIsSet_ = false;
-    globalEipsIsSet_ = false;
-    pageInfoIsSet_ = false;
+    globalEipIsSet_ = false;
     xRequestId_ = "";
     xRequestIdIsSet_ = false;
 }
@@ -33,11 +32,8 @@ web::json::value CountGlobalEipsResponse::toJson() const
     if(requestIdIsSet_) {
         val[utility::conversions::to_string_t("request_id")] = ModelBase::toJson(requestId_);
     }
-    if(globalEipsIsSet_) {
-        val[utility::conversions::to_string_t("global_eips")] = ModelBase::toJson(globalEips_);
-    }
-    if(pageInfoIsSet_) {
-        val[utility::conversions::to_string_t("page_info")] = ModelBase::toJson(pageInfo_);
+    if(globalEipIsSet_) {
+        val[utility::conversions::to_string_t("global_eip")] = ModelBase::toJson(globalEip_);
     }
     if(xRequestIdIsSet_) {
         val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
@@ -58,22 +54,13 @@ bool CountGlobalEipsResponse::fromJson(const web::json::value& val)
             setRequestId(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("global_eips"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("global_eips"));
+    if(val.has_field(utility::conversions::to_string_t("global_eip"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("global_eip"));
         if(!fieldValue.is_null())
         {
-            std::vector<CountGlobalEips> refVal;
+            CountGlobalEips refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setGlobalEips(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("page_info"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("page_info"));
-        if(!fieldValue.is_null())
-        {
-            ListGlobalEipsResponseBody_page_info refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setPageInfo(refVal);
+            setGlobalEip(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
@@ -110,46 +97,25 @@ void CountGlobalEipsResponse::unsetrequestId()
     requestIdIsSet_ = false;
 }
 
-std::vector<CountGlobalEips>& CountGlobalEipsResponse::getGlobalEips()
+CountGlobalEips CountGlobalEipsResponse::getGlobalEip() const
 {
-    return globalEips_;
+    return globalEip_;
 }
 
-void CountGlobalEipsResponse::setGlobalEips(const std::vector<CountGlobalEips>& value)
+void CountGlobalEipsResponse::setGlobalEip(const CountGlobalEips& value)
 {
-    globalEips_ = value;
-    globalEipsIsSet_ = true;
+    globalEip_ = value;
+    globalEipIsSet_ = true;
 }
 
-bool CountGlobalEipsResponse::globalEipsIsSet() const
+bool CountGlobalEipsResponse::globalEipIsSet() const
 {
-    return globalEipsIsSet_;
+    return globalEipIsSet_;
 }
 
-void CountGlobalEipsResponse::unsetglobalEips()
+void CountGlobalEipsResponse::unsetglobalEip()
 {
-    globalEipsIsSet_ = false;
-}
-
-ListGlobalEipsResponseBody_page_info CountGlobalEipsResponse::getPageInfo() const
-{
-    return pageInfo_;
-}
-
-void CountGlobalEipsResponse::setPageInfo(const ListGlobalEipsResponseBody_page_info& value)
-{
-    pageInfo_ = value;
-    pageInfoIsSet_ = true;
-}
-
-bool CountGlobalEipsResponse::pageInfoIsSet() const
-{
-    return pageInfoIsSet_;
-}
-
-void CountGlobalEipsResponse::unsetpageInfo()
-{
-    pageInfoIsSet_ = false;
+    globalEipIsSet_ = false;
 }
 
 std::string CountGlobalEipsResponse::getXRequestId() const

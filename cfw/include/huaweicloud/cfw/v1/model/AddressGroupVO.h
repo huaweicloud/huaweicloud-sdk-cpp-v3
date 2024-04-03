@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -56,12 +57,34 @@ public:
     void unsetname();
     void setName(const std::string& value);
 
+    /// <summary>
+    /// 协议列表，协议类型:TCP为6, UDP为17,ICMP为1,ICMPV6为58,ANY为-1,手动类型不为空，自动类型为空
+    /// </summary>
+
+    std::vector<int32_t>& getProtocols();
+    bool protocolsIsSet() const;
+    void unsetprotocols();
+    void setProtocols(std::vector<int32_t> value);
+
+    /// <summary>
+    /// 服务组类型，0表示自定义服务组，1表示常用WEB服务，2表示常用远程登录和PING，3表示常用数据库
+    /// </summary>
+
+    int32_t getServiceSetType() const;
+    bool serviceSetTypeIsSet() const;
+    void unsetserviceSetType();
+    void setServiceSetType(int32_t value);
+
 
 protected:
     std::string setId_;
     bool setIdIsSet_;
     std::string name_;
     bool nameIsSet_;
+    std::vector<int32_t> protocols_;
+    bool protocolsIsSet_;
+    int32_t serviceSetType_;
+    bool serviceSetTypeIsSet_;
 
 };
 

@@ -10,6 +10,8 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <vector>
+#include <huaweicloud/cfw/v1/model/UseRuleVO.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -101,6 +103,15 @@ public:
     void unsetmessage();
     void setMessage(const std::string& value);
 
+    /// <summary>
+    /// 使用规则id列表
+    /// </summary>
+
+    std::vector<UseRuleVO>& getRules();
+    bool rulesIsSet() const;
+    void unsetrules();
+    void setRules(const std::vector<UseRuleVO>& value);
+
 
 protected:
     std::string setId_;
@@ -117,6 +128,8 @@ protected:
     bool configStatusIsSet_;
     std::string message_;
     bool messageIsSet_;
+    std::vector<UseRuleVO> rules_;
+    bool rulesIsSet_;
 
 };
 

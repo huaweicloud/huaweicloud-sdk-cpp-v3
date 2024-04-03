@@ -42,7 +42,7 @@ public:
     /// RuleAddressDto members
 
     /// <summary>
-    /// 源类型0手工输入,1关联IP地址组,2域名
+    /// 源类型0手工输入,1关联IP地址组,2域名，3地理位置，4域名组，5多对象，6域名组-DNS解析，7域名组-URL过滤。
     /// </summary>
 
     int32_t getType() const;
@@ -158,6 +158,24 @@ public:
     void unsetaddressGroupNames();
     void setAddressGroupNames(const std::vector<AddressGroupVO>& value);
 
+    /// <summary>
+    /// 地址组类型，0表示自定义地址组，1表示WAF回源IP地址组，2表示DDoS回源IP地址组，3表示NAT64转换地址组
+    /// </summary>
+
+    int32_t getAddressSetType() const;
+    bool addressSetTypeIsSet() const;
+    void unsetaddressSetType();
+    void setAddressSetType(int32_t value);
+
+    /// <summary>
+    /// 预定义地址组列表
+    /// </summary>
+
+    std::vector<std::string>& getPredefinedGroup();
+    bool predefinedGroupIsSet() const;
+    void unsetpredefinedGroup();
+    void setPredefinedGroup(const std::vector<std::string>& value);
+
 
 protected:
     int32_t type_;
@@ -186,6 +204,10 @@ protected:
     bool addressGroupIsSet_;
     std::vector<AddressGroupVO> addressGroupNames_;
     bool addressGroupNamesIsSet_;
+    int32_t addressSetType_;
+    bool addressSetTypeIsSet_;
+    std::vector<std::string> predefinedGroup_;
+    bool predefinedGroupIsSet_;
 
 };
 

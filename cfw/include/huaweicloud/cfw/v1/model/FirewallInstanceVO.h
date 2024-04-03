@@ -138,6 +138,15 @@ public:
     void unsetstatus();
     void setStatus(int32_t value);
 
+    /// <summary>
+    /// 标签列表
+    /// </summary>
+
+    std::string getTags() const;
+    bool tagsIsSet() const;
+    void unsettags();
+    void setTags(const std::string& value);
+
 
 protected:
     std::string fwInstanceId_;
@@ -162,6 +171,8 @@ protected:
     bool flavorIsSet_;
     int32_t status_;
     bool statusIsSet_;
+    std::string tags_;
+    bool tagsIsSet_;
 
 };
 

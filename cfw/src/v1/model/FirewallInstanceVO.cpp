@@ -33,6 +33,8 @@ FirewallInstanceVO::FirewallInstanceVO()
     flavorIsSet_ = false;
     status_ = 0;
     statusIsSet_ = false;
+    tags_ = "";
+    tagsIsSet_ = false;
 }
 
 FirewallInstanceVO::~FirewallInstanceVO() = default;
@@ -77,6 +79,9 @@ web::json::value FirewallInstanceVO::toJson() const
     }
     if(statusIsSet_) {
         val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
+    }
+    if(tagsIsSet_) {
+        val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
     }
 
     return val;
@@ -182,6 +187,15 @@ bool FirewallInstanceVO::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("tags"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("tags"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTags(refVal);
         }
     }
     return ok;
@@ -417,6 +431,27 @@ bool FirewallInstanceVO::statusIsSet() const
 void FirewallInstanceVO::unsetstatus()
 {
     statusIsSet_ = false;
+}
+
+std::string FirewallInstanceVO::getTags() const
+{
+    return tags_;
+}
+
+void FirewallInstanceVO::setTags(const std::string& value)
+{
+    tags_ = value;
+    tagsIsSet_ = true;
+}
+
+bool FirewallInstanceVO::tagsIsSet() const
+{
+    return tagsIsSet_;
+}
+
+void FirewallInstanceVO::unsettags()
+{
+    tagsIsSet_ = false;
 }
 
 }

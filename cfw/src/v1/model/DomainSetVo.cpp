@@ -26,6 +26,7 @@ DomainSetVo::DomainSetVo()
     configStatusIsSet_ = false;
     message_ = "";
     messageIsSet_ = false;
+    rulesIsSet_ = false;
 }
 
 DomainSetVo::~DomainSetVo() = default;
@@ -58,6 +59,9 @@ web::json::value DomainSetVo::toJson() const
     }
     if(messageIsSet_) {
         val[utility::conversions::to_string_t("message")] = ModelBase::toJson(message_);
+    }
+    if(rulesIsSet_) {
+        val[utility::conversions::to_string_t("rules")] = ModelBase::toJson(rules_);
     }
 
     return val;
@@ -127,6 +131,15 @@ bool DomainSetVo::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setMessage(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("rules"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("rules"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<UseRuleVO> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRules(refVal);
         }
     }
     return ok;
@@ -278,6 +291,27 @@ bool DomainSetVo::messageIsSet() const
 void DomainSetVo::unsetmessage()
 {
     messageIsSet_ = false;
+}
+
+std::vector<UseRuleVO>& DomainSetVo::getRules()
+{
+    return rules_;
+}
+
+void DomainSetVo::setRules(const std::vector<UseRuleVO>& value)
+{
+    rules_ = value;
+    rulesIsSet_ = true;
+}
+
+bool DomainSetVo::rulesIsSet() const
+{
+    return rulesIsSet_;
+}
+
+void DomainSetVo::unsetrules()
+{
+    rulesIsSet_ = false;
 }
 
 }

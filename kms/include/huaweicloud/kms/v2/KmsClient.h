@@ -69,6 +69,9 @@
 #include <huaweicloud/kms/v2/model/EncryptDatakeyRequestBody.h>
 #include <huaweicloud/kms/v2/model/EncryptDatakeyResponse.h>
 #include <huaweicloud/kms/v2/model/GenRandomRequestBody.h>
+#include <huaweicloud/kms/v2/model/GenerateMacRequest.h>
+#include <huaweicloud/kms/v2/model/GenerateMacRequestBody.h>
+#include <huaweicloud/kms/v2/model/GenerateMacResponse.h>
 #include <huaweicloud/kms/v2/model/GetParametersForImportRequestBody.h>
 #include <huaweicloud/kms/v2/model/ImportKeyMaterialRequest.h>
 #include <huaweicloud/kms/v2/model/ImportKeyMaterialRequestBody.h>
@@ -120,6 +123,9 @@
 #include <huaweicloud/kms/v2/model/UpdateKeyRotationIntervalResponse.h>
 #include <huaweicloud/kms/v2/model/ValidateSignatureRequest.h>
 #include <huaweicloud/kms/v2/model/ValidateSignatureResponse.h>
+#include <huaweicloud/kms/v2/model/VerifyMacRequest.h>
+#include <huaweicloud/kms/v2/model/VerifyMacRequestBody.h>
+#include <huaweicloud/kms/v2/model/VerifyMacResponse.h>
 #include <huaweicloud/kms/v2/model/VerifyRequestBody.h>
 #include <string>
 
@@ -382,6 +388,14 @@ public:
     std::shared_ptr<EncryptDatakeyResponse> encryptDatakey(
         EncryptDatakeyRequest &request
     );
+    // 生成消息验证码
+    //
+    // 功能介绍：生成消息验证码
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<GenerateMacResponse> generateMac(
+        GenerateMacRequest &request
+    );
     // 导入密钥材料
     //
     // - 功能介绍：导入密钥材料。
@@ -539,6 +553,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ValidateSignatureResponse> validateSignature(
         ValidateSignatureRequest &request
+    );
+    // 校验消息验证码
+    //
+    // 功能介绍：校验消息验证码
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<VerifyMacResponse> verifyMac(
+        VerifyMacRequest &request
     );
 
     // 查询指定版本信息

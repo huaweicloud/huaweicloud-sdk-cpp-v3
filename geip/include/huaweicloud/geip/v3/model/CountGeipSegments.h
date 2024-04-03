@@ -38,7 +38,7 @@ public:
     /// CountGeipSegments members
 
     /// <summary>
-    /// Geip Segment Count
+    /// 全域弹性公网IP段个数
     /// </summary>
 
     int32_t getCount() const;

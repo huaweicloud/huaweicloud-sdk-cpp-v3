@@ -93,7 +93,7 @@ public:
     void setObjectId(const std::string& value);
 
     /// <summary>
-    /// 地址组类型，0表示自定义地址组，1表示预定义地址组
+    /// 地址组类型，0表示自定义地址组，1表示WAF回源IP地址组，2表示DDoS回源IP地址组，3表示NAT64转换地址组
     /// </summary>
 
     int32_t getAddressSetType() const;

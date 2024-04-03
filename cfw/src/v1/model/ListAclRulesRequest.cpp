@@ -46,6 +46,8 @@ ListAclRulesRequest::ListAclRulesRequest()
     destinationIsSet_ = false;
     service_ = "";
     serviceIsSet_ = false;
+    application_ = "";
+    applicationIsSet_ = false;
 }
 
 ListAclRulesRequest::~ListAclRulesRequest() = default;
@@ -108,6 +110,9 @@ web::json::value ListAclRulesRequest::toJson() const
     }
     if(serviceIsSet_) {
         val[utility::conversions::to_string_t("service")] = ModelBase::toJson(service_);
+    }
+    if(applicationIsSet_) {
+        val[utility::conversions::to_string_t("application")] = ModelBase::toJson(application_);
     }
 
     return val;
@@ -267,6 +272,15 @@ bool ListAclRulesRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setService(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("application"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("application"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setApplication(refVal);
         }
     }
     return ok;
@@ -628,6 +642,27 @@ bool ListAclRulesRequest::serviceIsSet() const
 void ListAclRulesRequest::unsetservice()
 {
     serviceIsSet_ = false;
+}
+
+std::string ListAclRulesRequest::getApplication() const
+{
+    return application_;
+}
+
+void ListAclRulesRequest::setApplication(const std::string& value)
+{
+    application_ = value;
+    applicationIsSet_ = true;
+}
+
+bool ListAclRulesRequest::applicationIsSet() const
+{
+    return applicationIsSet_;
+}
+
+void ListAclRulesRequest::unsetapplication()
+{
+    applicationIsSet_ = false;
 }
 
 }

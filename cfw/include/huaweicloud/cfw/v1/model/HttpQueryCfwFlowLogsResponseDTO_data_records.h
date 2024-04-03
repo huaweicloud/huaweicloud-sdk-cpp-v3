@@ -155,6 +155,42 @@ public:
     void unsetdstHost();
     void setDstHost(const std::string& value);
 
+    /// <summary>
+    /// 目的地域id
+    /// </summary>
+
+    std::string getDstRegionId() const;
+    bool dstRegionIdIsSet() const;
+    void unsetdstRegionId();
+    void setDstRegionId(const std::string& value);
+
+    /// <summary>
+    /// 目的地域名称
+    /// </summary>
+
+    std::string getDstRegionName() const;
+    bool dstRegionNameIsSet() const;
+    void unsetdstRegionName();
+    void setDstRegionName(const std::string& value);
+
+    /// <summary>
+    /// 源地域id
+    /// </summary>
+
+    std::string getSrcRegionId() const;
+    bool srcRegionIdIsSet() const;
+    void unsetsrcRegionId();
+    void setSrcRegionId(const std::string& value);
+
+    /// <summary>
+    /// 源地域名称
+    /// </summary>
+
+    std::string getSrcRegionName() const;
+    bool srcRegionNameIsSet() const;
+    void unsetsrcRegionName();
+    void setSrcRegionName(const std::string& value);
+
 
 protected:
     double bytes_;
@@ -183,6 +219,14 @@ protected:
     bool protocolIsSet_;
     std::string dstHost_;
     bool dstHostIsSet_;
+    std::string dstRegionId_;
+    bool dstRegionIdIsSet_;
+    std::string dstRegionName_;
+    bool dstRegionNameIsSet_;
+    std::string srcRegionId_;
+    bool srcRegionIdIsSet_;
+    std::string srcRegionName_;
+    bool srcRegionNameIsSet_;
 
 };
 

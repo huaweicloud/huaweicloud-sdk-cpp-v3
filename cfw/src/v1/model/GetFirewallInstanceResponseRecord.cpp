@@ -46,6 +46,8 @@ GetFirewallInstanceResponseRecord::GetFirewallInstanceResponseRecord()
     resourceIdIsSet_ = false;
     supportUrlFiltering_ = false;
     supportUrlFilteringIsSet_ = false;
+    tags_ = "";
+    tagsIsSet_ = false;
 }
 
 GetFirewallInstanceResponseRecord::~GetFirewallInstanceResponseRecord() = default;
@@ -114,6 +116,9 @@ web::json::value GetFirewallInstanceResponseRecord::toJson() const
     }
     if(supportUrlFilteringIsSet_) {
         val[utility::conversions::to_string_t("support_url_filtering")] = ModelBase::toJson(supportUrlFiltering_);
+    }
+    if(tagsIsSet_) {
+        val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
     }
 
     return val;
@@ -291,6 +296,15 @@ bool GetFirewallInstanceResponseRecord::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSupportUrlFiltering(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("tags"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("tags"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTags(refVal);
         }
     }
     return ok;
@@ -694,6 +708,27 @@ bool GetFirewallInstanceResponseRecord::supportUrlFilteringIsSet() const
 void GetFirewallInstanceResponseRecord::unsetsupportUrlFiltering()
 {
     supportUrlFilteringIsSet_ = false;
+}
+
+std::string GetFirewallInstanceResponseRecord::getTags() const
+{
+    return tags_;
+}
+
+void GetFirewallInstanceResponseRecord::setTags(const std::string& value)
+{
+    tags_ = value;
+    tagsIsSet_ = true;
+}
+
+bool GetFirewallInstanceResponseRecord::tagsIsSet() const
+{
+    return tagsIsSet_;
+}
+
+void GetFirewallInstanceResponseRecord::unsettags()
+{
+    tagsIsSet_ = false;
 }
 
 }

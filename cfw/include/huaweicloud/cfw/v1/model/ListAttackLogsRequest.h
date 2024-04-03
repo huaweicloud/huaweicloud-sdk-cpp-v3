@@ -228,13 +228,40 @@ public:
     void setDstHost(const std::string& value);
 
     /// <summary>
-    /// log_type
+    /// 日志类型
     /// </summary>
 
     std::string getLogType() const;
     bool logTypeIsSet() const;
     void unsetlogType();
     void setLogType(const std::string& value);
+
+    /// <summary>
+    /// 入侵事件id
+    /// </summary>
+
+    std::string getAttackRuleId() const;
+    bool attackRuleIdIsSet() const;
+    void unsetattackRuleId();
+    void setAttackRuleId(const std::string& value);
+
+    /// <summary>
+    /// 源region名称
+    /// </summary>
+
+    std::string getSrcRegionName() const;
+    bool srcRegionNameIsSet() const;
+    void unsetsrcRegionName();
+    void setSrcRegionName(const std::string& value);
+
+    /// <summary>
+    /// 目的region名称
+    /// </summary>
+
+    std::string getDstRegionName() const;
+    bool dstRegionNameIsSet() const;
+    void unsetdstRegionName();
+    void setDstRegionName(const std::string& value);
 
 
 protected:
@@ -282,6 +309,12 @@ protected:
     bool dstHostIsSet_;
     std::string logType_;
     bool logTypeIsSet_;
+    std::string attackRuleId_;
+    bool attackRuleIdIsSet_;
+    std::string srcRegionName_;
+    bool srcRegionNameIsSet_;
+    std::string dstRegionName_;
+    bool dstRegionNameIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

@@ -1,19 +1,20 @@
 
-#ifndef HUAWEICLOUD_SDK_ECS_V2_MODEL_RegisterServerAutoRecoveryResponse_H_
-#define HUAWEICLOUD_SDK_ECS_V2_MODEL_RegisterServerAutoRecoveryResponse_H_
+#ifndef HUAWEICLOUD_SDK_RDS_V3_MODEL_SwitchLogReplayResponse_H_
+#define HUAWEICLOUD_SDK_RDS_V3_MODEL_SwitchLogReplayResponse_H_
 
 
-#include <huaweicloud/ecs/v2/EcsExport.h>
+#include <huaweicloud/rds/v3/RdsExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <string>
 
 namespace HuaweiCloud {
 namespace Sdk {
-namespace Ecs {
-namespace V2 {
+namespace Rds {
+namespace V3 {
 namespace Model {
 
 using namespace HuaweiCloud::Sdk::Core::Utils;
@@ -21,12 +22,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// Response Object
 /// </summary>
-class HUAWEICLOUD_ECS_V2_EXPORT  RegisterServerAutoRecoveryResponse
+class HUAWEICLOUD_RDS_V3_EXPORT  SwitchLogReplayResponse
     : public ModelBase, public HttpResponse
 {
 public:
-    RegisterServerAutoRecoveryResponse();
-    virtual ~RegisterServerAutoRecoveryResponse();
+    SwitchLogReplayResponse();
+    virtual ~SwitchLogReplayResponse();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -35,10 +36,21 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// RegisterServerAutoRecoveryResponse members
+    /// SwitchLogReplayResponse members
+
+    /// <summary>
+    /// 提示信息
+    /// </summary>
+
+    std::string getMessage() const;
+    bool messageIsSet() const;
+    void unsetmessage();
+    void setMessage(const std::string& value);
 
 
 protected:
+    std::string message_;
+    bool messageIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()
@@ -52,4 +64,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_ECS_V2_MODEL_RegisterServerAutoRecoveryResponse_H_
+#endif // HUAWEICLOUD_SDK_RDS_V3_MODEL_SwitchLogReplayResponse_H_

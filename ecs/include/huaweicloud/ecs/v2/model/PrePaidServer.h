@@ -16,6 +16,7 @@
 #include <huaweicloud/ecs/v2/model/PrePaidServerNic.h>
 #include <huaweicloud/ecs/v2/model/PrePaidServerPublicip.h>
 #include <huaweicloud/ecs/v2/model/PrePaidServerTag.h>
+#include <huaweicloud/ecs/v2/model/CpuOptions.h>
 #include <map>
 #include <vector>
 #include <huaweicloud/ecs/v2/model/PrePaidServerDataVolume.h>
@@ -255,6 +256,15 @@ public:
     void unsetdescription();
     void setDescription(const std::string& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    CpuOptions getCpuOptions() const;
+    bool cpuOptionsIsSet() const;
+    void unsetcpuOptions();
+    void setCpuOptions(const CpuOptions& value);
+
 
 protected:
     std::string autoTerminateTime_;
@@ -303,6 +313,8 @@ protected:
     bool serverTagsIsSet_;
     std::string description_;
     bool descriptionIsSet_;
+    CpuOptions cpuOptions_;
+    bool cpuOptionsIsSet_;
 
 };
 

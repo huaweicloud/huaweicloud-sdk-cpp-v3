@@ -24,6 +24,8 @@ DataProcessInfo::DataProcessInfo()
     dbObjectIsSet_ = false;
     isSynchronized_ = false;
     isSynchronizedIsSet_ = false;
+    source_ = "";
+    sourceIsSet_ = false;
 }
 
 DataProcessInfo::~DataProcessInfo() = default;
@@ -62,6 +64,9 @@ web::json::value DataProcessInfo::toJson() const
     }
     if(isSynchronizedIsSet_) {
         val[utility::conversions::to_string_t("is_synchronized")] = ModelBase::toJson(isSynchronized_);
+    }
+    if(sourceIsSet_) {
+        val[utility::conversions::to_string_t("source")] = ModelBase::toJson(source_);
     }
 
     return val;
@@ -149,6 +154,15 @@ bool DataProcessInfo::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsSynchronized(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("source"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("source"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSource(refVal);
         }
     }
     return ok;
@@ -342,6 +356,27 @@ bool DataProcessInfo::isSynchronizedIsSet() const
 void DataProcessInfo::unsetisSynchronized()
 {
     isSynchronizedIsSet_ = false;
+}
+
+std::string DataProcessInfo::getSource() const
+{
+    return source_;
+}
+
+void DataProcessInfo::setSource(const std::string& value)
+{
+    source_ = value;
+    sourceIsSet_ = true;
+}
+
+bool DataProcessInfo::sourceIsSet() const
+{
+    return sourceIsSet_;
+}
+
+void DataProcessInfo::unsetsource()
+{
+    sourceIsSet_ = false;
 }
 
 }

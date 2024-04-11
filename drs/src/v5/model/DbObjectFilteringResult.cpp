@@ -22,6 +22,16 @@ DbObjectFilteringResult::DbObjectFilteringResult()
     isSuccessIsSet_ = false;
     message_ = "";
     messageIsSet_ = false;
+    source_ = "";
+    sourceIsSet_ = false;
+    targetResult_ = "";
+    targetResultIsSet_ = false;
+    sourceResult_ = "";
+    sourceResultIsSet_ = false;
+    targetMessage_ = "";
+    targetMessageIsSet_ = false;
+    sourceMessage_ = "";
+    sourceMessageIsSet_ = false;
 }
 
 DbObjectFilteringResult::~DbObjectFilteringResult() = default;
@@ -48,6 +58,21 @@ web::json::value DbObjectFilteringResult::toJson() const
     }
     if(messageIsSet_) {
         val[utility::conversions::to_string_t("message")] = ModelBase::toJson(message_);
+    }
+    if(sourceIsSet_) {
+        val[utility::conversions::to_string_t("source")] = ModelBase::toJson(source_);
+    }
+    if(targetResultIsSet_) {
+        val[utility::conversions::to_string_t("target_result")] = ModelBase::toJson(targetResult_);
+    }
+    if(sourceResultIsSet_) {
+        val[utility::conversions::to_string_t("source_result")] = ModelBase::toJson(sourceResult_);
+    }
+    if(targetMessageIsSet_) {
+        val[utility::conversions::to_string_t("target_message")] = ModelBase::toJson(targetMessage_);
+    }
+    if(sourceMessageIsSet_) {
+        val[utility::conversions::to_string_t("source_message")] = ModelBase::toJson(sourceMessage_);
     }
 
     return val;
@@ -99,6 +124,51 @@ bool DbObjectFilteringResult::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setMessage(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("source"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("source"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSource(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("target_result"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("target_result"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTargetResult(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("source_result"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("source_result"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSourceResult(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("target_message"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("target_message"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTargetMessage(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("source_message"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("source_message"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSourceMessage(refVal);
         }
     }
     return ok;
@@ -208,6 +278,111 @@ bool DbObjectFilteringResult::messageIsSet() const
 void DbObjectFilteringResult::unsetmessage()
 {
     messageIsSet_ = false;
+}
+
+std::string DbObjectFilteringResult::getSource() const
+{
+    return source_;
+}
+
+void DbObjectFilteringResult::setSource(const std::string& value)
+{
+    source_ = value;
+    sourceIsSet_ = true;
+}
+
+bool DbObjectFilteringResult::sourceIsSet() const
+{
+    return sourceIsSet_;
+}
+
+void DbObjectFilteringResult::unsetsource()
+{
+    sourceIsSet_ = false;
+}
+
+std::string DbObjectFilteringResult::getTargetResult() const
+{
+    return targetResult_;
+}
+
+void DbObjectFilteringResult::setTargetResult(const std::string& value)
+{
+    targetResult_ = value;
+    targetResultIsSet_ = true;
+}
+
+bool DbObjectFilteringResult::targetResultIsSet() const
+{
+    return targetResultIsSet_;
+}
+
+void DbObjectFilteringResult::unsettargetResult()
+{
+    targetResultIsSet_ = false;
+}
+
+std::string DbObjectFilteringResult::getSourceResult() const
+{
+    return sourceResult_;
+}
+
+void DbObjectFilteringResult::setSourceResult(const std::string& value)
+{
+    sourceResult_ = value;
+    sourceResultIsSet_ = true;
+}
+
+bool DbObjectFilteringResult::sourceResultIsSet() const
+{
+    return sourceResultIsSet_;
+}
+
+void DbObjectFilteringResult::unsetsourceResult()
+{
+    sourceResultIsSet_ = false;
+}
+
+std::string DbObjectFilteringResult::getTargetMessage() const
+{
+    return targetMessage_;
+}
+
+void DbObjectFilteringResult::setTargetMessage(const std::string& value)
+{
+    targetMessage_ = value;
+    targetMessageIsSet_ = true;
+}
+
+bool DbObjectFilteringResult::targetMessageIsSet() const
+{
+    return targetMessageIsSet_;
+}
+
+void DbObjectFilteringResult::unsettargetMessage()
+{
+    targetMessageIsSet_ = false;
+}
+
+std::string DbObjectFilteringResult::getSourceMessage() const
+{
+    return sourceMessage_;
+}
+
+void DbObjectFilteringResult::setSourceMessage(const std::string& value)
+{
+    sourceMessage_ = value;
+    sourceMessageIsSet_ = true;
+}
+
+bool DbObjectFilteringResult::sourceMessageIsSet() const
+{
+    return sourceMessageIsSet_;
+}
+
+void DbObjectFilteringResult::unsetsourceMessage()
+{
+    sourceMessageIsSet_ = false;
 }
 
 }

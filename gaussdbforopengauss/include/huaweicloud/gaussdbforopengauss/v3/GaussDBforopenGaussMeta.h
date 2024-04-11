@@ -25,6 +25,7 @@ public:
     static HttpRequestDef genRequestDefForCreateInstance();
     static HttpRequestDef genRequestDefForCreateManualBackup();
     static HttpRequestDef genRequestDefForCreateRestoreInstance();
+    static HttpRequestDef genRequestDefForCreateSlowLogDownload();
     static HttpRequestDef genRequestDefForDeleteConfiguration();
     static HttpRequestDef genRequestDefForDeleteDatabase();
     static HttpRequestDef genRequestDefForDeleteInstance();
@@ -36,6 +37,7 @@ public:
     static HttpRequestDef genRequestDefForListAvailableFlavors();
     static HttpRequestDef genRequestDefForListBackups();
     static HttpRequestDef genRequestDefForListBindedEips();
+    static HttpRequestDef genRequestDefForListCnInfosBeforeReduce();
     static HttpRequestDef genRequestDefForListComponentInfos();
     static HttpRequestDef genRequestDefForListConfigurations();
     static HttpRequestDef genRequestDefForListConfigurationsDiff();
@@ -66,6 +68,7 @@ public:
     static HttpRequestDef genRequestDefForResizeInstanceFlavor();
     static HttpRequestDef genRequestDefForRestartInstance();
     static HttpRequestDef genRequestDefForRunInstanceAction();
+    static HttpRequestDef genRequestDefForSearchAutoEnlargePolicy();
     static HttpRequestDef genRequestDefForSetBackupPolicy();
     static HttpRequestDef genRequestDefForSetDbUserPwd();
     static HttpRequestDef genRequestDefForSetRecyclePolicy();
@@ -77,15 +80,20 @@ public:
     static HttpRequestDef genRequestDefForShowInstanceDisk();
     static HttpRequestDef genRequestDefForShowInstanceParamGroup();
     static HttpRequestDef genRequestDefForShowInstanceSnapshot();
+    static HttpRequestDef genRequestDefForShowInstancesStatistics();
     static HttpRequestDef genRequestDefForShowJobDetail();
     static HttpRequestDef genRequestDefForShowProjectQuotas();
     static HttpRequestDef genRequestDefForShowRecyclePolicy();
+    static HttpRequestDef genRequestDefForShowSlowLogDownload();
     static HttpRequestDef genRequestDefForShowSslCertDownloadLink();
+    static HttpRequestDef genRequestDefForShowUpgradeCandidateVersions();
+    static HttpRequestDef genRequestDefForStartInstance();
     static HttpRequestDef genRequestDefForStopBackup();
     static HttpRequestDef genRequestDefForSwitchConfiguration();
     static HttpRequestDef genRequestDefForSwitchShard();
     static HttpRequestDef genRequestDefForUpdateInstanceConfiguration();
     static HttpRequestDef genRequestDefForUpdateInstanceName();
+    static HttpRequestDef genRequestDefForUpgradeInstanceVersion();
     static HttpRequestDef genRequestDefForValidateParaGroupName();
     static HttpRequestDef genRequestDefForValidateWeakPassword();
 };

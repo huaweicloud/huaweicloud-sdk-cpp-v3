@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/drs/v5/model/DataProcessInfo.h>
 #include <string>
 #include <map>
 #include <vector>
@@ -86,6 +87,15 @@ public:
     void unsetdbObject();
     void setDbObject(const std::map<std::string, DatabaseObject>& value);
 
+    /// <summary>
+    /// 更新数据加工规则请求体
+    /// </summary>
+
+    std::vector<DataProcessInfo>& getDataProcessInfo();
+    bool dataProcessInfoIsSet() const;
+    void unsetdataProcessInfo();
+    void setDataProcessInfo(const std::vector<DataProcessInfo>& value);
+
 
 protected:
     std::string compareTaskId_;
@@ -98,6 +108,8 @@ protected:
     bool optionIsSet_;
     std::map<std::string, DatabaseObject> dbObject_;
     bool dbObjectIsSet_;
+    std::vector<DataProcessInfo> dataProcessInfo_;
+    bool dataProcessInfoIsSet_;
 
 };
 

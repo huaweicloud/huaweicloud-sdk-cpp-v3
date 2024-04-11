@@ -1147,6 +1147,35 @@ std::shared_ptr<ShowLogsResponse> CdnClient::showLogs(ShowLogsRequest &request)
 
     return localVarResult;
 }
+std::shared_ptr<ShowQuotaResponse> CdnClient::showQuota(ShowQuotaRequest &request)
+{
+    std::string localVarPath = "/v1.0/cdn/quota";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForShowQuota());
+
+    std::shared_ptr<ShowQuotaResponse> localVarResult = std::make_shared<ShowQuotaResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowTagsResponse> CdnClient::showTags(ShowTagsRequest &request)
 {
     std::string localVarPath = "/v1.0/cdn/configuration/tags";

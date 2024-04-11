@@ -6,6 +6,7 @@
 #include <huaweicloud/core/ClientBuilder.h>
 
 
+#include <huaweicloud/drs/v3/model/ApiHttpNullResp.h>
 #include <huaweicloud/drs/v3/model/BatchChangeDataRequest.h>
 #include <huaweicloud/drs/v3/model/BatchChangeDataResponse.h>
 #include <huaweicloud/drs/v3/model/BatchCheckJobsRequest.h>
@@ -85,12 +86,27 @@
 #include <huaweicloud/drs/v3/model/CreateCompareTaskReq.h>
 #include <huaweicloud/drs/v3/model/CreateCompareTaskRequest.h>
 #include <huaweicloud/drs/v3/model/CreateCompareTaskResponse.h>
+#include <huaweicloud/drs/v3/model/CreateDataLevelTableCompareJobReq.h>
+#include <huaweicloud/drs/v3/model/CreateDataLevelTableCompareJobRequest.h>
+#include <huaweicloud/drs/v3/model/CreateDataLevelTableCompareJobResponse.h>
+#include <huaweicloud/drs/v3/model/DeleteCompareJobRequest.h>
+#include <huaweicloud/drs/v3/model/DeleteCompareJobResponse.h>
 #include <huaweicloud/drs/v3/model/ListAvailableNodeTypesRequest.h>
 #include <huaweicloud/drs/v3/model/ListAvailableNodeTypesResponse.h>
 #include <huaweicloud/drs/v3/model/ListAvailableZoneRequest.h>
 #include <huaweicloud/drs/v3/model/ListAvailableZoneResponse.h>
 #include <huaweicloud/drs/v3/model/ListCompareResultRequest.h>
 #include <huaweicloud/drs/v3/model/ListCompareResultResponse.h>
+#include <huaweicloud/drs/v3/model/ListContentCompareDetailRequest.h>
+#include <huaweicloud/drs/v3/model/ListContentCompareDetailResponse.h>
+#include <huaweicloud/drs/v3/model/ListContentCompareOverviewRequest.h>
+#include <huaweicloud/drs/v3/model/ListContentCompareOverviewResponse.h>
+#include <huaweicloud/drs/v3/model/ListDataCompareDetailRequest.h>
+#include <huaweicloud/drs/v3/model/ListDataCompareDetailResponse.h>
+#include <huaweicloud/drs/v3/model/ListDataCompareOverviewRequest.h>
+#include <huaweicloud/drs/v3/model/ListDataCompareOverviewResponse.h>
+#include <huaweicloud/drs/v3/model/ListDataLevelTableCompareJobsRequest.h>
+#include <huaweicloud/drs/v3/model/ListDataLevelTableCompareJobsResponse.h>
 #include <huaweicloud/drs/v3/model/ListUsersRequest.h>
 #include <huaweicloud/drs/v3/model/ListUsersResponse.h>
 #include <huaweicloud/drs/v3/model/ModifyTargetParamsReq.h>
@@ -104,6 +120,8 @@
 #include <huaweicloud/drs/v3/model/ShowMonitoringDataResponse.h>
 #include <huaweicloud/drs/v3/model/ShowQuotasRequest.h>
 #include <huaweicloud/drs/v3/model/ShowQuotasResponse.h>
+#include <huaweicloud/drs/v3/model/StartPromptlyDataLevelTableCompareJobRequest.h>
+#include <huaweicloud/drs/v3/model/StartPromptlyDataLevelTableCompareJobResponse.h>
 #include <huaweicloud/drs/v3/model/UpdateParamsRequest.h>
 #include <huaweicloud/drs/v3/model/UpdateParamsResponse.h>
 #include <huaweicloud/drs/v3/model/UpdateTuningParamsRequest.h>
@@ -357,9 +375,25 @@ public:
     std::shared_ptr<CreateCompareTaskResponse> createCompareTask(
         CreateCompareTaskRequest &request
     );
+    // 创建数据级表对比任务
+    //
+    // 创建数据级表对比任务。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateDataLevelTableCompareJobResponse> createDataLevelTableCompareJob(
+        CreateDataLevelTableCompareJobRequest &request
+    );
+    // 取消对比任务
+    //
+    // 取消对比任务。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteCompareJobResponse> deleteCompareJob(
+        DeleteCompareJobRequest &request
+    );
     // 查询可用的Node规格
     //
-    // 查询可用的Node规格
+    // 查询可用的Node规格。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListAvailableNodeTypesResponse> listAvailableNodeTypes(
@@ -380,6 +414,46 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListCompareResultResponse> listCompareResult(
         ListCompareResultRequest &request
+    );
+    // 查询内容对比详情
+    //
+    // 查询内容对比详情
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListContentCompareDetailResponse> listContentCompareDetail(
+        ListContentCompareDetailRequest &request
+    );
+    // 查询内容对比总览
+    //
+    // 查询内容对比总览。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListContentCompareOverviewResponse> listContentCompareOverview(
+        ListContentCompareOverviewRequest &request
+    );
+    // 查询行数对比详情
+    //
+    // 查询行数对比详情。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListDataCompareDetailResponse> listDataCompareDetail(
+        ListDataCompareDetailRequest &request
+    );
+    // 查询行数对比总览
+    //
+    // 查询行数对比总览。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListDataCompareOverviewResponse> listDataCompareOverview(
+        ListDataCompareOverviewRequest &request
+    );
+    // 查询数据级表对比任务列表
+    //
+    // 查询数据级表对比任务列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListDataLevelTableCompareJobsResponse> listDataLevelTableCompareJobs(
+        ListDataLevelTableCompareJobsRequest &request
     );
     // 获取源库迁移用户列表
     //
@@ -412,6 +486,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowQuotasResponse> showQuotas(
         ShowQuotasRequest &request
+    );
+    // 立即启动数据级表对比任务
+    //
+    // 立即启动数据级表对比任务。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<StartPromptlyDataLevelTableCompareJobResponse> startPromptlyDataLevelTableCompareJob(
+        StartPromptlyDataLevelTableCompareJobRequest &request
     );
     // 修改数据库参数
     //

@@ -541,6 +541,11 @@ HttpRequestDef CdnMeta::genRequestDefForShowLogs() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CdnMeta::genRequestDefForShowQuota() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef CdnMeta::genRequestDefForShowTags() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("ResourceId")

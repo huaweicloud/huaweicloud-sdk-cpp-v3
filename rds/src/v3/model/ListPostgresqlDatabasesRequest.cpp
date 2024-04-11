@@ -16,6 +16,8 @@ ListPostgresqlDatabasesRequest::ListPostgresqlDatabasesRequest()
     xLanguageIsSet_ = false;
     instanceId_ = "";
     instanceIdIsSet_ = false;
+    db_ = "";
+    dbIsSet_ = false;
     page_ = 0;
     pageIsSet_ = false;
     limit_ = 0;
@@ -37,6 +39,9 @@ web::json::value ListPostgresqlDatabasesRequest::toJson() const
     }
     if(instanceIdIsSet_) {
         val[utility::conversions::to_string_t("instance_id")] = ModelBase::toJson(instanceId_);
+    }
+    if(dbIsSet_) {
+        val[utility::conversions::to_string_t("db")] = ModelBase::toJson(db_);
     }
     if(pageIsSet_) {
         val[utility::conversions::to_string_t("page")] = ModelBase::toJson(page_);
@@ -67,6 +72,15 @@ bool ListPostgresqlDatabasesRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setInstanceId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("db"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("db"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDb(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("page"))) {
@@ -131,6 +145,27 @@ bool ListPostgresqlDatabasesRequest::instanceIdIsSet() const
 void ListPostgresqlDatabasesRequest::unsetinstanceId()
 {
     instanceIdIsSet_ = false;
+}
+
+std::string ListPostgresqlDatabasesRequest::getDb() const
+{
+    return db_;
+}
+
+void ListPostgresqlDatabasesRequest::setDb(const std::string& value)
+{
+    db_ = value;
+    dbIsSet_ = true;
+}
+
+bool ListPostgresqlDatabasesRequest::dbIsSet() const
+{
+    return dbIsSet_;
+}
+
+void ListPostgresqlDatabasesRequest::unsetdb()
+{
+    dbIsSet_ = false;
 }
 
 int32_t ListPostgresqlDatabasesRequest::getPage() const

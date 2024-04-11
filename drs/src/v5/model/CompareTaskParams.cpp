@@ -20,6 +20,7 @@ CompareTaskParams::CompareTaskParams()
     startTimeIsSet_ = false;
     optionIsSet_ = false;
     dbObjectIsSet_ = false;
+    dataProcessInfoIsSet_ = false;
 }
 
 CompareTaskParams::~CompareTaskParams() = default;
@@ -46,6 +47,9 @@ web::json::value CompareTaskParams::toJson() const
     }
     if(dbObjectIsSet_) {
         val[utility::conversions::to_string_t("db_object")] = ModelBase::toJson(dbObject_);
+    }
+    if(dataProcessInfoIsSet_) {
+        val[utility::conversions::to_string_t("data_process_info")] = ModelBase::toJson(dataProcessInfo_);
     }
 
     return val;
@@ -97,6 +101,15 @@ bool CompareTaskParams::fromJson(const web::json::value& val)
             std::map<std::string, DatabaseObject> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDbObject(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("data_process_info"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("data_process_info"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<DataProcessInfo> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDataProcessInfo(refVal);
         }
     }
     return ok;
@@ -206,6 +219,27 @@ bool CompareTaskParams::dbObjectIsSet() const
 void CompareTaskParams::unsetdbObject()
 {
     dbObjectIsSet_ = false;
+}
+
+std::vector<DataProcessInfo>& CompareTaskParams::getDataProcessInfo()
+{
+    return dataProcessInfo_;
+}
+
+void CompareTaskParams::setDataProcessInfo(const std::vector<DataProcessInfo>& value)
+{
+    dataProcessInfo_ = value;
+    dataProcessInfoIsSet_ = true;
+}
+
+bool CompareTaskParams::dataProcessInfoIsSet() const
+{
+    return dataProcessInfoIsSet_;
+}
+
+void CompareTaskParams::unsetdataProcessInfo()
+{
+    dataProcessInfoIsSet_ = false;
 }
 
 }

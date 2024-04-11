@@ -92,6 +92,8 @@
 #include <huaweicloud/drs/v5/model/ListProjectTagsResponse.h>
 #include <huaweicloud/drs/v5/model/ListTagsRequest.h>
 #include <huaweicloud/drs/v5/model/ListTagsResponse.h>
+#include <huaweicloud/drs/v5/model/ListsAgencyPermissionsRequest.h>
+#include <huaweicloud/drs/v5/model/ListsAgencyPermissionsResponse.h>
 #include <huaweicloud/drs/v5/model/ModifyParameterReq.h>
 #include <huaweicloud/drs/v5/model/ModifyStartPositionReq.h>
 #include <huaweicloud/drs/v5/model/QueryColumnReq.h>
@@ -141,6 +143,8 @@
 #include <huaweicloud/drs/v5/model/ShowPositionResultResponse.h>
 #include <huaweicloud/drs/v5/model/ShowProgressDataRequest.h>
 #include <huaweicloud/drs/v5/model/ShowProgressDataResponse.h>
+#include <huaweicloud/drs/v5/model/ShowReplayResultsRequest.h>
+#include <huaweicloud/drs/v5/model/ShowReplayResultsResponse.h>
 #include <huaweicloud/drs/v5/model/ShowSupportObjectTypeRequest.h>
 #include <huaweicloud/drs/v5/model/ShowSupportObjectTypeResponse.h>
 #include <huaweicloud/drs/v5/model/ShowUpdateObjectSavingStatusRequest.h>
@@ -485,6 +489,14 @@ public:
     std::shared_ptr<ListTagsResponse> listTags(
         ListTagsRequest &request
     );
+    // 查询委托的权限列表
+    //
+    // 根据源库类型，目标库类型，是否自建，获取委托所需要的权限
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListsAgencyPermissionsResponse> listsAgencyPermissions(
+        ListsAgencyPermissionsRequest &request
+    );
     // 获取指定任务操作信息
     //
     // 获取指定任务允许、不允许、当前操作信息。
@@ -658,6 +670,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowProgressDataResponse> showProgressData(
         ShowProgressDataRequest &request
+    );
+    // 查询录制回放结果
+    //
+    // 获取录制回放结果数据，包括：回放基于时间维度统计信息，异常SQL及统计结果、慢SQL及统计结果
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowReplayResultsResponse> showReplayResults(
+        ShowReplayResultsRequest &request
     );
     // 查询是否支持对象选择和列映射
     //

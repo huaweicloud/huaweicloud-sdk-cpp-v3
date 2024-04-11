@@ -57,6 +57,15 @@ public:
     void setInstanceId(const std::string& value);
 
     /// <summary>
+    /// 数据库名称；忽略大小写模糊查询。
+    /// </summary>
+
+    std::string getDb() const;
+    bool dbIsSet() const;
+    void unsetdb();
+    void setDb(const std::string& value);
+
+    /// <summary>
     /// 分页页码，从1开始。
     /// </summary>
 
@@ -80,6 +89,8 @@ protected:
     bool xLanguageIsSet_;
     std::string instanceId_;
     bool instanceIdIsSet_;
+    std::string db_;
+    bool dbIsSet_;
     int32_t page_;
     bool pageIsSet_;
     int32_t limit_;

@@ -83,6 +83,51 @@ public:
     void unsetmessage();
     void setMessage(const std::string& value);
 
+    /// <summary>
+    /// 对比的来源 - job 表示数据同步时的过滤 - compare 表示数据对比的过滤
+    /// </summary>
+
+    std::string getSource() const;
+    bool sourceIsSet() const;
+    void unsetsource();
+    void setSource(const std::string& value);
+
+    /// <summary>
+    /// 校验目标库比对条件过滤的结果
+    /// </summary>
+
+    std::string getTargetResult() const;
+    bool targetResultIsSet() const;
+    void unsettargetResult();
+    void setTargetResult(const std::string& value);
+
+    /// <summary>
+    /// 校验源库比对条件过滤的结果
+    /// </summary>
+
+    std::string getSourceResult() const;
+    bool sourceResultIsSet() const;
+    void unsetsourceResult();
+    void setSourceResult(const std::string& value);
+
+    /// <summary>
+    /// 校验目标库比对条件过滤的失败原因
+    /// </summary>
+
+    std::string getTargetMessage() const;
+    bool targetMessageIsSet() const;
+    void unsettargetMessage();
+    void setTargetMessage(const std::string& value);
+
+    /// <summary>
+    /// 校验源库比对条件过滤的失败原因
+    /// </summary>
+
+    std::string getSourceMessage() const;
+    bool sourceMessageIsSet() const;
+    void unsetsourceMessage();
+    void setSourceMessage(const std::string& value);
+
 
 protected:
     std::string dbName_;
@@ -95,6 +140,16 @@ protected:
     bool isSuccessIsSet_;
     std::string message_;
     bool messageIsSet_;
+    std::string source_;
+    bool sourceIsSet_;
+    std::string targetResult_;
+    bool targetResultIsSet_;
+    std::string sourceResult_;
+    bool sourceResultIsSet_;
+    std::string targetMessage_;
+    bool targetMessageIsSet_;
+    std::string sourceMessage_;
+    bool sourceMessageIsSet_;
 
 };
 

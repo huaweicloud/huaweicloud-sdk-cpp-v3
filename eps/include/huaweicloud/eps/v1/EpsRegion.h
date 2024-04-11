@@ -24,7 +24,9 @@ public:
         std::map<std::string, Region> regions;
         regions["cn-north-4"] = Region("cn-north-4",
             { 
-                "https://eps.myhuaweicloud.com"
+                "https://eps.myhuaweicloud.com",
+
+                "https://eps.myhuaweicloud.cn"
             });
         regions["eu-west-101"] = Region("eu-west-101",
             { 

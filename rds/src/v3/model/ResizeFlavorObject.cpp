@@ -16,6 +16,8 @@ ResizeFlavorObject::ResizeFlavorObject()
     specCodeIsSet_ = false;
     isAutoPay_ = false;
     isAutoPayIsSet_ = false;
+    isDelay_ = false;
+    isDelayIsSet_ = false;
 }
 
 ResizeFlavorObject::~ResizeFlavorObject() = default;
@@ -33,6 +35,9 @@ web::json::value ResizeFlavorObject::toJson() const
     }
     if(isAutoPayIsSet_) {
         val[utility::conversions::to_string_t("is_auto_pay")] = ModelBase::toJson(isAutoPay_);
+    }
+    if(isDelayIsSet_) {
+        val[utility::conversions::to_string_t("is_delay")] = ModelBase::toJson(isDelay_);
     }
 
     return val;
@@ -57,6 +62,15 @@ bool ResizeFlavorObject::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsAutoPay(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_delay"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_delay"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsDelay(refVal);
         }
     }
     return ok;
@@ -103,6 +117,27 @@ bool ResizeFlavorObject::isAutoPayIsSet() const
 void ResizeFlavorObject::unsetisAutoPay()
 {
     isAutoPayIsSet_ = false;
+}
+
+bool ResizeFlavorObject::isIsDelay() const
+{
+    return isDelay_;
+}
+
+void ResizeFlavorObject::setIsDelay(bool value)
+{
+    isDelay_ = value;
+    isDelayIsSet_ = true;
+}
+
+bool ResizeFlavorObject::isDelayIsSet() const
+{
+    return isDelayIsSet_;
+}
+
+void ResizeFlavorObject::unsetisDelay()
+{
+    isDelayIsSet_ = false;
 }
 
 }

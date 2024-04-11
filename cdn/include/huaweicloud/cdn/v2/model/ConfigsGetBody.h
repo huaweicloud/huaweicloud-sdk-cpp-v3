@@ -20,12 +20,15 @@
 #include <huaweicloud/cdn/v2/model/Quic.h>
 #include <huaweicloud/cdn/v2/model/IpFilter.h>
 #include <huaweicloud/cdn/v2/model/CacheUrlParameterFilterGetBody.h>
+#include <huaweicloud/cdn/v2/model/Sni.h>
 #include <string>
 #include <huaweicloud/cdn/v2/model/OriginRequestHeader.h>
 #include <huaweicloud/cdn/v2/model/CommonRemoteAuth.h>
 #include <huaweicloud/cdn/v2/model/ErrorCodeRedirectRules.h>
 #include <huaweicloud/cdn/v2/model/IpFrequencyLimitQuery.h>
 #include <vector>
+#include <huaweicloud/cdn/v2/model/BrowserCacheRules.h>
+#include <huaweicloud/cdn/v2/model/RequestUrlRewrite.h>
 #include <huaweicloud/cdn/v2/model/UserAgentFilter.h>
 #include <huaweicloud/cdn/v2/model/RefererConfig.h>
 #include <huaweicloud/cdn/v2/model/FlexibleOrigins.h>
@@ -350,6 +353,33 @@ public:
     void unseterrorCodeRedirectRules();
     void setErrorCodeRedirectRules(const std::vector<ErrorCodeRedirectRules>& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    Sni getSni() const;
+    bool sniIsSet() const;
+    void unsetsni();
+    void setSni(const Sni& value);
+
+    /// <summary>
+    /// 访问URL重写。
+    /// </summary>
+
+    std::vector<RequestUrlRewrite>& getRequestUrlRewrite();
+    bool requestUrlRewriteIsSet() const;
+    void unsetrequestUrlRewrite();
+    void setRequestUrlRewrite(const std::vector<RequestUrlRewrite>& value);
+
+    /// <summary>
+    /// 浏览器缓存过期时间。
+    /// </summary>
+
+    std::vector<BrowserCacheRules>& getBrowserCacheRules();
+    bool browserCacheRulesIsSet() const;
+    void unsetbrowserCacheRules();
+    void setBrowserCacheRules(const std::vector<BrowserCacheRules>& value);
+
 
 protected:
     std::string businessType_;
@@ -416,6 +446,12 @@ protected:
     bool quicIsSet_;
     std::vector<ErrorCodeRedirectRules> errorCodeRedirectRules_;
     bool errorCodeRedirectRulesIsSet_;
+    Sni sni_;
+    bool sniIsSet_;
+    std::vector<RequestUrlRewrite> requestUrlRewrite_;
+    bool requestUrlRewriteIsSet_;
+    std::vector<BrowserCacheRules> browserCacheRules_;
+    bool browserCacheRulesIsSet_;
 
 };
 

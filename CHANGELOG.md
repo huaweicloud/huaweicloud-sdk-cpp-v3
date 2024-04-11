@@ -1,3 +1,95 @@
+# 3.1.81 2024-04-11
+
+### HuaweiCloud SDK CDN
+
+- _Features_
+  - Support the API `ShowQuota`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowDomainFullConfig**
+    - changes of response param
+      - `+ configs.sni`
+      - `+ configs.request_url_rewrite`
+      - `+ configs.browser_cache_rules`
+  - **UpdateDomainFullConfig**
+    - changes of request param
+      - `+ configs.sni`
+      - `+ configs.request_url_rewrite`
+      - `+ configs.browser_cache_rules`
+
+### HuaweiCloud SDK DRS
+
+- _Features_
+  - Support the following APIs:
+    - `ListDataLevelTableCompareJobs`
+    - `CreateDataLevelTableCompareJob`
+    - `DeleteCompareJob`
+    - `StartPromptlyDataLevelTableCompareJob`
+    - `ListDataCompareOverview`
+    - `ListDataCompareDetail`
+    - `ListContentCompareOverview`
+    - `ListContentCompareDetail`
+    - `ListsAgencyPermissions`
+    - `ShowReplayResults`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowDataFilteringResult**
+    - changes of response param
+      - `+ db_object_filtering_result.source`
+      - `+ db_object_filtering_result.target_result`
+      - `+ db_object_filtering_result.source_result`
+      - `+ db_object_filtering_result.target_message`
+      - `+ db_object_filtering_result.source_message`
+  - **ShowDataProgress**
+    - changes of response param
+      - `+ data_process_info.source`
+  - **UpdateDataProgress**
+    - changes of request param
+      - `+ data_process_info.source`
+  - **CheckDataFilter**
+    - changes of request param
+      - `+ data_process_info.source`
+  - **ExecuteJobAction**
+    - changes of request param
+      - `+ job.action_params.compare_task_param.data_process_info`
+  - **BatchExecuteJobActions**
+    - changes of request param
+      - `+ jobs.action_params.compare_task_param.data_process_info`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _Features_
+  - Support the following APIs:
+    - `ShowInstancesStatistics`
+    - `ShowSlowLogDownload`
+    - `CreateSlowLogDownload`
+    - `UpgradeInstanceVersion`
+    - `SearchAutoEnlargePolicy`
+    - `ListCnInfosBeforeReduce`
+    - `StartInstance`
+    - `ShowUpgradeCandidateVersions`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK RDS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the APIs `ShowReplayDelayStatus`, `SwitchLogReplay`
+  - **StartResizeFlavorAction**
+    - changes of request param
+      - `+ resize_flavor.is_delay`
+  - **ListPostgresqlDatabases**
+    - changes of request param
+      - `+ db`
+
 # 3.1.80 2024-04-03
 
 ### HuaweiCloud SDK CFW

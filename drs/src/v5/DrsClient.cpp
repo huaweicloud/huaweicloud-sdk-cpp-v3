@@ -1523,6 +1523,47 @@ std::shared_ptr<ListTagsResponse> DrsClient::listTags(ListTagsRequest &request)
 
     return localVarResult;
 }
+std::shared_ptr<ListsAgencyPermissionsResponse> DrsClient::listsAgencyPermissions(ListsAgencyPermissionsRequest &request)
+{
+    std::string localVarPath = "/v5/{project_id}/agency/permissions";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.sourceTypeIsSet()) {
+        localVarQueryParams["source_type"] = parameterToString(request.getSourceType());
+    }
+    if (request.targetTypeIsSet()) {
+        localVarQueryParams["target_type"] = parameterToString(request.getTargetType());
+    }
+    if (request.isNonDbsIsSet()) {
+        localVarQueryParams["is_non_dbs"] = parameterToString(request.isIsNonDbs());
+    }
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, DrsMeta::genRequestDefForListsAgencyPermissions());
+
+    std::shared_ptr<ListsAgencyPermissionsResponse> localVarResult = std::make_shared<ListsAgencyPermissionsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowActionsResponse> DrsClient::showActions(ShowActionsRequest &request)
 {
     std::string localVarPath = "/v5/{project_id}/jobs/{job_id}/actions";
@@ -2334,6 +2375,63 @@ std::shared_ptr<ShowProgressDataResponse> DrsClient::showProgressData(ShowProgre
         localVarHeaderParams, localVarHttpBody, DrsMeta::genRequestDefForShowProgressData());
 
     std::shared_ptr<ShowProgressDataResponse> localVarResult = std::make_shared<ShowProgressDataResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowReplayResultsResponse> DrsClient::showReplayResults(ShowReplayResultsRequest &request)
+{
+    std::string localVarPath = "/v5/{project_id}/jobs/{job_id}/replay-results";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["job_id"] = parameterToString(request.getJobId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.typeIsSet()) {
+        localVarQueryParams["type"] = parameterToString(request.getType());
+    }
+    if (request.startTimeIsSet()) {
+        localVarQueryParams["start_time"] = parameterToString(request.getStartTime());
+    }
+    if (request.endTimeIsSet()) {
+        localVarQueryParams["end_time"] = parameterToString(request.getEndTime());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.sortKeyIsSet()) {
+        localVarQueryParams["sort_key"] = parameterToString(request.getSortKey());
+    }
+    if (request.sortDirIsSet()) {
+        localVarQueryParams["sort_dir"] = parameterToString(request.getSortDir());
+    }
+    if (request.targetNameIsSet()) {
+        localVarQueryParams["target_name"] = parameterToString(request.getTargetName());
+    }
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, DrsMeta::genRequestDefForShowReplayResults());
+
+    std::shared_ptr<ShowReplayResultsResponse> localVarResult = std::make_shared<ShowReplayResultsResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

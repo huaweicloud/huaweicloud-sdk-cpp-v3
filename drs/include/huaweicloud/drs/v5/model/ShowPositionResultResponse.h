@@ -57,7 +57,7 @@ public:
     void setPosition(const std::string& value);
 
     /// <summary>
-    /// 查询状态。
+    /// 查询状态
     /// </summary>
 
     std::string getStatus() const;

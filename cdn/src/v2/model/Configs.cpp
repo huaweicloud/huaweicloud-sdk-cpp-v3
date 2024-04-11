@@ -53,6 +53,9 @@ Configs::Configs()
     hstsIsSet_ = false;
     quicIsSet_ = false;
     errorCodeRedirectRulesIsSet_ = false;
+    sniIsSet_ = false;
+    requestUrlRewriteIsSet_ = false;
+    browserCacheRulesIsSet_ = false;
 }
 
 Configs::~Configs() = default;
@@ -160,6 +163,15 @@ web::json::value Configs::toJson() const
     }
     if(errorCodeRedirectRulesIsSet_) {
         val[utility::conversions::to_string_t("error_code_redirect_rules")] = ModelBase::toJson(errorCodeRedirectRules_);
+    }
+    if(sniIsSet_) {
+        val[utility::conversions::to_string_t("sni")] = ModelBase::toJson(sni_);
+    }
+    if(requestUrlRewriteIsSet_) {
+        val[utility::conversions::to_string_t("request_url_rewrite")] = ModelBase::toJson(requestUrlRewrite_);
+    }
+    if(browserCacheRulesIsSet_) {
+        val[utility::conversions::to_string_t("browser_cache_rules")] = ModelBase::toJson(browserCacheRules_);
     }
 
     return val;
@@ -454,6 +466,33 @@ bool Configs::fromJson(const web::json::value& val)
             std::vector<ErrorCodeRedirectRules> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setErrorCodeRedirectRules(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("sni"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sni"));
+        if(!fieldValue.is_null())
+        {
+            Sni refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSni(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("request_url_rewrite"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("request_url_rewrite"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<RequestUrlRewrite> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRequestUrlRewrite(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("browser_cache_rules"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("browser_cache_rules"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<BrowserCacheRules> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBrowserCacheRules(refVal);
         }
     }
     return ok;
@@ -1130,6 +1169,69 @@ bool Configs::errorCodeRedirectRulesIsSet() const
 void Configs::unseterrorCodeRedirectRules()
 {
     errorCodeRedirectRulesIsSet_ = false;
+}
+
+Sni Configs::getSni() const
+{
+    return sni_;
+}
+
+void Configs::setSni(const Sni& value)
+{
+    sni_ = value;
+    sniIsSet_ = true;
+}
+
+bool Configs::sniIsSet() const
+{
+    return sniIsSet_;
+}
+
+void Configs::unsetsni()
+{
+    sniIsSet_ = false;
+}
+
+std::vector<RequestUrlRewrite>& Configs::getRequestUrlRewrite()
+{
+    return requestUrlRewrite_;
+}
+
+void Configs::setRequestUrlRewrite(const std::vector<RequestUrlRewrite>& value)
+{
+    requestUrlRewrite_ = value;
+    requestUrlRewriteIsSet_ = true;
+}
+
+bool Configs::requestUrlRewriteIsSet() const
+{
+    return requestUrlRewriteIsSet_;
+}
+
+void Configs::unsetrequestUrlRewrite()
+{
+    requestUrlRewriteIsSet_ = false;
+}
+
+std::vector<BrowserCacheRules>& Configs::getBrowserCacheRules()
+{
+    return browserCacheRules_;
+}
+
+void Configs::setBrowserCacheRules(const std::vector<BrowserCacheRules>& value)
+{
+    browserCacheRules_ = value;
+    browserCacheRulesIsSet_ = true;
+}
+
+bool Configs::browserCacheRulesIsSet() const
+{
+    return browserCacheRulesIsSet_;
+}
+
+void Configs::unsetbrowserCacheRules()
+{
+    browserCacheRulesIsSet_ = false;
 }
 
 }

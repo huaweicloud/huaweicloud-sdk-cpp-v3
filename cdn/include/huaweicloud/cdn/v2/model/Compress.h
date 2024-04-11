@@ -48,7 +48,7 @@ public:
     void setStatus(const std::string& value);
 
     /// <summary>
-    /// 智能压缩类型（gzip：gzip压缩，brotli：brotli压缩）。
+    /// 智能压缩类型（gzip：gzip压缩，br：brotli压缩）。
     /// </summary>
 
     std::string getType() const;

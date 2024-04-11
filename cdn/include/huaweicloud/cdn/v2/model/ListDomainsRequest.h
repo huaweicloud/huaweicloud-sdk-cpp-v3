@@ -93,7 +93,7 @@ public:
     void setPageNumber(int32_t value);
 
     /// <summary>
-    /// 展示标签标识 true：不展示 false：展示。
+    /// 展示标签标识 true：展示 false：不展示。
     /// </summary>
 
     bool isShowTags() const;

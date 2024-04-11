@@ -2379,6 +2379,9 @@ HttpRequestDef RdsMeta::genRequestDefForListPostgresqlDatabaseSchemas() {
 
 HttpRequestDef RdsMeta::genRequestDefForListPostgresqlDatabases() {
     HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Db")
+                  .withJsonTag("db")
+                  .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("Page")
                   .withJsonTag("page")
                   .withLocationType(Query_));
@@ -2511,16 +2514,6 @@ HttpRequestDef RdsMeta::genRequestDefForShowPostgresqlParamValue() {
     return reqDefBuilder;
 }
 
-HttpRequestDef RdsMeta::genRequestDefForShowReplayDelayStatus() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef headerParamXLanguage;
-    reqDefBuilder.withRequestField(headerParamXLanguage
-                  .withName("XLanguage")
-                  .withJsonTag("X-Language")
-                  .withLocationType(Header_));
-    return reqDefBuilder;
-}
-
 HttpRequestDef RdsMeta::genRequestDefForStartDatabaseProxy() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
@@ -2542,20 +2535,6 @@ HttpRequestDef RdsMeta::genRequestDefForStopDatabaseProxy() {
                   .withName("XLanguage")
                   .withJsonTag("X-Language")
                   .withLocationType(Header_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef RdsMeta::genRequestDefForSwitchLogReplay() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef headerParamXLanguage;
-    reqDefBuilder.withRequestField(headerParamXLanguage
-                  .withName("XLanguage")
-                  .withJsonTag("X-Language")
-                  .withLocationType(Header_));
-    FieldDef bodyParam;
-    reqDefBuilder.withRequestField(bodyParam.
-        withName("Body").
-        withLocationType(Body_));
     return reqDefBuilder;
 }
 

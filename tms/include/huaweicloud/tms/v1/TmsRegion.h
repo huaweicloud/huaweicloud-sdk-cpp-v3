@@ -24,11 +24,15 @@ public:
         std::map<std::string, Region> regions;
         regions["cn-north-4"] = Region("cn-north-4",
             { 
-                "https://tms.myhuaweicloud.com"
+                "https://tms.myhuaweicloud.com",
+
+                "https://tms.myhuaweicloud.cn"
             });
         regions["ap-southeast-1"] = Region("ap-southeast-1",
             { 
-                "https://tms.ap-southeast-1.myhuaweicloud.com"
+                "https://tms.ap-southeast-1.myhuaweicloud.com",
+
+                "https://tms.ap-southeast-1.myhuaweicloud.cn"
             });
         regions["eu-west-101"] = Region("eu-west-101",
             { 

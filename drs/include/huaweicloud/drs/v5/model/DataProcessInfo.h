@@ -126,6 +126,15 @@ public:
     void unsetisSynchronized();
     void setIsSynchronized(bool value);
 
+    /// <summary>
+    /// 对比的来源 - job 表示数据同步时的过滤 - compare 表示数据对比的过滤
+    /// </summary>
+
+    std::string getSource() const;
+    bool sourceIsSet() const;
+    void unsetsource();
+    void setSource(const std::string& value);
+
 
 protected:
     std::vector<DataFilteringCondition> filterConditions_;
@@ -146,6 +155,8 @@ protected:
     bool dbObjectIsSet_;
     bool isSynchronized_;
     bool isSynchronizedIsSet_;
+    std::string source_;
+    bool sourceIsSet_;
 
 };
 

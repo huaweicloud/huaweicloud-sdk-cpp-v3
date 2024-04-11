@@ -48,6 +48,7 @@ public:
     static HttpRequestDef genRequestDefForListLinks();
     static HttpRequestDef genRequestDefForListProjectTags();
     static HttpRequestDef genRequestDefForListTags();
+    static HttpRequestDef genRequestDefForListsAgencyPermissions();
     static HttpRequestDef genRequestDefForShowActions();
     static HttpRequestDef genRequestDefForShowColumnInfoResult();
     static HttpRequestDef genRequestDefForShowComparePolicy();
@@ -69,6 +70,7 @@ public:
     static HttpRequestDef genRequestDefForShowObjectMapping();
     static HttpRequestDef genRequestDefForShowPositionResult();
     static HttpRequestDef genRequestDefForShowProgressData();
+    static HttpRequestDef genRequestDefForShowReplayResults();
     static HttpRequestDef genRequestDefForShowSupportObjectType();
     static HttpRequestDef genRequestDefForShowUpdateObjectSavingStatus();
     static HttpRequestDef genRequestDefForStopJobAction();

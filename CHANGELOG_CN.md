@@ -1,3 +1,95 @@
+# 3.1.81 2024-04-11
+
+### HuaweiCloud SDK CDN
+
+- _新增特性_
+  - 支持接口`ShowQuota`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowDomainFullConfig**
+    - 响应参数变更
+      - `+ configs.sni`
+      - `+ configs.request_url_rewrite`
+      - `+ configs.browser_cache_rules`
+  - **UpdateDomainFullConfig**
+    - 请求参数变更
+      - `+ configs.sni`
+      - `+ configs.request_url_rewrite`
+      - `+ configs.browser_cache_rules`
+
+### HuaweiCloud SDK DRS
+
+- _新增特性_
+  - 支持以下接口：
+    - `ListDataLevelTableCompareJobs`
+    - `CreateDataLevelTableCompareJob`
+    - `DeleteCompareJob`
+    - `StartPromptlyDataLevelTableCompareJob`
+    - `ListDataCompareOverview`
+    - `ListDataCompareDetail`
+    - `ListContentCompareOverview`
+    - `ListContentCompareDetail`
+    - `ListsAgencyPermissions`
+    - `ShowReplayResults`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowDataFilteringResult**
+    - 响应参数变更
+      - `+ db_object_filtering_result.source`
+      - `+ db_object_filtering_result.target_result`
+      - `+ db_object_filtering_result.source_result`
+      - `+ db_object_filtering_result.target_message`
+      - `+ db_object_filtering_result.source_message`
+  - **ShowDataProgress**
+    - 响应参数变更
+      - `+ data_process_info.source`
+  - **UpdateDataProgress**
+    - 请求参数变更
+      - `+ data_process_info.source`
+  - **CheckDataFilter**
+    - 请求参数变更
+      - `+ data_process_info.source`
+  - **ExecuteJobAction**
+    - 请求参数变更
+      - `+ job.action_params.compare_task_param.data_process_info`
+  - **BatchExecuteJobActions**
+    - 请求参数变更
+      - `+ jobs.action_params.compare_task_param.data_process_info`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _新增特性_
+  - 支持以下接口：
+    - `ShowInstancesStatistics`
+    - `ShowSlowLogDownload`
+    - `CreateSlowLogDownload`
+    - `UpgradeInstanceVersion`
+    - `SearchAutoEnlargePolicy`
+    - `ListCnInfosBeforeReduce`
+    - `StartInstance`
+    - `ShowUpgradeCandidateVersions`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK RDS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 移除接口`ShowReplayDelayStatus`、`SwitchLogReplay`
+  - **StartResizeFlavorAction**
+    - 请求参数变更
+      - `+ resize_flavor.is_delay`
+  - **ListPostgresqlDatabases**
+    - 请求参数变更
+      - `+ db`
+
 # 3.1.80 2024-04-03
 
 ### HuaweiCloud SDK CFW

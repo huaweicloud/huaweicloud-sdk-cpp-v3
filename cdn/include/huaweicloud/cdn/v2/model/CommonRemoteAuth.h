@@ -9,8 +9,8 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/cdn/v2/model/RemoteAuthRule.h>
 #include <string>
-#include <huaweicloud/cdn/v2/model/RemoteAuthRuleVo.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -52,16 +52,16 @@ public:
     /// 
     /// </summary>
 
-    RemoteAuthRuleVo getRemoteAuthRules() const;
+    RemoteAuthRule getRemoteAuthRules() const;
     bool remoteAuthRulesIsSet() const;
     void unsetremoteAuthRules();
-    void setRemoteAuthRules(const RemoteAuthRuleVo& value);
+    void setRemoteAuthRules(const RemoteAuthRule& value);
 
 
 protected:
     std::string remoteAuthentication_;
     bool remoteAuthenticationIsSet_;
-    RemoteAuthRuleVo remoteAuthRules_;
+    RemoteAuthRule remoteAuthRules_;
     bool remoteAuthRulesIsSet_;
 
 };

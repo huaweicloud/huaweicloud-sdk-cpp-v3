@@ -56,12 +56,23 @@ public:
     void unsetisAutoPay();
     void setIsAutoPay(bool value);
 
+    /// <summary>
+    /// 是否定时变更。 - true，为定时在运维时间窗做变更。 - false，为立即变更，默认该方式。
+    /// </summary>
+
+    bool isIsDelay() const;
+    bool isDelayIsSet() const;
+    void unsetisDelay();
+    void setIsDelay(bool value);
+
 
 protected:
     std::string specCode_;
     bool specCodeIsSet_;
     bool isAutoPay_;
     bool isAutoPayIsSet_;
+    bool isDelay_;
+    bool isDelayIsSet_;
 
 };
 

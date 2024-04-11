@@ -53,7 +53,7 @@ bool CommonRemoteAuth::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("remote_auth_rules"));
         if(!fieldValue.is_null())
         {
-            RemoteAuthRuleVo refVal;
+            RemoteAuthRule refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRemoteAuthRules(refVal);
         }
@@ -83,12 +83,12 @@ void CommonRemoteAuth::unsetremoteAuthentication()
     remoteAuthenticationIsSet_ = false;
 }
 
-RemoteAuthRuleVo CommonRemoteAuth::getRemoteAuthRules() const
+RemoteAuthRule CommonRemoteAuth::getRemoteAuthRules() const
 {
     return remoteAuthRules_;
 }
 
-void CommonRemoteAuth::setRemoteAuthRules(const RemoteAuthRuleVo& value)
+void CommonRemoteAuth::setRemoteAuthRules(const RemoteAuthRule& value)
 {
     remoteAuthRules_ = value;
     remoteAuthRulesIsSet_ = true;

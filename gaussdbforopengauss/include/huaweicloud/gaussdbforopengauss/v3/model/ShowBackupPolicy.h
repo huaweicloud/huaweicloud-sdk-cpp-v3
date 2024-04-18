@@ -78,10 +78,10 @@ public:
     /// 差量备份周期配置。自动差量备份将每隔周期分钟执行。
     /// </summary>
 
-    std::string getDifferentialPeriod() const;
+    int32_t getDifferentialPeriod() const;
     bool differentialPeriodIsSet() const;
     void unsetdifferentialPeriod();
-    void setDifferentialPeriod(const std::string& value);
+    void setDifferentialPeriod(int32_t value);
 
     /// <summary>
     /// 备份时备份数据上传OBS的速度，单位为MB/s。范围为0~1024MB/s，默认75MB/s，0MB/s表示不限速。
@@ -138,7 +138,7 @@ protected:
     bool periodIsSet_;
     std::string differentialPriod_;
     bool differentialPriodIsSet_;
-    std::string differentialPeriod_;
+    int32_t differentialPeriod_;
     bool differentialPeriodIsSet_;
     int32_t rateLimit_;
     bool rateLimitIsSet_;

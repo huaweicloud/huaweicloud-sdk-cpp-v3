@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_InstancesStatisticsResponseBody_instances_statistics_H_
-#define HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_InstancesStatisticsResponseBody_instances_statistics_H_
+#ifndef HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_ShowErrorLogSwitchStatusResponse_H_
+#define HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_ShowErrorLogSwitchStatusResponse_H_
 
 
 #include <huaweicloud/gaussdbforopengauss/v3/GaussDBforopenGaussExport.h>
@@ -20,14 +20,14 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 
+/// Response Object
 /// </summary>
-class HUAWEICLOUD_GAUSSDBFOROPENGAUSS_V3_EXPORT  InstancesStatisticsResponseBody_instances_statistics
-    : public ModelBase
+class HUAWEICLOUD_GAUSSDBFOROPENGAUSS_V3_EXPORT  ShowErrorLogSwitchStatusResponse
+    : public ModelBase, public HttpResponse
 {
 public:
-    InstancesStatisticsResponseBody_instances_statistics();
-    virtual ~InstancesStatisticsResponseBody_instances_statistics();
+    ShowErrorLogSwitchStatusResponse();
+    virtual ~ShowErrorLogSwitchStatusResponse();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -36,10 +36,10 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// InstancesStatisticsResponseBody_instances_statistics members
+    /// ShowErrorLogSwitchStatusResponse members
 
     /// <summary>
-    /// 实例状态
+    /// 采集状态
     /// </summary>
 
     std::string getStatus() const;
@@ -47,22 +47,14 @@ public:
     void unsetstatus();
     void setStatus(const std::string& value);
 
-    /// <summary>
-    /// 实例数量
-    /// </summary>
-
-    int32_t getCount() const;
-    bool countIsSet() const;
-    void unsetcount();
-    void setCount(int32_t value);
-
 
 protected:
     std::string status_;
     bool statusIsSet_;
-    int32_t count_;
-    bool countIsSet_;
 
+#ifdef RTTR_FLAG
+    RTTR_ENABLE()
+#endif
 };
 
 
@@ -72,4 +64,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_InstancesStatisticsResponseBody_instances_statistics_H_
+#endif // HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_ShowErrorLogSwitchStatusResponse_H_

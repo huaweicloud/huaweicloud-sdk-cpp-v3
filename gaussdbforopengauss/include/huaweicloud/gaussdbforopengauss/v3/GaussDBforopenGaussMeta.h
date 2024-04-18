@@ -29,6 +29,7 @@ public:
     static HttpRequestDef genRequestDefForDeleteConfiguration();
     static HttpRequestDef genRequestDefForDeleteDatabase();
     static HttpRequestDef genRequestDefForDeleteInstance();
+    static HttpRequestDef genRequestDefForDeleteInstanceTag();
     static HttpRequestDef genRequestDefForDeleteJob();
     static HttpRequestDef genRequestDefForDeleteManualBackup();
     static HttpRequestDef genRequestDefForDownloadBackup();
@@ -51,6 +52,7 @@ public:
     static HttpRequestDef genRequestDefForListFlavors();
     static HttpRequestDef genRequestDefForListGaussDbDatastores();
     static HttpRequestDef genRequestDefForListHistoryOperations();
+    static HttpRequestDef genRequestDefForListInstanceErrorLogs();
     static HttpRequestDef genRequestDefForListInstanceTags();
     static HttpRequestDef genRequestDefForListInstances();
     static HttpRequestDef genRequestDefForListInstancesDetails();
@@ -62,6 +64,7 @@ public:
     static HttpRequestDef genRequestDefForListRestoreTimes();
     static HttpRequestDef genRequestDefForListStorageTypes();
     static HttpRequestDef genRequestDefForListTasks();
+    static HttpRequestDef genRequestDefForListTopIoTraffics();
     static HttpRequestDef genRequestDefForModifyEpsQuota();
     static HttpRequestDef genRequestDefForResetConfiguration();
     static HttpRequestDef genRequestDefForResetPwd();
@@ -76,11 +79,11 @@ public:
     static HttpRequestDef genRequestDefForShowBalanceStatus();
     static HttpRequestDef genRequestDefForShowConfigurationDetail();
     static HttpRequestDef genRequestDefForShowDeploymentForm();
+    static HttpRequestDef genRequestDefForShowErrorLogSwitchStatus();
     static HttpRequestDef genRequestDefForShowInstanceConfiguration();
     static HttpRequestDef genRequestDefForShowInstanceDisk();
     static HttpRequestDef genRequestDefForShowInstanceParamGroup();
     static HttpRequestDef genRequestDefForShowInstanceSnapshot();
-    static HttpRequestDef genRequestDefForShowInstancesStatistics();
     static HttpRequestDef genRequestDefForShowJobDetail();
     static HttpRequestDef genRequestDefForShowProjectQuotas();
     static HttpRequestDef genRequestDefForShowRecyclePolicy();

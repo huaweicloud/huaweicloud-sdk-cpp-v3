@@ -20,7 +20,7 @@ ShowBackupPolicy::ShowBackupPolicy()
     periodIsSet_ = false;
     differentialPriod_ = "";
     differentialPriodIsSet_ = false;
-    differentialPeriod_ = "";
+    differentialPeriod_ = 0;
     differentialPeriodIsSet_ = false;
     rateLimit_ = 0;
     rateLimitIsSet_ = false;
@@ -121,7 +121,7 @@ bool ShowBackupPolicy::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("differential_period"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDifferentialPeriod(refVal);
         }
@@ -259,12 +259,12 @@ void ShowBackupPolicy::unsetdifferentialPriod()
     differentialPriodIsSet_ = false;
 }
 
-std::string ShowBackupPolicy::getDifferentialPeriod() const
+int32_t ShowBackupPolicy::getDifferentialPeriod() const
 {
     return differentialPeriod_;
 }
 
-void ShowBackupPolicy::setDifferentialPeriod(const std::string& value)
+void ShowBackupPolicy::setDifferentialPeriod(int32_t value)
 {
     differentialPeriod_ = value;
     differentialPeriodIsSet_ = true;

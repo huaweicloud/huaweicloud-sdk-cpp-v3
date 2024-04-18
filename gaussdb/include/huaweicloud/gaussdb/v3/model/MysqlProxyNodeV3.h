@@ -86,7 +86,7 @@ public:
     void setWeight(int32_t value);
 
     /// <summary>
-    /// 可用区信息。
+    /// 主实例所有节点的可用区信息。
     /// </summary>
 
     std::vector<MysqlProxyAvailable>& getAvailabilityZone();

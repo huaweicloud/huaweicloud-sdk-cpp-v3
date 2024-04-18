@@ -14,16 +14,14 @@ OpenGaussUpgradeRequest::OpenGaussUpgradeRequest()
 {
     upgradeType_ = "";
     upgradeTypeIsSet_ = false;
-    upgrdeAction_ = "";
-    upgrdeActionIsSet_ = false;
+    upgradeAction_ = "";
+    upgradeActionIsSet_ = false;
     targetVersion_ = "";
     targetVersionIsSet_ = false;
     upgradeShardNum_ = 0;
     upgradeShardNumIsSet_ = false;
     upgradeAz_ = "";
     upgradeAzIsSet_ = false;
-    isParallelUpgrade_ = false;
-    isParallelUpgradeIsSet_ = false;
 }
 
 OpenGaussUpgradeRequest::~OpenGaussUpgradeRequest() = default;
@@ -39,8 +37,8 @@ web::json::value OpenGaussUpgradeRequest::toJson() const
     if(upgradeTypeIsSet_) {
         val[utility::conversions::to_string_t("upgrade_type")] = ModelBase::toJson(upgradeType_);
     }
-    if(upgrdeActionIsSet_) {
-        val[utility::conversions::to_string_t("upgrde_action")] = ModelBase::toJson(upgrdeAction_);
+    if(upgradeActionIsSet_) {
+        val[utility::conversions::to_string_t("upgrade_action")] = ModelBase::toJson(upgradeAction_);
     }
     if(targetVersionIsSet_) {
         val[utility::conversions::to_string_t("target_version")] = ModelBase::toJson(targetVersion_);
@@ -50,9 +48,6 @@ web::json::value OpenGaussUpgradeRequest::toJson() const
     }
     if(upgradeAzIsSet_) {
         val[utility::conversions::to_string_t("upgrade_az")] = ModelBase::toJson(upgradeAz_);
-    }
-    if(isParallelUpgradeIsSet_) {
-        val[utility::conversions::to_string_t("is_parallel_upgrade")] = ModelBase::toJson(isParallelUpgrade_);
     }
 
     return val;
@@ -70,13 +65,13 @@ bool OpenGaussUpgradeRequest::fromJson(const web::json::value& val)
             setUpgradeType(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("upgrde_action"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("upgrde_action"));
+    if(val.has_field(utility::conversions::to_string_t("upgrade_action"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("upgrade_action"));
         if(!fieldValue.is_null())
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setUpgrdeAction(refVal);
+            setUpgradeAction(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("target_version"))) {
@@ -106,15 +101,6 @@ bool OpenGaussUpgradeRequest::fromJson(const web::json::value& val)
             setUpgradeAz(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("is_parallel_upgrade"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_parallel_upgrade"));
-        if(!fieldValue.is_null())
-        {
-            bool refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setIsParallelUpgrade(refVal);
-        }
-    }
     return ok;
 }
 
@@ -140,25 +126,25 @@ void OpenGaussUpgradeRequest::unsetupgradeType()
     upgradeTypeIsSet_ = false;
 }
 
-std::string OpenGaussUpgradeRequest::getUpgrdeAction() const
+std::string OpenGaussUpgradeRequest::getUpgradeAction() const
 {
-    return upgrdeAction_;
+    return upgradeAction_;
 }
 
-void OpenGaussUpgradeRequest::setUpgrdeAction(const std::string& value)
+void OpenGaussUpgradeRequest::setUpgradeAction(const std::string& value)
 {
-    upgrdeAction_ = value;
-    upgrdeActionIsSet_ = true;
+    upgradeAction_ = value;
+    upgradeActionIsSet_ = true;
 }
 
-bool OpenGaussUpgradeRequest::upgrdeActionIsSet() const
+bool OpenGaussUpgradeRequest::upgradeActionIsSet() const
 {
-    return upgrdeActionIsSet_;
+    return upgradeActionIsSet_;
 }
 
-void OpenGaussUpgradeRequest::unsetupgrdeAction()
+void OpenGaussUpgradeRequest::unsetupgradeAction()
 {
-    upgrdeActionIsSet_ = false;
+    upgradeActionIsSet_ = false;
 }
 
 std::string OpenGaussUpgradeRequest::getTargetVersion() const
@@ -222,27 +208,6 @@ bool OpenGaussUpgradeRequest::upgradeAzIsSet() const
 void OpenGaussUpgradeRequest::unsetupgradeAz()
 {
     upgradeAzIsSet_ = false;
-}
-
-bool OpenGaussUpgradeRequest::isIsParallelUpgrade() const
-{
-    return isParallelUpgrade_;
-}
-
-void OpenGaussUpgradeRequest::setIsParallelUpgrade(bool value)
-{
-    isParallelUpgrade_ = value;
-    isParallelUpgradeIsSet_ = true;
-}
-
-bool OpenGaussUpgradeRequest::isParallelUpgradeIsSet() const
-{
-    return isParallelUpgradeIsSet_;
-}
-
-void OpenGaussUpgradeRequest::unsetisParallelUpgrade()
-{
-    isParallelUpgradeIsSet_ = false;
 }
 
 }

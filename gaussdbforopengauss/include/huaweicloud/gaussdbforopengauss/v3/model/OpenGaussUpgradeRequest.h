@@ -51,10 +51,10 @@ public:
     /// 实例升级操作，就地升级无需传值。灰度升级包括升级自动提交，升级待观察，提交升级，升级回退四种。热补丁升级包括升级自动提交，升级回退两种。详见接口描述。  upgradeAutoCommit 升级自动提交  upgrade 升级待观察  commit 提交升级  rollback 升级回退。
     /// </summary>
 
-    std::string getUpgrdeAction() const;
-    bool upgrdeActionIsSet() const;
-    void unsetupgrdeAction();
-    void setUpgrdeAction(const std::string& value);
+    std::string getUpgradeAction() const;
+    bool upgradeActionIsSet() const;
+    void unsetupgradeAction();
+    void setUpgradeAction(const std::string& value);
 
     /// <summary>
     /// 实例升级目标版本，非必填。如果未传值则默认升级到当前实例的优选版本。仅热补丁升级方式下支持传入多个值，升级操作为升级自动提交，则实例版本从小到大批量升级，升级操作为升级回退，则实例版本从大到小批量回退。
@@ -83,29 +83,18 @@ public:
     void unsetupgradeAz();
     void setUpgradeAz(const std::string& value);
 
-    /// <summary>
-    /// 支持AZ内并行升级，升级时先升级所有备DN，再并行升级各分片主DN，最后并行升级CN。仅在灰度升级下有效且需要数据库版本大于等于3.200。
-    /// </summary>
-
-    bool isIsParallelUpgrade() const;
-    bool isParallelUpgradeIsSet() const;
-    void unsetisParallelUpgrade();
-    void setIsParallelUpgrade(bool value);
-
 
 protected:
     std::string upgradeType_;
     bool upgradeTypeIsSet_;
-    std::string upgrdeAction_;
-    bool upgrdeActionIsSet_;
+    std::string upgradeAction_;
+    bool upgradeActionIsSet_;
     std::string targetVersion_;
     bool targetVersionIsSet_;
     int32_t upgradeShardNum_;
     bool upgradeShardNumIsSet_;
     std::string upgradeAz_;
     bool upgradeAzIsSet_;
-    bool isParallelUpgrade_;
-    bool isParallelUpgradeIsSet_;
 
 };
 

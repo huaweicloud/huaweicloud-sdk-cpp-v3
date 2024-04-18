@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_ShowInstancesStatisticsRequest_H_
-#define HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_ShowInstancesStatisticsRequest_H_
+#ifndef HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_ShowErrorLogSwitchStatusRequest_H_
+#define HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_ShowErrorLogSwitchStatusRequest_H_
 
 
 #include <huaweicloud/gaussdbforopengauss/v3/GaussDBforopenGaussExport.h>
@@ -22,12 +22,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// Request Object
 /// </summary>
-class HUAWEICLOUD_GAUSSDBFOROPENGAUSS_V3_EXPORT  ShowInstancesStatisticsRequest
+class HUAWEICLOUD_GAUSSDBFOROPENGAUSS_V3_EXPORT  ShowErrorLogSwitchStatusRequest
     : public ModelBase
 {
 public:
-    ShowInstancesStatisticsRequest();
-    virtual ~ShowInstancesStatisticsRequest();
+    ShowErrorLogSwitchStatusRequest();
+    virtual ~ShowErrorLogSwitchStatusRequest();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -36,10 +36,10 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// ShowInstancesStatisticsRequest members
+    /// ShowErrorLogSwitchStatusRequest members
 
     /// <summary>
-    /// 语言。
+    /// 语言
     /// </summary>
 
     std::string getXLanguage() const;
@@ -47,15 +47,26 @@ public:
     void unsetxLanguage();
     void setXLanguage(const std::string& value);
 
+    /// <summary>
+    /// 实例ID。
+    /// </summary>
+
+    std::string getInstanceId() const;
+    bool instanceIdIsSet() const;
+    void unsetinstanceId();
+    void setInstanceId(const std::string& value);
+
 
 protected:
     std::string xLanguage_;
     bool xLanguageIsSet_;
+    std::string instanceId_;
+    bool instanceIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()
 public:
-    ShowInstancesStatisticsRequest& dereference_from_shared_ptr(std::shared_ptr<ShowInstancesStatisticsRequest> ptr) {
+    ShowErrorLogSwitchStatusRequest& dereference_from_shared_ptr(std::shared_ptr<ShowErrorLogSwitchStatusRequest> ptr) {
         return *ptr;
     }
 #endif
@@ -68,4 +79,4 @@ public:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_ShowInstancesStatisticsRequest_H_
+#endif // HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_ShowErrorLogSwitchStatusRequest_H_

@@ -47,6 +47,8 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/DeleteDatabaseResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/DeleteInstanceRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/DeleteInstanceResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/DeleteInstanceTagRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/DeleteInstanceTagResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/DeleteJobRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/DeleteJobResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/DeleteManualBackupRequest.h>
@@ -97,6 +99,8 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListGaussDbDatastoresResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListHistoryOperationsRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListHistoryOperationsResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListInstanceErrorLogsRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListInstanceErrorLogsResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListInstanceTagsRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListInstanceTagsResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListInstancesDetailsRequest.h>
@@ -119,6 +123,8 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListStorageTypesResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListTasksRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListTasksResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListTopIoTrafficsRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListTopIoTrafficsResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ModifyEpsQuotaRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ModifyEpsQuotaRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ModifyEpsQuotaResponse.h>
@@ -164,6 +170,8 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowConfigurationDetailResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowDeploymentFormRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowDeploymentFormResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ShowErrorLogSwitchStatusRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ShowErrorLogSwitchStatusResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowInstanceConfigurationRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowInstanceConfigurationResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowInstanceDiskRequest.h>
@@ -172,8 +180,6 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowInstanceParamGroupResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowInstanceSnapshotRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowInstanceSnapshotResponse.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ShowInstancesStatisticsRequest.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ShowInstancesStatisticsResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowJobDetailRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowJobDetailResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowProjectQuotasRequest.h>
@@ -363,6 +369,14 @@ public:
     std::shared_ptr<DeleteInstanceResponse> deleteInstance(
         DeleteInstanceRequest &request
     );
+    // 删除实例标签
+    //
+    // 删除实例标签
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteInstanceTagResponse> deleteInstanceTag(
+        DeleteInstanceTagRequest &request
+    );
     // 删除任务记录
     //
     // 删除任务记录。
@@ -539,6 +553,14 @@ public:
     std::shared_ptr<ListHistoryOperationsResponse> listHistoryOperations(
         ListHistoryOperationsRequest &request
     );
+    // 查询错误日志下载链接
+    //
+    // 查询数据库错误日志下载链接。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListInstanceErrorLogsResponse> listInstanceErrorLogs(
+        ListInstanceErrorLogsRequest &request
+    );
     // 查询实例标签
     //
     // 查询指定实例的用户标签信息。
@@ -627,6 +649,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListTasksResponse> listTasks(
         ListTasksRequest &request
+    );
+    // 查询Top IO列表
+    //
+    // 查询实例数据库进程下的Top IO流量数据，返回与会话信息相关联后的结果
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListTopIoTrafficsResponse> listTopIoTraffics(
+        ListTopIoTrafficsRequest &request
     );
     // 修改企业项目配额
     //
@@ -740,6 +770,14 @@ public:
     std::shared_ptr<ShowDeploymentFormResponse> showDeploymentForm(
         ShowDeploymentFormRequest &request
     );
+    // 查询错误日志采集开关状态
+    //
+    // 查询数据库错误日志采集的开关状态。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowErrorLogSwitchStatusResponse> showErrorLogSwitchStatus(
+        ShowErrorLogSwitchStatusRequest &request
+    );
     // 获取指定实例的参数模板
     //
     // 获取指定实例的参数模板。
@@ -771,14 +809,6 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowInstanceSnapshotResponse> showInstanceSnapshot(
         ShowInstanceSnapshotRequest &request
-    );
-    // 实例统计
-    //
-    // 实例统计
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ShowInstancesStatisticsResponse> showInstancesStatistics(
-        ShowInstancesStatisticsRequest &request
     );
     // 获取指定ID的任务信息。
     //

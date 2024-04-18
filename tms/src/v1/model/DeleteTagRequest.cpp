@@ -14,6 +14,8 @@ DeleteTagRequest::DeleteTagRequest()
 {
     key_ = "";
     keyIsSet_ = false;
+    value_ = "";
+    valueIsSet_ = false;
 }
 
 DeleteTagRequest::~DeleteTagRequest() = default;
@@ -29,6 +31,9 @@ web::json::value DeleteTagRequest::toJson() const
     if(keyIsSet_) {
         val[utility::conversions::to_string_t("key")] = ModelBase::toJson(key_);
     }
+    if(valueIsSet_) {
+        val[utility::conversions::to_string_t("value")] = ModelBase::toJson(value_);
+    }
 
     return val;
 }
@@ -43,6 +48,15 @@ bool DeleteTagRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setKey(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("value"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("value"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setValue(refVal);
         }
     }
     return ok;
@@ -68,6 +82,27 @@ bool DeleteTagRequest::keyIsSet() const
 void DeleteTagRequest::unsetkey()
 {
     keyIsSet_ = false;
+}
+
+std::string DeleteTagRequest::getValue() const
+{
+    return value_;
+}
+
+void DeleteTagRequest::setValue(const std::string& value)
+{
+    value_ = value;
+    valueIsSet_ = true;
+}
+
+bool DeleteTagRequest::valueIsSet() const
+{
+    return valueIsSet_;
+}
+
+void DeleteTagRequest::unsetvalue()
+{
+    valueIsSet_ = false;
 }
 
 }

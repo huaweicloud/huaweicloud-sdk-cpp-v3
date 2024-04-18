@@ -49,7 +49,7 @@ public:
     void setTransactionSplit(const std::string& value);
 
     /// <summary>
-    /// 实例的proxy列表
+    /// 实例的数据库代理列表，仅支持单proxy使用。
     /// </summary>
 
     std::vector<std::string>& getProxyIdList();

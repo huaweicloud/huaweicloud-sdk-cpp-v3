@@ -47,10 +47,21 @@ public:
     void unsetkey();
     void setKey(const std::string& value);
 
+    /// <summary>
+    ///   值。 最大长度43个字符，可以为空字符串。 字符集：A-Z，a-z ， 0-9，‘-’，‘_’，UNICODE字符（\\u4E00-\\u9FFF）。
+    /// </summary>
+
+    std::string getValue() const;
+    bool valueIsSet() const;
+    void unsetvalue();
+    void setValue(const std::string& value);
+
 
 protected:
     std::string key_;
     bool keyIsSet_;
+    std::string value_;
+    bool valueIsSet_;
 
 };
 

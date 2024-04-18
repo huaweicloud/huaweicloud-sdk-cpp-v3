@@ -1,3 +1,33 @@
+# 3.1.82 2024-04-18
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _新增特性_
+  - 支持接口`ListTopIoTraffics`、`ShowErrorLogSwitchStatus`、`ListInstanceErrorLogs`、`DeleteInstanceTag`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 移除接口`ShowInstancesStatistics`
+  - **UpgradeInstanceVersion**
+    - 请求参数变更
+      - `+ upgrade_action`
+      - `- upgrde_action`
+      - `- is_parallel_upgrade`
+  - **ShowBackupPolicy**
+    - 响应参数变更
+      - `* backup_policy.differential_period: string -> int32`
+
+### HuaweiCloud SDK TMS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **DeleteResourceTag**
+    - 请求参数变更
+      - `+ tags.value`
+
 # 3.1.81 2024-04-11
 
 ### HuaweiCloud SDK CDN

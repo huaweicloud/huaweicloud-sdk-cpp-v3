@@ -1,3 +1,33 @@
+# 3.1.82 2024-04-18
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _Features_
+  - Support the APIs `ListTopIoTraffics`, `ShowErrorLogSwitchStatus`, `ListInstanceErrorLogs`, `DeleteInstanceTag`
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the API `ShowInstancesStatistics`
+  - **UpgradeInstanceVersion**
+    - changes of request param
+      - `+ upgrade_action`
+      - `- upgrde_action`
+      - `- is_parallel_upgrade`
+  - **ShowBackupPolicy**
+    - changes of response param
+      - `* backup_policy.differential_period: string -> int32`
+
+### HuaweiCloud SDK TMS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **DeleteResourceTag**
+    - changes of request param
+      - `+ tags.value`
+
 # 3.1.81 2024-04-11
 
 ### HuaweiCloud SDK CDN

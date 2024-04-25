@@ -60,10 +60,10 @@ public:
     /// 封堵id
     /// </summary>
 
-    std::string getBlockId() const;
+    int64_t getBlockId() const;
     bool blockIdIsSet() const;
     void unsetblockId();
-    void setBlockId(const std::string& value);
+    void setBlockId(int64_t value);
 
     /// <summary>
     /// 封堵时间
@@ -116,7 +116,7 @@ protected:
     bool ipIsSet_;
     std::string executor_;
     bool executorIsSet_;
-    std::string blockId_;
+    int64_t blockId_;
     bool blockIdIsSet_;
     int64_t blockingTime_;
     bool blockingTimeIsSet_;

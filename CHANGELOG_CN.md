@@ -1,3 +1,107 @@
+# 3.1.83 2024-04-25
+
+### HuaweiCloud SDK AAD
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowUnblockRecord**
+    - 响应参数变更
+      - `* unblock_record.block_id: string -> int64`
+
+### HuaweiCloud SDK CodeArtsDeploy
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowDeployTaskDetail**
+    - 响应参数变更
+      - `+ is_disable`
+      - `+ can_disable`
+  - **ListDeployTasks**
+    - 响应参数变更
+      - `+ is_disable`
+      - `+ can_disable`
+      - `+ result.can_disable`
+      - `+ result.is_disable`
+  - **ListAllApp**
+    - 响应参数变更
+      - `+ result.is_disable`
+      - `+ result.can_disable`
+  - **ShowAppDetailById**
+    - 响应参数变更
+      - `+ result.is_disable`
+      - `+ result.can_disable`
+      - `+ result.arrange_infos.can_disable`
+      - `+ result.arrange_infos.is_disable`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListInstances**
+    - 响应参数变更
+      - `+ instances.availability_zone`
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 支持接口`RecognizeBankReceipt`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RecognizeBusinessLicense**
+    - 响应参数变更
+      - `+ result.organization_form`
+  - **RecognizeSmartDocumentRecognizer**
+    - 请求参数变更
+      - `+ formula`
+    - 响应参数变更
+      - `+ result.formula_result`
+
+### HuaweiCloud SDK VPC
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateFirewall**
+    - 响应参数变更
+      - `+ firewall.ingress_rules.enabled`
+  - **ShowFirewall**
+    - 响应参数变更
+      - `+ firewall.ingress_rules.enabled`
+  - **UpdateFirewall**
+    - 响应参数变更
+      - `+ firewall.ingress_rules.enabled`
+  - **UpdateFirewallRules**
+    - 请求参数变更
+      - `+ firewall.ingress_rules.enabled`
+    - 响应参数变更
+      - `+ firewall.ingress_rules.enabled`
+  - **AddFirewallRules**
+    - 请求参数变更
+      - `+ firewall.ingress_rules.enabled`
+    - 响应参数变更
+      - `+ firewall.ingress_rules.enabled`
+  - **RemoveFirewallRules**
+    - 响应参数变更
+      - `+ firewall.ingress_rules.enabled`
+  - **AssociateSubnetFirewall**
+    - 响应参数变更
+      - `+ firewall.ingress_rules.enabled`
+  - **DisassociateSubnetFirewall**
+    - 响应参数变更
+      - `+ firewall.ingress_rules.enabled`
+
 # 3.1.82 2024-04-18
 
 ### HuaweiCloud SDK GaussDBforopenGauss

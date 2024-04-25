@@ -65,11 +65,15 @@ TaskV2Info::TaskV2Info()
     canManageIsSet_ = false;
     canCreateEnv_ = false;
     canCreateEnvIsSet_ = false;
+    canDisable_ = false;
+    canDisableIsSet_ = false;
     appComponentListIsSet_ = false;
     releaseId_ = 0;
     releaseIdIsSet_ = false;
     appId_ = "";
     appIdIsSet_ = false;
+    isDisable_ = false;
+    isDisableIsSet_ = false;
 }
 
 TaskV2Info::~TaskV2Info() = default;
@@ -163,6 +167,9 @@ web::json::value TaskV2Info::toJson() const
     if(canCreateEnvIsSet_) {
         val[utility::conversions::to_string_t("can_create_env")] = ModelBase::toJson(canCreateEnv_);
     }
+    if(canDisableIsSet_) {
+        val[utility::conversions::to_string_t("can_disable")] = ModelBase::toJson(canDisable_);
+    }
     if(appComponentListIsSet_) {
         val[utility::conversions::to_string_t("app_component_list")] = ModelBase::toJson(appComponentList_);
     }
@@ -171,6 +178,9 @@ web::json::value TaskV2Info::toJson() const
     }
     if(appIdIsSet_) {
         val[utility::conversions::to_string_t("app_id")] = ModelBase::toJson(appId_);
+    }
+    if(isDisableIsSet_) {
+        val[utility::conversions::to_string_t("is_disable")] = ModelBase::toJson(isDisable_);
     }
 
     return val;
@@ -422,6 +432,15 @@ bool TaskV2Info::fromJson(const web::json::value& val)
             setCanCreateEnv(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("can_disable"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("can_disable"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCanDisable(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("app_component_list"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("app_component_list"));
         if(!fieldValue.is_null())
@@ -447,6 +466,15 @@ bool TaskV2Info::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAppId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_disable"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_disable"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsDisable(refVal);
         }
     }
     return ok;
@@ -1020,6 +1048,27 @@ void TaskV2Info::unsetcanCreateEnv()
     canCreateEnvIsSet_ = false;
 }
 
+bool TaskV2Info::isCanDisable() const
+{
+    return canDisable_;
+}
+
+void TaskV2Info::setCanDisable(bool value)
+{
+    canDisable_ = value;
+    canDisableIsSet_ = true;
+}
+
+bool TaskV2Info::canDisableIsSet() const
+{
+    return canDisableIsSet_;
+}
+
+void TaskV2Info::unsetcanDisable()
+{
+    canDisableIsSet_ = false;
+}
+
 std::vector<AppComponentDao>& TaskV2Info::getAppComponentList()
 {
     return appComponentList_;
@@ -1081,6 +1130,27 @@ bool TaskV2Info::appIdIsSet() const
 void TaskV2Info::unsetappId()
 {
     appIdIsSet_ = false;
+}
+
+bool TaskV2Info::isIsDisable() const
+{
+    return isDisable_;
+}
+
+void TaskV2Info::setIsDisable(bool value)
+{
+    isDisable_ = value;
+    isDisableIsSet_ = true;
+}
+
+bool TaskV2Info::isDisableIsSet() const
+{
+    return isDisableIsSet_;
+}
+
+void TaskV2Info::unsetisDisable()
+{
+    isDisableIsSet_ = false;
 }
 
 }

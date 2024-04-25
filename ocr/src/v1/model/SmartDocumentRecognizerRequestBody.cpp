@@ -26,6 +26,8 @@ SmartDocumentRecognizerRequestBody::SmartDocumentRecognizerRequestBody()
     returnExcelIsSet_ = false;
     form_ = false;
     formIsSet_ = false;
+    formula_ = false;
+    formulaIsSet_ = false;
     kvMap_ = "";
     kvMapIsSet_ = false;
 }
@@ -60,6 +62,9 @@ web::json::value SmartDocumentRecognizerRequestBody::toJson() const
     }
     if(formIsSet_) {
         val[utility::conversions::to_string_t("form")] = ModelBase::toJson(form_);
+    }
+    if(formulaIsSet_) {
+        val[utility::conversions::to_string_t("formula")] = ModelBase::toJson(formula_);
     }
     if(kvMapIsSet_) {
         val[utility::conversions::to_string_t("kv_map")] = ModelBase::toJson(kvMap_);
@@ -132,6 +137,15 @@ bool SmartDocumentRecognizerRequestBody::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setForm(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("formula"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("formula"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFormula(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("kv_map"))) {
@@ -292,6 +306,27 @@ bool SmartDocumentRecognizerRequestBody::formIsSet() const
 void SmartDocumentRecognizerRequestBody::unsetform()
 {
     formIsSet_ = false;
+}
+
+bool SmartDocumentRecognizerRequestBody::isFormula() const
+{
+    return formula_;
+}
+
+void SmartDocumentRecognizerRequestBody::setFormula(bool value)
+{
+    formula_ = value;
+    formulaIsSet_ = true;
+}
+
+bool SmartDocumentRecognizerRequestBody::formulaIsSet() const
+{
+    return formulaIsSet_;
+}
+
+void SmartDocumentRecognizerRequestBody::unsetformula()
+{
+    formulaIsSet_ = false;
 }
 
 std::string SmartDocumentRecognizerRequestBody::getKvMap() const

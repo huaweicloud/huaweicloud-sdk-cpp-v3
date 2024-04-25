@@ -56,6 +56,8 @@ ListInstancesResult::ListInstancesResult()
     lbIpAddressIsSet_ = false;
     lbPort_ = "";
     lbPortIsSet_ = false;
+    availabilityZone_ = "";
+    availabilityZoneIsSet_ = false;
 }
 
 ListInstancesResult::~ListInstancesResult() = default;
@@ -139,6 +141,9 @@ web::json::value ListInstancesResult::toJson() const
     }
     if(lbPortIsSet_) {
         val[utility::conversions::to_string_t("lb_port")] = ModelBase::toJson(lbPort_);
+    }
+    if(availabilityZoneIsSet_) {
+        val[utility::conversions::to_string_t("availability_zone")] = ModelBase::toJson(availabilityZone_);
     }
 
     return val;
@@ -361,6 +366,15 @@ bool ListInstancesResult::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLbPort(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("availability_zone"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("availability_zone"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAvailabilityZone(refVal);
         }
     }
     return ok;
@@ -869,6 +883,27 @@ bool ListInstancesResult::lbPortIsSet() const
 void ListInstancesResult::unsetlbPort()
 {
     lbPortIsSet_ = false;
+}
+
+std::string ListInstancesResult::getAvailabilityZone() const
+{
+    return availabilityZone_;
+}
+
+void ListInstancesResult::setAvailabilityZone(const std::string& value)
+{
+    availabilityZone_ = value;
+    availabilityZoneIsSet_ = true;
+}
+
+bool ListInstancesResult::availabilityZoneIsSet() const
+{
+    return availabilityZoneIsSet_;
+}
+
+void ListInstancesResult::unsetavailabilityZone()
+{
+    availabilityZoneIsSet_ = false;
 }
 
 }

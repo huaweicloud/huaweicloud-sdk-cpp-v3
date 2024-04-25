@@ -286,6 +286,15 @@ public:
     void setCanCreateEnv(bool value);
 
     /// <summary>
+    /// 是否有禁用应用的权限
+    /// </summary>
+
+    bool isCanDisable() const;
+    bool canDisableIsSet() const;
+    void unsetcanDisable();
+    void setCanDisable(bool value);
+
+    /// <summary>
     /// 应用组件列表
     /// </summary>
 
@@ -311,6 +320,15 @@ public:
     bool appIdIsSet() const;
     void unsetappId();
     void setAppId(const std::string& value);
+
+    /// <summary>
+    /// 当前应用是否被禁用
+    /// </summary>
+
+    bool isIsDisable() const;
+    bool isDisableIsSet() const;
+    void unsetisDisable();
+    void setIsDisable(bool value);
 
 
 protected:
@@ -368,12 +386,16 @@ protected:
     bool canManageIsSet_;
     bool canCreateEnv_;
     bool canCreateEnvIsSet_;
+    bool canDisable_;
+    bool canDisableIsSet_;
     std::vector<AppComponentDao> appComponentList_;
     bool appComponentListIsSet_;
     int32_t releaseId_;
     bool releaseIdIsSet_;
     std::string appId_;
     bool appIdIsSet_;
+    bool isDisable_;
+    bool isDisableIsSet_;
 
 };
 

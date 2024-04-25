@@ -258,6 +258,15 @@ public:
     void unsetlbPort();
     void setLbPort(const std::string& value);
 
+    /// <summary>
+    /// 实例可用区。
+    /// </summary>
+
+    std::string getAvailabilityZone() const;
+    bool availabilityZoneIsSet() const;
+    void unsetavailabilityZone();
+    void setAvailabilityZone(const std::string& value);
+
 
 protected:
     std::string id_;
@@ -308,6 +317,8 @@ protected:
     bool lbIpAddressIsSet_;
     std::string lbPort_;
     bool lbPortIsSet_;
+    std::string availabilityZone_;
+    bool availabilityZoneIsSet_;
 
 };
 

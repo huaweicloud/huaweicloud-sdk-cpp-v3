@@ -62,6 +62,8 @@ TaskInfo::TaskInfo()
     canCopyIsSet_ = false;
     canManage_ = false;
     canManageIsSet_ = false;
+    canDisable_ = false;
+    canDisableIsSet_ = false;
     appComponentListIsSet_ = false;
     roleId_ = 0;
     roleIdIsSet_ = false;
@@ -69,6 +71,8 @@ TaskInfo::TaskInfo()
     idIsSet_ = false;
     releaseId_ = 0;
     releaseIdIsSet_ = false;
+    isDisable_ = false;
+    isDisableIsSet_ = false;
     duration_ = "";
     durationIsSet_ = false;
     executionState_ = "";
@@ -165,6 +169,9 @@ web::json::value TaskInfo::toJson() const
     if(canManageIsSet_) {
         val[utility::conversions::to_string_t("can_manage")] = ModelBase::toJson(canManage_);
     }
+    if(canDisableIsSet_) {
+        val[utility::conversions::to_string_t("can_disable")] = ModelBase::toJson(canDisable_);
+    }
     if(appComponentListIsSet_) {
         val[utility::conversions::to_string_t("app_component_list")] = ModelBase::toJson(appComponentList_);
     }
@@ -176,6 +183,9 @@ web::json::value TaskInfo::toJson() const
     }
     if(releaseIdIsSet_) {
         val[utility::conversions::to_string_t("release_id")] = ModelBase::toJson(releaseId_);
+    }
+    if(isDisableIsSet_) {
+        val[utility::conversions::to_string_t("is_disable")] = ModelBase::toJson(isDisable_);
     }
     if(durationIsSet_) {
         val[utility::conversions::to_string_t("duration")] = ModelBase::toJson(duration_);
@@ -424,6 +434,15 @@ bool TaskInfo::fromJson(const web::json::value& val)
             setCanManage(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("can_disable"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("can_disable"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCanDisable(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("app_component_list"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("app_component_list"));
         if(!fieldValue.is_null())
@@ -458,6 +477,15 @@ bool TaskInfo::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setReleaseId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_disable"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_disable"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsDisable(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("duration"))) {
@@ -1034,6 +1062,27 @@ void TaskInfo::unsetcanManage()
     canManageIsSet_ = false;
 }
 
+bool TaskInfo::isCanDisable() const
+{
+    return canDisable_;
+}
+
+void TaskInfo::setCanDisable(bool value)
+{
+    canDisable_ = value;
+    canDisableIsSet_ = true;
+}
+
+bool TaskInfo::canDisableIsSet() const
+{
+    return canDisableIsSet_;
+}
+
+void TaskInfo::unsetcanDisable()
+{
+    canDisableIsSet_ = false;
+}
+
 std::vector<AppComponentDao>& TaskInfo::getAppComponentList()
 {
     return appComponentList_;
@@ -1116,6 +1165,27 @@ bool TaskInfo::releaseIdIsSet() const
 void TaskInfo::unsetreleaseId()
 {
     releaseIdIsSet_ = false;
+}
+
+bool TaskInfo::isIsDisable() const
+{
+    return isDisable_;
+}
+
+void TaskInfo::setIsDisable(bool value)
+{
+    isDisable_ = value;
+    isDisableIsSet_ = true;
+}
+
+bool TaskInfo::isDisableIsSet() const
+{
+    return isDisableIsSet_;
+}
+
+void TaskInfo::unsetisDisable()
+{
+    isDisableIsSet_ = false;
 }
 
 std::string TaskInfo::getDuration() const

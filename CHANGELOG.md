@@ -1,3 +1,107 @@
+# 3.1.83 2024-04-25
+
+### HuaweiCloud SDK AAD
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowUnblockRecord**
+    - changes of response param
+      - `* unblock_record.block_id: string -> int64`
+
+### HuaweiCloud SDK CodeArtsDeploy
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowDeployTaskDetail**
+    - changes of response param
+      - `+ is_disable`
+      - `+ can_disable`
+  - **ListDeployTasks**
+    - changes of response param
+      - `+ is_disable`
+      - `+ can_disable`
+      - `+ result.can_disable`
+      - `+ result.is_disable`
+  - **ListAllApp**
+    - changes of response param
+      - `+ result.is_disable`
+      - `+ result.can_disable`
+  - **ShowAppDetailById**
+    - changes of response param
+      - `+ result.is_disable`
+      - `+ result.can_disable`
+      - `+ result.arrange_infos.can_disable`
+      - `+ result.arrange_infos.is_disable`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListInstances**
+    - changes of response param
+      - `+ instances.availability_zone`
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - Support the API `RecognizeBankReceipt`
+- _Bug Fix_
+  - None
+- _Change_
+  - **RecognizeBusinessLicense**
+    - changes of response param
+      - `+ result.organization_form`
+  - **RecognizeSmartDocumentRecognizer**
+    - changes of request param
+      - `+ formula`
+    - changes of response param
+      - `+ result.formula_result`
+
+### HuaweiCloud SDK VPC
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateFirewall**
+    - changes of response param
+      - `+ firewall.ingress_rules.enabled`
+  - **ShowFirewall**
+    - changes of response param
+      - `+ firewall.ingress_rules.enabled`
+  - **UpdateFirewall**
+    - changes of response param
+      - `+ firewall.ingress_rules.enabled`
+  - **UpdateFirewallRules**
+    - changes of request param
+      - `+ firewall.ingress_rules.enabled`
+    - changes of response param
+      - `+ firewall.ingress_rules.enabled`
+  - **AddFirewallRules**
+    - changes of request param
+      - `+ firewall.ingress_rules.enabled`
+    - changes of response param
+      - `+ firewall.ingress_rules.enabled`
+  - **RemoveFirewallRules**
+    - changes of response param
+      - `+ firewall.ingress_rules.enabled`
+  - **AssociateSubnetFirewall**
+    - changes of response param
+      - `+ firewall.ingress_rules.enabled`
+  - **DisassociateSubnetFirewall**
+    - changes of response param
+      - `+ firewall.ingress_rules.enabled`
+
 # 3.1.82 2024-04-18
 
 ### HuaweiCloud SDK GaussDBforopenGauss

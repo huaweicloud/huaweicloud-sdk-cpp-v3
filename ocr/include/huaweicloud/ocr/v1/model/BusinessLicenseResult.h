@@ -40,7 +40,7 @@ public:
     /// BusinessLicenseResult members
 
     /// <summary>
-    ///   - 老版本营业执照对应注册号。  - 新三证合一版本营业执照对应社会保障号。 
+    /// - 老版本营业执照对应注册号。 - 新三证合一版本营业执照对应社会保障号。 
     /// </summary>
 
     std::string getRegistrationNumber() const;
@@ -58,7 +58,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 公司/企业类型/主体类型。 
+    /// 公司/企业类型/主体类型/类型。 
     /// </summary>
 
     std::string getType() const;
@@ -67,7 +67,7 @@ public:
     void setType(const std::string& value);
 
     /// <summary>
-    /// 住所/营业场所/企业住所。 
+    /// 住所/营业场所/企业住所/主要经营场所/经营场所。 
     /// </summary>
 
     std::string getAddress() const;
@@ -76,7 +76,7 @@ public:
     void setAddress(const std::string& value);
 
     /// <summary>
-    /// 法定代表人/负责人。 
+    /// 法定代表人/负责人/执行事务合伙人/投资人/经营者。 
     /// </summary>
 
     std::string getLegalRepresentative() const;
@@ -85,7 +85,7 @@ public:
     void setLegalRepresentative(const std::string& value);
 
     /// <summary>
-    /// 注册资本。 
+    /// 注册资本/出资额。 
     /// </summary>
 
     std::string getRegisteredCapital() const;
@@ -94,7 +94,16 @@ public:
     void setRegisteredCapital(const std::string& value);
 
     /// <summary>
-    /// 成立日期。 
+    /// 组成形式。 
+    /// </summary>
+
+    std::string getOrganizationForm() const;
+    bool organizationFormIsSet() const;
+    void unsetorganizationForm();
+    void setOrganizationForm(const std::string& value);
+
+    /// <summary>
+    /// 成立日期/注册日期。 
     /// </summary>
 
     std::string getFoundDate() const;
@@ -152,6 +161,8 @@ protected:
     bool legalRepresentativeIsSet_;
     std::string registeredCapital_;
     bool registeredCapitalIsSet_;
+    std::string organizationForm_;
+    bool organizationFormIsSet_;
     std::string foundDate_;
     bool foundDateIsSet_;
     std::string businessTerm_;

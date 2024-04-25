@@ -16,7 +16,7 @@ UnblockRecordResponse_unblock_record::UnblockRecordResponse_unblock_record()
     ipIsSet_ = false;
     executor_ = "";
     executorIsSet_ = false;
-    blockId_ = "";
+    blockId_ = 0L;
     blockIdIsSet_ = false;
     blockingTime_ = 0L;
     blockingTimeIsSet_ = false;
@@ -93,7 +93,7 @@ bool UnblockRecordResponse_unblock_record::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("block_id"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBlockId(refVal);
         }
@@ -189,12 +189,12 @@ void UnblockRecordResponse_unblock_record::unsetexecutor()
     executorIsSet_ = false;
 }
 
-std::string UnblockRecordResponse_unblock_record::getBlockId() const
+int64_t UnblockRecordResponse_unblock_record::getBlockId() const
 {
     return blockId_;
 }
 
-void UnblockRecordResponse_unblock_record::setBlockId(const std::string& value)
+void UnblockRecordResponse_unblock_record::setBlockId(int64_t value)
 {
     blockId_ = value;
     blockIdIsSet_ = true;

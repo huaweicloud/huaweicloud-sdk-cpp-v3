@@ -102,6 +102,15 @@ public:
     void setForm(bool value);
 
     /// <summary>
+    /// 是否进行公式识别，识别结果为latex序列。若是，结果会以“formula_result”这一关键字返回。 当前仅支持文档（例如论文）中的公式识别，不支持公式切片图像。 
+    /// </summary>
+
+    bool isFormula() const;
+    bool formulaIsSet() const;
+    void unsetformula();
+    void setFormula(bool value);
+
+    /// <summary>
     /// 需要传入字典的json序列化后字符串，用于对kv_result中的特定key值进行归一化映射。例如，kv_result中包含{\&quot;名称\&quot;：\&quot;小明\&quot;}的键值对，若传入{\&quot;名称\&quot;：\&quot;姓名\&quot;}的kv_map，则返回结果为{“姓名”：“小明”}。  &gt; 参数传入示例： - \&quot;kv_map\&quot;:\&quot;{\\\&quot;名称\\\&quot;:\\\&quot;姓名\\\&quot;}\&quot; 
     /// </summary>
 
@@ -126,6 +135,8 @@ protected:
     bool returnExcelIsSet_;
     bool form_;
     bool formIsSet_;
+    bool formula_;
+    bool formulaIsSet_;
     std::string kvMap_;
     bool kvMapIsSet_;
 

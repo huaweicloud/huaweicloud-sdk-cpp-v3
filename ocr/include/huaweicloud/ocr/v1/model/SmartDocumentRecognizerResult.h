@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/ocr/v1/model/SmartDocumentRecognizerFormulaResult.h>
 #include <huaweicloud/ocr/v1/model/SmartDocumentRecognizerFormResult.h>
 #include <huaweicloud/ocr/v1/model/SmartDocumentRecognizerOcrResult.h>
 #include <huaweicloud/ocr/v1/model/SmartDocumentRecognizerTableResult.h>
@@ -87,6 +88,15 @@ public:
     void unsetformResult();
     void setFormResult(const SmartDocumentRecognizerFormResult& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    SmartDocumentRecognizerFormulaResult getFormulaResult() const;
+    bool formulaResultIsSet() const;
+    void unsetformulaResult();
+    void setFormulaResult(const SmartDocumentRecognizerFormulaResult& value);
+
 
 protected:
     SmartDocumentRecognizerOcrResult ocrResult_;
@@ -99,6 +109,8 @@ protected:
     bool layoutResultIsSet_;
     SmartDocumentRecognizerFormResult formResult_;
     bool formResultIsSet_;
+    SmartDocumentRecognizerFormulaResult formulaResult_;
+    bool formulaResultIsSet_;
 
 };
 

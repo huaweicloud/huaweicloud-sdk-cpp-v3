@@ -268,6 +268,15 @@ public:
     void setCanManage(bool value);
 
     /// <summary>
+    /// 是否有禁用应用的权限
+    /// </summary>
+
+    bool isCanDisable() const;
+    bool canDisableIsSet() const;
+    void unsetcanDisable();
+    void setCanDisable(bool value);
+
+    /// <summary>
     /// 应用和AOM应用组件对应关系
     /// </summary>
 
@@ -302,6 +311,15 @@ public:
     bool releaseIdIsSet() const;
     void unsetreleaseId();
     void setReleaseId(int32_t value);
+
+    /// <summary>
+    /// 当前应用是否被禁用
+    /// </summary>
+
+    bool isIsDisable() const;
+    bool isDisableIsSet() const;
+    void unsetisDisable();
+    void setIsDisable(bool value);
 
     /// <summary>
     /// 部署时间
@@ -400,6 +418,8 @@ protected:
     bool canCopyIsSet_;
     bool canManage_;
     bool canManageIsSet_;
+    bool canDisable_;
+    bool canDisableIsSet_;
     std::vector<AppComponentDao> appComponentList_;
     bool appComponentListIsSet_;
     int32_t roleId_;
@@ -408,6 +428,8 @@ protected:
     bool idIsSet_;
     int32_t releaseId_;
     bool releaseIdIsSet_;
+    bool isDisable_;
+    bool isDisableIsSet_;
     std::string duration_;
     bool durationIsSet_;
     std::string executionState_;

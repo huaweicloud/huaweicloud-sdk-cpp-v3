@@ -24,6 +24,8 @@ BusinessLicenseResult::BusinessLicenseResult()
     legalRepresentativeIsSet_ = false;
     registeredCapital_ = "";
     registeredCapitalIsSet_ = false;
+    organizationForm_ = "";
+    organizationFormIsSet_ = false;
     foundDate_ = "";
     foundDateIsSet_ = false;
     businessTerm_ = "";
@@ -62,6 +64,9 @@ web::json::value BusinessLicenseResult::toJson() const
     }
     if(registeredCapitalIsSet_) {
         val[utility::conversions::to_string_t("registered_capital")] = ModelBase::toJson(registeredCapital_);
+    }
+    if(organizationFormIsSet_) {
+        val[utility::conversions::to_string_t("organization_form")] = ModelBase::toJson(organizationForm_);
     }
     if(foundDateIsSet_) {
         val[utility::conversions::to_string_t("found_date")] = ModelBase::toJson(foundDate_);
@@ -137,6 +142,15 @@ bool BusinessLicenseResult::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRegisteredCapital(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("organization_form"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("organization_form"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setOrganizationForm(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("found_date"))) {
@@ -312,6 +326,27 @@ bool BusinessLicenseResult::registeredCapitalIsSet() const
 void BusinessLicenseResult::unsetregisteredCapital()
 {
     registeredCapitalIsSet_ = false;
+}
+
+std::string BusinessLicenseResult::getOrganizationForm() const
+{
+    return organizationForm_;
+}
+
+void BusinessLicenseResult::setOrganizationForm(const std::string& value)
+{
+    organizationForm_ = value;
+    organizationFormIsSet_ = true;
+}
+
+bool BusinessLicenseResult::organizationFormIsSet() const
+{
+    return organizationFormIsSet_;
+}
+
+void BusinessLicenseResult::unsetorganizationForm()
+{
+    organizationFormIsSet_ = false;
 }
 
 std::string BusinessLicenseResult::getFoundDate() const

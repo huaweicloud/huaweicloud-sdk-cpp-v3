@@ -77,6 +77,15 @@ public:
     void setDescription(const std::string& value);
 
     /// <summary>
+    /// 当前应用是否被禁用
+    /// </summary>
+
+    bool isIsDisable() const;
+    bool isDisableIsSet() const;
+    void unsetisDisable();
+    void setIsDisable(bool value);
+
+    /// <summary>
     /// 创建方式
     /// </summary>
 
@@ -185,6 +194,15 @@ public:
     void setCanCreateEnv(bool value);
 
     /// <summary>
+    /// 是否有禁用应用的权限
+    /// </summary>
+
+    bool isCanDisable() const;
+    bool canDisableIsSet() const;
+    void unsetcanDisable();
+    void setCanDisable(bool value);
+
+    /// <summary>
     /// 应用所属人租户ID
     /// </summary>
 
@@ -257,6 +275,8 @@ protected:
     bool regionIsSet_;
     std::string description_;
     bool descriptionIsSet_;
+    bool isDisable_;
+    bool isDisableIsSet_;
     std::string createType_;
     bool createTypeIsSet_;
     std::string projectId_;
@@ -281,6 +301,8 @@ protected:
     bool canManageIsSet_;
     bool canCreateEnv_;
     bool canCreateEnvIsSet_;
+    bool canDisable_;
+    bool canDisableIsSet_;
     std::string ownerTenantId_;
     bool ownerTenantIdIsSet_;
     std::string createUserId_;

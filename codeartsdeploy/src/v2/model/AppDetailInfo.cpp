@@ -20,6 +20,8 @@ AppDetailInfo::AppDetailInfo()
     regionIsSet_ = false;
     description_ = "";
     descriptionIsSet_ = false;
+    isDisable_ = false;
+    isDisableIsSet_ = false;
     createType_ = "";
     createTypeIsSet_ = false;
     projectId_ = "";
@@ -44,6 +46,8 @@ AppDetailInfo::AppDetailInfo()
     canManageIsSet_ = false;
     canCreateEnv_ = false;
     canCreateEnvIsSet_ = false;
+    canDisable_ = false;
+    canDisableIsSet_ = false;
     ownerTenantId_ = "";
     ownerTenantIdIsSet_ = false;
     createUserId_ = "";
@@ -81,6 +85,9 @@ web::json::value AppDetailInfo::toJson() const
     if(descriptionIsSet_) {
         val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
     }
+    if(isDisableIsSet_) {
+        val[utility::conversions::to_string_t("is_disable")] = ModelBase::toJson(isDisable_);
+    }
     if(createTypeIsSet_) {
         val[utility::conversions::to_string_t("create_type")] = ModelBase::toJson(createType_);
     }
@@ -116,6 +123,9 @@ web::json::value AppDetailInfo::toJson() const
     }
     if(canCreateEnvIsSet_) {
         val[utility::conversions::to_string_t("can_create_env")] = ModelBase::toJson(canCreateEnv_);
+    }
+    if(canDisableIsSet_) {
+        val[utility::conversions::to_string_t("can_disable")] = ModelBase::toJson(canDisable_);
     }
     if(ownerTenantIdIsSet_) {
         val[utility::conversions::to_string_t("owner_tenant_id")] = ModelBase::toJson(ownerTenantId_);
@@ -179,6 +189,15 @@ bool AppDetailInfo::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDescription(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_disable"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_disable"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsDisable(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("create_type"))) {
@@ -287,6 +306,15 @@ bool AppDetailInfo::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCanCreateEnv(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("can_disable"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("can_disable"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCanDisable(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("owner_tenant_id"))) {
@@ -438,6 +466,27 @@ bool AppDetailInfo::descriptionIsSet() const
 void AppDetailInfo::unsetdescription()
 {
     descriptionIsSet_ = false;
+}
+
+bool AppDetailInfo::isIsDisable() const
+{
+    return isDisable_;
+}
+
+void AppDetailInfo::setIsDisable(bool value)
+{
+    isDisable_ = value;
+    isDisableIsSet_ = true;
+}
+
+bool AppDetailInfo::isDisableIsSet() const
+{
+    return isDisableIsSet_;
+}
+
+void AppDetailInfo::unsetisDisable()
+{
+    isDisableIsSet_ = false;
 }
 
 std::string AppDetailInfo::getCreateType() const
@@ -690,6 +739,27 @@ bool AppDetailInfo::canCreateEnvIsSet() const
 void AppDetailInfo::unsetcanCreateEnv()
 {
     canCreateEnvIsSet_ = false;
+}
+
+bool AppDetailInfo::isCanDisable() const
+{
+    return canDisable_;
+}
+
+void AppDetailInfo::setCanDisable(bool value)
+{
+    canDisable_ = value;
+    canDisableIsSet_ = true;
+}
+
+bool AppDetailInfo::canDisableIsSet() const
+{
+    return canDisableIsSet_;
+}
+
+void AppDetailInfo::unsetcanDisable()
+{
+    canDisableIsSet_ = false;
 }
 
 std::string AppDetailInfo::getOwnerTenantId() const

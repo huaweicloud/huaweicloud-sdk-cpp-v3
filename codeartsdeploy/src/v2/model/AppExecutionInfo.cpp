@@ -18,6 +18,8 @@ AppExecutionInfo::AppExecutionInfo()
     nameIsSet_ = false;
     duration_ = "";
     durationIsSet_ = false;
+    isDisable_ = false;
+    isDisableIsSet_ = false;
     projectId_ = "";
     projectIdIsSet_ = false;
     projectName_ = "";
@@ -38,6 +40,8 @@ AppExecutionInfo::AppExecutionInfo()
     canManageIsSet_ = false;
     canCreateEnv_ = false;
     canCreateEnvIsSet_ = false;
+    canDisable_ = false;
+    canDisableIsSet_ = false;
     deploySystem_ = "";
     deploySystemIsSet_ = false;
     createUserId_ = "";
@@ -82,6 +86,9 @@ web::json::value AppExecutionInfo::toJson() const
     if(durationIsSet_) {
         val[utility::conversions::to_string_t("duration")] = ModelBase::toJson(duration_);
     }
+    if(isDisableIsSet_) {
+        val[utility::conversions::to_string_t("is_disable")] = ModelBase::toJson(isDisable_);
+    }
     if(projectIdIsSet_) {
         val[utility::conversions::to_string_t("project_id")] = ModelBase::toJson(projectId_);
     }
@@ -111,6 +118,9 @@ web::json::value AppExecutionInfo::toJson() const
     }
     if(canCreateEnvIsSet_) {
         val[utility::conversions::to_string_t("can_create_env")] = ModelBase::toJson(canCreateEnv_);
+    }
+    if(canDisableIsSet_) {
+        val[utility::conversions::to_string_t("can_disable")] = ModelBase::toJson(canDisable_);
     }
     if(deploySystemIsSet_) {
         val[utility::conversions::to_string_t("deploy_system")] = ModelBase::toJson(deploySystem_);
@@ -180,6 +190,15 @@ bool AppExecutionInfo::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDuration(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_disable"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_disable"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsDisable(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("project_id"))) {
@@ -270,6 +289,15 @@ bool AppExecutionInfo::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCanCreateEnv(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("can_disable"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("can_disable"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCanDisable(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("deploy_system"))) {
@@ -445,6 +473,27 @@ bool AppExecutionInfo::durationIsSet() const
 void AppExecutionInfo::unsetduration()
 {
     durationIsSet_ = false;
+}
+
+bool AppExecutionInfo::isIsDisable() const
+{
+    return isDisable_;
+}
+
+void AppExecutionInfo::setIsDisable(bool value)
+{
+    isDisable_ = value;
+    isDisableIsSet_ = true;
+}
+
+bool AppExecutionInfo::isDisableIsSet() const
+{
+    return isDisableIsSet_;
+}
+
+void AppExecutionInfo::unsetisDisable()
+{
+    isDisableIsSet_ = false;
 }
 
 std::string AppExecutionInfo::getProjectId() const
@@ -655,6 +704,27 @@ bool AppExecutionInfo::canCreateEnvIsSet() const
 void AppExecutionInfo::unsetcanCreateEnv()
 {
     canCreateEnvIsSet_ = false;
+}
+
+bool AppExecutionInfo::isCanDisable() const
+{
+    return canDisable_;
+}
+
+void AppExecutionInfo::setCanDisable(bool value)
+{
+    canDisable_ = value;
+    canDisableIsSet_ = true;
+}
+
+bool AppExecutionInfo::canDisableIsSet() const
+{
+    return canDisableIsSet_;
+}
+
+void AppExecutionInfo::unsetcanDisable()
+{
+    canDisableIsSet_ = false;
 }
 
 std::string AppExecutionInfo::getDeploySystem() const

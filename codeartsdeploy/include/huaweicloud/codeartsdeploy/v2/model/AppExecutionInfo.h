@@ -68,6 +68,15 @@ public:
     void setDuration(const std::string& value);
 
     /// <summary>
+    /// 当前应用是否被禁用
+    /// </summary>
+
+    bool isIsDisable() const;
+    bool isDisableIsSet() const;
+    void unsetisDisable();
+    void setIsDisable(bool value);
+
+    /// <summary>
     /// 项目ID
     /// </summary>
 
@@ -156,6 +165,15 @@ public:
     bool canCreateEnvIsSet() const;
     void unsetcanCreateEnv();
     void setCanCreateEnv(bool value);
+
+    /// <summary>
+    /// 是否有禁用应用的权限
+    /// </summary>
+
+    bool isCanDisable() const;
+    bool canDisableIsSet() const;
+    void unsetcanDisable();
+    void setCanDisable(bool value);
 
     /// <summary>
     /// 部署类型模式，包括deployTemplate、ansible、shell
@@ -273,6 +291,8 @@ protected:
     bool nameIsSet_;
     std::string duration_;
     bool durationIsSet_;
+    bool isDisable_;
+    bool isDisableIsSet_;
     std::string projectId_;
     bool projectIdIsSet_;
     std::string projectName_;
@@ -293,6 +313,8 @@ protected:
     bool canManageIsSet_;
     bool canCreateEnv_;
     bool canCreateEnvIsSet_;
+    bool canDisable_;
+    bool canDisableIsSet_;
     std::string deploySystem_;
     bool deploySystemIsSet_;
     std::string createUserId_;

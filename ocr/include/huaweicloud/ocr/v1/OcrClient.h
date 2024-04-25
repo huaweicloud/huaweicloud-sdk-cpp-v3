@@ -8,6 +8,7 @@
 
 #include <huaweicloud/ocr/v1/model/AcceptanceBillRequestBody.h>
 #include <huaweicloud/ocr/v1/model/AutoClassificationRequestBody.h>
+#include <huaweicloud/ocr/v1/model/BankReceiptRequestBody.h>
 #include <huaweicloud/ocr/v1/model/BankcardRequestBody.h>
 #include <huaweicloud/ocr/v1/model/BusinessCardRequestBody.h>
 #include <huaweicloud/ocr/v1/model/BusinessLicenseRequestBody.h>
@@ -44,6 +45,8 @@
 #include <huaweicloud/ocr/v1/model/RecognizeAcceptanceBillResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeAutoClassificationRequest.h>
 #include <huaweicloud/ocr/v1/model/RecognizeAutoClassificationResponse.h>
+#include <huaweicloud/ocr/v1/model/RecognizeBankReceiptRequest.h>
+#include <huaweicloud/ocr/v1/model/RecognizeBankReceiptResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeBankcardRequest.h>
 #include <huaweicloud/ocr/v1/model/RecognizeBankcardResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeBusinessCardRequest.h>
@@ -203,6 +206,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<RecognizeAutoClassificationResponse> recognizeAutoClassification(
         RecognizeAutoClassificationRequest &request
+    );
+    // 银行回单识别
+    //
+    // 支持对银行回单版式进行文字识别及键值对提取，实现高效的自动化结构化返回。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<RecognizeBankReceiptResponse> recognizeBankReceipt(
+        RecognizeBankReceiptRequest &request
     );
     // 银行卡识别
     //

@@ -17,8 +17,6 @@ DeleteKvRequestBody::DeleteKvRequestBody()
     tableNameIsSet_ = false;
     primaryKeyIsSet_ = false;
     conditionExpressionIsSet_ = false;
-    projectionFieldsIsSet_ = false;
-    projectionBlobIsSet_ = false;
 }
 
 DeleteKvRequestBody::~DeleteKvRequestBody() = default;
@@ -37,12 +35,6 @@ bool DeleteKvRequestBody::toBson(Builder &builder) const
         return false;
     }
     if (conditionExpressionIsSet_ && !bson_append(builder, "condition_expression", conditionExpression_)) {
-        return false;
-    }
-    if (projectionFieldsIsSet_ && !bson_append(builder, "projection_fields", projectionFields_)) {
-        return false;
-    }
-    if (projectionBlobIsSet_ && !bson_append(builder, "projection_blob", projectionBlob_)) {
         return false;
     }
 
@@ -79,24 +71,6 @@ bool DeleteKvRequestBody::fromBson(const Viewer &viewer)
                 return false;
             }
             conditionExpressionIsSet_ = true;
-            ++it;
-            continue;
-        }
-        
-        if (key == "projection_fields") {
-            if (!bson_get(it, projectionFields_)) {
-                return false;
-            }
-            projectionFieldsIsSet_ = true;
-            ++it;
-            continue;
-        }
-        
-        if (key == "projection_blob") {
-            if (!bson_get(it, projectionBlob_)) {
-                return false;
-            }
-            projectionBlobIsSet_ = true;
             ++it;
             continue;
         }
@@ -168,48 +142,6 @@ bool DeleteKvRequestBody::conditionExpressionIsSet() const
 void DeleteKvRequestBody::unsetconditionExpression()
 {
     conditionExpressionIsSet_ = false;
-}
-
-std::vector<std::string>& DeleteKvRequestBody::getProjectionFields()
-{
-    return projectionFields_;
-}
-
-void DeleteKvRequestBody::setProjectionFields(const std::vector<std::string>& value)
-{
-    projectionFields_ = value;
-    projectionFieldsIsSet_ = true;
-}
-
-bool DeleteKvRequestBody::projectionFieldsIsSet() const
-{
-    return projectionFieldsIsSet_;
-}
-
-void DeleteKvRequestBody::unsetprojectionFields()
-{
-    projectionFieldsIsSet_ = false;
-}
-
-Projection_blob DeleteKvRequestBody::getProjectionBlob() const
-{
-    return projectionBlob_;
-}
-
-void DeleteKvRequestBody::setProjectionBlob(const Projection_blob& value)
-{
-    projectionBlob_ = value;
-    projectionBlobIsSet_ = true;
-}
-
-bool DeleteKvRequestBody::projectionBlobIsSet() const
-{
-    return projectionBlobIsSet_;
-}
-
-void DeleteKvRequestBody::unsetprojectionBlob()
-{
-    projectionBlobIsSet_ = false;
 }
 
 }

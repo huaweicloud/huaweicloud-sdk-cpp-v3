@@ -14,9 +14,7 @@
 
 #include <huaweicloud/kvs/v1/model/Condition_expression.h>
 #include <string>
-#include <huaweicloud/kvs/v1/model/Projection_blob.h>
 #include <huaweicloud/core/bson/Bson.h>
-#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -72,24 +70,6 @@ public:
     void unsetconditionExpression();
     void setConditionExpression(const Condition_expression& value);
 
-    /// <summary>
-    /// 对kv_doc有效，返回哪些字段列表，默认全部。
-    /// </summary>
-
-    std::vector<std::string>& getProjectionFields();
-    bool projectionFieldsIsSet() const;
-    void unsetprojectionFields();
-    void setProjectionFields(const std::vector<std::string>& value);
-
-    /// <summary>
-    /// 
-    /// </summary>
-
-    Projection_blob getProjectionBlob() const;
-    bool projectionBlobIsSet() const;
-    void unsetprojectionBlob();
-    void setProjectionBlob(const Projection_blob& value);
-
 
 protected:
     std::string tableName_;
@@ -98,10 +78,6 @@ protected:
     bool primaryKeyIsSet_;
     Condition_expression conditionExpression_;
     bool conditionExpressionIsSet_;
-    std::vector<std::string> projectionFields_;
-    bool projectionFieldsIsSet_;
-    Projection_blob projectionBlob_;
-    bool projectionBlobIsSet_;
 
 };
 

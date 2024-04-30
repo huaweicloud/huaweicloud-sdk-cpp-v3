@@ -75,7 +75,7 @@ public:
     void setPrivateKey(const std::string& value);
 
     /// <summary>
-    /// 证书来源,1：华为云托管证书,0：自有证书, 默认值0。  &gt; 证书开启时必传
+    /// 证书来源,0：自有证书。  &gt; 证书开启时必传
     /// </summary>
 
     int32_t getCertificateSource() const;

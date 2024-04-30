@@ -19,9 +19,7 @@ UpdateKvRequestBody::UpdateKvRequestBody()
     conditionExpressionIsSet_ = false;
     kvOptionsIsSet_ = false;
     updateFieldsIsSet_ = false;
-    projectionFieldsIsSet_ = false;
     updateBlobIsSet_ = false;
-    projectionBlobIsSet_ = false;
 }
 
 UpdateKvRequestBody::~UpdateKvRequestBody() = default;
@@ -48,13 +46,7 @@ bool UpdateKvRequestBody::toBson(Builder &builder) const
     if (updateFieldsIsSet_ && !bson_append(builder, "update_fields", updateFields_)) {
         return false;
     }
-    if (projectionFieldsIsSet_ && !bson_append(builder, "projection_fields", projectionFields_)) {
-        return false;
-    }
     if (updateBlobIsSet_ && !bson_append(builder, "update_blob", updateBlob_)) {
-        return false;
-    }
-    if (projectionBlobIsSet_ && !bson_append(builder, "projection_blob", projectionBlob_)) {
         return false;
     }
 
@@ -113,29 +105,11 @@ bool UpdateKvRequestBody::fromBson(const Viewer &viewer)
             continue;
         }
         
-        if (key == "projection_fields") {
-            if (!bson_get(it, projectionFields_)) {
-                return false;
-            }
-            projectionFieldsIsSet_ = true;
-            ++it;
-            continue;
-        }
-        
         if (key == "update_blob") {
             if (!bson_get(it, updateBlob_)) {
                 return false;
             }
             updateBlobIsSet_ = true;
-            ++it;
-            continue;
-        }
-        
-        if (key == "projection_blob") {
-            if (!bson_get(it, projectionBlob_)) {
-                return false;
-            }
-            projectionBlobIsSet_ = true;
             ++it;
             continue;
         }
@@ -251,27 +225,6 @@ void UpdateKvRequestBody::unsetupdateFields()
     updateFieldsIsSet_ = false;
 }
 
-std::vector<std::string>& UpdateKvRequestBody::getProjectionFields()
-{
-    return projectionFields_;
-}
-
-void UpdateKvRequestBody::setProjectionFields(const std::vector<std::string>& value)
-{
-    projectionFields_ = value;
-    projectionFieldsIsSet_ = true;
-}
-
-bool UpdateKvRequestBody::projectionFieldsIsSet() const
-{
-    return projectionFieldsIsSet_;
-}
-
-void UpdateKvRequestBody::unsetprojectionFields()
-{
-    projectionFieldsIsSet_ = false;
-}
-
 Update_blob UpdateKvRequestBody::getUpdateBlob() const
 {
     return updateBlob_;
@@ -291,27 +244,6 @@ bool UpdateKvRequestBody::updateBlobIsSet() const
 void UpdateKvRequestBody::unsetupdateBlob()
 {
     updateBlobIsSet_ = false;
-}
-
-Projection_blob UpdateKvRequestBody::getProjectionBlob() const
-{
-    return projectionBlob_;
-}
-
-void UpdateKvRequestBody::setProjectionBlob(const Projection_blob& value)
-{
-    projectionBlob_ = value;
-    projectionBlobIsSet_ = true;
-}
-
-bool UpdateKvRequestBody::projectionBlobIsSet() const
-{
-    return projectionBlobIsSet_;
-}
-
-void UpdateKvRequestBody::unsetprojectionBlob()
-{
-    projectionBlobIsSet_ = false;
 }
 
 }

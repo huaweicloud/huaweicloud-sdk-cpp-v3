@@ -52,7 +52,7 @@ public:
     void setHashCount(int32_t value);
 
     /// <summary>
-    /// 在range分区模式有效，最大_1000_个，与\&quot;hash_count\&quot;二选一。
+    /// 在range分区模式有效，最大1000个，与\&quot;hash_count\&quot;二选一。
     /// </summary>
 
     std::vector<Document>& getRangeSplitPoints();

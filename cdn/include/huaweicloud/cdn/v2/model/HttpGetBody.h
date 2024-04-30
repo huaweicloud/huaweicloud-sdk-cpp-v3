@@ -75,7 +75,7 @@ public:
     void setExpireTime(int64_t value);
 
     /// <summary>
-    /// 证书来源,1：华为云托管证书,0：自有证书。
+    /// 证书来源,0：自有证书。
     /// </summary>
 
     int32_t getCertificateSource() const;

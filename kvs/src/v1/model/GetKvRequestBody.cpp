@@ -16,8 +16,6 @@ GetKvRequestBody::GetKvRequestBody()
     tableName_ = "";
     tableNameIsSet_ = false;
     primaryKeyIsSet_ = false;
-    projectionFieldsIsSet_ = false;
-    projectionBlobIsSet_ = false;
 }
 
 GetKvRequestBody::~GetKvRequestBody() = default;
@@ -33,12 +31,6 @@ bool GetKvRequestBody::toBson(Builder &builder) const
         return false;
     }
     if (primaryKeyIsSet_ && !bson_append(builder, "primary_key", primaryKey_)) {
-        return false;
-    }
-    if (projectionFieldsIsSet_ && !bson_append(builder, "projection_fields", projectionFields_)) {
-        return false;
-    }
-    if (projectionBlobIsSet_ && !bson_append(builder, "projection_blob", projectionBlob_)) {
         return false;
     }
 
@@ -66,24 +58,6 @@ bool GetKvRequestBody::fromBson(const Viewer &viewer)
                 return false;
             }
             primaryKeyIsSet_ = true;
-            ++it;
-            continue;
-        }
-        
-        if (key == "projection_fields") {
-            if (!bson_get(it, projectionFields_)) {
-                return false;
-            }
-            projectionFieldsIsSet_ = true;
-            ++it;
-            continue;
-        }
-        
-        if (key == "projection_blob") {
-            if (!bson_get(it, projectionBlob_)) {
-                return false;
-            }
-            projectionBlobIsSet_ = true;
             ++it;
             continue;
         }
@@ -134,48 +108,6 @@ bool GetKvRequestBody::primaryKeyIsSet() const
 void GetKvRequestBody::unsetprimaryKey()
 {
     primaryKeyIsSet_ = false;
-}
-
-std::vector<std::string>& GetKvRequestBody::getProjectionFields()
-{
-    return projectionFields_;
-}
-
-void GetKvRequestBody::setProjectionFields(const std::vector<std::string>& value)
-{
-    projectionFields_ = value;
-    projectionFieldsIsSet_ = true;
-}
-
-bool GetKvRequestBody::projectionFieldsIsSet() const
-{
-    return projectionFieldsIsSet_;
-}
-
-void GetKvRequestBody::unsetprojectionFields()
-{
-    projectionFieldsIsSet_ = false;
-}
-
-Projection_blob GetKvRequestBody::getProjectionBlob() const
-{
-    return projectionBlob_;
-}
-
-void GetKvRequestBody::setProjectionBlob(const Projection_blob& value)
-{
-    projectionBlob_ = value;
-    projectionBlobIsSet_ = true;
-}
-
-bool GetKvRequestBody::projectionBlobIsSet() const
-{
-    return projectionBlobIsSet_;
-}
-
-void GetKvRequestBody::unsetprojectionBlob()
-{
-    projectionBlobIsSet_ = false;
 }
 
 }

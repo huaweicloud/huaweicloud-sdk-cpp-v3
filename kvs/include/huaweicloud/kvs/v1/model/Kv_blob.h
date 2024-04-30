@@ -51,7 +51,7 @@ public:
     void setPrimaryKey(const Document& value);
 
     /// <summary>
-    /// 属性信息，最大_2_kb。
+    /// 属性信息，最大2kb。
     /// </summary>
 
     BsonBinary getXblob() const;

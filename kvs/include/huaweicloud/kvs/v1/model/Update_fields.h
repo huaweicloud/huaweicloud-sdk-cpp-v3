@@ -44,7 +44,7 @@ public:
     /// Update_fields members
 
     /// <summary>
-    /// 新增字段或覆盖某字段的值_1_个或多个字段。 &gt; 禁止修改sortkey的字段。
+    /// 新增字段或覆盖某字段的值1个或多个字段。 &gt; 禁止修改sortkey的字段。
     /// </summary>
 
     Document getSet() const;
@@ -53,7 +53,7 @@ public:
     void setSet(const Document& value);
 
     /// <summary>
-    /// 对某个字段做加法运算，并更新为运算后的值_1_个或多个字段。
+    /// 对某个字段做加法运算，并更新为运算后的值1个或多个字段。
     /// </summary>
 
     Document getAdd() const;

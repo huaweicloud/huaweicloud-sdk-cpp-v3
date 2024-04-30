@@ -52,7 +52,7 @@ public:
     void setCursorName(const std::string& value);
 
     /// <summary>
-    /// 返回的表名列表。 - 长度：最大_100
+    /// 返回的表名列表。 - 长度：最大100
     /// </summary>
 
     std::vector<std::string>& getTableNames();

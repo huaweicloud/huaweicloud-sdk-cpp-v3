@@ -44,7 +44,7 @@ ServerLimits::ServerLimits()
     totalFloatingIpsUsedIsSet_ = false;
     totalInstancesUsed_ = 0;
     totalInstancesUsedIsSet_ = false;
-    totalRAMUsed_ = 0;
+    totalRAMUsed_ = 0L;
     totalRAMUsedIsSet_ = false;
     totalSecurityGroupsUsed_ = 0;
     totalSecurityGroupsUsedIsSet_ = false;
@@ -308,7 +308,7 @@ bool ServerLimits::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("totalRAMUsed"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTotalRAMUsed(refVal);
         }
@@ -734,12 +734,12 @@ void ServerLimits::unsettotalInstancesUsed()
     totalInstancesUsedIsSet_ = false;
 }
 
-int32_t ServerLimits::getTotalRAMUsed() const
+int64_t ServerLimits::getTotalRAMUsed() const
 {
     return totalRAMUsed_;
 }
 
-void ServerLimits::setTotalRAMUsed(int32_t value)
+void ServerLimits::setTotalRAMUsed(int64_t value)
 {
     totalRAMUsed_ = value;
     totalRAMUsedIsSet_ = true;

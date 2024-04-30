@@ -51,7 +51,7 @@ public:
     void setCursorName(const std::string& value);
 
     /// <summary>
-    /// 响应返回的表个数。 - 长度：最大_100
+    /// 响应返回的表个数。 - 长度：最大100
     /// </summary>
 
     int32_t getLimit() const;

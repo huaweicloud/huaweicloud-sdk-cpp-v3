@@ -1,3 +1,33 @@
+# 3.1.84 2024-04-30
+
+### HuaweiCloud SDK KVS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **GetKv**
+    - changes of request param
+      - `- projection_fields`
+      - `- projection_blob`
+  - **UpdateKv**
+    - changes of request param
+      - `- projection_fields`
+      - `- projection_blob`
+  - **DeleteKv**
+    - changes of request param
+      - `- projection_fields`
+      - `- projection_blob`
+  - **ScanKv**
+    - changes of request param
+      - `- projection_fields`
+      - `- projection_blob`
+  - **ScanSkeyKv**
+    - changes of request param
+      - `- projection_fields`
+      - `- projection_blob`
+
 # 3.1.83 2024-04-25
 
 ### HuaweiCloud SDK AAD

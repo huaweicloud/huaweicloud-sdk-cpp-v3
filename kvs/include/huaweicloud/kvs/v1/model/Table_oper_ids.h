@@ -24,7 +24,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 某个表的行操作数组， 可以是多个文档的_put_kv或delete_kv。
+/// 某个表的行操作数组， 可以是多个文档的put_kv或delete_kv。
 /// </summary>
 class HUAWEICLOUD_KVS_V1_EXPORT  Table_oper_ids
     : public ModelBase

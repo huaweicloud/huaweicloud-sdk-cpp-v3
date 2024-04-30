@@ -187,10 +187,10 @@ public:
     /// 当前内存使用容量（单位：MB）。
     /// </summary>
 
-    int32_t getTotalRAMUsed() const;
+    int64_t getTotalRAMUsed() const;
     bool totalRAMUsedIsSet() const;
     void unsettotalRAMUsed();
-    void setTotalRAMUsed(int32_t value);
+    void setTotalRAMUsed(int64_t value);
 
     /// <summary>
     /// 当前安全组使用个数。
@@ -307,7 +307,7 @@ protected:
     bool totalFloatingIpsUsedIsSet_;
     int32_t totalInstancesUsed_;
     bool totalInstancesUsedIsSet_;
-    int32_t totalRAMUsed_;
+    int64_t totalRAMUsed_;
     bool totalRAMUsedIsSet_;
     int32_t totalSecurityGroupsUsed_;
     bool totalSecurityGroupsUsedIsSet_;

@@ -22,8 +22,6 @@ ScanKvRequestBody::ScanKvRequestBody()
     startKeyIsSet_ = false;
     endKeyIsSet_ = false;
     filterExpressionIsSet_ = false;
-    projectionFieldsIsSet_ = false;
-    projectionBlobIsSet_ = false;
 }
 
 ScanKvRequestBody::~ScanKvRequestBody() = default;
@@ -51,12 +49,6 @@ bool ScanKvRequestBody::toBson(Builder &builder) const
         return false;
     }
     if (filterExpressionIsSet_ && !bson_append(builder, "filter_expression", filterExpression_)) {
-        return false;
-    }
-    if (projectionFieldsIsSet_ && !bson_append(builder, "projection_fields", projectionFields_)) {
-        return false;
-    }
-    if (projectionBlobIsSet_ && !bson_append(builder, "projection_blob", projectionBlob_)) {
         return false;
     }
 
@@ -120,24 +112,6 @@ bool ScanKvRequestBody::fromBson(const Viewer &viewer)
                 return false;
             }
             filterExpressionIsSet_ = true;
-            ++it;
-            continue;
-        }
-        
-        if (key == "projection_fields") {
-            if (!bson_get(it, projectionFields_)) {
-                return false;
-            }
-            projectionFieldsIsSet_ = true;
-            ++it;
-            continue;
-        }
-        
-        if (key == "projection_blob") {
-            if (!bson_get(it, projectionBlob_)) {
-                return false;
-            }
-            projectionBlobIsSet_ = true;
             ++it;
             continue;
         }
@@ -272,48 +246,6 @@ bool ScanKvRequestBody::filterExpressionIsSet() const
 void ScanKvRequestBody::unsetfilterExpression()
 {
     filterExpressionIsSet_ = false;
-}
-
-std::vector<std::string>& ScanKvRequestBody::getProjectionFields()
-{
-    return projectionFields_;
-}
-
-void ScanKvRequestBody::setProjectionFields(const std::vector<std::string>& value)
-{
-    projectionFields_ = value;
-    projectionFieldsIsSet_ = true;
-}
-
-bool ScanKvRequestBody::projectionFieldsIsSet() const
-{
-    return projectionFieldsIsSet_;
-}
-
-void ScanKvRequestBody::unsetprojectionFields()
-{
-    projectionFieldsIsSet_ = false;
-}
-
-Projection_blob ScanKvRequestBody::getProjectionBlob() const
-{
-    return projectionBlob_;
-}
-
-void ScanKvRequestBody::setProjectionBlob(const Projection_blob& value)
-{
-    projectionBlob_ = value;
-    projectionBlobIsSet_ = true;
-}
-
-bool ScanKvRequestBody::projectionBlobIsSet() const
-{
-    return projectionBlobIsSet_;
-}
-
-void ScanKvRequestBody::unsetprojectionBlob()
-{
-    projectionBlobIsSet_ = false;
 }
 
 }

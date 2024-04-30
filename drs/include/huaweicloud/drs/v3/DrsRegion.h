@@ -110,6 +110,18 @@ public:
             { 
                 "https://drs.eu-west-0.myhuaweicloud.com"
             });
+        regions["ru-moscow-1"] = Region("ru-moscow-1",
+            { 
+                "https://drs.ru-moscow-1.myhuaweicloud.com"
+            });
+        regions["ae-ad-1"] = Region("ae-ad-1",
+            { 
+                "https://drs.ae-ad-1.myhuaweicloud.com"
+            });
+        regions["my-kualalumpur-1"] = Region("my-kualalumpur-1",
+            { 
+                "https://drs.my-kualalumpur-1.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

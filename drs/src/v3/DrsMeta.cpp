@@ -372,6 +372,25 @@ HttpRequestDef DrsMeta::genRequestDefForBatchValidateConnections() {
     return reqDefBuilder;
 }
 
+HttpRequestDef DrsMeta::genRequestDefForCreateCompareResultFile() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef headerParamRegion;
+    reqDefBuilder.withRequestField(headerParamRegion
+                  .withName("Region")
+                  .withJsonTag("Region")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef DrsMeta::genRequestDefForCreateCompareTask() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
@@ -400,6 +419,20 @@ HttpRequestDef DrsMeta::genRequestDefForCreateDataLevelTableCompareJob() {
     return reqDefBuilder;
 }
 
+HttpRequestDef DrsMeta::genRequestDefForCreateObjectLevelCompareJob() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef DrsMeta::genRequestDefForDeleteCompareJob() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
@@ -407,6 +440,31 @@ HttpRequestDef DrsMeta::genRequestDefForDeleteCompareJob() {
                   .withName("XLanguage")
                   .withJsonTag("X-Language")
                   .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef DrsMeta::genRequestDefForDownloadCompareResultFile() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("CompareType")
+                  .withJsonTag("compare_type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("CompareJobId")
+                  .withJsonTag("compare_job_id")
+                  .withLocationType(Query_));
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef headerParamRegion;
+    reqDefBuilder.withRequestField(headerParamRegion
+                  .withName("Region")
+                  .withJsonTag("Region")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
     return reqDefBuilder;
 }
 
@@ -473,6 +531,28 @@ HttpRequestDef DrsMeta::genRequestDefForListContentCompareDetail() {
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("Type")
                   .withJsonTag("type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef DrsMeta::genRequestDefForListContentCompareDifference() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("TableName")
+                  .withJsonTag("table_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("DbName")
+                  .withJsonTag("db_name")
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("Limit")
                   .withJsonTag("limit")
@@ -562,6 +642,35 @@ HttpRequestDef DrsMeta::genRequestDefForListDataLevelTableCompareJobs() {
     reqDefBuilder.withRequestField(FieldDef().withName("Offset")
                   .withJsonTag("offset")
                   .withLocationType(Query_));
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef DrsMeta::genRequestDefForListObejectLevelCompareDetail() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("CompareJobId")
+                  .withJsonTag("compare_job_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef DrsMeta::genRequestDefForListObejectLevelCompareOverview() {
+    HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage
                   .withName("XLanguage")

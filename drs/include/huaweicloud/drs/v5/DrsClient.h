@@ -94,6 +94,7 @@
 #include <huaweicloud/drs/v5/model/ListTagsResponse.h>
 #include <huaweicloud/drs/v5/model/ListsAgencyPermissionsRequest.h>
 #include <huaweicloud/drs/v5/model/ListsAgencyPermissionsResponse.h>
+#include <huaweicloud/drs/v5/model/ModifyComparePolicyReq.h>
 #include <huaweicloud/drs/v5/model/ModifyParameterReq.h>
 #include <huaweicloud/drs/v5/model/ModifyStartPositionReq.h>
 #include <huaweicloud/drs/v5/model/QueryColumnReq.h>
@@ -125,8 +126,12 @@
 #include <huaweicloud/drs/v5/model/ShowDirtyDataResponse.h>
 #include <huaweicloud/drs/v5/model/ShowEnterpriseProjectRequest.h>
 #include <huaweicloud/drs/v5/model/ShowEnterpriseProjectResponse.h>
+#include <huaweicloud/drs/v5/model/ShowHealthCompareJobDetailRequest.h>
+#include <huaweicloud/drs/v5/model/ShowHealthCompareJobDetailResponse.h>
 #include <huaweicloud/drs/v5/model/ShowHealthCompareJobListRequest.h>
 #include <huaweicloud/drs/v5/model/ShowHealthCompareJobListResponse.h>
+#include <huaweicloud/drs/v5/model/ShowHealthObjectCompareJobOverviewRequest.h>
+#include <huaweicloud/drs/v5/model/ShowHealthObjectCompareJobOverviewResponse.h>
 #include <huaweicloud/drs/v5/model/ShowIncrementComponentsDetailRequest.h>
 #include <huaweicloud/drs/v5/model/ShowIncrementComponentsDetailResponse.h>
 #include <huaweicloud/drs/v5/model/ShowInstanceTagsRequest.h>
@@ -158,6 +163,8 @@
 #include <huaweicloud/drs/v5/model/SyncJdbcDriverResponse.h>
 #include <huaweicloud/drs/v5/model/UpdateBatchAsyncJobsRequest.h>
 #include <huaweicloud/drs/v5/model/UpdateBatchAsyncJobsResponse.h>
+#include <huaweicloud/drs/v5/model/UpdateComparePolicyRequest.h>
+#include <huaweicloud/drs/v5/model/UpdateComparePolicyResponse.h>
 #include <huaweicloud/drs/v5/model/UpdateDataProgressRequest.h>
 #include <huaweicloud/drs/v5/model/UpdateDataProgressResponse.h>
 #include <huaweicloud/drs/v5/model/UpdateDriverReq.h>
@@ -593,6 +600,14 @@ public:
     std::shared_ptr<ShowEnterpriseProjectResponse> showEnterpriseProject(
         ShowEnterpriseProjectRequest &request
     );
+    // 查询健康对比任务详情
+    //
+    // 查询健康对比任务详情。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowHealthCompareJobDetailResponse> showHealthCompareJobDetail(
+        ShowHealthCompareJobDetailRequest &request
+    );
     // 查询健康对比列表
     //
     // 查询健康对比列表。
@@ -600,6 +615,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowHealthCompareJobListResponse> showHealthCompareJobList(
         ShowHealthCompareJobListRequest &request
+    );
+    // 获取健康对比对象级对比概览
+    //
+    // 获取健康对比对象级对比概览。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowHealthObjectCompareJobOverviewResponse> showHealthObjectCompareJobOverview(
+        ShowHealthObjectCompareJobOverviewRequest &request
     );
     // 查询增量组件详情
     //
@@ -718,6 +741,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateBatchAsyncJobsResponse> updateBatchAsyncJobs(
         UpdateBatchAsyncJobsRequest &request
+    );
+    // 修改对比策略
+    //
+    // 修改周期性对比的对比策略，目前仅MySQL-&gt;MySQL、MySQL-&gt;GaussDB(for MySQL)、MySQL-&gt;GaussDB(DWS)、GaussDB(for MySQL)-&gt;MySQL同步任务，MySQL-&gt;MySQL、MySQL-&gt;GaussDB(for MySQL)迁移任务，MySQL-&gt;MySQL、MySQL-&gt;GaussDB(for MySQL)、GaussDB(for MySQL)-&gt;GaussDB(for MySQL)、DDM-&gt;DDM、DDS-DDS灾备任务支持对比策略设置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateComparePolicyResponse> updateComparePolicy(
+        UpdateComparePolicyRequest &request
     );
     // 更新指定任务数据加工规则
     //

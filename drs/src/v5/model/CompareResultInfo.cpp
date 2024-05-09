@@ -19,6 +19,7 @@ CompareResultInfo::CompareResultInfo()
     lineCompareDetailInfosIsSet_ = false;
     contentCompareOverviewInfosIsSet_ = false;
     contentCompareDetailInfosIsSet_ = false;
+    contentDiffDetailInfoIsSet_ = false;
 }
 
 CompareResultInfo::~CompareResultInfo() = default;
@@ -51,6 +52,9 @@ web::json::value CompareResultInfo::toJson() const
     }
     if(contentCompareDetailInfosIsSet_) {
         val[utility::conversions::to_string_t("content_compare_detail_infos")] = ModelBase::toJson(contentCompareDetailInfos_);
+    }
+    if(contentDiffDetailInfoIsSet_) {
+        val[utility::conversions::to_string_t("content_diff_detail_info")] = ModelBase::toJson(contentDiffDetailInfo_);
     }
 
     return val;
@@ -120,6 +124,15 @@ bool CompareResultInfo::fromJson(const web::json::value& val)
             std::vector<ContentCompareDetailInfo> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setContentCompareDetailInfos(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("content_diff_detail_info"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("content_diff_detail_info"));
+        if(!fieldValue.is_null())
+        {
+            ContentDiffDetailInfo refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setContentDiffDetailInfo(refVal);
         }
     }
     return ok;
@@ -271,6 +284,27 @@ bool CompareResultInfo::contentCompareDetailInfosIsSet() const
 void CompareResultInfo::unsetcontentCompareDetailInfos()
 {
     contentCompareDetailInfosIsSet_ = false;
+}
+
+ContentDiffDetailInfo CompareResultInfo::getContentDiffDetailInfo() const
+{
+    return contentDiffDetailInfo_;
+}
+
+void CompareResultInfo::setContentDiffDetailInfo(const ContentDiffDetailInfo& value)
+{
+    contentDiffDetailInfo_ = value;
+    contentDiffDetailInfoIsSet_ = true;
+}
+
+bool CompareResultInfo::contentDiffDetailInfoIsSet() const
+{
+    return contentDiffDetailInfoIsSet_;
+}
+
+void CompareResultInfo::unsetcontentDiffDetailInfo()
+{
+    contentDiffDetailInfoIsSet_ = false;
 }
 
 }

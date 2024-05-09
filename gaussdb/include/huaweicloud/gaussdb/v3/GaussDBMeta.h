@@ -128,6 +128,14 @@ public:
     static HttpRequestDef genRequestDefForUpdateProxySessionConsistence();
     static HttpRequestDef genRequestDefForUpdateTransactionSplitStatus();
     static HttpRequestDef genRequestDefForUpgradeGaussMySqlInstanceDatabase();
+    static HttpRequestDef genRequestDefForCheckDataBaseConfig();
+    static HttpRequestDef genRequestDefForCheckTableConfig();
+    static HttpRequestDef genRequestDefForCreateStarRocksDataReplication();
+    static HttpRequestDef genRequestDefForDeleteStarRocksDataReplication();
+    static HttpRequestDef genRequestDefForListStarRocksDataBases();
+    static HttpRequestDef genRequestDefForListStarRocksDataReplicationConfig();
+    static HttpRequestDef genRequestDefForListStarRocksDataReplications();
+    static HttpRequestDef genRequestDefForListStarRocksDbParameters();
     static HttpRequestDef genRequestDefForDeleteSqlFilterRule();
     static HttpRequestDef genRequestDefForSetSqlFilterRule();
     static HttpRequestDef genRequestDefForShowSqlFilterControl();

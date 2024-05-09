@@ -61,7 +61,9 @@ public:
     static HttpRequestDef genRequestDefForShowDbObjectsList();
     static HttpRequestDef genRequestDefForShowDirtyData();
     static HttpRequestDef genRequestDefForShowEnterpriseProject();
+    static HttpRequestDef genRequestDefForShowHealthCompareJobDetail();
     static HttpRequestDef genRequestDefForShowHealthCompareJobList();
+    static HttpRequestDef genRequestDefForShowHealthObjectCompareJobOverview();
     static HttpRequestDef genRequestDefForShowIncrementComponentsDetail();
     static HttpRequestDef genRequestDefForShowInstanceTags();
     static HttpRequestDef genRequestDefForShowJobDetail();
@@ -76,6 +78,7 @@ public:
     static HttpRequestDef genRequestDefForStopJobAction();
     static HttpRequestDef genRequestDefForSyncJdbcDriver();
     static HttpRequestDef genRequestDefForUpdateBatchAsyncJobs();
+    static HttpRequestDef genRequestDefForUpdateComparePolicy();
     static HttpRequestDef genRequestDefForUpdateDataProgress();
     static HttpRequestDef genRequestDefForUpdateJob();
     static HttpRequestDef genRequestDefForUpdateJobConfigurations();

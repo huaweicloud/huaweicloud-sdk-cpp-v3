@@ -771,6 +771,16 @@ HttpRequestDef DrsMeta::genRequestDefForShowEnterpriseProject() {
     return reqDefBuilder;
 }
 
+HttpRequestDef DrsMeta::genRequestDefForShowHealthCompareJobDetail() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef DrsMeta::genRequestDefForShowHealthCompareJobList() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Status")
@@ -782,6 +792,16 @@ HttpRequestDef DrsMeta::genRequestDefForShowHealthCompareJobList() {
     reqDefBuilder.withRequestField(FieldDef().withName("Limit")
                   .withJsonTag("limit")
                   .withLocationType(Query_));
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef DrsMeta::genRequestDefForShowHealthObjectCompareJobOverview() {
+    HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage
                   .withName("XLanguage")
@@ -1002,6 +1022,20 @@ HttpRequestDef DrsMeta::genRequestDefForSyncJdbcDriver() {
 }
 
 HttpRequestDef DrsMeta::genRequestDefForUpdateBatchAsyncJobs() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef DrsMeta::genRequestDefForUpdateComparePolicy() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage

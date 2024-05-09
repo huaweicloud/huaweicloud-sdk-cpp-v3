@@ -305,6 +305,28 @@
 #include <huaweicloud/gaussdb/v3/model/UpgradeGaussMySqlInstanceDatabaseResponse.h>
 #include <string>
 
+#include <huaweicloud/gaussdb/v3/model/CheckDataBaseConfigRequest.h>
+#include <huaweicloud/gaussdb/v3/model/CheckDataBaseConfigResponse.h>
+#include <huaweicloud/gaussdb/v3/model/CheckTableConfigRequest.h>
+#include <huaweicloud/gaussdb/v3/model/CheckTableConfigResponse.h>
+#include <huaweicloud/gaussdb/v3/model/CreateStarRocksDataReplication.h>
+#include <huaweicloud/gaussdb/v3/model/CreateStarRocksDataReplicationRequest.h>
+#include <huaweicloud/gaussdb/v3/model/CreateStarRocksDataReplicationResponse.h>
+#include <huaweicloud/gaussdb/v3/model/DbConfigCheckRequestV3.h>
+#include <huaweicloud/gaussdb/v3/model/DeleteStarRocksDataReplication.h>
+#include <huaweicloud/gaussdb/v3/model/DeleteStarRocksDataReplicationRequest.h>
+#include <huaweicloud/gaussdb/v3/model/DeleteStarRocksDataReplicationResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ListStarRocksDataBasesRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ListStarRocksDataBasesResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ListStarRocksDataReplicationConfigRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ListStarRocksDataReplicationConfigResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ListStarRocksDataReplicationsRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ListStarRocksDataReplicationsResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ListStarRocksDbParametersRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ListStarRocksDbParametersResponse.h>
+#include <huaweicloud/gaussdb/v3/model/TableConfigCheckRequestV3.h>
+#include <string>
+
 #include <huaweicloud/gaussdb/v3/model/DeleteSqlFilterRuleReq.h>
 #include <huaweicloud/gaussdb/v3/model/DeleteSqlFilterRuleRequest.h>
 #include <huaweicloud/gaussdb/v3/model/DeleteSqlFilterRuleResponse.h>
@@ -1265,6 +1287,71 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpgradeGaussMySqlInstanceDatabaseResponse> upgradeGaussMySqlInstanceDatabase(
         UpgradeGaussMySqlInstanceDatabaseRequest &request
+    );
+
+    // HTAP数据同步库配置校验
+    //
+    // HTAP数据同步库配置校验。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CheckDataBaseConfigResponse> checkDataBaseConfig(
+        CheckDataBaseConfigRequest &request
+    );
+    // HTAP数据同步表配置校验
+    //
+    // HTAP数据同步表配置校验。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CheckTableConfigResponse> checkTableConfig(
+        CheckTableConfigRequest &request
+    );
+    // 创建StarRocks数据同步
+    //
+    // 创建StarRocks数据同步。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateStarRocksDataReplicationResponse> createStarRocksDataReplication(
+        CreateStarRocksDataReplicationRequest &request
+    );
+    // 删除StarRocks数据同步
+    //
+    // 删除StarRocks数据同步。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteStarRocksDataReplicationResponse> deleteStarRocksDataReplication(
+        DeleteStarRocksDataReplicationRequest &request
+    );
+    // 查询StarRocks数据库
+    //
+    // 查询StarRocks数据库。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListStarRocksDataBasesResponse> listStarRocksDataBases(
+        ListStarRocksDataBasesRequest &request
+    );
+    // 查询StarRocks数据同步配置信息
+    //
+    // 查询StarRocks数据同步配置信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListStarRocksDataReplicationConfigResponse> listStarRocksDataReplicationConfig(
+        ListStarRocksDataReplicationConfigRequest &request
+    );
+    // 查询StarRocks数据同步状态信息
+    //
+    // 查询StarRocks数据同步状态信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListStarRocksDataReplicationsResponse> listStarRocksDataReplications(
+        ListStarRocksDataReplicationsRequest &request
+    );
+    // 查询StarRocks数据同步的库参数配置
+    //
+    // 查询StarRocks数据同步的库参数配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListStarRocksDbParametersResponse> listStarRocksDbParameters(
+        ListStarRocksDbParametersRequest &request
     );
 
     // 删除SQL限流规则

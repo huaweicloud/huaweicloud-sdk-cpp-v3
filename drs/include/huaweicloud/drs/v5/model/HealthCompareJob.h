@@ -48,7 +48,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 对比类型。 - object：对象对比 - lines：行对比 - contents：内容对比 - account：用户对比
+    /// 对比类型： - object_comparison：对象对比。 - lines：行对比。 - account：用户对比。
     /// </summary>
 
     std::string getType() const;
@@ -66,7 +66,7 @@ public:
     void setStatus(const std::string& value);
 
     /// <summary>
-    /// 对比开始时间。
+    /// 对比开始时间，UTC时间。
     /// </summary>
 
     std::string getStartTime() const;
@@ -75,7 +75,7 @@ public:
     void setStartTime(const std::string& value);
 
     /// <summary>
-    /// 对比结束时间。
+    /// 对比结束时间，UTC时间。
     /// </summary>
 
     std::string getEndTime() const;

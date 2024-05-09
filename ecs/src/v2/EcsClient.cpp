@@ -698,6 +698,48 @@ std::shared_ptr<ChangeServerOsWithoutCloudInitResponse> EcsClient::changeServerO
 
     return localVarResult;
 }
+std::shared_ptr<ChangeVpcResponse> EcsClient::changeVpc(ChangeVpcRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/cloudservers/{server_id}/changevpc";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["server_id"] = parameterToString(request.getServerId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EcsMeta::genRequestDefForChangeVpc());
+
+    std::shared_ptr<ChangeVpcResponse> localVarResult = std::make_shared<ChangeVpcResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<CreatePostPaidServersResponse> EcsClient::createPostPaidServers(CreatePostPaidServersRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/cloudservers";

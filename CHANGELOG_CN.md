@@ -1,3 +1,110 @@
+# 3.1.85 2024-05-09
+
+### HuaweiCloud SDK DRS
+
+- _新增特性_
+  - 支持以下接口：
+    - `ListObejectLevelCompareOverview`
+    - `CreateObjectLevelCompareJob`
+    - `ListObejectLevelCompareDetail`
+    - `ListContentCompareDifference`
+    - `DownloadCompareResultFile`
+    - `CreateCompareResultFile`
+    - `ShowHealthCompareJobDetail`
+    - `ShowHealthObjectCompareJobOverview`
+    - `UpdateComparePolicy`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **BatchCreateJobs**
+    - 请求参数变更
+      - `+ jobs.source_endpoint.kafka_security_config`
+  - **BatchValidateConnections**
+    - 请求参数变更
+      - `+ jobs.kafka_security_config.endpoint_algorithm`
+      - `+ jobs.kafka_security_config.sasl_mechanism`
+      - `+ jobs.kafka_security_config.delegation_tokens`
+      - `+ jobs.kafka_security_config.enable_key_store`
+      - `+ jobs.kafka_security_config.key_store_key`
+      - `+ jobs.kafka_security_config.key_store_key_name`
+      - `+ jobs.kafka_security_config.key_store_password`
+      - `+ jobs.kafka_security_config.set_private_key_password`
+      - `+ jobs.kafka_security_config.key_password`
+      - `+ jobs.kafka_security_config.type: enum value [SASL_PLAINTEXT,SSL]`
+  - **ShowJobList**
+    - 响应参数变更
+      - `+ jobs.children.job_direction: enum value [no-dbs]`
+      - `- jobs.children.job_direction: enum value [non-dbs]`
+  - **BatchUpdateJob**
+    - 请求参数变更
+      - `+ jobs.source_endpoint.kafka_security_config`
+  - **BatchListJobDetails**
+    - 响应参数变更
+      - `+ results.source_endpoint.kafka_security_config`
+  - **ListAsyncJobDetail**
+    - 响应参数变更
+      - `+ jobs.is_writable`
+      - `+ jobs.compare_result.content_diff_detail_info`
+      - `+ jobs.compare_result.content_compare_overview_infos.status: enum value [WAIT_FOR_COMPARE,CANCELED]`
+  - **UpdateBatchAsyncJobs**
+    - 请求参数变更
+      - `+ jobs.type: enum value [notify]`
+  - **ShowJobDetail**
+    - 请求参数变更
+      - `+ type: enum value [is_writable,cloud_connection]`
+    - 响应参数变更
+      - `+ job.is_writable`
+      - `+ job.compare_result.content_diff_detail_info`
+      - `+ job.compare_result.content_compare_overview_infos.status: enum value [WAIT_FOR_COMPARE,CANCELED]`
+  - **UpdateJob**
+    - 请求参数变更
+      - `+ job.type: enum value [notify]`
+  - **ExecuteJobAction**
+    - 请求参数变更
+      - `+ job.action_name: enum value [set_writable,cloud_connection]`
+      - `+ job.action_params.replay_config`
+  - **BatchExecuteJobActions**
+    - 请求参数变更
+      - `+ jobs.action_name: enum value [set_writable,cloud_connection]`
+      - `+ jobs.action_params.replay_config`
+
+### HuaweiCloud SDK ECS
+
+- _新增特性_
+  - 支持接口`ChangeVpc`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK GaussDB
+
+- _新增特性_
+  - 支持以下接口：
+    - `ListStarRocksDataReplications`
+    - `CreateStarRocksDataReplication`
+    - `DeleteStarRocksDataReplication`
+    - `CheckDataBaseConfig`
+    - `CheckTableConfig`
+    - `ListStarRocksDataReplicationConfig`
+    - `ListStarRocksDbParameters`
+    - `ListStarRocksDataBases`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK MPC
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateTranscodingTask**
+    - 请求参数变更
+      - `+ video_process.hls_segment_type`
+
 # 3.1.84 2024-04-30
 
 ### HuaweiCloud SDK KVS

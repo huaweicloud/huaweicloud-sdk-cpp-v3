@@ -29,6 +29,7 @@ public:
     static HttpRequestDef genRequestDefForChangeServerChargeMode();
     static HttpRequestDef genRequestDefForChangeServerOsWithCloudInit();
     static HttpRequestDef genRequestDefForChangeServerOsWithoutCloudInit();
+    static HttpRequestDef genRequestDefForChangeVpc();
     static HttpRequestDef genRequestDefForCreatePostPaidServers();
     static HttpRequestDef genRequestDefForCreateServerGroup();
     static HttpRequestDef genRequestDefForCreateServers();

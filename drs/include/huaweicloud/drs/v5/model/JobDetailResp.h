@@ -331,6 +331,15 @@ public:
     void unsetchildren();
     void setChildren(const std::vector<FailedToBindEipChildInfo>& value);
 
+    /// <summary>
+    /// 解除目标库只读操作后，目标库解除只读是否成功。 - pending：目标库解除操作进行中。 - success：目标库解除只读操作成功。
+    /// </summary>
+
+    std::string getIsWritable() const;
+    bool isWritableIsSet() const;
+    void unsetisWritable();
+    void setIsWritable(const std::string& value);
+
 
 protected:
     std::string id_;
@@ -393,6 +402,8 @@ protected:
     bool bindPublicIpStateIsSet_;
     std::vector<FailedToBindEipChildInfo> children_;
     bool childrenIsSet_;
+    std::string isWritable_;
+    bool isWritableIsSet_;
 
 };
 

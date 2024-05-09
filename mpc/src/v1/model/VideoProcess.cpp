@@ -24,6 +24,8 @@ VideoProcess::VideoProcess()
     adaptationIsSet_ = false;
     upsample_ = 0;
     upsampleIsSet_ = false;
+    hlsSegmentType_ = "";
+    hlsSegmentTypeIsSet_ = false;
 }
 
 VideoProcess::~VideoProcess() = default;
@@ -53,6 +55,9 @@ web::json::value VideoProcess::toJson() const
     }
     if(upsampleIsSet_) {
         val[utility::conversions::to_string_t("upsample")] = ModelBase::toJson(upsample_);
+    }
+    if(hlsSegmentTypeIsSet_) {
+        val[utility::conversions::to_string_t("hls_segment_type")] = ModelBase::toJson(hlsSegmentType_);
     }
 
     return val;
@@ -113,6 +118,15 @@ bool VideoProcess::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setUpsample(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("hls_segment_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("hls_segment_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHlsSegmentType(refVal);
         }
     }
     return ok;
@@ -243,6 +257,27 @@ bool VideoProcess::upsampleIsSet() const
 void VideoProcess::unsetupsample()
 {
     upsampleIsSet_ = false;
+}
+
+std::string VideoProcess::getHlsSegmentType() const
+{
+    return hlsSegmentType_;
+}
+
+void VideoProcess::setHlsSegmentType(const std::string& value)
+{
+    hlsSegmentType_ = value;
+    hlsSegmentTypeIsSet_ = true;
+}
+
+bool VideoProcess::hlsSegmentTypeIsSet() const
+{
+    return hlsSegmentTypeIsSet_;
+}
+
+void VideoProcess::unsethlsSegmentType()
+{
+    hlsSegmentTypeIsSet_ = false;
 }
 
 }

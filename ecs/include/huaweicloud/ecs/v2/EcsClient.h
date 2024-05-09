@@ -54,6 +54,9 @@
 #include <huaweicloud/ecs/v2/model/ChangeServerOsWithoutCloudInitRequest.h>
 #include <huaweicloud/ecs/v2/model/ChangeServerOsWithoutCloudInitRequestBody.h>
 #include <huaweicloud/ecs/v2/model/ChangeServerOsWithoutCloudInitResponse.h>
+#include <huaweicloud/ecs/v2/model/ChangeVpcRequest.h>
+#include <huaweicloud/ecs/v2/model/ChangeVpcRequestBody.h>
+#include <huaweicloud/ecs/v2/model/ChangeVpcResponse.h>
 #include <huaweicloud/ecs/v2/model/CreatePostPaidServersRequest.h>
 #include <huaweicloud/ecs/v2/model/CreatePostPaidServersRequestBody.h>
 #include <huaweicloud/ecs/v2/model/CreatePostPaidServersResponse.h>
@@ -360,6 +363,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ChangeServerOsWithoutCloudInitResponse> changeServerOsWithoutCloudInit(
         ChangeServerOsWithoutCloudInitRequest &request
+    );
+    // 云服务器切换虚拟私有云
+    //
+    // 云服务器切换虚拟私有云。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ChangeVpcResponse> changeVpc(
+        ChangeVpcRequest &request
     );
     // 创建云服务器(按需)
     //

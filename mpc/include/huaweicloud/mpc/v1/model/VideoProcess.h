@@ -92,6 +92,15 @@ public:
     void unsetupsample();
     void setUpsample(int32_t value);
 
+    /// <summary>
+    /// HLS切片类型。  取值如下所示： - mpegts：ts切片 - fmp4：fmp4切片  不设置默认为ts切片。 
+    /// </summary>
+
+    std::string getHlsSegmentType() const;
+    bool hlsSegmentTypeIsSet() const;
+    void unsethlsSegmentType();
+    void setHlsSegmentType(const std::string& value);
+
 
 protected:
     int32_t hlsInitCount_;
@@ -106,6 +115,8 @@ protected:
     bool adaptationIsSet_;
     int32_t upsample_;
     bool upsampleIsSet_;
+    std::string hlsSegmentType_;
+    bool hlsSegmentTypeIsSet_;
 
 };
 

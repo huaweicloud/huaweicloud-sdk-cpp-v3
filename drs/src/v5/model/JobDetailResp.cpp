@@ -49,6 +49,8 @@ JobDetailResp::JobDetailResp()
     bindPublicIpState_ = "";
     bindPublicIpStateIsSet_ = false;
     childrenIsSet_ = false;
+    isWritable_ = "";
+    isWritableIsSet_ = false;
 }
 
 JobDetailResp::~JobDetailResp() = default;
@@ -150,6 +152,9 @@ web::json::value JobDetailResp::toJson() const
     }
     if(childrenIsSet_) {
         val[utility::conversions::to_string_t("children")] = ModelBase::toJson(children_);
+    }
+    if(isWritableIsSet_) {
+        val[utility::conversions::to_string_t("is_writable")] = ModelBase::toJson(isWritable_);
     }
 
     return val;
@@ -426,6 +431,15 @@ bool JobDetailResp::fromJson(const web::json::value& val)
             std::vector<FailedToBindEipChildInfo> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setChildren(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_writable"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_writable"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsWritable(refVal);
         }
     }
     return ok;
@@ -1060,6 +1074,27 @@ bool JobDetailResp::childrenIsSet() const
 void JobDetailResp::unsetchildren()
 {
     childrenIsSet_ = false;
+}
+
+std::string JobDetailResp::getIsWritable() const
+{
+    return isWritable_;
+}
+
+void JobDetailResp::setIsWritable(const std::string& value)
+{
+    isWritable_ = value;
+    isWritableIsSet_ = true;
+}
+
+bool JobDetailResp::isWritableIsSet() const
+{
+    return isWritableIsSet_;
+}
+
+void JobDetailResp::unsetisWritable()
+{
+    isWritableIsSet_ = false;
 }
 
 }

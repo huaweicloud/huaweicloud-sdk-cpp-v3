@@ -1,3 +1,110 @@
+# 3.1.85 2024-05-09
+
+### HuaweiCloud SDK DRS
+
+- _Features_
+  - Support the following APIs:
+    - `ListObejectLevelCompareOverview`
+    - `CreateObjectLevelCompareJob`
+    - `ListObejectLevelCompareDetail`
+    - `ListContentCompareDifference`
+    - `DownloadCompareResultFile`
+    - `CreateCompareResultFile`
+    - `ShowHealthCompareJobDetail`
+    - `ShowHealthObjectCompareJobOverview`
+    - `UpdateComparePolicy`
+- _Bug Fix_
+  - None
+- _Change_
+  - **BatchCreateJobs**
+    - changes of request param
+      - `+ jobs.source_endpoint.kafka_security_config`
+  - **BatchValidateConnections**
+    - changes of request param
+      - `+ jobs.kafka_security_config.endpoint_algorithm`
+      - `+ jobs.kafka_security_config.sasl_mechanism`
+      - `+ jobs.kafka_security_config.delegation_tokens`
+      - `+ jobs.kafka_security_config.enable_key_store`
+      - `+ jobs.kafka_security_config.key_store_key`
+      - `+ jobs.kafka_security_config.key_store_key_name`
+      - `+ jobs.kafka_security_config.key_store_password`
+      - `+ jobs.kafka_security_config.set_private_key_password`
+      - `+ jobs.kafka_security_config.key_password`
+      - `+ jobs.kafka_security_config.type: enum value [SASL_PLAINTEXT,SSL]`
+  - **ShowJobList**
+    - changes of response param
+      - `+ jobs.children.job_direction: enum value [no-dbs]`
+      - `- jobs.children.job_direction: enum value [non-dbs]`
+  - **BatchUpdateJob**
+    - changes of request param
+      - `+ jobs.source_endpoint.kafka_security_config`
+  - **BatchListJobDetails**
+    - changes of response param
+      - `+ results.source_endpoint.kafka_security_config`
+  - **ListAsyncJobDetail**
+    - changes of response param
+      - `+ jobs.is_writable`
+      - `+ jobs.compare_result.content_diff_detail_info`
+      - `+ jobs.compare_result.content_compare_overview_infos.status: enum value [WAIT_FOR_COMPARE,CANCELED]`
+  - **UpdateBatchAsyncJobs**
+    - changes of request param
+      - `+ jobs.type: enum value [notify]`
+  - **ShowJobDetail**
+    - changes of request param
+      - `+ type: enum value [is_writable,cloud_connection]`
+    - changes of response param
+      - `+ job.is_writable`
+      - `+ job.compare_result.content_diff_detail_info`
+      - `+ job.compare_result.content_compare_overview_infos.status: enum value [WAIT_FOR_COMPARE,CANCELED]`
+  - **UpdateJob**
+    - changes of request param
+      - `+ job.type: enum value [notify]`
+  - **ExecuteJobAction**
+    - changes of request param
+      - `+ job.action_name: enum value [set_writable,cloud_connection]`
+      - `+ job.action_params.replay_config`
+  - **BatchExecuteJobActions**
+    - changes of request param
+      - `+ jobs.action_name: enum value [set_writable,cloud_connection]`
+      - `+ jobs.action_params.replay_config`
+
+### HuaweiCloud SDK ECS
+
+- _Features_
+  - Support the API `ChangeVpc`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK GaussDB
+
+- _Features_
+  - Support the following APIs:
+    - `ListStarRocksDataReplications`
+    - `CreateStarRocksDataReplication`
+    - `DeleteStarRocksDataReplication`
+    - `CheckDataBaseConfig`
+    - `CheckTableConfig`
+    - `ListStarRocksDataReplicationConfig`
+    - `ListStarRocksDbParameters`
+    - `ListStarRocksDataBases`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK MPC
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateTranscodingTask**
+    - changes of request param
+      - `+ video_process.hls_segment_type`
+
 # 3.1.84 2024-04-30
 
 ### HuaweiCloud SDK KVS

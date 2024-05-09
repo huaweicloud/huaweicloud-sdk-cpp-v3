@@ -93,7 +93,7 @@ public:
     void setType(const std::string& value);
 
     /// <summary>
-    /// 每页显示的条目数量。
+    /// 每页显示的条目数量，最大值1000。
     /// </summary>
 
     int32_t getLimit() const;

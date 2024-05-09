@@ -152,6 +152,15 @@ HttpRequestDef EcsMeta::genRequestDefForChangeServerOsWithoutCloudInit() {
     return reqDefBuilder;
 }
 
+HttpRequestDef EcsMeta::genRequestDefForChangeVpc() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef EcsMeta::genRequestDefForCreatePostPaidServers() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXClientToken;

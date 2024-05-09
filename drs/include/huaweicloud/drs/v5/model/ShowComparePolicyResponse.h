@@ -76,7 +76,7 @@ public:
     void setEndTime(const std::string& value);
 
     /// <summary>
-    /// 对比类型。 - object：对象对比 - lines：行对比 - contents：内容对比 - account：用户对比
+    /// 对比类型： - object_comparison：对象对比。 - lines：行对比。 - account：用户对比。
     /// </summary>
 
     std::vector<std::string>& getCompareType();

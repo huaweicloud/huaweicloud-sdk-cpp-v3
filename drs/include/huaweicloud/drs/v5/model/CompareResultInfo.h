@@ -14,6 +14,7 @@
 #include <huaweicloud/drs/v5/model/ObjectsCompareTaskInfo.h>
 #include <huaweicloud/drs/v5/model/ObjectsCompareDetailInfo.h>
 #include <huaweicloud/drs/v5/model/ContentCompareOverviewInfo.h>
+#include <huaweicloud/drs/v5/model/ContentDiffDetailInfo.h>
 #include <huaweicloud/drs/v5/model/ContentCompareDetailInfo.h>
 #include <vector>
 #include <huaweicloud/drs/v5/model/CompareJobInfo.h>
@@ -108,6 +109,15 @@ public:
     void unsetcontentCompareDetailInfos();
     void setContentCompareDetailInfos(const std::vector<ContentCompareDetailInfo>& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    ContentDiffDetailInfo getContentDiffDetailInfo() const;
+    bool contentDiffDetailInfoIsSet() const;
+    void unsetcontentDiffDetailInfo();
+    void setContentDiffDetailInfo(const ContentDiffDetailInfo& value);
+
 
 protected:
     ObjectsCompareTaskInfo objectsCompareOverviewInfo_;
@@ -124,6 +134,8 @@ protected:
     bool contentCompareOverviewInfosIsSet_;
     std::vector<ContentCompareDetailInfo> contentCompareDetailInfos_;
     bool contentCompareDetailInfosIsSet_;
+    ContentDiffDetailInfo contentDiffDetailInfo_;
+    bool contentDiffDetailInfoIsSet_;
 
 };
 

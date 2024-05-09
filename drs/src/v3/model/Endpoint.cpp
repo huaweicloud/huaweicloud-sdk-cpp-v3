@@ -58,6 +58,7 @@ Endpoint::Endpoint()
     topicIsSet_ = false;
     clusterMode_ = "";
     clusterModeIsSet_ = false;
+    kafkaSecurityConfigIsSet_ = false;
 }
 
 Endpoint::~Endpoint() = default;
@@ -138,6 +139,9 @@ web::json::value Endpoint::toJson() const
     }
     if(clusterModeIsSet_) {
         val[utility::conversions::to_string_t("cluster_mode")] = ModelBase::toJson(clusterMode_);
+    }
+    if(kafkaSecurityConfigIsSet_) {
+        val[utility::conversions::to_string_t("kafka_security_config")] = ModelBase::toJson(kafkaSecurityConfig_);
     }
 
     return val;
@@ -351,6 +355,15 @@ bool Endpoint::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setClusterMode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("kafka_security_config"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("kafka_security_config"));
+        if(!fieldValue.is_null())
+        {
+            KafkaSecurity refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setKafkaSecurityConfig(refVal);
         }
     }
     return ok;
@@ -838,6 +851,27 @@ bool Endpoint::clusterModeIsSet() const
 void Endpoint::unsetclusterMode()
 {
     clusterModeIsSet_ = false;
+}
+
+KafkaSecurity Endpoint::getKafkaSecurityConfig() const
+{
+    return kafkaSecurityConfig_;
+}
+
+void Endpoint::setKafkaSecurityConfig(const KafkaSecurity& value)
+{
+    kafkaSecurityConfig_ = value;
+    kafkaSecurityConfigIsSet_ = true;
+}
+
+bool Endpoint::kafkaSecurityConfigIsSet() const
+{
+    return kafkaSecurityConfigIsSet_;
+}
+
+void Endpoint::unsetkafkaSecurityConfig()
+{
+    kafkaSecurityConfigIsSet_ = false;
 }
 
 }

@@ -12,6 +12,7 @@
 #include <huaweicloud/drs/v5/model/CompareTaskParams.h>
 #include <huaweicloud/drs/v5/model/JobEndpointInfo.h>
 #include <string>
+#include <huaweicloud/drs/v5/model/ReplayConfigInfo.h>
 #include <huaweicloud/drs/v5/model/SkipPreCheckInfo.h>
 #include <vector>
 #include <huaweicloud/drs/v5/model/PublicIpConfig.h>
@@ -124,6 +125,15 @@ public:
     void unsetpublicIpConfig();
     void setPublicIpConfig(const PublicIpConfig& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    ReplayConfigInfo getReplayConfig() const;
+    bool replayConfigIsSet() const;
+    void unsetreplayConfig();
+    void setReplayConfig(const ReplayConfigInfo& value);
+
 
 protected:
     std::vector<JobEndpointInfo> endpoints_;
@@ -144,6 +154,8 @@ protected:
     bool forceDeleteIsSet_;
     PublicIpConfig publicIpConfig_;
     bool publicIpConfigIsSet_;
+    ReplayConfigInfo replayConfig_;
+    bool replayConfigIsSet_;
 
 };
 

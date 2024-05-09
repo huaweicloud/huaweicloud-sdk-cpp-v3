@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/drs/v3/model/KafkaSecurity.h>
 #include <string>
 
 namespace HuaweiCloud {
@@ -245,6 +246,15 @@ public:
     void unsetclusterMode();
     void setClusterMode(const std::string& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    KafkaSecurity getKafkaSecurityConfig() const;
+    bool kafkaSecurityConfigIsSet() const;
+    void unsetkafkaSecurityConfig();
+    void setKafkaSecurityConfig(const KafkaSecurity& value);
+
 
 protected:
     std::string dbType_;
@@ -293,6 +303,8 @@ protected:
     bool topicIsSet_;
     std::string clusterMode_;
     bool clusterModeIsSet_;
+    KafkaSecurity kafkaSecurityConfig_;
+    bool kafkaSecurityConfigIsSet_;
 
 };
 

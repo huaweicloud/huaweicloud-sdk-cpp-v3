@@ -26,6 +26,7 @@ ActionParams::ActionParams()
     forceDelete_ = false;
     forceDeleteIsSet_ = false;
     publicIpConfigIsSet_ = false;
+    replayConfigIsSet_ = false;
 }
 
 ActionParams::~ActionParams() = default;
@@ -64,6 +65,9 @@ web::json::value ActionParams::toJson() const
     }
     if(publicIpConfigIsSet_) {
         val[utility::conversions::to_string_t("public_ip_config")] = ModelBase::toJson(publicIpConfig_);
+    }
+    if(replayConfigIsSet_) {
+        val[utility::conversions::to_string_t("replay_config")] = ModelBase::toJson(replayConfig_);
     }
 
     return val;
@@ -151,6 +155,15 @@ bool ActionParams::fromJson(const web::json::value& val)
             PublicIpConfig refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPublicIpConfig(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("replay_config"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("replay_config"));
+        if(!fieldValue.is_null())
+        {
+            ReplayConfigInfo refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setReplayConfig(refVal);
         }
     }
     return ok;
@@ -344,6 +357,27 @@ bool ActionParams::publicIpConfigIsSet() const
 void ActionParams::unsetpublicIpConfig()
 {
     publicIpConfigIsSet_ = false;
+}
+
+ReplayConfigInfo ActionParams::getReplayConfig() const
+{
+    return replayConfig_;
+}
+
+void ActionParams::setReplayConfig(const ReplayConfigInfo& value)
+{
+    replayConfig_ = value;
+    replayConfigIsSet_ = true;
+}
+
+bool ActionParams::replayConfigIsSet() const
+{
+    return replayConfigIsSet_;
+}
+
+void ActionParams::unsetreplayConfig()
+{
+    replayConfigIsSet_ = false;
 }
 
 }

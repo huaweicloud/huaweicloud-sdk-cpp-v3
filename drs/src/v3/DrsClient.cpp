@@ -1177,6 +1177,54 @@ std::shared_ptr<BatchValidateConnectionsResponse> DrsClient::batchValidateConnec
 
     return localVarResult;
 }
+std::shared_ptr<CreateCompareResultFileResponse> DrsClient::createCompareResultFile(CreateCompareResultFileRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/jobs/{job_id}/compare/result/file";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["job_id"] = parameterToString(request.getJobId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+    if (request.regionIsSet()) {
+        localVarHeaderParams["Region"] = parameterToString(request.getRegion());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, DrsMeta::genRequestDefForCreateCompareResultFile());
+
+    std::shared_ptr<CreateCompareResultFileResponse> localVarResult = std::make_shared<CreateCompareResultFileResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<CreateCompareTaskResponse> DrsClient::createCompareTask(CreateCompareTaskRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/jobs/create-compare-task";
@@ -1266,6 +1314,51 @@ std::shared_ptr<CreateDataLevelTableCompareJobResponse> DrsClient::createDataLev
 
     return localVarResult;
 }
+std::shared_ptr<CreateObjectLevelCompareJobResponse> DrsClient::createObjectLevelCompareJob(CreateObjectLevelCompareJobRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/jobs/{job_id}/object/compare";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["job_id"] = parameterToString(request.getJobId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, DrsMeta::genRequestDefForCreateObjectLevelCompareJob());
+
+    std::shared_ptr<CreateObjectLevelCompareJobResponse> localVarResult = std::make_shared<CreateObjectLevelCompareJobResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<DeleteCompareJobResponse> DrsClient::deleteCompareJob(DeleteCompareJobRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/jobs/{job_id}/compare/{compare_job_id}";
@@ -1297,6 +1390,60 @@ std::shared_ptr<DeleteCompareJobResponse> DrsClient::deleteCompareJob(DeleteComp
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<DownloadCompareResultFileResponse> DrsClient::downloadCompareResultFile(DownloadCompareResultFileRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/jobs/{job_id}/compare/result/file";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["job_id"] = parameterToString(request.getJobId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.compareTypeIsSet()) {
+        localVarQueryParams["compare_type"] = parameterToString(request.getCompareType());
+    }
+    if (request.compareJobIdIsSet()) {
+        localVarQueryParams["compare_job_id"] = parameterToString(request.getCompareJobId());
+    }
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+    if (request.regionIsSet()) {
+        localVarHeaderParams["Region"] = parameterToString(request.getRegion());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, DrsMeta::genRequestDefForDownloadCompareResultFile());
+
+    std::shared_ptr<DownloadCompareResultFileResponse> localVarResult = std::make_shared<DownloadCompareResultFileResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
 
     return localVarResult;
 }
@@ -1484,6 +1631,52 @@ std::shared_ptr<ListContentCompareDetailResponse> DrsClient::listContentCompareD
 
     return localVarResult;
 }
+std::shared_ptr<ListContentCompareDifferenceResponse> DrsClient::listContentCompareDifference(ListContentCompareDifferenceRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/jobs/{job_id}/compare/{compare_job_id}/content-difference";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["job_id"] = parameterToString(request.getJobId());
+    localVarPathParams["compare_job_id"] = parameterToString(request.getCompareJobId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.tableNameIsSet()) {
+        localVarQueryParams["table_name"] = parameterToString(request.getTableName());
+    }
+    if (request.dbNameIsSet()) {
+        localVarQueryParams["db_name"] = parameterToString(request.getDbName());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, DrsMeta::genRequestDefForListContentCompareDifference());
+
+    std::shared_ptr<ListContentCompareDifferenceResponse> localVarResult = std::make_shared<ListContentCompareDifferenceResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListContentCompareOverviewResponse> DrsClient::listContentCompareOverview(ListContentCompareOverviewRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/jobs/{job_id}/compare/{compare_job_id}/content-overview";
@@ -1655,6 +1848,82 @@ std::shared_ptr<ListDataLevelTableCompareJobsResponse> DrsClient::listDataLevelT
         localVarHeaderParams, localVarHttpBody, DrsMeta::genRequestDefForListDataLevelTableCompareJobs());
 
     std::shared_ptr<ListDataLevelTableCompareJobsResponse> localVarResult = std::make_shared<ListDataLevelTableCompareJobsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListObejectLevelCompareDetailResponse> DrsClient::listObejectLevelCompareDetail(ListObejectLevelCompareDetailRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/jobs/{job_id}/object/compare/{compare_type}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["job_id"] = parameterToString(request.getJobId());
+    localVarPathParams["compare_type"] = parameterToString(request.getCompareType());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.compareJobIdIsSet()) {
+        localVarQueryParams["compare_job_id"] = parameterToString(request.getCompareJobId());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, DrsMeta::genRequestDefForListObejectLevelCompareDetail());
+
+    std::shared_ptr<ListObejectLevelCompareDetailResponse> localVarResult = std::make_shared<ListObejectLevelCompareDetailResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListObejectLevelCompareOverviewResponse> DrsClient::listObejectLevelCompareOverview(ListObejectLevelCompareOverviewRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/jobs/{job_id}/object/compare";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["job_id"] = parameterToString(request.getJobId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, DrsMeta::genRequestDefForListObejectLevelCompareOverview());
+
+    std::shared_ptr<ListObejectLevelCompareOverviewResponse> localVarResult = std::make_shared<ListObejectLevelCompareOverviewResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

@@ -15,6 +15,8 @@ RecognizeCustomTemplateResponse::RecognizeCustomTemplateResponse()
     resultIsSet_ = false;
     templateId_ = "";
     templateIdIsSet_ = false;
+    xRequestId_ = "";
+    xRequestIdIsSet_ = false;
 }
 
 RecognizeCustomTemplateResponse::~RecognizeCustomTemplateResponse() = default;
@@ -32,6 +34,9 @@ web::json::value RecognizeCustomTemplateResponse::toJson() const
     }
     if(templateIdIsSet_) {
         val[utility::conversions::to_string_t("template_id")] = ModelBase::toJson(templateId_);
+    }
+    if(xRequestIdIsSet_) {
+        val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
     }
 
     return val;
@@ -56,6 +61,15 @@ bool RecognizeCustomTemplateResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTemplateId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Request-Id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXRequestId(refVal);
         }
     }
     return ok;
@@ -102,6 +116,27 @@ bool RecognizeCustomTemplateResponse::templateIdIsSet() const
 void RecognizeCustomTemplateResponse::unsettemplateId()
 {
     templateIdIsSet_ = false;
+}
+
+std::string RecognizeCustomTemplateResponse::getXRequestId() const
+{
+    return xRequestId_;
+}
+
+void RecognizeCustomTemplateResponse::setXRequestId(const std::string& value)
+{
+    xRequestId_ = value;
+    xRequestIdIsSet_ = true;
+}
+
+bool RecognizeCustomTemplateResponse::xRequestIdIsSet() const
+{
+    return xRequestIdIsSet_;
+}
+
+void RecognizeCustomTemplateResponse::unsetxRequestId()
+{
+    xRequestIdIsSet_ = false;
 }
 
 }

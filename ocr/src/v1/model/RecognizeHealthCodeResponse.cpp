@@ -13,6 +13,8 @@ namespace Model {
 RecognizeHealthCodeResponse::RecognizeHealthCodeResponse()
 {
     resultIsSet_ = false;
+    xRequestId_ = "";
+    xRequestIdIsSet_ = false;
 }
 
 RecognizeHealthCodeResponse::~RecognizeHealthCodeResponse() = default;
@@ -28,6 +30,9 @@ web::json::value RecognizeHealthCodeResponse::toJson() const
     if(resultIsSet_) {
         val[utility::conversions::to_string_t("result")] = ModelBase::toJson(result_);
     }
+    if(xRequestIdIsSet_) {
+        val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
+    }
 
     return val;
 }
@@ -42,6 +47,15 @@ bool RecognizeHealthCodeResponse::fromJson(const web::json::value& val)
             HealthCodeResult refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResult(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Request-Id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXRequestId(refVal);
         }
     }
     return ok;
@@ -67,6 +81,27 @@ bool RecognizeHealthCodeResponse::resultIsSet() const
 void RecognizeHealthCodeResponse::unsetresult()
 {
     resultIsSet_ = false;
+}
+
+std::string RecognizeHealthCodeResponse::getXRequestId() const
+{
+    return xRequestId_;
+}
+
+void RecognizeHealthCodeResponse::setXRequestId(const std::string& value)
+{
+    xRequestId_ = value;
+    xRequestIdIsSet_ = true;
+}
+
+bool RecognizeHealthCodeResponse::xRequestIdIsSet() const
+{
+    return xRequestIdIsSet_;
+}
+
+void RecognizeHealthCodeResponse::unsetxRequestId()
+{
+    xRequestIdIsSet_ = false;
 }
 
 }

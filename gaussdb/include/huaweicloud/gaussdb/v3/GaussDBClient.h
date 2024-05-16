@@ -307,15 +307,33 @@
 
 #include <huaweicloud/gaussdb/v3/model/CheckDataBaseConfigRequest.h>
 #include <huaweicloud/gaussdb/v3/model/CheckDataBaseConfigResponse.h>
+#include <huaweicloud/gaussdb/v3/model/CheckStarRocksResourceRequest.h>
+#include <huaweicloud/gaussdb/v3/model/CheckStarRocksResourceResponse.h>
 #include <huaweicloud/gaussdb/v3/model/CheckTableConfigRequest.h>
 #include <huaweicloud/gaussdb/v3/model/CheckTableConfigResponse.h>
 #include <huaweicloud/gaussdb/v3/model/CreateStarRocksDataReplication.h>
 #include <huaweicloud/gaussdb/v3/model/CreateStarRocksDataReplicationRequest.h>
 #include <huaweicloud/gaussdb/v3/model/CreateStarRocksDataReplicationResponse.h>
+#include <huaweicloud/gaussdb/v3/model/CreateStarRocksDatabaseUserRequest.h>
+#include <huaweicloud/gaussdb/v3/model/CreateStarRocksDatabaseUserResponse.h>
+#include <huaweicloud/gaussdb/v3/model/CreateStarrocksInstanceRequest.h>
+#include <huaweicloud/gaussdb/v3/model/CreateStarrocksInstanceResponse.h>
 #include <huaweicloud/gaussdb/v3/model/DbConfigCheckRequestV3.h>
 #include <huaweicloud/gaussdb/v3/model/DeleteStarRocksDataReplication.h>
 #include <huaweicloud/gaussdb/v3/model/DeleteStarRocksDataReplicationRequest.h>
 #include <huaweicloud/gaussdb/v3/model/DeleteStarRocksDataReplicationResponse.h>
+#include <huaweicloud/gaussdb/v3/model/DeleteStarRocksDatabaseUserRequest.h>
+#include <huaweicloud/gaussdb/v3/model/DeleteStarRocksDatabaseUserResponse.h>
+#include <huaweicloud/gaussdb/v3/model/DeleteStarrocksInstanceRequest.h>
+#include <huaweicloud/gaussdb/v3/model/DeleteStarrocksInstanceResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ListHtapDataStoreRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ListHtapDataStoreResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ListHtapFlavorRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ListHtapFlavorResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ListHtapInstanceInfoRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ListHtapInstanceInfoResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ListHtapStorageTypeRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ListHtapStorageTypeResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ListStarRocksDataBasesRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ListStarRocksDataBasesResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ListStarRocksDataReplicationConfigRequest.h>
@@ -324,7 +342,24 @@
 #include <huaweicloud/gaussdb/v3/model/ListStarRocksDataReplicationsResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ListStarRocksDbParametersRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ListStarRocksDbParametersResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ListStarrocksInstanceInfoRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ListStarrocksInstanceInfoResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ResourceCheck.h>
+#include <huaweicloud/gaussdb/v3/model/RestartStarrocksInstanceRequest.h>
+#include <huaweicloud/gaussdb/v3/model/RestartStarrocksInstanceResponse.h>
+#include <huaweicloud/gaussdb/v3/model/RestartStarrocksNodeRequest.h>
+#include <huaweicloud/gaussdb/v3/model/RestartStarrocksNodeResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ShowStarRocksDatabaseUserRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ShowStarRocksDatabaseUserResponse.h>
+#include <huaweicloud/gaussdb/v3/model/StarRocksCreateRequest.h>
+#include <huaweicloud/gaussdb/v3/model/StarRocksDatabaseUserInfo.h>
+#include <huaweicloud/gaussdb/v3/model/StarRocksDatabaseUserPSinfo.h>
+#include <huaweicloud/gaussdb/v3/model/StarRocksDatabaseUserPWinfo.h>
 #include <huaweicloud/gaussdb/v3/model/TableConfigCheckRequestV3.h>
+#include <huaweicloud/gaussdb/v3/model/UpdateStarRocksDatabaseUserPasswordRequest.h>
+#include <huaweicloud/gaussdb/v3/model/UpdateStarRocksDatabaseUserPasswordResponse.h>
+#include <huaweicloud/gaussdb/v3/model/UpdateStarRocksDatabaseUserPermissionRequest.h>
+#include <huaweicloud/gaussdb/v3/model/UpdateStarRocksDatabaseUserPermissionResponse.h>
 #include <string>
 
 #include <huaweicloud/gaussdb/v3/model/DeleteSqlFilterRuleReq.h>
@@ -1297,6 +1332,14 @@ public:
     std::shared_ptr<CheckDataBaseConfigResponse> checkDataBaseConfig(
         CheckDataBaseConfigRequest &request
     );
+    // StarRocks资源检查
+    //
+    // StarRocks资源检查。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CheckStarRocksResourceResponse> checkStarRocksResource(
+        CheckStarRocksResourceRequest &request
+    );
     // HTAP数据同步表配置校验
     //
     // HTAP数据同步表配置校验。
@@ -1313,6 +1356,22 @@ public:
     std::shared_ptr<CreateStarRocksDataReplicationResponse> createStarRocksDataReplication(
         CreateStarRocksDataReplicationRequest &request
     );
+    // 创建数据库账号
+    //
+    // 创建StarRocks数据库账号。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateStarRocksDatabaseUserResponse> createStarRocksDatabaseUser(
+        CreateStarRocksDatabaseUserRequest &request
+    );
+    // 创建StarRocks实例
+    //
+    // 创建StarRocks实例。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateStarrocksInstanceResponse> createStarrocksInstance(
+        CreateStarrocksInstanceRequest &request
+    );
     // 删除StarRocks数据同步
     //
     // 删除StarRocks数据同步。
@@ -1320,6 +1379,54 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteStarRocksDataReplicationResponse> deleteStarRocksDataReplication(
         DeleteStarRocksDataReplicationRequest &request
+    );
+    // 删除数据库账户
+    //
+    // 删除StarRocks数据库账户。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteStarRocksDatabaseUserResponse> deleteStarRocksDatabaseUser(
+        DeleteStarRocksDatabaseUserRequest &request
+    );
+    // 删除StarRocks实例
+    //
+    // 删除StarRocks实例。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteStarrocksInstanceResponse> deleteStarrocksInstance(
+        DeleteStarrocksInstanceRequest &request
+    );
+    // HTAP引擎资源查询
+    //
+    // HTAP引擎资源查询。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListHtapDataStoreResponse> listHtapDataStore(
+        ListHtapDataStoreRequest &request
+    );
+    // HTAP查询规格信息
+    //
+    // HTAP查询规格信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListHtapFlavorResponse> listHtapFlavor(
+        ListHtapFlavorRequest &request
+    );
+    // 查询HTAP实例列表
+    //
+    // 查询HTAP实例列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListHtapInstanceInfoResponse> listHtapInstanceInfo(
+        ListHtapInstanceInfoRequest &request
+    );
+    // 获取HTAP实例存储类型
+    //
+    // 获取HTAP实例存储类型。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListHtapStorageTypeResponse> listHtapStorageType(
+        ListHtapStorageTypeRequest &request
     );
     // 查询StarRocks数据库
     //
@@ -1352,6 +1459,54 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListStarRocksDbParametersResponse> listStarRocksDbParameters(
         ListStarRocksDbParametersRequest &request
+    );
+    // 查询StarRocks实例
+    //
+    // 查询StarRocks实例。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListStarrocksInstanceInfoResponse> listStarrocksInstanceInfo(
+        ListStarrocksInstanceInfoRequest &request
+    );
+    // 重启StarRocks实例
+    //
+    // 重启StarRocks实例。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<RestartStarrocksInstanceResponse> restartStarrocksInstance(
+        RestartStarrocksInstanceRequest &request
+    );
+    // 重启StarRocks节点
+    //
+    // 重启StarRocks节点。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<RestartStarrocksNodeResponse> restartStarrocksNode(
+        RestartStarrocksNodeRequest &request
+    );
+    // 查询数据库账户
+    //
+    // 查询StarRocks数据库账户。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowStarRocksDatabaseUserResponse> showStarRocksDatabaseUser(
+        ShowStarRocksDatabaseUserRequest &request
+    );
+    // 修改数据库账号密码
+    //
+    // 修改StarRocks数据库账号密码。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateStarRocksDatabaseUserPasswordResponse> updateStarRocksDatabaseUserPassword(
+        UpdateStarRocksDatabaseUserPasswordRequest &request
+    );
+    // 修改数据库账号权限
+    //
+    // 修改StarRocks数据库账号权限。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateStarRocksDatabaseUserPermissionResponse> updateStarRocksDatabaseUserPermission(
+        UpdateStarRocksDatabaseUserPermissionRequest &request
     );
 
     // 删除SQL限流规则

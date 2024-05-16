@@ -23,6 +23,8 @@ QueryLtsLogParams::QueryLtsLogParams()
     keywordsIsSet_ = false;
     lineNum_ = "";
     lineNumIsSet_ = false;
+    time_ = "";
+    timeIsSet_ = false;
     isDesc_ = false;
     isDescIsSet_ = false;
     searchType_ = "";
@@ -62,6 +64,9 @@ web::json::value QueryLtsLogParams::toJson() const
     }
     if(lineNumIsSet_) {
         val[utility::conversions::to_string_t("line_num")] = ModelBase::toJson(lineNum_);
+    }
+    if(timeIsSet_) {
+        val[utility::conversions::to_string_t("__time__")] = ModelBase::toJson(time_);
     }
     if(isDescIsSet_) {
         val[utility::conversions::to_string_t("is_desc")] = ModelBase::toJson(isDesc_);
@@ -137,6 +142,15 @@ bool QueryLtsLogParams::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLineNum(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("__time__"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("__time__"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTime(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("is_desc"))) {
@@ -312,6 +326,27 @@ bool QueryLtsLogParams::lineNumIsSet() const
 void QueryLtsLogParams::unsetlineNum()
 {
     lineNumIsSet_ = false;
+}
+
+std::string QueryLtsLogParams::getTime() const
+{
+    return time_;
+}
+
+void QueryLtsLogParams::setTime(const std::string& value)
+{
+    time_ = value;
+    timeIsSet_ = true;
+}
+
+bool QueryLtsLogParams::timeIsSet() const
+{
+    return timeIsSet_;
+}
+
+void QueryLtsLogParams::unsettime()
+{
+    timeIsSet_ = false;
 }
 
 bool QueryLtsLogParams::isIsDesc() const

@@ -119,6 +119,15 @@ public:
     void unsetkvMap();
     void setKvMap(const std::string& value);
 
+    /// <summary>
+    /// 指定PDF页码识别。传入该参数时，则识别指定页码的内容。如果不传该参数，则默认识别第1页。 
+    /// </summary>
+
+    int32_t getPdfPageNumber() const;
+    bool pdfPageNumberIsSet() const;
+    void unsetpdfPageNumber();
+    void setPdfPageNumber(int32_t value);
+
 
 protected:
     std::string data_;
@@ -139,6 +148,8 @@ protected:
     bool formulaIsSet_;
     std::string kvMap_;
     bool kvMapIsSet_;
+    int32_t pdfPageNumber_;
+    bool pdfPageNumberIsSet_;
 
 };
 

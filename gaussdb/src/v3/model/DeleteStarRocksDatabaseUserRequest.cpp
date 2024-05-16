@@ -1,0 +1,149 @@
+
+
+#include "huaweicloud/gaussdb/v3/model/DeleteStarRocksDatabaseUserRequest.h"
+namespace HuaweiCloud {
+namespace Sdk {
+namespace Gaussdb {
+namespace V3 {
+namespace Model {
+
+
+
+
+DeleteStarRocksDatabaseUserRequest::DeleteStarRocksDatabaseUserRequest()
+{
+    instanceId_ = "";
+    instanceIdIsSet_ = false;
+    userName_ = "";
+    userNameIsSet_ = false;
+    xLanguage_ = "";
+    xLanguageIsSet_ = false;
+}
+
+DeleteStarRocksDatabaseUserRequest::~DeleteStarRocksDatabaseUserRequest() = default;
+
+void DeleteStarRocksDatabaseUserRequest::validate()
+{
+}
+
+web::json::value DeleteStarRocksDatabaseUserRequest::toJson() const
+{
+    web::json::value val = web::json::value::object();
+
+    if(instanceIdIsSet_) {
+        val[utility::conversions::to_string_t("instance_id")] = ModelBase::toJson(instanceId_);
+    }
+    if(userNameIsSet_) {
+        val[utility::conversions::to_string_t("user_name")] = ModelBase::toJson(userName_);
+    }
+    if(xLanguageIsSet_) {
+        val[utility::conversions::to_string_t("X-Language")] = ModelBase::toJson(xLanguage_);
+    }
+
+    return val;
+}
+bool DeleteStarRocksDatabaseUserRequest::fromJson(const web::json::value& val)
+{
+    bool ok = true;
+    
+    if(val.has_field(utility::conversions::to_string_t("instance_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("instance_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setInstanceId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("user_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("user_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setUserName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Language"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Language"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXLanguage(refVal);
+        }
+    }
+    return ok;
+}
+
+
+std::string DeleteStarRocksDatabaseUserRequest::getInstanceId() const
+{
+    return instanceId_;
+}
+
+void DeleteStarRocksDatabaseUserRequest::setInstanceId(const std::string& value)
+{
+    instanceId_ = value;
+    instanceIdIsSet_ = true;
+}
+
+bool DeleteStarRocksDatabaseUserRequest::instanceIdIsSet() const
+{
+    return instanceIdIsSet_;
+}
+
+void DeleteStarRocksDatabaseUserRequest::unsetinstanceId()
+{
+    instanceIdIsSet_ = false;
+}
+
+std::string DeleteStarRocksDatabaseUserRequest::getUserName() const
+{
+    return userName_;
+}
+
+void DeleteStarRocksDatabaseUserRequest::setUserName(const std::string& value)
+{
+    userName_ = value;
+    userNameIsSet_ = true;
+}
+
+bool DeleteStarRocksDatabaseUserRequest::userNameIsSet() const
+{
+    return userNameIsSet_;
+}
+
+void DeleteStarRocksDatabaseUserRequest::unsetuserName()
+{
+    userNameIsSet_ = false;
+}
+
+std::string DeleteStarRocksDatabaseUserRequest::getXLanguage() const
+{
+    return xLanguage_;
+}
+
+void DeleteStarRocksDatabaseUserRequest::setXLanguage(const std::string& value)
+{
+    xLanguage_ = value;
+    xLanguageIsSet_ = true;
+}
+
+bool DeleteStarRocksDatabaseUserRequest::xLanguageIsSet() const
+{
+    return xLanguageIsSet_;
+}
+
+void DeleteStarRocksDatabaseUserRequest::unsetxLanguage()
+{
+    xLanguageIsSet_ = false;
+}
+
+}
+}
+}
+}
+}
+
+

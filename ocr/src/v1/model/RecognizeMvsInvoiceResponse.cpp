@@ -13,6 +13,8 @@ namespace Model {
 RecognizeMvsInvoiceResponse::RecognizeMvsInvoiceResponse()
 {
     resultIsSet_ = false;
+    xRequestId_ = "";
+    xRequestIdIsSet_ = false;
 }
 
 RecognizeMvsInvoiceResponse::~RecognizeMvsInvoiceResponse() = default;
@@ -28,6 +30,9 @@ web::json::value RecognizeMvsInvoiceResponse::toJson() const
     if(resultIsSet_) {
         val[utility::conversions::to_string_t("result")] = ModelBase::toJson(result_);
     }
+    if(xRequestIdIsSet_) {
+        val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
+    }
 
     return val;
 }
@@ -42,6 +47,15 @@ bool RecognizeMvsInvoiceResponse::fromJson(const web::json::value& val)
             MvsInvoiceResult refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResult(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Request-Id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXRequestId(refVal);
         }
     }
     return ok;
@@ -67,6 +81,27 @@ bool RecognizeMvsInvoiceResponse::resultIsSet() const
 void RecognizeMvsInvoiceResponse::unsetresult()
 {
     resultIsSet_ = false;
+}
+
+std::string RecognizeMvsInvoiceResponse::getXRequestId() const
+{
+    return xRequestId_;
+}
+
+void RecognizeMvsInvoiceResponse::setXRequestId(const std::string& value)
+{
+    xRequestId_ = value;
+    xRequestIdIsSet_ = true;
+}
+
+bool RecognizeMvsInvoiceResponse::xRequestIdIsSet() const
+{
+    return xRequestIdIsSet_;
+}
+
+void RecognizeMvsInvoiceResponse::unsetxRequestId()
+{
+    xRequestIdIsSet_ = false;
 }
 
 }

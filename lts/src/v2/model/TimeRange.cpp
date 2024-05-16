@@ -14,9 +14,9 @@ TimeRange::TimeRange()
 {
     sqlTimeZone_ = "";
     sqlTimeZoneIsSet_ = false;
-    startTime_ = "";
+    startTime_ = 0L;
     startTimeIsSet_ = false;
-    endTime_ = "";
+    endTime_ = 0L;
     endTimeIsSet_ = false;
     startTimeGt_ = false;
     startTimeGtIsSet_ = false;
@@ -69,7 +69,7 @@ bool TimeRange::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("start_time"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setStartTime(refVal);
         }
@@ -78,7 +78,7 @@ bool TimeRange::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("end_time"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEndTime(refVal);
         }
@@ -126,12 +126,12 @@ void TimeRange::unsetsqlTimeZone()
     sqlTimeZoneIsSet_ = false;
 }
 
-std::string TimeRange::getStartTime() const
+int64_t TimeRange::getStartTime() const
 {
     return startTime_;
 }
 
-void TimeRange::setStartTime(const std::string& value)
+void TimeRange::setStartTime(int64_t value)
 {
     startTime_ = value;
     startTimeIsSet_ = true;
@@ -147,12 +147,12 @@ void TimeRange::unsetstartTime()
     startTimeIsSet_ = false;
 }
 
-std::string TimeRange::getEndTime() const
+int64_t TimeRange::getEndTime() const
 {
     return endTime_;
 }
 
-void TimeRange::setEndTime(const std::string& value)
+void TimeRange::setEndTime(int64_t value)
 {
     endTime_ = value;
     endTimeIsSet_ = true;

@@ -14,16 +14,21 @@ HttpPutBody::HttpPutBody()
 {
     httpsStatus_ = "";
     httpsStatusIsSet_ = false;
+    certificateType_ = "";
+    certificateTypeIsSet_ = false;
+    certificateSource_ = 0;
+    certificateSourceIsSet_ = false;
     certificateName_ = "";
     certificateNameIsSet_ = false;
     certificateValue_ = "";
     certificateValueIsSet_ = false;
     privateKey_ = "";
     privateKeyIsSet_ = false;
-    certificateSource_ = 0;
-    certificateSourceIsSet_ = false;
-    certificateType_ = "";
-    certificateTypeIsSet_ = false;
+    encCertificateValue_ = "";
+    encCertificateValueIsSet_ = false;
+    encPrivateKey_ = "";
+    encPrivateKeyIsSet_ = false;
+    certificatesIsSet_ = false;
     http2Status_ = "";
     http2StatusIsSet_ = false;
     tlsVersion_ = "";
@@ -45,6 +50,12 @@ web::json::value HttpPutBody::toJson() const
     if(httpsStatusIsSet_) {
         val[utility::conversions::to_string_t("https_status")] = ModelBase::toJson(httpsStatus_);
     }
+    if(certificateTypeIsSet_) {
+        val[utility::conversions::to_string_t("certificate_type")] = ModelBase::toJson(certificateType_);
+    }
+    if(certificateSourceIsSet_) {
+        val[utility::conversions::to_string_t("certificate_source")] = ModelBase::toJson(certificateSource_);
+    }
     if(certificateNameIsSet_) {
         val[utility::conversions::to_string_t("certificate_name")] = ModelBase::toJson(certificateName_);
     }
@@ -54,11 +65,14 @@ web::json::value HttpPutBody::toJson() const
     if(privateKeyIsSet_) {
         val[utility::conversions::to_string_t("private_key")] = ModelBase::toJson(privateKey_);
     }
-    if(certificateSourceIsSet_) {
-        val[utility::conversions::to_string_t("certificate_source")] = ModelBase::toJson(certificateSource_);
+    if(encCertificateValueIsSet_) {
+        val[utility::conversions::to_string_t("enc_certificate_value")] = ModelBase::toJson(encCertificateValue_);
     }
-    if(certificateTypeIsSet_) {
-        val[utility::conversions::to_string_t("certificate_type")] = ModelBase::toJson(certificateType_);
+    if(encPrivateKeyIsSet_) {
+        val[utility::conversions::to_string_t("enc_private_key")] = ModelBase::toJson(encPrivateKey_);
+    }
+    if(certificatesIsSet_) {
+        val[utility::conversions::to_string_t("certificates")] = ModelBase::toJson(certificates_);
     }
     if(http2StatusIsSet_) {
         val[utility::conversions::to_string_t("http2_status")] = ModelBase::toJson(http2Status_);
@@ -83,6 +97,24 @@ bool HttpPutBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setHttpsStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("certificate_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("certificate_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCertificateType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("certificate_source"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("certificate_source"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCertificateSource(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("certificate_name"))) {
@@ -112,22 +144,31 @@ bool HttpPutBody::fromJson(const web::json::value& val)
             setPrivateKey(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("certificate_source"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("certificate_source"));
-        if(!fieldValue.is_null())
-        {
-            int32_t refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setCertificateSource(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("certificate_type"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("certificate_type"));
+    if(val.has_field(utility::conversions::to_string_t("enc_certificate_value"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enc_certificate_value"));
         if(!fieldValue.is_null())
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setCertificateType(refVal);
+            setEncCertificateValue(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("enc_private_key"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enc_private_key"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEncPrivateKey(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("certificates"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("certificates"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<CertificatesPutBody> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCertificates(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("http2_status"))) {
@@ -180,6 +221,48 @@ bool HttpPutBody::httpsStatusIsSet() const
 void HttpPutBody::unsethttpsStatus()
 {
     httpsStatusIsSet_ = false;
+}
+
+std::string HttpPutBody::getCertificateType() const
+{
+    return certificateType_;
+}
+
+void HttpPutBody::setCertificateType(const std::string& value)
+{
+    certificateType_ = value;
+    certificateTypeIsSet_ = true;
+}
+
+bool HttpPutBody::certificateTypeIsSet() const
+{
+    return certificateTypeIsSet_;
+}
+
+void HttpPutBody::unsetcertificateType()
+{
+    certificateTypeIsSet_ = false;
+}
+
+int32_t HttpPutBody::getCertificateSource() const
+{
+    return certificateSource_;
+}
+
+void HttpPutBody::setCertificateSource(int32_t value)
+{
+    certificateSource_ = value;
+    certificateSourceIsSet_ = true;
+}
+
+bool HttpPutBody::certificateSourceIsSet() const
+{
+    return certificateSourceIsSet_;
+}
+
+void HttpPutBody::unsetcertificateSource()
+{
+    certificateSourceIsSet_ = false;
 }
 
 std::string HttpPutBody::getCertificateName() const
@@ -245,46 +328,67 @@ void HttpPutBody::unsetprivateKey()
     privateKeyIsSet_ = false;
 }
 
-int32_t HttpPutBody::getCertificateSource() const
+std::string HttpPutBody::getEncCertificateValue() const
 {
-    return certificateSource_;
+    return encCertificateValue_;
 }
 
-void HttpPutBody::setCertificateSource(int32_t value)
+void HttpPutBody::setEncCertificateValue(const std::string& value)
 {
-    certificateSource_ = value;
-    certificateSourceIsSet_ = true;
+    encCertificateValue_ = value;
+    encCertificateValueIsSet_ = true;
 }
 
-bool HttpPutBody::certificateSourceIsSet() const
+bool HttpPutBody::encCertificateValueIsSet() const
 {
-    return certificateSourceIsSet_;
+    return encCertificateValueIsSet_;
 }
 
-void HttpPutBody::unsetcertificateSource()
+void HttpPutBody::unsetencCertificateValue()
 {
-    certificateSourceIsSet_ = false;
+    encCertificateValueIsSet_ = false;
 }
 
-std::string HttpPutBody::getCertificateType() const
+std::string HttpPutBody::getEncPrivateKey() const
 {
-    return certificateType_;
+    return encPrivateKey_;
 }
 
-void HttpPutBody::setCertificateType(const std::string& value)
+void HttpPutBody::setEncPrivateKey(const std::string& value)
 {
-    certificateType_ = value;
-    certificateTypeIsSet_ = true;
+    encPrivateKey_ = value;
+    encPrivateKeyIsSet_ = true;
 }
 
-bool HttpPutBody::certificateTypeIsSet() const
+bool HttpPutBody::encPrivateKeyIsSet() const
 {
-    return certificateTypeIsSet_;
+    return encPrivateKeyIsSet_;
 }
 
-void HttpPutBody::unsetcertificateType()
+void HttpPutBody::unsetencPrivateKey()
 {
-    certificateTypeIsSet_ = false;
+    encPrivateKeyIsSet_ = false;
+}
+
+std::vector<CertificatesPutBody>& HttpPutBody::getCertificates()
+{
+    return certificates_;
+}
+
+void HttpPutBody::setCertificates(const std::vector<CertificatesPutBody>& value)
+{
+    certificates_ = value;
+    certificatesIsSet_ = true;
+}
+
+bool HttpPutBody::certificatesIsSet() const
+{
+    return certificatesIsSet_;
+}
+
+void HttpPutBody::unsetcertificates()
+{
+    certificatesIsSet_ = false;
 }
 
 std::string HttpPutBody::getHttp2Status() const

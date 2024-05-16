@@ -13,6 +13,8 @@ namespace Model {
 RecognizeMacaoIdCardResponse::RecognizeMacaoIdCardResponse()
 {
     resultIsSet_ = false;
+    xRequestId_ = "";
+    xRequestIdIsSet_ = false;
 }
 
 RecognizeMacaoIdCardResponse::~RecognizeMacaoIdCardResponse() = default;
@@ -28,6 +30,9 @@ web::json::value RecognizeMacaoIdCardResponse::toJson() const
     if(resultIsSet_) {
         val[utility::conversions::to_string_t("result")] = ModelBase::toJson(result_);
     }
+    if(xRequestIdIsSet_) {
+        val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
+    }
 
     return val;
 }
@@ -42,6 +47,15 @@ bool RecognizeMacaoIdCardResponse::fromJson(const web::json::value& val)
             MacaoIdCardResult refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResult(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Request-Id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXRequestId(refVal);
         }
     }
     return ok;
@@ -67,6 +81,27 @@ bool RecognizeMacaoIdCardResponse::resultIsSet() const
 void RecognizeMacaoIdCardResponse::unsetresult()
 {
     resultIsSet_ = false;
+}
+
+std::string RecognizeMacaoIdCardResponse::getXRequestId() const
+{
+    return xRequestId_;
+}
+
+void RecognizeMacaoIdCardResponse::setXRequestId(const std::string& value)
+{
+    xRequestId_ = value;
+    xRequestIdIsSet_ = true;
+}
+
+bool RecognizeMacaoIdCardResponse::xRequestIdIsSet() const
+{
+    return xRequestIdIsSet_;
+}
+
+void RecognizeMacaoIdCardResponse::unsetxRequestId()
+{
+    xRequestIdIsSet_ = false;
 }
 
 }

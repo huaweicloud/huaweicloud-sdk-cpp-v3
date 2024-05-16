@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/ocr/v1/model/LicensePlateResult.h>
+#include <string>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -48,10 +49,21 @@ public:
     void unsetresult();
     void setResult(const std::vector<LicensePlateResult>& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    std::string getXRequestId() const;
+    bool xRequestIdIsSet() const;
+    void unsetxRequestId();
+    void setXRequestId(const std::string& value);
+
 
 protected:
     std::vector<LicensePlateResult> result_;
     bool resultIsSet_;
+    std::string xRequestId_;
+    bool xRequestIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

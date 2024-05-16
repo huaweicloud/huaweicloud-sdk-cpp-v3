@@ -70,6 +70,7 @@ public:
     static HttpRequestDef genRequestDefForResetPwd();
     static HttpRequestDef genRequestDefForResizeInstanceFlavor();
     static HttpRequestDef genRequestDefForRestartInstance();
+    static HttpRequestDef genRequestDefForRestoreInstance();
     static HttpRequestDef genRequestDefForRunInstanceAction();
     static HttpRequestDef genRequestDefForSearchAutoEnlargePolicy();
     static HttpRequestDef genRequestDefForSetBackupPolicy();

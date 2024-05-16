@@ -151,6 +151,9 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/ResourceErrorResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/RestartInstanceRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/RestartInstanceResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/RestoreInstanceRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/RestoreInstanceRequestBody.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/RestoreInstanceResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/RunInstanceActionRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/RunInstanceActionResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/SearchAutoEnlargePolicyRequest.h>
@@ -697,6 +700,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<RestartInstanceResponse> restartInstance(
         RestartInstanceRequest &request
+    );
+    // 备份恢复到当前实例
+    //
+    // 备份恢复到当前实例
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<RestoreInstanceResponse> restoreInstance(
+        RestoreInstanceRequest &request
     );
     // CN横向扩容/DN分片扩容/磁盘扩容
     //

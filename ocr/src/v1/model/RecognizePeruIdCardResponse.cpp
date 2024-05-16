@@ -13,6 +13,8 @@ namespace Model {
 RecognizePeruIdCardResponse::RecognizePeruIdCardResponse()
 {
     resultIsSet_ = false;
+    xRequestId_ = "";
+    xRequestIdIsSet_ = false;
 }
 
 RecognizePeruIdCardResponse::~RecognizePeruIdCardResponse() = default;
@@ -28,6 +30,9 @@ web::json::value RecognizePeruIdCardResponse::toJson() const
     if(resultIsSet_) {
         val[utility::conversions::to_string_t("result")] = ModelBase::toJson(result_);
     }
+    if(xRequestIdIsSet_) {
+        val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
+    }
 
     return val;
 }
@@ -42,6 +47,15 @@ bool RecognizePeruIdCardResponse::fromJson(const web::json::value& val)
             PeruIdCardResult refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResult(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Request-Id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXRequestId(refVal);
         }
     }
     return ok;
@@ -67,6 +81,27 @@ bool RecognizePeruIdCardResponse::resultIsSet() const
 void RecognizePeruIdCardResponse::unsetresult()
 {
     resultIsSet_ = false;
+}
+
+std::string RecognizePeruIdCardResponse::getXRequestId() const
+{
+    return xRequestId_;
+}
+
+void RecognizePeruIdCardResponse::setXRequestId(const std::string& value)
+{
+    xRequestId_ = value;
+    xRequestIdIsSet_ = true;
+}
+
+bool RecognizePeruIdCardResponse::xRequestIdIsSet() const
+{
+    return xRequestIdIsSet_;
+}
+
+void RecognizePeruIdCardResponse::unsetxRequestId()
+{
+    xRequestIdIsSet_ = false;
 }
 
 }

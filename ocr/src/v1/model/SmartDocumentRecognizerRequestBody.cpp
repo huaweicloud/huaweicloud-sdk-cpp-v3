@@ -30,6 +30,8 @@ SmartDocumentRecognizerRequestBody::SmartDocumentRecognizerRequestBody()
     formulaIsSet_ = false;
     kvMap_ = "";
     kvMapIsSet_ = false;
+    pdfPageNumber_ = 0;
+    pdfPageNumberIsSet_ = false;
 }
 
 SmartDocumentRecognizerRequestBody::~SmartDocumentRecognizerRequestBody() = default;
@@ -68,6 +70,9 @@ web::json::value SmartDocumentRecognizerRequestBody::toJson() const
     }
     if(kvMapIsSet_) {
         val[utility::conversions::to_string_t("kv_map")] = ModelBase::toJson(kvMap_);
+    }
+    if(pdfPageNumberIsSet_) {
+        val[utility::conversions::to_string_t("pdf_page_number")] = ModelBase::toJson(pdfPageNumber_);
     }
 
     return val;
@@ -155,6 +160,15 @@ bool SmartDocumentRecognizerRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setKvMap(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("pdf_page_number"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("pdf_page_number"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPdfPageNumber(refVal);
         }
     }
     return ok;
@@ -348,6 +362,27 @@ bool SmartDocumentRecognizerRequestBody::kvMapIsSet() const
 void SmartDocumentRecognizerRequestBody::unsetkvMap()
 {
     kvMapIsSet_ = false;
+}
+
+int32_t SmartDocumentRecognizerRequestBody::getPdfPageNumber() const
+{
+    return pdfPageNumber_;
+}
+
+void SmartDocumentRecognizerRequestBody::setPdfPageNumber(int32_t value)
+{
+    pdfPageNumber_ = value;
+    pdfPageNumberIsSet_ = true;
+}
+
+bool SmartDocumentRecognizerRequestBody::pdfPageNumberIsSet() const
+{
+    return pdfPageNumberIsSet_;
+}
+
+void SmartDocumentRecognizerRequestBody::unsetpdfPageNumber()
+{
+    pdfPageNumberIsSet_ = false;
 }
 
 }

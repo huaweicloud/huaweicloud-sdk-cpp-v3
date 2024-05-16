@@ -42,9 +42,17 @@ public:
             { 
                 "https://vpc.cn-east-3.myhuaweicloud.com"
             });
+        regions["cn-east-5"] = Region("cn-east-5",
+            { 
+                "https://vpc.cn-east-5.myhuaweicloud.com"
+            });
         regions["cn-south-1"] = Region("cn-south-1",
             { 
                 "https://vpc.cn-south-1.myhuaweicloud.com"
+            });
+        regions["cn-south-4"] = Region("cn-south-4",
+            { 
+                "https://vpc.cn-south-4.myhuaweicloud.com"
             });
         regions["cn-southwest-2"] = Region("cn-southwest-2",
             { 
@@ -57,6 +65,10 @@ public:
         regions["cn-north-9"] = Region("cn-north-9",
             { 
                 "https://vpc.cn-north-9.myhuaweicloud.com"
+            });
+        regions["cn-north-11"] = Region("cn-north-11",
+            { 
+                "https://vpc.cn-north-11.myhuaweicloud.com"
             });
         regions["ap-southeast-1"] = Region("ap-southeast-1",
             { 

@@ -13,6 +13,8 @@ namespace Model {
 RecognizeQualificationCertificateResponse::RecognizeQualificationCertificateResponse()
 {
     resultIsSet_ = false;
+    xRequestId_ = "";
+    xRequestIdIsSet_ = false;
 }
 
 RecognizeQualificationCertificateResponse::~RecognizeQualificationCertificateResponse() = default;
@@ -28,6 +30,9 @@ web::json::value RecognizeQualificationCertificateResponse::toJson() const
     if(resultIsSet_) {
         val[utility::conversions::to_string_t("result")] = ModelBase::toJson(result_);
     }
+    if(xRequestIdIsSet_) {
+        val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
+    }
 
     return val;
 }
@@ -42,6 +47,15 @@ bool RecognizeQualificationCertificateResponse::fromJson(const web::json::value&
             QualificationCertificateResult refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResult(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Request-Id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXRequestId(refVal);
         }
     }
     return ok;
@@ -67,6 +81,27 @@ bool RecognizeQualificationCertificateResponse::resultIsSet() const
 void RecognizeQualificationCertificateResponse::unsetresult()
 {
     resultIsSet_ = false;
+}
+
+std::string RecognizeQualificationCertificateResponse::getXRequestId() const
+{
+    return xRequestId_;
+}
+
+void RecognizeQualificationCertificateResponse::setXRequestId(const std::string& value)
+{
+    xRequestId_ = value;
+    xRequestIdIsSet_ = true;
+}
+
+bool RecognizeQualificationCertificateResponse::xRequestIdIsSet() const
+{
+    return xRequestIdIsSet_;
+}
+
+void RecognizeQualificationCertificateResponse::unsetxRequestId()
+{
+    xRequestIdIsSet_ = false;
 }
 
 }

@@ -51,6 +51,8 @@ OpenGaussInstanceRequestBody::OpenGaussInstanceRequestBody()
     replicaNumIsSet_ = false;
     enableForceSwitch_ = false;
     enableForceSwitchIsSet_ = false;
+    enableSingleFloatIp_ = false;
+    enableSingleFloatIpIsSet_ = false;
 }
 
 OpenGaussInstanceRequestBody::~OpenGaussInstanceRequestBody() = default;
@@ -128,6 +130,9 @@ web::json::value OpenGaussInstanceRequestBody::toJson() const
     }
     if(enableForceSwitchIsSet_) {
         val[utility::conversions::to_string_t("enable_force_switch")] = ModelBase::toJson(enableForceSwitch_);
+    }
+    if(enableSingleFloatIpIsSet_) {
+        val[utility::conversions::to_string_t("enable_single_float_ip")] = ModelBase::toJson(enableSingleFloatIp_);
     }
 
     return val;
@@ -332,6 +337,15 @@ bool OpenGaussInstanceRequestBody::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEnableForceSwitch(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("enable_single_float_ip"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enable_single_float_ip"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEnableSingleFloatIp(refVal);
         }
     }
     return ok;
@@ -798,6 +812,27 @@ bool OpenGaussInstanceRequestBody::enableForceSwitchIsSet() const
 void OpenGaussInstanceRequestBody::unsetenableForceSwitch()
 {
     enableForceSwitchIsSet_ = false;
+}
+
+bool OpenGaussInstanceRequestBody::isEnableSingleFloatIp() const
+{
+    return enableSingleFloatIp_;
+}
+
+void OpenGaussInstanceRequestBody::setEnableSingleFloatIp(bool value)
+{
+    enableSingleFloatIp_ = value;
+    enableSingleFloatIpIsSet_ = true;
+}
+
+bool OpenGaussInstanceRequestBody::enableSingleFloatIpIsSet() const
+{
+    return enableSingleFloatIpIsSet_;
+}
+
+void OpenGaussInstanceRequestBody::unsetenableSingleFloatIp()
+{
+    enableSingleFloatIpIsSet_ = false;
 }
 
 }

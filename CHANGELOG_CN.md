@@ -1,3 +1,84 @@
+# 3.1.86 2024-05-16
+
+### HuaweiCloud SDK CDN
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 废弃接口`UpdateDomainFullConfig`、`ShowDomainFullConfig`
+  - **ShowDomainFullConfig**
+    - 响应参数变更
+      - `+ configs.https.enc_certificate_value`
+      - `+ configs.https.certificates`
+  - **UpdateDomainFullConfig**
+    - 请求参数变更
+      - `+ configs.https.enc_certificate_value`
+      - `+ configs.https.enc_private_key`
+      - `+ configs.https.certificates`
+
+### HuaweiCloud SDK GaussDB
+
+- _新增特性_
+  - 支持以下接口：
+    - `CreateStarrocksInstance`
+    - `ListStarrocksInstanceInfo`
+    - `DeleteStarrocksInstance`
+    - `RestartStarrocksInstance`
+    - `RestartStarrocksNode`
+    - `CheckStarRocksResource`
+    - `ListHtapDataStore`
+    - `ListHtapStorageType`
+    - `ListHtapFlavor`
+    - `ListHtapInstanceInfo`
+    - `ShowStarRocksDatabaseUser`
+    - `CreateStarRocksDatabaseUser`
+    - `DeleteStarRocksDatabaseUser`
+    - `UpdateStarRocksDatabaseUserPassword`
+    - `UpdateStarRocksDatabaseUserPermission`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _新增特性_
+  - 支持接口`RestoreInstance`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateDbInstance**
+    - 请求参数变更
+      - `+ enable_single_float_ip`
+
+### HuaweiCloud SDK LTS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListLogs**
+    - 请求参数变更
+      - `+ __time__`
+  - **ListStructuredLogsWithTimeRange**
+    - 请求参数变更
+      - `* time_range.start_time: string -> int64`
+      - `* time_range.end_time: string -> int64`
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RecognizeSmartDocumentRecognizer**
+    - 请求参数变更
+      - `+ pdf_page_number`
+
 # 3.1.85 2024-05-09
 
 ### HuaweiCloud SDK DRS

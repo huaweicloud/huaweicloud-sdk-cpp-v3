@@ -942,6 +942,20 @@ HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForRestartInstance() {
     return reqDefBuilder;
 }
 
+HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForRestoreInstance() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForRunInstanceAction() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;

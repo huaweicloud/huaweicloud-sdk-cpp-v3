@@ -241,6 +241,15 @@ public:
     void unsetenableForceSwitch();
     void setEnableForceSwitch(bool value);
 
+    /// <summary>
+    /// 单浮动IP策略，仅主备版支持。默认值是false，表示不开启单浮动IP策略。 取值范围： true：开启单浮动IP策略，实例将只有一个浮动IP绑定主节点，如果发生主备倒换，浮动IP不会发生变化。 false：不开启单浮动IP策略，每个节点都会绑定一个浮动IP，如果发生主备倒换，浮动IP会发生变化。 说明： 仅支持3.206及以上版本的主备版实例。
+    /// </summary>
+
+    bool isEnableSingleFloatIp() const;
+    bool enableSingleFloatIpIsSet() const;
+    void unsetenableSingleFloatIp();
+    void setEnableSingleFloatIp(bool value);
+
 
 protected:
     std::string name_;
@@ -287,6 +296,8 @@ protected:
     bool replicaNumIsSet_;
     bool enableForceSwitch_;
     bool enableForceSwitchIsSet_;
+    bool enableSingleFloatIp_;
+    bool enableSingleFloatIpIsSet_;
 
 };
 

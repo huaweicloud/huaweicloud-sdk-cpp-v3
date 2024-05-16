@@ -48,22 +48,22 @@ public:
     void setSqlTimeZone(const std::string& value);
 
     /// <summary>
-    /// 搜索起始时间（UTC时间，毫秒级）。
+    /// 搜索起始时间（UTC时间，毫秒级）
     /// </summary>
 
-    std::string getStartTime() const;
+    int64_t getStartTime() const;
     bool startTimeIsSet() const;
     void unsetstartTime();
-    void setStartTime(const std::string& value);
+    void setStartTime(int64_t value);
 
     /// <summary>
-    /// 搜索起始时间（UTC时间，毫秒级）。
+    /// 搜索结束时间（UTC时间，毫秒级）。
     /// </summary>
 
-    std::string getEndTime() const;
+    int64_t getEndTime() const;
     bool endTimeIsSet() const;
     void unsetendTime();
-    void setEndTime(const std::string& value);
+    void setEndTime(int64_t value);
 
     /// <summary>
     /// 搜索是否包含起始时间点，默认为false。
@@ -87,9 +87,9 @@ public:
 protected:
     std::string sqlTimeZone_;
     bool sqlTimeZoneIsSet_;
-    std::string startTime_;
+    int64_t startTime_;
     bool startTimeIsSet_;
-    std::string endTime_;
+    int64_t endTime_;
     bool endTimeIsSet_;
     bool startTimeGt_;
     bool startTimeGtIsSet_;

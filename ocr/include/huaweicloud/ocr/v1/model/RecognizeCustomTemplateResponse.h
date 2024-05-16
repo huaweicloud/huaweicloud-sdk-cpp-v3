@@ -57,12 +57,23 @@ public:
     void unsettemplateId();
     void setTemplateId(const std::string& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    std::string getXRequestId() const;
+    bool xRequestIdIsSet() const;
+    void unsetxRequestId();
+    void setXRequestId(const std::string& value);
+
 
 protected:
     Object result_;
     bool resultIsSet_;
     std::string templateId_;
     bool templateIdIsSet_;
+    std::string xRequestId_;
+    bool xRequestIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

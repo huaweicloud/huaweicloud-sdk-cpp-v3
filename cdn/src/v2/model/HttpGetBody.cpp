@@ -14,16 +14,19 @@ HttpGetBody::HttpGetBody()
 {
     httpsStatus_ = "";
     httpsStatusIsSet_ = false;
+    certificateType_ = "";
+    certificateTypeIsSet_ = false;
+    certificateSource_ = 0;
+    certificateSourceIsSet_ = false;
     certificateName_ = "";
     certificateNameIsSet_ = false;
     certificateValue_ = "";
     certificateValueIsSet_ = false;
     expireTime_ = 0L;
     expireTimeIsSet_ = false;
-    certificateSource_ = 0;
-    certificateSourceIsSet_ = false;
-    certificateType_ = "";
-    certificateTypeIsSet_ = false;
+    encCertificateValue_ = "";
+    encCertificateValueIsSet_ = false;
+    certificatesIsSet_ = false;
     http2Status_ = "";
     http2StatusIsSet_ = false;
     tlsVersion_ = "";
@@ -45,6 +48,12 @@ web::json::value HttpGetBody::toJson() const
     if(httpsStatusIsSet_) {
         val[utility::conversions::to_string_t("https_status")] = ModelBase::toJson(httpsStatus_);
     }
+    if(certificateTypeIsSet_) {
+        val[utility::conversions::to_string_t("certificate_type")] = ModelBase::toJson(certificateType_);
+    }
+    if(certificateSourceIsSet_) {
+        val[utility::conversions::to_string_t("certificate_source")] = ModelBase::toJson(certificateSource_);
+    }
     if(certificateNameIsSet_) {
         val[utility::conversions::to_string_t("certificate_name")] = ModelBase::toJson(certificateName_);
     }
@@ -54,11 +63,11 @@ web::json::value HttpGetBody::toJson() const
     if(expireTimeIsSet_) {
         val[utility::conversions::to_string_t("expire_time")] = ModelBase::toJson(expireTime_);
     }
-    if(certificateSourceIsSet_) {
-        val[utility::conversions::to_string_t("certificate_source")] = ModelBase::toJson(certificateSource_);
+    if(encCertificateValueIsSet_) {
+        val[utility::conversions::to_string_t("enc_certificate_value")] = ModelBase::toJson(encCertificateValue_);
     }
-    if(certificateTypeIsSet_) {
-        val[utility::conversions::to_string_t("certificate_type")] = ModelBase::toJson(certificateType_);
+    if(certificatesIsSet_) {
+        val[utility::conversions::to_string_t("certificates")] = ModelBase::toJson(certificates_);
     }
     if(http2StatusIsSet_) {
         val[utility::conversions::to_string_t("http2_status")] = ModelBase::toJson(http2Status_);
@@ -83,6 +92,24 @@ bool HttpGetBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setHttpsStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("certificate_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("certificate_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCertificateType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("certificate_source"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("certificate_source"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCertificateSource(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("certificate_name"))) {
@@ -112,22 +139,22 @@ bool HttpGetBody::fromJson(const web::json::value& val)
             setExpireTime(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("certificate_source"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("certificate_source"));
-        if(!fieldValue.is_null())
-        {
-            int32_t refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setCertificateSource(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("certificate_type"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("certificate_type"));
+    if(val.has_field(utility::conversions::to_string_t("enc_certificate_value"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enc_certificate_value"));
         if(!fieldValue.is_null())
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setCertificateType(refVal);
+            setEncCertificateValue(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("certificates"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("certificates"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<CertificatesGetBody> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCertificates(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("http2_status"))) {
@@ -180,6 +207,48 @@ bool HttpGetBody::httpsStatusIsSet() const
 void HttpGetBody::unsethttpsStatus()
 {
     httpsStatusIsSet_ = false;
+}
+
+std::string HttpGetBody::getCertificateType() const
+{
+    return certificateType_;
+}
+
+void HttpGetBody::setCertificateType(const std::string& value)
+{
+    certificateType_ = value;
+    certificateTypeIsSet_ = true;
+}
+
+bool HttpGetBody::certificateTypeIsSet() const
+{
+    return certificateTypeIsSet_;
+}
+
+void HttpGetBody::unsetcertificateType()
+{
+    certificateTypeIsSet_ = false;
+}
+
+int32_t HttpGetBody::getCertificateSource() const
+{
+    return certificateSource_;
+}
+
+void HttpGetBody::setCertificateSource(int32_t value)
+{
+    certificateSource_ = value;
+    certificateSourceIsSet_ = true;
+}
+
+bool HttpGetBody::certificateSourceIsSet() const
+{
+    return certificateSourceIsSet_;
+}
+
+void HttpGetBody::unsetcertificateSource()
+{
+    certificateSourceIsSet_ = false;
 }
 
 std::string HttpGetBody::getCertificateName() const
@@ -245,46 +314,46 @@ void HttpGetBody::unsetexpireTime()
     expireTimeIsSet_ = false;
 }
 
-int32_t HttpGetBody::getCertificateSource() const
+std::string HttpGetBody::getEncCertificateValue() const
 {
-    return certificateSource_;
+    return encCertificateValue_;
 }
 
-void HttpGetBody::setCertificateSource(int32_t value)
+void HttpGetBody::setEncCertificateValue(const std::string& value)
 {
-    certificateSource_ = value;
-    certificateSourceIsSet_ = true;
+    encCertificateValue_ = value;
+    encCertificateValueIsSet_ = true;
 }
 
-bool HttpGetBody::certificateSourceIsSet() const
+bool HttpGetBody::encCertificateValueIsSet() const
 {
-    return certificateSourceIsSet_;
+    return encCertificateValueIsSet_;
 }
 
-void HttpGetBody::unsetcertificateSource()
+void HttpGetBody::unsetencCertificateValue()
 {
-    certificateSourceIsSet_ = false;
+    encCertificateValueIsSet_ = false;
 }
 
-std::string HttpGetBody::getCertificateType() const
+std::vector<CertificatesGetBody>& HttpGetBody::getCertificates()
 {
-    return certificateType_;
+    return certificates_;
 }
 
-void HttpGetBody::setCertificateType(const std::string& value)
+void HttpGetBody::setCertificates(const std::vector<CertificatesGetBody>& value)
 {
-    certificateType_ = value;
-    certificateTypeIsSet_ = true;
+    certificates_ = value;
+    certificatesIsSet_ = true;
 }
 
-bool HttpGetBody::certificateTypeIsSet() const
+bool HttpGetBody::certificatesIsSet() const
 {
-    return certificateTypeIsSet_;
+    return certificatesIsSet_;
 }
 
-void HttpGetBody::unsetcertificateType()
+void HttpGetBody::unsetcertificates()
 {
-    certificateTypeIsSet_ = false;
+    certificatesIsSet_ = false;
 }
 
 std::string HttpGetBody::getHttp2Status() const

@@ -10,6 +10,8 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <huaweicloud/cdn/v2/model/CertificatesPutBody.h>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -48,6 +50,24 @@ public:
     void setHttpsStatus(const std::string& value);
 
     /// <summary>
+    /// 证书类型，server：国际证书；server_sm：国密证书。
+    /// </summary>
+
+    std::string getCertificateType() const;
+    bool certificateTypeIsSet() const;
+    void unsetcertificateType();
+    void setCertificateType(const std::string& value);
+
+    /// <summary>
+    /// 证书来源，0：自有证书，默认值0。  &gt; 证书开启时必传
+    /// </summary>
+
+    int32_t getCertificateSource() const;
+    bool certificateSourceIsSet() const;
+    void unsetcertificateSource();
+    void setCertificateSource(int32_t value);
+
+    /// <summary>
     /// 证书名字，长度限制为3-64字符。  &gt; 当证书开启时必传。
     /// </summary>
 
@@ -75,22 +95,31 @@ public:
     void setPrivateKey(const std::string& value);
 
     /// <summary>
-    /// 证书来源,1：华为云托管证书,0：自有证书, 默认值0。  &gt; 证书开启时必传
+    /// 加密证书内容，证书类型为国密证书时必传。  &gt; PEM编码格式。
     /// </summary>
 
-    int32_t getCertificateSource() const;
-    bool certificateSourceIsSet() const;
-    void unsetcertificateSource();
-    void setCertificateSource(int32_t value);
+    std::string getEncCertificateValue() const;
+    bool encCertificateValueIsSet() const;
+    void unsetencCertificateValue();
+    void setEncCertificateValue(const std::string& value);
 
     /// <summary>
-    /// 证书类型，server：国际证书；server_sm：国密证书。
+    /// 加密私钥内容，证书类型为国密证书时必传。  &gt; PEM编码格式。
     /// </summary>
 
-    std::string getCertificateType() const;
-    bool certificateTypeIsSet() const;
-    void unsetcertificateType();
-    void setCertificateType(const std::string& value);
+    std::string getEncPrivateKey() const;
+    bool encPrivateKeyIsSet() const;
+    void unsetencPrivateKey();
+    void setEncPrivateKey(const std::string& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    std::vector<CertificatesPutBody>& getCertificates();
+    bool certificatesIsSet() const;
+    void unsetcertificates();
+    void setCertificates(const std::vector<CertificatesPutBody>& value);
 
     /// <summary>
     /// 是否使用HTTP2.0，on：是，off：否。  &gt; 默认关闭，https_status&#x3D;off时，该值不生效。
@@ -123,16 +152,22 @@ public:
 protected:
     std::string httpsStatus_;
     bool httpsStatusIsSet_;
+    std::string certificateType_;
+    bool certificateTypeIsSet_;
+    int32_t certificateSource_;
+    bool certificateSourceIsSet_;
     std::string certificateName_;
     bool certificateNameIsSet_;
     std::string certificateValue_;
     bool certificateValueIsSet_;
     std::string privateKey_;
     bool privateKeyIsSet_;
-    int32_t certificateSource_;
-    bool certificateSourceIsSet_;
-    std::string certificateType_;
-    bool certificateTypeIsSet_;
+    std::string encCertificateValue_;
+    bool encCertificateValueIsSet_;
+    std::string encPrivateKey_;
+    bool encPrivateKeyIsSet_;
+    std::vector<CertificatesPutBody> certificates_;
+    bool certificatesIsSet_;
     std::string http2Status_;
     bool http2StatusIsSet_;
     std::string tlsVersion_;

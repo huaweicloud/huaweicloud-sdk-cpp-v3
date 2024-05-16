@@ -95,6 +95,15 @@ public:
     void setLineNum(const std::string& value);
 
     /// <summary>
+    /// 若已开启自定义时间功能，需要使用该字段进行分页查询。
+    /// </summary>
+
+    std::string getTime() const;
+    bool timeIsSet() const;
+    void unsettime();
+    void setTime(const std::string& value);
+
+    /// <summary>
     /// 顺序或者倒序查询, 默认为false(顺序查询)
     /// </summary>
 
@@ -153,6 +162,8 @@ protected:
     bool keywordsIsSet_;
     std::string lineNum_;
     bool lineNumIsSet_;
+    std::string time_;
+    bool timeIsSet_;
     bool isDesc_;
     bool isDescIsSet_;
     std::string searchType_;

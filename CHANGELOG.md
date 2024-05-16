@@ -1,3 +1,84 @@
+# 3.1.86 2024-05-16
+
+### HuaweiCloud SDK CDN
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Deprecate the APIs `UpdateDomainFullConfig`, `ShowDomainFullConfig`
+  - **ShowDomainFullConfig**
+    - changes of response param
+      - `+ configs.https.enc_certificate_value`
+      - `+ configs.https.certificates`
+  - **UpdateDomainFullConfig**
+    - changes of request param
+      - `+ configs.https.enc_certificate_value`
+      - `+ configs.https.enc_private_key`
+      - `+ configs.https.certificates`
+
+### HuaweiCloud SDK GaussDB
+
+- _Features_
+  - Support the following APIs:
+    - `CreateStarrocksInstance`
+    - `ListStarrocksInstanceInfo`
+    - `DeleteStarrocksInstance`
+    - `RestartStarrocksInstance`
+    - `RestartStarrocksNode`
+    - `CheckStarRocksResource`
+    - `ListHtapDataStore`
+    - `ListHtapStorageType`
+    - `ListHtapFlavor`
+    - `ListHtapInstanceInfo`
+    - `ShowStarRocksDatabaseUser`
+    - `CreateStarRocksDatabaseUser`
+    - `DeleteStarRocksDatabaseUser`
+    - `UpdateStarRocksDatabaseUserPassword`
+    - `UpdateStarRocksDatabaseUserPermission`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _Features_
+  - Support the API `RestoreInstance`
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateDbInstance**
+    - changes of request param
+      - `+ enable_single_float_ip`
+
+### HuaweiCloud SDK LTS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListLogs**
+    - changes of request param
+      - `+ __time__`
+  - **ListStructuredLogsWithTimeRange**
+    - changes of request param
+      - `* time_range.start_time: string -> int64`
+      - `* time_range.end_time: string -> int64`
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **RecognizeSmartDocumentRecognizer**
+    - changes of request param
+      - `+ pdf_page_number`
+
 # 3.1.85 2024-05-09
 
 ### HuaweiCloud SDK DRS

@@ -13,6 +13,8 @@ namespace Model {
 RecognizeExitEntryPermitResponse::RecognizeExitEntryPermitResponse()
 {
     resultIsSet_ = false;
+    xRequestId_ = "";
+    xRequestIdIsSet_ = false;
 }
 
 RecognizeExitEntryPermitResponse::~RecognizeExitEntryPermitResponse() = default;
@@ -28,6 +30,9 @@ web::json::value RecognizeExitEntryPermitResponse::toJson() const
     if(resultIsSet_) {
         val[utility::conversions::to_string_t("result")] = ModelBase::toJson(result_);
     }
+    if(xRequestIdIsSet_) {
+        val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
+    }
 
     return val;
 }
@@ -42,6 +47,15 @@ bool RecognizeExitEntryPermitResponse::fromJson(const web::json::value& val)
             ExitEntryPermitResult refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResult(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Request-Id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXRequestId(refVal);
         }
     }
     return ok;
@@ -67,6 +81,27 @@ bool RecognizeExitEntryPermitResponse::resultIsSet() const
 void RecognizeExitEntryPermitResponse::unsetresult()
 {
     resultIsSet_ = false;
+}
+
+std::string RecognizeExitEntryPermitResponse::getXRequestId() const
+{
+    return xRequestId_;
+}
+
+void RecognizeExitEntryPermitResponse::setXRequestId(const std::string& value)
+{
+    xRequestId_ = value;
+    xRequestIdIsSet_ = true;
+}
+
+bool RecognizeExitEntryPermitResponse::xRequestIdIsSet() const
+{
+    return xRequestIdIsSet_;
+}
+
+void RecognizeExitEntryPermitResponse::unsetxRequestId()
+{
+    xRequestIdIsSet_ = false;
 }
 
 }

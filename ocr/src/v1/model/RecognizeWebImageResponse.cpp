@@ -13,6 +13,8 @@ namespace Model {
 RecognizeWebImageResponse::RecognizeWebImageResponse()
 {
     resultIsSet_ = false;
+    xRequestId_ = "";
+    xRequestIdIsSet_ = false;
 }
 
 RecognizeWebImageResponse::~RecognizeWebImageResponse() = default;
@@ -28,6 +30,9 @@ web::json::value RecognizeWebImageResponse::toJson() const
     if(resultIsSet_) {
         val[utility::conversions::to_string_t("result")] = ModelBase::toJson(result_);
     }
+    if(xRequestIdIsSet_) {
+        val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
+    }
 
     return val;
 }
@@ -42,6 +47,15 @@ bool RecognizeWebImageResponse::fromJson(const web::json::value& val)
             WebImageResult refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResult(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Request-Id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXRequestId(refVal);
         }
     }
     return ok;
@@ -67,6 +81,27 @@ bool RecognizeWebImageResponse::resultIsSet() const
 void RecognizeWebImageResponse::unsetresult()
 {
     resultIsSet_ = false;
+}
+
+std::string RecognizeWebImageResponse::getXRequestId() const
+{
+    return xRequestId_;
+}
+
+void RecognizeWebImageResponse::setXRequestId(const std::string& value)
+{
+    xRequestId_ = value;
+    xRequestIdIsSet_ = true;
+}
+
+bool RecognizeWebImageResponse::xRequestIdIsSet() const
+{
+    return xRequestIdIsSet_;
+}
+
+void RecognizeWebImageResponse::unsetxRequestId()
+{
+    xRequestIdIsSet_ = false;
 }
 
 }

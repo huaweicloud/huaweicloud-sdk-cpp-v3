@@ -20,8 +20,8 @@ PostPaidServerRootVolume::PostPaidServerRootVolume()
     iopsIsSet_ = false;
     throughput_ = 0;
     throughputIsSet_ = false;
-    hwpassthrough_ = false;
-    hwpassthroughIsSet_ = false;
+    hwPassthrough_ = false;
+    hwPassthroughIsSet_ = false;
     clusterType_ = "";
     clusterTypeIsSet_ = false;
     clusterId_ = "";
@@ -52,8 +52,8 @@ web::json::value PostPaidServerRootVolume::toJson() const
     if(throughputIsSet_) {
         val[utility::conversions::to_string_t("throughput")] = ModelBase::toJson(throughput_);
     }
-    if(hwpassthroughIsSet_) {
-        val[utility::conversions::to_string_t("hw:passthrough")] = ModelBase::toJson(hwpassthrough_);
+    if(hwPassthroughIsSet_) {
+        val[utility::conversions::to_string_t("hw:passthrough")] = ModelBase::toJson(hwPassthrough_);
     }
     if(clusterTypeIsSet_) {
         val[utility::conversions::to_string_t("cluster_type")] = ModelBase::toJson(clusterType_);
@@ -116,7 +116,7 @@ bool PostPaidServerRootVolume::fromJson(const web::json::value& val)
         {
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setHwpassthrough(refVal);
+            setHwPassthrough(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("cluster_type"))) {
@@ -243,25 +243,25 @@ void PostPaidServerRootVolume::unsetthroughput()
     throughputIsSet_ = false;
 }
 
-bool PostPaidServerRootVolume::isHwpassthrough() const
+bool PostPaidServerRootVolume::isHwPassthrough() const
 {
-    return hwpassthrough_;
+    return hwPassthrough_;
 }
 
-void PostPaidServerRootVolume::setHwpassthrough(bool value)
+void PostPaidServerRootVolume::setHwPassthrough(bool value)
 {
-    hwpassthrough_ = value;
-    hwpassthroughIsSet_ = true;
+    hwPassthrough_ = value;
+    hwPassthroughIsSet_ = true;
 }
 
-bool PostPaidServerRootVolume::hwpassthroughIsSet() const
+bool PostPaidServerRootVolume::hwPassthroughIsSet() const
 {
-    return hwpassthroughIsSet_;
+    return hwPassthroughIsSet_;
 }
 
-void PostPaidServerRootVolume::unsethwpassthrough()
+void PostPaidServerRootVolume::unsethwPassthrough()
 {
-    hwpassthroughIsSet_ = false;
+    hwPassthroughIsSet_ = false;
 }
 
 std::string PostPaidServerRootVolume::getClusterType() const

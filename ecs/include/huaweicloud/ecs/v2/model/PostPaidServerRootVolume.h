@@ -80,10 +80,10 @@ public:
     /// 使用SDI规格创建虚拟机时请关注该参数，如果该参数值为true，说明创建的为scsi类型的卷  &gt; 说明： &gt;  &gt; 此参数为boolean类型，若传入非boolean类型字符，程序将按照false方式处理。
     /// </summary>
 
-    bool isHwpassthrough() const;
-    bool hwpassthroughIsSet() const;
-    void unsethwpassthrough();
-    void setHwpassthrough(bool value);
+    bool isHwPassthrough() const;
+    bool hwPassthroughIsSet() const;
+    void unsethwPassthrough();
+    void setHwPassthrough(bool value);
 
     /// <summary>
     /// 云服务器系统盘对应的磁盘存储类型。 磁盘存储类型枚举值： DSS：专属存储类型
@@ -131,8 +131,8 @@ protected:
     bool iopsIsSet_;
     int32_t throughput_;
     bool throughputIsSet_;
-    bool hwpassthrough_;
-    bool hwpassthroughIsSet_;
+    bool hwPassthrough_;
+    bool hwPassthroughIsSet_;
     std::string clusterType_;
     bool clusterTypeIsSet_;
     std::string clusterId_;

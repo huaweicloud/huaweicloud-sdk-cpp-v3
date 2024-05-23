@@ -29,10 +29,10 @@ SnapshotDetails::SnapshotDetails()
     volumeIdIsSet_ = false;
     size_ = 0;
     sizeIsSet_ = false;
-    osExtendedSnapshotAttributesprojectId_ = "";
-    osExtendedSnapshotAttributesprojectIdIsSet_ = false;
-    osExtendedSnapshotAttributesprogress_ = "";
-    osExtendedSnapshotAttributesprogressIsSet_ = false;
+    osExtendedSnapshotAttributesProjectId_ = "";
+    osExtendedSnapshotAttributesProjectIdIsSet_ = false;
+    osExtendedSnapshotAttributesProgress_ = "";
+    osExtendedSnapshotAttributesProgressIsSet_ = false;
 }
 
 SnapshotDetails::~SnapshotDetails() = default;
@@ -72,11 +72,11 @@ web::json::value SnapshotDetails::toJson() const
     if(sizeIsSet_) {
         val[utility::conversions::to_string_t("size")] = ModelBase::toJson(size_);
     }
-    if(osExtendedSnapshotAttributesprojectIdIsSet_) {
-        val[utility::conversions::to_string_t("os-extended-snapshot-attributes:project_id")] = ModelBase::toJson(osExtendedSnapshotAttributesprojectId_);
+    if(osExtendedSnapshotAttributesProjectIdIsSet_) {
+        val[utility::conversions::to_string_t("os-extended-snapshot-attributes:project_id")] = ModelBase::toJson(osExtendedSnapshotAttributesProjectId_);
     }
-    if(osExtendedSnapshotAttributesprogressIsSet_) {
-        val[utility::conversions::to_string_t("os-extended-snapshot-attributes:progress")] = ModelBase::toJson(osExtendedSnapshotAttributesprogress_);
+    if(osExtendedSnapshotAttributesProgressIsSet_) {
+        val[utility::conversions::to_string_t("os-extended-snapshot-attributes:progress")] = ModelBase::toJson(osExtendedSnapshotAttributesProgress_);
     }
 
     return val;
@@ -172,7 +172,7 @@ bool SnapshotDetails::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOsExtendedSnapshotAttributesprojectId(refVal);
+            setOsExtendedSnapshotAttributesProjectId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("os-extended-snapshot-attributes:progress"))) {
@@ -181,7 +181,7 @@ bool SnapshotDetails::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOsExtendedSnapshotAttributesprogress(refVal);
+            setOsExtendedSnapshotAttributesProgress(refVal);
         }
     }
     return ok;
@@ -377,46 +377,46 @@ void SnapshotDetails::unsetsize()
     sizeIsSet_ = false;
 }
 
-std::string SnapshotDetails::getOsExtendedSnapshotAttributesprojectId() const
+std::string SnapshotDetails::getOsExtendedSnapshotAttributesProjectId() const
 {
-    return osExtendedSnapshotAttributesprojectId_;
+    return osExtendedSnapshotAttributesProjectId_;
 }
 
-void SnapshotDetails::setOsExtendedSnapshotAttributesprojectId(const std::string& value)
+void SnapshotDetails::setOsExtendedSnapshotAttributesProjectId(const std::string& value)
 {
-    osExtendedSnapshotAttributesprojectId_ = value;
-    osExtendedSnapshotAttributesprojectIdIsSet_ = true;
+    osExtendedSnapshotAttributesProjectId_ = value;
+    osExtendedSnapshotAttributesProjectIdIsSet_ = true;
 }
 
-bool SnapshotDetails::osExtendedSnapshotAttributesprojectIdIsSet() const
+bool SnapshotDetails::osExtendedSnapshotAttributesProjectIdIsSet() const
 {
-    return osExtendedSnapshotAttributesprojectIdIsSet_;
+    return osExtendedSnapshotAttributesProjectIdIsSet_;
 }
 
-void SnapshotDetails::unsetosExtendedSnapshotAttributesprojectId()
+void SnapshotDetails::unsetosExtendedSnapshotAttributesProjectId()
 {
-    osExtendedSnapshotAttributesprojectIdIsSet_ = false;
+    osExtendedSnapshotAttributesProjectIdIsSet_ = false;
 }
 
-std::string SnapshotDetails::getOsExtendedSnapshotAttributesprogress() const
+std::string SnapshotDetails::getOsExtendedSnapshotAttributesProgress() const
 {
-    return osExtendedSnapshotAttributesprogress_;
+    return osExtendedSnapshotAttributesProgress_;
 }
 
-void SnapshotDetails::setOsExtendedSnapshotAttributesprogress(const std::string& value)
+void SnapshotDetails::setOsExtendedSnapshotAttributesProgress(const std::string& value)
 {
-    osExtendedSnapshotAttributesprogress_ = value;
-    osExtendedSnapshotAttributesprogressIsSet_ = true;
+    osExtendedSnapshotAttributesProgress_ = value;
+    osExtendedSnapshotAttributesProgressIsSet_ = true;
 }
 
-bool SnapshotDetails::osExtendedSnapshotAttributesprogressIsSet() const
+bool SnapshotDetails::osExtendedSnapshotAttributesProgressIsSet() const
 {
-    return osExtendedSnapshotAttributesprogressIsSet_;
+    return osExtendedSnapshotAttributesProgressIsSet_;
 }
 
-void SnapshotDetails::unsetosExtendedSnapshotAttributesprogress()
+void SnapshotDetails::unsetosExtendedSnapshotAttributesProgress()
 {
-    osExtendedSnapshotAttributesprogressIsSet_ = false;
+    osExtendedSnapshotAttributesProgressIsSet_ = false;
 }
 
 }

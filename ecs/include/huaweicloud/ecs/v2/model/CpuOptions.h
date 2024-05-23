@@ -41,15 +41,15 @@ public:
     /// CPU超线程数， 决定CPU是否开启超线程。取值范围：1，2。  - 1: 关闭超线程。 - 2: 打开超线程。  取值不能大于flavor中的   hw:cpu_threads，并且目标flavor配置需满足 \&quot;hw:cpu_policy\&quot;: \&quot;dedicated\&quot;,\&quot;hw:cpu_threads\&quot;: \&quot;2\&quot;需要同时满足如下条件，才能设置为“关闭超线程”  - 只能在实例创建或者resize时指定。 - 只有目标flavor的extra_specs参数： - 存在“hw:cpu_policy”并取值为“dedicated”。 - 存在“hw:cpu_threads”并取值为“2”。
     /// </summary>
 
-    int32_t getHwcpuThreads() const;
-    bool hwcpuThreadsIsSet() const;
-    void unsethwcpuThreads();
-    void setHwcpuThreads(int32_t value);
+    int32_t getHwCpuThreads() const;
+    bool hwCpuThreadsIsSet() const;
+    void unsethwCpuThreads();
+    void setHwCpuThreads(int32_t value);
 
 
 protected:
-    int32_t hwcpuThreads_;
-    bool hwcpuThreadsIsSet_;
+    int32_t hwCpuThreads_;
+    bool hwCpuThreadsIsSet_;
 
 };
 

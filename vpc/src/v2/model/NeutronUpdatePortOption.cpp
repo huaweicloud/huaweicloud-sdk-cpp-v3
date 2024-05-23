@@ -19,9 +19,9 @@ NeutronUpdatePortOption::NeutronUpdatePortOption()
     extraDhcpOptsIsSet_ = false;
     portSecurityEnabled_ = false;
     portSecurityEnabledIsSet_ = false;
-    bindingvnicType_ = "";
-    bindingvnicTypeIsSet_ = false;
-    bindingprofileIsSet_ = false;
+    bindingVnicType_ = "";
+    bindingVnicTypeIsSet_ = false;
+    bindingProfileIsSet_ = false;
 }
 
 NeutronUpdatePortOption::~NeutronUpdatePortOption() = default;
@@ -49,11 +49,11 @@ web::json::value NeutronUpdatePortOption::toJson() const
     if(portSecurityEnabledIsSet_) {
         val[utility::conversions::to_string_t("port_security_enabled")] = ModelBase::toJson(portSecurityEnabled_);
     }
-    if(bindingvnicTypeIsSet_) {
-        val[utility::conversions::to_string_t("binding:vnic_type")] = ModelBase::toJson(bindingvnicType_);
+    if(bindingVnicTypeIsSet_) {
+        val[utility::conversions::to_string_t("binding:vnic_type")] = ModelBase::toJson(bindingVnicType_);
     }
-    if(bindingprofileIsSet_) {
-        val[utility::conversions::to_string_t("binding:profile")] = ModelBase::toJson(bindingprofile_);
+    if(bindingProfileIsSet_) {
+        val[utility::conversions::to_string_t("binding:profile")] = ModelBase::toJson(bindingProfile_);
     }
 
     return val;
@@ -113,7 +113,7 @@ bool NeutronUpdatePortOption::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setBindingvnicType(refVal);
+            setBindingVnicType(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("binding:profile"))) {
@@ -122,7 +122,7 @@ bool NeutronUpdatePortOption::fromJson(const web::json::value& val)
         {
             std::map<std::string, Object> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setBindingprofile(refVal);
+            setBindingProfile(refVal);
         }
     }
     return ok;
@@ -234,46 +234,46 @@ void NeutronUpdatePortOption::unsetportSecurityEnabled()
     portSecurityEnabledIsSet_ = false;
 }
 
-std::string NeutronUpdatePortOption::getBindingvnicType() const
+std::string NeutronUpdatePortOption::getBindingVnicType() const
 {
-    return bindingvnicType_;
+    return bindingVnicType_;
 }
 
-void NeutronUpdatePortOption::setBindingvnicType(const std::string& value)
+void NeutronUpdatePortOption::setBindingVnicType(const std::string& value)
 {
-    bindingvnicType_ = value;
-    bindingvnicTypeIsSet_ = true;
+    bindingVnicType_ = value;
+    bindingVnicTypeIsSet_ = true;
 }
 
-bool NeutronUpdatePortOption::bindingvnicTypeIsSet() const
+bool NeutronUpdatePortOption::bindingVnicTypeIsSet() const
 {
-    return bindingvnicTypeIsSet_;
+    return bindingVnicTypeIsSet_;
 }
 
-void NeutronUpdatePortOption::unsetbindingvnicType()
+void NeutronUpdatePortOption::unsetbindingVnicType()
 {
-    bindingvnicTypeIsSet_ = false;
+    bindingVnicTypeIsSet_ = false;
 }
 
-std::map<std::string, Object>& NeutronUpdatePortOption::getBindingprofile()
+std::map<std::string, Object>& NeutronUpdatePortOption::getBindingProfile()
 {
-    return bindingprofile_;
+    return bindingProfile_;
 }
 
-void NeutronUpdatePortOption::setBindingprofile(const std::map<std::string, Object>& value)
+void NeutronUpdatePortOption::setBindingProfile(const std::map<std::string, Object>& value)
 {
-    bindingprofile_ = value;
-    bindingprofileIsSet_ = true;
+    bindingProfile_ = value;
+    bindingProfileIsSet_ = true;
 }
 
-bool NeutronUpdatePortOption::bindingprofileIsSet() const
+bool NeutronUpdatePortOption::bindingProfileIsSet() const
 {
-    return bindingprofileIsSet_;
+    return bindingProfileIsSet_;
 }
 
-void NeutronUpdatePortOption::unsetbindingprofile()
+void NeutronUpdatePortOption::unsetbindingProfile()
 {
-    bindingprofileIsSet_ = false;
+    bindingProfileIsSet_ = false;
 }
 
 }

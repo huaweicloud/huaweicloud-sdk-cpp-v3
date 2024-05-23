@@ -69,10 +69,10 @@ public:
     /// * true表示云硬盘的设备类型为SCSI类型，即允许ECS操作系统直接访问底层存储介质。支持SCSI锁命令。 * false表示云硬盘的设备类型为VBD (虚拟块存储设备 , Virtual Block Device)类型，即为默认类型，VBD只能支持简单的SCSI读写命令。 * 该字段不存在时，云硬盘默认为VBD类型。
     /// </summary>
 
-    std::string getHwpassthrough() const;
-    bool hwpassthroughIsSet() const;
-    void unsethwpassthrough();
-    void setHwpassthrough(const std::string& value);
+    std::string getHwPassthrough() const;
+    bool hwPassthroughIsSet() const;
+    void unsethwPassthrough();
+    void setHwPassthrough(const std::string& value);
 
     /// <summary>
     /// metadata中的表示云硬盘计费类型的字段。 当该字段有值时，表示该云硬盘的计费类型为包周期计费，否则计费类型为按需计费。
@@ -91,8 +91,8 @@ protected:
     bool systemEncryptedIsSet_;
     std::string fullClone_;
     bool fullCloneIsSet_;
-    std::string hwpassthrough_;
-    bool hwpassthroughIsSet_;
+    std::string hwPassthrough_;
+    bool hwPassthroughIsSet_;
     std::string orderID_;
     bool orderIDIsSet_;
 

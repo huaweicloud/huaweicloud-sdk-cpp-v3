@@ -69,10 +69,10 @@ public:
     /// 功能说明：扩展属性：网络类型。管理员属性，普通租户不可见，允许 geneve类型租户执行操作。 取值范围：vxlan, geneve
     /// </summary>
 
-    std::string getProvidernetworkType() const;
-    bool providernetworkTypeIsSet() const;
-    void unsetprovidernetworkType();
-    void setProvidernetworkType(const std::string& value);
+    std::string getProviderNetworkType() const;
+    bool providerNetworkTypeIsSet() const;
+    void unsetproviderNetworkType();
+    void setProviderNetworkType(const std::string& value);
 
     /// <summary>
     /// 功能说明：端口安全使能标记 取值范围：true(启用)、false(禁用) 约束：如果不使能，则network下所有虚机的安全组和dhcp防欺骗不生效
@@ -91,8 +91,8 @@ protected:
     bool adminStateUpIsSet_;
     bool shared_;
     bool sharedIsSet_;
-    std::string providernetworkType_;
-    bool providernetworkTypeIsSet_;
+    std::string providerNetworkType_;
+    bool providerNetworkTypeIsSet_;
     bool portSecurityEnabled_;
     bool portSecurityEnabledIsSet_;
 

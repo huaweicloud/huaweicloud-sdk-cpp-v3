@@ -72,10 +72,10 @@ public:
     /// 
     /// </summary>
 
-    CreateVolumeSchedulerHints getOSSCHHNTschedulerHints() const;
-    bool oSSCHHNTschedulerHintsIsSet() const;
-    void unsetoSSCHHNTschedulerHints();
-    void setOSSCHHNTschedulerHints(const CreateVolumeSchedulerHints& value);
+    CreateVolumeSchedulerHints getOSSCHHNTSchedulerHints() const;
+    bool oSSCHHNTSchedulerHintsIsSet() const;
+    void unsetoSSCHHNTSchedulerHints();
+    void setOSSCHHNTSchedulerHints(const CreateVolumeSchedulerHints& value);
 
 
 protected:
@@ -85,8 +85,8 @@ protected:
     bool volumeIsSet_;
     std::string serverId_;
     bool serverIdIsSet_;
-    CreateVolumeSchedulerHints oSSCHHNTschedulerHints_;
-    bool oSSCHHNTschedulerHintsIsSet_;
+    CreateVolumeSchedulerHints oSSCHHNTSchedulerHints_;
+    bool oSSCHHNTSchedulerHintsIsSet_;
 
 };
 

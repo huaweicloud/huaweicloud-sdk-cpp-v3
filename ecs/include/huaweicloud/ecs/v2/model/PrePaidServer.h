@@ -224,10 +224,10 @@ public:
     /// 
     /// </summary>
 
-    PrePaidServerSchedulerHints getOsschedulerHints() const;
-    bool osschedulerHintsIsSet() const;
-    void unsetosschedulerHints();
-    void setOsschedulerHints(const PrePaidServerSchedulerHints& value);
+    PrePaidServerSchedulerHints getOsSchedulerHints() const;
+    bool osSchedulerHintsIsSet() const;
+    void unsetosSchedulerHints();
+    void setOsSchedulerHints(const PrePaidServerSchedulerHints& value);
 
     /// <summary>
     /// 弹性云服务器的标签。  标签的格式为“key.value”。其中，key的长度不超过36个字符，value的长度不超过43个字符。  标签命名时，需满足如下要求：  - 标签的key值只能包含大写字母（A~Z）、小写字母（a~z）、数字（0-9）、下划线（_）、中划线（-）以及中文字符。 - 标签的value值只能包含大写字母（A~Z）、小写字母（a~z）、数字（0-9）、下划线（_）、中划线（-）、小数点（.）以及中文字符。  &gt; 说明： &gt;  &gt; 创建弹性云服务器时，一台弹性云服务器最多可以添加10个标签。 &gt; 公有云新增server_tags字段，该字段与tags字段功能相同，支持的key、value取值范围更广，建议使用server_tags字段。
@@ -305,8 +305,8 @@ protected:
     bool extendparamIsSet_;
     std::map<std::string, std::string> metadata_;
     bool metadataIsSet_;
-    PrePaidServerSchedulerHints osschedulerHints_;
-    bool osschedulerHintsIsSet_;
+    PrePaidServerSchedulerHints osSchedulerHints_;
+    bool osSchedulerHintsIsSet_;
     std::vector<std::string> tags_;
     bool tagsIsSet_;
     std::vector<PrePaidServerTag> serverTags_;

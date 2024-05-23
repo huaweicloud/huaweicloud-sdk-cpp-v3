@@ -114,6 +114,10 @@ public:
             { 
                 "https://dbss.cn-east-5.myhuaweicloud.com"
             });
+        regions["my-kualalumpur-1"] = Region("my-kualalumpur-1",
+            { 
+                "https://dbss.my-kualalumpur-1.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

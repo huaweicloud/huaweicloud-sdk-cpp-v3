@@ -12,8 +12,8 @@ namespace Model {
 
 CpuOptions::CpuOptions()
 {
-    hwcpuThreads_ = 0;
-    hwcpuThreadsIsSet_ = false;
+    hwCpuThreads_ = 0;
+    hwCpuThreadsIsSet_ = false;
 }
 
 CpuOptions::~CpuOptions() = default;
@@ -26,8 +26,8 @@ web::json::value CpuOptions::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(hwcpuThreadsIsSet_) {
-        val[utility::conversions::to_string_t("hw:cpu_threads")] = ModelBase::toJson(hwcpuThreads_);
+    if(hwCpuThreadsIsSet_) {
+        val[utility::conversions::to_string_t("hw:cpu_threads")] = ModelBase::toJson(hwCpuThreads_);
     }
 
     return val;
@@ -42,32 +42,32 @@ bool CpuOptions::fromJson(const web::json::value& val)
         {
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setHwcpuThreads(refVal);
+            setHwCpuThreads(refVal);
         }
     }
     return ok;
 }
 
 
-int32_t CpuOptions::getHwcpuThreads() const
+int32_t CpuOptions::getHwCpuThreads() const
 {
-    return hwcpuThreads_;
+    return hwCpuThreads_;
 }
 
-void CpuOptions::setHwcpuThreads(int32_t value)
+void CpuOptions::setHwCpuThreads(int32_t value)
 {
-    hwcpuThreads_ = value;
-    hwcpuThreadsIsSet_ = true;
+    hwCpuThreads_ = value;
+    hwCpuThreadsIsSet_ = true;
 }
 
-bool CpuOptions::hwcpuThreadsIsSet() const
+bool CpuOptions::hwCpuThreadsIsSet() const
 {
-    return hwcpuThreadsIsSet_;
+    return hwCpuThreadsIsSet_;
 }
 
-void CpuOptions::unsethwcpuThreads()
+void CpuOptions::unsethwCpuThreads()
 {
-    hwcpuThreadsIsSet_ = false;
+    hwCpuThreadsIsSet_ = false;
 }
 
 }

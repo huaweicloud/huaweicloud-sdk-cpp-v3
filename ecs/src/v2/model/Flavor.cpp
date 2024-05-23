@@ -24,18 +24,18 @@ Flavor::Flavor()
     diskIsSet_ = false;
     swap_ = "";
     swapIsSet_ = false;
-    oSFLVEXTDATAephemeral_ = 0;
-    oSFLVEXTDATAephemeralIsSet_ = false;
-    oSFLVDISABLEDdisabled_ = false;
-    oSFLVDISABLEDdisabledIsSet_ = false;
+    oSFLVEXTDATAEphemeral_ = 0;
+    oSFLVEXTDATAEphemeralIsSet_ = false;
+    oSFLVDISABLEDDisabled_ = false;
+    oSFLVDISABLEDDisabledIsSet_ = false;
     rxtxFactor_ = 0.0f;
     rxtxFactorIsSet_ = false;
     rxtxQuota_ = "";
     rxtxQuotaIsSet_ = false;
     rxtxCap_ = "";
     rxtxCapIsSet_ = false;
-    osFlavorAccessisPublic_ = false;
-    osFlavorAccessisPublicIsSet_ = false;
+    osFlavorAccessIsPublic_ = false;
+    osFlavorAccessIsPublicIsSet_ = false;
     linksIsSet_ = false;
     osExtraSpecsIsSet_ = false;
     attachableQuantityIsSet_ = false;
@@ -69,11 +69,11 @@ web::json::value Flavor::toJson() const
     if(swapIsSet_) {
         val[utility::conversions::to_string_t("swap")] = ModelBase::toJson(swap_);
     }
-    if(oSFLVEXTDATAephemeralIsSet_) {
-        val[utility::conversions::to_string_t("OS-FLV-EXT-DATA:ephemeral")] = ModelBase::toJson(oSFLVEXTDATAephemeral_);
+    if(oSFLVEXTDATAEphemeralIsSet_) {
+        val[utility::conversions::to_string_t("OS-FLV-EXT-DATA:ephemeral")] = ModelBase::toJson(oSFLVEXTDATAEphemeral_);
     }
-    if(oSFLVDISABLEDdisabledIsSet_) {
-        val[utility::conversions::to_string_t("OS-FLV-DISABLED:disabled")] = ModelBase::toJson(oSFLVDISABLEDdisabled_);
+    if(oSFLVDISABLEDDisabledIsSet_) {
+        val[utility::conversions::to_string_t("OS-FLV-DISABLED:disabled")] = ModelBase::toJson(oSFLVDISABLEDDisabled_);
     }
     if(rxtxFactorIsSet_) {
         val[utility::conversions::to_string_t("rxtx_factor")] = ModelBase::toJson(rxtxFactor_);
@@ -84,8 +84,8 @@ web::json::value Flavor::toJson() const
     if(rxtxCapIsSet_) {
         val[utility::conversions::to_string_t("rxtx_cap")] = ModelBase::toJson(rxtxCap_);
     }
-    if(osFlavorAccessisPublicIsSet_) {
-        val[utility::conversions::to_string_t("os-flavor-access:is_public")] = ModelBase::toJson(osFlavorAccessisPublic_);
+    if(osFlavorAccessIsPublicIsSet_) {
+        val[utility::conversions::to_string_t("os-flavor-access:is_public")] = ModelBase::toJson(osFlavorAccessIsPublic_);
     }
     if(linksIsSet_) {
         val[utility::conversions::to_string_t("links")] = ModelBase::toJson(links_);
@@ -163,7 +163,7 @@ bool Flavor::fromJson(const web::json::value& val)
         {
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSFLVEXTDATAephemeral(refVal);
+            setOSFLVEXTDATAEphemeral(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("OS-FLV-DISABLED:disabled"))) {
@@ -172,7 +172,7 @@ bool Flavor::fromJson(const web::json::value& val)
         {
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSFLVDISABLEDdisabled(refVal);
+            setOSFLVDISABLEDDisabled(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("rxtx_factor"))) {
@@ -208,7 +208,7 @@ bool Flavor::fromJson(const web::json::value& val)
         {
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOsFlavorAccessisPublic(refVal);
+            setOsFlavorAccessIsPublic(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("links"))) {
@@ -368,46 +368,46 @@ void Flavor::unsetswap()
     swapIsSet_ = false;
 }
 
-int32_t Flavor::getOSFLVEXTDATAephemeral() const
+int32_t Flavor::getOSFLVEXTDATAEphemeral() const
 {
-    return oSFLVEXTDATAephemeral_;
+    return oSFLVEXTDATAEphemeral_;
 }
 
-void Flavor::setOSFLVEXTDATAephemeral(int32_t value)
+void Flavor::setOSFLVEXTDATAEphemeral(int32_t value)
 {
-    oSFLVEXTDATAephemeral_ = value;
-    oSFLVEXTDATAephemeralIsSet_ = true;
+    oSFLVEXTDATAEphemeral_ = value;
+    oSFLVEXTDATAEphemeralIsSet_ = true;
 }
 
-bool Flavor::oSFLVEXTDATAephemeralIsSet() const
+bool Flavor::oSFLVEXTDATAEphemeralIsSet() const
 {
-    return oSFLVEXTDATAephemeralIsSet_;
+    return oSFLVEXTDATAEphemeralIsSet_;
 }
 
-void Flavor::unsetoSFLVEXTDATAephemeral()
+void Flavor::unsetoSFLVEXTDATAEphemeral()
 {
-    oSFLVEXTDATAephemeralIsSet_ = false;
+    oSFLVEXTDATAEphemeralIsSet_ = false;
 }
 
-bool Flavor::isOSFLVDISABLEDdisabled() const
+bool Flavor::isOSFLVDISABLEDDisabled() const
 {
-    return oSFLVDISABLEDdisabled_;
+    return oSFLVDISABLEDDisabled_;
 }
 
-void Flavor::setOSFLVDISABLEDdisabled(bool value)
+void Flavor::setOSFLVDISABLEDDisabled(bool value)
 {
-    oSFLVDISABLEDdisabled_ = value;
-    oSFLVDISABLEDdisabledIsSet_ = true;
+    oSFLVDISABLEDDisabled_ = value;
+    oSFLVDISABLEDDisabledIsSet_ = true;
 }
 
-bool Flavor::oSFLVDISABLEDdisabledIsSet() const
+bool Flavor::oSFLVDISABLEDDisabledIsSet() const
 {
-    return oSFLVDISABLEDdisabledIsSet_;
+    return oSFLVDISABLEDDisabledIsSet_;
 }
 
-void Flavor::unsetoSFLVDISABLEDdisabled()
+void Flavor::unsetoSFLVDISABLEDDisabled()
 {
-    oSFLVDISABLEDdisabledIsSet_ = false;
+    oSFLVDISABLEDDisabledIsSet_ = false;
 }
 
 float Flavor::getRxtxFactor() const
@@ -473,25 +473,25 @@ void Flavor::unsetrxtxCap()
     rxtxCapIsSet_ = false;
 }
 
-bool Flavor::isOsFlavorAccessisPublic() const
+bool Flavor::isOsFlavorAccessIsPublic() const
 {
-    return osFlavorAccessisPublic_;
+    return osFlavorAccessIsPublic_;
 }
 
-void Flavor::setOsFlavorAccessisPublic(bool value)
+void Flavor::setOsFlavorAccessIsPublic(bool value)
 {
-    osFlavorAccessisPublic_ = value;
-    osFlavorAccessisPublicIsSet_ = true;
+    osFlavorAccessIsPublic_ = value;
+    osFlavorAccessIsPublicIsSet_ = true;
 }
 
-bool Flavor::osFlavorAccessisPublicIsSet() const
+bool Flavor::osFlavorAccessIsPublicIsSet() const
 {
-    return osFlavorAccessisPublicIsSet_;
+    return osFlavorAccessIsPublicIsSet_;
 }
 
-void Flavor::unsetosFlavorAccessisPublic()
+void Flavor::unsetosFlavorAccessIsPublic()
 {
-    osFlavorAccessisPublicIsSet_ = false;
+    osFlavorAccessIsPublicIsSet_ = false;
 }
 
 std::vector<FlavorLink>& Flavor::getLinks()

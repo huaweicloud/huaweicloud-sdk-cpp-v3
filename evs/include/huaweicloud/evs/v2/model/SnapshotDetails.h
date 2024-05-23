@@ -124,19 +124,19 @@ public:
     /// 预留属性。
     /// </summary>
 
-    std::string getOsExtendedSnapshotAttributesprojectId() const;
-    bool osExtendedSnapshotAttributesprojectIdIsSet() const;
-    void unsetosExtendedSnapshotAttributesprojectId();
-    void setOsExtendedSnapshotAttributesprojectId(const std::string& value);
+    std::string getOsExtendedSnapshotAttributesProjectId() const;
+    bool osExtendedSnapshotAttributesProjectIdIsSet() const;
+    void unsetosExtendedSnapshotAttributesProjectId();
+    void setOsExtendedSnapshotAttributesProjectId(const std::string& value);
 
     /// <summary>
     /// 预留属性。
     /// </summary>
 
-    std::string getOsExtendedSnapshotAttributesprogress() const;
-    bool osExtendedSnapshotAttributesprogressIsSet() const;
-    void unsetosExtendedSnapshotAttributesprogress();
-    void setOsExtendedSnapshotAttributesprogress(const std::string& value);
+    std::string getOsExtendedSnapshotAttributesProgress() const;
+    bool osExtendedSnapshotAttributesProgressIsSet() const;
+    void unsetosExtendedSnapshotAttributesProgress();
+    void setOsExtendedSnapshotAttributesProgress(const std::string& value);
 
 
 protected:
@@ -158,10 +158,10 @@ protected:
     bool volumeIdIsSet_;
     int32_t size_;
     bool sizeIsSet_;
-    std::string osExtendedSnapshotAttributesprojectId_;
-    bool osExtendedSnapshotAttributesprojectIdIsSet_;
-    std::string osExtendedSnapshotAttributesprogress_;
-    bool osExtendedSnapshotAttributesprogressIsSet_;
+    std::string osExtendedSnapshotAttributesProjectId_;
+    bool osExtendedSnapshotAttributesProjectIdIsSet_;
+    std::string osExtendedSnapshotAttributesProgress_;
+    bool osExtendedSnapshotAttributesProgressIsSet_;
 
 };
 

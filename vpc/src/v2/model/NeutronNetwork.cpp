@@ -19,16 +19,16 @@ NeutronNetwork::NeutronNetwork()
     name_ = "";
     nameIsSet_ = false;
     subnetsIsSet_ = false;
-    routerexternal_ = false;
-    routerexternalIsSet_ = false;
+    routerExternal_ = false;
+    routerExternalIsSet_ = false;
     adminStateUp_ = false;
     adminStateUpIsSet_ = false;
     shared_ = false;
     sharedIsSet_ = false;
     tenantId_ = "";
     tenantIdIsSet_ = false;
-    providernetworkType_ = "";
-    providernetworkTypeIsSet_ = false;
+    providerNetworkType_ = "";
+    providerNetworkTypeIsSet_ = false;
     availabilityZoneHintsIsSet_ = false;
     availabilityZonesIsSet_ = false;
     portSecurityEnabled_ = false;
@@ -65,8 +65,8 @@ web::json::value NeutronNetwork::toJson() const
     if(subnetsIsSet_) {
         val[utility::conversions::to_string_t("subnets")] = ModelBase::toJson(subnets_);
     }
-    if(routerexternalIsSet_) {
-        val[utility::conversions::to_string_t("router:external")] = ModelBase::toJson(routerexternal_);
+    if(routerExternalIsSet_) {
+        val[utility::conversions::to_string_t("router:external")] = ModelBase::toJson(routerExternal_);
     }
     if(adminStateUpIsSet_) {
         val[utility::conversions::to_string_t("admin_state_up")] = ModelBase::toJson(adminStateUp_);
@@ -77,8 +77,8 @@ web::json::value NeutronNetwork::toJson() const
     if(tenantIdIsSet_) {
         val[utility::conversions::to_string_t("tenant_id")] = ModelBase::toJson(tenantId_);
     }
-    if(providernetworkTypeIsSet_) {
-        val[utility::conversions::to_string_t("provider:network_type")] = ModelBase::toJson(providernetworkType_);
+    if(providerNetworkTypeIsSet_) {
+        val[utility::conversions::to_string_t("provider:network_type")] = ModelBase::toJson(providerNetworkType_);
     }
     if(availabilityZoneHintsIsSet_) {
         val[utility::conversions::to_string_t("availability_zone_hints")] = ModelBase::toJson(availabilityZoneHints_);
@@ -150,7 +150,7 @@ bool NeutronNetwork::fromJson(const web::json::value& val)
         {
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setRouterexternal(refVal);
+            setRouterExternal(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("admin_state_up"))) {
@@ -186,7 +186,7 @@ bool NeutronNetwork::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setProvidernetworkType(refVal);
+            setProviderNetworkType(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("availability_zone_hints"))) {
@@ -340,25 +340,25 @@ void NeutronNetwork::unsetsubnets()
     subnetsIsSet_ = false;
 }
 
-bool NeutronNetwork::isRouterexternal() const
+bool NeutronNetwork::isRouterExternal() const
 {
-    return routerexternal_;
+    return routerExternal_;
 }
 
-void NeutronNetwork::setRouterexternal(bool value)
+void NeutronNetwork::setRouterExternal(bool value)
 {
-    routerexternal_ = value;
-    routerexternalIsSet_ = true;
+    routerExternal_ = value;
+    routerExternalIsSet_ = true;
 }
 
-bool NeutronNetwork::routerexternalIsSet() const
+bool NeutronNetwork::routerExternalIsSet() const
 {
-    return routerexternalIsSet_;
+    return routerExternalIsSet_;
 }
 
-void NeutronNetwork::unsetrouterexternal()
+void NeutronNetwork::unsetrouterExternal()
 {
-    routerexternalIsSet_ = false;
+    routerExternalIsSet_ = false;
 }
 
 bool NeutronNetwork::isAdminStateUp() const
@@ -424,25 +424,25 @@ void NeutronNetwork::unsettenantId()
     tenantIdIsSet_ = false;
 }
 
-std::string NeutronNetwork::getProvidernetworkType() const
+std::string NeutronNetwork::getProviderNetworkType() const
 {
-    return providernetworkType_;
+    return providerNetworkType_;
 }
 
-void NeutronNetwork::setProvidernetworkType(const std::string& value)
+void NeutronNetwork::setProviderNetworkType(const std::string& value)
 {
-    providernetworkType_ = value;
-    providernetworkTypeIsSet_ = true;
+    providerNetworkType_ = value;
+    providerNetworkTypeIsSet_ = true;
 }
 
-bool NeutronNetwork::providernetworkTypeIsSet() const
+bool NeutronNetwork::providerNetworkTypeIsSet() const
 {
-    return providernetworkTypeIsSet_;
+    return providerNetworkTypeIsSet_;
 }
 
-void NeutronNetwork::unsetprovidernetworkType()
+void NeutronNetwork::unsetproviderNetworkType()
 {
-    providernetworkTypeIsSet_ = false;
+    providerNetworkTypeIsSet_ = false;
 }
 
 std::vector<std::string>& NeutronNetwork::getAvailabilityZoneHints()

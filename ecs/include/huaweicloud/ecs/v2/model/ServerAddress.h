@@ -69,28 +69,28 @@ public:
     /// IP地址类型。  - fixed：代表私有IP地址。 - floating：代表浮动IP地址。
     /// </summary>
 
-    std::string getOSEXTIPStype() const;
-    bool oSEXTIPStypeIsSet() const;
-    void unsetoSEXTIPStype();
-    void setOSEXTIPStype(const std::string& value);
+    std::string getOSEXTIPSType() const;
+    bool oSEXTIPSTypeIsSet() const;
+    void unsetoSEXTIPSType();
+    void setOSEXTIPSType(const std::string& value);
 
     /// <summary>
     /// MAC地址。
     /// </summary>
 
-    std::string getOSEXTIPSMACmacAddr() const;
-    bool oSEXTIPSMACmacAddrIsSet() const;
-    void unsetoSEXTIPSMACmacAddr();
-    void setOSEXTIPSMACmacAddr(const std::string& value);
+    std::string getOSEXTIPSMACMacAddr() const;
+    bool oSEXTIPSMACMacAddrIsSet() const;
+    void unsetoSEXTIPSMACMacAddr();
+    void setOSEXTIPSMACMacAddr(const std::string& value);
 
     /// <summary>
     /// IP地址对应的端口ID。
     /// </summary>
 
-    std::string getOSEXTIPSportId() const;
-    bool oSEXTIPSportIdIsSet() const;
-    void unsetoSEXTIPSportId();
-    void setOSEXTIPSportId(const std::string& value);
+    std::string getOSEXTIPSPortId() const;
+    bool oSEXTIPSPortIdIsSet() const;
+    void unsetoSEXTIPSPortId();
+    void setOSEXTIPSPortId(const std::string& value);
 
 
 protected:
@@ -100,12 +100,12 @@ protected:
     bool primaryIsSet_;
     std::string addr_;
     bool addrIsSet_;
-    std::string oSEXTIPStype_;
-    bool oSEXTIPStypeIsSet_;
-    std::string oSEXTIPSMACmacAddr_;
-    bool oSEXTIPSMACmacAddrIsSet_;
-    std::string oSEXTIPSportId_;
-    bool oSEXTIPSportIdIsSet_;
+    std::string oSEXTIPSType_;
+    bool oSEXTIPSTypeIsSet_;
+    std::string oSEXTIPSMACMacAddr_;
+    bool oSEXTIPSMACMacAddrIsSet_;
+    std::string oSEXTIPSPortId_;
+    bool oSEXTIPSPortIdIsSet_;
 
 };
 

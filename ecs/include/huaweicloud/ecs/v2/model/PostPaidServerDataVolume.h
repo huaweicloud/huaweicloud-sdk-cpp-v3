@@ -98,10 +98,10 @@ public:
     /// 数据卷是否使用SCSI锁。  - true表示云硬盘的设备类型为SCSI类型，即允许ECS操作系统直接访问底层存储介质。支持SCSI锁命令。 - false表示云硬盘的设备类型为VBD (虚拟块存储设备 , Virtual Block Device)类型，即为默认类型，VBD只能支持简单的SCSI读写命令。 - 该字段不存在时，云硬盘默认为VBD类型。  &gt; 说明： &gt;  &gt; 此参数为boolean类型，若传入非boolean类型字符，程序将按照【false】方式处理。
     /// </summary>
 
-    bool isHwpassthrough() const;
-    bool hwpassthroughIsSet() const;
-    void unsethwpassthrough();
-    void setHwpassthrough(bool value);
+    bool isHwPassthrough() const;
+    bool hwPassthroughIsSet() const;
+    void unsethwPassthrough();
+    void setHwPassthrough(bool value);
 
     /// <summary>
     /// 
@@ -171,8 +171,8 @@ protected:
     bool shareableIsSet_;
     bool multiattach_;
     bool multiattachIsSet_;
-    bool hwpassthrough_;
-    bool hwpassthroughIsSet_;
+    bool hwPassthrough_;
+    bool hwPassthroughIsSet_;
     PostPaidServerDataVolumeExtendParam extendparam_;
     bool extendparamIsSet_;
     std::string clusterType_;

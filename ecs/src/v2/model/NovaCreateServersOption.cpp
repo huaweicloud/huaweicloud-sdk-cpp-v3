@@ -40,8 +40,8 @@ NovaCreateServersOption::NovaCreateServersOption()
     minCountIsSet_ = false;
     maxCount_ = 0;
     maxCountIsSet_ = false;
-    oSDCFdiskConfig_ = "";
-    oSDCFdiskConfigIsSet_ = false;
+    oSDCFDiskConfig_ = "";
+    oSDCFDiskConfigIsSet_ = false;
     description_ = "";
     descriptionIsSet_ = false;
 }
@@ -104,8 +104,8 @@ web::json::value NovaCreateServersOption::toJson() const
     if(maxCountIsSet_) {
         val[utility::conversions::to_string_t("max_count")] = ModelBase::toJson(maxCount_);
     }
-    if(oSDCFdiskConfigIsSet_) {
-        val[utility::conversions::to_string_t("OS-DCF:diskConfig")] = ModelBase::toJson(oSDCFdiskConfig_);
+    if(oSDCFDiskConfigIsSet_) {
+        val[utility::conversions::to_string_t("OS-DCF:diskConfig")] = ModelBase::toJson(oSDCFDiskConfig_);
     }
     if(descriptionIsSet_) {
         val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
@@ -267,7 +267,7 @@ bool NovaCreateServersOption::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSDCFdiskConfig(refVal);
+            setOSDCFDiskConfig(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("description"))) {
@@ -619,25 +619,25 @@ void NovaCreateServersOption::unsetmaxCount()
     maxCountIsSet_ = false;
 }
 
-std::string NovaCreateServersOption::getOSDCFdiskConfig() const
+std::string NovaCreateServersOption::getOSDCFDiskConfig() const
 {
-    return oSDCFdiskConfig_;
+    return oSDCFDiskConfig_;
 }
 
-void NovaCreateServersOption::setOSDCFdiskConfig(const std::string& value)
+void NovaCreateServersOption::setOSDCFDiskConfig(const std::string& value)
 {
-    oSDCFdiskConfig_ = value;
-    oSDCFdiskConfigIsSet_ = true;
+    oSDCFDiskConfig_ = value;
+    oSDCFDiskConfigIsSet_ = true;
 }
 
-bool NovaCreateServersOption::oSDCFdiskConfigIsSet() const
+bool NovaCreateServersOption::oSDCFDiskConfigIsSet() const
 {
-    return oSDCFdiskConfigIsSet_;
+    return oSDCFDiskConfigIsSet_;
 }
 
-void NovaCreateServersOption::unsetoSDCFdiskConfig()
+void NovaCreateServersOption::unsetoSDCFDiskConfig()
 {
-    oSDCFdiskConfigIsSet_ = false;
+    oSDCFDiskConfigIsSet_ = false;
 }
 
 std::string NovaCreateServersOption::getDescription() const

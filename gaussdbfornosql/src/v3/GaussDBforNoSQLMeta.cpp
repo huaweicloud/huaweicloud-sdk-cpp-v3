@@ -899,6 +899,17 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForShowModifyHistory() {
     return reqDefBuilder;
 }
 
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForShowPasswordlessConfig() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForShowPauseResumeStutus() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
@@ -922,6 +933,15 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForShowRecyclePolicy() {
                   .withName("XLanguage")
                   .withJsonTag("X-Language")
                   .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForShowRedisBigKeys() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
     return reqDefBuilder;
 }
 
@@ -1037,6 +1057,15 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForUpdateInstanceConfiguration(
 }
 
 HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForUpdateInstanceName() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForUpdatePasswordlessConfig() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.

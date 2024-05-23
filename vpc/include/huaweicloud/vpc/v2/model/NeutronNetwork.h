@@ -80,10 +80,10 @@ public:
     /// 功能说明：扩展属性，是否外部网络 取值范围：true、false 约束：不支持设置和更新
     /// </summary>
 
-    bool isRouterexternal() const;
-    bool routerexternalIsSet() const;
-    void unsetrouterexternal();
-    void setRouterexternal(bool value);
+    bool isRouterExternal() const;
+    bool routerExternalIsSet() const;
+    void unsetrouterExternal();
+    void setRouterExternal(bool value);
 
     /// <summary>
     /// 功能说明：资源的管理状态 取值范围：true、false 约束：只支持true
@@ -116,10 +116,10 @@ public:
     /// 功能说明：扩展属性，网络类型（支持vxlan, geneve） 取值范围：vxlan，geneve
     /// </summary>
 
-    std::string getProvidernetworkType() const;
-    bool providernetworkTypeIsSet() const;
-    void unsetprovidernetworkType();
-    void setProvidernetworkType(const std::string& value);
+    std::string getProviderNetworkType() const;
+    bool providerNetworkTypeIsSet() const;
+    void unsetproviderNetworkType();
+    void setProviderNetworkType(const std::string& value);
 
     /// <summary>
     /// 功能说明：本网络的候选可用域
@@ -194,16 +194,16 @@ protected:
     bool nameIsSet_;
     std::vector<std::string> subnets_;
     bool subnetsIsSet_;
-    bool routerexternal_;
-    bool routerexternalIsSet_;
+    bool routerExternal_;
+    bool routerExternalIsSet_;
     bool adminStateUp_;
     bool adminStateUpIsSet_;
     bool shared_;
     bool sharedIsSet_;
     std::string tenantId_;
     bool tenantIdIsSet_;
-    std::string providernetworkType_;
-    bool providernetworkTypeIsSet_;
+    std::string providerNetworkType_;
+    bool providerNetworkTypeIsSet_;
     std::vector<std::string> availabilityZoneHints_;
     bool availabilityZoneHintsIsSet_;
     std::vector<std::string> availabilityZones_;

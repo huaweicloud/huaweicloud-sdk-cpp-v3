@@ -219,12 +219,17 @@
 #include <huaweicloud/gaussdbfornosql/v3/model/ShowIpNumRequirementResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ShowModifyHistoryRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ShowModifyHistoryResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ShowPasswordlessConfigRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ShowPasswordlessConfigResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ShowPauseResumeStutusRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ShowPauseResumeStutusResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ShowQuotasRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ShowQuotasResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ShowRecyclePolicyRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ShowRecyclePolicyResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ShowRedisBigKeysRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ShowRedisBigKeysRequestBody.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ShowRedisBigKeysResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ShowRestorableListRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ShowRestorableListResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ShowSlowLogDesensitizationRequest.h>
@@ -263,6 +268,9 @@
 #include <huaweicloud/gaussdbfornosql/v3/model/UpdateInstanceNameRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/UpdateInstanceNameRequestBody.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/UpdateInstanceNameResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/UpdatePasswordlessConfigRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/UpdatePasswordlessConfigRequestBody.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/UpdatePasswordlessConfigResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/UpdateSecurityGroupRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/UpdateSecurityGroupRequestBody.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/UpdateSecurityGroupResponse.h>
@@ -984,6 +992,14 @@ public:
     std::shared_ptr<ShowModifyHistoryResponse> showModifyHistory(
         ShowModifyHistoryRequest &request
     );
+    // 获取GeminiDB Redis的免密配置
+    //
+    // 获取GeminiDB Redis的免密配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowPasswordlessConfigResponse> showPasswordlessConfig(
+        ShowPasswordlessConfigRequest &request
+    );
     // 获取容灾实例数据同步状态
     //
     // 获取容灾实例数据同步状态，主备实例id，数据同步指标值，以及倒换和切换场景下的RPO，RTO指标值。
@@ -1007,6 +1023,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowRecyclePolicyResponse> showRecyclePolicy(
         ShowRecyclePolicyRequest &request
+    );
+    // 查询Redis实例的大key
+    //
+    // 支持查询Redis实例的大key。value长度大于bigkeys-string-threshold参数的string类型的key或者元素数大于bigkeys-composite-threshold参数的hash/list/zset/set/stream类型key，会被判断为大key。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowRedisBigKeysResponse> showRedisBigKeys(
+        ShowRedisBigKeysRequest &request
     );
     // 查询可恢复的实例列表
     //
@@ -1119,6 +1143,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateInstanceNameResponse> updateInstanceName(
         UpdateInstanceNameRequest &request
+    );
+    // 支持修改GeminiDB Redis的免密配置
+    //
+    // 支持修改GeminiDB Redis的免密配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdatePasswordlessConfigResponse> updatePasswordlessConfig(
+        UpdatePasswordlessConfigRequest &request
     );
     // 变更实例安全组
     //

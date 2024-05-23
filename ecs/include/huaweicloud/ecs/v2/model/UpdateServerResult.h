@@ -128,10 +128,10 @@ public:
     /// 扩展属性， diskConfig的类型。  - MANUAL，镜像空间不会扩展。 - AUTO，系统盘镜像空间会自动扩展为与flavor大小一致。
     /// </summary>
 
-    std::string getOSDCFdiskConfig() const;
-    bool oSDCFdiskConfigIsSet() const;
-    void unsetoSDCFdiskConfig();
-    void setOSDCFdiskConfig(const std::string& value);
+    std::string getOSDCFDiskConfig() const;
+    bool oSDCFDiskConfigIsSet() const;
+    void unsetoSDCFDiskConfig();
+    void setOSDCFDiskConfig(const std::string& value);
 
     /// <summary>
     /// 创建弹性云服务器的用户ID，格式为UUID。
@@ -227,19 +227,19 @@ public:
     /// 创建弹性云服务器时指定的user_data（编码过后的信息）。
     /// </summary>
 
-    std::string getOSEXTSRVATTRuserData() const;
-    bool oSEXTSRVATTRuserDataIsSet() const;
-    void unsetoSEXTSRVATTRuserData();
-    void setOSEXTSRVATTRuserData(const std::string& value);
+    std::string getOSEXTSRVATTRUserData() const;
+    bool oSEXTSRVATTRUserDataIsSet() const;
+    void unsetoSEXTSRVATTRUserData();
+    void setOSEXTSRVATTRUserData(const std::string& value);
 
     /// <summary>
     /// 弹性云服务器的主机名。
     /// </summary>
 
-    std::string getOSEXTSRVATTRhostname() const;
-    bool oSEXTSRVATTRhostnameIsSet() const;
-    void unsetoSEXTSRVATTRhostname();
-    void setOSEXTSRVATTRhostname(const std::string& value);
+    std::string getOSEXTSRVATTRHostname() const;
+    bool oSEXTSRVATTRHostnameIsSet() const;
+    void unsetoSEXTSRVATTRHostname();
+    void setOSEXTSRVATTRHostname(const std::string& value);
 
 
 protected:
@@ -261,8 +261,8 @@ protected:
     bool hostIdIsSet_;
     SimpleFlavor flavor_;
     bool flavorIsSet_;
-    std::string oSDCFdiskConfig_;
-    bool oSDCFdiskConfigIsSet_;
+    std::string oSDCFDiskConfig_;
+    bool oSDCFDiskConfigIsSet_;
     std::string userId_;
     bool userIdIsSet_;
     std::string name_;
@@ -283,10 +283,10 @@ protected:
     bool tagsIsSet_;
     std::string status_;
     bool statusIsSet_;
-    std::string oSEXTSRVATTRuserData_;
-    bool oSEXTSRVATTRuserDataIsSet_;
-    std::string oSEXTSRVATTRhostname_;
-    bool oSEXTSRVATTRhostnameIsSet_;
+    std::string oSEXTSRVATTRUserData_;
+    bool oSEXTSRVATTRUserDataIsSet_;
+    std::string oSEXTSRVATTRHostname_;
+    bool oSEXTSRVATTRHostnameIsSet_;
 
 };
 

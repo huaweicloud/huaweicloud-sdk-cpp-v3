@@ -20,26 +20,26 @@ ServerDetail::ServerDetail()
     autoTerminateTimeIsSet_ = false;
     hostId_ = "";
     hostIdIsSet_ = false;
-    oSEXTSRVATTRhost_ = "";
-    oSEXTSRVATTRhostIsSet_ = false;
+    oSEXTSRVATTRHost_ = "";
+    oSEXTSRVATTRHostIsSet_ = false;
     addressesIsSet_ = false;
     keyName_ = "";
     keyNameIsSet_ = false;
     imageIsSet_ = false;
-    oSEXTSTStaskState_ = "";
-    oSEXTSTStaskStateIsSet_ = false;
-    oSEXTSTSvmState_ = "";
-    oSEXTSTSvmStateIsSet_ = false;
-    oSEXTSRVATTRinstanceName_ = "";
-    oSEXTSRVATTRinstanceNameIsSet_ = false;
-    oSEXTSRVATTRhypervisorHostname_ = "";
-    oSEXTSRVATTRhypervisorHostnameIsSet_ = false;
+    oSEXTSTSTaskState_ = "";
+    oSEXTSTSTaskStateIsSet_ = false;
+    oSEXTSTSVmState_ = "";
+    oSEXTSTSVmStateIsSet_ = false;
+    oSEXTSRVATTRInstanceName_ = "";
+    oSEXTSRVATTRInstanceNameIsSet_ = false;
+    oSEXTSRVATTRHypervisorHostname_ = "";
+    oSEXTSRVATTRHypervisorHostnameIsSet_ = false;
     flavorIsSet_ = false;
     id_ = "";
     idIsSet_ = false;
     securityGroupsIsSet_ = false;
-    oSEXTAZavailabilityZone_ = "";
-    oSEXTAZavailabilityZoneIsSet_ = false;
+    oSEXTAZAvailabilityZone_ = "";
+    oSEXTAZAvailabilityZoneIsSet_ = false;
     userId_ = "";
     userIdIsSet_ = false;
     name_ = "";
@@ -48,8 +48,8 @@ ServerDetail::ServerDetail()
     createdIsSet_ = false;
     tenantId_ = "";
     tenantIdIsSet_ = false;
-    oSDCFdiskConfig_ = "";
-    oSDCFdiskConfigIsSet_ = false;
+    oSDCFDiskConfig_ = "";
+    oSDCFDiskConfigIsSet_ = false;
     accessIPv4_ = "";
     accessIPv4IsSet_ = false;
     accessIPv6_ = "";
@@ -57,38 +57,38 @@ ServerDetail::ServerDetail()
     faultIsSet_ = false;
     progress_ = 0;
     progressIsSet_ = false;
-    oSEXTSTSpowerState_ = 0;
-    oSEXTSTSpowerStateIsSet_ = false;
+    oSEXTSTSPowerState_ = 0;
+    oSEXTSTSPowerStateIsSet_ = false;
     configDrive_ = "";
     configDriveIsSet_ = false;
     metadataIsSet_ = false;
-    oSSRVUSGlaunchedAt_ = "";
-    oSSRVUSGlaunchedAtIsSet_ = false;
-    oSSRVUSGterminatedAt_ = "";
-    oSSRVUSGterminatedAtIsSet_ = false;
-    osExtendedVolumesvolumesAttachedIsSet_ = false;
+    oSSRVUSGLaunchedAt_ = "";
+    oSSRVUSGLaunchedAtIsSet_ = false;
+    oSSRVUSGTerminatedAt_ = "";
+    oSSRVUSGTerminatedAtIsSet_ = false;
+    osExtendedVolumesVolumesAttachedIsSet_ = false;
     description_ = "";
     descriptionIsSet_ = false;
     hostStatus_ = "";
     hostStatusIsSet_ = false;
-    oSEXTSRVATTRhostname_ = "";
-    oSEXTSRVATTRhostnameIsSet_ = false;
-    oSEXTSRVATTRreservationId_ = "";
-    oSEXTSRVATTRreservationIdIsSet_ = false;
-    oSEXTSRVATTRlaunchIndex_ = 0;
-    oSEXTSRVATTRlaunchIndexIsSet_ = false;
-    oSEXTSRVATTRkernelId_ = "";
-    oSEXTSRVATTRkernelIdIsSet_ = false;
-    oSEXTSRVATTRramdiskId_ = "";
-    oSEXTSRVATTRramdiskIdIsSet_ = false;
-    oSEXTSRVATTRrootDeviceName_ = "";
-    oSEXTSRVATTRrootDeviceNameIsSet_ = false;
-    oSEXTSRVATTRuserData_ = "";
-    oSEXTSRVATTRuserDataIsSet_ = false;
+    oSEXTSRVATTRHostname_ = "";
+    oSEXTSRVATTRHostnameIsSet_ = false;
+    oSEXTSRVATTRReservationId_ = "";
+    oSEXTSRVATTRReservationIdIsSet_ = false;
+    oSEXTSRVATTRLaunchIndex_ = 0;
+    oSEXTSRVATTRLaunchIndexIsSet_ = false;
+    oSEXTSRVATTRKernelId_ = "";
+    oSEXTSRVATTRKernelIdIsSet_ = false;
+    oSEXTSRVATTRRamdiskId_ = "";
+    oSEXTSRVATTRRamdiskIdIsSet_ = false;
+    oSEXTSRVATTRRootDeviceName_ = "";
+    oSEXTSRVATTRRootDeviceNameIsSet_ = false;
+    oSEXTSRVATTRUserData_ = "";
+    oSEXTSRVATTRUserDataIsSet_ = false;
     locked_ = false;
     lockedIsSet_ = false;
     tagsIsSet_ = false;
-    osschedulerHintsIsSet_ = false;
+    osSchedulerHintsIsSet_ = false;
     enterpriseProjectId_ = "";
     enterpriseProjectIdIsSet_ = false;
     sysTagsIsSet_ = false;
@@ -118,8 +118,8 @@ web::json::value ServerDetail::toJson() const
     if(hostIdIsSet_) {
         val[utility::conversions::to_string_t("hostId")] = ModelBase::toJson(hostId_);
     }
-    if(oSEXTSRVATTRhostIsSet_) {
-        val[utility::conversions::to_string_t("OS-EXT-SRV-ATTR:host")] = ModelBase::toJson(oSEXTSRVATTRhost_);
+    if(oSEXTSRVATTRHostIsSet_) {
+        val[utility::conversions::to_string_t("OS-EXT-SRV-ATTR:host")] = ModelBase::toJson(oSEXTSRVATTRHost_);
     }
     if(addressesIsSet_) {
         val[utility::conversions::to_string_t("addresses")] = ModelBase::toJson(addresses_);
@@ -130,17 +130,17 @@ web::json::value ServerDetail::toJson() const
     if(imageIsSet_) {
         val[utility::conversions::to_string_t("image")] = ModelBase::toJson(image_);
     }
-    if(oSEXTSTStaskStateIsSet_) {
-        val[utility::conversions::to_string_t("OS-EXT-STS:task_state")] = ModelBase::toJson(oSEXTSTStaskState_);
+    if(oSEXTSTSTaskStateIsSet_) {
+        val[utility::conversions::to_string_t("OS-EXT-STS:task_state")] = ModelBase::toJson(oSEXTSTSTaskState_);
     }
-    if(oSEXTSTSvmStateIsSet_) {
-        val[utility::conversions::to_string_t("OS-EXT-STS:vm_state")] = ModelBase::toJson(oSEXTSTSvmState_);
+    if(oSEXTSTSVmStateIsSet_) {
+        val[utility::conversions::to_string_t("OS-EXT-STS:vm_state")] = ModelBase::toJson(oSEXTSTSVmState_);
     }
-    if(oSEXTSRVATTRinstanceNameIsSet_) {
-        val[utility::conversions::to_string_t("OS-EXT-SRV-ATTR:instance_name")] = ModelBase::toJson(oSEXTSRVATTRinstanceName_);
+    if(oSEXTSRVATTRInstanceNameIsSet_) {
+        val[utility::conversions::to_string_t("OS-EXT-SRV-ATTR:instance_name")] = ModelBase::toJson(oSEXTSRVATTRInstanceName_);
     }
-    if(oSEXTSRVATTRhypervisorHostnameIsSet_) {
-        val[utility::conversions::to_string_t("OS-EXT-SRV-ATTR:hypervisor_hostname")] = ModelBase::toJson(oSEXTSRVATTRhypervisorHostname_);
+    if(oSEXTSRVATTRHypervisorHostnameIsSet_) {
+        val[utility::conversions::to_string_t("OS-EXT-SRV-ATTR:hypervisor_hostname")] = ModelBase::toJson(oSEXTSRVATTRHypervisorHostname_);
     }
     if(flavorIsSet_) {
         val[utility::conversions::to_string_t("flavor")] = ModelBase::toJson(flavor_);
@@ -151,8 +151,8 @@ web::json::value ServerDetail::toJson() const
     if(securityGroupsIsSet_) {
         val[utility::conversions::to_string_t("security_groups")] = ModelBase::toJson(securityGroups_);
     }
-    if(oSEXTAZavailabilityZoneIsSet_) {
-        val[utility::conversions::to_string_t("OS-EXT-AZ:availability_zone")] = ModelBase::toJson(oSEXTAZavailabilityZone_);
+    if(oSEXTAZAvailabilityZoneIsSet_) {
+        val[utility::conversions::to_string_t("OS-EXT-AZ:availability_zone")] = ModelBase::toJson(oSEXTAZAvailabilityZone_);
     }
     if(userIdIsSet_) {
         val[utility::conversions::to_string_t("user_id")] = ModelBase::toJson(userId_);
@@ -166,8 +166,8 @@ web::json::value ServerDetail::toJson() const
     if(tenantIdIsSet_) {
         val[utility::conversions::to_string_t("tenant_id")] = ModelBase::toJson(tenantId_);
     }
-    if(oSDCFdiskConfigIsSet_) {
-        val[utility::conversions::to_string_t("OS-DCF:diskConfig")] = ModelBase::toJson(oSDCFdiskConfig_);
+    if(oSDCFDiskConfigIsSet_) {
+        val[utility::conversions::to_string_t("OS-DCF:diskConfig")] = ModelBase::toJson(oSDCFDiskConfig_);
     }
     if(accessIPv4IsSet_) {
         val[utility::conversions::to_string_t("accessIPv4")] = ModelBase::toJson(accessIPv4_);
@@ -181,8 +181,8 @@ web::json::value ServerDetail::toJson() const
     if(progressIsSet_) {
         val[utility::conversions::to_string_t("progress")] = ModelBase::toJson(progress_);
     }
-    if(oSEXTSTSpowerStateIsSet_) {
-        val[utility::conversions::to_string_t("OS-EXT-STS:power_state")] = ModelBase::toJson(oSEXTSTSpowerState_);
+    if(oSEXTSTSPowerStateIsSet_) {
+        val[utility::conversions::to_string_t("OS-EXT-STS:power_state")] = ModelBase::toJson(oSEXTSTSPowerState_);
     }
     if(configDriveIsSet_) {
         val[utility::conversions::to_string_t("config_drive")] = ModelBase::toJson(configDrive_);
@@ -190,14 +190,14 @@ web::json::value ServerDetail::toJson() const
     if(metadataIsSet_) {
         val[utility::conversions::to_string_t("metadata")] = ModelBase::toJson(metadata_);
     }
-    if(oSSRVUSGlaunchedAtIsSet_) {
-        val[utility::conversions::to_string_t("OS-SRV-USG:launched_at")] = ModelBase::toJson(oSSRVUSGlaunchedAt_);
+    if(oSSRVUSGLaunchedAtIsSet_) {
+        val[utility::conversions::to_string_t("OS-SRV-USG:launched_at")] = ModelBase::toJson(oSSRVUSGLaunchedAt_);
     }
-    if(oSSRVUSGterminatedAtIsSet_) {
-        val[utility::conversions::to_string_t("OS-SRV-USG:terminated_at")] = ModelBase::toJson(oSSRVUSGterminatedAt_);
+    if(oSSRVUSGTerminatedAtIsSet_) {
+        val[utility::conversions::to_string_t("OS-SRV-USG:terminated_at")] = ModelBase::toJson(oSSRVUSGTerminatedAt_);
     }
-    if(osExtendedVolumesvolumesAttachedIsSet_) {
-        val[utility::conversions::to_string_t("os-extended-volumes:volumes_attached")] = ModelBase::toJson(osExtendedVolumesvolumesAttached_);
+    if(osExtendedVolumesVolumesAttachedIsSet_) {
+        val[utility::conversions::to_string_t("os-extended-volumes:volumes_attached")] = ModelBase::toJson(osExtendedVolumesVolumesAttached_);
     }
     if(descriptionIsSet_) {
         val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
@@ -205,26 +205,26 @@ web::json::value ServerDetail::toJson() const
     if(hostStatusIsSet_) {
         val[utility::conversions::to_string_t("host_status")] = ModelBase::toJson(hostStatus_);
     }
-    if(oSEXTSRVATTRhostnameIsSet_) {
-        val[utility::conversions::to_string_t("OS-EXT-SRV-ATTR:hostname")] = ModelBase::toJson(oSEXTSRVATTRhostname_);
+    if(oSEXTSRVATTRHostnameIsSet_) {
+        val[utility::conversions::to_string_t("OS-EXT-SRV-ATTR:hostname")] = ModelBase::toJson(oSEXTSRVATTRHostname_);
     }
-    if(oSEXTSRVATTRreservationIdIsSet_) {
-        val[utility::conversions::to_string_t("OS-EXT-SRV-ATTR:reservation_id")] = ModelBase::toJson(oSEXTSRVATTRreservationId_);
+    if(oSEXTSRVATTRReservationIdIsSet_) {
+        val[utility::conversions::to_string_t("OS-EXT-SRV-ATTR:reservation_id")] = ModelBase::toJson(oSEXTSRVATTRReservationId_);
     }
-    if(oSEXTSRVATTRlaunchIndexIsSet_) {
-        val[utility::conversions::to_string_t("OS-EXT-SRV-ATTR:launch_index")] = ModelBase::toJson(oSEXTSRVATTRlaunchIndex_);
+    if(oSEXTSRVATTRLaunchIndexIsSet_) {
+        val[utility::conversions::to_string_t("OS-EXT-SRV-ATTR:launch_index")] = ModelBase::toJson(oSEXTSRVATTRLaunchIndex_);
     }
-    if(oSEXTSRVATTRkernelIdIsSet_) {
-        val[utility::conversions::to_string_t("OS-EXT-SRV-ATTR:kernel_id")] = ModelBase::toJson(oSEXTSRVATTRkernelId_);
+    if(oSEXTSRVATTRKernelIdIsSet_) {
+        val[utility::conversions::to_string_t("OS-EXT-SRV-ATTR:kernel_id")] = ModelBase::toJson(oSEXTSRVATTRKernelId_);
     }
-    if(oSEXTSRVATTRramdiskIdIsSet_) {
-        val[utility::conversions::to_string_t("OS-EXT-SRV-ATTR:ramdisk_id")] = ModelBase::toJson(oSEXTSRVATTRramdiskId_);
+    if(oSEXTSRVATTRRamdiskIdIsSet_) {
+        val[utility::conversions::to_string_t("OS-EXT-SRV-ATTR:ramdisk_id")] = ModelBase::toJson(oSEXTSRVATTRRamdiskId_);
     }
-    if(oSEXTSRVATTRrootDeviceNameIsSet_) {
-        val[utility::conversions::to_string_t("OS-EXT-SRV-ATTR:root_device_name")] = ModelBase::toJson(oSEXTSRVATTRrootDeviceName_);
+    if(oSEXTSRVATTRRootDeviceNameIsSet_) {
+        val[utility::conversions::to_string_t("OS-EXT-SRV-ATTR:root_device_name")] = ModelBase::toJson(oSEXTSRVATTRRootDeviceName_);
     }
-    if(oSEXTSRVATTRuserDataIsSet_) {
-        val[utility::conversions::to_string_t("OS-EXT-SRV-ATTR:user_data")] = ModelBase::toJson(oSEXTSRVATTRuserData_);
+    if(oSEXTSRVATTRUserDataIsSet_) {
+        val[utility::conversions::to_string_t("OS-EXT-SRV-ATTR:user_data")] = ModelBase::toJson(oSEXTSRVATTRUserData_);
     }
     if(lockedIsSet_) {
         val[utility::conversions::to_string_t("locked")] = ModelBase::toJson(locked_);
@@ -232,8 +232,8 @@ web::json::value ServerDetail::toJson() const
     if(tagsIsSet_) {
         val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
     }
-    if(osschedulerHintsIsSet_) {
-        val[utility::conversions::to_string_t("os:scheduler_hints")] = ModelBase::toJson(osschedulerHints_);
+    if(osSchedulerHintsIsSet_) {
+        val[utility::conversions::to_string_t("os:scheduler_hints")] = ModelBase::toJson(osSchedulerHints_);
     }
     if(enterpriseProjectIdIsSet_) {
         val[utility::conversions::to_string_t("enterprise_project_id")] = ModelBase::toJson(enterpriseProjectId_);
@@ -296,7 +296,7 @@ bool ServerDetail::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSEXTSRVATTRhost(refVal);
+            setOSEXTSRVATTRHost(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("addresses"))) {
@@ -332,7 +332,7 @@ bool ServerDetail::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSEXTSTStaskState(refVal);
+            setOSEXTSTSTaskState(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("OS-EXT-STS:vm_state"))) {
@@ -341,7 +341,7 @@ bool ServerDetail::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSEXTSTSvmState(refVal);
+            setOSEXTSTSVmState(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("OS-EXT-SRV-ATTR:instance_name"))) {
@@ -350,7 +350,7 @@ bool ServerDetail::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSEXTSRVATTRinstanceName(refVal);
+            setOSEXTSRVATTRInstanceName(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("OS-EXT-SRV-ATTR:hypervisor_hostname"))) {
@@ -359,7 +359,7 @@ bool ServerDetail::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSEXTSRVATTRhypervisorHostname(refVal);
+            setOSEXTSRVATTRHypervisorHostname(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("flavor"))) {
@@ -395,7 +395,7 @@ bool ServerDetail::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSEXTAZavailabilityZone(refVal);
+            setOSEXTAZAvailabilityZone(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("user_id"))) {
@@ -440,7 +440,7 @@ bool ServerDetail::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSDCFdiskConfig(refVal);
+            setOSDCFDiskConfig(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("accessIPv4"))) {
@@ -485,7 +485,7 @@ bool ServerDetail::fromJson(const web::json::value& val)
         {
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSEXTSTSpowerState(refVal);
+            setOSEXTSTSPowerState(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("config_drive"))) {
@@ -512,7 +512,7 @@ bool ServerDetail::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSSRVUSGlaunchedAt(refVal);
+            setOSSRVUSGLaunchedAt(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("OS-SRV-USG:terminated_at"))) {
@@ -521,7 +521,7 @@ bool ServerDetail::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSSRVUSGterminatedAt(refVal);
+            setOSSRVUSGTerminatedAt(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("os-extended-volumes:volumes_attached"))) {
@@ -530,7 +530,7 @@ bool ServerDetail::fromJson(const web::json::value& val)
         {
             std::vector<ServerExtendVolumeAttachment> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOsExtendedVolumesvolumesAttached(refVal);
+            setOsExtendedVolumesVolumesAttached(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("description"))) {
@@ -557,7 +557,7 @@ bool ServerDetail::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSEXTSRVATTRhostname(refVal);
+            setOSEXTSRVATTRHostname(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("OS-EXT-SRV-ATTR:reservation_id"))) {
@@ -566,7 +566,7 @@ bool ServerDetail::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSEXTSRVATTRreservationId(refVal);
+            setOSEXTSRVATTRReservationId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("OS-EXT-SRV-ATTR:launch_index"))) {
@@ -575,7 +575,7 @@ bool ServerDetail::fromJson(const web::json::value& val)
         {
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSEXTSRVATTRlaunchIndex(refVal);
+            setOSEXTSRVATTRLaunchIndex(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("OS-EXT-SRV-ATTR:kernel_id"))) {
@@ -584,7 +584,7 @@ bool ServerDetail::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSEXTSRVATTRkernelId(refVal);
+            setOSEXTSRVATTRKernelId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("OS-EXT-SRV-ATTR:ramdisk_id"))) {
@@ -593,7 +593,7 @@ bool ServerDetail::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSEXTSRVATTRramdiskId(refVal);
+            setOSEXTSRVATTRRamdiskId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("OS-EXT-SRV-ATTR:root_device_name"))) {
@@ -602,7 +602,7 @@ bool ServerDetail::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSEXTSRVATTRrootDeviceName(refVal);
+            setOSEXTSRVATTRRootDeviceName(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("OS-EXT-SRV-ATTR:user_data"))) {
@@ -611,7 +611,7 @@ bool ServerDetail::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSEXTSRVATTRuserData(refVal);
+            setOSEXTSRVATTRUserData(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("locked"))) {
@@ -638,7 +638,7 @@ bool ServerDetail::fromJson(const web::json::value& val)
         {
             ServerSchedulerHints refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOsschedulerHints(refVal);
+            setOsSchedulerHints(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("enterprise_project_id"))) {
@@ -765,25 +765,25 @@ void ServerDetail::unsethostId()
     hostIdIsSet_ = false;
 }
 
-std::string ServerDetail::getOSEXTSRVATTRhost() const
+std::string ServerDetail::getOSEXTSRVATTRHost() const
 {
-    return oSEXTSRVATTRhost_;
+    return oSEXTSRVATTRHost_;
 }
 
-void ServerDetail::setOSEXTSRVATTRhost(const std::string& value)
+void ServerDetail::setOSEXTSRVATTRHost(const std::string& value)
 {
-    oSEXTSRVATTRhost_ = value;
-    oSEXTSRVATTRhostIsSet_ = true;
+    oSEXTSRVATTRHost_ = value;
+    oSEXTSRVATTRHostIsSet_ = true;
 }
 
-bool ServerDetail::oSEXTSRVATTRhostIsSet() const
+bool ServerDetail::oSEXTSRVATTRHostIsSet() const
 {
-    return oSEXTSRVATTRhostIsSet_;
+    return oSEXTSRVATTRHostIsSet_;
 }
 
-void ServerDetail::unsetoSEXTSRVATTRhost()
+void ServerDetail::unsetoSEXTSRVATTRHost()
 {
-    oSEXTSRVATTRhostIsSet_ = false;
+    oSEXTSRVATTRHostIsSet_ = false;
 }
 
 std::map<std::string, std::vector<ServerAddress>>& ServerDetail::getAddresses()
@@ -849,88 +849,88 @@ void ServerDetail::unsetimage()
     imageIsSet_ = false;
 }
 
-std::string ServerDetail::getOSEXTSTStaskState() const
+std::string ServerDetail::getOSEXTSTSTaskState() const
 {
-    return oSEXTSTStaskState_;
+    return oSEXTSTSTaskState_;
 }
 
-void ServerDetail::setOSEXTSTStaskState(const std::string& value)
+void ServerDetail::setOSEXTSTSTaskState(const std::string& value)
 {
-    oSEXTSTStaskState_ = value;
-    oSEXTSTStaskStateIsSet_ = true;
+    oSEXTSTSTaskState_ = value;
+    oSEXTSTSTaskStateIsSet_ = true;
 }
 
-bool ServerDetail::oSEXTSTStaskStateIsSet() const
+bool ServerDetail::oSEXTSTSTaskStateIsSet() const
 {
-    return oSEXTSTStaskStateIsSet_;
+    return oSEXTSTSTaskStateIsSet_;
 }
 
-void ServerDetail::unsetoSEXTSTStaskState()
+void ServerDetail::unsetoSEXTSTSTaskState()
 {
-    oSEXTSTStaskStateIsSet_ = false;
+    oSEXTSTSTaskStateIsSet_ = false;
 }
 
-std::string ServerDetail::getOSEXTSTSvmState() const
+std::string ServerDetail::getOSEXTSTSVmState() const
 {
-    return oSEXTSTSvmState_;
+    return oSEXTSTSVmState_;
 }
 
-void ServerDetail::setOSEXTSTSvmState(const std::string& value)
+void ServerDetail::setOSEXTSTSVmState(const std::string& value)
 {
-    oSEXTSTSvmState_ = value;
-    oSEXTSTSvmStateIsSet_ = true;
+    oSEXTSTSVmState_ = value;
+    oSEXTSTSVmStateIsSet_ = true;
 }
 
-bool ServerDetail::oSEXTSTSvmStateIsSet() const
+bool ServerDetail::oSEXTSTSVmStateIsSet() const
 {
-    return oSEXTSTSvmStateIsSet_;
+    return oSEXTSTSVmStateIsSet_;
 }
 
-void ServerDetail::unsetoSEXTSTSvmState()
+void ServerDetail::unsetoSEXTSTSVmState()
 {
-    oSEXTSTSvmStateIsSet_ = false;
+    oSEXTSTSVmStateIsSet_ = false;
 }
 
-std::string ServerDetail::getOSEXTSRVATTRinstanceName() const
+std::string ServerDetail::getOSEXTSRVATTRInstanceName() const
 {
-    return oSEXTSRVATTRinstanceName_;
+    return oSEXTSRVATTRInstanceName_;
 }
 
-void ServerDetail::setOSEXTSRVATTRinstanceName(const std::string& value)
+void ServerDetail::setOSEXTSRVATTRInstanceName(const std::string& value)
 {
-    oSEXTSRVATTRinstanceName_ = value;
-    oSEXTSRVATTRinstanceNameIsSet_ = true;
+    oSEXTSRVATTRInstanceName_ = value;
+    oSEXTSRVATTRInstanceNameIsSet_ = true;
 }
 
-bool ServerDetail::oSEXTSRVATTRinstanceNameIsSet() const
+bool ServerDetail::oSEXTSRVATTRInstanceNameIsSet() const
 {
-    return oSEXTSRVATTRinstanceNameIsSet_;
+    return oSEXTSRVATTRInstanceNameIsSet_;
 }
 
-void ServerDetail::unsetoSEXTSRVATTRinstanceName()
+void ServerDetail::unsetoSEXTSRVATTRInstanceName()
 {
-    oSEXTSRVATTRinstanceNameIsSet_ = false;
+    oSEXTSRVATTRInstanceNameIsSet_ = false;
 }
 
-std::string ServerDetail::getOSEXTSRVATTRhypervisorHostname() const
+std::string ServerDetail::getOSEXTSRVATTRHypervisorHostname() const
 {
-    return oSEXTSRVATTRhypervisorHostname_;
+    return oSEXTSRVATTRHypervisorHostname_;
 }
 
-void ServerDetail::setOSEXTSRVATTRhypervisorHostname(const std::string& value)
+void ServerDetail::setOSEXTSRVATTRHypervisorHostname(const std::string& value)
 {
-    oSEXTSRVATTRhypervisorHostname_ = value;
-    oSEXTSRVATTRhypervisorHostnameIsSet_ = true;
+    oSEXTSRVATTRHypervisorHostname_ = value;
+    oSEXTSRVATTRHypervisorHostnameIsSet_ = true;
 }
 
-bool ServerDetail::oSEXTSRVATTRhypervisorHostnameIsSet() const
+bool ServerDetail::oSEXTSRVATTRHypervisorHostnameIsSet() const
 {
-    return oSEXTSRVATTRhypervisorHostnameIsSet_;
+    return oSEXTSRVATTRHypervisorHostnameIsSet_;
 }
 
-void ServerDetail::unsetoSEXTSRVATTRhypervisorHostname()
+void ServerDetail::unsetoSEXTSRVATTRHypervisorHostname()
 {
-    oSEXTSRVATTRhypervisorHostnameIsSet_ = false;
+    oSEXTSRVATTRHypervisorHostnameIsSet_ = false;
 }
 
 ServerFlavor ServerDetail::getFlavor() const
@@ -996,25 +996,25 @@ void ServerDetail::unsetsecurityGroups()
     securityGroupsIsSet_ = false;
 }
 
-std::string ServerDetail::getOSEXTAZavailabilityZone() const
+std::string ServerDetail::getOSEXTAZAvailabilityZone() const
 {
-    return oSEXTAZavailabilityZone_;
+    return oSEXTAZAvailabilityZone_;
 }
 
-void ServerDetail::setOSEXTAZavailabilityZone(const std::string& value)
+void ServerDetail::setOSEXTAZAvailabilityZone(const std::string& value)
 {
-    oSEXTAZavailabilityZone_ = value;
-    oSEXTAZavailabilityZoneIsSet_ = true;
+    oSEXTAZAvailabilityZone_ = value;
+    oSEXTAZAvailabilityZoneIsSet_ = true;
 }
 
-bool ServerDetail::oSEXTAZavailabilityZoneIsSet() const
+bool ServerDetail::oSEXTAZAvailabilityZoneIsSet() const
 {
-    return oSEXTAZavailabilityZoneIsSet_;
+    return oSEXTAZAvailabilityZoneIsSet_;
 }
 
-void ServerDetail::unsetoSEXTAZavailabilityZone()
+void ServerDetail::unsetoSEXTAZAvailabilityZone()
 {
-    oSEXTAZavailabilityZoneIsSet_ = false;
+    oSEXTAZAvailabilityZoneIsSet_ = false;
 }
 
 std::string ServerDetail::getUserId() const
@@ -1101,25 +1101,25 @@ void ServerDetail::unsettenantId()
     tenantIdIsSet_ = false;
 }
 
-std::string ServerDetail::getOSDCFdiskConfig() const
+std::string ServerDetail::getOSDCFDiskConfig() const
 {
-    return oSDCFdiskConfig_;
+    return oSDCFDiskConfig_;
 }
 
-void ServerDetail::setOSDCFdiskConfig(const std::string& value)
+void ServerDetail::setOSDCFDiskConfig(const std::string& value)
 {
-    oSDCFdiskConfig_ = value;
-    oSDCFdiskConfigIsSet_ = true;
+    oSDCFDiskConfig_ = value;
+    oSDCFDiskConfigIsSet_ = true;
 }
 
-bool ServerDetail::oSDCFdiskConfigIsSet() const
+bool ServerDetail::oSDCFDiskConfigIsSet() const
 {
-    return oSDCFdiskConfigIsSet_;
+    return oSDCFDiskConfigIsSet_;
 }
 
-void ServerDetail::unsetoSDCFdiskConfig()
+void ServerDetail::unsetoSDCFDiskConfig()
 {
-    oSDCFdiskConfigIsSet_ = false;
+    oSDCFDiskConfigIsSet_ = false;
 }
 
 std::string ServerDetail::getAccessIPv4() const
@@ -1206,25 +1206,25 @@ void ServerDetail::unsetprogress()
     progressIsSet_ = false;
 }
 
-int32_t ServerDetail::getOSEXTSTSpowerState() const
+int32_t ServerDetail::getOSEXTSTSPowerState() const
 {
-    return oSEXTSTSpowerState_;
+    return oSEXTSTSPowerState_;
 }
 
-void ServerDetail::setOSEXTSTSpowerState(int32_t value)
+void ServerDetail::setOSEXTSTSPowerState(int32_t value)
 {
-    oSEXTSTSpowerState_ = value;
-    oSEXTSTSpowerStateIsSet_ = true;
+    oSEXTSTSPowerState_ = value;
+    oSEXTSTSPowerStateIsSet_ = true;
 }
 
-bool ServerDetail::oSEXTSTSpowerStateIsSet() const
+bool ServerDetail::oSEXTSTSPowerStateIsSet() const
 {
-    return oSEXTSTSpowerStateIsSet_;
+    return oSEXTSTSPowerStateIsSet_;
 }
 
-void ServerDetail::unsetoSEXTSTSpowerState()
+void ServerDetail::unsetoSEXTSTSPowerState()
 {
-    oSEXTSTSpowerStateIsSet_ = false;
+    oSEXTSTSPowerStateIsSet_ = false;
 }
 
 std::string ServerDetail::getConfigDrive() const
@@ -1269,67 +1269,67 @@ void ServerDetail::unsetmetadata()
     metadataIsSet_ = false;
 }
 
-std::string ServerDetail::getOSSRVUSGlaunchedAt() const
+std::string ServerDetail::getOSSRVUSGLaunchedAt() const
 {
-    return oSSRVUSGlaunchedAt_;
+    return oSSRVUSGLaunchedAt_;
 }
 
-void ServerDetail::setOSSRVUSGlaunchedAt(const std::string& value)
+void ServerDetail::setOSSRVUSGLaunchedAt(const std::string& value)
 {
-    oSSRVUSGlaunchedAt_ = value;
-    oSSRVUSGlaunchedAtIsSet_ = true;
+    oSSRVUSGLaunchedAt_ = value;
+    oSSRVUSGLaunchedAtIsSet_ = true;
 }
 
-bool ServerDetail::oSSRVUSGlaunchedAtIsSet() const
+bool ServerDetail::oSSRVUSGLaunchedAtIsSet() const
 {
-    return oSSRVUSGlaunchedAtIsSet_;
+    return oSSRVUSGLaunchedAtIsSet_;
 }
 
-void ServerDetail::unsetoSSRVUSGlaunchedAt()
+void ServerDetail::unsetoSSRVUSGLaunchedAt()
 {
-    oSSRVUSGlaunchedAtIsSet_ = false;
+    oSSRVUSGLaunchedAtIsSet_ = false;
 }
 
-std::string ServerDetail::getOSSRVUSGterminatedAt() const
+std::string ServerDetail::getOSSRVUSGTerminatedAt() const
 {
-    return oSSRVUSGterminatedAt_;
+    return oSSRVUSGTerminatedAt_;
 }
 
-void ServerDetail::setOSSRVUSGterminatedAt(const std::string& value)
+void ServerDetail::setOSSRVUSGTerminatedAt(const std::string& value)
 {
-    oSSRVUSGterminatedAt_ = value;
-    oSSRVUSGterminatedAtIsSet_ = true;
+    oSSRVUSGTerminatedAt_ = value;
+    oSSRVUSGTerminatedAtIsSet_ = true;
 }
 
-bool ServerDetail::oSSRVUSGterminatedAtIsSet() const
+bool ServerDetail::oSSRVUSGTerminatedAtIsSet() const
 {
-    return oSSRVUSGterminatedAtIsSet_;
+    return oSSRVUSGTerminatedAtIsSet_;
 }
 
-void ServerDetail::unsetoSSRVUSGterminatedAt()
+void ServerDetail::unsetoSSRVUSGTerminatedAt()
 {
-    oSSRVUSGterminatedAtIsSet_ = false;
+    oSSRVUSGTerminatedAtIsSet_ = false;
 }
 
-std::vector<ServerExtendVolumeAttachment>& ServerDetail::getOsExtendedVolumesvolumesAttached()
+std::vector<ServerExtendVolumeAttachment>& ServerDetail::getOsExtendedVolumesVolumesAttached()
 {
-    return osExtendedVolumesvolumesAttached_;
+    return osExtendedVolumesVolumesAttached_;
 }
 
-void ServerDetail::setOsExtendedVolumesvolumesAttached(const std::vector<ServerExtendVolumeAttachment>& value)
+void ServerDetail::setOsExtendedVolumesVolumesAttached(const std::vector<ServerExtendVolumeAttachment>& value)
 {
-    osExtendedVolumesvolumesAttached_ = value;
-    osExtendedVolumesvolumesAttachedIsSet_ = true;
+    osExtendedVolumesVolumesAttached_ = value;
+    osExtendedVolumesVolumesAttachedIsSet_ = true;
 }
 
-bool ServerDetail::osExtendedVolumesvolumesAttachedIsSet() const
+bool ServerDetail::osExtendedVolumesVolumesAttachedIsSet() const
 {
-    return osExtendedVolumesvolumesAttachedIsSet_;
+    return osExtendedVolumesVolumesAttachedIsSet_;
 }
 
-void ServerDetail::unsetosExtendedVolumesvolumesAttached()
+void ServerDetail::unsetosExtendedVolumesVolumesAttached()
 {
-    osExtendedVolumesvolumesAttachedIsSet_ = false;
+    osExtendedVolumesVolumesAttachedIsSet_ = false;
 }
 
 std::string ServerDetail::getDescription() const
@@ -1374,151 +1374,151 @@ void ServerDetail::unsethostStatus()
     hostStatusIsSet_ = false;
 }
 
-std::string ServerDetail::getOSEXTSRVATTRhostname() const
+std::string ServerDetail::getOSEXTSRVATTRHostname() const
 {
-    return oSEXTSRVATTRhostname_;
+    return oSEXTSRVATTRHostname_;
 }
 
-void ServerDetail::setOSEXTSRVATTRhostname(const std::string& value)
+void ServerDetail::setOSEXTSRVATTRHostname(const std::string& value)
 {
-    oSEXTSRVATTRhostname_ = value;
-    oSEXTSRVATTRhostnameIsSet_ = true;
+    oSEXTSRVATTRHostname_ = value;
+    oSEXTSRVATTRHostnameIsSet_ = true;
 }
 
-bool ServerDetail::oSEXTSRVATTRhostnameIsSet() const
+bool ServerDetail::oSEXTSRVATTRHostnameIsSet() const
 {
-    return oSEXTSRVATTRhostnameIsSet_;
+    return oSEXTSRVATTRHostnameIsSet_;
 }
 
-void ServerDetail::unsetoSEXTSRVATTRhostname()
+void ServerDetail::unsetoSEXTSRVATTRHostname()
 {
-    oSEXTSRVATTRhostnameIsSet_ = false;
+    oSEXTSRVATTRHostnameIsSet_ = false;
 }
 
-std::string ServerDetail::getOSEXTSRVATTRreservationId() const
+std::string ServerDetail::getOSEXTSRVATTRReservationId() const
 {
-    return oSEXTSRVATTRreservationId_;
+    return oSEXTSRVATTRReservationId_;
 }
 
-void ServerDetail::setOSEXTSRVATTRreservationId(const std::string& value)
+void ServerDetail::setOSEXTSRVATTRReservationId(const std::string& value)
 {
-    oSEXTSRVATTRreservationId_ = value;
-    oSEXTSRVATTRreservationIdIsSet_ = true;
+    oSEXTSRVATTRReservationId_ = value;
+    oSEXTSRVATTRReservationIdIsSet_ = true;
 }
 
-bool ServerDetail::oSEXTSRVATTRreservationIdIsSet() const
+bool ServerDetail::oSEXTSRVATTRReservationIdIsSet() const
 {
-    return oSEXTSRVATTRreservationIdIsSet_;
+    return oSEXTSRVATTRReservationIdIsSet_;
 }
 
-void ServerDetail::unsetoSEXTSRVATTRreservationId()
+void ServerDetail::unsetoSEXTSRVATTRReservationId()
 {
-    oSEXTSRVATTRreservationIdIsSet_ = false;
+    oSEXTSRVATTRReservationIdIsSet_ = false;
 }
 
-int32_t ServerDetail::getOSEXTSRVATTRlaunchIndex() const
+int32_t ServerDetail::getOSEXTSRVATTRLaunchIndex() const
 {
-    return oSEXTSRVATTRlaunchIndex_;
+    return oSEXTSRVATTRLaunchIndex_;
 }
 
-void ServerDetail::setOSEXTSRVATTRlaunchIndex(int32_t value)
+void ServerDetail::setOSEXTSRVATTRLaunchIndex(int32_t value)
 {
-    oSEXTSRVATTRlaunchIndex_ = value;
-    oSEXTSRVATTRlaunchIndexIsSet_ = true;
+    oSEXTSRVATTRLaunchIndex_ = value;
+    oSEXTSRVATTRLaunchIndexIsSet_ = true;
 }
 
-bool ServerDetail::oSEXTSRVATTRlaunchIndexIsSet() const
+bool ServerDetail::oSEXTSRVATTRLaunchIndexIsSet() const
 {
-    return oSEXTSRVATTRlaunchIndexIsSet_;
+    return oSEXTSRVATTRLaunchIndexIsSet_;
 }
 
-void ServerDetail::unsetoSEXTSRVATTRlaunchIndex()
+void ServerDetail::unsetoSEXTSRVATTRLaunchIndex()
 {
-    oSEXTSRVATTRlaunchIndexIsSet_ = false;
+    oSEXTSRVATTRLaunchIndexIsSet_ = false;
 }
 
-std::string ServerDetail::getOSEXTSRVATTRkernelId() const
+std::string ServerDetail::getOSEXTSRVATTRKernelId() const
 {
-    return oSEXTSRVATTRkernelId_;
+    return oSEXTSRVATTRKernelId_;
 }
 
-void ServerDetail::setOSEXTSRVATTRkernelId(const std::string& value)
+void ServerDetail::setOSEXTSRVATTRKernelId(const std::string& value)
 {
-    oSEXTSRVATTRkernelId_ = value;
-    oSEXTSRVATTRkernelIdIsSet_ = true;
+    oSEXTSRVATTRKernelId_ = value;
+    oSEXTSRVATTRKernelIdIsSet_ = true;
 }
 
-bool ServerDetail::oSEXTSRVATTRkernelIdIsSet() const
+bool ServerDetail::oSEXTSRVATTRKernelIdIsSet() const
 {
-    return oSEXTSRVATTRkernelIdIsSet_;
+    return oSEXTSRVATTRKernelIdIsSet_;
 }
 
-void ServerDetail::unsetoSEXTSRVATTRkernelId()
+void ServerDetail::unsetoSEXTSRVATTRKernelId()
 {
-    oSEXTSRVATTRkernelIdIsSet_ = false;
+    oSEXTSRVATTRKernelIdIsSet_ = false;
 }
 
-std::string ServerDetail::getOSEXTSRVATTRramdiskId() const
+std::string ServerDetail::getOSEXTSRVATTRRamdiskId() const
 {
-    return oSEXTSRVATTRramdiskId_;
+    return oSEXTSRVATTRRamdiskId_;
 }
 
-void ServerDetail::setOSEXTSRVATTRramdiskId(const std::string& value)
+void ServerDetail::setOSEXTSRVATTRRamdiskId(const std::string& value)
 {
-    oSEXTSRVATTRramdiskId_ = value;
-    oSEXTSRVATTRramdiskIdIsSet_ = true;
+    oSEXTSRVATTRRamdiskId_ = value;
+    oSEXTSRVATTRRamdiskIdIsSet_ = true;
 }
 
-bool ServerDetail::oSEXTSRVATTRramdiskIdIsSet() const
+bool ServerDetail::oSEXTSRVATTRRamdiskIdIsSet() const
 {
-    return oSEXTSRVATTRramdiskIdIsSet_;
+    return oSEXTSRVATTRRamdiskIdIsSet_;
 }
 
-void ServerDetail::unsetoSEXTSRVATTRramdiskId()
+void ServerDetail::unsetoSEXTSRVATTRRamdiskId()
 {
-    oSEXTSRVATTRramdiskIdIsSet_ = false;
+    oSEXTSRVATTRRamdiskIdIsSet_ = false;
 }
 
-std::string ServerDetail::getOSEXTSRVATTRrootDeviceName() const
+std::string ServerDetail::getOSEXTSRVATTRRootDeviceName() const
 {
-    return oSEXTSRVATTRrootDeviceName_;
+    return oSEXTSRVATTRRootDeviceName_;
 }
 
-void ServerDetail::setOSEXTSRVATTRrootDeviceName(const std::string& value)
+void ServerDetail::setOSEXTSRVATTRRootDeviceName(const std::string& value)
 {
-    oSEXTSRVATTRrootDeviceName_ = value;
-    oSEXTSRVATTRrootDeviceNameIsSet_ = true;
+    oSEXTSRVATTRRootDeviceName_ = value;
+    oSEXTSRVATTRRootDeviceNameIsSet_ = true;
 }
 
-bool ServerDetail::oSEXTSRVATTRrootDeviceNameIsSet() const
+bool ServerDetail::oSEXTSRVATTRRootDeviceNameIsSet() const
 {
-    return oSEXTSRVATTRrootDeviceNameIsSet_;
+    return oSEXTSRVATTRRootDeviceNameIsSet_;
 }
 
-void ServerDetail::unsetoSEXTSRVATTRrootDeviceName()
+void ServerDetail::unsetoSEXTSRVATTRRootDeviceName()
 {
-    oSEXTSRVATTRrootDeviceNameIsSet_ = false;
+    oSEXTSRVATTRRootDeviceNameIsSet_ = false;
 }
 
-std::string ServerDetail::getOSEXTSRVATTRuserData() const
+std::string ServerDetail::getOSEXTSRVATTRUserData() const
 {
-    return oSEXTSRVATTRuserData_;
+    return oSEXTSRVATTRUserData_;
 }
 
-void ServerDetail::setOSEXTSRVATTRuserData(const std::string& value)
+void ServerDetail::setOSEXTSRVATTRUserData(const std::string& value)
 {
-    oSEXTSRVATTRuserData_ = value;
-    oSEXTSRVATTRuserDataIsSet_ = true;
+    oSEXTSRVATTRUserData_ = value;
+    oSEXTSRVATTRUserDataIsSet_ = true;
 }
 
-bool ServerDetail::oSEXTSRVATTRuserDataIsSet() const
+bool ServerDetail::oSEXTSRVATTRUserDataIsSet() const
 {
-    return oSEXTSRVATTRuserDataIsSet_;
+    return oSEXTSRVATTRUserDataIsSet_;
 }
 
-void ServerDetail::unsetoSEXTSRVATTRuserData()
+void ServerDetail::unsetoSEXTSRVATTRUserData()
 {
-    oSEXTSRVATTRuserDataIsSet_ = false;
+    oSEXTSRVATTRUserDataIsSet_ = false;
 }
 
 bool ServerDetail::isLocked() const
@@ -1563,25 +1563,25 @@ void ServerDetail::unsettags()
     tagsIsSet_ = false;
 }
 
-ServerSchedulerHints ServerDetail::getOsschedulerHints() const
+ServerSchedulerHints ServerDetail::getOsSchedulerHints() const
 {
-    return osschedulerHints_;
+    return osSchedulerHints_;
 }
 
-void ServerDetail::setOsschedulerHints(const ServerSchedulerHints& value)
+void ServerDetail::setOsSchedulerHints(const ServerSchedulerHints& value)
 {
-    osschedulerHints_ = value;
-    osschedulerHintsIsSet_ = true;
+    osSchedulerHints_ = value;
+    osSchedulerHintsIsSet_ = true;
 }
 
-bool ServerDetail::osschedulerHintsIsSet() const
+bool ServerDetail::osSchedulerHintsIsSet() const
 {
-    return osschedulerHintsIsSet_;
+    return osSchedulerHintsIsSet_;
 }
 
-void ServerDetail::unsetosschedulerHints()
+void ServerDetail::unsetosSchedulerHints()
 {
-    osschedulerHintsIsSet_ = false;
+    osSchedulerHintsIsSet_ = false;
 }
 
 std::string ServerDetail::getEnterpriseProjectId() const

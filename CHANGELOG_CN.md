@@ -1,3 +1,25 @@
+# 3.1.87 2024-05-23
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _新增特性_
+  - 支持接口`ShowRedisBigKeys`、`ShowPasswordlessConfig`、`UpdatePasswordlessConfig`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **OfflineNodes**
+    - 请求参数变更
+      - `* x-auth-token: optional -> required`
+
+### HuaweiCloud SDK RDS
+
+- _新增特性_
+  - 支持接口`DownloadErrorlog`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.1.86 2024-05-16
 
 ### HuaweiCloud SDK CDN

@@ -12,16 +12,16 @@ namespace Model {
 
 VolumeTypeExtraSpecs::VolumeTypeExtraSpecs()
 {
-    rESKEYavailabilityZones_ = "";
-    rESKEYavailabilityZonesIsSet_ = false;
+    rESKEYAvailabilityZones_ = "";
+    rESKEYAvailabilityZonesIsSet_ = false;
     availabilityZone_ = "";
     availabilityZoneIsSet_ = false;
-    osVendorExtendedsoldOutAvailabilityZones_ = "";
-    osVendorExtendedsoldOutAvailabilityZonesIsSet_ = false;
+    osVendorExtendedSoldOutAvailabilityZones_ = "";
+    osVendorExtendedSoldOutAvailabilityZonesIsSet_ = false;
     volumeBackendName_ = "";
     volumeBackendNameIsSet_ = false;
-    hWavailabilityZone_ = "";
-    hWavailabilityZoneIsSet_ = false;
+    hWAvailabilityZone_ = "";
+    hWAvailabilityZoneIsSet_ = false;
 }
 
 VolumeTypeExtraSpecs::~VolumeTypeExtraSpecs() = default;
@@ -34,20 +34,20 @@ web::json::value VolumeTypeExtraSpecs::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(rESKEYavailabilityZonesIsSet_) {
-        val[utility::conversions::to_string_t("RESKEY:availability_zones")] = ModelBase::toJson(rESKEYavailabilityZones_);
+    if(rESKEYAvailabilityZonesIsSet_) {
+        val[utility::conversions::to_string_t("RESKEY:availability_zones")] = ModelBase::toJson(rESKEYAvailabilityZones_);
     }
     if(availabilityZoneIsSet_) {
         val[utility::conversions::to_string_t("availability-zone")] = ModelBase::toJson(availabilityZone_);
     }
-    if(osVendorExtendedsoldOutAvailabilityZonesIsSet_) {
-        val[utility::conversions::to_string_t("os-vendor-extended:sold_out_availability_zones")] = ModelBase::toJson(osVendorExtendedsoldOutAvailabilityZones_);
+    if(osVendorExtendedSoldOutAvailabilityZonesIsSet_) {
+        val[utility::conversions::to_string_t("os-vendor-extended:sold_out_availability_zones")] = ModelBase::toJson(osVendorExtendedSoldOutAvailabilityZones_);
     }
     if(volumeBackendNameIsSet_) {
         val[utility::conversions::to_string_t("volume_backend_name")] = ModelBase::toJson(volumeBackendName_);
     }
-    if(hWavailabilityZoneIsSet_) {
-        val[utility::conversions::to_string_t("HW:availability_zone")] = ModelBase::toJson(hWavailabilityZone_);
+    if(hWAvailabilityZoneIsSet_) {
+        val[utility::conversions::to_string_t("HW:availability_zone")] = ModelBase::toJson(hWAvailabilityZone_);
     }
 
     return val;
@@ -62,7 +62,7 @@ bool VolumeTypeExtraSpecs::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setRESKEYavailabilityZones(refVal);
+            setRESKEYAvailabilityZones(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("availability-zone"))) {
@@ -80,7 +80,7 @@ bool VolumeTypeExtraSpecs::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOsVendorExtendedsoldOutAvailabilityZones(refVal);
+            setOsVendorExtendedSoldOutAvailabilityZones(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("volume_backend_name"))) {
@@ -98,32 +98,32 @@ bool VolumeTypeExtraSpecs::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setHWavailabilityZone(refVal);
+            setHWAvailabilityZone(refVal);
         }
     }
     return ok;
 }
 
 
-std::string VolumeTypeExtraSpecs::getRESKEYavailabilityZones() const
+std::string VolumeTypeExtraSpecs::getRESKEYAvailabilityZones() const
 {
-    return rESKEYavailabilityZones_;
+    return rESKEYAvailabilityZones_;
 }
 
-void VolumeTypeExtraSpecs::setRESKEYavailabilityZones(const std::string& value)
+void VolumeTypeExtraSpecs::setRESKEYAvailabilityZones(const std::string& value)
 {
-    rESKEYavailabilityZones_ = value;
-    rESKEYavailabilityZonesIsSet_ = true;
+    rESKEYAvailabilityZones_ = value;
+    rESKEYAvailabilityZonesIsSet_ = true;
 }
 
-bool VolumeTypeExtraSpecs::rESKEYavailabilityZonesIsSet() const
+bool VolumeTypeExtraSpecs::rESKEYAvailabilityZonesIsSet() const
 {
-    return rESKEYavailabilityZonesIsSet_;
+    return rESKEYAvailabilityZonesIsSet_;
 }
 
-void VolumeTypeExtraSpecs::unsetrESKEYavailabilityZones()
+void VolumeTypeExtraSpecs::unsetrESKEYAvailabilityZones()
 {
-    rESKEYavailabilityZonesIsSet_ = false;
+    rESKEYAvailabilityZonesIsSet_ = false;
 }
 
 std::string VolumeTypeExtraSpecs::getAvailabilityZone() const
@@ -147,25 +147,25 @@ void VolumeTypeExtraSpecs::unsetavailabilityZone()
     availabilityZoneIsSet_ = false;
 }
 
-std::string VolumeTypeExtraSpecs::getOsVendorExtendedsoldOutAvailabilityZones() const
+std::string VolumeTypeExtraSpecs::getOsVendorExtendedSoldOutAvailabilityZones() const
 {
-    return osVendorExtendedsoldOutAvailabilityZones_;
+    return osVendorExtendedSoldOutAvailabilityZones_;
 }
 
-void VolumeTypeExtraSpecs::setOsVendorExtendedsoldOutAvailabilityZones(const std::string& value)
+void VolumeTypeExtraSpecs::setOsVendorExtendedSoldOutAvailabilityZones(const std::string& value)
 {
-    osVendorExtendedsoldOutAvailabilityZones_ = value;
-    osVendorExtendedsoldOutAvailabilityZonesIsSet_ = true;
+    osVendorExtendedSoldOutAvailabilityZones_ = value;
+    osVendorExtendedSoldOutAvailabilityZonesIsSet_ = true;
 }
 
-bool VolumeTypeExtraSpecs::osVendorExtendedsoldOutAvailabilityZonesIsSet() const
+bool VolumeTypeExtraSpecs::osVendorExtendedSoldOutAvailabilityZonesIsSet() const
 {
-    return osVendorExtendedsoldOutAvailabilityZonesIsSet_;
+    return osVendorExtendedSoldOutAvailabilityZonesIsSet_;
 }
 
-void VolumeTypeExtraSpecs::unsetosVendorExtendedsoldOutAvailabilityZones()
+void VolumeTypeExtraSpecs::unsetosVendorExtendedSoldOutAvailabilityZones()
 {
-    osVendorExtendedsoldOutAvailabilityZonesIsSet_ = false;
+    osVendorExtendedSoldOutAvailabilityZonesIsSet_ = false;
 }
 
 std::string VolumeTypeExtraSpecs::getVolumeBackendName() const
@@ -189,25 +189,25 @@ void VolumeTypeExtraSpecs::unsetvolumeBackendName()
     volumeBackendNameIsSet_ = false;
 }
 
-std::string VolumeTypeExtraSpecs::getHWavailabilityZone() const
+std::string VolumeTypeExtraSpecs::getHWAvailabilityZone() const
 {
-    return hWavailabilityZone_;
+    return hWAvailabilityZone_;
 }
 
-void VolumeTypeExtraSpecs::setHWavailabilityZone(const std::string& value)
+void VolumeTypeExtraSpecs::setHWAvailabilityZone(const std::string& value)
 {
-    hWavailabilityZone_ = value;
-    hWavailabilityZoneIsSet_ = true;
+    hWAvailabilityZone_ = value;
+    hWAvailabilityZoneIsSet_ = true;
 }
 
-bool VolumeTypeExtraSpecs::hWavailabilityZoneIsSet() const
+bool VolumeTypeExtraSpecs::hWAvailabilityZoneIsSet() const
 {
-    return hWavailabilityZoneIsSet_;
+    return hWAvailabilityZoneIsSet_;
 }
 
-void VolumeTypeExtraSpecs::unsethWavailabilityZone()
+void VolumeTypeExtraSpecs::unsethWAvailabilityZone()
 {
-    hWavailabilityZoneIsSet_ = false;
+    hWAvailabilityZoneIsSet_ = false;
 }
 
 }

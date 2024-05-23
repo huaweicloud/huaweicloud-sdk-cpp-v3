@@ -42,6 +42,7 @@ public:
     static HttpRequestDef genRequestDefForDeletePostgresqlHbaConf();
     static HttpRequestDef genRequestDefForDeleteRdSforMySqlProxy();
     static HttpRequestDef genRequestDefForDeleteSqlLimit();
+    static HttpRequestDef genRequestDefForDownloadErrorlog();
     static HttpRequestDef genRequestDefForDownloadSlowlog();
     static HttpRequestDef genRequestDefForEnableConfiguration();
     static HttpRequestDef genRequestDefForListAuditlogs();

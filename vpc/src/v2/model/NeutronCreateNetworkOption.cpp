@@ -18,8 +18,8 @@ NeutronCreateNetworkOption::NeutronCreateNetworkOption()
     adminStateUpIsSet_ = false;
     shared_ = false;
     sharedIsSet_ = false;
-    providernetworkType_ = "";
-    providernetworkTypeIsSet_ = false;
+    providerNetworkType_ = "";
+    providerNetworkTypeIsSet_ = false;
     portSecurityEnabled_ = false;
     portSecurityEnabledIsSet_ = false;
 }
@@ -43,8 +43,8 @@ web::json::value NeutronCreateNetworkOption::toJson() const
     if(sharedIsSet_) {
         val[utility::conversions::to_string_t("shared")] = ModelBase::toJson(shared_);
     }
-    if(providernetworkTypeIsSet_) {
-        val[utility::conversions::to_string_t("provider:network_type")] = ModelBase::toJson(providernetworkType_);
+    if(providerNetworkTypeIsSet_) {
+        val[utility::conversions::to_string_t("provider:network_type")] = ModelBase::toJson(providerNetworkType_);
     }
     if(portSecurityEnabledIsSet_) {
         val[utility::conversions::to_string_t("port_security_enabled")] = ModelBase::toJson(portSecurityEnabled_);
@@ -89,7 +89,7 @@ bool NeutronCreateNetworkOption::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setProvidernetworkType(refVal);
+            setProviderNetworkType(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("port_security_enabled"))) {
@@ -168,25 +168,25 @@ void NeutronCreateNetworkOption::unsetshared()
     sharedIsSet_ = false;
 }
 
-std::string NeutronCreateNetworkOption::getProvidernetworkType() const
+std::string NeutronCreateNetworkOption::getProviderNetworkType() const
 {
-    return providernetworkType_;
+    return providerNetworkType_;
 }
 
-void NeutronCreateNetworkOption::setProvidernetworkType(const std::string& value)
+void NeutronCreateNetworkOption::setProviderNetworkType(const std::string& value)
 {
-    providernetworkType_ = value;
-    providernetworkTypeIsSet_ = true;
+    providerNetworkType_ = value;
+    providerNetworkTypeIsSet_ = true;
 }
 
-bool NeutronCreateNetworkOption::providernetworkTypeIsSet() const
+bool NeutronCreateNetworkOption::providerNetworkTypeIsSet() const
 {
-    return providernetworkTypeIsSet_;
+    return providerNetworkTypeIsSet_;
 }
 
-void NeutronCreateNetworkOption::unsetprovidernetworkType()
+void NeutronCreateNetworkOption::unsetproviderNetworkType()
 {
-    providernetworkTypeIsSet_ = false;
+    providerNetworkTypeIsSet_ = false;
 }
 
 bool NeutronCreateNetworkOption::isPortSecurityEnabled() const

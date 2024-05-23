@@ -13,7 +13,7 @@ namespace Model {
 NovaCreateServersRequestBody::NovaCreateServersRequestBody()
 {
     serverIsSet_ = false;
-    osschedulerHintsIsSet_ = false;
+    osSchedulerHintsIsSet_ = false;
 }
 
 NovaCreateServersRequestBody::~NovaCreateServersRequestBody() = default;
@@ -29,8 +29,8 @@ web::json::value NovaCreateServersRequestBody::toJson() const
     if(serverIsSet_) {
         val[utility::conversions::to_string_t("server")] = ModelBase::toJson(server_);
     }
-    if(osschedulerHintsIsSet_) {
-        val[utility::conversions::to_string_t("os:scheduler_hints")] = ModelBase::toJson(osschedulerHints_);
+    if(osSchedulerHintsIsSet_) {
+        val[utility::conversions::to_string_t("os:scheduler_hints")] = ModelBase::toJson(osSchedulerHints_);
     }
 
     return val;
@@ -54,7 +54,7 @@ bool NovaCreateServersRequestBody::fromJson(const web::json::value& val)
         {
             NovaCreateServersSchedulerHint refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOsschedulerHints(refVal);
+            setOsSchedulerHints(refVal);
         }
     }
     return ok;
@@ -82,25 +82,25 @@ void NovaCreateServersRequestBody::unsetserver()
     serverIsSet_ = false;
 }
 
-NovaCreateServersSchedulerHint NovaCreateServersRequestBody::getOsschedulerHints() const
+NovaCreateServersSchedulerHint NovaCreateServersRequestBody::getOsSchedulerHints() const
 {
-    return osschedulerHints_;
+    return osSchedulerHints_;
 }
 
-void NovaCreateServersRequestBody::setOsschedulerHints(const NovaCreateServersSchedulerHint& value)
+void NovaCreateServersRequestBody::setOsSchedulerHints(const NovaCreateServersSchedulerHint& value)
 {
-    osschedulerHints_ = value;
-    osschedulerHintsIsSet_ = true;
+    osSchedulerHints_ = value;
+    osSchedulerHintsIsSet_ = true;
 }
 
-bool NovaCreateServersRequestBody::osschedulerHintsIsSet() const
+bool NovaCreateServersRequestBody::osSchedulerHintsIsSet() const
 {
-    return osschedulerHintsIsSet_;
+    return osSchedulerHintsIsSet_;
 }
 
-void NovaCreateServersRequestBody::unsetosschedulerHints()
+void NovaCreateServersRequestBody::unsetosSchedulerHints()
 {
-    osschedulerHintsIsSet_ = false;
+    osSchedulerHintsIsSet_ = false;
 }
 
 }

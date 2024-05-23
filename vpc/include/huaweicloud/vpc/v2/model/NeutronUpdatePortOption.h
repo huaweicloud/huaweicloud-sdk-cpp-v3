@@ -92,19 +92,19 @@ public:
     /// 绑定的vNIC类型  - normal: 软交换
     /// </summary>
 
-    std::string getBindingvnicType() const;
-    bool bindingvnicTypeIsSet() const;
-    void unsetbindingvnicType();
-    void setBindingvnicType(const std::string& value);
+    std::string getBindingVnicType() const;
+    bool bindingVnicTypeIsSet() const;
+    void unsetbindingVnicType();
+    void setBindingVnicType(const std::string& value);
 
     /// <summary>
     /// 功能说明：扩展属性，提供用户设置自定义信息  - internal_elb字段，布尔类型，普通租户可见。只有在创建内网ELB的虚拟IP的网卡时设置为true。普通租户没有权限更改该字段，由系统维护。 举例：{\&quot;internal_elb\&quot;: true}  - disable_security_groups字段，布尔类型，普通租户可见。默认为false，高性能通信场景下，允许指定为true。仅支持创建port和读取时指定。当前仅支持指定为true，不支持指定为false。 举例：{\&quot;disable_security_groups\&quot;：true }，当前仅支持指定为true，不支持指定为false，指定为true时，FWaaS功能不生效。
     /// </summary>
 
-    std::map<std::string, Object>& getBindingprofile();
-    bool bindingprofileIsSet() const;
-    void unsetbindingprofile();
-    void setBindingprofile(const std::map<std::string, Object>& value);
+    std::map<std::string, Object>& getBindingProfile();
+    bool bindingProfileIsSet() const;
+    void unsetbindingProfile();
+    void setBindingProfile(const std::map<std::string, Object>& value);
 
 
 protected:
@@ -118,10 +118,10 @@ protected:
     bool extraDhcpOptsIsSet_;
     bool portSecurityEnabled_;
     bool portSecurityEnabledIsSet_;
-    std::string bindingvnicType_;
-    bool bindingvnicTypeIsSet_;
-    std::map<std::string, Object> bindingprofile_;
-    bool bindingprofileIsSet_;
+    std::string bindingVnicType_;
+    bool bindingVnicTypeIsSet_;
+    std::map<std::string, Object> bindingProfile_;
+    bool bindingProfileIsSet_;
 
 };
 

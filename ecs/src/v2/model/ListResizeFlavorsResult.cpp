@@ -24,18 +24,18 @@ ListResizeFlavorsResult::ListResizeFlavorsResult()
     diskIsSet_ = false;
     swap_ = "";
     swapIsSet_ = false;
-    oSFLVEXTDATAephemeral_ = 0;
-    oSFLVEXTDATAephemeralIsSet_ = false;
-    oSFLVDISABLEDdisabled_ = false;
-    oSFLVDISABLEDdisabledIsSet_ = false;
+    oSFLVEXTDATAEphemeral_ = 0;
+    oSFLVEXTDATAEphemeralIsSet_ = false;
+    oSFLVDISABLEDDisabled_ = false;
+    oSFLVDISABLEDDisabledIsSet_ = false;
     rxtxFactor_ = 0.0f;
     rxtxFactorIsSet_ = false;
     rxtxQuota_ = "";
     rxtxQuotaIsSet_ = false;
     rxtxCap_ = "";
     rxtxCapIsSet_ = false;
-    osFlavorAccessisPublic_ = false;
-    osFlavorAccessisPublicIsSet_ = false;
+    osFlavorAccessIsPublic_ = false;
+    osFlavorAccessIsPublicIsSet_ = false;
     linksIsSet_ = false;
     extraSpecsIsSet_ = false;
     instanceQuotaIsSet_ = false;
@@ -69,11 +69,11 @@ web::json::value ListResizeFlavorsResult::toJson() const
     if(swapIsSet_) {
         val[utility::conversions::to_string_t("swap")] = ModelBase::toJson(swap_);
     }
-    if(oSFLVEXTDATAephemeralIsSet_) {
-        val[utility::conversions::to_string_t("OS-FLV-EXT-DATA:ephemeral")] = ModelBase::toJson(oSFLVEXTDATAephemeral_);
+    if(oSFLVEXTDATAEphemeralIsSet_) {
+        val[utility::conversions::to_string_t("OS-FLV-EXT-DATA:ephemeral")] = ModelBase::toJson(oSFLVEXTDATAEphemeral_);
     }
-    if(oSFLVDISABLEDdisabledIsSet_) {
-        val[utility::conversions::to_string_t("OS-FLV-DISABLED:disabled")] = ModelBase::toJson(oSFLVDISABLEDdisabled_);
+    if(oSFLVDISABLEDDisabledIsSet_) {
+        val[utility::conversions::to_string_t("OS-FLV-DISABLED:disabled")] = ModelBase::toJson(oSFLVDISABLEDDisabled_);
     }
     if(rxtxFactorIsSet_) {
         val[utility::conversions::to_string_t("rxtx_factor")] = ModelBase::toJson(rxtxFactor_);
@@ -84,8 +84,8 @@ web::json::value ListResizeFlavorsResult::toJson() const
     if(rxtxCapIsSet_) {
         val[utility::conversions::to_string_t("rxtx_cap")] = ModelBase::toJson(rxtxCap_);
     }
-    if(osFlavorAccessisPublicIsSet_) {
-        val[utility::conversions::to_string_t("os-flavor-access:is_public")] = ModelBase::toJson(osFlavorAccessisPublic_);
+    if(osFlavorAccessIsPublicIsSet_) {
+        val[utility::conversions::to_string_t("os-flavor-access:is_public")] = ModelBase::toJson(osFlavorAccessIsPublic_);
     }
     if(linksIsSet_) {
         val[utility::conversions::to_string_t("links")] = ModelBase::toJson(links_);
@@ -163,7 +163,7 @@ bool ListResizeFlavorsResult::fromJson(const web::json::value& val)
         {
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSFLVEXTDATAephemeral(refVal);
+            setOSFLVEXTDATAEphemeral(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("OS-FLV-DISABLED:disabled"))) {
@@ -172,7 +172,7 @@ bool ListResizeFlavorsResult::fromJson(const web::json::value& val)
         {
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSFLVDISABLEDdisabled(refVal);
+            setOSFLVDISABLEDDisabled(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("rxtx_factor"))) {
@@ -208,7 +208,7 @@ bool ListResizeFlavorsResult::fromJson(const web::json::value& val)
         {
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOsFlavorAccessisPublic(refVal);
+            setOsFlavorAccessIsPublic(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("links"))) {
@@ -368,46 +368,46 @@ void ListResizeFlavorsResult::unsetswap()
     swapIsSet_ = false;
 }
 
-int32_t ListResizeFlavorsResult::getOSFLVEXTDATAephemeral() const
+int32_t ListResizeFlavorsResult::getOSFLVEXTDATAEphemeral() const
 {
-    return oSFLVEXTDATAephemeral_;
+    return oSFLVEXTDATAEphemeral_;
 }
 
-void ListResizeFlavorsResult::setOSFLVEXTDATAephemeral(int32_t value)
+void ListResizeFlavorsResult::setOSFLVEXTDATAEphemeral(int32_t value)
 {
-    oSFLVEXTDATAephemeral_ = value;
-    oSFLVEXTDATAephemeralIsSet_ = true;
+    oSFLVEXTDATAEphemeral_ = value;
+    oSFLVEXTDATAEphemeralIsSet_ = true;
 }
 
-bool ListResizeFlavorsResult::oSFLVEXTDATAephemeralIsSet() const
+bool ListResizeFlavorsResult::oSFLVEXTDATAEphemeralIsSet() const
 {
-    return oSFLVEXTDATAephemeralIsSet_;
+    return oSFLVEXTDATAEphemeralIsSet_;
 }
 
-void ListResizeFlavorsResult::unsetoSFLVEXTDATAephemeral()
+void ListResizeFlavorsResult::unsetoSFLVEXTDATAEphemeral()
 {
-    oSFLVEXTDATAephemeralIsSet_ = false;
+    oSFLVEXTDATAEphemeralIsSet_ = false;
 }
 
-bool ListResizeFlavorsResult::isOSFLVDISABLEDdisabled() const
+bool ListResizeFlavorsResult::isOSFLVDISABLEDDisabled() const
 {
-    return oSFLVDISABLEDdisabled_;
+    return oSFLVDISABLEDDisabled_;
 }
 
-void ListResizeFlavorsResult::setOSFLVDISABLEDdisabled(bool value)
+void ListResizeFlavorsResult::setOSFLVDISABLEDDisabled(bool value)
 {
-    oSFLVDISABLEDdisabled_ = value;
-    oSFLVDISABLEDdisabledIsSet_ = true;
+    oSFLVDISABLEDDisabled_ = value;
+    oSFLVDISABLEDDisabledIsSet_ = true;
 }
 
-bool ListResizeFlavorsResult::oSFLVDISABLEDdisabledIsSet() const
+bool ListResizeFlavorsResult::oSFLVDISABLEDDisabledIsSet() const
 {
-    return oSFLVDISABLEDdisabledIsSet_;
+    return oSFLVDISABLEDDisabledIsSet_;
 }
 
-void ListResizeFlavorsResult::unsetoSFLVDISABLEDdisabled()
+void ListResizeFlavorsResult::unsetoSFLVDISABLEDDisabled()
 {
-    oSFLVDISABLEDdisabledIsSet_ = false;
+    oSFLVDISABLEDDisabledIsSet_ = false;
 }
 
 float ListResizeFlavorsResult::getRxtxFactor() const
@@ -473,25 +473,25 @@ void ListResizeFlavorsResult::unsetrxtxCap()
     rxtxCapIsSet_ = false;
 }
 
-bool ListResizeFlavorsResult::isOsFlavorAccessisPublic() const
+bool ListResizeFlavorsResult::isOsFlavorAccessIsPublic() const
 {
-    return osFlavorAccessisPublic_;
+    return osFlavorAccessIsPublic_;
 }
 
-void ListResizeFlavorsResult::setOsFlavorAccessisPublic(bool value)
+void ListResizeFlavorsResult::setOsFlavorAccessIsPublic(bool value)
 {
-    osFlavorAccessisPublic_ = value;
-    osFlavorAccessisPublicIsSet_ = true;
+    osFlavorAccessIsPublic_ = value;
+    osFlavorAccessIsPublicIsSet_ = true;
 }
 
-bool ListResizeFlavorsResult::osFlavorAccessisPublicIsSet() const
+bool ListResizeFlavorsResult::osFlavorAccessIsPublicIsSet() const
 {
-    return osFlavorAccessisPublicIsSet_;
+    return osFlavorAccessIsPublicIsSet_;
 }
 
-void ListResizeFlavorsResult::unsetosFlavorAccessisPublic()
+void ListResizeFlavorsResult::unsetosFlavorAccessIsPublic()
 {
-    osFlavorAccessisPublicIsSet_ = false;
+    osFlavorAccessIsPublicIsSet_ = false;
 }
 
 std::vector<FlavorLink>& ListResizeFlavorsResult::getLinks()

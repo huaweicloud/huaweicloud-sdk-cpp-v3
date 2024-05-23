@@ -12,76 +12,76 @@ namespace Model {
 
 FlavorExtraSpec::FlavorExtraSpec()
 {
-    ecsperformancetype_ = "";
-    ecsperformancetypeIsSet_ = false;
-    hwnumaNodes_ = "";
-    hwnumaNodesIsSet_ = false;
+    ecsPerformancetype_ = "";
+    ecsPerformancetypeIsSet_ = false;
+    hwNumaNodes_ = "";
+    hwNumaNodesIsSet_ = false;
     resourceType_ = "";
     resourceTypeIsSet_ = false;
     hpetSupport_ = "";
     hpetSupportIsSet_ = false;
-    instanceVnictype_ = "";
-    instanceVnictypeIsSet_ = false;
-    instanceVnicinstanceBandwidth_ = "";
-    instanceVnicinstanceBandwidthIsSet_ = false;
-    instanceVnicmaxCount_ = "";
-    instanceVnicmaxCountIsSet_ = false;
-    quotalocalDisk_ = "";
-    quotalocalDiskIsSet_ = false;
-    quotanvmeSsd_ = "";
-    quotanvmeSsdIsSet_ = false;
-    extraSpeciopersistentGrant_ = "";
-    extraSpeciopersistentGrantIsSet_ = false;
-    ecsgeneration_ = "";
-    ecsgenerationIsSet_ = false;
-    ecsvirtualizationEnvTypes_ = "";
-    ecsvirtualizationEnvTypesIsSet_ = false;
-    pciPassthroughenableGpu_ = "";
-    pciPassthroughenableGpuIsSet_ = false;
-    pciPassthroughgpuSpecs_ = "";
-    pciPassthroughgpuSpecsIsSet_ = false;
-    pciPassthroughalias_ = "";
-    pciPassthroughaliasIsSet_ = false;
-    condoperationstatus_ = "";
-    condoperationstatusIsSet_ = false;
-    condoperationaz_ = "";
-    condoperationazIsSet_ = false;
-    quotamaxRate_ = "";
-    quotamaxRateIsSet_ = false;
-    quotaminRate_ = "";
-    quotaminRateIsSet_ = false;
-    quotamaxPps_ = "";
-    quotamaxPpsIsSet_ = false;
-    condoperationcharge_ = "";
-    condoperationchargeIsSet_ = false;
-    condoperationchargestop_ = "";
-    condoperationchargestopIsSet_ = false;
-    condspotoperationaz_ = "";
-    condspotoperationazIsSet_ = false;
-    condoperationroles_ = "";
-    condoperationrolesIsSet_ = false;
-    condspotoperationstatus_ = "";
-    condspotoperationstatusIsSet_ = false;
-    condnetwork_ = "";
-    condnetworkIsSet_ = false;
-    condstorage_ = "";
-    condstorageIsSet_ = false;
-    condcomputeliveResizable_ = "";
-    condcomputeliveResizableIsSet_ = false;
-    condcompute_ = "";
-    condcomputeIsSet_ = false;
-    infogpuname_ = "";
-    infogpunameIsSet_ = false;
-    infocpuname_ = "";
-    infocpunameIsSet_ = false;
-    quotagpu_ = "";
-    quotagpuIsSet_ = false;
-    quotavifMaxNum_ = "";
-    quotavifMaxNumIsSet_ = false;
-    quotasubNetworkInterfaceMaxNum_ = "";
-    quotasubNetworkInterfaceMaxNumIsSet_ = false;
-    ecsinstanceArchitecture_ = "";
-    ecsinstanceArchitectureIsSet_ = false;
+    instanceVnicType_ = "";
+    instanceVnicTypeIsSet_ = false;
+    instanceVnicInstanceBandwidth_ = "";
+    instanceVnicInstanceBandwidthIsSet_ = false;
+    instanceVnicMaxCount_ = "";
+    instanceVnicMaxCountIsSet_ = false;
+    quotaLocalDisk_ = "";
+    quotaLocalDiskIsSet_ = false;
+    quotaNvmeSsd_ = "";
+    quotaNvmeSsdIsSet_ = false;
+    extraSpecIoPersistentGrant_ = "";
+    extraSpecIoPersistentGrantIsSet_ = false;
+    ecsGeneration_ = "";
+    ecsGenerationIsSet_ = false;
+    ecsVirtualizationEnvTypes_ = "";
+    ecsVirtualizationEnvTypesIsSet_ = false;
+    pciPassthroughEnableGpu_ = "";
+    pciPassthroughEnableGpuIsSet_ = false;
+    pciPassthroughGpuSpecs_ = "";
+    pciPassthroughGpuSpecsIsSet_ = false;
+    pciPassthroughAlias_ = "";
+    pciPassthroughAliasIsSet_ = false;
+    condOperationStatus_ = "";
+    condOperationStatusIsSet_ = false;
+    condOperationAz_ = "";
+    condOperationAzIsSet_ = false;
+    quotaMaxRate_ = "";
+    quotaMaxRateIsSet_ = false;
+    quotaMinRate_ = "";
+    quotaMinRateIsSet_ = false;
+    quotaMaxPps_ = "";
+    quotaMaxPpsIsSet_ = false;
+    condOperationCharge_ = "";
+    condOperationChargeIsSet_ = false;
+    condOperationChargeStop_ = "";
+    condOperationChargeStopIsSet_ = false;
+    condSpotOperationAz_ = "";
+    condSpotOperationAzIsSet_ = false;
+    condOperationRoles_ = "";
+    condOperationRolesIsSet_ = false;
+    condSpotOperationStatus_ = "";
+    condSpotOperationStatusIsSet_ = false;
+    condNetwork_ = "";
+    condNetworkIsSet_ = false;
+    condStorage_ = "";
+    condStorageIsSet_ = false;
+    condComputeLiveResizable_ = "";
+    condComputeLiveResizableIsSet_ = false;
+    condCompute_ = "";
+    condComputeIsSet_ = false;
+    infoGpuName_ = "";
+    infoGpuNameIsSet_ = false;
+    infoCpuName_ = "";
+    infoCpuNameIsSet_ = false;
+    quotaGpu_ = "";
+    quotaGpuIsSet_ = false;
+    quotaVifMaxNum_ = "";
+    quotaVifMaxNumIsSet_ = false;
+    quotaSubNetworkInterfaceMaxNum_ = "";
+    quotaSubNetworkInterfaceMaxNumIsSet_ = false;
+    ecsInstanceArchitecture_ = "";
+    ecsInstanceArchitectureIsSet_ = false;
 }
 
 FlavorExtraSpec::~FlavorExtraSpec() = default;
@@ -94,11 +94,11 @@ web::json::value FlavorExtraSpec::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(ecsperformancetypeIsSet_) {
-        val[utility::conversions::to_string_t("ecs:performancetype")] = ModelBase::toJson(ecsperformancetype_);
+    if(ecsPerformancetypeIsSet_) {
+        val[utility::conversions::to_string_t("ecs:performancetype")] = ModelBase::toJson(ecsPerformancetype_);
     }
-    if(hwnumaNodesIsSet_) {
-        val[utility::conversions::to_string_t("hw:numa_nodes")] = ModelBase::toJson(hwnumaNodes_);
+    if(hwNumaNodesIsSet_) {
+        val[utility::conversions::to_string_t("hw:numa_nodes")] = ModelBase::toJson(hwNumaNodes_);
     }
     if(resourceTypeIsSet_) {
         val[utility::conversions::to_string_t("resource_type")] = ModelBase::toJson(resourceType_);
@@ -106,98 +106,98 @@ web::json::value FlavorExtraSpec::toJson() const
     if(hpetSupportIsSet_) {
         val[utility::conversions::to_string_t("hpet_support")] = ModelBase::toJson(hpetSupport_);
     }
-    if(instanceVnictypeIsSet_) {
-        val[utility::conversions::to_string_t("instance_vnic:type")] = ModelBase::toJson(instanceVnictype_);
+    if(instanceVnicTypeIsSet_) {
+        val[utility::conversions::to_string_t("instance_vnic:type")] = ModelBase::toJson(instanceVnicType_);
     }
-    if(instanceVnicinstanceBandwidthIsSet_) {
-        val[utility::conversions::to_string_t("instance_vnic:instance_bandwidth")] = ModelBase::toJson(instanceVnicinstanceBandwidth_);
+    if(instanceVnicInstanceBandwidthIsSet_) {
+        val[utility::conversions::to_string_t("instance_vnic:instance_bandwidth")] = ModelBase::toJson(instanceVnicInstanceBandwidth_);
     }
-    if(instanceVnicmaxCountIsSet_) {
-        val[utility::conversions::to_string_t("instance_vnic:max_count")] = ModelBase::toJson(instanceVnicmaxCount_);
+    if(instanceVnicMaxCountIsSet_) {
+        val[utility::conversions::to_string_t("instance_vnic:max_count")] = ModelBase::toJson(instanceVnicMaxCount_);
     }
-    if(quotalocalDiskIsSet_) {
-        val[utility::conversions::to_string_t("quota:local_disk")] = ModelBase::toJson(quotalocalDisk_);
+    if(quotaLocalDiskIsSet_) {
+        val[utility::conversions::to_string_t("quota:local_disk")] = ModelBase::toJson(quotaLocalDisk_);
     }
-    if(quotanvmeSsdIsSet_) {
-        val[utility::conversions::to_string_t("quota:nvme_ssd")] = ModelBase::toJson(quotanvmeSsd_);
+    if(quotaNvmeSsdIsSet_) {
+        val[utility::conversions::to_string_t("quota:nvme_ssd")] = ModelBase::toJson(quotaNvmeSsd_);
     }
-    if(extraSpeciopersistentGrantIsSet_) {
-        val[utility::conversions::to_string_t("extra_spec:io:persistent_grant")] = ModelBase::toJson(extraSpeciopersistentGrant_);
+    if(extraSpecIoPersistentGrantIsSet_) {
+        val[utility::conversions::to_string_t("extra_spec:io:persistent_grant")] = ModelBase::toJson(extraSpecIoPersistentGrant_);
     }
-    if(ecsgenerationIsSet_) {
-        val[utility::conversions::to_string_t("ecs:generation")] = ModelBase::toJson(ecsgeneration_);
+    if(ecsGenerationIsSet_) {
+        val[utility::conversions::to_string_t("ecs:generation")] = ModelBase::toJson(ecsGeneration_);
     }
-    if(ecsvirtualizationEnvTypesIsSet_) {
-        val[utility::conversions::to_string_t("ecs:virtualization_env_types")] = ModelBase::toJson(ecsvirtualizationEnvTypes_);
+    if(ecsVirtualizationEnvTypesIsSet_) {
+        val[utility::conversions::to_string_t("ecs:virtualization_env_types")] = ModelBase::toJson(ecsVirtualizationEnvTypes_);
     }
-    if(pciPassthroughenableGpuIsSet_) {
-        val[utility::conversions::to_string_t("pci_passthrough:enable_gpu")] = ModelBase::toJson(pciPassthroughenableGpu_);
+    if(pciPassthroughEnableGpuIsSet_) {
+        val[utility::conversions::to_string_t("pci_passthrough:enable_gpu")] = ModelBase::toJson(pciPassthroughEnableGpu_);
     }
-    if(pciPassthroughgpuSpecsIsSet_) {
-        val[utility::conversions::to_string_t("pci_passthrough:gpu_specs")] = ModelBase::toJson(pciPassthroughgpuSpecs_);
+    if(pciPassthroughGpuSpecsIsSet_) {
+        val[utility::conversions::to_string_t("pci_passthrough:gpu_specs")] = ModelBase::toJson(pciPassthroughGpuSpecs_);
     }
-    if(pciPassthroughaliasIsSet_) {
-        val[utility::conversions::to_string_t("pci_passthrough:alias")] = ModelBase::toJson(pciPassthroughalias_);
+    if(pciPassthroughAliasIsSet_) {
+        val[utility::conversions::to_string_t("pci_passthrough:alias")] = ModelBase::toJson(pciPassthroughAlias_);
     }
-    if(condoperationstatusIsSet_) {
-        val[utility::conversions::to_string_t("cond:operation:status")] = ModelBase::toJson(condoperationstatus_);
+    if(condOperationStatusIsSet_) {
+        val[utility::conversions::to_string_t("cond:operation:status")] = ModelBase::toJson(condOperationStatus_);
     }
-    if(condoperationazIsSet_) {
-        val[utility::conversions::to_string_t("cond:operation:az")] = ModelBase::toJson(condoperationaz_);
+    if(condOperationAzIsSet_) {
+        val[utility::conversions::to_string_t("cond:operation:az")] = ModelBase::toJson(condOperationAz_);
     }
-    if(quotamaxRateIsSet_) {
-        val[utility::conversions::to_string_t("quota:max_rate")] = ModelBase::toJson(quotamaxRate_);
+    if(quotaMaxRateIsSet_) {
+        val[utility::conversions::to_string_t("quota:max_rate")] = ModelBase::toJson(quotaMaxRate_);
     }
-    if(quotaminRateIsSet_) {
-        val[utility::conversions::to_string_t("quota:min_rate")] = ModelBase::toJson(quotaminRate_);
+    if(quotaMinRateIsSet_) {
+        val[utility::conversions::to_string_t("quota:min_rate")] = ModelBase::toJson(quotaMinRate_);
     }
-    if(quotamaxPpsIsSet_) {
-        val[utility::conversions::to_string_t("quota:max_pps")] = ModelBase::toJson(quotamaxPps_);
+    if(quotaMaxPpsIsSet_) {
+        val[utility::conversions::to_string_t("quota:max_pps")] = ModelBase::toJson(quotaMaxPps_);
     }
-    if(condoperationchargeIsSet_) {
-        val[utility::conversions::to_string_t("cond:operation:charge")] = ModelBase::toJson(condoperationcharge_);
+    if(condOperationChargeIsSet_) {
+        val[utility::conversions::to_string_t("cond:operation:charge")] = ModelBase::toJson(condOperationCharge_);
     }
-    if(condoperationchargestopIsSet_) {
-        val[utility::conversions::to_string_t("cond:operation:charge:stop")] = ModelBase::toJson(condoperationchargestop_);
+    if(condOperationChargeStopIsSet_) {
+        val[utility::conversions::to_string_t("cond:operation:charge:stop")] = ModelBase::toJson(condOperationChargeStop_);
     }
-    if(condspotoperationazIsSet_) {
-        val[utility::conversions::to_string_t("cond:spot:operation:az")] = ModelBase::toJson(condspotoperationaz_);
+    if(condSpotOperationAzIsSet_) {
+        val[utility::conversions::to_string_t("cond:spot:operation:az")] = ModelBase::toJson(condSpotOperationAz_);
     }
-    if(condoperationrolesIsSet_) {
-        val[utility::conversions::to_string_t("cond:operation:roles")] = ModelBase::toJson(condoperationroles_);
+    if(condOperationRolesIsSet_) {
+        val[utility::conversions::to_string_t("cond:operation:roles")] = ModelBase::toJson(condOperationRoles_);
     }
-    if(condspotoperationstatusIsSet_) {
-        val[utility::conversions::to_string_t("cond:spot:operation:status")] = ModelBase::toJson(condspotoperationstatus_);
+    if(condSpotOperationStatusIsSet_) {
+        val[utility::conversions::to_string_t("cond:spot:operation:status")] = ModelBase::toJson(condSpotOperationStatus_);
     }
-    if(condnetworkIsSet_) {
-        val[utility::conversions::to_string_t("cond:network")] = ModelBase::toJson(condnetwork_);
+    if(condNetworkIsSet_) {
+        val[utility::conversions::to_string_t("cond:network")] = ModelBase::toJson(condNetwork_);
     }
-    if(condstorageIsSet_) {
-        val[utility::conversions::to_string_t("cond:storage")] = ModelBase::toJson(condstorage_);
+    if(condStorageIsSet_) {
+        val[utility::conversions::to_string_t("cond:storage")] = ModelBase::toJson(condStorage_);
     }
-    if(condcomputeliveResizableIsSet_) {
-        val[utility::conversions::to_string_t("cond:compute:live_resizable")] = ModelBase::toJson(condcomputeliveResizable_);
+    if(condComputeLiveResizableIsSet_) {
+        val[utility::conversions::to_string_t("cond:compute:live_resizable")] = ModelBase::toJson(condComputeLiveResizable_);
     }
-    if(condcomputeIsSet_) {
-        val[utility::conversions::to_string_t("cond:compute")] = ModelBase::toJson(condcompute_);
+    if(condComputeIsSet_) {
+        val[utility::conversions::to_string_t("cond:compute")] = ModelBase::toJson(condCompute_);
     }
-    if(infogpunameIsSet_) {
-        val[utility::conversions::to_string_t("info:gpu:name")] = ModelBase::toJson(infogpuname_);
+    if(infoGpuNameIsSet_) {
+        val[utility::conversions::to_string_t("info:gpu:name")] = ModelBase::toJson(infoGpuName_);
     }
-    if(infocpunameIsSet_) {
-        val[utility::conversions::to_string_t("info:cpu:name")] = ModelBase::toJson(infocpuname_);
+    if(infoCpuNameIsSet_) {
+        val[utility::conversions::to_string_t("info:cpu:name")] = ModelBase::toJson(infoCpuName_);
     }
-    if(quotagpuIsSet_) {
-        val[utility::conversions::to_string_t("quota:gpu")] = ModelBase::toJson(quotagpu_);
+    if(quotaGpuIsSet_) {
+        val[utility::conversions::to_string_t("quota:gpu")] = ModelBase::toJson(quotaGpu_);
     }
-    if(quotavifMaxNumIsSet_) {
-        val[utility::conversions::to_string_t("quota:vif_max_num")] = ModelBase::toJson(quotavifMaxNum_);
+    if(quotaVifMaxNumIsSet_) {
+        val[utility::conversions::to_string_t("quota:vif_max_num")] = ModelBase::toJson(quotaVifMaxNum_);
     }
-    if(quotasubNetworkInterfaceMaxNumIsSet_) {
-        val[utility::conversions::to_string_t("quota:sub_network_interface_max_num")] = ModelBase::toJson(quotasubNetworkInterfaceMaxNum_);
+    if(quotaSubNetworkInterfaceMaxNumIsSet_) {
+        val[utility::conversions::to_string_t("quota:sub_network_interface_max_num")] = ModelBase::toJson(quotaSubNetworkInterfaceMaxNum_);
     }
-    if(ecsinstanceArchitectureIsSet_) {
-        val[utility::conversions::to_string_t("ecs:instance_architecture")] = ModelBase::toJson(ecsinstanceArchitecture_);
+    if(ecsInstanceArchitectureIsSet_) {
+        val[utility::conversions::to_string_t("ecs:instance_architecture")] = ModelBase::toJson(ecsInstanceArchitecture_);
     }
 
     return val;
@@ -212,7 +212,7 @@ bool FlavorExtraSpec::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setEcsperformancetype(refVal);
+            setEcsPerformancetype(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("hw:numa_nodes"))) {
@@ -221,7 +221,7 @@ bool FlavorExtraSpec::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setHwnumaNodes(refVal);
+            setHwNumaNodes(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("resource_type"))) {
@@ -248,7 +248,7 @@ bool FlavorExtraSpec::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setInstanceVnictype(refVal);
+            setInstanceVnicType(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("instance_vnic:instance_bandwidth"))) {
@@ -257,7 +257,7 @@ bool FlavorExtraSpec::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setInstanceVnicinstanceBandwidth(refVal);
+            setInstanceVnicInstanceBandwidth(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("instance_vnic:max_count"))) {
@@ -266,7 +266,7 @@ bool FlavorExtraSpec::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setInstanceVnicmaxCount(refVal);
+            setInstanceVnicMaxCount(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("quota:local_disk"))) {
@@ -275,7 +275,7 @@ bool FlavorExtraSpec::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setQuotalocalDisk(refVal);
+            setQuotaLocalDisk(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("quota:nvme_ssd"))) {
@@ -284,7 +284,7 @@ bool FlavorExtraSpec::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setQuotanvmeSsd(refVal);
+            setQuotaNvmeSsd(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("extra_spec:io:persistent_grant"))) {
@@ -293,7 +293,7 @@ bool FlavorExtraSpec::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setExtraSpeciopersistentGrant(refVal);
+            setExtraSpecIoPersistentGrant(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("ecs:generation"))) {
@@ -302,7 +302,7 @@ bool FlavorExtraSpec::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setEcsgeneration(refVal);
+            setEcsGeneration(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("ecs:virtualization_env_types"))) {
@@ -311,7 +311,7 @@ bool FlavorExtraSpec::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setEcsvirtualizationEnvTypes(refVal);
+            setEcsVirtualizationEnvTypes(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("pci_passthrough:enable_gpu"))) {
@@ -320,7 +320,7 @@ bool FlavorExtraSpec::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setPciPassthroughenableGpu(refVal);
+            setPciPassthroughEnableGpu(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("pci_passthrough:gpu_specs"))) {
@@ -329,7 +329,7 @@ bool FlavorExtraSpec::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setPciPassthroughgpuSpecs(refVal);
+            setPciPassthroughGpuSpecs(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("pci_passthrough:alias"))) {
@@ -338,7 +338,7 @@ bool FlavorExtraSpec::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setPciPassthroughalias(refVal);
+            setPciPassthroughAlias(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("cond:operation:status"))) {
@@ -347,7 +347,7 @@ bool FlavorExtraSpec::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setCondoperationstatus(refVal);
+            setCondOperationStatus(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("cond:operation:az"))) {
@@ -356,7 +356,7 @@ bool FlavorExtraSpec::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setCondoperationaz(refVal);
+            setCondOperationAz(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("quota:max_rate"))) {
@@ -365,7 +365,7 @@ bool FlavorExtraSpec::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setQuotamaxRate(refVal);
+            setQuotaMaxRate(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("quota:min_rate"))) {
@@ -374,7 +374,7 @@ bool FlavorExtraSpec::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setQuotaminRate(refVal);
+            setQuotaMinRate(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("quota:max_pps"))) {
@@ -383,7 +383,7 @@ bool FlavorExtraSpec::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setQuotamaxPps(refVal);
+            setQuotaMaxPps(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("cond:operation:charge"))) {
@@ -392,7 +392,7 @@ bool FlavorExtraSpec::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setCondoperationcharge(refVal);
+            setCondOperationCharge(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("cond:operation:charge:stop"))) {
@@ -401,7 +401,7 @@ bool FlavorExtraSpec::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setCondoperationchargestop(refVal);
+            setCondOperationChargeStop(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("cond:spot:operation:az"))) {
@@ -410,7 +410,7 @@ bool FlavorExtraSpec::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setCondspotoperationaz(refVal);
+            setCondSpotOperationAz(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("cond:operation:roles"))) {
@@ -419,7 +419,7 @@ bool FlavorExtraSpec::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setCondoperationroles(refVal);
+            setCondOperationRoles(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("cond:spot:operation:status"))) {
@@ -428,7 +428,7 @@ bool FlavorExtraSpec::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setCondspotoperationstatus(refVal);
+            setCondSpotOperationStatus(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("cond:network"))) {
@@ -437,7 +437,7 @@ bool FlavorExtraSpec::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setCondnetwork(refVal);
+            setCondNetwork(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("cond:storage"))) {
@@ -446,7 +446,7 @@ bool FlavorExtraSpec::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setCondstorage(refVal);
+            setCondStorage(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("cond:compute:live_resizable"))) {
@@ -455,7 +455,7 @@ bool FlavorExtraSpec::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setCondcomputeliveResizable(refVal);
+            setCondComputeLiveResizable(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("cond:compute"))) {
@@ -464,7 +464,7 @@ bool FlavorExtraSpec::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setCondcompute(refVal);
+            setCondCompute(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("info:gpu:name"))) {
@@ -473,7 +473,7 @@ bool FlavorExtraSpec::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setInfogpuname(refVal);
+            setInfoGpuName(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("info:cpu:name"))) {
@@ -482,7 +482,7 @@ bool FlavorExtraSpec::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setInfocpuname(refVal);
+            setInfoCpuName(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("quota:gpu"))) {
@@ -491,7 +491,7 @@ bool FlavorExtraSpec::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setQuotagpu(refVal);
+            setQuotaGpu(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("quota:vif_max_num"))) {
@@ -500,7 +500,7 @@ bool FlavorExtraSpec::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setQuotavifMaxNum(refVal);
+            setQuotaVifMaxNum(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("quota:sub_network_interface_max_num"))) {
@@ -509,7 +509,7 @@ bool FlavorExtraSpec::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setQuotasubNetworkInterfaceMaxNum(refVal);
+            setQuotaSubNetworkInterfaceMaxNum(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("ecs:instance_architecture"))) {
@@ -518,53 +518,53 @@ bool FlavorExtraSpec::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setEcsinstanceArchitecture(refVal);
+            setEcsInstanceArchitecture(refVal);
         }
     }
     return ok;
 }
 
 
-std::string FlavorExtraSpec::getEcsperformancetype() const
+std::string FlavorExtraSpec::getEcsPerformancetype() const
 {
-    return ecsperformancetype_;
+    return ecsPerformancetype_;
 }
 
-void FlavorExtraSpec::setEcsperformancetype(const std::string& value)
+void FlavorExtraSpec::setEcsPerformancetype(const std::string& value)
 {
-    ecsperformancetype_ = value;
-    ecsperformancetypeIsSet_ = true;
+    ecsPerformancetype_ = value;
+    ecsPerformancetypeIsSet_ = true;
 }
 
-bool FlavorExtraSpec::ecsperformancetypeIsSet() const
+bool FlavorExtraSpec::ecsPerformancetypeIsSet() const
 {
-    return ecsperformancetypeIsSet_;
+    return ecsPerformancetypeIsSet_;
 }
 
-void FlavorExtraSpec::unsetecsperformancetype()
+void FlavorExtraSpec::unsetecsPerformancetype()
 {
-    ecsperformancetypeIsSet_ = false;
+    ecsPerformancetypeIsSet_ = false;
 }
 
-std::string FlavorExtraSpec::getHwnumaNodes() const
+std::string FlavorExtraSpec::getHwNumaNodes() const
 {
-    return hwnumaNodes_;
+    return hwNumaNodes_;
 }
 
-void FlavorExtraSpec::setHwnumaNodes(const std::string& value)
+void FlavorExtraSpec::setHwNumaNodes(const std::string& value)
 {
-    hwnumaNodes_ = value;
-    hwnumaNodesIsSet_ = true;
+    hwNumaNodes_ = value;
+    hwNumaNodesIsSet_ = true;
 }
 
-bool FlavorExtraSpec::hwnumaNodesIsSet() const
+bool FlavorExtraSpec::hwNumaNodesIsSet() const
 {
-    return hwnumaNodesIsSet_;
+    return hwNumaNodesIsSet_;
 }
 
-void FlavorExtraSpec::unsethwnumaNodes()
+void FlavorExtraSpec::unsethwNumaNodes()
 {
-    hwnumaNodesIsSet_ = false;
+    hwNumaNodesIsSet_ = false;
 }
 
 std::string FlavorExtraSpec::getResourceType() const
@@ -609,655 +609,655 @@ void FlavorExtraSpec::unsethpetSupport()
     hpetSupportIsSet_ = false;
 }
 
-std::string FlavorExtraSpec::getInstanceVnictype() const
+std::string FlavorExtraSpec::getInstanceVnicType() const
 {
-    return instanceVnictype_;
+    return instanceVnicType_;
 }
 
-void FlavorExtraSpec::setInstanceVnictype(const std::string& value)
+void FlavorExtraSpec::setInstanceVnicType(const std::string& value)
 {
-    instanceVnictype_ = value;
-    instanceVnictypeIsSet_ = true;
+    instanceVnicType_ = value;
+    instanceVnicTypeIsSet_ = true;
 }
 
-bool FlavorExtraSpec::instanceVnictypeIsSet() const
+bool FlavorExtraSpec::instanceVnicTypeIsSet() const
 {
-    return instanceVnictypeIsSet_;
+    return instanceVnicTypeIsSet_;
 }
 
-void FlavorExtraSpec::unsetinstanceVnictype()
+void FlavorExtraSpec::unsetinstanceVnicType()
 {
-    instanceVnictypeIsSet_ = false;
+    instanceVnicTypeIsSet_ = false;
 }
 
-std::string FlavorExtraSpec::getInstanceVnicinstanceBandwidth() const
+std::string FlavorExtraSpec::getInstanceVnicInstanceBandwidth() const
 {
-    return instanceVnicinstanceBandwidth_;
+    return instanceVnicInstanceBandwidth_;
 }
 
-void FlavorExtraSpec::setInstanceVnicinstanceBandwidth(const std::string& value)
+void FlavorExtraSpec::setInstanceVnicInstanceBandwidth(const std::string& value)
 {
-    instanceVnicinstanceBandwidth_ = value;
-    instanceVnicinstanceBandwidthIsSet_ = true;
+    instanceVnicInstanceBandwidth_ = value;
+    instanceVnicInstanceBandwidthIsSet_ = true;
 }
 
-bool FlavorExtraSpec::instanceVnicinstanceBandwidthIsSet() const
+bool FlavorExtraSpec::instanceVnicInstanceBandwidthIsSet() const
 {
-    return instanceVnicinstanceBandwidthIsSet_;
+    return instanceVnicInstanceBandwidthIsSet_;
 }
 
-void FlavorExtraSpec::unsetinstanceVnicinstanceBandwidth()
+void FlavorExtraSpec::unsetinstanceVnicInstanceBandwidth()
 {
-    instanceVnicinstanceBandwidthIsSet_ = false;
+    instanceVnicInstanceBandwidthIsSet_ = false;
 }
 
-std::string FlavorExtraSpec::getInstanceVnicmaxCount() const
+std::string FlavorExtraSpec::getInstanceVnicMaxCount() const
 {
-    return instanceVnicmaxCount_;
+    return instanceVnicMaxCount_;
 }
 
-void FlavorExtraSpec::setInstanceVnicmaxCount(const std::string& value)
+void FlavorExtraSpec::setInstanceVnicMaxCount(const std::string& value)
 {
-    instanceVnicmaxCount_ = value;
-    instanceVnicmaxCountIsSet_ = true;
+    instanceVnicMaxCount_ = value;
+    instanceVnicMaxCountIsSet_ = true;
 }
 
-bool FlavorExtraSpec::instanceVnicmaxCountIsSet() const
+bool FlavorExtraSpec::instanceVnicMaxCountIsSet() const
 {
-    return instanceVnicmaxCountIsSet_;
+    return instanceVnicMaxCountIsSet_;
 }
 
-void FlavorExtraSpec::unsetinstanceVnicmaxCount()
+void FlavorExtraSpec::unsetinstanceVnicMaxCount()
 {
-    instanceVnicmaxCountIsSet_ = false;
+    instanceVnicMaxCountIsSet_ = false;
 }
 
-std::string FlavorExtraSpec::getQuotalocalDisk() const
+std::string FlavorExtraSpec::getQuotaLocalDisk() const
 {
-    return quotalocalDisk_;
+    return quotaLocalDisk_;
 }
 
-void FlavorExtraSpec::setQuotalocalDisk(const std::string& value)
+void FlavorExtraSpec::setQuotaLocalDisk(const std::string& value)
 {
-    quotalocalDisk_ = value;
-    quotalocalDiskIsSet_ = true;
+    quotaLocalDisk_ = value;
+    quotaLocalDiskIsSet_ = true;
 }
 
-bool FlavorExtraSpec::quotalocalDiskIsSet() const
+bool FlavorExtraSpec::quotaLocalDiskIsSet() const
 {
-    return quotalocalDiskIsSet_;
+    return quotaLocalDiskIsSet_;
 }
 
-void FlavorExtraSpec::unsetquotalocalDisk()
+void FlavorExtraSpec::unsetquotaLocalDisk()
 {
-    quotalocalDiskIsSet_ = false;
+    quotaLocalDiskIsSet_ = false;
 }
 
-std::string FlavorExtraSpec::getQuotanvmeSsd() const
+std::string FlavorExtraSpec::getQuotaNvmeSsd() const
 {
-    return quotanvmeSsd_;
+    return quotaNvmeSsd_;
 }
 
-void FlavorExtraSpec::setQuotanvmeSsd(const std::string& value)
+void FlavorExtraSpec::setQuotaNvmeSsd(const std::string& value)
 {
-    quotanvmeSsd_ = value;
-    quotanvmeSsdIsSet_ = true;
+    quotaNvmeSsd_ = value;
+    quotaNvmeSsdIsSet_ = true;
 }
 
-bool FlavorExtraSpec::quotanvmeSsdIsSet() const
+bool FlavorExtraSpec::quotaNvmeSsdIsSet() const
 {
-    return quotanvmeSsdIsSet_;
+    return quotaNvmeSsdIsSet_;
 }
 
-void FlavorExtraSpec::unsetquotanvmeSsd()
+void FlavorExtraSpec::unsetquotaNvmeSsd()
 {
-    quotanvmeSsdIsSet_ = false;
+    quotaNvmeSsdIsSet_ = false;
 }
 
-std::string FlavorExtraSpec::getExtraSpeciopersistentGrant() const
+std::string FlavorExtraSpec::getExtraSpecIoPersistentGrant() const
 {
-    return extraSpeciopersistentGrant_;
+    return extraSpecIoPersistentGrant_;
 }
 
-void FlavorExtraSpec::setExtraSpeciopersistentGrant(const std::string& value)
+void FlavorExtraSpec::setExtraSpecIoPersistentGrant(const std::string& value)
 {
-    extraSpeciopersistentGrant_ = value;
-    extraSpeciopersistentGrantIsSet_ = true;
+    extraSpecIoPersistentGrant_ = value;
+    extraSpecIoPersistentGrantIsSet_ = true;
 }
 
-bool FlavorExtraSpec::extraSpeciopersistentGrantIsSet() const
+bool FlavorExtraSpec::extraSpecIoPersistentGrantIsSet() const
 {
-    return extraSpeciopersistentGrantIsSet_;
+    return extraSpecIoPersistentGrantIsSet_;
 }
 
-void FlavorExtraSpec::unsetextraSpeciopersistentGrant()
+void FlavorExtraSpec::unsetextraSpecIoPersistentGrant()
 {
-    extraSpeciopersistentGrantIsSet_ = false;
+    extraSpecIoPersistentGrantIsSet_ = false;
 }
 
-std::string FlavorExtraSpec::getEcsgeneration() const
+std::string FlavorExtraSpec::getEcsGeneration() const
 {
-    return ecsgeneration_;
+    return ecsGeneration_;
 }
 
-void FlavorExtraSpec::setEcsgeneration(const std::string& value)
+void FlavorExtraSpec::setEcsGeneration(const std::string& value)
 {
-    ecsgeneration_ = value;
-    ecsgenerationIsSet_ = true;
+    ecsGeneration_ = value;
+    ecsGenerationIsSet_ = true;
 }
 
-bool FlavorExtraSpec::ecsgenerationIsSet() const
+bool FlavorExtraSpec::ecsGenerationIsSet() const
 {
-    return ecsgenerationIsSet_;
+    return ecsGenerationIsSet_;
 }
 
-void FlavorExtraSpec::unsetecsgeneration()
+void FlavorExtraSpec::unsetecsGeneration()
 {
-    ecsgenerationIsSet_ = false;
+    ecsGenerationIsSet_ = false;
 }
 
-std::string FlavorExtraSpec::getEcsvirtualizationEnvTypes() const
+std::string FlavorExtraSpec::getEcsVirtualizationEnvTypes() const
 {
-    return ecsvirtualizationEnvTypes_;
+    return ecsVirtualizationEnvTypes_;
 }
 
-void FlavorExtraSpec::setEcsvirtualizationEnvTypes(const std::string& value)
+void FlavorExtraSpec::setEcsVirtualizationEnvTypes(const std::string& value)
 {
-    ecsvirtualizationEnvTypes_ = value;
-    ecsvirtualizationEnvTypesIsSet_ = true;
+    ecsVirtualizationEnvTypes_ = value;
+    ecsVirtualizationEnvTypesIsSet_ = true;
 }
 
-bool FlavorExtraSpec::ecsvirtualizationEnvTypesIsSet() const
+bool FlavorExtraSpec::ecsVirtualizationEnvTypesIsSet() const
 {
-    return ecsvirtualizationEnvTypesIsSet_;
+    return ecsVirtualizationEnvTypesIsSet_;
 }
 
-void FlavorExtraSpec::unsetecsvirtualizationEnvTypes()
+void FlavorExtraSpec::unsetecsVirtualizationEnvTypes()
 {
-    ecsvirtualizationEnvTypesIsSet_ = false;
+    ecsVirtualizationEnvTypesIsSet_ = false;
 }
 
-std::string FlavorExtraSpec::getPciPassthroughenableGpu() const
+std::string FlavorExtraSpec::getPciPassthroughEnableGpu() const
 {
-    return pciPassthroughenableGpu_;
+    return pciPassthroughEnableGpu_;
 }
 
-void FlavorExtraSpec::setPciPassthroughenableGpu(const std::string& value)
+void FlavorExtraSpec::setPciPassthroughEnableGpu(const std::string& value)
 {
-    pciPassthroughenableGpu_ = value;
-    pciPassthroughenableGpuIsSet_ = true;
+    pciPassthroughEnableGpu_ = value;
+    pciPassthroughEnableGpuIsSet_ = true;
 }
 
-bool FlavorExtraSpec::pciPassthroughenableGpuIsSet() const
+bool FlavorExtraSpec::pciPassthroughEnableGpuIsSet() const
 {
-    return pciPassthroughenableGpuIsSet_;
+    return pciPassthroughEnableGpuIsSet_;
 }
 
-void FlavorExtraSpec::unsetpciPassthroughenableGpu()
+void FlavorExtraSpec::unsetpciPassthroughEnableGpu()
 {
-    pciPassthroughenableGpuIsSet_ = false;
+    pciPassthroughEnableGpuIsSet_ = false;
 }
 
-std::string FlavorExtraSpec::getPciPassthroughgpuSpecs() const
+std::string FlavorExtraSpec::getPciPassthroughGpuSpecs() const
 {
-    return pciPassthroughgpuSpecs_;
+    return pciPassthroughGpuSpecs_;
 }
 
-void FlavorExtraSpec::setPciPassthroughgpuSpecs(const std::string& value)
+void FlavorExtraSpec::setPciPassthroughGpuSpecs(const std::string& value)
 {
-    pciPassthroughgpuSpecs_ = value;
-    pciPassthroughgpuSpecsIsSet_ = true;
+    pciPassthroughGpuSpecs_ = value;
+    pciPassthroughGpuSpecsIsSet_ = true;
 }
 
-bool FlavorExtraSpec::pciPassthroughgpuSpecsIsSet() const
+bool FlavorExtraSpec::pciPassthroughGpuSpecsIsSet() const
 {
-    return pciPassthroughgpuSpecsIsSet_;
+    return pciPassthroughGpuSpecsIsSet_;
 }
 
-void FlavorExtraSpec::unsetpciPassthroughgpuSpecs()
+void FlavorExtraSpec::unsetpciPassthroughGpuSpecs()
 {
-    pciPassthroughgpuSpecsIsSet_ = false;
+    pciPassthroughGpuSpecsIsSet_ = false;
 }
 
-std::string FlavorExtraSpec::getPciPassthroughalias() const
+std::string FlavorExtraSpec::getPciPassthroughAlias() const
 {
-    return pciPassthroughalias_;
+    return pciPassthroughAlias_;
 }
 
-void FlavorExtraSpec::setPciPassthroughalias(const std::string& value)
+void FlavorExtraSpec::setPciPassthroughAlias(const std::string& value)
 {
-    pciPassthroughalias_ = value;
-    pciPassthroughaliasIsSet_ = true;
+    pciPassthroughAlias_ = value;
+    pciPassthroughAliasIsSet_ = true;
 }
 
-bool FlavorExtraSpec::pciPassthroughaliasIsSet() const
+bool FlavorExtraSpec::pciPassthroughAliasIsSet() const
 {
-    return pciPassthroughaliasIsSet_;
+    return pciPassthroughAliasIsSet_;
 }
 
-void FlavorExtraSpec::unsetpciPassthroughalias()
+void FlavorExtraSpec::unsetpciPassthroughAlias()
 {
-    pciPassthroughaliasIsSet_ = false;
+    pciPassthroughAliasIsSet_ = false;
 }
 
-std::string FlavorExtraSpec::getCondoperationstatus() const
+std::string FlavorExtraSpec::getCondOperationStatus() const
 {
-    return condoperationstatus_;
+    return condOperationStatus_;
 }
 
-void FlavorExtraSpec::setCondoperationstatus(const std::string& value)
+void FlavorExtraSpec::setCondOperationStatus(const std::string& value)
 {
-    condoperationstatus_ = value;
-    condoperationstatusIsSet_ = true;
+    condOperationStatus_ = value;
+    condOperationStatusIsSet_ = true;
 }
 
-bool FlavorExtraSpec::condoperationstatusIsSet() const
+bool FlavorExtraSpec::condOperationStatusIsSet() const
 {
-    return condoperationstatusIsSet_;
+    return condOperationStatusIsSet_;
 }
 
-void FlavorExtraSpec::unsetcondoperationstatus()
+void FlavorExtraSpec::unsetcondOperationStatus()
 {
-    condoperationstatusIsSet_ = false;
+    condOperationStatusIsSet_ = false;
 }
 
-std::string FlavorExtraSpec::getCondoperationaz() const
+std::string FlavorExtraSpec::getCondOperationAz() const
 {
-    return condoperationaz_;
+    return condOperationAz_;
 }
 
-void FlavorExtraSpec::setCondoperationaz(const std::string& value)
+void FlavorExtraSpec::setCondOperationAz(const std::string& value)
 {
-    condoperationaz_ = value;
-    condoperationazIsSet_ = true;
+    condOperationAz_ = value;
+    condOperationAzIsSet_ = true;
 }
 
-bool FlavorExtraSpec::condoperationazIsSet() const
+bool FlavorExtraSpec::condOperationAzIsSet() const
 {
-    return condoperationazIsSet_;
+    return condOperationAzIsSet_;
 }
 
-void FlavorExtraSpec::unsetcondoperationaz()
+void FlavorExtraSpec::unsetcondOperationAz()
 {
-    condoperationazIsSet_ = false;
+    condOperationAzIsSet_ = false;
 }
 
-std::string FlavorExtraSpec::getQuotamaxRate() const
+std::string FlavorExtraSpec::getQuotaMaxRate() const
 {
-    return quotamaxRate_;
+    return quotaMaxRate_;
 }
 
-void FlavorExtraSpec::setQuotamaxRate(const std::string& value)
+void FlavorExtraSpec::setQuotaMaxRate(const std::string& value)
 {
-    quotamaxRate_ = value;
-    quotamaxRateIsSet_ = true;
+    quotaMaxRate_ = value;
+    quotaMaxRateIsSet_ = true;
 }
 
-bool FlavorExtraSpec::quotamaxRateIsSet() const
+bool FlavorExtraSpec::quotaMaxRateIsSet() const
 {
-    return quotamaxRateIsSet_;
+    return quotaMaxRateIsSet_;
 }
 
-void FlavorExtraSpec::unsetquotamaxRate()
+void FlavorExtraSpec::unsetquotaMaxRate()
 {
-    quotamaxRateIsSet_ = false;
+    quotaMaxRateIsSet_ = false;
 }
 
-std::string FlavorExtraSpec::getQuotaminRate() const
+std::string FlavorExtraSpec::getQuotaMinRate() const
 {
-    return quotaminRate_;
+    return quotaMinRate_;
 }
 
-void FlavorExtraSpec::setQuotaminRate(const std::string& value)
+void FlavorExtraSpec::setQuotaMinRate(const std::string& value)
 {
-    quotaminRate_ = value;
-    quotaminRateIsSet_ = true;
+    quotaMinRate_ = value;
+    quotaMinRateIsSet_ = true;
 }
 
-bool FlavorExtraSpec::quotaminRateIsSet() const
+bool FlavorExtraSpec::quotaMinRateIsSet() const
 {
-    return quotaminRateIsSet_;
+    return quotaMinRateIsSet_;
 }
 
-void FlavorExtraSpec::unsetquotaminRate()
+void FlavorExtraSpec::unsetquotaMinRate()
 {
-    quotaminRateIsSet_ = false;
+    quotaMinRateIsSet_ = false;
 }
 
-std::string FlavorExtraSpec::getQuotamaxPps() const
+std::string FlavorExtraSpec::getQuotaMaxPps() const
 {
-    return quotamaxPps_;
+    return quotaMaxPps_;
 }
 
-void FlavorExtraSpec::setQuotamaxPps(const std::string& value)
+void FlavorExtraSpec::setQuotaMaxPps(const std::string& value)
 {
-    quotamaxPps_ = value;
-    quotamaxPpsIsSet_ = true;
+    quotaMaxPps_ = value;
+    quotaMaxPpsIsSet_ = true;
 }
 
-bool FlavorExtraSpec::quotamaxPpsIsSet() const
+bool FlavorExtraSpec::quotaMaxPpsIsSet() const
 {
-    return quotamaxPpsIsSet_;
+    return quotaMaxPpsIsSet_;
 }
 
-void FlavorExtraSpec::unsetquotamaxPps()
+void FlavorExtraSpec::unsetquotaMaxPps()
 {
-    quotamaxPpsIsSet_ = false;
+    quotaMaxPpsIsSet_ = false;
 }
 
-std::string FlavorExtraSpec::getCondoperationcharge() const
+std::string FlavorExtraSpec::getCondOperationCharge() const
 {
-    return condoperationcharge_;
+    return condOperationCharge_;
 }
 
-void FlavorExtraSpec::setCondoperationcharge(const std::string& value)
+void FlavorExtraSpec::setCondOperationCharge(const std::string& value)
 {
-    condoperationcharge_ = value;
-    condoperationchargeIsSet_ = true;
+    condOperationCharge_ = value;
+    condOperationChargeIsSet_ = true;
 }
 
-bool FlavorExtraSpec::condoperationchargeIsSet() const
+bool FlavorExtraSpec::condOperationChargeIsSet() const
 {
-    return condoperationchargeIsSet_;
+    return condOperationChargeIsSet_;
 }
 
-void FlavorExtraSpec::unsetcondoperationcharge()
+void FlavorExtraSpec::unsetcondOperationCharge()
 {
-    condoperationchargeIsSet_ = false;
+    condOperationChargeIsSet_ = false;
 }
 
-std::string FlavorExtraSpec::getCondoperationchargestop() const
+std::string FlavorExtraSpec::getCondOperationChargeStop() const
 {
-    return condoperationchargestop_;
+    return condOperationChargeStop_;
 }
 
-void FlavorExtraSpec::setCondoperationchargestop(const std::string& value)
+void FlavorExtraSpec::setCondOperationChargeStop(const std::string& value)
 {
-    condoperationchargestop_ = value;
-    condoperationchargestopIsSet_ = true;
+    condOperationChargeStop_ = value;
+    condOperationChargeStopIsSet_ = true;
 }
 
-bool FlavorExtraSpec::condoperationchargestopIsSet() const
+bool FlavorExtraSpec::condOperationChargeStopIsSet() const
 {
-    return condoperationchargestopIsSet_;
+    return condOperationChargeStopIsSet_;
 }
 
-void FlavorExtraSpec::unsetcondoperationchargestop()
+void FlavorExtraSpec::unsetcondOperationChargeStop()
 {
-    condoperationchargestopIsSet_ = false;
+    condOperationChargeStopIsSet_ = false;
 }
 
-std::string FlavorExtraSpec::getCondspotoperationaz() const
+std::string FlavorExtraSpec::getCondSpotOperationAz() const
 {
-    return condspotoperationaz_;
+    return condSpotOperationAz_;
 }
 
-void FlavorExtraSpec::setCondspotoperationaz(const std::string& value)
+void FlavorExtraSpec::setCondSpotOperationAz(const std::string& value)
 {
-    condspotoperationaz_ = value;
-    condspotoperationazIsSet_ = true;
+    condSpotOperationAz_ = value;
+    condSpotOperationAzIsSet_ = true;
 }
 
-bool FlavorExtraSpec::condspotoperationazIsSet() const
+bool FlavorExtraSpec::condSpotOperationAzIsSet() const
 {
-    return condspotoperationazIsSet_;
+    return condSpotOperationAzIsSet_;
 }
 
-void FlavorExtraSpec::unsetcondspotoperationaz()
+void FlavorExtraSpec::unsetcondSpotOperationAz()
 {
-    condspotoperationazIsSet_ = false;
+    condSpotOperationAzIsSet_ = false;
 }
 
-std::string FlavorExtraSpec::getCondoperationroles() const
+std::string FlavorExtraSpec::getCondOperationRoles() const
 {
-    return condoperationroles_;
+    return condOperationRoles_;
 }
 
-void FlavorExtraSpec::setCondoperationroles(const std::string& value)
+void FlavorExtraSpec::setCondOperationRoles(const std::string& value)
 {
-    condoperationroles_ = value;
-    condoperationrolesIsSet_ = true;
+    condOperationRoles_ = value;
+    condOperationRolesIsSet_ = true;
 }
 
-bool FlavorExtraSpec::condoperationrolesIsSet() const
+bool FlavorExtraSpec::condOperationRolesIsSet() const
 {
-    return condoperationrolesIsSet_;
+    return condOperationRolesIsSet_;
 }
 
-void FlavorExtraSpec::unsetcondoperationroles()
+void FlavorExtraSpec::unsetcondOperationRoles()
 {
-    condoperationrolesIsSet_ = false;
+    condOperationRolesIsSet_ = false;
 }
 
-std::string FlavorExtraSpec::getCondspotoperationstatus() const
+std::string FlavorExtraSpec::getCondSpotOperationStatus() const
 {
-    return condspotoperationstatus_;
+    return condSpotOperationStatus_;
 }
 
-void FlavorExtraSpec::setCondspotoperationstatus(const std::string& value)
+void FlavorExtraSpec::setCondSpotOperationStatus(const std::string& value)
 {
-    condspotoperationstatus_ = value;
-    condspotoperationstatusIsSet_ = true;
+    condSpotOperationStatus_ = value;
+    condSpotOperationStatusIsSet_ = true;
 }
 
-bool FlavorExtraSpec::condspotoperationstatusIsSet() const
+bool FlavorExtraSpec::condSpotOperationStatusIsSet() const
 {
-    return condspotoperationstatusIsSet_;
+    return condSpotOperationStatusIsSet_;
 }
 
-void FlavorExtraSpec::unsetcondspotoperationstatus()
+void FlavorExtraSpec::unsetcondSpotOperationStatus()
 {
-    condspotoperationstatusIsSet_ = false;
+    condSpotOperationStatusIsSet_ = false;
 }
 
-std::string FlavorExtraSpec::getCondnetwork() const
+std::string FlavorExtraSpec::getCondNetwork() const
 {
-    return condnetwork_;
+    return condNetwork_;
 }
 
-void FlavorExtraSpec::setCondnetwork(const std::string& value)
+void FlavorExtraSpec::setCondNetwork(const std::string& value)
 {
-    condnetwork_ = value;
-    condnetworkIsSet_ = true;
+    condNetwork_ = value;
+    condNetworkIsSet_ = true;
 }
 
-bool FlavorExtraSpec::condnetworkIsSet() const
+bool FlavorExtraSpec::condNetworkIsSet() const
 {
-    return condnetworkIsSet_;
+    return condNetworkIsSet_;
 }
 
-void FlavorExtraSpec::unsetcondnetwork()
+void FlavorExtraSpec::unsetcondNetwork()
 {
-    condnetworkIsSet_ = false;
+    condNetworkIsSet_ = false;
 }
 
-std::string FlavorExtraSpec::getCondstorage() const
+std::string FlavorExtraSpec::getCondStorage() const
 {
-    return condstorage_;
+    return condStorage_;
 }
 
-void FlavorExtraSpec::setCondstorage(const std::string& value)
+void FlavorExtraSpec::setCondStorage(const std::string& value)
 {
-    condstorage_ = value;
-    condstorageIsSet_ = true;
+    condStorage_ = value;
+    condStorageIsSet_ = true;
 }
 
-bool FlavorExtraSpec::condstorageIsSet() const
+bool FlavorExtraSpec::condStorageIsSet() const
 {
-    return condstorageIsSet_;
+    return condStorageIsSet_;
 }
 
-void FlavorExtraSpec::unsetcondstorage()
+void FlavorExtraSpec::unsetcondStorage()
 {
-    condstorageIsSet_ = false;
+    condStorageIsSet_ = false;
 }
 
-std::string FlavorExtraSpec::getCondcomputeliveResizable() const
+std::string FlavorExtraSpec::getCondComputeLiveResizable() const
 {
-    return condcomputeliveResizable_;
+    return condComputeLiveResizable_;
 }
 
-void FlavorExtraSpec::setCondcomputeliveResizable(const std::string& value)
+void FlavorExtraSpec::setCondComputeLiveResizable(const std::string& value)
 {
-    condcomputeliveResizable_ = value;
-    condcomputeliveResizableIsSet_ = true;
+    condComputeLiveResizable_ = value;
+    condComputeLiveResizableIsSet_ = true;
 }
 
-bool FlavorExtraSpec::condcomputeliveResizableIsSet() const
+bool FlavorExtraSpec::condComputeLiveResizableIsSet() const
 {
-    return condcomputeliveResizableIsSet_;
+    return condComputeLiveResizableIsSet_;
 }
 
-void FlavorExtraSpec::unsetcondcomputeliveResizable()
+void FlavorExtraSpec::unsetcondComputeLiveResizable()
 {
-    condcomputeliveResizableIsSet_ = false;
+    condComputeLiveResizableIsSet_ = false;
 }
 
-std::string FlavorExtraSpec::getCondcompute() const
+std::string FlavorExtraSpec::getCondCompute() const
 {
-    return condcompute_;
+    return condCompute_;
 }
 
-void FlavorExtraSpec::setCondcompute(const std::string& value)
+void FlavorExtraSpec::setCondCompute(const std::string& value)
 {
-    condcompute_ = value;
-    condcomputeIsSet_ = true;
+    condCompute_ = value;
+    condComputeIsSet_ = true;
 }
 
-bool FlavorExtraSpec::condcomputeIsSet() const
+bool FlavorExtraSpec::condComputeIsSet() const
 {
-    return condcomputeIsSet_;
+    return condComputeIsSet_;
 }
 
-void FlavorExtraSpec::unsetcondcompute()
+void FlavorExtraSpec::unsetcondCompute()
 {
-    condcomputeIsSet_ = false;
+    condComputeIsSet_ = false;
 }
 
-std::string FlavorExtraSpec::getInfogpuname() const
+std::string FlavorExtraSpec::getInfoGpuName() const
 {
-    return infogpuname_;
+    return infoGpuName_;
 }
 
-void FlavorExtraSpec::setInfogpuname(const std::string& value)
+void FlavorExtraSpec::setInfoGpuName(const std::string& value)
 {
-    infogpuname_ = value;
-    infogpunameIsSet_ = true;
+    infoGpuName_ = value;
+    infoGpuNameIsSet_ = true;
 }
 
-bool FlavorExtraSpec::infogpunameIsSet() const
+bool FlavorExtraSpec::infoGpuNameIsSet() const
 {
-    return infogpunameIsSet_;
+    return infoGpuNameIsSet_;
 }
 
-void FlavorExtraSpec::unsetinfogpuname()
+void FlavorExtraSpec::unsetinfoGpuName()
 {
-    infogpunameIsSet_ = false;
+    infoGpuNameIsSet_ = false;
 }
 
-std::string FlavorExtraSpec::getInfocpuname() const
+std::string FlavorExtraSpec::getInfoCpuName() const
 {
-    return infocpuname_;
+    return infoCpuName_;
 }
 
-void FlavorExtraSpec::setInfocpuname(const std::string& value)
+void FlavorExtraSpec::setInfoCpuName(const std::string& value)
 {
-    infocpuname_ = value;
-    infocpunameIsSet_ = true;
+    infoCpuName_ = value;
+    infoCpuNameIsSet_ = true;
 }
 
-bool FlavorExtraSpec::infocpunameIsSet() const
+bool FlavorExtraSpec::infoCpuNameIsSet() const
 {
-    return infocpunameIsSet_;
+    return infoCpuNameIsSet_;
 }
 
-void FlavorExtraSpec::unsetinfocpuname()
+void FlavorExtraSpec::unsetinfoCpuName()
 {
-    infocpunameIsSet_ = false;
+    infoCpuNameIsSet_ = false;
 }
 
-std::string FlavorExtraSpec::getQuotagpu() const
+std::string FlavorExtraSpec::getQuotaGpu() const
 {
-    return quotagpu_;
+    return quotaGpu_;
 }
 
-void FlavorExtraSpec::setQuotagpu(const std::string& value)
+void FlavorExtraSpec::setQuotaGpu(const std::string& value)
 {
-    quotagpu_ = value;
-    quotagpuIsSet_ = true;
+    quotaGpu_ = value;
+    quotaGpuIsSet_ = true;
 }
 
-bool FlavorExtraSpec::quotagpuIsSet() const
+bool FlavorExtraSpec::quotaGpuIsSet() const
 {
-    return quotagpuIsSet_;
+    return quotaGpuIsSet_;
 }
 
-void FlavorExtraSpec::unsetquotagpu()
+void FlavorExtraSpec::unsetquotaGpu()
 {
-    quotagpuIsSet_ = false;
+    quotaGpuIsSet_ = false;
 }
 
-std::string FlavorExtraSpec::getQuotavifMaxNum() const
+std::string FlavorExtraSpec::getQuotaVifMaxNum() const
 {
-    return quotavifMaxNum_;
+    return quotaVifMaxNum_;
 }
 
-void FlavorExtraSpec::setQuotavifMaxNum(const std::string& value)
+void FlavorExtraSpec::setQuotaVifMaxNum(const std::string& value)
 {
-    quotavifMaxNum_ = value;
-    quotavifMaxNumIsSet_ = true;
+    quotaVifMaxNum_ = value;
+    quotaVifMaxNumIsSet_ = true;
 }
 
-bool FlavorExtraSpec::quotavifMaxNumIsSet() const
+bool FlavorExtraSpec::quotaVifMaxNumIsSet() const
 {
-    return quotavifMaxNumIsSet_;
+    return quotaVifMaxNumIsSet_;
 }
 
-void FlavorExtraSpec::unsetquotavifMaxNum()
+void FlavorExtraSpec::unsetquotaVifMaxNum()
 {
-    quotavifMaxNumIsSet_ = false;
+    quotaVifMaxNumIsSet_ = false;
 }
 
-std::string FlavorExtraSpec::getQuotasubNetworkInterfaceMaxNum() const
+std::string FlavorExtraSpec::getQuotaSubNetworkInterfaceMaxNum() const
 {
-    return quotasubNetworkInterfaceMaxNum_;
+    return quotaSubNetworkInterfaceMaxNum_;
 }
 
-void FlavorExtraSpec::setQuotasubNetworkInterfaceMaxNum(const std::string& value)
+void FlavorExtraSpec::setQuotaSubNetworkInterfaceMaxNum(const std::string& value)
 {
-    quotasubNetworkInterfaceMaxNum_ = value;
-    quotasubNetworkInterfaceMaxNumIsSet_ = true;
+    quotaSubNetworkInterfaceMaxNum_ = value;
+    quotaSubNetworkInterfaceMaxNumIsSet_ = true;
 }
 
-bool FlavorExtraSpec::quotasubNetworkInterfaceMaxNumIsSet() const
+bool FlavorExtraSpec::quotaSubNetworkInterfaceMaxNumIsSet() const
 {
-    return quotasubNetworkInterfaceMaxNumIsSet_;
+    return quotaSubNetworkInterfaceMaxNumIsSet_;
 }
 
-void FlavorExtraSpec::unsetquotasubNetworkInterfaceMaxNum()
+void FlavorExtraSpec::unsetquotaSubNetworkInterfaceMaxNum()
 {
-    quotasubNetworkInterfaceMaxNumIsSet_ = false;
+    quotaSubNetworkInterfaceMaxNumIsSet_ = false;
 }
 
-std::string FlavorExtraSpec::getEcsinstanceArchitecture() const
+std::string FlavorExtraSpec::getEcsInstanceArchitecture() const
 {
-    return ecsinstanceArchitecture_;
+    return ecsInstanceArchitecture_;
 }
 
-void FlavorExtraSpec::setEcsinstanceArchitecture(const std::string& value)
+void FlavorExtraSpec::setEcsInstanceArchitecture(const std::string& value)
 {
-    ecsinstanceArchitecture_ = value;
-    ecsinstanceArchitectureIsSet_ = true;
+    ecsInstanceArchitecture_ = value;
+    ecsInstanceArchitectureIsSet_ = true;
 }
 
-bool FlavorExtraSpec::ecsinstanceArchitectureIsSet() const
+bool FlavorExtraSpec::ecsInstanceArchitectureIsSet() const
 {
-    return ecsinstanceArchitectureIsSet_;
+    return ecsInstanceArchitectureIsSet_;
 }
 
-void FlavorExtraSpec::unsetecsinstanceArchitecture()
+void FlavorExtraSpec::unsetecsInstanceArchitecture()
 {
-    ecsinstanceArchitectureIsSet_ = false;
+    ecsInstanceArchitectureIsSet_ = false;
 }
 
 }

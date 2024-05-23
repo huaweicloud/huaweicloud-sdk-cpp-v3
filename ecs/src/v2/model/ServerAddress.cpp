@@ -18,12 +18,12 @@ ServerAddress::ServerAddress()
     primaryIsSet_ = false;
     addr_ = "";
     addrIsSet_ = false;
-    oSEXTIPStype_ = "";
-    oSEXTIPStypeIsSet_ = false;
-    oSEXTIPSMACmacAddr_ = "";
-    oSEXTIPSMACmacAddrIsSet_ = false;
-    oSEXTIPSportId_ = "";
-    oSEXTIPSportIdIsSet_ = false;
+    oSEXTIPSType_ = "";
+    oSEXTIPSTypeIsSet_ = false;
+    oSEXTIPSMACMacAddr_ = "";
+    oSEXTIPSMACMacAddrIsSet_ = false;
+    oSEXTIPSPortId_ = "";
+    oSEXTIPSPortIdIsSet_ = false;
 }
 
 ServerAddress::~ServerAddress() = default;
@@ -45,14 +45,14 @@ web::json::value ServerAddress::toJson() const
     if(addrIsSet_) {
         val[utility::conversions::to_string_t("addr")] = ModelBase::toJson(addr_);
     }
-    if(oSEXTIPStypeIsSet_) {
-        val[utility::conversions::to_string_t("OS-EXT-IPS:type")] = ModelBase::toJson(oSEXTIPStype_);
+    if(oSEXTIPSTypeIsSet_) {
+        val[utility::conversions::to_string_t("OS-EXT-IPS:type")] = ModelBase::toJson(oSEXTIPSType_);
     }
-    if(oSEXTIPSMACmacAddrIsSet_) {
-        val[utility::conversions::to_string_t("OS-EXT-IPS-MAC:mac_addr")] = ModelBase::toJson(oSEXTIPSMACmacAddr_);
+    if(oSEXTIPSMACMacAddrIsSet_) {
+        val[utility::conversions::to_string_t("OS-EXT-IPS-MAC:mac_addr")] = ModelBase::toJson(oSEXTIPSMACMacAddr_);
     }
-    if(oSEXTIPSportIdIsSet_) {
-        val[utility::conversions::to_string_t("OS-EXT-IPS:port_id")] = ModelBase::toJson(oSEXTIPSportId_);
+    if(oSEXTIPSPortIdIsSet_) {
+        val[utility::conversions::to_string_t("OS-EXT-IPS:port_id")] = ModelBase::toJson(oSEXTIPSPortId_);
     }
 
     return val;
@@ -94,7 +94,7 @@ bool ServerAddress::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSEXTIPStype(refVal);
+            setOSEXTIPSType(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("OS-EXT-IPS-MAC:mac_addr"))) {
@@ -103,7 +103,7 @@ bool ServerAddress::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSEXTIPSMACmacAddr(refVal);
+            setOSEXTIPSMACMacAddr(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("OS-EXT-IPS:port_id"))) {
@@ -112,7 +112,7 @@ bool ServerAddress::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSEXTIPSportId(refVal);
+            setOSEXTIPSPortId(refVal);
         }
     }
     return ok;
@@ -182,67 +182,67 @@ void ServerAddress::unsetaddr()
     addrIsSet_ = false;
 }
 
-std::string ServerAddress::getOSEXTIPStype() const
+std::string ServerAddress::getOSEXTIPSType() const
 {
-    return oSEXTIPStype_;
+    return oSEXTIPSType_;
 }
 
-void ServerAddress::setOSEXTIPStype(const std::string& value)
+void ServerAddress::setOSEXTIPSType(const std::string& value)
 {
-    oSEXTIPStype_ = value;
-    oSEXTIPStypeIsSet_ = true;
+    oSEXTIPSType_ = value;
+    oSEXTIPSTypeIsSet_ = true;
 }
 
-bool ServerAddress::oSEXTIPStypeIsSet() const
+bool ServerAddress::oSEXTIPSTypeIsSet() const
 {
-    return oSEXTIPStypeIsSet_;
+    return oSEXTIPSTypeIsSet_;
 }
 
-void ServerAddress::unsetoSEXTIPStype()
+void ServerAddress::unsetoSEXTIPSType()
 {
-    oSEXTIPStypeIsSet_ = false;
+    oSEXTIPSTypeIsSet_ = false;
 }
 
-std::string ServerAddress::getOSEXTIPSMACmacAddr() const
+std::string ServerAddress::getOSEXTIPSMACMacAddr() const
 {
-    return oSEXTIPSMACmacAddr_;
+    return oSEXTIPSMACMacAddr_;
 }
 
-void ServerAddress::setOSEXTIPSMACmacAddr(const std::string& value)
+void ServerAddress::setOSEXTIPSMACMacAddr(const std::string& value)
 {
-    oSEXTIPSMACmacAddr_ = value;
-    oSEXTIPSMACmacAddrIsSet_ = true;
+    oSEXTIPSMACMacAddr_ = value;
+    oSEXTIPSMACMacAddrIsSet_ = true;
 }
 
-bool ServerAddress::oSEXTIPSMACmacAddrIsSet() const
+bool ServerAddress::oSEXTIPSMACMacAddrIsSet() const
 {
-    return oSEXTIPSMACmacAddrIsSet_;
+    return oSEXTIPSMACMacAddrIsSet_;
 }
 
-void ServerAddress::unsetoSEXTIPSMACmacAddr()
+void ServerAddress::unsetoSEXTIPSMACMacAddr()
 {
-    oSEXTIPSMACmacAddrIsSet_ = false;
+    oSEXTIPSMACMacAddrIsSet_ = false;
 }
 
-std::string ServerAddress::getOSEXTIPSportId() const
+std::string ServerAddress::getOSEXTIPSPortId() const
 {
-    return oSEXTIPSportId_;
+    return oSEXTIPSPortId_;
 }
 
-void ServerAddress::setOSEXTIPSportId(const std::string& value)
+void ServerAddress::setOSEXTIPSPortId(const std::string& value)
 {
-    oSEXTIPSportId_ = value;
-    oSEXTIPSportIdIsSet_ = true;
+    oSEXTIPSPortId_ = value;
+    oSEXTIPSPortIdIsSet_ = true;
 }
 
-bool ServerAddress::oSEXTIPSportIdIsSet() const
+bool ServerAddress::oSEXTIPSPortIdIsSet() const
 {
-    return oSEXTIPSportIdIsSet_;
+    return oSEXTIPSPortIdIsSet_;
 }
 
-void ServerAddress::unsetoSEXTIPSportId()
+void ServerAddress::unsetoSEXTIPSPortId()
 {
-    oSEXTIPSportIdIsSet_ = false;
+    oSEXTIPSPortIdIsSet_ = false;
 }
 
 }

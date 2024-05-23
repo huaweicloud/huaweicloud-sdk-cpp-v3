@@ -98,9 +98,11 @@ public:
     static HttpRequestDef genRequestDefForShowInstanceRole();
     static HttpRequestDef genRequestDefForShowIpNumRequirement();
     static HttpRequestDef genRequestDefForShowModifyHistory();
+    static HttpRequestDef genRequestDefForShowPasswordlessConfig();
     static HttpRequestDef genRequestDefForShowPauseResumeStutus();
     static HttpRequestDef genRequestDefForShowQuotas();
     static HttpRequestDef genRequestDefForShowRecyclePolicy();
+    static HttpRequestDef genRequestDefForShowRedisBigKeys();
     static HttpRequestDef genRequestDefForShowRestorableList();
     static HttpRequestDef genRequestDefForShowSlowLogDesensitization();
     static HttpRequestDef genRequestDefForShrinkInstanceNode();
@@ -115,6 +117,7 @@ public:
     static HttpRequestDef genRequestDefForUpdateHighRiskCommands();
     static HttpRequestDef genRequestDefForUpdateInstanceConfiguration();
     static HttpRequestDef genRequestDefForUpdateInstanceName();
+    static HttpRequestDef genRequestDefForUpdatePasswordlessConfig();
     static HttpRequestDef genRequestDefForUpdateSecurityGroup();
     static HttpRequestDef genRequestDefForUpgradeDbVersion();
     static HttpRequestDef genRequestDefForListApiVersion();

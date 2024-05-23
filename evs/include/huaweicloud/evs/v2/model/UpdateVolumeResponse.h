@@ -128,19 +128,19 @@ public:
     /// 预留属性。
     /// </summary>
 
-    std::string getOsVolHostAttrhost() const;
-    bool osVolHostAttrhostIsSet() const;
-    void unsetosVolHostAttrhost();
-    void setOsVolHostAttrhost(const std::string& value);
+    std::string getOsVolHostAttrHost() const;
+    bool osVolHostAttrHostIsSet() const;
+    void unsetosVolHostAttrHost();
+    void setOsVolHostAttrHost(const std::string& value);
 
     /// <summary>
     /// 云硬盘所属的项目ID。
     /// </summary>
 
-    std::string getOsVolTenantAttrtenantId() const;
-    bool osVolTenantAttrtenantIdIsSet() const;
-    void unsetosVolTenantAttrtenantId();
-    void setOsVolTenantAttrtenantId(const std::string& value);
+    std::string getOsVolTenantAttrTenantId() const;
+    bool osVolTenantAttrTenantIdIsSet() const;
+    void unsetosVolTenantAttrTenantId();
+    void setOsVolTenantAttrTenantId(const std::string& value);
 
     /// <summary>
     /// 是否为共享云硬盘。
@@ -218,10 +218,10 @@ public:
     /// 预留属性。
     /// </summary>
 
-    std::string getOsVolumeReplicationextendedStatus() const;
-    bool osVolumeReplicationextendedStatusIsSet() const;
-    void unsetosVolumeReplicationextendedStatus();
-    void setOsVolumeReplicationextendedStatus(const std::string& value);
+    std::string getOsVolumeReplicationExtendedStatus() const;
+    bool osVolumeReplicationExtendedStatusIsSet() const;
+    void unsetosVolumeReplicationExtendedStatus();
+    void setOsVolumeReplicationExtendedStatus(const std::string& value);
 
 
 protected:
@@ -243,10 +243,10 @@ protected:
     bool multiattachIsSet_;
     std::string name_;
     bool nameIsSet_;
-    std::string osVolHostAttrhost_;
-    bool osVolHostAttrhostIsSet_;
-    std::string osVolTenantAttrtenantId_;
-    bool osVolTenantAttrtenantIdIsSet_;
+    std::string osVolHostAttrHost_;
+    bool osVolHostAttrHostIsSet_;
+    std::string osVolTenantAttrTenantId_;
+    bool osVolTenantAttrTenantIdIsSet_;
     std::string shareable_;
     bool shareableIsSet_;
     int32_t size_;
@@ -263,8 +263,8 @@ protected:
     bool volumeTypeIsSet_;
     std::string description_;
     bool descriptionIsSet_;
-    std::string osVolumeReplicationextendedStatus_;
-    bool osVolumeReplicationextendedStatusIsSet_;
+    std::string osVolumeReplicationExtendedStatus_;
+    bool osVolumeReplicationExtendedStatusIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

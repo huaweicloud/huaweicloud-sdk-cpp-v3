@@ -22,8 +22,8 @@ VolumeDetail::VolumeDetail()
     attachmentsIsSet_ = false;
     availabilityZone_ = "";
     availabilityZoneIsSet_ = false;
-    osVolHostAttrhost_ = "";
-    osVolHostAttrhostIsSet_ = false;
+    osVolHostAttrHost_ = "";
+    osVolHostAttrHostIsSet_ = false;
     sourceVolid_ = "";
     sourceVolidIsSet_ = false;
     snapshotId_ = "";
@@ -32,8 +32,8 @@ VolumeDetail::VolumeDetail()
     descriptionIsSet_ = false;
     createdAt_ = "";
     createdAtIsSet_ = false;
-    osVolTenantAttrtenantId_ = "";
-    osVolTenantAttrtenantIdIsSet_ = false;
+    osVolTenantAttrTenantId_ = "";
+    osVolTenantAttrTenantIdIsSet_ = false;
     volumeImageMetadataIsSet_ = false;
     volumeType_ = "";
     volumeTypeIsSet_ = false;
@@ -50,12 +50,12 @@ VolumeDetail::VolumeDetail()
     encryptedIsSet_ = false;
     replicationStatus_ = "";
     replicationStatusIsSet_ = false;
-    osVolumeReplicationextendedStatus_ = "";
-    osVolumeReplicationextendedStatusIsSet_ = false;
-    osVolMigStatusAttrmigstat_ = "";
-    osVolMigStatusAttrmigstatIsSet_ = false;
-    osVolMigStatusAttrnameId_ = "";
-    osVolMigStatusAttrnameIdIsSet_ = false;
+    osVolumeReplicationExtendedStatus_ = "";
+    osVolumeReplicationExtendedStatusIsSet_ = false;
+    osVolMigStatusAttrMigstat_ = "";
+    osVolMigStatusAttrMigstatIsSet_ = false;
+    osVolMigStatusAttrNameId_ = "";
+    osVolMigStatusAttrNameIdIsSet_ = false;
     shareable_ = "";
     shareableIsSet_ = false;
     userId_ = "";
@@ -107,8 +107,8 @@ web::json::value VolumeDetail::toJson() const
     if(availabilityZoneIsSet_) {
         val[utility::conversions::to_string_t("availability_zone")] = ModelBase::toJson(availabilityZone_);
     }
-    if(osVolHostAttrhostIsSet_) {
-        val[utility::conversions::to_string_t("os-vol-host-attr:host")] = ModelBase::toJson(osVolHostAttrhost_);
+    if(osVolHostAttrHostIsSet_) {
+        val[utility::conversions::to_string_t("os-vol-host-attr:host")] = ModelBase::toJson(osVolHostAttrHost_);
     }
     if(sourceVolidIsSet_) {
         val[utility::conversions::to_string_t("source_volid")] = ModelBase::toJson(sourceVolid_);
@@ -122,8 +122,8 @@ web::json::value VolumeDetail::toJson() const
     if(createdAtIsSet_) {
         val[utility::conversions::to_string_t("created_at")] = ModelBase::toJson(createdAt_);
     }
-    if(osVolTenantAttrtenantIdIsSet_) {
-        val[utility::conversions::to_string_t("os-vol-tenant-attr:tenant_id")] = ModelBase::toJson(osVolTenantAttrtenantId_);
+    if(osVolTenantAttrTenantIdIsSet_) {
+        val[utility::conversions::to_string_t("os-vol-tenant-attr:tenant_id")] = ModelBase::toJson(osVolTenantAttrTenantId_);
     }
     if(volumeImageMetadataIsSet_) {
         val[utility::conversions::to_string_t("volume_image_metadata")] = ModelBase::toJson(volumeImageMetadata_);
@@ -152,14 +152,14 @@ web::json::value VolumeDetail::toJson() const
     if(replicationStatusIsSet_) {
         val[utility::conversions::to_string_t("replication_status")] = ModelBase::toJson(replicationStatus_);
     }
-    if(osVolumeReplicationextendedStatusIsSet_) {
-        val[utility::conversions::to_string_t("os-volume-replication:extended_status")] = ModelBase::toJson(osVolumeReplicationextendedStatus_);
+    if(osVolumeReplicationExtendedStatusIsSet_) {
+        val[utility::conversions::to_string_t("os-volume-replication:extended_status")] = ModelBase::toJson(osVolumeReplicationExtendedStatus_);
     }
-    if(osVolMigStatusAttrmigstatIsSet_) {
-        val[utility::conversions::to_string_t("os-vol-mig-status-attr:migstat")] = ModelBase::toJson(osVolMigStatusAttrmigstat_);
+    if(osVolMigStatusAttrMigstatIsSet_) {
+        val[utility::conversions::to_string_t("os-vol-mig-status-attr:migstat")] = ModelBase::toJson(osVolMigStatusAttrMigstat_);
     }
-    if(osVolMigStatusAttrnameIdIsSet_) {
-        val[utility::conversions::to_string_t("os-vol-mig-status-attr:name_id")] = ModelBase::toJson(osVolMigStatusAttrnameId_);
+    if(osVolMigStatusAttrNameIdIsSet_) {
+        val[utility::conversions::to_string_t("os-vol-mig-status-attr:name_id")] = ModelBase::toJson(osVolMigStatusAttrNameId_);
     }
     if(shareableIsSet_) {
         val[utility::conversions::to_string_t("shareable")] = ModelBase::toJson(shareable_);
@@ -264,7 +264,7 @@ bool VolumeDetail::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOsVolHostAttrhost(refVal);
+            setOsVolHostAttrHost(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("source_volid"))) {
@@ -309,7 +309,7 @@ bool VolumeDetail::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOsVolTenantAttrtenantId(refVal);
+            setOsVolTenantAttrTenantId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("volume_image_metadata"))) {
@@ -399,7 +399,7 @@ bool VolumeDetail::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOsVolumeReplicationextendedStatus(refVal);
+            setOsVolumeReplicationExtendedStatus(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("os-vol-mig-status-attr:migstat"))) {
@@ -408,7 +408,7 @@ bool VolumeDetail::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOsVolMigStatusAttrmigstat(refVal);
+            setOsVolMigStatusAttrMigstat(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("os-vol-mig-status-attr:name_id"))) {
@@ -417,7 +417,7 @@ bool VolumeDetail::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOsVolMigStatusAttrnameId(refVal);
+            setOsVolMigStatusAttrNameId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("shareable"))) {
@@ -658,25 +658,25 @@ void VolumeDetail::unsetavailabilityZone()
     availabilityZoneIsSet_ = false;
 }
 
-std::string VolumeDetail::getOsVolHostAttrhost() const
+std::string VolumeDetail::getOsVolHostAttrHost() const
 {
-    return osVolHostAttrhost_;
+    return osVolHostAttrHost_;
 }
 
-void VolumeDetail::setOsVolHostAttrhost(const std::string& value)
+void VolumeDetail::setOsVolHostAttrHost(const std::string& value)
 {
-    osVolHostAttrhost_ = value;
-    osVolHostAttrhostIsSet_ = true;
+    osVolHostAttrHost_ = value;
+    osVolHostAttrHostIsSet_ = true;
 }
 
-bool VolumeDetail::osVolHostAttrhostIsSet() const
+bool VolumeDetail::osVolHostAttrHostIsSet() const
 {
-    return osVolHostAttrhostIsSet_;
+    return osVolHostAttrHostIsSet_;
 }
 
-void VolumeDetail::unsetosVolHostAttrhost()
+void VolumeDetail::unsetosVolHostAttrHost()
 {
-    osVolHostAttrhostIsSet_ = false;
+    osVolHostAttrHostIsSet_ = false;
 }
 
 std::string VolumeDetail::getSourceVolid() const
@@ -763,25 +763,25 @@ void VolumeDetail::unsetcreatedAt()
     createdAtIsSet_ = false;
 }
 
-std::string VolumeDetail::getOsVolTenantAttrtenantId() const
+std::string VolumeDetail::getOsVolTenantAttrTenantId() const
 {
-    return osVolTenantAttrtenantId_;
+    return osVolTenantAttrTenantId_;
 }
 
-void VolumeDetail::setOsVolTenantAttrtenantId(const std::string& value)
+void VolumeDetail::setOsVolTenantAttrTenantId(const std::string& value)
 {
-    osVolTenantAttrtenantId_ = value;
-    osVolTenantAttrtenantIdIsSet_ = true;
+    osVolTenantAttrTenantId_ = value;
+    osVolTenantAttrTenantIdIsSet_ = true;
 }
 
-bool VolumeDetail::osVolTenantAttrtenantIdIsSet() const
+bool VolumeDetail::osVolTenantAttrTenantIdIsSet() const
 {
-    return osVolTenantAttrtenantIdIsSet_;
+    return osVolTenantAttrTenantIdIsSet_;
 }
 
-void VolumeDetail::unsetosVolTenantAttrtenantId()
+void VolumeDetail::unsetosVolTenantAttrTenantId()
 {
-    osVolTenantAttrtenantIdIsSet_ = false;
+    osVolTenantAttrTenantIdIsSet_ = false;
 }
 
 std::map<std::string, Object>& VolumeDetail::getVolumeImageMetadata()
@@ -973,67 +973,67 @@ void VolumeDetail::unsetreplicationStatus()
     replicationStatusIsSet_ = false;
 }
 
-std::string VolumeDetail::getOsVolumeReplicationextendedStatus() const
+std::string VolumeDetail::getOsVolumeReplicationExtendedStatus() const
 {
-    return osVolumeReplicationextendedStatus_;
+    return osVolumeReplicationExtendedStatus_;
 }
 
-void VolumeDetail::setOsVolumeReplicationextendedStatus(const std::string& value)
+void VolumeDetail::setOsVolumeReplicationExtendedStatus(const std::string& value)
 {
-    osVolumeReplicationextendedStatus_ = value;
-    osVolumeReplicationextendedStatusIsSet_ = true;
+    osVolumeReplicationExtendedStatus_ = value;
+    osVolumeReplicationExtendedStatusIsSet_ = true;
 }
 
-bool VolumeDetail::osVolumeReplicationextendedStatusIsSet() const
+bool VolumeDetail::osVolumeReplicationExtendedStatusIsSet() const
 {
-    return osVolumeReplicationextendedStatusIsSet_;
+    return osVolumeReplicationExtendedStatusIsSet_;
 }
 
-void VolumeDetail::unsetosVolumeReplicationextendedStatus()
+void VolumeDetail::unsetosVolumeReplicationExtendedStatus()
 {
-    osVolumeReplicationextendedStatusIsSet_ = false;
+    osVolumeReplicationExtendedStatusIsSet_ = false;
 }
 
-std::string VolumeDetail::getOsVolMigStatusAttrmigstat() const
+std::string VolumeDetail::getOsVolMigStatusAttrMigstat() const
 {
-    return osVolMigStatusAttrmigstat_;
+    return osVolMigStatusAttrMigstat_;
 }
 
-void VolumeDetail::setOsVolMigStatusAttrmigstat(const std::string& value)
+void VolumeDetail::setOsVolMigStatusAttrMigstat(const std::string& value)
 {
-    osVolMigStatusAttrmigstat_ = value;
-    osVolMigStatusAttrmigstatIsSet_ = true;
+    osVolMigStatusAttrMigstat_ = value;
+    osVolMigStatusAttrMigstatIsSet_ = true;
 }
 
-bool VolumeDetail::osVolMigStatusAttrmigstatIsSet() const
+bool VolumeDetail::osVolMigStatusAttrMigstatIsSet() const
 {
-    return osVolMigStatusAttrmigstatIsSet_;
+    return osVolMigStatusAttrMigstatIsSet_;
 }
 
-void VolumeDetail::unsetosVolMigStatusAttrmigstat()
+void VolumeDetail::unsetosVolMigStatusAttrMigstat()
 {
-    osVolMigStatusAttrmigstatIsSet_ = false;
+    osVolMigStatusAttrMigstatIsSet_ = false;
 }
 
-std::string VolumeDetail::getOsVolMigStatusAttrnameId() const
+std::string VolumeDetail::getOsVolMigStatusAttrNameId() const
 {
-    return osVolMigStatusAttrnameId_;
+    return osVolMigStatusAttrNameId_;
 }
 
-void VolumeDetail::setOsVolMigStatusAttrnameId(const std::string& value)
+void VolumeDetail::setOsVolMigStatusAttrNameId(const std::string& value)
 {
-    osVolMigStatusAttrnameId_ = value;
-    osVolMigStatusAttrnameIdIsSet_ = true;
+    osVolMigStatusAttrNameId_ = value;
+    osVolMigStatusAttrNameIdIsSet_ = true;
 }
 
-bool VolumeDetail::osVolMigStatusAttrnameIdIsSet() const
+bool VolumeDetail::osVolMigStatusAttrNameIdIsSet() const
 {
-    return osVolMigStatusAttrnameIdIsSet_;
+    return osVolMigStatusAttrNameIdIsSet_;
 }
 
-void VolumeDetail::unsetosVolMigStatusAttrnameId()
+void VolumeDetail::unsetosVolMigStatusAttrNameId()
 {
-    osVolMigStatusAttrnameIdIsSet_ = false;
+    osVolMigStatusAttrNameIdIsSet_ = false;
 }
 
 std::string VolumeDetail::getShareable() const

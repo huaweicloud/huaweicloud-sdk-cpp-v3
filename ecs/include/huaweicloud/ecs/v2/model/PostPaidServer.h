@@ -179,10 +179,10 @@ public:
     /// 
     /// </summary>
 
-    PostPaidServerSchedulerHints getOsschedulerHints() const;
-    bool osschedulerHintsIsSet() const;
-    void unsetosschedulerHints();
-    void setOsschedulerHints(const PostPaidServerSchedulerHints& value);
+    PostPaidServerSchedulerHints getOsSchedulerHints() const;
+    bool osSchedulerHintsIsSet() const;
+    void unsetosSchedulerHints();
+    void setOsSchedulerHints(const PostPaidServerSchedulerHints& value);
 
     /// <summary>
     /// 
@@ -295,8 +295,8 @@ protected:
     bool nameIsSet_;
     std::vector<PostPaidServerNic> nics_;
     bool nicsIsSet_;
-    PostPaidServerSchedulerHints osschedulerHints_;
-    bool osschedulerHintsIsSet_;
+    PostPaidServerSchedulerHints osSchedulerHints_;
+    bool osSchedulerHintsIsSet_;
     PostPaidServerPublicip publicip_;
     bool publicipIsSet_;
     PostPaidServerRootVolume rootVolume_;

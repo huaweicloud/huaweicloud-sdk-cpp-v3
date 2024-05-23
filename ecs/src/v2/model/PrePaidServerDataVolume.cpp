@@ -24,8 +24,8 @@ PrePaidServerDataVolume::PrePaidServerDataVolume()
     shareableIsSet_ = false;
     multiattach_ = false;
     multiattachIsSet_ = false;
-    hwpassthrough_ = false;
-    hwpassthroughIsSet_ = false;
+    hwPassthrough_ = false;
+    hwPassthroughIsSet_ = false;
     extendparamIsSet_ = false;
     clusterType_ = "";
     clusterTypeIsSet_ = false;
@@ -66,8 +66,8 @@ web::json::value PrePaidServerDataVolume::toJson() const
     if(multiattachIsSet_) {
         val[utility::conversions::to_string_t("multiattach")] = ModelBase::toJson(multiattach_);
     }
-    if(hwpassthroughIsSet_) {
-        val[utility::conversions::to_string_t("hw:passthrough")] = ModelBase::toJson(hwpassthrough_);
+    if(hwPassthroughIsSet_) {
+        val[utility::conversions::to_string_t("hw:passthrough")] = ModelBase::toJson(hwPassthrough_);
     }
     if(extendparamIsSet_) {
         val[utility::conversions::to_string_t("extendparam")] = ModelBase::toJson(extendparam_);
@@ -154,7 +154,7 @@ bool PrePaidServerDataVolume::fromJson(const web::json::value& val)
         {
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setHwpassthrough(refVal);
+            setHwPassthrough(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("extendparam"))) {
@@ -341,25 +341,25 @@ void PrePaidServerDataVolume::unsetmultiattach()
     multiattachIsSet_ = false;
 }
 
-bool PrePaidServerDataVolume::isHwpassthrough() const
+bool PrePaidServerDataVolume::isHwPassthrough() const
 {
-    return hwpassthrough_;
+    return hwPassthrough_;
 }
 
-void PrePaidServerDataVolume::setHwpassthrough(bool value)
+void PrePaidServerDataVolume::setHwPassthrough(bool value)
 {
-    hwpassthrough_ = value;
-    hwpassthroughIsSet_ = true;
+    hwPassthrough_ = value;
+    hwPassthroughIsSet_ = true;
 }
 
-bool PrePaidServerDataVolume::hwpassthroughIsSet() const
+bool PrePaidServerDataVolume::hwPassthroughIsSet() const
 {
-    return hwpassthroughIsSet_;
+    return hwPassthroughIsSet_;
 }
 
-void PrePaidServerDataVolume::unsethwpassthrough()
+void PrePaidServerDataVolume::unsethwPassthrough()
 {
-    hwpassthroughIsSet_ = false;
+    hwPassthroughIsSet_ = false;
 }
 
 PrePaidServerDataVolumeExtendParam PrePaidServerDataVolume::getExtendparam() const

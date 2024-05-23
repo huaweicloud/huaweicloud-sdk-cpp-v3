@@ -20,8 +20,8 @@ AttachServerVolumeOption::AttachServerVolumeOption()
     volumeTypeIsSet_ = false;
     count_ = 0;
     countIsSet_ = false;
-    hwpassthrough_ = "";
-    hwpassthroughIsSet_ = false;
+    hwPassthrough_ = "";
+    hwPassthroughIsSet_ = false;
 }
 
 AttachServerVolumeOption::~AttachServerVolumeOption() = default;
@@ -46,8 +46,8 @@ web::json::value AttachServerVolumeOption::toJson() const
     if(countIsSet_) {
         val[utility::conversions::to_string_t("count")] = ModelBase::toJson(count_);
     }
-    if(hwpassthroughIsSet_) {
-        val[utility::conversions::to_string_t("hw:passthrough")] = ModelBase::toJson(hwpassthrough_);
+    if(hwPassthroughIsSet_) {
+        val[utility::conversions::to_string_t("hw:passthrough")] = ModelBase::toJson(hwPassthrough_);
     }
 
     return val;
@@ -98,7 +98,7 @@ bool AttachServerVolumeOption::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setHwpassthrough(refVal);
+            setHwPassthrough(refVal);
         }
     }
     return ok;
@@ -189,25 +189,25 @@ void AttachServerVolumeOption::unsetcount()
     countIsSet_ = false;
 }
 
-std::string AttachServerVolumeOption::getHwpassthrough() const
+std::string AttachServerVolumeOption::getHwPassthrough() const
 {
-    return hwpassthrough_;
+    return hwPassthrough_;
 }
 
-void AttachServerVolumeOption::setHwpassthrough(const std::string& value)
+void AttachServerVolumeOption::setHwPassthrough(const std::string& value)
 {
-    hwpassthrough_ = value;
-    hwpassthroughIsSet_ = true;
+    hwPassthrough_ = value;
+    hwPassthroughIsSet_ = true;
 }
 
-bool AttachServerVolumeOption::hwpassthroughIsSet() const
+bool AttachServerVolumeOption::hwPassthroughIsSet() const
 {
-    return hwpassthroughIsSet_;
+    return hwPassthroughIsSet_;
 }
 
-void AttachServerVolumeOption::unsethwpassthrough()
+void AttachServerVolumeOption::unsethwPassthrough()
 {
-    hwpassthroughIsSet_ = false;
+    hwPassthroughIsSet_ = false;
 }
 
 }

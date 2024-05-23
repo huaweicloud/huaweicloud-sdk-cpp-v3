@@ -15,10 +15,10 @@ NeutronPort::NeutronPort()
     adminStateUp_ = false;
     adminStateUpIsSet_ = false;
     allowedAddressPairsIsSet_ = false;
-    bindingprofileIsSet_ = false;
-    bindingvifDetailsIsSet_ = false;
-    bindingvnicType_ = "";
-    bindingvnicTypeIsSet_ = false;
+    bindingProfileIsSet_ = false;
+    bindingVifDetailsIsSet_ = false;
+    bindingVnicType_ = "";
+    bindingVnicTypeIsSet_ = false;
     deviceId_ = "";
     deviceIdIsSet_ = false;
     deviceOwner_ = "";
@@ -67,14 +67,14 @@ web::json::value NeutronPort::toJson() const
     if(allowedAddressPairsIsSet_) {
         val[utility::conversions::to_string_t("allowed_address_pairs")] = ModelBase::toJson(allowedAddressPairs_);
     }
-    if(bindingprofileIsSet_) {
-        val[utility::conversions::to_string_t("binding:profile")] = ModelBase::toJson(bindingprofile_);
+    if(bindingProfileIsSet_) {
+        val[utility::conversions::to_string_t("binding:profile")] = ModelBase::toJson(bindingProfile_);
     }
-    if(bindingvifDetailsIsSet_) {
-        val[utility::conversions::to_string_t("binding:vif_details")] = ModelBase::toJson(bindingvifDetails_);
+    if(bindingVifDetailsIsSet_) {
+        val[utility::conversions::to_string_t("binding:vif_details")] = ModelBase::toJson(bindingVifDetails_);
     }
-    if(bindingvnicTypeIsSet_) {
-        val[utility::conversions::to_string_t("binding:vnic_type")] = ModelBase::toJson(bindingvnicType_);
+    if(bindingVnicTypeIsSet_) {
+        val[utility::conversions::to_string_t("binding:vnic_type")] = ModelBase::toJson(bindingVnicType_);
     }
     if(deviceIdIsSet_) {
         val[utility::conversions::to_string_t("device_id")] = ModelBase::toJson(deviceId_);
@@ -158,7 +158,7 @@ bool NeutronPort::fromJson(const web::json::value& val)
         {
             Object refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setBindingprofile(refVal);
+            setBindingProfile(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("binding:vif_details"))) {
@@ -167,7 +167,7 @@ bool NeutronPort::fromJson(const web::json::value& val)
         {
             BindingVifDetails refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setBindingvifDetails(refVal);
+            setBindingVifDetails(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("binding:vnic_type"))) {
@@ -176,7 +176,7 @@ bool NeutronPort::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setBindingvnicType(refVal);
+            setBindingVnicType(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("device_id"))) {
@@ -378,67 +378,67 @@ void NeutronPort::unsetallowedAddressPairs()
     allowedAddressPairsIsSet_ = false;
 }
 
-Object NeutronPort::getBindingprofile() const
+Object NeutronPort::getBindingProfile() const
 {
-    return bindingprofile_;
+    return bindingProfile_;
 }
 
-void NeutronPort::setBindingprofile(const Object& value)
+void NeutronPort::setBindingProfile(const Object& value)
 {
-    bindingprofile_ = value;
-    bindingprofileIsSet_ = true;
+    bindingProfile_ = value;
+    bindingProfileIsSet_ = true;
 }
 
-bool NeutronPort::bindingprofileIsSet() const
+bool NeutronPort::bindingProfileIsSet() const
 {
-    return bindingprofileIsSet_;
+    return bindingProfileIsSet_;
 }
 
-void NeutronPort::unsetbindingprofile()
+void NeutronPort::unsetbindingProfile()
 {
-    bindingprofileIsSet_ = false;
+    bindingProfileIsSet_ = false;
 }
 
-BindingVifDetails NeutronPort::getBindingvifDetails() const
+BindingVifDetails NeutronPort::getBindingVifDetails() const
 {
-    return bindingvifDetails_;
+    return bindingVifDetails_;
 }
 
-void NeutronPort::setBindingvifDetails(const BindingVifDetails& value)
+void NeutronPort::setBindingVifDetails(const BindingVifDetails& value)
 {
-    bindingvifDetails_ = value;
-    bindingvifDetailsIsSet_ = true;
+    bindingVifDetails_ = value;
+    bindingVifDetailsIsSet_ = true;
 }
 
-bool NeutronPort::bindingvifDetailsIsSet() const
+bool NeutronPort::bindingVifDetailsIsSet() const
 {
-    return bindingvifDetailsIsSet_;
+    return bindingVifDetailsIsSet_;
 }
 
-void NeutronPort::unsetbindingvifDetails()
+void NeutronPort::unsetbindingVifDetails()
 {
-    bindingvifDetailsIsSet_ = false;
+    bindingVifDetailsIsSet_ = false;
 }
 
-std::string NeutronPort::getBindingvnicType() const
+std::string NeutronPort::getBindingVnicType() const
 {
-    return bindingvnicType_;
+    return bindingVnicType_;
 }
 
-void NeutronPort::setBindingvnicType(const std::string& value)
+void NeutronPort::setBindingVnicType(const std::string& value)
 {
-    bindingvnicType_ = value;
-    bindingvnicTypeIsSet_ = true;
+    bindingVnicType_ = value;
+    bindingVnicTypeIsSet_ = true;
 }
 
-bool NeutronPort::bindingvnicTypeIsSet() const
+bool NeutronPort::bindingVnicTypeIsSet() const
 {
-    return bindingvnicTypeIsSet_;
+    return bindingVnicTypeIsSet_;
 }
 
-void NeutronPort::unsetbindingvnicType()
+void NeutronPort::unsetbindingVnicType()
 {
-    bindingvnicTypeIsSet_ = false;
+    bindingVnicTypeIsSet_ = false;
 }
 
 std::string NeutronPort::getDeviceId() const

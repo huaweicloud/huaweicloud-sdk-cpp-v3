@@ -60,19 +60,19 @@ public:
     /// 扩展属性，MAC地址。
     /// </summary>
 
-    std::string getOSEXTIPSMACmacAddr() const;
-    bool oSEXTIPSMACmacAddrIsSet() const;
-    void unsetoSEXTIPSMACmacAddr();
-    void setOSEXTIPSMACmacAddr(const std::string& value);
+    std::string getOSEXTIPSMACMacAddr() const;
+    bool oSEXTIPSMACMacAddrIsSet() const;
+    void unsetoSEXTIPSMACMacAddr();
+    void setOSEXTIPSMACMacAddr(const std::string& value);
 
     /// <summary>
     /// 扩展属性，分配IP地址方式。
     /// </summary>
 
-    std::string getOSEXTIPStype() const;
-    bool oSEXTIPStypeIsSet() const;
-    void unsetoSEXTIPStype();
-    void setOSEXTIPStype(const std::string& value);
+    std::string getOSEXTIPSType() const;
+    bool oSEXTIPSTypeIsSet() const;
+    void unsetoSEXTIPSType();
+    void setOSEXTIPSType(const std::string& value);
 
 
 protected:
@@ -80,10 +80,10 @@ protected:
     bool addrIsSet_;
     int32_t version_;
     bool versionIsSet_;
-    std::string oSEXTIPSMACmacAddr_;
-    bool oSEXTIPSMACmacAddrIsSet_;
-    std::string oSEXTIPStype_;
-    bool oSEXTIPStypeIsSet_;
+    std::string oSEXTIPSMACMacAddr_;
+    bool oSEXTIPSMACMacAddrIsSet_;
+    std::string oSEXTIPSType_;
+    bool oSEXTIPSTypeIsSet_;
 
 };
 

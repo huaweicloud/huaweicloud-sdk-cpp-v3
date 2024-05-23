@@ -120,10 +120,10 @@ public:
     /// 扩展属性：提供用户设置自定义信息 【使用说明】  internal_elb字段，布尔类型，普通租户可见。只有在创建内网ELB的虚拟IP的网卡时设置为true。普通租户没有权限更改该字段，由系统维护。 举例：{\&quot;internal_elb\&quot;: true}  disable_security_groups字段，布尔类型，普通租户可见。默认为false高性能通信场景下，允许指定为true普通租户可见。仅支持创建port和读取时指定。当前仅支持指定为true，不支持指定为false 举例：{\&quot;disable_security_groups\&quot;：true }， 当前仅支持指定为true，不支持指定为false，指定为true时，FWaaS功能不生效。  仅对于“华北-北京二”：udp_srvports和tcp_srvports，字段，字符串类型，默认不设置udp_srvports和tcp_srvports字段。允许指定udp_srvports和tcp_srvports字段为端口号，表示这些端口的tcp报文和udp报文可支持高并发连接，但是此类报文不受ACL和安全组规则的限制。udp_srvports和tcp_srvports字段同时支持更新操作。 − 格式： {\&quot;tcp_srvports\&quot;: \&quot;port1 port2 port3\&quot;, \&quot;udp_srvports\&quot;: \&quot;port1 port2 port3\&quot;} 端口号之间以空格间隔，最多允许指定的端口号总共为15个，端口号范围是1到65535。 − 示例：{\&quot;tcp_srvports\&quot;: \&quot;80 443\&quot;, \&quot;udp_srvports\&quot;: \&quot;53\&quot;} 示例表示入方向目的端口为80或者443的tcp报文可支持高并发连接。入方向目的端口为53的udp报文可支持高并发连接。但是此类报文不受ACL和安全组规则的限制。 
     /// </summary>
 
-    std::map<std::string, Object>& getBindingprofile();
-    bool bindingprofileIsSet() const;
-    void unsetbindingprofile();
-    void setBindingprofile(const std::map<std::string, Object>& value);
+    std::map<std::string, Object>& getBindingProfile();
+    bool bindingProfileIsSet() const;
+    void unsetbindingProfile();
+    void setBindingProfile(const std::map<std::string, Object>& value);
 
     /// <summary>
     /// 功能说明：端口安全使能标记，如果不使能则安全组和dhcp防欺骗不生效 取值范围：启用（true）或禁用（false）
@@ -138,10 +138,10 @@ public:
     /// 绑定的vNIC类型  - normal: 软交换
     /// </summary>
 
-    std::string getBindingvnicType() const;
-    bool bindingvnicTypeIsSet() const;
-    void unsetbindingvnicType();
-    void setBindingvnicType(const std::string& value);
+    std::string getBindingVnicType() const;
+    bool bindingVnicTypeIsSet() const;
+    void unsetbindingVnicType();
+    void setBindingVnicType(const std::string& value);
 
 
 protected:
@@ -161,12 +161,12 @@ protected:
     bool allowedAddressPairsIsSet_;
     std::vector<ExtraDhcpOpt> extraDhcpOpts_;
     bool extraDhcpOptsIsSet_;
-    std::map<std::string, Object> bindingprofile_;
-    bool bindingprofileIsSet_;
+    std::map<std::string, Object> bindingProfile_;
+    bool bindingProfileIsSet_;
     bool portSecurityEnabled_;
     bool portSecurityEnabledIsSet_;
-    std::string bindingvnicType_;
-    bool bindingvnicTypeIsSet_;
+    std::string bindingVnicType_;
+    bool bindingVnicTypeIsSet_;
 
 };
 

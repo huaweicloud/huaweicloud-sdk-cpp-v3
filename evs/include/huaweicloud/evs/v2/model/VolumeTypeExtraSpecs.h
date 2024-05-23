@@ -42,10 +42,10 @@ public:
     /// 支持当前云硬盘类型的可用区列表，列表的元素以逗号分隔。
     /// </summary>
 
-    std::string getRESKEYavailabilityZones() const;
-    bool rESKEYavailabilityZonesIsSet() const;
-    void unsetrESKEYavailabilityZones();
-    void setRESKEYavailabilityZones(const std::string& value);
+    std::string getRESKEYAvailabilityZones() const;
+    bool rESKEYAvailabilityZonesIsSet() const;
+    void unsetrESKEYAvailabilityZones();
+    void setRESKEYAvailabilityZones(const std::string& value);
 
     /// <summary>
     /// 预留属性。
@@ -60,10 +60,10 @@ public:
     /// 当前云硬盘类型已售罄的可用区列表，列表的元素以逗号分隔。
     /// </summary>
 
-    std::string getOsVendorExtendedsoldOutAvailabilityZones() const;
-    bool osVendorExtendedsoldOutAvailabilityZonesIsSet() const;
-    void unsetosVendorExtendedsoldOutAvailabilityZones();
-    void setOsVendorExtendedsoldOutAvailabilityZones(const std::string& value);
+    std::string getOsVendorExtendedSoldOutAvailabilityZones() const;
+    bool osVendorExtendedSoldOutAvailabilityZonesIsSet() const;
+    void unsetosVendorExtendedSoldOutAvailabilityZones();
+    void setOsVendorExtendedSoldOutAvailabilityZones(const std::string& value);
 
     /// <summary>
     /// 预留属性。
@@ -78,23 +78,23 @@ public:
     /// 预留属性。
     /// </summary>
 
-    std::string getHWavailabilityZone() const;
-    bool hWavailabilityZoneIsSet() const;
-    void unsethWavailabilityZone();
-    void setHWavailabilityZone(const std::string& value);
+    std::string getHWAvailabilityZone() const;
+    bool hWAvailabilityZoneIsSet() const;
+    void unsethWAvailabilityZone();
+    void setHWAvailabilityZone(const std::string& value);
 
 
 protected:
-    std::string rESKEYavailabilityZones_;
-    bool rESKEYavailabilityZonesIsSet_;
+    std::string rESKEYAvailabilityZones_;
+    bool rESKEYAvailabilityZonesIsSet_;
     std::string availabilityZone_;
     bool availabilityZoneIsSet_;
-    std::string osVendorExtendedsoldOutAvailabilityZones_;
-    bool osVendorExtendedsoldOutAvailabilityZonesIsSet_;
+    std::string osVendorExtendedSoldOutAvailabilityZones_;
+    bool osVendorExtendedSoldOutAvailabilityZonesIsSet_;
     std::string volumeBackendName_;
     bool volumeBackendNameIsSet_;
-    std::string hWavailabilityZone_;
-    bool hWavailabilityZoneIsSet_;
+    std::string hWAvailabilityZone_;
+    bool hWAvailabilityZoneIsSet_;
 
 };
 

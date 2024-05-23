@@ -24,12 +24,12 @@ NeutronListNetworksRequest::NeutronListNetworksRequest()
     statusIsSet_ = false;
     shared_ = false;
     sharedIsSet_ = false;
-    routerexternal_ = false;
-    routerexternalIsSet_ = false;
+    routerExternal_ = false;
+    routerExternalIsSet_ = false;
     adminStateUp_ = false;
     adminStateUpIsSet_ = false;
-    providernetworkType_ = "";
-    providernetworkTypeIsSet_ = false;
+    providerNetworkType_ = "";
+    providerNetworkTypeIsSet_ = false;
     tenantId_ = "";
     tenantIdIsSet_ = false;
 }
@@ -62,14 +62,14 @@ web::json::value NeutronListNetworksRequest::toJson() const
     if(sharedIsSet_) {
         val[utility::conversions::to_string_t("shared")] = ModelBase::toJson(shared_);
     }
-    if(routerexternalIsSet_) {
-        val[utility::conversions::to_string_t("router:external")] = ModelBase::toJson(routerexternal_);
+    if(routerExternalIsSet_) {
+        val[utility::conversions::to_string_t("router:external")] = ModelBase::toJson(routerExternal_);
     }
     if(adminStateUpIsSet_) {
         val[utility::conversions::to_string_t("admin_state_up")] = ModelBase::toJson(adminStateUp_);
     }
-    if(providernetworkTypeIsSet_) {
-        val[utility::conversions::to_string_t("provider:network_type")] = ModelBase::toJson(providernetworkType_);
+    if(providerNetworkTypeIsSet_) {
+        val[utility::conversions::to_string_t("provider:network_type")] = ModelBase::toJson(providerNetworkType_);
     }
     if(tenantIdIsSet_) {
         val[utility::conversions::to_string_t("tenant_id")] = ModelBase::toJson(tenantId_);
@@ -141,7 +141,7 @@ bool NeutronListNetworksRequest::fromJson(const web::json::value& val)
         {
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setRouterexternal(refVal);
+            setRouterExternal(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("admin_state_up"))) {
@@ -159,7 +159,7 @@ bool NeutronListNetworksRequest::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setProvidernetworkType(refVal);
+            setProviderNetworkType(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("tenant_id"))) {
@@ -301,25 +301,25 @@ void NeutronListNetworksRequest::unsetshared()
     sharedIsSet_ = false;
 }
 
-bool NeutronListNetworksRequest::isRouterexternal() const
+bool NeutronListNetworksRequest::isRouterExternal() const
 {
-    return routerexternal_;
+    return routerExternal_;
 }
 
-void NeutronListNetworksRequest::setRouterexternal(bool value)
+void NeutronListNetworksRequest::setRouterExternal(bool value)
 {
-    routerexternal_ = value;
-    routerexternalIsSet_ = true;
+    routerExternal_ = value;
+    routerExternalIsSet_ = true;
 }
 
-bool NeutronListNetworksRequest::routerexternalIsSet() const
+bool NeutronListNetworksRequest::routerExternalIsSet() const
 {
-    return routerexternalIsSet_;
+    return routerExternalIsSet_;
 }
 
-void NeutronListNetworksRequest::unsetrouterexternal()
+void NeutronListNetworksRequest::unsetrouterExternal()
 {
-    routerexternalIsSet_ = false;
+    routerExternalIsSet_ = false;
 }
 
 bool NeutronListNetworksRequest::isAdminStateUp() const
@@ -343,25 +343,25 @@ void NeutronListNetworksRequest::unsetadminStateUp()
     adminStateUpIsSet_ = false;
 }
 
-std::string NeutronListNetworksRequest::getProvidernetworkType() const
+std::string NeutronListNetworksRequest::getProviderNetworkType() const
 {
-    return providernetworkType_;
+    return providerNetworkType_;
 }
 
-void NeutronListNetworksRequest::setProvidernetworkType(const std::string& value)
+void NeutronListNetworksRequest::setProviderNetworkType(const std::string& value)
 {
-    providernetworkType_ = value;
-    providernetworkTypeIsSet_ = true;
+    providerNetworkType_ = value;
+    providerNetworkTypeIsSet_ = true;
 }
 
-bool NeutronListNetworksRequest::providernetworkTypeIsSet() const
+bool NeutronListNetworksRequest::providerNetworkTypeIsSet() const
 {
-    return providernetworkTypeIsSet_;
+    return providerNetworkTypeIsSet_;
 }
 
-void NeutronListNetworksRequest::unsetprovidernetworkType()
+void NeutronListNetworksRequest::unsetproviderNetworkType()
 {
-    providernetworkTypeIsSet_ = false;
+    providerNetworkTypeIsSet_ = false;
 }
 
 std::string NeutronListNetworksRequest::getTenantId() const

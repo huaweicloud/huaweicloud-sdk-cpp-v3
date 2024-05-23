@@ -36,7 +36,7 @@ PostPaidServer::PostPaidServer()
     name_ = "";
     nameIsSet_ = false;
     nicsIsSet_ = false;
-    osschedulerHintsIsSet_ = false;
+    osSchedulerHintsIsSet_ = false;
     publicipIsSet_ = false;
     rootVolumeIsSet_ = false;
     securityGroupsIsSet_ = false;
@@ -103,8 +103,8 @@ web::json::value PostPaidServer::toJson() const
     if(nicsIsSet_) {
         val[utility::conversions::to_string_t("nics")] = ModelBase::toJson(nics_);
     }
-    if(osschedulerHintsIsSet_) {
-        val[utility::conversions::to_string_t("os:scheduler_hints")] = ModelBase::toJson(osschedulerHints_);
+    if(osSchedulerHintsIsSet_) {
+        val[utility::conversions::to_string_t("os:scheduler_hints")] = ModelBase::toJson(osSchedulerHints_);
     }
     if(publicipIsSet_) {
         val[utility::conversions::to_string_t("publicip")] = ModelBase::toJson(publicip_);
@@ -272,7 +272,7 @@ bool PostPaidServer::fromJson(const web::json::value& val)
         {
             PostPaidServerSchedulerHints refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOsschedulerHints(refVal);
+            setOsSchedulerHints(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("publicip"))) {
@@ -654,25 +654,25 @@ void PostPaidServer::unsetnics()
     nicsIsSet_ = false;
 }
 
-PostPaidServerSchedulerHints PostPaidServer::getOsschedulerHints() const
+PostPaidServerSchedulerHints PostPaidServer::getOsSchedulerHints() const
 {
-    return osschedulerHints_;
+    return osSchedulerHints_;
 }
 
-void PostPaidServer::setOsschedulerHints(const PostPaidServerSchedulerHints& value)
+void PostPaidServer::setOsSchedulerHints(const PostPaidServerSchedulerHints& value)
 {
-    osschedulerHints_ = value;
-    osschedulerHintsIsSet_ = true;
+    osSchedulerHints_ = value;
+    osSchedulerHintsIsSet_ = true;
 }
 
-bool PostPaidServer::osschedulerHintsIsSet() const
+bool PostPaidServer::osSchedulerHintsIsSet() const
 {
-    return osschedulerHintsIsSet_;
+    return osSchedulerHintsIsSet_;
 }
 
-void PostPaidServer::unsetosschedulerHints()
+void PostPaidServer::unsetosSchedulerHints()
 {
-    osschedulerHintsIsSet_ = false;
+    osSchedulerHintsIsSet_ = false;
 }
 
 PostPaidServerPublicip PostPaidServer::getPublicip() const

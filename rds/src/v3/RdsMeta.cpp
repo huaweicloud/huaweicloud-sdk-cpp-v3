@@ -362,6 +362,16 @@ HttpRequestDef RdsMeta::genRequestDefForDeleteSqlLimit() {
     return reqDefBuilder;
 }
 
+HttpRequestDef RdsMeta::genRequestDefForDownloadErrorlog() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef RdsMeta::genRequestDefForDownloadSlowlog() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;

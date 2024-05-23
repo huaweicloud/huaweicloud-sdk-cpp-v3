@@ -16,10 +16,10 @@ NovaNetwork::NovaNetwork()
     addrIsSet_ = false;
     version_ = 0;
     versionIsSet_ = false;
-    oSEXTIPSMACmacAddr_ = "";
-    oSEXTIPSMACmacAddrIsSet_ = false;
-    oSEXTIPStype_ = "";
-    oSEXTIPStypeIsSet_ = false;
+    oSEXTIPSMACMacAddr_ = "";
+    oSEXTIPSMACMacAddrIsSet_ = false;
+    oSEXTIPSType_ = "";
+    oSEXTIPSTypeIsSet_ = false;
 }
 
 NovaNetwork::~NovaNetwork() = default;
@@ -38,11 +38,11 @@ web::json::value NovaNetwork::toJson() const
     if(versionIsSet_) {
         val[utility::conversions::to_string_t("version")] = ModelBase::toJson(version_);
     }
-    if(oSEXTIPSMACmacAddrIsSet_) {
-        val[utility::conversions::to_string_t("OS-EXT-IPS-MAC:mac_addr")] = ModelBase::toJson(oSEXTIPSMACmacAddr_);
+    if(oSEXTIPSMACMacAddrIsSet_) {
+        val[utility::conversions::to_string_t("OS-EXT-IPS-MAC:mac_addr")] = ModelBase::toJson(oSEXTIPSMACMacAddr_);
     }
-    if(oSEXTIPStypeIsSet_) {
-        val[utility::conversions::to_string_t("OS-EXT-IPS:type")] = ModelBase::toJson(oSEXTIPStype_);
+    if(oSEXTIPSTypeIsSet_) {
+        val[utility::conversions::to_string_t("OS-EXT-IPS:type")] = ModelBase::toJson(oSEXTIPSType_);
     }
 
     return val;
@@ -75,7 +75,7 @@ bool NovaNetwork::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSEXTIPSMACmacAddr(refVal);
+            setOSEXTIPSMACMacAddr(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("OS-EXT-IPS:type"))) {
@@ -84,7 +84,7 @@ bool NovaNetwork::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSEXTIPStype(refVal);
+            setOSEXTIPSType(refVal);
         }
     }
     return ok;
@@ -133,46 +133,46 @@ void NovaNetwork::unsetversion()
     versionIsSet_ = false;
 }
 
-std::string NovaNetwork::getOSEXTIPSMACmacAddr() const
+std::string NovaNetwork::getOSEXTIPSMACMacAddr() const
 {
-    return oSEXTIPSMACmacAddr_;
+    return oSEXTIPSMACMacAddr_;
 }
 
-void NovaNetwork::setOSEXTIPSMACmacAddr(const std::string& value)
+void NovaNetwork::setOSEXTIPSMACMacAddr(const std::string& value)
 {
-    oSEXTIPSMACmacAddr_ = value;
-    oSEXTIPSMACmacAddrIsSet_ = true;
+    oSEXTIPSMACMacAddr_ = value;
+    oSEXTIPSMACMacAddrIsSet_ = true;
 }
 
-bool NovaNetwork::oSEXTIPSMACmacAddrIsSet() const
+bool NovaNetwork::oSEXTIPSMACMacAddrIsSet() const
 {
-    return oSEXTIPSMACmacAddrIsSet_;
+    return oSEXTIPSMACMacAddrIsSet_;
 }
 
-void NovaNetwork::unsetoSEXTIPSMACmacAddr()
+void NovaNetwork::unsetoSEXTIPSMACMacAddr()
 {
-    oSEXTIPSMACmacAddrIsSet_ = false;
+    oSEXTIPSMACMacAddrIsSet_ = false;
 }
 
-std::string NovaNetwork::getOSEXTIPStype() const
+std::string NovaNetwork::getOSEXTIPSType() const
 {
-    return oSEXTIPStype_;
+    return oSEXTIPSType_;
 }
 
-void NovaNetwork::setOSEXTIPStype(const std::string& value)
+void NovaNetwork::setOSEXTIPSType(const std::string& value)
 {
-    oSEXTIPStype_ = value;
-    oSEXTIPStypeIsSet_ = true;
+    oSEXTIPSType_ = value;
+    oSEXTIPSTypeIsSet_ = true;
 }
 
-bool NovaNetwork::oSEXTIPStypeIsSet() const
+bool NovaNetwork::oSEXTIPSTypeIsSet() const
 {
-    return oSEXTIPStypeIsSet_;
+    return oSEXTIPSTypeIsSet_;
 }
 
-void NovaNetwork::unsetoSEXTIPStype()
+void NovaNetwork::unsetoSEXTIPSType()
 {
-    oSEXTIPStypeIsSet_ = false;
+    oSEXTIPSTypeIsSet_ = false;
 }
 
 }

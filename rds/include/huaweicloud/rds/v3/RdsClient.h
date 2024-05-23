@@ -87,6 +87,8 @@
 #include <huaweicloud/rds/v3/model/DeleteSqlLimitRequest.h>
 #include <huaweicloud/rds/v3/model/DeleteSqlLimitResponse.h>
 #include <huaweicloud/rds/v3/model/DeleteSqlLimitRuleReqV3.h>
+#include <huaweicloud/rds/v3/model/DownloadErrorlogRequest.h>
+#include <huaweicloud/rds/v3/model/DownloadErrorlogResponse.h>
 #include <huaweicloud/rds/v3/model/DownloadSlowlogRequest.h>
 #include <huaweicloud/rds/v3/model/DownloadSlowlogResponse.h>
 #include <huaweicloud/rds/v3/model/EnableConfigurationRequest.h>
@@ -802,6 +804,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteSqlLimitResponse> deleteSqlLimit(
         DeleteSqlLimitRequest &request
+    );
+    // 获取错误日志下载链接
+    //
+    // 获取错误日志下载链接。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DownloadErrorlogResponse> downloadErrorlog(
+        DownloadErrorlogRequest &request
     );
     // 获取慢日志下载链接
     //

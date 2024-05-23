@@ -43,7 +43,7 @@ PrePaidServer::PrePaidServer()
     batchCreateInMultiAzIsSet_ = false;
     extendparamIsSet_ = false;
     metadataIsSet_ = false;
-    osschedulerHintsIsSet_ = false;
+    osSchedulerHintsIsSet_ = false;
     tagsIsSet_ = false;
     serverTagsIsSet_ = false;
     description_ = "";
@@ -118,8 +118,8 @@ web::json::value PrePaidServer::toJson() const
     if(metadataIsSet_) {
         val[utility::conversions::to_string_t("metadata")] = ModelBase::toJson(metadata_);
     }
-    if(osschedulerHintsIsSet_) {
-        val[utility::conversions::to_string_t("os:scheduler_hints")] = ModelBase::toJson(osschedulerHints_);
+    if(osSchedulerHintsIsSet_) {
+        val[utility::conversions::to_string_t("os:scheduler_hints")] = ModelBase::toJson(osSchedulerHints_);
     }
     if(tagsIsSet_) {
         val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
@@ -317,7 +317,7 @@ bool PrePaidServer::fromJson(const web::json::value& val)
         {
             PrePaidServerSchedulerHints refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOsschedulerHints(refVal);
+            setOsSchedulerHints(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("tags"))) {
@@ -759,25 +759,25 @@ void PrePaidServer::unsetmetadata()
     metadataIsSet_ = false;
 }
 
-PrePaidServerSchedulerHints PrePaidServer::getOsschedulerHints() const
+PrePaidServerSchedulerHints PrePaidServer::getOsSchedulerHints() const
 {
-    return osschedulerHints_;
+    return osSchedulerHints_;
 }
 
-void PrePaidServer::setOsschedulerHints(const PrePaidServerSchedulerHints& value)
+void PrePaidServer::setOsSchedulerHints(const PrePaidServerSchedulerHints& value)
 {
-    osschedulerHints_ = value;
-    osschedulerHintsIsSet_ = true;
+    osSchedulerHints_ = value;
+    osSchedulerHintsIsSet_ = true;
 }
 
-bool PrePaidServer::osschedulerHintsIsSet() const
+bool PrePaidServer::osSchedulerHintsIsSet() const
 {
-    return osschedulerHintsIsSet_;
+    return osSchedulerHintsIsSet_;
 }
 
-void PrePaidServer::unsetosschedulerHints()
+void PrePaidServer::unsetosSchedulerHints()
 {
-    osschedulerHintsIsSet_ = false;
+    osSchedulerHintsIsSet_ = false;
 }
 
 std::vector<std::string>& PrePaidServer::getTags()

@@ -72,10 +72,10 @@ public:
     /// diskConfig方式。  - MANUAL，镜像空间不会扩展。 - AUTO，系统盘镜像空间会自动扩展为与flavor大小一致。
     /// </summary>
 
-    std::string getOSDCFdiskConfig() const;
-    bool oSDCFdiskConfigIsSet() const;
-    void unsetoSDCFdiskConfig();
-    void setOSDCFdiskConfig(const std::string& value);
+    std::string getOSDCFDiskConfig() const;
+    bool oSDCFDiskConfigIsSet() const;
+    void unsetoSDCFDiskConfig();
+    void setOSDCFDiskConfig(const std::string& value);
 
     /// <summary>
     /// 通过返回的reservation_id，可以过滤查询到本次创建的弹性云服务器。  &gt; 说明： &gt;  &gt; 批量创建弹性云服务器时，支持使用该字段。
@@ -103,8 +103,8 @@ protected:
     bool linksIsSet_;
     std::vector<NovaServerSecurityGroup> securityGroups_;
     bool securityGroupsIsSet_;
-    std::string oSDCFdiskConfig_;
-    bool oSDCFdiskConfigIsSet_;
+    std::string oSDCFDiskConfig_;
+    bool oSDCFDiskConfigIsSet_;
     std::string reservationId_;
     bool reservationIdIsSet_;
     std::string adminPass_;

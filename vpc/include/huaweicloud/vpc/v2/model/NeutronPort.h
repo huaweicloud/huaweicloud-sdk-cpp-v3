@@ -68,28 +68,28 @@ public:
     /// 扩展属性：提供用户设置自定义信息 【使用说明】  internal_elb字段，布尔类型，普通租户可见。只有在创建内网ELB的虚拟IP的网卡时设置为true。普通租户没有权限更改该字段，由系统维护。 举例：{\&quot;internal_elb\&quot;: true}  disable_security_groups字段，布尔类型，普通租户可见。默认为false高性能通信场景下，允许指定为true普通租户可见。仅支持创建port和读取时指定。当前仅支持指定为true，不支持指定为false 举例：{\&quot;disable_security_groups\&quot;：true }， 当前仅支持指定为true，不支持指定为false，指定为true时，FWaaS功能不生效。  仅对于“华北-北京二”：udp_srvports和tcp_srvports，字段，字符串类型，默认不设置udp_srvports和tcp_srvports字段。允许指定udp_srvports和tcp_srvports字段为端口号，表示这些端口的tcp报文和udp报文可支持高并发连接，但是此类报文不受ACL和安全组规则的限制。udp_srvports和tcp_srvports字段同时支持更新操作。 − 格式： {\&quot;tcp_srvports\&quot;: \&quot;port1 port2 port3\&quot;, \&quot;udp_srvports\&quot;: \&quot;port1 port2 port3\&quot;} 端口号之间以空格间隔，最多允许指定的端口号总共为15个，端口号范围是1到65535。 − 示例：{\&quot;tcp_srvports\&quot;: \&quot;80 443\&quot;, \&quot;udp_srvports\&quot;: \&quot;53\&quot;} 示例表示入方向目的端口为80或者443的tcp报文可支持高并发连接。入方向目的端口为53的udp报文可支持高并发连接。但是此类报文不受ACL和安全组规则的限制。 
     /// </summary>
 
-    Object getBindingprofile() const;
-    bool bindingprofileIsSet() const;
-    void unsetbindingprofile();
-    void setBindingprofile(const Object& value);
+    Object getBindingProfile() const;
+    bool bindingProfileIsSet() const;
+    void unsetbindingProfile();
+    void setBindingProfile(const Object& value);
 
     /// <summary>
     /// 
     /// </summary>
 
-    BindingVifDetails getBindingvifDetails() const;
-    bool bindingvifDetailsIsSet() const;
-    void unsetbindingvifDetails();
-    void setBindingvifDetails(const BindingVifDetails& value);
+    BindingVifDetails getBindingVifDetails() const;
+    bool bindingVifDetailsIsSet() const;
+    void unsetbindingVifDetails();
+    void setBindingVifDetails(const BindingVifDetails& value);
 
     /// <summary>
     /// 功能说明：绑定的vNIC类型  - normal：软交换
     /// </summary>
 
-    std::string getBindingvnicType() const;
-    bool bindingvnicTypeIsSet() const;
-    void unsetbindingvnicType();
-    void setBindingvnicType(const std::string& value);
+    std::string getBindingVnicType() const;
+    bool bindingVnicTypeIsSet() const;
+    void unsetbindingVnicType();
+    void setBindingVnicType(const std::string& value);
 
     /// <summary>
     /// 功能说明：端口设备ID 约束：不支持设置和更新，由系统自动维护，该字段非空的端口不允许删除。
@@ -250,12 +250,12 @@ protected:
     bool adminStateUpIsSet_;
     std::vector<AllowedAddressPair> allowedAddressPairs_;
     bool allowedAddressPairsIsSet_;
-    Object bindingprofile_;
-    bool bindingprofileIsSet_;
-    BindingVifDetails bindingvifDetails_;
-    bool bindingvifDetailsIsSet_;
-    std::string bindingvnicType_;
-    bool bindingvnicTypeIsSet_;
+    Object bindingProfile_;
+    bool bindingProfileIsSet_;
+    BindingVifDetails bindingVifDetails_;
+    bool bindingVifDetailsIsSet_;
+    std::string bindingVnicType_;
+    bool bindingVnicTypeIsSet_;
     std::string deviceId_;
     bool deviceIdIsSet_;
     std::string deviceOwner_;

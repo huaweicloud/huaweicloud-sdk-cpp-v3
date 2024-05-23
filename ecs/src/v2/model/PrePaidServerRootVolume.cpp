@@ -26,8 +26,8 @@ PrePaidServerRootVolume::PrePaidServerRootVolume()
     clusterTypeIsSet_ = false;
     clusterId_ = "";
     clusterIdIsSet_ = false;
-    hwpassthrough_ = false;
-    hwpassthroughIsSet_ = false;
+    hwPassthrough_ = false;
+    hwPassthroughIsSet_ = false;
 }
 
 PrePaidServerRootVolume::~PrePaidServerRootVolume() = default;
@@ -64,8 +64,8 @@ web::json::value PrePaidServerRootVolume::toJson() const
     if(clusterIdIsSet_) {
         val[utility::conversions::to_string_t("cluster_id")] = ModelBase::toJson(clusterId_);
     }
-    if(hwpassthroughIsSet_) {
-        val[utility::conversions::to_string_t("hw:passthrough")] = ModelBase::toJson(hwpassthrough_);
+    if(hwPassthroughIsSet_) {
+        val[utility::conversions::to_string_t("hw:passthrough")] = ModelBase::toJson(hwPassthrough_);
     }
 
     return val;
@@ -152,7 +152,7 @@ bool PrePaidServerRootVolume::fromJson(const web::json::value& val)
         {
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setHwpassthrough(refVal);
+            setHwPassthrough(refVal);
         }
     }
     return ok;
@@ -327,25 +327,25 @@ void PrePaidServerRootVolume::unsetclusterId()
     clusterIdIsSet_ = false;
 }
 
-bool PrePaidServerRootVolume::isHwpassthrough() const
+bool PrePaidServerRootVolume::isHwPassthrough() const
 {
-    return hwpassthrough_;
+    return hwPassthrough_;
 }
 
-void PrePaidServerRootVolume::setHwpassthrough(bool value)
+void PrePaidServerRootVolume::setHwPassthrough(bool value)
 {
-    hwpassthrough_ = value;
-    hwpassthroughIsSet_ = true;
+    hwPassthrough_ = value;
+    hwPassthroughIsSet_ = true;
 }
 
-bool PrePaidServerRootVolume::hwpassthroughIsSet() const
+bool PrePaidServerRootVolume::hwPassthroughIsSet() const
 {
-    return hwpassthroughIsSet_;
+    return hwPassthroughIsSet_;
 }
 
-void PrePaidServerRootVolume::unsethwpassthrough()
+void PrePaidServerRootVolume::unsethwPassthrough()
 {
-    hwpassthroughIsSet_ = false;
+    hwPassthroughIsSet_ = false;
 }
 
 }

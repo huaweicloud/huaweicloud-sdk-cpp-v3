@@ -27,10 +27,10 @@ UpdateVolumeResponse::UpdateVolumeResponse()
     multiattachIsSet_ = false;
     name_ = "";
     nameIsSet_ = false;
-    osVolHostAttrhost_ = "";
-    osVolHostAttrhostIsSet_ = false;
-    osVolTenantAttrtenantId_ = "";
-    osVolTenantAttrtenantIdIsSet_ = false;
+    osVolHostAttrHost_ = "";
+    osVolHostAttrHostIsSet_ = false;
+    osVolTenantAttrTenantId_ = "";
+    osVolTenantAttrTenantIdIsSet_ = false;
     shareable_ = "";
     shareableIsSet_ = false;
     size_ = 0;
@@ -46,8 +46,8 @@ UpdateVolumeResponse::UpdateVolumeResponse()
     volumeTypeIsSet_ = false;
     description_ = "";
     descriptionIsSet_ = false;
-    osVolumeReplicationextendedStatus_ = "";
-    osVolumeReplicationextendedStatusIsSet_ = false;
+    osVolumeReplicationExtendedStatus_ = "";
+    osVolumeReplicationExtendedStatusIsSet_ = false;
 }
 
 UpdateVolumeResponse::~UpdateVolumeResponse() = default;
@@ -87,11 +87,11 @@ web::json::value UpdateVolumeResponse::toJson() const
     if(nameIsSet_) {
         val[utility::conversions::to_string_t("name")] = ModelBase::toJson(name_);
     }
-    if(osVolHostAttrhostIsSet_) {
-        val[utility::conversions::to_string_t("os-vol-host-attr:host")] = ModelBase::toJson(osVolHostAttrhost_);
+    if(osVolHostAttrHostIsSet_) {
+        val[utility::conversions::to_string_t("os-vol-host-attr:host")] = ModelBase::toJson(osVolHostAttrHost_);
     }
-    if(osVolTenantAttrtenantIdIsSet_) {
-        val[utility::conversions::to_string_t("os-vol-tenant-attr:tenant_id")] = ModelBase::toJson(osVolTenantAttrtenantId_);
+    if(osVolTenantAttrTenantIdIsSet_) {
+        val[utility::conversions::to_string_t("os-vol-tenant-attr:tenant_id")] = ModelBase::toJson(osVolTenantAttrTenantId_);
     }
     if(shareableIsSet_) {
         val[utility::conversions::to_string_t("shareable")] = ModelBase::toJson(shareable_);
@@ -117,8 +117,8 @@ web::json::value UpdateVolumeResponse::toJson() const
     if(descriptionIsSet_) {
         val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
     }
-    if(osVolumeReplicationextendedStatusIsSet_) {
-        val[utility::conversions::to_string_t("os-volume-replication:extended_status")] = ModelBase::toJson(osVolumeReplicationextendedStatus_);
+    if(osVolumeReplicationExtendedStatusIsSet_) {
+        val[utility::conversions::to_string_t("os-volume-replication:extended_status")] = ModelBase::toJson(osVolumeReplicationExtendedStatus_);
     }
 
     return val;
@@ -214,7 +214,7 @@ bool UpdateVolumeResponse::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOsVolHostAttrhost(refVal);
+            setOsVolHostAttrHost(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("os-vol-tenant-attr:tenant_id"))) {
@@ -223,7 +223,7 @@ bool UpdateVolumeResponse::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOsVolTenantAttrtenantId(refVal);
+            setOsVolTenantAttrTenantId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("shareable"))) {
@@ -304,7 +304,7 @@ bool UpdateVolumeResponse::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOsVolumeReplicationextendedStatus(refVal);
+            setOsVolumeReplicationExtendedStatus(refVal);
         }
     }
     return ok;
@@ -500,46 +500,46 @@ void UpdateVolumeResponse::unsetname()
     nameIsSet_ = false;
 }
 
-std::string UpdateVolumeResponse::getOsVolHostAttrhost() const
+std::string UpdateVolumeResponse::getOsVolHostAttrHost() const
 {
-    return osVolHostAttrhost_;
+    return osVolHostAttrHost_;
 }
 
-void UpdateVolumeResponse::setOsVolHostAttrhost(const std::string& value)
+void UpdateVolumeResponse::setOsVolHostAttrHost(const std::string& value)
 {
-    osVolHostAttrhost_ = value;
-    osVolHostAttrhostIsSet_ = true;
+    osVolHostAttrHost_ = value;
+    osVolHostAttrHostIsSet_ = true;
 }
 
-bool UpdateVolumeResponse::osVolHostAttrhostIsSet() const
+bool UpdateVolumeResponse::osVolHostAttrHostIsSet() const
 {
-    return osVolHostAttrhostIsSet_;
+    return osVolHostAttrHostIsSet_;
 }
 
-void UpdateVolumeResponse::unsetosVolHostAttrhost()
+void UpdateVolumeResponse::unsetosVolHostAttrHost()
 {
-    osVolHostAttrhostIsSet_ = false;
+    osVolHostAttrHostIsSet_ = false;
 }
 
-std::string UpdateVolumeResponse::getOsVolTenantAttrtenantId() const
+std::string UpdateVolumeResponse::getOsVolTenantAttrTenantId() const
 {
-    return osVolTenantAttrtenantId_;
+    return osVolTenantAttrTenantId_;
 }
 
-void UpdateVolumeResponse::setOsVolTenantAttrtenantId(const std::string& value)
+void UpdateVolumeResponse::setOsVolTenantAttrTenantId(const std::string& value)
 {
-    osVolTenantAttrtenantId_ = value;
-    osVolTenantAttrtenantIdIsSet_ = true;
+    osVolTenantAttrTenantId_ = value;
+    osVolTenantAttrTenantIdIsSet_ = true;
 }
 
-bool UpdateVolumeResponse::osVolTenantAttrtenantIdIsSet() const
+bool UpdateVolumeResponse::osVolTenantAttrTenantIdIsSet() const
 {
-    return osVolTenantAttrtenantIdIsSet_;
+    return osVolTenantAttrTenantIdIsSet_;
 }
 
-void UpdateVolumeResponse::unsetosVolTenantAttrtenantId()
+void UpdateVolumeResponse::unsetosVolTenantAttrTenantId()
 {
-    osVolTenantAttrtenantIdIsSet_ = false;
+    osVolTenantAttrTenantIdIsSet_ = false;
 }
 
 std::string UpdateVolumeResponse::getShareable() const
@@ -710,25 +710,25 @@ void UpdateVolumeResponse::unsetdescription()
     descriptionIsSet_ = false;
 }
 
-std::string UpdateVolumeResponse::getOsVolumeReplicationextendedStatus() const
+std::string UpdateVolumeResponse::getOsVolumeReplicationExtendedStatus() const
 {
-    return osVolumeReplicationextendedStatus_;
+    return osVolumeReplicationExtendedStatus_;
 }
 
-void UpdateVolumeResponse::setOsVolumeReplicationextendedStatus(const std::string& value)
+void UpdateVolumeResponse::setOsVolumeReplicationExtendedStatus(const std::string& value)
 {
-    osVolumeReplicationextendedStatus_ = value;
-    osVolumeReplicationextendedStatusIsSet_ = true;
+    osVolumeReplicationExtendedStatus_ = value;
+    osVolumeReplicationExtendedStatusIsSet_ = true;
 }
 
-bool UpdateVolumeResponse::osVolumeReplicationextendedStatusIsSet() const
+bool UpdateVolumeResponse::osVolumeReplicationExtendedStatusIsSet() const
 {
-    return osVolumeReplicationextendedStatusIsSet_;
+    return osVolumeReplicationExtendedStatusIsSet_;
 }
 
-void UpdateVolumeResponse::unsetosVolumeReplicationextendedStatus()
+void UpdateVolumeResponse::unsetosVolumeReplicationExtendedStatus()
 {
-    osVolumeReplicationextendedStatusIsSet_ = false;
+    osVolumeReplicationExtendedStatusIsSet_ = false;
 }
 
 }

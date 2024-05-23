@@ -187,100 +187,100 @@ public:
     /// 扩展属性，磁盘配置方式。对镜像启动云服务器生效。  取值范围：  - AUTO: API使用单个分区构建目标磁盘大小的云服务器。 API会自动调整文件系统以适应整个分区。 - MANUAL：API使用源映像中的分区方案和文件系统构建服务器。如果目标磁盘较大，则API不分区剩余的磁盘空间。
     /// </summary>
 
-    std::string getOSDCFdiskConfig() const;
-    bool oSDCFdiskConfigIsSet() const;
-    void unsetoSDCFdiskConfig();
-    void setOSDCFdiskConfig(const std::string& value);
+    std::string getOSDCFDiskConfig() const;
+    bool oSDCFDiskConfigIsSet() const;
+    void unsetoSDCFDiskConfig();
+    void setOSDCFDiskConfig(const std::string& value);
 
     /// <summary>
     /// 扩展属性，可用分区编码。
     /// </summary>
 
-    std::string getOSEXTAZavailabilityZone() const;
-    bool oSEXTAZavailabilityZoneIsSet() const;
-    void unsetoSEXTAZavailabilityZone();
-    void setOSEXTAZavailabilityZone(const std::string& value);
+    std::string getOSEXTAZAvailabilityZone() const;
+    bool oSEXTAZAvailabilityZoneIsSet() const;
+    void unsetoSEXTAZAvailabilityZone();
+    void setOSEXTAZAvailabilityZone(const std::string& value);
 
     /// <summary>
     /// 扩展属性，与主机宿主名称。
     /// </summary>
 
-    std::string getOSEXTSRVATTRhost() const;
-    bool oSEXTSRVATTRhostIsSet() const;
-    void unsetoSEXTSRVATTRhost();
-    void setOSEXTSRVATTRhost(const std::string& value);
+    std::string getOSEXTSRVATTRHost() const;
+    bool oSEXTSRVATTRHostIsSet() const;
+    void unsetoSEXTSRVATTRHost();
+    void setOSEXTSRVATTRHost(const std::string& value);
 
     /// <summary>
     /// 扩展属性，hypervisor主机名。
     /// </summary>
 
-    std::string getOSEXTSRVATTRhypervisorHostname() const;
-    bool oSEXTSRVATTRhypervisorHostnameIsSet() const;
-    void unsetoSEXTSRVATTRhypervisorHostname();
-    void setOSEXTSRVATTRhypervisorHostname(const std::string& value);
+    std::string getOSEXTSRVATTRHypervisorHostname() const;
+    bool oSEXTSRVATTRHypervisorHostnameIsSet() const;
+    void unsetoSEXTSRVATTRHypervisorHostname();
+    void setOSEXTSRVATTRHypervisorHostname(const std::string& value);
 
     /// <summary>
     /// 扩展属性，云服务器实例ID。
     /// </summary>
 
-    std::string getOSEXTSRVATTRinstanceName() const;
-    bool oSEXTSRVATTRinstanceNameIsSet() const;
-    void unsetoSEXTSRVATTRinstanceName();
-    void setOSEXTSRVATTRinstanceName(const std::string& value);
+    std::string getOSEXTSRVATTRInstanceName() const;
+    bool oSEXTSRVATTRInstanceNameIsSet() const;
+    void unsetoSEXTSRVATTRInstanceName();
+    void setOSEXTSRVATTRInstanceName(const std::string& value);
 
     /// <summary>
     /// 扩展属性，云服务器电源状态。  取值范围：0，1，2，3，4  - 0 : pending - 1 : running - 2 : paused - 3 : shutdown - 4 : crashed
     /// </summary>
 
-    int32_t getOSEXTSTSpowerState() const;
-    bool oSEXTSTSpowerStateIsSet() const;
-    void unsetoSEXTSTSpowerState();
-    void setOSEXTSTSpowerState(int32_t value);
+    int32_t getOSEXTSTSPowerState() const;
+    bool oSEXTSTSPowerStateIsSet() const;
+    void unsetoSEXTSTSPowerState();
+    void setOSEXTSTSPowerState(int32_t value);
 
     /// <summary>
     /// 扩展属性，云服务器任务状态。  取值范围：  SHOUTOFF, RESIZE, REBUILD, VERIFY_RESIZE, REVERT_RESIZE, PAUSED, MIGRATING, SUSPENDED, RESCUE, ERROR, DELETED,SOFT_DELETED,SHELVED,SHELVED_OFFLOADED  取值范围请参考[云服务器状态](https://support.huaweicloud.com/api-ecs/ecs_08_0002.html)表3。
     /// </summary>
 
-    std::string getOSEXTSTStaskState() const;
-    bool oSEXTSTStaskStateIsSet() const;
-    void unsetoSEXTSTStaskState();
-    void setOSEXTSTStaskState(const std::string& value);
+    std::string getOSEXTSTSTaskState() const;
+    bool oSEXTSTSTaskStateIsSet() const;
+    void unsetoSEXTSTSTaskState();
+    void setOSEXTSTSTaskState(const std::string& value);
 
     /// <summary>
     /// 扩展属性，云服务器状态。  取值范围：  ACTIVE,BUILDING,STOPPED,RESIZED,PAUSED,SUSPENDED,RESCUED,ERROR,DELETED,SOFT_DELETED,SHELVED,SHELVED_OFFLOADED  云服务器状态说明请参考[云服务器状态](https://support.huaweicloud.com/api-ecs/ecs_08_0002.html)。
     /// </summary>
 
-    std::string getOSEXTSTSvmState() const;
-    bool oSEXTSTSvmStateIsSet() const;
-    void unsetoSEXTSTSvmState();
-    void setOSEXTSTSvmState(const std::string& value);
+    std::string getOSEXTSTSVmState() const;
+    bool oSEXTSTSVmStateIsSet() const;
+    void unsetoSEXTSTSVmState();
+    void setOSEXTSTSVmState(const std::string& value);
 
     /// <summary>
     /// 扩展属性，云服务器启动时间。时间格式例如：2019-05-22T07:48:19.000000
     /// </summary>
 
-    std::string getOSSRVUSGlaunchedAt() const;
-    bool oSSRVUSGlaunchedAtIsSet() const;
-    void unsetoSSRVUSGlaunchedAt();
-    void setOSSRVUSGlaunchedAt(const std::string& value);
+    std::string getOSSRVUSGLaunchedAt() const;
+    bool oSSRVUSGLaunchedAtIsSet() const;
+    void unsetoSSRVUSGLaunchedAt();
+    void setOSSRVUSGLaunchedAt(const std::string& value);
 
     /// <summary>
     /// 扩展属性，云服务器关闭时间。  时间格式例如：2019-05-22T07:48:19.000000
     /// </summary>
 
-    std::string getOSSRVUSGterminatedAt() const;
-    bool oSSRVUSGterminatedAtIsSet() const;
-    void unsetoSSRVUSGterminatedAt();
-    void setOSSRVUSGterminatedAt(const std::string& value);
+    std::string getOSSRVUSGTerminatedAt() const;
+    bool oSSRVUSGTerminatedAtIsSet() const;
+    void unsetoSSRVUSGTerminatedAt();
+    void setOSSRVUSGTerminatedAt(const std::string& value);
 
     /// <summary>
     /// 云服务器挂载的云磁盘信息。
     /// </summary>
 
-    std::vector<NovaServerVolume>& getOsExtendedVolumesvolumesAttached();
-    bool osExtendedVolumesvolumesAttachedIsSet() const;
-    void unsetosExtendedVolumesvolumesAttached();
-    void setOsExtendedVolumesvolumesAttached(const std::vector<NovaServerVolume>& value);
+    std::vector<NovaServerVolume>& getOsExtendedVolumesVolumesAttached();
+    bool osExtendedVolumesVolumesAttachedIsSet() const;
+    void unsetosExtendedVolumesVolumesAttached();
+    void setOsExtendedVolumesVolumesAttached(const std::vector<NovaServerVolume>& value);
 
     /// <summary>
     /// 
@@ -313,64 +313,64 @@ public:
     /// 弹性云服务器的主机名。  微版本2.3后支持
     /// </summary>
 
-    std::string getOSEXTSRVATTRhostname() const;
-    bool oSEXTSRVATTRhostnameIsSet() const;
-    void unsetoSEXTSRVATTRhostname();
-    void setOSEXTSRVATTRhostname(const std::string& value);
+    std::string getOSEXTSRVATTRHostname() const;
+    bool oSEXTSRVATTRHostnameIsSet() const;
+    void unsetoSEXTSRVATTRHostname();
+    void setOSEXTSRVATTRHostname(const std::string& value);
 
     /// <summary>
     /// 批量创建场景，弹性云服务器的预留ID。  微版本2.3后支持
     /// </summary>
 
-    std::string getOSEXTSRVATTRreservationId() const;
-    bool oSEXTSRVATTRreservationIdIsSet() const;
-    void unsetoSEXTSRVATTRreservationId();
-    void setOSEXTSRVATTRreservationId(const std::string& value);
+    std::string getOSEXTSRVATTRReservationId() const;
+    bool oSEXTSRVATTRReservationIdIsSet() const;
+    void unsetoSEXTSRVATTRReservationId();
+    void setOSEXTSRVATTRReservationId(const std::string& value);
 
     /// <summary>
     /// 批量创建场景，弹性云服务器的启动顺序。  微版本2.3后支持
     /// </summary>
 
-    int32_t getOSEXTSRVATTRlaunchIndex() const;
-    bool oSEXTSRVATTRlaunchIndexIsSet() const;
-    void unsetoSEXTSRVATTRlaunchIndex();
-    void setOSEXTSRVATTRlaunchIndex(int32_t value);
+    int32_t getOSEXTSRVATTRLaunchIndex() const;
+    bool oSEXTSRVATTRLaunchIndexIsSet() const;
+    void unsetoSEXTSRVATTRLaunchIndex();
+    void setOSEXTSRVATTRLaunchIndex(int32_t value);
 
     /// <summary>
     /// 若使用AMI格式的镜像，则表示kernel image的UUID；否则，留空。  微版本2.3后支持
     /// </summary>
 
-    std::string getOSEXTSRVATTRkernelId() const;
-    bool oSEXTSRVATTRkernelIdIsSet() const;
-    void unsetoSEXTSRVATTRkernelId();
-    void setOSEXTSRVATTRkernelId(const std::string& value);
+    std::string getOSEXTSRVATTRKernelId() const;
+    bool oSEXTSRVATTRKernelIdIsSet() const;
+    void unsetoSEXTSRVATTRKernelId();
+    void setOSEXTSRVATTRKernelId(const std::string& value);
 
     /// <summary>
     /// 若使用AMI格式镜像，则表示ramdisk image的UUID；否则，留空。  微版本2.3后支持
     /// </summary>
 
-    std::string getOSEXTSRVATTRramdiskId() const;
-    bool oSEXTSRVATTRramdiskIdIsSet() const;
-    void unsetoSEXTSRVATTRramdiskId();
-    void setOSEXTSRVATTRramdiskId(const std::string& value);
+    std::string getOSEXTSRVATTRRamdiskId() const;
+    bool oSEXTSRVATTRRamdiskIdIsSet() const;
+    void unsetoSEXTSRVATTRRamdiskId();
+    void setOSEXTSRVATTRRamdiskId(const std::string& value);
 
     /// <summary>
     /// 弹性云服务器系统盘的设备名称。  微版本2.3后支持
     /// </summary>
 
-    std::string getOSEXTSRVATTRrootDeviceName() const;
-    bool oSEXTSRVATTRrootDeviceNameIsSet() const;
-    void unsetoSEXTSRVATTRrootDeviceName();
-    void setOSEXTSRVATTRrootDeviceName(const std::string& value);
+    std::string getOSEXTSRVATTRRootDeviceName() const;
+    bool oSEXTSRVATTRRootDeviceNameIsSet() const;
+    void unsetoSEXTSRVATTRRootDeviceName();
+    void setOSEXTSRVATTRRootDeviceName(const std::string& value);
 
     /// <summary>
     /// 创建弹性云服务器时指定的user_data。  微版本2.3后支持
     /// </summary>
 
-    std::string getOSEXTSRVATTRuserData() const;
-    bool oSEXTSRVATTRuserDataIsSet() const;
-    void unsetoSEXTSRVATTRuserData();
-    void setOSEXTSRVATTRuserData(const std::string& value);
+    std::string getOSEXTSRVATTRUserData() const;
+    bool oSEXTSRVATTRUserDataIsSet() const;
+    void unsetoSEXTSRVATTRUserData();
+    void setOSEXTSRVATTRUserData(const std::string& value);
 
     /// <summary>
     /// 云服务器的标签列表。  系统近期对标签功能进行了升级，升级后，返回的tag值遵循如下规则：  - key与value使用“&#x3D;”连接，如“key&#x3D;value”。 - 如果value为空字符串，则仅返回key。
@@ -430,10 +430,10 @@ public:
     /// 
     /// </summary>
 
-    NovaServerSchedulerHints getOsschedulerHints() const;
-    bool osschedulerHintsIsSet() const;
-    void unsetosschedulerHints();
-    void setOsschedulerHints(const NovaServerSchedulerHints& value);
+    NovaServerSchedulerHints getOsSchedulerHints() const;
+    bool osSchedulerHintsIsSet() const;
+    void unsetosSchedulerHints();
+    void setOsSchedulerHints(const NovaServerSchedulerHints& value);
 
 
 protected:
@@ -467,48 +467,48 @@ protected:
     bool securityGroupsIsSet_;
     std::vector<NovaLink> links_;
     bool linksIsSet_;
-    std::string oSDCFdiskConfig_;
-    bool oSDCFdiskConfigIsSet_;
-    std::string oSEXTAZavailabilityZone_;
-    bool oSEXTAZavailabilityZoneIsSet_;
-    std::string oSEXTSRVATTRhost_;
-    bool oSEXTSRVATTRhostIsSet_;
-    std::string oSEXTSRVATTRhypervisorHostname_;
-    bool oSEXTSRVATTRhypervisorHostnameIsSet_;
-    std::string oSEXTSRVATTRinstanceName_;
-    bool oSEXTSRVATTRinstanceNameIsSet_;
-    int32_t oSEXTSTSpowerState_;
-    bool oSEXTSTSpowerStateIsSet_;
-    std::string oSEXTSTStaskState_;
-    bool oSEXTSTStaskStateIsSet_;
-    std::string oSEXTSTSvmState_;
-    bool oSEXTSTSvmStateIsSet_;
-    std::string oSSRVUSGlaunchedAt_;
-    bool oSSRVUSGlaunchedAtIsSet_;
-    std::string oSSRVUSGterminatedAt_;
-    bool oSSRVUSGterminatedAtIsSet_;
-    std::vector<NovaServerVolume> osExtendedVolumesvolumesAttached_;
-    bool osExtendedVolumesvolumesAttachedIsSet_;
+    std::string oSDCFDiskConfig_;
+    bool oSDCFDiskConfigIsSet_;
+    std::string oSEXTAZAvailabilityZone_;
+    bool oSEXTAZAvailabilityZoneIsSet_;
+    std::string oSEXTSRVATTRHost_;
+    bool oSEXTSRVATTRHostIsSet_;
+    std::string oSEXTSRVATTRHypervisorHostname_;
+    bool oSEXTSRVATTRHypervisorHostnameIsSet_;
+    std::string oSEXTSRVATTRInstanceName_;
+    bool oSEXTSRVATTRInstanceNameIsSet_;
+    int32_t oSEXTSTSPowerState_;
+    bool oSEXTSTSPowerStateIsSet_;
+    std::string oSEXTSTSTaskState_;
+    bool oSEXTSTSTaskStateIsSet_;
+    std::string oSEXTSTSVmState_;
+    bool oSEXTSTSVmStateIsSet_;
+    std::string oSSRVUSGLaunchedAt_;
+    bool oSSRVUSGLaunchedAtIsSet_;
+    std::string oSSRVUSGTerminatedAt_;
+    bool oSSRVUSGTerminatedAtIsSet_;
+    std::vector<NovaServerVolume> osExtendedVolumesVolumesAttached_;
+    bool osExtendedVolumesVolumesAttachedIsSet_;
     NovaServerFault fault_;
     bool faultIsSet_;
     std::string description_;
     bool descriptionIsSet_;
     std::string hostStatus_;
     bool hostStatusIsSet_;
-    std::string oSEXTSRVATTRhostname_;
-    bool oSEXTSRVATTRhostnameIsSet_;
-    std::string oSEXTSRVATTRreservationId_;
-    bool oSEXTSRVATTRreservationIdIsSet_;
-    int32_t oSEXTSRVATTRlaunchIndex_;
-    bool oSEXTSRVATTRlaunchIndexIsSet_;
-    std::string oSEXTSRVATTRkernelId_;
-    bool oSEXTSRVATTRkernelIdIsSet_;
-    std::string oSEXTSRVATTRramdiskId_;
-    bool oSEXTSRVATTRramdiskIdIsSet_;
-    std::string oSEXTSRVATTRrootDeviceName_;
-    bool oSEXTSRVATTRrootDeviceNameIsSet_;
-    std::string oSEXTSRVATTRuserData_;
-    bool oSEXTSRVATTRuserDataIsSet_;
+    std::string oSEXTSRVATTRHostname_;
+    bool oSEXTSRVATTRHostnameIsSet_;
+    std::string oSEXTSRVATTRReservationId_;
+    bool oSEXTSRVATTRReservationIdIsSet_;
+    int32_t oSEXTSRVATTRLaunchIndex_;
+    bool oSEXTSRVATTRLaunchIndexIsSet_;
+    std::string oSEXTSRVATTRKernelId_;
+    bool oSEXTSRVATTRKernelIdIsSet_;
+    std::string oSEXTSRVATTRRamdiskId_;
+    bool oSEXTSRVATTRRamdiskIdIsSet_;
+    std::string oSEXTSRVATTRRootDeviceName_;
+    bool oSEXTSRVATTRRootDeviceNameIsSet_;
+    std::string oSEXTSRVATTRUserData_;
+    bool oSEXTSRVATTRUserDataIsSet_;
     std::vector<std::string> tags_;
     bool tagsIsSet_;
     bool locked_;
@@ -521,8 +521,8 @@ protected:
     bool configDriveIsSet_;
     int32_t progress_;
     bool progressIsSet_;
-    NovaServerSchedulerHints osschedulerHints_;
-    bool osschedulerHintsIsSet_;
+    NovaServerSchedulerHints osSchedulerHints_;
+    bool osSchedulerHintsIsSet_;
 
 };
 

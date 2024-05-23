@@ -166,10 +166,10 @@ public:
     /// 功能说明：绑定的vNIC类型 取值范围：  - normal（软交换）  - direct: SRIOV硬直通（不支持） 
     /// </summary>
 
-    std::string getBindingvnicType() const;
-    bool bindingvnicTypeIsSet() const;
-    void unsetbindingvnicType();
-    void setBindingvnicType(const std::string& value);
+    std::string getBindingVnicType() const;
+    bool bindingVnicTypeIsSet() const;
+    void unsetbindingVnicType();
+    void setBindingVnicType(const std::string& value);
 
     /// <summary>
     /// 功能说明：主网卡默认内网域名信息 约束：不支持设置和更新，由系统自动维护
@@ -193,19 +193,19 @@ public:
     /// 
     /// </summary>
 
-    BindingVifDetails getBindingvifDetails() const;
-    bool bindingvifDetailsIsSet() const;
-    void unsetbindingvifDetails();
-    void setBindingvifDetails(const BindingVifDetails& value);
+    BindingVifDetails getBindingVifDetails() const;
+    bool bindingVifDetailsIsSet() const;
+    void unsetbindingVifDetails();
+    void setBindingVifDetails(const BindingVifDetails& value);
 
     /// <summary>
     /// 功能说明：提供用户设置自定义信息(扩展属性)
     /// </summary>
 
-    Object getBindingprofile() const;
-    bool bindingprofileIsSet() const;
-    void unsetbindingprofile();
-    void setBindingprofile(const Object& value);
+    Object getBindingProfile() const;
+    bool bindingProfileIsSet() const;
+    void unsetbindingProfile();
+    void setBindingProfile(const Object& value);
 
     /// <summary>
     /// 功能说明：端口所属实例ID，例如RDS实例ID 约束：不支持设置和更新，由系统自动维护
@@ -289,16 +289,16 @@ protected:
     bool allowedAddressPairsIsSet_;
     std::vector<ExtraDhcpOpt> extraDhcpOpts_;
     bool extraDhcpOptsIsSet_;
-    std::string bindingvnicType_;
-    bool bindingvnicTypeIsSet_;
+    std::string bindingVnicType_;
+    bool bindingVnicTypeIsSet_;
     std::vector<DnsAssignMent> dnsAssignment_;
     bool dnsAssignmentIsSet_;
     std::string dnsName_;
     bool dnsNameIsSet_;
-    BindingVifDetails bindingvifDetails_;
-    bool bindingvifDetailsIsSet_;
-    Object bindingprofile_;
-    bool bindingprofileIsSet_;
+    BindingVifDetails bindingVifDetails_;
+    bool bindingVifDetailsIsSet_;
+    Object bindingProfile_;
+    bool bindingProfileIsSet_;
     std::string instanceId_;
     bool instanceIdIsSet_;
     std::string instanceType_;

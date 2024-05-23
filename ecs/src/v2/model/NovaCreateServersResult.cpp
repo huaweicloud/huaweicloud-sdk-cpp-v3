@@ -16,8 +16,8 @@ NovaCreateServersResult::NovaCreateServersResult()
     idIsSet_ = false;
     linksIsSet_ = false;
     securityGroupsIsSet_ = false;
-    oSDCFdiskConfig_ = "";
-    oSDCFdiskConfigIsSet_ = false;
+    oSDCFDiskConfig_ = "";
+    oSDCFDiskConfigIsSet_ = false;
     reservationId_ = "";
     reservationIdIsSet_ = false;
     adminPass_ = "";
@@ -43,8 +43,8 @@ web::json::value NovaCreateServersResult::toJson() const
     if(securityGroupsIsSet_) {
         val[utility::conversions::to_string_t("security_groups")] = ModelBase::toJson(securityGroups_);
     }
-    if(oSDCFdiskConfigIsSet_) {
-        val[utility::conversions::to_string_t("OS-DCF:diskConfig")] = ModelBase::toJson(oSDCFdiskConfig_);
+    if(oSDCFDiskConfigIsSet_) {
+        val[utility::conversions::to_string_t("OS-DCF:diskConfig")] = ModelBase::toJson(oSDCFDiskConfig_);
     }
     if(reservationIdIsSet_) {
         val[utility::conversions::to_string_t("reservation_id")] = ModelBase::toJson(reservationId_);
@@ -92,7 +92,7 @@ bool NovaCreateServersResult::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSDCFdiskConfig(refVal);
+            setOSDCFDiskConfig(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("reservation_id"))) {
@@ -180,25 +180,25 @@ void NovaCreateServersResult::unsetsecurityGroups()
     securityGroupsIsSet_ = false;
 }
 
-std::string NovaCreateServersResult::getOSDCFdiskConfig() const
+std::string NovaCreateServersResult::getOSDCFDiskConfig() const
 {
-    return oSDCFdiskConfig_;
+    return oSDCFDiskConfig_;
 }
 
-void NovaCreateServersResult::setOSDCFdiskConfig(const std::string& value)
+void NovaCreateServersResult::setOSDCFDiskConfig(const std::string& value)
 {
-    oSDCFdiskConfig_ = value;
-    oSDCFdiskConfigIsSet_ = true;
+    oSDCFDiskConfig_ = value;
+    oSDCFDiskConfigIsSet_ = true;
 }
 
-bool NovaCreateServersResult::oSDCFdiskConfigIsSet() const
+bool NovaCreateServersResult::oSDCFDiskConfigIsSet() const
 {
-    return oSDCFdiskConfigIsSet_;
+    return oSDCFDiskConfigIsSet_;
 }
 
-void NovaCreateServersResult::unsetoSDCFdiskConfig()
+void NovaCreateServersResult::unsetoSDCFDiskConfig()
 {
-    oSDCFdiskConfigIsSet_ = false;
+    oSDCFDiskConfigIsSet_ = false;
 }
 
 std::string NovaCreateServersResult::getReservationId() const

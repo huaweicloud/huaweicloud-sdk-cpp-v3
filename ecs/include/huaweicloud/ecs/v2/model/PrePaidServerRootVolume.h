@@ -116,10 +116,10 @@ public:
     /// 使用SDI规格创建虚拟机时请关注该参数，如果该参数值为true，说明创建的为scsi类型的卷  &gt; 说明： &gt;  &gt; 此参数为boolean类型，若传入非boolean类型字符，程序将按照false方式处理。
     /// </summary>
 
-    bool isHwpassthrough() const;
-    bool hwpassthroughIsSet() const;
-    void unsethwpassthrough();
-    void setHwpassthrough(bool value);
+    bool isHwPassthrough() const;
+    bool hwPassthroughIsSet() const;
+    void unsethwPassthrough();
+    void setHwPassthrough(bool value);
 
 
 protected:
@@ -139,8 +139,8 @@ protected:
     bool clusterTypeIsSet_;
     std::string clusterId_;
     bool clusterIdIsSet_;
-    bool hwpassthrough_;
-    bool hwpassthroughIsSet_;
+    bool hwPassthrough_;
+    bool hwPassthroughIsSet_;
 
 };
 

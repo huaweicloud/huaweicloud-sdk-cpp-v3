@@ -27,8 +27,8 @@ UpdateServerResult::UpdateServerResult()
     hostId_ = "";
     hostIdIsSet_ = false;
     flavorIsSet_ = false;
-    oSDCFdiskConfig_ = "";
-    oSDCFdiskConfigIsSet_ = false;
+    oSDCFDiskConfig_ = "";
+    oSDCFDiskConfigIsSet_ = false;
     userId_ = "";
     userIdIsSet_ = false;
     name_ = "";
@@ -47,10 +47,10 @@ UpdateServerResult::UpdateServerResult()
     tagsIsSet_ = false;
     status_ = "";
     statusIsSet_ = false;
-    oSEXTSRVATTRuserData_ = "";
-    oSEXTSRVATTRuserDataIsSet_ = false;
-    oSEXTSRVATTRhostname_ = "";
-    oSEXTSRVATTRhostnameIsSet_ = false;
+    oSEXTSRVATTRUserData_ = "";
+    oSEXTSRVATTRUserDataIsSet_ = false;
+    oSEXTSRVATTRHostname_ = "";
+    oSEXTSRVATTRHostnameIsSet_ = false;
 }
 
 UpdateServerResult::~UpdateServerResult() = default;
@@ -90,8 +90,8 @@ web::json::value UpdateServerResult::toJson() const
     if(flavorIsSet_) {
         val[utility::conversions::to_string_t("flavor")] = ModelBase::toJson(flavor_);
     }
-    if(oSDCFdiskConfigIsSet_) {
-        val[utility::conversions::to_string_t("OS-DCF:diskConfig")] = ModelBase::toJson(oSDCFdiskConfig_);
+    if(oSDCFDiskConfigIsSet_) {
+        val[utility::conversions::to_string_t("OS-DCF:diskConfig")] = ModelBase::toJson(oSDCFDiskConfig_);
     }
     if(userIdIsSet_) {
         val[utility::conversions::to_string_t("user_id")] = ModelBase::toJson(userId_);
@@ -123,11 +123,11 @@ web::json::value UpdateServerResult::toJson() const
     if(statusIsSet_) {
         val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
     }
-    if(oSEXTSRVATTRuserDataIsSet_) {
-        val[utility::conversions::to_string_t("OS-EXT-SRV-ATTR:user_data")] = ModelBase::toJson(oSEXTSRVATTRuserData_);
+    if(oSEXTSRVATTRUserDataIsSet_) {
+        val[utility::conversions::to_string_t("OS-EXT-SRV-ATTR:user_data")] = ModelBase::toJson(oSEXTSRVATTRUserData_);
     }
-    if(oSEXTSRVATTRhostnameIsSet_) {
-        val[utility::conversions::to_string_t("OS-EXT-SRV-ATTR:hostname")] = ModelBase::toJson(oSEXTSRVATTRhostname_);
+    if(oSEXTSRVATTRHostnameIsSet_) {
+        val[utility::conversions::to_string_t("OS-EXT-SRV-ATTR:hostname")] = ModelBase::toJson(oSEXTSRVATTRHostname_);
     }
 
     return val;
@@ -223,7 +223,7 @@ bool UpdateServerResult::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSDCFdiskConfig(refVal);
+            setOSDCFDiskConfig(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("user_id"))) {
@@ -322,7 +322,7 @@ bool UpdateServerResult::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSEXTSRVATTRuserData(refVal);
+            setOSEXTSRVATTRUserData(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("OS-EXT-SRV-ATTR:hostname"))) {
@@ -331,7 +331,7 @@ bool UpdateServerResult::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSEXTSRVATTRhostname(refVal);
+            setOSEXTSRVATTRHostname(refVal);
         }
     }
     return ok;
@@ -527,25 +527,25 @@ void UpdateServerResult::unsetflavor()
     flavorIsSet_ = false;
 }
 
-std::string UpdateServerResult::getOSDCFdiskConfig() const
+std::string UpdateServerResult::getOSDCFDiskConfig() const
 {
-    return oSDCFdiskConfig_;
+    return oSDCFDiskConfig_;
 }
 
-void UpdateServerResult::setOSDCFdiskConfig(const std::string& value)
+void UpdateServerResult::setOSDCFDiskConfig(const std::string& value)
 {
-    oSDCFdiskConfig_ = value;
-    oSDCFdiskConfigIsSet_ = true;
+    oSDCFDiskConfig_ = value;
+    oSDCFDiskConfigIsSet_ = true;
 }
 
-bool UpdateServerResult::oSDCFdiskConfigIsSet() const
+bool UpdateServerResult::oSDCFDiskConfigIsSet() const
 {
-    return oSDCFdiskConfigIsSet_;
+    return oSDCFDiskConfigIsSet_;
 }
 
-void UpdateServerResult::unsetoSDCFdiskConfig()
+void UpdateServerResult::unsetoSDCFDiskConfig()
 {
-    oSDCFdiskConfigIsSet_ = false;
+    oSDCFDiskConfigIsSet_ = false;
 }
 
 std::string UpdateServerResult::getUserId() const
@@ -758,46 +758,46 @@ void UpdateServerResult::unsetstatus()
     statusIsSet_ = false;
 }
 
-std::string UpdateServerResult::getOSEXTSRVATTRuserData() const
+std::string UpdateServerResult::getOSEXTSRVATTRUserData() const
 {
-    return oSEXTSRVATTRuserData_;
+    return oSEXTSRVATTRUserData_;
 }
 
-void UpdateServerResult::setOSEXTSRVATTRuserData(const std::string& value)
+void UpdateServerResult::setOSEXTSRVATTRUserData(const std::string& value)
 {
-    oSEXTSRVATTRuserData_ = value;
-    oSEXTSRVATTRuserDataIsSet_ = true;
+    oSEXTSRVATTRUserData_ = value;
+    oSEXTSRVATTRUserDataIsSet_ = true;
 }
 
-bool UpdateServerResult::oSEXTSRVATTRuserDataIsSet() const
+bool UpdateServerResult::oSEXTSRVATTRUserDataIsSet() const
 {
-    return oSEXTSRVATTRuserDataIsSet_;
+    return oSEXTSRVATTRUserDataIsSet_;
 }
 
-void UpdateServerResult::unsetoSEXTSRVATTRuserData()
+void UpdateServerResult::unsetoSEXTSRVATTRUserData()
 {
-    oSEXTSRVATTRuserDataIsSet_ = false;
+    oSEXTSRVATTRUserDataIsSet_ = false;
 }
 
-std::string UpdateServerResult::getOSEXTSRVATTRhostname() const
+std::string UpdateServerResult::getOSEXTSRVATTRHostname() const
 {
-    return oSEXTSRVATTRhostname_;
+    return oSEXTSRVATTRHostname_;
 }
 
-void UpdateServerResult::setOSEXTSRVATTRhostname(const std::string& value)
+void UpdateServerResult::setOSEXTSRVATTRHostname(const std::string& value)
 {
-    oSEXTSRVATTRhostname_ = value;
-    oSEXTSRVATTRhostnameIsSet_ = true;
+    oSEXTSRVATTRHostname_ = value;
+    oSEXTSRVATTRHostnameIsSet_ = true;
 }
 
-bool UpdateServerResult::oSEXTSRVATTRhostnameIsSet() const
+bool UpdateServerResult::oSEXTSRVATTRHostnameIsSet() const
 {
-    return oSEXTSRVATTRhostnameIsSet_;
+    return oSEXTSRVATTRHostnameIsSet_;
 }
 
-void UpdateServerResult::unsetoSEXTSRVATTRhostname()
+void UpdateServerResult::unsetoSEXTSRVATTRHostname()
 {
-    oSEXTSRVATTRhostnameIsSet_ = false;
+    oSEXTSRVATTRHostnameIsSet_ = false;
 }
 
 }

@@ -52,17 +52,17 @@ public:
     /// 
     /// </summary>
 
-    NovaCreateServersSchedulerHint getOsschedulerHints() const;
-    bool osschedulerHintsIsSet() const;
-    void unsetosschedulerHints();
-    void setOsschedulerHints(const NovaCreateServersSchedulerHint& value);
+    NovaCreateServersSchedulerHint getOsSchedulerHints() const;
+    bool osSchedulerHintsIsSet() const;
+    void unsetosSchedulerHints();
+    void setOsSchedulerHints(const NovaCreateServersSchedulerHint& value);
 
 
 protected:
     NovaCreateServersOption server_;
     bool serverIsSet_;
-    NovaCreateServersSchedulerHint osschedulerHints_;
-    bool osschedulerHintsIsSet_;
+    NovaCreateServersSchedulerHint osSchedulerHints_;
+    bool osSchedulerHintsIsSet_;
 
 };
 

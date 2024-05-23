@@ -100,19 +100,19 @@ public:
     /// 扩展属性，临时盘大小。  当前未使用该参数，缺省值为0
     /// </summary>
 
-    int32_t getOSFLVEXTDATAephemeral() const;
-    bool oSFLVEXTDATAephemeralIsSet() const;
-    void unsetoSFLVEXTDATAephemeral();
-    void setOSFLVEXTDATAephemeral(int32_t value);
+    int32_t getOSFLVEXTDATAEphemeral() const;
+    bool oSFLVEXTDATAEphemeralIsSet() const;
+    void unsetoSFLVEXTDATAEphemeral();
+    void setOSFLVEXTDATAEphemeral(int32_t value);
 
     /// <summary>
     /// 扩展属性，该云服务器规格是否禁用。  当前未使用该参数，缺省值为false。
     /// </summary>
 
-    bool isOSFLVDISABLEDdisabled() const;
-    bool oSFLVDISABLEDdisabledIsSet() const;
-    void unsetoSFLVDISABLEDdisabled();
-    void setOSFLVDISABLEDdisabled(bool value);
+    bool isOSFLVDISABLEDDisabled() const;
+    bool oSFLVDISABLEDDisabledIsSet() const;
+    void unsetoSFLVDISABLEDDisabled();
+    void setOSFLVDISABLEDDisabled(bool value);
 
     /// <summary>
     /// 云服务器可使用网络带宽与网络硬件带宽的比例。  当前未使用该参数，缺省值为1.0。
@@ -145,10 +145,10 @@ public:
     /// 扩展属性，flavor是否给所有租户使用。  - true：表示给所有租户使用。 - false：表示给指定租户使用。  缺省值为true。
     /// </summary>
 
-    bool isOsFlavorAccessisPublic() const;
-    bool osFlavorAccessisPublicIsSet() const;
-    void unsetosFlavorAccessisPublic();
-    void setOsFlavorAccessisPublic(bool value);
+    bool isOsFlavorAccessIsPublic() const;
+    bool osFlavorAccessIsPublicIsSet() const;
+    void unsetosFlavorAccessIsPublic();
+    void setOsFlavorAccessIsPublic(bool value);
 
     /// <summary>
     /// 规格相关快捷链接地址。
@@ -191,18 +191,18 @@ protected:
     bool diskIsSet_;
     std::string swap_;
     bool swapIsSet_;
-    int32_t oSFLVEXTDATAephemeral_;
-    bool oSFLVEXTDATAephemeralIsSet_;
-    bool oSFLVDISABLEDdisabled_;
-    bool oSFLVDISABLEDdisabledIsSet_;
+    int32_t oSFLVEXTDATAEphemeral_;
+    bool oSFLVEXTDATAEphemeralIsSet_;
+    bool oSFLVDISABLEDDisabled_;
+    bool oSFLVDISABLEDDisabledIsSet_;
     float rxtxFactor_;
     bool rxtxFactorIsSet_;
     std::string rxtxQuota_;
     bool rxtxQuotaIsSet_;
     std::string rxtxCap_;
     bool rxtxCapIsSet_;
-    bool osFlavorAccessisPublic_;
-    bool osFlavorAccessisPublicIsSet_;
+    bool osFlavorAccessIsPublic_;
+    bool osFlavorAccessIsPublicIsSet_;
     std::vector<FlavorLink> links_;
     bool linksIsSet_;
     FlavorExtraSpec extraSpecs_;

@@ -34,13 +34,13 @@ Port::Port()
     securityGroupsIsSet_ = false;
     allowedAddressPairsIsSet_ = false;
     extraDhcpOptsIsSet_ = false;
-    bindingvnicType_ = "";
-    bindingvnicTypeIsSet_ = false;
+    bindingVnicType_ = "";
+    bindingVnicTypeIsSet_ = false;
     dnsAssignmentIsSet_ = false;
     dnsName_ = "";
     dnsNameIsSet_ = false;
-    bindingvifDetailsIsSet_ = false;
-    bindingprofileIsSet_ = false;
+    bindingVifDetailsIsSet_ = false;
+    bindingProfileIsSet_ = false;
     instanceId_ = "";
     instanceIdIsSet_ = false;
     instanceType_ = "";
@@ -104,8 +104,8 @@ web::json::value Port::toJson() const
     if(extraDhcpOptsIsSet_) {
         val[utility::conversions::to_string_t("extra_dhcp_opts")] = ModelBase::toJson(extraDhcpOpts_);
     }
-    if(bindingvnicTypeIsSet_) {
-        val[utility::conversions::to_string_t("binding:vnic_type")] = ModelBase::toJson(bindingvnicType_);
+    if(bindingVnicTypeIsSet_) {
+        val[utility::conversions::to_string_t("binding:vnic_type")] = ModelBase::toJson(bindingVnicType_);
     }
     if(dnsAssignmentIsSet_) {
         val[utility::conversions::to_string_t("dns_assignment")] = ModelBase::toJson(dnsAssignment_);
@@ -113,11 +113,11 @@ web::json::value Port::toJson() const
     if(dnsNameIsSet_) {
         val[utility::conversions::to_string_t("dns_name")] = ModelBase::toJson(dnsName_);
     }
-    if(bindingvifDetailsIsSet_) {
-        val[utility::conversions::to_string_t("binding:vif_details")] = ModelBase::toJson(bindingvifDetails_);
+    if(bindingVifDetailsIsSet_) {
+        val[utility::conversions::to_string_t("binding:vif_details")] = ModelBase::toJson(bindingVifDetails_);
     }
-    if(bindingprofileIsSet_) {
-        val[utility::conversions::to_string_t("binding:profile")] = ModelBase::toJson(bindingprofile_);
+    if(bindingProfileIsSet_) {
+        val[utility::conversions::to_string_t("binding:profile")] = ModelBase::toJson(bindingProfile_);
     }
     if(instanceIdIsSet_) {
         val[utility::conversions::to_string_t("instance_id")] = ModelBase::toJson(instanceId_);
@@ -267,7 +267,7 @@ bool Port::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setBindingvnicType(refVal);
+            setBindingVnicType(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("dns_assignment"))) {
@@ -294,7 +294,7 @@ bool Port::fromJson(const web::json::value& val)
         {
             BindingVifDetails refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setBindingvifDetails(refVal);
+            setBindingVifDetails(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("binding:profile"))) {
@@ -303,7 +303,7 @@ bool Port::fromJson(const web::json::value& val)
         {
             Object refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setBindingprofile(refVal);
+            setBindingProfile(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("instance_id"))) {
@@ -637,25 +637,25 @@ void Port::unsetextraDhcpOpts()
     extraDhcpOptsIsSet_ = false;
 }
 
-std::string Port::getBindingvnicType() const
+std::string Port::getBindingVnicType() const
 {
-    return bindingvnicType_;
+    return bindingVnicType_;
 }
 
-void Port::setBindingvnicType(const std::string& value)
+void Port::setBindingVnicType(const std::string& value)
 {
-    bindingvnicType_ = value;
-    bindingvnicTypeIsSet_ = true;
+    bindingVnicType_ = value;
+    bindingVnicTypeIsSet_ = true;
 }
 
-bool Port::bindingvnicTypeIsSet() const
+bool Port::bindingVnicTypeIsSet() const
 {
-    return bindingvnicTypeIsSet_;
+    return bindingVnicTypeIsSet_;
 }
 
-void Port::unsetbindingvnicType()
+void Port::unsetbindingVnicType()
 {
-    bindingvnicTypeIsSet_ = false;
+    bindingVnicTypeIsSet_ = false;
 }
 
 std::vector<DnsAssignMent>& Port::getDnsAssignment()
@@ -700,46 +700,46 @@ void Port::unsetdnsName()
     dnsNameIsSet_ = false;
 }
 
-BindingVifDetails Port::getBindingvifDetails() const
+BindingVifDetails Port::getBindingVifDetails() const
 {
-    return bindingvifDetails_;
+    return bindingVifDetails_;
 }
 
-void Port::setBindingvifDetails(const BindingVifDetails& value)
+void Port::setBindingVifDetails(const BindingVifDetails& value)
 {
-    bindingvifDetails_ = value;
-    bindingvifDetailsIsSet_ = true;
+    bindingVifDetails_ = value;
+    bindingVifDetailsIsSet_ = true;
 }
 
-bool Port::bindingvifDetailsIsSet() const
+bool Port::bindingVifDetailsIsSet() const
 {
-    return bindingvifDetailsIsSet_;
+    return bindingVifDetailsIsSet_;
 }
 
-void Port::unsetbindingvifDetails()
+void Port::unsetbindingVifDetails()
 {
-    bindingvifDetailsIsSet_ = false;
+    bindingVifDetailsIsSet_ = false;
 }
 
-Object Port::getBindingprofile() const
+Object Port::getBindingProfile() const
 {
-    return bindingprofile_;
+    return bindingProfile_;
 }
 
-void Port::setBindingprofile(const Object& value)
+void Port::setBindingProfile(const Object& value)
 {
-    bindingprofile_ = value;
-    bindingprofileIsSet_ = true;
+    bindingProfile_ = value;
+    bindingProfileIsSet_ = true;
 }
 
-bool Port::bindingprofileIsSet() const
+bool Port::bindingProfileIsSet() const
 {
-    return bindingprofileIsSet_;
+    return bindingProfileIsSet_;
 }
 
-void Port::unsetbindingprofile()
+void Port::unsetbindingProfile()
 {
-    bindingprofileIsSet_ = false;
+    bindingProfileIsSet_ = false;
 }
 
 std::string Port::getInstanceId() const

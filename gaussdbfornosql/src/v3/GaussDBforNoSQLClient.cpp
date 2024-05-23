@@ -3343,6 +3343,42 @@ std::shared_ptr<ShowModifyHistoryResponse> GaussDBforNoSQLClient::showModifyHist
 
     return localVarResult;
 }
+std::shared_ptr<ShowPasswordlessConfigResponse> GaussDBforNoSQLClient::showPasswordlessConfig(ShowPasswordlessConfigRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/passwordless-config";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, GaussDBforNoSQLMeta::genRequestDefForShowPasswordlessConfig());
+
+    std::shared_ptr<ShowPasswordlessConfigResponse> localVarResult = std::make_shared<ShowPasswordlessConfigResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowPauseResumeStutusResponse> GaussDBforNoSQLClient::showPauseResumeStutus(ShowPauseResumeStutusRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/disaster-recovery/data-synchronization";
@@ -3437,6 +3473,48 @@ std::shared_ptr<ShowRecyclePolicyResponse> GaussDBforNoSQLClient::showRecyclePol
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowRedisBigKeysResponse> GaussDBforNoSQLClient::showRedisBigKeys(ShowRedisBigKeysRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/big-keys";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, GaussDBforNoSQLMeta::genRequestDefForShowRedisBigKeys());
+
+    std::shared_ptr<ShowRedisBigKeysResponse> localVarResult = std::make_shared<ShowRedisBigKeysResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
 
     return localVarResult;
 }
@@ -3986,6 +4064,48 @@ std::shared_ptr<UpdateInstanceNameResponse> GaussDBforNoSQLClient::updateInstanc
         localVarHeaderParams, localVarHttpBody, GaussDBforNoSQLMeta::genRequestDefForUpdateInstanceName());
 
     std::shared_ptr<UpdateInstanceNameResponse> localVarResult = std::make_shared<UpdateInstanceNameResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<UpdatePasswordlessConfigResponse> GaussDBforNoSQLClient::updatePasswordlessConfig(UpdatePasswordlessConfigRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/passwordless-config";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, GaussDBforNoSQLMeta::genRequestDefForUpdatePasswordlessConfig());
+
+    std::shared_ptr<UpdatePasswordlessConfigResponse> localVarResult = std::make_shared<UpdatePasswordlessConfigResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

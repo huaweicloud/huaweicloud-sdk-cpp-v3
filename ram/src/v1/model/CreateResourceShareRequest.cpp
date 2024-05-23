@@ -1,0 +1,78 @@
+
+
+#include "huaweicloud/ram/v1/model/CreateResourceShareRequest.h"
+namespace HuaweiCloud {
+namespace Sdk {
+namespace Ram {
+namespace V1 {
+namespace Model {
+
+
+
+
+CreateResourceShareRequest::CreateResourceShareRequest()
+{
+    bodyIsSet_ = false;
+}
+
+CreateResourceShareRequest::~CreateResourceShareRequest() = default;
+
+void CreateResourceShareRequest::validate()
+{
+}
+
+web::json::value CreateResourceShareRequest::toJson() const
+{
+    web::json::value val = web::json::value::object();
+
+    if(bodyIsSet_) {
+        val[utility::conversions::to_string_t("body")] = ModelBase::toJson(body_);
+    }
+
+    return val;
+}
+bool CreateResourceShareRequest::fromJson(const web::json::value& val)
+{
+    bool ok = true;
+    
+    if(val.has_field(utility::conversions::to_string_t("body"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
+        if(!fieldValue.is_null())
+        {
+            CreateResourceShareReqBody refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBody(refVal);
+        }
+    }
+    return ok;
+}
+
+
+CreateResourceShareReqBody CreateResourceShareRequest::getBody() const
+{
+    return body_;
+}
+
+void CreateResourceShareRequest::setBody(const CreateResourceShareReqBody& value)
+{
+    body_ = value;
+    bodyIsSet_ = true;
+}
+
+bool CreateResourceShareRequest::bodyIsSet() const
+{
+    return bodyIsSet_;
+}
+
+void CreateResourceShareRequest::unsetbody()
+{
+    bodyIsSet_ = false;
+}
+
+}
+}
+}
+}
+}
+
+

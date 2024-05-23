@@ -102,10 +102,10 @@ public:
     /// 预留属性。
     /// </summary>
 
-    std::string getOsVolHostAttrhost() const;
-    bool osVolHostAttrhostIsSet() const;
-    void unsetosVolHostAttrhost();
-    void setOsVolHostAttrhost(const std::string& value);
+    std::string getOsVolHostAttrHost() const;
+    bool osVolHostAttrHostIsSet() const;
+    void unsetosVolHostAttrHost();
+    void setOsVolHostAttrHost(const std::string& value);
 
     /// <summary>
     /// 源云硬盘ID，如果是从源云硬盘创建，则有值。  当前云硬盘服务不支持该字段。
@@ -147,10 +147,10 @@ public:
     /// 云硬盘所属的租户ID。租户ID就是项目ID。
     /// </summary>
 
-    std::string getOsVolTenantAttrtenantId() const;
-    bool osVolTenantAttrtenantIdIsSet() const;
-    void unsetosVolTenantAttrtenantId();
-    void setOsVolTenantAttrtenantId(const std::string& value);
+    std::string getOsVolTenantAttrTenantId() const;
+    bool osVolTenantAttrTenantIdIsSet() const;
+    void unsetosVolTenantAttrTenantId();
+    void setOsVolTenantAttrTenantId(const std::string& value);
 
     /// <summary>
     /// 云硬盘镜像的元数据。 &gt; 说明： &gt;  &gt; 关于“volume_image_metadata”字段的详细说明，具体请参见：\&quot;[查询镜像详情](https://support.huaweicloud.com/api-ims/ims_03_0703.html)\&quot;。
@@ -237,28 +237,28 @@ public:
     /// 预留属性。
     /// </summary>
 
-    std::string getOsVolumeReplicationextendedStatus() const;
-    bool osVolumeReplicationextendedStatusIsSet() const;
-    void unsetosVolumeReplicationextendedStatus();
-    void setOsVolumeReplicationextendedStatus(const std::string& value);
+    std::string getOsVolumeReplicationExtendedStatus() const;
+    bool osVolumeReplicationExtendedStatusIsSet() const;
+    void unsetosVolumeReplicationExtendedStatus();
+    void setOsVolumeReplicationExtendedStatus(const std::string& value);
 
     /// <summary>
     /// 预留属性。
     /// </summary>
 
-    std::string getOsVolMigStatusAttrmigstat() const;
-    bool osVolMigStatusAttrmigstatIsSet() const;
-    void unsetosVolMigStatusAttrmigstat();
-    void setOsVolMigStatusAttrmigstat(const std::string& value);
+    std::string getOsVolMigStatusAttrMigstat() const;
+    bool osVolMigStatusAttrMigstatIsSet() const;
+    void unsetosVolMigStatusAttrMigstat();
+    void setOsVolMigStatusAttrMigstat(const std::string& value);
 
     /// <summary>
     /// 预留属性。
     /// </summary>
 
-    std::string getOsVolMigStatusAttrnameId() const;
-    bool osVolMigStatusAttrnameIdIsSet() const;
-    void unsetosVolMigStatusAttrnameId();
-    void setOsVolMigStatusAttrnameId(const std::string& value);
+    std::string getOsVolMigStatusAttrNameId() const;
+    bool osVolMigStatusAttrNameIdIsSet() const;
+    void unsetosVolMigStatusAttrNameId();
+    void setOsVolMigStatusAttrNameId(const std::string& value);
 
     /// <summary>
     /// 是否为共享云硬盘。true为共享盘，false为普通云硬盘。 该字段已经废弃，请使用multiattach。
@@ -355,8 +355,8 @@ protected:
     bool attachmentsIsSet_;
     std::string availabilityZone_;
     bool availabilityZoneIsSet_;
-    std::string osVolHostAttrhost_;
-    bool osVolHostAttrhostIsSet_;
+    std::string osVolHostAttrHost_;
+    bool osVolHostAttrHostIsSet_;
     std::string sourceVolid_;
     bool sourceVolidIsSet_;
     std::string snapshotId_;
@@ -365,8 +365,8 @@ protected:
     bool descriptionIsSet_;
     std::string createdAt_;
     bool createdAtIsSet_;
-    std::string osVolTenantAttrtenantId_;
-    bool osVolTenantAttrtenantIdIsSet_;
+    std::string osVolTenantAttrTenantId_;
+    bool osVolTenantAttrTenantIdIsSet_;
     std::map<std::string, Object> volumeImageMetadata_;
     bool volumeImageMetadataIsSet_;
     std::string volumeType_;
@@ -385,12 +385,12 @@ protected:
     bool encryptedIsSet_;
     std::string replicationStatus_;
     bool replicationStatusIsSet_;
-    std::string osVolumeReplicationextendedStatus_;
-    bool osVolumeReplicationextendedStatusIsSet_;
-    std::string osVolMigStatusAttrmigstat_;
-    bool osVolMigStatusAttrmigstatIsSet_;
-    std::string osVolMigStatusAttrnameId_;
-    bool osVolMigStatusAttrnameIdIsSet_;
+    std::string osVolumeReplicationExtendedStatus_;
+    bool osVolumeReplicationExtendedStatusIsSet_;
+    std::string osVolMigStatusAttrMigstat_;
+    bool osVolMigStatusAttrMigstatIsSet_;
+    std::string osVolMigStatusAttrNameId_;
+    bool osVolMigStatusAttrNameIdIsSet_;
     bool shareable_;
     bool shareableIsSet_;
     std::string userId_;

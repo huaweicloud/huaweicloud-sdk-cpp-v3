@@ -36,46 +36,46 @@ NovaServer::NovaServer()
     addressesIsSet_ = false;
     securityGroupsIsSet_ = false;
     linksIsSet_ = false;
-    oSDCFdiskConfig_ = "";
-    oSDCFdiskConfigIsSet_ = false;
-    oSEXTAZavailabilityZone_ = "";
-    oSEXTAZavailabilityZoneIsSet_ = false;
-    oSEXTSRVATTRhost_ = "";
-    oSEXTSRVATTRhostIsSet_ = false;
-    oSEXTSRVATTRhypervisorHostname_ = "";
-    oSEXTSRVATTRhypervisorHostnameIsSet_ = false;
-    oSEXTSRVATTRinstanceName_ = "";
-    oSEXTSRVATTRinstanceNameIsSet_ = false;
-    oSEXTSTSpowerState_ = 0;
-    oSEXTSTSpowerStateIsSet_ = false;
-    oSEXTSTStaskState_ = "";
-    oSEXTSTStaskStateIsSet_ = false;
-    oSEXTSTSvmState_ = "";
-    oSEXTSTSvmStateIsSet_ = false;
-    oSSRVUSGlaunchedAt_ = "";
-    oSSRVUSGlaunchedAtIsSet_ = false;
-    oSSRVUSGterminatedAt_ = "";
-    oSSRVUSGterminatedAtIsSet_ = false;
-    osExtendedVolumesvolumesAttachedIsSet_ = false;
+    oSDCFDiskConfig_ = "";
+    oSDCFDiskConfigIsSet_ = false;
+    oSEXTAZAvailabilityZone_ = "";
+    oSEXTAZAvailabilityZoneIsSet_ = false;
+    oSEXTSRVATTRHost_ = "";
+    oSEXTSRVATTRHostIsSet_ = false;
+    oSEXTSRVATTRHypervisorHostname_ = "";
+    oSEXTSRVATTRHypervisorHostnameIsSet_ = false;
+    oSEXTSRVATTRInstanceName_ = "";
+    oSEXTSRVATTRInstanceNameIsSet_ = false;
+    oSEXTSTSPowerState_ = 0;
+    oSEXTSTSPowerStateIsSet_ = false;
+    oSEXTSTSTaskState_ = "";
+    oSEXTSTSTaskStateIsSet_ = false;
+    oSEXTSTSVmState_ = "";
+    oSEXTSTSVmStateIsSet_ = false;
+    oSSRVUSGLaunchedAt_ = "";
+    oSSRVUSGLaunchedAtIsSet_ = false;
+    oSSRVUSGTerminatedAt_ = "";
+    oSSRVUSGTerminatedAtIsSet_ = false;
+    osExtendedVolumesVolumesAttachedIsSet_ = false;
     faultIsSet_ = false;
     description_ = "";
     descriptionIsSet_ = false;
     hostStatus_ = "";
     hostStatusIsSet_ = false;
-    oSEXTSRVATTRhostname_ = "";
-    oSEXTSRVATTRhostnameIsSet_ = false;
-    oSEXTSRVATTRreservationId_ = "";
-    oSEXTSRVATTRreservationIdIsSet_ = false;
-    oSEXTSRVATTRlaunchIndex_ = 0;
-    oSEXTSRVATTRlaunchIndexIsSet_ = false;
-    oSEXTSRVATTRkernelId_ = "";
-    oSEXTSRVATTRkernelIdIsSet_ = false;
-    oSEXTSRVATTRramdiskId_ = "";
-    oSEXTSRVATTRramdiskIdIsSet_ = false;
-    oSEXTSRVATTRrootDeviceName_ = "";
-    oSEXTSRVATTRrootDeviceNameIsSet_ = false;
-    oSEXTSRVATTRuserData_ = "";
-    oSEXTSRVATTRuserDataIsSet_ = false;
+    oSEXTSRVATTRHostname_ = "";
+    oSEXTSRVATTRHostnameIsSet_ = false;
+    oSEXTSRVATTRReservationId_ = "";
+    oSEXTSRVATTRReservationIdIsSet_ = false;
+    oSEXTSRVATTRLaunchIndex_ = 0;
+    oSEXTSRVATTRLaunchIndexIsSet_ = false;
+    oSEXTSRVATTRKernelId_ = "";
+    oSEXTSRVATTRKernelIdIsSet_ = false;
+    oSEXTSRVATTRRamdiskId_ = "";
+    oSEXTSRVATTRRamdiskIdIsSet_ = false;
+    oSEXTSRVATTRRootDeviceName_ = "";
+    oSEXTSRVATTRRootDeviceNameIsSet_ = false;
+    oSEXTSRVATTRUserData_ = "";
+    oSEXTSRVATTRUserDataIsSet_ = false;
     tagsIsSet_ = false;
     locked_ = false;
     lockedIsSet_ = false;
@@ -87,7 +87,7 @@ NovaServer::NovaServer()
     configDriveIsSet_ = false;
     progress_ = 0;
     progressIsSet_ = false;
-    osschedulerHintsIsSet_ = false;
+    osSchedulerHintsIsSet_ = false;
 }
 
 NovaServer::~NovaServer() = default;
@@ -145,38 +145,38 @@ web::json::value NovaServer::toJson() const
     if(linksIsSet_) {
         val[utility::conversions::to_string_t("links")] = ModelBase::toJson(links_);
     }
-    if(oSDCFdiskConfigIsSet_) {
-        val[utility::conversions::to_string_t("OS-DCF:diskConfig")] = ModelBase::toJson(oSDCFdiskConfig_);
+    if(oSDCFDiskConfigIsSet_) {
+        val[utility::conversions::to_string_t("OS-DCF:diskConfig")] = ModelBase::toJson(oSDCFDiskConfig_);
     }
-    if(oSEXTAZavailabilityZoneIsSet_) {
-        val[utility::conversions::to_string_t("OS-EXT-AZ:availability_zone")] = ModelBase::toJson(oSEXTAZavailabilityZone_);
+    if(oSEXTAZAvailabilityZoneIsSet_) {
+        val[utility::conversions::to_string_t("OS-EXT-AZ:availability_zone")] = ModelBase::toJson(oSEXTAZAvailabilityZone_);
     }
-    if(oSEXTSRVATTRhostIsSet_) {
-        val[utility::conversions::to_string_t("OS-EXT-SRV-ATTR:host")] = ModelBase::toJson(oSEXTSRVATTRhost_);
+    if(oSEXTSRVATTRHostIsSet_) {
+        val[utility::conversions::to_string_t("OS-EXT-SRV-ATTR:host")] = ModelBase::toJson(oSEXTSRVATTRHost_);
     }
-    if(oSEXTSRVATTRhypervisorHostnameIsSet_) {
-        val[utility::conversions::to_string_t("OS-EXT-SRV-ATTR:hypervisor_hostname")] = ModelBase::toJson(oSEXTSRVATTRhypervisorHostname_);
+    if(oSEXTSRVATTRHypervisorHostnameIsSet_) {
+        val[utility::conversions::to_string_t("OS-EXT-SRV-ATTR:hypervisor_hostname")] = ModelBase::toJson(oSEXTSRVATTRHypervisorHostname_);
     }
-    if(oSEXTSRVATTRinstanceNameIsSet_) {
-        val[utility::conversions::to_string_t("OS-EXT-SRV-ATTR:instance_name")] = ModelBase::toJson(oSEXTSRVATTRinstanceName_);
+    if(oSEXTSRVATTRInstanceNameIsSet_) {
+        val[utility::conversions::to_string_t("OS-EXT-SRV-ATTR:instance_name")] = ModelBase::toJson(oSEXTSRVATTRInstanceName_);
     }
-    if(oSEXTSTSpowerStateIsSet_) {
-        val[utility::conversions::to_string_t("OS-EXT-STS:power_state")] = ModelBase::toJson(oSEXTSTSpowerState_);
+    if(oSEXTSTSPowerStateIsSet_) {
+        val[utility::conversions::to_string_t("OS-EXT-STS:power_state")] = ModelBase::toJson(oSEXTSTSPowerState_);
     }
-    if(oSEXTSTStaskStateIsSet_) {
-        val[utility::conversions::to_string_t("OS-EXT-STS:task_state")] = ModelBase::toJson(oSEXTSTStaskState_);
+    if(oSEXTSTSTaskStateIsSet_) {
+        val[utility::conversions::to_string_t("OS-EXT-STS:task_state")] = ModelBase::toJson(oSEXTSTSTaskState_);
     }
-    if(oSEXTSTSvmStateIsSet_) {
-        val[utility::conversions::to_string_t("OS-EXT-STS:vm_state")] = ModelBase::toJson(oSEXTSTSvmState_);
+    if(oSEXTSTSVmStateIsSet_) {
+        val[utility::conversions::to_string_t("OS-EXT-STS:vm_state")] = ModelBase::toJson(oSEXTSTSVmState_);
     }
-    if(oSSRVUSGlaunchedAtIsSet_) {
-        val[utility::conversions::to_string_t("OS-SRV-USG:launched_at")] = ModelBase::toJson(oSSRVUSGlaunchedAt_);
+    if(oSSRVUSGLaunchedAtIsSet_) {
+        val[utility::conversions::to_string_t("OS-SRV-USG:launched_at")] = ModelBase::toJson(oSSRVUSGLaunchedAt_);
     }
-    if(oSSRVUSGterminatedAtIsSet_) {
-        val[utility::conversions::to_string_t("OS-SRV-USG:terminated_at")] = ModelBase::toJson(oSSRVUSGterminatedAt_);
+    if(oSSRVUSGTerminatedAtIsSet_) {
+        val[utility::conversions::to_string_t("OS-SRV-USG:terminated_at")] = ModelBase::toJson(oSSRVUSGTerminatedAt_);
     }
-    if(osExtendedVolumesvolumesAttachedIsSet_) {
-        val[utility::conversions::to_string_t("os-extended-volumes:volumes_attached")] = ModelBase::toJson(osExtendedVolumesvolumesAttached_);
+    if(osExtendedVolumesVolumesAttachedIsSet_) {
+        val[utility::conversions::to_string_t("os-extended-volumes:volumes_attached")] = ModelBase::toJson(osExtendedVolumesVolumesAttached_);
     }
     if(faultIsSet_) {
         val[utility::conversions::to_string_t("fault")] = ModelBase::toJson(fault_);
@@ -187,26 +187,26 @@ web::json::value NovaServer::toJson() const
     if(hostStatusIsSet_) {
         val[utility::conversions::to_string_t("host_status")] = ModelBase::toJson(hostStatus_);
     }
-    if(oSEXTSRVATTRhostnameIsSet_) {
-        val[utility::conversions::to_string_t("OS-EXT-SRV-ATTR:hostname")] = ModelBase::toJson(oSEXTSRVATTRhostname_);
+    if(oSEXTSRVATTRHostnameIsSet_) {
+        val[utility::conversions::to_string_t("OS-EXT-SRV-ATTR:hostname")] = ModelBase::toJson(oSEXTSRVATTRHostname_);
     }
-    if(oSEXTSRVATTRreservationIdIsSet_) {
-        val[utility::conversions::to_string_t("OS-EXT-SRV-ATTR:reservation_id")] = ModelBase::toJson(oSEXTSRVATTRreservationId_);
+    if(oSEXTSRVATTRReservationIdIsSet_) {
+        val[utility::conversions::to_string_t("OS-EXT-SRV-ATTR:reservation_id")] = ModelBase::toJson(oSEXTSRVATTRReservationId_);
     }
-    if(oSEXTSRVATTRlaunchIndexIsSet_) {
-        val[utility::conversions::to_string_t("OS-EXT-SRV-ATTR:launch_index")] = ModelBase::toJson(oSEXTSRVATTRlaunchIndex_);
+    if(oSEXTSRVATTRLaunchIndexIsSet_) {
+        val[utility::conversions::to_string_t("OS-EXT-SRV-ATTR:launch_index")] = ModelBase::toJson(oSEXTSRVATTRLaunchIndex_);
     }
-    if(oSEXTSRVATTRkernelIdIsSet_) {
-        val[utility::conversions::to_string_t("OS-EXT-SRV-ATTR:kernel_id")] = ModelBase::toJson(oSEXTSRVATTRkernelId_);
+    if(oSEXTSRVATTRKernelIdIsSet_) {
+        val[utility::conversions::to_string_t("OS-EXT-SRV-ATTR:kernel_id")] = ModelBase::toJson(oSEXTSRVATTRKernelId_);
     }
-    if(oSEXTSRVATTRramdiskIdIsSet_) {
-        val[utility::conversions::to_string_t("OS-EXT-SRV-ATTR:ramdisk_id")] = ModelBase::toJson(oSEXTSRVATTRramdiskId_);
+    if(oSEXTSRVATTRRamdiskIdIsSet_) {
+        val[utility::conversions::to_string_t("OS-EXT-SRV-ATTR:ramdisk_id")] = ModelBase::toJson(oSEXTSRVATTRRamdiskId_);
     }
-    if(oSEXTSRVATTRrootDeviceNameIsSet_) {
-        val[utility::conversions::to_string_t("OS-EXT-SRV-ATTR:root_device_name")] = ModelBase::toJson(oSEXTSRVATTRrootDeviceName_);
+    if(oSEXTSRVATTRRootDeviceNameIsSet_) {
+        val[utility::conversions::to_string_t("OS-EXT-SRV-ATTR:root_device_name")] = ModelBase::toJson(oSEXTSRVATTRRootDeviceName_);
     }
-    if(oSEXTSRVATTRuserDataIsSet_) {
-        val[utility::conversions::to_string_t("OS-EXT-SRV-ATTR:user_data")] = ModelBase::toJson(oSEXTSRVATTRuserData_);
+    if(oSEXTSRVATTRUserDataIsSet_) {
+        val[utility::conversions::to_string_t("OS-EXT-SRV-ATTR:user_data")] = ModelBase::toJson(oSEXTSRVATTRUserData_);
     }
     if(tagsIsSet_) {
         val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
@@ -226,8 +226,8 @@ web::json::value NovaServer::toJson() const
     if(progressIsSet_) {
         val[utility::conversions::to_string_t("progress")] = ModelBase::toJson(progress_);
     }
-    if(osschedulerHintsIsSet_) {
-        val[utility::conversions::to_string_t("os:scheduler_hints")] = ModelBase::toJson(osschedulerHints_);
+    if(osSchedulerHintsIsSet_) {
+        val[utility::conversions::to_string_t("os:scheduler_hints")] = ModelBase::toJson(osSchedulerHints_);
     }
 
     return val;
@@ -377,7 +377,7 @@ bool NovaServer::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSDCFdiskConfig(refVal);
+            setOSDCFDiskConfig(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("OS-EXT-AZ:availability_zone"))) {
@@ -386,7 +386,7 @@ bool NovaServer::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSEXTAZavailabilityZone(refVal);
+            setOSEXTAZAvailabilityZone(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("OS-EXT-SRV-ATTR:host"))) {
@@ -395,7 +395,7 @@ bool NovaServer::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSEXTSRVATTRhost(refVal);
+            setOSEXTSRVATTRHost(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("OS-EXT-SRV-ATTR:hypervisor_hostname"))) {
@@ -404,7 +404,7 @@ bool NovaServer::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSEXTSRVATTRhypervisorHostname(refVal);
+            setOSEXTSRVATTRHypervisorHostname(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("OS-EXT-SRV-ATTR:instance_name"))) {
@@ -413,7 +413,7 @@ bool NovaServer::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSEXTSRVATTRinstanceName(refVal);
+            setOSEXTSRVATTRInstanceName(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("OS-EXT-STS:power_state"))) {
@@ -422,7 +422,7 @@ bool NovaServer::fromJson(const web::json::value& val)
         {
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSEXTSTSpowerState(refVal);
+            setOSEXTSTSPowerState(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("OS-EXT-STS:task_state"))) {
@@ -431,7 +431,7 @@ bool NovaServer::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSEXTSTStaskState(refVal);
+            setOSEXTSTSTaskState(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("OS-EXT-STS:vm_state"))) {
@@ -440,7 +440,7 @@ bool NovaServer::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSEXTSTSvmState(refVal);
+            setOSEXTSTSVmState(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("OS-SRV-USG:launched_at"))) {
@@ -449,7 +449,7 @@ bool NovaServer::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSSRVUSGlaunchedAt(refVal);
+            setOSSRVUSGLaunchedAt(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("OS-SRV-USG:terminated_at"))) {
@@ -458,7 +458,7 @@ bool NovaServer::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSSRVUSGterminatedAt(refVal);
+            setOSSRVUSGTerminatedAt(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("os-extended-volumes:volumes_attached"))) {
@@ -467,7 +467,7 @@ bool NovaServer::fromJson(const web::json::value& val)
         {
             std::vector<NovaServerVolume> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOsExtendedVolumesvolumesAttached(refVal);
+            setOsExtendedVolumesVolumesAttached(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("fault"))) {
@@ -503,7 +503,7 @@ bool NovaServer::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSEXTSRVATTRhostname(refVal);
+            setOSEXTSRVATTRHostname(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("OS-EXT-SRV-ATTR:reservation_id"))) {
@@ -512,7 +512,7 @@ bool NovaServer::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSEXTSRVATTRreservationId(refVal);
+            setOSEXTSRVATTRReservationId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("OS-EXT-SRV-ATTR:launch_index"))) {
@@ -521,7 +521,7 @@ bool NovaServer::fromJson(const web::json::value& val)
         {
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSEXTSRVATTRlaunchIndex(refVal);
+            setOSEXTSRVATTRLaunchIndex(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("OS-EXT-SRV-ATTR:kernel_id"))) {
@@ -530,7 +530,7 @@ bool NovaServer::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSEXTSRVATTRkernelId(refVal);
+            setOSEXTSRVATTRKernelId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("OS-EXT-SRV-ATTR:ramdisk_id"))) {
@@ -539,7 +539,7 @@ bool NovaServer::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSEXTSRVATTRramdiskId(refVal);
+            setOSEXTSRVATTRRamdiskId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("OS-EXT-SRV-ATTR:root_device_name"))) {
@@ -548,7 +548,7 @@ bool NovaServer::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSEXTSRVATTRrootDeviceName(refVal);
+            setOSEXTSRVATTRRootDeviceName(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("OS-EXT-SRV-ATTR:user_data"))) {
@@ -557,7 +557,7 @@ bool NovaServer::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSEXTSRVATTRuserData(refVal);
+            setOSEXTSRVATTRUserData(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("tags"))) {
@@ -620,7 +620,7 @@ bool NovaServer::fromJson(const web::json::value& val)
         {
             NovaServerSchedulerHints refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOsschedulerHints(refVal);
+            setOsSchedulerHints(refVal);
         }
     }
     return ok;
@@ -942,235 +942,235 @@ void NovaServer::unsetlinks()
     linksIsSet_ = false;
 }
 
-std::string NovaServer::getOSDCFdiskConfig() const
+std::string NovaServer::getOSDCFDiskConfig() const
 {
-    return oSDCFdiskConfig_;
+    return oSDCFDiskConfig_;
 }
 
-void NovaServer::setOSDCFdiskConfig(const std::string& value)
+void NovaServer::setOSDCFDiskConfig(const std::string& value)
 {
-    oSDCFdiskConfig_ = value;
-    oSDCFdiskConfigIsSet_ = true;
+    oSDCFDiskConfig_ = value;
+    oSDCFDiskConfigIsSet_ = true;
 }
 
-bool NovaServer::oSDCFdiskConfigIsSet() const
+bool NovaServer::oSDCFDiskConfigIsSet() const
 {
-    return oSDCFdiskConfigIsSet_;
+    return oSDCFDiskConfigIsSet_;
 }
 
-void NovaServer::unsetoSDCFdiskConfig()
+void NovaServer::unsetoSDCFDiskConfig()
 {
-    oSDCFdiskConfigIsSet_ = false;
+    oSDCFDiskConfigIsSet_ = false;
 }
 
-std::string NovaServer::getOSEXTAZavailabilityZone() const
+std::string NovaServer::getOSEXTAZAvailabilityZone() const
 {
-    return oSEXTAZavailabilityZone_;
+    return oSEXTAZAvailabilityZone_;
 }
 
-void NovaServer::setOSEXTAZavailabilityZone(const std::string& value)
+void NovaServer::setOSEXTAZAvailabilityZone(const std::string& value)
 {
-    oSEXTAZavailabilityZone_ = value;
-    oSEXTAZavailabilityZoneIsSet_ = true;
+    oSEXTAZAvailabilityZone_ = value;
+    oSEXTAZAvailabilityZoneIsSet_ = true;
 }
 
-bool NovaServer::oSEXTAZavailabilityZoneIsSet() const
+bool NovaServer::oSEXTAZAvailabilityZoneIsSet() const
 {
-    return oSEXTAZavailabilityZoneIsSet_;
+    return oSEXTAZAvailabilityZoneIsSet_;
 }
 
-void NovaServer::unsetoSEXTAZavailabilityZone()
+void NovaServer::unsetoSEXTAZAvailabilityZone()
 {
-    oSEXTAZavailabilityZoneIsSet_ = false;
+    oSEXTAZAvailabilityZoneIsSet_ = false;
 }
 
-std::string NovaServer::getOSEXTSRVATTRhost() const
+std::string NovaServer::getOSEXTSRVATTRHost() const
 {
-    return oSEXTSRVATTRhost_;
+    return oSEXTSRVATTRHost_;
 }
 
-void NovaServer::setOSEXTSRVATTRhost(const std::string& value)
+void NovaServer::setOSEXTSRVATTRHost(const std::string& value)
 {
-    oSEXTSRVATTRhost_ = value;
-    oSEXTSRVATTRhostIsSet_ = true;
+    oSEXTSRVATTRHost_ = value;
+    oSEXTSRVATTRHostIsSet_ = true;
 }
 
-bool NovaServer::oSEXTSRVATTRhostIsSet() const
+bool NovaServer::oSEXTSRVATTRHostIsSet() const
 {
-    return oSEXTSRVATTRhostIsSet_;
+    return oSEXTSRVATTRHostIsSet_;
 }
 
-void NovaServer::unsetoSEXTSRVATTRhost()
+void NovaServer::unsetoSEXTSRVATTRHost()
 {
-    oSEXTSRVATTRhostIsSet_ = false;
+    oSEXTSRVATTRHostIsSet_ = false;
 }
 
-std::string NovaServer::getOSEXTSRVATTRhypervisorHostname() const
+std::string NovaServer::getOSEXTSRVATTRHypervisorHostname() const
 {
-    return oSEXTSRVATTRhypervisorHostname_;
+    return oSEXTSRVATTRHypervisorHostname_;
 }
 
-void NovaServer::setOSEXTSRVATTRhypervisorHostname(const std::string& value)
+void NovaServer::setOSEXTSRVATTRHypervisorHostname(const std::string& value)
 {
-    oSEXTSRVATTRhypervisorHostname_ = value;
-    oSEXTSRVATTRhypervisorHostnameIsSet_ = true;
+    oSEXTSRVATTRHypervisorHostname_ = value;
+    oSEXTSRVATTRHypervisorHostnameIsSet_ = true;
 }
 
-bool NovaServer::oSEXTSRVATTRhypervisorHostnameIsSet() const
+bool NovaServer::oSEXTSRVATTRHypervisorHostnameIsSet() const
 {
-    return oSEXTSRVATTRhypervisorHostnameIsSet_;
+    return oSEXTSRVATTRHypervisorHostnameIsSet_;
 }
 
-void NovaServer::unsetoSEXTSRVATTRhypervisorHostname()
+void NovaServer::unsetoSEXTSRVATTRHypervisorHostname()
 {
-    oSEXTSRVATTRhypervisorHostnameIsSet_ = false;
+    oSEXTSRVATTRHypervisorHostnameIsSet_ = false;
 }
 
-std::string NovaServer::getOSEXTSRVATTRinstanceName() const
+std::string NovaServer::getOSEXTSRVATTRInstanceName() const
 {
-    return oSEXTSRVATTRinstanceName_;
+    return oSEXTSRVATTRInstanceName_;
 }
 
-void NovaServer::setOSEXTSRVATTRinstanceName(const std::string& value)
+void NovaServer::setOSEXTSRVATTRInstanceName(const std::string& value)
 {
-    oSEXTSRVATTRinstanceName_ = value;
-    oSEXTSRVATTRinstanceNameIsSet_ = true;
+    oSEXTSRVATTRInstanceName_ = value;
+    oSEXTSRVATTRInstanceNameIsSet_ = true;
 }
 
-bool NovaServer::oSEXTSRVATTRinstanceNameIsSet() const
+bool NovaServer::oSEXTSRVATTRInstanceNameIsSet() const
 {
-    return oSEXTSRVATTRinstanceNameIsSet_;
+    return oSEXTSRVATTRInstanceNameIsSet_;
 }
 
-void NovaServer::unsetoSEXTSRVATTRinstanceName()
+void NovaServer::unsetoSEXTSRVATTRInstanceName()
 {
-    oSEXTSRVATTRinstanceNameIsSet_ = false;
+    oSEXTSRVATTRInstanceNameIsSet_ = false;
 }
 
-int32_t NovaServer::getOSEXTSTSpowerState() const
+int32_t NovaServer::getOSEXTSTSPowerState() const
 {
-    return oSEXTSTSpowerState_;
+    return oSEXTSTSPowerState_;
 }
 
-void NovaServer::setOSEXTSTSpowerState(int32_t value)
+void NovaServer::setOSEXTSTSPowerState(int32_t value)
 {
-    oSEXTSTSpowerState_ = value;
-    oSEXTSTSpowerStateIsSet_ = true;
+    oSEXTSTSPowerState_ = value;
+    oSEXTSTSPowerStateIsSet_ = true;
 }
 
-bool NovaServer::oSEXTSTSpowerStateIsSet() const
+bool NovaServer::oSEXTSTSPowerStateIsSet() const
 {
-    return oSEXTSTSpowerStateIsSet_;
+    return oSEXTSTSPowerStateIsSet_;
 }
 
-void NovaServer::unsetoSEXTSTSpowerState()
+void NovaServer::unsetoSEXTSTSPowerState()
 {
-    oSEXTSTSpowerStateIsSet_ = false;
+    oSEXTSTSPowerStateIsSet_ = false;
 }
 
-std::string NovaServer::getOSEXTSTStaskState() const
+std::string NovaServer::getOSEXTSTSTaskState() const
 {
-    return oSEXTSTStaskState_;
+    return oSEXTSTSTaskState_;
 }
 
-void NovaServer::setOSEXTSTStaskState(const std::string& value)
+void NovaServer::setOSEXTSTSTaskState(const std::string& value)
 {
-    oSEXTSTStaskState_ = value;
-    oSEXTSTStaskStateIsSet_ = true;
+    oSEXTSTSTaskState_ = value;
+    oSEXTSTSTaskStateIsSet_ = true;
 }
 
-bool NovaServer::oSEXTSTStaskStateIsSet() const
+bool NovaServer::oSEXTSTSTaskStateIsSet() const
 {
-    return oSEXTSTStaskStateIsSet_;
+    return oSEXTSTSTaskStateIsSet_;
 }
 
-void NovaServer::unsetoSEXTSTStaskState()
+void NovaServer::unsetoSEXTSTSTaskState()
 {
-    oSEXTSTStaskStateIsSet_ = false;
+    oSEXTSTSTaskStateIsSet_ = false;
 }
 
-std::string NovaServer::getOSEXTSTSvmState() const
+std::string NovaServer::getOSEXTSTSVmState() const
 {
-    return oSEXTSTSvmState_;
+    return oSEXTSTSVmState_;
 }
 
-void NovaServer::setOSEXTSTSvmState(const std::string& value)
+void NovaServer::setOSEXTSTSVmState(const std::string& value)
 {
-    oSEXTSTSvmState_ = value;
-    oSEXTSTSvmStateIsSet_ = true;
+    oSEXTSTSVmState_ = value;
+    oSEXTSTSVmStateIsSet_ = true;
 }
 
-bool NovaServer::oSEXTSTSvmStateIsSet() const
+bool NovaServer::oSEXTSTSVmStateIsSet() const
 {
-    return oSEXTSTSvmStateIsSet_;
+    return oSEXTSTSVmStateIsSet_;
 }
 
-void NovaServer::unsetoSEXTSTSvmState()
+void NovaServer::unsetoSEXTSTSVmState()
 {
-    oSEXTSTSvmStateIsSet_ = false;
+    oSEXTSTSVmStateIsSet_ = false;
 }
 
-std::string NovaServer::getOSSRVUSGlaunchedAt() const
+std::string NovaServer::getOSSRVUSGLaunchedAt() const
 {
-    return oSSRVUSGlaunchedAt_;
+    return oSSRVUSGLaunchedAt_;
 }
 
-void NovaServer::setOSSRVUSGlaunchedAt(const std::string& value)
+void NovaServer::setOSSRVUSGLaunchedAt(const std::string& value)
 {
-    oSSRVUSGlaunchedAt_ = value;
-    oSSRVUSGlaunchedAtIsSet_ = true;
+    oSSRVUSGLaunchedAt_ = value;
+    oSSRVUSGLaunchedAtIsSet_ = true;
 }
 
-bool NovaServer::oSSRVUSGlaunchedAtIsSet() const
+bool NovaServer::oSSRVUSGLaunchedAtIsSet() const
 {
-    return oSSRVUSGlaunchedAtIsSet_;
+    return oSSRVUSGLaunchedAtIsSet_;
 }
 
-void NovaServer::unsetoSSRVUSGlaunchedAt()
+void NovaServer::unsetoSSRVUSGLaunchedAt()
 {
-    oSSRVUSGlaunchedAtIsSet_ = false;
+    oSSRVUSGLaunchedAtIsSet_ = false;
 }
 
-std::string NovaServer::getOSSRVUSGterminatedAt() const
+std::string NovaServer::getOSSRVUSGTerminatedAt() const
 {
-    return oSSRVUSGterminatedAt_;
+    return oSSRVUSGTerminatedAt_;
 }
 
-void NovaServer::setOSSRVUSGterminatedAt(const std::string& value)
+void NovaServer::setOSSRVUSGTerminatedAt(const std::string& value)
 {
-    oSSRVUSGterminatedAt_ = value;
-    oSSRVUSGterminatedAtIsSet_ = true;
+    oSSRVUSGTerminatedAt_ = value;
+    oSSRVUSGTerminatedAtIsSet_ = true;
 }
 
-bool NovaServer::oSSRVUSGterminatedAtIsSet() const
+bool NovaServer::oSSRVUSGTerminatedAtIsSet() const
 {
-    return oSSRVUSGterminatedAtIsSet_;
+    return oSSRVUSGTerminatedAtIsSet_;
 }
 
-void NovaServer::unsetoSSRVUSGterminatedAt()
+void NovaServer::unsetoSSRVUSGTerminatedAt()
 {
-    oSSRVUSGterminatedAtIsSet_ = false;
+    oSSRVUSGTerminatedAtIsSet_ = false;
 }
 
-std::vector<NovaServerVolume>& NovaServer::getOsExtendedVolumesvolumesAttached()
+std::vector<NovaServerVolume>& NovaServer::getOsExtendedVolumesVolumesAttached()
 {
-    return osExtendedVolumesvolumesAttached_;
+    return osExtendedVolumesVolumesAttached_;
 }
 
-void NovaServer::setOsExtendedVolumesvolumesAttached(const std::vector<NovaServerVolume>& value)
+void NovaServer::setOsExtendedVolumesVolumesAttached(const std::vector<NovaServerVolume>& value)
 {
-    osExtendedVolumesvolumesAttached_ = value;
-    osExtendedVolumesvolumesAttachedIsSet_ = true;
+    osExtendedVolumesVolumesAttached_ = value;
+    osExtendedVolumesVolumesAttachedIsSet_ = true;
 }
 
-bool NovaServer::osExtendedVolumesvolumesAttachedIsSet() const
+bool NovaServer::osExtendedVolumesVolumesAttachedIsSet() const
 {
-    return osExtendedVolumesvolumesAttachedIsSet_;
+    return osExtendedVolumesVolumesAttachedIsSet_;
 }
 
-void NovaServer::unsetosExtendedVolumesvolumesAttached()
+void NovaServer::unsetosExtendedVolumesVolumesAttached()
 {
-    osExtendedVolumesvolumesAttachedIsSet_ = false;
+    osExtendedVolumesVolumesAttachedIsSet_ = false;
 }
 
 NovaServerFault NovaServer::getFault() const
@@ -1236,151 +1236,151 @@ void NovaServer::unsethostStatus()
     hostStatusIsSet_ = false;
 }
 
-std::string NovaServer::getOSEXTSRVATTRhostname() const
+std::string NovaServer::getOSEXTSRVATTRHostname() const
 {
-    return oSEXTSRVATTRhostname_;
+    return oSEXTSRVATTRHostname_;
 }
 
-void NovaServer::setOSEXTSRVATTRhostname(const std::string& value)
+void NovaServer::setOSEXTSRVATTRHostname(const std::string& value)
 {
-    oSEXTSRVATTRhostname_ = value;
-    oSEXTSRVATTRhostnameIsSet_ = true;
+    oSEXTSRVATTRHostname_ = value;
+    oSEXTSRVATTRHostnameIsSet_ = true;
 }
 
-bool NovaServer::oSEXTSRVATTRhostnameIsSet() const
+bool NovaServer::oSEXTSRVATTRHostnameIsSet() const
 {
-    return oSEXTSRVATTRhostnameIsSet_;
+    return oSEXTSRVATTRHostnameIsSet_;
 }
 
-void NovaServer::unsetoSEXTSRVATTRhostname()
+void NovaServer::unsetoSEXTSRVATTRHostname()
 {
-    oSEXTSRVATTRhostnameIsSet_ = false;
+    oSEXTSRVATTRHostnameIsSet_ = false;
 }
 
-std::string NovaServer::getOSEXTSRVATTRreservationId() const
+std::string NovaServer::getOSEXTSRVATTRReservationId() const
 {
-    return oSEXTSRVATTRreservationId_;
+    return oSEXTSRVATTRReservationId_;
 }
 
-void NovaServer::setOSEXTSRVATTRreservationId(const std::string& value)
+void NovaServer::setOSEXTSRVATTRReservationId(const std::string& value)
 {
-    oSEXTSRVATTRreservationId_ = value;
-    oSEXTSRVATTRreservationIdIsSet_ = true;
+    oSEXTSRVATTRReservationId_ = value;
+    oSEXTSRVATTRReservationIdIsSet_ = true;
 }
 
-bool NovaServer::oSEXTSRVATTRreservationIdIsSet() const
+bool NovaServer::oSEXTSRVATTRReservationIdIsSet() const
 {
-    return oSEXTSRVATTRreservationIdIsSet_;
+    return oSEXTSRVATTRReservationIdIsSet_;
 }
 
-void NovaServer::unsetoSEXTSRVATTRreservationId()
+void NovaServer::unsetoSEXTSRVATTRReservationId()
 {
-    oSEXTSRVATTRreservationIdIsSet_ = false;
+    oSEXTSRVATTRReservationIdIsSet_ = false;
 }
 
-int32_t NovaServer::getOSEXTSRVATTRlaunchIndex() const
+int32_t NovaServer::getOSEXTSRVATTRLaunchIndex() const
 {
-    return oSEXTSRVATTRlaunchIndex_;
+    return oSEXTSRVATTRLaunchIndex_;
 }
 
-void NovaServer::setOSEXTSRVATTRlaunchIndex(int32_t value)
+void NovaServer::setOSEXTSRVATTRLaunchIndex(int32_t value)
 {
-    oSEXTSRVATTRlaunchIndex_ = value;
-    oSEXTSRVATTRlaunchIndexIsSet_ = true;
+    oSEXTSRVATTRLaunchIndex_ = value;
+    oSEXTSRVATTRLaunchIndexIsSet_ = true;
 }
 
-bool NovaServer::oSEXTSRVATTRlaunchIndexIsSet() const
+bool NovaServer::oSEXTSRVATTRLaunchIndexIsSet() const
 {
-    return oSEXTSRVATTRlaunchIndexIsSet_;
+    return oSEXTSRVATTRLaunchIndexIsSet_;
 }
 
-void NovaServer::unsetoSEXTSRVATTRlaunchIndex()
+void NovaServer::unsetoSEXTSRVATTRLaunchIndex()
 {
-    oSEXTSRVATTRlaunchIndexIsSet_ = false;
+    oSEXTSRVATTRLaunchIndexIsSet_ = false;
 }
 
-std::string NovaServer::getOSEXTSRVATTRkernelId() const
+std::string NovaServer::getOSEXTSRVATTRKernelId() const
 {
-    return oSEXTSRVATTRkernelId_;
+    return oSEXTSRVATTRKernelId_;
 }
 
-void NovaServer::setOSEXTSRVATTRkernelId(const std::string& value)
+void NovaServer::setOSEXTSRVATTRKernelId(const std::string& value)
 {
-    oSEXTSRVATTRkernelId_ = value;
-    oSEXTSRVATTRkernelIdIsSet_ = true;
+    oSEXTSRVATTRKernelId_ = value;
+    oSEXTSRVATTRKernelIdIsSet_ = true;
 }
 
-bool NovaServer::oSEXTSRVATTRkernelIdIsSet() const
+bool NovaServer::oSEXTSRVATTRKernelIdIsSet() const
 {
-    return oSEXTSRVATTRkernelIdIsSet_;
+    return oSEXTSRVATTRKernelIdIsSet_;
 }
 
-void NovaServer::unsetoSEXTSRVATTRkernelId()
+void NovaServer::unsetoSEXTSRVATTRKernelId()
 {
-    oSEXTSRVATTRkernelIdIsSet_ = false;
+    oSEXTSRVATTRKernelIdIsSet_ = false;
 }
 
-std::string NovaServer::getOSEXTSRVATTRramdiskId() const
+std::string NovaServer::getOSEXTSRVATTRRamdiskId() const
 {
-    return oSEXTSRVATTRramdiskId_;
+    return oSEXTSRVATTRRamdiskId_;
 }
 
-void NovaServer::setOSEXTSRVATTRramdiskId(const std::string& value)
+void NovaServer::setOSEXTSRVATTRRamdiskId(const std::string& value)
 {
-    oSEXTSRVATTRramdiskId_ = value;
-    oSEXTSRVATTRramdiskIdIsSet_ = true;
+    oSEXTSRVATTRRamdiskId_ = value;
+    oSEXTSRVATTRRamdiskIdIsSet_ = true;
 }
 
-bool NovaServer::oSEXTSRVATTRramdiskIdIsSet() const
+bool NovaServer::oSEXTSRVATTRRamdiskIdIsSet() const
 {
-    return oSEXTSRVATTRramdiskIdIsSet_;
+    return oSEXTSRVATTRRamdiskIdIsSet_;
 }
 
-void NovaServer::unsetoSEXTSRVATTRramdiskId()
+void NovaServer::unsetoSEXTSRVATTRRamdiskId()
 {
-    oSEXTSRVATTRramdiskIdIsSet_ = false;
+    oSEXTSRVATTRRamdiskIdIsSet_ = false;
 }
 
-std::string NovaServer::getOSEXTSRVATTRrootDeviceName() const
+std::string NovaServer::getOSEXTSRVATTRRootDeviceName() const
 {
-    return oSEXTSRVATTRrootDeviceName_;
+    return oSEXTSRVATTRRootDeviceName_;
 }
 
-void NovaServer::setOSEXTSRVATTRrootDeviceName(const std::string& value)
+void NovaServer::setOSEXTSRVATTRRootDeviceName(const std::string& value)
 {
-    oSEXTSRVATTRrootDeviceName_ = value;
-    oSEXTSRVATTRrootDeviceNameIsSet_ = true;
+    oSEXTSRVATTRRootDeviceName_ = value;
+    oSEXTSRVATTRRootDeviceNameIsSet_ = true;
 }
 
-bool NovaServer::oSEXTSRVATTRrootDeviceNameIsSet() const
+bool NovaServer::oSEXTSRVATTRRootDeviceNameIsSet() const
 {
-    return oSEXTSRVATTRrootDeviceNameIsSet_;
+    return oSEXTSRVATTRRootDeviceNameIsSet_;
 }
 
-void NovaServer::unsetoSEXTSRVATTRrootDeviceName()
+void NovaServer::unsetoSEXTSRVATTRRootDeviceName()
 {
-    oSEXTSRVATTRrootDeviceNameIsSet_ = false;
+    oSEXTSRVATTRRootDeviceNameIsSet_ = false;
 }
 
-std::string NovaServer::getOSEXTSRVATTRuserData() const
+std::string NovaServer::getOSEXTSRVATTRUserData() const
 {
-    return oSEXTSRVATTRuserData_;
+    return oSEXTSRVATTRUserData_;
 }
 
-void NovaServer::setOSEXTSRVATTRuserData(const std::string& value)
+void NovaServer::setOSEXTSRVATTRUserData(const std::string& value)
 {
-    oSEXTSRVATTRuserData_ = value;
-    oSEXTSRVATTRuserDataIsSet_ = true;
+    oSEXTSRVATTRUserData_ = value;
+    oSEXTSRVATTRUserDataIsSet_ = true;
 }
 
-bool NovaServer::oSEXTSRVATTRuserDataIsSet() const
+bool NovaServer::oSEXTSRVATTRUserDataIsSet() const
 {
-    return oSEXTSRVATTRuserDataIsSet_;
+    return oSEXTSRVATTRUserDataIsSet_;
 }
 
-void NovaServer::unsetoSEXTSRVATTRuserData()
+void NovaServer::unsetoSEXTSRVATTRUserData()
 {
-    oSEXTSRVATTRuserDataIsSet_ = false;
+    oSEXTSRVATTRUserDataIsSet_ = false;
 }
 
 std::vector<std::string>& NovaServer::getTags()
@@ -1509,25 +1509,25 @@ void NovaServer::unsetprogress()
     progressIsSet_ = false;
 }
 
-NovaServerSchedulerHints NovaServer::getOsschedulerHints() const
+NovaServerSchedulerHints NovaServer::getOsSchedulerHints() const
 {
-    return osschedulerHints_;
+    return osSchedulerHints_;
 }
 
-void NovaServer::setOsschedulerHints(const NovaServerSchedulerHints& value)
+void NovaServer::setOsSchedulerHints(const NovaServerSchedulerHints& value)
 {
-    osschedulerHints_ = value;
-    osschedulerHintsIsSet_ = true;
+    osSchedulerHints_ = value;
+    osSchedulerHintsIsSet_ = true;
 }
 
-bool NovaServer::osschedulerHintsIsSet() const
+bool NovaServer::osSchedulerHintsIsSet() const
 {
-    return osschedulerHintsIsSet_;
+    return osSchedulerHintsIsSet_;
 }
 
-void NovaServer::unsetosschedulerHints()
+void NovaServer::unsetosSchedulerHints()
 {
-    osschedulerHintsIsSet_ = false;
+    osSchedulerHintsIsSet_ = false;
 }
 
 }

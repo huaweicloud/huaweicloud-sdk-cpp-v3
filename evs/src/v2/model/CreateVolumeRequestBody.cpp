@@ -16,7 +16,7 @@ CreateVolumeRequestBody::CreateVolumeRequestBody()
     volumeIsSet_ = false;
     serverId_ = "";
     serverIdIsSet_ = false;
-    oSSCHHNTschedulerHintsIsSet_ = false;
+    oSSCHHNTSchedulerHintsIsSet_ = false;
 }
 
 CreateVolumeRequestBody::~CreateVolumeRequestBody() = default;
@@ -38,8 +38,8 @@ web::json::value CreateVolumeRequestBody::toJson() const
     if(serverIdIsSet_) {
         val[utility::conversions::to_string_t("server_id")] = ModelBase::toJson(serverId_);
     }
-    if(oSSCHHNTschedulerHintsIsSet_) {
-        val[utility::conversions::to_string_t("OS-SCH-HNT:scheduler_hints")] = ModelBase::toJson(oSSCHHNTschedulerHints_);
+    if(oSSCHHNTSchedulerHintsIsSet_) {
+        val[utility::conversions::to_string_t("OS-SCH-HNT:scheduler_hints")] = ModelBase::toJson(oSSCHHNTSchedulerHints_);
     }
 
     return val;
@@ -81,7 +81,7 @@ bool CreateVolumeRequestBody::fromJson(const web::json::value& val)
         {
             CreateVolumeSchedulerHints refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOSSCHHNTschedulerHints(refVal);
+            setOSSCHHNTSchedulerHints(refVal);
         }
     }
     return ok;
@@ -151,25 +151,25 @@ void CreateVolumeRequestBody::unsetserverId()
     serverIdIsSet_ = false;
 }
 
-CreateVolumeSchedulerHints CreateVolumeRequestBody::getOSSCHHNTschedulerHints() const
+CreateVolumeSchedulerHints CreateVolumeRequestBody::getOSSCHHNTSchedulerHints() const
 {
-    return oSSCHHNTschedulerHints_;
+    return oSSCHHNTSchedulerHints_;
 }
 
-void CreateVolumeRequestBody::setOSSCHHNTschedulerHints(const CreateVolumeSchedulerHints& value)
+void CreateVolumeRequestBody::setOSSCHHNTSchedulerHints(const CreateVolumeSchedulerHints& value)
 {
-    oSSCHHNTschedulerHints_ = value;
-    oSSCHHNTschedulerHintsIsSet_ = true;
+    oSSCHHNTSchedulerHints_ = value;
+    oSSCHHNTSchedulerHintsIsSet_ = true;
 }
 
-bool CreateVolumeRequestBody::oSSCHHNTschedulerHintsIsSet() const
+bool CreateVolumeRequestBody::oSSCHHNTSchedulerHintsIsSet() const
 {
-    return oSSCHHNTschedulerHintsIsSet_;
+    return oSSCHHNTSchedulerHintsIsSet_;
 }
 
-void CreateVolumeRequestBody::unsetoSSCHHNTschedulerHints()
+void CreateVolumeRequestBody::unsetoSSCHHNTSchedulerHints()
 {
-    oSSCHHNTschedulerHintsIsSet_ = false;
+    oSSCHHNTSchedulerHintsIsSet_ = false;
 }
 
 }

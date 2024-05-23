@@ -18,8 +18,8 @@ VolumeMetadata::VolumeMetadata()
     systemEncryptedIsSet_ = false;
     fullClone_ = "";
     fullCloneIsSet_ = false;
-    hwpassthrough_ = "";
-    hwpassthroughIsSet_ = false;
+    hwPassthrough_ = "";
+    hwPassthroughIsSet_ = false;
     orderID_ = "";
     orderIDIsSet_ = false;
 }
@@ -43,8 +43,8 @@ web::json::value VolumeMetadata::toJson() const
     if(fullCloneIsSet_) {
         val[utility::conversions::to_string_t("full_clone")] = ModelBase::toJson(fullClone_);
     }
-    if(hwpassthroughIsSet_) {
-        val[utility::conversions::to_string_t("hw:passthrough")] = ModelBase::toJson(hwpassthrough_);
+    if(hwPassthroughIsSet_) {
+        val[utility::conversions::to_string_t("hw:passthrough")] = ModelBase::toJson(hwPassthrough_);
     }
     if(orderIDIsSet_) {
         val[utility::conversions::to_string_t("orderID")] = ModelBase::toJson(orderID_);
@@ -89,7 +89,7 @@ bool VolumeMetadata::fromJson(const web::json::value& val)
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setHwpassthrough(refVal);
+            setHwPassthrough(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("orderID"))) {
@@ -168,25 +168,25 @@ void VolumeMetadata::unsetfullClone()
     fullCloneIsSet_ = false;
 }
 
-std::string VolumeMetadata::getHwpassthrough() const
+std::string VolumeMetadata::getHwPassthrough() const
 {
-    return hwpassthrough_;
+    return hwPassthrough_;
 }
 
-void VolumeMetadata::setHwpassthrough(const std::string& value)
+void VolumeMetadata::setHwPassthrough(const std::string& value)
 {
-    hwpassthrough_ = value;
-    hwpassthroughIsSet_ = true;
+    hwPassthrough_ = value;
+    hwPassthroughIsSet_ = true;
 }
 
-bool VolumeMetadata::hwpassthroughIsSet() const
+bool VolumeMetadata::hwPassthroughIsSet() const
 {
-    return hwpassthroughIsSet_;
+    return hwPassthroughIsSet_;
 }
 
-void VolumeMetadata::unsethwpassthrough()
+void VolumeMetadata::unsethwPassthrough()
 {
-    hwpassthroughIsSet_ = false;
+    hwPassthroughIsSet_ = false;
 }
 
 std::string VolumeMetadata::getOrderID() const

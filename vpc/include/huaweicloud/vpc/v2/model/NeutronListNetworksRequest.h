@@ -96,10 +96,10 @@ public:
     /// 按照网络是否外部网络过滤查询，取值范围：true or false
     /// </summary>
 
-    bool isRouterexternal() const;
-    bool routerexternalIsSet() const;
-    void unsetrouterexternal();
-    void setRouterexternal(bool value);
+    bool isRouterExternal() const;
+    bool routerExternalIsSet() const;
+    void unsetrouterExternal();
+    void setRouterExternal(bool value);
 
     /// <summary>
     /// 按照网络的管理状态过滤查询，取值范围：true or false
@@ -114,10 +114,10 @@ public:
     /// 按照网络的类型过滤查询
     /// </summary>
 
-    std::string getProvidernetworkType() const;
-    bool providernetworkTypeIsSet() const;
-    void unsetprovidernetworkType();
-    void setProvidernetworkType(const std::string& value);
+    std::string getProviderNetworkType() const;
+    bool providerNetworkTypeIsSet() const;
+    void unsetproviderNetworkType();
+    void setProviderNetworkType(const std::string& value);
 
     /// <summary>
     /// 按照network所属的项目ID过滤
@@ -142,12 +142,12 @@ protected:
     bool statusIsSet_;
     bool shared_;
     bool sharedIsSet_;
-    bool routerexternal_;
-    bool routerexternalIsSet_;
+    bool routerExternal_;
+    bool routerExternalIsSet_;
     bool adminStateUp_;
     bool adminStateUpIsSet_;
-    std::string providernetworkType_;
-    bool providernetworkTypeIsSet_;
+    std::string providerNetworkType_;
+    bool providerNetworkTypeIsSet_;
     std::string tenantId_;
     bool tenantIdIsSet_;
 

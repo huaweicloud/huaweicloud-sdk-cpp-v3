@@ -98,6 +98,8 @@ public:
     static HttpRequestDef genRequestDefForShowInstanceMonitorExtend();
     static HttpRequestDef genRequestDefForShowIntelligentDiagnosisAbnormalCountOfInstances();
     static HttpRequestDef genRequestDefForShowIntelligentDiagnosisInstanceInfosPerMetric();
+    static HttpRequestDef genRequestDefForShowProxyIpgroup();
+    static HttpRequestDef genRequestDefForShowProxyVersion();
     static HttpRequestDef genRequestDefForShowRestoreTables();
     static HttpRequestDef genRequestDefForShrinkGaussMySqlProxy();
     static HttpRequestDef genRequestDefForSwitchAccessControl();
@@ -123,11 +125,13 @@ public:
     static HttpRequestDef genRequestDefForUpdateInstanceMonitor();
     static HttpRequestDef genRequestDefForUpdateNewNodeAutoAddSwitch();
     static HttpRequestDef genRequestDefForUpdateProxyConnectionPoolType();
+    static HttpRequestDef genRequestDefForUpdateProxyName();
     static HttpRequestDef genRequestDefForUpdateProxyNewConfigurations();
     static HttpRequestDef genRequestDefForUpdateProxyPort();
     static HttpRequestDef genRequestDefForUpdateProxySessionConsistence();
     static HttpRequestDef genRequestDefForUpdateTransactionSplitStatus();
     static HttpRequestDef genRequestDefForUpgradeGaussMySqlInstanceDatabase();
+    static HttpRequestDef genRequestDefForUpgradeProxyVersion();
     static HttpRequestDef genRequestDefForCheckDataBaseConfig();
     static HttpRequestDef genRequestDefForCheckStarRocksResource();
     static HttpRequestDef genRequestDefForCheckTableConfig();

@@ -48,7 +48,7 @@ public:
     void setSourceId(const std::string& value);
 
     /// <summary>
-    /// 需要进行比较的参数组模板ID。
+    /// 需要进行比较的参数组模板ID，需要与源参数组模板的部署形态相同才可比较。
     /// </summary>
 
     std::string getTargetId() const;

@@ -102,6 +102,16 @@ void HttpConfig::setCertFile(const std::string &certFile)
     certFile_ = certFile;
 }
 
+const std::string &HttpConfig::getAlgorithm() const
+{
+    return algorithm_;
+}
+
+void HttpConfig::setAlgorithm(const std::string &algorithm)
+{
+    algorithm_ = algorithm;
+}
+
 const std::string &HttpConfig::getKeyFile() const
 {
     return keyFile_;

@@ -27,6 +27,7 @@ public:
     static HttpRequestDef genRequestDefForBatchStopServers();
     static HttpRequestDef genRequestDefForBatchUpdateServersName();
     static HttpRequestDef genRequestDefForChangeServerChargeMode();
+    static HttpRequestDef genRequestDefForChangeServerNetworkInterface();
     static HttpRequestDef genRequestDefForChangeServerOsWithCloudInit();
     static HttpRequestDef genRequestDefForChangeServerOsWithoutCloudInit();
     static HttpRequestDef genRequestDefForChangeVpc();

@@ -20,6 +20,7 @@
 #include <huaweicloud/cdn/v2/model/IpFilter.h>
 #include <huaweicloud/cdn/v2/model/Sni.h>
 #include <string>
+#include <huaweicloud/cdn/v2/model/AccessAreaFilter.h>
 #include <huaweicloud/cdn/v2/model/OriginRequestHeader.h>
 #include <huaweicloud/cdn/v2/model/CommonRemoteAuth.h>
 #include <huaweicloud/cdn/v2/model/Hsts.h>
@@ -380,6 +381,15 @@ public:
     void unsetbrowserCacheRules();
     void setBrowserCacheRules(const std::vector<BrowserCacheRules>& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    std::vector<AccessAreaFilter>& getAccessAreaFilter();
+    bool accessAreaFilterIsSet() const;
+    void unsetaccessAreaFilter();
+    void setAccessAreaFilter(const std::vector<AccessAreaFilter>& value);
+
 
 protected:
     std::string businessType_;
@@ -452,6 +462,8 @@ protected:
     bool requestUrlRewriteIsSet_;
     std::vector<BrowserCacheRules> browserCacheRules_;
     bool browserCacheRulesIsSet_;
+    std::vector<AccessAreaFilter> accessAreaFilter_;
+    bool accessAreaFilterIsSet_;
 
 };
 

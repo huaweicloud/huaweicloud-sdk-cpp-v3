@@ -48,6 +48,9 @@
 #include <huaweicloud/ecs/v2/model/ChangeServerChargeModeRequest.h>
 #include <huaweicloud/ecs/v2/model/ChangeServerChargeModeRequestBody.h>
 #include <huaweicloud/ecs/v2/model/ChangeServerChargeModeResponse.h>
+#include <huaweicloud/ecs/v2/model/ChangeServerNetworkInterfaceRequest.h>
+#include <huaweicloud/ecs/v2/model/ChangeServerNetworkInterfaceRequestBody.h>
+#include <huaweicloud/ecs/v2/model/ChangeServerNetworkInterfaceResponse.h>
 #include <huaweicloud/ecs/v2/model/ChangeServerOsWithCloudInitRequest.h>
 #include <huaweicloud/ecs/v2/model/ChangeServerOsWithCloudInitRequestBody.h>
 #include <huaweicloud/ecs/v2/model/ChangeServerOsWithCloudInitResponse.h>
@@ -343,6 +346,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ChangeServerChargeModeResponse> changeServerChargeMode(
         ChangeServerChargeModeRequest &request
+    );
+    // 更新云服务器指定网卡属性
+    //
+    // 更新云服务器指定网卡属性，当前仅支持更新网卡IP。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ChangeServerNetworkInterfaceResponse> changeServerNetworkInterface(
+        ChangeServerNetworkInterfaceRequest &request
     );
     // 切换弹性云服务器操作系统(安装Cloud init)
     //

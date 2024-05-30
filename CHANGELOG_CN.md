@@ -1,3 +1,131 @@
+# 3.1.88 2024-05-30
+
+### HuaweiCloud SDK CDN
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowHistoryTaskDetails**
+    - 响应参数变更
+      - `+ urls.fail_classify`
+      - `+ urls.fail_desc`
+  - **ListDomains**
+    - 响应参数变更
+      - `+ domains.sources.obs_bucket_type`
+  - **CreateDomain**
+    - 请求参数变更
+      - `+ domain.sources.obs_bucket_type`
+      - `* domain.sources: list<Sources> -> list<SourcesRequestBody>`
+    - 响应参数变更
+      - `+ domain.sources.obs_bucket_type`
+  - **DeleteDomain**
+    - 响应参数变更
+      - `+ domain.sources.obs_bucket_type`
+  - **EnableDomain**
+    - 响应参数变更
+      - `+ domain.sources.obs_bucket_type`
+  - **DisableDomain**
+    - 响应参数变更
+      - `+ domain.sources.obs_bucket_type`
+  - **ShowDomainFullConfig**
+    - 响应参数变更
+      - `+ configs.access_area_filter`
+      - `* configs.sources: list<SourcesConfig> -> list<SourcesConfigResponseBody>`
+  - **UpdateDomainFullConfig**
+    - 请求参数变更
+      - `+ configs.access_area_filter`
+
+### HuaweiCloud SDK ECS
+
+- _新增特性_
+  - 支持接口`ChangeServerNetworkInterface`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK GaussDB
+
+- _新增特性_
+  - 支持接口`UpgradeProxyVersion`、`UpdateProxyName`、`ShowProxyIpgroup`、`ShowProxyVersion`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **SearchAutoEnlargePolicy**
+    - 响应参数变更
+      - `+ step_percent`
+      - `+ step_size`
+  - **UpdateInstanceConfiguration**
+    - 响应参数变更
+      - `+ job_id`
+  - **CreateConfigurationTemplate**
+    - 请求参数变更
+      - `+ datastore.instance_mode: enum value [ha:readonly]`
+  - **ListDatabases**
+    - 响应参数变更
+      - `+ databases.datctype`
+      - `+ databases.compatibility_type`
+  - **ListTasks**
+    - 响应参数变更
+      - `+ tasks.created_at`
+      - `+ tasks.ended_at`
+  - **ListComponentInfos**
+    - 响应参数变更
+      - `+ nodes.components.type`
+      - `+ nodes.components.detail`
+  - **ShowUpgradeCandidateVersions**
+    - 响应参数变更
+      - `+ upgrade_type_list.is_parallel_upgrade`
+
+### HuaweiCloud SDK VPC
+
+- _新增特性_
+  - 支持以下接口：
+    - `ListClouddcnSubnets`
+    - `CreateClouddcnSubnet`
+    - `ShowClouddcnSubnet`
+    - `UpdateClouddcnSubnet`
+    - `DeleteClouddcnSubnet`
+    - `ShowClouddcnSubnetsTags`
+    - `AddClouddcnSubnetsTags`
+    - `ListClouddcnSubnetsFilterTags`
+    - `DeleteClouddcnSubnetsTag`
+    - `ListClouddcnSubnetsCountFilterTags`
+    - `ListClouddcnSubnetsTags`
+    - `BatchDeleteClouddcnSubnetsTags`
+    - `BatchCreateClouddcnSubnetsTags`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListSecurityGroups**
+    - 响应参数变更
+      - `+ security_groups.tags`
+  - **CreateSecurityGroup**
+    - 请求参数变更
+      - `+ security_group.tags`
+    - 响应参数变更
+      - `+ security_group.tags`
+  - **ShowSecurityGroup**
+    - 响应参数变更
+      - `+ security_group.tags`
+  - **UpdateSecurityGroup**
+    - 响应参数变更
+      - `+ security_group.tags`
+  - **CreateFirewall**
+    - 请求参数变更
+      - `+ firewall.tags`
+
 # 3.1.87 2024-05-23
 
 ### HuaweiCloud SDK GaussDBforNoSQL

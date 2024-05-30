@@ -9,8 +9,8 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/cdn/v2/model/SourcesRequestBody.h>
 #include <string>
-#include <huaweicloud/cdn/v2/model/Sources.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -62,10 +62,10 @@ public:
     /// 源站配置。
     /// </summary>
 
-    std::vector<Sources>& getSources();
+    std::vector<SourcesRequestBody>& getSources();
     bool sourcesIsSet() const;
     void unsetsources();
-    void setSources(const std::vector<Sources>& value);
+    void setSources(const std::vector<SourcesRequestBody>& value);
 
     /// <summary>
     /// 域名服务范围，若为mainland_china，则表示服务范围为中国大陆；若为outside_mainland_china，则表示服务范围为中国大陆境外；若为global，则表示服务范围为全球。
@@ -91,7 +91,7 @@ protected:
     bool domainNameIsSet_;
     std::string businessType_;
     bool businessTypeIsSet_;
-    std::vector<Sources> sources_;
+    std::vector<SourcesRequestBody> sources_;
     bool sourcesIsSet_;
     std::string serviceArea_;
     bool serviceAreaIsSet_;

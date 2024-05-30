@@ -28,8 +28,10 @@
 #include <ctime>
 #include <huaweicloud/core/CoreExport.h>
 #include <huaweicloud/core/utils/Header.h>
-#include <huaweicloud/core/utils/Hasher.h>
+#include <huaweicloud/core/utils/Sha256Hasher.h>
 #include <huaweicloud/core/RequestParams.h>
+#include <openssl/types.h>
+#include "huaweicloud/core/http/HttpConfig.h"
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -39,7 +41,7 @@ class HUAWEICLOUD_CORE_EXPORT Signer {
 public:
     Signer();
     Signer(const std::string &appKey, const std::string &appSecret);
-    ~Signer();
+    virtual ~Signer();
 
     /* Task 1: Get Canonicalized Request String */
     std::string getCanonicalRequest(const std::string &signedHeaders, const std::string &method, std::string uri,
@@ -54,20 +56,22 @@ public:
     std::string getHexHash(const std::string &payload);
 
     /* Task 2:　Get String to Sign */
-    std::string getStringToSign(const std::string &algorithm, const std::string &date,
-        const std::string &canonicalRequest);
+    std::string getStringToSign(const std::string &date, const std::string &canonicalRequest);
 
     /* Task 3: Calculate the Signature */
-    std::string getSignature(const char *signingKey, const std::string &stringToSign);
+    virtual std::string getSignature(const std::string &stringToSign);
 
+    std::vector<unsigned char> derivePrivateKey(std::string alg, const EVP_MD *engine, std::string ak, std::string sk, BIGNUM* nMinusTwo);
     // One stroke create signature
     std::string createSignature(HuaweiCloud::Sdk::Core::RequestParams &request);
 
-private:
+protected:
     /* Credentials */
     std::string appKey_;
     std::string appSecret_;
-    Hasher *hasher_;
+    std::string algorithm_;
+    std::string contentHeader_;
+    AbstractHasher *hasher_;
 };
 }
 }

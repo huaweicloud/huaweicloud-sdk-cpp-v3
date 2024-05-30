@@ -57,7 +57,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 部署形态。
+    /// 部署形态(Ha:主备版;Independent:独立部署;Combined:混合部署)。
     /// </summary>
 
     std::string getHaMode() const;
@@ -183,7 +183,7 @@ public:
     void setRecycleStatus(const std::string& value);
 
     /// <summary>
-    /// 实例类型（basic：基础版；standard：标准版；enterprise：企业版）。
+    /// 产品类型（basic：基础版；standard：标准版；enterprise：企业版）。
     /// </summary>
 
     std::string getMode() const;

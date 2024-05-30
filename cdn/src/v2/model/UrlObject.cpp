@@ -24,6 +24,10 @@ UrlObject::UrlObject()
     taskIdIsSet_ = false;
     taskType_ = "";
     taskTypeIsSet_ = false;
+    failClassify_ = "";
+    failClassifyIsSet_ = false;
+    failDesc_ = "";
+    failDescIsSet_ = false;
 }
 
 UrlObject::~UrlObject() = default;
@@ -53,6 +57,12 @@ web::json::value UrlObject::toJson() const
     }
     if(taskTypeIsSet_) {
         val[utility::conversions::to_string_t("task_type")] = ModelBase::toJson(taskType_);
+    }
+    if(failClassifyIsSet_) {
+        val[utility::conversions::to_string_t("fail_classify")] = ModelBase::toJson(failClassify_);
+    }
+    if(failDescIsSet_) {
+        val[utility::conversions::to_string_t("fail_desc")] = ModelBase::toJson(failDesc_);
     }
 
     return val;
@@ -113,6 +123,24 @@ bool UrlObject::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTaskType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("fail_classify"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("fail_classify"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFailClassify(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("fail_desc"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("fail_desc"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFailDesc(refVal);
         }
     }
     return ok;
@@ -243,6 +271,48 @@ bool UrlObject::taskTypeIsSet() const
 void UrlObject::unsettaskType()
 {
     taskTypeIsSet_ = false;
+}
+
+std::string UrlObject::getFailClassify() const
+{
+    return failClassify_;
+}
+
+void UrlObject::setFailClassify(const std::string& value)
+{
+    failClassify_ = value;
+    failClassifyIsSet_ = true;
+}
+
+bool UrlObject::failClassifyIsSet() const
+{
+    return failClassifyIsSet_;
+}
+
+void UrlObject::unsetfailClassify()
+{
+    failClassifyIsSet_ = false;
+}
+
+std::string UrlObject::getFailDesc() const
+{
+    return failDesc_;
+}
+
+void UrlObject::setFailDesc(const std::string& value)
+{
+    failDesc_ = value;
+    failDescIsSet_ = true;
+}
+
+bool UrlObject::failDescIsSet() const
+{
+    return failDescIsSet_;
+}
+
+void UrlObject::unsetfailDesc()
+{
+    failDescIsSet_ = false;
 }
 
 }

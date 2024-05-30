@@ -30,6 +30,9 @@
 #include <openssl/sha.h>
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/utils/Constants.h>
+#include <openssl/hmac.h>
+#include <openssl/bn.h>
+#include <spdlog/spdlog.h>
 
 using namespace HuaweiCloud::Sdk::Core::Auth;
 using namespace HuaweiCloud::Sdk::Core::Utils;
@@ -38,17 +41,20 @@ Signer::Signer(const std::string &appKey, const std::string &appSecret)
 {
     appKey_ = appKey;
     appSecret_ = appSecret;
-    hasher_ = new Hasher();
+    algorithm_ = Constants::sdk_hmac_sha256;
+    contentHeader_ = Constants::x_sdk_content_sha256;
+    hasher_ = new Sha256Hasher();
 }
 
 Signer::Signer()
 {
-    hasher_ = new Hasher();
+    hasher_ = new Sha256Hasher();
 }
 
 Signer::~Signer()
 {
     delete hasher_;
+    hasher_ = nullptr;
 }
 
 
@@ -63,11 +69,11 @@ std::string Signer::createSignature(HuaweiCloud::Sdk::Core::RequestParams &reque
 
     std::string canonRequest = getCanonicalRequest(signedHeaders, request.getMethod(), request.getUri(),
         request.getQueryParams(), request.getHeaders(), request.getBody());
-    std::string stringToSign = getStringToSign(Constants::sdk_signing_algorithm, datetime, canonRequest);
-    std::string signature = getSignature(const_cast<char *>(appSecret_.c_str()), stringToSign);
+    std::string stringToSign = getStringToSign(datetime, canonRequest);
+    std::string signature = getSignature(stringToSign);
     std::string key = "Authorization";
     std::string value =
-            "SDK-HMAC-SHA256 Access=" + appKey_ + ", SignedHeaders=" + signedHeaders + ", Signature=" + signature;
+            algorithm_ + " Access=" + appKey_ + ", SignedHeaders=" + signedHeaders + ", Signature=" + signature;
     request.addHeader(key, value);
     return signature;
 }
@@ -83,7 +89,7 @@ std::string Signer::getCanonicalRequest(const std::string &signedHeaders, const 
                                         const std::string &queryParams, const std::set<Header> &headers, const std::string &payload)
 {
     std::string hexencode;
-    auto it = headers.find(Header("X-Sdk-Content-Sha256", ""));
+    auto it = headers.find(Header(contentHeader_, ""));
     if (it != headers.end()) {
         Header entry = *it;
         hexencode = entry.getValue();
@@ -225,19 +231,71 @@ std::string Signer::getSignedHeaders(const std::set<Header> &headers)
 std::string Signer::getHexHash(const std::string &payload)
 {
     unsigned char hash[SHA256_DIGEST_LENGTH];
-    hasher_->hashSHA256(payload, hash, SHA256_DIGEST_LENGTH);
+    hasher_->hash(payload, hash);
     return hasher_->hexEncode(hash, SHA256_DIGEST_LENGTH);
 }
 
-std::string Signer::getStringToSign(const std::string &algorithm, const std::string &datetime, const std::string &canonicalRequest)
+std::string Signer::getStringToSign(const std::string &datetime, const std::string &canonicalRequest)
 {
-    return algorithm + "\n" + datetime + "\n" + getHexHash(canonicalRequest);
+    return algorithm_ + "\n" + datetime + "\n" + getHexHash(canonicalRequest);
 }
 
-std::string Signer::getSignature(const char *signingKey, const std::string &stringToSign)
+std::string Signer::getSignature(const std::string &stringToSign)
 {
+    const char *signingKey = const_cast<char *>(appSecret_.c_str());
     unsigned int digestLength = SHA256_DIGEST_LENGTH;
     std::vector<unsigned char> signatureChar = hasher_->hmac(signingKey, strlen(signingKey), stringToSign);
     std::string signature = hasher_->hexEncode(signatureChar.data(), digestLength);
     return signature;
+}
+
+/*
+ * 基于用户的SK进行派生，获取到一个256bit的派生密钥
+ * 参考 NIST SP 800-108 Rev. 1 (4.1 KDF in Counter Mode) 实现：
+   Step 1: Label = Alg
+   Step 2: Context = AK || Counter
+   Step 3: L = 0x00000100
+   Step 4: Data = 0x00000001 || Label || 0x00 || Context || L
+   Step 5: Candidate = HMAC-SM3(SK, Data)
+   Step 6: 参考 NIST.FIPS.186-4 (B.4.2) 实现对Candidate的迭代取值
+ */
+std::vector<unsigned char> Signer::derivePrivateKey(std::string alg, const EVP_MD *engine, std::string ak,
+                                                    std::string sk, BIGNUM* nMinusTwo)
+{
+    std::vector<unsigned char> result;
+    // 参考Step 2实现，context的长度等于(ak的长度+计数)，即(20 + 1)
+    std::vector<uint8_t> context(21);
+    // 参考Step 4实现，data的长度等于(0x00000001 + Alg长度 + 0x00 + Context的长度 + L的长度),即(4 + Alg长度 + 1 + 21 + 4)
+    std::vector<uint8_t> data(alg.length() + 30);
+    BIGNUM* candidate = BN_new();
+
+    for (int counter = 0; counter <= 0xff; counter++) {
+        context.clear();
+        data.clear();
+        context.insert(context.end(), ak.begin(), ak.end());
+        context.push_back(counter);
+        data.insert(data.end(), { 0x00, 0x00, 0x00, 0x01 });
+        data.insert(data.end(), alg.begin(), alg.end());
+        data.push_back(0x00);
+        data.insert(data.end(), context.begin(), context.end());
+        data.insert(data.end(), { 0x00, 0x00, 0x01, 0x00 });
+        unsigned int hmacBytesLength;
+        std::vector<uint8_t> hmacBytes(SHA256_DIGEST_LENGTH);
+        HMAC(engine, sk.c_str(), static_cast<int>(sk.length()),reinterpret_cast<unsigned char*>(data.data()),
+             data.size(),hmacBytes.data(), &hmacBytesLength);
+
+        BN_bin2bn(hmacBytes.data(), hmacBytesLength, candidate);
+
+        if (BN_cmp(candidate, nMinusTwo) <= 0) {
+            BN_add(candidate, candidate, BN_value_one());
+            int size = BN_num_bytes(candidate);
+            result.resize(size);
+            BN_bn2bin(candidate, result.data());
+            break;
+        }
+    }
+
+    BN_free(candidate);
+
+    return result;
 }

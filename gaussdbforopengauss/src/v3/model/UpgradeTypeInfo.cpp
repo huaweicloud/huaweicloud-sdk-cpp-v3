@@ -17,6 +17,8 @@ UpgradeTypeInfo::UpgradeTypeInfo()
     enable_ = false;
     enableIsSet_ = false;
     upgradeActionListIsSet_ = false;
+    isParallelUpgrade_ = false;
+    isParallelUpgradeIsSet_ = false;
 }
 
 UpgradeTypeInfo::~UpgradeTypeInfo() = default;
@@ -37,6 +39,9 @@ web::json::value UpgradeTypeInfo::toJson() const
     }
     if(upgradeActionListIsSet_) {
         val[utility::conversions::to_string_t("upgrade_action_list")] = ModelBase::toJson(upgradeActionList_);
+    }
+    if(isParallelUpgradeIsSet_) {
+        val[utility::conversions::to_string_t("is_parallel_upgrade")] = ModelBase::toJson(isParallelUpgrade_);
     }
 
     return val;
@@ -70,6 +75,15 @@ bool UpgradeTypeInfo::fromJson(const web::json::value& val)
             std::vector<UpgradeActionInfo> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setUpgradeActionList(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_parallel_upgrade"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_parallel_upgrade"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsParallelUpgrade(refVal);
         }
     }
     return ok;
@@ -137,6 +151,27 @@ bool UpgradeTypeInfo::upgradeActionListIsSet() const
 void UpgradeTypeInfo::unsetupgradeActionList()
 {
     upgradeActionListIsSet_ = false;
+}
+
+bool UpgradeTypeInfo::isIsParallelUpgrade() const
+{
+    return isParallelUpgrade_;
+}
+
+void UpgradeTypeInfo::setIsParallelUpgrade(bool value)
+{
+    isParallelUpgrade_ = value;
+    isParallelUpgradeIsSet_ = true;
+}
+
+bool UpgradeTypeInfo::isParallelUpgradeIsSet() const
+{
+    return isParallelUpgradeIsSet_;
+}
+
+void UpgradeTypeInfo::unsetisParallelUpgrade()
+{
+    isParallelUpgradeIsSet_ = false;
 }
 
 }

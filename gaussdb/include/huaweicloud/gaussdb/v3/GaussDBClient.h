@@ -164,6 +164,8 @@
 #include <huaweicloud/gaussdb/v3/model/OperateAuditLogRequestV3Body.h>
 #include <huaweicloud/gaussdb/v3/model/ProxyTransactionSplitRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ProxyUpdateProxyConnectionPoolTypeRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ProxyUpdateProxyNameRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ProxyUpgradeProxyVersionRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ResetDatabasePasswordRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ResetGaussMySqlDatabasePasswordRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ResetGaussMySqlDatabasePasswordResponse.h>
@@ -224,6 +226,10 @@
 #include <huaweicloud/gaussdb/v3/model/ShowIntelligentDiagnosisAbnormalCountOfInstancesResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowIntelligentDiagnosisInstanceInfosPerMetricRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ShowIntelligentDiagnosisInstanceInfosPerMetricResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ShowProxyIpgroupRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ShowProxyIpgroupResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ShowProxyVersionRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ShowProxyVersionResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowRestoreTablesRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ShowRestoreTablesResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShrinkGaussMySqlProxyRequest.h>
@@ -290,6 +296,8 @@
 #include <huaweicloud/gaussdb/v3/model/UpdateNewNodeAutoAddSwitchResponse.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateProxyConnectionPoolTypeRequest.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateProxyConnectionPoolTypeResponse.h>
+#include <huaweicloud/gaussdb/v3/model/UpdateProxyNameRequest.h>
+#include <huaweicloud/gaussdb/v3/model/UpdateProxyNameResponse.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateProxyNewConfigRequestBody.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateProxyNewConfigurationsRequest.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateProxyNewConfigurationsResponse.h>
@@ -303,6 +311,8 @@
 #include <huaweicloud/gaussdb/v3/model/UpgradeDatabaseRequest.h>
 #include <huaweicloud/gaussdb/v3/model/UpgradeGaussMySqlInstanceDatabaseRequest.h>
 #include <huaweicloud/gaussdb/v3/model/UpgradeGaussMySqlInstanceDatabaseResponse.h>
+#include <huaweicloud/gaussdb/v3/model/UpgradeProxyVersionRequest.h>
+#include <huaweicloud/gaussdb/v3/model/UpgradeProxyVersionResponse.h>
 #include <string>
 
 #include <huaweicloud/gaussdb/v3/model/CheckDataBaseConfigRequest.h>
@@ -1082,6 +1092,22 @@ public:
     std::shared_ptr<ShowIntelligentDiagnosisInstanceInfosPerMetricResponse> showIntelligentDiagnosisInstanceInfosPerMetric(
         ShowIntelligentDiagnosisInstanceInfosPerMetricRequest &request
     );
+    // 查询代理实例访问控制
+    //
+    // 查询代理实例访问控制
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowProxyIpgroupResponse> showProxyIpgroup(
+        ShowProxyIpgroupRequest &request
+    );
+    // 查询代理实例小版本
+    //
+    // 查询代理实例小版本
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowProxyVersionResponse> showProxyVersion(
+        ShowProxyVersionRequest &request
+    );
     // 查询表级时间点恢复可选表
     //
     // 查询表级时间点恢复可选表。
@@ -1283,6 +1309,14 @@ public:
     std::shared_ptr<UpdateProxyConnectionPoolTypeResponse> updateProxyConnectionPoolType(
         UpdateProxyConnectionPoolTypeRequest &request
     );
+    // 修改代理实例名称
+    //
+    // 修改代理实例名称
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateProxyNameResponse> updateProxyName(
+        UpdateProxyNameRequest &request
+    );
     // 修改代理实例参数
     //
     // 修改数据库代理参数。
@@ -1322,6 +1356,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpgradeGaussMySqlInstanceDatabaseResponse> upgradeGaussMySqlInstanceDatabase(
         UpgradeGaussMySqlInstanceDatabaseRequest &request
+    );
+    // 升级数据库代理实例内核版本
+    //
+    // 升级数据库代理实例内核版本。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpgradeProxyVersionResponse> upgradeProxyVersion(
+        UpgradeProxyVersionRequest &request
     );
 
     // HTAP数据同步库配置校验

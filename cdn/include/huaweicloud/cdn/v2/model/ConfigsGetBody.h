@@ -14,6 +14,7 @@
 #include <huaweicloud/cdn/v2/model/Compress.h>
 #include <huaweicloud/cdn/v2/model/HstsQuery.h>
 #include <huaweicloud/cdn/v2/model/WebSocketSeek.h>
+#include <huaweicloud/cdn/v2/model/SourcesConfigResponseBody.h>
 #include <huaweicloud/cdn/v2/model/RequestLimitRules.h>
 #include <huaweicloud/cdn/v2/model/VideoSeek.h>
 #include <huaweicloud/cdn/v2/model/UrlAuthGetBody.h>
@@ -22,6 +23,7 @@
 #include <huaweicloud/cdn/v2/model/CacheUrlParameterFilterGetBody.h>
 #include <huaweicloud/cdn/v2/model/Sni.h>
 #include <string>
+#include <huaweicloud/cdn/v2/model/AccessAreaFilter.h>
 #include <huaweicloud/cdn/v2/model/OriginRequestHeader.h>
 #include <huaweicloud/cdn/v2/model/CommonRemoteAuth.h>
 #include <huaweicloud/cdn/v2/model/ErrorCodeRedirectRules.h>
@@ -32,7 +34,6 @@
 #include <huaweicloud/cdn/v2/model/UserAgentFilter.h>
 #include <huaweicloud/cdn/v2/model/RefererConfig.h>
 #include <huaweicloud/cdn/v2/model/FlexibleOrigins.h>
-#include <huaweicloud/cdn/v2/model/SourcesConfig.h>
 #include <huaweicloud/cdn/v2/model/OriginRequestUrlRewrite.h>
 #include <huaweicloud/cdn/v2/model/HttpGetBody.h>
 #include <huaweicloud/cdn/v2/model/ErrorCodeCache.h>
@@ -132,10 +133,10 @@ public:
     /// 源站配置。
     /// </summary>
 
-    std::vector<SourcesConfig>& getSources();
+    std::vector<SourcesConfigResponseBody>& getSources();
     bool sourcesIsSet() const;
     void unsetsources();
-    void setSources(const std::vector<SourcesConfig>& value);
+    void setSources(const std::vector<SourcesConfigResponseBody>& value);
 
     /// <summary>
     /// 回源协议，follow：协议跟随回源，http：HTTP回源(默认)，https：https回源。
@@ -380,6 +381,15 @@ public:
     void unsetbrowserCacheRules();
     void setBrowserCacheRules(const std::vector<BrowserCacheRules>& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    std::vector<AccessAreaFilter>& getAccessAreaFilter();
+    bool accessAreaFilterIsSet() const;
+    void unsetaccessAreaFilter();
+    void setAccessAreaFilter(const std::vector<AccessAreaFilter>& value);
+
 
 protected:
     std::string businessType_;
@@ -396,7 +406,7 @@ protected:
     bool urlAuthIsSet_;
     HttpGetBody https_;
     bool httpsIsSet_;
-    std::vector<SourcesConfig> sources_;
+    std::vector<SourcesConfigResponseBody> sources_;
     bool sourcesIsSet_;
     std::string originProtocol_;
     bool originProtocolIsSet_;
@@ -452,6 +462,8 @@ protected:
     bool requestUrlRewriteIsSet_;
     std::vector<BrowserCacheRules> browserCacheRules_;
     bool browserCacheRulesIsSet_;
+    std::vector<AccessAreaFilter> accessAreaFilter_;
+    bool accessAreaFilterIsSet_;
 
 };
 

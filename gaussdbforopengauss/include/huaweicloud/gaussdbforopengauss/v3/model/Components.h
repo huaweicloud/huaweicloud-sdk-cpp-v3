@@ -74,6 +74,24 @@ public:
     void unsetdistributedId();
     void setDistributedId(const std::string& value);
 
+    /// <summary>
+    /// 节点类型，包括：DN, CN, GTM, CM, ETCD。
+    /// </summary>
+
+    std::string getType() const;
+    bool typeIsSet() const;
+    void unsettype();
+    void setType(const std::string& value);
+
+    /// <summary>
+    /// 详情。
+    /// </summary>
+
+    std::string getDetail() const;
+    bool detailIsSet() const;
+    void unsetdetail();
+    void setDetail(const std::string& value);
+
 
 protected:
     std::string id_;
@@ -84,6 +102,10 @@ protected:
     bool statusIsSet_;
     std::string distributedId_;
     bool distributedIdIsSet_;
+    std::string type_;
+    bool typeIsSet_;
+    std::string detail_;
+    bool detailIsSet_;
 
 };
 

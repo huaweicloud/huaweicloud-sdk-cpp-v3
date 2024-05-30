@@ -60,15 +60,17 @@ const std::string &GlobalCredentials::getDomainId() const
     return domainId_;
 }
 
-std::string GlobalCredentials::processAuthRequest(HuaweiCloud::Sdk::Core::RequestParams &requestParams)
+std::string GlobalCredentials::processAuthRequest(HuaweiCloud::Sdk::Core::RequestParams &requestParams,
+                                                  HuaweiCloud::Sdk::Core::Http::HttpConfig &httpConfig)
 {
     requestParams.addHeader("X-Domain-Id", domainId_);
     if (!securityToken_.empty()) {
         requestParams.addHeader("X-Security-Token", securityToken_);
     }
 
-    Signer signer(ak_, sk_);
-    return signer.createSignature(requestParams);
+    std::unique_ptr<Signer> signer = getAlgorithmSigner(httpConfig.getAlgorithm(), ak_, sk_);
+    std::string signature = signer->createSignature(requestParams);
+    return signature;
 }
 
 const std::map<std::string, std::string> &GlobalCredentials::getUpdatePathParams()

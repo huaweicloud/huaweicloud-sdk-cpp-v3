@@ -77,7 +77,7 @@ bool DomainBody::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sources"));
         if(!fieldValue.is_null())
         {
-            std::vector<Sources> refVal;
+            std::vector<SourcesRequestBody> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSources(refVal);
         }
@@ -146,12 +146,12 @@ void DomainBody::unsetbusinessType()
     businessTypeIsSet_ = false;
 }
 
-std::vector<Sources>& DomainBody::getSources()
+std::vector<SourcesRequestBody>& DomainBody::getSources()
 {
     return sources_;
 }
 
-void DomainBody::setSources(const std::vector<Sources>& value)
+void DomainBody::setSources(const std::vector<SourcesRequestBody>& value)
 {
     sources_ = value;
     sourcesIsSet_ = true;

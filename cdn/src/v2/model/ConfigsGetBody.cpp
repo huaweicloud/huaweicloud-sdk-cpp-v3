@@ -56,6 +56,7 @@ ConfigsGetBody::ConfigsGetBody()
     sniIsSet_ = false;
     requestUrlRewriteIsSet_ = false;
     browserCacheRulesIsSet_ = false;
+    accessAreaFilterIsSet_ = false;
 }
 
 ConfigsGetBody::~ConfigsGetBody() = default;
@@ -173,6 +174,9 @@ web::json::value ConfigsGetBody::toJson() const
     if(browserCacheRulesIsSet_) {
         val[utility::conversions::to_string_t("browser_cache_rules")] = ModelBase::toJson(browserCacheRules_);
     }
+    if(accessAreaFilterIsSet_) {
+        val[utility::conversions::to_string_t("access_area_filter")] = ModelBase::toJson(accessAreaFilter_);
+    }
 
     return val;
 }
@@ -247,7 +251,7 @@ bool ConfigsGetBody::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sources"));
         if(!fieldValue.is_null())
         {
-            std::vector<SourcesConfig> refVal;
+            std::vector<SourcesConfigResponseBody> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSources(refVal);
         }
@@ -495,6 +499,15 @@ bool ConfigsGetBody::fromJson(const web::json::value& val)
             setBrowserCacheRules(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("access_area_filter"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("access_area_filter"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<AccessAreaFilter> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAccessAreaFilter(refVal);
+        }
+    }
     return ok;
 }
 
@@ -646,12 +659,12 @@ void ConfigsGetBody::unsethttps()
     httpsIsSet_ = false;
 }
 
-std::vector<SourcesConfig>& ConfigsGetBody::getSources()
+std::vector<SourcesConfigResponseBody>& ConfigsGetBody::getSources()
 {
     return sources_;
 }
 
-void ConfigsGetBody::setSources(const std::vector<SourcesConfig>& value)
+void ConfigsGetBody::setSources(const std::vector<SourcesConfigResponseBody>& value)
 {
     sources_ = value;
     sourcesIsSet_ = true;
@@ -1232,6 +1245,27 @@ bool ConfigsGetBody::browserCacheRulesIsSet() const
 void ConfigsGetBody::unsetbrowserCacheRules()
 {
     browserCacheRulesIsSet_ = false;
+}
+
+std::vector<AccessAreaFilter>& ConfigsGetBody::getAccessAreaFilter()
+{
+    return accessAreaFilter_;
+}
+
+void ConfigsGetBody::setAccessAreaFilter(const std::vector<AccessAreaFilter>& value)
+{
+    accessAreaFilter_ = value;
+    accessAreaFilterIsSet_ = true;
+}
+
+bool ConfigsGetBody::accessAreaFilterIsSet() const
+{
+    return accessAreaFilterIsSet_;
+}
+
+void ConfigsGetBody::unsetaccessAreaFilter()
+{
+    accessAreaFilterIsSet_ = false;
 }
 
 }

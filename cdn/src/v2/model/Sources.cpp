@@ -18,6 +18,8 @@ Sources::Sources()
     ipOrDomainIsSet_ = false;
     originType_ = "";
     originTypeIsSet_ = false;
+    obsBucketType_ = "";
+    obsBucketTypeIsSet_ = false;
     activeStandby_ = 0;
     activeStandbyIsSet_ = false;
     enableObsWebHosting_ = 0;
@@ -42,6 +44,9 @@ web::json::value Sources::toJson() const
     }
     if(originTypeIsSet_) {
         val[utility::conversions::to_string_t("origin_type")] = ModelBase::toJson(originType_);
+    }
+    if(obsBucketTypeIsSet_) {
+        val[utility::conversions::to_string_t("obs_bucket_type")] = ModelBase::toJson(obsBucketType_);
     }
     if(activeStandbyIsSet_) {
         val[utility::conversions::to_string_t("active_standby")] = ModelBase::toJson(activeStandby_);
@@ -81,6 +86,15 @@ bool Sources::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setOriginType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("obs_bucket_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("obs_bucket_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setObsBucketType(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("active_standby"))) {
@@ -166,6 +180,27 @@ bool Sources::originTypeIsSet() const
 void Sources::unsetoriginType()
 {
     originTypeIsSet_ = false;
+}
+
+std::string Sources::getObsBucketType() const
+{
+    return obsBucketType_;
+}
+
+void Sources::setObsBucketType(const std::string& value)
+{
+    obsBucketType_ = value;
+    obsBucketTypeIsSet_ = true;
+}
+
+bool Sources::obsBucketTypeIsSet() const
+{
+    return obsBucketTypeIsSet_;
+}
+
+void Sources::unsetobsBucketType()
+{
+    obsBucketTypeIsSet_ = false;
 }
 
 int32_t Sources::getActiveStandby() const

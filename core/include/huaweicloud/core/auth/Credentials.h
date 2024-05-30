@@ -25,6 +25,11 @@
 #include <huaweicloud/core/CoreExport.h>
 #include <huaweicloud/core/RequestParams.h>
 #include <huaweicloud/core/auth/IamService.h>
+#include <huaweicloud/core/auth/Signer.h>
+#include <huaweicloud/core/auth/P256Sha256Signer.h>
+#include <huaweicloud/core/auth/Sm2Sm3Signer.h>
+#include <huaweicloud/core/auth/Sm3Signer.h>
+#include <huaweicloud/core/utils/Constants.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -36,9 +41,23 @@ public:
     virtual ~Credentials() = default;
 
     virtual const std::map<std::string, std::string> &getUpdatePathParams() = 0;
-    virtual std::string processAuthRequest(HuaweiCloud::Sdk::Core::RequestParams &requestParams) = 0;
+    virtual std::string processAuthRequest(HuaweiCloud::Sdk::Core::RequestParams &requestParams, HuaweiCloud::Sdk::Core::Http::HttpConfig &httpConfig) = 0;
 	virtual void processAuthParams(const std::string regionId) = 0;
     virtual void regionInit() = 0;
+
+    std::unique_ptr<Signer> getAlgorithmSigner(const std::string algorithm, const std::string &appKey, const std::string &appSecret) {
+        spdlog::info("getAlgorithmSigner : algorithm {}", algorithm);
+        if (algorithm == Constants::sdk_hmac_sha256) {
+            return std::make_unique<Signer>(appKey, appSecret);
+        } else if (algorithm == Constants::sdk_ecdsa_p256_sha256) {
+            return std::make_unique<P256Sha256Signer>(appKey, appSecret);
+        } else if (algorithm == Constants::sdk_hmac_sm3) {
+            return std::make_unique<Sm3Signer>(appKey, appSecret);
+        } else if (algorithm == Constants::sdk_sm2_sm3) {
+            return std::make_unique<Sm2Sm3Signer>(appKey, appSecret);
+        }
+        return std::make_unique<Signer>(appKey, appSecret);
+    };
 };
 }
 }

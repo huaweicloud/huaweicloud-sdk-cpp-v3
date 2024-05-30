@@ -61,6 +61,10 @@ public:
 
     void setCertFile(const std::string &certFile);
 
+    const std::string &getAlgorithm() const;
+
+    void setAlgorithm(const std::string &algorithm);
+
     const std::string &getKeyFile() const;
 
     void setKeyFile(const std::string &keyFile);
@@ -91,6 +95,7 @@ private:
 
     std::string sslCaCert_;
     std::string certFile_;
+    std::string algorithm_ = "SDK-HMAC-SHA256";
 
     std::string keyFile_;
     int readTimeout_ = 120;

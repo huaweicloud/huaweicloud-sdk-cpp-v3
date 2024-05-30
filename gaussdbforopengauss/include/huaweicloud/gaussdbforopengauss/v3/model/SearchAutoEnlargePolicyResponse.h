@@ -92,6 +92,24 @@ public:
     void unsetpercents();
     void setPercents(std::vector<int32_t> value);
 
+    /// <summary>
+    /// 扩容步长，固定大小扩容方式。
+    /// </summary>
+
+    int32_t getStepSize() const;
+    bool stepSizeIsSet() const;
+    void unsetstepSize();
+    void setStepSize(int32_t value);
+
+    /// <summary>
+    /// 扩容步长，百分比扩容方式。
+    /// </summary>
+
+    int32_t getStepPercent() const;
+    bool stepPercentIsSet() const;
+    void unsetstepPercent();
+    void setStepPercent(int32_t value);
+
 
 protected:
     bool switchOption_;
@@ -106,6 +124,10 @@ protected:
     bool triggerAvailablePercentIsSet_;
     std::vector<int32_t> percents_;
     bool percentsIsSet_;
+    int32_t stepSize_;
+    bool stepSizeIsSet_;
+    int32_t stepPercent_;
+    bool stepPercentIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

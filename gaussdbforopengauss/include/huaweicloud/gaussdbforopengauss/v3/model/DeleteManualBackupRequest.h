@@ -48,7 +48,7 @@ public:
     void setXLanguage(const std::string& value);
 
     /// <summary>
-    /// 备份ID。
+    /// 手动备份ID。
     /// </summary>
 
     std::string getBackupId() const;

@@ -22,6 +22,10 @@ GaussDBforOpenGaussListDatabase::GaussDBforOpenGaussListDatabase()
     collateSetIsSet_ = false;
     size_ = "";
     sizeIsSet_ = false;
+    datctype_ = "";
+    datctypeIsSet_ = false;
+    compatibilityType_ = "";
+    compatibilityTypeIsSet_ = false;
 }
 
 GaussDBforOpenGaussListDatabase::~GaussDBforOpenGaussListDatabase() = default;
@@ -48,6 +52,12 @@ web::json::value GaussDBforOpenGaussListDatabase::toJson() const
     }
     if(sizeIsSet_) {
         val[utility::conversions::to_string_t("size")] = ModelBase::toJson(size_);
+    }
+    if(datctypeIsSet_) {
+        val[utility::conversions::to_string_t("datctype")] = ModelBase::toJson(datctype_);
+    }
+    if(compatibilityTypeIsSet_) {
+        val[utility::conversions::to_string_t("compatibility_type")] = ModelBase::toJson(compatibilityType_);
     }
 
     return val;
@@ -99,6 +109,24 @@ bool GaussDBforOpenGaussListDatabase::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSize(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("datctype"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("datctype"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDatctype(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("compatibility_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("compatibility_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCompatibilityType(refVal);
         }
     }
     return ok;
@@ -208,6 +236,48 @@ bool GaussDBforOpenGaussListDatabase::sizeIsSet() const
 void GaussDBforOpenGaussListDatabase::unsetsize()
 {
     sizeIsSet_ = false;
+}
+
+std::string GaussDBforOpenGaussListDatabase::getDatctype() const
+{
+    return datctype_;
+}
+
+void GaussDBforOpenGaussListDatabase::setDatctype(const std::string& value)
+{
+    datctype_ = value;
+    datctypeIsSet_ = true;
+}
+
+bool GaussDBforOpenGaussListDatabase::datctypeIsSet() const
+{
+    return datctypeIsSet_;
+}
+
+void GaussDBforOpenGaussListDatabase::unsetdatctype()
+{
+    datctypeIsSet_ = false;
+}
+
+std::string GaussDBforOpenGaussListDatabase::getCompatibilityType() const
+{
+    return compatibilityType_;
+}
+
+void GaussDBforOpenGaussListDatabase::setCompatibilityType(const std::string& value)
+{
+    compatibilityType_ = value;
+    compatibilityTypeIsSet_ = true;
+}
+
+bool GaussDBforOpenGaussListDatabase::compatibilityTypeIsSet() const
+{
+    return compatibilityTypeIsSet_;
+}
+
+void GaussDBforOpenGaussListDatabase::unsetcompatibilityType()
+{
+    compatibilityTypeIsSet_ = false;
 }
 
 }

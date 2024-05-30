@@ -83,6 +83,24 @@ public:
     void unsetsize();
     void setSize(const std::string& value);
 
+    /// <summary>
+    /// 数据库使用的字符分类，例如en_US.UTF-8等。
+    /// </summary>
+
+    std::string getDatctype() const;
+    bool datctypeIsSet() const;
+    void unsetdatctype();
+    void setDatctype(const std::string& value);
+
+    /// <summary>
+    /// 数据库兼容的类型，如GaussDB，M。
+    /// </summary>
+
+    std::string getCompatibilityType() const;
+    bool compatibilityTypeIsSet() const;
+    void unsetcompatibilityType();
+    void setCompatibilityType(const std::string& value);
+
 
 protected:
     std::string name_;
@@ -95,6 +113,10 @@ protected:
     bool collateSetIsSet_;
     std::string size_;
     bool sizeIsSet_;
+    std::string datctype_;
+    bool datctypeIsSet_;
+    std::string compatibilityType_;
+    bool compatibilityTypeIsSet_;
 
 };
 

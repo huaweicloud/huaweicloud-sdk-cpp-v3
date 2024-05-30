@@ -134,6 +134,15 @@ HttpRequestDef EcsMeta::genRequestDefForChangeServerChargeMode() {
     return reqDefBuilder;
 }
 
+HttpRequestDef EcsMeta::genRequestDefForChangeServerNetworkInterface() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef EcsMeta::genRequestDefForChangeServerOsWithCloudInit() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;

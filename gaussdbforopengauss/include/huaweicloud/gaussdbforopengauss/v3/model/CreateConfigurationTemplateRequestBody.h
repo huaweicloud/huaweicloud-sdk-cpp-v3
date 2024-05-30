@@ -42,7 +42,7 @@ public:
     /// CreateConfigurationTemplateRequestBody members
 
     /// <summary>
-    /// 参数模板名称。 取值范围：长度1到64位之间，区分大小写字母，可包含字母、数字、中划线、下划线或句点，不能包含其他特殊字符。
+    /// 参数模板名称，不可与已有参数模板名称重复。 取值范围：长度1到64位之间，区分大小写字母，可包含字母、数字、中划线、下划线或句点，不能包含其他特殊字符。
     /// </summary>
 
     std::string getName() const;

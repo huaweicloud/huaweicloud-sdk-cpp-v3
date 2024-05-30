@@ -67,7 +67,7 @@ public:
     void setZhUrlEncode(bool value);
 
     /// <summary>
-    /// 需要刷新的URL必须带有“http://”或“https://”，多个URL用逗号分隔，单个url的长度限制为4096字符，单次最多输入1000个url，如果输入的是目录，支持100个目录刷新。  &gt;   如果您需要刷新的URL中有中文，请同时刷新中文URL和转码后的URL。 
+    /// 需要刷新的URL必须带有“http://”或“https://”，多个URL用逗号分隔（\&quot;url1\&quot;, \&quot;url2\&quot;），单个url的长度限制为4096字符，单次最多输入1000个url，如果输入的是目录，支持100个目录刷新。   &gt; - 如果您需要刷新的URL中有中文，请同时刷新中文URL（输入中文URL且不开启zh_url_encode）和转码后的URL（输入中文URL且开启zh_url_encode）。   &gt; - 如果您的URL中带有空格，请自行转码后输入，且不要开启URL Encode。 
     /// </summary>
 
     std::vector<std::string>& getUrls();

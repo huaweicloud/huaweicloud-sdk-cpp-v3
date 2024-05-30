@@ -114,6 +114,10 @@ public:
             { 
                 "https://antiddos.my-kualalumpur-1.myhuaweicloud.com"
             });
+        regions["me-east-1"] = Region("me-east-1",
+            { 
+                "https://antiddos.me-east-1.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

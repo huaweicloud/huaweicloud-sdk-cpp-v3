@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <string>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -46,10 +47,21 @@ public:
     void unsetrestartRequired();
     void setRestartRequired(bool value);
 
+    /// <summary>
+    /// 修改指定实例参数的任务ID。
+    /// </summary>
+
+    std::string getJobId() const;
+    bool jobIdIsSet() const;
+    void unsetjobId();
+    void setJobId(const std::string& value);
+
 
 protected:
     bool restartRequired_;
     bool restartRequiredIsSet_;
+    std::string jobId_;
+    bool jobIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

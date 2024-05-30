@@ -1,3 +1,131 @@
+# 3.1.88 2024-05-30
+
+### HuaweiCloud SDK CDN
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowHistoryTaskDetails**
+    - changes of response param
+      - `+ urls.fail_classify`
+      - `+ urls.fail_desc`
+  - **ListDomains**
+    - changes of response param
+      - `+ domains.sources.obs_bucket_type`
+  - **CreateDomain**
+    - changes of request param
+      - `+ domain.sources.obs_bucket_type`
+      - `* domain.sources: list<Sources> -> list<SourcesRequestBody>`
+    - changes of response param
+      - `+ domain.sources.obs_bucket_type`
+  - **DeleteDomain**
+    - changes of response param
+      - `+ domain.sources.obs_bucket_type`
+  - **EnableDomain**
+    - changes of response param
+      - `+ domain.sources.obs_bucket_type`
+  - **DisableDomain**
+    - changes of response param
+      - `+ domain.sources.obs_bucket_type`
+  - **ShowDomainFullConfig**
+    - changes of response param
+      - `+ configs.access_area_filter`
+      - `* configs.sources: list<SourcesConfig> -> list<SourcesConfigResponseBody>`
+  - **UpdateDomainFullConfig**
+    - changes of request param
+      - `+ configs.access_area_filter`
+
+### HuaweiCloud SDK ECS
+
+- _Features_
+  - Support the API `ChangeServerNetworkInterface`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK GaussDB
+
+- _Features_
+  - Support the APIs `UpgradeProxyVersion`, `UpdateProxyName`, `ShowProxyIpgroup`, `ShowProxyVersion`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **SearchAutoEnlargePolicy**
+    - changes of response param
+      - `+ step_percent`
+      - `+ step_size`
+  - **UpdateInstanceConfiguration**
+    - changes of response param
+      - `+ job_id`
+  - **CreateConfigurationTemplate**
+    - changes of request param
+      - `+ datastore.instance_mode: enum value [ha:readonly]`
+  - **ListDatabases**
+    - changes of response param
+      - `+ databases.datctype`
+      - `+ databases.compatibility_type`
+  - **ListTasks**
+    - changes of response param
+      - `+ tasks.created_at`
+      - `+ tasks.ended_at`
+  - **ListComponentInfos**
+    - changes of response param
+      - `+ nodes.components.type`
+      - `+ nodes.components.detail`
+  - **ShowUpgradeCandidateVersions**
+    - changes of response param
+      - `+ upgrade_type_list.is_parallel_upgrade`
+
+### HuaweiCloud SDK VPC
+
+- _Features_
+  - Support the following APIs:
+    - `ListClouddcnSubnets`
+    - `CreateClouddcnSubnet`
+    - `ShowClouddcnSubnet`
+    - `UpdateClouddcnSubnet`
+    - `DeleteClouddcnSubnet`
+    - `ShowClouddcnSubnetsTags`
+    - `AddClouddcnSubnetsTags`
+    - `ListClouddcnSubnetsFilterTags`
+    - `DeleteClouddcnSubnetsTag`
+    - `ListClouddcnSubnetsCountFilterTags`
+    - `ListClouddcnSubnetsTags`
+    - `BatchDeleteClouddcnSubnetsTags`
+    - `BatchCreateClouddcnSubnetsTags`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListSecurityGroups**
+    - changes of response param
+      - `+ security_groups.tags`
+  - **CreateSecurityGroup**
+    - changes of request param
+      - `+ security_group.tags`
+    - changes of response param
+      - `+ security_group.tags`
+  - **ShowSecurityGroup**
+    - changes of response param
+      - `+ security_group.tags`
+  - **UpdateSecurityGroup**
+    - changes of response param
+      - `+ security_group.tags`
+  - **CreateFirewall**
+    - changes of request param
+      - `+ firewall.tags`
+
 # 3.1.87 2024-05-23
 
 ### HuaweiCloud SDK GaussDBforNoSQL

@@ -17,26 +17,37 @@
  * under the LICENSE.
  */
 
-#ifndef HUAWEICLOUD_SDK_CORE_UTILS_HASHER_H
-#define HUAWEICLOUD_SDK_CORE_UTILS_HASHER_H
+#ifndef HUAWEICLOUD_SDK_CORE_UTILS_SM3HASHER_H
+#define HUAWEICLOUD_SDK_CORE_UTILS_SM3HASHER_H
+
 #include <string>
+#include <vector>
 #include <huaweicloud/core/CoreExport.h>
 #include <huaweicloud/core/utils/Constants.h>
-#include <vector>
+#include <huaweicloud/core/utils/AbstractHasher.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Core {
 namespace Utils {
-class HUAWEICLOUD_CORE_EXPORT Hasher {
+constexpr int SM3_DIGEST_LENGTH = 32;
+
+// 国密SM3算法哈希和签名实现
+class HUAWEICLOUD_CORE_EXPORT Sm3Hasher : public AbstractHasher {
 public:
-    Hasher();
-    std::string hexEncode(const unsigned char *md, size_t length) const;
-    int hashSHA256(const std::string &str, unsigned char *hash, int i);
-    std::vector<unsigned char> hmac(const void *key, unsigned int keyLength, const std::string &data);
+    Sm3Hasher();
+
+    // SM3 哈希计算
+    int hash(const std::string &str, unsigned char *hash) override;
+
+    // SM3 HMAC计算
+    std::vector<unsigned char> hmac(const void *key, unsigned int keyLength, const std::string &data) override;
 };
 }
 }
 }
 }
-#endif // HUAWEICLOUD_SDK_CORE_UTILS_HASHER_H
+
+
+
+#endif //HUAWEICLOUD_SDK_CORE_UTILS_SM3HASHER_H

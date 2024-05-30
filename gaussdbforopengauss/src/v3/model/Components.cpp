@@ -20,6 +20,10 @@ Components::Components()
     statusIsSet_ = false;
     distributedId_ = "";
     distributedIdIsSet_ = false;
+    type_ = "";
+    typeIsSet_ = false;
+    detail_ = "";
+    detailIsSet_ = false;
 }
 
 Components::~Components() = default;
@@ -43,6 +47,12 @@ web::json::value Components::toJson() const
     }
     if(distributedIdIsSet_) {
         val[utility::conversions::to_string_t("distributed_id")] = ModelBase::toJson(distributedId_);
+    }
+    if(typeIsSet_) {
+        val[utility::conversions::to_string_t("type")] = ModelBase::toJson(type_);
+    }
+    if(detailIsSet_) {
+        val[utility::conversions::to_string_t("detail")] = ModelBase::toJson(detail_);
     }
 
     return val;
@@ -85,6 +95,24 @@ bool Components::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDistributedId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("detail"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("detail"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDetail(refVal);
         }
     }
     return ok;
@@ -173,6 +201,48 @@ bool Components::distributedIdIsSet() const
 void Components::unsetdistributedId()
 {
     distributedIdIsSet_ = false;
+}
+
+std::string Components::getType() const
+{
+    return type_;
+}
+
+void Components::setType(const std::string& value)
+{
+    type_ = value;
+    typeIsSet_ = true;
+}
+
+bool Components::typeIsSet() const
+{
+    return typeIsSet_;
+}
+
+void Components::unsettype()
+{
+    typeIsSet_ = false;
+}
+
+std::string Components::getDetail() const
+{
+    return detail_;
+}
+
+void Components::setDetail(const std::string& value)
+{
+    detail_ = value;
+    detailIsSet_ = true;
+}
+
+bool Components::detailIsSet() const
+{
+    return detailIsSet_;
+}
+
+void Components::unsetdetail()
+{
+    detailIsSet_ = false;
 }
 
 }

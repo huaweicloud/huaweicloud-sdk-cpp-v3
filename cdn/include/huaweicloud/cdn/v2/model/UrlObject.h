@@ -92,6 +92,24 @@ public:
     void unsettaskType();
     void setTaskType(const std::string& value);
 
+    /// <summary>
+    /// 失败原因，url状态为failed时返回。   - ORIGIN_ERROR：源站错误。   - INNER_ERROR：内部错误。   - UNKNOWN_ERROR：未知错误。
+    /// </summary>
+
+    std::string getFailClassify() const;
+    bool failClassifyIsSet() const;
+    void unsetfailClassify();
+    void setFailClassify(const std::string& value);
+
+    /// <summary>
+    /// 刷新预热失败描述。
+    /// </summary>
+
+    std::string getFailDesc() const;
+    bool failDescIsSet() const;
+    void unsetfailDesc();
+    void setFailDesc(const std::string& value);
+
 
 protected:
     std::string id_;
@@ -106,6 +124,10 @@ protected:
     bool taskIdIsSet_;
     std::string taskType_;
     bool taskTypeIsSet_;
+    std::string failClassify_;
+    bool failClassifyIsSet_;
+    std::string failDesc_;
+    bool failDescIsSet_;
 
 };
 

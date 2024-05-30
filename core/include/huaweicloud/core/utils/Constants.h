@@ -27,7 +27,12 @@ namespace Sdk {
 namespace Core {
 namespace Utils {
 namespace Constants {
-static const std::string sdk_signing_algorithm = "SDK-HMAC-SHA256";
+static const std::string sdk_hmac_sha256 = "SDK-HMAC-SHA256";
+static const std::string sdk_hmac_sm3 = "SDK-HMAC-SM3";
+static const std::string sdk_ecdsa_p256_sha256 = "SDK-ECDSA-P256-SHA256";
+static const std::string sdk_sm2_sm3 = "SDK-SM2-SM3";
+static const std::string x_sdk_content_sha256 = "X-Sdk-Content-Sha256";
+static const std::string x_sdk_content_sm3 = "X-Sdk-Content-Sm3";
 static const std::string dateFormat = "X-Sdk-Date";
 static const std::string host = "Host";
 }

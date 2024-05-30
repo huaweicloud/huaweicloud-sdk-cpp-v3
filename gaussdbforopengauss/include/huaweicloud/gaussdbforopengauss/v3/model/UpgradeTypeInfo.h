@@ -67,6 +67,15 @@ public:
     void unsetupgradeActionList();
     void setUpgradeActionList(const std::vector<UpgradeActionInfo>& value);
 
+    /// <summary>
+    /// 是否正在进行AZ内并行升级。 -true：当前实例处于灰度升级的升级待观察升级方式中，已选择了AZ内并行升级方式，后续无法更改。 -false：当前实例处于升级流程中，未选择AZ内并行升级的方式，后续无法更改。null：当前实例尚未处于升级流程中。
+    /// </summary>
+
+    bool isIsParallelUpgrade() const;
+    bool isParallelUpgradeIsSet() const;
+    void unsetisParallelUpgrade();
+    void setIsParallelUpgrade(bool value);
+
 
 protected:
     std::string upgradeType_;
@@ -75,6 +84,8 @@ protected:
     bool enableIsSet_;
     std::vector<UpgradeActionInfo> upgradeActionList_;
     bool upgradeActionListIsSet_;
+    bool isParallelUpgrade_;
+    bool isParallelUpgradeIsSet_;
 
 };
 

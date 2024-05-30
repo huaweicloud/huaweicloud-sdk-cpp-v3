@@ -18,33 +18,21 @@
  */
 
 
-#include <huaweicloud/core/utils/Hasher.h>
-
+#include <huaweicloud/core/utils/Sha256Hasher.h>
+#include <huaweicloud/core/utils/Utils.h>
 #include <cstring>
-#include <cassert>
-
 #include <openssl/sha.h>
 #include <openssl/hmac.h>
 #include <sstream>
 
-#include <huaweicloud/core/utils/Utils.h>
-
 using namespace HuaweiCloud::Sdk::Core::Utils;
 
-Hasher::Hasher() = default;
+Sha256Hasher::Sha256Hasher() = default;
 
-std::string Hasher::hexEncode(const unsigned char *md, size_t length) const
-{
-    std::ostringstream ss;
-    ss << std::setfill('0') << std::hex;
-    for (size_t i = 0; i < length; i++) {
-        ss << std::setw(2) << static_cast<int>(md[i]);
-    }
-    return ss.str();
-}
-
-
-int Hasher::hashSHA256(const std::string &str, unsigned char *hash, int i)
+/*
+ * SHA256 π˛œ£º∆À„
+ */
+int Sha256Hasher::hash(const std::string &str, unsigned char *hash)
 {
     // Hash the input string
     std::vector<char> cBuffer(str.length() + 1);
@@ -58,13 +46,15 @@ int Hasher::hashSHA256(const std::string &str, unsigned char *hash, int i)
     return SHA256_DIGEST_LENGTH;
 }
 
-std::vector<unsigned char> Hasher::hmac(const void *key, unsigned int keyLength, const std::string &data)
+/*
+ * SHA256 HMACº∆À„
+ */
+std::vector<unsigned char> Sha256Hasher::hmac(const void *key, unsigned int keyLength, const std::string &data)
 {
     const EVP_MD *engine = EVP_sha256();
     unsigned int maxDigestLength = SHA256_DIGEST_LENGTH;
 
     unsigned int mdLength;
-
     std::vector<char> charData(data.length() + 1);
     std::copy(data.data(), data.data() + data.length() + 1, charData.data());
 

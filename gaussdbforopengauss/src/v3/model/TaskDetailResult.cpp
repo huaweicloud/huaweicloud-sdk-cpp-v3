@@ -21,6 +21,10 @@ TaskDetailResult::TaskDetailResult()
     statusIsSet_ = false;
     process_ = "";
     processIsSet_ = false;
+    createdAt_ = "";
+    createdAtIsSet_ = false;
+    endedAt_ = "";
+    endedAtIsSet_ = false;
     failReason_ = "";
     failReasonIsSet_ = false;
 }
@@ -49,6 +53,12 @@ web::json::value TaskDetailResult::toJson() const
     }
     if(processIsSet_) {
         val[utility::conversions::to_string_t("process")] = ModelBase::toJson(process_);
+    }
+    if(createdAtIsSet_) {
+        val[utility::conversions::to_string_t("created_at")] = ModelBase::toJson(createdAt_);
+    }
+    if(endedAtIsSet_) {
+        val[utility::conversions::to_string_t("ended_at")] = ModelBase::toJson(endedAt_);
     }
     if(failReasonIsSet_) {
         val[utility::conversions::to_string_t("fail_reason")] = ModelBase::toJson(failReason_);
@@ -103,6 +113,24 @@ bool TaskDetailResult::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setProcess(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("created_at"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("created_at"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCreatedAt(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("ended_at"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ended_at"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEndedAt(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("fail_reason"))) {
@@ -221,6 +249,48 @@ bool TaskDetailResult::processIsSet() const
 void TaskDetailResult::unsetprocess()
 {
     processIsSet_ = false;
+}
+
+std::string TaskDetailResult::getCreatedAt() const
+{
+    return createdAt_;
+}
+
+void TaskDetailResult::setCreatedAt(const std::string& value)
+{
+    createdAt_ = value;
+    createdAtIsSet_ = true;
+}
+
+bool TaskDetailResult::createdAtIsSet() const
+{
+    return createdAtIsSet_;
+}
+
+void TaskDetailResult::unsetcreatedAt()
+{
+    createdAtIsSet_ = false;
+}
+
+std::string TaskDetailResult::getEndedAt() const
+{
+    return endedAt_;
+}
+
+void TaskDetailResult::setEndedAt(const std::string& value)
+{
+    endedAt_ = value;
+    endedAtIsSet_ = true;
+}
+
+bool TaskDetailResult::endedAtIsSet() const
+{
+    return endedAtIsSet_;
+}
+
+void TaskDetailResult::unsetendedAt()
+{
+    endedAtIsSet_ = false;
 }
 
 std::string TaskDetailResult::getFailReason() const

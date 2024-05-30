@@ -53,7 +53,7 @@ public:
     void processAuthParams(const std::string regionId) override;
 
 protected:
-    std::string processAuthRequest(HuaweiCloud::Sdk::Core::RequestParams &requestParams) override;
+    std::string processAuthRequest(HuaweiCloud::Sdk::Core::RequestParams &requestParams, HuaweiCloud::Sdk::Core::Http::HttpConfig &httpConfig) override;
     const std::map<std::string, std::string> &getUpdatePathParams() override;
 
 private:

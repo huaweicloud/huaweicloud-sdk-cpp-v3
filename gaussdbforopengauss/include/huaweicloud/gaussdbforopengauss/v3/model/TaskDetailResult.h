@@ -85,6 +85,24 @@ public:
     void setProcess(const std::string& value);
 
     /// <summary>
+    /// 创建时间，格式为“yyyy-mm-ddThh:mm:ssZ”。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+    /// </summary>
+
+    std::string getCreatedAt() const;
+    bool createdAtIsSet() const;
+    void unsetcreatedAt();
+    void setCreatedAt(const std::string& value);
+
+    /// <summary>
+    /// 结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+    /// </summary>
+
+    std::string getEndedAt() const;
+    bool endedAtIsSet() const;
+    void unsetendedAt();
+    void setEndedAt(const std::string& value);
+
+    /// <summary>
     /// 失败原因。
     /// </summary>
 
@@ -105,6 +123,10 @@ protected:
     bool statusIsSet_;
     std::string process_;
     bool processIsSet_;
+    std::string createdAt_;
+    bool createdAtIsSet_;
+    std::string endedAt_;
+    bool endedAtIsSet_;
     std::string failReason_;
     bool failReasonIsSet_;
 

@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_GaussDBforOpenGaussUserForList_attributes_H_
-#define HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_GaussDBforOpenGaussUserForList_attributes_H_
+#ifndef HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_GaussDBforOpenGaussUserForList_attribute_H_
+#define HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_GaussDBforOpenGaussUserForList_attribute_H_
 
 
 #include <huaweicloud/gaussdbforopengauss/v3/GaussDBforopenGaussExport.h>
@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <string>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -21,12 +22,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// 用户的权限属性。
 /// </summary>
-class HUAWEICLOUD_GAUSSDBFOROPENGAUSS_V3_EXPORT  GaussDBforOpenGaussUserForList_attributes
+class HUAWEICLOUD_GAUSSDBFOROPENGAUSS_V3_EXPORT  GaussDBforOpenGaussUserForList_attribute
     : public ModelBase
 {
 public:
-    GaussDBforOpenGaussUserForList_attributes();
-    virtual ~GaussDBforOpenGaussUserForList_attributes();
+    GaussDBforOpenGaussUserForList_attribute();
+    virtual ~GaussDBforOpenGaussUserForList_attribute();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -35,7 +36,7 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// GaussDBforOpenGaussUserForList_attributes members
+    /// GaussDBforOpenGaussUserForList_attribute members
 
     /// <summary>
     /// 用户是否具有超级用户权限，取值为“true”或“false”。
@@ -109,6 +110,15 @@ public:
     void unsetrolbypassrls();
     void setRolbypassrls(bool value);
 
+    /// <summary>
+    /// 用户密码过期时间。
+    /// </summary>
+
+    std::string getRolpassworddeadline() const;
+    bool rolpassworddeadlineIsSet() const;
+    void unsetrolpassworddeadline();
+    void setRolpassworddeadline(const std::string& value);
+
 
 protected:
     bool rolsuper_;
@@ -127,6 +137,8 @@ protected:
     bool rolreplicationIsSet_;
     bool rolbypassrls_;
     bool rolbypassrlsIsSet_;
+    std::string rolpassworddeadline_;
+    bool rolpassworddeadlineIsSet_;
 
 };
 
@@ -137,4 +149,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_GaussDBforOpenGaussUserForList_attributes_H_
+#endif // HUAWEICLOUD_SDK_GAUSSDBFOROPENGAUSS_V3_MODEL_GaussDBforOpenGaussUserForList_attribute_H_

@@ -75,6 +75,15 @@ public:
     void setBackupType(const std::string& value);
 
     /// <summary>
+    /// 备份状态，只支持筛选RDS for SQL Server的全量备份的状态。取值：  - “BUILDING”: 备份中 - “COMPLETED”: 备份完成 - “FAILED”: 备份失败
+    /// </summary>
+
+    std::string getStatus() const;
+    bool statusIsSet() const;
+    void unsetstatus();
+    void setStatus(const std::string& value);
+
+    /// <summary>
     /// 索引位置，偏移量。从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询），必须为数字，不能为负数。
     /// </summary>
 
@@ -120,6 +129,8 @@ protected:
     bool backupIdIsSet_;
     std::string backupType_;
     bool backupTypeIsSet_;
+    std::string status_;
+    bool statusIsSet_;
     int32_t offset_;
     bool offsetIsSet_;
     int32_t limit_;

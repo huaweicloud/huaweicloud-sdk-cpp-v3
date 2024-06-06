@@ -282,6 +282,15 @@ public:
     void setCondStorage(const std::string& value);
 
     /// <summary>
+    /// 存储约束  - 支持磁盘特性，不配置时以UI配置为准。
+    /// </summary>
+
+    std::string getCondStorageType() const;
+    bool condStorageTypeIsSet() const;
+    void unsetcondStorageType();
+    void setCondStorageType(const std::string& value);
+
+    /// <summary>
     /// 计算约束  - true，支持在线扩容。 - false或不存在该字段，不支持在线扩容。
     /// </summary>
 
@@ -409,6 +418,8 @@ protected:
     bool condNetworkIsSet_;
     std::string condStorage_;
     bool condStorageIsSet_;
+    std::string condStorageType_;
+    bool condStorageTypeIsSet_;
     std::string condComputeLiveResizable_;
     bool condComputeLiveResizableIsSet_;
     std::string condCompute_;

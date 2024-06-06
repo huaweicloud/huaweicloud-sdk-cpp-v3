@@ -9,6 +9,8 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/gaussdbforopengauss/v3/model/HotfixUpgradeInfos.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/HotfixRollbackInfos.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/RollUpgradeProgress.h>
 #include <string>
 #include <huaweicloud/gaussdbforopengauss/v3/model/UpgradeTypeInfo.h>
@@ -113,6 +115,24 @@ public:
     void unsethotfixRollbackCandidateVersions();
     void setHotfixRollbackCandidateVersions(const std::vector<std::string>& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    HotfixUpgradeInfos getHotfixUpgradeInfos() const;
+    bool hotfixUpgradeInfosIsSet() const;
+    void unsethotfixUpgradeInfos();
+    void setHotfixUpgradeInfos(const HotfixUpgradeInfos& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    HotfixRollbackInfos getHotfixRollbackInfos() const;
+    bool hotfixRollbackInfosIsSet() const;
+    void unsethotfixRollbackInfos();
+    void setHotfixRollbackInfos(const HotfixRollbackInfos& value);
+
 
 protected:
     std::vector<UpgradeTypeInfo> upgradeTypeList_;
@@ -131,6 +151,10 @@ protected:
     bool hotfixUpgradeCandidateVersionsIsSet_;
     std::vector<std::string> hotfixRollbackCandidateVersions_;
     bool hotfixRollbackCandidateVersionsIsSet_;
+    HotfixUpgradeInfos hotfixUpgradeInfos_;
+    bool hotfixUpgradeInfosIsSet_;
+    HotfixRollbackInfos hotfixRollbackInfos_;
+    bool hotfixRollbackInfosIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

@@ -114,6 +114,10 @@ public:
             { 
                 "https://lts.my-kualalumpur-1.myhuaweicloud.com"
             });
+        regions["ru-moscow-1"] = Region("ru-moscow-1",
+            { 
+                "https://lts.ru-moscow-1.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

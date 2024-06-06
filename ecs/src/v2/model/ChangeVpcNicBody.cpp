@@ -72,7 +72,7 @@ bool ChangeVpcNicBody::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("security_groups"));
         if(!fieldValue.is_null())
         {
-            ChangeVpcSecurityGroups refVal;
+            std::vector<ChangeVpcSecurityGroups> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSecurityGroups(refVal);
         }
@@ -132,12 +132,12 @@ void ChangeVpcNicBody::unsetsubnetId()
     subnetIdIsSet_ = false;
 }
 
-ChangeVpcSecurityGroups ChangeVpcNicBody::getSecurityGroups() const
+std::vector<ChangeVpcSecurityGroups>& ChangeVpcNicBody::getSecurityGroups()
 {
     return securityGroups_;
 }
 
-void ChangeVpcNicBody::setSecurityGroups(const ChangeVpcSecurityGroups& value)
+void ChangeVpcNicBody::setSecurityGroups(const std::vector<ChangeVpcSecurityGroups>& value)
 {
     securityGroups_ = value;
     securityGroupsIsSet_ = true;

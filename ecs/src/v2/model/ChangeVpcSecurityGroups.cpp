@@ -12,6 +12,7 @@ namespace Model {
 
 ChangeVpcSecurityGroups::ChangeVpcSecurityGroups()
 {
+    id_ = "";
     idIsSet_ = false;
 }
 
@@ -39,7 +40,7 @@ bool ChangeVpcSecurityGroups::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("id"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setId(refVal);
         }
@@ -48,12 +49,12 @@ bool ChangeVpcSecurityGroups::fromJson(const web::json::value& val)
 }
 
 
-Object ChangeVpcSecurityGroups::getId() const
+std::string ChangeVpcSecurityGroups::getId() const
 {
     return id_;
 }
 
-void ChangeVpcSecurityGroups::setId(const Object& value)
+void ChangeVpcSecurityGroups::setId(const std::string& value)
 {
     id_ = value;
     idIsSet_ = true;

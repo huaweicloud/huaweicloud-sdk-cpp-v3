@@ -23,6 +23,8 @@ ShowUpgradeCandidateVersionsResponse::ShowUpgradeCandidateVersionsResponse()
     upgradeCandidateVersionsIsSet_ = false;
     hotfixUpgradeCandidateVersionsIsSet_ = false;
     hotfixRollbackCandidateVersionsIsSet_ = false;
+    hotfixUpgradeInfosIsSet_ = false;
+    hotfixRollbackInfosIsSet_ = false;
 }
 
 ShowUpgradeCandidateVersionsResponse::~ShowUpgradeCandidateVersionsResponse() = default;
@@ -58,6 +60,12 @@ web::json::value ShowUpgradeCandidateVersionsResponse::toJson() const
     }
     if(hotfixRollbackCandidateVersionsIsSet_) {
         val[utility::conversions::to_string_t("hotfix_rollback_candidate_versions")] = ModelBase::toJson(hotfixRollbackCandidateVersions_);
+    }
+    if(hotfixUpgradeInfosIsSet_) {
+        val[utility::conversions::to_string_t("hotfix_upgrade_infos")] = ModelBase::toJson(hotfixUpgradeInfos_);
+    }
+    if(hotfixRollbackInfosIsSet_) {
+        val[utility::conversions::to_string_t("hotfix_rollback_infos")] = ModelBase::toJson(hotfixRollbackInfos_);
     }
 
     return val;
@@ -136,6 +144,24 @@ bool ShowUpgradeCandidateVersionsResponse::fromJson(const web::json::value& val)
             std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setHotfixRollbackCandidateVersions(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("hotfix_upgrade_infos"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("hotfix_upgrade_infos"));
+        if(!fieldValue.is_null())
+        {
+            HotfixUpgradeInfos refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHotfixUpgradeInfos(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("hotfix_rollback_infos"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("hotfix_rollback_infos"));
+        if(!fieldValue.is_null())
+        {
+            HotfixRollbackInfos refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHotfixRollbackInfos(refVal);
         }
     }
     return ok;
@@ -308,6 +334,48 @@ bool ShowUpgradeCandidateVersionsResponse::hotfixRollbackCandidateVersionsIsSet(
 void ShowUpgradeCandidateVersionsResponse::unsethotfixRollbackCandidateVersions()
 {
     hotfixRollbackCandidateVersionsIsSet_ = false;
+}
+
+HotfixUpgradeInfos ShowUpgradeCandidateVersionsResponse::getHotfixUpgradeInfos() const
+{
+    return hotfixUpgradeInfos_;
+}
+
+void ShowUpgradeCandidateVersionsResponse::setHotfixUpgradeInfos(const HotfixUpgradeInfos& value)
+{
+    hotfixUpgradeInfos_ = value;
+    hotfixUpgradeInfosIsSet_ = true;
+}
+
+bool ShowUpgradeCandidateVersionsResponse::hotfixUpgradeInfosIsSet() const
+{
+    return hotfixUpgradeInfosIsSet_;
+}
+
+void ShowUpgradeCandidateVersionsResponse::unsethotfixUpgradeInfos()
+{
+    hotfixUpgradeInfosIsSet_ = false;
+}
+
+HotfixRollbackInfos ShowUpgradeCandidateVersionsResponse::getHotfixRollbackInfos() const
+{
+    return hotfixRollbackInfos_;
+}
+
+void ShowUpgradeCandidateVersionsResponse::setHotfixRollbackInfos(const HotfixRollbackInfos& value)
+{
+    hotfixRollbackInfos_ = value;
+    hotfixRollbackInfosIsSet_ = true;
+}
+
+bool ShowUpgradeCandidateVersionsResponse::hotfixRollbackInfosIsSet() const
+{
+    return hotfixRollbackInfosIsSet_;
+}
+
+void ShowUpgradeCandidateVersionsResponse::unsethotfixRollbackInfos()
+{
+    hotfixRollbackInfosIsSet_ = false;
 }
 
 }

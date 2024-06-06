@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/gaussdbforopengauss/v3/model/GaussDBforOpenGaussUserForList_attributes.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/GaussDBforOpenGaussUserForList_attribute.h>
 #include <string>
 
 namespace HuaweiCloud {
@@ -52,10 +52,10 @@ public:
     /// 
     /// </summary>
 
-    GaussDBforOpenGaussUserForList_attributes getAttributes() const;
-    bool attributesIsSet() const;
-    void unsetattributes();
-    void setAttributes(const GaussDBforOpenGaussUserForList_attributes& value);
+    GaussDBforOpenGaussUserForList_attribute getAttribute() const;
+    bool attributeIsSet() const;
+    void unsetattribute();
+    void setAttribute(const GaussDBforOpenGaussUserForList_attribute& value);
 
     /// <summary>
     /// 用户的默认权限。
@@ -66,14 +66,25 @@ public:
     void unsetmemberof();
     void setMemberof(const std::string& value);
 
+    /// <summary>
+    /// 用户是否被锁，取值为“true”或“false”。
+    /// </summary>
+
+    bool isLockStatus() const;
+    bool lockStatusIsSet() const;
+    void unsetlockStatus();
+    void setLockStatus(bool value);
+
 
 protected:
     std::string name_;
     bool nameIsSet_;
-    GaussDBforOpenGaussUserForList_attributes attributes_;
-    bool attributesIsSet_;
+    GaussDBforOpenGaussUserForList_attribute attribute_;
+    bool attributeIsSet_;
     std::string memberof_;
     bool memberofIsSet_;
+    bool lockStatus_;
+    bool lockStatusIsSet_;
 
 };
 

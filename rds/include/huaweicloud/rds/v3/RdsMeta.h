@@ -79,6 +79,7 @@ public:
     static HttpRequestDef genRequestDefForListRdSforMysqlProxyFlavors();
     static HttpRequestDef genRequestDefForListRecycleInstances();
     static HttpRequestDef genRequestDefForListRestoreTimes();
+    static HttpRequestDef genRequestDefForListShareBackups();
     static HttpRequestDef genRequestDefForListSimplifiedInstances();
     static HttpRequestDef genRequestDefForListSlowLogFile();
     static HttpRequestDef genRequestDefForListSlowLogStatisticsForLts();
@@ -199,8 +200,10 @@ public:
     static HttpRequestDef genRequestDefForSetPostgresqlDbUserPwd();
     static HttpRequestDef genRequestDefForShowInformationAboutDatabaseProxy();
     static HttpRequestDef genRequestDefForShowPostgresqlParamValue();
+    static HttpRequestDef genRequestDefForShowReplayDelayStatus();
     static HttpRequestDef genRequestDefForStartDatabaseProxy();
     static HttpRequestDef genRequestDefForStopDatabaseProxy();
+    static HttpRequestDef genRequestDefForSwitchLogReplay();
     static HttpRequestDef genRequestDefForUpdateDatabaseOwner();
     static HttpRequestDef genRequestDefForUpdateDbUserPrivilege();
     static HttpRequestDef genRequestDefForUpdatePostgresqlDatabase();

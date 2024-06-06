@@ -1,3 +1,112 @@
+# 3.1.89 2024-06-06
+
+### HuaweiCloud SDK ECS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ChangeVpc**
+    - changes of request param
+      - `* nic.security_groups: object<ChangeVpcSecurityGroups> -> list<ChangeVpcSecurityGroups>`
+  - **ListFlavors**
+    - changes of response param
+      - `+ flavors.os_extra_specs.cond:storage:type`
+  - **ListResizeFlavors**
+    - changes of response param
+      - `+ flavors.extra_specs.cond:storage:type`
+
+### HuaweiCloud SDK GaussDB
+
+- _Features_
+  - Support the following APIs:
+    - `ShowLtsConfigs`
+    - `CreateLtsConfigs`
+    - `DeleteLtsConfigs`
+    - `ShowRecyclePolicy`
+    - `SetRecyclePolicy`
+    - `ListRecycleInstances`
+    - `ShowSlowlogSensitiveStatus`
+    - `UpdateSlowlogSensitiveSwitch`
+    - `RestartProxyInstance`
+    - `RenameInstanceNode`
+    - `ShowAutoScalingHistory`
+    - `UpdateServerlessPolicy`
+    - `ModifyNodePriority`
+    - `ShowInstanceEip`
+    - `ListParamsTemplateApplyHistory`
+    - `ShowProxyConfigurations`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowProxyIpgroup**
+    - changes of response param
+      - `+ ip_group.id`
+      - `+ ip_group.name`
+      - `+ ip_group.ip_list`
+      - `* ip_group: object -> object<ProxyIpGroupDetail>`
+  - **UpdateGaussMySqlInstanceName**
+    - changes of request param
+      - `+ is_modify_node_name`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **OfflineNodes**
+    - changes of response param
+      - `+ job_id`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListAvailableFlavors**
+    - changes of response param
+      - `+ flavors.spec_code`
+      - `- flavors.spec_cpde`
+  - **ListRestorableInstances**
+    - changes of response param
+      - `* instances.version: number -> string`
+  - **ListDbUsers**
+    - changes of response param
+      - `+ users.attribute`
+      - `+ users.lock_status`
+      - `- users.attributes`
+  - **ShowUpgradeCandidateVersions**
+    - changes of response param
+      - `+ hotfix_upgrade_infos`
+      - `+ hotfix_rollback_infos`
+
+### HuaweiCloud SDK LTS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateLogStreamIndex**
+    - changes of request param
+      - `+ sqlAnalysisEnable`
+
+### HuaweiCloud SDK RDS
+
+- _Features_
+  - Support the APIs `ShowReplayDelayStatus`, `SwitchLogReplay`, `ListShareBackups`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListBackups**
+    - changes of request param
+      - `+ status`
+
 # 3.1.88 2024-05-30
 
 ### HuaweiCloud SDK CDN

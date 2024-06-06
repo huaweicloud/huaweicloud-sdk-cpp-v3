@@ -9,8 +9,8 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/core/utils/Object.h>
 #include <string>
+#include <huaweicloud/gaussdb/v3/model/ProxyIpGroupDetail.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -58,13 +58,13 @@ public:
     void setType(const std::string& value);
 
     /// <summary>
-    /// 白名单或黑名单详细信息
+    /// 
     /// </summary>
 
-    Object getIpGroup() const;
+    ProxyIpGroupDetail getIpGroup() const;
     bool ipGroupIsSet() const;
     void unsetipGroup();
-    void setIpGroup(const Object& value);
+    void setIpGroup(const ProxyIpGroupDetail& value);
 
 
 protected:
@@ -72,7 +72,7 @@ protected:
     bool enableIpGroupIsSet_;
     std::string type_;
     bool typeIsSet_;
-    Object ipGroup_;
+    ProxyIpGroupDetail ipGroup_;
     bool ipGroupIsSet_;
 
 #ifdef RTTR_FLAG

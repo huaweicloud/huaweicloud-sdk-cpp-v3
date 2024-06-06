@@ -144,7 +144,6 @@
 #include <huaweicloud/gaussdbfornosql/v3/model/ModifyVolumeResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/NoSqlCreateBackupRequestBody.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/NoSqlModiflyEpsQuotasRequestBody.h>
-#include <huaweicloud/core/utils/Object.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/OfflineNodesRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/OfflineNodesRequestBody.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/OfflineNodesResponse.h>

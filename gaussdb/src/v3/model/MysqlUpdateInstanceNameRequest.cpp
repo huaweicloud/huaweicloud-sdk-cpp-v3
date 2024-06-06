@@ -14,6 +14,8 @@ MysqlUpdateInstanceNameRequest::MysqlUpdateInstanceNameRequest()
 {
     name_ = "";
     nameIsSet_ = false;
+    isModifyNodeName_ = "";
+    isModifyNodeNameIsSet_ = false;
 }
 
 MysqlUpdateInstanceNameRequest::~MysqlUpdateInstanceNameRequest() = default;
@@ -29,6 +31,9 @@ web::json::value MysqlUpdateInstanceNameRequest::toJson() const
     if(nameIsSet_) {
         val[utility::conversions::to_string_t("name")] = ModelBase::toJson(name_);
     }
+    if(isModifyNodeNameIsSet_) {
+        val[utility::conversions::to_string_t("is_modify_node_name")] = ModelBase::toJson(isModifyNodeName_);
+    }
 
     return val;
 }
@@ -43,6 +48,15 @@ bool MysqlUpdateInstanceNameRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_modify_node_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_modify_node_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsModifyNodeName(refVal);
         }
     }
     return ok;
@@ -68,6 +82,27 @@ bool MysqlUpdateInstanceNameRequest::nameIsSet() const
 void MysqlUpdateInstanceNameRequest::unsetname()
 {
     nameIsSet_ = false;
+}
+
+std::string MysqlUpdateInstanceNameRequest::getIsModifyNodeName() const
+{
+    return isModifyNodeName_;
+}
+
+void MysqlUpdateInstanceNameRequest::setIsModifyNodeName(const std::string& value)
+{
+    isModifyNodeName_ = value;
+    isModifyNodeNameIsSet_ = true;
+}
+
+bool MysqlUpdateInstanceNameRequest::isModifyNodeNameIsSet() const
+{
+    return isModifyNodeNameIsSet_;
+}
+
+void MysqlUpdateInstanceNameRequest::unsetisModifyNodeName()
+{
+    isModifyNodeNameIsSet_ = false;
 }
 
 }

@@ -47,10 +47,21 @@ public:
     void unsetname();
     void setName(const std::string& value);
 
+    /// <summary>
+    /// 是否同步修改节点名称，取值：true或false, 默认值为true。
+    /// </summary>
+
+    std::string getIsModifyNodeName() const;
+    bool isModifyNodeNameIsSet() const;
+    void unsetisModifyNodeName();
+    void setIsModifyNodeName(const std::string& value);
+
 
 protected:
     std::string name_;
     bool nameIsSet_;
+    std::string isModifyNodeName_;
+    bool isModifyNodeNameIsSet_;
 
 };
 

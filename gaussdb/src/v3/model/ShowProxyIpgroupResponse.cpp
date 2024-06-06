@@ -67,7 +67,7 @@ bool ShowProxyIpgroupResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ip_group"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            ProxyIpGroupDetail refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIpGroup(refVal);
         }
@@ -118,12 +118,12 @@ void ShowProxyIpgroupResponse::unsettype()
     typeIsSet_ = false;
 }
 
-Object ShowProxyIpgroupResponse::getIpGroup() const
+ProxyIpGroupDetail ShowProxyIpgroupResponse::getIpGroup() const
 {
     return ipGroup_;
 }
 
-void ShowProxyIpgroupResponse::setIpGroup(const Object& value)
+void ShowProxyIpgroupResponse::setIpGroup(const ProxyIpGroupDetail& value)
 {
     ipGroup_ = value;
     ipGroupIsSet_ = true;

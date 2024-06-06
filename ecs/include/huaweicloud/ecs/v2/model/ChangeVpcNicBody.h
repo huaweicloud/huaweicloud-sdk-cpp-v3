@@ -11,6 +11,7 @@
 
 #include <huaweicloud/ecs/v2/model/ChangeVpcSecurityGroups.h>
 #include <string>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -58,13 +59,13 @@ public:
     void setSubnetId(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 添加网卡的安全组信息
     /// </summary>
 
-    ChangeVpcSecurityGroups getSecurityGroups() const;
+    std::vector<ChangeVpcSecurityGroups>& getSecurityGroups();
     bool securityGroupsIsSet() const;
     void unsetsecurityGroups();
-    void setSecurityGroups(const ChangeVpcSecurityGroups& value);
+    void setSecurityGroups(const std::vector<ChangeVpcSecurityGroups>& value);
 
     /// <summary>
     /// P地址，无该参数表示自动分配IP地址
@@ -81,7 +82,7 @@ protected:
     bool portIdIsSet_;
     std::string subnetId_;
     bool subnetIdIsSet_;
-    ChangeVpcSecurityGroups securityGroups_;
+    std::vector<ChangeVpcSecurityGroups> securityGroups_;
     bool securityGroupsIsSet_;
     std::string ipAddress_;
     bool ipAddressIsSet_;

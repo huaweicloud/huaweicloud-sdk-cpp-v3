@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/core/utils/Object.h>
+#include <string>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -39,18 +39,18 @@ public:
     /// OfflineNodesResponse members
 
     /// <summary>
-    /// 
+    /// 工作流ID。
     /// </summary>
 
-    Object getBody() const;
-    bool bodyIsSet() const;
-    void unsetbody();
-    void setBody(const Object& value);
+    std::string getJobId() const;
+    bool jobIdIsSet() const;
+    void unsetjobId();
+    void setJobId(const std::string& value);
 
 
 protected:
-    Object body_;
-    bool bodyIsSet_;
+    std::string jobId_;
+    bool jobIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

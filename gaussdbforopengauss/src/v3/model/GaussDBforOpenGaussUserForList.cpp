@@ -14,9 +14,11 @@ GaussDBforOpenGaussUserForList::GaussDBforOpenGaussUserForList()
 {
     name_ = "";
     nameIsSet_ = false;
-    attributesIsSet_ = false;
+    attributeIsSet_ = false;
     memberof_ = "";
     memberofIsSet_ = false;
+    lockStatus_ = false;
+    lockStatusIsSet_ = false;
 }
 
 GaussDBforOpenGaussUserForList::~GaussDBforOpenGaussUserForList() = default;
@@ -32,11 +34,14 @@ web::json::value GaussDBforOpenGaussUserForList::toJson() const
     if(nameIsSet_) {
         val[utility::conversions::to_string_t("name")] = ModelBase::toJson(name_);
     }
-    if(attributesIsSet_) {
-        val[utility::conversions::to_string_t("attributes")] = ModelBase::toJson(attributes_);
+    if(attributeIsSet_) {
+        val[utility::conversions::to_string_t("attribute")] = ModelBase::toJson(attribute_);
     }
     if(memberofIsSet_) {
         val[utility::conversions::to_string_t("memberof")] = ModelBase::toJson(memberof_);
+    }
+    if(lockStatusIsSet_) {
+        val[utility::conversions::to_string_t("lock_status")] = ModelBase::toJson(lockStatus_);
     }
 
     return val;
@@ -54,13 +59,13 @@ bool GaussDBforOpenGaussUserForList::fromJson(const web::json::value& val)
             setName(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("attributes"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("attributes"));
+    if(val.has_field(utility::conversions::to_string_t("attribute"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("attribute"));
         if(!fieldValue.is_null())
         {
-            GaussDBforOpenGaussUserForList_attributes refVal;
+            GaussDBforOpenGaussUserForList_attribute refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setAttributes(refVal);
+            setAttribute(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("memberof"))) {
@@ -70,6 +75,15 @@ bool GaussDBforOpenGaussUserForList::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setMemberof(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("lock_status"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("lock_status"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLockStatus(refVal);
         }
     }
     return ok;
@@ -97,25 +111,25 @@ void GaussDBforOpenGaussUserForList::unsetname()
     nameIsSet_ = false;
 }
 
-GaussDBforOpenGaussUserForList_attributes GaussDBforOpenGaussUserForList::getAttributes() const
+GaussDBforOpenGaussUserForList_attribute GaussDBforOpenGaussUserForList::getAttribute() const
 {
-    return attributes_;
+    return attribute_;
 }
 
-void GaussDBforOpenGaussUserForList::setAttributes(const GaussDBforOpenGaussUserForList_attributes& value)
+void GaussDBforOpenGaussUserForList::setAttribute(const GaussDBforOpenGaussUserForList_attribute& value)
 {
-    attributes_ = value;
-    attributesIsSet_ = true;
+    attribute_ = value;
+    attributeIsSet_ = true;
 }
 
-bool GaussDBforOpenGaussUserForList::attributesIsSet() const
+bool GaussDBforOpenGaussUserForList::attributeIsSet() const
 {
-    return attributesIsSet_;
+    return attributeIsSet_;
 }
 
-void GaussDBforOpenGaussUserForList::unsetattributes()
+void GaussDBforOpenGaussUserForList::unsetattribute()
 {
-    attributesIsSet_ = false;
+    attributeIsSet_ = false;
 }
 
 std::string GaussDBforOpenGaussUserForList::getMemberof() const
@@ -137,6 +151,27 @@ bool GaussDBforOpenGaussUserForList::memberofIsSet() const
 void GaussDBforOpenGaussUserForList::unsetmemberof()
 {
     memberofIsSet_ = false;
+}
+
+bool GaussDBforOpenGaussUserForList::isLockStatus() const
+{
+    return lockStatus_;
+}
+
+void GaussDBforOpenGaussUserForList::setLockStatus(bool value)
+{
+    lockStatus_ = value;
+    lockStatusIsSet_ = true;
+}
+
+bool GaussDBforOpenGaussUserForList::lockStatusIsSet() const
+{
+    return lockStatusIsSet_;
+}
+
+void GaussDBforOpenGaussUserForList::unsetlockStatus()
+{
+    lockStatusIsSet_ = false;
 }
 
 }

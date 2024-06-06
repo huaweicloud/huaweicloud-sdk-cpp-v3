@@ -12,8 +12,8 @@ namespace Model {
 
 AvailableFlavorInfoResult::AvailableFlavorInfoResult()
 {
-    specCpde_ = "";
-    specCpdeIsSet_ = false;
+    specCode_ = "";
+    specCodeIsSet_ = false;
     vcpus_ = "";
     vcpusIsSet_ = false;
     ram_ = "";
@@ -31,8 +31,8 @@ web::json::value AvailableFlavorInfoResult::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(specCpdeIsSet_) {
-        val[utility::conversions::to_string_t("spec_cpde")] = ModelBase::toJson(specCpde_);
+    if(specCodeIsSet_) {
+        val[utility::conversions::to_string_t("spec_code")] = ModelBase::toJson(specCode_);
     }
     if(vcpusIsSet_) {
         val[utility::conversions::to_string_t("vcpus")] = ModelBase::toJson(vcpus_);
@@ -50,13 +50,13 @@ bool AvailableFlavorInfoResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("spec_cpde"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("spec_cpde"));
+    if(val.has_field(utility::conversions::to_string_t("spec_code"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("spec_code"));
         if(!fieldValue.is_null())
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setSpecCpde(refVal);
+            setSpecCode(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("vcpus"))) {
@@ -90,25 +90,25 @@ bool AvailableFlavorInfoResult::fromJson(const web::json::value& val)
 }
 
 
-std::string AvailableFlavorInfoResult::getSpecCpde() const
+std::string AvailableFlavorInfoResult::getSpecCode() const
 {
-    return specCpde_;
+    return specCode_;
 }
 
-void AvailableFlavorInfoResult::setSpecCpde(const std::string& value)
+void AvailableFlavorInfoResult::setSpecCode(const std::string& value)
 {
-    specCpde_ = value;
-    specCpdeIsSet_ = true;
+    specCode_ = value;
+    specCodeIsSet_ = true;
 }
 
-bool AvailableFlavorInfoResult::specCpdeIsSet() const
+bool AvailableFlavorInfoResult::specCodeIsSet() const
 {
-    return specCpdeIsSet_;
+    return specCodeIsSet_;
 }
 
-void AvailableFlavorInfoResult::unsetspecCpde()
+void AvailableFlavorInfoResult::unsetspecCode()
 {
-    specCpdeIsSet_ = false;
+    specCodeIsSet_ = false;
 }
 
 std::string AvailableFlavorInfoResult::getVcpus() const

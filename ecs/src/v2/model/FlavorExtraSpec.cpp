@@ -66,6 +66,8 @@ FlavorExtraSpec::FlavorExtraSpec()
     condNetworkIsSet_ = false;
     condStorage_ = "";
     condStorageIsSet_ = false;
+    condStorageType_ = "";
+    condStorageTypeIsSet_ = false;
     condComputeLiveResizable_ = "";
     condComputeLiveResizableIsSet_ = false;
     condCompute_ = "";
@@ -174,6 +176,9 @@ web::json::value FlavorExtraSpec::toJson() const
     }
     if(condStorageIsSet_) {
         val[utility::conversions::to_string_t("cond:storage")] = ModelBase::toJson(condStorage_);
+    }
+    if(condStorageTypeIsSet_) {
+        val[utility::conversions::to_string_t("cond:storage:type")] = ModelBase::toJson(condStorageType_);
     }
     if(condComputeLiveResizableIsSet_) {
         val[utility::conversions::to_string_t("cond:compute:live_resizable")] = ModelBase::toJson(condComputeLiveResizable_);
@@ -447,6 +452,15 @@ bool FlavorExtraSpec::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCondStorage(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("cond:storage:type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("cond:storage:type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCondStorageType(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("cond:compute:live_resizable"))) {
@@ -1090,6 +1104,27 @@ bool FlavorExtraSpec::condStorageIsSet() const
 void FlavorExtraSpec::unsetcondStorage()
 {
     condStorageIsSet_ = false;
+}
+
+std::string FlavorExtraSpec::getCondStorageType() const
+{
+    return condStorageType_;
+}
+
+void FlavorExtraSpec::setCondStorageType(const std::string& value)
+{
+    condStorageType_ = value;
+    condStorageTypeIsSet_ = true;
+}
+
+bool FlavorExtraSpec::condStorageTypeIsSet() const
+{
+    return condStorageTypeIsSet_;
+}
+
+void FlavorExtraSpec::unsetcondStorageType()
+{
+    condStorageTypeIsSet_ = false;
 }
 
 std::string FlavorExtraSpec::getCondComputeLiveResizable() const

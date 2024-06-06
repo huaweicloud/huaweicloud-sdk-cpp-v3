@@ -42,15 +42,6 @@ public:
     /// LTSIndexConfigInfo members
 
     /// <summary>
-    /// 日志流ID
-    /// </summary>
-
-    std::string getLogStreamId() const;
-    bool logStreamIdIsSet() const;
-    void unsetlogStreamId();
-    void setLogStreamId(const std::string& value);
-
-    /// <summary>
     /// 
     /// </summary>
 
@@ -68,14 +59,34 @@ public:
     void unsetfields();
     void setFields(const std::vector<LTSFieldsInfo>& value);
 
+    /// <summary>
+    /// 是否开启可视化
+    /// </summary>
+
+    bool isSqlAnalysisEnable() const;
+    bool sqlAnalysisEnableIsSet() const;
+    void unsetsqlAnalysisEnable();
+    void setSqlAnalysisEnable(bool value);
+
+    /// <summary>
+    /// 日志流id
+    /// </summary>
+
+    std::string getLogStreamId() const;
+    bool logStreamIdIsSet() const;
+    void unsetlogStreamId();
+    void setLogStreamId(const std::string& value);
+
 
 protected:
-    std::string logStreamId_;
-    bool logStreamIdIsSet_;
     LTSFullTextIndexInfo fullTextIndex_;
     bool fullTextIndexIsSet_;
     std::vector<LTSFieldsInfo> fields_;
     bool fieldsIsSet_;
+    bool sqlAnalysisEnable_;
+    bool sqlAnalysisEnableIsSet_;
+    std::string logStreamId_;
+    bool logStreamIdIsSet_;
 
 };
 

@@ -20,6 +20,8 @@ ListBackupsRequest::ListBackupsRequest()
     backupIdIsSet_ = false;
     backupType_ = "";
     backupTypeIsSet_ = false;
+    status_ = "";
+    statusIsSet_ = false;
     offset_ = 0;
     offsetIsSet_ = false;
     limit_ = 0;
@@ -51,6 +53,9 @@ web::json::value ListBackupsRequest::toJson() const
     }
     if(backupTypeIsSet_) {
         val[utility::conversions::to_string_t("backup_type")] = ModelBase::toJson(backupType_);
+    }
+    if(statusIsSet_) {
+        val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
     }
     if(offsetIsSet_) {
         val[utility::conversions::to_string_t("offset")] = ModelBase::toJson(offset_);
@@ -105,6 +110,15 @@ bool ListBackupsRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBackupType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("status"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("status"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setStatus(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("offset"))) {
@@ -229,6 +243,27 @@ bool ListBackupsRequest::backupTypeIsSet() const
 void ListBackupsRequest::unsetbackupType()
 {
     backupTypeIsSet_ = false;
+}
+
+std::string ListBackupsRequest::getStatus() const
+{
+    return status_;
+}
+
+void ListBackupsRequest::setStatus(const std::string& value)
+{
+    status_ = value;
+    statusIsSet_ = true;
+}
+
+bool ListBackupsRequest::statusIsSet() const
+{
+    return statusIsSet_;
+}
+
+void ListBackupsRequest::unsetstatus()
+{
+    statusIsSet_ = false;
 }
 
 int32_t ListBackupsRequest::getOffset() const

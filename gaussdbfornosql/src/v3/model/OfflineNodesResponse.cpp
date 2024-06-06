@@ -12,7 +12,8 @@ namespace Model {
 
 OfflineNodesResponse::OfflineNodesResponse()
 {
-    bodyIsSet_ = false;
+    jobId_ = "";
+    jobIdIsSet_ = false;
 }
 
 OfflineNodesResponse::~OfflineNodesResponse() = default;
@@ -25,8 +26,8 @@ web::json::value OfflineNodesResponse::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(bodyIsSet_) {
-        val[utility::conversions::to_string_t("body")] = ModelBase::toJson(body_);
+    if(jobIdIsSet_) {
+        val[utility::conversions::to_string_t("job_id")] = ModelBase::toJson(jobId_);
     }
 
     return val;
@@ -35,38 +36,38 @@ bool OfflineNodesResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("body"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
+    if(val.has_field(utility::conversions::to_string_t("job_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("job_id"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setBody(refVal);
+            setJobId(refVal);
         }
     }
     return ok;
 }
 
 
-Object OfflineNodesResponse::getBody() const
+std::string OfflineNodesResponse::getJobId() const
 {
-    return body_;
+    return jobId_;
 }
 
-void OfflineNodesResponse::setBody(const Object& value)
+void OfflineNodesResponse::setJobId(const std::string& value)
 {
-    body_ = value;
-    bodyIsSet_ = true;
+    jobId_ = value;
+    jobIdIsSet_ = true;
 }
 
-bool OfflineNodesResponse::bodyIsSet() const
+bool OfflineNodesResponse::jobIdIsSet() const
 {
-    return bodyIsSet_;
+    return jobIdIsSet_;
 }
 
-void OfflineNodesResponse::unsetbody()
+void OfflineNodesResponse::unsetjobId()
 {
-    bodyIsSet_ = false;
+    jobIdIsSet_ = false;
 }
 
 }

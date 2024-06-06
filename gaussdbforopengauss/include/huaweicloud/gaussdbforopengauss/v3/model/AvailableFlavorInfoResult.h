@@ -44,10 +44,10 @@ public:
     /// 资源规格编码。
     /// </summary>
 
-    std::string getSpecCpde() const;
-    bool specCpdeIsSet() const;
-    void unsetspecCpde();
-    void setSpecCpde(const std::string& value);
+    std::string getSpecCode() const;
+    bool specCodeIsSet() const;
+    void unsetspecCode();
+    void setSpecCode(const std::string& value);
 
     /// <summary>
     /// CPU核数。
@@ -78,8 +78,8 @@ public:
 
 
 protected:
-    std::string specCpde_;
-    bool specCpdeIsSet_;
+    std::string specCode_;
+    bool specCodeIsSet_;
     std::string vcpus_;
     bool vcpusIsSet_;
     std::string ram_;

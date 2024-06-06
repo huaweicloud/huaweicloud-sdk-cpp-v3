@@ -20,7 +20,7 @@ InstancesResult::InstancesResult()
     volumeTypeIsSet_ = false;
     dataVolumeSize_ = 0.0;
     dataVolumeSizeIsSet_ = false;
-    version_ = 0.0;
+    version_ = "";
     versionIsSet_ = false;
     mode_ = "";
     modeIsSet_ = false;
@@ -106,7 +106,7 @@ bool InstancesResult::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("version"));
         if(!fieldValue.is_null())
         {
-            double refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setVersion(refVal);
         }
@@ -217,12 +217,12 @@ void InstancesResult::unsetdataVolumeSize()
     dataVolumeSizeIsSet_ = false;
 }
 
-double InstancesResult::getVersion() const
+std::string InstancesResult::getVersion() const
 {
     return version_;
 }
 
-void InstancesResult::setVersion(double value)
+void InstancesResult::setVersion(const std::string& value)
 {
     version_ = value;
     versionIsSet_ = true;

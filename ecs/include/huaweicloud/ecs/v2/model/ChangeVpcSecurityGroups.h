@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/core/utils/Object.h>
+#include <string>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -42,14 +42,14 @@ public:
     /// 安全组id
     /// </summary>
 
-    Object getId() const;
+    std::string getId() const;
     bool idIsSet() const;
     void unsetid();
-    void setId(const Object& value);
+    void setId(const std::string& value);
 
 
 protected:
-    Object id_;
+    std::string id_;
     bool idIsSet_;
 
 };

@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/gaussdbforopengauss/v3/model/GaussDBforOpenGaussUserForList_attributes.h"
+#include "huaweicloud/gaussdbforopengauss/v3/model/GaussDBforOpenGaussUserForList_attribute.h"
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Gaussdbforopengauss {
@@ -10,7 +10,7 @@ namespace Model {
 
 
 
-GaussDBforOpenGaussUserForList_attributes::GaussDBforOpenGaussUserForList_attributes()
+GaussDBforOpenGaussUserForList_attribute::GaussDBforOpenGaussUserForList_attribute()
 {
     rolsuper_ = false;
     rolsuperIsSet_ = false;
@@ -28,15 +28,17 @@ GaussDBforOpenGaussUserForList_attributes::GaussDBforOpenGaussUserForList_attrib
     rolreplicationIsSet_ = false;
     rolbypassrls_ = false;
     rolbypassrlsIsSet_ = false;
+    rolpassworddeadline_ = "";
+    rolpassworddeadlineIsSet_ = false;
 }
 
-GaussDBforOpenGaussUserForList_attributes::~GaussDBforOpenGaussUserForList_attributes() = default;
+GaussDBforOpenGaussUserForList_attribute::~GaussDBforOpenGaussUserForList_attribute() = default;
 
-void GaussDBforOpenGaussUserForList_attributes::validate()
+void GaussDBforOpenGaussUserForList_attribute::validate()
 {
 }
 
-web::json::value GaussDBforOpenGaussUserForList_attributes::toJson() const
+web::json::value GaussDBforOpenGaussUserForList_attribute::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -64,10 +66,13 @@ web::json::value GaussDBforOpenGaussUserForList_attributes::toJson() const
     if(rolbypassrlsIsSet_) {
         val[utility::conversions::to_string_t("rolbypassrls")] = ModelBase::toJson(rolbypassrls_);
     }
+    if(rolpassworddeadlineIsSet_) {
+        val[utility::conversions::to_string_t("rolpassworddeadline")] = ModelBase::toJson(rolpassworddeadline_);
+    }
 
     return val;
 }
-bool GaussDBforOpenGaussUserForList_attributes::fromJson(const web::json::value& val)
+bool GaussDBforOpenGaussUserForList_attribute::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -143,176 +148,206 @@ bool GaussDBforOpenGaussUserForList_attributes::fromJson(const web::json::value&
             setRolbypassrls(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("rolpassworddeadline"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("rolpassworddeadline"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRolpassworddeadline(refVal);
+        }
+    }
     return ok;
 }
 
 
-bool GaussDBforOpenGaussUserForList_attributes::isRolsuper() const
+bool GaussDBforOpenGaussUserForList_attribute::isRolsuper() const
 {
     return rolsuper_;
 }
 
-void GaussDBforOpenGaussUserForList_attributes::setRolsuper(bool value)
+void GaussDBforOpenGaussUserForList_attribute::setRolsuper(bool value)
 {
     rolsuper_ = value;
     rolsuperIsSet_ = true;
 }
 
-bool GaussDBforOpenGaussUserForList_attributes::rolsuperIsSet() const
+bool GaussDBforOpenGaussUserForList_attribute::rolsuperIsSet() const
 {
     return rolsuperIsSet_;
 }
 
-void GaussDBforOpenGaussUserForList_attributes::unsetrolsuper()
+void GaussDBforOpenGaussUserForList_attribute::unsetrolsuper()
 {
     rolsuperIsSet_ = false;
 }
 
-bool GaussDBforOpenGaussUserForList_attributes::isRolinherit() const
+bool GaussDBforOpenGaussUserForList_attribute::isRolinherit() const
 {
     return rolinherit_;
 }
 
-void GaussDBforOpenGaussUserForList_attributes::setRolinherit(bool value)
+void GaussDBforOpenGaussUserForList_attribute::setRolinherit(bool value)
 {
     rolinherit_ = value;
     rolinheritIsSet_ = true;
 }
 
-bool GaussDBforOpenGaussUserForList_attributes::rolinheritIsSet() const
+bool GaussDBforOpenGaussUserForList_attribute::rolinheritIsSet() const
 {
     return rolinheritIsSet_;
 }
 
-void GaussDBforOpenGaussUserForList_attributes::unsetrolinherit()
+void GaussDBforOpenGaussUserForList_attribute::unsetrolinherit()
 {
     rolinheritIsSet_ = false;
 }
 
-bool GaussDBforOpenGaussUserForList_attributes::isRolcreaterole() const
+bool GaussDBforOpenGaussUserForList_attribute::isRolcreaterole() const
 {
     return rolcreaterole_;
 }
 
-void GaussDBforOpenGaussUserForList_attributes::setRolcreaterole(bool value)
+void GaussDBforOpenGaussUserForList_attribute::setRolcreaterole(bool value)
 {
     rolcreaterole_ = value;
     rolcreateroleIsSet_ = true;
 }
 
-bool GaussDBforOpenGaussUserForList_attributes::rolcreateroleIsSet() const
+bool GaussDBforOpenGaussUserForList_attribute::rolcreateroleIsSet() const
 {
     return rolcreateroleIsSet_;
 }
 
-void GaussDBforOpenGaussUserForList_attributes::unsetrolcreaterole()
+void GaussDBforOpenGaussUserForList_attribute::unsetrolcreaterole()
 {
     rolcreateroleIsSet_ = false;
 }
 
-bool GaussDBforOpenGaussUserForList_attributes::isRolcreatedb() const
+bool GaussDBforOpenGaussUserForList_attribute::isRolcreatedb() const
 {
     return rolcreatedb_;
 }
 
-void GaussDBforOpenGaussUserForList_attributes::setRolcreatedb(bool value)
+void GaussDBforOpenGaussUserForList_attribute::setRolcreatedb(bool value)
 {
     rolcreatedb_ = value;
     rolcreatedbIsSet_ = true;
 }
 
-bool GaussDBforOpenGaussUserForList_attributes::rolcreatedbIsSet() const
+bool GaussDBforOpenGaussUserForList_attribute::rolcreatedbIsSet() const
 {
     return rolcreatedbIsSet_;
 }
 
-void GaussDBforOpenGaussUserForList_attributes::unsetrolcreatedb()
+void GaussDBforOpenGaussUserForList_attribute::unsetrolcreatedb()
 {
     rolcreatedbIsSet_ = false;
 }
 
-bool GaussDBforOpenGaussUserForList_attributes::isRolcanlogin() const
+bool GaussDBforOpenGaussUserForList_attribute::isRolcanlogin() const
 {
     return rolcanlogin_;
 }
 
-void GaussDBforOpenGaussUserForList_attributes::setRolcanlogin(bool value)
+void GaussDBforOpenGaussUserForList_attribute::setRolcanlogin(bool value)
 {
     rolcanlogin_ = value;
     rolcanloginIsSet_ = true;
 }
 
-bool GaussDBforOpenGaussUserForList_attributes::rolcanloginIsSet() const
+bool GaussDBforOpenGaussUserForList_attribute::rolcanloginIsSet() const
 {
     return rolcanloginIsSet_;
 }
 
-void GaussDBforOpenGaussUserForList_attributes::unsetrolcanlogin()
+void GaussDBforOpenGaussUserForList_attribute::unsetrolcanlogin()
 {
     rolcanloginIsSet_ = false;
 }
 
-int32_t GaussDBforOpenGaussUserForList_attributes::getRolconnlimit() const
+int32_t GaussDBforOpenGaussUserForList_attribute::getRolconnlimit() const
 {
     return rolconnlimit_;
 }
 
-void GaussDBforOpenGaussUserForList_attributes::setRolconnlimit(int32_t value)
+void GaussDBforOpenGaussUserForList_attribute::setRolconnlimit(int32_t value)
 {
     rolconnlimit_ = value;
     rolconnlimitIsSet_ = true;
 }
 
-bool GaussDBforOpenGaussUserForList_attributes::rolconnlimitIsSet() const
+bool GaussDBforOpenGaussUserForList_attribute::rolconnlimitIsSet() const
 {
     return rolconnlimitIsSet_;
 }
 
-void GaussDBforOpenGaussUserForList_attributes::unsetrolconnlimit()
+void GaussDBforOpenGaussUserForList_attribute::unsetrolconnlimit()
 {
     rolconnlimitIsSet_ = false;
 }
 
-bool GaussDBforOpenGaussUserForList_attributes::isRolreplication() const
+bool GaussDBforOpenGaussUserForList_attribute::isRolreplication() const
 {
     return rolreplication_;
 }
 
-void GaussDBforOpenGaussUserForList_attributes::setRolreplication(bool value)
+void GaussDBforOpenGaussUserForList_attribute::setRolreplication(bool value)
 {
     rolreplication_ = value;
     rolreplicationIsSet_ = true;
 }
 
-bool GaussDBforOpenGaussUserForList_attributes::rolreplicationIsSet() const
+bool GaussDBforOpenGaussUserForList_attribute::rolreplicationIsSet() const
 {
     return rolreplicationIsSet_;
 }
 
-void GaussDBforOpenGaussUserForList_attributes::unsetrolreplication()
+void GaussDBforOpenGaussUserForList_attribute::unsetrolreplication()
 {
     rolreplicationIsSet_ = false;
 }
 
-bool GaussDBforOpenGaussUserForList_attributes::isRolbypassrls() const
+bool GaussDBforOpenGaussUserForList_attribute::isRolbypassrls() const
 {
     return rolbypassrls_;
 }
 
-void GaussDBforOpenGaussUserForList_attributes::setRolbypassrls(bool value)
+void GaussDBforOpenGaussUserForList_attribute::setRolbypassrls(bool value)
 {
     rolbypassrls_ = value;
     rolbypassrlsIsSet_ = true;
 }
 
-bool GaussDBforOpenGaussUserForList_attributes::rolbypassrlsIsSet() const
+bool GaussDBforOpenGaussUserForList_attribute::rolbypassrlsIsSet() const
 {
     return rolbypassrlsIsSet_;
 }
 
-void GaussDBforOpenGaussUserForList_attributes::unsetrolbypassrls()
+void GaussDBforOpenGaussUserForList_attribute::unsetrolbypassrls()
 {
     rolbypassrlsIsSet_ = false;
+}
+
+std::string GaussDBforOpenGaussUserForList_attribute::getRolpassworddeadline() const
+{
+    return rolpassworddeadline_;
+}
+
+void GaussDBforOpenGaussUserForList_attribute::setRolpassworddeadline(const std::string& value)
+{
+    rolpassworddeadline_ = value;
+    rolpassworddeadlineIsSet_ = true;
+}
+
+bool GaussDBforOpenGaussUserForList_attribute::rolpassworddeadlineIsSet() const
+{
+    return rolpassworddeadlineIsSet_;
+}
+
+void GaussDBforOpenGaussUserForList_attribute::unsetrolpassworddeadline()
+{
+    rolpassworddeadlineIsSet_ = false;
 }
 
 }

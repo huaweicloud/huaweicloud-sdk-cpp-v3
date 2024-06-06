@@ -78,10 +78,10 @@ public:
     /// 实例版本信息。
     /// </summary>
 
-    double getVersion() const;
+    std::string getVersion() const;
     bool versionIsSet() const;
     void unsetversion();
-    void setVersion(double value);
+    void setVersion(const std::string& value);
 
     /// <summary>
     /// 部署形态。
@@ -111,7 +111,7 @@ protected:
     bool volumeTypeIsSet_;
     double dataVolumeSize_;
     bool dataVolumeSizeIsSet_;
-    double version_;
+    std::string version_;
     bool versionIsSet_;
     std::string mode_;
     bool modeIsSet_;

@@ -12,10 +12,12 @@ namespace Model {
 
 LTSIndexConfigInfo::LTSIndexConfigInfo()
 {
-    logStreamId_ = "";
-    logStreamIdIsSet_ = false;
     fullTextIndexIsSet_ = false;
     fieldsIsSet_ = false;
+    sqlAnalysisEnable_ = false;
+    sqlAnalysisEnableIsSet_ = false;
+    logStreamId_ = "";
+    logStreamIdIsSet_ = false;
 }
 
 LTSIndexConfigInfo::~LTSIndexConfigInfo() = default;
@@ -28,14 +30,17 @@ web::json::value LTSIndexConfigInfo::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(logStreamIdIsSet_) {
-        val[utility::conversions::to_string_t("logStreamId")] = ModelBase::toJson(logStreamId_);
-    }
     if(fullTextIndexIsSet_) {
         val[utility::conversions::to_string_t("fullTextIndex")] = ModelBase::toJson(fullTextIndex_);
     }
     if(fieldsIsSet_) {
         val[utility::conversions::to_string_t("fields")] = ModelBase::toJson(fields_);
+    }
+    if(sqlAnalysisEnableIsSet_) {
+        val[utility::conversions::to_string_t("sqlAnalysisEnable")] = ModelBase::toJson(sqlAnalysisEnable_);
+    }
+    if(logStreamIdIsSet_) {
+        val[utility::conversions::to_string_t("logStreamId")] = ModelBase::toJson(logStreamId_);
     }
 
     return val;
@@ -44,15 +49,6 @@ bool LTSIndexConfigInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("logStreamId"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("logStreamId"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setLogStreamId(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("fullTextIndex"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("fullTextIndex"));
         if(!fieldValue.is_null())
@@ -71,30 +67,27 @@ bool LTSIndexConfigInfo::fromJson(const web::json::value& val)
             setFields(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("sqlAnalysisEnable"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sqlAnalysisEnable"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSqlAnalysisEnable(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("logStreamId"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("logStreamId"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLogStreamId(refVal);
+        }
+    }
     return ok;
 }
 
-
-std::string LTSIndexConfigInfo::getLogStreamId() const
-{
-    return logStreamId_;
-}
-
-void LTSIndexConfigInfo::setLogStreamId(const std::string& value)
-{
-    logStreamId_ = value;
-    logStreamIdIsSet_ = true;
-}
-
-bool LTSIndexConfigInfo::logStreamIdIsSet() const
-{
-    return logStreamIdIsSet_;
-}
-
-void LTSIndexConfigInfo::unsetlogStreamId()
-{
-    logStreamIdIsSet_ = false;
-}
 
 LTSFullTextIndexInfo LTSIndexConfigInfo::getFullTextIndex() const
 {
@@ -136,6 +129,48 @@ bool LTSIndexConfigInfo::fieldsIsSet() const
 void LTSIndexConfigInfo::unsetfields()
 {
     fieldsIsSet_ = false;
+}
+
+bool LTSIndexConfigInfo::isSqlAnalysisEnable() const
+{
+    return sqlAnalysisEnable_;
+}
+
+void LTSIndexConfigInfo::setSqlAnalysisEnable(bool value)
+{
+    sqlAnalysisEnable_ = value;
+    sqlAnalysisEnableIsSet_ = true;
+}
+
+bool LTSIndexConfigInfo::sqlAnalysisEnableIsSet() const
+{
+    return sqlAnalysisEnableIsSet_;
+}
+
+void LTSIndexConfigInfo::unsetsqlAnalysisEnable()
+{
+    sqlAnalysisEnableIsSet_ = false;
+}
+
+std::string LTSIndexConfigInfo::getLogStreamId() const
+{
+    return logStreamId_;
+}
+
+void LTSIndexConfigInfo::setLogStreamId(const std::string& value)
+{
+    logStreamId_ = value;
+    logStreamIdIsSet_ = true;
+}
+
+bool LTSIndexConfigInfo::logStreamIdIsSet() const
+{
+    return logStreamIdIsSet_;
+}
+
+void LTSIndexConfigInfo::unsetlogStreamId()
+{
+    logStreamIdIsSet_ = false;
 }
 
 }

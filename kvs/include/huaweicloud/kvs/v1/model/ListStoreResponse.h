@@ -43,7 +43,7 @@ public:
     /// ListStoreResponse members
 
     /// <summary>
-    /// 本次响应后的游标位置，下次请求时携带。 - 长度：[3,255] - 取值字符限制：[a-zA-Z0-9_.-]+ &gt; 如果为空，表示后面无更多。
+    /// 本次响应后的游标位置，下次请求时携带。 - 长度：[16,52] - 取值字符限制：[a-z0-9-]+ &gt; 如果为空，表示后面无更多仓名。
     /// </summary>
 
     std::string getCursorName() const;

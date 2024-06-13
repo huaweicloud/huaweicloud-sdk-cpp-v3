@@ -44,7 +44,7 @@ public:
     /// ScanKvResponse members
 
     /// <summary>
-    /// 返回的文档数量，为0不表示结束， &gt; 如果filtered_count超过500仍无匹配，则返回0
+    /// 返回的文档数量，为0不表示结束。 &gt; 如果filtered_count超过500仍无匹配，则返回0。
     /// </summary>
 
     int32_t getReturnedCount() const;

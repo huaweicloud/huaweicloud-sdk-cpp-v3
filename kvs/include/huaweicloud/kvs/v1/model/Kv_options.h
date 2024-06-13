@@ -41,7 +41,7 @@ public:
     /// Kv_options members
 
     /// <summary>
-    /// - true:返回操作执行前的内容，默认true - false:返回操作执行后的内容
+    /// - true:返回操作执行前的内容，默认true。 - false:返回操作执行后的内容。
     /// </summary>
 
     bool isReturnHint() const;

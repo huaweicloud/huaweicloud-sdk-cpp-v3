@@ -32,6 +32,12 @@ public:
             { 
                 "https://eps.eu-west-101.myhuaweicloud.eu"
             });
+        regions["ru-moscow-1"] = Region("ru-moscow-1",
+            { 
+                "https://eps.ru-moscow-1.myhuaweicloud.com",
+
+                "https://eps.ru-moscow-1.myhuaweicloud.cn"
+            });
         return regions;
     }
 private:

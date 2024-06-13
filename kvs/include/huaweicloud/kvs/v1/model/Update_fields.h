@@ -62,7 +62,7 @@ public:
     void setAdd(const Document& value);
 
     /// <summary>
-    /// 
+    /// 删除1个或多个字段。 - 数组元素为待删除字段名。
     /// </summary>
 
     std::vector<std::string>& getRmv();

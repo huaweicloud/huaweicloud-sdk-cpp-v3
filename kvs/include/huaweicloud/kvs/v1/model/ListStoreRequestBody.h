@@ -42,7 +42,7 @@ public:
     /// ListStoreRequestBody members
 
     /// <summary>
-    /// 上次返回的游标位置，本次响应包含该仓名。 - 长度：[3,255] - 取值字符限制：[a-zA-Z0-9_.-]+ &gt; 如果为空，表示后面无更多。
+    /// 上次返回的游标位置，本次响应包含该仓名。 - 长度：[16,52] - 取值字符限制：[a-z0-9-]+
     /// </summary>
 
     std::string getCursorName() const;
@@ -51,7 +51,7 @@ public:
     void setCursorName(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 响应返回的仓个数。
     /// </summary>
 
     int32_t getLimit() const;

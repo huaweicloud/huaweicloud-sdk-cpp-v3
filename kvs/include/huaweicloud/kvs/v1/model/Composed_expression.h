@@ -44,7 +44,7 @@ public:
     /// Composed_expression members
 
     /// <summary>
-    /// 逻辑关系，取值如\&quot;$and\&quot;, \&quot;$or\&quot;, \&quot;$nor\&quot;
+    /// 逻辑关系，取值如\&quot;$and\&quot;, \&quot;$or\&quot;, \&quot;$nor\&quot;。
     /// </summary>
 
     std::string getLogic() const;
@@ -53,7 +53,7 @@ public:
     void setLogic(const std::string& value);
 
     /// <summary>
-    /// 多个相同优先级且相同逻辑的单字段或多字段条件
+    /// 多个相同优先级且相同逻辑的单字段或多字段条件。
     /// </summary>
 
     std::vector<Expression>& getExpressions();

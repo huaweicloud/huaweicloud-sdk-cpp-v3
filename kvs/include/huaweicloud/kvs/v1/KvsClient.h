@@ -88,6 +88,7 @@ public:
     );
     // 列举仓
     //
+    // 一个账户下可能存在多个仓，每个账户下的store数量有限制，响应中一次性返回所有仓名称。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListStoreResponse> listStore(

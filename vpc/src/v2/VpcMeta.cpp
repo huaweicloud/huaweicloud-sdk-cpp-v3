@@ -22,7 +22,25 @@ HttpRequestDef VpcMeta::genRequestDefForAssociateRouteTable() {
     return reqDefBuilder;
 }
 
+HttpRequestDef VpcMeta::genRequestDefForBatchCreateSecurityGroupTags() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef VpcMeta::genRequestDefForBatchCreateSubnetTags() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef VpcMeta::genRequestDefForBatchDeleteSecurityGroupTags() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
@@ -85,6 +103,15 @@ HttpRequestDef VpcMeta::genRequestDefForCreateSecurityGroupRule() {
     return reqDefBuilder;
 }
 
+HttpRequestDef VpcMeta::genRequestDefForCreateSecurityGroupTag() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef VpcMeta::genRequestDefForCreateSubnet() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -133,6 +160,11 @@ HttpRequestDef VpcMeta::genRequestDefForDeleteSecurityGroup() {
 }
 
 HttpRequestDef VpcMeta::genRequestDefForDeleteSecurityGroupRule() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef VpcMeta::genRequestDefForDeleteSecurityGroupTag() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
@@ -289,6 +321,11 @@ HttpRequestDef VpcMeta::genRequestDefForListSecurityGroupRules() {
     return reqDefBuilder;
 }
 
+HttpRequestDef VpcMeta::genRequestDefForListSecurityGroupTags() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef VpcMeta::genRequestDefForListSecurityGroups() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Limit")
@@ -303,6 +340,15 @@ HttpRequestDef VpcMeta::genRequestDefForListSecurityGroups() {
     reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
                   .withJsonTag("enterprise_project_id")
                   .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef VpcMeta::genRequestDefForListSecurityGroupsByTags() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
     return reqDefBuilder;
 }
 
@@ -394,6 +440,11 @@ HttpRequestDef VpcMeta::genRequestDefForShowSecurityGroup() {
 }
 
 HttpRequestDef VpcMeta::genRequestDefForShowSecurityGroupRule() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef VpcMeta::genRequestDefForShowSecurityGroupTags() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }

@@ -42,7 +42,7 @@ public:
     /// Global_secondary_index_info members
 
     /// <summary>
-    /// 二级索引名称
+    /// 二级索引名称。
     /// </summary>
 
     std::string getIndexName() const;

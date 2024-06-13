@@ -465,7 +465,7 @@ bool ServerDetail::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("fault"));
         if(!fieldValue.is_null())
         {
-            ServerFault refVal;
+            Object refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFault(refVal);
         }
@@ -1164,12 +1164,12 @@ void ServerDetail::unsetaccessIPv6()
     accessIPv6IsSet_ = false;
 }
 
-ServerFault ServerDetail::getFault() const
+Object ServerDetail::getFault() const
 {
     return fault_;
 }
 
-void ServerDetail::setFault(const ServerFault& value)
+void ServerDetail::setFault(const Object& value)
 {
     fault_ = value;
     faultIsSet_ = true;

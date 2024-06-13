@@ -15,13 +15,16 @@ class HUAWEICLOUD_VPC_V2_EXPORT  VpcMeta {
 public:
     static HttpRequestDef genRequestDefForAcceptVpcPeering();
     static HttpRequestDef genRequestDefForAssociateRouteTable();
+    static HttpRequestDef genRequestDefForBatchCreateSecurityGroupTags();
     static HttpRequestDef genRequestDefForBatchCreateSubnetTags();
+    static HttpRequestDef genRequestDefForBatchDeleteSecurityGroupTags();
     static HttpRequestDef genRequestDefForBatchDeleteSubnetTags();
     static HttpRequestDef genRequestDefForCreateFlowLog();
     static HttpRequestDef genRequestDefForCreatePort();
     static HttpRequestDef genRequestDefForCreateRouteTable();
     static HttpRequestDef genRequestDefForCreateSecurityGroup();
     static HttpRequestDef genRequestDefForCreateSecurityGroupRule();
+    static HttpRequestDef genRequestDefForCreateSecurityGroupTag();
     static HttpRequestDef genRequestDefForCreateSubnet();
     static HttpRequestDef genRequestDefForCreateSubnetTag();
     static HttpRequestDef genRequestDefForCreateVpcPeering();
@@ -30,6 +33,7 @@ public:
     static HttpRequestDef genRequestDefForDeleteRouteTable();
     static HttpRequestDef genRequestDefForDeleteSecurityGroup();
     static HttpRequestDef genRequestDefForDeleteSecurityGroupRule();
+    static HttpRequestDef genRequestDefForDeleteSecurityGroupTag();
     static HttpRequestDef genRequestDefForDeleteSubnet();
     static HttpRequestDef genRequestDefForDeleteSubnetTag();
     static HttpRequestDef genRequestDefForDeleteVpcPeering();
@@ -38,7 +42,9 @@ public:
     static HttpRequestDef genRequestDefForListPorts();
     static HttpRequestDef genRequestDefForListRouteTables();
     static HttpRequestDef genRequestDefForListSecurityGroupRules();
+    static HttpRequestDef genRequestDefForListSecurityGroupTags();
     static HttpRequestDef genRequestDefForListSecurityGroups();
+    static HttpRequestDef genRequestDefForListSecurityGroupsByTags();
     static HttpRequestDef genRequestDefForListSubnetTags();
     static HttpRequestDef genRequestDefForListSubnets();
     static HttpRequestDef genRequestDefForListSubnetsByTags();
@@ -50,6 +56,7 @@ public:
     static HttpRequestDef genRequestDefForShowRouteTable();
     static HttpRequestDef genRequestDefForShowSecurityGroup();
     static HttpRequestDef genRequestDefForShowSecurityGroupRule();
+    static HttpRequestDef genRequestDefForShowSecurityGroupTags();
     static HttpRequestDef genRequestDefForShowSubnet();
     static HttpRequestDef genRequestDefForShowSubnetTags();
     static HttpRequestDef genRequestDefForShowVpcPeering();

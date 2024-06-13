@@ -14,8 +14,8 @@ ShowDedicatedResourceInfoResponse::ShowDedicatedResourceInfoResponse()
 {
     id_ = "";
     idIsSet_ = false;
-    name_ = "";
-    nameIsSet_ = false;
+    resourceName_ = "";
+    resourceNameIsSet_ = false;
     engineName_ = "";
     engineNameIsSet_ = false;
     availabilityZoneIdsIsSet_ = false;
@@ -40,8 +40,8 @@ web::json::value ShowDedicatedResourceInfoResponse::toJson() const
     if(idIsSet_) {
         val[utility::conversions::to_string_t("id")] = ModelBase::toJson(id_);
     }
-    if(nameIsSet_) {
-        val[utility::conversions::to_string_t("name")] = ModelBase::toJson(name_);
+    if(resourceNameIsSet_) {
+        val[utility::conversions::to_string_t("resource_name")] = ModelBase::toJson(resourceName_);
     }
     if(engineNameIsSet_) {
         val[utility::conversions::to_string_t("engine_name")] = ModelBase::toJson(engineName_);
@@ -77,13 +77,13 @@ bool ShowDedicatedResourceInfoResponse::fromJson(const web::json::value& val)
             setId(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("name"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("name"));
+    if(val.has_field(utility::conversions::to_string_t("resource_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("resource_name"));
         if(!fieldValue.is_null())
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setName(refVal);
+            setResourceName(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("engine_name"))) {
@@ -165,25 +165,25 @@ void ShowDedicatedResourceInfoResponse::unsetid()
     idIsSet_ = false;
 }
 
-std::string ShowDedicatedResourceInfoResponse::getName() const
+std::string ShowDedicatedResourceInfoResponse::getResourceName() const
 {
-    return name_;
+    return resourceName_;
 }
 
-void ShowDedicatedResourceInfoResponse::setName(const std::string& value)
+void ShowDedicatedResourceInfoResponse::setResourceName(const std::string& value)
 {
-    name_ = value;
-    nameIsSet_ = true;
+    resourceName_ = value;
+    resourceNameIsSet_ = true;
 }
 
-bool ShowDedicatedResourceInfoResponse::nameIsSet() const
+bool ShowDedicatedResourceInfoResponse::resourceNameIsSet() const
 {
-    return nameIsSet_;
+    return resourceNameIsSet_;
 }
 
-void ShowDedicatedResourceInfoResponse::unsetname()
+void ShowDedicatedResourceInfoResponse::unsetresourceName()
 {
-    nameIsSet_ = false;
+    resourceNameIsSet_ = false;
 }
 
 std::string ShowDedicatedResourceInfoResponse::getEngineName() const

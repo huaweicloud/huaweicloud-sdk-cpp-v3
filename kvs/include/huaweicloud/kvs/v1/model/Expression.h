@@ -13,8 +13,6 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/kvs/v1/model/Single_field_expression.h>
-#include <huaweicloud/kvs/v1/model/Multi_field_expression.h>
-#include <huaweicloud/kvs/v1/model/Single_kv_expression.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -47,37 +45,15 @@ public:
     /// 
     /// </summary>
 
-    Single_kv_expression getSingleKvExpression() const;
-    bool singleKvExpressionIsSet() const;
-    void unsetsingleKvExpression();
-    void setSingleKvExpression(const Single_kv_expression& value);
-
-    /// <summary>
-    /// 
-    /// </summary>
-
     Single_field_expression getSingleFieldExpression() const;
     bool singleFieldExpressionIsSet() const;
     void unsetsingleFieldExpression();
     void setSingleFieldExpression(const Single_field_expression& value);
 
-    /// <summary>
-    /// 
-    /// </summary>
-
-    Multi_field_expression getMultiFieldExpression() const;
-    bool multiFieldExpressionIsSet() const;
-    void unsetmultiFieldExpression();
-    void setMultiFieldExpression(const Multi_field_expression& value);
-
 
 protected:
-    Single_kv_expression singleKvExpression_;
-    bool singleKvExpressionIsSet_;
     Single_field_expression singleFieldExpression_;
     bool singleFieldExpressionIsSet_;
-    Multi_field_expression multiFieldExpression_;
-    bool multiFieldExpressionIsSet_;
 
 };
 

@@ -54,10 +54,10 @@ public:
     /// 专属资源池名称。
     /// </summary>
 
-    std::string getName() const;
-    bool nameIsSet() const;
-    void unsetname();
-    void setName(const std::string& value);
+    std::string getResourceName() const;
+    bool resourceNameIsSet() const;
+    void unsetresourceName();
+    void setResourceName(const std::string& value);
 
     /// <summary>
     /// 引擎名称。
@@ -117,8 +117,8 @@ public:
 protected:
     std::string id_;
     bool idIsSet_;
-    std::string name_;
-    bool nameIsSet_;
+    std::string resourceName_;
+    bool resourceNameIsSet_;
     std::string engineName_;
     bool engineNameIsSet_;
     std::vector<std::string> availabilityZoneIds_;

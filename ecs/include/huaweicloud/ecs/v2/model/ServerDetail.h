@@ -9,11 +9,11 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/core/utils/Object.h>
 #include <huaweicloud/ecs/v2/model/ServerImage.h>
 #include <huaweicloud/ecs/v2/model/ServerExtendVolumeAttachment.h>
 #include <huaweicloud/ecs/v2/model/ServerSchedulerHints.h>
 #include <string>
-#include <huaweicloud/ecs/v2/model/ServerFault.h>
 #include <huaweicloud/ecs/v2/model/Hypervisor.h>
 #include <vector>
 #include <huaweicloud/ecs/v2/model/ServerSystemTag.h>
@@ -258,13 +258,13 @@ public:
     void setAccessIPv6(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 弹性云服务器故障信息。  可选参数，在弹性云服务器状态为ERROR且存在异常的情况下返回。
     /// </summary>
 
-    ServerFault getFault() const;
+    Object getFault() const;
     bool faultIsSet() const;
     void unsetfault();
-    void setFault(const ServerFault& value);
+    void setFault(const Object& value);
 
     /// <summary>
     /// 弹性云服务器进度。
@@ -521,7 +521,7 @@ protected:
     bool accessIPv4IsSet_;
     std::string accessIPv6_;
     bool accessIPv6IsSet_;
-    ServerFault fault_;
+    Object fault_;
     bool faultIsSet_;
     int32_t progress_;
     bool progressIsSet_;

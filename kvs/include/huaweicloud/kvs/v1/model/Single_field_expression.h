@@ -53,7 +53,7 @@ public:
     void setField(const std::string& value);
 
     /// <summary>
-    /// 条件函数，取值如\&quot;$gt\&quot;, $lt\&quot;,\&quot;$gte\&quot;, $lte\&quot; \&quot;$eq\&quot;, \&quot;$ne\&quot;, \&quot;$prefix\&quot;, \&quot;$in\&quot;,\&quot;$nin\&quot;, \&quot;$exists\&quot;
+    /// 条件函数，取值如\&quot;$gt\&quot;, $lt\&quot;,\&quot;$gte\&quot;, $lte\&quot; \&quot;$eq\&quot;, \&quot;$ne\&quot;, \&quot;$prefix\&quot;, \&quot;$exists\&quot;。
     /// </summary>
 
     std::string getFunc() const;
@@ -62,7 +62,7 @@ public:
     void setFunc(const std::string& value);
 
     /// <summary>
-    /// value和value_array二选一。 - value条件值，适用于除\&quot;$in\&quot;, \&quot;$nin\&quot;外的func - 字段名无意义，可以传空，也可以传字段名。 - $exists值为true/false &gt; $prefix操作只适用于string和binary类型。
+    /// value和value_array二选一。 - value条件值，适用于除\&quot;$in\&quot;, \&quot;$nin\&quot;外的func。 - 字段名无意义，可以传空，也可以传字段名。 - $exists值为true/false。 &gt; $prefix操作只适用于string和binary类型。
     /// </summary>
 
     Document getValue() const;
@@ -71,7 +71,7 @@ public:
     void setValue(const Document& value);
 
     /// <summary>
-    /// \&quot;value\&quot;和\&quot;value_array\&quot;二选一。 - \&quot;value_array\&quot; 条件值列表, 值用于\&quot;$in\&quot;, \&quot;$nin\&quot;
+    /// \&quot;value\&quot;和\&quot;value_array\&quot;二选一。 - \&quot;value_array\&quot; 条件值列表, 值用于\&quot;$in\&quot;, \&quot;$nin\&quot;。
     /// </summary>
 
     std::vector<Document>& getValueArray();

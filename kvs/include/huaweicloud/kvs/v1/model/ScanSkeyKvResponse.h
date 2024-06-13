@@ -53,7 +53,7 @@ public:
     void setReturnedCount(int32_t value);
 
     /// <summary>
-    /// 被过滤掉的文档数量 - 长度：4
+    /// 被过滤掉的文档数量。 - 长度：4
     /// </summary>
 
     int32_t getFilteredCount() const;

@@ -14,6 +14,8 @@ ShowReplayDelayStatusResponse::ShowReplayDelayStatusResponse()
 {
     curDelayTimeMills_ = 0;
     curDelayTimeMillsIsSet_ = false;
+    delayTimeValueRange_ = "";
+    delayTimeValueRangeIsSet_ = false;
     realDelayTimeMills_ = 0;
     realDelayTimeMillsIsSet_ = false;
     curLogReplayPaused_ = false;
@@ -36,6 +38,9 @@ web::json::value ShowReplayDelayStatusResponse::toJson() const
 
     if(curDelayTimeMillsIsSet_) {
         val[utility::conversions::to_string_t("cur_delay_time_mills")] = ModelBase::toJson(curDelayTimeMills_);
+    }
+    if(delayTimeValueRangeIsSet_) {
+        val[utility::conversions::to_string_t("delay_time_value_range")] = ModelBase::toJson(delayTimeValueRange_);
     }
     if(realDelayTimeMillsIsSet_) {
         val[utility::conversions::to_string_t("real_delay_time_mills")] = ModelBase::toJson(realDelayTimeMills_);
@@ -63,6 +68,15 @@ bool ShowReplayDelayStatusResponse::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCurDelayTimeMills(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("delay_time_value_range"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("delay_time_value_range"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDelayTimeValueRange(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("real_delay_time_mills"))) {
@@ -124,6 +138,27 @@ bool ShowReplayDelayStatusResponse::curDelayTimeMillsIsSet() const
 void ShowReplayDelayStatusResponse::unsetcurDelayTimeMills()
 {
     curDelayTimeMillsIsSet_ = false;
+}
+
+std::string ShowReplayDelayStatusResponse::getDelayTimeValueRange() const
+{
+    return delayTimeValueRange_;
+}
+
+void ShowReplayDelayStatusResponse::setDelayTimeValueRange(const std::string& value)
+{
+    delayTimeValueRange_ = value;
+    delayTimeValueRangeIsSet_ = true;
+}
+
+bool ShowReplayDelayStatusResponse::delayTimeValueRangeIsSet() const
+{
+    return delayTimeValueRangeIsSet_;
+}
+
+void ShowReplayDelayStatusResponse::unsetdelayTimeValueRange()
+{
+    delayTimeValueRangeIsSet_ = false;
 }
 
 int32_t ShowReplayDelayStatusResponse::getRealDelayTimeMills() const

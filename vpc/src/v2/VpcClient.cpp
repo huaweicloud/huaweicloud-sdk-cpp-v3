@@ -104,6 +104,48 @@ std::shared_ptr<AssociateRouteTableResponse> VpcClient::associateRouteTable(Asso
 
     return localVarResult;
 }
+std::shared_ptr<BatchCreateSecurityGroupTagsResponse> VpcClient::batchCreateSecurityGroupTags(BatchCreateSecurityGroupTagsRequest &request)
+{
+    std::string localVarPath = "/v2.0/{project_id}/security-groups/{security_group_id}/tags/action";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["security_group_id"] = parameterToString(request.getSecurityGroupId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, VpcMeta::genRequestDefForBatchCreateSecurityGroupTags());
+
+    std::shared_ptr<BatchCreateSecurityGroupTagsResponse> localVarResult = std::make_shared<BatchCreateSecurityGroupTagsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<BatchCreateSubnetTagsResponse> VpcClient::batchCreateSubnetTags(BatchCreateSubnetTagsRequest &request)
 {
     std::string localVarPath = "/v2.0/{project_id}/subnets/{subnet_id}/tags/action";
@@ -134,6 +176,48 @@ std::shared_ptr<BatchCreateSubnetTagsResponse> VpcClient::batchCreateSubnetTags(
         localVarHeaderParams, localVarHttpBody, VpcMeta::genRequestDefForBatchCreateSubnetTags());
 
     std::shared_ptr<BatchCreateSubnetTagsResponse> localVarResult = std::make_shared<BatchCreateSubnetTagsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<BatchDeleteSecurityGroupTagsResponse> VpcClient::batchDeleteSecurityGroupTags(BatchDeleteSecurityGroupTagsRequest &request)
+{
+    std::string localVarPath = "/v2.0/{project_id}/security-groups/{security_group_id}/tags/action";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["security_group_id"] = parameterToString(request.getSecurityGroupId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, VpcMeta::genRequestDefForBatchDeleteSecurityGroupTags());
+
+    std::shared_ptr<BatchDeleteSecurityGroupTagsResponse> localVarResult = std::make_shared<BatchDeleteSecurityGroupTagsResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -381,6 +465,48 @@ std::shared_ptr<CreateSecurityGroupRuleResponse> VpcClient::createSecurityGroupR
         localVarHeaderParams, localVarHttpBody, VpcMeta::genRequestDefForCreateSecurityGroupRule());
 
     std::shared_ptr<CreateSecurityGroupRuleResponse> localVarResult = std::make_shared<CreateSecurityGroupRuleResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<CreateSecurityGroupTagResponse> VpcClient::createSecurityGroupTag(CreateSecurityGroupTagRequest &request)
+{
+    std::string localVarPath = "/v2.0/{project_id}/security-groups/{security_group_id}/tags";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["security_group_id"] = parameterToString(request.getSecurityGroupId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, VpcMeta::genRequestDefForCreateSecurityGroupTag());
+
+    std::shared_ptr<CreateSecurityGroupTagResponse> localVarResult = std::make_shared<CreateSecurityGroupTagResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -661,6 +787,37 @@ std::shared_ptr<DeleteSecurityGroupRuleResponse> VpcClient::deleteSecurityGroupR
         localVarHeaderParams, localVarHttpBody, VpcMeta::genRequestDefForDeleteSecurityGroupRule());
 
     std::shared_ptr<DeleteSecurityGroupRuleResponse> localVarResult = std::make_shared<DeleteSecurityGroupRuleResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<DeleteSecurityGroupTagResponse> VpcClient::deleteSecurityGroupTag(DeleteSecurityGroupTagRequest &request)
+{
+    std::string localVarPath = "/v2.0/{project_id}/security-groups/{security_group_id}/tags/{key}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["key"] = parameterToString(request.getKey());
+    localVarPathParams["security_group_id"] = parameterToString(request.getSecurityGroupId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, VpcMeta::genRequestDefForDeleteSecurityGroupTag());
+
+    std::shared_ptr<DeleteSecurityGroupTagResponse> localVarResult = std::make_shared<DeleteSecurityGroupTagResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -1025,6 +1182,35 @@ std::shared_ptr<ListSecurityGroupRulesResponse> VpcClient::listSecurityGroupRule
 
     return localVarResult;
 }
+std::shared_ptr<ListSecurityGroupTagsResponse> VpcClient::listSecurityGroupTags(ListSecurityGroupTagsRequest &request)
+{
+    std::string localVarPath = "/v2.0/{project_id}/security-groups/tags";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, VpcMeta::genRequestDefForListSecurityGroupTags());
+
+    std::shared_ptr<ListSecurityGroupTagsResponse> localVarResult = std::make_shared<ListSecurityGroupTagsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListSecurityGroupsResponse> VpcClient::listSecurityGroups(ListSecurityGroupsRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/security-groups";
@@ -1063,6 +1249,47 @@ std::shared_ptr<ListSecurityGroupsResponse> VpcClient::listSecurityGroups(ListSe
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListSecurityGroupsByTagsResponse> VpcClient::listSecurityGroupsByTags(ListSecurityGroupsByTagsRequest &request)
+{
+    std::string localVarPath = "/v2.0/{project_id}/security-groups/resource_instances/action";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, VpcMeta::genRequestDefForListSecurityGroupsByTags());
+
+    std::shared_ptr<ListSecurityGroupsByTagsResponse> localVarResult = std::make_shared<ListSecurityGroupsByTagsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
 
     return localVarResult;
 }
@@ -1430,6 +1657,36 @@ std::shared_ptr<ShowSecurityGroupRuleResponse> VpcClient::showSecurityGroupRule(
         localVarHeaderParams, localVarHttpBody, VpcMeta::genRequestDefForShowSecurityGroupRule());
 
     std::shared_ptr<ShowSecurityGroupRuleResponse> localVarResult = std::make_shared<ShowSecurityGroupRuleResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowSecurityGroupTagsResponse> VpcClient::showSecurityGroupTags(ShowSecurityGroupTagsRequest &request)
+{
+    std::string localVarPath = "/v2.0/{project_id}/security-groups/{security_group_id}/tags";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["security_group_id"] = parameterToString(request.getSecurityGroupId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, VpcMeta::genRequestDefForShowSecurityGroupTags());
+
+    std::shared_ptr<ShowSecurityGroupTagsResponse> localVarResult = std::make_shared<ShowSecurityGroupTagsResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

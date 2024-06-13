@@ -62,7 +62,7 @@ public:
     void setHintIndexName(const std::string& value);
 
     /// <summary>
-    /// 数据量不超过1mb时，返回的文档个数，最大100个，默认1mb或者100个文档。
+    /// 数据量不超过1MB时，返回的文档个数，最大100个，默认1MB或者100个文档。
     /// </summary>
 
     int32_t getLimit() const;

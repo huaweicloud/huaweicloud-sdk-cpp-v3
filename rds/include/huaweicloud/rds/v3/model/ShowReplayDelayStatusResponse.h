@@ -48,6 +48,15 @@ public:
     void setCurDelayTimeMills(int32_t value);
 
     /// <summary>
+    /// 延迟时间参数取值范围
+    /// </summary>
+
+    std::string getDelayTimeValueRange() const;
+    bool delayTimeValueRangeIsSet() const;
+    void unsetdelayTimeValueRange();
+    void setDelayTimeValueRange(const std::string& value);
+
+    /// <summary>
     /// 真实延迟时间，单位ms
     /// </summary>
 
@@ -87,6 +96,8 @@ public:
 protected:
     int32_t curDelayTimeMills_;
     bool curDelayTimeMillsIsSet_;
+    std::string delayTimeValueRange_;
+    bool delayTimeValueRangeIsSet_;
     int32_t realDelayTimeMills_;
     bool realDelayTimeMillsIsSet_;
     bool curLogReplayPaused_;

@@ -1,3 +1,114 @@
+# 3.1.90 2024-06-13
+
+### HuaweiCloud SDK ECS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowServer**
+    - changes of response param
+      - `- server.fault.code`
+      - `- server.fault.created`
+      - `- server.fault.message`
+      - `- server.fault.details`
+      - `* server.fault: object<ServerFault> -> object`
+  - **ListServersDetails**
+    - changes of response param
+      - `- servers.fault.code`
+      - `- servers.fault.created`
+      - `- servers.fault.message`
+      - `- servers.fault.details`
+      - `* servers.fault: object<ServerFault> -> object`
+
+### HuaweiCloud SDK EIP
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **DisassociatePublicips**
+    - changes of response param
+      - `- publicip.associate_instance_type: enum value [null]`
+  - **AssociatePublicips**
+    - changes of response param
+      - `- publicip.associate_instance_type: enum value [null]`
+  - **UpdatePublicip**
+    - changes of request param
+      - `+ publicip.associate_instance_type: enum value [VPN]`
+      - `- publicip.associate_instance_type: enum value []`
+    - changes of response param
+      - `- publicip.associate_instance_type: enum value [null]`
+
+### HuaweiCloud SDK GaussDB
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowDedicatedResourceInfo**
+    - changes of response param
+      - `+ resource_name`
+      - `- name`
+
+### HuaweiCloud SDK KVS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **PutKv**
+    - changes of request param
+      - `- condition_expression.composed_expression.expressions.single_kv_expression`
+      - `- condition_expression.composed_expression.expressions.multi_field_expression`
+  - **UpdateKv**
+    - changes of request param
+      - `- condition_expression.composed_expression.expressions.single_kv_expression`
+      - `- condition_expression.composed_expression.expressions.multi_field_expression`
+  - **DeleteKv**
+    - changes of request param
+      - `- condition_expression.composed_expression.expressions.single_kv_expression`
+      - `- condition_expression.composed_expression.expressions.multi_field_expression`
+  - **ScanKv**
+    - changes of request param
+      - `- filter_expression.composed_expression.expressions.single_kv_expression`
+      - `- filter_expression.composed_expression.expressions.multi_field_expression`
+  - **ScanSkeyKv**
+    - changes of request param
+      - `- filter_expression.composed_expression.expressions.single_kv_expression`
+      - `- filter_expression.composed_expression.expressions.multi_field_expression`
+
+### HuaweiCloud SDK RDS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowReplayDelayStatus**
+    - changes of response param
+      - `+ delay_time_value_range`
+
+### HuaweiCloud SDK VPC
+
+- _Features_
+  - Support the following APIs:
+    - `ListSecurityGroupsByTags`
+    - `BatchCreateSecurityGroupTags`
+    - `BatchDeleteSecurityGroupTags`
+    - `ShowSecurityGroupTags`
+    - `CreateSecurityGroupTag`
+    - `DeleteSecurityGroupTag`
+    - `ListSecurityGroupTags`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.89 2024-06-06
 
 ### HuaweiCloud SDK ECS

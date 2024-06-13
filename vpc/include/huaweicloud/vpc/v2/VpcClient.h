@@ -10,9 +10,15 @@
 #include <huaweicloud/vpc/v2/model/AcceptVpcPeeringResponse.h>
 #include <huaweicloud/vpc/v2/model/AssociateRouteTableRequest.h>
 #include <huaweicloud/vpc/v2/model/AssociateRouteTableResponse.h>
+#include <huaweicloud/vpc/v2/model/BatchCreateSecurityGroupTagsRequest.h>
+#include <huaweicloud/vpc/v2/model/BatchCreateSecurityGroupTagsRequestBody.h>
+#include <huaweicloud/vpc/v2/model/BatchCreateSecurityGroupTagsResponse.h>
 #include <huaweicloud/vpc/v2/model/BatchCreateSubnetTagsRequest.h>
 #include <huaweicloud/vpc/v2/model/BatchCreateSubnetTagsRequestBody.h>
 #include <huaweicloud/vpc/v2/model/BatchCreateSubnetTagsResponse.h>
+#include <huaweicloud/vpc/v2/model/BatchDeleteSecurityGroupTagsRequest.h>
+#include <huaweicloud/vpc/v2/model/BatchDeleteSecurityGroupTagsRequestBody.h>
+#include <huaweicloud/vpc/v2/model/BatchDeleteSecurityGroupTagsResponse.h>
 #include <huaweicloud/vpc/v2/model/BatchDeleteSubnetTagsRequest.h>
 #include <huaweicloud/vpc/v2/model/BatchDeleteSubnetTagsRequestBody.h>
 #include <huaweicloud/vpc/v2/model/BatchDeleteSubnetTagsResponse.h>
@@ -31,6 +37,9 @@
 #include <huaweicloud/vpc/v2/model/CreateSecurityGroupRuleRequest.h>
 #include <huaweicloud/vpc/v2/model/CreateSecurityGroupRuleRequestBody.h>
 #include <huaweicloud/vpc/v2/model/CreateSecurityGroupRuleResponse.h>
+#include <huaweicloud/vpc/v2/model/CreateSecurityGroupTagRequest.h>
+#include <huaweicloud/vpc/v2/model/CreateSecurityGroupTagRequestBody.h>
+#include <huaweicloud/vpc/v2/model/CreateSecurityGroupTagResponse.h>
 #include <huaweicloud/vpc/v2/model/CreateSubnetRequest.h>
 #include <huaweicloud/vpc/v2/model/CreateSubnetRequestBody.h>
 #include <huaweicloud/vpc/v2/model/CreateSubnetResponse.h>
@@ -50,6 +59,8 @@
 #include <huaweicloud/vpc/v2/model/DeleteSecurityGroupResponse.h>
 #include <huaweicloud/vpc/v2/model/DeleteSecurityGroupRuleRequest.h>
 #include <huaweicloud/vpc/v2/model/DeleteSecurityGroupRuleResponse.h>
+#include <huaweicloud/vpc/v2/model/DeleteSecurityGroupTagRequest.h>
+#include <huaweicloud/vpc/v2/model/DeleteSecurityGroupTagResponse.h>
 #include <huaweicloud/vpc/v2/model/DeleteSubnetRequest.h>
 #include <huaweicloud/vpc/v2/model/DeleteSubnetResponse.h>
 #include <huaweicloud/vpc/v2/model/DeleteSubnetTagRequest.h>
@@ -66,6 +77,11 @@
 #include <huaweicloud/vpc/v2/model/ListRouteTablesResponse.h>
 #include <huaweicloud/vpc/v2/model/ListSecurityGroupRulesRequest.h>
 #include <huaweicloud/vpc/v2/model/ListSecurityGroupRulesResponse.h>
+#include <huaweicloud/vpc/v2/model/ListSecurityGroupTagsRequest.h>
+#include <huaweicloud/vpc/v2/model/ListSecurityGroupTagsResponse.h>
+#include <huaweicloud/vpc/v2/model/ListSecurityGroupsByTagsRequest.h>
+#include <huaweicloud/vpc/v2/model/ListSecurityGroupsByTagsRequestBody.h>
+#include <huaweicloud/vpc/v2/model/ListSecurityGroupsByTagsResponse.h>
 #include <huaweicloud/vpc/v2/model/ListSecurityGroupsRequest.h>
 #include <huaweicloud/vpc/v2/model/ListSecurityGroupsResponse.h>
 #include <huaweicloud/vpc/v2/model/ListSubnetTagsRequest.h>
@@ -92,6 +108,8 @@
 #include <huaweicloud/vpc/v2/model/ShowSecurityGroupResponse.h>
 #include <huaweicloud/vpc/v2/model/ShowSecurityGroupRuleRequest.h>
 #include <huaweicloud/vpc/v2/model/ShowSecurityGroupRuleResponse.h>
+#include <huaweicloud/vpc/v2/model/ShowSecurityGroupTagsRequest.h>
+#include <huaweicloud/vpc/v2/model/ShowSecurityGroupTagsResponse.h>
 #include <huaweicloud/vpc/v2/model/ShowSubnetRequest.h>
 #include <huaweicloud/vpc/v2/model/ShowSubnetResponse.h>
 #include <huaweicloud/vpc/v2/model/ShowSubnetTagsRequest.h>
@@ -332,6 +350,15 @@ public:
     std::shared_ptr<AssociateRouteTableResponse> associateRouteTable(
         AssociateRouteTableRequest &request
     );
+    // 批量创建安全组资源标签
+    //
+    // 为指定的安全组资源实例批量添加标签。
+    // 此接口为幂等接口：创建时如果请求体中存在重复key则报错。创建时，不允许设置重复key数据，如果数据库已存在该key，就覆盖value的值。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchCreateSecurityGroupTagsResponse> batchCreateSecurityGroupTags(
+        BatchCreateSecurityGroupTagsRequest &request
+    );
     // 批量创建子网资源标签
     //
     // 为指定的子网资源实例批量添加标签。
@@ -340,6 +367,15 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<BatchCreateSubnetTagsResponse> batchCreateSubnetTags(
         BatchCreateSubnetTagsRequest &request
+    );
+    // 批量删除安全组资源标签
+    //
+    // 为指定的安全组资源实例批量删除标签
+    // 此接口为幂等接口：删除时，如果删除的标签不存在，默认处理成功；删除时不对标签字符集范围做校验。删除时tags结构体不能缺失，key不能为空，或者空字符串。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchDeleteSecurityGroupTagsResponse> batchDeleteSecurityGroupTags(
+        BatchDeleteSecurityGroupTagsRequest &request
     );
     // 批量删除子网资源标签
     //
@@ -391,6 +427,15 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateSecurityGroupRuleResponse> createSecurityGroupRule(
         CreateSecurityGroupRuleRequest &request
+    );
+    // 创建安全组资源标签
+    //
+    // 给指定安全组资源实例增加标签信息。
+    // 此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateSecurityGroupTagResponse> createSecurityGroupTag(
+        CreateSecurityGroupTagRequest &request
     );
     // 创建子网
     //
@@ -456,6 +501,15 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteSecurityGroupRuleResponse> deleteSecurityGroupRule(
         DeleteSecurityGroupRuleRequest &request
+    );
+    // 删除安全组资源标签
+    //
+    // 删除指定安全组资源实例的标签信息。
+    // 该接口为幂等接口：删除的key不存在报404，Key不能为空或者空字符串
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteSecurityGroupTagResponse> deleteSecurityGroupTag(
+        DeleteSecurityGroupTagRequest &request
     );
     // 删除子网
     //
@@ -523,6 +577,14 @@ public:
     std::shared_ptr<ListSecurityGroupRulesResponse> listSecurityGroupRules(
         ListSecurityGroupRulesRequest &request
     );
+    // 查询安全组项目标签
+    //
+    // 查询租户在指定区域和实例类型的所有标签集合
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListSecurityGroupTagsResponse> listSecurityGroupTags(
+        ListSecurityGroupTagsRequest &request
+    );
     // 查询安全组列表
     //
     // 查询安全组列表
@@ -530,6 +592,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListSecurityGroupsResponse> listSecurityGroups(
         ListSecurityGroupsRequest &request
+    );
+    // 查询安全组资源实例
+    //
+    // 使用标签过滤实例
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListSecurityGroupsByTagsResponse> listSecurityGroupsByTags(
+        ListSecurityGroupsByTagsRequest &request
     );
     // 查询子网项目标签
     //
@@ -618,6 +688,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowSecurityGroupRuleResponse> showSecurityGroupRule(
         ShowSecurityGroupRuleRequest &request
+    );
+    // 查询安全组资源标签
+    //
+    // 查询指定安全组实例的标签信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowSecurityGroupTagsResponse> showSecurityGroupTags(
+        ShowSecurityGroupTagsRequest &request
     );
     // 查询子网
     //

@@ -1,3 +1,114 @@
+# 3.1.90 2024-06-13
+
+### HuaweiCloud SDK ECS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowServer**
+    - 响应参数变更
+      - `- server.fault.code`
+      - `- server.fault.created`
+      - `- server.fault.message`
+      - `- server.fault.details`
+      - `* server.fault: object<ServerFault> -> object`
+  - **ListServersDetails**
+    - 响应参数变更
+      - `- servers.fault.code`
+      - `- servers.fault.created`
+      - `- servers.fault.message`
+      - `- servers.fault.details`
+      - `* servers.fault: object<ServerFault> -> object`
+
+### HuaweiCloud SDK EIP
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **DisassociatePublicips**
+    - 响应参数变更
+      - `- publicip.associate_instance_type: enum value [null]`
+  - **AssociatePublicips**
+    - 响应参数变更
+      - `- publicip.associate_instance_type: enum value [null]`
+  - **UpdatePublicip**
+    - 请求参数变更
+      - `+ publicip.associate_instance_type: enum value [VPN]`
+      - `- publicip.associate_instance_type: enum value []`
+    - 响应参数变更
+      - `- publicip.associate_instance_type: enum value [null]`
+
+### HuaweiCloud SDK GaussDB
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowDedicatedResourceInfo**
+    - 响应参数变更
+      - `+ resource_name`
+      - `- name`
+
+### HuaweiCloud SDK KVS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **PutKv**
+    - 请求参数变更
+      - `- condition_expression.composed_expression.expressions.single_kv_expression`
+      - `- condition_expression.composed_expression.expressions.multi_field_expression`
+  - **UpdateKv**
+    - 请求参数变更
+      - `- condition_expression.composed_expression.expressions.single_kv_expression`
+      - `- condition_expression.composed_expression.expressions.multi_field_expression`
+  - **DeleteKv**
+    - 请求参数变更
+      - `- condition_expression.composed_expression.expressions.single_kv_expression`
+      - `- condition_expression.composed_expression.expressions.multi_field_expression`
+  - **ScanKv**
+    - 请求参数变更
+      - `- filter_expression.composed_expression.expressions.single_kv_expression`
+      - `- filter_expression.composed_expression.expressions.multi_field_expression`
+  - **ScanSkeyKv**
+    - 请求参数变更
+      - `- filter_expression.composed_expression.expressions.single_kv_expression`
+      - `- filter_expression.composed_expression.expressions.multi_field_expression`
+
+### HuaweiCloud SDK RDS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowReplayDelayStatus**
+    - 响应参数变更
+      - `+ delay_time_value_range`
+
+### HuaweiCloud SDK VPC
+
+- _新增特性_
+  - 支持以下接口：
+    - `ListSecurityGroupsByTags`
+    - `BatchCreateSecurityGroupTags`
+    - `BatchDeleteSecurityGroupTags`
+    - `ShowSecurityGroupTags`
+    - `CreateSecurityGroupTag`
+    - `DeleteSecurityGroupTag`
+    - `ListSecurityGroupTags`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.1.89 2024-06-06
 
 ### HuaweiCloud SDK ECS

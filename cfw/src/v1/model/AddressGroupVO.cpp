@@ -12,13 +12,12 @@ namespace Model {
 
 AddressGroupVO::AddressGroupVO()
 {
-    setId_ = "";
-    setIdIsSet_ = false;
+    addressSetType_ = 0;
+    addressSetTypeIsSet_ = false;
     name_ = "";
     nameIsSet_ = false;
-    protocolsIsSet_ = false;
-    serviceSetType_ = 0;
-    serviceSetTypeIsSet_ = false;
+    setId_ = "";
+    setIdIsSet_ = false;
 }
 
 AddressGroupVO::~AddressGroupVO() = default;
@@ -31,17 +30,14 @@ web::json::value AddressGroupVO::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(setIdIsSet_) {
-        val[utility::conversions::to_string_t("set_id")] = ModelBase::toJson(setId_);
+    if(addressSetTypeIsSet_) {
+        val[utility::conversions::to_string_t("address_set_type")] = ModelBase::toJson(addressSetType_);
     }
     if(nameIsSet_) {
         val[utility::conversions::to_string_t("name")] = ModelBase::toJson(name_);
     }
-    if(protocolsIsSet_) {
-        val[utility::conversions::to_string_t("protocols")] = ModelBase::toJson(protocols_);
-    }
-    if(serviceSetTypeIsSet_) {
-        val[utility::conversions::to_string_t("service_set_type")] = ModelBase::toJson(serviceSetType_);
+    if(setIdIsSet_) {
+        val[utility::conversions::to_string_t("set_id")] = ModelBase::toJson(setId_);
     }
 
     return val;
@@ -50,13 +46,13 @@ bool AddressGroupVO::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("set_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("set_id"));
+    if(val.has_field(utility::conversions::to_string_t("address_set_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("address_set_type"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setSetId(refVal);
+            setAddressSetType(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("name"))) {
@@ -68,47 +64,38 @@ bool AddressGroupVO::fromJson(const web::json::value& val)
             setName(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("protocols"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("protocols"));
+    if(val.has_field(utility::conversions::to_string_t("set_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("set_id"));
         if(!fieldValue.is_null())
         {
-            std::vector<int32_t> refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setProtocols(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("service_set_type"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("service_set_type"));
-        if(!fieldValue.is_null())
-        {
-            int32_t refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setServiceSetType(refVal);
+            setSetId(refVal);
         }
     }
     return ok;
 }
 
 
-std::string AddressGroupVO::getSetId() const
+int32_t AddressGroupVO::getAddressSetType() const
 {
-    return setId_;
+    return addressSetType_;
 }
 
-void AddressGroupVO::setSetId(const std::string& value)
+void AddressGroupVO::setAddressSetType(int32_t value)
 {
-    setId_ = value;
-    setIdIsSet_ = true;
+    addressSetType_ = value;
+    addressSetTypeIsSet_ = true;
 }
 
-bool AddressGroupVO::setIdIsSet() const
+bool AddressGroupVO::addressSetTypeIsSet() const
 {
-    return setIdIsSet_;
+    return addressSetTypeIsSet_;
 }
 
-void AddressGroupVO::unsetsetId()
+void AddressGroupVO::unsetaddressSetType()
 {
-    setIdIsSet_ = false;
+    addressSetTypeIsSet_ = false;
 }
 
 std::string AddressGroupVO::getName() const
@@ -132,46 +119,25 @@ void AddressGroupVO::unsetname()
     nameIsSet_ = false;
 }
 
-std::vector<int32_t>& AddressGroupVO::getProtocols()
+std::string AddressGroupVO::getSetId() const
 {
-    return protocols_;
+    return setId_;
 }
 
-void AddressGroupVO::setProtocols(std::vector<int32_t> value)
+void AddressGroupVO::setSetId(const std::string& value)
 {
-    protocols_ = value;
-    protocolsIsSet_ = true;
+    setId_ = value;
+    setIdIsSet_ = true;
 }
 
-bool AddressGroupVO::protocolsIsSet() const
+bool AddressGroupVO::setIdIsSet() const
 {
-    return protocolsIsSet_;
+    return setIdIsSet_;
 }
 
-void AddressGroupVO::unsetprotocols()
+void AddressGroupVO::unsetsetId()
 {
-    protocolsIsSet_ = false;
-}
-
-int32_t AddressGroupVO::getServiceSetType() const
-{
-    return serviceSetType_;
-}
-
-void AddressGroupVO::setServiceSetType(int32_t value)
-{
-    serviceSetType_ = value;
-    serviceSetTypeIsSet_ = true;
-}
-
-bool AddressGroupVO::serviceSetTypeIsSet() const
-{
-    return serviceSetTypeIsSet_;
-}
-
-void AddressGroupVO::unsetserviceSetType()
-{
-    serviceSetTypeIsSet_ = false;
+    setIdIsSet_ = false;
 }
 
 }

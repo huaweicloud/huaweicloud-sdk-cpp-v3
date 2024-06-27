@@ -39,7 +39,7 @@ bool ChangeIpsProtectModeResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("data"));
         if(!fieldValue.is_null())
         {
-            IdObject refVal;
+            CommonResponseDTO_data refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setData(refVal);
         }
@@ -48,12 +48,12 @@ bool ChangeIpsProtectModeResponse::fromJson(const web::json::value& val)
 }
 
 
-IdObject ChangeIpsProtectModeResponse::getData() const
+CommonResponseDTO_data ChangeIpsProtectModeResponse::getData() const
 {
     return data_;
 }
 
-void ChangeIpsProtectModeResponse::setData(const IdObject& value)
+void ChangeIpsProtectModeResponse::setData(const CommonResponseDTO_data& value)
 {
     data_ = value;
     dataIsSet_ = true;

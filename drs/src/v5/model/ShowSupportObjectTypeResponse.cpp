@@ -33,6 +33,8 @@ ShowSupportObjectTypeResponse::ShowSupportObjectTypeResponse()
     previousSelectIsSet_ = false;
     importLevel_ = "";
     importLevelIsSet_ = false;
+    isImportCloumn_ = false;
+    isImportCloumnIsSet_ = false;
 }
 
 ShowSupportObjectTypeResponse::~ShowSupportObjectTypeResponse() = default;
@@ -77,6 +79,9 @@ web::json::value ShowSupportObjectTypeResponse::toJson() const
     }
     if(importLevelIsSet_) {
         val[utility::conversions::to_string_t("import_level")] = ModelBase::toJson(importLevel_);
+    }
+    if(isImportCloumnIsSet_) {
+        val[utility::conversions::to_string_t("is_import_cloumn")] = ModelBase::toJson(isImportCloumn_);
     }
 
     return val;
@@ -182,6 +187,15 @@ bool ShowSupportObjectTypeResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setImportLevel(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_import_cloumn"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_import_cloumn"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsImportCloumn(refVal);
         }
     }
     return ok;
@@ -417,6 +431,27 @@ bool ShowSupportObjectTypeResponse::importLevelIsSet() const
 void ShowSupportObjectTypeResponse::unsetimportLevel()
 {
     importLevelIsSet_ = false;
+}
+
+bool ShowSupportObjectTypeResponse::isIsImportCloumn() const
+{
+    return isImportCloumn_;
+}
+
+void ShowSupportObjectTypeResponse::setIsImportCloumn(bool value)
+{
+    isImportCloumn_ = value;
+    isImportCloumnIsSet_ = true;
+}
+
+bool ShowSupportObjectTypeResponse::isImportCloumnIsSet() const
+{
+    return isImportCloumnIsSet_;
+}
+
+void ShowSupportObjectTypeResponse::unsetisImportCloumn()
+{
+    isImportCloumnIsSet_ = false;
 }
 
 }

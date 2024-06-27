@@ -102,6 +102,14 @@ public:
             { 
                 "https://kms.ae-ad-1.myhuaweicloud.com"
             });
+        regions["my-kualalumpur-1"] = Region("my-kualalumpur-1",
+            { 
+                "https://kms.my-kualalumpur-1.myhuaweicloud.com"
+            });
+        regions["ru-moscow-1"] = Region("ru-moscow-1",
+            { 
+                "https://kms.ru-moscow-1.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

@@ -37,6 +37,8 @@ JobBaseInfo::JobBaseInfo()
     expiredDays_ = "";
     expiredDaysIsSet_ = false;
     tagsIsSet_ = false;
+    isOpenFastClean_ = false;
+    isOpenFastCleanIsSet_ = false;
 }
 
 JobBaseInfo::~JobBaseInfo() = default;
@@ -87,6 +89,9 @@ web::json::value JobBaseInfo::toJson() const
     }
     if(tagsIsSet_) {
         val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
+    }
+    if(isOpenFastCleanIsSet_) {
+        val[utility::conversions::to_string_t("is_open_fast_clean")] = ModelBase::toJson(isOpenFastClean_);
     }
 
     return val;
@@ -210,6 +215,15 @@ bool JobBaseInfo::fromJson(const web::json::value& val)
             std::vector<ResourceTag> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTags(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_open_fast_clean"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_open_fast_clean"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsOpenFastClean(refVal);
         }
     }
     return ok;
@@ -487,6 +501,27 @@ bool JobBaseInfo::tagsIsSet() const
 void JobBaseInfo::unsettags()
 {
     tagsIsSet_ = false;
+}
+
+bool JobBaseInfo::isIsOpenFastClean() const
+{
+    return isOpenFastClean_;
+}
+
+void JobBaseInfo::setIsOpenFastClean(bool value)
+{
+    isOpenFastClean_ = value;
+    isOpenFastCleanIsSet_ = true;
+}
+
+bool JobBaseInfo::isOpenFastCleanIsSet() const
+{
+    return isOpenFastCleanIsSet_;
+}
+
+void JobBaseInfo::unsetisOpenFastClean()
+{
+    isOpenFastCleanIsSet_ = false;
 }
 
 }

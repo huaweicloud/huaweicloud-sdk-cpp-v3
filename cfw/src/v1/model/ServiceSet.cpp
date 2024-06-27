@@ -22,8 +22,6 @@ ServiceSet::ServiceSet()
     serviceSetTypeIsSet_ = false;
     refCount_ = 0;
     refCountIsSet_ = false;
-    status_ = "";
-    statusIsSet_ = false;
     projectId_ = "";
     projectIdIsSet_ = false;
     protocolsIsSet_ = false;
@@ -53,9 +51,6 @@ web::json::value ServiceSet::toJson() const
     }
     if(refCountIsSet_) {
         val[utility::conversions::to_string_t("ref_count")] = ModelBase::toJson(refCount_);
-    }
-    if(statusIsSet_) {
-        val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
     }
     if(projectIdIsSet_) {
         val[utility::conversions::to_string_t("project_id")] = ModelBase::toJson(projectId_);
@@ -113,15 +108,6 @@ bool ServiceSet::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRefCount(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("status"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("status"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setStatus(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("project_id"))) {
@@ -249,27 +235,6 @@ bool ServiceSet::refCountIsSet() const
 void ServiceSet::unsetrefCount()
 {
     refCountIsSet_ = false;
-}
-
-std::string ServiceSet::getStatus() const
-{
-    return status_;
-}
-
-void ServiceSet::setStatus(const std::string& value)
-{
-    status_ = value;
-    statusIsSet_ = true;
-}
-
-bool ServiceSet::statusIsSet() const
-{
-    return statusIsSet_;
-}
-
-void ServiceSet::unsetstatus()
-{
-    statusIsSet_ = false;
 }
 
 std::string ServiceSet::getProjectId() const

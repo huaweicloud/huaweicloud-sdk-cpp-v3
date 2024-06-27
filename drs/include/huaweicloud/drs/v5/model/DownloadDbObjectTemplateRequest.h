@@ -57,7 +57,7 @@ public:
     void setXLanguage(const std::string& value);
 
     /// <summary>
-    /// 文件模板支持数据同步级别，不填默认为table表级。 - database：库级 - table：表级
+    /// 文件模板支持数据同步级别，不填默认为table表级。 - database：库级 - table：表级 - column：列级
     /// </summary>
 
     std::string getFileImportDbLevel() const;

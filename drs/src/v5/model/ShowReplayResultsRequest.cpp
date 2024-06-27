@@ -32,6 +32,12 @@ ShowReplayResultsRequest::ShowReplayResultsRequest()
     sortDirIsSet_ = false;
     targetName_ = "";
     targetNameIsSet_ = false;
+    isSample_ = false;
+    isSampleIsSet_ = false;
+    errorType_ = "";
+    errorTypeIsSet_ = false;
+    sqlTemplateMd5_ = "";
+    sqlTemplateMd5IsSet_ = false;
 }
 
 ShowReplayResultsRequest::~ShowReplayResultsRequest() = default;
@@ -73,6 +79,15 @@ web::json::value ShowReplayResultsRequest::toJson() const
     }
     if(targetNameIsSet_) {
         val[utility::conversions::to_string_t("target_name")] = ModelBase::toJson(targetName_);
+    }
+    if(isSampleIsSet_) {
+        val[utility::conversions::to_string_t("is_sample")] = ModelBase::toJson(isSample_);
+    }
+    if(errorTypeIsSet_) {
+        val[utility::conversions::to_string_t("error_type")] = ModelBase::toJson(errorType_);
+    }
+    if(sqlTemplateMd5IsSet_) {
+        val[utility::conversions::to_string_t("sql_template_md5")] = ModelBase::toJson(sqlTemplateMd5_);
     }
 
     return val;
@@ -169,6 +184,33 @@ bool ShowReplayResultsRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTargetName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_sample"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_sample"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsSample(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("error_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("error_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setErrorType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("sql_template_md5"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sql_template_md5"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSqlTemplateMd5(refVal);
         }
     }
     return ok;
@@ -383,6 +425,69 @@ bool ShowReplayResultsRequest::targetNameIsSet() const
 void ShowReplayResultsRequest::unsettargetName()
 {
     targetNameIsSet_ = false;
+}
+
+bool ShowReplayResultsRequest::isIsSample() const
+{
+    return isSample_;
+}
+
+void ShowReplayResultsRequest::setIsSample(bool value)
+{
+    isSample_ = value;
+    isSampleIsSet_ = true;
+}
+
+bool ShowReplayResultsRequest::isSampleIsSet() const
+{
+    return isSampleIsSet_;
+}
+
+void ShowReplayResultsRequest::unsetisSample()
+{
+    isSampleIsSet_ = false;
+}
+
+std::string ShowReplayResultsRequest::getErrorType() const
+{
+    return errorType_;
+}
+
+void ShowReplayResultsRequest::setErrorType(const std::string& value)
+{
+    errorType_ = value;
+    errorTypeIsSet_ = true;
+}
+
+bool ShowReplayResultsRequest::errorTypeIsSet() const
+{
+    return errorTypeIsSet_;
+}
+
+void ShowReplayResultsRequest::unseterrorType()
+{
+    errorTypeIsSet_ = false;
+}
+
+std::string ShowReplayResultsRequest::getSqlTemplateMd5() const
+{
+    return sqlTemplateMd5_;
+}
+
+void ShowReplayResultsRequest::setSqlTemplateMd5(const std::string& value)
+{
+    sqlTemplateMd5_ = value;
+    sqlTemplateMd5IsSet_ = true;
+}
+
+bool ShowReplayResultsRequest::sqlTemplateMd5IsSet() const
+{
+    return sqlTemplateMd5IsSet_;
+}
+
+void ShowReplayResultsRequest::unsetsqlTemplateMd5()
+{
+    sqlTemplateMd5IsSet_ = false;
 }
 
 }

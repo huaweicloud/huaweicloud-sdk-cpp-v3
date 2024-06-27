@@ -43,7 +43,7 @@ bool SrCreateInstanceRsp_instance_tags_info::fromJson(const web::json::value& va
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("tags"));
         if(!fieldValue.is_null())
         {
-            std::vector<SrCreateInstanceRsp_instance_tags_info_tags> refVal;
+            std::vector<CreateChInstanceInfo_tags_info_tags> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTags(refVal);
         }
@@ -61,12 +61,12 @@ bool SrCreateInstanceRsp_instance_tags_info::fromJson(const web::json::value& va
 }
 
 
-std::vector<SrCreateInstanceRsp_instance_tags_info_tags>& SrCreateInstanceRsp_instance_tags_info::getTags()
+std::vector<CreateChInstanceInfo_tags_info_tags>& SrCreateInstanceRsp_instance_tags_info::getTags()
 {
     return tags_;
 }
 
-void SrCreateInstanceRsp_instance_tags_info::setTags(const std::vector<SrCreateInstanceRsp_instance_tags_info_tags>& value)
+void SrCreateInstanceRsp_instance_tags_info::setTags(const std::vector<CreateChInstanceInfo_tags_info_tags>& value)
 {
     tags_ = value;
     tagsIsSet_ = true;

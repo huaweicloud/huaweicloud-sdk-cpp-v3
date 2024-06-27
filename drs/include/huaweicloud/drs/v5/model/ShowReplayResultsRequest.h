@@ -57,7 +57,7 @@ public:
     void setXLanguage(const std::string& value);
 
     /// <summary>
-    /// 结果类型。取值： - shard_statistics：回放概览基于时间维度统计信息。 - slow_sql：慢SQL详情。 - error_sql： 回放异常SQL详情。 - slow_sql_template：慢SQL统计信息。  - error_sql_template：异常SQL统计信息。 - replaying_sql：正在回放SQL详情。
+    /// 结果类型。取值： - shard_statistics：回放概览基于时间维度统计信息。 - slow_sql：慢SQL详情。 - error_sql： 回放异常SQL详情。 - slow_sql_template：慢SQL统计信息。  - error_sql_template：异常SQL统计信息。 - replaying_sql：正在回放SQL详情。 - error_classification：回放异常SQL分类。
     /// </summary>
 
     std::string getType() const;
@@ -128,6 +128,33 @@ public:
     void unsettargetName();
     void setTargetName(const std::string& value);
 
+    /// <summary>
+    /// 是否查询样例true/false，type&#x3D;slow_sql/error_sql时生效，值为true时只查询一条样例数据。
+    /// </summary>
+
+    bool isIsSample() const;
+    bool isSampleIsSet() const;
+    void unsetisSample();
+    void setIsSample(bool value);
+
+    /// <summary>
+    /// 错误分类，type&#x3D;error_sql/error_sql_template时生效，根据错误分类过滤数据。
+    /// </summary>
+
+    std::string getErrorType() const;
+    bool errorTypeIsSet() const;
+    void unseterrorType();
+    void setErrorType(const std::string& value);
+
+    /// <summary>
+    /// sql模板md5，type&#x3D;slow_sql/error_sql时生效，根据模板过滤对应的异常SQL和慢SQL，该值为本接口type&#x3D;slow_sql_template/error_sql_template时的返回字段。
+    /// </summary>
+
+    std::string getSqlTemplateMd5() const;
+    bool sqlTemplateMd5IsSet() const;
+    void unsetsqlTemplateMd5();
+    void setSqlTemplateMd5(const std::string& value);
+
 
 protected:
     std::string jobId_;
@@ -150,6 +177,12 @@ protected:
     bool sortDirIsSet_;
     std::string targetName_;
     bool targetNameIsSet_;
+    bool isSample_;
+    bool isSampleIsSet_;
+    std::string errorType_;
+    bool errorTypeIsSet_;
+    std::string sqlTemplateMd5_;
+    bool sqlTemplateMd5IsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

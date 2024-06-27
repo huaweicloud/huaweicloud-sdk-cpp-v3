@@ -157,6 +157,15 @@ public:
     void unsetpredefinedGroup();
     void setPredefinedGroup(const std::vector<std::string>& value);
 
+    /// <summary>
+    /// 地址组列表
+    /// </summary>
+
+    std::vector<std::string>& getAddressGroup();
+    bool addressGroupIsSet() const;
+    void unsetaddressGroup();
+    void setAddressGroup(const std::vector<std::string>& value);
+
 
 protected:
     int32_t type_;
@@ -185,6 +194,8 @@ protected:
     bool addressSetTypeIsSet_;
     std::vector<std::string> predefinedGroup_;
     bool predefinedGroupIsSet_;
+    std::vector<std::string> addressGroup_;
+    bool addressGroupIsSet_;
 
 };
 

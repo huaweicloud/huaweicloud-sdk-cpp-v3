@@ -16,8 +16,6 @@ UpdateAddressSetDto::UpdateAddressSetDto()
     nameIsSet_ = false;
     description_ = "";
     descriptionIsSet_ = false;
-    addressType_ = 0;
-    addressTypeIsSet_ = false;
 }
 
 UpdateAddressSetDto::~UpdateAddressSetDto() = default;
@@ -35,9 +33,6 @@ web::json::value UpdateAddressSetDto::toJson() const
     }
     if(descriptionIsSet_) {
         val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
-    }
-    if(addressTypeIsSet_) {
-        val[utility::conversions::to_string_t("address_type")] = ModelBase::toJson(addressType_);
     }
 
     return val;
@@ -62,15 +57,6 @@ bool UpdateAddressSetDto::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDescription(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("address_type"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("address_type"));
-        if(!fieldValue.is_null())
-        {
-            int32_t refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setAddressType(refVal);
         }
     }
     return ok;
@@ -117,27 +103,6 @@ bool UpdateAddressSetDto::descriptionIsSet() const
 void UpdateAddressSetDto::unsetdescription()
 {
     descriptionIsSet_ = false;
-}
-
-int32_t UpdateAddressSetDto::getAddressType() const
-{
-    return addressType_;
-}
-
-void UpdateAddressSetDto::setAddressType(int32_t value)
-{
-    addressType_ = value;
-    addressTypeIsSet_ = true;
-}
-
-bool UpdateAddressSetDto::addressTypeIsSet() const
-{
-    return addressTypeIsSet_;
-}
-
-void UpdateAddressSetDto::unsetaddressType()
-{
-    addressTypeIsSet_ = false;
 }
 
 }

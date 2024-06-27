@@ -15,7 +15,6 @@
 #include <huaweicloud/cfw/v1/model/RuleAddressDtoForRequest.h>
 #include <huaweicloud/cfw/v1/model/OrderRuleAclDto.h>
 #include <vector>
-#include <huaweicloud/cfw/v1/model/RuleProfileDto.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -174,15 +173,6 @@ public:
     /// 
     /// </summary>
 
-    RuleProfileDto getProfile() const;
-    bool profileIsSet() const;
-    void unsetprofile();
-    void setProfile(const RuleProfileDto& value);
-
-    /// <summary>
-    /// 
-    /// </summary>
-
     RuleAddressDtoForRequest getSource() const;
     bool sourceIsSet() const;
     void unsetsource();
@@ -245,8 +235,6 @@ protected:
     bool descriptionIsSet_;
     int32_t direction_;
     bool directionIsSet_;
-    RuleProfileDto profile_;
-    bool profileIsSet_;
     RuleAddressDtoForRequest source_;
     bool sourceIsSet_;
     RuleAddressDtoForRequest destination_;

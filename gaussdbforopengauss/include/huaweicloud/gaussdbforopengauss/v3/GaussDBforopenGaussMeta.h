@@ -16,6 +16,7 @@ public:
     static HttpRequestDef genRequestDefForAddInstanceTags();
     static HttpRequestDef genRequestDefForAllowDbPrivileges();
     static HttpRequestDef genRequestDefForAttachEip();
+    static HttpRequestDef genRequestDefForConfirmRestoredData();
     static HttpRequestDef genRequestDefForCopyConfiguration();
     static HttpRequestDef genRequestDefForCreateConfigurationTemplate();
     static HttpRequestDef genRequestDefForCreateDatabase();
@@ -52,6 +53,7 @@ public:
     static HttpRequestDef genRequestDefForListFlavors();
     static HttpRequestDef genRequestDefForListGaussDbDatastores();
     static HttpRequestDef genRequestDefForListHistoryOperations();
+    static HttpRequestDef genRequestDefForListInstanceDetails();
     static HttpRequestDef genRequestDefForListInstanceErrorLogs();
     static HttpRequestDef genRequestDefForListInstanceTags();
     static HttpRequestDef genRequestDefForListInstances();
@@ -75,9 +77,11 @@ public:
     static HttpRequestDef genRequestDefForSearchAutoEnlargePolicy();
     static HttpRequestDef genRequestDefForSetBackupPolicy();
     static HttpRequestDef genRequestDefForSetDbUserPwd();
+    static HttpRequestDef genRequestDefForSetNewBackupPolicy();
     static HttpRequestDef genRequestDefForSetRecyclePolicy();
     static HttpRequestDef genRequestDefForShowBackupPolicy();
     static HttpRequestDef genRequestDefForShowBalanceStatus();
+    static HttpRequestDef genRequestDefForShowBatchUpgradeCandidateVersions();
     static HttpRequestDef genRequestDefForShowConfigurationDetail();
     static HttpRequestDef genRequestDefForShowDeploymentForm();
     static HttpRequestDef genRequestDefForShowErrorLogSwitchStatus();
@@ -98,6 +102,7 @@ public:
     static HttpRequestDef genRequestDefForUpdateInstanceConfiguration();
     static HttpRequestDef genRequestDefForUpdateInstanceName();
     static HttpRequestDef genRequestDefForUpgradeInstanceVersion();
+    static HttpRequestDef genRequestDefForUpgradeInstancesVersion();
     static HttpRequestDef genRequestDefForValidateParaGroupName();
     static HttpRequestDef genRequestDefForValidateWeakPassword();
 };

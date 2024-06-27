@@ -39,7 +39,7 @@ bool CreateEastWestFirewallResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("data"));
         if(!fieldValue.is_null())
         {
-            IdObject refVal;
+            CreateEWFirewallResp refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setData(refVal);
         }
@@ -48,12 +48,12 @@ bool CreateEastWestFirewallResponse::fromJson(const web::json::value& val)
 }
 
 
-IdObject CreateEastWestFirewallResponse::getData() const
+CreateEWFirewallResp CreateEastWestFirewallResponse::getData() const
 {
     return data_;
 }
 
-void CreateEastWestFirewallResponse::setData(const IdObject& value)
+void CreateEastWestFirewallResponse::setData(const CreateEWFirewallResp& value)
 {
     data_ = value;
     dataIsSet_ = true;

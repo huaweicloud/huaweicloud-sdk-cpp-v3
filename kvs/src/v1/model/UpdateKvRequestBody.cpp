@@ -17,9 +17,7 @@ UpdateKvRequestBody::UpdateKvRequestBody()
     tableNameIsSet_ = false;
     primaryKeyIsSet_ = false;
     conditionExpressionIsSet_ = false;
-    kvOptionsIsSet_ = false;
     updateFieldsIsSet_ = false;
-    updateBlobIsSet_ = false;
 }
 
 UpdateKvRequestBody::~UpdateKvRequestBody() = default;
@@ -40,13 +38,7 @@ bool UpdateKvRequestBody::toBson(Builder &builder) const
     if (conditionExpressionIsSet_ && !bson_append(builder, "condition_expression", conditionExpression_)) {
         return false;
     }
-    if (kvOptionsIsSet_ && !bson_append(builder, "kv_options", kvOptions_)) {
-        return false;
-    }
     if (updateFieldsIsSet_ && !bson_append(builder, "update_fields", updateFields_)) {
-        return false;
-    }
-    if (updateBlobIsSet_ && !bson_append(builder, "update_blob", updateBlob_)) {
         return false;
     }
 
@@ -87,29 +79,11 @@ bool UpdateKvRequestBody::fromBson(const Viewer &viewer)
             continue;
         }
         
-        if (key == "kv_options") {
-            if (!bson_get(it, kvOptions_)) {
-                return false;
-            }
-            kvOptionsIsSet_ = true;
-            ++it;
-            continue;
-        }
-        
         if (key == "update_fields") {
             if (!bson_get(it, updateFields_)) {
                 return false;
             }
             updateFieldsIsSet_ = true;
-            ++it;
-            continue;
-        }
-        
-        if (key == "update_blob") {
-            if (!bson_get(it, updateBlob_)) {
-                return false;
-            }
-            updateBlobIsSet_ = true;
             ++it;
             continue;
         }
@@ -183,27 +157,6 @@ void UpdateKvRequestBody::unsetconditionExpression()
     conditionExpressionIsSet_ = false;
 }
 
-Kv_options UpdateKvRequestBody::getKvOptions() const
-{
-    return kvOptions_;
-}
-
-void UpdateKvRequestBody::setKvOptions(const Kv_options& value)
-{
-    kvOptions_ = value;
-    kvOptionsIsSet_ = true;
-}
-
-bool UpdateKvRequestBody::kvOptionsIsSet() const
-{
-    return kvOptionsIsSet_;
-}
-
-void UpdateKvRequestBody::unsetkvOptions()
-{
-    kvOptionsIsSet_ = false;
-}
-
 Update_fields UpdateKvRequestBody::getUpdateFields() const
 {
     return updateFields_;
@@ -223,27 +176,6 @@ bool UpdateKvRequestBody::updateFieldsIsSet() const
 void UpdateKvRequestBody::unsetupdateFields()
 {
     updateFieldsIsSet_ = false;
-}
-
-Update_blob UpdateKvRequestBody::getUpdateBlob() const
-{
-    return updateBlob_;
-}
-
-void UpdateKvRequestBody::setUpdateBlob(const Update_blob& value)
-{
-    updateBlob_ = value;
-    updateBlobIsSet_ = true;
-}
-
-bool UpdateKvRequestBody::updateBlobIsSet() const
-{
-    return updateBlobIsSet_;
-}
-
-void UpdateKvRequestBody::unsetupdateBlob()
-{
-    updateBlobIsSet_ = false;
 }
 
 }

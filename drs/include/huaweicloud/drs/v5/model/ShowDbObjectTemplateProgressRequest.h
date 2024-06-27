@@ -74,6 +74,15 @@ public:
     void unsetlimit();
     void setLimit(int32_t value);
 
+    /// <summary>
+    /// 默认为空。 - column：当进行列加工导入时，查询列加工导入进度。
+    /// </summary>
+
+    std::string getType() const;
+    bool typeIsSet() const;
+    void unsettype();
+    void setType(const std::string& value);
+
 
 protected:
     std::string jobId_;
@@ -84,6 +93,8 @@ protected:
     bool offsetIsSet_;
     int32_t limit_;
     bool limitIsSet_;
+    std::string type_;
+    bool typeIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

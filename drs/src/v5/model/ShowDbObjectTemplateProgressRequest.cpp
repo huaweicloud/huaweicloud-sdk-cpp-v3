@@ -20,6 +20,8 @@ ShowDbObjectTemplateProgressRequest::ShowDbObjectTemplateProgressRequest()
     offsetIsSet_ = false;
     limit_ = 0;
     limitIsSet_ = false;
+    type_ = "";
+    typeIsSet_ = false;
 }
 
 ShowDbObjectTemplateProgressRequest::~ShowDbObjectTemplateProgressRequest() = default;
@@ -43,6 +45,9 @@ web::json::value ShowDbObjectTemplateProgressRequest::toJson() const
     }
     if(limitIsSet_) {
         val[utility::conversions::to_string_t("limit")] = ModelBase::toJson(limit_);
+    }
+    if(typeIsSet_) {
+        val[utility::conversions::to_string_t("type")] = ModelBase::toJson(type_);
     }
 
     return val;
@@ -85,6 +90,15 @@ bool ShowDbObjectTemplateProgressRequest::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLimit(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setType(refVal);
         }
     }
     return ok;
@@ -173,6 +187,27 @@ bool ShowDbObjectTemplateProgressRequest::limitIsSet() const
 void ShowDbObjectTemplateProgressRequest::unsetlimit()
 {
     limitIsSet_ = false;
+}
+
+std::string ShowDbObjectTemplateProgressRequest::getType() const
+{
+    return type_;
+}
+
+void ShowDbObjectTemplateProgressRequest::setType(const std::string& value)
+{
+    type_ = value;
+    typeIsSet_ = true;
+}
+
+bool ShowDbObjectTemplateProgressRequest::typeIsSet() const
+{
+    return typeIsSet_;
+}
+
+void ShowDbObjectTemplateProgressRequest::unsettype()
+{
+    typeIsSet_ = false;
 }
 
 }

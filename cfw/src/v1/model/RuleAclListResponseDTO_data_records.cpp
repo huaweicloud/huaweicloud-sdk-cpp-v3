@@ -18,7 +18,6 @@ RuleAclListResponseDTO_data_records::RuleAclListResponseDTO_data_records()
     addressTypeIsSet_ = false;
     name_ = "";
     nameIsSet_ = false;
-    sequenceIsSet_ = false;
     direction_ = 0;
     directionIsSet_ = false;
     actionType_ = 0;
@@ -27,16 +26,16 @@ RuleAclListResponseDTO_data_records::RuleAclListResponseDTO_data_records()
     statusIsSet_ = false;
     description_ = "";
     descriptionIsSet_ = false;
+    longConnectTime_ = 0L;
+    longConnectTimeIsSet_ = false;
+    longConnectEnable_ = 0;
+    longConnectEnableIsSet_ = false;
     longConnectTimeHour_ = 0L;
     longConnectTimeHourIsSet_ = false;
     longConnectTimeMinute_ = 0L;
     longConnectTimeMinuteIsSet_ = false;
     longConnectTimeSecond_ = 0L;
     longConnectTimeSecondIsSet_ = false;
-    longConnectTime_ = 0L;
-    longConnectTimeIsSet_ = false;
-    longConnectEnable_ = 0;
-    longConnectEnableIsSet_ = false;
     sourceIsSet_ = false;
     destinationIsSet_ = false;
     serviceIsSet_ = false;
@@ -68,9 +67,6 @@ web::json::value RuleAclListResponseDTO_data_records::toJson() const
     if(nameIsSet_) {
         val[utility::conversions::to_string_t("name")] = ModelBase::toJson(name_);
     }
-    if(sequenceIsSet_) {
-        val[utility::conversions::to_string_t("sequence")] = ModelBase::toJson(sequence_);
-    }
     if(directionIsSet_) {
         val[utility::conversions::to_string_t("direction")] = ModelBase::toJson(direction_);
     }
@@ -83,6 +79,12 @@ web::json::value RuleAclListResponseDTO_data_records::toJson() const
     if(descriptionIsSet_) {
         val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
     }
+    if(longConnectTimeIsSet_) {
+        val[utility::conversions::to_string_t("long_connect_time")] = ModelBase::toJson(longConnectTime_);
+    }
+    if(longConnectEnableIsSet_) {
+        val[utility::conversions::to_string_t("long_connect_enable")] = ModelBase::toJson(longConnectEnable_);
+    }
     if(longConnectTimeHourIsSet_) {
         val[utility::conversions::to_string_t("long_connect_time_hour")] = ModelBase::toJson(longConnectTimeHour_);
     }
@@ -91,12 +93,6 @@ web::json::value RuleAclListResponseDTO_data_records::toJson() const
     }
     if(longConnectTimeSecondIsSet_) {
         val[utility::conversions::to_string_t("long_connect_time_second")] = ModelBase::toJson(longConnectTimeSecond_);
-    }
-    if(longConnectTimeIsSet_) {
-        val[utility::conversions::to_string_t("long_connect_time")] = ModelBase::toJson(longConnectTime_);
-    }
-    if(longConnectEnableIsSet_) {
-        val[utility::conversions::to_string_t("long_connect_enable")] = ModelBase::toJson(longConnectEnable_);
     }
     if(sourceIsSet_) {
         val[utility::conversions::to_string_t("source")] = ModelBase::toJson(source_);
@@ -153,15 +149,6 @@ bool RuleAclListResponseDTO_data_records::fromJson(const web::json::value& val)
             setName(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("sequence"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sequence"));
-        if(!fieldValue.is_null())
-        {
-            OrderRuleAclDto refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setSequence(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("direction"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("direction"));
         if(!fieldValue.is_null())
@@ -198,6 +185,24 @@ bool RuleAclListResponseDTO_data_records::fromJson(const web::json::value& val)
             setDescription(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("long_connect_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("long_connect_time"));
+        if(!fieldValue.is_null())
+        {
+            int64_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLongConnectTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("long_connect_enable"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("long_connect_enable"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLongConnectEnable(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("long_connect_time_hour"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("long_connect_time_hour"));
         if(!fieldValue.is_null())
@@ -225,29 +230,11 @@ bool RuleAclListResponseDTO_data_records::fromJson(const web::json::value& val)
             setLongConnectTimeSecond(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("long_connect_time"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("long_connect_time"));
-        if(!fieldValue.is_null())
-        {
-            int64_t refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setLongConnectTime(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("long_connect_enable"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("long_connect_enable"));
-        if(!fieldValue.is_null())
-        {
-            int32_t refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setLongConnectEnable(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("source"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("source"));
         if(!fieldValue.is_null())
         {
-            RuleAddressDto refVal;
+            RuleAddressDtoForResponse refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSource(refVal);
         }
@@ -256,7 +243,7 @@ bool RuleAclListResponseDTO_data_records::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("destination"));
         if(!fieldValue.is_null())
         {
-            RuleAddressDto refVal;
+            RuleAddressDtoForResponse refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDestination(refVal);
         }
@@ -265,7 +252,7 @@ bool RuleAclListResponseDTO_data_records::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("service"));
         if(!fieldValue.is_null())
         {
-            RuleServiceDto refVal;
+            RuleServiceDtoForResponse refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setService(refVal);
         }
@@ -373,27 +360,6 @@ void RuleAclListResponseDTO_data_records::unsetname()
     nameIsSet_ = false;
 }
 
-OrderRuleAclDto RuleAclListResponseDTO_data_records::getSequence() const
-{
-    return sequence_;
-}
-
-void RuleAclListResponseDTO_data_records::setSequence(const OrderRuleAclDto& value)
-{
-    sequence_ = value;
-    sequenceIsSet_ = true;
-}
-
-bool RuleAclListResponseDTO_data_records::sequenceIsSet() const
-{
-    return sequenceIsSet_;
-}
-
-void RuleAclListResponseDTO_data_records::unsetsequence()
-{
-    sequenceIsSet_ = false;
-}
-
 int32_t RuleAclListResponseDTO_data_records::getDirection() const
 {
     return direction_;
@@ -478,6 +444,48 @@ void RuleAclListResponseDTO_data_records::unsetdescription()
     descriptionIsSet_ = false;
 }
 
+int64_t RuleAclListResponseDTO_data_records::getLongConnectTime() const
+{
+    return longConnectTime_;
+}
+
+void RuleAclListResponseDTO_data_records::setLongConnectTime(int64_t value)
+{
+    longConnectTime_ = value;
+    longConnectTimeIsSet_ = true;
+}
+
+bool RuleAclListResponseDTO_data_records::longConnectTimeIsSet() const
+{
+    return longConnectTimeIsSet_;
+}
+
+void RuleAclListResponseDTO_data_records::unsetlongConnectTime()
+{
+    longConnectTimeIsSet_ = false;
+}
+
+int32_t RuleAclListResponseDTO_data_records::getLongConnectEnable() const
+{
+    return longConnectEnable_;
+}
+
+void RuleAclListResponseDTO_data_records::setLongConnectEnable(int32_t value)
+{
+    longConnectEnable_ = value;
+    longConnectEnableIsSet_ = true;
+}
+
+bool RuleAclListResponseDTO_data_records::longConnectEnableIsSet() const
+{
+    return longConnectEnableIsSet_;
+}
+
+void RuleAclListResponseDTO_data_records::unsetlongConnectEnable()
+{
+    longConnectEnableIsSet_ = false;
+}
+
 int64_t RuleAclListResponseDTO_data_records::getLongConnectTimeHour() const
 {
     return longConnectTimeHour_;
@@ -541,54 +549,12 @@ void RuleAclListResponseDTO_data_records::unsetlongConnectTimeSecond()
     longConnectTimeSecondIsSet_ = false;
 }
 
-int64_t RuleAclListResponseDTO_data_records::getLongConnectTime() const
-{
-    return longConnectTime_;
-}
-
-void RuleAclListResponseDTO_data_records::setLongConnectTime(int64_t value)
-{
-    longConnectTime_ = value;
-    longConnectTimeIsSet_ = true;
-}
-
-bool RuleAclListResponseDTO_data_records::longConnectTimeIsSet() const
-{
-    return longConnectTimeIsSet_;
-}
-
-void RuleAclListResponseDTO_data_records::unsetlongConnectTime()
-{
-    longConnectTimeIsSet_ = false;
-}
-
-int32_t RuleAclListResponseDTO_data_records::getLongConnectEnable() const
-{
-    return longConnectEnable_;
-}
-
-void RuleAclListResponseDTO_data_records::setLongConnectEnable(int32_t value)
-{
-    longConnectEnable_ = value;
-    longConnectEnableIsSet_ = true;
-}
-
-bool RuleAclListResponseDTO_data_records::longConnectEnableIsSet() const
-{
-    return longConnectEnableIsSet_;
-}
-
-void RuleAclListResponseDTO_data_records::unsetlongConnectEnable()
-{
-    longConnectEnableIsSet_ = false;
-}
-
-RuleAddressDto RuleAclListResponseDTO_data_records::getSource() const
+RuleAddressDtoForResponse RuleAclListResponseDTO_data_records::getSource() const
 {
     return source_;
 }
 
-void RuleAclListResponseDTO_data_records::setSource(const RuleAddressDto& value)
+void RuleAclListResponseDTO_data_records::setSource(const RuleAddressDtoForResponse& value)
 {
     source_ = value;
     sourceIsSet_ = true;
@@ -604,12 +570,12 @@ void RuleAclListResponseDTO_data_records::unsetsource()
     sourceIsSet_ = false;
 }
 
-RuleAddressDto RuleAclListResponseDTO_data_records::getDestination() const
+RuleAddressDtoForResponse RuleAclListResponseDTO_data_records::getDestination() const
 {
     return destination_;
 }
 
-void RuleAclListResponseDTO_data_records::setDestination(const RuleAddressDto& value)
+void RuleAclListResponseDTO_data_records::setDestination(const RuleAddressDtoForResponse& value)
 {
     destination_ = value;
     destinationIsSet_ = true;
@@ -625,12 +591,12 @@ void RuleAclListResponseDTO_data_records::unsetdestination()
     destinationIsSet_ = false;
 }
 
-RuleServiceDto RuleAclListResponseDTO_data_records::getService() const
+RuleServiceDtoForResponse RuleAclListResponseDTO_data_records::getService() const
 {
     return service_;
 }
 
-void RuleAclListResponseDTO_data_records::setService(const RuleServiceDto& value)
+void RuleAclListResponseDTO_data_records::setService(const RuleServiceDtoForResponse& value)
 {
     service_ = value;
     serviceIsSet_ = true;

@@ -84,6 +84,10 @@ FlavorExtraSpec::FlavorExtraSpec()
     quotaSubNetworkInterfaceMaxNumIsSet_ = false;
     ecsInstanceArchitecture_ = "";
     ecsInstanceArchitectureIsSet_ = false;
+    networkInterfaceTrafficMirroringSupported_ = "";
+    networkInterfaceTrafficMirroringSupportedIsSet_ = false;
+    securityEnclaveSupported_ = "";
+    securityEnclaveSupportedIsSet_ = false;
 }
 
 FlavorExtraSpec::~FlavorExtraSpec() = default;
@@ -203,6 +207,12 @@ web::json::value FlavorExtraSpec::toJson() const
     }
     if(ecsInstanceArchitectureIsSet_) {
         val[utility::conversions::to_string_t("ecs:instance_architecture")] = ModelBase::toJson(ecsInstanceArchitecture_);
+    }
+    if(networkInterfaceTrafficMirroringSupportedIsSet_) {
+        val[utility::conversions::to_string_t("network_interface:traffic_mirroring_supported")] = ModelBase::toJson(networkInterfaceTrafficMirroringSupported_);
+    }
+    if(securityEnclaveSupportedIsSet_) {
+        val[utility::conversions::to_string_t("security:enclave_supported")] = ModelBase::toJson(securityEnclaveSupported_);
     }
 
     return val;
@@ -533,6 +543,24 @@ bool FlavorExtraSpec::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEcsInstanceArchitecture(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("network_interface:traffic_mirroring_supported"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("network_interface:traffic_mirroring_supported"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setNetworkInterfaceTrafficMirroringSupported(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("security:enclave_supported"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("security:enclave_supported"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSecurityEnclaveSupported(refVal);
         }
     }
     return ok;
@@ -1293,6 +1321,48 @@ bool FlavorExtraSpec::ecsInstanceArchitectureIsSet() const
 void FlavorExtraSpec::unsetecsInstanceArchitecture()
 {
     ecsInstanceArchitectureIsSet_ = false;
+}
+
+std::string FlavorExtraSpec::getNetworkInterfaceTrafficMirroringSupported() const
+{
+    return networkInterfaceTrafficMirroringSupported_;
+}
+
+void FlavorExtraSpec::setNetworkInterfaceTrafficMirroringSupported(const std::string& value)
+{
+    networkInterfaceTrafficMirroringSupported_ = value;
+    networkInterfaceTrafficMirroringSupportedIsSet_ = true;
+}
+
+bool FlavorExtraSpec::networkInterfaceTrafficMirroringSupportedIsSet() const
+{
+    return networkInterfaceTrafficMirroringSupportedIsSet_;
+}
+
+void FlavorExtraSpec::unsetnetworkInterfaceTrafficMirroringSupported()
+{
+    networkInterfaceTrafficMirroringSupportedIsSet_ = false;
+}
+
+std::string FlavorExtraSpec::getSecurityEnclaveSupported() const
+{
+    return securityEnclaveSupported_;
+}
+
+void FlavorExtraSpec::setSecurityEnclaveSupported(const std::string& value)
+{
+    securityEnclaveSupported_ = value;
+    securityEnclaveSupportedIsSet_ = true;
+}
+
+bool FlavorExtraSpec::securityEnclaveSupportedIsSet() const
+{
+    return securityEnclaveSupportedIsSet_;
+}
+
+void FlavorExtraSpec::unsetsecurityEnclaveSupported()
+{
+    securityEnclaveSupportedIsSet_ = false;
 }
 
 }

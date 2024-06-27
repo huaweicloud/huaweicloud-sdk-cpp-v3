@@ -66,7 +66,7 @@ public:
     void setRuleId(const std::string& value);
 
     /// <summary>
-    /// 命中时间
+    /// 命中时间，以毫秒为单位的时间戳，如1718936272648
     /// </summary>
 
     int64_t getHitTime() const;
@@ -182,6 +182,78 @@ public:
     void unsetdstHost();
     void setDstHost(const std::string& value);
 
+    /// <summary>
+    /// 源省份id
+    /// </summary>
+
+    std::string getSrcProvinceId() const;
+    bool srcProvinceIdIsSet() const;
+    void unsetsrcProvinceId();
+    void setSrcProvinceId(const std::string& value);
+
+    /// <summary>
+    /// 源省份名称
+    /// </summary>
+
+    std::string getSrcProvinceName() const;
+    bool srcProvinceNameIsSet() const;
+    void unsetsrcProvinceName();
+    void setSrcProvinceName(const std::string& value);
+
+    /// <summary>
+    /// 源城市id
+    /// </summary>
+
+    std::string getSrcCityId() const;
+    bool srcCityIdIsSet() const;
+    void unsetsrcCityId();
+    void setSrcCityId(const std::string& value);
+
+    /// <summary>
+    /// 源城市名称
+    /// </summary>
+
+    std::string getSrcCityName() const;
+    bool srcCityNameIsSet() const;
+    void unsetsrcCityName();
+    void setSrcCityName(const std::string& value);
+
+    /// <summary>
+    /// 目的省份id
+    /// </summary>
+
+    std::string getDstProvinceId() const;
+    bool dstProvinceIdIsSet() const;
+    void unsetdstProvinceId();
+    void setDstProvinceId(const std::string& value);
+
+    /// <summary>
+    /// 目的省份名称
+    /// </summary>
+
+    std::string getDstProvinceName() const;
+    bool dstProvinceNameIsSet() const;
+    void unsetdstProvinceName();
+    void setDstProvinceName(const std::string& value);
+
+    /// <summary>
+    /// 目的城市id
+    /// </summary>
+
+    std::string getDstCityId() const;
+    bool dstCityIdIsSet() const;
+    void unsetdstCityId();
+    void setDstCityId(const std::string& value);
+
+    /// <summary>
+    /// 目的城市名称
+    /// </summary>
+
+    std::string getDstCityName() const;
+    bool dstCityNameIsSet() const;
+    void unsetdstCityName();
+    void setDstCityName(const std::string& value);
+
 
 protected:
     std::string action_;
@@ -216,6 +288,22 @@ protected:
     bool appIsSet_;
     std::string dstHost_;
     bool dstHostIsSet_;
+    std::string srcProvinceId_;
+    bool srcProvinceIdIsSet_;
+    std::string srcProvinceName_;
+    bool srcProvinceNameIsSet_;
+    std::string srcCityId_;
+    bool srcCityIdIsSet_;
+    std::string srcCityName_;
+    bool srcCityNameIsSet_;
+    std::string dstProvinceId_;
+    bool dstProvinceIdIsSet_;
+    std::string dstProvinceName_;
+    bool dstProvinceNameIsSet_;
+    std::string dstCityId_;
+    bool dstCityIdIsSet_;
+    std::string dstCityName_;
+    bool dstCityNameIsSet_;
 
 };
 

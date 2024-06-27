@@ -9,11 +9,10 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/cfw/v1/model/RuleAddressDto.h>
 #include <huaweicloud/cfw/v1/model/TagsVO.h>
+#include <huaweicloud/cfw/v1/model/RuleAddressDtoForResponse.h>
 #include <string>
-#include <huaweicloud/cfw/v1/model/RuleServiceDto.h>
-#include <huaweicloud/cfw/v1/model/OrderRuleAclDto.h>
+#include <huaweicloud/cfw/v1/model/RuleServiceDtoForResponse.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -70,15 +69,6 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 
-    /// </summary>
-
-    OrderRuleAclDto getSequence() const;
-    bool sequenceIsSet() const;
-    void unsetsequence();
-    void setSequence(const OrderRuleAclDto& value);
-
-    /// <summary>
     /// 规则方向0：外到内1：内到外
     /// </summary>
 
@@ -115,6 +105,24 @@ public:
     void setDescription(const std::string& value);
 
     /// <summary>
+    /// 长连接时长
+    /// </summary>
+
+    int64_t getLongConnectTime() const;
+    bool longConnectTimeIsSet() const;
+    void unsetlongConnectTime();
+    void setLongConnectTime(int64_t value);
+
+    /// <summary>
+    /// 长连接支持
+    /// </summary>
+
+    int32_t getLongConnectEnable() const;
+    bool longConnectEnableIsSet() const;
+    void unsetlongConnectEnable();
+    void setLongConnectEnable(int32_t value);
+
+    /// <summary>
     /// 长连接时长小时
     /// </summary>
 
@@ -142,49 +150,31 @@ public:
     void setLongConnectTimeSecond(int64_t value);
 
     /// <summary>
-    /// 长连接时长
-    /// </summary>
-
-    int64_t getLongConnectTime() const;
-    bool longConnectTimeIsSet() const;
-    void unsetlongConnectTime();
-    void setLongConnectTime(int64_t value);
-
-    /// <summary>
-    /// 长连接支持
-    /// </summary>
-
-    int32_t getLongConnectEnable() const;
-    bool longConnectEnableIsSet() const;
-    void unsetlongConnectEnable();
-    void setLongConnectEnable(int32_t value);
-
-    /// <summary>
     /// 
     /// </summary>
 
-    RuleAddressDto getSource() const;
+    RuleAddressDtoForResponse getSource() const;
     bool sourceIsSet() const;
     void unsetsource();
-    void setSource(const RuleAddressDto& value);
+    void setSource(const RuleAddressDtoForResponse& value);
 
     /// <summary>
     /// 
     /// </summary>
 
-    RuleAddressDto getDestination() const;
+    RuleAddressDtoForResponse getDestination() const;
     bool destinationIsSet() const;
     void unsetdestination();
-    void setDestination(const RuleAddressDto& value);
+    void setDestination(const RuleAddressDtoForResponse& value);
 
     /// <summary>
     /// 
     /// </summary>
 
-    RuleServiceDto getService() const;
+    RuleServiceDtoForResponse getService() const;
     bool serviceIsSet() const;
     void unsetservice();
-    void setService(const RuleServiceDto& value);
+    void setService(const RuleServiceDtoForResponse& value);
 
     /// <summary>
     /// 规则type，0：互联网规则，1：vpc规则，2：nat规则
@@ -230,8 +220,6 @@ protected:
     bool addressTypeIsSet_;
     std::string name_;
     bool nameIsSet_;
-    OrderRuleAclDto sequence_;
-    bool sequenceIsSet_;
     int32_t direction_;
     bool directionIsSet_;
     int32_t actionType_;
@@ -240,21 +228,21 @@ protected:
     bool statusIsSet_;
     std::string description_;
     bool descriptionIsSet_;
+    int64_t longConnectTime_;
+    bool longConnectTimeIsSet_;
+    int32_t longConnectEnable_;
+    bool longConnectEnableIsSet_;
     int64_t longConnectTimeHour_;
     bool longConnectTimeHourIsSet_;
     int64_t longConnectTimeMinute_;
     bool longConnectTimeMinuteIsSet_;
     int64_t longConnectTimeSecond_;
     bool longConnectTimeSecondIsSet_;
-    int64_t longConnectTime_;
-    bool longConnectTimeIsSet_;
-    int32_t longConnectEnable_;
-    bool longConnectEnableIsSet_;
-    RuleAddressDto source_;
+    RuleAddressDtoForResponse source_;
     bool sourceIsSet_;
-    RuleAddressDto destination_;
+    RuleAddressDtoForResponse destination_;
     bool destinationIsSet_;
-    RuleServiceDto service_;
+    RuleServiceDtoForResponse service_;
     bool serviceIsSet_;
     int32_t type_;
     bool typeIsSet_;

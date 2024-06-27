@@ -57,7 +57,7 @@ public:
     void setEnterpriseProjectId(const std::string& value);
 
     /// <summary>
-    /// 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用查询防火墙实例接口获得。具体可参考APIExlorer和帮助中心FAQ。默认情况下，fw_instance_Id为空时，返回帐号下第一个墙的信息；fw_instance_Id非空时，返回与fw_instance_Id对应墙的信息。
+    /// 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)，默认情况下，fw_instance_Id为空时，返回账号下第一个墙的信息；fw_instance_Id非空时，返回与fw_instance_Id对应墙的信息。
     /// </summary>
 
     std::string getFwInstanceId() const;
@@ -66,13 +66,13 @@ public:
     void setFwInstanceId(const std::string& value);
 
     /// <summary>
-    /// 地址类型，0 ipv4,1 ipv6,2 domain
+    /// 地址类型，0 ipv4,1 ipv6
     /// </summary>
 
-    std::string getAddressType() const;
+    int32_t getAddressType() const;
     bool addressTypeIsSet() const;
     void unsetaddressType();
-    void setAddressType(const std::string& value);
+    void setAddressType(int32_t value);
 
 
 protected:
@@ -82,7 +82,7 @@ protected:
     bool enterpriseProjectIdIsSet_;
     std::string fwInstanceId_;
     bool fwInstanceIdIsSet_;
-    std::string addressType_;
+    int32_t addressType_;
     bool addressTypeIsSet_;
 
 #ifdef RTTR_FLAG

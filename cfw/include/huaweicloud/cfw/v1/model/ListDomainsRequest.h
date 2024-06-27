@@ -57,7 +57,7 @@ public:
     void setEnterpriseProjectId(const std::string& value);
 
     /// <summary>
-    /// 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用查询防火墙实例接口获得。具体可参考APIExlorer和帮助中心FAQ。默认情况下，fw_instance_Id为空时，返回帐号下第一个墙的信息；fw_instance_Id非空时，返回与fw_instance_Id对应墙的信息。
+    /// 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)，默认情况下，fw_instance_Id为空时，返回账号下第一个墙的信息；fw_instance_Id非空时，返回与fw_instance_Id对应墙的信息。
     /// </summary>
 
     std::string getFwInstanceId() const;
@@ -93,25 +93,7 @@ public:
     void setDomainName(const std::string& value);
 
     /// <summary>
-    /// 描述
-    /// </summary>
-
-    std::string getDescription() const;
-    bool descriptionIsSet() const;
-    void unsetdescription();
-    void setDescription(const std::string& value);
-
-    /// <summary>
-    /// 域名组id
-    /// </summary>
-
-    std::string getSetId() const;
-    bool setIdIsSet() const;
-    void unsetsetId();
-    void setSetId(const std::string& value);
-
-    /// <summary>
-    /// 防护对象id,是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id,可通过调用查询防火墙实例接口获得,注意type为0的为互联网边界防护对象id,type为1的为VPC边界防护对象id。具体可参考APIExlorer和帮助中心FAQ。
+    /// 互联网边界防护对象id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)，type为0的为互联网边界防护对象id。
     /// </summary>
 
     std::string getObjectId() const;
@@ -133,10 +115,6 @@ protected:
     bool offsetIsSet_;
     std::string domainName_;
     bool domainNameIsSet_;
-    std::string description_;
-    bool descriptionIsSet_;
-    std::string setId_;
-    bool setIdIsSet_;
     std::string objectId_;
     bool objectIdIsSet_;
 

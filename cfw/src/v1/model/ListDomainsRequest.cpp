@@ -24,10 +24,6 @@ ListDomainsRequest::ListDomainsRequest()
     offsetIsSet_ = false;
     domainName_ = "";
     domainNameIsSet_ = false;
-    description_ = "";
-    descriptionIsSet_ = false;
-    setId_ = "";
-    setIdIsSet_ = false;
     objectId_ = "";
     objectIdIsSet_ = false;
 }
@@ -59,12 +55,6 @@ web::json::value ListDomainsRequest::toJson() const
     }
     if(domainNameIsSet_) {
         val[utility::conversions::to_string_t("domain_name")] = ModelBase::toJson(domainName_);
-    }
-    if(descriptionIsSet_) {
-        val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
-    }
-    if(setIdIsSet_) {
-        val[utility::conversions::to_string_t("set_id")] = ModelBase::toJson(setId_);
     }
     if(objectIdIsSet_) {
         val[utility::conversions::to_string_t("object_Id")] = ModelBase::toJson(objectId_);
@@ -128,24 +118,6 @@ bool ListDomainsRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDomainName(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("description"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("description"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setDescription(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("set_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("set_id"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setSetId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("object_Id"))) {
@@ -285,48 +257,6 @@ bool ListDomainsRequest::domainNameIsSet() const
 void ListDomainsRequest::unsetdomainName()
 {
     domainNameIsSet_ = false;
-}
-
-std::string ListDomainsRequest::getDescription() const
-{
-    return description_;
-}
-
-void ListDomainsRequest::setDescription(const std::string& value)
-{
-    description_ = value;
-    descriptionIsSet_ = true;
-}
-
-bool ListDomainsRequest::descriptionIsSet() const
-{
-    return descriptionIsSet_;
-}
-
-void ListDomainsRequest::unsetdescription()
-{
-    descriptionIsSet_ = false;
-}
-
-std::string ListDomainsRequest::getSetId() const
-{
-    return setId_;
-}
-
-void ListDomainsRequest::setSetId(const std::string& value)
-{
-    setId_ = value;
-    setIdIsSet_ = true;
-}
-
-bool ListDomainsRequest::setIdIsSet() const
-{
-    return setIdIsSet_;
-}
-
-void ListDomainsRequest::unsetsetId()
-{
-    setIdIsSet_ = false;
 }
 
 std::string ListDomainsRequest::getObjectId() const

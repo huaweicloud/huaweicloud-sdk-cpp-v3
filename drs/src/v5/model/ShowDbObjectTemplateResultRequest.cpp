@@ -18,6 +18,8 @@ ShowDbObjectTemplateResultRequest::ShowDbObjectTemplateResultRequest()
     xLanguageIsSet_ = false;
     type_ = "";
     typeIsSet_ = false;
+    fileExportObjectLevel_ = "";
+    fileExportObjectLevelIsSet_ = false;
 }
 
 ShowDbObjectTemplateResultRequest::~ShowDbObjectTemplateResultRequest() = default;
@@ -38,6 +40,9 @@ web::json::value ShowDbObjectTemplateResultRequest::toJson() const
     }
     if(typeIsSet_) {
         val[utility::conversions::to_string_t("type")] = ModelBase::toJson(type_);
+    }
+    if(fileExportObjectLevelIsSet_) {
+        val[utility::conversions::to_string_t("file_export_object_level")] = ModelBase::toJson(fileExportObjectLevel_);
     }
 
     return val;
@@ -71,6 +76,15 @@ bool ShowDbObjectTemplateResultRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("file_export_object_level"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("file_export_object_level"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFileExportObjectLevel(refVal);
         }
     }
     return ok;
@@ -138,6 +152,27 @@ bool ShowDbObjectTemplateResultRequest::typeIsSet() const
 void ShowDbObjectTemplateResultRequest::unsettype()
 {
     typeIsSet_ = false;
+}
+
+std::string ShowDbObjectTemplateResultRequest::getFileExportObjectLevel() const
+{
+    return fileExportObjectLevel_;
+}
+
+void ShowDbObjectTemplateResultRequest::setFileExportObjectLevel(const std::string& value)
+{
+    fileExportObjectLevel_ = value;
+    fileExportObjectLevelIsSet_ = true;
+}
+
+bool ShowDbObjectTemplateResultRequest::fileExportObjectLevelIsSet() const
+{
+    return fileExportObjectLevelIsSet_;
+}
+
+void ShowDbObjectTemplateResultRequest::unsetfileExportObjectLevel()
+{
+    fileExportObjectLevelIsSet_ = false;
 }
 
 }

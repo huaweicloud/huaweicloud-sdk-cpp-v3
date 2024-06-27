@@ -354,12 +354,34 @@
 #include <huaweicloud/gaussdb/v3/model/UpgradeProxyVersionResponse.h>
 #include <string>
 
+#include <huaweicloud/gaussdb/v3/model/ChEnlargeVolumeRequestBody.h>
+#include <huaweicloud/gaussdb/v3/model/ChSlowLogQueryRequestBody.h>
+#include <huaweicloud/gaussdb/v3/model/ChSlowlogSensitiveResponse.h>
+#include <huaweicloud/gaussdb/v3/model/CheckChDatabaseConfigRequestBody.h>
+#include <huaweicloud/gaussdb/v3/model/CheckChDatabaseTableConfigRequestBody.h>
+#include <huaweicloud/gaussdb/v3/model/CheckClickHouseDataBaseConfigRequest.h>
+#include <huaweicloud/gaussdb/v3/model/CheckClickHouseDataBaseConfigResponse.h>
+#include <huaweicloud/gaussdb/v3/model/CheckClickHouseTableConfigRequest.h>
+#include <huaweicloud/gaussdb/v3/model/CheckClickHouseTableConfigResponse.h>
 #include <huaweicloud/gaussdb/v3/model/CheckDataBaseConfigRequest.h>
 #include <huaweicloud/gaussdb/v3/model/CheckDataBaseConfigResponse.h>
 #include <huaweicloud/gaussdb/v3/model/CheckStarRocksResourceRequest.h>
 #include <huaweicloud/gaussdb/v3/model/CheckStarRocksResourceResponse.h>
 #include <huaweicloud/gaussdb/v3/model/CheckTableConfigRequest.h>
 #include <huaweicloud/gaussdb/v3/model/CheckTableConfigResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ClickHouseDatabaseUserInfo.h>
+#include <huaweicloud/gaussdb/v3/model/ClickHouseDatabaseUserPSinfo.h>
+#include <huaweicloud/gaussdb/v3/model/ClickHouseDatabaseUserPWinfo.h>
+#include <huaweicloud/gaussdb/v3/model/ClickHouseResizeFlavorRequestBody.h>
+#include <huaweicloud/gaussdb/v3/model/CreateChDatabaseReplicationRequestBody.h>
+#include <huaweicloud/gaussdb/v3/model/CreateChInstanceRequestBody.h>
+#include <huaweicloud/gaussdb/v3/model/CreateChLtsConfigRequestBody.h>
+#include <huaweicloud/gaussdb/v3/model/CreateClickHouseDataBaseReplicationRequest.h>
+#include <huaweicloud/gaussdb/v3/model/CreateClickHouseDataBaseReplicationResponse.h>
+#include <huaweicloud/gaussdb/v3/model/CreateClickHouseDatabaseUserRequest.h>
+#include <huaweicloud/gaussdb/v3/model/CreateClickHouseDatabaseUserResponse.h>
+#include <huaweicloud/gaussdb/v3/model/CreateClickHouseInstanceRequest.h>
+#include <huaweicloud/gaussdb/v3/model/CreateClickHouseInstanceResponse.h>
 #include <huaweicloud/gaussdb/v3/model/CreateStarRocksDataReplication.h>
 #include <huaweicloud/gaussdb/v3/model/CreateStarRocksDataReplicationRequest.h>
 #include <huaweicloud/gaussdb/v3/model/CreateStarRocksDataReplicationResponse.h>
@@ -368,6 +390,17 @@
 #include <huaweicloud/gaussdb/v3/model/CreateStarrocksInstanceRequest.h>
 #include <huaweicloud/gaussdb/v3/model/CreateStarrocksInstanceResponse.h>
 #include <huaweicloud/gaussdb/v3/model/DbConfigCheckRequestV3.h>
+#include <huaweicloud/gaussdb/v3/model/DeleteChLtsConfigRequestBody.h>
+#include <huaweicloud/gaussdb/v3/model/DeleteClickHouseDataBaseConfigRequest.h>
+#include <huaweicloud/gaussdb/v3/model/DeleteClickHouseDataBaseConfigResponse.h>
+#include <huaweicloud/gaussdb/v3/model/DeleteClickHouseDataBaseReplicationRequest.h>
+#include <huaweicloud/gaussdb/v3/model/DeleteClickHouseDataBaseReplicationResponse.h>
+#include <huaweicloud/gaussdb/v3/model/DeleteClickHouseDatabaseUserRequest.h>
+#include <huaweicloud/gaussdb/v3/model/DeleteClickHouseDatabaseUserResponse.h>
+#include <huaweicloud/gaussdb/v3/model/DeleteClickHouseInstanceRequest.h>
+#include <huaweicloud/gaussdb/v3/model/DeleteClickHouseInstanceResponse.h>
+#include <huaweicloud/gaussdb/v3/model/DeleteClickHouseLtsConfigRequest.h>
+#include <huaweicloud/gaussdb/v3/model/DeleteClickHouseLtsConfigResponse.h>
 #include <huaweicloud/gaussdb/v3/model/DeleteStarRocksDataReplication.h>
 #include <huaweicloud/gaussdb/v3/model/DeleteStarRocksDataReplicationRequest.h>
 #include <huaweicloud/gaussdb/v3/model/DeleteStarRocksDataReplicationResponse.h>
@@ -375,6 +408,18 @@
 #include <huaweicloud/gaussdb/v3/model/DeleteStarRocksDatabaseUserResponse.h>
 #include <huaweicloud/gaussdb/v3/model/DeleteStarrocksInstanceRequest.h>
 #include <huaweicloud/gaussdb/v3/model/DeleteStarrocksInstanceResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ListClickHouseDataBaseParameterRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ListClickHouseDataBaseParameterResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ListClickHouseDataBaseReplicationConfigRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ListClickHouseDataBaseReplicationConfigResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ListClickHouseDataBaseReplicationRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ListClickHouseDataBaseReplicationResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ListClickHouseDataBaseRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ListClickHouseDataBaseResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ListClickHouseInstanceNodeRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ListClickHouseInstanceNodeResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ListClickHouseInstanceRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ListClickHouseInstanceResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ListHtapDataStoreRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ListHtapDataStoreResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ListHtapFlavorRequest.h>
@@ -393,11 +438,31 @@
 #include <huaweicloud/gaussdb/v3/model/ListStarRocksDbParametersResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ListStarrocksInstanceInfoRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ListStarrocksInstanceInfoResponse.h>
+#include <huaweicloud/gaussdb/v3/model/PauseStarRocksDataReplication.h>
+#include <huaweicloud/gaussdb/v3/model/PauseStarRocksDataReplicationRequest.h>
+#include <huaweicloud/gaussdb/v3/model/PauseStarRocksDataReplicationResponse.h>
+#include <huaweicloud/gaussdb/v3/model/RebootClickHouseInstanceRequest.h>
+#include <huaweicloud/gaussdb/v3/model/RebootClickHouseInstanceResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ResizeClickHouseFlavorRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ResizeClickHouseFlavorResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ResizeClickHouseInstanceRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ResizeClickHouseInstanceResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ResourceCheck.h>
 #include <huaweicloud/gaussdb/v3/model/RestartStarrocksInstanceRequest.h>
 #include <huaweicloud/gaussdb/v3/model/RestartStarrocksInstanceResponse.h>
 #include <huaweicloud/gaussdb/v3/model/RestartStarrocksNodeRequest.h>
 #include <huaweicloud/gaussdb/v3/model/RestartStarrocksNodeResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ResumeStarRocksDataReplication.h>
+#include <huaweicloud/gaussdb/v3/model/ResumeStarRocksDataReplicationRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ResumeStarRocksDataReplicationResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ShowClickHouseDatabaseUserRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ShowClickHouseDatabaseUserResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ShowClickHouseLtsConfigRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ShowClickHouseLtsConfigResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ShowClickHouseSlowLogDetailRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ShowClickHouseSlowLogDetailResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ShowClickHouseSlowLogSensitiveStatusRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ShowClickHouseSlowLogSensitiveStatusResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowStarRocksDatabaseUserRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ShowStarRocksDatabaseUserResponse.h>
 #include <huaweicloud/gaussdb/v3/model/StarRocksCreateRequest.h>
@@ -405,6 +470,17 @@
 #include <huaweicloud/gaussdb/v3/model/StarRocksDatabaseUserPSinfo.h>
 #include <huaweicloud/gaussdb/v3/model/StarRocksDatabaseUserPWinfo.h>
 #include <huaweicloud/gaussdb/v3/model/TableConfigCheckRequestV3.h>
+#include <huaweicloud/gaussdb/v3/model/UpdateChDatabaseConfigRequestBody.h>
+#include <huaweicloud/gaussdb/v3/model/UpdateClickHouseDataBaseConfigRequest.h>
+#include <huaweicloud/gaussdb/v3/model/UpdateClickHouseDataBaseConfigResponse.h>
+#include <huaweicloud/gaussdb/v3/model/UpdateClickHouseDatabaseUserPasswordRequest.h>
+#include <huaweicloud/gaussdb/v3/model/UpdateClickHouseDatabaseUserPasswordResponse.h>
+#include <huaweicloud/gaussdb/v3/model/UpdateClickHouseDatabaseUserPermissionRequest.h>
+#include <huaweicloud/gaussdb/v3/model/UpdateClickHouseDatabaseUserPermissionResponse.h>
+#include <huaweicloud/gaussdb/v3/model/UpdateClickHouseLtsConfigRequest.h>
+#include <huaweicloud/gaussdb/v3/model/UpdateClickHouseLtsConfigResponse.h>
+#include <huaweicloud/gaussdb/v3/model/UpdateClickHouseSlowLogSensitiveStatusRequest.h>
+#include <huaweicloud/gaussdb/v3/model/UpdateClickHouseSlowLogSensitiveStatusResponse.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateStarRocksDatabaseUserPasswordRequest.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateStarRocksDatabaseUserPasswordResponse.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateStarRocksDatabaseUserPermissionRequest.h>
@@ -1533,6 +1609,22 @@ public:
         UpgradeProxyVersionRequest &request
     );
 
+    // 数据同步库配置校验
+    //
+    // 数据同步库配置校验。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CheckClickHouseDataBaseConfigResponse> checkClickHouseDataBaseConfig(
+        CheckClickHouseDataBaseConfigRequest &request
+    );
+    // 数据同步表配置校验
+    //
+    // 数据同步表配置校验。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CheckClickHouseTableConfigResponse> checkClickHouseTableConfig(
+        CheckClickHouseTableConfigRequest &request
+    );
     // HTAP数据同步库配置校验
     //
     // HTAP数据同步库配置校验。
@@ -1556,6 +1648,30 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CheckTableConfigResponse> checkTableConfig(
         CheckTableConfigRequest &request
+    );
+    // 创建数据同步
+    //
+    // 创建数据同步。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateClickHouseDataBaseReplicationResponse> createClickHouseDataBaseReplication(
+        CreateClickHouseDataBaseReplicationRequest &request
+    );
+    // 创建数据库账号
+    //
+    // 创建数据库账号。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateClickHouseDatabaseUserResponse> createClickHouseDatabaseUser(
+        CreateClickHouseDatabaseUserRequest &request
+    );
+    // 创建实例
+    //
+    // 创建实例。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateClickHouseInstanceResponse> createClickHouseInstance(
+        CreateClickHouseInstanceRequest &request
     );
     // 创建StarRocks数据同步
     //
@@ -1581,6 +1697,46 @@ public:
     std::shared_ptr<CreateStarrocksInstanceResponse> createStarrocksInstance(
         CreateStarrocksInstanceRequest &request
     );
+    // 停止修改数据同步
+    //
+    // 停止修改数据同步。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteClickHouseDataBaseConfigResponse> deleteClickHouseDataBaseConfig(
+        DeleteClickHouseDataBaseConfigRequest &request
+    );
+    // 删除数据同步
+    //
+    // 删除数据同步。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteClickHouseDataBaseReplicationResponse> deleteClickHouseDataBaseReplication(
+        DeleteClickHouseDataBaseReplicationRequest &request
+    );
+    // 删除数据库账户
+    //
+    // 删除数据库账户。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteClickHouseDatabaseUserResponse> deleteClickHouseDatabaseUser(
+        DeleteClickHouseDatabaseUserRequest &request
+    );
+    // 删除实例
+    //
+    // 删除实例。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteClickHouseInstanceResponse> deleteClickHouseInstance(
+        DeleteClickHouseInstanceRequest &request
+    );
+    // 批量解除LTS日志配置
+    //
+    // 批量解除LTS日志配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteClickHouseLtsConfigResponse> deleteClickHouseLtsConfig(
+        DeleteClickHouseLtsConfigRequest &request
+    );
     // 删除StarRocks数据同步
     //
     // 删除StarRocks数据同步。
@@ -1604,6 +1760,54 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteStarrocksInstanceResponse> deleteStarrocksInstance(
         DeleteStarrocksInstanceRequest &request
+    );
+    // 查询数据库列表
+    //
+    // 查询数据库列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListClickHouseDataBaseResponse> listClickHouseDataBase(
+        ListClickHouseDataBaseRequest &request
+    );
+    // 查询数据同步的库参数配置
+    //
+    // 查询数据同步的库参数配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListClickHouseDataBaseParameterResponse> listClickHouseDataBaseParameter(
+        ListClickHouseDataBaseParameterRequest &request
+    );
+    // 查询数据同步信息
+    //
+    // 查询数据同步信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListClickHouseDataBaseReplicationResponse> listClickHouseDataBaseReplication(
+        ListClickHouseDataBaseReplicationRequest &request
+    );
+    // 查看数据同步配置
+    //
+    // 查看数据同步配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListClickHouseDataBaseReplicationConfigResponse> listClickHouseDataBaseReplicationConfig(
+        ListClickHouseDataBaseReplicationConfigRequest &request
+    );
+    // 查询实例详情
+    //
+    // 查询实例详情。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListClickHouseInstanceResponse> listClickHouseInstance(
+        ListClickHouseInstanceRequest &request
+    );
+    // 查询错误日志、慢日志节点信息
+    //
+    // 查询错误日志、慢日志节点信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListClickHouseInstanceNodeResponse> listClickHouseInstanceNode(
+        ListClickHouseInstanceNodeRequest &request
     );
     // HTAP引擎资源查询
     //
@@ -1677,6 +1881,38 @@ public:
     std::shared_ptr<ListStarrocksInstanceInfoResponse> listStarrocksInstanceInfo(
         ListStarrocksInstanceInfoRequest &request
     );
+    // 暂停StarRocks数据同步
+    //
+    // 暂停StarRocks数据同步。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<PauseStarRocksDataReplicationResponse> pauseStarRocksDataReplication(
+        PauseStarRocksDataReplicationRequest &request
+    );
+    // 重启实例
+    //
+    // 重启实例。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<RebootClickHouseInstanceResponse> rebootClickHouseInstance(
+        RebootClickHouseInstanceRequest &request
+    );
+    // 实例规格变更
+    //
+    // 实例规格变更。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ResizeClickHouseFlavorResponse> resizeClickHouseFlavor(
+        ResizeClickHouseFlavorRequest &request
+    );
+    // 实例磁盘扩容
+    //
+    // 实例磁盘扩容。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ResizeClickHouseInstanceResponse> resizeClickHouseInstance(
+        ResizeClickHouseInstanceRequest &request
+    );
     // 重启StarRocks实例
     //
     // 重启StarRocks实例。
@@ -1693,6 +1929,46 @@ public:
     std::shared_ptr<RestartStarrocksNodeResponse> restartStarrocksNode(
         RestartStarrocksNodeRequest &request
     );
+    // 恢复StarRocks数据同步
+    //
+    // 恢复StarRocks数据同步。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ResumeStarRocksDataReplicationResponse> resumeStarRocksDataReplication(
+        ResumeStarRocksDataReplicationRequest &request
+    );
+    // 查询数据库账户
+    //
+    // 查询数据库账户。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowClickHouseDatabaseUserResponse> showClickHouseDatabaseUser(
+        ShowClickHouseDatabaseUserRequest &request
+    );
+    // 查询实例LTS日志配置列表
+    //
+    // 查询实例LTS日志配置列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowClickHouseLtsConfigResponse> showClickHouseLtsConfig(
+        ShowClickHouseLtsConfigRequest &request
+    );
+    // 查询慢日志
+    //
+    // 获取内核慢日志信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowClickHouseSlowLogDetailResponse> showClickHouseSlowLogDetail(
+        ShowClickHouseSlowLogDetailRequest &request
+    );
+    // 查询慢日志脱敏状态
+    //
+    // 查询慢日志脱敏状态。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowClickHouseSlowLogSensitiveStatusResponse> showClickHouseSlowLogSensitiveStatus(
+        ShowClickHouseSlowLogSensitiveStatusRequest &request
+    );
     // 查询数据库账户
     //
     // 查询StarRocks数据库账户。
@@ -1700,6 +1976,46 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowStarRocksDatabaseUserResponse> showStarRocksDatabaseUser(
         ShowStarRocksDatabaseUserRequest &request
+    );
+    // 修改数据同步
+    //
+    // 修改数据同步。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateClickHouseDataBaseConfigResponse> updateClickHouseDataBaseConfig(
+        UpdateClickHouseDataBaseConfigRequest &request
+    );
+    // 修改数据库账号密码
+    //
+    // 修改数据库账号密码。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateClickHouseDatabaseUserPasswordResponse> updateClickHouseDatabaseUserPassword(
+        UpdateClickHouseDatabaseUserPasswordRequest &request
+    );
+    // 修改数据库账号权限
+    //
+    // 修改数据库账号权限。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateClickHouseDatabaseUserPermissionResponse> updateClickHouseDatabaseUserPermission(
+        UpdateClickHouseDatabaseUserPermissionRequest &request
+    );
+    // 批量创建LTS日志配置
+    //
+    // 批量创建LTS日志配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateClickHouseLtsConfigResponse> updateClickHouseLtsConfig(
+        UpdateClickHouseLtsConfigRequest &request
+    );
+    // 修改慢日志脱敏状态
+    //
+    // 修改慢日志脱敏状态。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateClickHouseSlowLogSensitiveStatusResponse> updateClickHouseSlowLogSensitiveStatus(
+        UpdateClickHouseSlowLogSensitiveStatusRequest &request
     );
     // 修改数据库账号密码
     //

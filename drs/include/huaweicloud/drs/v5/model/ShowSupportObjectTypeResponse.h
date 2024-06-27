@@ -138,6 +138,15 @@ public:
     void unsetimportLevel();
     void setImportLevel(const std::string& value);
 
+    /// <summary>
+    /// 取值： - true： 当前任务上次选择列加工方式为导入方式 - false 或者 空：当前任务上次选择列加工方式为手动选择方式
+    /// </summary>
+
+    bool isIsImportCloumn() const;
+    bool isImportCloumnIsSet() const;
+    void unsetisImportCloumn();
+    void setIsImportCloumn(bool value);
+
 
 protected:
     bool isFullTransSupportObject_;
@@ -162,6 +171,8 @@ protected:
     bool previousSelectIsSet_;
     std::string importLevel_;
     bool importLevelIsSet_;
+    bool isImportCloumn_;
+    bool isImportCloumnIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

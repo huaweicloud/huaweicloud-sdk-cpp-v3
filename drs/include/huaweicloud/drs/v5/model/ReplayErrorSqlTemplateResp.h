@@ -48,6 +48,15 @@ public:
     void setSqlTemplate(const std::string& value);
 
     /// <summary>
+    /// SQL模板MD5
+    /// </summary>
+
+    std::string getSqlTemplateMd5() const;
+    bool sqlTemplateMd5IsSet() const;
+    void unsetsqlTemplateMd5();
+    void setSqlTemplateMd5(const std::string& value);
+
+    /// <summary>
     /// 目标库昵称
     /// </summary>
 
@@ -96,6 +105,8 @@ public:
 protected:
     std::string sqlTemplate_;
     bool sqlTemplateIsSet_;
+    std::string sqlTemplateMd5_;
+    bool sqlTemplateMd5IsSet_;
     std::string targetName_;
     bool targetNameIsSet_;
     std::string schemaName_;

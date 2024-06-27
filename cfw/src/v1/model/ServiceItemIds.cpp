@@ -39,7 +39,7 @@ bool ServiceItemIds::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("items"));
         if(!fieldValue.is_null())
         {
-            std::vector<IdObject> refVal;
+            std::vector<ServiceItemIds_items> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setItems(refVal);
         }
@@ -48,12 +48,12 @@ bool ServiceItemIds::fromJson(const web::json::value& val)
 }
 
 
-std::vector<IdObject>& ServiceItemIds::getItems()
+std::vector<ServiceItemIds_items>& ServiceItemIds::getItems()
 {
     return items_;
 }
 
-void ServiceItemIds::setItems(const std::vector<IdObject>& value)
+void ServiceItemIds::setItems(const std::vector<ServiceItemIds_items>& value)
 {
     items_ = value;
     itemsIsSet_ = true;

@@ -15,8 +15,6 @@ Condition_expression::Condition_expression()
 {
     singleFieldExpressionIsSet_ = false;
     multiFieldExpressionIsSet_ = false;
-    singleKvExpressionIsSet_ = false;
-    composedExpressionIsSet_ = false;
 }
 
 Condition_expression::~Condition_expression() = default;
@@ -32,12 +30,6 @@ bool Condition_expression::toBson(Builder &builder) const
         return false;
     }
     if (multiFieldExpressionIsSet_ && !bson_append(builder, "multi_field_expression", multiFieldExpression_)) {
-        return false;
-    }
-    if (singleKvExpressionIsSet_ && !bson_append(builder, "single_kv_expression", singleKvExpression_)) {
-        return false;
-    }
-    if (composedExpressionIsSet_ && !bson_append(builder, "composed_expression", composedExpression_)) {
         return false;
     }
 
@@ -65,24 +57,6 @@ bool Condition_expression::fromBson(const Viewer &viewer)
                 return false;
             }
             multiFieldExpressionIsSet_ = true;
-            ++it;
-            continue;
-        }
-        
-        if (key == "single_kv_expression") {
-            if (!bson_get(it, singleKvExpression_)) {
-                return false;
-            }
-            singleKvExpressionIsSet_ = true;
-            ++it;
-            continue;
-        }
-        
-        if (key == "composed_expression") {
-            if (!bson_get(it, composedExpression_)) {
-                return false;
-            }
-            composedExpressionIsSet_ = true;
             ++it;
             continue;
         }
@@ -133,48 +107,6 @@ bool Condition_expression::multiFieldExpressionIsSet() const
 void Condition_expression::unsetmultiFieldExpression()
 {
     multiFieldExpressionIsSet_ = false;
-}
-
-Single_kv_expression Condition_expression::getSingleKvExpression() const
-{
-    return singleKvExpression_;
-}
-
-void Condition_expression::setSingleKvExpression(const Single_kv_expression& value)
-{
-    singleKvExpression_ = value;
-    singleKvExpressionIsSet_ = true;
-}
-
-bool Condition_expression::singleKvExpressionIsSet() const
-{
-    return singleKvExpressionIsSet_;
-}
-
-void Condition_expression::unsetsingleKvExpression()
-{
-    singleKvExpressionIsSet_ = false;
-}
-
-Composed_expression Condition_expression::getComposedExpression() const
-{
-    return composedExpression_;
-}
-
-void Condition_expression::setComposedExpression(const Composed_expression& value)
-{
-    composedExpression_ = value;
-    composedExpressionIsSet_ = true;
-}
-
-bool Condition_expression::composedExpressionIsSet() const
-{
-    return composedExpressionIsSet_;
-}
-
-void Condition_expression::unsetcomposedExpression()
-{
-    composedExpressionIsSet_ = false;
 }
 
 }

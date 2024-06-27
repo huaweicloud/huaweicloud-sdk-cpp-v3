@@ -20,6 +20,7 @@ ShowReplayResultsResponse::ShowReplayResultsResponse()
     errorSqlsIsSet_ = false;
     errorSqlTemplatesIsSet_ = false;
     replayingSqlsIsSet_ = false;
+    errorClassificationsIsSet_ = false;
 }
 
 ShowReplayResultsResponse::~ShowReplayResultsResponse() = default;
@@ -52,6 +53,9 @@ web::json::value ShowReplayResultsResponse::toJson() const
     }
     if(replayingSqlsIsSet_) {
         val[utility::conversions::to_string_t("replaying_sqls")] = ModelBase::toJson(replayingSqls_);
+    }
+    if(errorClassificationsIsSet_) {
+        val[utility::conversions::to_string_t("error_classifications")] = ModelBase::toJson(errorClassifications_);
     }
 
     return val;
@@ -121,6 +125,15 @@ bool ShowReplayResultsResponse::fromJson(const web::json::value& val)
             std::vector<ReplayingSqlResp> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setReplayingSqls(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("error_classifications"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("error_classifications"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<ReplayErrorClassification> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setErrorClassifications(refVal);
         }
     }
     return ok;
@@ -272,6 +285,27 @@ bool ShowReplayResultsResponse::replayingSqlsIsSet() const
 void ShowReplayResultsResponse::unsetreplayingSqls()
 {
     replayingSqlsIsSet_ = false;
+}
+
+std::vector<ReplayErrorClassification>& ShowReplayResultsResponse::getErrorClassifications()
+{
+    return errorClassifications_;
+}
+
+void ShowReplayResultsResponse::setErrorClassifications(const std::vector<ReplayErrorClassification>& value)
+{
+    errorClassifications_ = value;
+    errorClassificationsIsSet_ = true;
+}
+
+bool ShowReplayResultsResponse::errorClassificationsIsSet() const
+{
+    return errorClassificationsIsSet_;
+}
+
+void ShowReplayResultsResponse::unseterrorClassifications()
+{
+    errorClassificationsIsSet_ = false;
 }
 
 }

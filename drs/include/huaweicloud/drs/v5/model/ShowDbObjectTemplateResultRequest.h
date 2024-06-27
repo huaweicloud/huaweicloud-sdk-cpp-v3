@@ -65,6 +65,15 @@ public:
     void unsettype();
     void setType(const std::string& value);
 
+    /// <summary>
+    /// 默认为空。当进行列加工导入时，查询列加工导入进度，取值column。
+    /// </summary>
+
+    std::string getFileExportObjectLevel() const;
+    bool fileExportObjectLevelIsSet() const;
+    void unsetfileExportObjectLevel();
+    void setFileExportObjectLevel(const std::string& value);
+
 
 protected:
     std::string jobId_;
@@ -73,6 +82,8 @@ protected:
     bool xLanguageIsSet_;
     std::string type_;
     bool typeIsSet_;
+    std::string fileExportObjectLevel_;
+    bool fileExportObjectLevelIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

@@ -75,15 +75,6 @@ public:
     void setDestPort(const std::string& value);
 
     /// <summary>
-    /// 服务成员名称
-    /// </summary>
-
-    std::string getName() const;
-    bool nameIsSet() const;
-    void unsetname();
-    void setName(const std::string& value);
-
-    /// <summary>
     /// 服务成员描述
     /// </summary>
 
@@ -102,8 +93,6 @@ protected:
     bool sourcePortIsSet_;
     std::string destPort_;
     bool destPortIsSet_;
-    std::string name_;
-    bool nameIsSet_;
     std::string description_;
     bool descriptionIsSet_;
 

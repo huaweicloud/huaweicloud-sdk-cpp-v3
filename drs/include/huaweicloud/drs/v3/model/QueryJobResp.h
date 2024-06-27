@@ -555,7 +555,7 @@ public:
     void setDataTransformation(const GetDataTransformationResp& value);
 
     /// <summary>
-    /// DRS任务标签
+    /// DRS任务标签。
     /// </summary>
 
     std::vector<Tag>& getTags();
@@ -564,7 +564,7 @@ public:
     void setTags(const std::vector<Tag>& value);
 
     /// <summary>
-    /// 指定公网Ip的信息
+    /// 指定公网Ip的信息。
     /// </summary>
 
     std::vector<PublicIpConfig>& getPublicIpList();
@@ -573,7 +573,7 @@ public:
     void setPublicIpList(const std::vector<PublicIpConfig>& value);
 
     /// <summary>
-    /// 是否成功绑定公网IP
+    /// 是否成功绑定公网IP。
     /// </summary>
 
     std::string getBindPublicIpState() const;
@@ -582,13 +582,22 @@ public:
     void setBindPublicIpState(const std::string& value);
 
     /// <summary>
-    /// 多任务时，存在子任务绑定失败时，返回子任务的信息
+    /// 多任务时，存在子任务绑定失败时，返回子任务的信息。
     /// </summary>
 
     std::vector<FailedToBindEipChildInfo>& getChildren();
     bool childrenIsSet() const;
     void unsetchildren();
     void setChildren(const std::vector<FailedToBindEipChildInfo>& value);
+
+    /// <summary>
+    /// 是否开启云数据库RDS for MySQL/MariaDB的binlog快速清理。
+    /// </summary>
+
+    bool isIsOpenFastClean() const;
+    bool isOpenFastCleanIsSet() const;
+    void unsetisOpenFastClean();
+    void setIsOpenFastClean(bool value);
 
 
 protected:
@@ -712,6 +721,8 @@ protected:
     bool bindPublicIpStateIsSet_;
     std::vector<FailedToBindEipChildInfo> children_;
     bool childrenIsSet_;
+    bool isOpenFastClean_;
+    bool isOpenFastCleanIsSet_;
 
 };
 

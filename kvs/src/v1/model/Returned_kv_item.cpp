@@ -13,7 +13,6 @@ namespace Model {
 
 Returned_kv_item::Returned_kv_item()
 {
-    kvBlobDataIsSet_ = false;
     kvDocIsSet_ = false;
 }
 
@@ -26,9 +25,6 @@ void Returned_kv_item::validate()
 bool Returned_kv_item::toBson(Builder &builder) const
 {
 
-    if (kvBlobDataIsSet_ && !bson_append(builder, "kv_blob_data", kvBlobData_)) {
-        return false;
-    }
     if (kvDocIsSet_ && !bson_append(builder, "kv_doc", kvDoc_)) {
         return false;
     }
@@ -43,15 +39,6 @@ bool Returned_kv_item::fromBson(const Viewer &viewer)
     while (it != viewer.end()) {
         const std::string &key = it->key();
         
-        if (key == "kv_blob_data") {
-            if (!bson_get(it, kvBlobData_)) {
-                return false;
-            }
-            kvBlobDataIsSet_ = true;
-            ++it;
-            continue;
-        }
-        
         if (key == "kv_doc") {
             if (!bson_get(it, kvDoc_)) {
                 return false;
@@ -65,27 +52,6 @@ bool Returned_kv_item::fromBson(const Viewer &viewer)
     }
 
     return true;
-}
-
-Kv_blob_data Returned_kv_item::getKvBlobData() const
-{
-    return kvBlobData_;
-}
-
-void Returned_kv_item::setKvBlobData(const Kv_blob_data& value)
-{
-    kvBlobData_ = value;
-    kvBlobDataIsSet_ = true;
-}
-
-bool Returned_kv_item::kvBlobDataIsSet() const
-{
-    return kvBlobDataIsSet_;
-}
-
-void Returned_kv_item::unsetkvBlobData()
-{
-    kvBlobDataIsSet_ = false;
 }
 
 Document Returned_kv_item::getKvDoc() const

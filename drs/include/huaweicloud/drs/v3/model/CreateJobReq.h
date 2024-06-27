@@ -197,7 +197,7 @@ public:
     void setProductId(const std::string& value);
 
     /// <summary>
-    /// 企业项目，不填默认为default，key值必须为_sys_enterprise_project_id，value为企业项目ID，只能有一个企业项目。
+    /// 企业项目，不填默认为default，key值必须为_sys_enterprise_project_id，value为企业项目ID，只能填一个企业项目。
     /// </summary>
 
     std::vector<ResourceTag>& getSysTags();
@@ -251,13 +251,22 @@ public:
     void setPeriodOrder(const PeriodOrderInfo& value);
 
     /// <summary>
-    /// 指定公网IP的信息
+    /// 指定公网IP的信息。
     /// </summary>
 
     std::vector<PublicIpConfig>& getPublicIpList();
     bool publicIpListIsSet() const;
     void unsetpublicIpList();
     void setPublicIpList(const std::vector<PublicIpConfig>& value);
+
+    /// <summary>
+    /// 是否开启云数据库RDS for MySQL/MariaDB的binlog快速清理。不传默认为false，不开启快速清理。
+    /// </summary>
+
+    bool isIsOpenFastClean() const;
+    bool isOpenFastCleanIsSet() const;
+    void unsetisOpenFastClean();
+    void setIsOpenFastClean(bool value);
 
 
 protected:
@@ -309,6 +318,8 @@ protected:
     bool periodOrderIsSet_;
     std::vector<PublicIpConfig> publicIpList_;
     bool publicIpListIsSet_;
+    bool isOpenFastClean_;
+    bool isOpenFastCleanIsSet_;
 
 };
 

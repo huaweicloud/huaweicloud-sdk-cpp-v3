@@ -693,6 +693,9 @@ HttpRequestDef DrsMeta::genRequestDefForShowDbObjectTemplateProgress() {
     reqDefBuilder.withRequestField(FieldDef().withName("Limit")
                   .withJsonTag("limit")
                   .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Type")
+                  .withJsonTag("type")
+                  .withLocationType(Query_));
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage
                   .withName("XLanguage")
@@ -705,6 +708,9 @@ HttpRequestDef DrsMeta::genRequestDefForShowDbObjectTemplateResult() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Type")
                   .withJsonTag("type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("FileExportObjectLevel")
+                  .withJsonTag("file_export_object_level")
                   .withLocationType(Query_));
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage
@@ -961,6 +967,15 @@ HttpRequestDef DrsMeta::genRequestDefForShowReplayResults() {
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("TargetName")
                   .withJsonTag("target_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("IsSample")
+                  .withJsonTag("is_sample")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ErrorType")
+                  .withJsonTag("error_type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("SqlTemplateMd5")
+                  .withJsonTag("sql_template_md5")
                   .withLocationType(Query_));
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage

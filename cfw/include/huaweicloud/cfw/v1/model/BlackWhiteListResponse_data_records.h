@@ -57,7 +57,7 @@ public:
     void setDirection(int32_t value);
 
     /// <summary>
-    /// IP地址类型0：ipv4,1:ipv6,2:domain
+    /// IP地址类型0：ipv4,1:ipv6
     /// </summary>
 
     int32_t getAddressType() const;

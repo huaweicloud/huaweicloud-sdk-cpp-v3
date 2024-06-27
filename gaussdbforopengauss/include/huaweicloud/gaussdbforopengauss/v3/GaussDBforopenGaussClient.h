@@ -16,6 +16,8 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/AttachEipResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/BackupPolicyErrorResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/BindEIPRequestBody.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ConfirmRestoredDataRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ConfirmRestoredDataResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/CopyConfigurationRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/CopyConfigurationResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/CreateConfigurationTemplateRequest.h>
@@ -57,6 +59,7 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/DownloadBackupRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/DownloadBackupResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/FlavorErrorResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/GaussDBUpgradeInstancesVersionRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/GaussDBforOpenDatabaseForCreation.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/GaussDBforOpenGaussDatabaseSchemaReq.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/GaussDBforOpenGaussGrantRequest.h>
@@ -99,6 +102,8 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListGaussDbDatastoresResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListHistoryOperationsRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListHistoryOperationsResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListInstanceDetailsRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListInstanceDetailsResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListInstanceErrorLogsRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListInstanceErrorLogsResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListInstanceTagsRequest.h>
@@ -163,12 +168,17 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/SetBackupPolicyResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/SetDbUserPwdRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/SetDbUserPwdResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/SetNewBackupPolicyRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/SetNewBackupPolicyRequestBody.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/SetNewBackupPolicyResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/SetRecyclePolicyRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/SetRecyclePolicyResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowBackupPolicyRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowBackupPolicyResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowBalanceStatusRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowBalanceStatusResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ShowBatchUpgradeCandidateVersionsRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ShowBatchUpgradeCandidateVersionsResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowConfigurationDetailRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowConfigurationDetailResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowDeploymentFormRequest.h>
@@ -213,6 +223,9 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/UpgradeErrorResponseBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/UpgradeInstanceVersionRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/UpgradeInstanceVersionResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/UpgradeInstancesRequestBody.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/UpgradeInstancesVersionRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/UpgradeInstancesVersionResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ValidateParaGroupNameRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ValidateParaGroupNameResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ValidateWeakPasswordRequest.h>
@@ -267,6 +280,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<AttachEipResponse> attachEip(
         AttachEipRequest &request
+    );
+    // 备份恢复到目标实例数据后执行数据确认
+    //
+    // 确认备份恢复到目标实例的数据正常。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ConfirmRestoredDataResponse> confirmRestoredData(
+        ConfirmRestoredDataRequest &request
     );
     // 复制参数模板
     //
@@ -556,6 +577,14 @@ public:
     std::shared_ptr<ListHistoryOperationsResponse> listHistoryOperations(
         ListHistoryOperationsRequest &request
     );
+    // 查询数据库实例列表/查询实例详情
+    //
+    // 查询数据库实例列表/查询实例详情
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListInstanceDetailsResponse> listInstanceDetails(
+        ListInstanceDetailsRequest &request
+    );
     // 查询错误日志下载链接
     //
     // 查询数据库错误日志下载链接。
@@ -741,6 +770,14 @@ public:
     std::shared_ptr<SetDbUserPwdResponse> setDbUserPwd(
         SetDbUserPwdRequest &request
     );
+    // 设置自动备份策略
+    //
+    // 设置自动备份策略
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SetNewBackupPolicyResponse> setNewBackupPolicy(
+        SetNewBackupPolicyRequest &request
+    );
     // 设置回收站策略
     //
     // 设置回收站策略。
@@ -764,6 +801,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowBalanceStatusResponse> showBalanceStatus(
         ShowBalanceStatusRequest &request
+    );
+    // 查询批量实例可升级的版本和升级类型
+    //
+    // 查询批量实例可升级的版本和升级类型
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowBatchUpgradeCandidateVersionsResponse> showBatchUpgradeCandidateVersions(
+        ShowBatchUpgradeCandidateVersionsRequest &request
     );
     // 查询参数模板详情
     //
@@ -933,6 +978,25 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpgradeInstanceVersionResponse> upgradeInstanceVersion(
         UpgradeInstanceVersionRequest &request
+    );
+    // 批量实例内核版本升级
+    //
+    // GaussDB批量实例版本升级。包括灰度升级，就地升级、热补丁升级三种升级方式。 
+    // 就地升级：
+    // 就地升级需要停止业务进行，会一次性升级集群中所有节点。就地升级需要暂停业务30分钟来升级。 
+    // 灰度升级： 
+    // 升级自动提交：所有节点进程一起升级，在升级过程中有大概10秒的业务中断，不阻塞其他业务操作。 
+    // 升级待观察：升级待观察，将数据库升级过程细分为升级，提交两个阶段。升级阶段可以根据部署方式细分为按分片或者按az的滚动升级，提交阶段可以对升级完成后的实例进行业务测试，根据需要可以选择提交升级，或者升级回退。每个主dn或者cn组件升级就有一次10秒业务中断。升级过程均是先管理面，再数据面，由备到主的升级方式。 分布式实例：根据分片数滚动升级，每次滚动升级可以根据选择的分片数进行指定分片数量的节点进行升级。 主备版实例：根据AZ数进行滚动升级，每次滚动升级可以根据选择的AZ进行1个分区或者多个分区进行升级。 
+    // 热补丁升级： 
+    // 升级自动提交：热补丁自动升级并提交，中间无业务中断，仅修复产品bug。 
+    // 提交升级：提交升级。在升级完成，进入提交阶段时。业务测试正常后提交升级，完成本次升级流程。
+    // 升级回退：升级回退，在升级完成，进入提交阶段时。可以根据需要回退本次升级，回退到升级前的版本。
+    // 批量实例可升级版本大于当前所有实例的引擎版本，且选择的所有实例，其升级方式和操作方式要保持一致。
+    // 若批量实例升级方式是灰度升级，默认升级所有az和分片。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpgradeInstancesVersionResponse> upgradeInstancesVersion(
+        UpgradeInstancesVersionRequest &request
     );
     // 校验参数组名称是否存在
     //

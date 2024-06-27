@@ -18,7 +18,7 @@ ListDomainParseDetailRequest::ListDomainParseDetailRequest()
     enterpriseProjectIdIsSet_ = false;
     fwInstanceId_ = "";
     fwInstanceIdIsSet_ = false;
-    addressType_ = "";
+    addressType_ = 0;
     addressTypeIsSet_ = false;
 }
 
@@ -82,7 +82,7 @@ bool ListDomainParseDetailRequest::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("address_type"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAddressType(refVal);
         }
@@ -154,12 +154,12 @@ void ListDomainParseDetailRequest::unsetfwInstanceId()
     fwInstanceIdIsSet_ = false;
 }
 
-std::string ListDomainParseDetailRequest::getAddressType() const
+int32_t ListDomainParseDetailRequest::getAddressType() const
 {
     return addressType_;
 }
 
-void ListDomainParseDetailRequest::setAddressType(const std::string& value)
+void ListDomainParseDetailRequest::setAddressType(int32_t value)
 {
     addressType_ = value;
     addressTypeIsSet_ = true;

@@ -54,6 +54,8 @@ CreateJobReq::CreateJobReq()
     chargingModeIsSet_ = false;
     periodOrderIsSet_ = false;
     publicIpListIsSet_ = false;
+    isOpenFastClean_ = false;
+    isOpenFastCleanIsSet_ = false;
 }
 
 CreateJobReq::~CreateJobReq() = default;
@@ -137,6 +139,9 @@ web::json::value CreateJobReq::toJson() const
     }
     if(publicIpListIsSet_) {
         val[utility::conversions::to_string_t("public_ip_list")] = ModelBase::toJson(publicIpList_);
+    }
+    if(isOpenFastCleanIsSet_) {
+        val[utility::conversions::to_string_t("is_open_fast_clean")] = ModelBase::toJson(isOpenFastClean_);
     }
 
     return val;
@@ -359,6 +364,15 @@ bool CreateJobReq::fromJson(const web::json::value& val)
             std::vector<PublicIpConfig> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPublicIpList(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_open_fast_clean"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_open_fast_clean"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsOpenFastClean(refVal);
         }
     }
     return ok;
@@ -867,6 +881,27 @@ bool CreateJobReq::publicIpListIsSet() const
 void CreateJobReq::unsetpublicIpList()
 {
     publicIpListIsSet_ = false;
+}
+
+bool CreateJobReq::isIsOpenFastClean() const
+{
+    return isOpenFastClean_;
+}
+
+void CreateJobReq::setIsOpenFastClean(bool value)
+{
+    isOpenFastClean_ = value;
+    isOpenFastCleanIsSet_ = true;
+}
+
+bool CreateJobReq::isOpenFastCleanIsSet() const
+{
+    return isOpenFastCleanIsSet_;
+}
+
+void CreateJobReq::unsetisOpenFastClean()
+{
+    isOpenFastCleanIsSet_ = false;
 }
 
 }

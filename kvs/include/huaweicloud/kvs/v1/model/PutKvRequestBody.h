@@ -14,7 +14,6 @@
 
 #include <huaweicloud/kvs/v1/model/Condition_expression.h>
 #include <string>
-#include <huaweicloud/kvs/v1/model/Kv_blob.h>
 #include <huaweicloud/core/bson/Bson.h>
 
 namespace HuaweiCloud {
@@ -71,15 +70,6 @@ public:
     void unsetkvDoc();
     void setKvDoc(const Document& value);
 
-    /// <summary>
-    /// 
-    /// </summary>
-
-    Kv_blob getKvBlob() const;
-    bool kvBlobIsSet() const;
-    void unsetkvBlob();
-    void setKvBlob(const Kv_blob& value);
-
 
 protected:
     std::string tableName_;
@@ -88,8 +78,6 @@ protected:
     bool conditionExpressionIsSet_;
     Document kvDoc_;
     bool kvDocIsSet_;
-    Kv_blob kvBlob_;
-    bool kvBlobIsSet_;
 
 };
 

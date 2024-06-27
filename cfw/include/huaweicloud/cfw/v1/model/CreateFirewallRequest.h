@@ -52,15 +52,6 @@ public:
     /// 
     /// </summary>
 
-    std::string getXTraceId() const;
-    bool xTraceIdIsSet() const;
-    void unsetxTraceId();
-    void setXTraceId(const std::string& value);
-
-    /// <summary>
-    /// 
-    /// </summary>
-
     CreateFirewallReq getBody() const;
     bool bodyIsSet() const;
     void unsetbody();
@@ -70,8 +61,6 @@ public:
 protected:
     std::string xClientToken_;
     bool xClientTokenIsSet_;
-    std::string xTraceId_;
-    bool xTraceIdIsSet_;
     CreateFirewallReq body_;
     bool bodyIsSet_;
 

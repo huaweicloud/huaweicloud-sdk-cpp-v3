@@ -14,8 +14,6 @@ CreateFirewallRequest::CreateFirewallRequest()
 {
     xClientToken_ = "";
     xClientTokenIsSet_ = false;
-    xTraceId_ = "";
-    xTraceIdIsSet_ = false;
     bodyIsSet_ = false;
 }
 
@@ -31,9 +29,6 @@ web::json::value CreateFirewallRequest::toJson() const
 
     if(xClientTokenIsSet_) {
         val[utility::conversions::to_string_t("X-Client-Token")] = ModelBase::toJson(xClientToken_);
-    }
-    if(xTraceIdIsSet_) {
-        val[utility::conversions::to_string_t("X-Trace-Id")] = ModelBase::toJson(xTraceId_);
     }
     if(bodyIsSet_) {
         val[utility::conversions::to_string_t("body")] = ModelBase::toJson(body_);
@@ -52,15 +47,6 @@ bool CreateFirewallRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setXClientToken(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("X-Trace-Id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Trace-Id"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setXTraceId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("body"))) {
@@ -95,27 +81,6 @@ bool CreateFirewallRequest::xClientTokenIsSet() const
 void CreateFirewallRequest::unsetxClientToken()
 {
     xClientTokenIsSet_ = false;
-}
-
-std::string CreateFirewallRequest::getXTraceId() const
-{
-    return xTraceId_;
-}
-
-void CreateFirewallRequest::setXTraceId(const std::string& value)
-{
-    xTraceId_ = value;
-    xTraceIdIsSet_ = true;
-}
-
-bool CreateFirewallRequest::xTraceIdIsSet() const
-{
-    return xTraceIdIsSet_;
-}
-
-void CreateFirewallRequest::unsetxTraceId()
-{
-    xTraceIdIsSet_ = false;
 }
 
 CreateFirewallReq CreateFirewallRequest::getBody() const

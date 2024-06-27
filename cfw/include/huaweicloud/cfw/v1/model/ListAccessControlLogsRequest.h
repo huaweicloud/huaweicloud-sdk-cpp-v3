@@ -39,7 +39,7 @@ public:
     /// ListAccessControlLogsRequest members
 
     /// <summary>
-    /// 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用查询防火墙实例接口获得。具体可参考APIExlorer和帮助中心FAQ。
+    /// 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)。
     /// </summary>
 
     std::string getFwInstanceId() const;
@@ -57,7 +57,7 @@ public:
     void setRuleId(const std::string& value);
 
     /// <summary>
-    /// 开始时间
+    /// 开始时间，以毫秒为单位的时间戳，如1718936272648
     /// </summary>
 
     int64_t getStartTime() const;
@@ -66,7 +66,7 @@ public:
     void setStartTime(int64_t value);
 
     /// <summary>
-    /// 结束时间
+    /// 结束时间，以毫秒为单位的时间戳，如1718936272648
     /// </summary>
 
     int64_t getEndTime() const;
@@ -111,7 +111,7 @@ public:
     void setDstPort(int32_t value);
 
     /// <summary>
-    /// 协议
+    /// 协议类型，包含TCP, UDP,ICMP,ICMPV6等。
     /// </summary>
 
     std::string getProtocol() const;
@@ -129,7 +129,7 @@ public:
     void setApp(const std::string& value);
 
     /// <summary>
-    /// 文档ID,第一页为空，其他页不为空
+    /// 文档ID,第一页为空，其他页不为空，其他页可取上一次查询最后一条数据的log_id
     /// </summary>
 
     std::string getLogId() const;
@@ -138,7 +138,7 @@ public:
     void setLogId(const std::string& value);
 
     /// <summary>
-    /// 日期,第一页为空，其他页不为空
+    /// 下个日期，当是第一页时为空，不是第一页时不为空，其他页可取上一次查询最后一条数据的start_time
     /// </summary>
 
     int32_t getNextDate() const;
@@ -147,7 +147,7 @@ public:
     void setNextDate(int32_t value);
 
     /// <summary>
-    /// 偏移量：指定返回记录的开始位置，必须为数字，取值范围为大于或等于0，默认0
+    /// 偏移量：指定返回记录的开始位置，必须为数字，取值范围为大于0，首页时为空，非首页时不为空
     /// </summary>
 
     int32_t getOffset() const;
@@ -165,7 +165,7 @@ public:
     void setLimit(int32_t value);
 
     /// <summary>
-    /// 日志类型
+    /// 日志类型包括：internet，vpc，nat
     /// </summary>
 
     std::string getLogType() const;
@@ -201,7 +201,7 @@ public:
     void setRuleName(const std::string& value);
 
     /// <summary>
-    /// 动作0：permit,1：deny
+    /// 动作包含permit，deny
     /// </summary>
 
     std::string getAction() const;
@@ -226,6 +226,42 @@ public:
     bool dstRegionNameIsSet() const;
     void unsetdstRegionName();
     void setDstRegionName(const std::string& value);
+
+    /// <summary>
+    /// 源省份名称
+    /// </summary>
+
+    std::string getSrcProvinceName() const;
+    bool srcProvinceNameIsSet() const;
+    void unsetsrcProvinceName();
+    void setSrcProvinceName(const std::string& value);
+
+    /// <summary>
+    /// 目的省份名称
+    /// </summary>
+
+    std::string getDstProvinceName() const;
+    bool dstProvinceNameIsSet() const;
+    void unsetdstProvinceName();
+    void setDstProvinceName(const std::string& value);
+
+    /// <summary>
+    /// 源城市名称
+    /// </summary>
+
+    std::string getSrcCityName() const;
+    bool srcCityNameIsSet() const;
+    void unsetsrcCityName();
+    void setSrcCityName(const std::string& value);
+
+    /// <summary>
+    /// 目的城市名称
+    /// </summary>
+
+    std::string getDstCityName() const;
+    bool dstCityNameIsSet() const;
+    void unsetdstCityName();
+    void setDstCityName(const std::string& value);
 
 
 protected:
@@ -271,6 +307,14 @@ protected:
     bool srcRegionNameIsSet_;
     std::string dstRegionName_;
     bool dstRegionNameIsSet_;
+    std::string srcProvinceName_;
+    bool srcProvinceNameIsSet_;
+    std::string dstProvinceName_;
+    bool dstProvinceNameIsSet_;
+    std::string srcCityName_;
+    bool srcCityNameIsSet_;
+    std::string dstCityName_;
+    bool dstCityNameIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

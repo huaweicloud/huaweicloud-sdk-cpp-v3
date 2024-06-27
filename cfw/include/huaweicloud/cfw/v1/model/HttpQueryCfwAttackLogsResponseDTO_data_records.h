@@ -59,7 +59,7 @@ public:
     void setAction(const std::string& value);
 
     /// <summary>
-    /// 事件时间
+    /// 事件时间，以毫秒为单位的时间戳，如1718936272648
     /// </summary>
 
     int64_t getEventTime() const;
@@ -122,13 +122,13 @@ public:
     void setAttackRuleId(const std::string& value);
 
     /// <summary>
-    /// 命中时间
+    /// 命中时间，以毫秒为单位的时间戳，如1718936272648
     /// </summary>
 
-    int32_t getHitTime() const;
+    int64_t getHitTime() const;
     bool hitTimeIsSet() const;
     void unsethitTime();
-    void setHitTime(int32_t value);
+    void setHitTime(int64_t value);
 
     /// <summary>
     /// 日志ID
@@ -212,15 +212,6 @@ public:
     void setPacketMessages(const std::vector<PacketMessage>& value);
 
     /// <summary>
-    /// 目标主机
-    /// </summary>
-
-    std::string getDstHost() const;
-    bool dstHostIsSet() const;
-    void unsetdstHost();
-    void setDstHost(const std::string& value);
-
-    /// <summary>
     /// 源区域id
     /// </summary>
 
@@ -256,6 +247,78 @@ public:
     void unsetdstRegionName();
     void setDstRegionName(const std::string& value);
 
+    /// <summary>
+    /// 源省份id
+    /// </summary>
+
+    std::string getSrcProvinceId() const;
+    bool srcProvinceIdIsSet() const;
+    void unsetsrcProvinceId();
+    void setSrcProvinceId(const std::string& value);
+
+    /// <summary>
+    /// 源省份名称
+    /// </summary>
+
+    std::string getSrcProvinceName() const;
+    bool srcProvinceNameIsSet() const;
+    void unsetsrcProvinceName();
+    void setSrcProvinceName(const std::string& value);
+
+    /// <summary>
+    /// 源城市id
+    /// </summary>
+
+    std::string getSrcCityId() const;
+    bool srcCityIdIsSet() const;
+    void unsetsrcCityId();
+    void setSrcCityId(const std::string& value);
+
+    /// <summary>
+    /// 源城市名称
+    /// </summary>
+
+    std::string getSrcCityName() const;
+    bool srcCityNameIsSet() const;
+    void unsetsrcCityName();
+    void setSrcCityName(const std::string& value);
+
+    /// <summary>
+    /// 目的省份id
+    /// </summary>
+
+    std::string getDstProvinceId() const;
+    bool dstProvinceIdIsSet() const;
+    void unsetdstProvinceId();
+    void setDstProvinceId(const std::string& value);
+
+    /// <summary>
+    /// 目的省份名称
+    /// </summary>
+
+    std::string getDstProvinceName() const;
+    bool dstProvinceNameIsSet() const;
+    void unsetdstProvinceName();
+    void setDstProvinceName(const std::string& value);
+
+    /// <summary>
+    /// 目的城市id
+    /// </summary>
+
+    std::string getDstCityId() const;
+    bool dstCityIdIsSet() const;
+    void unsetdstCityId();
+    void setDstCityId(const std::string& value);
+
+    /// <summary>
+    /// 目的城市名称
+    /// </summary>
+
+    std::string getDstCityName() const;
+    bool dstCityNameIsSet() const;
+    void unsetdstCityName();
+    void setDstCityName(const std::string& value);
+
 
 protected:
     std::string direction_;
@@ -276,7 +339,7 @@ protected:
     bool packetLengthIsSet_;
     std::string attackRuleId_;
     bool attackRuleIdIsSet_;
-    int32_t hitTime_;
+    int64_t hitTime_;
     bool hitTimeIsSet_;
     std::string logId_;
     bool logIdIsSet_;
@@ -296,8 +359,6 @@ protected:
     bool appIsSet_;
     std::vector<PacketMessage> packetMessages_;
     bool packetMessagesIsSet_;
-    std::string dstHost_;
-    bool dstHostIsSet_;
     std::string srcRegionId_;
     bool srcRegionIdIsSet_;
     std::string srcRegionName_;
@@ -306,6 +367,22 @@ protected:
     bool dstRegionIdIsSet_;
     std::string dstRegionName_;
     bool dstRegionNameIsSet_;
+    std::string srcProvinceId_;
+    bool srcProvinceIdIsSet_;
+    std::string srcProvinceName_;
+    bool srcProvinceNameIsSet_;
+    std::string srcCityId_;
+    bool srcCityIdIsSet_;
+    std::string srcCityName_;
+    bool srcCityNameIsSet_;
+    std::string dstProvinceId_;
+    bool dstProvinceIdIsSet_;
+    std::string dstProvinceName_;
+    bool dstProvinceNameIsSet_;
+    std::string dstCityId_;
+    bool dstCityIdIsSet_;
+    std::string dstCityName_;
+    bool dstCityNameIsSet_;
 
 };
 

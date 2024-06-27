@@ -12,8 +12,6 @@ namespace Model {
 
 BlackWhiteListResponse_data::BlackWhiteListResponse_data()
 {
-    objectId_ = "";
-    objectIdIsSet_ = false;
     offset_ = 0;
     offsetIsSet_ = false;
     limit_ = 0;
@@ -33,9 +31,6 @@ web::json::value BlackWhiteListResponse_data::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(objectIdIsSet_) {
-        val[utility::conversions::to_string_t("object_id")] = ModelBase::toJson(objectId_);
-    }
     if(offsetIsSet_) {
         val[utility::conversions::to_string_t("offset")] = ModelBase::toJson(offset_);
     }
@@ -55,15 +50,6 @@ bool BlackWhiteListResponse_data::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("object_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("object_id"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setObjectId(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("offset"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("offset"));
         if(!fieldValue.is_null())
@@ -103,27 +89,6 @@ bool BlackWhiteListResponse_data::fromJson(const web::json::value& val)
     return ok;
 }
 
-
-std::string BlackWhiteListResponse_data::getObjectId() const
-{
-    return objectId_;
-}
-
-void BlackWhiteListResponse_data::setObjectId(const std::string& value)
-{
-    objectId_ = value;
-    objectIdIsSet_ = true;
-}
-
-bool BlackWhiteListResponse_data::objectIdIsSet() const
-{
-    return objectIdIsSet_;
-}
-
-void BlackWhiteListResponse_data::unsetobjectId()
-{
-    objectIdIsSet_ = false;
-}
 
 int32_t BlackWhiteListResponse_data::getOffset() const
 {

@@ -38,7 +38,6 @@ UpdateRuleAclDto::UpdateRuleAclDto()
     longConnectTimeIsSet_ = false;
     longConnectEnable_ = 0;
     longConnectEnableIsSet_ = false;
-    profileIsSet_ = false;
     sourceIsSet_ = false;
     destinationIsSet_ = false;
     serviceIsSet_ = false;
@@ -98,9 +97,6 @@ web::json::value UpdateRuleAclDto::toJson() const
     }
     if(longConnectEnableIsSet_) {
         val[utility::conversions::to_string_t("long_connect_enable")] = ModelBase::toJson(longConnectEnable_);
-    }
-    if(profileIsSet_) {
-        val[utility::conversions::to_string_t("profile")] = ModelBase::toJson(profile_);
     }
     if(sourceIsSet_) {
         val[utility::conversions::to_string_t("source")] = ModelBase::toJson(source_);
@@ -248,15 +244,6 @@ bool UpdateRuleAclDto::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLongConnectEnable(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("profile"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("profile"));
-        if(!fieldValue.is_null())
-        {
-            RuleProfileDto refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setProfile(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("source"))) {
@@ -600,27 +587,6 @@ bool UpdateRuleAclDto::longConnectEnableIsSet() const
 void UpdateRuleAclDto::unsetlongConnectEnable()
 {
     longConnectEnableIsSet_ = false;
-}
-
-RuleProfileDto UpdateRuleAclDto::getProfile() const
-{
-    return profile_;
-}
-
-void UpdateRuleAclDto::setProfile(const RuleProfileDto& value)
-{
-    profile_ = value;
-    profileIsSet_ = true;
-}
-
-bool UpdateRuleAclDto::profileIsSet() const
-{
-    return profileIsSet_;
-}
-
-void UpdateRuleAclDto::unsetprofile()
-{
-    profileIsSet_ = false;
 }
 
 RuleAddressDto UpdateRuleAclDto::getSource() const

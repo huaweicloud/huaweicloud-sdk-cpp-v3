@@ -10,7 +10,6 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
-#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -40,13 +39,13 @@ public:
     /// AddressGroupVO members
 
     /// <summary>
-    /// 地址组id
+    /// 地址组类型，0表示自定义地址组，1表示WAF回源IP地址组，2表示DDoS回源IP地址组，3表示NAT64转换地址组
     /// </summary>
 
-    std::string getSetId() const;
-    bool setIdIsSet() const;
-    void unsetsetId();
-    void setSetId(const std::string& value);
+    int32_t getAddressSetType() const;
+    bool addressSetTypeIsSet() const;
+    void unsetaddressSetType();
+    void setAddressSetType(int32_t value);
 
     /// <summary>
     /// 地址组名称
@@ -58,33 +57,22 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 协议列表，协议类型:TCP为6, UDP为17,ICMP为1,ICMPV6为58,ANY为-1,手动类型不为空，自动类型为空
+    /// 地址组id
     /// </summary>
 
-    std::vector<int32_t>& getProtocols();
-    bool protocolsIsSet() const;
-    void unsetprotocols();
-    void setProtocols(std::vector<int32_t> value);
-
-    /// <summary>
-    /// 服务组类型，0表示自定义服务组，1表示常用WEB服务，2表示常用远程登录和PING，3表示常用数据库
-    /// </summary>
-
-    int32_t getServiceSetType() const;
-    bool serviceSetTypeIsSet() const;
-    void unsetserviceSetType();
-    void setServiceSetType(int32_t value);
+    std::string getSetId() const;
+    bool setIdIsSet() const;
+    void unsetsetId();
+    void setSetId(const std::string& value);
 
 
 protected:
-    std::string setId_;
-    bool setIdIsSet_;
+    int32_t addressSetType_;
+    bool addressSetTypeIsSet_;
     std::string name_;
     bool nameIsSet_;
-    std::vector<int32_t> protocols_;
-    bool protocolsIsSet_;
-    int32_t serviceSetType_;
-    bool serviceSetTypeIsSet_;
+    std::string setId_;
+    bool setIdIsSet_;
 
 };
 

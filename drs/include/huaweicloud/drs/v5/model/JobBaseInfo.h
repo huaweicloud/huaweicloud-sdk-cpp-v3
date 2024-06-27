@@ -157,6 +157,15 @@ public:
     void unsettags();
     void setTags(const std::vector<ResourceTag>& value);
 
+    /// <summary>
+    /// 是否开启云数据库RDS for MySQL/MariaDB的binlog快速清理。
+    /// </summary>
+
+    bool isIsOpenFastClean() const;
+    bool isOpenFastCleanIsSet() const;
+    void unsetisOpenFastClean();
+    void setIsOpenFastClean(bool value);
+
 
 protected:
     std::string name_;
@@ -185,6 +194,8 @@ protected:
     bool expiredDaysIsSet_;
     std::vector<ResourceTag> tags_;
     bool tagsIsSet_;
+    bool isOpenFastClean_;
+    bool isOpenFastCleanIsSet_;
 
 };
 

@@ -56,23 +56,12 @@ public:
     void unsetdescription();
     void setDescription(const std::string& value);
 
-    /// <summary>
-    /// 地址类型0 ipv4,1 ipv6,2 domain
-    /// </summary>
-
-    int32_t getAddressType() const;
-    bool addressTypeIsSet() const;
-    void unsetaddressType();
-    void setAddressType(int32_t value);
-
 
 protected:
     std::string name_;
     bool nameIsSet_;
     std::string description_;
     bool descriptionIsSet_;
-    int32_t addressType_;
-    bool addressTypeIsSet_;
 
 };
 

@@ -20,8 +20,6 @@ ServiceItemListResponseDto_data_records::ServiceItemListResponseDto_data_records
     sourcePortIsSet_ = false;
     destPort_ = "";
     destPortIsSet_ = false;
-    name_ = "";
-    nameIsSet_ = false;
     description_ = "";
     descriptionIsSet_ = false;
 }
@@ -47,9 +45,6 @@ web::json::value ServiceItemListResponseDto_data_records::toJson() const
     }
     if(destPortIsSet_) {
         val[utility::conversions::to_string_t("dest_port")] = ModelBase::toJson(destPort_);
-    }
-    if(nameIsSet_) {
-        val[utility::conversions::to_string_t("name")] = ModelBase::toJson(name_);
     }
     if(descriptionIsSet_) {
         val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
@@ -95,15 +90,6 @@ bool ServiceItemListResponseDto_data_records::fromJson(const web::json::value& v
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDestPort(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("name"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("name"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setName(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("description"))) {
@@ -201,27 +187,6 @@ bool ServiceItemListResponseDto_data_records::destPortIsSet() const
 void ServiceItemListResponseDto_data_records::unsetdestPort()
 {
     destPortIsSet_ = false;
-}
-
-std::string ServiceItemListResponseDto_data_records::getName() const
-{
-    return name_;
-}
-
-void ServiceItemListResponseDto_data_records::setName(const std::string& value)
-{
-    name_ = value;
-    nameIsSet_ = true;
-}
-
-bool ServiceItemListResponseDto_data_records::nameIsSet() const
-{
-    return nameIsSet_;
-}
-
-void ServiceItemListResponseDto_data_records::unsetname()
-{
-    nameIsSet_ = false;
 }
 
 std::string ServiceItemListResponseDto_data_records::getDescription() const

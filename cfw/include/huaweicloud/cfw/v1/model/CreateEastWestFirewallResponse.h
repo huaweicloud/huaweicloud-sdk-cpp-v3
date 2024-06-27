@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/cfw/v1/model/IdObject.h>
+#include <huaweicloud/cfw/v1/model/CreateEWFirewallResp.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -42,14 +42,14 @@ public:
     /// 
     /// </summary>
 
-    IdObject getData() const;
+    CreateEWFirewallResp getData() const;
     bool dataIsSet() const;
     void unsetdata();
-    void setData(const IdObject& value);
+    void setData(const CreateEWFirewallResp& value);
 
 
 protected:
-    IdObject data_;
+    CreateEWFirewallResp data_;
     bool dataIsSet_;
 
 #ifdef RTTR_FLAG

@@ -44,6 +44,22 @@ HttpQueryCfwAccessControllerLogsResponseDTO_data_records::HttpQueryCfwAccessCont
     appIsSet_ = false;
     dstHost_ = "";
     dstHostIsSet_ = false;
+    srcProvinceId_ = "";
+    srcProvinceIdIsSet_ = false;
+    srcProvinceName_ = "";
+    srcProvinceNameIsSet_ = false;
+    srcCityId_ = "";
+    srcCityIdIsSet_ = false;
+    srcCityName_ = "";
+    srcCityNameIsSet_ = false;
+    dstProvinceId_ = "";
+    dstProvinceIdIsSet_ = false;
+    dstProvinceName_ = "";
+    dstProvinceNameIsSet_ = false;
+    dstCityId_ = "";
+    dstCityIdIsSet_ = false;
+    dstCityName_ = "";
+    dstCityNameIsSet_ = false;
 }
 
 HttpQueryCfwAccessControllerLogsResponseDTO_data_records::~HttpQueryCfwAccessControllerLogsResponseDTO_data_records() = default;
@@ -103,6 +119,30 @@ web::json::value HttpQueryCfwAccessControllerLogsResponseDTO_data_records::toJso
     }
     if(dstHostIsSet_) {
         val[utility::conversions::to_string_t("dst_host")] = ModelBase::toJson(dstHost_);
+    }
+    if(srcProvinceIdIsSet_) {
+        val[utility::conversions::to_string_t("src_province_id")] = ModelBase::toJson(srcProvinceId_);
+    }
+    if(srcProvinceNameIsSet_) {
+        val[utility::conversions::to_string_t("src_province_name")] = ModelBase::toJson(srcProvinceName_);
+    }
+    if(srcCityIdIsSet_) {
+        val[utility::conversions::to_string_t("src_city_id")] = ModelBase::toJson(srcCityId_);
+    }
+    if(srcCityNameIsSet_) {
+        val[utility::conversions::to_string_t("src_city_name")] = ModelBase::toJson(srcCityName_);
+    }
+    if(dstProvinceIdIsSet_) {
+        val[utility::conversions::to_string_t("dst_province_id")] = ModelBase::toJson(dstProvinceId_);
+    }
+    if(dstProvinceNameIsSet_) {
+        val[utility::conversions::to_string_t("dst_province_name")] = ModelBase::toJson(dstProvinceName_);
+    }
+    if(dstCityIdIsSet_) {
+        val[utility::conversions::to_string_t("dst_city_id")] = ModelBase::toJson(dstCityId_);
+    }
+    if(dstCityNameIsSet_) {
+        val[utility::conversions::to_string_t("dst_city_name")] = ModelBase::toJson(dstCityName_);
     }
 
     return val;
@@ -253,6 +293,78 @@ bool HttpQueryCfwAccessControllerLogsResponseDTO_data_records::fromJson(const we
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDstHost(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("src_province_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("src_province_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSrcProvinceId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("src_province_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("src_province_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSrcProvinceName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("src_city_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("src_city_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSrcCityId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("src_city_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("src_city_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSrcCityName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("dst_province_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("dst_province_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDstProvinceId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("dst_province_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("dst_province_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDstProvinceName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("dst_city_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("dst_city_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDstCityId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("dst_city_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("dst_city_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDstCityName(refVal);
         }
     }
     return ok;
@@ -593,6 +705,174 @@ bool HttpQueryCfwAccessControllerLogsResponseDTO_data_records::dstHostIsSet() co
 void HttpQueryCfwAccessControllerLogsResponseDTO_data_records::unsetdstHost()
 {
     dstHostIsSet_ = false;
+}
+
+std::string HttpQueryCfwAccessControllerLogsResponseDTO_data_records::getSrcProvinceId() const
+{
+    return srcProvinceId_;
+}
+
+void HttpQueryCfwAccessControllerLogsResponseDTO_data_records::setSrcProvinceId(const std::string& value)
+{
+    srcProvinceId_ = value;
+    srcProvinceIdIsSet_ = true;
+}
+
+bool HttpQueryCfwAccessControllerLogsResponseDTO_data_records::srcProvinceIdIsSet() const
+{
+    return srcProvinceIdIsSet_;
+}
+
+void HttpQueryCfwAccessControllerLogsResponseDTO_data_records::unsetsrcProvinceId()
+{
+    srcProvinceIdIsSet_ = false;
+}
+
+std::string HttpQueryCfwAccessControllerLogsResponseDTO_data_records::getSrcProvinceName() const
+{
+    return srcProvinceName_;
+}
+
+void HttpQueryCfwAccessControllerLogsResponseDTO_data_records::setSrcProvinceName(const std::string& value)
+{
+    srcProvinceName_ = value;
+    srcProvinceNameIsSet_ = true;
+}
+
+bool HttpQueryCfwAccessControllerLogsResponseDTO_data_records::srcProvinceNameIsSet() const
+{
+    return srcProvinceNameIsSet_;
+}
+
+void HttpQueryCfwAccessControllerLogsResponseDTO_data_records::unsetsrcProvinceName()
+{
+    srcProvinceNameIsSet_ = false;
+}
+
+std::string HttpQueryCfwAccessControllerLogsResponseDTO_data_records::getSrcCityId() const
+{
+    return srcCityId_;
+}
+
+void HttpQueryCfwAccessControllerLogsResponseDTO_data_records::setSrcCityId(const std::string& value)
+{
+    srcCityId_ = value;
+    srcCityIdIsSet_ = true;
+}
+
+bool HttpQueryCfwAccessControllerLogsResponseDTO_data_records::srcCityIdIsSet() const
+{
+    return srcCityIdIsSet_;
+}
+
+void HttpQueryCfwAccessControllerLogsResponseDTO_data_records::unsetsrcCityId()
+{
+    srcCityIdIsSet_ = false;
+}
+
+std::string HttpQueryCfwAccessControllerLogsResponseDTO_data_records::getSrcCityName() const
+{
+    return srcCityName_;
+}
+
+void HttpQueryCfwAccessControllerLogsResponseDTO_data_records::setSrcCityName(const std::string& value)
+{
+    srcCityName_ = value;
+    srcCityNameIsSet_ = true;
+}
+
+bool HttpQueryCfwAccessControllerLogsResponseDTO_data_records::srcCityNameIsSet() const
+{
+    return srcCityNameIsSet_;
+}
+
+void HttpQueryCfwAccessControllerLogsResponseDTO_data_records::unsetsrcCityName()
+{
+    srcCityNameIsSet_ = false;
+}
+
+std::string HttpQueryCfwAccessControllerLogsResponseDTO_data_records::getDstProvinceId() const
+{
+    return dstProvinceId_;
+}
+
+void HttpQueryCfwAccessControllerLogsResponseDTO_data_records::setDstProvinceId(const std::string& value)
+{
+    dstProvinceId_ = value;
+    dstProvinceIdIsSet_ = true;
+}
+
+bool HttpQueryCfwAccessControllerLogsResponseDTO_data_records::dstProvinceIdIsSet() const
+{
+    return dstProvinceIdIsSet_;
+}
+
+void HttpQueryCfwAccessControllerLogsResponseDTO_data_records::unsetdstProvinceId()
+{
+    dstProvinceIdIsSet_ = false;
+}
+
+std::string HttpQueryCfwAccessControllerLogsResponseDTO_data_records::getDstProvinceName() const
+{
+    return dstProvinceName_;
+}
+
+void HttpQueryCfwAccessControllerLogsResponseDTO_data_records::setDstProvinceName(const std::string& value)
+{
+    dstProvinceName_ = value;
+    dstProvinceNameIsSet_ = true;
+}
+
+bool HttpQueryCfwAccessControllerLogsResponseDTO_data_records::dstProvinceNameIsSet() const
+{
+    return dstProvinceNameIsSet_;
+}
+
+void HttpQueryCfwAccessControllerLogsResponseDTO_data_records::unsetdstProvinceName()
+{
+    dstProvinceNameIsSet_ = false;
+}
+
+std::string HttpQueryCfwAccessControllerLogsResponseDTO_data_records::getDstCityId() const
+{
+    return dstCityId_;
+}
+
+void HttpQueryCfwAccessControllerLogsResponseDTO_data_records::setDstCityId(const std::string& value)
+{
+    dstCityId_ = value;
+    dstCityIdIsSet_ = true;
+}
+
+bool HttpQueryCfwAccessControllerLogsResponseDTO_data_records::dstCityIdIsSet() const
+{
+    return dstCityIdIsSet_;
+}
+
+void HttpQueryCfwAccessControllerLogsResponseDTO_data_records::unsetdstCityId()
+{
+    dstCityIdIsSet_ = false;
+}
+
+std::string HttpQueryCfwAccessControllerLogsResponseDTO_data_records::getDstCityName() const
+{
+    return dstCityName_;
+}
+
+void HttpQueryCfwAccessControllerLogsResponseDTO_data_records::setDstCityName(const std::string& value)
+{
+    dstCityName_ = value;
+    dstCityNameIsSet_ = true;
+}
+
+bool HttpQueryCfwAccessControllerLogsResponseDTO_data_records::dstCityNameIsSet() const
+{
+    return dstCityNameIsSet_;
+}
+
+void HttpQueryCfwAccessControllerLogsResponseDTO_data_records::unsetdstCityName()
+{
+    dstCityNameIsSet_ = false;
 }
 
 }

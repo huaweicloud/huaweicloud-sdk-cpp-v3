@@ -16,8 +16,6 @@ ListAclRulesRequest::ListAclRulesRequest()
     objectIdIsSet_ = false;
     type_ = 0;
     typeIsSet_ = false;
-    protocol_ = 0;
-    protocolIsSet_ = false;
     ip_ = "";
     ipIsSet_ = false;
     name_ = "";
@@ -65,9 +63,6 @@ web::json::value ListAclRulesRequest::toJson() const
     }
     if(typeIsSet_) {
         val[utility::conversions::to_string_t("type")] = ModelBase::toJson(type_);
-    }
-    if(protocolIsSet_) {
-        val[utility::conversions::to_string_t("protocol")] = ModelBase::toJson(protocol_);
     }
     if(ipIsSet_) {
         val[utility::conversions::to_string_t("ip")] = ModelBase::toJson(ip_);
@@ -137,15 +132,6 @@ bool ListAclRulesRequest::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setType(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("protocol"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("protocol"));
-        if(!fieldValue.is_null())
-        {
-            int32_t refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setProtocol(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("ip"))) {
@@ -327,27 +313,6 @@ bool ListAclRulesRequest::typeIsSet() const
 void ListAclRulesRequest::unsettype()
 {
     typeIsSet_ = false;
-}
-
-int32_t ListAclRulesRequest::getProtocol() const
-{
-    return protocol_;
-}
-
-void ListAclRulesRequest::setProtocol(int32_t value)
-{
-    protocol_ = value;
-    protocolIsSet_ = true;
-}
-
-bool ListAclRulesRequest::protocolIsSet() const
-{
-    return protocolIsSet_;
-}
-
-void ListAclRulesRequest::unsetprotocol()
-{
-    protocolIsSet_ = false;
 }
 
 std::string ListAclRulesRequest::getIp() const

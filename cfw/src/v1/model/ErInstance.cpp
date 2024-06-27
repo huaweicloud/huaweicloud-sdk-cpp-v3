@@ -24,6 +24,8 @@ ErInstance::ErInstance()
     projectIdIsSet_ = false;
     enableIpv6_ = "";
     enableIpv6IsSet_ = false;
+    attachmentId_ = "";
+    attachmentIdIsSet_ = false;
 }
 
 ErInstance::~ErInstance() = default;
@@ -53,6 +55,9 @@ web::json::value ErInstance::toJson() const
     }
     if(enableIpv6IsSet_) {
         val[utility::conversions::to_string_t("enable_ipv6")] = ModelBase::toJson(enableIpv6_);
+    }
+    if(attachmentIdIsSet_) {
+        val[utility::conversions::to_string_t("attachment_id")] = ModelBase::toJson(attachmentId_);
     }
 
     return val;
@@ -113,6 +118,15 @@ bool ErInstance::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEnableIpv6(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("attachment_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("attachment_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAttachmentId(refVal);
         }
     }
     return ok;
@@ -243,6 +257,27 @@ bool ErInstance::enableIpv6IsSet() const
 void ErInstance::unsetenableIpv6()
 {
     enableIpv6IsSet_ = false;
+}
+
+std::string ErInstance::getAttachmentId() const
+{
+    return attachmentId_;
+}
+
+void ErInstance::setAttachmentId(const std::string& value)
+{
+    attachmentId_ = value;
+    attachmentIdIsSet_ = true;
+}
+
+bool ErInstance::attachmentIdIsSet() const
+{
+    return attachmentIdIsSet_;
+}
+
+void ErInstance::unsetattachmentId()
+{
+    attachmentIdIsSet_ = false;
 }
 
 }

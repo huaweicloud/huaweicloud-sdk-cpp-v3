@@ -12,11 +12,9 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/kvs/v1/model/Kv_options.h>
 #include <huaweicloud/kvs/v1/model/Update_fields.h>
 #include <huaweicloud/kvs/v1/model/Condition_expression.h>
 #include <string>
-#include <huaweicloud/kvs/v1/model/Update_blob.h>
 #include <huaweicloud/core/bson/Bson.h>
 
 namespace HuaweiCloud {
@@ -77,28 +75,10 @@ public:
     /// 
     /// </summary>
 
-    Kv_options getKvOptions() const;
-    bool kvOptionsIsSet() const;
-    void unsetkvOptions();
-    void setKvOptions(const Kv_options& value);
-
-    /// <summary>
-    /// 
-    /// </summary>
-
     Update_fields getUpdateFields() const;
     bool updateFieldsIsSet() const;
     void unsetupdateFields();
     void setUpdateFields(const Update_fields& value);
-
-    /// <summary>
-    /// 
-    /// </summary>
-
-    Update_blob getUpdateBlob() const;
-    bool updateBlobIsSet() const;
-    void unsetupdateBlob();
-    void setUpdateBlob(const Update_blob& value);
 
 
 protected:
@@ -108,12 +88,8 @@ protected:
     bool primaryKeyIsSet_;
     Condition_expression conditionExpression_;
     bool conditionExpressionIsSet_;
-    Kv_options kvOptions_;
-    bool kvOptionsIsSet_;
     Update_fields updateFields_;
     bool updateFieldsIsSet_;
-    Update_blob updateBlob_;
-    bool updateBlobIsSet_;
 
 };
 

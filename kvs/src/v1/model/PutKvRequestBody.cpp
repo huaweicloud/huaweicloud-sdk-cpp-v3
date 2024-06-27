@@ -17,7 +17,6 @@ PutKvRequestBody::PutKvRequestBody()
     tableNameIsSet_ = false;
     conditionExpressionIsSet_ = false;
     kvDocIsSet_ = false;
-    kvBlobIsSet_ = false;
 }
 
 PutKvRequestBody::~PutKvRequestBody() = default;
@@ -36,9 +35,6 @@ bool PutKvRequestBody::toBson(Builder &builder) const
         return false;
     }
     if (kvDocIsSet_ && !bson_append(builder, "kv_doc", kvDoc_)) {
-        return false;
-    }
-    if (kvBlobIsSet_ && !bson_append(builder, "kv_blob", kvBlob_)) {
         return false;
     }
 
@@ -75,15 +71,6 @@ bool PutKvRequestBody::fromBson(const Viewer &viewer)
                 return false;
             }
             kvDocIsSet_ = true;
-            ++it;
-            continue;
-        }
-        
-        if (key == "kv_blob") {
-            if (!bson_get(it, kvBlob_)) {
-                return false;
-            }
-            kvBlobIsSet_ = true;
             ++it;
             continue;
         }
@@ -155,27 +142,6 @@ bool PutKvRequestBody::kvDocIsSet() const
 void PutKvRequestBody::unsetkvDoc()
 {
     kvDocIsSet_ = false;
-}
-
-Kv_blob PutKvRequestBody::getKvBlob() const
-{
-    return kvBlob_;
-}
-
-void PutKvRequestBody::setKvBlob(const Kv_blob& value)
-{
-    kvBlob_ = value;
-    kvBlobIsSet_ = true;
-}
-
-bool PutKvRequestBody::kvBlobIsSet() const
-{
-    return kvBlobIsSet_;
-}
-
-void PutKvRequestBody::unsetkvBlob()
-{
-    kvBlobIsSet_ = false;
 }
 
 }

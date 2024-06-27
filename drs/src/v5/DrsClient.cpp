@@ -1842,6 +1842,9 @@ std::shared_ptr<ShowDbObjectTemplateProgressResponse> DrsClient::showDbObjectTem
     if (request.limitIsSet()) {
         localVarQueryParams["limit"] = parameterToString(request.getLimit());
     }
+    if (request.typeIsSet()) {
+        localVarQueryParams["type"] = parameterToString(request.getType());
+    }
     if (request.xLanguageIsSet()) {
         localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
     }
@@ -1877,6 +1880,9 @@ std::shared_ptr<ShowDbObjectTemplateResultResponse> DrsClient::showDbObjectTempl
 
     if (request.typeIsSet()) {
         localVarQueryParams["type"] = parameterToString(request.getType());
+    }
+    if (request.fileExportObjectLevelIsSet()) {
+        localVarQueryParams["file_export_object_level"] = parameterToString(request.getFileExportObjectLevel());
     }
     if (request.xLanguageIsSet()) {
         localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
@@ -2489,6 +2495,15 @@ std::shared_ptr<ShowReplayResultsResponse> DrsClient::showReplayResults(ShowRepl
     }
     if (request.targetNameIsSet()) {
         localVarQueryParams["target_name"] = parameterToString(request.getTargetName());
+    }
+    if (request.isSampleIsSet()) {
+        localVarQueryParams["is_sample"] = parameterToString(request.isIsSample());
+    }
+    if (request.errorTypeIsSet()) {
+        localVarQueryParams["error_type"] = parameterToString(request.getErrorType());
+    }
+    if (request.sqlTemplateMd5IsSet()) {
+        localVarQueryParams["sql_template_md5"] = parameterToString(request.getSqlTemplateMd5());
     }
     if (request.xLanguageIsSet()) {
         localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());

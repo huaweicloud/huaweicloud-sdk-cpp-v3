@@ -85,15 +85,6 @@ public:
     void setRefCount(int32_t value);
 
     /// <summary>
-    /// 状态
-    /// </summary>
-
-    std::string getStatus() const;
-    bool statusIsSet() const;
-    void unsetstatus();
-    void setStatus(const std::string& value);
-
-    /// <summary>
     /// 项目id
     /// </summary>
 
@@ -123,8 +114,6 @@ protected:
     bool serviceSetTypeIsSet_;
     int32_t refCount_;
     bool refCountIsSet_;
-    std::string status_;
-    bool statusIsSet_;
     std::string projectId_;
     bool projectIdIsSet_;
     std::vector<int32_t> protocols_;

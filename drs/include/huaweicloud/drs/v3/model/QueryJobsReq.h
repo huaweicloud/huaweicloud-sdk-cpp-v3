@@ -86,7 +86,7 @@ public:
     void setEnterpriseProjectId(const std::string& value);
 
     /// <summary>
-    /// name或id
+    /// Name或ID。支持传入多个任务ID，逗号分隔，最多100个。
     /// </summary>
 
     std::string getName() const;

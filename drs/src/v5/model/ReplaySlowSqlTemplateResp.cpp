@@ -14,6 +14,8 @@ ReplaySlowSqlTemplateResp::ReplaySlowSqlTemplateResp()
 {
     sqlTemplate_ = "";
     sqlTemplateIsSet_ = false;
+    sqlTemplateMd5_ = "";
+    sqlTemplateMd5IsSet_ = false;
     targetName_ = "";
     targetNameIsSet_ = false;
     schemaName_ = "";
@@ -46,6 +48,9 @@ web::json::value ReplaySlowSqlTemplateResp::toJson() const
 
     if(sqlTemplateIsSet_) {
         val[utility::conversions::to_string_t("sql_template")] = ModelBase::toJson(sqlTemplate_);
+    }
+    if(sqlTemplateMd5IsSet_) {
+        val[utility::conversions::to_string_t("sql_template_md5")] = ModelBase::toJson(sqlTemplateMd5_);
     }
     if(targetNameIsSet_) {
         val[utility::conversions::to_string_t("target_name")] = ModelBase::toJson(targetName_);
@@ -88,6 +93,15 @@ bool ReplaySlowSqlTemplateResp::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSqlTemplate(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("sql_template_md5"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sql_template_md5"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSqlTemplateMd5(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("target_name"))) {
@@ -194,6 +208,27 @@ bool ReplaySlowSqlTemplateResp::sqlTemplateIsSet() const
 void ReplaySlowSqlTemplateResp::unsetsqlTemplate()
 {
     sqlTemplateIsSet_ = false;
+}
+
+std::string ReplaySlowSqlTemplateResp::getSqlTemplateMd5() const
+{
+    return sqlTemplateMd5_;
+}
+
+void ReplaySlowSqlTemplateResp::setSqlTemplateMd5(const std::string& value)
+{
+    sqlTemplateMd5_ = value;
+    sqlTemplateMd5IsSet_ = true;
+}
+
+bool ReplaySlowSqlTemplateResp::sqlTemplateMd5IsSet() const
+{
+    return sqlTemplateMd5IsSet_;
+}
+
+void ReplaySlowSqlTemplateResp::unsetsqlTemplateMd5()
+{
+    sqlTemplateMd5IsSet_ = false;
 }
 
 std::string ReplaySlowSqlTemplateResp::getTargetName() const

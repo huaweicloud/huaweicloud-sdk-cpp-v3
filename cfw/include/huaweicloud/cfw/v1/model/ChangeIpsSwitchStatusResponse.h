@@ -9,7 +9,6 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <string>
 #include <huaweicloud/cfw/v1/model/CommonResponseDTO_data.h>
 
 namespace HuaweiCloud {
@@ -40,15 +39,6 @@ public:
     /// ChangeIpsSwitchStatusResponse members
 
     /// <summary>
-    /// trace_id
-    /// </summary>
-
-    std::string getTraceId() const;
-    bool traceIdIsSet() const;
-    void unsettraceId();
-    void setTraceId(const std::string& value);
-
-    /// <summary>
     /// 
     /// </summary>
 
@@ -59,8 +49,6 @@ public:
 
 
 protected:
-    std::string traceId_;
-    bool traceIdIsSet_;
     CommonResponseDTO_data data_;
     bool dataIsSet_;
 

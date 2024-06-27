@@ -9,9 +9,9 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/gaussdb/v3/model/SrCreateInstanceRsp_instance_tags_info_tags.h>
 #include <huaweicloud/gaussdb/v3/model/SrCreateInstanceRsp_instance_tags_info_sys_tags.h>
 #include <vector>
+#include <huaweicloud/gaussdb/v3/model/CreateChInstanceInfo_tags_info_tags.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -44,10 +44,10 @@ public:
     /// 用户标签。默认为空。
     /// </summary>
 
-    std::vector<SrCreateInstanceRsp_instance_tags_info_tags>& getTags();
+    std::vector<CreateChInstanceInfo_tags_info_tags>& getTags();
     bool tagsIsSet() const;
     void unsettags();
-    void setTags(const std::vector<SrCreateInstanceRsp_instance_tags_info_tags>& value);
+    void setTags(const std::vector<CreateChInstanceInfo_tags_info_tags>& value);
 
     /// <summary>
     /// 系统标签。
@@ -60,7 +60,7 @@ public:
 
 
 protected:
-    std::vector<SrCreateInstanceRsp_instance_tags_info_tags> tags_;
+    std::vector<CreateChInstanceInfo_tags_info_tags> tags_;
     bool tagsIsSet_;
     std::vector<SrCreateInstanceRsp_instance_tags_info_sys_tags> sysTags_;
     bool sysTagsIsSet_;

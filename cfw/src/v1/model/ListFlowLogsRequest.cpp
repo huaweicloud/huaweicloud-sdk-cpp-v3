@@ -50,6 +50,14 @@ ListFlowLogsRequest::ListFlowLogsRequest()
     srcRegionNameIsSet_ = false;
     dstRegionName_ = "";
     dstRegionNameIsSet_ = false;
+    srcProvinceName_ = "";
+    srcProvinceNameIsSet_ = false;
+    dstProvinceName_ = "";
+    dstProvinceNameIsSet_ = false;
+    srcCityName_ = "";
+    srcCityNameIsSet_ = false;
+    dstCityName_ = "";
+    dstCityNameIsSet_ = false;
 }
 
 ListFlowLogsRequest::~ListFlowLogsRequest() = default;
@@ -118,6 +126,18 @@ web::json::value ListFlowLogsRequest::toJson() const
     }
     if(dstRegionNameIsSet_) {
         val[utility::conversions::to_string_t("dst_region_name")] = ModelBase::toJson(dstRegionName_);
+    }
+    if(srcProvinceNameIsSet_) {
+        val[utility::conversions::to_string_t("src_province_name")] = ModelBase::toJson(srcProvinceName_);
+    }
+    if(dstProvinceNameIsSet_) {
+        val[utility::conversions::to_string_t("dst_province_name")] = ModelBase::toJson(dstProvinceName_);
+    }
+    if(srcCityNameIsSet_) {
+        val[utility::conversions::to_string_t("src_city_name")] = ModelBase::toJson(srcCityName_);
+    }
+    if(dstCityNameIsSet_) {
+        val[utility::conversions::to_string_t("dst_city_name")] = ModelBase::toJson(dstCityName_);
     }
 
     return val;
@@ -295,6 +315,42 @@ bool ListFlowLogsRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDstRegionName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("src_province_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("src_province_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSrcProvinceName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("dst_province_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("dst_province_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDstProvinceName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("src_city_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("src_city_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSrcCityName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("dst_city_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("dst_city_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDstCityName(refVal);
         }
     }
     return ok;
@@ -698,6 +754,90 @@ bool ListFlowLogsRequest::dstRegionNameIsSet() const
 void ListFlowLogsRequest::unsetdstRegionName()
 {
     dstRegionNameIsSet_ = false;
+}
+
+std::string ListFlowLogsRequest::getSrcProvinceName() const
+{
+    return srcProvinceName_;
+}
+
+void ListFlowLogsRequest::setSrcProvinceName(const std::string& value)
+{
+    srcProvinceName_ = value;
+    srcProvinceNameIsSet_ = true;
+}
+
+bool ListFlowLogsRequest::srcProvinceNameIsSet() const
+{
+    return srcProvinceNameIsSet_;
+}
+
+void ListFlowLogsRequest::unsetsrcProvinceName()
+{
+    srcProvinceNameIsSet_ = false;
+}
+
+std::string ListFlowLogsRequest::getDstProvinceName() const
+{
+    return dstProvinceName_;
+}
+
+void ListFlowLogsRequest::setDstProvinceName(const std::string& value)
+{
+    dstProvinceName_ = value;
+    dstProvinceNameIsSet_ = true;
+}
+
+bool ListFlowLogsRequest::dstProvinceNameIsSet() const
+{
+    return dstProvinceNameIsSet_;
+}
+
+void ListFlowLogsRequest::unsetdstProvinceName()
+{
+    dstProvinceNameIsSet_ = false;
+}
+
+std::string ListFlowLogsRequest::getSrcCityName() const
+{
+    return srcCityName_;
+}
+
+void ListFlowLogsRequest::setSrcCityName(const std::string& value)
+{
+    srcCityName_ = value;
+    srcCityNameIsSet_ = true;
+}
+
+bool ListFlowLogsRequest::srcCityNameIsSet() const
+{
+    return srcCityNameIsSet_;
+}
+
+void ListFlowLogsRequest::unsetsrcCityName()
+{
+    srcCityNameIsSet_ = false;
+}
+
+std::string ListFlowLogsRequest::getDstCityName() const
+{
+    return dstCityName_;
+}
+
+void ListFlowLogsRequest::setDstCityName(const std::string& value)
+{
+    dstCityName_ = value;
+    dstCityNameIsSet_ = true;
+}
+
+bool ListFlowLogsRequest::dstCityNameIsSet() const
+{
+    return dstCityNameIsSet_;
+}
+
+void ListFlowLogsRequest::unsetdstCityName()
+{
+    dstCityNameIsSet_ = false;
 }
 
 }

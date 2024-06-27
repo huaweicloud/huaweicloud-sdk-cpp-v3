@@ -56,34 +56,12 @@ public:
     void unsetdescription();
     void setDescription(const std::string& value);
 
-    /// <summary>
-    /// 域名组id
-    /// </summary>
-
-    std::string getSetId() const;
-    bool setIdIsSet() const;
-    void unsetsetId();
-    void setSetId(const std::string& value);
-
-    /// <summary>
-    /// 域名组类型，0表示URL过滤，1表示地址解析
-    /// </summary>
-
-    int32_t getDomainSetType() const;
-    bool domainSetTypeIsSet() const;
-    void unsetdomainSetType();
-    void setDomainSetType(int32_t value);
-
 
 protected:
     std::string name_;
     bool nameIsSet_;
     std::string description_;
     bool descriptionIsSet_;
-    std::string setId_;
-    bool setIdIsSet_;
-    int32_t domainSetType_;
-    bool domainSetTypeIsSet_;
 
 };
 

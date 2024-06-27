@@ -92,6 +92,15 @@ public:
     void unsetenableIpv6();
     void setEnableIpv6(const std::string& value);
 
+    /// <summary>
+    /// 连接id
+    /// </summary>
+
+    std::string getAttachmentId() const;
+    bool attachmentIdIsSet() const;
+    void unsetattachmentId();
+    void setAttachmentId(const std::string& value);
+
 
 protected:
     std::string id_;
@@ -106,6 +115,8 @@ protected:
     bool projectIdIsSet_;
     std::string enableIpv6_;
     bool enableIpv6IsSet_;
+    std::string attachmentId_;
+    bool attachmentIdIsSet_;
 
 };
 

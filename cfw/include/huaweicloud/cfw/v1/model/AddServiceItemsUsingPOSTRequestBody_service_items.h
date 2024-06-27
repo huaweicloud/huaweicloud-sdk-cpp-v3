@@ -39,15 +39,6 @@ public:
     /// AddServiceItemsUsingPOSTRequestBody_service_items members
 
     /// <summary>
-    /// 服务成员id
-    /// </summary>
-
-    std::string getItemId() const;
-    bool itemIdIsSet() const;
-    void unsetitemId();
-    void setItemId(const std::string& value);
-
-    /// <summary>
     /// 协议类型:TCP为6，UDP为17，ICMP为1，ICMPV6为58，ANY为-1，手动类型不为空，自动类型为空
     /// </summary>
 
@@ -75,15 +66,6 @@ public:
     void setDestPort(const std::string& value);
 
     /// <summary>
-    /// 服务成员名称
-    /// </summary>
-
-    std::string getName() const;
-    bool nameIsSet() const;
-    void unsetname();
-    void setName(const std::string& value);
-
-    /// <summary>
     /// 服务成员描述
     /// </summary>
 
@@ -94,16 +76,12 @@ public:
 
 
 protected:
-    std::string itemId_;
-    bool itemIdIsSet_;
     int32_t protocol_;
     bool protocolIsSet_;
     std::string sourcePort_;
     bool sourcePortIsSet_;
     std::string destPort_;
     bool destPortIsSet_;
-    std::string name_;
-    bool nameIsSet_;
     std::string description_;
     bool descriptionIsSet_;
 

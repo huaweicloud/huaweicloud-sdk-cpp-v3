@@ -38,7 +38,6 @@ AddRuleAclDto_rules::AddRuleAclDto_rules()
     descriptionIsSet_ = false;
     direction_ = 0;
     directionIsSet_ = false;
-    profileIsSet_ = false;
     sourceIsSet_ = false;
     destinationIsSet_ = false;
     serviceIsSet_ = false;
@@ -96,9 +95,6 @@ web::json::value AddRuleAclDto_rules::toJson() const
     }
     if(directionIsSet_) {
         val[utility::conversions::to_string_t("direction")] = ModelBase::toJson(direction_);
-    }
-    if(profileIsSet_) {
-        val[utility::conversions::to_string_t("profile")] = ModelBase::toJson(profile_);
     }
     if(sourceIsSet_) {
         val[utility::conversions::to_string_t("source")] = ModelBase::toJson(source_);
@@ -243,15 +239,6 @@ bool AddRuleAclDto_rules::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDirection(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("profile"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("profile"));
-        if(!fieldValue.is_null())
-        {
-            RuleProfileDto refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setProfile(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("source"))) {
@@ -586,27 +573,6 @@ bool AddRuleAclDto_rules::directionIsSet() const
 void AddRuleAclDto_rules::unsetdirection()
 {
     directionIsSet_ = false;
-}
-
-RuleProfileDto AddRuleAclDto_rules::getProfile() const
-{
-    return profile_;
-}
-
-void AddRuleAclDto_rules::setProfile(const RuleProfileDto& value)
-{
-    profile_ = value;
-    profileIsSet_ = true;
-}
-
-bool AddRuleAclDto_rules::profileIsSet() const
-{
-    return profileIsSet_;
-}
-
-void AddRuleAclDto_rules::unsetprofile()
-{
-    profileIsSet_ = false;
 }
 
 RuleAddressDtoForRequest AddRuleAclDto_rules::getSource() const

@@ -9,8 +9,8 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/cfw/v1/model/IdObject.h>
 #include <vector>
+#include <huaweicloud/cfw/v1/model/ServiceItemIds_items.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -43,14 +43,14 @@ public:
     /// 服务组成员id列表
     /// </summary>
 
-    std::vector<IdObject>& getItems();
+    std::vector<ServiceItemIds_items>& getItems();
     bool itemsIsSet() const;
     void unsetitems();
-    void setItems(const std::vector<IdObject>& value);
+    void setItems(const std::vector<ServiceItemIds_items>& value);
 
 
 protected:
-    std::vector<IdObject> items_;
+    std::vector<ServiceItemIds_items> items_;
     bool itemsIsSet_;
 
 };

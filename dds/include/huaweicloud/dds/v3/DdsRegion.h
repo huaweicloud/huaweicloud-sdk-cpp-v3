@@ -116,7 +116,11 @@ public:
             });
         regions["my-kualalumpur-1"] = Region("my-kualalumpur-1",
             { 
-                "https://dd.my-kualalumpur-1.myhuaweicloud.com"
+                "https://dds.my-kualalumpur-1.myhuaweicloud.com"
+            });
+        regions["ru-moscow-1"] = Region("ru-moscow-1",
+            { 
+                "https://dds.ru-moscow-1.myhuaweicloud.com"
             });
         return regions;
     }

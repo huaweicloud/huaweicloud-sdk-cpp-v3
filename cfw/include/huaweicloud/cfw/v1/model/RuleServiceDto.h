@@ -9,9 +9,9 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/cfw/v1/model/ServiceGroupVO.h>
 #include <huaweicloud/cfw/v1/model/ServiceItem.h>
 #include <string>
-#include <huaweicloud/cfw/v1/model/AddressGroupVO.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -135,10 +135,10 @@ public:
     /// 服务组名称列表
     /// </summary>
 
-    std::vector<AddressGroupVO>& getServiceGroupNames();
+    std::vector<ServiceGroupVO>& getServiceGroupNames();
     bool serviceGroupNamesIsSet() const;
     void unsetserviceGroupNames();
-    void setServiceGroupNames(const std::vector<AddressGroupVO>& value);
+    void setServiceGroupNames(const std::vector<ServiceGroupVO>& value);
 
     /// <summary>
     /// 服务组类型，0表示自定义服务组，1表示常用WEB服务，2表示常用远程登录和PING，3表示常用数据库
@@ -171,7 +171,7 @@ protected:
     bool predefinedGroupIsSet_;
     std::vector<std::string> serviceGroup_;
     bool serviceGroupIsSet_;
-    std::vector<AddressGroupVO> serviceGroupNames_;
+    std::vector<ServiceGroupVO> serviceGroupNames_;
     bool serviceGroupNamesIsSet_;
     int32_t serviceSetType_;
     bool serviceSetTypeIsSet_;

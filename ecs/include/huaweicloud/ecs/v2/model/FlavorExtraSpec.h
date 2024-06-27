@@ -362,6 +362,24 @@ public:
     void unsetecsInstanceArchitecture();
     void setEcsInstanceArchitecture(const std::string& value);
 
+    /// <summary>
+    /// 该规格是否支持流量镜像。
+    /// </summary>
+
+    std::string getNetworkInterfaceTrafficMirroringSupported() const;
+    bool networkInterfaceTrafficMirroringSupportedIsSet() const;
+    void unsetnetworkInterfaceTrafficMirroringSupported();
+    void setNetworkInterfaceTrafficMirroringSupported(const std::string& value);
+
+    /// <summary>
+    /// 该规格是否支持QingTian Enclave。
+    /// </summary>
+
+    std::string getSecurityEnclaveSupported() const;
+    bool securityEnclaveSupportedIsSet() const;
+    void unsetsecurityEnclaveSupported();
+    void setSecurityEnclaveSupported(const std::string& value);
+
 
 protected:
     std::string ecsPerformancetype_;
@@ -436,6 +454,10 @@ protected:
     bool quotaSubNetworkInterfaceMaxNumIsSet_;
     std::string ecsInstanceArchitecture_;
     bool ecsInstanceArchitectureIsSet_;
+    std::string networkInterfaceTrafficMirroringSupported_;
+    bool networkInterfaceTrafficMirroringSupportedIsSet_;
+    std::string securityEnclaveSupported_;
+    bool securityEnclaveSupportedIsSet_;
 
 };
 

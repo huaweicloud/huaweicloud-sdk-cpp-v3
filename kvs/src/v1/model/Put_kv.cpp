@@ -16,7 +16,6 @@ Put_kv::Put_kv()
     operId_ = 0;
     operIdIsSet_ = false;
     kvDocIsSet_ = false;
-    kvBlobIsSet_ = false;
 }
 
 Put_kv::~Put_kv() = default;
@@ -32,9 +31,6 @@ bool Put_kv::toBson(Builder &builder) const
         return false;
     }
     if (kvDocIsSet_ && !bson_append(builder, "kv_doc", kvDoc_)) {
-        return false;
-    }
-    if (kvBlobIsSet_ && !bson_append(builder, "kv_blob", kvBlob_)) {
         return false;
     }
 
@@ -62,15 +58,6 @@ bool Put_kv::fromBson(const Viewer &viewer)
                 return false;
             }
             kvDocIsSet_ = true;
-            ++it;
-            continue;
-        }
-        
-        if (key == "kv_blob") {
-            if (!bson_get(it, kvBlob_)) {
-                return false;
-            }
-            kvBlobIsSet_ = true;
             ++it;
             continue;
         }
@@ -121,27 +108,6 @@ bool Put_kv::kvDocIsSet() const
 void Put_kv::unsetkvDoc()
 {
     kvDocIsSet_ = false;
-}
-
-Kv_blob Put_kv::getKvBlob() const
-{
-    return kvBlob_;
-}
-
-void Put_kv::setKvBlob(const Kv_blob& value)
-{
-    kvBlob_ = value;
-    kvBlobIsSet_ = true;
-}
-
-bool Put_kv::kvBlobIsSet() const
-{
-    return kvBlobIsSet_;
-}
-
-void Put_kv::unsetkvBlob()
-{
-    kvBlobIsSet_ = false;
 }
 
 }

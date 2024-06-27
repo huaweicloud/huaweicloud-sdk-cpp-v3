@@ -35,6 +35,7 @@ RuleAddressDtoForRequest::RuleAddressDtoForRequest()
     addressSetType_ = 0;
     addressSetTypeIsSet_ = false;
     predefinedGroupIsSet_ = false;
+    addressGroupIsSet_ = false;
 }
 
 RuleAddressDtoForRequest::~RuleAddressDtoForRequest() = default;
@@ -85,6 +86,9 @@ web::json::value RuleAddressDtoForRequest::toJson() const
     }
     if(predefinedGroupIsSet_) {
         val[utility::conversions::to_string_t("predefined_group")] = ModelBase::toJson(predefinedGroup_);
+    }
+    if(addressGroupIsSet_) {
+        val[utility::conversions::to_string_t("address_group")] = ModelBase::toJson(addressGroup_);
     }
 
     return val;
@@ -208,6 +212,15 @@ bool RuleAddressDtoForRequest::fromJson(const web::json::value& val)
             std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPredefinedGroup(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("address_group"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("address_group"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAddressGroup(refVal);
         }
     }
     return ok;
@@ -485,6 +498,27 @@ bool RuleAddressDtoForRequest::predefinedGroupIsSet() const
 void RuleAddressDtoForRequest::unsetpredefinedGroup()
 {
     predefinedGroupIsSet_ = false;
+}
+
+std::vector<std::string>& RuleAddressDtoForRequest::getAddressGroup()
+{
+    return addressGroup_;
+}
+
+void RuleAddressDtoForRequest::setAddressGroup(const std::vector<std::string>& value)
+{
+    addressGroup_ = value;
+    addressGroupIsSet_ = true;
+}
+
+bool RuleAddressDtoForRequest::addressGroupIsSet() const
+{
+    return addressGroupIsSet_;
+}
+
+void RuleAddressDtoForRequest::unsetaddressGroup()
+{
+    addressGroupIsSet_ = false;
 }
 
 }

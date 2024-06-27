@@ -33,15 +33,24 @@
 #include <huaweicloud/cfw/v1/model/BatchDeleteAddressItemsResponse.h>
 #include <huaweicloud/cfw/v1/model/BatchDeleteServiceItemsRequest.h>
 #include <huaweicloud/cfw/v1/model/BatchDeleteServiceItemsResponse.h>
+#include <huaweicloud/cfw/v1/model/CancelCaptureTaskDto.h>
+#include <huaweicloud/cfw/v1/model/CancelCaptureTaskRequest.h>
+#include <huaweicloud/cfw/v1/model/CancelCaptureTaskResponse.h>
+#include <huaweicloud/cfw/v1/model/CaptureTaskDto.h>
 #include <huaweicloud/cfw/v1/model/ChangeEastWestFirewallStatusRequest.h>
 #include <huaweicloud/cfw/v1/model/ChangeEastWestFirewallStatusResponse.h>
 #include <huaweicloud/cfw/v1/model/ChangeProtectStatusRequestBody.h>
+#include <huaweicloud/cfw/v1/model/CreateCaptureTaskRequest.h>
+#include <huaweicloud/cfw/v1/model/CreateCaptureTaskResponse.h>
 #include <huaweicloud/cfw/v1/model/CreateEastWestFirewallRequest.h>
 #include <huaweicloud/cfw/v1/model/CreateEastWestFirewallRequestBody.h>
 #include <huaweicloud/cfw/v1/model/CreateEastWestFirewallResponse.h>
 #include <huaweicloud/cfw/v1/model/CreateFirewallReq.h>
 #include <huaweicloud/cfw/v1/model/CreateFirewallRequest.h>
 #include <huaweicloud/cfw/v1/model/CreateFirewallResponse.h>
+#include <huaweicloud/cfw/v1/model/CreateTagRequest.h>
+#include <huaweicloud/cfw/v1/model/CreateTagResponse.h>
+#include <huaweicloud/cfw/v1/model/CreateTagsDto.h>
 #include <huaweicloud/cfw/v1/model/DeleteAddressItemRequest.h>
 #include <huaweicloud/cfw/v1/model/DeleteAddressItemResponse.h>
 #include <huaweicloud/cfw/v1/model/DeleteAddressItemsInfoDto.h>
@@ -49,6 +58,9 @@
 #include <huaweicloud/cfw/v1/model/DeleteAddressSetResponse.h>
 #include <huaweicloud/cfw/v1/model/DeleteBlackWhiteListRequest.h>
 #include <huaweicloud/cfw/v1/model/DeleteBlackWhiteListResponse.h>
+#include <huaweicloud/cfw/v1/model/DeleteCaptureTaskDto.h>
+#include <huaweicloud/cfw/v1/model/DeleteCaptureTaskRequest.h>
+#include <huaweicloud/cfw/v1/model/DeleteCaptureTaskResponse.h>
 #include <huaweicloud/cfw/v1/model/DeleteDomainDto.h>
 #include <huaweicloud/cfw/v1/model/DeleteDomainSetRequest.h>
 #include <huaweicloud/cfw/v1/model/DeleteDomainSetResponse.h>
@@ -61,6 +73,9 @@
 #include <huaweicloud/cfw/v1/model/DeleteServiceItemResponse.h>
 #include <huaweicloud/cfw/v1/model/DeleteServiceSetRequest.h>
 #include <huaweicloud/cfw/v1/model/DeleteServiceSetResponse.h>
+#include <huaweicloud/cfw/v1/model/DeleteTagRequest.h>
+#include <huaweicloud/cfw/v1/model/DeleteTagResponse.h>
+#include <huaweicloud/cfw/v1/model/DeleteTagsDto.h>
 #include <huaweicloud/cfw/v1/model/ListAccessControlLogsRequest.h>
 #include <huaweicloud/cfw/v1/model/ListAccessControlLogsResponse.h>
 #include <huaweicloud/cfw/v1/model/ListAddressItemsRequest.h>
@@ -73,6 +88,10 @@
 #include <huaweicloud/cfw/v1/model/ListAttackLogsResponse.h>
 #include <huaweicloud/cfw/v1/model/ListBlackWhiteListsRequest.h>
 #include <huaweicloud/cfw/v1/model/ListBlackWhiteListsResponse.h>
+#include <huaweicloud/cfw/v1/model/ListCaptureResultRequest.h>
+#include <huaweicloud/cfw/v1/model/ListCaptureResultResponse.h>
+#include <huaweicloud/cfw/v1/model/ListCaptureTaskRequest.h>
+#include <huaweicloud/cfw/v1/model/ListCaptureTaskResponse.h>
 #include <huaweicloud/cfw/v1/model/ListDnsServersRequest.h>
 #include <huaweicloud/cfw/v1/model/ListDnsServersResponse.h>
 #include <huaweicloud/cfw/v1/model/ListDomainParseDetailRequest.h>
@@ -276,6 +295,14 @@ public:
     std::shared_ptr<BatchDeleteServiceItemsResponse> batchDeleteServiceItems(
         BatchDeleteServiceItemsRequest &request
     );
+    // 取消抓包任务
+    //
+    // 取消抓包任务
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CancelCaptureTaskResponse> cancelCaptureTask(
+        CancelCaptureTaskRequest &request
+    );
     // 修改东西向防火墙防护状态
     //
     // 东西向防护资源防护开启/关闭
@@ -283,6 +310,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ChangeEastWestFirewallStatusResponse> changeEastWestFirewallStatus(
         ChangeEastWestFirewallStatusRequest &request
+    );
+    // 创建抓包任务
+    //
+    // 创建抓包任务
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateCaptureTaskResponse> createCaptureTask(
+        CreateCaptureTaskRequest &request
     );
     // 创建东西向防火墙
     //
@@ -299,6 +334,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateFirewallResponse> createFirewall(
         CreateFirewallRequest &request
+    );
+    // 标签创建接口
+    //
+    // 创建标签
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateTagResponse> createTag(
+        CreateTagRequest &request
     );
     // 删除地址组成员
     //
@@ -323,6 +366,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteBlackWhiteListResponse> deleteBlackWhiteList(
         DeleteBlackWhiteListRequest &request
+    );
+    // 删除抓包任务
+    //
+    // 删除抓包任务
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteCaptureTaskResponse> deleteCaptureTask(
+        DeleteCaptureTaskRequest &request
     );
     // 删除域名组
     //
@@ -363,6 +414,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteServiceSetResponse> deleteServiceSet(
         DeleteServiceSetRequest &request
+    );
+    // 删除标签
+    //
+    // 删除标签
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteTagResponse> deleteTag(
+        DeleteTagRequest &request
     );
     // 查询访问控制日志
     //
@@ -411,6 +470,22 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListBlackWhiteListsResponse> listBlackWhiteLists(
         ListBlackWhiteListsRequest &request
+    );
+    // 获取抓包任务结果
+    //
+    // 获取抓包任务结果
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListCaptureResultResponse> listCaptureResult(
+        ListCaptureResultRequest &request
+    );
+    // 查询抓包任务
+    //
+    // 查询抓包任务
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListCaptureTaskResponse> listCaptureTask(
+        ListCaptureTaskRequest &request
     );
     // 查询dns服务器列表
     //

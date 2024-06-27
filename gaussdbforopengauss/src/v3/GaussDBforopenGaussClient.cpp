@@ -168,6 +168,39 @@ std::shared_ptr<AttachEipResponse> GaussDBforopenGaussClient::attachEip(AttachEi
 
     return localVarResult;
 }
+std::shared_ptr<ConfirmRestoredDataResponse> GaussDBforopenGaussClient::confirmRestoredData(ConfirmRestoredDataRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/confirm-restore-data";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, GaussDBforopenGaussMeta::genRequestDefForConfirmRestoredData());
+
+    std::shared_ptr<ConfirmRestoredDataResponse> localVarResult = std::make_shared<ConfirmRestoredDataResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<CopyConfigurationResponse> GaussDBforopenGaussClient::copyConfiguration(CopyConfigurationRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/configurations/{config_id}/copy";
@@ -1620,6 +1653,68 @@ std::shared_ptr<ListHistoryOperationsResponse> GaussDBforopenGaussClient::listHi
 
     return localVarResult;
 }
+std::shared_ptr<ListInstanceDetailsResponse> GaussDBforopenGaussClient::listInstanceDetails(ListInstanceDetailsRequest &request)
+{
+    std::string localVarPath = "/v3.2/{project_id}/instances";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.idIsSet()) {
+        localVarQueryParams["id"] = parameterToString(request.getId());
+    }
+    if (request.nameIsSet()) {
+        localVarQueryParams["name"] = parameterToString(request.getName());
+    }
+    if (request.typeIsSet()) {
+        localVarQueryParams["type"] = parameterToString(request.getType());
+    }
+    if (request.datastoreTypeIsSet()) {
+        localVarQueryParams["datastore_type"] = parameterToString(request.getDatastoreType());
+    }
+    if (request.vpcIdIsSet()) {
+        localVarQueryParams["vpc_id"] = parameterToString(request.getVpcId());
+    }
+    if (request.subnetIdIsSet()) {
+        localVarQueryParams["subnet_id"] = parameterToString(request.getSubnetId());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.tagsIsSet()) {
+        localVarQueryParams["tags"] = parameterToString(request.getTags());
+    }
+    if (request.chargeModeIsSet()) {
+        localVarQueryParams["charge_mode"] = parameterToString(request.getChargeMode());
+    }
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, GaussDBforopenGaussMeta::genRequestDefForListInstanceDetails());
+
+    std::shared_ptr<ListInstanceDetailsResponse> localVarResult = std::make_shared<ListInstanceDetailsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListInstanceErrorLogsResponse> GaussDBforopenGaussClient::listInstanceErrorLogs(ListInstanceErrorLogsRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/error-log";
@@ -2593,6 +2688,51 @@ std::shared_ptr<SetDbUserPwdResponse> GaussDBforopenGaussClient::setDbUserPwd(Se
 
     return localVarResult;
 }
+std::shared_ptr<SetNewBackupPolicyResponse> GaussDBforopenGaussClient::setNewBackupPolicy(SetNewBackupPolicyRequest &request)
+{
+    std::string localVarPath = "/v3.1/{project_id}/instances/{instance_id}/backups/policy";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, GaussDBforopenGaussMeta::genRequestDefForSetNewBackupPolicy());
+
+    std::shared_ptr<SetNewBackupPolicyResponse> localVarResult = std::make_shared<SetNewBackupPolicyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<SetRecyclePolicyResponse> GaussDBforopenGaussClient::setRecyclePolicy(SetRecyclePolicyRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/recycle-policy";
@@ -2697,6 +2837,50 @@ std::shared_ptr<ShowBalanceStatusResponse> GaussDBforopenGaussClient::showBalanc
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowBatchUpgradeCandidateVersionsResponse> GaussDBforopenGaussClient::showBatchUpgradeCandidateVersions(ShowBatchUpgradeCandidateVersionsRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/db-upgrade/candidate-versions";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, GaussDBforopenGaussMeta::genRequestDefForShowBatchUpgradeCandidateVersions());
+
+    std::shared_ptr<ShowBatchUpgradeCandidateVersionsResponse> localVarResult = std::make_shared<ShowBatchUpgradeCandidateVersionsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
 
     return localVarResult;
 }
@@ -3433,6 +3617,50 @@ std::shared_ptr<UpgradeInstanceVersionResponse> GaussDBforopenGaussClient::upgra
         localVarHeaderParams, localVarHttpBody, GaussDBforopenGaussMeta::genRequestDefForUpgradeInstanceVersion());
 
     std::shared_ptr<UpgradeInstanceVersionResponse> localVarResult = std::make_shared<UpgradeInstanceVersionResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<UpgradeInstancesVersionResponse> GaussDBforopenGaussClient::upgradeInstancesVersion(UpgradeInstancesVersionRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/db-upgrade";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, GaussDBforopenGaussMeta::genRequestDefForUpgradeInstancesVersion());
+
+    std::shared_ptr<UpgradeInstancesVersionResponse> localVarResult = std::make_shared<UpgradeInstancesVersionResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

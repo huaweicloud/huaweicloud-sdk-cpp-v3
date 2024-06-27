@@ -22,10 +22,6 @@ UpdateBlackWhiteListDto::UpdateBlackWhiteListDto()
     protocolIsSet_ = false;
     port_ = "";
     portIsSet_ = false;
-    listType_ = 0;
-    listTypeIsSet_ = false;
-    objectId_ = "";
-    objectIdIsSet_ = false;
     description_ = "";
     descriptionIsSet_ = false;
 }
@@ -54,12 +50,6 @@ web::json::value UpdateBlackWhiteListDto::toJson() const
     }
     if(portIsSet_) {
         val[utility::conversions::to_string_t("port")] = ModelBase::toJson(port_);
-    }
-    if(listTypeIsSet_) {
-        val[utility::conversions::to_string_t("list_type")] = ModelBase::toJson(listType_);
-    }
-    if(objectIdIsSet_) {
-        val[utility::conversions::to_string_t("object_id")] = ModelBase::toJson(objectId_);
     }
     if(descriptionIsSet_) {
         val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
@@ -114,24 +104,6 @@ bool UpdateBlackWhiteListDto::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPort(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("list_type"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("list_type"));
-        if(!fieldValue.is_null())
-        {
-            int32_t refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setListType(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("object_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("object_id"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setObjectId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("description"))) {
@@ -250,48 +222,6 @@ bool UpdateBlackWhiteListDto::portIsSet() const
 void UpdateBlackWhiteListDto::unsetport()
 {
     portIsSet_ = false;
-}
-
-int32_t UpdateBlackWhiteListDto::getListType() const
-{
-    return listType_;
-}
-
-void UpdateBlackWhiteListDto::setListType(int32_t value)
-{
-    listType_ = value;
-    listTypeIsSet_ = true;
-}
-
-bool UpdateBlackWhiteListDto::listTypeIsSet() const
-{
-    return listTypeIsSet_;
-}
-
-void UpdateBlackWhiteListDto::unsetlistType()
-{
-    listTypeIsSet_ = false;
-}
-
-std::string UpdateBlackWhiteListDto::getObjectId() const
-{
-    return objectId_;
-}
-
-void UpdateBlackWhiteListDto::setObjectId(const std::string& value)
-{
-    objectId_ = value;
-    objectIdIsSet_ = true;
-}
-
-bool UpdateBlackWhiteListDto::objectIdIsSet() const
-{
-    return objectIdIsSet_;
-}
-
-void UpdateBlackWhiteListDto::unsetobjectId()
-{
-    objectIdIsSet_ = false;
 }
 
 std::string UpdateBlackWhiteListDto::getDescription() const

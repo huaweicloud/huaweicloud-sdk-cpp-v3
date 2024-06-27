@@ -118,6 +118,8 @@ QueryJobResp::QueryJobResp()
     bindPublicIpState_ = "";
     bindPublicIpStateIsSet_ = false;
     childrenIsSet_ = false;
+    isOpenFastClean_ = false;
+    isOpenFastCleanIsSet_ = false;
 }
 
 QueryJobResp::~QueryJobResp() = default;
@@ -309,6 +311,9 @@ web::json::value QueryJobResp::toJson() const
     }
     if(childrenIsSet_) {
         val[utility::conversions::to_string_t("children")] = ModelBase::toJson(children_);
+    }
+    if(isOpenFastCleanIsSet_) {
+        val[utility::conversions::to_string_t("is_open_fast_clean")] = ModelBase::toJson(isOpenFastClean_);
     }
 
     return val;
@@ -855,6 +860,15 @@ bool QueryJobResp::fromJson(const web::json::value& val)
             std::vector<FailedToBindEipChildInfo> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setChildren(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_open_fast_clean"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_open_fast_clean"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsOpenFastClean(refVal);
         }
     }
     return ok;
@@ -2119,6 +2133,27 @@ bool QueryJobResp::childrenIsSet() const
 void QueryJobResp::unsetchildren()
 {
     childrenIsSet_ = false;
+}
+
+bool QueryJobResp::isIsOpenFastClean() const
+{
+    return isOpenFastClean_;
+}
+
+void QueryJobResp::setIsOpenFastClean(bool value)
+{
+    isOpenFastClean_ = value;
+    isOpenFastCleanIsSet_ = true;
+}
+
+bool QueryJobResp::isOpenFastCleanIsSet() const
+{
+    return isOpenFastCleanIsSet_;
+}
+
+void QueryJobResp::unsetisOpenFastClean()
+{
+    isOpenFastCleanIsSet_ = false;
 }
 
 }

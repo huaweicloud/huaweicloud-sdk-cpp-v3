@@ -180,7 +180,7 @@ bool RuleServiceDto::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("service_group_names"));
         if(!fieldValue.is_null())
         {
-            std::vector<AddressGroupVO> refVal;
+            std::vector<ServiceGroupVO> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setServiceGroupNames(refVal);
         }
@@ -408,12 +408,12 @@ void RuleServiceDto::unsetserviceGroup()
     serviceGroupIsSet_ = false;
 }
 
-std::vector<AddressGroupVO>& RuleServiceDto::getServiceGroupNames()
+std::vector<ServiceGroupVO>& RuleServiceDto::getServiceGroupNames()
 {
     return serviceGroupNames_;
 }
 
-void RuleServiceDto::setServiceGroupNames(const std::vector<AddressGroupVO>& value)
+void RuleServiceDto::setServiceGroupNames(const std::vector<ServiceGroupVO>& value)
 {
     serviceGroupNames_ = value;
     serviceGroupNamesIsSet_ = true;

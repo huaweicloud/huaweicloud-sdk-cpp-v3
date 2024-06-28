@@ -37,10 +37,10 @@ The required third-party packages are available in great part of package managem
 Take `Debian/Ubuntu` system for example, you could run the following commands:
 
 ``` bash
-sudo apt-get install libcurl4-openssl-dev libboost-all-dev libssl-dev libcpprest-dev
+sudo apt-get install libcurl4-openssl-dev libboost-all-dev libssl-dev libcpprest-dev libspdlog-dev
 ```
 
-`spdlog` is able to installed by source code only:
+`spdlog`(`libspdlog-dev`) is able to installed by source code only on old distributions:
 
 ``` bash
 git clone https://github.com/gabime/spdlog.git

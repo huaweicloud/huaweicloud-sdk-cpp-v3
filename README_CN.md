@@ -37,10 +37,10 @@
 例如基于 Debian/Ubuntu 的系统
 
 ``` bash
-sudo apt-get install libcurl4-openssl-dev libboost-all-dev libssl-dev libcpprest-dev
+sudo apt-get install libcurl4-openssl-dev libboost-all-dev libssl-dev libcpprest-dev libspdlog-dev
 ```
 
-spdlog 需要从源码进行安装
+spdlog (libspdlog-dev) 在较旧的发行版上需要从源码进行安装
 
 ``` bash
 git clone https://github.com/gabime/spdlog.git

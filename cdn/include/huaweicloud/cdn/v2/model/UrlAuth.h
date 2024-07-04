@@ -129,6 +129,15 @@ public:
     void unsettimeFormat();
     void setTimeFormat(const std::string& value);
 
+    /// <summary>
+    /// 时间参数名称：当type为“type_c2”时，该字段可选。由1-100个字符组成。必须以字母开头，后面可以衔接任意数字、字母和下划线，不允许出现其他特殊符号。鉴权方式为C2时，不传或传空默认设置为“timestamp”。
+    /// </summary>
+
+    std::string getTimeArg() const;
+    bool timeArgIsSet() const;
+    void unsettimeArg();
+    void setTimeArg(const std::string& value);
+
 
 protected:
     std::string status_;
@@ -151,6 +160,8 @@ protected:
     bool signArgIsSet_;
     std::string timeFormat_;
     bool timeFormatIsSet_;
+    std::string timeArg_;
+    bool timeArgIsSet_;
 
 };
 

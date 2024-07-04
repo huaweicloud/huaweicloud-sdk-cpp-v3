@@ -129,6 +129,15 @@ public:
     void unsettimeFormat();
     void setTimeFormat(const std::string& value);
 
+    /// <summary>
+    /// 时间参数。
+    /// </summary>
+
+    std::string getTimeArg() const;
+    bool timeArgIsSet() const;
+    void unsettimeArg();
+    void setTimeArg(const std::string& value);
+
 
 protected:
     std::string status_;
@@ -151,6 +160,8 @@ protected:
     bool signArgIsSet_;
     std::string timeFormat_;
     bool timeFormatIsSet_;
+    std::string timeArg_;
+    bool timeArgIsSet_;
 
 };
 

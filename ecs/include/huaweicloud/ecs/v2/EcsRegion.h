@@ -110,6 +110,10 @@ public:
             { 
                 "https://ecs.ae-ad-1.myhuaweicloud.com"
             });
+        regions["cn-east-4"] = Region("cn-east-4",
+            { 
+                "https://ecs.cn-east-4.myhuaweicloud.com"
+            });
         regions["eu-west-101"] = Region("eu-west-101",
             { 
                 "https://ecs.eu-west-101.myhuaweicloud.com"

@@ -48,8 +48,6 @@ KeyDetails::KeyDetails()
     keystoreIdIsSet_ = false;
     keyLabel_ = "";
     keyLabelIsSet_ = false;
-    partitionType_ = "";
-    partitionTypeIsSet_ = false;
 }
 
 KeyDetails::~KeyDetails() = default;
@@ -115,9 +113,6 @@ web::json::value KeyDetails::toJson() const
     }
     if(keyLabelIsSet_) {
         val[utility::conversions::to_string_t("key_label")] = ModelBase::toJson(keyLabel_);
-    }
-    if(partitionTypeIsSet_) {
-        val[utility::conversions::to_string_t("partition_type")] = ModelBase::toJson(partitionType_);
     }
 
     return val;
@@ -286,15 +281,6 @@ bool KeyDetails::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setKeyLabel(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("partition_type"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("partition_type"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setPartitionType(refVal);
         }
     }
     return ok;
@@ -677,27 +663,6 @@ bool KeyDetails::keyLabelIsSet() const
 void KeyDetails::unsetkeyLabel()
 {
     keyLabelIsSet_ = false;
-}
-
-std::string KeyDetails::getPartitionType() const
-{
-    return partitionType_;
-}
-
-void KeyDetails::setPartitionType(const std::string& value)
-{
-    partitionType_ = value;
-    partitionTypeIsSet_ = true;
-}
-
-bool KeyDetails::partitionTypeIsSet() const
-{
-    return partitionTypeIsSet_;
-}
-
-void KeyDetails::unsetpartitionType()
-{
-    partitionTypeIsSet_ = false;
 }
 
 }

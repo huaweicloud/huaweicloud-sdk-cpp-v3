@@ -31,6 +31,8 @@ UrlAuthGetBody::UrlAuthGetBody()
     signArgIsSet_ = false;
     timeFormat_ = "";
     timeFormatIsSet_ = false;
+    timeArg_ = "";
+    timeArgIsSet_ = false;
 }
 
 UrlAuthGetBody::~UrlAuthGetBody() = default;
@@ -72,6 +74,9 @@ web::json::value UrlAuthGetBody::toJson() const
     }
     if(timeFormatIsSet_) {
         val[utility::conversions::to_string_t("time_format")] = ModelBase::toJson(timeFormat_);
+    }
+    if(timeArgIsSet_) {
+        val[utility::conversions::to_string_t("time_arg")] = ModelBase::toJson(timeArg_);
     }
 
     return val;
@@ -168,6 +173,15 @@ bool UrlAuthGetBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTimeFormat(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("time_arg"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("time_arg"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTimeArg(refVal);
         }
     }
     return ok;
@@ -382,6 +396,27 @@ bool UrlAuthGetBody::timeFormatIsSet() const
 void UrlAuthGetBody::unsettimeFormat()
 {
     timeFormatIsSet_ = false;
+}
+
+std::string UrlAuthGetBody::getTimeArg() const
+{
+    return timeArg_;
+}
+
+void UrlAuthGetBody::setTimeArg(const std::string& value)
+{
+    timeArg_ = value;
+    timeArgIsSet_ = true;
+}
+
+bool UrlAuthGetBody::timeArgIsSet() const
+{
+    return timeArgIsSet_;
+}
+
+void UrlAuthGetBody::unsettimeArg()
+{
+    timeArgIsSet_ = false;
 }
 
 }

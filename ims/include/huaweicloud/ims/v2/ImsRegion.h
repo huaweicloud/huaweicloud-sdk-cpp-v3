@@ -110,6 +110,10 @@ public:
             { 
                 "https://ims.ae-ad-1.myhuaweicloud.com"
             });
+        regions["cn-east-4"] = Region("cn-east-4",
+            { 
+                "https://ims.cn-east-4.myhuaweicloud.com"
+            });
         regions["eu-west-101"] = Region("eu-west-101",
             { 
                 "https://ims.eu-west-101.myhuaweicloud.com"

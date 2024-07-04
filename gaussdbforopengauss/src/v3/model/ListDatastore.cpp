@@ -20,6 +20,9 @@ ListDatastore::ListDatastore()
     completeVersionIsSet_ = false;
     hotfixVersions_ = "";
     hotfixVersionsIsSet_ = false;
+    targetVersion_ = "";
+    targetVersionIsSet_ = false;
+    hotfixFinishedTimesIsSet_ = false;
 }
 
 ListDatastore::~ListDatastore() = default;
@@ -43,6 +46,12 @@ web::json::value ListDatastore::toJson() const
     }
     if(hotfixVersionsIsSet_) {
         val[utility::conversions::to_string_t("hotfix_versions")] = ModelBase::toJson(hotfixVersions_);
+    }
+    if(targetVersionIsSet_) {
+        val[utility::conversions::to_string_t("target_version")] = ModelBase::toJson(targetVersion_);
+    }
+    if(hotfixFinishedTimesIsSet_) {
+        val[utility::conversions::to_string_t("hotfix_finished_times")] = ModelBase::toJson(hotfixFinishedTimes_);
     }
 
     return val;
@@ -85,6 +94,24 @@ bool ListDatastore::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setHotfixVersions(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("target_version"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("target_version"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTargetVersion(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("hotfix_finished_times"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("hotfix_finished_times"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHotfixFinishedTimes(refVal);
         }
     }
     return ok;
@@ -173,6 +200,48 @@ bool ListDatastore::hotfixVersionsIsSet() const
 void ListDatastore::unsethotfixVersions()
 {
     hotfixVersionsIsSet_ = false;
+}
+
+std::string ListDatastore::getTargetVersion() const
+{
+    return targetVersion_;
+}
+
+void ListDatastore::setTargetVersion(const std::string& value)
+{
+    targetVersion_ = value;
+    targetVersionIsSet_ = true;
+}
+
+bool ListDatastore::targetVersionIsSet() const
+{
+    return targetVersionIsSet_;
+}
+
+void ListDatastore::unsettargetVersion()
+{
+    targetVersionIsSet_ = false;
+}
+
+std::vector<std::string>& ListDatastore::getHotfixFinishedTimes()
+{
+    return hotfixFinishedTimes_;
+}
+
+void ListDatastore::setHotfixFinishedTimes(const std::vector<std::string>& value)
+{
+    hotfixFinishedTimes_ = value;
+    hotfixFinishedTimesIsSet_ = true;
+}
+
+bool ListDatastore::hotfixFinishedTimesIsSet() const
+{
+    return hotfixFinishedTimesIsSet_;
+}
+
+void ListDatastore::unsethotfixFinishedTimes()
+{
+    hotfixFinishedTimesIsSet_ = false;
 }
 
 }

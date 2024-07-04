@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/core/utils/Object.h>
+#include <huaweicloud/ocr/v1/model/CambodianIdCardScoreInformationResult.h>
 #include <string>
 #include <vector>
 
@@ -185,13 +186,76 @@ public:
     void setPortraitLocation(const std::vector<std::vector<int32_t>>& value);
 
     /// <summary>
-    /// 身份证的类型。当输入参数“ idcard_type ”为“true”时，才返回该参数。取值如下所示： - normal：身份证原件 - copy：复印的身份证 
+    /// 身份证的类型。当输入参数\&quot;idcard_type \&quot;为\&quot;true\&quot;时，才返回该参数。取值如下所示： - normal：身份证原件 - copy：复印的身份证 
     /// </summary>
 
     std::string getIdcardType() const;
     bool idcardTypeIsSet() const;
     void unsetidcardType();
     void setIdcardType(const std::string& value);
+
+    /// <summary>
+    /// 身份证原图的base64编码。 当输入参数\&quot;return_adjusted_image\&quot;为\&quot;true\&quot;时，才返回该参数。 
+    /// </summary>
+
+    std::string getAdjustedImage() const;
+    bool adjustedImageIsSet() const;
+    void unsetadjustedImage();
+    void setAdjustedImage(const std::string& value);
+
+    /// <summary>
+    /// 身份证图片边框完整性告警结果，\&quot;true\&quot;表示边框不完整，\&quot;false\&quot;表示边框完整。仅在输入参数detect_border_integrity为true时，返回该字段。 
+    /// </summary>
+
+    bool isDetectBorderIntegrityResult() const;
+    bool detectBorderIntegrityResultIsSet() const;
+    void unsetdetectBorderIntegrityResult();
+    void setDetectBorderIntegrityResult(bool value);
+
+    /// <summary>
+    /// 身份证图像框内是否存在遮挡的告警结果，\&quot;true\&quot;表示边框内部存在遮挡，\&quot;false\&quot;表示边框内部完整。仅在输入参数detect_blocking_within_border为true时，返回该字段。 
+    /// </summary>
+
+    bool isDetectBlockingWithinBorderResult() const;
+    bool detectBlockingWithinBorderResultIsSet() const;
+    void unsetdetectBlockingWithinBorderResult();
+    void setDetectBlockingWithinBorderResult(bool value);
+
+    /// <summary>
+    /// 身份证模糊告警结果，\&quot;true\&quot;表示图片模糊，\&quot;false\&quot;表示身份证清晰。仅在输入参数detect_blur为true时，返回该字段。 
+    /// </summary>
+
+    bool isDetectBlurResult() const;
+    bool detectBlurResultIsSet() const;
+    void unsetdetectBlurResult();
+    void setDetectBlurResult(bool value);
+
+    /// <summary>
+    /// 身份证反光告警结果，\&quot;true\&quot;表示身份证反光，\&quot;false\&quot;表示是身份证无反光。仅在输入参数detect_glare为true时，返回该字段。 
+    /// </summary>
+
+    bool isDetectGlareResult() const;
+    bool detectGlareResultIsSet() const;
+    void unsetdetectGlareResult();
+    void setDetectGlareResult(bool value);
+
+    /// <summary>
+    /// 身份证人像被篡改的告警结果，\&quot;true\&quot;表示身份证人像被篡改，\&quot;false\&quot;表示是身份证人像未被篡改。仅在输入参数detect_tampering为true时，返回该字段。 
+    /// </summary>
+
+    bool isDetectTamperingResult() const;
+    bool detectTamperingResultIsSet() const;
+    void unsetdetectTamperingResult();
+    void setDetectTamperingResult(bool value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    CambodianIdCardScoreInformationResult getScoreInfo() const;
+    bool scoreInfoIsSet() const;
+    void unsetscoreInfo();
+    void setScoreInfo(const CambodianIdCardScoreInformationResult& value);
 
     /// <summary>
     /// 相关字段的置信度信息，置信度越大，表示本次识别的对应字段的可靠性越高，在统计意义上，置信度越大，准确率越高。 置信度由算法给出，不直接等价于对应字段的准确率。 
@@ -238,6 +302,20 @@ protected:
     bool portraitLocationIsSet_;
     std::string idcardType_;
     bool idcardTypeIsSet_;
+    std::string adjustedImage_;
+    bool adjustedImageIsSet_;
+    bool detectBorderIntegrityResult_;
+    bool detectBorderIntegrityResultIsSet_;
+    bool detectBlockingWithinBorderResult_;
+    bool detectBlockingWithinBorderResultIsSet_;
+    bool detectBlurResult_;
+    bool detectBlurResultIsSet_;
+    bool detectGlareResult_;
+    bool detectGlareResultIsSet_;
+    bool detectTamperingResult_;
+    bool detectTamperingResultIsSet_;
+    CambodianIdCardScoreInformationResult scoreInfo_;
+    bool scoreInfoIsSet_;
     Object confidence_;
     bool confidenceIsSet_;
 

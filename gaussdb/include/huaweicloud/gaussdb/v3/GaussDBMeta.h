@@ -152,6 +152,7 @@ public:
     static HttpRequestDef genRequestDefForCheckClickHouseTableConfig();
     static HttpRequestDef genRequestDefForCheckDataBaseConfig();
     static HttpRequestDef genRequestDefForCheckStarRocksResource();
+    static HttpRequestDef genRequestDefForCheckStarrocksParams();
     static HttpRequestDef genRequestDefForCheckTableConfig();
     static HttpRequestDef genRequestDefForCreateClickHouseDataBaseReplication();
     static HttpRequestDef genRequestDefForCreateClickHouseDatabaseUser();
@@ -186,6 +187,7 @@ public:
     static HttpRequestDef genRequestDefForRebootClickHouseInstance();
     static HttpRequestDef genRequestDefForResizeClickHouseFlavor();
     static HttpRequestDef genRequestDefForResizeClickHouseInstance();
+    static HttpRequestDef genRequestDefForResizeStarRocksFlavor();
     static HttpRequestDef genRequestDefForRestartStarrocksInstance();
     static HttpRequestDef genRequestDefForRestartStarrocksNode();
     static HttpRequestDef genRequestDefForResumeStarRocksDataReplication();
@@ -194,6 +196,8 @@ public:
     static HttpRequestDef genRequestDefForShowClickHouseSlowLogDetail();
     static HttpRequestDef genRequestDefForShowClickHouseSlowLogSensitiveStatus();
     static HttpRequestDef genRequestDefForShowStarRocksDatabaseUser();
+    static HttpRequestDef genRequestDefForShowStarrocksParams();
+    static HttpRequestDef genRequestDefForSyncStarRocksUsers();
     static HttpRequestDef genRequestDefForUpdateClickHouseDataBaseConfig();
     static HttpRequestDef genRequestDefForUpdateClickHouseDatabaseUserPassword();
     static HttpRequestDef genRequestDefForUpdateClickHouseDatabaseUserPermission();
@@ -201,6 +205,7 @@ public:
     static HttpRequestDef genRequestDefForUpdateClickHouseSlowLogSensitiveStatus();
     static HttpRequestDef genRequestDefForUpdateStarRocksDatabaseUserPassword();
     static HttpRequestDef genRequestDefForUpdateStarRocksDatabaseUserPermission();
+    static HttpRequestDef genRequestDefForUpdateStarrocksParams();
     static HttpRequestDef genRequestDefForDeleteSqlFilterRule();
     static HttpRequestDef genRequestDefForSetSqlFilterRule();
     static HttpRequestDef genRequestDefForShowSqlFilterControl();

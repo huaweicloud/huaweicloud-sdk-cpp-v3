@@ -29,12 +29,14 @@ public:
     static HttpRequestDef genRequestDefForCreateConfiguration();
     static HttpRequestDef genRequestDefForCreateDnsName();
     static HttpRequestDef genRequestDefForCreateInstance();
+    static HttpRequestDef genRequestDefForCreateInstanceIam5();
     static HttpRequestDef genRequestDefForCreateManualBackup();
     static HttpRequestDef genRequestDefForCreateRdSforMySqlProxy();
     static HttpRequestDef genRequestDefForCreateRestoreInstance();
     static HttpRequestDef genRequestDefForCreateSqlLimit();
     static HttpRequestDef genRequestDefForCreateXelLogDownload();
     static HttpRequestDef genRequestDefForDeleteConfiguration();
+    static HttpRequestDef genRequestDefForDeleteDisasterRecovery();
     static HttpRequestDef genRequestDefForDeleteInstance();
     static HttpRequestDef genRequestDefForDeleteJob();
     static HttpRequestDef genRequestDefForDeleteLogLtsConfigs();
@@ -56,6 +58,7 @@ public:
     static HttpRequestDef genRequestDefForListErrorLogsNew();
     static HttpRequestDef genRequestDefForListErrorlogForLts();
     static HttpRequestDef genRequestDefForListFlavors();
+    static HttpRequestDef genRequestDefForListFlavorsResize();
     static HttpRequestDef genRequestDefForListHistoryDatabase();
     static HttpRequestDef genRequestDefForListInspectionHistories();
     static HttpRequestDef genRequestDefForListInstanceDiagnosis();
@@ -142,6 +145,7 @@ public:
     static HttpRequestDef genRequestDefForStopInstance();
     static HttpRequestDef genRequestDefForSwitchSqlLimit();
     static HttpRequestDef genRequestDefForSwitchSsl();
+    static HttpRequestDef genRequestDefForUnlockNodeReadonlyStatus();
     static HttpRequestDef genRequestDefForUpdateConfiguration();
     static HttpRequestDef genRequestDefForUpdateDataIp();
     static HttpRequestDef genRequestDefForUpdateDnsName();

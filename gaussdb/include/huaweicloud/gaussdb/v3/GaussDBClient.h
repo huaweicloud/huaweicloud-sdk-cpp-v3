@@ -367,6 +367,9 @@
 #include <huaweicloud/gaussdb/v3/model/CheckDataBaseConfigResponse.h>
 #include <huaweicloud/gaussdb/v3/model/CheckStarRocksResourceRequest.h>
 #include <huaweicloud/gaussdb/v3/model/CheckStarRocksResourceResponse.h>
+#include <huaweicloud/gaussdb/v3/model/CheckStarrocksParamsRequest.h>
+#include <huaweicloud/gaussdb/v3/model/CheckStarrocksParamsRequestBody.h>
+#include <huaweicloud/gaussdb/v3/model/CheckStarrocksParamsResponse.h>
 #include <huaweicloud/gaussdb/v3/model/CheckTableConfigRequest.h>
 #include <huaweicloud/gaussdb/v3/model/CheckTableConfigResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ClickHouseDatabaseUserInfo.h>
@@ -447,6 +450,8 @@
 #include <huaweicloud/gaussdb/v3/model/ResizeClickHouseFlavorResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ResizeClickHouseInstanceRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ResizeClickHouseInstanceResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ResizeStarRocksFlavorRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ResizeStarRocksFlavorResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ResourceCheck.h>
 #include <huaweicloud/gaussdb/v3/model/RestartStarrocksInstanceRequest.h>
 #include <huaweicloud/gaussdb/v3/model/RestartStarrocksInstanceResponse.h>
@@ -465,10 +470,15 @@
 #include <huaweicloud/gaussdb/v3/model/ShowClickHouseSlowLogSensitiveStatusResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowStarRocksDatabaseUserRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ShowStarRocksDatabaseUserResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ShowStarrocksParamsRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ShowStarrocksParamsResponse.h>
+#include <huaweicloud/gaussdb/v3/model/SrFlavorResizeReq.h>
 #include <huaweicloud/gaussdb/v3/model/StarRocksCreateRequest.h>
 #include <huaweicloud/gaussdb/v3/model/StarRocksDatabaseUserInfo.h>
 #include <huaweicloud/gaussdb/v3/model/StarRocksDatabaseUserPSinfo.h>
 #include <huaweicloud/gaussdb/v3/model/StarRocksDatabaseUserPWinfo.h>
+#include <huaweicloud/gaussdb/v3/model/SyncStarRocksUsersRequest.h>
+#include <huaweicloud/gaussdb/v3/model/SyncStarRocksUsersResponse.h>
 #include <huaweicloud/gaussdb/v3/model/TableConfigCheckRequestV3.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateChDatabaseConfigRequestBody.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateClickHouseDataBaseConfigRequest.h>
@@ -481,10 +491,14 @@
 #include <huaweicloud/gaussdb/v3/model/UpdateClickHouseLtsConfigResponse.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateClickHouseSlowLogSensitiveStatusRequest.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateClickHouseSlowLogSensitiveStatusResponse.h>
+#include <huaweicloud/gaussdb/v3/model/UpdateParamInfo.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateStarRocksDatabaseUserPasswordRequest.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateStarRocksDatabaseUserPasswordResponse.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateStarRocksDatabaseUserPermissionRequest.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateStarRocksDatabaseUserPermissionResponse.h>
+#include <huaweicloud/gaussdb/v3/model/UpdateStarrocksParamsRequest.h>
+#include <huaweicloud/gaussdb/v3/model/UpdateStarrocksParamsResponse.h>
+#include <huaweicloud/gaussdb/v3/model/UserSyncReq.h>
 #include <string>
 
 #include <huaweicloud/gaussdb/v3/model/DeleteSqlFilterRuleReq.h>
@@ -1641,6 +1655,14 @@ public:
     std::shared_ptr<CheckStarRocksResourceResponse> checkStarRocksResource(
         CheckStarRocksResourceRequest &request
     );
+    // 参数对比
+    //
+    // 对比实例参数和默认模板的差异
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CheckStarrocksParamsResponse> checkStarrocksParams(
+        CheckStarrocksParamsRequest &request
+    );
     // HTAP数据同步表配置校验
     //
     // HTAP数据同步表配置校验。
@@ -1913,6 +1935,14 @@ public:
     std::shared_ptr<ResizeClickHouseInstanceResponse> resizeClickHouseInstance(
         ResizeClickHouseInstanceRequest &request
     );
+    // StarRocks实例规格变更
+    //
+    // StarRocks实例规格变更。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ResizeStarRocksFlavorResponse> resizeStarRocksFlavor(
+        ResizeStarRocksFlavorRequest &request
+    );
     // 重启StarRocks实例
     //
     // 重启StarRocks实例。
@@ -1977,6 +2007,22 @@ public:
     std::shared_ptr<ShowStarRocksDatabaseUserResponse> showStarRocksDatabaseUser(
         ShowStarRocksDatabaseUserRequest &request
     );
+    // 查询参数
+    //
+    // 按节点类型查询参数
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowStarrocksParamsResponse> showStarrocksParams(
+        ShowStarrocksParamsRequest &request
+    );
+    // StarRocks实例开启行列分流
+    //
+    // StarRocks实例开启行列分流。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SyncStarRocksUsersResponse> syncStarRocksUsers(
+        SyncStarRocksUsersRequest &request
+    );
     // 修改数据同步
     //
     // 修改数据同步。
@@ -2032,6 +2078,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateStarRocksDatabaseUserPermissionResponse> updateStarRocksDatabaseUserPermission(
         UpdateStarRocksDatabaseUserPermissionRequest &request
+    );
+    // 修改参数
+    //
+    // 按节点类型修改节点参数
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateStarrocksParamsResponse> updateStarrocksParams(
+        UpdateStarrocksParamsRequest &request
     );
 
     // 删除SQL限流规则

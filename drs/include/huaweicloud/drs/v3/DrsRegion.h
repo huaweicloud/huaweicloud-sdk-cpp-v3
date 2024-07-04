@@ -122,6 +122,10 @@ public:
             { 
                 "https://drs.my-kualalumpur-1.myhuaweicloud.com"
             });
+        regions["ru-northwest-2"] = Region("ru-northwest-2",
+            { 
+                "https://drs.ru-northwest-2.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

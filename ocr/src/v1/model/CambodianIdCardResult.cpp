@@ -45,6 +45,19 @@ CambodianIdCardResult::CambodianIdCardResult()
     portraitLocationIsSet_ = false;
     idcardType_ = "";
     idcardTypeIsSet_ = false;
+    adjustedImage_ = "";
+    adjustedImageIsSet_ = false;
+    detectBorderIntegrityResult_ = false;
+    detectBorderIntegrityResultIsSet_ = false;
+    detectBlockingWithinBorderResult_ = false;
+    detectBlockingWithinBorderResultIsSet_ = false;
+    detectBlurResult_ = false;
+    detectBlurResultIsSet_ = false;
+    detectGlareResult_ = false;
+    detectGlareResultIsSet_ = false;
+    detectTamperingResult_ = false;
+    detectTamperingResultIsSet_ = false;
+    scoreInfoIsSet_ = false;
     confidenceIsSet_ = false;
 }
 
@@ -108,6 +121,27 @@ web::json::value CambodianIdCardResult::toJson() const
     }
     if(idcardTypeIsSet_) {
         val[utility::conversions::to_string_t("idcard_type")] = ModelBase::toJson(idcardType_);
+    }
+    if(adjustedImageIsSet_) {
+        val[utility::conversions::to_string_t("adjusted_image")] = ModelBase::toJson(adjustedImage_);
+    }
+    if(detectBorderIntegrityResultIsSet_) {
+        val[utility::conversions::to_string_t("detect_border_integrity_result")] = ModelBase::toJson(detectBorderIntegrityResult_);
+    }
+    if(detectBlockingWithinBorderResultIsSet_) {
+        val[utility::conversions::to_string_t("detect_blocking_within_border_result")] = ModelBase::toJson(detectBlockingWithinBorderResult_);
+    }
+    if(detectBlurResultIsSet_) {
+        val[utility::conversions::to_string_t("detect_blur_result")] = ModelBase::toJson(detectBlurResult_);
+    }
+    if(detectGlareResultIsSet_) {
+        val[utility::conversions::to_string_t("detect_glare_result")] = ModelBase::toJson(detectGlareResult_);
+    }
+    if(detectTamperingResultIsSet_) {
+        val[utility::conversions::to_string_t("detect_tampering_result")] = ModelBase::toJson(detectTamperingResult_);
+    }
+    if(scoreInfoIsSet_) {
+        val[utility::conversions::to_string_t("score_info")] = ModelBase::toJson(scoreInfo_);
     }
     if(confidenceIsSet_) {
         val[utility::conversions::to_string_t("confidence")] = ModelBase::toJson(confidence_);
@@ -270,6 +304,69 @@ bool CambodianIdCardResult::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIdcardType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("adjusted_image"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("adjusted_image"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAdjustedImage(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("detect_border_integrity_result"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("detect_border_integrity_result"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDetectBorderIntegrityResult(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("detect_blocking_within_border_result"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("detect_blocking_within_border_result"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDetectBlockingWithinBorderResult(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("detect_blur_result"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("detect_blur_result"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDetectBlurResult(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("detect_glare_result"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("detect_glare_result"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDetectGlareResult(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("detect_tampering_result"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("detect_tampering_result"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDetectTamperingResult(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("score_info"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("score_info"));
+        if(!fieldValue.is_null())
+        {
+            CambodianIdCardScoreInformationResult refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setScoreInfo(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("confidence"))) {
@@ -640,6 +737,153 @@ bool CambodianIdCardResult::idcardTypeIsSet() const
 void CambodianIdCardResult::unsetidcardType()
 {
     idcardTypeIsSet_ = false;
+}
+
+std::string CambodianIdCardResult::getAdjustedImage() const
+{
+    return adjustedImage_;
+}
+
+void CambodianIdCardResult::setAdjustedImage(const std::string& value)
+{
+    adjustedImage_ = value;
+    adjustedImageIsSet_ = true;
+}
+
+bool CambodianIdCardResult::adjustedImageIsSet() const
+{
+    return adjustedImageIsSet_;
+}
+
+void CambodianIdCardResult::unsetadjustedImage()
+{
+    adjustedImageIsSet_ = false;
+}
+
+bool CambodianIdCardResult::isDetectBorderIntegrityResult() const
+{
+    return detectBorderIntegrityResult_;
+}
+
+void CambodianIdCardResult::setDetectBorderIntegrityResult(bool value)
+{
+    detectBorderIntegrityResult_ = value;
+    detectBorderIntegrityResultIsSet_ = true;
+}
+
+bool CambodianIdCardResult::detectBorderIntegrityResultIsSet() const
+{
+    return detectBorderIntegrityResultIsSet_;
+}
+
+void CambodianIdCardResult::unsetdetectBorderIntegrityResult()
+{
+    detectBorderIntegrityResultIsSet_ = false;
+}
+
+bool CambodianIdCardResult::isDetectBlockingWithinBorderResult() const
+{
+    return detectBlockingWithinBorderResult_;
+}
+
+void CambodianIdCardResult::setDetectBlockingWithinBorderResult(bool value)
+{
+    detectBlockingWithinBorderResult_ = value;
+    detectBlockingWithinBorderResultIsSet_ = true;
+}
+
+bool CambodianIdCardResult::detectBlockingWithinBorderResultIsSet() const
+{
+    return detectBlockingWithinBorderResultIsSet_;
+}
+
+void CambodianIdCardResult::unsetdetectBlockingWithinBorderResult()
+{
+    detectBlockingWithinBorderResultIsSet_ = false;
+}
+
+bool CambodianIdCardResult::isDetectBlurResult() const
+{
+    return detectBlurResult_;
+}
+
+void CambodianIdCardResult::setDetectBlurResult(bool value)
+{
+    detectBlurResult_ = value;
+    detectBlurResultIsSet_ = true;
+}
+
+bool CambodianIdCardResult::detectBlurResultIsSet() const
+{
+    return detectBlurResultIsSet_;
+}
+
+void CambodianIdCardResult::unsetdetectBlurResult()
+{
+    detectBlurResultIsSet_ = false;
+}
+
+bool CambodianIdCardResult::isDetectGlareResult() const
+{
+    return detectGlareResult_;
+}
+
+void CambodianIdCardResult::setDetectGlareResult(bool value)
+{
+    detectGlareResult_ = value;
+    detectGlareResultIsSet_ = true;
+}
+
+bool CambodianIdCardResult::detectGlareResultIsSet() const
+{
+    return detectGlareResultIsSet_;
+}
+
+void CambodianIdCardResult::unsetdetectGlareResult()
+{
+    detectGlareResultIsSet_ = false;
+}
+
+bool CambodianIdCardResult::isDetectTamperingResult() const
+{
+    return detectTamperingResult_;
+}
+
+void CambodianIdCardResult::setDetectTamperingResult(bool value)
+{
+    detectTamperingResult_ = value;
+    detectTamperingResultIsSet_ = true;
+}
+
+bool CambodianIdCardResult::detectTamperingResultIsSet() const
+{
+    return detectTamperingResultIsSet_;
+}
+
+void CambodianIdCardResult::unsetdetectTamperingResult()
+{
+    detectTamperingResultIsSet_ = false;
+}
+
+CambodianIdCardScoreInformationResult CambodianIdCardResult::getScoreInfo() const
+{
+    return scoreInfo_;
+}
+
+void CambodianIdCardResult::setScoreInfo(const CambodianIdCardScoreInformationResult& value)
+{
+    scoreInfo_ = value;
+    scoreInfoIsSet_ = true;
+}
+
+bool CambodianIdCardResult::scoreInfoIsSet() const
+{
+    return scoreInfoIsSet_;
+}
+
+void CambodianIdCardResult::unsetscoreInfo()
+{
+    scoreInfoIsSet_ = false;
 }
 
 Object CambodianIdCardResult::getConfidence() const

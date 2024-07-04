@@ -83,6 +83,60 @@ public:
     void unsetreturnIdcardType();
     void setReturnIdcardType(bool value);
 
+    /// <summary>
+    /// 返回身份证边框完整性的告警结果的开关，可选值如下所示 - true：打开身份证图像边框完整性告警功能  - false：关闭身份证图像边框完整性告警功能 
+    /// </summary>
+
+    bool isDetectBorderIntegrity() const;
+    bool detectBorderIntegrityIsSet() const;
+    void unsetdetectBorderIntegrity();
+    void setDetectBorderIntegrity(bool value);
+
+    /// <summary>
+    /// 返回身份证内部是否有被遮挡的告警结果的开关，可选值如下所示 - true：打开身份证内部是否有被遮挡的告警功能  - false：关闭身份证内部是否有被遮挡的告警功能 
+    /// </summary>
+
+    bool isDetectBlockingWithinBorder() const;
+    bool detectBlockingWithinBorderIsSet() const;
+    void unsetdetectBlockingWithinBorder();
+    void setDetectBlockingWithinBorder(bool value);
+
+    /// <summary>
+    /// 返回身份证模糊告警结果的开关，可选值如下所示 - true:打开身份证是否模糊的告警功能 - false：关闭身份证是否模糊的告警功能 
+    /// </summary>
+
+    bool isDetectBlur() const;
+    bool detectBlurIsSet() const;
+    void unsetdetectBlur();
+    void setDetectBlur(bool value);
+
+    /// <summary>
+    /// 返回身份证是否反光的告警结果的开关，可选值如下所示 - true：打开身份证是否反光的告警功能  - false：关闭身份证是否反光的告警功能 
+    /// </summary>
+
+    bool isDetectGlare() const;
+    bool detectGlareIsSet() const;
+    void unsetdetectGlare();
+    void setDetectGlare(bool value);
+
+    /// <summary>
+    /// 返回身份证四点原图的base64编码 - true: 返回身份证原图的base64编码  - false：不返回身份证原图的base64编码 
+    /// </summary>
+
+    bool isReturnAdjustedImage() const;
+    bool returnAdjustedImageIsSet() const;
+    void unsetreturnAdjustedImage();
+    void setReturnAdjustedImage(bool value);
+
+    /// <summary>
+    /// 返回身份证人像是否被篡改的告警结果的开关，可选值如下所示 - true:  打开身份证人像是否被篡改的告警功能  - false：关闭身份证人像被篡改的告警功能 不支持精细化的P图 
+    /// </summary>
+
+    bool isDetectTampering() const;
+    bool detectTamperingIsSet() const;
+    void unsetdetectTampering();
+    void setDetectTampering(bool value);
+
 
 protected:
     std::string image_;
@@ -95,6 +149,18 @@ protected:
     bool returnPortraitLocationIsSet_;
     bool returnIdcardType_;
     bool returnIdcardTypeIsSet_;
+    bool detectBorderIntegrity_;
+    bool detectBorderIntegrityIsSet_;
+    bool detectBlockingWithinBorder_;
+    bool detectBlockingWithinBorderIsSet_;
+    bool detectBlur_;
+    bool detectBlurIsSet_;
+    bool detectGlare_;
+    bool detectGlareIsSet_;
+    bool returnAdjustedImage_;
+    bool returnAdjustedImageIsSet_;
+    bool detectTampering_;
+    bool detectTamperingIsSet_;
 
 };
 

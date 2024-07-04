@@ -94,7 +94,12 @@
 #include <huaweicloud/kms/v2/model/ListRetirableGrantsRequest.h>
 #include <huaweicloud/kms/v2/model/ListRetirableGrantsRequestBody.h>
 #include <huaweicloud/kms/v2/model/ListRetirableGrantsResponse.h>
+#include <huaweicloud/kms/v2/model/ListSupportRegionsRequest.h>
+#include <huaweicloud/kms/v2/model/ListSupportRegionsResponse.h>
 #include <huaweicloud/kms/v2/model/OperateKeyRequestBody.h>
+#include <huaweicloud/kms/v2/model/ReplicateKeyRequest.h>
+#include <huaweicloud/kms/v2/model/ReplicateKeyRequestBody.h>
+#include <huaweicloud/kms/v2/model/ReplicateKeyResponse.h>
 #include <huaweicloud/kms/v2/model/RevokeGrantRequestBody.h>
 #include <huaweicloud/kms/v2/model/ScheduleKeyDeletionRequestBody.h>
 #include <huaweicloud/kms/v2/model/ShowKeyRotationStatusRequest.h>
@@ -121,6 +126,9 @@
 #include <huaweicloud/kms/v2/model/UpdateKeyRotationIntervalRequest.h>
 #include <huaweicloud/kms/v2/model/UpdateKeyRotationIntervalRequestBody.h>
 #include <huaweicloud/kms/v2/model/UpdateKeyRotationIntervalResponse.h>
+#include <huaweicloud/kms/v2/model/UpdatePrimaryRegionRequest.h>
+#include <huaweicloud/kms/v2/model/UpdatePrimaryRegionRequestBody.h>
+#include <huaweicloud/kms/v2/model/UpdatePrimaryRegionResponse.h>
 #include <huaweicloud/kms/v2/model/ValidateSignatureRequest.h>
 #include <huaweicloud/kms/v2/model/ValidateSignatureResponse.h>
 #include <huaweicloud/kms/v2/model/VerifyMacRequest.h>
@@ -460,6 +468,22 @@ public:
     std::shared_ptr<ListRetirableGrantsResponse> listRetirableGrants(
         ListRetirableGrantsRequest &request
     );
+    // 查询跨区域密钥所支持的区域
+    //
+    // - 功能介绍：查询跨区域密钥所支持的区域。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListSupportRegionsResponse> listSupportRegions(
+        ListSupportRegionsRequest &request
+    );
+    // 复制密钥到指定区域
+    //
+    // 将本区域的密钥复制到指定区域。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ReplicateKeyResponse> replicateKey(
+        ReplicateKeyRequest &request
+    );
     // 查询密钥轮换状态
     //
     // - 功能介绍：查询用户主密钥轮换状态。
@@ -545,6 +569,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateKeyRotationIntervalResponse> updateKeyRotationInterval(
         UpdateKeyRotationIntervalRequest &request
+    );
+    // 修改密钥所属的主区域
+    //
+    // 修改密钥所属的主区域。修改后当前区域会变为副本区域。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdatePrimaryRegionResponse> updatePrimaryRegion(
+        UpdatePrimaryRegionRequest &request
     );
     // 验证签名
     //

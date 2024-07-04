@@ -48,6 +48,8 @@
 #include <huaweicloud/rds/v3/model/CreateDnsNameRequest.h>
 #include <huaweicloud/rds/v3/model/CreateDnsNameRequestBody.h>
 #include <huaweicloud/rds/v3/model/CreateDnsNameResponse.h>
+#include <huaweicloud/rds/v3/model/CreateInstanceIam5Request.h>
+#include <huaweicloud/rds/v3/model/CreateInstanceIam5Response.h>
 #include <huaweicloud/rds/v3/model/CreateInstanceRequest.h>
 #include <huaweicloud/rds/v3/model/CreateInstanceResponse.h>
 #include <huaweicloud/rds/v3/model/CreateManualBackupRequest.h>
@@ -65,12 +67,16 @@
 #include <huaweicloud/rds/v3/model/CreateXelLogDownloadRequest.h>
 #include <huaweicloud/rds/v3/model/CreateXelLogDownloadRequestBody.h>
 #include <huaweicloud/rds/v3/model/CreateXelLogDownloadResponse.h>
+#include <huaweicloud/rds/v3/model/CustomerCreateInstanceReq.h>
 #include <huaweicloud/rds/v3/model/CustomerModifyAutoEnlargePolicyReq.h>
 #include <huaweicloud/rds/v3/model/CustomerUpgradeDatabaseVersionReq.h>
 #include <huaweicloud/rds/v3/model/CustomerUpgradeDatabaseVersionReqNew.h>
 #include <huaweicloud/rds/v3/model/DataIpRequest.h>
 #include <huaweicloud/rds/v3/model/DeleteConfigurationRequest.h>
 #include <huaweicloud/rds/v3/model/DeleteConfigurationResponse.h>
+#include <huaweicloud/rds/v3/model/DeleteDisasterRecoveryRequest.h>
+#include <huaweicloud/rds/v3/model/DeleteDisasterRecoveryRequestBody.h>
+#include <huaweicloud/rds/v3/model/DeleteDisasterRecoveryResponse.h>
 #include <huaweicloud/rds/v3/model/DeleteInstanceRequest.h>
 #include <huaweicloud/rds/v3/model/DeleteInstanceResponse.h>
 #include <huaweicloud/rds/v3/model/DeleteJobRequest.h>
@@ -125,6 +131,8 @@
 #include <huaweicloud/rds/v3/model/ListErrorlogForLtsRequest.h>
 #include <huaweicloud/rds/v3/model/ListErrorlogForLtsResponse.h>
 #include <huaweicloud/rds/v3/model/ListFlavorsRequest.h>
+#include <huaweicloud/rds/v3/model/ListFlavorsResizeRequest.h>
+#include <huaweicloud/rds/v3/model/ListFlavorsResizeResponse.h>
 #include <huaweicloud/rds/v3/model/ListFlavorsResponse.h>
 #include <huaweicloud/rds/v3/model/ListHistoryDatabaseRequest.h>
 #include <huaweicloud/rds/v3/model/ListHistoryDatabaseResponse.h>
@@ -330,6 +338,9 @@
 #include <huaweicloud/rds/v3/model/SwitchSqlLimitResponse.h>
 #include <huaweicloud/rds/v3/model/SwitchSslRequest.h>
 #include <huaweicloud/rds/v3/model/SwitchSslResponse.h>
+#include <huaweicloud/rds/v3/model/UnlockNodeReadonlyStatusRequest.h>
+#include <huaweicloud/rds/v3/model/UnlockNodeReadonlyStatusRequestBody.h>
+#include <huaweicloud/rds/v3/model/UnlockNodeReadonlyStatusResponse.h>
 #include <huaweicloud/rds/v3/model/UpdateConfigurationRequest.h>
 #include <huaweicloud/rds/v3/model/UpdateConfigurationResponse.h>
 #include <huaweicloud/rds/v3/model/UpdateDataIpRequest.h>
@@ -709,6 +720,14 @@ public:
     std::shared_ptr<CreateInstanceResponse> createInstance(
         CreateInstanceRequest &request
     );
+    // 创建数据库实例V5接口，仅支持IAM5的新平面认证方式（AK/SK认证方式）
+    //
+    // 创建数据库实例V5接口，仅支持IAM5的新平面认证方式（AK/SK认证方式）
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateInstanceIam5Response> createInstanceIam5(
+        CreateInstanceIam5Request &request
+    );
     // 创建手动备份
     //
     // 创建手动备份。
@@ -756,6 +775,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteConfigurationResponse> deleteConfiguration(
         DeleteConfigurationRequest &request
+    );
+    // 解除实例容灾关系接口
+    //
+    // 解除实例容灾关系接口
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteDisasterRecoveryResponse> deleteDisasterRecovery(
+        DeleteDisasterRecoveryRequest &request
     );
     // 删除数据库实例
     //
@@ -923,6 +950,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListFlavorsResponse> listFlavors(
         ListFlavorsRequest &request
+    );
+    // 查询数据库可变更规格接口
+    //
+    // 查询数据库可变更规格接口
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListFlavorsResizeResponse> listFlavorsResize(
+        ListFlavorsResizeRequest &request
     );
     // 查询指定时间点可恢复的库
     //
@@ -1621,6 +1656,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<SwitchSslResponse> switchSsl(
         SwitchSslRequest &request
+    );
+    // 解除节点只读状态接口
+    //
+    // 解除节点只读状态接口
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UnlockNodeReadonlyStatusResponse> unlockNodeReadonlyStatus(
+        UnlockNodeReadonlyStatusRequest &request
     );
     // 修改参数模板参数
     //

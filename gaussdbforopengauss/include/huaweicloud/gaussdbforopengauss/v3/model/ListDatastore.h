@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -74,6 +75,24 @@ public:
     void unsethotfixVersions();
     void setHotfixVersions(const std::string& value);
 
+    /// <summary>
+    /// 数据库正在升级的目标版本。
+    /// </summary>
+
+    std::string getTargetVersion() const;
+    bool targetVersionIsSet() const;
+    void unsettargetVersion();
+    void setTargetVersion(const std::string& value);
+
+    /// <summary>
+    /// 热补丁升级完成时间列表。  热补丁升级完成时间，格式为“yyyy-mm-dd hh:mm:ss timezone”。  其中timezone是指时区。 
+    /// </summary>
+
+    std::vector<std::string>& getHotfixFinishedTimes();
+    bool hotfixFinishedTimesIsSet() const;
+    void unsethotfixFinishedTimes();
+    void setHotfixFinishedTimes(const std::vector<std::string>& value);
+
 
 protected:
     std::string type_;
@@ -84,6 +103,10 @@ protected:
     bool completeVersionIsSet_;
     std::string hotfixVersions_;
     bool hotfixVersionsIsSet_;
+    std::string targetVersion_;
+    bool targetVersionIsSet_;
+    std::vector<std::string> hotfixFinishedTimes_;
+    bool hotfixFinishedTimesIsSet_;
 
 };
 

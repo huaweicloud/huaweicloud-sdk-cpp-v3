@@ -200,15 +200,6 @@ public:
     void unsetkeyLabel();
     void setKeyLabel(const std::string& value);
 
-    /// <summary>
-    /// 分区类型，枚举如下：  - 1为专业版
-    /// </summary>
-
-    std::string getPartitionType() const;
-    bool partitionTypeIsSet() const;
-    void unsetpartitionType();
-    void setPartitionType(const std::string& value);
-
 
 protected:
     std::string keyId_;
@@ -247,8 +238,6 @@ protected:
     bool keystoreIdIsSet_;
     std::string keyLabel_;
     bool keyLabelIsSet_;
-    std::string partitionType_;
-    bool partitionTypeIsSet_;
 
 };
 

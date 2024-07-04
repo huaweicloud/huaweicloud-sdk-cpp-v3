@@ -48,6 +48,8 @@ public:
     static HttpRequestDef genRequestDefForListKmsByTags();
     static HttpRequestDef genRequestDefForListKmsTags();
     static HttpRequestDef genRequestDefForListRetirableGrants();
+    static HttpRequestDef genRequestDefForListSupportRegions();
+    static HttpRequestDef genRequestDefForReplicateKey();
     static HttpRequestDef genRequestDefForShowKeyRotationStatus();
     static HttpRequestDef genRequestDefForShowKeyStore();
     static HttpRequestDef genRequestDefForShowKmsTags();
@@ -58,6 +60,7 @@ public:
     static HttpRequestDef genRequestDefForUpdateKeyAlias();
     static HttpRequestDef genRequestDefForUpdateKeyDescription();
     static HttpRequestDef genRequestDefForUpdateKeyRotationInterval();
+    static HttpRequestDef genRequestDefForUpdatePrimaryRegion();
     static HttpRequestDef genRequestDefForValidateSignature();
     static HttpRequestDef genRequestDefForVerifyMac();
     static HttpRequestDef genRequestDefForShowVersion();

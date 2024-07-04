@@ -305,6 +305,20 @@ HttpRequestDef KmsMeta::genRequestDefForListRetirableGrants() {
     return reqDefBuilder;
 }
 
+HttpRequestDef KmsMeta::genRequestDefForListSupportRegions() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef KmsMeta::genRequestDefForReplicateKey() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef KmsMeta::genRequestDefForShowKeyRotationStatus() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -371,6 +385,15 @@ HttpRequestDef KmsMeta::genRequestDefForUpdateKeyDescription() {
 }
 
 HttpRequestDef KmsMeta::genRequestDefForUpdateKeyRotationInterval() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef KmsMeta::genRequestDefForUpdatePrimaryRegion() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.

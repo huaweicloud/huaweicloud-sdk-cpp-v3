@@ -16,8 +16,6 @@ TopReferSummary::TopReferSummary()
     referIsSet_ = false;
     value_ = 0L;
     valueIsSet_ = false;
-    ratio_ = 0.0;
-    ratioIsSet_ = false;
 }
 
 TopReferSummary::~TopReferSummary() = default;
@@ -35,9 +33,6 @@ web::json::value TopReferSummary::toJson() const
     }
     if(valueIsSet_) {
         val[utility::conversions::to_string_t("value")] = ModelBase::toJson(value_);
-    }
-    if(ratioIsSet_) {
-        val[utility::conversions::to_string_t("ratio")] = ModelBase::toJson(ratio_);
     }
 
     return val;
@@ -62,15 +57,6 @@ bool TopReferSummary::fromJson(const web::json::value& val)
             int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setValue(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("ratio"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ratio"));
-        if(!fieldValue.is_null())
-        {
-            double refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setRatio(refVal);
         }
     }
     return ok;
@@ -117,27 +103,6 @@ bool TopReferSummary::valueIsSet() const
 void TopReferSummary::unsetvalue()
 {
     valueIsSet_ = false;
-}
-
-double TopReferSummary::getRatio() const
-{
-    return ratio_;
-}
-
-void TopReferSummary::setRatio(double value)
-{
-    ratio_ = value;
-    ratioIsSet_ = true;
-}
-
-bool TopReferSummary::ratioIsSet() const
-{
-    return ratioIsSet_;
-}
-
-void TopReferSummary::unsetratio()
-{
-    ratioIsSet_ = false;
 }
 
 }

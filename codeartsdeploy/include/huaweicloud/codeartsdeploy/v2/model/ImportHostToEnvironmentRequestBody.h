@@ -49,7 +49,7 @@ public:
     void setGroupId(const std::string& value);
 
     /// <summary>
-    /// 要导入的主机ids
+    /// 要导入的主机id列表
     /// </summary>
 
     std::vector<std::string>& getHostIds();

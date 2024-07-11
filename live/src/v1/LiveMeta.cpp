@@ -147,6 +147,14 @@ HttpRequestDef LiveMeta::genRequestDefForDeleteRecordRule() {
     return reqDefBuilder;
 }
 
+HttpRequestDef LiveMeta::genRequestDefForDeleteRefererChain() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Domain")
+                  .withJsonTag("domain")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef LiveMeta::genRequestDefForDeleteSnapshotConfig() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Domain")
@@ -201,6 +209,14 @@ HttpRequestDef LiveMeta::genRequestDefForListGeoBlockingConfig() {
         withJsonTag("X-Request-Id").
         withKindName("std::string").
         withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LiveMeta::genRequestDefForListHlsConfig() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("PushDomain")
+                  .withJsonTag("push_domain")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 
@@ -387,6 +403,15 @@ HttpRequestDef LiveMeta::genRequestDefForRunRecord() {
     return reqDefBuilder;
 }
 
+HttpRequestDef LiveMeta::genRequestDefForSetRefererChain() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef LiveMeta::genRequestDefForShowDomain() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Domain")
@@ -421,6 +446,14 @@ HttpRequestDef LiveMeta::genRequestDefForShowRecordCallbackConfig() {
 
 HttpRequestDef LiveMeta::genRequestDefForShowRecordRule() {
     HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef LiveMeta::genRequestDefForShowRefererChain() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Domain")
+                  .withJsonTag("domain")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 
@@ -494,6 +527,15 @@ HttpRequestDef LiveMeta::genRequestDefForUpdateGeoBlockingConfig() {
         withJsonTag("X-Request-Id").
         withKindName("std::string").
         withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LiveMeta::genRequestDefForUpdateHlsConfig() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
     return reqDefBuilder;
 }
 

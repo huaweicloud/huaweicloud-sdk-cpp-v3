@@ -1,3 +1,155 @@
+# 3.1.93 2024-07-11
+
+### HuaweiCloud SDK CDN
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Deprecate the following APIs:
+    - `ShowBlackWhiteList`
+    - `UpdateBlackWhiteList`
+    - `UpdatePrivateBucketAccess`
+    - `BatchDeleteTags`
+    - `ShowOriginHost`
+    - `UpdateOriginHost`
+    - `UpdateRangeSwitch`
+    - `UpdateFollow302Switch`
+    - `ShowRefer`
+    - `UpdateRefer`
+    - `ShowIpInfo`
+    - `ShowResponseHeader`
+    - `UpdateResponseHeader`
+    - `CreateRefreshTasks`
+    - `CreatePreheatingTasks`
+    - `ShowHistoryTasks`
+    - `ShowHistoryTaskDetails`
+    - `ShowUrlTaskInfo`
+    - `ShowQuota`
+    - `ShowTags`
+    - `CreateTags`
+    - `CreateDomain`
+    - `ShowDomainDetail`
+    - `DeleteDomain`
+    - `EnableDomain`
+    - `DisableDomain`
+    - `UpdateDomainOrigin`
+    - `ShowHttpInfo`
+    - `UpdateHttpsInfo`
+    - `UpdateDomainMultiCertificates`
+    - `ShowCertificatesHttpsInfo`
+    - `ShowCacheRules`
+    - `UpdateCacheRules`
+  - **ListCdnDomainTopRefers**
+    - changes of response param
+      - `- top_refer_summary.ratio`
+
+### HuaweiCloud SDK CodeArtsDeploy
+
+- _Features_
+  - Support the following APIs:
+    - `ListHostGroupPermissions`
+    - `UpdateHostGroupPermissions`
+    - `CheckWhetherHostGroupCanBeCreated`
+    - `ListEnvironmentPermissions`
+    - `UpdateEnvironmentPermission`
+    - `CopyHostsToTarget`
+    - `BatchDeleteHosts`
+    - `ListAssociateEnvironmentsInfos`
+    - `ListHostGroupBaseInfos`
+    - `ListEnvironmentHosts`
+    - `CopyApplication`
+    - `BatchDeleteApp`
+    - `ListApplicationPermissions`
+    - `BatchUpdateApplicationPermissions`
+    - `BatchUpdatePermissionLevel`
+    - `ListAppGroups`
+    - `CreateAppGroups`
+    - `UpdateAppGroups`
+    - `DeleteAppGroups`
+    - `MoveAppGroups`
+    - `MoveAppToGroup`
+    - `CheckIsDuplicateAppName`
+    - `CheckCanCreate`
+    - `UpdateAppDisableStatus`
+    - `UpdateHostCluster`
+    - `DeleteHostCluster`
+    - `UpdateHostInfo`
+    - `DeleteHost`
+    - `UpdateEnvironment`
+    - `UpdateAppInfo`
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateApp**
+    - changes of request param
+      - `+ arrange_infos.operation_list.id`
+
+### HuaweiCloud SDK ECS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListFlavors**
+    - changes of response param
+      - `+ flavors.os_extra_specs.info:gpus`
+      - `+ flavors.os_extra_specs.info:asic_accelerators`
+  - **ListResizeFlavors**
+    - changes of response param
+      - `+ flavors.extra_specs.info:gpus`
+      - `+ flavors.extra_specs.info:asic_accelerators`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _Features_
+  - Support the following APIs:
+    - `ListSupportKernelPlugins`
+    - `ListKernelPlugins`
+    - `SetKernelPluginLicense`
+    - `InstallKernelPlugin`
+    - `ListPluginExtensions`
+    - `ResumePluginExtensions`
+- _Bug Fix_
+  - None
+- _Change_
+  - **RestoreInstance**
+    - changes of request param
+      - `- source.table_list`
+      - `- source.schema_type`
+
+### HuaweiCloud SDK Live
+
+- _Features_
+  - Support the following APIs:
+    - `ShowRefererChain`
+    - `SetRefererChain`
+    - `DeleteRefererChain`
+    - `ListHlsConfig`
+    - `UpdateHlsConfig`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowPullSourcesConfig**
+    - changes of response param
+      - `+ source_port`
+  - **UpdatePullSourcesConfig**
+    - changes of request param
+      - `+ source_port`
+
+### HuaweiCloud SDK OCR
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **RecognizeBankReceipt**
+    - changes of request param
+      - `+ page_num`
+
 # 3.1.92 2024-07-04
 
 ### HuaweiCloud SDK CDN

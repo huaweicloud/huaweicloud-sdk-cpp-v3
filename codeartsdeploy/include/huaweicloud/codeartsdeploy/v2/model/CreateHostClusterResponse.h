@@ -39,7 +39,7 @@ public:
     /// CreateHostClusterResponse members
 
     /// <summary>
-    /// 主机集群ID
+    /// 主机集群id
     /// </summary>
 
     std::string getId() const;
@@ -48,7 +48,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 请求状态
+    /// 请求成功失败状态
     /// </summary>
 
     std::string getStatus() const;

@@ -18,6 +18,8 @@ ShowPullSourcesConfigResponse::ShowPullSourcesConfigResponse()
     sourceTypeIsSet_ = false;
     sourcesIsSet_ = false;
     sourcesIpIsSet_ = false;
+    sourcePort_ = 0;
+    sourcePortIsSet_ = false;
     scheme_ = "";
     schemeIsSet_ = false;
     additionalArgsIsSet_ = false;
@@ -44,6 +46,9 @@ web::json::value ShowPullSourcesConfigResponse::toJson() const
     }
     if(sourcesIpIsSet_) {
         val[utility::conversions::to_string_t("sources_ip")] = ModelBase::toJson(sourcesIp_);
+    }
+    if(sourcePortIsSet_) {
+        val[utility::conversions::to_string_t("source_port")] = ModelBase::toJson(sourcePort_);
     }
     if(schemeIsSet_) {
         val[utility::conversions::to_string_t("scheme")] = ModelBase::toJson(scheme_);
@@ -92,6 +97,15 @@ bool ShowPullSourcesConfigResponse::fromJson(const web::json::value& val)
             std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSourcesIp(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("source_port"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("source_port"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSourcePort(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("scheme"))) {
@@ -198,6 +212,27 @@ bool ShowPullSourcesConfigResponse::sourcesIpIsSet() const
 void ShowPullSourcesConfigResponse::unsetsourcesIp()
 {
     sourcesIpIsSet_ = false;
+}
+
+int32_t ShowPullSourcesConfigResponse::getSourcePort() const
+{
+    return sourcePort_;
+}
+
+void ShowPullSourcesConfigResponse::setSourcePort(int32_t value)
+{
+    sourcePort_ = value;
+    sourcePortIsSet_ = true;
+}
+
+bool ShowPullSourcesConfigResponse::sourcePortIsSet() const
+{
+    return sourcePortIsSet_;
+}
+
+void ShowPullSourcesConfigResponse::unsetsourcePort()
+{
+    sourcePortIsSet_ = false;
 }
 
 std::string ShowPullSourcesConfigResponse::getScheme() const

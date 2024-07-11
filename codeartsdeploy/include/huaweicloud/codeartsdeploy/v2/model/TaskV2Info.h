@@ -97,7 +97,7 @@ public:
     void setSteps(const std::map<std::string, Step>& value);
 
     /// <summary>
-    /// 项目ID
+    /// 项目id
     /// </summary>
 
     std::string getProjectId() const;
@@ -142,7 +142,7 @@ public:
     void setUpdateTime(const std::string& value);
 
     /// <summary>
-    /// 角色ID
+    /// 角色id
     /// </summary>
 
     int32_t getRoleId() const;
@@ -178,7 +178,7 @@ public:
     void setNickName(const std::string& value);
 
     /// <summary>
-    /// 应用创建者用户ID
+    /// 应用创建者用户id
     /// </summary>
 
     std::string getOwnerId() const;
@@ -187,7 +187,7 @@ public:
     void setOwnerId(const std::string& value);
 
     /// <summary>
-    /// 应用创建者租户ID
+    /// 应用创建者租户id
     /// </summary>
 
     std::string getTenantId() const;

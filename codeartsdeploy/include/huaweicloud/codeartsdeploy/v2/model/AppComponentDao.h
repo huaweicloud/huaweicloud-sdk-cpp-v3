@@ -84,7 +84,7 @@ public:
     void setCompName(const std::string& value);
 
     /// <summary>
-    /// 租户ID
+    /// 租户id
     /// </summary>
 
     std::string getDomainId() const;

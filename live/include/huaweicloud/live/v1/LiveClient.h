@@ -40,6 +40,8 @@
 #include <huaweicloud/live/v1/model/DeleteRecordCallbackConfigResponse.h>
 #include <huaweicloud/live/v1/model/DeleteRecordRuleRequest.h>
 #include <huaweicloud/live/v1/model/DeleteRecordRuleResponse.h>
+#include <huaweicloud/live/v1/model/DeleteRefererChainRequest.h>
+#include <huaweicloud/live/v1/model/DeleteRefererChainResponse.h>
 #include <huaweicloud/live/v1/model/DeleteSnapshotConfigRequest.h>
 #include <huaweicloud/live/v1/model/DeleteSnapshotConfigResponse.h>
 #include <huaweicloud/live/v1/model/DeleteStreamForbiddenRequest.h>
@@ -55,6 +57,8 @@
 #include <huaweicloud/live/v1/model/ListDelayConfigResponse.h>
 #include <huaweicloud/live/v1/model/ListGeoBlockingConfigRequest.h>
 #include <huaweicloud/live/v1/model/ListGeoBlockingConfigResponse.h>
+#include <huaweicloud/live/v1/model/ListHlsConfigRequest.h>
+#include <huaweicloud/live/v1/model/ListHlsConfigResponse.h>
 #include <huaweicloud/live/v1/model/ListIpAuthListRequest.h>
 #include <huaweicloud/live/v1/model/ListIpAuthListResponse.h>
 #include <huaweicloud/live/v1/model/ListLiveSampleLogsRequest.h>
@@ -77,6 +81,7 @@
 #include <huaweicloud/live/v1/model/LiveDomainModifyReq.h>
 #include <huaweicloud/live/v1/model/LiveSnapshotConfig.h>
 #include <huaweicloud/live/v1/model/ModifyDelayConfig.h>
+#include <huaweicloud/live/v1/model/ModifyHlsConfig.h>
 #include <huaweicloud/live/v1/model/ModifyPullSourcesConfig.h>
 #include <huaweicloud/live/v1/model/RecordCallbackConfigRequest.h>
 #include <huaweicloud/live/v1/model/RecordControlInfo.h>
@@ -84,6 +89,9 @@
 #include <huaweicloud/live/v1/model/RecordRuleRequest.h>
 #include <huaweicloud/live/v1/model/RunRecordRequest.h>
 #include <huaweicloud/live/v1/model/RunRecordResponse.h>
+#include <huaweicloud/live/v1/model/SetRefererChainInfo.h>
+#include <huaweicloud/live/v1/model/SetRefererChainRequest.h>
+#include <huaweicloud/live/v1/model/SetRefererChainResponse.h>
 #include <huaweicloud/live/v1/model/ShowDomainKeyChainRequest.h>
 #include <huaweicloud/live/v1/model/ShowDomainKeyChainResponse.h>
 #include <huaweicloud/live/v1/model/ShowDomainRequest.h>
@@ -94,6 +102,8 @@
 #include <huaweicloud/live/v1/model/ShowRecordCallbackConfigResponse.h>
 #include <huaweicloud/live/v1/model/ShowRecordRuleRequest.h>
 #include <huaweicloud/live/v1/model/ShowRecordRuleResponse.h>
+#include <huaweicloud/live/v1/model/ShowRefererChainRequest.h>
+#include <huaweicloud/live/v1/model/ShowRefererChainResponse.h>
 #include <huaweicloud/live/v1/model/ShowTranscodingsTemplateRequest.h>
 #include <huaweicloud/live/v1/model/ShowTranscodingsTemplateResponse.h>
 #include <huaweicloud/live/v1/model/StreamForbiddenSetting.h>
@@ -108,6 +118,8 @@
 #include <huaweicloud/live/v1/model/UpdateDomainResponse.h>
 #include <huaweicloud/live/v1/model/UpdateGeoBlockingConfigRequest.h>
 #include <huaweicloud/live/v1/model/UpdateGeoBlockingConfigResponse.h>
+#include <huaweicloud/live/v1/model/UpdateHlsConfigRequest.h>
+#include <huaweicloud/live/v1/model/UpdateHlsConfigResponse.h>
 #include <huaweicloud/live/v1/model/UpdateIpAuthListRequest.h>
 #include <huaweicloud/live/v1/model/UpdateIpAuthListResponse.h>
 #include <huaweicloud/live/v1/model/UpdatePublishTemplateRequest.h>
@@ -319,6 +331,14 @@ public:
     std::shared_ptr<DeleteRecordRuleResponse> deleteRecordRule(
         DeleteRecordRuleRequest &request
     );
+    // 删除Referer防盗链黑白名单
+    //
+    // 删除Referer防盗链黑白名单
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteRefererChainResponse> deleteRefererChain(
+        DeleteRefererChainRequest &request
+    );
     // 删除直播截图配置
     //
     // 删除直播截图配置接口
@@ -358,6 +378,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListGeoBlockingConfigResponse> listGeoBlockingConfig(
         ListGeoBlockingConfigRequest &request
+    );
+    // 查询域名HLS配置
+    //
+    // 查询域名HLS配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListHlsConfigResponse> listHlsConfig(
+        ListHlsConfigRequest &request
     );
     // 查询IP黑/白名单
     //
@@ -442,6 +470,14 @@ public:
     std::shared_ptr<RunRecordResponse> runRecord(
         RunRecordRequest &request
     );
+    // 设置Referer防盗链黑白名单
+    //
+    // 设置Referer黑白名单，直播服务会根据配置的referer黑白名单，对访问者的身份进行识别和过滤，符合规则的可以顺利访问到该内容。如果不符合规则，该访问请求将会被禁止。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SetRefererChainResponse> setRefererChain(
+        SetRefererChainRequest &request
+    );
     // 查询直播域名
     //
     // 查询直播域名
@@ -481,6 +517,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowRecordRuleResponse> showRecordRule(
         ShowRecordRuleRequest &request
+    );
+    // 查询Referer防盗链黑白名单
+    //
+    // 查询Referer防盗链黑白名单
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowRefererChainResponse> showRefererChain(
+        ShowRefererChainRequest &request
     );
     // 查询直播转码模板
     //
@@ -529,6 +573,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateGeoBlockingConfigResponse> updateGeoBlockingConfig(
         UpdateGeoBlockingConfigRequest &request
+    );
+    // 修改域名HLS配置
+    //
+    // 修改域名HLS配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateHlsConfigResponse> updateHlsConfig(
+        UpdateHlsConfigRequest &request
     );
     // 修改IP黑/白名单
     //

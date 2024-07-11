@@ -42,6 +42,10 @@ public:
             { 
                 "https://ocr.ap-southeast-2.myhuaweicloud.com"
             });
+        regions["cn-southwest-2"] = Region("cn-southwest-2",
+            { 
+                "https://ocr.cn-southwest-2.myhuaweicloud.com"
+            });
         regions["ap-southeast-1"] = Region("ap-southeast-1",
             { 
                 "https://ocr.ap-southeast-1.myhuaweicloud.com"

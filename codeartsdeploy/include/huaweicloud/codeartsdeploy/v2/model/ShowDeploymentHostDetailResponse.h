@@ -124,7 +124,7 @@ public:
     void setInstallIcagent(bool value);
 
     /// <summary>
-    /// 主机ID
+    /// 主机id
     /// </summary>
 
     std::string getHostId() const;
@@ -151,7 +151,7 @@ public:
     void setGroupName(const std::string& value);
 
     /// <summary>
-    /// 项目ID
+    /// 项目id
     /// </summary>
 
     std::string getProjectId() const;

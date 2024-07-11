@@ -66,7 +66,7 @@ public:
     void setOperator(const std::string& value);
 
     /// <summary>
-    /// 部署记录ID
+    /// 部署记录id
     /// </summary>
 
     std::string getExecutionId() const;

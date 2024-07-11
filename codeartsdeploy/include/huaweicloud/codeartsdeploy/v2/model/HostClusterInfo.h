@@ -68,7 +68,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 项目ID
+    /// 项目id
     /// </summary>
 
     std::string getProjectId() const;

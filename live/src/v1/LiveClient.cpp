@@ -624,6 +624,38 @@ std::shared_ptr<DeleteRecordRuleResponse> LiveClient::deleteRecordRule(DeleteRec
 
     return localVarResult;
 }
+std::shared_ptr<DeleteRefererChainResponse> LiveClient::deleteRefererChain(DeleteRefererChainRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/guard/referer-chain";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.domainIsSet()) {
+        localVarQueryParams["domain"] = parameterToString(request.getDomain());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForDeleteRefererChain());
+
+    std::shared_ptr<DeleteRefererChainResponse> localVarResult = std::make_shared<DeleteRefererChainResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<DeleteSnapshotConfigResponse> LiveClient::deleteSnapshotConfig(DeleteSnapshotConfigRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/stream/snapshot";
@@ -790,6 +822,38 @@ std::shared_ptr<ListGeoBlockingConfigResponse> LiveClient::listGeoBlockingConfig
         localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForListGeoBlockingConfig());
 
     std::shared_ptr<ListGeoBlockingConfigResponse> localVarResult = std::make_shared<ListGeoBlockingConfigResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListHlsConfigResponse> LiveClient::listHlsConfig(ListHlsConfigRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/domain/hls";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.pushDomainIsSet()) {
+        localVarQueryParams["push_domain"] = parameterToString(request.getPushDomain());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForListHlsConfig());
+
+    std::shared_ptr<ListHlsConfigResponse> localVarResult = std::make_shared<ListHlsConfigResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -1212,6 +1276,47 @@ std::shared_ptr<RunRecordResponse> LiveClient::runRecord(RunRecordRequest &reque
 
     return localVarResult;
 }
+std::shared_ptr<SetRefererChainResponse> LiveClient::setRefererChain(SetRefererChainRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/guard/referer-chain";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json; charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForSetRefererChain());
+
+    std::shared_ptr<SetRefererChainResponse> localVarResult = std::make_shared<SetRefererChainResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<ShowDomainResponse> LiveClient::showDomain(ShowDomainRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/domain";
@@ -1365,6 +1470,38 @@ std::shared_ptr<ShowRecordRuleResponse> LiveClient::showRecordRule(ShowRecordRul
         localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForShowRecordRule());
 
     std::shared_ptr<ShowRecordRuleResponse> localVarResult = std::make_shared<ShowRecordRuleResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowRefererChainResponse> LiveClient::showRefererChain(ShowRefererChainRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/guard/referer-chain";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.domainIsSet()) {
+        localVarQueryParams["domain"] = parameterToString(request.getDomain());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForShowRefererChain());
+
+    std::shared_ptr<ShowRefererChainResponse> localVarResult = std::make_shared<ShowRefererChainResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -1611,6 +1748,47 @@ std::shared_ptr<UpdateGeoBlockingConfigResponse> LiveClient::updateGeoBlockingCo
         localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForUpdateGeoBlockingConfig());
 
     std::shared_ptr<UpdateGeoBlockingConfigResponse> localVarResult = std::make_shared<UpdateGeoBlockingConfigResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateHlsConfigResponse> LiveClient::updateHlsConfig(UpdateHlsConfigRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/domain/hls";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json; charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForUpdateHlsConfig());
+
+    std::shared_ptr<UpdateHlsConfigResponse> localVarResult = std::make_shared<UpdateHlsConfigResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

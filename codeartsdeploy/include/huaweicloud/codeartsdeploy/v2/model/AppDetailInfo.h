@@ -95,7 +95,7 @@ public:
     void setCreateType(const std::string& value);
 
     /// <summary>
-    /// 项目ID
+    /// 项目id
     /// </summary>
 
     std::string getProjectId() const;
@@ -203,7 +203,7 @@ public:
     void setCanDisable(bool value);
 
     /// <summary>
-    /// 应用所属人租户ID
+    /// 应用所属人租户id
     /// </summary>
 
     std::string getOwnerTenantId() const;
@@ -221,7 +221,7 @@ public:
     void setCreateUserId(const std::string& value);
 
     /// <summary>
-    /// 应用创建人租户ID
+    /// 应用创建人租户id
     /// </summary>
 
     std::string getCreateTenantId() const;

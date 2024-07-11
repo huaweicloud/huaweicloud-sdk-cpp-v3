@@ -39,7 +39,7 @@ public:
     /// ListDeployTaskHistoryByDateRequest members
 
     /// <summary>
-    /// 项目ID
+    /// 项目id
     /// </summary>
 
     std::string getProjectId() const;
@@ -48,7 +48,7 @@ public:
     void setProjectId(const std::string& value);
 
     /// <summary>
-    /// 任务ID
+    /// 任务id
     /// </summary>
 
     std::string getId() const;

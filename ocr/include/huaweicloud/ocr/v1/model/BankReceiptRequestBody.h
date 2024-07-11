@@ -56,12 +56,23 @@ public:
     void unseturl();
     void setUrl(const std::string& value);
 
+    /// <summary>
+    /// 指定PDF页码识别。传入该参数时，则识别指定页码的内容。如果不传该参数，则默认识别第1页，该参数仅在文件为PDF格式时有效。 
+    /// </summary>
+
+    int32_t getPageNum() const;
+    bool pageNumIsSet() const;
+    void unsetpageNum();
+    void setPageNum(int32_t value);
+
 
 protected:
     std::string data_;
     bool dataIsSet_;
     std::string url_;
     bool urlIsSet_;
+    int32_t pageNum_;
+    bool pageNumIsSet_;
 
 };
 

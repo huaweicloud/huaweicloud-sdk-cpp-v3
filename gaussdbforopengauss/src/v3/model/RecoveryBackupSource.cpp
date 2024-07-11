@@ -20,9 +20,6 @@ RecoveryBackupSource::RecoveryBackupSource()
     backupIdIsSet_ = false;
     restoreTime_ = "";
     restoreTimeIsSet_ = false;
-    tableListIsSet_ = false;
-    schemaType_ = "";
-    schemaTypeIsSet_ = false;
 }
 
 RecoveryBackupSource::~RecoveryBackupSource() = default;
@@ -46,12 +43,6 @@ web::json::value RecoveryBackupSource::toJson() const
     }
     if(restoreTimeIsSet_) {
         val[utility::conversions::to_string_t("restore_time")] = ModelBase::toJson(restoreTime_);
-    }
-    if(tableListIsSet_) {
-        val[utility::conversions::to_string_t("table_list")] = ModelBase::toJson(tableList_);
-    }
-    if(schemaTypeIsSet_) {
-        val[utility::conversions::to_string_t("schema_type")] = ModelBase::toJson(schemaType_);
     }
 
     return val;
@@ -94,24 +85,6 @@ bool RecoveryBackupSource::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRestoreTime(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("table_list"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("table_list"));
-        if(!fieldValue.is_null())
-        {
-            std::vector<RestoreTableListDetail> refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setTableList(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("schema_type"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("schema_type"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setSchemaType(refVal);
         }
     }
     return ok;
@@ -200,48 +173,6 @@ bool RecoveryBackupSource::restoreTimeIsSet() const
 void RecoveryBackupSource::unsetrestoreTime()
 {
     restoreTimeIsSet_ = false;
-}
-
-std::vector<RestoreTableListDetail>& RecoveryBackupSource::getTableList()
-{
-    return tableList_;
-}
-
-void RecoveryBackupSource::setTableList(const std::vector<RestoreTableListDetail>& value)
-{
-    tableList_ = value;
-    tableListIsSet_ = true;
-}
-
-bool RecoveryBackupSource::tableListIsSet() const
-{
-    return tableListIsSet_;
-}
-
-void RecoveryBackupSource::unsettableList()
-{
-    tableListIsSet_ = false;
-}
-
-std::string RecoveryBackupSource::getSchemaType() const
-{
-    return schemaType_;
-}
-
-void RecoveryBackupSource::setSchemaType(const std::string& value)
-{
-    schemaType_ = value;
-    schemaTypeIsSet_ = true;
-}
-
-bool RecoveryBackupSource::schemaTypeIsSet() const
-{
-    return schemaTypeIsSet_;
-}
-
-void RecoveryBackupSource::unsetschemaType()
-{
-    schemaTypeIsSet_ = false;
 }
 
 }

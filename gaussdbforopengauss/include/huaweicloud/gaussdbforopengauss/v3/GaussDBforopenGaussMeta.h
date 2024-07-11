@@ -34,6 +34,7 @@ public:
     static HttpRequestDef genRequestDefForDeleteJob();
     static HttpRequestDef genRequestDefForDeleteManualBackup();
     static HttpRequestDef genRequestDefForDownloadBackup();
+    static HttpRequestDef genRequestDefForInstallKernelPlugin();
     static HttpRequestDef genRequestDefForListApplicableInstances();
     static HttpRequestDef genRequestDefForListAppliedHistories();
     static HttpRequestDef genRequestDefForListAvailableFlavors();
@@ -58,13 +59,16 @@ public:
     static HttpRequestDef genRequestDefForListInstanceTags();
     static HttpRequestDef genRequestDefForListInstances();
     static HttpRequestDef genRequestDefForListInstancesDetails();
+    static HttpRequestDef genRequestDefForListKernelPlugins();
     static HttpRequestDef genRequestDefForListParamGroupTemplates();
+    static HttpRequestDef genRequestDefForListPluginExtensions();
     static HttpRequestDef genRequestDefForListPredefinedTags();
     static HttpRequestDef genRequestDefForListProjectTags();
     static HttpRequestDef genRequestDefForListRecycleInstances();
     static HttpRequestDef genRequestDefForListRestorableInstances();
     static HttpRequestDef genRequestDefForListRestoreTimes();
     static HttpRequestDef genRequestDefForListStorageTypes();
+    static HttpRequestDef genRequestDefForListSupportKernelPlugins();
     static HttpRequestDef genRequestDefForListTasks();
     static HttpRequestDef genRequestDefForListTopIoTraffics();
     static HttpRequestDef genRequestDefForModifyEpsQuota();
@@ -73,10 +77,12 @@ public:
     static HttpRequestDef genRequestDefForResizeInstanceFlavor();
     static HttpRequestDef genRequestDefForRestartInstance();
     static HttpRequestDef genRequestDefForRestoreInstance();
+    static HttpRequestDef genRequestDefForResumePluginExtensions();
     static HttpRequestDef genRequestDefForRunInstanceAction();
     static HttpRequestDef genRequestDefForSearchAutoEnlargePolicy();
     static HttpRequestDef genRequestDefForSetBackupPolicy();
     static HttpRequestDef genRequestDefForSetDbUserPwd();
+    static HttpRequestDef genRequestDefForSetKernelPluginLicense();
     static HttpRequestDef genRequestDefForSetNewBackupPolicy();
     static HttpRequestDef genRequestDefForSetRecyclePolicy();
     static HttpRequestDef genRequestDefForShowBackupPolicy();

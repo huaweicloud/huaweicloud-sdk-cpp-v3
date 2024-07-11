@@ -16,6 +16,8 @@ BankReceiptRequestBody::BankReceiptRequestBody()
     dataIsSet_ = false;
     url_ = "";
     urlIsSet_ = false;
+    pageNum_ = 0;
+    pageNumIsSet_ = false;
 }
 
 BankReceiptRequestBody::~BankReceiptRequestBody() = default;
@@ -33,6 +35,9 @@ web::json::value BankReceiptRequestBody::toJson() const
     }
     if(urlIsSet_) {
         val[utility::conversions::to_string_t("url")] = ModelBase::toJson(url_);
+    }
+    if(pageNumIsSet_) {
+        val[utility::conversions::to_string_t("page_num")] = ModelBase::toJson(pageNum_);
     }
 
     return val;
@@ -57,6 +62,15 @@ bool BankReceiptRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setUrl(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("page_num"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("page_num"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPageNum(refVal);
         }
     }
     return ok;
@@ -103,6 +117,27 @@ bool BankReceiptRequestBody::urlIsSet() const
 void BankReceiptRequestBody::unseturl()
 {
     urlIsSet_ = false;
+}
+
+int32_t BankReceiptRequestBody::getPageNum() const
+{
+    return pageNum_;
+}
+
+void BankReceiptRequestBody::setPageNum(int32_t value)
+{
+    pageNum_ = value;
+    pageNumIsSet_ = true;
+}
+
+bool BankReceiptRequestBody::pageNumIsSet() const
+{
+    return pageNumIsSet_;
+}
+
+void BankReceiptRequestBody::unsetpageNum()
+{
+    pageNumIsSet_ = false;
 }
 
 }

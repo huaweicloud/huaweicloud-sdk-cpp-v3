@@ -68,7 +68,7 @@ public:
     void setRegion(const std::string& value);
 
     /// <summary>
-    /// 部署任务列表
+    /// 部署任务列表信息
     /// </summary>
 
     std::vector<TaskBaseBody>& getArrangeInfos();

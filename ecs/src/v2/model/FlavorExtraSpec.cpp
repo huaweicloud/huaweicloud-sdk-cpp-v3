@@ -88,6 +88,10 @@ FlavorExtraSpec::FlavorExtraSpec()
     networkInterfaceTrafficMirroringSupportedIsSet_ = false;
     securityEnclaveSupported_ = "";
     securityEnclaveSupportedIsSet_ = false;
+    infoGpus_ = "";
+    infoGpusIsSet_ = false;
+    infoAsicAccelerators_ = "";
+    infoAsicAcceleratorsIsSet_ = false;
 }
 
 FlavorExtraSpec::~FlavorExtraSpec() = default;
@@ -213,6 +217,12 @@ web::json::value FlavorExtraSpec::toJson() const
     }
     if(securityEnclaveSupportedIsSet_) {
         val[utility::conversions::to_string_t("security:enclave_supported")] = ModelBase::toJson(securityEnclaveSupported_);
+    }
+    if(infoGpusIsSet_) {
+        val[utility::conversions::to_string_t("info:gpus")] = ModelBase::toJson(infoGpus_);
+    }
+    if(infoAsicAcceleratorsIsSet_) {
+        val[utility::conversions::to_string_t("info:asic_accelerators")] = ModelBase::toJson(infoAsicAccelerators_);
     }
 
     return val;
@@ -561,6 +571,24 @@ bool FlavorExtraSpec::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSecurityEnclaveSupported(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("info:gpus"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("info:gpus"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setInfoGpus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("info:asic_accelerators"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("info:asic_accelerators"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setInfoAsicAccelerators(refVal);
         }
     }
     return ok;
@@ -1363,6 +1391,48 @@ bool FlavorExtraSpec::securityEnclaveSupportedIsSet() const
 void FlavorExtraSpec::unsetsecurityEnclaveSupported()
 {
     securityEnclaveSupportedIsSet_ = false;
+}
+
+std::string FlavorExtraSpec::getInfoGpus() const
+{
+    return infoGpus_;
+}
+
+void FlavorExtraSpec::setInfoGpus(const std::string& value)
+{
+    infoGpus_ = value;
+    infoGpusIsSet_ = true;
+}
+
+bool FlavorExtraSpec::infoGpusIsSet() const
+{
+    return infoGpusIsSet_;
+}
+
+void FlavorExtraSpec::unsetinfoGpus()
+{
+    infoGpusIsSet_ = false;
+}
+
+std::string FlavorExtraSpec::getInfoAsicAccelerators() const
+{
+    return infoAsicAccelerators_;
+}
+
+void FlavorExtraSpec::setInfoAsicAccelerators(const std::string& value)
+{
+    infoAsicAccelerators_ = value;
+    infoAsicAcceleratorsIsSet_ = true;
+}
+
+bool FlavorExtraSpec::infoAsicAcceleratorsIsSet() const
+{
+    return infoAsicAcceleratorsIsSet_;
+}
+
+void FlavorExtraSpec::unsetinfoAsicAccelerators()
+{
+    infoAsicAcceleratorsIsSet_ = false;
 }
 
 }

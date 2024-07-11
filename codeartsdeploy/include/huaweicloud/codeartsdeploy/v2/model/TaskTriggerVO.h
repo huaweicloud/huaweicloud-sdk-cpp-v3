@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 
+/// 部署任务触发场景配置
 /// </summary>
 class HUAWEICLOUD_CODEARTSDEPLOY_V2_EXPORT  TaskTriggerVO
     : public ModelBase

@@ -1,3 +1,155 @@
+# 3.1.93 2024-07-11
+
+### HuaweiCloud SDK CDN
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 废弃以下接口：
+    - `ShowBlackWhiteList`
+    - `UpdateBlackWhiteList`
+    - `UpdatePrivateBucketAccess`
+    - `BatchDeleteTags`
+    - `ShowOriginHost`
+    - `UpdateOriginHost`
+    - `UpdateRangeSwitch`
+    - `UpdateFollow302Switch`
+    - `ShowRefer`
+    - `UpdateRefer`
+    - `ShowIpInfo`
+    - `ShowResponseHeader`
+    - `UpdateResponseHeader`
+    - `CreateRefreshTasks`
+    - `CreatePreheatingTasks`
+    - `ShowHistoryTasks`
+    - `ShowHistoryTaskDetails`
+    - `ShowUrlTaskInfo`
+    - `ShowQuota`
+    - `ShowTags`
+    - `CreateTags`
+    - `CreateDomain`
+    - `ShowDomainDetail`
+    - `DeleteDomain`
+    - `EnableDomain`
+    - `DisableDomain`
+    - `UpdateDomainOrigin`
+    - `ShowHttpInfo`
+    - `UpdateHttpsInfo`
+    - `UpdateDomainMultiCertificates`
+    - `ShowCertificatesHttpsInfo`
+    - `ShowCacheRules`
+    - `UpdateCacheRules`
+  - **ListCdnDomainTopRefers**
+    - 响应参数变更
+      - `- top_refer_summary.ratio`
+
+### HuaweiCloud SDK CodeArtsDeploy
+
+- _新增特性_
+  - 支持以下接口：
+    - `ListHostGroupPermissions`
+    - `UpdateHostGroupPermissions`
+    - `CheckWhetherHostGroupCanBeCreated`
+    - `ListEnvironmentPermissions`
+    - `UpdateEnvironmentPermission`
+    - `CopyHostsToTarget`
+    - `BatchDeleteHosts`
+    - `ListAssociateEnvironmentsInfos`
+    - `ListHostGroupBaseInfos`
+    - `ListEnvironmentHosts`
+    - `CopyApplication`
+    - `BatchDeleteApp`
+    - `ListApplicationPermissions`
+    - `BatchUpdateApplicationPermissions`
+    - `BatchUpdatePermissionLevel`
+    - `ListAppGroups`
+    - `CreateAppGroups`
+    - `UpdateAppGroups`
+    - `DeleteAppGroups`
+    - `MoveAppGroups`
+    - `MoveAppToGroup`
+    - `CheckIsDuplicateAppName`
+    - `CheckCanCreate`
+    - `UpdateAppDisableStatus`
+    - `UpdateHostCluster`
+    - `DeleteHostCluster`
+    - `UpdateHostInfo`
+    - `DeleteHost`
+    - `UpdateEnvironment`
+    - `UpdateAppInfo`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateApp**
+    - 请求参数变更
+      - `+ arrange_infos.operation_list.id`
+
+### HuaweiCloud SDK ECS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListFlavors**
+    - 响应参数变更
+      - `+ flavors.os_extra_specs.info:gpus`
+      - `+ flavors.os_extra_specs.info:asic_accelerators`
+  - **ListResizeFlavors**
+    - 响应参数变更
+      - `+ flavors.extra_specs.info:gpus`
+      - `+ flavors.extra_specs.info:asic_accelerators`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _新增特性_
+  - 支持以下接口：
+    - `ListSupportKernelPlugins`
+    - `ListKernelPlugins`
+    - `SetKernelPluginLicense`
+    - `InstallKernelPlugin`
+    - `ListPluginExtensions`
+    - `ResumePluginExtensions`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RestoreInstance**
+    - 请求参数变更
+      - `- source.table_list`
+      - `- source.schema_type`
+
+### HuaweiCloud SDK Live
+
+- _新增特性_
+  - 支持以下接口：
+    - `ShowRefererChain`
+    - `SetRefererChain`
+    - `DeleteRefererChain`
+    - `ListHlsConfig`
+    - `UpdateHlsConfig`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowPullSourcesConfig**
+    - 响应参数变更
+      - `+ source_port`
+  - **UpdatePullSourcesConfig**
+    - 请求参数变更
+      - `+ source_port`
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RecognizeBankReceipt**
+    - 请求参数变更
+      - `+ page_num`
+
 # 3.1.92 2024-07-04
 
 ### HuaweiCloud SDK CDN

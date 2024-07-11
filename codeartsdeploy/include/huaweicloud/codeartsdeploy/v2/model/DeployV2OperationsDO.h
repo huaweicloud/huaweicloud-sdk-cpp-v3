@@ -39,6 +39,15 @@ public:
     /// DeployV2OperationsDO members
 
     /// <summary>
+    /// 步骤id
+    /// </summary>
+
+    std::string getId() const;
+    bool idIsSet() const;
+    void unsetid();
+    void setId(const std::string& value);
+
+    /// <summary>
     /// 步骤名称
     /// </summary>
 
@@ -66,7 +75,7 @@ public:
     void setCode(const std::string& value);
 
     /// <summary>
-    /// 参数
+    /// 步骤详细定义
     /// </summary>
 
     std::string getParams() const;
@@ -103,6 +112,8 @@ public:
 
 
 protected:
+    std::string id_;
+    bool idIsSet_;
     std::string name_;
     bool nameIsSet_;
     std::string description_;

@@ -77,6 +77,15 @@ public:
     void setSourcesIp(const std::vector<std::string>& value);
 
     /// <summary>
+    /// 回源端口。 
+    /// </summary>
+
+    int32_t getSourcePort() const;
+    bool sourcePortIsSet() const;
+    void unsetsourcePort();
+    void setSourcePort(int32_t value);
+
+    /// <summary>
     /// 回源协议，回源方式非“huawei”时必选。
     /// </summary>
 
@@ -104,6 +113,8 @@ protected:
     bool sourcesIsSet_;
     std::vector<std::string> sourcesIp_;
     bool sourcesIpIsSet_;
+    int32_t sourcePort_;
+    bool sourcePortIsSet_;
     std::string scheme_;
     bool schemeIsSet_;
     std::map<std::string, std::string> additionalArgs_;

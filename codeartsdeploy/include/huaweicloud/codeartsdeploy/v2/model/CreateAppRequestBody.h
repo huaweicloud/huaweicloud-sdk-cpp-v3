@@ -42,7 +42,7 @@ public:
     /// CreateAppRequestBody members
 
     /// <summary>
-    /// 项目ID
+    /// 项目id
     /// </summary>
 
     std::string getProjectId() const;

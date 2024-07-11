@@ -380,6 +380,24 @@ public:
     void unsetsecurityEnclaveSupported();
     void setSecurityEnclaveSupported(const std::string& value);
 
+    /// <summary>
+    /// 该规格的GPU卡信息。  name：GPU名称 memory_mb：GPU显存大小 count：GPU显卡数量 alias_prefix：GPU显卡内部别名
+    /// </summary>
+
+    std::string getInfoGpus() const;
+    bool infoGpusIsSet() const;
+    void unsetinfoGpus();
+    void setInfoGpus(const std::string& value);
+
+    /// <summary>
+    /// 该规格的加速器信息。  name：加速器名称 memory_mb：加速器显存大小 count：加速器显卡数量 alias_prefix：加速器显卡内部别名
+    /// </summary>
+
+    std::string getInfoAsicAccelerators() const;
+    bool infoAsicAcceleratorsIsSet() const;
+    void unsetinfoAsicAccelerators();
+    void setInfoAsicAccelerators(const std::string& value);
+
 
 protected:
     std::string ecsPerformancetype_;
@@ -458,6 +476,10 @@ protected:
     bool networkInterfaceTrafficMirroringSupportedIsSet_;
     std::string securityEnclaveSupported_;
     bool securityEnclaveSupportedIsSet_;
+    std::string infoGpus_;
+    bool infoGpusIsSet_;
+    std::string infoAsicAccelerators_;
+    bool infoAsicAcceleratorsIsSet_;
 
 };
 

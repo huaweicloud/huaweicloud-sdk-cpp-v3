@@ -39,7 +39,7 @@ public:
     /// CreateHostResponse members
 
     /// <summary>
-    /// 状态
+    /// 请求成功失败状态
     /// </summary>
 
     std::string getStatus() const;

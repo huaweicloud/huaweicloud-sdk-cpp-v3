@@ -40,7 +40,7 @@ public:
     /// ShowHostDetailResponse members
 
     /// <summary>
-    /// 请求状态
+    /// 请求成功失败状态
     /// </summary>
 
     std::string getStatus() const;

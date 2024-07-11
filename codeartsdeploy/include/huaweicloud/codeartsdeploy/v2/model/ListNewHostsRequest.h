@@ -39,7 +39,7 @@ public:
     /// ListNewHostsRequest members
 
     /// <summary>
-    /// 项目ID
+    /// 项目id
     /// </summary>
 
     std::string getGroupId() const;

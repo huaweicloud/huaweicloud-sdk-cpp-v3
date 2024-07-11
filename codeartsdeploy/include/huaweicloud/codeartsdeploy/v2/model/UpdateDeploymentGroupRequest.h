@@ -40,7 +40,7 @@ public:
     /// UpdateDeploymentGroupRequest members
 
     /// <summary>
-    /// 主机集群ID
+    /// 主机集群id
     /// </summary>
 
     std::string getGroupId() const;

@@ -10,8 +10,6 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
-#include <huaweicloud/gaussdbforopengauss/v3/model/RestoreTableListDetail.h>
-#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -76,24 +74,6 @@ public:
     void unsetrestoreTime();
     void setRestoreTime(const std::string& value);
 
-    /// <summary>
-    /// 表基础信息。
-    /// </summary>
-
-    std::vector<RestoreTableListDetail>& getTableList();
-    bool tableListIsSet() const;
-    void unsettableList();
-    void setTableList(const std::vector<RestoreTableListDetail>& value);
-
-    /// <summary>
-    /// 备份级别取值, 默认值：INSTANCE
-    /// </summary>
-
-    std::string getSchemaType() const;
-    bool schemaTypeIsSet() const;
-    void unsetschemaType();
-    void setSchemaType(const std::string& value);
-
 
 protected:
     std::string instanceId_;
@@ -104,10 +84,6 @@ protected:
     bool backupIdIsSet_;
     std::string restoreTime_;
     bool restoreTimeIsSet_;
-    std::vector<RestoreTableListDetail> tableList_;
-    bool tableListIsSet_;
-    std::string schemaType_;
-    bool schemaTypeIsSet_;
 
 };
 

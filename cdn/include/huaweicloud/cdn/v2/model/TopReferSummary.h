@@ -56,23 +56,12 @@ public:
     void unsetvalue();
     void setValue(int64_t value);
 
-    /// <summary>
-    /// 该referer的流量(或请求数)占当前查询条件下总流量(或请求数)的比例。保留4位小数
-    /// </summary>
-
-    double getRatio() const;
-    bool ratioIsSet() const;
-    void unsetratio();
-    void setRatio(double value);
-
 
 protected:
     std::string refer_;
     bool referIsSet_;
     int64_t value_;
     bool valueIsSet_;
-    double ratio_;
-    bool ratioIsSet_;
 
 };
 

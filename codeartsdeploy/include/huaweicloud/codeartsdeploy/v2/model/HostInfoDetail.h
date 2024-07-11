@@ -42,7 +42,7 @@ public:
     /// HostInfoDetail members
 
     /// <summary>
-    /// 主机ID
+    /// 主机id
     /// </summary>
 
     std::string getHostId() const;
@@ -123,7 +123,7 @@ public:
     void setAsProxy(bool value);
 
     /// <summary>
-    /// 代理机ID
+    /// 代理机id
     /// </summary>
 
     std::string getProxyHostId() const;

@@ -77,7 +77,7 @@ public:
     void setIsDisable(bool value);
 
     /// <summary>
-    /// 项目ID
+    /// 项目id
     /// </summary>
 
     std::string getProjectId() const;
@@ -185,7 +185,7 @@ public:
     void setDeploySystem(const std::string& value);
 
     /// <summary>
-    /// 应用创建者用户ID
+    /// 应用创建者用户id
     /// </summary>
 
     std::string getCreateUserId() const;
@@ -194,7 +194,7 @@ public:
     void setCreateUserId(const std::string& value);
 
     /// <summary>
-    /// 应用创建者租户ID
+    /// 应用创建者租户id
     /// </summary>
 
     std::string getCreateTenantId() const;

@@ -40,7 +40,7 @@ public:
     /// ImportHostToEnvironmentResponse members
 
     /// <summary>
-    /// 响应状态
+    /// 请求成功失败状态
     /// </summary>
 
     std::string getStatus() const;
@@ -49,7 +49,7 @@ public:
     void setStatus(const std::string& value);
 
     /// <summary>
-    /// 被导入的主机ids
+    /// 被导入的主机id列表
     /// </summary>
 
     std::vector<std::string>& getResult();

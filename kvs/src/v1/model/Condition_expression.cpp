@@ -14,7 +14,6 @@ namespace Model {
 Condition_expression::Condition_expression()
 {
     singleFieldExpressionIsSet_ = false;
-    multiFieldExpressionIsSet_ = false;
 }
 
 Condition_expression::~Condition_expression() = default;
@@ -27,9 +26,6 @@ bool Condition_expression::toBson(Builder &builder) const
 {
 
     if (singleFieldExpressionIsSet_ && !bson_append(builder, "single_field_expression", singleFieldExpression_)) {
-        return false;
-    }
-    if (multiFieldExpressionIsSet_ && !bson_append(builder, "multi_field_expression", multiFieldExpression_)) {
         return false;
     }
 
@@ -48,15 +44,6 @@ bool Condition_expression::fromBson(const Viewer &viewer)
                 return false;
             }
             singleFieldExpressionIsSet_ = true;
-            ++it;
-            continue;
-        }
-        
-        if (key == "multi_field_expression") {
-            if (!bson_get(it, multiFieldExpression_)) {
-                return false;
-            }
-            multiFieldExpressionIsSet_ = true;
             ++it;
             continue;
         }
@@ -86,27 +73,6 @@ bool Condition_expression::singleFieldExpressionIsSet() const
 void Condition_expression::unsetsingleFieldExpression()
 {
     singleFieldExpressionIsSet_ = false;
-}
-
-Multi_field_expression Condition_expression::getMultiFieldExpression() const
-{
-    return multiFieldExpression_;
-}
-
-void Condition_expression::setMultiFieldExpression(const Multi_field_expression& value)
-{
-    multiFieldExpression_ = value;
-    multiFieldExpressionIsSet_ = true;
-}
-
-bool Condition_expression::multiFieldExpressionIsSet() const
-{
-    return multiFieldExpressionIsSet_;
-}
-
-void Condition_expression::unsetmultiFieldExpression()
-{
-    multiFieldExpressionIsSet_ = false;
 }
 
 }

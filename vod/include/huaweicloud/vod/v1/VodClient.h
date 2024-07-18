@@ -56,6 +56,9 @@
 #include <huaweicloud/vod/v1/model/DeleteTemplateGroupCollectionResponse.h>
 #include <huaweicloud/vod/v1/model/DeleteTemplateGroupRequest.h>
 #include <huaweicloud/vod/v1/model/DeleteTemplateGroupResponse.h>
+#include <huaweicloud/vod/v1/model/DeleteTranscodeProductReq.h>
+#include <huaweicloud/vod/v1/model/DeleteTranscodeProductRequest.h>
+#include <huaweicloud/vod/v1/model/DeleteTranscodeProductResponse.h>
 #include <huaweicloud/vod/v1/model/DeleteTranscodeTemplateRequest.h>
 #include <huaweicloud/vod/v1/model/DeleteTranscodeTemplateResponse.h>
 #include <huaweicloud/vod/v1/model/DeleteWatermarkTemplateRequest.h>
@@ -79,6 +82,8 @@
 #include <huaweicloud/vod/v1/model/ListTranscodeTemplateResponse.h>
 #include <huaweicloud/vod/v1/model/ListWatermarkTemplateRequest.h>
 #include <huaweicloud/vod/v1/model/ListWatermarkTemplateResponse.h>
+#include <huaweicloud/vod/v1/model/ModifySubtitleRequest.h>
+#include <huaweicloud/vod/v1/model/ModifySubtitleResponse.h>
 #include <huaweicloud/vod/v1/model/ModifyTemplateGroupCollection.h>
 #include <huaweicloud/vod/v1/model/ModifyTransTemplate.h>
 #include <huaweicloud/vod/v1/model/ModifyTransTemplateGroup.h>
@@ -101,8 +106,11 @@
 #include <huaweicloud/vod/v1/model/ShowCdnStatisticsResponse.h>
 #include <huaweicloud/vod/v1/model/ShowPreheatingAssetRequest.h>
 #include <huaweicloud/vod/v1/model/ShowPreheatingAssetResponse.h>
+#include <huaweicloud/vod/v1/model/ShowVodRetrievalRequest.h>
+#include <huaweicloud/vod/v1/model/ShowVodRetrievalResponse.h>
 #include <huaweicloud/vod/v1/model/ShowVodStatisticsRequest.h>
 #include <huaweicloud/vod/v1/model/ShowVodStatisticsResponse.h>
+#include <huaweicloud/vod/v1/model/SubtitleModifyReq.h>
 #include <huaweicloud/vod/v1/model/TransTemplateGroup.h>
 #include <huaweicloud/vod/v1/model/TransTemplateGroupCollection.h>
 #include <huaweicloud/vod/v1/model/UnpublishAssetsRequest.h>
@@ -121,6 +129,9 @@
 #include <huaweicloud/vod/v1/model/UpdateCoverByThumbnailReq.h>
 #include <huaweicloud/vod/v1/model/UpdateCoverByThumbnailRequest.h>
 #include <huaweicloud/vod/v1/model/UpdateCoverByThumbnailResponse.h>
+#include <huaweicloud/vod/v1/model/UpdateStorageModeReq.h>
+#include <huaweicloud/vod/v1/model/UpdateStorageModeRequest.h>
+#include <huaweicloud/vod/v1/model/UpdateStorageModeResponse.h>
 #include <huaweicloud/vod/v1/model/UpdateTemplateGroupCollectionRequest.h>
 #include <huaweicloud/vod/v1/model/UpdateTemplateGroupCollectionResponse.h>
 #include <huaweicloud/vod/v1/model/UpdateTemplateGroupRequest.h>
@@ -143,18 +154,6 @@
 #include <huaweicloud/vod/v1/model/ShowTakeOverTaskDetailsRequest.h>
 #include <huaweicloud/vod/v1/model/ShowTakeOverTaskDetailsResponse.h>
 #include <string>
-
-#include <huaweicloud/vod/v1/model/ShowVodRetrievalRequest.h>
-#include <huaweicloud/vod/v1/model/ShowVodRetrievalResponse.h>
-#include <string>
-
-#include <huaweicloud/vod/v1/model/ModifySubtitleRequest.h>
-#include <huaweicloud/vod/v1/model/ModifySubtitleResponse.h>
-#include <huaweicloud/vod/v1/model/SubtitleModifyReq.h>
-
-#include <huaweicloud/vod/v1/model/UpdateStorageModeReq.h>
-#include <huaweicloud/vod/v1/model/UpdateStorageModeRequest.h>
-#include <huaweicloud/vod/v1/model/UpdateStorageModeResponse.h>
 
 #include <cpprest/details/basic_types.h>
 #include <huaweicloud/core/utils/ModelBase.h>
@@ -346,6 +345,14 @@ public:
     std::shared_ptr<DeleteTemplateGroupCollectionResponse> deleteTemplateGroupCollection(
         DeleteTemplateGroupCollectionRequest &request
     );
+    // 删除转码产物
+    //
+    // 删除转码产物。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteTranscodeProductResponse> deleteTranscodeProduct(
+        DeleteTranscodeProductRequest &request
+    );
     // 删除自定义模板
     //
     // 删除自定义模板
@@ -438,6 +445,14 @@ public:
     std::shared_ptr<ListWatermarkTemplateResponse> listWatermarkTemplate(
         ListWatermarkTemplateRequest &request
     );
+    // 多字幕封装
+    //
+    // 多字幕封装，仅支持 HLS VTT格式
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ModifySubtitleResponse> modifySubtitle(
+        ModifySubtitleRequest &request
+    );
     // 创建媒资：OBS转存方式
     //
     // 若您在使用点播服务前，已经在OBS桶中存储了音视频文件，您可以使用该接口将存储在OBS桶中的音视频文件转存到点播服务中，使用点播服务的音视频管理功能。调用该接口前，您需要调用[桶授权](https://support.huaweicloud.com/api-vod/vod_04_0199.html)接口，将存储音视频文件的OBS桶授权给点播服务。
@@ -508,6 +523,18 @@ public:
     std::shared_ptr<ShowPreheatingAssetResponse> showPreheatingAsset(
         ShowPreheatingAssetRequest &request
     );
+    // 查询取回数据信息
+    //
+    // ## 典型场景 ##
+    //  用于查询点播低频和归档取回量统计数据。&lt;br/&gt;
+    // 
+    // ## 接口功能 ##
+    //  用于查询点播低频和归档取回量统计数据。&lt;br/&gt;
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowVodRetrievalResponse> showVodRetrieval(
+        ShowVodRetrievalRequest &request
+    );
     // 查询源站统计信息
     //
     // 查询点播源站的统计数据，包括流量、存储空间、转码时长。
@@ -569,6 +596,15 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateCoverByThumbnailResponse> updateCoverByThumbnail(
         UpdateCoverByThumbnailRequest &request
+    );
+    // 修改媒资文件在obs的存储模式
+    //
+    // ## 接口功能 ##
+    //   修改媒资文件在obs的存储模式&lt;br/&gt;
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateStorageModeResponse> updateStorageMode(
+        UpdateStorageModeRequest &request
     );
     // 修改自定义转码模板组
     //
@@ -634,38 +670,6 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowTakeOverTaskDetailsResponse> showTakeOverTaskDetails(
         ShowTakeOverTaskDetailsRequest &request
-    );
-
-    // 查询取回数据信息
-    //
-    // ## 典型场景 ##
-    //  用于查询点播低频和归档取回量统计数据。&lt;br/&gt;
-    // 
-    // ## 接口功能 ##
-    //  用于查询点播低频和归档取回量统计数据。&lt;br/&gt;
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ShowVodRetrievalResponse> showVodRetrieval(
-        ShowVodRetrievalRequest &request
-    );
-
-    // 多字幕封装
-    //
-    // 多字幕封装，仅支持 HLS VTT格式
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ModifySubtitleResponse> modifySubtitle(
-        ModifySubtitleRequest &request
-    );
-
-    // 修改媒资文件在obs的存储模式
-    //
-    // ## 接口功能 ##
-    //   修改媒资文件在obs的存储模式&lt;br/&gt;
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<UpdateStorageModeResponse> updateStorageMode(
-        UpdateStorageModeRequest &request
     );
 
 

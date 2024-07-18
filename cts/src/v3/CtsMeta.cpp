@@ -145,6 +145,12 @@ HttpRequestDef CtsMeta::genRequestDefForListTraces() {
     reqDefBuilder.withRequestField(FieldDef().withName("TraceRating")
                   .withJsonTag("trace_rating")
                   .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("AccessKeyId")
+                  .withJsonTag("access_key_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
+                  .withJsonTag("enterprise_project_id")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 

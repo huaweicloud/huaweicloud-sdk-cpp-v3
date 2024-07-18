@@ -191,15 +191,6 @@ public:
     void unsetkeystoreId();
     void setKeystoreId(const std::string& value);
 
-    /// <summary>
-    /// 密钥在加密机中的标签
-    /// </summary>
-
-    std::string getKeyLabel() const;
-    bool keyLabelIsSet() const;
-    void unsetkeyLabel();
-    void setKeyLabel(const std::string& value);
-
 
 protected:
     std::string keyId_;
@@ -236,8 +227,6 @@ protected:
     bool sysEnterpriseProjectIdIsSet_;
     std::string keystoreId_;
     bool keystoreIdIsSet_;
-    std::string keyLabel_;
-    bool keyLabelIsSet_;
 
 };
 

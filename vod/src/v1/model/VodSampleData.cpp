@@ -14,6 +14,10 @@ VodSampleData::VodSampleData()
 {
     storage_ = 0.0f;
     storageIsSet_ = false;
+    storageWarm_ = 0.0f;
+    storageWarmIsSet_ = false;
+    storageCold_ = 0.0f;
+    storageColdIsSet_ = false;
     transcode_ = 0L;
     transcodeIsSet_ = false;
 }
@@ -30,6 +34,12 @@ web::json::value VodSampleData::toJson() const
 
     if(storageIsSet_) {
         val[utility::conversions::to_string_t("storage")] = ModelBase::toJson(storage_);
+    }
+    if(storageWarmIsSet_) {
+        val[utility::conversions::to_string_t("storage_warm")] = ModelBase::toJson(storageWarm_);
+    }
+    if(storageColdIsSet_) {
+        val[utility::conversions::to_string_t("storage_cold")] = ModelBase::toJson(storageCold_);
     }
     if(transcodeIsSet_) {
         val[utility::conversions::to_string_t("transcode")] = ModelBase::toJson(transcode_);
@@ -48,6 +58,24 @@ bool VodSampleData::fromJson(const web::json::value& val)
             float refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setStorage(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("storage_warm"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("storage_warm"));
+        if(!fieldValue.is_null())
+        {
+            float refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setStorageWarm(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("storage_cold"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("storage_cold"));
+        if(!fieldValue.is_null())
+        {
+            float refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setStorageCold(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("transcode"))) {
@@ -82,6 +110,48 @@ bool VodSampleData::storageIsSet() const
 void VodSampleData::unsetstorage()
 {
     storageIsSet_ = false;
+}
+
+float VodSampleData::getStorageWarm() const
+{
+    return storageWarm_;
+}
+
+void VodSampleData::setStorageWarm(float value)
+{
+    storageWarm_ = value;
+    storageWarmIsSet_ = true;
+}
+
+bool VodSampleData::storageWarmIsSet() const
+{
+    return storageWarmIsSet_;
+}
+
+void VodSampleData::unsetstorageWarm()
+{
+    storageWarmIsSet_ = false;
+}
+
+float VodSampleData::getStorageCold() const
+{
+    return storageCold_;
+}
+
+void VodSampleData::setStorageCold(float value)
+{
+    storageCold_ = value;
+    storageColdIsSet_ = true;
+}
+
+bool VodSampleData::storageColdIsSet() const
+{
+    return storageColdIsSet_;
+}
+
+void VodSampleData::unsetstorageCold()
+{
+    storageColdIsSet_ = false;
 }
 
 int64_t VodSampleData::getTranscode() const

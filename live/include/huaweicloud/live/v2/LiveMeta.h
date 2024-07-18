@@ -27,6 +27,7 @@ public:
     static HttpRequestDef genRequestDefForShowStreamCount();
     static HttpRequestDef genRequestDefForShowStreamPortrait();
     static HttpRequestDef genRequestDefForShowUpBandwidth();
+    static HttpRequestDef genRequestDefForListPlayDomainStreamInfo();
     static HttpRequestDef genRequestDefForListSingleStreamBitrate();
     static HttpRequestDef genRequestDefForListSingleStreamDetail();
     static HttpRequestDef genRequestDefForListSingleStreamFramerate();

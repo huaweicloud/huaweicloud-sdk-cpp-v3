@@ -53,6 +53,10 @@ Traces::Traces()
     endpointIsSet_ = false;
     resourceUrl_ = "";
     resourceUrlIsSet_ = false;
+    enterpriseProjectId_ = "";
+    enterpriseProjectIdIsSet_ = false;
+    resourceAccountId_ = "";
+    resourceAccountIdIsSet_ = false;
 }
 
 Traces::~Traces() = default;
@@ -127,6 +131,12 @@ web::json::value Traces::toJson() const
     }
     if(resourceUrlIsSet_) {
         val[utility::conversions::to_string_t("resource_url")] = ModelBase::toJson(resourceUrl_);
+    }
+    if(enterpriseProjectIdIsSet_) {
+        val[utility::conversions::to_string_t("enterprise_project_id")] = ModelBase::toJson(enterpriseProjectId_);
+    }
+    if(resourceAccountIdIsSet_) {
+        val[utility::conversions::to_string_t("resource_account_id")] = ModelBase::toJson(resourceAccountId_);
     }
 
     return val;
@@ -322,6 +332,24 @@ bool Traces::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResourceUrl(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("enterprise_project_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enterprise_project_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEnterpriseProjectId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("resource_account_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("resource_account_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setResourceAccountId(refVal);
         }
     }
     return ok;
@@ -767,6 +795,48 @@ bool Traces::resourceUrlIsSet() const
 void Traces::unsetresourceUrl()
 {
     resourceUrlIsSet_ = false;
+}
+
+std::string Traces::getEnterpriseProjectId() const
+{
+    return enterpriseProjectId_;
+}
+
+void Traces::setEnterpriseProjectId(const std::string& value)
+{
+    enterpriseProjectId_ = value;
+    enterpriseProjectIdIsSet_ = true;
+}
+
+bool Traces::enterpriseProjectIdIsSet() const
+{
+    return enterpriseProjectIdIsSet_;
+}
+
+void Traces::unsetenterpriseProjectId()
+{
+    enterpriseProjectIdIsSet_ = false;
+}
+
+std::string Traces::getResourceAccountId() const
+{
+    return resourceAccountId_;
+}
+
+void Traces::setResourceAccountId(const std::string& value)
+{
+    resourceAccountId_ = value;
+    resourceAccountIdIsSet_ = true;
+}
+
+bool Traces::resourceAccountIdIsSet() const
+{
+    return resourceAccountIdIsSet_;
+}
+
+void Traces::unsetresourceAccountId()
+{
+    resourceAccountIdIsSet_ = false;
 }
 
 }

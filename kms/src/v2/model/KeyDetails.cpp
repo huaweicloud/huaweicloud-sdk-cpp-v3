@@ -46,8 +46,6 @@ KeyDetails::KeyDetails()
     sysEnterpriseProjectIdIsSet_ = false;
     keystoreId_ = "";
     keystoreIdIsSet_ = false;
-    keyLabel_ = "";
-    keyLabelIsSet_ = false;
 }
 
 KeyDetails::~KeyDetails() = default;
@@ -110,9 +108,6 @@ web::json::value KeyDetails::toJson() const
     }
     if(keystoreIdIsSet_) {
         val[utility::conversions::to_string_t("keystore_id")] = ModelBase::toJson(keystoreId_);
-    }
-    if(keyLabelIsSet_) {
-        val[utility::conversions::to_string_t("key_label")] = ModelBase::toJson(keyLabel_);
     }
 
     return val;
@@ -272,15 +267,6 @@ bool KeyDetails::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setKeystoreId(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("key_label"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("key_label"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setKeyLabel(refVal);
         }
     }
     return ok;
@@ -642,27 +628,6 @@ bool KeyDetails::keystoreIdIsSet() const
 void KeyDetails::unsetkeystoreId()
 {
     keystoreIdIsSet_ = false;
-}
-
-std::string KeyDetails::getKeyLabel() const
-{
-    return keyLabel_;
-}
-
-void KeyDetails::setKeyLabel(const std::string& value)
-{
-    keyLabel_ = value;
-    keyLabelIsSet_ = true;
-}
-
-bool KeyDetails::keyLabelIsSet() const
-{
-    return keyLabelIsSet_;
-}
-
-void KeyDetails::unsetkeyLabel()
-{
-    keyLabelIsSet_ = false;
 }
 
 }

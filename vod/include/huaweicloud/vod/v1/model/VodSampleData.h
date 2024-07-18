@@ -47,7 +47,25 @@ public:
     void setStorage(float value);
 
     /// <summary>
-    /// 转码时长。  单位：秒。
+    /// 低频存储空间。  单位：GB。
+    /// </summary>
+
+    float getStorageWarm() const;
+    bool storageWarmIsSet() const;
+    void unsetstorageWarm();
+    void setStorageWarm(float value);
+
+    /// <summary>
+    /// 归档存储空间。  单位：GB。
+    /// </summary>
+
+    float getStorageCold() const;
+    bool storageColdIsSet() const;
+    void unsetstorageCold();
+    void setStorageCold(float value);
+
+    /// <summary>
+    /// 转码时长。  单位：分钟。
     /// </summary>
 
     int64_t getTranscode() const;
@@ -59,6 +77,10 @@ public:
 protected:
     float storage_;
     bool storageIsSet_;
+    float storageWarm_;
+    bool storageWarmIsSet_;
+    float storageCold_;
+    bool storageColdIsSet_;
     int64_t transcode_;
     bool transcodeIsSet_;
 

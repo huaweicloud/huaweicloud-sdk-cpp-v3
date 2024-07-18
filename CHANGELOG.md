@@ -1,3 +1,140 @@
+# 3.1.94 2024-07-18
+
+### HuaweiCloud SDK CTS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListTraces**
+    - changes of request param
+      - `+ access_key_id`
+      - `+ enterprise_project_id`
+    - changes of response param
+      - `+ traces.enterprise_project_id`
+      - `+ traces.resource_account_id`
+      - `+ traces.user.user_name`
+      - `+ traces.user.account_id`
+      - `+ traces.user.access_key_id`
+      - `+ traces.user.principal_urn`
+      - `+ traces.user.principal_id`
+      - `+ traces.user.principal_is_root_user`
+      - `+ traces.user.type`
+      - `+ traces.user.invoked_by`
+      - `+ traces.user.session_context`
+
+### HuaweiCloud SDK DRS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **BatchCreateJobs**
+    - changes of request param
+      - `+ jobs.node_type: enum value [micro,small,medium,xlarge,2xlarge]`
+  - **BatchUpdateJob**
+    - changes of request param
+      - `+ jobs.node_type: enum value [micro,small,medium,xlarge,2xlarge]`
+
+### HuaweiCloud SDK ECS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowServer**
+    - changes of response param
+      - `+ server.flavor.gpus`
+      - `+ server.flavor.asic_accelerators`
+  - **ListServersDetails**
+    - changes of response param
+      - `+ servers.flavor.gpus`
+      - `+ servers.flavor.asic_accelerators`
+
+### HuaweiCloud SDK EVS
+
+- _Features_
+  - Support the APIs `ChangeVolumeChargeMode`, `UnsubscribePostpaidVolume`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK IMS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListImages**
+    - changes of request param
+      - `+ __platform: enum value [Huawei Cloud EulerOS]`
+
+### HuaweiCloud SDK KMS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListKeys**
+    - changes of response param
+      - `- key_details.key_label`
+  - **ListKeyDetail**
+    - changes of response param
+      - `- key_info.key_label`
+  - **ListKmsByTags**
+    - changes of response param
+      - `- resources.resource_detail.key_label`
+
+### HuaweiCloud SDK KVS
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **PutKv**
+    - changes of request param
+      - `- condition_expression.multi_field_expression`
+  - **UpdateKv**
+    - changes of request param
+      - `- condition_expression.multi_field_expression`
+  - **DeleteKv**
+    - changes of request param
+      - `- condition_expression.multi_field_expression`
+  - **ScanKv**
+    - changes of request param
+      - `- filter_expression.multi_field_expression`
+  - **ScanSkeyKv**
+    - changes of request param
+      - `- filter_expression.multi_field_expression`
+
+### HuaweiCloud SDK Live
+
+- _Features_
+  - Support the API `ListPlayDomainStreamInfo`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK VOD
+
+- _Features_
+  - Support the API `DeleteTranscodeProduct`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowVodStatistics**
+    - changes of response param
+      - `+ sample_data.storage_warm`
+      - `+ sample_data.storage_cold`
+
 # 3.1.93 2024-07-11
 
 ### HuaweiCloud SDK CDN

@@ -106,7 +106,7 @@ public:
     void setTargetEndpoint(const Endpoint& value);
 
     /// <summary>
-    /// node规格类型，测试连接之后修改调用时必填。
+    /// node规格类型，测试连接之后修改调用时必填。取值： - micro：极小规格。 - small：小规格。 - medium：中规格。 - high：大规格。 - xlarge：超大规格。 - 2xlarge：极大规格。
     /// </summary>
 
     std::string getNodeType() const;

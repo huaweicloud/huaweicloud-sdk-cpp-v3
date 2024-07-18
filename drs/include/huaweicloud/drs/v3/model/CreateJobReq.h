@@ -134,7 +134,7 @@ public:
     void setNodeNum(int32_t value);
 
     /// <summary>
-    /// 规格类型。
+    /// 规格类型。取值： - micro：极小规格。 - small：小规格。 - medium：中规格。 - high：大规格。 - xlarge：超大规格。 - 2xlarge：极大规格。 具体某种场景支持的取值可以通过[查询可用的Node规格接口](https://support.huaweicloud.com/api-drs/drs_03_0239.html)获取。
     /// </summary>
 
     std::string getNodeType() const;

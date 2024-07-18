@@ -287,6 +287,15 @@ HttpRequestDef VodMeta::genRequestDefForDeleteTemplateGroupCollection() {
     return reqDefBuilder;
 }
 
+HttpRequestDef VodMeta::genRequestDefForDeleteTranscodeProduct() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef VodMeta::genRequestDefForDeleteTranscodeTemplate() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("GroupId")
@@ -517,6 +526,15 @@ HttpRequestDef VodMeta::genRequestDefForListWatermarkTemplate() {
     return reqDefBuilder;
 }
 
+HttpRequestDef VodMeta::genRequestDefForModifySubtitle() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef VodMeta::genRequestDefForPublishAssetFromObs() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXSdkDate;
@@ -686,6 +704,20 @@ HttpRequestDef VodMeta::genRequestDefForShowPreheatingAsset() {
     return reqDefBuilder;
 }
 
+HttpRequestDef VodMeta::genRequestDefForShowVodRetrieval() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("StartTime")
+                  .withJsonTag("start_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EndTime")
+                  .withJsonTag("end_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Interval")
+                  .withJsonTag("interval")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef VodMeta::genRequestDefForShowVodStatistics() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("StartTime")
@@ -782,6 +814,15 @@ HttpRequestDef VodMeta::genRequestDefForUpdateCoverByThumbnail() {
                   .withName("XSdkDate")
                   .withJsonTag("X-Sdk-Date")
                   .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef VodMeta::genRequestDefForUpdateStorageMode() {
+    HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
@@ -913,38 +954,6 @@ HttpRequestDef VodMeta::genRequestDefForShowTakeOverTaskDetails() {
                   .withName("XSdkDate")
                   .withJsonTag("X-Sdk-Date")
                   .withLocationType(Header_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef VodMeta::genRequestDefForShowVodRetrieval() {
-    HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withRequestField(FieldDef().withName("StartTime")
-                  .withJsonTag("start_time")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("EndTime")
-                  .withJsonTag("end_time")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Interval")
-                  .withJsonTag("interval")
-                  .withLocationType(Query_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef VodMeta::genRequestDefForModifySubtitle() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef bodyParam;
-    reqDefBuilder.withRequestField(bodyParam.
-        withName("Body").
-        withLocationType(Body_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef VodMeta::genRequestDefForUpdateStorageMode() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef bodyParam;
-    reqDefBuilder.withRequestField(bodyParam.
-        withName("Body").
-        withLocationType(Body_));
     return reqDefBuilder;
 }
 

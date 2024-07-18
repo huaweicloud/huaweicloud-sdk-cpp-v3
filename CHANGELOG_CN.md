@@ -1,3 +1,140 @@
+# 3.1.94 2024-07-18
+
+### HuaweiCloud SDK CTS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListTraces**
+    - 请求参数变更
+      - `+ access_key_id`
+      - `+ enterprise_project_id`
+    - 响应参数变更
+      - `+ traces.enterprise_project_id`
+      - `+ traces.resource_account_id`
+      - `+ traces.user.user_name`
+      - `+ traces.user.account_id`
+      - `+ traces.user.access_key_id`
+      - `+ traces.user.principal_urn`
+      - `+ traces.user.principal_id`
+      - `+ traces.user.principal_is_root_user`
+      - `+ traces.user.type`
+      - `+ traces.user.invoked_by`
+      - `+ traces.user.session_context`
+
+### HuaweiCloud SDK DRS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **BatchCreateJobs**
+    - 请求参数变更
+      - `+ jobs.node_type: enum value [micro,small,medium,xlarge,2xlarge]`
+  - **BatchUpdateJob**
+    - 请求参数变更
+      - `+ jobs.node_type: enum value [micro,small,medium,xlarge,2xlarge]`
+
+### HuaweiCloud SDK ECS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowServer**
+    - 响应参数变更
+      - `+ server.flavor.gpus`
+      - `+ server.flavor.asic_accelerators`
+  - **ListServersDetails**
+    - 响应参数变更
+      - `+ servers.flavor.gpus`
+      - `+ servers.flavor.asic_accelerators`
+
+### HuaweiCloud SDK EVS
+
+- _新增特性_
+  - 支持接口`ChangeVolumeChargeMode`、`UnsubscribePostpaidVolume`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK IMS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListImages**
+    - 请求参数变更
+      - `+ __platform: enum value [Huawei Cloud EulerOS]`
+
+### HuaweiCloud SDK KMS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListKeys**
+    - 响应参数变更
+      - `- key_details.key_label`
+  - **ListKeyDetail**
+    - 响应参数变更
+      - `- key_info.key_label`
+  - **ListKmsByTags**
+    - 响应参数变更
+      - `- resources.resource_detail.key_label`
+
+### HuaweiCloud SDK KVS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **PutKv**
+    - 请求参数变更
+      - `- condition_expression.multi_field_expression`
+  - **UpdateKv**
+    - 请求参数变更
+      - `- condition_expression.multi_field_expression`
+  - **DeleteKv**
+    - 请求参数变更
+      - `- condition_expression.multi_field_expression`
+  - **ScanKv**
+    - 请求参数变更
+      - `- filter_expression.multi_field_expression`
+  - **ScanSkeyKv**
+    - 请求参数变更
+      - `- filter_expression.multi_field_expression`
+
+### HuaweiCloud SDK Live
+
+- _新增特性_
+  - 支持接口`ListPlayDomainStreamInfo`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK VOD
+
+- _新增特性_
+  - 支持接口`DeleteTranscodeProduct`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowVodStatistics**
+    - 响应参数变更
+      - `+ sample_data.storage_warm`
+      - `+ sample_data.storage_cold`
+
 # 3.1.93 2024-07-11
 
 ### HuaweiCloud SDK CDN

@@ -9,7 +9,10 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/ecs/v2/model/ASICAcceleratorInfo.h>
+#include <huaweicloud/ecs/v2/model/GpuInfo.h>
 #include <string>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -83,6 +86,24 @@ public:
     void unsetram();
     void setRam(const std::string& value);
 
+    /// <summary>
+    /// 该云服务器规格对应的GPU设备。
+    /// </summary>
+
+    std::vector<GpuInfo>& getGpus();
+    bool gpusIsSet() const;
+    void unsetgpus();
+    void setGpus(const std::vector<GpuInfo>& value);
+
+    /// <summary>
+    /// 该云服务器规格对应的ASIC设备。
+    /// </summary>
+
+    std::vector<ASICAcceleratorInfo>& getAsicAccelerators();
+    bool asicAcceleratorsIsSet() const;
+    void unsetasicAccelerators();
+    void setAsicAccelerators(const std::vector<ASICAcceleratorInfo>& value);
+
 
 protected:
     std::string id_;
@@ -95,6 +116,10 @@ protected:
     bool vcpusIsSet_;
     std::string ram_;
     bool ramIsSet_;
+    std::vector<GpuInfo> gpus_;
+    bool gpusIsSet_;
+    std::vector<ASICAcceleratorInfo> asicAccelerators_;
+    bool asicAcceleratorsIsSet_;
 
 };
 

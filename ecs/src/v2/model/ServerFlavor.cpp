@@ -22,6 +22,8 @@ ServerFlavor::ServerFlavor()
     vcpusIsSet_ = false;
     ram_ = "";
     ramIsSet_ = false;
+    gpusIsSet_ = false;
+    asicAcceleratorsIsSet_ = false;
 }
 
 ServerFlavor::~ServerFlavor() = default;
@@ -48,6 +50,12 @@ web::json::value ServerFlavor::toJson() const
     }
     if(ramIsSet_) {
         val[utility::conversions::to_string_t("ram")] = ModelBase::toJson(ram_);
+    }
+    if(gpusIsSet_) {
+        val[utility::conversions::to_string_t("gpus")] = ModelBase::toJson(gpus_);
+    }
+    if(asicAcceleratorsIsSet_) {
+        val[utility::conversions::to_string_t("asic_accelerators")] = ModelBase::toJson(asicAccelerators_);
     }
 
     return val;
@@ -99,6 +107,24 @@ bool ServerFlavor::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRam(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("gpus"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("gpus"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<GpuInfo> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setGpus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("asic_accelerators"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("asic_accelerators"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<ASICAcceleratorInfo> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAsicAccelerators(refVal);
         }
     }
     return ok;
@@ -208,6 +234,48 @@ bool ServerFlavor::ramIsSet() const
 void ServerFlavor::unsetram()
 {
     ramIsSet_ = false;
+}
+
+std::vector<GpuInfo>& ServerFlavor::getGpus()
+{
+    return gpus_;
+}
+
+void ServerFlavor::setGpus(const std::vector<GpuInfo>& value)
+{
+    gpus_ = value;
+    gpusIsSet_ = true;
+}
+
+bool ServerFlavor::gpusIsSet() const
+{
+    return gpusIsSet_;
+}
+
+void ServerFlavor::unsetgpus()
+{
+    gpusIsSet_ = false;
+}
+
+std::vector<ASICAcceleratorInfo>& ServerFlavor::getAsicAccelerators()
+{
+    return asicAccelerators_;
+}
+
+void ServerFlavor::setAsicAccelerators(const std::vector<ASICAcceleratorInfo>& value)
+{
+    asicAccelerators_ = value;
+    asicAcceleratorsIsSet_ = true;
+}
+
+bool ServerFlavor::asicAcceleratorsIsSet() const
+{
+    return asicAcceleratorsIsSet_;
+}
+
+void ServerFlavor::unsetasicAccelerators()
+{
+    asicAcceleratorsIsSet_ = false;
 }
 
 }

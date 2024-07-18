@@ -26,6 +26,15 @@ HttpRequestDef EvsMeta::genRequestDefForBatchDeleteVolumeTags() {
     return reqDefBuilder;
 }
 
+HttpRequestDef EvsMeta::genRequestDefForChangeVolumeChargeMode() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef EvsMeta::genRequestDefForCinderAcceptVolumeTransfer() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -266,6 +275,18 @@ HttpRequestDef EvsMeta::genRequestDefForShowVolume() {
 
 HttpRequestDef EvsMeta::genRequestDefForShowVolumeTags() {
     HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef EvsMeta::genRequestDefForUnsubscribePostpaidVolume() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+            withName("Body").
+            withLocationType(Body_));
     return reqDefBuilder;
 }
 

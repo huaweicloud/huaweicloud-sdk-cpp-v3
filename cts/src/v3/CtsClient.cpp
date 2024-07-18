@@ -494,6 +494,12 @@ std::shared_ptr<ListTracesResponse> CtsClient::listTraces(ListTracesRequest &req
     if (request.traceRatingIsSet()) {
         localVarQueryParams["trace_rating"] = parameterToString(request.getTraceRating());
     }
+    if (request.accessKeyIdIsSet()) {
+        localVarQueryParams["access_key_id"] = parameterToString(request.getAccessKeyId());
+    }
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarQueryParams["enterprise_project_id"] = parameterToString(request.getEnterpriseProjectId());
+    }
 
     std::string localVarHttpBody;
 

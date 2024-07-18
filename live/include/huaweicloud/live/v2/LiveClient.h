@@ -36,6 +36,10 @@
 #include <huaweicloud/live/v2/model/ShowUpBandwidthResponse.h>
 #include <string>
 
+#include <huaweicloud/live/v2/model/ListPlayDomainStreamInfoRequest.h>
+#include <huaweicloud/live/v2/model/ListPlayDomainStreamInfoResponse.h>
+#include <string>
+
 #include <huaweicloud/live/v2/model/ListSingleStreamBitrateRequest.h>
 #include <huaweicloud/live/v2/model/ListSingleStreamBitrateResponse.h>
 #include <huaweicloud/live/v2/model/ListSingleStreamDetailRequest.h>
@@ -218,6 +222,19 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowUpBandwidthResponse> showUpBandwidth(
         ShowUpBandwidthRequest &request
+    );
+
+    // 查询播放域名下的流数据
+    //
+    // 查询播放域名下的监控数据，根据输入时间点，返回查询该时间点所有流的带宽、在线人数、协议。
+    // 
+    // 返回的数据粒度为1分钟。
+    // 
+    // 最大查询周期7天，数据延迟5分钟。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListPlayDomainStreamInfoResponse> listPlayDomainStreamInfo(
+        ListPlayDomainStreamInfoRequest &request
     );
 
     // 查询推流码率数据接口

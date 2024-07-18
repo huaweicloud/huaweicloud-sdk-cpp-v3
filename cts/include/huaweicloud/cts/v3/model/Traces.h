@@ -228,6 +228,24 @@ public:
     void unsetresourceUrl();
     void setResourceUrl(const std::string& value);
 
+    /// <summary>
+    /// 标识资源所在的企业项目ID。
+    /// </summary>
+
+    std::string getEnterpriseProjectId() const;
+    bool enterpriseProjectIdIsSet() const;
+    void unsetenterpriseProjectId();
+    void setEnterpriseProjectId(const std::string& value);
+
+    /// <summary>
+    /// 标识资源所在的账号ID。仅在跨租户操作资源时有值。
+    /// </summary>
+
+    std::string getResourceAccountId() const;
+    bool resourceAccountIdIsSet() const;
+    void unsetresourceAccountId();
+    void setResourceAccountId(const std::string& value);
+
 
 protected:
     std::string resourceId_;
@@ -272,6 +290,10 @@ protected:
     bool endpointIsSet_;
     std::string resourceUrl_;
     bool resourceUrlIsSet_;
+    std::string enterpriseProjectId_;
+    bool enterpriseProjectIdIsSet_;
+    std::string resourceAccountId_;
+    bool resourceAccountIdIsSet_;
 
 };
 

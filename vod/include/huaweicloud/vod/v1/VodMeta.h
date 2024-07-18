@@ -33,6 +33,7 @@ public:
     static HttpRequestDef genRequestDefForDeleteAssets();
     static HttpRequestDef genRequestDefForDeleteTemplateGroup();
     static HttpRequestDef genRequestDefForDeleteTemplateGroupCollection();
+    static HttpRequestDef genRequestDefForDeleteTranscodeProduct();
     static HttpRequestDef genRequestDefForDeleteTranscodeTemplate();
     static HttpRequestDef genRequestDefForDeleteWatermarkTemplate();
     static HttpRequestDef genRequestDefForListAssetCategory();
@@ -44,6 +45,7 @@ public:
     static HttpRequestDef genRequestDefForListTopStatistics();
     static HttpRequestDef genRequestDefForListTranscodeTemplate();
     static HttpRequestDef genRequestDefForListWatermarkTemplate();
+    static HttpRequestDef genRequestDefForModifySubtitle();
     static HttpRequestDef genRequestDefForPublishAssetFromObs();
     static HttpRequestDef genRequestDefForPublishAssets();
     static HttpRequestDef genRequestDefForShowAssetCipher();
@@ -52,6 +54,7 @@ public:
     static HttpRequestDef genRequestDefForShowAssetTempAuthority();
     static HttpRequestDef genRequestDefForShowCdnStatistics();
     static HttpRequestDef genRequestDefForShowPreheatingAsset();
+    static HttpRequestDef genRequestDefForShowVodRetrieval();
     static HttpRequestDef genRequestDefForShowVodStatistics();
     static HttpRequestDef genRequestDefForUnpublishAssets();
     static HttpRequestDef genRequestDefForUpdateAsset();
@@ -59,6 +62,7 @@ public:
     static HttpRequestDef genRequestDefForUpdateAssetMeta();
     static HttpRequestDef genRequestDefForUpdateBucketAuthorized();
     static HttpRequestDef genRequestDefForUpdateCoverByThumbnail();
+    static HttpRequestDef genRequestDefForUpdateStorageMode();
     static HttpRequestDef genRequestDefForUpdateTemplateGroup();
     static HttpRequestDef genRequestDefForUpdateTemplateGroupCollection();
     static HttpRequestDef genRequestDefForUpdateTranscodeTemplate();
@@ -67,9 +71,6 @@ public:
     static HttpRequestDef genRequestDefForListTakeOverTask();
     static HttpRequestDef genRequestDefForShowTakeOverAssetDetails();
     static HttpRequestDef genRequestDefForShowTakeOverTaskDetails();
-    static HttpRequestDef genRequestDefForShowVodRetrieval();
-    static HttpRequestDef genRequestDefForModifySubtitle();
-    static HttpRequestDef genRequestDefForUpdateStorageMode();
 };
 
 }

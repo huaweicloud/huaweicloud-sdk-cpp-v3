@@ -164,6 +164,24 @@ public:
     void unsettraceRating();
     void setTraceRating(const std::string& value);
 
+    /// <summary>
+    /// 标示查询事件列表对应的访问密钥ID。包含临时访问凭证和永久访问密钥。
+    /// </summary>
+
+    std::string getAccessKeyId() const;
+    bool accessKeyIdIsSet() const;
+    void unsetaccessKeyId();
+    void setAccessKeyId(const std::string& value);
+
+    /// <summary>
+    /// 标示查询事件列表对应的企业项目ID。
+    /// </summary>
+
+    std::string getEnterpriseProjectId() const;
+    bool enterpriseProjectIdIsSet() const;
+    void unsetenterpriseProjectId();
+    void setEnterpriseProjectId(const std::string& value);
+
 
 protected:
     std::string traceType_;
@@ -194,6 +212,10 @@ protected:
     bool traceNameIsSet_;
     std::string traceRating_;
     bool traceRatingIsSet_;
+    std::string accessKeyId_;
+    bool accessKeyIdIsSet_;
+    std::string enterpriseProjectId_;
+    bool enterpriseProjectIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

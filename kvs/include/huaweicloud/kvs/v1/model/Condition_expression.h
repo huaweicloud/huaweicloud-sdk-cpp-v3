@@ -13,7 +13,6 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/kvs/v1/model/Single_field_expression.h>
-#include <huaweicloud/kvs/v1/model/Multi_field_expression.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -51,21 +50,10 @@ public:
     void unsetsingleFieldExpression();
     void setSingleFieldExpression(const Single_field_expression& value);
 
-    /// <summary>
-    /// 
-    /// </summary>
-
-    Multi_field_expression getMultiFieldExpression() const;
-    bool multiFieldExpressionIsSet() const;
-    void unsetmultiFieldExpression();
-    void setMultiFieldExpression(const Multi_field_expression& value);
-
 
 protected:
     Single_field_expression singleFieldExpression_;
     bool singleFieldExpressionIsSet_;
-    Multi_field_expression multiFieldExpression_;
-    bool multiFieldExpressionIsSet_;
 
 };
 

@@ -746,6 +746,42 @@ std::shared_ptr<ShowUpBandwidthResponse> LiveClient::showUpBandwidth(ShowUpBandw
 
     return localVarResult;
 }
+std::shared_ptr<ListPlayDomainStreamInfoResponse> LiveClient::listPlayDomainStreamInfo(ListPlayDomainStreamInfoRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/stats/stream/play-info";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["project_id"] = parameterToString(request.getProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.playDomainsIsSet()) {
+        localVarQueryParams["play_domains"] = parameterToString(request.getPlayDomains());
+    }
+    if (request.timeIsSet()) {
+        localVarQueryParams["time"] = parameterToString(request.getTime());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForListPlayDomainStreamInfo());
+
+    std::shared_ptr<ListPlayDomainStreamInfoResponse> localVarResult = std::make_shared<ListPlayDomainStreamInfoResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListSingleStreamBitrateResponse> LiveClient::listSingleStreamBitrate(ListSingleStreamBitrateRequest &request)
 {
     std::string localVarPath = "/v2/{project_id}/stats/stream/bitrate";

@@ -12,6 +12,9 @@
 #include <huaweicloud/evs/v2/model/BatchDeleteVolumeTagsRequest.h>
 #include <huaweicloud/evs/v2/model/BatchDeleteVolumeTagsRequestBody.h>
 #include <huaweicloud/evs/v2/model/BatchDeleteVolumeTagsResponse.h>
+#include <huaweicloud/evs/v2/model/ChangeVolumeChargeModeRequest.h>
+#include <huaweicloud/evs/v2/model/ChangeVolumeChargeModeRequestBody.h>
+#include <huaweicloud/evs/v2/model/ChangeVolumeChargeModeResponse.h>
 #include <huaweicloud/evs/v2/model/CinderAcceptVolumeTransferRequest.h>
 #include <huaweicloud/evs/v2/model/CinderAcceptVolumeTransferRequestBody.h>
 #include <huaweicloud/evs/v2/model/CinderAcceptVolumeTransferResponse.h>
@@ -66,6 +69,10 @@
 #include <huaweicloud/evs/v2/model/ShowVolumeResponse.h>
 #include <huaweicloud/evs/v2/model/ShowVolumeTagsRequest.h>
 #include <huaweicloud/evs/v2/model/ShowVolumeTagsResponse.h>
+#include <huaweicloud/evs/v2/model/UnsubscribePostpaidVolumeRequest.h>
+#include <huaweicloud/evs/v2/model/UnsubscribePostpaidVolumeResponse.h>
+#include <huaweicloud/evs/v2/model/UnsubscribeVolumeRequestBody.h>
+#include <huaweicloud/evs/v2/model/UnsubscribeVolumeResponseBody.h>
 #include <huaweicloud/evs/v2/model/UpdateSnapshotRequest.h>
 #include <huaweicloud/evs/v2/model/UpdateSnapshotRequestBody.h>
 #include <huaweicloud/evs/v2/model/UpdateSnapshotResponse.h>
@@ -122,6 +129,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<BatchDeleteVolumeTagsResponse> batchDeleteVolumeTags(
         BatchDeleteVolumeTagsRequest &request
+    );
+    // 修改云硬盘计费模式
+    //
+    // 将挂载状态下的云硬盘的计费模式有按需转成包周期，且到期时间和挂载的虚拟机保持一致。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ChangeVolumeChargeModeResponse> changeVolumeChargeMode(
+        ChangeVolumeChargeModeRequest &request
     );
     // 接受云硬盘过户
     //
@@ -318,6 +333,16 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowVolumeTagsResponse> showVolumeTags(
         ShowVolumeTagsRequest &request
+    );
+    // 退订包周期计费模式的云硬盘
+    //
+    // 退订包周期计费模式的云硬盘，有如下约束：
+    // -  系统盘、启动盘不可使用当前接口退订，必须和弹性云服务器一起退订
+    // -  接口的请求body体最多可以传60个云硬盘id
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UnsubscribePostpaidVolumeResponse> unsubscribePostpaidVolume(
+        UnsubscribePostpaidVolumeRequest &request
     );
     // 更新云硬盘快照
     //

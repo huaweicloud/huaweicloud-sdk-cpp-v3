@@ -34,6 +34,8 @@ CambodianIdCardRequestBody::CambodianIdCardRequestBody()
     returnAdjustedImageIsSet_ = false;
     detectTampering_ = false;
     detectTamperingIsSet_ = false;
+    detectReproduce_ = false;
+    detectReproduceIsSet_ = false;
 }
 
 CambodianIdCardRequestBody::~CambodianIdCardRequestBody() = default;
@@ -78,6 +80,9 @@ web::json::value CambodianIdCardRequestBody::toJson() const
     }
     if(detectTamperingIsSet_) {
         val[utility::conversions::to_string_t("detect_tampering")] = ModelBase::toJson(detectTampering_);
+    }
+    if(detectReproduceIsSet_) {
+        val[utility::conversions::to_string_t("detect_reproduce")] = ModelBase::toJson(detectReproduce_);
     }
 
     return val;
@@ -183,6 +188,15 @@ bool CambodianIdCardRequestBody::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDetectTampering(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("detect_reproduce"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("detect_reproduce"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDetectReproduce(refVal);
         }
     }
     return ok;
@@ -418,6 +432,27 @@ bool CambodianIdCardRequestBody::detectTamperingIsSet() const
 void CambodianIdCardRequestBody::unsetdetectTampering()
 {
     detectTamperingIsSet_ = false;
+}
+
+bool CambodianIdCardRequestBody::isDetectReproduce() const
+{
+    return detectReproduce_;
+}
+
+void CambodianIdCardRequestBody::setDetectReproduce(bool value)
+{
+    detectReproduce_ = value;
+    detectReproduceIsSet_ = true;
+}
+
+bool CambodianIdCardRequestBody::detectReproduceIsSet() const
+{
+    return detectReproduceIsSet_;
+}
+
+void CambodianIdCardRequestBody::unsetdetectReproduce()
+{
+    detectReproduceIsSet_ = false;
 }
 
 }

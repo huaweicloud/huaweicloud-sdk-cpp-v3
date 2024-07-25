@@ -9,6 +9,8 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/rds/v3/model/InstanceLtsConfigResp.h>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -37,8 +39,30 @@ public:
     /////////////////////////////////////////////
     /// ListLogLtsConfigsResponse members
 
+    /// <summary>
+    /// 实例的LTS配置
+    /// </summary>
+
+    std::vector<InstanceLtsConfigResp>& getInstanceLtsConfigs();
+    bool instanceLtsConfigsIsSet() const;
+    void unsetinstanceLtsConfigs();
+    void setInstanceLtsConfigs(const std::vector<InstanceLtsConfigResp>& value);
+
+    /// <summary>
+    /// 结果集大小
+    /// </summary>
+
+    int32_t getTotalCount() const;
+    bool totalCountIsSet() const;
+    void unsettotalCount();
+    void setTotalCount(int32_t value);
+
 
 protected:
+    std::vector<InstanceLtsConfigResp> instanceLtsConfigs_;
+    bool instanceLtsConfigsIsSet_;
+    int32_t totalCount_;
+    bool totalCountIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

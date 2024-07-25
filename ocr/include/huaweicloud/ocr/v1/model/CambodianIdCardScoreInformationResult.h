@@ -91,6 +91,15 @@ public:
     void unsettamperingScore();
     void setTamperingScore(int32_t value);
 
+    /// <summary>
+    /// 告警分数，字段取值范围[0, 99]值大于50表示身份证经过翻拍，小于50表示身份证未经过翻拍，值越靠近99，表示身份证图像被翻拍过的可能性越大，值越靠近0，表示身份证图像未被翻拍的可能性越大。 仅在传入参数detect_reproduce为true时，返回该字段。 
+    /// </summary>
+
+    int32_t getReproduceScore() const;
+    bool reproduceScoreIsSet() const;
+    void unsetreproduceScore();
+    void setReproduceScore(int32_t value);
+
 
 protected:
     int32_t idcardTypeScore_;
@@ -105,6 +114,8 @@ protected:
     bool glareScoreIsSet_;
     int32_t tamperingScore_;
     bool tamperingScoreIsSet_;
+    int32_t reproduceScore_;
+    bool reproduceScoreIsSet_;
 
 };
 

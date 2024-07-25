@@ -18,6 +18,8 @@
 #include <huaweicloud/live/v2/model/ListDomainTrafficSummaryResponse.h>
 #include <huaweicloud/live/v2/model/ListHistoryStreamsRequest.h>
 #include <huaweicloud/live/v2/model/ListHistoryStreamsResponse.h>
+#include <huaweicloud/live/v2/model/ListPlayDomainStreamInfoRequest.h>
+#include <huaweicloud/live/v2/model/ListPlayDomainStreamInfoResponse.h>
 #include <huaweicloud/live/v2/model/ListQueryHttpCodeRequest.h>
 #include <huaweicloud/live/v2/model/ListQueryHttpCodeResponse.h>
 #include <huaweicloud/live/v2/model/ListRecordDataRequest.h>
@@ -34,10 +36,6 @@
 #include <huaweicloud/live/v2/model/ShowStreamPortraitResponse.h>
 #include <huaweicloud/live/v2/model/ShowUpBandwidthRequest.h>
 #include <huaweicloud/live/v2/model/ShowUpBandwidthResponse.h>
-#include <string>
-
-#include <huaweicloud/live/v2/model/ListPlayDomainStreamInfoRequest.h>
-#include <huaweicloud/live/v2/model/ListPlayDomainStreamInfoResponse.h>
 #include <string>
 
 #include <huaweicloud/live/v2/model/ListSingleStreamBitrateRequest.h>
@@ -158,6 +156,16 @@ public:
     std::shared_ptr<ListHistoryStreamsResponse> listHistoryStreams(
         ListHistoryStreamsRequest &request
     );
+    // 查询播放域名下的流数据
+    //
+    // 查询播放域名下的监控数据，根据输入时间点，返回查询该时间点所有流的带宽、在线人数、协议。
+    // 返回的数据粒度为1分钟。
+    // 最大查询周期7天，数据延迟5分钟。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListPlayDomainStreamInfoResponse> listPlayDomainStreamInfo(
+        ListPlayDomainStreamInfoRequest &request
+    );
     // 查询直播拉流HTTP状态码接口
     //
     // 查询直播拉流HTTP状态码接口。  获取加速域名1分钟粒度的HTTP返回码  最大查询跨度不能超过24小时，最大查询周期7天。
@@ -222,19 +230,6 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowUpBandwidthResponse> showUpBandwidth(
         ShowUpBandwidthRequest &request
-    );
-
-    // 查询播放域名下的流数据
-    //
-    // 查询播放域名下的监控数据，根据输入时间点，返回查询该时间点所有流的带宽、在线人数、协议。
-    // 
-    // 返回的数据粒度为1分钟。
-    // 
-    // 最大查询周期7天，数据延迟5分钟。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ListPlayDomainStreamInfoResponse> listPlayDomainStreamInfo(
-        ListPlayDomainStreamInfoRequest &request
     );
 
     // 查询推流码率数据接口

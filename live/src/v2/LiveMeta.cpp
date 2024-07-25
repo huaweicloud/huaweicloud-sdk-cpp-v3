@@ -236,6 +236,22 @@ HttpRequestDef LiveMeta::genRequestDefForListHistoryStreams() {
     return reqDefBuilder;
 }
 
+HttpRequestDef LiveMeta::genRequestDefForListPlayDomainStreamInfo() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("PlayDomains")
+                  .withJsonTag("play_domains")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Time")
+                  .withJsonTag("time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef LiveMeta::genRequestDefForListQueryHttpCode() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("PlayDomains")
@@ -433,22 +449,6 @@ HttpRequestDef LiveMeta::genRequestDefForShowUpBandwidth() {
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("EndTime")
                   .withJsonTag("end_time")
-                  .withLocationType(Query_));
-    reqDefBuilder.withResponseField(FieldDef().
-        withName("xRequestId").
-        withJsonTag("X-Request-Id").
-        withKindName("std::string").
-        withLocationType(Header_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef LiveMeta::genRequestDefForListPlayDomainStreamInfo() {
-    HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withRequestField(FieldDef().withName("PlayDomains")
-                  .withJsonTag("play_domains")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Time")
-                  .withJsonTag("time")
                   .withLocationType(Query_));
     reqDefBuilder.withResponseField(FieldDef().
         withName("xRequestId").

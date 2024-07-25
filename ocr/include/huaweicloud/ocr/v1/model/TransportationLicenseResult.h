@@ -103,7 +103,7 @@ public:
     void setIssuingAuthority(const std::string& value);
 
     /// <summary>
-    /// 签发日期（非必有，依赖对应运输证板式）。 
+    /// 发证日期（非必有，依赖对应运输证板式）。 
     /// </summary>
 
     std::string getIssueDate() const;
@@ -139,7 +139,7 @@ public:
     void setBusinessCertificate(const std::string& value);
 
     /// <summary>
-    /// 道路普通货物运输（非必有，依赖对应运输证板式）。 
+    /// 经营范围（非必有，依赖对应运输证板式）。 
     /// </summary>
 
     std::string getBusinessScope() const;

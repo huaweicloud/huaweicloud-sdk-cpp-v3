@@ -1,3 +1,19 @@
+# 3.1.95 2024-07-25
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RecognizeCambodianIdCard**
+    - 请求参数变更
+      - `+ detect_reproduce`
+    - 响应参数变更
+      - `+ result.detect_reproduce_result`
+      - `+ result.score_info.reproduce_score`
+
 # 3.1.94 2024-07-18
 
 ### HuaweiCloud SDK CTS

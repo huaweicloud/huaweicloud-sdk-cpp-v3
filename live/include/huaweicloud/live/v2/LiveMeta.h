@@ -19,6 +19,7 @@ public:
     static HttpRequestDef genRequestDefForListDomainTrafficDetail();
     static HttpRequestDef genRequestDefForListDomainTrafficSummary();
     static HttpRequestDef genRequestDefForListHistoryStreams();
+    static HttpRequestDef genRequestDefForListPlayDomainStreamInfo();
     static HttpRequestDef genRequestDefForListQueryHttpCode();
     static HttpRequestDef genRequestDefForListRecordData();
     static HttpRequestDef genRequestDefForListSnapshotData();
@@ -27,7 +28,6 @@ public:
     static HttpRequestDef genRequestDefForShowStreamCount();
     static HttpRequestDef genRequestDefForShowStreamPortrait();
     static HttpRequestDef genRequestDefForShowUpBandwidth();
-    static HttpRequestDef genRequestDefForListPlayDomainStreamInfo();
     static HttpRequestDef genRequestDefForListSingleStreamBitrate();
     static HttpRequestDef genRequestDefForListSingleStreamDetail();
     static HttpRequestDef genRequestDefForListSingleStreamFramerate();

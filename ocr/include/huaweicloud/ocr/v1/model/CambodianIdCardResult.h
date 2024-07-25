@@ -249,6 +249,15 @@ public:
     void setDetectTamperingResult(bool value);
 
     /// <summary>
+    /// 身份证是否经过翻拍的告警结果，“true”表示身份证经过翻拍，“false”表示身份证未经过翻拍。仅在输入参数detect_reproduce为true时，返回该字段。 
+    /// </summary>
+
+    bool isDetectReproduceResult() const;
+    bool detectReproduceResultIsSet() const;
+    void unsetdetectReproduceResult();
+    void setDetectReproduceResult(bool value);
+
+    /// <summary>
     /// 
     /// </summary>
 
@@ -314,6 +323,8 @@ protected:
     bool detectGlareResultIsSet_;
     bool detectTamperingResult_;
     bool detectTamperingResultIsSet_;
+    bool detectReproduceResult_;
+    bool detectReproduceResultIsSet_;
     CambodianIdCardScoreInformationResult scoreInfo_;
     bool scoreInfoIsSet_;
     Object confidence_;

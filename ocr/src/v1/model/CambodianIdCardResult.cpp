@@ -57,6 +57,8 @@ CambodianIdCardResult::CambodianIdCardResult()
     detectGlareResultIsSet_ = false;
     detectTamperingResult_ = false;
     detectTamperingResultIsSet_ = false;
+    detectReproduceResult_ = false;
+    detectReproduceResultIsSet_ = false;
     scoreInfoIsSet_ = false;
     confidenceIsSet_ = false;
 }
@@ -139,6 +141,9 @@ web::json::value CambodianIdCardResult::toJson() const
     }
     if(detectTamperingResultIsSet_) {
         val[utility::conversions::to_string_t("detect_tampering_result")] = ModelBase::toJson(detectTamperingResult_);
+    }
+    if(detectReproduceResultIsSet_) {
+        val[utility::conversions::to_string_t("detect_reproduce_result")] = ModelBase::toJson(detectReproduceResult_);
     }
     if(scoreInfoIsSet_) {
         val[utility::conversions::to_string_t("score_info")] = ModelBase::toJson(scoreInfo_);
@@ -358,6 +363,15 @@ bool CambodianIdCardResult::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDetectTamperingResult(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("detect_reproduce_result"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("detect_reproduce_result"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDetectReproduceResult(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("score_info"))) {
@@ -863,6 +877,27 @@ bool CambodianIdCardResult::detectTamperingResultIsSet() const
 void CambodianIdCardResult::unsetdetectTamperingResult()
 {
     detectTamperingResultIsSet_ = false;
+}
+
+bool CambodianIdCardResult::isDetectReproduceResult() const
+{
+    return detectReproduceResult_;
+}
+
+void CambodianIdCardResult::setDetectReproduceResult(bool value)
+{
+    detectReproduceResult_ = value;
+    detectReproduceResultIsSet_ = true;
+}
+
+bool CambodianIdCardResult::detectReproduceResultIsSet() const
+{
+    return detectReproduceResultIsSet_;
+}
+
+void CambodianIdCardResult::unsetdetectReproduceResult()
+{
+    detectReproduceResultIsSet_ = false;
 }
 
 CambodianIdCardScoreInformationResult CambodianIdCardResult::getScoreInfo() const

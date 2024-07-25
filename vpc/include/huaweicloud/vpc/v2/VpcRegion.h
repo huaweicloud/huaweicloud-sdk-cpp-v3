@@ -138,6 +138,14 @@ public:
             { 
                 "https://vpc.ru-moscow-1.myhuaweicloud.com"
             });
+        regions["cn-east-4"] = Region("cn-east-4",
+            { 
+                "https://vpc.cn-east-4.myhuaweicloud.com"
+            });
+        regions["af-north-1"] = Region("af-north-1",
+            { 
+                "https://vpc.af-north-1.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

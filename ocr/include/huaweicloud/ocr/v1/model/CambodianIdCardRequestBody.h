@@ -137,6 +137,15 @@ public:
     void unsetdetectTampering();
     void setDetectTampering(bool value);
 
+    /// <summary>
+    /// 返回判断身份证图像是否经过翻拍告警的开关，可选值如下所示 - true:打开判断身份证图像是否经过翻拍告警的功能  - false:关闭判断身份证图像是否经过翻拍告警的功能 
+    /// </summary>
+
+    bool isDetectReproduce() const;
+    bool detectReproduceIsSet() const;
+    void unsetdetectReproduce();
+    void setDetectReproduce(bool value);
+
 
 protected:
     std::string image_;
@@ -161,6 +170,8 @@ protected:
     bool returnAdjustedImageIsSet_;
     bool detectTampering_;
     bool detectTamperingIsSet_;
+    bool detectReproduce_;
+    bool detectReproduceIsSet_;
 
 };
 

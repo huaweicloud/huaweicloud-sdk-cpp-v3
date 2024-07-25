@@ -24,6 +24,8 @@ CambodianIdCardScoreInformationResult::CambodianIdCardScoreInformationResult()
     glareScoreIsSet_ = false;
     tamperingScore_ = 0;
     tamperingScoreIsSet_ = false;
+    reproduceScore_ = 0;
+    reproduceScoreIsSet_ = false;
 }
 
 CambodianIdCardScoreInformationResult::~CambodianIdCardScoreInformationResult() = default;
@@ -53,6 +55,9 @@ web::json::value CambodianIdCardScoreInformationResult::toJson() const
     }
     if(tamperingScoreIsSet_) {
         val[utility::conversions::to_string_t("tampering_score")] = ModelBase::toJson(tamperingScore_);
+    }
+    if(reproduceScoreIsSet_) {
+        val[utility::conversions::to_string_t("reproduce_score")] = ModelBase::toJson(reproduceScore_);
     }
 
     return val;
@@ -113,6 +118,15 @@ bool CambodianIdCardScoreInformationResult::fromJson(const web::json::value& val
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTamperingScore(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("reproduce_score"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("reproduce_score"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setReproduceScore(refVal);
         }
     }
     return ok;
@@ -243,6 +257,27 @@ bool CambodianIdCardScoreInformationResult::tamperingScoreIsSet() const
 void CambodianIdCardScoreInformationResult::unsettamperingScore()
 {
     tamperingScoreIsSet_ = false;
+}
+
+int32_t CambodianIdCardScoreInformationResult::getReproduceScore() const
+{
+    return reproduceScore_;
+}
+
+void CambodianIdCardScoreInformationResult::setReproduceScore(int32_t value)
+{
+    reproduceScore_ = value;
+    reproduceScoreIsSet_ = true;
+}
+
+bool CambodianIdCardScoreInformationResult::reproduceScoreIsSet() const
+{
+    return reproduceScoreIsSet_;
+}
+
+void CambodianIdCardScoreInformationResult::unsetreproduceScore()
+{
+    reproduceScoreIsSet_ = false;
 }
 
 }

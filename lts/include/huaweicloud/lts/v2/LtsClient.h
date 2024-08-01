@@ -211,6 +211,30 @@
 #include <huaweicloud/lts/v2/model/UpdateAomMappingRulesResponse.h>
 #include <string>
 
+#include <huaweicloud/lts/v2/model/ConsumerCheckpointInfo.h>
+#include <huaweicloud/lts/v2/model/ConsumerGroupHeartBeatRequest.h>
+#include <huaweicloud/lts/v2/model/ConsumerGroupHeartBeatResponse.h>
+#include <huaweicloud/lts/v2/model/ConsumerGroupInfo.h>
+#include <huaweicloud/lts/v2/model/ConsumerShardCheckpointInfo.h>
+#include <huaweicloud/lts/v2/model/CreateConsumerGroupRequest.h>
+#include <huaweicloud/lts/v2/model/CreateConsumerGroupResponse.h>
+#include <huaweicloud/lts/v2/model/DeleteConsumerGroupRequest.h>
+#include <huaweicloud/lts/v2/model/DeleteConsumerGroupResponse.h>
+#include <huaweicloud/lts/v2/model/ListConsumerGroupRequest.h>
+#include <huaweicloud/lts/v2/model/ListConsumerGroupResponse.h>
+#include <huaweicloud/lts/v2/model/ListDetailsConsumerGroupRequest.h>
+#include <huaweicloud/lts/v2/model/ListDetailsConsumerGroupResponse.h>
+#include <huaweicloud/lts/v2/model/ShowCursorByTimeRequest.h>
+#include <huaweicloud/lts/v2/model/ShowCursorByTimeResponse.h>
+#include <huaweicloud/lts/v2/model/ShowCursorTimeRequest.h>
+#include <huaweicloud/lts/v2/model/ShowCursorTimeResponse.h>
+#include <huaweicloud/lts/v2/model/ShowLogStreamShardsRequest.h>
+#include <huaweicloud/lts/v2/model/ShowLogStreamShardsResponse.h>
+#include <huaweicloud/lts/v2/model/UpdateCheckPointRequest.h>
+#include <huaweicloud/lts/v2/model/UpdateCheckPointResponse.h>
+#include <string>
+#include <vector>
+
 #include <huaweicloud/lts/v2/model/ChangeAlarmRuleStatus.h>
 #include <huaweicloud/lts/v2/model/CreateSqlAlarmRuleRequest.h>
 #include <huaweicloud/lts/v2/model/CreateSqlAlarmRuleRequestBody.h>
@@ -866,6 +890,79 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateAomMappingRulesResponse> updateAomMappingRules(
         UpdateAomMappingRulesRequest &request
+    );
+
+    // 消费者发送心跳到服务端
+    //
+    // 消费者发送心跳到服务端
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ConsumerGroupHeartBeatResponse> consumerGroupHeartBeat(
+        ConsumerGroupHeartBeatRequest &request
+    );
+    // 创建消费组
+    //
+    // 创建消费组
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateConsumerGroupResponse> createConsumerGroup(
+        CreateConsumerGroupRequest &request
+    );
+    // 删除消费组
+    //
+    // 删除消费组
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteConsumerGroupResponse> deleteConsumerGroup(
+        DeleteConsumerGroupRequest &request
+    );
+    // 查询消费组列表
+    //
+    // 查询消费组列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListConsumerGroupResponse> listConsumerGroup(
+        ListConsumerGroupRequest &request
+    );
+    // 查询消费组详情
+    //
+    // 查询消费组详情
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListDetailsConsumerGroupResponse> listDetailsConsumerGroup(
+        ListDetailsConsumerGroupRequest &request
+    );
+    // 通过时间获取消费游标
+    //
+    // 通过时间查询cursor
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowCursorByTimeResponse> showCursorByTime(
+        ShowCursorByTimeRequest &request
+    );
+    // 通过消费游标获取时间
+    //
+    // 通过cursor查询服务端时间
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowCursorTimeResponse> showCursorTime(
+        ShowCursorTimeRequest &request
+    );
+    // 流消费获取Shards
+    //
+    // 流消费获取所有的query shards
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowLogStreamShardsResponse> showLogStreamShards(
+        ShowLogStreamShardsRequest &request
+    );
+    // 更新消费组位点
+    //
+    // 更新消费组位点
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateCheckPointResponse> updateCheckPoint(
+        UpdateCheckPointRequest &request
     );
 
     // 创建SQL告警规则

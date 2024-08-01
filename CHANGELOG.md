@@ -1,3 +1,23 @@
+# 3.1.96 2024-08-01
+
+### HuaweiCloud SDK LTS
+
+- _Features_
+  - Support the following APIs:
+    - `ListConsumerGroup`
+    - `CreateConsumerGroup`
+    - `ConsumerGroupHeartBeat`
+    - `ShowLogStreamShards`
+    - `ListDetailsConsumerGroup`
+    - `UpdateCheckPoint`
+    - `DeleteConsumerGroup`
+    - `ShowCursorByTime`
+    - `ShowCursorTime`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.95 2024-07-25
 
 ### HuaweiCloud SDK OCR

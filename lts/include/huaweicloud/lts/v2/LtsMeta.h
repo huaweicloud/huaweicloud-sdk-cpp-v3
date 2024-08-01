@@ -90,6 +90,15 @@ public:
     static HttpRequestDef genRequestDefForShowAomMappingRule();
     static HttpRequestDef genRequestDefForShowAomMappingRules();
     static HttpRequestDef genRequestDefForUpdateAomMappingRules();
+    static HttpRequestDef genRequestDefForConsumerGroupHeartBeat();
+    static HttpRequestDef genRequestDefForCreateConsumerGroup();
+    static HttpRequestDef genRequestDefForDeleteConsumerGroup();
+    static HttpRequestDef genRequestDefForListConsumerGroup();
+    static HttpRequestDef genRequestDefForListDetailsConsumerGroup();
+    static HttpRequestDef genRequestDefForShowCursorByTime();
+    static HttpRequestDef genRequestDefForShowCursorTime();
+    static HttpRequestDef genRequestDefForShowLogStreamShards();
+    static HttpRequestDef genRequestDefForUpdateCheckPoint();
     static HttpRequestDef genRequestDefForCreateSqlAlarmRule();
     static HttpRequestDef genRequestDefForDeleteSqlAlarmRule();
     static HttpRequestDef genRequestDefForListSqlAlarmRules();

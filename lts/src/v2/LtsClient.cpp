@@ -3163,6 +3163,363 @@ std::shared_ptr<UpdateAomMappingRulesResponse> LtsClient::updateAomMappingRules(
 
     return localVarResult;
 }
+std::shared_ptr<ConsumerGroupHeartBeatResponse> LtsClient::consumerGroupHeartBeat(ConsumerGroupHeartBeatRequest &request)
+{
+    std::string localVarPath = "/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/consumer-groups/{consumer_group_name}/heartbeat";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["group_id"] = parameterToString(request.getGroupId());
+    localVarPathParams["stream_id"] = parameterToString(request.getStreamId());
+    localVarPathParams["consumer_group_name"] = parameterToString(request.getConsumerGroupName());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.consumerNameIsSet()) {
+        localVarQueryParams["consumer_name"] = parameterToString(request.getConsumerName());
+    }
+    if (request.contentTypeIsSet()) {
+        localVarHeaderParams["Content-Type"] = parameterToString(request.getContentType());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LtsMeta::genRequestDefForConsumerGroupHeartBeat());
+
+    std::shared_ptr<ConsumerGroupHeartBeatResponse> localVarResult = std::make_shared<ConsumerGroupHeartBeatResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<CreateConsumerGroupResponse> LtsClient::createConsumerGroup(CreateConsumerGroupRequest &request)
+{
+    std::string localVarPath = "/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/consumer-groups";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["group_id"] = parameterToString(request.getGroupId());
+    localVarPathParams["stream_id"] = parameterToString(request.getStreamId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.contentTypeIsSet()) {
+        localVarHeaderParams["Content-Type"] = parameterToString(request.getContentType());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LtsMeta::genRequestDefForCreateConsumerGroup());
+
+    std::shared_ptr<CreateConsumerGroupResponse> localVarResult = std::make_shared<CreateConsumerGroupResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<DeleteConsumerGroupResponse> LtsClient::deleteConsumerGroup(DeleteConsumerGroupRequest &request)
+{
+    std::string localVarPath = "/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/consumer-groups/{consumer_group_name}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["group_id"] = parameterToString(request.getGroupId());
+    localVarPathParams["stream_id"] = parameterToString(request.getStreamId());
+    localVarPathParams["consumer_group_name"] = parameterToString(request.getConsumerGroupName());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.contentTypeIsSet()) {
+        localVarHeaderParams["Content-Type"] = parameterToString(request.getContentType());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LtsMeta::genRequestDefForDeleteConsumerGroup());
+
+    std::shared_ptr<DeleteConsumerGroupResponse> localVarResult = std::make_shared<DeleteConsumerGroupResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListConsumerGroupResponse> LtsClient::listConsumerGroup(ListConsumerGroupRequest &request)
+{
+    std::string localVarPath = "/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/consumer-groups";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["group_id"] = parameterToString(request.getGroupId());
+    localVarPathParams["stream_id"] = parameterToString(request.getStreamId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.contentTypeIsSet()) {
+        localVarHeaderParams["Content-Type"] = parameterToString(request.getContentType());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LtsMeta::genRequestDefForListConsumerGroup());
+
+    std::shared_ptr<ListConsumerGroupResponse> localVarResult = std::make_shared<ListConsumerGroupResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListDetailsConsumerGroupResponse> LtsClient::listDetailsConsumerGroup(ListDetailsConsumerGroupRequest &request)
+{
+    std::string localVarPath = "/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/consumer-groups/{consumer_group_name}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["group_id"] = parameterToString(request.getGroupId());
+    localVarPathParams["stream_id"] = parameterToString(request.getStreamId());
+    localVarPathParams["consumer_group_name"] = parameterToString(request.getConsumerGroupName());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.contentTypeIsSet()) {
+        localVarHeaderParams["Content-Type"] = parameterToString(request.getContentType());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LtsMeta::genRequestDefForListDetailsConsumerGroup());
+
+    std::shared_ptr<ListDetailsConsumerGroupResponse> localVarResult = std::make_shared<ListDetailsConsumerGroupResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowCursorByTimeResponse> LtsClient::showCursorByTime(ShowCursorByTimeRequest &request)
+{
+    std::string localVarPath = "/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/shards/{shard_id}/cursor";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["group_id"] = parameterToString(request.getGroupId());
+    localVarPathParams["stream_id"] = parameterToString(request.getStreamId());
+    localVarPathParams["shard_id"] = parameterToString(request.getShardId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.fromIsSet()) {
+        localVarQueryParams["from"] = parameterToString(request.getFrom());
+    }
+    if (request.contentTypeIsSet()) {
+        localVarHeaderParams["Content-Type"] = parameterToString(request.getContentType());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LtsMeta::genRequestDefForShowCursorByTime());
+
+    std::shared_ptr<ShowCursorByTimeResponse> localVarResult = std::make_shared<ShowCursorByTimeResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowCursorTimeResponse> LtsClient::showCursorTime(ShowCursorTimeRequest &request)
+{
+    std::string localVarPath = "/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/shards/{shard_id}/time";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["group_id"] = parameterToString(request.getGroupId());
+    localVarPathParams["stream_id"] = parameterToString(request.getStreamId());
+    localVarPathParams["shard_id"] = parameterToString(request.getShardId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.cursorIsSet()) {
+        localVarQueryParams["cursor"] = parameterToString(request.getCursor());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LtsMeta::genRequestDefForShowCursorTime());
+
+    std::shared_ptr<ShowCursorTimeResponse> localVarResult = std::make_shared<ShowCursorTimeResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowLogStreamShardsResponse> LtsClient::showLogStreamShards(ShowLogStreamShardsRequest &request)
+{
+    std::string localVarPath = "/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/shards";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["group_id"] = parameterToString(request.getGroupId());
+    localVarPathParams["stream_id"] = parameterToString(request.getStreamId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.contentTypeIsSet()) {
+        localVarHeaderParams["Content-Type"] = parameterToString(request.getContentType());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LtsMeta::genRequestDefForShowLogStreamShards());
+
+    std::shared_ptr<ShowLogStreamShardsResponse> localVarResult = std::make_shared<ShowLogStreamShardsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateCheckPointResponse> LtsClient::updateCheckPoint(UpdateCheckPointRequest &request)
+{
+    std::string localVarPath = "/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/consumer-groups/{consumer_group_name}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["group_id"] = parameterToString(request.getGroupId());
+    localVarPathParams["stream_id"] = parameterToString(request.getStreamId());
+    localVarPathParams["consumer_group_name"] = parameterToString(request.getConsumerGroupName());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.consumerNameIsSet()) {
+        localVarQueryParams["consumer_name"] = parameterToString(request.getConsumerName());
+    }
+    if (request.contentTypeIsSet()) {
+        localVarHeaderParams["Content-Type"] = parameterToString(request.getContentType());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LtsMeta::genRequestDefForUpdateCheckPoint());
+
+    std::shared_ptr<UpdateCheckPointResponse> localVarResult = std::make_shared<UpdateCheckPointResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<CreateSqlAlarmRuleResponse> LtsClient::createSqlAlarmRule(CreateSqlAlarmRuleRequest &request)
 {
     std::string localVarPath = "/v2/{project_id}/lts/alarms/sql-alarm-rule";

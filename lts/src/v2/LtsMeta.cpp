@@ -1024,6 +1024,124 @@ HttpRequestDef LtsMeta::genRequestDefForUpdateAomMappingRules() {
     return reqDefBuilder;
 }
 
+HttpRequestDef LtsMeta::genRequestDefForConsumerGroupHeartBeat() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("ConsumerName")
+                  .withJsonTag("consumer_name")
+                  .withLocationType(Query_));
+    FieldDef headerParamContentType;
+    reqDefBuilder.withRequestField(headerParamContentType
+                  .withName("ContentType")
+                  .withJsonTag("Content-Type")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+            withName("Body").
+            withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LtsMeta::genRequestDefForCreateConsumerGroup() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamContentType;
+    reqDefBuilder.withRequestField(headerParamContentType
+                  .withName("ContentType")
+                  .withJsonTag("Content-Type")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LtsMeta::genRequestDefForDeleteConsumerGroup() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamContentType;
+    reqDefBuilder.withRequestField(headerParamContentType
+                  .withName("ContentType")
+                  .withJsonTag("Content-Type")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LtsMeta::genRequestDefForListConsumerGroup() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamContentType;
+    reqDefBuilder.withRequestField(headerParamContentType
+                  .withName("ContentType")
+                  .withJsonTag("Content-Type")
+                  .withLocationType(Header_));
+    reqDefBuilder.withResponseField(FieldDef().
+            withName("Body").
+            withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LtsMeta::genRequestDefForListDetailsConsumerGroup() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamContentType;
+    reqDefBuilder.withRequestField(headerParamContentType
+                  .withName("ContentType")
+                  .withJsonTag("Content-Type")
+                  .withLocationType(Header_));
+    reqDefBuilder.withResponseField(FieldDef().
+            withName("Body").
+            withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LtsMeta::genRequestDefForShowCursorByTime() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("From")
+                  .withJsonTag("from")
+                  .withLocationType(Query_));
+    FieldDef headerParamContentType;
+    reqDefBuilder.withRequestField(headerParamContentType
+                  .withName("ContentType")
+                  .withJsonTag("Content-Type")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LtsMeta::genRequestDefForShowCursorTime() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Cursor")
+                  .withJsonTag("cursor")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LtsMeta::genRequestDefForShowLogStreamShards() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamContentType;
+    reqDefBuilder.withRequestField(headerParamContentType
+                  .withName("ContentType")
+                  .withJsonTag("Content-Type")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LtsMeta::genRequestDefForUpdateCheckPoint() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("ConsumerName")
+                  .withJsonTag("consumer_name")
+                  .withLocationType(Query_));
+    FieldDef headerParamContentType;
+    reqDefBuilder.withRequestField(headerParamContentType
+                  .withName("ContentType")
+                  .withJsonTag("Content-Type")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef LtsMeta::genRequestDefForCreateSqlAlarmRule() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamContentType;

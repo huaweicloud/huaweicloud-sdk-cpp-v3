@@ -16,6 +16,8 @@ SmartDocumentRecognizerRequestBody::SmartDocumentRecognizerRequestBody()
     dataIsSet_ = false;
     url_ = "";
     urlIsSet_ = false;
+    singleOrientationMode_ = false;
+    singleOrientationModeIsSet_ = false;
     kv_ = false;
     kvIsSet_ = false;
     table_ = false;
@@ -49,6 +51,9 @@ web::json::value SmartDocumentRecognizerRequestBody::toJson() const
     }
     if(urlIsSet_) {
         val[utility::conversions::to_string_t("url")] = ModelBase::toJson(url_);
+    }
+    if(singleOrientationModeIsSet_) {
+        val[utility::conversions::to_string_t("single_orientation_mode")] = ModelBase::toJson(singleOrientationMode_);
     }
     if(kvIsSet_) {
         val[utility::conversions::to_string_t("kv")] = ModelBase::toJson(kv_);
@@ -97,6 +102,15 @@ bool SmartDocumentRecognizerRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setUrl(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("single_orientation_mode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("single_orientation_mode"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSingleOrientationMode(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("kv"))) {
@@ -215,6 +229,27 @@ bool SmartDocumentRecognizerRequestBody::urlIsSet() const
 void SmartDocumentRecognizerRequestBody::unseturl()
 {
     urlIsSet_ = false;
+}
+
+bool SmartDocumentRecognizerRequestBody::isSingleOrientationMode() const
+{
+    return singleOrientationMode_;
+}
+
+void SmartDocumentRecognizerRequestBody::setSingleOrientationMode(bool value)
+{
+    singleOrientationMode_ = value;
+    singleOrientationModeIsSet_ = true;
+}
+
+bool SmartDocumentRecognizerRequestBody::singleOrientationModeIsSet() const
+{
+    return singleOrientationModeIsSet_;
+}
+
+void SmartDocumentRecognizerRequestBody::unsetsingleOrientationMode()
+{
+    singleOrientationModeIsSet_ = false;
 }
 
 bool SmartDocumentRecognizerRequestBody::isKv() const

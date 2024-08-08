@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/kvs/v1/model/Condition_expression.h"
+#include "huaweicloud/kvs/v1/model/Expression.h"
 #include <huaweicloud/core/utils/Utils.h>
 namespace HuaweiCloud {
 namespace Sdk {
@@ -11,20 +11,20 @@ namespace Model {
 
 
 
-Condition_expression::Condition_expression()
+Expression::Expression()
 {
     singleFieldExpressionIsSet_ = false;
     multiFieldExpressionIsSet_ = false;
     composedExpressionIsSet_ = false;
 }
 
-Condition_expression::~Condition_expression() = default;
+Expression::~Expression() = default;
 
-void Condition_expression::validate()
+void Expression::validate()
 {
 }
 
-bool Condition_expression::toBson(Builder &builder) const
+bool Expression::toBson(Builder &builder) const
 {
 
     if (singleFieldExpressionIsSet_ && !bson_append(builder, "single_field_expression", singleFieldExpression_)) {
@@ -40,7 +40,7 @@ bool Condition_expression::toBson(Builder &builder) const
     return true;
 }
 
-bool Condition_expression::fromBson(const Viewer &viewer)
+bool Expression::fromBson(const Viewer &viewer)
 {
 
     Viewer::Iterator it = viewer.begin();
@@ -80,65 +80,65 @@ bool Condition_expression::fromBson(const Viewer &viewer)
     return true;
 }
 
-Single_field_expression Condition_expression::getSingleFieldExpression() const
+Single_field_expression Expression::getSingleFieldExpression() const
 {
     return singleFieldExpression_;
 }
 
-void Condition_expression::setSingleFieldExpression(const Single_field_expression& value)
+void Expression::setSingleFieldExpression(const Single_field_expression& value)
 {
     singleFieldExpression_ = value;
     singleFieldExpressionIsSet_ = true;
 }
 
-bool Condition_expression::singleFieldExpressionIsSet() const
+bool Expression::singleFieldExpressionIsSet() const
 {
     return singleFieldExpressionIsSet_;
 }
 
-void Condition_expression::unsetsingleFieldExpression()
+void Expression::unsetsingleFieldExpression()
 {
     singleFieldExpressionIsSet_ = false;
 }
 
-Multi_field_expression Condition_expression::getMultiFieldExpression() const
+Multi_field_expression Expression::getMultiFieldExpression() const
 {
     return multiFieldExpression_;
 }
 
-void Condition_expression::setMultiFieldExpression(const Multi_field_expression& value)
+void Expression::setMultiFieldExpression(const Multi_field_expression& value)
 {
     multiFieldExpression_ = value;
     multiFieldExpressionIsSet_ = true;
 }
 
-bool Condition_expression::multiFieldExpressionIsSet() const
+bool Expression::multiFieldExpressionIsSet() const
 {
     return multiFieldExpressionIsSet_;
 }
 
-void Condition_expression::unsetmultiFieldExpression()
+void Expression::unsetmultiFieldExpression()
 {
     multiFieldExpressionIsSet_ = false;
 }
 
-Composed_expression Condition_expression::getComposedExpression() const
+Composed_expression Expression::getComposedExpression() const
 {
     return composedExpression_;
 }
 
-void Condition_expression::setComposedExpression(const Composed_expression& value)
+void Expression::setComposedExpression(const Composed_expression& value)
 {
     composedExpression_ = value;
     composedExpressionIsSet_ = true;
 }
 
-bool Condition_expression::composedExpressionIsSet() const
+bool Expression::composedExpressionIsSet() const
 {
     return composedExpressionIsSet_;
 }
 
-void Condition_expression::unsetcomposedExpression()
+void Expression::unsetcomposedExpression()
 {
     composedExpressionIsSet_ = false;
 }

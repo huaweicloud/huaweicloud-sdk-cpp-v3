@@ -1,3 +1,115 @@
+# 3.1.97 2024-08-08
+
+### HuaweiCloud SDK KVS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **PutKv**
+    - 请求参数变更
+      - `+ condition_expression.multi_field_expression`
+      - `+ condition_expression.composed_expression`
+  - **UpdateKv**
+    - 请求参数变更
+      - `+ condition_expression.multi_field_expression`
+      - `+ condition_expression.composed_expression`
+  - **DeleteKv**
+    - 请求参数变更
+      - `+ condition_expression.multi_field_expression`
+      - `+ condition_expression.composed_expression`
+  - **ScanKv**
+    - 请求参数变更
+      - `+ filter_expression.multi_field_expression`
+      - `+ filter_expression.composed_expression`
+  - **ScanSkeyKv**
+    - 请求参数变更
+      - `+ filter_expression.multi_field_expression`
+      - `+ filter_expression.composed_expression`
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RecognizeSmartDocumentRecognizer**
+    - 请求参数变更
+      - `+ single_orientation_mode`
+
+### HuaweiCloud SDK VPC
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListSubNetworkInterfaces**
+    - 响应参数变更
+      - `+ sub_network_interfaces.allowed_address_pairs`
+      - `+ sub_network_interfaces.state`
+      - `+ sub_network_interfaces.instance_id`
+      - `+ sub_network_interfaces.instance_type`
+      - `+ sub_network_interfaces.scope`
+      - `* sub_network_interfaces.tags: list<string> -> list<ResourceTag>`
+  - **CreateSubNetworkInterface**
+    - 请求参数变更
+      - `+ sub_network_interface.allowed_address_pairs`
+      - `+ sub_network_interface.instance_id`
+      - `+ sub_network_interface.instance_type`
+      - `+ sub_network_interface.tags`
+    - 响应参数变更
+      - `+ sub_network_interface.allowed_address_pairs`
+      - `+ sub_network_interface.state`
+      - `+ sub_network_interface.instance_id`
+      - `+ sub_network_interface.instance_type`
+      - `+ sub_network_interface.scope`
+      - `* sub_network_interface.tags: list<string> -> list<ResourceTag>`
+  - **BatchCreateSubNetworkInterface**
+    - 请求参数变更
+      - `+ sub_network_interface.allowed_address_pairs`
+      - `+ sub_network_interface.instance_id`
+      - `+ sub_network_interface.instance_type`
+      - `+ sub_network_interface.tags`
+    - 响应参数变更
+      - `+ sub_network_interfaces.allowed_address_pairs`
+      - `+ sub_network_interfaces.state`
+      - `+ sub_network_interfaces.instance_id`
+      - `+ sub_network_interfaces.instance_type`
+      - `+ sub_network_interfaces.scope`
+      - `* sub_network_interfaces.tags: list<string> -> list<ResourceTag>`
+  - **ShowSubNetworkInterface**
+    - 响应参数变更
+      - `+ sub_network_interface.allowed_address_pairs`
+      - `+ sub_network_interface.state`
+      - `+ sub_network_interface.instance_id`
+      - `+ sub_network_interface.instance_type`
+      - `+ sub_network_interface.scope`
+      - `* sub_network_interface.tags: list<string> -> list<ResourceTag>`
+  - **UpdateSubNetworkInterface**
+    - 请求参数变更
+      - `+ sub_network_interface.allowed_address_pairs`
+    - 响应参数变更
+      - `+ sub_network_interface.allowed_address_pairs`
+      - `+ sub_network_interface.state`
+      - `+ sub_network_interface.instance_id`
+      - `+ sub_network_interface.instance_type`
+      - `+ sub_network_interface.scope`
+      - `* sub_network_interface.tags: list<string> -> list<ResourceTag>`
+  - **MigrateSubNetworkInterface**
+    - 响应参数变更
+      - `+ sub_network_interfaces.allowed_address_pairs`
+      - `+ sub_network_interfaces.state`
+      - `+ sub_network_interfaces.instance_id`
+      - `+ sub_network_interfaces.instance_type`
+      - `+ sub_network_interfaces.scope`
+      - `* sub_network_interfaces.tags: list<string> -> list<ResourceTag>`
+  - **UpdateTrafficMirrorSession**
+    - 请求参数变更
+      - `- traffic_mirror_session.type`
+
 # 3.1.96 2024-08-01
 
 ### HuaweiCloud SDK LTS

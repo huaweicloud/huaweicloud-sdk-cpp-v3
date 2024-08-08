@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_KVS_V1_MODEL_Condition_expression_H_
-#define HUAWEICLOUD_SDK_KVS_V1_MODEL_Condition_expression_H_
+#ifndef HUAWEICLOUD_SDK_KVS_V1_MODEL_Expression_H_
+#define HUAWEICLOUD_SDK_KVS_V1_MODEL_Expression_H_
 
 #include <huaweicloud/core/bson/Defines.h>
 #include <huaweicloud/core/bson/Builder.h>
@@ -27,12 +27,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// 
 /// </summary>
-class HUAWEICLOUD_KVS_V1_EXPORT  Condition_expression
+class HUAWEICLOUD_KVS_V1_EXPORT  Expression
     : public ModelBase
 {
 public:
-    Condition_expression();
-    virtual ~Condition_expression();
+    Expression();
+    virtual ~Expression();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -41,7 +41,7 @@ public:
     bool fromBson(const Viewer &viewer) override;
     bool toBson(Builder &builder) const override;
     /////////////////////////////////////////////
-    /// Condition_expression members
+    /// Expression members
 
     /// <summary>
     /// 
@@ -88,4 +88,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_KVS_V1_MODEL_Condition_expression_H_
+#endif // HUAWEICLOUD_SDK_KVS_V1_MODEL_Expression_H_

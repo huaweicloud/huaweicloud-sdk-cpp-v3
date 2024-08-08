@@ -57,6 +57,15 @@ public:
     void setUrl(const std::string& value);
 
     /// <summary>
+    /// 单朝向模式开关。可选值包括： - true：打开单朝向模式 - false：关闭单朝向模式  未传入该参数时默认为false，既默认图片中的字段为多朝向 
+    /// </summary>
+
+    bool isSingleOrientationMode() const;
+    bool singleOrientationModeIsSet() const;
+    void unsetsingleOrientationMode();
+    void setSingleOrientationMode(bool value);
+
+    /// <summary>
     /// 是否进行键值对（key-value）提取。若是，结果会以“kv_result”这一关键字返回。 
     /// </summary>
 
@@ -134,6 +143,8 @@ protected:
     bool dataIsSet_;
     std::string url_;
     bool urlIsSet_;
+    bool singleOrientationMode_;
+    bool singleOrientationModeIsSet_;
     bool kv_;
     bool kvIsSet_;
     bool table_;

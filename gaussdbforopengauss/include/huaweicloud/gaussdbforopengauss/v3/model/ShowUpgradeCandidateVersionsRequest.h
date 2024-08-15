@@ -48,7 +48,7 @@ public:
     void setInstanceId(const std::string& value);
 
     /// <summary>
-    /// 语言[zh-cn, en-us]
+    /// 语言[zh-cn, en-us]。
     /// </summary>
 
     std::string getXLanguage() const;

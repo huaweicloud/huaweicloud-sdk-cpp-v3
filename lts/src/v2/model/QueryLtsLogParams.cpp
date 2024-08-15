@@ -35,6 +35,10 @@ QueryLtsLogParams::QueryLtsLogParams()
     highlightIsSet_ = false;
     isIterative_ = false;
     isIterativeIsSet_ = false;
+    query_ = "";
+    queryIsSet_ = false;
+    isAnalysisQuery_ = false;
+    isAnalysisQueryIsSet_ = false;
 }
 
 QueryLtsLogParams::~QueryLtsLogParams() = default;
@@ -82,6 +86,12 @@ web::json::value QueryLtsLogParams::toJson() const
     }
     if(isIterativeIsSet_) {
         val[utility::conversions::to_string_t("is_iterative")] = ModelBase::toJson(isIterative_);
+    }
+    if(queryIsSet_) {
+        val[utility::conversions::to_string_t("query")] = ModelBase::toJson(query_);
+    }
+    if(isAnalysisQueryIsSet_) {
+        val[utility::conversions::to_string_t("is_analysis_query")] = ModelBase::toJson(isAnalysisQuery_);
     }
 
     return val;
@@ -196,6 +206,24 @@ bool QueryLtsLogParams::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsIterative(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("query"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("query"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setQuery(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_analysis_query"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_analysis_query"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsAnalysisQuery(refVal);
         }
     }
     return ok;
@@ -452,6 +480,48 @@ bool QueryLtsLogParams::isIterativeIsSet() const
 void QueryLtsLogParams::unsetisIterative()
 {
     isIterativeIsSet_ = false;
+}
+
+std::string QueryLtsLogParams::getQuery() const
+{
+    return query_;
+}
+
+void QueryLtsLogParams::setQuery(const std::string& value)
+{
+    query_ = value;
+    queryIsSet_ = true;
+}
+
+bool QueryLtsLogParams::queryIsSet() const
+{
+    return queryIsSet_;
+}
+
+void QueryLtsLogParams::unsetquery()
+{
+    queryIsSet_ = false;
+}
+
+bool QueryLtsLogParams::isIsAnalysisQuery() const
+{
+    return isAnalysisQuery_;
+}
+
+void QueryLtsLogParams::setIsAnalysisQuery(bool value)
+{
+    isAnalysisQuery_ = value;
+    isAnalysisQueryIsSet_ = true;
+}
+
+bool QueryLtsLogParams::isAnalysisQueryIsSet() const
+{
+    return isAnalysisQueryIsSet_;
+}
+
+void QueryLtsLogParams::unsetisAnalysisQuery()
+{
+    isAnalysisQueryIsSet_ = false;
 }
 
 }

@@ -60,7 +60,7 @@ public:
     void setContent(const Object& value);
 
     /// <summary>
-    /// 对应票证的类别。         
+    /// 对应票证的类别。 
     /// </summary>
 
     std::string getType() const;

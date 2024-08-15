@@ -318,7 +318,7 @@ public:
     void setVirtualEnvType(const std::string& value);
 
     /// <summary>
-    /// 是否被其他租户可见，取值为public或private
+    /// 是否被其他租户可见，取值为public、private或shared
     /// </summary>
 
     std::string getVisibility() const;

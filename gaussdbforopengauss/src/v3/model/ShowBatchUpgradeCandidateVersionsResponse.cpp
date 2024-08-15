@@ -17,6 +17,7 @@ ShowBatchUpgradeCandidateVersionsResponse::ShowBatchUpgradeCandidateVersionsResp
     targetVersionIsSet_ = false;
     upgradeCandidateVersionsIsSet_ = false;
     hotfixUpgradeInfosIsSet_ = false;
+    hotfixRollbackInfosIsSet_ = false;
 }
 
 ShowBatchUpgradeCandidateVersionsResponse::~ShowBatchUpgradeCandidateVersionsResponse() = default;
@@ -40,6 +41,9 @@ web::json::value ShowBatchUpgradeCandidateVersionsResponse::toJson() const
     }
     if(hotfixUpgradeInfosIsSet_) {
         val[utility::conversions::to_string_t("hotfix_upgrade_infos")] = ModelBase::toJson(hotfixUpgradeInfos_);
+    }
+    if(hotfixRollbackInfosIsSet_) {
+        val[utility::conversions::to_string_t("hotfix_rollback_infos")] = ModelBase::toJson(hotfixRollbackInfos_);
     }
 
     return val;
@@ -82,6 +86,15 @@ bool ShowBatchUpgradeCandidateVersionsResponse::fromJson(const web::json::value&
             std::vector<HotfixInfo> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setHotfixUpgradeInfos(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("hotfix_rollback_infos"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("hotfix_rollback_infos"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<HotfixInfo> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHotfixRollbackInfos(refVal);
         }
     }
     return ok;
@@ -170,6 +183,27 @@ bool ShowBatchUpgradeCandidateVersionsResponse::hotfixUpgradeInfosIsSet() const
 void ShowBatchUpgradeCandidateVersionsResponse::unsethotfixUpgradeInfos()
 {
     hotfixUpgradeInfosIsSet_ = false;
+}
+
+std::vector<HotfixInfo>& ShowBatchUpgradeCandidateVersionsResponse::getHotfixRollbackInfos()
+{
+    return hotfixRollbackInfos_;
+}
+
+void ShowBatchUpgradeCandidateVersionsResponse::setHotfixRollbackInfos(const std::vector<HotfixInfo>& value)
+{
+    hotfixRollbackInfos_ = value;
+    hotfixRollbackInfosIsSet_ = true;
+}
+
+bool ShowBatchUpgradeCandidateVersionsResponse::hotfixRollbackInfosIsSet() const
+{
+    return hotfixRollbackInfosIsSet_;
+}
+
+void ShowBatchUpgradeCandidateVersionsResponse::unsethotfixRollbackInfos()
+{
+    hotfixRollbackInfosIsSet_ = false;
 }
 
 }

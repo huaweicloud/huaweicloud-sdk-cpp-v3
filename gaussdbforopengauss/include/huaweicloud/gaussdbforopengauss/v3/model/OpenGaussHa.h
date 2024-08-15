@@ -65,6 +65,15 @@ public:
     void unsetreplicationMode();
     void setReplicationMode(const std::string& value);
 
+    /// <summary>
+    /// 指定创建实例的产品类型，创建企业版实例时传空值或者enterprise，创建基础版实例时需要指定instance_mode的值为basic，创建生态版实例时需要指定instance_mode的值为ecology。
+    /// </summary>
+
+    std::string getInstanceMode() const;
+    bool instanceModeIsSet() const;
+    void unsetinstanceMode();
+    void setInstanceMode(const std::string& value);
+
 
 protected:
     std::string mode_;
@@ -73,6 +82,8 @@ protected:
     bool consistencyIsSet_;
     std::string replicationMode_;
     bool replicationModeIsSet_;
+    std::string instanceMode_;
+    bool instanceModeIsSet_;
 
 };
 

@@ -22,7 +22,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 升级类型信息
+/// 升级类型信息。
 /// </summary>
 class HUAWEICLOUD_GAUSSDBFOROPENGAUSS_V3_EXPORT  UpgradeTypeInfo
     : public ModelBase
@@ -41,7 +41,7 @@ public:
     /// UpgradeTypeInfo members
 
     /// <summary>
-    /// 升级类型,grey&#x3D;灰度升级,inplace&#x3D;就地升级,hotfix&#x3D;热补丁升级
+    /// 升级类型,grey&#x3D;灰度升级,inplace&#x3D;就地升级,hotfix&#x3D;热补丁升级。
     /// </summary>
 
     std::string getUpgradeType() const;
@@ -50,7 +50,7 @@ public:
     void setUpgradeType(const std::string& value);
 
     /// <summary>
-    /// 可用，不可用
+    /// 可用，不可用。
     /// </summary>
 
     bool isEnable() const;
@@ -59,7 +59,7 @@ public:
     void setEnable(bool value);
 
     /// <summary>
-    /// 升级操作列表
+    /// 升级操作列表。
     /// </summary>
 
     std::vector<UpgradeActionInfo>& getUpgradeActionList();

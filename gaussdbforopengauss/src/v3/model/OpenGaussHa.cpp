@@ -18,6 +18,8 @@ OpenGaussHa::OpenGaussHa()
     consistencyIsSet_ = false;
     replicationMode_ = "";
     replicationModeIsSet_ = false;
+    instanceMode_ = "";
+    instanceModeIsSet_ = false;
 }
 
 OpenGaussHa::~OpenGaussHa() = default;
@@ -38,6 +40,9 @@ web::json::value OpenGaussHa::toJson() const
     }
     if(replicationModeIsSet_) {
         val[utility::conversions::to_string_t("replication_mode")] = ModelBase::toJson(replicationMode_);
+    }
+    if(instanceModeIsSet_) {
+        val[utility::conversions::to_string_t("instance_mode")] = ModelBase::toJson(instanceMode_);
     }
 
     return val;
@@ -71,6 +76,15 @@ bool OpenGaussHa::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setReplicationMode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("instance_mode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("instance_mode"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setInstanceMode(refVal);
         }
     }
     return ok;
@@ -138,6 +152,27 @@ bool OpenGaussHa::replicationModeIsSet() const
 void OpenGaussHa::unsetreplicationMode()
 {
     replicationModeIsSet_ = false;
+}
+
+std::string OpenGaussHa::getInstanceMode() const
+{
+    return instanceMode_;
+}
+
+void OpenGaussHa::setInstanceMode(const std::string& value)
+{
+    instanceMode_ = value;
+    instanceModeIsSet_ = true;
+}
+
+bool OpenGaussHa::instanceModeIsSet() const
+{
+    return instanceModeIsSet_;
+}
+
+void OpenGaussHa::unsetinstanceMode()
+{
+    instanceModeIsSet_ = false;
 }
 
 }

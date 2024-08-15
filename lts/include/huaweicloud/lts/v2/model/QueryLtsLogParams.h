@@ -148,6 +148,24 @@ public:
     void unsetisIterative();
     void setIsIterative(bool value);
 
+    /// <summary>
+    /// 使用带管道符的sql分析语句进行查询，需要query参数is_analysis_query为true时生效。
+    /// </summary>
+
+    std::string getQuery() const;
+    bool queryIsSet() const;
+    void unsetquery();
+    void setQuery(const std::string& value);
+
+    /// <summary>
+    /// 是否为带管道符的sql分析语句。当该参数为true时，将依照body体中的query参数内容进行查询，且body体中除start_time与end_time以外的参数失效，分页、排序、查询结果条数等功能请依照sql语法规则实现。查询结果的响应体不同于未启用时的查询方式，将以默认列存的形式返回查询结果。当前仅对内测用户开放。响应示例：{\&quot;analysisLogs\&quot;:[{\&quot;field1\&quot;:\&quot;1\&quot;,\&quot;field2\&quot;:\&quot;2\&quot;,\&quot;field3\&quot;:\&quot;3\&quot;},{\&quot;field1\&quot;:\&quot;1\&quot;,\&quot;field2\&quot;:\&quot;2\&quot;,\&quot;field3\&quot;:\&quot;3\&quot;},{\&quot;field1\&quot;:\&quot;1\&quot;,\&quot;field2\&quot;:\&quot;2\&quot;,\&quot;field3\&quot;:\&quot;3\&quot;}]}
+    /// </summary>
+
+    bool isIsAnalysisQuery() const;
+    bool isAnalysisQueryIsSet() const;
+    void unsetisAnalysisQuery();
+    void setIsAnalysisQuery(bool value);
+
 
 protected:
     std::string startTime_;
@@ -174,6 +192,10 @@ protected:
     bool highlightIsSet_;
     bool isIterative_;
     bool isIterativeIsSet_;
+    std::string query_;
+    bool queryIsSet_;
+    bool isAnalysisQuery_;
+    bool isAnalysisQueryIsSet_;
 
 };
 

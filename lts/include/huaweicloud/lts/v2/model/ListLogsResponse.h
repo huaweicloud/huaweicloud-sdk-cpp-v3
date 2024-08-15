@@ -9,6 +9,8 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <string>
+#include <map>
 #include <vector>
 #include <huaweicloud/lts/v2/model/LogContents.h>
 
@@ -66,6 +68,15 @@ public:
     void unsetisQueryComplete();
     void setIsQueryComplete(bool value);
 
+    /// <summary>
+    /// 分析日志返回响应体
+    /// </summary>
+
+    std::vector<std::map<std::string, std::string>>& getAnalysisLogs();
+    bool analysisLogsIsSet() const;
+    void unsetanalysisLogs();
+    void setAnalysisLogs(const std::vector<std::map<std::string, std::string>>& value);
+
 
 protected:
     int32_t count_;
@@ -74,6 +85,8 @@ protected:
     bool logsIsSet_;
     bool isQueryComplete_;
     bool isQueryCompleteIsSet_;
+    std::vector<std::map<std::string, std::string>> analysisLogs_;
+    bool analysisLogsIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

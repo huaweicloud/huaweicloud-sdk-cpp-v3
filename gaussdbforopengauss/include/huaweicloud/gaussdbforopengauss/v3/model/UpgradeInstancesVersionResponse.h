@@ -49,7 +49,7 @@ public:
     void setJobIds(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 下发成功的实例数量
+    /// 下发成功的实例数量。
     /// </summary>
 
     int32_t getSucceededNum() const;
@@ -58,7 +58,7 @@ public:
     void setSucceededNum(int32_t value);
 
     /// <summary>
-    /// 下发失败的实例数量
+    /// 下发失败的实例数量。
     /// </summary>
 
     int32_t getFailedNum() const;
@@ -67,7 +67,7 @@ public:
     void setFailedNum(int32_t value);
 
     /// <summary>
-    /// 下发失败的实例ID列表
+    /// 下发失败的实例ID列表。
     /// </summary>
 
     std::vector<std::string>& getFailedInstanceIds();
@@ -76,7 +76,7 @@ public:
     void setFailedInstanceIds(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 下发失败错误信息列表
+    /// 下发失败错误信息列表。
     /// </summary>
 
     std::vector<std::string>& getErrorMessages();

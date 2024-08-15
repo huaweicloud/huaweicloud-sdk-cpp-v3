@@ -42,7 +42,7 @@ public:
     /// ShowBatchUpgradeCandidateVersionsResponse members
 
     /// <summary>
-    /// 升级类型信息列表
+    /// 升级类型信息列表。
     /// </summary>
 
     std::vector<UpgradeTypeInfo>& getUpgradeTypeList();
@@ -51,7 +51,7 @@ public:
     void setUpgradeTypeList(const std::vector<UpgradeTypeInfo>& value);
 
     /// <summary>
-    /// 升级目标版本，没有在滚动升级中返回null
+    /// 升级目标版本，没有在滚动升级中返回null。
     /// </summary>
 
     std::string getTargetVersion() const;
@@ -60,7 +60,7 @@ public:
     void setTargetVersion(const std::string& value);
 
     /// <summary>
-    /// 可以升级的版本，包括大小版本
+    /// 可以升级的版本，包括大小版本。
     /// </summary>
 
     std::vector<std::string>& getUpgradeCandidateVersions();
@@ -69,13 +69,22 @@ public:
     void setUpgradeCandidateVersions(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 可以升级的热补丁信息
+    /// 可以升级的热补丁信息。
     /// </summary>
 
     std::vector<HotfixInfo>& getHotfixUpgradeInfos();
     bool hotfixUpgradeInfosIsSet() const;
     void unsethotfixUpgradeInfos();
     void setHotfixUpgradeInfos(const std::vector<HotfixInfo>& value);
+
+    /// <summary>
+    /// 可以回滚的热补丁信息。
+    /// </summary>
+
+    std::vector<HotfixInfo>& getHotfixRollbackInfos();
+    bool hotfixRollbackInfosIsSet() const;
+    void unsethotfixRollbackInfos();
+    void setHotfixRollbackInfos(const std::vector<HotfixInfo>& value);
 
 
 protected:
@@ -87,6 +96,8 @@ protected:
     bool upgradeCandidateVersionsIsSet_;
     std::vector<HotfixInfo> hotfixUpgradeInfos_;
     bool hotfixUpgradeInfosIsSet_;
+    std::vector<HotfixInfo> hotfixRollbackInfos_;
+    bool hotfixRollbackInfosIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

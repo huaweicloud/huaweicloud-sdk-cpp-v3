@@ -40,7 +40,7 @@ public:
     /// UpgradeInstancesRequestBody members
 
     /// <summary>
-    /// 批量实例ID
+    /// 批量实例ID。
     /// </summary>
 
     std::vector<std::string>& getInstanceIds();

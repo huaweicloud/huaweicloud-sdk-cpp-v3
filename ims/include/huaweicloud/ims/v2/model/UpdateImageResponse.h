@@ -427,7 +427,7 @@ public:
     void setVirtualSize(int32_t value);
 
     /// <summary>
-    /// 是否被其他租户可见，取值为private或public
+    /// 是否被其他租户可见，取值为private、public或shared
     /// </summary>
 
     std::string getVisibility() const;

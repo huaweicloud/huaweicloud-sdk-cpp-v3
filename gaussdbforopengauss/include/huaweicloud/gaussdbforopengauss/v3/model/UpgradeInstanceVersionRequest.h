@@ -40,7 +40,7 @@ public:
     /// UpgradeInstanceVersionRequest members
 
     /// <summary>
-    /// 语言
+    /// 语言。
     /// </summary>
 
     std::string getXLanguage() const;

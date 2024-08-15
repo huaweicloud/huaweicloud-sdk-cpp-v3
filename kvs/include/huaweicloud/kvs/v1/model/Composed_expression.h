@@ -13,7 +13,6 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
-#include <huaweicloud/kvs/v1/model/Expression.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -27,6 +26,9 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// 
 /// </summary>
+
+class Expression;
+
 class HUAWEICLOUD_KVS_V1_EXPORT  Composed_expression
     : public ModelBase
 {
@@ -44,7 +46,7 @@ public:
     /// Composed_expression members
 
     /// <summary>
-    /// 逻辑关系，取值如\&quot;$and\&quot;, \&quot;$or\&quot;, \&quot;$nor\&quot;。
+    /// 逻辑关系，取值如"$and", "$or", "$nor"。
     /// </summary>
 
     std::string getLogic() const;
@@ -56,16 +58,20 @@ public:
     /// 多个相同优先级且相同逻辑的单字段或多字段条件。
     /// </summary>
 
-    std::vector<Expression>& getExpressions();
+    std::vector<std::shared_ptr<Expression>>& getExpressions();
     bool expressionsIsSet() const;
     void unsetexpressions();
-    void setExpressions(const std::vector<Expression>& value);
+    void setExpressions(const std::vector<std::shared_ptr<Expression>>& value);
 
+    static bool bson_append(Builder &builder, const std::shared_ptr<Expression> value);
+    static bool bson_append(Builder &builder, const std::string &key, const std::vector<std::shared_ptr<Expression>>& value);
+    static bool bson_get(const Viewer::Iterator &it, std::shared_ptr<Expression> value);
+    static bool bson_get(const Viewer::Iterator &it, std::vector<std::shared_ptr<Expression>>& value);
 
 protected:
     std::string logic_;
     bool logicIsSet_;
-    std::vector<Expression> expressions_;
+    std::vector<std::shared_ptr<Expression>> expressions_;
     bool expressionsIsSet_;
 
 };

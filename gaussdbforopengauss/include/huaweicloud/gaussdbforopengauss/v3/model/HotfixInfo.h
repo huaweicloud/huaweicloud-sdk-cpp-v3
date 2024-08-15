@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 热补丁信息
+/// 热补丁信息。
 /// </summary>
 class HUAWEICLOUD_GAUSSDBFOROPENGAUSS_V3_EXPORT  HotfixInfo
     : public ModelBase
@@ -39,7 +39,7 @@ public:
     /// HotfixInfo members
 
     /// <summary>
-    /// 热补丁版本
+    /// 热补丁版本。
     /// </summary>
 
     std::string getVersion() const;
@@ -48,7 +48,7 @@ public:
     void setVersion(const std::string& value);
 
     /// <summary>
-    /// 通用非通用信息,common&#x3D;通用补丁,certain&#x3D;定制补丁
+    /// 通用非通用信息,common&#x3D;通用补丁,certain&#x3D;定制补丁。
     /// </summary>
 
     std::string getCommonPatch() const;
@@ -57,7 +57,7 @@ public:
     void setCommonPatch(const std::string& value);
 
     /// <summary>
-    /// 是否和备份相关
+    /// 是否和备份相关。
     /// </summary>
 
     bool isBackupSensitive() const;
@@ -66,7 +66,7 @@ public:
     void setBackupSensitive(bool value);
 
     /// <summary>
-    /// 补丁的描述信息
+    /// 补丁的描述信息。
     /// </summary>
 
     std::string getDescripition() const;

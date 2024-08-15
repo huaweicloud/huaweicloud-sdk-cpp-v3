@@ -53,7 +53,7 @@ public:
     void setUpgradeTypeList(const std::vector<UpgradeTypeInfo>& value);
 
     /// <summary>
-    /// 是否可以回滚，true可以回滚，false不可以回滚
+    /// 是否可以回滚，true可以回滚，false不可以回滚。
     /// </summary>
 
     bool isRollbackEnabled() const;
@@ -71,7 +71,7 @@ public:
     void setSourceVersion(const std::string& value);
 
     /// <summary>
-    /// 升级目标版本，没有在滚动升级中返回null
+    /// 升级目标版本，没有在滚动升级中返回null。
     /// </summary>
 
     std::string getTargetVersion() const;
@@ -89,7 +89,7 @@ public:
     void setRollUpgradeProgress(const RollUpgradeProgress& value);
 
     /// <summary>
-    /// 可以升级的版本，包括大小版本，滚动升级中返回空数组
+    /// 可以升级的版本，包括大小版本，滚动升级中返回空数组。
     /// </summary>
 
     std::vector<std::string>& getUpgradeCandidateVersions();
@@ -98,7 +98,7 @@ public:
     void setUpgradeCandidateVersions(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 可以升级的热补丁版本，滚动升级中返回空数组
+    /// 可以升级的热补丁版本，滚动升级中返回空数组。
     /// </summary>
 
     std::vector<std::string>& getHotfixUpgradeCandidateVersions();
@@ -107,7 +107,7 @@ public:
     void setHotfixUpgradeCandidateVersions(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 可以回滚的热补丁版本，滚动升级中返回空数组
+    /// 可以回滚的热补丁版本，滚动升级中返回空数组。
     /// </summary>
 
     std::vector<std::string>& getHotfixRollbackCandidateVersions();

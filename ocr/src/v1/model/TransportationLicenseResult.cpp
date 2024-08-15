@@ -36,6 +36,12 @@ TransportationLicenseResult::TransportationLicenseResult()
     businessCertificateIsSet_ = false;
     businessScope_ = "";
     businessScopeIsSet_ = false;
+    expiryDate_ = "";
+    expiryDateIsSet_ = false;
+    reviewExpiryDate_ = "";
+    reviewExpiryDateIsSet_ = false;
+    assessedTechnicalLevel_ = "";
+    assessedTechnicalLevelIsSet_ = false;
     confidenceIsSet_ = false;
 }
 
@@ -84,6 +90,15 @@ web::json::value TransportationLicenseResult::toJson() const
     }
     if(businessScopeIsSet_) {
         val[utility::conversions::to_string_t("business_scope")] = ModelBase::toJson(businessScope_);
+    }
+    if(expiryDateIsSet_) {
+        val[utility::conversions::to_string_t("expiry_date")] = ModelBase::toJson(expiryDate_);
+    }
+    if(reviewExpiryDateIsSet_) {
+        val[utility::conversions::to_string_t("review_expiry_date")] = ModelBase::toJson(reviewExpiryDate_);
+    }
+    if(assessedTechnicalLevelIsSet_) {
+        val[utility::conversions::to_string_t("assessed_technical_level")] = ModelBase::toJson(assessedTechnicalLevel_);
     }
     if(confidenceIsSet_) {
         val[utility::conversions::to_string_t("confidence")] = ModelBase::toJson(confidence_);
@@ -201,6 +216,33 @@ bool TransportationLicenseResult::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBusinessScope(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("expiry_date"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("expiry_date"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setExpiryDate(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("review_expiry_date"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("review_expiry_date"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setReviewExpiryDate(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("assessed_technical_level"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("assessed_technical_level"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAssessedTechnicalLevel(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("confidence"))) {
@@ -466,6 +508,69 @@ bool TransportationLicenseResult::businessScopeIsSet() const
 void TransportationLicenseResult::unsetbusinessScope()
 {
     businessScopeIsSet_ = false;
+}
+
+std::string TransportationLicenseResult::getExpiryDate() const
+{
+    return expiryDate_;
+}
+
+void TransportationLicenseResult::setExpiryDate(const std::string& value)
+{
+    expiryDate_ = value;
+    expiryDateIsSet_ = true;
+}
+
+bool TransportationLicenseResult::expiryDateIsSet() const
+{
+    return expiryDateIsSet_;
+}
+
+void TransportationLicenseResult::unsetexpiryDate()
+{
+    expiryDateIsSet_ = false;
+}
+
+std::string TransportationLicenseResult::getReviewExpiryDate() const
+{
+    return reviewExpiryDate_;
+}
+
+void TransportationLicenseResult::setReviewExpiryDate(const std::string& value)
+{
+    reviewExpiryDate_ = value;
+    reviewExpiryDateIsSet_ = true;
+}
+
+bool TransportationLicenseResult::reviewExpiryDateIsSet() const
+{
+    return reviewExpiryDateIsSet_;
+}
+
+void TransportationLicenseResult::unsetreviewExpiryDate()
+{
+    reviewExpiryDateIsSet_ = false;
+}
+
+std::string TransportationLicenseResult::getAssessedTechnicalLevel() const
+{
+    return assessedTechnicalLevel_;
+}
+
+void TransportationLicenseResult::setAssessedTechnicalLevel(const std::string& value)
+{
+    assessedTechnicalLevel_ = value;
+    assessedTechnicalLevelIsSet_ = true;
+}
+
+bool TransportationLicenseResult::assessedTechnicalLevelIsSet() const
+{
+    return assessedTechnicalLevelIsSet_;
+}
+
+void TransportationLicenseResult::unsetassessedTechnicalLevel()
+{
+    assessedTechnicalLevelIsSet_ = false;
 }
 
 Object TransportationLicenseResult::getConfidence() const

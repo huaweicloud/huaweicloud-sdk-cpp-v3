@@ -1,3 +1,80 @@
+# 3.1.98 2024-08-15
+
+### HuaweiCloud SDK EIP
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **UpdatePrePaidBandwidth**
+    - 请求参数变更
+      - `+ extendParam.period_type`
+      - `+ extendParam.period_num`
+  - **ListEipBandwidths**
+    - 响应参数变更
+      - `* eip_bandwidths.tenant_id: uuid -> string`
+  - **ListProjectGeipBindings**
+    - 响应参数变更
+      - `* geip_bindings.vnic.vni: int32 -> string`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateInstance**
+    - 请求参数变更
+      - `+ ha.instance_mode`
+  - **ShowBatchUpgradeCandidateVersions**
+    - 响应参数变更
+      - `+ hotfix_rollback_infos`
+
+### HuaweiCloud SDK IMS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListImages**
+    - 请求参数变更
+      - `+ visibility: enum value [shared]`
+    - 响应参数变更
+      - `+ images.visibility: enum value [shared]`
+  - **UpdateImage**
+    - 响应参数变更
+      - `+ visibility: enum value [shared]`
+
+### HuaweiCloud SDK LTS
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListLogs**
+    - 请求参数变更
+      - `+ query`
+      - `+ is_analysis_query`
+    - 响应参数变更
+      - `+ analysisLogs`
+
+### HuaweiCloud SDK OCR
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RecognizeTransportationLicense**
+    - 响应参数变更
+      - `+ result.expiry_date`
+      - `+ result.review_expiry_date`
+      - `+ result.assessed_technical_level`
+
 # 3.1.97 2024-08-08
 
 ### HuaweiCloud SDK KVS

@@ -94,7 +94,7 @@ public:
     void setVehicleSize(const std::string& value);
 
     /// <summary>
-    /// 核发机关（非必有，依赖对应运输证板式）。 
+    /// 核发机关。 
     /// </summary>
 
     std::string getIssuingAuthority() const;
@@ -103,7 +103,7 @@ public:
     void setIssuingAuthority(const std::string& value);
 
     /// <summary>
-    /// 发证日期（非必有，依赖对应运输证板式）。 
+    /// 发证日期。 
     /// </summary>
 
     std::string getIssueDate() const;
@@ -112,7 +112,7 @@ public:
     void setIssueDate(const std::string& value);
 
     /// <summary>
-    /// 业户地址（非必有，依赖对应运输证板式）。 
+    /// 业户地址。 
     /// </summary>
 
     std::string getOwnerAddress() const;
@@ -121,7 +121,7 @@ public:
     void setOwnerAddress(const std::string& value);
 
     /// <summary>
-    /// 经济类型（非必有，依赖对应运输证板式）。 
+    /// 经济类型。 
     /// </summary>
 
     std::string getEconomicType() const;
@@ -130,7 +130,7 @@ public:
     void setEconomicType(const std::string& value);
 
     /// <summary>
-    /// 经营许可证号（非必有，依赖对应运输证板式）。 
+    /// 经营许可证号。 
     /// </summary>
 
     std::string getBusinessCertificate() const;
@@ -139,13 +139,40 @@ public:
     void setBusinessCertificate(const std::string& value);
 
     /// <summary>
-    /// 经营范围（非必有，依赖对应运输证板式）。 
+    /// 经营范围。 
     /// </summary>
 
     std::string getBusinessScope() const;
     bool businessScopeIsSet() const;
     void unsetbusinessScope();
     void setBusinessScope(const std::string& value);
+
+    /// <summary>
+    /// 有效期。 
+    /// </summary>
+
+    std::string getExpiryDate() const;
+    bool expiryDateIsSet() const;
+    void unsetexpiryDate();
+    void setExpiryDate(const std::string& value);
+
+    /// <summary>
+    /// 审验有效期。 
+    /// </summary>
+
+    std::string getReviewExpiryDate() const;
+    bool reviewExpiryDateIsSet() const;
+    void unsetreviewExpiryDate();
+    void setReviewExpiryDate(const std::string& value);
+
+    /// <summary>
+    /// 技术等级评定。 
+    /// </summary>
+
+    std::string getAssessedTechnicalLevel() const;
+    bool assessedTechnicalLevelIsSet() const;
+    void unsetassessedTechnicalLevel();
+    void setAssessedTechnicalLevel(const std::string& value);
 
     /// <summary>
     /// 相关字段的置信度信息，置信度越大，表示本次识别的对应字段的可靠性越高，在统计意义上，置信度越大，准确率越高。 置信度由算法给出，不直接等价于对应字段的准确率。 
@@ -182,6 +209,12 @@ protected:
     bool businessCertificateIsSet_;
     std::string businessScope_;
     bool businessScopeIsSet_;
+    std::string expiryDate_;
+    bool expiryDateIsSet_;
+    std::string reviewExpiryDate_;
+    bool reviewExpiryDateIsSet_;
+    std::string assessedTechnicalLevel_;
+    bool assessedTechnicalLevelIsSet_;
     Object confidence_;
     bool confidenceIsSet_;
 

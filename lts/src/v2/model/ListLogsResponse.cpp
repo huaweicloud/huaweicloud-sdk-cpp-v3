@@ -17,6 +17,7 @@ ListLogsResponse::ListLogsResponse()
     logsIsSet_ = false;
     isQueryComplete_ = false;
     isQueryCompleteIsSet_ = false;
+    analysisLogsIsSet_ = false;
 }
 
 ListLogsResponse::~ListLogsResponse() = default;
@@ -37,6 +38,9 @@ web::json::value ListLogsResponse::toJson() const
     }
     if(isQueryCompleteIsSet_) {
         val[utility::conversions::to_string_t("isQueryComplete")] = ModelBase::toJson(isQueryComplete_);
+    }
+    if(analysisLogsIsSet_) {
+        val[utility::conversions::to_string_t("analysisLogs")] = ModelBase::toJson(analysisLogs_);
     }
 
     return val;
@@ -70,6 +74,15 @@ bool ListLogsResponse::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsQueryComplete(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("analysisLogs"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("analysisLogs"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::map<std::string, std::string>> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAnalysisLogs(refVal);
         }
     }
     return ok;
@@ -137,6 +150,27 @@ bool ListLogsResponse::isQueryCompleteIsSet() const
 void ListLogsResponse::unsetisQueryComplete()
 {
     isQueryCompleteIsSet_ = false;
+}
+
+std::vector<std::map<std::string, std::string>>& ListLogsResponse::getAnalysisLogs()
+{
+    return analysisLogs_;
+}
+
+void ListLogsResponse::setAnalysisLogs(const std::vector<std::map<std::string, std::string>>& value)
+{
+    analysisLogs_ = value;
+    analysisLogsIsSet_ = true;
+}
+
+bool ListLogsResponse::analysisLogsIsSet() const
+{
+    return analysisLogsIsSet_;
+}
+
+void ListLogsResponse::unsetanalysisLogs()
+{
+    analysisLogsIsSet_ = false;
 }
 
 }

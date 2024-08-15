@@ -147,7 +147,7 @@ public:
     void setVolume(const Volume& value);
 
     /// <summary>
-    /// 区域ID。创建主实例时必选，其它场景不可选。 取值参见[地区和终端节点](https://developer.huaweicloud.com/endpoint)。 SQL Server数据库和PostgreSQL数据库备份恢复到新实例时为必填项。
+    /// 区域ID。创建主实例时必选，其它场景不可选。 取值参见OpenAPI查询数据库规格(https://console.huaweicloud.com/apiexplorer/#/openapi/RDS/doc?api&#x3D;ListFlavors)响应体的az_desc字段。 SQL Server数据库和PostgreSQL数据库备份恢复到新实例时为必填项。
     /// </summary>
 
     std::string getRegion() const;
@@ -156,7 +156,7 @@ public:
     void setRegion(const std::string& value);
 
     /// <summary>
-    /// 可用区ID。对于数据库实例类型不是单机的实例，需要分别为实例所有节点指定可用区，并用逗号隔开。 取值参见[地区和终端节点](https://developer.huaweicloud.com/endpoint)。
+    /// 可用区ID。对于数据库实例类型不是单机的实例，需要分别为实例所有节点指定可用区，并用逗号隔开。 取值参见OpenAPI查询数据库规格(https://console.huaweicloud.com/apiexplorer/#/openapi/RDS/doc?api&#x3D;ListFlavors)响应体的az_desc字段。
     /// </summary>
 
     std::string getAvailabilityZone() const;

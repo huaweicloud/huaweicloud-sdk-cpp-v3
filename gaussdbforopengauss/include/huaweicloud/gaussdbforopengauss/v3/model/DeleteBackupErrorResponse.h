@@ -39,7 +39,7 @@ public:
     /// DeleteBackupErrorResponse members
 
     /// <summary>
-    /// 错误码
+    /// 错误码。
     /// </summary>
 
     std::string getErrorCode() const;

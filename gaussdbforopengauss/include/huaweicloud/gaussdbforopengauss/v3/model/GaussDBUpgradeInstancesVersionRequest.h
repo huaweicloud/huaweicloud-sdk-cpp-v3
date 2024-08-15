@@ -40,7 +40,7 @@ public:
     /// GaussDBUpgradeInstancesVersionRequest members
 
     /// <summary>
-    /// 批量实例ID
+    /// 批量实例ID。
     /// </summary>
 
     std::vector<std::string>& getInstanceIds();
@@ -49,7 +49,7 @@ public:
     void setInstanceIds(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 实例升级类型，包括就地升级，灰度升级、热补丁升级三种
+    /// 实例升级类型，包括就地升级，灰度升级、热补丁升级三种。
     /// </summary>
 
     std::string getUpgradeType() const;

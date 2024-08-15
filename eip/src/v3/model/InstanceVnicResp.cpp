@@ -26,7 +26,7 @@ InstanceVnicResp::InstanceVnicResp()
     macIsSet_ = false;
     vtep_ = "";
     vtepIsSet_ = false;
-    vni_ = 0;
+    vni_ = "";
     vniIsSet_ = false;
     instanceId_ = "";
     instanceIdIsSet_ = false;
@@ -153,7 +153,7 @@ bool InstanceVnicResp::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("vni"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setVni(refVal);
         }
@@ -336,12 +336,12 @@ void InstanceVnicResp::unsetvtep()
     vtepIsSet_ = false;
 }
 
-int32_t InstanceVnicResp::getVni() const
+std::string InstanceVnicResp::getVni() const
 {
     return vni_;
 }
 
-void InstanceVnicResp::setVni(int32_t value)
+void InstanceVnicResp::setVni(const std::string& value)
 {
     vni_ = value;
     vniIsSet_ = true;

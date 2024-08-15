@@ -22,7 +22,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 滚动升级信息
+/// 滚动升级信息。
 /// </summary>
 class HUAWEICLOUD_GAUSSDBFOROPENGAUSS_V3_EXPORT  RollUpgradeProgress
     : public ModelBase
@@ -41,7 +41,7 @@ public:
     /// RollUpgradeProgress members
 
     /// <summary>
-    /// 已升级分片数，非独立部署返回null
+    /// 已升级分片数，非独立部署返回null。
     /// </summary>
 
     std::string getUpgradedDnGroupNumbers() const;
@@ -50,7 +50,7 @@ public:
     void setUpgradedDnGroupNumbers(const std::string& value);
 
     /// <summary>
-    /// 总分片数，非独立部署返回null
+    /// 总分片数，非独立部署返回null。
     /// </summary>
 
     std::string getTotalDnGroupNumbers() const;
@@ -59,7 +59,7 @@ public:
     void setTotalDnGroupNumbers(const std::string& value);
 
     /// <summary>
-    /// 未完成升级的az，以“,”隔开，独立部署返回null
+    /// 未完成升级的az，以“,”隔开，独立部署返回null。
     /// </summary>
 
     std::string getNotFullyUpgradedAz() const;
@@ -68,7 +68,7 @@ public:
     void setNotFullyUpgradedAz(const std::string& value);
 
     /// <summary>
-    /// 已升级az，以“,”隔开，独立部署返回null
+    /// 已升级az，以“,”隔开，独立部署返回null。
     /// </summary>
 
     std::string getAlreadyUpgradedAz() const;
@@ -77,7 +77,7 @@ public:
     void setAlreadyUpgradedAz(const std::string& value);
 
     /// <summary>
-    /// az描述键值对Map&lt;String,String&gt;
+    /// az描述键值对Map&lt;String,String&gt;。
     /// </summary>
 
     std::map<std::string, std::string>& getAzDescriptionMap();

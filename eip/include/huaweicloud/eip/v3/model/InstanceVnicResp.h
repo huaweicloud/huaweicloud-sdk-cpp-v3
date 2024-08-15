@@ -105,10 +105,10 @@ public:
     /// port的vni
     /// </summary>
 
-    int32_t getVni() const;
+    std::string getVni() const;
     bool vniIsSet() const;
     void unsetvni();
-    void setVni(int32_t value);
+    void setVni(const std::string& value);
 
     /// <summary>
     /// port的实例id
@@ -153,7 +153,7 @@ protected:
     bool macIsSet_;
     std::string vtep_;
     bool vtepIsSet_;
-    int32_t vni_;
+    std::string vni_;
     bool vniIsSet_;
     std::string instanceId_;
     bool instanceIdIsSet_;

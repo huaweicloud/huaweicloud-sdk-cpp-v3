@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 升级操作信息
+/// 升级操作信息。
 /// </summary>
 class HUAWEICLOUD_GAUSSDBFOROPENGAUSS_V3_EXPORT  UpgradeActionInfo
     : public ModelBase
@@ -39,7 +39,7 @@ public:
     /// UpgradeActionInfo members
 
     /// <summary>
-    /// 升级操作,upgrade&#x3D;升级,upgradeAutoCommit&#x3D;升级自动提交,commit&#x3D;提交,rollback&#x3D;回滚
+    /// 升级操作,upgrade&#x3D;升级,upgradeAutoCommit&#x3D;升级自动提交,commit&#x3D;提交,rollback&#x3D;回滚。
     /// </summary>
 
     std::string getUpgradeAction() const;
@@ -48,7 +48,7 @@ public:
     void setUpgradeAction(const std::string& value);
 
     /// <summary>
-    /// 可用，不可用
+    /// 可用，不可用。
     /// </summary>
 
     bool isEnable() const;

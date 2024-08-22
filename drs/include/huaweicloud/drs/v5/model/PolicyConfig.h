@@ -119,6 +119,15 @@ public:
     void unsetdmlTypes();
     void setDmlTypes(const std::string& value);
 
+    /// <summary>
+    /// 索引与表结构是否同时建立。
+    /// </summary>
+
+    bool isIsCreateTableWithIndex() const;
+    bool isCreateTableWithIndexIsSet() const;
+    void unsetisCreateTableWithIndex();
+    void setIsCreateTableWithIndex(bool value);
+
 
 protected:
     std::string filterDdlPolicy_;
@@ -139,6 +148,8 @@ protected:
     bool incrementReadModeIsSet_;
     std::string dmlTypes_;
     bool dmlTypesIsSet_;
+    bool isCreateTableWithIndex_;
+    bool isCreateTableWithIndexIsSet_;
 
 };
 

@@ -18,6 +18,8 @@ DecryptDataRequestBody::DecryptDataRequestBody()
     encryptionAlgorithmIsSet_ = false;
     keyId_ = "";
     keyIdIsSet_ = false;
+    additionalAuthenticatedData_ = "";
+    additionalAuthenticatedDataIsSet_ = false;
     sequence_ = "";
     sequenceIsSet_ = false;
 }
@@ -40,6 +42,9 @@ web::json::value DecryptDataRequestBody::toJson() const
     }
     if(keyIdIsSet_) {
         val[utility::conversions::to_string_t("key_id")] = ModelBase::toJson(keyId_);
+    }
+    if(additionalAuthenticatedDataIsSet_) {
+        val[utility::conversions::to_string_t("additional_authenticated_data")] = ModelBase::toJson(additionalAuthenticatedData_);
     }
     if(sequenceIsSet_) {
         val[utility::conversions::to_string_t("sequence")] = ModelBase::toJson(sequence_);
@@ -76,6 +81,15 @@ bool DecryptDataRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setKeyId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("additional_authenticated_data"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("additional_authenticated_data"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAdditionalAuthenticatedData(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("sequence"))) {
@@ -152,6 +166,27 @@ bool DecryptDataRequestBody::keyIdIsSet() const
 void DecryptDataRequestBody::unsetkeyId()
 {
     keyIdIsSet_ = false;
+}
+
+std::string DecryptDataRequestBody::getAdditionalAuthenticatedData() const
+{
+    return additionalAuthenticatedData_;
+}
+
+void DecryptDataRequestBody::setAdditionalAuthenticatedData(const std::string& value)
+{
+    additionalAuthenticatedData_ = value;
+    additionalAuthenticatedDataIsSet_ = true;
+}
+
+bool DecryptDataRequestBody::additionalAuthenticatedDataIsSet() const
+{
+    return additionalAuthenticatedDataIsSet_;
+}
+
+void DecryptDataRequestBody::unsetadditionalAuthenticatedData()
+{
+    additionalAuthenticatedDataIsSet_ = false;
 }
 
 std::string DecryptDataRequestBody::getSequence() const

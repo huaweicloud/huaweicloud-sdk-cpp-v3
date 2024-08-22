@@ -30,6 +30,8 @@ PolicyConfig::PolicyConfig()
     incrementReadModeIsSet_ = false;
     dmlTypes_ = "";
     dmlTypesIsSet_ = false;
+    isCreateTableWithIndex_ = false;
+    isCreateTableWithIndexIsSet_ = false;
 }
 
 PolicyConfig::~PolicyConfig() = default;
@@ -68,6 +70,9 @@ web::json::value PolicyConfig::toJson() const
     }
     if(dmlTypesIsSet_) {
         val[utility::conversions::to_string_t("dml_types")] = ModelBase::toJson(dmlTypes_);
+    }
+    if(isCreateTableWithIndexIsSet_) {
+        val[utility::conversions::to_string_t("is_create_table_with_index")] = ModelBase::toJson(isCreateTableWithIndex_);
     }
 
     return val;
@@ -155,6 +160,15 @@ bool PolicyConfig::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDmlTypes(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_create_table_with_index"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_create_table_with_index"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsCreateTableWithIndex(refVal);
         }
     }
     return ok;
@@ -348,6 +362,27 @@ bool PolicyConfig::dmlTypesIsSet() const
 void PolicyConfig::unsetdmlTypes()
 {
     dmlTypesIsSet_ = false;
+}
+
+bool PolicyConfig::isIsCreateTableWithIndex() const
+{
+    return isCreateTableWithIndex_;
+}
+
+void PolicyConfig::setIsCreateTableWithIndex(bool value)
+{
+    isCreateTableWithIndex_ = value;
+    isCreateTableWithIndexIsSet_ = true;
+}
+
+bool PolicyConfig::isCreateTableWithIndexIsSet() const
+{
+    return isCreateTableWithIndexIsSet_;
+}
+
+void PolicyConfig::unsetisCreateTableWithIndex()
+{
+    isCreateTableWithIndexIsSet_ = false;
 }
 
 }

@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/drs/v5/model/CreateJobResp.h>
+#include <string>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -39,18 +39,62 @@ public:
     /// CreateJobResponse members
 
     /// <summary>
-    /// 
+    /// 任务ID。
     /// </summary>
 
-    CreateJobResp getJob() const;
-    bool jobIsSet() const;
-    void unsetjob();
-    void setJob(const CreateJobResp& value);
+    std::string getId() const;
+    bool idIsSet() const;
+    void unsetid();
+    void setId(const std::string& value);
+
+    /// <summary>
+    /// 任务名称。
+    /// </summary>
+
+    std::string getName() const;
+    bool nameIsSet() const;
+    void unsetname();
+    void setName(const std::string& value);
+
+    /// <summary>
+    /// 任务状态。
+    /// </summary>
+
+    std::string getStatus() const;
+    bool statusIsSet() const;
+    void unsetstatus();
+    void setStatus(const std::string& value);
+
+    /// <summary>
+    /// 任务创建时间。
+    /// </summary>
+
+    std::string getCreateTime() const;
+    bool createTimeIsSet() const;
+    void unsetcreateTime();
+    void setCreateTime(const std::string& value);
+
+    /// <summary>
+    /// 是否为克隆任务。
+    /// </summary>
+
+    std::string getIsCloneJob() const;
+    bool isCloneJobIsSet() const;
+    void unsetisCloneJob();
+    void setIsCloneJob(const std::string& value);
 
 
 protected:
-    CreateJobResp job_;
-    bool jobIsSet_;
+    std::string id_;
+    bool idIsSet_;
+    std::string name_;
+    bool nameIsSet_;
+    std::string status_;
+    bool statusIsSet_;
+    std::string createTime_;
+    bool createTimeIsSet_;
+    std::string isCloneJob_;
+    bool isCloneJobIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_DRS_V5_MODEL_UploadJdbcDriverRequestBody_H_
-#define HUAWEICLOUD_SDK_DRS_V5_MODEL_UploadJdbcDriverRequestBody_H_
+#ifndef HUAWEICLOUD_SDK_DRS_V5_MODEL_UploadUserJdbcDriverRequestBody_H_
+#define HUAWEICLOUD_SDK_DRS_V5_MODEL_UploadUserJdbcDriverRequestBody_H_
 
 
 #include <huaweicloud/drs/v5/DrsExport.h>
@@ -22,12 +22,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// 
 /// </summary>
-class HUAWEICLOUD_DRS_V5_EXPORT  UploadJdbcDriverRequestBody
+class HUAWEICLOUD_DRS_V5_EXPORT  UploadUserJdbcDriverRequestBody
     : public ModelBase
 {
 public:
-    UploadJdbcDriverRequestBody();
-    virtual ~UploadJdbcDriverRequestBody();
+    UploadUserJdbcDriverRequestBody();
+    virtual ~UploadUserJdbcDriverRequestBody();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -36,10 +36,10 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// UploadJdbcDriverRequestBody members
+    /// UploadUserJdbcDriverRequestBody members
 
     /// <summary>
-    /// 驱动文件，驱动文件名称长度5-64，以jar结尾，文件名相同会替换远程驱动文件
+    /// 驱动文件，驱动文件名称长度5-64，以jar结尾，文件名相同会替换远程驱动文件。
     /// </summary>
 
     HttpContent getFile() const;
@@ -61,4 +61,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_DRS_V5_MODEL_UploadJdbcDriverRequestBody_H_
+#endif // HUAWEICLOUD_SDK_DRS_V5_MODEL_UploadUserJdbcDriverRequestBody_H_

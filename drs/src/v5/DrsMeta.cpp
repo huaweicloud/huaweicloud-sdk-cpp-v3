@@ -263,6 +263,20 @@ HttpRequestDef DrsMeta::genRequestDefForDeleteJob() {
     return reqDefBuilder;
 }
 
+HttpRequestDef DrsMeta::genRequestDefForDeleteUserJdbcDriver() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef DrsMeta::genRequestDefForDownloadBatchCreateTemplate() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
@@ -564,6 +578,25 @@ HttpRequestDef DrsMeta::genRequestDefForListProjectTags() {
 
 HttpRequestDef DrsMeta::genRequestDefForListTags() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef DrsMeta::genRequestDefForListUserJdbcDrivers() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("DriverType")
+                  .withJsonTag("driver_type")
+                  .withLocationType(Query_));
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage
                   .withName("XLanguage")
@@ -1036,6 +1069,20 @@ HttpRequestDef DrsMeta::genRequestDefForSyncJdbcDriver() {
     return reqDefBuilder;
 }
 
+HttpRequestDef DrsMeta::genRequestDefForSyncUserJdbcDriver() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef DrsMeta::genRequestDefForUpdateBatchAsyncJobs() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
@@ -1140,6 +1187,24 @@ HttpRequestDef DrsMeta::genRequestDefForUploadDbObjectTemplate() {
 
 HttpRequestDef DrsMeta::genRequestDefForUploadJdbcDriver() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef formBodyParams;
+    reqDefBuilder.withRequestField(formBodyParams.
+                  withName("").
+                  withName("Body").
+                  withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef DrsMeta::genRequestDefForUploadUserJdbcDriver() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("DriverType")
+                  .withJsonTag("driver_type")
+                  .withLocationType(Query_));
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage
                   .withName("XLanguage")

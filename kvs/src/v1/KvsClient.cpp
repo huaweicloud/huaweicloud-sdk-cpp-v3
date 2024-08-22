@@ -30,7 +30,7 @@ KvsClient::~KvsClient()
 
 ClientBuilder<KvsClient> KvsClient::newBuilder()
 {
-    return ClientBuilder<KvsClient>("BasicCredentials");
+    return ClientBuilder<KvsClient>("BasicCredentials,KvsCredentials");
 }
 std::shared_ptr<CreateTableResponse> KvsClient::createTable(CreateTableRequest &request)
 {

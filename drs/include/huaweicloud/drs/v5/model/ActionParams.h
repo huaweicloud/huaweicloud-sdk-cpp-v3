@@ -108,6 +108,15 @@ public:
     void setIsSyncReEdit(bool value);
 
     /// <summary>
+    /// 是否支持只初始化任务。仅支持白名单用户使用，需要提交工单申请才能使用。
+    /// </summary>
+
+    bool isIsOnlyInitTask() const;
+    bool isOnlyInitTaskIsSet() const;
+    void unsetisOnlyInitTask();
+    void setIsOnlyInitTask(bool value);
+
+    /// <summary>
     /// 强制结束时取值为true。
     /// </summary>
 
@@ -150,6 +159,8 @@ protected:
     bool compareTaskParamIsSet_;
     bool isSyncReEdit_;
     bool isSyncReEditIsSet_;
+    bool isOnlyInitTask_;
+    bool isOnlyInitTaskIsSet_;
     bool forceDelete_;
     bool forceDeleteIsSet_;
     PublicIpConfig publicIpConfig_;

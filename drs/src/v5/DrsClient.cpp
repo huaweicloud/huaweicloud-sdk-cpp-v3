@@ -817,6 +817,50 @@ std::shared_ptr<DeleteJobResponse> DrsClient::deleteJob(DeleteJobRequest &reques
 
     return localVarResult;
 }
+std::shared_ptr<DeleteUserJdbcDriverResponse> DrsClient::deleteUserJdbcDriver(DeleteUserJdbcDriverRequest &request)
+{
+    std::string localVarPath = "/v5/{project_id}/drivers";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, DrsMeta::genRequestDefForDeleteUserJdbcDriver());
+
+    std::shared_ptr<DeleteUserJdbcDriverResponse> localVarResult = std::make_shared<DeleteUserJdbcDriverResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<DownloadBatchCreateTemplateResponse> DrsClient::downloadBatchCreateTemplate(DownloadBatchCreateTemplateRequest &request)
 {
     std::string localVarPath = "/v5/{project_id}/jobs/template";
@@ -1517,6 +1561,47 @@ std::shared_ptr<ListTagsResponse> DrsClient::listTags(ListTagsRequest &request)
         localVarHeaderParams, localVarHttpBody, DrsMeta::genRequestDefForListTags());
 
     std::shared_ptr<ListTagsResponse> localVarResult = std::make_shared<ListTagsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListUserJdbcDriversResponse> DrsClient::listUserJdbcDrivers(ListUserJdbcDriversRequest &request)
+{
+    std::string localVarPath = "/v5/{project_id}/drivers";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.driverTypeIsSet()) {
+        localVarQueryParams["driver_type"] = parameterToString(request.getDriverType());
+    }
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, DrsMeta::genRequestDefForListUserJdbcDrivers());
+
+    std::shared_ptr<ListUserJdbcDriversResponse> localVarResult = std::make_shared<ListUserJdbcDriversResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -2680,6 +2765,51 @@ std::shared_ptr<SyncJdbcDriverResponse> DrsClient::syncJdbcDriver(SyncJdbcDriver
 
     return localVarResult;
 }
+std::shared_ptr<SyncUserJdbcDriverResponse> DrsClient::syncUserJdbcDriver(SyncUserJdbcDriverRequest &request)
+{
+    std::string localVarPath = "/v5/{project_id}/jobs/{job_id}/update-driver";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["job_id"] = parameterToString(request.getJobId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, DrsMeta::genRequestDefForSyncUserJdbcDriver());
+
+    std::shared_ptr<SyncUserJdbcDriverResponse> localVarResult = std::make_shared<SyncUserJdbcDriverResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<UpdateBatchAsyncJobsResponse> DrsClient::updateBatchAsyncJobs(UpdateBatchAsyncJobsRequest &request)
 {
     std::string localVarPath = "/v5/{project_id}/batch-async-jobs/{async_job_id}";
@@ -3012,6 +3142,41 @@ std::shared_ptr<UploadJdbcDriverResponse> DrsClient::uploadJdbcDriver(UploadJdbc
         localVarHeaderParams, localVarHttpBody, DrsMeta::genRequestDefForUploadJdbcDriver());
 
     std::shared_ptr<UploadJdbcDriverResponse> localVarResult = std::make_shared<UploadJdbcDriverResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<UploadUserJdbcDriverResponse> DrsClient::uploadUserJdbcDriver(UploadUserJdbcDriverRequest &request)
+{
+    std::string localVarPath = "/v5/{project_id}/driver";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("multipart/form-data", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.driverTypeIsSet()) {
+        localVarQueryParams["driver_type"] = parameterToString(request.getDriverType());
+    }
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, DrsMeta::genRequestDefForUploadUserJdbcDriver());
+
+    std::shared_ptr<UploadUserJdbcDriverResponse> localVarResult = std::make_shared<UploadUserJdbcDriverResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

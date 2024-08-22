@@ -66,6 +66,15 @@ public:
     void setKeyId(const std::string& value);
 
     /// <summary>
+    /// 身份验证的非敏感额外数据。任意字符串，长度不超过128字节。
+    /// </summary>
+
+    std::string getAdditionalAuthenticatedData() const;
+    bool additionalAuthenticatedDataIsSet() const;
+    void unsetadditionalAuthenticatedData();
+    void setAdditionalAuthenticatedData(const std::string& value);
+
+    /// <summary>
     /// 请求消息序列号，36字节序列号。 例如：919c82d4-8046-4722-9094-35c3c6524cff
     /// </summary>
 
@@ -82,6 +91,8 @@ protected:
     bool encryptionAlgorithmIsSet_;
     std::string keyId_;
     bool keyIdIsSet_;
+    std::string additionalAuthenticatedData_;
+    bool additionalAuthenticatedDataIsSet_;
     std::string sequence_;
     bool sequenceIsSet_;
 

@@ -55,6 +55,9 @@
 #include <huaweicloud/drs/v5/model/DeleteJdbcDriverResponse.h>
 #include <huaweicloud/drs/v5/model/DeleteJobRequest.h>
 #include <huaweicloud/drs/v5/model/DeleteJobResponse.h>
+#include <huaweicloud/drs/v5/model/DeleteUserDriverReq.h>
+#include <huaweicloud/drs/v5/model/DeleteUserJdbcDriverRequest.h>
+#include <huaweicloud/drs/v5/model/DeleteUserJdbcDriverResponse.h>
 #include <huaweicloud/drs/v5/model/DownloadBatchCreateTemplateRequest.h>
 #include <huaweicloud/drs/v5/model/DownloadBatchCreateTemplateResponse.h>
 #include <huaweicloud/drs/v5/model/DownloadDbObjectTemplateRequest.h>
@@ -92,6 +95,8 @@
 #include <huaweicloud/drs/v5/model/ListProjectTagsResponse.h>
 #include <huaweicloud/drs/v5/model/ListTagsRequest.h>
 #include <huaweicloud/drs/v5/model/ListTagsResponse.h>
+#include <huaweicloud/drs/v5/model/ListUserJdbcDriversRequest.h>
+#include <huaweicloud/drs/v5/model/ListUserJdbcDriversResponse.h>
 #include <huaweicloud/drs/v5/model/ListsAgencyPermissionsRequest.h>
 #include <huaweicloud/drs/v5/model/ListsAgencyPermissionsResponse.h>
 #include <huaweicloud/drs/v5/model/ModifyComparePolicyReq.h>
@@ -161,6 +166,8 @@
 #include <huaweicloud/drs/v5/model/StopJobActionResponse.h>
 #include <huaweicloud/drs/v5/model/SyncJdbcDriverRequest.h>
 #include <huaweicloud/drs/v5/model/SyncJdbcDriverResponse.h>
+#include <huaweicloud/drs/v5/model/SyncUserJdbcDriverRequest.h>
+#include <huaweicloud/drs/v5/model/SyncUserJdbcDriverResponse.h>
 #include <huaweicloud/drs/v5/model/UpdateBatchAsyncJobsRequest.h>
 #include <huaweicloud/drs/v5/model/UpdateBatchAsyncJobsResponse.h>
 #include <huaweicloud/drs/v5/model/UpdateComparePolicyRequest.h>
@@ -174,12 +181,16 @@
 #include <huaweicloud/drs/v5/model/UpdateJobResponse.h>
 #include <huaweicloud/drs/v5/model/UpdateStartPositionRequest.h>
 #include <huaweicloud/drs/v5/model/UpdateStartPositionResponse.h>
+#include <huaweicloud/drs/v5/model/UpdateUserDriverReq.h>
 #include <huaweicloud/drs/v5/model/UploadDbObjectTemplateRequest.h>
 #include <huaweicloud/drs/v5/model/UploadDbObjectTemplateRequestBody.h>
 #include <huaweicloud/drs/v5/model/UploadDbObjectTemplateResponse.h>
 #include <huaweicloud/drs/v5/model/UploadJdbcDriverRequest.h>
 #include <huaweicloud/drs/v5/model/UploadJdbcDriverRequestBody.h>
 #include <huaweicloud/drs/v5/model/UploadJdbcDriverResponse.h>
+#include <huaweicloud/drs/v5/model/UploadUserJdbcDriverRequest.h>
+#include <huaweicloud/drs/v5/model/UploadUserJdbcDriverRequestBody.h>
+#include <huaweicloud/drs/v5/model/UploadUserJdbcDriverResponse.h>
 #include <huaweicloud/drs/v5/model/ValidateJobNameRequest.h>
 #include <huaweicloud/drs/v5/model/ValidateJobNameResponse.h>
 #include <string>
@@ -358,6 +369,14 @@ public:
     std::shared_ptr<DeleteJobResponse> deleteJob(
         DeleteJobRequest &request
     );
+    // 删除驱动文件
+    //
+    // 删除驱动文件。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteUserJdbcDriverResponse> deleteUserJdbcDriver(
+        DeleteUserJdbcDriverRequest &request
+    );
     // 下载批量导入任务模板
     //
     // 下载批量导入任务模板
@@ -495,6 +514,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListTagsResponse> listTags(
         ListTagsRequest &request
+    );
+    // 查询驱动文件列表
+    //
+    // 查询驱动文件列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListUserJdbcDriversResponse> listUserJdbcDrivers(
+        ListUserJdbcDriversRequest &request
     );
     // 查询委托的权限列表
     //
@@ -734,6 +761,14 @@ public:
     std::shared_ptr<SyncJdbcDriverResponse> syncJdbcDriver(
         SyncJdbcDriverRequest &request
     );
+    // 同步驱动文件
+    //
+    // 同步驱动文件。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SyncUserJdbcDriverResponse> syncUserJdbcDriver(
+        SyncUserJdbcDriverRequest &request
+    );
     // 更新指定ID批量异步任务详情
     //
     // 更新租户指定ID批量异步任务详情。
@@ -800,6 +835,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UploadJdbcDriverResponse> uploadJdbcDriver(
         UploadJdbcDriverRequest &request
+    );
+    // 上传驱动文件
+    //
+    // 上传驱动文件。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UploadUserJdbcDriverResponse> uploadUserJdbcDriver(
+        UploadUserJdbcDriverRequest &request
     );
     // 任务名称校验
     //

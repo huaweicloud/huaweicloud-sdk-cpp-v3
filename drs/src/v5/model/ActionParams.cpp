@@ -23,6 +23,8 @@ ActionParams::ActionParams()
     compareTaskParamIsSet_ = false;
     isSyncReEdit_ = false;
     isSyncReEditIsSet_ = false;
+    isOnlyInitTask_ = false;
+    isOnlyInitTaskIsSet_ = false;
     forceDelete_ = false;
     forceDeleteIsSet_ = false;
     publicIpConfigIsSet_ = false;
@@ -59,6 +61,9 @@ web::json::value ActionParams::toJson() const
     }
     if(isSyncReEditIsSet_) {
         val[utility::conversions::to_string_t("is_sync_re_edit")] = ModelBase::toJson(isSyncReEdit_);
+    }
+    if(isOnlyInitTaskIsSet_) {
+        val[utility::conversions::to_string_t("is_only_init_task")] = ModelBase::toJson(isOnlyInitTask_);
     }
     if(forceDeleteIsSet_) {
         val[utility::conversions::to_string_t("force_delete")] = ModelBase::toJson(forceDelete_);
@@ -137,6 +142,15 @@ bool ActionParams::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsSyncReEdit(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_only_init_task"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_only_init_task"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsOnlyInitTask(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("force_delete"))) {
@@ -315,6 +329,27 @@ bool ActionParams::isSyncReEditIsSet() const
 void ActionParams::unsetisSyncReEdit()
 {
     isSyncReEditIsSet_ = false;
+}
+
+bool ActionParams::isIsOnlyInitTask() const
+{
+    return isOnlyInitTask_;
+}
+
+void ActionParams::setIsOnlyInitTask(bool value)
+{
+    isOnlyInitTask_ = value;
+    isOnlyInitTaskIsSet_ = true;
+}
+
+bool ActionParams::isOnlyInitTaskIsSet() const
+{
+    return isOnlyInitTaskIsSet_;
+}
+
+void ActionParams::unsetisOnlyInitTask()
+{
+    isOnlyInitTaskIsSet_ = false;
 }
 
 bool ActionParams::isForceDelete() const

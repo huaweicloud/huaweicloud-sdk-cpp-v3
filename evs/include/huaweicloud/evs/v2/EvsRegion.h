@@ -126,6 +126,26 @@ public:
             { 
                 "https://evs.my-kualalumpur-1.myhuaweicloud.com"
             });
+        regions["cn-east-4"] = Region("cn-east-4",
+            { 
+                "https://evs.cn-east-4.myhuaweicloud.com"
+            });
+        regions["cn-east-5"] = Region("cn-east-5",
+            { 
+                "https://evs.cn-east-5.myhuaweicloud.com"
+            });
+        regions["cn-north-11"] = Region("cn-north-11",
+            { 
+                "https://evs.cn-north-11.myhuaweicloud.com"
+            });
+        regions["ru-northwest-2"] = Region("ru-northwest-2",
+            { 
+                "https://evs.ru-northwest-2.myhuaweicloud.com"
+            });
+        regions["af-north-1"] = Region("af-north-1",
+            { 
+                "https://evs.af-north-1.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

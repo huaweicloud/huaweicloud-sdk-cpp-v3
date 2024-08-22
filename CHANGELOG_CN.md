@@ -1,3 +1,102 @@
+# 3.1.99 2024-08-22
+
+### HuaweiCloud SDK DRS
+
+- _接口版本_
+  - V5
+- _新增特性_
+  - 支持接口`UploadUserJdbcDriver`、`SyncUserJdbcDriver`、`ListUserJdbcDrivers`、`DeleteUserJdbcDriver`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateJob**
+    - 请求参数变更
+      - `+ job.base_info.engine_type: enum value [mysql-to-mysql]`
+      - `+ job.source_endpoint.db_type: enum value [mysql]`
+    - 响应参数变更
+      - `+ is_clone_job`
+      - `+ create_time`
+      - `+ name`
+      - `+ id`
+      - `+ status`
+      - `- job`
+  - **BatchCreateJobsAsync**
+    - 请求参数变更
+      - `+ jobs.policy_config.is_create_table_with_index`
+      - `+ jobs.base_info.engine_type: enum value [mysql-to-mysql]`
+      - `+ jobs.source_endpoint.db_type: enum value [mysql]`
+  - **ListAsyncJobDetail**
+    - 响应参数变更
+      - `+ jobs.status: enum value [CREATING,CREATE_FAILED,CONFIGURATION,STARTJOBING,WAITING_FOR_START,START_JOB_FAILED,PAUSING,FULL_TRANSFER_STARTED,FULL_TRANSFER_FAILED,FULL_TRANSFER_COMPLETE,INCRE_TRANSFER_STARTED,INCRE_TRANSFER_FAILED,RELEASE_RESOURCE_STARTED,RELEASE_RESOURCE_FAILED,RELEASE_RESOURCE_COMPLETE,REBUILD_NODE_STARTED,REBUILD_NODE_FAILED,CHANGE_JOB_STARTED,CHANGE_JOB_FAILED,DELETED,CHILD_TRANSFER_STARTING,CHILD_TRANSFER_STARTED,CHILD_TRANSFER_COMPLETE,CHILD_TRANSFER_FAILED,RELEASE_CHILD_TRANSFER_STARTED,RELEASE_CHILD_TRANSFER_COMPLETE,NODE_UPGRADE_START,NODE_UPGRADE_COMPLETE,NODE_UPGRADE_FAILED]`
+      - `+ jobs.policy_config.is_create_table_with_index`
+      - `+ jobs.base_info.engine_type: enum value [mysql-to-mysql]`
+      - `+ jobs.source_endpoint.db_type: enum value [mysql]`
+  - **UpdateBatchAsyncJobs**
+    - 请求参数变更
+      - `+ jobs.params.policy_config.is_create_table_with_index`
+      - `+ jobs.params.base_info.engine_type: enum value [mysql-to-mysql]`
+      - `+ jobs.params.source_endpoint.db_type: enum value [mysql]`
+  - **ShowJobDetail**
+    - 响应参数变更
+      - `+ job.status: enum value [CREATING,CREATE_FAILED,CONFIGURATION,STARTJOBING,WAITING_FOR_START,START_JOB_FAILED,PAUSING,FULL_TRANSFER_STARTED,FULL_TRANSFER_FAILED,FULL_TRANSFER_COMPLETE,INCRE_TRANSFER_STARTED,INCRE_TRANSFER_FAILED,RELEASE_RESOURCE_STARTED,RELEASE_RESOURCE_FAILED,RELEASE_RESOURCE_COMPLETE,REBUILD_NODE_STARTED,REBUILD_NODE_FAILED,CHANGE_JOB_STARTED,CHANGE_JOB_FAILED,DELETED,CHILD_TRANSFER_STARTING,CHILD_TRANSFER_STARTED,CHILD_TRANSFER_COMPLETE,CHILD_TRANSFER_FAILED,RELEASE_CHILD_TRANSFER_STARTED,RELEASE_CHILD_TRANSFER_COMPLETE,NODE_UPGRADE_START,NODE_UPGRADE_COMPLETE,NODE_UPGRADE_FAILED]`
+      - `+ job.policy_config.is_create_table_with_index`
+      - `+ job.base_info.engine_type: enum value [mysql-to-mysql]`
+      - `+ job.source_endpoint.db_type: enum value [mysql]`
+  - **UpdateJob**
+    - 请求参数变更
+      - `+ job.params.policy_config.is_create_table_with_index`
+      - `+ job.params.base_info.engine_type: enum value [mysql-to-mysql]`
+      - `+ job.params.source_endpoint.db_type: enum value [mysql]`
+  - **ExecuteJobAction**
+    - 请求参数变更
+      - `+ job.action_params.is_only_init_task`
+      - `+ job.action_params.endpoints.db_type: enum value [mysql]`
+  - **BatchExecuteJobActions**
+    - 请求参数变更
+      - `+ jobs.action_params.is_only_init_task`
+      - `+ jobs.action_params.endpoints.db_type: enum value [mysql]`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateDbInstance**
+    - 请求参数变更
+      - `+ ha.instance_mode`
+
+### HuaweiCloud SDK KMS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateDatakey**
+    - 请求参数变更
+      - `+ additional_authenticated_data`
+  - **CreateDatakeyWithoutPlaintext**
+    - 请求参数变更
+      - `+ additional_authenticated_data`
+  - **EncryptDatakey**
+    - 请求参数变更
+      - `+ additional_authenticated_data`
+  - **DecryptDatakey**
+    - 请求参数变更
+      - `+ additional_authenticated_data`
+  - **EncryptData**
+    - 请求参数变更
+      - `+ additional_authenticated_data`
+  - **DecryptData**
+    - 请求参数变更
+      - `+ additional_authenticated_data`
+
 # 3.1.98 2024-08-15
 
 ### HuaweiCloud SDK EIP

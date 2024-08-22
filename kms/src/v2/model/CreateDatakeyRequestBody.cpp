@@ -18,6 +18,8 @@ CreateDatakeyRequestBody::CreateDatakeyRequestBody()
     keySpecIsSet_ = false;
     datakeyLength_ = "";
     datakeyLengthIsSet_ = false;
+    additionalAuthenticatedData_ = "";
+    additionalAuthenticatedDataIsSet_ = false;
     sequence_ = "";
     sequenceIsSet_ = false;
 }
@@ -40,6 +42,9 @@ web::json::value CreateDatakeyRequestBody::toJson() const
     }
     if(datakeyLengthIsSet_) {
         val[utility::conversions::to_string_t("datakey_length")] = ModelBase::toJson(datakeyLength_);
+    }
+    if(additionalAuthenticatedDataIsSet_) {
+        val[utility::conversions::to_string_t("additional_authenticated_data")] = ModelBase::toJson(additionalAuthenticatedData_);
     }
     if(sequenceIsSet_) {
         val[utility::conversions::to_string_t("sequence")] = ModelBase::toJson(sequence_);
@@ -76,6 +81,15 @@ bool CreateDatakeyRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDatakeyLength(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("additional_authenticated_data"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("additional_authenticated_data"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAdditionalAuthenticatedData(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("sequence"))) {
@@ -152,6 +166,27 @@ bool CreateDatakeyRequestBody::datakeyLengthIsSet() const
 void CreateDatakeyRequestBody::unsetdatakeyLength()
 {
     datakeyLengthIsSet_ = false;
+}
+
+std::string CreateDatakeyRequestBody::getAdditionalAuthenticatedData() const
+{
+    return additionalAuthenticatedData_;
+}
+
+void CreateDatakeyRequestBody::setAdditionalAuthenticatedData(const std::string& value)
+{
+    additionalAuthenticatedData_ = value;
+    additionalAuthenticatedDataIsSet_ = true;
+}
+
+bool CreateDatakeyRequestBody::additionalAuthenticatedDataIsSet() const
+{
+    return additionalAuthenticatedDataIsSet_;
+}
+
+void CreateDatakeyRequestBody::unsetadditionalAuthenticatedData()
+{
+    additionalAuthenticatedDataIsSet_ = false;
 }
 
 std::string CreateDatakeyRequestBody::getSequence() const

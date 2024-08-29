@@ -23,6 +23,7 @@ public:
     static HttpRequestDef genRequestDefForCreateDatabaseSchemas();
     static HttpRequestDef genRequestDefForCreateDbInstance();
     static HttpRequestDef genRequestDefForCreateDbUser();
+    static HttpRequestDef genRequestDefForCreateGaussDbInstance();
     static HttpRequestDef genRequestDefForCreateInstance();
     static HttpRequestDef genRequestDefForCreateManualBackup();
     static HttpRequestDef genRequestDefForCreateRestoreInstance();

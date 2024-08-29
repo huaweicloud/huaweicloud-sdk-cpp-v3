@@ -1162,6 +1162,92 @@ std::shared_ptr<DisassociateServerVirtualIpResponse> EcsClient::disassociateServ
 
     return localVarResult;
 }
+std::shared_ptr<ListCloudServersResponse> EcsClient::listCloudServers(ListCloudServersRequest &request)
+{
+    std::string localVarPath = "/v1.1/{project_id}/cloudservers/detail";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.idIsSet()) {
+        localVarQueryParams["id"] = parameterToString(request.getId());
+    }
+    if (request.nameIsSet()) {
+        localVarQueryParams["name"] = parameterToString(request.getName());
+    }
+    if (request.statusIsSet()) {
+        localVarQueryParams["status"] = parameterToString(request.getStatus());
+    }
+    if (request.inRecycleBinIsSet()) {
+        localVarQueryParams["in_recycle_bin"] = parameterToString(request.isInRecycleBin());
+    }
+    if (request.spodIdIsSet()) {
+        localVarQueryParams["spod_id"] = parameterToString(request.getSpodId());
+    }
+    if (request.flavorNameIsSet()) {
+        localVarQueryParams["flavor_name"] = parameterToString(request.getFlavorName());
+    }
+    if (request.imageIdIsSet()) {
+        localVarQueryParams["image_id"] = parameterToString(request.getImageId());
+    }
+    if (request.metadataIsSet()) {
+        localVarQueryParams["metadata"] = parameterToString(request.getMetadata());
+    }
+    if (request.metadataKeyIsSet()) {
+        localVarQueryParams["metadata-key"] = parameterToString(request.getMetadataKey());
+    }
+    if (request.tagsIsSet()) {
+        localVarQueryParams["tags"] = parameterToString(request.getTags());
+    }
+    if (request.notTagsIsSet()) {
+        localVarQueryParams["not-tags"] = parameterToString(request.getNotTags());
+    }
+    if (request.availabilityZoneIsSet()) {
+        localVarQueryParams["availability_zone"] = parameterToString(request.getAvailabilityZone());
+    }
+    if (request.availabilityZoneEqIsSet()) {
+        localVarQueryParams["availability_zone_eq"] = parameterToString(request.getAvailabilityZoneEq());
+    }
+    if (request.chargingModeIsSet()) {
+        localVarQueryParams["charging_mode"] = parameterToString(request.getChargingMode());
+    }
+    if (request.keyNameIsSet()) {
+        localVarQueryParams["key_name"] = parameterToString(request.getKeyName());
+    }
+    if (request.launchedSinceIsSet()) {
+        localVarQueryParams["launched_since"] = parameterToString(request.getLaunchedSince());
+    }
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarQueryParams["enterprise_project_id"] = parameterToString(request.getEnterpriseProjectId());
+    }
+    if (request.expectFieldsIsSet()) {
+        localVarQueryParams["expect-fields"] = parameterToString(request.getExpectFields());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EcsMeta::genRequestDefForListCloudServers());
+
+    std::shared_ptr<ListCloudServersResponse> localVarResult = std::make_shared<ListCloudServersResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListFlavorSellPoliciesResponse> EcsClient::listFlavorSellPolicies(ListFlavorSellPoliciesRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/cloudservers/flavor-sell-policies";

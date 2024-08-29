@@ -34,6 +34,7 @@ public:
     static HttpRequestDef genRequestDefForListVolumesByTags();
     static HttpRequestDef genRequestDefForModifyVolumeQoS();
     static HttpRequestDef genRequestDefForResizeVolume();
+    static HttpRequestDef genRequestDefForRetypeVolume();
     static HttpRequestDef genRequestDefForRollbackSnapshot();
     static HttpRequestDef genRequestDefForShowJob();
     static HttpRequestDef genRequestDefForShowSnapshot();

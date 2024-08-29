@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -64,6 +65,15 @@ public:
     bool idIsSet() const;
     void unsetid();
     void setId(const std::string& value);
+
+    /// <summary>
+    /// display in the form \&quot;fields&#x3D;id&amp;fields&#x3D;name&amp;...\&quot;  Supported fields：id/name/tenant_id/size/ratio_95peak_plus/ingress_size/bandwidth_type/admin_state/billing_info/charge_mode/type/publicip_info/enable_bandwidth_rules/rule_quota/bandwidth_rules/public_border_group/created_at/updated_at/lock_infos
+    /// </summary>
+
+    std::vector<std::string>& getFields();
+    bool fieldsIsSet() const;
+    void unsetfields();
+    void setFields(const std::vector<std::string>& value);
 
     /// <summary>
     /// - 功能说明：带宽类型，共享带宽默认为share。 - 取值范围：share，bgp，telcom，sbgp等。   - share：共享带宽   - bgp：动态bgp   - telcom ：联通   - sbgp：静态bgp
@@ -190,6 +200,8 @@ protected:
     bool markerIsSet_;
     std::string id_;
     bool idIsSet_;
+    std::vector<std::string> fields_;
+    bool fieldsIsSet_;
     std::string bandwidthType_;
     bool bandwidthTypeIsSet_;
     std::string name_;

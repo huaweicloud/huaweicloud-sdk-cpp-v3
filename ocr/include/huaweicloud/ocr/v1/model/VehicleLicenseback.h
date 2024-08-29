@@ -130,7 +130,7 @@ public:
     void setInspectionRecord(const std::string& value);
 
     /// <summary>
-    /// 条码号。 
+    /// 条码号。           
     /// </summary>
 
     std::string getCodeNumber() const;

@@ -12,7 +12,6 @@ namespace Model {
 
 CreateTenantVpcIgwRequest::CreateTenantVpcIgwRequest()
 {
-    fields_ = "";
     fieldsIsSet_ = false;
     bodyIsSet_ = false;
 }
@@ -44,7 +43,7 @@ bool CreateTenantVpcIgwRequest::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("fields"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFields(refVal);
         }
@@ -62,12 +61,12 @@ bool CreateTenantVpcIgwRequest::fromJson(const web::json::value& val)
 }
 
 
-std::string CreateTenantVpcIgwRequest::getFields() const
+std::vector<std::string>& CreateTenantVpcIgwRequest::getFields()
 {
     return fields_;
 }
 
-void CreateTenantVpcIgwRequest::setFields(const std::string& value)
+void CreateTenantVpcIgwRequest::setFields(const std::vector<std::string>& value)
 {
     fields_ = value;
     fieldsIsSet_ = true;

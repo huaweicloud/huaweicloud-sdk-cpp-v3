@@ -41,7 +41,7 @@ public:
     /// GeneralTableResult members
 
     /// <summary>
-    /// 文字区域数目。 
+    /// 文字区域数目。          
     /// </summary>
 
     int32_t getWordsRegionCount() const;

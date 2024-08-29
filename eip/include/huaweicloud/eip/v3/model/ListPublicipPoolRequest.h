@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -60,10 +61,10 @@ public:
     /// 显示，形式为\&quot;fields&#x3D;id&amp;fields&#x3D;name&amp;...\&quot;  支持字段：id/name/size/used/project_id/status/billing_info/created_at/updated_at/type/shared/is_common/description/tags/enterprise_project_id/allow_share_bandwidth_types/public_border_group
     /// </summary>
 
-    std::string getFields() const;
+    std::vector<std::string>& getFields();
     bool fieldsIsSet() const;
     void unsetfields();
-    void setFields(const std::string& value);
+    void setFields(const std::vector<std::string>& value);
 
     /// <summary>
     /// 排序，形式为\&quot;sort_key&#x3D;id&amp;sort_dir&#x3D;asc\&quot;  支持字段：id/name/created_at/updated_at/public_border_group
@@ -152,7 +153,7 @@ protected:
     bool markerIsSet_;
     int32_t limit_;
     bool limitIsSet_;
-    std::string fields_;
+    std::vector<std::string> fields_;
     bool fieldsIsSet_;
     std::string sortKey_;
     bool sortKeyIsSet_;

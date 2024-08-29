@@ -41,6 +41,7 @@ public:
     static HttpRequestDef genRequestDefForDeleteServers();
     static HttpRequestDef genRequestDefForDetachServerVolume();
     static HttpRequestDef genRequestDefForDisassociateServerVirtualIp();
+    static HttpRequestDef genRequestDefForListCloudServers();
     static HttpRequestDef genRequestDefForListFlavorSellPolicies();
     static HttpRequestDef genRequestDefForListFlavors();
     static HttpRequestDef genRequestDefForListResizeFlavors();

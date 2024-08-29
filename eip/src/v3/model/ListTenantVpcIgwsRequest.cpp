@@ -12,7 +12,6 @@ namespace Model {
 
 ListTenantVpcIgwsRequest::ListTenantVpcIgwsRequest()
 {
-    fields_ = "";
     fieldsIsSet_ = false;
     id_ = "";
     idIsSet_ = false;
@@ -80,7 +79,7 @@ bool ListTenantVpcIgwsRequest::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("fields"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFields(refVal);
         }
@@ -161,12 +160,12 @@ bool ListTenantVpcIgwsRequest::fromJson(const web::json::value& val)
 }
 
 
-std::string ListTenantVpcIgwsRequest::getFields() const
+std::vector<std::string>& ListTenantVpcIgwsRequest::getFields()
 {
     return fields_;
 }
 
-void ListTenantVpcIgwsRequest::setFields(const std::string& value)
+void ListTenantVpcIgwsRequest::setFields(const std::vector<std::string>& value)
 {
     fields_ = value;
     fieldsIsSet_ = true;

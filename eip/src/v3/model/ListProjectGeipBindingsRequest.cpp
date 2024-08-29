@@ -12,7 +12,6 @@ namespace Model {
 
 ListProjectGeipBindingsRequest::ListProjectGeipBindingsRequest()
 {
-    fields_ = "";
     fieldsIsSet_ = false;
     geipId_ = "";
     geipIdIsSet_ = false;
@@ -160,7 +159,7 @@ bool ListProjectGeipBindingsRequest::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("fields"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFields(refVal);
         }
@@ -385,12 +384,12 @@ bool ListProjectGeipBindingsRequest::fromJson(const web::json::value& val)
 }
 
 
-std::string ListProjectGeipBindingsRequest::getFields() const
+std::vector<std::string>& ListProjectGeipBindingsRequest::getFields()
 {
     return fields_;
 }
 
-void ListProjectGeipBindingsRequest::setFields(const std::string& value)
+void ListProjectGeipBindingsRequest::setFields(const std::vector<std::string>& value)
 {
     fields_ = value;
     fieldsIsSet_ = true;

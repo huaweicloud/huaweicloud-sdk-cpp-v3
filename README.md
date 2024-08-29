@@ -24,6 +24,8 @@ This document introduces how to obtain and use Huawei Cloud C++ SDK.
 
 ## Install C++ SDK
 
+You can get the SDK version information through [SDK center](https://console-intl.huaweicloud.com/apiexplorer/#/sdkcenter?language=C%2B%2B) or [Github Releases](https://github.com/huaweicloud/huaweicloud-sdk-cpp-v3/releases?page=1).
+
 ### Dependent Third-Party Libraries
 
 `curl`, `boost`, `cpprestsdk`, `spdlog`, `openssl`
@@ -227,7 +229,7 @@ target_link_libraries(demo PUBLIC core vpc_v2)
 
 ## Online Debugging
 
-[API Explorer](https://apiexplorer.developer.intl.huaweicloud.com/apiexplorer/overview) provides api retrieval and online debugging, supports full fast retrieval, visual debugging, help document viewing, and online consultation.
+[API Explorer](https://apiexplorer.developer.intl.huaweicloud.com/apiexplorer/overview) provides api retrieval, SDK samples and online debugging, supports full fast retrieval, visual debugging, help document viewing, and online consultation.
 
 ## Changelog
 

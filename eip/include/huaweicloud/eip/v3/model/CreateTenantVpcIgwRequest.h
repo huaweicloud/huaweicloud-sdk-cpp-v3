@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <vector>
 #include <huaweicloud/eip/v3/model/CreateTenantVpcIgwRequestBody.h>
 
 namespace HuaweiCloud {
@@ -43,10 +44,10 @@ public:
     /// 形式为\\\&quot;fields&#x3D;id&amp;fields&#x3D;project_id&amp;...\\\&quot;，支持字段：id/project_id/vpc_id/created_at/updated_at/name
     /// </summary>
 
-    std::string getFields() const;
+    std::vector<std::string>& getFields();
     bool fieldsIsSet() const;
     void unsetfields();
-    void setFields(const std::string& value);
+    void setFields(const std::vector<std::string>& value);
 
     /// <summary>
     /// 
@@ -59,7 +60,7 @@ public:
 
 
 protected:
-    std::string fields_;
+    std::vector<std::string> fields_;
     bool fieldsIsSet_;
     CreateTenantVpcIgwRequestBody body_;
     bool bodyIsSet_;

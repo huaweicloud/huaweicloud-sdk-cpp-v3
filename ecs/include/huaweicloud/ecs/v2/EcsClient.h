@@ -86,6 +86,8 @@
 #include <huaweicloud/ecs/v2/model/DisassociateServerVirtualIpRequest.h>
 #include <huaweicloud/ecs/v2/model/DisassociateServerVirtualIpRequestBody.h>
 #include <huaweicloud/ecs/v2/model/DisassociateServerVirtualIpResponse.h>
+#include <huaweicloud/ecs/v2/model/ListCloudServersRequest.h>
+#include <huaweicloud/ecs/v2/model/ListCloudServersResponse.h>
 #include <huaweicloud/ecs/v2/model/ListFlavorSellPoliciesRequest.h>
 #include <huaweicloud/ecs/v2/model/ListFlavorSellPoliciesResponse.h>
 #include <huaweicloud/ecs/v2/model/ListFlavorsRequest.h>
@@ -505,6 +507,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DisassociateServerVirtualIpResponse> disassociateServerVirtualIp(
         DisassociateServerVirtualIpRequest &request
+    );
+    // 查询云服务器列表接口
+    //
+    // 查询云服务器列表接口。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListCloudServersResponse> listCloudServers(
+        ListCloudServersRequest &request
     );
     // 查询规格销售策略
     //

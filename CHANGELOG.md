@@ -1,3 +1,114 @@
+# 3.1.100 2024-08-29
+
+### HuaweiCloud SDK ECS
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the API `ListCloudServers`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK EIP
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListCommonPools**
+    - changes of request param
+      - `* fields: string -> list<string>`
+  - **ListShareBandwidthTypes**
+    - changes of request param
+      - `* fields: string -> list<string>`
+  - **ListTenantVpcIgws**
+    - changes of request param
+      - `* fields: string -> list<string>`
+  - **CreateTenantVpcIgw**
+    - changes of request param
+      - `* fields: string -> list<string>`
+  - **ShowInternalVpcIgw**
+    - changes of request param
+      - `* fields: string -> list<string>`
+  - **UpdateTenantVpcIgw**
+    - changes of request param
+      - `* fields: string -> list<string>`
+  - **ListEipBandwidths**
+    - changes of request param
+      - `+ fields`
+  - **ListBandwidth**
+    - changes of request param
+      - `+ fields`
+  - **ListPublicipPool**
+    - changes of request param
+      - `* fields: string -> list<string>`
+  - **ShowPublicipPool**
+    - changes of request param
+      - `* fields: string -> list<string>`
+  - **ListProjectGeipBindings**
+    - changes of request param
+      - `* fields: string -> list<string>`
+
+### HuaweiCloud SDK EVS
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the API `RetypeVolume`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the API `CreateGaussDbInstance`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK RDS
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateManualBackup**
+    - changes of request param
+      - `+ backup_database_individually`
+
+### HuaweiCloud SDK VPC
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **AddSecurityGroups**
+    - changes of response param
+      - `+ port.extra_dhcp_opts.opt_name`
+      - `+ port.extra_dhcp_opts.opt_value`
+      - `* port.extra_dhcp_opts: list<object> -> list<ExtraDhcpOpt>`
+  - **RemoveSecurityGroups**
+    - changes of response param
+      - `+ port.extra_dhcp_opts.opt_name`
+      - `+ port.extra_dhcp_opts.opt_value`
+      - `* port.extra_dhcp_opts: list<object> -> list<ExtraDhcpOpt>`
+
 # 3.1.99 2024-08-22
 
 ### HuaweiCloud SDK DRS

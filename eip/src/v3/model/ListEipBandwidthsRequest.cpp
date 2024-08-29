@@ -16,6 +16,7 @@ ListEipBandwidthsRequest::ListEipBandwidthsRequest()
     limitIsSet_ = false;
     marker_ = "";
     markerIsSet_ = false;
+    fieldsIsSet_ = false;
     id_ = "";
     idIsSet_ = false;
     bandwidthType_ = "";
@@ -63,6 +64,9 @@ web::json::value ListEipBandwidthsRequest::toJson() const
     }
     if(markerIsSet_) {
         val[utility::conversions::to_string_t("marker")] = ModelBase::toJson(marker_);
+    }
+    if(fieldsIsSet_) {
+        val[utility::conversions::to_string_t("fields")] = ModelBase::toJson(fields_);
     }
     if(idIsSet_) {
         val[utility::conversions::to_string_t("id")] = ModelBase::toJson(id_);
@@ -132,6 +136,15 @@ bool ListEipBandwidthsRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setMarker(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("fields"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("fields"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFields(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("id"))) {
@@ -313,6 +326,27 @@ bool ListEipBandwidthsRequest::markerIsSet() const
 void ListEipBandwidthsRequest::unsetmarker()
 {
     markerIsSet_ = false;
+}
+
+std::vector<std::string>& ListEipBandwidthsRequest::getFields()
+{
+    return fields_;
+}
+
+void ListEipBandwidthsRequest::setFields(const std::vector<std::string>& value)
+{
+    fields_ = value;
+    fieldsIsSet_ = true;
+}
+
+bool ListEipBandwidthsRequest::fieldsIsSet() const
+{
+    return fieldsIsSet_;
+}
+
+void ListEipBandwidthsRequest::unsetfields()
+{
+    fieldsIsSet_ = false;
 }
 
 std::string ListEipBandwidthsRequest::getId() const

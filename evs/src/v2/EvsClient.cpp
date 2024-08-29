@@ -867,6 +867,48 @@ std::shared_ptr<ResizeVolumeResponse> EvsClient::resizeVolume(ResizeVolumeReques
 
     return localVarResult;
 }
+std::shared_ptr<RetypeVolumeResponse> EvsClient::retypeVolume(RetypeVolumeRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/volumes/{volume_id}/retype";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["volume_id"] = parameterToString(request.getVolumeId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EvsMeta::genRequestDefForRetypeVolume());
+
+    std::shared_ptr<RetypeVolumeResponse> localVarResult = std::make_shared<RetypeVolumeResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<RollbackSnapshotResponse> EvsClient::rollbackSnapshot(RollbackSnapshotRequest &request)
 {
     std::string localVarPath = "/v2/{project_id}/cloudsnapshots/{snapshot_id}/rollback";

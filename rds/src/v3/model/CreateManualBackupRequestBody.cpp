@@ -19,6 +19,8 @@ CreateManualBackupRequestBody::CreateManualBackupRequestBody()
     description_ = "";
     descriptionIsSet_ = false;
     databasesIsSet_ = false;
+    backupDatabaseIndividually_ = false;
+    backupDatabaseIndividuallyIsSet_ = false;
 }
 
 CreateManualBackupRequestBody::~CreateManualBackupRequestBody() = default;
@@ -42,6 +44,9 @@ web::json::value CreateManualBackupRequestBody::toJson() const
     }
     if(databasesIsSet_) {
         val[utility::conversions::to_string_t("databases")] = ModelBase::toJson(databases_);
+    }
+    if(backupDatabaseIndividuallyIsSet_) {
+        val[utility::conversions::to_string_t("backup_database_individually")] = ModelBase::toJson(backupDatabaseIndividually_);
     }
 
     return val;
@@ -84,6 +89,15 @@ bool CreateManualBackupRequestBody::fromJson(const web::json::value& val)
             std::vector<BackupDatabase> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDatabases(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("backup_database_individually"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("backup_database_individually"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBackupDatabaseIndividually(refVal);
         }
     }
     return ok;
@@ -172,6 +186,27 @@ bool CreateManualBackupRequestBody::databasesIsSet() const
 void CreateManualBackupRequestBody::unsetdatabases()
 {
     databasesIsSet_ = false;
+}
+
+bool CreateManualBackupRequestBody::isBackupDatabaseIndividually() const
+{
+    return backupDatabaseIndividually_;
+}
+
+void CreateManualBackupRequestBody::setBackupDatabaseIndividually(bool value)
+{
+    backupDatabaseIndividually_ = value;
+    backupDatabaseIndividuallyIsSet_ = true;
+}
+
+bool CreateManualBackupRequestBody::backupDatabaseIndividuallyIsSet() const
+{
+    return backupDatabaseIndividuallyIsSet_;
+}
+
+void CreateManualBackupRequestBody::unsetbackupDatabaseIndividually()
+{
+    backupDatabaseIndividuallyIsSet_ = false;
 }
 
 }

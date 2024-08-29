@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -39,13 +40,13 @@ public:
     /// ListCommonPoolsRequest members
 
     /// <summary>
-    /// 显示，形式为\&quot;fields&#x3D;id&amp;fields&#x3D;name&amp;...\&quot;  支持字段：id/name/status/type/used/allow_share_bandwidth_types/public_border_group
+    /// 显示，形式为\&quot;fields&#x3D;id&amp;fields&#x3D;name&amp;...\&quot;  支持字段：id/name/status/type/used/allow_share_bandwidth_types/public_border_group/description
     /// </summary>
 
-    std::string getFields() const;
+    std::vector<std::string>& getFields();
     bool fieldsIsSet() const;
     void unsetfields();
-    void setFields(const std::string& value);
+    void setFields(const std::vector<std::string>& value);
 
     /// <summary>
     /// 每页返回的个数取值范围：0~[2000]，其中2000为局点差异项，具体取值由局点决定
@@ -85,7 +86,7 @@ public:
 
 
 protected:
-    std::string fields_;
+    std::vector<std::string> fields_;
     bool fieldsIsSet_;
     int32_t limit_;
     bool limitIsSet_;

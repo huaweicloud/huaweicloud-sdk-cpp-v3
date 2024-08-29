@@ -14,7 +14,6 @@ ShowPublicipPoolRequest::ShowPublicipPoolRequest()
 {
     publicipPoolId_ = "";
     publicipPoolIdIsSet_ = false;
-    fields_ = "";
     fieldsIsSet_ = false;
 }
 
@@ -54,7 +53,7 @@ bool ShowPublicipPoolRequest::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("fields"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFields(refVal);
         }
@@ -84,12 +83,12 @@ void ShowPublicipPoolRequest::unsetpublicipPoolId()
     publicipPoolIdIsSet_ = false;
 }
 
-std::string ShowPublicipPoolRequest::getFields() const
+std::vector<std::string>& ShowPublicipPoolRequest::getFields()
 {
     return fields_;
 }
 
-void ShowPublicipPoolRequest::setFields(const std::string& value)
+void ShowPublicipPoolRequest::setFields(const std::vector<std::string>& value)
 {
     fields_ = value;
     fieldsIsSet_ = true;

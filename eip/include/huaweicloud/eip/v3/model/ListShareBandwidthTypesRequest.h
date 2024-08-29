@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -42,10 +43,10 @@ public:
     /// 形式为\\\&quot;fields&#x3D;id&amp;fields&#x3D;bandwidth_type&amp;...\\\&quot;，支持字段：id/bandwidth_type/name_en/name_zh/created_at/update_at/public_border_group/description
     /// </summary>
 
-    std::string getFields() const;
+    std::vector<std::string>& getFields();
     bool fieldsIsSet() const;
     void unsetfields();
-    void setFields(const std::string& value);
+    void setFields(const std::vector<std::string>& value);
 
     /// <summary>
     /// 支持带宽类型的id
@@ -139,7 +140,7 @@ public:
 
 
 protected:
-    std::string fields_;
+    std::vector<std::string> fields_;
     bool fieldsIsSet_;
     std::string id_;
     bool idIsSet_;

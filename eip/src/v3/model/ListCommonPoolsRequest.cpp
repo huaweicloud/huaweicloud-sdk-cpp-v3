@@ -12,7 +12,6 @@ namespace Model {
 
 ListCommonPoolsRequest::ListCommonPoolsRequest()
 {
-    fields_ = "";
     fieldsIsSet_ = false;
     limit_ = 0;
     limitIsSet_ = false;
@@ -60,7 +59,7 @@ bool ListCommonPoolsRequest::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("fields"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFields(refVal);
         }
@@ -105,12 +104,12 @@ bool ListCommonPoolsRequest::fromJson(const web::json::value& val)
 }
 
 
-std::string ListCommonPoolsRequest::getFields() const
+std::vector<std::string>& ListCommonPoolsRequest::getFields()
 {
     return fields_;
 }
 
-void ListCommonPoolsRequest::setFields(const std::string& value)
+void ListCommonPoolsRequest::setFields(const std::vector<std::string>& value)
 {
     fields_ = value;
     fieldsIsSet_ = true;

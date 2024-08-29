@@ -122,6 +122,10 @@ public:
             { 
                 "https://dds.ru-moscow-1.myhuaweicloud.com"
             });
+        regions["ae-ad-1"] = Region("ae-ad-1",
+            { 
+                "https://dds.ae-ad-1.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

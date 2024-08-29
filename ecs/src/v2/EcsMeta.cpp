@@ -257,6 +257,68 @@ HttpRequestDef EcsMeta::genRequestDefForDisassociateServerVirtualIp() {
     return reqDefBuilder;
 }
 
+HttpRequestDef EcsMeta::genRequestDefForListCloudServers() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Id")
+                  .withJsonTag("id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Name")
+                  .withJsonTag("name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Status")
+                  .withJsonTag("status")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("InRecycleBin")
+                  .withJsonTag("in_recycle_bin")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("SpodId")
+                  .withJsonTag("spod_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("FlavorName")
+                  .withJsonTag("flavor_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ImageId")
+                  .withJsonTag("image_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Metadata")
+                  .withJsonTag("metadata")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("MetadataKey")
+                  .withJsonTag("metadata-key")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Tags")
+                  .withJsonTag("tags")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("NotTags")
+                  .withJsonTag("not-tags")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("AvailabilityZone")
+                  .withJsonTag("availability_zone")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("AvailabilityZoneEq")
+                  .withJsonTag("availability_zone_eq")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ChargingMode")
+                  .withJsonTag("charging_mode")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("KeyName")
+                  .withJsonTag("key_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("LaunchedSince")
+                  .withJsonTag("launched_since")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
+                  .withJsonTag("enterprise_project_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ExpectFields")
+                  .withJsonTag("expect-fields")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef EcsMeta::genRequestDefForListFlavorSellPolicies() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("FlavorId")

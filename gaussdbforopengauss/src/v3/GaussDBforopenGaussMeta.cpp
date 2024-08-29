@@ -144,6 +144,25 @@ HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForCreateDbUser() {
     return reqDefBuilder;
 }
 
+HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForCreateGaussDbInstance() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef headerParamSubscriptionAgency;
+    reqDefBuilder.withRequestField(headerParamSubscriptionAgency
+                  .withName("SubscriptionAgency")
+                  .withJsonTag("Subscription-Agency")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForCreateInstance() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;

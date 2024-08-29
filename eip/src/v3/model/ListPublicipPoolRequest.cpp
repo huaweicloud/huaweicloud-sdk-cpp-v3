@@ -16,7 +16,6 @@ ListPublicipPoolRequest::ListPublicipPoolRequest()
     markerIsSet_ = false;
     limit_ = 0;
     limitIsSet_ = false;
-    fields_ = "";
     fieldsIsSet_ = false;
     sortKey_ = "";
     sortKeyIsSet_ = false;
@@ -113,7 +112,7 @@ bool ListPublicipPoolRequest::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("fields"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFields(refVal);
         }
@@ -245,12 +244,12 @@ void ListPublicipPoolRequest::unsetlimit()
     limitIsSet_ = false;
 }
 
-std::string ListPublicipPoolRequest::getFields() const
+std::vector<std::string>& ListPublicipPoolRequest::getFields()
 {
     return fields_;
 }
 
-void ListPublicipPoolRequest::setFields(const std::string& value)
+void ListPublicipPoolRequest::setFields(const std::vector<std::string>& value)
 {
     fields_ = value;
     fieldsIsSet_ = true;

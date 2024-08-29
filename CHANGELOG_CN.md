@@ -1,3 +1,114 @@
+# 3.1.100 2024-08-29
+
+### HuaweiCloud SDK ECS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持接口`ListCloudServers`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK EIP
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListCommonPools**
+    - 请求参数变更
+      - `* fields: string -> list<string>`
+  - **ListShareBandwidthTypes**
+    - 请求参数变更
+      - `* fields: string -> list<string>`
+  - **ListTenantVpcIgws**
+    - 请求参数变更
+      - `* fields: string -> list<string>`
+  - **CreateTenantVpcIgw**
+    - 请求参数变更
+      - `* fields: string -> list<string>`
+  - **ShowInternalVpcIgw**
+    - 请求参数变更
+      - `* fields: string -> list<string>`
+  - **UpdateTenantVpcIgw**
+    - 请求参数变更
+      - `* fields: string -> list<string>`
+  - **ListEipBandwidths**
+    - 请求参数变更
+      - `+ fields`
+  - **ListBandwidth**
+    - 请求参数变更
+      - `+ fields`
+  - **ListPublicipPool**
+    - 请求参数变更
+      - `* fields: string -> list<string>`
+  - **ShowPublicipPool**
+    - 请求参数变更
+      - `* fields: string -> list<string>`
+  - **ListProjectGeipBindings**
+    - 请求参数变更
+      - `* fields: string -> list<string>`
+
+### HuaweiCloud SDK EVS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持接口`RetypeVolume`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`CreateGaussDbInstance`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK RDS
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateManualBackup**
+    - 请求参数变更
+      - `+ backup_database_individually`
+
+### HuaweiCloud SDK VPC
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **AddSecurityGroups**
+    - 响应参数变更
+      - `+ port.extra_dhcp_opts.opt_name`
+      - `+ port.extra_dhcp_opts.opt_value`
+      - `* port.extra_dhcp_opts: list<object> -> list<ExtraDhcpOpt>`
+  - **RemoveSecurityGroups**
+    - 响应参数变更
+      - `+ port.extra_dhcp_opts.opt_name`
+      - `+ port.extra_dhcp_opts.opt_value`
+      - `* port.extra_dhcp_opts: list<object> -> list<ExtraDhcpOpt>`
+
 # 3.1.99 2024-08-22
 
 ### HuaweiCloud SDK DRS

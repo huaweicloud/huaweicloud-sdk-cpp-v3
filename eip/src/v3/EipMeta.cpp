@@ -19,6 +19,9 @@ HttpRequestDef EipMeta::genRequestDefForListBandwidth() {
     reqDefBuilder.withRequestField(FieldDef().withName("Id")
                   .withJsonTag("id")
                   .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Fields")
+                  .withJsonTag("fields")
+                  .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("BandwidthType")
                   .withJsonTag("bandwidth_type")
                   .withLocationType(Query_));
@@ -111,6 +114,9 @@ HttpRequestDef EipMeta::genRequestDefForListEipBandwidths() {
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("Marker")
                   .withJsonTag("marker")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Fields")
+                  .withJsonTag("fields")
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("Id")
                   .withJsonTag("id")

@@ -18,6 +18,7 @@ ListBandwidthRequest::ListBandwidthRequest()
     markerIsSet_ = false;
     id_ = "";
     idIsSet_ = false;
+    fieldsIsSet_ = false;
     bandwidthType_ = "";
     bandwidthTypeIsSet_ = false;
     name_ = "";
@@ -64,6 +65,9 @@ web::json::value ListBandwidthRequest::toJson() const
     }
     if(idIsSet_) {
         val[utility::conversions::to_string_t("id")] = ModelBase::toJson(id_);
+    }
+    if(fieldsIsSet_) {
+        val[utility::conversions::to_string_t("fields")] = ModelBase::toJson(fields_);
     }
     if(bandwidthTypeIsSet_) {
         val[utility::conversions::to_string_t("bandwidth_type")] = ModelBase::toJson(bandwidthType_);
@@ -136,6 +140,15 @@ bool ListBandwidthRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("fields"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("fields"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFields(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("bandwidth_type"))) {
@@ -320,6 +333,27 @@ bool ListBandwidthRequest::idIsSet() const
 void ListBandwidthRequest::unsetid()
 {
     idIsSet_ = false;
+}
+
+std::vector<std::string>& ListBandwidthRequest::getFields()
+{
+    return fields_;
+}
+
+void ListBandwidthRequest::setFields(const std::vector<std::string>& value)
+{
+    fields_ = value;
+    fieldsIsSet_ = true;
+}
+
+bool ListBandwidthRequest::fieldsIsSet() const
+{
+    return fieldsIsSet_;
+}
+
+void ListBandwidthRequest::unsetfields()
+{
+    fieldsIsSet_ = false;
 }
 
 std::string ListBandwidthRequest::getBandwidthType() const

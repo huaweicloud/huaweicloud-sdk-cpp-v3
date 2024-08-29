@@ -57,6 +57,9 @@ std::shared_ptr<ListBandwidthResponse> EipClient::listBandwidth(ListBandwidthReq
     if (request.idIsSet()) {
         localVarQueryParams["id"] = parameterToString(request.getId());
     }
+    if (request.fieldsIsSet()) {
+        localVarQueryParams["fields"] = parameterToString(request.getFields());
+    }
     if (request.bandwidthTypeIsSet()) {
         localVarQueryParams["bandwidth_type"] = parameterToString(request.getBandwidthType());
     }
@@ -221,6 +224,9 @@ std::shared_ptr<ListEipBandwidthsResponse> EipClient::listEipBandwidths(ListEipB
     }
     if (request.markerIsSet()) {
         localVarQueryParams["marker"] = parameterToString(request.getMarker());
+    }
+    if (request.fieldsIsSet()) {
+        localVarQueryParams["fields"] = parameterToString(request.getFields());
     }
     if (request.idIsSet()) {
         localVarQueryParams["id"] = parameterToString(request.getId());

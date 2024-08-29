@@ -126,6 +126,26 @@ public:
             { 
                 "https://vpc.ru-moscow-1.myhuaweicloud.com"
             });
+        regions["cn-east-5"] = Region("cn-east-5",
+            { 
+                "https://vpc.cn-east-5.myhuaweicloud.com"
+            });
+        regions["cn-east-4"] = Region("cn-east-4",
+            { 
+                "https://vpc.cn-east-4.myhuaweicloud.com"
+            });
+        regions["af-north-1"] = Region("af-north-1",
+            { 
+                "https://vpc.af-north-1.myhuaweicloud.com"
+            });
+        regions["cn-north-11"] = Region("cn-north-11",
+            { 
+                "https://vpc.cn-north-11.myhuaweicloud.com"
+            });
+        regions["cn-south-2"] = Region("cn-south-2",
+            { 
+                "https://vpc.cn-south-2.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

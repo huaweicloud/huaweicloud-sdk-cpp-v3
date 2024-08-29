@@ -249,6 +249,15 @@ HttpRequestDef EvsMeta::genRequestDefForResizeVolume() {
     return reqDefBuilder;
 }
 
+HttpRequestDef EvsMeta::genRequestDefForRetypeVolume() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef EvsMeta::genRequestDefForRollbackSnapshot() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;

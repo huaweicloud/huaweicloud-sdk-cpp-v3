@@ -12,7 +12,6 @@ namespace Model {
 
 ListShareBandwidthTypesRequest::ListShareBandwidthTypesRequest()
 {
-    fields_ = "";
     fieldsIsSet_ = false;
     id_ = "";
     idIsSet_ = false;
@@ -90,7 +89,7 @@ bool ListShareBandwidthTypesRequest::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("fields"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFields(refVal);
         }
@@ -189,12 +188,12 @@ bool ListShareBandwidthTypesRequest::fromJson(const web::json::value& val)
 }
 
 
-std::string ListShareBandwidthTypesRequest::getFields() const
+std::vector<std::string>& ListShareBandwidthTypesRequest::getFields()
 {
     return fields_;
 }
 
-void ListShareBandwidthTypesRequest::setFields(const std::string& value)
+void ListShareBandwidthTypesRequest::setFields(const std::vector<std::string>& value)
 {
     fields_ = value;
     fieldsIsSet_ = true;

@@ -31,6 +31,8 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/CreateDbInstanceResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/CreateDbUserRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/CreateDbUserResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/CreateGaussDbInstanceRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/CreateGaussDbInstanceResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/CreateInstanceRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/CreateInstanceResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/CreateManualBackupRequest.h>
@@ -353,6 +355,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateDbUserResponse> createDbUser(
         CreateDbUserRequest &request
+    );
+    // 创建数据库实例
+    //
+    // 创建数据库实例，仅支持IAM5的新平面认证方式（AK/SK认证方式）。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateGaussDbInstanceResponse> createGaussDbInstance(
+        CreateGaussDbInstanceRequest &request
     );
     // 创建数据库实例
     //

@@ -76,6 +76,15 @@ public:
     void unsetdatabases();
     void setDatabases(const std::vector<BackupDatabase>& value);
 
+    /// <summary>
+    /// 是否分库备份，只适用于SQLServer，默认为false
+    /// </summary>
+
+    bool isBackupDatabaseIndividually() const;
+    bool backupDatabaseIndividuallyIsSet() const;
+    void unsetbackupDatabaseIndividually();
+    void setBackupDatabaseIndividually(bool value);
+
 
 protected:
     std::string instanceId_;
@@ -86,6 +95,8 @@ protected:
     bool descriptionIsSet_;
     std::vector<BackupDatabase> databases_;
     bool databasesIsSet_;
+    bool backupDatabaseIndividually_;
+    bool backupDatabaseIndividuallyIsSet_;
 
 };
 

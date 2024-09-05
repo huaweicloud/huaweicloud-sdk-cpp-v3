@@ -22,11 +22,8 @@ FlavorQuasar::FlavorQuasar()
     ramIsSet_ = false;
     disk_ = 0;
     diskIsSet_ = false;
-    rootGb_ = 0;
-    rootGbIsSet_ = false;
-    ephemeralGb_ = 0;
-    ephemeralGbIsSet_ = false;
-    extraSpecsIsSet_ = false;
+    gpusIsSet_ = false;
+    asicAcceleratorsIsSet_ = false;
 }
 
 FlavorQuasar::~FlavorQuasar() = default;
@@ -54,14 +51,11 @@ web::json::value FlavorQuasar::toJson() const
     if(diskIsSet_) {
         val[utility::conversions::to_string_t("disk")] = ModelBase::toJson(disk_);
     }
-    if(rootGbIsSet_) {
-        val[utility::conversions::to_string_t("root_gb")] = ModelBase::toJson(rootGb_);
+    if(gpusIsSet_) {
+        val[utility::conversions::to_string_t("gpus")] = ModelBase::toJson(gpus_);
     }
-    if(ephemeralGbIsSet_) {
-        val[utility::conversions::to_string_t("ephemeral_gb")] = ModelBase::toJson(ephemeralGb_);
-    }
-    if(extraSpecsIsSet_) {
-        val[utility::conversions::to_string_t("extra_specs")] = ModelBase::toJson(extraSpecs_);
+    if(asicAcceleratorsIsSet_) {
+        val[utility::conversions::to_string_t("asic_accelerators")] = ModelBase::toJson(asicAccelerators_);
     }
 
     return val;
@@ -115,31 +109,22 @@ bool FlavorQuasar::fromJson(const web::json::value& val)
             setDisk(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("root_gb"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("root_gb"));
+    if(val.has_field(utility::conversions::to_string_t("gpus"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("gpus"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            std::vector<GpuInfo> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setRootGb(refVal);
+            setGpus(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("ephemeral_gb"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ephemeral_gb"));
+    if(val.has_field(utility::conversions::to_string_t("asic_accelerators"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("asic_accelerators"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            std::vector<ASICAcceleratorInfo> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setEphemeralGb(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("extra_specs"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("extra_specs"));
-        if(!fieldValue.is_null())
-        {
-            std::map<std::string, std::string> refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setExtraSpecs(refVal);
+            setAsicAccelerators(refVal);
         }
     }
     return ok;
@@ -251,67 +236,46 @@ void FlavorQuasar::unsetdisk()
     diskIsSet_ = false;
 }
 
-int32_t FlavorQuasar::getRootGb() const
+std::vector<GpuInfo>& FlavorQuasar::getGpus()
 {
-    return rootGb_;
+    return gpus_;
 }
 
-void FlavorQuasar::setRootGb(int32_t value)
+void FlavorQuasar::setGpus(const std::vector<GpuInfo>& value)
 {
-    rootGb_ = value;
-    rootGbIsSet_ = true;
+    gpus_ = value;
+    gpusIsSet_ = true;
 }
 
-bool FlavorQuasar::rootGbIsSet() const
+bool FlavorQuasar::gpusIsSet() const
 {
-    return rootGbIsSet_;
+    return gpusIsSet_;
 }
 
-void FlavorQuasar::unsetrootGb()
+void FlavorQuasar::unsetgpus()
 {
-    rootGbIsSet_ = false;
+    gpusIsSet_ = false;
 }
 
-int32_t FlavorQuasar::getEphemeralGb() const
+std::vector<ASICAcceleratorInfo>& FlavorQuasar::getAsicAccelerators()
 {
-    return ephemeralGb_;
+    return asicAccelerators_;
 }
 
-void FlavorQuasar::setEphemeralGb(int32_t value)
+void FlavorQuasar::setAsicAccelerators(const std::vector<ASICAcceleratorInfo>& value)
 {
-    ephemeralGb_ = value;
-    ephemeralGbIsSet_ = true;
+    asicAccelerators_ = value;
+    asicAcceleratorsIsSet_ = true;
 }
 
-bool FlavorQuasar::ephemeralGbIsSet() const
+bool FlavorQuasar::asicAcceleratorsIsSet() const
 {
-    return ephemeralGbIsSet_;
+    return asicAcceleratorsIsSet_;
 }
 
-void FlavorQuasar::unsetephemeralGb()
+void FlavorQuasar::unsetasicAccelerators()
 {
-    ephemeralGbIsSet_ = false;
-}
-
-std::map<std::string, std::string>& FlavorQuasar::getExtraSpecs()
-{
-    return extraSpecs_;
-}
-
-void FlavorQuasar::setExtraSpecs(const std::map<std::string, std::string>& value)
-{
-    extraSpecs_ = value;
-    extraSpecsIsSet_ = true;
-}
-
-bool FlavorQuasar::extraSpecsIsSet() const
-{
-    return extraSpecsIsSet_;
-}
-
-void FlavorQuasar::unsetextraSpecs()
-{
-    extraSpecsIsSet_ = false;
+    asicAcceleratorsIsSet_ = false;
 }
 
 }

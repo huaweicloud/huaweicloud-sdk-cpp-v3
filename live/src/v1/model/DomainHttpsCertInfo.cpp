@@ -20,6 +20,8 @@ DomainHttpsCertInfo::DomainHttpsCertInfo()
     certificateKeyIsSet_ = false;
     forceRedirect_ = false;
     forceRedirectIsSet_ = false;
+    gmCertificateIsSet_ = false;
+    tlsCertificateIsSet_ = false;
 }
 
 DomainHttpsCertInfo::~DomainHttpsCertInfo() = default;
@@ -43,6 +45,12 @@ web::json::value DomainHttpsCertInfo::toJson() const
     }
     if(forceRedirectIsSet_) {
         val[utility::conversions::to_string_t("force_redirect")] = ModelBase::toJson(forceRedirect_);
+    }
+    if(gmCertificateIsSet_) {
+        val[utility::conversions::to_string_t("gm_certificate")] = ModelBase::toJson(gmCertificate_);
+    }
+    if(tlsCertificateIsSet_) {
+        val[utility::conversions::to_string_t("tls_certificate")] = ModelBase::toJson(tlsCertificate_);
     }
 
     return val;
@@ -85,6 +93,24 @@ bool DomainHttpsCertInfo::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setForceRedirect(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("gm_certificate"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("gm_certificate"));
+        if(!fieldValue.is_null())
+        {
+            GmCertificateInfo refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setGmCertificate(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("tls_certificate"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("tls_certificate"));
+        if(!fieldValue.is_null())
+        {
+            TlsCertificateInfo refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTlsCertificate(refVal);
         }
     }
     return ok;
@@ -173,6 +199,48 @@ bool DomainHttpsCertInfo::forceRedirectIsSet() const
 void DomainHttpsCertInfo::unsetforceRedirect()
 {
     forceRedirectIsSet_ = false;
+}
+
+GmCertificateInfo DomainHttpsCertInfo::getGmCertificate() const
+{
+    return gmCertificate_;
+}
+
+void DomainHttpsCertInfo::setGmCertificate(const GmCertificateInfo& value)
+{
+    gmCertificate_ = value;
+    gmCertificateIsSet_ = true;
+}
+
+bool DomainHttpsCertInfo::gmCertificateIsSet() const
+{
+    return gmCertificateIsSet_;
+}
+
+void DomainHttpsCertInfo::unsetgmCertificate()
+{
+    gmCertificateIsSet_ = false;
+}
+
+TlsCertificateInfo DomainHttpsCertInfo::getTlsCertificate() const
+{
+    return tlsCertificate_;
+}
+
+void DomainHttpsCertInfo::setTlsCertificate(const TlsCertificateInfo& value)
+{
+    tlsCertificate_ = value;
+    tlsCertificateIsSet_ = true;
+}
+
+bool DomainHttpsCertInfo::tlsCertificateIsSet() const
+{
+    return tlsCertificateIsSet_;
+}
+
+void DomainHttpsCertInfo::unsettlsCertificate()
+{
+    tlsCertificateIsSet_ = false;
 }
 
 }

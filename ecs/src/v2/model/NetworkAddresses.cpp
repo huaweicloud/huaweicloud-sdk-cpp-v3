@@ -22,6 +22,8 @@ NetworkAddresses::NetworkAddresses()
     oSEXTIPSMACMacAddrIsSet_ = false;
     oSEXTIPSType_ = "";
     oSEXTIPSTypeIsSet_ = false;
+    primary_ = false;
+    primaryIsSet_ = false;
 }
 
 NetworkAddresses::~NetworkAddresses() = default;
@@ -48,6 +50,9 @@ web::json::value NetworkAddresses::toJson() const
     }
     if(oSEXTIPSTypeIsSet_) {
         val[utility::conversions::to_string_t("OS-EXT-IPS:type")] = ModelBase::toJson(oSEXTIPSType_);
+    }
+    if(primaryIsSet_) {
+        val[utility::conversions::to_string_t("primary")] = ModelBase::toJson(primary_);
     }
 
     return val;
@@ -99,6 +104,15 @@ bool NetworkAddresses::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setOSEXTIPSType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("primary"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("primary"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPrimary(refVal);
         }
     }
     return ok;
@@ -208,6 +222,27 @@ bool NetworkAddresses::oSEXTIPSTypeIsSet() const
 void NetworkAddresses::unsetoSEXTIPSType()
 {
     oSEXTIPSTypeIsSet_ = false;
+}
+
+bool NetworkAddresses::isPrimary() const
+{
+    return primary_;
+}
+
+void NetworkAddresses::setPrimary(bool value)
+{
+    primary_ = value;
+    primaryIsSet_ = true;
+}
+
+bool NetworkAddresses::primaryIsSet() const
+{
+    return primaryIsSet_;
+}
+
+void NetworkAddresses::unsetprimary()
+{
+    primaryIsSet_ = false;
 }
 
 }

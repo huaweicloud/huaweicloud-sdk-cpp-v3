@@ -20,6 +20,8 @@ VolumeAttach::VolumeAttach()
     deviceIsSet_ = false;
     bootIndex_ = "";
     bootIndexIsSet_ = false;
+    size_ = 0;
+    sizeIsSet_ = false;
 }
 
 VolumeAttach::~VolumeAttach() = default;
@@ -43,6 +45,9 @@ web::json::value VolumeAttach::toJson() const
     }
     if(bootIndexIsSet_) {
         val[utility::conversions::to_string_t("bootIndex")] = ModelBase::toJson(bootIndex_);
+    }
+    if(sizeIsSet_) {
+        val[utility::conversions::to_string_t("size")] = ModelBase::toJson(size_);
     }
 
     return val;
@@ -85,6 +90,15 @@ bool VolumeAttach::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBootIndex(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("size"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("size"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSize(refVal);
         }
     }
     return ok;
@@ -173,6 +187,27 @@ bool VolumeAttach::bootIndexIsSet() const
 void VolumeAttach::unsetbootIndex()
 {
     bootIndexIsSet_ = false;
+}
+
+int32_t VolumeAttach::getSize() const
+{
+    return size_;
+}
+
+void VolumeAttach::setSize(int32_t value)
+{
+    size_ = value;
+    sizeIsSet_ = true;
+}
+
+bool VolumeAttach::sizeIsSet() const
+{
+    return sizeIsSet_;
+}
+
+void VolumeAttach::unsetsize()
+{
+    sizeIsSet_ = false;
 }
 
 }

@@ -1,3 +1,67 @@
+# 3.1.101 2024-09-05
+
+### HuaweiCloud SDK ECS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListCloudServers**
+    - 请求参数变更
+      - `+ marker`
+    - 响应参数变更
+      - `- count`
+      - `+ servers.launched_at`
+      - `- servers.launched`
+      - `+ servers.security_groups.id`
+      - `+ servers.volumes_attached.size`
+      - `+ servers.flavor.gpus`
+      - `+ servers.flavor.asic_accelerators`
+      - `- servers.flavor.root_gb`
+      - `- servers.flavor.ephemeral_gb`
+      - `- servers.flavor.extra_specs`
+
+### HuaweiCloud SDK Live
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowDomainHttpsCert**
+    - 响应参数变更
+      - `+ tls_certificate`
+      - `+ gm_certificate`
+  - **UpdateDomainHttpsCert**
+    - 请求参数变更
+      - `+ tls_certificate`
+      - `+ gm_certificate`
+
+### HuaweiCloud SDK VPC
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateSubNetworkInterface**
+    - 请求参数变更
+      - `- sub_network_interface.instance_id`
+      - `- sub_network_interface.instance_type`
+      - `- sub_network_interface.tags`
+  - **BatchCreateSubNetworkInterface**
+    - 请求参数变更
+      - `- sub_network_interface.instance_id`
+      - `- sub_network_interface.instance_type`
+      - `- sub_network_interface.tags`
+
 # 3.1.100 2024-08-29
 
 ### HuaweiCloud SDK ECS

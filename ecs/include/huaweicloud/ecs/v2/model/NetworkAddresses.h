@@ -83,6 +83,15 @@ public:
     void unsetoSEXTIPSType();
     void setOSEXTIPSType(const std::string& value);
 
+    /// <summary>
+    /// 是否是主网卡。  true：主网卡。 false：辅助网卡。
+    /// </summary>
+
+    bool isPrimary() const;
+    bool primaryIsSet() const;
+    void unsetprimary();
+    void setPrimary(bool value);
+
 
 protected:
     std::string addr_;
@@ -95,6 +104,8 @@ protected:
     bool oSEXTIPSMACMacAddrIsSet_;
     std::string oSEXTIPSType_;
     bool oSEXTIPSTypeIsSet_;
+    bool primary_;
+    bool primaryIsSet_;
 
 };
 

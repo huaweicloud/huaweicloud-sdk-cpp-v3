@@ -1235,6 +1235,9 @@ std::shared_ptr<ListCloudServersResponse> EcsClient::listCloudServers(ListCloudS
     if (request.limitIsSet()) {
         localVarQueryParams["limit"] = parameterToString(request.getLimit());
     }
+    if (request.markerIsSet()) {
+        localVarQueryParams["marker"] = parameterToString(request.getMarker());
+    }
 
     std::string localVarHttpBody;
 

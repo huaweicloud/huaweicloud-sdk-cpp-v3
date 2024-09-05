@@ -47,10 +47,21 @@ public:
     void unsetname();
     void setName(const std::string& value);
 
+    /// <summary>
+    /// 安全组ID。
+    /// </summary>
+
+    std::string getId() const;
+    bool idIsSet() const;
+    void unsetid();
+    void setId(const std::string& value);
+
 
 protected:
     std::string name_;
     bool nameIsSet_;
+    std::string id_;
+    bool idIsSet_;
 
 };
 

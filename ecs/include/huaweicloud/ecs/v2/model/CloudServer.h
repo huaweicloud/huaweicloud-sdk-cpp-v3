@@ -175,13 +175,13 @@ public:
     void setUpdated(const std::string& value);
 
     /// <summary>
-    /// 云服务器启动时间。时间格式例如：2020-05-22T07:48:53Z。
+    /// 云服务器启动时间。时间格式例如：2020-05-22T07:48:53.000000。
     /// </summary>
 
-    std::string getLaunched() const;
-    bool launchedIsSet() const;
-    void unsetlaunched();
-    void setLaunched(const std::string& value);
+    std::string getLaunchedAt() const;
+    bool launchedAtIsSet() const;
+    void unsetlaunchedAt();
+    void setLaunchedAt(const std::string& value);
 
     /// <summary>
     /// 云服务器的描述信息。
@@ -357,8 +357,8 @@ protected:
     bool spodIdIsSet_;
     std::string updated_;
     bool updatedIsSet_;
-    std::string launched_;
-    bool launchedIsSet_;
+    std::string launchedAt_;
+    bool launchedAtIsSet_;
     std::string description_;
     bool descriptionIsSet_;
     std::string keyName_;

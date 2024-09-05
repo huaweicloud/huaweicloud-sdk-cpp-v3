@@ -10,6 +10,8 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <huaweicloud/live/v1/model/GmCertificateInfo.h>
+#include <huaweicloud/live/v1/model/TlsCertificateInfo.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -74,6 +76,24 @@ public:
     void unsetforceRedirect();
     void setForceRedirect(bool value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    GmCertificateInfo getGmCertificate() const;
+    bool gmCertificateIsSet() const;
+    void unsetgmCertificate();
+    void setGmCertificate(const GmCertificateInfo& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    TlsCertificateInfo getTlsCertificate() const;
+    bool tlsCertificateIsSet() const;
+    void unsettlsCertificate();
+    void setTlsCertificate(const TlsCertificateInfo& value);
+
 
 protected:
     std::string certificateFormat_;
@@ -84,6 +104,10 @@ protected:
     bool certificateKeyIsSet_;
     bool forceRedirect_;
     bool forceRedirectIsSet_;
+    GmCertificateInfo gmCertificate_;
+    bool gmCertificateIsSet_;
+    TlsCertificateInfo tlsCertificate_;
+    bool tlsCertificateIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

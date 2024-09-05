@@ -49,6 +49,8 @@ ListCloudServersRequest::ListCloudServersRequest()
     expectFieldsIsSet_ = false;
     limit_ = 0;
     limitIsSet_ = false;
+    marker_ = "";
+    markerIsSet_ = false;
 }
 
 ListCloudServersRequest::~ListCloudServersRequest() = default;
@@ -117,6 +119,9 @@ web::json::value ListCloudServersRequest::toJson() const
     }
     if(limitIsSet_) {
         val[utility::conversions::to_string_t("limit")] = ModelBase::toJson(limit_);
+    }
+    if(markerIsSet_) {
+        val[utility::conversions::to_string_t("marker")] = ModelBase::toJson(marker_);
     }
 
     return val;
@@ -294,6 +299,15 @@ bool ListCloudServersRequest::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLimit(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("marker"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("marker"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMarker(refVal);
         }
     }
     return ok;
@@ -697,6 +711,27 @@ bool ListCloudServersRequest::limitIsSet() const
 void ListCloudServersRequest::unsetlimit()
 {
     limitIsSet_ = false;
+}
+
+std::string ListCloudServersRequest::getMarker() const
+{
+    return marker_;
+}
+
+void ListCloudServersRequest::setMarker(const std::string& value)
+{
+    marker_ = value;
+    markerIsSet_ = true;
+}
+
+bool ListCloudServersRequest::markerIsSet() const
+{
+    return markerIsSet_;
+}
+
+void ListCloudServersRequest::unsetmarker()
+{
+    markerIsSet_ = false;
 }
 
 }

@@ -9,8 +9,9 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/ecs/v2/model/ASICAcceleratorInfo.h>
+#include <huaweicloud/ecs/v2/model/GpuInfo.h>
 #include <string>
-#include <map>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -89,28 +90,19 @@ public:
     /// 
     /// </summary>
 
-    int32_t getRootGb() const;
-    bool rootGbIsSet() const;
-    void unsetrootGb();
-    void setRootGb(int32_t value);
+    std::vector<GpuInfo>& getGpus();
+    bool gpusIsSet() const;
+    void unsetgpus();
+    void setGpus(const std::vector<GpuInfo>& value);
 
     /// <summary>
     /// 
     /// </summary>
 
-    int32_t getEphemeralGb() const;
-    bool ephemeralGbIsSet() const;
-    void unsetephemeralGb();
-    void setEphemeralGb(int32_t value);
-
-    /// <summary>
-    /// flavor扩展字段。
-    /// </summary>
-
-    std::map<std::string, std::string>& getExtraSpecs();
-    bool extraSpecsIsSet() const;
-    void unsetextraSpecs();
-    void setExtraSpecs(const std::map<std::string, std::string>& value);
+    std::vector<ASICAcceleratorInfo>& getAsicAccelerators();
+    bool asicAcceleratorsIsSet() const;
+    void unsetasicAccelerators();
+    void setAsicAccelerators(const std::vector<ASICAcceleratorInfo>& value);
 
 
 protected:
@@ -124,12 +116,10 @@ protected:
     bool ramIsSet_;
     int32_t disk_;
     bool diskIsSet_;
-    int32_t rootGb_;
-    bool rootGbIsSet_;
-    int32_t ephemeralGb_;
-    bool ephemeralGbIsSet_;
-    std::map<std::string, std::string> extraSpecs_;
-    bool extraSpecsIsSet_;
+    std::vector<GpuInfo> gpus_;
+    bool gpusIsSet_;
+    std::vector<ASICAcceleratorInfo> asicAccelerators_;
+    bool asicAcceleratorsIsSet_;
 
 };
 

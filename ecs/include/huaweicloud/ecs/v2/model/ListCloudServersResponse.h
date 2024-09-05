@@ -42,15 +42,6 @@ public:
     /// ListCloudServersResponse members
 
     /// <summary>
-    /// 查询云服务器个数。
-    /// </summary>
-
-    int32_t getCount() const;
-    bool countIsSet() const;
-    void unsetcount();
-    void setCount(int32_t value);
-
-    /// <summary>
     /// 查询云服务器信息列表。
     /// </summary>
 
@@ -79,8 +70,6 @@ public:
 
 
 protected:
-    int32_t count_;
-    bool countIsSet_;
     std::vector<CloudServer> servers_;
     bool serversIsSet_;
     std::vector<PageLink> serversLinks_;

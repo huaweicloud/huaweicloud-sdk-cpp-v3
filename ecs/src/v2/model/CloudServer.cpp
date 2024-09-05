@@ -39,8 +39,8 @@ CloudServer::CloudServer()
     spodIdIsSet_ = false;
     updated_ = "";
     updatedIsSet_ = false;
-    launched_ = "";
-    launchedIsSet_ = false;
+    launchedAt_ = "";
+    launchedAtIsSet_ = false;
     description_ = "";
     descriptionIsSet_ = false;
     keyName_ = "";
@@ -118,8 +118,8 @@ web::json::value CloudServer::toJson() const
     if(updatedIsSet_) {
         val[utility::conversions::to_string_t("updated")] = ModelBase::toJson(updated_);
     }
-    if(launchedIsSet_) {
-        val[utility::conversions::to_string_t("launched")] = ModelBase::toJson(launched_);
+    if(launchedAtIsSet_) {
+        val[utility::conversions::to_string_t("launched_at")] = ModelBase::toJson(launchedAt_);
     }
     if(descriptionIsSet_) {
         val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
@@ -302,13 +302,13 @@ bool CloudServer::fromJson(const web::json::value& val)
             setUpdated(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("launched"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("launched"));
+    if(val.has_field(utility::conversions::to_string_t("launched_at"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("launched_at"));
         if(!fieldValue.is_null())
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setLaunched(refVal);
+            setLaunchedAt(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("description"))) {
@@ -753,25 +753,25 @@ void CloudServer::unsetupdated()
     updatedIsSet_ = false;
 }
 
-std::string CloudServer::getLaunched() const
+std::string CloudServer::getLaunchedAt() const
 {
-    return launched_;
+    return launchedAt_;
 }
 
-void CloudServer::setLaunched(const std::string& value)
+void CloudServer::setLaunchedAt(const std::string& value)
 {
-    launched_ = value;
-    launchedIsSet_ = true;
+    launchedAt_ = value;
+    launchedAtIsSet_ = true;
 }
 
-bool CloudServer::launchedIsSet() const
+bool CloudServer::launchedAtIsSet() const
 {
-    return launchedIsSet_;
+    return launchedAtIsSet_;
 }
 
-void CloudServer::unsetlaunched()
+void CloudServer::unsetlaunchedAt()
 {
-    launchedIsSet_ = false;
+    launchedAtIsSet_ = false;
 }
 
 std::string CloudServer::getDescription() const

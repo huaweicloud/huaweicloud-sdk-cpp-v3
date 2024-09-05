@@ -74,6 +74,15 @@ public:
     void unsetbootIndex();
     void setBootIndex(const std::string& value);
 
+    /// <summary>
+    /// 云盘大小（单位：GB）。
+    /// </summary>
+
+    int32_t getSize() const;
+    bool sizeIsSet() const;
+    void unsetsize();
+    void setSize(int32_t value);
+
 
 protected:
     std::string id_;
@@ -84,6 +93,8 @@ protected:
     bool deviceIsSet_;
     std::string bootIndex_;
     bool bootIndexIsSet_;
+    int32_t size_;
+    bool sizeIsSet_;
 
 };
 

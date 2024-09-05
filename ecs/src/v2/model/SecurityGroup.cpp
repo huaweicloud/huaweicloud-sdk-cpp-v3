@@ -14,6 +14,8 @@ SecurityGroup::SecurityGroup()
 {
     name_ = "";
     nameIsSet_ = false;
+    id_ = "";
+    idIsSet_ = false;
 }
 
 SecurityGroup::~SecurityGroup() = default;
@@ -29,6 +31,9 @@ web::json::value SecurityGroup::toJson() const
     if(nameIsSet_) {
         val[utility::conversions::to_string_t("name")] = ModelBase::toJson(name_);
     }
+    if(idIsSet_) {
+        val[utility::conversions::to_string_t("id")] = ModelBase::toJson(id_);
+    }
 
     return val;
 }
@@ -43,6 +48,15 @@ bool SecurityGroup::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setId(refVal);
         }
     }
     return ok;
@@ -68,6 +82,27 @@ bool SecurityGroup::nameIsSet() const
 void SecurityGroup::unsetname()
 {
     nameIsSet_ = false;
+}
+
+std::string SecurityGroup::getId() const
+{
+    return id_;
+}
+
+void SecurityGroup::setId(const std::string& value)
+{
+    id_ = value;
+    idIsSet_ = true;
+}
+
+bool SecurityGroup::idIsSet() const
+{
+    return idIsSet_;
+}
+
+void SecurityGroup::unsetid()
+{
+    idIsSet_ = false;
 }
 
 }

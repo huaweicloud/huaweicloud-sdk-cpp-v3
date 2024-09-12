@@ -12,6 +12,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/kvs/v1/model/Returned_segment_item.h>
 #include <huaweicloud/core/bson/Bson.h>
 #include <vector>
 #include <huaweicloud/kvs/v1/model/Returned_kv_item.h>
@@ -79,6 +80,15 @@ public:
     void unsetreturnedKvItems();
     void setReturnedKvItems(const std::vector<Returned_kv_item>& value);
 
+    /// <summary>
+    /// 采样段区间列表。
+    /// </summary>
+
+    std::vector<Returned_segment_item>& getReturnedSegmentItems();
+    bool returnedSegmentItemsIsSet() const;
+    void unsetreturnedSegmentItems();
+    void setReturnedSegmentItems(const std::vector<Returned_segment_item>& value);
+
 
 protected:
     int32_t returnedCount_;
@@ -89,6 +99,8 @@ protected:
     bool cursorKeyIsSet_;
     std::vector<Returned_kv_item> returnedKvItems_;
     bool returnedKvItemsIsSet_;
+    std::vector<Returned_segment_item> returnedSegmentItems_;
+    bool returnedSegmentItemsIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

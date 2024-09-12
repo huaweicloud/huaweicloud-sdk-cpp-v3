@@ -19,6 +19,7 @@ ScanKvResponse::ScanKvResponse()
     filteredCountIsSet_ = false;
     cursorKeyIsSet_ = false;
     returnedKvItemsIsSet_ = false;
+    returnedSegmentItemsIsSet_ = false;
 }
 
 ScanKvResponse::~ScanKvResponse() = default;
@@ -40,6 +41,9 @@ bool ScanKvResponse::toBson(Builder &builder) const
         return false;
     }
     if (returnedKvItemsIsSet_ && !bson_append(builder, "returned_kv_items", returnedKvItems_)) {
+        return false;
+    }
+    if (returnedSegmentItemsIsSet_ && !bson_append(builder, "returned_segment_items", returnedSegmentItems_)) {
         return false;
     }
 
@@ -85,6 +89,15 @@ bool ScanKvResponse::fromBson(const Viewer &viewer)
                 return false;
             }
             returnedKvItemsIsSet_ = true;
+            ++it;
+            continue;
+        }
+        
+        if (key == "returned_segment_items") {
+            if (!bson_get(it, returnedSegmentItems_)) {
+                return false;
+            }
+            returnedSegmentItemsIsSet_ = true;
             ++it;
             continue;
         }
@@ -177,6 +190,27 @@ bool ScanKvResponse::returnedKvItemsIsSet() const
 void ScanKvResponse::unsetreturnedKvItems()
 {
     returnedKvItemsIsSet_ = false;
+}
+
+std::vector<Returned_segment_item>& ScanKvResponse::getReturnedSegmentItems()
+{
+    return returnedSegmentItems_;
+}
+
+void ScanKvResponse::setReturnedSegmentItems(const std::vector<Returned_segment_item>& value)
+{
+    returnedSegmentItems_ = value;
+    returnedSegmentItemsIsSet_ = true;
+}
+
+bool ScanKvResponse::returnedSegmentItemsIsSet() const
+{
+    return returnedSegmentItemsIsSet_;
+}
+
+void ScanKvResponse::unsetreturnedSegmentItems()
+{
+    returnedSegmentItemsIsSet_ = false;
 }
 
 }

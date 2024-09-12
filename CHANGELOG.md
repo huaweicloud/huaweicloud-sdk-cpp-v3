@@ -1,3 +1,21 @@
+# 3.1.102 2024-09-12
+
+### HuaweiCloud SDK KVS
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ScanKv**
+    - changes of request param
+      - `+ sample_segments_count`
+      - `+ return_count_only`
+    - changes of response param
+      - `+ returned_segment_items`
+
 # 3.1.101 2024-09-05
 
 ### HuaweiCloud SDK ECS

@@ -22,6 +22,10 @@ ScanKvRequestBody::ScanKvRequestBody()
     startKeyIsSet_ = false;
     endKeyIsSet_ = false;
     filterExpressionIsSet_ = false;
+    sampleSegmentsCount_ = 0;
+    sampleSegmentsCountIsSet_ = false;
+    returnCountOnly_ = false;
+    returnCountOnlyIsSet_ = false;
 }
 
 ScanKvRequestBody::~ScanKvRequestBody() = default;
@@ -49,6 +53,12 @@ bool ScanKvRequestBody::toBson(Builder &builder) const
         return false;
     }
     if (filterExpressionIsSet_ && !bson_append(builder, "filter_expression", filterExpression_)) {
+        return false;
+    }
+    if (sampleSegmentsCountIsSet_ && !bson_append(builder, "sample_segments_count", sampleSegmentsCount_)) {
+        return false;
+    }
+    if (returnCountOnlyIsSet_ && !bson_append(builder, "return_count_only", returnCountOnly_)) {
         return false;
     }
 
@@ -112,6 +122,24 @@ bool ScanKvRequestBody::fromBson(const Viewer &viewer)
                 return false;
             }
             filterExpressionIsSet_ = true;
+            ++it;
+            continue;
+        }
+        
+        if (key == "sample_segments_count") {
+            if (!bson_get(it, sampleSegmentsCount_)) {
+                return false;
+            }
+            sampleSegmentsCountIsSet_ = true;
+            ++it;
+            continue;
+        }
+        
+        if (key == "return_count_only") {
+            if (!bson_get(it, returnCountOnly_)) {
+                return false;
+            }
+            returnCountOnlyIsSet_ = true;
             ++it;
             continue;
         }
@@ -246,6 +274,48 @@ bool ScanKvRequestBody::filterExpressionIsSet() const
 void ScanKvRequestBody::unsetfilterExpression()
 {
     filterExpressionIsSet_ = false;
+}
+
+int32_t ScanKvRequestBody::getSampleSegmentsCount() const
+{
+    return sampleSegmentsCount_;
+}
+
+void ScanKvRequestBody::setSampleSegmentsCount(int32_t value)
+{
+    sampleSegmentsCount_ = value;
+    sampleSegmentsCountIsSet_ = true;
+}
+
+bool ScanKvRequestBody::sampleSegmentsCountIsSet() const
+{
+    return sampleSegmentsCountIsSet_;
+}
+
+void ScanKvRequestBody::unsetsampleSegmentsCount()
+{
+    sampleSegmentsCountIsSet_ = false;
+}
+
+bool ScanKvRequestBody::isReturnCountOnly() const
+{
+    return returnCountOnly_;
+}
+
+void ScanKvRequestBody::setReturnCountOnly(bool value)
+{
+    returnCountOnly_ = value;
+    returnCountOnlyIsSet_ = true;
+}
+
+bool ScanKvRequestBody::returnCountOnlyIsSet() const
+{
+    return returnCountOnlyIsSet_;
+}
+
+void ScanKvRequestBody::unsetreturnCountOnly()
+{
+    returnCountOnlyIsSet_ = false;
 }
 
 }

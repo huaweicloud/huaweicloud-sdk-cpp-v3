@@ -1,3 +1,21 @@
+# 3.1.102 2024-09-12
+
+### HuaweiCloud SDK KVS
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ScanKv**
+    - 请求参数变更
+      - `+ sample_segments_count`
+      - `+ return_count_only`
+    - 响应参数变更
+      - `+ returned_segment_items`
+
 # 3.1.101 2024-09-05
 
 ### HuaweiCloud SDK ECS

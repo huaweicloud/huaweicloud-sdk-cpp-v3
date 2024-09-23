@@ -12,6 +12,8 @@ namespace Model {
 
 ListCreateAccountStatusesRequest::ListCreateAccountStatusesRequest()
 {
+    xSecurityToken_ = "";
+    xSecurityTokenIsSet_ = false;
     statesIsSet_ = false;
     limit_ = 0;
     limitIsSet_ = false;
@@ -29,6 +31,9 @@ web::json::value ListCreateAccountStatusesRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(xSecurityTokenIsSet_) {
+        val[utility::conversions::to_string_t("X-Security-Token")] = ModelBase::toJson(xSecurityToken_);
+    }
     if(statesIsSet_) {
         val[utility::conversions::to_string_t("states")] = ModelBase::toJson(states_);
     }
@@ -45,6 +50,15 @@ bool ListCreateAccountStatusesRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("X-Security-Token"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Security-Token"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXSecurityToken(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("states"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("states"));
         if(!fieldValue.is_null())
@@ -75,6 +89,27 @@ bool ListCreateAccountStatusesRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
+
+std::string ListCreateAccountStatusesRequest::getXSecurityToken() const
+{
+    return xSecurityToken_;
+}
+
+void ListCreateAccountStatusesRequest::setXSecurityToken(const std::string& value)
+{
+    xSecurityToken_ = value;
+    xSecurityTokenIsSet_ = true;
+}
+
+bool ListCreateAccountStatusesRequest::xSecurityTokenIsSet() const
+{
+    return xSecurityTokenIsSet_;
+}
+
+void ListCreateAccountStatusesRequest::unsetxSecurityToken()
+{
+    xSecurityTokenIsSet_ = false;
+}
 
 std::vector<std::string>& ListCreateAccountStatusesRequest::getStates()
 {

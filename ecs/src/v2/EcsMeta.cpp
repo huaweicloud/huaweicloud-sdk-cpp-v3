@@ -467,6 +467,9 @@ HttpRequestDef EcsMeta::genRequestDefForListServersDetails() {
     reqDefBuilder.withRequestField(FieldDef().withName("ServerId")
                   .withJsonTag("server_id")
                   .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Marker")
+                  .withJsonTag("marker")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 

@@ -39,6 +39,15 @@ public:
     /// ListEntitiesRequest members
 
     /// <summary>
+    /// 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
+    /// </summary>
+
+    std::string getXSecurityToken() const;
+    bool xSecurityTokenIsSet() const;
+    void unsetxSecurityToken();
+    void setXSecurityToken(const std::string& value);
+
+    /// <summary>
     /// 父节点（根或组织单元）的唯一标识符（ID）。
     /// </summary>
 
@@ -48,7 +57,7 @@ public:
     void setParentId(const std::string& value);
 
     /// <summary>
-    /// 子节点（根或组织单元）的唯一标识符（ID）。
+    /// 子节点（组织单元）的唯一标识符（ID）。
     /// </summary>
 
     std::string getChildId() const;
@@ -76,6 +85,8 @@ public:
 
 
 protected:
+    std::string xSecurityToken_;
+    bool xSecurityTokenIsSet_;
     std::string parentId_;
     bool parentIdIsSet_;
     std::string childId_;

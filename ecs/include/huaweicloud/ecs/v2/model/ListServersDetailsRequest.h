@@ -146,6 +146,15 @@ public:
     void unsetserverId();
     void setServerId(const std::string& value);
 
+    /// <summary>
+    /// 以单页最后一条server的id作为分页标记。
+    /// </summary>
+
+    std::string getMarker() const;
+    bool markerIsSet() const;
+    void unsetmarker();
+    void setMarker(const std::string& value);
+
 
 protected:
     std::string enterpriseProjectId_;
@@ -172,6 +181,8 @@ protected:
     bool ipEqIsSet_;
     std::string serverId_;
     bool serverIdIsSet_;
+    std::string marker_;
+    bool markerIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

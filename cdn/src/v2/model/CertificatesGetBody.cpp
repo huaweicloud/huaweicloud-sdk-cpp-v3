@@ -12,6 +12,10 @@ namespace Model {
 
 CertificatesGetBody::CertificatesGetBody()
 {
+    certificateSource_ = 0;
+    certificateSourceIsSet_ = false;
+    scmCertificateId_ = "";
+    scmCertificateIdIsSet_ = false;
     certificateType_ = "";
     certificateTypeIsSet_ = false;
     certificateName_ = "";
@@ -34,6 +38,12 @@ web::json::value CertificatesGetBody::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(certificateSourceIsSet_) {
+        val[utility::conversions::to_string_t("certificate_source")] = ModelBase::toJson(certificateSource_);
+    }
+    if(scmCertificateIdIsSet_) {
+        val[utility::conversions::to_string_t("scm_certificate_id")] = ModelBase::toJson(scmCertificateId_);
+    }
     if(certificateTypeIsSet_) {
         val[utility::conversions::to_string_t("certificate_type")] = ModelBase::toJson(certificateType_);
     }
@@ -56,6 +66,24 @@ bool CertificatesGetBody::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("certificate_source"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("certificate_source"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCertificateSource(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("scm_certificate_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("scm_certificate_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setScmCertificateId(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("certificate_type"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("certificate_type"));
         if(!fieldValue.is_null())
@@ -104,6 +132,48 @@ bool CertificatesGetBody::fromJson(const web::json::value& val)
     return ok;
 }
 
+
+int32_t CertificatesGetBody::getCertificateSource() const
+{
+    return certificateSource_;
+}
+
+void CertificatesGetBody::setCertificateSource(int32_t value)
+{
+    certificateSource_ = value;
+    certificateSourceIsSet_ = true;
+}
+
+bool CertificatesGetBody::certificateSourceIsSet() const
+{
+    return certificateSourceIsSet_;
+}
+
+void CertificatesGetBody::unsetcertificateSource()
+{
+    certificateSourceIsSet_ = false;
+}
+
+std::string CertificatesGetBody::getScmCertificateId() const
+{
+    return scmCertificateId_;
+}
+
+void CertificatesGetBody::setScmCertificateId(const std::string& value)
+{
+    scmCertificateId_ = value;
+    scmCertificateIdIsSet_ = true;
+}
+
+bool CertificatesGetBody::scmCertificateIdIsSet() const
+{
+    return scmCertificateIdIsSet_;
+}
+
+void CertificatesGetBody::unsetscmCertificateId()
+{
+    scmCertificateIdIsSet_ = false;
+}
 
 std::string CertificatesGetBody::getCertificateType() const
 {

@@ -23,6 +23,7 @@ public:
     static HttpRequestDef genRequestDefForRemoveAccount();
     static HttpRequestDef genRequestDefForShowAccount();
     static HttpRequestDef genRequestDefForShowCreateAccountStatus();
+    static HttpRequestDef genRequestDefForUpdateAccount();
     static HttpRequestDef genRequestDefForDeregisterDelegatedAdministrator();
     static HttpRequestDef genRequestDefForListDelegatedAdministrators();
     static HttpRequestDef genRequestDefForListDelegatedServices();

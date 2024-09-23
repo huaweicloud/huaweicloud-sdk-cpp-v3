@@ -40,6 +40,15 @@ public:
     /// ListResourceInstancesRequest members
 
     /// <summary>
+    /// 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
+    /// </summary>
+
+    std::string getXSecurityToken() const;
+    bool xSecurityTokenIsSet() const;
+    void unsetxSecurityToken();
+    void setXSecurityToken(const std::string& value);
+
+    /// <summary>
     /// 页面中最大结果数量。
     /// </summary>
 
@@ -58,7 +67,7 @@ public:
     void setOffset(const std::string& value);
 
     /// <summary>
-    /// 资源类型 organizations:policies服务策略 organizations:ous组织OU organizations:accounts账号信息 organizations:roots根
+    /// 资源类型。枚举值：organizations:policies（服务策略）、organizations:ous（组织OU）、organizations:accounts（账号信息） 、organizations:roots：（根）。
     /// </summary>
 
     std::string getResourceType() const;
@@ -77,6 +86,8 @@ public:
 
 
 protected:
+    std::string xSecurityToken_;
+    bool xSecurityTokenIsSet_;
     int32_t limit_;
     bool limitIsSet_;
     std::string offset_;

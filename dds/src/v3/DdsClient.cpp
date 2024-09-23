@@ -1614,6 +1614,42 @@ std::shared_ptr<ListDatabaseUsersResponse> DdsClient::listDatabaseUsers(ListData
 
     return localVarResult;
 }
+std::shared_ptr<ListDatabasesResponse> DdsClient::listDatabases(ListDatabasesRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/databases";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, DdsMeta::genRequestDefForListDatabases());
+
+    std::shared_ptr<ListDatabasesResponse> localVarResult = std::make_shared<ListDatabasesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListDatastoreVersionsResponse> DdsClient::listDatastoreVersions(ListDatastoreVersionsRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/datastores/{datastore_name}/versions";

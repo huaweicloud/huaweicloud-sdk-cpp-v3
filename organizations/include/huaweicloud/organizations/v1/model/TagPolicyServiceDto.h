@@ -21,7 +21,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// A quota of organization.
+/// 被添加到标签策略强制执行的资源类型。
 /// </summary>
 class HUAWEICLOUD_ORGANIZATIONS_V1_EXPORT  TagPolicyServiceDto
     : public ModelBase
@@ -40,7 +40,7 @@ public:
     /// TagPolicyServiceDto members
 
     /// <summary>
-    /// The service name of the service.
+    /// 服务名称。
     /// </summary>
 
     std::string getServiceName() const;
@@ -49,7 +49,7 @@ public:
     void setServiceName(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 资源类型。
     /// </summary>
 
     std::vector<std::string>& getResourceTypes();

@@ -40,7 +40,7 @@ public:
     /// ListServicesResponse members
 
     /// <summary>
-    /// 
+    /// 云服务名称。
     /// </summary>
 
     std::vector<std::string>& getServices();

@@ -12,6 +12,8 @@ namespace Model {
 
 ListCloseAccountStatusesRequest::ListCloseAccountStatusesRequest()
 {
+    xSecurityToken_ = "";
+    xSecurityTokenIsSet_ = false;
     statesIsSet_ = false;
 }
 
@@ -25,6 +27,9 @@ web::json::value ListCloseAccountStatusesRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(xSecurityTokenIsSet_) {
+        val[utility::conversions::to_string_t("X-Security-Token")] = ModelBase::toJson(xSecurityToken_);
+    }
     if(statesIsSet_) {
         val[utility::conversions::to_string_t("states")] = ModelBase::toJson(states_);
     }
@@ -35,6 +40,15 @@ bool ListCloseAccountStatusesRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("X-Security-Token"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Security-Token"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXSecurityToken(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("states"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("states"));
         if(!fieldValue.is_null())
@@ -47,6 +61,27 @@ bool ListCloseAccountStatusesRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
+
+std::string ListCloseAccountStatusesRequest::getXSecurityToken() const
+{
+    return xSecurityToken_;
+}
+
+void ListCloseAccountStatusesRequest::setXSecurityToken(const std::string& value)
+{
+    xSecurityToken_ = value;
+    xSecurityTokenIsSet_ = true;
+}
+
+bool ListCloseAccountStatusesRequest::xSecurityTokenIsSet() const
+{
+    return xSecurityTokenIsSet_;
+}
+
+void ListCloseAccountStatusesRequest::unsetxSecurityToken()
+{
+    xSecurityTokenIsSet_ = false;
+}
 
 std::vector<std::string>& ListCloseAccountStatusesRequest::getStates()
 {

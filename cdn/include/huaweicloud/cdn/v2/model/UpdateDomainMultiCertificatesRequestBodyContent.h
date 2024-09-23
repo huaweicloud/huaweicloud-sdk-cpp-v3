@@ -121,13 +121,22 @@ public:
     void setPrivateKey(const std::string& value);
 
     /// <summary>
-    /// 证书类型（0为自有证书 ；1为托管证书，此时不必不传入证书内容和私钥，自动根据证书名称匹配；不传默认为自有证书）
+    /// 证书类型（0为自有证书；2为SCM证书；不传默认为自有证书）
     /// </summary>
 
     int32_t getCertificateType() const;
     bool certificateTypeIsSet() const;
     void unsetcertificateType();
     void setCertificateType(int32_t value);
+
+    /// <summary>
+    /// SCM证书id
+    /// </summary>
+
+    std::string getScmCertificateId() const;
+    bool scmCertificateIdIsSet() const;
+    void unsetscmCertificateId();
+    void setScmCertificateId(const std::string& value);
 
 
 protected:
@@ -151,6 +160,8 @@ protected:
     bool privateKeyIsSet_;
     int32_t certificateType_;
     bool certificateTypeIsSet_;
+    std::string scmCertificateId_;
+    bool scmCertificateIdIsSet_;
 
 };
 

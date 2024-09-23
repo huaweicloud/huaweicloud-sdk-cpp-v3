@@ -20,6 +20,8 @@ CreateAccountReqBody::CreateAccountReqBody()
     phoneIsSet_ = false;
     agencyName_ = "";
     agencyNameIsSet_ = false;
+    description_ = "";
+    descriptionIsSet_ = false;
     tagsIsSet_ = false;
 }
 
@@ -44,6 +46,9 @@ web::json::value CreateAccountReqBody::toJson() const
     }
     if(agencyNameIsSet_) {
         val[utility::conversions::to_string_t("agency_name")] = ModelBase::toJson(agencyName_);
+    }
+    if(descriptionIsSet_) {
+        val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
     }
     if(tagsIsSet_) {
         val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
@@ -89,6 +94,15 @@ bool CreateAccountReqBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAgencyName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("description"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("description"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDescription(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("tags"))) {
@@ -186,6 +200,27 @@ bool CreateAccountReqBody::agencyNameIsSet() const
 void CreateAccountReqBody::unsetagencyName()
 {
     agencyNameIsSet_ = false;
+}
+
+std::string CreateAccountReqBody::getDescription() const
+{
+    return description_;
+}
+
+void CreateAccountReqBody::setDescription(const std::string& value)
+{
+    description_ = value;
+    descriptionIsSet_ = true;
+}
+
+bool CreateAccountReqBody::descriptionIsSet() const
+{
+    return descriptionIsSet_;
+}
+
+void CreateAccountReqBody::unsetdescription()
+{
+    descriptionIsSet_ = false;
 }
 
 std::vector<TagDto>& CreateAccountReqBody::getTags()

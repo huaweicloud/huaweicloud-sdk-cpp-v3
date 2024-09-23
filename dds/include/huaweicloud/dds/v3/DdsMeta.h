@@ -52,6 +52,7 @@ public:
     static HttpRequestDef genRequestDefForListConfigurations();
     static HttpRequestDef genRequestDefForListDatabaseRoles();
     static HttpRequestDef genRequestDefForListDatabaseUsers();
+    static HttpRequestDef genRequestDefForListDatabases();
     static HttpRequestDef genRequestDefForListDatastoreVersions();
     static HttpRequestDef genRequestDefForListErrorLogs();
     static HttpRequestDef genRequestDefForListFlavorInfos();

@@ -12,6 +12,8 @@ namespace Model {
 
 ListOrganizationalUnitsRequest::ListOrganizationalUnitsRequest()
 {
+    xSecurityToken_ = "";
+    xSecurityTokenIsSet_ = false;
     parentId_ = "";
     parentIdIsSet_ = false;
     limit_ = 0;
@@ -30,6 +32,9 @@ web::json::value ListOrganizationalUnitsRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(xSecurityTokenIsSet_) {
+        val[utility::conversions::to_string_t("X-Security-Token")] = ModelBase::toJson(xSecurityToken_);
+    }
     if(parentIdIsSet_) {
         val[utility::conversions::to_string_t("parent_id")] = ModelBase::toJson(parentId_);
     }
@@ -46,6 +51,15 @@ bool ListOrganizationalUnitsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("X-Security-Token"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Security-Token"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXSecurityToken(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("parent_id"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("parent_id"));
         if(!fieldValue.is_null())
@@ -76,6 +90,27 @@ bool ListOrganizationalUnitsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
+
+std::string ListOrganizationalUnitsRequest::getXSecurityToken() const
+{
+    return xSecurityToken_;
+}
+
+void ListOrganizationalUnitsRequest::setXSecurityToken(const std::string& value)
+{
+    xSecurityToken_ = value;
+    xSecurityTokenIsSet_ = true;
+}
+
+bool ListOrganizationalUnitsRequest::xSecurityTokenIsSet() const
+{
+    return xSecurityTokenIsSet_;
+}
+
+void ListOrganizationalUnitsRequest::unsetxSecurityToken()
+{
+    xSecurityTokenIsSet_ = false;
+}
 
 std::string ListOrganizationalUnitsRequest::getParentId() const
 {

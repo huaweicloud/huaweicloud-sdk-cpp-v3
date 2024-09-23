@@ -58,7 +58,7 @@ public:
     void setPolicyContent(const std::string& value);
 
     /// <summary>
-    /// 策略类型的名称，tag_policy标签策略。
+    /// 策略类型的名称。tag_policy标签策略。
     /// </summary>
 
     std::string getPolicyType() const;

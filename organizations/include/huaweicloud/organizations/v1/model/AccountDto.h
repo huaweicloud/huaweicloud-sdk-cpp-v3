@@ -58,7 +58,7 @@ public:
     void setUrn(const std::string& value);
 
     /// <summary>
-    /// 账号加入组织的方式,invited：邀请加入，created：创建加入。
+    /// 账号加入组织的方式。invited：邀请加入，created：创建加入。
     /// </summary>
 
     std::string getJoinMethod() const;
@@ -67,7 +67,7 @@ public:
     void setJoinMethod(const std::string& value);
 
     /// <summary>
-    /// 账号当前的状态,ACTIVE 有效| SUSPENDED 静默| PENDING_CLOSURE 关闭中
+    /// 账号当前的状态。active：有效； suspended：已关闭； pending_closure：关闭中。
     /// </summary>
 
     std::string getStatus() const;
@@ -93,6 +93,42 @@ public:
     void unsetname();
     void setName(const std::string& value);
 
+    /// <summary>
+    /// 手机号码
+    /// </summary>
+
+    std::string getMobilePhone() const;
+    bool mobilePhoneIsSet() const;
+    void unsetmobilePhone();
+    void setMobilePhone(const std::string& value);
+
+    /// <summary>
+    /// 手机号前缀。
+    /// </summary>
+
+    std::string getIntlNumberPrefix() const;
+    bool intlNumberPrefixIsSet() const;
+    void unsetintlNumberPrefix();
+    void setIntlNumberPrefix(const std::string& value);
+
+    /// <summary>
+    /// 与此账号关联的电子邮件地址。
+    /// </summary>
+
+    std::string getEmail() const;
+    bool emailIsSet() const;
+    void unsetemail();
+    void setEmail(const std::string& value);
+
+    /// <summary>
+    /// 描述信息。
+    /// </summary>
+
+    std::string getDescription() const;
+    bool descriptionIsSet() const;
+    void unsetdescription();
+    void setDescription(const std::string& value);
+
 
 protected:
     std::string id_;
@@ -107,6 +143,14 @@ protected:
     bool joinedAtIsSet_;
     std::string name_;
     bool nameIsSet_;
+    std::string mobilePhone_;
+    bool mobilePhoneIsSet_;
+    std::string intlNumberPrefix_;
+    bool intlNumberPrefixIsSet_;
+    std::string email_;
+    bool emailIsSet_;
+    std::string description_;
+    bool descriptionIsSet_;
 
 };
 

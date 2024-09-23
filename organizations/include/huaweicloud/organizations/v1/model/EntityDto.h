@@ -57,7 +57,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 实体的类型，account:账户，organizational_unit:组织单元，root:根。
+    /// 实体的类型。account：账号；organizational_unit：组织单元；root：根。
     /// </summary>
 
     std::string getType() const;

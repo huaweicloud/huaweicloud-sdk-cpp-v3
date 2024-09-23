@@ -77,6 +77,15 @@ public:
     void setCreatedAt(const utility::datetime& value);
 
     /// <summary>
+    /// 邀请（握手）过期的日期和时间。
+    /// </summary>
+
+    utility::datetime getExpiredAt() const;
+    bool expiredAtIsSet() const;
+    void unsetexpiredAt();
+    void setExpiredAt(const utility::datetime& value);
+
+    /// <summary>
     /// 组织管理账号的唯一标识符（ID）。
     /// </summary>
 
@@ -140,6 +149,8 @@ protected:
     bool updatedAtIsSet_;
     utility::datetime createdAt_;
     bool createdAtIsSet_;
+    utility::datetime expiredAt_;
+    bool expiredAtIsSet_;
     std::string managementAccountId_;
     bool managementAccountIdIsSet_;
     std::string managementAccountName_;

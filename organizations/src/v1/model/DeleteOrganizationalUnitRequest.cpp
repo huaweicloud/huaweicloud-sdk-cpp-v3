@@ -12,6 +12,8 @@ namespace Model {
 
 DeleteOrganizationalUnitRequest::DeleteOrganizationalUnitRequest()
 {
+    xSecurityToken_ = "";
+    xSecurityTokenIsSet_ = false;
     organizationalUnitId_ = "";
     organizationalUnitIdIsSet_ = false;
 }
@@ -26,6 +28,9 @@ web::json::value DeleteOrganizationalUnitRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(xSecurityTokenIsSet_) {
+        val[utility::conversions::to_string_t("X-Security-Token")] = ModelBase::toJson(xSecurityToken_);
+    }
     if(organizationalUnitIdIsSet_) {
         val[utility::conversions::to_string_t("organizational_unit_id")] = ModelBase::toJson(organizationalUnitId_);
     }
@@ -36,6 +41,15 @@ bool DeleteOrganizationalUnitRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("X-Security-Token"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Security-Token"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXSecurityToken(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("organizational_unit_id"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("organizational_unit_id"));
         if(!fieldValue.is_null())
@@ -48,6 +62,27 @@ bool DeleteOrganizationalUnitRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
+
+std::string DeleteOrganizationalUnitRequest::getXSecurityToken() const
+{
+    return xSecurityToken_;
+}
+
+void DeleteOrganizationalUnitRequest::setXSecurityToken(const std::string& value)
+{
+    xSecurityToken_ = value;
+    xSecurityTokenIsSet_ = true;
+}
+
+bool DeleteOrganizationalUnitRequest::xSecurityTokenIsSet() const
+{
+    return xSecurityTokenIsSet_;
+}
+
+void DeleteOrganizationalUnitRequest::unsetxSecurityToken()
+{
+    xSecurityTokenIsSet_ = false;
+}
 
 std::string DeleteOrganizationalUnitRequest::getOrganizationalUnitId() const
 {

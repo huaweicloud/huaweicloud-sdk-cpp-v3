@@ -59,13 +59,22 @@ public:
     void setCertificateType(const std::string& value);
 
     /// <summary>
-    /// 证书来源，1：华为云托管证书，0：自有证书。
+    /// 证书来源，1：华为云托管证书，0：自有证书。2：SCM证书。
     /// </summary>
 
     int32_t getCertificateSource() const;
     bool certificateSourceIsSet() const;
     void unsetcertificateSource();
     void setCertificateSource(int32_t value);
+
+    /// <summary>
+    /// SCM证书id
+    /// </summary>
+
+    std::string getScmCertificateId() const;
+    bool scmCertificateIdIsSet() const;
+    void unsetscmCertificateId();
+    void setScmCertificateId(const std::string& value);
 
     /// <summary>
     /// 证书名字。
@@ -147,6 +156,8 @@ protected:
     bool certificateTypeIsSet_;
     int32_t certificateSource_;
     bool certificateSourceIsSet_;
+    std::string scmCertificateId_;
+    bool scmCertificateIdIsSet_;
     std::string certificateName_;
     bool certificateNameIsSet_;
     std::string certificateValue_;

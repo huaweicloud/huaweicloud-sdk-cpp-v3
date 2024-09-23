@@ -12,6 +12,8 @@ namespace Model {
 
 CreatePolicyRequest::CreatePolicyRequest()
 {
+    xSecurityToken_ = "";
+    xSecurityTokenIsSet_ = false;
     xLanguage_ = "";
     xLanguageIsSet_ = false;
     bodyIsSet_ = false;
@@ -27,6 +29,9 @@ web::json::value CreatePolicyRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(xSecurityTokenIsSet_) {
+        val[utility::conversions::to_string_t("X-Security-Token")] = ModelBase::toJson(xSecurityToken_);
+    }
     if(xLanguageIsSet_) {
         val[utility::conversions::to_string_t("X-Language")] = ModelBase::toJson(xLanguage_);
     }
@@ -40,6 +45,15 @@ bool CreatePolicyRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("X-Security-Token"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Security-Token"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXSecurityToken(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("X-Language"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Language"));
         if(!fieldValue.is_null())
@@ -61,6 +75,27 @@ bool CreatePolicyRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
+
+std::string CreatePolicyRequest::getXSecurityToken() const
+{
+    return xSecurityToken_;
+}
+
+void CreatePolicyRequest::setXSecurityToken(const std::string& value)
+{
+    xSecurityToken_ = value;
+    xSecurityTokenIsSet_ = true;
+}
+
+bool CreatePolicyRequest::xSecurityTokenIsSet() const
+{
+    return xSecurityTokenIsSet_;
+}
+
+void CreatePolicyRequest::unsetxSecurityToken()
+{
+    xSecurityTokenIsSet_ = false;
+}
 
 std::string CreatePolicyRequest::getXLanguage() const
 {

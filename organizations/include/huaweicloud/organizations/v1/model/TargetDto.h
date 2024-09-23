@@ -39,7 +39,7 @@ public:
     /// TargetDto members
 
     /// <summary>
-    /// 目标类型，account：账户，email：邮箱。
+    /// 目标类型，account：账户id，name：账户名称。
     /// </summary>
 
     std::string getType() const;
@@ -48,7 +48,7 @@ public:
     void setType(const std::string& value);
 
     /// <summary>
-    /// 如果指定 \&quot;type:account\&quot;，则必须提供账号ID作为实体。如果指定\&quot;type:email\&quot;，则必须指定与账号关联的电子邮件地址。
+    /// 如果指定 &#39;type:account&#39;，则必须提供账号ID作为实体。如果指定 &#39;type:name&#39;，则必须指定账号名称作为实体。
     /// </summary>
 
     std::string getEntity() const;

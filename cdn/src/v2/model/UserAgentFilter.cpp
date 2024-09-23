@@ -16,6 +16,8 @@ UserAgentFilter::UserAgentFilter()
     typeIsSet_ = false;
     value_ = "";
     valueIsSet_ = false;
+    includeEmpty_ = false;
+    includeEmptyIsSet_ = false;
     uaListIsSet_ = false;
 }
 
@@ -34,6 +36,9 @@ web::json::value UserAgentFilter::toJson() const
     }
     if(valueIsSet_) {
         val[utility::conversions::to_string_t("value")] = ModelBase::toJson(value_);
+    }
+    if(includeEmptyIsSet_) {
+        val[utility::conversions::to_string_t("include_empty")] = ModelBase::toJson(includeEmpty_);
     }
     if(uaListIsSet_) {
         val[utility::conversions::to_string_t("ua_list")] = ModelBase::toJson(uaList_);
@@ -61,6 +66,15 @@ bool UserAgentFilter::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setValue(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("include_empty"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("include_empty"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIncludeEmpty(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("ua_list"))) {
@@ -116,6 +130,27 @@ bool UserAgentFilter::valueIsSet() const
 void UserAgentFilter::unsetvalue()
 {
     valueIsSet_ = false;
+}
+
+bool UserAgentFilter::isIncludeEmpty() const
+{
+    return includeEmpty_;
+}
+
+void UserAgentFilter::setIncludeEmpty(bool value)
+{
+    includeEmpty_ = value;
+    includeEmptyIsSet_ = true;
+}
+
+bool UserAgentFilter::includeEmptyIsSet() const
+{
+    return includeEmptyIsSet_;
+}
+
+void UserAgentFilter::unsetincludeEmpty()
+{
+    includeEmptyIsSet_ = false;
 }
 
 std::vector<std::string>& UserAgentFilter::getUaList()

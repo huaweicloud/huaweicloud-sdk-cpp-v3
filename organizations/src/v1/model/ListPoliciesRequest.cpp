@@ -12,6 +12,8 @@ namespace Model {
 
 ListPoliciesRequest::ListPoliciesRequest()
 {
+    xSecurityToken_ = "";
+    xSecurityTokenIsSet_ = false;
     attachedEntityId_ = "";
     attachedEntityIdIsSet_ = false;
     limit_ = 0;
@@ -32,6 +34,9 @@ web::json::value ListPoliciesRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(xSecurityTokenIsSet_) {
+        val[utility::conversions::to_string_t("X-Security-Token")] = ModelBase::toJson(xSecurityToken_);
+    }
     if(attachedEntityIdIsSet_) {
         val[utility::conversions::to_string_t("attached_entity_id")] = ModelBase::toJson(attachedEntityId_);
     }
@@ -51,6 +56,15 @@ bool ListPoliciesRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("X-Security-Token"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Security-Token"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXSecurityToken(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("attached_entity_id"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("attached_entity_id"));
         if(!fieldValue.is_null())
@@ -90,6 +104,27 @@ bool ListPoliciesRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
+
+std::string ListPoliciesRequest::getXSecurityToken() const
+{
+    return xSecurityToken_;
+}
+
+void ListPoliciesRequest::setXSecurityToken(const std::string& value)
+{
+    xSecurityToken_ = value;
+    xSecurityTokenIsSet_ = true;
+}
+
+bool ListPoliciesRequest::xSecurityTokenIsSet() const
+{
+    return xSecurityTokenIsSet_;
+}
+
+void ListPoliciesRequest::unsetxSecurityToken()
+{
+    xSecurityTokenIsSet_ = false;
+}
 
 std::string ListPoliciesRequest::getAttachedEntityId() const
 {

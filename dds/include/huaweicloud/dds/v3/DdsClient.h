@@ -113,6 +113,8 @@
 #include <huaweicloud/dds/v3/model/ListDatabaseRolesResponse.h>
 #include <huaweicloud/dds/v3/model/ListDatabaseUsersRequest.h>
 #include <huaweicloud/dds/v3/model/ListDatabaseUsersResponse.h>
+#include <huaweicloud/dds/v3/model/ListDatabasesRequest.h>
+#include <huaweicloud/dds/v3/model/ListDatabasesResponse.h>
 #include <huaweicloud/dds/v3/model/ListDatastoreVersionsRequest.h>
 #include <huaweicloud/dds/v3/model/ListDatastoreVersionsResponse.h>
 #include <huaweicloud/dds/v3/model/ListErrorLogsRequest.h>
@@ -631,6 +633,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListDatabaseUsersResponse> listDatabaseUsers(
         ListDatabaseUsersRequest &request
+    );
+    // 查询数据库列表
+    //
+    // 查询数据库列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListDatabasesResponse> listDatabases(
+        ListDatabasesRequest &request
     );
     // 查询数据库版本信息
     //

@@ -39,6 +39,24 @@ public:
     /// CertificatesGetBody members
 
     /// <summary>
+    /// 证书来源,0：自有证书。2：SCM证书。
+    /// </summary>
+
+    int32_t getCertificateSource() const;
+    bool certificateSourceIsSet() const;
+    void unsetcertificateSource();
+    void setCertificateSource(int32_t value);
+
+    /// <summary>
+    /// SCM证书id
+    /// </summary>
+
+    std::string getScmCertificateId() const;
+    bool scmCertificateIdIsSet() const;
+    void unsetscmCertificateId();
+    void setScmCertificateId(const std::string& value);
+
+    /// <summary>
     /// 证书类型，server：国际证书；server_sm：国密证书。
     /// </summary>
 
@@ -85,6 +103,10 @@ public:
 
 
 protected:
+    int32_t certificateSource_;
+    bool certificateSourceIsSet_;
+    std::string scmCertificateId_;
+    bool scmCertificateIdIsSet_;
     std::string certificateType_;
     bool certificateTypeIsSet_;
     std::string certificateName_;

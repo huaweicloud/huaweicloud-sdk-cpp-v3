@@ -12,6 +12,8 @@ namespace Model {
 
 ListDelegatedAdministratorsRequest::ListDelegatedAdministratorsRequest()
 {
+    xSecurityToken_ = "";
+    xSecurityTokenIsSet_ = false;
     servicePrincipal_ = "";
     servicePrincipalIsSet_ = false;
     limit_ = 0;
@@ -30,6 +32,9 @@ web::json::value ListDelegatedAdministratorsRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(xSecurityTokenIsSet_) {
+        val[utility::conversions::to_string_t("X-Security-Token")] = ModelBase::toJson(xSecurityToken_);
+    }
     if(servicePrincipalIsSet_) {
         val[utility::conversions::to_string_t("service_principal")] = ModelBase::toJson(servicePrincipal_);
     }
@@ -46,6 +51,15 @@ bool ListDelegatedAdministratorsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("X-Security-Token"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Security-Token"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXSecurityToken(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("service_principal"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("service_principal"));
         if(!fieldValue.is_null())
@@ -76,6 +90,27 @@ bool ListDelegatedAdministratorsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
+
+std::string ListDelegatedAdministratorsRequest::getXSecurityToken() const
+{
+    return xSecurityToken_;
+}
+
+void ListDelegatedAdministratorsRequest::setXSecurityToken(const std::string& value)
+{
+    xSecurityToken_ = value;
+    xSecurityTokenIsSet_ = true;
+}
+
+bool ListDelegatedAdministratorsRequest::xSecurityTokenIsSet() const
+{
+    return xSecurityTokenIsSet_;
+}
+
+void ListDelegatedAdministratorsRequest::unsetxSecurityToken()
+{
+    xSecurityTokenIsSet_ = false;
+}
 
 std::string ListDelegatedAdministratorsRequest::getServicePrincipal() const
 {

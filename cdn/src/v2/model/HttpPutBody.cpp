@@ -18,6 +18,8 @@ HttpPutBody::HttpPutBody()
     certificateTypeIsSet_ = false;
     certificateSource_ = 0;
     certificateSourceIsSet_ = false;
+    scmCertificateId_ = "";
+    scmCertificateIdIsSet_ = false;
     certificateName_ = "";
     certificateNameIsSet_ = false;
     certificateValue_ = "";
@@ -55,6 +57,9 @@ web::json::value HttpPutBody::toJson() const
     }
     if(certificateSourceIsSet_) {
         val[utility::conversions::to_string_t("certificate_source")] = ModelBase::toJson(certificateSource_);
+    }
+    if(scmCertificateIdIsSet_) {
+        val[utility::conversions::to_string_t("scm_certificate_id")] = ModelBase::toJson(scmCertificateId_);
     }
     if(certificateNameIsSet_) {
         val[utility::conversions::to_string_t("certificate_name")] = ModelBase::toJson(certificateName_);
@@ -115,6 +120,15 @@ bool HttpPutBody::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCertificateSource(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("scm_certificate_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("scm_certificate_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setScmCertificateId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("certificate_name"))) {
@@ -263,6 +277,27 @@ bool HttpPutBody::certificateSourceIsSet() const
 void HttpPutBody::unsetcertificateSource()
 {
     certificateSourceIsSet_ = false;
+}
+
+std::string HttpPutBody::getScmCertificateId() const
+{
+    return scmCertificateId_;
+}
+
+void HttpPutBody::setScmCertificateId(const std::string& value)
+{
+    scmCertificateId_ = value;
+    scmCertificateIdIsSet_ = true;
+}
+
+bool HttpPutBody::scmCertificateIdIsSet() const
+{
+    return scmCertificateIdIsSet_;
+}
+
+void HttpPutBody::unsetscmCertificateId()
+{
+    scmCertificateIdIsSet_ = false;
 }
 
 std::string HttpPutBody::getCertificateName() const

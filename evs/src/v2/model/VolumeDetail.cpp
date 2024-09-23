@@ -77,6 +77,8 @@ VolumeDetail::VolumeDetail()
     serialNumberIsSet_ = false;
     iopsIsSet_ = false;
     throughputIsSet_ = false;
+    snapshotPolicyId_ = "";
+    snapshotPolicyIdIsSet_ = false;
 }
 
 VolumeDetail::~VolumeDetail() = default;
@@ -196,6 +198,9 @@ web::json::value VolumeDetail::toJson() const
     }
     if(throughputIsSet_) {
         val[utility::conversions::to_string_t("throughput")] = ModelBase::toJson(throughput_);
+    }
+    if(snapshotPolicyIdIsSet_) {
+        val[utility::conversions::to_string_t("snapshot_policy_id")] = ModelBase::toJson(snapshotPolicyId_);
     }
 
     return val;
@@ -526,6 +531,15 @@ bool VolumeDetail::fromJson(const web::json::value& val)
             Throughput refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setThroughput(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("snapshot_policy_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("snapshot_policy_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSnapshotPolicyId(refVal);
         }
     }
     return ok;
@@ -1286,6 +1300,27 @@ bool VolumeDetail::throughputIsSet() const
 void VolumeDetail::unsetthroughput()
 {
     throughputIsSet_ = false;
+}
+
+std::string VolumeDetail::getSnapshotPolicyId() const
+{
+    return snapshotPolicyId_;
+}
+
+void VolumeDetail::setSnapshotPolicyId(const std::string& value)
+{
+    snapshotPolicyId_ = value;
+    snapshotPolicyIdIsSet_ = true;
+}
+
+bool VolumeDetail::snapshotPolicyIdIsSet() const
+{
+    return snapshotPolicyIdIsSet_;
+}
+
+void VolumeDetail::unsetsnapshotPolicyId()
+{
+    snapshotPolicyIdIsSet_ = false;
 }
 
 }

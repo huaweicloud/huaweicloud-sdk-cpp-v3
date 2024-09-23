@@ -200,6 +200,15 @@ public:
     void unsetserverId();
     void setServerId(const std::string& value);
 
+    /// <summary>
+    /// 自动快照策略ID
+    /// </summary>
+
+    std::string getSnapshotPolicyId() const;
+    bool snapshotPolicyIdIsSet() const;
+    void unsetsnapshotPolicyId();
+    void setSnapshotPolicyId(const std::string& value);
+
 
 protected:
     std::string marker_;
@@ -238,6 +247,8 @@ protected:
     bool enterpriseProjectIdIsSet_;
     std::string serverId_;
     bool serverIdIsSet_;
+    std::string snapshotPolicyId_;
+    bool snapshotPolicyIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

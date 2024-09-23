@@ -40,6 +40,15 @@ public:
     /// ListCreateAccountStatusesRequest members
 
     /// <summary>
+    /// 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
+    /// </summary>
+
+    std::string getXSecurityToken() const;
+    bool xSecurityTokenIsSet() const;
+    void unsetxSecurityToken();
+    void setXSecurityToken(const std::string& value);
+
+    /// <summary>
     /// 要包含在响应中的一个或多个状态的列表。如果此参数不存在，则所有请求都包含在响应中。
     /// </summary>
 
@@ -68,6 +77,8 @@ public:
 
 
 protected:
+    std::string xSecurityToken_;
+    bool xSecurityTokenIsSet_;
     std::vector<std::string> states_;
     bool statesIsSet_;
     int32_t limit_;

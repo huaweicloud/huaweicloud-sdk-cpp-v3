@@ -36,6 +36,8 @@ ListServersDetailsRequest::ListServersDetailsRequest()
     ipEqIsSet_ = false;
     serverId_ = "";
     serverIdIsSet_ = false;
+    marker_ = "";
+    markerIsSet_ = false;
 }
 
 ListServersDetailsRequest::~ListServersDetailsRequest() = default;
@@ -83,6 +85,9 @@ web::json::value ListServersDetailsRequest::toJson() const
     }
     if(serverIdIsSet_) {
         val[utility::conversions::to_string_t("server_id")] = ModelBase::toJson(serverId_);
+    }
+    if(markerIsSet_) {
+        val[utility::conversions::to_string_t("marker")] = ModelBase::toJson(marker_);
     }
 
     return val;
@@ -197,6 +202,15 @@ bool ListServersDetailsRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setServerId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("marker"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("marker"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMarker(refVal);
         }
     }
     return ok;
@@ -453,6 +467,27 @@ bool ListServersDetailsRequest::serverIdIsSet() const
 void ListServersDetailsRequest::unsetserverId()
 {
     serverIdIsSet_ = false;
+}
+
+std::string ListServersDetailsRequest::getMarker() const
+{
+    return marker_;
+}
+
+void ListServersDetailsRequest::setMarker(const std::string& value)
+{
+    marker_ = value;
+    markerIsSet_ = true;
+}
+
+bool ListServersDetailsRequest::markerIsSet() const
+{
+    return markerIsSet_;
+}
+
+void ListServersDetailsRequest::unsetmarker()
+{
+    markerIsSet_ = false;
 }
 
 }

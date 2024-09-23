@@ -12,6 +12,8 @@ namespace Model {
 
 DeregisterDelegatedAdministratorRequest::DeregisterDelegatedAdministratorRequest()
 {
+    xSecurityToken_ = "";
+    xSecurityTokenIsSet_ = false;
     bodyIsSet_ = false;
 }
 
@@ -25,6 +27,9 @@ web::json::value DeregisterDelegatedAdministratorRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(xSecurityTokenIsSet_) {
+        val[utility::conversions::to_string_t("X-Security-Token")] = ModelBase::toJson(xSecurityToken_);
+    }
     if(bodyIsSet_) {
         val[utility::conversions::to_string_t("body")] = ModelBase::toJson(body_);
     }
@@ -35,6 +40,15 @@ bool DeregisterDelegatedAdministratorRequest::fromJson(const web::json::value& v
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("X-Security-Token"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Security-Token"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXSecurityToken(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("body"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
         if(!fieldValue.is_null())
@@ -47,6 +61,27 @@ bool DeregisterDelegatedAdministratorRequest::fromJson(const web::json::value& v
     return ok;
 }
 
+
+std::string DeregisterDelegatedAdministratorRequest::getXSecurityToken() const
+{
+    return xSecurityToken_;
+}
+
+void DeregisterDelegatedAdministratorRequest::setXSecurityToken(const std::string& value)
+{
+    xSecurityToken_ = value;
+    xSecurityTokenIsSet_ = true;
+}
+
+bool DeregisterDelegatedAdministratorRequest::xSecurityTokenIsSet() const
+{
+    return xSecurityTokenIsSet_;
+}
+
+void DeregisterDelegatedAdministratorRequest::unsetxSecurityToken()
+{
+    xSecurityTokenIsSet_ = false;
+}
 
 DelegatedAdministratorReqBody DeregisterDelegatedAdministratorRequest::getBody() const
 {

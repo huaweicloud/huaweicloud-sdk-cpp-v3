@@ -39,6 +39,15 @@ public:
     /// ListDelegatedAdministratorsRequest members
 
     /// <summary>
+    /// 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
+    /// </summary>
+
+    std::string getXSecurityToken() const;
+    bool xSecurityTokenIsSet() const;
+    void unsetxSecurityToken();
+    void setXSecurityToken(const std::string& value);
+
+    /// <summary>
     /// 服务主体的名称。
     /// </summary>
 
@@ -67,6 +76,8 @@ public:
 
 
 protected:
+    std::string xSecurityToken_;
+    bool xSecurityTokenIsSet_;
     std::string servicePrincipal_;
     bool servicePrincipalIsSet_;
     int32_t limit_;

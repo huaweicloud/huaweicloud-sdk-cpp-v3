@@ -12,6 +12,8 @@ namespace Model {
 
 DeletePolicyRequest::DeletePolicyRequest()
 {
+    xSecurityToken_ = "";
+    xSecurityTokenIsSet_ = false;
     policyId_ = "";
     policyIdIsSet_ = false;
 }
@@ -26,6 +28,9 @@ web::json::value DeletePolicyRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(xSecurityTokenIsSet_) {
+        val[utility::conversions::to_string_t("X-Security-Token")] = ModelBase::toJson(xSecurityToken_);
+    }
     if(policyIdIsSet_) {
         val[utility::conversions::to_string_t("policy_id")] = ModelBase::toJson(policyId_);
     }
@@ -36,6 +41,15 @@ bool DeletePolicyRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("X-Security-Token"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Security-Token"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXSecurityToken(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("policy_id"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("policy_id"));
         if(!fieldValue.is_null())
@@ -48,6 +62,27 @@ bool DeletePolicyRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
+
+std::string DeletePolicyRequest::getXSecurityToken() const
+{
+    return xSecurityToken_;
+}
+
+void DeletePolicyRequest::setXSecurityToken(const std::string& value)
+{
+    xSecurityToken_ = value;
+    xSecurityTokenIsSet_ = true;
+}
+
+bool DeletePolicyRequest::xSecurityTokenIsSet() const
+{
+    return xSecurityTokenIsSet_;
+}
+
+void DeletePolicyRequest::unsetxSecurityToken()
+{
+    xSecurityTokenIsSet_ = false;
+}
 
 std::string DeletePolicyRequest::getPolicyId() const
 {

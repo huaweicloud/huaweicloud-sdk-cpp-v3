@@ -10,11 +10,21 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 
 HttpRequestDef OrganizationsMeta::genRequestDefForCloseAccount() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
 HttpRequestDef OrganizationsMeta::genRequestDefForCreateAccount() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
@@ -24,6 +34,11 @@ HttpRequestDef OrganizationsMeta::genRequestDefForCreateAccount() {
 
 HttpRequestDef OrganizationsMeta::genRequestDefForInviteAccount() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
@@ -36,12 +51,20 @@ HttpRequestDef OrganizationsMeta::genRequestDefForListAccounts() {
     reqDefBuilder.withRequestField(FieldDef().withName("ParentId")
                   .withJsonTag("parent_id")
                   .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("WithRegisterContactInfo")
+                  .withJsonTag("with_register_contact_info")
+                  .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("Limit")
                   .withJsonTag("limit")
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("Marker")
                   .withJsonTag("marker")
                   .withLocationType(Query_));
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -50,6 +73,11 @@ HttpRequestDef OrganizationsMeta::genRequestDefForListCloseAccountStatuses() {
     reqDefBuilder.withRequestField(FieldDef().withName("States")
                   .withJsonTag("states")
                   .withLocationType(Query_));
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -64,11 +92,21 @@ HttpRequestDef OrganizationsMeta::genRequestDefForListCreateAccountStatuses() {
     reqDefBuilder.withRequestField(FieldDef().withName("Marker")
                   .withJsonTag("marker")
                   .withLocationType(Query_));
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
 HttpRequestDef OrganizationsMeta::genRequestDefForMoveAccount() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
@@ -78,21 +116,58 @@ HttpRequestDef OrganizationsMeta::genRequestDefForMoveAccount() {
 
 HttpRequestDef OrganizationsMeta::genRequestDefForRemoveAccount() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
 HttpRequestDef OrganizationsMeta::genRequestDefForShowAccount() {
     HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("WithRegisterContactInfo")
+                  .withJsonTag("with_register_contact_info")
+                  .withLocationType(Query_));
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
 HttpRequestDef OrganizationsMeta::genRequestDefForShowCreateAccountStatus() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef OrganizationsMeta::genRequestDefForUpdateAccount() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
     return reqDefBuilder;
 }
 
 HttpRequestDef OrganizationsMeta::genRequestDefForDeregisterDelegatedAdministrator() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
@@ -111,6 +186,11 @@ HttpRequestDef OrganizationsMeta::genRequestDefForListDelegatedAdministrators() 
     reqDefBuilder.withRequestField(FieldDef().withName("Marker")
                   .withJsonTag("marker")
                   .withLocationType(Query_));
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -122,11 +202,21 @@ HttpRequestDef OrganizationsMeta::genRequestDefForListDelegatedServices() {
     reqDefBuilder.withRequestField(FieldDef().withName("Marker")
                   .withJsonTag("marker")
                   .withLocationType(Query_));
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
 HttpRequestDef OrganizationsMeta::genRequestDefForRegisterDelegatedAdministrator() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
@@ -136,16 +226,31 @@ HttpRequestDef OrganizationsMeta::genRequestDefForRegisterDelegatedAdministrator
 
 HttpRequestDef OrganizationsMeta::genRequestDefForAcceptHandshake() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
 HttpRequestDef OrganizationsMeta::genRequestDefForCancelHandshake() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
 HttpRequestDef OrganizationsMeta::genRequestDefForDeclineHandshake() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -157,6 +262,11 @@ HttpRequestDef OrganizationsMeta::genRequestDefForListHandshakes() {
     reqDefBuilder.withRequestField(FieldDef().withName("Marker")
                   .withJsonTag("marker")
                   .withLocationType(Query_));
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -168,11 +278,21 @@ HttpRequestDef OrganizationsMeta::genRequestDefForListReceivedHandshakes() {
     reqDefBuilder.withRequestField(FieldDef().withName("Marker")
                   .withJsonTag("marker")
                   .withLocationType(Query_));
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
 HttpRequestDef OrganizationsMeta::genRequestDefForShowHandshake() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -190,21 +310,41 @@ HttpRequestDef OrganizationsMeta::genRequestDefForListEntities() {
     reqDefBuilder.withRequestField(FieldDef().withName("Marker")
                   .withJsonTag("marker")
                   .withLocationType(Query_));
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
 HttpRequestDef OrganizationsMeta::genRequestDefForListQuotas() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
 HttpRequestDef OrganizationsMeta::genRequestDefForListServices() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
 HttpRequestDef OrganizationsMeta::genRequestDefForListTagPolicyServices() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -216,21 +356,41 @@ HttpRequestDef OrganizationsMeta::genRequestDefForShowEffectivePolicies() {
     reqDefBuilder.withRequestField(FieldDef().withName("PolicyType")
                   .withJsonTag("policy_type")
                   .withLocationType(Query_));
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
 HttpRequestDef OrganizationsMeta::genRequestDefForCreateOrganization() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
 HttpRequestDef OrganizationsMeta::genRequestDefForDeleteOrganization() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
 HttpRequestDef OrganizationsMeta::genRequestDefForLeaveOrganization() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -242,16 +402,31 @@ HttpRequestDef OrganizationsMeta::genRequestDefForListRoots() {
     reqDefBuilder.withRequestField(FieldDef().withName("Marker")
                   .withJsonTag("marker")
                   .withLocationType(Query_));
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
 HttpRequestDef OrganizationsMeta::genRequestDefForShowOrganization() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
 HttpRequestDef OrganizationsMeta::genRequestDefForCreateOrganizationalUnit() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
@@ -261,6 +436,11 @@ HttpRequestDef OrganizationsMeta::genRequestDefForCreateOrganizationalUnit() {
 
 HttpRequestDef OrganizationsMeta::genRequestDefForDeleteOrganizationalUnit() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -275,16 +455,31 @@ HttpRequestDef OrganizationsMeta::genRequestDefForListOrganizationalUnits() {
     reqDefBuilder.withRequestField(FieldDef().withName("Marker")
                   .withJsonTag("marker")
                   .withLocationType(Query_));
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
 HttpRequestDef OrganizationsMeta::genRequestDefForShowOrganizationalUnit() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
 HttpRequestDef OrganizationsMeta::genRequestDefForUpdateOrganizationalUnit() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
@@ -294,6 +489,11 @@ HttpRequestDef OrganizationsMeta::genRequestDefForUpdateOrganizationalUnit() {
 
 HttpRequestDef OrganizationsMeta::genRequestDefForAttachPolicy() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
@@ -303,6 +503,11 @@ HttpRequestDef OrganizationsMeta::genRequestDefForAttachPolicy() {
 
 HttpRequestDef OrganizationsMeta::genRequestDefForCreatePolicy() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage
                   .withName("XLanguage")
@@ -317,11 +522,21 @@ HttpRequestDef OrganizationsMeta::genRequestDefForCreatePolicy() {
 
 HttpRequestDef OrganizationsMeta::genRequestDefForDeletePolicy() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
 HttpRequestDef OrganizationsMeta::genRequestDefForDetachPolicy() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
@@ -331,6 +546,11 @@ HttpRequestDef OrganizationsMeta::genRequestDefForDetachPolicy() {
 
 HttpRequestDef OrganizationsMeta::genRequestDefForDisablePolicyType() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
@@ -340,6 +560,11 @@ HttpRequestDef OrganizationsMeta::genRequestDefForDisablePolicyType() {
 
 HttpRequestDef OrganizationsMeta::genRequestDefForEnablePolicyType() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
@@ -355,6 +580,11 @@ HttpRequestDef OrganizationsMeta::genRequestDefForListEntitiesForPolicy() {
     reqDefBuilder.withRequestField(FieldDef().withName("Marker")
                   .withJsonTag("marker")
                   .withLocationType(Query_));
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -369,6 +599,11 @@ HttpRequestDef OrganizationsMeta::genRequestDefForListPolicies() {
     reqDefBuilder.withRequestField(FieldDef().withName("Marker")
                   .withJsonTag("marker")
                   .withLocationType(Query_));
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage
                   .withName("XLanguage")
@@ -379,6 +614,11 @@ HttpRequestDef OrganizationsMeta::genRequestDefForListPolicies() {
 
 HttpRequestDef OrganizationsMeta::genRequestDefForShowPolicy() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage
                   .withName("XLanguage")
@@ -389,6 +629,11 @@ HttpRequestDef OrganizationsMeta::genRequestDefForShowPolicy() {
 
 HttpRequestDef OrganizationsMeta::genRequestDefForUpdatePolicy() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage
                   .withName("XLanguage")
@@ -403,6 +648,11 @@ HttpRequestDef OrganizationsMeta::genRequestDefForUpdatePolicy() {
 
 HttpRequestDef OrganizationsMeta::genRequestDefForCreateTagResource() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
@@ -412,6 +662,11 @@ HttpRequestDef OrganizationsMeta::genRequestDefForCreateTagResource() {
 
 HttpRequestDef OrganizationsMeta::genRequestDefForDeleteTagResource() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
@@ -427,6 +682,11 @@ HttpRequestDef OrganizationsMeta::genRequestDefForListResourceInstances() {
     reqDefBuilder.withRequestField(FieldDef().withName("Offset")
                   .withJsonTag("offset")
                   .withLocationType(Query_));
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
@@ -436,6 +696,11 @@ HttpRequestDef OrganizationsMeta::genRequestDefForListResourceInstances() {
 
 HttpRequestDef OrganizationsMeta::genRequestDefForListResourceTags() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -447,6 +712,11 @@ HttpRequestDef OrganizationsMeta::genRequestDefForListTagResources() {
     reqDefBuilder.withRequestField(FieldDef().withName("Marker")
                   .withJsonTag("marker")
                   .withLocationType(Query_));
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -458,11 +728,21 @@ HttpRequestDef OrganizationsMeta::genRequestDefForListTagsForResource() {
     reqDefBuilder.withRequestField(FieldDef().withName("Marker")
                   .withJsonTag("marker")
                   .withLocationType(Query_));
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
 HttpRequestDef OrganizationsMeta::genRequestDefForShowResourceInstancesCount() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
@@ -472,6 +752,11 @@ HttpRequestDef OrganizationsMeta::genRequestDefForShowResourceInstancesCount() {
 
 HttpRequestDef OrganizationsMeta::genRequestDefForTagResource() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
@@ -481,6 +766,11 @@ HttpRequestDef OrganizationsMeta::genRequestDefForTagResource() {
 
 HttpRequestDef OrganizationsMeta::genRequestDefForUntagResource() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
@@ -490,6 +780,11 @@ HttpRequestDef OrganizationsMeta::genRequestDefForUntagResource() {
 
 HttpRequestDef OrganizationsMeta::genRequestDefForDisableTrustedService() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
@@ -499,6 +794,11 @@ HttpRequestDef OrganizationsMeta::genRequestDefForDisableTrustedService() {
 
 HttpRequestDef OrganizationsMeta::genRequestDefForEnableTrustedService() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
@@ -514,6 +814,11 @@ HttpRequestDef OrganizationsMeta::genRequestDefForListTrustedServices() {
     reqDefBuilder.withRequestField(FieldDef().withName("Marker")
                   .withJsonTag("marker")
                   .withLocationType(Query_));
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 

@@ -12,6 +12,8 @@ namespace Model {
 
 ListHandshakesRequest::ListHandshakesRequest()
 {
+    xSecurityToken_ = "";
+    xSecurityTokenIsSet_ = false;
     limit_ = 0;
     limitIsSet_ = false;
     marker_ = "";
@@ -28,6 +30,9 @@ web::json::value ListHandshakesRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(xSecurityTokenIsSet_) {
+        val[utility::conversions::to_string_t("X-Security-Token")] = ModelBase::toJson(xSecurityToken_);
+    }
     if(limitIsSet_) {
         val[utility::conversions::to_string_t("limit")] = ModelBase::toJson(limit_);
     }
@@ -41,6 +46,15 @@ bool ListHandshakesRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("X-Security-Token"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Security-Token"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXSecurityToken(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("limit"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("limit"));
         if(!fieldValue.is_null())
@@ -62,6 +76,27 @@ bool ListHandshakesRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
+
+std::string ListHandshakesRequest::getXSecurityToken() const
+{
+    return xSecurityToken_;
+}
+
+void ListHandshakesRequest::setXSecurityToken(const std::string& value)
+{
+    xSecurityToken_ = value;
+    xSecurityTokenIsSet_ = true;
+}
+
+bool ListHandshakesRequest::xSecurityTokenIsSet() const
+{
+    return xSecurityTokenIsSet_;
+}
+
+void ListHandshakesRequest::unsetxSecurityToken()
+{
+    xSecurityTokenIsSet_ = false;
+}
 
 int32_t ListHandshakesRequest::getLimit() const
 {

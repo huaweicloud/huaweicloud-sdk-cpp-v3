@@ -77,6 +77,15 @@ public:
     void setAgencyName(const std::string& value);
 
     /// <summary>
+    /// 描述信息。
+    /// </summary>
+
+    std::string getDescription() const;
+    bool descriptionIsSet() const;
+    void unsetdescription();
+    void setDescription(const std::string& value);
+
+    /// <summary>
     /// 要绑定到新创建的账号的标签列表。
     /// </summary>
 
@@ -95,6 +104,8 @@ protected:
     bool phoneIsSet_;
     std::string agencyName_;
     bool agencyNameIsSet_;
+    std::string description_;
+    bool descriptionIsSet_;
     std::vector<TagDto> tags_;
     bool tagsIsSet_;
 

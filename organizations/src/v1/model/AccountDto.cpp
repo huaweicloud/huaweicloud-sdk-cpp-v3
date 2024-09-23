@@ -24,6 +24,14 @@ AccountDto::AccountDto()
     joinedAtIsSet_ = false;
     name_ = "";
     nameIsSet_ = false;
+    mobilePhone_ = "";
+    mobilePhoneIsSet_ = false;
+    intlNumberPrefix_ = "";
+    intlNumberPrefixIsSet_ = false;
+    email_ = "";
+    emailIsSet_ = false;
+    description_ = "";
+    descriptionIsSet_ = false;
 }
 
 AccountDto::~AccountDto() = default;
@@ -53,6 +61,18 @@ web::json::value AccountDto::toJson() const
     }
     if(nameIsSet_) {
         val[utility::conversions::to_string_t("name")] = ModelBase::toJson(name_);
+    }
+    if(mobilePhoneIsSet_) {
+        val[utility::conversions::to_string_t("mobile_phone")] = ModelBase::toJson(mobilePhone_);
+    }
+    if(intlNumberPrefixIsSet_) {
+        val[utility::conversions::to_string_t("intl_number_prefix")] = ModelBase::toJson(intlNumberPrefix_);
+    }
+    if(emailIsSet_) {
+        val[utility::conversions::to_string_t("email")] = ModelBase::toJson(email_);
+    }
+    if(descriptionIsSet_) {
+        val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
     }
 
     return val;
@@ -113,6 +133,42 @@ bool AccountDto::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("mobile_phone"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("mobile_phone"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMobilePhone(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("intl_number_prefix"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("intl_number_prefix"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIntlNumberPrefix(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("email"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("email"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEmail(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("description"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("description"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDescription(refVal);
         }
     }
     return ok;
@@ -243,6 +299,90 @@ bool AccountDto::nameIsSet() const
 void AccountDto::unsetname()
 {
     nameIsSet_ = false;
+}
+
+std::string AccountDto::getMobilePhone() const
+{
+    return mobilePhone_;
+}
+
+void AccountDto::setMobilePhone(const std::string& value)
+{
+    mobilePhone_ = value;
+    mobilePhoneIsSet_ = true;
+}
+
+bool AccountDto::mobilePhoneIsSet() const
+{
+    return mobilePhoneIsSet_;
+}
+
+void AccountDto::unsetmobilePhone()
+{
+    mobilePhoneIsSet_ = false;
+}
+
+std::string AccountDto::getIntlNumberPrefix() const
+{
+    return intlNumberPrefix_;
+}
+
+void AccountDto::setIntlNumberPrefix(const std::string& value)
+{
+    intlNumberPrefix_ = value;
+    intlNumberPrefixIsSet_ = true;
+}
+
+bool AccountDto::intlNumberPrefixIsSet() const
+{
+    return intlNumberPrefixIsSet_;
+}
+
+void AccountDto::unsetintlNumberPrefix()
+{
+    intlNumberPrefixIsSet_ = false;
+}
+
+std::string AccountDto::getEmail() const
+{
+    return email_;
+}
+
+void AccountDto::setEmail(const std::string& value)
+{
+    email_ = value;
+    emailIsSet_ = true;
+}
+
+bool AccountDto::emailIsSet() const
+{
+    return emailIsSet_;
+}
+
+void AccountDto::unsetemail()
+{
+    emailIsSet_ = false;
+}
+
+std::string AccountDto::getDescription() const
+{
+    return description_;
+}
+
+void AccountDto::setDescription(const std::string& value)
+{
+    description_ = value;
+    descriptionIsSet_ = true;
+}
+
+bool AccountDto::descriptionIsSet() const
+{
+    return descriptionIsSet_;
+}
+
+void AccountDto::unsetdescription()
+{
+    descriptionIsSet_ = false;
 }
 
 }

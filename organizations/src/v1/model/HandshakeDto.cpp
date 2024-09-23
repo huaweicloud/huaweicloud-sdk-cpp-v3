@@ -20,6 +20,8 @@ HandshakeDto::HandshakeDto()
     updatedAtIsSet_ = false;
     createdAt_ = utility::datetime();
     createdAtIsSet_ = false;
+    expiredAt_ = utility::datetime();
+    expiredAtIsSet_ = false;
     managementAccountId_ = "";
     managementAccountIdIsSet_ = false;
     managementAccountName_ = "";
@@ -54,6 +56,9 @@ web::json::value HandshakeDto::toJson() const
     }
     if(createdAtIsSet_) {
         val[utility::conversions::to_string_t("created_at")] = ModelBase::toJson(createdAt_);
+    }
+    if(expiredAtIsSet_) {
+        val[utility::conversions::to_string_t("expired_at")] = ModelBase::toJson(expiredAt_);
     }
     if(managementAccountIdIsSet_) {
         val[utility::conversions::to_string_t("management_account_id")] = ModelBase::toJson(managementAccountId_);
@@ -114,6 +119,15 @@ bool HandshakeDto::fromJson(const web::json::value& val)
             utility::datetime refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCreatedAt(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("expired_at"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("expired_at"));
+        if(!fieldValue.is_null())
+        {
+            utility::datetime refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setExpiredAt(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("management_account_id"))) {
@@ -256,6 +270,27 @@ bool HandshakeDto::createdAtIsSet() const
 void HandshakeDto::unsetcreatedAt()
 {
     createdAtIsSet_ = false;
+}
+
+utility::datetime HandshakeDto::getExpiredAt() const
+{
+    return expiredAt_;
+}
+
+void HandshakeDto::setExpiredAt(const utility::datetime& value)
+{
+    expiredAt_ = value;
+    expiredAtIsSet_ = true;
+}
+
+bool HandshakeDto::expiredAtIsSet() const
+{
+    return expiredAtIsSet_;
+}
+
+void HandshakeDto::unsetexpiredAt()
+{
+    expiredAtIsSet_ = false;
 }
 
 std::string HandshakeDto::getManagementAccountId() const

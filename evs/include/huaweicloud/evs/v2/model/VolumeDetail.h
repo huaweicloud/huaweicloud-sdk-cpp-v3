@@ -369,6 +369,15 @@ public:
     void unsetthroughput();
     void setThroughput(const Throughput& value);
 
+    /// <summary>
+    /// 云硬盘关联的自动快照策略ID
+    /// </summary>
+
+    std::string getSnapshotPolicyId() const;
+    bool snapshotPolicyIdIsSet() const;
+    void unsetsnapshotPolicyId();
+    void setSnapshotPolicyId(const std::string& value);
+
 
 protected:
     std::string id_;
@@ -443,6 +452,8 @@ protected:
     bool iopsIsSet_;
     Throughput throughput_;
     bool throughputIsSet_;
+    std::string snapshotPolicyId_;
+    bool snapshotPolicyIdIsSet_;
 
 };
 

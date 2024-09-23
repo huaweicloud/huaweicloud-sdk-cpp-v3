@@ -31,6 +31,8 @@ UpdateDomainMultiCertificatesRequestBodyContent::UpdateDomainMultiCertificatesRe
     privateKeyIsSet_ = false;
     certificateType_ = 0;
     certificateTypeIsSet_ = false;
+    scmCertificateId_ = "";
+    scmCertificateIdIsSet_ = false;
 }
 
 UpdateDomainMultiCertificatesRequestBodyContent::~UpdateDomainMultiCertificatesRequestBodyContent() = default;
@@ -72,6 +74,9 @@ web::json::value UpdateDomainMultiCertificatesRequestBodyContent::toJson() const
     }
     if(certificateTypeIsSet_) {
         val[utility::conversions::to_string_t("certificate_type")] = ModelBase::toJson(certificateType_);
+    }
+    if(scmCertificateIdIsSet_) {
+        val[utility::conversions::to_string_t("scm_certificate_id")] = ModelBase::toJson(scmCertificateId_);
     }
 
     return val;
@@ -168,6 +173,15 @@ bool UpdateDomainMultiCertificatesRequestBodyContent::fromJson(const web::json::
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCertificateType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("scm_certificate_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("scm_certificate_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setScmCertificateId(refVal);
         }
     }
     return ok;
@@ -382,6 +396,27 @@ bool UpdateDomainMultiCertificatesRequestBodyContent::certificateTypeIsSet() con
 void UpdateDomainMultiCertificatesRequestBodyContent::unsetcertificateType()
 {
     certificateTypeIsSet_ = false;
+}
+
+std::string UpdateDomainMultiCertificatesRequestBodyContent::getScmCertificateId() const
+{
+    return scmCertificateId_;
+}
+
+void UpdateDomainMultiCertificatesRequestBodyContent::setScmCertificateId(const std::string& value)
+{
+    scmCertificateId_ = value;
+    scmCertificateIdIsSet_ = true;
+}
+
+bool UpdateDomainMultiCertificatesRequestBodyContent::scmCertificateIdIsSet() const
+{
+    return scmCertificateIdIsSet_;
+}
+
+void UpdateDomainMultiCertificatesRequestBodyContent::unsetscmCertificateId()
+{
+    scmCertificateIdIsSet_ = false;
 }
 
 }

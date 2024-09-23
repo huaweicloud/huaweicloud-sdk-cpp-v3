@@ -29,6 +29,9 @@
 #include <huaweicloud/organizations/v1/model/ShowAccountResponse.h>
 #include <huaweicloud/organizations/v1/model/ShowCreateAccountStatusRequest.h>
 #include <huaweicloud/organizations/v1/model/ShowCreateAccountStatusResponse.h>
+#include <huaweicloud/organizations/v1/model/UpdateAccountReqBody.h>
+#include <huaweicloud/organizations/v1/model/UpdateAccountRequest.h>
+#include <huaweicloud/organizations/v1/model/UpdateAccountResponse.h>
 #include <string>
 
 #include <huaweicloud/organizations/v1/model/DelegatedAdministratorReqBody.h>
@@ -256,6 +259,14 @@ public:
     std::shared_ptr<ShowCreateAccountStatusResponse> showCreateAccountStatus(
         ShowCreateAccountStatusRequest &request
     );
+    // 更新账号信息
+    //
+    // 更新指定的账号信息。此操作只能由组织的管理账号调用。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateAccountResponse> updateAccount(
+        UpdateAccountRequest &request
+    );
 
     // 注销服务的委托管理员
     //
@@ -373,7 +384,7 @@ public:
     );
     // 查询有效的策略
     //
-    // 查询指定策略类型和账户的有效策略信息。当前此接口不支持查询服务控制策略（service_control_policy）。此操作只能由组织的管理账号或作为服务委托管理员的成员账号调用。
+    // 查询指定策略类型和账号的有效策略信息。当前此接口不支持查询服务控制策略（service_control_policy）。此操作只能由组织的管理账号或作为服务委托管理员的成员账号调用。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowEffectivePoliciesResponse> showEffectivePolicies(
@@ -398,7 +409,7 @@ public:
     );
     // 离开当前组织
     //
-    // 此操作只能由组织的成员账号调用。只有当组织账号配置了作为独立账号运行所需的信息时，您才能作为成员账户离开组织。要离开的账号不能是组织启用的任何服务的委托管理员账号。
+    // 此操作只能由组织的成员账号调用。只有当组织账号配置了作为独立账号运行所需的信息时，您才能作为成员账号离开组织。要离开的账号不能是组织启用的任何服务的委托管理员账号。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<LeaveOrganizationResponse> leaveOrganization(
@@ -464,7 +475,7 @@ public:
 
     // 将策略跟实体绑定
     //
-    // 绑定策略到根、组织单元或个人账户。此操作只能由组织的管理账号调用。
+    // 绑定策略到根、组织单元或个人账号。此操作只能由组织的管理账号调用。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<AttachPolicyResponse> attachPolicy(
@@ -543,17 +554,17 @@ public:
         UpdatePolicyRequest &request
     );
 
-    // 为指定资源添加标签
+    // 为指定资源类型添加标签
     //
-    // 向指定的资源添加一个或多个标签。目前，您可以将标签附加到组织中的账号、组织单元、根和策略。此操作只能由组织的管理账号调用。
+    // 向指定的资源类型添加一个或多个标签。目前，您可以将标签附加到组织中的账号、组织单元、根和策略。此操作只能由组织的管理账号调用。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateTagResourceResponse> createTagResource(
         CreateTagResourceRequest &request
     );
-    // 从指定资源中删除指定主键标签
+    // 从指定资源类型中删除指定主键标签
     //
-    // 从指定资源中删除具有指定主键的任何标签。您可以将标签绑定到组织中的账号、组织单元、根和策略。此操作只能由组织的管理账号调用。
+    // 从指定资源类型中删除具有指定主键的任何标签。您可以将标签绑定到组织中的账号、组织单元、根和策略。此操作只能由组织的管理账号调用。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteTagResourceResponse> deleteTagResource(
@@ -575,9 +586,9 @@ public:
     std::shared_ptr<ListResourceTagsResponse> listResourceTags(
         ListResourceTagsRequest &request
     );
-    // 列出绑定到指定资源的标签
+    // 列出绑定到指定资源类型的标签
     //
-    // 列出绑定到指定资源的标签。您可以将标签附加到组织中的账号、组织单元、根和策略。此操作只能由组织的管理账号或作为服务委托管理员的成员账号调用。
+    // 列出绑定到指定资源类型的标签。您可以将标签附加到组织中的账号、组织单元、根和策略。此操作只能由组织的管理账号或作为服务委托管理员的成员账号调用。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListTagResourcesResponse> listTagResources(

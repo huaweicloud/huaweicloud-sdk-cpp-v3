@@ -12,6 +12,8 @@ namespace Model {
 
 CreateTagResourceRequest::CreateTagResourceRequest()
 {
+    xSecurityToken_ = "";
+    xSecurityTokenIsSet_ = false;
     resourceType_ = "";
     resourceTypeIsSet_ = false;
     resourceId_ = "";
@@ -29,6 +31,9 @@ web::json::value CreateTagResourceRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(xSecurityTokenIsSet_) {
+        val[utility::conversions::to_string_t("X-Security-Token")] = ModelBase::toJson(xSecurityToken_);
+    }
     if(resourceTypeIsSet_) {
         val[utility::conversions::to_string_t("resource_type")] = ModelBase::toJson(resourceType_);
     }
@@ -45,6 +50,15 @@ bool CreateTagResourceRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("X-Security-Token"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Security-Token"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXSecurityToken(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("resource_type"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("resource_type"));
         if(!fieldValue.is_null())
@@ -75,6 +89,27 @@ bool CreateTagResourceRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
+
+std::string CreateTagResourceRequest::getXSecurityToken() const
+{
+    return xSecurityToken_;
+}
+
+void CreateTagResourceRequest::setXSecurityToken(const std::string& value)
+{
+    xSecurityToken_ = value;
+    xSecurityTokenIsSet_ = true;
+}
+
+bool CreateTagResourceRequest::xSecurityTokenIsSet() const
+{
+    return xSecurityTokenIsSet_;
+}
+
+void CreateTagResourceRequest::unsetxSecurityToken()
+{
+    xSecurityTokenIsSet_ = false;
+}
 
 std::string CreateTagResourceRequest::getResourceType() const
 {

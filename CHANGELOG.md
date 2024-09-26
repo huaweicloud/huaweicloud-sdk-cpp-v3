@@ -1,3 +1,34 @@
+# 3.1.104 2024-09-26
+
+### HuaweiCloud SDK DDS
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ResizeInstance**
+    - changes of request param
+      - `+ resize.target_type: enum value [config,readonly]`
+
+### HuaweiCloud SDK Live
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the following APIs:
+    - `ListHarvestTask`
+    - `ModifyHarvestTask`
+    - `CreateHarvestTask`
+    - `DeleteHarvestTask`
+    - `UpdateHarvestJobStatus`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.103 2024-09-23
 
 ### HuaweiCloud SDK CDN

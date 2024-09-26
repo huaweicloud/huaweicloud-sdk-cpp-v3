@@ -48,7 +48,7 @@ public:
     void setType(const std::string& value);
 
     /// <summary>
-    /// 数据库版本。取值：“3.2”、“3.4”或“4.0”。
+    /// 数据库版本。取值：“3.4”、“4.0”、“4.2”、“4.4”、“5.0”。
     /// </summary>
 
     std::string getVersion() const;

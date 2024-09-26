@@ -1,3 +1,34 @@
+# 3.1.104 2024-09-26
+
+### HuaweiCloud SDK DDS
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ResizeInstance**
+    - 请求参数变更
+      - `+ resize.target_type: enum value [config,readonly]`
+
+### HuaweiCloud SDK Live
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持以下接口：
+    - `ListHarvestTask`
+    - `ModifyHarvestTask`
+    - `CreateHarvestTask`
+    - `DeleteHarvestTask`
+    - `UpdateHarvestJobStatus`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.1.103 2024-09-23
 
 ### HuaweiCloud SDK CDN

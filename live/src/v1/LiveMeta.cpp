@@ -647,6 +647,123 @@ HttpRequestDef LiveMeta::genRequestDefForUpdateDomainHttpsCert() {
     return reqDefBuilder;
 }
 
+HttpRequestDef LiveMeta::genRequestDefForCreateHarvestTask() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamAccessControlAllowInternal;
+    reqDefBuilder.withRequestField(headerParamAccessControlAllowInternal
+                  .withName("AccessControlAllowInternal")
+                  .withJsonTag("Access-Control-Allow-Internal")
+                  .withLocationType(Header_));
+    FieldDef headerParamAccessControlAllowExternal;
+    reqDefBuilder.withRequestField(headerParamAccessControlAllowExternal
+                  .withName("AccessControlAllowExternal")
+                  .withJsonTag("Access-Control-Allow-External")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LiveMeta::genRequestDefForDeleteHarvestTask() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("JobId")
+                  .withJsonTag("job_id")
+                  .withLocationType(Query_));
+    FieldDef headerParamAccessControlAllowInternal;
+    reqDefBuilder.withRequestField(headerParamAccessControlAllowInternal
+                  .withName("AccessControlAllowInternal")
+                  .withJsonTag("Access-Control-Allow-Internal")
+                  .withLocationType(Header_));
+    FieldDef headerParamAccessControlAllowExternal;
+    reqDefBuilder.withRequestField(headerParamAccessControlAllowExternal
+                  .withName("AccessControlAllowExternal")
+                  .withJsonTag("Access-Control-Allow-External")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LiveMeta::genRequestDefForListHarvestTask() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Domain")
+                  .withJsonTag("domain")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("AppName")
+                  .withJsonTag("app_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Id")
+                  .withJsonTag("id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("JobId")
+                  .withJsonTag("job_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("StartTime")
+                  .withJsonTag("start_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EndTime")
+                  .withJsonTag("end_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EventName")
+                  .withJsonTag("event_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    FieldDef headerParamAccessControlAllowInternal;
+    reqDefBuilder.withRequestField(headerParamAccessControlAllowInternal
+                  .withName("AccessControlAllowInternal")
+                  .withJsonTag("Access-Control-Allow-Internal")
+                  .withLocationType(Header_));
+    FieldDef headerParamAccessControlAllowExternal;
+    reqDefBuilder.withRequestField(headerParamAccessControlAllowExternal
+                  .withName("AccessControlAllowExternal")
+                  .withJsonTag("Access-Control-Allow-External")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LiveMeta::genRequestDefForModifyHarvestTask() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamAccessControlAllowInternal;
+    reqDefBuilder.withRequestField(headerParamAccessControlAllowInternal
+                  .withName("AccessControlAllowInternal")
+                  .withJsonTag("Access-Control-Allow-Internal")
+                  .withLocationType(Header_));
+    FieldDef headerParamAccessControlAllowExternal;
+    reqDefBuilder.withRequestField(headerParamAccessControlAllowExternal
+                  .withName("AccessControlAllowExternal")
+                  .withJsonTag("Access-Control-Allow-External")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LiveMeta::genRequestDefForUpdateHarvestJobStatus() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamAccessControlAllowInternal;
+    reqDefBuilder.withRequestField(headerParamAccessControlAllowInternal
+                  .withName("AccessControlAllowInternal")
+                  .withJsonTag("Access-Control-Allow-Internal")
+                  .withLocationType(Header_));
+    FieldDef headerParamAccessControlAllowExternal;
+    reqDefBuilder.withRequestField(headerParamAccessControlAllowExternal
+                  .withName("AccessControlAllowExternal")
+                  .withJsonTag("Access-Control-Allow-External")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef LiveMeta::genRequestDefForUpdateObsBucketAuthorityPublic() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;

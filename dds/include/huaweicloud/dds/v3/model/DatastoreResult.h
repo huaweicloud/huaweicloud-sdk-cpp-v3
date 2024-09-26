@@ -48,7 +48,7 @@ public:
     void setNodeType(const std::string& value);
 
     /// <summary>
-    /// version数据库版本。DDS引擎取值为3.2, 3.4, 4.0。
+    /// version数据库版本。
     /// </summary>
 
     std::string getVersion() const;

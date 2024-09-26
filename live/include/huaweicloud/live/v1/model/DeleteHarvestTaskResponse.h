@@ -1,9 +1,9 @@
 
-#ifndef HUAWEICLOUD_SDK_RDS_V3_MODEL_SetAuditlogPolicyResponse_H_
-#define HUAWEICLOUD_SDK_RDS_V3_MODEL_SetAuditlogPolicyResponse_H_
+#ifndef HUAWEICLOUD_SDK_LIVE_V1_MODEL_DeleteHarvestTaskResponse_H_
+#define HUAWEICLOUD_SDK_LIVE_V1_MODEL_DeleteHarvestTaskResponse_H_
 
 
-#include <huaweicloud/rds/v3/RdsExport.h>
+#include <huaweicloud/live/v1/LiveExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/utils/Utils.h>
@@ -13,8 +13,8 @@
 
 namespace HuaweiCloud {
 namespace Sdk {
-namespace Rds {
-namespace V3 {
+namespace Live {
+namespace V1 {
 namespace Model {
 
 using namespace HuaweiCloud::Sdk::Core::Utils;
@@ -22,12 +22,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// Response Object
 /// </summary>
-class HUAWEICLOUD_RDS_V3_EXPORT  SetAuditlogPolicyResponse
+class HUAWEICLOUD_LIVE_V1_EXPORT  DeleteHarvestTaskResponse
     : public ModelBase, public HttpResponse
 {
 public:
-    SetAuditlogPolicyResponse();
-    virtual ~SetAuditlogPolicyResponse();
+    DeleteHarvestTaskResponse();
+    virtual ~DeleteHarvestTaskResponse();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -36,21 +36,21 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// SetAuditlogPolicyResponse members
+    /// DeleteHarvestTaskResponse members
 
     /// <summary>
-    /// 设置审计日志策略的操作结果。 - COMPLETED：已完成。
+    /// 任务ID
     /// </summary>
 
-    std::string getStatus() const;
-    bool statusIsSet() const;
-    void unsetstatus();
-    void setStatus(const std::string& value);
+    std::string getJobId() const;
+    bool jobIdIsSet() const;
+    void unsetjobId();
+    void setJobId(const std::string& value);
 
 
 protected:
-    std::string status_;
-    bool statusIsSet_;
+    std::string jobId_;
+    bool jobIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()
@@ -64,4 +64,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_RDS_V3_MODEL_SetAuditlogPolicyResponse_H_
+#endif // HUAWEICLOUD_SDK_LIVE_V1_MODEL_DeleteHarvestTaskResponse_H_

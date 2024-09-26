@@ -148,6 +148,21 @@
 #include <huaweicloud/live/v1/model/UpdateDomainHttpsCertResponse.h>
 #include <string>
 
+#include <huaweicloud/live/v1/model/CreateHarvestTaskInfoReq.h>
+#include <huaweicloud/live/v1/model/CreateHarvestTaskRequest.h>
+#include <huaweicloud/live/v1/model/CreateHarvestTaskResponse.h>
+#include <huaweicloud/live/v1/model/DeleteHarvestTaskRequest.h>
+#include <huaweicloud/live/v1/model/DeleteHarvestTaskResponse.h>
+#include <huaweicloud/live/v1/model/ListHarvestTaskRequest.h>
+#include <huaweicloud/live/v1/model/ListHarvestTaskResponse.h>
+#include <huaweicloud/live/v1/model/ModifyHarvestTaskRequest.h>
+#include <huaweicloud/live/v1/model/ModifyHarvestTaskRequestBody.h>
+#include <huaweicloud/live/v1/model/ModifyHarvestTaskResponse.h>
+#include <huaweicloud/live/v1/model/UpdateHarvestJobStatusRequest.h>
+#include <huaweicloud/live/v1/model/UpdateHarvestJobStatusRequestBody.h>
+#include <huaweicloud/live/v1/model/UpdateHarvestJobStatusResponse.h>
+#include <string>
+
 #include <huaweicloud/live/v1/model/ObsAuthorityConfigV2.h>
 #include <huaweicloud/live/v1/model/UpdateObsBucketAuthorityPublicRequest.h>
 #include <huaweicloud/live/v1/model/UpdateObsBucketAuthorityPublicResponse.h>
@@ -673,6 +688,47 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateDomainHttpsCertResponse> updateDomainHttpsCert(
         UpdateDomainHttpsCertRequest &request
+    );
+
+    // 创建Live2VOD任务
+    //
+    // 创建Live2VOD任务。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateHarvestTaskResponse> createHarvestTask(
+        CreateHarvestTaskRequest &request
+    );
+    // 删除Live2VOD任务
+    //
+    // 删除Live2VOD任务。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteHarvestTaskResponse> deleteHarvestTask(
+        DeleteHarvestTaskRequest &request
+    );
+    // 查询Live2VOD任务
+    //
+    // 查询Live2VOD任务，支持批量查询。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListHarvestTaskResponse> listHarvestTask(
+        ListHarvestTaskRequest &request
+    );
+    // 修改Live2VOD任务
+    //
+    // 修改Live2VOD任务。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ModifyHarvestTaskResponse> modifyHarvestTask(
+        ModifyHarvestTaskRequest &request
+    );
+    // 修改Live2VOD任务状态
+    //
+    // 修改Live2VOD任务状态。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateHarvestJobStatusResponse> updateHarvestJobStatus(
+        UpdateHarvestJobStatusRequest &request
     );
 
     // OBS桶授权及取消授权

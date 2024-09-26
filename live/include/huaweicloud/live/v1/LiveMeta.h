@@ -71,6 +71,11 @@ public:
     static HttpRequestDef genRequestDefForDeleteDomainHttpsCert();
     static HttpRequestDef genRequestDefForShowDomainHttpsCert();
     static HttpRequestDef genRequestDefForUpdateDomainHttpsCert();
+    static HttpRequestDef genRequestDefForCreateHarvestTask();
+    static HttpRequestDef genRequestDefForDeleteHarvestTask();
+    static HttpRequestDef genRequestDefForListHarvestTask();
+    static HttpRequestDef genRequestDefForModifyHarvestTask();
+    static HttpRequestDef genRequestDefForUpdateHarvestJobStatus();
     static HttpRequestDef genRequestDefForUpdateObsBucketAuthorityPublic();
     static HttpRequestDef genRequestDefForCreateOttChannelInfo();
     static HttpRequestDef genRequestDefForDeleteOttChannelInfo();

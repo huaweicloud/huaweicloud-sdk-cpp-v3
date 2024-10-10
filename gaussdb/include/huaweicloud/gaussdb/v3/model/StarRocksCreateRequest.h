@@ -169,6 +169,15 @@ public:
     void unsettagsInfo();
     void setTagsInfo(const StarRocksCreateRequest_tags_info& value);
 
+    /// <summary>
+    /// 实例安全组ID。默认与Taurus安全组ID一致。
+    /// </summary>
+
+    std::string getSecurityGroupId() const;
+    bool securityGroupIdIsSet() const;
+    void unsetsecurityGroupId();
+    void setSecurityGroupId(const std::string& value);
+
 
 protected:
     std::string name_;
@@ -199,6 +208,8 @@ protected:
     bool timeZoneIsSet_;
     StarRocksCreateRequest_tags_info tagsInfo_;
     bool tagsInfoIsSet_;
+    std::string securityGroupId_;
+    bool securityGroupIdIsSet_;
 
 };
 

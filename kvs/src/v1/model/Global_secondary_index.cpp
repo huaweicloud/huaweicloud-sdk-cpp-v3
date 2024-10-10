@@ -20,6 +20,7 @@ Global_secondary_index::Global_secondary_index()
     shardModeIsSet_ = false;
     sortKeyFieldsIsSet_ = false;
     abstractFieldsIsSet_ = false;
+    provisionedThroughputIsSet_ = false;
 }
 
 Global_secondary_index::~Global_secondary_index() = default;
@@ -44,6 +45,9 @@ bool Global_secondary_index::toBson(Builder &builder) const
         return false;
     }
     if (abstractFieldsIsSet_ && !bson_append(builder, "abstract_fields", abstractFields_)) {
+        return false;
+    }
+    if (provisionedThroughputIsSet_ && !bson_append(builder, "provisioned_throughput", provisionedThroughput_)) {
         return false;
     }
 
@@ -98,6 +102,15 @@ bool Global_secondary_index::fromBson(const Viewer &viewer)
                 return false;
             }
             abstractFieldsIsSet_ = true;
+            ++it;
+            continue;
+        }
+        
+        if (key == "provisioned_throughput") {
+            if (!bson_get(it, provisionedThroughput_)) {
+                return false;
+            }
+            provisionedThroughputIsSet_ = true;
             ++it;
             continue;
         }
@@ -211,6 +224,27 @@ bool Global_secondary_index::abstractFieldsIsSet() const
 void Global_secondary_index::unsetabstractFields()
 {
     abstractFieldsIsSet_ = false;
+}
+
+Provisioned_throughput Global_secondary_index::getProvisionedThroughput() const
+{
+    return provisionedThroughput_;
+}
+
+void Global_secondary_index::setProvisionedThroughput(const Provisioned_throughput& value)
+{
+    provisionedThroughput_ = value;
+    provisionedThroughputIsSet_ = true;
+}
+
+bool Global_secondary_index::provisionedThroughputIsSet() const
+{
+    return provisionedThroughputIsSet_;
+}
+
+void Global_secondary_index::unsetprovisionedThroughput()
+{
+    provisionedThroughputIsSet_ = false;
 }
 
 }

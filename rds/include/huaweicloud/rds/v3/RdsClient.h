@@ -338,6 +338,7 @@
 #include <huaweicloud/rds/v3/model/SwitchSqlLimitResponse.h>
 #include <huaweicloud/rds/v3/model/SwitchSslRequest.h>
 #include <huaweicloud/rds/v3/model/SwitchSslResponse.h>
+#include <huaweicloud/rds/v3/model/ToPeriodReq.h>
 #include <huaweicloud/rds/v3/model/UnlockNodeReadonlyStatusRequest.h>
 #include <huaweicloud/rds/v3/model/UnlockNodeReadonlyStatusRequestBody.h>
 #include <huaweicloud/rds/v3/model/UnlockNodeReadonlyStatusResponse.h>
@@ -369,6 +370,8 @@
 #include <huaweicloud/rds/v3/model/UpdateTdeStatusRequest.h>
 #include <huaweicloud/rds/v3/model/UpdateTdeStatusRequestBody.h>
 #include <huaweicloud/rds/v3/model/UpdateTdeStatusResponse.h>
+#include <huaweicloud/rds/v3/model/UpdateToPeriodRequest.h>
+#include <huaweicloud/rds/v3/model/UpdateToPeriodResponse.h>
 #include <huaweicloud/rds/v3/model/UpgradeDbMajorVersionPreCheckRequest.h>
 #include <huaweicloud/rds/v3/model/UpgradeDbMajorVersionPreCheckResponse.h>
 #include <huaweicloud/rds/v3/model/UpgradeDbMajorVersionRequest.h>
@@ -499,6 +502,8 @@
 #include <huaweicloud/rds/v3/model/ShowInformationAboutDatabaseProxyResponse.h>
 #include <huaweicloud/rds/v3/model/ShowPostgresqlParamValueRequest.h>
 #include <huaweicloud/rds/v3/model/ShowPostgresqlParamValueResponse.h>
+#include <huaweicloud/rds/v3/model/ShowRecoveryTimeWindowRequest.h>
+#include <huaweicloud/rds/v3/model/ShowRecoveryTimeWindowResponse.h>
 #include <huaweicloud/rds/v3/model/ShowReplayDelayStatusRequest.h>
 #include <huaweicloud/rds/v3/model/ShowReplayDelayStatusResponse.h>
 #include <huaweicloud/rds/v3/model/StartDatabaseProxyRequest.h>
@@ -1753,6 +1758,14 @@ public:
     std::shared_ptr<UpdateTdeStatusResponse> updateTdeStatus(
         UpdateTdeStatusRequest &request
     );
+    // RDS实例按需转包周期
+    //
+    // RDS实例按需转包周期
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateToPeriodResponse> updateToPeriod(
+        UpdateToPeriodRequest &request
+    );
     // 
     //
     // PostgreSQL数据库升级大版本。
@@ -2137,6 +2150,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowPostgresqlParamValueResponse> showPostgresqlParamValue(
         ShowPostgresqlParamValueRequest &request
+    );
+    // 查询wal日志恢复时间窗
+    //
+    // 查询wal日志恢复时间窗
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowRecoveryTimeWindowResponse> showRecoveryTimeWindow(
+        ShowRecoveryTimeWindowRequest &request
     );
     // 获取wal日志延迟回放状态
     //

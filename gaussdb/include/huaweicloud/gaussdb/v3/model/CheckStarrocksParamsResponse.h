@@ -43,15 +43,15 @@ public:
     /// 参数之间区别的集合。
     /// </summary>
 
-    std::vector<ParamGroupParameterDifferences>& getCheckStarrocksParamsResponce();
-    bool checkStarrocksParamsResponceIsSet() const;
-    void unsetcheckStarrocksParamsResponce();
-    void setCheckStarrocksParamsResponce(const std::vector<ParamGroupParameterDifferences>& value);
+    std::vector<ParamGroupParameterDifferences>& getDifferences();
+    bool differencesIsSet() const;
+    void unsetdifferences();
+    void setDifferences(const std::vector<ParamGroupParameterDifferences>& value);
 
 
 protected:
-    std::vector<ParamGroupParameterDifferences> checkStarrocksParamsResponce_;
-    bool checkStarrocksParamsResponceIsSet_;
+    std::vector<ParamGroupParameterDifferences> differences_;
+    bool differencesIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

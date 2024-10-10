@@ -24,6 +24,8 @@
 #include <huaweicloud/aad/v1/model/AddPolicyBlackAndWhiteIpListRequest.h>
 #include <huaweicloud/aad/v1/model/AddPolicyBlackAndWhiteIpListResponse.h>
 #include <huaweicloud/aad/v1/model/AlarmBody.h>
+#include <huaweicloud/aad/v1/model/AssociateIpToPolicyAndPackageRequest.h>
+#include <huaweicloud/aad/v1/model/AssociateIpToPolicyAndPackageResponse.h>
 #include <huaweicloud/aad/v1/model/AssociateIpToPolicyRequest.h>
 #include <huaweicloud/aad/v1/model/AssociateIpToPolicyResponse.h>
 #include <huaweicloud/aad/v1/model/BatchCreateInstanceIpRuleRequest.h>
@@ -49,11 +51,14 @@
 #include <huaweicloud/aad/v1/model/DeletePolicyBlackAndWhiteIpListResponse.h>
 #include <huaweicloud/aad/v1/model/DeletePolicyRequest.h>
 #include <huaweicloud/aad/v1/model/DeletePolicyResponse.h>
+#include <huaweicloud/aad/v1/model/DisassociateIpFromPolicyAndPackageRequest.h>
+#include <huaweicloud/aad/v1/model/DisassociateIpFromPolicyAndPackageResponse.h>
 #include <huaweicloud/aad/v1/model/DisassociateIpFromPolicyRequest.h>
 #include <huaweicloud/aad/v1/model/DisassociateIpFromPolicyResponse.h>
 #include <huaweicloud/aad/v1/model/DomainRealServerInfo.h>
 #include <huaweicloud/aad/v1/model/HostBody.h>
 #include <huaweicloud/aad/v1/model/IpBindingBody.h>
+#include <huaweicloud/aad/v1/model/IpBindingV3Body.h>
 #include <huaweicloud/aad/v1/model/ListDomainRequest.h>
 #include <huaweicloud/aad/v1/model/ListDomainResponse.h>
 #include <huaweicloud/aad/v1/model/ListInstanceIdRequest.h>
@@ -192,6 +197,14 @@ public:
     std::shared_ptr<AssociateIpToPolicyResponse> associateIpToPolicy(
         AssociateIpToPolicyRequest &request
     );
+    // 策略和防护包绑定防护对象
+    //
+    // 策略和防护包绑定防护对象
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<AssociateIpToPolicyAndPackageResponse> associateIpToPolicyAndPackage(
+        AssociateIpToPolicyAndPackageRequest &request
+    );
     // 批量创建高防实例IP的转发规则
     //
     // 批量创建高防实例IP的转发规则
@@ -263,6 +276,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DisassociateIpFromPolicyResponse> disassociateIpFromPolicy(
         DisassociateIpFromPolicyRequest &request
+    );
+    // 策略和防护包解绑防护对象
+    //
+    // 策略和防护包解绑防护对象
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DisassociateIpFromPolicyAndPackageResponse> disassociateIpFromPolicyAndPackage(
+        DisassociateIpFromPolicyAndPackageRequest &request
     );
     // 查询域名列表
     //

@@ -35,6 +35,8 @@ StarRocksCreateRequest::StarRocksCreateRequest()
     timeZone_ = "";
     timeZoneIsSet_ = false;
     tagsInfoIsSet_ = false;
+    securityGroupId_ = "";
+    securityGroupIdIsSet_ = false;
 }
 
 StarRocksCreateRequest::~StarRocksCreateRequest() = default;
@@ -88,6 +90,9 @@ web::json::value StarRocksCreateRequest::toJson() const
     }
     if(tagsInfoIsSet_) {
         val[utility::conversions::to_string_t("tags_info")] = ModelBase::toJson(tagsInfo_);
+    }
+    if(securityGroupIdIsSet_) {
+        val[utility::conversions::to_string_t("security_group_id")] = ModelBase::toJson(securityGroupId_);
     }
 
     return val;
@@ -220,6 +225,15 @@ bool StarRocksCreateRequest::fromJson(const web::json::value& val)
             StarRocksCreateRequest_tags_info refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTagsInfo(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("security_group_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("security_group_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSecurityGroupId(refVal);
         }
     }
     return ok;
@@ -518,6 +532,27 @@ bool StarRocksCreateRequest::tagsInfoIsSet() const
 void StarRocksCreateRequest::unsettagsInfo()
 {
     tagsInfoIsSet_ = false;
+}
+
+std::string StarRocksCreateRequest::getSecurityGroupId() const
+{
+    return securityGroupId_;
+}
+
+void StarRocksCreateRequest::setSecurityGroupId(const std::string& value)
+{
+    securityGroupId_ = value;
+    securityGroupIdIsSet_ = true;
+}
+
+bool StarRocksCreateRequest::securityGroupIdIsSet() const
+{
+    return securityGroupIdIsSet_;
+}
+
+void StarRocksCreateRequest::unsetsecurityGroupId()
+{
+    securityGroupIdIsSet_ = false;
 }
 
 }

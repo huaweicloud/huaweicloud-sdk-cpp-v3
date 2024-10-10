@@ -21,6 +21,7 @@ public:
     static HttpRequestDef genRequestDefForAddBlackWhiteIpList();
     static HttpRequestDef genRequestDefForAddPolicyBlackAndWhiteIpList();
     static HttpRequestDef genRequestDefForAssociateIpToPolicy();
+    static HttpRequestDef genRequestDefForAssociateIpToPolicyAndPackage();
     static HttpRequestDef genRequestDefForBatchCreateInstanceIpRule();
     static HttpRequestDef genRequestDefForBatchDeleteInstanceIpRule();
     static HttpRequestDef genRequestDefForCreateAadDomain();
@@ -30,6 +31,7 @@ public:
     static HttpRequestDef genRequestDefForDeletePolicy();
     static HttpRequestDef genRequestDefForDeletePolicyBlackAndWhiteIpList();
     static HttpRequestDef genRequestDefForDisassociateIpFromPolicy();
+    static HttpRequestDef genRequestDefForDisassociateIpFromPolicyAndPackage();
     static HttpRequestDef genRequestDefForListDomain();
     static HttpRequestDef genRequestDefForListInstance();
     static HttpRequestDef genRequestDefForListInstanceId();

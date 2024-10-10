@@ -13,8 +13,6 @@ namespace Model {
 
 Pre_split_key_options::Pre_split_key_options()
 {
-    hashCount_ = 0;
-    hashCountIsSet_ = false;
     rangeSplitPointsIsSet_ = false;
 }
 
@@ -27,9 +25,6 @@ void Pre_split_key_options::validate()
 bool Pre_split_key_options::toBson(Builder &builder) const
 {
 
-    if (hashCountIsSet_ && !bson_append(builder, "hash_count", hashCount_)) {
-        return false;
-    }
     if (rangeSplitPointsIsSet_ && !bson_append(builder, "range_split_points", rangeSplitPoints_)) {
         return false;
     }
@@ -44,15 +39,6 @@ bool Pre_split_key_options::fromBson(const Viewer &viewer)
     while (it != viewer.end()) {
         const std::string &key = it->key();
         
-        if (key == "hash_count") {
-            if (!bson_get(it, hashCount_)) {
-                return false;
-            }
-            hashCountIsSet_ = true;
-            ++it;
-            continue;
-        }
-        
         if (key == "range_split_points") {
             if (!bson_get(it, rangeSplitPoints_)) {
                 return false;
@@ -66,27 +52,6 @@ bool Pre_split_key_options::fromBson(const Viewer &viewer)
     }
 
     return true;
-}
-
-int32_t Pre_split_key_options::getHashCount() const
-{
-    return hashCount_;
-}
-
-void Pre_split_key_options::setHashCount(int32_t value)
-{
-    hashCount_ = value;
-    hashCountIsSet_ = true;
-}
-
-bool Pre_split_key_options::hashCountIsSet() const
-{
-    return hashCountIsSet_;
-}
-
-void Pre_split_key_options::unsethashCount()
-{
-    hashCountIsSet_ = false;
 }
 
 std::vector<Document>& Pre_split_key_options::getRangeSplitPoints()

@@ -130,6 +130,14 @@ public:
             { 
                 "https://rds.ru-moscow-1.myhuaweicloud.com"
             });
+        regions["me-east-1"] = Region("me-east-1",
+            { 
+                "https://rds.me-east-1.myhuaweicloud.com"
+            });
+        regions["af-north-1"] = Region("af-north-1",
+            { 
+                "https://rds.af-north-1.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

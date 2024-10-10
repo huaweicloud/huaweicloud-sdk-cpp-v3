@@ -48,7 +48,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 查询状态
+    /// 查询状态 pending：处理中 failed：失败 success：成功
     /// </summary>
 
     std::string getStatus() const;

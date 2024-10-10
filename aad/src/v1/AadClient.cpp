@@ -325,6 +325,48 @@ std::shared_ptr<AssociateIpToPolicyResponse> AadClient::associateIpToPolicy(Asso
 
     return localVarResult;
 }
+std::shared_ptr<AssociateIpToPolicyAndPackageResponse> AadClient::associateIpToPolicyAndPackage(AssociateIpToPolicyAndPackageRequest &request)
+{
+    std::string localVarPath = "/v3/cnad/policies/{policy_id}/bind";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["policy_id"] = parameterToString(request.getPolicyId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, AadMeta::genRequestDefForAssociateIpToPolicyAndPackage());
+
+    std::shared_ptr<AssociateIpToPolicyAndPackageResponse> localVarResult = std::make_shared<AssociateIpToPolicyAndPackageResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<BatchCreateInstanceIpRuleResponse> AadClient::batchCreateInstanceIpRule(BatchCreateInstanceIpRuleRequest &request)
 {
     std::string localVarPath = "/v1/aad/instances/{instance_id}/{ip}/rules/batch-create";
@@ -665,6 +707,48 @@ std::shared_ptr<DisassociateIpFromPolicyResponse> AadClient::disassociateIpFromP
         localVarHeaderParams, localVarHttpBody, AadMeta::genRequestDefForDisassociateIpFromPolicy());
 
     std::shared_ptr<DisassociateIpFromPolicyResponse> localVarResult = std::make_shared<DisassociateIpFromPolicyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<DisassociateIpFromPolicyAndPackageResponse> AadClient::disassociateIpFromPolicyAndPackage(DisassociateIpFromPolicyAndPackageRequest &request)
+{
+    std::string localVarPath = "/v3/cnad/policies/{policy_id}/unbind";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["policy_id"] = parameterToString(request.getPolicyId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, AadMeta::genRequestDefForDisassociateIpFromPolicyAndPackage());
+
+    std::shared_ptr<DisassociateIpFromPolicyAndPackageResponse> localVarResult = std::make_shared<DisassociateIpFromPolicyAndPackageResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

@@ -70,6 +70,15 @@ HttpRequestDef AadMeta::genRequestDefForAssociateIpToPolicy() {
     return reqDefBuilder;
 }
 
+HttpRequestDef AadMeta::genRequestDefForAssociateIpToPolicyAndPackage() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef AadMeta::genRequestDefForBatchCreateInstanceIpRule() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -135,6 +144,15 @@ HttpRequestDef AadMeta::genRequestDefForDeletePolicyBlackAndWhiteIpList() {
 }
 
 HttpRequestDef AadMeta::genRequestDefForDisassociateIpFromPolicy() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef AadMeta::genRequestDefForDisassociateIpFromPolicyAndPackage() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.

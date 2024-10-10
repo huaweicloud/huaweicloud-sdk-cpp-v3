@@ -157,6 +157,7 @@ public:
     static HttpRequestDef genRequestDefForUpdatePostgresqlInstanceAlias();
     static HttpRequestDef genRequestDefForUpdateSqlLimit();
     static HttpRequestDef genRequestDefForUpdateTdeStatus();
+    static HttpRequestDef genRequestDefForUpdateToPeriod();
     static HttpRequestDef genRequestDefForUpgradeDbMajorVersion();
     static HttpRequestDef genRequestDefForUpgradeDbMajorVersionPreCheck();
     static HttpRequestDef genRequestDefForUpgradeDbVersion();
@@ -204,6 +205,7 @@ public:
     static HttpRequestDef genRequestDefForSetPostgresqlDbUserPwd();
     static HttpRequestDef genRequestDefForShowInformationAboutDatabaseProxy();
     static HttpRequestDef genRequestDefForShowPostgresqlParamValue();
+    static HttpRequestDef genRequestDefForShowRecoveryTimeWindow();
     static HttpRequestDef genRequestDefForShowReplayDelayStatus();
     static HttpRequestDef genRequestDefForStartDatabaseProxy();
     static HttpRequestDef genRequestDefForStopDatabaseProxy();

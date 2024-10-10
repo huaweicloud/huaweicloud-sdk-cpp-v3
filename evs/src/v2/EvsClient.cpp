@@ -729,9 +729,6 @@ std::shared_ptr<ListVolumesResponse> EvsClient::listVolumes(ListVolumesRequest &
     if (request.serverIdIsSet()) {
         localVarQueryParams["server_id"] = parameterToString(request.getServerId());
     }
-    if (request.snapshotPolicyIdIsSet()) {
-        localVarQueryParams["snapshot_policy_id"] = parameterToString(request.getSnapshotPolicyId());
-    }
 
     std::string localVarHttpBody;
 

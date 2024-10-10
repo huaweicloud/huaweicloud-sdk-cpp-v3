@@ -219,9 +219,6 @@ HttpRequestDef EvsMeta::genRequestDefForListVolumes() {
     reqDefBuilder.withRequestField(FieldDef().withName("ServerId")
                   .withJsonTag("server_id")
                   .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("SnapshotPolicyId")
-                  .withJsonTag("snapshot_policy_id")
-                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 

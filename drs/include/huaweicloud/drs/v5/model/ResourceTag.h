@@ -48,7 +48,7 @@ public:
     void setKey(const std::string& value);
 
     /// <summary>
-    /// 标签值。 约束：最大长度43，只能包含字母、数字、下划线、中划线和中文。
+    /// 标签值。标签的值可以包含任意语种字母、数字、空格和_ . : / &#x3D; + - @。
     /// </summary>
 
     std::string getValue() const;

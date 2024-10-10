@@ -276,13 +276,13 @@ public:
     void setSchemaType(const std::string& value);
 
     /// <summary>
-    /// 节点个数。
+    /// 节点个数。MongoDB数据库时对应源端分片个数，源库为集群时必填，[1-32]，MySQL双主灾备时会默认设置为2。
     /// </summary>
 
-    std::string getNodeNum() const;
+    int32_t getNodeNum() const;
     bool nodeNumIsSet() const;
     void unsetnodeNum();
-    void setNodeNum(const std::string& value);
+    void setNodeNum(int32_t value);
 
     /// <summary>
     /// 对象选择开关
@@ -651,7 +651,7 @@ protected:
     bool speedLimitIsSet_;
     std::string schemaType_;
     bool schemaTypeIsSet_;
-    std::string nodeNum_;
+    int32_t nodeNum_;
     bool nodeNumIsSet_;
     bool objectSwitch_;
     bool objectSwitchIsSet_;

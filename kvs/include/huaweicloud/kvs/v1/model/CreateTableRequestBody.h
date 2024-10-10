@@ -13,6 +13,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/kvs/v1/model/Secondary_index.h>
+#include <huaweicloud/kvs/v1/model/Provisioned_throughput.h>
 #include <huaweicloud/kvs/v1/model/Primary_key_schema.h>
 #include <huaweicloud/kvs/v1/model/Pre_split_key_options.h>
 #include <string>
@@ -56,6 +57,24 @@ public:
     void setTableName(const std::string& value);
 
     /// <summary>
+    /// 表计费模式，可为\&quot;provisioned\&quot;或\&quot;on_demand\&quot; - 预置模式：provisioned - 按需模式：on_demand
+    /// </summary>
+
+    std::string getBillMode() const;
+    bool billModeIsSet() const;
+    void unsetbillMode();
+    void setBillMode(const std::string& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    Provisioned_throughput getProvisionedThroughput() const;
+    bool provisionedThroughputIsSet() const;
+    void unsetprovisionedThroughput();
+    void setProvisionedThroughput(const Provisioned_throughput& value);
+
+    /// <summary>
     /// 
     /// </summary>
 
@@ -95,6 +114,10 @@ public:
 protected:
     std::string tableName_;
     bool tableNameIsSet_;
+    std::string billMode_;
+    bool billModeIsSet_;
+    Provisioned_throughput provisionedThroughput_;
+    bool provisionedThroughputIsSet_;
     Primary_key_schema primaryKeySchema_;
     bool primaryKeySchemaIsSet_;
     std::vector<Secondary_index> localSecondaryIndexSchema_;

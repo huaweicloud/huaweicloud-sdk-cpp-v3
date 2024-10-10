@@ -15,6 +15,9 @@ CreateTableResponse::CreateTableResponse()
 {
     tableName_ = "";
     tableNameIsSet_ = false;
+    billMode_ = "";
+    billModeIsSet_ = false;
+    provisionedThroughputIsSet_ = false;
     primaryKeySchemaIsSet_ = false;
     localSecondaryIndexSchemaIsSet_ = false;
     globalSecondaryIndexSchemaIsSet_ = false;
@@ -31,6 +34,12 @@ bool CreateTableResponse::toBson(Builder &builder) const
 {
 
     if (tableNameIsSet_ && !bson_append(builder, "table_name", tableName_)) {
+        return false;
+    }
+    if (billModeIsSet_ && !bson_append(builder, "bill_mode", billMode_)) {
+        return false;
+    }
+    if (provisionedThroughputIsSet_ && !bson_append(builder, "provisioned_throughput", provisionedThroughput_)) {
         return false;
     }
     if (primaryKeySchemaIsSet_ && !bson_append(builder, "primary_key_schema", primaryKeySchema_)) {
@@ -61,6 +70,24 @@ bool CreateTableResponse::fromBson(const Viewer &viewer)
                 return false;
             }
             tableNameIsSet_ = true;
+            ++it;
+            continue;
+        }
+        
+        if (key == "bill_mode") {
+            if (!bson_get(it, billMode_)) {
+                return false;
+            }
+            billModeIsSet_ = true;
+            ++it;
+            continue;
+        }
+        
+        if (key == "provisioned_throughput") {
+            if (!bson_get(it, provisionedThroughput_)) {
+                return false;
+            }
+            provisionedThroughputIsSet_ = true;
             ++it;
             continue;
         }
@@ -126,6 +153,48 @@ bool CreateTableResponse::tableNameIsSet() const
 void CreateTableResponse::unsettableName()
 {
     tableNameIsSet_ = false;
+}
+
+std::string CreateTableResponse::getBillMode() const
+{
+    return billMode_;
+}
+
+void CreateTableResponse::setBillMode(const std::string& value)
+{
+    billMode_ = value;
+    billModeIsSet_ = true;
+}
+
+bool CreateTableResponse::billModeIsSet() const
+{
+    return billModeIsSet_;
+}
+
+void CreateTableResponse::unsetbillMode()
+{
+    billModeIsSet_ = false;
+}
+
+Provisioned_throughput CreateTableResponse::getProvisionedThroughput() const
+{
+    return provisionedThroughput_;
+}
+
+void CreateTableResponse::setProvisionedThroughput(const Provisioned_throughput& value)
+{
+    provisionedThroughput_ = value;
+    provisionedThroughputIsSet_ = true;
+}
+
+bool CreateTableResponse::provisionedThroughputIsSet() const
+{
+    return provisionedThroughputIsSet_;
+}
+
+void CreateTableResponse::unsetprovisionedThroughput()
+{
+    provisionedThroughputIsSet_ = false;
 }
 
 Primary_key_schema CreateTableResponse::getPrimaryKeySchema() const

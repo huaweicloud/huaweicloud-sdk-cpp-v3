@@ -29,9 +29,13 @@
 #include <huaweicloud/drs/v5/model/BatchStopJobsActionResponse.h>
 #include <huaweicloud/drs/v5/model/BatchTagActionRequest.h>
 #include <huaweicloud/drs/v5/model/BatchTagActionResponse.h>
+#include <huaweicloud/drs/v5/model/ChangeToPeriodRequest.h>
+#include <huaweicloud/drs/v5/model/ChangeToPeriodResponse.h>
 #include <huaweicloud/drs/v5/model/CheckDataFilterRequest.h>
 #include <huaweicloud/drs/v5/model/CheckDataFilterResponse.h>
 #include <huaweicloud/drs/v5/model/CheckJobNameReq.h>
+#include <huaweicloud/drs/v5/model/CleanAlarmsRequest.h>
+#include <huaweicloud/drs/v5/model/CleanAlarmsResponse.h>
 #include <huaweicloud/drs/v5/model/CloneJobReq.h>
 #include <huaweicloud/drs/v5/model/CollectColumnsRequest.h>
 #include <huaweicloud/drs/v5/model/CollectColumnsResponse.h>
@@ -47,14 +51,24 @@
 #include <huaweicloud/drs/v5/model/CopyJobResponse.h>
 #include <huaweicloud/drs/v5/model/CountInstanceByTagsRequest.h>
 #include <huaweicloud/drs/v5/model/CountInstanceByTagsResponse.h>
+#include <huaweicloud/drs/v5/model/CreateConnectionReq.h>
+#include <huaweicloud/drs/v5/model/CreateConnectionRequest.h>
+#include <huaweicloud/drs/v5/model/CreateConnectionResponse.h>
 #include <huaweicloud/drs/v5/model/CreateJobRequest.h>
 #include <huaweicloud/drs/v5/model/CreateJobResponse.h>
+#include <huaweicloud/drs/v5/model/CreateOfflineTaskReq.h>
+#include <huaweicloud/drs/v5/model/CreateReplicationJobRequest.h>
+#include <huaweicloud/drs/v5/model/CreateReplicationJobResponse.h>
 #include <huaweicloud/drs/v5/model/DataProcessReq.h>
+#include <huaweicloud/drs/v5/model/DeleteConnectionRequest.h>
+#include <huaweicloud/drs/v5/model/DeleteConnectionResponse.h>
 #include <huaweicloud/drs/v5/model/DeleteDriverReq.h>
 #include <huaweicloud/drs/v5/model/DeleteJdbcDriverRequest.h>
 #include <huaweicloud/drs/v5/model/DeleteJdbcDriverResponse.h>
 #include <huaweicloud/drs/v5/model/DeleteJobRequest.h>
 #include <huaweicloud/drs/v5/model/DeleteJobResponse.h>
+#include <huaweicloud/drs/v5/model/DeleteReplicationJobRequest.h>
+#include <huaweicloud/drs/v5/model/DeleteReplicationJobResponse.h>
 #include <huaweicloud/drs/v5/model/DeleteUserDriverReq.h>
 #include <huaweicloud/drs/v5/model/DeleteUserJdbcDriverRequest.h>
 #include <huaweicloud/drs/v5/model/DeleteUserJdbcDriverResponse.h>
@@ -75,6 +89,8 @@
 #include <huaweicloud/drs/v5/model/ListAsyncJobDetailResponse.h>
 #include <huaweicloud/drs/v5/model/ListAsyncJobsRequest.h>
 #include <huaweicloud/drs/v5/model/ListAsyncJobsResponse.h>
+#include <huaweicloud/drs/v5/model/ListConnectionsRequest.h>
+#include <huaweicloud/drs/v5/model/ListConnectionsResponse.h>
 #include <huaweicloud/drs/v5/model/ListDbObjectsRequest.h>
 #include <huaweicloud/drs/v5/model/ListDbObjectsResponse.h>
 #include <huaweicloud/drs/v5/model/ListInstanceByTagsRequest.h>
@@ -83,6 +99,8 @@
 #include <huaweicloud/drs/v5/model/ListInstanceTagsResponse.h>
 #include <huaweicloud/drs/v5/model/ListJdbcDriversRequest.h>
 #include <huaweicloud/drs/v5/model/ListJdbcDriversResponse.h>
+#include <huaweicloud/drs/v5/model/ListJobDdlsRequest.h>
+#include <huaweicloud/drs/v5/model/ListJobDdlsResponse.h>
 #include <huaweicloud/drs/v5/model/ListJobHistoryParametersRequest.h>
 #include <huaweicloud/drs/v5/model/ListJobHistoryParametersResponse.h>
 #include <huaweicloud/drs/v5/model/ListJobParametersRequest.h>
@@ -93,6 +111,8 @@
 #include <huaweicloud/drs/v5/model/ListLinksResponse.h>
 #include <huaweicloud/drs/v5/model/ListProjectTagsRequest.h>
 #include <huaweicloud/drs/v5/model/ListProjectTagsResponse.h>
+#include <huaweicloud/drs/v5/model/ListReplicationJobsRequest.h>
+#include <huaweicloud/drs/v5/model/ListReplicationJobsResponse.h>
 #include <huaweicloud/drs/v5/model/ListTagsRequest.h>
 #include <huaweicloud/drs/v5/model/ListTagsResponse.h>
 #include <huaweicloud/drs/v5/model/ListUserJdbcDriversRequest.h>
@@ -100,6 +120,9 @@
 #include <huaweicloud/drs/v5/model/ListsAgencyPermissionsRequest.h>
 #include <huaweicloud/drs/v5/model/ListsAgencyPermissionsResponse.h>
 #include <huaweicloud/drs/v5/model/ModifyComparePolicyReq.h>
+#include <huaweicloud/drs/v5/model/ModifyConnectionRequest.h>
+#include <huaweicloud/drs/v5/model/ModifyConnectionResponse.h>
+#include <huaweicloud/drs/v5/model/ModifyOfflineTaskReq.h>
 #include <huaweicloud/drs/v5/model/ModifyParameterReq.h>
 #include <huaweicloud/drs/v5/model/ModifyStartPositionReq.h>
 #include <huaweicloud/drs/v5/model/QueryColumnReq.h>
@@ -155,6 +178,8 @@
 #include <huaweicloud/drs/v5/model/ShowProgressDataResponse.h>
 #include <huaweicloud/drs/v5/model/ShowReplayResultsRequest.h>
 #include <huaweicloud/drs/v5/model/ShowReplayResultsResponse.h>
+#include <huaweicloud/drs/v5/model/ShowReplicationJobRequest.h>
+#include <huaweicloud/drs/v5/model/ShowReplicationJobResponse.h>
 #include <huaweicloud/drs/v5/model/ShowSupportObjectTypeRequest.h>
 #include <huaweicloud/drs/v5/model/ShowSupportObjectTypeResponse.h>
 #include <huaweicloud/drs/v5/model/ShowUpdateObjectSavingStatusRequest.h>
@@ -168,10 +193,12 @@
 #include <huaweicloud/drs/v5/model/SyncJdbcDriverResponse.h>
 #include <huaweicloud/drs/v5/model/SyncUserJdbcDriverRequest.h>
 #include <huaweicloud/drs/v5/model/SyncUserJdbcDriverResponse.h>
+#include <huaweicloud/drs/v5/model/ToPeriodReq.h>
 #include <huaweicloud/drs/v5/model/UpdateBatchAsyncJobsRequest.h>
 #include <huaweicloud/drs/v5/model/UpdateBatchAsyncJobsResponse.h>
 #include <huaweicloud/drs/v5/model/UpdateComparePolicyRequest.h>
 #include <huaweicloud/drs/v5/model/UpdateComparePolicyResponse.h>
+#include <huaweicloud/drs/v5/model/UpdateConnectionReq.h>
 #include <huaweicloud/drs/v5/model/UpdateDataProgressRequest.h>
 #include <huaweicloud/drs/v5/model/UpdateDataProgressResponse.h>
 #include <huaweicloud/drs/v5/model/UpdateDriverReq.h>
@@ -179,6 +206,8 @@
 #include <huaweicloud/drs/v5/model/UpdateJobConfigurationsResponse.h>
 #include <huaweicloud/drs/v5/model/UpdateJobRequest.h>
 #include <huaweicloud/drs/v5/model/UpdateJobResponse.h>
+#include <huaweicloud/drs/v5/model/UpdateReplicationJobRequest.h>
+#include <huaweicloud/drs/v5/model/UpdateReplicationJobResponse.h>
 #include <huaweicloud/drs/v5/model/UpdateStartPositionRequest.h>
 #include <huaweicloud/drs/v5/model/UpdateStartPositionResponse.h>
 #include <huaweicloud/drs/v5/model/UpdateUserDriverReq.h>
@@ -275,6 +304,14 @@ public:
     std::shared_ptr<BatchTagActionResponse> batchTagAction(
         BatchTagActionRequest &request
     );
+    // 按需转包周期
+    //
+    // DRS同步和灾备任务按需计费转包周期计费。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ChangeToPeriodResponse> changeToPeriod(
+        ChangeToPeriodRequest &request
+    );
     // 数据过滤规则校验
     //
     // 数据过滤规则校验
@@ -282,6 +319,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CheckDataFilterResponse> checkDataFilter(
         CheckDataFilterRequest &request
+    );
+    // 清除DDL告警
+    //
+    // 清除DDL告警
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CleanAlarmsResponse> cleanAlarms(
+        CleanAlarmsRequest &request
     );
     // 采集指定数据库表的列信息
     //
@@ -345,6 +390,14 @@ public:
     std::shared_ptr<CountInstanceByTagsResponse> countInstanceByTags(
         CountInstanceByTagsRequest &request
     );
+    // 创建连接
+    //
+    // 创建单个连接，该连接可以为线下自建库或云上RDS等，目前支持的数据库引擎包括MySQL、PostgreSQL、Oracle和MongoDB。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateConnectionResponse> createConnection(
+        CreateConnectionRequest &request
+    );
     // 创建任务
     //
     // 创建单个任务，根据请求参数不同，可以创建单个实时迁移、实时同步、实时灾备等任务。
@@ -353,7 +406,27 @@ public:
     std::shared_ptr<CreateJobResponse> createJob(
         CreateJobRequest &request
     );
-    // 删除驱动文件
+    // 创建备份迁移任务
+    //
+    // 该接口主要用于三种常见场景下备份迁移任务的配置。
+    // 备份迁移支持如下的常见场景：
+    // - 通过OBS桶备份文件进行全量数据迁移。
+    // - 通过OBS桶备份文件进行全量+增量数据迁移。
+    // - 通过RDS全量备份进行全量数据迁移。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateReplicationJobResponse> createReplicationJob(
+        CreateReplicationJobRequest &request
+    );
+    // 删除连接
+    //
+    // 删除租户指定的连接。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteConnectionResponse> deleteConnection(
+        DeleteConnectionRequest &request
+    );
+    // 删除驱动文件（不再推广）
     //
     // 删除驱动文件。
     // 
@@ -368,6 +441,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteJobResponse> deleteJob(
         DeleteJobRequest &request
+    );
+    // 删除备份迁移任务
+    //
+    // 对于已经完成的备份迁移任务，可以选择删除迁移任务。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteReplicationJobResponse> deleteReplicationJob(
+        DeleteReplicationJobRequest &request
     );
     // 删除驱动文件
     //
@@ -433,6 +514,14 @@ public:
     std::shared_ptr<ListAsyncJobsResponse> listAsyncJobs(
         ListAsyncJobsRequest &request
     );
+    // 查询连接列表
+    //
+    // 查询连接列表，可根据连接类型进行查询。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListConnectionsResponse> listConnections(
+        ListConnectionsRequest &request
+    );
     // 查询数据库对象信息
     //
     // 查询数据库对象信息。
@@ -457,13 +546,21 @@ public:
     std::shared_ptr<ListInstanceTagsResponse> listInstanceTags(
         ListInstanceTagsRequest &request
     );
-    // 查询驱动文件列表
+    // 查询驱动文件列表（不再推广）
     //
     // 查询驱动文件列表。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListJdbcDriversResponse> listJdbcDrivers(
         ListJdbcDriversRequest &request
+    );
+    // 查询增量DDL列表
+    //
+    // 查询增量DDL列表，可根据status查询
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListJobDdlsResponse> listJobDdls(
+        ListJobDdlsRequest &request
     );
     // 查询任务的参数配置修改历史
     //
@@ -507,6 +604,14 @@ public:
     std::shared_ptr<ListProjectTagsResponse> listProjectTags(
         ListProjectTagsRequest &request
     );
+    // 查询备份迁移任务列表
+    //
+    // 获取当前备份迁移任务列表，不包含已删除的任务。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListReplicationJobsResponse> listReplicationJobs(
+        ListReplicationJobsRequest &request
+    );
     // 查询项目标签
     //
     // 查询租户在指定Project中实例类型的所有资源标签集合。
@@ -530,6 +635,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListsAgencyPermissionsResponse> listsAgencyPermissions(
         ListsAgencyPermissionsRequest &request
+    );
+    // 修改连接
+    //
+    // 修改创建的连接信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ModifyConnectionResponse> modifyConnection(
+        ModifyConnectionRequest &request
     );
     // 获取指定任务操作信息
     //
@@ -729,6 +842,14 @@ public:
     std::shared_ptr<ShowReplayResultsResponse> showReplayResults(
         ShowReplayResultsRequest &request
     );
+    // 查询备份迁移任务详细信息
+    //
+    // 获取指定备份迁移任务详细信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowReplicationJobResponse> showReplicationJob(
+        ShowReplicationJobRequest &request
+    );
     // 查询是否支持对象选择和列映射
     //
     // 查询任务支持的对象选择类型、列映射、支持搜索的对象类型等信息。
@@ -753,7 +874,7 @@ public:
     std::shared_ptr<StopJobActionResponse> stopJobAction(
         StopJobActionRequest &request
     );
-    // 同步驱动文件
+    // 同步驱动文件（不再推广）
     //
     // 同步驱动文件。
     // 
@@ -811,6 +932,14 @@ public:
     std::shared_ptr<UpdateJobConfigurationsResponse> updateJobConfigurations(
         UpdateJobConfigurationsRequest &request
     );
+    // 修改备份迁移任务信息
+    //
+    // 修改指定备份迁移任务信息，任务名与任务描述。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateReplicationJobResponse> updateReplicationJob(
+        UpdateReplicationJobRequest &request
+    );
     // 更新增量任务启动位点
     //
     // 更新增量任务的启动位点。
@@ -828,7 +957,7 @@ public:
     std::shared_ptr<UploadDbObjectTemplateResponse> uploadDbObjectTemplate(
         UploadDbObjectTemplateRequest &request
     );
-    // 上传驱动文件
+    // 上传驱动文件（不再推广）
     //
     // 上传驱动文件。
     // 

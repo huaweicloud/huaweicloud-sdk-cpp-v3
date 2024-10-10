@@ -1,3 +1,122 @@
+# 3.1.105 2024-10-10
+
+### HuaweiCloud SDK AAD
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持接口`AssociateIpToPolicyAndPackage`、`DisassociateIpFromPolicyAndPackage`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK DRS
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **BatchListJobDetails**
+    - 响应参数变更
+      - `* results.node_num: string -> int32`
+
+### HuaweiCloud SDK DRS
+
+- _接口版本_
+  - V5
+- _新增特性_
+  - 支持以下接口：
+    - `ListReplicationJobs`
+    - `CreateReplicationJob`
+    - `ShowReplicationJob`
+    - `UpdateReplicationJob`
+    - `DeleteReplicationJob`
+    - `ChangeToPeriod`
+    - `ListConnections`
+    - `CreateConnection`
+    - `ModifyConnection`
+    - `DeleteConnection`
+    - `ListJobDdls`
+    - `CleanAlarms`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK EVS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowVolume**
+    - 响应参数变更
+      - `- volume.snapshot_policy_id`
+  - **ListVolumes**
+    - 请求参数变更
+      - `- snapshot_policy_id`
+    - 响应参数变更
+      - `- volumes.snapshot_policy_id`
+
+### HuaweiCloud SDK GaussDB
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateStarrocksInstance**
+    - 请求参数变更
+      - `+ security_group_id`
+  - **CheckStarrocksParams**
+    - 响应参数变更
+      - `+ differences`
+      - `- check_starrocks_params_responce`
+
+### HuaweiCloud SDK KVS
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateTable**
+    - 请求参数变更
+      - `+ bill_mode`
+      - `+ provisioned_throughput`
+      - `+ global_secondary_index_schema.provisioned_throughput`
+      - `- pre_split_key_options.hash_count`
+    - 响应参数变更
+      - `+ bill_mode`
+      - `+ provisioned_throughput`
+      - `+ global_secondary_index_schema.provisioned_throughput`
+      - `- pre_split_key_options.hash_count`
+  - **DescribeTable**
+    - 响应参数变更
+      - `+ global_secondary_index_schema.provisioned_throughput`
+
+### HuaweiCloud SDK RDS
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`ShowRecoveryTimeWindow`、`UpdateToPeriod`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.1.104 2024-09-26
 
 ### HuaweiCloud SDK DDS

@@ -48,8 +48,6 @@ ListVolumesRequest::ListVolumesRequest()
     enterpriseProjectIdIsSet_ = false;
     serverId_ = "";
     serverIdIsSet_ = false;
-    snapshotPolicyId_ = "";
-    snapshotPolicyIdIsSet_ = false;
 }
 
 ListVolumesRequest::~ListVolumesRequest() = default;
@@ -115,9 +113,6 @@ web::json::value ListVolumesRequest::toJson() const
     }
     if(serverIdIsSet_) {
         val[utility::conversions::to_string_t("server_id")] = ModelBase::toJson(serverId_);
-    }
-    if(snapshotPolicyIdIsSet_) {
-        val[utility::conversions::to_string_t("snapshot_policy_id")] = ModelBase::toJson(snapshotPolicyId_);
     }
 
     return val;
@@ -286,15 +281,6 @@ bool ListVolumesRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setServerId(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("snapshot_policy_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("snapshot_policy_id"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setSnapshotPolicyId(refVal);
         }
     }
     return ok;
@@ -677,27 +663,6 @@ bool ListVolumesRequest::serverIdIsSet() const
 void ListVolumesRequest::unsetserverId()
 {
     serverIdIsSet_ = false;
-}
-
-std::string ListVolumesRequest::getSnapshotPolicyId() const
-{
-    return snapshotPolicyId_;
-}
-
-void ListVolumesRequest::setSnapshotPolicyId(const std::string& value)
-{
-    snapshotPolicyId_ = value;
-    snapshotPolicyIdIsSet_ = true;
-}
-
-bool ListVolumesRequest::snapshotPolicyIdIsSet() const
-{
-    return snapshotPolicyIdIsSet_;
-}
-
-void ListVolumesRequest::unsetsnapshotPolicyId()
-{
-    snapshotPolicyIdIsSet_ = false;
 }
 
 }

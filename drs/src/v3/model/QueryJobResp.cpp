@@ -56,7 +56,7 @@ QueryJobResp::QueryJobResp()
     speedLimitIsSet_ = false;
     schemaType_ = "";
     schemaTypeIsSet_ = false;
-    nodeNum_ = "";
+    nodeNum_ = 0;
     nodeNumIsSet_ = false;
     objectSwitch_ = false;
     objectSwitchIsSet_ = false;
@@ -551,7 +551,7 @@ bool QueryJobResp::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("node_num"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setNodeNum(refVal);
         }
@@ -1400,12 +1400,12 @@ void QueryJobResp::unsetschemaType()
     schemaTypeIsSet_ = false;
 }
 
-std::string QueryJobResp::getNodeNum() const
+int32_t QueryJobResp::getNodeNum() const
 {
     return nodeNum_;
 }
 
-void QueryJobResp::setNodeNum(const std::string& value)
+void QueryJobResp::setNodeNum(int32_t value)
 {
     nodeNum_ = value;
     nodeNumIsSet_ = true;

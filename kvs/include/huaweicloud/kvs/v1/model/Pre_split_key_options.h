@@ -24,7 +24,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 在hash分区时，预分裂分区数量。
+/// 按照设定的键值前缀进行预分裂。
 /// </summary>
 class HUAWEICLOUD_KVS_V1_EXPORT  Pre_split_key_options
     : public ModelBase
@@ -43,16 +43,7 @@ public:
     /// Pre_split_key_options members
 
     /// <summary>
-    /// 在hash分区时，预分裂分区数量。
-    /// </summary>
-
-    int32_t getHashCount() const;
-    bool hashCountIsSet() const;
-    void unsethashCount();
-    void setHashCount(int32_t value);
-
-    /// <summary>
-    /// 在range分区模式有效，最大1000个，与\&quot;hash_count\&quot;二选一。
+    /// 在range分区模式有效，最大10个。
     /// </summary>
 
     std::vector<Document>& getRangeSplitPoints();
@@ -62,8 +53,6 @@ public:
 
 
 protected:
-    int32_t hashCount_;
-    bool hashCountIsSet_;
     std::vector<Document> rangeSplitPoints_;
     bool rangeSplitPointsIsSet_;
 

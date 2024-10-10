@@ -12,6 +12,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/kvs/v1/model/Provisioned_throughput.h>
 #include <string>
 #include <vector>
 #include <huaweicloud/kvs/v1/model/Field.h>
@@ -25,7 +26,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 全局二级索引定义，元素key为数组下标
+/// 
 /// </summary>
 class HUAWEICLOUD_KVS_V1_EXPORT  Global_secondary_index
     : public ModelBase
@@ -88,6 +89,15 @@ public:
     void unsetabstractFields();
     void setAbstractFields(const std::vector<std::string>& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    Provisioned_throughput getProvisionedThroughput() const;
+    bool provisionedThroughputIsSet() const;
+    void unsetprovisionedThroughput();
+    void setProvisionedThroughput(const Provisioned_throughput& value);
+
 
 protected:
     std::string indexName_;
@@ -100,6 +110,8 @@ protected:
     bool sortKeyFieldsIsSet_;
     std::vector<std::string> abstractFields_;
     bool abstractFieldsIsSet_;
+    Provisioned_throughput provisionedThroughput_;
+    bool provisionedThroughputIsSet_;
 
 };
 

@@ -619,6 +619,11 @@ HttpRequestDef EcsMeta::genRequestDefForNovaListServersDetails() {
     return reqDefBuilder;
 }
 
+HttpRequestDef EcsMeta::genRequestDefForNovaShowFlavorExtraSpecs() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef EcsMeta::genRequestDefForNovaShowKeypair() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamOpenStackAPIVersion;

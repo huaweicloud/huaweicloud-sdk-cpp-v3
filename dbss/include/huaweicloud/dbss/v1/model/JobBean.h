@@ -39,7 +39,7 @@ public:
     /// JobBean members
 
     /// <summary>
-    /// 任务ID,异步查询标识
+    /// 任务ID。
     /// </summary>
 
     std::string getJobId() const;
@@ -48,7 +48,7 @@ public:
     void setJobId(const std::string& value);
 
     /// <summary>
-    /// 状态
+    /// 任务状态 - SUCCESS - RUNNING - FAIL - INIT - READY
     /// </summary>
 
     std::string getStatus() const;
@@ -84,6 +84,15 @@ public:
     void setServerName(const std::string& value);
 
     /// <summary>
+    /// 资源ID
+    /// </summary>
+
+    std::string getResourceId() const;
+    bool resourceIdIsSet() const;
+    void unsetresourceId();
+    void setResourceId(const std::string& value);
+
+    /// <summary>
     /// 开始时间
     /// </summary>
 
@@ -102,7 +111,7 @@ public:
     void setEndTime(int64_t value);
 
     /// <summary>
-    /// 计费模式
+    /// 计费模式 - Period:包周期计费 - Demand:按需计费
     /// </summary>
 
     std::string getChargeMode() const;
@@ -129,7 +138,7 @@ public:
     void setFailReason(const std::string& value);
 
     /// <summary>
-    /// 双机实例HA共用的id
+    /// 防护实例ID,该字段已废弃
     /// </summary>
 
     std::string getHaId() const;
@@ -138,7 +147,7 @@ public:
     void setHaId(const std::string& value);
 
     /// <summary>
-    /// HA别名
+    /// 防护实例名称，该字段已废弃
     /// </summary>
 
     std::string getHaName() const;
@@ -158,6 +167,8 @@ protected:
     bool serverIdIsSet_;
     std::string serverName_;
     bool serverNameIsSet_;
+    std::string resourceId_;
+    bool resourceIdIsSet_;
     int64_t beginTime_;
     bool beginTimeIsSet_;
     int64_t endTime_;

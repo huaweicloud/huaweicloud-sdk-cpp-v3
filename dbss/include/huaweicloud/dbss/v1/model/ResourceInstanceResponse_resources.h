@@ -43,15 +43,6 @@ public:
     /// ResourceInstanceResponse_resources members
 
     /// <summary>
-    /// 资源详情。 资源对象，用于扩展。默认为空
-    /// </summary>
-
-    Object getResourceDetail() const;
-    bool resourceDetailIsSet() const;
-    void unsetresourceDetail();
-    void setResourceDetail(const Object& value);
-
-    /// <summary>
     /// 资源ID
     /// </summary>
 
@@ -61,13 +52,22 @@ public:
     void setResourceId(const std::string& value);
 
     /// <summary>
-    /// 资源名称，资源没有名称时默认为空字符串，eip返回ip地址
+    /// 资源名称，资源没有名称时默认为空字符串，eip返回ip地址。
     /// </summary>
 
     std::string getResourceName() const;
     bool resourceNameIsSet() const;
     void unsetresourceName();
     void setResourceName(const std::string& value);
+
+    /// <summary>
+    /// 资源详情。 资源对象，用于扩展，默认为空。
+    /// </summary>
+
+    Object getResourceDetail() const;
+    bool resourceDetailIsSet() const;
+    void unsetresourceDetail();
+    void setResourceDetail(const Object& value);
 
     /// <summary>
     /// 标签列表，没有标签默认为空数组
@@ -89,12 +89,12 @@ public:
 
 
 protected:
-    Object resourceDetail_;
-    bool resourceDetailIsSet_;
     std::string resourceId_;
     bool resourceIdIsSet_;
     std::string resourceName_;
     bool resourceNameIsSet_;
+    Object resourceDetail_;
+    bool resourceDetailIsSet_;
     std::vector<ResourceInstanceResponse_tags> tags_;
     bool tagsIsSet_;
     std::vector<ResourceInstanceResponse_sys_tags> sysTags_;

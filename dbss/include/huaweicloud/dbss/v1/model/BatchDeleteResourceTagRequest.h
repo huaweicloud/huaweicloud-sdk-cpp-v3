@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/dbss/v1/model/ResourceTagRequest.h>
+#include <huaweicloud/dbss/v1/model/ResourceTagDeleteRequest.h>
 #include <string>
 
 namespace HuaweiCloud {
@@ -40,7 +40,7 @@ public:
     /// BatchDeleteResourceTagRequest members
 
     /// <summary>
-    /// 资源类型。审计：auditInstance
+    /// 资源类型。 - auditInstance
     /// </summary>
 
     std::string getResourceType() const;
@@ -49,7 +49,7 @@ public:
     void setResourceType(const std::string& value);
 
     /// <summary>
-    /// 资源ID
+    /// 资源ID。可在查询实例列表接口的resource_id字段获取。
     /// </summary>
 
     std::string getResourceId() const;
@@ -61,10 +61,10 @@ public:
     /// 
     /// </summary>
 
-    ResourceTagRequest getBody() const;
+    ResourceTagDeleteRequest getBody() const;
     bool bodyIsSet() const;
     void unsetbody();
-    void setBody(const ResourceTagRequest& value);
+    void setBody(const ResourceTagDeleteRequest& value);
 
 
 protected:
@@ -72,7 +72,7 @@ protected:
     bool resourceTypeIsSet_;
     std::string resourceId_;
     bool resourceIdIsSet_;
-    ResourceTagRequest body_;
+    ResourceTagDeleteRequest body_;
     bool bodyIsSet_;
 
 #ifdef RTTR_FLAG

@@ -39,7 +39,7 @@ public:
     /// AgentSwitchRequest members
 
     /// <summary>
-    /// 审计agent的ID
+    /// 审计agent的ID。可在查询数据库agent列表接口ID字段获取。
     /// </summary>
 
     std::string getAgentId() const;
@@ -48,7 +48,7 @@ public:
     void setAgentId(const std::string& value);
 
     /// <summary>
-    /// Agent开关状态 1：开启 0：关闭
+    /// Agent开关状态 - 1：开启 - 0：关闭
     /// </summary>
 
     int32_t getStatus() const;

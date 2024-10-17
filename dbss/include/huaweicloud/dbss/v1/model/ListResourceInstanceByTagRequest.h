@@ -40,7 +40,7 @@ public:
     /// ListResourceInstanceByTagRequest members
 
     /// <summary>
-    /// 资源类型。审计：auditInstance
+    /// 资源类型。 - auditInstance
     /// </summary>
 
     std::string getResourceType() const;
@@ -49,7 +49,7 @@ public:
     void setResourceType(const std::string& value);
 
     /// <summary>
-    /// 查询记录数（action为count时无此参数）如果action为filter默认为1000，limit最多为1000,不能为负数，最小值为1
+    /// 查询记录数（action为count时无此参数）如果action为filter默认为1000，limit最多为1000,不能为负数，最小值为1。
     /// </summary>
 
     std::string getLimit() const;
@@ -58,7 +58,7 @@ public:
     void setLimit(const std::string& value);
 
     /// <summary>
-    /// 索引位置，偏移量（action为count时无此参数）从第一条数据偏移offset条数据后开始查询，如果action为filter默认为0（偏移0条数据，表示从第一条数据开始查询）,必须为数字，不能为负数
+    /// 索引位置，偏移量（action为count时无此参数）从第一条数据偏移offset条数据后开始查询，如果action为filter默认为0（偏移0条数据，表示从第一条数据开始查询）,必须为数字，不能为负数。
     /// </summary>
 
     std::string getOffset() const;

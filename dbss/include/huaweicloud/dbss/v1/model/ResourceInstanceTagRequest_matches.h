@@ -39,7 +39,7 @@ public:
     /// ResourceInstanceTagRequest_matches members
 
     /// <summary>
-    /// 键
+    /// 键，目前仅支持：resource_name
     /// </summary>
 
     std::string getKey() const;
@@ -48,7 +48,7 @@ public:
     void setKey(const std::string& value);
 
     /// <summary>
-    /// 值
+    /// 值，需要匹配的资源名称
     /// </summary>
 
     std::string getValue() const;

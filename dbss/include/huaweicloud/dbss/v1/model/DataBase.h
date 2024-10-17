@@ -58,7 +58,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 添加的数据库类型： 枚举值：  MYSQL  ORACLE  POSTGRESQL  SQLSERVER  DAMENG  TAURUS  DWS  KINGBASE  GAUSSDBOPENGAUSS   GREENPLUM   HIGHGO   SHENTONG   GBASE8A   GBASE8S   GBASEXDM   MONGODB   DDS
+    /// 添加的数据库类型： - MYSQL - ORACLE - POSTGRESQL - SQLSERVER - DAMENG - TAURUS - DWS - KINGBASE - GAUSSDBOPENGAUSS - GREENPLUM - HIGHGO - SHENTONG - GBASE8A - GBASE8S - GBASEXDM - MONGODB - DDS
     /// </summary>
 
     std::string getType() const;
@@ -76,7 +76,7 @@ public:
     void setVersion(const std::string& value);
 
     /// <summary>
-    /// 数据库字符集
+    /// 数据库字符集 - GBK - UTF8
     /// </summary>
 
     std::string getCharset() const;
@@ -112,7 +112,7 @@ public:
     void setOs(const std::string& value);
 
     /// <summary>
-    /// 开启状态（1：开启，0：关闭）
+    /// 实例状态 - ON :开启 - OFF : 关闭
     /// </summary>
 
     std::string getStatus() const;
@@ -130,7 +130,7 @@ public:
     void setInstanceName(const std::string& value);
 
     /// <summary>
-    /// 数据库的运行状态 枚举值：  ACTIVE  SHUTOFF  ERROR
+    /// 数据库的运行状态 - ACTIVE - SHUTOFF - ERROR
     /// </summary>
 
     std::string getAuditStatus() const;
@@ -148,13 +148,58 @@ public:
     void setAgentUrl(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 数据库分类，取值范围： RDS（表示RDS数据库）和 ECS（自建数据库）
+    /// 数据库分类 - RDS: 表示RDS数据库 - ECS:自建数据库
     /// </summary>
 
     std::string getDbClassification() const;
     bool dbClassificationIsSet() const;
     void unsetdbClassification();
     void setDbClassification(const std::string& value);
+
+    /// <summary>
+    /// rds实例审计开关状态不匹配。当数据库审计开启且rds侧日志上传开关关闭时该字段为true。
+    /// </summary>
+
+    bool isRdsAuditSwitchMismatch() const;
+    bool rdsAuditSwitchMismatchIsSet() const;
+    void unsetrdsAuditSwitchMismatch();
+    void setRdsAuditSwitchMismatch(bool value);
+
+    /// <summary>
+    /// RDS数据库的ID。
+    /// </summary>
+
+    std::string getRdsId() const;
+    bool rdsIdIsSet() const;
+    void unsetrdsId();
+    void setRdsId(const std::string& value);
+
+    /// <summary>
+    /// RDS数据库信息。
+    /// </summary>
+
+    std::string getRdsObjInfo() const;
+    bool rdsObjInfoIsSet() const;
+    void unsetrdsObjInfo();
+    void setRdsObjInfo(const std::string& value);
+
+    /// <summary>
+    /// DWS数据库信息。
+    /// </summary>
+
+    std::string getDwsObjInfo() const;
+    bool dwsObjInfoIsSet() const;
+    void unsetdwsObjInfo();
+    void setDwsObjInfo(const std::string& value);
+
+    /// <summary>
+    /// 云数据库信息，该字段已废弃。
+    /// </summary>
+
+    std::string getClouddbObjInfo() const;
+    bool clouddbObjInfoIsSet() const;
+    void unsetclouddbObjInfo();
+    void setClouddbObjInfo(const std::string& value);
 
 
 protected:
@@ -184,6 +229,16 @@ protected:
     bool agentUrlIsSet_;
     std::string dbClassification_;
     bool dbClassificationIsSet_;
+    bool rdsAuditSwitchMismatch_;
+    bool rdsAuditSwitchMismatchIsSet_;
+    std::string rdsId_;
+    bool rdsIdIsSet_;
+    std::string rdsObjInfo_;
+    bool rdsObjInfoIsSet_;
+    std::string dwsObjInfo_;
+    bool dwsObjInfoIsSet_;
+    std::string clouddbObjInfo_;
+    bool clouddbObjInfoIsSet_;
 
 };
 

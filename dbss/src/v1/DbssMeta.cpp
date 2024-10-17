@@ -8,6 +8,24 @@ namespace V1 {
 
 using namespace HuaweiCloud::Sdk::Core::Http;
 
+HttpRequestDef DbssMeta::genRequestDefForAddAuditDatabase() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef DbssMeta::genRequestDefForAddRdsDatabase() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef DbssMeta::genRequestDefForAddRdsNoAgentDatabase() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -17,34 +35,30 @@ HttpRequestDef DbssMeta::genRequestDefForAddRdsNoAgentDatabase() {
     return reqDefBuilder;
 }
 
-HttpRequestDef DbssMeta::genRequestDefForBatchAddResourceTag() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef bodyParam;
-    reqDefBuilder.withRequestField(bodyParam.
-        withName("Body").
-        withLocationType(Body_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef DbssMeta::genRequestDefForBatchDeleteResourceTag() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef bodyParam;
-    reqDefBuilder.withRequestField(bodyParam.
-        withName("Body").
-        withLocationType(Body_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef DbssMeta::genRequestDefForCountResourceInstanceByTag() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef bodyParam;
-    reqDefBuilder.withRequestField(bodyParam.
-        withName("Body").
-        withLocationType(Body_));
-    return reqDefBuilder;
-}
-
 HttpRequestDef DbssMeta::genRequestDefForCreateInstancesPeriodOrder() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef DbssMeta::genRequestDefForDeleteAuditDatabase() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef DbssMeta::genRequestDefForDeleteInstances() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef DbssMeta::genRequestDefForListAuditAlarmLog() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
@@ -125,6 +139,26 @@ HttpRequestDef DbssMeta::genRequestDefForListAuditSensitiveMasks() {
     return reqDefBuilder;
 }
 
+HttpRequestDef DbssMeta::genRequestDefForListAuditSqls() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef DbssMeta::genRequestDefForListAuditSummaryInfos() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef DbssMeta::genRequestDefForListAvailabilityZoneInfos() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
@@ -135,19 +169,22 @@ HttpRequestDef DbssMeta::genRequestDefForListEcsSpecification() {
     return reqDefBuilder;
 }
 
-HttpRequestDef DbssMeta::genRequestDefForListProjectResourceTags() {
+HttpRequestDef DbssMeta::genRequestDefForListRdsDatabases() {
     HttpRequestDef reqDefBuilder;
-    return reqDefBuilder;
-}
-
-HttpRequestDef DbssMeta::genRequestDefForListResourceInstanceByTag() {
-    HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
-                  .withJsonTag("limit")
+    reqDefBuilder.withRequestField(FieldDef().withName("DbType")
+                  .withJsonTag("db_type")
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("Offset")
                   .withJsonTag("offset")
                   .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef DbssMeta::genRequestDefForListSqlInjectionRules() {
+    HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
@@ -155,7 +192,7 @@ HttpRequestDef DbssMeta::genRequestDefForListResourceInstanceByTag() {
     return reqDefBuilder;
 }
 
-HttpRequestDef DbssMeta::genRequestDefForListSqlInjectionRules() {
+HttpRequestDef DbssMeta::genRequestDefForRebootAuditInstance() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
@@ -174,7 +211,25 @@ HttpRequestDef DbssMeta::genRequestDefForShowAuditRuleRisk() {
     return reqDefBuilder;
 }
 
-HttpRequestDef DbssMeta::genRequestDefForSwitchAgent() {
+HttpRequestDef DbssMeta::genRequestDefForStartAuditInstance() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef DbssMeta::genRequestDefForStopAuditInstance() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef DbssMeta::genRequestDefForSwitchAuditDatabase() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
@@ -192,8 +247,109 @@ HttpRequestDef DbssMeta::genRequestDefForSwitchRiskRule() {
     return reqDefBuilder;
 }
 
+HttpRequestDef DbssMeta::genRequestDefForUpdateAuditInstance() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef DbssMeta::genRequestDefForUpdateAuditSecurityGroup() {
     HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef DbssMeta::genRequestDefForAddAuditAgent() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef DbssMeta::genRequestDefForDeleteAuditAgent() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("DbId")
+                  .withJsonTag("db_id")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef DbssMeta::genRequestDefForDownloadAuditAgent() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef DbssMeta::genRequestDefForListAuditAgent() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("DbId")
+                  .withJsonTag("db_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef DbssMeta::genRequestDefForSwitchAgent() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef DbssMeta::genRequestDefForBatchAddResourceTag() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef DbssMeta::genRequestDefForBatchDeleteResourceTag() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef DbssMeta::genRequestDefForCountResourceInstanceByTag() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef DbssMeta::genRequestDefForListProjectResourceTags() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef DbssMeta::genRequestDefForListResourceInstanceByTag() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").

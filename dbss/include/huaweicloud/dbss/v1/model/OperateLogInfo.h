@@ -48,7 +48,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 操作日志用户
+    /// 操作日志用户名
     /// </summary>
 
     std::string getUser() const;
@@ -57,13 +57,22 @@ public:
     void setUser(const std::string& value);
 
     /// <summary>
-    /// 该条记录发生的时间，格式为时间戳
+    /// 该条记录发生的时间，格式为时间戳。
     /// </summary>
 
     std::string getTime() const;
     bool timeIsSet() const;
     void unsettime();
     void setTime(const std::string& value);
+
+    /// <summary>
+    /// 该条记录的操作类型 - create：创建 - update：更新 - delete：删除 - download: 下载
+    /// </summary>
+
+    std::string getAction() const;
+    bool actionIsSet() const;
+    void unsetaction();
+    void setAction(const std::string& value);
 
     /// <summary>
     /// 该条记录的功能类型
@@ -73,15 +82,6 @@ public:
     bool functionIsSet() const;
     void unsetfunction();
     void setFunction(const std::string& value);
-
-    /// <summary>
-    /// 该条记录的操作类型  create：创建  update：更新  operate：操作（开关）  delete：删除
-    /// </summary>
-
-    std::string getAction() const;
-    bool actionIsSet() const;
-    void unsetaction();
-    void setAction(const std::string& value);
 
     /// <summary>
     /// 该条记录对应的用户操作对象
@@ -102,7 +102,7 @@ public:
     void setDescription(const std::string& value);
 
     /// <summary>
-    /// 该条记录对应用户执行的结果  success表示成功  fail表示失败
+    /// 该条记录对应用户执行的结果 - success: 成功 - fail: 失败
     /// </summary>
 
     std::string getResult() const;
@@ -118,10 +118,10 @@ protected:
     bool userIsSet_;
     std::string time_;
     bool timeIsSet_;
-    std::string function_;
-    bool functionIsSet_;
     std::string action_;
     bool actionIsSet_;
+    std::string function_;
+    bool functionIsSet_;
     std::string name_;
     bool nameIsSet_;
     std::string description_;

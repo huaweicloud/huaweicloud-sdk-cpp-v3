@@ -57,7 +57,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 规则的状态：  ON  OFF
+    /// 规则的状态： - ON - OFF
     /// </summary>
 
     std::string getStatus() const;
@@ -66,7 +66,7 @@ public:
     void setStatus(const std::string& value);
 
     /// <summary>
-    /// 风险级别  HIGH  MEDIUM  LOW
+    /// 风险级别 - HIGH - MEDIUM - LOW
     /// </summary>
 
     std::string getRiskLevel() const;
@@ -75,7 +75,7 @@ public:
     void setRiskLevel(const std::string& value);
 
     /// <summary>
-    /// 类型
+    /// 风险类型
     /// </summary>
 
     std::string getType() const;
@@ -84,7 +84,7 @@ public:
     void setType(const std::string& value);
 
     /// <summary>
-    /// 等级
+    /// 优先级。数字越小优先级越高。
     /// </summary>
 
     int32_t getRank() const;

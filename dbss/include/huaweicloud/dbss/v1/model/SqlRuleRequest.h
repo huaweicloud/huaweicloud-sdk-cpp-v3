@@ -39,7 +39,7 @@ public:
     /// SqlRuleRequest members
 
     /// <summary>
-    /// 风险级别:(多项查询使用逗号分隔)  HIGH  MEDIUM  LOW  NO_RISK
+    /// 风险级别 - HIGH - MEDIUM - LOW - NO_RISK
     /// </summary>
 
     std::string getRiskLevels() const;

@@ -43,7 +43,7 @@ bool ResourceTagRequest::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("tags"));
         if(!fieldValue.is_null())
         {
-            std::vector<KeyValueBean> refVal;
+            std::vector<ResourceTagRequest_tags> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTags(refVal);
         }
@@ -52,7 +52,7 @@ bool ResourceTagRequest::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sys_tags"));
         if(!fieldValue.is_null())
         {
-            std::vector<KeyValueBean> refVal;
+            std::vector<ResourceTagRequest_tags> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSysTags(refVal);
         }
@@ -61,12 +61,12 @@ bool ResourceTagRequest::fromJson(const web::json::value& val)
 }
 
 
-std::vector<KeyValueBean>& ResourceTagRequest::getTags()
+std::vector<ResourceTagRequest_tags>& ResourceTagRequest::getTags()
 {
     return tags_;
 }
 
-void ResourceTagRequest::setTags(const std::vector<KeyValueBean>& value)
+void ResourceTagRequest::setTags(const std::vector<ResourceTagRequest_tags>& value)
 {
     tags_ = value;
     tagsIsSet_ = true;
@@ -82,12 +82,12 @@ void ResourceTagRequest::unsettags()
     tagsIsSet_ = false;
 }
 
-std::vector<KeyValueBean>& ResourceTagRequest::getSysTags()
+std::vector<ResourceTagRequest_tags>& ResourceTagRequest::getSysTags()
 {
     return sysTags_;
 }
 
-void ResourceTagRequest::setSysTags(const std::vector<KeyValueBean>& value)
+void ResourceTagRequest::setSysTags(const std::vector<ResourceTagRequest_tags>& value)
 {
     sysTags_ = value;
     sysTagsIsSet_ = true;

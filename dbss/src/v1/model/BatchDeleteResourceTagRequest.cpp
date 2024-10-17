@@ -67,7 +67,7 @@ bool BatchDeleteResourceTagRequest::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
         if(!fieldValue.is_null())
         {
-            ResourceTagRequest refVal;
+            ResourceTagDeleteRequest refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBody(refVal);
         }
@@ -118,12 +118,12 @@ void BatchDeleteResourceTagRequest::unsetresourceId()
     resourceIdIsSet_ = false;
 }
 
-ResourceTagRequest BatchDeleteResourceTagRequest::getBody() const
+ResourceTagDeleteRequest BatchDeleteResourceTagRequest::getBody() const
 {
     return body_;
 }
 
-void BatchDeleteResourceTagRequest::setBody(const ResourceTagRequest& value)
+void BatchDeleteResourceTagRequest::setBody(const ResourceTagDeleteRequest& value)
 {
     body_ = value;
     bodyIsSet_ = true;

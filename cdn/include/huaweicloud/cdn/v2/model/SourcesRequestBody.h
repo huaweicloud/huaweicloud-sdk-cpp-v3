@@ -92,6 +92,24 @@ public:
     void unsetenableObsWebHosting();
     void setEnableObsWebHosting(int32_t value);
 
+    /// <summary>
+    /// HTTP端口，默认80,端口取值取值范围1-65535。
+    /// </summary>
+
+    int32_t getHttpPort() const;
+    bool httpPortIsSet() const;
+    void unsethttpPort();
+    void setHttpPort(int32_t value);
+
+    /// <summary>
+    /// HTTPS端口，默认443,端口取值取值范围1-65535。
+    /// </summary>
+
+    int32_t getHttpsPort() const;
+    bool httpsPortIsSet() const;
+    void unsethttpsPort();
+    void setHttpsPort(int32_t value);
+
 
 protected:
     std::string domainId_;
@@ -106,6 +124,10 @@ protected:
     bool activeStandbyIsSet_;
     int32_t enableObsWebHosting_;
     bool enableObsWebHostingIsSet_;
+    int32_t httpPort_;
+    bool httpPortIsSet_;
+    int32_t httpsPort_;
+    bool httpsPortIsSet_;
 
 };
 

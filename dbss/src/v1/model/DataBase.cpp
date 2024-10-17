@@ -37,6 +37,16 @@ DataBase::DataBase()
     agentUrlIsSet_ = false;
     dbClassification_ = "";
     dbClassificationIsSet_ = false;
+    rdsAuditSwitchMismatch_ = false;
+    rdsAuditSwitchMismatchIsSet_ = false;
+    rdsId_ = "";
+    rdsIdIsSet_ = false;
+    rdsObjInfo_ = "";
+    rdsObjInfoIsSet_ = false;
+    dwsObjInfo_ = "";
+    dwsObjInfoIsSet_ = false;
+    clouddbObjInfo_ = "";
+    clouddbObjInfoIsSet_ = false;
 }
 
 DataBase::~DataBase() = default;
@@ -87,6 +97,21 @@ web::json::value DataBase::toJson() const
     }
     if(dbClassificationIsSet_) {
         val[utility::conversions::to_string_t("db_classification")] = ModelBase::toJson(dbClassification_);
+    }
+    if(rdsAuditSwitchMismatchIsSet_) {
+        val[utility::conversions::to_string_t("rds_audit_switch_mismatch")] = ModelBase::toJson(rdsAuditSwitchMismatch_);
+    }
+    if(rdsIdIsSet_) {
+        val[utility::conversions::to_string_t("rds_id")] = ModelBase::toJson(rdsId_);
+    }
+    if(rdsObjInfoIsSet_) {
+        val[utility::conversions::to_string_t("rds_obj_info")] = ModelBase::toJson(rdsObjInfo_);
+    }
+    if(dwsObjInfoIsSet_) {
+        val[utility::conversions::to_string_t("dws_obj_info")] = ModelBase::toJson(dwsObjInfo_);
+    }
+    if(clouddbObjInfoIsSet_) {
+        val[utility::conversions::to_string_t("clouddb_obj_info")] = ModelBase::toJson(clouddbObjInfo_);
     }
 
     return val;
@@ -210,6 +235,51 @@ bool DataBase::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDbClassification(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("rds_audit_switch_mismatch"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("rds_audit_switch_mismatch"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRdsAuditSwitchMismatch(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("rds_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("rds_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRdsId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("rds_obj_info"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("rds_obj_info"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRdsObjInfo(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("dws_obj_info"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("dws_obj_info"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDwsObjInfo(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("clouddb_obj_info"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("clouddb_obj_info"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setClouddbObjInfo(refVal);
         }
     }
     return ok;
@@ -487,6 +557,111 @@ bool DataBase::dbClassificationIsSet() const
 void DataBase::unsetdbClassification()
 {
     dbClassificationIsSet_ = false;
+}
+
+bool DataBase::isRdsAuditSwitchMismatch() const
+{
+    return rdsAuditSwitchMismatch_;
+}
+
+void DataBase::setRdsAuditSwitchMismatch(bool value)
+{
+    rdsAuditSwitchMismatch_ = value;
+    rdsAuditSwitchMismatchIsSet_ = true;
+}
+
+bool DataBase::rdsAuditSwitchMismatchIsSet() const
+{
+    return rdsAuditSwitchMismatchIsSet_;
+}
+
+void DataBase::unsetrdsAuditSwitchMismatch()
+{
+    rdsAuditSwitchMismatchIsSet_ = false;
+}
+
+std::string DataBase::getRdsId() const
+{
+    return rdsId_;
+}
+
+void DataBase::setRdsId(const std::string& value)
+{
+    rdsId_ = value;
+    rdsIdIsSet_ = true;
+}
+
+bool DataBase::rdsIdIsSet() const
+{
+    return rdsIdIsSet_;
+}
+
+void DataBase::unsetrdsId()
+{
+    rdsIdIsSet_ = false;
+}
+
+std::string DataBase::getRdsObjInfo() const
+{
+    return rdsObjInfo_;
+}
+
+void DataBase::setRdsObjInfo(const std::string& value)
+{
+    rdsObjInfo_ = value;
+    rdsObjInfoIsSet_ = true;
+}
+
+bool DataBase::rdsObjInfoIsSet() const
+{
+    return rdsObjInfoIsSet_;
+}
+
+void DataBase::unsetrdsObjInfo()
+{
+    rdsObjInfoIsSet_ = false;
+}
+
+std::string DataBase::getDwsObjInfo() const
+{
+    return dwsObjInfo_;
+}
+
+void DataBase::setDwsObjInfo(const std::string& value)
+{
+    dwsObjInfo_ = value;
+    dwsObjInfoIsSet_ = true;
+}
+
+bool DataBase::dwsObjInfoIsSet() const
+{
+    return dwsObjInfoIsSet_;
+}
+
+void DataBase::unsetdwsObjInfo()
+{
+    dwsObjInfoIsSet_ = false;
+}
+
+std::string DataBase::getClouddbObjInfo() const
+{
+    return clouddbObjInfo_;
+}
+
+void DataBase::setClouddbObjInfo(const std::string& value)
+{
+    clouddbObjInfo_ = value;
+    clouddbObjInfoIsSet_ = true;
+}
+
+bool DataBase::clouddbObjInfoIsSet() const
+{
+    return clouddbObjInfoIsSet_;
+}
+
+void DataBase::unsetclouddbObjInfo()
+{
+    clouddbObjInfoIsSet_ = false;
 }
 
 }

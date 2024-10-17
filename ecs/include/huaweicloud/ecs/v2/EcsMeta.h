@@ -63,6 +63,7 @@ public:
     static HttpRequestDef genRequestDefForNovaListKeypairs();
     static HttpRequestDef genRequestDefForNovaListServerSecurityGroups();
     static HttpRequestDef genRequestDefForNovaListServersDetails();
+    static HttpRequestDef genRequestDefForNovaShowFlavorExtraSpecs();
     static HttpRequestDef genRequestDefForNovaShowKeypair();
     static HttpRequestDef genRequestDefForNovaShowServer();
     static HttpRequestDef genRequestDefForNovaShowServerInterface();

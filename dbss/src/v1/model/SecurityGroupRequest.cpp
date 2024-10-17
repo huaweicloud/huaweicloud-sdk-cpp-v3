@@ -12,8 +12,8 @@ namespace Model {
 
 SecurityGroupRequest::SecurityGroupRequest()
 {
-    resourceId_ = "";
-    resourceIdIsSet_ = false;
+    instanceId_ = "";
+    instanceIdIsSet_ = false;
     securitygroupIdsIsSet_ = false;
 }
 
@@ -27,8 +27,8 @@ web::json::value SecurityGroupRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(resourceIdIsSet_) {
-        val[utility::conversions::to_string_t("resource_id")] = ModelBase::toJson(resourceId_);
+    if(instanceIdIsSet_) {
+        val[utility::conversions::to_string_t("instance_id")] = ModelBase::toJson(instanceId_);
     }
     if(securitygroupIdsIsSet_) {
         val[utility::conversions::to_string_t("securitygroup_ids")] = ModelBase::toJson(securitygroupIds_);
@@ -40,13 +40,13 @@ bool SecurityGroupRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("resource_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("resource_id"));
+    if(val.has_field(utility::conversions::to_string_t("instance_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("instance_id"));
         if(!fieldValue.is_null())
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setResourceId(refVal);
+            setInstanceId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("securitygroup_ids"))) {
@@ -62,25 +62,25 @@ bool SecurityGroupRequest::fromJson(const web::json::value& val)
 }
 
 
-std::string SecurityGroupRequest::getResourceId() const
+std::string SecurityGroupRequest::getInstanceId() const
 {
-    return resourceId_;
+    return instanceId_;
 }
 
-void SecurityGroupRequest::setResourceId(const std::string& value)
+void SecurityGroupRequest::setInstanceId(const std::string& value)
 {
-    resourceId_ = value;
-    resourceIdIsSet_ = true;
+    instanceId_ = value;
+    instanceIdIsSet_ = true;
 }
 
-bool SecurityGroupRequest::resourceIdIsSet() const
+bool SecurityGroupRequest::instanceIdIsSet() const
 {
-    return resourceIdIsSet_;
+    return instanceIdIsSet_;
 }
 
-void SecurityGroupRequest::unsetresourceId()
+void SecurityGroupRequest::unsetinstanceId()
 {
-    resourceIdIsSet_ = false;
+    instanceIdIsSet_ = false;
 }
 
 std::vector<std::string>& SecurityGroupRequest::getSecuritygroupIds()

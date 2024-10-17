@@ -137,6 +137,8 @@
 #include <huaweicloud/ecs/v2/model/NovaListServerSecurityGroupsResponse.h>
 #include <huaweicloud/ecs/v2/model/NovaListServersDetailsRequest.h>
 #include <huaweicloud/ecs/v2/model/NovaListServersDetailsResponse.h>
+#include <huaweicloud/ecs/v2/model/NovaShowFlavorExtraSpecsRequest.h>
+#include <huaweicloud/ecs/v2/model/NovaShowFlavorExtraSpecsResponse.h>
 #include <huaweicloud/ecs/v2/model/NovaShowKeypairRequest.h>
 #include <huaweicloud/ecs/v2/model/NovaShowKeypairResponse.h>
 #include <huaweicloud/ecs/v2/model/NovaShowServerInterfaceRequest.h>
@@ -699,6 +701,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<NovaListServersDetailsResponse> novaListServersDetails(
         NovaListServersDetailsRequest &request
+    );
+    // 查询云服务器规格extra_specs的详情
+    //
+    // 查询指定的规格的详细信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<NovaShowFlavorExtraSpecsResponse> novaShowFlavorExtraSpecs(
+        NovaShowFlavorExtraSpecsRequest &request
     );
     // 查询SSH密钥详情
     //

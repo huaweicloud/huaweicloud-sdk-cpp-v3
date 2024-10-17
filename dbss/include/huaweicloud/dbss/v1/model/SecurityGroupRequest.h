@@ -40,13 +40,13 @@ public:
     /// SecurityGroupRequest members
 
     /// <summary>
-    /// 资源ID
+    /// 实例ID。可在查询实例列表接口的ID字段获取。
     /// </summary>
 
-    std::string getResourceId() const;
-    bool resourceIdIsSet() const;
-    void unsetresourceId();
-    void setResourceId(const std::string& value);
+    std::string getInstanceId() const;
+    bool instanceIdIsSet() const;
+    void unsetinstanceId();
+    void setInstanceId(const std::string& value);
 
     /// <summary>
     /// 安全组ID列表(目前只支持传一个ID)
@@ -59,8 +59,8 @@ public:
 
 
 protected:
-    std::string resourceId_;
-    bool resourceIdIsSet_;
+    std::string instanceId_;
+    bool instanceIdIsSet_;
     std::vector<std::string> securitygroupIds_;
     bool securitygroupIdsIsSet_;
 

@@ -15,8 +15,8 @@ OperateLogGetRequest::OperateLogGetRequest()
     timeIsSet_ = false;
     userName_ = "";
     userNameIsSet_ = false;
-    operateName_ = "";
-    operateNameIsSet_ = false;
+    action_ = "";
+    actionIsSet_ = false;
     result_ = "";
     resultIsSet_ = false;
     page_ = "";
@@ -41,8 +41,8 @@ web::json::value OperateLogGetRequest::toJson() const
     if(userNameIsSet_) {
         val[utility::conversions::to_string_t("user_name")] = ModelBase::toJson(userName_);
     }
-    if(operateNameIsSet_) {
-        val[utility::conversions::to_string_t("operate_name")] = ModelBase::toJson(operateName_);
+    if(actionIsSet_) {
+        val[utility::conversions::to_string_t("action")] = ModelBase::toJson(action_);
     }
     if(resultIsSet_) {
         val[utility::conversions::to_string_t("result")] = ModelBase::toJson(result_);
@@ -78,13 +78,13 @@ bool OperateLogGetRequest::fromJson(const web::json::value& val)
             setUserName(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("operate_name"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("operate_name"));
+    if(val.has_field(utility::conversions::to_string_t("action"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("action"));
         if(!fieldValue.is_null())
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOperateName(refVal);
+            setAction(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("result"))) {
@@ -160,25 +160,25 @@ void OperateLogGetRequest::unsetuserName()
     userNameIsSet_ = false;
 }
 
-std::string OperateLogGetRequest::getOperateName() const
+std::string OperateLogGetRequest::getAction() const
 {
-    return operateName_;
+    return action_;
 }
 
-void OperateLogGetRequest::setOperateName(const std::string& value)
+void OperateLogGetRequest::setAction(const std::string& value)
 {
-    operateName_ = value;
-    operateNameIsSet_ = true;
+    action_ = value;
+    actionIsSet_ = true;
 }
 
-bool OperateLogGetRequest::operateNameIsSet() const
+bool OperateLogGetRequest::actionIsSet() const
 {
-    return operateNameIsSet_;
+    return actionIsSet_;
 }
 
-void OperateLogGetRequest::unsetoperateName()
+void OperateLogGetRequest::unsetaction()
 {
-    operateNameIsSet_ = false;
+    actionIsSet_ = false;
 }
 
 std::string OperateLogGetRequest::getResult() const

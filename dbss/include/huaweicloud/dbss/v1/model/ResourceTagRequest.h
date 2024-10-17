@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/dbss/v1/model/KeyValueBean.h>
+#include <huaweicloud/dbss/v1/model/ResourceTagRequest_tags.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -43,25 +43,25 @@ public:
     /// 标签列表 租户权限时该字段必选，op_service权限时和sys_tags二选一
     /// </summary>
 
-    std::vector<KeyValueBean>& getTags();
+    std::vector<ResourceTagRequest_tags>& getTags();
     bool tagsIsSet() const;
     void unsettags();
-    void setTags(const std::vector<KeyValueBean>& value);
+    void setTags(const std::vector<ResourceTagRequest_tags>& value);
 
     /// <summary>
     /// 系统标签列表 op_service权限可以访问，和tags二选一。 目前TMS调用时只包含一个resource_tag结构体 ，key固定为：_sys_enterprise_project_id value是UUID或0,value为0表示默认企业项目
     /// </summary>
 
-    std::vector<KeyValueBean>& getSysTags();
+    std::vector<ResourceTagRequest_tags>& getSysTags();
     bool sysTagsIsSet() const;
     void unsetsysTags();
-    void setSysTags(const std::vector<KeyValueBean>& value);
+    void setSysTags(const std::vector<ResourceTagRequest_tags>& value);
 
 
 protected:
-    std::vector<KeyValueBean> tags_;
+    std::vector<ResourceTagRequest_tags> tags_;
     bool tagsIsSet_;
-    std::vector<KeyValueBean> sysTags_;
+    std::vector<ResourceTagRequest_tags> sysTags_;
     bool sysTagsIsSet_;
 
 };

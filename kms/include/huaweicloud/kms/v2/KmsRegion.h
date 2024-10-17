@@ -114,6 +114,14 @@ public:
             { 
                 "https://kms.ru-moscow-1.myhuaweicloud.com"
             });
+        regions["cn-east-5"] = Region("cn-east-5",
+            { 
+                "https://kms.cn-east-5.myhuaweicloud.com"
+            });
+        regions["cn-east-4"] = Region("cn-east-4",
+            { 
+                "https://kms.cn-east-4.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

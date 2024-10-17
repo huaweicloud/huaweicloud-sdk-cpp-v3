@@ -40,7 +40,7 @@ public:
     /// ProjectResourceTagResponse_tags members
 
     /// <summary>
-    /// 键。最大长度128个字符。 key满足3.1 KEY字符集规范。
+    /// 键。最大长度128个字符。
     /// </summary>
 
     std::string getKey() const;
@@ -49,7 +49,7 @@ public:
     void setKey(const std::string& value);
 
     /// <summary>
-    /// 值列表。每个值最大长度255个字符。 value满足3.2 VALUE字符集规范。
+    /// 值列表。每个值最大长度255个字符。
     /// </summary>
 
     std::vector<std::string>& getValues();

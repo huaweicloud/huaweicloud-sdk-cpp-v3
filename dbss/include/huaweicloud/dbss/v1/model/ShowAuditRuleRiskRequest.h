@@ -39,7 +39,7 @@ public:
     /// ShowAuditRuleRiskRequest members
 
     /// <summary>
-    /// 实例ID
+    /// 实例ID。可在查询实例列表接口的ID字段获取。
     /// </summary>
 
     std::string getInstanceId() const;
@@ -48,7 +48,7 @@ public:
     void setInstanceId(const std::string& value);
 
     /// <summary>
-    /// 风险规则ID
+    /// 风险规则ID。可在查询风险规则策略接口的ID字段获取。
     /// </summary>
 
     std::string getRiskId() const;

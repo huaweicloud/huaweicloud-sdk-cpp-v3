@@ -66,7 +66,7 @@ public:
     void setAzType(const std::string& value);
 
     /// <summary>
-    /// 可用区别名
+    /// 可用区中文别名
     /// </summary>
 
     std::string getAlias() const;
@@ -75,7 +75,7 @@ public:
     void setAlias(const std::string& value);
 
     /// <summary>
-    /// 可用区别名英文
+    /// 可用区英文别名
     /// </summary>
 
     std::string getAliasUs() const;

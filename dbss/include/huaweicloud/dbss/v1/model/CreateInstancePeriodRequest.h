@@ -44,6 +44,15 @@ public:
     /// CreateInstancePeriodRequest members
 
     /// <summary>
+    /// 实例名称。取值范围： - 只能由中文字符、英文字母、数字、下划线、中划线组成，且长度小于等于64个字符。
+    /// </summary>
+
+    std::string getName() const;
+    bool nameIsSet() const;
+    void unsetname();
+    void setName(const std::string& value);
+
+    /// <summary>
     /// 云服务器使用的规格ID
     /// </summary>
 
@@ -53,16 +62,7 @@ public:
     void setFlavorRef(const std::string& value);
 
     /// <summary>
-    /// 云服务器名称。 取值范围： • 只能由中文字符、英文字母、数字、下划线、中划线组成，且长度小于等于64个字符。 • 创建的云服务器数量大于1时，长度小于等于59个字符
-    /// </summary>
-
-    std::string getName() const;
-    bool nameIsSet() const;
-    void unsetname();
-    void setName(const std::string& value);
-
-    /// <summary>
-    /// VPC的ID
+    /// 虚拟私有云的ID
     /// </summary>
 
     std::string getVpcId() const;
@@ -71,7 +71,7 @@ public:
     void setVpcId(const std::string& value);
 
     /// <summary>
-    /// 云服务器对应可用分区信息。(两个主备分区，中间用“,”分割，例如az1.dc1,az2.dc2)
+    /// 云服务器对应可用分区信息。(两个主备分区，中间用“,”分割，例如az1.dc1,az2.dc2)。
     /// </summary>
 
     std::string getAvailabilityZone() const;
@@ -80,7 +80,7 @@ public:
     void setAvailabilityZone(const std::string& value);
 
     /// <summary>
-    /// 企业项目ID
+    /// 企业项目ID。对接EPS必输。
     /// </summary>
 
     std::string getEnterpriseProjectId() const;
@@ -125,7 +125,7 @@ public:
     void setRegion(const std::string& value);
 
     /// <summary>
-    /// 服务类型： 默认hws.service.type.dbss
+    /// 服务类型： - hws.service.type.dbss
     /// </summary>
 
     std::string getCloudServiceType() const;
@@ -134,7 +134,7 @@ public:
     void setCloudServiceType(const std::string& value);
 
     /// <summary>
-    /// 计费模式： • 0：包周期计费 • 1：按需计费
+    /// 计费模式： - 0: 包周期计费 - 1: 按需计费
     /// </summary>
 
     int32_t getChargingMode() const;
@@ -143,7 +143,7 @@ public:
     void setChargingMode(int32_t value);
 
     /// <summary>
-    /// 订购周期类型： • 0：天； • 1：周； • 2：月； • 3：年； • 4：小时； • 5：绝对时间
+    /// -订购周期类型 - 0: 天 - 1：周 - 2：月 - 3：年 - 4: 小时 - 5: 绝对时间
     /// </summary>
 
     int32_t getPeriodType() const;
@@ -197,7 +197,7 @@ public:
     void setPromotionInfo(const std::string& value);
 
     /// <summary>
-    /// 自动续费 1表示自动续费，0表示不自动续费
+    /// 自动续费 - 1: 自动续费 - 0: 不自动续费
     /// </summary>
 
     int32_t getIsAutoRenew() const;
@@ -207,10 +207,10 @@ public:
 
 
 protected:
-    std::string flavorRef_;
-    bool flavorRefIsSet_;
     std::string name_;
     bool nameIsSet_;
+    std::string flavorRef_;
+    bool flavorRefIsSet_;
     std::string vpcId_;
     bool vpcIdIsSet_;
     std::string availabilityZone_;

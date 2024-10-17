@@ -106,6 +106,15 @@ public:
     void unsetfilterExpression();
     void setFilterExpression(const Condition_expression& value);
 
+    /// <summary>
+    /// 返回查询条件对应的KV总数. - 当KV总数小于limit条件时，返回KV查询结果和KV总数。 - 当KV总数多于limit条件时，只返回KV总数。
+    /// </summary>
+
+    bool isReturnCountOnly() const;
+    bool returnCountOnlyIsSet() const;
+    void unsetreturnCountOnly();
+    void setReturnCountOnly(bool value);
+
 
 protected:
     std::string tableName_;
@@ -122,6 +131,8 @@ protected:
     bool endSortKeyIsSet_;
     Condition_expression filterExpression_;
     bool filterExpressionIsSet_;
+    bool returnCountOnly_;
+    bool returnCountOnlyIsSet_;
 
 };
 

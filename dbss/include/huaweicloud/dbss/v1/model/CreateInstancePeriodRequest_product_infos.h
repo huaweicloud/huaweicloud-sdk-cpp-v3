@@ -48,7 +48,7 @@ public:
     void setProductId(const std::string& value);
 
     /// <summary>
-    /// 服务类型： 默认hws.service.type.dbss
+    /// 服务类型： - hws.service.type.dbss
     /// </summary>
 
     std::string getCloudServiceType() const;
@@ -57,7 +57,7 @@ public:
     void setCloudServiceType(const std::string& value);
 
     /// <summary>
-    /// 资源类型: 默认hws.resource.type.dbss
+    /// 资源类型: - hws.resource.type.dbss
     /// </summary>
 
     std::string getResourceType() const;
@@ -66,7 +66,7 @@ public:
     void setResourceType(const std::string& value);
 
     /// <summary>
-    /// 资源规格： dbss.bypassaudit.low、dbss.bypassaudit.medium、dbss.bypassaudit.high
+    /// 资源规格： - dbss.bypassaudit.low - dbss.bypassaudit.medium - dbss.bypassaudit.high
     /// </summary>
 
     std::string getResourceSpecCode() const;
@@ -75,7 +75,7 @@ public:
     void setResourceSpecCode(const std::string& value);
 
     /// <summary>
-    /// 产品规格描述
+    /// 产品规格描述。json字符串格式 ：{\&quot;specDesc\&quot;:{\&quot;zh-cn\&quot;:{\&quot;key1\&quot;:\&quot;value1\&quot;},\&quot;en-us\&quot;:{\&quot;key1\&quot;:\&quot;value1\&quot;}}}。key和value为用户自定义希望展示的产品描述信息。
     /// </summary>
 
     std::string getProductSpecDesc() const;

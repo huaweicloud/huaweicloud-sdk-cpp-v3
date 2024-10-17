@@ -25,6 +25,8 @@ EcsSpecificationBean::EcsSpecificationBean()
     ramIsSet_ = false;
     vcpus_ = 0;
     vcpusIsSet_ = false;
+    azType_ = "";
+    azTypeIsSet_ = false;
 }
 
 EcsSpecificationBean::~EcsSpecificationBean() = default;
@@ -57,6 +59,9 @@ web::json::value EcsSpecificationBean::toJson() const
     }
     if(vcpusIsSet_) {
         val[utility::conversions::to_string_t("vcpus")] = ModelBase::toJson(vcpus_);
+    }
+    if(azTypeIsSet_) {
+        val[utility::conversions::to_string_t("az_type")] = ModelBase::toJson(azType_);
     }
 
     return val;
@@ -126,6 +131,15 @@ bool EcsSpecificationBean::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setVcpus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("az_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("az_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAzType(refVal);
         }
     }
     return ok;
@@ -277,6 +291,27 @@ bool EcsSpecificationBean::vcpusIsSet() const
 void EcsSpecificationBean::unsetvcpus()
 {
     vcpusIsSet_ = false;
+}
+
+std::string EcsSpecificationBean::getAzType() const
+{
+    return azType_;
+}
+
+void EcsSpecificationBean::setAzType(const std::string& value)
+{
+    azType_ = value;
+    azTypeIsSet_ = true;
+}
+
+bool EcsSpecificationBean::azTypeIsSet() const
+{
+    return azTypeIsSet_;
+}
+
+void EcsSpecificationBean::unsetazType()
+{
+    azTypeIsSet_ = false;
 }
 
 }

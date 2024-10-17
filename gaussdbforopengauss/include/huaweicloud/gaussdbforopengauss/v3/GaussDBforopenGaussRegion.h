@@ -74,6 +74,10 @@ public:
             { 
                 "https://gaussdb-opengauss.af-south-1.myhuaweicloud.com"
             });
+        regions["cn-north-9"] = Region("cn-north-9",
+            { 
+                "https://gaussdb-opengauss.cn-north-9.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

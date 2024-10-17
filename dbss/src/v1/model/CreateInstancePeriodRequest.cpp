@@ -12,10 +12,10 @@ namespace Model {
 
 CreateInstancePeriodRequest::CreateInstancePeriodRequest()
 {
-    flavorRef_ = "";
-    flavorRefIsSet_ = false;
     name_ = "";
     nameIsSet_ = false;
+    flavorRef_ = "";
+    flavorRefIsSet_ = false;
     vpcId_ = "";
     vpcIdIsSet_ = false;
     availabilityZone_ = "";
@@ -56,11 +56,11 @@ web::json::value CreateInstancePeriodRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(flavorRefIsSet_) {
-        val[utility::conversions::to_string_t("flavor_ref")] = ModelBase::toJson(flavorRef_);
-    }
     if(nameIsSet_) {
         val[utility::conversions::to_string_t("name")] = ModelBase::toJson(name_);
+    }
+    if(flavorRefIsSet_) {
+        val[utility::conversions::to_string_t("flavor_ref")] = ModelBase::toJson(flavorRef_);
     }
     if(vpcIdIsSet_) {
         val[utility::conversions::to_string_t("vpc_id")] = ModelBase::toJson(vpcId_);
@@ -117,15 +117,6 @@ bool CreateInstancePeriodRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("flavor_ref"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("flavor_ref"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setFlavorRef(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("name"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("name"));
         if(!fieldValue.is_null())
@@ -133,6 +124,15 @@ bool CreateInstancePeriodRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("flavor_ref"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("flavor_ref"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFlavorRef(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("vpc_id"))) {
@@ -283,27 +283,6 @@ bool CreateInstancePeriodRequest::fromJson(const web::json::value& val)
 }
 
 
-std::string CreateInstancePeriodRequest::getFlavorRef() const
-{
-    return flavorRef_;
-}
-
-void CreateInstancePeriodRequest::setFlavorRef(const std::string& value)
-{
-    flavorRef_ = value;
-    flavorRefIsSet_ = true;
-}
-
-bool CreateInstancePeriodRequest::flavorRefIsSet() const
-{
-    return flavorRefIsSet_;
-}
-
-void CreateInstancePeriodRequest::unsetflavorRef()
-{
-    flavorRefIsSet_ = false;
-}
-
 std::string CreateInstancePeriodRequest::getName() const
 {
     return name_;
@@ -323,6 +302,27 @@ bool CreateInstancePeriodRequest::nameIsSet() const
 void CreateInstancePeriodRequest::unsetname()
 {
     nameIsSet_ = false;
+}
+
+std::string CreateInstancePeriodRequest::getFlavorRef() const
+{
+    return flavorRef_;
+}
+
+void CreateInstancePeriodRequest::setFlavorRef(const std::string& value)
+{
+    flavorRef_ = value;
+    flavorRefIsSet_ = true;
+}
+
+bool CreateInstancePeriodRequest::flavorRefIsSet() const
+{
+    return flavorRefIsSet_;
+}
+
+void CreateInstancePeriodRequest::unsetflavorRef()
+{
+    flavorRefIsSet_ = false;
 }
 
 std::string CreateInstancePeriodRequest::getVpcId() const

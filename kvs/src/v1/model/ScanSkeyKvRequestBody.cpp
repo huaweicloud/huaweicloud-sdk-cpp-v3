@@ -23,6 +23,8 @@ ScanSkeyKvRequestBody::ScanSkeyKvRequestBody()
     startSortKeyIsSet_ = false;
     endSortKeyIsSet_ = false;
     filterExpressionIsSet_ = false;
+    returnCountOnly_ = false;
+    returnCountOnlyIsSet_ = false;
 }
 
 ScanSkeyKvRequestBody::~ScanSkeyKvRequestBody() = default;
@@ -53,6 +55,9 @@ bool ScanSkeyKvRequestBody::toBson(Builder &builder) const
         return false;
     }
     if (filterExpressionIsSet_ && !bson_append(builder, "filter_expression", filterExpression_)) {
+        return false;
+    }
+    if (returnCountOnlyIsSet_ && !bson_append(builder, "return_count_only", returnCountOnly_)) {
         return false;
     }
 
@@ -125,6 +130,15 @@ bool ScanSkeyKvRequestBody::fromBson(const Viewer &viewer)
                 return false;
             }
             filterExpressionIsSet_ = true;
+            ++it;
+            continue;
+        }
+        
+        if (key == "return_count_only") {
+            if (!bson_get(it, returnCountOnly_)) {
+                return false;
+            }
+            returnCountOnlyIsSet_ = true;
             ++it;
             continue;
         }
@@ -280,6 +294,27 @@ bool ScanSkeyKvRequestBody::filterExpressionIsSet() const
 void ScanSkeyKvRequestBody::unsetfilterExpression()
 {
     filterExpressionIsSet_ = false;
+}
+
+bool ScanSkeyKvRequestBody::isReturnCountOnly() const
+{
+    return returnCountOnly_;
+}
+
+void ScanSkeyKvRequestBody::setReturnCountOnly(bool value)
+{
+    returnCountOnly_ = value;
+    returnCountOnlyIsSet_ = true;
+}
+
+bool ScanSkeyKvRequestBody::returnCountOnlyIsSet() const
+{
+    return returnCountOnlyIsSet_;
+}
+
+void ScanSkeyKvRequestBody::unsetreturnCountOnly()
+{
+    returnCountOnlyIsSet_ = false;
 }
 
 }

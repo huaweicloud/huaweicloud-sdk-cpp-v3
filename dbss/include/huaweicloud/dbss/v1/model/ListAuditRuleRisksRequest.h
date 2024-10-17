@@ -39,7 +39,7 @@ public:
     /// ListAuditRuleRisksRequest members
 
     /// <summary>
-    /// 实例ID
+    /// 实例ID。可在查询实例列表接口的ID字段获取。
     /// </summary>
 
     std::string getInstanceId() const;
@@ -57,7 +57,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 风险级别[LOW,MEDIUM,HIGH,NO_RISK]
+    /// 风险级别 - LOW - MEDIUM - HIGH - NO_RISK
     /// </summary>
 
     std::string getRiskLevels() const;

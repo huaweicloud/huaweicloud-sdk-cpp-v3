@@ -39,7 +39,7 @@ public:
     /// ListProjectResourceTagsRequest members
 
     /// <summary>
-    /// 资源类型。审计：auditInstance
+    /// 资源类型。 - auditInstance
     /// </summary>
 
     std::string getResourceType() const;

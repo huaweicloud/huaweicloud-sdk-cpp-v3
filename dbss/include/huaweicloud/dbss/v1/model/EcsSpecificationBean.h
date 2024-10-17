@@ -40,7 +40,7 @@ public:
     /// EcsSpecificationBean members
 
     /// <summary>
-    /// 可用区集合
+    /// ECS规格所在的可用区集合
     /// </summary>
 
     std::vector<std::string>& getAzs();
@@ -49,7 +49,7 @@ public:
     void setAzs(const std::vector<std::string>& value);
 
     /// <summary>
-    /// ID
+    /// 规格ID
     /// </summary>
 
     std::string getId() const;
@@ -58,7 +58,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 等级
+    /// 规格等级，支持的等级以局点配置为准。 - entry:入门版 - low:基础版 - medium:专业版 - high:高级版
     /// </summary>
 
     std::string getLevel() const;
@@ -67,7 +67,7 @@ public:
     void setLevel(const std::string& value);
 
     /// <summary>
-    /// 名称
+    /// 规格名称
     /// </summary>
 
     std::string getName() const;
@@ -76,7 +76,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 代理
+    /// 规格可添加的数据库数量
     /// </summary>
 
     int32_t getProxy() const;
@@ -102,6 +102,15 @@ public:
     void unsetvcpus();
     void setVcpus(int32_t value);
 
+    /// <summary>
+    /// 可用区类型 - DEDICATED - DEC - EDGE
+    /// </summary>
+
+    std::string getAzType() const;
+    bool azTypeIsSet() const;
+    void unsetazType();
+    void setAzType(const std::string& value);
+
 
 protected:
     std::vector<std::string> azs_;
@@ -118,6 +127,8 @@ protected:
     bool ramIsSet_;
     int32_t vcpus_;
     bool vcpusIsSet_;
+    std::string azType_;
+    bool azTypeIsSet_;
 
 };
 

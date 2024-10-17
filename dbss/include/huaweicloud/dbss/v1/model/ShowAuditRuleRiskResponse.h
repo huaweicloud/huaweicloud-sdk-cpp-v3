@@ -59,7 +59,7 @@ public:
     void setRuleName(const std::string& value);
 
     /// <summary>
-    /// 风险规则状态 枚举值：  OFF  ON
+    /// 风险规则状态 - OFF - ON
     /// </summary>
 
     std::string getStatus() const;
@@ -68,7 +68,7 @@ public:
     void setStatus(const std::string& value);
 
     /// <summary>
-    /// 操作集合, 中间逗号分隔 LOGIN CREATE_TABLE CREATE_TABLESPACE DROP_TABLE DROP_TABLESPACE DELETE INSERT INSERT_SELECT SELECT SELECT_FOR_UPDATE UPDATE CREATE_USER DROP_USER GRANT OPERATE ALL
+    /// 操作集合, 中间逗号分隔。 LOGIN,CREATE_TABLE,CREATE_TABLESPACE,DROP_TABLE, DROP_TABLESPACE,DELETE,INSERT,INSERT_SELECT,SELECT,SELECT_FOR_UPDATE, UPDATE,CREATE_USER,DROP_USER,GRANT,OPERATE ALL
     /// </summary>
 
     std::string getAction() const;
@@ -86,7 +86,7 @@ public:
     void setSchemas(const std::vector<RuleRiskInfoBean_schemas>& value);
 
     /// <summary>
-    /// 风险规则优先级
+    /// 风险规则优先级。数字越小优先级越高。
     /// </summary>
 
     int32_t getRank() const;
@@ -104,7 +104,7 @@ public:
     void setIgnoreCase(bool value);
 
     /// <summary>
-    /// 风险级别 枚举值：  LOW  MEDIUM  HIGH  NO_RISK
+    /// 风险级别 - LOW - MEDIUM - HIGH - NO_RISK
     /// </summary>
 
     std::string getRiskLevel() const;
@@ -122,7 +122,7 @@ public:
     void setDbIds(const std::string& value);
 
     /// <summary>
-    /// 执行时长对执行时长阈值的关系 枚举值：  GREATER  EQUAL  LESS  GREATER_EQUAL  LESS_EQUAL  NO_MATCH
+    /// 执行时长对执行时长阈值的关系 - GREATER - EQUAL - LESS - GREATER_EQUAL - LESS_EQUAL - NO_MATCH
     /// </summary>
 
     std::string getExecutionSymbol() const;
@@ -140,7 +140,7 @@ public:
     void setExecutionTime(int32_t value);
 
     /// <summary>
-    /// 影响行数对行数阈值的关系：  枚举值：  GREATER  EQUAL  LESS  GREATER_EQUAL  LESS_EQUAL  NO_MATCH
+    /// 影响行数对行数阈值的关系：  - GREATER - EQUAL - LESS - GREATER_EQUAL - LESS_EQUAL - NO_MATCH
     /// </summary>
 
     std::string getAffectSymbol() const;

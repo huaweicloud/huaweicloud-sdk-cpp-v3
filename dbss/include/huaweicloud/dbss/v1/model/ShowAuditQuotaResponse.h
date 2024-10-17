@@ -39,25 +39,7 @@ public:
     /// ShowAuditQuotaResponse members
 
     /// <summary>
-    /// 实例当前剩余配额。
-    /// </summary>
-
-    int64_t getAuditQuota() const;
-    bool auditQuotaIsSet() const;
-    void unsetauditQuota();
-    void setAuditQuota(int64_t value);
-
-    /// <summary>
-    /// Cpu当前剩余配额。
-    /// </summary>
-
-    int64_t getCpu() const;
-    bool cpuIsSet() const;
-    void unsetcpu();
-    void setCpu(int64_t value);
-
-    /// <summary>
-    /// 项目Id。
+    /// 项目ID。
     /// </summary>
 
     std::string getProjectId() const;
@@ -66,16 +48,25 @@ public:
     void setProjectId(const std::string& value);
 
     /// <summary>
-    /// 配额。
+    /// 审计实例剩余配额。
     /// </summary>
 
-    int64_t getQuota() const;
-    bool quotaIsSet() const;
-    void unsetquota();
-    void setQuota(int64_t value);
+    int64_t getAuditQuota() const;
+    bool auditQuotaIsSet() const;
+    void unsetauditQuota();
+    void setAuditQuota(int64_t value);
 
     /// <summary>
-    /// 内存当前剩余配额
+    /// CPU剩余配额。
+    /// </summary>
+
+    int64_t getCpu() const;
+    bool cpuIsSet() const;
+    void unsetcpu();
+    void setCpu(int64_t value);
+
+    /// <summary>
+    /// 内存剩余配额。
     /// </summary>
 
     int64_t getRam() const;
@@ -85,14 +76,12 @@ public:
 
 
 protected:
+    std::string projectId_;
+    bool projectIdIsSet_;
     int64_t auditQuota_;
     bool auditQuotaIsSet_;
     int64_t cpu_;
     bool cpuIsSet_;
-    std::string projectId_;
-    bool projectIdIsSet_;
-    int64_t quota_;
-    bool quotaIsSet_;
     int64_t ram_;
     bool ramIsSet_;
 

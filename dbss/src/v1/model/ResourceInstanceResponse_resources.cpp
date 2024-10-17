@@ -12,11 +12,11 @@ namespace Model {
 
 ResourceInstanceResponse_resources::ResourceInstanceResponse_resources()
 {
-    resourceDetailIsSet_ = false;
     resourceId_ = "";
     resourceIdIsSet_ = false;
     resourceName_ = "";
     resourceNameIsSet_ = false;
+    resourceDetailIsSet_ = false;
     tagsIsSet_ = false;
     sysTagsIsSet_ = false;
 }
@@ -31,14 +31,14 @@ web::json::value ResourceInstanceResponse_resources::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(resourceDetailIsSet_) {
-        val[utility::conversions::to_string_t("resource_detail")] = ModelBase::toJson(resourceDetail_);
-    }
     if(resourceIdIsSet_) {
         val[utility::conversions::to_string_t("resource_id")] = ModelBase::toJson(resourceId_);
     }
     if(resourceNameIsSet_) {
         val[utility::conversions::to_string_t("resource_name")] = ModelBase::toJson(resourceName_);
+    }
+    if(resourceDetailIsSet_) {
+        val[utility::conversions::to_string_t("resource_detail")] = ModelBase::toJson(resourceDetail_);
     }
     if(tagsIsSet_) {
         val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
@@ -53,15 +53,6 @@ bool ResourceInstanceResponse_resources::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("resource_detail"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("resource_detail"));
-        if(!fieldValue.is_null())
-        {
-            Object refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setResourceDetail(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("resource_id"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("resource_id"));
         if(!fieldValue.is_null())
@@ -78,6 +69,15 @@ bool ResourceInstanceResponse_resources::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResourceName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("resource_detail"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("resource_detail"));
+        if(!fieldValue.is_null())
+        {
+            Object refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setResourceDetail(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("tags"))) {
@@ -101,27 +101,6 @@ bool ResourceInstanceResponse_resources::fromJson(const web::json::value& val)
     return ok;
 }
 
-
-Object ResourceInstanceResponse_resources::getResourceDetail() const
-{
-    return resourceDetail_;
-}
-
-void ResourceInstanceResponse_resources::setResourceDetail(const Object& value)
-{
-    resourceDetail_ = value;
-    resourceDetailIsSet_ = true;
-}
-
-bool ResourceInstanceResponse_resources::resourceDetailIsSet() const
-{
-    return resourceDetailIsSet_;
-}
-
-void ResourceInstanceResponse_resources::unsetresourceDetail()
-{
-    resourceDetailIsSet_ = false;
-}
 
 std::string ResourceInstanceResponse_resources::getResourceId() const
 {
@@ -163,6 +142,27 @@ bool ResourceInstanceResponse_resources::resourceNameIsSet() const
 void ResourceInstanceResponse_resources::unsetresourceName()
 {
     resourceNameIsSet_ = false;
+}
+
+Object ResourceInstanceResponse_resources::getResourceDetail() const
+{
+    return resourceDetail_;
+}
+
+void ResourceInstanceResponse_resources::setResourceDetail(const Object& value)
+{
+    resourceDetail_ = value;
+    resourceDetailIsSet_ = true;
+}
+
+bool ResourceInstanceResponse_resources::resourceDetailIsSet() const
+{
+    return resourceDetailIsSet_;
+}
+
+void ResourceInstanceResponse_resources::unsetresourceDetail()
+{
+    resourceDetailIsSet_ = false;
 }
 
 std::vector<ResourceInstanceResponse_tags>& ResourceInstanceResponse_resources::getTags()

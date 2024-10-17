@@ -24,6 +24,10 @@ SourcesRequestBody::SourcesRequestBody()
     activeStandbyIsSet_ = false;
     enableObsWebHosting_ = 0;
     enableObsWebHostingIsSet_ = false;
+    httpPort_ = 0;
+    httpPortIsSet_ = false;
+    httpsPort_ = 0;
+    httpsPortIsSet_ = false;
 }
 
 SourcesRequestBody::~SourcesRequestBody() = default;
@@ -53,6 +57,12 @@ web::json::value SourcesRequestBody::toJson() const
     }
     if(enableObsWebHostingIsSet_) {
         val[utility::conversions::to_string_t("enable_obs_web_hosting")] = ModelBase::toJson(enableObsWebHosting_);
+    }
+    if(httpPortIsSet_) {
+        val[utility::conversions::to_string_t("http_port")] = ModelBase::toJson(httpPort_);
+    }
+    if(httpsPortIsSet_) {
+        val[utility::conversions::to_string_t("https_port")] = ModelBase::toJson(httpsPort_);
     }
 
     return val;
@@ -113,6 +123,24 @@ bool SourcesRequestBody::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEnableObsWebHosting(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("http_port"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("http_port"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHttpPort(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("https_port"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("https_port"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHttpsPort(refVal);
         }
     }
     return ok;
@@ -243,6 +271,48 @@ bool SourcesRequestBody::enableObsWebHostingIsSet() const
 void SourcesRequestBody::unsetenableObsWebHosting()
 {
     enableObsWebHostingIsSet_ = false;
+}
+
+int32_t SourcesRequestBody::getHttpPort() const
+{
+    return httpPort_;
+}
+
+void SourcesRequestBody::setHttpPort(int32_t value)
+{
+    httpPort_ = value;
+    httpPortIsSet_ = true;
+}
+
+bool SourcesRequestBody::httpPortIsSet() const
+{
+    return httpPortIsSet_;
+}
+
+void SourcesRequestBody::unsethttpPort()
+{
+    httpPortIsSet_ = false;
+}
+
+int32_t SourcesRequestBody::getHttpsPort() const
+{
+    return httpsPort_;
+}
+
+void SourcesRequestBody::setHttpsPort(int32_t value)
+{
+    httpsPort_ = value;
+    httpsPortIsSet_ = true;
+}
+
+bool SourcesRequestBody::httpsPortIsSet() const
+{
+    return httpsPortIsSet_;
+}
+
+void SourcesRequestBody::unsethttpsPort()
+{
+    httpsPortIsSet_ = false;
 }
 
 }

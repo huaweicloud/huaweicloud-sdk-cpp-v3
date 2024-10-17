@@ -49,7 +49,7 @@ public:
     void setRules(const std::vector<SqlRuleResponse_rules>& value);
 
     /// <summary>
-    /// 当前范围总数
+    /// 总数
     /// </summary>
 
     int32_t getTotal() const;

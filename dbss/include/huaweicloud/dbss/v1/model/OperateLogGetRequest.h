@@ -49,7 +49,7 @@ public:
     void setTime(const TimeRangeBean& value);
 
     /// <summary>
-    /// 筛选角色用户获取操作日志
+    /// 操作日志用户名
     /// </summary>
 
     std::string getUserName() const;
@@ -58,16 +58,16 @@ public:
     void setUserName(const std::string& value);
 
     /// <summary>
-    /// 筛选操作对象名称获取操作日志
+    /// 动作名称 - CREATE - DELETE - DOWNLOAD - UPDATE
     /// </summary>
 
-    std::string getOperateName() const;
-    bool operateNameIsSet() const;
-    void unsetoperateName();
-    void setOperateName(const std::string& value);
+    std::string getAction() const;
+    bool actionIsSet() const;
+    void unsetaction();
+    void setAction(const std::string& value);
 
     /// <summary>
-    /// 根据执行结果获取操作日志 [success, fail]
+    /// 执行结果 - success - fail
     /// </summary>
 
     std::string getResult() const;
@@ -99,8 +99,8 @@ protected:
     bool timeIsSet_;
     std::string userName_;
     bool userNameIsSet_;
-    std::string operateName_;
-    bool operateNameIsSet_;
+    std::string action_;
+    bool actionIsSet_;
     std::string result_;
     bool resultIsSet_;
     std::string page_;

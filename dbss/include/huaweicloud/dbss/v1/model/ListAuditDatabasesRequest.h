@@ -39,7 +39,7 @@ public:
     /// ListAuditDatabasesRequest members
 
     /// <summary>
-    /// 实例ID
+    /// 实例ID。可在查询实例列表接口的ID字段获取。
     /// </summary>
 
     std::string getInstanceId() const;
@@ -48,7 +48,7 @@ public:
     void setInstanceId(const std::string& value);
 
     /// <summary>
-    /// 实例状态 ON ：开启 OFF ： 关闭
+    /// 实例状态 - ON :开启 - OFF : 关闭
     /// </summary>
 
     std::string getStatus() const;
@@ -57,7 +57,7 @@ public:
     void setStatus(const std::string& value);
 
     /// <summary>
-    /// 偏移量
+    /// 偏移量，从第一条数据偏移offset条数据后开始查询，默认为0。
     /// </summary>
 
     std::string getOffset() const;
@@ -66,7 +66,7 @@ public:
     void setOffset(const std::string& value);
 
     /// <summary>
-    /// 查询记录数
+    /// 查询记录数，默认为100。
     /// </summary>
 
     std::string getLimit() const;

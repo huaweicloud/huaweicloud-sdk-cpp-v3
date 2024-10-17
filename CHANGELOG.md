@@ -1,3 +1,124 @@
+# 3.1.106 2024-10-17
+
+### HuaweiCloud SDK CDN
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateDomain**
+    - changes of request param
+      - `+ domain.sources.http_port`
+      - `+ domain.sources.https_port`
+
+### HuaweiCloud SDK DBSS
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the following APIs:
+    - `AddAuditDatabase`
+    - `AddRdsDatabase`
+    - `ListRdsDatabases`
+    - `DeleteAuditDatabase`
+    - `SwitchAuditDatabase`
+    - `DownloadAuditAgent`
+    - `DeleteAuditAgent`
+    - `ListAuditSummaryInfos`
+    - `StartAuditInstance`
+    - `StopAuditInstance`
+    - `RebootAuditInstance`
+    - `UpdateAuditInstance`
+    - `ListAuditAlarmLog`
+    - `ListAuditSqls`
+    - `ListAuditAgent`
+    - `AddAuditAgent`
+    - `DeleteInstances`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowAuditQuota**
+    - changes of response param
+      - `- quota`
+  - **ListAuditRuleRisks**
+    - changes of request param
+      - `+ risk_levels: enum value [LOW,MEDIUM,HIGH,NO_RISK]`
+    - changes of response param
+      - `+ rules.rule_type`
+  - **ListProjectResourceTags**
+    - changes of request param
+      - `+ resource_type: enum value [auditInstance]`
+  - **BatchAddResourceTag**
+    - changes of request param
+      - `+ resource_type: enum value [auditInstance]`
+      - `* tags: list<KeyValueBean> -> list<object>`
+      - `* sys_tags: list<KeyValueBean> -> list<object>`
+  - **BatchDeleteResourceTag**
+    - changes of request param
+      - `+ resource_type: enum value [auditInstance]`
+      - `* tags: list<KeyValueBean> -> list<object>`
+      - `* sys_tags: list<KeyValueBean> -> list<object>`
+      - `* body: object<ResourceTagRequest> -> object<ResourceTagDeleteRequest>`
+  - **UpdateAuditSecurityGroup**
+    - changes of request param
+      - `+ instance_id`
+      - `- resource_id`
+  - **SwitchAgent**
+    - changes of request param
+      - `+ status: enum value [0,1]`
+  - **ListEcsSpecification**
+    - changes of response param
+      - `+ specification.az_type`
+  - **ListAuditInstanceJobs**
+    - changes of response param
+      - `+ jobs.resource_id`
+  - **ListAuditOperateLogs**
+    - changes of request param
+      - `+ action`
+      - `- operate_name`
+      - `+ result: enum value [success,fail]`
+      - `+ time.time_range: enum value [HALF_HOUR, HOUR, THREE_HOUR, TWELVE_HOUR, DAY, WEEK, MONTH]`
+  - **ListResourceInstanceByTag**
+    - changes of request param
+      - `+ resource_type: enum value [auditInstance]`
+  - **CountResourceInstanceByTag**
+    - changes of request param
+      - `+ resource_type: enum value [auditInstance]`
+  - **ListAuditDatabases**
+    - changes of response param
+      - `+ databases.database.rds_audit_switch_mismatch`
+      - `+ databases.database.rds_id`
+      - `+ databases.database.rds_obj_info`
+      - `+ databases.database.dws_obj_info`
+      - `+ databases.database.clouddb_obj_info`
+
+### HuaweiCloud SDK ECS
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the API `NovaShowFlavorExtraSpecs`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK KVS
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ScanSkeyKv**
+    - changes of request param
+      - `+ return_count_only`
+
 # 3.1.105 2024-10-10
 
 ### HuaweiCloud SDK AAD

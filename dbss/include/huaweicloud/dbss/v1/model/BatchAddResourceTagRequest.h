@@ -40,7 +40,7 @@ public:
     /// BatchAddResourceTagRequest members
 
     /// <summary>
-    /// 资源类型。审计：auditInstance
+    /// 资源类型。 - auditInstance
     /// </summary>
 
     std::string getResourceType() const;
@@ -49,7 +49,7 @@ public:
     void setResourceType(const std::string& value);
 
     /// <summary>
-    /// 资源ID
+    /// 资源ID。可在查询实例列表接口的resource_id字段获取。
     /// </summary>
 
     std::string getResourceId() const;

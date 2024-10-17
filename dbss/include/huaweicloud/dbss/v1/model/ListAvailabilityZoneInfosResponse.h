@@ -40,7 +40,7 @@ public:
     /// ListAvailabilityZoneInfosResponse members
 
     /// <summary>
-    /// az列表
+    /// 可用区集合
     /// </summary>
 
     std::vector<AzInfo>& getAzs();

@@ -2109,6 +2109,36 @@ std::shared_ptr<NovaListServersDetailsResponse> EcsClient::novaListServersDetail
 
     return localVarResult;
 }
+std::shared_ptr<NovaShowFlavorExtraSpecsResponse> EcsClient::novaShowFlavorExtraSpecs(NovaShowFlavorExtraSpecsRequest &request)
+{
+    std::string localVarPath = "/v2.1/{project_id}/flavors/{flavor_id}/os-extra_specs";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["flavor_id"] = parameterToString(request.getFlavorId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EcsMeta::genRequestDefForNovaShowFlavorExtraSpecs());
+
+    std::shared_ptr<NovaShowFlavorExtraSpecsResponse> localVarResult = std::make_shared<NovaShowFlavorExtraSpecsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<NovaShowKeypairResponse> EcsClient::novaShowKeypair(NovaShowKeypairRequest &request)
 {
     std::string localVarPath = "/v2.1/{project_id}/os-keypairs/{keypair_name}";

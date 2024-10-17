@@ -22,6 +22,8 @@ JobBean::JobBean()
     serverIdIsSet_ = false;
     serverName_ = "";
     serverNameIsSet_ = false;
+    resourceId_ = "";
+    resourceIdIsSet_ = false;
     beginTime_ = 0L;
     beginTimeIsSet_ = false;
     endTime_ = 0L;
@@ -62,6 +64,9 @@ web::json::value JobBean::toJson() const
     }
     if(serverNameIsSet_) {
         val[utility::conversions::to_string_t("server_name")] = ModelBase::toJson(serverName_);
+    }
+    if(resourceIdIsSet_) {
+        val[utility::conversions::to_string_t("resource_id")] = ModelBase::toJson(resourceId_);
     }
     if(beginTimeIsSet_) {
         val[utility::conversions::to_string_t("begin_time")] = ModelBase::toJson(beginTime_);
@@ -134,6 +139,15 @@ bool JobBean::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setServerName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("resource_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("resource_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setResourceId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("begin_time"))) {
@@ -306,6 +320,27 @@ bool JobBean::serverNameIsSet() const
 void JobBean::unsetserverName()
 {
     serverNameIsSet_ = false;
+}
+
+std::string JobBean::getResourceId() const
+{
+    return resourceId_;
+}
+
+void JobBean::setResourceId(const std::string& value)
+{
+    resourceId_ = value;
+    resourceIdIsSet_ = true;
+}
+
+bool JobBean::resourceIdIsSet() const
+{
+    return resourceIdIsSet_;
+}
+
+void JobBean::unsetresourceId()
+{
+    resourceIdIsSet_ = false;
 }
 
 int64_t JobBean::getBeginTime() const

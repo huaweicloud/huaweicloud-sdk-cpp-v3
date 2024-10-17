@@ -1,3 +1,124 @@
+# 3.1.106 2024-10-17
+
+### HuaweiCloud SDK CDN
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateDomain**
+    - 请求参数变更
+      - `+ domain.sources.http_port`
+      - `+ domain.sources.https_port`
+
+### HuaweiCloud SDK DBSS
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持以下接口：
+    - `AddAuditDatabase`
+    - `AddRdsDatabase`
+    - `ListRdsDatabases`
+    - `DeleteAuditDatabase`
+    - `SwitchAuditDatabase`
+    - `DownloadAuditAgent`
+    - `DeleteAuditAgent`
+    - `ListAuditSummaryInfos`
+    - `StartAuditInstance`
+    - `StopAuditInstance`
+    - `RebootAuditInstance`
+    - `UpdateAuditInstance`
+    - `ListAuditAlarmLog`
+    - `ListAuditSqls`
+    - `ListAuditAgent`
+    - `AddAuditAgent`
+    - `DeleteInstances`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowAuditQuota**
+    - 响应参数变更
+      - `- quota`
+  - **ListAuditRuleRisks**
+    - 请求参数变更
+      - `+ risk_levels: enum value [LOW,MEDIUM,HIGH,NO_RISK]`
+    - 响应参数变更
+      - `+ rules.rule_type`
+  - **ListProjectResourceTags**
+    - 请求参数变更
+      - `+ resource_type: enum value [auditInstance]`
+  - **BatchAddResourceTag**
+    - 请求参数变更
+      - `+ resource_type: enum value [auditInstance]`
+      - `* tags: list<KeyValueBean> -> list<object>`
+      - `* sys_tags: list<KeyValueBean> -> list<object>`
+  - **BatchDeleteResourceTag**
+    - 请求参数变更
+      - `+ resource_type: enum value [auditInstance]`
+      - `* tags: list<KeyValueBean> -> list<object>`
+      - `* sys_tags: list<KeyValueBean> -> list<object>`
+      - `* body: object<ResourceTagRequest> -> object<ResourceTagDeleteRequest>`
+  - **UpdateAuditSecurityGroup**
+    - 请求参数变更
+      - `+ instance_id`
+      - `- resource_id`
+  - **SwitchAgent**
+    - 请求参数变更
+      - `+ status: enum value [0,1]`
+  - **ListEcsSpecification**
+    - 响应参数变更
+      - `+ specification.az_type`
+  - **ListAuditInstanceJobs**
+    - 响应参数变更
+      - `+ jobs.resource_id`
+  - **ListAuditOperateLogs**
+    - 请求参数变更
+      - `+ action`
+      - `- operate_name`
+      - `+ result: enum value [success,fail]`
+      - `+ time.time_range: enum value [HALF_HOUR, HOUR, THREE_HOUR, TWELVE_HOUR, DAY, WEEK, MONTH]`
+  - **ListResourceInstanceByTag**
+    - 请求参数变更
+      - `+ resource_type: enum value [auditInstance]`
+  - **CountResourceInstanceByTag**
+    - 请求参数变更
+      - `+ resource_type: enum value [auditInstance]`
+  - **ListAuditDatabases**
+    - 响应参数变更
+      - `+ databases.database.rds_audit_switch_mismatch`
+      - `+ databases.database.rds_id`
+      - `+ databases.database.rds_obj_info`
+      - `+ databases.database.dws_obj_info`
+      - `+ databases.database.clouddb_obj_info`
+
+### HuaweiCloud SDK ECS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持接口`NovaShowFlavorExtraSpecs`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK KVS
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ScanSkeyKv**
+    - 请求参数变更
+      - `+ return_count_only`
+
 # 3.1.105 2024-10-10
 
 ### HuaweiCloud SDK AAD

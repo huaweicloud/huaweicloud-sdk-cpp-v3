@@ -26,6 +26,8 @@ RuleRiskResponse_rules::RuleRiskResponse_rules()
     rankIsSet_ = false;
     riskLevel_ = "";
     riskLevelIsSet_ = false;
+    ruleType_ = "";
+    ruleTypeIsSet_ = false;
 }
 
 RuleRiskResponse_rules::~RuleRiskResponse_rules() = default;
@@ -58,6 +60,9 @@ web::json::value RuleRiskResponse_rules::toJson() const
     }
     if(riskLevelIsSet_) {
         val[utility::conversions::to_string_t("risk_level")] = ModelBase::toJson(riskLevel_);
+    }
+    if(ruleTypeIsSet_) {
+        val[utility::conversions::to_string_t("rule_type")] = ModelBase::toJson(ruleType_);
     }
 
     return val;
@@ -127,6 +132,15 @@ bool RuleRiskResponse_rules::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRiskLevel(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("rule_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("rule_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRuleType(refVal);
         }
     }
     return ok;
@@ -278,6 +292,27 @@ bool RuleRiskResponse_rules::riskLevelIsSet() const
 void RuleRiskResponse_rules::unsetriskLevel()
 {
     riskLevelIsSet_ = false;
+}
+
+std::string RuleRiskResponse_rules::getRuleType() const
+{
+    return ruleType_;
+}
+
+void RuleRiskResponse_rules::setRuleType(const std::string& value)
+{
+    ruleType_ = value;
+    ruleTypeIsSet_ = true;
+}
+
+bool RuleRiskResponse_rules::ruleTypeIsSet() const
+{
+    return ruleTypeIsSet_;
+}
+
+void RuleRiskResponse_rules::unsetruleType()
+{
+    ruleTypeIsSet_ = false;
 }
 
 }

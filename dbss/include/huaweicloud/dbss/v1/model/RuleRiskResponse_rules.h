@@ -57,7 +57,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 风险类型
+    /// 风险规则类型
     /// </summary>
 
     std::string getType() const;
@@ -66,7 +66,7 @@ public:
     void setType(const std::string& value);
 
     /// <summary>
-    /// 风险特征
+    /// 风险规则特征
     /// </summary>
 
     std::string getFeature() const;
@@ -75,7 +75,7 @@ public:
     void setFeature(const std::string& value);
 
     /// <summary>
-    /// 风险规则状态
+    /// 风险规则状态。 - ON: 开启 - OFF: 关闭
     /// </summary>
 
     std::string getStatus() const;
@@ -84,7 +84,7 @@ public:
     void setStatus(const std::string& value);
 
     /// <summary>
-    /// 风险规则优先级
+    /// 风险规则优先级。数字越小优先级越高。
     /// </summary>
 
     int32_t getRank() const;
@@ -93,13 +93,22 @@ public:
     void setRank(int32_t value);
 
     /// <summary>
-    /// 风险级别
+    /// 风险级别 - LOW - MEDIUM - HIGH - NO_RISK]
     /// </summary>
 
     std::string getRiskLevel() const;
     bool riskLevelIsSet() const;
     void unsetriskLevel();
     void setRiskLevel(const std::string& value);
+
+    /// <summary>
+    /// 规则类型
+    /// </summary>
+
+    std::string getRuleType() const;
+    bool ruleTypeIsSet() const;
+    void unsetruleType();
+    void setRuleType(const std::string& value);
 
 
 protected:
@@ -117,6 +126,8 @@ protected:
     bool rankIsSet_;
     std::string riskLevel_;
     bool riskLevelIsSet_;
+    std::string ruleType_;
+    bool ruleTypeIsSet_;
 
 };
 

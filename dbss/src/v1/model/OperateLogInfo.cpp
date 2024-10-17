@@ -18,10 +18,10 @@ OperateLogInfo::OperateLogInfo()
     userIsSet_ = false;
     time_ = "";
     timeIsSet_ = false;
-    function_ = "";
-    functionIsSet_ = false;
     action_ = "";
     actionIsSet_ = false;
+    function_ = "";
+    functionIsSet_ = false;
     name_ = "";
     nameIsSet_ = false;
     description_ = "";
@@ -49,11 +49,11 @@ web::json::value OperateLogInfo::toJson() const
     if(timeIsSet_) {
         val[utility::conversions::to_string_t("time")] = ModelBase::toJson(time_);
     }
-    if(functionIsSet_) {
-        val[utility::conversions::to_string_t("function")] = ModelBase::toJson(function_);
-    }
     if(actionIsSet_) {
         val[utility::conversions::to_string_t("action")] = ModelBase::toJson(action_);
+    }
+    if(functionIsSet_) {
+        val[utility::conversions::to_string_t("function")] = ModelBase::toJson(function_);
     }
     if(nameIsSet_) {
         val[utility::conversions::to_string_t("name")] = ModelBase::toJson(name_);
@@ -98,15 +98,6 @@ bool OperateLogInfo::fromJson(const web::json::value& val)
             setTime(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("function"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("function"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setFunction(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("action"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("action"));
         if(!fieldValue.is_null())
@@ -114,6 +105,15 @@ bool OperateLogInfo::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAction(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("function"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("function"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFunction(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("name"))) {
@@ -210,27 +210,6 @@ void OperateLogInfo::unsettime()
     timeIsSet_ = false;
 }
 
-std::string OperateLogInfo::getFunction() const
-{
-    return function_;
-}
-
-void OperateLogInfo::setFunction(const std::string& value)
-{
-    function_ = value;
-    functionIsSet_ = true;
-}
-
-bool OperateLogInfo::functionIsSet() const
-{
-    return functionIsSet_;
-}
-
-void OperateLogInfo::unsetfunction()
-{
-    functionIsSet_ = false;
-}
-
 std::string OperateLogInfo::getAction() const
 {
     return action_;
@@ -250,6 +229,27 @@ bool OperateLogInfo::actionIsSet() const
 void OperateLogInfo::unsetaction()
 {
     actionIsSet_ = false;
+}
+
+std::string OperateLogInfo::getFunction() const
+{
+    return function_;
+}
+
+void OperateLogInfo::setFunction(const std::string& value)
+{
+    function_ = value;
+    functionIsSet_ = true;
+}
+
+bool OperateLogInfo::functionIsSet() const
+{
+    return functionIsSet_;
+}
+
+void OperateLogInfo::unsetfunction()
+{
+    functionIsSet_ = false;
 }
 
 std::string OperateLogInfo::getName() const

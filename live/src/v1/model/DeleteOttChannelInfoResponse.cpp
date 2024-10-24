@@ -22,7 +22,6 @@ DeleteOttChannelInfoResponse::DeleteOttChannelInfoResponse()
     appNameIsSet_ = false;
     id_ = "";
     idIsSet_ = false;
-    sourcesIsSet_ = false;
 }
 
 DeleteOttChannelInfoResponse::~DeleteOttChannelInfoResponse() = default;
@@ -49,9 +48,6 @@ web::json::value DeleteOttChannelInfoResponse::toJson() const
     }
     if(idIsSet_) {
         val[utility::conversions::to_string_t("id")] = ModelBase::toJson(id_);
-    }
-    if(sourcesIsSet_) {
-        val[utility::conversions::to_string_t("sources")] = ModelBase::toJson(sources_);
     }
 
     return val;
@@ -103,15 +99,6 @@ bool DeleteOttChannelInfoResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setId(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("sources"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sources"));
-        if(!fieldValue.is_null())
-        {
-            std::vector<SourceRsp> refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setSources(refVal);
         }
     }
     return ok;
@@ -221,27 +208,6 @@ bool DeleteOttChannelInfoResponse::idIsSet() const
 void DeleteOttChannelInfoResponse::unsetid()
 {
     idIsSet_ = false;
-}
-
-std::vector<SourceRsp>& DeleteOttChannelInfoResponse::getSources()
-{
-    return sources_;
-}
-
-void DeleteOttChannelInfoResponse::setSources(const std::vector<SourceRsp>& value)
-{
-    sources_ = value;
-    sourcesIsSet_ = true;
-}
-
-bool DeleteOttChannelInfoResponse::sourcesIsSet() const
-{
-    return sourcesIsSet_;
-}
-
-void DeleteOttChannelInfoResponse::unsetsources()
-{
-    sourcesIsSet_ = false;
 }
 
 }

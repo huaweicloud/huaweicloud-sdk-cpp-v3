@@ -1,3 +1,131 @@
+# 3.1.107 2024-10-24
+
+### HuaweiCloud SDK DRS
+
+- _接口版本_
+  - V5
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListAsyncJobDetail**
+    - 响应参数变更
+      - `+ jobs.compare_result.data_compare_task_list.options`
+      - `+ jobs.compare_result.data_compare_task_list.dynamic_compare_delay`
+  - **ShowJobDetail**
+    - 响应参数变更
+      - `+ job.compare_result.data_compare_task_list.options`
+      - `+ job.compare_result.data_compare_task_list.dynamic_compare_delay`
+
+### HuaweiCloud SDK GaussDB
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CheckTableConfig**
+    - 请求参数变更
+      - `+ target_database_name`
+      - `+ is_create_task`
+
+### HuaweiCloud SDK RAM
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **EnableOrganizationShare**
+    - 请求参数变更
+      - `+ X-Security-Token`
+  - **DisableOrganizationShare**
+    - 请求参数变更
+      - `+ X-Security-Token`
+  - **ShowOrganizationShare**
+    - 请求参数变更
+      - `+ X-Security-Token`
+  - **AssociateResourceSharePermission**
+    - 请求参数变更
+      - `+ X-Security-Token`
+  - **DisassociateResourceSharePermission**
+    - 请求参数变更
+      - `+ X-Security-Token`
+  - **AcceptResourceShareInvitation**
+    - 请求参数变更
+      - `+ X-Security-Token`
+  - **RejectResourceShareInvitation**
+    - 请求参数变更
+      - `+ X-Security-Token`
+  - **SearchResourceShareInvitation**
+    - 请求参数变更
+      - `+ X-Security-Token`
+  - **ListPermissions**
+    - 请求参数变更
+      - `+ X-Security-Token`
+  - **ShowPermission**
+    - 请求参数变更
+      - `+ X-Security-Token`
+  - **AssociateResourceShare**
+    - 请求参数变更
+      - `+ X-Security-Token`
+  - **DisassociateResourceShare**
+    - 请求参数变更
+      - `+ X-Security-Token`
+  - **SearchResourceShareAssociations**
+    - 请求参数变更
+      - `+ X-Security-Token`
+  - **ListResourceShareTags**
+    - 请求参数变更
+      - `+ X-Security-Token`
+  - **SearchResourceShareCountByTags**
+    - 请求参数变更
+      - `+ X-Security-Token`
+  - **BatchCreateResourceShareTags**
+    - 请求参数变更
+      - `+ X-Security-Token`
+  - **BatchDeleteResourceShareTags**
+    - 请求参数变更
+      - `+ X-Security-Token`
+  - **ListResourceSharePermissions**
+    - 请求参数变更
+      - `+ X-Security-Token`
+  - **SearchSharedResources**
+    - 请求参数变更
+      - `+ X-Security-Token`
+  - **SearchSharedPrincipals**
+    - 请求参数变更
+      - `+ X-Security-Token`
+  - **ListResourceTypes**
+    - 请求参数变更
+      - `+ X-Security-Token`
+  - **ListPermissionVersions**
+    - 请求参数变更
+      - `+ X-Security-Token`
+  - **CreateResourceShare**
+    - 请求参数变更
+      - `+ X-Security-Token`
+  - **SearchResourceShares**
+    - 请求参数变更
+      - `+ X-Security-Token`
+  - **DeleteResourceShare**
+    - 请求参数变更
+      - `+ X-Security-Token`
+  - **UpdateResourceShare**
+    - 请求参数变更
+      - `+ X-Security-Token`
+  - **ListResourceSharesByTags**
+    - 请求参数变更
+      - `+ X-Security-Token`
+  - **ListQuota**
+    - 请求参数变更
+      - `+ X-Security-Token`
+
 # 3.1.106 2024-10-17
 
 ### HuaweiCloud SDK CDN

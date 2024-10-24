@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <string>
 #include <huaweicloud/ram/v1/model/SearchResourceSharesReqBody.h>
 
 namespace HuaweiCloud {
@@ -39,6 +40,15 @@ public:
     /// SearchResourceSharesRequest members
 
     /// <summary>
+    /// 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
+    /// </summary>
+
+    std::string getXSecurityToken() const;
+    bool xSecurityTokenIsSet() const;
+    void unsetxSecurityToken();
+    void setXSecurityToken(const std::string& value);
+
+    /// <summary>
     /// 
     /// </summary>
 
@@ -49,6 +59,8 @@ public:
 
 
 protected:
+    std::string xSecurityToken_;
+    bool xSecurityTokenIsSet_;
     SearchResourceSharesReqBody body_;
     bool bodyIsSet_;
 

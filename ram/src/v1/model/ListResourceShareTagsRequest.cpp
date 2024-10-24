@@ -16,6 +16,8 @@ ListResourceShareTagsRequest::ListResourceShareTagsRequest()
     limitIsSet_ = false;
     marker_ = "";
     markerIsSet_ = false;
+    xSecurityToken_ = "";
+    xSecurityTokenIsSet_ = false;
 }
 
 ListResourceShareTagsRequest::~ListResourceShareTagsRequest() = default;
@@ -33,6 +35,9 @@ web::json::value ListResourceShareTagsRequest::toJson() const
     }
     if(markerIsSet_) {
         val[utility::conversions::to_string_t("marker")] = ModelBase::toJson(marker_);
+    }
+    if(xSecurityTokenIsSet_) {
+        val[utility::conversions::to_string_t("X-Security-Token")] = ModelBase::toJson(xSecurityToken_);
     }
 
     return val;
@@ -57,6 +62,15 @@ bool ListResourceShareTagsRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setMarker(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Security-Token"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Security-Token"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXSecurityToken(refVal);
         }
     }
     return ok;
@@ -103,6 +117,27 @@ bool ListResourceShareTagsRequest::markerIsSet() const
 void ListResourceShareTagsRequest::unsetmarker()
 {
     markerIsSet_ = false;
+}
+
+std::string ListResourceShareTagsRequest::getXSecurityToken() const
+{
+    return xSecurityToken_;
+}
+
+void ListResourceShareTagsRequest::setXSecurityToken(const std::string& value)
+{
+    xSecurityToken_ = value;
+    xSecurityTokenIsSet_ = true;
+}
+
+bool ListResourceShareTagsRequest::xSecurityTokenIsSet() const
+{
+    return xSecurityTokenIsSet_;
+}
+
+void ListResourceShareTagsRequest::unsetxSecurityToken()
+{
+    xSecurityTokenIsSet_ = false;
 }
 
 }

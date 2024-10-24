@@ -14,6 +14,8 @@ ShowPermissionRequest::ShowPermissionRequest()
 {
     permissionId_ = "";
     permissionIdIsSet_ = false;
+    xSecurityToken_ = "";
+    xSecurityTokenIsSet_ = false;
     permissionVersion_ = 0;
     permissionVersionIsSet_ = false;
 }
@@ -30,6 +32,9 @@ web::json::value ShowPermissionRequest::toJson() const
 
     if(permissionIdIsSet_) {
         val[utility::conversions::to_string_t("permission_id")] = ModelBase::toJson(permissionId_);
+    }
+    if(xSecurityTokenIsSet_) {
+        val[utility::conversions::to_string_t("X-Security-Token")] = ModelBase::toJson(xSecurityToken_);
     }
     if(permissionVersionIsSet_) {
         val[utility::conversions::to_string_t("permission_version")] = ModelBase::toJson(permissionVersion_);
@@ -48,6 +53,15 @@ bool ShowPermissionRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPermissionId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Security-Token"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Security-Token"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXSecurityToken(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("permission_version"))) {
@@ -82,6 +96,27 @@ bool ShowPermissionRequest::permissionIdIsSet() const
 void ShowPermissionRequest::unsetpermissionId()
 {
     permissionIdIsSet_ = false;
+}
+
+std::string ShowPermissionRequest::getXSecurityToken() const
+{
+    return xSecurityToken_;
+}
+
+void ShowPermissionRequest::setXSecurityToken(const std::string& value)
+{
+    xSecurityToken_ = value;
+    xSecurityTokenIsSet_ = true;
+}
+
+bool ShowPermissionRequest::xSecurityTokenIsSet() const
+{
+    return xSecurityTokenIsSet_;
+}
+
+void ShowPermissionRequest::unsetxSecurityToken()
+{
+    xSecurityTokenIsSet_ = false;
 }
 
 int32_t ShowPermissionRequest::getPermissionVersion() const

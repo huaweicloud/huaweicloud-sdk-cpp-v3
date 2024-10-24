@@ -18,13 +18,18 @@ Encryption::Encryption()
     encryptionMethodIsSet_ = false;
     level_ = "";
     levelIsSet_ = false;
-    drmContentId_ = "";
-    drmContentIdIsSet_ = false;
+    resourceId_ = "";
+    resourceIdIsSet_ = false;
     systemIdsIsSet_ = false;
-    authInfo_ = "";
-    authInfoIsSet_ = false;
-    kmUrl_ = "";
-    kmUrlIsSet_ = false;
+    url_ = "";
+    urlIsSet_ = false;
+    spekeVersion_ = "";
+    spekeVersionIsSet_ = false;
+    requestMode_ = "";
+    requestModeIsSet_ = false;
+    httpHeadersIsSet_ = false;
+    urn_ = "";
+    urnIsSet_ = false;
 }
 
 Encryption::~Encryption() = default;
@@ -46,17 +51,26 @@ web::json::value Encryption::toJson() const
     if(levelIsSet_) {
         val[utility::conversions::to_string_t("level")] = ModelBase::toJson(level_);
     }
-    if(drmContentIdIsSet_) {
-        val[utility::conversions::to_string_t("drm_content_id")] = ModelBase::toJson(drmContentId_);
+    if(resourceIdIsSet_) {
+        val[utility::conversions::to_string_t("resource_id")] = ModelBase::toJson(resourceId_);
     }
     if(systemIdsIsSet_) {
         val[utility::conversions::to_string_t("system_ids")] = ModelBase::toJson(systemIds_);
     }
-    if(authInfoIsSet_) {
-        val[utility::conversions::to_string_t("auth_info")] = ModelBase::toJson(authInfo_);
+    if(urlIsSet_) {
+        val[utility::conversions::to_string_t("url")] = ModelBase::toJson(url_);
     }
-    if(kmUrlIsSet_) {
-        val[utility::conversions::to_string_t("km_url")] = ModelBase::toJson(kmUrl_);
+    if(spekeVersionIsSet_) {
+        val[utility::conversions::to_string_t("speke_version")] = ModelBase::toJson(spekeVersion_);
+    }
+    if(requestModeIsSet_) {
+        val[utility::conversions::to_string_t("request_mode")] = ModelBase::toJson(requestMode_);
+    }
+    if(httpHeadersIsSet_) {
+        val[utility::conversions::to_string_t("http_headers")] = ModelBase::toJson(httpHeaders_);
+    }
+    if(urnIsSet_) {
+        val[utility::conversions::to_string_t("urn")] = ModelBase::toJson(urn_);
     }
 
     return val;
@@ -92,13 +106,13 @@ bool Encryption::fromJson(const web::json::value& val)
             setLevel(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("drm_content_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("drm_content_id"));
+    if(val.has_field(utility::conversions::to_string_t("resource_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("resource_id"));
         if(!fieldValue.is_null())
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setDrmContentId(refVal);
+            setResourceId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("system_ids"))) {
@@ -110,22 +124,49 @@ bool Encryption::fromJson(const web::json::value& val)
             setSystemIds(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("auth_info"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("auth_info"));
+    if(val.has_field(utility::conversions::to_string_t("url"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("url"));
         if(!fieldValue.is_null())
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setAuthInfo(refVal);
+            setUrl(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("km_url"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("km_url"));
+    if(val.has_field(utility::conversions::to_string_t("speke_version"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("speke_version"));
         if(!fieldValue.is_null())
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setKmUrl(refVal);
+            setSpekeVersion(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("request_mode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("request_mode"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRequestMode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("http_headers"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("http_headers"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<HttpHeader> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHttpHeaders(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("urn"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("urn"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setUrn(refVal);
         }
     }
     return ok;
@@ -195,25 +236,25 @@ void Encryption::unsetlevel()
     levelIsSet_ = false;
 }
 
-std::string Encryption::getDrmContentId() const
+std::string Encryption::getResourceId() const
 {
-    return drmContentId_;
+    return resourceId_;
 }
 
-void Encryption::setDrmContentId(const std::string& value)
+void Encryption::setResourceId(const std::string& value)
 {
-    drmContentId_ = value;
-    drmContentIdIsSet_ = true;
+    resourceId_ = value;
+    resourceIdIsSet_ = true;
 }
 
-bool Encryption::drmContentIdIsSet() const
+bool Encryption::resourceIdIsSet() const
 {
-    return drmContentIdIsSet_;
+    return resourceIdIsSet_;
 }
 
-void Encryption::unsetdrmContentId()
+void Encryption::unsetresourceId()
 {
-    drmContentIdIsSet_ = false;
+    resourceIdIsSet_ = false;
 }
 
 std::vector<std::string>& Encryption::getSystemIds()
@@ -237,46 +278,109 @@ void Encryption::unsetsystemIds()
     systemIdsIsSet_ = false;
 }
 
-std::string Encryption::getAuthInfo() const
+std::string Encryption::getUrl() const
 {
-    return authInfo_;
+    return url_;
 }
 
-void Encryption::setAuthInfo(const std::string& value)
+void Encryption::setUrl(const std::string& value)
 {
-    authInfo_ = value;
-    authInfoIsSet_ = true;
+    url_ = value;
+    urlIsSet_ = true;
 }
 
-bool Encryption::authInfoIsSet() const
+bool Encryption::urlIsSet() const
 {
-    return authInfoIsSet_;
+    return urlIsSet_;
 }
 
-void Encryption::unsetauthInfo()
+void Encryption::unseturl()
 {
-    authInfoIsSet_ = false;
+    urlIsSet_ = false;
 }
 
-std::string Encryption::getKmUrl() const
+std::string Encryption::getSpekeVersion() const
 {
-    return kmUrl_;
+    return spekeVersion_;
 }
 
-void Encryption::setKmUrl(const std::string& value)
+void Encryption::setSpekeVersion(const std::string& value)
 {
-    kmUrl_ = value;
-    kmUrlIsSet_ = true;
+    spekeVersion_ = value;
+    spekeVersionIsSet_ = true;
 }
 
-bool Encryption::kmUrlIsSet() const
+bool Encryption::spekeVersionIsSet() const
 {
-    return kmUrlIsSet_;
+    return spekeVersionIsSet_;
 }
 
-void Encryption::unsetkmUrl()
+void Encryption::unsetspekeVersion()
 {
-    kmUrlIsSet_ = false;
+    spekeVersionIsSet_ = false;
+}
+
+std::string Encryption::getRequestMode() const
+{
+    return requestMode_;
+}
+
+void Encryption::setRequestMode(const std::string& value)
+{
+    requestMode_ = value;
+    requestModeIsSet_ = true;
+}
+
+bool Encryption::requestModeIsSet() const
+{
+    return requestModeIsSet_;
+}
+
+void Encryption::unsetrequestMode()
+{
+    requestModeIsSet_ = false;
+}
+
+std::vector<HttpHeader>& Encryption::getHttpHeaders()
+{
+    return httpHeaders_;
+}
+
+void Encryption::setHttpHeaders(const std::vector<HttpHeader>& value)
+{
+    httpHeaders_ = value;
+    httpHeadersIsSet_ = true;
+}
+
+bool Encryption::httpHeadersIsSet() const
+{
+    return httpHeadersIsSet_;
+}
+
+void Encryption::unsethttpHeaders()
+{
+    httpHeadersIsSet_ = false;
+}
+
+std::string Encryption::getUrn() const
+{
+    return urn_;
+}
+
+void Encryption::setUrn(const std::string& value)
+{
+    urn_ = value;
+    urnIsSet_ = true;
+}
+
+bool Encryption::urnIsSet() const
+{
+    return urnIsSet_;
+}
+
+void Encryption::unseturn()
+{
+    urnIsSet_ = false;
 }
 
 }

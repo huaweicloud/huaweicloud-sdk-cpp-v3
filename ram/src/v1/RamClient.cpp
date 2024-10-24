@@ -49,6 +49,9 @@ std::shared_ptr<AssociateResourceSharePermissionResponse> RamClient::associateRe
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -91,6 +94,9 @@ std::shared_ptr<DisassociateResourceSharePermissionResponse> RamClient::disassoc
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -142,6 +148,9 @@ std::shared_ptr<ListResourceSharePermissionsResponse> RamClient::listResourceSha
     if (request.markerIsSet()) {
         localVarQueryParams["marker"] = parameterToString(request.getMarker());
     }
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
 
     std::string localVarHttpBody;
 
@@ -171,6 +180,9 @@ std::shared_ptr<ListQuotaResponse> RamClient::listQuota(ListQuotaRequest &reques
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
 
     std::string localVarHttpBody;
 
@@ -206,6 +218,9 @@ std::shared_ptr<ListResourceTypesResponse> RamClient::listResourceTypes(ListReso
     if (request.markerIsSet()) {
         localVarQueryParams["marker"] = parameterToString(request.getMarker());
     }
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
 
     std::string localVarHttpBody;
 
@@ -235,6 +250,9 @@ std::shared_ptr<DisableOrganizationShareResponse> RamClient::disableOrganization
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
 
     std::string localVarHttpBody;
 
@@ -264,6 +282,9 @@ std::shared_ptr<EnableOrganizationShareResponse> RamClient::enableOrganizationSh
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
 
     std::string localVarHttpBody;
 
@@ -293,6 +314,9 @@ std::shared_ptr<ShowOrganizationShareResponse> RamClient::showOrganizationShare(
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
 
     std::string localVarHttpBody;
 
@@ -328,6 +352,9 @@ std::shared_ptr<ListPermissionVersionsResponse> RamClient::listPermissionVersion
     }
     if (request.markerIsSet()) {
         localVarQueryParams["marker"] = parameterToString(request.getMarker());
+    }
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
     }
 
     std::string localVarHttpBody;
@@ -370,6 +397,9 @@ std::shared_ptr<ListPermissionsResponse> RamClient::listPermissions(ListPermissi
     if (request.permissionTypeIsSet()) {
         localVarQueryParams["permission_type"] = parameterToString(request.getPermissionType());
     }
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
 
     std::string localVarHttpBody;
 
@@ -403,6 +433,9 @@ std::shared_ptr<ShowPermissionResponse> RamClient::showPermission(ShowPermission
     if (request.permissionVersionIsSet()) {
         localVarQueryParams["permission_version"] = parameterToString(request.getPermissionVersion());
     }
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
 
     std::string localVarHttpBody;
 
@@ -432,6 +465,9 @@ std::shared_ptr<SearchSharedPrincipalsResponse> RamClient::searchSharedPrincipal
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -473,6 +509,9 @@ std::shared_ptr<SearchSharedResourcesResponse> RamClient::searchSharedResources(
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -514,6 +553,9 @@ std::shared_ptr<CreateResourceShareResponse> RamClient::createResourceShare(Crea
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -556,6 +598,9 @@ std::shared_ptr<DeleteResourceShareResponse> RamClient::deleteResourceShare(Dele
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
 
     std::string localVarHttpBody;
 
@@ -585,6 +630,9 @@ std::shared_ptr<SearchResourceSharesResponse> RamClient::searchResourceShares(Se
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -627,6 +675,9 @@ std::shared_ptr<UpdateResourceShareResponse> RamClient::updateResourceShare(Upda
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -669,6 +720,9 @@ std::shared_ptr<AssociateResourceShareResponse> RamClient::associateResourceShar
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -711,6 +765,9 @@ std::shared_ptr<DisassociateResourceShareResponse> RamClient::disassociateResour
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -752,6 +809,9 @@ std::shared_ptr<SearchResourceShareAssociationsResponse> RamClient::searchResour
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -794,6 +854,9 @@ std::shared_ptr<AcceptResourceShareInvitationResponse> RamClient::acceptResource
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
 
     std::string localVarHttpBody;
 
@@ -824,6 +887,9 @@ std::shared_ptr<RejectResourceShareInvitationResponse> RamClient::rejectResource
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
 
     std::string localVarHttpBody;
 
@@ -853,6 +919,9 @@ std::shared_ptr<SearchResourceShareInvitationResponse> RamClient::searchResource
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -895,6 +964,9 @@ std::shared_ptr<BatchCreateResourceShareTagsResponse> RamClient::batchCreateReso
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -937,6 +1009,9 @@ std::shared_ptr<BatchDeleteResourceShareTagsResponse> RamClient::batchDeleteReso
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -984,6 +1059,9 @@ std::shared_ptr<ListResourceShareTagsResponse> RamClient::listResourceShareTags(
     if (request.markerIsSet()) {
         localVarQueryParams["marker"] = parameterToString(request.getMarker());
     }
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
 
     std::string localVarHttpBody;
 
@@ -1018,6 +1096,9 @@ std::shared_ptr<ListResourceSharesByTagsResponse> RamClient::listResourceSharesB
     }
     if (request.offsetIsSet()) {
         localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
     }
 
     std::string localVarHttpBody;
@@ -1060,6 +1141,9 @@ std::shared_ptr<SearchResourceShareCountByTagsResponse> RamClient::searchResourc
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {

@@ -44,7 +44,7 @@ public:
     /// MssPackageItem members
 
     /// <summary>
-    /// 客户自定义的拉流地址，包括方法、域名、路径和参数
+    /// 客户自定义的拉流地址，包括方法、域名、路径
     /// </summary>
 
     std::string getUrl() const;
@@ -62,7 +62,7 @@ public:
     void setStreamSelection(const std::vector<StreamSelectionItem>& value);
 
     /// <summary>
-    /// 频道输出分片的时长，为必选项  单位：秒。取值范围：1-10
+    /// 频道输出分片的时长，为必选项  单位：秒。取值范围：1-10 &gt; 修改分片时长会影响已录制内容的时移和回看服务，请谨慎修改！
     /// </summary>
 
     int32_t getSegmentDurationSeconds() const;

@@ -23,6 +23,10 @@ TableConfigCheckRequestV3::TableConfigCheckRequestV3()
     dbConfigsIsSet_ = false;
     tablesConfigsIsSet_ = false;
     tableReplConfigIsSet_ = false;
+    targetDatabaseName_ = "";
+    targetDatabaseNameIsSet_ = false;
+    isCreateTask_ = "";
+    isCreateTaskIsSet_ = false;
 }
 
 TableConfigCheckRequestV3::~TableConfigCheckRequestV3() = default;
@@ -55,6 +59,12 @@ web::json::value TableConfigCheckRequestV3::toJson() const
     }
     if(tableReplConfigIsSet_) {
         val[utility::conversions::to_string_t("table_repl_config")] = ModelBase::toJson(tableReplConfig_);
+    }
+    if(targetDatabaseNameIsSet_) {
+        val[utility::conversions::to_string_t("target_database_name")] = ModelBase::toJson(targetDatabaseName_);
+    }
+    if(isCreateTaskIsSet_) {
+        val[utility::conversions::to_string_t("is_create_task")] = ModelBase::toJson(isCreateTask_);
     }
 
     return val;
@@ -124,6 +134,24 @@ bool TableConfigCheckRequestV3::fromJson(const web::json::value& val)
             TableReplConfig refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTableReplConfig(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("target_database_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("target_database_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTargetDatabaseName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_create_task"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_create_task"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsCreateTask(refVal);
         }
     }
     return ok;
@@ -275,6 +303,48 @@ bool TableConfigCheckRequestV3::tableReplConfigIsSet() const
 void TableConfigCheckRequestV3::unsettableReplConfig()
 {
     tableReplConfigIsSet_ = false;
+}
+
+std::string TableConfigCheckRequestV3::getTargetDatabaseName() const
+{
+    return targetDatabaseName_;
+}
+
+void TableConfigCheckRequestV3::setTargetDatabaseName(const std::string& value)
+{
+    targetDatabaseName_ = value;
+    targetDatabaseNameIsSet_ = true;
+}
+
+bool TableConfigCheckRequestV3::targetDatabaseNameIsSet() const
+{
+    return targetDatabaseNameIsSet_;
+}
+
+void TableConfigCheckRequestV3::unsettargetDatabaseName()
+{
+    targetDatabaseNameIsSet_ = false;
+}
+
+std::string TableConfigCheckRequestV3::getIsCreateTask() const
+{
+    return isCreateTask_;
+}
+
+void TableConfigCheckRequestV3::setIsCreateTask(const std::string& value)
+{
+    isCreateTask_ = value;
+    isCreateTaskIsSet_ = true;
+}
+
+bool TableConfigCheckRequestV3::isCreateTaskIsSet() const
+{
+    return isCreateTaskIsSet_;
+}
+
+void TableConfigCheckRequestV3::unsetisCreateTask()
+{
+    isCreateTaskIsSet_ = false;
 }
 
 }

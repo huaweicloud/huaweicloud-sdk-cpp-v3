@@ -26,6 +26,7 @@ CreateOttChannelInfoReq::CreateOttChannelInfoReq()
     encoderSettingsIsSet_ = false;
     recordSettingsIsSet_ = false;
     endpointsIsSet_ = false;
+    encoderSettingsExpandIsSet_ = false;
 }
 
 CreateOttChannelInfoReq::~CreateOttChannelInfoReq() = default;
@@ -64,6 +65,9 @@ web::json::value CreateOttChannelInfoReq::toJson() const
     }
     if(endpointsIsSet_) {
         val[utility::conversions::to_string_t("endpoints")] = ModelBase::toJson(endpoints_);
+    }
+    if(encoderSettingsExpandIsSet_) {
+        val[utility::conversions::to_string_t("encoder_settings_expand")] = ModelBase::toJson(encoderSettingsExpand_);
     }
 
     return val;
@@ -151,6 +155,15 @@ bool CreateOttChannelInfoReq::fromJson(const web::json::value& val)
             std::vector<EndpointItem> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEndpoints(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("encoder_settings_expand"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("encoder_settings_expand"));
+        if(!fieldValue.is_null())
+        {
+            EncoderSettingsExpand refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEncoderSettingsExpand(refVal);
         }
     }
     return ok;
@@ -344,6 +357,27 @@ bool CreateOttChannelInfoReq::endpointsIsSet() const
 void CreateOttChannelInfoReq::unsetendpoints()
 {
     endpointsIsSet_ = false;
+}
+
+EncoderSettingsExpand CreateOttChannelInfoReq::getEncoderSettingsExpand() const
+{
+    return encoderSettingsExpand_;
+}
+
+void CreateOttChannelInfoReq::setEncoderSettingsExpand(const EncoderSettingsExpand& value)
+{
+    encoderSettingsExpand_ = value;
+    encoderSettingsExpandIsSet_ = true;
+}
+
+bool CreateOttChannelInfoReq::encoderSettingsExpandIsSet() const
+{
+    return encoderSettingsExpandIsSet_;
+}
+
+void CreateOttChannelInfoReq::unsetencoderSettingsExpand()
+{
+    encoderSettingsExpandIsSet_ = false;
 }
 
 }

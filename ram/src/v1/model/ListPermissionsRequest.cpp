@@ -12,6 +12,8 @@ namespace Model {
 
 ListPermissionsRequest::ListPermissionsRequest()
 {
+    xSecurityToken_ = "";
+    xSecurityTokenIsSet_ = false;
     limit_ = 0;
     limitIsSet_ = false;
     marker_ = "";
@@ -32,6 +34,9 @@ web::json::value ListPermissionsRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(xSecurityTokenIsSet_) {
+        val[utility::conversions::to_string_t("X-Security-Token")] = ModelBase::toJson(xSecurityToken_);
+    }
     if(limitIsSet_) {
         val[utility::conversions::to_string_t("limit")] = ModelBase::toJson(limit_);
     }
@@ -51,6 +56,15 @@ bool ListPermissionsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("X-Security-Token"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Security-Token"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXSecurityToken(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("limit"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("limit"));
         if(!fieldValue.is_null())
@@ -90,6 +104,27 @@ bool ListPermissionsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
+
+std::string ListPermissionsRequest::getXSecurityToken() const
+{
+    return xSecurityToken_;
+}
+
+void ListPermissionsRequest::setXSecurityToken(const std::string& value)
+{
+    xSecurityToken_ = value;
+    xSecurityTokenIsSet_ = true;
+}
+
+bool ListPermissionsRequest::xSecurityTokenIsSet() const
+{
+    return xSecurityTokenIsSet_;
+}
+
+void ListPermissionsRequest::unsetxSecurityToken()
+{
+    xSecurityTokenIsSet_ = false;
+}
 
 int32_t ListPermissionsRequest::getLimit() const
 {

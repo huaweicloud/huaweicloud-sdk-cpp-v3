@@ -10,8 +10,6 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
-#include <vector>
-#include <huaweicloud/live/v1/model/SourceRsp.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -85,15 +83,6 @@ public:
     void unsetid();
     void setId(const std::string& value);
 
-    /// <summary>
-    /// 推流URL列表。创建频道时，只有入流协议为RTMP_PUSH时，会返回推流URL列表
-    /// </summary>
-
-    std::vector<SourceRsp>& getSources();
-    bool sourcesIsSet() const;
-    void unsetsources();
-    void setSources(const std::vector<SourceRsp>& value);
-
 
 protected:
     std::string resultCode_;
@@ -106,8 +95,6 @@ protected:
     bool appNameIsSet_;
     std::string id_;
     bool idIsSet_;
-    std::vector<SourceRsp> sources_;
-    bool sourcesIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

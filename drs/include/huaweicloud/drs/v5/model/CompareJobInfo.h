@@ -122,6 +122,15 @@ public:
     void setCompareJobTag(const std::map<std::string, std::string>& value);
 
     /// <summary>
+    /// 对比任务选项。
+    /// </summary>
+
+    std::map<std::string, std::string>& getOptions();
+    bool optionsIsSet() const;
+    void unsetoptions();
+    void setOptions(const std::map<std::string, std::string>& value);
+
+    /// <summary>
     /// 失败原因。
     /// </summary>
 
@@ -129,6 +138,15 @@ public:
     bool errorMsgIsSet() const;
     void unseterrorMsg();
     void setErrorMsg(const std::string& value);
+
+    /// <summary>
+    /// 动态比对时延。
+    /// </summary>
+
+    int64_t getDynamicCompareDelay() const;
+    bool dynamicCompareDelayIsSet() const;
+    void unsetdynamicCompareDelay();
+    void setDynamicCompareDelay(int64_t value);
 
 
 protected:
@@ -150,8 +168,12 @@ protected:
     bool reportRemainSecondsIsSet_;
     std::map<std::string, std::string> compareJobTag_;
     bool compareJobTagIsSet_;
+    std::map<std::string, std::string> options_;
+    bool optionsIsSet_;
     std::string errorMsg_;
     bool errorMsgIsSet_;
+    int64_t dynamicCompareDelay_;
+    bool dynamicCompareDelayIsSet_;
 
 };
 

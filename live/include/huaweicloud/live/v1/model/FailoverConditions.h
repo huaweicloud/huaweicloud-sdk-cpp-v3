@@ -39,7 +39,7 @@ public:
     /// FailoverConditions members
 
     /// <summary>
-    /// 入流停止的时长阈值。到达此阈值后，自动触发主备切换  单位：毫秒，取值范围：0 - 3600000
+    /// 入流停止的时长阈值。到达此阈值后，自动触发主备切换。  单位：毫秒，取值范围：0 - 3600000。  非必填，默认填2000ms。
     /// </summary>
 
     int32_t getInputLossThresholdMsec() const;
@@ -48,7 +48,7 @@ public:
     void setInputLossThresholdMsec(int32_t value);
 
     /// <summary>
-    /// 以主入流URL为第一优先级（PRIMARY）或主备URL平等切换（EQUAL）  如果为平等切换时使用的是备URL，无需手工切换到主URL
+    /// 以主入流URL为第一优先级（PRIMARY）或主备URL平等切换（EQUAL）。  如果是平等切换时，使用的是备URL，不会自动切换至主URL。  非必填，默认值为EQUAL。
     /// </summary>
 
     std::string getInputPreference() const;

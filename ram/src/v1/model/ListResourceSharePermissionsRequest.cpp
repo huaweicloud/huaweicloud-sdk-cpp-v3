@@ -12,6 +12,8 @@ namespace Model {
 
 ListResourceSharePermissionsRequest::ListResourceSharePermissionsRequest()
 {
+    xSecurityToken_ = "";
+    xSecurityTokenIsSet_ = false;
     resourceShareId_ = "";
     resourceShareIdIsSet_ = false;
     permissionName_ = "";
@@ -32,6 +34,9 @@ web::json::value ListResourceSharePermissionsRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(xSecurityTokenIsSet_) {
+        val[utility::conversions::to_string_t("X-Security-Token")] = ModelBase::toJson(xSecurityToken_);
+    }
     if(resourceShareIdIsSet_) {
         val[utility::conversions::to_string_t("resource_share_id")] = ModelBase::toJson(resourceShareId_);
     }
@@ -51,6 +56,15 @@ bool ListResourceSharePermissionsRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("X-Security-Token"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Security-Token"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXSecurityToken(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("resource_share_id"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("resource_share_id"));
         if(!fieldValue.is_null())
@@ -90,6 +104,27 @@ bool ListResourceSharePermissionsRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
+
+std::string ListResourceSharePermissionsRequest::getXSecurityToken() const
+{
+    return xSecurityToken_;
+}
+
+void ListResourceSharePermissionsRequest::setXSecurityToken(const std::string& value)
+{
+    xSecurityToken_ = value;
+    xSecurityTokenIsSet_ = true;
+}
+
+bool ListResourceSharePermissionsRequest::xSecurityTokenIsSet() const
+{
+    return xSecurityTokenIsSet_;
+}
+
+void ListResourceSharePermissionsRequest::unsetxSecurityToken()
+{
+    xSecurityTokenIsSet_ = false;
+}
 
 std::string ListResourceSharePermissionsRequest::getResourceShareId() const
 {

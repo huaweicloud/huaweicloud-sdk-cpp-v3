@@ -105,6 +105,24 @@ public:
     void unsettableReplConfig();
     void setTableReplConfig(const TableReplConfig& value);
 
+    /// <summary>
+    /// 目标数据库名。字符长度限制3~128位，仅支持英文大小写字母、数字以及下划线。
+    /// </summary>
+
+    std::string getTargetDatabaseName() const;
+    bool targetDatabaseNameIsSet() const;
+    void unsettargetDatabaseName();
+    void setTargetDatabaseName(const std::string& value);
+
+    /// <summary>
+    /// 是否创建同步任务
+    /// </summary>
+
+    std::string getIsCreateTask() const;
+    bool isCreateTaskIsSet() const;
+    void unsetisCreateTask();
+    void setIsCreateTask(const std::string& value);
+
 
 protected:
     std::string sourceInstanceId_;
@@ -121,6 +139,10 @@ protected:
     bool tablesConfigsIsSet_;
     TableReplConfig tableReplConfig_;
     bool tableReplConfigIsSet_;
+    std::string targetDatabaseName_;
+    bool targetDatabaseNameIsSet_;
+    std::string isCreateTask_;
+    bool isCreateTaskIsSet_;
 
 };
 

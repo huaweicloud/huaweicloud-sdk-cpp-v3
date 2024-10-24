@@ -44,7 +44,7 @@ public:
     /// HlsPackageItem members
 
     /// <summary>
-    /// 客户自定义的拉流地址，包括方法、域名、路径和参数
+    /// 客户自定义的拉流地址，包括方法、域名、路径
     /// </summary>
 
     std::string getUrl() const;
@@ -71,7 +71,7 @@ public:
     void setHlsVersion(const std::string& value);
 
     /// <summary>
-    /// 频道输出分片的时长，为必选项  单位：秒。取值范围：1-10
+    /// 频道输出分片的时长，为必选项  单位：秒。取值范围：1-10 &gt; 修改分片时长会影响已录制内容的时移和回看服务，请谨慎修改！
     /// </summary>
 
     int32_t getSegmentDurationSeconds() const;
@@ -124,6 +124,15 @@ public:
     void unsetrequestArgs();
     void setRequestArgs(const PackageRequestArgs& value);
 
+    /// <summary>
+    /// 广告标识。  HLS取值：[\&quot;ENHANCED_SCTE35\&quot;]。 
+    /// </summary>
+
+    std::vector<std::string>& getAdMarker();
+    bool adMarkerIsSet() const;
+    void unsetadMarker();
+    void setAdMarker(const std::vector<std::string>& value);
+
 
 protected:
     std::string url_;
@@ -144,6 +153,8 @@ protected:
     bool extArgsIsSet_;
     PackageRequestArgs requestArgs_;
     bool requestArgsIsSet_;
+    std::vector<std::string> adMarker_;
+    bool adMarkerIsSet_;
 
 };
 

@@ -28,6 +28,7 @@
 #include <huaweicloud/ram/v1/model/EnableOrganizationShareResponse.h>
 #include <huaweicloud/ram/v1/model/ShowOrganizationShareRequest.h>
 #include <huaweicloud/ram/v1/model/ShowOrganizationShareResponse.h>
+#include <string>
 
 #include <huaweicloud/ram/v1/model/ListPermissionVersionsRequest.h>
 #include <huaweicloud/ram/v1/model/ListPermissionVersionsResponse.h>
@@ -40,10 +41,12 @@
 #include <huaweicloud/ram/v1/model/SearchSharedPrincipalsReqBody.h>
 #include <huaweicloud/ram/v1/model/SearchSharedPrincipalsRequest.h>
 #include <huaweicloud/ram/v1/model/SearchSharedPrincipalsResponse.h>
+#include <string>
 
 #include <huaweicloud/ram/v1/model/SearchSharedResourcesReqBody.h>
 #include <huaweicloud/ram/v1/model/SearchSharedResourcesRequest.h>
 #include <huaweicloud/ram/v1/model/SearchSharedResourcesResponse.h>
+#include <string>
 
 #include <huaweicloud/ram/v1/model/CreateResourceShareReqBody.h>
 #include <huaweicloud/ram/v1/model/CreateResourceShareRequest.h>
@@ -267,9 +270,9 @@ public:
     std::shared_ptr<AssociateResourceShareResponse> associateResourceShare(
         AssociateResourceShareRequest &request
     );
-    // 移除资源使用者和共享资源
+    // 移除资源使用者或共享资源
     //
-    // 将指定的资源使用者或共享资源从指定的资源共享实例中移除。
+    // 将指定的资源使用者或共享资源从指定的资源共享实例中移除。资源使用者也可以从指定的资源共享实例中主动退出。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DisassociateResourceShareResponse> disassociateResourceShare(

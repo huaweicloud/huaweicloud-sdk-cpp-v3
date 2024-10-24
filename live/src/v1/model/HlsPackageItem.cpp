@@ -25,6 +25,7 @@ HlsPackageItem::HlsPackageItem()
     adsIsSet_ = false;
     extArgsIsSet_ = false;
     requestArgsIsSet_ = false;
+    adMarkerIsSet_ = false;
 }
 
 HlsPackageItem::~HlsPackageItem() = default;
@@ -63,6 +64,9 @@ web::json::value HlsPackageItem::toJson() const
     }
     if(requestArgsIsSet_) {
         val[utility::conversions::to_string_t("request_args")] = ModelBase::toJson(requestArgs_);
+    }
+    if(adMarkerIsSet_) {
+        val[utility::conversions::to_string_t("ad_marker")] = ModelBase::toJson(adMarker_);
     }
 
     return val;
@@ -150,6 +154,15 @@ bool HlsPackageItem::fromJson(const web::json::value& val)
             PackageRequestArgs refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRequestArgs(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("ad_marker"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ad_marker"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAdMarker(refVal);
         }
     }
     return ok;
@@ -343,6 +356,27 @@ bool HlsPackageItem::requestArgsIsSet() const
 void HlsPackageItem::unsetrequestArgs()
 {
     requestArgsIsSet_ = false;
+}
+
+std::vector<std::string>& HlsPackageItem::getAdMarker()
+{
+    return adMarker_;
+}
+
+void HlsPackageItem::setAdMarker(const std::vector<std::string>& value)
+{
+    adMarker_ = value;
+    adMarkerIsSet_ = true;
+}
+
+bool HlsPackageItem::adMarkerIsSet() const
+{
+    return adMarkerIsSet_;
+}
+
+void HlsPackageItem::unsetadMarker()
+{
+    adMarkerIsSet_ = false;
 }
 
 }

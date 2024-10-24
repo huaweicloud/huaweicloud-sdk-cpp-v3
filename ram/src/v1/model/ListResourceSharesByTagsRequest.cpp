@@ -16,6 +16,8 @@ ListResourceSharesByTagsRequest::ListResourceSharesByTagsRequest()
     limitIsSet_ = false;
     offset_ = "";
     offsetIsSet_ = false;
+    xSecurityToken_ = "";
+    xSecurityTokenIsSet_ = false;
     bodyIsSet_ = false;
 }
 
@@ -34,6 +36,9 @@ web::json::value ListResourceSharesByTagsRequest::toJson() const
     }
     if(offsetIsSet_) {
         val[utility::conversions::to_string_t("offset")] = ModelBase::toJson(offset_);
+    }
+    if(xSecurityTokenIsSet_) {
+        val[utility::conversions::to_string_t("X-Security-Token")] = ModelBase::toJson(xSecurityToken_);
     }
     if(bodyIsSet_) {
         val[utility::conversions::to_string_t("body")] = ModelBase::toJson(body_);
@@ -61,6 +66,15 @@ bool ListResourceSharesByTagsRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setOffset(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Security-Token"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Security-Token"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXSecurityToken(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("body"))) {
@@ -116,6 +130,27 @@ bool ListResourceSharesByTagsRequest::offsetIsSet() const
 void ListResourceSharesByTagsRequest::unsetoffset()
 {
     offsetIsSet_ = false;
+}
+
+std::string ListResourceSharesByTagsRequest::getXSecurityToken() const
+{
+    return xSecurityToken_;
+}
+
+void ListResourceSharesByTagsRequest::setXSecurityToken(const std::string& value)
+{
+    xSecurityToken_ = value;
+    xSecurityTokenIsSet_ = true;
+}
+
+bool ListResourceSharesByTagsRequest::xSecurityTokenIsSet() const
+{
+    return xSecurityTokenIsSet_;
+}
+
+void ListResourceSharesByTagsRequest::unsetxSecurityToken()
+{
+    xSecurityTokenIsSet_ = false;
 }
 
 ResourceSharesByTagsReqBody ListResourceSharesByTagsRequest::getBody() const

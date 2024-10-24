@@ -23,6 +23,8 @@ DashPackageItem::DashPackageItem()
     adsIsSet_ = false;
     extArgsIsSet_ = false;
     requestArgsIsSet_ = false;
+    adMarker_ = "";
+    adMarkerIsSet_ = false;
 }
 
 DashPackageItem::~DashPackageItem() = default;
@@ -58,6 +60,9 @@ web::json::value DashPackageItem::toJson() const
     }
     if(requestArgsIsSet_) {
         val[utility::conversions::to_string_t("request_args")] = ModelBase::toJson(requestArgs_);
+    }
+    if(adMarkerIsSet_) {
+        val[utility::conversions::to_string_t("ad_marker")] = ModelBase::toJson(adMarker_);
     }
 
     return val;
@@ -136,6 +141,15 @@ bool DashPackageItem::fromJson(const web::json::value& val)
             PackageRequestArgs refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRequestArgs(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("ad_marker"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ad_marker"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAdMarker(refVal);
         }
     }
     return ok;
@@ -308,6 +322,27 @@ bool DashPackageItem::requestArgsIsSet() const
 void DashPackageItem::unsetrequestArgs()
 {
     requestArgsIsSet_ = false;
+}
+
+std::string DashPackageItem::getAdMarker() const
+{
+    return adMarker_;
+}
+
+void DashPackageItem::setAdMarker(const std::string& value)
+{
+    adMarker_ = value;
+    adMarkerIsSet_ = true;
+}
+
+bool DashPackageItem::adMarkerIsSet() const
+{
+    return adMarkerIsSet_;
+}
+
+void DashPackageItem::unsetadMarker()
+{
+    adMarkerIsSet_ = false;
 }
 
 }

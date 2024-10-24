@@ -10,6 +10,11 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 
 HttpRequestDef RamMeta::genRequestDefForAssociateResourceSharePermission() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
@@ -19,6 +24,11 @@ HttpRequestDef RamMeta::genRequestDefForAssociateResourceSharePermission() {
 
 HttpRequestDef RamMeta::genRequestDefForDisassociateResourceSharePermission() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
@@ -37,11 +47,21 @@ HttpRequestDef RamMeta::genRequestDefForListResourceSharePermissions() {
     reqDefBuilder.withRequestField(FieldDef().withName("Marker")
                   .withJsonTag("marker")
                   .withLocationType(Query_));
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
 HttpRequestDef RamMeta::genRequestDefForListQuota() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -53,21 +73,41 @@ HttpRequestDef RamMeta::genRequestDefForListResourceTypes() {
     reqDefBuilder.withRequestField(FieldDef().withName("Marker")
                   .withJsonTag("marker")
                   .withLocationType(Query_));
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
 HttpRequestDef RamMeta::genRequestDefForDisableOrganizationShare() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
 HttpRequestDef RamMeta::genRequestDefForEnableOrganizationShare() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
 HttpRequestDef RamMeta::genRequestDefForShowOrganizationShare() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -79,6 +119,11 @@ HttpRequestDef RamMeta::genRequestDefForListPermissionVersions() {
     reqDefBuilder.withRequestField(FieldDef().withName("Marker")
                   .withJsonTag("marker")
                   .withLocationType(Query_));
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -96,6 +141,11 @@ HttpRequestDef RamMeta::genRequestDefForListPermissions() {
     reqDefBuilder.withRequestField(FieldDef().withName("PermissionType")
                   .withJsonTag("permission_type")
                   .withLocationType(Query_));
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -104,11 +154,21 @@ HttpRequestDef RamMeta::genRequestDefForShowPermission() {
     reqDefBuilder.withRequestField(FieldDef().withName("PermissionVersion")
                   .withJsonTag("permission_version")
                   .withLocationType(Query_));
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
 HttpRequestDef RamMeta::genRequestDefForSearchSharedPrincipals() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
@@ -118,6 +178,11 @@ HttpRequestDef RamMeta::genRequestDefForSearchSharedPrincipals() {
 
 HttpRequestDef RamMeta::genRequestDefForSearchSharedResources() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
@@ -127,6 +192,11 @@ HttpRequestDef RamMeta::genRequestDefForSearchSharedResources() {
 
 HttpRequestDef RamMeta::genRequestDefForCreateResourceShare() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
@@ -136,11 +206,21 @@ HttpRequestDef RamMeta::genRequestDefForCreateResourceShare() {
 
 HttpRequestDef RamMeta::genRequestDefForDeleteResourceShare() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
 HttpRequestDef RamMeta::genRequestDefForSearchResourceShares() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
@@ -150,6 +230,11 @@ HttpRequestDef RamMeta::genRequestDefForSearchResourceShares() {
 
 HttpRequestDef RamMeta::genRequestDefForUpdateResourceShare() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
@@ -159,6 +244,11 @@ HttpRequestDef RamMeta::genRequestDefForUpdateResourceShare() {
 
 HttpRequestDef RamMeta::genRequestDefForAssociateResourceShare() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
@@ -168,6 +258,11 @@ HttpRequestDef RamMeta::genRequestDefForAssociateResourceShare() {
 
 HttpRequestDef RamMeta::genRequestDefForDisassociateResourceShare() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
@@ -177,6 +272,11 @@ HttpRequestDef RamMeta::genRequestDefForDisassociateResourceShare() {
 
 HttpRequestDef RamMeta::genRequestDefForSearchResourceShareAssociations() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
@@ -186,16 +286,31 @@ HttpRequestDef RamMeta::genRequestDefForSearchResourceShareAssociations() {
 
 HttpRequestDef RamMeta::genRequestDefForAcceptResourceShareInvitation() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
 HttpRequestDef RamMeta::genRequestDefForRejectResourceShareInvitation() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
 HttpRequestDef RamMeta::genRequestDefForSearchResourceShareInvitation() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
@@ -205,6 +320,11 @@ HttpRequestDef RamMeta::genRequestDefForSearchResourceShareInvitation() {
 
 HttpRequestDef RamMeta::genRequestDefForBatchCreateResourceShareTags() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
@@ -214,6 +334,11 @@ HttpRequestDef RamMeta::genRequestDefForBatchCreateResourceShareTags() {
 
 HttpRequestDef RamMeta::genRequestDefForBatchDeleteResourceShareTags() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
@@ -229,6 +354,11 @@ HttpRequestDef RamMeta::genRequestDefForListResourceShareTags() {
     reqDefBuilder.withRequestField(FieldDef().withName("Marker")
                   .withJsonTag("marker")
                   .withLocationType(Query_));
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -240,6 +370,11 @@ HttpRequestDef RamMeta::genRequestDefForListResourceSharesByTags() {
     reqDefBuilder.withRequestField(FieldDef().withName("Offset")
                   .withJsonTag("offset")
                   .withLocationType(Query_));
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
@@ -249,6 +384,11 @@ HttpRequestDef RamMeta::genRequestDefForListResourceSharesByTags() {
 
 HttpRequestDef RamMeta::genRequestDefForSearchResourceShareCountByTags() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").

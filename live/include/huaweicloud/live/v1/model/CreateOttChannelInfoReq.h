@@ -13,6 +13,7 @@
 #include <huaweicloud/live/v1/model/InputStreamInfo.h>
 #include <huaweicloud/live/v1/model/ModifyOttChannelEncoderSettings_encoder_settings.h>
 #include <huaweicloud/live/v1/model/EndpointItem.h>
+#include <huaweicloud/live/v1/model/EncoderSettingsExpand.h>
 #include <vector>
 #include <huaweicloud/live/v1/model/CreateOttChannelInfoReq_record_settings.h>
 
@@ -62,7 +63,7 @@ public:
     void setAppName(const std::string& value);
 
     /// <summary>
-    /// 频道ID。频道唯一标识，为必填项。频道ID不建议输入下划线“_”，否则会影响转码和截图任务
+    /// 频道ID。频道唯一标识，为必填项。
     /// </summary>
 
     std::string getId() const;
@@ -124,6 +125,15 @@ public:
     void unsetendpoints();
     void setEndpoints(const std::vector<EndpointItem>& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    EncoderSettingsExpand getEncoderSettingsExpand() const;
+    bool encoderSettingsExpandIsSet() const;
+    void unsetencoderSettingsExpand();
+    void setEncoderSettingsExpand(const EncoderSettingsExpand& value);
+
 
 protected:
     std::string domain_;
@@ -144,6 +154,8 @@ protected:
     bool recordSettingsIsSet_;
     std::vector<EndpointItem> endpoints_;
     bool endpointsIsSet_;
+    EncoderSettingsExpand encoderSettingsExpand_;
+    bool encoderSettingsExpandIsSet_;
 
 };
 

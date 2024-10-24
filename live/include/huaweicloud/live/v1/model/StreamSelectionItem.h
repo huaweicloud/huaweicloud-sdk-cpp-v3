@@ -48,7 +48,7 @@ public:
     void setKey(const std::string& value);
 
     /// <summary>
-    /// 最小码率，单位：bps 取值范围：0 - 104,857,600（100Mbps）
+    /// 最大码率，单位：bps  取值范围：0 - 104,857,600（100Mbps）
     /// </summary>
 
     int32_t getMaxBandwidth() const;
@@ -57,7 +57,7 @@ public:
     void setMaxBandwidth(int32_t value);
 
     /// <summary>
-    /// 最小码率，单位：bps 取值范围：0 - 104,857,600（100Mbps）
+    /// 最小码率，单位：bps  取值范围：0 - 104,857,600（100Mbps）
     /// </summary>
 
     int32_t getMinBandwidth() const;

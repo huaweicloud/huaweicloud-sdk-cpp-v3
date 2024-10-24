@@ -14,6 +14,8 @@ BatchDeleteResourceShareTagsRequest::BatchDeleteResourceShareTagsRequest()
 {
     resourceShareId_ = "";
     resourceShareIdIsSet_ = false;
+    xSecurityToken_ = "";
+    xSecurityTokenIsSet_ = false;
     bodyIsSet_ = false;
 }
 
@@ -29,6 +31,9 @@ web::json::value BatchDeleteResourceShareTagsRequest::toJson() const
 
     if(resourceShareIdIsSet_) {
         val[utility::conversions::to_string_t("resource_share_id")] = ModelBase::toJson(resourceShareId_);
+    }
+    if(xSecurityTokenIsSet_) {
+        val[utility::conversions::to_string_t("X-Security-Token")] = ModelBase::toJson(xSecurityToken_);
     }
     if(bodyIsSet_) {
         val[utility::conversions::to_string_t("body")] = ModelBase::toJson(body_);
@@ -47,6 +52,15 @@ bool BatchDeleteResourceShareTagsRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResourceShareId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("X-Security-Token"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Security-Token"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXSecurityToken(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("body"))) {
@@ -81,6 +95,27 @@ bool BatchDeleteResourceShareTagsRequest::resourceShareIdIsSet() const
 void BatchDeleteResourceShareTagsRequest::unsetresourceShareId()
 {
     resourceShareIdIsSet_ = false;
+}
+
+std::string BatchDeleteResourceShareTagsRequest::getXSecurityToken() const
+{
+    return xSecurityToken_;
+}
+
+void BatchDeleteResourceShareTagsRequest::setXSecurityToken(const std::string& value)
+{
+    xSecurityToken_ = value;
+    xSecurityTokenIsSet_ = true;
+}
+
+bool BatchDeleteResourceShareTagsRequest::xSecurityTokenIsSet() const
+{
+    return xSecurityTokenIsSet_;
+}
+
+void BatchDeleteResourceShareTagsRequest::unsetxSecurityToken()
+{
+    xSecurityTokenIsSet_ = false;
 }
 
 UntagResourceReqBody BatchDeleteResourceShareTagsRequest::getBody() const

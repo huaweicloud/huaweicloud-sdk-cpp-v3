@@ -19,7 +19,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 最大回看录制时长。在此时间段内会连续不断的录制，为必选项  单位：秒。取值为“0”时，表示不支持录制；最大支持录制14天
+/// 回看录制的配置信息。
 /// </summary>
 class HUAWEICLOUD_LIVE_V1_EXPORT  ModifyOttChannelRecordSettings_record_settings
     : public ModelBase

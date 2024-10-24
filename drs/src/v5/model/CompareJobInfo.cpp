@@ -29,8 +29,11 @@ CompareJobInfo::CompareJobInfo()
     reportRemainSeconds_ = "";
     reportRemainSecondsIsSet_ = false;
     compareJobTagIsSet_ = false;
+    optionsIsSet_ = false;
     errorMsg_ = "";
     errorMsgIsSet_ = false;
+    dynamicCompareDelay_ = 0L;
+    dynamicCompareDelayIsSet_ = false;
 }
 
 CompareJobInfo::~CompareJobInfo() = default;
@@ -70,8 +73,14 @@ web::json::value CompareJobInfo::toJson() const
     if(compareJobTagIsSet_) {
         val[utility::conversions::to_string_t("compare_job_tag")] = ModelBase::toJson(compareJobTag_);
     }
+    if(optionsIsSet_) {
+        val[utility::conversions::to_string_t("options")] = ModelBase::toJson(options_);
+    }
     if(errorMsgIsSet_) {
         val[utility::conversions::to_string_t("error_msg")] = ModelBase::toJson(errorMsg_);
+    }
+    if(dynamicCompareDelayIsSet_) {
+        val[utility::conversions::to_string_t("dynamic_compare_delay")] = ModelBase::toJson(dynamicCompareDelay_);
     }
 
     return val;
@@ -161,6 +170,15 @@ bool CompareJobInfo::fromJson(const web::json::value& val)
             setCompareJobTag(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("options"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("options"));
+        if(!fieldValue.is_null())
+        {
+            std::map<std::string, std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setOptions(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("error_msg"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("error_msg"));
         if(!fieldValue.is_null())
@@ -168,6 +186,15 @@ bool CompareJobInfo::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setErrorMsg(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("dynamic_compare_delay"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("dynamic_compare_delay"));
+        if(!fieldValue.is_null())
+        {
+            int64_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDynamicCompareDelay(refVal);
         }
     }
     return ok;
@@ -363,6 +390,27 @@ void CompareJobInfo::unsetcompareJobTag()
     compareJobTagIsSet_ = false;
 }
 
+std::map<std::string, std::string>& CompareJobInfo::getOptions()
+{
+    return options_;
+}
+
+void CompareJobInfo::setOptions(const std::map<std::string, std::string>& value)
+{
+    options_ = value;
+    optionsIsSet_ = true;
+}
+
+bool CompareJobInfo::optionsIsSet() const
+{
+    return optionsIsSet_;
+}
+
+void CompareJobInfo::unsetoptions()
+{
+    optionsIsSet_ = false;
+}
+
 std::string CompareJobInfo::getErrorMsg() const
 {
     return errorMsg_;
@@ -382,6 +430,27 @@ bool CompareJobInfo::errorMsgIsSet() const
 void CompareJobInfo::unseterrorMsg()
 {
     errorMsgIsSet_ = false;
+}
+
+int64_t CompareJobInfo::getDynamicCompareDelay() const
+{
+    return dynamicCompareDelay_;
+}
+
+void CompareJobInfo::setDynamicCompareDelay(int64_t value)
+{
+    dynamicCompareDelay_ = value;
+    dynamicCompareDelayIsSet_ = true;
+}
+
+bool CompareJobInfo::dynamicCompareDelayIsSet() const
+{
+    return dynamicCompareDelayIsSet_;
+}
+
+void CompareJobInfo::unsetdynamicCompareDelay()
+{
+    dynamicCompareDelayIsSet_ = false;
 }
 
 }

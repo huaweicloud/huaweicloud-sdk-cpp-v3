@@ -103,15 +103,24 @@ public:
     static HttpRequestDef genRequestDefForShowSslCertDownloadLink();
     static HttpRequestDef genRequestDefForShowUpgradeCandidateVersions();
     static HttpRequestDef genRequestDefForStartInstance();
+    static HttpRequestDef genRequestDefForStartMysqlCompatibility();
     static HttpRequestDef genRequestDefForStopBackup();
+    static HttpRequestDef genRequestDefForStopInstance();
     static HttpRequestDef genRequestDefForSwitchConfiguration();
     static HttpRequestDef genRequestDefForSwitchShard();
     static HttpRequestDef genRequestDefForUpdateInstanceConfiguration();
     static HttpRequestDef genRequestDefForUpdateInstanceName();
+    static HttpRequestDef genRequestDefForUpdateMysqlCompatibility();
     static HttpRequestDef genRequestDefForUpgradeInstanceVersion();
     static HttpRequestDef genRequestDefForUpgradeInstancesVersion();
     static HttpRequestDef genRequestDefForValidateParaGroupName();
     static HttpRequestDef genRequestDefForValidateWeakPassword();
+    static HttpRequestDef genRequestDefForCreateLimitTask();
+    static HttpRequestDef genRequestDefForDeleteLimitTask();
+    static HttpRequestDef genRequestDefForListLimitTask();
+    static HttpRequestDef genRequestDefForListNodeLimitSqlModel();
+    static HttpRequestDef genRequestDefForShowLimitTask();
+    static HttpRequestDef genRequestDefForUpdateLimitTask();
 };
 
 }

@@ -75,7 +75,7 @@ public:
     void setAddressSetType(int32_t value);
 
     /// <summary>
-    /// 地址类型0 ipv4,1 ipv6
+    /// 地址类型0 ipv4，1 ipv6
     /// </summary>
 
     int32_t getAddressType() const;

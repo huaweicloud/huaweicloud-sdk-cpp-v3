@@ -51,7 +51,7 @@ public:
     void setRuleId(const std::string& value);
 
     /// <summary>
-    /// 地址类型0 ipv4,1 ipv6
+    /// 地址类型0 ipv4，1 ipv6
     /// </summary>
 
     int32_t getAddressType() const;
@@ -78,7 +78,7 @@ public:
     void setDirection(int32_t value);
 
     /// <summary>
-    /// 动作0：permit,1：deny
+    /// 动作0：permit，1：deny
     /// </summary>
 
     int32_t getActionType() const;
@@ -87,7 +87,7 @@ public:
     void setActionType(int32_t value);
 
     /// <summary>
-    /// 规则下发状态 0：禁用,1：启用
+    /// 规则下发状态 0：禁用，1：启用
     /// </summary>
 
     int32_t getStatus() const;
@@ -123,7 +123,7 @@ public:
     void setLongConnectEnable(int32_t value);
 
     /// <summary>
-    /// 长连接时长小时
+    /// 长连接时长对应小时
     /// </summary>
 
     int64_t getLongConnectTimeHour() const;
@@ -132,7 +132,7 @@ public:
     void setLongConnectTimeHour(int64_t value);
 
     /// <summary>
-    /// 长连接时长分钟
+    /// 长连接时长对应分钟
     /// </summary>
 
     int64_t getLongConnectTimeMinute() const;
@@ -177,7 +177,7 @@ public:
     void setService(const RuleServiceDtoForResponse& value);
 
     /// <summary>
-    /// 规则type，0：互联网规则，1：vpc规则，2：nat规则
+    /// 规则类型，0：互联网规则，1：vpc规则，2：nat规则
     /// </summary>
 
     int32_t getType() const;
@@ -186,7 +186,7 @@ public:
     void setType(int32_t value);
 
     /// <summary>
-    /// 创建时间
+    /// 规则创建时间，例如：\&quot;2024-08-12 08:40:00\&quot;
     /// </summary>
 
     std::string getCreatedDate() const;
@@ -195,7 +195,7 @@ public:
     void setCreatedDate(const std::string& value);
 
     /// <summary>
-    /// 最后开启时间
+    /// 规则最后开启时间，例如：\&quot;2024-08-12 08:40:00\&quot;
     /// </summary>
 
     std::string getLastOpenTime() const;

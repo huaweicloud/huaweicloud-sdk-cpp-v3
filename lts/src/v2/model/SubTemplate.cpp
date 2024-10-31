@@ -16,6 +16,8 @@ SubTemplate::SubTemplate()
     subTypeIsSet_ = false;
     content_ = "";
     contentIsSet_ = false;
+    topic_ = "";
+    topicIsSet_ = false;
 }
 
 SubTemplate::~SubTemplate() = default;
@@ -33,6 +35,9 @@ web::json::value SubTemplate::toJson() const
     }
     if(contentIsSet_) {
         val[utility::conversions::to_string_t("content")] = ModelBase::toJson(content_);
+    }
+    if(topicIsSet_) {
+        val[utility::conversions::to_string_t("topic")] = ModelBase::toJson(topic_);
     }
 
     return val;
@@ -57,6 +62,15 @@ bool SubTemplate::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setContent(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("topic"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("topic"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTopic(refVal);
         }
     }
     return ok;
@@ -103,6 +117,27 @@ bool SubTemplate::contentIsSet() const
 void SubTemplate::unsetcontent()
 {
     contentIsSet_ = false;
+}
+
+std::string SubTemplate::getTopic() const
+{
+    return topic_;
+}
+
+void SubTemplate::setTopic(const std::string& value)
+{
+    topic_ = value;
+    topicIsSet_ = true;
+}
+
+bool SubTemplate::topicIsSet() const
+{
+    return topicIsSet_;
+}
+
+void SubTemplate::unsettopic()
+{
+    topicIsSet_ = false;
 }
 
 }

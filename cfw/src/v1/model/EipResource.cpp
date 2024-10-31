@@ -42,8 +42,6 @@ EipResource::EipResource()
     tagsIsSet_ = false;
     domainId_ = "";
     domainIdIsSet_ = false;
-    owner_ = "";
-    ownerIsSet_ = false;
     fwDomainId_ = "";
     fwDomainIdIsSet_ = false;
 }
@@ -102,9 +100,6 @@ web::json::value EipResource::toJson() const
     }
     if(domainIdIsSet_) {
         val[utility::conversions::to_string_t("domain_id")] = ModelBase::toJson(domainId_);
-    }
-    if(ownerIsSet_) {
-        val[utility::conversions::to_string_t("owner")] = ModelBase::toJson(owner_);
     }
     if(fwDomainIdIsSet_) {
         val[utility::conversions::to_string_t("fw_domain_id")] = ModelBase::toJson(fwDomainId_);
@@ -249,15 +244,6 @@ bool EipResource::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDomainId(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("owner"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("owner"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOwner(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("fw_domain_id"))) {
@@ -586,27 +572,6 @@ bool EipResource::domainIdIsSet() const
 void EipResource::unsetdomainId()
 {
     domainIdIsSet_ = false;
-}
-
-std::string EipResource::getOwner() const
-{
-    return owner_;
-}
-
-void EipResource::setOwner(const std::string& value)
-{
-    owner_ = value;
-    ownerIsSet_ = true;
-}
-
-bool EipResource::ownerIsSet() const
-{
-    return ownerIsSet_;
-}
-
-void EipResource::unsetowner()
-{
-    ownerIsSet_ = false;
 }
 
 std::string EipResource::getFwDomainId() const

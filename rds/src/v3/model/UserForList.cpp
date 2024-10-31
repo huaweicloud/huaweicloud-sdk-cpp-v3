@@ -14,6 +14,8 @@ UserForList::UserForList()
 {
     name_ = "";
     nameIsSet_ = false;
+    databasesIsSet_ = false;
+    hostsIsSet_ = false;
 }
 
 UserForList::~UserForList() = default;
@@ -29,6 +31,12 @@ web::json::value UserForList::toJson() const
     if(nameIsSet_) {
         val[utility::conversions::to_string_t("name")] = ModelBase::toJson(name_);
     }
+    if(databasesIsSet_) {
+        val[utility::conversions::to_string_t("databases")] = ModelBase::toJson(databases_);
+    }
+    if(hostsIsSet_) {
+        val[utility::conversions::to_string_t("hosts")] = ModelBase::toJson(hosts_);
+    }
 
     return val;
 }
@@ -43,6 +51,24 @@ bool UserForList::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("databases"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("databases"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<DatabaseWithPrivilegeObject> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDatabases(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("hosts"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("hosts"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHosts(refVal);
         }
     }
     return ok;
@@ -68,6 +94,48 @@ bool UserForList::nameIsSet() const
 void UserForList::unsetname()
 {
     nameIsSet_ = false;
+}
+
+std::vector<DatabaseWithPrivilegeObject>& UserForList::getDatabases()
+{
+    return databases_;
+}
+
+void UserForList::setDatabases(const std::vector<DatabaseWithPrivilegeObject>& value)
+{
+    databases_ = value;
+    databasesIsSet_ = true;
+}
+
+bool UserForList::databasesIsSet() const
+{
+    return databasesIsSet_;
+}
+
+void UserForList::unsetdatabases()
+{
+    databasesIsSet_ = false;
+}
+
+std::vector<std::string>& UserForList::getHosts()
+{
+    return hosts_;
+}
+
+void UserForList::setHosts(const std::vector<std::string>& value)
+{
+    hosts_ = value;
+    hostsIsSet_ = true;
+}
+
+bool UserForList::hostsIsSet() const
+{
+    return hostsIsSet_;
+}
+
+void UserForList::unsethosts()
+{
+    hostsIsSet_ = false;
 }
 
 }

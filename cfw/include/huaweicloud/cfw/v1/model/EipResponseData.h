@@ -58,7 +58,7 @@ public:
     void setOffset(int32_t value);
 
     /// <summary>
-    /// 总数
+    /// 查询获得EIP列表总数
     /// </summary>
 
     int32_t getTotal() const;

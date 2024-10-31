@@ -18,7 +18,6 @@ DomainInfo::DomainInfo()
     domainNameIsSet_ = false;
     description_ = "";
     descriptionIsSet_ = false;
-    dnsIpsIsSet_ = false;
 }
 
 DomainInfo::~DomainInfo() = default;
@@ -39,9 +38,6 @@ web::json::value DomainInfo::toJson() const
     }
     if(descriptionIsSet_) {
         val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
-    }
-    if(dnsIpsIsSet_) {
-        val[utility::conversions::to_string_t("dns_ips")] = ModelBase::toJson(dnsIps_);
     }
 
     return val;
@@ -75,15 +71,6 @@ bool DomainInfo::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDescription(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("dns_ips"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("dns_ips"));
-        if(!fieldValue.is_null())
-        {
-            std::vector<std::string> refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setDnsIps(refVal);
         }
     }
     return ok;
@@ -151,27 +138,6 @@ bool DomainInfo::descriptionIsSet() const
 void DomainInfo::unsetdescription()
 {
     descriptionIsSet_ = false;
-}
-
-std::vector<std::string>& DomainInfo::getDnsIps()
-{
-    return dnsIps_;
-}
-
-void DomainInfo::setDnsIps(const std::vector<std::string>& value)
-{
-    dnsIps_ = value;
-    dnsIpsIsSet_ = true;
-}
-
-bool DomainInfo::dnsIpsIsSet() const
-{
-    return dnsIpsIsSet_;
-}
-
-void DomainInfo::unsetdnsIps()
-{
-    dnsIpsIsSet_ = false;
 }
 
 }

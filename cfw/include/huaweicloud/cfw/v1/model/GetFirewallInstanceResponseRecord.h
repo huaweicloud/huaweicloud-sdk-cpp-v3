@@ -44,7 +44,7 @@ public:
     /// GetFirewallInstanceResponseRecord members
 
     /// <summary>
-    /// 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)。
+    /// 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id。，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)，默认情况下，fw_instance_Id为空时，返回账号下第一个墙的信息；fw_instance_Id非空时，返回与fw_instance_Id对应墙的信息。
     /// </summary>
 
     std::string getFwInstanceId() const;
@@ -62,7 +62,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 集群类型
+    /// 集群类型，包含主备（0）和集群（1）两种方式，主备模式包含四个节点，2个主节点构成集群，剩余两个节点为主节点的备节点，集群模式仅拉起两个节点作为集群。
     /// </summary>
 
     int32_t getHaType() const;
@@ -80,7 +80,7 @@ public:
     void setChargeMode(int32_t value);
 
     /// <summary>
-    /// 服务类型
+    /// 防火墙防护类型，目前仅支持0，互联网防护
     /// </summary>
 
     int32_t getServiceType() const;
@@ -89,7 +89,7 @@ public:
     void setServiceType(int32_t value);
 
     /// <summary>
-    /// 引擎类型
+    /// 引擎类型，0：自研引擎 1：山石引擎 3：天融信引擎
     /// </summary>
 
     int32_t getEngineType() const;
@@ -134,7 +134,7 @@ public:
     void setIsOldFirewallInstance(bool value);
 
     /// <summary>
-    /// 是否支持obs
+    /// 是否支持obs，true表示是，false表示不是
     /// </summary>
 
     bool isIsAvailableObs() const;
@@ -143,7 +143,7 @@ public:
     void setIsAvailableObs(bool value);
 
     /// <summary>
-    /// 是否支持威胁标签
+    /// 是否支持威胁情报标签，true表示是，false表示不是
     /// </summary>
 
     bool isIsSupportThreatTags() const;
@@ -188,7 +188,7 @@ public:
     void setFwInstanceName(const std::string& value);
 
     /// <summary>
-    /// 企业项目id，用户支持企业项目后，由企业项目生成的id。
+    /// 企业项目ID，用户根据组织规划企业项目，对应的ID为企业项目ID，可通过[如何获取企业项目ID](cfw_02_0027.xml)获取，用户未开启企业项目时为0
     /// </summary>
 
     std::string getEnterpriseProjectId() const;
@@ -197,7 +197,7 @@ public:
     void setEnterpriseProjectId(const std::string& value);
 
     /// <summary>
-    /// 资源id
+    /// 防火墙资源id，同fw_instance_id
     /// </summary>
 
     std::string getResourceId() const;
@@ -215,7 +215,7 @@ public:
     void setSupportUrlFiltering(bool value);
 
     /// <summary>
-    /// 标签列表
+    /// 标签列表，标签键值map转化的json字符串，如\&quot;{\\\&quot;key\\\&quot;:\\\&quot;value\\\&quot;}\&quot;
     /// </summary>
 
     std::string getTags() const;

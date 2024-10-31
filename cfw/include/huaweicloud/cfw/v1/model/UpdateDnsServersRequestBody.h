@@ -41,7 +41,7 @@ public:
     /// UpdateDnsServersRequestBody members
 
     /// <summary>
-    /// DNS服务器
+    /// DNS服务器列表
     /// </summary>
 
     std::vector<UpdateDnsServersRequestBody_dns_server>& getDnsServer();
@@ -50,7 +50,7 @@ public:
     void setDnsServer(const std::vector<UpdateDnsServersRequestBody_dns_server>& value);
 
     /// <summary>
-    /// 健康检查域名
+    /// 健康检查域名，可通过[查询dns服务器列表接口](ListDnsServers.xml)查询获得，通过返回值中的data.health_check_domain_name（.表示各对象之间层级的区分）获得。
     /// </summary>
 
     std::string getHealthCheckDomainName() const;

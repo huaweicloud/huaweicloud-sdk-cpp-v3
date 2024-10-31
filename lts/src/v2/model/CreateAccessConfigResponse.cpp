@@ -30,6 +30,21 @@ CreateAccessConfigResponse::CreateAccessConfigResponse()
     binaryCollectIsSet_ = false;
     clusterId_ = "";
     clusterIdIsSet_ = false;
+    encodingFormat_ = "";
+    encodingFormatIsSet_ = false;
+    incrementalCollect_ = false;
+    incrementalCollectIsSet_ = false;
+    processorType_ = "";
+    processorTypeIsSet_ = false;
+    demoLog_ = "";
+    demoLogIsSet_ = false;
+    demoFieldsIsSet_ = false;
+    processorsIsSet_ = false;
+    applicationId_ = "";
+    applicationIdIsSet_ = false;
+    environmentId_ = "";
+    environmentIdIsSet_ = false;
+    componentIdIsSet_ = false;
 }
 
 CreateAccessConfigResponse::~CreateAccessConfigResponse() = default;
@@ -74,6 +89,33 @@ web::json::value CreateAccessConfigResponse::toJson() const
     }
     if(clusterIdIsSet_) {
         val[utility::conversions::to_string_t("cluster_id")] = ModelBase::toJson(clusterId_);
+    }
+    if(encodingFormatIsSet_) {
+        val[utility::conversions::to_string_t("encoding_format")] = ModelBase::toJson(encodingFormat_);
+    }
+    if(incrementalCollectIsSet_) {
+        val[utility::conversions::to_string_t("incremental_collect")] = ModelBase::toJson(incrementalCollect_);
+    }
+    if(processorTypeIsSet_) {
+        val[utility::conversions::to_string_t("processor_type")] = ModelBase::toJson(processorType_);
+    }
+    if(demoLogIsSet_) {
+        val[utility::conversions::to_string_t("demo_log")] = ModelBase::toJson(demoLog_);
+    }
+    if(demoFieldsIsSet_) {
+        val[utility::conversions::to_string_t("demo_fields")] = ModelBase::toJson(demoFields_);
+    }
+    if(processorsIsSet_) {
+        val[utility::conversions::to_string_t("processors")] = ModelBase::toJson(processors_);
+    }
+    if(applicationIdIsSet_) {
+        val[utility::conversions::to_string_t("application_id")] = ModelBase::toJson(applicationId_);
+    }
+    if(environmentIdIsSet_) {
+        val[utility::conversions::to_string_t("environment_id")] = ModelBase::toJson(environmentId_);
+    }
+    if(componentIdIsSet_) {
+        val[utility::conversions::to_string_t("component_id")] = ModelBase::toJson(componentId_);
     }
 
     return val;
@@ -179,6 +221,87 @@ bool CreateAccessConfigResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setClusterId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("encoding_format"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("encoding_format"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEncodingFormat(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("incremental_collect"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("incremental_collect"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIncrementalCollect(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("processor_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("processor_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProcessorType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("demo_log"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("demo_log"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDemoLog(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("demo_fields"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("demo_fields"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<DemoFieldAccess> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDemoFields(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("processors"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("processors"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<Processor> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProcessors(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("application_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("application_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setApplicationId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("environment_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("environment_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEnvironmentId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("component_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("component_id"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setComponentId(refVal);
         }
     }
     return ok;
@@ -414,6 +537,195 @@ bool CreateAccessConfigResponse::clusterIdIsSet() const
 void CreateAccessConfigResponse::unsetclusterId()
 {
     clusterIdIsSet_ = false;
+}
+
+std::string CreateAccessConfigResponse::getEncodingFormat() const
+{
+    return encodingFormat_;
+}
+
+void CreateAccessConfigResponse::setEncodingFormat(const std::string& value)
+{
+    encodingFormat_ = value;
+    encodingFormatIsSet_ = true;
+}
+
+bool CreateAccessConfigResponse::encodingFormatIsSet() const
+{
+    return encodingFormatIsSet_;
+}
+
+void CreateAccessConfigResponse::unsetencodingFormat()
+{
+    encodingFormatIsSet_ = false;
+}
+
+bool CreateAccessConfigResponse::isIncrementalCollect() const
+{
+    return incrementalCollect_;
+}
+
+void CreateAccessConfigResponse::setIncrementalCollect(bool value)
+{
+    incrementalCollect_ = value;
+    incrementalCollectIsSet_ = true;
+}
+
+bool CreateAccessConfigResponse::incrementalCollectIsSet() const
+{
+    return incrementalCollectIsSet_;
+}
+
+void CreateAccessConfigResponse::unsetincrementalCollect()
+{
+    incrementalCollectIsSet_ = false;
+}
+
+std::string CreateAccessConfigResponse::getProcessorType() const
+{
+    return processorType_;
+}
+
+void CreateAccessConfigResponse::setProcessorType(const std::string& value)
+{
+    processorType_ = value;
+    processorTypeIsSet_ = true;
+}
+
+bool CreateAccessConfigResponse::processorTypeIsSet() const
+{
+    return processorTypeIsSet_;
+}
+
+void CreateAccessConfigResponse::unsetprocessorType()
+{
+    processorTypeIsSet_ = false;
+}
+
+std::string CreateAccessConfigResponse::getDemoLog() const
+{
+    return demoLog_;
+}
+
+void CreateAccessConfigResponse::setDemoLog(const std::string& value)
+{
+    demoLog_ = value;
+    demoLogIsSet_ = true;
+}
+
+bool CreateAccessConfigResponse::demoLogIsSet() const
+{
+    return demoLogIsSet_;
+}
+
+void CreateAccessConfigResponse::unsetdemoLog()
+{
+    demoLogIsSet_ = false;
+}
+
+std::vector<DemoFieldAccess>& CreateAccessConfigResponse::getDemoFields()
+{
+    return demoFields_;
+}
+
+void CreateAccessConfigResponse::setDemoFields(const std::vector<DemoFieldAccess>& value)
+{
+    demoFields_ = value;
+    demoFieldsIsSet_ = true;
+}
+
+bool CreateAccessConfigResponse::demoFieldsIsSet() const
+{
+    return demoFieldsIsSet_;
+}
+
+void CreateAccessConfigResponse::unsetdemoFields()
+{
+    demoFieldsIsSet_ = false;
+}
+
+std::vector<Processor>& CreateAccessConfigResponse::getProcessors()
+{
+    return processors_;
+}
+
+void CreateAccessConfigResponse::setProcessors(const std::vector<Processor>& value)
+{
+    processors_ = value;
+    processorsIsSet_ = true;
+}
+
+bool CreateAccessConfigResponse::processorsIsSet() const
+{
+    return processorsIsSet_;
+}
+
+void CreateAccessConfigResponse::unsetprocessors()
+{
+    processorsIsSet_ = false;
+}
+
+std::string CreateAccessConfigResponse::getApplicationId() const
+{
+    return applicationId_;
+}
+
+void CreateAccessConfigResponse::setApplicationId(const std::string& value)
+{
+    applicationId_ = value;
+    applicationIdIsSet_ = true;
+}
+
+bool CreateAccessConfigResponse::applicationIdIsSet() const
+{
+    return applicationIdIsSet_;
+}
+
+void CreateAccessConfigResponse::unsetapplicationId()
+{
+    applicationIdIsSet_ = false;
+}
+
+std::string CreateAccessConfigResponse::getEnvironmentId() const
+{
+    return environmentId_;
+}
+
+void CreateAccessConfigResponse::setEnvironmentId(const std::string& value)
+{
+    environmentId_ = value;
+    environmentIdIsSet_ = true;
+}
+
+bool CreateAccessConfigResponse::environmentIdIsSet() const
+{
+    return environmentIdIsSet_;
+}
+
+void CreateAccessConfigResponse::unsetenvironmentId()
+{
+    environmentIdIsSet_ = false;
+}
+
+std::vector<std::string>& CreateAccessConfigResponse::getComponentId()
+{
+    return componentId_;
+}
+
+void CreateAccessConfigResponse::setComponentId(const std::vector<std::string>& value)
+{
+    componentId_ = value;
+    componentIdIsSet_ = true;
+}
+
+bool CreateAccessConfigResponse::componentIdIsSet() const
+{
+    return componentIdIsSet_;
+}
+
+void CreateAccessConfigResponse::unsetcomponentId()
+{
+    componentIdIsSet_ = false;
 }
 
 }

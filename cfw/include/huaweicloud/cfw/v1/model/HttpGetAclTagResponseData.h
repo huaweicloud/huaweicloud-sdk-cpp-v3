@@ -58,7 +58,7 @@ public:
     void setLimit(int32_t value);
 
     /// <summary>
-    /// 总数
+    /// 规则标签总数
     /// </summary>
 
     int32_t getTotal() const;
@@ -67,7 +67,7 @@ public:
     void setTotal(int32_t value);
 
     /// <summary>
-    /// 标签列表
+    /// 规则标签列表
     /// </summary>
 
     std::vector<TagsVO>& getRecords();

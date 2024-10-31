@@ -13,7 +13,7 @@ namespace Model {
 
 ScanSkeyKvResponse::ScanSkeyKvResponse()
 {
-    returnedCount_ = 0;
+    returnedCount_ = 0L;
     returnedCountIsSet_ = false;
     filteredCount_ = 0;
     filteredCountIsSet_ = false;
@@ -95,12 +95,12 @@ bool ScanSkeyKvResponse::fromBson(const Viewer &viewer)
     return true;
 }
 
-int32_t ScanSkeyKvResponse::getReturnedCount() const
+int64_t ScanSkeyKvResponse::getReturnedCount() const
 {
     return returnedCount_;
 }
 
-void ScanSkeyKvResponse::setReturnedCount(int32_t value)
+void ScanSkeyKvResponse::setReturnedCount(int64_t value)
 {
     returnedCount_ = value;
     returnedCountIsSet_ = true;

@@ -110,6 +110,24 @@ public:
     void unsetltsAlarmType();
     void setLtsAlarmType(const std::string& value);
 
+    /// <summary>
+    /// 日志组原始名称
+    /// </summary>
+
+    std::string getLogGroupName() const;
+    bool logGroupNameIsSet() const;
+    void unsetlogGroupName();
+    void setLogGroupName(const std::string& value);
+
+    /// <summary>
+    /// 日志流原始名称
+    /// </summary>
+
+    std::string getLogStreamName() const;
+    bool logStreamNameIsSet() const;
+    void unsetlogStreamName();
+    void setLogStreamName(const std::string& value);
+
 
 protected:
     std::string eventType_;
@@ -128,6 +146,10 @@ protected:
     bool resourceProviderIsSet_;
     std::string ltsAlarmType_;
     bool ltsAlarmTypeIsSet_;
+    std::string logGroupName_;
+    bool logGroupNameIsSet_;
+    std::string logStreamName_;
+    bool logStreamNameIsSet_;
 
 };
 

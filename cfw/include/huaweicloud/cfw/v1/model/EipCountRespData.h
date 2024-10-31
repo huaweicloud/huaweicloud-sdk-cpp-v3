@@ -9,7 +9,6 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <string>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -39,16 +38,7 @@ public:
     /// EipCountRespData members
 
     /// <summary>
-    /// 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id。
-    /// </summary>
-
-    std::string getObjectId() const;
-    bool objectIdIsSet() const;
-    void unsetobjectId();
-    void setObjectId(const std::string& value);
-
-    /// <summary>
-    /// EIP总数
+    /// 总体EIP数
     /// </summary>
 
     int32_t getEipTotal() const;
@@ -66,7 +56,7 @@ public:
     void setEipProtected(int32_t value);
 
     /// <summary>
-    /// 该当前防火墙防护EIP数量
+    /// 当前防火墙防护EIP数量
     /// </summary>
 
     int32_t getEipProtectedSelf() const;
@@ -76,8 +66,6 @@ public:
 
 
 protected:
-    std::string objectId_;
-    bool objectIdIsSet_;
     int32_t eipTotal_;
     bool eipTotalIsSet_;
     int32_t eipProtected_;

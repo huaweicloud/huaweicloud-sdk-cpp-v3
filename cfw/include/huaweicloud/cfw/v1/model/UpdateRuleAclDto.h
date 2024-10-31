@@ -13,7 +13,6 @@
 #include <huaweicloud/cfw/v1/model/TagsVO.h>
 #include <string>
 #include <huaweicloud/cfw/v1/model/RuleServiceDto.h>
-#include <huaweicloud/cfw/v1/model/OrderRuleAclDto.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -44,7 +43,7 @@ public:
     /// UpdateRuleAclDto members
 
     /// <summary>
-    /// 地址类型，0 ipv4,1 ipv6
+    /// 地址类型，0表示ipv4，1表示ipv6
     /// </summary>
 
     int32_t getAddressType() const;
@@ -62,16 +61,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 
-    /// </summary>
-
-    OrderRuleAclDto getSequence() const;
-    bool sequenceIsSet() const;
-    void unsetsequence();
-    void setSequence(const OrderRuleAclDto& value);
-
-    /// <summary>
-    /// 方向：0表示外到内，1表示内到外【说明：规则type&#x3D;0：互联网规则 | 2：nat规则时方向值必填】
+    /// 方向：0表示外到内，1表示内到外,规则type&#x3D;0（互联网规则）或者type&#x3D; 2（nat规则）时方向值必填
     /// </summary>
 
     int32_t getDirection() const;
@@ -80,7 +70,7 @@ public:
     void setDirection(int32_t value);
 
     /// <summary>
-    /// 动作0：permit,1：deny
+    /// 规则动作，0表示允许通行（permit），1表示拒绝通行（deny）
     /// </summary>
 
     int32_t getActionType() const;
@@ -89,7 +79,7 @@ public:
     void setActionType(int32_t value);
 
     /// <summary>
-    /// 规则下发状态 0：禁用,1：启用
+    /// 规则启用状态，0表示禁用，1表示启用
     /// </summary>
 
     int32_t getStatus() const;
@@ -98,7 +88,7 @@ public:
     void setStatus(int32_t value);
 
     /// <summary>
-    /// 应用列表
+    /// 规则应用列表，规则应用类型包括：“HTTP”，\&quot;HTTPS\&quot;，\&quot;TLS1\&quot;，“DNS”，“SSH”，“MYSQL”，“SMTP”，“RDP”，“RDPS”，“VNC”，“POP3”，“IMAP4”，“SMTPS”，“POP3S”，“FTPS”，“ANY”,“BGP”等。
     /// </summary>
 
     std::vector<std::string>& getApplications();
@@ -107,16 +97,7 @@ public:
     void setApplications(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 应用列表转化为字符串
-    /// </summary>
-
-    std::string getApplicationsJsonString() const;
-    bool applicationsJsonStringIsSet() const;
-    void unsetapplicationsJsonString();
-    void setApplicationsJsonString(const std::string& value);
-
-    /// <summary>
-    /// 描述
+    /// 规则描述
     /// </summary>
 
     std::string getDescription() const;
@@ -125,7 +106,7 @@ public:
     void setDescription(const std::string& value);
 
     /// <summary>
-    /// 长连接时长小时
+    /// 长连接时长对应小时
     /// </summary>
 
     int64_t getLongConnectTimeHour() const;
@@ -134,7 +115,7 @@ public:
     void setLongConnectTimeHour(int64_t value);
 
     /// <summary>
-    /// 长连接时长分钟
+    /// 长连接时长对应分钟
     /// </summary>
 
     int64_t getLongConnectTimeMinute() const;
@@ -197,7 +178,7 @@ public:
     void setService(const RuleServiceDto& value);
 
     /// <summary>
-    /// 规则type，0：互联网规则，1：vpc规则，2：nat规则
+    /// 规则类型，0：互联网规则，1：vpc规则，2：nat规则
     /// </summary>
 
     int32_t getType() const;
@@ -220,8 +201,6 @@ protected:
     bool addressTypeIsSet_;
     std::string name_;
     bool nameIsSet_;
-    OrderRuleAclDto sequence_;
-    bool sequenceIsSet_;
     int32_t direction_;
     bool directionIsSet_;
     int32_t actionType_;
@@ -230,8 +209,6 @@ protected:
     bool statusIsSet_;
     std::vector<std::string> applications_;
     bool applicationsIsSet_;
-    std::string applicationsJsonString_;
-    bool applicationsJsonStringIsSet_;
     std::string description_;
     bool descriptionIsSet_;
     int64_t longConnectTimeHour_;

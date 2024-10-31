@@ -39,7 +39,7 @@ bool DeleteBlackWhiteListResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("data"));
         if(!fieldValue.is_null())
         {
-            IdObject refVal;
+            BlackWhiteListId refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setData(refVal);
         }
@@ -48,12 +48,12 @@ bool DeleteBlackWhiteListResponse::fromJson(const web::json::value& val)
 }
 
 
-IdObject DeleteBlackWhiteListResponse::getData() const
+BlackWhiteListId DeleteBlackWhiteListResponse::getData() const
 {
     return data_;
 }
 
-void DeleteBlackWhiteListResponse::setData(const IdObject& value)
+void DeleteBlackWhiteListResponse::setData(const BlackWhiteListId& value)
 {
     data_ = value;
     dataIsSet_ = true;

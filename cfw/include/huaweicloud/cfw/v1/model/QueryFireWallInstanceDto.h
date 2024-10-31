@@ -41,7 +41,7 @@ public:
     /// QueryFireWallInstanceDto members
 
     /// <summary>
-    /// 企业项目id，用户支持企业项目后，由企业项目生成的id
+    /// 企业项目ID，用户根据组织规划企业项目，对应的ID为企业项目ID，可通过[如何获取企业项目ID](cfw_02_0027.xml)获取，用户未开启企业项目时为0
     /// </summary>
 
     std::string getEnterpriseProjectId() const;
@@ -50,7 +50,7 @@ public:
     void setEnterpriseProjectId(const std::string& value);
 
     /// <summary>
-    /// 查询关键字
+    /// 查询关键字，可为防火墙id或防火墙名称的一部分。可通过[防火墙ID获取方式](cfw_02_0028.xml)获取
     /// </summary>
 
     std::string getKeyWord() const;
@@ -59,7 +59,7 @@ public:
     void setKeyWord(const std::string& value);
 
     /// <summary>
-    /// 标签列表
+    /// 标签列表，可通过查询标签服务查询标签接口获得，返回值即为标签列表
     /// </summary>
 
     std::vector<TagInfo>& getTags();

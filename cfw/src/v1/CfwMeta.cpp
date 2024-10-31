@@ -305,6 +305,9 @@ HttpRequestDef CfwMeta::genRequestDefForDeleteDomains() {
     reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
                   .withJsonTag("enterprise_project_id")
                   .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("FwInstanceId")
+                  .withJsonTag("fw_instance_id")
+                  .withLocationType(Query_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
@@ -1094,6 +1097,9 @@ HttpRequestDef CfwMeta::genRequestDefForBatchUpdateAclRuleActions() {
     reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
                   .withJsonTag("enterprise_project_id")
                   .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("FwInstanceId")
+                  .withJsonTag("fw_instance_id")
+                  .withLocationType(Query_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
@@ -1338,11 +1344,6 @@ HttpRequestDef CfwMeta::genRequestDefForChangeIpsSwitchStatus() {
     reqDefBuilder.withRequestField(FieldDef().withName("FwInstanceId")
                   .withJsonTag("fw_instance_id")
                   .withLocationType(Query_));
-    FieldDef headerParamXLanguage;
-    reqDefBuilder.withRequestField(headerParamXLanguage
-                  .withName("XLanguage")
-                  .withJsonTag("X-Language")
-                  .withLocationType(Header_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").

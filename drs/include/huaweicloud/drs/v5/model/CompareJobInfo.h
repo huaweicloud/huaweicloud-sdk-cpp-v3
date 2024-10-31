@@ -107,10 +107,10 @@ public:
     /// 导出比对结果有效期剩余时间。
     /// </summary>
 
-    std::string getReportRemainSeconds() const;
+    int64_t getReportRemainSeconds() const;
     bool reportRemainSecondsIsSet() const;
     void unsetreportRemainSeconds();
-    void setReportRemainSeconds(const std::string& value);
+    void setReportRemainSeconds(int64_t value);
 
     /// <summary>
     /// 对比任务的标签。
@@ -139,15 +139,6 @@ public:
     void unseterrorMsg();
     void setErrorMsg(const std::string& value);
 
-    /// <summary>
-    /// 动态比对时延。
-    /// </summary>
-
-    int64_t getDynamicCompareDelay() const;
-    bool dynamicCompareDelayIsSet() const;
-    void unsetdynamicCompareDelay();
-    void setDynamicCompareDelay(int64_t value);
-
 
 protected:
     std::string id_;
@@ -164,7 +155,7 @@ protected:
     bool computeTypeIsSet_;
     std::string exportStatus_;
     bool exportStatusIsSet_;
-    std::string reportRemainSeconds_;
+    int64_t reportRemainSeconds_;
     bool reportRemainSecondsIsSet_;
     std::map<std::string, std::string> compareJobTag_;
     bool compareJobTagIsSet_;
@@ -172,8 +163,6 @@ protected:
     bool optionsIsSet_;
     std::string errorMsg_;
     bool errorMsgIsSet_;
-    int64_t dynamicCompareDelay_;
-    bool dynamicCompareDelayIsSet_;
 
 };
 

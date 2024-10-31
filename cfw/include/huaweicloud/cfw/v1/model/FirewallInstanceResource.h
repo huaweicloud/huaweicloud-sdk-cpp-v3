@@ -39,7 +39,7 @@ public:
     /// FirewallInstanceResource members
 
     /// <summary>
-    /// 资源id
+    /// 资源id，包括防火墙资源id，带宽资源id，eip资源id，vpc资源id，cbc回调后返回id。
     /// </summary>
 
     std::string getResourceId() const;
@@ -57,7 +57,7 @@ public:
     void setCloudServiceType(const std::string& value);
 
     /// <summary>
-    /// 资源类型，包括: 1、云防火墙:hws.resource.type.cfw 2、EIP:hws.resource.type.cfw.exp.eip 3、带宽:hws.resource.type.cfw.exp.bandwidth 4、VPC:hws.resource.type.cfw.exp.vpc 5、日志存储:hws.resource.type.cfw.exp.logaudit
+    /// 资源类型 包括:   1、云防火墙:hws.resource.type.cfw   2、EIP:hws.resource.type.cfw.exp.eip   3、带宽:hws.resource.type.cfw.exp.bandwidth   4、VPC:hws.resource.type.cfw.exp
     /// </summary>
 
     std::string getResourceType() const;
@@ -66,7 +66,7 @@ public:
     void setResourceType(const std::string& value);
 
     /// <summary>
-    /// 库存单位码
+    /// 库存单位码，包括：1、防火墙标准版cfw.standard 2、防火墙专业版cfw.professional 3、eip标准版cfw.expack.eip.standard 4、eip专业版cfw.expack.eip.professional 5、带宽基础版cfw.expack.bandwidth.standard 6、带宽专业版cfw.expack.bandwidth.professional 7、vpc专业版cfw.expack.vpc.professional
     /// </summary>
 
     std::string getResourceSpecCode() const;

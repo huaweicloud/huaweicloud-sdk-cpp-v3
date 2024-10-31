@@ -40,7 +40,7 @@ public:
     /// VPCProtectsVo members
 
     /// <summary>
-    /// 总VPC数
+    /// 总防护VPC数
     /// </summary>
 
     int32_t getTotal() const;
@@ -49,7 +49,7 @@ public:
     void setTotal(int32_t value);
 
     /// <summary>
-    /// 本项目防护VPC数
+    /// 防火墙东西向防护可进行跨账号防护VPC，self_total表示本项目防护VPC总数。
     /// </summary>
 
     int32_t getSelfTotal() const;
@@ -58,7 +58,7 @@ public:
     void setSelfTotal(int32_t value);
 
     /// <summary>
-    /// 其他项目防护VPC数
+    /// 防火墙东西向防护可进行跨账号防护VPC，other_total表示其他项目防护VPC数
     /// </summary>
 
     int32_t getOtherTotal() const;
@@ -67,7 +67,7 @@ public:
     void setOtherTotal(int32_t value);
 
     /// <summary>
-    /// 防护VPC
+    /// 防火墙东西向防护可进行跨账号防护VPC，protect_vpcs指的是总体防护VPC列表
     /// </summary>
 
     std::vector<VpcAttachmentDetail>& getProtectVpcs();
@@ -76,7 +76,7 @@ public:
     void setProtectVpcs(const std::vector<VpcAttachmentDetail>& value);
 
     /// <summary>
-    /// 本项目防护VPC
+    /// 防火墙东西向防护可进行跨账号防护VPC，self_protect_vpcs指的是本项目防护VPC列表
     /// </summary>
 
     std::vector<VpcAttachmentDetail>& getSelfProtectVpcs();
@@ -85,7 +85,7 @@ public:
     void setSelfProtectVpcs(const std::vector<VpcAttachmentDetail>& value);
 
     /// <summary>
-    /// 其他项目防护VPC
+    /// 防火墙东西向防护可进行跨账号防护VPC，other_protect_vpcs指的是其他项目防护VPC列表
     /// </summary>
 
     std::vector<VpcAttachmentDetail>& getOtherProtectVpcs();
@@ -94,7 +94,7 @@ public:
     void setOtherProtectVpcs(const std::vector<VpcAttachmentDetail>& value);
 
     /// <summary>
-    /// 所有资产数量
+    /// 租户的所有VPC资产数量
     /// </summary>
 
     int32_t getTotalAssets() const;

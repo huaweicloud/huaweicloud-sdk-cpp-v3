@@ -48,7 +48,7 @@ public:
     void setSetId(const std::string& value);
 
     /// <summary>
-    /// 引用次数
+    /// 地址组被规则引用次数
     /// </summary>
 
     int32_t getRefCount() const;
@@ -66,16 +66,7 @@ public:
     void setDescription(const std::string& value);
 
     /// <summary>
-    /// 地址组名称
-    /// </summary>
-
-    std::string getName() const;
-    bool nameIsSet() const;
-    void unsetname();
-    void setName(const std::string& value);
-
-    /// <summary>
-    /// 地址类型0 ipv4,1 ipv6
+    /// 地址类型0 ipv4，1 ipv6
     /// </summary>
 
     int32_t getAddressType() const;
@@ -84,7 +75,7 @@ public:
     void setAddressType(int32_t value);
 
     /// <summary>
-    /// 互联网边界防护对象id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)，type为0的为互联网边界防护对象id。
+    /// 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)获得，通过返回值中的data.records.protect_objects.object_id（.表示各对象之间层级的区分）获得，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id，type可通过data.records.protect_objects.type（.表示各对象之间层级的区分）获得
     /// </summary>
 
     std::string getObjectId() const;
@@ -101,6 +92,15 @@ public:
     void unsetaddressSetType();
     void setAddressSetType(int32_t value);
 
+    /// <summary>
+    /// 地址组名称
+    /// </summary>
+
+    std::string getName() const;
+    bool nameIsSet() const;
+    void unsetname();
+    void setName(const std::string& value);
+
 
 protected:
     std::string setId_;
@@ -109,14 +109,14 @@ protected:
     bool refCountIsSet_;
     std::string description_;
     bool descriptionIsSet_;
-    std::string name_;
-    bool nameIsSet_;
     int32_t addressType_;
     bool addressTypeIsSet_;
     std::string objectId_;
     bool objectIdIsSet_;
     int32_t addressSetType_;
     bool addressSetTypeIsSet_;
+    std::string name_;
+    bool nameIsSet_;
 
 };
 

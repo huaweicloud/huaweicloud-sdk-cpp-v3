@@ -51,7 +51,7 @@ public:
     void setType(int32_t value);
 
     /// <summary>
-    /// 协议类型:TCP为6, UDP为17,ICMP为1,ICMPV6为58,ANY为-1,手动类型不为空，自动类型为空
+    /// 协议类型：TCP为6，UDP为17，ICMP为1，ICMPV6为58，ANY为-1,手动类型不为空，自动类型为空
     /// </summary>
 
     int32_t getProtocol() const;
@@ -60,7 +60,7 @@ public:
     void setProtocol(int32_t value);
 
     /// <summary>
-    /// 协议列表，协议类型:TCP为6, UDP为17,ICMP为1,ICMPV6为58,ANY为-1,手动类型不为空，自动类型为空
+    /// 协议列表，协议类型：TCP为6，UDP为17，ICMP为1，ICMPV6为58，ANY为-1,手动类型不为空，自动类型为空
     /// </summary>
 
     std::vector<int32_t>& getProtocols();
@@ -87,7 +87,7 @@ public:
     void setDestPort(const std::string& value);
 
     /// <summary>
-    /// 服务组id，手动类型为空，自动类型为非空
+    /// 服务组id
     /// </summary>
 
     std::string getServiceSetId() const;
@@ -114,7 +114,7 @@ public:
     void setCustomService(const std::vector<ServiceItem>& value);
 
     /// <summary>
-    /// 服务组列表
+    /// 服务组id列表
     /// </summary>
 
     std::vector<std::string>& getServiceGroup();

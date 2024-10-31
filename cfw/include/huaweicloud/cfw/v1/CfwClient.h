@@ -305,7 +305,7 @@ public:
     );
     // 修改东西向防火墙防护状态
     //
-    // 东西向防护资源防护开启/关闭
+    // 东西向防护开启/关闭
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ChangeEastWestFirewallStatusResponse> changeEastWestFirewallStatus(
@@ -313,7 +313,7 @@ public:
     );
     // 创建抓包任务
     //
-    // 创建抓包任务
+    // 创建抓包任务，每个任务只能执行一次。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateCaptureTaskResponse> createCaptureTask(
@@ -367,9 +367,9 @@ public:
     std::shared_ptr<DeleteBlackWhiteListResponse> deleteBlackWhiteList(
         DeleteBlackWhiteListRequest &request
     );
-    // 删除抓包任务
+    // 批量删除抓包任务
     //
-    // 删除抓包任务
+    // 批量删除抓包任务
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteCaptureTaskResponse> deleteCaptureTask(

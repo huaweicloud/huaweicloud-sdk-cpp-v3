@@ -28,6 +28,10 @@ Metadata::Metadata()
     resourceProviderIsSet_ = false;
     ltsAlarmType_ = "";
     ltsAlarmTypeIsSet_ = false;
+    logGroupName_ = "";
+    logGroupNameIsSet_ = false;
+    logStreamName_ = "";
+    logStreamNameIsSet_ = false;
 }
 
 Metadata::~Metadata() = default;
@@ -63,6 +67,12 @@ web::json::value Metadata::toJson() const
     }
     if(ltsAlarmTypeIsSet_) {
         val[utility::conversions::to_string_t("lts_alarm_type")] = ModelBase::toJson(ltsAlarmType_);
+    }
+    if(logGroupNameIsSet_) {
+        val[utility::conversions::to_string_t("log_group_name")] = ModelBase::toJson(logGroupName_);
+    }
+    if(logStreamNameIsSet_) {
+        val[utility::conversions::to_string_t("log_stream_name")] = ModelBase::toJson(logStreamName_);
     }
 
     return val;
@@ -141,6 +151,24 @@ bool Metadata::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLtsAlarmType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("log_group_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("log_group_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLogGroupName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("log_stream_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("log_stream_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLogStreamName(refVal);
         }
     }
     return ok;
@@ -313,6 +341,48 @@ bool Metadata::ltsAlarmTypeIsSet() const
 void Metadata::unsetltsAlarmType()
 {
     ltsAlarmTypeIsSet_ = false;
+}
+
+std::string Metadata::getLogGroupName() const
+{
+    return logGroupName_;
+}
+
+void Metadata::setLogGroupName(const std::string& value)
+{
+    logGroupName_ = value;
+    logGroupNameIsSet_ = true;
+}
+
+bool Metadata::logGroupNameIsSet() const
+{
+    return logGroupNameIsSet_;
+}
+
+void Metadata::unsetlogGroupName()
+{
+    logGroupNameIsSet_ = false;
+}
+
+std::string Metadata::getLogStreamName() const
+{
+    return logStreamName_;
+}
+
+void Metadata::setLogStreamName(const std::string& value)
+{
+    logStreamName_ = value;
+    logStreamNameIsSet_ = true;
+}
+
+bool Metadata::logStreamNameIsSet() const
+{
+    return logStreamNameIsSet_;
+}
+
+void Metadata::unsetlogStreamName()
+{
+    logStreamNameIsSet_ = false;
 }
 
 }

@@ -9,7 +9,9 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/rds/v3/model/DatabaseWithPrivilegeObject.h>
 #include <string>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -47,10 +49,32 @@ public:
     void unsetname();
     void setName(const std::string& value);
 
+    /// <summary>
+    /// 数据库及其权限。
+    /// </summary>
+
+    std::vector<DatabaseWithPrivilegeObject>& getDatabases();
+    bool databasesIsSet() const;
+    void unsetdatabases();
+    void setDatabases(const std::vector<DatabaseWithPrivilegeObject>& value);
+
+    /// <summary>
+    /// 授权用户登录主机IP列表 • 若IP地址为%，则表示允许所有地址访问MySQL实例。 • 若IP地址为“10.10.10.%”，则表示10.10.10.X的IP地址都可以访问该MySQL实例。 • 支持添加多个IP地址。
+    /// </summary>
+
+    std::vector<std::string>& getHosts();
+    bool hostsIsSet() const;
+    void unsethosts();
+    void setHosts(const std::vector<std::string>& value);
+
 
 protected:
     std::string name_;
     bool nameIsSet_;
+    std::vector<DatabaseWithPrivilegeObject> databases_;
+    bool databasesIsSet_;
+    std::vector<std::string> hosts_;
+    bool hostsIsSet_;
 
 };
 

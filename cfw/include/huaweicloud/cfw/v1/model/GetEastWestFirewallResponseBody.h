@@ -44,7 +44,7 @@ public:
     /// GetEastWestFirewallResponseBody members
 
     /// <summary>
-    /// 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id。
+    /// 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)获得，通过返回值中的data.records.protect_objects.object_id（.表示各对象之间层级的区分）获得，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id。此处仅取type为1的防护对象id，可通过data.records.protect_objects.type（.表示各对象之间层级的区分）获得。
     /// </summary>
 
     std::string getObjectId() const;
@@ -53,7 +53,7 @@ public:
     void setObjectId(const std::string& value);
 
     /// <summary>
-    /// 租户project_id
+    /// 项目ID, 可以从调API处获取，也可以从控制台获取。[项目ID获取方式](cfw_02_0015.xml)
     /// </summary>
 
     std::string getProjectId() const;
@@ -69,15 +69,6 @@ public:
     bool statusIsSet() const;
     void unsetstatus();
     void setStatus(int32_t value);
-
-    /// <summary>
-    /// 
-    /// </summary>
-
-    SubnetInfo getErAssociatedSubnet() const;
-    bool erAssociatedSubnetIsSet() const;
-    void unseterAssociatedSubnet();
-    void setErAssociatedSubnet(const SubnetInfo& value);
 
     /// <summary>
     /// 云防火墙关联子网信息
@@ -143,22 +134,13 @@ public:
     void setLimit(int32_t value);
 
     /// <summary>
-    /// 防护模式
+    /// 防护模式，值为er
     /// </summary>
 
     std::string getMode() const;
     bool modeIsSet() const;
     void unsetmode();
     void setMode(const std::string& value);
-
-    /// <summary>
-    /// 东西向路由限制
-    /// </summary>
-
-    int32_t getEwVpcRouteLimit() const;
-    bool ewVpcRouteLimitIsSet() const;
-    void unsetewVpcRouteLimit();
-    void setEwVpcRouteLimit(int32_t value);
 
 
 protected:
@@ -168,8 +150,6 @@ protected:
     bool projectIdIsSet_;
     int32_t status_;
     bool statusIsSet_;
-    SubnetInfo erAssociatedSubnet_;
-    bool erAssociatedSubnetIsSet_;
     std::vector<SubnetInfo> firewallAssociatedSubnets_;
     bool firewallAssociatedSubnetsIsSet_;
     ErInstance er_;
@@ -186,8 +166,6 @@ protected:
     bool limitIsSet_;
     std::string mode_;
     bool modeIsSet_;
-    int32_t ewVpcRouteLimit_;
-    bool ewVpcRouteLimitIsSet_;
 
 };
 

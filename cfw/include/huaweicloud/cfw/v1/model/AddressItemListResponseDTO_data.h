@@ -59,7 +59,7 @@ public:
     void setLimit(int32_t value);
 
     /// <summary>
-    /// 总数
+    /// 地址组成员总数
     /// </summary>
 
     int32_t getTotal() const;
@@ -77,7 +77,7 @@ public:
     void setSetId(const std::string& value);
 
     /// <summary>
-    /// 成员信息
+    /// 地址组成员记录列表
     /// </summary>
 
     std::vector<AddressItemListResponseDTO_data_records>& getRecords();

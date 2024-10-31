@@ -58,7 +58,7 @@ public:
     void setLimit(int32_t value);
 
     /// <summary>
-    /// 查询总数
+    /// 查询服务组总数
     /// </summary>
 
     int32_t getTotal() const;

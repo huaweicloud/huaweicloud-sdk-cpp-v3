@@ -59,7 +59,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 描述
+    /// 域名组描述
     /// </summary>
 
     std::string getDescription() const;
@@ -68,7 +68,7 @@ public:
     void setDescription(const std::string& value);
 
     /// <summary>
-    /// 引用次数
+    /// 域名组被规则引用次数
     /// </summary>
 
     int32_t getRefCount() const;
@@ -86,22 +86,13 @@ public:
     void setDomainSetType(int32_t value);
 
     /// <summary>
-    /// 配置状态
+    /// 配置状态，-1表示未配置态，0表示配置失败，1表示配置成功，2表示配置中，3表示正常，4表示配置异常
     /// </summary>
 
     int32_t getConfigStatus() const;
     bool configStatusIsSet() const;
     void unsetconfigStatus();
     void setConfigStatus(int32_t value);
-
-    /// <summary>
-    /// 异常信息
-    /// </summary>
-
-    std::string getMessage() const;
-    bool messageIsSet() const;
-    void unsetmessage();
-    void setMessage(const std::string& value);
 
     /// <summary>
     /// 使用规则id列表
@@ -126,8 +117,6 @@ protected:
     bool domainSetTypeIsSet_;
     int32_t configStatus_;
     bool configStatusIsSet_;
-    std::string message_;
-    bool messageIsSet_;
     std::vector<UseRuleVO> rules_;
     bool rulesIsSet_;
 

@@ -39,7 +39,7 @@ public:
     /// EwProtectResourceInfo members
 
     /// <summary>
-    /// 防护资源类型：0 VPC，1 VGW
+    /// 防护资源类型：0 VPC，1 VGW，2 VPN，3 PEERING
     /// </summary>
 
     int32_t getProtectedResourceType() const;
@@ -66,7 +66,7 @@ public:
     void setProtectedResourceId(const std::string& value);
 
     /// <summary>
-    /// 防护资源nat网关名称
+    /// 防护资源nat网关名称，专业版防火墙支持NAT规则，此字段表示防护连接的NAT的名称。
     /// </summary>
 
     std::string getProtectedResourceNatName() const;
@@ -75,7 +75,7 @@ public:
     void setProtectedResourceNatName(const std::string& value);
 
     /// <summary>
-    /// 防护资源nat网关id
+    /// 防护资源nat网关id，专业版防火墙支持NAT规则，此字段表示防护连接的NAT的id。
     /// </summary>
 
     std::string getProtectedResourceNatId() const;
@@ -84,7 +84,7 @@ public:
     void setProtectedResourceNatId(const std::string& value);
 
     /// <summary>
-    /// 防护资源租户id
+    /// 防火墙支持跨账户防护，此处为防护资源租户id
     /// </summary>
 
     std::string getProtectedResourceProjectId() const;
@@ -93,7 +93,7 @@ public:
     void setProtectedResourceProjectId(const std::string& value);
 
     /// <summary>
-    /// 防护资源模式
+    /// 防护资源模式，为er
     /// </summary>
 
     std::string getProtectedResourceMode() const;
@@ -102,7 +102,7 @@ public:
     void setProtectedResourceMode(const std::string& value);
 
     /// <summary>
-    /// 防护VPC的防护状态，0表示已关联，1表示未关联。
+    /// 防护资源的防护状态，0表示已关联，1表示未关联。
     /// </summary>
 
     int32_t getStatus() const;

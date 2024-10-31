@@ -58,7 +58,7 @@ public:
     void setOffset(int32_t value);
 
     /// <summary>
-    /// 总数
+    /// 获取规则击中次数总条数
     /// </summary>
 
     int32_t getTotal() const;
@@ -67,7 +67,7 @@ public:
     void setTotal(int32_t value);
 
     /// <summary>
-    /// 规则击中次数列表
+    /// 规则击中次数信息列表
     /// </summary>
 
     std::vector<RuleHitCountObject>& getRecords();

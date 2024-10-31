@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/cfw/v1/model/IdObject.h>
+#include <huaweicloud/cfw/v1/model/AddressItemId.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -42,14 +42,14 @@ public:
     /// 
     /// </summary>
 
-    IdObject getData() const;
+    AddressItemId getData() const;
     bool dataIsSet() const;
     void unsetdata();
-    void setData(const IdObject& value);
+    void setData(const AddressItemId& value);
 
 
 protected:
-    IdObject data_;
+    AddressItemId data_;
     bool dataIsSet_;
 
 #ifdef RTTR_FLAG

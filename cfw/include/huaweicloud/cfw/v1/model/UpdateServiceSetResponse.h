@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/cfw/v1/model/CommonResponseDTO_data.h>
+#include <huaweicloud/cfw/v1/model/ServiceSetId.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -42,14 +42,14 @@ public:
     /// 
     /// </summary>
 
-    CommonResponseDTO_data getData() const;
+    ServiceSetId getData() const;
     bool dataIsSet() const;
     void unsetdata();
-    void setData(const CommonResponseDTO_data& value);
+    void setData(const ServiceSetId& value);
 
 
 protected:
-    CommonResponseDTO_data data_;
+    ServiceSetId data_;
     bool dataIsSet_;
 
 #ifdef RTTR_FLAG

@@ -26,14 +26,12 @@ CompareJobInfo::CompareJobInfo()
     computeTypeIsSet_ = false;
     exportStatus_ = "";
     exportStatusIsSet_ = false;
-    reportRemainSeconds_ = "";
+    reportRemainSeconds_ = 0L;
     reportRemainSecondsIsSet_ = false;
     compareJobTagIsSet_ = false;
     optionsIsSet_ = false;
     errorMsg_ = "";
     errorMsgIsSet_ = false;
-    dynamicCompareDelay_ = 0L;
-    dynamicCompareDelayIsSet_ = false;
 }
 
 CompareJobInfo::~CompareJobInfo() = default;
@@ -78,9 +76,6 @@ web::json::value CompareJobInfo::toJson() const
     }
     if(errorMsgIsSet_) {
         val[utility::conversions::to_string_t("error_msg")] = ModelBase::toJson(errorMsg_);
-    }
-    if(dynamicCompareDelayIsSet_) {
-        val[utility::conversions::to_string_t("dynamic_compare_delay")] = ModelBase::toJson(dynamicCompareDelay_);
     }
 
     return val;
@@ -156,7 +151,7 @@ bool CompareJobInfo::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("report_remain_seconds"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setReportRemainSeconds(refVal);
         }
@@ -186,15 +181,6 @@ bool CompareJobInfo::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setErrorMsg(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("dynamic_compare_delay"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("dynamic_compare_delay"));
-        if(!fieldValue.is_null())
-        {
-            int64_t refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setDynamicCompareDelay(refVal);
         }
     }
     return ok;
@@ -348,12 +334,12 @@ void CompareJobInfo::unsetexportStatus()
     exportStatusIsSet_ = false;
 }
 
-std::string CompareJobInfo::getReportRemainSeconds() const
+int64_t CompareJobInfo::getReportRemainSeconds() const
 {
     return reportRemainSeconds_;
 }
 
-void CompareJobInfo::setReportRemainSeconds(const std::string& value)
+void CompareJobInfo::setReportRemainSeconds(int64_t value)
 {
     reportRemainSeconds_ = value;
     reportRemainSecondsIsSet_ = true;
@@ -430,27 +416,6 @@ bool CompareJobInfo::errorMsgIsSet() const
 void CompareJobInfo::unseterrorMsg()
 {
     errorMsgIsSet_ = false;
-}
-
-int64_t CompareJobInfo::getDynamicCompareDelay() const
-{
-    return dynamicCompareDelay_;
-}
-
-void CompareJobInfo::setDynamicCompareDelay(int64_t value)
-{
-    dynamicCompareDelay_ = value;
-    dynamicCompareDelayIsSet_ = true;
-}
-
-bool CompareJobInfo::dynamicCompareDelayIsSet() const
-{
-    return dynamicCompareDelayIsSet_;
-}
-
-void CompareJobInfo::unsetdynamicCompareDelay()
-{
-    dynamicCompareDelayIsSet_ = false;
 }
 
 }

@@ -56,12 +56,23 @@ public:
     void unsetcontent();
     void setContent(const std::string& value);
 
+    /// <summary>
+    /// 邮件主题,只有sub_type&#x3D;email时生效
+    /// </summary>
+
+    std::string getTopic() const;
+    bool topicIsSet() const;
+    void unsettopic();
+    void setTopic(const std::string& value);
+
 
 protected:
     std::string subType_;
     bool subTypeIsSet_;
     std::string content_;
     bool contentIsSet_;
+    std::string topic_;
+    bool topicIsSet_;
 
 };
 

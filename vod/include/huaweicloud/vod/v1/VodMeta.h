@@ -54,6 +54,7 @@ public:
     static HttpRequestDef genRequestDefForShowAssetTempAuthority();
     static HttpRequestDef genRequestDefForShowCdnStatistics();
     static HttpRequestDef genRequestDefForShowPreheatingAsset();
+    static HttpRequestDef genRequestDefForShowStorageModeType();
     static HttpRequestDef genRequestDefForShowVodRetrieval();
     static HttpRequestDef genRequestDefForShowVodStatistics();
     static HttpRequestDef genRequestDefForUnpublishAssets();
@@ -63,6 +64,7 @@ public:
     static HttpRequestDef genRequestDefForUpdateBucketAuthorized();
     static HttpRequestDef genRequestDefForUpdateCoverByThumbnail();
     static HttpRequestDef genRequestDefForUpdateStorageMode();
+    static HttpRequestDef genRequestDefForUpdateStorageModeType();
     static HttpRequestDef genRequestDefForUpdateTemplateGroup();
     static HttpRequestDef genRequestDefForUpdateTemplateGroupCollection();
     static HttpRequestDef genRequestDefForUpdateTranscodeTemplate();

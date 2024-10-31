@@ -41,7 +41,7 @@ public:
     /// CreateEWFirewallResp members
 
     /// <summary>
-    /// 东西向防护id
+    /// 东西向防护id，对应object_id字段
     /// </summary>
 
     std::string getId() const;

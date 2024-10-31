@@ -50,7 +50,7 @@ public:
     void setDestination(const CaptureRuleAddressDto& value);
 
     /// <summary>
-    /// 抓包时长
+    /// 抓包时长，以分钟为单位
     /// </summary>
 
     int32_t getDuration() const;
@@ -59,7 +59,7 @@ public:
     void setDuration(int32_t value);
 
     /// <summary>
-    /// 最大抓包数
+    /// 最大抓包数，以个为单位
     /// </summary>
 
     int32_t getMaxPackets() const;

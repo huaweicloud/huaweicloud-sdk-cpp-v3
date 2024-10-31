@@ -49,7 +49,7 @@ public:
     void setSetId(const std::string& value);
 
     /// <summary>
-    /// 名称
+    /// 服务组名称
     /// </summary>
 
     std::string getName() const;
@@ -58,7 +58,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 描述
+    /// 服务组描述
     /// </summary>
 
     std::string getDescription() const;
@@ -76,7 +76,7 @@ public:
     void setServiceSetType(int32_t value);
 
     /// <summary>
-    /// 引用次数
+    /// 服务组被规则引用次数
     /// </summary>
 
     int32_t getRefCount() const;
@@ -85,7 +85,7 @@ public:
     void setRefCount(int32_t value);
 
     /// <summary>
-    /// 项目id
+    /// 项目ID
     /// </summary>
 
     std::string getProjectId() const;
@@ -94,7 +94,7 @@ public:
     void setProjectId(const std::string& value);
 
     /// <summary>
-    /// 协议类型列表
+    /// 协议列表，协议类型：TCP为6，UDP为17，ICMP为1，ICMPV6为58，ANY为-1,type为0手动类型时不能为空。
     /// </summary>
 
     std::vector<int32_t>& getProtocols();

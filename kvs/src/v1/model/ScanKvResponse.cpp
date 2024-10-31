@@ -13,7 +13,7 @@ namespace Model {
 
 ScanKvResponse::ScanKvResponse()
 {
-    returnedCount_ = 0;
+    returnedCount_ = 0L;
     returnedCountIsSet_ = false;
     filteredCount_ = 0;
     filteredCountIsSet_ = false;
@@ -108,12 +108,12 @@ bool ScanKvResponse::fromBson(const Viewer &viewer)
     return true;
 }
 
-int32_t ScanKvResponse::getReturnedCount() const
+int64_t ScanKvResponse::getReturnedCount() const
 {
     return returnedCount_;
 }
 
-void ScanKvResponse::setReturnedCount(int32_t value)
+void ScanKvResponse::setReturnedCount(int64_t value)
 {
     returnedCount_ = value;
     returnedCountIsSet_ = true;

@@ -21,7 +21,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 查询流日志返回值
+/// 查询流日志返回值数据
 /// </summary>
 class HUAWEICLOUD_CFW_V1_EXPORT  HttpQueryCfwFlowLogsResponseDTO_data
     : public ModelBase
@@ -40,7 +40,7 @@ public:
     /// HttpQueryCfwFlowLogsResponseDTO_data members
 
     /// <summary>
-    /// 返回数量
+    /// 查询流日志返回值记录总数
     /// </summary>
 
     int32_t getTotal() const;

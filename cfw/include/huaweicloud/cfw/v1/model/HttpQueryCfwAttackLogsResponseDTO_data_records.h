@@ -41,7 +41,7 @@ public:
     /// HttpQueryCfwAttackLogsResponseDTO_data_records members
 
     /// <summary>
-    /// 方向，有内到外和外到内两种
+    /// 方向，包含in2out，out2in
     /// </summary>
 
     std::string getDirection() const;
@@ -50,7 +50,7 @@ public:
     void setDirection(const std::string& value);
 
     /// <summary>
-    /// 动作
+    /// 动作包含permit，deny
     /// </summary>
 
     std::string getAction() const;
@@ -86,7 +86,7 @@ public:
     void setAttackRule(const std::string& value);
 
     /// <summary>
-    /// 威胁等级
+    /// 威胁等级，包括CRITICAL、HIGH、MEDIUM、LOW
     /// </summary>
 
     std::string getLevel() const;
@@ -176,7 +176,7 @@ public:
     void setDstPort(int32_t value);
 
     /// <summary>
-    /// 协议
+    /// 协议类型，包含TCP, UDP,ICMP,ICMPV6等。
     /// </summary>
 
     std::string getProtocol() const;
@@ -194,7 +194,7 @@ public:
     void setPacket(const std::string& value);
 
     /// <summary>
-    /// 应用协议
+    /// 规则应用类型包括：“HTTP”，\&quot;HTTPS\&quot;，\&quot;TLS1\&quot;，“DNS”，“SSH”，“MYSQL”，“SMTP”，“RDP”，“RDPS”，“VNC”，“POP3”，“IMAP4”，“SMTPS”，“POP3S”，“FTPS”，“ANY”,“BGP”等。
     /// </summary>
 
     std::string getApp() const;

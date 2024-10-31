@@ -58,7 +58,7 @@ public:
     void setOffset(int32_t value);
 
     /// <summary>
-    /// 总数
+    /// 域名组总数
     /// </summary>
 
     int32_t getTotal() const;

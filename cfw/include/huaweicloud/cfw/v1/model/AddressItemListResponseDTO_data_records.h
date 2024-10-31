@@ -75,7 +75,7 @@ public:
     void setAddressType(int32_t value);
 
     /// <summary>
-    /// 地址组
+    /// 地址信息
     /// </summary>
 
     std::string getAddress() const;

@@ -988,6 +988,9 @@ std::shared_ptr<DeleteDomainsResponse> CfwClient::deleteDomains(DeleteDomainsReq
     if (request.enterpriseProjectIdIsSet()) {
         localVarQueryParams["enterprise_project_id"] = parameterToString(request.getEnterpriseProjectId());
     }
+    if (request.fwInstanceIdIsSet()) {
+        localVarQueryParams["fw_instance_id"] = parameterToString(request.getFwInstanceId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -2718,6 +2721,9 @@ std::shared_ptr<BatchUpdateAclRuleActionsResponse> CfwClient::batchUpdateAclRule
     if (request.enterpriseProjectIdIsSet()) {
         localVarQueryParams["enterprise_project_id"] = parameterToString(request.getEnterpriseProjectId());
     }
+    if (request.fwInstanceIdIsSet()) {
+        localVarQueryParams["fw_instance_id"] = parameterToString(request.getFwInstanceId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -3309,9 +3315,6 @@ std::shared_ptr<ChangeIpsSwitchStatusResponse> CfwClient::changeIpsSwitchStatus(
     }
     if (request.fwInstanceIdIsSet()) {
         localVarQueryParams["fw_instance_id"] = parameterToString(request.getFwInstanceId());
-    }
-    if (request.xLanguageIsSet()) {
-        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
     }
 
     std::string localVarHttpBody;

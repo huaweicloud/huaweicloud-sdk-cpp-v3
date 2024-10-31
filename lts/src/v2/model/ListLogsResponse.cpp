@@ -80,7 +80,7 @@ bool ListLogsResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("analysisLogs"));
         if(!fieldValue.is_null())
         {
-            std::vector<std::map<std::string, std::string>> refVal;
+            std::vector<Object> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAnalysisLogs(refVal);
         }
@@ -152,12 +152,12 @@ void ListLogsResponse::unsetisQueryComplete()
     isQueryCompleteIsSet_ = false;
 }
 
-std::vector<std::map<std::string, std::string>>& ListLogsResponse::getAnalysisLogs()
+std::vector<Object>& ListLogsResponse::getAnalysisLogs()
 {
     return analysisLogs_;
 }
 
-void ListLogsResponse::setAnalysisLogs(const std::vector<std::map<std::string, std::string>>& value)
+void ListLogsResponse::setAnalysisLogs(const std::vector<Object>& value)
 {
     analysisLogs_ = value;
     analysisLogsIsSet_ = true;

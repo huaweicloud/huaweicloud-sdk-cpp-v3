@@ -39,7 +39,7 @@ bool CreateCaptureTaskResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("data"));
         if(!fieldValue.is_null())
         {
-            IdObject refVal;
+            CaptureTaskId refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setData(refVal);
         }
@@ -48,12 +48,12 @@ bool CreateCaptureTaskResponse::fromJson(const web::json::value& val)
 }
 
 
-IdObject CreateCaptureTaskResponse::getData() const
+CaptureTaskId CreateCaptureTaskResponse::getData() const
 {
     return data_;
 }
 
-void CreateCaptureTaskResponse::setData(const IdObject& value)
+void CreateCaptureTaskResponse::setData(const CaptureTaskId& value)
 {
     data_ = value;
     dataIsSet_ = true;

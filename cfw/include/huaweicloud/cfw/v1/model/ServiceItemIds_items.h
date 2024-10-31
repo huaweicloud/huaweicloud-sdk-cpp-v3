@@ -39,7 +39,7 @@ public:
     /// ServiceItemIds_items members
 
     /// <summary>
-    /// id值
+    /// 服务组成员id
     /// </summary>
 
     std::string getId() const;

@@ -18,14 +18,14 @@ AddressSetListResponseDTO_data_records::AddressSetListResponseDTO_data_records()
     refCountIsSet_ = false;
     description_ = "";
     descriptionIsSet_ = false;
-    name_ = "";
-    nameIsSet_ = false;
     addressType_ = 0;
     addressTypeIsSet_ = false;
     objectId_ = "";
     objectIdIsSet_ = false;
     addressSetType_ = 0;
     addressSetTypeIsSet_ = false;
+    name_ = "";
+    nameIsSet_ = false;
 }
 
 AddressSetListResponseDTO_data_records::~AddressSetListResponseDTO_data_records() = default;
@@ -47,9 +47,6 @@ web::json::value AddressSetListResponseDTO_data_records::toJson() const
     if(descriptionIsSet_) {
         val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
     }
-    if(nameIsSet_) {
-        val[utility::conversions::to_string_t("name")] = ModelBase::toJson(name_);
-    }
     if(addressTypeIsSet_) {
         val[utility::conversions::to_string_t("address_type")] = ModelBase::toJson(addressType_);
     }
@@ -58,6 +55,9 @@ web::json::value AddressSetListResponseDTO_data_records::toJson() const
     }
     if(addressSetTypeIsSet_) {
         val[utility::conversions::to_string_t("address_set_type")] = ModelBase::toJson(addressSetType_);
+    }
+    if(nameIsSet_) {
+        val[utility::conversions::to_string_t("name")] = ModelBase::toJson(name_);
     }
 
     return val;
@@ -93,15 +93,6 @@ bool AddressSetListResponseDTO_data_records::fromJson(const web::json::value& va
             setDescription(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("name"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("name"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setName(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("address_type"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("address_type"));
         if(!fieldValue.is_null())
@@ -127,6 +118,15 @@ bool AddressSetListResponseDTO_data_records::fromJson(const web::json::value& va
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAddressSetType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setName(refVal);
         }
     }
     return ok;
@@ -196,27 +196,6 @@ void AddressSetListResponseDTO_data_records::unsetdescription()
     descriptionIsSet_ = false;
 }
 
-std::string AddressSetListResponseDTO_data_records::getName() const
-{
-    return name_;
-}
-
-void AddressSetListResponseDTO_data_records::setName(const std::string& value)
-{
-    name_ = value;
-    nameIsSet_ = true;
-}
-
-bool AddressSetListResponseDTO_data_records::nameIsSet() const
-{
-    return nameIsSet_;
-}
-
-void AddressSetListResponseDTO_data_records::unsetname()
-{
-    nameIsSet_ = false;
-}
-
 int32_t AddressSetListResponseDTO_data_records::getAddressType() const
 {
     return addressType_;
@@ -278,6 +257,27 @@ bool AddressSetListResponseDTO_data_records::addressSetTypeIsSet() const
 void AddressSetListResponseDTO_data_records::unsetaddressSetType()
 {
     addressSetTypeIsSet_ = false;
+}
+
+std::string AddressSetListResponseDTO_data_records::getName() const
+{
+    return name_;
+}
+
+void AddressSetListResponseDTO_data_records::setName(const std::string& value)
+{
+    name_ = value;
+    nameIsSet_ = true;
+}
+
+bool AddressSetListResponseDTO_data_records::nameIsSet() const
+{
+    return nameIsSet_;
+}
+
+void AddressSetListResponseDTO_data_records::unsetname()
+{
+    nameIsSet_ = false;
 }
 
 }

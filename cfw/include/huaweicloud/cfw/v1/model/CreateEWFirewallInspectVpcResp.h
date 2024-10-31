@@ -40,7 +40,7 @@ public:
     /// CreateEWFirewallInspectVpcResp members
 
     /// <summary>
-    /// vpc id
+    /// 引流VPC的ID
     /// </summary>
 
     std::string getVpcId() const;
@@ -49,7 +49,7 @@ public:
     void setVpcId(const std::string& value);
 
     /// <summary>
-    /// 子网列表
+    /// 创建的引流VPC的子网ID列表
     /// </summary>
 
     std::vector<std::string>& getSubnetIds();

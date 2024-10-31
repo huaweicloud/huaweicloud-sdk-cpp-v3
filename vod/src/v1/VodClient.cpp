@@ -1767,6 +1767,35 @@ std::shared_ptr<ShowPreheatingAssetResponse> VodClient::showPreheatingAsset(Show
 
     return localVarResult;
 }
+std::shared_ptr<ShowStorageModeTypeResponse> VodClient::showStorageModeType(ShowStorageModeTypeRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/asset/storage-mode-type";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, VodMeta::genRequestDefForShowStorageModeType());
+
+    std::shared_ptr<ShowStorageModeTypeResponse> localVarResult = std::make_shared<ShowStorageModeTypeResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowVodRetrievalResponse> VodClient::showVodRetrieval(ShowVodRetrievalRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/asset/vod-retrieval";
@@ -2139,6 +2168,47 @@ std::shared_ptr<UpdateStorageModeResponse> VodClient::updateStorageMode(UpdateSt
         localVarHeaderParams, localVarHttpBody, VodMeta::genRequestDefForUpdateStorageMode());
 
     std::shared_ptr<UpdateStorageModeResponse> localVarResult = std::make_shared<UpdateStorageModeResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateStorageModeTypeResponse> VodClient::updateStorageModeType(UpdateStorageModeTypeRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/asset/storage-mode-type";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, VodMeta::genRequestDefForUpdateStorageModeType());
+
+    std::shared_ptr<UpdateStorageModeTypeResponse> localVarResult = std::make_shared<UpdateStorageModeTypeResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

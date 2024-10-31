@@ -62,7 +62,7 @@ public:
     void setSequence(const OrderRuleAclDto& value);
 
     /// <summary>
-    /// 地址类型，0 ipv4,1 ipv6,2 domain
+    /// 地址类型，0表示ipv4，1表示ipv6
     /// </summary>
 
     int32_t getAddressType() const;
@@ -71,7 +71,7 @@ public:
     void setAddressType(int32_t value);
 
     /// <summary>
-    /// 动作0：permit,1：deny
+    /// 规则动作，0表示允许通行（permit），1表示拒绝通行（deny）
     /// </summary>
 
     int32_t getActionType() const;
@@ -80,7 +80,7 @@ public:
     void setActionType(int32_t value);
 
     /// <summary>
-    /// 规则下发状态 0：禁用,1：启用
+    /// 规则启用状态，0表示禁用，1表示启用
     /// </summary>
 
     int32_t getStatus() const;
@@ -89,22 +89,13 @@ public:
     void setStatus(int32_t value);
 
     /// <summary>
-    /// 应用列表
+    /// 规则应用列表，规则应用类型包括：“HTTP”，\&quot;HTTPS\&quot;，\&quot;TLS1\&quot;，“DNS”，“SSH”，“MYSQL”，“SMTP”，“RDP”，“RDPS”，“VNC”，“POP3”，“IMAP4”，“SMTPS”，“POP3S”，“FTPS”，“ANY”，“BGP”等。
     /// </summary>
 
     std::vector<std::string>& getApplications();
     bool applicationsIsSet() const;
     void unsetapplications();
     void setApplications(const std::vector<std::string>& value);
-
-    /// <summary>
-    /// 应用列表转化json字符串
-    /// </summary>
-
-    std::string getApplicationsJsonString() const;
-    bool applicationsJsonStringIsSet() const;
-    void unsetapplicationsJsonString();
-    void setApplicationsJsonString(const std::string& value);
 
     /// <summary>
     /// 长连接时长
@@ -116,7 +107,7 @@ public:
     void setLongConnectTime(int64_t value);
 
     /// <summary>
-    /// 长连接时长小时
+    /// 长连接时长对应小时
     /// </summary>
 
     int64_t getLongConnectTimeHour() const;
@@ -125,7 +116,7 @@ public:
     void setLongConnectTimeHour(int64_t value);
 
     /// <summary>
-    /// 长连接时长分钟
+    /// 长连接时长对应分钟
     /// </summary>
 
     int64_t getLongConnectTimeMinute() const;
@@ -161,7 +152,7 @@ public:
     void setDescription(const std::string& value);
 
     /// <summary>
-    /// 方向：0表示外到内，1表示内到外【说明：规则type&#x3D;0：互联网规则 | 2：nat规则时方向值必填】
+    /// 方向：0表示外到内，1表示内到外，规则type&#x3D;0（互联网规则）或者type&#x3D; 2（nat规则）时方向值必填
     /// </summary>
 
     int32_t getDirection() const;
@@ -219,8 +210,6 @@ protected:
     bool statusIsSet_;
     std::vector<std::string> applications_;
     bool applicationsIsSet_;
-    std::string applicationsJsonString_;
-    bool applicationsJsonStringIsSet_;
     int64_t longConnectTime_;
     bool longConnectTimeIsSet_;
     int64_t longConnectTimeHour_;

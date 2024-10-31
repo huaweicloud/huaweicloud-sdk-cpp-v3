@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// object
+/// 修改ips防护模式返回值数据
 /// </summary>
 class HUAWEICLOUD_CFW_V1_EXPORT  CommonResponseDTO_data
     : public ModelBase

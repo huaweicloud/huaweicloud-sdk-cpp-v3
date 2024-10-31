@@ -21,7 +21,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 查询攻击日志返回值
+/// 查询攻击日志返回值数据
 /// </summary>
 class HUAWEICLOUD_CFW_V1_EXPORT  HttpQueryCfwAttackLogsResponseDTO_data
     : public ModelBase
@@ -40,7 +40,7 @@ public:
     /// HttpQueryCfwAttackLogsResponseDTO_data members
 
     /// <summary>
-    /// 返回数量
+    /// 返回攻击数据总数
     /// </summary>
 
     int32_t getTotal() const;
@@ -58,7 +58,7 @@ public:
     void setLimit(int32_t value);
 
     /// <summary>
-    /// 记录
+    /// 攻击日志记录列表
     /// </summary>
 
     std::vector<HttpQueryCfwAttackLogsResponseDTO_data_records>& getRecords();

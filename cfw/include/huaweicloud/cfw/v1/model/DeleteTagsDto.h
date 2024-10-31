@@ -40,7 +40,7 @@ public:
     /// DeleteTagsDto members
 
     /// <summary>
-    /// 标签列表
+    /// 防火墙标签列表
     /// </summary>
 
     std::vector<ResourceTag>& getTags();

@@ -40,7 +40,7 @@ public:
     /// UpdateDomainSetRequest members
 
     /// <summary>
-    /// 域名组id
+    /// 域名组id，可通过[查询域名组列表接口](ListDomainSets.xml)查询获得，通过返回值中的data.records.set_id（.表示各对象之间层级的区分）获得。
     /// </summary>
 
     std::string getSetId() const;
@@ -49,7 +49,7 @@ public:
     void setSetId(const std::string& value);
 
     /// <summary>
-    /// 企业项目id，用户支持企业项目后，由企业项目生成的id。
+    /// 企业项目ID，用户根据组织规划企业项目，对应的ID为企业项目ID，可通过[如何获取企业项目ID](cfw_02_0027.xml)获取，用户未开启企业项目时为0
     /// </summary>
 
     std::string getEnterpriseProjectId() const;

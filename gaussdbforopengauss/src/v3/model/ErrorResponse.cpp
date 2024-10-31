@@ -1,16 +1,16 @@
 
 
-#include "huaweicloud/cfw/v1/model/ErrorRsp.h"
+#include "huaweicloud/gaussdbforopengauss/v3/model/ErrorResponse.h"
 namespace HuaweiCloud {
 namespace Sdk {
-namespace Cfw {
-namespace V1 {
+namespace Gaussdbforopengauss {
+namespace V3 {
 namespace Model {
 
 
 
 
-ErrorRsp::ErrorRsp()
+ErrorResponse::ErrorResponse()
 {
     errorCode_ = "";
     errorCodeIsSet_ = false;
@@ -18,13 +18,13 @@ ErrorRsp::ErrorRsp()
     errorMsgIsSet_ = false;
 }
 
-ErrorRsp::~ErrorRsp() = default;
+ErrorResponse::~ErrorResponse() = default;
 
-void ErrorRsp::validate()
+void ErrorResponse::validate()
 {
 }
 
-web::json::value ErrorRsp::toJson() const
+web::json::value ErrorResponse::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -37,7 +37,7 @@ web::json::value ErrorRsp::toJson() const
 
     return val;
 }
-bool ErrorRsp::fromJson(const web::json::value& val)
+bool ErrorResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -63,44 +63,44 @@ bool ErrorRsp::fromJson(const web::json::value& val)
 }
 
 
-std::string ErrorRsp::getErrorCode() const
+std::string ErrorResponse::getErrorCode() const
 {
     return errorCode_;
 }
 
-void ErrorRsp::setErrorCode(const std::string& value)
+void ErrorResponse::setErrorCode(const std::string& value)
 {
     errorCode_ = value;
     errorCodeIsSet_ = true;
 }
 
-bool ErrorRsp::errorCodeIsSet() const
+bool ErrorResponse::errorCodeIsSet() const
 {
     return errorCodeIsSet_;
 }
 
-void ErrorRsp::unseterrorCode()
+void ErrorResponse::unseterrorCode()
 {
     errorCodeIsSet_ = false;
 }
 
-std::string ErrorRsp::getErrorMsg() const
+std::string ErrorResponse::getErrorMsg() const
 {
     return errorMsg_;
 }
 
-void ErrorRsp::setErrorMsg(const std::string& value)
+void ErrorResponse::setErrorMsg(const std::string& value)
 {
     errorMsg_ = value;
     errorMsgIsSet_ = true;
 }
 
-bool ErrorRsp::errorMsgIsSet() const
+bool ErrorResponse::errorMsgIsSet() const
 {
     return errorMsgIsSet_;
 }
 
-void ErrorRsp::unseterrorMsg()
+void ErrorResponse::unseterrorMsg()
 {
     errorMsgIsSet_ = false;
 }

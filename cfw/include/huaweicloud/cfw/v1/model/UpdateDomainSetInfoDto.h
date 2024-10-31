@@ -39,7 +39,7 @@ public:
     /// UpdateDomainSetInfoDto members
 
     /// <summary>
-    /// 域名组名称UUID
+    /// 域名组名称
     /// </summary>
 
     std::string getName() const;
@@ -48,7 +48,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 描述
+    /// 域名组描述
     /// </summary>
 
     std::string getDescription() const;

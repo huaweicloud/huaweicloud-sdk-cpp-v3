@@ -9,8 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <string>
-#include <map>
+#include <huaweicloud/core/utils/Object.h>
 #include <vector>
 #include <huaweicloud/lts/v2/model/LogContents.h>
 
@@ -72,10 +71,10 @@ public:
     /// 分析日志返回响应体
     /// </summary>
 
-    std::vector<std::map<std::string, std::string>>& getAnalysisLogs();
+    std::vector<Object>& getAnalysisLogs();
     bool analysisLogsIsSet() const;
     void unsetanalysisLogs();
-    void setAnalysisLogs(const std::vector<std::map<std::string, std::string>>& value);
+    void setAnalysisLogs(const std::vector<Object>& value);
 
 
 protected:
@@ -85,7 +84,7 @@ protected:
     bool logsIsSet_;
     bool isQueryComplete_;
     bool isQueryCompleteIsSet_;
-    std::vector<std::map<std::string, std::string>> analysisLogs_;
+    std::vector<Object> analysisLogs_;
     bool analysisLogsIsSet_;
 
 #ifdef RTTR_FLAG

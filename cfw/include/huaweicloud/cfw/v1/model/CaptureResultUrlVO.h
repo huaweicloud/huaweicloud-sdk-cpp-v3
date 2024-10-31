@@ -42,7 +42,7 @@ public:
     /// CaptureResultUrlVO members
 
     /// <summary>
-    /// 下载链接提取码
+    /// 下载链接提取码，用于打开下载链接时使用。
     /// </summary>
 
     std::string getCaptcha() const;
@@ -60,7 +60,7 @@ public:
     void setExpires(int64_t value);
 
     /// <summary>
-    /// 抓包文件列表
+    /// 抓包文件列表，当环境不支持obs文件夹分享时使用。当此字段存在时，无captch，expires，url返回值。
     /// </summary>
 
     std::vector<CaptureFile>& getFileList();

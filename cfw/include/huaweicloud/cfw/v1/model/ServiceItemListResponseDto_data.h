@@ -59,7 +59,7 @@ public:
     void setLimit(int32_t value);
 
     /// <summary>
-    /// 记录的总数
+    /// 服务组成员总数
     /// </summary>
 
     int32_t getTotal() const;

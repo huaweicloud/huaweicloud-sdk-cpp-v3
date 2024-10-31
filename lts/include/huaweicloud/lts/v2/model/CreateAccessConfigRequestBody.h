@@ -13,6 +13,8 @@
 #include <huaweicloud/lts/v2/model/AccessConfigDeatilCreate.h>
 #include <string>
 #include <huaweicloud/lts/v2/model/AccessConfigTag.h>
+#include <huaweicloud/lts/v2/model/DemoFieldAccess.h>
+#include <huaweicloud/lts/v2/model/Processor.h>
 #include <huaweicloud/lts/v2/model/AccessConfigBaseLogInfoCreate.h>
 #include <vector>
 
@@ -124,6 +126,96 @@ public:
     void unsetclusterId();
     void setClusterId(const std::string& value);
 
+    /// <summary>
+    /// 是否增量采集 true 为是   false为否（全量采集）
+    /// </summary>
+
+    bool isIncrementalCollect() const;
+    bool incrementalCollectIsSet() const;
+    void unsetincrementalCollect();
+    void setIncrementalCollect(bool value);
+
+    /// <summary>
+    /// 编码格式，支持UTF-8，GDB默认UTF-8
+    /// </summary>
+
+    std::string getEncodingFormat() const;
+    bool encodingFormatIsSet() const;
+    void unsetencodingFormat();
+    void setEncodingFormat(const std::string& value);
+
+    /// <summary>
+    /// IC结构化解析类型包括 ：SINGLE_LINE 单行全文，MULTI_LINE 多行全文，REGEX 单行正则，MULTI_REGEX 多行正则，SPLIT 分隔符，JSON JSON解析，NGINX nginx解析， COMPOSE组合解析
+    /// </summary>
+
+    std::string getProcessorType() const;
+    bool processorTypeIsSet() const;
+    void unsetprocessorType();
+    void setProcessorType(const std::string& value);
+
+    /// <summary>
+    /// 示例日志
+    /// </summary>
+
+    std::string getDemoLog() const;
+    bool demoLogIsSet() const;
+    void unsetdemoLog();
+    void setDemoLog(const std::string& value);
+
+    /// <summary>
+    /// 示例日志解析字段
+    /// </summary>
+
+    std::vector<DemoFieldAccess>& getDemoFields();
+    bool demoFieldsIsSet() const;
+    void unsetdemoFields();
+    void setDemoFields(const std::vector<DemoFieldAccess>& value);
+
+    /// <summary>
+    /// IC结构化解析器
+    /// </summary>
+
+    std::vector<Processor>& getProcessors();
+    bool processorsIsSet() const;
+    void unsetprocessors();
+    void setProcessors(const std::vector<Processor>& value);
+
+    /// <summary>
+    /// ServiceStage应用ID
+    /// </summary>
+
+    std::string getApplicationId() const;
+    bool applicationIdIsSet() const;
+    void unsetapplicationId();
+    void setApplicationId(const std::string& value);
+
+    /// <summary>
+    /// ServiceStage环境ID
+    /// </summary>
+
+    std::string getEnvironmentId() const;
+    bool environmentIdIsSet() const;
+    void unsetenvironmentId();
+    void setEnvironmentId(const std::string& value);
+
+    /// <summary>
+    /// ServiceStage组件ID
+    /// </summary>
+
+    std::vector<std::string>& getComponentId();
+    bool componentIdIsSet() const;
+    void unsetcomponentId();
+    void setComponentId(const std::vector<std::string>& value);
+
+    /// <summary>
+    /// 日志接入自建软件来源
+    /// </summary>
+
+    std::string getAccessConfigTypeSource() const;
+    bool accessConfigTypeSourceIsSet() const;
+    void unsetaccessConfigTypeSource();
+    void setAccessConfigTypeSource(const std::string& value);
+
 
 protected:
     std::string accessConfigName_;
@@ -144,6 +236,26 @@ protected:
     bool logSplitIsSet_;
     std::string clusterId_;
     bool clusterIdIsSet_;
+    bool incrementalCollect_;
+    bool incrementalCollectIsSet_;
+    std::string encodingFormat_;
+    bool encodingFormatIsSet_;
+    std::string processorType_;
+    bool processorTypeIsSet_;
+    std::string demoLog_;
+    bool demoLogIsSet_;
+    std::vector<DemoFieldAccess> demoFields_;
+    bool demoFieldsIsSet_;
+    std::vector<Processor> processors_;
+    bool processorsIsSet_;
+    std::string applicationId_;
+    bool applicationIdIsSet_;
+    std::string environmentId_;
+    bool environmentIdIsSet_;
+    std::vector<std::string> componentId_;
+    bool componentIdIsSet_;
+    std::string accessConfigTypeSource_;
+    bool accessConfigTypeSourceIsSet_;
 
 };
 

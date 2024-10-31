@@ -39,7 +39,7 @@ public:
     /// ErInstance members
 
     /// <summary>
-    /// ER实例id
+    /// ER ID，创建ER时产生的ID
     /// </summary>
 
     std::string getId() const;
@@ -57,25 +57,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// ER状态
-    /// </summary>
-
-    std::string getState() const;
-    bool stateIsSet() const;
-    void unsetstate();
-    void setState(const std::string& value);
-
-    /// <summary>
-    /// 企业租户id
-    /// </summary>
-
-    std::string getEnterpriseProjectId() const;
-    bool enterpriseProjectIdIsSet() const;
-    void unsetenterpriseProjectId();
-    void setEnterpriseProjectId(const std::string& value);
-
-    /// <summary>
-    /// 租户id
+    /// 项目ID, 可以从调API处获取，也可以从控制台获取。[项目ID获取方式](cfw_02_0015.xml)
     /// </summary>
 
     std::string getProjectId() const;
@@ -84,16 +66,7 @@ public:
     void setProjectId(const std::string& value);
 
     /// <summary>
-    /// 是否开启ipv6
-    /// </summary>
-
-    std::string getEnableIpv6() const;
-    bool enableIpv6IsSet() const;
-    void unsetenableIpv6();
-    void setEnableIpv6(const std::string& value);
-
-    /// <summary>
-    /// 连接id
+    /// 企业路由器连接id，该连接用于连接防火墙和企业路由器，此字段可在通过id在ER界面查询指定er后在管理连接界面查询连接了解连接具体情况。
     /// </summary>
 
     std::string getAttachmentId() const;
@@ -107,14 +80,8 @@ protected:
     bool idIsSet_;
     std::string name_;
     bool nameIsSet_;
-    std::string state_;
-    bool stateIsSet_;
-    std::string enterpriseProjectId_;
-    bool enterpriseProjectIdIsSet_;
     std::string projectId_;
     bool projectIdIsSet_;
-    std::string enableIpv6_;
-    bool enableIpv6IsSet_;
     std::string attachmentId_;
     bool attachmentIdIsSet_;
 

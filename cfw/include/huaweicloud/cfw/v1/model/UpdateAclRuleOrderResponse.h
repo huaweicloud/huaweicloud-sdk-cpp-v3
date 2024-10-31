@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/cfw/v1/model/RuleId.h>
+#include <huaweicloud/cfw/v1/model/OrderRuleId.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -42,14 +42,14 @@ public:
     /// 
     /// </summary>
 
-    RuleId getData() const;
+    OrderRuleId getData() const;
     bool dataIsSet() const;
     void unsetdata();
-    void setData(const RuleId& value);
+    void setData(const OrderRuleId& value);
 
 
 protected:
-    RuleId data_;
+    OrderRuleId data_;
     bool dataIsSet_;
 
 #ifdef RTTR_FLAG

@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/cfw/v1/model/IdObject.h"
+#include "huaweicloud/cfw/v1/model/DeleteServiceItemResponseBodyData.h"
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -10,7 +10,7 @@ namespace Model {
 
 
 
-IdObject::IdObject()
+DeleteServiceItemResponseBodyData::DeleteServiceItemResponseBodyData()
 {
     id_ = "";
     idIsSet_ = false;
@@ -18,13 +18,13 @@ IdObject::IdObject()
     nameIsSet_ = false;
 }
 
-IdObject::~IdObject() = default;
+DeleteServiceItemResponseBodyData::~DeleteServiceItemResponseBodyData() = default;
 
-void IdObject::validate()
+void DeleteServiceItemResponseBodyData::validate()
 {
 }
 
-web::json::value IdObject::toJson() const
+web::json::value DeleteServiceItemResponseBodyData::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -37,7 +37,7 @@ web::json::value IdObject::toJson() const
 
     return val;
 }
-bool IdObject::fromJson(const web::json::value& val)
+bool DeleteServiceItemResponseBodyData::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -63,44 +63,44 @@ bool IdObject::fromJson(const web::json::value& val)
 }
 
 
-std::string IdObject::getId() const
+std::string DeleteServiceItemResponseBodyData::getId() const
 {
     return id_;
 }
 
-void IdObject::setId(const std::string& value)
+void DeleteServiceItemResponseBodyData::setId(const std::string& value)
 {
     id_ = value;
     idIsSet_ = true;
 }
 
-bool IdObject::idIsSet() const
+bool DeleteServiceItemResponseBodyData::idIsSet() const
 {
     return idIsSet_;
 }
 
-void IdObject::unsetid()
+void DeleteServiceItemResponseBodyData::unsetid()
 {
     idIsSet_ = false;
 }
 
-std::string IdObject::getName() const
+std::string DeleteServiceItemResponseBodyData::getName() const
 {
     return name_;
 }
 
-void IdObject::setName(const std::string& value)
+void DeleteServiceItemResponseBodyData::setName(const std::string& value)
 {
     name_ = value;
     nameIsSet_ = true;
 }
 
-bool IdObject::nameIsSet() const
+bool DeleteServiceItemResponseBodyData::nameIsSet() const
 {
     return nameIsSet_;
 }
 
-void IdObject::unsetname()
+void DeleteServiceItemResponseBodyData::unsetname()
 {
     nameIsSet_ = false;
 }

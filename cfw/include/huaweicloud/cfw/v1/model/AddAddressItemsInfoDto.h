@@ -41,7 +41,7 @@ public:
     /// AddAddressItemsInfoDto members
 
     /// <summary>
-    /// 地址组id
+    /// 地址组id，可通过[查询地址组列表接口](ListAddressSets.xml)查询获得，通过返回值中的data.records.set_id（.表示各对象之间层级的区分）获得。
     /// </summary>
 
     std::string getSetId() const;
@@ -50,7 +50,7 @@ public:
     void setSetId(const std::string& value);
 
     /// <summary>
-    /// 地址组成员信息
+    /// 地址组成员列表
     /// </summary>
 
     std::vector<AddAddressItemsInfoDto_address_items>& getAddressItems();

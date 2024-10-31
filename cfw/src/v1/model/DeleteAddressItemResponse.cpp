@@ -39,7 +39,7 @@ bool DeleteAddressItemResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("data"));
         if(!fieldValue.is_null())
         {
-            IdObject refVal;
+            AddressItemId refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setData(refVal);
         }
@@ -48,12 +48,12 @@ bool DeleteAddressItemResponse::fromJson(const web::json::value& val)
 }
 
 
-IdObject DeleteAddressItemResponse::getData() const
+AddressItemId DeleteAddressItemResponse::getData() const
 {
     return data_;
 }
 
-void DeleteAddressItemResponse::setData(const IdObject& value)
+void DeleteAddressItemResponse::setData(const AddressItemId& value)
 {
     data_ = value;
     dataIsSet_ = true;

@@ -39,7 +39,7 @@ public:
     /// TagsVO members
 
     /// <summary>
-    /// 标签id
+    /// 规则id
     /// </summary>
 
     std::string getTagId() const;
@@ -48,7 +48,7 @@ public:
     void setTagId(const std::string& value);
 
     /// <summary>
-    /// 标签键
+    /// 规则标签键
     /// </summary>
 
     std::string getTagKey() const;
@@ -57,7 +57,7 @@ public:
     void setTagKey(const std::string& value);
 
     /// <summary>
-    /// 标签值
+    /// 规则标签值
     /// </summary>
 
     std::string getTagValue() const;

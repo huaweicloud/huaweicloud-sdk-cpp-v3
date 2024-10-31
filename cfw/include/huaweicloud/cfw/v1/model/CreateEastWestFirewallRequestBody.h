@@ -39,7 +39,7 @@ public:
     /// CreateEastWestFirewallRequestBody members
 
     /// <summary>
-    /// 出方向关联ER实例id
+    /// 出方向关联ER ID,可通过ER服务查询企业路由器列表接口获得，返回值中instances.id即为erid（.表示各对象之间层级的区分）
     /// </summary>
 
     std::string getErId() const;
@@ -48,7 +48,7 @@ public:
     void setErId(const std::string& value);
 
     /// <summary>
-    /// inspection cidr
+    /// 创建引流VPC时使用的网段
     /// </summary>
 
     std::string getInspectionCidr() const;

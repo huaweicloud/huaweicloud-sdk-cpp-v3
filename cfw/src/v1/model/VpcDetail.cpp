@@ -18,8 +18,6 @@ VpcDetail::VpcDetail()
     nameIsSet_ = false;
     cidr_ = "";
     cidrIsSet_ = false;
-    status_ = "";
-    statusIsSet_ = false;
 }
 
 VpcDetail::~VpcDetail() = default;
@@ -40,9 +38,6 @@ web::json::value VpcDetail::toJson() const
     }
     if(cidrIsSet_) {
         val[utility::conversions::to_string_t("cidr")] = ModelBase::toJson(cidr_);
-    }
-    if(statusIsSet_) {
-        val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
     }
 
     return val;
@@ -76,15 +71,6 @@ bool VpcDetail::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCidr(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("status"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("status"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setStatus(refVal);
         }
     }
     return ok;
@@ -152,27 +138,6 @@ bool VpcDetail::cidrIsSet() const
 void VpcDetail::unsetcidr()
 {
     cidrIsSet_ = false;
-}
-
-std::string VpcDetail::getStatus() const
-{
-    return status_;
-}
-
-void VpcDetail::setStatus(const std::string& value)
-{
-    status_ = value;
-    statusIsSet_ = true;
-}
-
-bool VpcDetail::statusIsSet() const
-{
-    return statusIsSet_;
-}
-
-void VpcDetail::unsetstatus()
-{
-    statusIsSet_ = false;
 }
 
 }

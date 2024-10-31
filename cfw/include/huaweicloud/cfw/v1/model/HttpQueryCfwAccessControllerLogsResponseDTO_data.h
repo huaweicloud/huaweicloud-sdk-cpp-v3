@@ -40,7 +40,7 @@ public:
     /// HttpQueryCfwAccessControllerLogsResponseDTO_data members
 
     /// <summary>
-    /// 返回数量
+    /// 查询访问控制日志记录总数
     /// </summary>
 
     int32_t getTotal() const;
@@ -58,7 +58,7 @@ public:
     void setLimit(int32_t value);
 
     /// <summary>
-    /// 记录
+    /// 查询访问控制日志记录
     /// </summary>
 
     std::vector<HttpQueryCfwAccessControllerLogsResponseDTO_data_records>& getRecords();

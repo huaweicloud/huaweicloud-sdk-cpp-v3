@@ -39,7 +39,7 @@ bool DeleteServiceItemResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("data"));
         if(!fieldValue.is_null())
         {
-            IdObject refVal;
+            DeleteServiceItemResponseBodyData refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setData(refVal);
         }
@@ -48,12 +48,12 @@ bool DeleteServiceItemResponse::fromJson(const web::json::value& val)
 }
 
 
-IdObject DeleteServiceItemResponse::getData() const
+DeleteServiceItemResponseBodyData DeleteServiceItemResponse::getData() const
 {
     return data_;
 }
 
-void DeleteServiceItemResponse::setData(const IdObject& value)
+void DeleteServiceItemResponse::setData(const DeleteServiceItemResponseBodyData& value)
 {
     data_ = value;
     dataIsSet_ = true;

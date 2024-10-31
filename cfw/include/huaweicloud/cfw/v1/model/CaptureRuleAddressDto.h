@@ -48,7 +48,7 @@ public:
     void setAddress(const std::string& value);
 
     /// <summary>
-    /// 目的地址类型0 ipv4,1 ipv6
+    /// 目的地址类型0 ipv4，1 ipv6
     /// </summary>
 
     int32_t getAddressType() const;

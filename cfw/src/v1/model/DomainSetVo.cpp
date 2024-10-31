@@ -24,8 +24,6 @@ DomainSetVo::DomainSetVo()
     domainSetTypeIsSet_ = false;
     configStatus_ = 0;
     configStatusIsSet_ = false;
-    message_ = "";
-    messageIsSet_ = false;
     rulesIsSet_ = false;
 }
 
@@ -56,9 +54,6 @@ web::json::value DomainSetVo::toJson() const
     }
     if(configStatusIsSet_) {
         val[utility::conversions::to_string_t("config_status")] = ModelBase::toJson(configStatus_);
-    }
-    if(messageIsSet_) {
-        val[utility::conversions::to_string_t("message")] = ModelBase::toJson(message_);
     }
     if(rulesIsSet_) {
         val[utility::conversions::to_string_t("rules")] = ModelBase::toJson(rules_);
@@ -122,15 +117,6 @@ bool DomainSetVo::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setConfigStatus(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("message"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("message"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setMessage(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("rules"))) {
@@ -270,27 +256,6 @@ bool DomainSetVo::configStatusIsSet() const
 void DomainSetVo::unsetconfigStatus()
 {
     configStatusIsSet_ = false;
-}
-
-std::string DomainSetVo::getMessage() const
-{
-    return message_;
-}
-
-void DomainSetVo::setMessage(const std::string& value)
-{
-    message_ = value;
-    messageIsSet_ = true;
-}
-
-bool DomainSetVo::messageIsSet() const
-{
-    return messageIsSet_;
-}
-
-void DomainSetVo::unsetmessage()
-{
-    messageIsSet_ = false;
 }
 
 std::vector<UseRuleVO>& DomainSetVo::getRules()

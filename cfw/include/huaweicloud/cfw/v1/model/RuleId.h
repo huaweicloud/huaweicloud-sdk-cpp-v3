@@ -39,7 +39,7 @@ public:
     /// RuleId members
 
     /// <summary>
-    /// id
+    /// 规则id
     /// </summary>
 
     std::string getId() const;
@@ -48,7 +48,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 名称
+    /// 规则名称
     /// </summary>
 
     std::string getName() const;

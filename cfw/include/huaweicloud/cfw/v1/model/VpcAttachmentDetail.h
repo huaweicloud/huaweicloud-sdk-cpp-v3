@@ -39,7 +39,7 @@ public:
     /// VpcAttachmentDetail members
 
     /// <summary>
-    /// vpc id
+    /// 东西向防护添加的防护vpc的id
     /// </summary>
 
     std::string getVpcId() const;

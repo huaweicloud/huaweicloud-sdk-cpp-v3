@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_CFW_V1_MODEL_IdObject_H_
-#define HUAWEICLOUD_SDK_CFW_V1_MODEL_IdObject_H_
+#ifndef HUAWEICLOUD_SDK_CFW_V1_MODEL_FailedEipInfo_H_
+#define HUAWEICLOUD_SDK_CFW_V1_MODEL_FailedEipInfo_H_
 
 
 #include <huaweicloud/cfw/v1/CfwExport.h>
@@ -22,12 +22,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// 
 /// </summary>
-class HUAWEICLOUD_CFW_V1_EXPORT  IdObject
+class HUAWEICLOUD_CFW_V1_EXPORT  FailedEipInfo
     : public ModelBase
 {
 public:
-    IdObject();
-    virtual ~IdObject();
+    FailedEipInfo();
+    virtual ~FailedEipInfo();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -36,10 +36,10 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// IdObject members
+    /// FailedEipInfo members
 
     /// <summary>
-    /// id值
+    /// 修改状态失败的eipId。
     /// </summary>
 
     std::string getId() const;
@@ -48,20 +48,20 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 名称
+    /// 修改状态失败的错误码。
     /// </summary>
 
-    std::string getName() const;
-    bool nameIsSet() const;
-    void unsetname();
-    void setName(const std::string& value);
+    std::string getErrorMessage() const;
+    bool errorMessageIsSet() const;
+    void unseterrorMessage();
+    void setErrorMessage(const std::string& value);
 
 
 protected:
     std::string id_;
     bool idIsSet_;
-    std::string name_;
-    bool nameIsSet_;
+    std::string errorMessage_;
+    bool errorMessageIsSet_;
 
 };
 
@@ -72,4 +72,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_CFW_V1_MODEL_IdObject_H_
+#endif // HUAWEICLOUD_SDK_CFW_V1_MODEL_FailedEipInfo_H_

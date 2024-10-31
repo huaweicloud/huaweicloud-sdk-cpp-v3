@@ -39,7 +39,7 @@ bool UpdateAclRuleOrderResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("data"));
         if(!fieldValue.is_null())
         {
-            RuleId refVal;
+            OrderRuleId refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setData(refVal);
         }
@@ -48,12 +48,12 @@ bool UpdateAclRuleOrderResponse::fromJson(const web::json::value& val)
 }
 
 
-RuleId UpdateAclRuleOrderResponse::getData() const
+OrderRuleId UpdateAclRuleOrderResponse::getData() const
 {
     return data_;
 }
 
-void UpdateAclRuleOrderResponse::setData(const RuleId& value)
+void UpdateAclRuleOrderResponse::setData(const OrderRuleId& value)
 {
     data_ = value;
     dataIsSet_ = true;

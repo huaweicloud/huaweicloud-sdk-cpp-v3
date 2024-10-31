@@ -39,7 +39,7 @@ bool ListCaptureTaskResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("data"));
         if(!fieldValue.is_null())
         {
-            std::vector<HttpQueryCaptureTaskResponseData> refVal;
+            HttpQueryCaptureTaskResponseData refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setData(refVal);
         }
@@ -48,12 +48,12 @@ bool ListCaptureTaskResponse::fromJson(const web::json::value& val)
 }
 
 
-std::vector<HttpQueryCaptureTaskResponseData>& ListCaptureTaskResponse::getData()
+HttpQueryCaptureTaskResponseData ListCaptureTaskResponse::getData() const
 {
     return data_;
 }
 
-void ListCaptureTaskResponse::setData(const std::vector<HttpQueryCaptureTaskResponseData>& value)
+void ListCaptureTaskResponse::setData(const HttpQueryCaptureTaskResponseData& value)
 {
     data_ = value;
     dataIsSet_ = true;

@@ -57,7 +57,7 @@ public:
     void setLimit(int32_t value);
 
     /// <summary>
-    /// 服务类型 0 南北向防火墙 1 东西向防火墙
+    /// 服务类型，目前仅支持0互联网防护
     /// </summary>
 
     int32_t getServiceType() const;
@@ -66,7 +66,7 @@ public:
     void setServiceType(int32_t value);
 
     /// <summary>
-    /// 企业项目id，用户支持企业项目后，由企业项目生成的id。
+    /// 企业项目ID，用户根据组织规划企业项目，对应的ID为企业项目ID，可通过[如何获取企业项目ID](cfw_02_0027.xml)获取，用户未开启企业项目时为0
     /// </summary>
 
     std::string getEnterpriseProjectId() const;

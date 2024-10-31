@@ -10,7 +10,6 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
-#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -49,7 +48,7 @@ public:
     void setDomainAddressId(const std::string& value);
 
     /// <summary>
-    /// 域名
+    /// 域名，如www.test.com
     /// </summary>
 
     std::string getDomainName() const;
@@ -58,22 +57,13 @@ public:
     void setDomainName(const std::string& value);
 
     /// <summary>
-    /// 描述
+    /// 域名描述
     /// </summary>
 
     std::string getDescription() const;
     bool descriptionIsSet() const;
     void unsetdescription();
     void setDescription(const std::string& value);
-
-    /// <summary>
-    /// 域名服务器列表
-    /// </summary>
-
-    std::vector<std::string>& getDnsIps();
-    bool dnsIpsIsSet() const;
-    void unsetdnsIps();
-    void setDnsIps(const std::vector<std::string>& value);
 
 
 protected:
@@ -83,8 +73,6 @@ protected:
     bool domainNameIsSet_;
     std::string description_;
     bool descriptionIsSet_;
-    std::vector<std::string> dnsIps_;
-    bool dnsIpsIsSet_;
 
 };
 

@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 规格信息
+/// 防火墙规格信息
 /// </summary>
 class HUAWEICLOUD_CFW_V1_EXPORT  CreateFirewallReq_flavor
     : public ModelBase
@@ -39,7 +39,7 @@ public:
     /// CreateFirewallReq_flavor members
 
     /// <summary>
-    /// 防火墙版本 “charge_mode”为“prePaid”时，仅支持专业版。 “charge_mode”为“postPaid”时，支持标准版、专业版。  Standard - 标准版 Professional - 专业版
+    /// 防火墙版本 “charge_mode”为“prePaid”时，支持标准版、专业版。 “charge_mode”为“postPaid”时，仅支持专业版。  Standard - 标准版 Professional - 专业版
     /// </summary>
 
     std::string getVersion() const;
@@ -48,7 +48,7 @@ public:
     void setVersion(const std::string& value);
 
     /// <summary>
-    /// 扩展EIP数量，仅包周期场景下生效
+    /// 扩展EIP数量，仅包周期场景下生效，当用户需要在增加EIP使用时需要使用此参数。
     /// </summary>
 
     int32_t getExtendEipCount() const;
@@ -57,7 +57,7 @@ public:
     void setExtendEipCount(int32_t value);
 
     /// <summary>
-    /// 扩展带宽，步长为5，仅包周期场景下生效
+    /// 扩展带宽，步长为5，仅包周期场景下生效，当用户需要在增加带宽使用时需要使用此参数。
     /// </summary>
 
     int32_t getExtendBandwidth() const;
@@ -66,7 +66,7 @@ public:
     void setExtendBandwidth(int32_t value);
 
     /// <summary>
-    /// 扩展VPC数量，仅包周期场景下生效
+    /// 扩展VPC数量，仅包周期场景下生效，当用户需要增加VPC使用时需要使用此参数。
     /// </summary>
 
     int32_t getExtendVpcCount() const;

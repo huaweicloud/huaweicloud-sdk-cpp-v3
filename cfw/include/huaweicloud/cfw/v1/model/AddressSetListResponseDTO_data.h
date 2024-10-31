@@ -58,7 +58,7 @@ public:
     void setLimit(int32_t value);
 
     /// <summary>
-    /// 总数
+    /// 地址组总数
     /// </summary>
 
     int32_t getTotal() const;

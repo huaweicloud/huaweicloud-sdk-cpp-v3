@@ -39,7 +39,7 @@ public:
     /// DnsServersResponseDTO members
 
     /// <summary>
-    /// id
+    /// 域名服务器id
     /// </summary>
 
     int32_t getId() const;
@@ -48,7 +48,7 @@ public:
     void setId(int32_t value);
 
     /// <summary>
-    /// 是否应用，0否 1是
+    /// 域名服务器是否应用，0否 1是
     /// </summary>
 
     int32_t getIsApplied() const;
@@ -57,7 +57,7 @@ public:
     void setIsApplied(int32_t value);
 
     /// <summary>
-    /// 是否是用户自定义的dns服务器，0否 1是
+    /// 域名服务器是否是用户自定义的dns服务器，0否 1是
     /// </summary>
 
     int32_t getIsCustomized() const;

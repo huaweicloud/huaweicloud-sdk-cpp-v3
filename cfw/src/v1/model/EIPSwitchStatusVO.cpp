@@ -15,6 +15,7 @@ EIPSwitchStatusVO::EIPSwitchStatusVO()
     objectId_ = "";
     objectIdIsSet_ = false;
     failEipIdListIsSet_ = false;
+    failEipListIsSet_ = false;
     id_ = "";
     idIsSet_ = false;
 }
@@ -34,6 +35,9 @@ web::json::value EIPSwitchStatusVO::toJson() const
     }
     if(failEipIdListIsSet_) {
         val[utility::conversions::to_string_t("fail_eip_id_list")] = ModelBase::toJson(failEipIdList_);
+    }
+    if(failEipListIsSet_) {
+        val[utility::conversions::to_string_t("fail_eip_list")] = ModelBase::toJson(failEipList_);
     }
     if(idIsSet_) {
         val[utility::conversions::to_string_t("id")] = ModelBase::toJson(id_);
@@ -61,6 +65,15 @@ bool EIPSwitchStatusVO::fromJson(const web::json::value& val)
             std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFailEipIdList(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("fail_eip_list"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("fail_eip_list"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<FailedEipInfo> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFailEipList(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("id"))) {
@@ -116,6 +129,27 @@ bool EIPSwitchStatusVO::failEipIdListIsSet() const
 void EIPSwitchStatusVO::unsetfailEipIdList()
 {
     failEipIdListIsSet_ = false;
+}
+
+std::vector<FailedEipInfo>& EIPSwitchStatusVO::getFailEipList()
+{
+    return failEipList_;
+}
+
+void EIPSwitchStatusVO::setFailEipList(const std::vector<FailedEipInfo>& value)
+{
+    failEipList_ = value;
+    failEipListIsSet_ = true;
+}
+
+bool EIPSwitchStatusVO::failEipListIsSet() const
+{
+    return failEipListIsSet_;
+}
+
+void EIPSwitchStatusVO::unsetfailEipList()
+{
+    failEipListIsSet_ = false;
 }
 
 std::string EIPSwitchStatusVO::getId() const

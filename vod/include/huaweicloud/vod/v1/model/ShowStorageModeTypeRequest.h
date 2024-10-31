@@ -1,33 +1,32 @@
 
-#ifndef HUAWEICLOUD_SDK_CFW_V1_MODEL_SuccessRsp_data_H_
-#define HUAWEICLOUD_SDK_CFW_V1_MODEL_SuccessRsp_data_H_
+#ifndef HUAWEICLOUD_SDK_VOD_V1_MODEL_ShowStorageModeTypeRequest_H_
+#define HUAWEICLOUD_SDK_VOD_V1_MODEL_ShowStorageModeTypeRequest_H_
 
 
-#include <huaweicloud/cfw/v1/CfwExport.h>
+#include <huaweicloud/vod/v1/VodExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <string>
 
 namespace HuaweiCloud {
 namespace Sdk {
-namespace Cfw {
+namespace Vod {
 namespace V1 {
 namespace Model {
 
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 响应体
+/// Request Object
 /// </summary>
-class HUAWEICLOUD_CFW_V1_EXPORT  SuccessRsp_data
+class HUAWEICLOUD_VOD_V1_EXPORT  ShowStorageModeTypeRequest
     : public ModelBase
 {
 public:
-    SuccessRsp_data();
-    virtual ~SuccessRsp_data();
+    ShowStorageModeTypeRequest();
+    virtual ~ShowStorageModeTypeRequest();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -36,22 +35,18 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// SuccessRsp_data members
-
-    /// <summary>
-    /// 标识ID
-    /// </summary>
-
-    std::string getId() const;
-    bool idIsSet() const;
-    void unsetid();
-    void setId(const std::string& value);
+    /// ShowStorageModeTypeRequest members
 
 
 protected:
-    std::string id_;
-    bool idIsSet_;
 
+#ifdef RTTR_FLAG
+    RTTR_ENABLE()
+public:
+    ShowStorageModeTypeRequest& dereference_from_shared_ptr(std::shared_ptr<ShowStorageModeTypeRequest> ptr) {
+        return *ptr;
+    }
+#endif
 };
 
 
@@ -61,4 +56,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_CFW_V1_MODEL_SuccessRsp_data_H_
+#endif // HUAWEICLOUD_SDK_VOD_V1_MODEL_ShowStorageModeTypeRequest_H_

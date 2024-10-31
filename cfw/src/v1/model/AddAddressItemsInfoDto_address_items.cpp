@@ -12,8 +12,6 @@ namespace Model {
 
 AddAddressItemsInfoDto_address_items::AddAddressItemsInfoDto_address_items()
 {
-    name_ = "";
-    nameIsSet_ = false;
     addressType_ = 0;
     addressTypeIsSet_ = false;
     address_ = "";
@@ -32,9 +30,6 @@ web::json::value AddAddressItemsInfoDto_address_items::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(nameIsSet_) {
-        val[utility::conversions::to_string_t("name")] = ModelBase::toJson(name_);
-    }
     if(addressTypeIsSet_) {
         val[utility::conversions::to_string_t("address_type")] = ModelBase::toJson(addressType_);
     }
@@ -51,15 +46,6 @@ bool AddAddressItemsInfoDto_address_items::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("name"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("name"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setName(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("address_type"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("address_type"));
         if(!fieldValue.is_null())
@@ -90,27 +76,6 @@ bool AddAddressItemsInfoDto_address_items::fromJson(const web::json::value& val)
     return ok;
 }
 
-
-std::string AddAddressItemsInfoDto_address_items::getName() const
-{
-    return name_;
-}
-
-void AddAddressItemsInfoDto_address_items::setName(const std::string& value)
-{
-    name_ = value;
-    nameIsSet_ = true;
-}
-
-bool AddAddressItemsInfoDto_address_items::nameIsSet() const
-{
-    return nameIsSet_;
-}
-
-void AddAddressItemsInfoDto_address_items::unsetname()
-{
-    nameIsSet_ = false;
-}
 
 int32_t AddAddressItemsInfoDto_address_items::getAddressType() const
 {

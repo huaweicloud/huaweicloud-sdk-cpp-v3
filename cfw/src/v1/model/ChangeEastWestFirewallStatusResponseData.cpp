@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/cfw/v1/model/SuccessRsp_data.h"
+#include "huaweicloud/cfw/v1/model/ChangeEastWestFirewallStatusResponseData.h"
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cfw {
@@ -10,19 +10,19 @@ namespace Model {
 
 
 
-SuccessRsp_data::SuccessRsp_data()
+ChangeEastWestFirewallStatusResponseData::ChangeEastWestFirewallStatusResponseData()
 {
     id_ = "";
     idIsSet_ = false;
 }
 
-SuccessRsp_data::~SuccessRsp_data() = default;
+ChangeEastWestFirewallStatusResponseData::~ChangeEastWestFirewallStatusResponseData() = default;
 
-void SuccessRsp_data::validate()
+void ChangeEastWestFirewallStatusResponseData::validate()
 {
 }
 
-web::json::value SuccessRsp_data::toJson() const
+web::json::value ChangeEastWestFirewallStatusResponseData::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -32,7 +32,7 @@ web::json::value SuccessRsp_data::toJson() const
 
     return val;
 }
-bool SuccessRsp_data::fromJson(const web::json::value& val)
+bool ChangeEastWestFirewallStatusResponseData::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -49,23 +49,23 @@ bool SuccessRsp_data::fromJson(const web::json::value& val)
 }
 
 
-std::string SuccessRsp_data::getId() const
+std::string ChangeEastWestFirewallStatusResponseData::getId() const
 {
     return id_;
 }
 
-void SuccessRsp_data::setId(const std::string& value)
+void ChangeEastWestFirewallStatusResponseData::setId(const std::string& value)
 {
     id_ = value;
     idIsSet_ = true;
 }
 
-bool SuccessRsp_data::idIsSet() const
+bool ChangeEastWestFirewallStatusResponseData::idIsSet() const
 {
     return idIsSet_;
 }
 
-void SuccessRsp_data::unsetid()
+void ChangeEastWestFirewallStatusResponseData::unsetid()
 {
     idIsSet_ = false;
 }

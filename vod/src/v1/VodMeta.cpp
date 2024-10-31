@@ -704,6 +704,11 @@ HttpRequestDef VodMeta::genRequestDefForShowPreheatingAsset() {
     return reqDefBuilder;
 }
 
+HttpRequestDef VodMeta::genRequestDefForShowStorageModeType() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef VodMeta::genRequestDefForShowVodRetrieval() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("StartTime")
@@ -822,6 +827,15 @@ HttpRequestDef VodMeta::genRequestDefForUpdateCoverByThumbnail() {
 }
 
 HttpRequestDef VodMeta::genRequestDefForUpdateStorageMode() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef VodMeta::genRequestDefForUpdateStorageModeType() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.

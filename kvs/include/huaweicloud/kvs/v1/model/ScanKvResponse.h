@@ -48,10 +48,10 @@ public:
     /// 返回的文档数量，为0不表示结束。 &gt; 如果filtered_count超过500仍无匹配，则返回0。
     /// </summary>
 
-    int32_t getReturnedCount() const;
+    int64_t getReturnedCount() const;
     bool returnedCountIsSet() const;
     void unsetreturnedCount();
-    void setReturnedCount(int32_t value);
+    void setReturnedCount(int64_t value);
 
     /// <summary>
     /// 被过滤掉的文档数量。
@@ -91,7 +91,7 @@ public:
 
 
 protected:
-    int32_t returnedCount_;
+    int64_t returnedCount_;
     bool returnedCountIsSet_;
     int32_t filteredCount_;
     bool filteredCountIsSet_;

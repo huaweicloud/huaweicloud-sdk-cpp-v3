@@ -39,7 +39,7 @@ public:
     /// ListEipsRequest members
 
     /// <summary>
-    /// 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id。
+    /// 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)获得，通过返回值中的data.records.protect_objects.object_id（.表示各对象之间层级的区分）获得，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id。此处仅取type为0的防护对象id，可通过data.records.protect_objects.type（.表示各对象之间层级的区分）获得。
     /// </summary>
 
     std::string getObjectId() const;
@@ -48,7 +48,7 @@ public:
     void setObjectId(const std::string& value);
 
     /// <summary>
-    /// 弹性公网ID/弹性公网IP
+    /// 查询防护EIP列表关键字，可选用弹性公网ID和弹性公网IP
     /// </summary>
 
     std::string getKeyWord() const;
@@ -93,7 +93,7 @@ public:
     void setOffset(int32_t value);
 
     /// <summary>
-    /// 企业项目id，用户支持企业项目后，由企业项目生成的id。
+    /// 企业项目ID，用户根据组织规划企业项目，对应的ID为企业项目ID，可通过[如何获取企业项目ID](cfw_02_0027.xml)获取，用户未开启企业项目时为0
     /// </summary>
 
     std::string getEnterpriseProjectId() const;
@@ -102,7 +102,7 @@ public:
     void setEnterpriseProjectId(const std::string& value);
 
     /// <summary>
-    /// 设备键
+    /// 设备关键字，是eip绑定的资产的名称或id
     /// </summary>
 
     std::string getDeviceKey() const;
@@ -111,7 +111,7 @@ public:
     void setDeviceKey(const std::string& value);
 
     /// <summary>
-    /// 地址类型0 ipv4,1 ipv6
+    /// 地址类型0 ipv4，1 ipv6
     /// </summary>
 
     int32_t getAddressType() const;
@@ -120,7 +120,7 @@ public:
     void setAddressType(int32_t value);
 
     /// <summary>
-    /// 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)，默认情况下，fw_instance_Id为空时，返回账号下第一个墙的信息；fw_instance_Id非空时，返回与fw_instance_Id对应墙的信息。
+    /// 防火墙id，可通过[防火墙ID获取方式](cfw_02_0028.xml)获取
     /// </summary>
 
     std::string getFwInstanceId() const;
@@ -129,7 +129,7 @@ public:
     void setFwInstanceId(const std::string& value);
 
     /// <summary>
-    /// 所绑定防火墙id防火墙名称
+    /// 防火墙关键字，可使用防火墙id或名称查询，可通过[防火墙ID获取方式](cfw_02_0028.xml)
     /// </summary>
 
     std::string getFwKeyWord() const;
@@ -138,7 +138,7 @@ public:
     void setFwKeyWord(const std::string& value);
 
     /// <summary>
-    /// 弹性公网ip的企业项目id
+    /// 弹性公网ip的企业项目id，可通过[如何获取企业项目ID](cfw_02_0027.xml)获取，租户未开启企业项目时为0
     /// </summary>
 
     std::string getEpsId() const;
@@ -147,7 +147,7 @@ public:
     void setEpsId(const std::string& value);
 
     /// <summary>
-    /// 标签列表信息
+    /// 标签列表信息可通过查询EIP服务界面列表标签页签获得
     /// </summary>
 
     std::string getTags() const;

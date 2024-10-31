@@ -39,7 +39,7 @@ public:
     /// CaptureTaskVO members
 
     /// <summary>
-    /// 抓包大小
+    /// 抓包大小,如500kb,500mb
     /// </summary>
 
     std::string getCaptureSize() const;
@@ -48,7 +48,7 @@ public:
     void setCaptureSize(const std::string& value);
 
     /// <summary>
-    /// 抓包创建时间
+    /// 抓包创建时间,如2024/08/31 10:17:30
     /// </summary>
 
     std::string getCreatedDate() const;
@@ -66,7 +66,7 @@ public:
     void setDestAddress(const std::string& value);
 
     /// <summary>
-    /// 目的地址类型0 ipv4,1 ipv6
+    /// 目的地址类型0 ipv4，1 ipv6
     /// </summary>
 
     int32_t getDestAddressType() const;
@@ -84,7 +84,7 @@ public:
     void setDestPort(const std::string& value);
 
     /// <summary>
-    /// 抓包时长
+    /// 抓包时长，以分钟为单位
     /// </summary>
 
     int32_t getDuration() const;
@@ -102,7 +102,7 @@ public:
     void setIsDeleted(int32_t value);
 
     /// <summary>
-    /// 最大抓包数
+    /// 最大抓包数，以个为单位
     /// </summary>
 
     int32_t getMaxPackets() const;
@@ -111,7 +111,7 @@ public:
     void setMaxPackets(int32_t value);
 
     /// <summary>
-    /// 修改日期
+    /// 修改日期,如2024/08/31 10:17:30
     /// </summary>
 
     std::string getModifiedDate() const;
@@ -156,7 +156,7 @@ public:
     void setSourceAddress(const std::string& value);
 
     /// <summary>
-    /// 源地址类型0 ipv4,1 ipv6
+    /// 源地址类型0 ipv4，1 ipv6
     /// </summary>
 
     int32_t getSourceAddressType() const;
@@ -174,7 +174,7 @@ public:
     void setSourcePort(const std::string& value);
 
     /// <summary>
-    /// 抓包任务状态
+    /// 抓包任务状态，如成功（1），运行中（2），已截止（4），截止中（5）
     /// </summary>
 
     int32_t getStatus() const;

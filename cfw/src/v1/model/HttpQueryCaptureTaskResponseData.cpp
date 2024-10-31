@@ -14,12 +14,8 @@ HttpQueryCaptureTaskResponseData::HttpQueryCaptureTaskResponseData()
 {
     limit_ = 0;
     limitIsSet_ = false;
-    objectId_ = "";
-    objectIdIsSet_ = false;
     offset_ = 0;
     offsetIsSet_ = false;
-    projectId_ = "";
-    projectIdIsSet_ = false;
     total_ = 0L;
     totalIsSet_ = false;
     recordsIsSet_ = false;
@@ -38,14 +34,8 @@ web::json::value HttpQueryCaptureTaskResponseData::toJson() const
     if(limitIsSet_) {
         val[utility::conversions::to_string_t("limit")] = ModelBase::toJson(limit_);
     }
-    if(objectIdIsSet_) {
-        val[utility::conversions::to_string_t("object_id")] = ModelBase::toJson(objectId_);
-    }
     if(offsetIsSet_) {
         val[utility::conversions::to_string_t("offset")] = ModelBase::toJson(offset_);
-    }
-    if(projectIdIsSet_) {
-        val[utility::conversions::to_string_t("project_id")] = ModelBase::toJson(projectId_);
     }
     if(totalIsSet_) {
         val[utility::conversions::to_string_t("total")] = ModelBase::toJson(total_);
@@ -69,15 +59,6 @@ bool HttpQueryCaptureTaskResponseData::fromJson(const web::json::value& val)
             setLimit(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("object_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("object_id"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setObjectId(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("offset"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("offset"));
         if(!fieldValue.is_null())
@@ -85,15 +66,6 @@ bool HttpQueryCaptureTaskResponseData::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setOffset(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("project_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("project_id"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setProjectId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("total"))) {
@@ -139,27 +111,6 @@ void HttpQueryCaptureTaskResponseData::unsetlimit()
     limitIsSet_ = false;
 }
 
-std::string HttpQueryCaptureTaskResponseData::getObjectId() const
-{
-    return objectId_;
-}
-
-void HttpQueryCaptureTaskResponseData::setObjectId(const std::string& value)
-{
-    objectId_ = value;
-    objectIdIsSet_ = true;
-}
-
-bool HttpQueryCaptureTaskResponseData::objectIdIsSet() const
-{
-    return objectIdIsSet_;
-}
-
-void HttpQueryCaptureTaskResponseData::unsetobjectId()
-{
-    objectIdIsSet_ = false;
-}
-
 int32_t HttpQueryCaptureTaskResponseData::getOffset() const
 {
     return offset_;
@@ -179,27 +130,6 @@ bool HttpQueryCaptureTaskResponseData::offsetIsSet() const
 void HttpQueryCaptureTaskResponseData::unsetoffset()
 {
     offsetIsSet_ = false;
-}
-
-std::string HttpQueryCaptureTaskResponseData::getProjectId() const
-{
-    return projectId_;
-}
-
-void HttpQueryCaptureTaskResponseData::setProjectId(const std::string& value)
-{
-    projectId_ = value;
-    projectIdIsSet_ = true;
-}
-
-bool HttpQueryCaptureTaskResponseData::projectIdIsSet() const
-{
-    return projectIdIsSet_;
-}
-
-void HttpQueryCaptureTaskResponseData::unsetprojectId()
-{
-    projectIdIsSet_ = false;
 }
 
 int64_t HttpQueryCaptureTaskResponseData::getTotal() const

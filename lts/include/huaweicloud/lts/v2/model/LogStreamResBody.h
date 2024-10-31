@@ -68,6 +68,15 @@ public:
     void setLogStreamName(const std::string& value);
 
     /// <summary>
+    /// 日志流别名
+    /// </summary>
+
+    std::string getLogStreamNameAlias() const;
+    bool logStreamNameAliasIsSet() const;
+    void unsetlogStreamNameAlias();
+    void setLogStreamNameAlias(const std::string& value);
+
+    /// <summary>
     /// 日志流所属标签
     /// </summary>
 
@@ -94,6 +103,51 @@ public:
     void unsetisFavorite();
     void setIsFavorite(bool value);
 
+    /// <summary>
+    /// 是否日志存储
+    /// </summary>
+
+    bool isWhetherLogStorage() const;
+    bool whetherLogStorageIsSet() const;
+    void unsetwhetherLogStorage();
+    void setWhetherLogStorage(bool value);
+
+    /// <summary>
+    /// 是否冷存储
+    /// </summary>
+
+    bool isHotColdSeparation() const;
+    bool hotColdSeparationIsSet() const;
+    void unsethotColdSeparation();
+    void setHotColdSeparation(bool value);
+
+    /// <summary>
+    /// 匿名写入开关
+    /// </summary>
+
+    bool isAuthWebTracking() const;
+    bool authWebTrackingIsSet() const;
+    void unsetauthWebTracking();
+    void setAuthWebTracking(bool value);
+
+    /// <summary>
+    /// 存储时间
+    /// </summary>
+
+    int32_t getTtlInDays() const;
+    bool ttlInDaysIsSet() const;
+    void unsetttlInDays();
+    void setTtlInDays(int32_t value);
+
+    /// <summary>
+    /// 标准存储时间
+    /// </summary>
+
+    int32_t getHotStorageDays() const;
+    bool hotStorageDaysIsSet() const;
+    void unsethotStorageDays();
+    void setHotStorageDays(int32_t value);
+
 
 protected:
     int64_t creationTime_;
@@ -102,12 +156,24 @@ protected:
     bool logStreamIdIsSet_;
     std::string logStreamName_;
     bool logStreamNameIsSet_;
+    std::string logStreamNameAlias_;
+    bool logStreamNameAliasIsSet_;
     std::map<std::string, std::string> tag_;
     bool tagIsSet_;
     int32_t filterCount_;
     bool filterCountIsSet_;
     bool isFavorite_;
     bool isFavoriteIsSet_;
+    bool whetherLogStorage_;
+    bool whetherLogStorageIsSet_;
+    bool hotColdSeparation_;
+    bool hotColdSeparationIsSet_;
+    bool authWebTracking_;
+    bool authWebTrackingIsSet_;
+    int32_t ttlInDays_;
+    bool ttlInDaysIsSet_;
+    int32_t hotStorageDays_;
+    bool hotStorageDaysIsSet_;
 
 };
 

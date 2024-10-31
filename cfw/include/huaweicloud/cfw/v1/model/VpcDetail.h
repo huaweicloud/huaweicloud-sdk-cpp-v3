@@ -39,7 +39,7 @@ public:
     /// VpcDetail members
 
     /// <summary>
-    /// id
+    /// 创建引流VPC产生的随机UUID
     /// </summary>
 
     std::string getId() const;
@@ -48,7 +48,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 名称
+    /// 引流VPC名称
     /// </summary>
 
     std::string getName() const;
@@ -57,22 +57,13 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// vpc cidr
+    /// 功能说明：虚拟私有云下可用子网的范围 取值范围： 10.0.0.0/8~24 172.16.0.0/12~24 192.168.0.0/16~24 不指定cidr时，默认值为空 约束：必须是cidr格式，例如:192.168.0.0/16
     /// </summary>
 
     std::string getCidr() const;
     bool cidrIsSet() const;
     void unsetcidr();
     void setCidr(const std::string& value);
-
-    /// <summary>
-    /// 状态
-    /// </summary>
-
-    std::string getStatus() const;
-    bool statusIsSet() const;
-    void unsetstatus();
-    void setStatus(const std::string& value);
 
 
 protected:
@@ -82,8 +73,6 @@ protected:
     bool nameIsSet_;
     std::string cidr_;
     bool cidrIsSet_;
-    std::string status_;
-    bool statusIsSet_;
 
 };
 

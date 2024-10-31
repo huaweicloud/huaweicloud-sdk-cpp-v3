@@ -70,6 +70,15 @@ public:
     void unsetrmv();
     void setRmv(const std::vector<std::string>& value);
 
+    /// <summary>
+    /// 插入元素到数组中 &gt; 非数组返回失败。
+    /// </summary>
+
+    Document getInsert() const;
+    bool insertIsSet() const;
+    void unsetinsert();
+    void setInsert(const Document& value);
+
 
 protected:
     Document set_;
@@ -78,6 +87,8 @@ protected:
     bool addIsSet_;
     std::vector<std::string> rmv_;
     bool rmvIsSet_;
+    Document insert_;
+    bool insertIsSet_;
 
 };
 

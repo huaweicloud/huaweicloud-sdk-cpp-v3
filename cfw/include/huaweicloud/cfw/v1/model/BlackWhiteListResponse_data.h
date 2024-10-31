@@ -21,7 +21,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 查询黑白名单返回值
+/// 查询黑白名单返回值数据
 /// </summary>
 class HUAWEICLOUD_CFW_V1_EXPORT  BlackWhiteListResponse_data
     : public ModelBase
@@ -58,7 +58,7 @@ public:
     void setLimit(int32_t value);
 
     /// <summary>
-    /// 查询的总条数
+    /// 查询黑白名单总条数
     /// </summary>
 
     int32_t getTotal() const;
@@ -67,7 +67,7 @@ public:
     void setTotal(int32_t value);
 
     /// <summary>
-    /// 黑白名单记录
+    /// 黑白名单列表
     /// </summary>
 
     std::vector<BlackWhiteListResponse_data_records>& getRecords();

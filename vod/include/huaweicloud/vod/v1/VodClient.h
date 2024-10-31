@@ -106,6 +106,8 @@
 #include <huaweicloud/vod/v1/model/ShowCdnStatisticsResponse.h>
 #include <huaweicloud/vod/v1/model/ShowPreheatingAssetRequest.h>
 #include <huaweicloud/vod/v1/model/ShowPreheatingAssetResponse.h>
+#include <huaweicloud/vod/v1/model/ShowStorageModeTypeRequest.h>
+#include <huaweicloud/vod/v1/model/ShowStorageModeTypeResponse.h>
 #include <huaweicloud/vod/v1/model/ShowVodRetrievalRequest.h>
 #include <huaweicloud/vod/v1/model/ShowVodRetrievalResponse.h>
 #include <huaweicloud/vod/v1/model/ShowVodStatisticsRequest.h>
@@ -132,6 +134,9 @@
 #include <huaweicloud/vod/v1/model/UpdateStorageModeReq.h>
 #include <huaweicloud/vod/v1/model/UpdateStorageModeRequest.h>
 #include <huaweicloud/vod/v1/model/UpdateStorageModeResponse.h>
+#include <huaweicloud/vod/v1/model/UpdateStorageModeTypeReq.h>
+#include <huaweicloud/vod/v1/model/UpdateStorageModeTypeRequest.h>
+#include <huaweicloud/vod/v1/model/UpdateStorageModeTypeResponse.h>
 #include <huaweicloud/vod/v1/model/UpdateTemplateGroupCollectionRequest.h>
 #include <huaweicloud/vod/v1/model/UpdateTemplateGroupCollectionResponse.h>
 #include <huaweicloud/vod/v1/model/UpdateTemplateGroupRequest.h>
@@ -523,6 +528,14 @@ public:
     std::shared_ptr<ShowPreheatingAssetResponse> showPreheatingAsset(
         ShowPreheatingAssetRequest &request
     );
+    // 查询媒资降冷配置
+    //
+    // 查询媒资降冷配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowStorageModeTypeResponse> showStorageModeType(
+        ShowStorageModeTypeRequest &request
+    );
     // 查询取回数据信息
     //
     // ## 典型场景 ##
@@ -605,6 +618,16 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateStorageModeResponse> updateStorageMode(
         UpdateStorageModeRequest &request
+    );
+    // 修改媒资降冷粒度
+    //
+    // 修改媒资降冷粒度。
+    // 
+    // 默认为整个媒资粒度，支持转为仅原文件。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateStorageModeTypeResponse> updateStorageModeType(
+        UpdateStorageModeTypeRequest &request
     );
     // 修改自定义转码模板组
     //

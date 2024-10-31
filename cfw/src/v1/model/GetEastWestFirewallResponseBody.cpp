@@ -18,7 +18,6 @@ GetEastWestFirewallResponseBody::GetEastWestFirewallResponseBody()
     projectIdIsSet_ = false;
     status_ = 0;
     statusIsSet_ = false;
-    erAssociatedSubnetIsSet_ = false;
     firewallAssociatedSubnetsIsSet_ = false;
     erIsSet_ = false;
     inspectionVpcIsSet_ = false;
@@ -31,8 +30,6 @@ GetEastWestFirewallResponseBody::GetEastWestFirewallResponseBody()
     limitIsSet_ = false;
     mode_ = "";
     modeIsSet_ = false;
-    ewVpcRouteLimit_ = 0;
-    ewVpcRouteLimitIsSet_ = false;
 }
 
 GetEastWestFirewallResponseBody::~GetEastWestFirewallResponseBody() = default;
@@ -53,9 +50,6 @@ web::json::value GetEastWestFirewallResponseBody::toJson() const
     }
     if(statusIsSet_) {
         val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
-    }
-    if(erAssociatedSubnetIsSet_) {
-        val[utility::conversions::to_string_t("er_associated_subnet")] = ModelBase::toJson(erAssociatedSubnet_);
     }
     if(firewallAssociatedSubnetsIsSet_) {
         val[utility::conversions::to_string_t("firewall_associated_subnets")] = ModelBase::toJson(firewallAssociatedSubnets_);
@@ -80,9 +74,6 @@ web::json::value GetEastWestFirewallResponseBody::toJson() const
     }
     if(modeIsSet_) {
         val[utility::conversions::to_string_t("mode")] = ModelBase::toJson(mode_);
-    }
-    if(ewVpcRouteLimitIsSet_) {
-        val[utility::conversions::to_string_t("ew_vpc_route_limit")] = ModelBase::toJson(ewVpcRouteLimit_);
     }
 
     return val;
@@ -116,15 +107,6 @@ bool GetEastWestFirewallResponseBody::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setStatus(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("er_associated_subnet"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("er_associated_subnet"));
-        if(!fieldValue.is_null())
-        {
-            SubnetInfo refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setErAssociatedSubnet(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("firewall_associated_subnets"))) {
@@ -199,15 +181,6 @@ bool GetEastWestFirewallResponseBody::fromJson(const web::json::value& val)
             setMode(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("ew_vpc_route_limit"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ew_vpc_route_limit"));
-        if(!fieldValue.is_null())
-        {
-            int32_t refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setEwVpcRouteLimit(refVal);
-        }
-    }
     return ok;
 }
 
@@ -273,27 +246,6 @@ bool GetEastWestFirewallResponseBody::statusIsSet() const
 void GetEastWestFirewallResponseBody::unsetstatus()
 {
     statusIsSet_ = false;
-}
-
-SubnetInfo GetEastWestFirewallResponseBody::getErAssociatedSubnet() const
-{
-    return erAssociatedSubnet_;
-}
-
-void GetEastWestFirewallResponseBody::setErAssociatedSubnet(const SubnetInfo& value)
-{
-    erAssociatedSubnet_ = value;
-    erAssociatedSubnetIsSet_ = true;
-}
-
-bool GetEastWestFirewallResponseBody::erAssociatedSubnetIsSet() const
-{
-    return erAssociatedSubnetIsSet_;
-}
-
-void GetEastWestFirewallResponseBody::unseterAssociatedSubnet()
-{
-    erAssociatedSubnetIsSet_ = false;
 }
 
 std::vector<SubnetInfo>& GetEastWestFirewallResponseBody::getFirewallAssociatedSubnets()
@@ -462,27 +414,6 @@ bool GetEastWestFirewallResponseBody::modeIsSet() const
 void GetEastWestFirewallResponseBody::unsetmode()
 {
     modeIsSet_ = false;
-}
-
-int32_t GetEastWestFirewallResponseBody::getEwVpcRouteLimit() const
-{
-    return ewVpcRouteLimit_;
-}
-
-void GetEastWestFirewallResponseBody::setEwVpcRouteLimit(int32_t value)
-{
-    ewVpcRouteLimit_ = value;
-    ewVpcRouteLimitIsSet_ = true;
-}
-
-bool GetEastWestFirewallResponseBody::ewVpcRouteLimitIsSet() const
-{
-    return ewVpcRouteLimitIsSet_;
-}
-
-void GetEastWestFirewallResponseBody::unsetewVpcRouteLimit()
-{
-    ewVpcRouteLimitIsSet_ = false;
 }
 
 }

@@ -43,7 +43,7 @@ bool AddressItems::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("items"));
         if(!fieldValue.is_null())
         {
-            std::vector<IdObject> refVal;
+            std::vector<AddressItemIdWithoutName> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setItems(refVal);
         }
@@ -61,12 +61,12 @@ bool AddressItems::fromJson(const web::json::value& val)
 }
 
 
-std::vector<IdObject>& AddressItems::getItems()
+std::vector<AddressItemIdWithoutName>& AddressItems::getItems()
 {
     return items_;
 }
 
-void AddressItems::setItems(const std::vector<IdObject>& value)
+void AddressItems::setItems(const std::vector<AddressItemIdWithoutName>& value)
 {
     items_ = value;
     itemsIsSet_ = true;

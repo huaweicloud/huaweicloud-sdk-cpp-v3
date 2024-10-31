@@ -227,8 +227,14 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/StartInstanceRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/StartInstanceRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/StartInstanceResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/StartMySQLCompatibilityRequestBody.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/StartMysqlCompatibilityRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/StartMysqlCompatibilityResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/StopBackupRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/StopBackupResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/StopInstanceRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/StopInstanceRequestBody.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/StopInstanceResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/SwitchConfigurationRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/SwitchConfigurationResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/SwitchShardRequest.h>
@@ -238,6 +244,9 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/UpdateInstanceConfigurationResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/UpdateInstanceNameRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/UpdateInstanceNameResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/UpdateMySQLCompatibilityRequestBody.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/UpdateMysqlCompatibilityRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/UpdateMysqlCompatibilityResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/UpdateNameRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/UpgradeErrorResponseBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/UpgradeInstanceVersionRequest.h>
@@ -250,6 +259,23 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/ValidateWeakPasswordRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ValidateWeakPasswordResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/WeakPasswordRequestBody.h>
+#include <string>
+
+#include <huaweicloud/gaussdbforopengauss/v3/model/CreateLimitTaskRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/CreateLimitTaskRequestBody.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/CreateLimitTaskResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/DeleteLimitTaskRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/DeleteLimitTaskResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ErrorResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListLimitTaskRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListLimitTaskResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListNodeLimitSqlModelRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListNodeLimitSqlModelResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ShowLimitTaskRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ShowLimitTaskResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/UpdateLimitTaskRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/UpdateLimitTaskRequestBody.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/UpdateLimitTaskResponse.h>
 #include <string>
 
 #include <cpprest/details/basic_types.h>
@@ -996,6 +1022,14 @@ public:
     std::shared_ptr<StartInstanceResponse> startInstance(
         StartInstanceRequest &request
     );
+    // 开启MySQl兼容端口服务
+    //
+    // 开启指定实例的MySQl兼容端口。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<StartMysqlCompatibilityResponse> startMysqlCompatibility(
+        StartMysqlCompatibilityRequest &request
+    );
     // 停止备份
     //
     // 停止进行中的备份，包括全备和差备。
@@ -1003,6 +1037,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<StopBackupResponse> stopBackup(
         StopBackupRequest &request
+    );
+    // 停止数据库
+    //
+    // 停止数据库,同时支持节点级别的停止操作
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<StopInstanceResponse> stopInstance(
+        StopInstanceRequest &request
     );
     // 应用参数模板
     //
@@ -1035,6 +1077,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateInstanceNameResponse> updateInstanceName(
         UpdateInstanceNameRequest &request
+    );
+    // 更新/关闭MySQl兼容端口服务
+    //
+    // 更新指定实例的MySQl兼容端口服务配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateMysqlCompatibilityResponse> updateMysqlCompatibility(
+        UpdateMysqlCompatibilityRequest &request
     );
     // 实例内核版本升级
     //
@@ -1088,6 +1138,55 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ValidateWeakPasswordResponse> validateWeakPassword(
         ValidateWeakPasswordRequest &request
+    );
+
+    // 创建限流任务
+    //
+    // 根据具体范围和类型，进行限流任务的创建
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateLimitTaskResponse> createLimitTask(
+        CreateLimitTaskRequest &request
+    );
+    // 删除限流任务
+    //
+    // 根据task_id进行限流任务的删除
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteLimitTaskResponse> deleteLimitTask(
+        DeleteLimitTaskRequest &request
+    );
+    // 根据指定条件查询限流任务列表
+    //
+    // 根据指定条件查询限流任务列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListLimitTaskResponse> listLimitTask(
+        ListLimitTaskRequest &request
+    );
+    // 查询节点的sql模板列表
+    //
+    // 查询节点的sql模板列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListNodeLimitSqlModelResponse> listNodeLimitSqlModel(
+        ListNodeLimitSqlModelRequest &request
+    );
+    // 查询限流任务详情
+    //
+    // 查询限流任务详情
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowLimitTaskResponse> showLimitTask(
+        ShowLimitTaskRequest &request
+    );
+    // 修改限流任务
+    //
+    // 根据新的条件进行限流任务的更新
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateLimitTaskResponse> updateLimitTask(
+        UpdateLimitTaskRequest &request
     );
 
 

@@ -39,7 +39,7 @@ public:
     /// CreateFirewallReq_tags members
 
     /// <summary>
-    /// 标签KEY
+    /// 资源标签键
     /// </summary>
 
     std::string getKey() const;
@@ -48,7 +48,7 @@ public:
     void setKey(const std::string& value);
 
     /// <summary>
-    /// 标签VALUE
+    /// 资源标签值
     /// </summary>
 
     std::string getValue() const;

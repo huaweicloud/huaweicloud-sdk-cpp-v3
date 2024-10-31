@@ -48,7 +48,7 @@ public:
     void setBytes(double value);
 
     /// <summary>
-    /// 方向，有内到外和外到内两种
+    /// 方向，有内到外（in2out）和外到内（out2in）两种
     /// </summary>
 
     std::string getDirection() const;
@@ -57,7 +57,7 @@ public:
     void setDirection(const std::string& value);
 
     /// <summary>
-    /// 包
+    /// 字节包数
     /// </summary>
 
     int32_t getPackets() const;
@@ -120,7 +120,7 @@ public:
     void setDstIp(const std::string& value);
 
     /// <summary>
-    /// 应用协议
+    /// 规则应用类型包括：“HTTP”，\&quot;HTTPS\&quot;，\&quot;TLS1\&quot;，“DNS”，“SSH”，“MYSQL”，“SMTP”，“RDP”，“RDPS”，“VNC”，“POP3”，“IMAP4”，“SMTPS”，“POP3S”，“FTPS”，“ANY”,“BGP”等。
     /// </summary>
 
     std::string getApp() const;

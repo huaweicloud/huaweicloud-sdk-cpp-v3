@@ -39,7 +39,7 @@ public:
     /// LogConfigDto members
 
     /// <summary>
-    /// 防火墙id
+    /// 防火墙id，可通过[防火墙ID获取方式](cfw_02_0028.xml)获取
     /// </summary>
 
     std::string getFwInstanceId() const;
@@ -48,7 +48,7 @@ public:
     void setFwInstanceId(const std::string& value);
 
     /// <summary>
-    /// 是否开启LTS
+    /// 是否开启LTS，1表示是，0表示不是
     /// </summary>
 
     int32_t getLtsEnable() const;
@@ -57,7 +57,7 @@ public:
     void setLtsEnable(int32_t value);
 
     /// <summary>
-    /// LTS日志分组id
+    /// LTS日志分组id,可通过查询LTS（云日志服务）下查询账号下所有日志组接口获得，通过返回值中的log_groups.log_group_id（.表示各对象之间层级的区分）获得
     /// </summary>
 
     std::string getLtsLogGroupId() const;
@@ -66,7 +66,7 @@ public:
     void setLtsLogGroupId(const std::string& value);
 
     /// <summary>
-    /// 攻击日志流id
+    /// 攻击日志流id,可通过查询LTS（云日志服务）下查询指定日志组下的所有日志流接口获得，通过返回值中的log_streams.log_stream_id（.表示各对象之间层级的区分）获得
     /// </summary>
 
     std::string getLtsAttackLogStreamId() const;
@@ -75,7 +75,7 @@ public:
     void setLtsAttackLogStreamId(const std::string& value);
 
     /// <summary>
-    /// 是否开启攻击日志流
+    /// 是否开启攻击日志流，1表示是，0表示不是
     /// </summary>
 
     int32_t getLtsAttackLogStreamEnable() const;
@@ -84,7 +84,7 @@ public:
     void setLtsAttackLogStreamEnable(int32_t value);
 
     /// <summary>
-    /// 访问控制日志流id
+    /// 访问控制日志流id,可通过查询LTS（云日志服务）下查询指定日志组下的所有日志流接口获得，通过返回值中的log_streams.log_stream_id（.表示各对象之间层级的区分）获得
     /// </summary>
 
     std::string getLtsAccessLogStreamId() const;
@@ -93,7 +93,7 @@ public:
     void setLtsAccessLogStreamId(const std::string& value);
 
     /// <summary>
-    /// 是否开启访问控制流
+    /// 是否开启访问控制流，1表示是，0表示不是
     /// </summary>
 
     int32_t getLtsAccessLogStreamEnable() const;
@@ -102,7 +102,7 @@ public:
     void setLtsAccessLogStreamEnable(int32_t value);
 
     /// <summary>
-    /// 流量日志id
+    /// 流量日志id,可通过查询LTS（云日志服务）下查询指定日志组下的所有日志流接口获得，通过返回值中的log_streams.log_stream_id（.表示各对象之间层级的区分）获得
     /// </summary>
 
     std::string getLtsFlowLogStreamId() const;
@@ -111,7 +111,7 @@ public:
     void setLtsFlowLogStreamId(const std::string& value);
 
     /// <summary>
-    /// 是否开启流量日志
+    /// 是否开启流量日志，1表示是，0表示不是
     /// </summary>
 
     int32_t getLtsFlowLogStreamEnable() const;

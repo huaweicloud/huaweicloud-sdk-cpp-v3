@@ -68,7 +68,7 @@ public:
     void setProjectId(const std::string& value);
 
     /// <summary>
-    /// 总数
+    /// 防火墙总数量
     /// </summary>
 
     int32_t getTotal() const;

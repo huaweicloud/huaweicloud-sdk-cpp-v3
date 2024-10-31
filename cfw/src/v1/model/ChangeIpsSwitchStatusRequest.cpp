@@ -16,8 +16,6 @@ ChangeIpsSwitchStatusRequest::ChangeIpsSwitchStatusRequest()
     enterpriseProjectIdIsSet_ = false;
     fwInstanceId_ = "";
     fwInstanceIdIsSet_ = false;
-    xLanguage_ = "";
-    xLanguageIsSet_ = false;
     bodyIsSet_ = false;
 }
 
@@ -36,9 +34,6 @@ web::json::value ChangeIpsSwitchStatusRequest::toJson() const
     }
     if(fwInstanceIdIsSet_) {
         val[utility::conversions::to_string_t("fw_instance_id")] = ModelBase::toJson(fwInstanceId_);
-    }
-    if(xLanguageIsSet_) {
-        val[utility::conversions::to_string_t("X-Language")] = ModelBase::toJson(xLanguage_);
     }
     if(bodyIsSet_) {
         val[utility::conversions::to_string_t("body")] = ModelBase::toJson(body_);
@@ -66,15 +61,6 @@ bool ChangeIpsSwitchStatusRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFwInstanceId(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("X-Language"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Language"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setXLanguage(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("body"))) {
@@ -130,27 +116,6 @@ bool ChangeIpsSwitchStatusRequest::fwInstanceIdIsSet() const
 void ChangeIpsSwitchStatusRequest::unsetfwInstanceId()
 {
     fwInstanceIdIsSet_ = false;
-}
-
-std::string ChangeIpsSwitchStatusRequest::getXLanguage() const
-{
-    return xLanguage_;
-}
-
-void ChangeIpsSwitchStatusRequest::setXLanguage(const std::string& value)
-{
-    xLanguage_ = value;
-    xLanguageIsSet_ = true;
-}
-
-bool ChangeIpsSwitchStatusRequest::xLanguageIsSet() const
-{
-    return xLanguageIsSet_;
-}
-
-void ChangeIpsSwitchStatusRequest::unsetxLanguage()
-{
-    xLanguageIsSet_ = false;
 }
 
 IpsSwitchDTO ChangeIpsSwitchStatusRequest::getBody() const

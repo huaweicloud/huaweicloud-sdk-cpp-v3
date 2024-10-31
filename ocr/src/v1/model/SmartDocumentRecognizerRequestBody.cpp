@@ -18,6 +18,8 @@ SmartDocumentRecognizerRequestBody::SmartDocumentRecognizerRequestBody()
     urlIsSet_ = false;
     singleOrientationMode_ = false;
     singleOrientationModeIsSet_ = false;
+    language_ = "";
+    languageIsSet_ = false;
     kv_ = false;
     kvIsSet_ = false;
     table_ = false;
@@ -54,6 +56,9 @@ web::json::value SmartDocumentRecognizerRequestBody::toJson() const
     }
     if(singleOrientationModeIsSet_) {
         val[utility::conversions::to_string_t("single_orientation_mode")] = ModelBase::toJson(singleOrientationMode_);
+    }
+    if(languageIsSet_) {
+        val[utility::conversions::to_string_t("language")] = ModelBase::toJson(language_);
     }
     if(kvIsSet_) {
         val[utility::conversions::to_string_t("kv")] = ModelBase::toJson(kv_);
@@ -111,6 +116,15 @@ bool SmartDocumentRecognizerRequestBody::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSingleOrientationMode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("language"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("language"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLanguage(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("kv"))) {
@@ -250,6 +264,27 @@ bool SmartDocumentRecognizerRequestBody::singleOrientationModeIsSet() const
 void SmartDocumentRecognizerRequestBody::unsetsingleOrientationMode()
 {
     singleOrientationModeIsSet_ = false;
+}
+
+std::string SmartDocumentRecognizerRequestBody::getLanguage() const
+{
+    return language_;
+}
+
+void SmartDocumentRecognizerRequestBody::setLanguage(const std::string& value)
+{
+    language_ = value;
+    languageIsSet_ = true;
+}
+
+bool SmartDocumentRecognizerRequestBody::languageIsSet() const
+{
+    return languageIsSet_;
+}
+
+void SmartDocumentRecognizerRequestBody::unsetlanguage()
+{
+    languageIsSet_ = false;
 }
 
 bool SmartDocumentRecognizerRequestBody::isKv() const

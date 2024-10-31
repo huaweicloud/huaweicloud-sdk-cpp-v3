@@ -16,6 +16,7 @@ Update_fields::Update_fields()
     setIsSet_ = false;
     addIsSet_ = false;
     rmvIsSet_ = false;
+    insertIsSet_ = false;
 }
 
 Update_fields::~Update_fields() = default;
@@ -34,6 +35,9 @@ bool Update_fields::toBson(Builder &builder) const
         return false;
     }
     if (rmvIsSet_ && !bson_append(builder, "rmv", rmv_)) {
+        return false;
+    }
+    if (insertIsSet_ && !bson_append(builder, "insert", insert_)) {
         return false;
     }
 
@@ -70,6 +74,15 @@ bool Update_fields::fromBson(const Viewer &viewer)
                 return false;
             }
             rmvIsSet_ = true;
+            ++it;
+            continue;
+        }
+        
+        if (key == "insert") {
+            if (!bson_get(it, insert_)) {
+                return false;
+            }
+            insertIsSet_ = true;
             ++it;
             continue;
         }
@@ -141,6 +154,27 @@ bool Update_fields::rmvIsSet() const
 void Update_fields::unsetrmv()
 {
     rmvIsSet_ = false;
+}
+
+Document Update_fields::getInsert() const
+{
+    return insert_;
+}
+
+void Update_fields::setInsert(const Document& value)
+{
+    insert_ = value;
+    insertIsSet_ = true;
+}
+
+bool Update_fields::insertIsSet() const
+{
+    return insertIsSet_;
+}
+
+void Update_fields::unsetinsert()
+{
+    insertIsSet_ = false;
 }
 
 }

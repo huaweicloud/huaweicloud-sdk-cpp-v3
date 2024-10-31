@@ -39,7 +39,7 @@ public:
     /// UpdateAddressSetResponseData members
 
     /// <summary>
-    /// Id
+    /// 地址组id
     /// </summary>
 
     std::string getId() const;
@@ -47,10 +47,21 @@ public:
     void unsetid();
     void setId(const std::string& value);
 
+    /// <summary>
+    /// 地址组名称
+    /// </summary>
+
+    std::string getName() const;
+    bool nameIsSet() const;
+    void unsetname();
+    void setName(const std::string& value);
+
 
 protected:
     std::string id_;
     bool idIsSet_;
+    std::string name_;
+    bool nameIsSet_;
 
 };
 

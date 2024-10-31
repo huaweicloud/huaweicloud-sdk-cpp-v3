@@ -9,8 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <string>
-#include <huaweicloud/cfw/v1/model/SuccessRsp_data.h>
+#include <huaweicloud/cfw/v1/model/ChangeEastWestFirewallStatusResponseData.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -43,26 +42,15 @@ public:
     /// 
     /// </summary>
 
-    SuccessRsp_data getData() const;
+    ChangeEastWestFirewallStatusResponseData getData() const;
     bool dataIsSet() const;
     void unsetdata();
-    void setData(const SuccessRsp_data& value);
-
-    /// <summary>
-    /// trace id
-    /// </summary>
-
-    std::string getTraceId() const;
-    bool traceIdIsSet() const;
-    void unsettraceId();
-    void setTraceId(const std::string& value);
+    void setData(const ChangeEastWestFirewallStatusResponseData& value);
 
 
 protected:
-    SuccessRsp_data data_;
+    ChangeEastWestFirewallStatusResponseData data_;
     bool dataIsSet_;
-    std::string traceId_;
-    bool traceIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

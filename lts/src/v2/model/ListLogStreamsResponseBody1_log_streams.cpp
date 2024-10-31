@@ -18,9 +18,21 @@ ListLogStreamsResponseBody1_log_streams::ListLogStreamsResponseBody1_log_streams
     logStreamIdIsSet_ = false;
     logStreamName_ = "";
     logStreamNameIsSet_ = false;
+    logStreamNameAlias_ = "";
+    logStreamNameAliasIsSet_ = false;
     tagIsSet_ = false;
     filterCount_ = 0;
     filterCountIsSet_ = false;
+    whetherLogStorage_ = false;
+    whetherLogStorageIsSet_ = false;
+    hotColdSeparation_ = false;
+    hotColdSeparationIsSet_ = false;
+    authWebTracking_ = false;
+    authWebTrackingIsSet_ = false;
+    ttlInDays_ = 0;
+    ttlInDaysIsSet_ = false;
+    hotStorageDays_ = 0;
+    hotStorageDaysIsSet_ = false;
 }
 
 ListLogStreamsResponseBody1_log_streams::~ListLogStreamsResponseBody1_log_streams() = default;
@@ -42,11 +54,29 @@ web::json::value ListLogStreamsResponseBody1_log_streams::toJson() const
     if(logStreamNameIsSet_) {
         val[utility::conversions::to_string_t("log_stream_name")] = ModelBase::toJson(logStreamName_);
     }
+    if(logStreamNameAliasIsSet_) {
+        val[utility::conversions::to_string_t("log_stream_name_alias")] = ModelBase::toJson(logStreamNameAlias_);
+    }
     if(tagIsSet_) {
         val[utility::conversions::to_string_t("tag")] = ModelBase::toJson(tag_);
     }
     if(filterCountIsSet_) {
         val[utility::conversions::to_string_t("filter_count")] = ModelBase::toJson(filterCount_);
+    }
+    if(whetherLogStorageIsSet_) {
+        val[utility::conversions::to_string_t("whether_log_storage")] = ModelBase::toJson(whetherLogStorage_);
+    }
+    if(hotColdSeparationIsSet_) {
+        val[utility::conversions::to_string_t("hot_cold_separation")] = ModelBase::toJson(hotColdSeparation_);
+    }
+    if(authWebTrackingIsSet_) {
+        val[utility::conversions::to_string_t("auth_web_tracking")] = ModelBase::toJson(authWebTracking_);
+    }
+    if(ttlInDaysIsSet_) {
+        val[utility::conversions::to_string_t("ttl_in_days")] = ModelBase::toJson(ttlInDays_);
+    }
+    if(hotStorageDaysIsSet_) {
+        val[utility::conversions::to_string_t("hot_storage_days")] = ModelBase::toJson(hotStorageDays_);
     }
 
     return val;
@@ -82,6 +112,15 @@ bool ListLogStreamsResponseBody1_log_streams::fromJson(const web::json::value& v
             setLogStreamName(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("log_stream_name_alias"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("log_stream_name_alias"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLogStreamNameAlias(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("tag"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("tag"));
         if(!fieldValue.is_null())
@@ -98,6 +137,51 @@ bool ListLogStreamsResponseBody1_log_streams::fromJson(const web::json::value& v
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFilterCount(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("whether_log_storage"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("whether_log_storage"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setWhetherLogStorage(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("hot_cold_separation"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("hot_cold_separation"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHotColdSeparation(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("auth_web_tracking"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("auth_web_tracking"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAuthWebTracking(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("ttl_in_days"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ttl_in_days"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTtlInDays(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("hot_storage_days"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("hot_storage_days"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHotStorageDays(refVal);
         }
     }
     return ok;
@@ -167,6 +251,27 @@ void ListLogStreamsResponseBody1_log_streams::unsetlogStreamName()
     logStreamNameIsSet_ = false;
 }
 
+std::string ListLogStreamsResponseBody1_log_streams::getLogStreamNameAlias() const
+{
+    return logStreamNameAlias_;
+}
+
+void ListLogStreamsResponseBody1_log_streams::setLogStreamNameAlias(const std::string& value)
+{
+    logStreamNameAlias_ = value;
+    logStreamNameAliasIsSet_ = true;
+}
+
+bool ListLogStreamsResponseBody1_log_streams::logStreamNameAliasIsSet() const
+{
+    return logStreamNameAliasIsSet_;
+}
+
+void ListLogStreamsResponseBody1_log_streams::unsetlogStreamNameAlias()
+{
+    logStreamNameAliasIsSet_ = false;
+}
+
 std::map<std::string, std::string>& ListLogStreamsResponseBody1_log_streams::getTag()
 {
     return tag_;
@@ -207,6 +312,111 @@ bool ListLogStreamsResponseBody1_log_streams::filterCountIsSet() const
 void ListLogStreamsResponseBody1_log_streams::unsetfilterCount()
 {
     filterCountIsSet_ = false;
+}
+
+bool ListLogStreamsResponseBody1_log_streams::isWhetherLogStorage() const
+{
+    return whetherLogStorage_;
+}
+
+void ListLogStreamsResponseBody1_log_streams::setWhetherLogStorage(bool value)
+{
+    whetherLogStorage_ = value;
+    whetherLogStorageIsSet_ = true;
+}
+
+bool ListLogStreamsResponseBody1_log_streams::whetherLogStorageIsSet() const
+{
+    return whetherLogStorageIsSet_;
+}
+
+void ListLogStreamsResponseBody1_log_streams::unsetwhetherLogStorage()
+{
+    whetherLogStorageIsSet_ = false;
+}
+
+bool ListLogStreamsResponseBody1_log_streams::isHotColdSeparation() const
+{
+    return hotColdSeparation_;
+}
+
+void ListLogStreamsResponseBody1_log_streams::setHotColdSeparation(bool value)
+{
+    hotColdSeparation_ = value;
+    hotColdSeparationIsSet_ = true;
+}
+
+bool ListLogStreamsResponseBody1_log_streams::hotColdSeparationIsSet() const
+{
+    return hotColdSeparationIsSet_;
+}
+
+void ListLogStreamsResponseBody1_log_streams::unsethotColdSeparation()
+{
+    hotColdSeparationIsSet_ = false;
+}
+
+bool ListLogStreamsResponseBody1_log_streams::isAuthWebTracking() const
+{
+    return authWebTracking_;
+}
+
+void ListLogStreamsResponseBody1_log_streams::setAuthWebTracking(bool value)
+{
+    authWebTracking_ = value;
+    authWebTrackingIsSet_ = true;
+}
+
+bool ListLogStreamsResponseBody1_log_streams::authWebTrackingIsSet() const
+{
+    return authWebTrackingIsSet_;
+}
+
+void ListLogStreamsResponseBody1_log_streams::unsetauthWebTracking()
+{
+    authWebTrackingIsSet_ = false;
+}
+
+int32_t ListLogStreamsResponseBody1_log_streams::getTtlInDays() const
+{
+    return ttlInDays_;
+}
+
+void ListLogStreamsResponseBody1_log_streams::setTtlInDays(int32_t value)
+{
+    ttlInDays_ = value;
+    ttlInDaysIsSet_ = true;
+}
+
+bool ListLogStreamsResponseBody1_log_streams::ttlInDaysIsSet() const
+{
+    return ttlInDaysIsSet_;
+}
+
+void ListLogStreamsResponseBody1_log_streams::unsetttlInDays()
+{
+    ttlInDaysIsSet_ = false;
+}
+
+int32_t ListLogStreamsResponseBody1_log_streams::getHotStorageDays() const
+{
+    return hotStorageDays_;
+}
+
+void ListLogStreamsResponseBody1_log_streams::setHotStorageDays(int32_t value)
+{
+    hotStorageDays_ = value;
+    hotStorageDaysIsSet_ = true;
+}
+
+bool ListLogStreamsResponseBody1_log_streams::hotStorageDaysIsSet() const
+{
+    return hotStorageDaysIsSet_;
+}
+
+void ListLogStreamsResponseBody1_log_streams::unsethotStorageDays()
+{
+    hotStorageDaysIsSet_ = false;
 }
 
 }

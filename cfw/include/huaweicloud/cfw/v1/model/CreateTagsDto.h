@@ -40,7 +40,7 @@ public:
     /// CreateTagsDto members
 
     /// <summary>
-    /// 标签列表
+    /// 创建防火墙标签列表
     /// </summary>
 
     std::vector<CreateTag>& getTags();

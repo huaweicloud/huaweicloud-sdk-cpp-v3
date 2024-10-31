@@ -39,16 +39,7 @@ public:
     /// AddAddressItemsInfoDto_address_items members
 
     /// <summary>
-    /// 地址名称
-    /// </summary>
-
-    std::string getName() const;
-    bool nameIsSet() const;
-    void unsetname();
-    void setName(const std::string& value);
-
-    /// <summary>
-    /// 地址类型0 ipv4,1 ipv6
+    /// 地址类型0 ipv4，1 ipv6
     /// </summary>
 
     int32_t getAddressType() const;
@@ -57,7 +48,7 @@ public:
     void setAddressType(int32_t value);
 
     /// <summary>
-    /// 地址组ip信息
+    /// ip
     /// </summary>
 
     std::string getAddress() const;
@@ -76,8 +67,6 @@ public:
 
 
 protected:
-    std::string name_;
-    bool nameIsSet_;
     int32_t addressType_;
     bool addressTypeIsSet_;
     std::string address_;

@@ -39,7 +39,7 @@ public:
     /// ResourceTag members
 
     /// <summary>
-    /// 键
+    /// 标签键
     /// </summary>
 
     std::string getKey() const;
@@ -48,7 +48,7 @@ public:
     void setKey(const std::string& value);
 
     /// <summary>
-    /// 值
+    /// 标签值
     /// </summary>
 
     std::string getValue() const;
@@ -57,7 +57,7 @@ public:
     void setValue(const std::string& value);
 
     /// <summary>
-    /// 更新时间
+    /// 标签更新时间
     /// </summary>
 
     std::string getUpdateTime() const;

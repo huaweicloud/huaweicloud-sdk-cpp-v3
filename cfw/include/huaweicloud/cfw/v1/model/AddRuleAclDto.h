@@ -41,7 +41,7 @@ public:
     /// AddRuleAclDto members
 
     /// <summary>
-    /// 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id。
+    /// 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)获得，通过返回值中的data.records.protect_objects.object_id（.表示各对象之间层级的区分）获得，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id，type可通过data.records.protect_objects.type（.表示各对象之间层级的区分）获得
     /// </summary>
 
     std::string getObjectId() const;
@@ -50,7 +50,7 @@ public:
     void setObjectId(const std::string& value);
 
     /// <summary>
-    /// 规则type，0：互联网规则，1：vpc规则，2：nat规则
+    /// 规则类型，0：互联网边界规则，1：vpc间规则，2：nat规则，当type取0时，规则源和目的地址需要为公网ip或域名，vpc间规则需要源和目的地址为私有ip，nat规则需要源地址为私网ip，目的地址为公网ip或域名。
     /// </summary>
 
     int32_t getType() const;
@@ -59,7 +59,7 @@ public:
     void setType(int32_t value);
 
     /// <summary>
-    /// rules
+    /// 添加规则请求规则列表
     /// </summary>
 
     std::vector<AddRuleAclDto_rules>& getRules();

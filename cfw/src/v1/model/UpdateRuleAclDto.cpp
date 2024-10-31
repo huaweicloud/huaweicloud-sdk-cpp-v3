@@ -16,7 +16,6 @@ UpdateRuleAclDto::UpdateRuleAclDto()
     addressTypeIsSet_ = false;
     name_ = "";
     nameIsSet_ = false;
-    sequenceIsSet_ = false;
     direction_ = 0;
     directionIsSet_ = false;
     actionType_ = 0;
@@ -24,8 +23,6 @@ UpdateRuleAclDto::UpdateRuleAclDto()
     status_ = 0;
     statusIsSet_ = false;
     applicationsIsSet_ = false;
-    applicationsJsonString_ = "";
-    applicationsJsonStringIsSet_ = false;
     description_ = "";
     descriptionIsSet_ = false;
     longConnectTimeHour_ = 0L;
@@ -62,9 +59,6 @@ web::json::value UpdateRuleAclDto::toJson() const
     if(nameIsSet_) {
         val[utility::conversions::to_string_t("name")] = ModelBase::toJson(name_);
     }
-    if(sequenceIsSet_) {
-        val[utility::conversions::to_string_t("sequence")] = ModelBase::toJson(sequence_);
-    }
     if(directionIsSet_) {
         val[utility::conversions::to_string_t("direction")] = ModelBase::toJson(direction_);
     }
@@ -76,9 +70,6 @@ web::json::value UpdateRuleAclDto::toJson() const
     }
     if(applicationsIsSet_) {
         val[utility::conversions::to_string_t("applications")] = ModelBase::toJson(applications_);
-    }
-    if(applicationsJsonStringIsSet_) {
-        val[utility::conversions::to_string_t("applicationsJsonString")] = ModelBase::toJson(applicationsJsonString_);
     }
     if(descriptionIsSet_) {
         val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
@@ -138,15 +129,6 @@ bool UpdateRuleAclDto::fromJson(const web::json::value& val)
             setName(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("sequence"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("sequence"));
-        if(!fieldValue.is_null())
-        {
-            OrderRuleAclDto refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setSequence(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("direction"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("direction"));
         if(!fieldValue.is_null())
@@ -181,15 +163,6 @@ bool UpdateRuleAclDto::fromJson(const web::json::value& val)
             std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setApplications(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("applicationsJsonString"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("applicationsJsonString"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setApplicationsJsonString(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("description"))) {
@@ -337,27 +310,6 @@ void UpdateRuleAclDto::unsetname()
     nameIsSet_ = false;
 }
 
-OrderRuleAclDto UpdateRuleAclDto::getSequence() const
-{
-    return sequence_;
-}
-
-void UpdateRuleAclDto::setSequence(const OrderRuleAclDto& value)
-{
-    sequence_ = value;
-    sequenceIsSet_ = true;
-}
-
-bool UpdateRuleAclDto::sequenceIsSet() const
-{
-    return sequenceIsSet_;
-}
-
-void UpdateRuleAclDto::unsetsequence()
-{
-    sequenceIsSet_ = false;
-}
-
 int32_t UpdateRuleAclDto::getDirection() const
 {
     return direction_;
@@ -440,27 +392,6 @@ bool UpdateRuleAclDto::applicationsIsSet() const
 void UpdateRuleAclDto::unsetapplications()
 {
     applicationsIsSet_ = false;
-}
-
-std::string UpdateRuleAclDto::getApplicationsJsonString() const
-{
-    return applicationsJsonString_;
-}
-
-void UpdateRuleAclDto::setApplicationsJsonString(const std::string& value)
-{
-    applicationsJsonString_ = value;
-    applicationsJsonStringIsSet_ = true;
-}
-
-bool UpdateRuleAclDto::applicationsJsonStringIsSet() const
-{
-    return applicationsJsonStringIsSet_;
-}
-
-void UpdateRuleAclDto::unsetapplicationsJsonString()
-{
-    applicationsJsonStringIsSet_ = false;
 }
 
 std::string UpdateRuleAclDto::getDescription() const

@@ -59,7 +59,7 @@ public:
     void setOffset(int32_t value);
 
     /// <summary>
-    /// 租户项目id
+    /// 项目ID
     /// </summary>
 
     std::string getProjectId() const;
@@ -86,7 +86,7 @@ public:
     void setSetId(const std::string& value);
 
     /// <summary>
-    /// 总数
+    /// 域名总数
     /// </summary>
 
     int32_t getTotal() const;

@@ -22,8 +22,6 @@ AddRuleAclDto_rules::AddRuleAclDto_rules()
     status_ = 0;
     statusIsSet_ = false;
     applicationsIsSet_ = false;
-    applicationsJsonString_ = "";
-    applicationsJsonStringIsSet_ = false;
     longConnectTime_ = 0L;
     longConnectTimeIsSet_ = false;
     longConnectTimeHour_ = 0L;
@@ -71,9 +69,6 @@ web::json::value AddRuleAclDto_rules::toJson() const
     }
     if(applicationsIsSet_) {
         val[utility::conversions::to_string_t("applications")] = ModelBase::toJson(applications_);
-    }
-    if(applicationsJsonStringIsSet_) {
-        val[utility::conversions::to_string_t("applicationsJsonString")] = ModelBase::toJson(applicationsJsonString_);
     }
     if(longConnectTimeIsSet_) {
         val[utility::conversions::to_string_t("long_connect_time")] = ModelBase::toJson(longConnectTime_);
@@ -167,15 +162,6 @@ bool AddRuleAclDto_rules::fromJson(const web::json::value& val)
             std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setApplications(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("applicationsJsonString"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("applicationsJsonString"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setApplicationsJsonString(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("long_connect_time"))) {
@@ -405,27 +391,6 @@ bool AddRuleAclDto_rules::applicationsIsSet() const
 void AddRuleAclDto_rules::unsetapplications()
 {
     applicationsIsSet_ = false;
-}
-
-std::string AddRuleAclDto_rules::getApplicationsJsonString() const
-{
-    return applicationsJsonString_;
-}
-
-void AddRuleAclDto_rules::setApplicationsJsonString(const std::string& value)
-{
-    applicationsJsonString_ = value;
-    applicationsJsonStringIsSet_ = true;
-}
-
-bool AddRuleAclDto_rules::applicationsJsonStringIsSet() const
-{
-    return applicationsJsonStringIsSet_;
-}
-
-void AddRuleAclDto_rules::unsetapplicationsJsonString()
-{
-    applicationsJsonStringIsSet_ = false;
 }
 
 int64_t AddRuleAclDto_rules::getLongConnectTime() const

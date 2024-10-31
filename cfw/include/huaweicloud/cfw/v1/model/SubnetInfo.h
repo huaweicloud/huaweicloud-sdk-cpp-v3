@@ -39,7 +39,7 @@ public:
     /// SubnetInfo members
 
     /// <summary>
-    /// 子网id
+    /// 子网所在的可用区标识，从终端节点获取，参考[终端节点](cfw_02_0003.xml)
     /// </summary>
 
     std::string getAvailabilityZone() const;
@@ -48,7 +48,7 @@ public:
     void setAvailabilityZone(const std::string& value);
 
     /// <summary>
-    /// vpc cidr
+    /// 功能说明：虚拟私有云下可用子网的范围 取值范围： 10.0.0.0/8~24 172.16.0.0/12~24 192.168.0.0/16~24 不指定cidr时，默认值为空 约束：必须是cidr格式，例如:192.168.0.0/16
     /// </summary>
 
     std::string getCidr() const;
@@ -75,7 +75,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 子网网关ip
+    /// 子网的网关，取值范围为子网网段cidr中的ip地址
     /// </summary>
 
     std::string getGatewayIp() const;
@@ -84,22 +84,13 @@ public:
     void setGatewayIp(const std::string& value);
 
     /// <summary>
-    /// vpc id
+    /// 创建vpc产生的uuid
     /// </summary>
 
     std::string getVpcId() const;
     bool vpcIdIsSet() const;
     void unsetvpcId();
     void setVpcId(const std::string& value);
-
-    /// <summary>
-    /// 子网的状态
-    /// </summary>
-
-    std::string getStatus() const;
-    bool statusIsSet() const;
-    void unsetstatus();
-    void setStatus(const std::string& value);
 
     /// <summary>
     /// 是否支持ipv6，boolean值为true表示是，false表示否
@@ -124,8 +115,6 @@ protected:
     bool gatewayIpIsSet_;
     std::string vpcId_;
     bool vpcIdIsSet_;
-    std::string status_;
-    bool statusIsSet_;
     bool ipv6Enable_;
     bool ipv6EnableIsSet_;
 

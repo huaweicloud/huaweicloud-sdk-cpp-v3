@@ -39,7 +39,7 @@ public:
     /// ER members
 
     /// <summary>
-    /// ER ID
+    /// ER ID，创建东西向防护引用的 ID
     /// </summary>
 
     std::string getErId() const;
@@ -48,7 +48,7 @@ public:
     void setErId(const std::string& value);
 
     /// <summary>
-    /// ER连接ID
+    /// 企业路由器连接id，该连接用于连接防火墙和企业路由器，此字段可在通过id在ER界面查询指定er后在管理连接界面查询连接了解连接具体情况。
     /// </summary>
 
     std::string getErAttachId() const;

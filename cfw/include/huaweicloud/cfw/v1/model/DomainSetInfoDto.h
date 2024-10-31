@@ -39,7 +39,7 @@ public:
     /// DomainSetInfoDto members
 
     /// <summary>
-    /// 域名
+    /// 域名，如www.test.com
     /// </summary>
 
     std::string getDomainName() const;
@@ -48,7 +48,7 @@ public:
     void setDomainName(const std::string& value);
 
     /// <summary>
-    /// 描述
+    /// 域名描述
     /// </summary>
 
     std::string getDescription() const;

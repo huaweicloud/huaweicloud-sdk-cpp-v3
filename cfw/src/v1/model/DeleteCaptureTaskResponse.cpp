@@ -39,7 +39,7 @@ bool DeleteCaptureTaskResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("data"));
         if(!fieldValue.is_null())
         {
-            IdObject refVal;
+            CaptureTaskId refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setData(refVal);
         }
@@ -48,12 +48,12 @@ bool DeleteCaptureTaskResponse::fromJson(const web::json::value& val)
 }
 
 
-IdObject DeleteCaptureTaskResponse::getData() const
+CaptureTaskId DeleteCaptureTaskResponse::getData() const
 {
     return data_;
 }
 
-void DeleteCaptureTaskResponse::setData(const IdObject& value)
+void DeleteCaptureTaskResponse::setData(const CaptureTaskId& value)
 {
     data_ = value;
     dataIsSet_ = true;

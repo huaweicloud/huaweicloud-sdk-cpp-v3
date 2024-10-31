@@ -42,7 +42,7 @@ public:
     /// RuleAddressDtoForResponse members
 
     /// <summary>
-    /// 源类型0手工输入,1关联IP地址组,2域名，3地理位置，4域名组，5多对象，6域名组-DNS解析，7域名组-URL过滤。
+    /// 地址类型0手工输入，1关联IP地址组，2域名，3地理位置，4域名组，5多对象，6域名组-DNS解析，7域名组-应用型。
     /// </summary>
 
     int32_t getType() const;
@@ -51,7 +51,7 @@ public:
     void setType(int32_t value);
 
     /// <summary>
-    /// 源类型0 ipv4,1 ipv6
+    /// 地址类型0 ipv4，1 ipv6，当type为0手动输入类型时不能为空
     /// </summary>
 
     int32_t getAddressType() const;
@@ -60,7 +60,7 @@ public:
     void setAddressType(int32_t value);
 
     /// <summary>
-    /// 源IP，手动类型不能为空，自动及domain类型为空
+    /// IP地址信息
     /// </summary>
 
     std::string getAddress() const;
@@ -69,7 +69,7 @@ public:
     void setAddress(const std::string& value);
 
     /// <summary>
-    /// 关联IP地址组ID，自动类型不能为空，手动类型合domain类型为空
+    /// 关联IP地址组ID
     /// </summary>
 
     std::string getAddressSetId() const;
@@ -87,7 +87,7 @@ public:
     void setAddressSetName(const std::string& value);
 
     /// <summary>
-    /// 域名地址名称，域名类型时不能为空，手动类型及自动类型时为空
+    /// 域名地址名称
     /// </summary>
 
     std::string getDomainAddressName() const;
@@ -96,7 +96,7 @@ public:
     void setDomainAddressName(const std::string& value);
 
     /// <summary>
-    /// 规则region列表json值
+    /// 规则地域列表json值
     /// </summary>
 
     std::string getRegionListJson() const;
@@ -105,7 +105,7 @@ public:
     void setRegionListJson(const std::string& value);
 
     /// <summary>
-    /// 规则region列表
+    /// 规则地域列表
     /// </summary>
 
     std::vector<IpRegionDto>& getRegionList();
@@ -141,7 +141,7 @@ public:
     void setIpAddress(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 地址组列表
+    /// 地址组id列表
     /// </summary>
 
     std::vector<std::string>& getAddressGroup();

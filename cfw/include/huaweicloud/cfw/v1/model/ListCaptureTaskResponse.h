@@ -10,7 +10,6 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/cfw/v1/model/HttpQueryCaptureTaskResponseData.h>
-#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -40,17 +39,17 @@ public:
     /// ListCaptureTaskResponse members
 
     /// <summary>
-    /// 查询抓包任务返回值。
+    /// 
     /// </summary>
 
-    std::vector<HttpQueryCaptureTaskResponseData>& getData();
+    HttpQueryCaptureTaskResponseData getData() const;
     bool dataIsSet() const;
     void unsetdata();
-    void setData(const std::vector<HttpQueryCaptureTaskResponseData>& value);
+    void setData(const HttpQueryCaptureTaskResponseData& value);
 
 
 protected:
-    std::vector<HttpQueryCaptureTaskResponseData> data_;
+    HttpQueryCaptureTaskResponseData data_;
     bool dataIsSet_;
 
 #ifdef RTTR_FLAG

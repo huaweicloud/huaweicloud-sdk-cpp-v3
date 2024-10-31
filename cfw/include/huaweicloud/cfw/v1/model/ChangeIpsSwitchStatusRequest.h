@@ -40,7 +40,7 @@ public:
     /// ChangeIpsSwitchStatusRequest members
 
     /// <summary>
-    /// 企业项目id，用户支持企业项目后，由企业项目生成的id。
+    /// 企业项目ID，用户根据组织规划企业项目，对应的ID为企业项目ID，可通过[如何获取企业项目ID](cfw_02_0027.xml)获取，用户未开启企业项目时为0
     /// </summary>
 
     std::string getEnterpriseProjectId() const;
@@ -49,22 +49,13 @@ public:
     void setEnterpriseProjectId(const std::string& value);
 
     /// <summary>
-    /// 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)，默认情况下，fw_instance_Id为空时，返回账号下第一个墙的信息；fw_instance_Id非空时，返回与fw_instance_Id对应墙的信息。
+    /// 防火墙id，可通过[防火墙ID获取方式](cfw_02_0028.xml)获取
     /// </summary>
 
     std::string getFwInstanceId() const;
     bool fwInstanceIdIsSet() const;
     void unsetfwInstanceId();
     void setFwInstanceId(const std::string& value);
-
-    /// <summary>
-    /// 语言头部，默认为zh-cn，如需使用英文，请选择en-us
-    /// </summary>
-
-    std::string getXLanguage() const;
-    bool xLanguageIsSet() const;
-    void unsetxLanguage();
-    void setXLanguage(const std::string& value);
 
     /// <summary>
     /// 
@@ -81,8 +72,6 @@ protected:
     bool enterpriseProjectIdIsSet_;
     std::string fwInstanceId_;
     bool fwInstanceIdIsSet_;
-    std::string xLanguage_;
-    bool xLanguageIsSet_;
     IpsSwitchDTO body_;
     bool bodyIsSet_;
 

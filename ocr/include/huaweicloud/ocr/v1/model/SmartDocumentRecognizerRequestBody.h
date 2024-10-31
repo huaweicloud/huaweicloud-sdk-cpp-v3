@@ -57,13 +57,22 @@ public:
     void setUrl(const std::string& value);
 
     /// <summary>
-    /// 单朝向模式开关。可选值包括： - true：打开单朝向模式 - false：关闭单朝向模式  未传入该参数时默认为false，即默认图片中的字段为多朝向 
+    /// 单朝向模式开关。可选值包括： - true：打开单朝向模式 - false：关闭单朝向模式  图片文字方向一致时，打开该开关可提升识别精度；图片文字方向不一致时，关闭该开关可支持多朝向文字识别。未传入该参数时默认为true，既默认图片中的字段为单朝向。 
     /// </summary>
 
     bool isSingleOrientationMode() const;
     bool singleOrientationModeIsSet() const;
     void unsetsingleOrientationMode();
     void setSingleOrientationMode(bool value);
+
+    /// <summary>
+    /// 语种选择，未传入该参数时默认为中英文识别模式。参考[华为云通用文字支持语种](https://support.huaweicloud.com/api-ocr/ocr_03_0042.html)。 
+    /// </summary>
+
+    std::string getLanguage() const;
+    bool languageIsSet() const;
+    void unsetlanguage();
+    void setLanguage(const std::string& value);
 
     /// <summary>
     /// 是否进行键值对（key-value）提取。若是，结果会以“kv_result”这一关键字返回。 
@@ -111,7 +120,7 @@ public:
     void setForm(bool value);
 
     /// <summary>
-    /// 是否进行公式识别，识别结果为latex序列。若是，结果会以“formula_result”这一关键字返回。 当前仅支持文档（例如论文）中的公式识别，不支持公式切片图像。 
+    /// 是否进行公式识别，识别结果为latex序列。若是，结果会以“formula_result”这一关键字返回。  - 开启公式识别后会降低响应速度。 - 当前仅支持3行以内公式识别，不支持3行以上的多行公式。 
     /// </summary>
 
     bool isFormula() const;
@@ -145,6 +154,8 @@ protected:
     bool urlIsSet_;
     bool singleOrientationMode_;
     bool singleOrientationModeIsSet_;
+    std::string language_;
+    bool languageIsSet_;
     bool kv_;
     bool kvIsSet_;
     bool table_;

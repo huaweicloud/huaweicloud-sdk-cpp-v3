@@ -39,7 +39,7 @@ bool UpdateBlackWhiteListResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("data"));
         if(!fieldValue.is_null())
         {
-            IdObject refVal;
+            BlackWhiteListId refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setData(refVal);
         }
@@ -48,12 +48,12 @@ bool UpdateBlackWhiteListResponse::fromJson(const web::json::value& val)
 }
 
 
-IdObject UpdateBlackWhiteListResponse::getData() const
+BlackWhiteListId UpdateBlackWhiteListResponse::getData() const
 {
     return data_;
 }
 
-void UpdateBlackWhiteListResponse::setData(const IdObject& value)
+void UpdateBlackWhiteListResponse::setData(const BlackWhiteListId& value)
 {
     data_ = value;
     dataIsSet_ = true;

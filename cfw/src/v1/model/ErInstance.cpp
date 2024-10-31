@@ -16,14 +16,8 @@ ErInstance::ErInstance()
     idIsSet_ = false;
     name_ = "";
     nameIsSet_ = false;
-    state_ = "";
-    stateIsSet_ = false;
-    enterpriseProjectId_ = "";
-    enterpriseProjectIdIsSet_ = false;
     projectId_ = "";
     projectIdIsSet_ = false;
-    enableIpv6_ = "";
-    enableIpv6IsSet_ = false;
     attachmentId_ = "";
     attachmentIdIsSet_ = false;
 }
@@ -44,17 +38,8 @@ web::json::value ErInstance::toJson() const
     if(nameIsSet_) {
         val[utility::conversions::to_string_t("name")] = ModelBase::toJson(name_);
     }
-    if(stateIsSet_) {
-        val[utility::conversions::to_string_t("state")] = ModelBase::toJson(state_);
-    }
-    if(enterpriseProjectIdIsSet_) {
-        val[utility::conversions::to_string_t("enterprise_project_id")] = ModelBase::toJson(enterpriseProjectId_);
-    }
     if(projectIdIsSet_) {
         val[utility::conversions::to_string_t("project_id")] = ModelBase::toJson(projectId_);
-    }
-    if(enableIpv6IsSet_) {
-        val[utility::conversions::to_string_t("enable_ipv6")] = ModelBase::toJson(enableIpv6_);
     }
     if(attachmentIdIsSet_) {
         val[utility::conversions::to_string_t("attachment_id")] = ModelBase::toJson(attachmentId_);
@@ -84,24 +69,6 @@ bool ErInstance::fromJson(const web::json::value& val)
             setName(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("state"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("state"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setState(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("enterprise_project_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enterprise_project_id"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setEnterpriseProjectId(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("project_id"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("project_id"));
         if(!fieldValue.is_null())
@@ -109,15 +76,6 @@ bool ErInstance::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setProjectId(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("enable_ipv6"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enable_ipv6"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setEnableIpv6(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("attachment_id"))) {
@@ -175,48 +133,6 @@ void ErInstance::unsetname()
     nameIsSet_ = false;
 }
 
-std::string ErInstance::getState() const
-{
-    return state_;
-}
-
-void ErInstance::setState(const std::string& value)
-{
-    state_ = value;
-    stateIsSet_ = true;
-}
-
-bool ErInstance::stateIsSet() const
-{
-    return stateIsSet_;
-}
-
-void ErInstance::unsetstate()
-{
-    stateIsSet_ = false;
-}
-
-std::string ErInstance::getEnterpriseProjectId() const
-{
-    return enterpriseProjectId_;
-}
-
-void ErInstance::setEnterpriseProjectId(const std::string& value)
-{
-    enterpriseProjectId_ = value;
-    enterpriseProjectIdIsSet_ = true;
-}
-
-bool ErInstance::enterpriseProjectIdIsSet() const
-{
-    return enterpriseProjectIdIsSet_;
-}
-
-void ErInstance::unsetenterpriseProjectId()
-{
-    enterpriseProjectIdIsSet_ = false;
-}
-
 std::string ErInstance::getProjectId() const
 {
     return projectId_;
@@ -236,27 +152,6 @@ bool ErInstance::projectIdIsSet() const
 void ErInstance::unsetprojectId()
 {
     projectIdIsSet_ = false;
-}
-
-std::string ErInstance::getEnableIpv6() const
-{
-    return enableIpv6_;
-}
-
-void ErInstance::setEnableIpv6(const std::string& value)
-{
-    enableIpv6_ = value;
-    enableIpv6IsSet_ = true;
-}
-
-bool ErInstance::enableIpv6IsSet() const
-{
-    return enableIpv6IsSet_;
-}
-
-void ErInstance::unsetenableIpv6()
-{
-    enableIpv6IsSet_ = false;
 }
 
 std::string ErInstance::getAttachmentId() const

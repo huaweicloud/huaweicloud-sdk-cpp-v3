@@ -39,7 +39,7 @@ bool AddServiceSetResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("data"));
         if(!fieldValue.is_null())
         {
-            CommonResponseDTO_data refVal;
+            ServiceSetId refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setData(refVal);
         }
@@ -48,12 +48,12 @@ bool AddServiceSetResponse::fromJson(const web::json::value& val)
 }
 
 
-CommonResponseDTO_data AddServiceSetResponse::getData() const
+ServiceSetId AddServiceSetResponse::getData() const
 {
     return data_;
 }
 
-void AddServiceSetResponse::setData(const CommonResponseDTO_data& value)
+void AddServiceSetResponse::setData(const ServiceSetId& value)
 {
     data_ = value;
     dataIsSet_ = true;

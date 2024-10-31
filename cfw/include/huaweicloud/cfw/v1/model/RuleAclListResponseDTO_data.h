@@ -22,7 +22,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// data
+/// 查询规则列表返回值数据
 /// </summary>
 class HUAWEICLOUD_CFW_V1_EXPORT  RuleAclListResponseDTO_data
     : public ModelBase
@@ -59,7 +59,7 @@ public:
     void setLimit(int32_t value);
 
     /// <summary>
-    /// 查询总条数
+    /// 查询规则列表总条数
     /// </summary>
 
     int32_t getTotal() const;
@@ -77,7 +77,7 @@ public:
     void setObjectId(const std::string& value);
 
     /// <summary>
-    /// records
+    /// 查询规则列表记录
     /// </summary>
 
     std::vector<RuleAclListResponseDTO_data_records>& getRecords();

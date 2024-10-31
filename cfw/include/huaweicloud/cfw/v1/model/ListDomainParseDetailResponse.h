@@ -40,7 +40,7 @@ public:
     /// ListDomainParseDetailResponse members
 
     /// <summary>
-    /// 域名id列表
+    /// 域名解析ip列表
     /// </summary>
 
     std::vector<std::string>& getData();

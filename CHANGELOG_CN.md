@@ -1,3 +1,75 @@
+# 3.1.109 2024-11-07
+
+### HuaweiCloud SDK AAD
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **UpgradeInstanceSpec**
+    - 请求参数变更
+      - `+ upgrade_data.elastic_service_bandwidth_type`
+      - `+ upgrade_data.elastic_service_bandwidth`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`BatchUpgradeDatabaseVersion`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK KVS
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持接口`CheckHealth`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateTable**
+    - 请求参数变更
+      - `+ ttl_options`
+  - **DescribeTable**
+    - 响应参数变更
+      - `+ ttl_options`
+
+### HuaweiCloud SDK MPC
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateExtractTask**
+    - 请求参数变更
+      - `+ encryption`
+  - **CreateTranscodingTask**
+    - 请求参数变更
+      - `+ av_parameters.video.crf`
+      - `+ av_parameters.video.max_bitrate`
+  - **ListTranscodingTask**
+    - 响应参数变更
+      - `+ task_array.av_parameters.video.crf`
+      - `+ task_array.av_parameters.video.max_bitrate`
+  - **CreateEditingJob**
+    - 请求参数变更
+      - `+ concats.av_parameters.video.crf`
+      - `+ concats.av_parameters.video.max_bitrate`
+  - **ListEditingJob**
+    - 响应参数变更
+      - `+ jobs.edit_task_req.concats.av_parameters.video.crf`
+      - `+ jobs.edit_task_req.concats.av_parameters.video.max_bitrate`
+
 # 3.1.108 2024-10-31
 
 ### HuaweiCloud SDK CFW

@@ -15,6 +15,7 @@
 #include <huaweicloud/kvs/v1/model/Secondary_index.h>
 #include <huaweicloud/kvs/v1/model/Provisioned_throughput.h>
 #include <huaweicloud/kvs/v1/model/Primary_key_schema.h>
+#include <huaweicloud/kvs/v1/model/Ttl_options.h>
 #include <huaweicloud/kvs/v1/model/Pre_split_key_options.h>
 #include <string>
 #include <vector>
@@ -110,6 +111,15 @@ public:
     void unsetpreSplitKeyOptions();
     void setPreSplitKeyOptions(const Pre_split_key_options& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    Ttl_options getTtlOptions() const;
+    bool ttlOptionsIsSet() const;
+    void unsetttlOptions();
+    void setTtlOptions(const Ttl_options& value);
+
 
 protected:
     std::string tableName_;
@@ -126,6 +136,8 @@ protected:
     bool globalSecondaryIndexSchemaIsSet_;
     Pre_split_key_options preSplitKeyOptions_;
     bool preSplitKeyOptionsIsSet_;
+    Ttl_options ttlOptions_;
+    bool ttlOptionsIsSet_;
 
 };
 

@@ -13,6 +13,9 @@
 #include <huaweicloud/gaussdbfornosql/v3/model/BatchTagActionRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/BatchTagActionRequestBody.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/BatchTagActionResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/BatchUpgradeDatabaseVersionRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/BatchUpgradeDatabaseVersionRequestBody.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/BatchUpgradeDatabaseVersionResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/CheckDisasterRecoveryOperationRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/CheckDisasterRecoveryOperationResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/CheckWeekPasswordRequest.h>
@@ -322,6 +325,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<BatchTagActionResponse> batchTagAction(
         BatchTagActionRequest &request
+    );
+    // 批量数据库补丁升级
+    //
+    // 批量升级数据库补丁版本。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchUpgradeDatabaseVersionResponse> batchUpgradeDatabaseVersion(
+        BatchUpgradeDatabaseVersionRequest &request
     );
     // 校验实例是否可以与指定实例建立/解除容灾关系
     //

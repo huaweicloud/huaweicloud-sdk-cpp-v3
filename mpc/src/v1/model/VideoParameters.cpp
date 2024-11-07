@@ -16,6 +16,9 @@ VideoParameters::VideoParameters()
     outputPolicyIsSet_ = false;
     codec_ = 0;
     codecIsSet_ = false;
+    crfIsSet_ = false;
+    maxBitrate_ = 0;
+    maxBitrateIsSet_ = false;
     bitrate_ = 0;
     bitrateIsSet_ = false;
     profile_ = 0;
@@ -53,6 +56,12 @@ web::json::value VideoParameters::toJson() const
     }
     if(codecIsSet_) {
         val[utility::conversions::to_string_t("codec")] = ModelBase::toJson(codec_);
+    }
+    if(crfIsSet_) {
+        val[utility::conversions::to_string_t("crf")] = ModelBase::toJson(crf_);
+    }
+    if(maxBitrateIsSet_) {
+        val[utility::conversions::to_string_t("max_bitrate")] = ModelBase::toJson(maxBitrate_);
     }
     if(bitrateIsSet_) {
         val[utility::conversions::to_string_t("bitrate")] = ModelBase::toJson(bitrate_);
@@ -107,6 +116,24 @@ bool VideoParameters::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCodec(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("crf"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("crf"));
+        if(!fieldValue.is_null())
+        {
+            Object refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCrf(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("max_bitrate"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("max_bitrate"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMaxBitrate(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("bitrate"))) {
@@ -243,6 +270,48 @@ bool VideoParameters::codecIsSet() const
 void VideoParameters::unsetcodec()
 {
     codecIsSet_ = false;
+}
+
+Object VideoParameters::getCrf() const
+{
+    return crf_;
+}
+
+void VideoParameters::setCrf(const Object& value)
+{
+    crf_ = value;
+    crfIsSet_ = true;
+}
+
+bool VideoParameters::crfIsSet() const
+{
+    return crfIsSet_;
+}
+
+void VideoParameters::unsetcrf()
+{
+    crfIsSet_ = false;
+}
+
+int32_t VideoParameters::getMaxBitrate() const
+{
+    return maxBitrate_;
+}
+
+void VideoParameters::setMaxBitrate(int32_t value)
+{
+    maxBitrate_ = value;
+    maxBitrateIsSet_ = true;
+}
+
+bool VideoParameters::maxBitrateIsSet() const
+{
+    return maxBitrateIsSet_;
+}
+
+void VideoParameters::unsetmaxBitrate()
+{
+    maxBitrateIsSet_ = false;
 }
 
 int32_t VideoParameters::getBitrate() const

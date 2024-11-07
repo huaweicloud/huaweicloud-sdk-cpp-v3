@@ -53,6 +53,15 @@ HttpRequestDef KvsMeta::genRequestDefForListTable() {
     return reqDefBuilder;
 }
 
+HttpRequestDef KvsMeta::genRequestDefForCheckHealth() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef KvsMeta::genRequestDefForBatchWriteKv() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("StoreName")

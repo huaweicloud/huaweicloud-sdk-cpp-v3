@@ -14,6 +14,7 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 class HUAWEICLOUD_AAD_V2_EXPORT  AadMeta {
 public:
     static HttpRequestDef genRequestDefForCreateDomain();
+    static HttpRequestDef genRequestDefForDeleteDomain();
     static HttpRequestDef genRequestDefForListDDoSAttackEvent();
     static HttpRequestDef genRequestDefForListDDoSConnectionNumber();
     static HttpRequestDef genRequestDefForListDDoSFlow();
@@ -31,7 +32,6 @@ public:
     static HttpRequestDef genRequestDefForShowWafPolicy();
     static HttpRequestDef genRequestDefForShowWafQps();
     static HttpRequestDef genRequestDefForUpgradeInstanceSpec();
-    static HttpRequestDef genRequestDefForDeleteDomain();
 };
 
 }

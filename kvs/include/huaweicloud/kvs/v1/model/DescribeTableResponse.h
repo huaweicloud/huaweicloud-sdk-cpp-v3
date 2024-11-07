@@ -14,6 +14,7 @@
 
 #include <huaweicloud/kvs/v1/model/Secondary_index.h>
 #include <huaweicloud/kvs/v1/model/Primary_key_schema.h>
+#include <huaweicloud/kvs/v1/model/Ttl_options.h>
 #include <string>
 #include <huaweicloud/kvs/v1/model/Run_time_info.h>
 #include <vector>
@@ -91,6 +92,15 @@ public:
     void unsetrunTimeInfo();
     void setRunTimeInfo(const Run_time_info& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    Ttl_options getTtlOptions() const;
+    bool ttlOptionsIsSet() const;
+    void unsetttlOptions();
+    void setTtlOptions(const Ttl_options& value);
+
 
 protected:
     std::string tableName_;
@@ -103,6 +113,8 @@ protected:
     bool globalSecondaryIndexSchemaIsSet_;
     Run_time_info runTimeInfo_;
     bool runTimeInfoIsSet_;
+    Ttl_options ttlOptions_;
+    bool ttlOptionsIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

@@ -15,6 +15,7 @@ class HUAWEICLOUD_GAUSSDBFORNOSQL_V3_EXPORT  GaussDBforNoSQLMeta {
 public:
     static HttpRequestDef genRequestDefForApplyConfiguration();
     static HttpRequestDef genRequestDefForBatchTagAction();
+    static HttpRequestDef genRequestDefForBatchUpgradeDatabaseVersion();
     static HttpRequestDef genRequestDefForCheckDisasterRecoveryOperation();
     static HttpRequestDef genRequestDefForCheckWeekPassword();
     static HttpRequestDef genRequestDefForCompareConfiguration();

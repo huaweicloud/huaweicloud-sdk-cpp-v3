@@ -22,6 +22,10 @@ UpgradeInstanceData::UpgradeInstanceData()
     portNumIsSet_ = false;
     bindDomainNum_ = 0;
     bindDomainNumIsSet_ = false;
+    elasticServiceBandwidthType_ = 0;
+    elasticServiceBandwidthTypeIsSet_ = false;
+    elasticServiceBandwidth_ = 0;
+    elasticServiceBandwidthIsSet_ = false;
 }
 
 UpgradeInstanceData::~UpgradeInstanceData() = default;
@@ -48,6 +52,12 @@ web::json::value UpgradeInstanceData::toJson() const
     }
     if(bindDomainNumIsSet_) {
         val[utility::conversions::to_string_t("bind_domain_num")] = ModelBase::toJson(bindDomainNum_);
+    }
+    if(elasticServiceBandwidthTypeIsSet_) {
+        val[utility::conversions::to_string_t("elastic_service_bandwidth_type")] = ModelBase::toJson(elasticServiceBandwidthType_);
+    }
+    if(elasticServiceBandwidthIsSet_) {
+        val[utility::conversions::to_string_t("elastic_service_bandwidth")] = ModelBase::toJson(elasticServiceBandwidth_);
     }
 
     return val;
@@ -99,6 +109,24 @@ bool UpgradeInstanceData::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBindDomainNum(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("elastic_service_bandwidth_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("elastic_service_bandwidth_type"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setElasticServiceBandwidthType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("elastic_service_bandwidth"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("elastic_service_bandwidth"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setElasticServiceBandwidth(refVal);
         }
     }
     return ok;
@@ -208,6 +236,48 @@ bool UpgradeInstanceData::bindDomainNumIsSet() const
 void UpgradeInstanceData::unsetbindDomainNum()
 {
     bindDomainNumIsSet_ = false;
+}
+
+int32_t UpgradeInstanceData::getElasticServiceBandwidthType() const
+{
+    return elasticServiceBandwidthType_;
+}
+
+void UpgradeInstanceData::setElasticServiceBandwidthType(int32_t value)
+{
+    elasticServiceBandwidthType_ = value;
+    elasticServiceBandwidthTypeIsSet_ = true;
+}
+
+bool UpgradeInstanceData::elasticServiceBandwidthTypeIsSet() const
+{
+    return elasticServiceBandwidthTypeIsSet_;
+}
+
+void UpgradeInstanceData::unsetelasticServiceBandwidthType()
+{
+    elasticServiceBandwidthTypeIsSet_ = false;
+}
+
+int32_t UpgradeInstanceData::getElasticServiceBandwidth() const
+{
+    return elasticServiceBandwidth_;
+}
+
+void UpgradeInstanceData::setElasticServiceBandwidth(int32_t value)
+{
+    elasticServiceBandwidth_ = value;
+    elasticServiceBandwidthIsSet_ = true;
+}
+
+bool UpgradeInstanceData::elasticServiceBandwidthIsSet() const
+{
+    return elasticServiceBandwidthIsSet_;
+}
+
+void UpgradeInstanceData::unsetelasticServiceBandwidth()
+{
+    elasticServiceBandwidthIsSet_ = false;
 }
 
 }

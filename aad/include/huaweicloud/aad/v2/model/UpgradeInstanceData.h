@@ -83,6 +83,24 @@ public:
     void unsetbindDomainNum();
     void setBindDomainNum(int32_t value);
 
+    /// <summary>
+    /// 弹性业务带宽,0-关闭，3-月95
+    /// </summary>
+
+    int32_t getElasticServiceBandwidthType() const;
+    bool elasticServiceBandwidthTypeIsSet() const;
+    void unsetelasticServiceBandwidthType();
+    void setElasticServiceBandwidthType(int32_t value);
+
+    /// <summary>
+    /// 弹性业务带宽增加值
+    /// </summary>
+
+    int32_t getElasticServiceBandwidth() const;
+    bool elasticServiceBandwidthIsSet() const;
+    void unsetelasticServiceBandwidth();
+    void setElasticServiceBandwidth(int32_t value);
+
 
 protected:
     std::string basicBandwidth_;
@@ -95,6 +113,10 @@ protected:
     bool portNumIsSet_;
     int32_t bindDomainNum_;
     bool bindDomainNumIsSet_;
+    int32_t elasticServiceBandwidthType_;
+    bool elasticServiceBandwidthTypeIsSet_;
+    int32_t elasticServiceBandwidth_;
+    bool elasticServiceBandwidthIsSet_;
 
 };
 

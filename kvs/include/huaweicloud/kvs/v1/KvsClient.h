@@ -23,6 +23,10 @@
 #include <huaweicloud/kvs/v1/model/ListTableResponse.h>
 #include <string>
 
+#include <huaweicloud/kvs/v1/model/CheckHealthRequest.h>
+#include <huaweicloud/kvs/v1/model/CheckHealthRequestBody.h>
+#include <huaweicloud/kvs/v1/model/CheckHealthResponse.h>
+
 #include <huaweicloud/kvs/v1/model/BatchWriteKvRequest.h>
 #include <huaweicloud/kvs/v1/model/BatchWriteKvRequestBody.h>
 #include <huaweicloud/kvs/v1/model/BatchWriteKvResponse.h>
@@ -101,6 +105,15 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListTableResponse> listTable(
         ListTableRequest &request
+    );
+
+    // 网络信道健康检查
+    //
+    // 网络信道健康检查，返回response未抛出网络异常即为成功
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CheckHealthResponse> checkHealth(
+        CheckHealthRequest &request
     );
 
     // 批量写请求

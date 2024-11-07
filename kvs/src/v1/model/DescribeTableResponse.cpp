@@ -19,6 +19,7 @@ DescribeTableResponse::DescribeTableResponse()
     localSecondaryIndexSchemaIsSet_ = false;
     globalSecondaryIndexSchemaIsSet_ = false;
     runTimeInfoIsSet_ = false;
+    ttlOptionsIsSet_ = false;
 }
 
 DescribeTableResponse::~DescribeTableResponse() = default;
@@ -43,6 +44,9 @@ bool DescribeTableResponse::toBson(Builder &builder) const
         return false;
     }
     if (runTimeInfoIsSet_ && !bson_append(builder, "run_time_info", runTimeInfo_)) {
+        return false;
+    }
+    if (ttlOptionsIsSet_ && !bson_append(builder, "ttl_options", ttlOptions_)) {
         return false;
     }
 
@@ -97,6 +101,15 @@ bool DescribeTableResponse::fromBson(const Viewer &viewer)
                 return false;
             }
             runTimeInfoIsSet_ = true;
+            ++it;
+            continue;
+        }
+        
+        if (key == "ttl_options") {
+            if (!bson_get(it, ttlOptions_)) {
+                return false;
+            }
+            ttlOptionsIsSet_ = true;
             ++it;
             continue;
         }
@@ -210,6 +223,27 @@ bool DescribeTableResponse::runTimeInfoIsSet() const
 void DescribeTableResponse::unsetrunTimeInfo()
 {
     runTimeInfoIsSet_ = false;
+}
+
+Ttl_options DescribeTableResponse::getTtlOptions() const
+{
+    return ttlOptions_;
+}
+
+void DescribeTableResponse::setTtlOptions(const Ttl_options& value)
+{
+    ttlOptions_ = value;
+    ttlOptionsIsSet_ = true;
+}
+
+bool DescribeTableResponse::ttlOptionsIsSet() const
+{
+    return ttlOptionsIsSet_;
+}
+
+void DescribeTableResponse::unsetttlOptions()
+{
+    ttlOptionsIsSet_ = false;
 }
 
 }

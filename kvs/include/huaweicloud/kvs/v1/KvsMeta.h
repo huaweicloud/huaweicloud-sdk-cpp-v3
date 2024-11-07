@@ -17,6 +17,7 @@ public:
     static HttpRequestDef genRequestDefForDescribeTable();
     static HttpRequestDef genRequestDefForListStore();
     static HttpRequestDef genRequestDefForListTable();
+    static HttpRequestDef genRequestDefForCheckHealth();
     static HttpRequestDef genRequestDefForBatchWriteKv();
     static HttpRequestDef genRequestDefForDeleteKv();
     static HttpRequestDef genRequestDefForGetKv();

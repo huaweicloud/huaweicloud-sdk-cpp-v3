@@ -9,6 +9,10 @@
 #include <huaweicloud/aad/v2/model/CreateAadDomainRequestBody.h>
 #include <huaweicloud/aad/v2/model/CreateDomainRequest.h>
 #include <huaweicloud/aad/v2/model/CreateDomainResponse.h>
+#include <huaweicloud/aad/v2/model/DeleteDomainRequest.h>
+#include <huaweicloud/aad/v2/model/DeleteDomainResponse.h>
+#include <huaweicloud/aad/v2/model/DeleteDomainV2RequestBody.h>
+#include <huaweicloud/aad/v2/model/EmptyJsonResponse.h>
 #include <huaweicloud/aad/v2/model/ListDDoSAttackEventRequest.h>
 #include <huaweicloud/aad/v2/model/ListDDoSAttackEventRequestBody.h>
 #include <huaweicloud/aad/v2/model/ListDDoSAttackEventResponse.h>
@@ -47,11 +51,6 @@
 #include <huaweicloud/aad/v2/model/UpgradeInstanceSpecV2RequestBody.h>
 #include <string>
 
-#include <huaweicloud/aad/v2/model/DeleteDomainRequest.h>
-#include <huaweicloud/aad/v2/model/DeleteDomainResponse.h>
-#include <huaweicloud/aad/v2/model/DeleteDomainV2RequestBody.h>
-#include <huaweicloud/aad/v2/model/EmptyJsonResponse.h>
-
 #include <cpprest/details/basic_types.h>
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/utils/Object.h>
@@ -83,6 +82,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateDomainResponse> createDomain(
         CreateDomainRequest &request
+    );
+    // 删除防护域名
+    //
+    // 删除防护域名
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteDomainResponse> deleteDomain(
+        DeleteDomainRequest &request
     );
     // 查询DDoS攻击事件列表
     //
@@ -219,15 +226,6 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpgradeInstanceSpecResponse> upgradeInstanceSpec(
         UpgradeInstanceSpecRequest &request
-    );
-
-    // 删除防护域名
-    //
-    // 删除防护域名
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<DeleteDomainResponse> deleteDomain(
-        DeleteDomainRequest &request
     );
 
 

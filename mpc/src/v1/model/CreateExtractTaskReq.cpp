@@ -18,6 +18,7 @@ CreateExtractTaskReq::CreateExtractTaskReq()
     userDataIsSet_ = false;
     sync_ = 0;
     syncIsSet_ = false;
+    encryptionIsSet_ = false;
 }
 
 CreateExtractTaskReq::~CreateExtractTaskReq() = default;
@@ -41,6 +42,9 @@ web::json::value CreateExtractTaskReq::toJson() const
     }
     if(syncIsSet_) {
         val[utility::conversions::to_string_t("sync")] = ModelBase::toJson(sync_);
+    }
+    if(encryptionIsSet_) {
+        val[utility::conversions::to_string_t("encryption")] = ModelBase::toJson(encryption_);
     }
 
     return val;
@@ -83,6 +87,15 @@ bool CreateExtractTaskReq::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSync(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("encryption"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("encryption"));
+        if(!fieldValue.is_null())
+        {
+            Encryption refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEncryption(refVal);
         }
     }
     return ok;
@@ -171,6 +184,27 @@ bool CreateExtractTaskReq::syncIsSet() const
 void CreateExtractTaskReq::unsetsync()
 {
     syncIsSet_ = false;
+}
+
+Encryption CreateExtractTaskReq::getEncryption() const
+{
+    return encryption_;
+}
+
+void CreateExtractTaskReq::setEncryption(const Encryption& value)
+{
+    encryption_ = value;
+    encryptionIsSet_ = true;
+}
+
+bool CreateExtractTaskReq::encryptionIsSet() const
+{
+    return encryptionIsSet_;
+}
+
+void CreateExtractTaskReq::unsetencryption()
+{
+    encryptionIsSet_ = false;
 }
 
 }

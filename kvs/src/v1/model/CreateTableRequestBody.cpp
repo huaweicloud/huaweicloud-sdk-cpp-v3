@@ -22,6 +22,7 @@ CreateTableRequestBody::CreateTableRequestBody()
     localSecondaryIndexSchemaIsSet_ = false;
     globalSecondaryIndexSchemaIsSet_ = false;
     preSplitKeyOptionsIsSet_ = false;
+    ttlOptionsIsSet_ = false;
 }
 
 CreateTableRequestBody::~CreateTableRequestBody() = default;
@@ -52,6 +53,9 @@ bool CreateTableRequestBody::toBson(Builder &builder) const
         return false;
     }
     if (preSplitKeyOptionsIsSet_ && !bson_append(builder, "pre_split_key_options", preSplitKeyOptions_)) {
+        return false;
+    }
+    if (ttlOptionsIsSet_ && !bson_append(builder, "ttl_options", ttlOptions_)) {
         return false;
     }
 
@@ -124,6 +128,15 @@ bool CreateTableRequestBody::fromBson(const Viewer &viewer)
                 return false;
             }
             preSplitKeyOptionsIsSet_ = true;
+            ++it;
+            continue;
+        }
+        
+        if (key == "ttl_options") {
+            if (!bson_get(it, ttlOptions_)) {
+                return false;
+            }
+            ttlOptionsIsSet_ = true;
             ++it;
             continue;
         }
@@ -279,6 +292,27 @@ bool CreateTableRequestBody::preSplitKeyOptionsIsSet() const
 void CreateTableRequestBody::unsetpreSplitKeyOptions()
 {
     preSplitKeyOptionsIsSet_ = false;
+}
+
+Ttl_options CreateTableRequestBody::getTtlOptions() const
+{
+    return ttlOptions_;
+}
+
+void CreateTableRequestBody::setTtlOptions(const Ttl_options& value)
+{
+    ttlOptions_ = value;
+    ttlOptionsIsSet_ = true;
+}
+
+bool CreateTableRequestBody::ttlOptionsIsSet() const
+{
+    return ttlOptionsIsSet_;
+}
+
+void CreateTableRequestBody::unsetttlOptions()
+{
+    ttlOptionsIsSet_ = false;
 }
 
 }

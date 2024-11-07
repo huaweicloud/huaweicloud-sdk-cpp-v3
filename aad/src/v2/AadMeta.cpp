@@ -17,6 +17,15 @@ HttpRequestDef AadMeta::genRequestDefForCreateDomain() {
     return reqDefBuilder;
 }
 
+HttpRequestDef AadMeta::genRequestDefForDeleteDomain() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef AadMeta::genRequestDefForListDDoSAttackEvent() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -234,15 +243,6 @@ HttpRequestDef AadMeta::genRequestDefForShowWafQps() {
 }
 
 HttpRequestDef AadMeta::genRequestDefForUpgradeInstanceSpec() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef bodyParam;
-    reqDefBuilder.withRequestField(bodyParam.
-        withName("Body").
-        withLocationType(Body_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef AadMeta::genRequestDefForDeleteDomain() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.

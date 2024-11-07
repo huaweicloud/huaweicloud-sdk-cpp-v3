@@ -26,6 +26,15 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForBatchTagAction() {
     return reqDefBuilder;
 }
 
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForBatchUpgradeDatabaseVersion() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForCheckDisasterRecoveryOperation() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;

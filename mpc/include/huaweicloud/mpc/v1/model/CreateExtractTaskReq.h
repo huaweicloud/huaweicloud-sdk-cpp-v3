@@ -12,6 +12,7 @@
 #include <huaweicloud/mpc/v1/model/ObsObjInfo.h>
 #include <string>
 #include <huaweicloud/mpc/v1/model/CommonCreateTaskReq.h>
+#include <huaweicloud/mpc/v1/model/Encryption.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -76,6 +77,15 @@ public:
     void unsetsync();
     void setSync(int32_t value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    Encryption getEncryption() const;
+    bool encryptionIsSet() const;
+    void unsetencryption();
+    void setEncryption(const Encryption& value);
+
 
 protected:
     ObsObjInfo input_;
@@ -86,6 +96,8 @@ protected:
     bool userDataIsSet_;
     int32_t sync_;
     bool syncIsSet_;
+    Encryption encryption_;
+    bool encryptionIsSet_;
 
 };
 

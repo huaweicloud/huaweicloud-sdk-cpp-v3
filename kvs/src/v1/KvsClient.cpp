@@ -213,6 +213,49 @@ std::shared_ptr<ListTableResponse> KvsClient::listTable(ListTableRequest &reques
 
     return localVarResult;
 }
+std::shared_ptr<CheckHealthResponse> KvsClient::checkHealth(CheckHealthRequest &request)
+{
+    std::string localVarPath = "/v1/check-health";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/bson", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isBson) {
+        spdlog::info("parse bson format request");
+        Builder builder = Builder::document();
+        request.getBody().toBson(builder);
+        Document doc = builder << Builder::DocumentEnd;
+        localVarHttpBody.assign((const char *)doc.data(), doc.length());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, KvsMeta::genRequestDefForCheckHealth());
+
+    std::shared_ptr<CheckHealthResponse> localVarResult = std::make_shared<CheckHealthResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse bson format response");
+        const std::string &body = localVarResult->getHttpBodyRef();
+        Document doc((const uint8_t *)body.data(), body.length());
+        Viewer viewer(doc);
+        localVarResult->fromBson(viewer);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<BatchWriteKvResponse> KvsClient::batchWriteKv(BatchWriteKvRequest &request)
 {
     std::string localVarPath = "/v1/batch-write-kv";

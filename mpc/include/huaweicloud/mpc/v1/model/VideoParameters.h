@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/core/utils/Object.h>
 #include <string>
 #include <huaweicloud/mpc/v1/model/OutputPolicy.h>
 
@@ -56,6 +57,24 @@ public:
     bool codecIsSet() const;
     void unsetcodec();
     void setCodec(int32_t value);
+
+    /// <summary>
+    /// 视频恒定码率控制因子。  取值范围为[0, 51] 
+    /// </summary>
+
+    Object getCrf() const;
+    bool crfIsSet() const;
+    void unsetcrf();
+    void setCrf(const Object& value);
+
+    /// <summary>
+    /// 输出最大码率  单位：kbit/s  带crf时使用，参考原片的平均码率进行设置（一般为1.5倍） 
+    /// </summary>
+
+    int32_t getMaxBitrate() const;
+    bool maxBitrateIsSet() const;
+    void unsetmaxBitrate();
+    void setMaxBitrate(int32_t value);
 
     /// <summary>
     /// 输出平均码率。  取值范围：0或[40,30000]之间的整数。  单位：kbit/s  若设置为0，则输出平均码率为自适应值。 
@@ -153,6 +172,10 @@ protected:
     bool outputPolicyIsSet_;
     int32_t codec_;
     bool codecIsSet_;
+    Object crf_;
+    bool crfIsSet_;
+    int32_t maxBitrate_;
+    bool maxBitrateIsSet_;
     int32_t bitrate_;
     bool bitrateIsSet_;
     int32_t profile_;

@@ -19,11 +19,19 @@
 #include <huaweicloud/dds/v3/model/AttachInternalIpRequestBody.h>
 #include <huaweicloud/dds/v3/model/AttachInternalIpResponse.h>
 #include <huaweicloud/dds/v3/model/BalancerActiveWindow.h>
+#include <huaweicloud/dds/v3/model/BatchDeleteBackupRequest.h>
+#include <huaweicloud/dds/v3/model/BatchDeleteBackupRequestBody.h>
+#include <huaweicloud/dds/v3/model/BatchDeleteBackupResponse.h>
 #include <huaweicloud/dds/v3/model/BatchOperateInstanceTagRequestBody.h>
 #include <huaweicloud/dds/v3/model/BatchTagActionRequest.h>
 #include <huaweicloud/dds/v3/model/BatchTagActionResponse.h>
+#include <huaweicloud/dds/v3/model/BatchUpgradeDatabaseVersionRequest.h>
+#include <huaweicloud/dds/v3/model/BatchUpgradeDatabaseVersionRequestBody.h>
+#include <huaweicloud/dds/v3/model/BatchUpgradeDatabaseVersionResponse.h>
 #include <huaweicloud/dds/v3/model/CancelEipRequest.h>
 #include <huaweicloud/dds/v3/model/CancelEipResponse.h>
+#include <huaweicloud/dds/v3/model/CancelScheduledTaskRequest.h>
+#include <huaweicloud/dds/v3/model/CancelScheduledTaskResponse.h>
 #include <huaweicloud/dds/v3/model/ChangeOpsWindowRequest.h>
 #include <huaweicloud/dds/v3/model/ChangeOpsWindowResponse.h>
 #include <huaweicloud/dds/v3/model/CheckPasswordRequest.h>
@@ -148,6 +156,8 @@
 #include <huaweicloud/dds/v3/model/ListRestoreDatabasesResponse.h>
 #include <huaweicloud/dds/v3/model/ListRestoreTimesRequest.h>
 #include <huaweicloud/dds/v3/model/ListRestoreTimesResponse.h>
+#include <huaweicloud/dds/v3/model/ListScheduledTasksRequest.h>
+#include <huaweicloud/dds/v3/model/ListScheduledTasksResponse.h>
 #include <huaweicloud/dds/v3/model/ListSessionsRequest.h>
 #include <huaweicloud/dds/v3/model/ListSessionsResponse.h>
 #include <huaweicloud/dds/v3/model/ListSlowLogsRequest.h>
@@ -192,6 +202,9 @@
 #include <huaweicloud/dds/v3/model/SetAuditlogPolicyRequest.h>
 #include <huaweicloud/dds/v3/model/SetAuditlogPolicyRequestBody.h>
 #include <huaweicloud/dds/v3/model/SetAuditlogPolicyResponse.h>
+#include <huaweicloud/dds/v3/model/SetAutoEnlargePoliciesRequest.h>
+#include <huaweicloud/dds/v3/model/SetAutoEnlargePoliciesRequestBody.h>
+#include <huaweicloud/dds/v3/model/SetAutoEnlargePoliciesResponse.h>
 #include <huaweicloud/dds/v3/model/SetBackupPolicyRequest.h>
 #include <huaweicloud/dds/v3/model/SetBackupPolicyRequestBody.h>
 #include <huaweicloud/dds/v3/model/SetBackupPolicyResponse.h>
@@ -203,6 +216,8 @@
 #include <huaweicloud/dds/v3/model/SetRecyclePolicyResponse.h>
 #include <huaweicloud/dds/v3/model/ShowAuditlogPolicyRequest.h>
 #include <huaweicloud/dds/v3/model/ShowAuditlogPolicyResponse.h>
+#include <huaweicloud/dds/v3/model/ShowAutoEnlargePolicyRequest.h>
+#include <huaweicloud/dds/v3/model/ShowAutoEnlargePolicyResponse.h>
 #include <huaweicloud/dds/v3/model/ShowBackupDownloadLinkRequest.h>
 #include <huaweicloud/dds/v3/model/ShowBackupDownloadLinkResponse.h>
 #include <huaweicloud/dds/v3/model/ShowBackupPolicyRequest.h>
@@ -221,6 +236,8 @@
 #include <huaweicloud/dds/v3/model/ShowDiskUsageResponse.h>
 #include <huaweicloud/dds/v3/model/ShowEntityConfigurationRequest.h>
 #include <huaweicloud/dds/v3/model/ShowEntityConfigurationResponse.h>
+#include <huaweicloud/dds/v3/model/ShowInstanceConfigurationModifyHistoryRequest.h>
+#include <huaweicloud/dds/v3/model/ShowInstanceConfigurationModifyHistoryResponse.h>
 #include <huaweicloud/dds/v3/model/ShowJobDetailRequest.h>
 #include <huaweicloud/dds/v3/model/ShowJobDetailResponse.h>
 #include <huaweicloud/dds/v3/model/ShowKillOpRuleRuleListRequest.h>
@@ -289,6 +306,8 @@
 #include <huaweicloud/dds/v3/model/UpgradeDatabaseVersionRequest.h>
 #include <huaweicloud/dds/v3/model/UpgradeDatabaseVersionRequestBody.h>
 #include <huaweicloud/dds/v3/model/UpgradeDatabaseVersionResponse.h>
+#include <huaweicloud/dds/v3/model/ValidateConfigurationNameRequest.h>
+#include <huaweicloud/dds/v3/model/ValidateConfigurationNameResponse.h>
 #include <huaweicloud/dds/v3/model/WeakPasswordCheckRequestBody.h>
 #include <string>
 
@@ -354,6 +373,14 @@ public:
     std::shared_ptr<AttachInternalIpResponse> attachInternalIp(
         AttachInternalIpRequest &request
     );
+    // 批量删除手动备份
+    //
+    // 批量删除数据库实例的手动备份。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchDeleteBackupResponse> batchDeleteBackup(
+        BatchDeleteBackupRequest &request
+    );
     // 批量添加或删除资源标签
     //
     // 批量添加或删除指定实例的标签。
@@ -362,6 +389,14 @@ public:
     std::shared_ptr<BatchTagActionResponse> batchTagAction(
         BatchTagActionRequest &request
     );
+    // 批量数据库补丁升级
+    //
+    // 批量升级数据库补丁版本。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchUpgradeDatabaseVersionResponse> batchUpgradeDatabaseVersion(
+        BatchUpgradeDatabaseVersionRequest &request
+    );
     // 解绑弹性公网IP
     //
     // 解绑实例下节点已经绑定的弹性公网IP。
@@ -369,6 +404,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CancelEipResponse> cancelEip(
         CancelEipRequest &request
+    );
+    // 取消定时任务
+    //
+    // 根据任务ID取消定时任务。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CancelScheduledTaskResponse> cancelScheduledTask(
+        CancelScheduledTaskRequest &request
     );
     // 设置可维护时间段
     //
@@ -762,6 +805,14 @@ public:
     std::shared_ptr<ListRestoreTimesResponse> listRestoreTimes(
         ListRestoreTimesRequest &request
     );
+    // 查询定时任务
+    //
+    // 根据指定条件查询定时任务列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListScheduledTasksResponse> listScheduledTasks(
+        ListScheduledTasksRequest &request
+    );
     // 查询实例节点会话
     //
     // 查询实例节点会话。
@@ -882,6 +933,14 @@ public:
     std::shared_ptr<SetAuditlogPolicyResponse> setAuditlogPolicy(
         SetAuditlogPolicyRequest &request
     );
+    // 设置磁盘自动扩容策略
+    //
+    // 设置磁盘自动扩容策略。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SetAutoEnlargePoliciesResponse> setAutoEnlargePolicies(
+        SetAutoEnlargePoliciesRequest &request
+    );
     // 设置自动备份策略
     //
     // 设置自动备份策略。
@@ -921,6 +980,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowAuditlogPolicyResponse> showAuditlogPolicy(
         ShowAuditlogPolicyRequest &request
+    );
+    // 查询磁盘自动扩容策略
+    //
+    // 查询磁盘自动扩容策略。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowAutoEnlargePolicyResponse> showAutoEnlargePolicy(
+        ShowAutoEnlargePolicyRequest &request
     );
     // 获取备份下载链接
     //
@@ -993,6 +1060,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowEntityConfigurationResponse> showEntityConfiguration(
         ShowEntityConfigurationRequest &request
+    );
+    // 查询实例参数的修改历史
+    //
+    // 查询实例参数的修改历史。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowInstanceConfigurationModifyHistoryResponse> showInstanceConfigurationModifyHistory(
+        ShowInstanceConfigurationModifyHistoryRequest &request
     );
     // 获取DDS任务中心指定ID的任务信息。
     //
@@ -1219,6 +1294,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpgradeDatabaseVersionResponse> upgradeDatabaseVersion(
         UpgradeDatabaseVersionRequest &request
+    );
+    // 校验参数模板名称是否存在
+    //
+    // 校验参数模板名称是否存在。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ValidateConfigurationNameResponse> validateConfigurationName(
+        ValidateConfigurationNameRequest &request
     );
 
     // 查询当前支持的API版本信息列表

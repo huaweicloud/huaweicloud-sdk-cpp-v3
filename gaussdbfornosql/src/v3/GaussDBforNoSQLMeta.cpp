@@ -17,6 +17,15 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForApplyConfiguration() {
     return reqDefBuilder;
 }
 
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForApplyConfigurationToInstances() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForBatchTagAction() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -32,6 +41,11 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForBatchUpgradeDatabaseVersion(
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForCancelInstanceScheduleWindow() {
+    HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
 
@@ -98,6 +112,24 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForCreateConfiguration() {
     return reqDefBuilder;
 }
 
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForCreateDbCacheMapping() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForCreateDbCacheRule() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForCreateDbUser() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -132,6 +164,24 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForDeleteBackup() {
 
 HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForDeleteConfiguration() {
     HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForDeleteDbCacheMapping() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForDeleteDbCacheRule() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
     return reqDefBuilder;
 }
 
@@ -241,6 +291,61 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForListDatastores() {
     return reqDefBuilder;
 }
 
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForListDbCacheMappings() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Id")
+                  .withJsonTag("id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Name")
+                  .withJsonTag("name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("SourceInstanceId")
+                  .withJsonTag("source_instance_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("SourceInstanceName")
+                  .withJsonTag("source_instance_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("TargetInstanceId")
+                  .withJsonTag("target_instance_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("TargetInstanceName")
+                  .withJsonTag("target_instance_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForListDbCacheRules() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("DbcacheMappingId")
+                  .withJsonTag("dbcache_mapping_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("RuleId")
+                  .withJsonTag("rule_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("RuleName")
+                  .withJsonTag("rule_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("SourceDbSchema")
+                  .withJsonTag("source_db_schema")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("SourceDbTable")
+                  .withJsonTag("source_db_table")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForListDbUsers() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Name")
@@ -322,6 +427,11 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForListInstanceDatabases() {
     reqDefBuilder.withRequestField(FieldDef().withName("Limit")
                   .withJsonTag("limit")
                   .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForListInstanceMaintenanceWindow() {
+    HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
 
@@ -465,6 +575,32 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForListMongodbSlowLogs() {
     return reqDefBuilder;
 }
 
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForListNosqlTaskList() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("JobName")
+                  .withJsonTag("job_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("JobStatus")
+                  .withJsonTag("job_status")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("InstanceId")
+                  .withJsonTag("instance_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("StartTime")
+                  .withJsonTag("start_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EndTime")
+                  .withJsonTag("end_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForListProjectTags() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Offset")
@@ -576,6 +712,15 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForModifyDbUserPrivilege() {
 }
 
 HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForModifyEpsQuotas() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForModifyInstanceMaintenanceWindow() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
@@ -725,6 +870,15 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForSetBackupPolicy() {
     return reqDefBuilder;
 }
 
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForSetInstanceDataDump() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForSetRecyclePolicy() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -818,6 +972,11 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForShowApplyHistory() {
 }
 
 HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForShowAutoEnlargePolicy() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForShowBackupPolicies() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
@@ -965,6 +1124,11 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForShowRestorableList() {
     return reqDefBuilder;
 }
 
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForShowSecondLevelMonitoringStatus() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForShowSlowLogDesensitization() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
@@ -980,6 +1144,15 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForShrinkInstanceNode() {
 }
 
 HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForSwitchIpGroup() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForSwitchSecondLevelMonitoring() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
@@ -1047,6 +1220,15 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForUpdateDatabases() {
     return reqDefBuilder;
 }
 
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForUpdateDbCacheRule() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForUpdateHighRiskCommands() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -1057,6 +1239,15 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForUpdateHighRiskCommands() {
 }
 
 HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForUpdateInstanceConfiguration() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForUpdateInstanceConfigurations() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.

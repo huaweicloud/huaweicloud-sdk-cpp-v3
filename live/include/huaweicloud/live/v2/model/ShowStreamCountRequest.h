@@ -40,7 +40,7 @@ public:
     /// ShowStreamCountRequest members
 
     /// <summary>
-    /// 项目ID，获取方法请参考[获取项目ID](live_03_0023.xml)。 
+    /// 项目ID，获取方法请参考[获取项目ID](https://support.huaweicloud.com/api-live/live_03_0023.html)。 
     /// </summary>
 
     std::string getProjectId() const;

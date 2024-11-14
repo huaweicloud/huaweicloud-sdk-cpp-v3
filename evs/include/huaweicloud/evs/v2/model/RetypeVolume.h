@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 变更磁盘类型
+/// 变更云硬盘类型
 /// </summary>
 class HUAWEICLOUD_EVS_V2_EXPORT  RetypeVolume
     : public ModelBase
@@ -39,7 +39,7 @@ public:
     /// RetypeVolume members
 
     /// <summary>
-    /// 磁盘变更至指定的磁盘类型
+    /// 变更至指定的云硬盘类型
     /// </summary>
 
     std::string getNewType() const;
@@ -47,10 +47,32 @@ public:
     void unsetnewType();
     void setNewType(const std::string& value);
 
+    /// <summary>
+    /// 云硬盘iops大小。
+    /// </summary>
+
+    int32_t getIops() const;
+    bool iopsIsSet() const;
+    void unsetiops();
+    void setIops(int32_t value);
+
+    /// <summary>
+    /// 云硬盘的吞吐量大小。
+    /// </summary>
+
+    int32_t getThroughput() const;
+    bool throughputIsSet() const;
+    void unsetthroughput();
+    void setThroughput(int32_t value);
+
 
 protected:
     std::string newType_;
     bool newTypeIsSet_;
+    int32_t iops_;
+    bool iopsIsSet_;
+    int32_t throughput_;
+    bool throughputIsSet_;
 
 };
 

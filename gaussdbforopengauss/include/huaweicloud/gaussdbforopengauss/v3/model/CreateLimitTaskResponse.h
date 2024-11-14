@@ -107,10 +107,10 @@ public:
     /// 关键词，仅当任务类型为SQL_TYPE时，返回该值且与请求参数相同。
     /// </summary>
 
-    std::vector<std::string>& getKeyWords();
+    std::string getKeyWords() const;
     bool keyWordsIsSet() const;
     void unsetkeyWords();
-    void setKeyWords(const std::vector<std::string>& value);
+    void setKeyWords(const std::string& value);
 
     /// <summary>
     /// 限流任务状态，当前支持：CREATING，UPDATEING，DELETING，WAIT_EXCUTE，EXCUTING，TIME_OVER，DELETED，CREATE_FAILED，UPDATE_FAILED，DELETE_FAILED，EXCEPTION，NODE_SHUT_DOWN。
@@ -254,7 +254,7 @@ protected:
     bool taskNameIsSet_;
     std::string sqlModel_;
     bool sqlModelIsSet_;
-    std::vector<std::string> keyWords_;
+    std::string keyWords_;
     bool keyWordsIsSet_;
     std::string status_;
     bool statusIsSet_;

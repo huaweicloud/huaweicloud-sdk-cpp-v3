@@ -40,7 +40,7 @@ public:
     /// ListDomainTrafficSummaryRequest members
 
     /// <summary>
-    /// 项目ID，获取方法请参考[获取项目ID](live_03_0023.xml)。 
+    /// 项目ID，获取方法请参考[获取项目ID](https://support.huaweicloud.com/api-live/live_03_0023.html)。 
     /// </summary>
 
     std::string getProjectId() const;
@@ -76,7 +76,7 @@ public:
     void setStream(const std::string& value);
 
     /// <summary>
-    /// 区域列表。具体取值请参考[省份名称缩写](live_03_0043.xml)，不填写查询所有区域。 
+    /// 区域列表。具体取值请参考[省份名称缩写](https://support.huaweicloud.com/api-live/live_03_0043.html)，不填写查询所有区域。 
     /// </summary>
 
     std::vector<std::string>& getRegion();

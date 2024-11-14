@@ -26,6 +26,7 @@ CreateLimitTaskResponse::CreateLimitTaskResponse()
     taskNameIsSet_ = false;
     sqlModel_ = "";
     sqlModelIsSet_ = false;
+    keyWords_ = "";
     keyWordsIsSet_ = false;
     status_ = "";
     statusIsSet_ = false;
@@ -130,7 +131,7 @@ web::json::value CreateLimitTaskResponse::toJson() const
         val[utility::conversions::to_string_t("node_infos")] = ModelBase::toJson(nodeInfos_);
     }
     if(jobIdIsSet_) {
-        val[utility::conversions::to_string_t("jobId")] = ModelBase::toJson(jobId_);
+        val[utility::conversions::to_string_t("job_id")] = ModelBase::toJson(jobId_);
     }
 
     return val;
@@ -206,7 +207,7 @@ bool CreateLimitTaskResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("key_words"));
         if(!fieldValue.is_null())
         {
-            std::vector<std::string> refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setKeyWords(refVal);
         }
@@ -328,8 +329,8 @@ bool CreateLimitTaskResponse::fromJson(const web::json::value& val)
             setNodeInfos(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("jobId"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("jobId"));
+    if(val.has_field(utility::conversions::to_string_t("job_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("job_id"));
         if(!fieldValue.is_null())
         {
             std::string refVal;
@@ -488,12 +489,12 @@ void CreateLimitTaskResponse::unsetsqlModel()
     sqlModelIsSet_ = false;
 }
 
-std::vector<std::string>& CreateLimitTaskResponse::getKeyWords()
+std::string CreateLimitTaskResponse::getKeyWords() const
 {
     return keyWords_;
 }
 
-void CreateLimitTaskResponse::setKeyWords(const std::vector<std::string>& value)
+void CreateLimitTaskResponse::setKeyWords(const std::string& value)
 {
     keyWords_ = value;
     keyWordsIsSet_ = true;

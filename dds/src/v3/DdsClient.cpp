@@ -200,6 +200,50 @@ std::shared_ptr<AttachInternalIpResponse> DdsClient::attachInternalIp(AttachInte
 
     return localVarResult;
 }
+std::shared_ptr<BatchDeleteBackupResponse> DdsClient::batchDeleteBackup(BatchDeleteBackupRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/backups";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, DdsMeta::genRequestDefForBatchDeleteBackup());
+
+    std::shared_ptr<BatchDeleteBackupResponse> localVarResult = std::make_shared<BatchDeleteBackupResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<BatchTagActionResponse> DdsClient::batchTagAction(BatchTagActionRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/tags/action";
@@ -242,6 +286,47 @@ std::shared_ptr<BatchTagActionResponse> DdsClient::batchTagAction(BatchTagAction
 
     return localVarResult;
 }
+std::shared_ptr<BatchUpgradeDatabaseVersionResponse> DdsClient::batchUpgradeDatabaseVersion(BatchUpgradeDatabaseVersionRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/db-upgrade";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, DdsMeta::genRequestDefForBatchUpgradeDatabaseVersion());
+
+    std::shared_ptr<BatchUpgradeDatabaseVersionResponse> localVarResult = std::make_shared<BatchUpgradeDatabaseVersionResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<CancelEipResponse> DdsClient::cancelEip(CancelEipRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/nodes/{node_id}/unbind-eip";
@@ -266,6 +351,36 @@ std::shared_ptr<CancelEipResponse> DdsClient::cancelEip(CancelEipRequest &reques
         localVarHeaderParams, localVarHttpBody, DdsMeta::genRequestDefForCancelEip());
 
     std::shared_ptr<CancelEipResponse> localVarResult = std::make_shared<CancelEipResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<CancelScheduledTaskResponse> DdsClient::cancelScheduledTask(CancelScheduledTaskRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/scheduled-jobs/{job_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["job_id"] = parameterToString(request.getJobId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, DdsMeta::genRequestDefForCancelScheduledTask());
+
+    std::shared_ptr<CancelScheduledTaskResponse> localVarResult = std::make_shared<CancelScheduledTaskResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -2240,6 +2355,56 @@ std::shared_ptr<ListRestoreTimesResponse> DdsClient::listRestoreTimes(ListRestor
 
     return localVarResult;
 }
+std::shared_ptr<ListScheduledTasksResponse> DdsClient::listScheduledTasks(ListScheduledTasksRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/scheduled-jobs";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.jobNameIsSet()) {
+        localVarQueryParams["job_name"] = parameterToString(request.getJobName());
+    }
+    if (request.jobStatusIsSet()) {
+        localVarQueryParams["job_status"] = parameterToString(request.getJobStatus());
+    }
+    if (request.instanceIdIsSet()) {
+        localVarQueryParams["instance_id"] = parameterToString(request.getInstanceId());
+    }
+    if (request.startTimeIsSet()) {
+        localVarQueryParams["start_time"] = parameterToString(request.getStartTime());
+    }
+    if (request.endTimeIsSet()) {
+        localVarQueryParams["end_time"] = parameterToString(request.getEndTime());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, DdsMeta::genRequestDefForListScheduledTasks());
+
+    std::shared_ptr<ListScheduledTasksResponse> localVarResult = std::make_shared<ListScheduledTasksResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListSessionsResponse> DdsClient::listSessions(ListSessionsRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/nodes/{node_id}/sessions";
@@ -2860,6 +3025,47 @@ std::shared_ptr<SetAuditlogPolicyResponse> DdsClient::setAuditlogPolicy(SetAudit
 
     return localVarResult;
 }
+std::shared_ptr<SetAutoEnlargePoliciesResponse> DdsClient::setAutoEnlargePolicies(SetAutoEnlargePoliciesRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/auto-enlarge-volume-policies";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, DdsMeta::genRequestDefForSetAutoEnlargePolicies());
+
+    std::shared_ptr<SetAutoEnlargePoliciesResponse> localVarResult = std::make_shared<SetAutoEnlargePoliciesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<SetBackupPolicyResponse> DdsClient::setBackupPolicy(SetBackupPolicyRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/backups/policy";
@@ -3043,6 +3249,36 @@ std::shared_ptr<ShowAuditlogPolicyResponse> DdsClient::showAuditlogPolicy(ShowAu
         localVarHeaderParams, localVarHttpBody, DdsMeta::genRequestDefForShowAuditlogPolicy());
 
     std::shared_ptr<ShowAuditlogPolicyResponse> localVarResult = std::make_shared<ShowAuditlogPolicyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowAutoEnlargePolicyResponse> DdsClient::showAutoEnlargePolicy(ShowAutoEnlargePolicyRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/auto-enlarge-volume-policy";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, DdsMeta::genRequestDefForShowAutoEnlargePolicy());
+
+    std::shared_ptr<ShowAutoEnlargePolicyResponse> localVarResult = std::make_shared<ShowAutoEnlargePolicyResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -3342,6 +3578,42 @@ std::shared_ptr<ShowEntityConfigurationResponse> DdsClient::showEntityConfigurat
         localVarHeaderParams, localVarHttpBody, DdsMeta::genRequestDefForShowEntityConfiguration());
 
     std::shared_ptr<ShowEntityConfigurationResponse> localVarResult = std::make_shared<ShowEntityConfigurationResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowInstanceConfigurationModifyHistoryResponse> DdsClient::showInstanceConfigurationModifyHistory(ShowInstanceConfigurationModifyHistoryRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/configuration-histories";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, DdsMeta::genRequestDefForShowInstanceConfigurationModifyHistory());
+
+    std::shared_ptr<ShowInstanceConfigurationModifyHistoryResponse> localVarResult = std::make_shared<ShowInstanceConfigurationModifyHistoryResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -4408,6 +4680,38 @@ std::shared_ptr<UpgradeDatabaseVersionResponse> DdsClient::upgradeDatabaseVersio
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
+
+    return localVarResult;
+}
+std::shared_ptr<ValidateConfigurationNameResponse> DdsClient::validateConfigurationName(ValidateConfigurationNameRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/configurations/name-validation";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.nameIsSet()) {
+        localVarQueryParams["name"] = parameterToString(request.getName());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, DdsMeta::genRequestDefForValidateConfigurationName());
+
+    std::shared_ptr<ValidateConfigurationNameResponse> localVarResult = std::make_shared<ValidateConfigurationNameResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }

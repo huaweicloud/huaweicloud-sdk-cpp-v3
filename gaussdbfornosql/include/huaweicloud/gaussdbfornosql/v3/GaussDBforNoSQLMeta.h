@@ -14,8 +14,10 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 class HUAWEICLOUD_GAUSSDBFORNOSQL_V3_EXPORT  GaussDBforNoSQLMeta {
 public:
     static HttpRequestDef genRequestDefForApplyConfiguration();
+    static HttpRequestDef genRequestDefForApplyConfigurationToInstances();
     static HttpRequestDef genRequestDefForBatchTagAction();
     static HttpRequestDef genRequestDefForBatchUpgradeDatabaseVersion();
+    static HttpRequestDef genRequestDefForCancelInstanceScheduleWindow();
     static HttpRequestDef genRequestDefForCheckDisasterRecoveryOperation();
     static HttpRequestDef genRequestDefForCheckWeekPassword();
     static HttpRequestDef genRequestDefForCompareConfiguration();
@@ -23,11 +25,15 @@ public:
     static HttpRequestDef genRequestDefForCreateBack();
     static HttpRequestDef genRequestDefForCreateColdVolume();
     static HttpRequestDef genRequestDefForCreateConfiguration();
+    static HttpRequestDef genRequestDefForCreateDbCacheMapping();
+    static HttpRequestDef genRequestDefForCreateDbCacheRule();
     static HttpRequestDef genRequestDefForCreateDbUser();
     static HttpRequestDef genRequestDefForCreateDisasterRecovery();
     static HttpRequestDef genRequestDefForCreateInstance();
     static HttpRequestDef genRequestDefForDeleteBackup();
     static HttpRequestDef genRequestDefForDeleteConfiguration();
+    static HttpRequestDef genRequestDefForDeleteDbCacheMapping();
+    static HttpRequestDef genRequestDefForDeleteDbCacheRule();
     static HttpRequestDef genRequestDefForDeleteDbUser();
     static HttpRequestDef genRequestDefForDeleteDisasterRecovery();
     static HttpRequestDef genRequestDefForDeleteEnlargeFailNode();
@@ -41,6 +47,8 @@ public:
     static HttpRequestDef genRequestDefForListConfigurationTemplates();
     static HttpRequestDef genRequestDefForListConfigurations();
     static HttpRequestDef genRequestDefForListDatastores();
+    static HttpRequestDef genRequestDefForListDbCacheMappings();
+    static HttpRequestDef genRequestDefForListDbCacheRules();
     static HttpRequestDef genRequestDefForListDbUsers();
     static HttpRequestDef genRequestDefForListDedicatedResources();
     static HttpRequestDef genRequestDefForListEpsQuotas();
@@ -48,6 +56,7 @@ public:
     static HttpRequestDef genRequestDefForListFlavors();
     static HttpRequestDef genRequestDefForListInfluxdbSlowLogs();
     static HttpRequestDef genRequestDefForListInstanceDatabases();
+    static HttpRequestDef genRequestDefForListInstanceMaintenanceWindow();
     static HttpRequestDef genRequestDefForListInstanceTags();
     static HttpRequestDef genRequestDefForListInstances();
     static HttpRequestDef genRequestDefForListInstancesByResourceTags();
@@ -58,6 +67,7 @@ public:
     static HttpRequestDef genRequestDefForListLtsConfigs();
     static HttpRequestDef genRequestDefForListMongodbErrorLogs();
     static HttpRequestDef genRequestDefForListMongodbSlowLogs();
+    static HttpRequestDef genRequestDefForListNosqlTaskList();
     static HttpRequestDef genRequestDefForListProjectTags();
     static HttpRequestDef genRequestDefForListRecycleInstances();
     static HttpRequestDef genRequestDefForListRedisSlowLogs();
@@ -67,6 +77,7 @@ public:
     static HttpRequestDef genRequestDefForListSlowLogs();
     static HttpRequestDef genRequestDefForModifyDbUserPrivilege();
     static HttpRequestDef genRequestDefForModifyEpsQuotas();
+    static HttpRequestDef genRequestDefForModifyInstanceMaintenanceWindow();
     static HttpRequestDef genRequestDefForModifyPort();
     static HttpRequestDef genRequestDefForModifyPublicIp();
     static HttpRequestDef genRequestDefForModifyVolume();
@@ -83,12 +94,14 @@ public:
     static HttpRequestDef genRequestDefForSaveLtsConfigs();
     static HttpRequestDef genRequestDefForSetAutoEnlargePolicy();
     static HttpRequestDef genRequestDefForSetBackupPolicy();
+    static HttpRequestDef genRequestDefForSetInstanceDataDump();
     static HttpRequestDef genRequestDefForSetRecyclePolicy();
     static HttpRequestDef genRequestDefForShowAllInstancesBackups();
     static HttpRequestDef genRequestDefForShowAllInstancesBackupsNew();
     static HttpRequestDef genRequestDefForShowApplicableInstances();
     static HttpRequestDef genRequestDefForShowApplyHistory();
     static HttpRequestDef genRequestDefForShowAutoEnlargePolicy();
+    static HttpRequestDef genRequestDefForShowBackupPolicies();
     static HttpRequestDef genRequestDefForShowBackupPolicy();
     static HttpRequestDef genRequestDefForShowConfigurationDetail();
     static HttpRequestDef genRequestDefForShowElbIpGroup();
@@ -105,9 +118,11 @@ public:
     static HttpRequestDef genRequestDefForShowRecyclePolicy();
     static HttpRequestDef genRequestDefForShowRedisBigKeys();
     static HttpRequestDef genRequestDefForShowRestorableList();
+    static HttpRequestDef genRequestDefForShowSecondLevelMonitoringStatus();
     static HttpRequestDef genRequestDefForShowSlowLogDesensitization();
     static HttpRequestDef genRequestDefForShrinkInstanceNode();
     static HttpRequestDef genRequestDefForSwitchIpGroup();
+    static HttpRequestDef genRequestDefForSwitchSecondLevelMonitoring();
     static HttpRequestDef genRequestDefForSwitchSlowlogDesensitization();
     static HttpRequestDef genRequestDefForSwitchSsl();
     static HttpRequestDef genRequestDefForSwitchToMaster();
@@ -115,8 +130,10 @@ public:
     static HttpRequestDef genRequestDefForUpdateClientNetwork();
     static HttpRequestDef genRequestDefForUpdateConfiguration();
     static HttpRequestDef genRequestDefForUpdateDatabases();
+    static HttpRequestDef genRequestDefForUpdateDbCacheRule();
     static HttpRequestDef genRequestDefForUpdateHighRiskCommands();
     static HttpRequestDef genRequestDefForUpdateInstanceConfiguration();
+    static HttpRequestDef genRequestDefForUpdateInstanceConfigurations();
     static HttpRequestDef genRequestDefForUpdateInstanceName();
     static HttpRequestDef genRequestDefForUpdatePasswordlessConfig();
     static HttpRequestDef genRequestDefForUpdateSecurityGroup();

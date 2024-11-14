@@ -17,8 +17,11 @@ public:
     static HttpRequestDef genRequestDefForAddShardingNode();
     static HttpRequestDef genRequestDefForAttachEip();
     static HttpRequestDef genRequestDefForAttachInternalIp();
+    static HttpRequestDef genRequestDefForBatchDeleteBackup();
     static HttpRequestDef genRequestDefForBatchTagAction();
+    static HttpRequestDef genRequestDefForBatchUpgradeDatabaseVersion();
     static HttpRequestDef genRequestDefForCancelEip();
+    static HttpRequestDef genRequestDefForCancelScheduledTask();
     static HttpRequestDef genRequestDefForChangeOpsWindow();
     static HttpRequestDef genRequestDefForCheckPassword();
     static HttpRequestDef genRequestDefForCheckWeakPassword();
@@ -68,6 +71,7 @@ public:
     static HttpRequestDef genRequestDefForListRestoreCollections();
     static HttpRequestDef genRequestDefForListRestoreDatabases();
     static HttpRequestDef genRequestDefForListRestoreTimes();
+    static HttpRequestDef genRequestDefForListScheduledTasks();
     static HttpRequestDef genRequestDefForListSessions();
     static HttpRequestDef genRequestDefForListSlowLogs();
     static HttpRequestDef genRequestDefForListSslCertDownloadAddress();
@@ -83,11 +87,13 @@ public:
     static HttpRequestDef genRequestDefForRestoreInstanceFromCollection();
     static HttpRequestDef genRequestDefForRestoreNewInstance();
     static HttpRequestDef genRequestDefForSetAuditlogPolicy();
+    static HttpRequestDef genRequestDefForSetAutoEnlargePolicies();
     static HttpRequestDef genRequestDefForSetBackupPolicy();
     static HttpRequestDef genRequestDefForSetBalancerSwitch();
     static HttpRequestDef genRequestDefForSetBalancerWindow();
     static HttpRequestDef genRequestDefForSetRecyclePolicy();
     static HttpRequestDef genRequestDefForShowAuditlogPolicy();
+    static HttpRequestDef genRequestDefForShowAutoEnlargePolicy();
     static HttpRequestDef genRequestDefForShowBackupDownloadLink();
     static HttpRequestDef genRequestDefForShowBackupPolicy();
     static HttpRequestDef genRequestDefForShowClientNetwork();
@@ -97,6 +103,7 @@ public:
     static HttpRequestDef genRequestDefForShowConnectionStatistics();
     static HttpRequestDef genRequestDefForShowDiskUsage();
     static HttpRequestDef genRequestDefForShowEntityConfiguration();
+    static HttpRequestDef genRequestDefForShowInstanceConfigurationModifyHistory();
     static HttpRequestDef genRequestDefForShowJobDetail();
     static HttpRequestDef genRequestDefForShowKillOpRuleRuleList();
     static HttpRequestDef genRequestDefForShowQuotas();
@@ -125,6 +132,7 @@ public:
     static HttpRequestDef genRequestDefForUpdateReplSetName();
     static HttpRequestDef genRequestDefForUpdateSecurityGroup();
     static HttpRequestDef genRequestDefForUpgradeDatabaseVersion();
+    static HttpRequestDef genRequestDefForValidateConfigurationName();
     static HttpRequestDef genRequestDefForListApiVersion();
     static HttpRequestDef genRequestDefForShowApiVersion();
 };

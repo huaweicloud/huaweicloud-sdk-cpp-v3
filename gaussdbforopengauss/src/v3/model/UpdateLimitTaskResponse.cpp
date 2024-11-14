@@ -77,7 +77,7 @@ web::json::value UpdateLimitTaskResponse::toJson() const
         val[utility::conversions::to_string_t("rule_name")] = ModelBase::toJson(ruleName_);
     }
     if(jobIdIsSet_) {
-        val[utility::conversions::to_string_t("jobId")] = ModelBase::toJson(jobId_);
+        val[utility::conversions::to_string_t("job_id")] = ModelBase::toJson(jobId_);
     }
 
     return val;
@@ -176,8 +176,8 @@ bool UpdateLimitTaskResponse::fromJson(const web::json::value& val)
             setRuleName(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("jobId"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("jobId"));
+    if(val.has_field(utility::conversions::to_string_t("job_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("job_id"));
         if(!fieldValue.is_null())
         {
             std::string refVal;

@@ -44,6 +44,20 @@ HttpRequestDef DdsMeta::genRequestDefForAttachInternalIp() {
     return reqDefBuilder;
 }
 
+HttpRequestDef DdsMeta::genRequestDefForBatchDeleteBackup() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef DdsMeta::genRequestDefForBatchTagAction() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -53,7 +67,21 @@ HttpRequestDef DdsMeta::genRequestDefForBatchTagAction() {
     return reqDefBuilder;
 }
 
+HttpRequestDef DdsMeta::genRequestDefForBatchUpgradeDatabaseVersion() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef DdsMeta::genRequestDefForCancelEip() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef DdsMeta::genRequestDefForCancelScheduledTask() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
@@ -622,6 +650,32 @@ HttpRequestDef DdsMeta::genRequestDefForListRestoreTimes() {
     return reqDefBuilder;
 }
 
+HttpRequestDef DdsMeta::genRequestDefForListScheduledTasks() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("JobName")
+                  .withJsonTag("job_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("JobStatus")
+                  .withJsonTag("job_status")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("InstanceId")
+                  .withJsonTag("instance_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("StartTime")
+                  .withJsonTag("start_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EndTime")
+                  .withJsonTag("end_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef DdsMeta::genRequestDefForListSessions() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Offset")
@@ -805,6 +859,15 @@ HttpRequestDef DdsMeta::genRequestDefForSetAuditlogPolicy() {
     return reqDefBuilder;
 }
 
+HttpRequestDef DdsMeta::genRequestDefForSetAutoEnlargePolicies() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef DdsMeta::genRequestDefForSetBackupPolicy() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -844,6 +907,11 @@ HttpRequestDef DdsMeta::genRequestDefForShowAuditlogPolicy() {
                   .withName("XLanguage")
                   .withJsonTag("X-Language")
                   .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef DdsMeta::genRequestDefForShowAutoEnlargePolicy() {
+    HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
 
@@ -922,6 +990,17 @@ HttpRequestDef DdsMeta::genRequestDefForShowEntityConfiguration() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("EntityId")
                   .withJsonTag("entity_id")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef DdsMeta::genRequestDefForShowInstanceConfigurationModifyHistory() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
                   .withLocationType(Query_));
     return reqDefBuilder;
 }
@@ -1168,6 +1247,14 @@ HttpRequestDef DdsMeta::genRequestDefForUpgradeDatabaseVersion() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef DdsMeta::genRequestDefForValidateConfigurationName() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Name")
+                  .withJsonTag("name")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 

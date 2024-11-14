@@ -40,7 +40,7 @@ public:
     /// ListAreaDetailRequest members
 
     /// <summary>
-    /// 项目ID，获取方法请参考[获取项目ID](live_03_0023.xml)。 
+    /// 项目ID，获取方法请参考[获取项目ID](https://support.huaweicloud.com/api-live/live_03_0023.html)。 
     /// </summary>
 
     std::string getProjectId() const;
@@ -112,7 +112,7 @@ public:
     void setIsp(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 需查询的计费大区，取值如下： - CN：中国内地。 - AP1：亚太1区。 - AP2：亚太2区。 - AP3：亚太3区。 - MEAA：中东非洲。 - SA：南美。 - EU：欧洲。 - ALL：全部。  中国内地返回结果为省份/直辖市的中文名称，比如：广东、上海； 海外大区与地区/国家的对应关系请参考[地区/国家代码对照表](live_03_0049.xml)。 
+    /// 需查询的计费大区，取值如下： - CN：中国内地。 - AP1：亚太1区。 - AP2：亚太2区。 - AP3：亚太3区。 - MEAA：中东非洲。 - SA：南美。 - EU：欧洲。 - ALL：全部。  中国内地返回结果为省份/直辖市的中文名称，比如：广东、上海； 海外大区与地区/国家的对应关系请参考[地区/国家代码对照表](https://support.huaweicloud.com/api-live/live_03_0049.html)。 
     /// </summary>
 
     std::vector<std::string>& getArea();

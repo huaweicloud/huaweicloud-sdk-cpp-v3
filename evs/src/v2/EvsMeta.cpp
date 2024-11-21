@@ -94,6 +94,11 @@ HttpRequestDef EvsMeta::genRequestDefForCreateSnapshot() {
 
 HttpRequestDef EvsMeta::genRequestDefForCreateVolume() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXClientToken;
+    reqDefBuilder.withRequestField(headerParamXClientToken
+                  .withName("XClientToken")
+                  .withJsonTag("X-Client-Token")
+                  .withLocationType(Header_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").

@@ -84,13 +84,22 @@ public:
     void setWidth(int64_t value);
 
     /// <summary>
-    /// 视频高度（单位：像素）。 - 编码为H.264的取值范围：[32,2160]之间2的倍数 。 - 编码为H.265的取值范围：[240,2160]之间4的倍数。
+    /// 视频高度（单位：像素）。该字段会逐渐废弃，请使用height字段。 - 编码为H.264的取值范围：[32,2160]之间2的倍数 。 - 编码为H.265的取值范围：[240,2160]之间4的倍数。
     /// </summary>
 
     int64_t getHight() const;
     bool hightIsSet() const;
     void unsethight();
     void setHight(int64_t value);
+
+    /// <summary>
+    /// 视频高度（单位：像素）。 - 编码为H.264的取值范围：[32,2160]之间2的倍数 。 - 编码为H.265的取值范围：[240,2160]之间4的倍数。
+    /// </summary>
+
+    int64_t getHeight() const;
+    bool heightIsSet() const;
+    void unsetheight();
+    void setHeight(int64_t value);
 
     /// <summary>
     /// 视频平均码率。
@@ -142,6 +151,8 @@ protected:
     bool widthIsSet_;
     int64_t hight_;
     bool hightIsSet_;
+    int64_t height_;
+    bool heightIsSet_;
     int64_t bitRate_;
     bool bitRateIsSet_;
     int64_t frameRate_;

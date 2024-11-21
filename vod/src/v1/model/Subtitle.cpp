@@ -18,6 +18,8 @@ Subtitle::Subtitle()
     typeIsSet_ = false;
     language_ = "";
     languageIsSet_ = false;
+    name_ = "";
+    nameIsSet_ = false;
     md5_ = "";
     md5IsSet_ = false;
     description_ = "";
@@ -42,6 +44,9 @@ web::json::value Subtitle::toJson() const
     }
     if(languageIsSet_) {
         val[utility::conversions::to_string_t("language")] = ModelBase::toJson(language_);
+    }
+    if(nameIsSet_) {
+        val[utility::conversions::to_string_t("name")] = ModelBase::toJson(name_);
     }
     if(md5IsSet_) {
         val[utility::conversions::to_string_t("md5")] = ModelBase::toJson(md5_);
@@ -81,6 +86,15 @@ bool Subtitle::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLanguage(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setName(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("md5"))) {
@@ -166,6 +180,27 @@ bool Subtitle::languageIsSet() const
 void Subtitle::unsetlanguage()
 {
     languageIsSet_ = false;
+}
+
+std::string Subtitle::getName() const
+{
+    return name_;
+}
+
+void Subtitle::setName(const std::string& value)
+{
+    name_ = value;
+    nameIsSet_ = true;
+}
+
+bool Subtitle::nameIsSet() const
+{
+    return nameIsSet_;
+}
+
+void Subtitle::unsetname()
+{
+    nameIsSet_ = false;
 }
 
 std::string Subtitle::getMd5() const

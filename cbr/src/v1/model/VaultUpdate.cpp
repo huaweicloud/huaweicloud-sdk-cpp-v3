@@ -24,6 +24,8 @@ VaultUpdate::VaultUpdate()
     smnNotifyIsSet_ = false;
     threshold_ = 0;
     thresholdIsSet_ = false;
+    locked_ = false;
+    lockedIsSet_ = false;
 }
 
 VaultUpdate::~VaultUpdate() = default;
@@ -56,6 +58,9 @@ web::json::value VaultUpdate::toJson() const
     }
     if(thresholdIsSet_) {
         val[utility::conversions::to_string_t("threshold")] = ModelBase::toJson(threshold_);
+    }
+    if(lockedIsSet_) {
+        val[utility::conversions::to_string_t("locked")] = ModelBase::toJson(locked_);
     }
 
     return val;
@@ -125,6 +130,15 @@ bool VaultUpdate::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setThreshold(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("locked"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("locked"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLocked(refVal);
         }
     }
     return ok;
@@ -276,6 +290,27 @@ bool VaultUpdate::thresholdIsSet() const
 void VaultUpdate::unsetthreshold()
 {
     thresholdIsSet_ = false;
+}
+
+bool VaultUpdate::isLocked() const
+{
+    return locked_;
+}
+
+void VaultUpdate::setLocked(bool value)
+{
+    locked_ = value;
+    lockedIsSet_ = true;
+}
+
+bool VaultUpdate::lockedIsSet() const
+{
+    return lockedIsSet_;
+}
+
+void VaultUpdate::unsetlocked()
+{
+    lockedIsSet_ = false;
 }
 
 }

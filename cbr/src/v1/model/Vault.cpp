@@ -42,6 +42,8 @@ Vault::Vault()
     thresholdIsSet_ = false;
     sysLockSourceService_ = "";
     sysLockSourceServiceIsSet_ = false;
+    locked_ = false;
+    lockedIsSet_ = false;
 }
 
 Vault::~Vault() = default;
@@ -104,6 +106,9 @@ web::json::value Vault::toJson() const
     }
     if(sysLockSourceServiceIsSet_) {
         val[utility::conversions::to_string_t("sys_lock_source_service")] = ModelBase::toJson(sysLockSourceService_);
+    }
+    if(lockedIsSet_) {
+        val[utility::conversions::to_string_t("locked")] = ModelBase::toJson(locked_);
     }
 
     return val;
@@ -263,6 +268,15 @@ bool Vault::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSysLockSourceService(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("locked"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("locked"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLocked(refVal);
         }
     }
     return ok;
@@ -624,6 +638,27 @@ bool Vault::sysLockSourceServiceIsSet() const
 void Vault::unsetsysLockSourceService()
 {
     sysLockSourceServiceIsSet_ = false;
+}
+
+bool Vault::isLocked() const
+{
+    return locked_;
+}
+
+void Vault::setLocked(bool value)
+{
+    locked_ = value;
+    lockedIsSet_ = true;
+}
+
+bool Vault::lockedIsSet() const
+{
+    return lockedIsSet_;
+}
+
+void Vault::unsetlocked()
+{
+    lockedIsSet_ = false;
 }
 
 }

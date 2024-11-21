@@ -39,7 +39,7 @@ public:
     /// BackupRestoreServerMapping members
 
     /// <summary>
-    /// 卷备份ID，可以通过控制台或者“查询指定备份”接口获取。
+    /// 卷备份ID，可以通过控制台查看云服务器备份详情中磁盘级备份的ID；或“查询指定备份”接口，获取备份中children内的磁盘级备份的ID。
     /// </summary>
 
     std::string getBackupId() const;

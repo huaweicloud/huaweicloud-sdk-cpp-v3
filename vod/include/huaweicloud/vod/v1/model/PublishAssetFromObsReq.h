@@ -88,7 +88,7 @@ public:
     void setTags(const std::string& value);
 
     /// <summary>
-    /// 是否自动发布。  取值如下： - 0：表示不自动发布。 - 1：表示自动发布。  默认值：0。
+    /// 是否自动发布。  取值如下： - 0：表示不自动发布。 - 1：表示自动发布。  默认值：1。
     /// </summary>
 
     int32_t getAutoPublish() const;

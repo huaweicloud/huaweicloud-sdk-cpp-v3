@@ -14,8 +14,6 @@ AssetProcessReq::AssetProcessReq()
 {
     assetId_ = "";
     assetIdIsSet_ = false;
-    hlsStorageType_ = "";
-    hlsStorageTypeIsSet_ = false;
     templateGroupName_ = "";
     templateGroupNameIsSet_ = false;
     autoEncrypt_ = 0;
@@ -36,9 +34,6 @@ web::json::value AssetProcessReq::toJson() const
 
     if(assetIdIsSet_) {
         val[utility::conversions::to_string_t("asset_id")] = ModelBase::toJson(assetId_);
-    }
-    if(hlsStorageTypeIsSet_) {
-        val[utility::conversions::to_string_t("hls_storage_type")] = ModelBase::toJson(hlsStorageType_);
     }
     if(templateGroupNameIsSet_) {
         val[utility::conversions::to_string_t("template_group_name")] = ModelBase::toJson(templateGroupName_);
@@ -66,15 +61,6 @@ bool AssetProcessReq::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAssetId(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("hls_storage_type"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("hls_storage_type"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setHlsStorageType(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("template_group_name"))) {
@@ -136,27 +122,6 @@ bool AssetProcessReq::assetIdIsSet() const
 void AssetProcessReq::unsetassetId()
 {
     assetIdIsSet_ = false;
-}
-
-std::string AssetProcessReq::getHlsStorageType() const
-{
-    return hlsStorageType_;
-}
-
-void AssetProcessReq::setHlsStorageType(const std::string& value)
-{
-    hlsStorageType_ = value;
-    hlsStorageTypeIsSet_ = true;
-}
-
-bool AssetProcessReq::hlsStorageTypeIsSet() const
-{
-    return hlsStorageTypeIsSet_;
-}
-
-void AssetProcessReq::unsethlsStorageType()
-{
-    hlsStorageTypeIsSet_ = false;
 }
 
 std::string AssetProcessReq::getTemplateGroupName() const

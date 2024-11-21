@@ -42,6 +42,8 @@ VaultGet::VaultGet()
     thresholdIsSet_ = false;
     sysLockSourceService_ = "";
     sysLockSourceServiceIsSet_ = false;
+    locked_ = false;
+    lockedIsSet_ = false;
     updatedAt_ = "";
     updatedAtIsSet_ = false;
     version_ = "";
@@ -108,6 +110,9 @@ web::json::value VaultGet::toJson() const
     }
     if(sysLockSourceServiceIsSet_) {
         val[utility::conversions::to_string_t("sys_lock_source_service")] = ModelBase::toJson(sysLockSourceService_);
+    }
+    if(lockedIsSet_) {
+        val[utility::conversions::to_string_t("locked")] = ModelBase::toJson(locked_);
     }
     if(updatedAtIsSet_) {
         val[utility::conversions::to_string_t("updated_at")] = ModelBase::toJson(updatedAt_);
@@ -273,6 +278,15 @@ bool VaultGet::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSysLockSourceService(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("locked"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("locked"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLocked(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("updated_at"))) {
@@ -652,6 +666,27 @@ bool VaultGet::sysLockSourceServiceIsSet() const
 void VaultGet::unsetsysLockSourceService()
 {
     sysLockSourceServiceIsSet_ = false;
+}
+
+bool VaultGet::isLocked() const
+{
+    return locked_;
+}
+
+void VaultGet::setLocked(bool value)
+{
+    locked_ = value;
+    lockedIsSet_ = true;
+}
+
+bool VaultGet::lockedIsSet() const
+{
+    return lockedIsSet_;
+}
+
+void VaultGet::unsetlocked()
+{
+    lockedIsSet_ = false;
 }
 
 std::string VaultGet::getUpdatedAt() const

@@ -30,6 +30,10 @@ public:
             { 
                 "https://lts.cn-east-3.myhuaweicloud.com"
             });
+        regions["cn-east-5"] = Region("cn-east-5",
+            { 
+                "https://lts.cn-east-5.myhuaweicloud.com"
+            });
         regions["cn-north-1"] = Region("cn-north-1",
             { 
                 "https://lts.cn-north-1.myhuaweicloud.com"

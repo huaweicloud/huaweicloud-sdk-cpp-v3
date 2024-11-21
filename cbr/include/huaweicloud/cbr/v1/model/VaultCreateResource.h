@@ -260,6 +260,15 @@ public:
     void unsetsysLockSourceService();
     void setSysLockSourceService(const std::string& value);
 
+    /// <summary>
+    /// 用于标识该存储库是否已锁定
+    /// </summary>
+
+    bool isLocked() const;
+    bool lockedIsSet() const;
+    void unsetlocked();
+    void setLocked(bool value);
+
 
 protected:
     Billing billing_;
@@ -310,6 +319,8 @@ protected:
     bool frozenIsSet_;
     std::string sysLockSourceService_;
     bool sysLockSourceServiceIsSet_;
+    bool locked_;
+    bool lockedIsSet_;
 
 };
 

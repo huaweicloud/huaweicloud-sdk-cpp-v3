@@ -442,6 +442,9 @@ std::shared_ptr<CreateVolumeResponse> EvsClient::createVolume(CreateVolumeReques
     std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.xClientTokenIsSet()) {
+        localVarHeaderParams["X-Client-Token"] = parameterToString(request.getXClientToken());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {

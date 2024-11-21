@@ -39,7 +39,7 @@ public:
     /// Common members
 
     /// <summary>
-    /// pvc开关。
+    /// 高清低码开关。
     /// </summary>
 
     std::string getPvc() const;
@@ -48,7 +48,7 @@ public:
     void setPvc(const std::string& value);
 
     /// <summary>
-    /// pvc版本。
+    /// 高清低码版本。
     /// </summary>
 
     std::string getPvcVersion() const;

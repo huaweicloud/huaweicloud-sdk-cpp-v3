@@ -24,6 +24,8 @@ MetaData::MetaData()
     widthIsSet_ = false;
     hight_ = 0L;
     hightIsSet_ = false;
+    height_ = 0L;
+    heightIsSet_ = false;
     bitRate_ = 0L;
     bitRateIsSet_ = false;
     frameRate_ = 0L;
@@ -61,6 +63,9 @@ web::json::value MetaData::toJson() const
     }
     if(hightIsSet_) {
         val[utility::conversions::to_string_t("hight")] = ModelBase::toJson(hight_);
+    }
+    if(heightIsSet_) {
+        val[utility::conversions::to_string_t("height")] = ModelBase::toJson(height_);
     }
     if(bitRateIsSet_) {
         val[utility::conversions::to_string_t("bit_rate")] = ModelBase::toJson(bitRate_);
@@ -133,6 +138,15 @@ bool MetaData::fromJson(const web::json::value& val)
             int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setHight(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("height"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("height"));
+        if(!fieldValue.is_null())
+        {
+            int64_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHeight(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("bit_rate"))) {
@@ -299,6 +313,27 @@ bool MetaData::hightIsSet() const
 void MetaData::unsethight()
 {
     hightIsSet_ = false;
+}
+
+int64_t MetaData::getHeight() const
+{
+    return height_;
+}
+
+void MetaData::setHeight(int64_t value)
+{
+    height_ = value;
+    heightIsSet_ = true;
+}
+
+bool MetaData::heightIsSet() const
+{
+    return heightIsSet_;
+}
+
+void MetaData::unsetheight()
+{
+    heightIsSet_ = false;
 }
 
 int64_t MetaData::getBitRate() const

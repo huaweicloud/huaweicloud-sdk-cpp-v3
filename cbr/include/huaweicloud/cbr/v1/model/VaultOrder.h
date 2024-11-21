@@ -161,6 +161,15 @@ public:
     void unsetautoExpand();
     void setAutoExpand(bool value);
 
+    /// <summary>
+    /// 用于标识当前存储库是否已锁定
+    /// </summary>
+
+    bool isLocked() const;
+    bool lockedIsSet() const;
+    void unsetlocked();
+    void setLocked(bool value);
+
 
 protected:
     std::string name_;
@@ -189,6 +198,8 @@ protected:
     bool parametersIsSet_;
     bool autoExpand_;
     bool autoExpandIsSet_;
+    bool locked_;
+    bool lockedIsSet_;
 
 };
 

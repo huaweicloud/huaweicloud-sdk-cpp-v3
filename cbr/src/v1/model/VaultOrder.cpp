@@ -33,6 +33,8 @@ VaultOrder::VaultOrder()
     parametersIsSet_ = false;
     autoExpand_ = false;
     autoExpandIsSet_ = false;
+    locked_ = false;
+    lockedIsSet_ = false;
 }
 
 VaultOrder::~VaultOrder() = default;
@@ -83,6 +85,9 @@ web::json::value VaultOrder::toJson() const
     }
     if(autoExpandIsSet_) {
         val[utility::conversions::to_string_t("auto_expand")] = ModelBase::toJson(autoExpand_);
+    }
+    if(lockedIsSet_) {
+        val[utility::conversions::to_string_t("locked")] = ModelBase::toJson(locked_);
     }
 
     return val;
@@ -206,6 +211,15 @@ bool VaultOrder::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAutoExpand(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("locked"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("locked"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLocked(refVal);
         }
     }
     return ok;
@@ -483,6 +497,27 @@ bool VaultOrder::autoExpandIsSet() const
 void VaultOrder::unsetautoExpand()
 {
     autoExpandIsSet_ = false;
+}
+
+bool VaultOrder::isLocked() const
+{
+    return locked_;
+}
+
+void VaultOrder::setLocked(bool value)
+{
+    locked_ = value;
+    lockedIsSet_ = true;
+}
+
+bool VaultOrder::lockedIsSet() const
+{
+    return lockedIsSet_;
+}
+
+void VaultOrder::unsetlocked()
+{
+    lockedIsSet_ = false;
 }
 
 }

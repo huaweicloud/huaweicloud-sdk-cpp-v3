@@ -50,16 +50,7 @@ public:
     void setAssetId(const std::string& value);
 
     /// <summary>
-    /// hls的音视频流存储方式。  取值如下： - composite：存储在同一文件中。 - separate：存储在不同文件中。
-    /// </summary>
-
-    std::string getHlsStorageType() const;
-    bool hlsStorageTypeIsSet() const;
-    void unsethlsStorageType();
-    void setHlsStorageType(const std::string& value);
-
-    /// <summary>
-    /// 转码模板组名称。   若不为空，则使用指定的转码模板对上传的音视频进行转码，您可以在视频点播控制台配置转码模板，具体请参见[转码设置](https://support.huaweicloud.com/usermanual-vod/vod_01_0072.html)。
+    /// 转码模板组名称。 若不为空，则使用指定的转码模板对上传的音视频进行转码，您可以在视频点播控制台配置转码模板，具体请参见[转码设置](https://support.huaweicloud.com/usermanual-vod/vod_01_0072.html)。
     /// </summary>
 
     std::string getTemplateGroupName() const;
@@ -98,8 +89,6 @@ public:
 protected:
     std::string assetId_;
     bool assetIdIsSet_;
-    std::string hlsStorageType_;
-    bool hlsStorageTypeIsSet_;
     std::string templateGroupName_;
     bool templateGroupNameIsSet_;
     int32_t autoEncrypt_;

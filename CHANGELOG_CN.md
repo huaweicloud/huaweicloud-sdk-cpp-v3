@@ -1,3 +1,86 @@
+# 3.1.111 2024-11-21
+
+### HuaweiCloud SDK DDS
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持以下接口：
+    - `ValidateConfigurationName`
+    - `ShowInstanceConfigurationModifyHistory`
+    - `SetAutoEnlargePolicies`
+    - `BatchDeleteBackup`
+    - `ShowAutoEnlargePolicy`
+    - `ListScheduledTasks`
+    - `CancelScheduledTask`
+    - `BatchUpgradeDatabaseVersion`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK EVS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 移除接口`ChangeVolumeChargeMode`、`UnsubscribePostpaidVolume`
+  - **RetypeVolume**
+    - 请求参数变更
+      - `+ os-retype.iops`
+      - `+ os-retype.throughput`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持以下接口：
+    - `ShowBackupPolicies`
+    - `ApplyConfigurationToInstances`
+    - `UpdateInstanceConfigurations`
+    - `CreateDbCacheMapping`
+    - `DeleteDbCacheMapping`
+    - `UpdateDbCacheRule`
+    - `CreateDbCacheRule`
+    - `DeleteDbCacheRule`
+    - `ListDbCacheMappings`
+    - `ListDbCacheRules`
+    - `ShowSecondLevelMonitoringStatus`
+    - `SwitchSecondLevelMonitoring`
+    - `SetInstanceDataDump`
+    - `ListInstanceMaintenanceWindow`
+    - `ModifyInstanceMaintenanceWindow`
+    - `ListNosqlTaskList`
+    - `CancelInstanceScheduleWindow`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateLimitTask**
+    - 响应参数变更
+      - `+ job_id`
+      - `- jobId`
+      - `* key_words: list<string> -> string`
+  - **UpdateLimitTask**
+    - 响应参数变更
+      - `+ job_id`
+      - `- jobId`
+
 # 3.1.110 2024-11-14
 
 ### HuaweiCloud SDK DDS

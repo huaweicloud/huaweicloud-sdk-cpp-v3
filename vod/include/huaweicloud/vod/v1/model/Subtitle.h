@@ -66,6 +66,15 @@ public:
     void setLanguage(const std::string& value);
 
     /// <summary>
+    /// subtitle name
+    /// </summary>
+
+    std::string getName() const;
+    bool nameIsSet() const;
+    void unsetname();
+    void setName(const std::string& value);
+
+    /// <summary>
     /// 字幕文件的MD5值。
     /// </summary>
 
@@ -91,6 +100,8 @@ protected:
     bool typeIsSet_;
     std::string language_;
     bool languageIsSet_;
+    std::string name_;
+    bool nameIsSet_;
     std::string md5_;
     bool md5IsSet_;
     std::string description_;

@@ -198,6 +198,15 @@ public:
     void setSysLockSourceService(const std::string& value);
 
     /// <summary>
+    /// 用于标识该存储库是否已锁定
+    /// </summary>
+
+    bool isLocked() const;
+    bool lockedIsSet() const;
+    void unsetlocked();
+    void setLocked(bool value);
+
+    /// <summary>
     /// 更新时间,例如:\&quot;2020-02-05T10:38:34.209782\&quot;
     /// </summary>
 
@@ -251,6 +260,8 @@ protected:
     bool thresholdIsSet_;
     std::string sysLockSourceService_;
     bool sysLockSourceServiceIsSet_;
+    bool locked_;
+    bool lockedIsSet_;
     std::string updatedAt_;
     bool updatedAtIsSet_;
     std::string version_;

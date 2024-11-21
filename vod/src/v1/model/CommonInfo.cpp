@@ -28,6 +28,14 @@ CommonInfo::CommonInfo()
     upsampleIsSet_ = false;
     adaptation_ = "";
     adaptationIsSet_ = false;
+    preset_ = 0;
+    presetIsSet_ = false;
+    maxIframesInterval_ = 0;
+    maxIframesIntervalIsSet_ = false;
+    hlsAudioSeparate_ = false;
+    hlsAudioSeparateIsSet_ = false;
+    hlsSegmentType_ = "";
+    hlsSegmentTypeIsSet_ = false;
 }
 
 CommonInfo::~CommonInfo() = default;
@@ -63,6 +71,18 @@ web::json::value CommonInfo::toJson() const
     }
     if(adaptationIsSet_) {
         val[utility::conversions::to_string_t("adaptation")] = ModelBase::toJson(adaptation_);
+    }
+    if(presetIsSet_) {
+        val[utility::conversions::to_string_t("preset")] = ModelBase::toJson(preset_);
+    }
+    if(maxIframesIntervalIsSet_) {
+        val[utility::conversions::to_string_t("max_iframes_interval")] = ModelBase::toJson(maxIframesInterval_);
+    }
+    if(hlsAudioSeparateIsSet_) {
+        val[utility::conversions::to_string_t("hls_audio_separate")] = ModelBase::toJson(hlsAudioSeparate_);
+    }
+    if(hlsSegmentTypeIsSet_) {
+        val[utility::conversions::to_string_t("hls_segment_type")] = ModelBase::toJson(hlsSegmentType_);
     }
 
     return val;
@@ -141,6 +161,42 @@ bool CommonInfo::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAdaptation(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("preset"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("preset"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPreset(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("max_iframes_interval"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("max_iframes_interval"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMaxIframesInterval(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("hls_audio_separate"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("hls_audio_separate"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHlsAudioSeparate(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("hls_segment_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("hls_segment_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHlsSegmentType(refVal);
         }
     }
     return ok;
@@ -313,6 +369,90 @@ bool CommonInfo::adaptationIsSet() const
 void CommonInfo::unsetadaptation()
 {
     adaptationIsSet_ = false;
+}
+
+int32_t CommonInfo::getPreset() const
+{
+    return preset_;
+}
+
+void CommonInfo::setPreset(int32_t value)
+{
+    preset_ = value;
+    presetIsSet_ = true;
+}
+
+bool CommonInfo::presetIsSet() const
+{
+    return presetIsSet_;
+}
+
+void CommonInfo::unsetpreset()
+{
+    presetIsSet_ = false;
+}
+
+int32_t CommonInfo::getMaxIframesInterval() const
+{
+    return maxIframesInterval_;
+}
+
+void CommonInfo::setMaxIframesInterval(int32_t value)
+{
+    maxIframesInterval_ = value;
+    maxIframesIntervalIsSet_ = true;
+}
+
+bool CommonInfo::maxIframesIntervalIsSet() const
+{
+    return maxIframesIntervalIsSet_;
+}
+
+void CommonInfo::unsetmaxIframesInterval()
+{
+    maxIframesIntervalIsSet_ = false;
+}
+
+bool CommonInfo::isHlsAudioSeparate() const
+{
+    return hlsAudioSeparate_;
+}
+
+void CommonInfo::setHlsAudioSeparate(bool value)
+{
+    hlsAudioSeparate_ = value;
+    hlsAudioSeparateIsSet_ = true;
+}
+
+bool CommonInfo::hlsAudioSeparateIsSet() const
+{
+    return hlsAudioSeparateIsSet_;
+}
+
+void CommonInfo::unsethlsAudioSeparate()
+{
+    hlsAudioSeparateIsSet_ = false;
+}
+
+std::string CommonInfo::getHlsSegmentType() const
+{
+    return hlsSegmentType_;
+}
+
+void CommonInfo::setHlsSegmentType(const std::string& value)
+{
+    hlsSegmentType_ = value;
+    hlsSegmentTypeIsSet_ = true;
+}
+
+bool CommonInfo::hlsSegmentTypeIsSet() const
+{
+    return hlsSegmentTypeIsSet_;
+}
+
+void CommonInfo::unsethlsSegmentType()
+{
+    hlsSegmentTypeIsSet_ = false;
 }
 
 }

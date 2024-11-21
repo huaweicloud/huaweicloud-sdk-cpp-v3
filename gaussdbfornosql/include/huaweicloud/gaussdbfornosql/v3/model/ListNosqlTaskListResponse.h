@@ -9,7 +9,6 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <string>
 #include <huaweicloud/gaussdbfornosql/v3/model/ScheduleDetailInfo.h>
 #include <vector>
 
@@ -44,10 +43,10 @@ public:
     /// 记录总数。
     /// </summary>
 
-    std::string getTotalCount() const;
+    int32_t getTotalCount() const;
     bool totalCountIsSet() const;
     void unsettotalCount();
-    void setTotalCount(const std::string& value);
+    void setTotalCount(int32_t value);
 
     /// <summary>
     /// 任务详情。
@@ -60,7 +59,7 @@ public:
 
 
 protected:
-    std::string totalCount_;
+    int32_t totalCount_;
     bool totalCountIsSet_;
     std::vector<ScheduleDetailInfo> schedules_;
     bool schedulesIsSet_;

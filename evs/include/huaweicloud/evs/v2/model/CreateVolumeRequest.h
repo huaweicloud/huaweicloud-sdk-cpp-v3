@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/evs/v2/model/CreateVolumeRequestBody.h>
+#include <string>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -39,6 +40,15 @@ public:
     /// CreateVolumeRequest members
 
     /// <summary>
+    /// 请求的幂等标识。
+    /// </summary>
+
+    std::string getXClientToken() const;
+    bool xClientTokenIsSet() const;
+    void unsetxClientToken();
+    void setXClientToken(const std::string& value);
+
+    /// <summary>
     /// 
     /// </summary>
 
@@ -49,6 +59,8 @@ public:
 
 
 protected:
+    std::string xClientToken_;
+    bool xClientTokenIsSet_;
     CreateVolumeRequestBody body_;
     bool bodyIsSet_;
 

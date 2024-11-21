@@ -12,7 +12,7 @@ namespace Model {
 
 ListNosqlTaskListResponse::ListNosqlTaskListResponse()
 {
-    totalCount_ = "";
+    totalCount_ = 0;
     totalCountIsSet_ = false;
     schedulesIsSet_ = false;
 }
@@ -44,7 +44,7 @@ bool ListNosqlTaskListResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("total_count"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTotalCount(refVal);
         }
@@ -62,12 +62,12 @@ bool ListNosqlTaskListResponse::fromJson(const web::json::value& val)
 }
 
 
-std::string ListNosqlTaskListResponse::getTotalCount() const
+int32_t ListNosqlTaskListResponse::getTotalCount() const
 {
     return totalCount_;
 }
 
-void ListNosqlTaskListResponse::setTotalCount(const std::string& value)
+void ListNosqlTaskListResponse::setTotalCount(int32_t value)
 {
     totalCount_ = value;
     totalCountIsSet_ = true;

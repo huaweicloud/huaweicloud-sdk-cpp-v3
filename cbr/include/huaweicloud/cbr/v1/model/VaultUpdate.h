@@ -103,6 +103,15 @@ public:
     void unsetthreshold();
     void setThreshold(int32_t value);
 
+    /// <summary>
+    /// 用于标识当前存储库是否已锁定
+    /// </summary>
+
+    bool isLocked() const;
+    bool lockedIsSet() const;
+    void unsetlocked();
+    void setLocked(bool value);
+
 
 protected:
     BillingUpdate billing_;
@@ -119,6 +128,8 @@ protected:
     bool smnNotifyIsSet_;
     int32_t threshold_;
     bool thresholdIsSet_;
+    bool locked_;
+    bool lockedIsSet_;
 
 };
 

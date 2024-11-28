@@ -6,6 +6,9 @@
 #include <huaweicloud/core/ClientBuilder.h>
 
 
+#include <huaweicloud/kms/v2/model/AssociateAliasRequest.h>
+#include <huaweicloud/kms/v2/model/AssociateAliasRequestBody.h>
+#include <huaweicloud/kms/v2/model/AssociateAliasResponse.h>
 #include <huaweicloud/kms/v2/model/BatchCreateKmsTagsRequest.h>
 #include <huaweicloud/kms/v2/model/BatchCreateKmsTagsRequestBody.h>
 #include <huaweicloud/kms/v2/model/BatchCreateKmsTagsResponse.h>
@@ -15,6 +18,9 @@
 #include <huaweicloud/kms/v2/model/CancelKeyDeletionResponse.h>
 #include <huaweicloud/kms/v2/model/CancelSelfGrantRequest.h>
 #include <huaweicloud/kms/v2/model/CancelSelfGrantResponse.h>
+#include <huaweicloud/kms/v2/model/CreateAliasRequest.h>
+#include <huaweicloud/kms/v2/model/CreateAliasRequestBody.h>
+#include <huaweicloud/kms/v2/model/CreateAliasResponse.h>
 #include <huaweicloud/kms/v2/model/CreateDatakeyRequest.h>
 #include <huaweicloud/kms/v2/model/CreateDatakeyRequestBody.h>
 #include <huaweicloud/kms/v2/model/CreateDatakeyResponse.h>
@@ -42,6 +48,9 @@
 #include <huaweicloud/kms/v2/model/DecryptDatakeyRequest.h>
 #include <huaweicloud/kms/v2/model/DecryptDatakeyRequestBody.h>
 #include <huaweicloud/kms/v2/model/DecryptDatakeyResponse.h>
+#include <huaweicloud/kms/v2/model/DeleteAliasRequest.h>
+#include <huaweicloud/kms/v2/model/DeleteAliasRequestBody.h>
+#include <huaweicloud/kms/v2/model/DeleteAliasResponse.h>
 #include <huaweicloud/kms/v2/model/DeleteImportedKeyMaterialRequest.h>
 #include <huaweicloud/kms/v2/model/DeleteImportedKeyMaterialResponse.h>
 #include <huaweicloud/kms/v2/model/DeleteKeyRequest.h>
@@ -76,6 +85,9 @@
 #include <huaweicloud/kms/v2/model/ImportKeyMaterialRequest.h>
 #include <huaweicloud/kms/v2/model/ImportKeyMaterialRequestBody.h>
 #include <huaweicloud/kms/v2/model/ImportKeyMaterialResponse.h>
+#include <huaweicloud/kms/v2/model/ListAliasResponseBody.h>
+#include <huaweicloud/kms/v2/model/ListAliasesRequest.h>
+#include <huaweicloud/kms/v2/model/ListAliasesResponse.h>
 #include <huaweicloud/kms/v2/model/ListGrantsRequest.h>
 #include <huaweicloud/kms/v2/model/ListGrantsRequestBody.h>
 #include <huaweicloud/kms/v2/model/ListGrantsResponse.h>
@@ -167,6 +179,15 @@ public:
 
     static ClientBuilder<KmsClient> newBuilder();
 
+    // 
+    //
+    // 关联别名。
+    // 你可以将别名从原密钥关联到另一个新的密钥
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<AssociateAliasResponse> associateAlias(
+        AssociateAliasRequest &request
+    );
     // 批量添加删除密钥标签
     //
     // - 功能介绍：批量添加删除密钥标签。
@@ -208,6 +229,13 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CancelSelfGrantResponse> cancelSelfGrant(
         CancelSelfGrantRequest &request
+    );
+    // 
+    //
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateAliasResponse> createAlias(
+        CreateAliasRequest &request
     );
     // 创建数据密钥
     //
@@ -294,6 +322,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DecryptDatakeyResponse> decryptDatakey(
         DecryptDatakeyRequest &request
+    );
+    // 
+    //
+    // 删除别名
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteAliasResponse> deleteAlias(
+        DeleteAliasRequest &request
     );
     // 删除密钥材料
     //
@@ -411,6 +447,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ImportKeyMaterialResponse> importKeyMaterial(
         ImportKeyMaterialRequest &request
+    );
+    // 
+    //
+    // 查询一个密钥关联的所有别名
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListAliasesResponse> listAliases(
+        ListAliasesRequest &request
     );
     // 查询授权列表
     //

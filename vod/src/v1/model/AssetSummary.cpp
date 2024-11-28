@@ -20,6 +20,8 @@ AssetSummary::AssetSummary()
     descriptionIsSet_ = false;
     duration_ = 0;
     durationIsSet_ = false;
+    durationMs_ = 0L;
+    durationMsIsSet_ = false;
     size_ = 0L;
     sizeIsSet_ = false;
     originalUrl_ = "";
@@ -64,6 +66,9 @@ web::json::value AssetSummary::toJson() const
     }
     if(durationIsSet_) {
         val[utility::conversions::to_string_t("duration")] = ModelBase::toJson(duration_);
+    }
+    if(durationMsIsSet_) {
+        val[utility::conversions::to_string_t("duration_ms")] = ModelBase::toJson(durationMs_);
     }
     if(sizeIsSet_) {
         val[utility::conversions::to_string_t("size")] = ModelBase::toJson(size_);
@@ -139,6 +144,15 @@ bool AssetSummary::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDuration(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("duration_ms"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("duration_ms"));
+        if(!fieldValue.is_null())
+        {
+            int64_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDurationMs(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("size"))) {
@@ -326,6 +340,27 @@ bool AssetSummary::durationIsSet() const
 void AssetSummary::unsetduration()
 {
     durationIsSet_ = false;
+}
+
+int64_t AssetSummary::getDurationMs() const
+{
+    return durationMs_;
+}
+
+void AssetSummary::setDurationMs(int64_t value)
+{
+    durationMs_ = value;
+    durationMsIsSet_ = true;
+}
+
+bool AssetSummary::durationMsIsSet() const
+{
+    return durationMsIsSet_;
+}
+
+void AssetSummary::unsetdurationMs()
+{
+    durationMsIsSet_ = false;
 }
 
 int64_t AssetSummary::getSize() const

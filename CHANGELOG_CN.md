@@ -1,3 +1,248 @@
+# 3.1.112 2024-11-28
+
+### HuaweiCloud SDK CBR
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持接口`ChangeOrder`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **AddAgentPath**
+    - 请求参数变更
+      - `+ exclude_path`
+  - **AddMember**
+    - 请求参数变更
+      - `+ domains`
+  - **ShowAgent**
+    - 响应参数变更
+      - `+ agent.paths.exclude_paths`
+  - **UpdateAgent**
+    - 响应参数变更
+      - `+ agent.paths.exclude_paths`
+  - **ListAgent**
+    - 响应参数变更
+      - `+ agents.paths.exclude_paths`
+  - **RegisterAgent**
+    - 响应参数变更
+      - `+ agent.paths.exclude_paths`
+  - **ShowBackup**
+    - 响应参数变更
+      - `+ backup.version`
+      - `- backup.image_type: enum value [backup,replication]`
+      - `- backup.resource_type: enum value [OS::Nova::Server,OS::Cinder::Volume,OS::Workspace::DesktopV2]`
+  - **UpdateBackup**
+    - 响应参数变更
+      - `+ backup.version`
+      - `- backup.image_type: enum value [backup,replication]`
+      - `- backup.resource_type: enum value [OS::Nova::Server,OS::Cinder::Volume,OS::Workspace::DesktopV2]`
+  - **ListBackups**
+    - 响应参数变更
+      - `+ backups.version`
+      - `- backups.image_type: enum value [backup,replication]`
+      - `- backups.resource_type: enum value [OS::Nova::Server,OS::Cinder::Volume,OS::Workspace::DesktopV2]`
+  - **ListOrganizationPolicies**
+    - 请求参数变更
+      - `+ limit`
+      - `+ offset`
+  - **ListProtectable**
+    - 请求参数变更
+      - `+ protectable_type: enum value [turbo,workspace,workspace_v2]`
+
+### HuaweiCloud SDK CSMS
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持接口`ListSecretTask`、`ShowAgency`、`CreateAgency`、`ShowSecretFunctionTemplates`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RotateSecret**
+    - 响应参数变更
+      - `+ rotation_task_id`
+  - **ListSecrets**
+    - 响应参数变更
+      - `+ secrets.rotation_func_urn`
+      - `+ secrets.secret_type: enum value [COMMON,RDS-FG,GaussDB-FG]`
+  - **CreateSecret**
+    - 请求参数变更
+      - `+ rotation_func_urn`
+      - `+ secret_type: enum value [COMMON,RDS-FG,GaussDB-FG]`
+    - 响应参数变更
+      - `+ secret.rotation_func_urn`
+      - `+ secret.secret_type: enum value [COMMON,RDS-FG,GaussDB-FG]`
+  - **ShowSecret**
+    - 响应参数变更
+      - `+ secret.rotation_func_urn`
+      - `+ secret.secret_type: enum value [COMMON,RDS-FG,GaussDB-FG]`
+  - **UpdateSecret**
+    - 请求参数变更
+      - `+ rotation_func_urn`
+    - 响应参数变更
+      - `+ secret.rotation_func_urn`
+      - `+ secret.secret_type: enum value [COMMON,RDS-FG,GaussDB-FG]`
+  - **UploadSecretBlob**
+    - 响应参数变更
+      - `+ secret.rotation_func_urn`
+      - `+ secret.secret_type: enum value [COMMON,RDS-FG,GaussDB-FG]`
+  - **DeleteSecretForSchedule**
+    - 响应参数变更
+      - `+ secret.rotation_func_urn`
+      - `+ secret.secret_type: enum value [COMMON,RDS-FG,GaussDB-FG]`
+  - **RestoreSecret**
+    - 响应参数变更
+      - `+ secret.rotation_func_urn`
+      - `+ secret.secret_type: enum value [COMMON,RDS-FG,GaussDB-FG]`
+  - **ListNotificationRecords**
+    - 请求参数变更
+      - `- limit`
+      - `- marker`
+    - 响应参数变更
+      - `+ records.trigger_event_type: enum value [SECRET_VERSION_CREATED,SECRET_VERSION_EXPIRED,SECRET_ROTATED,SECRET_DELETED,SECRET_ROTATED_FAILED]`
+      - `+ records.secret_type: enum value [COMMON,RDS-FG,GaussDB-FG]`
+      - `+ records.notification_status: enum value [SUCCESS,FAIL,INVALID]`
+  - **ListResourceInstances**
+    - 响应参数变更
+      - `+ resources.resource_detail.rotation_func_urn`
+      - `+ resources.resource_detail.secret_type: enum value [COMMON,RDS-FG,GaussDB-FG]`
+  - **ListSecretEvents**
+    - 响应参数变更
+      - `+ events.event_types: enum value [SECRET_ROTATED_FAILED]`
+  - **CreateSecretEvent**
+    - 请求参数变更
+      - `+ event_types: enum value [SECRET_VERSION_CREATED,SECRET_VERSION_EXPIRED,SECRET_ROTATED,SECRET_DELETED,SECRET_ROTATED_FAILED]`
+    - 响应参数变更
+      - `+ event.event_types: enum value [SECRET_ROTATED_FAILED]`
+  - **ShowSecretEvent**
+    - 响应参数变更
+      - `+ event.event_types: enum value [SECRET_ROTATED_FAILED]`
+  - **UpdateSecretEvent**
+    - 请求参数变更
+      - `+ event_types: enum value [SECRET_VERSION_CREATED,SECRET_VERSION_EXPIRED,SECRET_ROTATED,SECRET_DELETED,SECRET_ROTATED_FAILED]`
+    - 响应参数变更
+      - `+ event.event_types: enum value [SECRET_ROTATED_FAILED]`
+
+### HuaweiCloud SDK GaussDB
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`ShowSlowLogStatistics`、`DownloadSlowLogFile`、`ShowMultiTenant`、`UpdateMultiTenant`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持以下接口：
+    - `ShowRedisPitrPolicy`
+    - `SetRedisPitrPolicy`
+    - `ListRedisPitrRestoreTime`
+    - `ShowRedisPitrInfo`
+    - `RestoreRedisPitr`
+    - `StopBackup`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK KMS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持接口`AssociateAlias`、`ListAliases`、`CreateAlias`、`DeleteAlias`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListSupportRegions**
+    - 请求参数变更
+      - `+ limit`
+      - `+ offset`
+
+### HuaweiCloud SDK Live
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListSingleStreamDetail**
+    - 响应参数变更
+      - `- audio_framerate`
+
+### HuaweiCloud SDK OCR
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RecognizeGeneralText**
+    - 请求参数变更
+      - `+ pdf_page_number`
+
+### HuaweiCloud SDK RDS
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`CopyDatabase`、`DeleteMsdtcLocalHost`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListFlavorsResize**
+    - 响应参数变更
+      - `* flavor_groups.compute_flavors: object<ComputeFlavor> -> list<ComputeFlavor>`
+
+### HuaweiCloud SDK VOD
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListTopStatistics**
+    - 响应参数变更
+      - `+ top_urls.duration_ms`
+  - **ListAssetList**
+    - 响应参数变更
+      - `+ assets.duration_ms`
+  - **ModifySubtitle**
+    - 请求参数变更
+      - `+ repackage_mode`
+      - `+ delete_mode`
+  - **ShowTakeOverAssetDetails**
+    - 响应参数变更
+      - `+ base_info.meta_data.duration_ms`
+  - **PublishAssets**
+    - 响应参数变更
+      - `+ asset_info_array.base_info.meta_data.duration_ms`
+  - **UnpublishAssets**
+    - 响应参数变更
+      - `+ asset_info_array.base_info.meta_data.duration_ms`
+  - **ShowAssetMeta**
+    - 响应参数变更
+      - `+ asset_info_array.base_info.meta_data.duration_ms`
+  - **ShowAssetDetail**
+    - 响应参数变更
+      - `+ base_info.meta_data.duration_ms`
+  - **ShowTakeOverTaskDetails**
+    - 响应参数变更
+      - `+ assets.base_info.meta_data.duration_ms`
+
 # 3.1.111 2024-11-21
 
 ### HuaweiCloud SDK DDS

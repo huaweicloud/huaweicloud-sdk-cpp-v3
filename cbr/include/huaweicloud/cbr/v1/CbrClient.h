@@ -29,7 +29,10 @@
 #include <huaweicloud/cbr/v1/model/BatchUpdateVaultRequestBody.h>
 #include <huaweicloud/cbr/v1/model/BatchUpdateVaultResponse.h>
 #include <huaweicloud/cbr/v1/model/BulkCreateAndDeleteVaultTagsReq.h>
+#include <huaweicloud/cbr/v1/model/CbcOrderChange.h>
 #include <huaweicloud/cbr/v1/model/CbcUpdate.h>
+#include <huaweicloud/cbr/v1/model/ChangeOrderRequest.h>
+#include <huaweicloud/cbr/v1/model/ChangeOrderResponse.h>
 #include <huaweicloud/cbr/v1/model/CheckAgentRequest.h>
 #include <huaweicloud/cbr/v1/model/CheckAgentResponse.h>
 #include <huaweicloud/cbr/v1/model/CheckpointReplicateReq.h>
@@ -257,6 +260,15 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<BatchUpdateVaultResponse> batchUpdateVault(
         BatchUpdateVaultRequest &request
+    );
+    // 变更
+    //
+    // 订单更新，调用该接口更新包周期产品订单信息,返回待支付订单信息。
+    // &gt; 该接口目前属于公测阶段，部分region暂时无法使用
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ChangeOrderResponse> changeOrder(
+        ChangeOrderRequest &request
     );
     // 查询agent状态
     //
@@ -734,9 +746,9 @@ public:
     std::shared_ptr<UpdateMemberStatusResponse> updateMemberStatus(
         UpdateMemberStatusRequest &request
     );
-    // 变更
+    // 变更（废弃）
     //
-    // 订单更新，支付cbc订单后，调用该接口更新包周期产品订单信息。
+    // 订单更新，支付cbc订单后，调用该接口更新包周期产品订单信息。该接口已废弃。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateOrderResponse> updateOrder(

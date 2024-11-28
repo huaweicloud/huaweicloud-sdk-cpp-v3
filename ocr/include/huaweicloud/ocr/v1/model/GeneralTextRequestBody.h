@@ -39,7 +39,7 @@ public:
     /// GeneralTextRequestBody members
 
     /// <summary>
-    /// 与url二选一  图像数据，base64编码，要求base64编码后大小不超过10MB。图片最小边不小于15px，最长边不超过4096px。支持JPEG、JPG、PNG、BMP、TIFF格式。  图片文件Base64编码字符串，[点击[这里](https://support.huaweicloud.com/ocr_faq/ocr_01_0032.html)](tag:hc)[点击[这里](https://support.huaweicloud.com/intl/zh-cn/ocr_faq/ocr_01_0032.html)](tag:hk)查看详细获取方式。     
+    /// 与url二选一  图像数据，base64编码，要求base64编码后大小不超过10MB。图片最小边不小于15px，最长边不超过4096px。支持JPEG、JPG、PNG、BMP、GIF、TIFF、WEBP、PCX、ICO、PSD、PDF格式。  图片文件Base64编码字符串，[点击[这里](https://support.huaweicloud.com/ocr_faq/ocr_01_0032.html)](tag:hc)[点击[这里](https://support.huaweicloud.com/intl/zh-cn/ocr_faq/ocr_01_0032.html)](tag:hk)查看详细获取方式。     
     /// </summary>
 
     std::string getImage() const;
@@ -101,6 +101,15 @@ public:
     void unsetsingleOrientationMode();
     void setSingleOrientationMode(bool value);
 
+    /// <summary>
+    /// 指定PDF页码识别。传入该参数时，则识别指定页码的内容。如果不传该参数，则默认识别第1页。 
+    /// </summary>
+
+    int32_t getPdfPageNumber() const;
+    bool pdfPageNumberIsSet() const;
+    void unsetpdfPageNumber();
+    void setPdfPageNumber(int32_t value);
+
 
 protected:
     std::string image_;
@@ -117,6 +126,8 @@ protected:
     bool languageIsSet_;
     bool singleOrientationMode_;
     bool singleOrientationModeIsSet_;
+    int32_t pdfPageNumber_;
+    bool pdfPageNumberIsSet_;
 
 };
 

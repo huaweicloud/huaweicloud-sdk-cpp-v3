@@ -33,6 +33,8 @@ CreateSecretRequestBody::CreateSecretRequestBody()
     eventSubscriptionsIsSet_ = false;
     enterpriseProjectId_ = "";
     enterpriseProjectIdIsSet_ = false;
+    rotationFuncUrn_ = "";
+    rotationFuncUrnIsSet_ = false;
 }
 
 CreateSecretRequestBody::~CreateSecretRequestBody() = default;
@@ -77,6 +79,9 @@ web::json::value CreateSecretRequestBody::toJson() const
     }
     if(enterpriseProjectIdIsSet_) {
         val[utility::conversions::to_string_t("enterprise_project_id")] = ModelBase::toJson(enterpriseProjectId_);
+    }
+    if(rotationFuncUrnIsSet_) {
+        val[utility::conversions::to_string_t("rotation_func_urn")] = ModelBase::toJson(rotationFuncUrn_);
     }
 
     return val;
@@ -182,6 +187,15 @@ bool CreateSecretRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEnterpriseProjectId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("rotation_func_urn"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("rotation_func_urn"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRotationFuncUrn(refVal);
         }
     }
     return ok;
@@ -417,6 +431,27 @@ bool CreateSecretRequestBody::enterpriseProjectIdIsSet() const
 void CreateSecretRequestBody::unsetenterpriseProjectId()
 {
     enterpriseProjectIdIsSet_ = false;
+}
+
+std::string CreateSecretRequestBody::getRotationFuncUrn() const
+{
+    return rotationFuncUrn_;
+}
+
+void CreateSecretRequestBody::setRotationFuncUrn(const std::string& value)
+{
+    rotationFuncUrn_ = value;
+    rotationFuncUrnIsSet_ = true;
+}
+
+bool CreateSecretRequestBody::rotationFuncUrnIsSet() const
+{
+    return rotationFuncUrnIsSet_;
+}
+
+void CreateSecretRequestBody::unsetrotationFuncUrn()
+{
+    rotationFuncUrnIsSet_ = false;
 }
 
 }

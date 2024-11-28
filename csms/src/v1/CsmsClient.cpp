@@ -74,6 +74,47 @@ std::shared_ptr<BatchCreateOrDeleteTagsResponse> CsmsClient::batchCreateOrDelete
 
     return localVarResult;
 }
+std::shared_ptr<CreateAgencyResponse> CsmsClient::createAgency(CreateAgencyRequest &request)
+{
+    std::string localVarPath = "/v1/csms/agencies";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CsmsMeta::genRequestDefForCreateAgency());
+
+    std::shared_ptr<CreateAgencyResponse> localVarResult = std::make_shared<CreateAgencyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<CreateSecretResponse> CsmsClient::createSecret(CreateSecretRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/secrets";
@@ -450,12 +491,6 @@ std::shared_ptr<ListNotificationRecordsResponse> CsmsClient::listNotificationRec
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
-    if (request.limitIsSet()) {
-        localVarQueryParams["limit"] = parameterToString(request.getLimit());
-    }
-    if (request.markerIsSet()) {
-        localVarQueryParams["marker"] = parameterToString(request.getMarker());
-    }
 
     std::string localVarHttpBody;
 
@@ -605,6 +640,50 @@ std::shared_ptr<ListSecretTagsResponse> CsmsClient::listSecretTags(ListSecretTag
 
     return localVarResult;
 }
+std::shared_ptr<ListSecretTaskResponse> CsmsClient::listSecretTask(ListSecretTaskRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/csms/tasks";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.secretNameIsSet()) {
+        localVarQueryParams["secret_name"] = parameterToString(request.getSecretName());
+    }
+    if (request.statusIsSet()) {
+        localVarQueryParams["status"] = parameterToString(request.getStatus());
+    }
+    if (request.taskIdIsSet()) {
+        localVarQueryParams["task_id"] = parameterToString(request.getTaskId());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.markerIsSet()) {
+        localVarQueryParams["marker"] = parameterToString(request.getMarker());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CsmsMeta::genRequestDefForListSecretTask());
+
+    std::shared_ptr<ListSecretTaskResponse> localVarResult = std::make_shared<ListSecretTaskResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListSecretVersionsResponse> CsmsClient::listSecretVersions(ListSecretVersionsRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/secrets/{secret_name}/versions";
@@ -739,6 +818,38 @@ std::shared_ptr<RotateSecretResponse> CsmsClient::rotateSecret(RotateSecretReque
 
     return localVarResult;
 }
+std::shared_ptr<ShowAgencyResponse> CsmsClient::showAgency(ShowAgencyRequest &request)
+{
+    std::string localVarPath = "/v1/csms/agencies";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.secretTypeIsSet()) {
+        localVarQueryParams["secret_type"] = parameterToString(request.getSecretType());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CsmsMeta::genRequestDefForShowAgency());
+
+    std::shared_ptr<ShowAgencyResponse> localVarResult = std::make_shared<ShowAgencyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowSecretResponse> CsmsClient::showSecret(ShowSecretRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/secrets/{secret_name}";
@@ -793,6 +904,44 @@ std::shared_ptr<ShowSecretEventResponse> CsmsClient::showSecretEvent(ShowSecretE
         localVarHeaderParams, localVarHttpBody, CsmsMeta::genRequestDefForShowSecretEvent());
 
     std::shared_ptr<ShowSecretEventResponse> localVarResult = std::make_shared<ShowSecretEventResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowSecretFunctionTemplatesResponse> CsmsClient::showSecretFunctionTemplates(ShowSecretFunctionTemplatesRequest &request)
+{
+    std::string localVarPath = "/v1/csms/function-templates";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.secretTypeIsSet()) {
+        localVarQueryParams["secret_type"] = parameterToString(request.getSecretType());
+    }
+    if (request.secretSubTypeIsSet()) {
+        localVarQueryParams["secret_sub_type"] = parameterToString(request.getSecretSubType());
+    }
+    if (request.engineIsSet()) {
+        localVarQueryParams["engine"] = parameterToString(request.getEngine());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CsmsMeta::genRequestDefForShowSecretFunctionTemplates());
+
+    std::shared_ptr<ShowSecretFunctionTemplatesResponse> localVarResult = std::make_shared<ShowSecretFunctionTemplatesResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

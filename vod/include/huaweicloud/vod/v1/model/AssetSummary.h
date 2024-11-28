@@ -77,6 +77,15 @@ public:
     void setDuration(int32_t value);
 
     /// <summary>
+    /// 视频时长，单位毫秒。
+    /// </summary>
+
+    int64_t getDurationMs() const;
+    bool durationMsIsSet() const;
+    void unsetdurationMs();
+    void setDurationMs(int64_t value);
+
+    /// <summary>
     /// 媒资大小。  单位：字节。
     /// </summary>
 
@@ -185,6 +194,8 @@ protected:
     bool descriptionIsSet_;
     int32_t duration_;
     bool durationIsSet_;
+    int64_t durationMs_;
+    bool durationMsIsSet_;
     int64_t size_;
     bool sizeIsSet_;
     std::string originalUrl_;

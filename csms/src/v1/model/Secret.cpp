@@ -43,6 +43,8 @@ Secret::Secret()
     eventSubscriptionsIsSet_ = false;
     enterpriseProjectId_ = "";
     enterpriseProjectIdIsSet_ = false;
+    rotationFuncUrn_ = "";
+    rotationFuncUrnIsSet_ = false;
 }
 
 Secret::~Secret() = default;
@@ -102,6 +104,9 @@ web::json::value Secret::toJson() const
     }
     if(enterpriseProjectIdIsSet_) {
         val[utility::conversions::to_string_t("enterprise_project_id")] = ModelBase::toJson(enterpriseProjectId_);
+    }
+    if(rotationFuncUrnIsSet_) {
+        val[utility::conversions::to_string_t("rotation_func_urn")] = ModelBase::toJson(rotationFuncUrn_);
     }
 
     return val;
@@ -252,6 +257,15 @@ bool Secret::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEnterpriseProjectId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("rotation_func_urn"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("rotation_func_urn"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRotationFuncUrn(refVal);
         }
     }
     return ok;
@@ -592,6 +606,27 @@ bool Secret::enterpriseProjectIdIsSet() const
 void Secret::unsetenterpriseProjectId()
 {
     enterpriseProjectIdIsSet_ = false;
+}
+
+std::string Secret::getRotationFuncUrn() const
+{
+    return rotationFuncUrn_;
+}
+
+void Secret::setRotationFuncUrn(const std::string& value)
+{
+    rotationFuncUrn_ = value;
+    rotationFuncUrnIsSet_ = true;
+}
+
+bool Secret::rotationFuncUrnIsSet() const
+{
+    return rotationFuncUrnIsSet_;
+}
+
+void Secret::unsetrotationFuncUrn()
+{
+    rotationFuncUrnIsSet_ = false;
 }
 
 }

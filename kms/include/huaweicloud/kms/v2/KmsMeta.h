@@ -13,10 +13,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 
 class HUAWEICLOUD_KMS_V2_EXPORT  KmsMeta {
 public:
+    static HttpRequestDef genRequestDefForAssociateAlias();
     static HttpRequestDef genRequestDefForBatchCreateKmsTags();
     static HttpRequestDef genRequestDefForCancelGrant();
     static HttpRequestDef genRequestDefForCancelKeyDeletion();
     static HttpRequestDef genRequestDefForCancelSelfGrant();
+    static HttpRequestDef genRequestDefForCreateAlias();
     static HttpRequestDef genRequestDefForCreateDatakey();
     static HttpRequestDef genRequestDefForCreateDatakeyWithoutPlaintext();
     static HttpRequestDef genRequestDefForCreateGrant();
@@ -27,6 +29,7 @@ public:
     static HttpRequestDef genRequestDefForCreateRandom();
     static HttpRequestDef genRequestDefForDecryptData();
     static HttpRequestDef genRequestDefForDecryptDatakey();
+    static HttpRequestDef genRequestDefForDeleteAlias();
     static HttpRequestDef genRequestDefForDeleteImportedKeyMaterial();
     static HttpRequestDef genRequestDefForDeleteKey();
     static HttpRequestDef genRequestDefForDeleteKeyStore();
@@ -41,6 +44,7 @@ public:
     static HttpRequestDef genRequestDefForEncryptDatakey();
     static HttpRequestDef genRequestDefForGenerateMac();
     static HttpRequestDef genRequestDefForImportKeyMaterial();
+    static HttpRequestDef genRequestDefForListAliases();
     static HttpRequestDef genRequestDefForListGrants();
     static HttpRequestDef genRequestDefForListKeyDetail();
     static HttpRequestDef genRequestDefForListKeyStores();

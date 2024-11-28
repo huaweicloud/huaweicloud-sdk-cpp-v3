@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <huaweicloud/cbr/v1/model/ExcludePath.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -48,10 +49,21 @@ public:
     void unsetaddPath();
     void setAddPath(const std::vector<std::string>& value);
 
+    /// <summary>
+    /// 增加排除目录 &gt; 该特性目前处于公测阶段，部分region可能无法使用。
+    /// </summary>
+
+    std::vector<ExcludePath>& getExcludePath();
+    bool excludePathIsSet() const;
+    void unsetexcludePath();
+    void setExcludePath(const std::vector<ExcludePath>& value);
+
 
 protected:
     std::vector<std::string> addPath_;
     bool addPathIsSet_;
+    std::vector<ExcludePath> excludePath_;
+    bool excludePathIsSet_;
 
 };
 

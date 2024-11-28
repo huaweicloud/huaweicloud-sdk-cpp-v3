@@ -60,6 +60,24 @@ public:
     void setDefaultLanguage(const std::string& value);
 
     /// <summary>
+    /// 外挂模式，不传默认取值为0  取值如下： -0：表示添加的字幕会外挂上历史产物 -1：表示添加的字幕不会外挂上历史产物
+    /// </summary>
+
+    std::string getRepackageMode() const;
+    bool repackageModeIsSet() const;
+    void unsetrepackageMode();
+    void setRepackageMode(const std::string& value);
+
+    /// <summary>
+    /// 删除模式，不传默认取值为0  取值如下： -0：表示删除字幕会清除历史产物携带的字幕信息 -1：表示删除字幕不清除历史产物携带的字幕信息
+    /// </summary>
+
+    std::string getDeleteMode() const;
+    bool deleteModeIsSet() const;
+    void unsetdeleteMode();
+    void setDeleteMode(const std::string& value);
+
+    /// <summary>
     /// 需新增或修改的字幕
     /// </summary>
 
@@ -83,6 +101,10 @@ protected:
     bool assetIdIsSet_;
     std::string defaultLanguage_;
     bool defaultLanguageIsSet_;
+    std::string repackageMode_;
+    bool repackageModeIsSet_;
+    std::string deleteMode_;
+    bool deleteModeIsSet_;
     std::vector<AddSubtitle> addSubtitles_;
     bool addSubtitlesIsSet_;
     std::vector<DeleteSubtitle> deleteSubtitles_;

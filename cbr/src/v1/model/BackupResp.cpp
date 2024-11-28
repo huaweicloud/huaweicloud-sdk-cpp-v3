@@ -56,6 +56,8 @@ BackupResp::BackupResp()
     childrenIsSet_ = false;
     incremental_ = false;
     incrementalIsSet_ = false;
+    version_ = 0;
+    versionIsSet_ = false;
 }
 
 BackupResp::~BackupResp() = default;
@@ -139,6 +141,9 @@ web::json::value BackupResp::toJson() const
     }
     if(incrementalIsSet_) {
         val[utility::conversions::to_string_t("incremental")] = ModelBase::toJson(incremental_);
+    }
+    if(versionIsSet_) {
+        val[utility::conversions::to_string_t("version")] = ModelBase::toJson(version_);
     }
 
     return val;
@@ -361,6 +366,15 @@ bool BackupResp::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIncremental(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("version"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("version"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setVersion(refVal);
         }
     }
     return ok;
@@ -869,6 +883,27 @@ bool BackupResp::incrementalIsSet() const
 void BackupResp::unsetincremental()
 {
     incrementalIsSet_ = false;
+}
+
+int32_t BackupResp::getVersion() const
+{
+    return version_;
+}
+
+void BackupResp::setVersion(int32_t value)
+{
+    version_ = value;
+    versionIsSet_ = true;
+}
+
+bool BackupResp::versionIsSet() const
+{
+    return versionIsSet_;
+}
+
+void BackupResp::unsetversion()
+{
+    versionIsSet_ = false;
 }
 
 }

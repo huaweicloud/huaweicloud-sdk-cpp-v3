@@ -90,6 +90,8 @@
 #include <huaweicloud/gaussdb/v3/model/DeleteTaskRecordResponse.h>
 #include <huaweicloud/gaussdb/v3/model/DescribeBackupEncryptStatusRequest.h>
 #include <huaweicloud/gaussdb/v3/model/DescribeBackupEncryptStatusResponse.h>
+#include <huaweicloud/gaussdb/v3/model/DownloadSlowLogFileRequest.h>
+#include <huaweicloud/gaussdb/v3/model/DownloadSlowLogFileResponse.h>
 #include <huaweicloud/gaussdb/v3/model/EnlargeProxyRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ExpandGaussMySqlInstanceVolumeRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ExpandGaussMySqlInstanceVolumeResponse.h>
@@ -175,6 +177,7 @@
 #include <huaweicloud/gaussdb/v3/model/MysqlUpdateInstanceNameRequest.h>
 #include <huaweicloud/gaussdb/v3/model/OpenMysqlProxyRequestBody.h>
 #include <huaweicloud/gaussdb/v3/model/OperateAuditLogRequestV3Body.h>
+#include <huaweicloud/gaussdb/v3/model/OperateMultiTenantReq.h>
 #include <huaweicloud/gaussdb/v3/model/ProxyTransactionSplitRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ProxyUpdateProxyConnectionPoolTypeRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ProxyUpdateProxyNameRequest.h>
@@ -253,6 +256,8 @@
 #include <huaweicloud/gaussdb/v3/model/ShowIntelligentDiagnosisInstanceInfosPerMetricResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowLtsConfigsRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ShowLtsConfigsResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ShowMultiTenantRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ShowMultiTenantResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowProxyConfigurationsRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ShowProxyConfigurationsResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowProxyIpgroupRequest.h>
@@ -263,6 +268,9 @@
 #include <huaweicloud/gaussdb/v3/model/ShowRecyclePolicyResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowRestoreTablesRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ShowRestoreTablesResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ShowSlowLogStatisticsRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ShowSlowLogStatisticsRequestBody.h>
+#include <huaweicloud/gaussdb/v3/model/ShowSlowLogStatisticsResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowSlowlogSensitiveStatusRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ShowSlowlogSensitiveStatusResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShrinkGaussMySqlProxyRequest.h>
@@ -324,6 +332,8 @@
 #include <huaweicloud/gaussdb/v3/model/UpdateInstanceConfigurationsResponse.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateInstanceMonitorRequest.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateInstanceMonitorResponse.h>
+#include <huaweicloud/gaussdb/v3/model/UpdateMultiTenantRequest.h>
+#include <huaweicloud/gaussdb/v3/model/UpdateMultiTenantResponse.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateNewNodeAutoAddSwitchRequest.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateNewNodeAutoAddSwitchRequestBody.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateNewNodeAutoAddSwitchResponse.h>
@@ -795,6 +805,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DescribeBackupEncryptStatusResponse> describeBackupEncryptStatus(
         DescribeBackupEncryptStatusRequest &request
+    );
+    // 获取慢日志下载链接
+    //
+    // 获取慢日志下载链接
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DownloadSlowLogFileResponse> downloadSlowLogFile(
+        DownloadSlowLogFileRequest &request
     );
     // 包周期存储扩容
     //
@@ -1309,6 +1327,14 @@ public:
     std::shared_ptr<ShowLtsConfigsResponse> showLtsConfigs(
         ShowLtsConfigsRequest &request
     );
+    // 查询多租特性开关状态
+    //
+    // 查询多租特性开关状态。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowMultiTenantResponse> showMultiTenant(
+        ShowMultiTenantRequest &request
+    );
     // 查询数据库代理内核参数。
     //
     // 查询数据库代理内核参数。
@@ -1348,6 +1374,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowRestoreTablesResponse> showRestoreTables(
         ShowRestoreTablesRequest &request
+    );
+    // 查询慢日志统计信息
+    //
+    // 查询慢日志统计信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowSlowLogStatisticsResponse> showSlowLogStatistics(
+        ShowSlowLogStatisticsRequest &request
     );
     // 查询慢日志脱敏状态
     //
@@ -1533,6 +1567,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateInstanceMonitorResponse> updateInstanceMonitor(
         UpdateInstanceMonitorRequest &request
+    );
+    // 开启或者关闭多租特性
+    //
+    // 开启或者关闭多租特性。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateMultiTenantResponse> updateMultiTenant(
+        UpdateMultiTenantRequest &request
     );
     // 开启或关闭新增节点自动加入该Proxy
     //

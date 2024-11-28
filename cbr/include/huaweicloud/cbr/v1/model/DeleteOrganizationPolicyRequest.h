@@ -39,7 +39,7 @@ public:
     /// DeleteOrganizationPolicyRequest members
 
     /// <summary>
-    /// 资源策略ID
+    /// 组织策略ID
     /// </summary>
 
     std::string getOrganizationPolicyId() const;

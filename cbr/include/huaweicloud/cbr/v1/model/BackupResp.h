@@ -98,7 +98,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 备份类型
+    /// [备份类型。取值为backup和replication。](tag:hws,hws_hk,ocb) [备份类型。取值为backup。](tag:g42,hk_g42,sbc,dt,fcs_vm,ctc,tm,tlf,cmcc,hcso_dt)
     /// </summary>
 
     std::string getImageType() const;
@@ -179,7 +179,7 @@ public:
     void setResourceSize(int32_t value);
 
     /// <summary>
-    /// 资源类型: 云服务器: OS::Nova::Server, 云硬盘: OS::Cinder::Volume, 云桌面：OS::Workspace::DesktopV2
+    /// [资源类型: OS::Nova::Server, OS::Cinder::Volume, OS::Ironic::BareMetalServer, OS::Native::Server, OS::Sfs::Turbo, OS::Workspace::DesktopV2](tag:hws,hws_hk) [资源类型: OS::Nova::Server, OS::Cinder::Volume, OS::Sfs::Turbo](tag:hk_g42,sbc,dt) [资源类型: OS::Nova::Server, OS::Cinder::Volume, OS::Ironic::BareMetalServer, OS::Sfs::Turbo](tag:fcs_vm,ctc,ocb,tm) [资源类型: OS::Nova::Server, OS::Cinder::Volume](tag:tlf,cmcc,hcso_dt) [资源类型: OS::Nova::Server, OS::Cinder::Volume, OS::Sfs::Turbo, OS::Workspace::DesktopV2](tag:g42)
     /// </summary>
 
     std::string getResourceType() const;
@@ -188,7 +188,7 @@ public:
     void setResourceType(const std::string& value);
 
     /// <summary>
-    /// 备份状态
+    /// 备份状态 - available: 可用 - protecting: 保护中 - deleting: 删除中 - restoring: 恢复中 - error: 异常 - waiting_protect: 等待保护 - waiting_delete: 等待删除 - waiting_restore: 等待恢复
     /// </summary>
 
     std::string getStatus() const;
@@ -233,7 +233,7 @@ public:
     void setEnterpriseProjectId(const std::string& value);
 
     /// <summary>
-    /// 备份提供商ID，用于区分备份对象。当前取值包含  0daac4c5-6707-4851-97ba-169e36266b66，该值代表备份对象为云服务器。d1603440-187d-4516-af25-121250c7cc97，该值代表备份对象为云硬盘。3f3c3220-245c-4805-b811-758870015881， 该值代表备份对象为SFS Turbo。a13639de-00be-4e94-af30-26912d75e4a2，该值代表备份对象为混合云VMware备份。
+    /// 备份提供商ID，用于区分备份对象。当前取值包含： [0daac4c5-6707-4851-97ba-169e36266b66，该值代表备份对象为云服务器。d1603440-187d-4516-af25-121250c7cc97，该值代表备份对象为云硬盘。3f3c3220-245c-4805-b811-758870015881， 该值代表备份对象为SFS Turbo。a13639de-00be-4e94-af30-26912d75e4a2，该值代表备份对象为混合云VMware备份。](tag:hws,hws_hk) [0daac4c5-6707-4851-97ba-169e36266b66，该值代表备份对象为云服务器。d1603440-187d-4516-af25-121250c7cc97，该值代表备份对象为云硬盘。3f3c3220-245c-4805-b811-758870015881，该值代表备份对象为SFS Turbo。](tag:ocb,tlf,sbc,fcs_vm,g42,tm,dt,cmcc) [0daac4c5-6707-4851-97ba-169e36266b66，该值代表备份对象为云服务器。d1603440-187d-4516-af25-121250c7cc97，该值代表备份对象为云硬盘。3f3c3220-245c-4805-b811-758870015881，该值代表备份对象为SFS Turbo。86a80900-71bf-4961-956a-d52df944f84a，该值代表备份对象为Workspace。](tag:ctc) [0daac4c5-6707-4851-97ba-169e36266b66，该值代表备份对象为云服务器。d1603440-187d-4516-af25-121250c7cc97，该值代表备份对象为云硬盘。](tag:hcso_dt)
     /// </summary>
 
     std::string getProviderId() const;
@@ -258,6 +258,15 @@ public:
     bool incrementalIsSet() const;
     void unsetincremental();
     void setIncremental(bool value);
+
+    /// <summary>
+    /// 备份副本快照类型
+    /// </summary>
+
+    int32_t getVersion() const;
+    bool versionIsSet() const;
+    void unsetversion();
+    void setVersion(int32_t value);
 
 
 protected:
@@ -309,6 +318,8 @@ protected:
     bool childrenIsSet_;
     bool incremental_;
     bool incrementalIsSet_;
+    int32_t version_;
+    bool versionIsSet_;
 
 };
 

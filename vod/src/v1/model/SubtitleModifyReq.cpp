@@ -16,6 +16,10 @@ SubtitleModifyReq::SubtitleModifyReq()
     assetIdIsSet_ = false;
     defaultLanguage_ = "";
     defaultLanguageIsSet_ = false;
+    repackageMode_ = "";
+    repackageModeIsSet_ = false;
+    deleteMode_ = "";
+    deleteModeIsSet_ = false;
     addSubtitlesIsSet_ = false;
     deleteSubtitlesIsSet_ = false;
 }
@@ -35,6 +39,12 @@ web::json::value SubtitleModifyReq::toJson() const
     }
     if(defaultLanguageIsSet_) {
         val[utility::conversions::to_string_t("default_language")] = ModelBase::toJson(defaultLanguage_);
+    }
+    if(repackageModeIsSet_) {
+        val[utility::conversions::to_string_t("repackage_mode")] = ModelBase::toJson(repackageMode_);
+    }
+    if(deleteModeIsSet_) {
+        val[utility::conversions::to_string_t("delete_mode")] = ModelBase::toJson(deleteMode_);
     }
     if(addSubtitlesIsSet_) {
         val[utility::conversions::to_string_t("add_subtitles")] = ModelBase::toJson(addSubtitles_);
@@ -65,6 +75,24 @@ bool SubtitleModifyReq::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDefaultLanguage(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("repackage_mode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("repackage_mode"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRepackageMode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("delete_mode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("delete_mode"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDeleteMode(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("add_subtitles"))) {
@@ -129,6 +157,48 @@ bool SubtitleModifyReq::defaultLanguageIsSet() const
 void SubtitleModifyReq::unsetdefaultLanguage()
 {
     defaultLanguageIsSet_ = false;
+}
+
+std::string SubtitleModifyReq::getRepackageMode() const
+{
+    return repackageMode_;
+}
+
+void SubtitleModifyReq::setRepackageMode(const std::string& value)
+{
+    repackageMode_ = value;
+    repackageModeIsSet_ = true;
+}
+
+bool SubtitleModifyReq::repackageModeIsSet() const
+{
+    return repackageModeIsSet_;
+}
+
+void SubtitleModifyReq::unsetrepackageMode()
+{
+    repackageModeIsSet_ = false;
+}
+
+std::string SubtitleModifyReq::getDeleteMode() const
+{
+    return deleteMode_;
+}
+
+void SubtitleModifyReq::setDeleteMode(const std::string& value)
+{
+    deleteMode_ = value;
+    deleteModeIsSet_ = true;
+}
+
+bool SubtitleModifyReq::deleteModeIsSet() const
+{
+    return deleteModeIsSet_;
+}
+
+void SubtitleModifyReq::unsetdeleteMode()
+{
+    deleteModeIsSet_ = false;
 }
 
 std::vector<AddSubtitle>& SubtitleModifyReq::getAddSubtitles()

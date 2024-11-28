@@ -219,8 +219,10 @@ public:
     static HttpRequestDef genRequestDefForUpdateReadWeight();
     static HttpRequestDef genRequestDefForAllowSqlserverDbUserPrivilege();
     static HttpRequestDef genRequestDefForBatchAddMsdtcs();
+    static HttpRequestDef genRequestDefForCopyDatabase();
     static HttpRequestDef genRequestDefForCreateSqlserverDatabase();
     static HttpRequestDef genRequestDefForCreateSqlserverDbUser();
+    static HttpRequestDef genRequestDefForDeleteMsdtcLocalHost();
     static HttpRequestDef genRequestDefForDeleteSqlserverDatabase();
     static HttpRequestDef genRequestDefForDeleteSqlserverDatabaseEx();
     static HttpRequestDef genRequestDefForDeleteSqlserverDbUser();

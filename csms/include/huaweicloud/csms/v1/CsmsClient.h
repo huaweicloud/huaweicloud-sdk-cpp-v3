@@ -9,6 +9,9 @@
 #include <huaweicloud/csms/v1/model/BatchCreateOrDeleteTagsRequest.h>
 #include <huaweicloud/csms/v1/model/BatchCreateOrDeleteTagsRequestBody.h>
 #include <huaweicloud/csms/v1/model/BatchCreateOrDeleteTagsResponse.h>
+#include <huaweicloud/csms/v1/model/CreateAgencyRequest.h>
+#include <huaweicloud/csms/v1/model/CreateAgencyRequestBody.h>
+#include <huaweicloud/csms/v1/model/CreateAgencyResponse.h>
 #include <huaweicloud/csms/v1/model/CreateSecretEventRequest.h>
 #include <huaweicloud/csms/v1/model/CreateSecretEventRequestBody.h>
 #include <huaweicloud/csms/v1/model/CreateSecretEventResponse.h>
@@ -45,6 +48,8 @@
 #include <huaweicloud/csms/v1/model/ListSecretEventsResponse.h>
 #include <huaweicloud/csms/v1/model/ListSecretTagsRequest.h>
 #include <huaweicloud/csms/v1/model/ListSecretTagsResponse.h>
+#include <huaweicloud/csms/v1/model/ListSecretTaskRequest.h>
+#include <huaweicloud/csms/v1/model/ListSecretTaskResponse.h>
 #include <huaweicloud/csms/v1/model/ListSecretVersionsRequest.h>
 #include <huaweicloud/csms/v1/model/ListSecretVersionsResponse.h>
 #include <huaweicloud/csms/v1/model/ListSecretsRequest.h>
@@ -53,8 +58,12 @@
 #include <huaweicloud/csms/v1/model/RestoreSecretResponse.h>
 #include <huaweicloud/csms/v1/model/RotateSecretRequest.h>
 #include <huaweicloud/csms/v1/model/RotateSecretResponse.h>
+#include <huaweicloud/csms/v1/model/ShowAgencyRequest.h>
+#include <huaweicloud/csms/v1/model/ShowAgencyResponse.h>
 #include <huaweicloud/csms/v1/model/ShowSecretEventRequest.h>
 #include <huaweicloud/csms/v1/model/ShowSecretEventResponse.h>
+#include <huaweicloud/csms/v1/model/ShowSecretFunctionTemplatesRequest.h>
+#include <huaweicloud/csms/v1/model/ShowSecretFunctionTemplatesResponse.h>
 #include <huaweicloud/csms/v1/model/ShowSecretRequest.h>
 #include <huaweicloud/csms/v1/model/ShowSecretResponse.h>
 #include <huaweicloud/csms/v1/model/ShowSecretStageRequest.h>
@@ -109,6 +118,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<BatchCreateOrDeleteTagsResponse> batchCreateOrDeleteTags(
         BatchCreateOrDeleteTagsRequest &request
+    );
+    // 创建服务委托
+    //
+    // 创建服务委托。用于创建凭据管理服务相关委托和函数工作流相关委托。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateAgencyResponse> createAgency(
+        CreateAgencyRequest &request
     );
     // 创建凭据
     //
@@ -234,6 +251,14 @@ public:
     std::shared_ptr<ListSecretTagsResponse> listSecretTags(
         ListSecretTagsRequest &request
     );
+    // 查询任务列表
+    //
+    // 查询任务列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListSecretTaskResponse> listSecretTask(
+        ListSecretTaskRequest &request
+    );
     // 查询凭据的版本列表
     //
     // 查询指定凭据下的版本列表信息。
@@ -266,6 +291,14 @@ public:
     std::shared_ptr<RotateSecretResponse> rotateSecret(
         RotateSecretRequest &request
     );
+    // 查看是否有服务委托
+    //
+    // 查看是否有服务委托
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowAgencyResponse> showAgency(
+        ShowAgencyRequest &request
+    );
     // 查询凭据
     //
     // 查询指定凭据的信息。
@@ -281,6 +314,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowSecretEventResponse> showSecretEvent(
         ShowSecretEventRequest &request
+    );
+    // 获取凭据轮转函数模板
+    //
+    // 获取凭据轮转函数模板。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowSecretFunctionTemplatesResponse> showSecretFunctionTemplates(
+        ShowSecretFunctionTemplatesRequest &request
     );
     // 查询凭据的版本状态
     //

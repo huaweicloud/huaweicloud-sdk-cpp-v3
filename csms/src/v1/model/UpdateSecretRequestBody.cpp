@@ -21,6 +21,8 @@ UpdateSecretRequestBody::UpdateSecretRequestBody()
     rotationPeriod_ = "";
     rotationPeriodIsSet_ = false;
     eventSubscriptionsIsSet_ = false;
+    rotationFuncUrn_ = "";
+    rotationFuncUrnIsSet_ = false;
 }
 
 UpdateSecretRequestBody::~UpdateSecretRequestBody() = default;
@@ -47,6 +49,9 @@ web::json::value UpdateSecretRequestBody::toJson() const
     }
     if(eventSubscriptionsIsSet_) {
         val[utility::conversions::to_string_t("event_subscriptions")] = ModelBase::toJson(eventSubscriptions_);
+    }
+    if(rotationFuncUrnIsSet_) {
+        val[utility::conversions::to_string_t("rotation_func_urn")] = ModelBase::toJson(rotationFuncUrn_);
     }
 
     return val;
@@ -98,6 +103,15 @@ bool UpdateSecretRequestBody::fromJson(const web::json::value& val)
             std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEventSubscriptions(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("rotation_func_urn"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("rotation_func_urn"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRotationFuncUrn(refVal);
         }
     }
     return ok;
@@ -207,6 +221,27 @@ bool UpdateSecretRequestBody::eventSubscriptionsIsSet() const
 void UpdateSecretRequestBody::unseteventSubscriptions()
 {
     eventSubscriptionsIsSet_ = false;
+}
+
+std::string UpdateSecretRequestBody::getRotationFuncUrn() const
+{
+    return rotationFuncUrn_;
+}
+
+void UpdateSecretRequestBody::setRotationFuncUrn(const std::string& value)
+{
+    rotationFuncUrn_ = value;
+    rotationFuncUrnIsSet_ = true;
+}
+
+bool UpdateSecretRequestBody::rotationFuncUrnIsSet() const
+{
+    return rotationFuncUrnIsSet_;
+}
+
+void UpdateSecretRequestBody::unsetrotationFuncUrn()
+{
+    rotationFuncUrnIsSet_ = false;
 }
 
 }

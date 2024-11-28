@@ -628,6 +628,23 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForListRecycleInstances() {
     return reqDefBuilder;
 }
 
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForListRedisPitrRestoreTime() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("StartTime")
+                  .withJsonTag("start_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EndTime")
+                  .withJsonTag("end_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForListRedisSlowLogs() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -838,6 +855,15 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForRestoreExistingInstance() {
     return reqDefBuilder;
 }
 
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForRestoreRedisPitr() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForSaveLtsConfigs() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
@@ -880,6 +906,15 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForSetInstanceDataDump() {
 }
 
 HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForSetRecyclePolicy() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForSetRedisPitrPolicy() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
@@ -1113,6 +1148,16 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForShowRedisBigKeys() {
     return reqDefBuilder;
 }
 
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForShowRedisPitrInfo() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForShowRedisPitrPolicy() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForShowRestorableList() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Offset")
@@ -1135,6 +1180,15 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForShowSlowLogDesensitization()
 }
 
 HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForShrinkInstanceNode() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForStopBackup() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.

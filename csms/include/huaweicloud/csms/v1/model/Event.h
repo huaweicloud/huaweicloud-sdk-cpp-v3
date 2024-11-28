@@ -59,7 +59,7 @@ public:
     void setEventId(const std::string& value);
 
     /// <summary>
-    /// 设置事件的基础事件类型列表,。  约束：数组大小：最小1，最大12。 
+    /// 设置事件的基础事件类型列表,。  约束：数组大小：最小1，最大12。
     /// </summary>
 
     std::vector<std::string>& getEventTypes();
@@ -68,7 +68,7 @@ public:
     void setEventTypes(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 事件通知状态，取值如下。  ENABLED：表示启用状态 DISABLED：表示禁用状态 
+    /// 事件通知状态，取值如下。  ENABLED：表示启用状态 DISABLED：表示禁用状态
     /// </summary>
 
     std::string getState() const;
@@ -77,7 +77,7 @@ public:
     void setState(const std::string& value);
 
     /// <summary>
-    /// 事件通知创建时间，时间戳，即从1970年1月1日至该时间的总秒数。 
+    /// 事件通知创建时间，时间戳，即从1970年1月1日至该时间的总秒数。
     /// </summary>
 
     int64_t getCreateTime() const;

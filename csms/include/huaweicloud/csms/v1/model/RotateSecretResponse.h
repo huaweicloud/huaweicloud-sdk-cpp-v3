@@ -56,12 +56,23 @@ public:
     void unsetsecretName();
     void setSecretName(const std::string& value);
 
+    /// <summary>
+    /// 凭据轮转任务ID。
+    /// </summary>
+
+    std::string getRotationTaskId() const;
+    bool rotationTaskIdIsSet() const;
+    void unsetrotationTaskId();
+    void setRotationTaskId(const std::string& value);
+
 
 protected:
     std::string versionId_;
     bool versionIdIsSet_;
     std::string secretName_;
     bool secretNameIsSet_;
+    std::string rotationTaskId_;
+    bool rotationTaskIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

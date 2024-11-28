@@ -16,6 +16,8 @@ RotateSecretResponse::RotateSecretResponse()
     versionIdIsSet_ = false;
     secretName_ = "";
     secretNameIsSet_ = false;
+    rotationTaskId_ = "";
+    rotationTaskIdIsSet_ = false;
 }
 
 RotateSecretResponse::~RotateSecretResponse() = default;
@@ -33,6 +35,9 @@ web::json::value RotateSecretResponse::toJson() const
     }
     if(secretNameIsSet_) {
         val[utility::conversions::to_string_t("secret_name")] = ModelBase::toJson(secretName_);
+    }
+    if(rotationTaskIdIsSet_) {
+        val[utility::conversions::to_string_t("rotation_task_id")] = ModelBase::toJson(rotationTaskId_);
     }
 
     return val;
@@ -57,6 +62,15 @@ bool RotateSecretResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSecretName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("rotation_task_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("rotation_task_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRotationTaskId(refVal);
         }
     }
     return ok;
@@ -103,6 +117,27 @@ bool RotateSecretResponse::secretNameIsSet() const
 void RotateSecretResponse::unsetsecretName()
 {
     secretNameIsSet_ = false;
+}
+
+std::string RotateSecretResponse::getRotationTaskId() const
+{
+    return rotationTaskId_;
+}
+
+void RotateSecretResponse::setRotationTaskId(const std::string& value)
+{
+    rotationTaskId_ = value;
+    rotationTaskIdIsSet_ = true;
+}
+
+bool RotateSecretResponse::rotationTaskIdIsSet() const
+{
+    return rotationTaskIdIsSet_;
+}
+
+void RotateSecretResponse::unsetrotationTaskId()
+{
+    rotationTaskIdIsSet_ = false;
 }
 
 }

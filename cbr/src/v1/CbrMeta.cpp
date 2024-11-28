@@ -62,6 +62,15 @@ HttpRequestDef CbrMeta::genRequestDefForBatchUpdateVault() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CbrMeta::genRequestDefForChangeOrder() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CbrMeta::genRequestDefForCheckAgent() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -370,6 +379,12 @@ HttpRequestDef CbrMeta::genRequestDefForListOrganizationPolicies() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("OperationType")
                   .withJsonTag("operation_type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
                   .withLocationType(Query_));
     return reqDefBuilder;
 }

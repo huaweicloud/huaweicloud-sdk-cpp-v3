@@ -86,15 +86,6 @@ public:
     void setVideoBitrate(const std::vector<StreamDetail>& value);
 
     /// <summary>
-    /// 展示流音频帧率情况，帧率单位为fps。  如果出现断流则会出现多个时间段流信息，如： &#x60;&#x60;&#x60; \&quot;audio_framerate\&quot;: [     {       \&quot;start_time\&quot;: \&quot;2022-02-04T07:00:00Z\&quot;,       \&quot;end_time\&quot;: \&quot;2022-02-04T07:00:02Z\&quot;,       \&quot;data_list\&quot;: [         10,         17       ]     },     {       \&quot;start_time\&quot;: \&quot;2022-02-04T07:00:05Z\&quot;,       \&quot;end_time\&quot;: \&quot;2022-02-04T07:00:06Z\&quot;,       \&quot;data_list\&quot;: [         31,         33       ]     }   ] 
-    /// </summary>
-
-    std::vector<StreamDetail>& getAudioFramerate();
-    bool audioFramerateIsSet() const;
-    void unsetaudioFramerate();
-    void setAudioFramerate(const std::vector<StreamDetail>& value);
-
-    /// <summary>
     /// 
     /// </summary>
 
@@ -115,8 +106,6 @@ protected:
     bool videoFramerateIsSet_;
     std::vector<StreamDetail> videoBitrate_;
     bool videoBitrateIsSet_;
-    std::vector<StreamDetail> audioFramerate_;
-    bool audioFramerateIsSet_;
     std::string xRequestId_;
     bool xRequestIdIsSet_;
 

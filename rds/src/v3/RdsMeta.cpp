@@ -2782,6 +2782,15 @@ HttpRequestDef RdsMeta::genRequestDefForBatchAddMsdtcs() {
     return reqDefBuilder;
 }
 
+HttpRequestDef RdsMeta::genRequestDefForCopyDatabase() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef RdsMeta::genRequestDefForCreateSqlserverDatabase() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
@@ -2803,6 +2812,15 @@ HttpRequestDef RdsMeta::genRequestDefForCreateSqlserverDbUser() {
                   .withName("XLanguage")
                   .withJsonTag("X-Language")
                   .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef RdsMeta::genRequestDefForDeleteMsdtcLocalHost() {
+    HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").

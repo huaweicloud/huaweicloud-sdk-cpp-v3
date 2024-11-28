@@ -53,7 +53,7 @@ bool ComputeFlavorGroup::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("compute_flavors"));
         if(!fieldValue.is_null())
         {
-            ComputeFlavor refVal;
+            std::vector<ComputeFlavor> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setComputeFlavors(refVal);
         }
@@ -83,12 +83,12 @@ void ComputeFlavorGroup::unsetgroupType()
     groupTypeIsSet_ = false;
 }
 
-ComputeFlavor ComputeFlavorGroup::getComputeFlavors() const
+std::vector<ComputeFlavor>& ComputeFlavorGroup::getComputeFlavors()
 {
     return computeFlavors_;
 }
 
-void ComputeFlavorGroup::setComputeFlavors(const ComputeFlavor& value)
+void ComputeFlavorGroup::setComputeFlavors(const std::vector<ComputeFlavor>& value)
 {
     computeFlavors_ = value;
     computeFlavorsIsSet_ = true;

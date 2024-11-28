@@ -74,6 +74,15 @@ public:
     void unsetdirPath();
     void setDirPath(const std::string& value);
 
+    /// <summary>
+    /// 排除目录列表，多个路径之间以英文逗号分隔 &gt; 该特性目前处于公测阶段，部分region可能无法使用。 
+    /// </summary>
+
+    std::string getExcludePaths() const;
+    bool excludePathsIsSet() const;
+    void unsetexcludePaths();
+    void setExcludePaths(const std::string& value);
+
 
 protected:
     std::string id_;
@@ -84,6 +93,8 @@ protected:
     bool agentIdIsSet_;
     std::string dirPath_;
     bool dirPathIsSet_;
+    std::string excludePaths_;
+    bool excludePathsIsSet_;
 
 };
 

@@ -8,6 +8,15 @@ namespace V2 {
 
 using namespace HuaweiCloud::Sdk::Core::Http;
 
+HttpRequestDef KmsMeta::genRequestDefForAssociateAlias() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef KmsMeta::genRequestDefForBatchCreateKmsTags() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -36,6 +45,15 @@ HttpRequestDef KmsMeta::genRequestDefForCancelKeyDeletion() {
 }
 
 HttpRequestDef KmsMeta::genRequestDefForCancelSelfGrant() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef KmsMeta::genRequestDefForCreateAlias() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
@@ -126,6 +144,15 @@ HttpRequestDef KmsMeta::genRequestDefForDecryptData() {
 }
 
 HttpRequestDef KmsMeta::genRequestDefForDecryptDatakey() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef KmsMeta::genRequestDefForDeleteAlias() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
@@ -244,6 +271,23 @@ HttpRequestDef KmsMeta::genRequestDefForImportKeyMaterial() {
     return reqDefBuilder;
 }
 
+HttpRequestDef KmsMeta::genRequestDefForListAliases() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("KeyId")
+                  .withJsonTag("key_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Marker")
+                  .withJsonTag("marker")
+                  .withLocationType(Query_));
+    reqDefBuilder.withResponseField(FieldDef().
+            withName("Body").
+            withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef KmsMeta::genRequestDefForListGrants() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -307,6 +351,12 @@ HttpRequestDef KmsMeta::genRequestDefForListRetirableGrants() {
 
 HttpRequestDef KmsMeta::genRequestDefForListSupportRegions() {
     HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 

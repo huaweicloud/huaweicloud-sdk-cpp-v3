@@ -48,7 +48,7 @@ public:
     void setEventName(const std::string& value);
 
     /// <summary>
-    /// 凭据类型  取值 ： COMMON ：通用凭据 RDS ：RDS凭据 
+    /// 事件类型。 - SECRET_VERSION_CREATED:版本创建 - SECRET_VERSION_EXPIRED:版本过期 - SECRET_ROTATED:凭据轮转成功 - SECRET_DELETED:凭据删除 - SECRET_ROTATED_FAILED:凭据轮转失败
     /// </summary>
 
     std::string getTriggerEventType() const;
@@ -57,7 +57,7 @@ public:
     void setTriggerEventType(const std::string& value);
 
     /// <summary>
-    /// 事件通知记录的创建时间，时间戳，即从1970年1月1日至该时间的总秒数。 
+    /// 事件通知记录的创建时间，时间戳，即从1970年1月1日至该时间的总秒数。
     /// </summary>
 
     int64_t getCreateTime() const;
@@ -75,7 +75,7 @@ public:
     void setSecretName(const std::string& value);
 
     /// <summary>
-    /// 凭据类型  取值 ： COMMON ：通用凭据(默认)。用于应用系统中的各种敏感信息储存。         RDS ：RDS凭据 。专门针对RDS的凭据，用于存储RDS的账号信息。 
+    /// 凭据类型  - COMMON：通用凭据(默认)。用于应用系统中的各种敏感信息储存。 - RDS：RDS凭据 。专门针对RDS的凭据，用于存储RDS的账号信息。（已不支持，使用RDS-FG替代） - RDS-FG：RDS凭据 。专门针对RDS的凭据，用于存储RDS的账号信息。 - GaussDB-FG：GaussDB凭据。专门针对GaussDB的凭据，用于存储GaussDB的账号信息。
     /// </summary>
 
     std::string getSecretType() const;
@@ -102,7 +102,7 @@ public:
     void setNotificationTargetId(const std::string& value);
 
     /// <summary>
-    /// 凭据的描述信息。
+    /// 事件通知的内容。
     /// </summary>
 
     std::string getNotificationContent() const;
@@ -111,7 +111,7 @@ public:
     void setNotificationContent(const std::string& value);
 
     /// <summary>
-    /// 凭据类型  取值 ： SUCCESS ：事件通知成功。         FAIL ：事件通知失败。         INVALID ：事件通知配置主题信息无效或不正确，无法触发通知。 
+    /// 事件通知状态。  - SUCCESS：事件通知成功。 - FAIL：事件通知失败。 - INVALID：事件通知配置主题信息无效或不正确，无法触发通知。
     /// </summary>
 
     std::string getNotificationStatus() const;

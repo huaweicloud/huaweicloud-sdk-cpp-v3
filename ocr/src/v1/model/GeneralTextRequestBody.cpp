@@ -26,6 +26,8 @@ GeneralTextRequestBody::GeneralTextRequestBody()
     languageIsSet_ = false;
     singleOrientationMode_ = false;
     singleOrientationModeIsSet_ = false;
+    pdfPageNumber_ = 0;
+    pdfPageNumberIsSet_ = false;
 }
 
 GeneralTextRequestBody::~GeneralTextRequestBody() = default;
@@ -58,6 +60,9 @@ web::json::value GeneralTextRequestBody::toJson() const
     }
     if(singleOrientationModeIsSet_) {
         val[utility::conversions::to_string_t("single_orientation_mode")] = ModelBase::toJson(singleOrientationMode_);
+    }
+    if(pdfPageNumberIsSet_) {
+        val[utility::conversions::to_string_t("pdf_page_number")] = ModelBase::toJson(pdfPageNumber_);
     }
 
     return val;
@@ -127,6 +132,15 @@ bool GeneralTextRequestBody::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSingleOrientationMode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("pdf_page_number"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("pdf_page_number"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPdfPageNumber(refVal);
         }
     }
     return ok;
@@ -278,6 +292,27 @@ bool GeneralTextRequestBody::singleOrientationModeIsSet() const
 void GeneralTextRequestBody::unsetsingleOrientationMode()
 {
     singleOrientationModeIsSet_ = false;
+}
+
+int32_t GeneralTextRequestBody::getPdfPageNumber() const
+{
+    return pdfPageNumber_;
+}
+
+void GeneralTextRequestBody::setPdfPageNumber(int32_t value)
+{
+    pdfPageNumber_ = value;
+    pdfPageNumberIsSet_ = true;
+}
+
+bool GeneralTextRequestBody::pdfPageNumberIsSet() const
+{
+    return pdfPageNumberIsSet_;
+}
+
+void GeneralTextRequestBody::unsetpdfPageNumber()
+{
+    pdfPageNumberIsSet_ = false;
 }
 
 }

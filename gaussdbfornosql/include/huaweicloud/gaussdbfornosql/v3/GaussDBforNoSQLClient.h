@@ -146,6 +146,8 @@
 #include <huaweicloud/gaussdbfornosql/v3/model/ListProjectTagsResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListRecycleInstancesRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListRecycleInstancesResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ListRedisPitrRestoreTimeRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ListRedisPitrRestoreTimeResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListRedisSlowLogsRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListRedisSlowLogsRequestBody.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListRedisSlowLogsResponse.h>
@@ -207,6 +209,9 @@
 #include <huaweicloud/gaussdbfornosql/v3/model/RestartInstanceResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/RestoreExistingInstanceRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/RestoreExistingInstanceResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/RestoreRedisPitrRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/RestoreRedisPitrRequestBody.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/RestoreRedisPitrResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/RestoreRequestBody.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/SaveLtsConfigsRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/SaveLtsConfigsRequestBody.h>
@@ -222,6 +227,9 @@
 #include <huaweicloud/gaussdbfornosql/v3/model/SetInstanceDataDumpResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/SetRecyclePolicyRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/SetRecyclePolicyResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/SetRedisPitrPolicyRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/SetRedisPitrPolicyRequestBody.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/SetRedisPitrPolicyResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ShowAllInstancesBackupsNewRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ShowAllInstancesBackupsNewResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ShowAllInstancesBackupsRequest.h>
@@ -265,6 +273,10 @@
 #include <huaweicloud/gaussdbfornosql/v3/model/ShowRedisBigKeysRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ShowRedisBigKeysRequestBody.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ShowRedisBigKeysResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ShowRedisPitrInfoRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ShowRedisPitrInfoResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ShowRedisPitrPolicyRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ShowRedisPitrPolicyResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ShowRestorableListRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ShowRestorableListResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ShowSecondLevelMonitoringStatusRequest.h>
@@ -274,6 +286,9 @@
 #include <huaweicloud/gaussdbfornosql/v3/model/ShrinkInstanceNodeRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ShrinkInstanceNodeRequestBody.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ShrinkInstanceNodeResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/StopBackupRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/StopBackupRequestBody.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/StopBackupResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/SwitchIpGroupRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/SwitchIpGroupRequestBody.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/SwitchIpGroupResponse.h>
@@ -811,6 +826,14 @@ public:
     std::shared_ptr<ListRecycleInstancesResponse> listRecycleInstances(
         ListRecycleInstancesRequest &request
     );
+    // 查询Redis可恢复时间点
+    //
+    // 查询Redis可恢复时间点。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListRedisPitrRestoreTimeResponse> listRedisPitrRestoreTime(
+        ListRedisPitrRestoreTimeRequest &request
+    );
     // 查询GeminiDB(for Redis)数据库慢日志
     //
     // 查询GeminiDB(for Redis)数据库慢日志信息，支持日志关键字搜索。
@@ -981,6 +1004,14 @@ public:
     std::shared_ptr<RestoreExistingInstanceResponse> restoreExistingInstance(
         RestoreExistingInstanceRequest &request
     );
+    // 恢复当前Redis实例到指定时间点
+    //
+    // 恢复当前Redis实例到指定时间点。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<RestoreRedisPitrResponse> restoreRedisPitr(
+        RestoreRedisPitrRequest &request
+    );
     // 关联LTS日志流
     //
     // - 将实例日志与LTS日志流关联，后台将自动上传实例日志到关联的LTS日志流里。
@@ -1023,6 +1054,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<SetRecyclePolicyResponse> setRecyclePolicy(
         SetRecyclePolicyRequest &request
+    );
+    // 设置Redis恢复到指定时间点策略
+    //
+    // 设置Redis恢复到指定时间点策略。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SetRedisPitrPolicyResponse> setRedisPitrPolicy(
+        SetRedisPitrPolicyRequest &request
     );
     // 查询备份列表
     //
@@ -1191,6 +1230,22 @@ public:
     std::shared_ptr<ShowRedisBigKeysResponse> showRedisBigKeys(
         ShowRedisBigKeysRequest &request
     );
+    // 查询Redis实例指定时间点恢复所占用的存储空间
+    //
+    // 查询Redis实例指定时间点恢复所占用的存储空间。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowRedisPitrInfoResponse> showRedisPitrInfo(
+        ShowRedisPitrInfoRequest &request
+    );
+    // 查询Redis恢复到指定时间点策略
+    //
+    // 查询Redis恢复到指定时间点策略。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowRedisPitrPolicyResponse> showRedisPitrPolicy(
+        ShowRedisPitrPolicyRequest &request
+    );
     // 查询可恢复的实例列表
     //
     // 查询用户可恢复的实例列表
@@ -1222,6 +1277,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShrinkInstanceNodeResponse> shrinkInstanceNode(
         ShrinkInstanceNodeRequest &request
+    );
+    // 停止备份
+    //
+    // 支持紧急情况下停止备份功能。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<StopBackupResponse> stopBackup(
+        StopBackupRequest &request
     );
     // 设置实例负载均衡的IP访问黑白名单
     //

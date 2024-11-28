@@ -37,8 +37,30 @@ public:
     /////////////////////////////////////////////
     /// ListSupportRegionsRequest members
 
+    /// <summary>
+    /// 指定查询返回记录条数，默认值10。
+    /// </summary>
+
+    int32_t getLimit() const;
+    bool limitIsSet() const;
+    void unsetlimit();
+    void setLimit(int32_t value);
+
+    /// <summary>
+    /// 索引位置，从offset指定的下一条数据开始查询。
+    /// </summary>
+
+    int32_t getOffset() const;
+    bool offsetIsSet() const;
+    void unsetoffset();
+    void setOffset(int32_t value);
+
 
 protected:
+    int32_t limit_;
+    bool limitIsSet_;
+    int32_t offset_;
+    bool offsetIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

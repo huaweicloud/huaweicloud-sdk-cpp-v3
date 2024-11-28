@@ -20,7 +20,6 @@ ListSingleStreamDetailResponse::ListSingleStreamDetailResponse()
     streamIsSet_ = false;
     videoFramerateIsSet_ = false;
     videoBitrateIsSet_ = false;
-    audioFramerateIsSet_ = false;
     xRequestId_ = "";
     xRequestIdIsSet_ = false;
 }
@@ -49,9 +48,6 @@ web::json::value ListSingleStreamDetailResponse::toJson() const
     }
     if(videoBitrateIsSet_) {
         val[utility::conversions::to_string_t("video_bitrate")] = ModelBase::toJson(videoBitrate_);
-    }
-    if(audioFramerateIsSet_) {
-        val[utility::conversions::to_string_t("audio_framerate")] = ModelBase::toJson(audioFramerate_);
     }
     if(xRequestIdIsSet_) {
         val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
@@ -106,15 +102,6 @@ bool ListSingleStreamDetailResponse::fromJson(const web::json::value& val)
             std::vector<StreamDetail> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setVideoBitrate(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("audio_framerate"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("audio_framerate"));
-        if(!fieldValue.is_null())
-        {
-            std::vector<StreamDetail> refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setAudioFramerate(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
@@ -233,27 +220,6 @@ bool ListSingleStreamDetailResponse::videoBitrateIsSet() const
 void ListSingleStreamDetailResponse::unsetvideoBitrate()
 {
     videoBitrateIsSet_ = false;
-}
-
-std::vector<StreamDetail>& ListSingleStreamDetailResponse::getAudioFramerate()
-{
-    return audioFramerate_;
-}
-
-void ListSingleStreamDetailResponse::setAudioFramerate(const std::vector<StreamDetail>& value)
-{
-    audioFramerate_ = value;
-    audioFramerateIsSet_ = true;
-}
-
-bool ListSingleStreamDetailResponse::audioFramerateIsSet() const
-{
-    return audioFramerateIsSet_;
-}
-
-void ListSingleStreamDetailResponse::unsetaudioFramerate()
-{
-    audioFramerateIsSet_ = false;
 }
 
 std::string ListSingleStreamDetailResponse::getXRequestId() const

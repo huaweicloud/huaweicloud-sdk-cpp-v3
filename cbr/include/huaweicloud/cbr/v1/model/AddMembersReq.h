@@ -21,7 +21,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 备份共享目标用户的项目id。
+/// 备份共享目标用户的信息。
 /// </summary>
 class HUAWEICLOUD_CBR_V1_EXPORT  AddMembersReq
     : public ModelBase
@@ -48,10 +48,21 @@ public:
     void unsetmembers();
     void setMembers(const std::vector<std::string>& value);
 
+    /// <summary>
+    /// 列表，待添加备份共享成员的domain_id。 &gt; 该特性目前属于公测阶段，部分region可能无法使用.
+    /// </summary>
+
+    std::vector<std::string>& getDomains();
+    bool domainsIsSet() const;
+    void unsetdomains();
+    void setDomains(const std::vector<std::string>& value);
+
 
 protected:
     std::vector<std::string> members_;
     bool membersIsSet_;
+    std::vector<std::string> domains_;
+    bool domainsIsSet_;
 
 };
 

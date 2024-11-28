@@ -13,6 +13,7 @@ namespace Model {
 AgentAddPathReq::AgentAddPathReq()
 {
     addPathIsSet_ = false;
+    excludePathIsSet_ = false;
 }
 
 AgentAddPathReq::~AgentAddPathReq() = default;
@@ -28,6 +29,9 @@ web::json::value AgentAddPathReq::toJson() const
     if(addPathIsSet_) {
         val[utility::conversions::to_string_t("add_path")] = ModelBase::toJson(addPath_);
     }
+    if(excludePathIsSet_) {
+        val[utility::conversions::to_string_t("exclude_path")] = ModelBase::toJson(excludePath_);
+    }
 
     return val;
 }
@@ -42,6 +46,15 @@ bool AgentAddPathReq::fromJson(const web::json::value& val)
             std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAddPath(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("exclude_path"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("exclude_path"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<ExcludePath> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setExcludePath(refVal);
         }
     }
     return ok;
@@ -67,6 +80,27 @@ bool AgentAddPathReq::addPathIsSet() const
 void AgentAddPathReq::unsetaddPath()
 {
     addPathIsSet_ = false;
+}
+
+std::vector<ExcludePath>& AgentAddPathReq::getExcludePath()
+{
+    return excludePath_;
+}
+
+void AgentAddPathReq::setExcludePath(const std::vector<ExcludePath>& value)
+{
+    excludePath_ = value;
+    excludePathIsSet_ = true;
+}
+
+bool AgentAddPathReq::excludePathIsSet() const
+{
+    return excludePathIsSet_;
+}
+
+void AgentAddPathReq::unsetexcludePath()
+{
+    excludePathIsSet_ = false;
 }
 
 }

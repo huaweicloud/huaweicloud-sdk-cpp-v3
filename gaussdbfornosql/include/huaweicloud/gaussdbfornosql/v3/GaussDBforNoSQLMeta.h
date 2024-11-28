@@ -70,6 +70,7 @@ public:
     static HttpRequestDef genRequestDefForListNosqlTaskList();
     static HttpRequestDef genRequestDefForListProjectTags();
     static HttpRequestDef genRequestDefForListRecycleInstances();
+    static HttpRequestDef genRequestDefForListRedisPitrRestoreTime();
     static HttpRequestDef genRequestDefForListRedisSlowLogs();
     static HttpRequestDef genRequestDefForListRestoreDatabases();
     static HttpRequestDef genRequestDefForListRestoreTables();
@@ -91,11 +92,13 @@ public:
     static HttpRequestDef genRequestDefForResizeInstanceVolume();
     static HttpRequestDef genRequestDefForRestartInstance();
     static HttpRequestDef genRequestDefForRestoreExistingInstance();
+    static HttpRequestDef genRequestDefForRestoreRedisPitr();
     static HttpRequestDef genRequestDefForSaveLtsConfigs();
     static HttpRequestDef genRequestDefForSetAutoEnlargePolicy();
     static HttpRequestDef genRequestDefForSetBackupPolicy();
     static HttpRequestDef genRequestDefForSetInstanceDataDump();
     static HttpRequestDef genRequestDefForSetRecyclePolicy();
+    static HttpRequestDef genRequestDefForSetRedisPitrPolicy();
     static HttpRequestDef genRequestDefForShowAllInstancesBackups();
     static HttpRequestDef genRequestDefForShowAllInstancesBackupsNew();
     static HttpRequestDef genRequestDefForShowApplicableInstances();
@@ -117,10 +120,13 @@ public:
     static HttpRequestDef genRequestDefForShowQuotas();
     static HttpRequestDef genRequestDefForShowRecyclePolicy();
     static HttpRequestDef genRequestDefForShowRedisBigKeys();
+    static HttpRequestDef genRequestDefForShowRedisPitrInfo();
+    static HttpRequestDef genRequestDefForShowRedisPitrPolicy();
     static HttpRequestDef genRequestDefForShowRestorableList();
     static HttpRequestDef genRequestDefForShowSecondLevelMonitoringStatus();
     static HttpRequestDef genRequestDefForShowSlowLogDesensitization();
     static HttpRequestDef genRequestDefForShrinkInstanceNode();
+    static HttpRequestDef genRequestDefForStopBackup();
     static HttpRequestDef genRequestDefForSwitchIpGroup();
     static HttpRequestDef genRequestDefForSwitchSecondLevelMonitoring();
     static HttpRequestDef genRequestDefForSwitchSlowlogDesensitization();

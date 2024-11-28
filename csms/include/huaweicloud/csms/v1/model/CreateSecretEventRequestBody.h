@@ -41,7 +41,7 @@ public:
     /// CreateSecretEventRequestBody members
 
     /// <summary>
-    /// 新创建事件通知的名称。  约束：取值范围为1到64个字符，满足正则匹配“^[a-zA-Z0-9_-]{1,64}$”。 
+    /// 新创建事件通知的名称。  约束：取值范围为1到64个字符，满足正则匹配“^[a-zA-Z0-9_-]{1,64}$”。
     /// </summary>
 
     std::string getName() const;
@@ -50,7 +50,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 本次事件通知的基础事件列表，基础事件类型如下。  SECRET_VERSION_CREATED：版本创建 SECRET_VERSION_EXPIRED：版本过期 SECRET_ROTATED：凭据轮转 SECRET_DELETED：凭据删除  列表包含的基础事件类型不能重复。 
+    /// 本次事件通知的基础事件列表，基础事件类型如下。  - SECRET_VERSION_CREATED：版本创建 - SECRET_VERSION_EXPIRED：版本过期 - SECRET_ROTATED：凭据轮转 - SECRET_DELETED：凭据删除 - SECRET_ROTATED_FAILED:凭据轮转失败  列表包含的基础事件类型不能重复。
     /// </summary>
 
     std::vector<std::string>& getEventTypes();
@@ -59,7 +59,7 @@ public:
     void setEventTypes(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 控制事件是否生效，只有启用状态才能触发包含的基础事件类型  ENABLED：启用 DISABLED：禁用 
+    /// 控制事件是否生效，只有启用状态才能触发包含的基础事件类型  ENABLED：启用 DISABLED：禁用
     /// </summary>
 
     std::string getState() const;

@@ -41,7 +41,7 @@ public:
     /// UpdateSecretEventRequestBody members
 
     /// <summary>
-    /// 事件通知状态，取值如下。  ENABLED：表示启用状态 DISABLED：表示禁用状态 
+    /// 事件通知状态，取值如下。  ENABLED：表示启用状态 DISABLED：表示禁用状态
     /// </summary>
 
     std::string getState() const;
@@ -50,7 +50,7 @@ public:
     void setState(const std::string& value);
 
     /// <summary>
-    /// 本次事件通知的基础事件列表，基础事件类型如下。  SECRET_VERSION_CREATED：版本创建 SECRET_VERSION_EXPIRED：版本过期 SECRET_ROTATED：凭据轮转 SECRET_DELETED：凭据删除  列表包含的基础事件类型不能重复。 
+    /// 本次事件通知的基础事件列表，基础事件类型如下。  - SECRET_VERSION_CREATED:版本创建 - SECRET_VERSION_EXPIRED:版本过期 - SECRET_ROTATED:凭据轮转成功 - SECRET_DELETED:凭据删除 - SECRET_ROTATED_FAILED:凭据轮转失败  列表包含的基础事件类型不能重复。
     /// </summary>
 
     std::vector<std::string>& getEventTypes();

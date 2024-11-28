@@ -532,15 +532,21 @@
 #include <huaweicloud/rds/v3/model/UpdateReadWeightResponse.h>
 #include <string>
 
+#include <huaweicloud/rds/v3/model/AddCopyDatabaseRequestBody.h>
 #include <huaweicloud/rds/v3/model/AddMsdtcRequestBody.h>
 #include <huaweicloud/rds/v3/model/AllowSqlserverDbUserPrivilegeRequest.h>
 #include <huaweicloud/rds/v3/model/AllowSqlserverDbUserPrivilegeResponse.h>
 #include <huaweicloud/rds/v3/model/BatchAddMsdtcsRequest.h>
 #include <huaweicloud/rds/v3/model/BatchAddMsdtcsResponse.h>
+#include <huaweicloud/rds/v3/model/CopyDatabaseRequest.h>
+#include <huaweicloud/rds/v3/model/CopyDatabaseResponse.h>
 #include <huaweicloud/rds/v3/model/CreateSqlserverDatabaseRequest.h>
 #include <huaweicloud/rds/v3/model/CreateSqlserverDatabaseResponse.h>
 #include <huaweicloud/rds/v3/model/CreateSqlserverDbUserRequest.h>
 #include <huaweicloud/rds/v3/model/CreateSqlserverDbUserResponse.h>
+#include <huaweicloud/rds/v3/model/DeleteMsdtcLocalHostRequest.h>
+#include <huaweicloud/rds/v3/model/DeleteMsdtcLocalHostRequestBody.h>
+#include <huaweicloud/rds/v3/model/DeleteMsdtcLocalHostResponse.h>
 #include <huaweicloud/rds/v3/model/DeleteSqlserverDatabaseExRequest.h>
 #include <huaweicloud/rds/v3/model/DeleteSqlserverDatabaseExResponse.h>
 #include <huaweicloud/rds/v3/model/DeleteSqlserverDatabaseRequest.h>
@@ -2264,6 +2270,14 @@ public:
     std::shared_ptr<BatchAddMsdtcsResponse> batchAddMsdtcs(
         BatchAddMsdtcsRequest &request
     );
+    // 复制数据库
+    //
+    // 复制数据库
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CopyDatabaseResponse> copyDatabase(
+        CopyDatabaseRequest &request
+    );
     // 创建数据库
     //
     // 创建数据库。
@@ -2279,6 +2293,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateSqlserverDbUserResponse> createSqlserverDbUser(
         CreateSqlserverDbUserRequest &request
+    );
+    // 删除MSDTC
+    //
+    // 删除MSDTC相关主机host地址
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteMsdtcLocalHostResponse> deleteMsdtcLocalHost(
+        DeleteMsdtcLocalHostRequest &request
     );
     // 删除数据库
     //

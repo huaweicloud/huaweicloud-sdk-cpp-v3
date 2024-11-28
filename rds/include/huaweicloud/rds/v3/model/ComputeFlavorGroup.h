@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <vector>
 #include <huaweicloud/rds/v3/model/ComputeFlavor.h>
 
 namespace HuaweiCloud {
@@ -49,19 +50,19 @@ public:
     void setGroupType(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 计算规格列表
     /// </summary>
 
-    ComputeFlavor getComputeFlavors() const;
+    std::vector<ComputeFlavor>& getComputeFlavors();
     bool computeFlavorsIsSet() const;
     void unsetcomputeFlavors();
-    void setComputeFlavors(const ComputeFlavor& value);
+    void setComputeFlavors(const std::vector<ComputeFlavor>& value);
 
 
 protected:
     std::string groupType_;
     bool groupTypeIsSet_;
-    ComputeFlavor computeFlavors_;
+    std::vector<ComputeFlavor> computeFlavors_;
     bool computeFlavorsIsSet_;
 
 };

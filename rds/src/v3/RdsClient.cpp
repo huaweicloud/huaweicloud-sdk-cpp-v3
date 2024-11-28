@@ -8473,6 +8473,48 @@ std::shared_ptr<BatchAddMsdtcsResponse> RdsClient::batchAddMsdtcs(BatchAddMsdtcs
 
     return localVarResult;
 }
+std::shared_ptr<CopyDatabaseResponse> RdsClient::copyDatabase(CopyDatabaseRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/database/procedure";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, RdsMeta::genRequestDefForCopyDatabase());
+
+    std::shared_ptr<CopyDatabaseResponse> localVarResult = std::make_shared<CopyDatabaseResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<CreateSqlserverDatabaseResponse> RdsClient::createSqlserverDatabase(CreateSqlserverDatabaseRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/database";
@@ -8551,6 +8593,48 @@ std::shared_ptr<CreateSqlserverDbUserResponse> RdsClient::createSqlserverDbUser(
         localVarHeaderParams, localVarHttpBody, RdsMeta::genRequestDefForCreateSqlserverDbUser());
 
     std::shared_ptr<CreateSqlserverDbUserResponse> localVarResult = std::make_shared<CreateSqlserverDbUserResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<DeleteMsdtcLocalHostResponse> RdsClient::deleteMsdtcLocalHost(DeleteMsdtcLocalHostRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/msdtc/host";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, RdsMeta::genRequestDefForDeleteMsdtcLocalHost());
+
+    std::shared_ptr<DeleteMsdtcLocalHostResponse> localVarResult = std::make_shared<DeleteMsdtcLocalHostResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

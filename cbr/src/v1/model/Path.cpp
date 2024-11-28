@@ -20,6 +20,8 @@ Path::Path()
     agentIdIsSet_ = false;
     dirPath_ = "";
     dirPathIsSet_ = false;
+    excludePaths_ = "";
+    excludePathsIsSet_ = false;
 }
 
 Path::~Path() = default;
@@ -43,6 +45,9 @@ web::json::value Path::toJson() const
     }
     if(dirPathIsSet_) {
         val[utility::conversions::to_string_t("dir_path")] = ModelBase::toJson(dirPath_);
+    }
+    if(excludePathsIsSet_) {
+        val[utility::conversions::to_string_t("exclude_paths")] = ModelBase::toJson(excludePaths_);
     }
 
     return val;
@@ -85,6 +90,15 @@ bool Path::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDirPath(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("exclude_paths"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("exclude_paths"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setExcludePaths(refVal);
         }
     }
     return ok;
@@ -173,6 +187,27 @@ bool Path::dirPathIsSet() const
 void Path::unsetdirPath()
 {
     dirPathIsSet_ = false;
+}
+
+std::string Path::getExcludePaths() const
+{
+    return excludePaths_;
+}
+
+void Path::setExcludePaths(const std::string& value)
+{
+    excludePaths_ = value;
+    excludePathsIsSet_ = true;
+}
+
+bool Path::excludePathsIsSet() const
+{
+    return excludePathsIsSet_;
+}
+
+void Path::unsetexcludePaths()
+{
+    excludePathsIsSet_ = false;
 }
 
 }

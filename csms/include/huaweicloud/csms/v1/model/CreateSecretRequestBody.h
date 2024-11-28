@@ -67,7 +67,7 @@ public:
     void setDescription(const std::string& value);
 
     /// <summary>
-    /// 二进制类型凭据在base64编码后的明文，凭据管理服务将其加密后，存入凭据的初始版本中。  类型：base64编码的二进制数据对象。  约束：secret_binary和secret_string必须且只能设置一个，最大32K。 当secret_type为RDS时。凭据值格式为： \&quot;{&#39;users&#39;:[{&#39;name&#39;:&#39;&#39;,&#39;password&#39;:&#39;&#39;}]}\&quot; 其中name为RDS实例账号名称，password为RDS实例账号口令
+    /// 二进制类型凭据在base64编码后的明文，凭据管理服务将其加密后，存入凭据的初始版本中。  类型：base64编码的二进制数据对象。  约束：secret_binary和secret_string必须且只能设置一个，最大32K。
     /// </summary>
 
     std::string getSecretBinary() const;
@@ -85,7 +85,7 @@ public:
     void setSecretString(const std::string& value);
 
     /// <summary>
-    /// 凭据类型  取值 ： COMMON ：通用凭据(默认)。用于应用系统中的各种敏感信息储存。         RDS ：RDS凭据 。专门针对RDS的凭据，用于存储RDS的账号信息。
+    /// 凭据类型   - COMMON：通用凭据(默认)。用于应用系统中的各种敏感信息储存。  - RDS：RDS凭据 。专门针对RDS的凭据，用于存储RDS的账号信息。（已不支持，使用RDS-FG替代）  - RDS-FG：RDS凭据 。专门针对RDS的凭据，用于存储RDS的账号信息。  - GaussDB-FG：GaussDB凭据。专门针对GaussDB的凭据，用于存储GaussDB的账号信息。
     /// </summary>
 
     std::string getSecretType() const;
@@ -112,7 +112,7 @@ public:
     void setRotationPeriod(const std::string& value);
 
     /// <summary>
-    /// 轮转配置  约束：范围不超过1024个字符。  当secret_type为RDS时，配置为{\&quot;rds_instance_id\&quot;:\&quot;\&quot;,\&quot;Secret_sub_type\&quot;:\&quot;\&quot;}  说明：当secret_type为RDS时，必须填写该值  rds_instance_id为RDS的实例ID,Secret_sub_type为轮转子类型，取值为：SingleUser，MultiUser。  SingleUser：指定轮转类型为单用户模式轮转，每次轮转将指定账号重置为新的口令。  MultiUser：指定轮转类型为双用户模式轮转，SYSCURRENT和SYSPREVIOUS分别引用其中一个账号。凭据轮转时，SYSPREVIOUS引用的账号口令会被重置为新的随机口令，随后凭据交换SYSCURRENT和SYSPREVIOUS对RDS账号的引用。
+    /// 轮转配置  约束：范围不超过1024个字符。  当secret_type为RDS-FG、GaussDB-FG时，配置为{\&quot;InstanceId\&quot;:\&quot;\&quot;,\&quot;SecretSubType\&quot;:\&quot;\&quot;}  说明：当secret_type为RDS-FG、GaussDB-FG时，必须填写该值  InstanceId为实例ID,SecretSubType为轮转子类型，取值为：SingleUser，MultiUser。  SingleUser：指定轮转类型为单用户模式轮转，每次轮转将指定账号重置为新的口令。  MultiUser：指定轮转类型为双用户模式轮转，SYSCURRENT和SYSPREVIOUS分别引用其中一个账号。凭据轮转时，SYSPREVIOUS引用的账号口令会被重置为新的随机口令，随后凭据交换SYSCURRENT和SYSPREVIOUS对账号的引用。
     /// </summary>
 
     std::string getRotationConfig() const;
@@ -138,6 +138,15 @@ public:
     void unsetenterpriseProjectId();
     void setEnterpriseProjectId(const std::string& value);
 
+    /// <summary>
+    /// FunctionGraph函数的urn。
+    /// </summary>
+
+    std::string getRotationFuncUrn() const;
+    bool rotationFuncUrnIsSet() const;
+    void unsetrotationFuncUrn();
+    void setRotationFuncUrn(const std::string& value);
+
 
 protected:
     std::string name_;
@@ -162,6 +171,8 @@ protected:
     bool eventSubscriptionsIsSet_;
     std::string enterpriseProjectId_;
     bool enterpriseProjectIdIsSet_;
+    std::string rotationFuncUrn_;
+    bool rotationFuncUrnIsSet_;
 
 };
 

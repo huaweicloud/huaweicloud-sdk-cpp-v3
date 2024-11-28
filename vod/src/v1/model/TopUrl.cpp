@@ -20,6 +20,8 @@ TopUrl::TopUrl()
     titleIsSet_ = false;
     duration_ = 0;
     durationIsSet_ = false;
+    durationMs_ = 0L;
+    durationMsIsSet_ = false;
     size_ = 0L;
     sizeIsSet_ = false;
 }
@@ -45,6 +47,9 @@ web::json::value TopUrl::toJson() const
     }
     if(durationIsSet_) {
         val[utility::conversions::to_string_t("duration")] = ModelBase::toJson(duration_);
+    }
+    if(durationMsIsSet_) {
+        val[utility::conversions::to_string_t("duration_ms")] = ModelBase::toJson(durationMs_);
     }
     if(sizeIsSet_) {
         val[utility::conversions::to_string_t("size")] = ModelBase::toJson(size_);
@@ -90,6 +95,15 @@ bool TopUrl::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDuration(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("duration_ms"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("duration_ms"));
+        if(!fieldValue.is_null())
+        {
+            int64_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDurationMs(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("size"))) {
@@ -187,6 +201,27 @@ bool TopUrl::durationIsSet() const
 void TopUrl::unsetduration()
 {
     durationIsSet_ = false;
+}
+
+int64_t TopUrl::getDurationMs() const
+{
+    return durationMs_;
+}
+
+void TopUrl::setDurationMs(int64_t value)
+{
+    durationMs_ = value;
+    durationMsIsSet_ = true;
+}
+
+bool TopUrl::durationMsIsSet() const
+{
+    return durationMsIsSet_;
+}
+
+void TopUrl::unsetdurationMs()
+{
+    durationMsIsSet_ = false;
 }
 
 int64_t TopUrl::getSize() const

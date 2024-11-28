@@ -19,6 +19,7 @@ public:
     static HttpRequestDef genRequestDefForAssociateVaultPolicy();
     static HttpRequestDef genRequestDefForBatchCreateAndDeleteVaultTags();
     static HttpRequestDef genRequestDefForBatchUpdateVault();
+    static HttpRequestDef genRequestDefForChangeOrder();
     static HttpRequestDef genRequestDefForCheckAgent();
     static HttpRequestDef genRequestDefForCopyBackup();
     static HttpRequestDef genRequestDefForCopyCheckpoint();

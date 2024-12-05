@@ -26,6 +26,20 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForApplyConfigurationToInstance
     return reqDefBuilder;
 }
 
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForBatchDeleteManualBackup() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForBatchTagAction() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -64,6 +78,14 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForCheckWeekPassword() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForClearInstanceSessions() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("NodeId")
+                  .withJsonTag("node_id")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 
@@ -229,6 +251,15 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForDeleteLtsConfigs() {
                   .withName("XLanguage")
                   .withJsonTag("X-Language")
                   .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForDeleteRedisDisabledCommands() {
+    HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
@@ -432,6 +463,14 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForListInstanceDatabases() {
 
 HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForListInstanceMaintenanceWindow() {
     HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForListInstanceSessions() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("NodeId")
+                  .withJsonTag("node_id")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 
@@ -878,6 +917,15 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForSaveLtsConfigs() {
     return reqDefBuilder;
 }
 
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForSaveRedisDisabledCommands() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForSetAutoEnlargePolicy() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -888,6 +936,15 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForSetAutoEnlargePolicy() {
 }
 
 HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForSetBackupPolicy() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForSetDisasterRecoverySettings() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
@@ -1026,6 +1083,20 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForShowConfigurationDetail() {
     return reqDefBuilder;
 }
 
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForShowDisasterRecoverySettings() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("InstanceId")
+                  .withJsonTag("instance_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForShowElbIpGroup() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
@@ -1148,6 +1219,31 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForShowRedisBigKeys() {
     return reqDefBuilder;
 }
 
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForShowRedisDisabledCommands() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Type")
+                  .withJsonTag("type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForShowRedisHotKeys() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForShowRedisPitrInfo() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
@@ -1203,6 +1299,11 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForSwitchIpGroup() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForSwitchOver() {
+    HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
 

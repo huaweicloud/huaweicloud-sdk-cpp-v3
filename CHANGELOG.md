@@ -1,3 +1,69 @@
+# 3.1.113 2024-12-05
+
+### HuaweiCloud SDK CTS
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListTraces**
+    - changes of response param
+      - `+ traces.read_only`
+      - `+ traces.operation_id`
+
+### HuaweiCloud SDK DDS
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowInstanceConfigurationModifyHistory**
+    - changes of request param
+      - `+ entity_id`
+
+### HuaweiCloud SDK DRS
+
+- _API Version_
+  - V5
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListAsyncJobDetail**
+    - changes of response param
+      - `+ jobs.compare_result.data_compare_task_list.dynamic_compare_delay`
+  - **ShowJobDetail**
+    - changes of response param
+      - `+ job.compare_result.data_compare_task_list.dynamic_compare_delay`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the following APIs:
+    - `SwitchOver`
+    - `BatchDeleteManualBackup`
+    - `ShowDisasterRecoverySettings`
+    - `SetDisasterRecoverySettings`
+    - `ShowRedisHotKeys`
+    - `ShowRedisDisabledCommands`
+    - `SaveRedisDisabledCommands`
+    - `DeleteRedisDisabledCommands`
+    - `ListInstanceSessions`
+    - `ClearInstanceSessions`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.112 2024-11-28
 
 ### HuaweiCloud SDK CBR

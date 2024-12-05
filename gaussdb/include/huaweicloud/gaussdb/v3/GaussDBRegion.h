@@ -78,6 +78,18 @@ public:
             { 
                 "https://gaussdb-mysql.af-south-1.myhuaweicloud.com"
             });
+        regions["cn-south-4"] = Region("cn-south-4",
+            { 
+                "https://gaussdb.cn-south-4.myhuaweicloud.com"
+            });
+        regions["cn-north-11"] = Region("cn-north-11",
+            { 
+                "https://gaussdbformysql.cn-north-11.myhuaweicloud.com"
+            });
+        regions["me-east-1"] = Region("me-east-1",
+            { 
+                "https://gaussdbformysql.me-east-1.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

@@ -996,6 +996,9 @@ HttpRequestDef DdsMeta::genRequestDefForShowEntityConfiguration() {
 
 HttpRequestDef DdsMeta::genRequestDefForShowInstanceConfigurationModifyHistory() {
     HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("EntityId")
+                  .withJsonTag("entity_id")
+                  .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("Offset")
                   .withJsonTag("offset")
                   .withLocationType(Query_));

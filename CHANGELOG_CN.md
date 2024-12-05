@@ -1,3 +1,69 @@
+# 3.1.113 2024-12-05
+
+### HuaweiCloud SDK CTS
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListTraces**
+    - 响应参数变更
+      - `+ traces.read_only`
+      - `+ traces.operation_id`
+
+### HuaweiCloud SDK DDS
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowInstanceConfigurationModifyHistory**
+    - 请求参数变更
+      - `+ entity_id`
+
+### HuaweiCloud SDK DRS
+
+- _接口版本_
+  - V5
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListAsyncJobDetail**
+    - 响应参数变更
+      - `+ jobs.compare_result.data_compare_task_list.dynamic_compare_delay`
+  - **ShowJobDetail**
+    - 响应参数变更
+      - `+ job.compare_result.data_compare_task_list.dynamic_compare_delay`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持以下接口：
+    - `SwitchOver`
+    - `BatchDeleteManualBackup`
+    - `ShowDisasterRecoverySettings`
+    - `SetDisasterRecoverySettings`
+    - `ShowRedisHotKeys`
+    - `ShowRedisDisabledCommands`
+    - `SaveRedisDisabledCommands`
+    - `DeleteRedisDisabledCommands`
+    - `ListInstanceSessions`
+    - `ClearInstanceSessions`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.1.112 2024-11-28
 
 ### HuaweiCloud SDK CBR

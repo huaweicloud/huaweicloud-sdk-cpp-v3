@@ -57,6 +57,10 @@ Traces::Traces()
     enterpriseProjectIdIsSet_ = false;
     resourceAccountId_ = "";
     resourceAccountIdIsSet_ = false;
+    readOnly_ = false;
+    readOnlyIsSet_ = false;
+    operationId_ = "";
+    operationIdIsSet_ = false;
 }
 
 Traces::~Traces() = default;
@@ -137,6 +141,12 @@ web::json::value Traces::toJson() const
     }
     if(resourceAccountIdIsSet_) {
         val[utility::conversions::to_string_t("resource_account_id")] = ModelBase::toJson(resourceAccountId_);
+    }
+    if(readOnlyIsSet_) {
+        val[utility::conversions::to_string_t("read_only")] = ModelBase::toJson(readOnly_);
+    }
+    if(operationIdIsSet_) {
+        val[utility::conversions::to_string_t("operation_id")] = ModelBase::toJson(operationId_);
     }
 
     return val;
@@ -350,6 +360,24 @@ bool Traces::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResourceAccountId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("read_only"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("read_only"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setReadOnly(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("operation_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("operation_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setOperationId(refVal);
         }
     }
     return ok;
@@ -837,6 +865,48 @@ bool Traces::resourceAccountIdIsSet() const
 void Traces::unsetresourceAccountId()
 {
     resourceAccountIdIsSet_ = false;
+}
+
+bool Traces::isReadOnly() const
+{
+    return readOnly_;
+}
+
+void Traces::setReadOnly(bool value)
+{
+    readOnly_ = value;
+    readOnlyIsSet_ = true;
+}
+
+bool Traces::readOnlyIsSet() const
+{
+    return readOnlyIsSet_;
+}
+
+void Traces::unsetreadOnly()
+{
+    readOnlyIsSet_ = false;
+}
+
+std::string Traces::getOperationId() const
+{
+    return operationId_;
+}
+
+void Traces::setOperationId(const std::string& value)
+{
+    operationId_ = value;
+    operationIdIsSet_ = true;
+}
+
+bool Traces::operationIdIsSet() const
+{
+    return operationIdIsSet_;
+}
+
+void Traces::unsetoperationId()
+{
+    operationIdIsSet_ = false;
 }
 
 }

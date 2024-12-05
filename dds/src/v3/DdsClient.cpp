@@ -3601,6 +3601,9 @@ std::shared_ptr<ShowInstanceConfigurationModifyHistoryResponse> DdsClient::showI
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.entityIdIsSet()) {
+        localVarQueryParams["entity_id"] = parameterToString(request.getEntityId());
+    }
     if (request.offsetIsSet()) {
         localVarQueryParams["offset"] = parameterToString(request.getOffset());
     }

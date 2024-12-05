@@ -138,6 +138,10 @@ public:
             { 
                 "https://ecs.ru-moscow-1.myhuaweicloud.com"
             });
+        regions["ap-southeast-5"] = Region("ap-southeast-5",
+            { 
+                "https://ecs.ap-southeast-5.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

@@ -139,6 +139,15 @@ public:
     void unseterrorMsg();
     void setErrorMsg(const std::string& value);
 
+    /// <summary>
+    /// 动态比对时延。
+    /// </summary>
+
+    int64_t getDynamicCompareDelay() const;
+    bool dynamicCompareDelayIsSet() const;
+    void unsetdynamicCompareDelay();
+    void setDynamicCompareDelay(int64_t value);
+
 
 protected:
     std::string id_;
@@ -163,6 +172,8 @@ protected:
     bool optionsIsSet_;
     std::string errorMsg_;
     bool errorMsgIsSet_;
+    int64_t dynamicCompareDelay_;
+    bool dynamicCompareDelayIsSet_;
 
 };
 

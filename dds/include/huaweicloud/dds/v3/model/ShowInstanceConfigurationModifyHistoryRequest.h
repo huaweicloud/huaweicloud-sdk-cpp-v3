@@ -48,6 +48,15 @@ public:
     void setInstanceId(const std::string& value);
 
     /// <summary>
+    /// 实例ID或组ID或节点ID。可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。
+    /// </summary>
+
+    std::string getEntityId() const;
+    bool entityIdIsSet() const;
+    void unsetentityId();
+    void setEntityId(const std::string& value);
+
+    /// <summary>
     /// 索引位置，偏移量。  从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询）。 取值必须为数字，不能为负数。
     /// </summary>
 
@@ -69,6 +78,8 @@ public:
 protected:
     std::string instanceId_;
     bool instanceIdIsSet_;
+    std::string entityId_;
+    bool entityIdIsSet_;
     int32_t offset_;
     bool offsetIsSet_;
     int32_t limit_;

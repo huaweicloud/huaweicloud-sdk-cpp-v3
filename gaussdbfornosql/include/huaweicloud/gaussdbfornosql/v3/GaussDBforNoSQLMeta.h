@@ -15,11 +15,13 @@ class HUAWEICLOUD_GAUSSDBFORNOSQL_V3_EXPORT  GaussDBforNoSQLMeta {
 public:
     static HttpRequestDef genRequestDefForApplyConfiguration();
     static HttpRequestDef genRequestDefForApplyConfigurationToInstances();
+    static HttpRequestDef genRequestDefForBatchDeleteManualBackup();
     static HttpRequestDef genRequestDefForBatchTagAction();
     static HttpRequestDef genRequestDefForBatchUpgradeDatabaseVersion();
     static HttpRequestDef genRequestDefForCancelInstanceScheduleWindow();
     static HttpRequestDef genRequestDefForCheckDisasterRecoveryOperation();
     static HttpRequestDef genRequestDefForCheckWeekPassword();
+    static HttpRequestDef genRequestDefForClearInstanceSessions();
     static HttpRequestDef genRequestDefForCompareConfiguration();
     static HttpRequestDef genRequestDefForCopyConfiguration();
     static HttpRequestDef genRequestDefForCreateBack();
@@ -40,6 +42,7 @@ public:
     static HttpRequestDef genRequestDefForDeleteInstance();
     static HttpRequestDef genRequestDefForDeleteInstancesSession();
     static HttpRequestDef genRequestDefForDeleteLtsConfigs();
+    static HttpRequestDef genRequestDefForDeleteRedisDisabledCommands();
     static HttpRequestDef genRequestDefForExpandInstanceNode();
     static HttpRequestDef genRequestDefForListAvailableFlavorInfos();
     static HttpRequestDef genRequestDefForListCassandraSlowLogs();
@@ -57,6 +60,7 @@ public:
     static HttpRequestDef genRequestDefForListInfluxdbSlowLogs();
     static HttpRequestDef genRequestDefForListInstanceDatabases();
     static HttpRequestDef genRequestDefForListInstanceMaintenanceWindow();
+    static HttpRequestDef genRequestDefForListInstanceSessions();
     static HttpRequestDef genRequestDefForListInstanceTags();
     static HttpRequestDef genRequestDefForListInstances();
     static HttpRequestDef genRequestDefForListInstancesByResourceTags();
@@ -94,8 +98,10 @@ public:
     static HttpRequestDef genRequestDefForRestoreExistingInstance();
     static HttpRequestDef genRequestDefForRestoreRedisPitr();
     static HttpRequestDef genRequestDefForSaveLtsConfigs();
+    static HttpRequestDef genRequestDefForSaveRedisDisabledCommands();
     static HttpRequestDef genRequestDefForSetAutoEnlargePolicy();
     static HttpRequestDef genRequestDefForSetBackupPolicy();
+    static HttpRequestDef genRequestDefForSetDisasterRecoverySettings();
     static HttpRequestDef genRequestDefForSetInstanceDataDump();
     static HttpRequestDef genRequestDefForSetRecyclePolicy();
     static HttpRequestDef genRequestDefForSetRedisPitrPolicy();
@@ -107,6 +113,7 @@ public:
     static HttpRequestDef genRequestDefForShowBackupPolicies();
     static HttpRequestDef genRequestDefForShowBackupPolicy();
     static HttpRequestDef genRequestDefForShowConfigurationDetail();
+    static HttpRequestDef genRequestDefForShowDisasterRecoverySettings();
     static HttpRequestDef genRequestDefForShowElbIpGroup();
     static HttpRequestDef genRequestDefForShowErrorLog();
     static HttpRequestDef genRequestDefForShowHighRiskCommands();
@@ -120,6 +127,8 @@ public:
     static HttpRequestDef genRequestDefForShowQuotas();
     static HttpRequestDef genRequestDefForShowRecyclePolicy();
     static HttpRequestDef genRequestDefForShowRedisBigKeys();
+    static HttpRequestDef genRequestDefForShowRedisDisabledCommands();
+    static HttpRequestDef genRequestDefForShowRedisHotKeys();
     static HttpRequestDef genRequestDefForShowRedisPitrInfo();
     static HttpRequestDef genRequestDefForShowRedisPitrPolicy();
     static HttpRequestDef genRequestDefForShowRestorableList();
@@ -128,6 +137,7 @@ public:
     static HttpRequestDef genRequestDefForShrinkInstanceNode();
     static HttpRequestDef genRequestDefForStopBackup();
     static HttpRequestDef genRequestDefForSwitchIpGroup();
+    static HttpRequestDef genRequestDefForSwitchOver();
     static HttpRequestDef genRequestDefForSwitchSecondLevelMonitoring();
     static HttpRequestDef genRequestDefForSwitchSlowlogDesensitization();
     static HttpRequestDef genRequestDefForSwitchSsl();

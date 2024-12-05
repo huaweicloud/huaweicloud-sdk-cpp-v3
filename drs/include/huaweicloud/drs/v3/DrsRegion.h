@@ -126,6 +126,10 @@ public:
             { 
                 "https://drs.ru-northwest-2.myhuaweicloud.com"
             });
+        regions["ap-southeast-5"] = Region("ap-southeast-5",
+            { 
+                "https://drs.ap-southeast-5.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

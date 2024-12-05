@@ -13,6 +13,9 @@
 #include <huaweicloud/gaussdbfornosql/v3/model/ApplyConfigurationToInstancesRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ApplyConfigurationToInstancesRequestBody.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ApplyConfigurationToInstancesResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/BatchDeleteManualBackupRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/BatchDeleteManualBackupRequestBody.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/BatchDeleteManualBackupResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/BatchTagActionRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/BatchTagActionRequestBody.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/BatchTagActionResponse.h>
@@ -26,6 +29,8 @@
 #include <huaweicloud/gaussdbfornosql/v3/model/CheckWeekPasswordRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/CheckWeekPasswordRequestBody.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/CheckWeekPasswordResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ClearInstanceSessionsRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ClearInstanceSessionsResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/CompareConfigurationRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/CompareConfigurationRequestBody.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/CompareConfigurationResponse.h>
@@ -79,6 +84,9 @@
 #include <huaweicloud/gaussdbfornosql/v3/model/DeleteLtsConfigsRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/DeleteLtsConfigsRequestBody.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/DeleteLtsConfigsResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/DeleteRedisDisabledCommandsRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/DeleteRedisDisabledCommandsRequestBody.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/DeleteRedisDisabledCommandsResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ErrorResponseBody.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ExpandInstanceNodeRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ExpandInstanceNodeRequestBody.h>
@@ -117,6 +125,8 @@
 #include <huaweicloud/gaussdbfornosql/v3/model/ListInstanceDatabasesResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListInstanceMaintenanceWindowRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListInstanceMaintenanceWindowResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ListInstanceSessionsRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ListInstanceSessionsResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListInstanceTagsRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListInstanceTagsResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListInstancesByResourceTagsRequest.h>
@@ -216,12 +226,18 @@
 #include <huaweicloud/gaussdbfornosql/v3/model/SaveLtsConfigsRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/SaveLtsConfigsRequestBody.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/SaveLtsConfigsResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/SaveRedisDisabledCommandsRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/SaveRedisDisabledCommandsRequestBody.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/SaveRedisDisabledCommandsResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/SetAutoEnlargePolicyRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/SetAutoEnlargePolicyResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/SetAutoPolicyRequestBody.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/SetBackupPolicyRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/SetBackupPolicyRequestBody.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/SetBackupPolicyResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/SetDisasterRecoverySettingsRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/SetDisasterRecoverySettingsRequestBody.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/SetDisasterRecoverySettingsResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/SetInstanceDataDumpRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/SetInstanceDataDumpRequestBody.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/SetInstanceDataDumpResponse.h>
@@ -246,6 +262,8 @@
 #include <huaweicloud/gaussdbfornosql/v3/model/ShowBackupPolicyResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ShowConfigurationDetailRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ShowConfigurationDetailResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ShowDisasterRecoverySettingsRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ShowDisasterRecoverySettingsResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ShowElbIpGroupRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ShowElbIpGroupResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ShowErrorLogRequest.h>
@@ -273,6 +291,10 @@
 #include <huaweicloud/gaussdbfornosql/v3/model/ShowRedisBigKeysRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ShowRedisBigKeysRequestBody.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ShowRedisBigKeysResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ShowRedisDisabledCommandsRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ShowRedisDisabledCommandsResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ShowRedisHotKeysRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/ShowRedisHotKeysResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ShowRedisPitrInfoRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ShowRedisPitrInfoResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ShowRedisPitrPolicyRequest.h>
@@ -292,6 +314,8 @@
 #include <huaweicloud/gaussdbfornosql/v3/model/SwitchIpGroupRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/SwitchIpGroupRequestBody.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/SwitchIpGroupResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/SwitchOverRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/SwitchOverResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/SwitchSecondLevelMonitoringRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/SwitchSecondLevelMonitoringRequestBody.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/SwitchSecondLevelMonitoringResponse.h>
@@ -385,6 +409,14 @@ public:
     std::shared_ptr<ApplyConfigurationToInstancesResponse> applyConfigurationToInstances(
         ApplyConfigurationToInstancesRequest &request
     );
+    // 批量删除手动备份
+    //
+    // 批量删除数据库实例的手动备份。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchDeleteManualBackupResponse> batchDeleteManualBackup(
+        BatchDeleteManualBackupRequest &request
+    );
     // 批量添加或删除资源标签
     //
     // 批量添加或删除指定数据库实例的标签。
@@ -425,6 +457,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CheckWeekPasswordResponse> checkWeekPassword(
         CheckWeekPasswordRequest &request
+    );
+    // 关闭实例所有节点会话
+    //
+    // 关闭实例所有节点会话。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ClearInstanceSessionsResponse> clearInstanceSessions(
+        ClearInstanceSessionsRequest &request
     );
     // 参数模板比较
     //
@@ -586,6 +626,14 @@ public:
     std::shared_ptr<DeleteLtsConfigsResponse> deleteLtsConfigs(
         DeleteLtsConfigsRequest &request
     );
+    // 删除Redis禁用命令
+    //
+    // 删除Redis禁用命令。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteRedisDisabledCommandsResponse> deleteRedisDisabledCommands(
+        DeleteRedisDisabledCommandsRequest &request
+    );
     // 扩容指定集群实例的节点数量
     //
     // 扩容指定集群实例的节点数量。
@@ -714,13 +762,21 @@ public:
     std::shared_ptr<ListInstanceDatabasesResponse> listInstanceDatabases(
         ListInstanceDatabasesRequest &request
     );
-    // 
-    //
     // 查询实例可维护时间段
+    //
+    // 查询实例可维护时间段。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListInstanceMaintenanceWindowResponse> listInstanceMaintenanceWindow(
         ListInstanceMaintenanceWindowRequest &request
+    );
+    // 获取实例的会话
+    //
+    // 获取实例的会话。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListInstanceSessionsResponse> listInstanceSessions(
+        ListInstanceSessionsRequest &request
     );
     // 查询资源标签
     //
@@ -890,7 +946,7 @@ public:
     std::shared_ptr<ModifyEpsQuotasResponse> modifyEpsQuotas(
         ModifyEpsQuotasRequest &request
     );
-    // 查询实例可维护时间段
+    // 设置实例可维护时间段
     //
     // 设置指定实例可维护时间段。
     // 
@@ -1022,6 +1078,14 @@ public:
     std::shared_ptr<SaveLtsConfigsResponse> saveLtsConfigs(
         SaveLtsConfigsRequest &request
     );
+    // 设置Redis禁用命令
+    //
+    // 设置Redis禁用命令。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SaveRedisDisabledCommandsResponse> saveRedisDisabledCommands(
+        SaveRedisDisabledCommandsRequest &request
+    );
     // 设置磁盘自动扩容策略
     //
     // 设置磁盘自动扩容策略。
@@ -1037,6 +1101,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<SetBackupPolicyResponse> setBackupPolicy(
         SetBackupPolicyRequest &request
+    );
+    // 设置实例容灾切换的故障节点比例
+    //
+    // 设置实例容灾切换的故障节点比例。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SetDisasterRecoverySettingsResponse> setDisasterRecoverySettings(
+        SetDisasterRecoverySettingsRequest &request
     );
     // 开启/关闭实例数据导出
     //
@@ -1125,6 +1197,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowConfigurationDetailResponse> showConfigurationDetail(
         ShowConfigurationDetailRequest &request
+    );
+    // 查询实例容灾切换的故障节点比例
+    //
+    // 查询实例容灾切换的故障节点比例。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowDisasterRecoverySettingsResponse> showDisasterRecoverySettings(
+        ShowDisasterRecoverySettingsRequest &request
     );
     // 查询实例负载均衡的IP访问黑白名单
     //
@@ -1230,6 +1310,22 @@ public:
     std::shared_ptr<ShowRedisBigKeysResponse> showRedisBigKeys(
         ShowRedisBigKeysRequest &request
     );
+    // 查询Redis禁用命令
+    //
+    // 查询Redis禁用命令。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowRedisDisabledCommandsResponse> showRedisDisabledCommands(
+        ShowRedisDisabledCommandsRequest &request
+    );
+    // 查询Redis实例的热key
+    //
+    // 支持查询Redis实例的热key。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowRedisHotKeysResponse> showRedisHotKeys(
+        ShowRedisHotKeysRequest &request
+    );
     // 查询Redis实例指定时间点恢复所占用的存储空间
     //
     // 查询Redis实例指定时间点恢复所占用的存储空间。
@@ -1293,6 +1389,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<SwitchIpGroupResponse> switchIpGroup(
         SwitchIpGroupRequest &request
+    );
+    // Redis主备切换
+    //
+    // 切换实例下的主备节点
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SwitchOverResponse> switchOver(
+        SwitchOverRequest &request
     );
     // 开启/关闭秒级监控
     //

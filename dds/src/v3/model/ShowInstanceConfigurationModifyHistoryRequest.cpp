@@ -14,6 +14,8 @@ ShowInstanceConfigurationModifyHistoryRequest::ShowInstanceConfigurationModifyHi
 {
     instanceId_ = "";
     instanceIdIsSet_ = false;
+    entityId_ = "";
+    entityIdIsSet_ = false;
     offset_ = 0;
     offsetIsSet_ = false;
     limit_ = 0;
@@ -32,6 +34,9 @@ web::json::value ShowInstanceConfigurationModifyHistoryRequest::toJson() const
 
     if(instanceIdIsSet_) {
         val[utility::conversions::to_string_t("instance_id")] = ModelBase::toJson(instanceId_);
+    }
+    if(entityIdIsSet_) {
+        val[utility::conversions::to_string_t("entity_id")] = ModelBase::toJson(entityId_);
     }
     if(offsetIsSet_) {
         val[utility::conversions::to_string_t("offset")] = ModelBase::toJson(offset_);
@@ -53,6 +58,15 @@ bool ShowInstanceConfigurationModifyHistoryRequest::fromJson(const web::json::va
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setInstanceId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("entity_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("entity_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEntityId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("offset"))) {
@@ -96,6 +110,27 @@ bool ShowInstanceConfigurationModifyHistoryRequest::instanceIdIsSet() const
 void ShowInstanceConfigurationModifyHistoryRequest::unsetinstanceId()
 {
     instanceIdIsSet_ = false;
+}
+
+std::string ShowInstanceConfigurationModifyHistoryRequest::getEntityId() const
+{
+    return entityId_;
+}
+
+void ShowInstanceConfigurationModifyHistoryRequest::setEntityId(const std::string& value)
+{
+    entityId_ = value;
+    entityIdIsSet_ = true;
+}
+
+bool ShowInstanceConfigurationModifyHistoryRequest::entityIdIsSet() const
+{
+    return entityIdIsSet_;
+}
+
+void ShowInstanceConfigurationModifyHistoryRequest::unsetentityId()
+{
+    entityIdIsSet_ = false;
 }
 
 int32_t ShowInstanceConfigurationModifyHistoryRequest::getOffset() const

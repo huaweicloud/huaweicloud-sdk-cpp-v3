@@ -246,6 +246,24 @@ public:
     void unsetresourceAccountId();
     void setResourceAccountId(const std::string& value);
 
+    /// <summary>
+    /// 标识用户请求是不是只读。
+    /// </summary>
+
+    bool isReadOnly() const;
+    bool readOnlyIsSet() const;
+    void unsetreadOnly();
+    void setReadOnly(bool value);
+
+    /// <summary>
+    /// 记录事件对应的操作ID。
+    /// </summary>
+
+    std::string getOperationId() const;
+    bool operationIdIsSet() const;
+    void unsetoperationId();
+    void setOperationId(const std::string& value);
+
 
 protected:
     std::string resourceId_;
@@ -294,6 +312,10 @@ protected:
     bool enterpriseProjectIdIsSet_;
     std::string resourceAccountId_;
     bool resourceAccountIdIsSet_;
+    bool readOnly_;
+    bool readOnlyIsSet_;
+    std::string operationId_;
+    bool operationIdIsSet_;
 
 };
 

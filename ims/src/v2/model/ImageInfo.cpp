@@ -131,6 +131,10 @@ ImageInfo::ImageInfo()
     imageDisplaynameIsSet_ = false;
     supportAmd_ = "";
     supportAmdIsSet_ = false;
+    supportKvmHi1822Hisriov_ = "";
+    supportKvmHi1822HisriovIsSet_ = false;
+    supportKvmHi1822Hivirtionet_ = "";
+    supportKvmHi1822HivirtionetIsSet_ = false;
 }
 
 ImageInfo::~ImageInfo() = default;
@@ -322,6 +326,12 @@ web::json::value ImageInfo::toJson() const
     }
     if(supportAmdIsSet_) {
         val[utility::conversions::to_string_t("__support_amd")] = ModelBase::toJson(supportAmd_);
+    }
+    if(supportKvmHi1822HisriovIsSet_) {
+        val[utility::conversions::to_string_t("__support_kvm_hi1822_hisriov")] = ModelBase::toJson(supportKvmHi1822Hisriov_);
+    }
+    if(supportKvmHi1822HivirtionetIsSet_) {
+        val[utility::conversions::to_string_t("__support_kvm_hi1822_hivirtionet")] = ModelBase::toJson(supportKvmHi1822Hivirtionet_);
     }
 
     return val;
@@ -868,6 +878,24 @@ bool ImageInfo::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSupportAmd(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("__support_kvm_hi1822_hisriov"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("__support_kvm_hi1822_hisriov"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSupportKvmHi1822Hisriov(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("__support_kvm_hi1822_hivirtionet"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("__support_kvm_hi1822_hivirtionet"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSupportKvmHi1822Hivirtionet(refVal);
         }
     }
     return ok;
@@ -2132,6 +2160,48 @@ bool ImageInfo::supportAmdIsSet() const
 void ImageInfo::unsetsupportAmd()
 {
     supportAmdIsSet_ = false;
+}
+
+std::string ImageInfo::getSupportKvmHi1822Hisriov() const
+{
+    return supportKvmHi1822Hisriov_;
+}
+
+void ImageInfo::setSupportKvmHi1822Hisriov(const std::string& value)
+{
+    supportKvmHi1822Hisriov_ = value;
+    supportKvmHi1822HisriovIsSet_ = true;
+}
+
+bool ImageInfo::supportKvmHi1822HisriovIsSet() const
+{
+    return supportKvmHi1822HisriovIsSet_;
+}
+
+void ImageInfo::unsetsupportKvmHi1822Hisriov()
+{
+    supportKvmHi1822HisriovIsSet_ = false;
+}
+
+std::string ImageInfo::getSupportKvmHi1822Hivirtionet() const
+{
+    return supportKvmHi1822Hivirtionet_;
+}
+
+void ImageInfo::setSupportKvmHi1822Hivirtionet(const std::string& value)
+{
+    supportKvmHi1822Hivirtionet_ = value;
+    supportKvmHi1822HivirtionetIsSet_ = true;
+}
+
+bool ImageInfo::supportKvmHi1822HivirtionetIsSet() const
+{
+    return supportKvmHi1822HivirtionetIsSet_;
+}
+
+void ImageInfo::unsetsupportKvmHi1822Hivirtionet()
+{
+    supportKvmHi1822HivirtionetIsSet_ = false;
 }
 
 }

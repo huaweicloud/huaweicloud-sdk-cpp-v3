@@ -39,7 +39,7 @@ public:
     /// CreateDatabaseRequest_database members
 
     /// <summary>
-    /// 数据库分类 - RDS: RDS数据库 - ECS:自建数据库
+    /// 数据库分类 - ECS:自建数据库
     /// </summary>
 
     std::string getDbClassification() const;

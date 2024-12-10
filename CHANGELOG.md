@@ -1,3 +1,57 @@
+# 3.1.114 2024-12-10
+
+### HuaweiCloud SDK CSMS
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the following APIs:
+    - `ListUsers`
+    - `ListGrants`
+    - `UpdateGrant`
+    - `CreateGrants`
+    - `DeleteGrant`
+    - `GenerateRandomPassword`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK DBSS
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListRdsDatabases**
+    - changes of request param
+      - `+ db_type: enum value [ORACLE,DAMENG,KINGBASE]`
+  - **SwitchAuditDatabase**
+    - changes of response param
+      - `+ status`
+      - `- result`
+
+### HuaweiCloud SDK IMS
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListImages**
+    - changes of response param
+      - `+ images.__support_kvm_hi1822_hisriov`
+      - `+ images.__support_kvm_hi1822_hivirtionet`
+  - **UpdateImage**
+    - changes of response param
+      - `+ __support_kvm_hi1822_hisriov`
+      - `+ __support_kvm_hi1822_hivirtionet`
+
 # 3.1.113 2024-12-05
 
 ### HuaweiCloud SDK CTS

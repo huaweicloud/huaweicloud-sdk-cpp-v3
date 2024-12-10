@@ -52,6 +52,7 @@ public:
     static HttpRequestDef genRequestDefForListDbFlavors();
     static HttpRequestDef genRequestDefForListDbUsers();
     static HttpRequestDef genRequestDefForListEpsQuotas();
+    static HttpRequestDef genRequestDefForListFeatures();
     static HttpRequestDef genRequestDefForListFlavors();
     static HttpRequestDef genRequestDefForListGaussDbDatastores();
     static HttpRequestDef genRequestDefForListHistoryOperations();
@@ -108,6 +109,7 @@ public:
     static HttpRequestDef genRequestDefForStopInstance();
     static HttpRequestDef genRequestDefForSwitchConfiguration();
     static HttpRequestDef genRequestDefForSwitchShard();
+    static HttpRequestDef genRequestDefForUpdateFeatures();
     static HttpRequestDef genRequestDefForUpdateInstanceConfiguration();
     static HttpRequestDef genRequestDefForUpdateInstanceName();
     static HttpRequestDef genRequestDefForUpdateMysqlCompatibility();

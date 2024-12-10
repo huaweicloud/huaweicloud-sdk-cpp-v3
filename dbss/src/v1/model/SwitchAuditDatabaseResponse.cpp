@@ -12,8 +12,8 @@ namespace Model {
 
 SwitchAuditDatabaseResponse::SwitchAuditDatabaseResponse()
 {
-    result_ = "";
-    resultIsSet_ = false;
+    status_ = "";
+    statusIsSet_ = false;
 }
 
 SwitchAuditDatabaseResponse::~SwitchAuditDatabaseResponse() = default;
@@ -26,8 +26,8 @@ web::json::value SwitchAuditDatabaseResponse::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(resultIsSet_) {
-        val[utility::conversions::to_string_t("result")] = ModelBase::toJson(result_);
+    if(statusIsSet_) {
+        val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
     }
 
     return val;
@@ -36,38 +36,38 @@ bool SwitchAuditDatabaseResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("result"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("result"));
+    if(val.has_field(utility::conversions::to_string_t("status"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("status"));
         if(!fieldValue.is_null())
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setResult(refVal);
+            setStatus(refVal);
         }
     }
     return ok;
 }
 
 
-std::string SwitchAuditDatabaseResponse::getResult() const
+std::string SwitchAuditDatabaseResponse::getStatus() const
 {
-    return result_;
+    return status_;
 }
 
-void SwitchAuditDatabaseResponse::setResult(const std::string& value)
+void SwitchAuditDatabaseResponse::setStatus(const std::string& value)
 {
-    result_ = value;
-    resultIsSet_ = true;
+    status_ = value;
+    statusIsSet_ = true;
 }
 
-bool SwitchAuditDatabaseResponse::resultIsSet() const
+bool SwitchAuditDatabaseResponse::statusIsSet() const
 {
-    return resultIsSet_;
+    return statusIsSet_;
 }
 
-void SwitchAuditDatabaseResponse::unsetresult()
+void SwitchAuditDatabaseResponse::unsetstatus()
 {
-    resultIsSet_ = false;
+    statusIsSet_ = false;
 }
 
 }

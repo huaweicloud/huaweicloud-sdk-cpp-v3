@@ -12,6 +12,9 @@
 #include <huaweicloud/csms/v1/model/CreateAgencyRequest.h>
 #include <huaweicloud/csms/v1/model/CreateAgencyRequestBody.h>
 #include <huaweicloud/csms/v1/model/CreateAgencyResponse.h>
+#include <huaweicloud/csms/v1/model/CreateGrantsRequest.h>
+#include <huaweicloud/csms/v1/model/CreateGrantsResponse.h>
+#include <huaweicloud/csms/v1/model/CreatePasswordRequestBody.h>
 #include <huaweicloud/csms/v1/model/CreateSecretEventRequest.h>
 #include <huaweicloud/csms/v1/model/CreateSecretEventRequestBody.h>
 #include <huaweicloud/csms/v1/model/CreateSecretEventResponse.h>
@@ -24,6 +27,8 @@
 #include <huaweicloud/csms/v1/model/CreateSecretVersionRequest.h>
 #include <huaweicloud/csms/v1/model/CreateSecretVersionRequestBody.h>
 #include <huaweicloud/csms/v1/model/CreateSecretVersionResponse.h>
+#include <huaweicloud/csms/v1/model/DeleteGrantRequest.h>
+#include <huaweicloud/csms/v1/model/DeleteGrantResponse.h>
 #include <huaweicloud/csms/v1/model/DeleteSecretEventRequest.h>
 #include <huaweicloud/csms/v1/model/DeleteSecretEventResponse.h>
 #include <huaweicloud/csms/v1/model/DeleteSecretForScheduleRequest.h>
@@ -37,6 +42,11 @@
 #include <huaweicloud/csms/v1/model/DeleteSecretTagResponse.h>
 #include <huaweicloud/csms/v1/model/DownloadSecretBlobRequest.h>
 #include <huaweicloud/csms/v1/model/DownloadSecretBlobResponse.h>
+#include <huaweicloud/csms/v1/model/GenerateRandomPasswordRequest.h>
+#include <huaweicloud/csms/v1/model/GenerateRandomPasswordResponse.h>
+#include <huaweicloud/csms/v1/model/GrantSecretReqBody.h>
+#include <huaweicloud/csms/v1/model/ListGrantsRequest.h>
+#include <huaweicloud/csms/v1/model/ListGrantsResponse.h>
 #include <huaweicloud/csms/v1/model/ListNotificationRecordsRequest.h>
 #include <huaweicloud/csms/v1/model/ListNotificationRecordsResponse.h>
 #include <huaweicloud/csms/v1/model/ListProjectSecretsTagsRequest.h>
@@ -54,6 +64,8 @@
 #include <huaweicloud/csms/v1/model/ListSecretVersionsResponse.h>
 #include <huaweicloud/csms/v1/model/ListSecretsRequest.h>
 #include <huaweicloud/csms/v1/model/ListSecretsResponse.h>
+#include <huaweicloud/csms/v1/model/ListUsersRequest.h>
+#include <huaweicloud/csms/v1/model/ListUsersResponse.h>
 #include <huaweicloud/csms/v1/model/RestoreSecretRequest.h>
 #include <huaweicloud/csms/v1/model/RestoreSecretResponse.h>
 #include <huaweicloud/csms/v1/model/RotateSecretRequest.h>
@@ -70,6 +82,8 @@
 #include <huaweicloud/csms/v1/model/ShowSecretStageResponse.h>
 #include <huaweicloud/csms/v1/model/ShowSecretVersionRequest.h>
 #include <huaweicloud/csms/v1/model/ShowSecretVersionResponse.h>
+#include <huaweicloud/csms/v1/model/UpdateGrantRequest.h>
+#include <huaweicloud/csms/v1/model/UpdateGrantResponse.h>
 #include <huaweicloud/csms/v1/model/UpdateSecretEventRequest.h>
 #include <huaweicloud/csms/v1/model/UpdateSecretEventRequestBody.h>
 #include <huaweicloud/csms/v1/model/UpdateSecretEventResponse.h>
@@ -127,6 +141,14 @@ public:
     std::shared_ptr<CreateAgencyResponse> createAgency(
         CreateAgencyRequest &request
     );
+    // 授权操作
+    //
+    // 授权操作
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateGrantsResponse> createGrants(
+        CreateGrantsRequest &request
+    );
     // 创建凭据
     //
     // 创建新的凭据，并将凭据值存入凭据的初始版本。
@@ -162,6 +184,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateSecretVersionResponse> createSecretVersion(
         CreateSecretVersionRequest &request
+    );
+    // 删除授权
+    //
+    // 删除授权
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteGrantResponse> deleteGrant(
+        DeleteGrantRequest &request
     );
     // 立即删除凭据
     //
@@ -210,6 +240,22 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DownloadSecretBlobResponse> downloadSecretBlob(
         DownloadSecretBlobRequest &request
+    );
+    // 
+    //
+    // 生成随机密码
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<GenerateRandomPasswordResponse> generateRandomPassword(
+        GenerateRandomPasswordRequest &request
+    );
+    // 授权列表
+    //
+    // 授权列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListGrantsResponse> listGrants(
+        ListGrantsRequest &request
     );
     // 查询已触发的事件通知记录
     //
@@ -275,6 +321,14 @@ public:
     std::shared_ptr<ListSecretsResponse> listSecrets(
         ListSecretsRequest &request
     );
+    // 查询用户列表
+    //
+    // 查询用户列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListUsersResponse> listUsers(
+        ListUsersRequest &request
+    );
     // 取消凭据的定时删除任务
     //
     // 取消凭据的定时删除任务，凭据对象恢复可使用状态。
@@ -339,6 +393,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowSecretVersionResponse> showSecretVersion(
         ShowSecretVersionRequest &request
+    );
+    // 更新授权
+    //
+    // 更新授权
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateGrantResponse> updateGrant(
+        UpdateGrantRequest &request
     );
     // 更新凭据
     //

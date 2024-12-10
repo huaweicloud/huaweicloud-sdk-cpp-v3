@@ -61,6 +61,7 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/DownloadBackupRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/DownloadBackupResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/FlavorErrorResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/GaussDBErrorResponseBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/GaussDBUpgradeInstancesVersionRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/GaussDBforOpenDatabaseForCreation.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/GaussDBforOpenGaussDatabaseSchemaReq.h>
@@ -101,6 +102,8 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListDbUsersResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListEpsQuotasRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListEpsQuotasResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListFeaturesRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListFeaturesResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListFlavorsRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListFlavorsResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListGaussDbDatastoresRequest.h>
@@ -240,6 +243,9 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/SwitchShardRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/SwitchShardRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/SwitchShardResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/UpdateFeaturesRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/UpdateFeaturesRequestBody.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/UpdateFeaturesResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/UpdateInstanceConfigurationRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/UpdateInstanceConfigurationResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/UpdateInstanceNameRequest.h>
@@ -613,6 +619,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListEpsQuotasResponse> listEpsQuotas(
         ListEpsQuotasRequest &request
+    );
+    // 查询实例特性列表
+    //
+    // 查询当前实例高级特性列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListFeaturesResponse> listFeatures(
+        ListFeaturesRequest &request
     );
     // 查询数据库规格
     //
@@ -1061,6 +1075,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<SwitchShardResponse> switchShard(
         SwitchShardRequest &request
+    );
+    // 开启特性
+    //
+    // 打开高级特性开关。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateFeaturesResponse> updateFeatures(
+        UpdateFeaturesRequest &request
     );
     // 修改指定实例的参数
     //

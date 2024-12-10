@@ -26,6 +26,15 @@ HttpRequestDef CsmsMeta::genRequestDefForCreateAgency() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CsmsMeta::genRequestDefForCreateGrants() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CsmsMeta::genRequestDefForCreateSecret() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -62,6 +71,17 @@ HttpRequestDef CsmsMeta::genRequestDefForCreateSecretVersion() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CsmsMeta::genRequestDefForDeleteGrant() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("GranteeUser")
+                  .withJsonTag("grantee_user")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ResourceId")
+                  .withJsonTag("resource_id")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CsmsMeta::genRequestDefForDeleteSecret() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
@@ -93,6 +113,23 @@ HttpRequestDef CsmsMeta::genRequestDefForDeleteSecretTag() {
 
 HttpRequestDef CsmsMeta::genRequestDefForDownloadSecretBlob() {
     HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef CsmsMeta::genRequestDefForGenerateRandomPassword() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CsmsMeta::genRequestDefForListGrants() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("ResourceId")
+                  .withJsonTag("resource_id")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 
@@ -176,6 +213,23 @@ HttpRequestDef CsmsMeta::genRequestDefForListSecrets() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CsmsMeta::genRequestDefForListUsers() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("OrgId")
+                  .withJsonTag("org_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("UserName")
+                  .withJsonTag("user_name")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CsmsMeta::genRequestDefForRestoreSecret() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
@@ -225,6 +279,18 @@ HttpRequestDef CsmsMeta::genRequestDefForShowSecretStage() {
 
 HttpRequestDef CsmsMeta::genRequestDefForShowSecretVersion() {
     HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef CsmsMeta::genRequestDefForUpdateGrant() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("ResourceId")
+                  .withJsonTag("resource_id")
+                  .withLocationType(Query_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
     return reqDefBuilder;
 }
 

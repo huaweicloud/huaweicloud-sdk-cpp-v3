@@ -15,16 +15,20 @@ class HUAWEICLOUD_CSMS_V1_EXPORT  CsmsMeta {
 public:
     static HttpRequestDef genRequestDefForBatchCreateOrDeleteTags();
     static HttpRequestDef genRequestDefForCreateAgency();
+    static HttpRequestDef genRequestDefForCreateGrants();
     static HttpRequestDef genRequestDefForCreateSecret();
     static HttpRequestDef genRequestDefForCreateSecretEvent();
     static HttpRequestDef genRequestDefForCreateSecretTag();
     static HttpRequestDef genRequestDefForCreateSecretVersion();
+    static HttpRequestDef genRequestDefForDeleteGrant();
     static HttpRequestDef genRequestDefForDeleteSecret();
     static HttpRequestDef genRequestDefForDeleteSecretEvent();
     static HttpRequestDef genRequestDefForDeleteSecretForSchedule();
     static HttpRequestDef genRequestDefForDeleteSecretStage();
     static HttpRequestDef genRequestDefForDeleteSecretTag();
     static HttpRequestDef genRequestDefForDownloadSecretBlob();
+    static HttpRequestDef genRequestDefForGenerateRandomPassword();
+    static HttpRequestDef genRequestDefForListGrants();
     static HttpRequestDef genRequestDefForListNotificationRecords();
     static HttpRequestDef genRequestDefForListProjectSecretsTags();
     static HttpRequestDef genRequestDefForListResourceInstances();
@@ -33,6 +37,7 @@ public:
     static HttpRequestDef genRequestDefForListSecretTask();
     static HttpRequestDef genRequestDefForListSecretVersions();
     static HttpRequestDef genRequestDefForListSecrets();
+    static HttpRequestDef genRequestDefForListUsers();
     static HttpRequestDef genRequestDefForRestoreSecret();
     static HttpRequestDef genRequestDefForRotateSecret();
     static HttpRequestDef genRequestDefForShowAgency();
@@ -41,6 +46,7 @@ public:
     static HttpRequestDef genRequestDefForShowSecretFunctionTemplates();
     static HttpRequestDef genRequestDefForShowSecretStage();
     static HttpRequestDef genRequestDefForShowSecretVersion();
+    static HttpRequestDef genRequestDefForUpdateGrant();
     static HttpRequestDef genRequestDefForUpdateSecret();
     static HttpRequestDef genRequestDefForUpdateSecretEvent();
     static HttpRequestDef genRequestDefForUpdateSecretStage();

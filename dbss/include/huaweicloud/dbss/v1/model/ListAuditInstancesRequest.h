@@ -39,7 +39,7 @@ public:
     /// ListAuditInstancesRequest members
 
     /// <summary>
-    /// 偏移量
+    /// 偏移量，默认0。
     /// </summary>
 
     std::string getOffset() const;
@@ -48,7 +48,7 @@ public:
     void setOffset(const std::string& value);
 
     /// <summary>
-    /// 查询记录数
+    /// 查询记录数，默认100，最大1000。
     /// </summary>
 
     std::string getLimit() const;

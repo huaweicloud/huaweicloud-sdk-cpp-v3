@@ -579,6 +579,24 @@ public:
     void unsetsupportAmd();
     void setSupportAmd(const std::string& value);
 
+    /// <summary>
+    /// 如果镜像支持sriov直通，取值为true，否则无需增加该属性。
+    /// </summary>
+
+    std::string getSupportKvmHi1822Hisriov() const;
+    bool supportKvmHi1822HisriovIsSet() const;
+    void unsetsupportKvmHi1822Hisriov();
+    void setSupportKvmHi1822Hisriov(const std::string& value);
+
+    /// <summary>
+    /// 如果镜像支持Virtio-net直通规格，取值为true，否则无需增加该属性。
+    /// </summary>
+
+    std::string getSupportKvmHi1822Hivirtionet() const;
+    bool supportKvmHi1822HivirtionetIsSet() const;
+    void unsetsupportKvmHi1822Hivirtionet();
+    void setSupportKvmHi1822Hivirtionet(const std::string& value);
+
 
 protected:
     std::string backupId_;
@@ -701,6 +719,10 @@ protected:
     bool imageDisplaynameIsSet_;
     std::string supportAmd_;
     bool supportAmdIsSet_;
+    std::string supportKvmHi1822Hisriov_;
+    bool supportKvmHi1822HisriovIsSet_;
+    std::string supportKvmHi1822Hivirtionet_;
+    bool supportKvmHi1822HivirtionetIsSet_;
 
 };
 

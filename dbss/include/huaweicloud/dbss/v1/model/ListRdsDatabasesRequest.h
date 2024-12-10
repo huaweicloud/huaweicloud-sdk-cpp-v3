@@ -39,7 +39,7 @@ public:
     /// ListRdsDatabasesRequest members
 
     /// <summary>
-    /// 数据库类型 - MYSQL - ORACLE - POSTGRESQL - SQLSERVER - DAMENG - TAURUS - DWS - KINGBASE - MARIADB - GAUSSDBOPENGAUSS
+    /// 数据库类型 - MYSQL - POSTGRESQL - SQLSERVER - TAURUS - DWS - MARIADB - GAUSSDBOPENGAUSS
     /// </summary>
 
     std::string getDbType() const;

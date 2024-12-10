@@ -42,15 +42,15 @@ public:
     /// 响应状态
     /// </summary>
 
-    std::string getResult() const;
-    bool resultIsSet() const;
-    void unsetresult();
-    void setResult(const std::string& value);
+    std::string getStatus() const;
+    bool statusIsSet() const;
+    void unsetstatus();
+    void setStatus(const std::string& value);
 
 
 protected:
-    std::string result_;
-    bool resultIsSet_;
+    std::string status_;
+    bool statusIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

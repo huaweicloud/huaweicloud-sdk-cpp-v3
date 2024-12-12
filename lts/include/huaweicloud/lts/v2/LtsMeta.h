@@ -53,6 +53,7 @@ public:
     static HttpRequestDef genRequestDefForListHost();
     static HttpRequestDef genRequestDefForListHostGroup();
     static HttpRequestDef genRequestDefForListKeywordsAlarmRules();
+    static HttpRequestDef genRequestDefForListLogContext();
     static HttpRequestDef genRequestDefForListLogGroups();
     static HttpRequestDef genRequestDefForListLogHistogram();
     static HttpRequestDef genRequestDefForListLogStream();

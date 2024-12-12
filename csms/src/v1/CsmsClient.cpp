@@ -932,8 +932,8 @@ std::shared_ptr<ListUsersResponse> CsmsClient::listUsers(ListUsersRequest &reque
     if (request.limitIsSet()) {
         localVarQueryParams["limit"] = parameterToString(request.getLimit());
     }
-    if (request.userNameIsSet()) {
-        localVarQueryParams["user_name"] = parameterToString(request.getUserName());
+    if (request.userInfoIsSet()) {
+        localVarQueryParams["user_info"] = parameterToString(request.getUserInfo());
     }
 
     std::string localVarHttpBody;

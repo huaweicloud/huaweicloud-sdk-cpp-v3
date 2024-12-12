@@ -37,6 +37,9 @@ StarRocksCreateRequest::StarRocksCreateRequest()
     tagsInfoIsSet_ = false;
     securityGroupId_ = "";
     securityGroupIdIsSet_ = false;
+    payInfoIsSet_ = false;
+    regionCode_ = "";
+    regionCodeIsSet_ = false;
 }
 
 StarRocksCreateRequest::~StarRocksCreateRequest() = default;
@@ -93,6 +96,12 @@ web::json::value StarRocksCreateRequest::toJson() const
     }
     if(securityGroupIdIsSet_) {
         val[utility::conversions::to_string_t("security_group_id")] = ModelBase::toJson(securityGroupId_);
+    }
+    if(payInfoIsSet_) {
+        val[utility::conversions::to_string_t("pay_info")] = ModelBase::toJson(payInfo_);
+    }
+    if(regionCodeIsSet_) {
+        val[utility::conversions::to_string_t("region_code")] = ModelBase::toJson(regionCode_);
     }
 
     return val;
@@ -234,6 +243,24 @@ bool StarRocksCreateRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSecurityGroupId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("pay_info"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("pay_info"));
+        if(!fieldValue.is_null())
+        {
+            StarRocksCreateRequest_pay_info refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPayInfo(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("region_code"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("region_code"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRegionCode(refVal);
         }
     }
     return ok;
@@ -553,6 +580,48 @@ bool StarRocksCreateRequest::securityGroupIdIsSet() const
 void StarRocksCreateRequest::unsetsecurityGroupId()
 {
     securityGroupIdIsSet_ = false;
+}
+
+StarRocksCreateRequest_pay_info StarRocksCreateRequest::getPayInfo() const
+{
+    return payInfo_;
+}
+
+void StarRocksCreateRequest::setPayInfo(const StarRocksCreateRequest_pay_info& value)
+{
+    payInfo_ = value;
+    payInfoIsSet_ = true;
+}
+
+bool StarRocksCreateRequest::payInfoIsSet() const
+{
+    return payInfoIsSet_;
+}
+
+void StarRocksCreateRequest::unsetpayInfo()
+{
+    payInfoIsSet_ = false;
+}
+
+std::string StarRocksCreateRequest::getRegionCode() const
+{
+    return regionCode_;
+}
+
+void StarRocksCreateRequest::setRegionCode(const std::string& value)
+{
+    regionCode_ = value;
+    regionCodeIsSet_ = true;
+}
+
+bool StarRocksCreateRequest::regionCodeIsSet() const
+{
+    return regionCodeIsSet_;
+}
+
+void StarRocksCreateRequest::unsetregionCode()
+{
+    regionCodeIsSet_ = false;
 }
 
 }

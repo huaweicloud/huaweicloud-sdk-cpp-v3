@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_LTS_V2_MODEL_LTSFieldsInfo_H_
-#define HUAWEICLOUD_SDK_LTS_V2_MODEL_LTSFieldsInfo_H_
+#ifndef HUAWEICLOUD_SDK_LTS_V2_MODEL_LTSSubFieldsInfo_H_
+#define HUAWEICLOUD_SDK_LTS_V2_MODEL_LTSSubFieldsInfo_H_
 
 
 #include <huaweicloud/lts/v2/LtsExport.h>
@@ -10,7 +10,6 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
-#include <huaweicloud/lts/v2/model/LTSSubFieldsInfo.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -22,14 +21,14 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 
+/// json子字段信息
 /// </summary>
-class HUAWEICLOUD_LTS_V2_EXPORT  LTSFieldsInfo
+class HUAWEICLOUD_LTS_V2_EXPORT  LTSSubFieldsInfo
     : public ModelBase
 {
 public:
-    LTSFieldsInfo();
-    virtual ~LTSFieldsInfo();
+    LTSSubFieldsInfo();
+    virtual ~LTSSubFieldsInfo();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -38,7 +37,7 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// LTSFieldsInfo members
+    /// LTSSubFieldsInfo members
 
     /// <summary>
     /// 字段类型
@@ -103,15 +102,6 @@ public:
     void unsetascii();
     void setAscii(const std::vector<std::string>& value);
 
-    /// <summary>
-    /// json字段信息
-    /// </summary>
-
-    std::vector<LTSSubFieldsInfo>& getLtsSubFieldsInfoList();
-    bool ltsSubFieldsInfoListIsSet() const;
-    void unsetltsSubFieldsInfoList();
-    void setLtsSubFieldsInfoList(const std::vector<LTSSubFieldsInfo>& value);
-
 
 protected:
     std::string fieldType_;
@@ -128,8 +118,6 @@ protected:
     bool quickAnalysisIsSet_;
     std::vector<std::string> ascii_;
     bool asciiIsSet_;
-    std::vector<LTSSubFieldsInfo> ltsSubFieldsInfoList_;
-    bool ltsSubFieldsInfoListIsSet_;
 
 };
 
@@ -140,4 +128,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_LTS_V2_MODEL_LTSFieldsInfo_H_
+#endif // HUAWEICLOUD_SDK_LTS_V2_MODEL_LTSSubFieldsInfo_H_

@@ -18,8 +18,8 @@ ListUsersRequest::ListUsersRequest()
     offsetIsSet_ = false;
     limit_ = 0;
     limitIsSet_ = false;
-    userName_ = "";
-    userNameIsSet_ = false;
+    userInfo_ = "";
+    userInfoIsSet_ = false;
 }
 
 ListUsersRequest::~ListUsersRequest() = default;
@@ -41,8 +41,8 @@ web::json::value ListUsersRequest::toJson() const
     if(limitIsSet_) {
         val[utility::conversions::to_string_t("limit")] = ModelBase::toJson(limit_);
     }
-    if(userNameIsSet_) {
-        val[utility::conversions::to_string_t("user_name")] = ModelBase::toJson(userName_);
+    if(userInfoIsSet_) {
+        val[utility::conversions::to_string_t("user_info")] = ModelBase::toJson(userInfo_);
     }
 
     return val;
@@ -78,13 +78,13 @@ bool ListUsersRequest::fromJson(const web::json::value& val)
             setLimit(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("user_name"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("user_name"));
+    if(val.has_field(utility::conversions::to_string_t("user_info"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("user_info"));
         if(!fieldValue.is_null())
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setUserName(refVal);
+            setUserInfo(refVal);
         }
     }
     return ok;
@@ -154,25 +154,25 @@ void ListUsersRequest::unsetlimit()
     limitIsSet_ = false;
 }
 
-std::string ListUsersRequest::getUserName() const
+std::string ListUsersRequest::getUserInfo() const
 {
-    return userName_;
+    return userInfo_;
 }
 
-void ListUsersRequest::setUserName(const std::string& value)
+void ListUsersRequest::setUserInfo(const std::string& value)
 {
-    userName_ = value;
-    userNameIsSet_ = true;
+    userInfo_ = value;
+    userInfoIsSet_ = true;
 }
 
-bool ListUsersRequest::userNameIsSet() const
+bool ListUsersRequest::userInfoIsSet() const
 {
-    return userNameIsSet_;
+    return userInfoIsSet_;
 }
 
-void ListUsersRequest::unsetuserName()
+void ListUsersRequest::unsetuserInfo()
 {
-    userNameIsSet_ = false;
+    userInfoIsSet_ = false;
 }
 
 }

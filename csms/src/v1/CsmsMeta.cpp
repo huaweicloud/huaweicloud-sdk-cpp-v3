@@ -224,8 +224,8 @@ HttpRequestDef CsmsMeta::genRequestDefForListUsers() {
     reqDefBuilder.withRequestField(FieldDef().withName("Limit")
                   .withJsonTag("limit")
                   .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("UserName")
-                  .withJsonTag("user_name")
+    reqDefBuilder.withRequestField(FieldDef().withName("UserInfo")
+                  .withJsonTag("user_info")
                   .withLocationType(Query_));
     return reqDefBuilder;
 }

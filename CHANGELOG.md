@@ -1,3 +1,139 @@
+# 3.1.115 2024-12-12
+
+### HuaweiCloud SDK CDN
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowDomainFullConfig**
+    - changes of response param
+      - `+ configs.cache_rules.force_cache`
+  - **UpdateDomainFullConfig**
+    - changes of request param
+      - `+ configs.cache_rules.force_cache`
+
+### HuaweiCloud SDK CSMS
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListUsers**
+    - changes of request param
+      - `+ user_info`
+      - `- user_name`
+
+### HuaweiCloud SDK DDS
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ResizeInstance**
+    - changes of request param
+      - `+ resize.target_ids`
+
+### HuaweiCloud SDK GaussDB
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateStarrocksInstance**
+    - changes of request param
+      - `+ pay_info`
+      - `+ region_code`
+
+### HuaweiCloud SDK LTS
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the API `ListLogContext`
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateLogStreamIndex**
+    - changes of request param
+      - `+ fields.ltsSubFieldsInfoList`
+      - `+ fields.fieldType: enum value [json]`
+  - **ListAccessConfig**
+    - changes of response param
+      - `+ result.access_config_detail.repeat_collect`
+      - `+ result.access_config_detail.system_fields`
+      - `+ result.access_config_detail.custom_key_value`
+      - `+ result.access_config_detail.includeLabelsLogical`
+      - `+ result.access_config_detail.excludeLabelsLogical`
+      - `+ result.access_config_detail.includeK8sLabelsLogical`
+      - `+ result.access_config_detail.excludeK8sLabelsLogical`
+      - `+ result.access_config_detail.includeEnvsLogical`
+      - `+ result.access_config_detail.excludeEnvsLogical`
+  - **UpdateAccessConfig**
+    - changes of request param
+      - `+ access_config_detail.system_fields`
+      - `+ access_config_detail.custom_key_value`
+      - `+ access_config_detail.includeLabelsLogical`
+      - `+ access_config_detail.excludeLabelsLogical`
+      - `+ access_config_detail.includeK8sLabelsLogical`
+      - `+ access_config_detail.excludeK8sLabelsLogical`
+      - `+ access_config_detail.includeEnvsLogical`
+      - `+ access_config_detail.excludeEnvsLogical`
+    - changes of response param
+      - `+ access_config_detail.repeat_collect`
+      - `+ access_config_detail.system_fields`
+      - `+ access_config_detail.custom_key_value`
+      - `+ access_config_detail.includeLabelsLogical`
+      - `+ access_config_detail.excludeLabelsLogical`
+      - `+ access_config_detail.includeK8sLabelsLogical`
+      - `+ access_config_detail.excludeK8sLabelsLogical`
+      - `+ access_config_detail.includeEnvsLogical`
+      - `+ access_config_detail.excludeEnvsLogical`
+  - **CreateAccessConfig**
+    - changes of request param
+      - `+ access_config_detail.repeat_collect`
+      - `+ access_config_detail.system_fields`
+      - `+ access_config_detail.custom_key_value`
+      - `+ access_config_detail.includeLabelsLogical`
+      - `+ access_config_detail.excludeLabelsLogical`
+      - `+ access_config_detail.includeK8sLabelsLogical`
+      - `+ access_config_detail.excludeK8sLabelsLogical`
+      - `+ access_config_detail.includeEnvsLogical`
+      - `+ access_config_detail.excludeEnvsLogical`
+    - changes of response param
+      - `+ access_config_detail.repeat_collect`
+      - `+ access_config_detail.system_fields`
+      - `+ access_config_detail.custom_key_value`
+      - `+ access_config_detail.includeLabelsLogical`
+      - `+ access_config_detail.excludeLabelsLogical`
+      - `+ access_config_detail.includeK8sLabelsLogical`
+      - `+ access_config_detail.excludeK8sLabelsLogical`
+      - `+ access_config_detail.includeEnvsLogical`
+      - `+ access_config_detail.excludeEnvsLogical`
+  - **DeleteAccessConfig**
+    - changes of response param
+      - `+ result.access_config_detail.repeat_collect`
+      - `+ result.access_config_detail.system_fields`
+      - `+ result.access_config_detail.custom_key_value`
+      - `+ result.access_config_detail.includeLabelsLogical`
+      - `+ result.access_config_detail.excludeLabelsLogical`
+      - `+ result.access_config_detail.includeK8sLabelsLogical`
+      - `+ result.access_config_detail.excludeK8sLabelsLogical`
+      - `+ result.access_config_detail.includeEnvsLogical`
+      - `+ result.access_config_detail.excludeEnvsLogical`
+
 # 3.1.114 2024-12-10
 
 ### HuaweiCloud SDK CSMS

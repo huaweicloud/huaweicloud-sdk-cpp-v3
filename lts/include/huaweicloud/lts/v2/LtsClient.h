@@ -111,6 +111,9 @@
 #include <huaweicloud/lts/v2/model/ListHostResponse.h>
 #include <huaweicloud/lts/v2/model/ListKeywordsAlarmRulesRequest.h>
 #include <huaweicloud/lts/v2/model/ListKeywordsAlarmRulesResponse.h>
+#include <huaweicloud/lts/v2/model/ListLogContextRequest.h>
+#include <huaweicloud/lts/v2/model/ListLogContextRequestBody.h>
+#include <huaweicloud/lts/v2/model/ListLogContextResponse.h>
 #include <huaweicloud/lts/v2/model/ListLogGroupsRequest.h>
 #include <huaweicloud/lts/v2/model/ListLogGroupsResponse.h>
 #include <huaweicloud/lts/v2/model/ListLogHistogramRequest.h>
@@ -593,6 +596,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListKeywordsAlarmRulesResponse> listKeywordsAlarmRules(
         ListKeywordsAlarmRulesRequest &request
+    );
+    // 查询上下文日志
+    //
+    // 查询上下文日志 该接口用于查询指定日志前（上文）后（下文）的若干条日志。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListLogContextResponse> listLogContext(
+        ListLogContextRequest &request
     );
     // 查询账号下所有日志组
     //

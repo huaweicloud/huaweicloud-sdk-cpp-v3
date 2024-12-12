@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/gaussdb/v3/model/StarRocksCreateRequest_fe_volume.h>
+#include <huaweicloud/gaussdb/v3/model/StarRocksCreateRequest_pay_info.h>
 #include <huaweicloud/gaussdb/v3/model/StarRocksCreateRequest_engine.h>
 #include <huaweicloud/gaussdb/v3/model/StarRocksCreateRequest_tags_info.h>
 #include <string>
@@ -178,6 +179,24 @@ public:
     void unsetsecurityGroupId();
     void setSecurityGroupId(const std::string& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    StarRocksCreateRequest_pay_info getPayInfo() const;
+    bool payInfoIsSet() const;
+    void unsetpayInfo();
+    void setPayInfo(const StarRocksCreateRequest_pay_info& value);
+
+    /// <summary>
+    /// 可用区。包周期场景必填。
+    /// </summary>
+
+    std::string getRegionCode() const;
+    bool regionCodeIsSet() const;
+    void unsetregionCode();
+    void setRegionCode(const std::string& value);
+
 
 protected:
     std::string name_;
@@ -210,6 +229,10 @@ protected:
     bool tagsInfoIsSet_;
     std::string securityGroupId_;
     bool securityGroupIdIsSet_;
+    StarRocksCreateRequest_pay_info payInfo_;
+    bool payInfoIsSet_;
+    std::string regionCode_;
+    bool regionCodeIsSet_;
 
 };
 

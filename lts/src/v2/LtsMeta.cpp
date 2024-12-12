@@ -537,6 +537,20 @@ HttpRequestDef LtsMeta::genRequestDefForListKeywordsAlarmRules() {
     return reqDefBuilder;
 }
 
+HttpRequestDef LtsMeta::genRequestDefForListLogContext() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamContentType;
+    reqDefBuilder.withRequestField(headerParamContentType
+                  .withName("ContentType")
+                  .withJsonTag("Content-Type")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef LtsMeta::genRequestDefForListLogGroups() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamContentType;

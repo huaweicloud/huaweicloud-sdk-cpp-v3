@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -57,6 +58,15 @@ public:
     void setTargetId(const std::string& value);
 
     /// <summary>
+    /// 待变更规格的节点组ID列表，可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。 - 对于集群实例，变更mongos节点规格时，不传该参数；变更单个shard组规格时，不传该参数；变更config组规格时，不传该参数；批量变更多个shard组规格时，取值为相应的多个shard组ID，最多支持16个shard组批量变更。 - 对于副本集实例，不传该参数。 - 对于单节点实例，不传该参数。
+    /// </summary>
+
+    std::vector<std::string>& getTargetIds();
+    bool targetIdsIsSet() const;
+    void unsettargetIds();
+    void setTargetIds(const std::vector<std::string>& value);
+
+    /// <summary>
     /// 变更至新规格的资源规格编码。
     /// </summary>
 
@@ -71,6 +81,8 @@ protected:
     bool targetTypeIsSet_;
     std::string targetId_;
     bool targetIdIsSet_;
+    std::vector<std::string> targetIds_;
+    bool targetIdsIsSet_;
     std::string targetSpecCode_;
     bool targetSpecCodeIsSet_;
 

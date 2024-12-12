@@ -16,6 +16,7 @@ ResizeInstanceOption::ResizeInstanceOption()
     targetTypeIsSet_ = false;
     targetId_ = "";
     targetIdIsSet_ = false;
+    targetIdsIsSet_ = false;
     targetSpecCode_ = "";
     targetSpecCodeIsSet_ = false;
 }
@@ -35,6 +36,9 @@ web::json::value ResizeInstanceOption::toJson() const
     }
     if(targetIdIsSet_) {
         val[utility::conversions::to_string_t("target_id")] = ModelBase::toJson(targetId_);
+    }
+    if(targetIdsIsSet_) {
+        val[utility::conversions::to_string_t("target_ids")] = ModelBase::toJson(targetIds_);
     }
     if(targetSpecCodeIsSet_) {
         val[utility::conversions::to_string_t("target_spec_code")] = ModelBase::toJson(targetSpecCode_);
@@ -62,6 +66,15 @@ bool ResizeInstanceOption::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTargetId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("target_ids"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("target_ids"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTargetIds(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("target_spec_code"))) {
@@ -117,6 +130,27 @@ bool ResizeInstanceOption::targetIdIsSet() const
 void ResizeInstanceOption::unsettargetId()
 {
     targetIdIsSet_ = false;
+}
+
+std::vector<std::string>& ResizeInstanceOption::getTargetIds()
+{
+    return targetIds_;
+}
+
+void ResizeInstanceOption::setTargetIds(const std::vector<std::string>& value)
+{
+    targetIds_ = value;
+    targetIdsIsSet_ = true;
+}
+
+bool ResizeInstanceOption::targetIdsIsSet() const
+{
+    return targetIdsIsSet_;
+}
+
+void ResizeInstanceOption::unsettargetIds()
+{
+    targetIdsIsSet_ = false;
 }
 
 std::string ResizeInstanceOption::getTargetSpecCode() const

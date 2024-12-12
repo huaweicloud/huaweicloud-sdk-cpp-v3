@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/lts/v2/model/LTSFieldsInfo.h"
+#include "huaweicloud/lts/v2/model/LTSSubFieldsInfo.h"
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Lts {
@@ -10,7 +10,7 @@ namespace Model {
 
 
 
-LTSFieldsInfo::LTSFieldsInfo()
+LTSSubFieldsInfo::LTSSubFieldsInfo()
 {
     fieldType_ = "";
     fieldTypeIsSet_ = false;
@@ -25,16 +25,15 @@ LTSFieldsInfo::LTSFieldsInfo()
     quickAnalysis_ = false;
     quickAnalysisIsSet_ = false;
     asciiIsSet_ = false;
-    ltsSubFieldsInfoListIsSet_ = false;
 }
 
-LTSFieldsInfo::~LTSFieldsInfo() = default;
+LTSSubFieldsInfo::~LTSSubFieldsInfo() = default;
 
-void LTSFieldsInfo::validate()
+void LTSSubFieldsInfo::validate()
 {
 }
 
-web::json::value LTSFieldsInfo::toJson() const
+web::json::value LTSSubFieldsInfo::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -59,13 +58,10 @@ web::json::value LTSFieldsInfo::toJson() const
     if(asciiIsSet_) {
         val[utility::conversions::to_string_t("ascii")] = ModelBase::toJson(ascii_);
     }
-    if(ltsSubFieldsInfoListIsSet_) {
-        val[utility::conversions::to_string_t("ltsSubFieldsInfoList")] = ModelBase::toJson(ltsSubFieldsInfoList_);
-    }
 
     return val;
 }
-bool LTSFieldsInfo::fromJson(const web::json::value& val)
+bool LTSSubFieldsInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -132,185 +128,155 @@ bool LTSFieldsInfo::fromJson(const web::json::value& val)
             setAscii(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("ltsSubFieldsInfoList"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ltsSubFieldsInfoList"));
-        if(!fieldValue.is_null())
-        {
-            std::vector<LTSSubFieldsInfo> refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setLtsSubFieldsInfoList(refVal);
-        }
-    }
     return ok;
 }
 
 
-std::string LTSFieldsInfo::getFieldType() const
+std::string LTSSubFieldsInfo::getFieldType() const
 {
     return fieldType_;
 }
 
-void LTSFieldsInfo::setFieldType(const std::string& value)
+void LTSSubFieldsInfo::setFieldType(const std::string& value)
 {
     fieldType_ = value;
     fieldTypeIsSet_ = true;
 }
 
-bool LTSFieldsInfo::fieldTypeIsSet() const
+bool LTSSubFieldsInfo::fieldTypeIsSet() const
 {
     return fieldTypeIsSet_;
 }
 
-void LTSFieldsInfo::unsetfieldType()
+void LTSSubFieldsInfo::unsetfieldType()
 {
     fieldTypeIsSet_ = false;
 }
 
-std::string LTSFieldsInfo::getFieldName() const
+std::string LTSSubFieldsInfo::getFieldName() const
 {
     return fieldName_;
 }
 
-void LTSFieldsInfo::setFieldName(const std::string& value)
+void LTSSubFieldsInfo::setFieldName(const std::string& value)
 {
     fieldName_ = value;
     fieldNameIsSet_ = true;
 }
 
-bool LTSFieldsInfo::fieldNameIsSet() const
+bool LTSSubFieldsInfo::fieldNameIsSet() const
 {
     return fieldNameIsSet_;
 }
 
-void LTSFieldsInfo::unsetfieldName()
+void LTSSubFieldsInfo::unsetfieldName()
 {
     fieldNameIsSet_ = false;
 }
 
-bool LTSFieldsInfo::isCaseSensitive() const
+bool LTSSubFieldsInfo::isCaseSensitive() const
 {
     return caseSensitive_;
 }
 
-void LTSFieldsInfo::setCaseSensitive(bool value)
+void LTSSubFieldsInfo::setCaseSensitive(bool value)
 {
     caseSensitive_ = value;
     caseSensitiveIsSet_ = true;
 }
 
-bool LTSFieldsInfo::caseSensitiveIsSet() const
+bool LTSSubFieldsInfo::caseSensitiveIsSet() const
 {
     return caseSensitiveIsSet_;
 }
 
-void LTSFieldsInfo::unsetcaseSensitive()
+void LTSSubFieldsInfo::unsetcaseSensitive()
 {
     caseSensitiveIsSet_ = false;
 }
 
-bool LTSFieldsInfo::isIncludeChinese() const
+bool LTSSubFieldsInfo::isIncludeChinese() const
 {
     return includeChinese_;
 }
 
-void LTSFieldsInfo::setIncludeChinese(bool value)
+void LTSSubFieldsInfo::setIncludeChinese(bool value)
 {
     includeChinese_ = value;
     includeChineseIsSet_ = true;
 }
 
-bool LTSFieldsInfo::includeChineseIsSet() const
+bool LTSSubFieldsInfo::includeChineseIsSet() const
 {
     return includeChineseIsSet_;
 }
 
-void LTSFieldsInfo::unsetincludeChinese()
+void LTSSubFieldsInfo::unsetincludeChinese()
 {
     includeChineseIsSet_ = false;
 }
 
-std::string LTSFieldsInfo::getTokenizer() const
+std::string LTSSubFieldsInfo::getTokenizer() const
 {
     return tokenizer_;
 }
 
-void LTSFieldsInfo::setTokenizer(const std::string& value)
+void LTSSubFieldsInfo::setTokenizer(const std::string& value)
 {
     tokenizer_ = value;
     tokenizerIsSet_ = true;
 }
 
-bool LTSFieldsInfo::tokenizerIsSet() const
+bool LTSSubFieldsInfo::tokenizerIsSet() const
 {
     return tokenizerIsSet_;
 }
 
-void LTSFieldsInfo::unsettokenizer()
+void LTSSubFieldsInfo::unsettokenizer()
 {
     tokenizerIsSet_ = false;
 }
 
-bool LTSFieldsInfo::isQuickAnalysis() const
+bool LTSSubFieldsInfo::isQuickAnalysis() const
 {
     return quickAnalysis_;
 }
 
-void LTSFieldsInfo::setQuickAnalysis(bool value)
+void LTSSubFieldsInfo::setQuickAnalysis(bool value)
 {
     quickAnalysis_ = value;
     quickAnalysisIsSet_ = true;
 }
 
-bool LTSFieldsInfo::quickAnalysisIsSet() const
+bool LTSSubFieldsInfo::quickAnalysisIsSet() const
 {
     return quickAnalysisIsSet_;
 }
 
-void LTSFieldsInfo::unsetquickAnalysis()
+void LTSSubFieldsInfo::unsetquickAnalysis()
 {
     quickAnalysisIsSet_ = false;
 }
 
-std::vector<std::string>& LTSFieldsInfo::getAscii()
+std::vector<std::string>& LTSSubFieldsInfo::getAscii()
 {
     return ascii_;
 }
 
-void LTSFieldsInfo::setAscii(const std::vector<std::string>& value)
+void LTSSubFieldsInfo::setAscii(const std::vector<std::string>& value)
 {
     ascii_ = value;
     asciiIsSet_ = true;
 }
 
-bool LTSFieldsInfo::asciiIsSet() const
+bool LTSSubFieldsInfo::asciiIsSet() const
 {
     return asciiIsSet_;
 }
 
-void LTSFieldsInfo::unsetascii()
+void LTSSubFieldsInfo::unsetascii()
 {
     asciiIsSet_ = false;
-}
-
-std::vector<LTSSubFieldsInfo>& LTSFieldsInfo::getLtsSubFieldsInfoList()
-{
-    return ltsSubFieldsInfoList_;
-}
-
-void LTSFieldsInfo::setLtsSubFieldsInfoList(const std::vector<LTSSubFieldsInfo>& value)
-{
-    ltsSubFieldsInfoList_ = value;
-    ltsSubFieldsInfoListIsSet_ = true;
-}
-
-bool LTSFieldsInfo::ltsSubFieldsInfoListIsSet() const
-{
-    return ltsSubFieldsInfoListIsSet_;
-}
-
-void LTSFieldsInfo::unsetltsSubFieldsInfoList()
-{
-    ltsSubFieldsInfoListIsSet_ = false;
 }
 
 }

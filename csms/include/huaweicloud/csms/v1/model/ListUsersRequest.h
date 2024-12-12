@@ -69,10 +69,10 @@ public:
     /// 最长64位，用户名，支持模糊查询
     /// </summary>
 
-    std::string getUserName() const;
-    bool userNameIsSet() const;
-    void unsetuserName();
-    void setUserName(const std::string& value);
+    std::string getUserInfo() const;
+    bool userInfoIsSet() const;
+    void unsetuserInfo();
+    void setUserInfo(const std::string& value);
 
 
 protected:
@@ -82,8 +82,8 @@ protected:
     bool offsetIsSet_;
     int32_t limit_;
     bool limitIsSet_;
-    std::string userName_;
-    bool userNameIsSet_;
+    std::string userInfo_;
+    bool userInfoIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

@@ -213,6 +213,78 @@ public:
     void unsetlogK8s();
     void setLogK8s(const std::map<std::string, std::string>& value);
 
+    /// <summary>
+    /// 系统内置字段：配置日志接入规则时，可以配置系统内置字段，上报日志后，每条日志数据的标签数据中将会有系统字段 采集场景为主机文件的内置字段为：hostName、hostId、hostIP、pathFile、hostIPv6、category、collectTime、__host_group__ 采集场景为K8S集群容器文件的内置字段为：hostName、hostId、hostIP、pathFile、hostIPv6、clusterId、podName、appName、containerName、nameSpace、category、collectTime、__host_group__、serviceID、podIp、clusterName、workloadType 若修改时传入此字段，将覆盖原有配置
+    /// </summary>
+
+    std::vector<std::string>& getSystemFields();
+    bool systemFieldsIsSet() const;
+    void unsetsystemFields();
+    void setSystemFields(const std::vector<std::string>& value);
+
+    /// <summary>
+    /// 自定义键值对：配置日志接入规则时，可以配置自定义键值对规则，上报日志后，每条日志数据的标签数据中将会有用户自定义的键值对字段，键值对数量不超过20 键的长度限制为128，允许的字符有a-zA-Z0-9_- 值的长度限制为1024 若修改时传入此字段，将覆盖原有配置
+    /// </summary>
+
+    std::map<std::string, std::string>& getCustomKeyValue();
+    bool customKeyValueIsSet() const;
+    void unsetcustomKeyValue();
+    void setCustomKeyValue(const std::map<std::string, std::string>& value);
+
+    /// <summary>
+    /// 容器 Label白名单，可选为AND，OR，不配置时默认为OR；当存在多个值时的处理逻辑，AND表示同时满足才会生效，OR表示有一项满足就会生效
+    /// </summary>
+
+    std::string getIncludeLabelsLogical() const;
+    bool includeLabelsLogicalIsSet() const;
+    void unsetincludeLabelsLogical();
+    void setIncludeLabelsLogical(const std::string& value);
+
+    /// <summary>
+    /// 容器 Label黑名单，可选为AND，OR，不配置时默认为OR；当存在多个值时的处理逻辑，AND表示同时满足才会生效，OR表示有一项满足就会生效
+    /// </summary>
+
+    std::string getExcludeLabelsLogical() const;
+    bool excludeLabelsLogicalIsSet() const;
+    void unsetexcludeLabelsLogical();
+    void setExcludeLabelsLogical(const std::string& value);
+
+    /// <summary>
+    /// K8S Label白名单，可选为AND，OR，不配置时默认为OR；当存在多个值时的处理逻辑，AND表示同时满足才会生效，OR表示有一项满足就会生效
+    /// </summary>
+
+    std::string getIncludeK8sLabelsLogical() const;
+    bool includeK8sLabelsLogicalIsSet() const;
+    void unsetincludeK8sLabelsLogical();
+    void setIncludeK8sLabelsLogical(const std::string& value);
+
+    /// <summary>
+    /// K8S Label黑名单，可选为AND，OR，不配置时默认为OR；当存在多个值时的处理逻辑，AND表示同时满足才会生效，OR表示有一项满足就会生效
+    /// </summary>
+
+    std::string getExcludeK8sLabelsLogical() const;
+    bool excludeK8sLabelsLogicalIsSet() const;
+    void unsetexcludeK8sLabelsLogical();
+    void setExcludeK8sLabelsLogical(const std::string& value);
+
+    /// <summary>
+    /// 环境变量白名单，可选为AND，OR，不配置时默认为OR；当存在多个值时的处理逻辑，AND表示同时满足才会生效，OR表示有一项满足就会生效
+    /// </summary>
+
+    std::string getIncludeEnvsLogical() const;
+    bool includeEnvsLogicalIsSet() const;
+    void unsetincludeEnvsLogical();
+    void setIncludeEnvsLogical(const std::string& value);
+
+    /// <summary>
+    /// 环境变量黑名单，可选为AND，OR，不配置时默认为OR；当存在多个值时的处理逻辑，AND表示同时满足才会生效，OR表示有一项满足就会生效
+    /// </summary>
+
+    std::string getExcludeEnvsLogical() const;
+    bool excludeEnvsLogicalIsSet() const;
+    void unsetexcludeEnvsLogical();
+    void setExcludeEnvsLogical(const std::string& value);
+
 
 protected:
     std::vector<std::string> paths_;
@@ -253,6 +325,22 @@ protected:
     bool excludeK8sLabelsIsSet_;
     std::map<std::string, std::string> logK8s_;
     bool logK8sIsSet_;
+    std::vector<std::string> systemFields_;
+    bool systemFieldsIsSet_;
+    std::map<std::string, std::string> customKeyValue_;
+    bool customKeyValueIsSet_;
+    std::string includeLabelsLogical_;
+    bool includeLabelsLogicalIsSet_;
+    std::string excludeLabelsLogical_;
+    bool excludeLabelsLogicalIsSet_;
+    std::string includeK8sLabelsLogical_;
+    bool includeK8sLabelsLogicalIsSet_;
+    std::string excludeK8sLabelsLogical_;
+    bool excludeK8sLabelsLogicalIsSet_;
+    std::string includeEnvsLogical_;
+    bool includeEnvsLogicalIsSet_;
+    std::string excludeEnvsLogical_;
+    bool excludeEnvsLogicalIsSet_;
 
 };
 

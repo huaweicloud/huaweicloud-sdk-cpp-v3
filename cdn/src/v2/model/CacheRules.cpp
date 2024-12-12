@@ -24,6 +24,8 @@ CacheRules::CacheRules()
     priorityIsSet_ = false;
     followOrigin_ = "";
     followOriginIsSet_ = false;
+    forceCache_ = "";
+    forceCacheIsSet_ = false;
     urlParameterType_ = "";
     urlParameterTypeIsSet_ = false;
     urlParameterValue_ = "";
@@ -57,6 +59,9 @@ web::json::value CacheRules::toJson() const
     }
     if(followOriginIsSet_) {
         val[utility::conversions::to_string_t("follow_origin")] = ModelBase::toJson(followOrigin_);
+    }
+    if(forceCacheIsSet_) {
+        val[utility::conversions::to_string_t("force_cache")] = ModelBase::toJson(forceCache_);
     }
     if(urlParameterTypeIsSet_) {
         val[utility::conversions::to_string_t("url_parameter_type")] = ModelBase::toJson(urlParameterType_);
@@ -123,6 +128,15 @@ bool CacheRules::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFollowOrigin(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("force_cache"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("force_cache"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setForceCache(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("url_parameter_type"))) {
@@ -271,6 +285,27 @@ bool CacheRules::followOriginIsSet() const
 void CacheRules::unsetfollowOrigin()
 {
     followOriginIsSet_ = false;
+}
+
+std::string CacheRules::getForceCache() const
+{
+    return forceCache_;
+}
+
+void CacheRules::setForceCache(const std::string& value)
+{
+    forceCache_ = value;
+    forceCacheIsSet_ = true;
+}
+
+bool CacheRules::forceCacheIsSet() const
+{
+    return forceCacheIsSet_;
+}
+
+void CacheRules::unsetforceCache()
+{
+    forceCacheIsSet_ = false;
 }
 
 std::string CacheRules::getUrlParameterType() const

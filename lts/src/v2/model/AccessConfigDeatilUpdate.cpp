@@ -37,6 +37,20 @@ AccessConfigDeatilUpdate::AccessConfigDeatilUpdate()
     includeK8sLabelsIsSet_ = false;
     excludeK8sLabelsIsSet_ = false;
     logK8sIsSet_ = false;
+    systemFieldsIsSet_ = false;
+    customKeyValueIsSet_ = false;
+    includeLabelsLogical_ = "";
+    includeLabelsLogicalIsSet_ = false;
+    excludeLabelsLogical_ = "";
+    excludeLabelsLogicalIsSet_ = false;
+    includeK8sLabelsLogical_ = "";
+    includeK8sLabelsLogicalIsSet_ = false;
+    excludeK8sLabelsLogical_ = "";
+    excludeK8sLabelsLogicalIsSet_ = false;
+    includeEnvsLogical_ = "";
+    includeEnvsLogicalIsSet_ = false;
+    excludeEnvsLogical_ = "";
+    excludeEnvsLogicalIsSet_ = false;
 }
 
 AccessConfigDeatilUpdate::~AccessConfigDeatilUpdate() = default;
@@ -105,6 +119,30 @@ web::json::value AccessConfigDeatilUpdate::toJson() const
     }
     if(logK8sIsSet_) {
         val[utility::conversions::to_string_t("logK8s")] = ModelBase::toJson(logK8s_);
+    }
+    if(systemFieldsIsSet_) {
+        val[utility::conversions::to_string_t("system_fields")] = ModelBase::toJson(systemFields_);
+    }
+    if(customKeyValueIsSet_) {
+        val[utility::conversions::to_string_t("custom_key_value")] = ModelBase::toJson(customKeyValue_);
+    }
+    if(includeLabelsLogicalIsSet_) {
+        val[utility::conversions::to_string_t("includeLabelsLogical")] = ModelBase::toJson(includeLabelsLogical_);
+    }
+    if(excludeLabelsLogicalIsSet_) {
+        val[utility::conversions::to_string_t("excludeLabelsLogical")] = ModelBase::toJson(excludeLabelsLogical_);
+    }
+    if(includeK8sLabelsLogicalIsSet_) {
+        val[utility::conversions::to_string_t("includeK8sLabelsLogical")] = ModelBase::toJson(includeK8sLabelsLogical_);
+    }
+    if(excludeK8sLabelsLogicalIsSet_) {
+        val[utility::conversions::to_string_t("excludeK8sLabelsLogical")] = ModelBase::toJson(excludeK8sLabelsLogical_);
+    }
+    if(includeEnvsLogicalIsSet_) {
+        val[utility::conversions::to_string_t("includeEnvsLogical")] = ModelBase::toJson(includeEnvsLogical_);
+    }
+    if(excludeEnvsLogicalIsSet_) {
+        val[utility::conversions::to_string_t("excludeEnvsLogical")] = ModelBase::toJson(excludeEnvsLogical_);
     }
 
     return val;
@@ -282,6 +320,78 @@ bool AccessConfigDeatilUpdate::fromJson(const web::json::value& val)
             std::map<std::string, std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLogK8s(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("system_fields"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("system_fields"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSystemFields(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("custom_key_value"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("custom_key_value"));
+        if(!fieldValue.is_null())
+        {
+            std::map<std::string, std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCustomKeyValue(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("includeLabelsLogical"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("includeLabelsLogical"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIncludeLabelsLogical(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("excludeLabelsLogical"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("excludeLabelsLogical"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setExcludeLabelsLogical(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("includeK8sLabelsLogical"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("includeK8sLabelsLogical"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIncludeK8sLabelsLogical(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("excludeK8sLabelsLogical"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("excludeK8sLabelsLogical"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setExcludeK8sLabelsLogical(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("includeEnvsLogical"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("includeEnvsLogical"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIncludeEnvsLogical(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("excludeEnvsLogical"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("excludeEnvsLogical"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setExcludeEnvsLogical(refVal);
         }
     }
     return ok;
@@ -685,6 +795,174 @@ bool AccessConfigDeatilUpdate::logK8sIsSet() const
 void AccessConfigDeatilUpdate::unsetlogK8s()
 {
     logK8sIsSet_ = false;
+}
+
+std::vector<std::string>& AccessConfigDeatilUpdate::getSystemFields()
+{
+    return systemFields_;
+}
+
+void AccessConfigDeatilUpdate::setSystemFields(const std::vector<std::string>& value)
+{
+    systemFields_ = value;
+    systemFieldsIsSet_ = true;
+}
+
+bool AccessConfigDeatilUpdate::systemFieldsIsSet() const
+{
+    return systemFieldsIsSet_;
+}
+
+void AccessConfigDeatilUpdate::unsetsystemFields()
+{
+    systemFieldsIsSet_ = false;
+}
+
+std::map<std::string, std::string>& AccessConfigDeatilUpdate::getCustomKeyValue()
+{
+    return customKeyValue_;
+}
+
+void AccessConfigDeatilUpdate::setCustomKeyValue(const std::map<std::string, std::string>& value)
+{
+    customKeyValue_ = value;
+    customKeyValueIsSet_ = true;
+}
+
+bool AccessConfigDeatilUpdate::customKeyValueIsSet() const
+{
+    return customKeyValueIsSet_;
+}
+
+void AccessConfigDeatilUpdate::unsetcustomKeyValue()
+{
+    customKeyValueIsSet_ = false;
+}
+
+std::string AccessConfigDeatilUpdate::getIncludeLabelsLogical() const
+{
+    return includeLabelsLogical_;
+}
+
+void AccessConfigDeatilUpdate::setIncludeLabelsLogical(const std::string& value)
+{
+    includeLabelsLogical_ = value;
+    includeLabelsLogicalIsSet_ = true;
+}
+
+bool AccessConfigDeatilUpdate::includeLabelsLogicalIsSet() const
+{
+    return includeLabelsLogicalIsSet_;
+}
+
+void AccessConfigDeatilUpdate::unsetincludeLabelsLogical()
+{
+    includeLabelsLogicalIsSet_ = false;
+}
+
+std::string AccessConfigDeatilUpdate::getExcludeLabelsLogical() const
+{
+    return excludeLabelsLogical_;
+}
+
+void AccessConfigDeatilUpdate::setExcludeLabelsLogical(const std::string& value)
+{
+    excludeLabelsLogical_ = value;
+    excludeLabelsLogicalIsSet_ = true;
+}
+
+bool AccessConfigDeatilUpdate::excludeLabelsLogicalIsSet() const
+{
+    return excludeLabelsLogicalIsSet_;
+}
+
+void AccessConfigDeatilUpdate::unsetexcludeLabelsLogical()
+{
+    excludeLabelsLogicalIsSet_ = false;
+}
+
+std::string AccessConfigDeatilUpdate::getIncludeK8sLabelsLogical() const
+{
+    return includeK8sLabelsLogical_;
+}
+
+void AccessConfigDeatilUpdate::setIncludeK8sLabelsLogical(const std::string& value)
+{
+    includeK8sLabelsLogical_ = value;
+    includeK8sLabelsLogicalIsSet_ = true;
+}
+
+bool AccessConfigDeatilUpdate::includeK8sLabelsLogicalIsSet() const
+{
+    return includeK8sLabelsLogicalIsSet_;
+}
+
+void AccessConfigDeatilUpdate::unsetincludeK8sLabelsLogical()
+{
+    includeK8sLabelsLogicalIsSet_ = false;
+}
+
+std::string AccessConfigDeatilUpdate::getExcludeK8sLabelsLogical() const
+{
+    return excludeK8sLabelsLogical_;
+}
+
+void AccessConfigDeatilUpdate::setExcludeK8sLabelsLogical(const std::string& value)
+{
+    excludeK8sLabelsLogical_ = value;
+    excludeK8sLabelsLogicalIsSet_ = true;
+}
+
+bool AccessConfigDeatilUpdate::excludeK8sLabelsLogicalIsSet() const
+{
+    return excludeK8sLabelsLogicalIsSet_;
+}
+
+void AccessConfigDeatilUpdate::unsetexcludeK8sLabelsLogical()
+{
+    excludeK8sLabelsLogicalIsSet_ = false;
+}
+
+std::string AccessConfigDeatilUpdate::getIncludeEnvsLogical() const
+{
+    return includeEnvsLogical_;
+}
+
+void AccessConfigDeatilUpdate::setIncludeEnvsLogical(const std::string& value)
+{
+    includeEnvsLogical_ = value;
+    includeEnvsLogicalIsSet_ = true;
+}
+
+bool AccessConfigDeatilUpdate::includeEnvsLogicalIsSet() const
+{
+    return includeEnvsLogicalIsSet_;
+}
+
+void AccessConfigDeatilUpdate::unsetincludeEnvsLogical()
+{
+    includeEnvsLogicalIsSet_ = false;
+}
+
+std::string AccessConfigDeatilUpdate::getExcludeEnvsLogical() const
+{
+    return excludeEnvsLogical_;
+}
+
+void AccessConfigDeatilUpdate::setExcludeEnvsLogical(const std::string& value)
+{
+    excludeEnvsLogical_ = value;
+    excludeEnvsLogicalIsSet_ = true;
+}
+
+bool AccessConfigDeatilUpdate::excludeEnvsLogicalIsSet() const
+{
+    return excludeEnvsLogicalIsSet_;
+}
+
+void AccessConfigDeatilUpdate::unsetexcludeEnvsLogical()
+{
+    excludeEnvsLogicalIsSet_ = false;
 }
 
 }

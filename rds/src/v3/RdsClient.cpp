@@ -3364,6 +3364,39 @@ std::shared_ptr<ListStorageTypesResponse> RdsClient::listStorageTypes(ListStorag
 
     return localVarResult;
 }
+std::shared_ptr<ListUpdateBackupEnhancePolicyResponse> RdsClient::listUpdateBackupEnhancePolicy(ListUpdateBackupEnhancePolicyRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/backups/enhance-policy";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.timeZoneIsSet()) {
+        localVarQueryParams["time_zone"] = parameterToString(request.getTimeZone());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, RdsMeta::genRequestDefForListUpdateBackupEnhancePolicy());
+
+    std::shared_ptr<ListUpdateBackupEnhancePolicyResponse> localVarResult = std::make_shared<ListUpdateBackupEnhancePolicyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListUpgradeHistoriesResponse> RdsClient::listUpgradeHistories(ListUpgradeHistoriesRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/major-version/upgrade-histories";

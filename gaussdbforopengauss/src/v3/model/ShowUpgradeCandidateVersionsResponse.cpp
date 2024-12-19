@@ -150,7 +150,7 @@ bool ShowUpgradeCandidateVersionsResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("hotfix_upgrade_infos"));
         if(!fieldValue.is_null())
         {
-            HotfixUpgradeInfos refVal;
+            std::vector<HotfixUpgradeInfos> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setHotfixUpgradeInfos(refVal);
         }
@@ -159,7 +159,7 @@ bool ShowUpgradeCandidateVersionsResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("hotfix_rollback_infos"));
         if(!fieldValue.is_null())
         {
-            HotfixRollbackInfos refVal;
+            std::vector<HotfixRollbackInfos> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setHotfixRollbackInfos(refVal);
         }
@@ -336,12 +336,12 @@ void ShowUpgradeCandidateVersionsResponse::unsethotfixRollbackCandidateVersions(
     hotfixRollbackCandidateVersionsIsSet_ = false;
 }
 
-HotfixUpgradeInfos ShowUpgradeCandidateVersionsResponse::getHotfixUpgradeInfos() const
+std::vector<HotfixUpgradeInfos>& ShowUpgradeCandidateVersionsResponse::getHotfixUpgradeInfos()
 {
     return hotfixUpgradeInfos_;
 }
 
-void ShowUpgradeCandidateVersionsResponse::setHotfixUpgradeInfos(const HotfixUpgradeInfos& value)
+void ShowUpgradeCandidateVersionsResponse::setHotfixUpgradeInfos(const std::vector<HotfixUpgradeInfos>& value)
 {
     hotfixUpgradeInfos_ = value;
     hotfixUpgradeInfosIsSet_ = true;
@@ -357,12 +357,12 @@ void ShowUpgradeCandidateVersionsResponse::unsethotfixUpgradeInfos()
     hotfixUpgradeInfosIsSet_ = false;
 }
 
-HotfixRollbackInfos ShowUpgradeCandidateVersionsResponse::getHotfixRollbackInfos() const
+std::vector<HotfixRollbackInfos>& ShowUpgradeCandidateVersionsResponse::getHotfixRollbackInfos()
 {
     return hotfixRollbackInfos_;
 }
 
-void ShowUpgradeCandidateVersionsResponse::setHotfixRollbackInfos(const HotfixRollbackInfos& value)
+void ShowUpgradeCandidateVersionsResponse::setHotfixRollbackInfos(const std::vector<HotfixRollbackInfos>& value)
 {
     hotfixRollbackInfos_ = value;
     hotfixRollbackInfosIsSet_ = true;

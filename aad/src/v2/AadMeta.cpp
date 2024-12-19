@@ -8,6 +8,15 @@ namespace V2 {
 
 using namespace HuaweiCloud::Sdk::Core::Http;
 
+HttpRequestDef AadMeta::genRequestDefForAddWafWhiteIpRule() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef AadMeta::genRequestDefForCreateDomain() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -18,6 +27,15 @@ HttpRequestDef AadMeta::genRequestDefForCreateDomain() {
 }
 
 HttpRequestDef AadMeta::genRequestDefForDeleteDomain() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef AadMeta::genRequestDefForDeleteWafWhiteIpRule() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.

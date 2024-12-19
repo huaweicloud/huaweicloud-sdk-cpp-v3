@@ -283,6 +283,18 @@ HttpRequestDef EvsMeta::genRequestDefForShowVolumeTags() {
     return reqDefBuilder;
 }
 
+HttpRequestDef EvsMeta::genRequestDefForUnsubscribePostpaidVolume() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+            withName("Body").
+            withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef EvsMeta::genRequestDefForUpdateSnapshot() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;

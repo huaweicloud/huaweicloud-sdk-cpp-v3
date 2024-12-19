@@ -1,3 +1,103 @@
+# 3.1.116 2024-12-19
+
+### HuaweiCloud SDK AAD
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the APIs `AddWafWhiteIpRule`, `DeleteWafWhiteIpRule`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK EVS
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the API `UnsubscribePostpaidVolume`
+- _Bug Fix_
+  - None
+- _Change_
+  - **CinderListQuotas**
+    - changes of response param
+      - `+ quota_set.gigabytes_ESSD`
+      - `+ quota_set.snapshots_ESSD`
+      - `+ quota_set.volumes_ESSD`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the following APIs:
+    - `ListRestorableInstancesDetails`
+    - `ListRecycleInstancesDetails`
+    - `ShowParameterGroupDetail`
+    - `ShowSourceInstanceDetail`
+    - `AllowDbRolePrivileges`
+    - `ListDatabaseRoles`
+    - `CreateDbRole`
+    - `ListDatastoresDetails`
+    - `ListDatabaseInstances`
+    - `ListParameterGroupTemplates`
+    - `ShowInstanceParamGroupDetail`
+    - `ShowUpgradeCandidateVersionsDetails`
+    - `BatchShowUpgradeCandidateVersions`
+    - `ListFlavorsDetails`
+    - `ListBackupsDetails`
+    - `SyncLimitData`
+    - `DeleteDatabaseSchema`
+    - `CreateDatabaseInstance`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowUpgradeCandidateVersions**
+    - changes of response param
+      - `* hotfix_upgrade_infos: object<HotfixUpgradeInfos> -> list<HotfixUpgradeInfos>`
+      - `* hotfix_rollback_infos: object<HotfixRollbackInfos> -> list<HotfixRollbackInfos>`
+
+### HuaweiCloud SDK IMS
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ImportImageQuick**
+    - changes of request param
+      - `+ license_type`
+
+### HuaweiCloud SDK OCR
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **RecognizeAutoClassification**
+    - changes of request param
+      - `+ pdf_page_number`
+  - **RecognizeSmartDocumentRecognizer**
+    - changes of request param
+      - `+ erase_seal`
+
+### HuaweiCloud SDK RDS
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the API `ListUpdateBackupEnhancePolicy`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.115 2024-12-12
 
 ### HuaweiCloud SDK CDN

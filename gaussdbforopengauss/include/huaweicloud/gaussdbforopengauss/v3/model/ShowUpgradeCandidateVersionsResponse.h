@@ -116,22 +116,22 @@ public:
     void setHotfixRollbackCandidateVersions(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 
+    /// 可以升级的热补丁信息。
     /// </summary>
 
-    HotfixUpgradeInfos getHotfixUpgradeInfos() const;
+    std::vector<HotfixUpgradeInfos>& getHotfixUpgradeInfos();
     bool hotfixUpgradeInfosIsSet() const;
     void unsethotfixUpgradeInfos();
-    void setHotfixUpgradeInfos(const HotfixUpgradeInfos& value);
+    void setHotfixUpgradeInfos(const std::vector<HotfixUpgradeInfos>& value);
 
     /// <summary>
-    /// 
+    /// 可以回滚的热补丁信息。
     /// </summary>
 
-    HotfixRollbackInfos getHotfixRollbackInfos() const;
+    std::vector<HotfixRollbackInfos>& getHotfixRollbackInfos();
     bool hotfixRollbackInfosIsSet() const;
     void unsethotfixRollbackInfos();
-    void setHotfixRollbackInfos(const HotfixRollbackInfos& value);
+    void setHotfixRollbackInfos(const std::vector<HotfixRollbackInfos>& value);
 
 
 protected:
@@ -151,9 +151,9 @@ protected:
     bool hotfixUpgradeCandidateVersionsIsSet_;
     std::vector<std::string> hotfixRollbackCandidateVersions_;
     bool hotfixRollbackCandidateVersionsIsSet_;
-    HotfixUpgradeInfos hotfixUpgradeInfos_;
+    std::vector<HotfixUpgradeInfos> hotfixUpgradeInfos_;
     bool hotfixUpgradeInfosIsSet_;
-    HotfixRollbackInfos hotfixRollbackInfos_;
+    std::vector<HotfixRollbackInfos> hotfixRollbackInfos_;
     bool hotfixRollbackInfosIsSet_;
 
 #ifdef RTTR_FLAG

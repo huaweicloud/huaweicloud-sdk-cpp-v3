@@ -86,6 +86,15 @@ public:
     void setMinDisk(int32_t value);
 
     /// <summary>
+    /// 操作系统使用的许可证类型。取值范围： platform：华为云官方许可证 byol：自带许可证（Bring Your Own License） 目前仅Windows操作系统支持设置该参数。
+    /// </summary>
+
+    std::string getLicenseType() const;
+    bool licenseTypeIsSet() const;
+    void unsetlicenseType();
+    void setLicenseType(const std::string& value);
+
+    /// <summary>
     /// 镜像标签列表。默认为空。 tags和image_tags只能使用一个。
     /// </summary>
 
@@ -151,6 +160,8 @@ protected:
     bool imageUrlIsSet_;
     int32_t minDisk_;
     bool minDiskIsSet_;
+    std::string licenseType_;
+    bool licenseTypeIsSet_;
     std::vector<std::string> tags_;
     bool tagsIsSet_;
     std::string type_;

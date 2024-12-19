@@ -22,6 +22,8 @@ QuickImportImageByFileRequestBody::QuickImportImageByFileRequestBody()
     imageUrlIsSet_ = false;
     minDisk_ = 0;
     minDiskIsSet_ = false;
+    licenseType_ = "";
+    licenseTypeIsSet_ = false;
     tagsIsSet_ = false;
     type_ = "";
     typeIsSet_ = false;
@@ -58,6 +60,9 @@ web::json::value QuickImportImageByFileRequestBody::toJson() const
     }
     if(minDiskIsSet_) {
         val[utility::conversions::to_string_t("min_disk")] = ModelBase::toJson(minDisk_);
+    }
+    if(licenseTypeIsSet_) {
+        val[utility::conversions::to_string_t("license_type")] = ModelBase::toJson(licenseType_);
     }
     if(tagsIsSet_) {
         val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
@@ -127,6 +132,15 @@ bool QuickImportImageByFileRequestBody::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setMinDisk(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("license_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("license_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLicenseType(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("tags"))) {
@@ -290,6 +304,27 @@ bool QuickImportImageByFileRequestBody::minDiskIsSet() const
 void QuickImportImageByFileRequestBody::unsetminDisk()
 {
     minDiskIsSet_ = false;
+}
+
+std::string QuickImportImageByFileRequestBody::getLicenseType() const
+{
+    return licenseType_;
+}
+
+void QuickImportImageByFileRequestBody::setLicenseType(const std::string& value)
+{
+    licenseType_ = value;
+    licenseTypeIsSet_ = true;
+}
+
+bool QuickImportImageByFileRequestBody::licenseTypeIsSet() const
+{
+    return licenseTypeIsSet_;
+}
+
+void QuickImportImageByFileRequestBody::unsetlicenseType()
+{
+    licenseTypeIsSet_ = false;
 }
 
 std::vector<std::string>& QuickImportImageByFileRequestBody::getTags()

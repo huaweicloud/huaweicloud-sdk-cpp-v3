@@ -13,8 +13,10 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 
 class HUAWEICLOUD_AAD_V2_EXPORT  AadMeta {
 public:
+    static HttpRequestDef genRequestDefForAddWafWhiteIpRule();
     static HttpRequestDef genRequestDefForCreateDomain();
     static HttpRequestDef genRequestDefForDeleteDomain();
+    static HttpRequestDef genRequestDefForDeleteWafWhiteIpRule();
     static HttpRequestDef genRequestDefForListDDoSAttackEvent();
     static HttpRequestDef genRequestDefForListDDoSConnectionNumber();
     static HttpRequestDef genRequestDefForListDDoSFlow();

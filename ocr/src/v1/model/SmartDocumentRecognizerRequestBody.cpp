@@ -34,6 +34,8 @@ SmartDocumentRecognizerRequestBody::SmartDocumentRecognizerRequestBody()
     formulaIsSet_ = false;
     kvMap_ = "";
     kvMapIsSet_ = false;
+    eraseSeal_ = false;
+    eraseSealIsSet_ = false;
     pdfPageNumber_ = 0;
     pdfPageNumberIsSet_ = false;
 }
@@ -80,6 +82,9 @@ web::json::value SmartDocumentRecognizerRequestBody::toJson() const
     }
     if(kvMapIsSet_) {
         val[utility::conversions::to_string_t("kv_map")] = ModelBase::toJson(kvMap_);
+    }
+    if(eraseSealIsSet_) {
+        val[utility::conversions::to_string_t("erase_seal")] = ModelBase::toJson(eraseSeal_);
     }
     if(pdfPageNumberIsSet_) {
         val[utility::conversions::to_string_t("pdf_page_number")] = ModelBase::toJson(pdfPageNumber_);
@@ -188,6 +193,15 @@ bool SmartDocumentRecognizerRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setKvMap(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("erase_seal"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("erase_seal"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEraseSeal(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("pdf_page_number"))) {
@@ -432,6 +446,27 @@ bool SmartDocumentRecognizerRequestBody::kvMapIsSet() const
 void SmartDocumentRecognizerRequestBody::unsetkvMap()
 {
     kvMapIsSet_ = false;
+}
+
+bool SmartDocumentRecognizerRequestBody::isEraseSeal() const
+{
+    return eraseSeal_;
+}
+
+void SmartDocumentRecognizerRequestBody::setEraseSeal(bool value)
+{
+    eraseSeal_ = value;
+    eraseSealIsSet_ = true;
+}
+
+bool SmartDocumentRecognizerRequestBody::eraseSealIsSet() const
+{
+    return eraseSealIsSet_;
+}
+
+void SmartDocumentRecognizerRequestBody::unseteraseSeal()
+{
+    eraseSealIsSet_ = false;
 }
 
 int32_t SmartDocumentRecognizerRequestBody::getPdfPageNumber() const

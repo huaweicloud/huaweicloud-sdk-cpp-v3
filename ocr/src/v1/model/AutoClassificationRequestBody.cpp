@@ -17,6 +17,8 @@ AutoClassificationRequestBody::AutoClassificationRequestBody()
     url_ = "";
     urlIsSet_ = false;
     typeListIsSet_ = false;
+    pdfPageNumber_ = 0;
+    pdfPageNumberIsSet_ = false;
     extendedParametersIsSet_ = false;
     detectSeal_ = false;
     detectSealIsSet_ = false;
@@ -40,6 +42,9 @@ web::json::value AutoClassificationRequestBody::toJson() const
     }
     if(typeListIsSet_) {
         val[utility::conversions::to_string_t("type_list")] = ModelBase::toJson(typeList_);
+    }
+    if(pdfPageNumberIsSet_) {
+        val[utility::conversions::to_string_t("pdf_page_number")] = ModelBase::toJson(pdfPageNumber_);
     }
     if(extendedParametersIsSet_) {
         val[utility::conversions::to_string_t("extended_parameters")] = ModelBase::toJson(extendedParameters_);
@@ -79,6 +84,15 @@ bool AutoClassificationRequestBody::fromJson(const web::json::value& val)
             std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTypeList(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("pdf_page_number"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("pdf_page_number"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPdfPageNumber(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("extended_parameters"))) {
@@ -164,6 +178,27 @@ bool AutoClassificationRequestBody::typeListIsSet() const
 void AutoClassificationRequestBody::unsettypeList()
 {
     typeListIsSet_ = false;
+}
+
+int32_t AutoClassificationRequestBody::getPdfPageNumber() const
+{
+    return pdfPageNumber_;
+}
+
+void AutoClassificationRequestBody::setPdfPageNumber(int32_t value)
+{
+    pdfPageNumber_ = value;
+    pdfPageNumberIsSet_ = true;
+}
+
+bool AutoClassificationRequestBody::pdfPageNumberIsSet() const
+{
+    return pdfPageNumberIsSet_;
+}
+
+void AutoClassificationRequestBody::unsetpdfPageNumber()
+{
+    pdfPageNumberIsSet_ = false;
 }
 
 Object AutoClassificationRequestBody::getExtendedParameters() const

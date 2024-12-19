@@ -138,6 +138,15 @@ public:
     void setKvMap(const std::string& value);
 
     /// <summary>
+    /// 是否进行印章擦除。开启后，可提升印章遮挡区域的文字识别精度。 
+    /// </summary>
+
+    bool isEraseSeal() const;
+    bool eraseSealIsSet() const;
+    void unseteraseSeal();
+    void setEraseSeal(bool value);
+
+    /// <summary>
     /// 指定PDF页码识别。传入该参数时，则识别指定页码的内容。如果不传该参数，则默认识别第1页。 
     /// </summary>
 
@@ -170,6 +179,8 @@ protected:
     bool formulaIsSet_;
     std::string kvMap_;
     bool kvMapIsSet_;
+    bool eraseSeal_;
+    bool eraseSealIsSet_;
     int32_t pdfPageNumber_;
     bool pdfPageNumberIsSet_;
 

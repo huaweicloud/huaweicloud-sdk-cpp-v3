@@ -6,12 +6,18 @@
 #include <huaweicloud/core/ClientBuilder.h>
 
 
+#include <huaweicloud/aad/v2/model/AddWafWhiteIpRuleRequest.h>
+#include <huaweicloud/aad/v2/model/AddWafWhiteIpRuleResponse.h>
+#include <huaweicloud/aad/v2/model/AddWafWhiteIpRuleV2RequestBody.h>
 #include <huaweicloud/aad/v2/model/CreateAadDomainRequestBody.h>
 #include <huaweicloud/aad/v2/model/CreateDomainRequest.h>
 #include <huaweicloud/aad/v2/model/CreateDomainResponse.h>
 #include <huaweicloud/aad/v2/model/DeleteDomainRequest.h>
 #include <huaweicloud/aad/v2/model/DeleteDomainResponse.h>
 #include <huaweicloud/aad/v2/model/DeleteDomainV2RequestBody.h>
+#include <huaweicloud/aad/v2/model/DeleteWafWhiteIpRuleRequest.h>
+#include <huaweicloud/aad/v2/model/DeleteWafWhiteIpRuleResponse.h>
+#include <huaweicloud/aad/v2/model/DeleteWafWhiteIpRuleV2RequestBody.h>
 #include <huaweicloud/aad/v2/model/EmptyJsonResponse.h>
 #include <huaweicloud/aad/v2/model/ListDDoSAttackEventRequest.h>
 #include <huaweicloud/aad/v2/model/ListDDoSAttackEventRequestBody.h>
@@ -75,6 +81,14 @@ public:
 
     static ClientBuilder<AadClient> newBuilder();
 
+    // 防护策略web-cc黑白名单-创建黑白名单规则
+    //
+    // 防护策略web-cc黑白名单-创建黑白名单规则
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<AddWafWhiteIpRuleResponse> addWafWhiteIpRule(
+        AddWafWhiteIpRuleRequest &request
+    );
     // 创建防护域名
     //
     // 创建防护域名
@@ -90,6 +104,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteDomainResponse> deleteDomain(
         DeleteDomainRequest &request
+    );
+    // 防护策略web-cc黑白名单-删除黑白名单规则
+    //
+    // 防护策略web-cc黑白名单-删除黑白名单规则
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteWafWhiteIpRuleResponse> deleteWafWhiteIpRule(
+        DeleteWafWhiteIpRuleRequest &request
     );
     // 查询DDoS攻击事件列表
     //

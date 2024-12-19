@@ -28,6 +28,9 @@ QuotaList::QuotaList()
     gigabytesSSDIsSet_ = false;
     snapshotsSSDIsSet_ = false;
     volumesSSDIsSet_ = false;
+    gigabytesESSDIsSet_ = false;
+    snapshotsESSDIsSet_ = false;
+    volumesESSDIsSet_ = false;
     gigabytesGPSSDIsSet_ = false;
     snapshotsGPSSDIsSet_ = false;
     volumesGPSSDIsSet_ = false;
@@ -88,6 +91,15 @@ web::json::value QuotaList::toJson() const
     }
     if(volumesSSDIsSet_) {
         val[utility::conversions::to_string_t("volumes_SSD")] = ModelBase::toJson(volumesSSD_);
+    }
+    if(gigabytesESSDIsSet_) {
+        val[utility::conversions::to_string_t("gigabytes_ESSD")] = ModelBase::toJson(gigabytesESSD_);
+    }
+    if(snapshotsESSDIsSet_) {
+        val[utility::conversions::to_string_t("snapshots_ESSD")] = ModelBase::toJson(snapshotsESSD_);
+    }
+    if(volumesESSDIsSet_) {
+        val[utility::conversions::to_string_t("volumes_ESSD")] = ModelBase::toJson(volumesESSD_);
     }
     if(gigabytesGPSSDIsSet_) {
         val[utility::conversions::to_string_t("gigabytes_GPSSD")] = ModelBase::toJson(gigabytesGPSSD_);
@@ -241,6 +253,33 @@ bool QuotaList::fromJson(const web::json::value& val)
             QuotaDetailVolumesSSD refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setVolumesSSD(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("gigabytes_ESSD"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("gigabytes_ESSD"));
+        if(!fieldValue.is_null())
+        {
+            QuotaDetailGigabytesESSD refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setGigabytesESSD(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("snapshots_ESSD"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("snapshots_ESSD"));
+        if(!fieldValue.is_null())
+        {
+            QuotaDetailSnapshotsESSD refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSnapshotsESSD(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("volumes_ESSD"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("volumes_ESSD"));
+        if(!fieldValue.is_null())
+        {
+            QuotaDetailVolumesESSD refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setVolumesESSD(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("gigabytes_GPSSD"))) {
@@ -596,6 +635,69 @@ bool QuotaList::volumesSSDIsSet() const
 void QuotaList::unsetvolumesSSD()
 {
     volumesSSDIsSet_ = false;
+}
+
+QuotaDetailGigabytesESSD QuotaList::getGigabytesESSD() const
+{
+    return gigabytesESSD_;
+}
+
+void QuotaList::setGigabytesESSD(const QuotaDetailGigabytesESSD& value)
+{
+    gigabytesESSD_ = value;
+    gigabytesESSDIsSet_ = true;
+}
+
+bool QuotaList::gigabytesESSDIsSet() const
+{
+    return gigabytesESSDIsSet_;
+}
+
+void QuotaList::unsetgigabytesESSD()
+{
+    gigabytesESSDIsSet_ = false;
+}
+
+QuotaDetailSnapshotsESSD QuotaList::getSnapshotsESSD() const
+{
+    return snapshotsESSD_;
+}
+
+void QuotaList::setSnapshotsESSD(const QuotaDetailSnapshotsESSD& value)
+{
+    snapshotsESSD_ = value;
+    snapshotsESSDIsSet_ = true;
+}
+
+bool QuotaList::snapshotsESSDIsSet() const
+{
+    return snapshotsESSDIsSet_;
+}
+
+void QuotaList::unsetsnapshotsESSD()
+{
+    snapshotsESSDIsSet_ = false;
+}
+
+QuotaDetailVolumesESSD QuotaList::getVolumesESSD() const
+{
+    return volumesESSD_;
+}
+
+void QuotaList::setVolumesESSD(const QuotaDetailVolumesESSD& value)
+{
+    volumesESSD_ = value;
+    volumesESSDIsSet_ = true;
+}
+
+bool QuotaList::volumesESSDIsSet() const
+{
+    return volumesESSDIsSet_;
+}
+
+void QuotaList::unsetvolumesESSD()
+{
+    volumesESSDIsSet_ = false;
 }
 
 QuotaDetailGigabytesGPSSD QuotaList::getGigabytesGPSSD() const

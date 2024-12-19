@@ -39,6 +39,7 @@ public:
     static HttpRequestDef genRequestDefForShowSnapshot();
     static HttpRequestDef genRequestDefForShowVolume();
     static HttpRequestDef genRequestDefForShowVolumeTags();
+    static HttpRequestDef genRequestDefForUnsubscribePostpaidVolume();
     static HttpRequestDef genRequestDefForUpdateSnapshot();
     static HttpRequestDef genRequestDefForUpdateVolume();
     static HttpRequestDef genRequestDefForListVersions();

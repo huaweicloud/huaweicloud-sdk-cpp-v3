@@ -203,6 +203,8 @@
 #include <huaweicloud/rds/v3/model/ListSslCertDownloadLinkResponse.h>
 #include <huaweicloud/rds/v3/model/ListStorageTypesRequest.h>
 #include <huaweicloud/rds/v3/model/ListStorageTypesResponse.h>
+#include <huaweicloud/rds/v3/model/ListUpdateBackupEnhancePolicyRequest.h>
+#include <huaweicloud/rds/v3/model/ListUpdateBackupEnhancePolicyResponse.h>
 #include <huaweicloud/rds/v3/model/ListUpgradeHistoriesRequest.h>
 #include <huaweicloud/rds/v3/model/ListUpgradeHistoriesResponse.h>
 #include <huaweicloud/rds/v3/model/ListXellogFilesRequest.h>
@@ -1246,6 +1248,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListStorageTypesResponse> listStorageTypes(
         ListStorageTypesRequest &request
+    );
+    // 查询高级备份策略
+    //
+    // 查询高级备份策略，可查看自定义稀疏备份等
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListUpdateBackupEnhancePolicyResponse> listUpdateBackupEnhancePolicy(
+        ListUpdateBackupEnhancePolicyRequest &request
     );
     // 
     //

@@ -93,6 +93,7 @@ public:
     static HttpRequestDef genRequestDefForListSqlLimit();
     static HttpRequestDef genRequestDefForListSslCertDownloadLink();
     static HttpRequestDef genRequestDefForListStorageTypes();
+    static HttpRequestDef genRequestDefForListUpdateBackupEnhancePolicy();
     static HttpRequestDef genRequestDefForListUpgradeHistories();
     static HttpRequestDef genRequestDefForListXellogFiles();
     static HttpRequestDef genRequestDefForMigrateFollower();

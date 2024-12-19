@@ -1226,6 +1226,14 @@ HttpRequestDef RdsMeta::genRequestDefForListStorageTypes() {
     return reqDefBuilder;
 }
 
+HttpRequestDef RdsMeta::genRequestDefForListUpdateBackupEnhancePolicy() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("TimeZone")
+                  .withJsonTag("time_zone")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef RdsMeta::genRequestDefForListUpgradeHistories() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Offset")

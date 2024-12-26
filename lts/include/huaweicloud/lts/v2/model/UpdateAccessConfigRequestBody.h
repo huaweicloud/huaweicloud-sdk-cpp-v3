@@ -54,6 +54,15 @@ public:
     void setAccessConfigId(const std::string& value);
 
     /// <summary>
+    /// 日志接入名称。 满足正则表达式：^(?!.)(?!)(?!.*?.$)[\\u4e00-\\u9fa5a-zA-Z0-9-.]{1,64}$
+    /// </summary>
+
+    std::string getAccessConfigName() const;
+    bool accessConfigNameIsSet() const;
+    void unsetaccessConfigName();
+    void setAccessConfigName(const std::string& value);
+
+    /// <summary>
     /// 
     /// </summary>
 
@@ -192,6 +201,8 @@ public:
 protected:
     std::string accessConfigId_;
     bool accessConfigIdIsSet_;
+    std::string accessConfigName_;
+    bool accessConfigNameIsSet_;
     AccessConfigDeatilUpdate accessConfigDetail_;
     bool accessConfigDetailIsSet_;
     AccessConfigHostGroupIdList hostGroupInfo_;

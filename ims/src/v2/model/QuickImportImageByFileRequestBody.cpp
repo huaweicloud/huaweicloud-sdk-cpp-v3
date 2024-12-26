@@ -31,6 +31,8 @@ QuickImportImageByFileRequestBody::QuickImportImageByFileRequestBody()
     enterpriseProjectIdIsSet_ = false;
     architecture_ = "";
     architectureIsSet_ = false;
+    hwFirmwareType_ = "";
+    hwFirmwareTypeIsSet_ = false;
     osType_ = "";
     osTypeIsSet_ = false;
     imageTagsIsSet_ = false;
@@ -75,6 +77,9 @@ web::json::value QuickImportImageByFileRequestBody::toJson() const
     }
     if(architectureIsSet_) {
         val[utility::conversions::to_string_t("architecture")] = ModelBase::toJson(architecture_);
+    }
+    if(hwFirmwareTypeIsSet_) {
+        val[utility::conversions::to_string_t("hw_firmware_type")] = ModelBase::toJson(hwFirmwareType_);
     }
     if(osTypeIsSet_) {
         val[utility::conversions::to_string_t("os_type")] = ModelBase::toJson(osType_);
@@ -177,6 +182,15 @@ bool QuickImportImageByFileRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setArchitecture(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("hw_firmware_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("hw_firmware_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHwFirmwareType(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("os_type"))) {
@@ -409,6 +423,27 @@ bool QuickImportImageByFileRequestBody::architectureIsSet() const
 void QuickImportImageByFileRequestBody::unsetarchitecture()
 {
     architectureIsSet_ = false;
+}
+
+std::string QuickImportImageByFileRequestBody::getHwFirmwareType() const
+{
+    return hwFirmwareType_;
+}
+
+void QuickImportImageByFileRequestBody::setHwFirmwareType(const std::string& value)
+{
+    hwFirmwareType_ = value;
+    hwFirmwareTypeIsSet_ = true;
+}
+
+bool QuickImportImageByFileRequestBody::hwFirmwareTypeIsSet() const
+{
+    return hwFirmwareTypeIsSet_;
+}
+
+void QuickImportImageByFileRequestBody::unsethwFirmwareType()
+{
+    hwFirmwareTypeIsSet_ = false;
 }
 
 std::string QuickImportImageByFileRequestBody::getOsType() const

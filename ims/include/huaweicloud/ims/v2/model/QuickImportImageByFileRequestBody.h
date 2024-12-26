@@ -131,6 +131,15 @@ public:
     void setArchitecture(const std::string& value);
 
     /// <summary>
+    /// 云主机云服务器的启动方式。目前支持： bios：表示bios引导启动。 uefi：表示uefi引导启动。
+    /// </summary>
+
+    std::string getHwFirmwareType() const;
+    bool hwFirmwareTypeIsSet() const;
+    void unsethwFirmwareType();
+    void setHwFirmwareType(const std::string& value);
+
+    /// <summary>
     /// 操作系统版本。 创建数据盘镜像时该参数取值为Linux或Windows，默认Linux。
     /// </summary>
 
@@ -170,6 +179,8 @@ protected:
     bool enterpriseProjectIdIsSet_;
     std::string architecture_;
     bool architectureIsSet_;
+    std::string hwFirmwareType_;
+    bool hwFirmwareTypeIsSet_;
     std::string osType_;
     bool osTypeIsSet_;
     std::vector<ResourceTag> imageTags_;

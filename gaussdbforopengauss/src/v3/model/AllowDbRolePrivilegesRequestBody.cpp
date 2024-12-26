@@ -53,7 +53,7 @@ bool AllowDbRolePrivilegesRequestBody::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("user"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            GaussDBforOpenGaussRoleAttributes refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setUser(refVal);
         }
@@ -83,12 +83,12 @@ void AllowDbRolePrivilegesRequestBody::unsetdbName()
     dbNameIsSet_ = false;
 }
 
-Object AllowDbRolePrivilegesRequestBody::getUser() const
+GaussDBforOpenGaussRoleAttributes AllowDbRolePrivilegesRequestBody::getUser() const
 {
     return user_;
 }
 
-void AllowDbRolePrivilegesRequestBody::setUser(const Object& value)
+void AllowDbRolePrivilegesRequestBody::setUser(const GaussDBforOpenGaussRoleAttributes& value)
 {
     user_ = value;
     userIsSet_ = true;

@@ -81,7 +81,7 @@ bool GaussDBListDatabaseRoles::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("attribute"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            GaussDBListDatabaseRolesPriv refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAttribute(refVal);
         }
@@ -153,12 +153,12 @@ void GaussDBListDatabaseRoles::unsetlockStatus()
     lockStatusIsSet_ = false;
 }
 
-Object GaussDBListDatabaseRoles::getAttribute() const
+GaussDBListDatabaseRolesPriv GaussDBListDatabaseRoles::getAttribute() const
 {
     return attribute_;
 }
 
-void GaussDBListDatabaseRoles::setAttribute(const Object& value)
+void GaussDBListDatabaseRoles::setAttribute(const GaussDBListDatabaseRolesPriv& value)
 {
     attribute_ = value;
     attributeIsSet_ = true;

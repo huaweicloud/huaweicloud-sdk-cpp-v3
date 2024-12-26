@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/core/utils/Object.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/GaussDBforOpenGaussRoleAttributes.h>
 #include <string>
 
 namespace HuaweiCloud {
@@ -49,19 +49,19 @@ public:
     void setDbName(const std::string& value);
 
     /// <summary>
-    /// 角色权限信息。
+    /// 
     /// </summary>
 
-    Object getUser() const;
+    GaussDBforOpenGaussRoleAttributes getUser() const;
     bool userIsSet() const;
     void unsetuser();
-    void setUser(const Object& value);
+    void setUser(const GaussDBforOpenGaussRoleAttributes& value);
 
 
 protected:
     std::string dbName_;
     bool dbNameIsSet_;
-    Object user_;
+    GaussDBforOpenGaussRoleAttributes user_;
     bool userIsSet_;
 
 };

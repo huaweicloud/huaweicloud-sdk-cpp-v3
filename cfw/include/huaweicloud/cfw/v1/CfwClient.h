@@ -29,8 +29,13 @@
 #include <huaweicloud/cfw/v1/model/AddServiceSetRequest.h>
 #include <huaweicloud/cfw/v1/model/AddServiceSetResponse.h>
 #include <huaweicloud/cfw/v1/model/AddServiceSetUsingPOSTRequestBody.h>
+#include <huaweicloud/cfw/v1/model/AntiVirusRuleDto.h>
+#include <huaweicloud/cfw/v1/model/AntiVirusSwitchDto.h>
 #include <huaweicloud/cfw/v1/model/BatchDeleteAddressItemsRequest.h>
 #include <huaweicloud/cfw/v1/model/BatchDeleteAddressItemsResponse.h>
+#include <huaweicloud/cfw/v1/model/BatchDeleteDomainSetRequest.h>
+#include <huaweicloud/cfw/v1/model/BatchDeleteDomainSetResponse.h>
+#include <huaweicloud/cfw/v1/model/BatchDeleteDomainSetsDto.h>
 #include <huaweicloud/cfw/v1/model/BatchDeleteServiceItemsRequest.h>
 #include <huaweicloud/cfw/v1/model/BatchDeleteServiceItemsResponse.h>
 #include <huaweicloud/cfw/v1/model/CancelCaptureTaskDto.h>
@@ -96,6 +101,8 @@
 #include <huaweicloud/cfw/v1/model/ListDnsServersResponse.h>
 #include <huaweicloud/cfw/v1/model/ListDomainParseDetailRequest.h>
 #include <huaweicloud/cfw/v1/model/ListDomainParseDetailResponse.h>
+#include <huaweicloud/cfw/v1/model/ListDomainParseIpRequest.h>
+#include <huaweicloud/cfw/v1/model/ListDomainParseIpResponse.h>
 #include <huaweicloud/cfw/v1/model/ListDomainSetsRequest.h>
 #include <huaweicloud/cfw/v1/model/ListDomainSetsResponse.h>
 #include <huaweicloud/cfw/v1/model/ListDomainsRequest.h>
@@ -112,8 +119,12 @@
 #include <huaweicloud/cfw/v1/model/ListJobResponse.h>
 #include <huaweicloud/cfw/v1/model/ListLogConfigRequest.h>
 #include <huaweicloud/cfw/v1/model/ListLogConfigResponse.h>
+#include <huaweicloud/cfw/v1/model/ListProjectTagsRequest.h>
+#include <huaweicloud/cfw/v1/model/ListProjectTagsResponse.h>
 #include <huaweicloud/cfw/v1/model/ListProtectedVpcsRequest.h>
 #include <huaweicloud/cfw/v1/model/ListProtectedVpcsResponse.h>
+#include <huaweicloud/cfw/v1/model/ListResourceTagsRequest.h>
+#include <huaweicloud/cfw/v1/model/ListResourceTagsResponse.h>
 #include <huaweicloud/cfw/v1/model/ListServiceItemsRequest.h>
 #include <huaweicloud/cfw/v1/model/ListServiceItemsResponse.h>
 #include <huaweicloud/cfw/v1/model/ListServiceSetDetailRequest.h>
@@ -122,9 +133,26 @@
 #include <huaweicloud/cfw/v1/model/ListServiceSetsResponse.h>
 #include <huaweicloud/cfw/v1/model/LogConfigDto.h>
 #include <huaweicloud/cfw/v1/model/QueryFireWallInstanceDto.h>
+#include <huaweicloud/cfw/v1/model/SaveTagsRequest.h>
+#include <huaweicloud/cfw/v1/model/SaveTagsResponse.h>
+#include <huaweicloud/cfw/v1/model/ShowAlarmConfigRequest.h>
+#include <huaweicloud/cfw/v1/model/ShowAlarmConfigResponse.h>
+#include <huaweicloud/cfw/v1/model/ShowAntiVirusRuleRequest.h>
+#include <huaweicloud/cfw/v1/model/ShowAntiVirusRuleResponse.h>
+#include <huaweicloud/cfw/v1/model/ShowAntiVirusSwitchRequest.h>
+#include <huaweicloud/cfw/v1/model/ShowAntiVirusSwitchResponse.h>
+#include <huaweicloud/cfw/v1/model/ShowDomainSetDetailRequest.h>
+#include <huaweicloud/cfw/v1/model/ShowDomainSetDetailResponse.h>
 #include <huaweicloud/cfw/v1/model/UpdateAddressSetDto.h>
 #include <huaweicloud/cfw/v1/model/UpdateAddressSetRequest.h>
 #include <huaweicloud/cfw/v1/model/UpdateAddressSetResponse.h>
+#include <huaweicloud/cfw/v1/model/UpdateAlarmConfigRequest.h>
+#include <huaweicloud/cfw/v1/model/UpdateAlarmConfigResponse.h>
+#include <huaweicloud/cfw/v1/model/UpdateAntiVirusRuleRequest.h>
+#include <huaweicloud/cfw/v1/model/UpdateAntiVirusRuleResponse.h>
+#include <huaweicloud/cfw/v1/model/UpdateAntiVirusSwitchRequest.h>
+#include <huaweicloud/cfw/v1/model/UpdateAntiVirusSwitchResponse.h>
+#include <huaweicloud/cfw/v1/model/UpdateAttackLogAlarmConfigDto.h>
 #include <huaweicloud/cfw/v1/model/UpdateBlackWhiteListDto.h>
 #include <huaweicloud/cfw/v1/model/UpdateBlackWhiteListRequest.h>
 #include <huaweicloud/cfw/v1/model/UpdateBlackWhiteListResponse.h>
@@ -158,10 +186,14 @@
 #include <huaweicloud/cfw/v1/model/ListAclRuleHitCountResponse.h>
 #include <huaweicloud/cfw/v1/model/ListAclRulesRequest.h>
 #include <huaweicloud/cfw/v1/model/ListAclRulesResponse.h>
+#include <huaweicloud/cfw/v1/model/ListRegionsRequest.h>
+#include <huaweicloud/cfw/v1/model/ListRegionsResponse.h>
 #include <huaweicloud/cfw/v1/model/ListRuleAclTagsRequest.h>
 #include <huaweicloud/cfw/v1/model/ListRuleAclTagsResponse.h>
 #include <huaweicloud/cfw/v1/model/ListRuleHitCountDto.h>
 #include <huaweicloud/cfw/v1/model/OrderRuleAclDto.h>
+#include <huaweicloud/cfw/v1/model/ShowImportStatusRequest.h>
+#include <huaweicloud/cfw/v1/model/ShowImportStatusResponse.h>
 #include <huaweicloud/cfw/v1/model/UpdateAclRuleOrderRequest.h>
 #include <huaweicloud/cfw/v1/model/UpdateAclRuleOrderResponse.h>
 #include <huaweicloud/cfw/v1/model/UpdateAclRuleRequest.h>
@@ -173,22 +205,43 @@
 #include <huaweicloud/cfw/v1/model/ChangeEipStatusRequest.h>
 #include <huaweicloud/cfw/v1/model/ChangeEipStatusResponse.h>
 #include <huaweicloud/cfw/v1/model/EipOperateProtectReq.h>
+#include <huaweicloud/cfw/v1/model/ListAlarmWhitelistRequest.h>
+#include <huaweicloud/cfw/v1/model/ListAlarmWhitelistResponse.h>
 #include <huaweicloud/cfw/v1/model/ListEipCountRequest.h>
 #include <huaweicloud/cfw/v1/model/ListEipCountResponse.h>
 #include <huaweicloud/cfw/v1/model/ListEipsRequest.h>
 #include <huaweicloud/cfw/v1/model/ListEipsResponse.h>
+#include <huaweicloud/cfw/v1/model/ShowAutoProtectStatusRequest.h>
+#include <huaweicloud/cfw/v1/model/ShowAutoProtectStatusResponse.h>
+#include <huaweicloud/cfw/v1/model/SwitchAutoProtectStatusRequest.h>
+#include <huaweicloud/cfw/v1/model/SwitchAutoProtectStatusResponse.h>
+#include <huaweicloud/cfw/v1/model/SwitchEipStatusDto.h>
 #include <string>
 
+#include <huaweicloud/cfw/v1/model/AdvancedIpsRuleDto.h>
 #include <huaweicloud/cfw/v1/model/ChangeIpsProtectModeRequest.h>
 #include <huaweicloud/cfw/v1/model/ChangeIpsProtectModeResponse.h>
+#include <huaweicloud/cfw/v1/model/ChangeIpsRuleModeRequest.h>
+#include <huaweicloud/cfw/v1/model/ChangeIpsRuleModeResponse.h>
 #include <huaweicloud/cfw/v1/model/ChangeIpsSwitchStatusRequest.h>
 #include <huaweicloud/cfw/v1/model/ChangeIpsSwitchStatusResponse.h>
 #include <huaweicloud/cfw/v1/model/IpsProtectDTO.h>
+#include <huaweicloud/cfw/v1/model/IpsRuleChangeDto.h>
 #include <huaweicloud/cfw/v1/model/IpsSwitchDTO.h>
+#include <huaweicloud/cfw/v1/model/ListCustomerIpsRequest.h>
+#include <huaweicloud/cfw/v1/model/ListCustomerIpsResponse.h>
 #include <huaweicloud/cfw/v1/model/ListIpsProtectModeRequest.h>
 #include <huaweicloud/cfw/v1/model/ListIpsProtectModeResponse.h>
+#include <huaweicloud/cfw/v1/model/ListIpsRules1Request.h>
+#include <huaweicloud/cfw/v1/model/ListIpsRules1Response.h>
+#include <huaweicloud/cfw/v1/model/ListIpsRulesRequest.h>
+#include <huaweicloud/cfw/v1/model/ListIpsRulesResponse.h>
 #include <huaweicloud/cfw/v1/model/ListIpsSwitchStatusRequest.h>
 #include <huaweicloud/cfw/v1/model/ListIpsSwitchStatusResponse.h>
+#include <huaweicloud/cfw/v1/model/ShowIpsUpdateTimeRequest.h>
+#include <huaweicloud/cfw/v1/model/ShowIpsUpdateTimeResponse.h>
+#include <huaweicloud/cfw/v1/model/UpdateAdvancedIpsRuleRequest.h>
+#include <huaweicloud/cfw/v1/model/UpdateAdvancedIpsRuleResponse.h>
 #include <string>
 
 #include <cpprest/details/basic_types.h>
@@ -286,6 +339,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<BatchDeleteAddressItemsResponse> batchDeleteAddressItems(
         BatchDeleteAddressItemsRequest &request
+    );
+    // 批量删除域名组
+    //
+    // 批量删除域名组
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchDeleteDomainSetResponse> batchDeleteDomainSet(
+        BatchDeleteDomainSetRequest &request
     );
     // 批量删除服务组成员信息
     //
@@ -503,6 +564,14 @@ public:
     std::shared_ptr<ListDomainParseDetailResponse> listDomainParseDetail(
         ListDomainParseDetailRequest &request
     );
+    // 获取域名地址解析结果
+    //
+    // 获取域名地址解析结果
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListDomainParseIpResponse> listDomainParseIp(
+        ListDomainParseIpRequest &request
+    );
     // 查询域名组列表
     //
     // 查询域名组列表
@@ -567,6 +636,14 @@ public:
     std::shared_ptr<ListLogConfigResponse> listLogConfig(
         ListLogConfigRequest &request
     );
+    // 查询标签信息
+    //
+    // 查询标签信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListProjectTagsResponse> listProjectTags(
+        ListProjectTagsRequest &request
+    );
     // 查询防护VPC数
     //
     // 查询防护vpc信息
@@ -574,6 +651,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListProtectedVpcsResponse> listProtectedVpcs(
         ListProtectedVpcsRequest &request
+    );
+    // 查询资源标签信息
+    //
+    // 查询资源标签信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListResourceTagsResponse> listResourceTags(
+        ListResourceTagsRequest &request
     );
     // 查询服务成员列表
     //
@@ -599,6 +684,46 @@ public:
     std::shared_ptr<ListServiceSetsResponse> listServiceSets(
         ListServiceSetsRequest &request
     );
+    // 保存资源标签接口
+    //
+    // 保存资源标签接口
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SaveTagsResponse> saveTags(
+        SaveTagsRequest &request
+    );
+    // 获取告警配置信息
+    //
+    // 获取告警配置信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowAlarmConfigResponse> showAlarmConfig(
+        ShowAlarmConfigRequest &request
+    );
+    // 获取防火墙反病毒规则信息
+    //
+    // 获取防火墙反病毒规则信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowAntiVirusRuleResponse> showAntiVirusRule(
+        ShowAntiVirusRuleRequest &request
+    );
+    // 查看反病毒开关
+    //
+    // 查看反病毒开关
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowAntiVirusSwitchResponse> showAntiVirusSwitch(
+        ShowAntiVirusSwitchRequest &request
+    );
+    // 查看域名组详情
+    //
+    // 查看域名组详情
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowDomainSetDetailResponse> showDomainSetDetail(
+        ShowDomainSetDetailRequest &request
+    );
     // 更新地址组信息
     //
     // 更新地址组信息
@@ -606,6 +731,30 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateAddressSetResponse> updateAddressSet(
         UpdateAddressSetRequest &request
+    );
+    // 修改告警配置接口
+    //
+    // 修改告警配置接口
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateAlarmConfigResponse> updateAlarmConfig(
+        UpdateAlarmConfigRequest &request
+    );
+    // 修改反病毒规则
+    //
+    // 修改反病毒规则
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateAntiVirusRuleResponse> updateAntiVirusRule(
+        UpdateAntiVirusRuleRequest &request
+    );
+    // 修改反病毒开关
+    //
+    // 修改反病毒开关
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateAntiVirusSwitchResponse> updateAntiVirusSwitch(
+        UpdateAntiVirusSwitchRequest &request
     );
     // 更新黑白名单列表
     //
@@ -704,6 +853,14 @@ public:
     std::shared_ptr<ListAclRulesResponse> listAclRules(
         ListAclRulesRequest &request
     );
+    // 查看region列表
+    //
+    // 查看region列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListRegionsResponse> listRegions(
+        ListRegionsRequest &request
+    );
     // 查询规则标签
     //
     // 查询规则标签
@@ -711,6 +868,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListRuleAclTagsResponse> listRuleAclTags(
         ListRuleAclTagsRequest &request
+    );
+    // 查看导入状态接口
+    //
+    // 查看导入状态接口
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowImportStatusResponse> showImportStatus(
+        ShowImportStatusRequest &request
     );
     // 更新ACL规则
     //
@@ -737,6 +902,14 @@ public:
     std::shared_ptr<ChangeEipStatusResponse> changeEipStatus(
         ChangeEipStatusRequest &request
     );
+    // 查看eip告警白名单
+    //
+    // 查看eip告警白名单
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListAlarmWhitelistResponse> listAlarmWhitelist(
+        ListAlarmWhitelistRequest &request
+    );
     // 查询Eip个数
     //
     // 查询Eip个数
@@ -753,6 +926,22 @@ public:
     std::shared_ptr<ListEipsResponse> listEips(
         ListEipsRequest &request
     );
+    // 获取eip自动防护状态信息
+    //
+    // 获取eip自动防护状态信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowAutoProtectStatusResponse> showAutoProtectStatus(
+        ShowAutoProtectStatusRequest &request
+    );
+    // 修改eip自动防护开关
+    //
+    // 修改eip自动防护开关
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SwitchAutoProtectStatusResponse> switchAutoProtectStatus(
+        SwitchAutoProtectStatusRequest &request
+    );
 
     // 切换防护模式
     //
@@ -762,6 +951,14 @@ public:
     std::shared_ptr<ChangeIpsProtectModeResponse> changeIpsProtectMode(
         ChangeIpsProtectModeRequest &request
     );
+    // 改变ips规则模式
+    //
+    // 改变ips规则模式
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ChangeIpsRuleModeResponse> changeIpsRuleMode(
+        ChangeIpsRuleModeRequest &request
+    );
     // IPS特性开关操作
     //
     // 切换开关状态
@@ -769,6 +966,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ChangeIpsSwitchStatusResponse> changeIpsSwitchStatus(
         ChangeIpsSwitchStatusRequest &request
+    );
+    // 获取自定义ips规则
+    //
+    // 获取自定义ips规则
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListCustomerIpsResponse> listCustomerIps(
+        ListCustomerIpsRequest &request
     );
     // 查询防护模式
     //
@@ -778,6 +983,22 @@ public:
     std::shared_ptr<ListIpsProtectModeResponse> listIpsProtectMode(
         ListIpsProtectModeRequest &request
     );
+    // 查询频率ips规则信息
+    //
+    // 查询频率ips规则信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListIpsRulesResponse> listIpsRules(
+        ListIpsRulesRequest &request
+    );
+    // 获取ips规则列表
+    //
+    // 获取ips规则列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListIpsRules1Response> listIpsRules1(
+        ListIpsRules1Request &request
+    );
     // 查询IPS特性开关状态
     //
     // 查询IPS特性开关状态
@@ -785,6 +1006,22 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListIpsSwitchStatusResponse> listIpsSwitchStatus(
         ListIpsSwitchStatusRequest &request
+    );
+    // 获取ips规则细节
+    //
+    // 获取ips规则细节
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowIpsUpdateTimeResponse> showIpsUpdateTime(
+        ShowIpsUpdateTimeRequest &request
+    );
+    // 创建频率ips规则
+    //
+    // 创建频率ips规则
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateAdvancedIpsRuleResponse> updateAdvancedIpsRule(
+        UpdateAdvancedIpsRuleRequest &request
     );
 
 

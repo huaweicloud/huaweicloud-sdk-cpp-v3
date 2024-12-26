@@ -13,7 +13,7 @@ namespace Model {
 ListDatabaseRolesResponse::ListDatabaseRolesResponse()
 {
     rolesIsSet_ = false;
-    totalCount_ = 0L;
+    totalCount_ = 0;
     totalCountIsSet_ = false;
 }
 
@@ -53,7 +53,7 @@ bool ListDatabaseRolesResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("total_count"));
         if(!fieldValue.is_null())
         {
-            int64_t refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTotalCount(refVal);
         }
@@ -83,12 +83,12 @@ void ListDatabaseRolesResponse::unsetroles()
     rolesIsSet_ = false;
 }
 
-int64_t ListDatabaseRolesResponse::getTotalCount() const
+int32_t ListDatabaseRolesResponse::getTotalCount() const
 {
     return totalCount_;
 }
 
-void ListDatabaseRolesResponse::setTotalCount(int64_t value)
+void ListDatabaseRolesResponse::setTotalCount(int32_t value)
 {
     totalCount_ = value;
     totalCountIsSet_ = true;

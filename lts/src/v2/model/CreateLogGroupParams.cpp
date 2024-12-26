@@ -17,6 +17,8 @@ CreateLogGroupParams::CreateLogGroupParams()
     ttlInDays_ = 0;
     ttlInDaysIsSet_ = false;
     tagsIsSet_ = false;
+    logGroupNameAlias_ = "";
+    logGroupNameAliasIsSet_ = false;
 }
 
 CreateLogGroupParams::~CreateLogGroupParams() = default;
@@ -37,6 +39,9 @@ web::json::value CreateLogGroupParams::toJson() const
     }
     if(tagsIsSet_) {
         val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
+    }
+    if(logGroupNameAliasIsSet_) {
+        val[utility::conversions::to_string_t("log_group_name_alias")] = ModelBase::toJson(logGroupNameAlias_);
     }
 
     return val;
@@ -70,6 +75,15 @@ bool CreateLogGroupParams::fromJson(const web::json::value& val)
             std::vector<TagsBody> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTags(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("log_group_name_alias"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("log_group_name_alias"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLogGroupNameAlias(refVal);
         }
     }
     return ok;
@@ -137,6 +151,27 @@ bool CreateLogGroupParams::tagsIsSet() const
 void CreateLogGroupParams::unsettags()
 {
     tagsIsSet_ = false;
+}
+
+std::string CreateLogGroupParams::getLogGroupNameAlias() const
+{
+    return logGroupNameAlias_;
+}
+
+void CreateLogGroupParams::setLogGroupNameAlias(const std::string& value)
+{
+    logGroupNameAlias_ = value;
+    logGroupNameAliasIsSet_ = true;
+}
+
+bool CreateLogGroupParams::logGroupNameAliasIsSet() const
+{
+    return logGroupNameAliasIsSet_;
+}
+
+void CreateLogGroupParams::unsetlogGroupNameAlias()
+{
+    logGroupNameAliasIsSet_ = false;
 }
 
 }

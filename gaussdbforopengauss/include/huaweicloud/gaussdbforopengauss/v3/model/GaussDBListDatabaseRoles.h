@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/core/utils/Object.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/GaussDBListDatabaseRolesPriv.h>
 #include <string>
 
 namespace HuaweiCloud {
@@ -67,13 +67,13 @@ public:
     void setLockStatus(bool value);
 
     /// <summary>
-    /// 用户/角色的权限属性。
+    /// 
     /// </summary>
 
-    Object getAttribute() const;
+    GaussDBListDatabaseRolesPriv getAttribute() const;
     bool attributeIsSet() const;
     void unsetattribute();
-    void setAttribute(const Object& value);
+    void setAttribute(const GaussDBListDatabaseRolesPriv& value);
 
 
 protected:
@@ -83,7 +83,7 @@ protected:
     bool memberofIsSet_;
     bool lockStatus_;
     bool lockStatusIsSet_;
-    Object attribute_;
+    GaussDBListDatabaseRolesPriv attribute_;
     bool attributeIsSet_;
 
 };

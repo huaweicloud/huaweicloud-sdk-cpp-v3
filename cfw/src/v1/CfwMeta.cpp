@@ -143,6 +143,21 @@ HttpRequestDef CfwMeta::genRequestDefForBatchDeleteAddressItems() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CfwMeta::genRequestDefForBatchDeleteDomainSet() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("FwInstanceId")
+                  .withJsonTag("fw_instance_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
+                  .withJsonTag("enterprise_project_id")
+                  .withLocationType(Query_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CfwMeta::genRequestDefForBatchDeleteServiceItems() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
@@ -698,6 +713,23 @@ HttpRequestDef CfwMeta::genRequestDefForListDomainParseDetail() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CfwMeta::genRequestDefForListDomainParseIp() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("AddressType")
+                  .withJsonTag("address_type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("DomainSetId")
+                  .withJsonTag("domain_set_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("FwInstanceId")
+                  .withJsonTag("fw_instance_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
+                  .withJsonTag("enterprise_project_id")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CfwMeta::genRequestDefForListDomainSets() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
@@ -892,6 +924,20 @@ HttpRequestDef CfwMeta::genRequestDefForListLogConfig() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CfwMeta::genRequestDefForListProjectTags() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
+                  .withJsonTag("enterprise_project_id")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CfwMeta::genRequestDefForListProtectedVpcs() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("ObjectId")
@@ -902,6 +948,14 @@ HttpRequestDef CfwMeta::genRequestDefForListProtectedVpcs() {
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("FwInstanceId")
                   .withJsonTag("fw_instance_id")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CfwMeta::genRequestDefForListResourceTags() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
+                  .withJsonTag("enterprise_project_id")
                   .withLocationType(Query_));
     return reqDefBuilder;
 }
@@ -972,6 +1026,71 @@ HttpRequestDef CfwMeta::genRequestDefForListServiceSets() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CfwMeta::genRequestDefForSaveTags() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
+                  .withJsonTag("enterprise_project_id")
+                  .withLocationType(Query_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CfwMeta::genRequestDefForShowAlarmConfig() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("FwInstanceId")
+                  .withJsonTag("fw_instance_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
+                  .withJsonTag("enterprise_project_id")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CfwMeta::genRequestDefForShowAntiVirusRule() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("ObjectId")
+                  .withJsonTag("object_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EngineType")
+                  .withJsonTag("engine_type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
+                  .withJsonTag("enterprise_project_id")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CfwMeta::genRequestDefForShowAntiVirusSwitch() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("ObjectId")
+                  .withJsonTag("object_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
+                  .withJsonTag("enterprise_project_id")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CfwMeta::genRequestDefForShowDomainSetDetail() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("FwInstanceId")
+                  .withJsonTag("fw_instance_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
+                  .withJsonTag("enterprise_project_id")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CfwMeta::genRequestDefForUpdateAddressSet() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
@@ -979,6 +1098,45 @@ HttpRequestDef CfwMeta::genRequestDefForUpdateAddressSet() {
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("FwInstanceId")
                   .withJsonTag("fw_instance_id")
+                  .withLocationType(Query_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CfwMeta::genRequestDefForUpdateAlarmConfig() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("FwInstanceId")
+                  .withJsonTag("fw_instance_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
+                  .withJsonTag("enterprise_project_id")
+                  .withLocationType(Query_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CfwMeta::genRequestDefForUpdateAntiVirusRule() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
+                  .withJsonTag("enterprise_project_id")
+                  .withLocationType(Query_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CfwMeta::genRequestDefForUpdateAntiVirusSwitch() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
+                  .withJsonTag("enterprise_project_id")
                   .withLocationType(Query_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
@@ -1204,6 +1362,17 @@ HttpRequestDef CfwMeta::genRequestDefForListAclRules() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CfwMeta::genRequestDefForListRegions() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("FwInstanceId")
+                  .withJsonTag("fw_instance_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
+                  .withJsonTag("enterprise_project_id")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CfwMeta::genRequestDefForListRuleAclTags() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
@@ -1217,6 +1386,17 @@ HttpRequestDef CfwMeta::genRequestDefForListRuleAclTags() {
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("Limit")
                   .withJsonTag("limit")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CfwMeta::genRequestDefForShowImportStatus() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("ObjectId")
+                  .withJsonTag("object_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
+                  .withJsonTag("enterprise_project_id")
                   .withLocationType(Query_));
     return reqDefBuilder;
 }
@@ -1263,6 +1443,23 @@ HttpRequestDef CfwMeta::genRequestDefForChangeEipStatus() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CfwMeta::genRequestDefForListAlarmWhitelist() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("IpAddress")
+                  .withJsonTag("ip_address")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
+                  .withJsonTag("enterprise_project_id")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 
@@ -1321,6 +1518,26 @@ HttpRequestDef CfwMeta::genRequestDefForListEips() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CfwMeta::genRequestDefForShowAutoProtectStatus() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
+                  .withJsonTag("enterprise_project_id")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CfwMeta::genRequestDefForSwitchAutoProtectStatus() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
+                  .withJsonTag("enterprise_project_id")
+                  .withLocationType(Query_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CfwMeta::genRequestDefForChangeIpsProtectMode() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
@@ -1328,6 +1545,18 @@ HttpRequestDef CfwMeta::genRequestDefForChangeIpsProtectMode() {
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("FwInstanceId")
                   .withJsonTag("fw_instance_id")
+                  .withLocationType(Query_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CfwMeta::genRequestDefForChangeIpsRuleMode() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
+                  .withJsonTag("enterprise_project_id")
                   .withLocationType(Query_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
@@ -1351,6 +1580,47 @@ HttpRequestDef CfwMeta::genRequestDefForChangeIpsSwitchStatus() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CfwMeta::genRequestDefForListCustomerIps() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("ActionType")
+                  .withJsonTag("action_type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("AffectedOs")
+                  .withJsonTag("affected_os")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("AttackType")
+                  .withJsonTag("attack_type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("FwInstanceId")
+                  .withJsonTag("fw_instance_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("IpsName")
+                  .withJsonTag("ips_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ObjectId")
+                  .withJsonTag("object_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Protocol")
+                  .withJsonTag("protocol")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Severity")
+                  .withJsonTag("severity")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Software")
+                  .withJsonTag("software")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
+                  .withJsonTag("enterprise_project_id")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CfwMeta::genRequestDefForListIpsProtectMode() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("ObjectId")
@@ -1361,6 +1631,67 @@ HttpRequestDef CfwMeta::genRequestDefForListIpsProtectMode() {
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("FwInstanceId")
                   .withJsonTag("fw_instance_id")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CfwMeta::genRequestDefForListIpsRules() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("ObjectId")
+                  .withJsonTag("object_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
+                  .withJsonTag("enterprise_project_id")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CfwMeta::genRequestDefForListIpsRules1() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("AffectedApplicationLike")
+                  .withJsonTag("affected_application_like")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("CreateTime")
+                  .withJsonTag("create_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("FwInstanceId")
+                  .withJsonTag("fw_instance_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("IpsCveLike")
+                  .withJsonTag("ips_cve_like")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("IpsGroup")
+                  .withJsonTag("ips_group")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("IpsId")
+                  .withJsonTag("ips_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("IpsLevel")
+                  .withJsonTag("ips_level")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("IpsNameLike")
+                  .withJsonTag("ips_name_like")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("IpsRulesTypeLike")
+                  .withJsonTag("ips_rules_type_like")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("IpsStatus")
+                  .withJsonTag("ips_status")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("IsUpdatedIpsRuleQueried")
+                  .withJsonTag("is_updated_ips_rule_queried")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ObjectId")
+                  .withJsonTag("object_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
+                  .withJsonTag("enterprise_project_id")
                   .withLocationType(Query_));
     return reqDefBuilder;
 }
@@ -1376,6 +1707,32 @@ HttpRequestDef CfwMeta::genRequestDefForListIpsSwitchStatus() {
     reqDefBuilder.withRequestField(FieldDef().withName("FwInstanceId")
                   .withJsonTag("fw_instance_id")
                   .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CfwMeta::genRequestDefForShowIpsUpdateTime() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("FwInstanceId")
+                  .withJsonTag("fw_instance_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
+                  .withJsonTag("enterprise_project_id")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CfwMeta::genRequestDefForUpdateAdvancedIpsRule() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("FwInstanceId")
+                  .withJsonTag("fw_instance_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
+                  .withJsonTag("enterprise_project_id")
+                  .withLocationType(Query_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
     return reqDefBuilder;
 }
 

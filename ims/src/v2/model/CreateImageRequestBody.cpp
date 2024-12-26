@@ -45,6 +45,8 @@ CreateImageRequestBody::CreateImageRequestBody()
     architectureIsSet_ = false;
     volumeId_ = "";
     volumeIdIsSet_ = false;
+    hwFirmwareType_ = "";
+    hwFirmwareTypeIsSet_ = false;
 }
 
 CreateImageRequestBody::~CreateImageRequestBody() = default;
@@ -110,6 +112,9 @@ web::json::value CreateImageRequestBody::toJson() const
     }
     if(volumeIdIsSet_) {
         val[utility::conversions::to_string_t("volume_id")] = ModelBase::toJson(volumeId_);
+    }
+    if(hwFirmwareTypeIsSet_) {
+        val[utility::conversions::to_string_t("hw_firmware_type")] = ModelBase::toJson(hwFirmwareType_);
     }
 
     return val;
@@ -278,6 +283,15 @@ bool CreateImageRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setVolumeId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("hw_firmware_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("hw_firmware_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHwFirmwareType(refVal);
         }
     }
     return ok;
@@ -660,6 +674,27 @@ bool CreateImageRequestBody::volumeIdIsSet() const
 void CreateImageRequestBody::unsetvolumeId()
 {
     volumeIdIsSet_ = false;
+}
+
+std::string CreateImageRequestBody::getHwFirmwareType() const
+{
+    return hwFirmwareType_;
+}
+
+void CreateImageRequestBody::setHwFirmwareType(const std::string& value)
+{
+    hwFirmwareType_ = value;
+    hwFirmwareTypeIsSet_ = true;
+}
+
+bool CreateImageRequestBody::hwFirmwareTypeIsSet() const
+{
+    return hwFirmwareTypeIsSet_;
+}
+
+void CreateImageRequestBody::unsethwFirmwareType()
+{
+    hwFirmwareTypeIsSet_ = false;
 }
 
 }

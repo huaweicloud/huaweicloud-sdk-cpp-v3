@@ -1,3 +1,199 @@
+# 3.1.117 2024-12-26
+
+### HuaweiCloud SDK CBR
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListVault**
+    - 响应参数变更
+      - `+ vaults.billing.object_type: enum value [turbo]`
+      - `+ vaults.billing.spec_code: enum value [vault.backup.turbo.normal,vault.backup.database.normal,vault.hybrid.server.normal,vault.replication.server.normal]`
+  - **CreateVault**
+    - 响应参数变更
+      - `+ vault.billing.object_type: enum value [turbo]`
+      - `+ vault.billing.spec_code: enum value [vault.backup.turbo.normal,vault.backup.database.normal,vault.hybrid.server.normal,vault.replication.server.normal]`
+  - **ShowVault**
+    - 响应参数变更
+      - `+ vault.billing.object_type: enum value [turbo]`
+      - `+ vault.billing.spec_code: enum value [vault.backup.turbo.normal,vault.backup.database.normal,vault.hybrid.server.normal,vault.replication.server.normal]`
+  - **UpdateVault**
+    - 响应参数变更
+      - `+ vault.billing.object_type: enum value [turbo]`
+      - `+ vault.billing.spec_code: enum value [vault.backup.turbo.normal,vault.backup.database.normal,vault.hybrid.server.normal,vault.replication.server.normal]`
+  - **ListExternalVault**
+    - 响应参数变更
+      - `+ vaults.billing.object_type: enum value [turbo]`
+      - `+ vaults.billing.spec_code: enum value [vault.backup.turbo.normal,vault.backup.database.normal,vault.hybrid.server.normal,vault.replication.server.normal]`
+  - **ListProtectable**
+    - 响应参数变更
+      - `+ instances.protectable.vault.billing.object_type: enum value [turbo]`
+      - `+ instances.protectable.vault.billing.spec_code: enum value [vault.backup.turbo.normal,vault.backup.database.normal,vault.hybrid.server.normal,vault.replication.server.normal]`
+  - **ShowProtectable**
+    - 响应参数变更
+      - `+ instance.protectable.vault.billing.object_type: enum value [turbo]`
+      - `+ instance.protectable.vault.billing.spec_code: enum value [vault.backup.turbo.normal,vault.backup.database.normal,vault.hybrid.server.normal,vault.replication.server.normal]`
+  - **ShowVaultResourceInstances**
+    - 请求参数变更
+      - `+ object_type: enum value [turbo,workspace,vmware,rds,file]`
+    - 响应参数变更
+      - `+ resources.resource_detail.vault.billing.object_type: enum value [turbo]`
+      - `+ resources.resource_detail.vault.billing.spec_code: enum value [vault.backup.turbo.normal,vault.backup.database.normal,vault.hybrid.server.normal,vault.replication.server.normal]`
+
+### HuaweiCloud SDK CFW
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持以下接口：
+    - `ShowDomainSetDetail`
+    - `ListDomainParseIp`
+    - `BatchDeleteDomainSet`
+    - `ListRegions`
+    - `ShowImportStatus`
+    - `ShowAntiVirusSwitch`
+    - `UpdateAntiVirusSwitch`
+    - `ShowAntiVirusRule`
+    - `UpdateAntiVirusRule`
+    - `ShowAlarmConfig`
+    - `UpdateAlarmConfig`
+    - `ListAlarmWhitelist`
+    - `SwitchAutoProtectStatus`
+    - `ShowAutoProtectStatus`
+    - `ListProjectTags`
+    - `ChangeIpsRuleMode`
+    - `UpdateAdvancedIpsRule`
+    - `ListIpsRules`
+    - `ListIpsRules1`
+    - `ShowIpsUpdateTime`
+    - `ListCustomerIps`
+    - `ListResourceTags`
+    - `SaveTags`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **AllowDbRolePrivileges**
+    - 请求参数变更
+      - `+ user.name`
+      - `+ user.schema`
+      - `+ user.readonly`
+      - `+ user.default_privilege_grantee`
+      - `* user: object -> object<GaussDBforOpenGaussRoleAttributes>`
+  - **ListDatabaseRoles**
+    - 响应参数变更
+      - `* total_count: int64 -> int32`
+      - `+ roles.attribute.rolsuper`
+      - `+ roles.attribute.rolinherit`
+      - `+ roles.attribute.rolcreaterole`
+      - `+ roles.attribute.rolcreatedb`
+      - `+ roles.attribute.rolcanlogin`
+      - `+ roles.attribute.rolconnlimit`
+      - `+ roles.attribute.rolreplication`
+      - `+ roles.attribute.rolbypassrls`
+      - `+ roles.attribute.rolpassworddeadline`
+      - `* roles.attribute: object -> object<GaussDBListDatabaseRolesPriv>`
+
+### HuaweiCloud SDK IMS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateImage**
+    - 请求参数变更
+      - `+ hw_firmware_type`
+  - **ImportImageQuick**
+    - 请求参数变更
+      - `+ hw_firmware_type`
+
+### HuaweiCloud SDK LTS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListLogStreams**
+    - 请求参数变更
+      - `- offset`
+      - `- limit`
+  - **CreateLogGroup**
+    - 请求参数变更
+      - `+ log_group_name_alias`
+  - **UpdateLogStream**
+    - 请求参数变更
+      - `- ttl_in_days: enum value [7]`
+  - **UpdateTransfer**
+    - 请求参数变更
+      - `+ log_transfer_info.log_transfer_detail.lts_tags`
+      - `+ log_transfer_info.log_transfer_detail.stream_tags`
+      - `+ log_transfer_info.log_transfer_detail.struct_fields`
+      - `+ log_transfer_info.log_transfer_detail.invalid_field_value`
+    - 响应参数变更
+      - `+ log_transfer_info.log_transfer_detail.lts_tags`
+      - `+ log_transfer_info.log_transfer_detail.stream_tags`
+      - `+ log_transfer_info.log_transfer_detail.struct_fields`
+      - `+ log_transfer_info.log_transfer_detail.invalid_field_value`
+  - **CreateTransfer**
+    - 请求参数变更
+      - `+ log_transfer_info.log_transfer_detail.lts_tags`
+      - `+ log_transfer_info.log_transfer_detail.stream_tags`
+      - `+ log_transfer_info.log_transfer_detail.struct_fields`
+      - `+ log_transfer_info.log_transfer_detail.invalid_field_value`
+    - 响应参数变更
+      - `+ log_transfer_info.log_transfer_detail.lts_tags`
+      - `+ log_transfer_info.log_transfer_detail.stream_tags`
+      - `+ log_transfer_info.log_transfer_detail.struct_fields`
+      - `+ log_transfer_info.log_transfer_detail.invalid_field_value`
+  - **DeleteTransfer**
+    - 响应参数变更
+      - `+ log_transfer_info.log_transfer_detail.lts_tags`
+      - `+ log_transfer_info.log_transfer_detail.stream_tags`
+      - `+ log_transfer_info.log_transfer_detail.struct_fields`
+      - `+ log_transfer_info.log_transfer_detail.invalid_field_value`
+  - **ListTransfers**
+    - 响应参数变更
+      - `+ log_transfers.log_transfer_info.log_transfer_detail.lts_tags`
+      - `+ log_transfers.log_transfer_info.log_transfer_detail.stream_tags`
+      - `+ log_transfers.log_transfer_info.log_transfer_detail.struct_fields`
+      - `+ log_transfers.log_transfer_info.log_transfer_detail.invalid_field_value`
+  - **UpdateAccessConfig**
+    - 请求参数变更
+      - `+ access_config_name`
+
+### HuaweiCloud SDK RDS
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`ListDrInfos`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListUpdateBackupEnhancePolicy**
+    - 响应参数变更
+      - `* policies.retention_days: string -> int32`
+
 # 3.1.116 2024-12-19
 
 ### HuaweiCloud SDK AAD

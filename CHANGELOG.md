@@ -1,3 +1,199 @@
+# 3.1.117 2024-12-26
+
+### HuaweiCloud SDK CBR
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListVault**
+    - changes of response param
+      - `+ vaults.billing.object_type: enum value [turbo]`
+      - `+ vaults.billing.spec_code: enum value [vault.backup.turbo.normal,vault.backup.database.normal,vault.hybrid.server.normal,vault.replication.server.normal]`
+  - **CreateVault**
+    - changes of response param
+      - `+ vault.billing.object_type: enum value [turbo]`
+      - `+ vault.billing.spec_code: enum value [vault.backup.turbo.normal,vault.backup.database.normal,vault.hybrid.server.normal,vault.replication.server.normal]`
+  - **ShowVault**
+    - changes of response param
+      - `+ vault.billing.object_type: enum value [turbo]`
+      - `+ vault.billing.spec_code: enum value [vault.backup.turbo.normal,vault.backup.database.normal,vault.hybrid.server.normal,vault.replication.server.normal]`
+  - **UpdateVault**
+    - changes of response param
+      - `+ vault.billing.object_type: enum value [turbo]`
+      - `+ vault.billing.spec_code: enum value [vault.backup.turbo.normal,vault.backup.database.normal,vault.hybrid.server.normal,vault.replication.server.normal]`
+  - **ListExternalVault**
+    - changes of response param
+      - `+ vaults.billing.object_type: enum value [turbo]`
+      - `+ vaults.billing.spec_code: enum value [vault.backup.turbo.normal,vault.backup.database.normal,vault.hybrid.server.normal,vault.replication.server.normal]`
+  - **ListProtectable**
+    - changes of response param
+      - `+ instances.protectable.vault.billing.object_type: enum value [turbo]`
+      - `+ instances.protectable.vault.billing.spec_code: enum value [vault.backup.turbo.normal,vault.backup.database.normal,vault.hybrid.server.normal,vault.replication.server.normal]`
+  - **ShowProtectable**
+    - changes of response param
+      - `+ instance.protectable.vault.billing.object_type: enum value [turbo]`
+      - `+ instance.protectable.vault.billing.spec_code: enum value [vault.backup.turbo.normal,vault.backup.database.normal,vault.hybrid.server.normal,vault.replication.server.normal]`
+  - **ShowVaultResourceInstances**
+    - changes of request param
+      - `+ object_type: enum value [turbo,workspace,vmware,rds,file]`
+    - changes of response param
+      - `+ resources.resource_detail.vault.billing.object_type: enum value [turbo]`
+      - `+ resources.resource_detail.vault.billing.spec_code: enum value [vault.backup.turbo.normal,vault.backup.database.normal,vault.hybrid.server.normal,vault.replication.server.normal]`
+
+### HuaweiCloud SDK CFW
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the following APIs:
+    - `ShowDomainSetDetail`
+    - `ListDomainParseIp`
+    - `BatchDeleteDomainSet`
+    - `ListRegions`
+    - `ShowImportStatus`
+    - `ShowAntiVirusSwitch`
+    - `UpdateAntiVirusSwitch`
+    - `ShowAntiVirusRule`
+    - `UpdateAntiVirusRule`
+    - `ShowAlarmConfig`
+    - `UpdateAlarmConfig`
+    - `ListAlarmWhitelist`
+    - `SwitchAutoProtectStatus`
+    - `ShowAutoProtectStatus`
+    - `ListProjectTags`
+    - `ChangeIpsRuleMode`
+    - `UpdateAdvancedIpsRule`
+    - `ListIpsRules`
+    - `ListIpsRules1`
+    - `ShowIpsUpdateTime`
+    - `ListCustomerIps`
+    - `ListResourceTags`
+    - `SaveTags`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **AllowDbRolePrivileges**
+    - changes of request param
+      - `+ user.name`
+      - `+ user.schema`
+      - `+ user.readonly`
+      - `+ user.default_privilege_grantee`
+      - `* user: object -> object<GaussDBforOpenGaussRoleAttributes>`
+  - **ListDatabaseRoles**
+    - changes of response param
+      - `* total_count: int64 -> int32`
+      - `+ roles.attribute.rolsuper`
+      - `+ roles.attribute.rolinherit`
+      - `+ roles.attribute.rolcreaterole`
+      - `+ roles.attribute.rolcreatedb`
+      - `+ roles.attribute.rolcanlogin`
+      - `+ roles.attribute.rolconnlimit`
+      - `+ roles.attribute.rolreplication`
+      - `+ roles.attribute.rolbypassrls`
+      - `+ roles.attribute.rolpassworddeadline`
+      - `* roles.attribute: object -> object<GaussDBListDatabaseRolesPriv>`
+
+### HuaweiCloud SDK IMS
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateImage**
+    - changes of request param
+      - `+ hw_firmware_type`
+  - **ImportImageQuick**
+    - changes of request param
+      - `+ hw_firmware_type`
+
+### HuaweiCloud SDK LTS
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListLogStreams**
+    - changes of request param
+      - `- offset`
+      - `- limit`
+  - **CreateLogGroup**
+    - changes of request param
+      - `+ log_group_name_alias`
+  - **UpdateLogStream**
+    - changes of request param
+      - `- ttl_in_days: enum value [7]`
+  - **UpdateTransfer**
+    - changes of request param
+      - `+ log_transfer_info.log_transfer_detail.lts_tags`
+      - `+ log_transfer_info.log_transfer_detail.stream_tags`
+      - `+ log_transfer_info.log_transfer_detail.struct_fields`
+      - `+ log_transfer_info.log_transfer_detail.invalid_field_value`
+    - changes of response param
+      - `+ log_transfer_info.log_transfer_detail.lts_tags`
+      - `+ log_transfer_info.log_transfer_detail.stream_tags`
+      - `+ log_transfer_info.log_transfer_detail.struct_fields`
+      - `+ log_transfer_info.log_transfer_detail.invalid_field_value`
+  - **CreateTransfer**
+    - changes of request param
+      - `+ log_transfer_info.log_transfer_detail.lts_tags`
+      - `+ log_transfer_info.log_transfer_detail.stream_tags`
+      - `+ log_transfer_info.log_transfer_detail.struct_fields`
+      - `+ log_transfer_info.log_transfer_detail.invalid_field_value`
+    - changes of response param
+      - `+ log_transfer_info.log_transfer_detail.lts_tags`
+      - `+ log_transfer_info.log_transfer_detail.stream_tags`
+      - `+ log_transfer_info.log_transfer_detail.struct_fields`
+      - `+ log_transfer_info.log_transfer_detail.invalid_field_value`
+  - **DeleteTransfer**
+    - changes of response param
+      - `+ log_transfer_info.log_transfer_detail.lts_tags`
+      - `+ log_transfer_info.log_transfer_detail.stream_tags`
+      - `+ log_transfer_info.log_transfer_detail.struct_fields`
+      - `+ log_transfer_info.log_transfer_detail.invalid_field_value`
+  - **ListTransfers**
+    - changes of response param
+      - `+ log_transfers.log_transfer_info.log_transfer_detail.lts_tags`
+      - `+ log_transfers.log_transfer_info.log_transfer_detail.stream_tags`
+      - `+ log_transfers.log_transfer_info.log_transfer_detail.struct_fields`
+      - `+ log_transfers.log_transfer_info.log_transfer_detail.invalid_field_value`
+  - **UpdateAccessConfig**
+    - changes of request param
+      - `+ access_config_name`
+
+### HuaweiCloud SDK RDS
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the API `ListDrInfos`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListUpdateBackupEnhancePolicy**
+    - changes of response param
+      - `* policies.retention_days: string -> int32`
+
 # 3.1.116 2024-12-19
 
 ### HuaweiCloud SDK AAD

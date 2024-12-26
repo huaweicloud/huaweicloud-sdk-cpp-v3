@@ -14,6 +14,8 @@ UpdateAccessConfigRequestBody::UpdateAccessConfigRequestBody()
 {
     accessConfigId_ = "";
     accessConfigIdIsSet_ = false;
+    accessConfigName_ = "";
+    accessConfigNameIsSet_ = false;
     accessConfigDetailIsSet_ = false;
     hostGroupInfoIsSet_ = false;
     accessConfigTagIsSet_ = false;
@@ -52,6 +54,9 @@ web::json::value UpdateAccessConfigRequestBody::toJson() const
 
     if(accessConfigIdIsSet_) {
         val[utility::conversions::to_string_t("access_config_id")] = ModelBase::toJson(accessConfigId_);
+    }
+    if(accessConfigNameIsSet_) {
+        val[utility::conversions::to_string_t("access_config_name")] = ModelBase::toJson(accessConfigName_);
     }
     if(accessConfigDetailIsSet_) {
         val[utility::conversions::to_string_t("access_config_detail")] = ModelBase::toJson(accessConfigDetail_);
@@ -112,6 +117,15 @@ bool UpdateAccessConfigRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAccessConfigId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("access_config_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("access_config_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAccessConfigName(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("access_config_detail"))) {
@@ -272,6 +286,27 @@ bool UpdateAccessConfigRequestBody::accessConfigIdIsSet() const
 void UpdateAccessConfigRequestBody::unsetaccessConfigId()
 {
     accessConfigIdIsSet_ = false;
+}
+
+std::string UpdateAccessConfigRequestBody::getAccessConfigName() const
+{
+    return accessConfigName_;
+}
+
+void UpdateAccessConfigRequestBody::setAccessConfigName(const std::string& value)
+{
+    accessConfigName_ = value;
+    accessConfigNameIsSet_ = true;
+}
+
+bool UpdateAccessConfigRequestBody::accessConfigNameIsSet() const
+{
+    return accessConfigNameIsSet_;
+}
+
+void UpdateAccessConfigRequestBody::unsetaccessConfigName()
+{
+    accessConfigNameIsSet_ = false;
 }
 
 AccessConfigDeatilUpdate UpdateAccessConfigRequestBody::getAccessConfigDetail() const

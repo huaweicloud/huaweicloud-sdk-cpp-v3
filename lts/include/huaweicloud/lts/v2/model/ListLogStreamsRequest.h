@@ -65,24 +65,6 @@ public:
     void unsetlogStreamName();
     void setLogStreamName(const std::string& value);
 
-    /// <summary>
-    /// 查询游标，初始传入0，后续从上一次的返回值中获取
-    /// </summary>
-
-    int32_t getOffset() const;
-    bool offsetIsSet() const;
-    void unsetoffset();
-    void setOffset(int32_t value);
-
-    /// <summary>
-    /// 每页数据量，最大值为100
-    /// </summary>
-
-    int32_t getLimit() const;
-    bool limitIsSet() const;
-    void unsetlimit();
-    void setLimit(int32_t value);
-
 
 protected:
     std::string contentType_;
@@ -91,10 +73,6 @@ protected:
     bool logGroupNameIsSet_;
     std::string logStreamName_;
     bool logStreamNameIsSet_;
-    int32_t offset_;
-    bool offsetIsSet_;
-    int32_t limit_;
-    bool limitIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

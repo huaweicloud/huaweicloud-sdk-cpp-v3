@@ -52,6 +52,7 @@ public:
     static HttpRequestDef genRequestDefForListCollations();
     static HttpRequestDef genRequestDefForListConfigurations();
     static HttpRequestDef genRequestDefForListDatastores();
+    static HttpRequestDef genRequestDefForListDrInfos();
     static HttpRequestDef genRequestDefForListDrRelations();
     static HttpRequestDef genRequestDefForListEngineFlavors();
     static HttpRequestDef genRequestDefForListErrorLogs();

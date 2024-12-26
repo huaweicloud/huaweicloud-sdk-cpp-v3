@@ -203,6 +203,15 @@ public:
     void unsetvolumeId();
     void setVolumeId(const std::string& value);
 
+    /// <summary>
+    /// 云主机云服务器的启动方式。目前支持： bios：表示bios引导启动。 uefi：表示uefi引导启动。
+    /// </summary>
+
+    std::string getHwFirmwareType() const;
+    bool hwFirmwareTypeIsSet() const;
+    void unsethwFirmwareType();
+    void setHwFirmwareType(const std::string& value);
+
 
 protected:
     std::vector<CreateDataImage> dataImages_;
@@ -241,6 +250,8 @@ protected:
     bool architectureIsSet_;
     std::string volumeId_;
     bool volumeIdIsSet_;
+    std::string hwFirmwareType_;
+    bool hwFirmwareTypeIsSet_;
 
 };
 

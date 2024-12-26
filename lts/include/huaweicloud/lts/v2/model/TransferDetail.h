@@ -183,6 +183,42 @@ public:
     void unsettags();
     void setTags(const std::vector<std::string>& value);
 
+    /// <summary>
+    /// dms转储JSON格式选填，可以转储tag字段
+    /// </summary>
+
+    std::vector<std::string>& getLtsTags();
+    bool ltsTagsIsSet() const;
+    void unsetltsTags();
+    void setLtsTags(const std::vector<std::string>& value);
+
+    /// <summary>
+    /// dms转储JSON格式选填，可以转储日志流标签字段
+    /// </summary>
+
+    std::vector<std::string>& getStreamTags();
+    bool streamTagsIsSet() const;
+    void unsetstreamTags();
+    void setStreamTags(const std::vector<std::string>& value);
+
+    /// <summary>
+    /// dms转储JSON格式选填，可以转储结构化字段
+    /// </summary>
+
+    std::vector<std::string>& getStructFields();
+    bool structFieldsIsSet() const;
+    void unsetstructFields();
+    void setStructFields(const std::vector<std::string>& value);
+
+    /// <summary>
+    /// dms转储JSON格式选填，无效字段填充
+    /// </summary>
+
+    std::string getInvalidFieldValue() const;
+    bool invalidFieldValueIsSet() const;
+    void unsetinvalidFieldValue();
+    void setInvalidFieldValue(const std::string& value);
+
 
 protected:
     int32_t obsPeriod_;
@@ -217,6 +253,14 @@ protected:
     bool obsTimeZoneIdIsSet_;
     std::vector<std::string> tags_;
     bool tagsIsSet_;
+    std::vector<std::string> ltsTags_;
+    bool ltsTagsIsSet_;
+    std::vector<std::string> streamTags_;
+    bool streamTagsIsSet_;
+    std::vector<std::string> structFields_;
+    bool structFieldsIsSet_;
+    std::string invalidFieldValue_;
+    bool invalidFieldValueIsSet_;
 
 };
 

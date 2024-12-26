@@ -593,12 +593,6 @@ HttpRequestDef LtsMeta::genRequestDefForListLogStreams() {
     reqDefBuilder.withRequestField(FieldDef().withName("LogStreamName")
                   .withJsonTag("log_stream_name")
                   .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
-                  .withJsonTag("offset")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
-                  .withJsonTag("limit")
-                  .withLocationType(Query_));
     FieldDef headerParamContentType;
     reqDefBuilder.withRequestField(headerParamContentType
                   .withName("ContentType")

@@ -51,16 +51,16 @@ public:
     /// 保留时长（天）
     /// </summary>
 
-    std::string getRetentionDays() const;
+    int32_t getRetentionDays() const;
     bool retentionDaysIsSet() const;
     void unsetretentionDays();
-    void setRetentionDays(const std::string& value);
+    void setRetentionDays(int32_t value);
 
 
 protected:
     std::string period_;
     bool periodIsSet_;
-    std::string retentionDays_;
+    int32_t retentionDays_;
     bool retentionDaysIsSet_;
 
 };

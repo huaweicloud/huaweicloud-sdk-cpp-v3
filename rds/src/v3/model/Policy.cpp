@@ -14,7 +14,7 @@ Policy::Policy()
 {
     period_ = "";
     periodIsSet_ = false;
-    retentionDays_ = "";
+    retentionDays_ = 0;
     retentionDaysIsSet_ = false;
 }
 
@@ -54,7 +54,7 @@ bool Policy::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("retention_days"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRetentionDays(refVal);
         }
@@ -84,12 +84,12 @@ void Policy::unsetperiod()
     periodIsSet_ = false;
 }
 
-std::string Policy::getRetentionDays() const
+int32_t Policy::getRetentionDays() const
 {
     return retentionDays_;
 }
 
-void Policy::setRetentionDays(const std::string& value)
+void Policy::setRetentionDays(int32_t value)
 {
     retentionDays_ = value;
     retentionDaysIsSet_ = true;

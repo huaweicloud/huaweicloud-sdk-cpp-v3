@@ -120,6 +120,8 @@
 #include <huaweicloud/rds/v3/model/ListConfigurationsResponse.h>
 #include <huaweicloud/rds/v3/model/ListDatastoresRequest.h>
 #include <huaweicloud/rds/v3/model/ListDatastoresResponse.h>
+#include <huaweicloud/rds/v3/model/ListDrInfosRequest.h>
+#include <huaweicloud/rds/v3/model/ListDrInfosResponse.h>
 #include <huaweicloud/rds/v3/model/ListDrRelationsRequest.h>
 #include <huaweicloud/rds/v3/model/ListDrRelationsResponse.h>
 #include <huaweicloud/rds/v3/model/ListEngineFlavorsRequest.h>
@@ -227,6 +229,7 @@
 #include <huaweicloud/rds/v3/model/PostgresqlHbaConf.h>
 #include <huaweicloud/rds/v3/model/PostgresqlHbaHistory.h>
 #include <huaweicloud/rds/v3/model/PostgresqlPreCheckUpgradeMajorVersionReq.h>
+#include <huaweicloud/rds/v3/model/QueryDRInfoRequest.h>
 #include <huaweicloud/rds/v3/model/RecyclePolicyRequestBody.h>
 #include <huaweicloud/rds/v3/model/ReduceVolumeRequestBody.h>
 #include <huaweicloud/rds/v3/model/ResizeFlavorRequest.h>
@@ -915,6 +918,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListDatastoresResponse> listDatastores(
         ListDatastoresRequest &request
+    );
+    // 查询容灾管理列表
+    //
+    // 查询容灾管理列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListDrInfosResponse> listDrInfos(
+        ListDrInfosRequest &request
     );
     // 
     //

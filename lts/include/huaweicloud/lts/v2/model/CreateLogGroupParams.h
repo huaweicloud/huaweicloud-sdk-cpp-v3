@@ -67,6 +67,15 @@ public:
     void unsettags();
     void setTags(const std::vector<TagsBody>& value);
 
+    /// <summary>
+    /// 日志组别名
+    /// </summary>
+
+    std::string getLogGroupNameAlias() const;
+    bool logGroupNameAliasIsSet() const;
+    void unsetlogGroupNameAlias();
+    void setLogGroupNameAlias(const std::string& value);
+
 
 protected:
     std::string logGroupName_;
@@ -75,6 +84,8 @@ protected:
     bool ttlInDaysIsSet_;
     std::vector<TagsBody> tags_;
     bool tagsIsSet_;
+    std::string logGroupNameAlias_;
+    bool logGroupNameAliasIsSet_;
 
 };
 

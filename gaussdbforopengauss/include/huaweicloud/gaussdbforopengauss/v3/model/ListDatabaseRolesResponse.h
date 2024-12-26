@@ -52,16 +52,16 @@ public:
     /// 数据库用户/角色总数。
     /// </summary>
 
-    int64_t getTotalCount() const;
+    int32_t getTotalCount() const;
     bool totalCountIsSet() const;
     void unsettotalCount();
-    void setTotalCount(int64_t value);
+    void setTotalCount(int32_t value);
 
 
 protected:
     std::vector<GaussDBListDatabaseRoles> roles_;
     bool rolesIsSet_;
-    int64_t totalCount_;
+    int32_t totalCount_;
     bool totalCountIsSet_;
 
 #ifdef RTTR_FLAG

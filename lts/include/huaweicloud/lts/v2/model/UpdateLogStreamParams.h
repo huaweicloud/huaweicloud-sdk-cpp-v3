@@ -40,7 +40,7 @@ public:
     /// UpdateLogStreamParams members
 
     /// <summary>
-    /// 日志存储时间（天）。   该参数仅对华东-上海一、华北-北京四、华南-广州用户开放。
+    /// 日志存储时间（天）。
     /// </summary>
 
     int32_t getTtlInDays() const;

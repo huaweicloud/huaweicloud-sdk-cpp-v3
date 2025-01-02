@@ -1,21 +1,20 @@
 
-#ifndef HUAWEICLOUD_SDK_CFW_V1_MODEL_ShowIpsUpdateTimeResponse_H_
-#define HUAWEICLOUD_SDK_CFW_V1_MODEL_ShowIpsUpdateTimeResponse_H_
+#ifndef HUAWEICLOUD_SDK_RDS_V3_MODEL_RestoreLogReplayDatabaseResponse_H_
+#define HUAWEICLOUD_SDK_RDS_V3_MODEL_RestoreLogReplayDatabaseResponse_H_
 
 
-#include <huaweicloud/cfw/v1/CfwExport.h>
+#include <huaweicloud/rds/v3/RdsExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/cfw/v1/model/IpsRuleUpdateTimeVO.h>
-#include <vector>
+#include <string>
 
 namespace HuaweiCloud {
 namespace Sdk {
-namespace Cfw {
-namespace V1 {
+namespace Rds {
+namespace V3 {
 namespace Model {
 
 using namespace HuaweiCloud::Sdk::Core::Utils;
@@ -23,12 +22,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// Response Object
 /// </summary>
-class HUAWEICLOUD_CFW_V1_EXPORT  ShowIpsUpdateTimeResponse
+class HUAWEICLOUD_RDS_V3_EXPORT  RestoreLogReplayDatabaseResponse
     : public ModelBase, public HttpResponse
 {
 public:
-    ShowIpsUpdateTimeResponse();
-    virtual ~ShowIpsUpdateTimeResponse();
+    RestoreLogReplayDatabaseResponse();
+    virtual ~RestoreLogReplayDatabaseResponse();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -37,21 +36,21 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// ShowIpsUpdateTimeResponse members
+    /// RestoreLogReplayDatabaseResponse members
 
     /// <summary>
-    /// 
+    /// 任务流id
     /// </summary>
 
-    std::vector<IpsRuleUpdateTimeVO>& getData();
-    bool dataIsSet() const;
-    void unsetdata();
-    void setData(const std::vector<IpsRuleUpdateTimeVO>& value);
+    std::string getJobId() const;
+    bool jobIdIsSet() const;
+    void unsetjobId();
+    void setJobId(const std::string& value);
 
 
 protected:
-    std::vector<IpsRuleUpdateTimeVO> data_;
-    bool dataIsSet_;
+    std::string jobId_;
+    bool jobIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()
@@ -65,4 +64,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_CFW_V1_MODEL_ShowIpsUpdateTimeResponse_H_
+#endif // HUAWEICLOUD_SDK_RDS_V3_MODEL_RestoreLogReplayDatabaseResponse_H_

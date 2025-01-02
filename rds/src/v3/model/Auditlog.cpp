@@ -16,7 +16,7 @@ Auditlog::Auditlog()
     idIsSet_ = false;
     name_ = "";
     nameIsSet_ = false;
-    size_ = 0L;
+    size_ = 0.0;
     sizeIsSet_ = false;
     beginTime_ = "";
     beginTimeIsSet_ = false;
@@ -78,7 +78,7 @@ bool Auditlog::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("size"));
         if(!fieldValue.is_null())
         {
-            int64_t refVal;
+            double refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSize(refVal);
         }
@@ -147,12 +147,12 @@ void Auditlog::unsetname()
     nameIsSet_ = false;
 }
 
-int64_t Auditlog::getSize() const
+double Auditlog::getSize() const
 {
     return size_;
 }
 
-void Auditlog::setSize(int64_t value)
+void Auditlog::setSize(double value)
 {
     size_ = value;
     sizeIsSet_ = true;

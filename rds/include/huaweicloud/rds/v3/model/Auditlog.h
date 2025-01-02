@@ -60,10 +60,10 @@ public:
     /// 审计日志大小，单位：KB。
     /// </summary>
 
-    int64_t getSize() const;
+    double getSize() const;
     bool sizeIsSet() const;
     void unsetsize();
-    void setSize(int64_t value);
+    void setSize(double value);
 
     /// <summary>
     /// 审计日志开始时间，格式为“yyyy-mm-ddThh:mm:ssZ”。  其中，T指某个时间的开始，Z指时区偏移量，例如北京时间偏移显示为+0800。
@@ -89,7 +89,7 @@ protected:
     bool idIsSet_;
     std::string name_;
     bool nameIsSet_;
-    int64_t size_;
+    double size_;
     bool sizeIsSet_;
     std::string beginTime_;
     bool beginTimeIsSet_;

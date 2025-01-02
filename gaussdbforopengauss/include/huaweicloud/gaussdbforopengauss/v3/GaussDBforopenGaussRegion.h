@@ -78,6 +78,42 @@ public:
             { 
                 "https://gaussdb-opengauss.cn-north-9.myhuaweicloud.com"
             });
+        regions["cn-south-2"] = Region("cn-south-2",
+            { 
+                "https://gaussdb-opengauss.cn-south-2.myhuaweicloud.com"
+            });
+        regions["cn-east-4"] = Region("cn-east-4",
+            { 
+                "https://gaussdb.cn-east-4.myhuaweicloud.com"
+            });
+        regions["cn-east-5"] = Region("cn-east-5",
+            { 
+                "https://gaussdb.cn-east-5.myhuaweicloud.com"
+            });
+        regions["ap-southeast-5"] = Region("ap-southeast-5",
+            { 
+                "https://gaussdb.ap-southeast-5.myhuaweicloud.com"
+            });
+        regions["tr-west-1"] = Region("tr-west-1",
+            { 
+                "https://gaussdb.tr-west-1.myhuaweicloud.com"
+            });
+        regions["me-east-1"] = Region("me-east-1",
+            { 
+                "https://gaussdb.me-east-1.myhuaweicloud.com"
+            });
+        regions["af-north-1"] = Region("af-north-1",
+            { 
+                "https://gaussdb.af-north-1.myhuaweicloud.com"
+            });
+        regions["ap-southeast-4"] = Region("ap-southeast-4",
+            { 
+                "https://gaussdb-opengauss.ap-southeast-4.myhuaweicloud.com"
+            });
+        regions["cn-east-2"] = Region("cn-east-2",
+            { 
+                "https://gaussdb.cn-east-2.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

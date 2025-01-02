@@ -34,6 +34,8 @@ InstanceDrInfo::InstanceDrInfo()
     slaveInstanceIdIsSet_ = false;
     slaveRegion_ = "";
     slaveRegionIsSet_ = false;
+    buildProcess_ = "";
+    buildProcessIsSet_ = false;
     time_ = 0L;
     timeIsSet_ = false;
 }
@@ -80,6 +82,9 @@ web::json::value InstanceDrInfo::toJson() const
     }
     if(slaveRegionIsSet_) {
         val[utility::conversions::to_string_t("slave_region")] = ModelBase::toJson(slaveRegion_);
+    }
+    if(buildProcessIsSet_) {
+        val[utility::conversions::to_string_t("build_process")] = ModelBase::toJson(buildProcess_);
     }
     if(timeIsSet_) {
         val[utility::conversions::to_string_t("time")] = ModelBase::toJson(time_);
@@ -188,6 +193,15 @@ bool InstanceDrInfo::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSlaveRegion(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("build_process"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("build_process"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBuildProcess(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("time"))) {
@@ -432,6 +446,27 @@ bool InstanceDrInfo::slaveRegionIsSet() const
 void InstanceDrInfo::unsetslaveRegion()
 {
     slaveRegionIsSet_ = false;
+}
+
+std::string InstanceDrInfo::getBuildProcess() const
+{
+    return buildProcess_;
+}
+
+void InstanceDrInfo::setBuildProcess(const std::string& value)
+{
+    buildProcess_ = value;
+    buildProcessIsSet_ = true;
+}
+
+bool InstanceDrInfo::buildProcessIsSet() const
+{
+    return buildProcessIsSet_;
+}
+
+void InstanceDrInfo::unsetbuildProcess()
+{
+    buildProcessIsSet_ = false;
 }
 
 int64_t InstanceDrInfo::getTime() const

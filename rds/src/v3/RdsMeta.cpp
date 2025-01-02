@@ -1015,6 +1015,11 @@ HttpRequestDef RdsMeta::genRequestDefForListRdSforMysqlProxyFlavors() {
     return reqDefBuilder;
 }
 
+HttpRequestDef RdsMeta::genRequestDefForListReadOnlyReplayDatabase() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef RdsMeta::genRequestDefForListRecycleInstances() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Offset")
@@ -1324,6 +1329,20 @@ HttpRequestDef RdsMeta::genRequestDefForModifyRdSforMySqlProxyRouteMode() {
 }
 
 HttpRequestDef RdsMeta::genRequestDefForRestoreExistInstance() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef RdsMeta::genRequestDefForRestoreLogReplayDatabase() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage

@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_CFW_V1_MODEL_PageInfoCustomerIpsListVO_H_
-#define HUAWEICLOUD_SDK_CFW_V1_MODEL_PageInfoCustomerIpsListVO_H_
+#ifndef HUAWEICLOUD_SDK_CFW_V1_MODEL_HttpListCustomerIpsResponseData_H_
+#define HUAWEICLOUD_SDK_CFW_V1_MODEL_HttpListCustomerIpsResponseData_H_
 
 
 #include <huaweicloud/cfw/v1/CfwExport.h>
@@ -23,12 +23,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// 
 /// </summary>
-class HUAWEICLOUD_CFW_V1_EXPORT  PageInfoCustomerIpsListVO
+class HUAWEICLOUD_CFW_V1_EXPORT  HttpListCustomerIpsResponseData
     : public ModelBase
 {
 public:
-    PageInfoCustomerIpsListVO();
-    virtual ~PageInfoCustomerIpsListVO();
+    HttpListCustomerIpsResponseData();
+    virtual ~HttpListCustomerIpsResponseData();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -37,10 +37,10 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// PageInfoCustomerIpsListVO members
+    /// HttpListCustomerIpsResponseData members
 
     /// <summary>
-    /// 
+    /// 每页显示个数，范围为1-1024
     /// </summary>
 
     int32_t getLimit() const;
@@ -49,7 +49,7 @@ public:
     void setLimit(int32_t value);
 
     /// <summary>
-    /// 
+    /// 偏移量：指定返回记录的开始位置，必须为数字，取值范围为大于或等于0，默认0
     /// </summary>
 
     int32_t getOffset() const;
@@ -58,16 +58,7 @@ public:
     void setOffset(int32_t value);
 
     /// <summary>
-    /// 
-    /// </summary>
-
-    std::vector<CustomerIpsListVO>& getRecords();
-    bool recordsIsSet() const;
-    void unsetrecords();
-    void setRecords(const std::vector<CustomerIpsListVO>& value);
-
-    /// <summary>
-    /// 
+    /// 查询获得自定义ips规则列表总数
     /// </summary>
 
     int32_t getTotal() const;
@@ -75,16 +66,25 @@ public:
     void unsettotal();
     void setTotal(int32_t value);
 
+    /// <summary>
+    /// 自定义ips规则记录
+    /// </summary>
+
+    std::vector<CustomerIpsListVO>& getRecords();
+    bool recordsIsSet() const;
+    void unsetrecords();
+    void setRecords(const std::vector<CustomerIpsListVO>& value);
+
 
 protected:
     int32_t limit_;
     bool limitIsSet_;
     int32_t offset_;
     bool offsetIsSet_;
-    std::vector<CustomerIpsListVO> records_;
-    bool recordsIsSet_;
     int32_t total_;
     bool totalIsSet_;
+    std::vector<CustomerIpsListVO> records_;
+    bool recordsIsSet_;
 
 };
 
@@ -95,4 +95,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_CFW_V1_MODEL_PageInfoCustomerIpsListVO_H_
+#endif // HUAWEICLOUD_SDK_CFW_V1_MODEL_HttpListCustomerIpsResponseData_H_

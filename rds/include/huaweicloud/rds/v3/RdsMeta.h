@@ -81,6 +81,7 @@ public:
     static HttpRequestDef genRequestDefForListProjectTags();
     static HttpRequestDef genRequestDefForListRdSforMySqlProxy();
     static HttpRequestDef genRequestDefForListRdSforMysqlProxyFlavors();
+    static HttpRequestDef genRequestDefForListReadOnlyReplayDatabase();
     static HttpRequestDef genRequestDefForListRecycleInstances();
     static HttpRequestDef genRequestDefForListRestoreTimes();
     static HttpRequestDef genRequestDefForListShareBackups();
@@ -101,6 +102,7 @@ public:
     static HttpRequestDef genRequestDefForModifyPostgresqlHbaConf();
     static HttpRequestDef genRequestDefForModifyRdSforMySqlProxyRouteMode();
     static HttpRequestDef genRequestDefForRestoreExistInstance();
+    static HttpRequestDef genRequestDefForRestoreLogReplayDatabase();
     static HttpRequestDef genRequestDefForRestoreTables();
     static HttpRequestDef genRequestDefForRestoreTablesNew();
     static HttpRequestDef genRequestDefForRestoreToExistingInstance();

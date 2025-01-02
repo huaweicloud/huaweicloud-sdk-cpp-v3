@@ -179,6 +179,8 @@
 #include <huaweicloud/rds/v3/model/ListRdSforMySqlProxyResponse.h>
 #include <huaweicloud/rds/v3/model/ListRdSforMysqlProxyFlavorsRequest.h>
 #include <huaweicloud/rds/v3/model/ListRdSforMysqlProxyFlavorsResponse.h>
+#include <huaweicloud/rds/v3/model/ListReadOnlyReplayDatabaseRequest.h>
+#include <huaweicloud/rds/v3/model/ListReadOnlyReplayDatabaseResponse.h>
 #include <huaweicloud/rds/v3/model/ListRecycleInstancesRequest.h>
 #include <huaweicloud/rds/v3/model/ListRecycleInstancesResponse.h>
 #include <huaweicloud/rds/v3/model/ListRestoreTimesRequest.h>
@@ -211,6 +213,7 @@
 #include <huaweicloud/rds/v3/model/ListUpgradeHistoriesResponse.h>
 #include <huaweicloud/rds/v3/model/ListXellogFilesRequest.h>
 #include <huaweicloud/rds/v3/model/ListXellogFilesResponse.h>
+#include <huaweicloud/rds/v3/model/LogReplayDatabaseReq.h>
 #include <huaweicloud/rds/v3/model/MigrateFollowerRequest.h>
 #include <huaweicloud/rds/v3/model/MigrateFollowerResponse.h>
 #include <huaweicloud/rds/v3/model/ModifiyInstanceNameRequest.h>
@@ -236,6 +239,8 @@
 #include <huaweicloud/rds/v3/model/RestoreExistInstanceRequest.h>
 #include <huaweicloud/rds/v3/model/RestoreExistInstanceResponse.h>
 #include <huaweicloud/rds/v3/model/RestoreExistingInstanceRequestBody.h>
+#include <huaweicloud/rds/v3/model/RestoreLogReplayDatabaseRequest.h>
+#include <huaweicloud/rds/v3/model/RestoreLogReplayDatabaseResponse.h>
 #include <huaweicloud/rds/v3/model/RestoreTablesNewRequest.h>
 #include <huaweicloud/rds/v3/model/RestoreTablesNewRequestBody.h>
 #include <huaweicloud/rds/v3/model/RestoreTablesNewResponse.h>
@@ -1154,6 +1159,14 @@ public:
     std::shared_ptr<ListRdSforMysqlProxyFlavorsResponse> listRdSforMysqlProxyFlavors(
         ListRdSforMysqlProxyFlavorsRequest &request
     );
+    // 查询只读实例可恢复到主实例的库
+    //
+    // 查询只读实例可恢复到主实例的库
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListReadOnlyReplayDatabaseResponse> listReadOnlyReplayDatabase(
+        ListReadOnlyReplayDatabaseRequest &request
+    );
     // 查询回收站
     //
     // 查询回收站实例信息
@@ -1316,6 +1329,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<RestoreExistInstanceResponse> restoreExistInstance(
         RestoreExistInstanceRequest &request
+    );
+    // 延迟库只读，恢复库到主实例
+    //
+    // 延迟库只读，恢复库到主实例
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<RestoreLogReplayDatabaseResponse> restoreLogReplayDatabase(
+        RestoreLogReplayDatabaseRequest &request
     );
     // 表级时间点恢复(MySQL)
     //

@@ -2859,6 +2859,36 @@ std::shared_ptr<ListRdSforMysqlProxyFlavorsResponse> RdsClient::listRdSforMysqlP
 
     return localVarResult;
 }
+std::shared_ptr<ListReadOnlyReplayDatabaseResponse> RdsClient::listReadOnlyReplayDatabase(ListReadOnlyReplayDatabaseRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/log-replay/database";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, RdsMeta::genRequestDefForListReadOnlyReplayDatabase());
+
+    std::shared_ptr<ListReadOnlyReplayDatabaseResponse> localVarResult = std::make_shared<ListReadOnlyReplayDatabaseResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListRecycleInstancesResponse> RdsClient::listRecycleInstances(ListRecycleInstancesRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/recycle-instances";
@@ -3690,6 +3720,51 @@ std::shared_ptr<RestoreExistInstanceResponse> RdsClient::restoreExistInstance(Re
         localVarHeaderParams, localVarHttpBody, RdsMeta::genRequestDefForRestoreExistInstance());
 
     std::shared_ptr<RestoreExistInstanceResponse> localVarResult = std::make_shared<RestoreExistInstanceResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<RestoreLogReplayDatabaseResponse> RdsClient::restoreLogReplayDatabase(RestoreLogReplayDatabaseRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/log-replay/database";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, RdsMeta::genRequestDefForRestoreLogReplayDatabase());
+
+    std::shared_ptr<RestoreLogReplayDatabaseResponse> localVarResult = std::make_shared<RestoreLogReplayDatabaseResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

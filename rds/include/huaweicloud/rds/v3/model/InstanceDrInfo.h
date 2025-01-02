@@ -138,6 +138,15 @@ public:
     void setSlaveRegion(const std::string& value);
 
     /// <summary>
+    /// 搭建流程。master表示配置主实例容灾能力流程。slave表示配置灾备实例容灾能力流程。
+    /// </summary>
+
+    std::string getBuildProcess() const;
+    bool buildProcessIsSet() const;
+    void unsetbuildProcess();
+    void setBuildProcess(const std::string& value);
+
+    /// <summary>
     /// 灾备搭建时间
     /// </summary>
 
@@ -170,6 +179,8 @@ protected:
     bool slaveInstanceIdIsSet_;
     std::string slaveRegion_;
     bool slaveRegionIsSet_;
+    std::string buildProcess_;
+    bool buildProcessIsSet_;
     int64_t time_;
     bool timeIsSet_;
 

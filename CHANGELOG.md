@@ -1,3 +1,55 @@
+# 3.1.118 2025-01-02
+
+### HuaweiCloud SDK CFW
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowIpsUpdateTime**
+    - changes of response param
+      - `- trace_id`
+      - `- error_description`
+      - `- job_id`
+      - `- error_code`
+      - `- fail_reason`
+      - `- order_id`
+  - **ListCustomerIps**
+    - changes of response param
+      - `* data: object<PageInfo«CustomerIpsListVO»> -> object<HttpListCustomerIpsResponseData>`
+
+### HuaweiCloud SDK RDS
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the APIs `ListReadOnlyReplayDatabase`, `RestoreLogReplayDatabase`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListAuditlogs**
+    - changes of response param
+      - `* auditlogs.size: int64 -> double`
+  - **ListDrInfos**
+    - changes of response param
+      - `+ instance_dr_infos.build_process`
+
+### HuaweiCloud SDK VPC
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListVpcs**
+    - changes of request param
+      - `+ enterprise_project_id`
+
 # 3.1.117 2024-12-26
 
 ### HuaweiCloud SDK CBR

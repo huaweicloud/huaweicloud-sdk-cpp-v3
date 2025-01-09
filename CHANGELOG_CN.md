@@ -1,3 +1,72 @@
+# 3.1.119 2025-01-09
+
+### HuaweiCloud SDK DRS
+
+- _接口版本_
+  - V5
+- _新增特性_
+  - 支持接口`ShowAgencyInfo`、`UpdateAgencyPolicy`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK IMS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListImages**
+    - 响应参数变更
+      - `+ images.os_shutdown_timeout`
+  - **UpdateImage**
+    - 响应参数变更
+      - `+ os_shutdown_timeout`
+
+### HuaweiCloud SDK VPC
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListSecurityGroupRules**
+    - 请求参数变更
+      - `+ priority`
+      - `+ ethertype`
+      - `+ remote_address_group_id`
+      - `+ enabled`
+    - 响应参数变更
+      - `+ security_group_rules.enabled`
+  - **CreateSecurityGroupRule**
+    - 请求参数变更
+      - `+ security_group_rule.enabled`
+    - 响应参数变更
+      - `+ security_group_rule.enabled`
+  - **ShowSecurityGroupRule**
+    - 响应参数变更
+      - `+ security_group_rule.enabled`
+  - **BatchCreateSecurityGroupRules**
+    - 请求参数变更
+      - `+ security_group_rules.enabled`
+    - 响应参数变更
+      - `+ security_group_rules.enabled`
+  - **CreateSecurityGroup**
+    - 响应参数变更
+      - `+ security_group.security_group_rules.enabled`
+  - **ShowSecurityGroup**
+    - 响应参数变更
+      - `+ security_group.security_group_rules.enabled`
+  - **UpdateSecurityGroup**
+    - 响应参数变更
+      - `+ security_group.security_group_rules.enabled`
+
 # 3.1.118 2025-01-02
 
 ### HuaweiCloud SDK CFW

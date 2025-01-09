@@ -132,6 +132,8 @@
 #include <huaweicloud/drs/v5/model/QueryUserSelectedObjectInfoReq.h>
 #include <huaweicloud/drs/v5/model/ShowActionsRequest.h>
 #include <huaweicloud/drs/v5/model/ShowActionsResponse.h>
+#include <huaweicloud/drs/v5/model/ShowAgencyInfoRequest.h>
+#include <huaweicloud/drs/v5/model/ShowAgencyInfoResponse.h>
 #include <huaweicloud/drs/v5/model/ShowColumnInfoResultRequest.h>
 #include <huaweicloud/drs/v5/model/ShowColumnInfoResultResponse.h>
 #include <huaweicloud/drs/v5/model/ShowComparePolicyRequest.h>
@@ -194,6 +196,9 @@
 #include <huaweicloud/drs/v5/model/SyncUserJdbcDriverRequest.h>
 #include <huaweicloud/drs/v5/model/SyncUserJdbcDriverResponse.h>
 #include <huaweicloud/drs/v5/model/ToPeriodReq.h>
+#include <huaweicloud/drs/v5/model/UpdateAgencyPolicyRequest.h>
+#include <huaweicloud/drs/v5/model/UpdateAgencyPolicyRequestBody.h>
+#include <huaweicloud/drs/v5/model/UpdateAgencyPolicyResponse.h>
 #include <huaweicloud/drs/v5/model/UpdateBatchAsyncJobsRequest.h>
 #include <huaweicloud/drs/v5/model/UpdateBatchAsyncJobsResponse.h>
 #include <huaweicloud/drs/v5/model/UpdateComparePolicyRequest.h>
@@ -652,6 +657,14 @@ public:
     std::shared_ptr<ShowActionsResponse> showActions(
         ShowActionsRequest &request
     );
+    // 查询委托权限详情
+    //
+    // 查询委托权限详情
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowAgencyInfoResponse> showAgencyInfo(
+        ShowAgencyInfoRequest &request
+    );
     // 获取指定数据库表列信息
     //
     // 获取指定数据库表列信息
@@ -889,6 +902,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<SyncUserJdbcDriverResponse> syncUserJdbcDriver(
         SyncUserJdbcDriverRequest &request
+    );
+    // 更新委托权限策略
+    //
+    // 更新委托权限策略
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateAgencyPolicyResponse> updateAgencyPolicy(
+        UpdateAgencyPolicyRequest &request
     );
     // 更新指定ID批量异步任务详情
     //

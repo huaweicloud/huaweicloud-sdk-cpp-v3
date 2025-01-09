@@ -135,6 +135,8 @@ ImageInfo::ImageInfo()
     supportKvmHi1822HisriovIsSet_ = false;
     supportKvmHi1822Hivirtionet_ = "";
     supportKvmHi1822HivirtionetIsSet_ = false;
+    osShutdownTimeout_ = "";
+    osShutdownTimeoutIsSet_ = false;
 }
 
 ImageInfo::~ImageInfo() = default;
@@ -332,6 +334,9 @@ web::json::value ImageInfo::toJson() const
     }
     if(supportKvmHi1822HivirtionetIsSet_) {
         val[utility::conversions::to_string_t("__support_kvm_hi1822_hivirtionet")] = ModelBase::toJson(supportKvmHi1822Hivirtionet_);
+    }
+    if(osShutdownTimeoutIsSet_) {
+        val[utility::conversions::to_string_t("os_shutdown_timeout")] = ModelBase::toJson(osShutdownTimeout_);
     }
 
     return val;
@@ -896,6 +901,15 @@ bool ImageInfo::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSupportKvmHi1822Hivirtionet(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("os_shutdown_timeout"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("os_shutdown_timeout"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setOsShutdownTimeout(refVal);
         }
     }
     return ok;
@@ -2202,6 +2216,27 @@ bool ImageInfo::supportKvmHi1822HivirtionetIsSet() const
 void ImageInfo::unsetsupportKvmHi1822Hivirtionet()
 {
     supportKvmHi1822HivirtionetIsSet_ = false;
+}
+
+std::string ImageInfo::getOsShutdownTimeout() const
+{
+    return osShutdownTimeout_;
+}
+
+void ImageInfo::setOsShutdownTimeout(const std::string& value)
+{
+    osShutdownTimeout_ = value;
+    osShutdownTimeoutIsSet_ = true;
+}
+
+bool ImageInfo::osShutdownTimeoutIsSet() const
+{
+    return osShutdownTimeoutIsSet_;
+}
+
+void ImageInfo::unsetosShutdownTimeout()
+{
+    osShutdownTimeoutIsSet_ = false;
 }
 
 }

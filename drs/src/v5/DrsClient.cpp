@@ -2147,6 +2147,39 @@ std::shared_ptr<ShowActionsResponse> DrsClient::showActions(ShowActionsRequest &
 
     return localVarResult;
 }
+std::shared_ptr<ShowAgencyInfoResponse> DrsClient::showAgencyInfo(ShowAgencyInfoRequest &request)
+{
+    std::string localVarPath = "/v5/{project_id}/agency/{agency_name}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["agency_name"] = parameterToString(request.getAgencyName());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, DrsMeta::genRequestDefForShowAgencyInfo());
+
+    std::shared_ptr<ShowAgencyInfoResponse> localVarResult = std::make_shared<ShowAgencyInfoResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowColumnInfoResultResponse> DrsClient::showColumnInfoResult(ShowColumnInfoResultRequest &request)
 {
     std::string localVarPath = "/v5/{project_id}/job/{job_id}/columns";
@@ -3296,6 +3329,51 @@ std::shared_ptr<SyncUserJdbcDriverResponse> DrsClient::syncUserJdbcDriver(SyncUs
         localVarHeaderParams, localVarHttpBody, DrsMeta::genRequestDefForSyncUserJdbcDriver());
 
     std::shared_ptr<SyncUserJdbcDriverResponse> localVarResult = std::make_shared<SyncUserJdbcDriverResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateAgencyPolicyResponse> DrsClient::updateAgencyPolicy(UpdateAgencyPolicyRequest &request)
+{
+    std::string localVarPath = "/v5/{project_id}/agency/{agency_name}/policy";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["agency_name"] = parameterToString(request.getAgencyName());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, DrsMeta::genRequestDefForUpdateAgencyPolicy());
+
+    std::shared_ptr<UpdateAgencyPolicyResponse> localVarResult = std::make_shared<UpdateAgencyPolicyResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

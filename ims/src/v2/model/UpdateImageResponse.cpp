@@ -135,6 +135,8 @@ UpdateImageResponse::UpdateImageResponse()
     supportKvmHi1822HisriovIsSet_ = false;
     supportKvmHi1822Hivirtionet_ = "";
     supportKvmHi1822HivirtionetIsSet_ = false;
+    osShutdownTimeout_ = "";
+    osShutdownTimeoutIsSet_ = false;
 }
 
 UpdateImageResponse::~UpdateImageResponse() = default;
@@ -332,6 +334,9 @@ web::json::value UpdateImageResponse::toJson() const
     }
     if(supportKvmHi1822HivirtionetIsSet_) {
         val[utility::conversions::to_string_t("__support_kvm_hi1822_hivirtionet")] = ModelBase::toJson(supportKvmHi1822Hivirtionet_);
+    }
+    if(osShutdownTimeoutIsSet_) {
+        val[utility::conversions::to_string_t("os_shutdown_timeout")] = ModelBase::toJson(osShutdownTimeout_);
     }
 
     return val;
@@ -896,6 +901,15 @@ bool UpdateImageResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSupportKvmHi1822Hivirtionet(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("os_shutdown_timeout"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("os_shutdown_timeout"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setOsShutdownTimeout(refVal);
         }
     }
     return ok;
@@ -2202,6 +2216,27 @@ bool UpdateImageResponse::supportKvmHi1822HivirtionetIsSet() const
 void UpdateImageResponse::unsetsupportKvmHi1822Hivirtionet()
 {
     supportKvmHi1822HivirtionetIsSet_ = false;
+}
+
+std::string UpdateImageResponse::getOsShutdownTimeout() const
+{
+    return osShutdownTimeout_;
+}
+
+void UpdateImageResponse::setOsShutdownTimeout(const std::string& value)
+{
+    osShutdownTimeout_ = value;
+    osShutdownTimeoutIsSet_ = true;
+}
+
+bool UpdateImageResponse::osShutdownTimeoutIsSet() const
+{
+    return osShutdownTimeoutIsSet_;
+}
+
+void UpdateImageResponse::unsetosShutdownTimeout()
+{
+    osShutdownTimeoutIsSet_ = false;
 }
 
 }

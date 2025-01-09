@@ -1,3 +1,72 @@
+# 3.1.119 2025-01-09
+
+### HuaweiCloud SDK DRS
+
+- _API Version_
+  - V5
+- _Features_
+  - Support the APIs `ShowAgencyInfo`, `UpdateAgencyPolicy`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK IMS
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListImages**
+    - changes of response param
+      - `+ images.os_shutdown_timeout`
+  - **UpdateImage**
+    - changes of response param
+      - `+ os_shutdown_timeout`
+
+### HuaweiCloud SDK VPC
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListSecurityGroupRules**
+    - changes of request param
+      - `+ priority`
+      - `+ ethertype`
+      - `+ remote_address_group_id`
+      - `+ enabled`
+    - changes of response param
+      - `+ security_group_rules.enabled`
+  - **CreateSecurityGroupRule**
+    - changes of request param
+      - `+ security_group_rule.enabled`
+    - changes of response param
+      - `+ security_group_rule.enabled`
+  - **ShowSecurityGroupRule**
+    - changes of response param
+      - `+ security_group_rule.enabled`
+  - **BatchCreateSecurityGroupRules**
+    - changes of request param
+      - `+ security_group_rules.enabled`
+    - changes of response param
+      - `+ security_group_rules.enabled`
+  - **CreateSecurityGroup**
+    - changes of response param
+      - `+ security_group.security_group_rules.enabled`
+  - **ShowSecurityGroup**
+    - changes of response param
+      - `+ security_group.security_group_rules.enabled`
+  - **UpdateSecurityGroup**
+    - changes of response param
+      - `+ security_group.security_group_rules.enabled`
+
 # 3.1.118 2025-01-02
 
 ### HuaweiCloud SDK CFW

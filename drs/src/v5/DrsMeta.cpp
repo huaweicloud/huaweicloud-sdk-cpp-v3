@@ -840,6 +840,16 @@ HttpRequestDef DrsMeta::genRequestDefForShowActions() {
     return reqDefBuilder;
 }
 
+HttpRequestDef DrsMeta::genRequestDefForShowAgencyInfo() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef DrsMeta::genRequestDefForShowColumnInfoResult() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("QueryId")
@@ -1286,6 +1296,20 @@ HttpRequestDef DrsMeta::genRequestDefForSyncJdbcDriver() {
 }
 
 HttpRequestDef DrsMeta::genRequestDefForSyncUserJdbcDriver() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef DrsMeta::genRequestDefForUpdateAgencyPolicy() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage

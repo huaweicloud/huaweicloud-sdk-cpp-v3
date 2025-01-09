@@ -597,6 +597,15 @@ public:
     void unsetsupportKvmHi1822Hivirtionet();
     void setSupportKvmHi1822Hivirtionet(const std::string& value);
 
+    /// <summary>
+    /// 设置虚拟机的优雅关机超时时间，设置范围为60-300，默认为60（取值为整数，单位为秒）。 云服务器在优雅关机超时后会触发强制关机，避免实例长时间处于关机状态中。 当您的云服务器关机过程中由于特定软件的状态、保存等原因导致优雅关机时间过长，会触发超时强制关机。 您可以通过设置镜像该字段，使得发放的云服务器优雅关机超时时间变长。 该字段当前只影响弹性云服务器，不影响裸金属服务器。
+    /// </summary>
+
+    std::string getOsShutdownTimeout() const;
+    bool osShutdownTimeoutIsSet() const;
+    void unsetosShutdownTimeout();
+    void setOsShutdownTimeout(const std::string& value);
+
 
 protected:
     std::string backupId_;
@@ -723,6 +732,8 @@ protected:
     bool supportKvmHi1822HisriovIsSet_;
     std::string supportKvmHi1822Hivirtionet_;
     bool supportKvmHi1822HivirtionetIsSet_;
+    std::string osShutdownTimeout_;
+    bool osShutdownTimeoutIsSet_;
 
 };
 

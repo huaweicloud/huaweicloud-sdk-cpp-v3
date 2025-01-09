@@ -62,6 +62,7 @@ public:
     static HttpRequestDef genRequestDefForListsAgencyPermissions();
     static HttpRequestDef genRequestDefForModifyConnection();
     static HttpRequestDef genRequestDefForShowActions();
+    static HttpRequestDef genRequestDefForShowAgencyInfo();
     static HttpRequestDef genRequestDefForShowColumnInfoResult();
     static HttpRequestDef genRequestDefForShowComparePolicy();
     static HttpRequestDef genRequestDefForShowDataFilteringResult();
@@ -91,6 +92,7 @@ public:
     static HttpRequestDef genRequestDefForStopJobAction();
     static HttpRequestDef genRequestDefForSyncJdbcDriver();
     static HttpRequestDef genRequestDefForSyncUserJdbcDriver();
+    static HttpRequestDef genRequestDefForUpdateAgencyPolicy();
     static HttpRequestDef genRequestDefForUpdateBatchAsyncJobs();
     static HttpRequestDef genRequestDefForUpdateComparePolicy();
     static HttpRequestDef genRequestDefForUpdateDataProgress();

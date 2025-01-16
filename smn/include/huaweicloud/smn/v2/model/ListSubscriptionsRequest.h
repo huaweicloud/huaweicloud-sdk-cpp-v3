@@ -57,7 +57,7 @@ public:
     void setLimit(int32_t value);
 
     /// <summary>
-    /// 协议名称， 枚举值：http、https、sms、email、functionstage、dms、application。
+    /// 协议名称， 枚举值：http、https、sms、email、functionstage。
     /// </summary>
 
     std::string getProtocol() const;

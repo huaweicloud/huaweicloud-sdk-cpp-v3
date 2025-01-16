@@ -22,6 +22,8 @@ DbParameter::DbParameter()
     valueRangeIsSet_ = false;
     description_ = "";
     descriptionIsSet_ = false;
+    isModifiable_ = "";
+    isModifiableIsSet_ = false;
 }
 
 DbParameter::~DbParameter() = default;
@@ -48,6 +50,9 @@ web::json::value DbParameter::toJson() const
     }
     if(descriptionIsSet_) {
         val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
+    }
+    if(isModifiableIsSet_) {
+        val[utility::conversions::to_string_t("is_modifiable")] = ModelBase::toJson(isModifiable_);
     }
 
     return val;
@@ -99,6 +104,15 @@ bool DbParameter::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDescription(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_modifiable"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_modifiable"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsModifiable(refVal);
         }
     }
     return ok;
@@ -208,6 +222,27 @@ bool DbParameter::descriptionIsSet() const
 void DbParameter::unsetdescription()
 {
     descriptionIsSet_ = false;
+}
+
+std::string DbParameter::getIsModifiable() const
+{
+    return isModifiable_;
+}
+
+void DbParameter::setIsModifiable(const std::string& value)
+{
+    isModifiable_ = value;
+    isModifiableIsSet_ = true;
+}
+
+bool DbParameter::isModifiableIsSet() const
+{
+    return isModifiableIsSet_;
+}
+
+void DbParameter::unsetisModifiable()
+{
+    isModifiableIsSet_ = false;
 }
 
 }

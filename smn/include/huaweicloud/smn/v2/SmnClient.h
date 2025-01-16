@@ -31,6 +31,8 @@
 #include <huaweicloud/smn/v2/model/CreateMessageTemplateRequest.h>
 #include <huaweicloud/smn/v2/model/CreateMessageTemplateRequestBody.h>
 #include <huaweicloud/smn/v2/model/CreateMessageTemplateResponse.h>
+#include <huaweicloud/smn/v2/model/CreateNotifyPolicyRequest.h>
+#include <huaweicloud/smn/v2/model/CreateNotifyPolicyResponse.h>
 #include <huaweicloud/smn/v2/model/CreateResourceTagRequest.h>
 #include <huaweicloud/smn/v2/model/CreateResourceTagRequestBody.h>
 #include <huaweicloud/smn/v2/model/CreateResourceTagResponse.h>
@@ -41,6 +43,8 @@
 #include <huaweicloud/smn/v2/model/DeleteLogtankResponse.h>
 #include <huaweicloud/smn/v2/model/DeleteMessageTemplateRequest.h>
 #include <huaweicloud/smn/v2/model/DeleteMessageTemplateResponse.h>
+#include <huaweicloud/smn/v2/model/DeleteNotifyPolicyRequest.h>
+#include <huaweicloud/smn/v2/model/DeleteNotifyPolicyResponse.h>
 #include <huaweicloud/smn/v2/model/DeleteResourceTagRequest.h>
 #include <huaweicloud/smn/v2/model/DeleteResourceTagResponse.h>
 #include <huaweicloud/smn/v2/model/DeleteTopicAttributeByNameRequest.h>
@@ -77,6 +81,7 @@
 #include <huaweicloud/smn/v2/model/ListVersionResponse.h>
 #include <huaweicloud/smn/v2/model/ListVersionsRequest.h>
 #include <huaweicloud/smn/v2/model/ListVersionsResponse.h>
+#include <huaweicloud/smn/v2/model/NotifyPolicyRequestBody.h>
 #include <huaweicloud/smn/v2/model/PublishHttpDetectRequest.h>
 #include <huaweicloud/smn/v2/model/PublishHttpDetectResponse.h>
 #include <huaweicloud/smn/v2/model/PublishMessageRequest.h>
@@ -84,12 +89,16 @@
 #include <huaweicloud/smn/v2/model/PublishMessageResponse.h>
 #include <huaweicloud/smn/v2/model/ShowHttpDetectResultRequest.h>
 #include <huaweicloud/smn/v2/model/ShowHttpDetectResultResponse.h>
+#include <huaweicloud/smn/v2/model/ShowNotifyPolicyRequest.h>
+#include <huaweicloud/smn/v2/model/ShowNotifyPolicyResponse.h>
 #include <huaweicloud/smn/v2/model/UpdateLogtankRequest.h>
 #include <huaweicloud/smn/v2/model/UpdateLogtankRequestBody.h>
 #include <huaweicloud/smn/v2/model/UpdateLogtankResponse.h>
 #include <huaweicloud/smn/v2/model/UpdateMessageTemplateRequest.h>
 #include <huaweicloud/smn/v2/model/UpdateMessageTemplateRequestBody.h>
 #include <huaweicloud/smn/v2/model/UpdateMessageTemplateResponse.h>
+#include <huaweicloud/smn/v2/model/UpdateNotifyPolicyRequest.h>
+#include <huaweicloud/smn/v2/model/UpdateNotifyPolicyResponse.h>
 #include <huaweicloud/smn/v2/model/UpdateSubscriptionRequest.h>
 #include <huaweicloud/smn/v2/model/UpdateSubscriptionRequestBody.h>
 #include <huaweicloud/smn/v2/model/UpdateSubscriptionResponse.h>
@@ -232,6 +241,14 @@ public:
     std::shared_ptr<CreateMessageTemplateResponse> createMessageTemplate(
         CreateMessageTemplateRequest &request
     );
+    // 创建通知策略
+    //
+    // 创建通知策略
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateNotifyPolicyResponse> createNotifyPolicy(
+        CreateNotifyPolicyRequest &request
+    );
     // 添加资源标签
     //
     // 一个资源上最多有10个标签。此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
@@ -264,6 +281,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteMessageTemplateResponse> deleteMessageTemplate(
         DeleteMessageTemplateRequest &request
+    );
+    // 删除通知策略
+    //
+    // 删除通知策略
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteNotifyPolicyResponse> deleteNotifyPolicy(
+        DeleteNotifyPolicyRequest &request
     );
     // 删除资源标签
     //
@@ -411,7 +436,8 @@ public:
     );
     // 消息发布
     //
-    // 将消息发送给Topic的所有订阅端点。当返回消息ID时，该消息已被保存并开始尝试将其推送给Topic的订阅者。三种消息发送方式
+    // 将消息发送给Topic的所有订阅端点。当返回消息ID时，该消息已被保存并开始尝试将其推送给Topic的订阅者。为确保您的消息能够成功推送到各个订阅者，请确保您的消息内容符合当地法律法规要求。
+    // 三种消息发送方式
     // 
     // message
     // 
@@ -434,6 +460,14 @@ public:
     std::shared_ptr<ShowHttpDetectResultResponse> showHttpDetectResult(
         ShowHttpDetectResultRequest &request
     );
+    // 查询通知策略
+    //
+    // 查询通知策略
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowNotifyPolicyResponse> showNotifyPolicy(
+        ShowNotifyPolicyRequest &request
+    );
     // 更新云日志
     //
     // 更新指定Topic绑定的云日志。
@@ -449,6 +483,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateMessageTemplateResponse> updateMessageTemplate(
         UpdateMessageTemplateRequest &request
+    );
+    // 修改通知策略
+    //
+    // 修改通知策略，该接口仅支持全量修改，不支持部分修改。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateNotifyPolicyResponse> updateNotifyPolicy(
+        UpdateNotifyPolicyRequest &request
     );
     // 更新订阅者
     //

@@ -22,6 +22,8 @@ VehicleLicenseRequestBody::VehicleLicenseRequestBody()
     returnIssuingAuthorityIsSet_ = false;
     returnTextLocation_ = false;
     returnTextLocationIsSet_ = false;
+    recognizeElectronicLicense_ = false;
+    recognizeElectronicLicenseIsSet_ = false;
 }
 
 VehicleLicenseRequestBody::~VehicleLicenseRequestBody() = default;
@@ -48,6 +50,9 @@ web::json::value VehicleLicenseRequestBody::toJson() const
     }
     if(returnTextLocationIsSet_) {
         val[utility::conversions::to_string_t("return_text_location")] = ModelBase::toJson(returnTextLocation_);
+    }
+    if(recognizeElectronicLicenseIsSet_) {
+        val[utility::conversions::to_string_t("recognize_electronic_license")] = ModelBase::toJson(recognizeElectronicLicense_);
     }
 
     return val;
@@ -99,6 +104,15 @@ bool VehicleLicenseRequestBody::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setReturnTextLocation(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("recognize_electronic_license"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("recognize_electronic_license"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRecognizeElectronicLicense(refVal);
         }
     }
     return ok;
@@ -208,6 +222,27 @@ bool VehicleLicenseRequestBody::returnTextLocationIsSet() const
 void VehicleLicenseRequestBody::unsetreturnTextLocation()
 {
     returnTextLocationIsSet_ = false;
+}
+
+bool VehicleLicenseRequestBody::isRecognizeElectronicLicense() const
+{
+    return recognizeElectronicLicense_;
+}
+
+void VehicleLicenseRequestBody::setRecognizeElectronicLicense(bool value)
+{
+    recognizeElectronicLicense_ = value;
+    recognizeElectronicLicenseIsSet_ = true;
+}
+
+bool VehicleLicenseRequestBody::recognizeElectronicLicenseIsSet() const
+{
+    return recognizeElectronicLicenseIsSet_;
+}
+
+void VehicleLicenseRequestBody::unsetrecognizeElectronicLicense()
+{
+    recognizeElectronicLicenseIsSet_ = false;
 }
 
 }

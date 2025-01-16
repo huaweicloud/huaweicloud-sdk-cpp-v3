@@ -22,10 +22,12 @@ public:
     static HttpRequestDef genRequestDefForCancelSubscription();
     static HttpRequestDef genRequestDefForCreateLogtank();
     static HttpRequestDef genRequestDefForCreateMessageTemplate();
+    static HttpRequestDef genRequestDefForCreateNotifyPolicy();
     static HttpRequestDef genRequestDefForCreateResourceTag();
     static HttpRequestDef genRequestDefForCreateTopic();
     static HttpRequestDef genRequestDefForDeleteLogtank();
     static HttpRequestDef genRequestDefForDeleteMessageTemplate();
+    static HttpRequestDef genRequestDefForDeleteNotifyPolicy();
     static HttpRequestDef genRequestDefForDeleteResourceTag();
     static HttpRequestDef genRequestDefForDeleteTopic();
     static HttpRequestDef genRequestDefForDeleteTopicAttributeByName();
@@ -46,8 +48,10 @@ public:
     static HttpRequestDef genRequestDefForPublishHttpDetect();
     static HttpRequestDef genRequestDefForPublishMessage();
     static HttpRequestDef genRequestDefForShowHttpDetectResult();
+    static HttpRequestDef genRequestDefForShowNotifyPolicy();
     static HttpRequestDef genRequestDefForUpdateLogtank();
     static HttpRequestDef genRequestDefForUpdateMessageTemplate();
+    static HttpRequestDef genRequestDefForUpdateNotifyPolicy();
     static HttpRequestDef genRequestDefForUpdateSubscription();
     static HttpRequestDef genRequestDefForUpdateTopic();
     static HttpRequestDef genRequestDefForUpdateTopicAttribute();

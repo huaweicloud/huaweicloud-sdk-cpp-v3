@@ -19,6 +19,7 @@ AddSubscriptionRequestBody::AddSubscriptionRequestBody()
     remark_ = "";
     remarkIsSet_ = false;
     extensionIsSet_ = false;
+    subscriptionsIsSet_ = false;
 }
 
 AddSubscriptionRequestBody::~AddSubscriptionRequestBody() = default;
@@ -42,6 +43,9 @@ web::json::value AddSubscriptionRequestBody::toJson() const
     }
     if(extensionIsSet_) {
         val[utility::conversions::to_string_t("extension")] = ModelBase::toJson(extension_);
+    }
+    if(subscriptionsIsSet_) {
+        val[utility::conversions::to_string_t("subscriptions")] = ModelBase::toJson(subscriptions_);
     }
 
     return val;
@@ -84,6 +88,15 @@ bool AddSubscriptionRequestBody::fromJson(const web::json::value& val)
             SubscriptionExtension refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setExtension(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("subscriptions"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("subscriptions"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<BatchAddSubscriptionsRequestBody> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSubscriptions(refVal);
         }
     }
     return ok;
@@ -172,6 +185,27 @@ bool AddSubscriptionRequestBody::extensionIsSet() const
 void AddSubscriptionRequestBody::unsetextension()
 {
     extensionIsSet_ = false;
+}
+
+std::vector<BatchAddSubscriptionsRequestBody>& AddSubscriptionRequestBody::getSubscriptions()
+{
+    return subscriptions_;
+}
+
+void AddSubscriptionRequestBody::setSubscriptions(const std::vector<BatchAddSubscriptionsRequestBody>& value)
+{
+    subscriptions_ = value;
+    subscriptionsIsSet_ = true;
+}
+
+bool AddSubscriptionRequestBody::subscriptionsIsSet() const
+{
+    return subscriptionsIsSet_;
+}
+
+void AddSubscriptionRequestBody::unsetsubscriptions()
+{
+    subscriptionsIsSet_ = false;
 }
 
 }

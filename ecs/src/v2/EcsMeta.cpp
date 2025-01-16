@@ -394,6 +394,11 @@ HttpRequestDef EcsMeta::genRequestDefForListResizeFlavors() {
     return reqDefBuilder;
 }
 
+HttpRequestDef EcsMeta::genRequestDefForListServerAzInfo() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef EcsMeta::genRequestDefForListServerBlockDevices() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;

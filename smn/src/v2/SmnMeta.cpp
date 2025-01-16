@@ -85,6 +85,15 @@ HttpRequestDef SmnMeta::genRequestDefForCreateMessageTemplate() {
     return reqDefBuilder;
 }
 
+HttpRequestDef SmnMeta::genRequestDefForCreateNotifyPolicy() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef SmnMeta::genRequestDefForCreateResourceTag() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -109,6 +118,11 @@ HttpRequestDef SmnMeta::genRequestDefForDeleteLogtank() {
 }
 
 HttpRequestDef SmnMeta::genRequestDefForDeleteMessageTemplate() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef SmnMeta::genRequestDefForDeleteNotifyPolicy() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
@@ -288,6 +302,11 @@ HttpRequestDef SmnMeta::genRequestDefForShowHttpDetectResult() {
     return reqDefBuilder;
 }
 
+HttpRequestDef SmnMeta::genRequestDefForShowNotifyPolicy() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef SmnMeta::genRequestDefForUpdateLogtank() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -298,6 +317,15 @@ HttpRequestDef SmnMeta::genRequestDefForUpdateLogtank() {
 }
 
 HttpRequestDef SmnMeta::genRequestDefForUpdateMessageTemplate() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef SmnMeta::genRequestDefForUpdateNotifyPolicy() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.

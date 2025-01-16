@@ -184,9 +184,11 @@ public:
     static HttpRequestDef genRequestDefForListHtapStorageType();
     static HttpRequestDef genRequestDefForListStarRocksDataBases();
     static HttpRequestDef genRequestDefForListStarRocksDataReplicationConfig();
+    static HttpRequestDef genRequestDefForListStarRocksDataReplicationConfigByDataBase();
     static HttpRequestDef genRequestDefForListStarRocksDataReplications();
     static HttpRequestDef genRequestDefForListStarRocksDbParameters();
     static HttpRequestDef genRequestDefForListStarrocksInstanceInfo();
+    static HttpRequestDef genRequestDefForModifyDataSync();
     static HttpRequestDef genRequestDefForPauseStarRocksDataReplication();
     static HttpRequestDef genRequestDefForRebootClickHouseInstance();
     static HttpRequestDef genRequestDefForResizeClickHouseFlavor();
@@ -210,6 +212,7 @@ public:
     static HttpRequestDef genRequestDefForUpdateStarRocksDatabaseUserPassword();
     static HttpRequestDef genRequestDefForUpdateStarRocksDatabaseUserPermission();
     static HttpRequestDef genRequestDefForUpdateStarrocksParams();
+    static HttpRequestDef genRequestDefForUpgradeSrKernelVersion();
     static HttpRequestDef genRequestDefForDeleteSqlFilterRule();
     static HttpRequestDef genRequestDefForSetSqlFilterRule();
     static HttpRequestDef genRequestDefForShowSqlFilterControl();

@@ -20,6 +20,13 @@ SubscriptionExtension::SubscriptionExtension()
     keywordIsSet_ = false;
     signSecret_ = "";
     signSecretIsSet_ = false;
+    headerIsSet_ = false;
+    appKey_ = "";
+    appKeyIsSet_ = false;
+    appSecret_ = "";
+    appSecretIsSet_ = false;
+    robotCode_ = "";
+    robotCodeIsSet_ = false;
 }
 
 SubscriptionExtension::~SubscriptionExtension() = default;
@@ -43,6 +50,18 @@ web::json::value SubscriptionExtension::toJson() const
     }
     if(signSecretIsSet_) {
         val[utility::conversions::to_string_t("sign_secret")] = ModelBase::toJson(signSecret_);
+    }
+    if(headerIsSet_) {
+        val[utility::conversions::to_string_t("header")] = ModelBase::toJson(header_);
+    }
+    if(appKeyIsSet_) {
+        val[utility::conversions::to_string_t("app_key")] = ModelBase::toJson(appKey_);
+    }
+    if(appSecretIsSet_) {
+        val[utility::conversions::to_string_t("app_secret")] = ModelBase::toJson(appSecret_);
+    }
+    if(robotCodeIsSet_) {
+        val[utility::conversions::to_string_t("robot_code")] = ModelBase::toJson(robotCode_);
     }
 
     return val;
@@ -85,6 +104,42 @@ bool SubscriptionExtension::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSignSecret(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("header"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("header"));
+        if(!fieldValue.is_null())
+        {
+            std::map<std::string, std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHeader(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("app_key"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("app_key"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAppKey(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("app_secret"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("app_secret"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAppSecret(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("robot_code"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("robot_code"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRobotCode(refVal);
         }
     }
     return ok;
@@ -173,6 +228,90 @@ bool SubscriptionExtension::signSecretIsSet() const
 void SubscriptionExtension::unsetsignSecret()
 {
     signSecretIsSet_ = false;
+}
+
+std::map<std::string, std::string>& SubscriptionExtension::getHeader()
+{
+    return header_;
+}
+
+void SubscriptionExtension::setHeader(const std::map<std::string, std::string>& value)
+{
+    header_ = value;
+    headerIsSet_ = true;
+}
+
+bool SubscriptionExtension::headerIsSet() const
+{
+    return headerIsSet_;
+}
+
+void SubscriptionExtension::unsetheader()
+{
+    headerIsSet_ = false;
+}
+
+std::string SubscriptionExtension::getAppKey() const
+{
+    return appKey_;
+}
+
+void SubscriptionExtension::setAppKey(const std::string& value)
+{
+    appKey_ = value;
+    appKeyIsSet_ = true;
+}
+
+bool SubscriptionExtension::appKeyIsSet() const
+{
+    return appKeyIsSet_;
+}
+
+void SubscriptionExtension::unsetappKey()
+{
+    appKeyIsSet_ = false;
+}
+
+std::string SubscriptionExtension::getAppSecret() const
+{
+    return appSecret_;
+}
+
+void SubscriptionExtension::setAppSecret(const std::string& value)
+{
+    appSecret_ = value;
+    appSecretIsSet_ = true;
+}
+
+bool SubscriptionExtension::appSecretIsSet() const
+{
+    return appSecretIsSet_;
+}
+
+void SubscriptionExtension::unsetappSecret()
+{
+    appSecretIsSet_ = false;
+}
+
+std::string SubscriptionExtension::getRobotCode() const
+{
+    return robotCode_;
+}
+
+void SubscriptionExtension::setRobotCode(const std::string& value)
+{
+    robotCode_ = value;
+    robotCodeIsSet_ = true;
+}
+
+bool SubscriptionExtension::robotCodeIsSet() const
+{
+    return robotCodeIsSet_;
+}
+
+void SubscriptionExtension::unsetrobotCode()
+{
+    robotCodeIsSet_ = false;
 }
 
 }

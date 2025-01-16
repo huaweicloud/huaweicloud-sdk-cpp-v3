@@ -82,6 +82,15 @@ public:
     void unsetcanManage();
     void setCanManage(bool value);
 
+    /// <summary>
+    /// 是否有复制主机权限
+    /// </summary>
+
+    bool isCanCopy() const;
+    bool canCopyIsSet() const;
+    void unsetcanCopy();
+    void setCanCopy(bool value);
+
 
 protected:
     bool canView_;
@@ -94,6 +103,8 @@ protected:
     bool canAddHostIsSet_;
     bool canManage_;
     bool canManageIsSet_;
+    bool canCopy_;
+    bool canCopyIsSet_;
 
 };
 

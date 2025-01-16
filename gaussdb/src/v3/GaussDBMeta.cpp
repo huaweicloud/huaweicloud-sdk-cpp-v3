@@ -2469,6 +2469,16 @@ HttpRequestDef GaussDBMeta::genRequestDefForListStarRocksDataReplicationConfig()
     return reqDefBuilder;
 }
 
+HttpRequestDef GaussDBMeta::genRequestDefForListStarRocksDataReplicationConfigByDataBase() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef GaussDBMeta::genRequestDefForListStarRocksDataReplications() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Limit")
@@ -2487,6 +2497,9 @@ HttpRequestDef GaussDBMeta::genRequestDefForListStarRocksDataReplications() {
 
 HttpRequestDef GaussDBMeta::genRequestDefForListStarRocksDbParameters() {
     HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("AddTaskScenario")
+                  .withJsonTag("add_task_scenario")
+                  .withLocationType(Query_));
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage
                   .withName("XLanguage")
@@ -2502,6 +2515,20 @@ HttpRequestDef GaussDBMeta::genRequestDefForListStarrocksInstanceInfo() {
                   .withName("XLanguage")
                   .withJsonTag("X-Language")
                   .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBMeta::genRequestDefForModifyDataSync() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
     return reqDefBuilder;
 }
 
@@ -2824,6 +2851,20 @@ HttpRequestDef GaussDBMeta::genRequestDefForUpdateStarRocksDatabaseUserPermissio
 }
 
 HttpRequestDef GaussDBMeta::genRequestDefForUpdateStarrocksParams() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBMeta::genRequestDefForUpgradeSrKernelVersion() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage

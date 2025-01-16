@@ -56,12 +56,23 @@ public:
     void unsetxLanguage();
     void setXLanguage(const std::string& value);
 
+    /// <summary>
+    /// **参数解释**：  新增子任务的场景，用于区分库参数是否支持修改。  **约束限制**：  非必填。  **取值范围**：  不涉及。  **默认值**：  不涉及。
+    /// </summary>
+
+    std::string getAddTaskScenario() const;
+    bool addTaskScenarioIsSet() const;
+    void unsetaddTaskScenario();
+    void setAddTaskScenario(const std::string& value);
+
 
 protected:
     std::string instanceId_;
     bool instanceIdIsSet_;
     std::string xLanguage_;
     bool xLanguageIsSet_;
+    std::string addTaskScenario_;
+    bool addTaskScenarioIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

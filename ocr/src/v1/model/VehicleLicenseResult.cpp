@@ -12,6 +12,8 @@ namespace Model {
 
 VehicleLicenseResult::VehicleLicenseResult()
 {
+    type_ = "";
+    typeIsSet_ = false;
     number_ = "";
     numberIsSet_ = false;
     vehicleType_ = "";
@@ -57,6 +59,11 @@ VehicleLicenseResult::VehicleLicenseResult()
     textLocationIsSet_ = false;
     energyType_ = "";
     energyTypeIsSet_ = false;
+    color_ = "";
+    colorIsSet_ = false;
+    mandatoryScrappingDate_ = "";
+    mandatoryScrappingDateIsSet_ = false;
+    statusIsSet_ = false;
     frontIsSet_ = false;
     backIsSet_ = false;
 }
@@ -71,6 +78,9 @@ web::json::value VehicleLicenseResult::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(typeIsSet_) {
+        val[utility::conversions::to_string_t("type")] = ModelBase::toJson(type_);
+    }
     if(numberIsSet_) {
         val[utility::conversions::to_string_t("number")] = ModelBase::toJson(number_);
     }
@@ -140,6 +150,15 @@ web::json::value VehicleLicenseResult::toJson() const
     if(energyTypeIsSet_) {
         val[utility::conversions::to_string_t("energy_type")] = ModelBase::toJson(energyType_);
     }
+    if(colorIsSet_) {
+        val[utility::conversions::to_string_t("color")] = ModelBase::toJson(color_);
+    }
+    if(mandatoryScrappingDateIsSet_) {
+        val[utility::conversions::to_string_t("mandatory_scrapping_date")] = ModelBase::toJson(mandatoryScrappingDate_);
+    }
+    if(statusIsSet_) {
+        val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
+    }
     if(frontIsSet_) {
         val[utility::conversions::to_string_t("front")] = ModelBase::toJson(front_);
     }
@@ -153,6 +172,15 @@ bool VehicleLicenseResult::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setType(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("number"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("number"));
         if(!fieldValue.is_null())
@@ -360,6 +388,33 @@ bool VehicleLicenseResult::fromJson(const web::json::value& val)
             setEnergyType(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("color"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("color"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setColor(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("mandatory_scrapping_date"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("mandatory_scrapping_date"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMandatoryScrappingDate(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("status"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("status"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setStatus(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("front"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("front"));
         if(!fieldValue.is_null())
@@ -381,6 +436,27 @@ bool VehicleLicenseResult::fromJson(const web::json::value& val)
     return ok;
 }
 
+
+std::string VehicleLicenseResult::getType() const
+{
+    return type_;
+}
+
+void VehicleLicenseResult::setType(const std::string& value)
+{
+    type_ = value;
+    typeIsSet_ = true;
+}
+
+bool VehicleLicenseResult::typeIsSet() const
+{
+    return typeIsSet_;
+}
+
+void VehicleLicenseResult::unsettype()
+{
+    typeIsSet_ = false;
+}
 
 std::string VehicleLicenseResult::getNumber() const
 {
@@ -863,6 +939,69 @@ bool VehicleLicenseResult::energyTypeIsSet() const
 void VehicleLicenseResult::unsetenergyType()
 {
     energyTypeIsSet_ = false;
+}
+
+std::string VehicleLicenseResult::getColor() const
+{
+    return color_;
+}
+
+void VehicleLicenseResult::setColor(const std::string& value)
+{
+    color_ = value;
+    colorIsSet_ = true;
+}
+
+bool VehicleLicenseResult::colorIsSet() const
+{
+    return colorIsSet_;
+}
+
+void VehicleLicenseResult::unsetcolor()
+{
+    colorIsSet_ = false;
+}
+
+std::string VehicleLicenseResult::getMandatoryScrappingDate() const
+{
+    return mandatoryScrappingDate_;
+}
+
+void VehicleLicenseResult::setMandatoryScrappingDate(const std::string& value)
+{
+    mandatoryScrappingDate_ = value;
+    mandatoryScrappingDateIsSet_ = true;
+}
+
+bool VehicleLicenseResult::mandatoryScrappingDateIsSet() const
+{
+    return mandatoryScrappingDateIsSet_;
+}
+
+void VehicleLicenseResult::unsetmandatoryScrappingDate()
+{
+    mandatoryScrappingDateIsSet_ = false;
+}
+
+std::vector<std::string>& VehicleLicenseResult::getStatus()
+{
+    return status_;
+}
+
+void VehicleLicenseResult::setStatus(const std::vector<std::string>& value)
+{
+    status_ = value;
+    statusIsSet_ = true;
+}
+
+bool VehicleLicenseResult::statusIsSet() const
+{
+    return statusIsSet_;
+}
+
+void VehicleLicenseResult::unsetstatus()
+{
+    statusIsSet_ = false;
 }
 
 VehicleLicenseFront VehicleLicenseResult::getFront() const

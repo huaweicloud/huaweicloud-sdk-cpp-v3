@@ -122,6 +122,14 @@ public:
             { 
                 "https://kms.cn-east-4.myhuaweicloud.com"
             });
+        regions["me-east-1"] = Region("me-east-1",
+            { 
+                "https://kms.me-east-1.myhuaweicloud.com"
+            });
+        regions["ap-southeast-5"] = Region("ap-southeast-5",
+            { 
+                "https://kms.ap-southeast-5.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

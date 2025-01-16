@@ -16,6 +16,8 @@ ListStarRocksDbParametersRequest::ListStarRocksDbParametersRequest()
     instanceIdIsSet_ = false;
     xLanguage_ = "";
     xLanguageIsSet_ = false;
+    addTaskScenario_ = "";
+    addTaskScenarioIsSet_ = false;
 }
 
 ListStarRocksDbParametersRequest::~ListStarRocksDbParametersRequest() = default;
@@ -33,6 +35,9 @@ web::json::value ListStarRocksDbParametersRequest::toJson() const
     }
     if(xLanguageIsSet_) {
         val[utility::conversions::to_string_t("X-Language")] = ModelBase::toJson(xLanguage_);
+    }
+    if(addTaskScenarioIsSet_) {
+        val[utility::conversions::to_string_t("add_task_scenario")] = ModelBase::toJson(addTaskScenario_);
     }
 
     return val;
@@ -57,6 +62,15 @@ bool ListStarRocksDbParametersRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setXLanguage(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("add_task_scenario"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("add_task_scenario"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAddTaskScenario(refVal);
         }
     }
     return ok;
@@ -103,6 +117,27 @@ bool ListStarRocksDbParametersRequest::xLanguageIsSet() const
 void ListStarRocksDbParametersRequest::unsetxLanguage()
 {
     xLanguageIsSet_ = false;
+}
+
+std::string ListStarRocksDbParametersRequest::getAddTaskScenario() const
+{
+    return addTaskScenario_;
+}
+
+void ListStarRocksDbParametersRequest::setAddTaskScenario(const std::string& value)
+{
+    addTaskScenario_ = value;
+    addTaskScenarioIsSet_ = true;
+}
+
+bool ListStarRocksDbParametersRequest::addTaskScenarioIsSet() const
+{
+    return addTaskScenarioIsSet_;
+}
+
+void ListStarRocksDbParametersRequest::unsetaddTaskScenario()
+{
+    addTaskScenarioIsSet_ = false;
 }
 
 }

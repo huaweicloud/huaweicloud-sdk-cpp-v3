@@ -57,7 +57,7 @@ public:
     void setLimit(int32_t value);
 
     /// <summary>
-    /// 企业项目id，默认企业项目id为0。
+    /// 企业项目id。
     /// </summary>
 
     std::string getEnterpriseProjectId() const;

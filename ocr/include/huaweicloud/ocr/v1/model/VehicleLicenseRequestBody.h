@@ -75,13 +75,22 @@ public:
     void setReturnIssuingAuthority(bool value);
 
     /// <summary>
-    /// 识别到的文字块的区域位置信息。可选值包括：  - true：返回各个文字块区域  - false：不返回各个文字块区域  如果无该参数，系统默认不返回文字块区域。如果输入参数不是Boolean类型，则会报非法参数错误。 
+    /// 识别到的文字块的区域位置信息。取值范围：  - true：返回各个文字块区域  - false：不返回各个文字块区域  如果无该参数，系统默认不返回文字块区域。如果输入参数不是Boolean类型，则会报非法参数错误。 
     /// </summary>
 
     bool isReturnTextLocation() const;
     bool returnTextLocationIsSet() const;
     void unsetreturnTextLocation();
     void setReturnTextLocation(bool value);
+
+    /// <summary>
+    /// 是否支持识别电子行驶证，取值范围：  - true：支持识别电子行驶证  - false：不支持识别电子行驶证  默认不支持识别电子行驶证。如果输入参数不是Boolean类型，则会报非法参数错误。 
+    /// </summary>
+
+    bool isRecognizeElectronicLicense() const;
+    bool recognizeElectronicLicenseIsSet() const;
+    void unsetrecognizeElectronicLicense();
+    void setRecognizeElectronicLicense(bool value);
 
 
 protected:
@@ -95,6 +104,8 @@ protected:
     bool returnIssuingAuthorityIsSet_;
     bool returnTextLocation_;
     bool returnTextLocationIsSet_;
+    bool recognizeElectronicLicense_;
+    bool recognizeElectronicLicenseIsSet_;
 
 };
 

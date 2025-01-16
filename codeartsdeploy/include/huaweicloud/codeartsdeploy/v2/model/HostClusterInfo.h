@@ -11,7 +11,6 @@
 
 #include <huaweicloud/codeartsdeploy/v2/model/PermissionClusterDetail.h>
 #include <string>
-#include <huaweicloud/codeartsdeploy/v2/model/UserInfo.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -95,15 +94,6 @@ public:
     void setSlaveClusterId(const std::string& value);
 
     /// <summary>
-    /// 
-    /// </summary>
-
-    UserInfo getCreatedBy() const;
-    bool createdByIsSet() const;
-    void unsetcreatedBy();
-    void setCreatedBy(const UserInfo& value);
-
-    /// <summary>
     /// 描述
     /// </summary>
 
@@ -139,6 +129,15 @@ public:
     void unsetenvCount();
     void setEnvCount(int32_t value);
 
+    /// <summary>
+    /// 主机集群是否为代理机接入模式， 1：是 0：否
+    /// </summary>
+
+    int32_t getIsProxyMode() const;
+    bool isProxyModeIsSet() const;
+    void unsetisProxyMode();
+    void setIsProxyMode(int32_t value);
+
 
 protected:
     std::string id_;
@@ -153,8 +152,6 @@ protected:
     bool osIsSet_;
     std::string slaveClusterId_;
     bool slaveClusterIdIsSet_;
-    UserInfo createdBy_;
-    bool createdByIsSet_;
     std::string description_;
     bool descriptionIsSet_;
     PermissionClusterDetail permission_;
@@ -163,6 +160,8 @@ protected:
     bool nickNameIsSet_;
     int32_t envCount_;
     bool envCountIsSet_;
+    int32_t isProxyMode_;
+    bool isProxyModeIsSet_;
 
 };
 

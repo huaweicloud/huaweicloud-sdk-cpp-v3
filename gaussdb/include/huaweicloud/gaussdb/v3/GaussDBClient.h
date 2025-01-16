@@ -443,6 +443,8 @@
 #include <huaweicloud/gaussdb/v3/model/ListHtapStorageTypeResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ListStarRocksDataBasesRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ListStarRocksDataBasesResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ListStarRocksDataReplicationConfigByDataBaseRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ListStarRocksDataReplicationConfigByDataBaseResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ListStarRocksDataReplicationConfigRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ListStarRocksDataReplicationConfigResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ListStarRocksDataReplicationsRequest.h>
@@ -451,6 +453,9 @@
 #include <huaweicloud/gaussdb/v3/model/ListStarRocksDbParametersResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ListStarrocksInstanceInfoRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ListStarrocksInstanceInfoResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ModifyDataSyncConfigRequestV3.h>
+#include <huaweicloud/gaussdb/v3/model/ModifyDataSyncRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ModifyDataSyncResponse.h>
 #include <huaweicloud/gaussdb/v3/model/PauseStarRocksDataReplication.h>
 #include <huaweicloud/gaussdb/v3/model/PauseStarRocksDataReplicationRequest.h>
 #include <huaweicloud/gaussdb/v3/model/PauseStarRocksDataReplicationResponse.h>
@@ -508,6 +513,9 @@
 #include <huaweicloud/gaussdb/v3/model/UpdateStarRocksDatabaseUserPermissionResponse.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateStarrocksParamsRequest.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateStarrocksParamsResponse.h>
+#include <huaweicloud/gaussdb/v3/model/UpgradeSrKernelVersionRequest.h>
+#include <huaweicloud/gaussdb/v3/model/UpgradeSrKernelVersionRequestV3.h>
+#include <huaweicloud/gaussdb/v3/model/UpgradeSrKernelVersionResponse.h>
 #include <huaweicloud/gaussdb/v3/model/UserSyncReq.h>
 #include <string>
 
@@ -1921,6 +1929,14 @@ public:
     std::shared_ptr<ListStarRocksDataReplicationConfigResponse> listStarRocksDataReplicationConfig(
         ListStarRocksDataReplicationConfigRequest &request
     );
+    // 按目标库查询StarRocks数据同步配置信息
+    //
+    // 按目标库查询StarRocks数据同步配置信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListStarRocksDataReplicationConfigByDataBaseResponse> listStarRocksDataReplicationConfigByDataBase(
+        ListStarRocksDataReplicationConfigByDataBaseRequest &request
+    );
     // 查询StarRocks数据同步状态信息
     //
     // 查询StarRocks数据同步状态信息。
@@ -1944,6 +1960,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListStarrocksInstanceInfoResponse> listStarrocksInstanceInfo(
         ListStarrocksInstanceInfoRequest &request
+    );
+    // 修改StarRocks数据同步配置
+    //
+    // 修改StarRocks数据同步配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ModifyDataSyncResponse> modifyDataSync(
+        ModifyDataSyncRequest &request
     );
     // 暂停StarRocks数据同步
     //
@@ -2128,6 +2152,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateStarrocksParamsResponse> updateStarrocksParams(
         UpdateStarrocksParamsRequest &request
+    );
+    // StarRocks内核版本升级
+    //
+    // StarRocks内核版本升级。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpgradeSrKernelVersionResponse> upgradeSrKernelVersion(
+        UpgradeSrKernelVersionRequest &request
     );
 
     // 删除SQL限流规则

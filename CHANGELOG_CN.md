@@ -1,3 +1,82 @@
+# 3.1.120 2025-01-16
+
+### HuaweiCloud SDK CodeArtsDeploy
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListHostClusters**
+    - 响应参数变更
+      - `+ result.is_proxy_mode`
+      - `- result.created_by`
+      - `+ result.permission.can_copy`
+  - **ShowHostClusterDetail**
+    - 响应参数变更
+      - `+ result.permission.can_copy`
+
+### HuaweiCloud SDK GaussDB
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`UpgradeSrKernelVersion`、`ListStarRocksDataReplicationConfigByDataBase`、`ModifyDataSync`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListStarRocksDbParameters**
+    - 请求参数变更
+      - `+ add_task_scenario`
+    - 响应参数变更
+      - `+ db_parameters.is_modifiable`
+
+### HuaweiCloud SDK OCR
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RecognizeVehicleLicense**
+    - 请求参数变更
+      - `+ recognize_electronic_license`
+    - 响应参数变更
+      - `+ result.type`
+      - `+ result.color`
+      - `+ result.mandatory_scrapping_date`
+      - `+ result.status`
+
+### HuaweiCloud SDK SMN
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持接口`ShowNotifyPolicy`、`CreateNotifyPolicy`、`UpdateNotifyPolicy`、`DeleteNotifyPolicy`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **PublishMessage**
+    - 请求参数变更
+      - `+ locale`
+  - **AddSubscription**
+    - 请求参数变更
+      - `+ subscriptions`
+      - `+ extension.header`
+      - `+ extension.app_key`
+      - `+ extension.app_secret`
+      - `+ extension.robot_code`
+  - **ListResourceInstances**
+    - 请求参数变更
+      - `+ without_any_tag`
+  - **ListTopicAttributes**
+    - 请求参数变更
+      - `* name: required -> optional`
+
 # 3.1.119 2025-01-09
 
 ### HuaweiCloud SDK DRS

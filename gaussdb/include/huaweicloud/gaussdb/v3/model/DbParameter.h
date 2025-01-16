@@ -83,6 +83,15 @@ public:
     void unsetdescription();
     void setDescription(const std::string& value);
 
+    /// <summary>
+    /// **参数解释**：  新增子任务的场景，用于区分库参数是否支持修改。  **取值范围**：  不涉及。
+    /// </summary>
+
+    std::string getIsModifiable() const;
+    bool isModifiableIsSet() const;
+    void unsetisModifiable();
+    void setIsModifiable(const std::string& value);
+
 
 protected:
     std::string paramName_;
@@ -95,6 +104,8 @@ protected:
     bool valueRangeIsSet_;
     std::string description_;
     bool descriptionIsSet_;
+    std::string isModifiable_;
+    bool isModifiableIsSet_;
 
 };
 

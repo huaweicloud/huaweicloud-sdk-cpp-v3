@@ -75,15 +75,6 @@ public:
     void setTaskStatus(const std::string& value);
 
     /// <summary>
-    /// 任务尝试次数。
-    /// </summary>
-
-    int32_t getAttemptNums() const;
-    bool attemptNumsIsSet() const;
-    void unsetattemptNums();
-    void setAttemptNums(int32_t value);
-
-    /// <summary>
     /// 轮转类型。
     /// </summary>
 
@@ -100,6 +91,15 @@ public:
     bool taskTimeIsSet() const;
     void unsettaskTime();
     void setTaskTime(int64_t value);
+
+    /// <summary>
+    /// 轮转尝试次数。
+    /// </summary>
+
+    int32_t getAttemptNums() const;
+    bool attemptNumsIsSet() const;
+    void unsetattemptNums();
+    void setAttemptNums(int32_t value);
 
     /// <summary>
     /// 任务错误码。
@@ -129,12 +129,12 @@ protected:
     bool rotationFuncUrnIsSet_;
     std::string taskStatus_;
     bool taskStatusIsSet_;
-    int32_t attemptNums_;
-    bool attemptNumsIsSet_;
     std::string operateType_;
     bool operateTypeIsSet_;
     int64_t taskTime_;
     bool taskTimeIsSet_;
+    int32_t attemptNums_;
+    bool attemptNumsIsSet_;
     std::string taskErrorCode_;
     bool taskErrorCodeIsSet_;
     std::string taskErrorMsg_;

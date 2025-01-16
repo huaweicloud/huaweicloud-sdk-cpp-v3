@@ -395,6 +395,48 @@ std::shared_ptr<CreateMessageTemplateResponse> SmnClient::createMessageTemplate(
 
     return localVarResult;
 }
+std::shared_ptr<CreateNotifyPolicyResponse> SmnClient::createNotifyPolicy(CreateNotifyPolicyRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/notifications/topics/{topic_urn}/notify-policy";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["topic_urn"] = parameterToString(request.getTopicUrn());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, SmnMeta::genRequestDefForCreateNotifyPolicy());
+
+    std::shared_ptr<CreateNotifyPolicyResponse> localVarResult = std::make_shared<CreateNotifyPolicyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<CreateResourceTagResponse> SmnClient::createResourceTag(CreateResourceTagRequest &request)
 {
     std::string localVarPath = "/v2/{project_id}/{resource_type}/{resource_id}/tags";
@@ -534,6 +576,37 @@ std::shared_ptr<DeleteMessageTemplateResponse> SmnClient::deleteMessageTemplate(
         localVarHeaderParams, localVarHttpBody, SmnMeta::genRequestDefForDeleteMessageTemplate());
 
     std::shared_ptr<DeleteMessageTemplateResponse> localVarResult = std::make_shared<DeleteMessageTemplateResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<DeleteNotifyPolicyResponse> SmnClient::deleteNotifyPolicy(DeleteNotifyPolicyRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/notifications/topics/{topic_urn}/notify-policy/{notify_policy_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["topic_urn"] = parameterToString(request.getTopicUrn());
+    localVarPathParams["notify_policy_id"] = parameterToString(request.getNotifyPolicyId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, SmnMeta::genRequestDefForDeleteNotifyPolicy());
+
+    std::shared_ptr<DeleteNotifyPolicyResponse> localVarResult = std::make_shared<DeleteNotifyPolicyResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -1239,6 +1312,36 @@ std::shared_ptr<ShowHttpDetectResultResponse> SmnClient::showHttpDetectResult(Sh
 
     return localVarResult;
 }
+std::shared_ptr<ShowNotifyPolicyResponse> SmnClient::showNotifyPolicy(ShowNotifyPolicyRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/notifications/topics/{topic_urn}/notify-policy";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["topic_urn"] = parameterToString(request.getTopicUrn());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, SmnMeta::genRequestDefForShowNotifyPolicy());
+
+    std::shared_ptr<ShowNotifyPolicyResponse> localVarResult = std::make_shared<ShowNotifyPolicyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<UpdateLogtankResponse> SmnClient::updateLogtank(UpdateLogtankRequest &request)
 {
     std::string localVarPath = "/v2/{project_id}/notifications/topics/{topic_urn}/logtanks/{logtank_id}";
@@ -1312,6 +1415,49 @@ std::shared_ptr<UpdateMessageTemplateResponse> SmnClient::updateMessageTemplate(
         localVarHeaderParams, localVarHttpBody, SmnMeta::genRequestDefForUpdateMessageTemplate());
 
     std::shared_ptr<UpdateMessageTemplateResponse> localVarResult = std::make_shared<UpdateMessageTemplateResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateNotifyPolicyResponse> SmnClient::updateNotifyPolicy(UpdateNotifyPolicyRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/notifications/topics/{topic_urn}/notify-policy/{notify_policy_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["topic_urn"] = parameterToString(request.getTopicUrn());
+    localVarPathParams["notify_policy_id"] = parameterToString(request.getNotifyPolicyId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, SmnMeta::genRequestDefForUpdateNotifyPolicy());
+
+    std::shared_ptr<UpdateNotifyPolicyResponse> localVarResult = std::make_shared<UpdateNotifyPolicyResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

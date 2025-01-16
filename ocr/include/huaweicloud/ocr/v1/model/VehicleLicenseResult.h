@@ -13,6 +13,7 @@
 #include <huaweicloud/ocr/v1/model/VehicleLicenseback.h>
 #include <string>
 #include <huaweicloud/ocr/v1/model/VehicleLicenseFront.h>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -40,6 +41,15 @@ public:
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
     /// VehicleLicenseResult members
+
+    /// <summary>
+    /// 行驶证类型：  - normal: 纸质行驶证  - electronic: 电子行驶证 
+    /// </summary>
+
+    std::string getType() const;
+    bool typeIsSet() const;
+    void unsettype();
+    void setType(const std::string& value);
 
     /// <summary>
     /// 号牌号码。 
@@ -249,6 +259,33 @@ public:
     void setEnergyType(const std::string& value);
 
     /// <summary>
+    /// 车身颜色。 
+    /// </summary>
+
+    std::string getColor() const;
+    bool colorIsSet() const;
+    void unsetcolor();
+    void setColor(const std::string& value);
+
+    /// <summary>
+    /// 强制报废日期。 
+    /// </summary>
+
+    std::string getMandatoryScrappingDate() const;
+    bool mandatoryScrappingDateIsSet() const;
+    void unsetmandatoryScrappingDate();
+    void setMandatoryScrappingDate(const std::string& value);
+
+    /// <summary>
+    /// 状态。 
+    /// </summary>
+
+    std::vector<std::string>& getStatus();
+    bool statusIsSet() const;
+    void unsetstatus();
+    void setStatus(const std::vector<std::string>& value);
+
+    /// <summary>
     /// 
     /// </summary>
 
@@ -268,6 +305,8 @@ public:
 
 
 protected:
+    std::string type_;
+    bool typeIsSet_;
     std::string number_;
     bool numberIsSet_;
     std::string vehicleType_;
@@ -314,6 +353,12 @@ protected:
     bool textLocationIsSet_;
     std::string energyType_;
     bool energyTypeIsSet_;
+    std::string color_;
+    bool colorIsSet_;
+    std::string mandatoryScrappingDate_;
+    bool mandatoryScrappingDateIsSet_;
+    std::vector<std::string> status_;
+    bool statusIsSet_;
     VehicleLicenseFront front_;
     bool frontIsSet_;
     VehicleLicenseback back_;

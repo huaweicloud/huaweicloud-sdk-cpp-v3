@@ -94,6 +94,8 @@
 #include <huaweicloud/ecs/v2/model/ListFlavorsResponse.h>
 #include <huaweicloud/ecs/v2/model/ListResizeFlavorsRequest.h>
 #include <huaweicloud/ecs/v2/model/ListResizeFlavorsResponse.h>
+#include <huaweicloud/ecs/v2/model/ListServerAzInfoRequest.h>
+#include <huaweicloud/ecs/v2/model/ListServerAzInfoResponse.h>
 #include <huaweicloud/ecs/v2/model/ListServerBlockDevicesRequest.h>
 #include <huaweicloud/ecs/v2/model/ListServerBlockDevicesResponse.h>
 #include <huaweicloud/ecs/v2/model/ListServerGroupsRequest.h>
@@ -541,6 +543,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListResizeFlavorsResponse> listResizeFlavors(
         ListResizeFlavorsRequest &request
+    );
+    // 查询可用区列表
+    //
+    // 查询可用区列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListServerAzInfoResponse> listServerAzInfo(
+        ListServerAzInfoRequest &request
     );
     // 查询弹性云服务器挂载磁盘列表详情信息
     //

@@ -102,6 +102,22 @@ public:
             { 
                 "https://cfw.cn-south-2.myhuaweicloud.com"
             });
+        regions["cn-east-4"] = Region("cn-east-4",
+            { 
+                "https://cfw.cn-east-4.myhuaweicloud.com"
+            });
+        regions["ap-southeast-5"] = Region("ap-southeast-5",
+            { 
+                "https://cfw.ap-southeast-5.myhuaweicloud.com"
+            });
+        regions["af-north-1"] = Region("af-north-1",
+            { 
+                "https://cfw.af-north-1.myhuaweicloud.com"
+            });
+        regions["cn-east-5"] = Region("cn-east-5",
+            { 
+                "https://cfw.cn-east-5.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

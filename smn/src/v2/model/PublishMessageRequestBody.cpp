@@ -24,6 +24,8 @@ PublishMessageRequestBody::PublishMessageRequestBody()
     timeToLive_ = "";
     timeToLiveIsSet_ = false;
     messageAttributesIsSet_ = false;
+    locale_ = "";
+    localeIsSet_ = false;
 }
 
 PublishMessageRequestBody::~PublishMessageRequestBody() = default;
@@ -56,6 +58,9 @@ web::json::value PublishMessageRequestBody::toJson() const
     }
     if(messageAttributesIsSet_) {
         val[utility::conversions::to_string_t("message_attributes")] = ModelBase::toJson(messageAttributes_);
+    }
+    if(localeIsSet_) {
+        val[utility::conversions::to_string_t("locale")] = ModelBase::toJson(locale_);
     }
 
     return val;
@@ -125,6 +130,15 @@ bool PublishMessageRequestBody::fromJson(const web::json::value& val)
             std::vector<MessageAttribute> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setMessageAttributes(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("locale"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("locale"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLocale(refVal);
         }
     }
     return ok;
@@ -276,6 +290,27 @@ bool PublishMessageRequestBody::messageAttributesIsSet() const
 void PublishMessageRequestBody::unsetmessageAttributes()
 {
     messageAttributesIsSet_ = false;
+}
+
+std::string PublishMessageRequestBody::getLocale() const
+{
+    return locale_;
+}
+
+void PublishMessageRequestBody::setLocale(const std::string& value)
+{
+    locale_ = value;
+    localeIsSet_ = true;
+}
+
+bool PublishMessageRequestBody::localeIsSet() const
+{
+    return localeIsSet_;
+}
+
+void PublishMessageRequestBody::unsetlocale()
+{
+    localeIsSet_ = false;
 }
 
 }

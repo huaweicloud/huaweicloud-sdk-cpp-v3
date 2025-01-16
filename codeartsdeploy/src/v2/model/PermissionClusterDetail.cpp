@@ -22,6 +22,8 @@ PermissionClusterDetail::PermissionClusterDetail()
     canAddHostIsSet_ = false;
     canManage_ = false;
     canManageIsSet_ = false;
+    canCopy_ = false;
+    canCopyIsSet_ = false;
 }
 
 PermissionClusterDetail::~PermissionClusterDetail() = default;
@@ -48,6 +50,9 @@ web::json::value PermissionClusterDetail::toJson() const
     }
     if(canManageIsSet_) {
         val[utility::conversions::to_string_t("can_manage")] = ModelBase::toJson(canManage_);
+    }
+    if(canCopyIsSet_) {
+        val[utility::conversions::to_string_t("can_copy")] = ModelBase::toJson(canCopy_);
     }
 
     return val;
@@ -99,6 +104,15 @@ bool PermissionClusterDetail::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCanManage(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("can_copy"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("can_copy"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCanCopy(refVal);
         }
     }
     return ok;
@@ -208,6 +222,27 @@ bool PermissionClusterDetail::canManageIsSet() const
 void PermissionClusterDetail::unsetcanManage()
 {
     canManageIsSet_ = false;
+}
+
+bool PermissionClusterDetail::isCanCopy() const
+{
+    return canCopy_;
+}
+
+void PermissionClusterDetail::setCanCopy(bool value)
+{
+    canCopy_ = value;
+    canCopyIsSet_ = true;
+}
+
+bool PermissionClusterDetail::canCopyIsSet() const
+{
+    return canCopyIsSet_;
+}
+
+void PermissionClusterDetail::unsetcanCopy()
+{
+    canCopyIsSet_ = false;
 }
 
 }

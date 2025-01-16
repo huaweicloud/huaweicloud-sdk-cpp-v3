@@ -24,7 +24,6 @@ HostClusterInfo::HostClusterInfo()
     osIsSet_ = false;
     slaveClusterId_ = "";
     slaveClusterIdIsSet_ = false;
-    createdByIsSet_ = false;
     description_ = "";
     descriptionIsSet_ = false;
     permissionIsSet_ = false;
@@ -32,6 +31,8 @@ HostClusterInfo::HostClusterInfo()
     nickNameIsSet_ = false;
     envCount_ = 0;
     envCountIsSet_ = false;
+    isProxyMode_ = 0;
+    isProxyModeIsSet_ = false;
 }
 
 HostClusterInfo::~HostClusterInfo() = default;
@@ -62,9 +63,6 @@ web::json::value HostClusterInfo::toJson() const
     if(slaveClusterIdIsSet_) {
         val[utility::conversions::to_string_t("slave_cluster_id")] = ModelBase::toJson(slaveClusterId_);
     }
-    if(createdByIsSet_) {
-        val[utility::conversions::to_string_t("created_by")] = ModelBase::toJson(createdBy_);
-    }
     if(descriptionIsSet_) {
         val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
     }
@@ -76,6 +74,9 @@ web::json::value HostClusterInfo::toJson() const
     }
     if(envCountIsSet_) {
         val[utility::conversions::to_string_t("env_count")] = ModelBase::toJson(envCount_);
+    }
+    if(isProxyModeIsSet_) {
+        val[utility::conversions::to_string_t("is_proxy_mode")] = ModelBase::toJson(isProxyMode_);
     }
 
     return val;
@@ -138,15 +139,6 @@ bool HostClusterInfo::fromJson(const web::json::value& val)
             setSlaveClusterId(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("created_by"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("created_by"));
-        if(!fieldValue.is_null())
-        {
-            UserInfo refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setCreatedBy(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("description"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("description"));
         if(!fieldValue.is_null())
@@ -181,6 +173,15 @@ bool HostClusterInfo::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEnvCount(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_proxy_mode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_proxy_mode"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsProxyMode(refVal);
         }
     }
     return ok;
@@ -313,27 +314,6 @@ void HostClusterInfo::unsetslaveClusterId()
     slaveClusterIdIsSet_ = false;
 }
 
-UserInfo HostClusterInfo::getCreatedBy() const
-{
-    return createdBy_;
-}
-
-void HostClusterInfo::setCreatedBy(const UserInfo& value)
-{
-    createdBy_ = value;
-    createdByIsSet_ = true;
-}
-
-bool HostClusterInfo::createdByIsSet() const
-{
-    return createdByIsSet_;
-}
-
-void HostClusterInfo::unsetcreatedBy()
-{
-    createdByIsSet_ = false;
-}
-
 std::string HostClusterInfo::getDescription() const
 {
     return description_;
@@ -416,6 +396,27 @@ bool HostClusterInfo::envCountIsSet() const
 void HostClusterInfo::unsetenvCount()
 {
     envCountIsSet_ = false;
+}
+
+int32_t HostClusterInfo::getIsProxyMode() const
+{
+    return isProxyMode_;
+}
+
+void HostClusterInfo::setIsProxyMode(int32_t value)
+{
+    isProxyMode_ = value;
+    isProxyModeIsSet_ = true;
+}
+
+bool HostClusterInfo::isProxyModeIsSet() const
+{
+    return isProxyModeIsSet_;
+}
+
+void HostClusterInfo::unsetisProxyMode()
+{
+    isProxyModeIsSet_ = false;
 }
 
 }

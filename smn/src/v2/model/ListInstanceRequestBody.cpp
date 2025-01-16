@@ -23,6 +23,8 @@ ListInstanceRequestBody::ListInstanceRequestBody()
     action_ = "";
     actionIsSet_ = false;
     matchesIsSet_ = false;
+    withoutAnyTag_ = false;
+    withoutAnyTagIsSet_ = false;
 }
 
 ListInstanceRequestBody::~ListInstanceRequestBody() = default;
@@ -58,6 +60,9 @@ web::json::value ListInstanceRequestBody::toJson() const
     }
     if(matchesIsSet_) {
         val[utility::conversions::to_string_t("matches")] = ModelBase::toJson(matches_);
+    }
+    if(withoutAnyTagIsSet_) {
+        val[utility::conversions::to_string_t("without_any_tag")] = ModelBase::toJson(withoutAnyTag_);
     }
 
     return val;
@@ -136,6 +141,15 @@ bool ListInstanceRequestBody::fromJson(const web::json::value& val)
             std::vector<TagMatch> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setMatches(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("without_any_tag"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("without_any_tag"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setWithoutAnyTag(refVal);
         }
     }
     return ok;
@@ -308,6 +322,27 @@ bool ListInstanceRequestBody::matchesIsSet() const
 void ListInstanceRequestBody::unsetmatches()
 {
     matchesIsSet_ = false;
+}
+
+bool ListInstanceRequestBody::isWithoutAnyTag() const
+{
+    return withoutAnyTag_;
+}
+
+void ListInstanceRequestBody::setWithoutAnyTag(bool value)
+{
+    withoutAnyTag_ = value;
+    withoutAnyTagIsSet_ = true;
+}
+
+bool ListInstanceRequestBody::withoutAnyTagIsSet() const
+{
+    return withoutAnyTagIsSet_;
+}
+
+void ListInstanceRequestBody::unsetwithoutAnyTag()
+{
+    withoutAnyTagIsSet_ = false;
 }
 
 }

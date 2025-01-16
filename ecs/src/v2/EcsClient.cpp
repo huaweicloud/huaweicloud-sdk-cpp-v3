@@ -1395,6 +1395,35 @@ std::shared_ptr<ListResizeFlavorsResponse> EcsClient::listResizeFlavors(ListResi
 
     return localVarResult;
 }
+std::shared_ptr<ListServerAzInfoResponse> EcsClient::listServerAzInfo(ListServerAzInfoRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/availability-zones";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EcsMeta::genRequestDefForListServerAzInfo());
+
+    std::shared_ptr<ListServerAzInfoResponse> localVarResult = std::make_shared<ListServerAzInfoResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListServerBlockDevicesResponse> EcsClient::listServerBlockDevices(ListServerBlockDevicesRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/cloudservers/{server_id}/block_device";

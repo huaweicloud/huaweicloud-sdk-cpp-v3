@@ -20,12 +20,12 @@ SecretTask::SecretTask()
     rotationFuncUrnIsSet_ = false;
     taskStatus_ = "";
     taskStatusIsSet_ = false;
-    attemptNums_ = 0;
-    attemptNumsIsSet_ = false;
     operateType_ = "";
     operateTypeIsSet_ = false;
     taskTime_ = 0L;
     taskTimeIsSet_ = false;
+    attemptNums_ = 0;
+    attemptNumsIsSet_ = false;
     taskErrorCode_ = "";
     taskErrorCodeIsSet_ = false;
     taskErrorMsg_ = "";
@@ -54,14 +54,14 @@ web::json::value SecretTask::toJson() const
     if(taskStatusIsSet_) {
         val[utility::conversions::to_string_t("task_status")] = ModelBase::toJson(taskStatus_);
     }
-    if(attemptNumsIsSet_) {
-        val[utility::conversions::to_string_t("attempt_nums")] = ModelBase::toJson(attemptNums_);
-    }
     if(operateTypeIsSet_) {
         val[utility::conversions::to_string_t("operate_type")] = ModelBase::toJson(operateType_);
     }
     if(taskTimeIsSet_) {
         val[utility::conversions::to_string_t("task_time")] = ModelBase::toJson(taskTime_);
+    }
+    if(attemptNumsIsSet_) {
+        val[utility::conversions::to_string_t("attempt_nums")] = ModelBase::toJson(attemptNums_);
     }
     if(taskErrorCodeIsSet_) {
         val[utility::conversions::to_string_t("task_error_code")] = ModelBase::toJson(taskErrorCode_);
@@ -112,15 +112,6 @@ bool SecretTask::fromJson(const web::json::value& val)
             setTaskStatus(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("attempt_nums"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("attempt_nums"));
-        if(!fieldValue.is_null())
-        {
-            int32_t refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setAttemptNums(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("operate_type"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("operate_type"));
         if(!fieldValue.is_null())
@@ -137,6 +128,15 @@ bool SecretTask::fromJson(const web::json::value& val)
             int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTaskTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("attempt_nums"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("attempt_nums"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAttemptNums(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("task_error_code"))) {
@@ -245,27 +245,6 @@ void SecretTask::unsettaskStatus()
     taskStatusIsSet_ = false;
 }
 
-int32_t SecretTask::getAttemptNums() const
-{
-    return attemptNums_;
-}
-
-void SecretTask::setAttemptNums(int32_t value)
-{
-    attemptNums_ = value;
-    attemptNumsIsSet_ = true;
-}
-
-bool SecretTask::attemptNumsIsSet() const
-{
-    return attemptNumsIsSet_;
-}
-
-void SecretTask::unsetattemptNums()
-{
-    attemptNumsIsSet_ = false;
-}
-
 std::string SecretTask::getOperateType() const
 {
     return operateType_;
@@ -306,6 +285,27 @@ bool SecretTask::taskTimeIsSet() const
 void SecretTask::unsettaskTime()
 {
     taskTimeIsSet_ = false;
+}
+
+int32_t SecretTask::getAttemptNums() const
+{
+    return attemptNums_;
+}
+
+void SecretTask::setAttemptNums(int32_t value)
+{
+    attemptNums_ = value;
+    attemptNumsIsSet_ = true;
+}
+
+bool SecretTask::attemptNumsIsSet() const
+{
+    return attemptNumsIsSet_;
+}
+
+void SecretTask::unsetattemptNums()
+{
+    attemptNumsIsSet_ = false;
 }
 
 std::string SecretTask::getTaskErrorCode() const

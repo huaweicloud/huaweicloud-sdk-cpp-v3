@@ -43,7 +43,7 @@ public:
     /// ListStarRocksDataReplicationConfigByDataBaseResponse members
 
     /// <summary>
-    /// GaussDB(for MySQL)实例ID。
+    /// TaurusDB实例ID。
     /// </summary>
 
     std::string getSourceInstanceId() const;
@@ -52,7 +52,7 @@ public:
     void setSourceInstanceId(const std::string& value);
 
     /// <summary>
-    /// GaussDB(for MySQL)节点ID。
+    /// TaurusDB节点ID。
     /// </summary>
 
     std::string getSourceNodeId() const;

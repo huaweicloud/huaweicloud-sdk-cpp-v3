@@ -22,6 +22,7 @@ CreateTableResponse::CreateTableResponse()
     localSecondaryIndexSchemaIsSet_ = false;
     globalSecondaryIndexSchemaIsSet_ = false;
     preSplitKeyOptionsIsSet_ = false;
+    ttlSpecificationIsSet_ = false;
 }
 
 CreateTableResponse::~CreateTableResponse() = default;
@@ -52,6 +53,9 @@ bool CreateTableResponse::toBson(Builder &builder) const
         return false;
     }
     if (preSplitKeyOptionsIsSet_ && !bson_append(builder, "pre_split_key_options", preSplitKeyOptions_)) {
+        return false;
+    }
+    if (ttlSpecificationIsSet_ && !bson_append(builder, "ttl_specification", ttlSpecification_)) {
         return false;
     }
 
@@ -124,6 +128,15 @@ bool CreateTableResponse::fromBson(const Viewer &viewer)
                 return false;
             }
             preSplitKeyOptionsIsSet_ = true;
+            ++it;
+            continue;
+        }
+        
+        if (key == "ttl_specification") {
+            if (!bson_get(it, ttlSpecification_)) {
+                return false;
+            }
+            ttlSpecificationIsSet_ = true;
             ++it;
             continue;
         }
@@ -279,6 +292,27 @@ bool CreateTableResponse::preSplitKeyOptionsIsSet() const
 void CreateTableResponse::unsetpreSplitKeyOptions()
 {
     preSplitKeyOptionsIsSet_ = false;
+}
+
+Ttl_specification CreateTableResponse::getTtlSpecification() const
+{
+    return ttlSpecification_;
+}
+
+void CreateTableResponse::setTtlSpecification(const Ttl_specification& value)
+{
+    ttlSpecification_ = value;
+    ttlSpecificationIsSet_ = true;
+}
+
+bool CreateTableResponse::ttlSpecificationIsSet() const
+{
+    return ttlSpecificationIsSet_;
+}
+
+void CreateTableResponse::unsetttlSpecification()
+{
+    ttlSpecificationIsSet_ = false;
 }
 
 }

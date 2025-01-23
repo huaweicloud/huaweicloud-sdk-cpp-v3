@@ -41,7 +41,7 @@ public:
     /// CheckTableConfigResponse members
 
     /// <summary>
-    /// GaussDB(for MySQL)数据库名。
+    /// TaurusDB数据库名。
     /// </summary>
 
     std::string getSourceDatabaseName() const;

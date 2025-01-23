@@ -1,3 +1,25 @@
+# 3.1.121 2025-01-23
+
+### HuaweiCloud SDK KVS
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateTable**
+    - changes of request param
+      - `+ ttl_specification`
+      - `- ttl_options`
+    - changes of response param
+      - `+ ttl_specification`
+  - **DescribeTable**
+    - changes of response param
+      - `+ ttl_specification`
+      - `- ttl_options`
+
 # 3.1.120 2025-01-16
 
 ### HuaweiCloud SDK CodeArtsDeploy

@@ -57,7 +57,7 @@ public:
     void setInstanceId(const std::string& value);
 
     /// <summary>
-    /// 备份时间点，时间戳格式。  通过[查询可恢复时间段](https://support.huaweicloud.com/api-gaussdbformysql/ShowBackupRestoreTime.html)获取。
+    /// 备份时间点，时间戳格式。  通过[查询可恢复时间段](https://support.huaweicloud.com/api-taurusdb/ShowBackupRestoreTime.html)获取。
     /// </summary>
 
     std::string getRestoreTime() const;

@@ -19,7 +19,7 @@ DescribeTableResponse::DescribeTableResponse()
     localSecondaryIndexSchemaIsSet_ = false;
     globalSecondaryIndexSchemaIsSet_ = false;
     runTimeInfoIsSet_ = false;
-    ttlOptionsIsSet_ = false;
+    ttlSpecificationIsSet_ = false;
 }
 
 DescribeTableResponse::~DescribeTableResponse() = default;
@@ -46,7 +46,7 @@ bool DescribeTableResponse::toBson(Builder &builder) const
     if (runTimeInfoIsSet_ && !bson_append(builder, "run_time_info", runTimeInfo_)) {
         return false;
     }
-    if (ttlOptionsIsSet_ && !bson_append(builder, "ttl_options", ttlOptions_)) {
+    if (ttlSpecificationIsSet_ && !bson_append(builder, "ttl_specification", ttlSpecification_)) {
         return false;
     }
 
@@ -105,11 +105,11 @@ bool DescribeTableResponse::fromBson(const Viewer &viewer)
             continue;
         }
         
-        if (key == "ttl_options") {
-            if (!bson_get(it, ttlOptions_)) {
+        if (key == "ttl_specification") {
+            if (!bson_get(it, ttlSpecification_)) {
                 return false;
             }
-            ttlOptionsIsSet_ = true;
+            ttlSpecificationIsSet_ = true;
             ++it;
             continue;
         }
@@ -225,25 +225,25 @@ void DescribeTableResponse::unsetrunTimeInfo()
     runTimeInfoIsSet_ = false;
 }
 
-Ttl_options DescribeTableResponse::getTtlOptions() const
+Ttl_specification DescribeTableResponse::getTtlSpecification() const
 {
-    return ttlOptions_;
+    return ttlSpecification_;
 }
 
-void DescribeTableResponse::setTtlOptions(const Ttl_options& value)
+void DescribeTableResponse::setTtlSpecification(const Ttl_specification& value)
 {
-    ttlOptions_ = value;
-    ttlOptionsIsSet_ = true;
+    ttlSpecification_ = value;
+    ttlSpecificationIsSet_ = true;
 }
 
-bool DescribeTableResponse::ttlOptionsIsSet() const
+bool DescribeTableResponse::ttlSpecificationIsSet() const
 {
-    return ttlOptionsIsSet_;
+    return ttlSpecificationIsSet_;
 }
 
-void DescribeTableResponse::unsetttlOptions()
+void DescribeTableResponse::unsetttlSpecification()
 {
-    ttlOptionsIsSet_ = false;
+    ttlSpecificationIsSet_ = false;
 }
 
 }

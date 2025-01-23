@@ -47,7 +47,7 @@ public:
     void setConfidence(double value);
 
     /// <summary>
-    /// 动作编号，取值范围：[1,2,3,4]，其中： • 1：左摇头 • 2：右摇头 • 3：点头 • 4：嘴部动作
+    /// 动作编号，取值范围：[1,2,3,4,5]，其中： • 1：左摇头 • 2：右摇头 • 3：点头 • 4：嘴部动作 • 5：眨眼
     /// </summary>
 
     int32_t getAction() const;

@@ -39,7 +39,7 @@ public:
     /// DeleteClickHouseInstanceRequest members
 
     /// <summary>
-    /// GaussDB(for MySQL)实例ID，严格匹配UUID规则。
+    /// TaurusDB实例ID，严格匹配UUID规则。
     /// </summary>
 
     std::string getInstanceId() const;

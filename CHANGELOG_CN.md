@@ -1,3 +1,25 @@
+# 3.1.121 2025-01-23
+
+### HuaweiCloud SDK KVS
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateTable**
+    - 请求参数变更
+      - `+ ttl_specification`
+      - `- ttl_options`
+    - 响应参数变更
+      - `+ ttl_specification`
+  - **DescribeTable**
+    - 响应参数变更
+      - `+ ttl_specification`
+      - `- ttl_options`
+
 # 3.1.120 2025-01-16
 
 ### HuaweiCloud SDK CodeArtsDeploy

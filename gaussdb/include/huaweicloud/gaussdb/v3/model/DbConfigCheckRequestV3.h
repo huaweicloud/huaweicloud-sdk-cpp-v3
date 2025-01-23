@@ -42,7 +42,7 @@ public:
     /// DbConfigCheckRequestV3 members
 
     /// <summary>
-    /// GaussDB(for MySQL)实例ID。
+    /// TaurusDB实例ID。
     /// </summary>
 
     std::string getSourceInstanceId() const;
@@ -51,7 +51,7 @@ public:
     void setSourceInstanceId(const std::string& value);
 
     /// <summary>
-    /// GaussDB(for MySQL)只读节点ID。如为空，则取GaussDB(for MySQL)主节点ID
+    /// TaurusDB只读节点ID。如为空，则取TaurusDB主节点ID
     /// </summary>
 
     std::string getSourceNodeId() const;
@@ -60,7 +60,7 @@ public:
     void setSourceNodeId(const std::string& value);
 
     /// <summary>
-    /// GaussDB(for MySQL)数据库名。
+    /// TaurusDB数据库名。
     /// </summary>
 
     std::string getSourceDatabaseName() const;

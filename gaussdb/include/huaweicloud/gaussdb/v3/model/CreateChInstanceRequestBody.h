@@ -116,7 +116,7 @@ public:
     void setAzCode(const std::string& value);
 
     /// <summary>
-    /// 时区。默认为所属GaussDB(for MySQL)实例时区。
+    /// 时区。默认为所属TaurusDB实例时区。
     /// </summary>
 
     std::string getTimeZone() const;

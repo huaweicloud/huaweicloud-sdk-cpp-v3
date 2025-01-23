@@ -39,7 +39,7 @@ public:
     /// StarRocksReplicationInfo members
 
     /// <summary>
-    /// GaussDB(for MySQL)数据库。
+    /// TaurusDB数据库。
     /// </summary>
 
     std::string getSourceDatabase() const;

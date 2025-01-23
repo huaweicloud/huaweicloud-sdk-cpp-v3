@@ -41,7 +41,7 @@ public:
     /// CheckDataBaseConfigResponse members
 
     /// <summary>
-    /// GaussDB(for MySQL)数据库名称。
+    /// TaurusDB数据库名称。
     /// </summary>
 
     std::string getSourceDatabaseName() const;
@@ -50,7 +50,7 @@ public:
     void setSourceDatabaseName(const std::string& value);
 
     /// <summary>
-    /// GaussDB(for MySQL)数据库配置检查结果。
+    /// TaurusDB数据库配置检查结果。
     /// </summary>
 
     std::vector<DbConfigCheckResult>& getSourceDbConfigCheckResults();

@@ -22,7 +22,7 @@ CreateTableRequestBody::CreateTableRequestBody()
     localSecondaryIndexSchemaIsSet_ = false;
     globalSecondaryIndexSchemaIsSet_ = false;
     preSplitKeyOptionsIsSet_ = false;
-    ttlOptionsIsSet_ = false;
+    ttlSpecificationIsSet_ = false;
 }
 
 CreateTableRequestBody::~CreateTableRequestBody() = default;
@@ -55,7 +55,7 @@ bool CreateTableRequestBody::toBson(Builder &builder) const
     if (preSplitKeyOptionsIsSet_ && !bson_append(builder, "pre_split_key_options", preSplitKeyOptions_)) {
         return false;
     }
-    if (ttlOptionsIsSet_ && !bson_append(builder, "ttl_options", ttlOptions_)) {
+    if (ttlSpecificationIsSet_ && !bson_append(builder, "ttl_specification", ttlSpecification_)) {
         return false;
     }
 
@@ -132,11 +132,11 @@ bool CreateTableRequestBody::fromBson(const Viewer &viewer)
             continue;
         }
         
-        if (key == "ttl_options") {
-            if (!bson_get(it, ttlOptions_)) {
+        if (key == "ttl_specification") {
+            if (!bson_get(it, ttlSpecification_)) {
                 return false;
             }
-            ttlOptionsIsSet_ = true;
+            ttlSpecificationIsSet_ = true;
             ++it;
             continue;
         }
@@ -294,25 +294,25 @@ void CreateTableRequestBody::unsetpreSplitKeyOptions()
     preSplitKeyOptionsIsSet_ = false;
 }
 
-Ttl_options CreateTableRequestBody::getTtlOptions() const
+Ttl_specification CreateTableRequestBody::getTtlSpecification() const
 {
-    return ttlOptions_;
+    return ttlSpecification_;
 }
 
-void CreateTableRequestBody::setTtlOptions(const Ttl_options& value)
+void CreateTableRequestBody::setTtlSpecification(const Ttl_specification& value)
 {
-    ttlOptions_ = value;
-    ttlOptionsIsSet_ = true;
+    ttlSpecification_ = value;
+    ttlSpecificationIsSet_ = true;
 }
 
-bool CreateTableRequestBody::ttlOptionsIsSet() const
+bool CreateTableRequestBody::ttlSpecificationIsSet() const
 {
-    return ttlOptionsIsSet_;
+    return ttlSpecificationIsSet_;
 }
 
-void CreateTableRequestBody::unsetttlOptions()
+void CreateTableRequestBody::unsetttlSpecification()
 {
-    ttlOptionsIsSet_ = false;
+    ttlSpecificationIsSet_ = false;
 }
 
 }

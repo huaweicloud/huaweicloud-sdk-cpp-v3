@@ -82,7 +82,7 @@ public:
     void setPrivateIps(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 实例读写分离IP地址列表。GaussDB(for MySQL)实例开启代理成功后该值存在，其他情况下为空列表。
+    /// 实例读写分离IP地址列表。TaurusDB实例开启代理成功后该值存在，其他情况下为空列表。
     /// </summary>
 
     std::vector<std::string>& getProxyIps();

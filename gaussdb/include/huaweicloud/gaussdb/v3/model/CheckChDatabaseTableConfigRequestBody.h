@@ -52,7 +52,7 @@ public:
     void setSourceInstanceId(const std::string& value);
 
     /// <summary>
-    /// 源节点ID。GaussDB(for MySQL)只读节点ID。如为空，则取GaussDB(for MySQL)主节点ID。
+    /// 源节点ID。TaurusDB只读节点ID。如为空，则取TaurusDB主节点ID。
     /// </summary>
 
     std::string getSourceNodeId() const;

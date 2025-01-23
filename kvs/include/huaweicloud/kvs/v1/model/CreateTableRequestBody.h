@@ -15,8 +15,8 @@
 #include <huaweicloud/kvs/v1/model/Secondary_index.h>
 #include <huaweicloud/kvs/v1/model/Provisioned_throughput.h>
 #include <huaweicloud/kvs/v1/model/Primary_key_schema.h>
-#include <huaweicloud/kvs/v1/model/Ttl_options.h>
 #include <huaweicloud/kvs/v1/model/Pre_split_key_options.h>
+#include <huaweicloud/kvs/v1/model/Ttl_specification.h>
 #include <string>
 #include <vector>
 #include <huaweicloud/kvs/v1/model/Global_secondary_index.h>
@@ -115,10 +115,10 @@ public:
     /// 
     /// </summary>
 
-    Ttl_options getTtlOptions() const;
-    bool ttlOptionsIsSet() const;
-    void unsetttlOptions();
-    void setTtlOptions(const Ttl_options& value);
+    Ttl_specification getTtlSpecification() const;
+    bool ttlSpecificationIsSet() const;
+    void unsetttlSpecification();
+    void setTtlSpecification(const Ttl_specification& value);
 
 
 protected:
@@ -136,8 +136,8 @@ protected:
     bool globalSecondaryIndexSchemaIsSet_;
     Pre_split_key_options preSplitKeyOptions_;
     bool preSplitKeyOptionsIsSet_;
-    Ttl_options ttlOptions_;
-    bool ttlOptionsIsSet_;
+    Ttl_specification ttlSpecification_;
+    bool ttlSpecificationIsSet_;
 
 };
 

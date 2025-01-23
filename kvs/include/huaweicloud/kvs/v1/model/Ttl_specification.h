@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_KVS_V1_MODEL_Ttl_options_H_
-#define HUAWEICLOUD_SDK_KVS_V1_MODEL_Ttl_options_H_
+#ifndef HUAWEICLOUD_SDK_KVS_V1_MODEL_Ttl_specification_H_
+#define HUAWEICLOUD_SDK_KVS_V1_MODEL_Ttl_specification_H_
 
 #include <huaweicloud/core/bson/Defines.h>
 #include <huaweicloud/core/bson/Builder.h>
@@ -23,14 +23,14 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 
+/// TTL设置。非必填项，默认不启用TTL。
 /// </summary>
-class HUAWEICLOUD_KVS_V1_EXPORT  Ttl_options
+class HUAWEICLOUD_KVS_V1_EXPORT  Ttl_specification
     : public ModelBase
 {
 public:
-    Ttl_options();
-    virtual ~Ttl_options();
+    Ttl_specification();
+    virtual ~Ttl_specification();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -39,16 +39,16 @@ public:
     bool fromBson(const Viewer &viewer) override;
     bool toBson(Builder &builder) const override;
     /////////////////////////////////////////////
-    /// Ttl_options members
+    /// Ttl_specification members
 
     /// <summary>
     /// TTL开关
     /// </summary>
 
-    bool isTtlSwitch() const;
-    bool ttlSwitchIsSet() const;
-    void unsetttlSwitch();
-    void setTtlSwitch(bool value);
+    bool isEnable() const;
+    bool enableIsSet() const;
+    void unsetenable();
+    void setEnable(bool value);
 
     /// <summary>
     /// 生存时间，以秒为单位
@@ -63,19 +63,19 @@ public:
     /// 文档中记录TTL过期时间的字段名，字段值为UTC时间，单位秒
     /// </summary>
 
-    std::string getTtlFieldName() const;
-    bool ttlFieldNameIsSet() const;
-    void unsetttlFieldName();
-    void setTtlFieldName(const std::string& value);
+    std::string getFieldName() const;
+    bool fieldNameIsSet() const;
+    void unsetfieldName();
+    void setFieldName(const std::string& value);
 
 
 protected:
-    bool ttlSwitch_;
-    bool ttlSwitchIsSet_;
+    bool enable_;
+    bool enableIsSet_;
     int32_t expireAfterSeconds_;
     bool expireAfterSecondsIsSet_;
-    std::string ttlFieldName_;
-    bool ttlFieldNameIsSet_;
+    std::string fieldName_;
+    bool fieldNameIsSet_;
 
 };
 
@@ -86,4 +86,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_KVS_V1_MODEL_Ttl_options_H_
+#endif // HUAWEICLOUD_SDK_KVS_V1_MODEL_Ttl_specification_H_

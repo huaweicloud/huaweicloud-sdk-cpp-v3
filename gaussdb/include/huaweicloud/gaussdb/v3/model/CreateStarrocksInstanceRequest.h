@@ -40,7 +40,7 @@ public:
     /// CreateStarrocksInstanceRequest members
 
     /// <summary>
-    /// GaussDBForMySQL数据库实例ID，严格匹配UUID规则。
+    /// TaurusDB数据库实例ID，严格匹配UUID规则。
     /// </summary>
 
     std::string getInstanceId() const;

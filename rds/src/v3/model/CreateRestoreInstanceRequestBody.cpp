@@ -54,6 +54,8 @@ CreateRestoreInstanceRequestBody::CreateRestoreInstanceRequestBody()
     serverlessInfoIsSet_ = false;
     dryRun_ = false;
     dryRunIsSet_ = false;
+    isAutoUpgrade_ = false;
+    isAutoUpgradeIsSet_ = false;
 }
 
 CreateRestoreInstanceRequestBody::~CreateRestoreInstanceRequestBody() = default;
@@ -140,6 +142,9 @@ web::json::value CreateRestoreInstanceRequestBody::toJson() const
     }
     if(dryRunIsSet_) {
         val[utility::conversions::to_string_t("dry_run")] = ModelBase::toJson(dryRun_);
+    }
+    if(isAutoUpgradeIsSet_) {
+        val[utility::conversions::to_string_t("is_auto_upgrade")] = ModelBase::toJson(isAutoUpgrade_);
     }
 
     return val;
@@ -371,6 +376,15 @@ bool CreateRestoreInstanceRequestBody::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDryRun(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_auto_upgrade"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_auto_upgrade"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsAutoUpgrade(refVal);
         }
     }
     return ok;
@@ -900,6 +914,27 @@ bool CreateRestoreInstanceRequestBody::dryRunIsSet() const
 void CreateRestoreInstanceRequestBody::unsetdryRun()
 {
     dryRunIsSet_ = false;
+}
+
+bool CreateRestoreInstanceRequestBody::isIsAutoUpgrade() const
+{
+    return isAutoUpgrade_;
+}
+
+void CreateRestoreInstanceRequestBody::setIsAutoUpgrade(bool value)
+{
+    isAutoUpgrade_ = value;
+    isAutoUpgradeIsSet_ = true;
+}
+
+bool CreateRestoreInstanceRequestBody::isAutoUpgradeIsSet() const
+{
+    return isAutoUpgradeIsSet_;
+}
+
+void CreateRestoreInstanceRequestBody::unsetisAutoUpgrade()
+{
+    isAutoUpgradeIsSet_ = false;
 }
 
 }

@@ -69,6 +69,7 @@
 #include <huaweicloud/rds/v3/model/CreateXelLogDownloadResponse.h>
 #include <huaweicloud/rds/v3/model/CustomerCreateInstanceReq.h>
 #include <huaweicloud/rds/v3/model/CustomerModifyAutoEnlargePolicyReq.h>
+#include <huaweicloud/rds/v3/model/CustomerModifyAutoUpgradePolicyReq.h>
 #include <huaweicloud/rds/v3/model/CustomerUpgradeDatabaseVersionReq.h>
 #include <huaweicloud/rds/v3/model/CustomerUpgradeDatabaseVersionReqNew.h>
 #include <huaweicloud/rds/v3/model/DataIpRequest.h>
@@ -257,6 +258,8 @@
 #include <huaweicloud/rds/v3/model/SetAuditlogPolicyResponse.h>
 #include <huaweicloud/rds/v3/model/SetAutoEnlargePolicyRequest.h>
 #include <huaweicloud/rds/v3/model/SetAutoEnlargePolicyResponse.h>
+#include <huaweicloud/rds/v3/model/SetAutoUpgradePolicyRequest.h>
+#include <huaweicloud/rds/v3/model/SetAutoUpgradePolicyResponse.h>
 #include <huaweicloud/rds/v3/model/SetBackupPolicyRequest.h>
 #include <huaweicloud/rds/v3/model/SetBackupPolicyRequestBody.h>
 #include <huaweicloud/rds/v3/model/SetBackupPolicyResponse.h>
@@ -281,6 +284,8 @@
 #include <huaweicloud/rds/v3/model/ShowAuditlogPolicyResponse.h>
 #include <huaweicloud/rds/v3/model/ShowAutoEnlargePolicyRequest.h>
 #include <huaweicloud/rds/v3/model/ShowAutoEnlargePolicyResponse.h>
+#include <huaweicloud/rds/v3/model/ShowAutoUpgradePolicyRequest.h>
+#include <huaweicloud/rds/v3/model/ShowAutoUpgradePolicyResponse.h>
 #include <huaweicloud/rds/v3/model/ShowAvailableVersionRequest.h>
 #include <huaweicloud/rds/v3/model/ShowAvailableVersionResponse.h>
 #include <huaweicloud/rds/v3/model/ShowBackupDownloadLinkRequest.h>
@@ -291,6 +296,8 @@
 #include <huaweicloud/rds/v3/model/ShowBinlogClearPolicyResponse.h>
 #include <huaweicloud/rds/v3/model/ShowConfigurationRequest.h>
 #include <huaweicloud/rds/v3/model/ShowConfigurationResponse.h>
+#include <huaweicloud/rds/v3/model/ShowDatabaseLevelDatabaseRequest.h>
+#include <huaweicloud/rds/v3/model/ShowDatabaseLevelDatabaseResponse.h>
 #include <huaweicloud/rds/v3/model/ShowDnsNameRequest.h>
 #include <huaweicloud/rds/v3/model/ShowDnsNameResponse.h>
 #include <huaweicloud/rds/v3/model/ShowDomainNameRequest.h>
@@ -932,7 +939,7 @@ public:
     std::shared_ptr<ListDrInfosResponse> listDrInfos(
         ListDrInfosRequest &request
     );
-    // 
+    // 批量查询容灾实例信息
     //
     // 批量查询容灾实例信息
     // 
@@ -1380,6 +1387,14 @@ public:
     std::shared_ptr<SetAutoEnlargePolicyResponse> setAutoEnlargePolicy(
         SetAutoEnlargePolicyRequest &request
     );
+    // 设置实例内核小版本自动升级策略
+    //
+    // 设置实例内核小版本自动升级策略
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SetAutoUpgradePolicyResponse> setAutoUpgradePolicy(
+        SetAutoUpgradePolicyRequest &request
+    );
     // 设置自动备份策略
     //
     // 设置自动备份策略。
@@ -1470,6 +1485,14 @@ public:
     std::shared_ptr<ShowAutoEnlargePolicyResponse> showAutoEnlargePolicy(
         ShowAutoEnlargePolicyRequest &request
     );
+    // 查询实例内核小版本自动升级策略
+    //
+    // 查询实例内核小版本自动升级策略
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowAutoUpgradePolicyResponse> showAutoUpgradePolicy(
+        ShowAutoUpgradePolicyRequest &request
+    );
     // 
     //
     // 查询实例可升级的目标版本
@@ -1509,6 +1532,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowConfigurationResponse> showConfiguration(
         ShowConfigurationRequest &request
+    );
+    // 查询库级备份包含的库
+    //
+    // 查询库级备份包含的库
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowDatabaseLevelDatabaseResponse> showDatabaseLevelDatabase(
+        ShowDatabaseLevelDatabaseRequest &request
     );
     // 查询实例ipv6域名。
     //

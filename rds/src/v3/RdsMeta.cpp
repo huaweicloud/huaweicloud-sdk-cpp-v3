@@ -1426,6 +1426,20 @@ HttpRequestDef RdsMeta::genRequestDefForSetAutoEnlargePolicy() {
     return reqDefBuilder;
 }
 
+HttpRequestDef RdsMeta::genRequestDefForSetAutoUpgradePolicy() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef RdsMeta::genRequestDefForSetBackupPolicy() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
@@ -1564,6 +1578,16 @@ HttpRequestDef RdsMeta::genRequestDefForShowAutoEnlargePolicy() {
     return reqDefBuilder;
 }
 
+HttpRequestDef RdsMeta::genRequestDefForShowAutoUpgradePolicy() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef RdsMeta::genRequestDefForShowAvailableVersion() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
@@ -1609,6 +1633,19 @@ HttpRequestDef RdsMeta::genRequestDefForShowBinlogClearPolicy() {
 
 HttpRequestDef RdsMeta::genRequestDefForShowConfiguration() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef RdsMeta::genRequestDefForShowDatabaseLevelDatabase() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("BackupId")
+                  .withJsonTag("backup_id")
+                  .withLocationType(Query_));
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage
                   .withName("XLanguage")

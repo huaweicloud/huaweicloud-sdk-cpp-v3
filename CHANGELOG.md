@@ -1,3 +1,21 @@
+# 3.1.122 2025-02-06
+
+### HuaweiCloud SDK RDS
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the APIs `ShowDatabaseLevelDatabase`, `ShowAutoUpgradePolicy`, `SetAutoUpgradePolicy`
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateInstance**
+    - changes of request param
+      - `+ is_auto_upgrade`
+  - **CreateRestoreInstance**
+    - changes of request param
+      - `+ is_auto_upgrade`
+
 # 3.1.121 2025-01-23
 
 ### HuaweiCloud SDK KVS

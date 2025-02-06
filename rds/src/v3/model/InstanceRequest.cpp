@@ -59,6 +59,8 @@ InstanceRequest::InstanceRequest()
     count_ = 0;
     countIsSet_ = false;
     serverlessInfoIsSet_ = false;
+    isAutoUpgrade_ = false;
+    isAutoUpgradeIsSet_ = false;
 }
 
 InstanceRequest::~InstanceRequest() = default;
@@ -154,6 +156,9 @@ web::json::value InstanceRequest::toJson() const
     }
     if(serverlessInfoIsSet_) {
         val[utility::conversions::to_string_t("serverless_info")] = ModelBase::toJson(serverlessInfo_);
+    }
+    if(isAutoUpgradeIsSet_) {
+        val[utility::conversions::to_string_t("is_auto_upgrade")] = ModelBase::toJson(isAutoUpgrade_);
     }
 
     return val;
@@ -412,6 +417,15 @@ bool InstanceRequest::fromJson(const web::json::value& val)
             ServerlessInfo refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setServerlessInfo(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_auto_upgrade"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_auto_upgrade"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsAutoUpgrade(refVal);
         }
     }
     return ok;
@@ -1004,6 +1018,27 @@ bool InstanceRequest::serverlessInfoIsSet() const
 void InstanceRequest::unsetserverlessInfo()
 {
     serverlessInfoIsSet_ = false;
+}
+
+bool InstanceRequest::isIsAutoUpgrade() const
+{
+    return isAutoUpgrade_;
+}
+
+void InstanceRequest::setIsAutoUpgrade(bool value)
+{
+    isAutoUpgrade_ = value;
+    isAutoUpgradeIsSet_ = true;
+}
+
+bool InstanceRequest::isAutoUpgradeIsSet() const
+{
+    return isAutoUpgradeIsSet_;
+}
+
+void InstanceRequest::unsetisAutoUpgrade()
+{
+    isAutoUpgradeIsSet_ = false;
 }
 
 }

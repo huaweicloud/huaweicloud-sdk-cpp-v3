@@ -300,6 +300,15 @@ public:
     void unsetserverlessInfo();
     void setServerlessInfo(const ServerlessInfo& value);
 
+    /// <summary>
+    /// 是否开启自动小版本升级，默认为false，仅支持PostgreSQL。 - true：开启自动小版本升级。 - false：不开启自动小版本升级。
+    /// </summary>
+
+    bool isIsAutoUpgrade() const;
+    bool isAutoUpgradeIsSet() const;
+    void unsetisAutoUpgrade();
+    void setIsAutoUpgrade(bool value);
+
 
 protected:
     std::string name_;
@@ -358,6 +367,8 @@ protected:
     bool countIsSet_;
     ServerlessInfo serverlessInfo_;
     bool serverlessInfoIsSet_;
+    bool isAutoUpgrade_;
+    bool isAutoUpgradeIsSet_;
 
 };
 

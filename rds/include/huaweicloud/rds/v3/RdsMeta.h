@@ -108,6 +108,7 @@ public:
     static HttpRequestDef genRequestDefForRestoreToExistingInstance();
     static HttpRequestDef genRequestDefForSetAuditlogPolicy();
     static HttpRequestDef genRequestDefForSetAutoEnlargePolicy();
+    static HttpRequestDef genRequestDefForSetAutoUpgradePolicy();
     static HttpRequestDef genRequestDefForSetBackupPolicy();
     static HttpRequestDef genRequestDefForSetBinlogClearPolicy();
     static HttpRequestDef genRequestDefForSetInstancesProxyRestart();
@@ -119,11 +120,13 @@ public:
     static HttpRequestDef genRequestDefForShowAuditlogDownloadLink();
     static HttpRequestDef genRequestDefForShowAuditlogPolicy();
     static HttpRequestDef genRequestDefForShowAutoEnlargePolicy();
+    static HttpRequestDef genRequestDefForShowAutoUpgradePolicy();
     static HttpRequestDef genRequestDefForShowAvailableVersion();
     static HttpRequestDef genRequestDefForShowBackupDownloadLink();
     static HttpRequestDef genRequestDefForShowBackupPolicy();
     static HttpRequestDef genRequestDefForShowBinlogClearPolicy();
     static HttpRequestDef genRequestDefForShowConfiguration();
+    static HttpRequestDef genRequestDefForShowDatabaseLevelDatabase();
     static HttpRequestDef genRequestDefForShowDnsName();
     static HttpRequestDef genRequestDefForShowDomainName();
     static HttpRequestDef genRequestDefForShowDrReplicaStatus();

@@ -71,6 +71,15 @@ public:
     void setOutputVideoParas(const std::vector<OutputVideoPara>& value);
 
     /// <summary>
+    /// 被替换的子索引文件 
+    /// </summary>
+
+    std::vector<std::string>& getReplaceSubIndex();
+    bool replaceSubIndexIsSet() const;
+    void unsetreplaceSubIndex();
+    void setReplaceSubIndex(const std::vector<std::string>& value);
+
+    /// <summary>
     /// 
     /// </summary>
 
@@ -96,6 +105,8 @@ protected:
     bool originParaIsSet_;
     std::vector<OutputVideoPara> outputVideoParas_;
     bool outputVideoParasIsSet_;
+    std::vector<std::string> replaceSubIndex_;
+    bool replaceSubIndexIsSet_;
     OutputThumbnailPara outputThumbnailPara_;
     bool outputThumbnailParaIsSet_;
     OutputWatermarkPara outputWatermarkParas_;

@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/live/v1/model/AudioSelectorHlsSelection.h>
 #include <huaweicloud/live/v1/model/AudioSelectorPidSelection.h>
 #include <huaweicloud/live/v1/model/AudioSelectorLangSelection.h>
 
@@ -57,12 +58,23 @@ public:
     void unsetaudioPidSelection();
     void setAudioPidSelection(const AudioSelectorPidSelection& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    AudioSelectorHlsSelection getAudioHlsSelection() const;
+    bool audioHlsSelectionIsSet() const;
+    void unsetaudioHlsSelection();
+    void setAudioHlsSelection(const AudioSelectorHlsSelection& value);
+
 
 protected:
     AudioSelectorLangSelection audioLanguageSelection_;
     bool audioLanguageSelectionIsSet_;
     AudioSelectorPidSelection audioPidSelection_;
     bool audioPidSelectionIsSet_;
+    AudioSelectorHlsSelection audioHlsSelection_;
+    bool audioHlsSelectionIsSet_;
 
 };
 

@@ -22,6 +22,8 @@ OutputVideoPara::OutputVideoPara()
     audioIsSet_ = false;
     fileName_ = "";
     fileNameIsSet_ = false;
+    manifestName_ = "";
+    manifestNameIsSet_ = false;
     converDuration_ = 0.0;
     converDurationIsSet_ = false;
     errorIsSet_ = false;
@@ -54,6 +56,9 @@ web::json::value OutputVideoPara::toJson() const
     }
     if(fileNameIsSet_) {
         val[utility::conversions::to_string_t("file_name")] = ModelBase::toJson(fileName_);
+    }
+    if(manifestNameIsSet_) {
+        val[utility::conversions::to_string_t("manifest_name")] = ModelBase::toJson(manifestName_);
     }
     if(converDurationIsSet_) {
         val[utility::conversions::to_string_t("conver_duration")] = ModelBase::toJson(converDuration_);
@@ -120,6 +125,15 @@ bool OutputVideoPara::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFileName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("manifest_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("manifest_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setManifestName(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("conver_duration"))) {
@@ -268,6 +282,27 @@ bool OutputVideoPara::fileNameIsSet() const
 void OutputVideoPara::unsetfileName()
 {
     fileNameIsSet_ = false;
+}
+
+std::string OutputVideoPara::getManifestName() const
+{
+    return manifestName_;
+}
+
+void OutputVideoPara::setManifestName(const std::string& value)
+{
+    manifestName_ = value;
+    manifestNameIsSet_ = true;
+}
+
+bool OutputVideoPara::manifestNameIsSet() const
+{
+    return manifestNameIsSet_;
+}
+
+void OutputVideoPara::unsetmanifestName()
+{
+    manifestNameIsSet_ = false;
 }
 
 double OutputVideoPara::getConverDuration() const

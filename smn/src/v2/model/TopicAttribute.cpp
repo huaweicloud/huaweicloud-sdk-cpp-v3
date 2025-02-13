@@ -12,6 +12,7 @@ namespace Model {
 
 TopicAttribute::TopicAttribute()
 {
+    accessPolicy_ = "";
     accessPolicyIsSet_ = false;
     introduction_ = "";
     introductionIsSet_ = false;
@@ -44,7 +45,7 @@ bool TopicAttribute::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("access_policy"));
         if(!fieldValue.is_null())
         {
-            AccessPolicy refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAccessPolicy(refVal);
         }
@@ -62,12 +63,12 @@ bool TopicAttribute::fromJson(const web::json::value& val)
 }
 
 
-AccessPolicy TopicAttribute::getAccessPolicy() const
+std::string TopicAttribute::getAccessPolicy() const
 {
     return accessPolicy_;
 }
 
-void TopicAttribute::setAccessPolicy(const AccessPolicy& value)
+void TopicAttribute::setAccessPolicy(const std::string& value)
 {
     accessPolicy_ = value;
     accessPolicyIsSet_ = true;

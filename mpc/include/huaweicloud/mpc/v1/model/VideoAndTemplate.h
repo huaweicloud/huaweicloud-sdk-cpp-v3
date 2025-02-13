@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <string>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -73,6 +74,15 @@ public:
     void unsetbitrate();
     void setBitrate(int32_t value);
 
+    /// <summary>
+    /// 流名称 
+    /// </summary>
+
+    std::string getStreamName() const;
+    bool streamNameIsSet() const;
+    void unsetstreamName();
+    void setStreamName(const std::string& value);
+
 
 protected:
     int32_t templateId_;
@@ -83,6 +93,8 @@ protected:
     bool heightIsSet_;
     int32_t bitrate_;
     bool bitrateIsSet_;
+    std::string streamName_;
+    bool streamNameIsSet_;
 
 };
 

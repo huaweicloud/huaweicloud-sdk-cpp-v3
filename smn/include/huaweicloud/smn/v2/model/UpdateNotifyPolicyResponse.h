@@ -39,18 +39,18 @@ public:
     /// UpdateNotifyPolicyResponse members
 
     /// <summary>
-    /// 
+    /// 请求的唯一标识ID
     /// </summary>
 
-    std::string getBody() const;
-    bool bodyIsSet() const;
-    void unsetbody();
-    void setBody(const std::string& value);
+    std::string getRequestId() const;
+    bool requestIdIsSet() const;
+    void unsetrequestId();
+    void setRequestId(const std::string& value);
 
 
 protected:
-    std::string body_;
-    bool bodyIsSet_;
+    std::string requestId_;
+    bool requestIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

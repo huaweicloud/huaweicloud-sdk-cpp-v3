@@ -12,8 +12,8 @@ namespace Model {
 
 UpdateNotifyPolicyResponse::UpdateNotifyPolicyResponse()
 {
-    body_ = "";
-    bodyIsSet_ = false;
+    requestId_ = "";
+    requestIdIsSet_ = false;
 }
 
 UpdateNotifyPolicyResponse::~UpdateNotifyPolicyResponse() = default;
@@ -26,8 +26,8 @@ web::json::value UpdateNotifyPolicyResponse::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(bodyIsSet_) {
-        val[utility::conversions::to_string_t("body")] = ModelBase::toJson(body_);
+    if(requestIdIsSet_) {
+        val[utility::conversions::to_string_t("request_id")] = ModelBase::toJson(requestId_);
     }
 
     return val;
@@ -36,38 +36,38 @@ bool UpdateNotifyPolicyResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("body"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
+    if(val.has_field(utility::conversions::to_string_t("request_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("request_id"));
         if(!fieldValue.is_null())
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setBody(refVal);
+            setRequestId(refVal);
         }
     }
     return ok;
 }
 
 
-std::string UpdateNotifyPolicyResponse::getBody() const
+std::string UpdateNotifyPolicyResponse::getRequestId() const
 {
-    return body_;
+    return requestId_;
 }
 
-void UpdateNotifyPolicyResponse::setBody(const std::string& value)
+void UpdateNotifyPolicyResponse::setRequestId(const std::string& value)
 {
-    body_ = value;
-    bodyIsSet_ = true;
+    requestId_ = value;
+    requestIdIsSet_ = true;
 }
 
-bool UpdateNotifyPolicyResponse::bodyIsSet() const
+bool UpdateNotifyPolicyResponse::requestIdIsSet() const
 {
-    return bodyIsSet_;
+    return requestIdIsSet_;
 }
 
-void UpdateNotifyPolicyResponse::unsetbody()
+void UpdateNotifyPolicyResponse::unsetrequestId()
 {
-    bodyIsSet_ = false;
+    requestIdIsSet_ = false;
 }
 
 }

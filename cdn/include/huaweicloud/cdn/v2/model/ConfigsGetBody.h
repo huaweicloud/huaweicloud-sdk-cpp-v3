@@ -11,6 +11,7 @@
 
 #include <huaweicloud/cdn/v2/model/ForceRedirectConfig.h>
 #include <huaweicloud/cdn/v2/model/HttpResponseHeader.h>
+#include <huaweicloud/cdn/v2/model/ClientCert.h>
 #include <huaweicloud/cdn/v2/model/Compress.h>
 #include <huaweicloud/cdn/v2/model/HstsQuery.h>
 #include <huaweicloud/cdn/v2/model/WebSocketSeek.h>
@@ -390,6 +391,15 @@ public:
     void unsetaccessAreaFilter();
     void setAccessAreaFilter(const std::vector<AccessAreaFilter>& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    ClientCert getClientCert() const;
+    bool clientCertIsSet() const;
+    void unsetclientCert();
+    void setClientCert(const ClientCert& value);
+
 
 protected:
     std::string businessType_;
@@ -464,6 +474,8 @@ protected:
     bool browserCacheRulesIsSet_;
     std::vector<AccessAreaFilter> accessAreaFilter_;
     bool accessAreaFilterIsSet_;
+    ClientCert clientCert_;
+    bool clientCertIsSet_;
 
 };
 

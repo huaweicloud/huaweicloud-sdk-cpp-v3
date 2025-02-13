@@ -78,6 +78,15 @@ public:
     void setSize(int64_t value);
 
     /// <summary>
+    /// 独立mpd索引文件名 
+    /// </summary>
+
+    std::string getManifestName() const;
+    bool manifestNameIsSet() const;
+    void unsetmanifestName();
+    void setManifestName(const std::string& value);
+
+    /// <summary>
     /// 
     /// </summary>
 
@@ -105,6 +114,8 @@ protected:
     bool formatIsSet_;
     int64_t size_;
     bool sizeIsSet_;
+    std::string manifestName_;
+    bool manifestNameIsSet_;
     VideoInfo videoInfo_;
     bool videoInfoIsSet_;
     std::vector<AudioInfo> audioInfo_;

@@ -40,6 +40,7 @@ QueryTranscodingsTaskResponse::QueryTranscodingsTaskResponse()
     thumbnailOutputnameIsSet_ = false;
     picInfoIsSet_ = false;
     avParametersIsSet_ = false;
+    additionalManifestsIsSet_ = false;
 }
 
 QueryTranscodingsTaskResponse::~QueryTranscodingsTaskResponse() = default;
@@ -105,6 +106,9 @@ web::json::value QueryTranscodingsTaskResponse::toJson() const
     }
     if(avParametersIsSet_) {
         val[utility::conversions::to_string_t("av_parameters")] = ModelBase::toJson(avParameters_);
+    }
+    if(additionalManifestsIsSet_) {
+        val[utility::conversions::to_string_t("additional_manifests")] = ModelBase::toJson(additionalManifests_);
     }
 
     return val;
@@ -273,6 +277,15 @@ bool QueryTranscodingsTaskResponse::fromJson(const web::json::value& val)
             std::vector<AvParameters> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAvParameters(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("additional_manifests"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("additional_manifests"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<AdditionalManifests> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAdditionalManifests(refVal);
         }
     }
     return ok;
@@ -655,6 +668,27 @@ bool QueryTranscodingsTaskResponse::avParametersIsSet() const
 void QueryTranscodingsTaskResponse::unsetavParameters()
 {
     avParametersIsSet_ = false;
+}
+
+std::vector<AdditionalManifests>& QueryTranscodingsTaskResponse::getAdditionalManifests()
+{
+    return additionalManifests_;
+}
+
+void QueryTranscodingsTaskResponse::setAdditionalManifests(const std::vector<AdditionalManifests>& value)
+{
+    additionalManifests_ = value;
+    additionalManifestsIsSet_ = true;
+}
+
+bool QueryTranscodingsTaskResponse::additionalManifestsIsSet() const
+{
+    return additionalManifestsIsSet_;
+}
+
+void QueryTranscodingsTaskResponse::unsetadditionalManifests()
+{
+    additionalManifestsIsSet_ = false;
 }
 
 }

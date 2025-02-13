@@ -147,6 +147,15 @@ public:
     void unsetblackCut();
     void setBlackCut(int32_t value);
 
+    /// <summary>
+    /// 流名称 
+    /// </summary>
+
+    std::string getStreamName() const;
+    bool streamNameIsSet() const;
+    void unsetstreamName();
+    void setStreamName(const std::string& value);
+
 
 protected:
     std::string outputPolicy_;
@@ -173,6 +182,8 @@ protected:
     bool heightIsSet_;
     int32_t blackCut_;
     bool blackCutIsSet_;
+    std::string streamName_;
+    bool streamNameIsSet_;
 
 };
 

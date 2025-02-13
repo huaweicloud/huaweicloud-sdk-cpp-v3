@@ -57,6 +57,7 @@ ConfigsGetBody::ConfigsGetBody()
     requestUrlRewriteIsSet_ = false;
     browserCacheRulesIsSet_ = false;
     accessAreaFilterIsSet_ = false;
+    clientCertIsSet_ = false;
 }
 
 ConfigsGetBody::~ConfigsGetBody() = default;
@@ -176,6 +177,9 @@ web::json::value ConfigsGetBody::toJson() const
     }
     if(accessAreaFilterIsSet_) {
         val[utility::conversions::to_string_t("access_area_filter")] = ModelBase::toJson(accessAreaFilter_);
+    }
+    if(clientCertIsSet_) {
+        val[utility::conversions::to_string_t("client_cert")] = ModelBase::toJson(clientCert_);
     }
 
     return val;
@@ -506,6 +510,15 @@ bool ConfigsGetBody::fromJson(const web::json::value& val)
             std::vector<AccessAreaFilter> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAccessAreaFilter(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("client_cert"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("client_cert"));
+        if(!fieldValue.is_null())
+        {
+            ClientCert refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setClientCert(refVal);
         }
     }
     return ok;
@@ -1266,6 +1279,27 @@ bool ConfigsGetBody::accessAreaFilterIsSet() const
 void ConfigsGetBody::unsetaccessAreaFilter()
 {
     accessAreaFilterIsSet_ = false;
+}
+
+ClientCert ConfigsGetBody::getClientCert() const
+{
+    return clientCert_;
+}
+
+void ConfigsGetBody::setClientCert(const ClientCert& value)
+{
+    clientCert_ = value;
+    clientCertIsSet_ = true;
+}
+
+bool ConfigsGetBody::clientCertIsSet() const
+{
+    return clientCertIsSet_;
+}
+
+void ConfigsGetBody::unsetclientCert()
+{
+    clientCertIsSet_ = false;
 }
 
 }

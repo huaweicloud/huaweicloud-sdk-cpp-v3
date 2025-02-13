@@ -10,7 +10,6 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
-#include <huaweicloud/smn/v2/model/AccessPolicy.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -40,13 +39,13 @@ public:
     /// TopicAttribute members
 
     /// <summary>
-    /// 
+    /// topic的访问策略
     /// </summary>
 
-    AccessPolicy getAccessPolicy() const;
+    std::string getAccessPolicy() const;
     bool accessPolicyIsSet() const;
     void unsetaccessPolicy();
-    void setAccessPolicy(const AccessPolicy& value);
+    void setAccessPolicy(const std::string& value);
 
     /// <summary>
     /// topic的简介
@@ -59,7 +58,7 @@ public:
 
 
 protected:
-    AccessPolicy accessPolicy_;
+    std::string accessPolicy_;
     bool accessPolicyIsSet_;
     std::string introduction_;
     bool introductionIsSet_;

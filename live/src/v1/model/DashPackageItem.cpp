@@ -25,6 +25,12 @@ DashPackageItem::DashPackageItem()
     requestArgsIsSet_ = false;
     adMarker_ = "";
     adMarkerIsSet_ = false;
+    suggestedPresentationDelay_ = 0;
+    suggestedPresentationDelayIsSet_ = false;
+    minimumUpdatePeriod_ = 0;
+    minimumUpdatePeriodIsSet_ = false;
+    minBufferTime_ = 0;
+    minBufferTimeIsSet_ = false;
 }
 
 DashPackageItem::~DashPackageItem() = default;
@@ -63,6 +69,15 @@ web::json::value DashPackageItem::toJson() const
     }
     if(adMarkerIsSet_) {
         val[utility::conversions::to_string_t("ad_marker")] = ModelBase::toJson(adMarker_);
+    }
+    if(suggestedPresentationDelayIsSet_) {
+        val[utility::conversions::to_string_t("suggested_presentation_delay")] = ModelBase::toJson(suggestedPresentationDelay_);
+    }
+    if(minimumUpdatePeriodIsSet_) {
+        val[utility::conversions::to_string_t("minimum_update_period")] = ModelBase::toJson(minimumUpdatePeriod_);
+    }
+    if(minBufferTimeIsSet_) {
+        val[utility::conversions::to_string_t("min_buffer_time")] = ModelBase::toJson(minBufferTime_);
     }
 
     return val;
@@ -150,6 +165,33 @@ bool DashPackageItem::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAdMarker(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("suggested_presentation_delay"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("suggested_presentation_delay"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSuggestedPresentationDelay(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("minimum_update_period"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("minimum_update_period"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMinimumUpdatePeriod(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("min_buffer_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("min_buffer_time"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMinBufferTime(refVal);
         }
     }
     return ok;
@@ -343,6 +385,69 @@ bool DashPackageItem::adMarkerIsSet() const
 void DashPackageItem::unsetadMarker()
 {
     adMarkerIsSet_ = false;
+}
+
+int32_t DashPackageItem::getSuggestedPresentationDelay() const
+{
+    return suggestedPresentationDelay_;
+}
+
+void DashPackageItem::setSuggestedPresentationDelay(int32_t value)
+{
+    suggestedPresentationDelay_ = value;
+    suggestedPresentationDelayIsSet_ = true;
+}
+
+bool DashPackageItem::suggestedPresentationDelayIsSet() const
+{
+    return suggestedPresentationDelayIsSet_;
+}
+
+void DashPackageItem::unsetsuggestedPresentationDelay()
+{
+    suggestedPresentationDelayIsSet_ = false;
+}
+
+int32_t DashPackageItem::getMinimumUpdatePeriod() const
+{
+    return minimumUpdatePeriod_;
+}
+
+void DashPackageItem::setMinimumUpdatePeriod(int32_t value)
+{
+    minimumUpdatePeriod_ = value;
+    minimumUpdatePeriodIsSet_ = true;
+}
+
+bool DashPackageItem::minimumUpdatePeriodIsSet() const
+{
+    return minimumUpdatePeriodIsSet_;
+}
+
+void DashPackageItem::unsetminimumUpdatePeriod()
+{
+    minimumUpdatePeriodIsSet_ = false;
+}
+
+int32_t DashPackageItem::getMinBufferTime() const
+{
+    return minBufferTime_;
+}
+
+void DashPackageItem::setMinBufferTime(int32_t value)
+{
+    minBufferTime_ = value;
+    minBufferTimeIsSet_ = true;
+}
+
+bool DashPackageItem::minBufferTimeIsSet() const
+{
+    return minBufferTimeIsSet_;
+}
+
+void DashPackageItem::unsetminBufferTime()
+{
+    minBufferTimeIsSet_ = false;
 }
 
 }

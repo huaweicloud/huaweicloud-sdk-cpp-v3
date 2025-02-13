@@ -11,6 +11,7 @@
 
 #include <huaweicloud/mpc/v1/model/MultiTaskInfo.h>
 #include <huaweicloud/mpc/v1/model/SourceInfo.h>
+#include <string>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -58,12 +59,23 @@ public:
     void unsetinputFile();
     void setInputFile(const SourceInfo& value);
 
+    /// <summary>
+    /// 被替换的子索引文件 
+    /// </summary>
+
+    std::vector<std::string>& getReplaceSubIndex();
+    bool replaceSubIndexIsSet() const;
+    void unsetreplaceSubIndex();
+    void setReplaceSubIndex(const std::vector<std::string>& value);
+
 
 protected:
     std::vector<MultiTaskInfo> multitaskInfo_;
     bool multitaskInfoIsSet_;
     SourceInfo inputFile_;
     bool inputFileIsSet_;
+    std::vector<std::string> replaceSubIndex_;
+    bool replaceSubIndexIsSet_;
 
 };
 

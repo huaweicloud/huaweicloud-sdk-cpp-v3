@@ -14,6 +14,7 @@ TranscodeDetail::TranscodeDetail()
 {
     multitaskInfoIsSet_ = false;
     inputFileIsSet_ = false;
+    replaceSubIndexIsSet_ = false;
 }
 
 TranscodeDetail::~TranscodeDetail() = default;
@@ -31,6 +32,9 @@ web::json::value TranscodeDetail::toJson() const
     }
     if(inputFileIsSet_) {
         val[utility::conversions::to_string_t("input_file")] = ModelBase::toJson(inputFile_);
+    }
+    if(replaceSubIndexIsSet_) {
+        val[utility::conversions::to_string_t("replace_sub_index")] = ModelBase::toJson(replaceSubIndex_);
     }
 
     return val;
@@ -55,6 +59,15 @@ bool TranscodeDetail::fromJson(const web::json::value& val)
             SourceInfo refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setInputFile(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("replace_sub_index"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("replace_sub_index"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setReplaceSubIndex(refVal);
         }
     }
     return ok;
@@ -101,6 +114,27 @@ bool TranscodeDetail::inputFileIsSet() const
 void TranscodeDetail::unsetinputFile()
 {
     inputFileIsSet_ = false;
+}
+
+std::vector<std::string>& TranscodeDetail::getReplaceSubIndex()
+{
+    return replaceSubIndex_;
+}
+
+void TranscodeDetail::setReplaceSubIndex(const std::vector<std::string>& value)
+{
+    replaceSubIndex_ = value;
+    replaceSubIndexIsSet_ = true;
+}
+
+bool TranscodeDetail::replaceSubIndexIsSet() const
+{
+    return replaceSubIndexIsSet_;
+}
+
+void TranscodeDetail::unsetreplaceSubIndex()
+{
+    replaceSubIndexIsSet_ = false;
 }
 
 }

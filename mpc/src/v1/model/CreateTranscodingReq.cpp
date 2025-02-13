@@ -16,6 +16,7 @@ CreateTranscodingReq::CreateTranscodingReq()
     outputIsSet_ = false;
     transTemplateIdIsSet_ = false;
     avParametersIsSet_ = false;
+    additionalManifestsIsSet_ = false;
     outputFilenamesIsSet_ = false;
     userData_ = "";
     userDataIsSet_ = false;
@@ -53,6 +54,9 @@ web::json::value CreateTranscodingReq::toJson() const
     }
     if(avParametersIsSet_) {
         val[utility::conversions::to_string_t("av_parameters")] = ModelBase::toJson(avParameters_);
+    }
+    if(additionalManifestsIsSet_) {
+        val[utility::conversions::to_string_t("additional_manifests")] = ModelBase::toJson(additionalManifests_);
     }
     if(outputFilenamesIsSet_) {
         val[utility::conversions::to_string_t("output_filenames")] = ModelBase::toJson(outputFilenames_);
@@ -131,6 +135,15 @@ bool CreateTranscodingReq::fromJson(const web::json::value& val)
             std::vector<AvParameters> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAvParameters(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("additional_manifests"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("additional_manifests"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<AdditionalManifests> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAdditionalManifests(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("output_filenames"))) {
@@ -327,6 +340,27 @@ bool CreateTranscodingReq::avParametersIsSet() const
 void CreateTranscodingReq::unsetavParameters()
 {
     avParametersIsSet_ = false;
+}
+
+std::vector<AdditionalManifests>& CreateTranscodingReq::getAdditionalManifests()
+{
+    return additionalManifests_;
+}
+
+void CreateTranscodingReq::setAdditionalManifests(const std::vector<AdditionalManifests>& value)
+{
+    additionalManifests_ = value;
+    additionalManifestsIsSet_ = true;
+}
+
+bool CreateTranscodingReq::additionalManifestsIsSet() const
+{
+    return additionalManifestsIsSet_;
+}
+
+void CreateTranscodingReq::unsetadditionalManifests()
+{
+    additionalManifestsIsSet_ = false;
 }
 
 std::vector<std::string>& CreateTranscodingReq::getOutputFilenames()

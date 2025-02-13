@@ -96,6 +96,15 @@ public:
     void setFileName(const std::string& value);
 
     /// <summary>
+    /// 独立mpd索引文件名 
+    /// </summary>
+
+    std::string getManifestName() const;
+    bool manifestNameIsSet() const;
+    void unsetmanifestName();
+    void setManifestName(const std::string& value);
+
+    /// <summary>
     /// 折算后视频时长 
     /// </summary>
 
@@ -127,6 +136,8 @@ protected:
     bool audioIsSet_;
     std::string fileName_;
     bool fileNameIsSet_;
+    std::string manifestName_;
+    bool manifestNameIsSet_;
     double converDuration_;
     bool converDurationIsSet_;
     XCodeError error_;

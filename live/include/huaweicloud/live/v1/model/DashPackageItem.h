@@ -116,13 +116,40 @@ public:
     void setRequestArgs(const PackageRequestArgs& value);
 
     /// <summary>
-    /// 广告标识。  DASH取值：\&quot;xml+bin\&quot;。 
+    /// 广告标识。DASH取值：\&quot;xml+bin\&quot;
     /// </summary>
 
     std::string getAdMarker() const;
     bool adMarkerIsSet() const;
     void unsetadMarker();
     void setAdMarker(const std::string& value);
+
+    /// <summary>
+    /// 建议播放延迟。单位：秒。取值范围：[1 - 120]
+    /// </summary>
+
+    int32_t getSuggestedPresentationDelay() const;
+    bool suggestedPresentationDelayIsSet() const;
+    void unsetsuggestedPresentationDelay();
+    void setSuggestedPresentationDelay(int32_t value);
+
+    /// <summary>
+    /// 索引最短更新周期。单位：秒。取值范围：[1 - 120]
+    /// </summary>
+
+    int32_t getMinimumUpdatePeriod() const;
+    bool minimumUpdatePeriodIsSet() const;
+    void unsetminimumUpdatePeriod();
+    void setMinimumUpdatePeriod(int32_t value);
+
+    /// <summary>
+    /// 最小缓冲时间。单位：秒。取值范围：[1 - 120]
+    /// </summary>
+
+    int32_t getMinBufferTime() const;
+    bool minBufferTimeIsSet() const;
+    void unsetminBufferTime();
+    void setMinBufferTime(int32_t value);
 
 
 protected:
@@ -144,6 +171,12 @@ protected:
     bool requestArgsIsSet_;
     std::string adMarker_;
     bool adMarkerIsSet_;
+    int32_t suggestedPresentationDelay_;
+    bool suggestedPresentationDelayIsSet_;
+    int32_t minimumUpdatePeriod_;
+    bool minimumUpdatePeriodIsSet_;
+    int32_t minBufferTime_;
+    bool minBufferTimeIsSet_;
 
 };
 

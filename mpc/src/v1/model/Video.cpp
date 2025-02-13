@@ -36,6 +36,8 @@ Video::Video()
     heightIsSet_ = false;
     blackCut_ = 0;
     blackCutIsSet_ = false;
+    streamName_ = "";
+    streamNameIsSet_ = false;
 }
 
 Video::~Video() = default;
@@ -83,6 +85,9 @@ web::json::value Video::toJson() const
     }
     if(blackCutIsSet_) {
         val[utility::conversions::to_string_t("black_cut")] = ModelBase::toJson(blackCut_);
+    }
+    if(streamNameIsSet_) {
+        val[utility::conversions::to_string_t("stream_name")] = ModelBase::toJson(streamName_);
     }
 
     return val;
@@ -197,6 +202,15 @@ bool Video::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBlackCut(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("stream_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("stream_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setStreamName(refVal);
         }
     }
     return ok;
@@ -453,6 +467,27 @@ bool Video::blackCutIsSet() const
 void Video::unsetblackCut()
 {
     blackCutIsSet_ = false;
+}
+
+std::string Video::getStreamName() const
+{
+    return streamName_;
+}
+
+void Video::setStreamName(const std::string& value)
+{
+    streamName_ = value;
+    streamNameIsSet_ = true;
+}
+
+bool Video::streamNameIsSet() const
+{
+    return streamNameIsSet_;
+}
+
+void Video::unsetstreamName()
+{
+    streamNameIsSet_ = false;
 }
 
 }

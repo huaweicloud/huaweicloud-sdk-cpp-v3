@@ -18,6 +18,8 @@ VideoObj::VideoObj()
     heightIsSet_ = false;
     bitrate_ = 0;
     bitrateIsSet_ = false;
+    streamName_ = "";
+    streamNameIsSet_ = false;
 }
 
 VideoObj::~VideoObj() = default;
@@ -38,6 +40,9 @@ web::json::value VideoObj::toJson() const
     }
     if(bitrateIsSet_) {
         val[utility::conversions::to_string_t("bitrate")] = ModelBase::toJson(bitrate_);
+    }
+    if(streamNameIsSet_) {
+        val[utility::conversions::to_string_t("stream_name")] = ModelBase::toJson(streamName_);
     }
 
     return val;
@@ -71,6 +76,15 @@ bool VideoObj::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBitrate(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("stream_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("stream_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setStreamName(refVal);
         }
     }
     return ok;
@@ -138,6 +152,27 @@ bool VideoObj::bitrateIsSet() const
 void VideoObj::unsetbitrate()
 {
     bitrateIsSet_ = false;
+}
+
+std::string VideoObj::getStreamName() const
+{
+    return streamName_;
+}
+
+void VideoObj::setStreamName(const std::string& value)
+{
+    streamName_ = value;
+    streamNameIsSet_ = true;
+}
+
+bool VideoObj::streamNameIsSet() const
+{
+    return streamNameIsSet_;
+}
+
+void VideoObj::unsetstreamName()
+{
+    streamNameIsSet_ = false;
 }
 
 }

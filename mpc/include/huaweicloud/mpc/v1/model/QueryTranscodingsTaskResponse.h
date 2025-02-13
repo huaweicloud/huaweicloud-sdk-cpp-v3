@@ -13,6 +13,7 @@
 #include <huaweicloud/mpc/v1/model/ObsObjInfo.h>
 #include <huaweicloud/mpc/v1/model/TranscodeDetail.h>
 #include <string>
+#include <huaweicloud/mpc/v1/model/AdditionalManifests.h>
 #include <huaweicloud/mpc/v1/model/PicInfo.h>
 #include <vector>
 
@@ -205,6 +206,15 @@ public:
     void unsetavParameters();
     void setAvParameters(const std::vector<AvParameters>& value);
 
+    /// <summary>
+    /// 主索引定制参数。 
+    /// </summary>
+
+    std::vector<AdditionalManifests>& getAdditionalManifests();
+    bool additionalManifestsIsSet() const;
+    void unsetadditionalManifests();
+    void setAdditionalManifests(const std::vector<AdditionalManifests>& value);
+
 
 protected:
     std::string taskId_;
@@ -243,6 +253,8 @@ protected:
     bool picInfoIsSet_;
     std::vector<AvParameters> avParameters_;
     bool avParametersIsSet_;
+    std::vector<AdditionalManifests> additionalManifests_;
+    bool additionalManifestsIsSet_;
 
 };
 

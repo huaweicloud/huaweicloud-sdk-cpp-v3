@@ -15,6 +15,7 @@ MediaDetail::MediaDetail()
     featuresIsSet_ = false;
     originParaIsSet_ = false;
     outputVideoParasIsSet_ = false;
+    replaceSubIndexIsSet_ = false;
     outputThumbnailParaIsSet_ = false;
     outputWatermarkParasIsSet_ = false;
 }
@@ -37,6 +38,9 @@ web::json::value MediaDetail::toJson() const
     }
     if(outputVideoParasIsSet_) {
         val[utility::conversions::to_string_t("output_video_paras")] = ModelBase::toJson(outputVideoParas_);
+    }
+    if(replaceSubIndexIsSet_) {
+        val[utility::conversions::to_string_t("replace_sub_index")] = ModelBase::toJson(replaceSubIndex_);
     }
     if(outputThumbnailParaIsSet_) {
         val[utility::conversions::to_string_t("output_thumbnail_para")] = ModelBase::toJson(outputThumbnailPara_);
@@ -76,6 +80,15 @@ bool MediaDetail::fromJson(const web::json::value& val)
             std::vector<OutputVideoPara> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setOutputVideoParas(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("replace_sub_index"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("replace_sub_index"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setReplaceSubIndex(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("output_thumbnail_para"))) {
@@ -161,6 +174,27 @@ bool MediaDetail::outputVideoParasIsSet() const
 void MediaDetail::unsetoutputVideoParas()
 {
     outputVideoParasIsSet_ = false;
+}
+
+std::vector<std::string>& MediaDetail::getReplaceSubIndex()
+{
+    return replaceSubIndex_;
+}
+
+void MediaDetail::setReplaceSubIndex(const std::vector<std::string>& value)
+{
+    replaceSubIndex_ = value;
+    replaceSubIndexIsSet_ = true;
+}
+
+bool MediaDetail::replaceSubIndexIsSet() const
+{
+    return replaceSubIndexIsSet_;
+}
+
+void MediaDetail::unsetreplaceSubIndex()
+{
+    replaceSubIndexIsSet_ = false;
 }
 
 OutputThumbnailPara MediaDetail::getOutputThumbnailPara() const

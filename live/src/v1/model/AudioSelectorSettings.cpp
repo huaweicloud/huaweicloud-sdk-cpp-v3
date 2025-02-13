@@ -14,6 +14,7 @@ AudioSelectorSettings::AudioSelectorSettings()
 {
     audioLanguageSelectionIsSet_ = false;
     audioPidSelectionIsSet_ = false;
+    audioHlsSelectionIsSet_ = false;
 }
 
 AudioSelectorSettings::~AudioSelectorSettings() = default;
@@ -31,6 +32,9 @@ web::json::value AudioSelectorSettings::toJson() const
     }
     if(audioPidSelectionIsSet_) {
         val[utility::conversions::to_string_t("audio_pid_selection")] = ModelBase::toJson(audioPidSelection_);
+    }
+    if(audioHlsSelectionIsSet_) {
+        val[utility::conversions::to_string_t("audio_hls_selection")] = ModelBase::toJson(audioHlsSelection_);
     }
 
     return val;
@@ -55,6 +59,15 @@ bool AudioSelectorSettings::fromJson(const web::json::value& val)
             AudioSelectorPidSelection refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAudioPidSelection(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("audio_hls_selection"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("audio_hls_selection"));
+        if(!fieldValue.is_null())
+        {
+            AudioSelectorHlsSelection refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAudioHlsSelection(refVal);
         }
     }
     return ok;
@@ -101,6 +114,27 @@ bool AudioSelectorSettings::audioPidSelectionIsSet() const
 void AudioSelectorSettings::unsetaudioPidSelection()
 {
     audioPidSelectionIsSet_ = false;
+}
+
+AudioSelectorHlsSelection AudioSelectorSettings::getAudioHlsSelection() const
+{
+    return audioHlsSelection_;
+}
+
+void AudioSelectorSettings::setAudioHlsSelection(const AudioSelectorHlsSelection& value)
+{
+    audioHlsSelection_ = value;
+    audioHlsSelectionIsSet_ = true;
+}
+
+bool AudioSelectorSettings::audioHlsSelectionIsSet() const
+{
+    return audioHlsSelectionIsSet_;
+}
+
+void AudioSelectorSettings::unsetaudioHlsSelection()
+{
+    audioHlsSelectionIsSet_ = false;
 }
 
 }

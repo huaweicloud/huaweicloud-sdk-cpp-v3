@@ -19,6 +19,7 @@
 #include <huaweicloud/mpc/v1/model/ObsObjInfo.h>
 #include <huaweicloud/mpc/v1/model/Crop.h>
 #include <huaweicloud/mpc/v1/model/Subtitle.h>
+#include <huaweicloud/mpc/v1/model/AdditionalManifests.h>
 #include <huaweicloud/mpc/v1/model/AudioTrack.h>
 #include <huaweicloud/mpc/v1/model/MultiAudio.h>
 #include <huaweicloud/mpc/v1/model/Encryption.h>
@@ -85,6 +86,15 @@ public:
     bool avParametersIsSet() const;
     void unsetavParameters();
     void setAvParameters(const std::vector<AvParameters>& value);
+
+    /// <summary>
+    /// 主索引定制参数。 
+    /// </summary>
+
+    std::vector<AdditionalManifests>& getAdditionalManifests();
+    bool additionalManifestsIsSet() const;
+    void unsetadditionalManifests();
+    void setAdditionalManifests(const std::vector<AdditionalManifests>& value);
 
     /// <summary>
     /// 输出文件名称，每一路转码输出对应一个名称，需要与转码模板ID数组的顺序对应。  - 若设置该参数，表示输出文件按该参数命名。 - 若不设置该参数，表示输出文件按默认方式命名。 
@@ -204,6 +214,8 @@ protected:
     bool transTemplateIdIsSet_;
     std::vector<AvParameters> avParameters_;
     bool avParametersIsSet_;
+    std::vector<AdditionalManifests> additionalManifests_;
+    bool additionalManifestsIsSet_;
     std::vector<std::string> outputFilenames_;
     bool outputFilenamesIsSet_;
     std::string userData_;

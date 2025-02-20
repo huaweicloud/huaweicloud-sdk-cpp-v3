@@ -74,6 +74,47 @@ std::shared_ptr<BatchCreateOrDeleteTagsResponse> CsmsClient::batchCreateOrDelete
 
     return localVarResult;
 }
+std::shared_ptr<BatchImportSecretsResponse> CsmsClient::batchImportSecrets(BatchImportSecretsRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/secrets/batch-import";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CsmsMeta::genRequestDefForBatchImportSecrets());
+
+    std::shared_ptr<BatchImportSecretsResponse> localVarResult = std::make_shared<BatchImportSecretsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<CreateAgencyResponse> CsmsClient::createAgency(CreateAgencyRequest &request)
 {
     std::string localVarPath = "/v1/csms/agencies";
@@ -1194,6 +1235,36 @@ std::shared_ptr<ShowSecretVersionResponse> CsmsClient::showSecretVersion(ShowSec
         localVarHeaderParams, localVarHttpBody, CsmsMeta::genRequestDefForShowSecretVersion());
 
     std::shared_ptr<ShowSecretVersionResponse> localVarResult = std::make_shared<ShowSecretVersionResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowUserDetailResponse> CsmsClient::showUserDetail(ShowUserDetailRequest &request)
+{
+    std::string localVarPath = "/v1/csms/users/{user_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["user_id"] = parameterToString(request.getUserId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CsmsMeta::genRequestDefForShowUserDetail());
+
+    std::shared_ptr<ShowUserDetailResponse> localVarResult = std::make_shared<ShowUserDetailResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

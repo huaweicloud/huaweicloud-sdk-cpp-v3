@@ -1,3 +1,90 @@
+# 3.1.124 2025-02-20
+
+### HuaweiCloud SDK CDN
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowDomainFullConfig**
+    - changes of response param
+      - `+ configs.client_cert.status`
+      - `- configs.client_cert.validation`
+  - **UpdateDomainFullConfig**
+    - changes of request param
+      - `+ configs.client_cert.status`
+      - `- configs.client_cert.validation`
+
+### HuaweiCloud SDK CSMS
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the APIs `BatchImportSecrets`, `ShowUserDetail`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK DRS
+
+- _API Version_
+  - V5
+- _Features_
+  - Support the API `ShowTimeline`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowDataProgress**
+    - changes of response param
+      - `+ data_process_info.process_rule_level`
+  - **UpdateDataProgress**
+    - changes of request param
+      - `+ data_process_info.process_rule_level`
+  - **CheckDataFilter**
+    - changes of request param
+      - `+ data_process_info.process_rule_level`
+  - **ListAsyncJobDetail**
+    - changes of response param
+      - `+ jobs.diagnoses`
+      - `+ jobs.repair_progress_info`
+      - `+ jobs.repair_detail_info`
+      - `+ jobs.repair_export_status`
+  - **ShowJobDetail**
+    - changes of request param
+      - `+ type: enum value [diagnosis,diagnosis_history,repair_progress,repair_detail,repair_export_status]`
+    - changes of response param
+      - `+ job.diagnoses`
+      - `+ job.repair_progress_info`
+      - `+ job.repair_detail_info`
+      - `+ job.repair_export_status`
+  - **ExecuteJobAction**
+    - changes of request param
+      - `+ job.action_name: enum value [diagnosis：一键诊断。,start_repair：开始数据修复。,stop_repair：停止数据修复。]`
+      - `+ job.action_params.repair_info`
+      - `+ job.action_params.compare_task_param.data_process_info.process_rule_level`
+  - **BatchExecuteJobActions**
+    - changes of request param
+      - `+ jobs.action_name: enum value [diagnosis：一键诊断。,start_repair：开始数据修复。,stop_repair：停止数据修复。]`
+      - `+ jobs.action_params.repair_info`
+      - `+ jobs.action_params.compare_task_param.data_process_info.process_rule_level`
+
+### HuaweiCloud SDK OCR
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **RecognizeFlightItinerary**
+    - changes of response param
+      - `+ result.gp_number`
+
 # 3.1.123 2025-02-13
 
 ### HuaweiCloud SDK CDN

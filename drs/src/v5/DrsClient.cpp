@@ -3170,6 +3170,45 @@ std::shared_ptr<ShowSupportObjectTypeResponse> DrsClient::showSupportObjectType(
 
     return localVarResult;
 }
+std::shared_ptr<ShowTimelineResponse> DrsClient::showTimeline(ShowTimelineRequest &request)
+{
+    std::string localVarPath = "/v5/{project_id}/jobs/{job_id}/timelines";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["job_id"] = parameterToString(request.getJobId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, DrsMeta::genRequestDefForShowTimeline());
+
+    std::shared_ptr<ShowTimelineResponse> localVarResult = std::make_shared<ShowTimelineResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowUpdateObjectSavingStatusResponse> DrsClient::showUpdateObjectSavingStatus(ShowUpdateObjectSavingStatusRequest &request)
 {
     std::string localVarPath = "/v5/{project_id}/jobs/{job_id}/db-objects/saving-status";

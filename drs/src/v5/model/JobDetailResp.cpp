@@ -51,6 +51,11 @@ JobDetailResp::JobDetailResp()
     childrenIsSet_ = false;
     isWritable_ = "";
     isWritableIsSet_ = false;
+    diagnosesIsSet_ = false;
+    repairProgressInfoIsSet_ = false;
+    repairDetailInfoIsSet_ = false;
+    repairExportStatus_ = "";
+    repairExportStatusIsSet_ = false;
 }
 
 JobDetailResp::~JobDetailResp() = default;
@@ -155,6 +160,18 @@ web::json::value JobDetailResp::toJson() const
     }
     if(isWritableIsSet_) {
         val[utility::conversions::to_string_t("is_writable")] = ModelBase::toJson(isWritable_);
+    }
+    if(diagnosesIsSet_) {
+        val[utility::conversions::to_string_t("diagnoses")] = ModelBase::toJson(diagnoses_);
+    }
+    if(repairProgressInfoIsSet_) {
+        val[utility::conversions::to_string_t("repair_progress_info")] = ModelBase::toJson(repairProgressInfo_);
+    }
+    if(repairDetailInfoIsSet_) {
+        val[utility::conversions::to_string_t("repair_detail_info")] = ModelBase::toJson(repairDetailInfo_);
+    }
+    if(repairExportStatusIsSet_) {
+        val[utility::conversions::to_string_t("repair_export_status")] = ModelBase::toJson(repairExportStatus_);
     }
 
     return val;
@@ -440,6 +457,42 @@ bool JobDetailResp::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsWritable(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("diagnoses"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("diagnoses"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<QueryDiagnosisResult> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDiagnoses(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("repair_progress_info"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("repair_progress_info"));
+        if(!fieldValue.is_null())
+        {
+            JobDetailResp_repair_progress_info refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRepairProgressInfo(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("repair_detail_info"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("repair_detail_info"));
+        if(!fieldValue.is_null())
+        {
+            QueryRepairDetailResp refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRepairDetailInfo(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("repair_export_status"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("repair_export_status"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRepairExportStatus(refVal);
         }
     }
     return ok;
@@ -1095,6 +1148,90 @@ bool JobDetailResp::isWritableIsSet() const
 void JobDetailResp::unsetisWritable()
 {
     isWritableIsSet_ = false;
+}
+
+std::vector<QueryDiagnosisResult>& JobDetailResp::getDiagnoses()
+{
+    return diagnoses_;
+}
+
+void JobDetailResp::setDiagnoses(const std::vector<QueryDiagnosisResult>& value)
+{
+    diagnoses_ = value;
+    diagnosesIsSet_ = true;
+}
+
+bool JobDetailResp::diagnosesIsSet() const
+{
+    return diagnosesIsSet_;
+}
+
+void JobDetailResp::unsetdiagnoses()
+{
+    diagnosesIsSet_ = false;
+}
+
+JobDetailResp_repair_progress_info JobDetailResp::getRepairProgressInfo() const
+{
+    return repairProgressInfo_;
+}
+
+void JobDetailResp::setRepairProgressInfo(const JobDetailResp_repair_progress_info& value)
+{
+    repairProgressInfo_ = value;
+    repairProgressInfoIsSet_ = true;
+}
+
+bool JobDetailResp::repairProgressInfoIsSet() const
+{
+    return repairProgressInfoIsSet_;
+}
+
+void JobDetailResp::unsetrepairProgressInfo()
+{
+    repairProgressInfoIsSet_ = false;
+}
+
+QueryRepairDetailResp JobDetailResp::getRepairDetailInfo() const
+{
+    return repairDetailInfo_;
+}
+
+void JobDetailResp::setRepairDetailInfo(const QueryRepairDetailResp& value)
+{
+    repairDetailInfo_ = value;
+    repairDetailInfoIsSet_ = true;
+}
+
+bool JobDetailResp::repairDetailInfoIsSet() const
+{
+    return repairDetailInfoIsSet_;
+}
+
+void JobDetailResp::unsetrepairDetailInfo()
+{
+    repairDetailInfoIsSet_ = false;
+}
+
+std::string JobDetailResp::getRepairExportStatus() const
+{
+    return repairExportStatus_;
+}
+
+void JobDetailResp::setRepairExportStatus(const std::string& value)
+{
+    repairExportStatus_ = value;
+    repairExportStatusIsSet_ = true;
+}
+
+bool JobDetailResp::repairExportStatusIsSet() const
+{
+    return repairExportStatusIsSet_;
+}
+
+void JobDetailResp::unsetrepairExportStatus()
+{
+    repairExportStatusIsSet_ = false;
 }
 
 }

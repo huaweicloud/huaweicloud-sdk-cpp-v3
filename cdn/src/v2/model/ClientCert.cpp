@@ -12,8 +12,8 @@ namespace Model {
 
 ClientCert::ClientCert()
 {
-    validation_ = 0;
-    validationIsSet_ = false;
+    status_ = "";
+    statusIsSet_ = false;
     trustedCert_ = "";
     trustedCertIsSet_ = false;
     hosts_ = "";
@@ -30,8 +30,8 @@ web::json::value ClientCert::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(validationIsSet_) {
-        val[utility::conversions::to_string_t("validation")] = ModelBase::toJson(validation_);
+    if(statusIsSet_) {
+        val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
     }
     if(trustedCertIsSet_) {
         val[utility::conversions::to_string_t("trusted_cert")] = ModelBase::toJson(trustedCert_);
@@ -46,13 +46,13 @@ bool ClientCert::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("validation"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("validation"));
+    if(val.has_field(utility::conversions::to_string_t("status"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("status"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setValidation(refVal);
+            setStatus(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("trusted_cert"))) {
@@ -77,25 +77,25 @@ bool ClientCert::fromJson(const web::json::value& val)
 }
 
 
-int32_t ClientCert::getValidation() const
+std::string ClientCert::getStatus() const
 {
-    return validation_;
+    return status_;
 }
 
-void ClientCert::setValidation(int32_t value)
+void ClientCert::setStatus(const std::string& value)
 {
-    validation_ = value;
-    validationIsSet_ = true;
+    status_ = value;
+    statusIsSet_ = true;
 }
 
-bool ClientCert::validationIsSet() const
+bool ClientCert::statusIsSet() const
 {
-    return validationIsSet_;
+    return statusIsSet_;
 }
 
-void ClientCert::unsetvalidation()
+void ClientCert::unsetstatus()
 {
-    validationIsSet_ = false;
+    statusIsSet_ = false;
 }
 
 std::string ClientCert::getTrustedCert() const

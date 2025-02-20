@@ -60,6 +60,8 @@ FlightItineraryResult::FlightItineraryResult()
     internationalFlagIsSet_ = false;
     issueStatus_ = "";
     issueStatusIsSet_ = false;
+    gpNumber_ = "";
+    gpNumberIsSet_ = false;
     itineraryListIsSet_ = false;
     confidenceIsSet_ = false;
 }
@@ -145,6 +147,9 @@ web::json::value FlightItineraryResult::toJson() const
     }
     if(issueStatusIsSet_) {
         val[utility::conversions::to_string_t("issue_status")] = ModelBase::toJson(issueStatus_);
+    }
+    if(gpNumberIsSet_) {
+        val[utility::conversions::to_string_t("gp_number")] = ModelBase::toJson(gpNumber_);
     }
     if(itineraryListIsSet_) {
         val[utility::conversions::to_string_t("itinerary_list")] = ModelBase::toJson(itineraryList_);
@@ -373,6 +378,15 @@ bool FlightItineraryResult::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIssueStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("gp_number"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("gp_number"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setGpNumber(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("itinerary_list"))) {
@@ -899,6 +913,27 @@ bool FlightItineraryResult::issueStatusIsSet() const
 void FlightItineraryResult::unsetissueStatus()
 {
     issueStatusIsSet_ = false;
+}
+
+std::string FlightItineraryResult::getGpNumber() const
+{
+    return gpNumber_;
+}
+
+void FlightItineraryResult::setGpNumber(const std::string& value)
+{
+    gpNumber_ = value;
+    gpNumberIsSet_ = true;
+}
+
+bool FlightItineraryResult::gpNumberIsSet() const
+{
+    return gpNumberIsSet_;
+}
+
+void FlightItineraryResult::unsetgpNumber()
+{
+    gpNumberIsSet_ = false;
 }
 
 std::vector<ItineraryList>& FlightItineraryResult::getItineraryList()

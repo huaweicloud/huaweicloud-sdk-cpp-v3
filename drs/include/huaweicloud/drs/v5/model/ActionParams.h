@@ -13,6 +13,7 @@
 #include <huaweicloud/drs/v5/model/JobEndpointInfo.h>
 #include <string>
 #include <huaweicloud/drs/v5/model/ReplayConfigInfo.h>
+#include <huaweicloud/drs/v5/model/ActionParams_repair_info.h>
 #include <huaweicloud/drs/v5/model/SkipPreCheckInfo.h>
 #include <vector>
 #include <huaweicloud/drs/v5/model/PublicIpConfig.h>
@@ -143,6 +144,15 @@ public:
     void unsetreplayConfig();
     void setReplayConfig(const ReplayConfigInfo& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    ActionParams_repair_info getRepairInfo() const;
+    bool repairInfoIsSet() const;
+    void unsetrepairInfo();
+    void setRepairInfo(const ActionParams_repair_info& value);
+
 
 protected:
     std::vector<JobEndpointInfo> endpoints_;
@@ -167,6 +177,8 @@ protected:
     bool publicIpConfigIsSet_;
     ReplayConfigInfo replayConfig_;
     bool replayConfigIsSet_;
+    ActionParams_repair_info repairInfo_;
+    bool repairInfoIsSet_;
 
 };
 

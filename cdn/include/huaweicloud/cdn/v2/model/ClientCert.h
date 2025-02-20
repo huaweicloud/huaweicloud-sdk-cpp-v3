@@ -39,13 +39,13 @@ public:
     /// ClientCert members
 
     /// <summary>
-    /// 客户端证书配置开关，1：打开；0：关闭。
+    /// 客户端证书配置开关，on：打开；off：关闭。
     /// </summary>
 
-    int32_t getValidation() const;
-    bool validationIsSet() const;
-    void unsetvalidation();
-    void setValidation(int32_t value);
+    std::string getStatus() const;
+    bool statusIsSet() const;
+    void unsetstatus();
+    void setStatus(const std::string& value);
 
     /// <summary>
     /// 客户端CA证书的内容，仅支持PEM格式。
@@ -67,8 +67,8 @@ public:
 
 
 protected:
-    int32_t validation_;
-    bool validationIsSet_;
+    std::string status_;
+    bool statusIsSet_;
     std::string trustedCert_;
     bool trustedCertIsSet_;
     std::string hosts_;

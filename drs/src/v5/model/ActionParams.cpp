@@ -29,6 +29,7 @@ ActionParams::ActionParams()
     forceDeleteIsSet_ = false;
     publicIpConfigIsSet_ = false;
     replayConfigIsSet_ = false;
+    repairInfoIsSet_ = false;
 }
 
 ActionParams::~ActionParams() = default;
@@ -73,6 +74,9 @@ web::json::value ActionParams::toJson() const
     }
     if(replayConfigIsSet_) {
         val[utility::conversions::to_string_t("replay_config")] = ModelBase::toJson(replayConfig_);
+    }
+    if(repairInfoIsSet_) {
+        val[utility::conversions::to_string_t("repair_info")] = ModelBase::toJson(repairInfo_);
     }
 
     return val;
@@ -178,6 +182,15 @@ bool ActionParams::fromJson(const web::json::value& val)
             ReplayConfigInfo refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setReplayConfig(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("repair_info"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("repair_info"));
+        if(!fieldValue.is_null())
+        {
+            ActionParams_repair_info refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRepairInfo(refVal);
         }
     }
     return ok;
@@ -413,6 +426,27 @@ bool ActionParams::replayConfigIsSet() const
 void ActionParams::unsetreplayConfig()
 {
     replayConfigIsSet_ = false;
+}
+
+ActionParams_repair_info ActionParams::getRepairInfo() const
+{
+    return repairInfo_;
+}
+
+void ActionParams::setRepairInfo(const ActionParams_repair_info& value)
+{
+    repairInfo_ = value;
+    repairInfoIsSet_ = true;
+}
+
+bool ActionParams::repairInfoIsSet() const
+{
+    return repairInfoIsSet_;
+}
+
+void ActionParams::unsetrepairInfo()
+{
+    repairInfoIsSet_ = false;
 }
 
 }

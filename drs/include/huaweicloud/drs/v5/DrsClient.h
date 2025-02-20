@@ -184,6 +184,8 @@
 #include <huaweicloud/drs/v5/model/ShowReplicationJobResponse.h>
 #include <huaweicloud/drs/v5/model/ShowSupportObjectTypeRequest.h>
 #include <huaweicloud/drs/v5/model/ShowSupportObjectTypeResponse.h>
+#include <huaweicloud/drs/v5/model/ShowTimelineRequest.h>
+#include <huaweicloud/drs/v5/model/ShowTimelineResponse.h>
 #include <huaweicloud/drs/v5/model/ShowUpdateObjectSavingStatusRequest.h>
 #include <huaweicloud/drs/v5/model/ShowUpdateObjectSavingStatusResponse.h>
 #include <huaweicloud/drs/v5/model/SingleCreateJobReq.h>
@@ -870,6 +872,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowSupportObjectTypeResponse> showSupportObjectType(
         ShowSupportObjectTypeRequest &request
+    );
+    // 展示时间轴
+    //
+    // 指定不同的任务ID可以展示当前任务创建时间、启动时间、重试、重置等操作的时间轴信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowTimelineResponse> showTimeline(
+        ShowTimelineRequest &request
     );
     // 获取对象保存进度
     //

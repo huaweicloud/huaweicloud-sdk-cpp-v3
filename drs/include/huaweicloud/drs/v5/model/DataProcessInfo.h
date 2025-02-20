@@ -46,7 +46,7 @@ public:
     /// DataProcessInfo members
 
     /// <summary>
-    /// 指定任务数据加工规则请求体
+    /// 指定任务数据加工规则请求体,  当进行数据过滤规则校验，必填 当数据过滤规则校验通过，需要更新数据过滤规则时，必填
     /// </summary>
 
     std::vector<DataFilteringCondition>& getFilterConditions();
@@ -135,6 +135,15 @@ public:
     void unsetsource();
     void setSource(const std::string& value);
 
+    /// <summary>
+    /// 数据加工规则作用级别 - table 表示数据同步时的过滤 - combinations 表示组合集，对多个表的操作  当进行数据过滤规则校验，必填 当需要更新数据加工规则（数据过滤、列加工等）时，必填
+    /// </summary>
+
+    std::string getProcessRuleLevel() const;
+    bool processRuleLevelIsSet() const;
+    void unsetprocessRuleLevel();
+    void setProcessRuleLevel(const std::string& value);
+
 
 protected:
     std::vector<DataFilteringCondition> filterConditions_;
@@ -157,6 +166,8 @@ protected:
     bool isSynchronizedIsSet_;
     std::string source_;
     bool sourceIsSet_;
+    std::string processRuleLevel_;
+    bool processRuleLevelIsSet_;
 
 };
 

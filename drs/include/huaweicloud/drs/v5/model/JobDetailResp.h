@@ -9,8 +9,17 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/drs/v5/model/ConnectionManagement.h>
 #include <huaweicloud/drs/v5/model/SpeedLimitInfo.h>
+#include <huaweicloud/drs/v5/model/QueryDiagnosisResult.h>
+#include <huaweicloud/drs/v5/model/DbParamInfo.h>
+#include <huaweicloud/drs/v5/model/JobEndpointInfo.h>
+#include <huaweicloud/drs/v5/model/QueryRepairDetailResp.h>
+#include <huaweicloud/drs/v5/model/TuningParamInfo.h>
+#include <huaweicloud/drs/v5/model/FailedToBindEipChildInfo.h>
+#include <map>
+#include <huaweicloud/drs/v5/model/AlarmNotifyConfig.h>
+#include <huaweicloud/drs/v5/model/PolicyConfig.h>
+#include <huaweicloud/drs/v5/model/ConnectionManagement.h>
 #include <huaweicloud/drs/v5/model/QueryMetricResult.h>
 #include <huaweicloud/drs/v5/model/QueryNetworkResult.h>
 #include <huaweicloud/drs/v5/model/TaskLogInfo.h>
@@ -20,18 +29,12 @@
 #include <huaweicloud/drs/v5/model/SupportImportFileResult.h>
 #include <vector>
 #include <huaweicloud/drs/v5/model/QueryMigrationObjectProgressInfo.h>
-#include <huaweicloud/drs/v5/model/DbParamInfo.h>
 #include <huaweicloud/drs/v5/model/UserMigrationInfo.h>
-#include <huaweicloud/drs/v5/model/JobEndpointInfo.h>
 #include <huaweicloud/drs/v5/model/CompareResultInfo.h>
 #include <huaweicloud/drs/v5/model/QueryPreCheckResult.h>
-#include <huaweicloud/drs/v5/model/TuningParamInfo.h>
-#include <huaweicloud/drs/v5/model/FailedToBindEipChildInfo.h>
+#include <huaweicloud/drs/v5/model/JobDetailResp_repair_progress_info.h>
 #include <huaweicloud/drs/v5/model/PeriodOrderInfo.h>
-#include <map>
 #include <huaweicloud/drs/v5/model/JobBaseInfo.h>
-#include <huaweicloud/drs/v5/model/AlarmNotifyConfig.h>
-#include <huaweicloud/drs/v5/model/PolicyConfig.h>
 #include <huaweicloud/drs/v5/model/PublicIpConfig.h>
 
 namespace HuaweiCloud {
@@ -340,6 +343,42 @@ public:
     void unsetisWritable();
     void setIsWritable(const std::string& value);
 
+    /// <summary>
+    /// 一键诊断结果。
+    /// </summary>
+
+    std::vector<QueryDiagnosisResult>& getDiagnoses();
+    bool diagnosesIsSet() const;
+    void unsetdiagnoses();
+    void setDiagnoses(const std::vector<QueryDiagnosisResult>& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    JobDetailResp_repair_progress_info getRepairProgressInfo() const;
+    bool repairProgressInfoIsSet() const;
+    void unsetrepairProgressInfo();
+    void setRepairProgressInfo(const JobDetailResp_repair_progress_info& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    QueryRepairDetailResp getRepairDetailInfo() const;
+    bool repairDetailInfoIsSet() const;
+    void unsetrepairDetailInfo();
+    void setRepairDetailInfo(const QueryRepairDetailResp& value);
+
+    /// <summary>
+    /// 修复SQL导出状态。
+    /// </summary>
+
+    std::string getRepairExportStatus() const;
+    bool repairExportStatusIsSet() const;
+    void unsetrepairExportStatus();
+    void setRepairExportStatus(const std::string& value);
+
 
 protected:
     std::string id_;
@@ -404,6 +443,14 @@ protected:
     bool childrenIsSet_;
     std::string isWritable_;
     bool isWritableIsSet_;
+    std::vector<QueryDiagnosisResult> diagnoses_;
+    bool diagnosesIsSet_;
+    JobDetailResp_repair_progress_info repairProgressInfo_;
+    bool repairProgressInfoIsSet_;
+    QueryRepairDetailResp repairDetailInfo_;
+    bool repairDetailInfoIsSet_;
+    std::string repairExportStatus_;
+    bool repairExportStatusIsSet_;
 
 };
 

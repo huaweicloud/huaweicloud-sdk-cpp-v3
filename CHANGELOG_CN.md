@@ -1,3 +1,90 @@
+# 3.1.124 2025-02-20
+
+### HuaweiCloud SDK CDN
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowDomainFullConfig**
+    - 响应参数变更
+      - `+ configs.client_cert.status`
+      - `- configs.client_cert.validation`
+  - **UpdateDomainFullConfig**
+    - 请求参数变更
+      - `+ configs.client_cert.status`
+      - `- configs.client_cert.validation`
+
+### HuaweiCloud SDK CSMS
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持接口`BatchImportSecrets`、`ShowUserDetail`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK DRS
+
+- _接口版本_
+  - V5
+- _新增特性_
+  - 支持接口`ShowTimeline`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowDataProgress**
+    - 响应参数变更
+      - `+ data_process_info.process_rule_level`
+  - **UpdateDataProgress**
+    - 请求参数变更
+      - `+ data_process_info.process_rule_level`
+  - **CheckDataFilter**
+    - 请求参数变更
+      - `+ data_process_info.process_rule_level`
+  - **ListAsyncJobDetail**
+    - 响应参数变更
+      - `+ jobs.diagnoses`
+      - `+ jobs.repair_progress_info`
+      - `+ jobs.repair_detail_info`
+      - `+ jobs.repair_export_status`
+  - **ShowJobDetail**
+    - 请求参数变更
+      - `+ type: enum value [diagnosis,diagnosis_history,repair_progress,repair_detail,repair_export_status]`
+    - 响应参数变更
+      - `+ job.diagnoses`
+      - `+ job.repair_progress_info`
+      - `+ job.repair_detail_info`
+      - `+ job.repair_export_status`
+  - **ExecuteJobAction**
+    - 请求参数变更
+      - `+ job.action_name: enum value [diagnosis：一键诊断。,start_repair：开始数据修复。,stop_repair：停止数据修复。]`
+      - `+ job.action_params.repair_info`
+      - `+ job.action_params.compare_task_param.data_process_info.process_rule_level`
+  - **BatchExecuteJobActions**
+    - 请求参数变更
+      - `+ jobs.action_name: enum value [diagnosis：一键诊断。,start_repair：开始数据修复。,stop_repair：停止数据修复。]`
+      - `+ jobs.action_params.repair_info`
+      - `+ jobs.action_params.compare_task_param.data_process_info.process_rule_level`
+
+### HuaweiCloud SDK OCR
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RecognizeFlightItinerary**
+    - 响应参数变更
+      - `+ result.gp_number`
+
 # 3.1.123 2025-02-13
 
 ### HuaweiCloud SDK CDN

@@ -258,6 +258,15 @@ public:
     void setIssueStatus(const std::string& value);
 
     /// <summary>
+    /// gp单号。 
+    /// </summary>
+
+    std::string getGpNumber() const;
+    bool gpNumberIsSet() const;
+    void unsetgpNumber();
+    void setGpNumber(const std::string& value);
+
+    /// <summary>
     /// 机票行程列表。 
     /// </summary>
 
@@ -325,6 +334,8 @@ protected:
     bool internationalFlagIsSet_;
     std::string issueStatus_;
     bool issueStatusIsSet_;
+    std::string gpNumber_;
+    bool gpNumberIsSet_;
     std::vector<ItineraryList> itineraryList_;
     bool itineraryListIsSet_;
     Object confidence_;

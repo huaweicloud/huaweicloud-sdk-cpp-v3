@@ -1254,6 +1254,22 @@ HttpRequestDef DrsMeta::genRequestDefForShowSupportObjectType() {
     return reqDefBuilder;
 }
 
+HttpRequestDef DrsMeta::genRequestDefForShowTimeline() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef DrsMeta::genRequestDefForShowUpdateObjectSavingStatus() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("QueryId")

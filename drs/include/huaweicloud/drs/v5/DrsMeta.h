@@ -88,6 +88,7 @@ public:
     static HttpRequestDef genRequestDefForShowReplayResults();
     static HttpRequestDef genRequestDefForShowReplicationJob();
     static HttpRequestDef genRequestDefForShowSupportObjectType();
+    static HttpRequestDef genRequestDefForShowTimeline();
     static HttpRequestDef genRequestDefForShowUpdateObjectSavingStatus();
     static HttpRequestDef genRequestDefForStopJobAction();
     static HttpRequestDef genRequestDefForSyncJdbcDriver();

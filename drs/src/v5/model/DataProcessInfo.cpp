@@ -26,6 +26,8 @@ DataProcessInfo::DataProcessInfo()
     isSynchronizedIsSet_ = false;
     source_ = "";
     sourceIsSet_ = false;
+    processRuleLevel_ = "";
+    processRuleLevelIsSet_ = false;
 }
 
 DataProcessInfo::~DataProcessInfo() = default;
@@ -67,6 +69,9 @@ web::json::value DataProcessInfo::toJson() const
     }
     if(sourceIsSet_) {
         val[utility::conversions::to_string_t("source")] = ModelBase::toJson(source_);
+    }
+    if(processRuleLevelIsSet_) {
+        val[utility::conversions::to_string_t("process_rule_level")] = ModelBase::toJson(processRuleLevel_);
     }
 
     return val;
@@ -163,6 +168,15 @@ bool DataProcessInfo::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSource(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("process_rule_level"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("process_rule_level"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProcessRuleLevel(refVal);
         }
     }
     return ok;
@@ -377,6 +391,27 @@ bool DataProcessInfo::sourceIsSet() const
 void DataProcessInfo::unsetsource()
 {
     sourceIsSet_ = false;
+}
+
+std::string DataProcessInfo::getProcessRuleLevel() const
+{
+    return processRuleLevel_;
+}
+
+void DataProcessInfo::setProcessRuleLevel(const std::string& value)
+{
+    processRuleLevel_ = value;
+    processRuleLevelIsSet_ = true;
+}
+
+bool DataProcessInfo::processRuleLevelIsSet() const
+{
+    return processRuleLevelIsSet_;
+}
+
+void DataProcessInfo::unsetprocessRuleLevel()
+{
+    processRuleLevelIsSet_ = false;
 }
 
 }

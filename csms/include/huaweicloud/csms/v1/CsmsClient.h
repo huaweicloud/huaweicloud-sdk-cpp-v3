@@ -9,6 +9,8 @@
 #include <huaweicloud/csms/v1/model/BatchCreateOrDeleteTagsRequest.h>
 #include <huaweicloud/csms/v1/model/BatchCreateOrDeleteTagsRequestBody.h>
 #include <huaweicloud/csms/v1/model/BatchCreateOrDeleteTagsResponse.h>
+#include <huaweicloud/csms/v1/model/BatchImportSecretsRequest.h>
+#include <huaweicloud/csms/v1/model/BatchImportSecretsResponse.h>
 #include <huaweicloud/csms/v1/model/CreateAgencyRequest.h>
 #include <huaweicloud/csms/v1/model/CreateAgencyRequestBody.h>
 #include <huaweicloud/csms/v1/model/CreateAgencyResponse.h>
@@ -45,6 +47,7 @@
 #include <huaweicloud/csms/v1/model/GenerateRandomPasswordRequest.h>
 #include <huaweicloud/csms/v1/model/GenerateRandomPasswordResponse.h>
 #include <huaweicloud/csms/v1/model/GrantSecretReqBody.h>
+#include <huaweicloud/csms/v1/model/ImportSecretsRequest.h>
 #include <huaweicloud/csms/v1/model/ListGrantsRequest.h>
 #include <huaweicloud/csms/v1/model/ListGrantsResponse.h>
 #include <huaweicloud/csms/v1/model/ListNotificationRecordsRequest.h>
@@ -82,6 +85,8 @@
 #include <huaweicloud/csms/v1/model/ShowSecretStageResponse.h>
 #include <huaweicloud/csms/v1/model/ShowSecretVersionRequest.h>
 #include <huaweicloud/csms/v1/model/ShowSecretVersionResponse.h>
+#include <huaweicloud/csms/v1/model/ShowUserDetailRequest.h>
+#include <huaweicloud/csms/v1/model/ShowUserDetailResponse.h>
 #include <huaweicloud/csms/v1/model/UpdateGrantRequest.h>
 #include <huaweicloud/csms/v1/model/UpdateGrantResponse.h>
 #include <huaweicloud/csms/v1/model/UpdateSecretEventRequest.h>
@@ -132,6 +137,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<BatchCreateOrDeleteTagsResponse> batchCreateOrDeleteTags(
         BatchCreateOrDeleteTagsRequest &request
+    );
+    // 批量导入凭据
+    //
+    // 批量导入凭据。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchImportSecretsResponse> batchImportSecrets(
+        BatchImportSecretsRequest &request
     );
     // 创建服务委托
     //
@@ -393,6 +406,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowSecretVersionResponse> showSecretVersion(
         ShowSecretVersionRequest &request
+    );
+    // 获取用户详情
+    //
+    // 根据用户id查询用户详情。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowUserDetailResponse> showUserDetail(
+        ShowUserDetailRequest &request
     );
     // 更新授权
     //

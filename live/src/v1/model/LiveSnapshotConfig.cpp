@@ -27,6 +27,10 @@ LiveSnapshotConfig::LiveSnapshotConfig()
     callBackEnableIsSet_ = false;
     callBackUrl_ = "";
     callBackUrlIsSet_ = false;
+    imageAccessProtocol_ = "";
+    imageAccessProtocolIsSet_ = false;
+    imageAccessDomain_ = "";
+    imageAccessDomainIsSet_ = false;
 }
 
 LiveSnapshotConfig::~LiveSnapshotConfig() = default;
@@ -62,6 +66,12 @@ web::json::value LiveSnapshotConfig::toJson() const
     }
     if(callBackUrlIsSet_) {
         val[utility::conversions::to_string_t("call_back_url")] = ModelBase::toJson(callBackUrl_);
+    }
+    if(imageAccessProtocolIsSet_) {
+        val[utility::conversions::to_string_t("image_access_protocol")] = ModelBase::toJson(imageAccessProtocol_);
+    }
+    if(imageAccessDomainIsSet_) {
+        val[utility::conversions::to_string_t("image_access_domain")] = ModelBase::toJson(imageAccessDomain_);
     }
 
     return val;
@@ -140,6 +150,24 @@ bool LiveSnapshotConfig::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCallBackUrl(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("image_access_protocol"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("image_access_protocol"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setImageAccessProtocol(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("image_access_domain"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("image_access_domain"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setImageAccessDomain(refVal);
         }
     }
     return ok;
@@ -312,6 +340,48 @@ bool LiveSnapshotConfig::callBackUrlIsSet() const
 void LiveSnapshotConfig::unsetcallBackUrl()
 {
     callBackUrlIsSet_ = false;
+}
+
+std::string LiveSnapshotConfig::getImageAccessProtocol() const
+{
+    return imageAccessProtocol_;
+}
+
+void LiveSnapshotConfig::setImageAccessProtocol(const std::string& value)
+{
+    imageAccessProtocol_ = value;
+    imageAccessProtocolIsSet_ = true;
+}
+
+bool LiveSnapshotConfig::imageAccessProtocolIsSet() const
+{
+    return imageAccessProtocolIsSet_;
+}
+
+void LiveSnapshotConfig::unsetimageAccessProtocol()
+{
+    imageAccessProtocolIsSet_ = false;
+}
+
+std::string LiveSnapshotConfig::getImageAccessDomain() const
+{
+    return imageAccessDomain_;
+}
+
+void LiveSnapshotConfig::setImageAccessDomain(const std::string& value)
+{
+    imageAccessDomain_ = value;
+    imageAccessDomainIsSet_ = true;
+}
+
+bool LiveSnapshotConfig::imageAccessDomainIsSet() const
+{
+    return imageAccessDomainIsSet_;
+}
+
+void LiveSnapshotConfig::unsetimageAccessDomain()
+{
+    imageAccessDomainIsSet_ = false;
 }
 
 }

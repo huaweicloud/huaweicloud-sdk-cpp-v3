@@ -7260,6 +7260,9 @@ std::shared_ptr<ListStarRocksDbParametersResponse> GaussDBClient::listStarRocksD
     if (request.addTaskScenarioIsSet()) {
         localVarQueryParams["add_task_scenario"] = parameterToString(request.getAddTaskScenario());
     }
+    if (request.mainTaskNameIsSet()) {
+        localVarQueryParams["main_task_name"] = parameterToString(request.getMainTaskName());
+    }
     if (request.xLanguageIsSet()) {
         localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
     }

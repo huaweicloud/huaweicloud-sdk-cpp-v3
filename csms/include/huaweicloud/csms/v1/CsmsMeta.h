@@ -52,6 +52,7 @@ public:
     static HttpRequestDef genRequestDefForUpdateSecret();
     static HttpRequestDef genRequestDefForUpdateSecretEvent();
     static HttpRequestDef genRequestDefForUpdateSecretStage();
+    static HttpRequestDef genRequestDefForUpdateUserPassword();
     static HttpRequestDef genRequestDefForUpdateVersion();
     static HttpRequestDef genRequestDefForUploadSecretBlob();
 };

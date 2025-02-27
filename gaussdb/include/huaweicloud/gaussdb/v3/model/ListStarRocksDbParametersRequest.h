@@ -65,6 +65,15 @@ public:
     void unsetaddTaskScenario();
     void setAddTaskScenario(const std::string& value);
 
+    /// <summary>
+    /// **参数解释**：  新增子任务相应的主任务名。  **约束限制**：  非必填。  **取值范围**：  不涉及。  **默认值**：  不涉及。
+    /// </summary>
+
+    std::string getMainTaskName() const;
+    bool mainTaskNameIsSet() const;
+    void unsetmainTaskName();
+    void setMainTaskName(const std::string& value);
+
 
 protected:
     std::string instanceId_;
@@ -73,6 +82,8 @@ protected:
     bool xLanguageIsSet_;
     std::string addTaskScenario_;
     bool addTaskScenarioIsSet_;
+    std::string mainTaskName_;
+    bool mainTaskNameIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

@@ -2500,6 +2500,9 @@ HttpRequestDef GaussDBMeta::genRequestDefForListStarRocksDbParameters() {
     reqDefBuilder.withRequestField(FieldDef().withName("AddTaskScenario")
                   .withJsonTag("add_task_scenario")
                   .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("MainTaskName")
+                  .withJsonTag("main_task_name")
+                  .withLocationType(Query_));
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage
                   .withName("XLanguage")

@@ -1,3 +1,79 @@
+# 3.1.125 2025-02-27
+
+### HuaweiCloud SDK CSMS
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the API `UpdateUserPassword`
+- _Bug Fix_
+  - None
+- _Change_
+  - **BatchImportSecrets**
+    - changes of request param
+      - `- total`
+
+### HuaweiCloud SDK GaussDB
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListStarRocksDbParameters**
+    - changes of request param
+      - `+ main_task_name`
+
+### HuaweiCloud SDK Live
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the APIs `ListScheduleRecordTasks`, `CreateScheduleRecordTasks`, `DeleteScheduleRecordTasks`
+- _Bug Fix_
+  - None
+- _Change_
+  - **UpdateSnapshotConfig**
+    - changes of request param
+      - `+ image_access_protocol`
+      - `+ image_access_domain`
+  - **CreateSnapshotConfig**
+    - changes of request param
+      - `+ image_access_protocol`
+      - `+ image_access_domain`
+  - **ListSnapshotConfigs**
+    - changes of response param
+      - `+ snapshot_config_list.image_access_protocol`
+      - `+ snapshot_config_list.image_access_domain`
+
+### HuaweiCloud SDK OCR
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **RecognizeVatInvoice**
+    - changes of response param
+      - `+ result.passenger_travel_item_list`
+
+### HuaweiCloud SDK VPC
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListPorts**
+    - changes of request param
+      - `* id: string -> list<string>`
+
 # 3.1.124 2025-02-20
 
 ### HuaweiCloud SDK CDN

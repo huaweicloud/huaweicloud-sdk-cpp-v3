@@ -12,6 +12,7 @@
 #include <huaweicloud/core/utils/Object.h>
 #include <string>
 #include <huaweicloud/ocr/v1/model/ItemList.h>
+#include <huaweicloud/ocr/v1/model/PassengerTravelItemList.h>
 #include <vector>
 #include <huaweicloud/ocr/v1/model/BelongItemList.h>
 
@@ -52,7 +53,7 @@ public:
     void setTitle(const std::string& value);
 
     /// <summary>
-    /// 增值税发票类型，可选值包括： - special: 增值税专用发票  - normal: 增值税普通发票  - electronic: 增值税电子普通发票  - special_electronic: 增值税电子专用发票  - toll: 增值税电子普通发票（通行费）  - roll: 增值税普通发票（卷票）  - fully_digitalized_special_electronic: 全电专用发票  - fully_digitalized_normal_electronic: 全电普通发票 
+    /// 增值税发票类型，取值包括： - special: 增值税专用发票  - normal: 增值税普通发票  - electronic: 增值税电子普通发票  - special_electronic: 增值税电子专用发票  - toll: 增值税电子普通发票（通行费）  - roll: 增值税普通发票（卷票）  - fully_digitalized_special_electronic: 全电专用发票  - fully_digitalized_normal_electronic: 全电普通发票 
     /// </summary>
 
     std::string getType() const;
@@ -61,7 +62,7 @@ public:
     void setType(const std::string& value);
 
     /// <summary>
-    /// 增值税发票左上角标志。当“advanced_mode”设置为“true”时才返回。包含：通行费、代开。 
+    /// 增值税发票左上角标志。取值包含：通行费、代开、成品油、收购、机动车、旅客运输服务。 当\&quot;advanced_mode\&quot;设置为\&quot;true\&quot;时才返回。 
     /// </summary>
 
     std::string getInvoiceTag() const;
@@ -88,7 +89,7 @@ public:
     void setSumTax(const std::string& value);
 
     /// <summary>
-    /// 发票联次。 当“advanced_mode”设置为“true”时才返回。 
+    /// 发票联次。  当\&quot;advanced_mode\&quot;设置为\&quot;true\&quot;时才返回。 
     /// </summary>
 
     std::string getSerialNumber() const;
@@ -97,7 +98,7 @@ public:
     void setSerialNumber(const std::string& value);
 
     /// <summary>
-    /// 发票归属地。 当“advanced_mode”设置为“true”时才返回。 
+    /// 发票归属地。  当\&quot;advanced_mode\&quot;设置为\&quot;true\&quot;时才返回。 
     /// </summary>
 
     std::string getAttribution() const;
@@ -106,7 +107,7 @@ public:
     void setAttribution(const std::string& value);
 
     /// <summary>
-    /// 发票监制章。 当“advanced_mode”设置为“true”时才返回。 
+    /// 发票监制章。  当\&quot;advanced_mode\&quot;设置为\&quot;true\&quot;时才返回。 
     /// </summary>
 
     std::vector<std::string>& getSupervisionSeal();
@@ -124,7 +125,7 @@ public:
     void setCode(const std::string& value);
 
     /// <summary>
-    /// 机打代码。当“advanced_mode”设置为“true”时才返回。 
+    /// 机打代码。 当\&quot;advanced_mode\&quot;设置为\&quot;true\&quot;时才返回。 
     /// </summary>
 
     std::string getPrintCode() const;
@@ -133,7 +134,7 @@ public:
     void setPrintCode(const std::string& value);
 
     /// <summary>
-    /// 机器编号。 当“advanced_mode”设置为“true”时才返回。 
+    /// 机器编号。  当\&quot;advanced_mode\&quot;设置为\&quot;true\&quot;时才返回。 
     /// </summary>
 
     std::string getMachineNumber() const;
@@ -142,7 +143,7 @@ public:
     void setMachineNumber(const std::string& value);
 
     /// <summary>
-    /// 机打号码。 当“advanced_mode”设置为“true”时才返回 
+    /// 机打号码。  当\&quot;advanced_mode\&quot;设置为\&quot;true\&quot;时才返回。 
     /// </summary>
 
     std::string getPrintNumber() const;
@@ -286,7 +287,7 @@ public:
     void setTotal(const std::string& value);
 
     /// <summary>
-    /// 价税合计（大写）。 当“advanced_mode”设置为“true”时才返回。 
+    /// 价税合计（大写）。  当\&quot;advanced_mode\&quot;设置为\&quot;true\&quot;时才返回。 
     /// </summary>
 
     std::string getTotalInWords() const;
@@ -295,7 +296,7 @@ public:
     void setTotalInWords(const std::string& value);
 
     /// <summary>
-    /// 备注。 当“advanced_mode”设置为“true”时才返回。 
+    /// 备注。  当\&quot;advanced_mode\&quot;设置为\&quot;true\&quot;时才返回。 
     /// </summary>
 
     std::string getRemarks() const;
@@ -304,7 +305,7 @@ public:
     void setRemarks(const std::string& value);
 
     /// <summary>
-    /// 收款人。 当“advanced_mode”设置为“true”时才返回。 
+    /// 收款人。  当\&quot;advanced_mode\&quot;设置为\&quot;true\&quot;时才返回。 
     /// </summary>
 
     std::string getReceiver() const;
@@ -313,7 +314,7 @@ public:
     void setReceiver(const std::string& value);
 
     /// <summary>
-    /// 复核。 当“advanced_mode”设置为“true”时才返回。 
+    /// 复核。  当\&quot;advanced_mode\&quot;设置为\&quot;true\&quot;时才返回。 
     /// </summary>
 
     std::string getReviewer() const;
@@ -322,7 +323,7 @@ public:
     void setReviewer(const std::string& value);
 
     /// <summary>
-    /// 开票人。 当“advanced_mode”设置为“true”时才返回。 
+    /// 开票人。  当\&quot;advanced_mode\&quot;设置为\&quot;true\&quot;时才返回。 
     /// </summary>
 
     std::string getIssuer() const;
@@ -331,7 +332,7 @@ public:
     void setIssuer(const std::string& value);
 
     /// <summary>
-    /// 销售方发票专用章。 当“advanced_mode”设置为“true”时才返回。 
+    /// 销售方发票专用章。  当\&quot;advanced_mode\&quot;设置为\&quot;true\&quot;时才返回。 
     /// </summary>
 
     std::vector<std::string>& getSellerSeal();
@@ -376,7 +377,7 @@ public:
     void setConfidence(const Object& value);
 
     /// <summary>
-    /// 文本框在原图位置。输出左上、右上、右下、左下四个点坐标。当“return_text_location”设置为“true”时才返回。 
+    /// 文本框在原图位置。输出左上、右上、右下、左下四个点坐标。当\&quot;return_text_location\&quot;设置为“true”时才返回。 
     /// </summary>
 
     Object getTextLocation() const;
@@ -528,6 +529,15 @@ public:
     void unsetbelongItemList();
     void setBelongItemList(const std::vector<BelongItemList>& value);
 
+    /// <summary>
+    /// 旅客运输服务的出行信息列表。 当传入图片为旅客运输服务发票时返回此字段。 
+    /// </summary>
+
+    std::vector<PassengerTravelItemList>& getPassengerTravelItemList();
+    bool passengerTravelItemListIsSet() const;
+    void unsetpassengerTravelItemList();
+    void setPassengerTravelItemList(const std::vector<PassengerTravelItemList>& value);
+
 
 protected:
     std::string title_;
@@ -638,6 +648,8 @@ protected:
     bool belongDiscountTaxIsSet_;
     std::vector<BelongItemList> belongItemList_;
     bool belongItemListIsSet_;
+    std::vector<PassengerTravelItemList> passengerTravelItemList_;
+    bool passengerTravelItemListIsSet_;
 
 };
 

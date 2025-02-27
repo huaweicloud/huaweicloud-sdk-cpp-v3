@@ -19,6 +19,8 @@
 #include <huaweicloud/live/v1/model/CreateRecordIndexResponse.h>
 #include <huaweicloud/live/v1/model/CreateRecordRuleRequest.h>
 #include <huaweicloud/live/v1/model/CreateRecordRuleResponse.h>
+#include <huaweicloud/live/v1/model/CreateScheduleRecordTasksRequest.h>
+#include <huaweicloud/live/v1/model/CreateScheduleRecordTasksResponse.h>
 #include <huaweicloud/live/v1/model/CreateSnapshotConfigRequest.h>
 #include <huaweicloud/live/v1/model/CreateSnapshotConfigResponse.h>
 #include <huaweicloud/live/v1/model/CreateStreamForbiddenRequest.h>
@@ -42,6 +44,8 @@
 #include <huaweicloud/live/v1/model/DeleteRecordRuleResponse.h>
 #include <huaweicloud/live/v1/model/DeleteRefererChainRequest.h>
 #include <huaweicloud/live/v1/model/DeleteRefererChainResponse.h>
+#include <huaweicloud/live/v1/model/DeleteScheduleRecordTasksRequest.h>
+#include <huaweicloud/live/v1/model/DeleteScheduleRecordTasksResponse.h>
 #include <huaweicloud/live/v1/model/DeleteSnapshotConfigRequest.h>
 #include <huaweicloud/live/v1/model/DeleteSnapshotConfigResponse.h>
 #include <huaweicloud/live/v1/model/DeleteStreamForbiddenRequest.h>
@@ -73,6 +77,8 @@
 #include <huaweicloud/live/v1/model/ListRecordContentsResponse.h>
 #include <huaweicloud/live/v1/model/ListRecordRulesRequest.h>
 #include <huaweicloud/live/v1/model/ListRecordRulesResponse.h>
+#include <huaweicloud/live/v1/model/ListScheduleRecordTasksRequest.h>
+#include <huaweicloud/live/v1/model/ListScheduleRecordTasksResponse.h>
 #include <huaweicloud/live/v1/model/ListSnapshotConfigsRequest.h>
 #include <huaweicloud/live/v1/model/ListSnapshotConfigsResponse.h>
 #include <huaweicloud/live/v1/model/ListStreamForbiddenRequest.h>
@@ -89,6 +95,7 @@
 #include <huaweicloud/live/v1/model/RecordRuleRequest.h>
 #include <huaweicloud/live/v1/model/RunRecordRequest.h>
 #include <huaweicloud/live/v1/model/RunRecordResponse.h>
+#include <huaweicloud/live/v1/model/ScheduleRecordTasksReq.h>
 #include <huaweicloud/live/v1/model/SetRefererChainInfo.h>
 #include <huaweicloud/live/v1/model/SetRefererChainRequest.h>
 #include <huaweicloud/live/v1/model/SetRefererChainResponse.h>
@@ -266,6 +273,14 @@ public:
     std::shared_ptr<CreateRecordRuleResponse> createRecordRule(
         CreateRecordRuleRequest &request
     );
+    // 创建计划录制任务
+    //
+    // 通过使用指定录制模板ID对应的配置创建一个在指定时间启动、结束的录制任务。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateScheduleRecordTasksResponse> createScheduleRecordTasks(
+        CreateScheduleRecordTasksRequest &request
+    );
     // 创建直播截图配置
     //
     // 创建直播截图配置接口
@@ -353,6 +368,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteRefererChainResponse> deleteRefererChain(
         DeleteRefererChainRequest &request
+    );
+    // 停止计划录制任务
+    //
+    // 停止计划录制任务，当前的录制任务会中止并生产录制文件。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteScheduleRecordTasksResponse> deleteScheduleRecordTasks(
+        DeleteScheduleRecordTasksRequest &request
     );
     // 删除直播截图配置
     //
@@ -460,6 +483,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListRecordRulesResponse> listRecordRules(
         ListRecordRulesRequest &request
+    );
+    // 查询计划录制任务
+    //
+    // 查询指定时间范围内启动和结束的计划录制任务列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListScheduleRecordTasksResponse> listScheduleRecordTasks(
+        ListScheduleRecordTasksRequest &request
     );
     // 查询直播截图配置
     //

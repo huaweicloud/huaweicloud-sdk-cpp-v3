@@ -1,3 +1,79 @@
+# 3.1.125 2025-02-27
+
+### HuaweiCloud SDK CSMS
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持接口`UpdateUserPassword`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **BatchImportSecrets**
+    - 请求参数变更
+      - `- total`
+
+### HuaweiCloud SDK GaussDB
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListStarRocksDbParameters**
+    - 请求参数变更
+      - `+ main_task_name`
+
+### HuaweiCloud SDK Live
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持接口`ListScheduleRecordTasks`、`CreateScheduleRecordTasks`、`DeleteScheduleRecordTasks`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **UpdateSnapshotConfig**
+    - 请求参数变更
+      - `+ image_access_protocol`
+      - `+ image_access_domain`
+  - **CreateSnapshotConfig**
+    - 请求参数变更
+      - `+ image_access_protocol`
+      - `+ image_access_domain`
+  - **ListSnapshotConfigs**
+    - 响应参数变更
+      - `+ snapshot_config_list.image_access_protocol`
+      - `+ snapshot_config_list.image_access_domain`
+
+### HuaweiCloud SDK OCR
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RecognizeVatInvoice**
+    - 响应参数变更
+      - `+ result.passenger_travel_item_list`
+
+### HuaweiCloud SDK VPC
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListPorts**
+    - 请求参数变更
+      - `* id: string -> list<string>`
+
 # 3.1.124 2025-02-20
 
 ### HuaweiCloud SDK CDN

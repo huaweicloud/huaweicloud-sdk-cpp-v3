@@ -52,10 +52,10 @@ public:
     /// 按照port_id过滤查询
     /// </summary>
 
-    std::string getId() const;
+    std::vector<std::string>& getId();
     bool idIsSet() const;
     void unsetid();
-    void setId(const std::string& value);
+    void setId(const std::vector<std::string>& value);
 
     /// <summary>
     /// 每页返回的个数
@@ -169,7 +169,7 @@ public:
 protected:
     std::string name_;
     bool nameIsSet_;
-    std::string id_;
+    std::vector<std::string> id_;
     bool idIsSet_;
     int32_t limit_;
     bool limitIsSet_;

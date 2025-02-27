@@ -111,6 +111,24 @@ public:
     void unsetcallBackUrl();
     void setCallBackUrl(const std::string& value);
 
+    /// <summary>
+    /// 截图存储文件访问协议， 仅支持http、https格式
+    /// </summary>
+
+    std::string getImageAccessProtocol() const;
+    bool imageAccessProtocolIsSet() const;
+    void unsetimageAccessProtocol();
+    void setImageAccessProtocol(const std::string& value);
+
+    /// <summary>
+    /// 截图存储文件访问域名
+    /// </summary>
+
+    std::string getImageAccessDomain() const;
+    bool imageAccessDomainIsSet() const;
+    void unsetimageAccessDomain();
+    void setImageAccessDomain(const std::string& value);
+
 
 protected:
     std::string domain_;
@@ -129,6 +147,10 @@ protected:
     bool callBackEnableIsSet_;
     std::string callBackUrl_;
     bool callBackUrlIsSet_;
+    std::string imageAccessProtocol_;
+    bool imageAccessProtocolIsSet_;
+    std::string imageAccessDomain_;
+    bool imageAccessDomainIsSet_;
 
 };
 

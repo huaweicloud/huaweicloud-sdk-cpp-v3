@@ -269,6 +269,47 @@ std::shared_ptr<CreateRecordRuleResponse> LiveClient::createRecordRule(CreateRec
 
     return localVarResult;
 }
+std::shared_ptr<CreateScheduleRecordTasksResponse> LiveClient::createScheduleRecordTasks(CreateScheduleRecordTasksRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/schedule/record/tasks";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json; charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForCreateScheduleRecordTasks());
+
+    std::shared_ptr<CreateScheduleRecordTasksResponse> localVarResult = std::make_shared<CreateScheduleRecordTasksResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<CreateSnapshotConfigResponse> LiveClient::createSnapshotConfig(CreateSnapshotConfigRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/stream/snapshot";
@@ -650,6 +691,38 @@ std::shared_ptr<DeleteRefererChainResponse> LiveClient::deleteRefererChain(Delet
         localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForDeleteRefererChain());
 
     std::shared_ptr<DeleteRefererChainResponse> localVarResult = std::make_shared<DeleteRefererChainResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<DeleteScheduleRecordTasksResponse> LiveClient::deleteScheduleRecordTasks(DeleteScheduleRecordTasksRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/schedule/record/tasks";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.taskIdIsSet()) {
+        localVarQueryParams["task_id"] = parameterToString(request.getTaskId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForDeleteScheduleRecordTasks());
+
+    std::shared_ptr<DeleteScheduleRecordTasksResponse> localVarResult = std::make_shared<DeleteScheduleRecordTasksResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -1141,6 +1214,59 @@ std::shared_ptr<ListRecordRulesResponse> LiveClient::listRecordRules(ListRecordR
         localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForListRecordRules());
 
     std::shared_ptr<ListRecordRulesResponse> localVarResult = std::make_shared<ListRecordRulesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListScheduleRecordTasksResponse> LiveClient::listScheduleRecordTasks(ListScheduleRecordTasksRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/schedule/record/tasks";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.startTimeIsSet()) {
+        localVarQueryParams["start_time"] = parameterToString(request.getStartTime());
+    }
+    if (request.endTimeIsSet()) {
+        localVarQueryParams["end_time"] = parameterToString(request.getEndTime());
+    }
+    if (request.domainIsSet()) {
+        localVarQueryParams["domain"] = parameterToString(request.getDomain());
+    }
+    if (request.appIsSet()) {
+        localVarQueryParams["app"] = parameterToString(request.getApp());
+    }
+    if (request.streamIsSet()) {
+        localVarQueryParams["stream"] = parameterToString(request.getStream());
+    }
+    if (request.taskIdIsSet()) {
+        localVarQueryParams["task_id"] = parameterToString(request.getTaskId());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForListScheduleRecordTasks());
+
+    std::shared_ptr<ListScheduleRecordTasksResponse> localVarResult = std::make_shared<ListScheduleRecordTasksResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

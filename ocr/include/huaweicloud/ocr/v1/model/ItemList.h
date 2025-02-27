@@ -84,7 +84,7 @@ public:
     void setUnitPrice(const std::string& value);
 
     /// <summary>
-    /// 车牌号码。 当“type”被识别为“toll”且 “advanced_mode”设置为“true” 时才返回。 
+    /// 车牌号码。 当\&quot;type\&quot;被识别为\&quot;toll\&quot;且\&quot;advanced_mode\&quot;设置为“true”时才返回。 
     /// </summary>
 
     std::string getLicensePlateNumber() const;
@@ -120,7 +120,7 @@ public:
     void setTax(const std::string& value);
 
     /// <summary>
-    /// 通行日期止。 当“type”被识别为“toll”且“advanced_mode”设置为“true”时才返回。 
+    /// 通行日期止。 当\&quot;type\&quot;被识别为\&quot;toll\&quot;且\&quot;advanced_mode\&quot;设置为“true”时才返回。 
     /// </summary>
 
     std::string getEndDate() const;
@@ -129,7 +129,7 @@ public:
     void setEndDate(const std::string& value);
 
     /// <summary>
-    /// 通行日期起。 当“type”被识别为“toll”且“advanced_mode”设置为“true”时才返回。 
+    /// 通行日期起。 当\&quot;type\&quot;被识别为\&quot;toll\&quot;且\&quot;advanced_mode\&quot;设置为“true”时才返回。 
     /// </summary>
 
     std::string getStartDate() const;
@@ -138,7 +138,7 @@ public:
     void setStartDate(const std::string& value);
 
     /// <summary>
-    /// 车辆类型。 当“type”被识别为“toll”且“advanced_mode”设置为“true”时才返回。 
+    /// 车辆类型。 当\&quot;type\&quot;被识别为\&quot;toll\&quot;且\&quot;advanced_mode\&quot;设置为“true”时才返回。 
     /// </summary>
 
     std::string getVehicleType() const;

@@ -14,7 +14,6 @@ ListPortsRequest::ListPortsRequest()
 {
     name_ = "";
     nameIsSet_ = false;
-    id_ = "";
     idIsSet_ = false;
     limit_ = 0;
     limitIsSet_ = false;
@@ -112,7 +111,7 @@ bool ListPortsRequest::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("id"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setId(refVal);
         }
@@ -250,12 +249,12 @@ void ListPortsRequest::unsetname()
     nameIsSet_ = false;
 }
 
-std::string ListPortsRequest::getId() const
+std::vector<std::string>& ListPortsRequest::getId()
 {
     return id_;
 }
 
-void ListPortsRequest::setId(const std::string& value)
+void ListPortsRequest::setId(const std::vector<std::string>& value)
 {
     id_ = value;
     idIsSet_ = true;

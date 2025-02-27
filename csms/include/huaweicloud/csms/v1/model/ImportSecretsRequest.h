@@ -48,21 +48,10 @@ public:
     void unsetsecrets();
     void setSecrets(const std::vector<CreateSecretRequestBody>& value);
 
-    /// <summary>
-    /// 导入数据条数
-    /// </summary>
-
-    int32_t getTotal() const;
-    bool totalIsSet() const;
-    void unsettotal();
-    void setTotal(int32_t value);
-
 
 protected:
     std::vector<CreateSecretRequestBody> secrets_;
     bool secretsIsSet_;
-    int32_t total_;
-    bool totalIsSet_;
 
 };
 

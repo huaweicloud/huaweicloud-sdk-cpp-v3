@@ -114,6 +114,7 @@ VatInvoiceResult::VatInvoiceResult()
     belongDiscountTax_ = "";
     belongDiscountTaxIsSet_ = false;
     belongItemListIsSet_ = false;
+    passengerTravelItemListIsSet_ = false;
 }
 
 VatInvoiceResult::~VatInvoiceResult() = default;
@@ -287,6 +288,9 @@ web::json::value VatInvoiceResult::toJson() const
     }
     if(belongItemListIsSet_) {
         val[utility::conversions::to_string_t("belong_item_list")] = ModelBase::toJson(belongItemList_);
+    }
+    if(passengerTravelItemListIsSet_) {
+        val[utility::conversions::to_string_t("passenger_travel_item_list")] = ModelBase::toJson(passengerTravelItemList_);
     }
 
     return val;
@@ -779,6 +783,15 @@ bool VatInvoiceResult::fromJson(const web::json::value& val)
             std::vector<BelongItemList> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBelongItemList(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("passenger_travel_item_list"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("passenger_travel_item_list"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<PassengerTravelItemList> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPassengerTravelItemList(refVal);
         }
     }
     return ok;
@@ -1917,6 +1930,27 @@ bool VatInvoiceResult::belongItemListIsSet() const
 void VatInvoiceResult::unsetbelongItemList()
 {
     belongItemListIsSet_ = false;
+}
+
+std::vector<PassengerTravelItemList>& VatInvoiceResult::getPassengerTravelItemList()
+{
+    return passengerTravelItemList_;
+}
+
+void VatInvoiceResult::setPassengerTravelItemList(const std::vector<PassengerTravelItemList>& value)
+{
+    passengerTravelItemList_ = value;
+    passengerTravelItemListIsSet_ = true;
+}
+
+bool VatInvoiceResult::passengerTravelItemListIsSet() const
+{
+    return passengerTravelItemListIsSet_;
+}
+
+void VatInvoiceResult::unsetpassengerTravelItemList()
+{
+    passengerTravelItemListIsSet_ = false;
 }
 
 }

@@ -11,6 +11,7 @@
 #include <huaweicloud/csms/v1/model/BatchCreateOrDeleteTagsResponse.h>
 #include <huaweicloud/csms/v1/model/BatchImportSecretsRequest.h>
 #include <huaweicloud/csms/v1/model/BatchImportSecretsResponse.h>
+#include <huaweicloud/csms/v1/model/ChangeUsersPassword.h>
 #include <huaweicloud/csms/v1/model/CreateAgencyRequest.h>
 #include <huaweicloud/csms/v1/model/CreateAgencyRequestBody.h>
 #include <huaweicloud/csms/v1/model/CreateAgencyResponse.h>
@@ -98,6 +99,8 @@
 #include <huaweicloud/csms/v1/model/UpdateSecretStageRequest.h>
 #include <huaweicloud/csms/v1/model/UpdateSecretStageRequestBody.h>
 #include <huaweicloud/csms/v1/model/UpdateSecretStageResponse.h>
+#include <huaweicloud/csms/v1/model/UpdateUserPasswordRequest.h>
+#include <huaweicloud/csms/v1/model/UpdateUserPasswordResponse.h>
 #include <huaweicloud/csms/v1/model/UpdateVersionRequest.h>
 #include <huaweicloud/csms/v1/model/UpdateVersionRequestBody.h>
 #include <huaweicloud/csms/v1/model/UpdateVersionResponse.h>
@@ -446,6 +449,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateSecretStageResponse> updateSecretStage(
         UpdateSecretStageRequest &request
+    );
+    // 修改用户密码
+    //
+    // 修改用户密码
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateUserPasswordResponse> updateUserPassword(
+        UpdateUserPasswordRequest &request
     );
     // 更新凭据版本
     //

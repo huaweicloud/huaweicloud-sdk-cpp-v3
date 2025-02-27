@@ -19,6 +19,7 @@ public:
     static HttpRequestDef genRequestDefForCreateRecordCallbackConfig();
     static HttpRequestDef genRequestDefForCreateRecordIndex();
     static HttpRequestDef genRequestDefForCreateRecordRule();
+    static HttpRequestDef genRequestDefForCreateScheduleRecordTasks();
     static HttpRequestDef genRequestDefForCreateSnapshotConfig();
     static HttpRequestDef genRequestDefForCreateStreamForbidden();
     static HttpRequestDef genRequestDefForCreateTranscodingsTemplate();
@@ -30,6 +31,7 @@ public:
     static HttpRequestDef genRequestDefForDeleteRecordCallbackConfig();
     static HttpRequestDef genRequestDefForDeleteRecordRule();
     static HttpRequestDef genRequestDefForDeleteRefererChain();
+    static HttpRequestDef genRequestDefForDeleteScheduleRecordTasks();
     static HttpRequestDef genRequestDefForDeleteSnapshotConfig();
     static HttpRequestDef genRequestDefForDeleteStreamForbidden();
     static HttpRequestDef genRequestDefForDeleteTranscodingsTemplate();
@@ -43,6 +45,7 @@ public:
     static HttpRequestDef genRequestDefForListRecordCallbackConfigs();
     static HttpRequestDef genRequestDefForListRecordContents();
     static HttpRequestDef genRequestDefForListRecordRules();
+    static HttpRequestDef genRequestDefForListScheduleRecordTasks();
     static HttpRequestDef genRequestDefForListSnapshotConfigs();
     static HttpRequestDef genRequestDefForListStreamForbidden();
     static HttpRequestDef genRequestDefForRunRecord();

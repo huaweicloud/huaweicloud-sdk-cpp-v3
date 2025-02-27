@@ -335,6 +335,15 @@ HttpRequestDef CsmsMeta::genRequestDefForUpdateSecretStage() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CsmsMeta::genRequestDefForUpdateUserPassword() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CsmsMeta::genRequestDefForUpdateVersion() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;

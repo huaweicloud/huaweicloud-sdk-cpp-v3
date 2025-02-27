@@ -66,6 +66,20 @@ HttpRequestDef LiveMeta::genRequestDefForCreateRecordRule() {
     return reqDefBuilder;
 }
 
+HttpRequestDef LiveMeta::genRequestDefForCreateScheduleRecordTasks() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-request-id").
+        withKindName("std::string").
+        withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef LiveMeta::genRequestDefForCreateSnapshotConfig() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -152,6 +166,19 @@ HttpRequestDef LiveMeta::genRequestDefForDeleteRefererChain() {
     reqDefBuilder.withRequestField(FieldDef().withName("Domain")
                   .withJsonTag("domain")
                   .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LiveMeta::genRequestDefForDeleteScheduleRecordTasks() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("TaskId")
+                  .withJsonTag("task_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-request-id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -346,6 +373,40 @@ HttpRequestDef LiveMeta::genRequestDefForListRecordRules() {
     reqDefBuilder.withRequestField(FieldDef().withName("Limit")
                   .withJsonTag("limit")
                   .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LiveMeta::genRequestDefForListScheduleRecordTasks() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("StartTime")
+                  .withJsonTag("start_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EndTime")
+                  .withJsonTag("end_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Domain")
+                  .withJsonTag("domain")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("App")
+                  .withJsonTag("app")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Stream")
+                  .withJsonTag("stream")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("TaskId")
+                  .withJsonTag("task_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-request-id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 

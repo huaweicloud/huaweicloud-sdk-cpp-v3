@@ -216,6 +216,7 @@
 #include <huaweicloud/gaussdbfornosql/v3/model/ResizeInstanceVolumeRequestBody.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ResizeInstanceVolumeResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/RestartInstanceRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/RestartInstanceRequestBody.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/RestartInstanceResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/RestoreExistingInstanceRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/RestoreExistingInstanceResponse.h>
@@ -1044,9 +1045,9 @@ public:
     std::shared_ptr<ResizeInstanceVolumeResponse> resizeInstanceVolume(
         ResizeInstanceVolumeRequest &request
     );
-    // 重启实例的数据库服务
+    // 重启实例或节点的数据库服务
     //
-    // 重启实例的数据库服务。
+    // 重启实例或节点的数据库服务。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<RestartInstanceResponse> restartInstance(

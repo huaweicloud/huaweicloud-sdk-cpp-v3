@@ -779,6 +779,15 @@ HttpRequestDef EcsMeta::genRequestDefForUpdateServerBlockDevice() {
     return reqDefBuilder;
 }
 
+HttpRequestDef EcsMeta::genRequestDefForUpdateServerInterface() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef EcsMeta::genRequestDefForUpdateServerMetadata() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;

@@ -48,7 +48,7 @@ public:
     void setDatastoreType(const std::string& value);
 
     /// <summary>
-    /// 实例类型。 取值为“Cluster”，表示GeminiDB Cassandra、GeminiDB Influx、GeminiDB Redis集群实例类型。 取值为“InfluxdbSingle”，表示GeminiDB Influx单节点实例类型。 取值为“ReplicaSet”，表示GeminiDB Mongo副本集实例类型。 如果不传datastore_type参数，自动忽略该参数设置，传入datastore_type时，该参数必填。
+    /// 实例类型。   - 取值为“Cluster”，表示GeminiDB Cassandra、GeminiDB Influx、GeminiDB Redis Proxy经典部署模式集群实例类型。   - 取值为“CloudNativeCluster”，表示GeminiDB Cassandra、GeminiDB Influx、GeminiDB Redis云原生部署模式集群实例类型。   - 取值为“RedisCluster”，表示GeminiDB Redis Cluster经典部署模式集群实例类型。   - 取值为“Replication”，表示GeminiDB Redis经典部署模式主备实例类型。   - 取值为“InfluxdbSingle”，表示GeminiDB Influx经典部署模式单节点实例类型。   - 取值为“ReplicaSet”，表示GeminiDB Mongo副本集实例类型。   - 如果不传datastore_type参数，自动忽略该参数设置。
     /// </summary>
 
     std::string getMode() const;
@@ -56,12 +56,23 @@ public:
     void unsetmode();
     void setMode(const std::string& value);
 
+    /// <summary>
+    /// 产品类型。   -  Capacity 容量型   -  Standard 标准型 当查询GeminiDB redis云原生部署模式集群类型配额必传此参数。
+    /// </summary>
+
+    std::string getProductType() const;
+    bool productTypeIsSet() const;
+    void unsetproductType();
+    void setProductType(const std::string& value);
+
 
 protected:
     std::string datastoreType_;
     bool datastoreTypeIsSet_;
     std::string mode_;
     bool modeIsSet_;
+    std::string productType_;
+    bool productTypeIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

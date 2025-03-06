@@ -85,6 +85,7 @@ public:
     static HttpRequestDef genRequestDefForUpdateServer();
     static HttpRequestDef genRequestDefForUpdateServerAutoTerminateTime();
     static HttpRequestDef genRequestDefForUpdateServerBlockDevice();
+    static HttpRequestDef genRequestDefForUpdateServerInterface();
     static HttpRequestDef genRequestDefForUpdateServerMetadata();
     static HttpRequestDef genRequestDefForNovaListVersions();
     static HttpRequestDef genRequestDefForNovaShowVersion();

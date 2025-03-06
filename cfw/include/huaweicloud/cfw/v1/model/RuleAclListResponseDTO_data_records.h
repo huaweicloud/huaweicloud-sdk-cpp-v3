@@ -13,6 +13,7 @@
 #include <huaweicloud/cfw/v1/model/RuleAddressDtoForResponse.h>
 #include <string>
 #include <huaweicloud/cfw/v1/model/RuleServiceDtoForResponse.h>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -49,6 +50,15 @@ public:
     bool ruleIdIsSet() const;
     void unsetruleId();
     void setRuleId(const std::string& value);
+
+    /// <summary>
+    /// 应用列表
+    /// </summary>
+
+    std::vector<std::string>& getApplications();
+    bool applicationsIsSet() const;
+    void unsetapplications();
+    void setApplications(const std::vector<std::string>& value);
 
     /// <summary>
     /// 地址类型0 ipv4，1 ipv6
@@ -216,6 +226,8 @@ public:
 protected:
     std::string ruleId_;
     bool ruleIdIsSet_;
+    std::vector<std::string> applications_;
+    bool applicationsIsSet_;
     int32_t addressType_;
     bool addressTypeIsSet_;
     std::string name_;

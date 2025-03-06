@@ -74,10 +74,6 @@ public:
             { 
                 "https://gaussdb-nosql.cn-north-2.myhuaweicloud.com"
             });
-        regions["na-mexico-1"] = Region("na-mexico-1",
-            { 
-                "https://gaussdb-nosql.na-mexico-1.myhuaweicloud.com"
-            });
         regions["la-north-2"] = Region("la-north-2",
             { 
                 "https://gaussdb-nosql.la-north-2.myhuaweicloud.com"

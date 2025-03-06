@@ -18,6 +18,8 @@ RecycleInstance::RecycleInstance()
     nameIsSet_ = false;
     mode_ = "";
     modeIsSet_ = false;
+    productType_ = "";
+    productTypeIsSet_ = false;
     datastoreIsSet_ = false;
     chargeMode_ = "";
     chargeModeIsSet_ = false;
@@ -51,6 +53,9 @@ web::json::value RecycleInstance::toJson() const
     }
     if(modeIsSet_) {
         val[utility::conversions::to_string_t("mode")] = ModelBase::toJson(mode_);
+    }
+    if(productTypeIsSet_) {
+        val[utility::conversions::to_string_t("product_type")] = ModelBase::toJson(productType_);
     }
     if(datastoreIsSet_) {
         val[utility::conversions::to_string_t("datastore")] = ModelBase::toJson(datastore_);
@@ -105,6 +110,15 @@ bool RecycleInstance::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setMode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("product_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("product_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProductType(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("datastore"))) {
@@ -235,6 +249,27 @@ bool RecycleInstance::modeIsSet() const
 void RecycleInstance::unsetmode()
 {
     modeIsSet_ = false;
+}
+
+std::string RecycleInstance::getProductType() const
+{
+    return productType_;
+}
+
+void RecycleInstance::setProductType(const std::string& value)
+{
+    productType_ = value;
+    productTypeIsSet_ = true;
+}
+
+bool RecycleInstance::productTypeIsSet() const
+{
+    return productTypeIsSet_;
+}
+
+void RecycleInstance::unsetproductType()
+{
+    productTypeIsSet_ = false;
 }
 
 RecycleDatastore RecycleInstance::getDatastore() const

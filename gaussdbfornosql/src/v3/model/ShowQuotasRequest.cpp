@@ -16,6 +16,8 @@ ShowQuotasRequest::ShowQuotasRequest()
     datastoreTypeIsSet_ = false;
     mode_ = "";
     modeIsSet_ = false;
+    productType_ = "";
+    productTypeIsSet_ = false;
 }
 
 ShowQuotasRequest::~ShowQuotasRequest() = default;
@@ -33,6 +35,9 @@ web::json::value ShowQuotasRequest::toJson() const
     }
     if(modeIsSet_) {
         val[utility::conversions::to_string_t("mode")] = ModelBase::toJson(mode_);
+    }
+    if(productTypeIsSet_) {
+        val[utility::conversions::to_string_t("product_type")] = ModelBase::toJson(productType_);
     }
 
     return val;
@@ -57,6 +62,15 @@ bool ShowQuotasRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setMode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("product_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("product_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProductType(refVal);
         }
     }
     return ok;
@@ -103,6 +117,27 @@ bool ShowQuotasRequest::modeIsSet() const
 void ShowQuotasRequest::unsetmode()
 {
     modeIsSet_ = false;
+}
+
+std::string ShowQuotasRequest::getProductType() const
+{
+    return productType_;
+}
+
+void ShowQuotasRequest::setProductType(const std::string& value)
+{
+    productType_ = value;
+    productTypeIsSet_ = true;
+}
+
+bool ShowQuotasRequest::productTypeIsSet() const
+{
+    return productTypeIsSet_;
+}
+
+void ShowQuotasRequest::unsetproductType()
+{
+    productTypeIsSet_ = false;
 }
 
 }

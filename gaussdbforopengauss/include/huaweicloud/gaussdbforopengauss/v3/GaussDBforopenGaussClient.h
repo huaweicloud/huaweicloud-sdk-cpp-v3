@@ -21,6 +21,8 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/BatchShowUpgradeCandidateVersionsRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/BatchShowUpgradeCandidateVersionsResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/BindEIPRequestBody.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/CancelScheduleTaskRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/CancelScheduleTaskResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ConfirmRestoredDataRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ConfirmRestoredDataResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/CopyConfigurationRequest.h>
@@ -51,6 +53,9 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/CreateManualBackupResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/CreateRestoreInstanceRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/CreateRestoreInstanceResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/CreateScheduleTaskRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/CreateScheduleTaskRequestBody.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/CreateScheduleTaskResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/CreateSlowLogDownloadRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/CreateSlowLogDownloadResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/DataStroeErrorResponse.h>
@@ -71,6 +76,8 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/DeleteJobResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/DeleteManualBackupRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/DeleteManualBackupResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/DeleteScheduleTaskRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/DeleteScheduleTaskResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/DownloadBackupErrorResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/DownloadBackupRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/DownloadBackupResponse.h>
@@ -136,6 +143,8 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListHistoryOperationsResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListInstanceDetailsRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListInstanceDetailsResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListInstanceEngineDetailRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListInstanceEngineDetailResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListInstanceErrorLogsRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListInstanceErrorLogsResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListInstanceTagsRequest.h>
@@ -167,6 +176,8 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListRestorableInstancesResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListRestoreTimesRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListRestoreTimesResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListScheduleTaskRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListScheduleTaskResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListStorageTypesRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListStorageTypesResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListSupportKernelPluginsRequest.h>
@@ -388,6 +399,14 @@ public:
     std::shared_ptr<BatchShowUpgradeCandidateVersionsResponse> batchShowUpgradeCandidateVersions(
         BatchShowUpgradeCandidateVersionsRequest &request
     );
+    // 取消定时任务
+    //
+    // 取消定时任务
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CancelScheduleTaskResponse> cancelScheduleTask(
+        CancelScheduleTaskRequest &request
+    );
     // 备份恢复到目标实例数据后执行数据确认
     //
     // 确认备份恢复到目标实例的数据正常。
@@ -492,6 +511,14 @@ public:
     std::shared_ptr<CreateRestoreInstanceResponse> createRestoreInstance(
         CreateRestoreInstanceRequest &request
     );
+    // 批量实例内核版本定时升级
+    //
+    // 批量实例内核版本定时升级
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateScheduleTaskResponse> createScheduleTask(
+        CreateScheduleTaskRequest &request
+    );
     // 创建慢日志下载信息
     //
     // 创建慢日志下载信息
@@ -555,6 +582,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteManualBackupResponse> deleteManualBackup(
         DeleteManualBackupRequest &request
+    );
+    // 删除定时任务信息
+    //
+    // 删除定时任务信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteScheduleTaskResponse> deleteScheduleTask(
+        DeleteScheduleTaskRequest &request
     );
     // 获取备份下载链接
     //
@@ -780,6 +815,14 @@ public:
     std::shared_ptr<ListInstanceDetailsResponse> listInstanceDetails(
         ListInstanceDetailsRequest &request
     );
+    // 查看实例引擎版本分布
+    //
+    // 查看实例引擎版本分布
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListInstanceEngineDetailResponse> listInstanceEngineDetail(
+        ListInstanceEngineDetailRequest &request
+    );
     // 查询错误日志下载链接
     //
     // 查询数据库错误日志下载链接。
@@ -900,6 +943,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListRestoreTimesResponse> listRestoreTimes(
         ListRestoreTimesRequest &request
+    );
+    // 查看定时任务列表
+    //
+    // 查看定时任务列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListScheduleTaskResponse> listScheduleTask(
+        ListScheduleTaskRequest &request
     );
     // 查询数据库磁盘类型
     //

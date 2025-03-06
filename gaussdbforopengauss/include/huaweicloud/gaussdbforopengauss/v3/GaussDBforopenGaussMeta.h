@@ -18,6 +18,7 @@ public:
     static HttpRequestDef genRequestDefForAllowDbRolePrivileges();
     static HttpRequestDef genRequestDefForAttachEip();
     static HttpRequestDef genRequestDefForBatchShowUpgradeCandidateVersions();
+    static HttpRequestDef genRequestDefForCancelScheduleTask();
     static HttpRequestDef genRequestDefForConfirmRestoredData();
     static HttpRequestDef genRequestDefForCopyConfiguration();
     static HttpRequestDef genRequestDefForCreateConfigurationTemplate();
@@ -31,6 +32,7 @@ public:
     static HttpRequestDef genRequestDefForCreateInstance();
     static HttpRequestDef genRequestDefForCreateManualBackup();
     static HttpRequestDef genRequestDefForCreateRestoreInstance();
+    static HttpRequestDef genRequestDefForCreateScheduleTask();
     static HttpRequestDef genRequestDefForCreateSlowLogDownload();
     static HttpRequestDef genRequestDefForDeleteConfiguration();
     static HttpRequestDef genRequestDefForDeleteDatabase();
@@ -39,6 +41,7 @@ public:
     static HttpRequestDef genRequestDefForDeleteInstanceTag();
     static HttpRequestDef genRequestDefForDeleteJob();
     static HttpRequestDef genRequestDefForDeleteManualBackup();
+    static HttpRequestDef genRequestDefForDeleteScheduleTask();
     static HttpRequestDef genRequestDefForDownloadBackup();
     static HttpRequestDef genRequestDefForInstallKernelPlugin();
     static HttpRequestDef genRequestDefForListApplicableInstances();
@@ -67,6 +70,7 @@ public:
     static HttpRequestDef genRequestDefForListGaussDbDatastores();
     static HttpRequestDef genRequestDefForListHistoryOperations();
     static HttpRequestDef genRequestDefForListInstanceDetails();
+    static HttpRequestDef genRequestDefForListInstanceEngineDetail();
     static HttpRequestDef genRequestDefForListInstanceErrorLogs();
     static HttpRequestDef genRequestDefForListInstanceTags();
     static HttpRequestDef genRequestDefForListInstances();
@@ -82,6 +86,7 @@ public:
     static HttpRequestDef genRequestDefForListRestorableInstances();
     static HttpRequestDef genRequestDefForListRestorableInstancesDetails();
     static HttpRequestDef genRequestDefForListRestoreTimes();
+    static HttpRequestDef genRequestDefForListScheduleTask();
     static HttpRequestDef genRequestDefForListStorageTypes();
     static HttpRequestDef genRequestDefForListSupportKernelPlugins();
     static HttpRequestDef genRequestDefForListTasks();

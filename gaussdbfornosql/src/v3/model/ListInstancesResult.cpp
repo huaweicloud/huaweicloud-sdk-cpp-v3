@@ -22,6 +22,8 @@ ListInstancesResult::ListInstancesResult()
     portIsSet_ = false;
     mode_ = "";
     modeIsSet_ = false;
+    productType_ = "";
+    productTypeIsSet_ = false;
     region_ = "";
     regionIsSet_ = false;
     datastoreIsSet_ = false;
@@ -84,6 +86,9 @@ web::json::value ListInstancesResult::toJson() const
     }
     if(modeIsSet_) {
         val[utility::conversions::to_string_t("mode")] = ModelBase::toJson(mode_);
+    }
+    if(productTypeIsSet_) {
+        val[utility::conversions::to_string_t("product_type")] = ModelBase::toJson(productType_);
     }
     if(regionIsSet_) {
         val[utility::conversions::to_string_t("region")] = ModelBase::toJson(region_);
@@ -195,6 +200,15 @@ bool ListInstancesResult::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setMode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("product_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("product_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProductType(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("region"))) {
@@ -484,6 +498,27 @@ bool ListInstancesResult::modeIsSet() const
 void ListInstancesResult::unsetmode()
 {
     modeIsSet_ = false;
+}
+
+std::string ListInstancesResult::getProductType() const
+{
+    return productType_;
+}
+
+void ListInstancesResult::setProductType(const std::string& value)
+{
+    productType_ = value;
+    productTypeIsSet_ = true;
+}
+
+bool ListInstancesResult::productTypeIsSet() const
+{
+    return productTypeIsSet_;
+}
+
+void ListInstancesResult::unsetproductType()
+{
+    productTypeIsSet_ = false;
 }
 
 std::string ListInstancesResult::getRegion() const

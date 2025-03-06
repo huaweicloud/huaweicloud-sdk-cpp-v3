@@ -58,13 +58,22 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 实例类型。   - 取值为“Cluster”，表示GeminiDB Cassandra、GeminiDB Influx、GeminiDB Redis集群实例类型。   - 取值为“ReplicaSet”，表示GeminiDB Mongo副本集实例类型。   - 取值为“InfluxdbSingle”，表示GeminiDB Influx单节点实例类型。   - 取值为“Replication”，表示GeminiDB Redis主备版实例类型。
+    /// 实例类型。   - 取值为“Cluster”，表示GeminiDB Cassandra、GeminiDB Influx、GeminiDB Redis 经典部署模式Proxy 集群实例类型。   - 取值为“CloudNativeCluster”，表示GeminiDB Cassandra、GeminiDB Influx、GeminiDB Redis云原生部署模式集群实例类型。   - 取值为“RedisCluster”，表示GeminiDB Redis经典部署模式Cluster集群实例类型。   - 取值为“Replication”，表示GeminiDB Redis经典部署模式主备实例类型。   - 取值为“InfluxdbSingle”，表示GeminiDB Influx 经典部署模式单节点实例类型。   - 取值为“ReplicaSet”，表示GeminiDB Mongo副本集实例类型。
     /// </summary>
 
     std::string getMode() const;
     bool modeIsSet() const;
     void unsetmode();
     void setMode(const std::string& value);
+
+    /// <summary>
+    /// 产品类型。 GeminiDB Redis云原生部署模式集群涉及此字段，取值：   -  Standard 标准型   -  Capacity 容量型
+    /// </summary>
+
+    std::string getProductType() const;
+    bool productTypeIsSet() const;
+    void unsetproductType();
+    void setProductType(const std::string& value);
 
     /// <summary>
     /// 
@@ -137,6 +146,8 @@ protected:
     bool nameIsSet_;
     std::string mode_;
     bool modeIsSet_;
+    std::string productType_;
+    bool productTypeIsSet_;
     RecycleDatastore datastore_;
     bool datastoreIsSet_;
     std::string chargeMode_;

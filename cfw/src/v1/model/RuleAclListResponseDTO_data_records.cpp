@@ -14,6 +14,7 @@ RuleAclListResponseDTO_data_records::RuleAclListResponseDTO_data_records()
 {
     ruleId_ = "";
     ruleIdIsSet_ = false;
+    applicationsIsSet_ = false;
     addressType_ = 0;
     addressTypeIsSet_ = false;
     name_ = "";
@@ -60,6 +61,9 @@ web::json::value RuleAclListResponseDTO_data_records::toJson() const
 
     if(ruleIdIsSet_) {
         val[utility::conversions::to_string_t("rule_id")] = ModelBase::toJson(ruleId_);
+    }
+    if(applicationsIsSet_) {
+        val[utility::conversions::to_string_t("applications")] = ModelBase::toJson(applications_);
     }
     if(addressTypeIsSet_) {
         val[utility::conversions::to_string_t("address_type")] = ModelBase::toJson(addressType_);
@@ -129,6 +133,15 @@ bool RuleAclListResponseDTO_data_records::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRuleId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("applications"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("applications"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setApplications(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("address_type"))) {
@@ -316,6 +329,27 @@ bool RuleAclListResponseDTO_data_records::ruleIdIsSet() const
 void RuleAclListResponseDTO_data_records::unsetruleId()
 {
     ruleIdIsSet_ = false;
+}
+
+std::vector<std::string>& RuleAclListResponseDTO_data_records::getApplications()
+{
+    return applications_;
+}
+
+void RuleAclListResponseDTO_data_records::setApplications(const std::vector<std::string>& value)
+{
+    applications_ = value;
+    applicationsIsSet_ = true;
+}
+
+bool RuleAclListResponseDTO_data_records::applicationsIsSet() const
+{
+    return applicationsIsSet_;
+}
+
+void RuleAclListResponseDTO_data_records::unsetapplications()
+{
+    applicationsIsSet_ = false;
 }
 
 int32_t RuleAclListResponseDTO_data_records::getAddressType() const

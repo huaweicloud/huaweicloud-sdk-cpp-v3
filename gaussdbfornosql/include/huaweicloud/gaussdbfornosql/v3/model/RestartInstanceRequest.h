@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <huaweicloud/gaussdbfornosql/v3/model/RestartInstanceRequestBody.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -47,10 +48,21 @@ public:
     void unsetinstanceId();
     void setInstanceId(const std::string& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    RestartInstanceRequestBody getBody() const;
+    bool bodyIsSet() const;
+    void unsetbody();
+    void setBody(const RestartInstanceRequestBody& value);
+
 
 protected:
     std::string instanceId_;
     bool instanceIdIsSet_;
+    RestartInstanceRequestBody body_;
+    bool bodyIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

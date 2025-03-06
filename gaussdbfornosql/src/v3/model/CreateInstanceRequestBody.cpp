@@ -29,6 +29,8 @@ CreateInstanceRequestBody::CreateInstanceRequestBody()
     passwordIsSet_ = false;
     mode_ = "";
     modeIsSet_ = false;
+    productType_ = "";
+    productTypeIsSet_ = false;
     flavorIsSet_ = false;
     configurationId_ = "";
     configurationIdIsSet_ = false;
@@ -82,6 +84,9 @@ web::json::value CreateInstanceRequestBody::toJson() const
     }
     if(modeIsSet_) {
         val[utility::conversions::to_string_t("mode")] = ModelBase::toJson(mode_);
+    }
+    if(productTypeIsSet_) {
+        val[utility::conversions::to_string_t("product_type")] = ModelBase::toJson(productType_);
     }
     if(flavorIsSet_) {
         val[utility::conversions::to_string_t("flavor")] = ModelBase::toJson(flavor_);
@@ -199,6 +204,15 @@ bool CreateInstanceRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setMode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("product_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("product_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProductType(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("flavor"))) {
@@ -482,6 +496,27 @@ bool CreateInstanceRequestBody::modeIsSet() const
 void CreateInstanceRequestBody::unsetmode()
 {
     modeIsSet_ = false;
+}
+
+std::string CreateInstanceRequestBody::getProductType() const
+{
+    return productType_;
+}
+
+void CreateInstanceRequestBody::setProductType(const std::string& value)
+{
+    productType_ = value;
+    productTypeIsSet_ = true;
+}
+
+bool CreateInstanceRequestBody::productTypeIsSet() const
+{
+    return productTypeIsSet_;
+}
+
+void CreateInstanceRequestBody::unsetproductType()
+{
+    productTypeIsSet_ = false;
 }
 
 std::vector<CreateInstanceFlavorOption>& CreateInstanceRequestBody::getFlavor()

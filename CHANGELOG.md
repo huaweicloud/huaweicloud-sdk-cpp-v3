@@ -1,3 +1,101 @@
+# 3.1.126 2025-03-06
+
+### HuaweiCloud SDK CFW
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListAclRules**
+    - changes of response param
+      - `+ data.records.applications`
+
+### HuaweiCloud SDK DRS
+
+- _API Version_
+  - V5
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Deprecate the following APIs:
+    - `CollectDbObjectsAsync`
+    - `BatchTagAction`
+    - `ListProjectTags`
+    - `ShowInstanceTags`
+    - `ListDbObjects`
+
+### HuaweiCloud SDK ECS
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the API `UpdateServerInterface`
+- _Bug Fix_
+  - None
+- _Change_
+  - Deprecate the API `NovaListAvailabilityZones`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListFlavorInfos**
+    - changes of request param
+      - `+ mode`
+      - `+ product_type`
+  - **ShowQuotas**
+    - changes of request param
+      - `+ product_type`
+  - **ListRecycleInstances**
+    - changes of response param
+      - `+ instances.product_type`
+  - **CreateInstance**
+    - changes of request param
+      - `+ product_type`
+  - **ListInstances**
+    - changes of response param
+      - `+ instances.product_type`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the following APIs:
+    - `ListScheduleTask`
+    - `CancelScheduleTask`
+    - `DeleteScheduleTask`
+    - `ListInstanceEngineDetail`
+    - `CreateScheduleTask`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK OCR
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **RecognizeBankReceipt**
+    - changes of request param
+      - `+ single_orientation_mode`
+      - `+ erase_seal`
+
 # 3.1.125 2025-02-27
 
 ### HuaweiCloud SDK CSMS

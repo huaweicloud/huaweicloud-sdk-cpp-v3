@@ -68,7 +68,7 @@ public:
     void setStatus(const std::string& value);
 
     /// <summary>
-    /// 实例类型。 - 取值为“Cluster”，表示GeminiDB Redis集群实例类型。
+    /// 实例类型。 -  取值为“Cluster”，表示GeminiDB Redis经典部署模式集群实例类型。 -  取值为“CloudNativeCluster”，表示GeminiDB Redis云原生部署模式集群实例类型。
     /// </summary>
 
     std::string getMode() const;

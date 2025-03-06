@@ -27,6 +27,8 @@ LiveSnapshotConfig::LiveSnapshotConfig()
     callBackEnableIsSet_ = false;
     callBackUrl_ = "";
     callBackUrlIsSet_ = false;
+    imageObjectFormat_ = "";
+    imageObjectFormatIsSet_ = false;
     imageAccessProtocol_ = "";
     imageAccessProtocolIsSet_ = false;
     imageAccessDomain_ = "";
@@ -66,6 +68,9 @@ web::json::value LiveSnapshotConfig::toJson() const
     }
     if(callBackUrlIsSet_) {
         val[utility::conversions::to_string_t("call_back_url")] = ModelBase::toJson(callBackUrl_);
+    }
+    if(imageObjectFormatIsSet_) {
+        val[utility::conversions::to_string_t("image_object_format")] = ModelBase::toJson(imageObjectFormat_);
     }
     if(imageAccessProtocolIsSet_) {
         val[utility::conversions::to_string_t("image_access_protocol")] = ModelBase::toJson(imageAccessProtocol_);
@@ -150,6 +155,15 @@ bool LiveSnapshotConfig::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCallBackUrl(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("image_object_format"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("image_object_format"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setImageObjectFormat(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("image_access_protocol"))) {
@@ -340,6 +354,27 @@ bool LiveSnapshotConfig::callBackUrlIsSet() const
 void LiveSnapshotConfig::unsetcallBackUrl()
 {
     callBackUrlIsSet_ = false;
+}
+
+std::string LiveSnapshotConfig::getImageObjectFormat() const
+{
+    return imageObjectFormat_;
+}
+
+void LiveSnapshotConfig::setImageObjectFormat(const std::string& value)
+{
+    imageObjectFormat_ = value;
+    imageObjectFormatIsSet_ = true;
+}
+
+bool LiveSnapshotConfig::imageObjectFormatIsSet() const
+{
+    return imageObjectFormatIsSet_;
+}
+
+void LiveSnapshotConfig::unsetimageObjectFormat()
+{
+    imageObjectFormatIsSet_ = false;
 }
 
 std::string LiveSnapshotConfig::getImageAccessProtocol() const

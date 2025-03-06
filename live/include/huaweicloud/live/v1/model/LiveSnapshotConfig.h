@@ -112,6 +112,15 @@ public:
     void setCallBackUrl(const std::string& value);
 
     /// <summary>
+    /// 截图存储文件命名规则， 仅支持jpg格式 包含 - &#39;{obs_object}&#39; OBS存储路径，即obs_location.object的值  - &#39;{domain}&#39; 域名 - &#39;{app}&#39; 应用名 - &#39;{stream}&#39;  流名  其中实时截图模式下  - &#39;{unix_time}&#39;  时间戳，秒 - &#39;{unix_time_milli}&#39;  时间戳，毫秒 - &#39;{fmt_time_utc}&#39;   格式化UTC时间, 格式：YYYYMMDDhhmmss, 如20060102070405 - &#39;{fmt_time_local}&#39;  格式化本地时间, 格式：YYYYMMDDhhmmss，如20060102150405 必选一个时间类型模板
+    /// </summary>
+
+    std::string getImageObjectFormat() const;
+    bool imageObjectFormatIsSet() const;
+    void unsetimageObjectFormat();
+    void setImageObjectFormat(const std::string& value);
+
+    /// <summary>
     /// 截图存储文件访问协议， 仅支持http、https格式
     /// </summary>
 
@@ -147,6 +156,8 @@ protected:
     bool callBackEnableIsSet_;
     std::string callBackUrl_;
     bool callBackUrlIsSet_;
+    std::string imageObjectFormat_;
+    bool imageObjectFormatIsSet_;
     std::string imageAccessProtocol_;
     bool imageAccessProtocolIsSet_;
     std::string imageAccessDomain_;

@@ -65,6 +65,24 @@ public:
     void unsetpageNum();
     void setPageNum(int32_t value);
 
+    /// <summary>
+    /// 单朝向模式开关。可选值包括： - true：打开单朝向模式。 - false：关闭单朝向模式。  图片文字方向一致时，打开该开关可提升识别精度；图片文字方向不一致时，关闭该开关可支持多朝向文字识别。未传入该参数时默认为\&quot;true\&quot;，既默认图片中的文字方向为单朝向。 
+    /// </summary>
+
+    bool isSingleOrientationMode() const;
+    bool singleOrientationModeIsSet() const;
+    void unsetsingleOrientationMode();
+    void setSingleOrientationMode(bool value);
+
+    /// <summary>
+    /// 是否打开印章擦除功能。可选值包括： - true：打开印章擦除功能。 - false：关闭印章擦除功能。  开启后，可提升印章遮挡区域的文字识别精度。 
+    /// </summary>
+
+    bool isEraseSeal() const;
+    bool eraseSealIsSet() const;
+    void unseteraseSeal();
+    void setEraseSeal(bool value);
+
 
 protected:
     std::string data_;
@@ -73,6 +91,10 @@ protected:
     bool urlIsSet_;
     int32_t pageNum_;
     bool pageNumIsSet_;
+    bool singleOrientationMode_;
+    bool singleOrientationModeIsSet_;
+    bool eraseSeal_;
+    bool eraseSealIsSet_;
 
 };
 

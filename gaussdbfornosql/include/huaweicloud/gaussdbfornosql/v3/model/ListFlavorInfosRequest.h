@@ -48,6 +48,24 @@ public:
     void setEngineName(const std::string& value);
 
     /// <summary>
+    /// - 取值为“CloudNativeCluster”, 表示查询云原生部署模式支持的规格。 - 不传该参数表示查询数据库类型下的所有经典部署模式支持的规格。
+    /// </summary>
+
+    std::string getMode() const;
+    bool modeIsSet() const;
+    void unsetmode();
+    void setMode(const std::string& value);
+
+    /// <summary>
+    /// 产品类型。   - Standard 标准型   - Capacity 容量型 当创建GeminiDB Redis云原生部署模式集群类型必传此参数。
+    /// </summary>
+
+    std::string getProductType() const;
+    bool productTypeIsSet() const;
+    void unsetproductType();
+    void setProductType(const std::string& value);
+
+    /// <summary>
     /// 索引位置，偏移量。   - 从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询）。   - 取值必须为数字，不能为负数。
     /// </summary>
 
@@ -69,6 +87,10 @@ public:
 protected:
     std::string engineName_;
     bool engineNameIsSet_;
+    std::string mode_;
+    bool modeIsSet_;
+    std::string productType_;
+    bool productTypeIsSet_;
     int32_t offset_;
     bool offsetIsSet_;
     int32_t limit_;

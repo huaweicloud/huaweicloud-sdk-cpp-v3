@@ -421,6 +421,12 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForListFlavorInfos() {
     reqDefBuilder.withRequestField(FieldDef().withName("EngineName")
                   .withJsonTag("engine_name")
                   .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Mode")
+                  .withJsonTag("mode")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ProductType")
+                  .withJsonTag("product_type")
+                  .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("Offset")
                   .withJsonTag("offset")
                   .withLocationType(Query_));
@@ -882,6 +888,10 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForResizeInstanceVolume() {
 
 HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForRestartInstance() {
     HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
     return reqDefBuilder;
 }
 
@@ -1196,6 +1206,9 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForShowQuotas() {
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("Mode")
                   .withJsonTag("mode")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ProductType")
+                  .withJsonTag("product_type")
                   .withLocationType(Query_));
     return reqDefBuilder;
 }

@@ -182,12 +182,15 @@
 #include <huaweicloud/ecs/v2/model/ShowServerResponse.h>
 #include <huaweicloud/ecs/v2/model/ShowServerTagsRequest.h>
 #include <huaweicloud/ecs/v2/model/ShowServerTagsResponse.h>
+#include <huaweicloud/ecs/v2/model/UpdateNicInfoRequestBody.h>
 #include <huaweicloud/ecs/v2/model/UpdateServerAutoTerminateTimeRequest.h>
 #include <huaweicloud/ecs/v2/model/UpdateServerAutoTerminateTimeRequestBody.h>
 #include <huaweicloud/ecs/v2/model/UpdateServerAutoTerminateTimeResponse.h>
 #include <huaweicloud/ecs/v2/model/UpdateServerBlockDeviceReq.h>
 #include <huaweicloud/ecs/v2/model/UpdateServerBlockDeviceRequest.h>
 #include <huaweicloud/ecs/v2/model/UpdateServerBlockDeviceResponse.h>
+#include <huaweicloud/ecs/v2/model/UpdateServerInterfaceRequest.h>
+#include <huaweicloud/ecs/v2/model/UpdateServerInterfaceResponse.h>
 #include <huaweicloud/ecs/v2/model/UpdateServerMetadataRequest.h>
 #include <huaweicloud/ecs/v2/model/UpdateServerMetadataRequestBody.h>
 #include <huaweicloud/ecs/v2/model/UpdateServerMetadataResponse.h>
@@ -905,6 +908,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateServerBlockDeviceResponse> updateServerBlockDevice(
         UpdateServerBlockDeviceRequest &request
+    );
+    // 更新云服务器网卡挂载信息
+    //
+    // 更新云服务器网卡挂载信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateServerInterfaceResponse> updateServerInterface(
+        UpdateServerInterfaceRequest &request
     );
     // 更新云服务器元数据
     //

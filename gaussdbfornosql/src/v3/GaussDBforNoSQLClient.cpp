@@ -1695,6 +1695,12 @@ std::shared_ptr<ListFlavorInfosResponse> GaussDBforNoSQLClient::listFlavorInfos(
     if (request.engineNameIsSet()) {
         localVarQueryParams["engine_name"] = parameterToString(request.getEngineName());
     }
+    if (request.modeIsSet()) {
+        localVarQueryParams["mode"] = parameterToString(request.getMode());
+    }
+    if (request.productTypeIsSet()) {
+        localVarQueryParams["product_type"] = parameterToString(request.getProductType());
+    }
     if (request.offsetIsSet()) {
         localVarQueryParams["offset"] = parameterToString(request.getOffset());
     }
@@ -3272,6 +3278,12 @@ std::shared_ptr<RestartInstanceResponse> GaussDBforNoSQLClient::restartInstance(
 
 
     std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
 
     std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
         localVarHeaderParams, localVarHttpBody, GaussDBforNoSQLMeta::genRequestDefForRestartInstance());
@@ -3280,6 +3292,12 @@ std::shared_ptr<RestartInstanceResponse> GaussDBforNoSQLClient::restartInstance(
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
 
     return localVarResult;
 }
@@ -4403,6 +4421,9 @@ std::shared_ptr<ShowQuotasResponse> GaussDBforNoSQLClient::showQuotas(ShowQuotas
     }
     if (request.modeIsSet()) {
         localVarQueryParams["mode"] = parameterToString(request.getMode());
+    }
+    if (request.productTypeIsSet()) {
+        localVarQueryParams["product_type"] = parameterToString(request.getProductType());
     }
 
     std::string localVarHttpBody;

@@ -1,3 +1,101 @@
+# 3.1.126 2025-03-06
+
+### HuaweiCloud SDK CFW
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListAclRules**
+    - 响应参数变更
+      - `+ data.records.applications`
+
+### HuaweiCloud SDK DRS
+
+- _接口版本_
+  - V5
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 废弃以下接口：
+    - `CollectDbObjectsAsync`
+    - `BatchTagAction`
+    - `ListProjectTags`
+    - `ShowInstanceTags`
+    - `ListDbObjects`
+
+### HuaweiCloud SDK ECS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持接口`UpdateServerInterface`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 废弃接口`NovaListAvailabilityZones`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListFlavorInfos**
+    - 请求参数变更
+      - `+ mode`
+      - `+ product_type`
+  - **ShowQuotas**
+    - 请求参数变更
+      - `+ product_type`
+  - **ListRecycleInstances**
+    - 响应参数变更
+      - `+ instances.product_type`
+  - **CreateInstance**
+    - 请求参数变更
+      - `+ product_type`
+  - **ListInstances**
+    - 响应参数变更
+      - `+ instances.product_type`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持以下接口：
+    - `ListScheduleTask`
+    - `CancelScheduleTask`
+    - `DeleteScheduleTask`
+    - `ListInstanceEngineDetail`
+    - `CreateScheduleTask`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK OCR
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RecognizeBankReceipt**
+    - 请求参数变更
+      - `+ single_orientation_mode`
+      - `+ erase_seal`
+
 # 3.1.125 2025-02-27
 
 ### HuaweiCloud SDK CSMS

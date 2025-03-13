@@ -1,3 +1,41 @@
+# 3.1.127 2025-03-13
+
+### HuaweiCloud SDK KVS
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **PutKv**
+    - changes of request param
+      - `+ condition_expression.single_kv_expression`
+  - **UpdateKv**
+    - changes of request param
+      - `+ condition_expression.single_kv_expression`
+  - **DeleteKv**
+    - changes of request param
+      - `+ condition_expression.single_kv_expression`
+  - **ScanKv**
+    - changes of request param
+      - `+ filter_expression.single_kv_expression`
+  - **ScanSkeyKv**
+    - changes of request param
+      - `+ filter_expression.single_kv_expression`
+
+### HuaweiCloud SDK RDS
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the API `ListVolumeInfo`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.126 2025-03-06
 
 ### HuaweiCloud SDK CFW

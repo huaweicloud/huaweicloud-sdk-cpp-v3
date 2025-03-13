@@ -1275,6 +1275,16 @@ HttpRequestDef RdsMeta::genRequestDefForListUpgradeHistories() {
     return reqDefBuilder;
 }
 
+HttpRequestDef RdsMeta::genRequestDefForListVolumeInfo() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef RdsMeta::genRequestDefForListXellogFiles() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Offset")

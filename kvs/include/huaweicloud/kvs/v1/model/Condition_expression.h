@@ -15,6 +15,7 @@
 #include <huaweicloud/kvs/v1/model/Single_field_expression.h>
 #include <huaweicloud/kvs/v1/model/Multi_field_expression.h>
 #include <huaweicloud/kvs/v1/model/Composed_expression.h>
+#include <huaweicloud/kvs/v1/model/Single_kv_expression.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -70,6 +71,15 @@ public:
     void unsetcomposedExpression();
     void setComposedExpression(const Composed_expression& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    Single_kv_expression getSingleKvExpression() const;
+    bool singleKvExpressionIsSet() const;
+    void unsetsingleKvExpression();
+    void setSingleKvExpression(const Single_kv_expression& value);
+
 
 protected:
     Single_field_expression singleFieldExpression_;
@@ -78,6 +88,8 @@ protected:
     bool multiFieldExpressionIsSet_;
     Composed_expression composedExpression_;
     bool composedExpressionIsSet_;
+    Single_kv_expression singleKvExpression_;
+    bool singleKvExpressionIsSet_;
 
 };
 

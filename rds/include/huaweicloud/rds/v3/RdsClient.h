@@ -212,6 +212,8 @@
 #include <huaweicloud/rds/v3/model/ListUpdateBackupEnhancePolicyResponse.h>
 #include <huaweicloud/rds/v3/model/ListUpgradeHistoriesRequest.h>
 #include <huaweicloud/rds/v3/model/ListUpgradeHistoriesResponse.h>
+#include <huaweicloud/rds/v3/model/ListVolumeInfoRequest.h>
+#include <huaweicloud/rds/v3/model/ListVolumeInfoResponse.h>
 #include <huaweicloud/rds/v3/model/ListXellogFilesRequest.h>
 #include <huaweicloud/rds/v3/model/ListXellogFilesResponse.h>
 #include <huaweicloud/rds/v3/model/LogReplayDatabaseReq.h>
@@ -1295,6 +1297,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListUpgradeHistoriesResponse> listUpgradeHistories(
         ListUpgradeHistoriesRequest &request
+    );
+    // 查询实例的磁盘信息
+    //
+    // 查询实例的磁盘信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListVolumeInfoResponse> listVolumeInfo(
+        ListVolumeInfoRequest &request
     );
     // 查询扩展日志文件列表
     //

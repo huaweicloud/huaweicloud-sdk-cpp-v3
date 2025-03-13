@@ -97,6 +97,7 @@ public:
     static HttpRequestDef genRequestDefForListStorageTypes();
     static HttpRequestDef genRequestDefForListUpdateBackupEnhancePolicy();
     static HttpRequestDef genRequestDefForListUpgradeHistories();
+    static HttpRequestDef genRequestDefForListVolumeInfo();
     static HttpRequestDef genRequestDefForListXellogFiles();
     static HttpRequestDef genRequestDefForMigrateFollower();
     static HttpRequestDef genRequestDefForModifyPostgresqlHbaConf();

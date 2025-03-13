@@ -16,6 +16,7 @@ Condition_expression::Condition_expression()
     singleFieldExpressionIsSet_ = false;
     multiFieldExpressionIsSet_ = false;
     composedExpressionIsSet_ = false;
+    singleKvExpressionIsSet_ = false;
 }
 
 Condition_expression::~Condition_expression() = default;
@@ -34,6 +35,9 @@ bool Condition_expression::toBson(Builder &builder) const
         return false;
     }
     if (composedExpressionIsSet_ && !bson_append(builder, "composed_expression", composedExpression_)) {
+        return false;
+    }
+    if (singleKvExpressionIsSet_ && !bson_append(builder, "single_kv_expression", singleKvExpression_)) {
         return false;
     }
 
@@ -70,6 +74,15 @@ bool Condition_expression::fromBson(const Viewer &viewer)
                 return false;
             }
             composedExpressionIsSet_ = true;
+            ++it;
+            continue;
+        }
+        
+        if (key == "single_kv_expression") {
+            if (!bson_get(it, singleKvExpression_)) {
+                return false;
+            }
+            singleKvExpressionIsSet_ = true;
             ++it;
             continue;
         }
@@ -141,6 +154,27 @@ bool Condition_expression::composedExpressionIsSet() const
 void Condition_expression::unsetcomposedExpression()
 {
     composedExpressionIsSet_ = false;
+}
+
+Single_kv_expression Condition_expression::getSingleKvExpression() const
+{
+    return singleKvExpression_;
+}
+
+void Condition_expression::setSingleKvExpression(const Single_kv_expression& value)
+{
+    singleKvExpression_ = value;
+    singleKvExpressionIsSet_ = true;
+}
+
+bool Condition_expression::singleKvExpressionIsSet() const
+{
+    return singleKvExpressionIsSet_;
+}
+
+void Condition_expression::unsetsingleKvExpression()
+{
+    singleKvExpressionIsSet_ = false;
 }
 
 }

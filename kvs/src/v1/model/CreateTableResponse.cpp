@@ -23,6 +23,7 @@ CreateTableResponse::CreateTableResponse()
     globalSecondaryIndexSchemaIsSet_ = false;
     preSplitKeyOptionsIsSet_ = false;
     ttlSpecificationIsSet_ = false;
+    sseSpecificationIsSet_ = false;
 }
 
 CreateTableResponse::~CreateTableResponse() = default;
@@ -56,6 +57,9 @@ bool CreateTableResponse::toBson(Builder &builder) const
         return false;
     }
     if (ttlSpecificationIsSet_ && !bson_append(builder, "ttl_specification", ttlSpecification_)) {
+        return false;
+    }
+    if (sseSpecificationIsSet_ && !bson_append(builder, "sse_specification", sseSpecification_)) {
         return false;
     }
 
@@ -137,6 +141,15 @@ bool CreateTableResponse::fromBson(const Viewer &viewer)
                 return false;
             }
             ttlSpecificationIsSet_ = true;
+            ++it;
+            continue;
+        }
+        
+        if (key == "sse_specification") {
+            if (!bson_get(it, sseSpecification_)) {
+                return false;
+            }
+            sseSpecificationIsSet_ = true;
             ++it;
             continue;
         }
@@ -313,6 +326,27 @@ bool CreateTableResponse::ttlSpecificationIsSet() const
 void CreateTableResponse::unsetttlSpecification()
 {
     ttlSpecificationIsSet_ = false;
+}
+
+Sse_specification CreateTableResponse::getSseSpecification() const
+{
+    return sseSpecification_;
+}
+
+void CreateTableResponse::setSseSpecification(const Sse_specification& value)
+{
+    sseSpecification_ = value;
+    sseSpecificationIsSet_ = true;
+}
+
+bool CreateTableResponse::sseSpecificationIsSet() const
+{
+    return sseSpecificationIsSet_;
+}
+
+void CreateTableResponse::unsetsseSpecification()
+{
+    sseSpecificationIsSet_ = false;
 }
 
 }

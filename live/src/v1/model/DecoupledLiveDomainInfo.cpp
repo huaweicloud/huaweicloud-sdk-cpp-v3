@@ -34,6 +34,8 @@ DecoupledLiveDomainInfo::DecoupledLiveDomainInfo()
     serviceAreaIsSet_ = false;
     enterpriseProjectId_ = "";
     enterpriseProjectIdIsSet_ = false;
+    pullProtocol_ = "";
+    pullProtocolIsSet_ = false;
     isIpv6_ = false;
     isIpv6IsSet_ = false;
 }
@@ -80,6 +82,9 @@ web::json::value DecoupledLiveDomainInfo::toJson() const
     }
     if(enterpriseProjectIdIsSet_) {
         val[utility::conversions::to_string_t("enterprise_project_id")] = ModelBase::toJson(enterpriseProjectId_);
+    }
+    if(pullProtocolIsSet_) {
+        val[utility::conversions::to_string_t("pull_protocol")] = ModelBase::toJson(pullProtocol_);
     }
     if(isIpv6IsSet_) {
         val[utility::conversions::to_string_t("is_ipv6")] = ModelBase::toJson(isIpv6_);
@@ -188,6 +193,15 @@ bool DecoupledLiveDomainInfo::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEnterpriseProjectId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("pull_protocol"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("pull_protocol"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPullProtocol(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("is_ipv6"))) {
@@ -432,6 +446,27 @@ bool DecoupledLiveDomainInfo::enterpriseProjectIdIsSet() const
 void DecoupledLiveDomainInfo::unsetenterpriseProjectId()
 {
     enterpriseProjectIdIsSet_ = false;
+}
+
+std::string DecoupledLiveDomainInfo::getPullProtocol() const
+{
+    return pullProtocol_;
+}
+
+void DecoupledLiveDomainInfo::setPullProtocol(const std::string& value)
+{
+    pullProtocol_ = value;
+    pullProtocolIsSet_ = true;
+}
+
+bool DecoupledLiveDomainInfo::pullProtocolIsSet() const
+{
+    return pullProtocolIsSet_;
+}
+
+void DecoupledLiveDomainInfo::unsetpullProtocol()
+{
+    pullProtocolIsSet_ = false;
 }
 
 bool DecoupledLiveDomainInfo::isIsIpv6() const

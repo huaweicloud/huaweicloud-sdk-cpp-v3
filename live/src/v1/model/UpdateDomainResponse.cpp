@@ -30,6 +30,8 @@ UpdateDomainResponse::UpdateDomainResponse()
     serviceAreaIsSet_ = false;
     enterpriseProjectId_ = "";
     enterpriseProjectIdIsSet_ = false;
+    pullProtocol_ = "";
+    pullProtocolIsSet_ = false;
 }
 
 UpdateDomainResponse::~UpdateDomainResponse() = default;
@@ -68,6 +70,9 @@ web::json::value UpdateDomainResponse::toJson() const
     }
     if(enterpriseProjectIdIsSet_) {
         val[utility::conversions::to_string_t("enterprise_project_id")] = ModelBase::toJson(enterpriseProjectId_);
+    }
+    if(pullProtocolIsSet_) {
+        val[utility::conversions::to_string_t("pull_protocol")] = ModelBase::toJson(pullProtocol_);
     }
 
     return val;
@@ -155,6 +160,15 @@ bool UpdateDomainResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEnterpriseProjectId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("pull_protocol"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("pull_protocol"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPullProtocol(refVal);
         }
     }
     return ok;
@@ -348,6 +362,27 @@ bool UpdateDomainResponse::enterpriseProjectIdIsSet() const
 void UpdateDomainResponse::unsetenterpriseProjectId()
 {
     enterpriseProjectIdIsSet_ = false;
+}
+
+std::string UpdateDomainResponse::getPullProtocol() const
+{
+    return pullProtocol_;
+}
+
+void UpdateDomainResponse::setPullProtocol(const std::string& value)
+{
+    pullProtocol_ = value;
+    pullProtocolIsSet_ = true;
+}
+
+bool UpdateDomainResponse::pullProtocolIsSet() const
+{
+    return pullProtocolIsSet_;
+}
+
+void UpdateDomainResponse::unsetpullProtocol()
+{
+    pullProtocolIsSet_ = false;
 }
 
 }

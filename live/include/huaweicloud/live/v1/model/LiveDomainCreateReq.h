@@ -66,7 +66,7 @@ public:
     void setRegion(const std::string& value);
 
     /// <summary>
-    /// 域名应用区域 - mainland_china表示中国大陆区域 - outside_mainland_china表示中国大陆以外区域 
+    /// 域名应用区域 - mainland_china表示中国大陆区域 - outside_mainland_china表示中国大陆以外区域 - global表示全球加速区域 
     /// </summary>
 
     std::string getServiceArea() const;
@@ -83,6 +83,15 @@ public:
     void unsetenterpriseProjectId();
     void setEnterpriseProjectId(const std::string& value);
 
+    /// <summary>
+    /// 域名支持的拉流协议；仅domain_type为pull时生效。若不填写此字段，视为默认支持FLV、RTMP拉流协议 - flv_rtmp表示支持FLV、RTMP协议 - hls表示支持HLS协议 
+    /// </summary>
+
+    std::string getPullProtocol() const;
+    bool pullProtocolIsSet() const;
+    void unsetpullProtocol();
+    void setPullProtocol(const std::string& value);
+
 
 protected:
     std::string domain_;
@@ -95,6 +104,8 @@ protected:
     bool serviceAreaIsSet_;
     std::string enterpriseProjectId_;
     bool enterpriseProjectIdIsSet_;
+    std::string pullProtocol_;
+    bool pullProtocolIsSet_;
 
 };
 

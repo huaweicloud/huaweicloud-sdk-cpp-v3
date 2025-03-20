@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/kvs/v1/model/DescribeTableResponse.h"
+#include "huaweicloud/kvs/v1/model/DeleteTableResponse.h"
 #include <huaweicloud/core/utils/Utils.h>
 namespace HuaweiCloud {
 namespace Sdk {
@@ -11,7 +11,7 @@ namespace Model {
 
 
 
-DescribeTableResponse::DescribeTableResponse()
+DeleteTableResponse::DeleteTableResponse()
 {
     tableName_ = "";
     tableNameIsSet_ = false;
@@ -20,16 +20,15 @@ DescribeTableResponse::DescribeTableResponse()
     globalSecondaryIndexSchemaIsSet_ = false;
     runTimeInfoIsSet_ = false;
     ttlSpecificationIsSet_ = false;
-    sseSpecificationIsSet_ = false;
 }
 
-DescribeTableResponse::~DescribeTableResponse() = default;
+DeleteTableResponse::~DeleteTableResponse() = default;
 
-void DescribeTableResponse::validate()
+void DeleteTableResponse::validate()
 {
 }
 
-bool DescribeTableResponse::toBson(Builder &builder) const
+bool DeleteTableResponse::toBson(Builder &builder) const
 {
 
     if (tableNameIsSet_ && !bson_append(builder, "table_name", tableName_)) {
@@ -50,14 +49,11 @@ bool DescribeTableResponse::toBson(Builder &builder) const
     if (ttlSpecificationIsSet_ && !bson_append(builder, "ttl_specification", ttlSpecification_)) {
         return false;
     }
-    if (sseSpecificationIsSet_ && !bson_append(builder, "sse_specification", sseSpecification_)) {
-        return false;
-    }
 
     return true;
 }
 
-bool DescribeTableResponse::fromBson(const Viewer &viewer)
+bool DeleteTableResponse::fromBson(const Viewer &viewer)
 {
 
     Viewer::Iterator it = viewer.begin();
@@ -118,166 +114,136 @@ bool DescribeTableResponse::fromBson(const Viewer &viewer)
             continue;
         }
         
-        if (key == "sse_specification") {
-            if (!bson_get(it, sseSpecification_)) {
-                return false;
-            }
-            sseSpecificationIsSet_ = true;
-            ++it;
-            continue;
-        }
-        
         ++it;
     }
 
     return true;
 }
 
-std::string DescribeTableResponse::getTableName() const
+std::string DeleteTableResponse::getTableName() const
 {
     return tableName_;
 }
 
-void DescribeTableResponse::setTableName(const std::string& value)
+void DeleteTableResponse::setTableName(const std::string& value)
 {
     tableName_ = value;
     tableNameIsSet_ = true;
 }
 
-bool DescribeTableResponse::tableNameIsSet() const
+bool DeleteTableResponse::tableNameIsSet() const
 {
     return tableNameIsSet_;
 }
 
-void DescribeTableResponse::unsettableName()
+void DeleteTableResponse::unsettableName()
 {
     tableNameIsSet_ = false;
 }
 
-Primary_key_schema DescribeTableResponse::getPrimaryKeySchema() const
+Primary_key_schema DeleteTableResponse::getPrimaryKeySchema() const
 {
     return primaryKeySchema_;
 }
 
-void DescribeTableResponse::setPrimaryKeySchema(const Primary_key_schema& value)
+void DeleteTableResponse::setPrimaryKeySchema(const Primary_key_schema& value)
 {
     primaryKeySchema_ = value;
     primaryKeySchemaIsSet_ = true;
 }
 
-bool DescribeTableResponse::primaryKeySchemaIsSet() const
+bool DeleteTableResponse::primaryKeySchemaIsSet() const
 {
     return primaryKeySchemaIsSet_;
 }
 
-void DescribeTableResponse::unsetprimaryKeySchema()
+void DeleteTableResponse::unsetprimaryKeySchema()
 {
     primaryKeySchemaIsSet_ = false;
 }
 
-std::vector<Secondary_index>& DescribeTableResponse::getLocalSecondaryIndexSchema()
+std::vector<Secondary_index>& DeleteTableResponse::getLocalSecondaryIndexSchema()
 {
     return localSecondaryIndexSchema_;
 }
 
-void DescribeTableResponse::setLocalSecondaryIndexSchema(const std::vector<Secondary_index>& value)
+void DeleteTableResponse::setLocalSecondaryIndexSchema(const std::vector<Secondary_index>& value)
 {
     localSecondaryIndexSchema_ = value;
     localSecondaryIndexSchemaIsSet_ = true;
 }
 
-bool DescribeTableResponse::localSecondaryIndexSchemaIsSet() const
+bool DeleteTableResponse::localSecondaryIndexSchemaIsSet() const
 {
     return localSecondaryIndexSchemaIsSet_;
 }
 
-void DescribeTableResponse::unsetlocalSecondaryIndexSchema()
+void DeleteTableResponse::unsetlocalSecondaryIndexSchema()
 {
     localSecondaryIndexSchemaIsSet_ = false;
 }
 
-std::vector<Global_secondary_index>& DescribeTableResponse::getGlobalSecondaryIndexSchema()
+std::vector<Global_secondary_index>& DeleteTableResponse::getGlobalSecondaryIndexSchema()
 {
     return globalSecondaryIndexSchema_;
 }
 
-void DescribeTableResponse::setGlobalSecondaryIndexSchema(const std::vector<Global_secondary_index>& value)
+void DeleteTableResponse::setGlobalSecondaryIndexSchema(const std::vector<Global_secondary_index>& value)
 {
     globalSecondaryIndexSchema_ = value;
     globalSecondaryIndexSchemaIsSet_ = true;
 }
 
-bool DescribeTableResponse::globalSecondaryIndexSchemaIsSet() const
+bool DeleteTableResponse::globalSecondaryIndexSchemaIsSet() const
 {
     return globalSecondaryIndexSchemaIsSet_;
 }
 
-void DescribeTableResponse::unsetglobalSecondaryIndexSchema()
+void DeleteTableResponse::unsetglobalSecondaryIndexSchema()
 {
     globalSecondaryIndexSchemaIsSet_ = false;
 }
 
-Run_time_info DescribeTableResponse::getRunTimeInfo() const
+Run_time_info DeleteTableResponse::getRunTimeInfo() const
 {
     return runTimeInfo_;
 }
 
-void DescribeTableResponse::setRunTimeInfo(const Run_time_info& value)
+void DeleteTableResponse::setRunTimeInfo(const Run_time_info& value)
 {
     runTimeInfo_ = value;
     runTimeInfoIsSet_ = true;
 }
 
-bool DescribeTableResponse::runTimeInfoIsSet() const
+bool DeleteTableResponse::runTimeInfoIsSet() const
 {
     return runTimeInfoIsSet_;
 }
 
-void DescribeTableResponse::unsetrunTimeInfo()
+void DeleteTableResponse::unsetrunTimeInfo()
 {
     runTimeInfoIsSet_ = false;
 }
 
-Ttl_specification DescribeTableResponse::getTtlSpecification() const
+Ttl_specification DeleteTableResponse::getTtlSpecification() const
 {
     return ttlSpecification_;
 }
 
-void DescribeTableResponse::setTtlSpecification(const Ttl_specification& value)
+void DeleteTableResponse::setTtlSpecification(const Ttl_specification& value)
 {
     ttlSpecification_ = value;
     ttlSpecificationIsSet_ = true;
 }
 
-bool DescribeTableResponse::ttlSpecificationIsSet() const
+bool DeleteTableResponse::ttlSpecificationIsSet() const
 {
     return ttlSpecificationIsSet_;
 }
 
-void DescribeTableResponse::unsetttlSpecification()
+void DeleteTableResponse::unsetttlSpecification()
 {
     ttlSpecificationIsSet_ = false;
-}
-
-Sse_specification DescribeTableResponse::getSseSpecification() const
-{
-    return sseSpecification_;
-}
-
-void DescribeTableResponse::setSseSpecification(const Sse_specification& value)
-{
-    sseSpecification_ = value;
-    sseSpecificationIsSet_ = true;
-}
-
-bool DescribeTableResponse::sseSpecificationIsSet() const
-{
-    return sseSpecificationIsSet_;
-}
-
-void DescribeTableResponse::unsetsseSpecification()
-{
-    sseSpecificationIsSet_ = false;
 }
 
 }

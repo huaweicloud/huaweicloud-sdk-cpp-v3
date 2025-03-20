@@ -1548,6 +1548,36 @@ std::shared_ptr<ListServerTagsResponse> EcsClient::listServerTags(ListServerTags
 
     return localVarResult;
 }
+std::shared_ptr<ListServerVolumeAttachmentsResponse> EcsClient::listServerVolumeAttachments(ListServerVolumeAttachmentsRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/cloudservers/{server_id}/os-volume_attachments";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["server_id"] = parameterToString(request.getServerId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EcsMeta::genRequestDefForListServerVolumeAttachments());
+
+    std::shared_ptr<ListServerVolumeAttachmentsResponse> localVarResult = std::make_shared<ListServerVolumeAttachmentsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListServersByTagResponse> EcsClient::listServersByTag(ListServersByTagRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/cloudservers/resource_instances/action";

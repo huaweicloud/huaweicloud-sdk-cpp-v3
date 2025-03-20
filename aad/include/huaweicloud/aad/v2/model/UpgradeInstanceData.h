@@ -101,6 +101,15 @@ public:
     void unsetelasticServiceBandwidth();
     void setElasticServiceBandwidth(int32_t value);
 
+    /// <summary>
+    /// 业务QPS(如果实例没购买过QPS，需要在页面上升级一次规格开通QPS，之后才可以通过接口修改规格)
+    /// </summary>
+
+    int32_t getBasicQps() const;
+    bool basicQpsIsSet() const;
+    void unsetbasicQps();
+    void setBasicQps(int32_t value);
+
 
 protected:
     std::string basicBandwidth_;
@@ -117,6 +126,8 @@ protected:
     bool elasticServiceBandwidthTypeIsSet_;
     int32_t elasticServiceBandwidth_;
     bool elasticServiceBandwidthIsSet_;
+    int32_t basicQps_;
+    bool basicQpsIsSet_;
 
 };
 

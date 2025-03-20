@@ -691,6 +691,9 @@ std::shared_ptr<ListVolumesResponse> EvsClient::listVolumes(ListVolumesRequest &
     if (request.serverIdIsSet()) {
         localVarQueryParams["server_id"] = parameterToString(request.getServerId());
     }
+    if (request.notMetadataIsSet()) {
+        localVarQueryParams["not_metadata"] = parameterToString(request.getNotMetadata());
+    }
 
     std::string localVarHttpBody;
 

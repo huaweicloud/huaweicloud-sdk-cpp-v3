@@ -200,6 +200,15 @@ public:
     void unsetserverId();
     void setServerId(const std::string& value);
 
+    /// <summary>
+    /// 查询不包含所选元数据的云硬盘
+    /// </summary>
+
+    std::string getNotMetadata() const;
+    bool notMetadataIsSet() const;
+    void unsetnotMetadata();
+    void setNotMetadata(const std::string& value);
+
 
 protected:
     std::string marker_;
@@ -238,6 +247,8 @@ protected:
     bool enterpriseProjectIdIsSet_;
     std::string serverId_;
     bool serverIdIsSet_;
+    std::string notMetadata_;
+    bool notMetadataIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

@@ -425,6 +425,11 @@ HttpRequestDef EcsMeta::genRequestDefForListServerTags() {
     return reqDefBuilder;
 }
 
+HttpRequestDef EcsMeta::genRequestDefForListServerVolumeAttachments() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef EcsMeta::genRequestDefForListServersByTag() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;

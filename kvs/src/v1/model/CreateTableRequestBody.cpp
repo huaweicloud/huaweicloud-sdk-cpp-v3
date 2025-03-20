@@ -23,6 +23,7 @@ CreateTableRequestBody::CreateTableRequestBody()
     globalSecondaryIndexSchemaIsSet_ = false;
     preSplitKeyOptionsIsSet_ = false;
     ttlSpecificationIsSet_ = false;
+    sseSpecificationIsSet_ = false;
 }
 
 CreateTableRequestBody::~CreateTableRequestBody() = default;
@@ -56,6 +57,9 @@ bool CreateTableRequestBody::toBson(Builder &builder) const
         return false;
     }
     if (ttlSpecificationIsSet_ && !bson_append(builder, "ttl_specification", ttlSpecification_)) {
+        return false;
+    }
+    if (sseSpecificationIsSet_ && !bson_append(builder, "sse_specification", sseSpecification_)) {
         return false;
     }
 
@@ -137,6 +141,15 @@ bool CreateTableRequestBody::fromBson(const Viewer &viewer)
                 return false;
             }
             ttlSpecificationIsSet_ = true;
+            ++it;
+            continue;
+        }
+        
+        if (key == "sse_specification") {
+            if (!bson_get(it, sseSpecification_)) {
+                return false;
+            }
+            sseSpecificationIsSet_ = true;
             ++it;
             continue;
         }
@@ -313,6 +326,27 @@ bool CreateTableRequestBody::ttlSpecificationIsSet() const
 void CreateTableRequestBody::unsetttlSpecification()
 {
     ttlSpecificationIsSet_ = false;
+}
+
+Sse_specification CreateTableRequestBody::getSseSpecification() const
+{
+    return sseSpecification_;
+}
+
+void CreateTableRequestBody::setSseSpecification(const Sse_specification& value)
+{
+    sseSpecification_ = value;
+    sseSpecificationIsSet_ = true;
+}
+
+bool CreateTableRequestBody::sseSpecificationIsSet() const
+{
+    return sseSpecificationIsSet_;
+}
+
+void CreateTableRequestBody::unsetsseSpecification()
+{
+    sseSpecificationIsSet_ = false;
 }
 
 }

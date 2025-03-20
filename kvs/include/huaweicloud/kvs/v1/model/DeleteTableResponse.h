@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_KVS_V1_MODEL_CreateTableRequestBody_H_
-#define HUAWEICLOUD_SDK_KVS_V1_MODEL_CreateTableRequestBody_H_
+#ifndef HUAWEICLOUD_SDK_KVS_V1_MODEL_DeleteTableResponse_H_
+#define HUAWEICLOUD_SDK_KVS_V1_MODEL_DeleteTableResponse_H_
 
 #include <huaweicloud/core/bson/Defines.h>
 #include <huaweicloud/core/bson/Builder.h>
@@ -13,12 +13,10 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/kvs/v1/model/Secondary_index.h>
-#include <huaweicloud/kvs/v1/model/Provisioned_throughput.h>
 #include <huaweicloud/kvs/v1/model/Primary_key_schema.h>
-#include <huaweicloud/kvs/v1/model/Pre_split_key_options.h>
-#include <huaweicloud/kvs/v1/model/Sse_specification.h>
 #include <huaweicloud/kvs/v1/model/Ttl_specification.h>
 #include <string>
+#include <huaweicloud/kvs/v1/model/Run_time_info.h>
 #include <vector>
 #include <huaweicloud/kvs/v1/model/Global_secondary_index.h>
 
@@ -31,14 +29,14 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 
+/// Response Object
 /// </summary>
-class HUAWEICLOUD_KVS_V1_EXPORT  CreateTableRequestBody
-    : public ModelBase
+class HUAWEICLOUD_KVS_V1_EXPORT  DeleteTableResponse
+    : public ModelBase, public HttpResponse
 {
 public:
-    CreateTableRequestBody();
-    virtual ~CreateTableRequestBody();
+    DeleteTableResponse();
+    virtual ~DeleteTableResponse();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -47,34 +45,16 @@ public:
     bool fromBson(const Viewer &viewer) override;
     bool toBson(Builder &builder) const override;
     /////////////////////////////////////////////
-    /// CreateTableRequestBody members
+    /// DeleteTableResponse members
 
     /// <summary>
-    /// 表名，仓内唯一。
+    /// 表名。 - 长度：[3, 63] - 取值字符限制：[a-z0-9_-]+
     /// </summary>
 
     std::string getTableName() const;
     bool tableNameIsSet() const;
     void unsettableName();
     void setTableName(const std::string& value);
-
-    /// <summary>
-    /// 表计费模式，可为\&quot;provisioned\&quot;或\&quot;on_demand\&quot; - 预置模式：provisioned - 按需模式：on_demand
-    /// </summary>
-
-    std::string getBillMode() const;
-    bool billModeIsSet() const;
-    void unsetbillMode();
-    void setBillMode(const std::string& value);
-
-    /// <summary>
-    /// 
-    /// </summary>
-
-    Provisioned_throughput getProvisionedThroughput() const;
-    bool provisionedThroughputIsSet() const;
-    void unsetprovisionedThroughput();
-    void setProvisionedThroughput(const Provisioned_throughput& value);
 
     /// <summary>
     /// 
@@ -107,10 +87,10 @@ public:
     /// 
     /// </summary>
 
-    Pre_split_key_options getPreSplitKeyOptions() const;
-    bool preSplitKeyOptionsIsSet() const;
-    void unsetpreSplitKeyOptions();
-    void setPreSplitKeyOptions(const Pre_split_key_options& value);
+    Run_time_info getRunTimeInfo() const;
+    bool runTimeInfoIsSet() const;
+    void unsetrunTimeInfo();
+    void setRunTimeInfo(const Run_time_info& value);
 
     /// <summary>
     /// 
@@ -121,36 +101,24 @@ public:
     void unsetttlSpecification();
     void setTtlSpecification(const Ttl_specification& value);
 
-    /// <summary>
-    /// 
-    /// </summary>
-
-    Sse_specification getSseSpecification() const;
-    bool sseSpecificationIsSet() const;
-    void unsetsseSpecification();
-    void setSseSpecification(const Sse_specification& value);
-
 
 protected:
     std::string tableName_;
     bool tableNameIsSet_;
-    std::string billMode_;
-    bool billModeIsSet_;
-    Provisioned_throughput provisionedThroughput_;
-    bool provisionedThroughputIsSet_;
     Primary_key_schema primaryKeySchema_;
     bool primaryKeySchemaIsSet_;
     std::vector<Secondary_index> localSecondaryIndexSchema_;
     bool localSecondaryIndexSchemaIsSet_;
     std::vector<Global_secondary_index> globalSecondaryIndexSchema_;
     bool globalSecondaryIndexSchemaIsSet_;
-    Pre_split_key_options preSplitKeyOptions_;
-    bool preSplitKeyOptionsIsSet_;
+    Run_time_info runTimeInfo_;
+    bool runTimeInfoIsSet_;
     Ttl_specification ttlSpecification_;
     bool ttlSpecificationIsSet_;
-    Sse_specification sseSpecification_;
-    bool sseSpecificationIsSet_;
 
+#ifdef RTTR_FLAG
+    RTTR_ENABLE()
+#endif
 };
 
 
@@ -160,4 +128,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_KVS_V1_MODEL_CreateTableRequestBody_H_
+#endif // HUAWEICLOUD_SDK_KVS_V1_MODEL_DeleteTableResponse_H_

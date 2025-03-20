@@ -14,6 +14,7 @@
 
 #include <huaweicloud/kvs/v1/model/Secondary_index.h>
 #include <huaweicloud/kvs/v1/model/Primary_key_schema.h>
+#include <huaweicloud/kvs/v1/model/Sse_specification.h>
 #include <huaweicloud/kvs/v1/model/Ttl_specification.h>
 #include <string>
 #include <huaweicloud/kvs/v1/model/Run_time_info.h>
@@ -101,6 +102,15 @@ public:
     void unsetttlSpecification();
     void setTtlSpecification(const Ttl_specification& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    Sse_specification getSseSpecification() const;
+    bool sseSpecificationIsSet() const;
+    void unsetsseSpecification();
+    void setSseSpecification(const Sse_specification& value);
+
 
 protected:
     std::string tableName_;
@@ -115,6 +125,8 @@ protected:
     bool runTimeInfoIsSet_;
     Ttl_specification ttlSpecification_;
     bool ttlSpecificationIsSet_;
+    Sse_specification sseSpecification_;
+    bool sseSpecificationIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

@@ -48,6 +48,8 @@ ListVolumesRequest::ListVolumesRequest()
     enterpriseProjectIdIsSet_ = false;
     serverId_ = "";
     serverIdIsSet_ = false;
+    notMetadata_ = "";
+    notMetadataIsSet_ = false;
 }
 
 ListVolumesRequest::~ListVolumesRequest() = default;
@@ -113,6 +115,9 @@ web::json::value ListVolumesRequest::toJson() const
     }
     if(serverIdIsSet_) {
         val[utility::conversions::to_string_t("server_id")] = ModelBase::toJson(serverId_);
+    }
+    if(notMetadataIsSet_) {
+        val[utility::conversions::to_string_t("not_metadata")] = ModelBase::toJson(notMetadata_);
     }
 
     return val;
@@ -281,6 +286,15 @@ bool ListVolumesRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setServerId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("not_metadata"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("not_metadata"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setNotMetadata(refVal);
         }
     }
     return ok;
@@ -663,6 +677,27 @@ bool ListVolumesRequest::serverIdIsSet() const
 void ListVolumesRequest::unsetserverId()
 {
     serverIdIsSet_ = false;
+}
+
+std::string ListVolumesRequest::getNotMetadata() const
+{
+    return notMetadata_;
+}
+
+void ListVolumesRequest::setNotMetadata(const std::string& value)
+{
+    notMetadata_ = value;
+    notMetadataIsSet_ = true;
+}
+
+bool ListVolumesRequest::notMetadataIsSet() const
+{
+    return notMetadataIsSet_;
+}
+
+void ListVolumesRequest::unsetnotMetadata()
+{
+    notMetadataIsSet_ = false;
 }
 
 }

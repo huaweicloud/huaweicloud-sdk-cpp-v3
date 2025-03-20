@@ -20,6 +20,18 @@ HttpRequestDef KvsMeta::genRequestDefForCreateTable() {
     return reqDefBuilder;
 }
 
+HttpRequestDef KvsMeta::genRequestDefForDeleteTable() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("StoreName")
+                  .withJsonTag("store_name")
+                  .withLocationType(Cname));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef KvsMeta::genRequestDefForDescribeTable() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("StoreName")

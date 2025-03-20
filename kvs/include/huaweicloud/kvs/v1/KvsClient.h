@@ -12,6 +12,9 @@
 #include <huaweicloud/kvs/v1/model/CreateTableRequest.h>
 #include <huaweicloud/kvs/v1/model/CreateTableRequestBody.h>
 #include <huaweicloud/kvs/v1/model/CreateTableResponse.h>
+#include <huaweicloud/kvs/v1/model/DeleteTableRequest.h>
+#include <huaweicloud/kvs/v1/model/DeleteTableRequestBody.h>
+#include <huaweicloud/kvs/v1/model/DeleteTableResponse.h>
 #include <huaweicloud/kvs/v1/model/DescribeTableRequest.h>
 #include <huaweicloud/kvs/v1/model/DescribeTableRequestBody.h>
 #include <huaweicloud/kvs/v1/model/DescribeTableResponse.h>
@@ -81,6 +84,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateTableResponse> createTable(
         CreateTableRequest &request
+    );
+    // 删除表
+    //
+    // 删除指定表及所有kv文档，表标记为删除后，空间不会立刻释放，并发的读写访问仍需继续完成。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteTableResponse> deleteTable(
+        DeleteTableRequest &request
     );
     // 查询表
     //

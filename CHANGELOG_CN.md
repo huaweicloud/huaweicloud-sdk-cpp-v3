@@ -1,3 +1,85 @@
+# 3.1.128 2025-03-20
+
+### HuaweiCloud SDK AAD
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **UpgradeInstanceSpec**
+    - 请求参数变更
+      - `+ upgrade_data.basic_qps`
+
+### HuaweiCloud SDK ECS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持接口`ListServerVolumeAttachments`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK EVS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListVolumes**
+    - 请求参数变更
+      - `+ not_metadata`
+
+### HuaweiCloud SDK KVS
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持接口`DeleteTable`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateTable**
+    - 请求参数变更
+      - `+ sse_specification`
+    - 响应参数变更
+      - `+ sse_specification`
+  - **DescribeTable**
+    - 响应参数变更
+      - `+ sse_specification`
+
+### HuaweiCloud SDK Live
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **UpdateDomain**
+    - 响应参数变更
+      - `+ pull_protocol`
+      - `+ service_area: enum value [global]`
+  - **CreateDomain**
+    - 请求参数变更
+      - `+ pull_protocol`
+      - `+ service_area: enum value [global]`
+    - 响应参数变更
+      - `+ pull_protocol`
+      - `+ service_area: enum value [global]`
+  - **ShowDomain**
+    - 响应参数变更
+      - `+ domain_info.pull_protocol`
+      - `+ domain_info.service_area: enum value [global]`
+
 # 3.1.127 2025-03-13
 
 ### HuaweiCloud SDK KVS

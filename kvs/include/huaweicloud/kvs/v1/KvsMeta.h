@@ -14,6 +14,7 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 class HUAWEICLOUD_KVS_V1_EXPORT  KvsMeta {
 public:
     static HttpRequestDef genRequestDefForCreateTable();
+    static HttpRequestDef genRequestDefForDeleteTable();
     static HttpRequestDef genRequestDefForDescribeTable();
     static HttpRequestDef genRequestDefForListStore();
     static HttpRequestDef genRequestDefForListTable();

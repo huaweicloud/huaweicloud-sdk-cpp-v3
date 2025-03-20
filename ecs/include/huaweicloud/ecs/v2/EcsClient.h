@@ -104,6 +104,8 @@
 #include <huaweicloud/ecs/v2/model/ListServerInterfacesResponse.h>
 #include <huaweicloud/ecs/v2/model/ListServerTagsRequest.h>
 #include <huaweicloud/ecs/v2/model/ListServerTagsResponse.h>
+#include <huaweicloud/ecs/v2/model/ListServerVolumeAttachmentsRequest.h>
+#include <huaweicloud/ecs/v2/model/ListServerVolumeAttachmentsResponse.h>
 #include <huaweicloud/ecs/v2/model/ListServersByTagRequest.h>
 #include <huaweicloud/ecs/v2/model/ListServersByTagRequestBody.h>
 #include <huaweicloud/ecs/v2/model/ListServersByTagResponse.h>
@@ -590,6 +592,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListServerTagsResponse> listServerTags(
         ListServerTagsRequest &request
+    );
+    // 查询弹性云服务器挂载磁盘列表信息
+    //
+    // 查询弹性云服务器挂载的磁盘信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListServerVolumeAttachmentsResponse> listServerVolumeAttachments(
+        ListServerVolumeAttachmentsRequest &request
     );
     // 按标签查询云服务器列表
     //

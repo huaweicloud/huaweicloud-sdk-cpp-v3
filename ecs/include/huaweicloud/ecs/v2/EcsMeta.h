@@ -50,6 +50,7 @@ public:
     static HttpRequestDef genRequestDefForListServerGroups();
     static HttpRequestDef genRequestDefForListServerInterfaces();
     static HttpRequestDef genRequestDefForListServerTags();
+    static HttpRequestDef genRequestDefForListServerVolumeAttachments();
     static HttpRequestDef genRequestDefForListServersByTag();
     static HttpRequestDef genRequestDefForListServersDetails();
     static HttpRequestDef genRequestDefForMigrateServer();

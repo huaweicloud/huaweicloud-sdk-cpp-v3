@@ -26,6 +26,8 @@ UpgradeInstanceData::UpgradeInstanceData()
     elasticServiceBandwidthTypeIsSet_ = false;
     elasticServiceBandwidth_ = 0;
     elasticServiceBandwidthIsSet_ = false;
+    basicQps_ = 0;
+    basicQpsIsSet_ = false;
 }
 
 UpgradeInstanceData::~UpgradeInstanceData() = default;
@@ -58,6 +60,9 @@ web::json::value UpgradeInstanceData::toJson() const
     }
     if(elasticServiceBandwidthIsSet_) {
         val[utility::conversions::to_string_t("elastic_service_bandwidth")] = ModelBase::toJson(elasticServiceBandwidth_);
+    }
+    if(basicQpsIsSet_) {
+        val[utility::conversions::to_string_t("basic_qps")] = ModelBase::toJson(basicQps_);
     }
 
     return val;
@@ -127,6 +132,15 @@ bool UpgradeInstanceData::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setElasticServiceBandwidth(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("basic_qps"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("basic_qps"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBasicQps(refVal);
         }
     }
     return ok;
@@ -278,6 +292,27 @@ bool UpgradeInstanceData::elasticServiceBandwidthIsSet() const
 void UpgradeInstanceData::unsetelasticServiceBandwidth()
 {
     elasticServiceBandwidthIsSet_ = false;
+}
+
+int32_t UpgradeInstanceData::getBasicQps() const
+{
+    return basicQps_;
+}
+
+void UpgradeInstanceData::setBasicQps(int32_t value)
+{
+    basicQps_ = value;
+    basicQpsIsSet_ = true;
+}
+
+bool UpgradeInstanceData::basicQpsIsSet() const
+{
+    return basicQpsIsSet_;
+}
+
+void UpgradeInstanceData::unsetbasicQps()
+{
+    basicQpsIsSet_ = false;
 }
 
 }

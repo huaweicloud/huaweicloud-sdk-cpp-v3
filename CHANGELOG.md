@@ -1,3 +1,85 @@
+# 3.1.128 2025-03-20
+
+### HuaweiCloud SDK AAD
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **UpgradeInstanceSpec**
+    - changes of request param
+      - `+ upgrade_data.basic_qps`
+
+### HuaweiCloud SDK ECS
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the API `ListServerVolumeAttachments`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK EVS
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListVolumes**
+    - changes of request param
+      - `+ not_metadata`
+
+### HuaweiCloud SDK KVS
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the API `DeleteTable`
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateTable**
+    - changes of request param
+      - `+ sse_specification`
+    - changes of response param
+      - `+ sse_specification`
+  - **DescribeTable**
+    - changes of response param
+      - `+ sse_specification`
+
+### HuaweiCloud SDK Live
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **UpdateDomain**
+    - changes of response param
+      - `+ pull_protocol`
+      - `+ service_area: enum value [global]`
+  - **CreateDomain**
+    - changes of request param
+      - `+ pull_protocol`
+      - `+ service_area: enum value [global]`
+    - changes of response param
+      - `+ pull_protocol`
+      - `+ service_area: enum value [global]`
+  - **ShowDomain**
+    - changes of response param
+      - `+ domain_info.pull_protocol`
+      - `+ domain_info.service_area: enum value [global]`
+
 # 3.1.127 2025-03-13
 
 ### HuaweiCloud SDK KVS

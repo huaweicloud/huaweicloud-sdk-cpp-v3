@@ -44,6 +44,15 @@ public:
     /// Update_fields members
 
     /// <summary>
+    /// 文档不存在时，插入该完整文档。
+    /// </summary>
+
+    Document getUpsert() const;
+    bool upsertIsSet() const;
+    void unsetupsert();
+    void setUpsert(const Document& value);
+
+    /// <summary>
     /// 新增或覆盖更新1个或多个字段的值。 &gt; 禁止修改sortkey的字段。
     /// </summary>
 
@@ -81,6 +90,8 @@ public:
 
 
 protected:
+    Document upsert_;
+    bool upsertIsSet_;
     Document set_;
     bool setIsSet_;
     Document add_;

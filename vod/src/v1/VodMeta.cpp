@@ -289,6 +289,11 @@ HttpRequestDef VodMeta::genRequestDefForDeleteTemplateGroupCollection() {
 
 HttpRequestDef VodMeta::genRequestDefForDeleteTranscodeProduct() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSdkDate;
+    reqDefBuilder.withRequestField(headerParamXSdkDate
+                  .withName("XSdkDate")
+                  .withJsonTag("X-Sdk-Date")
+                  .withLocationType(Header_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
@@ -528,6 +533,11 @@ HttpRequestDef VodMeta::genRequestDefForListWatermarkTemplate() {
 
 HttpRequestDef VodMeta::genRequestDefForModifySubtitle() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSdkDate;
+    reqDefBuilder.withRequestField(headerParamXSdkDate
+                  .withName("XSdkDate")
+                  .withJsonTag("X-Sdk-Date")
+                  .withLocationType(Header_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
@@ -828,6 +838,11 @@ HttpRequestDef VodMeta::genRequestDefForUpdateCoverByThumbnail() {
 
 HttpRequestDef VodMeta::genRequestDefForUpdateStorageMode() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSdkDate;
+    reqDefBuilder.withRequestField(headerParamXSdkDate
+                  .withName("XSdkDate")
+                  .withJsonTag("X-Sdk-Date")
+                  .withLocationType(Header_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").

@@ -71,6 +71,15 @@ HttpRequestDef CbrMeta::genRequestDefForChangeOrder() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CbrMeta::genRequestDefForChangeVaultChargeMode() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CbrMeta::genRequestDefForCheckAgent() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;

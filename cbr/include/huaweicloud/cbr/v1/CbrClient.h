@@ -33,6 +33,9 @@
 #include <huaweicloud/cbr/v1/model/CbcUpdate.h>
 #include <huaweicloud/cbr/v1/model/ChangeOrderRequest.h>
 #include <huaweicloud/cbr/v1/model/ChangeOrderResponse.h>
+#include <huaweicloud/cbr/v1/model/ChangeToPeriod.h>
+#include <huaweicloud/cbr/v1/model/ChangeVaultChargeModeRequest.h>
+#include <huaweicloud/cbr/v1/model/ChangeVaultChargeModeResponse.h>
 #include <huaweicloud/cbr/v1/model/CheckAgentRequest.h>
 #include <huaweicloud/cbr/v1/model/CheckAgentResponse.h>
 #include <huaweicloud/cbr/v1/model/CheckpointReplicateReq.h>
@@ -269,6 +272,15 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ChangeOrderResponse> changeOrder(
         ChangeOrderRequest &request
+    );
+    // 修改付费模式
+    //
+    // 修改资源的付费模式，暂时只支持按需资源转包周期资源。
+    // &gt; 该接口目前输入公测阶段，部分region暂时无法使用。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ChangeVaultChargeModeResponse> changeVaultChargeMode(
+        ChangeVaultChargeModeRequest &request
     );
     // 查询agent状态
     //

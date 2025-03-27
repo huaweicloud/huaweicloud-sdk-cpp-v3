@@ -1,3 +1,74 @@
+# 3.1.129 2025-03-27
+
+### HuaweiCloud SDK CBR
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持接口`ChangeVaultChargeMode`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ChangeOrder**
+    - 响应参数变更
+      - `* retCode: string -> number`
+
+### HuaweiCloud SDK ECS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持接口`ListScheduledEvents`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK KMS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持接口`CreateRsaDatakeyPair`、`CreateEcDatakeyPair`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK KVS
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **UpdateKv**
+    - 请求参数变更
+      - `+ update_fields.upsert`
+
+### HuaweiCloud SDK VOD
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **UpdateStorageMode**
+    - 请求参数变更
+      - `+ X-Sdk-Date`
+  - **ModifySubtitle**
+    - 请求参数变更
+      - `+ X-Sdk-Date`
+      - `+ delete_subtitles.type: enum value [SRT]`
+      - `+ add_subtitles.type: enum value [SRT]`
+  - **DeleteTranscodeProduct**
+    - 请求参数变更
+      - `+ X-Sdk-Date`
+
 # 3.1.128 2025-03-20
 
 ### HuaweiCloud SDK AAD

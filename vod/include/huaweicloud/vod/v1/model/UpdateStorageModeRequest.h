@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <string>
 #include <huaweicloud/vod/v1/model/UpdateStorageModeReq.h>
 
 namespace HuaweiCloud {
@@ -39,6 +40,15 @@ public:
     /// UpdateStorageModeRequest members
 
     /// <summary>
+    /// 使用AK/SK方式认证时必选，请求的发生时间。 
+    /// </summary>
+
+    std::string getXSdkDate() const;
+    bool xSdkDateIsSet() const;
+    void unsetxSdkDate();
+    void setXSdkDate(const std::string& value);
+
+    /// <summary>
     /// 
     /// </summary>
 
@@ -49,6 +59,8 @@ public:
 
 
 protected:
+    std::string xSdkDate_;
+    bool xSdkDateIsSet_;
     UpdateStorageModeReq body_;
     bool bodyIsSet_;
 

@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/vod/v1/model/DeleteTranscodeProductReq.h>
+#include <string>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -39,6 +40,15 @@ public:
     /// DeleteTranscodeProductRequest members
 
     /// <summary>
+    /// 使用AK/SK方式认证时必选，请求的发生时间。 
+    /// </summary>
+
+    std::string getXSdkDate() const;
+    bool xSdkDateIsSet() const;
+    void unsetxSdkDate();
+    void setXSdkDate(const std::string& value);
+
+    /// <summary>
     /// 
     /// </summary>
 
@@ -49,6 +59,8 @@ public:
 
 
 protected:
+    std::string xSdkDate_;
+    bool xSdkDateIsSet_;
     DeleteTranscodeProductReq body_;
     bool bodyIsSet_;
 

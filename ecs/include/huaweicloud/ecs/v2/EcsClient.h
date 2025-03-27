@@ -94,6 +94,8 @@
 #include <huaweicloud/ecs/v2/model/ListFlavorsResponse.h>
 #include <huaweicloud/ecs/v2/model/ListResizeFlavorsRequest.h>
 #include <huaweicloud/ecs/v2/model/ListResizeFlavorsResponse.h>
+#include <huaweicloud/ecs/v2/model/ListScheduledEventsRequest.h>
+#include <huaweicloud/ecs/v2/model/ListScheduledEventsResponse.h>
 #include <huaweicloud/ecs/v2/model/ListServerAzInfoRequest.h>
 #include <huaweicloud/ecs/v2/model/ListServerAzInfoResponse.h>
 #include <huaweicloud/ecs/v2/model/ListServerBlockDevicesRequest.h>
@@ -548,6 +550,15 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListResizeFlavorsResponse> listResizeFlavors(
         ListResizeFlavorsRequest &request
+    );
+    // 查询计划事件列表
+    //
+    // 查询计划事件列表
+    // 支持查看过去7天内计划事件
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListScheduledEventsResponse> listScheduledEvents(
+        ListScheduledEventsRequest &request
     );
     // 查询可用区列表
     //

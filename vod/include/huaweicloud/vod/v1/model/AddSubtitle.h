@@ -40,7 +40,7 @@ public:
     /// AddSubtitle members
 
     /// <summary>
-    /// 字幕类型，字幕封装当前仅支持VTT
+    /// 字幕类型，字幕封装当前仅支持VTT和SRT
     /// </summary>
 
     std::string getType() const;

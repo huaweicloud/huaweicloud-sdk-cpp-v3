@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/cbr/v1/model/ChangeOrderResponse.h"
+#include "huaweicloud/cbr/v1/model/ChangeVaultChargeModeResponse.h"
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Cbr {
@@ -10,7 +10,7 @@ namespace Model {
 
 
 
-ChangeOrderResponse::ChangeOrderResponse()
+ChangeVaultChargeModeResponse::ChangeVaultChargeModeResponse()
 {
     orderId_ = "";
     orderIdIsSet_ = false;
@@ -20,13 +20,13 @@ ChangeOrderResponse::ChangeOrderResponse()
     retMsgIsSet_ = false;
 }
 
-ChangeOrderResponse::~ChangeOrderResponse() = default;
+ChangeVaultChargeModeResponse::~ChangeVaultChargeModeResponse() = default;
 
-void ChangeOrderResponse::validate()
+void ChangeVaultChargeModeResponse::validate()
 {
 }
 
-web::json::value ChangeOrderResponse::toJson() const
+web::json::value ChangeVaultChargeModeResponse::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -42,7 +42,7 @@ web::json::value ChangeOrderResponse::toJson() const
 
     return val;
 }
-bool ChangeOrderResponse::fromJson(const web::json::value& val)
+bool ChangeVaultChargeModeResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -77,65 +77,65 @@ bool ChangeOrderResponse::fromJson(const web::json::value& val)
 }
 
 
-std::string ChangeOrderResponse::getOrderId() const
+std::string ChangeVaultChargeModeResponse::getOrderId() const
 {
     return orderId_;
 }
 
-void ChangeOrderResponse::setOrderId(const std::string& value)
+void ChangeVaultChargeModeResponse::setOrderId(const std::string& value)
 {
     orderId_ = value;
     orderIdIsSet_ = true;
 }
 
-bool ChangeOrderResponse::orderIdIsSet() const
+bool ChangeVaultChargeModeResponse::orderIdIsSet() const
 {
     return orderIdIsSet_;
 }
 
-void ChangeOrderResponse::unsetorderId()
+void ChangeVaultChargeModeResponse::unsetorderId()
 {
     orderIdIsSet_ = false;
 }
 
-double ChangeOrderResponse::getRetCode() const
+double ChangeVaultChargeModeResponse::getRetCode() const
 {
     return retCode_;
 }
 
-void ChangeOrderResponse::setRetCode(double value)
+void ChangeVaultChargeModeResponse::setRetCode(double value)
 {
     retCode_ = value;
     retCodeIsSet_ = true;
 }
 
-bool ChangeOrderResponse::retCodeIsSet() const
+bool ChangeVaultChargeModeResponse::retCodeIsSet() const
 {
     return retCodeIsSet_;
 }
 
-void ChangeOrderResponse::unsetretCode()
+void ChangeVaultChargeModeResponse::unsetretCode()
 {
     retCodeIsSet_ = false;
 }
 
-std::string ChangeOrderResponse::getRetMsg() const
+std::string ChangeVaultChargeModeResponse::getRetMsg() const
 {
     return retMsg_;
 }
 
-void ChangeOrderResponse::setRetMsg(const std::string& value)
+void ChangeVaultChargeModeResponse::setRetMsg(const std::string& value)
 {
     retMsg_ = value;
     retMsgIsSet_ = true;
 }
 
-bool ChangeOrderResponse::retMsgIsSet() const
+bool ChangeVaultChargeModeResponse::retMsgIsSet() const
 {
     return retMsgIsSet_;
 }
 
-void ChangeOrderResponse::unsetretMsg()
+void ChangeVaultChargeModeResponse::unsetretMsg()
 {
     retMsgIsSet_ = false;
 }

@@ -26,6 +26,9 @@
 #include <huaweicloud/kms/v2/model/CreateDatakeyResponse.h>
 #include <huaweicloud/kms/v2/model/CreateDatakeyWithoutPlaintextRequest.h>
 #include <huaweicloud/kms/v2/model/CreateDatakeyWithoutPlaintextResponse.h>
+#include <huaweicloud/kms/v2/model/CreateEcDatakeyPairRequest.h>
+#include <huaweicloud/kms/v2/model/CreateEcDatakeyPairRequestBody.h>
+#include <huaweicloud/kms/v2/model/CreateEcDatakeyPairResponse.h>
 #include <huaweicloud/kms/v2/model/CreateGrantRequest.h>
 #include <huaweicloud/kms/v2/model/CreateGrantRequestBody.h>
 #include <huaweicloud/kms/v2/model/CreateGrantResponse.h>
@@ -42,6 +45,9 @@
 #include <huaweicloud/kms/v2/model/CreateParametersForImportResponse.h>
 #include <huaweicloud/kms/v2/model/CreateRandomRequest.h>
 #include <huaweicloud/kms/v2/model/CreateRandomResponse.h>
+#include <huaweicloud/kms/v2/model/CreateRsaDatakeyPairRequest.h>
+#include <huaweicloud/kms/v2/model/CreateRsaDatakeyPairRequestBody.h>
+#include <huaweicloud/kms/v2/model/CreateRsaDatakeyPairResponse.h>
 #include <huaweicloud/kms/v2/model/DecryptDataRequest.h>
 #include <huaweicloud/kms/v2/model/DecryptDataRequestBody.h>
 #include <huaweicloud/kms/v2/model/DecryptDataResponse.h>
@@ -253,6 +259,14 @@ public:
     std::shared_ptr<CreateDatakeyWithoutPlaintextResponse> createDatakeyWithoutPlaintext(
         CreateDatakeyWithoutPlaintextRequest &request
     );
+    // 创建EC数据密钥对
+    //
+    // - 功能介绍：创建EC数据密钥对，返回结果包含明文公钥和密文私钥，根据参数决定是否返回明文私钥。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateEcDatakeyPairResponse> createEcDatakeyPair(
+        CreateEcDatakeyPairRequest &request
+    );
     // 创建授权
     //
     // - 功能介绍：创建授权，被授权用户可以对授权密钥进行操作。
@@ -306,6 +320,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateRandomResponse> createRandom(
         CreateRandomRequest &request
+    );
+    // 创建RSA数据密钥对
+    //
+    // - 功能介绍：创建rsa数据密钥对，返回结果包含明文公钥和密文私钥，根据参数决定是否返回明文私钥。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateRsaDatakeyPairResponse> createRsaDatakeyPair(
+        CreateRsaDatakeyPairRequest &request
     );
     // 解密数据
     //

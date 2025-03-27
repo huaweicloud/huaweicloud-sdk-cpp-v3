@@ -21,12 +21,14 @@ public:
     static HttpRequestDef genRequestDefForCreateAlias();
     static HttpRequestDef genRequestDefForCreateDatakey();
     static HttpRequestDef genRequestDefForCreateDatakeyWithoutPlaintext();
+    static HttpRequestDef genRequestDefForCreateEcDatakeyPair();
     static HttpRequestDef genRequestDefForCreateGrant();
     static HttpRequestDef genRequestDefForCreateKey();
     static HttpRequestDef genRequestDefForCreateKeyStore();
     static HttpRequestDef genRequestDefForCreateKmsTag();
     static HttpRequestDef genRequestDefForCreateParametersForImport();
     static HttpRequestDef genRequestDefForCreateRandom();
+    static HttpRequestDef genRequestDefForCreateRsaDatakeyPair();
     static HttpRequestDef genRequestDefForDecryptData();
     static HttpRequestDef genRequestDefForDecryptDatakey();
     static HttpRequestDef genRequestDefForDeleteAlias();

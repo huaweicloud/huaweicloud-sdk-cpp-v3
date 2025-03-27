@@ -361,6 +361,47 @@ std::shared_ptr<CreateDatakeyWithoutPlaintextResponse> KmsClient::createDatakeyW
 
     return localVarResult;
 }
+std::shared_ptr<CreateEcDatakeyPairResponse> KmsClient::createEcDatakeyPair(CreateEcDatakeyPairRequest &request)
+{
+    std::string localVarPath = "/v1.0/{project_id}/kms/create-ec-datakey-pair";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, KmsMeta::genRequestDefForCreateEcDatakeyPair());
+
+    std::shared_ptr<CreateEcDatakeyPairResponse> localVarResult = std::make_shared<CreateEcDatakeyPairResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<CreateGrantResponse> KmsClient::createGrant(CreateGrantRequest &request)
 {
     std::string localVarPath = "/v1.0/{project_id}/kms/create-grant";
@@ -596,6 +637,47 @@ std::shared_ptr<CreateRandomResponse> KmsClient::createRandom(CreateRandomReques
         localVarHeaderParams, localVarHttpBody, KmsMeta::genRequestDefForCreateRandom());
 
     std::shared_ptr<CreateRandomResponse> localVarResult = std::make_shared<CreateRandomResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<CreateRsaDatakeyPairResponse> KmsClient::createRsaDatakeyPair(CreateRsaDatakeyPairRequest &request)
+{
+    std::string localVarPath = "/v1.0/{project_id}/kms/create-rsa-datakey-pair";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, KmsMeta::genRequestDefForCreateRsaDatakeyPair());
+
+    std::shared_ptr<CreateRsaDatakeyPairResponse> localVarResult = std::make_shared<CreateRsaDatakeyPairResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

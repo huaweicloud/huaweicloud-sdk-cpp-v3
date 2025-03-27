@@ -12,6 +12,8 @@ namespace Model {
 
 ModifySubtitleRequest::ModifySubtitleRequest()
 {
+    xSdkDate_ = "";
+    xSdkDateIsSet_ = false;
     bodyIsSet_ = false;
 }
 
@@ -25,6 +27,9 @@ web::json::value ModifySubtitleRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(xSdkDateIsSet_) {
+        val[utility::conversions::to_string_t("X-Sdk-Date")] = ModelBase::toJson(xSdkDate_);
+    }
     if(bodyIsSet_) {
         val[utility::conversions::to_string_t("body")] = ModelBase::toJson(body_);
     }
@@ -35,6 +40,15 @@ bool ModifySubtitleRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("X-Sdk-Date"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Sdk-Date"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXSdkDate(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("body"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
         if(!fieldValue.is_null())
@@ -47,6 +61,27 @@ bool ModifySubtitleRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
+
+std::string ModifySubtitleRequest::getXSdkDate() const
+{
+    return xSdkDate_;
+}
+
+void ModifySubtitleRequest::setXSdkDate(const std::string& value)
+{
+    xSdkDate_ = value;
+    xSdkDateIsSet_ = true;
+}
+
+bool ModifySubtitleRequest::xSdkDateIsSet() const
+{
+    return xSdkDateIsSet_;
+}
+
+void ModifySubtitleRequest::unsetxSdkDate()
+{
+    xSdkDateIsSet_ = false;
+}
 
 SubtitleModifyReq ModifySubtitleRequest::getBody() const
 {

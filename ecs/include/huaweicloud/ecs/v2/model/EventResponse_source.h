@@ -1,9 +1,9 @@
 
-#ifndef HUAWEICLOUD_SDK_VOD_V1_MODEL_DeleteSubtitle_H_
-#define HUAWEICLOUD_SDK_VOD_V1_MODEL_DeleteSubtitle_H_
+#ifndef HUAWEICLOUD_SDK_ECS_V2_MODEL_EventResponse_source_H_
+#define HUAWEICLOUD_SDK_ECS_V2_MODEL_EventResponse_source_H_
 
 
-#include <huaweicloud/vod/v1/VodExport.h>
+#include <huaweicloud/ecs/v2/EcsExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/utils/Utils.h>
@@ -13,8 +13,8 @@
 
 namespace HuaweiCloud {
 namespace Sdk {
-namespace Vod {
-namespace V1 {
+namespace Ecs {
+namespace V2 {
 namespace Model {
 
 using namespace HuaweiCloud::Sdk::Core::Utils;
@@ -22,12 +22,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// 
 /// </summary>
-class HUAWEICLOUD_VOD_V1_EXPORT  DeleteSubtitle
+class HUAWEICLOUD_ECS_V2_EXPORT  EventResponse_source
     : public ModelBase
 {
 public:
-    DeleteSubtitle();
-    virtual ~DeleteSubtitle();
+    EventResponse_source();
+    virtual ~EventResponse_source();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -36,10 +36,10 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// DeleteSubtitle members
+    /// EventResponse_source members
 
     /// <summary>
-    /// 字幕类型，字幕封装当前仅支持VTT和SRT
+    /// 计划事件来源类型
     /// </summary>
 
     std::string getType() const;
@@ -48,20 +48,20 @@ public:
     void setType(const std::string& value);
 
     /// <summary>
-    /// 字幕语言
+    /// 主机计划事件ID
     /// </summary>
 
-    std::string getLanguage() const;
-    bool languageIsSet() const;
-    void unsetlanguage();
-    void setLanguage(const std::string& value);
+    std::string getHostScheduledEventId() const;
+    bool hostScheduledEventIdIsSet() const;
+    void unsethostScheduledEventId();
+    void setHostScheduledEventId(const std::string& value);
 
 
 protected:
     std::string type_;
     bool typeIsSet_;
-    std::string language_;
-    bool languageIsSet_;
+    std::string hostScheduledEventId_;
+    bool hostScheduledEventIdIsSet_;
 
 };
 
@@ -72,4 +72,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_VOD_V1_MODEL_DeleteSubtitle_H_
+#endif // HUAWEICLOUD_SDK_ECS_V2_MODEL_EventResponse_source_H_

@@ -80,6 +80,15 @@ HttpRequestDef KmsMeta::genRequestDefForCreateDatakeyWithoutPlaintext() {
     return reqDefBuilder;
 }
 
+HttpRequestDef KmsMeta::genRequestDefForCreateEcDatakeyPair() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef KmsMeta::genRequestDefForCreateGrant() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -126,6 +135,15 @@ HttpRequestDef KmsMeta::genRequestDefForCreateParametersForImport() {
 }
 
 HttpRequestDef KmsMeta::genRequestDefForCreateRandom() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef KmsMeta::genRequestDefForCreateRsaDatakeyPair() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.

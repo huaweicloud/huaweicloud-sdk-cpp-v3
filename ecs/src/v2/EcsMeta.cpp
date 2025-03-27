@@ -394,6 +394,35 @@ HttpRequestDef EcsMeta::genRequestDefForListResizeFlavors() {
     return reqDefBuilder;
 }
 
+HttpRequestDef EcsMeta::genRequestDefForListScheduledEvents() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Marker")
+                  .withJsonTag("marker")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Id")
+                  .withJsonTag("id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("InstanceId")
+                  .withJsonTag("instance_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Type")
+                  .withJsonTag("type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("State")
+                  .withJsonTag("state")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("PublishSince")
+                  .withJsonTag("publish_since")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("PublishUntil")
+                  .withJsonTag("publish_until")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef EcsMeta::genRequestDefForListServerAzInfo() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;

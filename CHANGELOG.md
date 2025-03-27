@@ -1,3 +1,74 @@
+# 3.1.129 2025-03-27
+
+### HuaweiCloud SDK CBR
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the API `ChangeVaultChargeMode`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ChangeOrder**
+    - changes of response param
+      - `* retCode: string -> number`
+
+### HuaweiCloud SDK ECS
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the API `ListScheduledEvents`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK KMS
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the APIs `CreateRsaDatakeyPair`, `CreateEcDatakeyPair`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK KVS
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **UpdateKv**
+    - changes of request param
+      - `+ update_fields.upsert`
+
+### HuaweiCloud SDK VOD
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **UpdateStorageMode**
+    - changes of request param
+      - `+ X-Sdk-Date`
+  - **ModifySubtitle**
+    - changes of request param
+      - `+ X-Sdk-Date`
+      - `+ delete_subtitles.type: enum value [SRT]`
+      - `+ add_subtitles.type: enum value [SRT]`
+  - **DeleteTranscodeProduct**
+    - changes of request param
+      - `+ X-Sdk-Date`
+
 # 3.1.128 2025-03-20
 
 ### HuaweiCloud SDK AAD

@@ -1395,6 +1395,59 @@ std::shared_ptr<ListResizeFlavorsResponse> EcsClient::listResizeFlavors(ListResi
 
     return localVarResult;
 }
+std::shared_ptr<ListScheduledEventsResponse> EcsClient::listScheduledEvents(ListScheduledEventsRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instance-scheduled-events";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.markerIsSet()) {
+        localVarQueryParams["marker"] = parameterToString(request.getMarker());
+    }
+    if (request.idIsSet()) {
+        localVarQueryParams["id"] = parameterToString(request.getId());
+    }
+    if (request.instanceIdIsSet()) {
+        localVarQueryParams["instance_id"] = parameterToString(request.getInstanceId());
+    }
+    if (request.typeIsSet()) {
+        localVarQueryParams["type"] = parameterToString(request.getType());
+    }
+    if (request.stateIsSet()) {
+        localVarQueryParams["state"] = parameterToString(request.getState());
+    }
+    if (request.publishSinceIsSet()) {
+        localVarQueryParams["publish_since"] = parameterToString(request.getPublishSince());
+    }
+    if (request.publishUntilIsSet()) {
+        localVarQueryParams["publish_until"] = parameterToString(request.getPublishUntil());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EcsMeta::genRequestDefForListScheduledEvents());
+
+    std::shared_ptr<ListScheduledEventsResponse> localVarResult = std::make_shared<ListScheduledEventsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListServerAzInfoResponse> EcsClient::listServerAzInfo(ListServerAzInfoRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/availability-zones";

@@ -45,6 +45,7 @@ public:
     static HttpRequestDef genRequestDefForListFlavorSellPolicies();
     static HttpRequestDef genRequestDefForListFlavors();
     static HttpRequestDef genRequestDefForListResizeFlavors();
+    static HttpRequestDef genRequestDefForListScheduledEvents();
     static HttpRequestDef genRequestDefForListServerAzInfo();
     static HttpRequestDef genRequestDefForListServerBlockDevices();
     static HttpRequestDef genRequestDefForListServerGroups();

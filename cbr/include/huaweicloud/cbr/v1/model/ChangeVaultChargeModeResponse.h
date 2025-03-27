@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_CBR_V1_MODEL_ChangeOrderResponse_H_
-#define HUAWEICLOUD_SDK_CBR_V1_MODEL_ChangeOrderResponse_H_
+#ifndef HUAWEICLOUD_SDK_CBR_V1_MODEL_ChangeVaultChargeModeResponse_H_
+#define HUAWEICLOUD_SDK_CBR_V1_MODEL_ChangeVaultChargeModeResponse_H_
 
 
 #include <huaweicloud/cbr/v1/CbrExport.h>
@@ -22,12 +22,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// Response Object
 /// </summary>
-class HUAWEICLOUD_CBR_V1_EXPORT  ChangeOrderResponse
+class HUAWEICLOUD_CBR_V1_EXPORT  ChangeVaultChargeModeResponse
     : public ModelBase, public HttpResponse
 {
 public:
-    ChangeOrderResponse();
-    virtual ~ChangeOrderResponse();
+    ChangeVaultChargeModeResponse();
+    virtual ~ChangeVaultChargeModeResponse();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -36,7 +36,7 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// ChangeOrderResponse members
+    /// ChangeVaultChargeModeResponse members
 
     /// <summary>
     /// 订单ID
@@ -86,4 +86,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_CBR_V1_MODEL_ChangeOrderResponse_H_
+#endif // HUAWEICLOUD_SDK_CBR_V1_MODEL_ChangeVaultChargeModeResponse_H_

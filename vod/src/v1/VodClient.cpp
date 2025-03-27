@@ -871,6 +871,9 @@ std::shared_ptr<DeleteTranscodeProductResponse> VodClient::deleteTranscodeProduc
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.xSdkDateIsSet()) {
+        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -1381,6 +1384,9 @@ std::shared_ptr<ModifySubtitleResponse> VodClient::modifySubtitle(ModifySubtitle
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.xSdkDateIsSet()) {
+        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -2155,6 +2161,9 @@ std::shared_ptr<UpdateStorageModeResponse> VodClient::updateStorageMode(UpdateSt
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.xSdkDateIsSet()) {
+        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {

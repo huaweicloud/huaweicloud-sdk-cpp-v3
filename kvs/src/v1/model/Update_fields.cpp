@@ -13,6 +13,7 @@ namespace Model {
 
 Update_fields::Update_fields()
 {
+    upsertIsSet_ = false;
     setIsSet_ = false;
     addIsSet_ = false;
     rmvIsSet_ = false;
@@ -28,6 +29,9 @@ void Update_fields::validate()
 bool Update_fields::toBson(Builder &builder) const
 {
 
+    if (upsertIsSet_ && !bson_append(builder, "upsert", upsert_)) {
+        return false;
+    }
     if (setIsSet_ && !bson_append(builder, "set", set_)) {
         return false;
     }
@@ -50,6 +54,15 @@ bool Update_fields::fromBson(const Viewer &viewer)
     Viewer::Iterator it = viewer.begin();
     while (it != viewer.end()) {
         const std::string &key = it->key();
+        
+        if (key == "upsert") {
+            if (!bson_get(it, upsert_)) {
+                return false;
+            }
+            upsertIsSet_ = true;
+            ++it;
+            continue;
+        }
         
         if (key == "set") {
             if (!bson_get(it, set_)) {
@@ -91,6 +104,27 @@ bool Update_fields::fromBson(const Viewer &viewer)
     }
 
     return true;
+}
+
+Document Update_fields::getUpsert() const
+{
+    return upsert_;
+}
+
+void Update_fields::setUpsert(const Document& value)
+{
+    upsert_ = value;
+    upsertIsSet_ = true;
+}
+
+bool Update_fields::upsertIsSet() const
+{
+    return upsertIsSet_;
+}
+
+void Update_fields::unsetupsert()
+{
+    upsertIsSet_ = false;
 }
 
 Document Update_fields::getSet() const

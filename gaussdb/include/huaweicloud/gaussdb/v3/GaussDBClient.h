@@ -160,6 +160,7 @@
 #include <huaweicloud/gaussdb/v3/model/ModifyGaussMysqlDnsRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ModifyGaussMysqlDnsResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ModifyInternalIpRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ModifyNodeDataIpRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ModifyNodePriorityRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ModifyNodePriorityRequestBody.h>
 #include <huaweicloud/gaussdb/v3/model/ModifyNodePriorityResponse.h>
@@ -355,6 +356,8 @@
 #include <huaweicloud/gaussdb/v3/model/UpdateSlowlogSensitiveSwitchRequest.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateSlowlogSensitiveSwitchRequestBody.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateSlowlogSensitiveSwitchResponse.h>
+#include <huaweicloud/gaussdb/v3/model/UpdateTaurusNodeDataIpRequest.h>
+#include <huaweicloud/gaussdb/v3/model/UpdateTaurusNodeDataIpResponse.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateTransactionSplitStatusRequest.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateTransactionSplitStatusResponse.h>
 #include <huaweicloud/gaussdb/v3/model/UpgradeDatabaseRequest.h>
@@ -1647,6 +1650,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateSlowlogSensitiveSwitchResponse> updateSlowlogSensitiveSwitch(
         UpdateSlowlogSensitiveSwitchRequest &request
+    );
+    // 修改只读节点的读内网地址
+    //
+    // 修改只读节点的读内网地址。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateTaurusNodeDataIpResponse> updateTaurusNodeDataIp(
+        UpdateTaurusNodeDataIpRequest &request
     );
     // 设置proxy事务拆分
     //

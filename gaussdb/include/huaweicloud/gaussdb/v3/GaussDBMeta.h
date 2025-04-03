@@ -149,6 +149,7 @@ public:
     static HttpRequestDef genRequestDefForUpdateProxySessionConsistence();
     static HttpRequestDef genRequestDefForUpdateServerlessPolicy();
     static HttpRequestDef genRequestDefForUpdateSlowlogSensitiveSwitch();
+    static HttpRequestDef genRequestDefForUpdateTaurusNodeDataIp();
     static HttpRequestDef genRequestDefForUpdateTransactionSplitStatus();
     static HttpRequestDef genRequestDefForUpgradeGaussMySqlInstanceDatabase();
     static HttpRequestDef genRequestDefForUpgradeProxyVersion();

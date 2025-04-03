@@ -1,3 +1,16 @@
+# 3.1.130 2025-04-03
+
+### HuaweiCloud SDK GaussDB
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the API `UpdateTaurusNodeDataIp`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.129 2025-03-27
 
 ### HuaweiCloud SDK CBR

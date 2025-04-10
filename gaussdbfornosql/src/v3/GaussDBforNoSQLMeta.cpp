@@ -309,11 +309,23 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForListConfigurationTemplates()
     reqDefBuilder.withRequestField(FieldDef().withName("Limit")
                   .withJsonTag("limit")
                   .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("DatastoreName")
+                  .withJsonTag("datastore_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Mode")
+                  .withJsonTag("mode")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 
 HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForListConfigurations() {
     HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("DatastoreName")
+                  .withJsonTag("datastore_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Mode")
+                  .withJsonTag("mode")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 
@@ -493,11 +505,11 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForListInstances() {
     reqDefBuilder.withRequestField(FieldDef().withName("Name")
                   .withJsonTag("name")
                   .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Mode")
-                  .withJsonTag("mode")
-                  .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("DatastoreType")
                   .withJsonTag("datastore_type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Mode")
+                  .withJsonTag("mode")
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("VpcId")
                   .withJsonTag("vpc_id")

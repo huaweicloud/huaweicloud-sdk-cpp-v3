@@ -22,6 +22,8 @@ CreateConfigurationResult::CreateConfigurationResult()
     datastoreVersionNameIsSet_ = false;
     datastoreName_ = "";
     datastoreNameIsSet_ = false;
+    mode_ = "";
+    modeIsSet_ = false;
     created_ = "";
     createdIsSet_ = false;
     updated_ = "";
@@ -52,6 +54,9 @@ web::json::value CreateConfigurationResult::toJson() const
     }
     if(datastoreNameIsSet_) {
         val[utility::conversions::to_string_t("datastore_name")] = ModelBase::toJson(datastoreName_);
+    }
+    if(modeIsSet_) {
+        val[utility::conversions::to_string_t("mode")] = ModelBase::toJson(mode_);
     }
     if(createdIsSet_) {
         val[utility::conversions::to_string_t("created")] = ModelBase::toJson(created_);
@@ -109,6 +114,15 @@ bool CreateConfigurationResult::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDatastoreName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("mode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("mode"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMode(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("created"))) {
@@ -236,6 +250,27 @@ bool CreateConfigurationResult::datastoreNameIsSet() const
 void CreateConfigurationResult::unsetdatastoreName()
 {
     datastoreNameIsSet_ = false;
+}
+
+std::string CreateConfigurationResult::getMode() const
+{
+    return mode_;
+}
+
+void CreateConfigurationResult::setMode(const std::string& value)
+{
+    mode_ = value;
+    modeIsSet_ = true;
+}
+
+bool CreateConfigurationResult::modeIsSet() const
+{
+    return modeIsSet_;
+}
+
+void CreateConfigurationResult::unsetmode()
+{
+    modeIsSet_ = false;
 }
 
 std::string CreateConfigurationResult::getCreated() const

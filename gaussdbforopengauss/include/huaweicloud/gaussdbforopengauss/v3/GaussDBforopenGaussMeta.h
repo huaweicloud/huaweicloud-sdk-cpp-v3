@@ -22,6 +22,7 @@ public:
     static HttpRequestDef genRequestDefForConfirmRestoredData();
     static HttpRequestDef genRequestDefForCopyConfiguration();
     static HttpRequestDef genRequestDefForCreateConfigurationTemplate();
+    static HttpRequestDef genRequestDefForCreateCrossCloudConstructDisaster();
     static HttpRequestDef genRequestDefForCreateDatabase();
     static HttpRequestDef genRequestDefForCreateDatabaseInstance();
     static HttpRequestDef genRequestDefForCreateDatabaseSchemas();
@@ -43,6 +44,14 @@ public:
     static HttpRequestDef genRequestDefForDeleteManualBackup();
     static HttpRequestDef genRequestDefForDeleteScheduleTask();
     static HttpRequestDef genRequestDefForDownloadBackup();
+    static HttpRequestDef genRequestDefForExecuteCrossCloudDisasterDataCacheEnd();
+    static HttpRequestDef genRequestDefForExecuteCrossCloudDisasterDataCacheStart();
+    static HttpRequestDef genRequestDefForExecuteCrossCloudDisasterEndSimulation();
+    static HttpRequestDef genRequestDefForExecuteCrossCloudDisasterRecoveryFailover();
+    static HttpRequestDef genRequestDefForExecuteCrossCloudDisasterRestore();
+    static HttpRequestDef genRequestDefForExecuteCrossCloudDisasterStartSimulation();
+    static HttpRequestDef genRequestDefForExecuteCrossCloudDisasterSwitchover();
+    static HttpRequestDef genRequestDefForExecuteCrossCloudReleaseDisaster();
     static HttpRequestDef genRequestDefForInstallKernelPlugin();
     static HttpRequestDef genRequestDefForListApplicableInstances();
     static HttpRequestDef genRequestDefForListAppliedHistories();
@@ -63,6 +72,7 @@ public:
     static HttpRequestDef genRequestDefForListDbBackups();
     static HttpRequestDef genRequestDefForListDbFlavors();
     static HttpRequestDef genRequestDefForListDbUsers();
+    static HttpRequestDef genRequestDefForListDisasterRecoveryRecord();
     static HttpRequestDef genRequestDefForListEpsQuotas();
     static HttpRequestDef genRequestDefForListFeatures();
     static HttpRequestDef genRequestDefForListFlavors();
@@ -93,6 +103,7 @@ public:
     static HttpRequestDef genRequestDefForListTopIoTraffics();
     static HttpRequestDef genRequestDefForModifyEpsQuota();
     static HttpRequestDef genRequestDefForResetConfiguration();
+    static HttpRequestDef genRequestDefForResetDrConfig();
     static HttpRequestDef genRequestDefForResetPwd();
     static HttpRequestDef genRequestDefForResizeInstanceFlavor();
     static HttpRequestDef genRequestDefForRestartInstance();
@@ -109,6 +120,8 @@ public:
     static HttpRequestDef genRequestDefForShowBalanceStatus();
     static HttpRequestDef genRequestDefForShowBatchUpgradeCandidateVersions();
     static HttpRequestDef genRequestDefForShowConfigurationDetail();
+    static HttpRequestDef genRequestDefForShowCrossCloudDisasterInstanceMonitor();
+    static HttpRequestDef genRequestDefForShowCrossCloudDisasterRelations();
     static HttpRequestDef genRequestDefForShowDeploymentForm();
     static HttpRequestDef genRequestDefForShowErrorLogSwitchStatus();
     static HttpRequestDef genRequestDefForShowInstanceConfiguration();

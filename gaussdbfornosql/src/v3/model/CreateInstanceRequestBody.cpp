@@ -45,7 +45,10 @@ CreateInstanceRequestBody::CreateInstanceRequestBody()
     restoreInfoIsSet_ = false;
     port_ = "";
     portIsSet_ = false;
+    ipv6Enabled_ = false;
+    ipv6EnabledIsSet_ = false;
     availabilityZoneDetailIsSet_ = false;
+    lbAccessControlSettingsIsSet_ = false;
 }
 
 CreateInstanceRequestBody::~CreateInstanceRequestBody() = default;
@@ -115,8 +118,14 @@ web::json::value CreateInstanceRequestBody::toJson() const
     if(portIsSet_) {
         val[utility::conversions::to_string_t("port")] = ModelBase::toJson(port_);
     }
+    if(ipv6EnabledIsSet_) {
+        val[utility::conversions::to_string_t("ipv6_enabled")] = ModelBase::toJson(ipv6Enabled_);
+    }
     if(availabilityZoneDetailIsSet_) {
         val[utility::conversions::to_string_t("availability_zone_detail")] = ModelBase::toJson(availabilityZoneDetail_);
+    }
+    if(lbAccessControlSettingsIsSet_) {
+        val[utility::conversions::to_string_t("lb_access_control_settings")] = ModelBase::toJson(lbAccessControlSettings_);
     }
 
     return val;
@@ -296,6 +305,15 @@ bool CreateInstanceRequestBody::fromJson(const web::json::value& val)
             setPort(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("ipv6_enabled"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ipv6_enabled"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIpv6Enabled(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("availability_zone_detail"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("availability_zone_detail"));
         if(!fieldValue.is_null())
@@ -303,6 +321,15 @@ bool CreateInstanceRequestBody::fromJson(const web::json::value& val)
             AvailabilityZoneDetail refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAvailabilityZoneDetail(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("lb_access_control_settings"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("lb_access_control_settings"));
+        if(!fieldValue.is_null())
+        {
+            LbAccessControlSettings refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLbAccessControlSettings(refVal);
         }
     }
     return ok;
@@ -708,6 +735,27 @@ void CreateInstanceRequestBody::unsetport()
     portIsSet_ = false;
 }
 
+bool CreateInstanceRequestBody::isIpv6Enabled() const
+{
+    return ipv6Enabled_;
+}
+
+void CreateInstanceRequestBody::setIpv6Enabled(bool value)
+{
+    ipv6Enabled_ = value;
+    ipv6EnabledIsSet_ = true;
+}
+
+bool CreateInstanceRequestBody::ipv6EnabledIsSet() const
+{
+    return ipv6EnabledIsSet_;
+}
+
+void CreateInstanceRequestBody::unsetipv6Enabled()
+{
+    ipv6EnabledIsSet_ = false;
+}
+
 AvailabilityZoneDetail CreateInstanceRequestBody::getAvailabilityZoneDetail() const
 {
     return availabilityZoneDetail_;
@@ -727,6 +775,27 @@ bool CreateInstanceRequestBody::availabilityZoneDetailIsSet() const
 void CreateInstanceRequestBody::unsetavailabilityZoneDetail()
 {
     availabilityZoneDetailIsSet_ = false;
+}
+
+LbAccessControlSettings CreateInstanceRequestBody::getLbAccessControlSettings() const
+{
+    return lbAccessControlSettings_;
+}
+
+void CreateInstanceRequestBody::setLbAccessControlSettings(const LbAccessControlSettings& value)
+{
+    lbAccessControlSettings_ = value;
+    lbAccessControlSettingsIsSet_ = true;
+}
+
+bool CreateInstanceRequestBody::lbAccessControlSettingsIsSet() const
+{
+    return lbAccessControlSettingsIsSet_;
+}
+
+void CreateInstanceRequestBody::unsetlbAccessControlSettings()
+{
+    lbAccessControlSettingsIsSet_ = false;
 }
 
 }

@@ -57,15 +57,6 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 实例类型。   - 取值为“Cluster”，表示GeminiDB Cassandra、GeminiDB Influx、GeminiDB Redis集群实例类型。   - 取值为“Sharding”，表示GeminiDB Mongo集群实例类型。   - 取值为“ReplicaSet”，表示GeminiDB Mongo副本集实例类型。   - 取值为“InfluxdbCluster”，表示GeminiDB Influx集群实例类型。   - 取值为“InfluxdbSingle”，表示GeminiDB Influx单节点实例类型。   - 取值为“RedisReplica”，表示GeminiDB Redis性能版实例类型。   - 取值为“Replication”，表示GeminiDB Redis主备版实例类型。
-    /// </summary>
-
-    std::string getMode() const;
-    bool modeIsSet() const;
-    void unsetmode();
-    void setMode(const std::string& value);
-
-    /// <summary>
     /// 数据库类型。   - 取值为“cassandra”，表示查询GeminiDB Cassandra数据库实例。   - 取值为“mongodb”，表示查询GeminiDB Mongo数据库实例。   - 取值为“influxdb”，表示查询GeminiDB Influx数据库实例。   - 取值为“redis”，表示查询GeminiDB Redis数据库实例。   - 如果不传该参数，表示查询所有数据库实例。
     /// </summary>
 
@@ -73,6 +64,15 @@ public:
     bool datastoreTypeIsSet() const;
     void unsetdatastoreType();
     void setDatastoreType(const std::string& value);
+
+    /// <summary>
+    /// 实例类型。   -  取值为“Cluster”，表示GeminiDB Cassandra、GeminiDB Influx、GeminiDB Redis Proxy经典部署模式集群实例类型。    -  取值为“CloudNativeCluster”，表示GeminiDB Cassandra、GeminiDB Influx、GeminiDB Redis云原生部署模式集群实例类型。   -  取值为“RedisCluster”，表示GeminiDB Redis Cluster经典部署模式集群实例类型。   -  取值为“Replication”，表示GeminiDB Redis经典部署模式主备实例类型。    -  取值为“InfluxdbSingle”，表示GeminiDB Influx经典部署模式单节点实例类型。   -  取值为“ReplicaSet”，表示GeminiDB Mongo副本集实例类型。   -  如果不传datastore_type参数，自动忽略该参数设置。   -  默认取值：不涉及。
+    /// </summary>
+
+    std::string getMode() const;
+    bool modeIsSet() const;
+    void unsetmode();
+    void setMode(const std::string& value);
 
     /// <summary>
     /// 虚拟私有云ID，获取方法如下：   - 方法1：登录虚拟私有云服务的控制台界面，在虚拟私有云的详情页面查找VPC ID。   - 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考查询VPC列表。
@@ -116,10 +116,10 @@ protected:
     bool idIsSet_;
     std::string name_;
     bool nameIsSet_;
-    std::string mode_;
-    bool modeIsSet_;
     std::string datastoreType_;
     bool datastoreTypeIsSet_;
+    std::string mode_;
+    bool modeIsSet_;
     std::string vpcId_;
     bool vpcIdIsSet_;
     std::string subnetId_;

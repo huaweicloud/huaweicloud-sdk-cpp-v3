@@ -22,6 +22,8 @@ ShowConfigurationDetailResponse::ShowConfigurationDetailResponse()
     datastoreVersionNameIsSet_ = false;
     datastoreName_ = "";
     datastoreNameIsSet_ = false;
+    mode_ = "";
+    modeIsSet_ = false;
     created_ = "";
     createdIsSet_ = false;
     updated_ = "";
@@ -53,6 +55,9 @@ web::json::value ShowConfigurationDetailResponse::toJson() const
     }
     if(datastoreNameIsSet_) {
         val[utility::conversions::to_string_t("datastore_name")] = ModelBase::toJson(datastoreName_);
+    }
+    if(modeIsSet_) {
+        val[utility::conversions::to_string_t("mode")] = ModelBase::toJson(mode_);
     }
     if(createdIsSet_) {
         val[utility::conversions::to_string_t("created")] = ModelBase::toJson(created_);
@@ -113,6 +118,15 @@ bool ShowConfigurationDetailResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDatastoreName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("mode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("mode"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMode(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("created"))) {
@@ -249,6 +263,27 @@ bool ShowConfigurationDetailResponse::datastoreNameIsSet() const
 void ShowConfigurationDetailResponse::unsetdatastoreName()
 {
     datastoreNameIsSet_ = false;
+}
+
+std::string ShowConfigurationDetailResponse::getMode() const
+{
+    return mode_;
+}
+
+void ShowConfigurationDetailResponse::setMode(const std::string& value)
+{
+    mode_ = value;
+    modeIsSet_ = true;
+}
+
+bool ShowConfigurationDetailResponse::modeIsSet() const
+{
+    return modeIsSet_;
+}
+
+void ShowConfigurationDetailResponse::unsetmode()
+{
+    modeIsSet_ = false;
 }
 
 std::string ShowConfigurationDetailResponse::getCreated() const

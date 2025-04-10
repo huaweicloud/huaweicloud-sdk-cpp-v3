@@ -1,3 +1,79 @@
+# 3.1.131 2025-04-10
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ResetParamGroupTemplate**
+    - 请求参数变更
+      - `- x-auth-token`
+  - **OfflineNodes**
+    - 请求参数变更
+      - `- x-auth-token`
+  - **ShowRedisBigKeys**
+    - 请求参数变更
+      - `- x-auth-token`
+  - **ListConfigurations**
+    - 请求参数变更
+      - `+ datastore_name`
+      - `+ mode`
+  - **CreateConfiguration**
+    - 响应参数变更
+      - `+ configuration.mode`
+  - **ListConfigurationTemplates**
+    - 请求参数变更
+      - `+ datastore_name`
+      - `+ mode`
+  - **ShowConfigurationDetail**
+    - 响应参数变更
+      - `+ mode`
+  - **ListNosqlTaskList**
+    - 响应参数变更
+      - `* total_count: int32 -> string`
+      - `- schedules.job_id`
+      - `- schedules.job_name`
+      - `- schedules.job_status`
+      - `- schedules.instance_id`
+      - `- schedules.instance_name`
+      - `- schedules.instance_status`
+      - `- schedules.datastore_type`
+      - `- schedules.create_time`
+      - `- schedules.start_time`
+      - `- schedules.end_time`
+  - **CreateInstance**
+    - 请求参数变更
+      - `+ ipv6_enabled`
+      - `+ lb_access_control_settings`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持以下接口：
+    - `ListDisasterRecoveryRecord`
+    - `ResetDrConfig`
+    - `ShowCrossCloudDisasterInstanceMonitor`
+    - `CreateCrossCloudConstructDisaster`
+    - `ShowCrossCloudDisasterRelations`
+    - `ExecuteCrossCloudDisasterRecoveryFailover`
+    - `ExecuteCrossCloudReleaseDisaster`
+    - `ExecuteCrossCloudDisasterSwitchover`
+    - `ExecuteCrossCloudDisasterRestore`
+    - `ExecuteCrossCloudDisasterStartSimulation`
+    - `ExecuteCrossCloudDisasterEndSimulation`
+    - `ExecuteCrossCloudDisasterDataCacheStart`
+    - `ExecuteCrossCloudDisasterDataCacheEnd`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.1.130 2025-04-03
 
 ### HuaweiCloud SDK GaussDB

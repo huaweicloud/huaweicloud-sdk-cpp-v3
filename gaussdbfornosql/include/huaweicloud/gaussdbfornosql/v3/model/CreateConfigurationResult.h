@@ -84,6 +84,15 @@ public:
     void setDatastoreName(const std::string& value);
 
     /// <summary>
+    /// 【参数解释】 数据库实例类型。 【取值范围】 - GeminiDB Mongo 副本集实例取值为\&quot;ReplicaSet\&quot;。 - GeminiDB Influx 单节点实例取值为\&quot;InfluxdbSingle\&quot;。 - GeminiDB Cassandra云原生部署模式实例取值为\&quot;CloudNativeCluster\&quot;。
+    /// </summary>
+
+    std::string getMode() const;
+    bool modeIsSet() const;
+    void unsetmode();
+    void setMode(const std::string& value);
+
+    /// <summary>
     /// 创建时间，格式为\&quot;yyyy-MM-ddTHH:mm:ssZ\&quot;。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
     /// </summary>
 
@@ -113,6 +122,8 @@ protected:
     bool datastoreVersionNameIsSet_;
     std::string datastoreName_;
     bool datastoreNameIsSet_;
+    std::string mode_;
+    bool modeIsSet_;
     std::string created_;
     bool createdIsSet_;
     std::string updated_;

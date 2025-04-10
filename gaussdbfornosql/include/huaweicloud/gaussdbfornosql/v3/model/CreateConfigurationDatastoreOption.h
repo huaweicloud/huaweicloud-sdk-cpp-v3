@@ -39,7 +39,7 @@ public:
     /// CreateConfigurationDatastoreOption members
 
     /// <summary>
-    /// 数据库类型。 - GeminiDB Cassandra实例取值为“cassandra”。 - GeminiDB Mongo实例取值为\&quot;mongodb\&quot;。 - GeminiDB Influx实例取值为\&quot;influxdb\&quot;。 - GeminiDB Redis实例取值为\&quot;redis\&quot;。
+    /// 数据库类型。 - GeminiDB Cassandra实例取值为“cassandra”。 - GeminiDB Mongo实例取值为\&quot;mongodb\&quot;。 - GeminiDB Influx实例取值为\&quot;influxdb\&quot;。 - GeminiDB Redis实例取值为\&quot;redis\&quot;。 - GeminiDB DynamoDB实例取值为\&quot;dynamodb\&quot;。 - GeminiDB HBase实例取值为\&quot;hbase\&quot;。
     /// </summary>
 
     std::string getType() const;
@@ -48,7 +48,7 @@ public:
     void setType(const std::string& value);
 
     /// <summary>
-    /// 数据库版本。 - GeminiDB Cassandra实例支持3.11版本，取值为“3.11”。 - GeminiDB Mongo实例支持4.0版本，取值为\&quot;4.0\&quot;。 - GeminiDB Influx实例支持1.7版本，取值\&quot;1.7\&quot;。 - GeminiDB Redis实例支持5.0版本，取值\&quot;5.0\&quot;。
+    /// 数据库版本。 - GeminiDB Cassandra实例支持3.11版本，取值为“3.11”。 - GeminiDB Mongo实例支持4.0版本，取值为\&quot;4.0\&quot;。 - GeminiDB Influx实例支持1.8版本，取值\&quot;1.8\&quot;。 - GeminiDB Redis实例支持5.0版本，取值\&quot;5.0\&quot;。
     /// </summary>
 
     std::string getVersion() const;
@@ -57,7 +57,7 @@ public:
     void setVersion(const std::string& value);
 
     /// <summary>
-    /// 数据库部署模式，GeminiDB Mongo该参数必选。 - GeminiDB Mongo 副本集实例取值为\&quot;ReplicaSet\&quot;。
+    /// 数据库实例类型当创建支持GeminiDB Mongo、GeminiDB Cassandra云原生部署模式实例的参数模板， 该参数必选。 取值范围: *  GeminiDB Mongo 副本集实例取值为\&quot;ReplicaSet\&quot;。 *  GeminiDB Influx 单节点实例取值为\&quot;InfluxdbSingle\&quot;。 *  GeminiDB Cassandra云原生部署模式实例取值为\&quot;CloudNativeCluster\&quot;。 不传该参数，对GeminiDB Cassandra实例默认创建支持经典部署模式集群实例的参数模板。
     /// </summary>
 
     std::string getMode() const;

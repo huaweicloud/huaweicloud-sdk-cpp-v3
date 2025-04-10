@@ -39,7 +39,7 @@ public:
     /// UpdateDatabasesRequestBody members
 
     /// <summary>
-    /// 对实例的操作: - flush:清理数据
+    /// 对实例的操作:  flush:清理数据
     /// </summary>
 
     std::string getAction() const;

@@ -25,11 +25,14 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/CancelScheduleTaskResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ConfirmRestoredDataRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ConfirmRestoredDataResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ConstructReq.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/CopyConfigurationRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/CopyConfigurationResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/CreateConfigurationTemplateRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/CreateConfigurationTemplateRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/CreateConfigurationTemplateResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/CreateCrossCloudConstructDisasterRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/CreateCrossCloudConstructDisasterResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/CreateDatabaseInstanceRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/CreateDatabaseInstanceRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/CreateDatabaseInstanceResponse.h>
@@ -78,9 +81,30 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/DeleteManualBackupResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/DeleteScheduleTaskRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/DeleteScheduleTaskResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/DisasterFailoverReqBody.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/DisasterRecoverStartSimulationRequestBody.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/DisasterRecoverStartXlogKeepRequestBody.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/DisasterRecoverStopSimulationRequestBody.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/DisasterRecoverStopXlogKeepRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/DownloadBackupErrorResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/DownloadBackupRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/DownloadBackupResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ExecuteCrossCloudDisasterDataCacheEndRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ExecuteCrossCloudDisasterDataCacheEndResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ExecuteCrossCloudDisasterDataCacheStartRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ExecuteCrossCloudDisasterDataCacheStartResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ExecuteCrossCloudDisasterEndSimulationRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ExecuteCrossCloudDisasterEndSimulationResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ExecuteCrossCloudDisasterRecoveryFailoverRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ExecuteCrossCloudDisasterRecoveryFailoverResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ExecuteCrossCloudDisasterRestoreRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ExecuteCrossCloudDisasterRestoreResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ExecuteCrossCloudDisasterStartSimulationRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ExecuteCrossCloudDisasterStartSimulationResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ExecuteCrossCloudDisasterSwitchoverRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ExecuteCrossCloudDisasterSwitchoverResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ExecuteCrossCloudReleaseDisasterRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ExecuteCrossCloudReleaseDisasterResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/FlavorErrorResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/GaussDBErrorResponseBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/GaussDBUpgradeInstancesVersionRequest.h>
@@ -129,6 +153,8 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListDbFlavorsResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListDbUsersRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListDbUsersResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListDisasterRecoveryRecordRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ListDisasterRecoveryRecordResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListEpsQuotasRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListEpsQuotasResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListFeaturesRequest.h>
@@ -204,8 +230,12 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/PluginExtensions.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/PwdResetRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/RecyclePolicyRequestBody.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ReleaseDisasterReq.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ResetConfigurationRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ResetConfigurationResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ResetDrConfigRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ResetDrConfigRequestBody.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ResetDrConfigResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ResetPwdRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ResetPwdResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ResizeInstanceFlavorRequest.h>
@@ -213,6 +243,7 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/ResourceErrorResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/RestartInstanceRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/RestartInstanceResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/RestoreDisasterReq.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/RestoreInstanceRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/RestoreInstanceRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/RestoreInstanceResponse.h>
@@ -244,6 +275,10 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowBatchUpgradeCandidateVersionsResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowConfigurationDetailRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowConfigurationDetailResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ShowCrossCloudDisasterInstanceMonitorRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ShowCrossCloudDisasterInstanceMonitorResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ShowCrossCloudDisasterRelationsRequest.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/ShowCrossCloudDisasterRelationsResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowDeploymentFormRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowDeploymentFormResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ShowErrorLogSwitchStatusRequest.h>
@@ -292,6 +327,7 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/SwitchShardRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/SwitchShardRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/SwitchShardResponse.h>
+#include <huaweicloud/gaussdbforopengauss/v3/model/SwitchoverReq.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/UpdateFeaturesRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/UpdateFeaturesRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/UpdateFeaturesResponse.h>
@@ -430,6 +466,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateConfigurationTemplateResponse> createConfigurationTemplate(
         CreateConfigurationTemplateRequest &request
+    );
+    // 搭建容灾关系
+    //
+    // 搭建容灾关系（从主实例端下发）。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateCrossCloudConstructDisasterResponse> createCrossCloudConstructDisaster(
+        CreateCrossCloudConstructDisasterRequest &request
     );
     // 创建数据库
     //
@@ -599,6 +643,70 @@ public:
     std::shared_ptr<DownloadBackupResponse> downloadBackup(
         DownloadBackupRequest &request
     );
+    // 主实例结束容灾日志保持
+    //
+    // 结束stream流式容灾的日志保持功能，目前只有stream流容灾支持。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ExecuteCrossCloudDisasterDataCacheEndResponse> executeCrossCloudDisasterDataCacheEnd(
+        ExecuteCrossCloudDisasterDataCacheEndRequest &request
+    );
+    // 开始日志保持
+    //
+    // 主实例开始容灾日志保持，目前只有stream流容灾支持。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ExecuteCrossCloudDisasterDataCacheStartResponse> executeCrossCloudDisasterDataCacheStart(
+        ExecuteCrossCloudDisasterDataCacheStartRequest &request
+    );
+    // 结束容灾演练
+    //
+    // 灾备实例结束容灾演练，目前只有stream流容灾支持。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ExecuteCrossCloudDisasterEndSimulationResponse> executeCrossCloudDisasterEndSimulation(
+        ExecuteCrossCloudDisasterEndSimulationRequest &request
+    );
+    // 备实例容灾升主
+    //
+    // 容灾升主failover（灾备实例端下发）。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ExecuteCrossCloudDisasterRecoveryFailoverResponse> executeCrossCloudDisasterRecoveryFailover(
+        ExecuteCrossCloudDisasterRecoveryFailoverRequest &request
+    );
+    // 重建容灾关系
+    //
+    // 流容灾备升主选择支持容灾回切，实现容灾关系的重建任务。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ExecuteCrossCloudDisasterRestoreResponse> executeCrossCloudDisasterRestore(
+        ExecuteCrossCloudDisasterRestoreRequest &request
+    );
+    // 开始容灾演练
+    //
+    // 开始容灾演练，目前只有stream流容灾支持。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ExecuteCrossCloudDisasterStartSimulationResponse> executeCrossCloudDisasterStartSimulation(
+        ExecuteCrossCloudDisasterStartSimulationRequest &request
+    );
+    // 灾备实例主从切换
+    //
+    // 容灾switchover（可在主备任一一端下发）。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ExecuteCrossCloudDisasterSwitchoverResponse> executeCrossCloudDisasterSwitchover(
+        ExecuteCrossCloudDisasterSwitchoverRequest &request
+    );
+    // 解除容灾关系
+    //
+    // 解除容灾（从容灾主集群下发）。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ExecuteCrossCloudReleaseDisasterResponse> executeCrossCloudReleaseDisaster(
+        ExecuteCrossCloudReleaseDisasterRequest &request
+    );
     // 安装插件
     //
     // 安装插件
@@ -758,6 +866,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListDbUsersResponse> listDbUsers(
         ListDbUsersRequest &request
+    );
+    // 查询操作记录
+    //
+    // 查询容灾操作记录。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListDisasterRecoveryRecordResponse> listDisasterRecoveryRecord(
+        ListDisasterRecoveryRecordRequest &request
     );
     // 查询企业项目配额组
     //
@@ -1000,6 +1116,14 @@ public:
     std::shared_ptr<ResetConfigurationResponse> resetConfiguration(
         ResetConfigurationRequest &request
     );
+    // 重置容灾配置
+    //
+    // 重置容灾网络等配置。1.将自动“创建委托”以授权DBS云服务访问VPC资源信息、查询IAAS接口。2.重置实例容灾网络等配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ResetDrConfigResponse> resetDrConfig(
+        ResetDrConfigRequest &request
+    );
     // 重置数据库密码。
     //
     // 重置数据库密码。
@@ -1127,6 +1251,22 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowConfigurationDetailResponse> showConfigurationDetail(
         ShowConfigurationDetailRequest &request
+    );
+    // 查询实例容灾监控实时状态
+    //
+    // 查询实例容灾监控实时状态。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowCrossCloudDisasterInstanceMonitorResponse> showCrossCloudDisasterInstanceMonitor(
+        ShowCrossCloudDisasterInstanceMonitorRequest &request
+    );
+    // 查询容灾关系列表
+    //
+    // 查询容灾关系列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowCrossCloudDisasterRelationsResponse> showCrossCloudDisasterRelations(
+        ShowCrossCloudDisasterRelationsRequest &request
     );
     // 查询解决方案模板配置
     //

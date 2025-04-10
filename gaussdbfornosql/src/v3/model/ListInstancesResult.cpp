@@ -20,13 +20,13 @@ ListInstancesResult::ListInstancesResult()
     statusIsSet_ = false;
     port_ = "";
     portIsSet_ = false;
+    region_ = "";
+    regionIsSet_ = false;
+    datastoreIsSet_ = false;
     mode_ = "";
     modeIsSet_ = false;
     productType_ = "";
     productTypeIsSet_ = false;
-    region_ = "";
-    regionIsSet_ = false;
-    datastoreIsSet_ = false;
     engine_ = "";
     engineIsSet_ = false;
     created_ = "";
@@ -84,17 +84,17 @@ web::json::value ListInstancesResult::toJson() const
     if(portIsSet_) {
         val[utility::conversions::to_string_t("port")] = ModelBase::toJson(port_);
     }
-    if(modeIsSet_) {
-        val[utility::conversions::to_string_t("mode")] = ModelBase::toJson(mode_);
-    }
-    if(productTypeIsSet_) {
-        val[utility::conversions::to_string_t("product_type")] = ModelBase::toJson(productType_);
-    }
     if(regionIsSet_) {
         val[utility::conversions::to_string_t("region")] = ModelBase::toJson(region_);
     }
     if(datastoreIsSet_) {
         val[utility::conversions::to_string_t("datastore")] = ModelBase::toJson(datastore_);
+    }
+    if(modeIsSet_) {
+        val[utility::conversions::to_string_t("mode")] = ModelBase::toJson(mode_);
+    }
+    if(productTypeIsSet_) {
+        val[utility::conversions::to_string_t("product_type")] = ModelBase::toJson(productType_);
     }
     if(engineIsSet_) {
         val[utility::conversions::to_string_t("engine")] = ModelBase::toJson(engine_);
@@ -193,24 +193,6 @@ bool ListInstancesResult::fromJson(const web::json::value& val)
             setPort(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("mode"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("mode"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setMode(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("product_type"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("product_type"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setProductType(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("region"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("region"));
         if(!fieldValue.is_null())
@@ -227,6 +209,24 @@ bool ListInstancesResult::fromJson(const web::json::value& val)
             ListInstancesDatastoreResult refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDatastore(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("mode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("mode"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("product_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("product_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProductType(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("engine"))) {
@@ -479,48 +479,6 @@ void ListInstancesResult::unsetport()
     portIsSet_ = false;
 }
 
-std::string ListInstancesResult::getMode() const
-{
-    return mode_;
-}
-
-void ListInstancesResult::setMode(const std::string& value)
-{
-    mode_ = value;
-    modeIsSet_ = true;
-}
-
-bool ListInstancesResult::modeIsSet() const
-{
-    return modeIsSet_;
-}
-
-void ListInstancesResult::unsetmode()
-{
-    modeIsSet_ = false;
-}
-
-std::string ListInstancesResult::getProductType() const
-{
-    return productType_;
-}
-
-void ListInstancesResult::setProductType(const std::string& value)
-{
-    productType_ = value;
-    productTypeIsSet_ = true;
-}
-
-bool ListInstancesResult::productTypeIsSet() const
-{
-    return productTypeIsSet_;
-}
-
-void ListInstancesResult::unsetproductType()
-{
-    productTypeIsSet_ = false;
-}
-
 std::string ListInstancesResult::getRegion() const
 {
     return region_;
@@ -561,6 +519,48 @@ bool ListInstancesResult::datastoreIsSet() const
 void ListInstancesResult::unsetdatastore()
 {
     datastoreIsSet_ = false;
+}
+
+std::string ListInstancesResult::getMode() const
+{
+    return mode_;
+}
+
+void ListInstancesResult::setMode(const std::string& value)
+{
+    mode_ = value;
+    modeIsSet_ = true;
+}
+
+bool ListInstancesResult::modeIsSet() const
+{
+    return modeIsSet_;
+}
+
+void ListInstancesResult::unsetmode()
+{
+    modeIsSet_ = false;
+}
+
+std::string ListInstancesResult::getProductType() const
+{
+    return productType_;
+}
+
+void ListInstancesResult::setProductType(const std::string& value)
+{
+    productType_ = value;
+    productTypeIsSet_ = true;
+}
+
+bool ListInstancesResult::productTypeIsSet() const
+{
+    return productTypeIsSet_;
+}
+
+void ListInstancesResult::unsetproductType()
+{
+    productTypeIsSet_ = false;
 }
 
 std::string ListInstancesResult::getEngine() const

@@ -1389,6 +1389,12 @@ std::shared_ptr<ListConfigurationTemplatesResponse> GaussDBforNoSQLClient::listC
     if (request.limitIsSet()) {
         localVarQueryParams["limit"] = parameterToString(request.getLimit());
     }
+    if (request.datastoreNameIsSet()) {
+        localVarQueryParams["datastore_name"] = parameterToString(request.getDatastoreName());
+    }
+    if (request.modeIsSet()) {
+        localVarQueryParams["mode"] = parameterToString(request.getMode());
+    }
 
     std::string localVarHttpBody;
 
@@ -1418,6 +1424,12 @@ std::shared_ptr<ListConfigurationsResponse> GaussDBforNoSQLClient::listConfigura
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.datastoreNameIsSet()) {
+        localVarQueryParams["datastore_name"] = parameterToString(request.getDatastoreName());
+    }
+    if (request.modeIsSet()) {
+        localVarQueryParams["mode"] = parameterToString(request.getMode());
+    }
 
     std::string localVarHttpBody;
 
@@ -1948,11 +1960,11 @@ std::shared_ptr<ListInstancesResponse> GaussDBforNoSQLClient::listInstances(List
     if (request.nameIsSet()) {
         localVarQueryParams["name"] = parameterToString(request.getName());
     }
-    if (request.modeIsSet()) {
-        localVarQueryParams["mode"] = parameterToString(request.getMode());
-    }
     if (request.datastoreTypeIsSet()) {
         localVarQueryParams["datastore_type"] = parameterToString(request.getDatastoreType());
+    }
+    if (request.modeIsSet()) {
+        localVarQueryParams["mode"] = parameterToString(request.getMode());
     }
     if (request.vpcIdIsSet()) {
         localVarQueryParams["vpc_id"] = parameterToString(request.getVpcId());

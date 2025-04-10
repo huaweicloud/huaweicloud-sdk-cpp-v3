@@ -1,3 +1,79 @@
+# 3.1.131 2025-04-10
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ResetParamGroupTemplate**
+    - changes of request param
+      - `- x-auth-token`
+  - **OfflineNodes**
+    - changes of request param
+      - `- x-auth-token`
+  - **ShowRedisBigKeys**
+    - changes of request param
+      - `- x-auth-token`
+  - **ListConfigurations**
+    - changes of request param
+      - `+ datastore_name`
+      - `+ mode`
+  - **CreateConfiguration**
+    - changes of response param
+      - `+ configuration.mode`
+  - **ListConfigurationTemplates**
+    - changes of request param
+      - `+ datastore_name`
+      - `+ mode`
+  - **ShowConfigurationDetail**
+    - changes of response param
+      - `+ mode`
+  - **ListNosqlTaskList**
+    - changes of response param
+      - `* total_count: int32 -> string`
+      - `- schedules.job_id`
+      - `- schedules.job_name`
+      - `- schedules.job_status`
+      - `- schedules.instance_id`
+      - `- schedules.instance_name`
+      - `- schedules.instance_status`
+      - `- schedules.datastore_type`
+      - `- schedules.create_time`
+      - `- schedules.start_time`
+      - `- schedules.end_time`
+  - **CreateInstance**
+    - changes of request param
+      - `+ ipv6_enabled`
+      - `+ lb_access_control_settings`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the following APIs:
+    - `ListDisasterRecoveryRecord`
+    - `ResetDrConfig`
+    - `ShowCrossCloudDisasterInstanceMonitor`
+    - `CreateCrossCloudConstructDisaster`
+    - `ShowCrossCloudDisasterRelations`
+    - `ExecuteCrossCloudDisasterRecoveryFailover`
+    - `ExecuteCrossCloudReleaseDisaster`
+    - `ExecuteCrossCloudDisasterSwitchover`
+    - `ExecuteCrossCloudDisasterRestore`
+    - `ExecuteCrossCloudDisasterStartSimulation`
+    - `ExecuteCrossCloudDisasterEndSimulation`
+    - `ExecuteCrossCloudDisasterDataCacheStart`
+    - `ExecuteCrossCloudDisasterDataCacheEnd`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.130 2025-04-03
 
 ### HuaweiCloud SDK GaussDB

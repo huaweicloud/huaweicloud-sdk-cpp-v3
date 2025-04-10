@@ -79,24 +79,6 @@ public:
     void setPort(const std::string& value);
 
     /// <summary>
-    /// 实例类型。 -  取值为“Cluster”，表示GeminiDB Cassandra、GeminiDB Influx、GeminiDB Redis Proxy经典部署模式集群实例类型。  -  取值为“CloudNativeCluster”，表示GeminiDB Cassandra、GeminiDB Influx、GeminiDB Redis云原生部署模式集群实例类型。 -  取值为“RedisCluster”，表示GeminiDB Redis Cluster经典部署模式集群实例类型。 -  取值为“Replication”，表示GeminiDB Redis经典部署模式主备实例类型。  -  取值为“InfluxdbSingle”，表示GeminiDB Influx经典部署模式单节点实例类型。 -  取值为“ReplicaSet”，表示GeminiDB Mongo副本集实例类型。 -  如果不传datastore_type参数，自动忽略该参数设置。 -  默认取值：不涉及。
-    /// </summary>
-
-    std::string getMode() const;
-    bool modeIsSet() const;
-    void unsetmode();
-    void setMode(const std::string& value);
-
-    /// <summary>
-    /// 产品类型。 GeminiDB Redis云原生部署模式集群涉及此字段，取值：   -  Standard 标准型   -  Capacity 容量型
-    /// </summary>
-
-    std::string getProductType() const;
-    bool productTypeIsSet() const;
-    void unsetproductType();
-    void setProductType(const std::string& value);
-
-    /// <summary>
     /// 实例所在区域。
     /// </summary>
 
@@ -113,6 +95,24 @@ public:
     bool datastoreIsSet() const;
     void unsetdatastore();
     void setDatastore(const ListInstancesDatastoreResult& value);
+
+    /// <summary>
+    /// 实例类型。与请求参数相同。
+    /// </summary>
+
+    std::string getMode() const;
+    bool modeIsSet() const;
+    void unsetmode();
+    void setMode(const std::string& value);
+
+    /// <summary>
+    /// 产品类型。 GeminiDB Redis云原生部署模式集群涉及此字段，取值：   -  Standard 标准型   -  Capacity 容量型
+    /// </summary>
+
+    std::string getProductType() const;
+    bool productTypeIsSet() const;
+    void unsetproductType();
+    void setProductType(const std::string& value);
 
     /// <summary>
     /// 存储引擎。取值为“rocksDB”。
@@ -286,14 +286,14 @@ protected:
     bool statusIsSet_;
     std::string port_;
     bool portIsSet_;
-    std::string mode_;
-    bool modeIsSet_;
-    std::string productType_;
-    bool productTypeIsSet_;
     std::string region_;
     bool regionIsSet_;
     ListInstancesDatastoreResult datastore_;
     bool datastoreIsSet_;
+    std::string mode_;
+    bool modeIsSet_;
+    std::string productType_;
+    bool productTypeIsSet_;
     std::string engine_;
     bool engineIsSet_;
     std::string created_;

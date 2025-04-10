@@ -16,10 +16,10 @@ ListInstancesRequest::ListInstancesRequest()
     idIsSet_ = false;
     name_ = "";
     nameIsSet_ = false;
-    mode_ = "";
-    modeIsSet_ = false;
     datastoreType_ = "";
     datastoreTypeIsSet_ = false;
+    mode_ = "";
+    modeIsSet_ = false;
     vpcId_ = "";
     vpcIdIsSet_ = false;
     subnetId_ = "";
@@ -46,11 +46,11 @@ web::json::value ListInstancesRequest::toJson() const
     if(nameIsSet_) {
         val[utility::conversions::to_string_t("name")] = ModelBase::toJson(name_);
     }
-    if(modeIsSet_) {
-        val[utility::conversions::to_string_t("mode")] = ModelBase::toJson(mode_);
-    }
     if(datastoreTypeIsSet_) {
         val[utility::conversions::to_string_t("datastore_type")] = ModelBase::toJson(datastoreType_);
+    }
+    if(modeIsSet_) {
+        val[utility::conversions::to_string_t("mode")] = ModelBase::toJson(mode_);
     }
     if(vpcIdIsSet_) {
         val[utility::conversions::to_string_t("vpc_id")] = ModelBase::toJson(vpcId_);
@@ -89,15 +89,6 @@ bool ListInstancesRequest::fromJson(const web::json::value& val)
             setName(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("mode"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("mode"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setMode(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("datastore_type"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("datastore_type"));
         if(!fieldValue.is_null())
@@ -105,6 +96,15 @@ bool ListInstancesRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDatastoreType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("mode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("mode"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMode(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("vpc_id"))) {
@@ -189,27 +189,6 @@ void ListInstancesRequest::unsetname()
     nameIsSet_ = false;
 }
 
-std::string ListInstancesRequest::getMode() const
-{
-    return mode_;
-}
-
-void ListInstancesRequest::setMode(const std::string& value)
-{
-    mode_ = value;
-    modeIsSet_ = true;
-}
-
-bool ListInstancesRequest::modeIsSet() const
-{
-    return modeIsSet_;
-}
-
-void ListInstancesRequest::unsetmode()
-{
-    modeIsSet_ = false;
-}
-
 std::string ListInstancesRequest::getDatastoreType() const
 {
     return datastoreType_;
@@ -229,6 +208,27 @@ bool ListInstancesRequest::datastoreTypeIsSet() const
 void ListInstancesRequest::unsetdatastoreType()
 {
     datastoreTypeIsSet_ = false;
+}
+
+std::string ListInstancesRequest::getMode() const
+{
+    return mode_;
+}
+
+void ListInstancesRequest::setMode(const std::string& value)
+{
+    mode_ = value;
+    modeIsSet_ = true;
+}
+
+bool ListInstancesRequest::modeIsSet() const
+{
+    return modeIsSet_;
+}
+
+void ListInstancesRequest::unsetmode()
+{
+    modeIsSet_ = false;
 }
 
 std::string ListInstancesRequest::getVpcId() const

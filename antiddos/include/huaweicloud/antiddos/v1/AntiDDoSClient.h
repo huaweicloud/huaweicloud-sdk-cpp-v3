@@ -11,33 +11,35 @@
 #include <huaweicloud/antiddos/v1/model/DdosConfig.h>
 #include <huaweicloud/antiddos/v1/model/DeleteDefaultConfigRequest.h>
 #include <huaweicloud/antiddos/v1/model/DeleteDefaultConfigResponse.h>
-#include <huaweicloud/antiddos/v1/model/ShowAlertConfigRequest.h>
-#include <huaweicloud/antiddos/v1/model/ShowAlertConfigResponse.h>
 #include <huaweicloud/antiddos/v1/model/ShowDefaultConfigRequest.h>
 #include <huaweicloud/antiddos/v1/model/ShowDefaultConfigResponse.h>
-#include <huaweicloud/antiddos/v1/model/UpdateAlertConfigRequest.h>
-#include <huaweicloud/antiddos/v1/model/UpdateAlertConfigRequestBody.h>
-#include <huaweicloud/antiddos/v1/model/UpdateAlertConfigResponse.h>
 
+#include <huaweicloud/antiddos/v1/model/EnableDefensePolicyRequest.h>
+#include <huaweicloud/antiddos/v1/model/EnableDefensePolicyResponse.h>
 #include <huaweicloud/antiddos/v1/model/ListDDosStatusRequest.h>
 #include <huaweicloud/antiddos/v1/model/ListDDosStatusResponse.h>
 #include <huaweicloud/antiddos/v1/model/ListDailyLogRequest.h>
 #include <huaweicloud/antiddos/v1/model/ListDailyLogResponse.h>
 #include <huaweicloud/antiddos/v1/model/ListDailyReportRequest.h>
 #include <huaweicloud/antiddos/v1/model/ListDailyReportResponse.h>
-#include <huaweicloud/antiddos/v1/model/ListNewConfigsRequest.h>
-#include <huaweicloud/antiddos/v1/model/ListNewConfigsResponse.h>
+#include <huaweicloud/antiddos/v1/model/ListQuotaRequest.h>
+#include <huaweicloud/antiddos/v1/model/ListQuotaResponse.h>
 #include <huaweicloud/antiddos/v1/model/ListWeeklyReportsRequest.h>
 #include <huaweicloud/antiddos/v1/model/ListWeeklyReportsResponse.h>
+#include <huaweicloud/antiddos/v1/model/LtsConfigRequestAndResponse.h>
+#include <huaweicloud/core/utils/Object.h>
+#include <huaweicloud/antiddos/v1/model/OpenAntiDDosServiceRequestBody.h>
 #include <huaweicloud/antiddos/v1/model/ShowDDosRequest.h>
 #include <huaweicloud/antiddos/v1/model/ShowDDosResponse.h>
 #include <huaweicloud/antiddos/v1/model/ShowDDosStatusRequest.h>
 #include <huaweicloud/antiddos/v1/model/ShowDDosStatusResponse.h>
-#include <huaweicloud/antiddos/v1/model/ShowNewTaskStatusRequest.h>
-#include <huaweicloud/antiddos/v1/model/ShowNewTaskStatusResponse.h>
+#include <huaweicloud/antiddos/v1/model/ShowLogConfigRequest.h>
+#include <huaweicloud/antiddos/v1/model/ShowLogConfigResponse.h>
 #include <huaweicloud/antiddos/v1/model/UpdateAntiDDosServiceRequestBody.h>
 #include <huaweicloud/antiddos/v1/model/UpdateDDosRequest.h>
 #include <huaweicloud/antiddos/v1/model/UpdateDDosResponse.h>
+#include <huaweicloud/antiddos/v1/model/UpdateLogConfigRequest.h>
+#include <huaweicloud/antiddos/v1/model/UpdateLogConfigResponse.h>
 #include <string>
 
 #include <cpprest/details/basic_types.h>
@@ -80,14 +82,6 @@ public:
     std::shared_ptr<DeleteDefaultConfigResponse> deleteDefaultConfig(
         DeleteDefaultConfigRequest &request
     );
-    // 查询告警配置信息
-    //
-    // 查询用户配置信息，用户可以通过此接口查询是否接收某类告警，同时可以配置是手机短信还是电子邮件接收告警信息。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ShowAlertConfigResponse> showAlertConfig(
-        ShowAlertConfigRequest &request
-    );
     // 查询Ani-DDoS默认防护策略
     //
     // 查询用户配置的默认防护策略。
@@ -96,15 +90,15 @@ public:
     std::shared_ptr<ShowDefaultConfigResponse> showDefaultConfig(
         ShowDefaultConfigRequest &request
     );
-    // 更新告警配置信息
+
+    // 开通DDoS服务
     //
-    // 更新用户配置信息，用户可以通过此接口更新是否接收某类告警，同时可以配置是手机短信还是电子邮件接收告警信息。
+    // 开通DDoS服务
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<UpdateAlertConfigResponse> updateAlertConfig(
-        UpdateAlertConfigRequest &request
+    std::shared_ptr<EnableDefensePolicyResponse> enableDefensePolicy(
+        EnableDefensePolicyRequest &request
     );
-
     // 查询EIP防护状态列表
     //
     // 查询用户所有EIP的Anti-DDoS防护状态信息，用户的EIP无论是否绑定到云服务器，都可以进行查询。
@@ -129,13 +123,13 @@ public:
     std::shared_ptr<ListDailyReportResponse> listDailyReport(
         ListDailyReportRequest &request
     );
-    // 查询Anti-DDoS配置可选范围
+    // 查询配额
     //
-    // 查询系统支持的Anti-DDoS防护策略配置的可选范围，用户根据范围列表选择适合自已业务的防护策略进行Anti-DDoS流量清洗。
+    // 查询配额
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ListNewConfigsResponse> listNewConfigs(
-        ListNewConfigsRequest &request
+    std::shared_ptr<ListQuotaResponse> listQuota(
+        ListQuotaRequest &request
     );
     // 查询周防护统计情况
     //
@@ -161,13 +155,13 @@ public:
     std::shared_ptr<ShowDDosStatusResponse> showDDosStatus(
         ShowDDosStatusRequest &request
     );
-    // 查询Anti-DDoS任务
+    // 查询全量日志设置
     //
-    // 用户查询指定的Anti-DDoS防护配置任务，得到任务当前执行的状态。
+    // 查询全量日志设置
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ShowNewTaskStatusResponse> showNewTaskStatus(
-        ShowNewTaskStatusRequest &request
+    std::shared_ptr<ShowLogConfigResponse> showLogConfig(
+        ShowLogConfigRequest &request
     );
     // 更新Anti-DDoS服务
     //
@@ -176,6 +170,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateDDosResponse> updateDDos(
         UpdateDDosRequest &request
+    );
+    // 更新用户全量日志设置
+    //
+    // 更新用户全量日志设置
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateLogConfigResponse> updateLogConfig(
+        UpdateLogConfigRequest &request
     );
 
 

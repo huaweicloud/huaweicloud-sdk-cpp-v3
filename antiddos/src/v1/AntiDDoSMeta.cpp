@@ -22,17 +22,12 @@ HttpRequestDef AntiDDoSMeta::genRequestDefForDeleteDefaultConfig() {
     return reqDefBuilder;
 }
 
-HttpRequestDef AntiDDoSMeta::genRequestDefForShowAlertConfig() {
-    HttpRequestDef reqDefBuilder;
-    return reqDefBuilder;
-}
-
 HttpRequestDef AntiDDoSMeta::genRequestDefForShowDefaultConfig() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
 
-HttpRequestDef AntiDDoSMeta::genRequestDefForUpdateAlertConfig() {
+HttpRequestDef AntiDDoSMeta::genRequestDefForEnableDefensePolicy() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
@@ -83,7 +78,7 @@ HttpRequestDef AntiDDoSMeta::genRequestDefForListDailyReport() {
     return reqDefBuilder;
 }
 
-HttpRequestDef AntiDDoSMeta::genRequestDefForListNewConfigs() {
+HttpRequestDef AntiDDoSMeta::genRequestDefForListQuota() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
@@ -112,10 +107,10 @@ HttpRequestDef AntiDDoSMeta::genRequestDefForShowDDosStatus() {
     return reqDefBuilder;
 }
 
-HttpRequestDef AntiDDoSMeta::genRequestDefForShowNewTaskStatus() {
+HttpRequestDef AntiDDoSMeta::genRequestDefForShowLogConfig() {
     HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withRequestField(FieldDef().withName("TaskId")
-                  .withJsonTag("task_id")
+    reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
+                  .withJsonTag("enterprise_project_id")
                   .withLocationType(Query_));
     return reqDefBuilder;
 }
@@ -124,6 +119,18 @@ HttpRequestDef AntiDDoSMeta::genRequestDefForUpdateDDos() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Ip")
                   .withJsonTag("ip")
+                  .withLocationType(Query_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef AntiDDoSMeta::genRequestDefForUpdateLogConfig() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
+                  .withJsonTag("enterprise_project_id")
                   .withLocationType(Query_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.

@@ -38,7 +38,7 @@ public:
     /// DdosConfig members
 
     /// <summary>
-    /// 是否开启L7层防护
+    /// 是否开启L7层防护，固定值为fasle
     /// </summary>
 
     bool isEnableL7() const;
@@ -47,7 +47,7 @@ public:
     void setEnableL7(bool value);
 
     /// <summary>
-    /// 流量分段ID，取值范围：1～9
+    /// 流量分段ID，取值范围：1：10M;2：30M;3：50M;4：70M;5：100M;6：150M;7：200M;8：250M;9：300M;10：500M;11：800M;88：1000M;99：默认防护。
     /// </summary>
 
     int64_t getTrafficPosId() const;
@@ -56,7 +56,7 @@ public:
     void setTrafficPosId(int64_t value);
 
     /// <summary>
-    /// HTTP请求数分段ID，取值范围：1～15
+    /// HTTP请求数分段ID，固定值为1
     /// </summary>
 
     int64_t getHttpRequestPosId() const;
@@ -65,7 +65,7 @@ public:
     void setHttpRequestPosId(int64_t value);
 
     /// <summary>
-    /// 清洗时访问限制分段ID，取值范围：1～8
+    /// 清洗时访问限制分段ID，取值范围：1：10M;2：30M;3：50M;4：70M;5：100M;6：150M;7：200M;8：250M;9：300M;10：500M;11：800M;88：1000M;99：默认防护。
     /// </summary>
 
     int64_t getCleaningAccessPosId() const;
@@ -74,7 +74,7 @@ public:
     void setCleaningAccessPosId(int64_t value);
 
     /// <summary>
-    /// 应用类型ID，可选取值： - 0 - 1
+    /// 应用类型ID，固定值为0
     /// </summary>
 
     int64_t getAppTypeId() const;

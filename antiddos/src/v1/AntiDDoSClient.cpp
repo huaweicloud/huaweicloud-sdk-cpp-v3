@@ -102,35 +102,6 @@ std::shared_ptr<DeleteDefaultConfigResponse> AntiDDoSClient::deleteDefaultConfig
 
     return localVarResult;
 }
-std::shared_ptr<ShowAlertConfigResponse> AntiDDoSClient::showAlertConfig(ShowAlertConfigRequest &request)
-{
-    std::string localVarPath = "/v2/{project_id}/warnalert/alertconfig/query";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, AntiDDoSMeta::genRequestDefForShowAlertConfig());
-
-    std::shared_ptr<ShowAlertConfigResponse> localVarResult = std::make_shared<ShowAlertConfigResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
 std::shared_ptr<ShowDefaultConfigResponse> AntiDDoSClient::showDefaultConfig(ShowDefaultConfigRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/antiddos/default-config";
@@ -160,15 +131,16 @@ std::shared_ptr<ShowDefaultConfigResponse> AntiDDoSClient::showDefaultConfig(Sho
 
     return localVarResult;
 }
-std::shared_ptr<UpdateAlertConfigResponse> AntiDDoSClient::updateAlertConfig(UpdateAlertConfigRequest &request)
+std::shared_ptr<EnableDefensePolicyResponse> AntiDDoSClient::enableDefensePolicy(EnableDefensePolicyRequest &request)
 {
-    std::string localVarPath = "/v2/{project_id}/warnalert/alertconfig/update";
+    std::string localVarPath = "/v1/{project_id}/antiddos/{floating_ip_id}";
 
     std::map<std::string, std::string> localVarQueryParams;
     std::map<std::string, std::string> localVarHeaderParams;
     std::map<std::string, std::string> localVarFormParams;
     std::map<std::string, std::string> localVarPathParams;
 
+    localVarPathParams["floating_ip_id"] = parameterToString(request.getFloatingIpId());
 
     bool isJson = false;
     bool isMultiPart = false;
@@ -186,9 +158,9 @@ std::shared_ptr<UpdateAlertConfigResponse> AntiDDoSClient::updateAlertConfig(Upd
     }
 
     std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, AntiDDoSMeta::genRequestDefForUpdateAlertConfig());
+        localVarHeaderParams, localVarHttpBody, AntiDDoSMeta::genRequestDefForEnableDefensePolicy());
 
-    std::shared_ptr<UpdateAlertConfigResponse> localVarResult = std::make_shared<UpdateAlertConfigResponse>();
+    std::shared_ptr<EnableDefensePolicyResponse> localVarResult = std::make_shared<EnableDefensePolicyResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -317,9 +289,9 @@ std::shared_ptr<ListDailyReportResponse> AntiDDoSClient::listDailyReport(ListDai
 
     return localVarResult;
 }
-std::shared_ptr<ListNewConfigsResponse> AntiDDoSClient::listNewConfigs(ListNewConfigsRequest &request)
+std::shared_ptr<ListQuotaResponse> AntiDDoSClient::listQuota(ListQuotaRequest &request)
 {
-    std::string localVarPath = "/v2/{project_id}/antiddos/query-config-list";
+    std::string localVarPath = "/v1/{project_id}/antiddos/quotas";
 
     std::map<std::string, std::string> localVarQueryParams;
     std::map<std::string, std::string> localVarHeaderParams;
@@ -337,9 +309,9 @@ std::shared_ptr<ListNewConfigsResponse> AntiDDoSClient::listNewConfigs(ListNewCo
     std::string localVarHttpBody;
 
     std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, AntiDDoSMeta::genRequestDefForListNewConfigs());
+        localVarHeaderParams, localVarHttpBody, AntiDDoSMeta::genRequestDefForListQuota());
 
-    std::shared_ptr<ListNewConfigsResponse> localVarResult = std::make_shared<ListNewConfigsResponse>();
+    std::shared_ptr<ListQuotaResponse> localVarResult = std::make_shared<ListQuotaResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -444,9 +416,9 @@ std::shared_ptr<ShowDDosStatusResponse> AntiDDoSClient::showDDosStatus(ShowDDosS
 
     return localVarResult;
 }
-std::shared_ptr<ShowNewTaskStatusResponse> AntiDDoSClient::showNewTaskStatus(ShowNewTaskStatusRequest &request)
+std::shared_ptr<ShowLogConfigResponse> AntiDDoSClient::showLogConfig(ShowLogConfigRequest &request)
 {
-    std::string localVarPath = "/v2/{project_id}/query-task-status";
+    std::string localVarPath = "/v1/{project_id}/antiddos/lts-config";
 
     std::map<std::string, std::string> localVarQueryParams;
     std::map<std::string, std::string> localVarHeaderParams;
@@ -460,16 +432,16 @@ std::shared_ptr<ShowNewTaskStatusResponse> AntiDDoSClient::showNewTaskStatus(Sho
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
-    if (request.taskIdIsSet()) {
-        localVarQueryParams["task_id"] = parameterToString(request.getTaskId());
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarQueryParams["enterprise_project_id"] = parameterToString(request.getEnterpriseProjectId());
     }
 
     std::string localVarHttpBody;
 
     std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, AntiDDoSMeta::genRequestDefForShowNewTaskStatus());
+        localVarHeaderParams, localVarHttpBody, AntiDDoSMeta::genRequestDefForShowLogConfig());
 
-    std::shared_ptr<ShowNewTaskStatusResponse> localVarResult = std::make_shared<ShowNewTaskStatusResponse>();
+    std::shared_ptr<ShowLogConfigResponse> localVarResult = std::make_shared<ShowLogConfigResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -509,6 +481,50 @@ std::shared_ptr<UpdateDDosResponse> AntiDDoSClient::updateDDos(UpdateDDosRequest
         localVarHeaderParams, localVarHttpBody, AntiDDoSMeta::genRequestDefForUpdateDDos());
 
     std::shared_ptr<UpdateDDosResponse> localVarResult = std::make_shared<UpdateDDosResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateLogConfigResponse> AntiDDoSClient::updateLogConfig(UpdateLogConfigRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/antiddos/lts-config";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.enterpriseProjectIdIsSet()) {
+        localVarQueryParams["enterprise_project_id"] = parameterToString(request.getEnterpriseProjectId());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, AntiDDoSMeta::genRequestDefForUpdateLogConfig());
+
+    std::shared_ptr<UpdateLogConfigResponse> localVarResult = std::make_shared<UpdateLogConfigResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

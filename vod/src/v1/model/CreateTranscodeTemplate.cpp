@@ -18,6 +18,7 @@ CreateTranscodeTemplate::CreateTranscodeTemplate()
     isDefaultIsSet_ = false;
     isAutoEncrypt_ = false;
     isAutoEncryptIsSet_ = false;
+    additionalManifestsIsSet_ = false;
     qualityInfoListIsSet_ = false;
     commonIsSet_ = false;
     watermarkTemplateIdsIsSet_ = false;
@@ -43,6 +44,9 @@ web::json::value CreateTranscodeTemplate::toJson() const
     }
     if(isAutoEncryptIsSet_) {
         val[utility::conversions::to_string_t("is_auto_encrypt")] = ModelBase::toJson(isAutoEncrypt_);
+    }
+    if(additionalManifestsIsSet_) {
+        val[utility::conversions::to_string_t("additional_manifests")] = ModelBase::toJson(additionalManifests_);
     }
     if(qualityInfoListIsSet_) {
         val[utility::conversions::to_string_t("quality_info_list")] = ModelBase::toJson(qualityInfoList_);
@@ -88,6 +92,15 @@ bool CreateTranscodeTemplate::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsAutoEncrypt(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("additional_manifests"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("additional_manifests"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<AdditionalManifest> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAdditionalManifests(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("quality_info_list"))) {
@@ -191,6 +204,27 @@ bool CreateTranscodeTemplate::isAutoEncryptIsSet() const
 void CreateTranscodeTemplate::unsetisAutoEncrypt()
 {
     isAutoEncryptIsSet_ = false;
+}
+
+std::vector<AdditionalManifest>& CreateTranscodeTemplate::getAdditionalManifests()
+{
+    return additionalManifests_;
+}
+
+void CreateTranscodeTemplate::setAdditionalManifests(const std::vector<AdditionalManifest>& value)
+{
+    additionalManifests_ = value;
+    additionalManifestsIsSet_ = true;
+}
+
+bool CreateTranscodeTemplate::additionalManifestsIsSet() const
+{
+    return additionalManifestsIsSet_;
+}
+
+void CreateTranscodeTemplate::unsetadditionalManifests()
+{
+    additionalManifestsIsSet_ = false;
 }
 
 std::vector<QualityInfoList>& CreateTranscodeTemplate::getQualityInfoList()

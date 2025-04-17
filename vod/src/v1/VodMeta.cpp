@@ -573,6 +573,20 @@ HttpRequestDef VodMeta::genRequestDefForPublishAssets() {
     return reqDefBuilder;
 }
 
+HttpRequestDef VodMeta::genRequestDefForRefreshAsset() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSdkDate;
+    reqDefBuilder.withRequestField(headerParamXSdkDate
+                  .withName("XSdkDate")
+                  .withJsonTag("X-Sdk-Date")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef VodMeta::genRequestDefForShowAssetCipher() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("AssetId")
@@ -702,6 +716,19 @@ HttpRequestDef VodMeta::genRequestDefForShowCdnStatistics() {
 }
 
 HttpRequestDef VodMeta::genRequestDefForShowPreheatingAsset() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("TaskId")
+                  .withJsonTag("task_id")
+                  .withLocationType(Query_));
+    FieldDef headerParamXSdkDate;
+    reqDefBuilder.withRequestField(headerParamXSdkDate
+                  .withName("XSdkDate")
+                  .withJsonTag("X-Sdk-Date")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef VodMeta::genRequestDefForShowRefreshResult() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("TaskId")
                   .withJsonTag("task_id")

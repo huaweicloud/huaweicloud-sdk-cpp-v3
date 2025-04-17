@@ -48,7 +48,7 @@ public:
     void setType(const std::string& value);
 
     /// <summary>
-    /// 数据库版本。不填时，默认为当前最新版本。  GaussDB支持的版本参考[查询数据库引擎的版本](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;GaussDB&amp;api&#x3D;ListDatastores)。
+    /// 数据库版本。不填时，默认为当前最新版本。  GaussDB支持的版本参考[查询数据库引擎的版本](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;GaussDBforopenGauss&amp;api&#x3D;ListDatastores)。
     /// </summary>
 
     std::string getVersion() const;

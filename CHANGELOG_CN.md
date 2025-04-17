@@ -1,3 +1,72 @@
+# 3.1.132 2025-04-17
+
+### HuaweiCloud SDK AntiDDoS
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持接口`ListQuota`、`ShowLogConfig`、`UpdateLogConfig`、`EnableDefensePolicy`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 移除接口`ListNewConfigs`、`ShowNewTaskStatus`、`ShowAlertConfig`、`UpdateAlertConfig`
+  - **ShowDDos**
+    - 响应参数变更
+      - `+ app_type_id: enum value [0,1]`
+  - **UpdateDDos**
+    - 请求参数变更
+      - `+ app_type_id: enum value [0,1]`
+  - **ShowDDosStatus**
+    - 响应参数变更
+      - `+ status: enum value [normal,configging,notConfig,packetcleaning,packetdropping]`
+  - **ShowDefaultConfig**
+    - 响应参数变更
+      - `+ app_type_id: enum value [0,1]`
+  - **CreateDefaultConfig**
+    - 请求参数变更
+      - `+ app_type_id: enum value [0,1]`
+  - **ListDailyLog**
+    - 请求参数变更
+      - `+ sort_dir: enum value [desc,asc]`
+    - 响应参数变更
+      - `+ logs.status: enum value [1,2]`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateInstance**
+    - 请求参数变更
+      - `- ipv6_enabled`
+      - `- lb_access_control_settings`
+
+### HuaweiCloud SDK VOD
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持接口`ShowRefreshResult`、`RefreshAsset`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **UpdateTranscodeTemplate**
+    - 请求参数变更
+      - `+ additional_manifests`
+      - `+ quality_info_list.video.stream_name`
+  - **CreateTranscodeTemplate**
+    - 请求参数变更
+      - `+ additional_manifests`
+      - `+ quality_info_list.video.stream_name`
+  - **ListTranscodeTemplate**
+    - 响应参数变更
+      - `+ template_group_list.additional_manifests`
+      - `+ template_group_list.quality_info_list.video.stream_name`
+
 # 3.1.131 2025-04-10
 
 ### HuaweiCloud SDK GaussDBforNoSQL

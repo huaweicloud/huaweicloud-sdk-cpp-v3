@@ -15,18 +15,18 @@ class HUAWEICLOUD_ANTIDDOS_V1_EXPORT  AntiDDoSMeta {
 public:
     static HttpRequestDef genRequestDefForCreateDefaultConfig();
     static HttpRequestDef genRequestDefForDeleteDefaultConfig();
-    static HttpRequestDef genRequestDefForShowAlertConfig();
     static HttpRequestDef genRequestDefForShowDefaultConfig();
-    static HttpRequestDef genRequestDefForUpdateAlertConfig();
+    static HttpRequestDef genRequestDefForEnableDefensePolicy();
     static HttpRequestDef genRequestDefForListDDosStatus();
     static HttpRequestDef genRequestDefForListDailyLog();
     static HttpRequestDef genRequestDefForListDailyReport();
-    static HttpRequestDef genRequestDefForListNewConfigs();
+    static HttpRequestDef genRequestDefForListQuota();
     static HttpRequestDef genRequestDefForListWeeklyReports();
     static HttpRequestDef genRequestDefForShowDDos();
     static HttpRequestDef genRequestDefForShowDDosStatus();
-    static HttpRequestDef genRequestDefForShowNewTaskStatus();
+    static HttpRequestDef genRequestDefForShowLogConfig();
     static HttpRequestDef genRequestDefForUpdateDDos();
+    static HttpRequestDef genRequestDefForUpdateLogConfig();
 };
 
 }

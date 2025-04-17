@@ -12,6 +12,8 @@ namespace Model {
 
 VideoInfo::VideoInfo()
 {
+    streamName_ = "";
+    streamNameIsSet_ = false;
     quality_ = "";
     qualityIsSet_ = false;
     width_ = 0;
@@ -34,6 +36,9 @@ web::json::value VideoInfo::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(streamNameIsSet_) {
+        val[utility::conversions::to_string_t("stream_name")] = ModelBase::toJson(streamName_);
+    }
     if(qualityIsSet_) {
         val[utility::conversions::to_string_t("quality")] = ModelBase::toJson(quality_);
     }
@@ -56,6 +61,15 @@ bool VideoInfo::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("stream_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("stream_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setStreamName(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("quality"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("quality"));
         if(!fieldValue.is_null())
@@ -104,6 +118,27 @@ bool VideoInfo::fromJson(const web::json::value& val)
     return ok;
 }
 
+
+std::string VideoInfo::getStreamName() const
+{
+    return streamName_;
+}
+
+void VideoInfo::setStreamName(const std::string& value)
+{
+    streamName_ = value;
+    streamNameIsSet_ = true;
+}
+
+bool VideoInfo::streamNameIsSet() const
+{
+    return streamNameIsSet_;
+}
+
+void VideoInfo::unsetstreamName()
+{
+    streamNameIsSet_ = false;
+}
 
 std::string VideoInfo::getQuality() const
 {

@@ -20,6 +20,7 @@ ModifyTransTemplate::ModifyTransTemplate()
     isDefaultIsSet_ = false;
     isAutoEncrypt_ = false;
     isAutoEncryptIsSet_ = false;
+    additionalManifestsIsSet_ = false;
     qualityInfoListIsSet_ = false;
     watermarkTemplateIdsIsSet_ = false;
     description_ = "";
@@ -48,6 +49,9 @@ web::json::value ModifyTransTemplate::toJson() const
     }
     if(isAutoEncryptIsSet_) {
         val[utility::conversions::to_string_t("is_auto_encrypt")] = ModelBase::toJson(isAutoEncrypt_);
+    }
+    if(additionalManifestsIsSet_) {
+        val[utility::conversions::to_string_t("additional_manifests")] = ModelBase::toJson(additionalManifests_);
     }
     if(qualityInfoListIsSet_) {
         val[utility::conversions::to_string_t("quality_info_list")] = ModelBase::toJson(qualityInfoList_);
@@ -102,6 +106,15 @@ bool ModifyTransTemplate::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsAutoEncrypt(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("additional_manifests"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("additional_manifests"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<AdditionalManifest> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAdditionalManifests(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("quality_info_list"))) {
@@ -226,6 +239,27 @@ bool ModifyTransTemplate::isAutoEncryptIsSet() const
 void ModifyTransTemplate::unsetisAutoEncrypt()
 {
     isAutoEncryptIsSet_ = false;
+}
+
+std::vector<AdditionalManifest>& ModifyTransTemplate::getAdditionalManifests()
+{
+    return additionalManifests_;
+}
+
+void ModifyTransTemplate::setAdditionalManifests(const std::vector<AdditionalManifest>& value)
+{
+    additionalManifests_ = value;
+    additionalManifestsIsSet_ = true;
+}
+
+bool ModifyTransTemplate::additionalManifestsIsSet() const
+{
+    return additionalManifestsIsSet_;
+}
+
+void ModifyTransTemplate::unsetadditionalManifests()
+{
+    additionalManifestsIsSet_ = false;
 }
 
 std::vector<QualityInfoList>& ModifyTransTemplate::getQualityInfoList()

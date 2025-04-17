@@ -1,3 +1,72 @@
+# 3.1.132 2025-04-17
+
+### HuaweiCloud SDK AntiDDoS
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the APIs `ListQuota`, `ShowLogConfig`, `UpdateLogConfig`, `EnableDefensePolicy`
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the APIs `ListNewConfigs`, `ShowNewTaskStatus`, `ShowAlertConfig`, `UpdateAlertConfig`
+  - **ShowDDos**
+    - changes of response param
+      - `+ app_type_id: enum value [0,1]`
+  - **UpdateDDos**
+    - changes of request param
+      - `+ app_type_id: enum value [0,1]`
+  - **ShowDDosStatus**
+    - changes of response param
+      - `+ status: enum value [normal,configging,notConfig,packetcleaning,packetdropping]`
+  - **ShowDefaultConfig**
+    - changes of response param
+      - `+ app_type_id: enum value [0,1]`
+  - **CreateDefaultConfig**
+    - changes of request param
+      - `+ app_type_id: enum value [0,1]`
+  - **ListDailyLog**
+    - changes of request param
+      - `+ sort_dir: enum value [desc,asc]`
+    - changes of response param
+      - `+ logs.status: enum value [1,2]`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateInstance**
+    - changes of request param
+      - `- ipv6_enabled`
+      - `- lb_access_control_settings`
+
+### HuaweiCloud SDK VOD
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the APIs `ShowRefreshResult`, `RefreshAsset`
+- _Bug Fix_
+  - None
+- _Change_
+  - **UpdateTranscodeTemplate**
+    - changes of request param
+      - `+ additional_manifests`
+      - `+ quality_info_list.video.stream_name`
+  - **CreateTranscodeTemplate**
+    - changes of request param
+      - `+ additional_manifests`
+      - `+ quality_info_list.video.stream_name`
+  - **ListTranscodeTemplate**
+    - changes of response param
+      - `+ template_group_list.additional_manifests`
+      - `+ template_group_list.quality_info_list.video.stream_name`
+
 # 3.1.131 2025-04-10
 
 ### HuaweiCloud SDK GaussDBforNoSQL

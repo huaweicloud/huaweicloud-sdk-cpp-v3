@@ -48,12 +48,14 @@ public:
     static HttpRequestDef genRequestDefForModifySubtitle();
     static HttpRequestDef genRequestDefForPublishAssetFromObs();
     static HttpRequestDef genRequestDefForPublishAssets();
+    static HttpRequestDef genRequestDefForRefreshAsset();
     static HttpRequestDef genRequestDefForShowAssetCipher();
     static HttpRequestDef genRequestDefForShowAssetDetail();
     static HttpRequestDef genRequestDefForShowAssetMeta();
     static HttpRequestDef genRequestDefForShowAssetTempAuthority();
     static HttpRequestDef genRequestDefForShowCdnStatistics();
     static HttpRequestDef genRequestDefForShowPreheatingAsset();
+    static HttpRequestDef genRequestDefForShowRefreshResult();
     static HttpRequestDef genRequestDefForShowStorageModeType();
     static HttpRequestDef genRequestDefForShowVodRetrieval();
     static HttpRequestDef genRequestDefForShowVodStatistics();

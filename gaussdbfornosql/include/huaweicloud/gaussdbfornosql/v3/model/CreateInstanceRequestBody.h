@@ -15,7 +15,6 @@
 #include <huaweicloud/gaussdbfornosql/v3/model/ChargeInfoOption.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/DatastoreOption.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/AvailabilityZoneDetail.h>
-#include <huaweicloud/gaussdbfornosql/v3/model/LbAccessControlSettings.h>
 #include <vector>
 #include <huaweicloud/gaussdbfornosql/v3/model/BackupStrategyOption.h>
 
@@ -218,15 +217,6 @@ public:
     void setPort(const std::string& value);
 
     /// <summary>
-    /// 是否启用IPv6。默认 - true: 启用IPv6。 - false: 不启用IPv6，默认为不启用。
-    /// </summary>
-
-    bool isIpv6Enabled() const;
-    bool ipv6EnabledIsSet() const;
-    void unsetipv6Enabled();
-    void setIpv6Enabled(bool value);
-
-    /// <summary>
     /// 
     /// </summary>
 
@@ -234,15 +224,6 @@ public:
     bool availabilityZoneDetailIsSet() const;
     void unsetavailabilityZoneDetail();
     void setAvailabilityZoneDetail(const AvailabilityZoneDetail& value);
-
-    /// <summary>
-    /// 
-    /// </summary>
-
-    LbAccessControlSettings getLbAccessControlSettings() const;
-    bool lbAccessControlSettingsIsSet() const;
-    void unsetlbAccessControlSettings();
-    void setLbAccessControlSettings(const LbAccessControlSettings& value);
 
 
 protected:
@@ -284,12 +265,8 @@ protected:
     bool restoreInfoIsSet_;
     std::string port_;
     bool portIsSet_;
-    bool ipv6Enabled_;
-    bool ipv6EnabledIsSet_;
     AvailabilityZoneDetail availabilityZoneDetail_;
     bool availabilityZoneDetailIsSet_;
-    LbAccessControlSettings lbAccessControlSettings_;
-    bool lbAccessControlSettingsIsSet_;
 
 };
 

@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/vod/v1/model/CommonInfo.h>
+#include <huaweicloud/vod/v1/model/AdditionalManifest.h>
 #include <string>
 #include <huaweicloud/vod/v1/model/QualityInfoList.h>
 #include <vector>
@@ -87,6 +88,15 @@ public:
     void setIsAutoEncrypt(bool value);
 
     /// <summary>
+    /// 自定义索引后缀列表。
+    /// </summary>
+
+    std::vector<AdditionalManifest>& getAdditionalManifests();
+    bool additionalManifestsIsSet() const;
+    void unsetadditionalManifests();
+    void setAdditionalManifests(const std::vector<AdditionalManifest>& value);
+
+    /// <summary>
     /// 画质配置信息列表&lt;br/&gt; 
     /// </summary>
 
@@ -134,6 +144,8 @@ protected:
     bool typeIsSet_;
     bool isAutoEncrypt_;
     bool isAutoEncryptIsSet_;
+    std::vector<AdditionalManifest> additionalManifests_;
+    bool additionalManifestsIsSet_;
     std::vector<QualityInfoList> qualityInfoList_;
     bool qualityInfoListIsSet_;
     std::vector<std::string> watermarkTemplateIds_;

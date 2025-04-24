@@ -9,8 +9,10 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/cdn/v2/model/UpdateDomainMultiCertificatesResponseBody_result.h>
 #include <huaweicloud/cdn/v2/model/UpdateDomainMultiCertificatesResponseBodyContent.h>
 #include <string>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -49,6 +51,24 @@ public:
     void setHttps(const UpdateDomainMultiCertificatesResponseBodyContent& value);
 
     /// <summary>
+    /// 执行结果，success，fail
+    /// </summary>
+
+    std::string getStatus() const;
+    bool statusIsSet() const;
+    void unsetstatus();
+    void setStatus(const std::string& value);
+
+    /// <summary>
+    /// 详情
+    /// </summary>
+
+    std::vector<UpdateDomainMultiCertificatesResponseBody_result>& getResult();
+    bool resultIsSet() const;
+    void unsetresult();
+    void setResult(const std::vector<UpdateDomainMultiCertificatesResponseBody_result>& value);
+
+    /// <summary>
     /// 
     /// </summary>
 
@@ -61,6 +81,10 @@ public:
 protected:
     UpdateDomainMultiCertificatesResponseBodyContent https_;
     bool httpsIsSet_;
+    std::string status_;
+    bool statusIsSet_;
+    std::vector<UpdateDomainMultiCertificatesResponseBody_result> result_;
+    bool resultIsSet_;
     std::string xRequestId_;
     bool xRequestIdIsSet_;
 

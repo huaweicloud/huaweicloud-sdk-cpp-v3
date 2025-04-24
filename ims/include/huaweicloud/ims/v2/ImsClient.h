@@ -18,6 +18,9 @@
 #include <huaweicloud/ims/v2/model/BatchAddOrDeleteTagsResponse.h>
 #include <huaweicloud/ims/v2/model/BatchDeleteMembersRequest.h>
 #include <huaweicloud/ims/v2/model/BatchDeleteMembersResponse.h>
+#include <huaweicloud/ims/v2/model/BatchDeleteTagsRequest.h>
+#include <huaweicloud/ims/v2/model/BatchDeleteTagsRequestBody.h>
+#include <huaweicloud/ims/v2/model/BatchDeleteTagsResponse.h>
 #include <huaweicloud/ims/v2/model/BatchUpdateMembersRequest.h>
 #include <huaweicloud/ims/v2/model/BatchUpdateMembersRequestBody.h>
 #include <huaweicloud/ims/v2/model/BatchUpdateMembersResponse.h>
@@ -48,6 +51,8 @@
 #include <huaweicloud/ims/v2/model/ListImageByTagsRequest.h>
 #include <huaweicloud/ims/v2/model/ListImageByTagsRequestBody.h>
 #include <huaweicloud/ims/v2/model/ListImageByTagsResponse.h>
+#include <huaweicloud/ims/v2/model/ListImageMembersRequest.h>
+#include <huaweicloud/ims/v2/model/ListImageMembersResponse.h>
 #include <huaweicloud/ims/v2/model/ListImageTagsRequest.h>
 #include <huaweicloud/ims/v2/model/ListImageTagsResponse.h>
 #include <huaweicloud/ims/v2/model/ListImagesRequest.h>
@@ -63,6 +68,8 @@
 #include <huaweicloud/ims/v2/model/RegisterImageRequest.h>
 #include <huaweicloud/ims/v2/model/RegisterImageRequestBody.h>
 #include <huaweicloud/ims/v2/model/RegisterImageResponse.h>
+#include <huaweicloud/ims/v2/model/ShowImageMemberRequest.h>
+#include <huaweicloud/ims/v2/model/ShowImageMemberResponse.h>
 #include <huaweicloud/ims/v2/model/ShowImageQuotaRequest.h>
 #include <huaweicloud/ims/v2/model/ShowImageQuotaResponse.h>
 #include <huaweicloud/ims/v2/model/ShowJobProgressRequest.h>
@@ -179,6 +186,14 @@ public:
     std::shared_ptr<BatchDeleteMembersResponse> batchDeleteMembers(
         BatchDeleteMembersRequest &request
     );
+    // 批量删除镜像标签
+    //
+    // 该接口用于为指定镜像批量删除标签。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchDeleteTagsResponse> batchDeleteTags(
+        BatchDeleteTagsRequest &request
+    );
     // 批量更新镜像成员状态
     //
     // 该接口为扩展接口，主要用于用户接受或者拒绝多个共享镜像时批量更新镜像成员的状态。
@@ -284,6 +299,14 @@ public:
     std::shared_ptr<ListImageByTagsResponse> listImageByTags(
         ListImageByTagsRequest &request
     );
+    // 获取镜像成员列表
+    //
+    // 该接口用于共享镜像过程中，获取接受该镜像的成员列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListImageMembersResponse> listImageMembers(
+        ListImageMembersRequest &request
+    );
     // 查询镜像标签
     //
     // 该接口用于为查询指定镜像上的所有标签
@@ -338,6 +361,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<RegisterImageResponse> registerImage(
         RegisterImageRequest &request
+    );
+    // 获取镜像成员详情
+    //
+    // 该接口主要用于镜像共享中查询某个镜像成员的详情。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowImageMemberResponse> showImageMember(
+        ShowImageMemberRequest &request
     );
     // 查询镜像配额
     //

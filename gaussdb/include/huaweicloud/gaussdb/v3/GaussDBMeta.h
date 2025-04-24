@@ -43,7 +43,9 @@ public:
     static HttpRequestDef genRequestDefForDeleteGaussMySqlReadonlyNode();
     static HttpRequestDef genRequestDefForDeleteLtsConfigs();
     static HttpRequestDef genRequestDefForDeleteScheduleTasK();
+    static HttpRequestDef genRequestDefForDeleteSqlFilterRule();
     static HttpRequestDef genRequestDefForDeleteTaskRecord();
+    static HttpRequestDef genRequestDefForDeleteTaurusDbNodeProcesses();
     static HttpRequestDef genRequestDefForDescribeBackupEncryptStatus();
     static HttpRequestDef genRequestDefForDownloadSlowLogFile();
     static HttpRequestDef genRequestDefForExpandGaussMySqlInstanceVolume();
@@ -72,6 +74,7 @@ public:
     static HttpRequestDef genRequestDefForListProjectTags();
     static HttpRequestDef genRequestDefForListRecycleInstances();
     static HttpRequestDef genRequestDefForListScheduleJobs();
+    static HttpRequestDef genRequestDefForListTaurusDbNodeProcesses();
     static HttpRequestDef genRequestDefForModifyBackupEncryptStatus();
     static HttpRequestDef genRequestDefForModifyGaussMySqlProxyRouteMode();
     static HttpRequestDef genRequestDefForModifyGaussMysqlDns();
@@ -86,6 +89,7 @@ public:
     static HttpRequestDef genRequestDefForSetGaussMySqlProxyWeight();
     static HttpRequestDef genRequestDefForSetGaussMySqlQuotas();
     static HttpRequestDef genRequestDefForSetRecyclePolicy();
+    static HttpRequestDef genRequestDefForSetSqlFilterRule();
     static HttpRequestDef genRequestDefForShowAuditLog();
     static HttpRequestDef genRequestDefForShowAutoScalingHistory();
     static HttpRequestDef genRequestDefForShowAutoScalingPolicy();
@@ -118,6 +122,8 @@ public:
     static HttpRequestDef genRequestDefForShowRestoreTables();
     static HttpRequestDef genRequestDefForShowSlowLogStatistics();
     static HttpRequestDef genRequestDefForShowSlowlogSensitiveStatus();
+    static HttpRequestDef genRequestDefForShowSqlFilterControl();
+    static HttpRequestDef genRequestDefForShowSqlFilterRule();
     static HttpRequestDef genRequestDefForShrinkGaussMySqlProxy();
     static HttpRequestDef genRequestDefForSwitchAccessControl();
     static HttpRequestDef genRequestDefForSwitchGaussMySqlConfiguration();
@@ -149,6 +155,7 @@ public:
     static HttpRequestDef genRequestDefForUpdateProxySessionConsistence();
     static HttpRequestDef genRequestDefForUpdateServerlessPolicy();
     static HttpRequestDef genRequestDefForUpdateSlowlogSensitiveSwitch();
+    static HttpRequestDef genRequestDefForUpdateSqlFilterControl();
     static HttpRequestDef genRequestDefForUpdateTaurusNodeDataIp();
     static HttpRequestDef genRequestDefForUpdateTransactionSplitStatus();
     static HttpRequestDef genRequestDefForUpgradeGaussMySqlInstanceDatabase();
@@ -214,11 +221,6 @@ public:
     static HttpRequestDef genRequestDefForUpdateStarRocksDatabaseUserPermission();
     static HttpRequestDef genRequestDefForUpdateStarrocksParams();
     static HttpRequestDef genRequestDefForUpgradeSrKernelVersion();
-    static HttpRequestDef genRequestDefForDeleteSqlFilterRule();
-    static HttpRequestDef genRequestDefForSetSqlFilterRule();
-    static HttpRequestDef genRequestDefForShowSqlFilterControl();
-    static HttpRequestDef genRequestDefForShowSqlFilterRule();
-    static HttpRequestDef genRequestDefForUpdateSqlFilterControl();
 };
 
 }

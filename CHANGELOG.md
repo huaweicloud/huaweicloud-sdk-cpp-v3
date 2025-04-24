@@ -1,3 +1,48 @@
+# 3.1.133 2025-04-24
+
+### HuaweiCloud SDK CDN
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **UpdateDomainMultiCertificates**
+    - changes of response param
+      - `+ result`
+      - `+ status`
+  - **ShowDomainFullConfig**
+    - changes of response param
+      - `+ configs.request_limit_rules.limit_time`
+  - **UpdateDomainFullConfig**
+    - changes of request param
+      - `+ configs.request_limit_rules.limit_time`
+      - `+ configs.url_auth.match_rule`
+
+### HuaweiCloud SDK GaussDB
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the APIs `ListTaurusDbNodeProcesses`, `DeleteTaurusDbNodeProcesses`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK IMS
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the APIs `ShowImageMember`, `ListImageMembers`, `BatchDeleteTags`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.132 2025-04-17
 
 ### HuaweiCloud SDK AntiDDoS

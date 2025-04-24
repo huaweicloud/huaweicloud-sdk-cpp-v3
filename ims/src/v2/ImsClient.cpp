@@ -198,6 +198,48 @@ std::shared_ptr<BatchDeleteMembersResponse> ImsClient::batchDeleteMembers(BatchD
 
     return localVarResult;
 }
+std::shared_ptr<BatchDeleteTagsResponse> ImsClient::batchDeleteTags(BatchDeleteTagsRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/cloudimages/{image_id}/tags/delete";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["image_id"] = parameterToString(request.getImageId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ImsMeta::genRequestDefForBatchDeleteTags());
+
+    std::shared_ptr<BatchDeleteTagsResponse> localVarResult = std::make_shared<BatchDeleteTagsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<BatchUpdateMembersResponse> ImsClient::batchUpdateMembers(BatchUpdateMembersRequest &request)
 {
     std::string localVarPath = "/v1/cloudimages/members";
@@ -642,6 +684,36 @@ std::shared_ptr<ListImageByTagsResponse> ImsClient::listImageByTags(ListImageByT
 
     return localVarResult;
 }
+std::shared_ptr<ListImageMembersResponse> ImsClient::listImageMembers(ListImageMembersRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/cloudimages/{image_id}/members";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["image_id"] = parameterToString(request.getImageId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ImsMeta::genRequestDefForListImageMembers());
+
+    std::shared_ptr<ListImageMembersResponse> localVarResult = std::make_shared<ListImageMembersResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListImageTagsResponse> ImsClient::listImageTags(ListImageTagsRequest &request)
 {
     std::string localVarPath = "/v2/{project_id}/images/{image_id}/tags";
@@ -986,6 +1058,37 @@ std::shared_ptr<RegisterImageResponse> ImsClient::registerImage(RegisterImageReq
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
+
+    return localVarResult;
+}
+std::shared_ptr<ShowImageMemberResponse> ImsClient::showImageMember(ShowImageMemberRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/cloudimages/{image_id}/members/{member_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["image_id"] = parameterToString(request.getImageId());
+    localVarPathParams["member_id"] = parameterToString(request.getMemberId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ImsMeta::genRequestDefForShowImageMember());
+
+    std::shared_ptr<ShowImageMemberResponse> localVarResult = std::make_shared<ShowImageMemberResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }

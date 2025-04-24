@@ -1319,6 +1319,51 @@ std::shared_ptr<DeleteScheduleTasKResponse> GaussDBClient::deleteScheduleTasK(De
 
     return localVarResult;
 }
+std::shared_ptr<DeleteSqlFilterRuleResponse> GaussDBClient::deleteSqlFilterRule(DeleteSqlFilterRuleRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/sql-filter/rules";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, GaussDBMeta::genRequestDefForDeleteSqlFilterRule());
+
+    std::shared_ptr<DeleteSqlFilterRuleResponse> localVarResult = std::make_shared<DeleteSqlFilterRuleResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<DeleteTaskRecordResponse> GaussDBClient::deleteTaskRecord(DeleteTaskRecordRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/jobs/{job_id}";
@@ -1349,6 +1394,52 @@ std::shared_ptr<DeleteTaskRecordResponse> GaussDBClient::deleteTaskRecord(Delete
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<DeleteTaurusDbNodeProcessesResponse> GaussDBClient::deleteTaurusDbNodeProcesses(DeleteTaurusDbNodeProcessesRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/processes";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+    localVarPathParams["node_id"] = parameterToString(request.getNodeId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, GaussDBMeta::genRequestDefForDeleteTaurusDbNodeProcesses());
+
+    std::shared_ptr<DeleteTaurusDbNodeProcessesResponse> localVarResult = std::make_shared<DeleteTaurusDbNodeProcessesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
 
     return localVarResult;
 }
@@ -2547,6 +2638,46 @@ std::shared_ptr<ListScheduleJobsResponse> GaussDBClient::listScheduleJobs(ListSc
 
     return localVarResult;
 }
+std::shared_ptr<ListTaurusDbNodeProcessesResponse> GaussDBClient::listTaurusDbNodeProcesses(ListTaurusDbNodeProcessesRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/processes";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+    localVarPathParams["node_id"] = parameterToString(request.getNodeId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, GaussDBMeta::genRequestDefForListTaurusDbNodeProcesses());
+
+    std::shared_ptr<ListTaurusDbNodeProcessesResponse> localVarResult = std::make_shared<ListTaurusDbNodeProcessesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ModifyBackupEncryptStatusResponse> GaussDBClient::modifyBackupEncryptStatus(ModifyBackupEncryptStatusRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/backups/encryption";
@@ -3155,6 +3286,51 @@ std::shared_ptr<SetRecyclePolicyResponse> GaussDBClient::setRecyclePolicy(SetRec
         localVarHeaderParams, localVarHttpBody, GaussDBMeta::genRequestDefForSetRecyclePolicy());
 
     std::shared_ptr<SetRecyclePolicyResponse> localVarResult = std::make_shared<SetRecyclePolicyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<SetSqlFilterRuleResponse> GaussDBClient::setSqlFilterRule(SetSqlFilterRuleRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/sql-filter/rules";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, GaussDBMeta::genRequestDefForSetSqlFilterRule());
+
+    std::shared_ptr<SetSqlFilterRuleResponse> localVarResult = std::make_shared<SetSqlFilterRuleResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -4348,6 +4524,78 @@ std::shared_ptr<ShowSlowlogSensitiveStatusResponse> GaussDBClient::showSlowlogSe
         localVarHeaderParams, localVarHttpBody, GaussDBMeta::genRequestDefForShowSlowlogSensitiveStatus());
 
     std::shared_ptr<ShowSlowlogSensitiveStatusResponse> localVarResult = std::make_shared<ShowSlowlogSensitiveStatusResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowSqlFilterControlResponse> GaussDBClient::showSqlFilterControl(ShowSqlFilterControlRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/sql-filter/switch";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, GaussDBMeta::genRequestDefForShowSqlFilterControl());
+
+    std::shared_ptr<ShowSqlFilterControlResponse> localVarResult = std::make_shared<ShowSqlFilterControlResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowSqlFilterRuleResponse> GaussDBClient::showSqlFilterRule(ShowSqlFilterRuleRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/sql-filter/rules";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.nodeIdIsSet()) {
+        localVarQueryParams["node_id"] = parameterToString(request.getNodeId());
+    }
+    if (request.sqlTypeIsSet()) {
+        localVarQueryParams["sql_type"] = parameterToString(request.getSqlType());
+    }
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, GaussDBMeta::genRequestDefForShowSqlFilterRule());
+
+    std::shared_ptr<ShowSqlFilterRuleResponse> localVarResult = std::make_shared<ShowSqlFilterRuleResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -5745,6 +5993,51 @@ std::shared_ptr<UpdateSlowlogSensitiveSwitchResponse> GaussDBClient::updateSlowl
         localVarHeaderParams, localVarHttpBody, GaussDBMeta::genRequestDefForUpdateSlowlogSensitiveSwitch());
 
     std::shared_ptr<UpdateSlowlogSensitiveSwitchResponse> localVarResult = std::make_shared<UpdateSlowlogSensitiveSwitchResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateSqlFilterControlResponse> GaussDBClient::updateSqlFilterControl(UpdateSqlFilterControlRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/sql-filter/switch";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, GaussDBMeta::genRequestDefForUpdateSqlFilterControl());
+
+    std::shared_ptr<UpdateSqlFilterControlResponse> localVarResult = std::make_shared<UpdateSqlFilterControlResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -8417,213 +8710,6 @@ std::shared_ptr<UpgradeSrKernelVersionResponse> GaussDBClient::upgradeSrKernelVe
         localVarHeaderParams, localVarHttpBody, GaussDBMeta::genRequestDefForUpgradeSrKernelVersion());
 
     std::shared_ptr<UpgradeSrKernelVersionResponse> localVarResult = std::make_shared<UpgradeSrKernelVersionResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-    if (!res->getHttpBody().empty()) {
-        spdlog::info("parse json format response");
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
-
-    return localVarResult;
-}
-std::shared_ptr<DeleteSqlFilterRuleResponse> GaussDBClient::deleteSqlFilterRule(DeleteSqlFilterRuleRequest &request)
-{
-    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/sql-filter/rules";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.xLanguageIsSet()) {
-        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
-    }
-
-    std::string localVarHttpBody;
-    if (isJson) {
-        // handle json input
-        web::json::value localVarJson;
-        localVarJson = ModelBase::toJson(request.getBody());
-        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
-    }
-
-    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, GaussDBMeta::genRequestDefForDeleteSqlFilterRule());
-
-    std::shared_ptr<DeleteSqlFilterRuleResponse> localVarResult = std::make_shared<DeleteSqlFilterRuleResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-    if (!res->getHttpBody().empty()) {
-        spdlog::info("parse json format response");
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
-
-    return localVarResult;
-}
-std::shared_ptr<SetSqlFilterRuleResponse> GaussDBClient::setSqlFilterRule(SetSqlFilterRuleRequest &request)
-{
-    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/sql-filter/rules";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.xLanguageIsSet()) {
-        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
-    }
-
-    std::string localVarHttpBody;
-    if (isJson) {
-        // handle json input
-        web::json::value localVarJson;
-        localVarJson = ModelBase::toJson(request.getBody());
-        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
-    }
-
-    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, GaussDBMeta::genRequestDefForSetSqlFilterRule());
-
-    std::shared_ptr<SetSqlFilterRuleResponse> localVarResult = std::make_shared<SetSqlFilterRuleResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-    if (!res->getHttpBody().empty()) {
-        spdlog::info("parse json format response");
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
-
-    return localVarResult;
-}
-std::shared_ptr<ShowSqlFilterControlResponse> GaussDBClient::showSqlFilterControl(ShowSqlFilterControlRequest &request)
-{
-    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/sql-filter/switch";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.xLanguageIsSet()) {
-        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
-    }
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, GaussDBMeta::genRequestDefForShowSqlFilterControl());
-
-    std::shared_ptr<ShowSqlFilterControlResponse> localVarResult = std::make_shared<ShowSqlFilterControlResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
-std::shared_ptr<ShowSqlFilterRuleResponse> GaussDBClient::showSqlFilterRule(ShowSqlFilterRuleRequest &request)
-{
-    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/sql-filter/rules";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.nodeIdIsSet()) {
-        localVarQueryParams["node_id"] = parameterToString(request.getNodeId());
-    }
-    if (request.sqlTypeIsSet()) {
-        localVarQueryParams["sql_type"] = parameterToString(request.getSqlType());
-    }
-    if (request.xLanguageIsSet()) {
-        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
-    }
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, GaussDBMeta::genRequestDefForShowSqlFilterRule());
-
-    std::shared_ptr<ShowSqlFilterRuleResponse> localVarResult = std::make_shared<ShowSqlFilterRuleResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
-std::shared_ptr<UpdateSqlFilterControlResponse> GaussDBClient::updateSqlFilterControl(UpdateSqlFilterControlRequest &request)
-{
-    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/sql-filter/switch";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.xLanguageIsSet()) {
-        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
-    }
-
-    std::string localVarHttpBody;
-    if (isJson) {
-        // handle json input
-        web::json::value localVarJson;
-        localVarJson = ModelBase::toJson(request.getBody());
-        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
-    }
-
-    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, GaussDBMeta::genRequestDefForUpdateSqlFilterControl());
-
-    std::shared_ptr<UpdateSqlFilterControlResponse> localVarResult = std::make_shared<UpdateSqlFilterControlResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

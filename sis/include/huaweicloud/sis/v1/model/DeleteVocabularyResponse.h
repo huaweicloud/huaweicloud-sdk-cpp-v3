@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <string>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -37,8 +38,30 @@ public:
     /////////////////////////////////////////////
     /// DeleteVocabularyResponse members
 
+    /// <summary>
+    /// 删除的热词表的名称。
+    /// </summary>
+
+    std::string getVocabularyId() const;
+    bool vocabularyIdIsSet() const;
+    void unsetvocabularyId();
+    void setVocabularyId(const std::string& value);
+
+    /// <summary>
+    /// 删除成功的消息。
+    /// </summary>
+
+    std::string getMessage() const;
+    bool messageIsSet() const;
+    void unsetmessage();
+    void setMessage(const std::string& value);
+
 
 protected:
+    std::string vocabularyId_;
+    bool vocabularyIdIsSet_;
+    std::string message_;
+    bool messageIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

@@ -1,3 +1,48 @@
+# 3.1.133 2025-04-24
+
+### HuaweiCloud SDK CDN
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **UpdateDomainMultiCertificates**
+    - 响应参数变更
+      - `+ result`
+      - `+ status`
+  - **ShowDomainFullConfig**
+    - 响应参数变更
+      - `+ configs.request_limit_rules.limit_time`
+  - **UpdateDomainFullConfig**
+    - 请求参数变更
+      - `+ configs.request_limit_rules.limit_time`
+      - `+ configs.url_auth.match_rule`
+
+### HuaweiCloud SDK GaussDB
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`ListTaurusDbNodeProcesses`、`DeleteTaurusDbNodeProcesses`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK IMS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持接口`ShowImageMember`、`ListImageMembers`、`BatchDeleteTags`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.1.132 2025-04-17
 
 ### HuaweiCloud SDK AntiDDoS

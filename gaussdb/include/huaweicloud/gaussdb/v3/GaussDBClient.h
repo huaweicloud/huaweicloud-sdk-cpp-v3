@@ -86,8 +86,14 @@
 #include <huaweicloud/gaussdb/v3/model/DeleteScheduleTasKRequest.h>
 #include <huaweicloud/gaussdb/v3/model/DeleteScheduleTasKRequestBody.h>
 #include <huaweicloud/gaussdb/v3/model/DeleteScheduleTasKResponse.h>
+#include <huaweicloud/gaussdb/v3/model/DeleteSqlFilterRuleReq.h>
+#include <huaweicloud/gaussdb/v3/model/DeleteSqlFilterRuleRequest.h>
+#include <huaweicloud/gaussdb/v3/model/DeleteSqlFilterRuleResponse.h>
 #include <huaweicloud/gaussdb/v3/model/DeleteTaskRecordRequest.h>
 #include <huaweicloud/gaussdb/v3/model/DeleteTaskRecordResponse.h>
+#include <huaweicloud/gaussdb/v3/model/DeleteTaurusDbNodeProcessesRequest.h>
+#include <huaweicloud/gaussdb/v3/model/DeleteTaurusDbNodeProcessesRequestBody.h>
+#include <huaweicloud/gaussdb/v3/model/DeleteTaurusDbNodeProcessesResponse.h>
 #include <huaweicloud/gaussdb/v3/model/DescribeBackupEncryptStatusRequest.h>
 #include <huaweicloud/gaussdb/v3/model/DescribeBackupEncryptStatusResponse.h>
 #include <huaweicloud/gaussdb/v3/model/DownloadSlowLogFileRequest.h>
@@ -147,6 +153,8 @@
 #include <huaweicloud/gaussdb/v3/model/ListRecycleInstancesResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ListScheduleJobsRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ListScheduleJobsResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ListTaurusDbNodeProcessesRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ListTaurusDbNodeProcessesResponse.h>
 #include <huaweicloud/gaussdb/v3/model/LtsLogErrorQueryRequest.h>
 #include <huaweicloud/gaussdb/v3/model/LtsLogSlowQueryRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ModifyAliasRequest.h>
@@ -179,6 +187,8 @@
 #include <huaweicloud/gaussdb/v3/model/OpenMysqlProxyRequestBody.h>
 #include <huaweicloud/gaussdb/v3/model/OperateAuditLogRequestV3Body.h>
 #include <huaweicloud/gaussdb/v3/model/OperateMultiTenantReq.h>
+#include <huaweicloud/gaussdb/v3/model/OperateSqlFilterControlReq.h>
+#include <huaweicloud/gaussdb/v3/model/OperateSqlFilterRuleReq.h>
 #include <huaweicloud/gaussdb/v3/model/ProxyTransactionSplitRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ProxyUpdateProxyConnectionPoolTypeRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ProxyUpdateProxyNameRequest.h>
@@ -209,6 +219,8 @@
 #include <huaweicloud/gaussdb/v3/model/SetRecyclePolicyRequest.h>
 #include <huaweicloud/gaussdb/v3/model/SetRecyclePolicyRequestBody.h>
 #include <huaweicloud/gaussdb/v3/model/SetRecyclePolicyResponse.h>
+#include <huaweicloud/gaussdb/v3/model/SetSqlFilterRuleRequest.h>
+#include <huaweicloud/gaussdb/v3/model/SetSqlFilterRuleResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowAuditLogRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ShowAuditLogResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowAutoScalingHistoryRequest.h>
@@ -274,6 +286,10 @@
 #include <huaweicloud/gaussdb/v3/model/ShowSlowLogStatisticsResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowSlowlogSensitiveStatusRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ShowSlowlogSensitiveStatusResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ShowSqlFilterControlRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ShowSqlFilterControlResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ShowSqlFilterRuleRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ShowSqlFilterRuleResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShrinkGaussMySqlProxyRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ShrinkGaussMySqlProxyRequestBody.h>
 #include <huaweicloud/gaussdb/v3/model/ShrinkGaussMySqlProxyResponse.h>
@@ -356,6 +372,8 @@
 #include <huaweicloud/gaussdb/v3/model/UpdateSlowlogSensitiveSwitchRequest.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateSlowlogSensitiveSwitchRequestBody.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateSlowlogSensitiveSwitchResponse.h>
+#include <huaweicloud/gaussdb/v3/model/UpdateSqlFilterControlRequest.h>
+#include <huaweicloud/gaussdb/v3/model/UpdateSqlFilterControlResponse.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateTaurusNodeDataIpRequest.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateTaurusNodeDataIpResponse.h>
 #include <huaweicloud/gaussdb/v3/model/UpdateTransactionSplitStatusRequest.h>
@@ -520,21 +538,6 @@
 #include <huaweicloud/gaussdb/v3/model/UpgradeSrKernelVersionRequestV3.h>
 #include <huaweicloud/gaussdb/v3/model/UpgradeSrKernelVersionResponse.h>
 #include <huaweicloud/gaussdb/v3/model/UserSyncReq.h>
-#include <string>
-
-#include <huaweicloud/gaussdb/v3/model/DeleteSqlFilterRuleReq.h>
-#include <huaweicloud/gaussdb/v3/model/DeleteSqlFilterRuleRequest.h>
-#include <huaweicloud/gaussdb/v3/model/DeleteSqlFilterRuleResponse.h>
-#include <huaweicloud/gaussdb/v3/model/OperateSqlFilterControlReq.h>
-#include <huaweicloud/gaussdb/v3/model/OperateSqlFilterRuleReq.h>
-#include <huaweicloud/gaussdb/v3/model/SetSqlFilterRuleRequest.h>
-#include <huaweicloud/gaussdb/v3/model/SetSqlFilterRuleResponse.h>
-#include <huaweicloud/gaussdb/v3/model/ShowSqlFilterControlRequest.h>
-#include <huaweicloud/gaussdb/v3/model/ShowSqlFilterControlResponse.h>
-#include <huaweicloud/gaussdb/v3/model/ShowSqlFilterRuleRequest.h>
-#include <huaweicloud/gaussdb/v3/model/ShowSqlFilterRuleResponse.h>
-#include <huaweicloud/gaussdb/v3/model/UpdateSqlFilterControlRequest.h>
-#include <huaweicloud/gaussdb/v3/model/UpdateSqlFilterControlResponse.h>
 #include <string>
 
 #include <cpprest/details/basic_types.h>
@@ -801,6 +804,14 @@ public:
     std::shared_ptr<DeleteScheduleTasKResponse> deleteScheduleTasK(
         DeleteScheduleTasKRequest &request
     );
+    // 删除SQL限流规则
+    //
+    // 删除SQL限流规则。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteSqlFilterRuleResponse> deleteSqlFilterRule(
+        DeleteSqlFilterRuleRequest &request
+    );
     // 删除指定任务记录
     //
     // 删除指定任务记录。
@@ -808,6 +819,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteTaskRecordResponse> deleteTaskRecord(
         DeleteTaskRecordRequest &request
+    );
+    // 终止节点用户会话线程
+    //
+    // 终止TaurusDB节点中指定的用户会话线程，执行时将排除传入的内部会话线程。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteTaurusDbNodeProcessesResponse> deleteTaurusDbNodeProcesses(
+        DeleteTaurusDbNodeProcessesRequest &request
     );
     // 查询实例是否开启备份加密功能
     //
@@ -1034,6 +1053,14 @@ public:
     std::shared_ptr<ListScheduleJobsResponse> listScheduleJobs(
         ListScheduleJobsRequest &request
     );
+    // 查询节点用户会话线程
+    //
+    // 分页查询TaurusDB节点中的用户会话线程，对应于show processlist命令，返回结果不含内部会话线程。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListTaurusDbNodeProcessesResponse> listTaurusDbNodeProcesses(
+        ListTaurusDbNodeProcessesRequest &request
+    );
     // 打开或关闭备份加密
     //
     // 打开或关闭备份加密。
@@ -1145,6 +1172,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<SetRecyclePolicyResponse> setRecyclePolicy(
         SetRecyclePolicyRequest &request
+    );
+    // 设置SQL限流规则
+    //
+    // 设置SQL限流规则。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SetSqlFilterRuleResponse> setSqlFilterRule(
+        SetSqlFilterRuleRequest &request
     );
     // 查询全量SQL开关状态
     //
@@ -1402,6 +1437,22 @@ public:
     std::shared_ptr<ShowSlowlogSensitiveStatusResponse> showSlowlogSensitiveStatus(
         ShowSlowlogSensitiveStatusRequest &request
     );
+    // 查询SQL限流开关状态
+    //
+    // 查询SQL限流开关状态。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowSqlFilterControlResponse> showSqlFilterControl(
+        ShowSqlFilterControlRequest &request
+    );
+    // 查询SQL限流规则
+    //
+    // 查询SQL限流规则。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowSqlFilterRuleResponse> showSqlFilterRule(
+        ShowSqlFilterRuleRequest &request
+    );
     // 减少数据库代理节点的数量
     //
     // 缩容数据库代理节点的数量。
@@ -1650,6 +1701,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateSlowlogSensitiveSwitchResponse> updateSlowlogSensitiveSwitch(
         UpdateSlowlogSensitiveSwitchRequest &request
+    );
+    // 开启或者关闭SQL限流
+    //
+    // 开启或者关闭SQL限流。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateSqlFilterControlResponse> updateSqlFilterControl(
+        UpdateSqlFilterControlRequest &request
     );
     // 修改只读节点的读内网地址
     //
@@ -2171,47 +2230,6 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpgradeSrKernelVersionResponse> upgradeSrKernelVersion(
         UpgradeSrKernelVersionRequest &request
-    );
-
-    // 删除SQL限流规则
-    //
-    // 删除SQL限流规则。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<DeleteSqlFilterRuleResponse> deleteSqlFilterRule(
-        DeleteSqlFilterRuleRequest &request
-    );
-    // 设置SQL限流规则
-    //
-    // 设置SQL限流规则。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<SetSqlFilterRuleResponse> setSqlFilterRule(
-        SetSqlFilterRuleRequest &request
-    );
-    // 查询SQL限流开关状态
-    //
-    // 查询SQL限流开关状态。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ShowSqlFilterControlResponse> showSqlFilterControl(
-        ShowSqlFilterControlRequest &request
-    );
-    // 查询SQL限流规则
-    //
-    // 查询SQL限流规则。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ShowSqlFilterRuleResponse> showSqlFilterRule(
-        ShowSqlFilterRuleRequest &request
-    );
-    // 开启或者关闭SQL限流
-    //
-    // 开启或者关闭SQL限流。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<UpdateSqlFilterControlResponse> updateSqlFilterControl(
-        UpdateSqlFilterControlRequest &request
     );
 
 

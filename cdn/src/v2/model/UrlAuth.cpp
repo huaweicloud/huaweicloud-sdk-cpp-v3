@@ -22,6 +22,8 @@ UrlAuth::UrlAuth()
     signMethodIsSet_ = false;
     matchType_ = "";
     matchTypeIsSet_ = false;
+    matchRule_ = "";
+    matchRuleIsSet_ = false;
     inheritConfigIsSet_ = false;
     key_ = "";
     keyIsSet_ = false;
@@ -59,6 +61,9 @@ web::json::value UrlAuth::toJson() const
     }
     if(matchTypeIsSet_) {
         val[utility::conversions::to_string_t("match_type")] = ModelBase::toJson(matchType_);
+    }
+    if(matchRuleIsSet_) {
+        val[utility::conversions::to_string_t("match_rule")] = ModelBase::toJson(matchRule_);
     }
     if(inheritConfigIsSet_) {
         val[utility::conversions::to_string_t("inherit_config")] = ModelBase::toJson(inheritConfig_);
@@ -128,6 +133,15 @@ bool UrlAuth::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setMatchType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("match_rule"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("match_rule"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMatchRule(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("inherit_config"))) {
@@ -291,6 +305,27 @@ bool UrlAuth::matchTypeIsSet() const
 void UrlAuth::unsetmatchType()
 {
     matchTypeIsSet_ = false;
+}
+
+std::string UrlAuth::getMatchRule() const
+{
+    return matchRule_;
+}
+
+void UrlAuth::setMatchRule(const std::string& value)
+{
+    matchRule_ = value;
+    matchRuleIsSet_ = true;
+}
+
+bool UrlAuth::matchRuleIsSet() const
+{
+    return matchRuleIsSet_;
+}
+
+void UrlAuth::unsetmatchRule()
+{
+    matchRuleIsSet_ = false;
 }
 
 InheritConfig UrlAuth::getInheritConfig() const

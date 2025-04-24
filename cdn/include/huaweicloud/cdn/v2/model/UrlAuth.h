@@ -76,13 +76,22 @@ public:
     void setSignMethod(const std::string& value);
 
     /// <summary>
-    /// 鉴权范围，目前仅支持配置所有文件参与鉴权，all：所有文件。
+    /// 鉴权范围 - all：所有文件 - include_file_extension：指定后缀文件参与鉴权 - exclude_file_extension：指定后缀文件不参与鉴权
     /// </summary>
 
     std::string getMatchType() const;
     bool matchTypeIsSet() const;
     void unsetmatchType();
     void setMatchType(const std::string& value);
+
+    /// <summary>
+    /// 鉴权文件匹配规则，当match_type为all时，置空。当match_type为include_file_extension或exclude_file_extension时，输入文件后缀，后缀以“.”为首字符，多个后缀以“,”分隔，如.jpg,.zip,.exe。
+    /// </summary>
+
+    std::string getMatchRule() const;
+    bool matchRuleIsSet() const;
+    void unsetmatchRule();
+    void setMatchRule(const std::string& value);
 
     /// <summary>
     /// 
@@ -150,6 +159,8 @@ protected:
     bool signMethodIsSet_;
     std::string matchType_;
     bool matchTypeIsSet_;
+    std::string matchRule_;
+    bool matchRuleIsSet_;
     InheritConfig inheritConfig_;
     bool inheritConfigIsSet_;
     std::string key_;

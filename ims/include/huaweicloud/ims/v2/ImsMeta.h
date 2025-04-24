@@ -17,6 +17,7 @@ public:
     static HttpRequestDef genRequestDefForBatchAddMembers();
     static HttpRequestDef genRequestDefForBatchAddOrDeleteTags();
     static HttpRequestDef genRequestDefForBatchDeleteMembers();
+    static HttpRequestDef genRequestDefForBatchDeleteTags();
     static HttpRequestDef genRequestDefForBatchUpdateMembers();
     static HttpRequestDef genRequestDefForCopyImageCrossRegion();
     static HttpRequestDef genRequestDefForCopyImageInRegion();
@@ -28,12 +29,14 @@ public:
     static HttpRequestDef genRequestDefForExportImage();
     static HttpRequestDef genRequestDefForImportImageQuick();
     static HttpRequestDef genRequestDefForListImageByTags();
+    static HttpRequestDef genRequestDefForListImageMembers();
     static HttpRequestDef genRequestDefForListImageTags();
     static HttpRequestDef genRequestDefForListImages();
     static HttpRequestDef genRequestDefForListImagesTags();
     static HttpRequestDef genRequestDefForListOsVersions();
     static HttpRequestDef genRequestDefForListTags();
     static HttpRequestDef genRequestDefForRegisterImage();
+    static HttpRequestDef genRequestDefForShowImageMember();
     static HttpRequestDef genRequestDefForShowImageQuota();
     static HttpRequestDef genRequestDefForShowJob();
     static HttpRequestDef genRequestDefForShowJobProgress();

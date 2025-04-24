@@ -26,6 +26,8 @@ RequestLimitRules::RequestLimitRules()
     limitRateAfterIsSet_ = false;
     limitRateValue_ = 0;
     limitRateValueIsSet_ = false;
+    limitTime_ = "";
+    limitTimeIsSet_ = false;
 }
 
 RequestLimitRules::~RequestLimitRules() = default;
@@ -58,6 +60,9 @@ web::json::value RequestLimitRules::toJson() const
     }
     if(limitRateValueIsSet_) {
         val[utility::conversions::to_string_t("limit_rate_value")] = ModelBase::toJson(limitRateValue_);
+    }
+    if(limitTimeIsSet_) {
+        val[utility::conversions::to_string_t("limit_time")] = ModelBase::toJson(limitTime_);
     }
 
     return val;
@@ -127,6 +132,15 @@ bool RequestLimitRules::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLimitRateValue(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("limit_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("limit_time"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLimitTime(refVal);
         }
     }
     return ok;
@@ -278,6 +292,27 @@ bool RequestLimitRules::limitRateValueIsSet() const
 void RequestLimitRules::unsetlimitRateValue()
 {
     limitRateValueIsSet_ = false;
+}
+
+std::string RequestLimitRules::getLimitTime() const
+{
+    return limitTime_;
+}
+
+void RequestLimitRules::setLimitTime(const std::string& value)
+{
+    limitTime_ = value;
+    limitTimeIsSet_ = true;
+}
+
+bool RequestLimitRules::limitTimeIsSet() const
+{
+    return limitTimeIsSet_;
+}
+
+void RequestLimitRules::unsetlimitTime()
+{
+    limitTimeIsSet_ = false;
 }
 
 }

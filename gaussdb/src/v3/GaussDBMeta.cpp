@@ -408,6 +408,20 @@ HttpRequestDef GaussDBMeta::genRequestDefForDeleteScheduleTasK() {
     return reqDefBuilder;
 }
 
+HttpRequestDef GaussDBMeta::genRequestDefForDeleteSqlFilterRule() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef GaussDBMeta::genRequestDefForDeleteTaskRecord() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
@@ -415,6 +429,20 @@ HttpRequestDef GaussDBMeta::genRequestDefForDeleteTaskRecord() {
                   .withName("XLanguage")
                   .withJsonTag("X-Language")
                   .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBMeta::genRequestDefForDeleteTaurusDbNodeProcesses() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
     return reqDefBuilder;
 }
 
@@ -930,6 +958,22 @@ HttpRequestDef GaussDBMeta::genRequestDefForListScheduleJobs() {
     return reqDefBuilder;
 }
 
+HttpRequestDef GaussDBMeta::genRequestDefForListTaurusDbNodeProcesses() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef GaussDBMeta::genRequestDefForModifyBackupEncryptStatus() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
@@ -1109,6 +1153,20 @@ HttpRequestDef GaussDBMeta::genRequestDefForSetGaussMySqlQuotas() {
 }
 
 HttpRequestDef GaussDBMeta::genRequestDefForSetRecyclePolicy() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBMeta::genRequestDefForSetSqlFilterRule() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage
@@ -1569,6 +1627,32 @@ HttpRequestDef GaussDBMeta::genRequestDefForShowSlowlogSensitiveStatus() {
     return reqDefBuilder;
 }
 
+HttpRequestDef GaussDBMeta::genRequestDefForShowSqlFilterControl() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBMeta::genRequestDefForShowSqlFilterRule() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("NodeId")
+                  .withJsonTag("node_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("SqlType")
+                  .withJsonTag("sql_type")
+                  .withLocationType(Query_));
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef GaussDBMeta::genRequestDefForShrinkGaussMySqlProxy() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
@@ -1990,6 +2074,20 @@ HttpRequestDef GaussDBMeta::genRequestDefForUpdateServerlessPolicy() {
 }
 
 HttpRequestDef GaussDBMeta::genRequestDefForUpdateSlowlogSensitiveSwitch() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBMeta::genRequestDefForUpdateSqlFilterControl() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage
@@ -2882,74 +2980,6 @@ HttpRequestDef GaussDBMeta::genRequestDefForUpdateStarrocksParams() {
 }
 
 HttpRequestDef GaussDBMeta::genRequestDefForUpgradeSrKernelVersion() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef headerParamXLanguage;
-    reqDefBuilder.withRequestField(headerParamXLanguage
-                  .withName("XLanguage")
-                  .withJsonTag("X-Language")
-                  .withLocationType(Header_));
-    FieldDef bodyParam;
-    reqDefBuilder.withRequestField(bodyParam.
-        withName("Body").
-        withLocationType(Body_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef GaussDBMeta::genRequestDefForDeleteSqlFilterRule() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef headerParamXLanguage;
-    reqDefBuilder.withRequestField(headerParamXLanguage
-                  .withName("XLanguage")
-                  .withJsonTag("X-Language")
-                  .withLocationType(Header_));
-    FieldDef bodyParam;
-    reqDefBuilder.withRequestField(bodyParam.
-        withName("Body").
-        withLocationType(Body_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef GaussDBMeta::genRequestDefForSetSqlFilterRule() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef headerParamXLanguage;
-    reqDefBuilder.withRequestField(headerParamXLanguage
-                  .withName("XLanguage")
-                  .withJsonTag("X-Language")
-                  .withLocationType(Header_));
-    FieldDef bodyParam;
-    reqDefBuilder.withRequestField(bodyParam.
-        withName("Body").
-        withLocationType(Body_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef GaussDBMeta::genRequestDefForShowSqlFilterControl() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef headerParamXLanguage;
-    reqDefBuilder.withRequestField(headerParamXLanguage
-                  .withName("XLanguage")
-                  .withJsonTag("X-Language")
-                  .withLocationType(Header_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef GaussDBMeta::genRequestDefForShowSqlFilterRule() {
-    HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withRequestField(FieldDef().withName("NodeId")
-                  .withJsonTag("node_id")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("SqlType")
-                  .withJsonTag("sql_type")
-                  .withLocationType(Query_));
-    FieldDef headerParamXLanguage;
-    reqDefBuilder.withRequestField(headerParamXLanguage
-                  .withName("XLanguage")
-                  .withJsonTag("X-Language")
-                  .withLocationType(Header_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef GaussDBMeta::genRequestDefForUpdateSqlFilterControl() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage

@@ -101,6 +101,15 @@ public:
     void unsetlimitRateValue();
     void setLimitRateValue(int32_t value);
 
+    /// <summary>
+    /// 指明限速的时段，按照每天24小时设置限速时段，格式为：HHMM-HHMM（HH为时，MM为分，时区为UTC+8），多个时段限速时用“,”分隔，最多可配置10个时段，例如：0100-0200,2200-2300。不传或传空时默认值为0000-2400，代表限速对所有时段生效。
+    /// </summary>
+
+    std::string getLimitTime() const;
+    bool limitTimeIsSet() const;
+    void unsetlimitTime();
+    void setLimitTime(const std::string& value);
+
 
 protected:
     std::string status_;
@@ -117,6 +126,8 @@ protected:
     bool limitRateAfterIsSet_;
     int32_t limitRateValue_;
     bool limitRateValueIsSet_;
+    std::string limitTime_;
+    bool limitTimeIsSet_;
 
 };
 

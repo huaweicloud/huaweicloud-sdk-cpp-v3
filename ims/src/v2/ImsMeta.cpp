@@ -44,6 +44,15 @@ HttpRequestDef ImsMeta::genRequestDefForBatchDeleteMembers() {
     return reqDefBuilder;
 }
 
+HttpRequestDef ImsMeta::genRequestDefForBatchDeleteTags() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef ImsMeta::genRequestDefForBatchUpdateMembers() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -136,6 +145,11 @@ HttpRequestDef ImsMeta::genRequestDefForListImageByTags() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ImsMeta::genRequestDefForListImageMembers() {
+    HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
 
@@ -334,6 +348,11 @@ HttpRequestDef ImsMeta::genRequestDefForRegisterImage() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ImsMeta::genRequestDefForShowImageMember() {
+    HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
 

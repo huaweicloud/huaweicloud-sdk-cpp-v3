@@ -974,6 +974,20 @@ HttpRequestDef GaussDBMeta::genRequestDefForListTaurusDbNodeProcesses() {
     return reqDefBuilder;
 }
 
+HttpRequestDef GaussDBMeta::genRequestDefForModifyAutoExpandPolicy() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef GaussDBMeta::genRequestDefForModifyBackupEncryptStatus() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
@@ -1181,6 +1195,16 @@ HttpRequestDef GaussDBMeta::genRequestDefForSetSqlFilterRule() {
 }
 
 HttpRequestDef GaussDBMeta::genRequestDefForShowAuditLog() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBMeta::genRequestDefForShowAutoExpandPolicy() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage
@@ -1573,6 +1597,28 @@ HttpRequestDef GaussDBMeta::genRequestDefForShowProxyVersion() {
 
 HttpRequestDef GaussDBMeta::genRequestDefForShowRecyclePolicy() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBMeta::genRequestDefForShowRestoreAvailableTables() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("RestoreTime")
+                  .withJsonTag("restore_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("LastTableInfo")
+                  .withJsonTag("last_table_info")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("DatabaseName")
+                  .withJsonTag("database_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("TableName")
+                  .withJsonTag("table_name")
+                  .withLocationType(Query_));
     FieldDef headerParamXLanguage;
     reqDefBuilder.withRequestField(headerParamXLanguage
                   .withName("XLanguage")

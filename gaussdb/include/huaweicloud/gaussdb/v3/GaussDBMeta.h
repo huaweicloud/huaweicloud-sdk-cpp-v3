@@ -75,6 +75,7 @@ public:
     static HttpRequestDef genRequestDefForListRecycleInstances();
     static HttpRequestDef genRequestDefForListScheduleJobs();
     static HttpRequestDef genRequestDefForListTaurusDbNodeProcesses();
+    static HttpRequestDef genRequestDefForModifyAutoExpandPolicy();
     static HttpRequestDef genRequestDefForModifyBackupEncryptStatus();
     static HttpRequestDef genRequestDefForModifyGaussMySqlProxyRouteMode();
     static HttpRequestDef genRequestDefForModifyGaussMysqlDns();
@@ -91,6 +92,7 @@ public:
     static HttpRequestDef genRequestDefForSetRecyclePolicy();
     static HttpRequestDef genRequestDefForSetSqlFilterRule();
     static HttpRequestDef genRequestDefForShowAuditLog();
+    static HttpRequestDef genRequestDefForShowAutoExpandPolicy();
     static HttpRequestDef genRequestDefForShowAutoScalingHistory();
     static HttpRequestDef genRequestDefForShowAutoScalingPolicy();
     static HttpRequestDef genRequestDefForShowBackupRestoreTime();
@@ -119,6 +121,7 @@ public:
     static HttpRequestDef genRequestDefForShowProxyIpgroup();
     static HttpRequestDef genRequestDefForShowProxyVersion();
     static HttpRequestDef genRequestDefForShowRecyclePolicy();
+    static HttpRequestDef genRequestDefForShowRestoreAvailableTables();
     static HttpRequestDef genRequestDefForShowRestoreTables();
     static HttpRequestDef genRequestDefForShowSlowLogStatistics();
     static HttpRequestDef genRequestDefForShowSlowlogSensitiveStatus();

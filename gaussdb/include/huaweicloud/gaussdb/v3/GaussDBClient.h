@@ -158,6 +158,9 @@
 #include <huaweicloud/gaussdb/v3/model/LtsLogErrorQueryRequest.h>
 #include <huaweicloud/gaussdb/v3/model/LtsLogSlowQueryRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ModifyAliasRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ModifyAutoExpandPolicyReq.h>
+#include <huaweicloud/gaussdb/v3/model/ModifyAutoExpandPolicyRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ModifyAutoExpandPolicyResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ModifyBackupEncryptStatusRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ModifyBackupEncryptStatusResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ModifyBindEipRequest.h>
@@ -223,6 +226,8 @@
 #include <huaweicloud/gaussdb/v3/model/SetSqlFilterRuleResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowAuditLogRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ShowAuditLogResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ShowAutoExpandPolicyRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ShowAutoExpandPolicyResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowAutoScalingHistoryRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ShowAutoScalingHistoryResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowAutoScalingPolicyRequest.h>
@@ -279,6 +284,8 @@
 #include <huaweicloud/gaussdb/v3/model/ShowProxyVersionResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowRecyclePolicyRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ShowRecyclePolicyResponse.h>
+#include <huaweicloud/gaussdb/v3/model/ShowRestoreAvailableTablesRequest.h>
+#include <huaweicloud/gaussdb/v3/model/ShowRestoreAvailableTablesResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowRestoreTablesRequest.h>
 #include <huaweicloud/gaussdb/v3/model/ShowRestoreTablesResponse.h>
 #include <huaweicloud/gaussdb/v3/model/ShowSlowLogStatisticsRequest.h>
@@ -1061,6 +1068,14 @@ public:
     std::shared_ptr<ListTaurusDbNodeProcessesResponse> listTaurusDbNodeProcesses(
         ListTaurusDbNodeProcessesRequest &request
     );
+    // 修改存储空间自动扩容策略。
+    //
+    // 修改存储空间自动扩容策略。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ModifyAutoExpandPolicyResponse> modifyAutoExpandPolicy(
+        ModifyAutoExpandPolicyRequest &request
+    );
     // 打开或关闭备份加密
     //
     // 打开或关闭备份加密。
@@ -1188,6 +1203,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowAuditLogResponse> showAuditLog(
         ShowAuditLogRequest &request
+    );
+    // 查询存储空间自动扩容策略。
+    //
+    // 查询存储空间自动扩容策略。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowAutoExpandPolicyResponse> showAutoExpandPolicy(
+        ShowAutoExpandPolicyRequest &request
     );
     // 查询自动变配历史记录.
     //
@@ -1412,6 +1435,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowRecyclePolicyResponse> showRecyclePolicy(
         ShowRecyclePolicyRequest &request
+    );
+    // 查询表级时间点恢复可选表
+    //
+    // 查询表级时间点恢复可选表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowRestoreAvailableTablesResponse> showRestoreAvailableTables(
+        ShowRestoreAvailableTablesRequest &request
     );
     // 查询表级时间点恢复可选表
     //

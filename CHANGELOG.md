@@ -1,3 +1,50 @@
+# 3.1.134 2025-04-27
+
+### HuaweiCloud SDK CloudTable
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListClusters**
+    - changes of response param
+      - `+ clusters.localHdfs`
+      - `+ clusters.is_show_222_version_feature`
+      - `+ clusters.actionsCount`
+      - `+ clusters.support_auth`
+      - `+ clusters.eps_id`
+      - `+ clusters.cluster_type`
+      - `+ clusters.order_id`
+      - `+ clusters.order_status`
+      - `+ clusters.is_local_hdfs`
+      - `+ clusters.ck_deploy_mode`
+      - `+ clusters.flavor_type_en`
+      - `+ clusters.enable_hot_cold_feature_cluster`
+      - `+ clusters.enable_hot_cold_feature`
+      - `+ clusters.data_flavor`
+      - `+ clusters.control_flavor`
+      - `+ clusters.data_node_num`
+      - `+ clusters.control_node_num`
+      - `+ clusters.data_node_total_storage_size`
+      - `+ clusters.control_node_total_storage_size`
+      - `+ clusters.cold_storage_used_size`
+      - `+ clusters.data_node_volume_type`
+      - `+ clusters.control_node_volume_type`
+
+### HuaweiCloud SDK GaussDB
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the APIs `ShowRestoreAvailableTables`, `ShowAutoExpandPolicy`, `ModifyAutoExpandPolicy`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.133 2025-04-24
 
 ### HuaweiCloud SDK CDN

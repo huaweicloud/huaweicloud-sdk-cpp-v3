@@ -30,11 +30,25 @@
 #include <huaweicloud/vod/v1/model/CreateAssetReviewTaskRequest.h>
 #include <huaweicloud/vod/v1/model/CreateAssetReviewTaskResponse.h>
 #include <huaweicloud/vod/v1/model/CreateCategoryReq.h>
+#include <huaweicloud/vod/v1/model/CreateEditTaskRequest.h>
+#include <huaweicloud/vod/v1/model/CreateEditTaskRequestBody.h>
+#include <huaweicloud/vod/v1/model/CreateEditTaskResponse.h>
 #include <huaweicloud/vod/v1/model/CreateExtractAudioTaskRequest.h>
 #include <huaweicloud/vod/v1/model/CreateExtractAudioTaskResponse.h>
+#include <huaweicloud/vod/v1/model/CreateObjectProcessTaskRequest.h>
+#include <huaweicloud/vod/v1/model/CreateObjectProcessTaskResponse.h>
+#include <huaweicloud/vod/v1/model/CreateObjectReplicationRequest.h>
+#include <huaweicloud/vod/v1/model/CreateObjectReplicationRequestBody.h>
+#include <huaweicloud/vod/v1/model/CreateObjectReplicationResponse.h>
+#include <huaweicloud/vod/v1/model/CreateObjectRetrievalRequest.h>
+#include <huaweicloud/vod/v1/model/CreateObjectRetrievalRequestBody.h>
+#include <huaweicloud/vod/v1/model/CreateObjectRetrievalResponse.h>
 #include <huaweicloud/vod/v1/model/CreatePreheatingAssetReq.h>
 #include <huaweicloud/vod/v1/model/CreatePreheatingAssetRequest.h>
 #include <huaweicloud/vod/v1/model/CreatePreheatingAssetResponse.h>
+#include <huaweicloud/vod/v1/model/CreateRealTimeClipRequest.h>
+#include <huaweicloud/vod/v1/model/CreateRealTimeClipRequestBody.h>
+#include <huaweicloud/vod/v1/model/CreateRealTimeClipResponse.h>
 #include <huaweicloud/vod/v1/model/CreateTakeOverTaskReq.h>
 #include <huaweicloud/vod/v1/model/CreateTakeOverTaskRequest.h>
 #include <huaweicloud/vod/v1/model/CreateTakeOverTaskResponse.h>
@@ -45,6 +59,8 @@
 #include <huaweicloud/vod/v1/model/CreateTranscodeTemplate.h>
 #include <huaweicloud/vod/v1/model/CreateTranscodeTemplateRequest.h>
 #include <huaweicloud/vod/v1/model/CreateTranscodeTemplateResponse.h>
+#include <huaweicloud/vod/v1/model/CreateUploadByUrlRequest.h>
+#include <huaweicloud/vod/v1/model/CreateUploadByUrlResponse.h>
 #include <huaweicloud/vod/v1/model/CreateWatermarkTemplateReq.h>
 #include <huaweicloud/vod/v1/model/CreateWatermarkTemplateRequest.h>
 #include <huaweicloud/vod/v1/model/CreateWatermarkTemplateResponse.h>
@@ -52,6 +68,8 @@
 #include <huaweicloud/vod/v1/model/DeleteAssetCategoryResponse.h>
 #include <huaweicloud/vod/v1/model/DeleteAssetsRequest.h>
 #include <huaweicloud/vod/v1/model/DeleteAssetsResponse.h>
+#include <huaweicloud/vod/v1/model/DeleteDyAssetRequest.h>
+#include <huaweicloud/vod/v1/model/DeleteDyAssetResponse.h>
 #include <huaweicloud/vod/v1/model/DeleteTemplateGroupCollectionRequest.h>
 #include <huaweicloud/vod/v1/model/DeleteTemplateGroupCollectionResponse.h>
 #include <huaweicloud/vod/v1/model/DeleteTemplateGroupRequest.h>
@@ -87,6 +105,7 @@
 #include <huaweicloud/vod/v1/model/ModifyTemplateGroupCollection.h>
 #include <huaweicloud/vod/v1/model/ModifyTransTemplate.h>
 #include <huaweicloud/vod/v1/model/ModifyTransTemplateGroup.h>
+#include <huaweicloud/vod/v1/model/ObjectProcessReq.h>
 #include <huaweicloud/vod/v1/model/PublishAssetFromObsReq.h>
 #include <huaweicloud/vod/v1/model/PublishAssetFromObsRequest.h>
 #include <huaweicloud/vod/v1/model/PublishAssetFromObsResponse.h>
@@ -107,12 +126,16 @@
 #include <huaweicloud/vod/v1/model/ShowAssetTempAuthorityResponse.h>
 #include <huaweicloud/vod/v1/model/ShowCdnStatisticsRequest.h>
 #include <huaweicloud/vod/v1/model/ShowCdnStatisticsResponse.h>
+#include <huaweicloud/vod/v1/model/ShowObjectMetaDataRequest.h>
+#include <huaweicloud/vod/v1/model/ShowObjectMetaDataResponse.h>
 #include <huaweicloud/vod/v1/model/ShowPreheatingAssetRequest.h>
 #include <huaweicloud/vod/v1/model/ShowPreheatingAssetResponse.h>
 #include <huaweicloud/vod/v1/model/ShowRefreshResultRequest.h>
 #include <huaweicloud/vod/v1/model/ShowRefreshResultResponse.h>
 #include <huaweicloud/vod/v1/model/ShowStorageModeTypeRequest.h>
 #include <huaweicloud/vod/v1/model/ShowStorageModeTypeResponse.h>
+#include <huaweicloud/vod/v1/model/ShowTaskDetailRequest.h>
+#include <huaweicloud/vod/v1/model/ShowTaskDetailResponse.h>
 #include <huaweicloud/vod/v1/model/ShowVodRetrievalRequest.h>
 #include <huaweicloud/vod/v1/model/ShowVodRetrievalResponse.h>
 #include <huaweicloud/vod/v1/model/ShowVodStatisticsRequest.h>
@@ -152,6 +175,7 @@
 #include <huaweicloud/vod/v1/model/UpdateWatermarkTemplateRequest.h>
 #include <huaweicloud/vod/v1/model/UpdateWatermarkTemplateResponse.h>
 #include <huaweicloud/vod/v1/model/UploadAssetReq.h>
+#include <huaweicloud/vod/v1/model/UploadByUrlReq.h>
 #include <huaweicloud/vod/v1/model/UploadMetaDataByUrlReq.h>
 #include <huaweicloud/vod/v1/model/UploadMetaDataByUrlRequest.h>
 #include <huaweicloud/vod/v1/model/UploadMetaDataByUrlResponse.h>
@@ -265,6 +289,15 @@ public:
     std::shared_ptr<CreateAssetReviewTaskResponse> createAssetReviewTask(
         CreateAssetReviewTaskRequest &request
     );
+    // 
+    //
+    // ## 典型场景 ##
+    //   剪辑任务下发。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateEditTaskResponse> createEditTask(
+        CreateEditTaskRequest &request
+    );
     // 音频提取
     //
     // 本接口为异步接口，创建音频提取任务下发成功后会返回asset_id和提取的audio_asset_id，但此时音频提取任务并没有立即完成，可通过消息订阅界面配置的音频提取完成事件来获取音频提取任务完成与否。
@@ -273,6 +306,37 @@ public:
     std::shared_ptr<CreateExtractAudioTaskResponse> createExtractAudioTask(
         CreateExtractAudioTaskRequest &request
     );
+    // 创建视频处理任务
+    //
+    // ## 典型场景 ##
+    //   视频处理。
+    // 
+    // ## 接口功能 ##
+    //   工作流方式视频处理
+    // 
+    // ## 接口约束 ##
+    //   无。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateObjectProcessTaskResponse> createObjectProcessTask(
+        CreateObjectProcessTaskRequest &request
+    );
+    // obs桶内容复制
+    //
+    // ## 典型场景 ##
+    //   触发从用户obs桶复制内容到用户obs桶，当前仅为斗鱼提供&lt;br/&gt;
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateObjectReplicationResponse> createObjectReplication(
+        CreateObjectReplicationRequest &request
+    );
+    // obs桶内容解冻
+    //
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateObjectRetrievalResponse> createObjectRetrieval(
+        CreateObjectRetrievalRequest &request
+    );
     // CDN预热
     //
     // 媒资发布后，可通过指定媒资ID或URL向CDN预热。用户初次请求时，将由CDN节点提供请求媒资，加快用户下载缓存时间，提高用户体验。单租户每天最多预热1000个。
@@ -280,6 +344,15 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreatePreheatingAssetResponse> createPreheatingAsset(
         CreatePreheatingAssetRequest &request
+    );
+    // 直播内容即时剪辑
+    //
+    // ## 典型场景 ##
+    //   触发从直播时移桶截取一段流，当前仅为斗鱼提供&lt;br/&gt;
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateRealTimeClipResponse> createRealTimeClip(
+        CreateRealTimeClipRequest &request
     );
     // 创建媒资：OBS托管方式
     //
@@ -315,6 +388,15 @@ public:
     std::shared_ptr<CreateTranscodeTemplateResponse> createTranscodeTemplate(
         CreateTranscodeTemplateRequest &request
     );
+    // URL拉取上传
+    //
+    // ## 典型场景 ##
+    //   UGC场景URL拉取上传，当前仅为斗鱼提供&lt;br/&gt;
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateUploadByUrlResponse> createUploadByUrl(
+        CreateUploadByUrlRequest &request
+    );
     // 创建水印模板
     //
     // 创建水印模板。
@@ -338,6 +420,15 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteAssetsResponse> deleteAssets(
         DeleteAssetsRequest &request
+    );
+    // 删除斗鱼媒资
+    //
+    // ## 典型场景 ##
+    //   斗鱼删除桶文件及媒资表数据。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteDyAssetResponse> deleteDyAsset(
+        DeleteDyAssetRequest &request
     );
     // 删除自定义转码模板组
     //
@@ -533,6 +624,14 @@ public:
     std::shared_ptr<ShowCdnStatisticsResponse> showCdnStatistics(
         ShowCdnStatisticsRequest &request
     );
+    // 查询媒体元数据
+    //
+    // 查询媒体元数据
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowObjectMetaDataResponse> showObjectMetaData(
+        ShowObjectMetaDataRequest &request
+    );
     // 查询CDN预热
     //
     // 查询预热结果。
@@ -556,6 +655,15 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowStorageModeTypeResponse> showStorageModeType(
         ShowStorageModeTypeRequest &request
+    );
+    // 查询任务详情
+    //
+    // ## 典型场景 ##
+    //   任务详情查询
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowTaskDetailResponse> showTaskDetail(
+        ShowTaskDetailRequest &request
     );
     // 查询取回数据信息
     //

@@ -56,12 +56,23 @@ public:
     void unsetobject();
     void setObject(const std::string& value);
 
+    /// <summary>
+    /// 桶所在区域
+    /// </summary>
+
+    std::string getRegion() const;
+    bool regionIsSet() const;
+    void unsetregion();
+    void setRegion(const std::string& value);
+
 
 protected:
     std::string bucket_;
     bool bucketIsSet_;
     std::string object_;
     bool objectIsSet_;
+    std::string region_;
+    bool regionIsSet_;
 
 };
 

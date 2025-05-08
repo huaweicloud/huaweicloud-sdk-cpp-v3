@@ -83,15 +83,6 @@ public:
     void unsetdrTaskName();
     void setDrTaskName(const std::string& value);
 
-    /// <summary>
-    /// 灾备实例为轻量化部署.
-    /// </summary>
-
-    std::string getLiteDrMode() const;
-    bool liteDrModeIsSet() const;
-    void unsetliteDrMode();
-    void setLiteDrMode(const std::string& value);
-
 
 protected:
     std::string disasterType_;
@@ -104,8 +95,6 @@ protected:
     bool drUserPasswordIsSet_;
     std::string drTaskName_;
     bool drTaskNameIsSet_;
-    std::string liteDrMode_;
-    bool liteDrModeIsSet_;
 
 };
 

@@ -18,6 +18,8 @@ Update_fields::Update_fields()
     addIsSet_ = false;
     rmvIsSet_ = false;
     insertIsSet_ = false;
+    deleteIsSet_ = false;
+    updateBlobIsSet_ = false;
 }
 
 Update_fields::~Update_fields() = default;
@@ -42,6 +44,12 @@ bool Update_fields::toBson(Builder &builder) const
         return false;
     }
     if (insertIsSet_ && !bson_append(builder, "insert", insert_)) {
+        return false;
+    }
+    if (deleteIsSet_ && !bson_append(builder, "delete", delete_)) {
+        return false;
+    }
+    if (updateBlobIsSet_ && !bson_append(builder, "update_blob", updateBlob_)) {
         return false;
     }
 
@@ -96,6 +104,24 @@ bool Update_fields::fromBson(const Viewer &viewer)
                 return false;
             }
             insertIsSet_ = true;
+            ++it;
+            continue;
+        }
+        
+        if (key == "delete") {
+            if (!bson_get(it, delete_)) {
+                return false;
+            }
+            deleteIsSet_ = true;
+            ++it;
+            continue;
+        }
+        
+        if (key == "update_blob") {
+            if (!bson_get(it, updateBlob_)) {
+                return false;
+            }
+            updateBlobIsSet_ = true;
             ++it;
             continue;
         }
@@ -209,6 +235,48 @@ bool Update_fields::insertIsSet() const
 void Update_fields::unsetinsert()
 {
     insertIsSet_ = false;
+}
+
+Document Update_fields::getDelete() const
+{
+    return delete_;
+}
+
+void Update_fields::setDelete(const Document& value)
+{
+    delete_ = value;
+    deleteIsSet_ = true;
+}
+
+bool Update_fields::deleteIsSet() const
+{
+    return deleteIsSet_;
+}
+
+void Update_fields::unsetdelete()
+{
+    deleteIsSet_ = false;
+}
+
+Update_blob Update_fields::getUpdateBlob() const
+{
+    return updateBlob_;
+}
+
+void Update_fields::setUpdateBlob(const Update_blob& value)
+{
+    updateBlob_ = value;
+    updateBlobIsSet_ = true;
+}
+
+bool Update_fields::updateBlobIsSet() const
+{
+    return updateBlobIsSet_;
+}
+
+void Update_fields::unsetupdateBlob()
+{
+    updateBlobIsSet_ = false;
 }
 
 }

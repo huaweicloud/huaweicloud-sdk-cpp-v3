@@ -16,6 +16,8 @@ ObsInfo::ObsInfo()
     bucketIsSet_ = false;
     object_ = "";
     objectIsSet_ = false;
+    region_ = "";
+    regionIsSet_ = false;
 }
 
 ObsInfo::~ObsInfo() = default;
@@ -33,6 +35,9 @@ web::json::value ObsInfo::toJson() const
     }
     if(objectIsSet_) {
         val[utility::conversions::to_string_t("object")] = ModelBase::toJson(object_);
+    }
+    if(regionIsSet_) {
+        val[utility::conversions::to_string_t("region")] = ModelBase::toJson(region_);
     }
 
     return val;
@@ -57,6 +62,15 @@ bool ObsInfo::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setObject(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("region"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("region"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRegion(refVal);
         }
     }
     return ok;
@@ -103,6 +117,27 @@ bool ObsInfo::objectIsSet() const
 void ObsInfo::unsetobject()
 {
     objectIsSet_ = false;
+}
+
+std::string ObsInfo::getRegion() const
+{
+    return region_;
+}
+
+void ObsInfo::setRegion(const std::string& value)
+{
+    region_ = value;
+    regionIsSet_ = true;
+}
+
+bool ObsInfo::regionIsSet() const
+{
+    return regionIsSet_;
+}
+
+void ObsInfo::unsetregion()
+{
+    regionIsSet_ = false;
 }
 
 }

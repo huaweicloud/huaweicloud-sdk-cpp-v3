@@ -13,6 +13,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <huaweicloud/kvs/v1/model/Update_blob.h>
 #include <huaweicloud/core/bson/Bson.h>
 #include <vector>
 
@@ -88,6 +89,24 @@ public:
     void unsetinsert();
     void setInsert(const Document& value);
 
+    /// <summary>
+    /// 从数组中删除某个元素 &gt; 非数组返回失败。
+    /// </summary>
+
+    Document getDelete() const;
+    bool deleteIsSet() const;
+    void unsetdelete();
+    void setDelete(const Document& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    Update_blob getUpdateBlob() const;
+    bool updateBlobIsSet() const;
+    void unsetupdateBlob();
+    void setUpdateBlob(const Update_blob& value);
+
 
 protected:
     Document upsert_;
@@ -100,6 +119,10 @@ protected:
     bool rmvIsSet_;
     Document insert_;
     bool insertIsSet_;
+    Document delete_;
+    bool deleteIsSet_;
+    Update_blob updateBlob_;
+    bool updateBlobIsSet_;
 
 };
 

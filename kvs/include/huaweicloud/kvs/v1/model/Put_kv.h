@@ -12,6 +12,8 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/kvs/v1/model/Condition_expression.h>
+#include <huaweicloud/kvs/v1/model/Kv_blob.h>
 #include <huaweicloud/core/bson/Bson.h>
 
 namespace HuaweiCloud {
@@ -59,12 +61,34 @@ public:
     void unsetkvDoc();
     void setKvDoc(const Document& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    Kv_blob getKvBlob() const;
+    bool kvBlobIsSet() const;
+    void unsetkvBlob();
+    void setKvBlob(const Kv_blob& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    Condition_expression getConditionExpression() const;
+    bool conditionExpressionIsSet() const;
+    void unsetconditionExpression();
+    void setConditionExpression(const Condition_expression& value);
+
 
 protected:
     int32_t operId_;
     bool operIdIsSet_;
     Document kvDoc_;
     bool kvDocIsSet_;
+    Kv_blob kvBlob_;
+    bool kvBlobIsSet_;
+    Condition_expression conditionExpression_;
+    bool conditionExpressionIsSet_;
 
 };
 

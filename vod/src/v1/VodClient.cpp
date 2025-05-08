@@ -404,6 +404,50 @@ std::shared_ptr<CreateAssetReviewTaskResponse> VodClient::createAssetReviewTask(
 
     return localVarResult;
 }
+std::shared_ptr<CreateEditTaskResponse> VodClient::createEditTask(CreateEditTaskRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/asset/customization/edit";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSdkDateIsSet()) {
+        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, VodMeta::genRequestDefForCreateEditTask());
+
+    std::shared_ptr<CreateEditTaskResponse> localVarResult = std::make_shared<CreateEditTaskResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<CreateExtractAudioTaskResponse> VodClient::createExtractAudioTask(CreateExtractAudioTaskRequest &request)
 {
     std::string localVarPath = "/v1.0/{project_id}/asset/extract_audio";
@@ -448,6 +492,138 @@ std::shared_ptr<CreateExtractAudioTaskResponse> VodClient::createExtractAudioTas
 
     return localVarResult;
 }
+std::shared_ptr<CreateObjectProcessTaskResponse> VodClient::createObjectProcessTask(CreateObjectProcessTaskRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/asset/customization/process";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSdkDateIsSet()) {
+        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, VodMeta::genRequestDefForCreateObjectProcessTask());
+
+    std::shared_ptr<CreateObjectProcessTaskResponse> localVarResult = std::make_shared<CreateObjectProcessTaskResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<CreateObjectReplicationResponse> VodClient::createObjectReplication(CreateObjectReplicationRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/asset/customization/object-replication";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSdkDateIsSet()) {
+        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, VodMeta::genRequestDefForCreateObjectReplication());
+
+    std::shared_ptr<CreateObjectReplicationResponse> localVarResult = std::make_shared<CreateObjectReplicationResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<CreateObjectRetrievalResponse> VodClient::createObjectRetrieval(CreateObjectRetrievalRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/asset/customization/object-retrieval";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSdkDateIsSet()) {
+        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, VodMeta::genRequestDefForCreateObjectRetrieval());
+
+    std::shared_ptr<CreateObjectRetrievalResponse> localVarResult = std::make_shared<CreateObjectRetrievalResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<CreatePreheatingAssetResponse> VodClient::createPreheatingAsset(CreatePreheatingAssetRequest &request)
 {
     std::string localVarPath = "/v1.0/{project_id}/asset/preheating";
@@ -480,6 +656,47 @@ std::shared_ptr<CreatePreheatingAssetResponse> VodClient::createPreheatingAsset(
         localVarHeaderParams, localVarHttpBody, VodMeta::genRequestDefForCreatePreheatingAsset());
 
     std::shared_ptr<CreatePreheatingAssetResponse> localVarResult = std::make_shared<CreatePreheatingAssetResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<CreateRealTimeClipResponse> VodClient::createRealTimeClip(CreateRealTimeClipRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/asset/customization/realtime-clip";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, VodMeta::genRequestDefForCreateRealTimeClip());
+
+    std::shared_ptr<CreateRealTimeClipResponse> localVarResult = std::make_shared<CreateRealTimeClipResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -668,6 +885,47 @@ std::shared_ptr<CreateTranscodeTemplateResponse> VodClient::createTranscodeTempl
 
     return localVarResult;
 }
+std::shared_ptr<CreateUploadByUrlResponse> VodClient::createUploadByUrl(CreateUploadByUrlRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/asset/customization/upload-by-url";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, VodMeta::genRequestDefForCreateUploadByUrl());
+
+    std::shared_ptr<CreateUploadByUrlResponse> localVarResult = std::make_shared<CreateUploadByUrlResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<CreateWatermarkTemplateResponse> VodClient::createWatermarkTemplate(CreateWatermarkTemplateRequest &request)
 {
     std::string localVarPath = "/v1.0/{project_id}/template/watermark";
@@ -779,6 +1037,50 @@ std::shared_ptr<DeleteAssetsResponse> VodClient::deleteAssets(DeleteAssetsReques
         localVarHeaderParams, localVarHttpBody, VodMeta::genRequestDefForDeleteAssets());
 
     std::shared_ptr<DeleteAssetsResponse> localVarResult = std::make_shared<DeleteAssetsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<DeleteDyAssetResponse> VodClient::deleteDyAsset(DeleteDyAssetRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/asset/customization/object";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.bucketIsSet()) {
+        localVarQueryParams["bucket"] = parameterToString(request.getBucket());
+    }
+    if (request.objectIsSet()) {
+        localVarQueryParams["object"] = parameterToString(request.getObject());
+    }
+    if (request.callbackUrlIsSet()) {
+        localVarQueryParams["callback_url"] = parameterToString(request.getCallbackUrl());
+    }
+    if (request.sessionContextIsSet()) {
+        localVarQueryParams["session_context"] = parameterToString(request.getSessionContext());
+    }
+    if (request.xSdkDateIsSet()) {
+        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, VodMeta::genRequestDefForDeleteDyAsset());
+
+    std::shared_ptr<DeleteDyAssetResponse> localVarResult = std::make_shared<DeleteDyAssetResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -1782,6 +2084,50 @@ std::shared_ptr<ShowCdnStatisticsResponse> VodClient::showCdnStatistics(ShowCdnS
 
     return localVarResult;
 }
+std::shared_ptr<ShowObjectMetaDataResponse> VodClient::showObjectMetaData(ShowObjectMetaDataRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/asset/customization/meta-data";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.bucketIsSet()) {
+        localVarQueryParams["bucket"] = parameterToString(request.getBucket());
+    }
+    if (request.objectIsSet()) {
+        localVarQueryParams["object"] = parameterToString(request.getObject());
+    }
+    if (request.markerIsSet()) {
+        localVarQueryParams["marker"] = parameterToString(request.getMarker());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.xSdkDateIsSet()) {
+        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, VodMeta::genRequestDefForShowObjectMetaData());
+
+    std::shared_ptr<ShowObjectMetaDataResponse> localVarResult = std::make_shared<ShowObjectMetaDataResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowPreheatingAssetResponse> VodClient::showPreheatingAsset(ShowPreheatingAssetRequest &request)
 {
     std::string localVarPath = "/v1.0/{project_id}/asset/preheating";
@@ -1875,6 +2221,41 @@ std::shared_ptr<ShowStorageModeTypeResponse> VodClient::showStorageModeType(Show
         localVarHeaderParams, localVarHttpBody, VodMeta::genRequestDefForShowStorageModeType());
 
     std::shared_ptr<ShowStorageModeTypeResponse> localVarResult = std::make_shared<ShowStorageModeTypeResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowTaskDetailResponse> VodClient::showTaskDetail(ShowTaskDetailRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/asset/customization/task/detail";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.taskIdIsSet()) {
+        localVarQueryParams["task_id"] = parameterToString(request.getTaskId());
+    }
+    if (request.xSdkDateIsSet()) {
+        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, VodMeta::genRequestDefForShowTaskDetail());
+
+    std::shared_ptr<ShowTaskDetailResponse> localVarResult = std::make_shared<ShowTaskDetailResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

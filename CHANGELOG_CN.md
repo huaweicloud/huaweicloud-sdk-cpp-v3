@@ -1,3 +1,61 @@
+# 3.1.135 2025-05-08
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateCrossCloudConstructDisaster**
+    - 请求参数变更
+      - `- lite_dr_mode`
+
+### HuaweiCloud SDK KVS
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **UpdateKv**
+    - 请求参数变更
+      - `+ update_fields.delete`
+      - `+ update_fields.update_blob`
+  - **BatchWriteKv**
+    - 请求参数变更
+      - `+ table_opers.kv_opers.update_kv`
+      - `+ table_opers.kv_opers.put_kv.kv_blob`
+      - `+ table_opers.kv_opers.put_kv.condition_expression`
+    - 响应参数变更
+      - `+ unprocessed_opers.kv_oper_ids.update_kv_ids`
+
+### HuaweiCloud SDK VOD
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持以下接口：
+    - `CreateObjectReplication`
+    - `CreateObjectRetrieval`
+    - `DeleteDyAsset`
+    - `ShowObjectMetaData`
+    - `CreateObjectProcessTask`
+    - `CreateEditTask`
+    - `ShowTaskDetail`
+    - `CreateRealTimeClip`
+    - `CreateUploadByUrl`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ModifySubtitle**
+    - 请求参数变更
+      - `+ add_subtitles.obs_info.region`
+
 # 3.1.134 2025-04-27
 
 ### HuaweiCloud SDK CloudTable

@@ -1,3 +1,61 @@
+# 3.1.135 2025-05-08
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateCrossCloudConstructDisaster**
+    - changes of request param
+      - `- lite_dr_mode`
+
+### HuaweiCloud SDK KVS
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **UpdateKv**
+    - changes of request param
+      - `+ update_fields.delete`
+      - `+ update_fields.update_blob`
+  - **BatchWriteKv**
+    - changes of request param
+      - `+ table_opers.kv_opers.update_kv`
+      - `+ table_opers.kv_opers.put_kv.kv_blob`
+      - `+ table_opers.kv_opers.put_kv.condition_expression`
+    - changes of response param
+      - `+ unprocessed_opers.kv_oper_ids.update_kv_ids`
+
+### HuaweiCloud SDK VOD
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the following APIs:
+    - `CreateObjectReplication`
+    - `CreateObjectRetrieval`
+    - `DeleteDyAsset`
+    - `ShowObjectMetaData`
+    - `CreateObjectProcessTask`
+    - `CreateEditTask`
+    - `ShowTaskDetail`
+    - `CreateRealTimeClip`
+    - `CreateUploadByUrl`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ModifySubtitle**
+    - changes of request param
+      - `+ add_subtitles.obs_info.region`
+
 # 3.1.134 2025-04-27
 
 ### HuaweiCloud SDK CloudTable

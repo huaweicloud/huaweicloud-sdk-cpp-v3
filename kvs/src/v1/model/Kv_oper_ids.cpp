@@ -15,6 +15,7 @@ Kv_oper_ids::Kv_oper_ids()
 {
     putKvIdsIsSet_ = false;
     deleteKvIdsIsSet_ = false;
+    updateKvIdsIsSet_ = false;
 }
 
 Kv_oper_ids::~Kv_oper_ids() = default;
@@ -30,6 +31,9 @@ bool Kv_oper_ids::toBson(Builder &builder) const
         return false;
     }
     if (deleteKvIdsIsSet_ && !bson_append(builder, "delete_kv_ids", deleteKvIds_)) {
+        return false;
+    }
+    if (updateKvIdsIsSet_ && !bson_append(builder, "update_kv_ids", updateKvIds_)) {
         return false;
     }
 
@@ -57,6 +61,15 @@ bool Kv_oper_ids::fromBson(const Viewer &viewer)
                 return false;
             }
             deleteKvIdsIsSet_ = true;
+            ++it;
+            continue;
+        }
+        
+        if (key == "update_kv_ids") {
+            if (!bson_get(it, updateKvIds_)) {
+                return false;
+            }
+            updateKvIdsIsSet_ = true;
             ++it;
             continue;
         }
@@ -107,6 +120,27 @@ bool Kv_oper_ids::deleteKvIdsIsSet() const
 void Kv_oper_ids::unsetdeleteKvIds()
 {
     deleteKvIdsIsSet_ = false;
+}
+
+std::vector<int32_t>& Kv_oper_ids::getUpdateKvIds()
+{
+    return updateKvIds_;
+}
+
+void Kv_oper_ids::setUpdateKvIds(std::vector<int32_t> value)
+{
+    updateKvIds_ = value;
+    updateKvIdsIsSet_ = true;
+}
+
+bool Kv_oper_ids::updateKvIdsIsSet() const
+{
+    return updateKvIdsIsSet_;
+}
+
+void Kv_oper_ids::unsetupdateKvIds()
+{
+    updateKvIdsIsSet_ = false;
 }
 
 }

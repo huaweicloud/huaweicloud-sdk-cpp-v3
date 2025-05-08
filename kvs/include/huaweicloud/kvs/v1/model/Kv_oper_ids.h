@@ -59,12 +59,23 @@ public:
     void unsetdeleteKvIds();
     void setDeleteKvIds(std::vector<int32_t> value);
 
+    /// <summary>
+    /// 请求内的操作编码，未成功的操作返回该标识。 - 数组元素：请求内的操作编码，未成功的操作返回该标识。
+    /// </summary>
+
+    std::vector<int32_t>& getUpdateKvIds();
+    bool updateKvIdsIsSet() const;
+    void unsetupdateKvIds();
+    void setUpdateKvIds(std::vector<int32_t> value);
+
 
 protected:
     std::vector<int32_t> putKvIds_;
     bool putKvIdsIsSet_;
     std::vector<int32_t> deleteKvIds_;
     bool deleteKvIdsIsSet_;
+    std::vector<int32_t> updateKvIds_;
+    bool updateKvIdsIsSet_;
 
 };
 

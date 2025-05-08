@@ -14,6 +14,7 @@
 
 #include <huaweicloud/kvs/v1/model/Put_kv.h>
 #include <huaweicloud/kvs/v1/model/Delete_kv.h>
+#include <huaweicloud/kvs/v1/model/Update_kv.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -24,7 +25,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// put_kv或delete_kv或get_kv操作。
+/// put_kv或delete_kv或update_kv操作。
 /// </summary>
 class HUAWEICLOUD_KVS_V1_EXPORT  Oper_item
     : public ModelBase
@@ -60,12 +61,23 @@ public:
     void unsetdeleteKv();
     void setDeleteKv(const Delete_kv& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    Update_kv getUpdateKv() const;
+    bool updateKvIsSet() const;
+    void unsetupdateKv();
+    void setUpdateKv(const Update_kv& value);
+
 
 protected:
     Put_kv putKv_;
     bool putKvIsSet_;
     Delete_kv deleteKv_;
     bool deleteKvIsSet_;
+    Update_kv updateKv_;
+    bool updateKvIsSet_;
 
 };
 

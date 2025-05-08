@@ -22,8 +22,6 @@ ConstructReq::ConstructReq()
     drUserPasswordIsSet_ = false;
     drTaskName_ = "";
     drTaskNameIsSet_ = false;
-    liteDrMode_ = "";
-    liteDrModeIsSet_ = false;
 }
 
 ConstructReq::~ConstructReq() = default;
@@ -50,9 +48,6 @@ web::json::value ConstructReq::toJson() const
     }
     if(drTaskNameIsSet_) {
         val[utility::conversions::to_string_t("dr_task_name")] = ModelBase::toJson(drTaskName_);
-    }
-    if(liteDrModeIsSet_) {
-        val[utility::conversions::to_string_t("lite_dr_mode")] = ModelBase::toJson(liteDrMode_);
     }
 
     return val;
@@ -104,15 +99,6 @@ bool ConstructReq::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDrTaskName(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("lite_dr_mode"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("lite_dr_mode"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setLiteDrMode(refVal);
         }
     }
     return ok;
@@ -222,27 +208,6 @@ bool ConstructReq::drTaskNameIsSet() const
 void ConstructReq::unsetdrTaskName()
 {
     drTaskNameIsSet_ = false;
-}
-
-std::string ConstructReq::getLiteDrMode() const
-{
-    return liteDrMode_;
-}
-
-void ConstructReq::setLiteDrMode(const std::string& value)
-{
-    liteDrMode_ = value;
-    liteDrModeIsSet_ = true;
-}
-
-bool ConstructReq::liteDrModeIsSet() const
-{
-    return liteDrModeIsSet_;
-}
-
-void ConstructReq::unsetliteDrMode()
-{
-    liteDrModeIsSet_ = false;
 }
 
 }

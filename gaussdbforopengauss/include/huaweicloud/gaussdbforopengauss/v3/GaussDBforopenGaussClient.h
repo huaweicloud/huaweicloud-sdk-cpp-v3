@@ -210,8 +210,6 @@
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListSupportKernelPluginsResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListTasksRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ListTasksResponse.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ListTopIoTrafficsRequest.h>
-#include <huaweicloud/gaussdbforopengauss/v3/model/ListTopIoTrafficsResponse.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ModifyEpsQuotaRequest.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ModifyEpsQuotaRequestBody.h>
 #include <huaweicloud/gaussdbforopengauss/v3/model/ModifyEpsQuotaResponse.h>
@@ -1091,14 +1089,6 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListTasksResponse> listTasks(
         ListTasksRequest &request
-    );
-    // 查询Top IO列表
-    //
-    // 查询实例数据库进程下的Top IO流量数据，返回与会话信息相关联后的结果
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ListTopIoTrafficsResponse> listTopIoTraffics(
-        ListTopIoTrafficsRequest &request
     );
     // 修改企业项目配额
     //

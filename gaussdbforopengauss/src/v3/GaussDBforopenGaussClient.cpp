@@ -3699,51 +3699,6 @@ std::shared_ptr<ListTasksResponse> GaussDBforopenGaussClient::listTasks(ListTask
 
     return localVarResult;
 }
-std::shared_ptr<ListTopIoTrafficsResponse> GaussDBforopenGaussClient::listTopIoTraffics(ListTopIoTrafficsRequest &request)
-{
-    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/top-io-traffics";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.nodeIdIsSet()) {
-        localVarQueryParams["node_id"] = parameterToString(request.getNodeId());
-    }
-    if (request.componentIdIsSet()) {
-        localVarQueryParams["component_id"] = parameterToString(request.getComponentId());
-    }
-    if (request.topIoNumIsSet()) {
-        localVarQueryParams["top_io_num"] = parameterToString(request.getTopIoNum());
-    }
-    if (request.sortConditionIsSet()) {
-        localVarQueryParams["sort_condition"] = parameterToString(request.getSortCondition());
-    }
-    if (request.xLanguageIsSet()) {
-        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
-    }
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, GaussDBforopenGaussMeta::genRequestDefForListTopIoTraffics());
-
-    std::shared_ptr<ListTopIoTrafficsResponse> localVarResult = std::make_shared<ListTopIoTrafficsResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
 std::shared_ptr<ModifyEpsQuotaResponse> GaussDBforopenGaussClient::modifyEpsQuota(ModifyEpsQuotaRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/enterprise-projects/quotas";

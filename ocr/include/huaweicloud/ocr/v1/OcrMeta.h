@@ -15,6 +15,7 @@ class HUAWEICLOUD_OCR_V1_EXPORT  OcrMeta {
 public:
     static HttpRequestDef genRequestDefForRecognizeAcceptanceBill();
     static HttpRequestDef genRequestDefForRecognizeAutoClassification();
+    static HttpRequestDef genRequestDefForRecognizeAutoIdDocClassification();
     static HttpRequestDef genRequestDefForRecognizeBankReceipt();
     static HttpRequestDef genRequestDefForRecognizeBankcard();
     static HttpRequestDef genRequestDefForRecognizeBusinessCard();

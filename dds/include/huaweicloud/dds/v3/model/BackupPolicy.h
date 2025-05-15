@@ -65,6 +65,15 @@ public:
     void unsetperiod();
     void setPeriod(const std::string& value);
 
+    /// <summary>
+    /// 增量备份开关。不传这个参数则不对增备状态进行改动。开启增量备份后，系统会自动进行增量备份。增量备份开关的取值和约束如下： - false，代表关闭增量备份，关闭会将之前做的增量备份清理。 - true，代表开启增量备份，开启增量备份会触发一次全量备份。
+    /// </summary>
+
+    bool isEnableIncrementalBackup() const;
+    bool enableIncrementalBackupIsSet() const;
+    void unsetenableIncrementalBackup();
+    void setEnableIncrementalBackup(bool value);
+
 
 protected:
     std::string keepDays_;
@@ -73,6 +82,8 @@ protected:
     bool startTimeIsSet_;
     std::string period_;
     bool periodIsSet_;
+    bool enableIncrementalBackup_;
+    bool enableIncrementalBackupIsSet_;
 
 };
 

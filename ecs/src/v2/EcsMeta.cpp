@@ -365,6 +365,9 @@ HttpRequestDef EcsMeta::genRequestDefForListFlavors() {
     reqDefBuilder.withRequestField(FieldDef().withName("AvailabilityZone")
                   .withJsonTag("availability_zone")
                   .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("FlavorId")
+                  .withJsonTag("flavor_id")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 

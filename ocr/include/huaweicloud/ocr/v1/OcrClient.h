@@ -8,6 +8,7 @@
 
 #include <huaweicloud/ocr/v1/model/AcceptanceBillRequestBody.h>
 #include <huaweicloud/ocr/v1/model/AutoClassificationRequestBody.h>
+#include <huaweicloud/ocr/v1/model/AutoIdDocClassificationRequestBody.h>
 #include <huaweicloud/ocr/v1/model/BankReceiptRequestBody.h>
 #include <huaweicloud/ocr/v1/model/BankcardRequestBody.h>
 #include <huaweicloud/ocr/v1/model/BusinessCardRequestBody.h>
@@ -45,6 +46,8 @@
 #include <huaweicloud/ocr/v1/model/RecognizeAcceptanceBillResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeAutoClassificationRequest.h>
 #include <huaweicloud/ocr/v1/model/RecognizeAutoClassificationResponse.h>
+#include <huaweicloud/ocr/v1/model/RecognizeAutoIdDocClassificationRequest.h>
+#include <huaweicloud/ocr/v1/model/RecognizeAutoIdDocClassificationResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeBankReceiptRequest.h>
 #include <huaweicloud/ocr/v1/model/RecognizeBankReceiptResponse.h>
 #include <huaweicloud/ocr/v1/model/RecognizeBankcardRequest.h>
@@ -206,6 +209,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<RecognizeAutoClassificationResponse> recognizeAutoClassification(
         RecognizeAutoClassificationRequest &request
+    );
+    // 智能证件分类
+    //
+    // 支持9类证件的分类和告警检测，以JSON格式返回结果。支持的证件类型有秘鲁身份证、柬文身份证、香港身份证、澳门身份证、缅文身份证、缅文驾驶证、泰文身份证、护照和中华人民共和国居民身份证。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<RecognizeAutoIdDocClassificationResponse> recognizeAutoIdDocClassification(
+        RecognizeAutoIdDocClassificationRequest &request
     );
     // 银行回单识别
     //

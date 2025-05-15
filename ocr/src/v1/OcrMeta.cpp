@@ -46,6 +46,25 @@ HttpRequestDef OcrMeta::genRequestDefForRecognizeAutoClassification() {
     return reqDefBuilder;
 }
 
+HttpRequestDef OcrMeta::genRequestDefForRecognizeAutoIdDocClassification() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamEnterpriseProjectId;
+    reqDefBuilder.withRequestField(headerParamEnterpriseProjectId
+                  .withName("EnterpriseProjectId")
+                  .withJsonTag("Enterprise-Project-Id")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef OcrMeta::genRequestDefForRecognizeBankReceipt() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamEnterpriseProjectId;

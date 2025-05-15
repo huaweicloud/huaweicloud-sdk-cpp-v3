@@ -165,7 +165,7 @@ public:
     void setEducation(const std::string& value);
 
     /// <summary>
-    /// 婚姻状况。 
+    /// 婚姻状况。   
     /// </summary>
 
     std::string getMaritalStatus() const;

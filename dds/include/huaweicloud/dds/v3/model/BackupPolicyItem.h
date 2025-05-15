@@ -65,6 +65,15 @@ public:
     void unsetperiod();
     void setPeriod(const std::string& value);
 
+    /// <summary>
+    /// 是否开启增量备份。true：表示增量备份策略为开启状态；false：表示增量备份策略为关闭状态。
+    /// </summary>
+
+    bool isEnableIncrementalBackup() const;
+    bool enableIncrementalBackupIsSet() const;
+    void unsetenableIncrementalBackup();
+    void setEnableIncrementalBackup(bool value);
+
 
 protected:
     int32_t keepDays_;
@@ -73,6 +82,8 @@ protected:
     bool startTimeIsSet_;
     std::string period_;
     bool periodIsSet_;
+    bool enableIncrementalBackup_;
+    bool enableIncrementalBackupIsSet_;
 
 };
 

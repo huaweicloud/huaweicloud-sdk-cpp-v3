@@ -1332,6 +1332,9 @@ std::shared_ptr<ListFlavorsResponse> EcsClient::listFlavors(ListFlavorsRequest &
     if (request.availabilityZoneIsSet()) {
         localVarQueryParams["availability_zone"] = parameterToString(request.getAvailabilityZone());
     }
+    if (request.flavorIdIsSet()) {
+        localVarQueryParams["flavor_id"] = parameterToString(request.getFlavorId());
+    }
 
     std::string localVarHttpBody;
 

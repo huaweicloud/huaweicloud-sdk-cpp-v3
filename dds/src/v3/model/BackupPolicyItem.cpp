@@ -18,6 +18,8 @@ BackupPolicyItem::BackupPolicyItem()
     startTimeIsSet_ = false;
     period_ = "";
     periodIsSet_ = false;
+    enableIncrementalBackup_ = false;
+    enableIncrementalBackupIsSet_ = false;
 }
 
 BackupPolicyItem::~BackupPolicyItem() = default;
@@ -38,6 +40,9 @@ web::json::value BackupPolicyItem::toJson() const
     }
     if(periodIsSet_) {
         val[utility::conversions::to_string_t("period")] = ModelBase::toJson(period_);
+    }
+    if(enableIncrementalBackupIsSet_) {
+        val[utility::conversions::to_string_t("enable_incremental_backup")] = ModelBase::toJson(enableIncrementalBackup_);
     }
 
     return val;
@@ -71,6 +76,15 @@ bool BackupPolicyItem::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPeriod(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("enable_incremental_backup"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enable_incremental_backup"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEnableIncrementalBackup(refVal);
         }
     }
     return ok;
@@ -138,6 +152,27 @@ bool BackupPolicyItem::periodIsSet() const
 void BackupPolicyItem::unsetperiod()
 {
     periodIsSet_ = false;
+}
+
+bool BackupPolicyItem::isEnableIncrementalBackup() const
+{
+    return enableIncrementalBackup_;
+}
+
+void BackupPolicyItem::setEnableIncrementalBackup(bool value)
+{
+    enableIncrementalBackup_ = value;
+    enableIncrementalBackupIsSet_ = true;
+}
+
+bool BackupPolicyItem::enableIncrementalBackupIsSet() const
+{
+    return enableIncrementalBackupIsSet_;
+}
+
+void BackupPolicyItem::unsetenableIncrementalBackup()
+{
+    enableIncrementalBackupIsSet_ = false;
 }
 
 }

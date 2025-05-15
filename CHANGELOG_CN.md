@@ -1,3 +1,56 @@
+# 3.1.136 2025-05-15
+
+### HuaweiCloud SDK DDS
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowBackupPolicy**
+    - 响应参数变更
+      - `+ backup_policy.enable_incremental_backup`
+  - **SetBackupPolicy**
+    - 请求参数变更
+      - `+ backup_policy.enable_incremental_backup`
+
+### HuaweiCloud SDK ECS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListFlavors**
+    - 请求参数变更
+      - `+ flavor_id`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 移除接口`ListTopIoTraffics`
+
+### HuaweiCloud SDK OCR
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持接口`RecognizeAutoIdDocClassification`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.1.135 2025-05-08
 
 ### HuaweiCloud SDK GaussDBforopenGauss

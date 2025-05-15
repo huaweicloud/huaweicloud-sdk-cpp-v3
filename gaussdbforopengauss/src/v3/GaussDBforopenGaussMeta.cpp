@@ -1475,28 +1475,6 @@ HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListTasks() {
     return reqDefBuilder;
 }
 
-HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForListTopIoTraffics() {
-    HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withRequestField(FieldDef().withName("NodeId")
-                  .withJsonTag("node_id")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("ComponentId")
-                  .withJsonTag("component_id")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("TopIoNum")
-                  .withJsonTag("top_io_num")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("SortCondition")
-                  .withJsonTag("sort_condition")
-                  .withLocationType(Query_));
-    FieldDef headerParamXLanguage;
-    reqDefBuilder.withRequestField(headerParamXLanguage
-                  .withName("XLanguage")
-                  .withJsonTag("X-Language")
-                  .withLocationType(Header_));
-    return reqDefBuilder;
-}
-
 HttpRequestDef GaussDBforopenGaussMeta::genRequestDefForModifyEpsQuota() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;

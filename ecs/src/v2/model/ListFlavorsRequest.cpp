@@ -14,6 +14,8 @@ ListFlavorsRequest::ListFlavorsRequest()
 {
     availabilityZone_ = "";
     availabilityZoneIsSet_ = false;
+    flavorId_ = "";
+    flavorIdIsSet_ = false;
 }
 
 ListFlavorsRequest::~ListFlavorsRequest() = default;
@@ -29,6 +31,9 @@ web::json::value ListFlavorsRequest::toJson() const
     if(availabilityZoneIsSet_) {
         val[utility::conversions::to_string_t("availability_zone")] = ModelBase::toJson(availabilityZone_);
     }
+    if(flavorIdIsSet_) {
+        val[utility::conversions::to_string_t("flavor_id")] = ModelBase::toJson(flavorId_);
+    }
 
     return val;
 }
@@ -43,6 +48,15 @@ bool ListFlavorsRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAvailabilityZone(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("flavor_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("flavor_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFlavorId(refVal);
         }
     }
     return ok;
@@ -68,6 +82,27 @@ bool ListFlavorsRequest::availabilityZoneIsSet() const
 void ListFlavorsRequest::unsetavailabilityZone()
 {
     availabilityZoneIsSet_ = false;
+}
+
+std::string ListFlavorsRequest::getFlavorId() const
+{
+    return flavorId_;
+}
+
+void ListFlavorsRequest::setFlavorId(const std::string& value)
+{
+    flavorId_ = value;
+    flavorIdIsSet_ = true;
+}
+
+bool ListFlavorsRequest::flavorIdIsSet() const
+{
+    return flavorIdIsSet_;
+}
+
+void ListFlavorsRequest::unsetflavorId()
+{
+    flavorIdIsSet_ = false;
 }
 
 }

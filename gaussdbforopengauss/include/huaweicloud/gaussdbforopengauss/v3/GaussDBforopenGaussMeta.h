@@ -100,7 +100,6 @@ public:
     static HttpRequestDef genRequestDefForListStorageTypes();
     static HttpRequestDef genRequestDefForListSupportKernelPlugins();
     static HttpRequestDef genRequestDefForListTasks();
-    static HttpRequestDef genRequestDefForListTopIoTraffics();
     static HttpRequestDef genRequestDefForModifyEpsQuota();
     static HttpRequestDef genRequestDefForResetConfiguration();
     static HttpRequestDef genRequestDefForResetDrConfig();

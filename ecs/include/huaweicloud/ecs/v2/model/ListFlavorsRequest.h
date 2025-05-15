@@ -47,10 +47,21 @@ public:
     void unsetavailabilityZone();
     void setAvailabilityZone(const std::string& value);
 
+    /// <summary>
+    /// 规格id
+    /// </summary>
+
+    std::string getFlavorId() const;
+    bool flavorIdIsSet() const;
+    void unsetflavorId();
+    void setFlavorId(const std::string& value);
+
 
 protected:
     std::string availabilityZone_;
     bool availabilityZoneIsSet_;
+    std::string flavorId_;
+    bool flavorIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

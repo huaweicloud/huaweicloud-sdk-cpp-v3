@@ -49,7 +49,7 @@ public:
     void setId(const std::string& value);
 
     /// <summary>
-    /// 防护包id
+    /// 实例id
     /// </summary>
 
     std::string getPackageId() const;

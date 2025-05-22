@@ -115,6 +115,47 @@ std::shared_ptr<BatchImportSecretsResponse> CsmsClient::batchImportSecrets(Batch
 
     return localVarResult;
 }
+std::shared_ptr<CheckSecretsResponse> CsmsClient::checkSecrets(CheckSecretsRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/secrets/checker/check";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CsmsMeta::genRequestDefForCheckSecrets());
+
+    std::shared_ptr<CheckSecretsResponse> localVarResult = std::make_shared<CheckSecretsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<CreateAgencyResponse> CsmsClient::createAgency(CreateAgencyRequest &request)
 {
     std::string localVarPath = "/v1/csms/agencies";
@@ -1241,6 +1282,35 @@ std::shared_ptr<ShowSecretVersionResponse> CsmsClient::showSecretVersion(ShowSec
 
     return localVarResult;
 }
+std::shared_ptr<ShowSecretsConfigResponse> CsmsClient::showSecretsConfig(ShowSecretsConfigRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/secrets/checker/config";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CsmsMeta::genRequestDefForShowSecretsConfig());
+
+    std::shared_ptr<ShowSecretsConfigResponse> localVarResult = std::make_shared<ShowSecretsConfigResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowUserDetailResponse> CsmsClient::showUserDetail(ShowUserDetailRequest &request)
 {
     std::string localVarPath = "/v1/csms/users/{user_id}";
@@ -1430,6 +1500,47 @@ std::shared_ptr<UpdateSecretStageResponse> CsmsClient::updateSecretStage(UpdateS
         localVarHeaderParams, localVarHttpBody, CsmsMeta::genRequestDefForUpdateSecretStage());
 
     std::shared_ptr<UpdateSecretStageResponse> localVarResult = std::make_shared<UpdateSecretStageResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateSecretsConfigResponse> CsmsClient::updateSecretsConfig(UpdateSecretsConfigRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/secrets/checker/config";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CsmsMeta::genRequestDefForUpdateSecretsConfig());
+
+    std::shared_ptr<UpdateSecretsConfigResponse> localVarResult = std::make_shared<UpdateSecretsConfigResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

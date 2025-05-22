@@ -12,6 +12,9 @@
 #include <huaweicloud/csms/v1/model/BatchImportSecretsRequest.h>
 #include <huaweicloud/csms/v1/model/BatchImportSecretsResponse.h>
 #include <huaweicloud/csms/v1/model/ChangeUsersPassword.h>
+#include <huaweicloud/csms/v1/model/CheckSecretsRequest.h>
+#include <huaweicloud/csms/v1/model/CheckSecretsRequestBody.h>
+#include <huaweicloud/csms/v1/model/CheckSecretsResponse.h>
 #include <huaweicloud/csms/v1/model/CreateAgencyRequest.h>
 #include <huaweicloud/csms/v1/model/CreateAgencyRequestBody.h>
 #include <huaweicloud/csms/v1/model/CreateAgencyResponse.h>
@@ -86,6 +89,8 @@
 #include <huaweicloud/csms/v1/model/ShowSecretStageResponse.h>
 #include <huaweicloud/csms/v1/model/ShowSecretVersionRequest.h>
 #include <huaweicloud/csms/v1/model/ShowSecretVersionResponse.h>
+#include <huaweicloud/csms/v1/model/ShowSecretsConfigRequest.h>
+#include <huaweicloud/csms/v1/model/ShowSecretsConfigResponse.h>
 #include <huaweicloud/csms/v1/model/ShowUserDetailRequest.h>
 #include <huaweicloud/csms/v1/model/ShowUserDetailResponse.h>
 #include <huaweicloud/csms/v1/model/UpdateGrantRequest.h>
@@ -99,6 +104,9 @@
 #include <huaweicloud/csms/v1/model/UpdateSecretStageRequest.h>
 #include <huaweicloud/csms/v1/model/UpdateSecretStageRequestBody.h>
 #include <huaweicloud/csms/v1/model/UpdateSecretStageResponse.h>
+#include <huaweicloud/csms/v1/model/UpdateSecretsConfigRequest.h>
+#include <huaweicloud/csms/v1/model/UpdateSecretsConfigRequestBody.h>
+#include <huaweicloud/csms/v1/model/UpdateSecretsConfigResponse.h>
 #include <huaweicloud/csms/v1/model/UpdateUserPasswordRequest.h>
 #include <huaweicloud/csms/v1/model/UpdateUserPasswordResponse.h>
 #include <huaweicloud/csms/v1/model/UpdateVersionRequest.h>
@@ -148,6 +156,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<BatchImportSecretsResponse> batchImportSecrets(
         BatchImportSecretsRequest &request
+    );
+    // 检测传入凭据的凭据强度
+    //
+    // 检测传入的凭据。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CheckSecretsResponse> checkSecrets(
+        CheckSecretsRequest &request
     );
     // 创建服务委托
     //
@@ -410,6 +426,14 @@ public:
     std::shared_ptr<ShowSecretVersionResponse> showSecretVersion(
         ShowSecretVersionRequest &request
     );
+    // 获取租户的凭据检测配置
+    //
+    // 获取租户的凭据检测配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowSecretsConfigResponse> showSecretsConfig(
+        ShowSecretsConfigRequest &request
+    );
     // 获取用户详情
     //
     // 根据用户id查询用户详情。
@@ -449,6 +473,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateSecretStageResponse> updateSecretStage(
         UpdateSecretStageRequest &request
+    );
+    // 更改获取租户的凭据检测配置
+    //
+    // 更改获取租户的凭据检测配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateSecretsConfigResponse> updateSecretsConfig(
+        UpdateSecretsConfigRequest &request
     );
     // 修改用户密码
     //

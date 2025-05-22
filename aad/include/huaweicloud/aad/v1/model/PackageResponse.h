@@ -39,7 +39,7 @@ public:
     /// PackageResponse members
 
     /// <summary>
-    /// 防护包id
+    /// 实例id
     /// </summary>
 
     std::string getPackageId() const;
@@ -48,7 +48,7 @@ public:
     void setPackageId(const std::string& value);
 
     /// <summary>
-    /// 防护包名
+    /// 实例名
     /// </summary>
 
     std::string getPackageName() const;
@@ -75,7 +75,7 @@ public:
     void setProtectionType(int32_t value);
 
     /// <summary>
-    /// 防护包类型。cnad_pro：专业版；cnad_ip：标准版；cnad_ep：铂金版；cnad_full_high：全力防高级版；cnad_vic：按需版；cnad_intl_ep：国际站铂金版
+    /// 实例类型。cnad_pro：专业版；cnad_ip：标准版；cnad_ep：铂金版；cnad_full_high：全力防高级版；cnad_vic：按需版；cnad_intl_ep：国际站铂金版
     /// </summary>
 
     std::string getInstanceType() const;
@@ -219,7 +219,7 @@ public:
     void setPolicyNum(int32_t value);
 
     /// <summary>
-    /// 是否旧防护包（旧防护包不支持升级规格）,默认不传为否
+    /// 是否旧实例（旧实例不支持升级规格）,默认不传为否
     /// </summary>
 
     bool isIsOld() const;

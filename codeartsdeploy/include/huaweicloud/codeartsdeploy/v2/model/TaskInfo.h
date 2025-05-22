@@ -313,6 +313,15 @@ public:
     void setReleaseId(int32_t value);
 
     /// <summary>
+    /// 部署应用id
+    /// </summary>
+
+    std::string getAppId() const;
+    bool appIdIsSet() const;
+    void unsetappId();
+    void setAppId(const std::string& value);
+
+    /// <summary>
     /// 当前应用是否被禁用
     /// </summary>
 
@@ -428,6 +437,8 @@ protected:
     bool idIsSet_;
     int32_t releaseId_;
     bool releaseIdIsSet_;
+    std::string appId_;
+    bool appIdIsSet_;
     bool isDisable_;
     bool isDisableIsSet_;
     std::string duration_;

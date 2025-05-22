@@ -60,6 +60,7 @@ ListInstancesResult::ListInstancesResult()
     lbPortIsSet_ = false;
     availabilityZone_ = "";
     availabilityZoneIsSet_ = false;
+    dualActiveInfoIsSet_ = false;
 }
 
 ListInstancesResult::~ListInstancesResult() = default;
@@ -149,6 +150,9 @@ web::json::value ListInstancesResult::toJson() const
     }
     if(availabilityZoneIsSet_) {
         val[utility::conversions::to_string_t("availability_zone")] = ModelBase::toJson(availabilityZone_);
+    }
+    if(dualActiveInfoIsSet_) {
+        val[utility::conversions::to_string_t("dual_active_info")] = ModelBase::toJson(dualActiveInfo_);
     }
 
     return val;
@@ -389,6 +393,15 @@ bool ListInstancesResult::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAvailabilityZone(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("dual_active_info"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("dual_active_info"));
+        if(!fieldValue.is_null())
+        {
+            DualActiveInfo refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDualActiveInfo(refVal);
         }
     }
     return ok;
@@ -939,6 +952,27 @@ bool ListInstancesResult::availabilityZoneIsSet() const
 void ListInstancesResult::unsetavailabilityZone()
 {
     availabilityZoneIsSet_ = false;
+}
+
+DualActiveInfo ListInstancesResult::getDualActiveInfo() const
+{
+    return dualActiveInfo_;
+}
+
+void ListInstancesResult::setDualActiveInfo(const DualActiveInfo& value)
+{
+    dualActiveInfo_ = value;
+    dualActiveInfoIsSet_ = true;
+}
+
+bool ListInstancesResult::dualActiveInfoIsSet() const
+{
+    return dualActiveInfoIsSet_;
+}
+
+void ListInstancesResult::unsetdualActiveInfo()
+{
+    dualActiveInfoIsSet_ = false;
 }
 
 }

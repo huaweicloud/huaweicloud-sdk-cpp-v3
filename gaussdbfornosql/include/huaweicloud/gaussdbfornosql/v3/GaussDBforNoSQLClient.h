@@ -56,6 +56,8 @@
 #include <huaweicloud/gaussdbfornosql/v3/model/CreateDbUserResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/CreateDisasterRecoveryRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/CreateDisasterRecoveryResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/CreateGeminiDbDualActiveRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/CreateGeminiDbDualActiveResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/CreateInstanceRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/CreateInstanceRequestBody.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/CreateInstanceResponse.h>
@@ -76,6 +78,8 @@
 #include <huaweicloud/gaussdbfornosql/v3/model/DeleteEnlargeFailNodeRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/DeleteEnlargeFailNodeRequestBody.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/DeleteEnlargeFailNodeResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/DeleteGeminiDbDualActiveRequest.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/DeleteGeminiDbDualActiveResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/DeleteInstanceRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/DeleteInstanceResponse.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/DeleteInstancesSessionRequest.h>
@@ -87,6 +91,7 @@
 #include <huaweicloud/gaussdbfornosql/v3/model/DeleteRedisDisabledCommandsRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/DeleteRedisDisabledCommandsRequestBody.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/DeleteRedisDisabledCommandsResponse.h>
+#include <huaweicloud/gaussdbfornosql/v3/model/DualActiveRequestBody.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ErrorResponseBody.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ExpandInstanceNodeRequest.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ExpandInstanceNodeRequestBody.h>
@@ -539,6 +544,14 @@ public:
     std::shared_ptr<CreateDisasterRecoveryResponse> createDisasterRecovery(
         CreateDisasterRecoveryRequest &request
     );
+    // 搭建双活
+    //
+    // 为了实现跨区域实例数据同步，GeminiDB提供了异地双活功能，即创建异地双活实例。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateGeminiDbDualActiveResponse> createGeminiDbDualActive(
+        CreateGeminiDbDualActiveRequest &request
+    );
     // 创建实例
     //
     // 创建数据库实例。
@@ -602,6 +615,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteEnlargeFailNodeResponse> deleteEnlargeFailNode(
         DeleteEnlargeFailNodeRequest &request
+    );
+    // 解除双活
+    //
+    // 解除跨区域双活。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteGeminiDbDualActiveResponse> deleteGeminiDbDualActive(
+        DeleteGeminiDbDualActiveRequest &request
     );
     // 删除实例
     //

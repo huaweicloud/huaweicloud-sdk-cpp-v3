@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_CODEARTSBUILD_V3_MODEL_FlowGraph_result_edges_H_
-#define HUAWEICLOUD_SDK_CODEARTSBUILD_V3_MODEL_FlowGraph_result_edges_H_
+#ifndef HUAWEICLOUD_SDK_CODEARTSBUILD_V3_MODEL_FlowGraph2_result_edges_H_
+#define HUAWEICLOUD_SDK_CODEARTSBUILD_V3_MODEL_FlowGraph2_result_edges_H_
 
 
 #include <huaweicloud/codeartsbuild/v3/CodeArtsBuildExport.h>
@@ -22,12 +22,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// 
 /// </summary>
-class HUAWEICLOUD_CODEARTSBUILD_V3_EXPORT  FlowGraph_result_edges
+class HUAWEICLOUD_CODEARTSBUILD_V3_EXPORT  FlowGraph2_result_edges
     : public ModelBase
 {
 public:
-    FlowGraph_result_edges();
-    virtual ~FlowGraph_result_edges();
+    FlowGraph2_result_edges();
+    virtual ~FlowGraph2_result_edges();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -36,7 +36,7 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// FlowGraph_result_edges members
+    /// FlowGraph2_result_edges members
 
     /// <summary>
     /// 依赖子任务ID
@@ -72,4 +72,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_CODEARTSBUILD_V3_MODEL_FlowGraph_result_edges_H_
+#endif // HUAWEICLOUD_SDK_CODEARTSBUILD_V3_MODEL_FlowGraph2_result_edges_H_

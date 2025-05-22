@@ -68,6 +68,17 @@ HttpRequestDef CodeArtsBuildMeta::genRequestDefForDownloadKeystore() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForDownloadRealTimeLog() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Length")
+                  .withJsonTag("length")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CodeArtsBuildMeta::genRequestDefForDownloadTaskLog() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("TaskName")
@@ -81,6 +92,23 @@ HttpRequestDef CodeArtsBuildMeta::genRequestDefForDownloadTaskLog() {
 
 HttpRequestDef CodeArtsBuildMeta::genRequestDefForEnableBuildJob() {
     HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForListBuildInfoRecord() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("StartTime")
+                  .withJsonTag("start_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EndTime")
+                  .withJsonTag("end_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("PageIndex")
+                  .withJsonTag("page_index")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("PageSize")
+                  .withJsonTag("page_size")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 
@@ -120,8 +148,33 @@ HttpRequestDef CodeArtsBuildMeta::genRequestDefForRunJob() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowBuildRecordFullStages() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Cascade")
+                  .withJsonTag("cascade")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowHistoryDetails() {
     HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowJobBuildSuccessRatio() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("JobId")
+                  .withJsonTag("job_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("RepositoryName")
+                  .withJsonTag("repository_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Branch")
+                  .withJsonTag("branch")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Interval")
+                  .withJsonTag("interval")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 
@@ -198,6 +251,27 @@ HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowOutputInfo() {
 
 HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowRecordDetail() {
     HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowReportSummary() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("BuildNo")
+                  .withJsonTag("build_no")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowRunningStatus() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowYamlTemplate() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("DefaultHost")
+                  .withJsonTag("default_host")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 

@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 更新防护包名的请求体
+/// 更新实例名的请求体
 /// </summary>
 class HUAWEICLOUD_AAD_V1_EXPORT  UpdatePackageNameRequestBody
     : public ModelBase

@@ -11,6 +11,7 @@
 
 #include <huaweicloud/live/v1/model/EncoderSettingsExpand_audio_descriptions.h>
 #include <vector>
+#include <huaweicloud/live/v1/model/VideoDescriptions.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -48,10 +49,21 @@ public:
     void unsetaudioDescriptions();
     void setAudioDescriptions(const std::vector<EncoderSettingsExpand_audio_descriptions>& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    VideoDescriptions getVideoDescriptions() const;
+    bool videoDescriptionsIsSet() const;
+    void unsetvideoDescriptions();
+    void setVideoDescriptions(const VideoDescriptions& value);
+
 
 protected:
     std::vector<EncoderSettingsExpand_audio_descriptions> audioDescriptions_;
     bool audioDescriptionsIsSet_;
+    VideoDescriptions videoDescriptions_;
+    bool videoDescriptionsIsSet_;
 
 };
 

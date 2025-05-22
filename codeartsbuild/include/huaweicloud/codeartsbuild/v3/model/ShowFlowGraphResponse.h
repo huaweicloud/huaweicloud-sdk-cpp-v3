@@ -9,8 +9,8 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/codeartsbuild/v3/model/FlowGraph_result.h>
 #include <string>
+#include <huaweicloud/codeartsbuild/v3/model/FlowGraph2_result.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -70,10 +70,10 @@ public:
     /// 
     /// </summary>
 
-    FlowGraph_result getResult() const;
+    FlowGraph2_result getResult() const;
     bool resultIsSet() const;
     void unsetresult();
-    void setResult(const FlowGraph_result& value);
+    void setResult(const FlowGraph2_result& value);
 
 
 protected:
@@ -83,7 +83,7 @@ protected:
     bool messageIsSet_;
     std::string errCode_;
     bool errCodeIsSet_;
-    FlowGraph_result result_;
+    FlowGraph2_result result_;
     bool resultIsSet_;
 
 #ifdef RTTR_FLAG

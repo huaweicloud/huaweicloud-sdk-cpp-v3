@@ -170,6 +170,15 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForCreateDisasterRecovery() {
     return reqDefBuilder;
 }
 
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForCreateGeminiDbDualActive() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForCreateInstance() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -227,6 +236,11 @@ HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForDeleteEnlargeFailNode() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef GaussDBforNoSQLMeta::genRequestDefForDeleteGeminiDbDualActive() {
+    HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
 

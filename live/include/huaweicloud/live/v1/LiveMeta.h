@@ -89,6 +89,7 @@ public:
     static HttpRequestDef genRequestDefForModifyOttChannelInfoInput();
     static HttpRequestDef genRequestDefForModifyOttChannelInfoRecordSettings();
     static HttpRequestDef genRequestDefForModifyOttChannelInfoStats();
+    static HttpRequestDef genRequestDefForShowChannelStatistic();
 };
 
 }

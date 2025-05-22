@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/codeartsbuild/v3/model/FlowGraph_result.h"
+#include "huaweicloud/codeartsbuild/v3/model/FlowGraph2_result.h"
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsbuild {
@@ -10,19 +10,19 @@ namespace Model {
 
 
 
-FlowGraph_result::FlowGraph_result()
+FlowGraph2_result::FlowGraph2_result()
 {
     edgesIsSet_ = false;
     verticesIsSet_ = false;
 }
 
-FlowGraph_result::~FlowGraph_result() = default;
+FlowGraph2_result::~FlowGraph2_result() = default;
 
-void FlowGraph_result::validate()
+void FlowGraph2_result::validate()
 {
 }
 
-web::json::value FlowGraph_result::toJson() const
+web::json::value FlowGraph2_result::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -35,7 +35,7 @@ web::json::value FlowGraph_result::toJson() const
 
     return val;
 }
-bool FlowGraph_result::fromJson(const web::json::value& val)
+bool FlowGraph2_result::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -43,7 +43,7 @@ bool FlowGraph_result::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("edges"));
         if(!fieldValue.is_null())
         {
-            std::vector<FlowGraph_result_edges> refVal;
+            std::vector<FlowGraph2_result_edges> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEdges(refVal);
         }
@@ -61,44 +61,44 @@ bool FlowGraph_result::fromJson(const web::json::value& val)
 }
 
 
-std::vector<FlowGraph_result_edges>& FlowGraph_result::getEdges()
+std::vector<FlowGraph2_result_edges>& FlowGraph2_result::getEdges()
 {
     return edges_;
 }
 
-void FlowGraph_result::setEdges(const std::vector<FlowGraph_result_edges>& value)
+void FlowGraph2_result::setEdges(const std::vector<FlowGraph2_result_edges>& value)
 {
     edges_ = value;
     edgesIsSet_ = true;
 }
 
-bool FlowGraph_result::edgesIsSet() const
+bool FlowGraph2_result::edgesIsSet() const
 {
     return edgesIsSet_;
 }
 
-void FlowGraph_result::unsetedges()
+void FlowGraph2_result::unsetedges()
 {
     edgesIsSet_ = false;
 }
 
-std::vector<Vertices>& FlowGraph_result::getVertices()
+std::vector<Vertices>& FlowGraph2_result::getVertices()
 {
     return vertices_;
 }
 
-void FlowGraph_result::setVertices(const std::vector<Vertices>& value)
+void FlowGraph2_result::setVertices(const std::vector<Vertices>& value)
 {
     vertices_ = value;
     verticesIsSet_ = true;
 }
 
-bool FlowGraph_result::verticesIsSet() const
+bool FlowGraph2_result::verticesIsSet() const
 {
     return verticesIsSet_;
 }
 
-void FlowGraph_result::unsetvertices()
+void FlowGraph2_result::unsetvertices()
 {
     verticesIsSet_ = false;
 }

@@ -84,9 +84,7 @@ public:
             });
         regions["la-north-2"] = Region("la-north-2",
             { 
-                "https://ocr.la-north-2.myhuaweicloud.com",
-
-                "https://ocr.la-north-2.myhuaweicloud.lat"
+                "https://ocr.la-north-2.myhuaweicloud.com"
             });
         return regions;
     }

@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/codeartsbuild/v3/model/FlowGraph_result_edges.h"
+#include "huaweicloud/codeartsbuild/v3/model/FlowGraph2_result_edges.h"
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsbuild {
@@ -10,7 +10,7 @@ namespace Model {
 
 
 
-FlowGraph_result_edges::FlowGraph_result_edges()
+FlowGraph2_result_edges::FlowGraph2_result_edges()
 {
     from_ = "";
     fromIsSet_ = false;
@@ -18,13 +18,13 @@ FlowGraph_result_edges::FlowGraph_result_edges()
     toIsSet_ = false;
 }
 
-FlowGraph_result_edges::~FlowGraph_result_edges() = default;
+FlowGraph2_result_edges::~FlowGraph2_result_edges() = default;
 
-void FlowGraph_result_edges::validate()
+void FlowGraph2_result_edges::validate()
 {
 }
 
-web::json::value FlowGraph_result_edges::toJson() const
+web::json::value FlowGraph2_result_edges::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -37,7 +37,7 @@ web::json::value FlowGraph_result_edges::toJson() const
 
     return val;
 }
-bool FlowGraph_result_edges::fromJson(const web::json::value& val)
+bool FlowGraph2_result_edges::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -63,44 +63,44 @@ bool FlowGraph_result_edges::fromJson(const web::json::value& val)
 }
 
 
-std::string FlowGraph_result_edges::getFrom() const
+std::string FlowGraph2_result_edges::getFrom() const
 {
     return from_;
 }
 
-void FlowGraph_result_edges::setFrom(const std::string& value)
+void FlowGraph2_result_edges::setFrom(const std::string& value)
 {
     from_ = value;
     fromIsSet_ = true;
 }
 
-bool FlowGraph_result_edges::fromIsSet() const
+bool FlowGraph2_result_edges::fromIsSet() const
 {
     return fromIsSet_;
 }
 
-void FlowGraph_result_edges::unsetfrom()
+void FlowGraph2_result_edges::unsetfrom()
 {
     fromIsSet_ = false;
 }
 
-std::string FlowGraph_result_edges::getTo() const
+std::string FlowGraph2_result_edges::getTo() const
 {
     return to_;
 }
 
-void FlowGraph_result_edges::setTo(const std::string& value)
+void FlowGraph2_result_edges::setTo(const std::string& value)
 {
     to_ = value;
     toIsSet_ = true;
 }
 
-bool FlowGraph_result_edges::toIsSet() const
+bool FlowGraph2_result_edges::toIsSet() const
 {
     return toIsSet_;
 }
 
-void FlowGraph_result_edges::unsetto()
+void FlowGraph2_result_edges::unsetto()
 {
     toIsSet_ = false;
 }

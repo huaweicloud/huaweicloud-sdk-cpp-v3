@@ -199,6 +199,9 @@
 #include <huaweicloud/live/v1/model/ModifyOttChannelInputReq.h>
 #include <huaweicloud/live/v1/model/ModifyOttChannelRecordSettings.h>
 #include <huaweicloud/live/v1/model/ModifyOttChannelState.h>
+#include <huaweicloud/live/v1/model/ShowChannelStatisticReq.h>
+#include <huaweicloud/live/v1/model/ShowChannelStatisticRequest.h>
+#include <huaweicloud/live/v1/model/ShowChannelStatisticResponse.h>
 #include <string>
 
 #include <cpprest/details/basic_types.h>
@@ -842,6 +845,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ModifyOttChannelInfoStatsResponse> modifyOttChannelInfoStats(
         ModifyOttChannelInfoStatsRequest &request
+    );
+    // 查询频道统计信息
+    //
+    // 查询频道的统计信息（入流scte35信号）
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowChannelStatisticResponse> showChannelStatistic(
+        ShowChannelStatisticRequest &request
     );
 
 

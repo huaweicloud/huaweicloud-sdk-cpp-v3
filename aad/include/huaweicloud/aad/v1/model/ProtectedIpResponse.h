@@ -112,7 +112,7 @@ public:
     void setRegion(const std::string& value);
 
     /// <summary>
-    /// 防护包id
+    /// 实例id
     /// </summary>
 
     std::string getPackageId() const;
@@ -121,7 +121,7 @@ public:
     void setPackageId(const std::string& value);
 
     /// <summary>
-    /// 防护包名
+    /// 实例名
     /// </summary>
 
     std::string getPackageName() const;

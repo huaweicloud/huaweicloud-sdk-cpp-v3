@@ -21,13 +21,17 @@ public:
     static HttpRequestDef genRequestDefForDisableNotice();
     static HttpRequestDef genRequestDefForDownloadBuildLog();
     static HttpRequestDef genRequestDefForDownloadKeystore();
+    static HttpRequestDef genRequestDefForDownloadRealTimeLog();
     static HttpRequestDef genRequestDefForDownloadTaskLog();
     static HttpRequestDef genRequestDefForEnableBuildJob();
+    static HttpRequestDef genRequestDefForListBuildInfoRecord();
     static HttpRequestDef genRequestDefForListJobConfig();
     static HttpRequestDef genRequestDefForListNotice();
     static HttpRequestDef genRequestDefForListTemplates();
     static HttpRequestDef genRequestDefForRunJob();
+    static HttpRequestDef genRequestDefForShowBuildRecordFullStages();
     static HttpRequestDef genRequestDefForShowHistoryDetails();
+    static HttpRequestDef genRequestDefForShowJobBuildSuccessRatio();
     static HttpRequestDef genRequestDefForShowJobListByProjectId();
     static HttpRequestDef genRequestDefForShowJobStatus();
     static HttpRequestDef genRequestDefForShowJobSuccessRatio();
@@ -36,6 +40,9 @@ public:
     static HttpRequestDef genRequestDefForShowListPeriodHistory();
     static HttpRequestDef genRequestDefForShowOutputInfo();
     static HttpRequestDef genRequestDefForShowRecordDetail();
+    static HttpRequestDef genRequestDefForShowReportSummary();
+    static HttpRequestDef genRequestDefForShowRunningStatus();
+    static HttpRequestDef genRequestDefForShowYamlTemplate();
     static HttpRequestDef genRequestDefForStopBuildJob();
     static HttpRequestDef genRequestDefForUpdateBuildJob();
     static HttpRequestDef genRequestDefForUpdateNotice();

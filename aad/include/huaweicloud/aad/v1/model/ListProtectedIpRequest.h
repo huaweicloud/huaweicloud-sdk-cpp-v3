@@ -57,7 +57,7 @@ public:
     void setLimit(int32_t value);
 
     /// <summary>
-    /// 防护包id
+    /// 实例id
     /// </summary>
 
     std::string getPackageId() const;

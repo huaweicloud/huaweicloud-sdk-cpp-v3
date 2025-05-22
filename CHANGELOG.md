@@ -1,3 +1,56 @@
+# 3.1.137 2025-05-22
+
+### HuaweiCloud SDK DDS
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowBackupPolicy**
+    - changes of response param
+      - `+ backup_policy.enable_incremental_backup`
+  - **SetBackupPolicy**
+    - changes of request param
+      - `+ backup_policy.enable_incremental_backup`
+
+### HuaweiCloud SDK ECS
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListFlavors**
+    - changes of request param
+      - `+ flavor_id`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the API `ListTopIoTraffics`
+
+### HuaweiCloud SDK OCR
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the API `RecognizeAutoIdDocClassification`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.136 2025-05-15
 
 ### HuaweiCloud SDK DDS

@@ -6,6 +6,7 @@
 #include <huaweicloud/core/ClientBuilder.h>
 
 
+#include <huaweicloud/cdn/v2/model/AccountConfigModifyRequest.h>
 #include <huaweicloud/cdn/v2/model/BatchCopyDRequestBody.h>
 #include <huaweicloud/cdn/v2/model/BatchCopyDomainRequest.h>
 #include <huaweicloud/cdn/v2/model/BatchCopyDomainResponse.h>
@@ -38,6 +39,8 @@
 #include <huaweicloud/cdn/v2/model/ListCdnDomainTopRefersResponse.h>
 #include <huaweicloud/cdn/v2/model/ListDomainsRequest.h>
 #include <huaweicloud/cdn/v2/model/ListDomainsResponse.h>
+#include <huaweicloud/cdn/v2/model/ModifyAccountInfoRequest.h>
+#include <huaweicloud/cdn/v2/model/ModifyAccountInfoResponse.h>
 #include <huaweicloud/cdn/v2/model/ModifyDomainConfigRequestBody.h>
 #include <huaweicloud/cdn/v2/model/PreheatingTaskRequest.h>
 #include <huaweicloud/cdn/v2/model/RefreshTaskRequest.h>
@@ -245,6 +248,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListDomainsResponse> listDomains(
         ListDomainsRequest &request
+    );
+    // 修改租户配置
+    //
+    // 修改租户配置，当前仅支持开启OBS和SCM委托授权。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ModifyAccountInfoResponse> modifyAccountInfo(
+        ModifyAccountInfoRequest &request
     );
     // 设置用户计费模式
     //

@@ -1021,6 +1021,31 @@ HttpRequestDef LiveMeta::genRequestDefForModifyOttChannelInfoStats() {
     return reqDefBuilder;
 }
 
+HttpRequestDef LiveMeta::genRequestDefForShowChannelStatistic() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    FieldDef headerParamAccessControlAllowInternal;
+    reqDefBuilder.withRequestField(headerParamAccessControlAllowInternal
+                  .withName("AccessControlAllowInternal")
+                  .withJsonTag("Access-Control-Allow-Internal")
+                  .withLocationType(Header_));
+    FieldDef headerParamAccessControlAllowExternal;
+    reqDefBuilder.withRequestField(headerParamAccessControlAllowExternal
+                  .withName("AccessControlAllowExternal")
+                  .withJsonTag("Access-Control-Allow-External")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 
 }
 }

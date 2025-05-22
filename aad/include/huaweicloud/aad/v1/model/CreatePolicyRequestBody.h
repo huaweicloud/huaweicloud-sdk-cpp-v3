@@ -48,7 +48,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 防护包id
+    /// 实例id
     /// </summary>
 
     std::string getPackageId() const;

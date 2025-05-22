@@ -31,6 +31,7 @@ public:
     static HttpRequestDef genRequestDefForCreateDbCacheRule();
     static HttpRequestDef genRequestDefForCreateDbUser();
     static HttpRequestDef genRequestDefForCreateDisasterRecovery();
+    static HttpRequestDef genRequestDefForCreateGeminiDbDualActive();
     static HttpRequestDef genRequestDefForCreateInstance();
     static HttpRequestDef genRequestDefForDeleteBackup();
     static HttpRequestDef genRequestDefForDeleteConfiguration();
@@ -39,6 +40,7 @@ public:
     static HttpRequestDef genRequestDefForDeleteDbUser();
     static HttpRequestDef genRequestDefForDeleteDisasterRecovery();
     static HttpRequestDef genRequestDefForDeleteEnlargeFailNode();
+    static HttpRequestDef genRequestDefForDeleteGeminiDbDualActive();
     static HttpRequestDef genRequestDefForDeleteInstance();
     static HttpRequestDef genRequestDefForDeleteInstancesSession();
     static HttpRequestDef genRequestDefForDeleteLtsConfigs();

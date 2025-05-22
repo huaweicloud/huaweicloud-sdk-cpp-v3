@@ -264,6 +264,20 @@ HttpRequestDef CdnMeta::genRequestDefForListDomains() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CdnMeta::genRequestDefForModifyAccountInfo() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CdnMeta::genRequestDefForSetChargeModes() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;

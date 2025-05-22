@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/gaussdbfornosql/v3/model/DualActiveInfo.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListInstancesDatastoreResult.h>
 #include <huaweicloud/gaussdbfornosql/v3/model/ListInstancesGroupResult.h>
 #include <string>
@@ -276,6 +277,15 @@ public:
     void unsetavailabilityZone();
     void setAvailabilityZone(const std::string& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    DualActiveInfo getDualActiveInfo() const;
+    bool dualActiveInfoIsSet() const;
+    void unsetdualActiveInfo();
+    void setDualActiveInfo(const DualActiveInfo& value);
+
 
 protected:
     std::string id_;
@@ -330,6 +340,8 @@ protected:
     bool lbPortIsSet_;
     std::string availabilityZone_;
     bool availabilityZoneIsSet_;
+    DualActiveInfo dualActiveInfo_;
+    bool dualActiveInfoIsSet_;
 
 };
 

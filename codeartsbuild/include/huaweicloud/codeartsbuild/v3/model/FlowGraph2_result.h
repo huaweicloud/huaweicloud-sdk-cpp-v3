@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_CODEARTSBUILD_V3_MODEL_FlowGraph_result_H_
-#define HUAWEICLOUD_SDK_CODEARTSBUILD_V3_MODEL_FlowGraph_result_H_
+#ifndef HUAWEICLOUD_SDK_CODEARTSBUILD_V3_MODEL_FlowGraph2_result_H_
+#define HUAWEICLOUD_SDK_CODEARTSBUILD_V3_MODEL_FlowGraph2_result_H_
 
 
 #include <huaweicloud/codeartsbuild/v3/CodeArtsBuildExport.h>
@@ -9,8 +9,8 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/codeartsbuild/v3/model/FlowGraph2_result_edges.h>
 #include <huaweicloud/codeartsbuild/v3/model/Vertices.h>
-#include <huaweicloud/codeartsbuild/v3/model/FlowGraph_result_edges.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -24,12 +24,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// 结果
 /// </summary>
-class HUAWEICLOUD_CODEARTSBUILD_V3_EXPORT  FlowGraph_result
+class HUAWEICLOUD_CODEARTSBUILD_V3_EXPORT  FlowGraph2_result
     : public ModelBase
 {
 public:
-    FlowGraph_result();
-    virtual ~FlowGraph_result();
+    FlowGraph2_result();
+    virtual ~FlowGraph2_result();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -38,16 +38,16 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// FlowGraph_result members
+    /// FlowGraph2_result members
 
     /// <summary>
     /// edges
     /// </summary>
 
-    std::vector<FlowGraph_result_edges>& getEdges();
+    std::vector<FlowGraph2_result_edges>& getEdges();
     bool edgesIsSet() const;
     void unsetedges();
-    void setEdges(const std::vector<FlowGraph_result_edges>& value);
+    void setEdges(const std::vector<FlowGraph2_result_edges>& value);
 
     /// <summary>
     /// record信息
@@ -60,7 +60,7 @@ public:
 
 
 protected:
-    std::vector<FlowGraph_result_edges> edges_;
+    std::vector<FlowGraph2_result_edges> edges_;
     bool edgesIsSet_;
     std::vector<Vertices> vertices_;
     bool verticesIsSet_;
@@ -74,4 +74,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_CODEARTSBUILD_V3_MODEL_FlowGraph_result_H_
+#endif // HUAWEICLOUD_SDK_CODEARTSBUILD_V3_MODEL_FlowGraph2_result_H_

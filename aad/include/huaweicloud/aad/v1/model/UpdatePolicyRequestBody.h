@@ -66,13 +66,94 @@ public:
     void setDescription(const std::string& value);
 
     /// <summary>
-    /// udp协议封禁。block：封禁，unblock：不封禁
+    /// udp协议设置。block：封禁，unblock：不封禁，limiting：限速
     /// </summary>
 
     std::string getUdp() const;
     bool udpIsSet() const;
     void unsetudp();
     void setUdp(const std::string& value);
+
+    /// <summary>
+    /// tcp协议设置。block：封禁，unblock：不封禁，limiting：限速
+    /// </summary>
+
+    std::string getTcp() const;
+    bool tcpIsSet() const;
+    void unsettcp();
+    void setTcp(const std::string& value);
+
+    /// <summary>
+    /// icmp协议设置。block：封禁，unblock：不封禁，limiting：限速
+    /// </summary>
+
+    std::string getIcmp() const;
+    bool icmpIsSet() const;
+    void unseticmp();
+    void setIcmp(const std::string& value);
+
+    /// <summary>
+    /// other协议设置。block：封禁，unblock：不封禁，limiting：限速
+    /// </summary>
+
+    std::string getOther() const;
+    bool otherIsSet() const;
+    void unsetother();
+    void setOther(const std::string& value);
+
+    /// <summary>
+    /// icmp自定义限速值，icmp取值limiting情况下，如果该值为空表示不限速
+    /// </summary>
+
+    int64_t getIcmpTrafficLimiting() const;
+    bool icmpTrafficLimitingIsSet() const;
+    void unseticmpTrafficLimiting();
+    void setIcmpTrafficLimiting(int64_t value);
+
+    /// <summary>
+    /// udp自定义限速值，udp取值limiting情况下，如果该值为空表示不限速
+    /// </summary>
+
+    int64_t getUdpTrafficLimiting() const;
+    bool udpTrafficLimitingIsSet() const;
+    void unsetudpTrafficLimiting();
+    void setUdpTrafficLimiting(int64_t value);
+
+    /// <summary>
+    /// udp分片自定义限速值，udp取值limiting情况下，如果该值为空表示不限速
+    /// </summary>
+
+    int64_t getUdpFragmentRateLimiting() const;
+    bool udpFragmentRateLimitingIsSet() const;
+    void unsetudpFragmentRateLimiting();
+    void setUdpFragmentRateLimiting(int64_t value);
+
+    /// <summary>
+    /// other自定义限速值，other取值limiting情况下，如果该值为空表示不限速
+    /// </summary>
+
+    int64_t getOtherTrafficLimiting() const;
+    bool otherTrafficLimitingIsSet() const;
+    void unsetotherTrafficLimiting();
+    void setOtherTrafficLimiting(int64_t value);
+
+    /// <summary>
+    /// tcp自定义限速值，tcp取值limiting情况下，如果该值为空表示不限速
+    /// </summary>
+
+    int64_t getTcpTrafficLimiting() const;
+    bool tcpTrafficLimitingIsSet() const;
+    void unsettcpTrafficLimiting();
+    void setTcpTrafficLimiting(int64_t value);
+
+    /// <summary>
+    /// tcp分片自定义限速值，tcp取值limiting情况下，如果该值为空表示不限速
+    /// </summary>
+
+    int64_t getTcpFragmentRateLimiting() const;
+    bool tcpFragmentRateLimitingIsSet() const;
+    void unsettcpFragmentRateLimiting();
+    void setTcpFragmentRateLimiting(int64_t value);
 
 
 protected:
@@ -84,6 +165,24 @@ protected:
     bool descriptionIsSet_;
     std::string udp_;
     bool udpIsSet_;
+    std::string tcp_;
+    bool tcpIsSet_;
+    std::string icmp_;
+    bool icmpIsSet_;
+    std::string other_;
+    bool otherIsSet_;
+    int64_t icmpTrafficLimiting_;
+    bool icmpTrafficLimitingIsSet_;
+    int64_t udpTrafficLimiting_;
+    bool udpTrafficLimitingIsSet_;
+    int64_t udpFragmentRateLimiting_;
+    bool udpFragmentRateLimitingIsSet_;
+    int64_t otherTrafficLimiting_;
+    bool otherTrafficLimitingIsSet_;
+    int64_t tcpTrafficLimiting_;
+    bool tcpTrafficLimitingIsSet_;
+    int64_t tcpFragmentRateLimiting_;
+    bool tcpFragmentRateLimitingIsSet_;
 
 };
 

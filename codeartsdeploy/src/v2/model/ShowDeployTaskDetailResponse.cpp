@@ -71,6 +71,8 @@ ShowDeployTaskDetailResponse::ShowDeployTaskDetailResponse()
     idIsSet_ = false;
     releaseId_ = 0;
     releaseIdIsSet_ = false;
+    appId_ = "";
+    appIdIsSet_ = false;
     isDisable_ = false;
     isDisableIsSet_ = false;
     duration_ = "";
@@ -183,6 +185,9 @@ web::json::value ShowDeployTaskDetailResponse::toJson() const
     }
     if(releaseIdIsSet_) {
         val[utility::conversions::to_string_t("release_id")] = ModelBase::toJson(releaseId_);
+    }
+    if(appIdIsSet_) {
+        val[utility::conversions::to_string_t("app_id")] = ModelBase::toJson(appId_);
     }
     if(isDisableIsSet_) {
         val[utility::conversions::to_string_t("is_disable")] = ModelBase::toJson(isDisable_);
@@ -477,6 +482,15 @@ bool ShowDeployTaskDetailResponse::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setReleaseId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("app_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("app_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAppId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("is_disable"))) {
@@ -1165,6 +1179,27 @@ bool ShowDeployTaskDetailResponse::releaseIdIsSet() const
 void ShowDeployTaskDetailResponse::unsetreleaseId()
 {
     releaseIdIsSet_ = false;
+}
+
+std::string ShowDeployTaskDetailResponse::getAppId() const
+{
+    return appId_;
+}
+
+void ShowDeployTaskDetailResponse::setAppId(const std::string& value)
+{
+    appId_ = value;
+    appIdIsSet_ = true;
+}
+
+bool ShowDeployTaskDetailResponse::appIdIsSet() const
+{
+    return appIdIsSet_;
+}
+
+void ShowDeployTaskDetailResponse::unsetappId()
+{
+    appIdIsSet_ = false;
 }
 
 bool ShowDeployTaskDetailResponse::isIsDisable() const

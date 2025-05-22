@@ -26,6 +26,7 @@ public:
     static HttpRequestDef genRequestDefForEnableDomain();
     static HttpRequestDef genRequestDefForListCdnDomainTopRefers();
     static HttpRequestDef genRequestDefForListDomains();
+    static HttpRequestDef genRequestDefForModifyAccountInfo();
     static HttpRequestDef genRequestDefForSetChargeModes();
     static HttpRequestDef genRequestDefForShowBandwidthCalc();
     static HttpRequestDef genRequestDefForShowCertificatesHttpsInfo();

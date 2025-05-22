@@ -81,7 +81,7 @@ bool ShowFlowGraphResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("result"));
         if(!fieldValue.is_null())
         {
-            FlowGraph_result refVal;
+            FlowGraph2_result refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResult(refVal);
         }
@@ -153,12 +153,12 @@ void ShowFlowGraphResponse::unseterrCode()
     errCodeIsSet_ = false;
 }
 
-FlowGraph_result ShowFlowGraphResponse::getResult() const
+FlowGraph2_result ShowFlowGraphResponse::getResult() const
 {
     return result_;
 }
 
-void ShowFlowGraphResponse::setResult(const FlowGraph_result& value)
+void ShowFlowGraphResponse::setResult(const FlowGraph2_result& value)
 {
     result_ = value;
     resultIsSet_ = true;

@@ -62,6 +62,14 @@ public:
             { 
                 "https://cloudbuild-ext.la-north-2.myhuaweicloud.com"
             });
+        regions["la-south-2"] = Region("la-south-2",
+            { 
+                "https://cloudbuild-ext.la-south-2.myhuaweicloud.com"
+            });
+        regions["tr-west-1"] = Region("tr-west-1",
+            { 
+                "https://cloudbuild-ext.tr-west-1.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

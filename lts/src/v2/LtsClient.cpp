@@ -2318,12 +2318,6 @@ std::shared_ptr<ListTransfersResponse> LtsClient::listTransfers(ListTransfersReq
     if (request.logStreamNameIsSet()) {
         localVarQueryParams["log_stream_name"] = parameterToString(request.getLogStreamName());
     }
-    if (request.offsetIsSet()) {
-        localVarQueryParams["offset"] = parameterToString(request.getOffset());
-    }
-    if (request.limitIsSet()) {
-        localVarQueryParams["limit"] = parameterToString(request.getLimit());
-    }
     if (request.contentTypeIsSet()) {
         localVarHeaderParams["Content-Type"] = parameterToString(request.getContentType());
     }

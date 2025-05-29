@@ -264,6 +264,15 @@ HttpRequestDef DdsMeta::genRequestDefForDeleteManualBackup() {
     return reqDefBuilder;
 }
 
+HttpRequestDef DdsMeta::genRequestDefForDeleteMongosNode() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef DdsMeta::genRequestDefForDeleteReadonlyNode() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;

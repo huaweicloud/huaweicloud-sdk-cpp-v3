@@ -57,12 +57,23 @@ public:
     void unsettags();
     void setTags(const std::vector<TagsBody>& value);
 
+    /// <summary>
+    /// 日志是否存储
+    /// </summary>
+
+    bool isWhetherLogStorage() const;
+    bool whetherLogStorageIsSet() const;
+    void unsetwhetherLogStorage();
+    void setWhetherLogStorage(bool value);
+
 
 protected:
     int32_t ttlInDays_;
     bool ttlInDaysIsSet_;
     std::vector<TagsBody> tags_;
     bool tagsIsSet_;
+    bool whetherLogStorage_;
+    bool whetherLogStorageIsSet_;
 
 };
 

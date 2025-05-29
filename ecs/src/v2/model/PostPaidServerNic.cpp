@@ -14,6 +14,8 @@ PostPaidServerNic::PostPaidServerNic()
 {
     subnetId_ = "";
     subnetIdIsSet_ = false;
+    portId_ = "";
+    portIdIsSet_ = false;
     ipAddress_ = "";
     ipAddressIsSet_ = false;
     ipv6Enable_ = false;
@@ -34,6 +36,9 @@ web::json::value PostPaidServerNic::toJson() const
 
     if(subnetIdIsSet_) {
         val[utility::conversions::to_string_t("subnet_id")] = ModelBase::toJson(subnetId_);
+    }
+    if(portIdIsSet_) {
+        val[utility::conversions::to_string_t("port_id")] = ModelBase::toJson(portId_);
     }
     if(ipAddressIsSet_) {
         val[utility::conversions::to_string_t("ip_address")] = ModelBase::toJson(ipAddress_);
@@ -61,6 +66,15 @@ bool PostPaidServerNic::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSubnetId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("port_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("port_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPortId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("ip_address"))) {
@@ -122,6 +136,27 @@ bool PostPaidServerNic::subnetIdIsSet() const
 void PostPaidServerNic::unsetsubnetId()
 {
     subnetIdIsSet_ = false;
+}
+
+std::string PostPaidServerNic::getPortId() const
+{
+    return portId_;
+}
+
+void PostPaidServerNic::setPortId(const std::string& value)
+{
+    portId_ = value;
+    portIdIsSet_ = true;
+}
+
+bool PostPaidServerNic::portIdIsSet() const
+{
+    return portIdIsSet_;
+}
+
+void PostPaidServerNic::unsetportId()
+{
+    portIdIsSet_ = false;
 }
 
 std::string PostPaidServerNic::getIpAddress() const

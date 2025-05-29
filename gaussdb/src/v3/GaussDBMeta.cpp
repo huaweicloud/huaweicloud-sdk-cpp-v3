@@ -1755,6 +1755,20 @@ HttpRequestDef GaussDBMeta::genRequestDefForSwitchGaussMySqlInstanceSsl() {
     return reqDefBuilder;
 }
 
+HttpRequestDef GaussDBMeta::genRequestDefForSwitchGaussMySqlProxyEip() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef GaussDBMeta::genRequestDefForSwitchGaussMySqlProxySsl() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;

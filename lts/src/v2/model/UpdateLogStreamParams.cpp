@@ -15,6 +15,8 @@ UpdateLogStreamParams::UpdateLogStreamParams()
     ttlInDays_ = 0;
     ttlInDaysIsSet_ = false;
     tagsIsSet_ = false;
+    whetherLogStorage_ = false;
+    whetherLogStorageIsSet_ = false;
 }
 
 UpdateLogStreamParams::~UpdateLogStreamParams() = default;
@@ -32,6 +34,9 @@ web::json::value UpdateLogStreamParams::toJson() const
     }
     if(tagsIsSet_) {
         val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
+    }
+    if(whetherLogStorageIsSet_) {
+        val[utility::conversions::to_string_t("whether_log_storage")] = ModelBase::toJson(whetherLogStorage_);
     }
 
     return val;
@@ -56,6 +61,15 @@ bool UpdateLogStreamParams::fromJson(const web::json::value& val)
             std::vector<TagsBody> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTags(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("whether_log_storage"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("whether_log_storage"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setWhetherLogStorage(refVal);
         }
     }
     return ok;
@@ -102,6 +116,27 @@ bool UpdateLogStreamParams::tagsIsSet() const
 void UpdateLogStreamParams::unsettags()
 {
     tagsIsSet_ = false;
+}
+
+bool UpdateLogStreamParams::isWhetherLogStorage() const
+{
+    return whetherLogStorage_;
+}
+
+void UpdateLogStreamParams::setWhetherLogStorage(bool value)
+{
+    whetherLogStorage_ = value;
+    whetherLogStorageIsSet_ = true;
+}
+
+bool UpdateLogStreamParams::whetherLogStorageIsSet() const
+{
+    return whetherLogStorageIsSet_;
+}
+
+void UpdateLogStreamParams::unsetwhetherLogStorage()
+{
+    whetherLogStorageIsSet_ = false;
 }
 
 }

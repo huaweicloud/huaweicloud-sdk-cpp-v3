@@ -9,16 +9,17 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <string>
+#include <vector>
+#include <huaweicloud/ecs/v2/model/SerialConsoleOptions.h>
 #include <huaweicloud/ecs/v2/model/PostPaidServerSecurityGroup.h>
 #include <huaweicloud/ecs/v2/model/PostPaidServerRootVolume.h>
 #include <huaweicloud/ecs/v2/model/PostPaidServerNic.h>
 #include <huaweicloud/ecs/v2/model/PostPaidServerSchedulerHints.h>
 #include <huaweicloud/ecs/v2/model/PostPaidServerPublicip.h>
-#include <string>
 #include <huaweicloud/ecs/v2/model/CpuOptions.h>
 #include <huaweicloud/ecs/v2/model/PostPaidServerDataVolume.h>
 #include <map>
-#include <vector>
 #include <huaweicloud/ecs/v2/model/PostPaidServerExtendParam.h>
 #include <huaweicloud/ecs/v2/model/PostPaidServerTag.h>
 
@@ -265,6 +266,15 @@ public:
     void unsetcpuOptions();
     void setCpuOptions(const CpuOptions& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    SerialConsoleOptions getSerialConsoleOptions() const;
+    bool serialConsoleOptionsIsSet() const;
+    void unsetserialConsoleOptions();
+    void setSerialConsoleOptions(const SerialConsoleOptions& value);
+
 
 protected:
     std::string autoTerminateTime_;
@@ -315,6 +325,8 @@ protected:
     bool descriptionIsSet_;
     CpuOptions cpuOptions_;
     bool cpuOptionsIsSet_;
+    SerialConsoleOptions serialConsoleOptions_;
+    bool serialConsoleOptionsIsSet_;
 
 };
 

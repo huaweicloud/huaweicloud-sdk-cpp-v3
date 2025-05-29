@@ -1,3 +1,116 @@
+# 3.1.138 2025-05-29
+
+### HuaweiCloud SDK CFW
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the API `UpdateObjectConfigDesc`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK CodeArtsBuild
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the following APIs:
+    - `ListRecyclingJob`
+    - `ListOfficialTemplate`
+    - `ShowJobSystemParameters`
+    - `ShowBuildRecord`
+    - `ShowJobInfo`
+    - `ShowBuildParamsList`
+    - `ShowBuildRecordBuildScript`
+    - `ShowJobConfigDiff`
+    - `ShowJobRolePermission`
+    - `ListProjectJobs`
+    - `ShowJobBuildTime`
+    - `ShowProjectPermission`
+    - `ListBuildInfoRecordByJobId`
+    - `ShowJobConfig`
+    - `ShowImageTemplateList`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK DDS
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the API `DeleteMongosNode`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK ECS
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **BatchAddServerNics**
+    - changes of request param
+      - `+ nics.port_id`
+  - **CreateServers**
+    - changes of request param
+      - `+ server.serial_console_options`
+      - `+ server.nics.port_id`
+  - **CreatePostPaidServers**
+    - changes of request param
+      - `+ server.serial_console_options`
+      - `+ server.nics.port_id`
+
+### HuaweiCloud SDK GaussDB
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the API `SwitchGaussMySqlProxyEip`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK KVS
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the API `BatchGetKv`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK LTS
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListLogGroups**
+    - changes of response param
+      - `+ log_groups.log_group_name_alias`
+  - **UpdateLogStream**
+    - changes of request param
+      - `+ whether_log_storage`
+  - **ListTransfers**
+    - changes of request param
+      - `- offset`
+      - `- limit`
+
 # 3.1.137 2025-05-22
 
 ### HuaweiCloud SDK DDS

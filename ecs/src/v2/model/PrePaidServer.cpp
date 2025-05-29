@@ -49,6 +49,7 @@ PrePaidServer::PrePaidServer()
     description_ = "";
     descriptionIsSet_ = false;
     cpuOptionsIsSet_ = false;
+    serialConsoleOptionsIsSet_ = false;
 }
 
 PrePaidServer::~PrePaidServer() = default;
@@ -132,6 +133,9 @@ web::json::value PrePaidServer::toJson() const
     }
     if(cpuOptionsIsSet_) {
         val[utility::conversions::to_string_t("cpu_options")] = ModelBase::toJson(cpuOptions_);
+    }
+    if(serialConsoleOptionsIsSet_) {
+        val[utility::conversions::to_string_t("serial_console_options")] = ModelBase::toJson(serialConsoleOptions_);
     }
 
     return val;
@@ -354,6 +358,15 @@ bool PrePaidServer::fromJson(const web::json::value& val)
             CpuOptions refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCpuOptions(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("serial_console_options"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("serial_console_options"));
+        if(!fieldValue.is_null())
+        {
+            SerialConsoleOptions refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSerialConsoleOptions(refVal);
         }
     }
     return ok;
@@ -862,6 +875,27 @@ bool PrePaidServer::cpuOptionsIsSet() const
 void PrePaidServer::unsetcpuOptions()
 {
     cpuOptionsIsSet_ = false;
+}
+
+SerialConsoleOptions PrePaidServer::getSerialConsoleOptions() const
+{
+    return serialConsoleOptions_;
+}
+
+void PrePaidServer::setSerialConsoleOptions(const SerialConsoleOptions& value)
+{
+    serialConsoleOptions_ = value;
+    serialConsoleOptionsIsSet_ = true;
+}
+
+bool PrePaidServer::serialConsoleOptionsIsSet() const
+{
+    return serialConsoleOptionsIsSet_;
+}
+
+void PrePaidServer::unsetserialConsoleOptions()
+{
+    serialConsoleOptionsIsSet_ = false;
 }
 
 }

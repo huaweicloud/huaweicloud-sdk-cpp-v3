@@ -132,6 +132,7 @@
 #include <huaweicloud/cfw/v1/model/ListServiceSetsRequest.h>
 #include <huaweicloud/cfw/v1/model/ListServiceSetsResponse.h>
 #include <huaweicloud/cfw/v1/model/LogConfigDto.h>
+#include <huaweicloud/cfw/v1/model/ObjectInfoDto.h>
 #include <huaweicloud/cfw/v1/model/QueryFireWallInstanceDto.h>
 #include <huaweicloud/cfw/v1/model/SaveTagsRequest.h>
 #include <huaweicloud/cfw/v1/model/SaveTagsResponse.h>
@@ -164,6 +165,8 @@
 #include <huaweicloud/cfw/v1/model/UpdateDomainSetResponse.h>
 #include <huaweicloud/cfw/v1/model/UpdateLogConfigRequest.h>
 #include <huaweicloud/cfw/v1/model/UpdateLogConfigResponse.h>
+#include <huaweicloud/cfw/v1/model/UpdateObjectConfigDescRequest.h>
+#include <huaweicloud/cfw/v1/model/UpdateObjectConfigDescResponse.h>
 #include <huaweicloud/cfw/v1/model/UpdateServiceSetRequest.h>
 #include <huaweicloud/cfw/v1/model/UpdateServiceSetResponse.h>
 #include <huaweicloud/cfw/v1/model/UpdateServiceSetUsingPUTRequestBody.h>
@@ -787,6 +790,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateLogConfigResponse> updateLogConfig(
         UpdateLogConfigRequest &request
+    );
+    // 编辑对象组内成员的描述信息
+    //
+    // 编辑对象组内成员的描述信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateObjectConfigDescResponse> updateObjectConfigDesc(
+        UpdateObjectConfigDescRequest &request
     );
     // 修改服务组
     //

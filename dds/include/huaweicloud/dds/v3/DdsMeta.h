@@ -42,6 +42,7 @@ public:
     static HttpRequestDef genRequestDefForDeleteKillOpRuleList();
     static HttpRequestDef genRequestDefForDeleteLtsConfig();
     static HttpRequestDef genRequestDefForDeleteManualBackup();
+    static HttpRequestDef genRequestDefForDeleteMongosNode();
     static HttpRequestDef genRequestDefForDeleteReadonlyNode();
     static HttpRequestDef genRequestDefForDeleteSession();
     static HttpRequestDef genRequestDefForDownloadErrorlog();

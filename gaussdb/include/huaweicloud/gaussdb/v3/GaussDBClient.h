@@ -307,6 +307,9 @@
 #include <huaweicloud/gaussdb/v3/model/SwitchGaussMySqlConfigurationResponse.h>
 #include <huaweicloud/gaussdb/v3/model/SwitchGaussMySqlInstanceSslRequest.h>
 #include <huaweicloud/gaussdb/v3/model/SwitchGaussMySqlInstanceSslResponse.h>
+#include <huaweicloud/gaussdb/v3/model/SwitchGaussMySqlProxyEipRequest.h>
+#include <huaweicloud/gaussdb/v3/model/SwitchGaussMySqlProxyEipRequestBody.h>
+#include <huaweicloud/gaussdb/v3/model/SwitchGaussMySqlProxyEipResponse.h>
 #include <huaweicloud/gaussdb/v3/model/SwitchGaussMySqlProxySslRequest.h>
 #include <huaweicloud/gaussdb/v3/model/SwitchGaussMySqlProxySslResponse.h>
 #include <huaweicloud/gaussdb/v3/model/SwitchProxySSLRequest.h>
@@ -1516,6 +1519,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<SwitchGaussMySqlInstanceSslResponse> switchGaussMySqlInstanceSsl(
         SwitchGaussMySqlInstanceSslRequest &request
+    );
+    // Proxy绑定解绑弹性公网IP
+    //
+    // Proxy绑定解绑弹性公网IP。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SwitchGaussMySqlProxyEipResponse> switchGaussMySqlProxyEip(
+        SwitchGaussMySqlProxyEipRequest &request
     );
     // 开关数据库代理SSL
     //

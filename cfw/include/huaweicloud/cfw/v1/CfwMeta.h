@@ -78,6 +78,7 @@ public:
     static HttpRequestDef genRequestDefForUpdateDnsServers();
     static HttpRequestDef genRequestDefForUpdateDomainSet();
     static HttpRequestDef genRequestDefForUpdateLogConfig();
+    static HttpRequestDef genRequestDefForUpdateObjectConfigDesc();
     static HttpRequestDef genRequestDefForUpdateServiceSet();
     static HttpRequestDef genRequestDefForAddAclRule();
     static HttpRequestDef genRequestDefForBatchDeleteAclRules();

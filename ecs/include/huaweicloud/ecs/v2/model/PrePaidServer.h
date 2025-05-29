@@ -10,17 +10,18 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/ecs/v2/model/PrePaidServerRootVolume.h>
+#include <string>
+#include <huaweicloud/ecs/v2/model/PrePaidServerTag.h>
+#include <vector>
+#include <huaweicloud/ecs/v2/model/SerialConsoleOptions.h>
+#include <huaweicloud/ecs/v2/model/PrePaidServerSecurityGroup.h>
 #include <huaweicloud/ecs/v2/model/PrePaidServerExtendParam.h>
 #include <huaweicloud/ecs/v2/model/PrePaidServerSchedulerHints.h>
-#include <string>
 #include <huaweicloud/ecs/v2/model/PrePaidServerNic.h>
 #include <huaweicloud/ecs/v2/model/PrePaidServerPublicip.h>
-#include <huaweicloud/ecs/v2/model/PrePaidServerTag.h>
 #include <huaweicloud/ecs/v2/model/CpuOptions.h>
 #include <map>
-#include <vector>
 #include <huaweicloud/ecs/v2/model/PrePaidServerDataVolume.h>
-#include <huaweicloud/ecs/v2/model/PrePaidServerSecurityGroup.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -265,6 +266,15 @@ public:
     void unsetcpuOptions();
     void setCpuOptions(const CpuOptions& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    SerialConsoleOptions getSerialConsoleOptions() const;
+    bool serialConsoleOptionsIsSet() const;
+    void unsetserialConsoleOptions();
+    void setSerialConsoleOptions(const SerialConsoleOptions& value);
+
 
 protected:
     std::string autoTerminateTime_;
@@ -315,6 +325,8 @@ protected:
     bool descriptionIsSet_;
     CpuOptions cpuOptions_;
     bool cpuOptionsIsSet_;
+    SerialConsoleOptions serialConsoleOptions_;
+    bool serialConsoleOptionsIsSet_;
 
 };
 

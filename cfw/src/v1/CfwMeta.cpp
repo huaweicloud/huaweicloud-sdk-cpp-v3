@@ -1205,6 +1205,15 @@ HttpRequestDef CfwMeta::genRequestDefForUpdateLogConfig() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CfwMeta::genRequestDefForUpdateObjectConfigDesc() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CfwMeta::genRequestDefForUpdateServiceSet() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")

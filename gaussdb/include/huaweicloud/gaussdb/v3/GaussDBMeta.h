@@ -131,6 +131,7 @@ public:
     static HttpRequestDef genRequestDefForSwitchAccessControl();
     static HttpRequestDef genRequestDefForSwitchGaussMySqlConfiguration();
     static HttpRequestDef genRequestDefForSwitchGaussMySqlInstanceSsl();
+    static HttpRequestDef genRequestDefForSwitchGaussMySqlProxyEip();
     static HttpRequestDef genRequestDefForSwitchGaussMySqlProxySsl();
     static HttpRequestDef genRequestDefForUpdateAuditLog();
     static HttpRequestDef genRequestDefForUpdateAutoScalingPolicy();

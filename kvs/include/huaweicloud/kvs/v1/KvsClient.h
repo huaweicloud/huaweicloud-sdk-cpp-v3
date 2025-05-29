@@ -30,6 +30,9 @@
 #include <huaweicloud/kvs/v1/model/CheckHealthRequestBody.h>
 #include <huaweicloud/kvs/v1/model/CheckHealthResponse.h>
 
+#include <huaweicloud/kvs/v1/model/BatchGetKvRequest.h>
+#include <huaweicloud/kvs/v1/model/BatchGetKvRequestBody.h>
+#include <huaweicloud/kvs/v1/model/BatchGetKvResponse.h>
 #include <huaweicloud/kvs/v1/model/BatchWriteKvRequest.h>
 #include <huaweicloud/kvs/v1/model/BatchWriteKvRequestBody.h>
 #include <huaweicloud/kvs/v1/model/BatchWriteKvResponse.h>
@@ -127,6 +130,14 @@ public:
         CheckHealthRequest &request
     );
 
+    // 批量读请求
+    //
+    // 批量读请求，其中可以携带一或多个表的不同kv的查询操作。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchGetKvResponse> batchGetKv(
+        BatchGetKvRequest &request
+    );
     // 批量写请求
     //
     // 批量写请求，其中可以携带一或多个表的不同kv的写操作，上传kv/删除kv。

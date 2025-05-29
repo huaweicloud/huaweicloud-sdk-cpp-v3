@@ -148,7 +148,7 @@ public:
             });
         regions["ap-southeast-5"] = Region("ap-southeast-5",
             { 
-                "https://evs.ap-southeast-5.myhuaweicloud.asia"
+                "https://evs.ap-southeast-5.myhuaweicloud.com"
             });
         return regions;
     }

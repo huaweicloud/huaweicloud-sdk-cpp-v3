@@ -87,6 +87,9 @@
 #include <huaweicloud/dds/v3/model/DeleteLtsConfigResponse.h>
 #include <huaweicloud/dds/v3/model/DeleteManualBackupRequest.h>
 #include <huaweicloud/dds/v3/model/DeleteManualBackupResponse.h>
+#include <huaweicloud/dds/v3/model/DeleteMongosNodeRequest.h>
+#include <huaweicloud/dds/v3/model/DeleteMongosNodeRequestBody.h>
+#include <huaweicloud/dds/v3/model/DeleteMongosNodeResponse.h>
 #include <huaweicloud/dds/v3/model/DeleteReadonlyNodeRequest.h>
 #include <huaweicloud/dds/v3/model/DeleteReadonlyNodeRequestBody.h>
 #include <huaweicloud/dds/v3/model/DeleteReadonlyNodeResponse.h>
@@ -572,6 +575,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteManualBackupResponse> deleteManualBackup(
         DeleteManualBackupRequest &request
+    );
+    // 删除mongos节点
+    //
+    // 当集群实例需要缩减mongos节点时，需要调用此API。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteMongosNodeResponse> deleteMongosNode(
+        DeleteMongosNodeRequest &request
     );
     // 删除只读节点
     //

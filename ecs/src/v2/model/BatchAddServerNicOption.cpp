@@ -14,6 +14,8 @@ BatchAddServerNicOption::BatchAddServerNicOption()
 {
     subnetId_ = "";
     subnetIdIsSet_ = false;
+    portId_ = "";
+    portIdIsSet_ = false;
     securityGroupsIsSet_ = false;
     ipAddress_ = "";
     ipAddressIsSet_ = false;
@@ -34,6 +36,9 @@ web::json::value BatchAddServerNicOption::toJson() const
 
     if(subnetIdIsSet_) {
         val[utility::conversions::to_string_t("subnet_id")] = ModelBase::toJson(subnetId_);
+    }
+    if(portIdIsSet_) {
+        val[utility::conversions::to_string_t("port_id")] = ModelBase::toJson(portId_);
     }
     if(securityGroupsIsSet_) {
         val[utility::conversions::to_string_t("security_groups")] = ModelBase::toJson(securityGroups_);
@@ -61,6 +66,15 @@ bool BatchAddServerNicOption::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSubnetId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("port_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("port_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPortId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("security_groups"))) {
@@ -122,6 +136,27 @@ bool BatchAddServerNicOption::subnetIdIsSet() const
 void BatchAddServerNicOption::unsetsubnetId()
 {
     subnetIdIsSet_ = false;
+}
+
+std::string BatchAddServerNicOption::getPortId() const
+{
+    return portId_;
+}
+
+void BatchAddServerNicOption::setPortId(const std::string& value)
+{
+    portId_ = value;
+    portIdIsSet_ = true;
+}
+
+bool BatchAddServerNicOption::portIdIsSet() const
+{
+    return portIdIsSet_;
+}
+
+void BatchAddServerNicOption::unsetportId()
+{
+    portIdIsSet_ = false;
 }
 
 std::vector<ServerNicSecurityGroup>& BatchAddServerNicOption::getSecurityGroups()

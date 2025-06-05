@@ -139,6 +139,15 @@ public:
     void unsethotStorageDays();
     void setHotStorageDays(int32_t value);
 
+    /// <summary>
+    /// 日志组ID
+    /// </summary>
+
+    std::string getLogGroupId() const;
+    bool logGroupIdIsSet() const;
+    void unsetlogGroupId();
+    void setLogGroupId(const std::string& value);
+
 
 protected:
     int64_t creationTime_;
@@ -163,6 +172,8 @@ protected:
     bool ttlInDaysIsSet_;
     int32_t hotStorageDays_;
     bool hotStorageDaysIsSet_;
+    std::string logGroupId_;
+    bool logGroupIdIsSet_;
 
 };
 

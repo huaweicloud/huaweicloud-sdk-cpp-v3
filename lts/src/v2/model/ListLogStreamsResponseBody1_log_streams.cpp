@@ -33,6 +33,8 @@ ListLogStreamsResponseBody1_log_streams::ListLogStreamsResponseBody1_log_streams
     ttlInDaysIsSet_ = false;
     hotStorageDays_ = 0;
     hotStorageDaysIsSet_ = false;
+    logGroupId_ = "";
+    logGroupIdIsSet_ = false;
 }
 
 ListLogStreamsResponseBody1_log_streams::~ListLogStreamsResponseBody1_log_streams() = default;
@@ -77,6 +79,9 @@ web::json::value ListLogStreamsResponseBody1_log_streams::toJson() const
     }
     if(hotStorageDaysIsSet_) {
         val[utility::conversions::to_string_t("hot_storage_days")] = ModelBase::toJson(hotStorageDays_);
+    }
+    if(logGroupIdIsSet_) {
+        val[utility::conversions::to_string_t("log_group_id")] = ModelBase::toJson(logGroupId_);
     }
 
     return val;
@@ -182,6 +187,15 @@ bool ListLogStreamsResponseBody1_log_streams::fromJson(const web::json::value& v
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setHotStorageDays(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("log_group_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("log_group_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLogGroupId(refVal);
         }
     }
     return ok;
@@ -417,6 +431,27 @@ bool ListLogStreamsResponseBody1_log_streams::hotStorageDaysIsSet() const
 void ListLogStreamsResponseBody1_log_streams::unsethotStorageDays()
 {
     hotStorageDaysIsSet_ = false;
+}
+
+std::string ListLogStreamsResponseBody1_log_streams::getLogGroupId() const
+{
+    return logGroupId_;
+}
+
+void ListLogStreamsResponseBody1_log_streams::setLogGroupId(const std::string& value)
+{
+    logGroupId_ = value;
+    logGroupIdIsSet_ = true;
+}
+
+bool ListLogStreamsResponseBody1_log_streams::logGroupIdIsSet() const
+{
+    return logGroupIdIsSet_;
+}
+
+void ListLogStreamsResponseBody1_log_streams::unsetlogGroupId()
+{
+    logGroupIdIsSet_ = false;
 }
 
 }

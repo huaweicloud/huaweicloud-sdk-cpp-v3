@@ -8,6 +8,17 @@ namespace V3 {
 
 using namespace HuaweiCloud::Sdk::Core::Http;
 
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForCheckJobNameIsExists() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("ProjectId")
+                  .withJsonTag("project_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("JobName")
+                  .withJsonTag("job_name")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CodeArtsBuildMeta::genRequestDefForCreateBuildJob() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -64,6 +75,20 @@ HttpRequestDef CodeArtsBuildMeta::genRequestDefForDownloadKeystore() {
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("DomainId")
                   .withJsonTag("domain_id")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForDownloadKeystoreByName() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Name")
+                  .withJsonTag("name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("DomainId")
+                  .withJsonTag("domain_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Id")
+                  .withJsonTag("id")
                   .withLocationType(Query_));
     return reqDefBuilder;
 }
@@ -137,6 +162,11 @@ HttpRequestDef CodeArtsBuildMeta::genRequestDefForListJobConfig() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForListKeystore() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef CodeArtsBuildMeta::genRequestDefForListNotice() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
@@ -188,7 +218,47 @@ HttpRequestDef CodeArtsBuildMeta::genRequestDefForListProjectJobs() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForListRecords() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Page")
+                  .withJsonTag("page")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Triggers")
+                  .withJsonTag("triggers")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Branches")
+                  .withJsonTag("branches")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Tags")
+                  .withJsonTag("tags")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("FromDate")
+                  .withJsonTag("from_date")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ToDate")
+                  .withJsonTag("to_date")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CodeArtsBuildMeta::genRequestDefForListRecyclingJob() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("PageSize")
+                  .withJsonTag("page_size")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("PageNo")
+                  .withJsonTag("page_no")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Search")
+                  .withJsonTag("search")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForListRelatedProjectInfo() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("PageSize")
                   .withJsonTag("page_size")
@@ -225,6 +295,11 @@ HttpRequestDef CodeArtsBuildMeta::genRequestDefForRunJob() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowBuildInfoRecord() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowBuildParamsList() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
@@ -244,6 +319,19 @@ HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowBuildRecordFullStages() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Cascade")
                   .withJsonTag("cascade")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowDefaultBuildParameters() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowDockerfileTemplate() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("ImageId")
+                  .withJsonTag("image_id")
                   .withLocationType(Query_));
     return reqDefBuilder;
 }
@@ -327,6 +415,11 @@ HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowJobListByProjectId() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowJobNoticeConfigInfo() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowJobRolePermission() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("JobId")
@@ -353,6 +446,17 @@ HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowJobSuccessRatio() {
 
 HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowJobSystemParameters() {
     HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowKeystorePermission() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("PageSize")
+                  .withJsonTag("page_size")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Page")
+                  .withJsonTag("page")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 
@@ -409,6 +513,11 @@ HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowProjectPermission() {
 }
 
 HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowRecordDetail() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowRelatedProject() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }

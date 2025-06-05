@@ -32,6 +32,10 @@ QuerySessionResponse::QuerySessionResponse()
     descriptionIsSet_ = false;
     namespace_ = "";
     namespaceIsSet_ = false;
+    db_ = "";
+    dbIsSet_ = false;
+    user_ = "";
+    userIsSet_ = false;
 }
 
 QuerySessionResponse::~QuerySessionResponse() = default;
@@ -73,6 +77,12 @@ web::json::value QuerySessionResponse::toJson() const
     }
     if(namespaceIsSet_) {
         val[utility::conversions::to_string_t("namespace")] = ModelBase::toJson(namespace_);
+    }
+    if(dbIsSet_) {
+        val[utility::conversions::to_string_t("db")] = ModelBase::toJson(db_);
+    }
+    if(userIsSet_) {
+        val[utility::conversions::to_string_t("user")] = ModelBase::toJson(user_);
     }
 
     return val;
@@ -169,6 +179,24 @@ bool QuerySessionResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setNamespace(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("db"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("db"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDb(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("user"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("user"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setUser(refVal);
         }
     }
     return ok;
@@ -383,6 +411,48 @@ bool QuerySessionResponse::namespaceIsSet() const
 void QuerySessionResponse::unsetnamespace()
 {
     namespaceIsSet_ = false;
+}
+
+std::string QuerySessionResponse::getDb() const
+{
+    return db_;
+}
+
+void QuerySessionResponse::setDb(const std::string& value)
+{
+    db_ = value;
+    dbIsSet_ = true;
+}
+
+bool QuerySessionResponse::dbIsSet() const
+{
+    return dbIsSet_;
+}
+
+void QuerySessionResponse::unsetdb()
+{
+    dbIsSet_ = false;
+}
+
+std::string QuerySessionResponse::getUser() const
+{
+    return user_;
+}
+
+void QuerySessionResponse::setUser(const std::string& value)
+{
+    user_ = value;
+    userIsSet_ = true;
+}
+
+bool QuerySessionResponse::userIsSet() const
+{
+    return userIsSet_;
+}
+
+void QuerySessionResponse::unsetuser()
+{
+    userIsSet_ = false;
 }
 
 }

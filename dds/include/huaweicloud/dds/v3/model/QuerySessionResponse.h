@@ -128,6 +128,24 @@ public:
     void unsetnamespace();
     void setNamespace(const std::string& value);
 
+    /// <summary>
+    /// 正在操作的数据库名称。
+    /// </summary>
+
+    std::string getDb() const;
+    bool dbIsSet() const;
+    void unsetdb();
+    void setDb(const std::string& value);
+
+    /// <summary>
+    /// 用户名称。仅支持4.2及以上版本,如果无法显示该字段，请升级内核版本。
+    /// </summary>
+
+    std::string getUser() const;
+    bool userIsSet() const;
+    void unsetuser();
+    void setUser(const std::string& value);
+
 
 protected:
     std::string id_;
@@ -150,6 +168,10 @@ protected:
     bool descriptionIsSet_;
     std::string namespace_;
     bool namespaceIsSet_;
+    std::string db_;
+    bool dbIsSet_;
+    std::string user_;
+    bool userIsSet_;
 
 };
 

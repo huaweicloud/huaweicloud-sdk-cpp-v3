@@ -6,6 +6,8 @@
 #include <huaweicloud/core/ClientBuilder.h>
 
 
+#include <huaweicloud/codeartsbuild/v3/model/CheckJobNameIsExistsRequest.h>
+#include <huaweicloud/codeartsbuild/v3/model/CheckJobNameIsExistsResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/CreateBuildJobRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/CreateBuildJobRequestBody.h>
 #include <huaweicloud/codeartsbuild/v3/model/CreateBuildJobResponse.h>
@@ -22,6 +24,8 @@
 #include <huaweicloud/codeartsbuild/v3/model/DisableNoticeResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/DownloadBuildLogRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/DownloadBuildLogResponse.h>
+#include <huaweicloud/codeartsbuild/v3/model/DownloadKeystoreByNameRequest.h>
+#include <huaweicloud/codeartsbuild/v3/model/DownloadKeystoreByNameResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/DownloadKeystoreRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/DownloadKeystoreResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/DownloadRealTimeLogRequest.h>
@@ -36,19 +40,27 @@
 #include <huaweicloud/codeartsbuild/v3/model/ListBuildInfoRecordResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/ListJobConfigRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/ListJobConfigResponse.h>
+#include <huaweicloud/codeartsbuild/v3/model/ListKeystoreRequest.h>
+#include <huaweicloud/codeartsbuild/v3/model/ListKeystoreResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/ListNoticeRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/ListNoticeResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/ListOfficialTemplateRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/ListOfficialTemplateResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/ListProjectJobsRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/ListProjectJobsResponse.h>
+#include <huaweicloud/codeartsbuild/v3/model/ListRecordsRequest.h>
+#include <huaweicloud/codeartsbuild/v3/model/ListRecordsResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/ListRecyclingJobRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/ListRecyclingJobResponse.h>
+#include <huaweicloud/codeartsbuild/v3/model/ListRelatedProjectInfoRequest.h>
+#include <huaweicloud/codeartsbuild/v3/model/ListRelatedProjectInfoResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/ListTemplatesRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/ListTemplatesResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/RunJobRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/RunJobRequestBody.h>
 #include <huaweicloud/codeartsbuild/v3/model/RunJobResponse.h>
+#include <huaweicloud/codeartsbuild/v3/model/ShowBuildInfoRecordRequest.h>
+#include <huaweicloud/codeartsbuild/v3/model/ShowBuildInfoRecordResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowBuildParamsListRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowBuildParamsListResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowBuildRecordBuildScriptRequest.h>
@@ -57,6 +69,10 @@
 #include <huaweicloud/codeartsbuild/v3/model/ShowBuildRecordFullStagesResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowBuildRecordRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowBuildRecordResponse.h>
+#include <huaweicloud/codeartsbuild/v3/model/ShowDefaultBuildParametersRequest.h>
+#include <huaweicloud/codeartsbuild/v3/model/ShowDefaultBuildParametersResponse.h>
+#include <huaweicloud/codeartsbuild/v3/model/ShowDockerfileTemplateRequest.h>
+#include <huaweicloud/codeartsbuild/v3/model/ShowDockerfileTemplateResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowHistoryDetailsRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowHistoryDetailsResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowImageTemplateListRequest.h>
@@ -73,6 +89,8 @@
 #include <huaweicloud/codeartsbuild/v3/model/ShowJobInfoResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowJobListByProjectIdRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowJobListByProjectIdResponse.h>
+#include <huaweicloud/codeartsbuild/v3/model/ShowJobNoticeConfigInfoRequest.h>
+#include <huaweicloud/codeartsbuild/v3/model/ShowJobNoticeConfigInfoResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowJobRolePermissionRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowJobRolePermissionResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowJobStatusRequest.h>
@@ -81,6 +99,8 @@
 #include <huaweicloud/codeartsbuild/v3/model/ShowJobSuccessRatioResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowJobSystemParametersRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowJobSystemParametersResponse.h>
+#include <huaweicloud/codeartsbuild/v3/model/ShowKeystorePermissionRequest.h>
+#include <huaweicloud/codeartsbuild/v3/model/ShowKeystorePermissionResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowLastHistoryRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowLastHistoryResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowListHistoryRequest.h>
@@ -93,6 +113,8 @@
 #include <huaweicloud/codeartsbuild/v3/model/ShowProjectPermissionResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowRecordDetailRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowRecordDetailResponse.h>
+#include <huaweicloud/codeartsbuild/v3/model/ShowRelatedProjectRequest.h>
+#include <huaweicloud/codeartsbuild/v3/model/ShowRelatedProjectResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowReportSummaryRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowReportSummaryResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowRunningStatusRequest.h>
@@ -144,6 +166,14 @@ public:
 
     static ClientBuilder<CodeArtsBuildClient> newBuilder();
 
+    // 查看项目下任务名是否存在
+    //
+    // 查看项目下任务名是否存在
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CheckJobNameIsExistsResponse> checkJobNameIsExists(
+        CheckJobNameIsExistsRequest &request
+    );
     // 创建构建任务
     //
     // 创建构建任务
@@ -208,6 +238,14 @@ public:
     std::shared_ptr<DownloadKeystoreResponse> downloadKeystore(
         DownloadKeystoreRequest &request
     );
+    // 文件管理文件下载
+    //
+    // 文件管理文件下载
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DownloadKeystoreByNameResponse> downloadKeystoreByName(
+        DownloadKeystoreByNameRequest &request
+    );
     // 下载构建实时日志
     //
     // 下载构建实时日志
@@ -256,6 +294,14 @@ public:
     std::shared_ptr<ListJobConfigResponse> listJobConfig(
         ListJobConfigRequest &request
     );
+    // 查询用户可使用文件
+    //
+    // 查询用户可使用文件
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListKeystoreResponse> listKeystore(
+        ListKeystoreRequest &request
+    );
     // 查询通知
     //
     // 查询通知
@@ -280,6 +326,14 @@ public:
     std::shared_ptr<ListProjectJobsResponse> listProjectJobs(
         ListProjectJobsRequest &request
     );
+    // 获取指定工程的构建记录列表
+    //
+    // 获取指定工程的构建记录列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListRecordsResponse> listRecords(
+        ListRecordsRequest &request
+    );
     // 查看回收站中删除的构建任务列表
     //
     // 查看回收站中删除的构建任务列表
@@ -287,6 +341,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListRecyclingJobResponse> listRecyclingJob(
         ListRecyclingJobRequest &request
+    );
+    // 获取项目列表
+    //
+    // 获取项目列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListRelatedProjectInfoResponse> listRelatedProjectInfo(
+        ListRelatedProjectInfoRequest &request
     );
     // 查询构建模板
     //
@@ -303,6 +365,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<RunJobResponse> runJob(
         RunJobRequest &request
+    );
+    // 获取任务构建记录列表
+    //
+    // 获取任务构建记录列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowBuildInfoRecordResponse> showBuildInfoRecord(
+        ShowBuildInfoRecordRequest &request
     );
     // 编辑页获取参数类型的接口
     //
@@ -335,6 +405,22 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowBuildRecordFullStagesResponse> showBuildRecordFullStages(
         ShowBuildRecordFullStagesRequest &request
+    );
+    // 获取编译构建默认参数
+    //
+    // 获取编译构建默认参数
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowDefaultBuildParametersResponse> showDefaultBuildParameters(
+        ShowDefaultBuildParametersRequest &request
+    );
+    // 获取dockerfileTemplate
+    //
+    // 获取dockerfileTemplate
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowDockerfileTemplateResponse> showDockerfileTemplate(
+        ShowDockerfileTemplateRequest &request
     );
     // 获取构建历史详情信息接口
     //
@@ -400,6 +486,14 @@ public:
     std::shared_ptr<ShowJobListByProjectIdResponse> showJobListByProjectId(
         ShowJobListByProjectIdRequest &request
     );
+    // 获取通知信息
+    //
+    // 获取通知信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowJobNoticeConfigInfoResponse> showJobNoticeConfigInfo(
+        ShowJobNoticeConfigInfoRequest &request
+    );
     // 获取构建任务的角色权限矩阵信息
     //
     // 获取构建任务的角色权限矩阵信息
@@ -431,6 +525,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowJobSystemParametersResponse> showJobSystemParameters(
         ShowJobSystemParametersRequest &request
+    );
+    // 文件管理查询权限
+    //
+    // 文件管理查询权限
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowKeystorePermissionResponse> showKeystorePermission(
+        ShowKeystorePermissionRequest &request
     );
     // 查询指定代码仓库最近一次成功的构建历史
     //
@@ -479,6 +581,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowRecordDetailResponse> showRecordDetail(
         ShowRecordDetailRequest &request
+    );
+    // 获取当前用户的项目信息列表
+    //
+    // 获取当前用户的项目信息列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowRelatedProjectResponse> showRelatedProject(
+        ShowRelatedProjectRequest &request
     );
     // 获取覆盖率接口
     //

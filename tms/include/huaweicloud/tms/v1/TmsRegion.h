@@ -30,6 +30,8 @@ public:
             });
         regions["ap-southeast-1"] = Region("ap-southeast-1",
             { 
+                "https://tms-intl.myhuaweicloud.com",
+
                 "https://tms.ap-southeast-1.myhuaweicloud.com",
 
                 "https://tms.ap-southeast-1.myhuaweicloud.cn"

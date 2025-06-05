@@ -1,3 +1,54 @@
+# 3.1.139 2025-06-05
+
+### HuaweiCloud SDK CodeArtsBuild
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the following APIs:
+    - `ShowJobNoticeConfigInfo`
+    - `ShowRelatedProject`
+    - `ListRecords`
+    - `ShowBuildInfoRecord`
+    - `DownloadKeystoreByName`
+    - `ShowDefaultBuildParameters`
+    - `ShowKeystorePermission`
+    - `ListRelatedProjectInfo`
+    - `ListKeystore`
+    - `ShowDockerfileTemplate`
+    - `CheckJobNameIsExists`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK DDS
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListSessions**
+    - changes of response param
+      - `+ sessions.db`
+      - `+ sessions.user`
+
+### HuaweiCloud SDK LTS
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListLogStreams**
+    - changes of response param
+      - `+ log_streams.log_group_id`
+
 # 3.1.138 2025-05-29
 
 ### HuaweiCloud SDK CFW

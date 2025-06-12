@@ -1,0 +1,217 @@
+#ifndef HUAWEICLOUD_SDK_METASTUDIO_V1_MetaStudioMeta_H_
+#define HUAWEICLOUD_SDK_METASTUDIO_V1_MetaStudioMeta_H_
+
+#include <huaweicloud/core/http/HttpRequestDef.h>
+#include <huaweicloud/metastudio/v1/MetaStudioExport.h>
+
+namespace HuaweiCloud {
+namespace Sdk {
+namespace Metastudio {
+namespace V1 {
+
+using namespace HuaweiCloud::Sdk::Core::Http;
+
+class HUAWEICLOUD_METASTUDIO_V1_EXPORT  MetaStudioMeta {
+public:
+    static HttpRequestDef genRequestDefForCreateActiveCode();
+    static HttpRequestDef genRequestDefForDeleteActiveCode();
+    static HttpRequestDef genRequestDefForListActiveCode();
+    static HttpRequestDef genRequestDefForResetActiveCode();
+    static HttpRequestDef genRequestDefForShowActiveCode();
+    static HttpRequestDef genRequestDefForUpdateActiveCode();
+    static HttpRequestDef genRequestDefForCreateAgencyWithRoleType();
+    static HttpRequestDef genRequestDefForDeleteAgencyWithRoleType();
+    static HttpRequestDef genRequestDefForShowAgency();
+    static HttpRequestDef genRequestDefForCreateDialogUrl();
+    static HttpRequestDef genRequestDefForShowSmartChatJob();
+    static HttpRequestDef genRequestDefForStartSmartChatJob();
+    static HttpRequestDef genRequestDefForStopSmartChatJob();
+    static HttpRequestDef genRequestDefForCreateDialogReportConfig();
+    static HttpRequestDef genRequestDefForDeleteDialogReportConfig();
+    static HttpRequestDef genRequestDefForShowDialogReportConfig();
+    static HttpRequestDef genRequestDefForUpdateDialogReportConfig();
+    static HttpRequestDef genRequestDefForBatchExecuteAssetAction();
+    static HttpRequestDef genRequestDefForCreateAssetByReplicationInfo();
+    static HttpRequestDef genRequestDefForCreateDigitalAsset();
+    static HttpRequestDef genRequestDefForDeleteAsset();
+    static HttpRequestDef genRequestDefForListAssetSummary();
+    static HttpRequestDef genRequestDefForListAssets();
+    static HttpRequestDef genRequestDefForRestoreAsset();
+    static HttpRequestDef genRequestDefForShowAsset();
+    static HttpRequestDef genRequestDefForShowAssetReplicationInfo();
+    static HttpRequestDef genRequestDefForUpdateDigitalAsset();
+    static HttpRequestDef genRequestDefForCreateDigitalHumanBusinessCard();
+    static HttpRequestDef genRequestDefForDeleteDigitalHumanBusinessCard();
+    static HttpRequestDef genRequestDefForListDigitalHumanBusinessCard();
+    static HttpRequestDef genRequestDefForShowDigitalHumanBusinessCard();
+    static HttpRequestDef genRequestDefForUpdateDigitalHumanBusinessCard();
+    static HttpRequestDef genRequestDefForListDigitalHumanVideo();
+    static HttpRequestDef genRequestDefForCancel2DDigitalHumanVideo();
+    static HttpRequestDef genRequestDefForCreate2DDigitalHumanVideo();
+    static HttpRequestDef genRequestDefForShow2DDigitalHumanVideo();
+    static HttpRequestDef genRequestDefForCancelPhotoDigitalHumanVideo();
+    static HttpRequestDef genRequestDefForCreatePhotoDetection();
+    static HttpRequestDef genRequestDefForCreatePhotoDigitalHumanVideo();
+    static HttpRequestDef genRequestDefForShowPhotoDetection();
+    static HttpRequestDef genRequestDefForShowPhotoDigitalHumanVideo();
+    static HttpRequestDef genRequestDefForConfirmFileUpload();
+    static HttpRequestDef genRequestDefForCreateFile();
+    static HttpRequestDef genRequestDefForCreateLargeFile();
+    static HttpRequestDef genRequestDefForDeleteFile();
+    static HttpRequestDef genRequestDefForCreateHotQuestion();
+    static HttpRequestDef genRequestDefForDeleteHotQuestion();
+    static HttpRequestDef genRequestDefForListHotQuestion();
+    static HttpRequestDef genRequestDefForShowHotQuestion();
+    static HttpRequestDef genRequestDefForUpdateHotQuestion();
+    static HttpRequestDef genRequestDefForCreateHotWords();
+    static HttpRequestDef genRequestDefForDeleteHotWords();
+    static HttpRequestDef genRequestDefForListHotWords();
+    static HttpRequestDef genRequestDefForShowHotWords();
+    static HttpRequestDef genRequestDefForShowHotWordsSwitch();
+    static HttpRequestDef genRequestDefForUpdateHotWords();
+    static HttpRequestDef genRequestDefForUpdateHotWordsSwitch();
+    static HttpRequestDef genRequestDefForCreateInteractionRuleGroup();
+    static HttpRequestDef genRequestDefForDeleteInteractionRuleGroup();
+    static HttpRequestDef genRequestDefForListInteractionRuleGroups();
+    static HttpRequestDef genRequestDefForUpdateInteractionRuleGroup();
+    static HttpRequestDef genRequestDefForCreateIntentAndQuestion();
+    static HttpRequestDef genRequestDefForCreateKnowledgeIntent();
+    static HttpRequestDef genRequestDefForDeleteKnowledgeIntent();
+    static HttpRequestDef genRequestDefForListKnowledgeIntent();
+    static HttpRequestDef genRequestDefForShowKnowledgeIntent();
+    static HttpRequestDef genRequestDefForUpdateKnowledgeIntent();
+    static HttpRequestDef genRequestDefForCreateBatchKnowledgeQuestion();
+    static HttpRequestDef genRequestDefForCreateKnowledgeQuestion();
+    static HttpRequestDef genRequestDefForDeleteKnowledgeQuestion();
+    static HttpRequestDef genRequestDefForListKnowledgeQuestion();
+    static HttpRequestDef genRequestDefForShowKnowledgeQuestion();
+    static HttpRequestDef genRequestDefForUpdateBatchKnowledgeQuestion();
+    static HttpRequestDef genRequestDefForUpdateKnowledgeQuestion();
+    static HttpRequestDef genRequestDefForCreateKnowledgeSkill();
+    static HttpRequestDef genRequestDefForDeleteKnowledgeSkill();
+    static HttpRequestDef genRequestDefForExportKnowledgeSkill();
+    static HttpRequestDef genRequestDefForListKnowledgeSkill();
+    static HttpRequestDef genRequestDefForShowKnowledgeSkill();
+    static HttpRequestDef genRequestDefForUpdateKnowledgeSkill();
+    static HttpRequestDef genRequestDefForCreateLivePlatform();
+    static HttpRequestDef genRequestDefForDeleteLivePlatform();
+    static HttpRequestDef genRequestDefForListLivePlatformProducts();
+    static HttpRequestDef genRequestDefForListLivePlatforms();
+    static HttpRequestDef genRequestDefForShowLivePlatform();
+    static HttpRequestDef genRequestDefForUpdateLivePlatform();
+    static HttpRequestDef genRequestDefForCreateOnceCode();
+    static HttpRequestDef genRequestDefForCreateMetaStudioOrders();
+    static HttpRequestDef genRequestDefForBatchDeletePacifyWords();
+    static HttpRequestDef genRequestDefForCreatePacifyWords();
+    static HttpRequestDef genRequestDefForDeletePacifyWords();
+    static HttpRequestDef genRequestDefForListPacifyWords();
+    static HttpRequestDef genRequestDefForShowPacifyWords();
+    static HttpRequestDef genRequestDefForShowPacifyWordsIntent();
+    static HttpRequestDef genRequestDefForShowPacifyWordsSwitch();
+    static HttpRequestDef genRequestDefForShowPacifyWordsTriggerTime();
+    static HttpRequestDef genRequestDefForUpdatePacifyWords();
+    static HttpRequestDef genRequestDefForUpdatePacifyWordsSwitch();
+    static HttpRequestDef genRequestDefForUpdatePacifyWordsTriggerTime();
+    static HttpRequestDef genRequestDefForCreatePictureModelingByUrlJob();
+    static HttpRequestDef genRequestDefForCreatePictureModelingJob();
+    static HttpRequestDef genRequestDefForListPictureModelingJobs();
+    static HttpRequestDef genRequestDefForShowPictureModelingJob();
+    static HttpRequestDef genRequestDefForCreateProduct();
+    static HttpRequestDef genRequestDefForDeleteProduct();
+    static HttpRequestDef genRequestDefForListProducts();
+    static HttpRequestDef genRequestDefForSetProductAsset();
+    static HttpRequestDef genRequestDefForShowProduct();
+    static HttpRequestDef genRequestDefForUpdateProduct();
+    static HttpRequestDef genRequestDefForCreateRobot();
+    static HttpRequestDef genRequestDefForDeleteRobot();
+    static HttpRequestDef genRequestDefForListRobot();
+    static HttpRequestDef genRequestDefForShowRobot();
+    static HttpRequestDef genRequestDefForUpdateRobot();
+    static HttpRequestDef genRequestDefForValidateRobot();
+    static HttpRequestDef genRequestDefForCreateSmartChatRoom();
+    static HttpRequestDef genRequestDefForDeleteSmartChatRoom();
+    static HttpRequestDef genRequestDefForListSmartChatRooms();
+    static HttpRequestDef genRequestDefForShowSmartChatRoom();
+    static HttpRequestDef genRequestDefForUpdateSmartChatRoom();
+    static HttpRequestDef genRequestDefForBatchConfirmLiveCommands();
+    static HttpRequestDef genRequestDefForExecuteSmartLiveCommand();
+    static HttpRequestDef genRequestDefForListSmartLive();
+    static HttpRequestDef genRequestDefForListSmartLiveJobs();
+    static HttpRequestDef genRequestDefForListSmartLiveRuleCommands();
+    static HttpRequestDef genRequestDefForListSmartLiveScriptCommands();
+    static HttpRequestDef genRequestDefForLiveEventReport();
+    static HttpRequestDef genRequestDefForShowSmartLive();
+    static HttpRequestDef genRequestDefForStartSmartLive();
+    static HttpRequestDef genRequestDefForStopSmartLive();
+    static HttpRequestDef genRequestDefForConfirmSmarLiveRoom();
+    static HttpRequestDef genRequestDefForCreateSmartLiveRoom();
+    static HttpRequestDef genRequestDefForDeleteSmartLiveRoom();
+    static HttpRequestDef genRequestDefForListSmartLiveRooms();
+    static HttpRequestDef genRequestDefForShowSmartLiveRoom();
+    static HttpRequestDef genRequestDefForUpdateSmartLiveRoom();
+    static HttpRequestDef genRequestDefForListStyles();
+    static HttpRequestDef genRequestDefForCreateSubtitleFile();
+    static HttpRequestDef genRequestDefForShowSubtitleFile();
+    static HttpRequestDef genRequestDefForCountTenantResources();
+    static HttpRequestDef genRequestDefForListTenantResources();
+    static HttpRequestDef genRequestDefForShowResourceUsage();
+    static HttpRequestDef genRequestDefForCommitVoiceTrainingJob();
+    static HttpRequestDef genRequestDefForConfirmTrainingSegment();
+    static HttpRequestDef genRequestDefForCreateTrainingAdvanceJob();
+    static HttpRequestDef genRequestDefForCreateTrainingBasicJob();
+    static HttpRequestDef genRequestDefForCreateTrainingMiddleJob();
+    static HttpRequestDef genRequestDefForDeleteVoiceTrainingJob();
+    static HttpRequestDef genRequestDefForListJobOperationLog();
+    static HttpRequestDef genRequestDefForListVoiceTrainingJob();
+    static HttpRequestDef genRequestDefForSetJobBatchName();
+    static HttpRequestDef genRequestDefForShowJobAuditResult();
+    static HttpRequestDef genRequestDefForShowJobUploadingAddress();
+    static HttpRequestDef genRequestDefForShowTenantDurationCfg();
+    static HttpRequestDef genRequestDefForShowTrainingSegmentInfo();
+    static HttpRequestDef genRequestDefForShowVoiceTrainingJob();
+    static HttpRequestDef genRequestDefForCreate2dModelTrainingJob();
+    static HttpRequestDef genRequestDefForDelete2dModelTrainingJob();
+    static HttpRequestDef genRequestDefForExecute2dModelTrainingCommandByUser();
+    static HttpRequestDef genRequestDefForList2dModelTrainingJob();
+    static HttpRequestDef genRequestDefForShow2dModelTrainingJob();
+    static HttpRequestDef genRequestDefForUpdate2dModelTrainingJob();
+    static HttpRequestDef genRequestDefForCreateFacialAnimations();
+    static HttpRequestDef genRequestDefForCreateTtsa();
+    static HttpRequestDef genRequestDefForListFacialAnimationsData();
+    static HttpRequestDef genRequestDefForListTtsaData();
+    static HttpRequestDef genRequestDefForListTtsaJobs();
+    static HttpRequestDef genRequestDefForCreateAsyncTtsJob();
+    static HttpRequestDef genRequestDefForCreateTtsAudition();
+    static HttpRequestDef genRequestDefForCreateTtscVocabularyConfigs();
+    static HttpRequestDef genRequestDefForDeleteTtscVocabularyConfigs();
+    static HttpRequestDef genRequestDefForListTtscVocabularyConfigs();
+    static HttpRequestDef genRequestDefForSaveTtscVocabularyConfigs();
+    static HttpRequestDef genRequestDefForShowAsyncTtsJob();
+    static HttpRequestDef genRequestDefForShowTtsAuditionFile();
+    static HttpRequestDef genRequestDefForShowTtsPhoneticSymbol();
+    static HttpRequestDef genRequestDefForCreateVideoMotionCaptureJob();
+    static HttpRequestDef genRequestDefForExecuteVideoMotionCaptureCommand();
+    static HttpRequestDef genRequestDefForListVideoMotionCaptureJobs();
+    static HttpRequestDef genRequestDefForShowVideoMotionCaptureJob();
+    static HttpRequestDef genRequestDefForStopVideoMotionCaptureJob();
+    static HttpRequestDef genRequestDefForCopyVideoScripts();
+    static HttpRequestDef genRequestDefForCreateVideoScripts();
+    static HttpRequestDef genRequestDefForDeleteVideoScript();
+    static HttpRequestDef genRequestDefForListVideoScripts();
+    static HttpRequestDef genRequestDefForShowVideoScript();
+    static HttpRequestDef genRequestDefForUpdateVideoScript();
+    static HttpRequestDef genRequestDefForCreateWelcomeSpeech();
+    static HttpRequestDef genRequestDefForDeleteWelcomeSpeech();
+    static HttpRequestDef genRequestDefForListWelcomeSpeech();
+    static HttpRequestDef genRequestDefForShowWelcomeSpeech();
+    static HttpRequestDef genRequestDefForShowWelcomeSpeechSwitch();
+    static HttpRequestDef genRequestDefForUpdateWelcomeSpeech();
+    static HttpRequestDef genRequestDefForUpdateWelcomeSpeechSwitch();
+};
+
+}
+}
+}
+}
+
+#endif // HUAWEICLOUD_SDK_METASTUDIO_V1_MetaStudioMeta_H_

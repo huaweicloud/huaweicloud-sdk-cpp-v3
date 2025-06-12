@@ -42,6 +42,9 @@ TransportationLicenseResult::TransportationLicenseResult()
     reviewExpiryDateIsSet_ = false;
     assessedTechnicalLevel_ = "";
     assessedTechnicalLevelIsSet_ = false;
+    imageLocationIsSet_ = false;
+    adjustedImage_ = "";
+    adjustedImageIsSet_ = false;
     confidenceIsSet_ = false;
 }
 
@@ -99,6 +102,12 @@ web::json::value TransportationLicenseResult::toJson() const
     }
     if(assessedTechnicalLevelIsSet_) {
         val[utility::conversions::to_string_t("assessed_technical_level")] = ModelBase::toJson(assessedTechnicalLevel_);
+    }
+    if(imageLocationIsSet_) {
+        val[utility::conversions::to_string_t("image_location")] = ModelBase::toJson(imageLocation_);
+    }
+    if(adjustedImageIsSet_) {
+        val[utility::conversions::to_string_t("adjusted_image")] = ModelBase::toJson(adjustedImage_);
     }
     if(confidenceIsSet_) {
         val[utility::conversions::to_string_t("confidence")] = ModelBase::toJson(confidence_);
@@ -243,6 +252,24 @@ bool TransportationLicenseResult::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAssessedTechnicalLevel(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("image_location"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("image_location"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::vector<int32_t>> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setImageLocation(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("adjusted_image"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("adjusted_image"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAdjustedImage(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("confidence"))) {
@@ -571,6 +598,48 @@ bool TransportationLicenseResult::assessedTechnicalLevelIsSet() const
 void TransportationLicenseResult::unsetassessedTechnicalLevel()
 {
     assessedTechnicalLevelIsSet_ = false;
+}
+
+std::vector<std::vector<int32_t>>& TransportationLicenseResult::getImageLocation()
+{
+    return imageLocation_;
+}
+
+void TransportationLicenseResult::setImageLocation(const std::vector<std::vector<int32_t>>& value)
+{
+    imageLocation_ = value;
+    imageLocationIsSet_ = true;
+}
+
+bool TransportationLicenseResult::imageLocationIsSet() const
+{
+    return imageLocationIsSet_;
+}
+
+void TransportationLicenseResult::unsetimageLocation()
+{
+    imageLocationIsSet_ = false;
+}
+
+std::string TransportationLicenseResult::getAdjustedImage() const
+{
+    return adjustedImage_;
+}
+
+void TransportationLicenseResult::setAdjustedImage(const std::string& value)
+{
+    adjustedImage_ = value;
+    adjustedImageIsSet_ = true;
+}
+
+bool TransportationLicenseResult::adjustedImageIsSet() const
+{
+    return adjustedImageIsSet_;
+}
+
+void TransportationLicenseResult::unsetadjustedImage()
+{
+    adjustedImageIsSet_ = false;
 }
 
 Object TransportationLicenseResult::getConfidence() const

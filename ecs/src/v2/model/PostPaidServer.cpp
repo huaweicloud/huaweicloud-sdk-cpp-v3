@@ -49,7 +49,9 @@ PostPaidServer::PostPaidServer()
     description_ = "";
     descriptionIsSet_ = false;
     cpuOptionsIsSet_ = false;
+    securityOptionsIsSet_ = false;
     serialConsoleOptionsIsSet_ = false;
+    metadataOptionsIsSet_ = false;
 }
 
 PostPaidServer::~PostPaidServer() = default;
@@ -134,8 +136,14 @@ web::json::value PostPaidServer::toJson() const
     if(cpuOptionsIsSet_) {
         val[utility::conversions::to_string_t("cpu_options")] = ModelBase::toJson(cpuOptions_);
     }
+    if(securityOptionsIsSet_) {
+        val[utility::conversions::to_string_t("security_options")] = ModelBase::toJson(securityOptions_);
+    }
     if(serialConsoleOptionsIsSet_) {
         val[utility::conversions::to_string_t("serial_console_options")] = ModelBase::toJson(serialConsoleOptions_);
+    }
+    if(metadataOptionsIsSet_) {
+        val[utility::conversions::to_string_t("metadata_options")] = ModelBase::toJson(metadataOptions_);
     }
 
     return val;
@@ -360,6 +368,15 @@ bool PostPaidServer::fromJson(const web::json::value& val)
             setCpuOptions(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("security_options"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("security_options"));
+        if(!fieldValue.is_null())
+        {
+            SecurityOptions refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSecurityOptions(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("serial_console_options"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("serial_console_options"));
         if(!fieldValue.is_null())
@@ -367,6 +384,15 @@ bool PostPaidServer::fromJson(const web::json::value& val)
             SerialConsoleOptions refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSerialConsoleOptions(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("metadata_options"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("metadata_options"));
+        if(!fieldValue.is_null())
+        {
+            UpdateServerMetadataOptionsRequestBody refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMetadataOptions(refVal);
         }
     }
     return ok;
@@ -877,6 +903,27 @@ void PostPaidServer::unsetcpuOptions()
     cpuOptionsIsSet_ = false;
 }
 
+SecurityOptions PostPaidServer::getSecurityOptions() const
+{
+    return securityOptions_;
+}
+
+void PostPaidServer::setSecurityOptions(const SecurityOptions& value)
+{
+    securityOptions_ = value;
+    securityOptionsIsSet_ = true;
+}
+
+bool PostPaidServer::securityOptionsIsSet() const
+{
+    return securityOptionsIsSet_;
+}
+
+void PostPaidServer::unsetsecurityOptions()
+{
+    securityOptionsIsSet_ = false;
+}
+
 SerialConsoleOptions PostPaidServer::getSerialConsoleOptions() const
 {
     return serialConsoleOptions_;
@@ -896,6 +943,27 @@ bool PostPaidServer::serialConsoleOptionsIsSet() const
 void PostPaidServer::unsetserialConsoleOptions()
 {
     serialConsoleOptionsIsSet_ = false;
+}
+
+UpdateServerMetadataOptionsRequestBody PostPaidServer::getMetadataOptions() const
+{
+    return metadataOptions_;
+}
+
+void PostPaidServer::setMetadataOptions(const UpdateServerMetadataOptionsRequestBody& value)
+{
+    metadataOptions_ = value;
+    metadataOptionsIsSet_ = true;
+}
+
+bool PostPaidServer::metadataOptionsIsSet() const
+{
+    return metadataOptionsIsSet_;
+}
+
+void PostPaidServer::unsetmetadataOptions()
+{
+    metadataOptionsIsSet_ = false;
 }
 
 }

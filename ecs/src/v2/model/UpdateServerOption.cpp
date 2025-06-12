@@ -18,6 +18,7 @@ UpdateServerOption::UpdateServerOption()
     descriptionIsSet_ = false;
     hostname_ = "";
     hostnameIsSet_ = false;
+    securityOptionsIsSet_ = false;
     userData_ = "";
     userDataIsSet_ = false;
 }
@@ -40,6 +41,9 @@ web::json::value UpdateServerOption::toJson() const
     }
     if(hostnameIsSet_) {
         val[utility::conversions::to_string_t("hostname")] = ModelBase::toJson(hostname_);
+    }
+    if(securityOptionsIsSet_) {
+        val[utility::conversions::to_string_t("security_options")] = ModelBase::toJson(securityOptions_);
     }
     if(userDataIsSet_) {
         val[utility::conversions::to_string_t("user_data")] = ModelBase::toJson(userData_);
@@ -76,6 +80,15 @@ bool UpdateServerOption::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setHostname(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("security_options"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("security_options"));
+        if(!fieldValue.is_null())
+        {
+            SecurityOptions refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSecurityOptions(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("user_data"))) {
@@ -152,6 +165,27 @@ bool UpdateServerOption::hostnameIsSet() const
 void UpdateServerOption::unsethostname()
 {
     hostnameIsSet_ = false;
+}
+
+SecurityOptions UpdateServerOption::getSecurityOptions() const
+{
+    return securityOptions_;
+}
+
+void UpdateServerOption::setSecurityOptions(const SecurityOptions& value)
+{
+    securityOptions_ = value;
+    securityOptionsIsSet_ = true;
+}
+
+bool UpdateServerOption::securityOptionsIsSet() const
+{
+    return securityOptionsIsSet_;
+}
+
+void UpdateServerOption::unsetsecurityOptions()
+{
+    securityOptionsIsSet_ = false;
 }
 
 std::string UpdateServerOption::getUserData() const

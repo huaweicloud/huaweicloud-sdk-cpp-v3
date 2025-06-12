@@ -56,12 +56,34 @@ public:
     void unseturl();
     void setUrl(const std::string& value);
 
+    /// <summary>
+    /// 返回道路运输证在原图中的坐标位置的开关，默认false，取值范围包括：  - true: 开启返回坐标位置的功能。 - false: 关闭返回坐标位置的功能。 
+    /// </summary>
+
+    bool isReturnImageLocation() const;
+    bool returnImageLocationIsSet() const;
+    void unsetreturnImageLocation();
+    void setReturnImageLocation(bool value);
+
+    /// <summary>
+    /// 返回道路运输证（base64）的开关，默认false，取值范围包括：  - true: 开启道路运输证（base64）的功能。 - false: 关闭道路运输证（base64）的功能。 
+    /// </summary>
+
+    bool isReturnAdjustedImage() const;
+    bool returnAdjustedImageIsSet() const;
+    void unsetreturnAdjustedImage();
+    void setReturnAdjustedImage(bool value);
+
 
 protected:
     std::string image_;
     bool imageIsSet_;
     std::string url_;
     bool urlIsSet_;
+    bool returnImageLocation_;
+    bool returnImageLocationIsSet_;
+    bool returnAdjustedImage_;
+    bool returnAdjustedImageIsSet_;
 
 };
 

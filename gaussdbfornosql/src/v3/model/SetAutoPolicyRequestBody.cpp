@@ -66,7 +66,7 @@ bool SetAutoPolicyRequestBody::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("policy"));
         if(!fieldValue.is_null())
         {
-            std::vector<DiskAutoExpansionPolicy> refVal;
+            DiskAutoExpansionPolicy refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPolicy(refVal);
         }
@@ -117,12 +117,12 @@ void SetAutoPolicyRequestBody::unsetswitchOption()
     switchOptionIsSet_ = false;
 }
 
-std::vector<DiskAutoExpansionPolicy>& SetAutoPolicyRequestBody::getPolicy()
+DiskAutoExpansionPolicy SetAutoPolicyRequestBody::getPolicy() const
 {
     return policy_;
 }
 
-void SetAutoPolicyRequestBody::setPolicy(const std::vector<DiskAutoExpansionPolicy>& value)
+void SetAutoPolicyRequestBody::setPolicy(const DiskAutoExpansionPolicy& value)
 {
     policy_ = value;
     policyIsSet_ = true;

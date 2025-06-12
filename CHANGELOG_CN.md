@@ -1,3 +1,99 @@
+# 3.1.140 2025-06-12
+
+### HuaweiCloud SDK CodeArtsBuild
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持以下接口：
+    - `ShowDisable`
+    - `ShowCopyName`
+    - `ShowJobStepStatus`
+    - `ShowDefaultProjectPermission`
+    - `ListUpdateJobHistory`
+    - `ShowBuildRecordFlowGraph`
+    - `ListJunitCoverageSummary`
+    - `ListJob`
+    - `ShowJobBuildRecordDetail`
+    - `ListRepository`
+    - `ListCustomTemplate`
+    - `ShowSummaryBuildJobInfo`
+    - `ListRepoBranch`
+    - `ListKeystoreSearch`
+    - `CheckJobCountIsTopLimit`
+    - `DownloadJunitCoverageZip`
+    - `ListBuildParameter`
+    - `ShowUserOverPackageQuota`
+    - `ShowJobTotal`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK ECS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持以下接口：
+    - `ShowServerMetadataOptions`
+    - `UpdateServerMetadataOptions`
+    - `ShowRecycleBin`
+    - `UpdateRecycleBin`
+    - `ShowRecycleBinServer`
+    - `DeleteRecycleBinServer`
+    - `ListRecycleBinServers`
+    - `UpdateRecycleBinPolicy`
+    - `RevertRecycleBinServer`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **UpdateServer**
+    - 请求参数变更
+      - `+ server.security_options`
+  - **ShowServer**
+    - 响应参数变更
+      - `+ server.security_options`
+  - **ListServersDetails**
+    - 响应参数变更
+      - `+ servers.security_options`
+  - **CreateServers**
+    - 请求参数变更
+      - `+ server.security_options`
+      - `+ server.metadata_options`
+  - **CreatePostPaidServers**
+    - 请求参数变更
+      - `+ server.security_options`
+      - `+ server.metadata_options`
+
+### HuaweiCloud SDK EVS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持接口`BatchResizeVolumes`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK OCR
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RecognizeTransportationLicense**
+    - 请求参数变更
+      - `+ return_image_location`
+      - `+ return_adjusted_image`
+    - 响应参数变更
+      - `+ result.image_location`
+      - `+ result.adjusted_image`
+
 # 3.1.139 2025-06-05
 
 ### HuaweiCloud SDK CodeArtsBuild

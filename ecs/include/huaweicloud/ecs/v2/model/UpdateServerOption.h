@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <huaweicloud/ecs/v2/model/SecurityOptions.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -66,6 +67,15 @@ public:
     void setHostname(const std::string& value);
 
     /// <summary>
+    /// 
+    /// </summary>
+
+    SecurityOptions getSecurityOptions() const;
+    bool securityOptionsIsSet() const;
+    void unsetsecurityOptions();
+    void setSecurityOptions(const SecurityOptions& value);
+
+    /// <summary>
     /// 修改云服务器云主机过程中待注入实例自定义数据。支持注入文本、文本文件。  示例：  base64编码前：   Linux服务器：     #!/bin/bash     echo user_test &gt; /home/user.txt   Windows服务器：     rem cmd     echo 111 &gt; c:\\aaa.txt  base64编码后：   Linux服务器：IyEvYmluL2Jhc2gKZWNobyB1c2VyX3Rlc3QgPiAvaG9tZS91c2VyLnR4dA&#x3D;&#x3D;   Windows服务器：cmVtIGNtZA0KZWNobyAxMTEgJmd0OyBjOlxhYWEudHh0
     /// </summary>
 
@@ -82,6 +92,8 @@ protected:
     bool descriptionIsSet_;
     std::string hostname_;
     bool hostnameIsSet_;
+    SecurityOptions securityOptions_;
+    bool securityOptionsIsSet_;
     std::string userData_;
     bool userDataIsSet_;
 

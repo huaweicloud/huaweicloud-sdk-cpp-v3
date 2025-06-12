@@ -10,7 +10,9 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/ecs/v2/model/PrePaidServerRootVolume.h>
+#include <huaweicloud/ecs/v2/model/UpdateServerMetadataOptionsRequestBody.h>
 #include <string>
+#include <huaweicloud/ecs/v2/model/SecurityOptions.h>
 #include <huaweicloud/ecs/v2/model/PrePaidServerTag.h>
 #include <vector>
 #include <huaweicloud/ecs/v2/model/SerialConsoleOptions.h>
@@ -270,10 +272,28 @@ public:
     /// 
     /// </summary>
 
+    SecurityOptions getSecurityOptions() const;
+    bool securityOptionsIsSet() const;
+    void unsetsecurityOptions();
+    void setSecurityOptions(const SecurityOptions& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
     SerialConsoleOptions getSerialConsoleOptions() const;
     bool serialConsoleOptionsIsSet() const;
     void unsetserialConsoleOptions();
     void setSerialConsoleOptions(const SerialConsoleOptions& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    UpdateServerMetadataOptionsRequestBody getMetadataOptions() const;
+    bool metadataOptionsIsSet() const;
+    void unsetmetadataOptions();
+    void setMetadataOptions(const UpdateServerMetadataOptionsRequestBody& value);
 
 
 protected:
@@ -325,8 +345,12 @@ protected:
     bool descriptionIsSet_;
     CpuOptions cpuOptions_;
     bool cpuOptionsIsSet_;
+    SecurityOptions securityOptions_;
+    bool securityOptionsIsSet_;
     SerialConsoleOptions serialConsoleOptions_;
     bool serialConsoleOptionsIsSet_;
+    UpdateServerMetadataOptionsRequestBody metadataOptions_;
+    bool metadataOptionsIsSet_;
 
 };
 

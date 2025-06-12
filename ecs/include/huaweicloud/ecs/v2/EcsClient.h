@@ -69,6 +69,8 @@
 #include <huaweicloud/ecs/v2/model/CreateServersRequest.h>
 #include <huaweicloud/ecs/v2/model/CreateServersRequestBody.h>
 #include <huaweicloud/ecs/v2/model/CreateServersResponse.h>
+#include <huaweicloud/ecs/v2/model/DeleteRecycleBinServerRequest.h>
+#include <huaweicloud/ecs/v2/model/DeleteRecycleBinServerResponse.h>
 #include <huaweicloud/ecs/v2/model/DeleteServerGroupMemberRequest.h>
 #include <huaweicloud/ecs/v2/model/DeleteServerGroupMemberRequestBody.h>
 #include <huaweicloud/ecs/v2/model/DeleteServerGroupMemberResponse.h>
@@ -92,6 +94,8 @@
 #include <huaweicloud/ecs/v2/model/ListFlavorSellPoliciesResponse.h>
 #include <huaweicloud/ecs/v2/model/ListFlavorsRequest.h>
 #include <huaweicloud/ecs/v2/model/ListFlavorsResponse.h>
+#include <huaweicloud/ecs/v2/model/ListRecycleBinServersRequest.h>
+#include <huaweicloud/ecs/v2/model/ListRecycleBinServersResponse.h>
 #include <huaweicloud/ecs/v2/model/ListResizeFlavorsRequest.h>
 #include <huaweicloud/ecs/v2/model/ListResizeFlavorsResponse.h>
 #include <huaweicloud/ecs/v2/model/ListScheduledEventsRequest.h>
@@ -169,6 +173,12 @@
 #include <huaweicloud/ecs/v2/model/ResizeServerRequest.h>
 #include <huaweicloud/ecs/v2/model/ResizeServerRequestBody.h>
 #include <huaweicloud/ecs/v2/model/ResizeServerResponse.h>
+#include <huaweicloud/ecs/v2/model/RevertRecycleBinServerRequest.h>
+#include <huaweicloud/ecs/v2/model/RevertRecycleBinServerResponse.h>
+#include <huaweicloud/ecs/v2/model/ShowRecycleBinRequest.h>
+#include <huaweicloud/ecs/v2/model/ShowRecycleBinResponse.h>
+#include <huaweicloud/ecs/v2/model/ShowRecycleBinServerRequest.h>
+#include <huaweicloud/ecs/v2/model/ShowRecycleBinServerResponse.h>
 #include <huaweicloud/ecs/v2/model/ShowResetPasswordFlagRequest.h>
 #include <huaweicloud/ecs/v2/model/ShowResetPasswordFlagResponse.h>
 #include <huaweicloud/ecs/v2/model/ShowServerBlockDeviceRequest.h>
@@ -177,6 +187,8 @@
 #include <huaweicloud/ecs/v2/model/ShowServerGroupResponse.h>
 #include <huaweicloud/ecs/v2/model/ShowServerLimitsRequest.h>
 #include <huaweicloud/ecs/v2/model/ShowServerLimitsResponse.h>
+#include <huaweicloud/ecs/v2/model/ShowServerMetadataOptionsRequest.h>
+#include <huaweicloud/ecs/v2/model/ShowServerMetadataOptionsResponse.h>
 #include <huaweicloud/ecs/v2/model/ShowServerPasswordRequest.h>
 #include <huaweicloud/ecs/v2/model/ShowServerPasswordResponse.h>
 #include <huaweicloud/ecs/v2/model/ShowServerRemoteConsoleRequest.h>
@@ -187,6 +199,12 @@
 #include <huaweicloud/ecs/v2/model/ShowServerTagsRequest.h>
 #include <huaweicloud/ecs/v2/model/ShowServerTagsResponse.h>
 #include <huaweicloud/ecs/v2/model/UpdateNicInfoRequestBody.h>
+#include <huaweicloud/ecs/v2/model/UpdateRecycleBinPolicyReq.h>
+#include <huaweicloud/ecs/v2/model/UpdateRecycleBinPolicyRequest.h>
+#include <huaweicloud/ecs/v2/model/UpdateRecycleBinPolicyResponse.h>
+#include <huaweicloud/ecs/v2/model/UpdateRecycleBinReq.h>
+#include <huaweicloud/ecs/v2/model/UpdateRecycleBinRequest.h>
+#include <huaweicloud/ecs/v2/model/UpdateRecycleBinResponse.h>
 #include <huaweicloud/ecs/v2/model/UpdateServerAutoTerminateTimeRequest.h>
 #include <huaweicloud/ecs/v2/model/UpdateServerAutoTerminateTimeRequestBody.h>
 #include <huaweicloud/ecs/v2/model/UpdateServerAutoTerminateTimeResponse.h>
@@ -195,6 +213,9 @@
 #include <huaweicloud/ecs/v2/model/UpdateServerBlockDeviceResponse.h>
 #include <huaweicloud/ecs/v2/model/UpdateServerInterfaceRequest.h>
 #include <huaweicloud/ecs/v2/model/UpdateServerInterfaceResponse.h>
+#include <huaweicloud/ecs/v2/model/UpdateServerMetadataOptionsRequest.h>
+#include <huaweicloud/ecs/v2/model/UpdateServerMetadataOptionsRequestBody.h>
+#include <huaweicloud/ecs/v2/model/UpdateServerMetadataOptionsResponse.h>
 #include <huaweicloud/ecs/v2/model/UpdateServerMetadataRequest.h>
 #include <huaweicloud/ecs/v2/model/UpdateServerMetadataRequestBody.h>
 #include <huaweicloud/ecs/v2/model/UpdateServerMetadataResponse.h>
@@ -457,6 +478,13 @@ public:
     std::shared_ptr<CreateServersResponse> createServers(
         CreateServersRequest &request
     );
+    // 删除回收站中虚拟机
+    //
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteRecycleBinServerResponse> deleteRecycleBinServer(
+        DeleteRecycleBinServerRequest &request
+    );
     // 删除云服务器组
     //
     // 删除云服务器组。
@@ -542,6 +570,13 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListFlavorsResponse> listFlavors(
         ListFlavorsRequest &request
+    );
+    // 查询回收站中虚拟机列表
+    //
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListRecycleBinServersResponse> listRecycleBinServers(
+        ListRecycleBinServersRequest &request
     );
     // 查询云服务器规格变更支持列表
     //
@@ -834,6 +869,29 @@ public:
     std::shared_ptr<ResizeServerResponse> resizeServer(
         ResizeServerRequest &request
     );
+    // 恢复回收站中虚拟机
+    //
+    // 回收站中的虚拟机从回收站中恢复
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<RevertRecycleBinServerResponse> revertRecycleBinServer(
+        RevertRecycleBinServerRequest &request
+    );
+    // 查询回收站配置
+    //
+    // 查询回收站配置
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowRecycleBinResponse> showRecycleBin(
+        ShowRecycleBinRequest &request
+    );
+    // 查询回收站中指定云服务器
+    //
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowRecycleBinServerResponse> showRecycleBinServer(
+        ShowRecycleBinServerRequest &request
+    );
     // 查询是否支持一键重置密码
     //
     // 查询弹性云服务器是否支持一键重置密码。
@@ -878,6 +936,14 @@ public:
     std::shared_ptr<ShowServerLimitsResponse> showServerLimits(
         ShowServerLimitsRequest &request
     );
+    // 查询云服务器元数据配置
+    //
+    // 查询云服务器元数据配置，通过本接口，您可以查询指定云服务器的元数据配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowServerMetadataOptionsResponse> showServerMetadataOptions(
+        ShowServerMetadataOptionsRequest &request
+    );
     // 云服务器获取密码(企业项目)
     //
     // 当通过支持Cloudbase-init功能的镜像创建Windows云服务器时，获取云服务器初始安装时系统生成的管理员帐户（Administrator帐户或Cloudbase-init设置的帐户）随机密码。
@@ -903,6 +969,22 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowServerTagsResponse> showServerTags(
         ShowServerTagsRequest &request
+    );
+    // 更新回收站配置
+    //
+    // 更新回收站属性信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateRecycleBinResponse> updateRecycleBin(
+        UpdateRecycleBinRequest &request
+    );
+    // 更新回收站策略
+    //
+    // 更新回收站策略
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateRecycleBinPolicyResponse> updateRecycleBinPolicy(
+        UpdateRecycleBinPolicyRequest &request
     );
     // 修改云服务器
     //
@@ -951,6 +1033,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateServerMetadataResponse> updateServerMetadata(
         UpdateServerMetadataRequest &request
+    );
+    // 更新云服务器元数据配置
+    //
+    // 更新云服务器元数据配置，通过本接口，您可以选择启用或关闭IMDS服务，也可以选择IMDS服务的版本。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateServerMetadataOptionsResponse> updateServerMetadataOptions(
+        UpdateServerMetadataOptionsRequest &request
     );
 
     // 查询API版本信息列表

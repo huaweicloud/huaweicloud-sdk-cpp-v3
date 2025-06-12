@@ -59,13 +59,13 @@ public:
     void setSwitchOption(const std::string& value);
 
     /// <summary>
-    /// 磁盘自动扩容策略
+    /// 
     /// </summary>
 
-    std::vector<DiskAutoExpansionPolicy>& getPolicy();
+    DiskAutoExpansionPolicy getPolicy() const;
     bool policyIsSet() const;
     void unsetpolicy();
-    void setPolicy(const std::vector<DiskAutoExpansionPolicy>& value);
+    void setPolicy(const DiskAutoExpansionPolicy& value);
 
 
 protected:
@@ -73,7 +73,7 @@ protected:
     bool instanceIdsIsSet_;
     std::string switchOption_;
     bool switchOptionIsSet_;
-    std::vector<DiskAutoExpansionPolicy> policy_;
+    DiskAutoExpansionPolicy policy_;
     bool policyIsSet_;
 
 };

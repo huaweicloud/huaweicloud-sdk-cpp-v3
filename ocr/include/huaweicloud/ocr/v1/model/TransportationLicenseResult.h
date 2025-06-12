@@ -11,6 +11,7 @@
 
 #include <huaweicloud/core/utils/Object.h>
 #include <string>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -175,6 +176,24 @@ public:
     void setAssessedTechnicalLevel(const std::string& value);
 
     /// <summary>
+    /// 道路运输证在原图中的坐标位置，输出左上、右上、右下、左下四个点坐标。仅在return_image_location设置为true时返回该字段。 
+    /// </summary>
+
+    std::vector<std::vector<int32_t>>& getImageLocation();
+    bool imageLocationIsSet() const;
+    void unsetimageLocation();
+    void setImageLocation(const std::vector<std::vector<int32_t>>& value);
+
+    /// <summary>
+    /// 道路运输证图片的base64编码结果。仅在return_adjusted_image设置为true时返回该字段。 
+    /// </summary>
+
+    std::string getAdjustedImage() const;
+    bool adjustedImageIsSet() const;
+    void unsetadjustedImage();
+    void setAdjustedImage(const std::string& value);
+
+    /// <summary>
     /// 相关字段的置信度信息，置信度越大，表示本次识别的对应字段的可靠性越高，在统计意义上，置信度越大，准确率越高。 置信度由算法给出，不直接等价于对应字段的准确率。 
     /// </summary>
 
@@ -215,6 +234,10 @@ protected:
     bool reviewExpiryDateIsSet_;
     std::string assessedTechnicalLevel_;
     bool assessedTechnicalLevelIsSet_;
+    std::vector<std::vector<int32_t>> imageLocation_;
+    bool imageLocationIsSet_;
+    std::string adjustedImage_;
+    bool adjustedImageIsSet_;
     Object confidence_;
     bool confidenceIsSet_;
 

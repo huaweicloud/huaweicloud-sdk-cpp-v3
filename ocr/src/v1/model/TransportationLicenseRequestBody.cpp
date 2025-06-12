@@ -16,6 +16,10 @@ TransportationLicenseRequestBody::TransportationLicenseRequestBody()
     imageIsSet_ = false;
     url_ = "";
     urlIsSet_ = false;
+    returnImageLocation_ = false;
+    returnImageLocationIsSet_ = false;
+    returnAdjustedImage_ = false;
+    returnAdjustedImageIsSet_ = false;
 }
 
 TransportationLicenseRequestBody::~TransportationLicenseRequestBody() = default;
@@ -33,6 +37,12 @@ web::json::value TransportationLicenseRequestBody::toJson() const
     }
     if(urlIsSet_) {
         val[utility::conversions::to_string_t("url")] = ModelBase::toJson(url_);
+    }
+    if(returnImageLocationIsSet_) {
+        val[utility::conversions::to_string_t("return_image_location")] = ModelBase::toJson(returnImageLocation_);
+    }
+    if(returnAdjustedImageIsSet_) {
+        val[utility::conversions::to_string_t("return_adjusted_image")] = ModelBase::toJson(returnAdjustedImage_);
     }
 
     return val;
@@ -57,6 +67,24 @@ bool TransportationLicenseRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setUrl(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("return_image_location"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("return_image_location"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setReturnImageLocation(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("return_adjusted_image"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("return_adjusted_image"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setReturnAdjustedImage(refVal);
         }
     }
     return ok;
@@ -103,6 +131,48 @@ bool TransportationLicenseRequestBody::urlIsSet() const
 void TransportationLicenseRequestBody::unseturl()
 {
     urlIsSet_ = false;
+}
+
+bool TransportationLicenseRequestBody::isReturnImageLocation() const
+{
+    return returnImageLocation_;
+}
+
+void TransportationLicenseRequestBody::setReturnImageLocation(bool value)
+{
+    returnImageLocation_ = value;
+    returnImageLocationIsSet_ = true;
+}
+
+bool TransportationLicenseRequestBody::returnImageLocationIsSet() const
+{
+    return returnImageLocationIsSet_;
+}
+
+void TransportationLicenseRequestBody::unsetreturnImageLocation()
+{
+    returnImageLocationIsSet_ = false;
+}
+
+bool TransportationLicenseRequestBody::isReturnAdjustedImage() const
+{
+    return returnAdjustedImage_;
+}
+
+void TransportationLicenseRequestBody::setReturnAdjustedImage(bool value)
+{
+    returnAdjustedImage_ = value;
+    returnAdjustedImageIsSet_ = true;
+}
+
+bool TransportationLicenseRequestBody::returnAdjustedImageIsSet() const
+{
+    return returnAdjustedImageIsSet_;
+}
+
+void TransportationLicenseRequestBody::unsetreturnAdjustedImage()
+{
+    returnAdjustedImageIsSet_ = false;
 }
 
 }

@@ -12,6 +12,9 @@
 #include <huaweicloud/evs/v2/model/BatchDeleteVolumeTagsRequest.h>
 #include <huaweicloud/evs/v2/model/BatchDeleteVolumeTagsRequestBody.h>
 #include <huaweicloud/evs/v2/model/BatchDeleteVolumeTagsResponse.h>
+#include <huaweicloud/evs/v2/model/BatchResizeVolumeRequestBody.h>
+#include <huaweicloud/evs/v2/model/BatchResizeVolumesRequest.h>
+#include <huaweicloud/evs/v2/model/BatchResizeVolumesResponse.h>
 #include <huaweicloud/evs/v2/model/CinderAcceptVolumeTransferRequest.h>
 #include <huaweicloud/evs/v2/model/CinderAcceptVolumeTransferRequestBody.h>
 #include <huaweicloud/evs/v2/model/CinderAcceptVolumeTransferResponse.h>
@@ -129,6 +132,18 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<BatchDeleteVolumeTagsResponse> batchDeleteVolumeTags(
         BatchDeleteVolumeTagsRequest &request
+    );
+    // 批量扩容云硬盘
+    //
+    // 对按需或者包周期云硬盘进行批量扩容。
+    // [在批量扩容存在包周期云硬盘的场景下：](tag:hws)
+    // - [如果您需要查看订单可用的优惠券，请参考\&quot;[查询订单可用优惠券](https://support.huaweicloud.com/api-oce/zh-cn_topic_0092953630.html)\&quot;。](tag:hws)
+    // - [如果您需要支付订单，请参考\&quot;[支付包周期产品订单](https://support.huaweicloud.com/api-oce/api_order_00030.html)\&quot;。](tag:hws)
+    // - [如果您需要退订该包周期资源，请参考“[退订包周期资源](https://support.huaweicloud.com/api-oce/zh-cn_topic_0082522030.html)”。](tag:hws)
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchResizeVolumesResponse> batchResizeVolumes(
+        BatchResizeVolumesRequest &request
     );
     // 接受云硬盘过户
     //

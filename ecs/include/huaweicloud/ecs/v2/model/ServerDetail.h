@@ -14,6 +14,7 @@
 #include <huaweicloud/ecs/v2/model/ServerExtendVolumeAttachment.h>
 #include <huaweicloud/ecs/v2/model/ServerSchedulerHints.h>
 #include <string>
+#include <huaweicloud/ecs/v2/model/SecurityOptions.h>
 #include <huaweicloud/ecs/v2/model/Hypervisor.h>
 #include <vector>
 #include <huaweicloud/ecs/v2/model/ServerSystemTag.h>
@@ -468,6 +469,15 @@ public:
     /// 
     /// </summary>
 
+    SecurityOptions getSecurityOptions() const;
+    bool securityOptionsIsSet() const;
+    void unsetsecurityOptions();
+    void setSecurityOptions(const SecurityOptions& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
     Hypervisor getHypervisor() const;
     bool hypervisorIsSet() const;
     void unsethypervisor();
@@ -567,6 +577,8 @@ protected:
     bool sysTagsIsSet_;
     CpuOptions cpuOptions_;
     bool cpuOptionsIsSet_;
+    SecurityOptions securityOptions_;
+    bool securityOptionsIsSet_;
     Hypervisor hypervisor_;
     bool hypervisorIsSet_;
 

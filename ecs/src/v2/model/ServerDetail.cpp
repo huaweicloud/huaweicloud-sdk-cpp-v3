@@ -93,6 +93,7 @@ ServerDetail::ServerDetail()
     enterpriseProjectIdIsSet_ = false;
     sysTagsIsSet_ = false;
     cpuOptionsIsSet_ = false;
+    securityOptionsIsSet_ = false;
     hypervisorIsSet_ = false;
 }
 
@@ -243,6 +244,9 @@ web::json::value ServerDetail::toJson() const
     }
     if(cpuOptionsIsSet_) {
         val[utility::conversions::to_string_t("cpu_options")] = ModelBase::toJson(cpuOptions_);
+    }
+    if(securityOptionsIsSet_) {
+        val[utility::conversions::to_string_t("security_options")] = ModelBase::toJson(securityOptions_);
     }
     if(hypervisorIsSet_) {
         val[utility::conversions::to_string_t("hypervisor")] = ModelBase::toJson(hypervisor_);
@@ -666,6 +670,15 @@ bool ServerDetail::fromJson(const web::json::value& val)
             CpuOptions refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCpuOptions(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("security_options"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("security_options"));
+        if(!fieldValue.is_null())
+        {
+            SecurityOptions refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSecurityOptions(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("hypervisor"))) {
@@ -1645,6 +1658,27 @@ bool ServerDetail::cpuOptionsIsSet() const
 void ServerDetail::unsetcpuOptions()
 {
     cpuOptionsIsSet_ = false;
+}
+
+SecurityOptions ServerDetail::getSecurityOptions() const
+{
+    return securityOptions_;
+}
+
+void ServerDetail::setSecurityOptions(const SecurityOptions& value)
+{
+    securityOptions_ = value;
+    securityOptionsIsSet_ = true;
+}
+
+bool ServerDetail::securityOptionsIsSet() const
+{
+    return securityOptionsIsSet_;
+}
+
+void ServerDetail::unsetsecurityOptions()
+{
+    securityOptionsIsSet_ = false;
 }
 
 Hypervisor ServerDetail::getHypervisor() const

@@ -15,6 +15,7 @@ class HUAWEICLOUD_EVS_V2_EXPORT  EvsMeta {
 public:
     static HttpRequestDef genRequestDefForBatchCreateVolumeTags();
     static HttpRequestDef genRequestDefForBatchDeleteVolumeTags();
+    static HttpRequestDef genRequestDefForBatchResizeVolumes();
     static HttpRequestDef genRequestDefForCinderAcceptVolumeTransfer();
     static HttpRequestDef genRequestDefForCinderCreateVolumeTransfer();
     static HttpRequestDef genRequestDefForCinderDeleteVolumeTransfer();

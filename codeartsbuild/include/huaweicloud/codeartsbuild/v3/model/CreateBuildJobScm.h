@@ -93,6 +93,15 @@ public:
     void setIsAutoBuild(bool value);
 
     /// <summary>
+    /// 是否启用gitlfs
+    /// </summary>
+
+    bool isEnableGitLfs() const;
+    bool enableGitLfsIsSet() const;
+    void unsetenableGitLfs();
+    void setEnableGitLfs(bool value);
+
+    /// <summary>
     /// 构建类别
     /// </summary>
 
@@ -128,6 +137,24 @@ public:
     void unsetsource();
     void setSource(const std::string& value);
 
+    /// <summary>
+    /// 仓库分组
+    /// </summary>
+
+    std::string getGroupName() const;
+    bool groupNameIsSet() const;
+    void unsetgroupName();
+    void setGroupName(const std::string& value);
+
+    /// <summary>
+    /// 仓库名称
+    /// </summary>
+
+    std::string getRepoName() const;
+    bool repoNameIsSet() const;
+    void unsetrepoName();
+    void setRepoName(const std::string& value);
+
 
 protected:
     std::string branch_;
@@ -142,6 +169,8 @@ protected:
     bool scmTypeIsSet_;
     bool isAutoBuild_;
     bool isAutoBuildIsSet_;
+    bool enableGitLfs_;
+    bool enableGitLfsIsSet_;
     std::string buildType_;
     bool buildTypeIsSet_;
     std::string depth_;
@@ -150,6 +179,10 @@ protected:
     bool endPointIdIsSet_;
     std::string source_;
     bool sourceIsSet_;
+    std::string groupName_;
+    bool groupNameIsSet_;
+    std::string repoName_;
+    bool repoNameIsSet_;
 
 };
 

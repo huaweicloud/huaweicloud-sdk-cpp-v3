@@ -73,6 +73,8 @@
 #include <huaweicloud/cfw/v1/model/DeleteDomainsResponse.h>
 #include <huaweicloud/cfw/v1/model/DeleteFirewallRequest.h>
 #include <huaweicloud/cfw/v1/model/DeleteFirewallResponse.h>
+#include <huaweicloud/cfw/v1/model/DeleteIpBlacklistRequest.h>
+#include <huaweicloud/cfw/v1/model/DeleteIpBlacklistResponse.h>
 #include <huaweicloud/cfw/v1/model/DeleteServiceItemDto.h>
 #include <huaweicloud/cfw/v1/model/DeleteServiceItemRequest.h>
 #include <huaweicloud/cfw/v1/model/DeleteServiceItemResponse.h>
@@ -81,6 +83,15 @@
 #include <huaweicloud/cfw/v1/model/DeleteTagRequest.h>
 #include <huaweicloud/cfw/v1/model/DeleteTagResponse.h>
 #include <huaweicloud/cfw/v1/model/DeleteTagsDto.h>
+#include <huaweicloud/cfw/v1/model/EnableIpBlacklistRequest.h>
+#include <huaweicloud/cfw/v1/model/EnableIpBlacklistResponse.h>
+#include <huaweicloud/cfw/v1/model/ExportIpBlacklistRequest.h>
+#include <huaweicloud/cfw/v1/model/ExportIpBlacklistResponse.h>
+#include <huaweicloud/cfw/v1/model/ImportIpBlacklistRequest.h>
+#include <huaweicloud/cfw/v1/model/ImportIpBlacklistResponse.h>
+#include <huaweicloud/cfw/v1/model/IpBlacklistDeleteDto.h>
+#include <huaweicloud/cfw/v1/model/IpBlacklistEnableDto.h>
+#include <huaweicloud/cfw/v1/model/IpBlacklistImportDto.h>
 #include <huaweicloud/cfw/v1/model/ListAccessControlLogsRequest.h>
 #include <huaweicloud/cfw/v1/model/ListAccessControlLogsResponse.h>
 #include <huaweicloud/cfw/v1/model/ListAddressItemsRequest.h>
@@ -115,6 +126,10 @@
 #include <huaweicloud/cfw/v1/model/ListFirewallListResponse.h>
 #include <huaweicloud/cfw/v1/model/ListFlowLogsRequest.h>
 #include <huaweicloud/cfw/v1/model/ListFlowLogsResponse.h>
+#include <huaweicloud/cfw/v1/model/ListIpBlacklistRequest.h>
+#include <huaweicloud/cfw/v1/model/ListIpBlacklistResponse.h>
+#include <huaweicloud/cfw/v1/model/ListIpBlacklistSwitchRequest.h>
+#include <huaweicloud/cfw/v1/model/ListIpBlacklistSwitchResponse.h>
 #include <huaweicloud/cfw/v1/model/ListJobRequest.h>
 #include <huaweicloud/cfw/v1/model/ListJobResponse.h>
 #include <huaweicloud/cfw/v1/model/ListLogConfigRequest.h>
@@ -134,6 +149,8 @@
 #include <huaweicloud/cfw/v1/model/LogConfigDto.h>
 #include <huaweicloud/cfw/v1/model/ObjectInfoDto.h>
 #include <huaweicloud/cfw/v1/model/QueryFireWallInstanceDto.h>
+#include <huaweicloud/cfw/v1/model/RetryIpBlacklistRequest.h>
+#include <huaweicloud/cfw/v1/model/RetryIpBlacklistResponse.h>
 #include <huaweicloud/cfw/v1/model/SaveTagsRequest.h>
 #include <huaweicloud/cfw/v1/model/SaveTagsResponse.h>
 #include <huaweicloud/cfw/v1/model/ShowAlarmConfigRequest.h>
@@ -463,6 +480,14 @@ public:
     std::shared_ptr<DeleteFirewallResponse> deleteFirewall(
         DeleteFirewallRequest &request
     );
+    // 删除已经导入的IP黑名单
+    //
+    // 删除流量过滤功能下已经导入的IP黑名单，指定生效范围进行删除。 标准版的墙只会存在生效范围为EIP的IP黑名单，专业版的墙会存在生效范围为EIP和NAT的IP黑名单。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteIpBlacklistResponse> deleteIpBlacklist(
+        DeleteIpBlacklistRequest &request
+    );
     // 删除服务成员
     //
     // 删除服务组成员
@@ -486,6 +511,33 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteTagResponse> deleteTag(
         DeleteTagRequest &request
+    );
+    // 开启或者关闭流量过滤的IP黑名单功能
+    //
+    // 开启或者关闭流量过滤功能，当前流量过滤是通过导入IP黑名单实现的。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<EnableIpBlacklistResponse> enableIpBlacklist(
+        EnableIpBlacklistRequest &request
+    );
+    // 导出用于流量过滤的IP黑名单
+    //
+    // 指定IP黑名单的名字进行导出，当前只有两种文件名，在EIP生效的文件名为ip-blacklist-eip.txt，在 NAT生效的文件名为ip-blacklist-nat.txt。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ExportIpBlacklistResponse> exportIpBlacklist(
+        ExportIpBlacklistRequest &request
+    );
+    // 导入IP黑名单用于流量过滤
+    //
+    // 此接口用来导入IP黑名单，IP列表保存在request的body中，IP列表支持的格式如下：
+    // 单个IP地址，例如：100.1.1.10
+    // 连续的IP地址段，例如：80.1.1.3-80.1.1.30
+    // 掩码格式的网段，例如：6.6.6.0/24
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ImportIpBlacklistResponse> importIpBlacklist(
+        ImportIpBlacklistRequest &request
     );
     // 查询访问控制日志
     //
@@ -623,6 +675,22 @@ public:
     std::shared_ptr<ListFlowLogsResponse> listFlowLogs(
         ListFlowLogsRequest &request
     );
+    // 获取导入的IP黑名单列表信息
+    //
+    // 获取防火墙实例中已经导入的IP黑名单信息，标准版防火墙只会显示一条EIP的记录，专业版防火墙可能显示EIP、NAT或EIP和NAT的记录，根据导入的情况确定。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListIpBlacklistResponse> listIpBlacklist(
+        ListIpBlacklistRequest &request
+    );
+    // 获取流量过滤功能的开关信息
+    //
+    // 流量过滤功能可以打开或者关闭，通过此接口可以获取当前的开关信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListIpBlacklistSwitchResponse> listIpBlacklistSwitch(
+        ListIpBlacklistSwitchRequest &request
+    );
     // 获取CFW任务执行状态
     //
     // 获取CFW任务执行状态
@@ -686,6 +754,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListServiceSetsResponse> listServiceSets(
         ListServiceSetsRequest &request
+    );
+    // 用于流量过滤的IP黑名单导入失败后进行重新导入
+    //
+    // 用于流量过滤的IP黑名单导入失败后，调用此接口进行重试。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<RetryIpBlacklistResponse> retryIpBlacklist(
+        RetryIpBlacklistRequest &request
     );
     // 保存资源标签接口
     //

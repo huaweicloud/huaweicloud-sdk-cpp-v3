@@ -21,7 +21,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 主入流信息
+/// 备入流信息
 /// </summary>
 class HUAWEICLOUD_LIVE_V1_EXPORT  SecondarySourcesInfo
     : public ModelBase
@@ -94,6 +94,15 @@ public:
     void setPassphrase(const std::string& value);
 
     /// <summary>
+    /// srt加密算法
+    /// </summary>
+
+    int32_t getPbkeylen() const;
+    bool pbkeylenIsSet() const;
+    void unsetpbkeylen();
+    void setPbkeylen(int32_t value);
+
+    /// <summary>
     /// 备入流地址列表
     /// </summary>
 
@@ -134,6 +143,8 @@ protected:
     bool bitrateFor3u8IsSet_;
     std::string passphrase_;
     bool passphraseIsSet_;
+    int32_t pbkeylen_;
+    bool pbkeylenIsSet_;
     std::vector<std::string> backupUrls_;
     bool backupUrlsIsSet_;
     std::string streamId_;

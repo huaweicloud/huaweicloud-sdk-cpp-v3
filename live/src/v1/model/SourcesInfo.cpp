@@ -26,6 +26,8 @@ SourcesInfo::SourcesInfo()
     bitrateFor3u8IsSet_ = false;
     passphrase_ = "";
     passphraseIsSet_ = false;
+    pbkeylen_ = 0;
+    pbkeylenIsSet_ = false;
     backupUrlsIsSet_ = false;
     streamId_ = "";
     streamIdIsSet_ = false;
@@ -63,6 +65,9 @@ web::json::value SourcesInfo::toJson() const
     }
     if(passphraseIsSet_) {
         val[utility::conversions::to_string_t("passphrase")] = ModelBase::toJson(passphrase_);
+    }
+    if(pbkeylenIsSet_) {
+        val[utility::conversions::to_string_t("pbkeylen")] = ModelBase::toJson(pbkeylen_);
     }
     if(backupUrlsIsSet_) {
         val[utility::conversions::to_string_t("backup_urls")] = ModelBase::toJson(backupUrls_);
@@ -141,6 +146,15 @@ bool SourcesInfo::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPassphrase(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("pbkeylen"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("pbkeylen"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPbkeylen(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("backup_urls"))) {
@@ -319,6 +333,27 @@ bool SourcesInfo::passphraseIsSet() const
 void SourcesInfo::unsetpassphrase()
 {
     passphraseIsSet_ = false;
+}
+
+int32_t SourcesInfo::getPbkeylen() const
+{
+    return pbkeylen_;
+}
+
+void SourcesInfo::setPbkeylen(int32_t value)
+{
+    pbkeylen_ = value;
+    pbkeylenIsSet_ = true;
+}
+
+bool SourcesInfo::pbkeylenIsSet() const
+{
+    return pbkeylenIsSet_;
+}
+
+void SourcesInfo::unsetpbkeylen()
+{
+    pbkeylenIsSet_ = false;
 }
 
 std::vector<std::string>& SourcesInfo::getBackupUrls()

@@ -19,6 +19,8 @@ RuleAclListResponseDTO_data_records::RuleAclListResponseDTO_data_records()
     addressTypeIsSet_ = false;
     name_ = "";
     nameIsSet_ = false;
+    orderId_ = 0;
+    orderIdIsSet_ = false;
     direction_ = 0;
     directionIsSet_ = false;
     actionType_ = 0;
@@ -70,6 +72,9 @@ web::json::value RuleAclListResponseDTO_data_records::toJson() const
     }
     if(nameIsSet_) {
         val[utility::conversions::to_string_t("name")] = ModelBase::toJson(name_);
+    }
+    if(orderIdIsSet_) {
+        val[utility::conversions::to_string_t("order_id")] = ModelBase::toJson(orderId_);
     }
     if(directionIsSet_) {
         val[utility::conversions::to_string_t("direction")] = ModelBase::toJson(direction_);
@@ -160,6 +165,15 @@ bool RuleAclListResponseDTO_data_records::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("order_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("order_id"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setOrderId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("direction"))) {
@@ -392,6 +406,27 @@ bool RuleAclListResponseDTO_data_records::nameIsSet() const
 void RuleAclListResponseDTO_data_records::unsetname()
 {
     nameIsSet_ = false;
+}
+
+int32_t RuleAclListResponseDTO_data_records::getOrderId() const
+{
+    return orderId_;
+}
+
+void RuleAclListResponseDTO_data_records::setOrderId(int32_t value)
+{
+    orderId_ = value;
+    orderIdIsSet_ = true;
+}
+
+bool RuleAclListResponseDTO_data_records::orderIdIsSet() const
+{
+    return orderIdIsSet_;
+}
+
+void RuleAclListResponseDTO_data_records::unsetorderId()
+{
+    orderIdIsSet_ = false;
 }
 
 int32_t RuleAclListResponseDTO_data_records::getDirection() const

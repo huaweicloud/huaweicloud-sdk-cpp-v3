@@ -23,12 +23,18 @@ CreateBuildJobRequestBody::CreateBuildJobRequestBody()
     flavor_ = "";
     flavorIsSet_ = false;
     parametersIsSet_ = false;
+    groupId_ = "";
+    groupIdIsSet_ = false;
+    timeoutIsSet_ = false;
     scmsIsSet_ = false;
     stepsIsSet_ = false;
     hostType_ = "";
     hostTypeIsSet_ = false;
     buildConfigType_ = "";
     buildConfigTypeIsSet_ = false;
+    buildIfCodeUpdated_ = false;
+    buildIfCodeUpdatedIsSet_ = false;
+    triggersIsSet_ = false;
 }
 
 CreateBuildJobRequestBody::~CreateBuildJobRequestBody() = default;
@@ -59,6 +65,12 @@ web::json::value CreateBuildJobRequestBody::toJson() const
     if(parametersIsSet_) {
         val[utility::conversions::to_string_t("parameters")] = ModelBase::toJson(parameters_);
     }
+    if(groupIdIsSet_) {
+        val[utility::conversions::to_string_t("group_id")] = ModelBase::toJson(groupId_);
+    }
+    if(timeoutIsSet_) {
+        val[utility::conversions::to_string_t("timeout")] = ModelBase::toJson(timeout_);
+    }
     if(scmsIsSet_) {
         val[utility::conversions::to_string_t("scms")] = ModelBase::toJson(scms_);
     }
@@ -70,6 +82,12 @@ web::json::value CreateBuildJobRequestBody::toJson() const
     }
     if(buildConfigTypeIsSet_) {
         val[utility::conversions::to_string_t("build_config_type")] = ModelBase::toJson(buildConfigType_);
+    }
+    if(buildIfCodeUpdatedIsSet_) {
+        val[utility::conversions::to_string_t("build_if_code_updated")] = ModelBase::toJson(buildIfCodeUpdated_);
+    }
+    if(triggersIsSet_) {
+        val[utility::conversions::to_string_t("triggers")] = ModelBase::toJson(triggers_);
     }
 
     return val;
@@ -132,6 +150,24 @@ bool CreateBuildJobRequestBody::fromJson(const web::json::value& val)
             setParameters(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("group_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("group_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setGroupId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("timeout"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("timeout"));
+        if(!fieldValue.is_null())
+        {
+            CreateBuildTimeout refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTimeout(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("scms"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("scms"));
         if(!fieldValue.is_null())
@@ -166,6 +202,24 @@ bool CreateBuildJobRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBuildConfigType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("build_if_code_updated"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("build_if_code_updated"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBuildIfCodeUpdated(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("triggers"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("triggers"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<Trigger> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTriggers(refVal);
         }
     }
     return ok;
@@ -298,6 +352,48 @@ void CreateBuildJobRequestBody::unsetparameters()
     parametersIsSet_ = false;
 }
 
+std::string CreateBuildJobRequestBody::getGroupId() const
+{
+    return groupId_;
+}
+
+void CreateBuildJobRequestBody::setGroupId(const std::string& value)
+{
+    groupId_ = value;
+    groupIdIsSet_ = true;
+}
+
+bool CreateBuildJobRequestBody::groupIdIsSet() const
+{
+    return groupIdIsSet_;
+}
+
+void CreateBuildJobRequestBody::unsetgroupId()
+{
+    groupIdIsSet_ = false;
+}
+
+CreateBuildTimeout CreateBuildJobRequestBody::getTimeout() const
+{
+    return timeout_;
+}
+
+void CreateBuildJobRequestBody::setTimeout(const CreateBuildTimeout& value)
+{
+    timeout_ = value;
+    timeoutIsSet_ = true;
+}
+
+bool CreateBuildJobRequestBody::timeoutIsSet() const
+{
+    return timeoutIsSet_;
+}
+
+void CreateBuildJobRequestBody::unsettimeout()
+{
+    timeoutIsSet_ = false;
+}
+
 std::vector<CreateBuildJobScm>& CreateBuildJobRequestBody::getScms()
 {
     return scms_;
@@ -380,6 +476,48 @@ bool CreateBuildJobRequestBody::buildConfigTypeIsSet() const
 void CreateBuildJobRequestBody::unsetbuildConfigType()
 {
     buildConfigTypeIsSet_ = false;
+}
+
+bool CreateBuildJobRequestBody::isBuildIfCodeUpdated() const
+{
+    return buildIfCodeUpdated_;
+}
+
+void CreateBuildJobRequestBody::setBuildIfCodeUpdated(bool value)
+{
+    buildIfCodeUpdated_ = value;
+    buildIfCodeUpdatedIsSet_ = true;
+}
+
+bool CreateBuildJobRequestBody::buildIfCodeUpdatedIsSet() const
+{
+    return buildIfCodeUpdatedIsSet_;
+}
+
+void CreateBuildJobRequestBody::unsetbuildIfCodeUpdated()
+{
+    buildIfCodeUpdatedIsSet_ = false;
+}
+
+std::vector<Trigger>& CreateBuildJobRequestBody::getTriggers()
+{
+    return triggers_;
+}
+
+void CreateBuildJobRequestBody::setTriggers(const std::vector<Trigger>& value)
+{
+    triggers_ = value;
+    triggersIsSet_ = true;
+}
+
+bool CreateBuildJobRequestBody::triggersIsSet() const
+{
+    return triggersIsSet_;
+}
+
+void CreateBuildJobRequestBody::unsettriggers()
+{
+    triggersIsSet_ = false;
 }
 
 }

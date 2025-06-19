@@ -24,6 +24,8 @@ CreateBuildJobScm::CreateBuildJobScm()
     scmTypeIsSet_ = false;
     isAutoBuild_ = false;
     isAutoBuildIsSet_ = false;
+    enableGitLfs_ = false;
+    enableGitLfsIsSet_ = false;
     buildType_ = "";
     buildTypeIsSet_ = false;
     depth_ = "";
@@ -32,6 +34,10 @@ CreateBuildJobScm::CreateBuildJobScm()
     endPointIdIsSet_ = false;
     source_ = "";
     sourceIsSet_ = false;
+    groupName_ = "";
+    groupNameIsSet_ = false;
+    repoName_ = "";
+    repoNameIsSet_ = false;
 }
 
 CreateBuildJobScm::~CreateBuildJobScm() = default;
@@ -62,6 +68,9 @@ web::json::value CreateBuildJobScm::toJson() const
     if(isAutoBuildIsSet_) {
         val[utility::conversions::to_string_t("is_auto_build")] = ModelBase::toJson(isAutoBuild_);
     }
+    if(enableGitLfsIsSet_) {
+        val[utility::conversions::to_string_t("enable_git_lfs")] = ModelBase::toJson(enableGitLfs_);
+    }
     if(buildTypeIsSet_) {
         val[utility::conversions::to_string_t("build_type")] = ModelBase::toJson(buildType_);
     }
@@ -73,6 +82,12 @@ web::json::value CreateBuildJobScm::toJson() const
     }
     if(sourceIsSet_) {
         val[utility::conversions::to_string_t("source")] = ModelBase::toJson(source_);
+    }
+    if(groupNameIsSet_) {
+        val[utility::conversions::to_string_t("group_name")] = ModelBase::toJson(groupName_);
+    }
+    if(repoNameIsSet_) {
+        val[utility::conversions::to_string_t("repo_name")] = ModelBase::toJson(repoName_);
     }
 
     return val;
@@ -135,6 +150,15 @@ bool CreateBuildJobScm::fromJson(const web::json::value& val)
             setIsAutoBuild(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("enable_git_lfs"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enable_git_lfs"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEnableGitLfs(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("build_type"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("build_type"));
         if(!fieldValue.is_null())
@@ -169,6 +193,24 @@ bool CreateBuildJobScm::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSource(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("group_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("group_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setGroupName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("repo_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("repo_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRepoName(refVal);
         }
     }
     return ok;
@@ -301,6 +343,27 @@ void CreateBuildJobScm::unsetisAutoBuild()
     isAutoBuildIsSet_ = false;
 }
 
+bool CreateBuildJobScm::isEnableGitLfs() const
+{
+    return enableGitLfs_;
+}
+
+void CreateBuildJobScm::setEnableGitLfs(bool value)
+{
+    enableGitLfs_ = value;
+    enableGitLfsIsSet_ = true;
+}
+
+bool CreateBuildJobScm::enableGitLfsIsSet() const
+{
+    return enableGitLfsIsSet_;
+}
+
+void CreateBuildJobScm::unsetenableGitLfs()
+{
+    enableGitLfsIsSet_ = false;
+}
+
 std::string CreateBuildJobScm::getBuildType() const
 {
     return buildType_;
@@ -383,6 +446,48 @@ bool CreateBuildJobScm::sourceIsSet() const
 void CreateBuildJobScm::unsetsource()
 {
     sourceIsSet_ = false;
+}
+
+std::string CreateBuildJobScm::getGroupName() const
+{
+    return groupName_;
+}
+
+void CreateBuildJobScm::setGroupName(const std::string& value)
+{
+    groupName_ = value;
+    groupNameIsSet_ = true;
+}
+
+bool CreateBuildJobScm::groupNameIsSet() const
+{
+    return groupNameIsSet_;
+}
+
+void CreateBuildJobScm::unsetgroupName()
+{
+    groupNameIsSet_ = false;
+}
+
+std::string CreateBuildJobScm::getRepoName() const
+{
+    return repoName_;
+}
+
+void CreateBuildJobScm::setRepoName(const std::string& value)
+{
+    repoName_ = value;
+    repoNameIsSet_ = true;
+}
+
+bool CreateBuildJobScm::repoNameIsSet() const
+{
+    return repoNameIsSet_;
+}
+
+void CreateBuildJobScm::unsetrepoName()
+{
+    repoNameIsSet_ = false;
 }
 
 }

@@ -79,6 +79,15 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
+    /// 排序id
+    /// </summary>
+
+    int32_t getOrderId() const;
+    bool orderIdIsSet() const;
+    void unsetorderId();
+    void setOrderId(int32_t value);
+
+    /// <summary>
     /// 规则方向0：外到内1：内到外
     /// </summary>
 
@@ -232,6 +241,8 @@ protected:
     bool addressTypeIsSet_;
     std::string name_;
     bool nameIsSet_;
+    int32_t orderId_;
+    bool orderIdIsSet_;
     int32_t direction_;
     bool directionIsSet_;
     int32_t actionType_;

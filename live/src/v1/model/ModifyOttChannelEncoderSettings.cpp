@@ -19,7 +19,6 @@ ModifyOttChannelEncoderSettings::ModifyOttChannelEncoderSettings()
     id_ = "";
     idIsSet_ = false;
     encoderSettingsIsSet_ = false;
-    encoderSettingsExpandIsSet_ = false;
 }
 
 ModifyOttChannelEncoderSettings::~ModifyOttChannelEncoderSettings() = default;
@@ -43,9 +42,6 @@ web::json::value ModifyOttChannelEncoderSettings::toJson() const
     }
     if(encoderSettingsIsSet_) {
         val[utility::conversions::to_string_t("encoder_settings")] = ModelBase::toJson(encoderSettings_);
-    }
-    if(encoderSettingsExpandIsSet_) {
-        val[utility::conversions::to_string_t("encoder_settings_expand")] = ModelBase::toJson(encoderSettingsExpand_);
     }
 
     return val;
@@ -88,15 +84,6 @@ bool ModifyOttChannelEncoderSettings::fromJson(const web::json::value& val)
             std::vector<ModifyOttChannelEncoderSettings_encoder_settings> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEncoderSettings(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("encoder_settings_expand"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("encoder_settings_expand"));
-        if(!fieldValue.is_null())
-        {
-            EncoderSettingsExpand refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setEncoderSettingsExpand(refVal);
         }
     }
     return ok;
@@ -185,27 +172,6 @@ bool ModifyOttChannelEncoderSettings::encoderSettingsIsSet() const
 void ModifyOttChannelEncoderSettings::unsetencoderSettings()
 {
     encoderSettingsIsSet_ = false;
-}
-
-EncoderSettingsExpand ModifyOttChannelEncoderSettings::getEncoderSettingsExpand() const
-{
-    return encoderSettingsExpand_;
-}
-
-void ModifyOttChannelEncoderSettings::setEncoderSettingsExpand(const EncoderSettingsExpand& value)
-{
-    encoderSettingsExpand_ = value;
-    encoderSettingsExpandIsSet_ = true;
-}
-
-bool ModifyOttChannelEncoderSettings::encoderSettingsExpandIsSet() const
-{
-    return encoderSettingsExpandIsSet_;
-}
-
-void ModifyOttChannelEncoderSettings::unsetencoderSettingsExpand()
-{
-    encoderSettingsExpandIsSet_ = false;
 }
 
 }

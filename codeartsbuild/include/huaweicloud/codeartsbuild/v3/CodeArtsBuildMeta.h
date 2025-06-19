@@ -50,11 +50,20 @@ public:
     static HttpRequestDef genRequestDefForShowImageTemplateList();
     static HttpRequestDef genRequestDefForCheckJobCountIsTopLimit();
     static HttpRequestDef genRequestDefForCheckJobNameIsExists();
+    static HttpRequestDef genRequestDefForCheckWebhookUrl();
+    static HttpRequestDef genRequestDefForClearRecyclingJobs();
+    static HttpRequestDef genRequestDefForCopyJob();
+    static HttpRequestDef genRequestDefForDeleteRecyclingJobs();
+    static HttpRequestDef genRequestDefForDeleteTheJob();
+    static HttpRequestDef genRequestDefForDisableTheJob();
+    static HttpRequestDef genRequestDefForExecuteJob();
     static HttpRequestDef genRequestDefForListBuildParameter();
     static HttpRequestDef genRequestDefForListJob();
     static HttpRequestDef genRequestDefForListProjectJobs();
     static HttpRequestDef genRequestDefForListRecyclingJob();
     static HttpRequestDef genRequestDefForListUpdateJobHistory();
+    static HttpRequestDef genRequestDefForRestoreRecyclingJobs();
+    static HttpRequestDef genRequestDefForSetKeepTime();
     static HttpRequestDef genRequestDefForShowBuildParamsList();
     static HttpRequestDef genRequestDefForShowCopyName();
     static HttpRequestDef genRequestDefForShowDefaultBuildParameters();
@@ -68,6 +77,9 @@ public:
     static HttpRequestDef genRequestDefForShowJobStepStatus();
     static HttpRequestDef genRequestDefForShowJobSystemParameters();
     static HttpRequestDef genRequestDefForShowRunningStatus();
+    static HttpRequestDef genRequestDefForUpdateNewJob();
+    static HttpRequestDef genRequestDefForDeleteKeystore();
+    static HttpRequestDef genRequestDefForDeleteKeystorePermission();
     static HttpRequestDef genRequestDefForDownloadKeystoreByName();
     static HttpRequestDef genRequestDefForListKeystore();
     static HttpRequestDef genRequestDefForListKeystoreSearch();
@@ -76,6 +88,7 @@ public:
     static HttpRequestDef genRequestDefForShowFlowGraph();
     static HttpRequestDef genRequestDefForShowRecordInfo();
     static HttpRequestDef genRequestDefForStopJob();
+    static HttpRequestDef genRequestDefForListBriefRecord();
     static HttpRequestDef genRequestDefForListBuildInfoRecordByJobId();
     static HttpRequestDef genRequestDefForListRecords();
     static HttpRequestDef genRequestDefForShowBuildInfoRecord();
@@ -92,8 +105,10 @@ public:
     static HttpRequestDef genRequestDefForShowJobBuildSuccessRatio();
     static HttpRequestDef genRequestDefForShowJobBuildTime();
     static HttpRequestDef genRequestDefForShowReportSummary();
+    static HttpRequestDef genRequestDefForDeleteTemplate();
     static HttpRequestDef genRequestDefForListCustomTemplate();
     static HttpRequestDef genRequestDefForListOfficialTemplate();
+    static HttpRequestDef genRequestDefForListRecommendOfficialTemplate();
     static HttpRequestDef genRequestDefForShowYamlTemplate();
 };
 

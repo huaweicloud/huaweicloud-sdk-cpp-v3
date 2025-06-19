@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/codeartsbuild/v3/model/DeleteBuildJobResponseBody_result.h"
+#include "huaweicloud/codeartsbuild/v3/model/DeleteTheJobResponseBody_result.h"
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Codeartsbuild {
@@ -10,7 +10,7 @@ namespace Model {
 
 
 
-DeleteBuildJobResponseBody_result::DeleteBuildJobResponseBody_result()
+DeleteTheJobResponseBody_result::DeleteTheJobResponseBody_result()
 {
     jobId_ = "";
     jobIdIsSet_ = false;
@@ -18,13 +18,13 @@ DeleteBuildJobResponseBody_result::DeleteBuildJobResponseBody_result()
     projectIdIsSet_ = false;
 }
 
-DeleteBuildJobResponseBody_result::~DeleteBuildJobResponseBody_result() = default;
+DeleteTheJobResponseBody_result::~DeleteTheJobResponseBody_result() = default;
 
-void DeleteBuildJobResponseBody_result::validate()
+void DeleteTheJobResponseBody_result::validate()
 {
 }
 
-web::json::value DeleteBuildJobResponseBody_result::toJson() const
+web::json::value DeleteTheJobResponseBody_result::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -37,7 +37,7 @@ web::json::value DeleteBuildJobResponseBody_result::toJson() const
 
     return val;
 }
-bool DeleteBuildJobResponseBody_result::fromJson(const web::json::value& val)
+bool DeleteTheJobResponseBody_result::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -63,44 +63,44 @@ bool DeleteBuildJobResponseBody_result::fromJson(const web::json::value& val)
 }
 
 
-std::string DeleteBuildJobResponseBody_result::getJobId() const
+std::string DeleteTheJobResponseBody_result::getJobId() const
 {
     return jobId_;
 }
 
-void DeleteBuildJobResponseBody_result::setJobId(const std::string& value)
+void DeleteTheJobResponseBody_result::setJobId(const std::string& value)
 {
     jobId_ = value;
     jobIdIsSet_ = true;
 }
 
-bool DeleteBuildJobResponseBody_result::jobIdIsSet() const
+bool DeleteTheJobResponseBody_result::jobIdIsSet() const
 {
     return jobIdIsSet_;
 }
 
-void DeleteBuildJobResponseBody_result::unsetjobId()
+void DeleteTheJobResponseBody_result::unsetjobId()
 {
     jobIdIsSet_ = false;
 }
 
-std::string DeleteBuildJobResponseBody_result::getProjectId() const
+std::string DeleteTheJobResponseBody_result::getProjectId() const
 {
     return projectId_;
 }
 
-void DeleteBuildJobResponseBody_result::setProjectId(const std::string& value)
+void DeleteTheJobResponseBody_result::setProjectId(const std::string& value)
 {
     projectId_ = value;
     projectIdIsSet_ = true;
 }
 
-bool DeleteBuildJobResponseBody_result::projectIdIsSet() const
+bool DeleteTheJobResponseBody_result::projectIdIsSet() const
 {
     return projectIdIsSet_;
 }
 
-void DeleteBuildJobResponseBody_result::unsetprojectId()
+void DeleteTheJobResponseBody_result::unsetprojectId()
 {
     projectIdIsSet_ = false;
 }

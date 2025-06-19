@@ -37,9 +37,13 @@ public:
     static HttpRequestDef genRequestDefForDeleteDomainSet();
     static HttpRequestDef genRequestDefForDeleteDomains();
     static HttpRequestDef genRequestDefForDeleteFirewall();
+    static HttpRequestDef genRequestDefForDeleteIpBlacklist();
     static HttpRequestDef genRequestDefForDeleteServiceItem();
     static HttpRequestDef genRequestDefForDeleteServiceSet();
     static HttpRequestDef genRequestDefForDeleteTag();
+    static HttpRequestDef genRequestDefForEnableIpBlacklist();
+    static HttpRequestDef genRequestDefForExportIpBlacklist();
+    static HttpRequestDef genRequestDefForImportIpBlacklist();
     static HttpRequestDef genRequestDefForListAccessControlLogs();
     static HttpRequestDef genRequestDefForListAddressItems();
     static HttpRequestDef genRequestDefForListAddressSetDetail();
@@ -57,6 +61,8 @@ public:
     static HttpRequestDef genRequestDefForListFirewallDetail();
     static HttpRequestDef genRequestDefForListFirewallList();
     static HttpRequestDef genRequestDefForListFlowLogs();
+    static HttpRequestDef genRequestDefForListIpBlacklist();
+    static HttpRequestDef genRequestDefForListIpBlacklistSwitch();
     static HttpRequestDef genRequestDefForListJob();
     static HttpRequestDef genRequestDefForListLogConfig();
     static HttpRequestDef genRequestDefForListProjectTags();
@@ -65,6 +71,7 @@ public:
     static HttpRequestDef genRequestDefForListServiceItems();
     static HttpRequestDef genRequestDefForListServiceSetDetail();
     static HttpRequestDef genRequestDefForListServiceSets();
+    static HttpRequestDef genRequestDefForRetryIpBlacklist();
     static HttpRequestDef genRequestDefForSaveTags();
     static HttpRequestDef genRequestDefForShowAlarmConfig();
     static HttpRequestDef genRequestDefForShowAntiVirusRule();

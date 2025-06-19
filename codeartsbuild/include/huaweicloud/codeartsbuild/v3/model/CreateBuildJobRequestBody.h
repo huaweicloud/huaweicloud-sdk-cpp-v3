@@ -9,9 +9,11 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/codeartsbuild/v3/model/CreateBuildTimeout.h>
 #include <huaweicloud/codeartsbuild/v3/model/CreateBuildJobSteps.h>
 #include <string>
 #include <huaweicloud/codeartsbuild/v3/model/CreateBuildJobParameter.h>
+#include <huaweicloud/codeartsbuild/v3/model/Trigger.h>
 #include <vector>
 #include <huaweicloud/codeartsbuild/v3/model/CreateBuildJobScm.h>
 
@@ -97,6 +99,24 @@ public:
     void setParameters(const std::vector<CreateBuildJobParameter>& value);
 
     /// <summary>
+    /// 任务分组id
+    /// </summary>
+
+    std::string getGroupId() const;
+    bool groupIdIsSet() const;
+    void unsetgroupId();
+    void setGroupId(const std::string& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    CreateBuildTimeout getTimeout() const;
+    bool timeoutIsSet() const;
+    void unsettimeout();
+    void setTimeout(const CreateBuildTimeout& value);
+
+    /// <summary>
     /// 构建执行SCM
     /// </summary>
 
@@ -132,6 +152,24 @@ public:
     void unsetbuildConfigType();
     void setBuildConfigType(const std::string& value);
 
+    /// <summary>
+    /// 提交代码触发构建开关
+    /// </summary>
+
+    bool isBuildIfCodeUpdated() const;
+    bool buildIfCodeUpdatedIsSet() const;
+    void unsetbuildIfCodeUpdated();
+    void setBuildIfCodeUpdated(bool value);
+
+    /// <summary>
+    /// 定时任务触发器集合
+    /// </summary>
+
+    std::vector<Trigger>& getTriggers();
+    bool triggersIsSet() const;
+    void unsettriggers();
+    void setTriggers(const std::vector<Trigger>& value);
+
 
 protected:
     std::string arch_;
@@ -146,6 +184,10 @@ protected:
     bool flavorIsSet_;
     std::vector<CreateBuildJobParameter> parameters_;
     bool parametersIsSet_;
+    std::string groupId_;
+    bool groupIdIsSet_;
+    CreateBuildTimeout timeout_;
+    bool timeoutIsSet_;
     std::vector<CreateBuildJobScm> scms_;
     bool scmsIsSet_;
     std::vector<CreateBuildJobSteps> steps_;
@@ -154,6 +196,10 @@ protected:
     bool hostTypeIsSet_;
     std::string buildConfigType_;
     bool buildConfigTypeIsSet_;
+    bool buildIfCodeUpdated_;
+    bool buildIfCodeUpdatedIsSet_;
+    std::vector<Trigger> triggers_;
+    bool triggersIsSet_;
 
 };
 

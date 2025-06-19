@@ -46,6 +46,24 @@ Job::Job()
     isForbiddenIsSet_ = false;
     isView_ = false;
     isViewIsSet_ = false;
+    lastBuildUser_ = "";
+    lastBuildUserIsSet_ = false;
+    triggerType_ = "";
+    triggerTypeIsSet_ = false;
+    buildTime_ = 0L;
+    buildTimeIsSet_ = false;
+    scmWebUrl_ = "";
+    scmWebUrlIsSet_ = false;
+    scmType_ = "";
+    scmTypeIsSet_ = false;
+    repoId_ = "";
+    repoIdIsSet_ = false;
+    buildProjectId_ = "";
+    buildProjectIdIsSet_ = false;
+    lastJobRunningStatus_ = "";
+    lastJobRunningStatusIsSet_ = false;
+    lastBuildUserId_ = "";
+    lastBuildUserIdIsSet_ = false;
 }
 
 Job::~Job() = default;
@@ -108,6 +126,33 @@ web::json::value Job::toJson() const
     }
     if(isViewIsSet_) {
         val[utility::conversions::to_string_t("is_view")] = ModelBase::toJson(isView_);
+    }
+    if(lastBuildUserIsSet_) {
+        val[utility::conversions::to_string_t("last_build_user")] = ModelBase::toJson(lastBuildUser_);
+    }
+    if(triggerTypeIsSet_) {
+        val[utility::conversions::to_string_t("trigger_type")] = ModelBase::toJson(triggerType_);
+    }
+    if(buildTimeIsSet_) {
+        val[utility::conversions::to_string_t("build_time")] = ModelBase::toJson(buildTime_);
+    }
+    if(scmWebUrlIsSet_) {
+        val[utility::conversions::to_string_t("scm_web_url")] = ModelBase::toJson(scmWebUrl_);
+    }
+    if(scmTypeIsSet_) {
+        val[utility::conversions::to_string_t("scm_type")] = ModelBase::toJson(scmType_);
+    }
+    if(repoIdIsSet_) {
+        val[utility::conversions::to_string_t("repo_id")] = ModelBase::toJson(repoId_);
+    }
+    if(buildProjectIdIsSet_) {
+        val[utility::conversions::to_string_t("build_project_id")] = ModelBase::toJson(buildProjectId_);
+    }
+    if(lastJobRunningStatusIsSet_) {
+        val[utility::conversions::to_string_t("last_job_running_status")] = ModelBase::toJson(lastJobRunningStatus_);
+    }
+    if(lastBuildUserIdIsSet_) {
+        val[utility::conversions::to_string_t("last_build_user_id")] = ModelBase::toJson(lastBuildUserId_);
     }
 
     return val;
@@ -267,6 +312,87 @@ bool Job::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsView(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("last_build_user"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("last_build_user"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLastBuildUser(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("trigger_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("trigger_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTriggerType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("build_time"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("build_time"));
+        if(!fieldValue.is_null())
+        {
+            int64_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBuildTime(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("scm_web_url"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("scm_web_url"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setScmWebUrl(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("scm_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("scm_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setScmType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("repo_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("repo_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRepoId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("build_project_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("build_project_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBuildProjectId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("last_job_running_status"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("last_job_running_status"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLastJobRunningStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("last_build_user_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("last_build_user_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLastBuildUserId(refVal);
         }
     }
     return ok;
@@ -628,6 +754,195 @@ bool Job::isViewIsSet() const
 void Job::unsetisView()
 {
     isViewIsSet_ = false;
+}
+
+std::string Job::getLastBuildUser() const
+{
+    return lastBuildUser_;
+}
+
+void Job::setLastBuildUser(const std::string& value)
+{
+    lastBuildUser_ = value;
+    lastBuildUserIsSet_ = true;
+}
+
+bool Job::lastBuildUserIsSet() const
+{
+    return lastBuildUserIsSet_;
+}
+
+void Job::unsetlastBuildUser()
+{
+    lastBuildUserIsSet_ = false;
+}
+
+std::string Job::getTriggerType() const
+{
+    return triggerType_;
+}
+
+void Job::setTriggerType(const std::string& value)
+{
+    triggerType_ = value;
+    triggerTypeIsSet_ = true;
+}
+
+bool Job::triggerTypeIsSet() const
+{
+    return triggerTypeIsSet_;
+}
+
+void Job::unsettriggerType()
+{
+    triggerTypeIsSet_ = false;
+}
+
+int64_t Job::getBuildTime() const
+{
+    return buildTime_;
+}
+
+void Job::setBuildTime(int64_t value)
+{
+    buildTime_ = value;
+    buildTimeIsSet_ = true;
+}
+
+bool Job::buildTimeIsSet() const
+{
+    return buildTimeIsSet_;
+}
+
+void Job::unsetbuildTime()
+{
+    buildTimeIsSet_ = false;
+}
+
+std::string Job::getScmWebUrl() const
+{
+    return scmWebUrl_;
+}
+
+void Job::setScmWebUrl(const std::string& value)
+{
+    scmWebUrl_ = value;
+    scmWebUrlIsSet_ = true;
+}
+
+bool Job::scmWebUrlIsSet() const
+{
+    return scmWebUrlIsSet_;
+}
+
+void Job::unsetscmWebUrl()
+{
+    scmWebUrlIsSet_ = false;
+}
+
+std::string Job::getScmType() const
+{
+    return scmType_;
+}
+
+void Job::setScmType(const std::string& value)
+{
+    scmType_ = value;
+    scmTypeIsSet_ = true;
+}
+
+bool Job::scmTypeIsSet() const
+{
+    return scmTypeIsSet_;
+}
+
+void Job::unsetscmType()
+{
+    scmTypeIsSet_ = false;
+}
+
+std::string Job::getRepoId() const
+{
+    return repoId_;
+}
+
+void Job::setRepoId(const std::string& value)
+{
+    repoId_ = value;
+    repoIdIsSet_ = true;
+}
+
+bool Job::repoIdIsSet() const
+{
+    return repoIdIsSet_;
+}
+
+void Job::unsetrepoId()
+{
+    repoIdIsSet_ = false;
+}
+
+std::string Job::getBuildProjectId() const
+{
+    return buildProjectId_;
+}
+
+void Job::setBuildProjectId(const std::string& value)
+{
+    buildProjectId_ = value;
+    buildProjectIdIsSet_ = true;
+}
+
+bool Job::buildProjectIdIsSet() const
+{
+    return buildProjectIdIsSet_;
+}
+
+void Job::unsetbuildProjectId()
+{
+    buildProjectIdIsSet_ = false;
+}
+
+std::string Job::getLastJobRunningStatus() const
+{
+    return lastJobRunningStatus_;
+}
+
+void Job::setLastJobRunningStatus(const std::string& value)
+{
+    lastJobRunningStatus_ = value;
+    lastJobRunningStatusIsSet_ = true;
+}
+
+bool Job::lastJobRunningStatusIsSet() const
+{
+    return lastJobRunningStatusIsSet_;
+}
+
+void Job::unsetlastJobRunningStatus()
+{
+    lastJobRunningStatusIsSet_ = false;
+}
+
+std::string Job::getLastBuildUserId() const
+{
+    return lastBuildUserId_;
+}
+
+void Job::setLastBuildUserId(const std::string& value)
+{
+    lastBuildUserId_ = value;
+    lastBuildUserIdIsSet_ = true;
+}
+
+bool Job::lastBuildUserIdIsSet() const
+{
+    return lastBuildUserIdIsSet_;
+}
+
+void Job::unsetlastBuildUserId()
+{
+    lastBuildUserIdIsSet_ = false;
 }
 
 }

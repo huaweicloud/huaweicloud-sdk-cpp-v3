@@ -68,7 +68,7 @@ public:
     void setDescription(const std::string& value);
 
     /// <summary>
-    /// 只支持Microsoft SQL Server，局部备份的用户自建数据库名列表，当有此参数时以局部备份为准。
+    /// 只支持Microsoft SQL Server和RDS for PostgreSQL，局部备份的用户自建数据库名列表，当有此参数时以局部备份为准。
     /// </summary>
 
     std::vector<BackupDatabase>& getDatabases();
@@ -77,7 +77,7 @@ public:
     void setDatabases(const std::vector<BackupDatabase>& value);
 
     /// <summary>
-    /// 是否分库备份，只适用于SQLServer，默认为false
+    /// 是否分库备份，只适用于SQLServer、RDS for PostgreSQL，默认为false
     /// </summary>
 
     bool isBackupDatabaseIndividually() const;

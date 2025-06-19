@@ -11,6 +11,7 @@
 
 #include <string>
 #include <huaweicloud/live/v1/model/InputStreamInfo.h>
+#include <huaweicloud/live/v1/model/EncoderSettingsExpand.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -75,6 +76,15 @@ public:
     void unsetinput();
     void setInput(const InputStreamInfo& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    EncoderSettingsExpand getEncoderSettingsExpand() const;
+    bool encoderSettingsExpandIsSet() const;
+    void unsetencoderSettingsExpand();
+    void setEncoderSettingsExpand(const EncoderSettingsExpand& value);
+
 
 protected:
     std::string domain_;
@@ -85,6 +95,8 @@ protected:
     bool idIsSet_;
     InputStreamInfo input_;
     bool inputIsSet_;
+    EncoderSettingsExpand encoderSettingsExpand_;
+    bool encoderSettingsExpandIsSet_;
 
 };
 

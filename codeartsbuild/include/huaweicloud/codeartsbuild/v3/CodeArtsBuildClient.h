@@ -91,6 +91,24 @@
 #include <huaweicloud/codeartsbuild/v3/model/CheckJobCountIsTopLimitResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/CheckJobNameIsExistsRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/CheckJobNameIsExistsResponse.h>
+#include <huaweicloud/codeartsbuild/v3/model/CheckWebhookUrlRequest.h>
+#include <huaweicloud/codeartsbuild/v3/model/CheckWebhookUrlRequestBody.h>
+#include <huaweicloud/codeartsbuild/v3/model/CheckWebhookUrlResponse.h>
+#include <huaweicloud/codeartsbuild/v3/model/ClearRecyclingJobsRequest.h>
+#include <huaweicloud/codeartsbuild/v3/model/ClearRecyclingJobsResponse.h>
+#include <huaweicloud/codeartsbuild/v3/model/CopyBuildJobRequestBody.h>
+#include <huaweicloud/codeartsbuild/v3/model/CopyJobRequest.h>
+#include <huaweicloud/codeartsbuild/v3/model/CopyJobResponse.h>
+#include <huaweicloud/codeartsbuild/v3/model/DeleteRecyclingJobsRequest.h>
+#include <huaweicloud/codeartsbuild/v3/model/DeleteRecyclingJobsResponse.h>
+#include <huaweicloud/codeartsbuild/v3/model/DeleteTheJobRequest.h>
+#include <huaweicloud/codeartsbuild/v3/model/DeleteTheJobResponse.h>
+#include <huaweicloud/codeartsbuild/v3/model/DisableTheJobRequest.h>
+#include <huaweicloud/codeartsbuild/v3/model/DisableTheJobRequestBody.h>
+#include <huaweicloud/codeartsbuild/v3/model/DisableTheJobResponse.h>
+#include <huaweicloud/codeartsbuild/v3/model/ExecuteJobRequest.h>
+#include <huaweicloud/codeartsbuild/v3/model/ExecuteJobResponse.h>
+#include <huaweicloud/codeartsbuild/v3/model/JobsRequestBody.h>
 #include <huaweicloud/codeartsbuild/v3/model/ListBuildParameterRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/ListBuildParameterResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/ListJobRequest.h>
@@ -101,6 +119,12 @@
 #include <huaweicloud/codeartsbuild/v3/model/ListRecyclingJobResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/ListUpdateJobHistoryRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/ListUpdateJobHistoryResponse.h>
+#include <huaweicloud/codeartsbuild/v3/model/RestoreRecyclingJobsRequest.h>
+#include <huaweicloud/codeartsbuild/v3/model/RestoreRecyclingJobsResponse.h>
+#include <huaweicloud/codeartsbuild/v3/model/RunJobRequestBody.h>
+#include <huaweicloud/codeartsbuild/v3/model/SetKeepTimeRequest.h>
+#include <huaweicloud/codeartsbuild/v3/model/SetKeepTimeRequestBody.h>
+#include <huaweicloud/codeartsbuild/v3/model/SetKeepTimeResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowBuildParamsListRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowBuildParamsListResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowCopyNameRequest.h>
@@ -127,8 +151,15 @@
 #include <huaweicloud/codeartsbuild/v3/model/ShowJobSystemParametersResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowRunningStatusRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowRunningStatusResponse.h>
+#include <huaweicloud/codeartsbuild/v3/model/UpdateBuildJobRequestBody.h>
+#include <huaweicloud/codeartsbuild/v3/model/UpdateNewJobRequest.h>
+#include <huaweicloud/codeartsbuild/v3/model/UpdateNewJobResponse.h>
 #include <string>
 
+#include <huaweicloud/codeartsbuild/v3/model/DeleteKeystorePermissionRequest.h>
+#include <huaweicloud/codeartsbuild/v3/model/DeleteKeystorePermissionResponse.h>
+#include <huaweicloud/codeartsbuild/v3/model/DeleteKeystoreRequest.h>
+#include <huaweicloud/codeartsbuild/v3/model/DeleteKeystoreResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/DownloadKeystoreByNameRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/DownloadKeystoreByNameResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/ListKeystoreRequest.h>
@@ -150,6 +181,8 @@
 #include <huaweicloud/codeartsbuild/v3/model/StopJobResponse.h>
 #include <string>
 
+#include <huaweicloud/codeartsbuild/v3/model/ListBriefRecordRequest.h>
+#include <huaweicloud/codeartsbuild/v3/model/ListBriefRecordResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/ListBuildInfoRecordByJobIdRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/ListBuildInfoRecordByJobIdResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/ListRecordsRequest.h>
@@ -169,6 +202,7 @@
 #include <huaweicloud/codeartsbuild/v3/model/ShowJobTotalRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowJobTotalResponse.h>
 #include <string>
+#include <vector>
 
 #include <huaweicloud/codeartsbuild/v3/model/DownloadJunitCoverageZipRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/DownloadJunitCoverageZipResponse.h>
@@ -186,10 +220,15 @@
 #include <huaweicloud/codeartsbuild/v3/model/ShowReportSummaryResponse.h>
 #include <string>
 
+#include <huaweicloud/codeartsbuild/v3/model/DeleteTemplateRequest.h>
+#include <huaweicloud/codeartsbuild/v3/model/DeleteTemplateResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/ListCustomTemplateRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/ListCustomTemplateResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/ListOfficialTemplateRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/ListOfficialTemplateResponse.h>
+#include <huaweicloud/codeartsbuild/v3/model/ListRecommendOfficialTemplateRequest.h>
+#include <huaweicloud/codeartsbuild/v3/model/ListRecommendOfficialTemplateRequestBody.h>
+#include <huaweicloud/codeartsbuild/v3/model/ListRecommendOfficialTemplateResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowYamlTemplateRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowYamlTemplateResponse.h>
 #include <string>
@@ -517,6 +556,62 @@ public:
     std::shared_ptr<CheckJobNameIsExistsResponse> checkJobNameIsExists(
         CheckJobNameIsExistsRequest &request
     );
+    // 检查webhook地址参数
+    //
+    // 检查webhook地址参数
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CheckWebhookUrlResponse> checkWebhookUrl(
+        CheckWebhookUrlRequest &request
+    );
+    // 清空回收站中的任务
+    //
+    // 清空回收站中的任务
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ClearRecyclingJobsResponse> clearRecyclingJobs(
+        ClearRecyclingJobsRequest &request
+    );
+    // 复制构建任务
+    //
+    // 复制构建任务
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CopyJobResponse> copyJob(
+        CopyJobRequest &request
+    );
+    // 删除回收站中的任务
+    //
+    // 删除回收站中的任务
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteRecyclingJobsResponse> deleteRecyclingJobs(
+        DeleteRecyclingJobsRequest &request
+    );
+    // 删除任务
+    //
+    // 删除任务
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteTheJobResponse> deleteTheJob(
+        DeleteTheJobRequest &request
+    );
+    // 禁用任务
+    //
+    // 禁用任务
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DisableTheJobResponse> disableTheJob(
+        DisableTheJobRequest &request
+    );
+    // 执行构建
+    //
+    // 执行构建任务
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ExecuteJobResponse> executeJob(
+        ExecuteJobRequest &request
+    );
     // 详情页获取构建参数
     //
     // 详情页获取构建参数
@@ -556,6 +651,22 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListUpdateJobHistoryResponse> listUpdateJobHistory(
         ListUpdateJobHistoryRequest &request
+    );
+    // 恢复回收站中的任务
+    //
+    // 恢复回收站中的任务
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<RestoreRecyclingJobsResponse> restoreRecyclingJobs(
+        RestoreRecyclingJobsRequest &request
+    );
+    // 设置回收站中的任务保留时间
+    //
+    // 设置回收站中的任务保留时间,该接口需要租户账号才能访问，租户子账号无权限访问。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SetKeepTimeResponse> setKeepTime(
+        SetKeepTimeRequest &request
     );
     // 编辑页获取参数类型的接口
     //
@@ -661,7 +772,31 @@ public:
     std::shared_ptr<ShowRunningStatusResponse> showRunningStatus(
         ShowRunningStatusRequest &request
     );
+    // 更新构建任务
+    //
+    // 更新构建任务
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateNewJobResponse> updateNewJob(
+        UpdateNewJobRequest &request
+    );
 
+    // 删除文件管理文件
+    //
+    // 删除文件管理文件
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteKeystoreResponse> deleteKeystore(
+        DeleteKeystoreRequest &request
+    );
+    // 文件管理删除权限
+    //
+    // 文件管理删除权限
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteKeystorePermissionResponse> deleteKeystorePermission(
+        DeleteKeystorePermissionRequest &request
+    );
     // 文件管理文件下载
     //
     // 文件管理文件下载
@@ -728,6 +863,14 @@ public:
         StopJobRequest &request
     );
 
+    // 获取指定工程的简要构建信息
+    //
+    // 获取指定工程的简要构建信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListBriefRecordResponse> listBriefRecord(
+        ListBriefRecordRequest &request
+    );
     // 获取任务构建记录列表v1
     //
     // 获取任务构建记录列表v1
@@ -858,6 +1001,14 @@ public:
         ShowReportSummaryRequest &request
     );
 
+    // 删除构建模板
+    //
+    // 删除构建模板
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteTemplateResponse> deleteTemplate(
+        DeleteTemplateRequest &request
+    );
     // 根据条件查询特定模板
     //
     // 根据条件查询特定模板
@@ -873,6 +1024,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListOfficialTemplateResponse> listOfficialTemplate(
         ListOfficialTemplateRequest &request
+    );
+    // 获取官方推荐模板
+    //
+    // 获取官方推荐模板
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListRecommendOfficialTemplateResponse> listRecommendOfficialTemplate(
+        ListRecommendOfficialTemplateRequest &request
     );
     // 获取代码化构建默认模板
     //

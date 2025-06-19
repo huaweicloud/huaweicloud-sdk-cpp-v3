@@ -9,8 +9,8 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/codeartsbuild/v3/model/DeleteBuildJobResponseBody_result.h>
 #include <string>
+#include <huaweicloud/codeartsbuild/v3/model/DeleteTheJobResponseBody_result.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -43,10 +43,10 @@ public:
     /// 
     /// </summary>
 
-    DeleteBuildJobResponseBody_result getResult() const;
+    DeleteTheJobResponseBody_result getResult() const;
     bool resultIsSet() const;
     void unsetresult();
-    void setResult(const DeleteBuildJobResponseBody_result& value);
+    void setResult(const DeleteTheJobResponseBody_result& value);
 
     /// <summary>
     /// 状态信息
@@ -59,7 +59,7 @@ public:
 
 
 protected:
-    DeleteBuildJobResponseBody_result result_;
+    DeleteTheJobResponseBody_result result_;
     bool resultIsSet_;
     std::string status_;
     bool statusIsSet_;

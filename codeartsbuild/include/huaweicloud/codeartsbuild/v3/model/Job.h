@@ -191,6 +191,87 @@ public:
     void unsetisView();
     void setIsView(bool value);
 
+    /// <summary>
+    /// 最后一次构建用户
+    /// </summary>
+
+    std::string getLastBuildUser() const;
+    bool lastBuildUserIsSet() const;
+    void unsetlastBuildUser();
+    void setLastBuildUser(const std::string& value);
+
+    /// <summary>
+    /// 触发类型
+    /// </summary>
+
+    std::string getTriggerType() const;
+    bool triggerTypeIsSet() const;
+    void unsettriggerType();
+    void setTriggerType(const std::string& value);
+
+    /// <summary>
+    /// 构建时间
+    /// </summary>
+
+    int64_t getBuildTime() const;
+    bool buildTimeIsSet() const;
+    void unsetbuildTime();
+    void setBuildTime(int64_t value);
+
+    /// <summary>
+    /// 代码仓web地址
+    /// </summary>
+
+    std::string getScmWebUrl() const;
+    bool scmWebUrlIsSet() const;
+    void unsetscmWebUrl();
+    void setScmWebUrl(const std::string& value);
+
+    /// <summary>
+    /// 代码仓类型
+    /// </summary>
+
+    std::string getScmType() const;
+    bool scmTypeIsSet() const;
+    void unsetscmType();
+    void setScmType(const std::string& value);
+
+    /// <summary>
+    /// 代码仓ID
+    /// </summary>
+
+    std::string getRepoId() const;
+    bool repoIdIsSet() const;
+    void unsetrepoId();
+    void setRepoId(const std::string& value);
+
+    /// <summary>
+    /// 构建项目ID
+    /// </summary>
+
+    std::string getBuildProjectId() const;
+    bool buildProjectIdIsSet() const;
+    void unsetbuildProjectId();
+    void setBuildProjectId(const std::string& value);
+
+    /// <summary>
+    /// 最后一次构建时间
+    /// </summary>
+
+    std::string getLastJobRunningStatus() const;
+    bool lastJobRunningStatusIsSet() const;
+    void unsetlastJobRunningStatus();
+    void setLastJobRunningStatus(const std::string& value);
+
+    /// <summary>
+    /// 最后一次构建用户ID
+    /// </summary>
+
+    std::string getLastBuildUserId() const;
+    bool lastBuildUserIdIsSet() const;
+    void unsetlastBuildUserId();
+    void setLastBuildUserId(const std::string& value);
+
 
 protected:
     std::string id_;
@@ -227,6 +308,24 @@ protected:
     bool isForbiddenIsSet_;
     bool isView_;
     bool isViewIsSet_;
+    std::string lastBuildUser_;
+    bool lastBuildUserIsSet_;
+    std::string triggerType_;
+    bool triggerTypeIsSet_;
+    int64_t buildTime_;
+    bool buildTimeIsSet_;
+    std::string scmWebUrl_;
+    bool scmWebUrlIsSet_;
+    std::string scmType_;
+    bool scmTypeIsSet_;
+    std::string repoId_;
+    bool repoIdIsSet_;
+    std::string buildProjectId_;
+    bool buildProjectIdIsSet_;
+    std::string lastJobRunningStatus_;
+    bool lastJobRunningStatusIsSet_;
+    std::string lastBuildUserId_;
+    bool lastBuildUserIdIsSet_;
 
 };
 

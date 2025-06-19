@@ -19,6 +19,7 @@ ModifyOttChannelInputReq::ModifyOttChannelInputReq()
     id_ = "";
     idIsSet_ = false;
     inputIsSet_ = false;
+    encoderSettingsExpandIsSet_ = false;
 }
 
 ModifyOttChannelInputReq::~ModifyOttChannelInputReq() = default;
@@ -42,6 +43,9 @@ web::json::value ModifyOttChannelInputReq::toJson() const
     }
     if(inputIsSet_) {
         val[utility::conversions::to_string_t("input")] = ModelBase::toJson(input_);
+    }
+    if(encoderSettingsExpandIsSet_) {
+        val[utility::conversions::to_string_t("encoder_settings_expand")] = ModelBase::toJson(encoderSettingsExpand_);
     }
 
     return val;
@@ -84,6 +88,15 @@ bool ModifyOttChannelInputReq::fromJson(const web::json::value& val)
             InputStreamInfo refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setInput(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("encoder_settings_expand"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("encoder_settings_expand"));
+        if(!fieldValue.is_null())
+        {
+            EncoderSettingsExpand refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEncoderSettingsExpand(refVal);
         }
     }
     return ok;
@@ -172,6 +185,27 @@ bool ModifyOttChannelInputReq::inputIsSet() const
 void ModifyOttChannelInputReq::unsetinput()
 {
     inputIsSet_ = false;
+}
+
+EncoderSettingsExpand ModifyOttChannelInputReq::getEncoderSettingsExpand() const
+{
+    return encoderSettingsExpand_;
+}
+
+void ModifyOttChannelInputReq::setEncoderSettingsExpand(const EncoderSettingsExpand& value)
+{
+    encoderSettingsExpand_ = value;
+    encoderSettingsExpandIsSet_ = true;
+}
+
+bool ModifyOttChannelInputReq::encoderSettingsExpandIsSet() const
+{
+    return encoderSettingsExpandIsSet_;
+}
+
+void ModifyOttChannelInputReq::unsetencoderSettingsExpand()
+{
+    encoderSettingsExpandIsSet_ = false;
 }
 
 }

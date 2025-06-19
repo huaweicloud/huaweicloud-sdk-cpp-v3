@@ -44,7 +44,7 @@ bool DeleteBuildJobResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("result"));
         if(!fieldValue.is_null())
         {
-            DeleteBuildJobResponseBody_result refVal;
+            DeleteTheJobResponseBody_result refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setResult(refVal);
         }
@@ -62,12 +62,12 @@ bool DeleteBuildJobResponse::fromJson(const web::json::value& val)
 }
 
 
-DeleteBuildJobResponseBody_result DeleteBuildJobResponse::getResult() const
+DeleteTheJobResponseBody_result DeleteBuildJobResponse::getResult() const
 {
     return result_;
 }
 
-void DeleteBuildJobResponse::setResult(const DeleteBuildJobResponseBody_result& value)
+void DeleteBuildJobResponse::setResult(const DeleteTheJobResponseBody_result& value)
 {
     result_ = value;
     resultIsSet_ = true;

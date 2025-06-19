@@ -11,7 +11,6 @@
 
 #include <string>
 #include <huaweicloud/live/v1/model/ModifyOttChannelEncoderSettings_encoder_settings.h>
-#include <huaweicloud/live/v1/model/EncoderSettingsExpand.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -77,15 +76,6 @@ public:
     void unsetencoderSettings();
     void setEncoderSettings(const std::vector<ModifyOttChannelEncoderSettings_encoder_settings>& value);
 
-    /// <summary>
-    /// 
-    /// </summary>
-
-    EncoderSettingsExpand getEncoderSettingsExpand() const;
-    bool encoderSettingsExpandIsSet() const;
-    void unsetencoderSettingsExpand();
-    void setEncoderSettingsExpand(const EncoderSettingsExpand& value);
-
 
 protected:
     std::string domain_;
@@ -96,8 +86,6 @@ protected:
     bool idIsSet_;
     std::vector<ModifyOttChannelEncoderSettings_encoder_settings> encoderSettings_;
     bool encoderSettingsIsSet_;
-    EncoderSettingsExpand encoderSettingsExpand_;
-    bool encoderSettingsExpandIsSet_;
 
 };
 

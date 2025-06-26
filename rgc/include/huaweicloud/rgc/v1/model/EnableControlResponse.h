@@ -1,20 +1,20 @@
 
-#ifndef HUAWEICLOUD_SDK_ECS_V2_MODEL_ShowRecycleBinServerResponse_H_
-#define HUAWEICLOUD_SDK_ECS_V2_MODEL_ShowRecycleBinServerResponse_H_
+#ifndef HUAWEICLOUD_SDK_RGC_V1_MODEL_EnableControlResponse_H_
+#define HUAWEICLOUD_SDK_RGC_V1_MODEL_EnableControlResponse_H_
 
 
-#include <huaweicloud/ecs/v2/EcsExport.h>
+#include <huaweicloud/rgc/v1/RgcExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/ecs/v2/model/ServerDetail.h>
+#include <string>
 
 namespace HuaweiCloud {
 namespace Sdk {
-namespace Ecs {
-namespace V2 {
+namespace Rgc {
+namespace V1 {
 namespace Model {
 
 using namespace HuaweiCloud::Sdk::Core::Utils;
@@ -22,12 +22,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// Response Object
 /// </summary>
-class HUAWEICLOUD_ECS_V2_EXPORT  ShowRecycleBinServerResponse
+class HUAWEICLOUD_RGC_V1_EXPORT  EnableControlResponse
     : public ModelBase, public HttpResponse
 {
 public:
-    ShowRecycleBinServerResponse();
-    virtual ~ShowRecycleBinServerResponse();
+    EnableControlResponse();
+    virtual ~EnableControlResponse();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -36,21 +36,21 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// ShowRecycleBinServerResponse members
+    /// EnableControlResponse members
 
     /// <summary>
-    /// 
+    /// 控制策略的操作ID。
     /// </summary>
 
-    ServerDetail getServer() const;
-    bool serverIsSet() const;
-    void unsetserver();
-    void setServer(const ServerDetail& value);
+    std::string getControlOperateRequestId() const;
+    bool controlOperateRequestIdIsSet() const;
+    void unsetcontrolOperateRequestId();
+    void setControlOperateRequestId(const std::string& value);
 
 
 protected:
-    ServerDetail server_;
-    bool serverIsSet_;
+    std::string controlOperateRequestId_;
+    bool controlOperateRequestIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()
@@ -64,4 +64,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_ECS_V2_MODEL_ShowRecycleBinServerResponse_H_
+#endif // HUAWEICLOUD_SDK_RGC_V1_MODEL_EnableControlResponse_H_

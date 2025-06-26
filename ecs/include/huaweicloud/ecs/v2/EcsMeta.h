@@ -80,7 +80,6 @@ public:
     static HttpRequestDef genRequestDefForResizeServer();
     static HttpRequestDef genRequestDefForRevertRecycleBinServer();
     static HttpRequestDef genRequestDefForShowRecycleBin();
-    static HttpRequestDef genRequestDefForShowRecycleBinServer();
     static HttpRequestDef genRequestDefForShowResetPasswordFlag();
     static HttpRequestDef genRequestDefForShowServer();
     static HttpRequestDef genRequestDefForShowServerBlockDevice();

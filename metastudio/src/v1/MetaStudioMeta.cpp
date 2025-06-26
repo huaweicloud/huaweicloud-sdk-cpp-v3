@@ -746,6 +746,9 @@ HttpRequestDef MetaStudioMeta::genRequestDefForListAssets() {
     reqDefBuilder.withRequestField(FieldDef().withName("AppUserId")
                   .withJsonTag("app_user_id")
                   .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ProjectGroupId")
+                  .withJsonTag("project_group_id")
+                  .withLocationType(Query_));
     FieldDef headerParamAuthorization;
     reqDefBuilder.withRequestField(headerParamAuthorization
                   .withName("Authorization")

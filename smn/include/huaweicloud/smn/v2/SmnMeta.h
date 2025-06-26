@@ -42,6 +42,7 @@ public:
     static HttpRequestDef genRequestDefForListSubscriptionsByTopic();
     static HttpRequestDef genRequestDefForListTopicAttributes();
     static HttpRequestDef genRequestDefForListTopicDetails();
+    static HttpRequestDef genRequestDefForListTopicMessageStatistics();
     static HttpRequestDef genRequestDefForListTopics();
     static HttpRequestDef genRequestDefForListVersion();
     static HttpRequestDef genRequestDefForListVersions();

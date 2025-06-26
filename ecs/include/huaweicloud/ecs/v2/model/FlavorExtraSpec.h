@@ -398,6 +398,15 @@ public:
     void unsetinfoAsicAccelerators();
     void setInfoAsicAccelerators(const std::string& value);
 
+    /// <summary>
+    /// 规格特性
+    /// </summary>
+
+    std::string getInfoFeatures() const;
+    bool infoFeaturesIsSet() const;
+    void unsetinfoFeatures();
+    void setInfoFeatures(const std::string& value);
+
 
 protected:
     std::string ecsPerformancetype_;
@@ -480,6 +489,8 @@ protected:
     bool infoGpusIsSet_;
     std::string infoAsicAccelerators_;
     bool infoAsicAcceleratorsIsSet_;
+    std::string infoFeatures_;
+    bool infoFeaturesIsSet_;
 
 };
 

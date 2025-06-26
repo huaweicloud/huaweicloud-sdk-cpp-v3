@@ -126,6 +126,26 @@ public:
             { 
                 "https://dds.ae-ad-1.myhuaweicloud.com"
             });
+        regions["cn-east-5"] = Region("cn-east-5",
+            { 
+                "https://dds.cn-east-5.myhuaweicloud.com"
+            });
+        regions["cn-east-4"] = Region("cn-east-4",
+            { 
+                "https://dds.cn-east-4.myhuaweicloud.com"
+            });
+        regions["cn-north-12"] = Region("cn-north-12",
+            { 
+                "https://dds.cn-north-12.myhuaweicloud.com"
+            });
+        regions["af-north-1"] = Region("af-north-1",
+            { 
+                "https://dds.af-north-1.myhuaweicloud.com"
+            });
+        regions["ap-southeast-5"] = Region("ap-southeast-5",
+            { 
+                "https://dds.ap-southeast-5.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

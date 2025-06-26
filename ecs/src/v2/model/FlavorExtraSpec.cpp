@@ -92,6 +92,8 @@ FlavorExtraSpec::FlavorExtraSpec()
     infoGpusIsSet_ = false;
     infoAsicAccelerators_ = "";
     infoAsicAcceleratorsIsSet_ = false;
+    infoFeatures_ = "";
+    infoFeaturesIsSet_ = false;
 }
 
 FlavorExtraSpec::~FlavorExtraSpec() = default;
@@ -223,6 +225,9 @@ web::json::value FlavorExtraSpec::toJson() const
     }
     if(infoAsicAcceleratorsIsSet_) {
         val[utility::conversions::to_string_t("info:asic_accelerators")] = ModelBase::toJson(infoAsicAccelerators_);
+    }
+    if(infoFeaturesIsSet_) {
+        val[utility::conversions::to_string_t("info:features")] = ModelBase::toJson(infoFeatures_);
     }
 
     return val;
@@ -589,6 +594,15 @@ bool FlavorExtraSpec::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setInfoAsicAccelerators(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("info:features"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("info:features"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setInfoFeatures(refVal);
         }
     }
     return ok;
@@ -1433,6 +1447,27 @@ bool FlavorExtraSpec::infoAsicAcceleratorsIsSet() const
 void FlavorExtraSpec::unsetinfoAsicAccelerators()
 {
     infoAsicAcceleratorsIsSet_ = false;
+}
+
+std::string FlavorExtraSpec::getInfoFeatures() const
+{
+    return infoFeatures_;
+}
+
+void FlavorExtraSpec::setInfoFeatures(const std::string& value)
+{
+    infoFeatures_ = value;
+    infoFeaturesIsSet_ = true;
+}
+
+bool FlavorExtraSpec::infoFeaturesIsSet() const
+{
+    return infoFeaturesIsSet_;
+}
+
+void FlavorExtraSpec::unsetinfoFeatures()
+{
+    infoFeaturesIsSet_ = false;
 }
 
 }

@@ -53,6 +53,7 @@ public:
     static HttpRequestDef genRequestDefForCheckWebhookUrl();
     static HttpRequestDef genRequestDefForClearRecyclingJobs();
     static HttpRequestDef genRequestDefForCopyJob();
+    static HttpRequestDef genRequestDefForCreateNewJob();
     static HttpRequestDef genRequestDefForDeleteRecyclingJobs();
     static HttpRequestDef genRequestDefForDeleteTheJob();
     static HttpRequestDef genRequestDefForDisableTheJob();
@@ -76,6 +77,7 @@ public:
     static HttpRequestDef genRequestDefForShowJobRolePermission();
     static HttpRequestDef genRequestDefForShowJobStepStatus();
     static HttpRequestDef genRequestDefForShowJobSystemParameters();
+    static HttpRequestDef genRequestDefForShowProjectJobPermission();
     static HttpRequestDef genRequestDefForShowRunningStatus();
     static HttpRequestDef genRequestDefForUpdateNewJob();
     static HttpRequestDef genRequestDefForDeleteKeystore();
@@ -84,6 +86,8 @@ public:
     static HttpRequestDef genRequestDefForListKeystore();
     static HttpRequestDef genRequestDefForListKeystoreSearch();
     static HttpRequestDef genRequestDefForShowKeystorePermission();
+    static HttpRequestDef genRequestDefForUpdateKeystore();
+    static HttpRequestDef genRequestDefForUploadKeystore();
     static HttpRequestDef genRequestDefForDownloadLogByRecordId();
     static HttpRequestDef genRequestDefForShowFlowGraph();
     static HttpRequestDef genRequestDefForShowRecordInfo();
@@ -105,10 +109,12 @@ public:
     static HttpRequestDef genRequestDefForShowJobBuildSuccessRatio();
     static HttpRequestDef genRequestDefForShowJobBuildTime();
     static HttpRequestDef genRequestDefForShowReportSummary();
+    static HttpRequestDef genRequestDefForCreateTemplate();
     static HttpRequestDef genRequestDefForDeleteTemplate();
     static HttpRequestDef genRequestDefForListCustomTemplate();
     static HttpRequestDef genRequestDefForListOfficialTemplate();
     static HttpRequestDef genRequestDefForListRecommendOfficialTemplate();
+    static HttpRequestDef genRequestDefForSaveTemplateUsedInfo();
     static HttpRequestDef genRequestDefForShowYamlTemplate();
 };
 

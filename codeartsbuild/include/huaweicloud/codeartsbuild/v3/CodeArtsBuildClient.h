@@ -99,6 +99,9 @@
 #include <huaweicloud/codeartsbuild/v3/model/CopyBuildJobRequestBody.h>
 #include <huaweicloud/codeartsbuild/v3/model/CopyJobRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/CopyJobResponse.h>
+#include <huaweicloud/codeartsbuild/v3/model/CreateBuildJobRequestBody.h>
+#include <huaweicloud/codeartsbuild/v3/model/CreateNewJobRequest.h>
+#include <huaweicloud/codeartsbuild/v3/model/CreateNewJobResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/DeleteRecyclingJobsRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/DeleteRecyclingJobsResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/DeleteTheJobRequest.h>
@@ -149,6 +152,8 @@
 #include <huaweicloud/codeartsbuild/v3/model/ShowJobStepStatusResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowJobSystemParametersRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowJobSystemParametersResponse.h>
+#include <huaweicloud/codeartsbuild/v3/model/ShowProjectJobPermissionRequest.h>
+#include <huaweicloud/codeartsbuild/v3/model/ShowProjectJobPermissionResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowRunningStatusRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowRunningStatusResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/UpdateBuildJobRequestBody.h>
@@ -162,12 +167,19 @@
 #include <huaweicloud/codeartsbuild/v3/model/DeleteKeystoreResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/DownloadKeystoreByNameRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/DownloadKeystoreByNameResponse.h>
+#include <huaweicloud/core/utils/HttpContent.h>
 #include <huaweicloud/codeartsbuild/v3/model/ListKeystoreRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/ListKeystoreResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/ListKeystoreSearchRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/ListKeystoreSearchResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowKeystorePermissionRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowKeystorePermissionResponse.h>
+#include <huaweicloud/codeartsbuild/v3/model/UpdateKeystoreRequest.h>
+#include <huaweicloud/codeartsbuild/v3/model/UpdateKeystoreRequestBody.h>
+#include <huaweicloud/codeartsbuild/v3/model/UpdateKeystoreResponse.h>
+#include <huaweicloud/codeartsbuild/v3/model/UploadKeystoreRequest.h>
+#include <huaweicloud/codeartsbuild/v3/model/UploadKeystoreRequestBody.h>
+#include <huaweicloud/codeartsbuild/v3/model/UploadKeystoreResponse.h>
 #include <string>
 
 #include <huaweicloud/codeartsbuild/v3/model/DownloadLogByRecordIdRequest.h>
@@ -220,6 +232,9 @@
 #include <huaweicloud/codeartsbuild/v3/model/ShowReportSummaryResponse.h>
 #include <string>
 
+#include <huaweicloud/codeartsbuild/v3/model/CreateTemplateRequest.h>
+#include <huaweicloud/codeartsbuild/v3/model/CreateTemplateResponse.h>
+#include <huaweicloud/codeartsbuild/v3/model/CreateTemplatesRequestBody.h>
 #include <huaweicloud/codeartsbuild/v3/model/DeleteTemplateRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/DeleteTemplateResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/ListCustomTemplateRequest.h>
@@ -229,6 +244,9 @@
 #include <huaweicloud/codeartsbuild/v3/model/ListRecommendOfficialTemplateRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/ListRecommendOfficialTemplateRequestBody.h>
 #include <huaweicloud/codeartsbuild/v3/model/ListRecommendOfficialTemplateResponse.h>
+#include <huaweicloud/codeartsbuild/v3/model/SaveTemplateUsedInfoRequest.h>
+#include <huaweicloud/codeartsbuild/v3/model/SaveTemplateUsedInfoRequestBody.h>
+#include <huaweicloud/codeartsbuild/v3/model/SaveTemplateUsedInfoResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowYamlTemplateRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowYamlTemplateResponse.h>
 #include <string>
@@ -580,6 +598,14 @@ public:
     std::shared_ptr<CopyJobResponse> copyJob(
         CopyJobRequest &request
     );
+    // 创建构建任务
+    //
+    // 创建构建任务
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateNewJobResponse> createNewJob(
+        CreateNewJobRequest &request
+    );
     // 删除回收站中的任务
     //
     // 删除回收站中的任务
@@ -764,6 +790,14 @@ public:
     std::shared_ptr<ShowJobSystemParametersResponse> showJobSystemParameters(
         ShowJobSystemParametersRequest &request
     );
+    // 获取任务权限矩阵
+    //
+    // 获取任务权限矩阵
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowProjectJobPermissionResponse> showProjectJobPermission(
+        ShowProjectJobPermissionRequest &request
+    );
     // 查看任务是否在构建
     //
     // 查看任务是否在构建
@@ -828,6 +862,22 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowKeystorePermissionResponse> showKeystorePermission(
         ShowKeystorePermissionRequest &request
+    );
+    // 更新文件信息
+    //
+    // 更新文件信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateKeystoreResponse> updateKeystore(
+        UpdateKeystoreRequest &request
+    );
+    // 上传文件
+    //
+    // 上传文件
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UploadKeystoreResponse> uploadKeystore(
+        UploadKeystoreRequest &request
     );
 
     // 下载构建日志(待下线)
@@ -1001,6 +1051,14 @@ public:
         ShowReportSummaryRequest &request
     );
 
+    // 创建构建模板
+    //
+    // 创建构建模板
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateTemplateResponse> createTemplate(
+        CreateTemplateRequest &request
+    );
     // 删除构建模板
     //
     // 删除构建模板
@@ -1032,6 +1090,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListRecommendOfficialTemplateResponse> listRecommendOfficialTemplate(
         ListRecommendOfficialTemplateRequest &request
+    );
+    // 保存模板使用记录
+    //
+    // 保存模板使用记录
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SaveTemplateUsedInfoResponse> saveTemplateUsedInfo(
+        SaveTemplateUsedInfoRequest &request
     );
     // 获取代码化构建默认模板
     //

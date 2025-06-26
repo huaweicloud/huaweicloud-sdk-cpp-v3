@@ -37,6 +37,10 @@ VoiceModelAssetMeta::VoiceModelAssetMeta()
     isSupportThaiAutoSplitIsSet_ = false;
     isFlexus_ = false;
     isFlexusIsSet_ = false;
+    isEnhanceRhythm_ = false;
+    isEnhanceRhythmIsSet_ = false;
+    age_ = "";
+    ageIsSet_ = false;
 }
 
 VoiceModelAssetMeta::~VoiceModelAssetMeta() = default;
@@ -90,6 +94,12 @@ web::json::value VoiceModelAssetMeta::toJson() const
     }
     if(isFlexusIsSet_) {
         val[utility::conversions::to_string_t("is_flexus")] = ModelBase::toJson(isFlexus_);
+    }
+    if(isEnhanceRhythmIsSet_) {
+        val[utility::conversions::to_string_t("is_enhance_rhythm")] = ModelBase::toJson(isEnhanceRhythm_);
+    }
+    if(ageIsSet_) {
+        val[utility::conversions::to_string_t("age")] = ModelBase::toJson(age_);
     }
 
     return val;
@@ -222,6 +232,24 @@ bool VoiceModelAssetMeta::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsFlexus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_enhance_rhythm"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_enhance_rhythm"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsEnhanceRhythm(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("age"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("age"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAge(refVal);
         }
     }
     return ok;
@@ -520,6 +548,48 @@ bool VoiceModelAssetMeta::isFlexusIsSet() const
 void VoiceModelAssetMeta::unsetisFlexus()
 {
     isFlexusIsSet_ = false;
+}
+
+bool VoiceModelAssetMeta::isIsEnhanceRhythm() const
+{
+    return isEnhanceRhythm_;
+}
+
+void VoiceModelAssetMeta::setIsEnhanceRhythm(bool value)
+{
+    isEnhanceRhythm_ = value;
+    isEnhanceRhythmIsSet_ = true;
+}
+
+bool VoiceModelAssetMeta::isEnhanceRhythmIsSet() const
+{
+    return isEnhanceRhythmIsSet_;
+}
+
+void VoiceModelAssetMeta::unsetisEnhanceRhythm()
+{
+    isEnhanceRhythmIsSet_ = false;
+}
+
+std::string VoiceModelAssetMeta::getAge() const
+{
+    return age_;
+}
+
+void VoiceModelAssetMeta::setAge(const std::string& value)
+{
+    age_ = value;
+    ageIsSet_ = true;
+}
+
+bool VoiceModelAssetMeta::ageIsSet() const
+{
+    return ageIsSet_;
+}
+
+void VoiceModelAssetMeta::unsetage()
+{
+    ageIsSet_ = false;
 }
 
 }

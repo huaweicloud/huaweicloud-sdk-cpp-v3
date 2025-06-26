@@ -1165,6 +1165,9 @@ std::shared_ptr<ListAssetsResponse> MetaStudioClient::listAssets(ListAssetsReque
     if (request.appUserIdIsSet()) {
         localVarQueryParams["app_user_id"] = parameterToString(request.getAppUserId());
     }
+    if (request.projectGroupIdIsSet()) {
+        localVarQueryParams["project_group_id"] = parameterToString(request.getProjectGroupId());
+    }
     if (request.authorizationIsSet()) {
         localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
     }

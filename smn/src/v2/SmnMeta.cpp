@@ -243,6 +243,17 @@ HttpRequestDef SmnMeta::genRequestDefForListTopicDetails() {
     return reqDefBuilder;
 }
 
+HttpRequestDef SmnMeta::genRequestDefForListTopicMessageStatistics() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("StartTime")
+                  .withJsonTag("start_time")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("EndTime")
+                  .withJsonTag("end_time")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef SmnMeta::genRequestDefForListTopics() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Offset")

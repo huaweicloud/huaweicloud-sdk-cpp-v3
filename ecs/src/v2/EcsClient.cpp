@@ -2751,36 +2751,6 @@ std::shared_ptr<ShowRecycleBinResponse> EcsClient::showRecycleBin(ShowRecycleBin
 
     return localVarResult;
 }
-std::shared_ptr<ShowRecycleBinServerResponse> EcsClient::showRecycleBinServer(ShowRecycleBinServerRequest &request)
-{
-    std::string localVarPath = "/v1/{project_id}/recycle-bin/cloudservers/{server_id}";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["server_id"] = parameterToString(request.getServerId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, EcsMeta::genRequestDefForShowRecycleBinServer());
-
-    std::shared_ptr<ShowRecycleBinServerResponse> localVarResult = std::make_shared<ShowRecycleBinServerResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
 std::shared_ptr<ShowResetPasswordFlagResponse> EcsClient::showResetPasswordFlag(ShowResetPasswordFlagRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/cloudservers/{server_id}/os-resetpwd-flag";

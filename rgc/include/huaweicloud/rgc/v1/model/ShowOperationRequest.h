@@ -1,9 +1,9 @@
 
-#ifndef HUAWEICLOUD_SDK_ECS_V2_MODEL_ShowRecycleBinServerRequest_H_
-#define HUAWEICLOUD_SDK_ECS_V2_MODEL_ShowRecycleBinServerRequest_H_
+#ifndef HUAWEICLOUD_SDK_RGC_V1_MODEL_ShowOperationRequest_H_
+#define HUAWEICLOUD_SDK_RGC_V1_MODEL_ShowOperationRequest_H_
 
 
-#include <huaweicloud/ecs/v2/EcsExport.h>
+#include <huaweicloud/rgc/v1/RgcExport.h>
 
 #include <huaweicloud/core/utils/ModelBase.h>
 #include <huaweicloud/core/utils/Utils.h>
@@ -13,8 +13,8 @@
 
 namespace HuaweiCloud {
 namespace Sdk {
-namespace Ecs {
-namespace V2 {
+namespace Rgc {
+namespace V1 {
 namespace Model {
 
 using namespace HuaweiCloud::Sdk::Core::Utils;
@@ -22,12 +22,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// Request Object
 /// </summary>
-class HUAWEICLOUD_ECS_V2_EXPORT  ShowRecycleBinServerRequest
+class HUAWEICLOUD_RGC_V1_EXPORT  ShowOperationRequest
     : public ModelBase
 {
 public:
-    ShowRecycleBinServerRequest();
-    virtual ~ShowRecycleBinServerRequest();
+    ShowOperationRequest();
+    virtual ~ShowOperationRequest();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -36,26 +36,26 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// ShowRecycleBinServerRequest members
+    /// ShowOperationRequest members
 
     /// <summary>
-    /// 云服务器ID。
+    /// 操作ID。
     /// </summary>
 
-    std::string getServerId() const;
-    bool serverIdIsSet() const;
-    void unsetserverId();
-    void setServerId(const std::string& value);
+    std::string getOperationId() const;
+    bool operationIdIsSet() const;
+    void unsetoperationId();
+    void setOperationId(const std::string& value);
 
 
 protected:
-    std::string serverId_;
-    bool serverIdIsSet_;
+    std::string operationId_;
+    bool operationIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()
 public:
-    ShowRecycleBinServerRequest& dereference_from_shared_ptr(std::shared_ptr<ShowRecycleBinServerRequest> ptr) {
+    ShowOperationRequest& dereference_from_shared_ptr(std::shared_ptr<ShowOperationRequest> ptr) {
         return *ptr;
     }
 #endif
@@ -68,4 +68,4 @@ public:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_ECS_V2_MODEL_ShowRecycleBinServerRequest_H_
+#endif // HUAWEICLOUD_SDK_RGC_V1_MODEL_ShowOperationRequest_H_

@@ -103,7 +103,7 @@ public:
     void setAuthKey(const std::string& value);
 
     /// <summary>
-    /// 鉴权key过期时间。从1970年1月1日（UTC/GMT的午夜）开始所经过的豪秒数。
+    /// 鉴权key过期时间。从1970年1月1日（UTC/GMT的午夜）开始所经过的毫秒数。
     /// </summary>
 
     int64_t getExpiresTime() const;

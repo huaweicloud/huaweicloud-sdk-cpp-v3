@@ -344,6 +344,15 @@ HttpRequestDef CodeArtsBuildMeta::genRequestDefForCopyJob() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForCreateNewJob() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CodeArtsBuildMeta::genRequestDefForDeleteRecyclingJobs() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -542,6 +551,17 @@ HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowJobSystemParameters() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowProjectJobPermission() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("ProjectId")
+                  .withJsonTag("project_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("JobId")
+                  .withJsonTag("job_id")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowRunningStatus() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
@@ -607,6 +627,25 @@ HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowKeystorePermission() {
     reqDefBuilder.withRequestField(FieldDef().withName("Page")
                   .withJsonTag("page")
                   .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForUpdateKeystore() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForUploadKeystore() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef formBodyParams;
+    reqDefBuilder.withRequestField(formBodyParams.
+                  withName("").
+                  withName("Body").
+                  withLocationType(Body_));
     return reqDefBuilder;
 }
 
@@ -816,6 +855,15 @@ HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowReportSummary() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForCreateTemplate() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CodeArtsBuildMeta::genRequestDefForDeleteTemplate() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
@@ -856,6 +904,15 @@ HttpRequestDef CodeArtsBuildMeta::genRequestDefForListOfficialTemplate() {
 }
 
 HttpRequestDef CodeArtsBuildMeta::genRequestDefForListRecommendOfficialTemplate() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForSaveTemplateUsedInfo() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.

@@ -168,6 +168,24 @@ public:
     void unsetisFlexus();
     void setIsFlexus(bool value);
 
+    /// <summary>
+    /// 是否增强韵律
+    /// </summary>
+
+    bool isIsEnhanceRhythm() const;
+    bool isEnhanceRhythmIsSet() const;
+    void unsetisEnhanceRhythm();
+    void setIsEnhanceRhythm(bool value);
+
+    /// <summary>
+    /// 音色年龄段：青年、中年、老年
+    /// </summary>
+
+    std::string getAge() const;
+    bool ageIsSet() const;
+    void unsetage();
+    void setAge(const std::string& value);
+
 
 protected:
     int32_t order_;
@@ -198,6 +216,10 @@ protected:
     bool isSupportThaiAutoSplitIsSet_;
     bool isFlexus_;
     bool isFlexusIsSet_;
+    bool isEnhanceRhythm_;
+    bool isEnhanceRhythmIsSet_;
+    std::string age_;
+    bool ageIsSet_;
 
 };
 

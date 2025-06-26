@@ -157,7 +157,7 @@ public:
     void setSortDir(const std::string& value);
 
     /// <summary>
-    /// 资产来源。 * SYSTEM：系统资产 * CUSTOMIZATION：租户资产 * ALL：所有资产  默认查询租户资产。
+    /// 资产来源。 * SYSTEM：系统资产 * CUSTOMIZATION：租户资产 * GROUP_CUSTOMIZATION：租户组资产 * ALL：所有资产  默认查询租户资产。
     /// </summary>
 
     std::string getAssetSource() const;
@@ -229,7 +229,7 @@ public:
     void setLanguage(const std::string& value);
 
     /// <summary>
-    /// 系统属性。  key和value间用\&quot;:\&quot;分隔，多个key之间用\&quot;,\&quot;分隔。  如system_property&#x3D;BACKGROUND_IMG:Yes,RENDER_ENGINE:MetaEngine。  不同Key对应Value取值如下：  公共资产属性： * BACKGROUND_IMG：视频制作的2D背景图片，可取值Yes * CREATED_BY_PLATFORM：是否平台生成，可取值Yes  分身数字人资产属性： * MATERIAL_IMG：素材图片，用作前景。可取值Yes * MATERIAL_VIDEO：素材视频，用作前景。可取值Yes * TO_BE_TRANSLATED_VIDEO: 视频翻译的源视频。可取值Yes  3D数字人资产属性： * STYLE_ID：风格Id * RENDER_ENGINE：引擎类型，可取值UE或MetaEngine * BACKGROUND_SCENE：视频制作的2D背景场景，可取值Horizontal（横屏）或者Vertical（竖屏）
+    /// 系统属性。  key和value间用\&quot;:\&quot;分隔，多个key之间用\&quot;,\&quot;分隔。  如system_property&#x3D;BACKGROUND_IMG:Yes,RENDER_ENGINE:MetaEngine。  不同Key对应Value取值如下：  公共资产属性： * BACKGROUND_IMG：视频制作的2D背景图片，可取值Yes * CREATED_BY_PLATFORM：是否平台生成，可取值Yes  分身数字人资产属性： * MATERIAL_IMG：素材图片，用作前景。可取值Yes * MATERIAL_VIDEO：素材视频，用作前景。可取值Yes * TO_BE_TRANSLATED_VIDEO: 视频翻译的源视频。可取值Yes  3D数字人资产属性： * STYLE_ID：风格Id * RENDER_ENGINE：引擎类型，可取值UE或MetaEngine * BACKGROUND_SCENE：视频制作的2D背景场景，可取值Horizontal（横屏）或者Vertical（竖屏）  租户组资产验签属性： * SIG：加签秘钥。取值方式SIG&#x3D;HexEncode(HMAC-SHA256(group_id:EXP_TIME:NONCE,key)) * EXP_TIME：过期时间，当前时间增加增加10分钟。取值示例1627768613 * NONCE：随机字符串。取值示例：EycLQsHwxhzK9OW8UEKWNfH2I3CGR2nINuU1EBpv162d42d92s
     /// </summary>
 
     std::string getSystemProperty() const;
@@ -336,6 +336,15 @@ public:
     void unsetappUserId();
     void setAppUserId(const std::string& value);
 
+    /// <summary>
+    /// 租户组id。只支持asset_souce是ALL 或者GROUP_CUSTOMIZATION 来源。
+    /// </summary>
+
+    std::string getProjectGroupId() const;
+    bool projectGroupIdIsSet() const;
+    void unsetprojectGroupId();
+    void setProjectGroupId(const std::string& value);
+
 
 protected:
     std::string authorization_;
@@ -404,6 +413,8 @@ protected:
     bool supportedServiceIsSet_;
     std::string appUserId_;
     bool appUserIdIsSet_;
+    std::string projectGroupId_;
+    bool projectGroupIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

@@ -795,11 +795,6 @@ HttpRequestDef EcsMeta::genRequestDefForShowRecycleBin() {
     return reqDefBuilder;
 }
 
-HttpRequestDef EcsMeta::genRequestDefForShowRecycleBinServer() {
-    HttpRequestDef reqDefBuilder;
-    return reqDefBuilder;
-}
-
 HttpRequestDef EcsMeta::genRequestDefForShowResetPasswordFlag() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;

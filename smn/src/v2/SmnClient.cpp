@@ -1089,6 +1089,42 @@ std::shared_ptr<ListTopicDetailsResponse> SmnClient::listTopicDetails(ListTopicD
 
     return localVarResult;
 }
+std::shared_ptr<ListTopicMessageStatisticsResponse> SmnClient::listTopicMessageStatistics(ListTopicMessageStatisticsRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/notifications/topics/{topic_urn}/statistics";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["topic_urn"] = parameterToString(request.getTopicUrn());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.startTimeIsSet()) {
+        localVarQueryParams["start_time"] = parameterToString(request.getStartTime());
+    }
+    if (request.endTimeIsSet()) {
+        localVarQueryParams["end_time"] = parameterToString(request.getEndTime());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, SmnMeta::genRequestDefForListTopicMessageStatistics());
+
+    std::shared_ptr<ListTopicMessageStatisticsResponse> localVarResult = std::make_shared<ListTopicMessageStatisticsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListTopicsResponse> SmnClient::listTopics(ListTopicsRequest &request)
 {
     std::string localVarPath = "/v2/{project_id}/notifications/topics";

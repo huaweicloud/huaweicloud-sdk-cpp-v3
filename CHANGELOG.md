@@ -1,3 +1,87 @@
+# 3.1.142 2025-06-26
+
+### HuaweiCloud SDK CodeArtsBuild
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the following APIs:
+    - `UploadKeystore`
+    - `UpdateKeystore`
+    - `ShowProjectJobPermission`
+    - `SaveTemplateUsedInfo`
+    - `CreateTemplate`
+    - `CreateNewJob`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK ECS
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the API `ShowRecycleBinServer`
+  - **ListFlavors**
+    - changes of response param
+      - `+ flavors.os_extra_specs.info:features`
+  - **ListResizeFlavors**
+    - changes of response param
+      - `+ flavors.extra_specs.info:features`
+
+### HuaweiCloud SDK MetaStudio
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowAsset**
+    - changes of response param
+      - `+ asset_extra_meta.voice_model_meta.is_enhance_rhythm`
+      - `+ asset_extra_meta.voice_model_meta.age`
+      - `+ asset_extra_meta.human_model_2d_meta.model_version: enum value [V3_3]`
+  - **UpdateDigitalAsset**
+    - changes of request param
+      - `+ asset_extra_meta.voice_model_meta.is_enhance_rhythm`
+      - `+ asset_extra_meta.voice_model_meta.age`
+      - `+ asset_extra_meta.human_model_2d_meta.model_version: enum value [V3_3]`
+    - changes of response param
+      - `+ asset_extra_meta.voice_model_meta.is_enhance_rhythm`
+      - `+ asset_extra_meta.voice_model_meta.age`
+      - `+ asset_extra_meta.human_model_2d_meta.model_version: enum value [V3_3]`
+  - **CreateDigitalAsset**
+    - changes of request param
+      - `+ asset_extra_meta.voice_model_meta.is_enhance_rhythm`
+      - `+ asset_extra_meta.voice_model_meta.age`
+      - `+ asset_extra_meta.human_model_2d_meta.model_version: enum value [V3_3]`
+  - **ListAssets**
+    - changes of request param
+      - `+ project_group_id`
+      - `+ asset_source: enum value [GROUP_CUSTOMIZATION]`
+    - changes of response param
+      - `+ assets.asset_extra_meta.voice_model_meta.is_enhance_rhythm`
+      - `+ assets.asset_extra_meta.voice_model_meta.age`
+      - `+ assets.asset_extra_meta.human_model_2d_meta.model_version: enum value [V3_3]`
+
+### HuaweiCloud SDK SMN
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the API `ListTopicMessageStatistics`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.141 2025-06-19
 
 ### HuaweiCloud SDK EIP

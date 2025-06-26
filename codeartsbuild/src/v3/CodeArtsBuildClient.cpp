@@ -1411,6 +1411,47 @@ std::shared_ptr<CopyJobResponse> CodeArtsBuildClient::copyJob(CopyJobRequest &re
 
     return localVarResult;
 }
+std::shared_ptr<CreateNewJobResponse> CodeArtsBuildClient::createNewJob(CreateNewJobRequest &request)
+{
+    std::string localVarPath = "/v1/job/create";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsBuildMeta::genRequestDefForCreateNewJob());
+
+    std::shared_ptr<CreateNewJobResponse> localVarResult = std::make_shared<CreateNewJobResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<DeleteRecyclingJobsResponse> CodeArtsBuildClient::deleteRecyclingJobs(DeleteRecyclingJobsRequest &request)
 {
     std::string localVarPath = "/v1/job/recycling-deletion";
@@ -2214,6 +2255,41 @@ std::shared_ptr<ShowJobSystemParametersResponse> CodeArtsBuildClient::showJobSys
 
     return localVarResult;
 }
+std::shared_ptr<ShowProjectJobPermissionResponse> CodeArtsBuildClient::showProjectJobPermission(ShowProjectJobPermissionRequest &request)
+{
+    std::string localVarPath = "/v1/job/permission";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.projectIdIsSet()) {
+        localVarQueryParams["project_id"] = parameterToString(request.getProjectId());
+    }
+    if (request.jobIdIsSet()) {
+        localVarQueryParams["job_id"] = parameterToString(request.getJobId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsBuildMeta::genRequestDefForShowProjectJobPermission());
+
+    std::shared_ptr<ShowProjectJobPermissionResponse> localVarResult = std::make_shared<ShowProjectJobPermissionResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowRunningStatusResponse> CodeArtsBuildClient::showRunningStatus(ShowRunningStatusRequest &request)
 {
     std::string localVarPath = "/v1/job/{job_id}/running-status";
@@ -2480,6 +2556,83 @@ std::shared_ptr<ShowKeystorePermissionResponse> CodeArtsBuildClient::showKeystor
         localVarHeaderParams, localVarHttpBody, CodeArtsBuildMeta::genRequestDefForShowKeystorePermission());
 
     std::shared_ptr<ShowKeystorePermissionResponse> localVarResult = std::make_shared<ShowKeystorePermissionResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateKeystoreResponse> CodeArtsBuildClient::updateKeystore(UpdateKeystoreRequest &request)
+{
+    std::string localVarPath = "/v2/keystore/update/{id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["id"] = parameterToString(request.getId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsBuildMeta::genRequestDefForUpdateKeystore());
+
+    std::shared_ptr<UpdateKeystoreResponse> localVarResult = std::make_shared<UpdateKeystoreResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<UploadKeystoreResponse> CodeArtsBuildClient::uploadKeystore(UploadKeystoreRequest &request)
+{
+    std::string localVarPath = "/v2/keystore/upload";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("multipart/form-data", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.IsSet()) {
+        localVarFormParams["privacy"] = parameterToString(request.getPrivacy());
+    }
+    if (request.IsSet()) {
+        localVarFormParams["description"] = parameterToString(request.getDescription());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsBuildMeta::genRequestDefForUploadKeystore());
+
+    std::shared_ptr<UploadKeystoreResponse> localVarResult = std::make_shared<UploadKeystoreResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -3229,6 +3382,47 @@ std::shared_ptr<ShowReportSummaryResponse> CodeArtsBuildClient::showReportSummar
 
     return localVarResult;
 }
+std::shared_ptr<CreateTemplateResponse> CodeArtsBuildClient::createTemplate(CreateTemplateRequest &request)
+{
+    std::string localVarPath = "/v1/template/create";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsBuildMeta::genRequestDefForCreateTemplate());
+
+    std::shared_ptr<CreateTemplateResponse> localVarResult = std::make_shared<CreateTemplateResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<DeleteTemplateResponse> CodeArtsBuildClient::deleteTemplate(DeleteTemplateRequest &request)
 {
     std::string localVarPath = "/v1/template/{uuid}/delete";
@@ -3370,6 +3564,47 @@ std::shared_ptr<ListRecommendOfficialTemplateResponse> CodeArtsBuildClient::list
         localVarHeaderParams, localVarHttpBody, CodeArtsBuildMeta::genRequestDefForListRecommendOfficialTemplate());
 
     std::shared_ptr<ListRecommendOfficialTemplateResponse> localVarResult = std::make_shared<ListRecommendOfficialTemplateResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<SaveTemplateUsedInfoResponse> CodeArtsBuildClient::saveTemplateUsedInfo(SaveTemplateUsedInfoRequest &request)
+{
+    std::string localVarPath = "/v1/template/used-info";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CodeArtsBuildMeta::genRequestDefForSaveTemplateUsedInfo());
+
+    std::shared_ptr<SaveTemplateUsedInfoResponse> localVarResult = std::make_shared<SaveTemplateUsedInfoResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

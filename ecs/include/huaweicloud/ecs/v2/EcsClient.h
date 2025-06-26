@@ -177,8 +177,6 @@
 #include <huaweicloud/ecs/v2/model/RevertRecycleBinServerResponse.h>
 #include <huaweicloud/ecs/v2/model/ShowRecycleBinRequest.h>
 #include <huaweicloud/ecs/v2/model/ShowRecycleBinResponse.h>
-#include <huaweicloud/ecs/v2/model/ShowRecycleBinServerRequest.h>
-#include <huaweicloud/ecs/v2/model/ShowRecycleBinServerResponse.h>
 #include <huaweicloud/ecs/v2/model/ShowResetPasswordFlagRequest.h>
 #include <huaweicloud/ecs/v2/model/ShowResetPasswordFlagResponse.h>
 #include <huaweicloud/ecs/v2/model/ShowServerBlockDeviceRequest.h>
@@ -884,13 +882,6 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowRecycleBinResponse> showRecycleBin(
         ShowRecycleBinRequest &request
-    );
-    // 查询回收站中指定云服务器
-    //
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ShowRecycleBinServerResponse> showRecycleBinServer(
-        ShowRecycleBinServerRequest &request
     );
     // 查询是否支持一键重置密码
     //

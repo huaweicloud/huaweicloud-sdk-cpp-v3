@@ -68,7 +68,7 @@ public:
     void setSupportLive(bool value);
 
     /// <summary>
-    /// **参数解释**： 分身数字人模型版本 **约束限制**： 不涉及 **取值范围**： * V2: V2版本模型 * V3：V3版本模型 * V3_2：V3.2版本模型
+    /// **参数解释**： 分身数字人模型版本 **约束限制**： 不涉及 **取值范围**： * V2: V2版本模型 * V3：V3版本模型 * V3_2：V3.2版本模型 * V3_3：V3.3版本模型
     /// </summary>
 
     std::string getModelVersion() const;

@@ -1,0 +1,141 @@
+
+#ifndef HUAWEICLOUD_SDK_RGC_V1_MODEL_EnabledControl_H_
+#define HUAWEICLOUD_SDK_RGC_V1_MODEL_EnabledControl_H_
+
+
+#include <huaweicloud/rgc/v1/RgcExport.h>
+
+#include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
+#include <huaweicloud/core/http/HttpResponse.h>
+
+#include <string>
+
+namespace HuaweiCloud {
+namespace Sdk {
+namespace Rgc {
+namespace V1 {
+namespace Model {
+
+using namespace HuaweiCloud::Sdk::Core::Utils;
+using namespace HuaweiCloud::Sdk::Core::Http;
+/// <summary>
+/// 开启控制策略信息。
+/// </summary>
+class HUAWEICLOUD_RGC_V1_EXPORT  EnabledControl
+    : public ModelBase
+{
+public:
+    EnabledControl();
+    virtual ~EnabledControl();
+
+    /////////////////////////////////////////////
+    /// ModelBase overrides
+
+    void validate() override;
+    web::json::value toJson() const override;
+    bool fromJson(const web::json::value& json) override;
+    /////////////////////////////////////////////
+    /// EnabledControl members
+
+    /// <summary>
+    /// 管理纳管账号ID。
+    /// </summary>
+
+    std::string getManageAccountId() const;
+    bool manageAccountIdIsSet() const;
+    void unsetmanageAccountId();
+    void setManageAccountId(const std::string& value);
+
+    /// <summary>
+    /// 控制策略标识。
+    /// </summary>
+
+    std::string getControlIdentifier() const;
+    bool controlIdentifierIsSet() const;
+    void unsetcontrolIdentifier();
+    void setControlIdentifier(const std::string& value);
+
+    /// <summary>
+    /// 控制策略名称。
+    /// </summary>
+
+    std::string getName() const;
+    bool nameIsSet() const;
+    void unsetname();
+    void setName(const std::string& value);
+
+    /// <summary>
+    /// 控制策略描述。
+    /// </summary>
+
+    std::string getDescription() const;
+    bool descriptionIsSet() const;
+    void unsetdescription();
+    void setDescription(const std::string& value);
+
+    /// <summary>
+    /// 控制策略目标。
+    /// </summary>
+
+    std::string getControlObjective() const;
+    bool controlObjectiveIsSet() const;
+    void unsetcontrolObjective();
+    void setControlObjective(const std::string& value);
+
+    /// <summary>
+    /// 控制策略类型。包括主动性控制策略Proactive、检测性控制策略Detective、预防性控制策略Preventive。
+    /// </summary>
+
+    std::string getBehavior() const;
+    bool behaviorIsSet() const;
+    void unsetbehavior();
+    void setBehavior(const std::string& value);
+
+    /// <summary>
+    /// 纳管账号的创建来源，包括CUSTOM和RGC。
+    /// </summary>
+
+    std::string getOwner() const;
+    bool ownerIsSet() const;
+    void unsetowner();
+    void setOwner(const std::string& value);
+
+    /// <summary>
+    /// 区域选项，取值有两种分别是：区域的regional和全局的global。
+    /// </summary>
+
+    std::string getRegionalPreference() const;
+    bool regionalPreferenceIsSet() const;
+    void unsetregionalPreference();
+    void setRegionalPreference(const std::string& value);
+
+
+protected:
+    std::string manageAccountId_;
+    bool manageAccountIdIsSet_;
+    std::string controlIdentifier_;
+    bool controlIdentifierIsSet_;
+    std::string name_;
+    bool nameIsSet_;
+    std::string description_;
+    bool descriptionIsSet_;
+    std::string controlObjective_;
+    bool controlObjectiveIsSet_;
+    std::string behavior_;
+    bool behaviorIsSet_;
+    std::string owner_;
+    bool ownerIsSet_;
+    std::string regionalPreference_;
+    bool regionalPreferenceIsSet_;
+
+};
+
+
+}
+}
+}
+}
+}
+
+#endif // HUAWEICLOUD_SDK_RGC_V1_MODEL_EnabledControl_H_

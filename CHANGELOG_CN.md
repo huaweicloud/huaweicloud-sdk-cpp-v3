@@ -1,3 +1,87 @@
+# 3.1.142 2025-06-26
+
+### HuaweiCloud SDK CodeArtsBuild
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持以下接口：
+    - `UploadKeystore`
+    - `UpdateKeystore`
+    - `ShowProjectJobPermission`
+    - `SaveTemplateUsedInfo`
+    - `CreateTemplate`
+    - `CreateNewJob`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK ECS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 移除接口`ShowRecycleBinServer`
+  - **ListFlavors**
+    - 响应参数变更
+      - `+ flavors.os_extra_specs.info:features`
+  - **ListResizeFlavors**
+    - 响应参数变更
+      - `+ flavors.extra_specs.info:features`
+
+### HuaweiCloud SDK MetaStudio
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowAsset**
+    - 响应参数变更
+      - `+ asset_extra_meta.voice_model_meta.is_enhance_rhythm`
+      - `+ asset_extra_meta.voice_model_meta.age`
+      - `+ asset_extra_meta.human_model_2d_meta.model_version: enum value [V3_3]`
+  - **UpdateDigitalAsset**
+    - 请求参数变更
+      - `+ asset_extra_meta.voice_model_meta.is_enhance_rhythm`
+      - `+ asset_extra_meta.voice_model_meta.age`
+      - `+ asset_extra_meta.human_model_2d_meta.model_version: enum value [V3_3]`
+    - 响应参数变更
+      - `+ asset_extra_meta.voice_model_meta.is_enhance_rhythm`
+      - `+ asset_extra_meta.voice_model_meta.age`
+      - `+ asset_extra_meta.human_model_2d_meta.model_version: enum value [V3_3]`
+  - **CreateDigitalAsset**
+    - 请求参数变更
+      - `+ asset_extra_meta.voice_model_meta.is_enhance_rhythm`
+      - `+ asset_extra_meta.voice_model_meta.age`
+      - `+ asset_extra_meta.human_model_2d_meta.model_version: enum value [V3_3]`
+  - **ListAssets**
+    - 请求参数变更
+      - `+ project_group_id`
+      - `+ asset_source: enum value [GROUP_CUSTOMIZATION]`
+    - 响应参数变更
+      - `+ assets.asset_extra_meta.voice_model_meta.is_enhance_rhythm`
+      - `+ assets.asset_extra_meta.voice_model_meta.age`
+      - `+ assets.asset_extra_meta.human_model_2d_meta.model_version: enum value [V3_3]`
+
+### HuaweiCloud SDK SMN
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持接口`ListTopicMessageStatistics`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.1.141 2025-06-19
 
 ### HuaweiCloud SDK EIP

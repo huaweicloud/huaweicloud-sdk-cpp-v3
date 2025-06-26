@@ -75,6 +75,8 @@
 #include <huaweicloud/smn/v2/model/ListTopicAttributesResponse.h>
 #include <huaweicloud/smn/v2/model/ListTopicDetailsRequest.h>
 #include <huaweicloud/smn/v2/model/ListTopicDetailsResponse.h>
+#include <huaweicloud/smn/v2/model/ListTopicMessageStatisticsRequest.h>
+#include <huaweicloud/smn/v2/model/ListTopicMessageStatisticsResponse.h>
 #include <huaweicloud/smn/v2/model/ListTopicsRequest.h>
 #include <huaweicloud/smn/v2/model/ListTopicsResponse.h>
 #include <huaweicloud/smn/v2/model/ListVersionRequest.h>
@@ -401,6 +403,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListTopicDetailsResponse> listTopicDetails(
         ListTopicDetailsRequest &request
+    );
+    // 查询主题的发送详情
+    //
+    // 查询Topic的发送数据详情，最多支持查询31天内所有计量数据
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListTopicMessageStatisticsResponse> listTopicMessageStatistics(
+        ListTopicMessageStatisticsRequest &request
     );
     // 查询主题列表
     //

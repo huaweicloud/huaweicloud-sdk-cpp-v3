@@ -38,6 +38,8 @@
 #include <huaweicloud/rds/v3/model/ChangeFailoverStrategyResponse.h>
 #include <huaweicloud/rds/v3/model/ChangeOpsWindowRequest.h>
 #include <huaweicloud/rds/v3/model/ChangeOpsWindowResponse.h>
+#include <huaweicloud/rds/v3/model/CheckInstanceForUpgradeRequest.h>
+#include <huaweicloud/rds/v3/model/CheckInstanceForUpgradeResponse.h>
 #include <huaweicloud/rds/v3/model/ConfigurationCopyRequestBody.h>
 #include <huaweicloud/rds/v3/model/ConfigurationForCreation.h>
 #include <huaweicloud/rds/v3/model/ConfigurationForUpdate.h>
@@ -72,6 +74,7 @@
 #include <huaweicloud/rds/v3/model/CustomerModifyAutoUpgradePolicyReq.h>
 #include <huaweicloud/rds/v3/model/CustomerUpgradeDatabaseVersionReq.h>
 #include <huaweicloud/rds/v3/model/CustomerUpgradeDatabaseVersionReqNew.h>
+#include <huaweicloud/rds/v3/model/CustomerUpgradeMajorVersionReq.h>
 #include <huaweicloud/rds/v3/model/DataIpRequest.h>
 #include <huaweicloud/rds/v3/model/DeleteConfigurationRequest.h>
 #include <huaweicloud/rds/v3/model/DeleteConfigurationResponse.h>
@@ -236,6 +239,7 @@
 #include <huaweicloud/rds/v3/model/PostgresqlHbaHistory.h>
 #include <huaweicloud/rds/v3/model/PostgresqlPreCheckUpgradeMajorVersionReq.h>
 #include <huaweicloud/rds/v3/model/QueryDRInfoRequest.h>
+#include <huaweicloud/rds/v3/model/RdsUpgradePrecheckV3Req.h>
 #include <huaweicloud/rds/v3/model/RecyclePolicyRequestBody.h>
 #include <huaweicloud/rds/v3/model/ReduceVolumeRequestBody.h>
 #include <huaweicloud/rds/v3/model/ResizeFlavorRequest.h>
@@ -312,6 +316,8 @@
 #include <huaweicloud/rds/v3/model/ShowInstanceConfigurationResponse.h>
 #include <huaweicloud/rds/v3/model/ShowOffSiteBackupPolicyRequest.h>
 #include <huaweicloud/rds/v3/model/ShowOffSiteBackupPolicyResponse.h>
+#include <huaweicloud/rds/v3/model/ShowPrecheckResultRequest.h>
+#include <huaweicloud/rds/v3/model/ShowPrecheckResultResponse.h>
 #include <huaweicloud/rds/v3/model/ShowQuotasRequest.h>
 #include <huaweicloud/rds/v3/model/ShowQuotasResponse.h>
 #include <huaweicloud/rds/v3/model/ShowRecyclePolicyRequest.h>
@@ -399,6 +405,8 @@
 #include <huaweicloud/rds/v3/model/UpgradeDbVersionNewResponse.h>
 #include <huaweicloud/rds/v3/model/UpgradeDbVersionRequest.h>
 #include <huaweicloud/rds/v3/model/UpgradeDbVersionResponse.h>
+#include <huaweicloud/rds/v3/model/UpgradeLargeVersionRequest.h>
+#include <huaweicloud/rds/v3/model/UpgradeLargeVersionResponse.h>
 #include <huaweicloud/rds/v3/model/UpgradePgMajorVersion.h>
 #include <string>
 #include <vector>
@@ -717,6 +725,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ChangeOpsWindowResponse> changeOpsWindow(
         ChangeOpsWindowRequest &request
+    );
+    // 大版本升级预检查
+    //
+    // 提供mysql5.7升级mysql8.0预检查接口
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CheckInstanceForUpgradeResponse> checkInstanceForUpgrade(
+        CheckInstanceForUpgradeRequest &request
     );
     // 复制参数模板
     //
@@ -1599,6 +1615,14 @@ public:
     std::shared_ptr<ShowOffSiteBackupPolicyResponse> showOffSiteBackupPolicy(
         ShowOffSiteBackupPolicyRequest &request
     );
+    // 获取mysql5.7升级mysql8.0预检查结果
+    //
+    // 获取mysql5.7升级mysql8.0预检查结果
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowPrecheckResultResponse> showPrecheckResult(
+        ShowPrecheckResultRequest &request
+    );
     // 查询配额
     //
     // 查询当前项目下资源配额情况。
@@ -1886,6 +1910,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpgradeDbVersionNewResponse> upgradeDbVersionNew(
         UpgradeDbVersionNewRequest &request
+    );
+    // MySQL大版本升级
+    //
+    // 提供mysql5.7升级mysql8.0的下发接口
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpgradeLargeVersionResponse> upgradeLargeVersion(
+        UpgradeLargeVersionRequest &request
     );
 
     // 查询API版本列表

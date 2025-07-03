@@ -8,6 +8,20 @@ namespace V2 {
 
 using namespace HuaweiCloud::Sdk::Core::Http;
 
+HttpRequestDef EcsMeta::genRequestDefForAcceptScheduledEvent() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef EcsMeta::genRequestDefForAddServerGroupMember() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -207,6 +221,16 @@ HttpRequestDef EcsMeta::genRequestDefForCreateServers() {
     return reqDefBuilder;
 }
 
+HttpRequestDef EcsMeta::genRequestDefForDeleteLaunchTemplates() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef EcsMeta::genRequestDefForDeleteRecycleBinServer() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
@@ -373,6 +397,34 @@ HttpRequestDef EcsMeta::genRequestDefForListFlavors() {
     reqDefBuilder.withRequestField(FieldDef().withName("FlavorId")
                   .withJsonTag("flavor_id")
                   .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef EcsMeta::genRequestDefForListLaunchTemplateVersions() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Marker")
+                  .withJsonTag("marker")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("LaunchTemplateId")
+                  .withJsonTag("launch_template_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ImageId")
+                  .withJsonTag("image_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("FlavorId")
+                  .withJsonTag("flavor_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Version")
+                  .withJsonTag("version")
+                  .withLocationType(Query_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -555,6 +607,28 @@ HttpRequestDef EcsMeta::genRequestDefForListServersDetails() {
     return reqDefBuilder;
 }
 
+HttpRequestDef EcsMeta::genRequestDefForListTemplates() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Marker")
+                  .withJsonTag("marker")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("LaunchTemplateId")
+                  .withJsonTag("launch_template_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Name")
+                  .withJsonTag("name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef EcsMeta::genRequestDefForMigrateServer() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -652,6 +726,55 @@ HttpRequestDef EcsMeta::genRequestDefForNovaListKeypairs() {
 
 HttpRequestDef EcsMeta::genRequestDefForNovaListServerSecurityGroups() {
     HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef EcsMeta::genRequestDefForNovaListServers() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("ChangesSince")
+                  .withJsonTag("changes-since")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Flavor")
+                  .withJsonTag("flavor")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Host")
+                  .withJsonTag("host")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Image")
+                  .withJsonTag("image")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Ip")
+                  .withJsonTag("ip")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Marker")
+                  .withJsonTag("marker")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Name")
+                  .withJsonTag("name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("NotTags")
+                  .withJsonTag("not-tags")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ReservationId")
+                  .withJsonTag("reservation_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("SortKey")
+                  .withJsonTag("sort_key")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Status")
+                  .withJsonTag("status")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Tags")
+                  .withJsonTag("tags")
+                  .withLocationType(Query_));
+    FieldDef headerParamOpenStackAPIVersion;
+    reqDefBuilder.withRequestField(headerParamOpenStackAPIVersion
+                  .withName("OpenStackAPIVersion")
+                  .withJsonTag("OpenStack-API-Version")
+                  .withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -790,6 +913,11 @@ HttpRequestDef EcsMeta::genRequestDefForRevertRecycleBinServer() {
     return reqDefBuilder;
 }
 
+HttpRequestDef EcsMeta::genRequestDefForShowMetadataOptions() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef EcsMeta::genRequestDefForShowRecycleBin() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
@@ -820,11 +948,6 @@ HttpRequestDef EcsMeta::genRequestDefForShowServerLimits() {
     return reqDefBuilder;
 }
 
-HttpRequestDef EcsMeta::genRequestDefForShowServerMetadataOptions() {
-    HttpRequestDef reqDefBuilder;
-    return reqDefBuilder;
-}
-
 HttpRequestDef EcsMeta::genRequestDefForShowServerPassword() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
@@ -844,6 +967,15 @@ HttpRequestDef EcsMeta::genRequestDefForShowServerTags() {
     return reqDefBuilder;
 }
 
+HttpRequestDef EcsMeta::genRequestDefForUpdateMetadataOptions() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef EcsMeta::genRequestDefForUpdateRecycleBin() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -859,6 +991,20 @@ HttpRequestDef EcsMeta::genRequestDefForUpdateRecycleBinPolicy() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef EcsMeta::genRequestDefForUpdateScheduledEvent() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -899,15 +1045,6 @@ HttpRequestDef EcsMeta::genRequestDefForUpdateServerInterface() {
 }
 
 HttpRequestDef EcsMeta::genRequestDefForUpdateServerMetadata() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef bodyParam;
-    reqDefBuilder.withRequestField(bodyParam.
-        withName("Body").
-        withLocationType(Body_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef EcsMeta::genRequestDefForUpdateServerMetadataOptions() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.

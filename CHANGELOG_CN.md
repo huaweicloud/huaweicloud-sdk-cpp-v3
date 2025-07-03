@@ -1,3 +1,51 @@
+# 3.1.143 2025-07-03
+
+### HuaweiCloud SDK ECS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持以下接口：
+    - `UpdateScheduledEvent`
+    - `AcceptScheduledEvent`
+    - `ListLaunchTemplateVersions`
+    - `DeleteLaunchTemplates`
+    - `ListTemplates`
+    - `NovaListServers`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK Live
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持以下接口：
+    - `ListFlows`
+    - `CreateFlows`
+    - `DeleteFlow`
+    - `ShowFlowDetail`
+    - `ModifyFlowStart`
+    - `ModifyFlowStop`
+    - `ModifyFlowSources`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK RDS
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`CheckInstanceForUpgrade`、`ShowPrecheckResult`、`UpgradeLargeVersion`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.1.142 2025-06-26
 
 ### HuaweiCloud SDK CodeArtsBuild

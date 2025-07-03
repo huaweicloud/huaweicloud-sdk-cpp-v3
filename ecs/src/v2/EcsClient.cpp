@@ -32,6 +32,48 @@ ClientBuilder<EcsClient> EcsClient::newBuilder()
 {
     return ClientBuilder<EcsClient>("BasicCredentials");
 }
+std::shared_ptr<AcceptScheduledEventResponse> EcsClient::acceptScheduledEvent(AcceptScheduledEventRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instance-scheduled-events/{id}/actions/accept";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["id"] = parameterToString(request.getId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EcsMeta::genRequestDefForAcceptScheduledEvent());
+
+    std::shared_ptr<AcceptScheduledEventResponse> localVarResult = std::make_shared<AcceptScheduledEventResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<AddServerGroupMemberResponse> EcsClient::addServerGroupMember(AddServerGroupMemberRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/cloudservers/os-server-groups/{server_group_id}/action";
@@ -912,6 +954,36 @@ std::shared_ptr<CreateServersResponse> EcsClient::createServers(CreateServersReq
 
     return localVarResult;
 }
+std::shared_ptr<DeleteLaunchTemplatesResponse> EcsClient::deleteLaunchTemplates(DeleteLaunchTemplatesRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/launch-templates/{launch_template_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["launch_template_id"] = parameterToString(request.getLaunchTemplateId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EcsMeta::genRequestDefForDeleteLaunchTemplates());
+
+    std::shared_ptr<DeleteLaunchTemplatesResponse> localVarResult = std::make_shared<DeleteLaunchTemplatesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<DeleteRecycleBinServerResponse> EcsClient::deleteRecycleBinServer(DeleteRecycleBinServerRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/recycle-bin/cloudservers/{server_id}";
@@ -1378,6 +1450,53 @@ std::shared_ptr<ListFlavorsResponse> EcsClient::listFlavors(ListFlavorsRequest &
 
     return localVarResult;
 }
+std::shared_ptr<ListLaunchTemplateVersionsResponse> EcsClient::listLaunchTemplateVersions(ListLaunchTemplateVersionsRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/launch-template-versions";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.markerIsSet()) {
+        localVarQueryParams["marker"] = parameterToString(request.getMarker());
+    }
+    if (request.launchTemplateIdIsSet()) {
+        localVarQueryParams["launch_template_id"] = parameterToString(request.getLaunchTemplateId());
+    }
+    if (request.imageIdIsSet()) {
+        localVarQueryParams["image_id"] = parameterToString(request.getImageId());
+    }
+    if (request.flavorIdIsSet()) {
+        localVarQueryParams["flavor_id"] = parameterToString(request.getFlavorId());
+    }
+    if (request.versionIsSet()) {
+        localVarQueryParams["version"] = parameterToString(request.getVersion());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EcsMeta::genRequestDefForListLaunchTemplateVersions());
+
+    std::shared_ptr<ListLaunchTemplateVersionsResponse> localVarResult = std::make_shared<ListLaunchTemplateVersionsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListRecycleBinServersResponse> EcsClient::listRecycleBinServers(ListRecycleBinServersRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/recycle-bin/cloudservers";
@@ -1832,6 +1951,47 @@ std::shared_ptr<ListServersDetailsResponse> EcsClient::listServersDetails(ListSe
 
     return localVarResult;
 }
+std::shared_ptr<ListTemplatesResponse> EcsClient::listTemplates(ListTemplatesRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/launch-templates";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.markerIsSet()) {
+        localVarQueryParams["marker"] = parameterToString(request.getMarker());
+    }
+    if (request.launchTemplateIdIsSet()) {
+        localVarQueryParams["launch_template_id"] = parameterToString(request.getLaunchTemplateId());
+    }
+    if (request.nameIsSet()) {
+        localVarQueryParams["name"] = parameterToString(request.getName());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EcsMeta::genRequestDefForListTemplates());
+
+    std::shared_ptr<ListTemplatesResponse> localVarResult = std::make_shared<ListTemplatesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<MigrateServerResponse> EcsClient::migrateServer(MigrateServerRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/cloudservers/{server_id}/migrate";
@@ -2239,6 +2399,77 @@ std::shared_ptr<NovaListServerSecurityGroupsResponse> EcsClient::novaListServerS
         localVarHeaderParams, localVarHttpBody, EcsMeta::genRequestDefForNovaListServerSecurityGroups());
 
     std::shared_ptr<NovaListServerSecurityGroupsResponse> localVarResult = std::make_shared<NovaListServerSecurityGroupsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<NovaListServersResponse> EcsClient::novaListServers(NovaListServersRequest &request)
+{
+    std::string localVarPath = "/v2.1/{project_id}/servers";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.changesSinceIsSet()) {
+        localVarQueryParams["changes-since"] = parameterToString(request.getChangesSince());
+    }
+    if (request.flavorIsSet()) {
+        localVarQueryParams["flavor"] = parameterToString(request.getFlavor());
+    }
+    if (request.hostIsSet()) {
+        localVarQueryParams["host"] = parameterToString(request.getHost());
+    }
+    if (request.imageIsSet()) {
+        localVarQueryParams["image"] = parameterToString(request.getImage());
+    }
+    if (request.ipIsSet()) {
+        localVarQueryParams["ip"] = parameterToString(request.getIp());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.markerIsSet()) {
+        localVarQueryParams["marker"] = parameterToString(request.getMarker());
+    }
+    if (request.nameIsSet()) {
+        localVarQueryParams["name"] = parameterToString(request.getName());
+    }
+    if (request.notTagsIsSet()) {
+        localVarQueryParams["not-tags"] = parameterToString(request.getNotTags());
+    }
+    if (request.reservationIdIsSet()) {
+        localVarQueryParams["reservation_id"] = parameterToString(request.getReservationId());
+    }
+    if (request.sortKeyIsSet()) {
+        localVarQueryParams["sort_key"] = parameterToString(request.getSortKey());
+    }
+    if (request.statusIsSet()) {
+        localVarQueryParams["status"] = parameterToString(request.getStatus());
+    }
+    if (request.tagsIsSet()) {
+        localVarQueryParams["tags"] = parameterToString(request.getTags());
+    }
+    if (request.openStackAPIVersionIsSet()) {
+        localVarHeaderParams["OpenStack-API-Version"] = parameterToString(request.getOpenStackAPIVersion());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EcsMeta::genRequestDefForNovaListServers());
+
+    std::shared_ptr<NovaListServersResponse> localVarResult = std::make_shared<NovaListServersResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -2722,6 +2953,36 @@ std::shared_ptr<RevertRecycleBinServerResponse> EcsClient::revertRecycleBinServe
 
     return localVarResult;
 }
+std::shared_ptr<ShowMetadataOptionsResponse> EcsClient::showMetadataOptions(ShowMetadataOptionsRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/cloudservers/{server_id}/metadata-options";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["server_id"] = parameterToString(request.getServerId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EcsMeta::genRequestDefForShowMetadataOptions());
+
+    std::shared_ptr<ShowMetadataOptionsResponse> localVarResult = std::make_shared<ShowMetadataOptionsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowRecycleBinResponse> EcsClient::showRecycleBin(ShowRecycleBinRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/recycle-bin";
@@ -2901,36 +3162,6 @@ std::shared_ptr<ShowServerLimitsResponse> EcsClient::showServerLimits(ShowServer
 
     return localVarResult;
 }
-std::shared_ptr<ShowServerMetadataOptionsResponse> EcsClient::showServerMetadataOptions(ShowServerMetadataOptionsRequest &request)
-{
-    std::string localVarPath = "/v1/{project_id}/cloudservers/{server_id}/metadata-options";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["server_id"] = parameterToString(request.getServerId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, EcsMeta::genRequestDefForShowServerMetadataOptions());
-
-    std::shared_ptr<ShowServerMetadataOptionsResponse> localVarResult = std::make_shared<ShowServerMetadataOptionsResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
 std::shared_ptr<ShowServerPasswordResponse> EcsClient::showServerPassword(ShowServerPasswordRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/cloudservers/{server_id}/os-server-password";
@@ -3033,6 +3264,48 @@ std::shared_ptr<ShowServerTagsResponse> EcsClient::showServerTags(ShowServerTags
 
     return localVarResult;
 }
+std::shared_ptr<UpdateMetadataOptionsResponse> EcsClient::updateMetadataOptions(UpdateMetadataOptionsRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/cloudservers/{server_id}/metadata-options";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["server_id"] = parameterToString(request.getServerId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EcsMeta::genRequestDefForUpdateMetadataOptions());
+
+    std::shared_ptr<UpdateMetadataOptionsResponse> localVarResult = std::make_shared<UpdateMetadataOptionsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<UpdateRecycleBinResponse> EcsClient::updateRecycleBin(UpdateRecycleBinRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/recycle-bin";
@@ -3103,6 +3376,48 @@ std::shared_ptr<UpdateRecycleBinPolicyResponse> EcsClient::updateRecycleBinPolic
         localVarHeaderParams, localVarHttpBody, EcsMeta::genRequestDefForUpdateRecycleBinPolicy());
 
     std::shared_ptr<UpdateRecycleBinPolicyResponse> localVarResult = std::make_shared<UpdateRecycleBinPolicyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateScheduledEventResponse> EcsClient::updateScheduledEvent(UpdateScheduledEventRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instance-scheduled-events/{id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["id"] = parameterToString(request.getId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EcsMeta::genRequestDefForUpdateScheduledEvent());
+
+    std::shared_ptr<UpdateScheduledEventResponse> localVarResult = std::make_shared<UpdateScheduledEventResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -3315,48 +3630,6 @@ std::shared_ptr<UpdateServerMetadataResponse> EcsClient::updateServerMetadata(Up
         localVarHeaderParams, localVarHttpBody, EcsMeta::genRequestDefForUpdateServerMetadata());
 
     std::shared_ptr<UpdateServerMetadataResponse> localVarResult = std::make_shared<UpdateServerMetadataResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-    if (!res->getHttpBody().empty()) {
-        spdlog::info("parse json format response");
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
-
-    return localVarResult;
-}
-std::shared_ptr<UpdateServerMetadataOptionsResponse> EcsClient::updateServerMetadataOptions(UpdateServerMetadataOptionsRequest &request)
-{
-    std::string localVarPath = "/v1/{project_id}/cloudservers/{server_id}/metadata-options";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["server_id"] = parameterToString(request.getServerId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-
-    std::string localVarHttpBody;
-    if (isJson) {
-        // handle json input
-        web::json::value localVarJson;
-        localVarJson = ModelBase::toJson(request.getBody());
-        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
-    }
-
-    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, EcsMeta::genRequestDefForUpdateServerMetadataOptions());
-
-    std::shared_ptr<UpdateServerMetadataOptionsResponse> localVarResult = std::make_shared<UpdateServerMetadataOptionsResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

@@ -16,6 +16,7 @@ public:
     static HttpRequestDef genRequestDefForBatchShowIpBelongs();
     static HttpRequestDef genRequestDefForCreateDomain();
     static HttpRequestDef genRequestDefForCreateDomainMapping();
+    static HttpRequestDef genRequestDefForCreateFlows();
     static HttpRequestDef genRequestDefForCreateRecordCallbackConfig();
     static HttpRequestDef genRequestDefForCreateRecordIndex();
     static HttpRequestDef genRequestDefForCreateRecordRule();
@@ -27,6 +28,7 @@ public:
     static HttpRequestDef genRequestDefForDeleteDomain();
     static HttpRequestDef genRequestDefForDeleteDomainKeyChain();
     static HttpRequestDef genRequestDefForDeleteDomainMapping();
+    static HttpRequestDef genRequestDefForDeleteFlow();
     static HttpRequestDef genRequestDefForDeletePublishTemplate();
     static HttpRequestDef genRequestDefForDeleteRecordCallbackConfig();
     static HttpRequestDef genRequestDefForDeleteRecordRule();
@@ -36,6 +38,7 @@ public:
     static HttpRequestDef genRequestDefForDeleteStreamForbidden();
     static HttpRequestDef genRequestDefForDeleteTranscodingsTemplate();
     static HttpRequestDef genRequestDefForListDelayConfig();
+    static HttpRequestDef genRequestDefForListFlows();
     static HttpRequestDef genRequestDefForListGeoBlockingConfig();
     static HttpRequestDef genRequestDefForListHlsConfig();
     static HttpRequestDef genRequestDefForListIpAuthList();
@@ -48,10 +51,14 @@ public:
     static HttpRequestDef genRequestDefForListScheduleRecordTasks();
     static HttpRequestDef genRequestDefForListSnapshotConfigs();
     static HttpRequestDef genRequestDefForListStreamForbidden();
+    static HttpRequestDef genRequestDefForModifyFlowSources();
+    static HttpRequestDef genRequestDefForModifyFlowStart();
+    static HttpRequestDef genRequestDefForModifyFlowStop();
     static HttpRequestDef genRequestDefForRunRecord();
     static HttpRequestDef genRequestDefForSetRefererChain();
     static HttpRequestDef genRequestDefForShowDomain();
     static HttpRequestDef genRequestDefForShowDomainKeyChain();
+    static HttpRequestDef genRequestDefForShowFlowDetail();
     static HttpRequestDef genRequestDefForShowPullSourcesConfig();
     static HttpRequestDef genRequestDefForShowRecordCallbackConfig();
     static HttpRequestDef genRequestDefForShowRecordRule();

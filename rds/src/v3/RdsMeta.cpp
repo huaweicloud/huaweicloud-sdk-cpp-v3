@@ -161,6 +161,25 @@ HttpRequestDef RdsMeta::genRequestDefForChangeOpsWindow() {
     return reqDefBuilder;
 }
 
+HttpRequestDef RdsMeta::genRequestDefForCheckInstanceForUpgrade() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-request-id").
+        withKindName("std::string").
+        withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef RdsMeta::genRequestDefForCopyConfiguration() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -1725,6 +1744,21 @@ HttpRequestDef RdsMeta::genRequestDefForShowOffSiteBackupPolicy() {
     return reqDefBuilder;
 }
 
+HttpRequestDef RdsMeta::genRequestDefForShowPrecheckResult() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-request-id").
+        withKindName("std::string").
+        withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef RdsMeta::genRequestDefForShowQuotas() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXLanguage;
@@ -2154,6 +2188,25 @@ HttpRequestDef RdsMeta::genRequestDefForUpgradeDbVersionNew() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef RdsMeta::genRequestDefForUpgradeLargeVersion() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-request-id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 

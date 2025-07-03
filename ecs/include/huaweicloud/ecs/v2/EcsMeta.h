@@ -13,6 +13,7 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 
 class HUAWEICLOUD_ECS_V2_EXPORT  EcsMeta {
 public:
+    static HttpRequestDef genRequestDefForAcceptScheduledEvent();
     static HttpRequestDef genRequestDefForAddServerGroupMember();
     static HttpRequestDef genRequestDefForAssociateServerVirtualIp();
     static HttpRequestDef genRequestDefForAttachServerVolume();
@@ -34,6 +35,7 @@ public:
     static HttpRequestDef genRequestDefForCreatePostPaidServers();
     static HttpRequestDef genRequestDefForCreateServerGroup();
     static HttpRequestDef genRequestDefForCreateServers();
+    static HttpRequestDef genRequestDefForDeleteLaunchTemplates();
     static HttpRequestDef genRequestDefForDeleteRecycleBinServer();
     static HttpRequestDef genRequestDefForDeleteServerGroup();
     static HttpRequestDef genRequestDefForDeleteServerGroupMember();
@@ -45,6 +47,7 @@ public:
     static HttpRequestDef genRequestDefForListCloudServers();
     static HttpRequestDef genRequestDefForListFlavorSellPolicies();
     static HttpRequestDef genRequestDefForListFlavors();
+    static HttpRequestDef genRequestDefForListLaunchTemplateVersions();
     static HttpRequestDef genRequestDefForListRecycleBinServers();
     static HttpRequestDef genRequestDefForListResizeFlavors();
     static HttpRequestDef genRequestDefForListScheduledEvents();
@@ -56,6 +59,7 @@ public:
     static HttpRequestDef genRequestDefForListServerVolumeAttachments();
     static HttpRequestDef genRequestDefForListServersByTag();
     static HttpRequestDef genRequestDefForListServersDetails();
+    static HttpRequestDef genRequestDefForListTemplates();
     static HttpRequestDef genRequestDefForMigrateServer();
     static HttpRequestDef genRequestDefForNovaAssociateSecurityGroup();
     static HttpRequestDef genRequestDefForNovaAttachInterface();
@@ -67,6 +71,7 @@ public:
     static HttpRequestDef genRequestDefForNovaListAvailabilityZones();
     static HttpRequestDef genRequestDefForNovaListKeypairs();
     static HttpRequestDef genRequestDefForNovaListServerSecurityGroups();
+    static HttpRequestDef genRequestDefForNovaListServers();
     static HttpRequestDef genRequestDefForNovaListServersDetails();
     static HttpRequestDef genRequestDefForNovaShowFlavorExtraSpecs();
     static HttpRequestDef genRequestDefForNovaShowKeypair();
@@ -79,24 +84,25 @@ public:
     static HttpRequestDef genRequestDefForResizePostPaidServer();
     static HttpRequestDef genRequestDefForResizeServer();
     static HttpRequestDef genRequestDefForRevertRecycleBinServer();
+    static HttpRequestDef genRequestDefForShowMetadataOptions();
     static HttpRequestDef genRequestDefForShowRecycleBin();
     static HttpRequestDef genRequestDefForShowResetPasswordFlag();
     static HttpRequestDef genRequestDefForShowServer();
     static HttpRequestDef genRequestDefForShowServerBlockDevice();
     static HttpRequestDef genRequestDefForShowServerGroup();
     static HttpRequestDef genRequestDefForShowServerLimits();
-    static HttpRequestDef genRequestDefForShowServerMetadataOptions();
     static HttpRequestDef genRequestDefForShowServerPassword();
     static HttpRequestDef genRequestDefForShowServerRemoteConsole();
     static HttpRequestDef genRequestDefForShowServerTags();
+    static HttpRequestDef genRequestDefForUpdateMetadataOptions();
     static HttpRequestDef genRequestDefForUpdateRecycleBin();
     static HttpRequestDef genRequestDefForUpdateRecycleBinPolicy();
+    static HttpRequestDef genRequestDefForUpdateScheduledEvent();
     static HttpRequestDef genRequestDefForUpdateServer();
     static HttpRequestDef genRequestDefForUpdateServerAutoTerminateTime();
     static HttpRequestDef genRequestDefForUpdateServerBlockDevice();
     static HttpRequestDef genRequestDefForUpdateServerInterface();
     static HttpRequestDef genRequestDefForUpdateServerMetadata();
-    static HttpRequestDef genRequestDefForUpdateServerMetadataOptions();
     static HttpRequestDef genRequestDefForNovaListVersions();
     static HttpRequestDef genRequestDefForNovaShowVersion();
     static HttpRequestDef genRequestDefForShowJob();

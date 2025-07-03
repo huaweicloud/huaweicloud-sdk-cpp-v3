@@ -13,6 +13,9 @@
 #include <huaweicloud/live/v1/model/CreateDomainMappingResponse.h>
 #include <huaweicloud/live/v1/model/CreateDomainRequest.h>
 #include <huaweicloud/live/v1/model/CreateDomainResponse.h>
+#include <huaweicloud/live/v1/model/CreateFlowsRequest.h>
+#include <huaweicloud/live/v1/model/CreateFlowsRequestBody.h>
+#include <huaweicloud/live/v1/model/CreateFlowsResponse.h>
 #include <huaweicloud/live/v1/model/CreateRecordCallbackConfigRequest.h>
 #include <huaweicloud/live/v1/model/CreateRecordCallbackConfigResponse.h>
 #include <huaweicloud/live/v1/model/CreateRecordIndexRequest.h>
@@ -36,6 +39,8 @@
 #include <huaweicloud/live/v1/model/DeleteDomainMappingResponse.h>
 #include <huaweicloud/live/v1/model/DeleteDomainRequest.h>
 #include <huaweicloud/live/v1/model/DeleteDomainResponse.h>
+#include <huaweicloud/live/v1/model/DeleteFlowRequest.h>
+#include <huaweicloud/live/v1/model/DeleteFlowResponse.h>
 #include <huaweicloud/live/v1/model/DeletePublishTemplateRequest.h>
 #include <huaweicloud/live/v1/model/DeletePublishTemplateResponse.h>
 #include <huaweicloud/live/v1/model/DeleteRecordCallbackConfigRequest.h>
@@ -59,6 +64,8 @@
 #include <huaweicloud/live/v1/model/KeyChainInfo.h>
 #include <huaweicloud/live/v1/model/ListDelayConfigRequest.h>
 #include <huaweicloud/live/v1/model/ListDelayConfigResponse.h>
+#include <huaweicloud/live/v1/model/ListFlowsRequest.h>
+#include <huaweicloud/live/v1/model/ListFlowsResponse.h>
 #include <huaweicloud/live/v1/model/ListGeoBlockingConfigRequest.h>
 #include <huaweicloud/live/v1/model/ListGeoBlockingConfigResponse.h>
 #include <huaweicloud/live/v1/model/ListHlsConfigRequest.h>
@@ -87,6 +94,13 @@
 #include <huaweicloud/live/v1/model/LiveDomainModifyReq.h>
 #include <huaweicloud/live/v1/model/LiveSnapshotConfig.h>
 #include <huaweicloud/live/v1/model/ModifyDelayConfig.h>
+#include <huaweicloud/live/v1/model/ModifyFlowSourcesRequest.h>
+#include <huaweicloud/live/v1/model/ModifyFlowSourcesRequestBody.h>
+#include <huaweicloud/live/v1/model/ModifyFlowSourcesResponse.h>
+#include <huaweicloud/live/v1/model/ModifyFlowStartRequest.h>
+#include <huaweicloud/live/v1/model/ModifyFlowStartResponse.h>
+#include <huaweicloud/live/v1/model/ModifyFlowStopRequest.h>
+#include <huaweicloud/live/v1/model/ModifyFlowStopResponse.h>
 #include <huaweicloud/live/v1/model/ModifyHlsConfig.h>
 #include <huaweicloud/live/v1/model/ModifyPullSourcesConfig.h>
 #include <huaweicloud/live/v1/model/RecordCallbackConfigRequest.h>
@@ -103,6 +117,8 @@
 #include <huaweicloud/live/v1/model/ShowDomainKeyChainResponse.h>
 #include <huaweicloud/live/v1/model/ShowDomainRequest.h>
 #include <huaweicloud/live/v1/model/ShowDomainResponse.h>
+#include <huaweicloud/live/v1/model/ShowFlowDetailRequest.h>
+#include <huaweicloud/live/v1/model/ShowFlowDetailResponse.h>
 #include <huaweicloud/live/v1/model/ShowPullSourcesConfigRequest.h>
 #include <huaweicloud/live/v1/model/ShowPullSourcesConfigResponse.h>
 #include <huaweicloud/live/v1/model/ShowRecordCallbackConfigRequest.h>
@@ -252,6 +268,14 @@ public:
     std::shared_ptr<CreateDomainMappingResponse> createDomainMapping(
         CreateDomainMappingRequest &request
     );
+    // 创建流
+    //
+    // 创建流
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateFlowsResponse> createFlows(
+        CreateFlowsRequest &request
+    );
     // 创建录制回调配置
     //
     // 创建录制回调配置接口
@@ -340,6 +364,14 @@ public:
     std::shared_ptr<DeleteDomainMappingResponse> deleteDomainMapping(
         DeleteDomainMappingRequest &request
     );
+    // 删除流
+    //
+    // 删除流
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteFlowResponse> deleteFlow(
+        DeleteFlowRequest &request
+    );
     // 删除直播推流通知配置
     //
     // 删除直播推流通知配置
@@ -411,6 +443,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListDelayConfigResponse> listDelayConfig(
         ListDelayConfigRequest &request
+    );
+    // 获取流列表
+    //
+    // 获取流列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListFlowsResponse> listFlows(
+        ListFlowsRequest &request
     );
     // 获取地域限制配置列表
     //
@@ -511,6 +551,30 @@ public:
     std::shared_ptr<ListStreamForbiddenResponse> listStreamForbidden(
         ListStreamForbiddenRequest &request
     );
+    // 修改流来源
+    //
+    // 修改流来源
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ModifyFlowSourcesResponse> modifyFlowSources(
+        ModifyFlowSourcesRequest &request
+    );
+    // 启动流任务
+    //
+    // 启动流任务
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ModifyFlowStartResponse> modifyFlowStart(
+        ModifyFlowStartRequest &request
+    );
+    // 停止流任务
+    //
+    // 停止流任务
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ModifyFlowStopResponse> modifyFlowStop(
+        ModifyFlowStopRequest &request
+    );
     // 提交录制控制命令
     //
     // 对单条流的实时录制控制接口。
@@ -542,6 +606,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowDomainKeyChainResponse> showDomainKeyChain(
         ShowDomainKeyChainRequest &request
+    );
+    // 获取流详情
+    //
+    // 获取流详情
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowFlowDetailResponse> showFlowDetail(
+        ShowFlowDetailRequest &request
     );
     // 查询直播拉流回源配置
     //

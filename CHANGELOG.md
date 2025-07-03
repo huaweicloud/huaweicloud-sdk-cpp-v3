@@ -1,3 +1,51 @@
+# 3.1.143 2025-07-03
+
+### HuaweiCloud SDK ECS
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the following APIs:
+    - `UpdateScheduledEvent`
+    - `AcceptScheduledEvent`
+    - `ListLaunchTemplateVersions`
+    - `DeleteLaunchTemplates`
+    - `ListTemplates`
+    - `NovaListServers`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK Live
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the following APIs:
+    - `ListFlows`
+    - `CreateFlows`
+    - `DeleteFlow`
+    - `ShowFlowDetail`
+    - `ModifyFlowStart`
+    - `ModifyFlowStop`
+    - `ModifyFlowSources`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK RDS
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the APIs `CheckInstanceForUpgrade`, `ShowPrecheckResult`, `UpgradeLargeVersion`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.142 2025-06-26
 
 ### HuaweiCloud SDK CodeArtsBuild

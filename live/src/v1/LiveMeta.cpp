@@ -34,6 +34,15 @@ HttpRequestDef LiveMeta::genRequestDefForCreateDomainMapping() {
     return reqDefBuilder;
 }
 
+HttpRequestDef LiveMeta::genRequestDefForCreateFlows() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef LiveMeta::genRequestDefForCreateRecordCallbackConfig() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -143,6 +152,14 @@ HttpRequestDef LiveMeta::genRequestDefForDeleteDomainMapping() {
     return reqDefBuilder;
 }
 
+HttpRequestDef LiveMeta::genRequestDefForDeleteFlow() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("FlowId")
+                  .withJsonTag("flow_id")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef LiveMeta::genRequestDefForDeletePublishTemplate() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Domain")
@@ -222,6 +239,17 @@ HttpRequestDef LiveMeta::genRequestDefForListDelayConfig() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("PlayDomain")
                   .withJsonTag("play_domain")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LiveMeta::genRequestDefForListFlows() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
                   .withLocationType(Query_));
     return reqDefBuilder;
 }
@@ -447,6 +475,37 @@ HttpRequestDef LiveMeta::genRequestDefForListStreamForbidden() {
     return reqDefBuilder;
 }
 
+HttpRequestDef LiveMeta::genRequestDefForModifyFlowSources() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("FlowId")
+                  .withJsonTag("flow_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("SourceName")
+                  .withJsonTag("source_name")
+                  .withLocationType(Query_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LiveMeta::genRequestDefForModifyFlowStart() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("FlowId")
+                  .withJsonTag("flow_id")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LiveMeta::genRequestDefForModifyFlowStop() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("FlowId")
+                  .withJsonTag("flow_id")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef LiveMeta::genRequestDefForRunRecord() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Action")
@@ -488,6 +547,14 @@ HttpRequestDef LiveMeta::genRequestDefForShowDomainKeyChain() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Domain")
                   .withJsonTag("domain")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LiveMeta::genRequestDefForShowFlowDetail() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("FlowId")
+                  .withJsonTag("flow_id")
                   .withLocationType(Query_));
     return reqDefBuilder;
 }

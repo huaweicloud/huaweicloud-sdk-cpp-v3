@@ -25,6 +25,7 @@ public:
     static HttpRequestDef genRequestDefForChangeFailoverMode();
     static HttpRequestDef genRequestDefForChangeFailoverStrategy();
     static HttpRequestDef genRequestDefForChangeOpsWindow();
+    static HttpRequestDef genRequestDefForCheckInstanceForUpgrade();
     static HttpRequestDef genRequestDefForCopyConfiguration();
     static HttpRequestDef genRequestDefForCreateConfiguration();
     static HttpRequestDef genRequestDefForCreateDnsName();
@@ -134,6 +135,7 @@ public:
     static HttpRequestDef genRequestDefForShowIncreBackupPolicy1();
     static HttpRequestDef genRequestDefForShowInstanceConfiguration();
     static HttpRequestDef genRequestDefForShowOffSiteBackupPolicy();
+    static HttpRequestDef genRequestDefForShowPrecheckResult();
     static HttpRequestDef genRequestDefForShowQuotas();
     static HttpRequestDef genRequestDefForShowRecyclePolicy();
     static HttpRequestDef genRequestDefForShowReplicationStatus();
@@ -170,6 +172,7 @@ public:
     static HttpRequestDef genRequestDefForUpgradeDbMajorVersionPreCheck();
     static HttpRequestDef genRequestDefForUpgradeDbVersion();
     static HttpRequestDef genRequestDefForUpgradeDbVersionNew();
+    static HttpRequestDef genRequestDefForUpgradeLargeVersion();
     static HttpRequestDef genRequestDefForListApiVersion();
     static HttpRequestDef genRequestDefForListApiVersionNew();
     static HttpRequestDef genRequestDefForShowApiVersion();

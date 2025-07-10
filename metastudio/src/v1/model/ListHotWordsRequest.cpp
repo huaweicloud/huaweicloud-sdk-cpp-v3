@@ -30,6 +30,8 @@ ListHotWordsRequest::ListHotWordsRequest()
     regionIsSet_ = false;
     language_ = "";
     languageIsSet_ = false;
+    hotWordsType_ = "";
+    hotWordsTypeIsSet_ = false;
 }
 
 ListHotWordsRequest::~ListHotWordsRequest() = default;
@@ -68,6 +70,9 @@ web::json::value ListHotWordsRequest::toJson() const
     }
     if(languageIsSet_) {
         val[utility::conversions::to_string_t("language")] = ModelBase::toJson(language_);
+    }
+    if(hotWordsTypeIsSet_) {
+        val[utility::conversions::to_string_t("hot_words_type")] = ModelBase::toJson(hotWordsType_);
     }
 
     return val;
@@ -155,6 +160,15 @@ bool ListHotWordsRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLanguage(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("hot_words_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("hot_words_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setHotWordsType(refVal);
         }
     }
     return ok;
@@ -348,6 +362,27 @@ bool ListHotWordsRequest::languageIsSet() const
 void ListHotWordsRequest::unsetlanguage()
 {
     languageIsSet_ = false;
+}
+
+std::string ListHotWordsRequest::getHotWordsType() const
+{
+    return hotWordsType_;
+}
+
+void ListHotWordsRequest::setHotWordsType(const std::string& value)
+{
+    hotWordsType_ = value;
+    hotWordsTypeIsSet_ = true;
+}
+
+bool ListHotWordsRequest::hotWordsTypeIsSet() const
+{
+    return hotWordsTypeIsSet_;
+}
+
+void ListHotWordsRequest::unsethotWordsType()
+{
+    hotWordsTypeIsSet_ = false;
 }
 
 }

@@ -18,6 +18,10 @@ ShowAsyncTtsJobResponse::ShowAsyncTtsJobResponse()
     audioFileUrlIsSet_ = false;
     audioInfoFileUrl_ = "";
     audioInfoFileUrlIsSet_ = false;
+    audioSrtFileUrl_ = "";
+    audioSrtFileUrlIsSet_ = false;
+    audioActionFileUrl_ = "";
+    audioActionFileUrlIsSet_ = false;
 }
 
 ShowAsyncTtsJobResponse::~ShowAsyncTtsJobResponse() = default;
@@ -38,6 +42,12 @@ web::json::value ShowAsyncTtsJobResponse::toJson() const
     }
     if(audioInfoFileUrlIsSet_) {
         val[utility::conversions::to_string_t("audio_info_file_url")] = ModelBase::toJson(audioInfoFileUrl_);
+    }
+    if(audioSrtFileUrlIsSet_) {
+        val[utility::conversions::to_string_t("audio_srt_file_url")] = ModelBase::toJson(audioSrtFileUrl_);
+    }
+    if(audioActionFileUrlIsSet_) {
+        val[utility::conversions::to_string_t("audio_action_file_url")] = ModelBase::toJson(audioActionFileUrl_);
     }
 
     return val;
@@ -71,6 +81,24 @@ bool ShowAsyncTtsJobResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAudioInfoFileUrl(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("audio_srt_file_url"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("audio_srt_file_url"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAudioSrtFileUrl(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("audio_action_file_url"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("audio_action_file_url"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAudioActionFileUrl(refVal);
         }
     }
     return ok;
@@ -138,6 +166,48 @@ bool ShowAsyncTtsJobResponse::audioInfoFileUrlIsSet() const
 void ShowAsyncTtsJobResponse::unsetaudioInfoFileUrl()
 {
     audioInfoFileUrlIsSet_ = false;
+}
+
+std::string ShowAsyncTtsJobResponse::getAudioSrtFileUrl() const
+{
+    return audioSrtFileUrl_;
+}
+
+void ShowAsyncTtsJobResponse::setAudioSrtFileUrl(const std::string& value)
+{
+    audioSrtFileUrl_ = value;
+    audioSrtFileUrlIsSet_ = true;
+}
+
+bool ShowAsyncTtsJobResponse::audioSrtFileUrlIsSet() const
+{
+    return audioSrtFileUrlIsSet_;
+}
+
+void ShowAsyncTtsJobResponse::unsetaudioSrtFileUrl()
+{
+    audioSrtFileUrlIsSet_ = false;
+}
+
+std::string ShowAsyncTtsJobResponse::getAudioActionFileUrl() const
+{
+    return audioActionFileUrl_;
+}
+
+void ShowAsyncTtsJobResponse::setAudioActionFileUrl(const std::string& value)
+{
+    audioActionFileUrl_ = value;
+    audioActionFileUrlIsSet_ = true;
+}
+
+bool ShowAsyncTtsJobResponse::audioActionFileUrlIsSet() const
+{
+    return audioActionFileUrlIsSet_;
+}
+
+void ShowAsyncTtsJobResponse::unsetaudioActionFileUrl()
+{
+    audioActionFileUrlIsSet_ = false;
 }
 
 }

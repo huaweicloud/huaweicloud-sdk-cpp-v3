@@ -39,7 +39,7 @@ public:
     /// ShowAsyncTtsJobResponse members
 
     /// <summary>
-    /// 音频文件是否已生成完成。该标记为PROCESSING时，应该每隔3秒再次调用本接口获取音频文件(WAITING 等待中,PROCESSING 处理中,SUCCEED 成功,FAILED 失败)
+    /// 音频文件是否已生成完成。该标记为PROCESSING时，应该每隔3秒再次调用本接口获取音频文件(WAITING 等待中,PROCESSING 处理中,SUCCEED 成功,FAILED 失败)。当存在该字段时，会返回以下文件的下载链接。
     /// </summary>
 
     std::string getState() const;
@@ -57,13 +57,31 @@ public:
     void setAudioFileUrl(const std::string& value);
 
     /// <summary>
-    /// 字幕文件下载链接，有效期为1个小时。
+    /// 音频信息文件下载链接，有效期为1个小时。
     /// </summary>
 
     std::string getAudioInfoFileUrl() const;
     bool audioInfoFileUrlIsSet() const;
     void unsetaudioInfoFileUrl();
     void setAudioInfoFileUrl(const std::string& value);
+
+    /// <summary>
+    /// 字幕文件下载链接，有效期为1个小时。
+    /// </summary>
+
+    std::string getAudioSrtFileUrl() const;
+    bool audioSrtFileUrlIsSet() const;
+    void unsetaudioSrtFileUrl();
+    void setAudioSrtFileUrl(const std::string& value);
+
+    /// <summary>
+    /// 动作信息文件下载链接，有效期为1个小时。
+    /// </summary>
+
+    std::string getAudioActionFileUrl() const;
+    bool audioActionFileUrlIsSet() const;
+    void unsetaudioActionFileUrl();
+    void setAudioActionFileUrl(const std::string& value);
 
 
 protected:
@@ -73,6 +91,10 @@ protected:
     bool audioFileUrlIsSet_;
     std::string audioInfoFileUrl_;
     bool audioInfoFileUrlIsSet_;
+    std::string audioSrtFileUrl_;
+    bool audioSrtFileUrlIsSet_;
+    std::string audioActionFileUrl_;
+    bool audioActionFileUrlIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

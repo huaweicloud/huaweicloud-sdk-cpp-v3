@@ -141,7 +141,7 @@ bool GetJobInfoResponseBody_job::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("entities"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            GetJobInfoResponseBody_job_entities refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEntities(refVal);
         }
@@ -306,12 +306,12 @@ void GetJobInfoResponseBody_job::unsetinstance()
     instanceIsSet_ = false;
 }
 
-Object GetJobInfoResponseBody_job::getEntities() const
+GetJobInfoResponseBody_job_entities GetJobInfoResponseBody_job::getEntities() const
 {
     return entities_;
 }
 
-void GetJobInfoResponseBody_job::setEntities(const Object& value)
+void GetJobInfoResponseBody_job::setEntities(const GetJobInfoResponseBody_job_entities& value)
 {
     entities_ = value;
     entitiesIsSet_ = true;

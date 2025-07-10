@@ -12,6 +12,7 @@
 #include <huaweicloud/metastudio/v1/model/HotWordsTypeEnum.h>
 #include <huaweicloud/metastudio/v1/model/CreateSisHotWords.h>
 #include <string>
+#include <huaweicloud/metastudio/v1/model/CreateMobvoiHotWords.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -67,6 +68,15 @@ public:
     void unsetsisHotWords();
     void setSisHotWords(const CreateSisHotWords& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    CreateMobvoiHotWords getMobvoiHotWords() const;
+    bool mobvoiHotWordsIsSet() const;
+    void unsetmobvoiHotWords();
+    void setMobvoiHotWords(const CreateMobvoiHotWords& value);
+
 
 protected:
     HotWordsTypeEnum hotWordsType_;
@@ -75,6 +85,8 @@ protected:
     bool robotIdIsSet_;
     CreateSisHotWords sisHotWords_;
     bool sisHotWordsIsSet_;
+    CreateMobvoiHotWords mobvoiHotWords_;
+    bool mobvoiHotWordsIsSet_;
 
 };
 

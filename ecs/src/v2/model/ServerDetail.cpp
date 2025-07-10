@@ -95,6 +95,7 @@ ServerDetail::ServerDetail()
     cpuOptionsIsSet_ = false;
     securityOptionsIsSet_ = false;
     hypervisorIsSet_ = false;
+    networkInterfacesIsSet_ = false;
 }
 
 ServerDetail::~ServerDetail() = default;
@@ -250,6 +251,9 @@ web::json::value ServerDetail::toJson() const
     }
     if(hypervisorIsSet_) {
         val[utility::conversions::to_string_t("hypervisor")] = ModelBase::toJson(hypervisor_);
+    }
+    if(networkInterfacesIsSet_) {
+        val[utility::conversions::to_string_t("network_interfaces")] = ModelBase::toJson(networkInterfaces_);
     }
 
     return val;
@@ -688,6 +692,15 @@ bool ServerDetail::fromJson(const web::json::value& val)
             Hypervisor refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setHypervisor(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("network_interfaces"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("network_interfaces"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<NetworkInterfaces> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setNetworkInterfaces(refVal);
         }
     }
     return ok;
@@ -1700,6 +1713,27 @@ bool ServerDetail::hypervisorIsSet() const
 void ServerDetail::unsethypervisor()
 {
     hypervisorIsSet_ = false;
+}
+
+std::vector<NetworkInterfaces>& ServerDetail::getNetworkInterfaces()
+{
+    return networkInterfaces_;
+}
+
+void ServerDetail::setNetworkInterfaces(const std::vector<NetworkInterfaces>& value)
+{
+    networkInterfaces_ = value;
+    networkInterfacesIsSet_ = true;
+}
+
+bool ServerDetail::networkInterfacesIsSet() const
+{
+    return networkInterfacesIsSet_;
+}
+
+void ServerDetail::unsetnetworkInterfaces()
+{
+    networkInterfacesIsSet_ = false;
 }
 
 }

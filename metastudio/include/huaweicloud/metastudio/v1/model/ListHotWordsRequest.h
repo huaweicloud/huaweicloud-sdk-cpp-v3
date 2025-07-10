@@ -111,13 +111,22 @@ public:
     void setRegion(int32_t value);
 
     /// <summary>
-    /// 智能交互语言  * zh_CN：简体中文（已下线，请使用CN）  * en_US：英语（已下线，请使用EN）  * CN: 中文  * EN: 英文
+    /// 智能交互语言 * zh_CN：简体中文（已下线，请使用CN） * en_US：英语（已下线，请使用EN） * CN：中文。 * EN：英文。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持）
     /// </summary>
 
     std::string getLanguage() const;
     bool languageIsSet() const;
     void unsetlanguage();
     void setLanguage(const std::string& value);
+
+    /// <summary>
+    /// * SIS:SIS热词 * MOBVOI:奇妙问ASR热词
+    /// </summary>
+
+    std::string getHotWordsType() const;
+    bool hotWordsTypeIsSet() const;
+    void unsethotWordsType();
+    void setHotWordsType(const std::string& value);
 
 
 protected:
@@ -139,6 +148,8 @@ protected:
     bool regionIsSet_;
     std::string language_;
     bool languageIsSet_;
+    std::string hotWordsType_;
+    bool hotWordsTypeIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

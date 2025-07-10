@@ -74,12 +74,15 @@ public:
     static HttpRequestDef genRequestDefForShowJobConfigDiff();
     static HttpRequestDef genRequestDefForShowJobInfo();
     static HttpRequestDef genRequestDefForShowJobNoticeConfigInfo();
+    static HttpRequestDef genRequestDefForShowJobPipelineInfo();
     static HttpRequestDef genRequestDefForShowJobRolePermission();
     static HttpRequestDef genRequestDefForShowJobStepStatus();
     static HttpRequestDef genRequestDefForShowJobSystemParameters();
     static HttpRequestDef genRequestDefForShowProjectJobPermission();
     static HttpRequestDef genRequestDefForShowRunningStatus();
+    static HttpRequestDef genRequestDefForStopTheJob();
     static HttpRequestDef genRequestDefForUpdateNewJob();
+    static HttpRequestDef genRequestDefForAddKeystorePermission();
     static HttpRequestDef genRequestDefForDeleteKeystore();
     static HttpRequestDef genRequestDefForDeleteKeystorePermission();
     static HttpRequestDef genRequestDefForDownloadKeystoreByName();
@@ -87,6 +90,7 @@ public:
     static HttpRequestDef genRequestDefForListKeystoreSearch();
     static HttpRequestDef genRequestDefForShowKeystorePermission();
     static HttpRequestDef genRequestDefForUpdateKeystore();
+    static HttpRequestDef genRequestDefForUpdateKeystorePermission();
     static HttpRequestDef genRequestDefForUploadKeystore();
     static HttpRequestDef genRequestDefForDownloadLogByRecordId();
     static HttpRequestDef genRequestDefForShowFlowGraph();

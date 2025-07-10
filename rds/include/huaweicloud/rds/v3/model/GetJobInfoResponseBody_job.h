@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/core/utils/Object.h>
+#include <huaweicloud/rds/v3/model/GetJobInfoResponseBody_job_entities.h>
 #include <huaweicloud/rds/v3/model/GetTaskDetailListRsp_jobs_instance.h>
 #include <string>
 
@@ -104,13 +104,13 @@ public:
     void setInstance(const GetTaskDetailListRsp_jobs_instance& value);
 
     /// <summary>
-    /// 根据不同的任务，显示不同的内容。
+    /// 
     /// </summary>
 
-    Object getEntities() const;
+    GetJobInfoResponseBody_job_entities getEntities() const;
     bool entitiesIsSet() const;
     void unsetentities();
-    void setEntities(const Object& value);
+    void setEntities(const GetJobInfoResponseBody_job_entities& value);
 
     /// <summary>
     /// 任务执行失败时的错误信息。
@@ -137,7 +137,7 @@ protected:
     bool processIsSet_;
     GetTaskDetailListRsp_jobs_instance instance_;
     bool instanceIsSet_;
-    Object entities_;
+    GetJobInfoResponseBody_job_entities entities_;
     bool entitiesIsSet_;
     std::string failReason_;
     bool failReasonIsSet_;

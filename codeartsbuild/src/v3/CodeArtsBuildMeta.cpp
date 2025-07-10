@@ -392,6 +392,27 @@ HttpRequestDef CodeArtsBuildMeta::genRequestDefForListBuildParameter() {
 
 HttpRequestDef CodeArtsBuildMeta::genRequestDefForListJob() {
     HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("PageIndex")
+                  .withJsonTag("page_index")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("PageSize")
+                  .withJsonTag("page_size")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Search")
+                  .withJsonTag("search")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("SortField")
+                  .withJsonTag("sort_field")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("SortOrder")
+                  .withJsonTag("sort_order")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("CreatorId")
+                  .withJsonTag("creator_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("BuildStatus")
+                  .withJsonTag("build_status")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 
@@ -530,6 +551,17 @@ HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowJobNoticeConfigInfo() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowJobPipelineInfo() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("All")
+                  .withJsonTag("all")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("CheckParamUsed")
+                  .withJsonTag("check_param_used")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowJobRolePermission() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("JobId")
@@ -567,7 +599,24 @@ HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowRunningStatus() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForStopTheJob() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("BuildNo")
+                  .withJsonTag("build_no")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CodeArtsBuildMeta::genRequestDefForUpdateNewJob() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForAddKeystorePermission() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
@@ -631,6 +680,15 @@ HttpRequestDef CodeArtsBuildMeta::genRequestDefForShowKeystorePermission() {
 }
 
 HttpRequestDef CodeArtsBuildMeta::genRequestDefForUpdateKeystore() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CodeArtsBuildMeta::genRequestDefForUpdateKeystorePermission() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.

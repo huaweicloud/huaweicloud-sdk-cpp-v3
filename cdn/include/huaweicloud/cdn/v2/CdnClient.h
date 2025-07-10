@@ -13,6 +13,9 @@
 #include <huaweicloud/cdn/v2/model/BatchCopyErrorRsp.h>
 #include <huaweicloud/cdn/v2/model/BatchDeleteTagsRequest.h>
 #include <huaweicloud/cdn/v2/model/BatchDeleteTagsResponse.h>
+#include <huaweicloud/cdn/v2/model/BatchUpdateRuleStatusRequest.h>
+#include <huaweicloud/cdn/v2/model/BatchUpdateRuleStatusResponse.h>
+#include <huaweicloud/cdn/v2/model/BatchUpdateRulesRequest.h>
 #include <huaweicloud/cdn/v2/model/CreateDomainRequest.h>
 #include <huaweicloud/cdn/v2/model/CreateDomainRequestBody.h>
 #include <huaweicloud/cdn/v2/model/CreateDomainResponse.h>
@@ -20,11 +23,21 @@
 #include <huaweicloud/cdn/v2/model/CreatePreheatingTasksResponse.h>
 #include <huaweicloud/cdn/v2/model/CreateRefreshTasksRequest.h>
 #include <huaweicloud/cdn/v2/model/CreateRefreshTasksResponse.h>
+#include <huaweicloud/cdn/v2/model/CreateRuleNewRequest.h>
+#include <huaweicloud/cdn/v2/model/CreateRuleNewResponse.h>
+#include <huaweicloud/cdn/v2/model/CreateRuleRequest.h>
+#include <huaweicloud/cdn/v2/model/CreateShareCacheGroupsRequest.h>
+#include <huaweicloud/cdn/v2/model/CreateShareCacheGroupsRequstBody.h>
+#include <huaweicloud/cdn/v2/model/CreateShareCacheGroupsResponse.h>
 #include <huaweicloud/cdn/v2/model/CreateTagsRequest.h>
 #include <huaweicloud/cdn/v2/model/CreateTagsRequestBody.h>
 #include <huaweicloud/cdn/v2/model/CreateTagsResponse.h>
 #include <huaweicloud/cdn/v2/model/DeleteDomainRequest.h>
 #include <huaweicloud/cdn/v2/model/DeleteDomainResponse.h>
+#include <huaweicloud/cdn/v2/model/DeleteRuleNewRequest.h>
+#include <huaweicloud/cdn/v2/model/DeleteRuleNewResponse.h>
+#include <huaweicloud/cdn/v2/model/DeleteShareCacheGroupsRequest.h>
+#include <huaweicloud/cdn/v2/model/DeleteShareCacheGroupsResponse.h>
 #include <huaweicloud/cdn/v2/model/DeleteTagsRequestBody.h>
 #include <huaweicloud/cdn/v2/model/DisableDomainRequest.h>
 #include <huaweicloud/cdn/v2/model/DisableDomainResponse.h>
@@ -35,10 +48,15 @@
 #include <huaweicloud/cdn/v2/model/EnableDomainRequest.h>
 #include <huaweicloud/cdn/v2/model/EnableDomainResponse.h>
 #include <huaweicloud/cdn/v2/model/ErrRsp.h>
+#include <huaweicloud/cdn/v2/model/FullUpdateRulesRequest.h>
 #include <huaweicloud/cdn/v2/model/ListCdnDomainTopRefersRequest.h>
 #include <huaweicloud/cdn/v2/model/ListCdnDomainTopRefersResponse.h>
 #include <huaweicloud/cdn/v2/model/ListDomainsRequest.h>
 #include <huaweicloud/cdn/v2/model/ListDomainsResponse.h>
+#include <huaweicloud/cdn/v2/model/ListRuleDetailsRequest.h>
+#include <huaweicloud/cdn/v2/model/ListRuleDetailsResponse.h>
+#include <huaweicloud/cdn/v2/model/ListShareCacheGroupsRequest.h>
+#include <huaweicloud/cdn/v2/model/ListShareCacheGroupsResponse.h>
 #include <huaweicloud/cdn/v2/model/ModifyAccountInfoRequest.h>
 #include <huaweicloud/cdn/v2/model/ModifyAccountInfoResponse.h>
 #include <huaweicloud/cdn/v2/model/ModifyDomainConfigRequestBody.h>
@@ -86,9 +104,17 @@
 #include <huaweicloud/cdn/v2/model/UpdateDomainMultiCertificatesRequest.h>
 #include <huaweicloud/cdn/v2/model/UpdateDomainMultiCertificatesRequestBody.h>
 #include <huaweicloud/cdn/v2/model/UpdateDomainMultiCertificatesResponse.h>
+#include <huaweicloud/cdn/v2/model/UpdateFullRuleRequest.h>
+#include <huaweicloud/cdn/v2/model/UpdateFullRuleResponse.h>
 #include <huaweicloud/cdn/v2/model/UpdatePrivateBucketAccessBody.h>
 #include <huaweicloud/cdn/v2/model/UpdatePrivateBucketAccessRequest.h>
 #include <huaweicloud/cdn/v2/model/UpdatePrivateBucketAccessResponse.h>
+#include <huaweicloud/cdn/v2/model/UpdateRuleNewRequest.h>
+#include <huaweicloud/cdn/v2/model/UpdateRuleNewResponse.h>
+#include <huaweicloud/cdn/v2/model/UpdateRuleRequest.h>
+#include <huaweicloud/cdn/v2/model/UpdateShareCacheGroupsRequest.h>
+#include <huaweicloud/cdn/v2/model/UpdateShareCacheGroupsRequstBody.h>
+#include <huaweicloud/cdn/v2/model/UpdateShareCacheGroupsResponse.h>
 #include <huaweicloud/cdn/v2/model/VerifyDomainOwnerRequest.h>
 #include <huaweicloud/cdn/v2/model/VerifyDomainOwnerRequestBody.h>
 #include <huaweicloud/cdn/v2/model/VerifyDomainOwnerResponse.h>
@@ -135,6 +161,14 @@ public:
     std::shared_ptr<BatchDeleteTagsResponse> batchDeleteTags(
         BatchDeleteTagsRequest &request
     );
+    // 批量更新规则状态及优先级
+    //
+    // 批量更新规则状态及优先级。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchUpdateRuleStatusResponse> batchUpdateRuleStatus(
+        BatchUpdateRuleStatusRequest &request
+    );
     // 创建加速域名
     //
     // 创建加速域名。
@@ -159,6 +193,26 @@ public:
     std::shared_ptr<CreateRefreshTasksResponse> createRefreshTasks(
         CreateRefreshTasksRequest &request
     );
+    // 创建规则引擎规则
+    //
+    // 规则引擎功能通过图形化的方式实现各种规则配置，实现更加灵活、细粒度的规则配置。通过限制触发条件，控制当前配置生效的资源范围，满足多种场景的配置需求。
+    // - 请提交工单开通规则引擎功能后再使用当前接口。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateRuleNewResponse> createRuleNew(
+        CreateRuleNewRequest &request
+    );
+    // 创建共享缓存组
+    //
+    // 配置共享缓存组，将一个域名设置为主域名，组内其他域名共享该域名的缓存，提高缓存命中率。
+    // - 只有缓存规则中“URL参数”的配置为“忽略参数”或者“不忽略参数”的域名才能加入共享缓存组。
+    // - 每个账号最多配置500个共享缓存组。
+    // - 单租户调用频率：5次/s。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateShareCacheGroupsResponse> createShareCacheGroups(
+        CreateShareCacheGroupsRequest &request
+    );
     // 创建资源标签配置接口
     //
     // 用于创建资源标签。
@@ -174,6 +228,24 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteDomainResponse> deleteDomain(
         DeleteDomainRequest &request
+    );
+    // 删除规则引擎规则
+    //
+    // 删除规则引擎规则。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteRuleNewResponse> deleteRuleNew(
+        DeleteRuleNewRequest &request
+    );
+    // 删除共享缓存组
+    //
+    // 删除新共享缓存组。
+    // - 共享缓存组内不包含关联域名时才可以删除。
+    // - 单租户调用频率：5次/s。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteShareCacheGroupsResponse> deleteShareCacheGroups(
+        DeleteShareCacheGroupsRequest &request
     );
     // 停用加速域名
     //
@@ -248,6 +320,23 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListDomainsResponse> listDomains(
         ListDomainsRequest &request
+    );
+    // 查询规则引擎列表
+    //
+    // 查询规则引擎列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListRuleDetailsResponse> listRuleDetails(
+        ListRuleDetailsRequest &request
+    );
+    // 查询共享缓存组列表
+    //
+    // 查询共享缓存组列表。
+    // - 单租户调用频率：5次/s。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListShareCacheGroupsResponse> listShareCacheGroups(
+        ListShareCacheGroupsRequest &request
     );
     // 修改租户配置
     //
@@ -493,6 +582,14 @@ public:
     std::shared_ptr<UpdateDomainMultiCertificatesResponse> updateDomainMultiCertificates(
         UpdateDomainMultiCertificatesRequest &request
     );
+    // 全量更新规则引擎规则
+    //
+    // 全量更新规则引擎规则。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateFullRuleResponse> updateFullRule(
+        UpdateFullRuleRequest &request
+    );
     // 修改私有桶开启关闭状态
     //
     // 修改私有桶开启关闭状态。
@@ -500,6 +597,23 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdatePrivateBucketAccessResponse> updatePrivateBucketAccess(
         UpdatePrivateBucketAccessRequest &request
+    );
+    // 更新规则引擎规则
+    //
+    // 更新规则引擎规则。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateRuleNewResponse> updateRuleNew(
+        UpdateRuleNewRequest &request
+    );
+    // 更新共享缓存组
+    //
+    // 更新共享缓存组。
+    // - 单租户调用频率：5次/s。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateShareCacheGroupsResponse> updateShareCacheGroups(
+        UpdateShareCacheGroupsRequest &request
     );
     // 域名归属校验
     //

@@ -1,0 +1,154 @@
+
+#ifndef HUAWEICLOUD_SDK_RGC_V1_MODEL_CreateOrganizationalUnit_H_
+#define HUAWEICLOUD_SDK_RGC_V1_MODEL_CreateOrganizationalUnit_H_
+
+
+#include <huaweicloud/rgc/v1/RgcExport.h>
+
+#include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
+#include <huaweicloud/core/http/HttpResponse.h>
+
+#include <huaweicloud/rgc/v1/model/OrganizationalUnitType.h>
+#include <string>
+#include <cpprest/details/basic_types.h>
+
+namespace HuaweiCloud {
+namespace Sdk {
+namespace Rgc {
+namespace V1 {
+namespace Model {
+
+using namespace HuaweiCloud::Sdk::Core::Utils;
+using namespace HuaweiCloud::Sdk::Core::Http;
+/// <summary>
+/// 注册OU的基本信息。
+/// </summary>
+class HUAWEICLOUD_RGC_V1_EXPORT  CreateOrganizationalUnit
+    : public ModelBase
+{
+public:
+    CreateOrganizationalUnit();
+    virtual ~CreateOrganizationalUnit();
+
+    /////////////////////////////////////////////
+    /// ModelBase overrides
+
+    void validate() override;
+    web::json::value toJson() const override;
+    bool fromJson(const web::json::value& json) override;
+    /////////////////////////////////////////////
+    /// CreateOrganizationalUnit members
+
+    /// <summary>
+    /// 管理纳管账号ID。
+    /// </summary>
+
+    std::string getManageAccountId() const;
+    bool manageAccountIdIsSet() const;
+    void unsetmanageAccountId();
+    void setManageAccountId(const std::string& value);
+
+    /// <summary>
+    /// 注册OU ID。
+    /// </summary>
+
+    std::string getOrganizationalUnitId() const;
+    bool organizationalUnitIdIsSet() const;
+    void unsetorganizationalUnitId();
+    void setOrganizationalUnitId(const std::string& value);
+
+    /// <summary>
+    /// 注册OU名称。
+    /// </summary>
+
+    std::string getOrganizationalUnitName() const;
+    bool organizationalUnitNameIsSet() const;
+    void unsetorganizationalUnitName();
+    void setOrganizationalUnitName(const std::string& value);
+
+    /// <summary>
+    /// 注册OU状态。
+    /// </summary>
+
+    std::string getOrganizationalUnitStatus() const;
+    bool organizationalUnitStatusIsSet() const;
+    void unsetorganizationalUnitStatus();
+    void setOrganizationalUnitStatus(const std::string& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    OrganizationalUnitType getOrganizationalUnitType() const;
+    bool organizationalUnitTypeIsSet() const;
+    void unsetorganizationalUnitType();
+    void setOrganizationalUnitType(const OrganizationalUnitType& value);
+
+    /// <summary>
+    /// 父注册OU ID。
+    /// </summary>
+
+    std::string getParentOrganizationalUnitId() const;
+    bool parentOrganizationalUnitIdIsSet() const;
+    void unsetparentOrganizationalUnitId();
+    void setParentOrganizationalUnitId(const std::string& value);
+
+    /// <summary>
+    /// 父注册OU名称。
+    /// </summary>
+
+    std::string getParentOrganizationalUnitName() const;
+    bool parentOrganizationalUnitNameIsSet() const;
+    void unsetparentOrganizationalUnitName();
+    void setParentOrganizationalUnitName(const std::string& value);
+
+    /// <summary>
+    /// 组织里某个注册OU下的纳管账号被创建的时间。
+    /// </summary>
+
+    utility::datetime getCreatedAt() const;
+    bool createdAtIsSet() const;
+    void unsetcreatedAt();
+    void setCreatedAt(const utility::datetime& value);
+
+    /// <summary>
+    /// Landing Zone版本。
+    /// </summary>
+
+    std::string getLandingZoneVersion() const;
+    bool landingZoneVersionIsSet() const;
+    void unsetlandingZoneVersion();
+    void setLandingZoneVersion(const std::string& value);
+
+
+protected:
+    std::string manageAccountId_;
+    bool manageAccountIdIsSet_;
+    std::string organizationalUnitId_;
+    bool organizationalUnitIdIsSet_;
+    std::string organizationalUnitName_;
+    bool organizationalUnitNameIsSet_;
+    std::string organizationalUnitStatus_;
+    bool organizationalUnitStatusIsSet_;
+    OrganizationalUnitType organizationalUnitType_;
+    bool organizationalUnitTypeIsSet_;
+    std::string parentOrganizationalUnitId_;
+    bool parentOrganizationalUnitIdIsSet_;
+    std::string parentOrganizationalUnitName_;
+    bool parentOrganizationalUnitNameIsSet_;
+    utility::datetime createdAt_;
+    bool createdAtIsSet_;
+    std::string landingZoneVersion_;
+    bool landingZoneVersionIsSet_;
+
+};
+
+
+}
+}
+}
+}
+}
+
+#endif // HUAWEICLOUD_SDK_RGC_V1_MODEL_CreateOrganizationalUnit_H_

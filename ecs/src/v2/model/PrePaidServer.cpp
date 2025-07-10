@@ -52,6 +52,7 @@ PrePaidServer::PrePaidServer()
     securityOptionsIsSet_ = false;
     serialConsoleOptionsIsSet_ = false;
     metadataOptionsIsSet_ = false;
+    enclaveOptionsIsSet_ = false;
 }
 
 PrePaidServer::~PrePaidServer() = default;
@@ -144,6 +145,9 @@ web::json::value PrePaidServer::toJson() const
     }
     if(metadataOptionsIsSet_) {
         val[utility::conversions::to_string_t("metadata_options")] = ModelBase::toJson(metadataOptions_);
+    }
+    if(enclaveOptionsIsSet_) {
+        val[utility::conversions::to_string_t("enclave_options")] = ModelBase::toJson(enclaveOptions_);
     }
 
     return val;
@@ -393,6 +397,15 @@ bool PrePaidServer::fromJson(const web::json::value& val)
             UpdateServerMetadataOptionsRequestBody refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setMetadataOptions(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("enclave_options"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enclave_options"));
+        if(!fieldValue.is_null())
+        {
+            EnclaveOptions refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEnclaveOptions(refVal);
         }
     }
     return ok;
@@ -964,6 +977,27 @@ bool PrePaidServer::metadataOptionsIsSet() const
 void PrePaidServer::unsetmetadataOptions()
 {
     metadataOptionsIsSet_ = false;
+}
+
+EnclaveOptions PrePaidServer::getEnclaveOptions() const
+{
+    return enclaveOptions_;
+}
+
+void PrePaidServer::setEnclaveOptions(const EnclaveOptions& value)
+{
+    enclaveOptions_ = value;
+    enclaveOptionsIsSet_ = true;
+}
+
+bool PrePaidServer::enclaveOptionsIsSet() const
+{
+    return enclaveOptionsIsSet_;
+}
+
+void PrePaidServer::unsetenclaveOptions()
+{
+    enclaveOptionsIsSet_ = false;
 }
 
 }

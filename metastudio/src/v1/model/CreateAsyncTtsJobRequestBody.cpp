@@ -53,6 +53,8 @@ CreateAsyncTtsJobRequestBody::CreateAsyncTtsJobRequestBody()
     isVocabularyConfigEnableIsSet_ = false;
     isConcurrentResource_ = false;
     isConcurrentResourceIsSet_ = false;
+    priority_ = 0;
+    priorityIsSet_ = false;
 }
 
 CreateAsyncTtsJobRequestBody::~CreateAsyncTtsJobRequestBody() = default;
@@ -127,6 +129,9 @@ web::json::value CreateAsyncTtsJobRequestBody::toJson() const
     }
     if(isConcurrentResourceIsSet_) {
         val[utility::conversions::to_string_t("is_concurrent_resource")] = ModelBase::toJson(isConcurrentResource_);
+    }
+    if(priorityIsSet_) {
+        val[utility::conversions::to_string_t("priority")] = ModelBase::toJson(priority_);
     }
 
     return val;
@@ -322,6 +327,15 @@ bool CreateAsyncTtsJobRequestBody::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsConcurrentResource(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("priority"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("priority"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPriority(refVal);
         }
     }
     return ok;
@@ -767,6 +781,27 @@ bool CreateAsyncTtsJobRequestBody::isConcurrentResourceIsSet() const
 void CreateAsyncTtsJobRequestBody::unsetisConcurrentResource()
 {
     isConcurrentResourceIsSet_ = false;
+}
+
+int32_t CreateAsyncTtsJobRequestBody::getPriority() const
+{
+    return priority_;
+}
+
+void CreateAsyncTtsJobRequestBody::setPriority(int32_t value)
+{
+    priority_ = value;
+    priorityIsSet_ = true;
+}
+
+bool CreateAsyncTtsJobRequestBody::priorityIsSet() const
+{
+    return priorityIsSet_;
+}
+
+void CreateAsyncTtsJobRequestBody::unsetpriority()
+{
+    priorityIsSet_ = false;
 }
 
 }

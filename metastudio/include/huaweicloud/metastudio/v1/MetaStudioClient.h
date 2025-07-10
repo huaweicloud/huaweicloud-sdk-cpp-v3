@@ -35,6 +35,8 @@
 #include <huaweicloud/metastudio/v1/model/CreateDialogUrlReq.h>
 #include <huaweicloud/metastudio/v1/model/CreateDialogUrlRequest.h>
 #include <huaweicloud/metastudio/v1/model/CreateDialogUrlResponse.h>
+#include <huaweicloud/metastudio/v1/model/ListSmartChatJobRequest.h>
+#include <huaweicloud/metastudio/v1/model/ListSmartChatJobResponse.h>
 #include <huaweicloud/metastudio/v1/model/ShowSmartChatJobRequest.h>
 #include <huaweicloud/metastudio/v1/model/ShowSmartChatJobResponse.h>
 #include <huaweicloud/metastudio/v1/model/SmartChatJobsReq.h>
@@ -656,6 +658,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateDialogUrlResponse> createDialogUrl(
         CreateDialogUrlRequest &request
+    );
+    // 查询数字人智能交互任务列表
+    //
+    // 该接口用于查询数字人智能交互任务列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListSmartChatJobResponse> listSmartChatJob(
+        ListSmartChatJobRequest &request
     );
     // 查询数字人智能交互任务
     //
@@ -1974,7 +1984,7 @@ public:
 
     // 创建TTS异步任务
     //
-    // 该接口用于对外生成音频文件。每个预制音色的计费标准详见[预置音色计费标准](metastudio_02_0060.xml)。
+    // 该接口用于对外生成音频文件。每个预置音色的计费标准详见[预置音色计费标准](metastudio_02_0060.xml)。
     // 
     // &gt; 使用本接口前，需要在MetaStudio控制台服务概览页面，开通“声音合成”的按需计费。
     // &gt; 详细操作为：单击“声音合成”卡片中的“去开通”，在弹出的“开通按需计费服务提示”对话框中，勾选同意协议。单击“确定”，开通按需计费。

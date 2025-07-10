@@ -28,6 +28,8 @@ HumanModel2DAssetMeta::HumanModel2DAssetMeta()
     actionTagMapIsSet_ = false;
     isFlexus_ = false;
     isFlexusIsSet_ = false;
+    voiceAssetId_ = "";
+    voiceAssetIdIsSet_ = false;
 }
 
 HumanModel2DAssetMeta::~HumanModel2DAssetMeta() = default;
@@ -66,6 +68,9 @@ web::json::value HumanModel2DAssetMeta::toJson() const
     }
     if(isFlexusIsSet_) {
         val[utility::conversions::to_string_t("is_flexus")] = ModelBase::toJson(isFlexus_);
+    }
+    if(voiceAssetIdIsSet_) {
+        val[utility::conversions::to_string_t("voice_asset_id")] = ModelBase::toJson(voiceAssetId_);
     }
 
     return val;
@@ -153,6 +158,15 @@ bool HumanModel2DAssetMeta::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsFlexus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("voice_asset_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("voice_asset_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setVoiceAssetId(refVal);
         }
     }
     return ok;
@@ -346,6 +360,27 @@ bool HumanModel2DAssetMeta::isFlexusIsSet() const
 void HumanModel2DAssetMeta::unsetisFlexus()
 {
     isFlexusIsSet_ = false;
+}
+
+std::string HumanModel2DAssetMeta::getVoiceAssetId() const
+{
+    return voiceAssetId_;
+}
+
+void HumanModel2DAssetMeta::setVoiceAssetId(const std::string& value)
+{
+    voiceAssetId_ = value;
+    voiceAssetIdIsSet_ = true;
+}
+
+bool HumanModel2DAssetMeta::voiceAssetIdIsSet() const
+{
+    return voiceAssetIdIsSet_;
+}
+
+void HumanModel2DAssetMeta::unsetvoiceAssetId()
+{
+    voiceAssetIdIsSet_ = false;
 }
 
 }

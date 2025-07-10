@@ -27,6 +27,7 @@ web::json::value HotWordsTypeEnum::toJson() const
 
     
     if (value_ == eHotWordsTypeEnum::HotWordsTypeEnum_SIS) val = web::json::value::string(U("SIS"));
+    if (value_ == eHotWordsTypeEnum::HotWordsTypeEnum_MOBVOI) val = web::json::value::string(U("MOBVOI"));
 
     return val;
 }
@@ -37,6 +38,7 @@ bool HotWordsTypeEnum::fromJson(const web::json::value& val)
 
     
     if (s == utility::conversions::to_string_t("SIS")) value_ = eHotWordsTypeEnum::HotWordsTypeEnum_SIS;
+    if (s == utility::conversions::to_string_t("MOBVOI")) value_ = eHotWordsTypeEnum::HotWordsTypeEnum_MOBVOI;
     return true;
 }
 

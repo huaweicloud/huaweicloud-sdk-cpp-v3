@@ -14,6 +14,7 @@
 #include <huaweicloud/metastudio/v1/model/SmartChatVideoConfig.h>
 #include <string>
 #include <huaweicloud/metastudio/v1/model/LanguageEnum.h>
+#include <huaweicloud/metastudio/v1/model/SmartChatJobBaseInfo.h>
 #include <huaweicloud/metastudio/v1/model/ErrorResponse.h>
 #include <huaweicloud/metastudio/v1/model/SmartChatSubtitleConfig.h>
 #include <vector>
@@ -55,7 +56,7 @@ public:
     void setJobId(const std::string& value);
 
     /// <summary>
-    /// 数字人智能交互对话任务的状态。 * WAITING: 等待 * PROCESSING: 处理中 * SUCCEED: 成功 * FAILED: 失败 * CANCELED: 取消 * HEARTBEAT: 心跳 * IDLE: 空闲 * DELETING: 删除中
+    /// 数字人智能交互对话任务的状态。 * WAITING: 等待 * PROCESSING: 处理中 * SUCCEED: 成功 * FAILED: 失败 * DELETING: 删除中
     /// </summary>
 
     std::string getState() const;
@@ -121,15 +122,6 @@ public:
     /// 
     /// </summary>
 
-    RTCRoomInfoList getRtcRoomInfo() const;
-    bool rtcRoomInfoIsSet() const;
-    void unsetrtcRoomInfo();
-    void setRtcRoomInfo(const RTCRoomInfoList& value);
-
-    /// <summary>
-    /// 
-    /// </summary>
-
     SmartChatSubtitleConfig getChatSubtitleConfig() const;
     bool chatSubtitleConfigIsSet() const;
     void unsetchatSubtitleConfig();
@@ -154,24 +146,6 @@ public:
     void setVoiceConfigList(const std::vector<SmartChatVoiceConfig>& value);
 
     /// <summary>
-    /// 数字人智能交互对话的状态。 0: 等待建链 1: 等待关闭链路 2: 建链成功 3: 进入休眠 4: 等待休眠
-    /// </summary>
-
-    int32_t getChatState() const;
-    bool chatStateIsSet() const;
-    void unsetchatState();
-    void setChatState(int32_t value);
-
-    /// <summary>
-    /// 
-    /// </summary>
-
-    LanguageEnum getLanguage() const;
-    bool languageIsSet() const;
-    void unsetlanguage();
-    void setLanguage(const LanguageEnum& value);
-
-    /// <summary>
     /// 智能交互对话端配置。 * COMPUTER: 电脑端 * MOBILE: 手机端 * HUB: 大屏
     /// </summary>
 
@@ -179,24 +153,6 @@ public:
     bool chatVideoTypeIsSet() const;
     void unsetchatVideoType();
     void setChatVideoType(const std::string& value);
-
-    /// <summary>
-    /// 智能交互接入地址。
-    /// </summary>
-
-    std::string getChatAccessAddress() const;
-    bool chatAccessAddressIsSet() const;
-    void unsetchatAccessAddress();
-    void setChatAccessAddress(const std::string& value);
-
-    /// <summary>
-    /// 智能交互Rest接口接入地址。
-    /// </summary>
-
-    std::string getChatAccessRestAddress() const;
-    bool chatAccessRestAddressIsSet() const;
-    void unsetchatAccessRestAddress();
-    void setChatAccessRestAddress(const std::string& value);
 
     /// <summary>
     /// 是否透明背景
@@ -226,6 +182,69 @@ public:
     void setClientId(const std::string& value);
 
     /// <summary>
+    /// 是否是资源池模式
+    /// </summary>
+
+    bool isIsPoolMode() const;
+    bool isPoolModeIsSet() const;
+    void unsetisPoolMode();
+    void setIsPoolMode(bool value);
+
+    /// <summary>
+    /// 对话结束原因 * NORMAL：正常结束 * MUTE_TIMEOUT：静音超时
+    /// </summary>
+
+    std::string getJobFinishReason() const;
+    bool jobFinishReasonIsSet() const;
+    void unsetjobFinishReason();
+    void setJobFinishReason(const std::string& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    RTCRoomInfoList getRtcRoomInfo() const;
+    bool rtcRoomInfoIsSet() const;
+    void unsetrtcRoomInfo();
+    void setRtcRoomInfo(const RTCRoomInfoList& value);
+
+    /// <summary>
+    /// 数字人智能交互对话的状态。 0: 等待建链 1: 等待关闭链路 2: 建链成功 3: 进入休眠 4: 等待休眠
+    /// </summary>
+
+    int32_t getChatState() const;
+    bool chatStateIsSet() const;
+    void unsetchatState();
+    void setChatState(int32_t value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    LanguageEnum getLanguage() const;
+    bool languageIsSet() const;
+    void unsetlanguage();
+    void setLanguage(const LanguageEnum& value);
+
+    /// <summary>
+    /// 智能交互接入地址。
+    /// </summary>
+
+    std::string getChatAccessAddress() const;
+    bool chatAccessAddressIsSet() const;
+    void unsetchatAccessAddress();
+    void setChatAccessAddress(const std::string& value);
+
+    /// <summary>
+    /// 智能交互Rest接口接入地址。
+    /// </summary>
+
+    std::string getChatAccessRestAddress() const;
+    bool chatAccessRestAddressIsSet() const;
+    void unsetchatAccessRestAddress();
+    void setChatAccessRestAddress(const std::string& value);
+
+    /// <summary>
     /// 
     /// </summary>
 
@@ -252,30 +271,34 @@ protected:
     bool createTimeIsSet_;
     std::string lastupdateTime_;
     bool lastupdateTimeIsSet_;
-    RTCRoomInfoList rtcRoomInfo_;
-    bool rtcRoomInfoIsSet_;
     SmartChatSubtitleConfig chatSubtitleConfig_;
     bool chatSubtitleConfigIsSet_;
     SmartChatVideoConfig videoConfig_;
     bool videoConfigIsSet_;
     std::vector<SmartChatVoiceConfig> voiceConfigList_;
     bool voiceConfigListIsSet_;
-    int32_t chatState_;
-    bool chatStateIsSet_;
-    LanguageEnum language_;
-    bool languageIsSet_;
     std::string chatVideoType_;
     bool chatVideoTypeIsSet_;
-    std::string chatAccessAddress_;
-    bool chatAccessAddressIsSet_;
-    std::string chatAccessRestAddress_;
-    bool chatAccessRestAddressIsSet_;
     bool isTransparent_;
     bool isTransparentIsSet_;
     std::string defaultLanguage_;
     bool defaultLanguageIsSet_;
     std::string clientId_;
     bool clientIdIsSet_;
+    bool isPoolMode_;
+    bool isPoolModeIsSet_;
+    std::string jobFinishReason_;
+    bool jobFinishReasonIsSet_;
+    RTCRoomInfoList rtcRoomInfo_;
+    bool rtcRoomInfoIsSet_;
+    int32_t chatState_;
+    bool chatStateIsSet_;
+    LanguageEnum language_;
+    bool languageIsSet_;
+    std::string chatAccessAddress_;
+    bool chatAccessAddressIsSet_;
+    std::string chatAccessRestAddress_;
+    bool chatAccessRestAddressIsSet_;
     std::string xRequestId_;
     bool xRequestIdIsSet_;
 

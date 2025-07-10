@@ -16,6 +16,7 @@ CreateHotWordsReq::CreateHotWordsReq()
     robotId_ = "";
     robotIdIsSet_ = false;
     sisHotWordsIsSet_ = false;
+    mobvoiHotWordsIsSet_ = false;
 }
 
 CreateHotWordsReq::~CreateHotWordsReq() = default;
@@ -36,6 +37,9 @@ web::json::value CreateHotWordsReq::toJson() const
     }
     if(sisHotWordsIsSet_) {
         val[utility::conversions::to_string_t("sis_hot_words")] = ModelBase::toJson(sisHotWords_);
+    }
+    if(mobvoiHotWordsIsSet_) {
+        val[utility::conversions::to_string_t("mobvoi_hot_words")] = ModelBase::toJson(mobvoiHotWords_);
     }
 
     return val;
@@ -69,6 +73,15 @@ bool CreateHotWordsReq::fromJson(const web::json::value& val)
             CreateSisHotWords refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSisHotWords(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("mobvoi_hot_words"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("mobvoi_hot_words"));
+        if(!fieldValue.is_null())
+        {
+            CreateMobvoiHotWords refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMobvoiHotWords(refVal);
         }
     }
     return ok;
@@ -136,6 +149,27 @@ bool CreateHotWordsReq::sisHotWordsIsSet() const
 void CreateHotWordsReq::unsetsisHotWords()
 {
     sisHotWordsIsSet_ = false;
+}
+
+CreateMobvoiHotWords CreateHotWordsReq::getMobvoiHotWords() const
+{
+    return mobvoiHotWords_;
+}
+
+void CreateHotWordsReq::setMobvoiHotWords(const CreateMobvoiHotWords& value)
+{
+    mobvoiHotWords_ = value;
+    mobvoiHotWordsIsSet_ = true;
+}
+
+bool CreateHotWordsReq::mobvoiHotWordsIsSet() const
+{
+    return mobvoiHotWordsIsSet_;
+}
+
+void CreateHotWordsReq::unsetmobvoiHotWords()
+{
+    mobvoiHotWordsIsSet_ = false;
 }
 
 }

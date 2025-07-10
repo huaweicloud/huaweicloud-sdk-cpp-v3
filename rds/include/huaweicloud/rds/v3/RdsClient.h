@@ -116,6 +116,8 @@
 #include <huaweicloud/rds/v3/model/InstanceRestartRequsetBody.h>
 #include <huaweicloud/rds/v3/model/ListAuditlogsRequest.h>
 #include <huaweicloud/rds/v3/model/ListAuditlogsResponse.h>
+#include <huaweicloud/rds/v3/model/ListBackupTransfersRequest.h>
+#include <huaweicloud/rds/v3/model/ListBackupTransfersResponse.h>
 #include <huaweicloud/rds/v3/model/ListBackupsRequest.h>
 #include <huaweicloud/rds/v3/model/ListBackupsResponse.h>
 #include <huaweicloud/rds/v3/model/ListCollationsRequest.h>
@@ -284,6 +286,9 @@
 #include <huaweicloud/rds/v3/model/SetSecurityGroupResponse.h>
 #include <huaweicloud/rds/v3/model/SetSensitiveSlowLogRequest.h>
 #include <huaweicloud/rds/v3/model/SetSensitiveSlowLogResponse.h>
+#include <huaweicloud/rds/v3/model/SetTransferPolicyRequest.h>
+#include <huaweicloud/rds/v3/model/SetTransferPolicyRequestBody.h>
+#include <huaweicloud/rds/v3/model/SetTransferPolicyResponse.h>
 #include <huaweicloud/rds/v3/model/ShowAuditlogDownloadLinkRequest.h>
 #include <huaweicloud/rds/v3/model/ShowAuditlogDownloadLinkResponse.h>
 #include <huaweicloud/rds/v3/model/ShowAuditlogPolicyRequest.h>
@@ -330,6 +335,8 @@
 #include <huaweicloud/rds/v3/model/ShowStorageUsedSpaceResponse.h>
 #include <huaweicloud/rds/v3/model/ShowTdeStatusRequest.h>
 #include <huaweicloud/rds/v3/model/ShowTdeStatusResponse.h>
+#include <huaweicloud/rds/v3/model/ShowTransferPolicyRequest.h>
+#include <huaweicloud/rds/v3/model/ShowTransferPolicyResponse.h>
 #include <huaweicloud/rds/v3/model/ShowUpgradeDbMajorVersionStatusRequest.h>
 #include <huaweicloud/rds/v3/model/ShowUpgradeDbMajorVersionStatusResponse.h>
 #include <huaweicloud/rds/v3/model/SimplifiedInstancesRequest.h>
@@ -364,6 +371,9 @@
 #include <huaweicloud/rds/v3/model/SwitchSslRequest.h>
 #include <huaweicloud/rds/v3/model/SwitchSslResponse.h>
 #include <huaweicloud/rds/v3/model/ToPeriodReq.h>
+#include <huaweicloud/rds/v3/model/TransferBackupRequest.h>
+#include <huaweicloud/rds/v3/model/TransferBackupRequestBody.h>
+#include <huaweicloud/rds/v3/model/TransferBackupResponse.h>
 #include <huaweicloud/rds/v3/model/UnlockNodeReadonlyStatusRequest.h>
 #include <huaweicloud/rds/v3/model/UnlockNodeReadonlyStatusRequestBody.h>
 #include <huaweicloud/rds/v3/model/UnlockNodeReadonlyStatusResponse.h>
@@ -916,6 +926,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListAuditlogsResponse> listAuditlogs(
         ListAuditlogsRequest &request
+    );
+    // 查询转储任务列表
+    //
+    // 查询转储任务列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListBackupTransfersResponse> listBackupTransfers(
+        ListBackupTransfersRequest &request
     );
     // 获取备份列表
     //
@@ -1487,6 +1505,14 @@ public:
     std::shared_ptr<SetSensitiveSlowLogResponse> setSensitiveSlowLog(
         SetSensitiveSlowLogRequest &request
     );
+    // 设置自动转储策略
+    //
+    // 设置自动转储策略
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SetTransferPolicyResponse> setTransferPolicy(
+        SetTransferPolicyRequest &request
+    );
     // 生成审计日志下载链接
     //
     // 生成审计日志下载链接。
@@ -1671,6 +1697,14 @@ public:
     std::shared_ptr<ShowTdeStatusResponse> showTdeStatus(
         ShowTdeStatusRequest &request
     );
+    // 查询自动转储策略
+    //
+    // 查询自动转储策略
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowTransferPolicyResponse> showTransferPolicy(
+        ShowTransferPolicyRequest &request
+    );
     // 
     //
     // 查询大版本检查状态或升级状态。
@@ -1774,6 +1808,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<SwitchSslResponse> switchSsl(
         SwitchSslRequest &request
+    );
+    // 手动转储备份
+    //
+    // 手动转储备份
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<TransferBackupResponse> transferBackup(
+        TransferBackupRequest &request
     );
     // 解除节点只读状态接口
     //

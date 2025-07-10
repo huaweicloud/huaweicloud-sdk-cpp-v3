@@ -280,6 +280,45 @@ HttpRequestDef MetaStudioMeta::genRequestDefForCreateDialogUrl() {
     return reqDefBuilder;
 }
 
+HttpRequestDef MetaStudioMeta::genRequestDefForListSmartChatJob() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("State")
+                  .withJsonTag("state")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    FieldDef headerParamAuthorization;
+    reqDefBuilder.withRequestField(headerParamAuthorization
+                  .withName("Authorization")
+                  .withJsonTag("Authorization")
+                  .withLocationType(Header_));
+    FieldDef headerParamXSdkDate;
+    reqDefBuilder.withRequestField(headerParamXSdkDate
+                  .withName("XSdkDate")
+                  .withJsonTag("X-Sdk-Date")
+                  .withLocationType(Header_));
+    FieldDef headerParamXProjectId;
+    reqDefBuilder.withRequestField(headerParamXProjectId
+                  .withName("XProjectId")
+                  .withJsonTag("X-Project-Id")
+                  .withLocationType(Header_));
+    FieldDef headerParamXAppUserId;
+    reqDefBuilder.withRequestField(headerParamXAppUserId
+                  .withName("XAppUserId")
+                  .withJsonTag("X-App-UserId")
+                  .withLocationType(Header_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef MetaStudioMeta::genRequestDefForShowSmartChatJob() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamAuthorization;
@@ -697,9 +736,6 @@ HttpRequestDef MetaStudioMeta::genRequestDefForListAssets() {
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("AccurateQueryField")
                   .withJsonTag("accurate_query_field")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("RenderEngine")
-                  .withJsonTag("render_engine")
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("AssetId")
                   .withJsonTag("asset_id")
@@ -1751,6 +1787,9 @@ HttpRequestDef MetaStudioMeta::genRequestDefForListHotWords() {
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("Language")
                   .withJsonTag("language")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("HotWordsType")
+                  .withJsonTag("hot_words_type")
                   .withLocationType(Query_));
     FieldDef headerParamAuthorization;
     reqDefBuilder.withRequestField(headerParamAuthorization

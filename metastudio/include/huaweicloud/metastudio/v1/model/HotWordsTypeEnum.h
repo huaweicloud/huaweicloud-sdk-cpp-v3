@@ -36,6 +36,7 @@ public:
     enum class eHotWordsTypeEnum 
     {
         HotWordsTypeEnum_SIS,
+        HotWordsTypeEnum_MOBVOI,
     };
 
     eHotWordsTypeEnum getValue() const;

@@ -146,6 +146,8 @@
 #include <huaweicloud/codeartsbuild/v3/model/ShowJobInfoResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowJobNoticeConfigInfoRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowJobNoticeConfigInfoResponse.h>
+#include <huaweicloud/codeartsbuild/v3/model/ShowJobPipelineInfoRequest.h>
+#include <huaweicloud/codeartsbuild/v3/model/ShowJobPipelineInfoResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowJobRolePermissionRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowJobRolePermissionResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowJobStepStatusRequest.h>
@@ -156,11 +158,16 @@
 #include <huaweicloud/codeartsbuild/v3/model/ShowProjectJobPermissionResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowRunningStatusRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowRunningStatusResponse.h>
+#include <huaweicloud/codeartsbuild/v3/model/StopTheJobRequest.h>
+#include <huaweicloud/codeartsbuild/v3/model/StopTheJobResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/UpdateBuildJobRequestBody.h>
 #include <huaweicloud/codeartsbuild/v3/model/UpdateNewJobRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/UpdateNewJobResponse.h>
 #include <string>
 
+#include <huaweicloud/codeartsbuild/v3/model/AddKeystorePermissionRequest.h>
+#include <huaweicloud/codeartsbuild/v3/model/AddKeystorePermissionRequestBody.h>
+#include <huaweicloud/codeartsbuild/v3/model/AddKeystorePermissionResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/DeleteKeystorePermissionRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/DeleteKeystorePermissionResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/DeleteKeystoreRequest.h>
@@ -174,6 +181,9 @@
 #include <huaweicloud/codeartsbuild/v3/model/ListKeystoreSearchResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowKeystorePermissionRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/ShowKeystorePermissionResponse.h>
+#include <huaweicloud/codeartsbuild/v3/model/UpdateKeystorePermissionRequest.h>
+#include <huaweicloud/codeartsbuild/v3/model/UpdateKeystorePermissionRequestBody.h>
+#include <huaweicloud/codeartsbuild/v3/model/UpdateKeystorePermissionResponse.h>
 #include <huaweicloud/codeartsbuild/v3/model/UpdateKeystoreRequest.h>
 #include <huaweicloud/codeartsbuild/v3/model/UpdateKeystoreRequestBody.h>
 #include <huaweicloud/codeartsbuild/v3/model/UpdateKeystoreResponse.h>
@@ -766,6 +776,14 @@ public:
     std::shared_ptr<ShowJobNoticeConfigInfoResponse> showJobNoticeConfigInfo(
         ShowJobNoticeConfigInfoRequest &request
     );
+    // 流水线查看构建任务信息
+    //
+    // 流水线查看构建任务信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowJobPipelineInfoResponse> showJobPipelineInfo(
+        ShowJobPipelineInfoRequest &request
+    );
     // 获取构建任务的角色权限矩阵信息
     //
     // 获取构建任务的角色权限矩阵信息
@@ -806,6 +824,14 @@ public:
     std::shared_ptr<ShowRunningStatusResponse> showRunningStatus(
         ShowRunningStatusRequest &request
     );
+    // 停止构建任务v1
+    //
+    // 停止构建任务v1
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<StopTheJobResponse> stopTheJob(
+        StopTheJobRequest &request
+    );
     // 更新构建任务
     //
     // 更新构建任务
@@ -815,6 +841,14 @@ public:
         UpdateNewJobRequest &request
     );
 
+    // 添加文件权限
+    //
+    // 添加文件权限
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<AddKeystorePermissionResponse> addKeystorePermission(
+        AddKeystorePermissionRequest &request
+    );
     // 删除文件管理文件
     //
     // 删除文件管理文件
@@ -870,6 +904,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateKeystoreResponse> updateKeystore(
         UpdateKeystoreRequest &request
+    );
+    // 配置文件权限
+    //
+    // 配置文件权限
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateKeystorePermissionResponse> updateKeystorePermission(
+        UpdateKeystorePermissionRequest &request
     );
     // 上传文件
     //

@@ -17,6 +17,7 @@
 #include <huaweicloud/ecs/v2/model/SecurityOptions.h>
 #include <huaweicloud/ecs/v2/model/Hypervisor.h>
 #include <vector>
+#include <huaweicloud/ecs/v2/model/NetworkInterfaces.h>
 #include <huaweicloud/ecs/v2/model/ServerSystemTag.h>
 #include <huaweicloud/ecs/v2/model/ServerSecurityGroup.h>
 #include <huaweicloud/ecs/v2/model/CpuOptions.h>
@@ -483,6 +484,15 @@ public:
     void unsethypervisor();
     void setHypervisor(const Hypervisor& value);
 
+    /// <summary>
+    /// 网卡信息
+    /// </summary>
+
+    std::vector<NetworkInterfaces>& getNetworkInterfaces();
+    bool networkInterfacesIsSet() const;
+    void unsetnetworkInterfaces();
+    void setNetworkInterfaces(const std::vector<NetworkInterfaces>& value);
+
 
 protected:
     std::string status_;
@@ -581,6 +591,8 @@ protected:
     bool securityOptionsIsSet_;
     Hypervisor hypervisor_;
     bool hypervisorIsSet_;
+    std::vector<NetworkInterfaces> networkInterfaces_;
+    bool networkInterfacesIsSet_;
 
 };
 

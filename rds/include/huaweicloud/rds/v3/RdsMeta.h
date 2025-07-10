@@ -49,6 +49,7 @@ public:
     static HttpRequestDef genRequestDefForDownloadSlowlog();
     static HttpRequestDef genRequestDefForEnableConfiguration();
     static HttpRequestDef genRequestDefForListAuditlogs();
+    static HttpRequestDef genRequestDefForListBackupTransfers();
     static HttpRequestDef genRequestDefForListBackups();
     static HttpRequestDef genRequestDefForListCollations();
     static HttpRequestDef genRequestDefForListConfigurations();
@@ -119,6 +120,7 @@ public:
     static HttpRequestDef genRequestDefForSetSecondLevelMonitor();
     static HttpRequestDef genRequestDefForSetSecurityGroup();
     static HttpRequestDef genRequestDefForSetSensitiveSlowLog();
+    static HttpRequestDef genRequestDefForSetTransferPolicy();
     static HttpRequestDef genRequestDefForShowAuditlogDownloadLink();
     static HttpRequestDef genRequestDefForShowAuditlogPolicy();
     static HttpRequestDef genRequestDefForShowAutoEnlargePolicy();
@@ -142,6 +144,7 @@ public:
     static HttpRequestDef genRequestDefForShowSecondLevelMonitoring();
     static HttpRequestDef genRequestDefForShowStorageUsedSpace();
     static HttpRequestDef genRequestDefForShowTdeStatus();
+    static HttpRequestDef genRequestDefForShowTransferPolicy();
     static HttpRequestDef genRequestDefForShowUpgradeDbMajorVersionStatus();
     static HttpRequestDef genRequestDefForStartFailover();
     static HttpRequestDef genRequestDefForStartInstanceEnlargeVolumeAction();
@@ -155,6 +158,7 @@ public:
     static HttpRequestDef genRequestDefForStopInstance();
     static HttpRequestDef genRequestDefForSwitchSqlLimit();
     static HttpRequestDef genRequestDefForSwitchSsl();
+    static HttpRequestDef genRequestDefForTransferBackup();
     static HttpRequestDef genRequestDefForUnlockNodeReadonlyStatus();
     static HttpRequestDef genRequestDefForUpdateConfiguration();
     static HttpRequestDef genRequestDefForUpdateDataIp();

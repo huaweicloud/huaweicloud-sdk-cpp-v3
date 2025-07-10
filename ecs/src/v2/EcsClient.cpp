@@ -1437,6 +1437,12 @@ std::shared_ptr<ListFlavorsResponse> EcsClient::listFlavors(ListFlavorsRequest &
     if (request.flavorIdIsSet()) {
         localVarQueryParams["flavor_id"] = parameterToString(request.getFlavorId());
     }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.markerIsSet()) {
+        localVarQueryParams["marker"] = parameterToString(request.getMarker());
+    }
 
     std::string localVarHttpBody;
 

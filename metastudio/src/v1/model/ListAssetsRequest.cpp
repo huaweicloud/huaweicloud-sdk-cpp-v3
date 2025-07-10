@@ -45,8 +45,6 @@ ListAssetsRequest::ListAssetsRequest()
     styleId_ = "";
     styleIdIsSet_ = false;
     accurateQueryFieldIsSet_ = false;
-    renderEngine_ = "";
-    renderEngineIsSet_ = false;
     assetIdIsSet_ = false;
     sex_ = "";
     sexIsSet_ = false;
@@ -140,9 +138,6 @@ web::json::value ListAssetsRequest::toJson() const
     }
     if(accurateQueryFieldIsSet_) {
         val[utility::conversions::to_string_t("accurate_query_field")] = ModelBase::toJson(accurateQueryField_);
-    }
-    if(renderEngineIsSet_) {
-        val[utility::conversions::to_string_t("render_engine")] = ModelBase::toJson(renderEngine_);
     }
     if(assetIdIsSet_) {
         val[utility::conversions::to_string_t("asset_id")] = ModelBase::toJson(assetId_);
@@ -350,15 +345,6 @@ bool ListAssetsRequest::fromJson(const web::json::value& val)
             std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAccurateQueryField(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("render_engine"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("render_engine"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setRenderEngine(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("asset_id"))) {
@@ -864,27 +850,6 @@ bool ListAssetsRequest::accurateQueryFieldIsSet() const
 void ListAssetsRequest::unsetaccurateQueryField()
 {
     accurateQueryFieldIsSet_ = false;
-}
-
-std::string ListAssetsRequest::getRenderEngine() const
-{
-    return renderEngine_;
-}
-
-void ListAssetsRequest::setRenderEngine(const std::string& value)
-{
-    renderEngine_ = value;
-    renderEngineIsSet_ = true;
-}
-
-bool ListAssetsRequest::renderEngineIsSet() const
-{
-    return renderEngineIsSet_;
-}
-
-void ListAssetsRequest::unsetrenderEngine()
-{
-    renderEngineIsSet_ = false;
 }
 
 std::vector<std::string>& ListAssetsRequest::getAssetId()

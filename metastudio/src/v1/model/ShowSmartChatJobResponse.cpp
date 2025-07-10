@@ -27,25 +27,29 @@ ShowSmartChatJobResponse::ShowSmartChatJobResponse()
     createTimeIsSet_ = false;
     lastupdateTime_ = "";
     lastupdateTimeIsSet_ = false;
-    rtcRoomInfoIsSet_ = false;
     chatSubtitleConfigIsSet_ = false;
     videoConfigIsSet_ = false;
     voiceConfigListIsSet_ = false;
-    chatState_ = 0;
-    chatStateIsSet_ = false;
-    languageIsSet_ = false;
     chatVideoType_ = "";
     chatVideoTypeIsSet_ = false;
-    chatAccessAddress_ = "";
-    chatAccessAddressIsSet_ = false;
-    chatAccessRestAddress_ = "";
-    chatAccessRestAddressIsSet_ = false;
     isTransparent_ = false;
     isTransparentIsSet_ = false;
     defaultLanguage_ = "";
     defaultLanguageIsSet_ = false;
     clientId_ = "";
     clientIdIsSet_ = false;
+    isPoolMode_ = false;
+    isPoolModeIsSet_ = false;
+    jobFinishReason_ = "";
+    jobFinishReasonIsSet_ = false;
+    rtcRoomInfoIsSet_ = false;
+    chatState_ = 0;
+    chatStateIsSet_ = false;
+    languageIsSet_ = false;
+    chatAccessAddress_ = "";
+    chatAccessAddressIsSet_ = false;
+    chatAccessRestAddress_ = "";
+    chatAccessRestAddressIsSet_ = false;
     xRequestId_ = "";
     xRequestIdIsSet_ = false;
 }
@@ -84,9 +88,6 @@ web::json::value ShowSmartChatJobResponse::toJson() const
     if(lastupdateTimeIsSet_) {
         val[utility::conversions::to_string_t("lastupdate_time")] = ModelBase::toJson(lastupdateTime_);
     }
-    if(rtcRoomInfoIsSet_) {
-        val[utility::conversions::to_string_t("rtc_room_info")] = ModelBase::toJson(rtcRoomInfo_);
-    }
     if(chatSubtitleConfigIsSet_) {
         val[utility::conversions::to_string_t("chat_subtitle_config")] = ModelBase::toJson(chatSubtitleConfig_);
     }
@@ -96,20 +97,8 @@ web::json::value ShowSmartChatJobResponse::toJson() const
     if(voiceConfigListIsSet_) {
         val[utility::conversions::to_string_t("voice_config_list")] = ModelBase::toJson(voiceConfigList_);
     }
-    if(chatStateIsSet_) {
-        val[utility::conversions::to_string_t("chat_state")] = ModelBase::toJson(chatState_);
-    }
-    if(languageIsSet_) {
-        val[utility::conversions::to_string_t("language")] = ModelBase::toJson(language_);
-    }
     if(chatVideoTypeIsSet_) {
         val[utility::conversions::to_string_t("chat_video_type")] = ModelBase::toJson(chatVideoType_);
-    }
-    if(chatAccessAddressIsSet_) {
-        val[utility::conversions::to_string_t("chat_access_address")] = ModelBase::toJson(chatAccessAddress_);
-    }
-    if(chatAccessRestAddressIsSet_) {
-        val[utility::conversions::to_string_t("chat_access_rest_address")] = ModelBase::toJson(chatAccessRestAddress_);
     }
     if(isTransparentIsSet_) {
         val[utility::conversions::to_string_t("is_transparent")] = ModelBase::toJson(isTransparent_);
@@ -119,6 +108,27 @@ web::json::value ShowSmartChatJobResponse::toJson() const
     }
     if(clientIdIsSet_) {
         val[utility::conversions::to_string_t("client_id")] = ModelBase::toJson(clientId_);
+    }
+    if(isPoolModeIsSet_) {
+        val[utility::conversions::to_string_t("is_pool_mode")] = ModelBase::toJson(isPoolMode_);
+    }
+    if(jobFinishReasonIsSet_) {
+        val[utility::conversions::to_string_t("job_finish_reason")] = ModelBase::toJson(jobFinishReason_);
+    }
+    if(rtcRoomInfoIsSet_) {
+        val[utility::conversions::to_string_t("rtc_room_info")] = ModelBase::toJson(rtcRoomInfo_);
+    }
+    if(chatStateIsSet_) {
+        val[utility::conversions::to_string_t("chat_state")] = ModelBase::toJson(chatState_);
+    }
+    if(languageIsSet_) {
+        val[utility::conversions::to_string_t("language")] = ModelBase::toJson(language_);
+    }
+    if(chatAccessAddressIsSet_) {
+        val[utility::conversions::to_string_t("chat_access_address")] = ModelBase::toJson(chatAccessAddress_);
+    }
+    if(chatAccessRestAddressIsSet_) {
+        val[utility::conversions::to_string_t("chat_access_rest_address")] = ModelBase::toJson(chatAccessRestAddress_);
     }
     if(xRequestIdIsSet_) {
         val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
@@ -202,15 +212,6 @@ bool ShowSmartChatJobResponse::fromJson(const web::json::value& val)
             setLastupdateTime(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("rtc_room_info"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("rtc_room_info"));
-        if(!fieldValue.is_null())
-        {
-            RTCRoomInfoList refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setRtcRoomInfo(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("chat_subtitle_config"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("chat_subtitle_config"));
         if(!fieldValue.is_null())
@@ -238,24 +239,6 @@ bool ShowSmartChatJobResponse::fromJson(const web::json::value& val)
             setVoiceConfigList(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("chat_state"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("chat_state"));
-        if(!fieldValue.is_null())
-        {
-            int32_t refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setChatState(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("language"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("language"));
-        if(!fieldValue.is_null())
-        {
-            LanguageEnum refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setLanguage(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("chat_video_type"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("chat_video_type"));
         if(!fieldValue.is_null())
@@ -263,24 +246,6 @@ bool ShowSmartChatJobResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setChatVideoType(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("chat_access_address"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("chat_access_address"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setChatAccessAddress(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("chat_access_rest_address"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("chat_access_rest_address"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setChatAccessRestAddress(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("is_transparent"))) {
@@ -308,6 +273,69 @@ bool ShowSmartChatJobResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setClientId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_pool_mode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_pool_mode"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsPoolMode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("job_finish_reason"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("job_finish_reason"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setJobFinishReason(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("rtc_room_info"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("rtc_room_info"));
+        if(!fieldValue.is_null())
+        {
+            RTCRoomInfoList refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRtcRoomInfo(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("chat_state"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("chat_state"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setChatState(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("language"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("language"));
+        if(!fieldValue.is_null())
+        {
+            LanguageEnum refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLanguage(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("chat_access_address"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("chat_access_address"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setChatAccessAddress(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("chat_access_rest_address"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("chat_access_rest_address"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setChatAccessRestAddress(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
@@ -491,27 +519,6 @@ void ShowSmartChatJobResponse::unsetlastupdateTime()
     lastupdateTimeIsSet_ = false;
 }
 
-RTCRoomInfoList ShowSmartChatJobResponse::getRtcRoomInfo() const
-{
-    return rtcRoomInfo_;
-}
-
-void ShowSmartChatJobResponse::setRtcRoomInfo(const RTCRoomInfoList& value)
-{
-    rtcRoomInfo_ = value;
-    rtcRoomInfoIsSet_ = true;
-}
-
-bool ShowSmartChatJobResponse::rtcRoomInfoIsSet() const
-{
-    return rtcRoomInfoIsSet_;
-}
-
-void ShowSmartChatJobResponse::unsetrtcRoomInfo()
-{
-    rtcRoomInfoIsSet_ = false;
-}
-
 SmartChatSubtitleConfig ShowSmartChatJobResponse::getChatSubtitleConfig() const
 {
     return chatSubtitleConfig_;
@@ -575,48 +582,6 @@ void ShowSmartChatJobResponse::unsetvoiceConfigList()
     voiceConfigListIsSet_ = false;
 }
 
-int32_t ShowSmartChatJobResponse::getChatState() const
-{
-    return chatState_;
-}
-
-void ShowSmartChatJobResponse::setChatState(int32_t value)
-{
-    chatState_ = value;
-    chatStateIsSet_ = true;
-}
-
-bool ShowSmartChatJobResponse::chatStateIsSet() const
-{
-    return chatStateIsSet_;
-}
-
-void ShowSmartChatJobResponse::unsetchatState()
-{
-    chatStateIsSet_ = false;
-}
-
-LanguageEnum ShowSmartChatJobResponse::getLanguage() const
-{
-    return language_;
-}
-
-void ShowSmartChatJobResponse::setLanguage(const LanguageEnum& value)
-{
-    language_ = value;
-    languageIsSet_ = true;
-}
-
-bool ShowSmartChatJobResponse::languageIsSet() const
-{
-    return languageIsSet_;
-}
-
-void ShowSmartChatJobResponse::unsetlanguage()
-{
-    languageIsSet_ = false;
-}
-
 std::string ShowSmartChatJobResponse::getChatVideoType() const
 {
     return chatVideoType_;
@@ -636,48 +601,6 @@ bool ShowSmartChatJobResponse::chatVideoTypeIsSet() const
 void ShowSmartChatJobResponse::unsetchatVideoType()
 {
     chatVideoTypeIsSet_ = false;
-}
-
-std::string ShowSmartChatJobResponse::getChatAccessAddress() const
-{
-    return chatAccessAddress_;
-}
-
-void ShowSmartChatJobResponse::setChatAccessAddress(const std::string& value)
-{
-    chatAccessAddress_ = value;
-    chatAccessAddressIsSet_ = true;
-}
-
-bool ShowSmartChatJobResponse::chatAccessAddressIsSet() const
-{
-    return chatAccessAddressIsSet_;
-}
-
-void ShowSmartChatJobResponse::unsetchatAccessAddress()
-{
-    chatAccessAddressIsSet_ = false;
-}
-
-std::string ShowSmartChatJobResponse::getChatAccessRestAddress() const
-{
-    return chatAccessRestAddress_;
-}
-
-void ShowSmartChatJobResponse::setChatAccessRestAddress(const std::string& value)
-{
-    chatAccessRestAddress_ = value;
-    chatAccessRestAddressIsSet_ = true;
-}
-
-bool ShowSmartChatJobResponse::chatAccessRestAddressIsSet() const
-{
-    return chatAccessRestAddressIsSet_;
-}
-
-void ShowSmartChatJobResponse::unsetchatAccessRestAddress()
-{
-    chatAccessRestAddressIsSet_ = false;
 }
 
 bool ShowSmartChatJobResponse::isIsTransparent() const
@@ -741,6 +664,153 @@ bool ShowSmartChatJobResponse::clientIdIsSet() const
 void ShowSmartChatJobResponse::unsetclientId()
 {
     clientIdIsSet_ = false;
+}
+
+bool ShowSmartChatJobResponse::isIsPoolMode() const
+{
+    return isPoolMode_;
+}
+
+void ShowSmartChatJobResponse::setIsPoolMode(bool value)
+{
+    isPoolMode_ = value;
+    isPoolModeIsSet_ = true;
+}
+
+bool ShowSmartChatJobResponse::isPoolModeIsSet() const
+{
+    return isPoolModeIsSet_;
+}
+
+void ShowSmartChatJobResponse::unsetisPoolMode()
+{
+    isPoolModeIsSet_ = false;
+}
+
+std::string ShowSmartChatJobResponse::getJobFinishReason() const
+{
+    return jobFinishReason_;
+}
+
+void ShowSmartChatJobResponse::setJobFinishReason(const std::string& value)
+{
+    jobFinishReason_ = value;
+    jobFinishReasonIsSet_ = true;
+}
+
+bool ShowSmartChatJobResponse::jobFinishReasonIsSet() const
+{
+    return jobFinishReasonIsSet_;
+}
+
+void ShowSmartChatJobResponse::unsetjobFinishReason()
+{
+    jobFinishReasonIsSet_ = false;
+}
+
+RTCRoomInfoList ShowSmartChatJobResponse::getRtcRoomInfo() const
+{
+    return rtcRoomInfo_;
+}
+
+void ShowSmartChatJobResponse::setRtcRoomInfo(const RTCRoomInfoList& value)
+{
+    rtcRoomInfo_ = value;
+    rtcRoomInfoIsSet_ = true;
+}
+
+bool ShowSmartChatJobResponse::rtcRoomInfoIsSet() const
+{
+    return rtcRoomInfoIsSet_;
+}
+
+void ShowSmartChatJobResponse::unsetrtcRoomInfo()
+{
+    rtcRoomInfoIsSet_ = false;
+}
+
+int32_t ShowSmartChatJobResponse::getChatState() const
+{
+    return chatState_;
+}
+
+void ShowSmartChatJobResponse::setChatState(int32_t value)
+{
+    chatState_ = value;
+    chatStateIsSet_ = true;
+}
+
+bool ShowSmartChatJobResponse::chatStateIsSet() const
+{
+    return chatStateIsSet_;
+}
+
+void ShowSmartChatJobResponse::unsetchatState()
+{
+    chatStateIsSet_ = false;
+}
+
+LanguageEnum ShowSmartChatJobResponse::getLanguage() const
+{
+    return language_;
+}
+
+void ShowSmartChatJobResponse::setLanguage(const LanguageEnum& value)
+{
+    language_ = value;
+    languageIsSet_ = true;
+}
+
+bool ShowSmartChatJobResponse::languageIsSet() const
+{
+    return languageIsSet_;
+}
+
+void ShowSmartChatJobResponse::unsetlanguage()
+{
+    languageIsSet_ = false;
+}
+
+std::string ShowSmartChatJobResponse::getChatAccessAddress() const
+{
+    return chatAccessAddress_;
+}
+
+void ShowSmartChatJobResponse::setChatAccessAddress(const std::string& value)
+{
+    chatAccessAddress_ = value;
+    chatAccessAddressIsSet_ = true;
+}
+
+bool ShowSmartChatJobResponse::chatAccessAddressIsSet() const
+{
+    return chatAccessAddressIsSet_;
+}
+
+void ShowSmartChatJobResponse::unsetchatAccessAddress()
+{
+    chatAccessAddressIsSet_ = false;
+}
+
+std::string ShowSmartChatJobResponse::getChatAccessRestAddress() const
+{
+    return chatAccessRestAddress_;
+}
+
+void ShowSmartChatJobResponse::setChatAccessRestAddress(const std::string& value)
+{
+    chatAccessRestAddress_ = value;
+    chatAccessRestAddressIsSet_ = true;
+}
+
+bool ShowSmartChatJobResponse::chatAccessRestAddressIsSet() const
+{
+    return chatAccessRestAddressIsSet_;
+}
+
+void ShowSmartChatJobResponse::unsetchatAccessRestAddress()
+{
+    chatAccessRestAddressIsSet_ = false;
 }
 
 std::string ShowSmartChatJobResponse::getXRequestId() const

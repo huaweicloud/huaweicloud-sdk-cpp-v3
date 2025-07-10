@@ -23,6 +23,7 @@ public:
     static HttpRequestDef genRequestDefForDeleteAgencyWithRoleType();
     static HttpRequestDef genRequestDefForShowAgency();
     static HttpRequestDef genRequestDefForCreateDialogUrl();
+    static HttpRequestDef genRequestDefForListSmartChatJob();
     static HttpRequestDef genRequestDefForShowSmartChatJob();
     static HttpRequestDef genRequestDefForStartSmartChatJob();
     static HttpRequestDef genRequestDefForStopSmartChatJob();

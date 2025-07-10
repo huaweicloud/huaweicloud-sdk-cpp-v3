@@ -15,17 +15,24 @@ class HUAWEICLOUD_CDN_V2_EXPORT  CdnMeta {
 public:
     static HttpRequestDef genRequestDefForBatchCopyDomain();
     static HttpRequestDef genRequestDefForBatchDeleteTags();
+    static HttpRequestDef genRequestDefForBatchUpdateRuleStatus();
     static HttpRequestDef genRequestDefForCreateDomain();
     static HttpRequestDef genRequestDefForCreatePreheatingTasks();
     static HttpRequestDef genRequestDefForCreateRefreshTasks();
+    static HttpRequestDef genRequestDefForCreateRuleNew();
+    static HttpRequestDef genRequestDefForCreateShareCacheGroups();
     static HttpRequestDef genRequestDefForCreateTags();
     static HttpRequestDef genRequestDefForDeleteDomain();
+    static HttpRequestDef genRequestDefForDeleteRuleNew();
+    static HttpRequestDef genRequestDefForDeleteShareCacheGroups();
     static HttpRequestDef genRequestDefForDisableDomain();
     static HttpRequestDef genRequestDefForDownloadRegionCarrierExcel();
     static HttpRequestDef genRequestDefForDownloadStatisticsExcel();
     static HttpRequestDef genRequestDefForEnableDomain();
     static HttpRequestDef genRequestDefForListCdnDomainTopRefers();
     static HttpRequestDef genRequestDefForListDomains();
+    static HttpRequestDef genRequestDefForListRuleDetails();
+    static HttpRequestDef genRequestDefForListShareCacheGroups();
     static HttpRequestDef genRequestDefForModifyAccountInfo();
     static HttpRequestDef genRequestDefForSetChargeModes();
     static HttpRequestDef genRequestDefForShowBandwidthCalc();
@@ -47,7 +54,10 @@ public:
     static HttpRequestDef genRequestDefForShowVerifyDomainOwnerInfo();
     static HttpRequestDef genRequestDefForUpdateDomainFullConfig();
     static HttpRequestDef genRequestDefForUpdateDomainMultiCertificates();
+    static HttpRequestDef genRequestDefForUpdateFullRule();
     static HttpRequestDef genRequestDefForUpdatePrivateBucketAccess();
+    static HttpRequestDef genRequestDefForUpdateRuleNew();
+    static HttpRequestDef genRequestDefForUpdateShareCacheGroups();
     static HttpRequestDef genRequestDefForVerifyDomainOwner();
 };
 

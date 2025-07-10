@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/metastudio/v1/model/HotWordsTypeEnum.h>
+#include <huaweicloud/metastudio/v1/model/UpdateMobvoiHotWords.h>
 #include <huaweicloud/metastudio/v1/model/UpdateSisHotWords.h>
 
 namespace HuaweiCloud {
@@ -57,12 +58,23 @@ public:
     void unsetsisHotWords();
     void setSisHotWords(const UpdateSisHotWords& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    UpdateMobvoiHotWords getMobvoiHotWords() const;
+    bool mobvoiHotWordsIsSet() const;
+    void unsetmobvoiHotWords();
+    void setMobvoiHotWords(const UpdateMobvoiHotWords& value);
+
 
 protected:
     HotWordsTypeEnum hotWordsType_;
     bool hotWordsTypeIsSet_;
     UpdateSisHotWords sisHotWords_;
     bool sisHotWordsIsSet_;
+    UpdateMobvoiHotWords mobvoiHotWords_;
+    bool mobvoiHotWordsIsSet_;
 
 };
 

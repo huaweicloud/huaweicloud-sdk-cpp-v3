@@ -483,6 +483,57 @@ std::shared_ptr<CreateDialogUrlResponse> MetaStudioClient::createDialogUrl(Creat
 
     return localVarResult;
 }
+std::shared_ptr<ListSmartChatJobResponse> MetaStudioClient::listSmartChatJob(ListSmartChatJobRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/digital-human-chat/smart-chat-rooms/{room_id}/smart-chat-jobs";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["room_id"] = parameterToString(request.getRoomId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.stateIsSet()) {
+        localVarQueryParams["state"] = parameterToString(request.getState());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.authorizationIsSet()) {
+        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
+    }
+    if (request.xSdkDateIsSet()) {
+        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
+    }
+    if (request.xProjectIdIsSet()) {
+        localVarHeaderParams["X-Project-Id"] = parameterToString(request.getXProjectId());
+    }
+    if (request.xAppUserIdIsSet()) {
+        localVarHeaderParams["X-App-UserId"] = parameterToString(request.getXAppUserId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForListSmartChatJob());
+
+    std::shared_ptr<ListSmartChatJobResponse> localVarResult = std::make_shared<ListSmartChatJobResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowSmartChatJobResponse> MetaStudioClient::showSmartChatJob(ShowSmartChatJobRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/digital-human-chat/smart-chat-rooms/{room_id}/smart-chat-jobs/{job_id}/state";
@@ -1116,9 +1167,6 @@ std::shared_ptr<ListAssetsResponse> MetaStudioClient::listAssets(ListAssetsReque
     }
     if (request.accurateQueryFieldIsSet()) {
         localVarQueryParams["accurate_query_field"] = parameterToString(request.getAccurateQueryField());
-    }
-    if (request.renderEngineIsSet()) {
-        localVarQueryParams["render_engine"] = parameterToString(request.getRenderEngine());
     }
     if (request.assetIdIsSet()) {
         localVarQueryParams["asset_id"] = parameterToString(request.getAssetId());
@@ -2639,6 +2687,9 @@ std::shared_ptr<ListHotWordsResponse> MetaStudioClient::listHotWords(ListHotWord
     }
     if (request.languageIsSet()) {
         localVarQueryParams["language"] = parameterToString(request.getLanguage());
+    }
+    if (request.hotWordsTypeIsSet()) {
+        localVarQueryParams["hot_words_type"] = parameterToString(request.getHotWordsType());
     }
     if (request.authorizationIsSet()) {
         localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());

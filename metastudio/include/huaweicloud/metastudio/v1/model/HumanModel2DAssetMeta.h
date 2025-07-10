@@ -121,6 +121,15 @@ public:
     void unsetisFlexus();
     void setIsFlexus(bool value);
 
+    /// <summary>
+    /// 形象关联的声音资产ID。
+    /// </summary>
+
+    std::string getVoiceAssetId() const;
+    bool voiceAssetIdIsSet() const;
+    void unsetvoiceAssetId();
+    void setVoiceAssetId(const std::string& value);
+
 
 protected:
     bool isActionEditable_;
@@ -141,6 +150,8 @@ protected:
     bool actionTagMapIsSet_;
     bool isFlexus_;
     bool isFlexusIsSet_;
+    std::string voiceAssetId_;
+    bool voiceAssetIdIsSet_;
 
 };
 

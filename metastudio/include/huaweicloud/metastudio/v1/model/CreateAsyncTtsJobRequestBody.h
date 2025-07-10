@@ -58,7 +58,7 @@ public:
     void setTtsText(const std::string& value);
 
     /// <summary>
-    /// 音色ID，获取方式详见[获取音色ID](metastudio_02_0054.xml)。
+    /// 音色ID，获取方式详见[获取音色ID](metastudio_02_0054.xml)。  不同Region的计费标准详见[预置音色计费标准](metastudio_02_0060.xml)。
     /// </summary>
 
     std::string getVoiceAssetId() const;
@@ -228,6 +228,15 @@ public:
     void unsetisConcurrentResource();
     void setIsConcurrentResource(bool value);
 
+    /// <summary>
+    /// 优先级（0-10），0为最高优先级，默认5
+    /// </summary>
+
+    int32_t getPriority() const;
+    bool priorityIsSet() const;
+    void unsetpriority();
+    void setPriority(int32_t value);
+
 
 protected:
     std::string text_;
@@ -272,6 +281,8 @@ protected:
     bool isVocabularyConfigEnableIsSet_;
     bool isConcurrentResource_;
     bool isConcurrentResourceIsSet_;
+    int32_t priority_;
+    bool priorityIsSet_;
 
 };
 

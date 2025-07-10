@@ -52,6 +52,7 @@ PostPaidServer::PostPaidServer()
     securityOptionsIsSet_ = false;
     serialConsoleOptionsIsSet_ = false;
     metadataOptionsIsSet_ = false;
+    enclaveOptionsIsSet_ = false;
 }
 
 PostPaidServer::~PostPaidServer() = default;
@@ -144,6 +145,9 @@ web::json::value PostPaidServer::toJson() const
     }
     if(metadataOptionsIsSet_) {
         val[utility::conversions::to_string_t("metadata_options")] = ModelBase::toJson(metadataOptions_);
+    }
+    if(enclaveOptionsIsSet_) {
+        val[utility::conversions::to_string_t("enclave_options")] = ModelBase::toJson(enclaveOptions_);
     }
 
     return val;
@@ -393,6 +397,15 @@ bool PostPaidServer::fromJson(const web::json::value& val)
             UpdateServerMetadataOptionsRequestBody refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setMetadataOptions(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("enclave_options"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enclave_options"));
+        if(!fieldValue.is_null())
+        {
+            EnclaveOptions refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEnclaveOptions(refVal);
         }
     }
     return ok;
@@ -964,6 +977,27 @@ bool PostPaidServer::metadataOptionsIsSet() const
 void PostPaidServer::unsetmetadataOptions()
 {
     metadataOptionsIsSet_ = false;
+}
+
+EnclaveOptions PostPaidServer::getEnclaveOptions() const
+{
+    return enclaveOptions_;
+}
+
+void PostPaidServer::setEnclaveOptions(const EnclaveOptions& value)
+{
+    enclaveOptions_ = value;
+    enclaveOptionsIsSet_ = true;
+}
+
+bool PostPaidServer::enclaveOptionsIsSet() const
+{
+    return enclaveOptionsIsSet_;
+}
+
+void PostPaidServer::unsetenclaveOptions()
+{
+    enclaveOptionsIsSet_ = false;
 }
 
 }

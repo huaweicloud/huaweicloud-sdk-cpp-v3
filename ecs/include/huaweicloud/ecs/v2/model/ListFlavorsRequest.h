@@ -56,12 +56,34 @@ public:
     void unsetflavorId();
     void setFlavorId(const std::string& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    int32_t getLimit() const;
+    bool limitIsSet() const;
+    void unsetlimit();
+    void setLimit(int32_t value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    std::string getMarker() const;
+    bool markerIsSet() const;
+    void unsetmarker();
+    void setMarker(const std::string& value);
+
 
 protected:
     std::string availabilityZone_;
     bool availabilityZoneIsSet_;
     std::string flavorId_;
     bool flavorIdIsSet_;
+    int32_t limit_;
+    bool limitIsSet_;
+    std::string marker_;
+    bool markerIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

@@ -12,6 +12,7 @@
 #include <huaweicloud/ecs/v2/model/UpdateServerMetadataOptionsRequestBody.h>
 #include <string>
 #include <huaweicloud/ecs/v2/model/SecurityOptions.h>
+#include <huaweicloud/ecs/v2/model/EnclaveOptions.h>
 #include <vector>
 #include <huaweicloud/ecs/v2/model/SerialConsoleOptions.h>
 #include <huaweicloud/ecs/v2/model/PostPaidServerSecurityGroup.h>
@@ -295,6 +296,15 @@ public:
     void unsetmetadataOptions();
     void setMetadataOptions(const UpdateServerMetadataOptionsRequestBody& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    EnclaveOptions getEnclaveOptions() const;
+    bool enclaveOptionsIsSet() const;
+    void unsetenclaveOptions();
+    void setEnclaveOptions(const EnclaveOptions& value);
+
 
 protected:
     std::string autoTerminateTime_;
@@ -351,6 +361,8 @@ protected:
     bool serialConsoleOptionsIsSet_;
     UpdateServerMetadataOptionsRequestBody metadataOptions_;
     bool metadataOptionsIsSet_;
+    EnclaveOptions enclaveOptions_;
+    bool enclaveOptionsIsSet_;
 
 };
 

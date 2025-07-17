@@ -1,3 +1,22 @@
+# 3.1.145 2025-07-17
+
+### HuaweiCloud SDK MetaStudio
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the following APIs:
+    - `ListAsrVocabulary`
+    - `CreateAsrVocabulary`
+    - `ShowAsrVocabulary`
+    - `UpdateAsrVocabulary`
+    - `DeleteAsrVocabulary`
+    - `ShowAsrVocabularyAssociation`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.144 2025-07-10
 
 ### HuaweiCloud SDK CDN

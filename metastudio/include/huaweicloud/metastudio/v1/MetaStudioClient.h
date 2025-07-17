@@ -32,6 +32,22 @@
 #include <huaweicloud/metastudio/v1/model/ShowAgencyResponse.h>
 #include <string>
 
+#include <huaweicloud/metastudio/v1/model/CreateAsrVocabularyReq.h>
+#include <huaweicloud/metastudio/v1/model/CreateAsrVocabularyRequest.h>
+#include <huaweicloud/metastudio/v1/model/CreateAsrVocabularyResponse.h>
+#include <huaweicloud/metastudio/v1/model/DeleteAsrVocabularyRequest.h>
+#include <huaweicloud/metastudio/v1/model/DeleteAsrVocabularyResponse.h>
+#include <huaweicloud/metastudio/v1/model/ListAsrVocabularyRequest.h>
+#include <huaweicloud/metastudio/v1/model/ListAsrVocabularyResponse.h>
+#include <huaweicloud/metastudio/v1/model/ShowAsrVocabularyAssociationRequest.h>
+#include <huaweicloud/metastudio/v1/model/ShowAsrVocabularyAssociationResponse.h>
+#include <huaweicloud/metastudio/v1/model/ShowAsrVocabularyRequest.h>
+#include <huaweicloud/metastudio/v1/model/ShowAsrVocabularyResponse.h>
+#include <huaweicloud/metastudio/v1/model/UpdateAsrVocabularyReq.h>
+#include <huaweicloud/metastudio/v1/model/UpdateAsrVocabularyRequest.h>
+#include <huaweicloud/metastudio/v1/model/UpdateAsrVocabularyResponse.h>
+#include <string>
+
 #include <huaweicloud/metastudio/v1/model/CreateDialogUrlReq.h>
 #include <huaweicloud/metastudio/v1/model/CreateDialogUrlRequest.h>
 #include <huaweicloud/metastudio/v1/model/CreateDialogUrlResponse.h>
@@ -649,6 +665,55 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowAgencyResponse> showAgency(
         ShowAgencyRequest &request
+    );
+
+    // 创建热词表
+    //
+    // 该接口用于创建热词表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateAsrVocabularyResponse> createAsrVocabulary(
+        CreateAsrVocabularyRequest &request
+    );
+    // 删除热词表
+    //
+    // 该接口用于删除热词表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteAsrVocabularyResponse> deleteAsrVocabulary(
+        DeleteAsrVocabularyRequest &request
+    );
+    // 查询热词表列表
+    //
+    // 该接口用于查询热词表列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListAsrVocabularyResponse> listAsrVocabulary(
+        ListAsrVocabularyRequest &request
+    );
+    // 查询热词表详情
+    //
+    // 该接口用于查询热词表详情。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowAsrVocabularyResponse> showAsrVocabulary(
+        ShowAsrVocabularyRequest &request
+    );
+    // 查询热词表关联详情
+    //
+    // 该接口用于查询热词表关联详情。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowAsrVocabularyAssociationResponse> showAsrVocabularyAssociation(
+        ShowAsrVocabularyAssociationRequest &request
+    );
+    // 修改热词表
+    //
+    // 该接口用于修改热词表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateAsrVocabularyResponse> updateAsrVocabulary(
+        UpdateAsrVocabularyRequest &request
     );
 
     // 创建对话链接

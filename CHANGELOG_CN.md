@@ -1,3 +1,22 @@
+# 3.1.145 2025-07-17
+
+### HuaweiCloud SDK MetaStudio
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持以下接口：
+    - `ListAsrVocabulary`
+    - `CreateAsrVocabulary`
+    - `ShowAsrVocabulary`
+    - `UpdateAsrVocabulary`
+    - `DeleteAsrVocabulary`
+    - `ShowAsrVocabularyAssociation`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.1.144 2025-07-10
 
 ### HuaweiCloud SDK CDN

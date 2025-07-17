@@ -146,6 +146,14 @@ public:
             { 
                 "https://cbr.my-kualalumpur-1.myhuaweicloud.com"
             });
+        regions["cn-north-12"] = Region("cn-north-12",
+            { 
+                "https://cbr.cn-north-12.myhuaweicloud.com"
+            });
+        regions["cn-southwest-3"] = Region("cn-southwest-3",
+            { 
+                "https://cbr.cn-southwest-3.myhuaweicloud.com"
+            });
         regions["ru-moscow-1"] = Region("ru-moscow-1",
             { 
                 "https://cbr.ru-moscow-1.myhuaweicloud.com"

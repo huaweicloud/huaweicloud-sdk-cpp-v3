@@ -22,6 +22,12 @@ public:
     static HttpRequestDef genRequestDefForCreateAgencyWithRoleType();
     static HttpRequestDef genRequestDefForDeleteAgencyWithRoleType();
     static HttpRequestDef genRequestDefForShowAgency();
+    static HttpRequestDef genRequestDefForCreateAsrVocabulary();
+    static HttpRequestDef genRequestDefForDeleteAsrVocabulary();
+    static HttpRequestDef genRequestDefForListAsrVocabulary();
+    static HttpRequestDef genRequestDefForShowAsrVocabulary();
+    static HttpRequestDef genRequestDefForShowAsrVocabularyAssociation();
+    static HttpRequestDef genRequestDefForUpdateAsrVocabulary();
     static HttpRequestDef genRequestDefForCreateDialogUrl();
     static HttpRequestDef genRequestDefForListSmartChatJob();
     static HttpRequestDef genRequestDefForShowSmartChatJob();

@@ -1,3 +1,100 @@
+# 3.1.146 2025-07-24
+
+### HuaweiCloud SDK DBSS
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持接口`ListAlarmTopicConfigInfo`、`SetAlarmTopicConfigInfo`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK DRS
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListDataCompareOverview**
+    - 响应参数变更
+      - `+ data_compare_overview_infos.compare_num`
+      - `+ data_compare_overview_infos.compare_end_num`
+      - `+ data_compare_overview_infos.data_inconsistent_num`
+      - `+ data_compare_overview_infos.uncomparable_num`
+  - **ListContentCompareOverview**
+    - 响应参数变更
+      - `+ content_compare_result_infos.compare_num`
+      - `+ content_compare_result_infos.compare_end_num`
+      - `+ content_compare_result_infos.data_inconsistent_num`
+      - `+ content_compare_result_infos.uncomparable_num`
+  - **ListContentCompareDetail**
+    - 响应参数变更
+      - `+ content_compare_result_infos.status`
+      - `+ content_compare_result_infos.complete_shard_count`
+      - `+ content_compare_result_infos.total_shard_count`
+      - `+ content_compare_result_infos.progress`
+
+### HuaweiCloud SDK DRS
+
+- _接口版本_
+  - V5
+- _新增特性_
+  - 支持接口`ExportCreationTemplate`、`ShowExportProgress`、`ListTemplates`、`DownloadCreateTemplate`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **DownloadBatchCreateTemplate**
+    - 请求参数变更
+      - `+ engine_type`
+  - **ImportBatchCreateJobs**
+    - 请求参数变更
+      - `+ type`
+  - **ExecuteJobAction**
+    - 请求参数变更
+      - `+ job.action_name: enum value [diagnosis,start_repair,stop_repair]`
+      - `- job.action_name: enum value [diagnosis：一键诊断。,start_repair：开始数据修复。,stop_repair：停止数据修复。]`
+  - **BatchExecuteJobActions**
+    - 请求参数变更
+      - `+ jobs.action_name: enum value [diagnosis,start_repair,stop_repair]`
+      - `- jobs.action_name: enum value [diagnosis：一键诊断。,start_repair：开始数据修复。,stop_repair：停止数据修复。]`
+
+### HuaweiCloud SDK ECS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowServer**
+    - 响应参数变更
+      - `+ server.network_interfaces.subnet_id`
+  - **ListServersDetails**
+    - 响应参数变更
+      - `+ servers.network_interfaces.subnet_id`
+  - **ListRecycleBinServers**
+    - 响应参数变更
+      - `+ servers.network_interfaces.subnet_id`
+
+### HuaweiCloud SDK KVS
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ScanKv**
+    - 请求参数变更
+      - `+ projection_fields`
+
 # 3.1.145 2025-07-17
 
 ### HuaweiCloud SDK MetaStudio

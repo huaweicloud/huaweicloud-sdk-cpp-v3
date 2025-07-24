@@ -276,7 +276,7 @@ public:
     void setSchemaType(const std::string& value);
 
     /// <summary>
-    /// 节点个数。MongoDB数据库时对应源端分片个数，源库为集群时必填，[1-32]，MySQL双主灾备时会默认设置为2。
+    /// 节点个数。
     /// </summary>
 
     int32_t getNodeNum() const;

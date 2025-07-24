@@ -22,6 +22,7 @@ ScanKvRequestBody::ScanKvRequestBody()
     startKeyIsSet_ = false;
     endKeyIsSet_ = false;
     filterExpressionIsSet_ = false;
+    projectionFieldsIsSet_ = false;
     sampleSegmentsCount_ = 0;
     sampleSegmentsCountIsSet_ = false;
     returnCountOnly_ = false;
@@ -53,6 +54,9 @@ bool ScanKvRequestBody::toBson(Builder &builder) const
         return false;
     }
     if (filterExpressionIsSet_ && !bson_append(builder, "filter_expression", filterExpression_)) {
+        return false;
+    }
+    if (projectionFieldsIsSet_ && !bson_append(builder, "projection_fields", projectionFields_)) {
         return false;
     }
     if (sampleSegmentsCountIsSet_ && !bson_append(builder, "sample_segments_count", sampleSegmentsCount_)) {
@@ -122,6 +126,15 @@ bool ScanKvRequestBody::fromBson(const Viewer &viewer)
                 return false;
             }
             filterExpressionIsSet_ = true;
+            ++it;
+            continue;
+        }
+        
+        if (key == "projection_fields") {
+            if (!bson_get(it, projectionFields_)) {
+                return false;
+            }
+            projectionFieldsIsSet_ = true;
             ++it;
             continue;
         }
@@ -274,6 +287,27 @@ bool ScanKvRequestBody::filterExpressionIsSet() const
 void ScanKvRequestBody::unsetfilterExpression()
 {
     filterExpressionIsSet_ = false;
+}
+
+std::vector<std::string>& ScanKvRequestBody::getProjectionFields()
+{
+    return projectionFields_;
+}
+
+void ScanKvRequestBody::setProjectionFields(const std::vector<std::string>& value)
+{
+    projectionFields_ = value;
+    projectionFieldsIsSet_ = true;
+}
+
+bool ScanKvRequestBody::projectionFieldsIsSet() const
+{
+    return projectionFieldsIsSet_;
+}
+
+void ScanKvRequestBody::unsetprojectionFields()
+{
+    projectionFieldsIsSet_ = false;
 }
 
 int32_t ScanKvRequestBody::getSampleSegmentsCount() const

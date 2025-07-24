@@ -1,3 +1,100 @@
+# 3.1.146 2025-07-24
+
+### HuaweiCloud SDK DBSS
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the APIs `ListAlarmTopicConfigInfo`, `SetAlarmTopicConfigInfo`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK DRS
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListDataCompareOverview**
+    - changes of response param
+      - `+ data_compare_overview_infos.compare_num`
+      - `+ data_compare_overview_infos.compare_end_num`
+      - `+ data_compare_overview_infos.data_inconsistent_num`
+      - `+ data_compare_overview_infos.uncomparable_num`
+  - **ListContentCompareOverview**
+    - changes of response param
+      - `+ content_compare_result_infos.compare_num`
+      - `+ content_compare_result_infos.compare_end_num`
+      - `+ content_compare_result_infos.data_inconsistent_num`
+      - `+ content_compare_result_infos.uncomparable_num`
+  - **ListContentCompareDetail**
+    - changes of response param
+      - `+ content_compare_result_infos.status`
+      - `+ content_compare_result_infos.complete_shard_count`
+      - `+ content_compare_result_infos.total_shard_count`
+      - `+ content_compare_result_infos.progress`
+
+### HuaweiCloud SDK DRS
+
+- _API Version_
+  - V5
+- _Features_
+  - Support the APIs `ExportCreationTemplate`, `ShowExportProgress`, `ListTemplates`, `DownloadCreateTemplate`
+- _Bug Fix_
+  - None
+- _Change_
+  - **DownloadBatchCreateTemplate**
+    - changes of request param
+      - `+ engine_type`
+  - **ImportBatchCreateJobs**
+    - changes of request param
+      - `+ type`
+  - **ExecuteJobAction**
+    - changes of request param
+      - `+ job.action_name: enum value [diagnosis,start_repair,stop_repair]`
+      - `- job.action_name: enum value [diagnosis：一键诊断。,start_repair：开始数据修复。,stop_repair：停止数据修复。]`
+  - **BatchExecuteJobActions**
+    - changes of request param
+      - `+ jobs.action_name: enum value [diagnosis,start_repair,stop_repair]`
+      - `- jobs.action_name: enum value [diagnosis：一键诊断。,start_repair：开始数据修复。,stop_repair：停止数据修复。]`
+
+### HuaweiCloud SDK ECS
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowServer**
+    - changes of response param
+      - `+ server.network_interfaces.subnet_id`
+  - **ListServersDetails**
+    - changes of response param
+      - `+ servers.network_interfaces.subnet_id`
+  - **ListRecycleBinServers**
+    - changes of response param
+      - `+ servers.network_interfaces.subnet_id`
+
+### HuaweiCloud SDK KVS
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ScanKv**
+    - changes of request param
+      - `+ projection_fields`
+
 # 3.1.145 2025-07-17
 
 ### HuaweiCloud SDK MetaStudio

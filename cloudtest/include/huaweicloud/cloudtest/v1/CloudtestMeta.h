@@ -1,0 +1,186 @@
+#ifndef HUAWEICLOUD_SDK_CLOUDTEST_V1_CloudtestMeta_H_
+#define HUAWEICLOUD_SDK_CLOUDTEST_V1_CloudtestMeta_H_
+
+#include <huaweicloud/core/http/HttpRequestDef.h>
+#include <huaweicloud/cloudtest/v1/CloudtestExport.h>
+
+namespace HuaweiCloud {
+namespace Sdk {
+namespace Cloudtest {
+namespace V1 {
+
+using namespace HuaweiCloud::Sdk::Core::Http;
+
+class HUAWEICLOUD_CLOUDTEST_V1_EXPORT  CloudtestMeta {
+public:
+    static HttpRequestDef genRequestDefForAddCaseResultFour();
+    static HttpRequestDef genRequestDefForAddTestCaseComment();
+    static HttpRequestDef genRequestDefForAddTestCaseResultLog();
+    static HttpRequestDef genRequestDefForBatchAddRelationsByOneCase();
+    static HttpRequestDef genRequestDefForBatchAddResourcesForIterator();
+    static HttpRequestDef genRequestDefForBatchDeleteTestCase();
+    static HttpRequestDef genRequestDefForBatchDeleteTestCases();
+    static HttpRequestDef genRequestDefForBatchDeleteTestReport();
+    static HttpRequestDef genRequestDefForBatchRemoveTestCasesFromIterator();
+    static HttpRequestDef genRequestDefForBatchUpdateVersionTestCases();
+    static HttpRequestDef genRequestDefForCheckPermission();
+    static HttpRequestDef genRequestDefForCreateIterator();
+    static HttpRequestDef genRequestDefForCreatePlan();
+    static HttpRequestDef genRequestDefForCreateProjectBranch();
+    static HttpRequestDef genRequestDefForCreateRelationsByOneCase();
+    static HttpRequestDef genRequestDefForCreateReport();
+    static HttpRequestDef genRequestDefForCreateResourceUri();
+    static HttpRequestDef genRequestDefForCreateService();
+    static HttpRequestDef genRequestDefForCreateTaskDefaultResult();
+    static HttpRequestDef genRequestDefForCreateTestCase();
+    static HttpRequestDef genRequestDefForCreateTestCaseInPlan();
+    static HttpRequestDef genRequestDefForCreateUserDefinedUrlKeyWord();
+    static HttpRequestDef genRequestDefForCreateVersionTestCase();
+    static HttpRequestDef genRequestDefForDeleteBasicAwById();
+    static HttpRequestDef genRequestDefForDeleteFacotrById();
+    static HttpRequestDef genRequestDefForDeleteRelationsByOneCase();
+    static HttpRequestDef genRequestDefForDeleteService();
+    static HttpRequestDef genRequestDefForDeleteTestCaseComment();
+    static HttpRequestDef genRequestDefForListAlarmStatisticsUsing();
+    static HttpRequestDef genRequestDefForListAlertGroupsByCondition();
+    static HttpRequestDef genRequestDefForListAlertTemplates();
+    static HttpRequestDef genRequestDefForListAllBranches();
+    static HttpRequestDef genRequestDefForListAllConfigItemByType();
+    static HttpRequestDef genRequestDefForListAllIterators();
+    static HttpRequestDef genRequestDefForListAllTestCases();
+    static HttpRequestDef genRequestDefForListAttachments();
+    static HttpRequestDef genRequestDefForListAvailableConfig();
+    static HttpRequestDef genRequestDefForListBasicAw();
+    static HttpRequestDef genRequestDefForListBasicAwInfoListSupportsSearch();
+    static HttpRequestDef genRequestDefForListBranches();
+    static HttpRequestDef genRequestDefForListCasesStatus();
+    static HttpRequestDef genRequestDefForListDomainVisibleServices();
+    static HttpRequestDef genRequestDefForListIssueTree();
+    static HttpRequestDef genRequestDefForListIteratorIssueTree();
+    static HttpRequestDef genRequestDefForListIterators();
+    static HttpRequestDef genRequestDefForListLinesUsing();
+    static HttpRequestDef genRequestDefForListMsgInfosUsing();
+    static HttpRequestDef genRequestDefForListOwnTestCases();
+    static HttpRequestDef genRequestDefForListProjectFieldConfigs();
+    static HttpRequestDef genRequestDefForListProjectTestCaseFields();
+    static HttpRequestDef genRequestDefForListPublicLibAndAws();
+    static HttpRequestDef genRequestDefForListReports();
+    static HttpRequestDef genRequestDefForListResourcePools();
+    static HttpRequestDef genRequestDefForListScattersUsing();
+    static HttpRequestDef genRequestDefForListSubTaskCaseOverstockUsing();
+    static HttpRequestDef genRequestDefForListTaskAssignCases();
+    static HttpRequestDef genRequestDefForListTaskResultsDetail();
+    static HttpRequestDef genRequestDefForListTaskTestCases();
+    static HttpRequestDef genRequestDefForListTasks();
+    static HttpRequestDef genRequestDefForListTestCaseComments();
+    static HttpRequestDef genRequestDefForListTestCaseHistories();
+    static HttpRequestDef genRequestDefForListTestCaseScriptDetail();
+    static HttpRequestDef genRequestDefForListTestCases();
+    static HttpRequestDef genRequestDefForListTestCasesByIssue();
+    static HttpRequestDef genRequestDefForListTestReportsByCondition();
+    static HttpRequestDef genRequestDefForListTestTypes();
+    static HttpRequestDef genRequestDefForListTestcasesByProjectIssuesRelation();
+    static HttpRequestDef genRequestDefForListUsageInfos();
+    static HttpRequestDef genRequestDefForListUserDnsMapping();
+    static HttpRequestDef genRequestDefForListUserPackageUsage();
+    static HttpRequestDef genRequestDefForListUserPopupInfo();
+    static HttpRequestDef genRequestDefForListUsingGet();
+    static HttpRequestDef genRequestDefForListVariables();
+    static HttpRequestDef genRequestDefForRemoveIssuesFromIterator();
+    static HttpRequestDef genRequestDefForRunTestCase();
+    static HttpRequestDef genRequestDefForSaveTaskSetting();
+    static HttpRequestDef genRequestDefForSetTaskResult();
+    static HttpRequestDef genRequestDefForShowAllConfigValueByTypeAndKey();
+    static HttpRequestDef genRequestDefForShowAllFeatureChildren();
+    static HttpRequestDef genRequestDefForShowApiTestcaseHistories();
+    static HttpRequestDef genRequestDefForShowAsset();
+    static HttpRequestDef genRequestDefForShowAssetTree();
+    static HttpRequestDef genRequestDefForShowBackgroundInfo();
+    static HttpRequestDef genRequestDefForShowBranch();
+    static HttpRequestDef genRequestDefForShowCaseResult();
+    static HttpRequestDef genRequestDefForShowConcurrencyPackageUsing();
+    static HttpRequestDef genRequestDefForShowDisclaimerRecord();
+    static HttpRequestDef genRequestDefForShowDomainInfo();
+    static HttpRequestDef genRequestDefForShowEchoTestPackageUsing();
+    static HttpRequestDef genRequestDefForShowEtlData();
+    static HttpRequestDef genRequestDefForShowFactorByAssetId();
+    static HttpRequestDef genRequestDefForShowFactorById();
+    static HttpRequestDef genRequestDefForShowFeatureChildren();
+    static HttpRequestDef genRequestDefForShowFreeDeclaration();
+    static HttpRequestDef genRequestDefForShowIfTaskNameRepeat();
+    static HttpRequestDef genRequestDefForShowIfUserNameRepeat();
+    static HttpRequestDef genRequestDefForShowIssuesByPlanId();
+    static HttpRequestDef genRequestDefForShowIteratorByDefect();
+    static HttpRequestDef genRequestDefForShowIteratorDetail();
+    static HttpRequestDef genRequestDefForShowMindMapById();
+    static HttpRequestDef genRequestDefForShowMindmapByPage();
+    static HttpRequestDef genRequestDefForShowMindmapCreatorName();
+    static HttpRequestDef genRequestDefForShowOperationalDataCurrentMonthUsing();
+    static HttpRequestDef genRequestDefForShowPlanJournals();
+    static HttpRequestDef genRequestDefForShowPlanList();
+    static HttpRequestDef genRequestDefForShowPlans();
+    static HttpRequestDef genRequestDefForShowProgress();
+    static HttpRequestDef genRequestDefForShowProjectDataDashboard();
+    static HttpRequestDef genRequestDefForShowRegisterService();
+    static HttpRequestDef genRequestDefForShowReport();
+    static HttpRequestDef genRequestDefForShowRequirementsOverview();
+    static HttpRequestDef genRequestDefForShowReviewByPage();
+    static HttpRequestDef genRequestDefForShowSceneByPage();
+    static HttpRequestDef genRequestDefForShowStatisticById();
+    static HttpRequestDef genRequestDefForShowSystemConfigs();
+    static HttpRequestDef genRequestDefForShowTemplateById();
+    static HttpRequestDef genRequestDefForShowTemplateByPage();
+    static HttpRequestDef genRequestDefForShowTestCase();
+    static HttpRequestDef genRequestDefForShowTestCaseAndDefectInfo();
+    static HttpRequestDef genRequestDefForShowTestCaseDetail();
+    static HttpRequestDef genRequestDefForShowTestCaseDetailV2();
+    static HttpRequestDef genRequestDefForShowTestCaseReviews();
+    static HttpRequestDef genRequestDefForShowTestCasesChangeStatistics();
+    static HttpRequestDef genRequestDefForShowTestcaseByPage();
+    static HttpRequestDef genRequestDefForShowTestpointByPage();
+    static HttpRequestDef genRequestDefForShowUserAccessInfo();
+    static HttpRequestDef genRequestDefForShowUserExecuteTestCaseInfo();
+    static HttpRequestDef genRequestDefForUpdateBasicAwById();
+    static HttpRequestDef genRequestDefForUpdateIterator();
+    static HttpRequestDef genRequestDefForUpdateService();
+    static HttpRequestDef genRequestDefForUpdateTestCase();
+    static HttpRequestDef genRequestDefForUpdateTestCaseComment();
+    static HttpRequestDef genRequestDefForUpdateTestCaseResult();
+    static HttpRequestDef genRequestDefForUpdateUserDnsMapping();
+    static HttpRequestDef genRequestDefForUpdateVersionTestCase();
+    static HttpRequestDef genRequestDefForCreateApiTestSuiteByRepoFile();
+    static HttpRequestDef genRequestDefForListEnvironments();
+    static HttpRequestDef genRequestDefForUploadStepImg();
+    static HttpRequestDef genRequestDefForBatchDeleteFacotrByIds();
+    static HttpRequestDef genRequestDefForBatchShowTestCase();
+    static HttpRequestDef genRequestDefForCreateAssetTree();
+    static HttpRequestDef genRequestDefForCreateBackupMindmap();
+    static HttpRequestDef genRequestDefForCreateTemplate();
+    static HttpRequestDef genRequestDefForDeleteAsset();
+    static HttpRequestDef genRequestDefForDeleteAssetTree();
+    static HttpRequestDef genRequestDefForDeleteMindmapBackupById();
+    static HttpRequestDef genRequestDefForDeleteMindmapRecycleById();
+    static HttpRequestDef genRequestDefForDeleteTemplateById();
+    static HttpRequestDef genRequestDefForDownloadAssetTemplate();
+    static HttpRequestDef genRequestDefForExportFactor();
+    static HttpRequestDef genRequestDefForImportAsset();
+    static HttpRequestDef genRequestDefForImportFactor();
+    static HttpRequestDef genRequestDefForShowDefaultTemplateByPage();
+    static HttpRequestDef genRequestDefForShowMindmapBackupById();
+    static HttpRequestDef genRequestDefForShowMindmapBackupByPage();
+    static HttpRequestDef genRequestDefForShowMindmapRecycleById();
+    static HttpRequestDef genRequestDefForShowMindmapRecycleByPage();
+    static HttpRequestDef genRequestDefForShowTestcaseById();
+    static HttpRequestDef genRequestDefForUpdateAssetTree();
+    static HttpRequestDef genRequestDefForUpdateMindmapName();
+    static HttpRequestDef genRequestDefForAddFeature();
+    static HttpRequestDef genRequestDefForListTestcasePlans();
+    static HttpRequestDef genRequestDefForListTaskResults();
+};
+
+}
+}
+}
+}
+
+#endif // HUAWEICLOUD_SDK_CLOUDTEST_V1_CloudtestMeta_H_

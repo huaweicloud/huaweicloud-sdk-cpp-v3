@@ -77,6 +77,15 @@ public:
     void setIpv6Addresses(const std::vector<std::string>& value);
 
     /// <summary>
+    /// 子网id
+    /// </summary>
+
+    std::string getSubnetId() const;
+    bool subnetIdIsSet() const;
+    void unsetsubnetId();
+    void setSubnetId(const std::string& value);
+
+    /// <summary>
     /// 
     /// </summary>
 
@@ -95,6 +104,8 @@ protected:
     bool ipAddressesIsSet_;
     std::vector<std::string> ipv6Addresses_;
     bool ipv6AddressesIsSet_;
+    std::string subnetId_;
+    bool subnetIdIsSet_;
     Association association_;
     bool associationIsSet_;
 

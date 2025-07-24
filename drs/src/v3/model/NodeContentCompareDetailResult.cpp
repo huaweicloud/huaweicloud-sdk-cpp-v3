@@ -34,6 +34,14 @@ NodeContentCompareDetailResult::NodeContentCompareDetailResult()
     messageIsSet_ = false;
     compareLineConfigFilter_ = "";
     compareLineConfigFilterIsSet_ = false;
+    status_ = 0;
+    statusIsSet_ = false;
+    completeShardCount_ = 0;
+    completeShardCountIsSet_ = false;
+    totalShardCount_ = 0;
+    totalShardCountIsSet_ = false;
+    progress_ = 0.0;
+    progressIsSet_ = false;
 }
 
 NodeContentCompareDetailResult::~NodeContentCompareDetailResult() = default;
@@ -78,6 +86,18 @@ web::json::value NodeContentCompareDetailResult::toJson() const
     }
     if(compareLineConfigFilterIsSet_) {
         val[utility::conversions::to_string_t("compare_line_config_filter")] = ModelBase::toJson(compareLineConfigFilter_);
+    }
+    if(statusIsSet_) {
+        val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
+    }
+    if(completeShardCountIsSet_) {
+        val[utility::conversions::to_string_t("complete_shard_count")] = ModelBase::toJson(completeShardCount_);
+    }
+    if(totalShardCountIsSet_) {
+        val[utility::conversions::to_string_t("total_shard_count")] = ModelBase::toJson(totalShardCount_);
+    }
+    if(progressIsSet_) {
+        val[utility::conversions::to_string_t("progress")] = ModelBase::toJson(progress_);
     }
 
     return val;
@@ -183,6 +203,42 @@ bool NodeContentCompareDetailResult::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCompareLineConfigFilter(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("status"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("status"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("complete_shard_count"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("complete_shard_count"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCompleteShardCount(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("total_shard_count"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("total_shard_count"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTotalShardCount(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("progress"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("progress"));
+        if(!fieldValue.is_null())
+        {
+            double refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProgress(refVal);
         }
     }
     return ok;
@@ -418,6 +474,90 @@ bool NodeContentCompareDetailResult::compareLineConfigFilterIsSet() const
 void NodeContentCompareDetailResult::unsetcompareLineConfigFilter()
 {
     compareLineConfigFilterIsSet_ = false;
+}
+
+int32_t NodeContentCompareDetailResult::getStatus() const
+{
+    return status_;
+}
+
+void NodeContentCompareDetailResult::setStatus(int32_t value)
+{
+    status_ = value;
+    statusIsSet_ = true;
+}
+
+bool NodeContentCompareDetailResult::statusIsSet() const
+{
+    return statusIsSet_;
+}
+
+void NodeContentCompareDetailResult::unsetstatus()
+{
+    statusIsSet_ = false;
+}
+
+int32_t NodeContentCompareDetailResult::getCompleteShardCount() const
+{
+    return completeShardCount_;
+}
+
+void NodeContentCompareDetailResult::setCompleteShardCount(int32_t value)
+{
+    completeShardCount_ = value;
+    completeShardCountIsSet_ = true;
+}
+
+bool NodeContentCompareDetailResult::completeShardCountIsSet() const
+{
+    return completeShardCountIsSet_;
+}
+
+void NodeContentCompareDetailResult::unsetcompleteShardCount()
+{
+    completeShardCountIsSet_ = false;
+}
+
+int32_t NodeContentCompareDetailResult::getTotalShardCount() const
+{
+    return totalShardCount_;
+}
+
+void NodeContentCompareDetailResult::setTotalShardCount(int32_t value)
+{
+    totalShardCount_ = value;
+    totalShardCountIsSet_ = true;
+}
+
+bool NodeContentCompareDetailResult::totalShardCountIsSet() const
+{
+    return totalShardCountIsSet_;
+}
+
+void NodeContentCompareDetailResult::unsettotalShardCount()
+{
+    totalShardCountIsSet_ = false;
+}
+
+double NodeContentCompareDetailResult::getProgress() const
+{
+    return progress_;
+}
+
+void NodeContentCompareDetailResult::setProgress(double value)
+{
+    progress_ = value;
+    progressIsSet_ = true;
+}
+
+bool NodeContentCompareDetailResult::progressIsSet() const
+{
+    return progressIsSet_;
+}
+
+void NodeContentCompareDetailResult::unsetprogress()
+{
+    progressIsSet_ = false;
 }
 
 }

@@ -74,10 +74,16 @@
 #include <huaweicloud/drs/v5/model/DeleteUserJdbcDriverResponse.h>
 #include <huaweicloud/drs/v5/model/DownloadBatchCreateTemplateRequest.h>
 #include <huaweicloud/drs/v5/model/DownloadBatchCreateTemplateResponse.h>
+#include <huaweicloud/drs/v5/model/DownloadCreateTemplateRequest.h>
+#include <huaweicloud/drs/v5/model/DownloadCreateTemplateResponse.h>
 #include <huaweicloud/drs/v5/model/DownloadDbObjectTemplateRequest.h>
 #include <huaweicloud/drs/v5/model/DownloadDbObjectTemplateResponse.h>
 #include <huaweicloud/drs/v5/model/ExecuteJobActionRequest.h>
 #include <huaweicloud/drs/v5/model/ExecuteJobActionResponse.h>
+#include <huaweicloud/drs/v5/model/ExportCreationTemplateRequest.h>
+#include <huaweicloud/drs/v5/model/ExportCreationTemplateResponse.h>
+#include <huaweicloud/drs/v5/model/ExportFilesReq.h>
+#include <huaweicloud/drs/v5/model/ExportJobsTemplateReq.h>
 #include <huaweicloud/drs/v5/model/ExportOperationInfoRequest.h>
 #include <huaweicloud/drs/v5/model/ExportOperationInfoResponse.h>
 #include <huaweicloud/core/utils/HttpContent.h>
@@ -115,6 +121,8 @@
 #include <huaweicloud/drs/v5/model/ListReplicationJobsResponse.h>
 #include <huaweicloud/drs/v5/model/ListTagsRequest.h>
 #include <huaweicloud/drs/v5/model/ListTagsResponse.h>
+#include <huaweicloud/drs/v5/model/ListTemplatesRequest.h>
+#include <huaweicloud/drs/v5/model/ListTemplatesResponse.h>
 #include <huaweicloud/drs/v5/model/ListUserJdbcDriversRequest.h>
 #include <huaweicloud/drs/v5/model/ListUserJdbcDriversResponse.h>
 #include <huaweicloud/drs/v5/model/ListsAgencyPermissionsRequest.h>
@@ -156,6 +164,8 @@
 #include <huaweicloud/drs/v5/model/ShowDirtyDataResponse.h>
 #include <huaweicloud/drs/v5/model/ShowEnterpriseProjectRequest.h>
 #include <huaweicloud/drs/v5/model/ShowEnterpriseProjectResponse.h>
+#include <huaweicloud/drs/v5/model/ShowExportProgressRequest.h>
+#include <huaweicloud/drs/v5/model/ShowExportProgressResponse.h>
 #include <huaweicloud/drs/v5/model/ShowHealthCompareJobDetailRequest.h>
 #include <huaweicloud/drs/v5/model/ShowHealthCompareJobDetailResponse.h>
 #include <huaweicloud/drs/v5/model/ShowHealthCompareJobListRequest.h>
@@ -473,6 +483,14 @@ public:
     std::shared_ptr<DownloadBatchCreateTemplateResponse> downloadBatchCreateTemplate(
         DownloadBatchCreateTemplateRequest &request
     );
+    // 下载创建模板
+    //
+    // 下载根据已有任务导出的创建模板。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DownloadCreateTemplateResponse> downloadCreateTemplate(
+        DownloadCreateTemplateRequest &request
+    );
     // 对象选择（文件导入 - 模板下载）
     //
     // 对象选择（文件导入 - 模板下载）。
@@ -488,6 +506,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ExecuteJobActionResponse> executeJobAction(
         ExecuteJobActionRequest &request
+    );
+    // 导出创建模板
+    //
+    // 根据已有任务导出创建模板。（异步操作，需要调查询导出进度接口查询结果。）
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ExportCreationTemplateResponse> exportCreationTemplate(
+        ExportCreationTemplateRequest &request
     );
     // 导出任务操作统计信息
     //
@@ -627,6 +653,14 @@ public:
     std::shared_ptr<ListTagsResponse> listTags(
         ListTagsRequest &request
     );
+    // 查询创建模板列表
+    //
+    // 查询批量创建模板列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListTemplatesResponse> listTemplates(
+        ListTemplatesRequest &request
+    );
     // 查询驱动文件列表
     //
     // 查询驱动文件列表。
@@ -754,6 +788,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowEnterpriseProjectResponse> showEnterpriseProject(
         ShowEnterpriseProjectRequest &request
+    );
+    // 查询导出创建模板进度
+    //
+    // 查询导出批量创建模板进度。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowExportProgressResponse> showExportProgress(
+        ShowExportProgressRequest &request
     );
     // 查询健康对比任务详情
     //

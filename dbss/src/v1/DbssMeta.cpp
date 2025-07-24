@@ -58,6 +58,11 @@ HttpRequestDef DbssMeta::genRequestDefForDeleteInstances() {
     return reqDefBuilder;
 }
 
+HttpRequestDef DbssMeta::genRequestDefForListAlarmTopicConfigInfo() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef DbssMeta::genRequestDefForListAuditAlarmLog() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -193,6 +198,15 @@ HttpRequestDef DbssMeta::genRequestDefForListSqlInjectionRules() {
 }
 
 HttpRequestDef DbssMeta::genRequestDefForRebootAuditInstance() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef DbssMeta::genRequestDefForSetAlarmTopicConfigInfo() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.

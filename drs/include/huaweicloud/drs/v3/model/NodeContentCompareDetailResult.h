@@ -137,6 +137,42 @@ public:
     void unsetcompareLineConfigFilter();
     void setCompareLineConfigFilter(const std::string& value);
 
+    /// <summary>
+    /// 全量比对状态。 -1：对比中 -2：已完成 -3：待对比 -4：已取消
+    /// </summary>
+
+    int32_t getStatus() const;
+    bool statusIsSet() const;
+    void unsetstatus();
+    void setStatus(int32_t value);
+
+    /// <summary>
+    /// 已对比分片数。
+    /// </summary>
+
+    int32_t getCompleteShardCount() const;
+    bool completeShardCountIsSet() const;
+    void unsetcompleteShardCount();
+    void setCompleteShardCount(int32_t value);
+
+    /// <summary>
+    /// 总分片数。
+    /// </summary>
+
+    int32_t getTotalShardCount() const;
+    bool totalShardCountIsSet() const;
+    void unsettotalShardCount();
+    void setTotalShardCount(int32_t value);
+
+    /// <summary>
+    /// 比对进度。
+    /// </summary>
+
+    double getProgress() const;
+    bool progressIsSet() const;
+    void unsetprogress();
+    void setProgress(double value);
+
 
 protected:
     std::string sourceDb_;
@@ -161,6 +197,14 @@ protected:
     bool messageIsSet_;
     std::string compareLineConfigFilter_;
     bool compareLineConfigFilterIsSet_;
+    int32_t status_;
+    bool statusIsSet_;
+    int32_t completeShardCount_;
+    bool completeShardCountIsSet_;
+    int32_t totalShardCount_;
+    bool totalShardCountIsSet_;
+    double progress_;
+    bool progressIsSet_;
 
 };
 

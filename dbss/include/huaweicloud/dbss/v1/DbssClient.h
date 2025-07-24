@@ -15,6 +15,7 @@
 #include <huaweicloud/dbss/v1/model/AlarmLogRequest.h>
 #include <huaweicloud/dbss/v1/model/AuditSqlRequest.h>
 #include <huaweicloud/dbss/v1/model/BatchSwitchesRequest.h>
+#include <huaweicloud/dbss/v1/model/ConfigAlarmTopicRequest.h>
 #include <huaweicloud/dbss/v1/model/CreateDatabaseRequest.h>
 #include <huaweicloud/dbss/v1/model/CreateInstancePeriodRequest.h>
 #include <huaweicloud/dbss/v1/model/CreateInstancesPeriodOrderRequest.h>
@@ -24,6 +25,8 @@
 #include <huaweicloud/dbss/v1/model/DeleteInstanceDemandRequest.h>
 #include <huaweicloud/dbss/v1/model/DeleteInstancesRequest.h>
 #include <huaweicloud/dbss/v1/model/DeleteInstancesResponse.h>
+#include <huaweicloud/dbss/v1/model/ListAlarmTopicConfigInfoRequest.h>
+#include <huaweicloud/dbss/v1/model/ListAlarmTopicConfigInfoResponse.h>
 #include <huaweicloud/dbss/v1/model/ListAuditAlarmLogRequest.h>
 #include <huaweicloud/dbss/v1/model/ListAuditAlarmLogResponse.h>
 #include <huaweicloud/dbss/v1/model/ListAuditDatabasesRequest.h>
@@ -59,6 +62,8 @@
 #include <huaweicloud/dbss/v1/model/RebootAuditInstanceResponse.h>
 #include <huaweicloud/dbss/v1/model/SecurityGroupRequest.h>
 #include <huaweicloud/dbss/v1/model/ServerIdBean.h>
+#include <huaweicloud/dbss/v1/model/SetAlarmTopicConfigInfoRequest.h>
+#include <huaweicloud/dbss/v1/model/SetAlarmTopicConfigInfoResponse.h>
 #include <huaweicloud/dbss/v1/model/ShowAuditQuotaRequest.h>
 #include <huaweicloud/dbss/v1/model/ShowAuditQuotaResponse.h>
 #include <huaweicloud/dbss/v1/model/ShowAuditRuleRiskRequest.h>
@@ -182,6 +187,14 @@ public:
     std::shared_ptr<DeleteInstancesResponse> deleteInstances(
         DeleteInstancesRequest &request
     );
+    // 获取实例告警配置
+    //
+    // 获取实例告警配置
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListAlarmTopicConfigInfoResponse> listAlarmTopicConfigInfo(
+        ListAlarmTopicConfigInfoRequest &request
+    );
     // 查询审计告警信息
     //
     // 查询审计告警信息
@@ -301,6 +314,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<RebootAuditInstanceResponse> rebootAuditInstance(
         RebootAuditInstanceRequest &request
+    );
+    // 设置实例告警配置
+    //
+    // 设置实例告警配置
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SetAlarmTopicConfigInfoResponse> setAlarmTopicConfigInfo(
+        SetAlarmTopicConfigInfoRequest &request
     );
     // 查询账户配额信息
     //

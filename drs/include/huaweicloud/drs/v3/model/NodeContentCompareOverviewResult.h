@@ -65,6 +65,42 @@ public:
     void unsetstatus();
     void setStatus(int32_t value);
 
+    /// <summary>
+    /// 总表数。
+    /// </summary>
+
+    int32_t getCompareNum() const;
+    bool compareNumIsSet() const;
+    void unsetcompareNum();
+    void setCompareNum(int32_t value);
+
+    /// <summary>
+    /// 已完成表数。
+    /// </summary>
+
+    int32_t getCompareEndNum() const;
+    bool compareEndNumIsSet() const;
+    void unsetcompareEndNum();
+    void setCompareEndNum(int32_t value);
+
+    /// <summary>
+    /// 不一致表数。
+    /// </summary>
+
+    int32_t getDataInconsistentNum() const;
+    bool dataInconsistentNumIsSet() const;
+    void unsetdataInconsistentNum();
+    void setDataInconsistentNum(int32_t value);
+
+    /// <summary>
+    /// 无法对比表数。
+    /// </summary>
+
+    int32_t getUncomparableNum() const;
+    bool uncomparableNumIsSet() const;
+    void unsetuncomparableNum();
+    void setUncomparableNum(int32_t value);
+
 
 protected:
     std::string sourceDb_;
@@ -73,6 +109,14 @@ protected:
     bool targetDbIsSet_;
     int32_t status_;
     bool statusIsSet_;
+    int32_t compareNum_;
+    bool compareNumIsSet_;
+    int32_t compareEndNum_;
+    bool compareEndNumIsSet_;
+    int32_t dataInconsistentNum_;
+    bool dataInconsistentNumIsSet_;
+    int32_t uncomparableNum_;
+    bool uncomparableNumIsSet_;
 
 };
 

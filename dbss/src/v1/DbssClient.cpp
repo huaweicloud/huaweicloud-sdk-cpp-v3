@@ -271,6 +271,36 @@ std::shared_ptr<DeleteInstancesResponse> DbssClient::deleteInstances(DeleteInsta
 
     return localVarResult;
 }
+std::shared_ptr<ListAlarmTopicConfigInfoResponse> DbssClient::listAlarmTopicConfigInfo(ListAlarmTopicConfigInfoRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/{instance_id}/audit/alarm/topic";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, DbssMeta::genRequestDefForListAlarmTopicConfigInfo());
+
+    std::shared_ptr<ListAlarmTopicConfigInfoResponse> localVarResult = std::make_shared<ListAlarmTopicConfigInfoResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListAuditAlarmLogResponse> DbssClient::listAuditAlarmLog(ListAuditAlarmLogRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/{instance_id}/audit/alarm-log";
@@ -811,6 +841,48 @@ std::shared_ptr<RebootAuditInstanceResponse> DbssClient::rebootAuditInstance(Reb
         localVarHeaderParams, localVarHttpBody, DbssMeta::genRequestDefForRebootAuditInstance());
 
     std::shared_ptr<RebootAuditInstanceResponse> localVarResult = std::make_shared<RebootAuditInstanceResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<SetAlarmTopicConfigInfoResponse> DbssClient::setAlarmTopicConfigInfo(SetAlarmTopicConfigInfoRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/{instance_id}/audit/alarm/topic";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, DbssMeta::genRequestDefForSetAlarmTopicConfigInfo());
+
+    std::shared_ptr<SetAlarmTopicConfigInfoResponse> localVarResult = std::make_shared<SetAlarmTopicConfigInfoResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

@@ -19,6 +19,7 @@ public:
     static HttpRequestDef genRequestDefForCreateInstancesPeriodOrder();
     static HttpRequestDef genRequestDefForDeleteAuditDatabase();
     static HttpRequestDef genRequestDefForDeleteInstances();
+    static HttpRequestDef genRequestDefForListAlarmTopicConfigInfo();
     static HttpRequestDef genRequestDefForListAuditAlarmLog();
     static HttpRequestDef genRequestDefForListAuditDatabases();
     static HttpRequestDef genRequestDefForListAuditInstanceJobs();
@@ -34,6 +35,7 @@ public:
     static HttpRequestDef genRequestDefForListRdsDatabases();
     static HttpRequestDef genRequestDefForListSqlInjectionRules();
     static HttpRequestDef genRequestDefForRebootAuditInstance();
+    static HttpRequestDef genRequestDefForSetAlarmTopicConfigInfo();
     static HttpRequestDef genRequestDefForShowAuditQuota();
     static HttpRequestDef genRequestDefForShowAuditRuleRisk();
     static HttpRequestDef genRequestDefForStartAuditInstance();

@@ -47,10 +47,21 @@ public:
     void unsetxLanguage();
     void setXLanguage(const std::string& value);
 
+    /// <summary>
+    /// 数据库引擎。 - postgresql
+    /// </summary>
+
+    std::string getEngineType() const;
+    bool engineTypeIsSet() const;
+    void unsetengineType();
+    void setEngineType(const std::string& value);
+
 
 protected:
     std::string xLanguage_;
     bool xLanguageIsSet_;
+    std::string engineType_;
+    bool engineTypeIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

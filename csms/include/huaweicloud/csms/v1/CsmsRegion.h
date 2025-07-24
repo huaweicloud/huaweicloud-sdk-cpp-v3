@@ -122,6 +122,22 @@ public:
             { 
                 "https://kms.ap-southeast-5.myhuaweicloud.com"
             });
+        regions["cn-north-12"] = Region("cn-north-12",
+            { 
+                "https://kms.cn-north-12.myhuaweicloud.com"
+            });
+        regions["cn-north-11"] = Region("cn-north-11",
+            { 
+                "https://kms.cn-north-11.myhuaweicloud.com"
+            });
+        regions["af-north-1"] = Region("af-north-1",
+            { 
+                "https://kms.af-north-1.myhuaweicloud.com"
+            });
+        regions["cn-southwest-3"] = Region("cn-southwest-3",
+            { 
+                "https://kms.cn-southwest-3.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

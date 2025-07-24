@@ -39,8 +39,10 @@ public:
     static HttpRequestDef genRequestDefForDeleteReplicationJob();
     static HttpRequestDef genRequestDefForDeleteUserJdbcDriver();
     static HttpRequestDef genRequestDefForDownloadBatchCreateTemplate();
+    static HttpRequestDef genRequestDefForDownloadCreateTemplate();
     static HttpRequestDef genRequestDefForDownloadDbObjectTemplate();
     static HttpRequestDef genRequestDefForExecuteJobAction();
+    static HttpRequestDef genRequestDefForExportCreationTemplate();
     static HttpRequestDef genRequestDefForExportOperationInfo();
     static HttpRequestDef genRequestDefForImportBatchCreateJobs();
     static HttpRequestDef genRequestDefForListAsyncJobDetail();
@@ -58,6 +60,7 @@ public:
     static HttpRequestDef genRequestDefForListProjectTags();
     static HttpRequestDef genRequestDefForListReplicationJobs();
     static HttpRequestDef genRequestDefForListTags();
+    static HttpRequestDef genRequestDefForListTemplates();
     static HttpRequestDef genRequestDefForListUserJdbcDrivers();
     static HttpRequestDef genRequestDefForListsAgencyPermissions();
     static HttpRequestDef genRequestDefForModifyConnection();
@@ -74,6 +77,7 @@ public:
     static HttpRequestDef genRequestDefForShowDbObjectsList();
     static HttpRequestDef genRequestDefForShowDirtyData();
     static HttpRequestDef genRequestDefForShowEnterpriseProject();
+    static HttpRequestDef genRequestDefForShowExportProgress();
     static HttpRequestDef genRequestDefForShowHealthCompareJobDetail();
     static HttpRequestDef genRequestDefForShowHealthCompareJobList();
     static HttpRequestDef genRequestDefForShowHealthObjectCompareJobOverview();

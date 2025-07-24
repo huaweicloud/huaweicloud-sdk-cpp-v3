@@ -18,6 +18,8 @@ NetworkInterfaces::NetworkInterfaces()
     primaryIsSet_ = false;
     ipAddressesIsSet_ = false;
     ipv6AddressesIsSet_ = false;
+    subnetId_ = "";
+    subnetIdIsSet_ = false;
     associationIsSet_ = false;
 }
 
@@ -42,6 +44,9 @@ web::json::value NetworkInterfaces::toJson() const
     }
     if(ipv6AddressesIsSet_) {
         val[utility::conversions::to_string_t("ipv6_addresses")] = ModelBase::toJson(ipv6Addresses_);
+    }
+    if(subnetIdIsSet_) {
+        val[utility::conversions::to_string_t("subnet_id")] = ModelBase::toJson(subnetId_);
     }
     if(associationIsSet_) {
         val[utility::conversions::to_string_t("association")] = ModelBase::toJson(association_);
@@ -87,6 +92,15 @@ bool NetworkInterfaces::fromJson(const web::json::value& val)
             std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIpv6Addresses(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("subnet_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("subnet_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSubnetId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("association"))) {
@@ -184,6 +198,27 @@ bool NetworkInterfaces::ipv6AddressesIsSet() const
 void NetworkInterfaces::unsetipv6Addresses()
 {
     ipv6AddressesIsSet_ = false;
+}
+
+std::string NetworkInterfaces::getSubnetId() const
+{
+    return subnetId_;
+}
+
+void NetworkInterfaces::setSubnetId(const std::string& value)
+{
+    subnetId_ = value;
+    subnetIdIsSet_ = true;
+}
+
+bool NetworkInterfaces::subnetIdIsSet() const
+{
+    return subnetIdIsSet_;
+}
+
+void NetworkInterfaces::unsetsubnetId()
+{
+    subnetIdIsSet_ = false;
 }
 
 Association NetworkInterfaces::getAssociation() const

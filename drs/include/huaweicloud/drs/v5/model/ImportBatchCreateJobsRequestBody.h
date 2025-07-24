@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <string>
 #include <huaweicloud/core/utils/HttpContent.h>
 
 namespace HuaweiCloud {
@@ -47,10 +48,21 @@ public:
     void unsetfile();
     void setFile(const HttpContent& value);
 
+    /// <summary>
+    /// 任务类型，迁移，同步，灾备等。 - migration - sync - cloudDataGuard
+    /// </summary>
+
+    std::string getType() const;
+    bool typeIsSet() const;
+    void unsettype();
+    void setType(const std::string& value);
+
 
 protected:
     HttpContent file_;
     bool fileIsSet_;
+    std::string type_;
+    bool typeIsSet_;
 
 };
 

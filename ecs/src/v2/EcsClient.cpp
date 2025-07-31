@@ -30,7 +30,8 @@ EcsClient::~EcsClient()
 
 ClientBuilder<EcsClient> EcsClient::newBuilder()
 {
-    return ClientBuilder<EcsClient>("BasicCredentials");
+    ClientBuilder<EcsClient> client = ClientBuilder<EcsClient>("BasicCredentials");
+    return client;
 }
 std::shared_ptr<AcceptScheduledEventResponse> EcsClient::acceptScheduledEvent(AcceptScheduledEventRequest &request)
 {

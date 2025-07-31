@@ -112,6 +112,15 @@ public:
     void setState(const std::string& value);
 
     /// <summary>
+    /// 冻结原因编号。
+    /// </summary>
+
+    std::string getBlockReasonCode() const;
+    bool blockReasonCodeIsSet() const;
+    void unsetblockReasonCode();
+    void setBlockReasonCode(const std::string& value);
+
+    /// <summary>
     /// 审核失败原因
     /// </summary>
 
@@ -147,6 +156,8 @@ protected:
     bool downloadUrlIsSet_;
     std::string state_;
     bool stateIsSet_;
+    std::string blockReasonCode_;
+    bool blockReasonCodeIsSet_;
     std::string reason_;
     bool reasonIsSet_;
     FileExtraMeta fileExtraMeta_;

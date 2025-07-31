@@ -30,7 +30,8 @@ GeipClient::~GeipClient()
 
 ClientBuilder<GeipClient> GeipClient::newBuilder()
 {
-    return ClientBuilder<GeipClient>("GlobalCredentials");
+    ClientBuilder<GeipClient> client = ClientBuilder<GeipClient>("GlobalCredentials");
+    return client;
 }
 std::shared_ptr<AddInternetBandwidthTagsResponse> GeipClient::addInternetBandwidthTags(AddInternetBandwidthTagsRequest &request)
 {

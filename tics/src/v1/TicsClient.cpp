@@ -30,7 +30,8 @@ TicsClient::~TicsClient()
 
 ClientBuilder<TicsClient> TicsClient::newBuilder()
 {
-    return ClientBuilder<TicsClient>("BasicCredentials");
+    ClientBuilder<TicsClient> client = ClientBuilder<TicsClient>("BasicCredentials");
+    return client;
 }
 std::shared_ptr<ListAgentsResponse> TicsClient::listAgents(ListAgentsRequest &request)
 {

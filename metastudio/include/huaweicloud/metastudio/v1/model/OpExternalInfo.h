@@ -48,10 +48,21 @@ public:
     void unsetreviewIdList();
     void setReviewIdList(const std::vector<std::string>& value);
 
+    /// <summary>
+    /// 算法侧失败原因
+    /// </summary>
+
+    std::string getAlgorithmFailureReason() const;
+    bool algorithmFailureReasonIsSet() const;
+    void unsetalgorithmFailureReason();
+    void setAlgorithmFailureReason(const std::string& value);
+
 
 protected:
     std::vector<std::string> reviewIdList_;
     bool reviewIdListIsSet_;
+    std::string algorithmFailureReason_;
+    bool algorithmFailureReasonIsSet_;
 
 };
 

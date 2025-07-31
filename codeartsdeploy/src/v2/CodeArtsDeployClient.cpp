@@ -30,7 +30,8 @@ CodeArtsDeployClient::~CodeArtsDeployClient()
 
 ClientBuilder<CodeArtsDeployClient> CodeArtsDeployClient::newBuilder()
 {
-    return ClientBuilder<CodeArtsDeployClient>("");
+    ClientBuilder<CodeArtsDeployClient> client = ClientBuilder<CodeArtsDeployClient>("");
+    return client;
 }
 std::shared_ptr<CreateAppGroupsResponse> CodeArtsDeployClient::createAppGroups(CreateAppGroupsRequest &request)
 {

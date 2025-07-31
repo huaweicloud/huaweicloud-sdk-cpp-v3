@@ -30,7 +30,8 @@ SmnClient::~SmnClient()
 
 ClientBuilder<SmnClient> SmnClient::newBuilder()
 {
-    return ClientBuilder<SmnClient>("BasicCredentials");
+    ClientBuilder<SmnClient> client = ClientBuilder<SmnClient>("BasicCredentials");
+    return client;
 }
 std::shared_ptr<AddSubscriptionResponse> SmnClient::addSubscription(AddSubscriptionRequest &request)
 {

@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/ocr/v1/model/WordsListIem.h"
+#include "huaweicloud/ocr/v1/model/WordsListItem.h"
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -10,7 +10,7 @@ namespace Model {
 
 
 
-WordsListIem::WordsListIem()
+WordsListItem::WordsListItem()
 {
     words_ = "";
     wordsIsSet_ = false;
@@ -20,13 +20,13 @@ WordsListIem::WordsListIem()
     charListIsSet_ = false;
 }
 
-WordsListIem::~WordsListIem() = default;
+WordsListItem::~WordsListItem() = default;
 
-void WordsListIem::validate()
+void WordsListItem::validate()
 {
 }
 
-web::json::value WordsListIem::toJson() const
+web::json::value WordsListItem::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -45,7 +45,7 @@ web::json::value WordsListIem::toJson() const
 
     return val;
 }
-bool WordsListIem::fromJson(const web::json::value& val)
+bool WordsListItem::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -80,7 +80,7 @@ bool WordsListIem::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("char_list"));
         if(!fieldValue.is_null())
         {
-            std::vector<CharListIem> refVal;
+            std::vector<CharListItem> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCharList(refVal);
         }
@@ -89,86 +89,86 @@ bool WordsListIem::fromJson(const web::json::value& val)
 }
 
 
-std::string WordsListIem::getWords() const
+std::string WordsListItem::getWords() const
 {
     return words_;
 }
 
-void WordsListIem::setWords(const std::string& value)
+void WordsListItem::setWords(const std::string& value)
 {
     words_ = value;
     wordsIsSet_ = true;
 }
 
-bool WordsListIem::wordsIsSet() const
+bool WordsListItem::wordsIsSet() const
 {
     return wordsIsSet_;
 }
 
-void WordsListIem::unsetwords()
+void WordsListItem::unsetwords()
 {
     wordsIsSet_ = false;
 }
 
-float WordsListIem::getConfidence() const
+float WordsListItem::getConfidence() const
 {
     return confidence_;
 }
 
-void WordsListIem::setConfidence(float value)
+void WordsListItem::setConfidence(float value)
 {
     confidence_ = value;
     confidenceIsSet_ = true;
 }
 
-bool WordsListIem::confidenceIsSet() const
+bool WordsListItem::confidenceIsSet() const
 {
     return confidenceIsSet_;
 }
 
-void WordsListIem::unsetconfidence()
+void WordsListItem::unsetconfidence()
 {
     confidenceIsSet_ = false;
 }
 
-std::vector<std::vector<int32_t>>& WordsListIem::getLocation()
+std::vector<std::vector<int32_t>>& WordsListItem::getLocation()
 {
     return location_;
 }
 
-void WordsListIem::setLocation(const std::vector<std::vector<int32_t>>& value)
+void WordsListItem::setLocation(const std::vector<std::vector<int32_t>>& value)
 {
     location_ = value;
     locationIsSet_ = true;
 }
 
-bool WordsListIem::locationIsSet() const
+bool WordsListItem::locationIsSet() const
 {
     return locationIsSet_;
 }
 
-void WordsListIem::unsetlocation()
+void WordsListItem::unsetlocation()
 {
     locationIsSet_ = false;
 }
 
-std::vector<CharListIem>& WordsListIem::getCharList()
+std::vector<CharListItem>& WordsListItem::getCharList()
 {
     return charList_;
 }
 
-void WordsListIem::setCharList(const std::vector<CharListIem>& value)
+void WordsListItem::setCharList(const std::vector<CharListItem>& value)
 {
     charList_ = value;
     charListIsSet_ = true;
 }
 
-bool WordsListIem::charListIsSet() const
+bool WordsListItem::charListIsSet() const
 {
     return charListIsSet_;
 }
 
-void WordsListIem::unsetcharList()
+void WordsListItem::unsetcharList()
 {
     charListIsSet_ = false;
 }

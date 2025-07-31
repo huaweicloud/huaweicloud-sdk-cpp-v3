@@ -21,13 +21,18 @@ public:
     static HttpRequestDef genRequestDefForBatchUpdateMembers();
     static HttpRequestDef genRequestDefForCopyImageCrossRegion();
     static HttpRequestDef genRequestDefForCopyImageInRegion();
+    static HttpRequestDef genRequestDefForCopyImageInRegionInSafeMode();
     static HttpRequestDef genRequestDefForCreateDataImage();
+    static HttpRequestDef genRequestDefForCreateDataImageInSafeMode();
     static HttpRequestDef genRequestDefForCreateImage();
+    static HttpRequestDef genRequestDefForCreateImageInSafeMode();
     static HttpRequestDef genRequestDefForCreateOrUpdateTags();
     static HttpRequestDef genRequestDefForCreateWholeImage();
     static HttpRequestDef genRequestDefForDeleteImageTag();
     static HttpRequestDef genRequestDefForExportImage();
+    static HttpRequestDef genRequestDefForExportImageInSafeMode();
     static HttpRequestDef genRequestDefForImportImageQuick();
+    static HttpRequestDef genRequestDefForImportImageQuickInSafeMode();
     static HttpRequestDef genRequestDefForListImageByTags();
     static HttpRequestDef genRequestDefForListImageMembers();
     static HttpRequestDef genRequestDefForListImageTags();

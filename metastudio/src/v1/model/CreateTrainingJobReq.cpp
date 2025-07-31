@@ -32,6 +32,9 @@ CreateTrainingJobReq::CreateTrainingJobReq()
     outputLanguageIsSet_ = false;
     customText_ = "";
     customTextIsSet_ = false;
+    isOndemandResource_ = false;
+    isOndemandResourceIsSet_ = false;
+    supportedServiceIsSet_ = false;
 }
 
 CreateTrainingJobReq::~CreateTrainingJobReq() = default;
@@ -76,6 +79,12 @@ web::json::value CreateTrainingJobReq::toJson() const
     }
     if(customTextIsSet_) {
         val[utility::conversions::to_string_t("custom_text")] = ModelBase::toJson(customText_);
+    }
+    if(isOndemandResourceIsSet_) {
+        val[utility::conversions::to_string_t("is_ondemand_resource")] = ModelBase::toJson(isOndemandResource_);
+    }
+    if(supportedServiceIsSet_) {
+        val[utility::conversions::to_string_t("supported_service")] = ModelBase::toJson(supportedService_);
     }
 
     return val;
@@ -181,6 +190,24 @@ bool CreateTrainingJobReq::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCustomText(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_ondemand_resource"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_ondemand_resource"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsOndemandResource(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("supported_service"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("supported_service"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<SupportedServiceEnum> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSupportedService(refVal);
         }
     }
     return ok;
@@ -416,6 +443,48 @@ bool CreateTrainingJobReq::customTextIsSet() const
 void CreateTrainingJobReq::unsetcustomText()
 {
     customTextIsSet_ = false;
+}
+
+bool CreateTrainingJobReq::isIsOndemandResource() const
+{
+    return isOndemandResource_;
+}
+
+void CreateTrainingJobReq::setIsOndemandResource(bool value)
+{
+    isOndemandResource_ = value;
+    isOndemandResourceIsSet_ = true;
+}
+
+bool CreateTrainingJobReq::isOndemandResourceIsSet() const
+{
+    return isOndemandResourceIsSet_;
+}
+
+void CreateTrainingJobReq::unsetisOndemandResource()
+{
+    isOndemandResourceIsSet_ = false;
+}
+
+std::vector<SupportedServiceEnum>& CreateTrainingJobReq::getSupportedService()
+{
+    return supportedService_;
+}
+
+void CreateTrainingJobReq::setSupportedService(const std::vector<SupportedServiceEnum>& value)
+{
+    supportedService_ = value;
+    supportedServiceIsSet_ = true;
+}
+
+bool CreateTrainingJobReq::supportedServiceIsSet() const
+{
+    return supportedServiceIsSet_;
+}
+
+void CreateTrainingJobReq::unsetsupportedService()
+{
+    supportedServiceIsSet_ = false;
 }
 
 }

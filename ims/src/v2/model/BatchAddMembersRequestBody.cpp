@@ -14,6 +14,8 @@ BatchAddMembersRequestBody::BatchAddMembersRequestBody()
 {
     imagesIsSet_ = false;
     projectsIsSet_ = false;
+    domainsIsSet_ = false;
+    organizationsIsSet_ = false;
 }
 
 BatchAddMembersRequestBody::~BatchAddMembersRequestBody() = default;
@@ -31,6 +33,12 @@ web::json::value BatchAddMembersRequestBody::toJson() const
     }
     if(projectsIsSet_) {
         val[utility::conversions::to_string_t("projects")] = ModelBase::toJson(projects_);
+    }
+    if(domainsIsSet_) {
+        val[utility::conversions::to_string_t("domains")] = ModelBase::toJson(domains_);
+    }
+    if(organizationsIsSet_) {
+        val[utility::conversions::to_string_t("organizations")] = ModelBase::toJson(organizations_);
     }
 
     return val;
@@ -55,6 +63,24 @@ bool BatchAddMembersRequestBody::fromJson(const web::json::value& val)
             std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setProjects(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("domains"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("domains"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDomains(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("organizations"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("organizations"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setOrganizations(refVal);
         }
     }
     return ok;
@@ -101,6 +127,48 @@ bool BatchAddMembersRequestBody::projectsIsSet() const
 void BatchAddMembersRequestBody::unsetprojects()
 {
     projectsIsSet_ = false;
+}
+
+std::vector<std::string>& BatchAddMembersRequestBody::getDomains()
+{
+    return domains_;
+}
+
+void BatchAddMembersRequestBody::setDomains(const std::vector<std::string>& value)
+{
+    domains_ = value;
+    domainsIsSet_ = true;
+}
+
+bool BatchAddMembersRequestBody::domainsIsSet() const
+{
+    return domainsIsSet_;
+}
+
+void BatchAddMembersRequestBody::unsetdomains()
+{
+    domainsIsSet_ = false;
+}
+
+std::vector<std::string>& BatchAddMembersRequestBody::getOrganizations()
+{
+    return organizations_;
+}
+
+void BatchAddMembersRequestBody::setOrganizations(const std::vector<std::string>& value)
+{
+    organizations_ = value;
+    organizationsIsSet_ = true;
+}
+
+bool BatchAddMembersRequestBody::organizationsIsSet() const
+{
+    return organizationsIsSet_;
+}
+
+void BatchAddMembersRequestBody::unsetorganizations()
+{
+    organizationsIsSet_ = false;
 }
 
 }

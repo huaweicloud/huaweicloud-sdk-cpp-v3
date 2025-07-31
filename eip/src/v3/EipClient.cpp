@@ -30,7 +30,8 @@ EipClient::~EipClient()
 
 ClientBuilder<EipClient> EipClient::newBuilder()
 {
-    return ClientBuilder<EipClient>("BasicCredentials");
+    ClientBuilder<EipClient> client = ClientBuilder<EipClient>("BasicCredentials");
+    return client;
 }
 std::shared_ptr<ListBandwidthResponse> EipClient::listBandwidth(ListBandwidthRequest &request)
 {

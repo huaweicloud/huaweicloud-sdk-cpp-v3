@@ -30,7 +30,8 @@ MetaStudioClient::~MetaStudioClient()
 
 ClientBuilder<MetaStudioClient> MetaStudioClient::newBuilder()
 {
-    return ClientBuilder<MetaStudioClient>("BasicCredentials");
+    ClientBuilder<MetaStudioClient> client = ClientBuilder<MetaStudioClient>("BasicCredentials");
+    return client;
 }
 std::shared_ptr<CreateActiveCodeResponse> MetaStudioClient::createActiveCode(CreateActiveCodeRequest &request)
 {
@@ -1504,9 +1505,6 @@ std::shared_ptr<ListAssetsResponse> MetaStudioClient::listAssets(ListAssetsReque
     }
     if (request.appUserIdIsSet()) {
         localVarQueryParams["app_user_id"] = parameterToString(request.getAppUserId());
-    }
-    if (request.projectGroupIdIsSet()) {
-        localVarQueryParams["project_group_id"] = parameterToString(request.getProjectGroupId());
     }
     if (request.authorizationIsSet()) {
         localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
@@ -7931,6 +7929,9 @@ std::shared_ptr<ListVoiceTrainingJobResponse> MetaStudioClient::listVoiceTrainin
     if (request.sortDirIsSet()) {
         localVarQueryParams["sort_dir"] = parameterToString(request.getSortDir());
     }
+    if (request.isOndemandResourceIsSet()) {
+        localVarQueryParams["is_ondemand_resource"] = parameterToString(request.isIsOndemandResource());
+    }
     if (request.xAppUserIdIsSet()) {
         localVarHeaderParams["X-App-UserId"] = parameterToString(request.getXAppUserId());
     }
@@ -7963,6 +7964,9 @@ std::shared_ptr<SetJobBatchNameResponse> MetaStudioClient::setJobBatchName(SetJo
     std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
     localVarHeaderParams["Content-Type"] = contentType;
 
+    if (request.xAppUserIdIsSet()) {
+        localVarHeaderParams["X-App-UserId"] = parameterToString(request.getXAppUserId());
+    }
 
     std::string localVarHttpBody;
     if (isJson) {
@@ -8857,6 +8861,62 @@ std::shared_ptr<CreateTtscVocabularyConfigsResponse> MetaStudioClient::createTts
 
     return localVarResult;
 }
+std::shared_ptr<CreateTtscVocabularyGroupsResponse> MetaStudioClient::createTtscVocabularyGroups(CreateTtscVocabularyGroupsRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/ttsc/vocabulary-groups";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xRequestIdIsSet()) {
+        localVarHeaderParams["X-Request-Id"] = parameterToString(request.getXRequestId());
+    }
+    if (request.authorizationIsSet()) {
+        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
+    }
+    if (request.xSdkDateIsSet()) {
+        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
+    }
+    if (request.xProjectIdIsSet()) {
+        localVarHeaderParams["X-Project-Id"] = parameterToString(request.getXProjectId());
+    }
+    if (request.xAppUserIdIsSet()) {
+        localVarHeaderParams["X-App-UserId"] = parameterToString(request.getXAppUserId());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForCreateTtscVocabularyGroups());
+
+    std::shared_ptr<CreateTtscVocabularyGroupsResponse> localVarResult = std::make_shared<CreateTtscVocabularyGroupsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<DeleteTtscVocabularyConfigsResponse> MetaStudioClient::deleteTtscVocabularyConfigs(DeleteTtscVocabularyConfigsRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/ttsc/vocabulary-configs";
@@ -8919,6 +8979,57 @@ std::shared_ptr<DeleteTtscVocabularyConfigsResponse> MetaStudioClient::deleteTts
 
     return localVarResult;
 }
+std::shared_ptr<DeleteTtscVocabularyGroupsResponse> MetaStudioClient::deleteTtscVocabularyGroups(DeleteTtscVocabularyGroupsRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/ttsc/vocabulary-groups/{group_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["group_id"] = parameterToString(request.getGroupId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.xRequestIdIsSet()) {
+        localVarHeaderParams["X-Request-Id"] = parameterToString(request.getXRequestId());
+    }
+    if (request.authorizationIsSet()) {
+        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
+    }
+    if (request.xSdkDateIsSet()) {
+        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
+    }
+    if (request.xProjectIdIsSet()) {
+        localVarHeaderParams["X-Project-Id"] = parameterToString(request.getXProjectId());
+    }
+    if (request.xAppUserIdIsSet()) {
+        localVarHeaderParams["X-App-UserId"] = parameterToString(request.getXAppUserId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForDeleteTtscVocabularyGroups());
+
+    std::shared_ptr<DeleteTtscVocabularyGroupsResponse> localVarResult = std::make_shared<DeleteTtscVocabularyGroupsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListTtscVocabularyConfigsResponse> MetaStudioClient::listTtscVocabularyConfigs(ListTtscVocabularyConfigsRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/ttsc/vocabulary-configs";
@@ -8943,6 +9054,12 @@ std::shared_ptr<ListTtscVocabularyConfigsResponse> MetaStudioClient::listTtscVoc
     }
     if (request.isVocabularyConfigEnableIsSet()) {
         localVarQueryParams["is_vocabulary_config_enable"] = parameterToString(request.getIsVocabularyConfigEnable());
+    }
+    if (request.groupIdIsSet()) {
+        localVarQueryParams["group_id"] = parameterToString(request.getGroupId());
+    }
+    if (request.assetIdIsSet()) {
+        localVarQueryParams["asset_id"] = parameterToString(request.getAssetId());
     }
     if (request.limitIsSet()) {
         localVarQueryParams["limit"] = parameterToString(request.getLimit());
@@ -8981,6 +9098,50 @@ std::shared_ptr<ListTtscVocabularyConfigsResponse> MetaStudioClient::listTtscVoc
         localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForListTtscVocabularyConfigs());
 
     std::shared_ptr<ListTtscVocabularyConfigsResponse> localVarResult = std::make_shared<ListTtscVocabularyConfigsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListTtscVocabularyGroupsResponse> MetaStudioClient::listTtscVocabularyGroups(ListTtscVocabularyGroupsRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/ttsc/vocabulary-groups";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xRequestIdIsSet()) {
+        localVarHeaderParams["X-Request-Id"] = parameterToString(request.getXRequestId());
+    }
+    if (request.authorizationIsSet()) {
+        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
+    }
+    if (request.xSdkDateIsSet()) {
+        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
+    }
+    if (request.xProjectIdIsSet()) {
+        localVarHeaderParams["X-Project-Id"] = parameterToString(request.getXProjectId());
+    }
+    if (request.xAppUserIdIsSet()) {
+        localVarHeaderParams["X-App-UserId"] = parameterToString(request.getXAppUserId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForListTtscVocabularyGroups());
+
+    std::shared_ptr<ListTtscVocabularyGroupsResponse> localVarResult = std::make_shared<ListTtscVocabularyGroupsResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -9032,6 +9193,63 @@ std::shared_ptr<SaveTtscVocabularyConfigsResponse> MetaStudioClient::saveTtscVoc
         localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForSaveTtscVocabularyConfigs());
 
     std::shared_ptr<SaveTtscVocabularyConfigsResponse> localVarResult = std::make_shared<SaveTtscVocabularyConfigsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<SetTtscGroupAssetsResponse> MetaStudioClient::setTtscGroupAssets(SetTtscGroupAssetsRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/ttsc/group-assets/{group_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["group_id"] = parameterToString(request.getGroupId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xRequestIdIsSet()) {
+        localVarHeaderParams["X-Request-Id"] = parameterToString(request.getXRequestId());
+    }
+    if (request.authorizationIsSet()) {
+        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
+    }
+    if (request.xSdkDateIsSet()) {
+        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
+    }
+    if (request.xProjectIdIsSet()) {
+        localVarHeaderParams["X-Project-Id"] = parameterToString(request.getXProjectId());
+    }
+    if (request.xAppUserIdIsSet()) {
+        localVarHeaderParams["X-App-UserId"] = parameterToString(request.getXAppUserId());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForSetTtscGroupAssets());
+
+    std::shared_ptr<SetTtscGroupAssetsResponse> localVarResult = std::make_shared<SetTtscGroupAssetsResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -9181,6 +9399,63 @@ std::shared_ptr<ShowTtsPhoneticSymbolResponse> MetaStudioClient::showTtsPhonetic
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateTtscVocabularyGroupsResponse> MetaStudioClient::updateTtscVocabularyGroups(UpdateTtscVocabularyGroupsRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/ttsc/vocabulary-groups/{group_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["group_id"] = parameterToString(request.getGroupId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xRequestIdIsSet()) {
+        localVarHeaderParams["X-Request-Id"] = parameterToString(request.getXRequestId());
+    }
+    if (request.authorizationIsSet()) {
+        localVarHeaderParams["Authorization"] = parameterToString(request.getAuthorization());
+    }
+    if (request.xSdkDateIsSet()) {
+        localVarHeaderParams["X-Sdk-Date"] = parameterToString(request.getXSdkDate());
+    }
+    if (request.xProjectIdIsSet()) {
+        localVarHeaderParams["X-Project-Id"] = parameterToString(request.getXProjectId());
+    }
+    if (request.xAppUserIdIsSet()) {
+        localVarHeaderParams["X-App-UserId"] = parameterToString(request.getXAppUserId());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, MetaStudioMeta::genRequestDefForUpdateTtscVocabularyGroups());
+
+    std::shared_ptr<UpdateTtscVocabularyGroupsResponse> localVarResult = std::make_shared<UpdateTtscVocabularyGroupsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
 
     return localVarResult;
 }

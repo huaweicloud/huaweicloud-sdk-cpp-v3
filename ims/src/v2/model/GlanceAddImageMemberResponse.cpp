@@ -24,6 +24,10 @@ GlanceAddImageMemberResponse::GlanceAddImageMemberResponse()
     memberIdIsSet_ = false;
     schema_ = "";
     schemaIsSet_ = false;
+    memberType_ = "";
+    memberTypeIsSet_ = false;
+    urn_ = "";
+    urnIsSet_ = false;
 }
 
 GlanceAddImageMemberResponse::~GlanceAddImageMemberResponse() = default;
@@ -53,6 +57,12 @@ web::json::value GlanceAddImageMemberResponse::toJson() const
     }
     if(schemaIsSet_) {
         val[utility::conversions::to_string_t("schema")] = ModelBase::toJson(schema_);
+    }
+    if(memberTypeIsSet_) {
+        val[utility::conversions::to_string_t("member_type")] = ModelBase::toJson(memberType_);
+    }
+    if(urnIsSet_) {
+        val[utility::conversions::to_string_t("urn")] = ModelBase::toJson(urn_);
     }
 
     return val;
@@ -113,6 +123,24 @@ bool GlanceAddImageMemberResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSchema(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("member_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("member_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMemberType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("urn"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("urn"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setUrn(refVal);
         }
     }
     return ok;
@@ -243,6 +271,48 @@ bool GlanceAddImageMemberResponse::schemaIsSet() const
 void GlanceAddImageMemberResponse::unsetschema()
 {
     schemaIsSet_ = false;
+}
+
+std::string GlanceAddImageMemberResponse::getMemberType() const
+{
+    return memberType_;
+}
+
+void GlanceAddImageMemberResponse::setMemberType(const std::string& value)
+{
+    memberType_ = value;
+    memberTypeIsSet_ = true;
+}
+
+bool GlanceAddImageMemberResponse::memberTypeIsSet() const
+{
+    return memberTypeIsSet_;
+}
+
+void GlanceAddImageMemberResponse::unsetmemberType()
+{
+    memberTypeIsSet_ = false;
+}
+
+std::string GlanceAddImageMemberResponse::getUrn() const
+{
+    return urn_;
+}
+
+void GlanceAddImageMemberResponse::setUrn(const std::string& value)
+{
+    urn_ = value;
+    urnIsSet_ = true;
+}
+
+bool GlanceAddImageMemberResponse::urnIsSet() const
+{
+    return urnIsSet_;
+}
+
+void GlanceAddImageMemberResponse::unseturn()
+{
+    urnIsSet_ = false;
 }
 
 }

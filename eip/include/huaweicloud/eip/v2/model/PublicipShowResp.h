@@ -140,6 +140,15 @@ public:
     void setPublicIpAddress(const std::string& value);
 
     /// <summary>
+    /// - 功能说明：\&quot;公网EIP标签\&quot;
+    /// </summary>
+
+    std::vector<std::string>& getTags();
+    bool tagsIsSet() const;
+    void unsettags();
+    void setTags(const std::vector<std::string>& value);
+
+    /// <summary>
     /// 功能说明：弹性公网IP的状态  取值范围：冻结FREEZED，绑定失败BIND_ERROR，绑定中BINDING，释放中PENDING_DELETE， 创建中PENDING_CREATE，创建中NOTIFYING，释放中NOTIFY_DELETE，更新中PENDING_UPDATE， 未绑定DOWN ，绑定ACTIVE，绑定ELB，绑定VPN，失败ERROR。
     /// </summary>
 
@@ -235,6 +244,8 @@ protected:
     bool profileIsSet_;
     std::string publicIpAddress_;
     bool publicIpAddressIsSet_;
+    std::vector<std::string> tags_;
+    bool tagsIsSet_;
     std::string status_;
     bool statusIsSet_;
     std::string tenantId_;

@@ -30,7 +30,8 @@ CloudtestClient::~CloudtestClient()
 
 ClientBuilder<CloudtestClient> CloudtestClient::newBuilder()
 {
-    return ClientBuilder<CloudtestClient>("BasicCredentials");
+    ClientBuilder<CloudtestClient> client = ClientBuilder<CloudtestClient>("BasicCredentials");
+    return client;
 }
 std::shared_ptr<AddCaseResultFourResponse> CloudtestClient::addCaseResultFour(AddCaseResultFourRequest &request)
 {

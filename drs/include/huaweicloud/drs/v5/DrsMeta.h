@@ -68,6 +68,7 @@ public:
     static HttpRequestDef genRequestDefForShowAgencyInfo();
     static HttpRequestDef genRequestDefForShowColumnInfoResult();
     static HttpRequestDef genRequestDefForShowComparePolicy();
+    static HttpRequestDef genRequestDefForShowCompareProgress();
     static HttpRequestDef genRequestDefForShowDataFilteringResult();
     static HttpRequestDef genRequestDefForShowDataProcessingRulesResult();
     static HttpRequestDef genRequestDefForShowDataProgress();

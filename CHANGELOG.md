@@ -1,3 +1,214 @@
+# 3.1.147 2025-07-31
+
+### HuaweiCloud SDK CFW
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the following APIs:
+    - `ShowCustomerIpsInfo`
+    - `UpdateCustomerIps`
+    - `ShowTrafficTrend`
+    - `ShowAccessTop`
+    - `ListAttackStatistic`
+    - `ShowAttackTrend`
+    - `ShowAttackTotal`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK DBSS
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **SetAlarmTopicConfigInfo**
+    - changes of response param
+      - `- is_use_topic`
+
+### HuaweiCloud SDK DRS
+
+- _API Version_
+  - V5
+- _Features_
+  - Support the API `ShowCompareProgress`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK EIP
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListPublicips**
+    - changes of response param
+      - `+ publicips.tags`
+  - **ShowPublicip**
+    - changes of response param
+      - `+ publicip.tags`
+
+### HuaweiCloud SDK IMS
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the following APIs:
+    - `ExportImageInSafeMode`
+    - `CreateDataImageInSafeMode`
+    - `CreateImageInSafeMode`
+    - `ImportImageQuickInSafeMode`
+    - `CopyImageInRegionInSafeMode`
+- _Bug Fix_
+  - None
+- _Change_
+  - **BatchAddMembers**
+    - changes of request param
+      - `+ domains`
+      - `+ organizations`
+  - **BatchDeleteMembers**
+    - changes of request param
+      - `+ domains`
+      - `+ organizations`
+  - **GlanceShowImageMember**
+    - changes of response param
+      - `+ member_type`
+      - `+ urn`
+  - **GlanceUpdateImageMember**
+    - changes of response param
+      - `+ member_type`
+      - `+ urn`
+  - **GlanceAddImageMember**
+    - changes of response param
+      - `+ member_type`
+      - `+ urn`
+  - **GlanceListImageMembers**
+    - changes of response param
+      - `+ members.member_type`
+      - `+ members.urn`
+
+### HuaweiCloud SDK Live
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the API `CreateStreamForbiddenOnce`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK MetaStudio
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the following APIs:
+    - `ListTtscVocabularyGroups`
+    - `CreateTtscVocabularyGroups`
+    - `UpdateTtscVocabularyGroups`
+    - `DeleteTtscVocabularyGroups`
+    - `SetTtscGroupAssets`
+- _Bug Fix_
+  - None
+- _Change_
+  - **SaveTtscVocabularyConfigs**
+    - changes of request param
+      - `+ group_id`
+  - **ShowTenantDurationCfg**
+    - changes of response param
+      - `+ short_assess_min`
+      - `+ short_assess_max`
+  - **SetJobBatchName**
+    - changes of request param
+      - `+ X-App-UserId`
+  - **CreateTtscVocabularyConfigs**
+    - changes of request param
+      - `+ group_id`
+  - **ListTtscVocabularyConfigs**
+    - changes of request param
+      - `+ group_id`
+      - `+ asset_id`
+    - changes of response param
+      - `+ data.group_id`
+  - **CreateTrainingBasicJob**
+    - changes of request param
+      - `+ is_ondemand_resource`
+      - `+ supported_service`
+      - `+ tag: enum value [LIVE,EDUCATION,CUSTOMER,STORYTELLING]`
+  - **CreateTrainingMiddleJob**
+    - changes of request param
+      - `+ is_ondemand_resource`
+      - `+ supported_service`
+      - `+ tag: enum value [LIVE,EDUCATION,CUSTOMER,STORYTELLING]`
+  - **CreateTrainingAdvanceJob**
+    - changes of request param
+      - `+ is_ondemand_resource`
+      - `+ supported_service`
+      - `+ tag: enum value [LIVE,EDUCATION,CUSTOMER,STORYTELLING]`
+  - **CommitVoiceTrainingJob**
+    - changes of request param
+      - `+ tag: enum value [LIVE,EDUCATION,CUSTOMER,STORYTELLING]`
+  - **ShowVoiceTrainingJob**
+    - changes of response param
+      - `+ assess_result`
+      - `+ is_ondemand_resource`
+      - `+ tag: enum value [LIVE,EDUCATION,CUSTOMER,STORYTELLING]`
+      - `+ allocated_resource.charge_mode: enum value [ON_DEMAND]`
+  - **ListJobOperationLog**
+    - changes of response param
+      - `+ operations.external_info.algorithm_failure_reason`
+  - **ShowAsset**
+    - changes of response param
+      - `+ auto_operation_config`
+      - `+ block_reason_code`
+      - `+ system_properties.key: enum value [IS_CONTROLLED,LIVE_IS_AUTHORIZED,VIDEO_IS_AUTHORIZED,CHAT_IS_AUTHORIZED]`
+      - `+ files.block_reason_code`
+  - **UpdateDigitalAsset**
+    - changes of request param
+      - `+ auto_operation_config`
+      - `+ system_properties.key: enum value [IS_CONTROLLED,LIVE_IS_AUTHORIZED,VIDEO_IS_AUTHORIZED,CHAT_IS_AUTHORIZED]`
+    - changes of response param
+      - `+ auto_operation_config`
+      - `+ block_reason_code`
+      - `+ system_properties.key: enum value [IS_CONTROLLED,LIVE_IS_AUTHORIZED,VIDEO_IS_AUTHORIZED,CHAT_IS_AUTHORIZED]`
+      - `+ files.block_reason_code`
+  - **ListVoiceTrainingJob**
+    - changes of request param
+      - `+ is_ondemand_resource`
+    - changes of response param
+      - `+ assess_result`
+      - `+ is_ondemand_resource`
+      - `+ jobs.assess_result`
+      - `+ jobs.is_ondemand_resource`
+      - `+ jobs.tag: enum value [LIVE,EDUCATION,CUSTOMER,STORYTELLING]`
+      - `+ jobs.allocated_resource.charge_mode: enum value [ON_DEMAND]`
+  - **CreateDigitalAsset**
+    - changes of request param
+      - `+ auto_operation_config`
+      - `+ system_properties.key: enum value [IS_CONTROLLED,LIVE_IS_AUTHORIZED,VIDEO_IS_AUTHORIZED,CHAT_IS_AUTHORIZED]`
+  - **ListAssets**
+    - changes of request param
+      - `- project_group_id`
+      - `+ asset_source: enum value [GROUP_CUSTOMIZATION]`
+    - changes of response param
+      - `+ auto_operation_config`
+      - `+ block_reason_code`
+      - `+ assets.block_reason_code`
+      - `+ assets.auto_operation_config`
+      - `+ assets.system_properties.key: enum value [IS_CONTROLLED,LIVE_IS_AUTHORIZED,VIDEO_IS_AUTHORIZED,CHAT_IS_AUTHORIZED]`
+      - `+ assets.files.block_reason_code`
+
 # 3.1.146 2025-07-24
 
 ### HuaweiCloud SDK DBSS

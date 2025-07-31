@@ -92,7 +92,7 @@ bool GeneralTableWordsBlockList::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("words_list"));
         if(!fieldValue.is_null())
         {
-            std::vector<WordsListIem> refVal;
+            std::vector<WordsListItem> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setWordsList(refVal);
         }
@@ -191,12 +191,12 @@ void GeneralTableWordsBlockList::unsetlocation()
     locationIsSet_ = false;
 }
 
-std::vector<WordsListIem>& GeneralTableWordsBlockList::getWordsList()
+std::vector<WordsListItem>& GeneralTableWordsBlockList::getWordsList()
 {
     return wordsList_;
 }
 
-void GeneralTableWordsBlockList::setWordsList(const std::vector<WordsListIem>& value)
+void GeneralTableWordsBlockList::setWordsList(const std::vector<WordsListItem>& value)
 {
     wordsList_ = value;
     wordsListIsSet_ = true;

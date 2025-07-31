@@ -30,7 +30,8 @@ ImageClient::~ImageClient()
 
 ClientBuilder<ImageClient> ImageClient::newBuilder()
 {
-    return ClientBuilder<ImageClient>("BasicCredentials");
+    ClientBuilder<ImageClient> client = ClientBuilder<ImageClient>("BasicCredentials");
+    return client;
 }
 std::shared_ptr<RunCelebrityRecognitionResponse> ImageClient::runCelebrityRecognition(RunCelebrityRecognitionRequest &request)
 {

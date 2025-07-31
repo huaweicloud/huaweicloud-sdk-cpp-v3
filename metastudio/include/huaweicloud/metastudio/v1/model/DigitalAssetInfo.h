@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/metastudio/v1/model/AutoOperationConfig.h>
 #include <huaweicloud/metastudio/v1/model/AssetFileInfo.h>
 #include <huaweicloud/metastudio/v1/model/SupportedServiceEnum.h>
 #include <string>
@@ -134,6 +135,15 @@ public:
     void setFailType(const std::string& value);
 
     /// <summary>
+    /// 冻结原因编号。
+    /// </summary>
+
+    std::string getBlockReasonCode() const;
+    bool blockReasonCodeIsSet() const;
+    void unsetblockReasonCode();
+    void setBlockReasonCode(const std::string& value);
+
+    /// <summary>
     /// 冻结/解冻/失败 原因。
     /// </summary>
 
@@ -196,6 +206,15 @@ public:
     void unsetsupportedService();
     void setSupportedService(const std::vector<SupportedServiceEnum>& value);
 
+    /// <summary>
+    /// 资产自动处理任务。
+    /// </summary>
+
+    std::vector<AutoOperationConfig>& getAutoOperationConfig();
+    bool autoOperationConfigIsSet() const;
+    void unsetautoOperationConfig();
+    void setAutoOperationConfig(const std::vector<AutoOperationConfig>& value);
+
 
 protected:
     std::string projectId_;
@@ -218,6 +237,8 @@ protected:
     bool assetStateIsSet_;
     std::string failType_;
     bool failTypeIsSet_;
+    std::string blockReasonCode_;
+    bool blockReasonCodeIsSet_;
     std::string reason_;
     bool reasonIsSet_;
     std::vector<std::string> tags_;
@@ -232,6 +253,8 @@ protected:
     bool assetOrderIsSet_;
     std::vector<SupportedServiceEnum> supportedService_;
     bool supportedServiceIsSet_;
+    std::vector<AutoOperationConfig> autoOperationConfig_;
+    bool autoOperationConfigIsSet_;
 
 };
 

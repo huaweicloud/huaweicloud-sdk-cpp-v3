@@ -30,7 +30,8 @@ OcrClient::~OcrClient()
 
 ClientBuilder<OcrClient> OcrClient::newBuilder()
 {
-    return ClientBuilder<OcrClient>("BasicCredentials");
+    ClientBuilder<OcrClient> client = ClientBuilder<OcrClient>("BasicCredentials");
+    return client;
 }
 std::shared_ptr<RecognizeAcceptanceBillResponse> OcrClient::recognizeAcceptanceBill(RecognizeAcceptanceBillRequest &request)
 {

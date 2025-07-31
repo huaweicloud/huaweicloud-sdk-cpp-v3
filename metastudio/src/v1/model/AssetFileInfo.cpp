@@ -28,6 +28,8 @@ AssetFileInfo::AssetFileInfo()
     downloadUrlIsSet_ = false;
     state_ = "";
     stateIsSet_ = false;
+    blockReasonCode_ = "";
+    blockReasonCodeIsSet_ = false;
     reason_ = "";
     reasonIsSet_ = false;
     fileExtraMetaIsSet_ = false;
@@ -66,6 +68,9 @@ web::json::value AssetFileInfo::toJson() const
     }
     if(stateIsSet_) {
         val[utility::conversions::to_string_t("state")] = ModelBase::toJson(state_);
+    }
+    if(blockReasonCodeIsSet_) {
+        val[utility::conversions::to_string_t("block_reason_code")] = ModelBase::toJson(blockReasonCode_);
     }
     if(reasonIsSet_) {
         val[utility::conversions::to_string_t("reason")] = ModelBase::toJson(reason_);
@@ -150,6 +155,15 @@ bool AssetFileInfo::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setState(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("block_reason_code"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("block_reason_code"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBlockReasonCode(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("reason"))) {
@@ -340,6 +354,27 @@ bool AssetFileInfo::stateIsSet() const
 void AssetFileInfo::unsetstate()
 {
     stateIsSet_ = false;
+}
+
+std::string AssetFileInfo::getBlockReasonCode() const
+{
+    return blockReasonCode_;
+}
+
+void AssetFileInfo::setBlockReasonCode(const std::string& value)
+{
+    blockReasonCode_ = value;
+    blockReasonCodeIsSet_ = true;
+}
+
+bool AssetFileInfo::blockReasonCodeIsSet() const
+{
+    return blockReasonCodeIsSet_;
+}
+
+void AssetFileInfo::unsetblockReasonCode()
+{
+    blockReasonCodeIsSet_ = false;
 }
 
 std::string AssetFileInfo::getReason() const

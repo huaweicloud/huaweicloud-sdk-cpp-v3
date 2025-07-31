@@ -30,7 +30,8 @@ DdsClient::~DdsClient()
 
 ClientBuilder<DdsClient> DdsClient::newBuilder()
 {
-    return ClientBuilder<DdsClient>("BasicCredentials");
+    ClientBuilder<DdsClient> client = ClientBuilder<DdsClient>("BasicCredentials");
+    return client;
 }
 std::shared_ptr<AddReadonlyNodeResponse> DdsClient::addReadonlyNode(AddReadonlyNodeRequest &request)
 {

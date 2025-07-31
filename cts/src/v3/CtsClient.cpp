@@ -30,7 +30,8 @@ CtsClient::~CtsClient()
 
 ClientBuilder<CtsClient> CtsClient::newBuilder()
 {
-    return ClientBuilder<CtsClient>("BasicCredentials");
+    ClientBuilder<CtsClient> client = ClientBuilder<CtsClient>("BasicCredentials");
+    return client;
 }
 std::shared_ptr<BatchCreateResourceTagsResponse> CtsClient::batchCreateResourceTags(BatchCreateResourceTagsRequest &request)
 {

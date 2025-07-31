@@ -37,6 +37,7 @@ public:
     {
         ChardMode_PERIODIC,
         ChardMode_ONE_TIME,
+        ChardMode_ON_DEMAND,
     };
 
     eChardMode getValue() const;

@@ -30,7 +30,8 @@ KmsClient::~KmsClient()
 
 ClientBuilder<KmsClient> KmsClient::newBuilder()
 {
-    return ClientBuilder<KmsClient>("");
+    ClientBuilder<KmsClient> client = ClientBuilder<KmsClient>("");
+    return client;
 }
 std::shared_ptr<AssociateAliasResponse> KmsClient::associateAlias(AssociateAliasRequest &request)
 {

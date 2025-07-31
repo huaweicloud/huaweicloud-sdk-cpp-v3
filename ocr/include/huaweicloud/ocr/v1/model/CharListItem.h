@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_OCR_V1_MODEL_CharListIem_H_
-#define HUAWEICLOUD_SDK_OCR_V1_MODEL_CharListIem_H_
+#ifndef HUAWEICLOUD_SDK_OCR_V1_MODEL_CharListItem_H_
+#define HUAWEICLOUD_SDK_OCR_V1_MODEL_CharListItem_H_
 
 
 #include <huaweicloud/ocr/v1/OcrExport.h>
@@ -23,12 +23,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// 
 /// </summary>
-class HUAWEICLOUD_OCR_V1_EXPORT  CharListIem
+class HUAWEICLOUD_OCR_V1_EXPORT  CharListItem
     : public ModelBase
 {
 public:
-    CharListIem();
-    virtual ~CharListIem();
+    CharListItem();
+    virtual ~CharListItem();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -37,7 +37,7 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// CharListIem members
+    /// CharListItem members
 
     /// <summary>
     /// 单字符识别结果。 
@@ -84,4 +84,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_OCR_V1_MODEL_CharListIem_H_
+#endif // HUAWEICLOUD_SDK_OCR_V1_MODEL_CharListItem_H_

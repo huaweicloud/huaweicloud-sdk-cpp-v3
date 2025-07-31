@@ -30,7 +30,8 @@ AadClient::~AadClient()
 
 ClientBuilder<AadClient> AadClient::newBuilder()
 {
-    return ClientBuilder<AadClient>("GlobalCredentials");
+    ClientBuilder<AadClient> client = ClientBuilder<AadClient>("GlobalCredentials");
+    return client;
 }
 std::shared_ptr<AddWafWhiteIpRuleResponse> AadClient::addWafWhiteIpRule(AddWafWhiteIpRuleRequest &request)
 {

@@ -30,7 +30,8 @@ LiveClient::~LiveClient()
 
 ClientBuilder<LiveClient> LiveClient::newBuilder()
 {
-    return ClientBuilder<LiveClient>("BasicCredentials");
+    ClientBuilder<LiveClient> client = ClientBuilder<LiveClient>("BasicCredentials");
+    return client;
 }
 std::shared_ptr<ListAreaDetailResponse> LiveClient::listAreaDetail(ListAreaDetailRequest &request)
 {

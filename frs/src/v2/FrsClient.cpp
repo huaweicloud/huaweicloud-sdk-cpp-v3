@@ -30,7 +30,8 @@ FrsClient::~FrsClient()
 
 ClientBuilder<FrsClient> FrsClient::newBuilder()
 {
-    return ClientBuilder<FrsClient>("BasicCredentials");
+    ClientBuilder<FrsClient> client = ClientBuilder<FrsClient>("BasicCredentials");
+    return client;
 }
 std::shared_ptr<AddFacesByBase64Response> FrsClient::addFacesByBase64(AddFacesByBase64Request &request)
 {

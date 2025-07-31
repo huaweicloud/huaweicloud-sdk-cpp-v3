@@ -30,7 +30,8 @@ GaussDBClient::~GaussDBClient()
 
 ClientBuilder<GaussDBClient> GaussDBClient::newBuilder()
 {
-    return ClientBuilder<GaussDBClient>("BasicCredentials");
+    ClientBuilder<GaussDBClient> client = ClientBuilder<GaussDBClient>("BasicCredentials");
+    return client;
 }
 std::shared_ptr<AddDatabasePermissionResponse> GaussDBClient::addDatabasePermission(AddDatabasePermissionRequest &request)
 {

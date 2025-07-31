@@ -30,7 +30,8 @@ CbrClient::~CbrClient()
 
 ClientBuilder<CbrClient> CbrClient::newBuilder()
 {
-    return ClientBuilder<CbrClient>("BasicCredentials");
+    ClientBuilder<CbrClient> client = ClientBuilder<CbrClient>("BasicCredentials");
+    return client;
 }
 std::shared_ptr<AddAgentPathResponse> CbrClient::addAgentPath(AddAgentPathRequest &request)
 {

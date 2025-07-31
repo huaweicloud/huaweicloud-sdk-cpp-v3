@@ -122,6 +122,26 @@ public:
             { 
                 "https://dbss.ru-moscow-1.myhuaweicloud.com"
             });
+        regions["cn-north-12"] = Region("cn-north-12",
+            { 
+                "https://dbss.cn-north-12.myhuaweicloud.com"
+            });
+        regions["cn-east-4"] = Region("cn-east-4",
+            { 
+                "https://dbss.cn-east-4.myhuaweicloud.com"
+            });
+        regions["cn-southwest-3"] = Region("cn-southwest-3",
+            { 
+                "https://dbss.cn-southwest-3.myhuaweicloud.com"
+            });
+        regions["ap-southeast-5"] = Region("ap-southeast-5",
+            { 
+                "https://dbss.ap-southeast-5.myhuaweicloud.com"
+            });
+        regions["af-north-1"] = Region("af-north-1",
+            { 
+                "https://dbss.af-north-1.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

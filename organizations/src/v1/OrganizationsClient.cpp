@@ -30,7 +30,8 @@ OrganizationsClient::~OrganizationsClient()
 
 ClientBuilder<OrganizationsClient> OrganizationsClient::newBuilder()
 {
-    return ClientBuilder<OrganizationsClient>("GlobalCredentials");
+    ClientBuilder<OrganizationsClient> client = ClientBuilder<OrganizationsClient>("GlobalCredentials");
+    return client;
 }
 std::shared_ptr<CloseAccountResponse> OrganizationsClient::closeAccount(CloseAccountRequest &request)
 {

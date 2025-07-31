@@ -32,6 +32,8 @@ DigitalAssetInfo::DigitalAssetInfo()
     assetStateIsSet_ = false;
     failType_ = "";
     failTypeIsSet_ = false;
+    blockReasonCode_ = "";
+    blockReasonCodeIsSet_ = false;
     reason_ = "";
     reasonIsSet_ = false;
     tagsIsSet_ = false;
@@ -41,6 +43,7 @@ DigitalAssetInfo::DigitalAssetInfo()
     assetOrder_ = 0;
     assetOrderIsSet_ = false;
     supportedServiceIsSet_ = false;
+    autoOperationConfigIsSet_ = false;
 }
 
 DigitalAssetInfo::~DigitalAssetInfo() = default;
@@ -83,6 +86,9 @@ web::json::value DigitalAssetInfo::toJson() const
     if(failTypeIsSet_) {
         val[utility::conversions::to_string_t("fail_type")] = ModelBase::toJson(failType_);
     }
+    if(blockReasonCodeIsSet_) {
+        val[utility::conversions::to_string_t("block_reason_code")] = ModelBase::toJson(blockReasonCode_);
+    }
     if(reasonIsSet_) {
         val[utility::conversions::to_string_t("reason")] = ModelBase::toJson(reason_);
     }
@@ -103,6 +109,9 @@ web::json::value DigitalAssetInfo::toJson() const
     }
     if(supportedServiceIsSet_) {
         val[utility::conversions::to_string_t("supported_service")] = ModelBase::toJson(supportedService_);
+    }
+    if(autoOperationConfigIsSet_) {
+        val[utility::conversions::to_string_t("auto_operation_config")] = ModelBase::toJson(autoOperationConfig_);
     }
 
     return val;
@@ -201,6 +210,15 @@ bool DigitalAssetInfo::fromJson(const web::json::value& val)
             setFailType(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("block_reason_code"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("block_reason_code"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBlockReasonCode(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("reason"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("reason"));
         if(!fieldValue.is_null())
@@ -262,6 +280,15 @@ bool DigitalAssetInfo::fromJson(const web::json::value& val)
             std::vector<SupportedServiceEnum> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSupportedService(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("auto_operation_config"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("auto_operation_config"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<AutoOperationConfig> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAutoOperationConfig(refVal);
         }
     }
     return ok;
@@ -478,6 +505,27 @@ void DigitalAssetInfo::unsetfailType()
     failTypeIsSet_ = false;
 }
 
+std::string DigitalAssetInfo::getBlockReasonCode() const
+{
+    return blockReasonCode_;
+}
+
+void DigitalAssetInfo::setBlockReasonCode(const std::string& value)
+{
+    blockReasonCode_ = value;
+    blockReasonCodeIsSet_ = true;
+}
+
+bool DigitalAssetInfo::blockReasonCodeIsSet() const
+{
+    return blockReasonCodeIsSet_;
+}
+
+void DigitalAssetInfo::unsetblockReasonCode()
+{
+    blockReasonCodeIsSet_ = false;
+}
+
 std::string DigitalAssetInfo::getReason() const
 {
     return reason_;
@@ -623,6 +671,27 @@ bool DigitalAssetInfo::supportedServiceIsSet() const
 void DigitalAssetInfo::unsetsupportedService()
 {
     supportedServiceIsSet_ = false;
+}
+
+std::vector<AutoOperationConfig>& DigitalAssetInfo::getAutoOperationConfig()
+{
+    return autoOperationConfig_;
+}
+
+void DigitalAssetInfo::setAutoOperationConfig(const std::vector<AutoOperationConfig>& value)
+{
+    autoOperationConfig_ = value;
+    autoOperationConfigIsSet_ = true;
+}
+
+bool DigitalAssetInfo::autoOperationConfigIsSet() const
+{
+    return autoOperationConfigIsSet_;
+}
+
+void DigitalAssetInfo::unsetautoOperationConfig()
+{
+    autoOperationConfigIsSet_ = false;
 }
 
 }

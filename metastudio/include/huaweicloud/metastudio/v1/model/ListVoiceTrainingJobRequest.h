@@ -173,6 +173,15 @@ public:
     void unsetsortDir();
     void setSortDir(const std::string& value);
 
+    /// <summary>
+    /// 是否是按需任务
+    /// </summary>
+
+    bool isIsOndemandResource() const;
+    bool isOndemandResourceIsSet() const;
+    void unsetisOndemandResource();
+    void setIsOndemandResource(bool value);
+
 
 protected:
     int32_t offset_;
@@ -205,6 +214,8 @@ protected:
     bool sortKeyIsSet_;
     std::string sortDir_;
     bool sortDirIsSet_;
+    bool isOndemandResource_;
+    bool isOndemandResourceIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

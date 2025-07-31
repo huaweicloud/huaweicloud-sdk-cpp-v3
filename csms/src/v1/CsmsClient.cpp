@@ -30,7 +30,8 @@ CsmsClient::~CsmsClient()
 
 ClientBuilder<CsmsClient> CsmsClient::newBuilder()
 {
-    return ClientBuilder<CsmsClient>("");
+    ClientBuilder<CsmsClient> client = ClientBuilder<CsmsClient>("");
+    return client;
 }
 std::shared_ptr<BatchCreateOrDeleteTagsResponse> CsmsClient::batchCreateOrDeleteTags(BatchCreateOrDeleteTagsRequest &request)
 {

@@ -30,7 +30,8 @@ RgcClient::~RgcClient()
 
 ClientBuilder<RgcClient> RgcClient::newBuilder()
 {
-    return ClientBuilder<RgcClient>("BasicCredentials");
+    ClientBuilder<RgcClient> client = ClientBuilder<RgcClient>("BasicCredentials");
+    return client;
 }
 std::shared_ptr<CreateBestPracticeDetectResponse> RgcClient::createBestPracticeDetect(CreateBestPracticeDetectRequest &request)
 {

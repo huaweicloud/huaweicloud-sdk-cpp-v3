@@ -24,6 +24,10 @@ GlanceImageMembers::GlanceImageMembers()
     memberIdIsSet_ = false;
     schema_ = "";
     schemaIsSet_ = false;
+    memberType_ = "";
+    memberTypeIsSet_ = false;
+    urn_ = "";
+    urnIsSet_ = false;
 }
 
 GlanceImageMembers::~GlanceImageMembers() = default;
@@ -53,6 +57,12 @@ web::json::value GlanceImageMembers::toJson() const
     }
     if(schemaIsSet_) {
         val[utility::conversions::to_string_t("schema")] = ModelBase::toJson(schema_);
+    }
+    if(memberTypeIsSet_) {
+        val[utility::conversions::to_string_t("member_type")] = ModelBase::toJson(memberType_);
+    }
+    if(urnIsSet_) {
+        val[utility::conversions::to_string_t("urn")] = ModelBase::toJson(urn_);
     }
 
     return val;
@@ -113,6 +123,24 @@ bool GlanceImageMembers::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSchema(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("member_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("member_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setMemberType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("urn"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("urn"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setUrn(refVal);
         }
     }
     return ok;
@@ -243,6 +271,48 @@ bool GlanceImageMembers::schemaIsSet() const
 void GlanceImageMembers::unsetschema()
 {
     schemaIsSet_ = false;
+}
+
+std::string GlanceImageMembers::getMemberType() const
+{
+    return memberType_;
+}
+
+void GlanceImageMembers::setMemberType(const std::string& value)
+{
+    memberType_ = value;
+    memberTypeIsSet_ = true;
+}
+
+bool GlanceImageMembers::memberTypeIsSet() const
+{
+    return memberTypeIsSet_;
+}
+
+void GlanceImageMembers::unsetmemberType()
+{
+    memberTypeIsSet_ = false;
+}
+
+std::string GlanceImageMembers::getUrn() const
+{
+    return urn_;
+}
+
+void GlanceImageMembers::setUrn(const std::string& value)
+{
+    urn_ = value;
+    urnIsSet_ = true;
+}
+
+bool GlanceImageMembers::urnIsSet() const
+{
+    return urnIsSet_;
+}
+
+void GlanceImageMembers::unseturn()
+{
+    urnIsSet_ = false;
 }
 
 }

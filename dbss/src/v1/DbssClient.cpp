@@ -30,7 +30,8 @@ DbssClient::~DbssClient()
 
 ClientBuilder<DbssClient> DbssClient::newBuilder()
 {
-    return ClientBuilder<DbssClient>("BasicCredentials");
+    ClientBuilder<DbssClient> client = ClientBuilder<DbssClient>("BasicCredentials");
+    return client;
 }
 std::shared_ptr<AddAuditDatabaseResponse> DbssClient::addAuditDatabase(AddAuditDatabaseRequest &request)
 {

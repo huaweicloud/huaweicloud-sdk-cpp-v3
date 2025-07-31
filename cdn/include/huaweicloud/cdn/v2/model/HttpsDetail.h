@@ -85,7 +85,7 @@ public:
     void setPrivateKey(const std::string& value);
 
     /// <summary>
-    /// 0：自有证书  1：云托管证书。
+    /// 证书类型，0：自有证书，1：云托管证书，2：SCM证书。
     /// </summary>
 
     int32_t getCertificateType() const;

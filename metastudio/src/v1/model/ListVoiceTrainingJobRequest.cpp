@@ -42,6 +42,8 @@ ListVoiceTrainingJobRequest::ListVoiceTrainingJobRequest()
     sortKeyIsSet_ = false;
     sortDir_ = "";
     sortDirIsSet_ = false;
+    isOndemandResource_ = false;
+    isOndemandResourceIsSet_ = false;
 }
 
 ListVoiceTrainingJobRequest::~ListVoiceTrainingJobRequest() = default;
@@ -98,6 +100,9 @@ web::json::value ListVoiceTrainingJobRequest::toJson() const
     }
     if(sortDirIsSet_) {
         val[utility::conversions::to_string_t("sort_dir")] = ModelBase::toJson(sortDir_);
+    }
+    if(isOndemandResourceIsSet_) {
+        val[utility::conversions::to_string_t("is_ondemand_resource")] = ModelBase::toJson(isOndemandResource_);
     }
 
     return val;
@@ -239,6 +244,15 @@ bool ListVoiceTrainingJobRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSortDir(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_ondemand_resource"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_ondemand_resource"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsOndemandResource(refVal);
         }
     }
     return ok;
@@ -558,6 +572,27 @@ bool ListVoiceTrainingJobRequest::sortDirIsSet() const
 void ListVoiceTrainingJobRequest::unsetsortDir()
 {
     sortDirIsSet_ = false;
+}
+
+bool ListVoiceTrainingJobRequest::isIsOndemandResource() const
+{
+    return isOndemandResource_;
+}
+
+void ListVoiceTrainingJobRequest::setIsOndemandResource(bool value)
+{
+    isOndemandResource_ = value;
+    isOndemandResourceIsSet_ = true;
+}
+
+bool ListVoiceTrainingJobRequest::isOndemandResourceIsSet() const
+{
+    return isOndemandResourceIsSet_;
+}
+
+void ListVoiceTrainingJobRequest::unsetisOndemandResource()
+{
+    isOndemandResourceIsSet_ = false;
 }
 
 }

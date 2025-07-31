@@ -20,6 +20,8 @@ VocabularyConfig::VocabularyConfig()
     valueIsSet_ = false;
     type_ = "";
     typeIsSet_ = false;
+    groupId_ = "";
+    groupIdIsSet_ = false;
     createTime_ = "";
     createTimeIsSet_ = false;
     updateTime_ = "";
@@ -47,6 +49,9 @@ web::json::value VocabularyConfig::toJson() const
     }
     if(typeIsSet_) {
         val[utility::conversions::to_string_t("type")] = ModelBase::toJson(type_);
+    }
+    if(groupIdIsSet_) {
+        val[utility::conversions::to_string_t("group_id")] = ModelBase::toJson(groupId_);
     }
     if(createTimeIsSet_) {
         val[utility::conversions::to_string_t("create_time")] = ModelBase::toJson(createTime_);
@@ -95,6 +100,15 @@ bool VocabularyConfig::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("group_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("group_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setGroupId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("create_time"))) {
@@ -201,6 +215,27 @@ bool VocabularyConfig::typeIsSet() const
 void VocabularyConfig::unsettype()
 {
     typeIsSet_ = false;
+}
+
+std::string VocabularyConfig::getGroupId() const
+{
+    return groupId_;
+}
+
+void VocabularyConfig::setGroupId(const std::string& value)
+{
+    groupId_ = value;
+    groupIdIsSet_ = true;
+}
+
+bool VocabularyConfig::groupIdIsSet() const
+{
+    return groupIdIsSet_;
+}
+
+void VocabularyConfig::unsetgroupId()
+{
+    groupIdIsSet_ = false;
 }
 
 std::string VocabularyConfig::getCreateTime() const

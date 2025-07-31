@@ -30,7 +30,8 @@ DrsClient::~DrsClient()
 
 ClientBuilder<DrsClient> DrsClient::newBuilder()
 {
-    return ClientBuilder<DrsClient>("BasicCredentials");
+    ClientBuilder<DrsClient> client = ClientBuilder<DrsClient>("BasicCredentials");
+    return client;
 }
 std::shared_ptr<BatchCreateJobsAsyncResponse> DrsClient::batchCreateJobsAsync(BatchCreateJobsAsyncRequest &request)
 {
@@ -2381,6 +2382,40 @@ std::shared_ptr<ShowComparePolicyResponse> DrsClient::showComparePolicy(ShowComp
         localVarHeaderParams, localVarHttpBody, DrsMeta::genRequestDefForShowComparePolicy());
 
     std::shared_ptr<ShowComparePolicyResponse> localVarResult = std::make_shared<ShowComparePolicyResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowCompareProgressResponse> DrsClient::showCompareProgress(ShowCompareProgressRequest &request)
+{
+    std::string localVarPath = "/v5/{project_id}/jobs/{job_id}/compare-progress/{compare_job_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["job_id"] = parameterToString(request.getJobId());
+    localVarPathParams["compare_job_id"] = parameterToString(request.getCompareJobId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, DrsMeta::genRequestDefForShowCompareProgress());
+
+    std::shared_ptr<ShowCompareProgressResponse> localVarResult = std::make_shared<ShowCompareProgressResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

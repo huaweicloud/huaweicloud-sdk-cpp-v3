@@ -30,7 +30,8 @@ EvsClient::~EvsClient()
 
 ClientBuilder<EvsClient> EvsClient::newBuilder()
 {
-    return ClientBuilder<EvsClient>("BasicCredentials");
+    ClientBuilder<EvsClient> client = ClientBuilder<EvsClient>("BasicCredentials");
+    return client;
 }
 std::shared_ptr<BatchCreateVolumeTagsResponse> EvsClient::batchCreateVolumeTags(BatchCreateVolumeTagsRequest &request)
 {

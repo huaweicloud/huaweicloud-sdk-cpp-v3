@@ -30,7 +30,8 @@ TmsClient::~TmsClient()
 
 ClientBuilder<TmsClient> TmsClient::newBuilder()
 {
-    return ClientBuilder<TmsClient>("BasicCredentials");
+    ClientBuilder<TmsClient> client = ClientBuilder<TmsClient>("BasicCredentials");
+    return client;
 }
 std::shared_ptr<CreatePredefineTagsResponse> TmsClient::createPredefineTags(CreatePredefineTagsRequest &request)
 {

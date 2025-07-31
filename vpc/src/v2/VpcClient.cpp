@@ -30,7 +30,8 @@ VpcClient::~VpcClient()
 
 ClientBuilder<VpcClient> VpcClient::newBuilder()
 {
-    return ClientBuilder<VpcClient>("BasicCredentials");
+    ClientBuilder<VpcClient> client = ClientBuilder<VpcClient>("BasicCredentials");
+    return client;
 }
 std::shared_ptr<AcceptVpcPeeringResponse> VpcClient::acceptVpcPeering(AcceptVpcPeeringRequest &request)
 {

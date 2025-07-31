@@ -32,6 +32,8 @@ ShowAssetResponse::ShowAssetResponse()
     assetStateIsSet_ = false;
     failType_ = "";
     failTypeIsSet_ = false;
+    blockReasonCode_ = "";
+    blockReasonCodeIsSet_ = false;
     reason_ = "";
     reasonIsSet_ = false;
     tagsIsSet_ = false;
@@ -41,6 +43,7 @@ ShowAssetResponse::ShowAssetResponse()
     assetOrder_ = 0;
     assetOrderIsSet_ = false;
     supportedServiceIsSet_ = false;
+    autoOperationConfigIsSet_ = false;
     xRequestId_ = "";
     xRequestIdIsSet_ = false;
 }
@@ -85,6 +88,9 @@ web::json::value ShowAssetResponse::toJson() const
     if(failTypeIsSet_) {
         val[utility::conversions::to_string_t("fail_type")] = ModelBase::toJson(failType_);
     }
+    if(blockReasonCodeIsSet_) {
+        val[utility::conversions::to_string_t("block_reason_code")] = ModelBase::toJson(blockReasonCode_);
+    }
     if(reasonIsSet_) {
         val[utility::conversions::to_string_t("reason")] = ModelBase::toJson(reason_);
     }
@@ -105,6 +111,9 @@ web::json::value ShowAssetResponse::toJson() const
     }
     if(supportedServiceIsSet_) {
         val[utility::conversions::to_string_t("supported_service")] = ModelBase::toJson(supportedService_);
+    }
+    if(autoOperationConfigIsSet_) {
+        val[utility::conversions::to_string_t("auto_operation_config")] = ModelBase::toJson(autoOperationConfig_);
     }
     if(xRequestIdIsSet_) {
         val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
@@ -206,6 +215,15 @@ bool ShowAssetResponse::fromJson(const web::json::value& val)
             setFailType(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("block_reason_code"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("block_reason_code"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBlockReasonCode(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("reason"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("reason"));
         if(!fieldValue.is_null())
@@ -267,6 +285,15 @@ bool ShowAssetResponse::fromJson(const web::json::value& val)
             std::vector<SupportedServiceEnum> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSupportedService(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("auto_operation_config"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("auto_operation_config"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<AutoOperationConfig> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAutoOperationConfig(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
@@ -492,6 +519,27 @@ void ShowAssetResponse::unsetfailType()
     failTypeIsSet_ = false;
 }
 
+std::string ShowAssetResponse::getBlockReasonCode() const
+{
+    return blockReasonCode_;
+}
+
+void ShowAssetResponse::setBlockReasonCode(const std::string& value)
+{
+    blockReasonCode_ = value;
+    blockReasonCodeIsSet_ = true;
+}
+
+bool ShowAssetResponse::blockReasonCodeIsSet() const
+{
+    return blockReasonCodeIsSet_;
+}
+
+void ShowAssetResponse::unsetblockReasonCode()
+{
+    blockReasonCodeIsSet_ = false;
+}
+
 std::string ShowAssetResponse::getReason() const
 {
     return reason_;
@@ -637,6 +685,27 @@ bool ShowAssetResponse::supportedServiceIsSet() const
 void ShowAssetResponse::unsetsupportedService()
 {
     supportedServiceIsSet_ = false;
+}
+
+std::vector<AutoOperationConfig>& ShowAssetResponse::getAutoOperationConfig()
+{
+    return autoOperationConfig_;
+}
+
+void ShowAssetResponse::setAutoOperationConfig(const std::vector<AutoOperationConfig>& value)
+{
+    autoOperationConfig_ = value;
+    autoOperationConfigIsSet_ = true;
+}
+
+bool ShowAssetResponse::autoOperationConfigIsSet() const
+{
+    return autoOperationConfigIsSet_;
+}
+
+void ShowAssetResponse::unsetautoOperationConfig()
+{
+    autoOperationConfigIsSet_ = false;
 }
 
 std::string ShowAssetResponse::getXRequestId() const

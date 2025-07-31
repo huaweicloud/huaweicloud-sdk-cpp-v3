@@ -76,7 +76,7 @@ public:
     void setAlarmNum(int32_t value);
 
     /// <summary>
-    /// 告警等级 - high：高  - medium：中  - low：低
+    /// 告警等级,默认为空。 - high：高  - medium：中  - low：低
     /// </summary>
 
     std::vector<std::string>& getAlarmRisk();
@@ -94,7 +94,7 @@ public:
     void setAlarmSwitch(const std::string& value);
 
     /// <summary>
-    /// 通知消息主题URN,调用SMN服务接口获取
+    /// 通知消息主题URN,调用SMN服务接口获取。当alarm_switch为ON时必填
     /// </summary>
 
     std::string getAlarmTopicUrn() const;

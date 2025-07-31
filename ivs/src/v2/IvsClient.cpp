@@ -30,7 +30,8 @@ IvsClient::~IvsClient()
 
 ClientBuilder<IvsClient> IvsClient::newBuilder()
 {
-    return ClientBuilder<IvsClient>("BasicCredentials");
+    ClientBuilder<IvsClient> client = ClientBuilder<IvsClient>("BasicCredentials");
+    return client;
 }
 std::shared_ptr<DetectExtentionByIdCardImageResponse> IvsClient::detectExtentionByIdCardImage(DetectExtentionByIdCardImageRequest &request)
 {

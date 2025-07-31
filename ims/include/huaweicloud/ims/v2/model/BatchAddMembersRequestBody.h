@@ -57,12 +57,34 @@ public:
     void unsetprojects();
     void setProjects(const std::vector<std::string>& value);
 
+    /// <summary>
+    /// 账号ID列表
+    /// </summary>
+
+    std::vector<std::string>& getDomains();
+    bool domainsIsSet() const;
+    void unsetdomains();
+    void setDomains(const std::vector<std::string>& value);
+
+    /// <summary>
+    /// 组织URN列表
+    /// </summary>
+
+    std::vector<std::string>& getOrganizations();
+    bool organizationsIsSet() const;
+    void unsetorganizations();
+    void setOrganizations(const std::vector<std::string>& value);
+
 
 protected:
     std::vector<std::string> images_;
     bool imagesIsSet_;
     std::vector<std::string> projects_;
     bool projectsIsSet_;
+    std::vector<std::string> domains_;
+    bool domainsIsSet_;
+    std::vector<std::string> organizations_;
+    bool organizationsIsSet_;
 
 };
 

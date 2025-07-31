@@ -28,6 +28,10 @@ ListTtscVocabularyConfigsRequest::ListTtscVocabularyConfigsRequest()
     ttsServiceNameIsSet_ = false;
     isVocabularyConfigEnable_ = "";
     isVocabularyConfigEnableIsSet_ = false;
+    groupId_ = "";
+    groupIdIsSet_ = false;
+    assetId_ = "";
+    assetIdIsSet_ = false;
     limit_ = 0;
     limitIsSet_ = false;
     offset_ = 0;
@@ -73,6 +77,12 @@ web::json::value ListTtscVocabularyConfigsRequest::toJson() const
     }
     if(isVocabularyConfigEnableIsSet_) {
         val[utility::conversions::to_string_t("is_vocabulary_config_enable")] = ModelBase::toJson(isVocabularyConfigEnable_);
+    }
+    if(groupIdIsSet_) {
+        val[utility::conversions::to_string_t("group_id")] = ModelBase::toJson(groupId_);
+    }
+    if(assetIdIsSet_) {
+        val[utility::conversions::to_string_t("asset_id")] = ModelBase::toJson(assetId_);
     }
     if(limitIsSet_) {
         val[utility::conversions::to_string_t("limit")] = ModelBase::toJson(limit_);
@@ -166,6 +176,24 @@ bool ListTtscVocabularyConfigsRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsVocabularyConfigEnable(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("group_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("group_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setGroupId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("asset_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("asset_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAssetId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("limit"))) {
@@ -383,6 +411,48 @@ bool ListTtscVocabularyConfigsRequest::isVocabularyConfigEnableIsSet() const
 void ListTtscVocabularyConfigsRequest::unsetisVocabularyConfigEnable()
 {
     isVocabularyConfigEnableIsSet_ = false;
+}
+
+std::string ListTtscVocabularyConfigsRequest::getGroupId() const
+{
+    return groupId_;
+}
+
+void ListTtscVocabularyConfigsRequest::setGroupId(const std::string& value)
+{
+    groupId_ = value;
+    groupIdIsSet_ = true;
+}
+
+bool ListTtscVocabularyConfigsRequest::groupIdIsSet() const
+{
+    return groupIdIsSet_;
+}
+
+void ListTtscVocabularyConfigsRequest::unsetgroupId()
+{
+    groupIdIsSet_ = false;
+}
+
+std::string ListTtscVocabularyConfigsRequest::getAssetId() const
+{
+    return assetId_;
+}
+
+void ListTtscVocabularyConfigsRequest::setAssetId(const std::string& value)
+{
+    assetId_ = value;
+    assetIdIsSet_ = true;
+}
+
+bool ListTtscVocabularyConfigsRequest::assetIdIsSet() const
+{
+    return assetIdIsSet_;
+}
+
+void ListTtscVocabularyConfigsRequest::unsetassetId()
+{
+    assetIdIsSet_ = false;
 }
 
 int32_t ListTtscVocabularyConfigsRequest::getLimit() const

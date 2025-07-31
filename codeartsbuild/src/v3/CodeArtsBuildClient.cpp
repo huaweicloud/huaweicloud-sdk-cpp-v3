@@ -30,7 +30,8 @@ CodeArtsBuildClient::~CodeArtsBuildClient()
 
 ClientBuilder<CodeArtsBuildClient> CodeArtsBuildClient::newBuilder()
 {
-    return ClientBuilder<CodeArtsBuildClient>("");
+    ClientBuilder<CodeArtsBuildClient> client = ClientBuilder<CodeArtsBuildClient>("");
+    return client;
 }
 std::shared_ptr<CreateBuildJobResponse> CodeArtsBuildClient::createBuildJob(CreateBuildJobRequest &request)
 {

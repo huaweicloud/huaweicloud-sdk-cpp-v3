@@ -209,6 +209,24 @@ public:
     void unsetljznAdviceValue();
     void setLjznAdviceValue(int32_t value);
 
+    /// <summary>
+    /// 短任务质量检测最低时长（秒）
+    /// </summary>
+
+    int32_t getShortAssessMin() const;
+    bool shortAssessMinIsSet() const;
+    void unsetshortAssessMin();
+    void setShortAssessMin(int32_t value);
+
+    /// <summary>
+    /// 短任务质量检测最高时长（秒）
+    /// </summary>
+
+    int32_t getShortAssessMax() const;
+    bool shortAssessMaxIsSet() const;
+    void unsetshortAssessMax();
+    void setShortAssessMax(int32_t value);
+
 
 protected:
     std::string tenantId_;
@@ -249,6 +267,10 @@ protected:
     bool ljznMaxIsSet_;
     int32_t ljznAdviceValue_;
     bool ljznAdviceValueIsSet_;
+    int32_t shortAssessMin_;
+    bool shortAssessMinIsSet_;
+    int32_t shortAssessMax_;
+    bool shortAssessMaxIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

@@ -28,6 +28,7 @@ web::json::value ChardMode::toJson() const
     
     if (value_ == eChardMode::ChardMode_PERIODIC) val = web::json::value::string(U("PERIODIC"));
     if (value_ == eChardMode::ChardMode_ONE_TIME) val = web::json::value::string(U("ONE_TIME"));
+    if (value_ == eChardMode::ChardMode_ON_DEMAND) val = web::json::value::string(U("ON_DEMAND"));
 
     return val;
 }
@@ -39,6 +40,7 @@ bool ChardMode::fromJson(const web::json::value& val)
     
     if (s == utility::conversions::to_string_t("PERIODIC")) value_ = eChardMode::ChardMode_PERIODIC;
     if (s == utility::conversions::to_string_t("ONE_TIME")) value_ = eChardMode::ChardMode_ONE_TIME;
+    if (s == utility::conversions::to_string_t("ON_DEMAND")) value_ = eChardMode::ChardMode_ON_DEMAND;
     return true;
 }
 

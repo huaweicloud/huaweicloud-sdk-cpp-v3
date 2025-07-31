@@ -30,7 +30,8 @@ CloudTableClient::~CloudTableClient()
 
 ClientBuilder<CloudTableClient> CloudTableClient::newBuilder()
 {
-    return ClientBuilder<CloudTableClient>("BasicCredentials");
+    ClientBuilder<CloudTableClient> client = ClientBuilder<CloudTableClient>("BasicCredentials");
+    return client;
 }
 std::shared_ptr<CreateClusterResponse> CloudTableClient::createCluster(CreateClusterRequest &request)
 {

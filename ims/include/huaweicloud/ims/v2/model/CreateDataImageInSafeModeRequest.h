@@ -1,0 +1,71 @@
+
+#ifndef HUAWEICLOUD_SDK_IMS_V2_MODEL_CreateDataImageInSafeModeRequest_H_
+#define HUAWEICLOUD_SDK_IMS_V2_MODEL_CreateDataImageInSafeModeRequest_H_
+
+
+#include <huaweicloud/ims/v2/ImsExport.h>
+
+#include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
+#include <huaweicloud/core/http/HttpResponse.h>
+
+#include <huaweicloud/ims/v2/model/CreateDataImageRequestBody.h>
+
+namespace HuaweiCloud {
+namespace Sdk {
+namespace Ims {
+namespace V2 {
+namespace Model {
+
+using namespace HuaweiCloud::Sdk::Core::Utils;
+using namespace HuaweiCloud::Sdk::Core::Http;
+/// <summary>
+/// Request Object
+/// </summary>
+class HUAWEICLOUD_IMS_V2_EXPORT  CreateDataImageInSafeModeRequest
+    : public ModelBase
+{
+public:
+    CreateDataImageInSafeModeRequest();
+    virtual ~CreateDataImageInSafeModeRequest();
+
+    /////////////////////////////////////////////
+    /// ModelBase overrides
+
+    void validate() override;
+    web::json::value toJson() const override;
+    bool fromJson(const web::json::value& json) override;
+    /////////////////////////////////////////////
+    /// CreateDataImageInSafeModeRequest members
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    CreateDataImageRequestBody getBody() const;
+    bool bodyIsSet() const;
+    void unsetbody();
+    void setBody(const CreateDataImageRequestBody& value);
+
+
+protected:
+    CreateDataImageRequestBody body_;
+    bool bodyIsSet_;
+
+#ifdef RTTR_FLAG
+    RTTR_ENABLE()
+public:
+    CreateDataImageInSafeModeRequest& dereference_from_shared_ptr(std::shared_ptr<CreateDataImageInSafeModeRequest> ptr) {
+        return *ptr;
+    }
+#endif
+};
+
+
+}
+}
+}
+}
+}
+
+#endif // HUAWEICLOUD_SDK_IMS_V2_MODEL_CreateDataImageInSafeModeRequest_H_

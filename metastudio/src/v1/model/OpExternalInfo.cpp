@@ -13,6 +13,8 @@ namespace Model {
 OpExternalInfo::OpExternalInfo()
 {
     reviewIdListIsSet_ = false;
+    algorithmFailureReason_ = "";
+    algorithmFailureReasonIsSet_ = false;
 }
 
 OpExternalInfo::~OpExternalInfo() = default;
@@ -28,6 +30,9 @@ web::json::value OpExternalInfo::toJson() const
     if(reviewIdListIsSet_) {
         val[utility::conversions::to_string_t("review_id_list")] = ModelBase::toJson(reviewIdList_);
     }
+    if(algorithmFailureReasonIsSet_) {
+        val[utility::conversions::to_string_t("algorithm_failure_reason")] = ModelBase::toJson(algorithmFailureReason_);
+    }
 
     return val;
 }
@@ -42,6 +47,15 @@ bool OpExternalInfo::fromJson(const web::json::value& val)
             std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setReviewIdList(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("algorithm_failure_reason"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("algorithm_failure_reason"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAlgorithmFailureReason(refVal);
         }
     }
     return ok;
@@ -67,6 +81,27 @@ bool OpExternalInfo::reviewIdListIsSet() const
 void OpExternalInfo::unsetreviewIdList()
 {
     reviewIdListIsSet_ = false;
+}
+
+std::string OpExternalInfo::getAlgorithmFailureReason() const
+{
+    return algorithmFailureReason_;
+}
+
+void OpExternalInfo::setAlgorithmFailureReason(const std::string& value)
+{
+    algorithmFailureReason_ = value;
+    algorithmFailureReasonIsSet_ = true;
+}
+
+bool OpExternalInfo::algorithmFailureReasonIsSet() const
+{
+    return algorithmFailureReasonIsSet_;
+}
+
+void OpExternalInfo::unsetalgorithmFailureReason()
+{
+    algorithmFailureReasonIsSet_ = false;
 }
 
 }

@@ -74,8 +74,6 @@ ListAssetsRequest::ListAssetsRequest()
     supportedServiceIsSet_ = false;
     appUserId_ = "";
     appUserIdIsSet_ = false;
-    projectGroupId_ = "";
-    projectGroupIdIsSet_ = false;
 }
 
 ListAssetsRequest::~ListAssetsRequest() = default;
@@ -183,9 +181,6 @@ web::json::value ListAssetsRequest::toJson() const
     }
     if(appUserIdIsSet_) {
         val[utility::conversions::to_string_t("app_user_id")] = ModelBase::toJson(appUserId_);
-    }
-    if(projectGroupIdIsSet_) {
-        val[utility::conversions::to_string_t("project_group_id")] = ModelBase::toJson(projectGroupId_);
     }
 
     return val;
@@ -480,15 +475,6 @@ bool ListAssetsRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAppUserId(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("project_group_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("project_group_id"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setProjectGroupId(refVal);
         }
     }
     return ok;
@@ -1165,27 +1151,6 @@ bool ListAssetsRequest::appUserIdIsSet() const
 void ListAssetsRequest::unsetappUserId()
 {
     appUserIdIsSet_ = false;
-}
-
-std::string ListAssetsRequest::getProjectGroupId() const
-{
-    return projectGroupId_;
-}
-
-void ListAssetsRequest::setProjectGroupId(const std::string& value)
-{
-    projectGroupId_ = value;
-    projectGroupIdIsSet_ = true;
-}
-
-bool ListAssetsRequest::projectGroupIdIsSet() const
-{
-    return projectGroupIdIsSet_;
-}
-
-void ListAssetsRequest::unsetprojectGroupId()
-{
-    projectGroupIdIsSet_ = false;
 }
 
 }

@@ -146,6 +146,8 @@
 #include <huaweicloud/drs/v5/model/ShowColumnInfoResultResponse.h>
 #include <huaweicloud/drs/v5/model/ShowComparePolicyRequest.h>
 #include <huaweicloud/drs/v5/model/ShowComparePolicyResponse.h>
+#include <huaweicloud/drs/v5/model/ShowCompareProgressRequest.h>
+#include <huaweicloud/drs/v5/model/ShowCompareProgressResponse.h>
 #include <huaweicloud/drs/v5/model/ShowDataFilteringResultRequest.h>
 #include <huaweicloud/drs/v5/model/ShowDataFilteringResultResponse.h>
 #include <huaweicloud/drs/v5/model/ShowDataProcessingRulesResultRequest.h>
@@ -716,6 +718,17 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowComparePolicyResponse> showComparePolicy(
         ShowComparePolicyRequest &request
+    );
+    // 查询对比任务进度
+    //
+    // 查询运行中对比任务的对比进度。
+    // 说明：
+    // - 目前仅MySQL-&gt;MySQL、MySQL-&gt;GaussDB主备、GaussDB分布式-&gt;GaussDB分布式、GaussDB主备-&gt;MySQL、GaussDBv1-&gt;GaussDB主备、GaussDB主备-&gt;GaussDBv1的同步任务与独立校验任务支持查看对比进度。
+    // - 运行中的行对比与内容对比支持。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowCompareProgressResponse> showCompareProgress(
+        ShowCompareProgressRequest &request
     );
     // 获取数据过滤校验结果
     //

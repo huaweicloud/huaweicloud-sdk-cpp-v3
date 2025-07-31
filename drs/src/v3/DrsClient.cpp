@@ -30,7 +30,8 @@ DrsClient::~DrsClient()
 
 ClientBuilder<DrsClient> DrsClient::newBuilder()
 {
-    return ClientBuilder<DrsClient>("BasicCredentials");
+    ClientBuilder<DrsClient> client = ClientBuilder<DrsClient>("BasicCredentials");
+    return client;
 }
 std::shared_ptr<BatchChangeDataResponse> DrsClient::batchChangeData(BatchChangeDataRequest &request)
 {

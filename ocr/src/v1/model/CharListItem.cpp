@@ -1,6 +1,6 @@
 
 
-#include "huaweicloud/ocr/v1/model/CharListIem.h"
+#include "huaweicloud/ocr/v1/model/CharListItem.h"
 namespace HuaweiCloud {
 namespace Sdk {
 namespace Ocr {
@@ -10,7 +10,7 @@ namespace Model {
 
 
 
-CharListIem::CharListIem()
+CharListItem::CharListItem()
 {
     char_ = "";
     charIsSet_ = false;
@@ -19,13 +19,13 @@ CharListIem::CharListIem()
     charLocationIsSet_ = false;
 }
 
-CharListIem::~CharListIem() = default;
+CharListItem::~CharListItem() = default;
 
-void CharListIem::validate()
+void CharListItem::validate()
 {
 }
 
-web::json::value CharListIem::toJson() const
+web::json::value CharListItem::toJson() const
 {
     web::json::value val = web::json::value::object();
 
@@ -41,7 +41,7 @@ web::json::value CharListIem::toJson() const
 
     return val;
 }
-bool CharListIem::fromJson(const web::json::value& val)
+bool CharListItem::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
@@ -76,65 +76,65 @@ bool CharListIem::fromJson(const web::json::value& val)
 }
 
 
-std::string CharListIem::getChar() const
+std::string CharListItem::getChar() const
 {
     return char_;
 }
 
-void CharListIem::setChar(const std::string& value)
+void CharListItem::setChar(const std::string& value)
 {
     char_ = value;
     charIsSet_ = true;
 }
 
-bool CharListIem::charIsSet() const
+bool CharListItem::charIsSet() const
 {
     return charIsSet_;
 }
 
-void CharListIem::unsetchar()
+void CharListItem::unsetchar()
 {
     charIsSet_ = false;
 }
 
-float CharListIem::getCharConfidence() const
+float CharListItem::getCharConfidence() const
 {
     return charConfidence_;
 }
 
-void CharListIem::setCharConfidence(float value)
+void CharListItem::setCharConfidence(float value)
 {
     charConfidence_ = value;
     charConfidenceIsSet_ = true;
 }
 
-bool CharListIem::charConfidenceIsSet() const
+bool CharListItem::charConfidenceIsSet() const
 {
     return charConfidenceIsSet_;
 }
 
-void CharListIem::unsetcharConfidence()
+void CharListItem::unsetcharConfidence()
 {
     charConfidenceIsSet_ = false;
 }
 
-std::vector<std::vector<int32_t>>& CharListIem::getCharLocation()
+std::vector<std::vector<int32_t>>& CharListItem::getCharLocation()
 {
     return charLocation_;
 }
 
-void CharListIem::setCharLocation(const std::vector<std::vector<int32_t>>& value)
+void CharListItem::setCharLocation(const std::vector<std::vector<int32_t>>& value)
 {
     charLocation_ = value;
     charLocationIsSet_ = true;
 }
 
-bool CharListIem::charLocationIsSet() const
+bool CharListItem::charLocationIsSet() const
 {
     return charLocationIsSet_;
 }
 
-void CharListIem::unsetcharLocation()
+void CharListItem::unsetcharLocation()
 {
     charLocationIsSet_ = false;
 }

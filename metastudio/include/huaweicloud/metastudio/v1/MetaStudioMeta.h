@@ -190,12 +190,17 @@ public:
     static HttpRequestDef genRequestDefForCreateAsyncTtsJob();
     static HttpRequestDef genRequestDefForCreateTtsAudition();
     static HttpRequestDef genRequestDefForCreateTtscVocabularyConfigs();
+    static HttpRequestDef genRequestDefForCreateTtscVocabularyGroups();
     static HttpRequestDef genRequestDefForDeleteTtscVocabularyConfigs();
+    static HttpRequestDef genRequestDefForDeleteTtscVocabularyGroups();
     static HttpRequestDef genRequestDefForListTtscVocabularyConfigs();
+    static HttpRequestDef genRequestDefForListTtscVocabularyGroups();
     static HttpRequestDef genRequestDefForSaveTtscVocabularyConfigs();
+    static HttpRequestDef genRequestDefForSetTtscGroupAssets();
     static HttpRequestDef genRequestDefForShowAsyncTtsJob();
     static HttpRequestDef genRequestDefForShowTtsAuditionFile();
     static HttpRequestDef genRequestDefForShowTtsPhoneticSymbol();
+    static HttpRequestDef genRequestDefForUpdateTtscVocabularyGroups();
     static HttpRequestDef genRequestDefForCreateVideoMotionCaptureJob();
     static HttpRequestDef genRequestDefForExecuteVideoMotionCaptureCommand();
     static HttpRequestDef genRequestDefForListVideoMotionCaptureJobs();

@@ -12,6 +12,8 @@ namespace Model {
 
 SetJobBatchNameRequest::SetJobBatchNameRequest()
 {
+    xAppUserId_ = "";
+    xAppUserIdIsSet_ = false;
     bodyIsSet_ = false;
 }
 
@@ -25,6 +27,9 @@ web::json::value SetJobBatchNameRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(xAppUserIdIsSet_) {
+        val[utility::conversions::to_string_t("X-App-UserId")] = ModelBase::toJson(xAppUserId_);
+    }
     if(bodyIsSet_) {
         val[utility::conversions::to_string_t("body")] = ModelBase::toJson(body_);
     }
@@ -35,6 +40,15 @@ bool SetJobBatchNameRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("X-App-UserId"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-App-UserId"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXAppUserId(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("body"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
         if(!fieldValue.is_null())
@@ -47,6 +61,27 @@ bool SetJobBatchNameRequest::fromJson(const web::json::value& val)
     return ok;
 }
 
+
+std::string SetJobBatchNameRequest::getXAppUserId() const
+{
+    return xAppUserId_;
+}
+
+void SetJobBatchNameRequest::setXAppUserId(const std::string& value)
+{
+    xAppUserId_ = value;
+    xAppUserIdIsSet_ = true;
+}
+
+bool SetJobBatchNameRequest::xAppUserIdIsSet() const
+{
+    return xAppUserIdIsSet_;
+}
+
+void SetJobBatchNameRequest::unsetxAppUserId()
+{
+    xAppUserIdIsSet_ = false;
+}
 
 SetJobBatchNameReq SetJobBatchNameRequest::getBody() const
 {

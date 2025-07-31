@@ -30,7 +30,8 @@ GaussDBforopenGaussClient::~GaussDBforopenGaussClient()
 
 ClientBuilder<GaussDBforopenGaussClient> GaussDBforopenGaussClient::newBuilder()
 {
-    return ClientBuilder<GaussDBforopenGaussClient>("BasicCredentials");
+    ClientBuilder<GaussDBforopenGaussClient> client = ClientBuilder<GaussDBforopenGaussClient>("BasicCredentials");
+    return client;
 }
 std::shared_ptr<AddInstanceTagsResponse> GaussDBforopenGaussClient::addInstanceTags(AddInstanceTagsRequest &request)
 {

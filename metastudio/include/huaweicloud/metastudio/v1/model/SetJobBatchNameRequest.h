@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <string>
 #include <huaweicloud/metastudio/v1/model/SetJobBatchNameReq.h>
 
 namespace HuaweiCloud {
@@ -39,6 +40,15 @@ public:
     /// SetJobBatchNameRequest members
 
     /// <summary>
+    /// 第三方用户ID。不允许输入中文。
+    /// </summary>
+
+    std::string getXAppUserId() const;
+    bool xAppUserIdIsSet() const;
+    void unsetxAppUserId();
+    void setXAppUserId(const std::string& value);
+
+    /// <summary>
     /// 
     /// </summary>
 
@@ -49,6 +59,8 @@ public:
 
 
 protected:
+    std::string xAppUserId_;
+    bool xAppUserIdIsSet_;
     SetJobBatchNameReq body_;
     bool bodyIsSet_;
 

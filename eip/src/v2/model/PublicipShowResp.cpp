@@ -33,6 +33,7 @@ PublicipShowResp::PublicipShowResp()
     profileIsSet_ = false;
     publicIpAddress_ = "";
     publicIpAddressIsSet_ = false;
+    tagsIsSet_ = false;
     status_ = "";
     statusIsSet_ = false;
     tenantId_ = "";
@@ -92,6 +93,9 @@ web::json::value PublicipShowResp::toJson() const
     }
     if(publicIpAddressIsSet_) {
         val[utility::conversions::to_string_t("public_ip_address")] = ModelBase::toJson(publicIpAddress_);
+    }
+    if(tagsIsSet_) {
+        val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
     }
     if(statusIsSet_) {
         val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
@@ -221,6 +225,15 @@ bool PublicipShowResp::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPublicIpAddress(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("tags"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("tags"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTags(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("status"))) {
@@ -528,6 +541,27 @@ bool PublicipShowResp::publicIpAddressIsSet() const
 void PublicipShowResp::unsetpublicIpAddress()
 {
     publicIpAddressIsSet_ = false;
+}
+
+std::vector<std::string>& PublicipShowResp::getTags()
+{
+    return tags_;
+}
+
+void PublicipShowResp::setTags(const std::vector<std::string>& value)
+{
+    tags_ = value;
+    tagsIsSet_ = true;
+}
+
+bool PublicipShowResp::tagsIsSet() const
+{
+    return tagsIsSet_;
+}
+
+void PublicipShowResp::unsettags()
+{
+    tagsIsSet_ = false;
 }
 
 std::string PublicipShowResp::getStatus() const

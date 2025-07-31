@@ -65,6 +65,15 @@ public:
     void unsetvalue();
     void setValue(const std::string& value);
 
+    /// <summary>
+    /// 分组id
+    /// </summary>
+
+    std::string getGroupId() const;
+    bool groupIdIsSet() const;
+    void unsetgroupId();
+    void setGroupId(const std::string& value);
+
 
 protected:
     std::string type_;
@@ -73,6 +82,8 @@ protected:
     bool keyIsSet_;
     std::string value_;
     bool valueIsSet_;
+    std::string groupId_;
+    bool groupIdIsSet_;
 
 };
 

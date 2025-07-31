@@ -49,6 +49,7 @@ public:
     static HttpRequestDef genRequestDefForListAddressSetDetail();
     static HttpRequestDef genRequestDefForListAddressSets();
     static HttpRequestDef genRequestDefForListAttackLogs();
+    static HttpRequestDef genRequestDefForListAttackStatistic();
     static HttpRequestDef genRequestDefForListBlackWhiteLists();
     static HttpRequestDef genRequestDefForListCaptureResult();
     static HttpRequestDef genRequestDefForListCaptureTask();
@@ -73,10 +74,14 @@ public:
     static HttpRequestDef genRequestDefForListServiceSets();
     static HttpRequestDef genRequestDefForRetryIpBlacklist();
     static HttpRequestDef genRequestDefForSaveTags();
+    static HttpRequestDef genRequestDefForShowAccessTop();
     static HttpRequestDef genRequestDefForShowAlarmConfig();
     static HttpRequestDef genRequestDefForShowAntiVirusRule();
     static HttpRequestDef genRequestDefForShowAntiVirusSwitch();
+    static HttpRequestDef genRequestDefForShowAttackTotal();
+    static HttpRequestDef genRequestDefForShowAttackTrend();
     static HttpRequestDef genRequestDefForShowDomainSetDetail();
+    static HttpRequestDef genRequestDefForShowTrafficTrend();
     static HttpRequestDef genRequestDefForUpdateAddressSet();
     static HttpRequestDef genRequestDefForUpdateAlarmConfig();
     static HttpRequestDef genRequestDefForUpdateAntiVirusRule();
@@ -113,8 +118,10 @@ public:
     static HttpRequestDef genRequestDefForListIpsRules();
     static HttpRequestDef genRequestDefForListIpsRules1();
     static HttpRequestDef genRequestDefForListIpsSwitchStatus();
+    static HttpRequestDef genRequestDefForShowCustomerIpsInfo();
     static HttpRequestDef genRequestDefForShowIpsUpdateTime();
     static HttpRequestDef genRequestDefForUpdateAdvancedIpsRule();
+    static HttpRequestDef genRequestDefForUpdateCustomerIps();
 };
 
 }

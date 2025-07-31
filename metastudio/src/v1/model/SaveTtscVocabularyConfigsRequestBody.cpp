@@ -18,6 +18,8 @@ SaveTtscVocabularyConfigsRequestBody::SaveTtscVocabularyConfigsRequestBody()
     keyIsSet_ = false;
     value_ = "";
     valueIsSet_ = false;
+    groupId_ = "";
+    groupIdIsSet_ = false;
 }
 
 SaveTtscVocabularyConfigsRequestBody::~SaveTtscVocabularyConfigsRequestBody() = default;
@@ -38,6 +40,9 @@ web::json::value SaveTtscVocabularyConfigsRequestBody::toJson() const
     }
     if(valueIsSet_) {
         val[utility::conversions::to_string_t("value")] = ModelBase::toJson(value_);
+    }
+    if(groupIdIsSet_) {
+        val[utility::conversions::to_string_t("group_id")] = ModelBase::toJson(groupId_);
     }
 
     return val;
@@ -71,6 +76,15 @@ bool SaveTtscVocabularyConfigsRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setValue(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("group_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("group_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setGroupId(refVal);
         }
     }
     return ok;
@@ -138,6 +152,27 @@ bool SaveTtscVocabularyConfigsRequestBody::valueIsSet() const
 void SaveTtscVocabularyConfigsRequestBody::unsetvalue()
 {
     valueIsSet_ = false;
+}
+
+std::string SaveTtscVocabularyConfigsRequestBody::getGroupId() const
+{
+    return groupId_;
+}
+
+void SaveTtscVocabularyConfigsRequestBody::setGroupId(const std::string& value)
+{
+    groupId_ = value;
+    groupIdIsSet_ = true;
+}
+
+bool SaveTtscVocabularyConfigsRequestBody::groupIdIsSet() const
+{
+    return groupIdIsSet_;
+}
+
+void SaveTtscVocabularyConfigsRequestBody::unsetgroupId()
+{
+    groupIdIsSet_ = false;
 }
 
 }

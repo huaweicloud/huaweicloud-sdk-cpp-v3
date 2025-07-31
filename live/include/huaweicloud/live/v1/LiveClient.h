@@ -26,6 +26,8 @@
 #include <huaweicloud/live/v1/model/CreateScheduleRecordTasksResponse.h>
 #include <huaweicloud/live/v1/model/CreateSnapshotConfigRequest.h>
 #include <huaweicloud/live/v1/model/CreateSnapshotConfigResponse.h>
+#include <huaweicloud/live/v1/model/CreateStreamForbiddenOnceRequest.h>
+#include <huaweicloud/live/v1/model/CreateStreamForbiddenOnceResponse.h>
 #include <huaweicloud/live/v1/model/CreateStreamForbiddenRequest.h>
 #include <huaweicloud/live/v1/model/CreateStreamForbiddenResponse.h>
 #include <huaweicloud/live/v1/model/CreateTranscodingsTemplateRequest.h>
@@ -129,6 +131,7 @@
 #include <huaweicloud/live/v1/model/ShowRefererChainResponse.h>
 #include <huaweicloud/live/v1/model/ShowTranscodingsTemplateRequest.h>
 #include <huaweicloud/live/v1/model/ShowTranscodingsTemplateResponse.h>
+#include <huaweicloud/live/v1/model/StreamForbiddenOnceSetting.h>
 #include <huaweicloud/live/v1/model/StreamForbiddenSetting.h>
 #include <huaweicloud/live/v1/model/StreamTranscodingTemplate.h>
 #include <huaweicloud/live/v1/model/UpdateDelayConfigRequest.h>
@@ -323,6 +326,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateStreamForbiddenResponse> createStreamForbidden(
         CreateStreamForbiddenRequest &request
+    );
+    // 禁推闪断
+    //
+    // 直播推流闪断接口
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateStreamForbiddenOnceResponse> createStreamForbiddenOnce(
+        CreateStreamForbiddenOnceRequest &request
     );
     // 创建直播转码模板
     //

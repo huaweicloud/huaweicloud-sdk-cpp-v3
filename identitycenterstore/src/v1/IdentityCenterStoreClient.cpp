@@ -30,7 +30,8 @@ IdentityCenterStoreClient::~IdentityCenterStoreClient()
 
 ClientBuilder<IdentityCenterStoreClient> IdentityCenterStoreClient::newBuilder()
 {
-    return ClientBuilder<IdentityCenterStoreClient>("");
+    ClientBuilder<IdentityCenterStoreClient> client = ClientBuilder<IdentityCenterStoreClient>("");
+    return client;
 }
 std::shared_ptr<CreateGroupResponse> IdentityCenterStoreClient::createGroup(CreateGroupRequest &request)
 {

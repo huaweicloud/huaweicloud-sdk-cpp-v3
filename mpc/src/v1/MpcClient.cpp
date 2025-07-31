@@ -30,7 +30,8 @@ MpcClient::~MpcClient()
 
 ClientBuilder<MpcClient> MpcClient::newBuilder()
 {
-    return ClientBuilder<MpcClient>("BasicCredentials");
+    ClientBuilder<MpcClient> client = ClientBuilder<MpcClient>("BasicCredentials");
+    return client;
 }
 std::shared_ptr<CreateAnimatedGraphicsTaskResponse> MpcClient::createAnimatedGraphicsTask(CreateAnimatedGraphicsTaskRequest &request)
 {

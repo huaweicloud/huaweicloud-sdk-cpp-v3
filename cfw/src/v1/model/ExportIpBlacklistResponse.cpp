@@ -16,8 +16,6 @@ ExportIpBlacklistResponse::ExportIpBlacklistResponse()
     bodyIsSet_ = false;
     contentDisposition_ = "";
     contentDispositionIsSet_ = false;
-    contentLength_ = 0;
-    contentLengthIsSet_ = false;
     contentType_ = "";
     contentTypeIsSet_ = false;
 }
@@ -37,9 +35,6 @@ web::json::value ExportIpBlacklistResponse::toJson() const
     }
     if(contentDispositionIsSet_) {
         val[utility::conversions::to_string_t("Content-Disposition")] = ModelBase::toJson(contentDisposition_);
-    }
-    if(contentLengthIsSet_) {
-        val[utility::conversions::to_string_t("Content-Length")] = ModelBase::toJson(contentLength_);
     }
     if(contentTypeIsSet_) {
         val[utility::conversions::to_string_t("Content-Type")] = ModelBase::toJson(contentType_);
@@ -67,15 +62,6 @@ bool ExportIpBlacklistResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setContentDisposition(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("Content-Length"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("Content-Length"));
-        if(!fieldValue.is_null())
-        {
-            int32_t refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setContentLength(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("Content-Type"))) {
@@ -131,27 +117,6 @@ bool ExportIpBlacklistResponse::contentDispositionIsSet() const
 void ExportIpBlacklistResponse::unsetcontentDisposition()
 {
     contentDispositionIsSet_ = false;
-}
-
-int32_t ExportIpBlacklistResponse::getContentLength() const
-{
-    return contentLength_;
-}
-
-void ExportIpBlacklistResponse::setContentLength(int32_t value)
-{
-    contentLength_ = value;
-    contentLengthIsSet_ = true;
-}
-
-bool ExportIpBlacklistResponse::contentLengthIsSet() const
-{
-    return contentLengthIsSet_;
-}
-
-void ExportIpBlacklistResponse::unsetcontentLength()
-{
-    contentLengthIsSet_ = false;
 }
 
 std::string ExportIpBlacklistResponse::getContentType() const

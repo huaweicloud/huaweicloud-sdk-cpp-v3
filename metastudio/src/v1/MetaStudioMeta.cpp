@@ -988,9 +988,6 @@ HttpRequestDef MetaStudioMeta::genRequestDefForListAssets() {
     reqDefBuilder.withRequestField(FieldDef().withName("AppUserId")
                   .withJsonTag("app_user_id")
                   .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("ProjectGroupId")
-                  .withJsonTag("project_group_id")
-                  .withLocationType(Query_));
     FieldDef headerParamAuthorization;
     reqDefBuilder.withRequestField(headerParamAuthorization
                   .withName("Authorization")
@@ -5394,6 +5391,9 @@ HttpRequestDef MetaStudioMeta::genRequestDefForListVoiceTrainingJob() {
     reqDefBuilder.withRequestField(FieldDef().withName("SortDir")
                   .withJsonTag("sort_dir")
                   .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("IsOndemandResource")
+                  .withJsonTag("is_ondemand_resource")
+                  .withLocationType(Query_));
     FieldDef headerParamXAppUserId;
     reqDefBuilder.withRequestField(headerParamXAppUserId
                   .withName("XAppUserId")
@@ -5404,6 +5404,11 @@ HttpRequestDef MetaStudioMeta::genRequestDefForListVoiceTrainingJob() {
 
 HttpRequestDef MetaStudioMeta::genRequestDefForSetJobBatchName() {
     HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXAppUserId;
+    reqDefBuilder.withRequestField(headerParamXAppUserId
+                  .withName("XAppUserId")
+                  .withJsonTag("X-App-UserId")
+                  .withLocationType(Header_));
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
@@ -5907,6 +5912,40 @@ HttpRequestDef MetaStudioMeta::genRequestDefForCreateTtscVocabularyConfigs() {
     return reqDefBuilder;
 }
 
+HttpRequestDef MetaStudioMeta::genRequestDefForCreateTtscVocabularyGroups() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXRequestId;
+    reqDefBuilder.withRequestField(headerParamXRequestId
+                  .withName("XRequestId")
+                  .withJsonTag("X-Request-Id")
+                  .withLocationType(Header_));
+    FieldDef headerParamAuthorization;
+    reqDefBuilder.withRequestField(headerParamAuthorization
+                  .withName("Authorization")
+                  .withJsonTag("Authorization")
+                  .withLocationType(Header_));
+    FieldDef headerParamXSdkDate;
+    reqDefBuilder.withRequestField(headerParamXSdkDate
+                  .withName("XSdkDate")
+                  .withJsonTag("X-Sdk-Date")
+                  .withLocationType(Header_));
+    FieldDef headerParamXProjectId;
+    reqDefBuilder.withRequestField(headerParamXProjectId
+                  .withName("XProjectId")
+                  .withJsonTag("X-Project-Id")
+                  .withLocationType(Header_));
+    FieldDef headerParamXAppUserId;
+    reqDefBuilder.withRequestField(headerParamXAppUserId
+                  .withName("XAppUserId")
+                  .withJsonTag("X-App-UserId")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef MetaStudioMeta::genRequestDefForDeleteTtscVocabularyConfigs() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Offset")
@@ -5947,6 +5986,42 @@ HttpRequestDef MetaStudioMeta::genRequestDefForDeleteTtscVocabularyConfigs() {
     return reqDefBuilder;
 }
 
+HttpRequestDef MetaStudioMeta::genRequestDefForDeleteTtscVocabularyGroups() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    FieldDef headerParamXRequestId;
+    reqDefBuilder.withRequestField(headerParamXRequestId
+                  .withName("XRequestId")
+                  .withJsonTag("X-Request-Id")
+                  .withLocationType(Header_));
+    FieldDef headerParamAuthorization;
+    reqDefBuilder.withRequestField(headerParamAuthorization
+                  .withName("Authorization")
+                  .withJsonTag("Authorization")
+                  .withLocationType(Header_));
+    FieldDef headerParamXSdkDate;
+    reqDefBuilder.withRequestField(headerParamXSdkDate
+                  .withName("XSdkDate")
+                  .withJsonTag("X-Sdk-Date")
+                  .withLocationType(Header_));
+    FieldDef headerParamXProjectId;
+    reqDefBuilder.withRequestField(headerParamXProjectId
+                  .withName("XProjectId")
+                  .withJsonTag("X-Project-Id")
+                  .withLocationType(Header_));
+    FieldDef headerParamXAppUserId;
+    reqDefBuilder.withRequestField(headerParamXAppUserId
+                  .withName("XAppUserId")
+                  .withJsonTag("X-App-UserId")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef MetaStudioMeta::genRequestDefForListTtscVocabularyConfigs() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("Type")
@@ -5957,6 +6032,12 @@ HttpRequestDef MetaStudioMeta::genRequestDefForListTtscVocabularyConfigs() {
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("IsVocabularyConfigEnable")
                   .withJsonTag("is_vocabulary_config_enable")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("GroupId")
+                  .withJsonTag("group_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("AssetId")
+                  .withJsonTag("asset_id")
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("Limit")
                   .withJsonTag("limit")
@@ -6001,7 +6082,71 @@ HttpRequestDef MetaStudioMeta::genRequestDefForListTtscVocabularyConfigs() {
     return reqDefBuilder;
 }
 
+HttpRequestDef MetaStudioMeta::genRequestDefForListTtscVocabularyGroups() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXRequestId;
+    reqDefBuilder.withRequestField(headerParamXRequestId
+                  .withName("XRequestId")
+                  .withJsonTag("X-Request-Id")
+                  .withLocationType(Header_));
+    FieldDef headerParamAuthorization;
+    reqDefBuilder.withRequestField(headerParamAuthorization
+                  .withName("Authorization")
+                  .withJsonTag("Authorization")
+                  .withLocationType(Header_));
+    FieldDef headerParamXSdkDate;
+    reqDefBuilder.withRequestField(headerParamXSdkDate
+                  .withName("XSdkDate")
+                  .withJsonTag("X-Sdk-Date")
+                  .withLocationType(Header_));
+    FieldDef headerParamXProjectId;
+    reqDefBuilder.withRequestField(headerParamXProjectId
+                  .withName("XProjectId")
+                  .withJsonTag("X-Project-Id")
+                  .withLocationType(Header_));
+    FieldDef headerParamXAppUserId;
+    reqDefBuilder.withRequestField(headerParamXAppUserId
+                  .withName("XAppUserId")
+                  .withJsonTag("X-App-UserId")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef MetaStudioMeta::genRequestDefForSaveTtscVocabularyConfigs() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXRequestId;
+    reqDefBuilder.withRequestField(headerParamXRequestId
+                  .withName("XRequestId")
+                  .withJsonTag("X-Request-Id")
+                  .withLocationType(Header_));
+    FieldDef headerParamAuthorization;
+    reqDefBuilder.withRequestField(headerParamAuthorization
+                  .withName("Authorization")
+                  .withJsonTag("Authorization")
+                  .withLocationType(Header_));
+    FieldDef headerParamXSdkDate;
+    reqDefBuilder.withRequestField(headerParamXSdkDate
+                  .withName("XSdkDate")
+                  .withJsonTag("X-Sdk-Date")
+                  .withLocationType(Header_));
+    FieldDef headerParamXProjectId;
+    reqDefBuilder.withRequestField(headerParamXProjectId
+                  .withName("XProjectId")
+                  .withJsonTag("X-Project-Id")
+                  .withLocationType(Header_));
+    FieldDef headerParamXAppUserId;
+    reqDefBuilder.withRequestField(headerParamXAppUserId
+                  .withName("XAppUserId")
+                  .withJsonTag("X-App-UserId")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef MetaStudioMeta::genRequestDefForSetTtscGroupAssets() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXRequestId;
     reqDefBuilder.withRequestField(headerParamXRequestId
@@ -6126,6 +6271,40 @@ HttpRequestDef MetaStudioMeta::genRequestDefForShowTtsPhoneticSymbol() {
                   .withName("XAppUserId")
                   .withJsonTag("X-App-UserId")
                   .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef MetaStudioMeta::genRequestDefForUpdateTtscVocabularyGroups() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXRequestId;
+    reqDefBuilder.withRequestField(headerParamXRequestId
+                  .withName("XRequestId")
+                  .withJsonTag("X-Request-Id")
+                  .withLocationType(Header_));
+    FieldDef headerParamAuthorization;
+    reqDefBuilder.withRequestField(headerParamAuthorization
+                  .withName("Authorization")
+                  .withJsonTag("Authorization")
+                  .withLocationType(Header_));
+    FieldDef headerParamXSdkDate;
+    reqDefBuilder.withRequestField(headerParamXSdkDate
+                  .withName("XSdkDate")
+                  .withJsonTag("X-Sdk-Date")
+                  .withLocationType(Header_));
+    FieldDef headerParamXProjectId;
+    reqDefBuilder.withRequestField(headerParamXProjectId
+                  .withName("XProjectId")
+                  .withJsonTag("X-Project-Id")
+                  .withLocationType(Header_));
+    FieldDef headerParamXAppUserId;
+    reqDefBuilder.withRequestField(headerParamXAppUserId
+                  .withName("XAppUserId")
+                  .withJsonTag("X-App-UserId")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
     return reqDefBuilder;
 }
 

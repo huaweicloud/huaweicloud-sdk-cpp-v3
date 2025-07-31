@@ -39,15 +39,6 @@ public:
     /// SetAlarmTopicConfigInfoResponse members
 
     /// <summary>
-    /// 主题使用状态  - true: 已被使用  - false: 未被使用
-    /// </summary>
-
-    bool isIsUseTopic() const;
-    bool isUseTopicIsSet() const;
-    void unsetisUseTopic();
-    void setIsUseTopic(bool value);
-
-    /// <summary>
     /// 状态  - SUCCESS: 成功  - FAILED: 失败
     /// </summary>
 
@@ -58,8 +49,6 @@ public:
 
 
 protected:
-    bool isUseTopic_;
-    bool isUseTopicIsSet_;
     std::string status_;
     bool statusIsSet_;
 

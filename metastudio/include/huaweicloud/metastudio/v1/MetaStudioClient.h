@@ -503,20 +503,32 @@
 #include <huaweicloud/metastudio/v1/model/CreateTtsAuditionResponse.h>
 #include <huaweicloud/metastudio/v1/model/CreateTtscVocabularyConfigsRequest.h>
 #include <huaweicloud/metastudio/v1/model/CreateTtscVocabularyConfigsResponse.h>
+#include <huaweicloud/metastudio/v1/model/CreateTtscVocabularyGroupsRequest.h>
+#include <huaweicloud/metastudio/v1/model/CreateTtscVocabularyGroupsResponse.h>
 #include <huaweicloud/metastudio/v1/model/DeleteTtscVocabularyConfigsRequest.h>
 #include <huaweicloud/metastudio/v1/model/DeleteTtscVocabularyConfigsRequestBody.h>
 #include <huaweicloud/metastudio/v1/model/DeleteTtscVocabularyConfigsResponse.h>
+#include <huaweicloud/metastudio/v1/model/DeleteTtscVocabularyGroupsRequest.h>
+#include <huaweicloud/metastudio/v1/model/DeleteTtscVocabularyGroupsResponse.h>
 #include <huaweicloud/metastudio/v1/model/ListTtscVocabularyConfigsRequest.h>
 #include <huaweicloud/metastudio/v1/model/ListTtscVocabularyConfigsResponse.h>
+#include <huaweicloud/metastudio/v1/model/ListTtscVocabularyGroupsRequest.h>
+#include <huaweicloud/metastudio/v1/model/ListTtscVocabularyGroupsResponse.h>
 #include <huaweicloud/metastudio/v1/model/SaveTtscVocabularyConfigsRequest.h>
 #include <huaweicloud/metastudio/v1/model/SaveTtscVocabularyConfigsRequestBody.h>
 #include <huaweicloud/metastudio/v1/model/SaveTtscVocabularyConfigsResponse.h>
+#include <huaweicloud/metastudio/v1/model/SaveTtscVocabularyGroupsRequestBody.h>
+#include <huaweicloud/metastudio/v1/model/SetTtscGroupAssetsRequest.h>
+#include <huaweicloud/metastudio/v1/model/SetTtscGroupAssetsRequestBody.h>
+#include <huaweicloud/metastudio/v1/model/SetTtscGroupAssetsResponse.h>
 #include <huaweicloud/metastudio/v1/model/ShowAsyncTtsJobRequest.h>
 #include <huaweicloud/metastudio/v1/model/ShowAsyncTtsJobResponse.h>
 #include <huaweicloud/metastudio/v1/model/ShowTtsAuditionFileRequest.h>
 #include <huaweicloud/metastudio/v1/model/ShowTtsAuditionFileResponse.h>
 #include <huaweicloud/metastudio/v1/model/ShowTtsPhoneticSymbolRequest.h>
 #include <huaweicloud/metastudio/v1/model/ShowTtsPhoneticSymbolResponse.h>
+#include <huaweicloud/metastudio/v1/model/UpdateTtscVocabularyGroupsRequest.h>
+#include <huaweicloud/metastudio/v1/model/UpdateTtscVocabularyGroupsResponse.h>
 #include <string>
 
 #include <huaweicloud/metastudio/v1/model/ControlDigitalHumanLiveReq.h>
@@ -2079,6 +2091,14 @@ public:
     std::shared_ptr<CreateTtscVocabularyConfigsResponse> createTtscVocabularyConfigs(
         CreateTtscVocabularyConfigsRequest &request
     );
+    // 设置TTS租户级词表分组配置
+    //
+    // 该接口用于设置TTS租户级词表分组配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateTtscVocabularyGroupsResponse> createTtscVocabularyGroups(
+        CreateTtscVocabularyGroupsRequest &request
+    );
     // 删除TTS租户级自定义读法配置
     //
     // 该接口用于删除TTS租户级自定义读法配置。
@@ -2086,6 +2106,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteTtscVocabularyConfigsResponse> deleteTtscVocabularyConfigs(
         DeleteTtscVocabularyConfigsRequest &request
+    );
+    // 删除TTS租户级词表分组
+    //
+    // 该接口用于删除TTS租户级词表分组配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteTtscVocabularyGroupsResponse> deleteTtscVocabularyGroups(
+        DeleteTtscVocabularyGroupsRequest &request
     );
     // 获取TTS租户级自定义读法配置
     //
@@ -2095,6 +2123,14 @@ public:
     std::shared_ptr<ListTtscVocabularyConfigsResponse> listTtscVocabularyConfigs(
         ListTtscVocabularyConfigsRequest &request
     );
+    // 获取TTS租户级词表分组列表
+    //
+    // 该接口用于获取TTS租户级词表分组列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListTtscVocabularyGroupsResponse> listTtscVocabularyGroups(
+        ListTtscVocabularyGroupsRequest &request
+    );
     // 修改TTS租户级自定义读法配置
     //
     // 该接口用于修改TTS租户级自定义读法配置。
@@ -2102,6 +2138,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<SaveTtscVocabularyConfigsResponse> saveTtscVocabularyConfigs(
         SaveTtscVocabularyConfigsRequest &request
+    );
+    // 设置TTS租户级词表分组的资产列表
+    //
+    // 该接口用于设置TTS租户级词表分组的资产列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SetTtscGroupAssetsResponse> setTtscGroupAssets(
+        SetTtscGroupAssetsRequest &request
     );
     // 获取TTS异步任务
     //
@@ -2126,6 +2170,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowTtsPhoneticSymbolResponse> showTtsPhoneticSymbol(
         ShowTtsPhoneticSymbolRequest &request
+    );
+    // TTS租户级词表分组重命名
+    //
+    // 该接口用于对TTS租户级词表分组重命名。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateTtscVocabularyGroupsResponse> updateTtscVocabularyGroups(
+        UpdateTtscVocabularyGroupsRequest &request
     );
 
     // 创建视频驱动任务

@@ -75,6 +75,15 @@ public:
     void setType(const std::string& value);
 
     /// <summary>
+    /// 分组id
+    /// </summary>
+
+    std::string getGroupId() const;
+    bool groupIdIsSet() const;
+    void unsetgroupId();
+    void setGroupId(const std::string& value);
+
+    /// <summary>
     /// 创建时间。
     /// </summary>
 
@@ -102,6 +111,8 @@ protected:
     bool valueIsSet_;
     std::string type_;
     bool typeIsSet_;
+    std::string groupId_;
+    bool groupIdIsSet_;
     std::string createTime_;
     bool createTimeIsSet_;
     std::string updateTime_;

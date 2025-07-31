@@ -30,7 +30,8 @@ LtsClient::~LtsClient()
 
 ClientBuilder<LtsClient> LtsClient::newBuilder()
 {
-    return ClientBuilder<LtsClient>("");
+    ClientBuilder<LtsClient> client = ClientBuilder<LtsClient>("");
+    return client;
 }
 std::shared_ptr<CreateAccessConfigResponse> LtsClient::createAccessConfig(CreateAccessConfigRequest &request)
 {

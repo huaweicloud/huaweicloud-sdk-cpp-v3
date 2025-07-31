@@ -30,7 +30,8 @@ SmnglobalClient::~SmnglobalClient()
 
 ClientBuilder<SmnglobalClient> SmnglobalClient::newBuilder()
 {
-    return ClientBuilder<SmnglobalClient>("GlobalCredentials");
+    ClientBuilder<SmnglobalClient> client = ClientBuilder<SmnglobalClient>("GlobalCredentials");
+    return client;
 }
 std::shared_ptr<CreateSubscriptionUserResponse> SmnglobalClient::createSubscriptionUser(CreateSubscriptionUserRequest &request)
 {

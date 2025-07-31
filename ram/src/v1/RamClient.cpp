@@ -30,7 +30,8 @@ RamClient::~RamClient()
 
 ClientBuilder<RamClient> RamClient::newBuilder()
 {
-    return ClientBuilder<RamClient>("GlobalCredentials");
+    ClientBuilder<RamClient> client = ClientBuilder<RamClient>("GlobalCredentials");
+    return client;
 }
 std::shared_ptr<AssociateResourceSharePermissionResponse> RamClient::associateResourceSharePermission(AssociateResourceSharePermissionRequest &request)
 {

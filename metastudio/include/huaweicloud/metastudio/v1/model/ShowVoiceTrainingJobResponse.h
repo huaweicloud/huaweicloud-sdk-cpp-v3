@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/metastudio/v1/model/JobTag.h>
+#include <huaweicloud/metastudio/v1/model/AssessResult.h>
 #include <huaweicloud/metastudio/v1/model/JobType.h>
 #include <string>
 #include <huaweicloud/metastudio/v1/model/VoiceTrainingAllocatedResource.h>
@@ -250,6 +251,24 @@ public:
     void unsetisRemake();
     void setIsRemake(bool value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    AssessResult getAssessResult() const;
+    bool assessResultIsSet() const;
+    void unsetassessResult();
+    void setAssessResult(const AssessResult& value);
+
+    /// <summary>
+    /// 是否是按需任务
+    /// </summary>
+
+    bool isIsOndemandResource() const;
+    bool isOndemandResourceIsSet() const;
+    void unsetisOndemandResource();
+    void setIsOndemandResource(bool value);
+
 
 protected:
     JobType jobType_;
@@ -298,6 +317,10 @@ protected:
     bool outputLanguageIsSet_;
     bool isRemake_;
     bool isRemakeIsSet_;
+    AssessResult assessResult_;
+    bool assessResultIsSet_;
+    bool isOndemandResource_;
+    bool isOndemandResourceIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

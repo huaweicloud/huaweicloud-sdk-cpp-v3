@@ -1,6 +1,6 @@
 
-#ifndef HUAWEICLOUD_SDK_OCR_V1_MODEL_WordsListIem_H_
-#define HUAWEICLOUD_SDK_OCR_V1_MODEL_WordsListIem_H_
+#ifndef HUAWEICLOUD_SDK_OCR_V1_MODEL_WordsListItem_H_
+#define HUAWEICLOUD_SDK_OCR_V1_MODEL_WordsListItem_H_
 
 
 #include <huaweicloud/ocr/v1/OcrExport.h>
@@ -9,8 +9,8 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/ocr/v1/model/CharListIem.h>
 #include <string>
+#include <huaweicloud/ocr/v1/model/CharListItem.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -24,12 +24,12 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
 /// 单元格内文字段列表。 
 /// </summary>
-class HUAWEICLOUD_OCR_V1_EXPORT  WordsListIem
+class HUAWEICLOUD_OCR_V1_EXPORT  WordsListItem
     : public ModelBase
 {
 public:
-    WordsListIem();
-    virtual ~WordsListIem();
+    WordsListItem();
+    virtual ~WordsListItem();
 
     /////////////////////////////////////////////
     /// ModelBase overrides
@@ -38,7 +38,7 @@ public:
     web::json::value toJson() const override;
     bool fromJson(const web::json::value& json) override;
     /////////////////////////////////////////////
-    /// WordsListIem members
+    /// WordsListItem members
 
     /// <summary>
     /// 文字块识别结果。 
@@ -71,10 +71,10 @@ public:
     /// 单元格内文字段列表。输出顺序从左到右，从上到下。仅当入参\&quot;return_text_location\&quot;和\&quot;return_char_location\&quot;同时为true时存在。 
     /// </summary>
 
-    std::vector<CharListIem>& getCharList();
+    std::vector<CharListItem>& getCharList();
     bool charListIsSet() const;
     void unsetcharList();
-    void setCharList(const std::vector<CharListIem>& value);
+    void setCharList(const std::vector<CharListItem>& value);
 
 
 protected:
@@ -84,7 +84,7 @@ protected:
     bool confidenceIsSet_;
     std::vector<std::vector<int32_t>> location_;
     bool locationIsSet_;
-    std::vector<CharListIem> charList_;
+    std::vector<CharListItem> charList_;
     bool charListIsSet_;
 
 };
@@ -96,4 +96,4 @@ protected:
 }
 }
 
-#endif // HUAWEICLOUD_SDK_OCR_V1_MODEL_WordsListIem_H_
+#endif // HUAWEICLOUD_SDK_OCR_V1_MODEL_WordsListItem_H_

@@ -30,7 +30,8 @@ VodClient::~VodClient()
 
 ClientBuilder<VodClient> VodClient::newBuilder()
 {
-    return ClientBuilder<VodClient>("BasicCredentials");
+    ClientBuilder<VodClient> client = ClientBuilder<VodClient>("BasicCredentials");
+    return client;
 }
 std::shared_ptr<CancelAssetTranscodeTaskResponse> VodClient::cancelAssetTranscodeTask(CancelAssetTranscodeTaskRequest &request)
 {

@@ -38,6 +38,10 @@ public:
         JobTag_ECOMMERCE,
         JobTag_NEWS,
         JobTag_MARKETING,
+        JobTag_LIVE,
+        JobTag_EDUCATION,
+        JobTag_CUSTOMER,
+        JobTag_STORYTELLING,
     };
 
     eJobTag getValue() const;

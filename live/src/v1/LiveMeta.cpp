@@ -107,6 +107,15 @@ HttpRequestDef LiveMeta::genRequestDefForCreateStreamForbidden() {
     return reqDefBuilder;
 }
 
+HttpRequestDef LiveMeta::genRequestDefForCreateStreamForbiddenOnce() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef LiveMeta::genRequestDefForCreateTranscodingsTemplate() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;

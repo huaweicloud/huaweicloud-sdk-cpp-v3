@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/ocr/v1/model/WordsListIem.h>
+#include <huaweicloud/ocr/v1/model/WordsListItem.h>
 #include <string>
 #include <vector>
 
@@ -71,10 +71,10 @@ public:
     /// 单元格内文字段列表。输出顺序从左到右，从上到下。仅当入参\&quot;return_text_location\&quot;为true时存在。 
     /// </summary>
 
-    std::vector<WordsListIem>& getWordsList();
+    std::vector<WordsListItem>& getWordsList();
     bool wordsListIsSet() const;
     void unsetwordsList();
-    void setWordsList(const std::vector<WordsListIem>& value);
+    void setWordsList(const std::vector<WordsListItem>& value);
 
     /// <summary>
     /// 文字块占用的行信息，编号从0开始，列表形式，数据类型为Integer。仅在表格区域内有效，即type字段为\&quot;table\&quot;时该字段有效。 
@@ -111,7 +111,7 @@ protected:
     bool confidenceIsSet_;
     std::vector<std::vector<int32_t>> location_;
     bool locationIsSet_;
-    std::vector<WordsListIem> wordsList_;
+    std::vector<WordsListItem> wordsList_;
     bool wordsListIsSet_;
     std::vector<int32_t> rows_;
     bool rowsIsSet_;

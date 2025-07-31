@@ -30,7 +30,8 @@ ImsClient::~ImsClient()
 
 ClientBuilder<ImsClient> ImsClient::newBuilder()
 {
-    return ClientBuilder<ImsClient>("BasicCredentials");
+    ClientBuilder<ImsClient> client = ClientBuilder<ImsClient>("BasicCredentials");
+    return client;
 }
 std::shared_ptr<AddImageTagResponse> ImsClient::addImageTag(AddImageTagRequest &request)
 {
@@ -365,6 +366,48 @@ std::shared_ptr<CopyImageInRegionResponse> ImsClient::copyImageInRegion(CopyImag
 
     return localVarResult;
 }
+std::shared_ptr<CopyImageInRegionInSafeModeResponse> ImsClient::copyImageInRegionInSafeMode(CopyImageInRegionInSafeModeRequest &request)
+{
+    std::string localVarPath = "/v2.1/cloudimages/{image_id}/copy";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["image_id"] = parameterToString(request.getImageId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ImsMeta::genRequestDefForCopyImageInRegionInSafeMode());
+
+    std::shared_ptr<CopyImageInRegionInSafeModeResponse> localVarResult = std::make_shared<CopyImageInRegionInSafeModeResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<CreateDataImageResponse> ImsClient::createDataImage(CreateDataImageRequest &request)
 {
     std::string localVarPath = "/v1/cloudimages/dataimages/action";
@@ -406,6 +449,47 @@ std::shared_ptr<CreateDataImageResponse> ImsClient::createDataImage(CreateDataIm
 
     return localVarResult;
 }
+std::shared_ptr<CreateDataImageInSafeModeResponse> ImsClient::createDataImageInSafeMode(CreateDataImageInSafeModeRequest &request)
+{
+    std::string localVarPath = "/v2.1/cloudimages/dataimages/action";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ImsMeta::genRequestDefForCreateDataImageInSafeMode());
+
+    std::shared_ptr<CreateDataImageInSafeModeResponse> localVarResult = std::make_shared<CreateDataImageInSafeModeResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<CreateImageResponse> ImsClient::createImage(CreateImageRequest &request)
 {
     std::string localVarPath = "/v2/cloudimages/action";
@@ -435,6 +519,47 @@ std::shared_ptr<CreateImageResponse> ImsClient::createImage(CreateImageRequest &
         localVarHeaderParams, localVarHttpBody, ImsMeta::genRequestDefForCreateImage());
 
     std::shared_ptr<CreateImageResponse> localVarResult = std::make_shared<CreateImageResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<CreateImageInSafeModeResponse> ImsClient::createImageInSafeMode(CreateImageInSafeModeRequest &request)
+{
+    std::string localVarPath = "/v2.1/cloudimages/action";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ImsMeta::genRequestDefForCreateImageInSafeMode());
+
+    std::shared_ptr<CreateImageInSafeModeResponse> localVarResult = std::make_shared<CreateImageInSafeModeResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -602,6 +727,48 @@ std::shared_ptr<ExportImageResponse> ImsClient::exportImage(ExportImageRequest &
 
     return localVarResult;
 }
+std::shared_ptr<ExportImageInSafeModeResponse> ImsClient::exportImageInSafeMode(ExportImageInSafeModeRequest &request)
+{
+    std::string localVarPath = "/v2.1/cloudimages/{image_id}/file";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["image_id"] = parameterToString(request.getImageId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ImsMeta::genRequestDefForExportImageInSafeMode());
+
+    std::shared_ptr<ExportImageInSafeModeResponse> localVarResult = std::make_shared<ExportImageInSafeModeResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<ImportImageQuickResponse> ImsClient::importImageQuick(ImportImageQuickRequest &request)
 {
     std::string localVarPath = "/v2/cloudimages/quickimport/action";
@@ -631,6 +798,47 @@ std::shared_ptr<ImportImageQuickResponse> ImsClient::importImageQuick(ImportImag
         localVarHeaderParams, localVarHttpBody, ImsMeta::genRequestDefForImportImageQuick());
 
     std::shared_ptr<ImportImageQuickResponse> localVarResult = std::make_shared<ImportImageQuickResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<ImportImageQuickInSafeModeResponse> ImsClient::importImageQuickInSafeMode(ImportImageQuickInSafeModeRequest &request)
+{
+    std::string localVarPath = "/v2.1/cloudimages/quickimport/action";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ImsMeta::genRequestDefForImportImageQuickInSafeMode());
+
+    std::shared_ptr<ImportImageQuickInSafeModeResponse> localVarResult = std::make_shared<ImportImageQuickInSafeModeResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

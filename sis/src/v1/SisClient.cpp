@@ -30,7 +30,8 @@ SisClient::~SisClient()
 
 ClientBuilder<SisClient> SisClient::newBuilder()
 {
-    return ClientBuilder<SisClient>("");
+    ClientBuilder<SisClient> client = ClientBuilder<SisClient>("");
+    return client;
 }
 std::shared_ptr<CollectTranscriberJobResponse> SisClient::collectTranscriberJob(CollectTranscriberJobRequest &request)
 {

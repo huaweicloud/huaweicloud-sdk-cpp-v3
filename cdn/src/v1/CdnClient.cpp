@@ -30,7 +30,8 @@ CdnClient::~CdnClient()
 
 ClientBuilder<CdnClient> CdnClient::newBuilder()
 {
-    return ClientBuilder<CdnClient>("GlobalCredential");
+    ClientBuilder<CdnClient> client = ClientBuilder<CdnClient>("GlobalCredential");
+    return client;
 }
 std::shared_ptr<BatchDeleteTagsResponse> CdnClient::batchDeleteTags(BatchDeleteTagsRequest &request)
 {

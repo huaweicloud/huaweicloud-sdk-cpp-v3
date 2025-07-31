@@ -30,7 +30,8 @@ GaussDBforNoSQLClient::~GaussDBforNoSQLClient()
 
 ClientBuilder<GaussDBforNoSQLClient> GaussDBforNoSQLClient::newBuilder()
 {
-    return ClientBuilder<GaussDBforNoSQLClient>("BasicCredentials");
+    ClientBuilder<GaussDBforNoSQLClient> client = ClientBuilder<GaussDBforNoSQLClient>("BasicCredentials");
+    return client;
 }
 std::shared_ptr<ApplyConfigurationResponse> GaussDBforNoSQLClient::applyConfiguration(ApplyConfigurationRequest &request)
 {

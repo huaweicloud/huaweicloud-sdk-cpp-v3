@@ -926,6 +926,16 @@ HttpRequestDef DrsMeta::genRequestDefForShowComparePolicy() {
     return reqDefBuilder;
 }
 
+HttpRequestDef DrsMeta::genRequestDefForShowCompareProgress() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXLanguage;
+    reqDefBuilder.withRequestField(headerParamXLanguage
+                  .withName("XLanguage")
+                  .withJsonTag("X-Language")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef DrsMeta::genRequestDefForShowDataFilteringResult() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("QueryId")

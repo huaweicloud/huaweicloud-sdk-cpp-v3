@@ -30,7 +30,8 @@ IdentityCenterClient::~IdentityCenterClient()
 
 ClientBuilder<IdentityCenterClient> IdentityCenterClient::newBuilder()
 {
-    return ClientBuilder<IdentityCenterClient>("GlobalCredentials");
+    ClientBuilder<IdentityCenterClient> client = ClientBuilder<IdentityCenterClient>("GlobalCredentials");
+    return client;
 }
 std::shared_ptr<CreateAccountAssignmentResponse> IdentityCenterClient::createAccountAssignment(CreateAccountAssignmentRequest &request)
 {

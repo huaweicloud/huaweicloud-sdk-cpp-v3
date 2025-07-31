@@ -80,6 +80,15 @@ HttpRequestDef ImsMeta::genRequestDefForCopyImageInRegion() {
     return reqDefBuilder;
 }
 
+HttpRequestDef ImsMeta::genRequestDefForCopyImageInRegionInSafeMode() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef ImsMeta::genRequestDefForCreateDataImage() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -89,7 +98,25 @@ HttpRequestDef ImsMeta::genRequestDefForCreateDataImage() {
     return reqDefBuilder;
 }
 
+HttpRequestDef ImsMeta::genRequestDefForCreateDataImageInSafeMode() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef ImsMeta::genRequestDefForCreateImage() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ImsMeta::genRequestDefForCreateImageInSafeMode() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
@@ -130,7 +157,25 @@ HttpRequestDef ImsMeta::genRequestDefForExportImage() {
     return reqDefBuilder;
 }
 
+HttpRequestDef ImsMeta::genRequestDefForExportImageInSafeMode() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef ImsMeta::genRequestDefForImportImageQuick() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ImsMeta::genRequestDefForImportImageQuickInSafeMode() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.

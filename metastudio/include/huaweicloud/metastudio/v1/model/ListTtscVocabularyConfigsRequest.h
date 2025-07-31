@@ -111,6 +111,24 @@ public:
     void setIsVocabularyConfigEnable(const std::string& value);
 
     /// <summary>
+    /// 分组id
+    /// </summary>
+
+    std::string getGroupId() const;
+    bool groupIdIsSet() const;
+    void unsetgroupId();
+    void setGroupId(const std::string& value);
+
+    /// <summary>
+    /// 资产id
+    /// </summary>
+
+    std::string getAssetId() const;
+    bool assetIdIsSet() const;
+    void unsetassetId();
+    void setAssetId(const std::string& value);
+
+    /// <summary>
     /// 每页显示的条目数量。
     /// </summary>
 
@@ -173,6 +191,10 @@ protected:
     bool ttsServiceNameIsSet_;
     std::string isVocabularyConfigEnable_;
     bool isVocabularyConfigEnableIsSet_;
+    std::string groupId_;
+    bool groupIdIsSet_;
+    std::string assetId_;
+    bool assetIdIsSet_;
     int32_t limit_;
     bool limitIsSet_;
     int32_t offset_;

@@ -92,6 +92,24 @@ public:
     void unsetschema();
     void setSchema(const std::string& value);
 
+    /// <summary>
+    /// 共享成员类型。
+    /// </summary>
+
+    std::string getMemberType() const;
+    bool memberTypeIsSet() const;
+    void unsetmemberType();
+    void setMemberType(const std::string& value);
+
+    /// <summary>
+    /// 共享组织的URN仅当member_type类型为organization时，才会返回urn字段。
+    /// </summary>
+
+    std::string getUrn() const;
+    bool urnIsSet() const;
+    void unseturn();
+    void setUrn(const std::string& value);
+
 
 protected:
     std::string status_;
@@ -106,6 +124,10 @@ protected:
     bool memberIdIsSet_;
     std::string schema_;
     bool schemaIsSet_;
+    std::string memberType_;
+    bool memberTypeIsSet_;
+    std::string urn_;
+    bool urnIsSet_;
 
 };
 

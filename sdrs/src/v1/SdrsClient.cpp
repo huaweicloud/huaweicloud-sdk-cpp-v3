@@ -30,7 +30,8 @@ SdrsClient::~SdrsClient()
 
 ClientBuilder<SdrsClient> SdrsClient::newBuilder()
 {
-    return ClientBuilder<SdrsClient>("BasicCredentials");
+    ClientBuilder<SdrsClient> client = ClientBuilder<SdrsClient>("BasicCredentials");
+    return client;
 }
 std::shared_ptr<AddProtectedInstanceNicResponse> SdrsClient::addProtectedInstanceNic(AddProtectedInstanceNicRequest &request)
 {

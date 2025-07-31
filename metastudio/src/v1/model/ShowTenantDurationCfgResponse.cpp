@@ -50,6 +50,10 @@ ShowTenantDurationCfgResponse::ShowTenantDurationCfgResponse()
     ljznMaxIsSet_ = false;
     ljznAdviceValue_ = 0;
     ljznAdviceValueIsSet_ = false;
+    shortAssessMin_ = 0;
+    shortAssessMinIsSet_ = false;
+    shortAssessMax_ = 0;
+    shortAssessMaxIsSet_ = false;
 }
 
 ShowTenantDurationCfgResponse::~ShowTenantDurationCfgResponse() = default;
@@ -118,6 +122,12 @@ web::json::value ShowTenantDurationCfgResponse::toJson() const
     }
     if(ljznAdviceValueIsSet_) {
         val[utility::conversions::to_string_t("ljzn_advice_value")] = ModelBase::toJson(ljznAdviceValue_);
+    }
+    if(shortAssessMinIsSet_) {
+        val[utility::conversions::to_string_t("short_assess_min")] = ModelBase::toJson(shortAssessMin_);
+    }
+    if(shortAssessMaxIsSet_) {
+        val[utility::conversions::to_string_t("short_assess_max")] = ModelBase::toJson(shortAssessMax_);
     }
 
     return val;
@@ -295,6 +305,24 @@ bool ShowTenantDurationCfgResponse::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setLjznAdviceValue(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("short_assess_min"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("short_assess_min"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setShortAssessMin(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("short_assess_max"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("short_assess_max"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setShortAssessMax(refVal);
         }
     }
     return ok;
@@ -698,6 +726,48 @@ bool ShowTenantDurationCfgResponse::ljznAdviceValueIsSet() const
 void ShowTenantDurationCfgResponse::unsetljznAdviceValue()
 {
     ljznAdviceValueIsSet_ = false;
+}
+
+int32_t ShowTenantDurationCfgResponse::getShortAssessMin() const
+{
+    return shortAssessMin_;
+}
+
+void ShowTenantDurationCfgResponse::setShortAssessMin(int32_t value)
+{
+    shortAssessMin_ = value;
+    shortAssessMinIsSet_ = true;
+}
+
+bool ShowTenantDurationCfgResponse::shortAssessMinIsSet() const
+{
+    return shortAssessMinIsSet_;
+}
+
+void ShowTenantDurationCfgResponse::unsetshortAssessMin()
+{
+    shortAssessMinIsSet_ = false;
+}
+
+int32_t ShowTenantDurationCfgResponse::getShortAssessMax() const
+{
+    return shortAssessMax_;
+}
+
+void ShowTenantDurationCfgResponse::setShortAssessMax(int32_t value)
+{
+    shortAssessMax_ = value;
+    shortAssessMaxIsSet_ = true;
+}
+
+bool ShowTenantDurationCfgResponse::shortAssessMaxIsSet() const
+{
+    return shortAssessMaxIsSet_;
+}
+
+void ShowTenantDurationCfgResponse::unsetshortAssessMax()
+{
+    shortAssessMaxIsSet_ = false;
 }
 
 }

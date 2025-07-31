@@ -1,3 +1,214 @@
+# 3.1.147 2025-07-31
+
+### HuaweiCloud SDK CFW
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持以下接口：
+    - `ShowCustomerIpsInfo`
+    - `UpdateCustomerIps`
+    - `ShowTrafficTrend`
+    - `ShowAccessTop`
+    - `ListAttackStatistic`
+    - `ShowAttackTrend`
+    - `ShowAttackTotal`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK DBSS
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **SetAlarmTopicConfigInfo**
+    - 响应参数变更
+      - `- is_use_topic`
+
+### HuaweiCloud SDK DRS
+
+- _接口版本_
+  - V5
+- _新增特性_
+  - 支持接口`ShowCompareProgress`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK EIP
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListPublicips**
+    - 响应参数变更
+      - `+ publicips.tags`
+  - **ShowPublicip**
+    - 响应参数变更
+      - `+ publicip.tags`
+
+### HuaweiCloud SDK IMS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持以下接口：
+    - `ExportImageInSafeMode`
+    - `CreateDataImageInSafeMode`
+    - `CreateImageInSafeMode`
+    - `ImportImageQuickInSafeMode`
+    - `CopyImageInRegionInSafeMode`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **BatchAddMembers**
+    - 请求参数变更
+      - `+ domains`
+      - `+ organizations`
+  - **BatchDeleteMembers**
+    - 请求参数变更
+      - `+ domains`
+      - `+ organizations`
+  - **GlanceShowImageMember**
+    - 响应参数变更
+      - `+ member_type`
+      - `+ urn`
+  - **GlanceUpdateImageMember**
+    - 响应参数变更
+      - `+ member_type`
+      - `+ urn`
+  - **GlanceAddImageMember**
+    - 响应参数变更
+      - `+ member_type`
+      - `+ urn`
+  - **GlanceListImageMembers**
+    - 响应参数变更
+      - `+ members.member_type`
+      - `+ members.urn`
+
+### HuaweiCloud SDK Live
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持接口`CreateStreamForbiddenOnce`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK MetaStudio
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持以下接口：
+    - `ListTtscVocabularyGroups`
+    - `CreateTtscVocabularyGroups`
+    - `UpdateTtscVocabularyGroups`
+    - `DeleteTtscVocabularyGroups`
+    - `SetTtscGroupAssets`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **SaveTtscVocabularyConfigs**
+    - 请求参数变更
+      - `+ group_id`
+  - **ShowTenantDurationCfg**
+    - 响应参数变更
+      - `+ short_assess_min`
+      - `+ short_assess_max`
+  - **SetJobBatchName**
+    - 请求参数变更
+      - `+ X-App-UserId`
+  - **CreateTtscVocabularyConfigs**
+    - 请求参数变更
+      - `+ group_id`
+  - **ListTtscVocabularyConfigs**
+    - 请求参数变更
+      - `+ group_id`
+      - `+ asset_id`
+    - 响应参数变更
+      - `+ data.group_id`
+  - **CreateTrainingBasicJob**
+    - 请求参数变更
+      - `+ is_ondemand_resource`
+      - `+ supported_service`
+      - `+ tag: enum value [LIVE,EDUCATION,CUSTOMER,STORYTELLING]`
+  - **CreateTrainingMiddleJob**
+    - 请求参数变更
+      - `+ is_ondemand_resource`
+      - `+ supported_service`
+      - `+ tag: enum value [LIVE,EDUCATION,CUSTOMER,STORYTELLING]`
+  - **CreateTrainingAdvanceJob**
+    - 请求参数变更
+      - `+ is_ondemand_resource`
+      - `+ supported_service`
+      - `+ tag: enum value [LIVE,EDUCATION,CUSTOMER,STORYTELLING]`
+  - **CommitVoiceTrainingJob**
+    - 请求参数变更
+      - `+ tag: enum value [LIVE,EDUCATION,CUSTOMER,STORYTELLING]`
+  - **ShowVoiceTrainingJob**
+    - 响应参数变更
+      - `+ assess_result`
+      - `+ is_ondemand_resource`
+      - `+ tag: enum value [LIVE,EDUCATION,CUSTOMER,STORYTELLING]`
+      - `+ allocated_resource.charge_mode: enum value [ON_DEMAND]`
+  - **ListJobOperationLog**
+    - 响应参数变更
+      - `+ operations.external_info.algorithm_failure_reason`
+  - **ShowAsset**
+    - 响应参数变更
+      - `+ auto_operation_config`
+      - `+ block_reason_code`
+      - `+ system_properties.key: enum value [IS_CONTROLLED,LIVE_IS_AUTHORIZED,VIDEO_IS_AUTHORIZED,CHAT_IS_AUTHORIZED]`
+      - `+ files.block_reason_code`
+  - **UpdateDigitalAsset**
+    - 请求参数变更
+      - `+ auto_operation_config`
+      - `+ system_properties.key: enum value [IS_CONTROLLED,LIVE_IS_AUTHORIZED,VIDEO_IS_AUTHORIZED,CHAT_IS_AUTHORIZED]`
+    - 响应参数变更
+      - `+ auto_operation_config`
+      - `+ block_reason_code`
+      - `+ system_properties.key: enum value [IS_CONTROLLED,LIVE_IS_AUTHORIZED,VIDEO_IS_AUTHORIZED,CHAT_IS_AUTHORIZED]`
+      - `+ files.block_reason_code`
+  - **ListVoiceTrainingJob**
+    - 请求参数变更
+      - `+ is_ondemand_resource`
+    - 响应参数变更
+      - `+ assess_result`
+      - `+ is_ondemand_resource`
+      - `+ jobs.assess_result`
+      - `+ jobs.is_ondemand_resource`
+      - `+ jobs.tag: enum value [LIVE,EDUCATION,CUSTOMER,STORYTELLING]`
+      - `+ jobs.allocated_resource.charge_mode: enum value [ON_DEMAND]`
+  - **CreateDigitalAsset**
+    - 请求参数变更
+      - `+ auto_operation_config`
+      - `+ system_properties.key: enum value [IS_CONTROLLED,LIVE_IS_AUTHORIZED,VIDEO_IS_AUTHORIZED,CHAT_IS_AUTHORIZED]`
+  - **ListAssets**
+    - 请求参数变更
+      - `- project_group_id`
+      - `+ asset_source: enum value [GROUP_CUSTOMIZATION]`
+    - 响应参数变更
+      - `+ auto_operation_config`
+      - `+ block_reason_code`
+      - `+ assets.block_reason_code`
+      - `+ assets.auto_operation_config`
+      - `+ assets.system_properties.key: enum value [IS_CONTROLLED,LIVE_IS_AUTHORIZED,VIDEO_IS_AUTHORIZED,CHAT_IS_AUTHORIZED]`
+      - `+ assets.files.block_reason_code`
+
 # 3.1.146 2025-07-24
 
 ### HuaweiCloud SDK DBSS

@@ -30,7 +30,8 @@ EpsClient::~EpsClient()
 
 ClientBuilder<EpsClient> EpsClient::newBuilder()
 {
-    return ClientBuilder<EpsClient>("BasicCredentials");
+    ClientBuilder<EpsClient> client = ClientBuilder<EpsClient>("BasicCredentials");
+    return client;
 }
 std::shared_ptr<CreateEnterpriseProjectResponse> EpsClient::createEnterpriseProject(CreateEnterpriseProjectRequest &request)
 {

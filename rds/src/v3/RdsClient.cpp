@@ -30,7 +30,8 @@ RdsClient::~RdsClient()
 
 ClientBuilder<RdsClient> RdsClient::newBuilder()
 {
-    return ClientBuilder<RdsClient>("BasicCredentials");
+    ClientBuilder<RdsClient> client = ClientBuilder<RdsClient>("BasicCredentials");
+    return client;
 }
 std::shared_ptr<AddPostgresqlHbaConfResponse> RdsClient::addPostgresqlHbaConf(AddPostgresqlHbaConfRequest &request)
 {

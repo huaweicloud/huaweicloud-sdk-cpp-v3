@@ -9,6 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/metastudio/v1/model/AutoOperationConfig.h>
 #include <huaweicloud/metastudio/v1/model/SupportedServiceEnum.h>
 #include <huaweicloud/metastudio/v1/model/AssetSharedConfig.h>
 #include <string>
@@ -143,6 +144,15 @@ public:
     void unsetsupportedService();
     void setSupportedService(const std::vector<SupportedServiceEnum>& value);
 
+    /// <summary>
+    /// 资产自动处理任务。
+    /// </summary>
+
+    std::vector<AutoOperationConfig>& getAutoOperationConfig();
+    bool autoOperationConfigIsSet() const;
+    void unsetautoOperationConfig();
+    void setAutoOperationConfig(const std::vector<AutoOperationConfig>& value);
+
 
 protected:
     std::string assetName_;
@@ -167,6 +177,8 @@ protected:
     bool assetOrderIsSet_;
     std::vector<SupportedServiceEnum> supportedService_;
     bool supportedServiceIsSet_;
+    std::vector<AutoOperationConfig> autoOperationConfig_;
+    bool autoOperationConfigIsSet_;
 
 };
 

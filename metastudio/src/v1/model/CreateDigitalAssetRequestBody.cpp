@@ -28,6 +28,7 @@ CreateDigitalAssetRequestBody::CreateDigitalAssetRequestBody()
     assetOrder_ = 0;
     assetOrderIsSet_ = false;
     supportedServiceIsSet_ = false;
+    autoOperationConfigIsSet_ = false;
 }
 
 CreateDigitalAssetRequestBody::~CreateDigitalAssetRequestBody() = default;
@@ -72,6 +73,9 @@ web::json::value CreateDigitalAssetRequestBody::toJson() const
     }
     if(supportedServiceIsSet_) {
         val[utility::conversions::to_string_t("supported_service")] = ModelBase::toJson(supportedService_);
+    }
+    if(autoOperationConfigIsSet_) {
+        val[utility::conversions::to_string_t("auto_operation_config")] = ModelBase::toJson(autoOperationConfig_);
     }
 
     return val;
@@ -177,6 +181,15 @@ bool CreateDigitalAssetRequestBody::fromJson(const web::json::value& val)
             std::vector<SupportedServiceEnum> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSupportedService(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("auto_operation_config"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("auto_operation_config"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<AutoOperationConfig> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAutoOperationConfig(refVal);
         }
     }
     return ok;
@@ -412,6 +425,27 @@ bool CreateDigitalAssetRequestBody::supportedServiceIsSet() const
 void CreateDigitalAssetRequestBody::unsetsupportedService()
 {
     supportedServiceIsSet_ = false;
+}
+
+std::vector<AutoOperationConfig>& CreateDigitalAssetRequestBody::getAutoOperationConfig()
+{
+    return autoOperationConfig_;
+}
+
+void CreateDigitalAssetRequestBody::setAutoOperationConfig(const std::vector<AutoOperationConfig>& value)
+{
+    autoOperationConfig_ = value;
+    autoOperationConfigIsSet_ = true;
+}
+
+bool CreateDigitalAssetRequestBody::autoOperationConfigIsSet() const
+{
+    return autoOperationConfigIsSet_;
+}
+
+void CreateDigitalAssetRequestBody::unsetautoOperationConfig()
+{
+    autoOperationConfigIsSet_ = false;
 }
 
 }

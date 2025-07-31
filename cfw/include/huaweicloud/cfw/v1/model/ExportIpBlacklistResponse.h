@@ -60,15 +60,6 @@ public:
     /// 
     /// </summary>
 
-    int32_t getContentLength() const;
-    bool contentLengthIsSet() const;
-    void unsetcontentLength();
-    void setContentLength(int32_t value);
-
-    /// <summary>
-    /// 
-    /// </summary>
-
     std::string getContentType() const;
     bool contentTypeIsSet() const;
     void unsetcontentType();
@@ -80,8 +71,6 @@ protected:
     bool bodyIsSet_;
     std::string contentDisposition_;
     bool contentDispositionIsSet_;
-    int32_t contentLength_;
-    bool contentLengthIsSet_;
     std::string contentType_;
     bool contentTypeIsSet_;
 

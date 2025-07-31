@@ -53,6 +53,9 @@ ShowVoiceTrainingJobResponse::ShowVoiceTrainingJobResponse()
     outputLanguageIsSet_ = false;
     isRemake_ = false;
     isRemakeIsSet_ = false;
+    assessResultIsSet_ = false;
+    isOndemandResource_ = false;
+    isOndemandResourceIsSet_ = false;
 }
 
 ShowVoiceTrainingJobResponse::~ShowVoiceTrainingJobResponse() = default;
@@ -133,6 +136,12 @@ web::json::value ShowVoiceTrainingJobResponse::toJson() const
     }
     if(isRemakeIsSet_) {
         val[utility::conversions::to_string_t("is_remake")] = ModelBase::toJson(isRemake_);
+    }
+    if(assessResultIsSet_) {
+        val[utility::conversions::to_string_t("assess_result")] = ModelBase::toJson(assessResult_);
+    }
+    if(isOndemandResourceIsSet_) {
+        val[utility::conversions::to_string_t("is_ondemand_resource")] = ModelBase::toJson(isOndemandResource_);
     }
 
     return val;
@@ -346,6 +355,24 @@ bool ShowVoiceTrainingJobResponse::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsRemake(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("assess_result"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("assess_result"));
+        if(!fieldValue.is_null())
+        {
+            AssessResult refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAssessResult(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_ondemand_resource"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_ondemand_resource"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsOndemandResource(refVal);
         }
     }
     return ok;
@@ -833,6 +860,48 @@ bool ShowVoiceTrainingJobResponse::isRemakeIsSet() const
 void ShowVoiceTrainingJobResponse::unsetisRemake()
 {
     isRemakeIsSet_ = false;
+}
+
+AssessResult ShowVoiceTrainingJobResponse::getAssessResult() const
+{
+    return assessResult_;
+}
+
+void ShowVoiceTrainingJobResponse::setAssessResult(const AssessResult& value)
+{
+    assessResult_ = value;
+    assessResultIsSet_ = true;
+}
+
+bool ShowVoiceTrainingJobResponse::assessResultIsSet() const
+{
+    return assessResultIsSet_;
+}
+
+void ShowVoiceTrainingJobResponse::unsetassessResult()
+{
+    assessResultIsSet_ = false;
+}
+
+bool ShowVoiceTrainingJobResponse::isIsOndemandResource() const
+{
+    return isOndemandResource_;
+}
+
+void ShowVoiceTrainingJobResponse::setIsOndemandResource(bool value)
+{
+    isOndemandResource_ = value;
+    isOndemandResourceIsSet_ = true;
+}
+
+bool ShowVoiceTrainingJobResponse::isOndemandResourceIsSet() const
+{
+    return isOndemandResourceIsSet_;
+}
+
+void ShowVoiceTrainingJobResponse::unsetisOndemandResource()
+{
+    isOndemandResourceIsSet_ = false;
 }
 
 }

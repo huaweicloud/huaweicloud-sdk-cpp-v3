@@ -30,7 +30,8 @@ AntiDDoSClient::~AntiDDoSClient()
 
 ClientBuilder<AntiDDoSClient> AntiDDoSClient::newBuilder()
 {
-    return ClientBuilder<AntiDDoSClient>("BasicCredentials");
+    ClientBuilder<AntiDDoSClient> client = ClientBuilder<AntiDDoSClient>("BasicCredentials");
+    return client;
 }
 std::shared_ptr<CreateDefaultConfigResponse> AntiDDoSClient::createDefaultConfig(CreateDefaultConfigRequest &request)
 {

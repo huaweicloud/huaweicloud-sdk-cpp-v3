@@ -23,6 +23,7 @@ public:
     static HttpRequestDef genRequestDefForCreateScheduleRecordTasks();
     static HttpRequestDef genRequestDefForCreateSnapshotConfig();
     static HttpRequestDef genRequestDefForCreateStreamForbidden();
+    static HttpRequestDef genRequestDefForCreateStreamForbiddenOnce();
     static HttpRequestDef genRequestDefForCreateTranscodingsTemplate();
     static HttpRequestDef genRequestDefForCreateUrlAuthchain();
     static HttpRequestDef genRequestDefForDeleteDomain();

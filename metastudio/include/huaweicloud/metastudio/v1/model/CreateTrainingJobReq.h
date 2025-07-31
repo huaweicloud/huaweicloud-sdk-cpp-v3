@@ -10,7 +10,9 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/metastudio/v1/model/JobTag.h>
+#include <huaweicloud/metastudio/v1/model/SupportedServiceEnum.h>
 #include <string>
+#include <vector>
 #include <huaweicloud/metastudio/v1/model/CreateType.h>
 
 namespace HuaweiCloud {
@@ -139,6 +141,24 @@ public:
     void unsetcustomText();
     void setCustomText(const std::string& value);
 
+    /// <summary>
+    /// 是否使用按需资源
+    /// </summary>
+
+    bool isIsOndemandResource() const;
+    bool isOndemandResourceIsSet() const;
+    void unsetisOndemandResource();
+    void setIsOndemandResource(bool value);
+
+    /// <summary>
+    /// 支持的业务类型。： * VIDEO_2D：分身数字人视频制作 * LIVE_2D：分身数字人直播 * CHAT_2D：分身数字人智能交互
+    /// </summary>
+
+    std::vector<SupportedServiceEnum>& getSupportedService();
+    bool supportedServiceIsSet() const;
+    void unsetsupportedService();
+    void setSupportedService(const std::vector<SupportedServiceEnum>& value);
+
 
 protected:
     JobTag tag_;
@@ -163,6 +183,10 @@ protected:
     bool outputLanguageIsSet_;
     std::string customText_;
     bool customTextIsSet_;
+    bool isOndemandResource_;
+    bool isOndemandResourceIsSet_;
+    std::vector<SupportedServiceEnum> supportedService_;
+    bool supportedServiceIsSet_;
 
 };
 

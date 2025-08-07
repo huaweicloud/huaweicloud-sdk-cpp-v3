@@ -1,3 +1,76 @@
+# 3.1.148 2025-08-07
+
+### HuaweiCloud SDK EPS
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持以下接口：
+    - `ListMigrationRecord`
+    - `ListResourceMapping`
+    - `ShowEpConfigs`
+    - `ShowAssociatedResources`
+    - `DeleteEnterpriseProject`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK Organizations
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持接口`CreateResourceAccount`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateAccount**
+    - 响应参数变更
+      - `+ create_account_status.failure_detail_msg`
+  - **ListCreateAccountStatuses**
+    - 响应参数变更
+      - `+ create_account_statuses.failure_detail_msg`
+  - **ShowCreateAccountStatus**
+    - 响应参数变更
+      - `+ create_account_status.failure_detail_msg`
+
+### HuaweiCloud SDK RAM
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持接口`SearchDistinctSharedResources`、`SearchDistinctPrincipals`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK RDS
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持以下接口：
+    - `ListScheduleTasks`
+    - `ListTasks`
+    - `ListBusinessPartners`
+    - `ListMarketplaceEngineProducts`
+    - `ResetViewSqlStatistics`
+    - `ListSqlStatistics`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **StartInstanceRestartAction**
+    - 请求参数变更
+      - `+ restart.restart_server`
+      - `+ restart.forcible`
+      - `+ restart.delay`
+      - `* restart: object -> object<RestartConfiguration>`
+  - **ListBackupTransfers**
+    - 响应参数变更
+      - `+ transfer_list.type`
+
 # 3.1.147 2025-07-31
 
 ### HuaweiCloud SDK CFW

@@ -38,11 +38,17 @@
 #include <huaweicloud/ram/v1/model/ShowPermissionResponse.h>
 #include <string>
 
+#include <huaweicloud/ram/v1/model/SearchDistinctPrincipalsRequest.h>
+#include <huaweicloud/ram/v1/model/SearchDistinctPrincipalsResponse.h>
+#include <huaweicloud/ram/v1/model/SearchDistinctSharedPrincipalsReqBody.h>
 #include <huaweicloud/ram/v1/model/SearchSharedPrincipalsReqBody.h>
 #include <huaweicloud/ram/v1/model/SearchSharedPrincipalsRequest.h>
 #include <huaweicloud/ram/v1/model/SearchSharedPrincipalsResponse.h>
 #include <string>
 
+#include <huaweicloud/ram/v1/model/SearchDistinctSharedResourcesReqBody.h>
+#include <huaweicloud/ram/v1/model/SearchDistinctSharedResourcesRequest.h>
+#include <huaweicloud/ram/v1/model/SearchDistinctSharedResourcesResponse.h>
 #include <huaweicloud/ram/v1/model/SearchSharedResourcesReqBody.h>
 #include <huaweicloud/ram/v1/model/SearchSharedResourcesRequest.h>
 #include <huaweicloud/ram/v1/model/SearchSharedResourcesResponse.h>
@@ -211,6 +217,14 @@ public:
         ShowPermissionRequest &request
     );
 
+    // 检索资源使用者并去除其中的重复项
+    //
+    // 检索您正在共享资源的不同使用者或被共享资源给您的不同使用者并去除其中的重复项。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SearchDistinctPrincipalsResponse> searchDistinctPrincipals(
+        SearchDistinctPrincipalsRequest &request
+    );
     // 检索资源使用者
     //
     // 检索共享资源的使用者。
@@ -220,6 +234,14 @@ public:
         SearchSharedPrincipalsRequest &request
     );
 
+    // 检索共享的资源并去除其中的重复项
+    //
+    // 检索您添加到资源共享或被共享给您的不同资源并去除其中的重复项。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SearchDistinctSharedResourcesResponse> searchDistinctSharedResources(
+        SearchDistinctSharedResourcesRequest &request
+    );
     // 检索共享的资源
     //
     // 检索您共享的或共享给您的资源。

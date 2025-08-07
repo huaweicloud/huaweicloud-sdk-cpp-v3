@@ -39,7 +39,7 @@ bool InstanceRestartRequsetBody::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("restart"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            RestartConfiguration refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRestart(refVal);
         }
@@ -48,12 +48,12 @@ bool InstanceRestartRequsetBody::fromJson(const web::json::value& val)
 }
 
 
-Object InstanceRestartRequsetBody::getRestart() const
+RestartConfiguration InstanceRestartRequsetBody::getRestart() const
 {
     return restart_;
 }
 
-void InstanceRestartRequsetBody::setRestart(const Object& value)
+void InstanceRestartRequsetBody::setRestart(const RestartConfiguration& value)
 {
     restart_ = value;
     restartIsSet_ = true;

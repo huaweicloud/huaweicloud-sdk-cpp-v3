@@ -74,6 +74,36 @@ std::shared_ptr<CreateEnterpriseProjectResponse> EpsClient::createEnterpriseProj
 
     return localVarResult;
 }
+std::shared_ptr<DeleteEnterpriseProjectResponse> EpsClient::deleteEnterpriseProject(DeleteEnterpriseProjectRequest &request)
+{
+    std::string localVarPath = "/v1.0/enterprise-projects/{enterprise_project_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["enterprise_project_id"] = parameterToString(request.getEnterpriseProjectId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EpsMeta::genRequestDefForDeleteEnterpriseProject());
+
+    std::shared_ptr<DeleteEnterpriseProjectResponse> localVarResult = std::make_shared<DeleteEnterpriseProjectResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<DisableEnterpriseProjectResponse> EpsClient::disableEnterpriseProject(DisableEnterpriseProjectRequest &request)
 {
     std::string localVarPath = "/v1.0/enterprise-projects/{enterprise_project_id}/action";
@@ -237,6 +267,50 @@ std::shared_ptr<ListEnterpriseProjectResponse> EpsClient::listEnterpriseProject(
 
     return localVarResult;
 }
+std::shared_ptr<ListMigrationRecordResponse> EpsClient::listMigrationRecord(ListMigrationRecordRequest &request)
+{
+    std::string localVarPath = "/v1.0/enterprise-projects/migrate-record/list";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.startTimeIsSet()) {
+        localVarQueryParams["start_time"] = parameterToString(request.getStartTime());
+    }
+    if (request.endTimeIsSet()) {
+        localVarQueryParams["end_time"] = parameterToString(request.getEndTime());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.resourceIdIsSet()) {
+        localVarQueryParams["resource_id"] = parameterToString(request.getResourceId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EpsMeta::genRequestDefForListMigrationRecord());
+
+    std::shared_ptr<ListMigrationRecordResponse> localVarResult = std::make_shared<ListMigrationRecordResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListProvidersResponse> EpsClient::listProviders(ListProvidersRequest &request)
 {
     std::string localVarPath = "/v1.0/enterprise-projects/providers";
@@ -272,6 +346,35 @@ std::shared_ptr<ListProvidersResponse> EpsClient::listProviders(ListProvidersReq
         localVarHeaderParams, localVarHttpBody, EpsMeta::genRequestDefForListProviders());
 
     std::shared_ptr<ListProvidersResponse> localVarResult = std::make_shared<ListProvidersResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListResourceMappingResponse> EpsClient::listResourceMapping(ListResourceMappingRequest &request)
+{
+    std::string localVarPath = "/v1.0/enterprise-projects/resources-mapping";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EpsMeta::genRequestDefForListResourceMapping());
+
+    std::shared_ptr<ListResourceMappingResponse> localVarResult = std::make_shared<ListResourceMappingResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -350,6 +453,45 @@ std::shared_ptr<ShowApiVersionResponse> EpsClient::showApiVersion(ShowApiVersion
 
     return localVarResult;
 }
+std::shared_ptr<ShowAssociatedResourcesResponse> EpsClient::showAssociatedResources(ShowAssociatedResourcesRequest &request)
+{
+    std::string localVarPath = "/v1.0/associated-resources/{resource_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["resource_id"] = parameterToString(request.getResourceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.projectIdIsSet()) {
+        localVarQueryParams["project_id"] = parameterToString(request.getProjectId());
+    }
+    if (request.regionIdIsSet()) {
+        localVarQueryParams["region_id"] = parameterToString(request.getRegionId());
+    }
+    if (request.resourceTypeIsSet()) {
+        localVarQueryParams["resource_type"] = parameterToString(request.getResourceType());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EpsMeta::genRequestDefForShowAssociatedResources());
+
+    std::shared_ptr<ShowAssociatedResourcesResponse> localVarResult = std::make_shared<ShowAssociatedResourcesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowEnterpriseProjectResponse> EpsClient::showEnterpriseProject(ShowEnterpriseProjectRequest &request)
 {
     std::string localVarPath = "/v1.0/enterprise-projects/{enterprise_project_id}";
@@ -403,6 +545,35 @@ std::shared_ptr<ShowEnterpriseProjectQuotaResponse> EpsClient::showEnterprisePro
         localVarHeaderParams, localVarHttpBody, EpsMeta::genRequestDefForShowEnterpriseProjectQuota());
 
     std::shared_ptr<ShowEnterpriseProjectQuotaResponse> localVarResult = std::make_shared<ShowEnterpriseProjectQuotaResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowEpConfigsResponse> EpsClient::showEpConfigs(ShowEpConfigsRequest &request)
+{
+    std::string localVarPath = "/v1/enterprise-projects/configs";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, EpsMeta::genRequestDefForShowEpConfigs());
+
+    std::shared_ptr<ShowEpConfigsResponse> localVarResult = std::make_shared<ShowEpConfigsResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

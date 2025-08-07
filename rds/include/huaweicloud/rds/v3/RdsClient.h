@@ -191,6 +191,8 @@
 #include <huaweicloud/rds/v3/model/ListRecycleInstancesResponse.h>
 #include <huaweicloud/rds/v3/model/ListRestoreTimesRequest.h>
 #include <huaweicloud/rds/v3/model/ListRestoreTimesResponse.h>
+#include <huaweicloud/rds/v3/model/ListScheduleTasksRequest.h>
+#include <huaweicloud/rds/v3/model/ListScheduleTasksResponse.h>
 #include <huaweicloud/rds/v3/model/ListShareBackupsRequest.h>
 #include <huaweicloud/rds/v3/model/ListShareBackupsResponse.h>
 #include <huaweicloud/rds/v3/model/ListSimplifiedInstancesRequest.h>
@@ -213,6 +215,8 @@
 #include <huaweicloud/rds/v3/model/ListSslCertDownloadLinkResponse.h>
 #include <huaweicloud/rds/v3/model/ListStorageTypesRequest.h>
 #include <huaweicloud/rds/v3/model/ListStorageTypesResponse.h>
+#include <huaweicloud/rds/v3/model/ListTasksRequest.h>
+#include <huaweicloud/rds/v3/model/ListTasksResponse.h>
 #include <huaweicloud/rds/v3/model/ListUpdateBackupEnhancePolicyRequest.h>
 #include <huaweicloud/rds/v3/model/ListUpdateBackupEnhancePolicyResponse.h>
 #include <huaweicloud/rds/v3/model/ListUpgradeHistoriesRequest.h>
@@ -594,6 +598,10 @@
 #include <huaweicloud/rds/v3/model/ErrorResponse.h>
 #include <huaweicloud/rds/v3/model/ListAuthorizedSqlserverDbUsersRequest.h>
 #include <huaweicloud/rds/v3/model/ListAuthorizedSqlserverDbUsersResponse.h>
+#include <huaweicloud/rds/v3/model/ListBusinessPartnersRequest.h>
+#include <huaweicloud/rds/v3/model/ListBusinessPartnersResponse.h>
+#include <huaweicloud/rds/v3/model/ListMarketplaceEngineProductsRequest.h>
+#include <huaweicloud/rds/v3/model/ListMarketplaceEngineProductsResponse.h>
 #include <huaweicloud/rds/v3/model/ListMsdtcHostsRequest.h>
 #include <huaweicloud/rds/v3/model/ListMsdtcHostsResponse.h>
 #include <huaweicloud/rds/v3/model/ListSqlserverDatabasesRequest.h>
@@ -614,6 +622,12 @@
 #include <huaweicloud/rds/v3/model/SqlserverRevokeRequest.h>
 #include <huaweicloud/rds/v3/model/SqlserverUserForCreation.h>
 #include <huaweicloud/rds/v3/model/UpdateDBShrinkRequestBody.h>
+#include <string>
+
+#include <huaweicloud/rds/v3/model/ListSqlStatisticsRequest.h>
+#include <huaweicloud/rds/v3/model/ListSqlStatisticsResponse.h>
+#include <huaweicloud/rds/v3/model/ResetViewSqlStatisticsRequest.h>
+#include <huaweicloud/rds/v3/model/ResetViewSqlStatisticsResponse.h>
 #include <string>
 
 #include <cpprest/details/basic_types.h>
@@ -1227,6 +1241,14 @@ public:
     std::shared_ptr<ListRestoreTimesResponse> listRestoreTimes(
         ListRestoreTimesRequest &request
     );
+    // 查询定时任务列表
+    //
+    // 查询定时任务列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListScheduleTasksResponse> listScheduleTasks(
+        ListScheduleTasksRequest &request
+    );
     // 查询共享备份列表
     //
     // 查询共享备份列表
@@ -1315,6 +1337,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListStorageTypesResponse> listStorageTypes(
         ListStorageTypesRequest &request
+    );
+    // 查询及时任务列表
+    //
+    // 查询及时任务列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListTasksResponse> listTasks(
+        ListTasksRequest &request
     );
     // 查询高级备份策略
     //
@@ -2491,6 +2521,22 @@ public:
     std::shared_ptr<ListAuthorizedSqlserverDbUsersResponse> listAuthorizedSqlserverDbUsers(
         ListAuthorizedSqlserverDbUsersRequest &request
     );
+    // 查询云市场服务商列表
+    //
+    // 查询云市场服务商列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListBusinessPartnersResponse> listBusinessPartners(
+        ListBusinessPartnersRequest &request
+    );
+    // 查询云市场引擎商品列表
+    //
+    // 查询云市场引擎商品列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListMarketplaceEngineProductsResponse> listMarketplaceEngineProducts(
+        ListMarketplaceEngineProductsRequest &request
+    );
     // 查询MSDTC的hosts信息
     //
     // 查询MSDTC的hosts信息
@@ -2546,6 +2592,23 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<SetInstancesNewDbShrinkResponse> setInstancesNewDbShrink(
         SetInstancesNewDbShrinkRequest &request
+    );
+
+    // 查询sql统计列表
+    //
+    // 查询sql统计列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListSqlStatisticsResponse> listSqlStatistics(
+        ListSqlStatisticsRequest &request
+    );
+    // sql统计视图重置
+    //
+    // sql统计视图重置
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ResetViewSqlStatisticsResponse> resetViewSqlStatistics(
+        ResetViewSqlStatisticsRequest &request
     );
 
 

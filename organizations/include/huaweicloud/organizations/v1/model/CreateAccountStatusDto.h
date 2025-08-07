@@ -11,6 +11,7 @@
 
 #include <string>
 #include <cpprest/details/basic_types.h>
+#include <huaweicloud/organizations/v1/model/CreateAccountStatusDto_failure_detail_msg.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -102,6 +103,15 @@ public:
     void unsetfailureReason();
     void setFailureReason(const std::string& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    CreateAccountStatusDto_failure_detail_msg getFailureDetailMsg() const;
+    bool failureDetailMsgIsSet() const;
+    void unsetfailureDetailMsg();
+    void setFailureDetailMsg(const CreateAccountStatusDto_failure_detail_msg& value);
+
 
 protected:
     std::string accountId_;
@@ -118,6 +128,8 @@ protected:
     bool stateIsSet_;
     std::string failureReason_;
     bool failureReasonIsSet_;
+    CreateAccountStatusDto_failure_detail_msg failureDetailMsg_;
+    bool failureDetailMsgIsSet_;
 
 };
 

@@ -3068,6 +3068,56 @@ std::shared_ptr<ListRestoreTimesResponse> RdsClient::listRestoreTimes(ListRestor
 
     return localVarResult;
 }
+std::shared_ptr<ListScheduleTasksResponse> RdsClient::listScheduleTasks(ListScheduleTasksRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/schedule-tasks";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.instanceIdIsSet()) {
+        localVarQueryParams["instance_id"] = parameterToString(request.getInstanceId());
+    }
+    if (request.instanceNameIsSet()) {
+        localVarQueryParams["instance_name"] = parameterToString(request.getInstanceName());
+    }
+    if (request.statusIsSet()) {
+        localVarQueryParams["status"] = parameterToString(request.getStatus());
+    }
+    if (request.startTimeIsSet()) {
+        localVarQueryParams["start_time"] = parameterToString(request.getStartTime());
+    }
+    if (request.endTimeIsSet()) {
+        localVarQueryParams["end_time"] = parameterToString(request.getEndTime());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, RdsMeta::genRequestDefForListScheduleTasks());
+
+    std::shared_ptr<ListScheduleTasksResponse> localVarResult = std::make_shared<ListScheduleTasksResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListShareBackupsResponse> RdsClient::listShareBackups(ListShareBackupsRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/share-backups";
@@ -3537,6 +3587,62 @@ std::shared_ptr<ListStorageTypesResponse> RdsClient::listStorageTypes(ListStorag
         localVarHeaderParams, localVarHttpBody, RdsMeta::genRequestDefForListStorageTypes());
 
     std::shared_ptr<ListStorageTypesResponse> localVarResult = std::make_shared<ListStorageTypesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListTasksResponse> RdsClient::listTasks(ListTasksRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/tasklist";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.idIsSet()) {
+        localVarQueryParams["id"] = parameterToString(request.getId());
+    }
+    if (request.instanceIdIsSet()) {
+        localVarQueryParams["instance_id"] = parameterToString(request.getInstanceId());
+    }
+    if (request.orderIdIsSet()) {
+        localVarQueryParams["order_id"] = parameterToString(request.getOrderId());
+    }
+    if (request.nameIsSet()) {
+        localVarQueryParams["name"] = parameterToString(request.getName());
+    }
+    if (request.statusIsSet()) {
+        localVarQueryParams["status"] = parameterToString(request.getStatus());
+    }
+    if (request.startTimeIsSet()) {
+        localVarQueryParams["start_time"] = parameterToString(request.getStartTime());
+    }
+    if (request.endTimeIsSet()) {
+        localVarQueryParams["end_time"] = parameterToString(request.getEndTime());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, RdsMeta::genRequestDefForListTasks());
+
+    std::shared_ptr<ListTasksResponse> localVarResult = std::make_shared<ListTasksResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -9414,6 +9520,86 @@ std::shared_ptr<ListAuthorizedSqlserverDbUsersResponse> RdsClient::listAuthorize
 
     return localVarResult;
 }
+std::shared_ptr<ListBusinessPartnersResponse> RdsClient::listBusinessPartners(ListBusinessPartnersRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/business-partners";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, RdsMeta::genRequestDefForListBusinessPartners());
+
+    std::shared_ptr<ListBusinessPartnersResponse> localVarResult = std::make_shared<ListBusinessPartnersResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListMarketplaceEngineProductsResponse> RdsClient::listMarketplaceEngineProducts(ListMarketplaceEngineProductsRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/business-partner/{bp_domain_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["bp_domain_id"] = parameterToString(request.getBpDomainId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.engineIdIsSet()) {
+        localVarQueryParams["engine_id"] = parameterToString(request.getEngineId());
+    }
+    if (request.xLanguageIsSet()) {
+        localVarHeaderParams["X-Language"] = parameterToString(request.getXLanguage());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, RdsMeta::genRequestDefForListMarketplaceEngineProducts());
+
+    std::shared_ptr<ListMarketplaceEngineProductsResponse> localVarResult = std::make_shared<ListMarketplaceEngineProductsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListMsdtcHostsResponse> RdsClient::listMsdtcHosts(ListMsdtcHostsRequest &request)
 {
     std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/msdtc/hosts";
@@ -9705,6 +9891,72 @@ std::shared_ptr<SetInstancesNewDbShrinkResponse> RdsClient::setInstancesNewDbShr
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
+
+    return localVarResult;
+}
+std::shared_ptr<ListSqlStatisticsResponse> RdsClient::listSqlStatistics(ListSqlStatisticsRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/sql-statistics";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, RdsMeta::genRequestDefForListSqlStatistics());
+
+    std::shared_ptr<ListSqlStatisticsResponse> localVarResult = std::make_shared<ListSqlStatisticsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ResetViewSqlStatisticsResponse> RdsClient::resetViewSqlStatistics(ResetViewSqlStatisticsRequest &request)
+{
+    std::string localVarPath = "/v3/{project_id}/instances/{instance_id}/sql-statistics/reset";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, RdsMeta::genRequestDefForResetViewSqlStatistics());
+
+    std::shared_ptr<ResetViewSqlStatisticsResponse> localVarResult = std::make_shared<ResetViewSqlStatisticsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }

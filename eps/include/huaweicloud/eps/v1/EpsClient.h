@@ -8,6 +8,8 @@
 
 #include <huaweicloud/eps/v1/model/CreateEnterpriseProjectRequest.h>
 #include <huaweicloud/eps/v1/model/CreateEnterpriseProjectResponse.h>
+#include <huaweicloud/eps/v1/model/DeleteEnterpriseProjectRequest.h>
+#include <huaweicloud/eps/v1/model/DeleteEnterpriseProjectResponse.h>
 #include <huaweicloud/eps/v1/model/DisableAction.h>
 #include <huaweicloud/eps/v1/model/DisableEnterpriseProjectRequest.h>
 #include <huaweicloud/eps/v1/model/DisableEnterpriseProjectResponse.h>
@@ -19,18 +21,26 @@
 #include <huaweicloud/eps/v1/model/ListApiVersionsResponse.h>
 #include <huaweicloud/eps/v1/model/ListEnterpriseProjectRequest.h>
 #include <huaweicloud/eps/v1/model/ListEnterpriseProjectResponse.h>
+#include <huaweicloud/eps/v1/model/ListMigrationRecordRequest.h>
+#include <huaweicloud/eps/v1/model/ListMigrationRecordResponse.h>
 #include <huaweicloud/eps/v1/model/ListProvidersRequest.h>
 #include <huaweicloud/eps/v1/model/ListProvidersResponse.h>
+#include <huaweicloud/eps/v1/model/ListResourceMappingRequest.h>
+#include <huaweicloud/eps/v1/model/ListResourceMappingResponse.h>
 #include <huaweicloud/eps/v1/model/MigrateResource.h>
 #include <huaweicloud/eps/v1/model/MigrateResourceRequest.h>
 #include <huaweicloud/eps/v1/model/MigrateResourceResponse.h>
 #include <huaweicloud/eps/v1/model/ResqEpResouce.h>
 #include <huaweicloud/eps/v1/model/ShowApiVersionRequest.h>
 #include <huaweicloud/eps/v1/model/ShowApiVersionResponse.h>
+#include <huaweicloud/eps/v1/model/ShowAssociatedResourcesRequest.h>
+#include <huaweicloud/eps/v1/model/ShowAssociatedResourcesResponse.h>
 #include <huaweicloud/eps/v1/model/ShowEnterpriseProjectQuotaRequest.h>
 #include <huaweicloud/eps/v1/model/ShowEnterpriseProjectQuotaResponse.h>
 #include <huaweicloud/eps/v1/model/ShowEnterpriseProjectRequest.h>
 #include <huaweicloud/eps/v1/model/ShowEnterpriseProjectResponse.h>
+#include <huaweicloud/eps/v1/model/ShowEpConfigsRequest.h>
+#include <huaweicloud/eps/v1/model/ShowEpConfigsResponse.h>
 #include <huaweicloud/eps/v1/model/ShowResourceBindEnterpriseProjectRequest.h>
 #include <huaweicloud/eps/v1/model/ShowResourceBindEnterpriseProjectResponse.h>
 #include <huaweicloud/eps/v1/model/UpdateEnterpriseProjectRequest.h>
@@ -69,6 +79,14 @@ public:
     std::shared_ptr<CreateEnterpriseProjectResponse> createEnterpriseProject(
         CreateEnterpriseProjectRequest &request
     );
+    // 删除企业项目
+    //
+    // 删除企业项目
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteEnterpriseProjectResponse> deleteEnterpriseProject(
+        DeleteEnterpriseProjectRequest &request
+    );
     // 停用企业项目
     //
     // 停用企业项目。
@@ -101,6 +119,14 @@ public:
     std::shared_ptr<ListEnterpriseProjectResponse> listEnterpriseProject(
         ListEnterpriseProjectRequest &request
     );
+    // 查询资源迁移记录
+    //
+    // 查询资源迁移记录
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListMigrationRecordResponse> listMigrationRecord(
+        ListMigrationRecordRequest &request
+    );
     // 查询企业项目支持的服务
     //
     // 查询企业项目支持的服务
@@ -108,6 +134,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListProvidersResponse> listProviders(
         ListProvidersRequest &request
+    );
+    // 查询资源类型映射
+    //
+    // 查询资源类型映射
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListResourceMappingResponse> listResourceMapping(
+        ListResourceMappingRequest &request
     );
     // 迁移资源
     //
@@ -125,6 +159,14 @@ public:
     std::shared_ptr<ShowApiVersionResponse> showApiVersion(
         ShowApiVersionRequest &request
     );
+    // 查询关联资源
+    //
+    // 查询关联资源
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowAssociatedResourcesResponse> showAssociatedResources(
+        ShowAssociatedResourcesRequest &request
+    );
     // 查询企业项目详情
     //
     // 查询企业项目详情。
@@ -140,6 +182,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowEnterpriseProjectQuotaResponse> showEnterpriseProjectQuota(
         ShowEnterpriseProjectQuotaRequest &request
+    );
+    // 查询服务配置
+    //
+    // 查询服务配置
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowEpConfigsResponse> showEpConfigs(
+        ShowEpConfigsRequest &request
     );
     // 查询企业项目绑定的资源列表
     //

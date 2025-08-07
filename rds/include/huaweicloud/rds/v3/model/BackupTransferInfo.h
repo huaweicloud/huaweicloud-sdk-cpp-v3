@@ -155,6 +155,15 @@ public:
     void unsetprefix();
     void setPrefix(const std::string& value);
 
+    /// <summary>
+    /// 转储备份类型
+    /// </summary>
+
+    std::string getType() const;
+    bool typeIsSet() const;
+    void unsettype();
+    void setType(const std::string& value);
+
 
 protected:
     std::string id_;
@@ -183,6 +192,8 @@ protected:
     bool transferTypeIsSet_;
     std::string prefix_;
     bool prefixIsSet_;
+    std::string type_;
+    bool typeIsSet_;
 
 };
 

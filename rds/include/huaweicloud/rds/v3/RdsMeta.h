@@ -86,6 +86,7 @@ public:
     static HttpRequestDef genRequestDefForListReadOnlyReplayDatabase();
     static HttpRequestDef genRequestDefForListRecycleInstances();
     static HttpRequestDef genRequestDefForListRestoreTimes();
+    static HttpRequestDef genRequestDefForListScheduleTasks();
     static HttpRequestDef genRequestDefForListShareBackups();
     static HttpRequestDef genRequestDefForListSimplifiedInstances();
     static HttpRequestDef genRequestDefForListSlowLogFile();
@@ -97,6 +98,7 @@ public:
     static HttpRequestDef genRequestDefForListSqlLimit();
     static HttpRequestDef genRequestDefForListSslCertDownloadLink();
     static HttpRequestDef genRequestDefForListStorageTypes();
+    static HttpRequestDef genRequestDefForListTasks();
     static HttpRequestDef genRequestDefForListUpdateBackupEnhancePolicy();
     static HttpRequestDef genRequestDefForListUpgradeHistories();
     static HttpRequestDef genRequestDefForListVolumeInfo();
@@ -242,6 +244,8 @@ public:
     static HttpRequestDef genRequestDefForDeleteSqlserverDatabaseEx();
     static HttpRequestDef genRequestDefForDeleteSqlserverDbUser();
     static HttpRequestDef genRequestDefForListAuthorizedSqlserverDbUsers();
+    static HttpRequestDef genRequestDefForListBusinessPartners();
+    static HttpRequestDef genRequestDefForListMarketplaceEngineProducts();
     static HttpRequestDef genRequestDefForListMsdtcHosts();
     static HttpRequestDef genRequestDefForListSqlserverDatabases();
     static HttpRequestDef genRequestDefForListSqlserverDbUsers();
@@ -249,6 +253,8 @@ public:
     static HttpRequestDef genRequestDefForRevokeSqlserverDbUserPrivilege();
     static HttpRequestDef genRequestDefForSetInstancesDbShrink();
     static HttpRequestDef genRequestDefForSetInstancesNewDbShrink();
+    static HttpRequestDef genRequestDefForListSqlStatistics();
+    static HttpRequestDef genRequestDefForResetViewSqlStatistics();
 };
 
 }

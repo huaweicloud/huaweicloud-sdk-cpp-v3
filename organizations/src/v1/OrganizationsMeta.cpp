@@ -32,6 +32,20 @@ HttpRequestDef OrganizationsMeta::genRequestDefForCreateAccount() {
     return reqDefBuilder;
 }
 
+HttpRequestDef OrganizationsMeta::genRequestDefForCreateResourceAccount() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef OrganizationsMeta::genRequestDefForInviteAccount() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXSecurityToken;

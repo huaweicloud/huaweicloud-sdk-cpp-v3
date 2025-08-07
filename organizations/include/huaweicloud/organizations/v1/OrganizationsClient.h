@@ -11,6 +11,9 @@
 #include <huaweicloud/organizations/v1/model/CreateAccountReqBody.h>
 #include <huaweicloud/organizations/v1/model/CreateAccountRequest.h>
 #include <huaweicloud/organizations/v1/model/CreateAccountResponse.h>
+#include <huaweicloud/organizations/v1/model/CreateResourceAccountReqBody.h>
+#include <huaweicloud/organizations/v1/model/CreateResourceAccountRequest.h>
+#include <huaweicloud/organizations/v1/model/CreateResourceAccountResponse.h>
 #include <huaweicloud/organizations/v1/model/InviteAccountReqBody.h>
 #include <huaweicloud/organizations/v1/model/InviteAccountRequest.h>
 #include <huaweicloud/organizations/v1/model/InviteAccountResponse.h>
@@ -194,6 +197,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateAccountResponse> createAccount(
         CreateAccountRequest &request
+    );
+    // 创建帐号
+    //
+    // 创建一个帐号，不携带手机号邮箱联系方式，生成的帐号将自动成为调用此接口的帐号所属组织的成员。此操作只能由组织的管理帐号调用。组织云服务将在新帐号中创建所需的服务关联委托和帐号访问委托。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateResourceAccountResponse> createResourceAccount(
+        CreateResourceAccountRequest &request
     );
     // 邀请账号加入组织
     //

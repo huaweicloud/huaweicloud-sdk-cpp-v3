@@ -24,7 +24,9 @@ public:
     static HttpRequestDef genRequestDefForListPermissionVersions();
     static HttpRequestDef genRequestDefForListPermissions();
     static HttpRequestDef genRequestDefForShowPermission();
+    static HttpRequestDef genRequestDefForSearchDistinctPrincipals();
     static HttpRequestDef genRequestDefForSearchSharedPrincipals();
+    static HttpRequestDef genRequestDefForSearchDistinctSharedResources();
     static HttpRequestDef genRequestDefForSearchSharedResources();
     static HttpRequestDef genRequestDefForCreateResourceShare();
     static HttpRequestDef genRequestDefForDeleteResourceShare();

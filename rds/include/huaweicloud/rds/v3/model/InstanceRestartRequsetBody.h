@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/core/utils/Object.h>
+#include <huaweicloud/rds/v3/model/RestartConfiguration.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -39,17 +39,17 @@ public:
     /// InstanceRestartRequsetBody members
 
     /// <summary>
-    /// 空值
+    /// 
     /// </summary>
 
-    Object getRestart() const;
+    RestartConfiguration getRestart() const;
     bool restartIsSet() const;
     void unsetrestart();
-    void setRestart(const Object& value);
+    void setRestart(const RestartConfiguration& value);
 
 
 protected:
-    Object restart_;
+    RestartConfiguration restart_;
     bool restartIsSet_;
 
 };

@@ -26,6 +26,7 @@ CreateAccountStatusDto::CreateAccountStatusDto()
     stateIsSet_ = false;
     failureReason_ = "";
     failureReasonIsSet_ = false;
+    failureDetailMsgIsSet_ = false;
 }
 
 CreateAccountStatusDto::~CreateAccountStatusDto() = default;
@@ -58,6 +59,9 @@ web::json::value CreateAccountStatusDto::toJson() const
     }
     if(failureReasonIsSet_) {
         val[utility::conversions::to_string_t("failure_reason")] = ModelBase::toJson(failureReason_);
+    }
+    if(failureDetailMsgIsSet_) {
+        val[utility::conversions::to_string_t("failure_detail_msg")] = ModelBase::toJson(failureDetailMsg_);
     }
 
     return val;
@@ -127,6 +131,15 @@ bool CreateAccountStatusDto::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFailureReason(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("failure_detail_msg"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("failure_detail_msg"));
+        if(!fieldValue.is_null())
+        {
+            CreateAccountStatusDto_failure_detail_msg refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFailureDetailMsg(refVal);
         }
     }
     return ok;
@@ -278,6 +291,27 @@ bool CreateAccountStatusDto::failureReasonIsSet() const
 void CreateAccountStatusDto::unsetfailureReason()
 {
     failureReasonIsSet_ = false;
+}
+
+CreateAccountStatusDto_failure_detail_msg CreateAccountStatusDto::getFailureDetailMsg() const
+{
+    return failureDetailMsg_;
+}
+
+void CreateAccountStatusDto::setFailureDetailMsg(const CreateAccountStatusDto_failure_detail_msg& value)
+{
+    failureDetailMsg_ = value;
+    failureDetailMsgIsSet_ = true;
+}
+
+bool CreateAccountStatusDto::failureDetailMsgIsSet() const
+{
+    return failureDetailMsgIsSet_;
+}
+
+void CreateAccountStatusDto::unsetfailureDetailMsg()
+{
+    failureDetailMsgIsSet_ = false;
 }
 
 }

@@ -14,15 +14,20 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 class HUAWEICLOUD_EPS_V1_EXPORT  EpsMeta {
 public:
     static HttpRequestDef genRequestDefForCreateEnterpriseProject();
+    static HttpRequestDef genRequestDefForDeleteEnterpriseProject();
     static HttpRequestDef genRequestDefForDisableEnterpriseProject();
     static HttpRequestDef genRequestDefForEnableEnterpriseProject();
     static HttpRequestDef genRequestDefForListApiVersions();
     static HttpRequestDef genRequestDefForListEnterpriseProject();
+    static HttpRequestDef genRequestDefForListMigrationRecord();
     static HttpRequestDef genRequestDefForListProviders();
+    static HttpRequestDef genRequestDefForListResourceMapping();
     static HttpRequestDef genRequestDefForMigrateResource();
     static HttpRequestDef genRequestDefForShowApiVersion();
+    static HttpRequestDef genRequestDefForShowAssociatedResources();
     static HttpRequestDef genRequestDefForShowEnterpriseProject();
     static HttpRequestDef genRequestDefForShowEnterpriseProjectQuota();
+    static HttpRequestDef genRequestDefForShowEpConfigs();
     static HttpRequestDef genRequestDefForShowResourceBindEnterpriseProject();
     static HttpRequestDef genRequestDefForUpdateEnterpriseProject();
 };

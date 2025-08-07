@@ -162,7 +162,35 @@ HttpRequestDef RamMeta::genRequestDefForShowPermission() {
     return reqDefBuilder;
 }
 
+HttpRequestDef RamMeta::genRequestDefForSearchDistinctPrincipals() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef RamMeta::genRequestDefForSearchSharedPrincipals() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamXSecurityToken;
+    reqDefBuilder.withRequestField(headerParamXSecurityToken
+                  .withName("XSecurityToken")
+                  .withJsonTag("X-Security-Token")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef RamMeta::genRequestDefForSearchDistinctSharedResources() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXSecurityToken;
     reqDefBuilder.withRequestField(headerParamXSecurityToken

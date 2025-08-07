@@ -15,6 +15,7 @@ class HUAWEICLOUD_ORGANIZATIONS_V1_EXPORT  OrganizationsMeta {
 public:
     static HttpRequestDef genRequestDefForCloseAccount();
     static HttpRequestDef genRequestDefForCreateAccount();
+    static HttpRequestDef genRequestDefForCreateResourceAccount();
     static HttpRequestDef genRequestDefForInviteAccount();
     static HttpRequestDef genRequestDefForListAccounts();
     static HttpRequestDef genRequestDefForListCloseAccountStatuses();

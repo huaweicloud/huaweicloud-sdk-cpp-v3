@@ -38,6 +38,8 @@ BackupTransferInfo::BackupTransferInfo()
     transferTypeIsSet_ = false;
     prefix_ = "";
     prefixIsSet_ = false;
+    type_ = "";
+    typeIsSet_ = false;
 }
 
 BackupTransferInfo::~BackupTransferInfo() = default;
@@ -88,6 +90,9 @@ web::json::value BackupTransferInfo::toJson() const
     }
     if(prefixIsSet_) {
         val[utility::conversions::to_string_t("prefix")] = ModelBase::toJson(prefix_);
+    }
+    if(typeIsSet_) {
+        val[utility::conversions::to_string_t("type")] = ModelBase::toJson(type_);
     }
 
     return val;
@@ -211,6 +216,15 @@ bool BackupTransferInfo::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPrefix(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setType(refVal);
         }
     }
     return ok;
@@ -488,6 +502,27 @@ bool BackupTransferInfo::prefixIsSet() const
 void BackupTransferInfo::unsetprefix()
 {
     prefixIsSet_ = false;
+}
+
+std::string BackupTransferInfo::getType() const
+{
+    return type_;
+}
+
+void BackupTransferInfo::setType(const std::string& value)
+{
+    type_ = value;
+    typeIsSet_ = true;
+}
+
+bool BackupTransferInfo::typeIsSet() const
+{
+    return typeIsSet_;
+}
+
+void BackupTransferInfo::unsettype()
+{
+    typeIsSet_ = false;
 }
 
 }

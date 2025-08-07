@@ -22,6 +22,14 @@ public:
 
     static std::map<std::string, Region> initRegions() {
         std::map<std::string, Region> regions;
+        regions["cn-southwest-3"] = Region("cn-southwest-3",
+            { 
+                "https://cfw.cn-southwest-3.myhuaweicloud.com"
+            });
+        regions["cn-north-12"] = Region("cn-north-12",
+            { 
+                "https://cfw.cn-north-12.myhuaweicloud.com"
+            });
         regions["ru-moscow-1"] = Region("ru-moscow-1",
             { 
                 "https://cfw.ru-moscow-1.myhuaweicloud.com"

@@ -450,6 +450,50 @@ std::shared_ptr<ShowPermissionResponse> RamClient::showPermission(ShowPermission
 
     return localVarResult;
 }
+std::shared_ptr<SearchDistinctPrincipalsResponse> RamClient::searchDistinctPrincipals(SearchDistinctPrincipalsRequest &request)
+{
+    std::string localVarPath = "/v1/shared-principals/search-distinct-principal";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, RamMeta::genRequestDefForSearchDistinctPrincipals());
+
+    std::shared_ptr<SearchDistinctPrincipalsResponse> localVarResult = std::make_shared<SearchDistinctPrincipalsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<SearchSharedPrincipalsResponse> RamClient::searchSharedPrincipals(SearchSharedPrincipalsRequest &request)
 {
     std::string localVarPath = "/v1/shared-principals/search";
@@ -482,6 +526,50 @@ std::shared_ptr<SearchSharedPrincipalsResponse> RamClient::searchSharedPrincipal
         localVarHeaderParams, localVarHttpBody, RamMeta::genRequestDefForSearchSharedPrincipals());
 
     std::shared_ptr<SearchSharedPrincipalsResponse> localVarResult = std::make_shared<SearchSharedPrincipalsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<SearchDistinctSharedResourcesResponse> RamClient::searchDistinctSharedResources(SearchDistinctSharedResourcesRequest &request)
+{
+    std::string localVarPath = "/v1/shared-resources/search-distinct-resource";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, RamMeta::genRequestDefForSearchDistinctSharedResources());
+
+    std::shared_ptr<SearchDistinctSharedResourcesResponse> localVarResult = std::make_shared<SearchDistinctSharedResourcesResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

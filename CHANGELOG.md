@@ -1,3 +1,76 @@
+# 3.1.148 2025-08-07
+
+### HuaweiCloud SDK EPS
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the following APIs:
+    - `ListMigrationRecord`
+    - `ListResourceMapping`
+    - `ShowEpConfigs`
+    - `ShowAssociatedResources`
+    - `DeleteEnterpriseProject`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK Organizations
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the API `CreateResourceAccount`
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateAccount**
+    - changes of response param
+      - `+ create_account_status.failure_detail_msg`
+  - **ListCreateAccountStatuses**
+    - changes of response param
+      - `+ create_account_statuses.failure_detail_msg`
+  - **ShowCreateAccountStatus**
+    - changes of response param
+      - `+ create_account_status.failure_detail_msg`
+
+### HuaweiCloud SDK RAM
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the APIs `SearchDistinctSharedResources`, `SearchDistinctPrincipals`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK RDS
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the following APIs:
+    - `ListScheduleTasks`
+    - `ListTasks`
+    - `ListBusinessPartners`
+    - `ListMarketplaceEngineProducts`
+    - `ResetViewSqlStatistics`
+    - `ListSqlStatistics`
+- _Bug Fix_
+  - None
+- _Change_
+  - **StartInstanceRestartAction**
+    - changes of request param
+      - `+ restart.restart_server`
+      - `+ restart.forcible`
+      - `+ restart.delay`
+      - `* restart: object -> object<RestartConfiguration>`
+  - **ListBackupTransfers**
+    - changes of response param
+      - `+ transfer_list.type`
+
 # 3.1.147 2025-07-31
 
 ### HuaweiCloud SDK CFW

@@ -22,6 +22,12 @@ EncryptDatakeyRequestBody::EncryptDatakeyRequestBody()
     additionalAuthenticatedDataIsSet_ = false;
     sequence_ = "";
     sequenceIsSet_ = false;
+    pin_ = "";
+    pinIsSet_ = false;
+    pinType_ = "";
+    pinTypeIsSet_ = false;
+    keySpec_ = "";
+    keySpecIsSet_ = false;
 }
 
 EncryptDatakeyRequestBody::~EncryptDatakeyRequestBody() = default;
@@ -48,6 +54,15 @@ web::json::value EncryptDatakeyRequestBody::toJson() const
     }
     if(sequenceIsSet_) {
         val[utility::conversions::to_string_t("sequence")] = ModelBase::toJson(sequence_);
+    }
+    if(pinIsSet_) {
+        val[utility::conversions::to_string_t("pin")] = ModelBase::toJson(pin_);
+    }
+    if(pinTypeIsSet_) {
+        val[utility::conversions::to_string_t("pin_type")] = ModelBase::toJson(pinType_);
+    }
+    if(keySpecIsSet_) {
+        val[utility::conversions::to_string_t("key_spec")] = ModelBase::toJson(keySpec_);
     }
 
     return val;
@@ -99,6 +114,33 @@ bool EncryptDatakeyRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSequence(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("pin"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("pin"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPin(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("pin_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("pin_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPinType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("key_spec"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("key_spec"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setKeySpec(refVal);
         }
     }
     return ok;
@@ -208,6 +250,69 @@ bool EncryptDatakeyRequestBody::sequenceIsSet() const
 void EncryptDatakeyRequestBody::unsetsequence()
 {
     sequenceIsSet_ = false;
+}
+
+std::string EncryptDatakeyRequestBody::getPin() const
+{
+    return pin_;
+}
+
+void EncryptDatakeyRequestBody::setPin(const std::string& value)
+{
+    pin_ = value;
+    pinIsSet_ = true;
+}
+
+bool EncryptDatakeyRequestBody::pinIsSet() const
+{
+    return pinIsSet_;
+}
+
+void EncryptDatakeyRequestBody::unsetpin()
+{
+    pinIsSet_ = false;
+}
+
+std::string EncryptDatakeyRequestBody::getPinType() const
+{
+    return pinType_;
+}
+
+void EncryptDatakeyRequestBody::setPinType(const std::string& value)
+{
+    pinType_ = value;
+    pinTypeIsSet_ = true;
+}
+
+bool EncryptDatakeyRequestBody::pinTypeIsSet() const
+{
+    return pinTypeIsSet_;
+}
+
+void EncryptDatakeyRequestBody::unsetpinType()
+{
+    pinTypeIsSet_ = false;
+}
+
+std::string EncryptDatakeyRequestBody::getKeySpec() const
+{
+    return keySpec_;
+}
+
+void EncryptDatakeyRequestBody::setKeySpec(const std::string& value)
+{
+    keySpec_ = value;
+    keySpecIsSet_ = true;
+}
+
+bool EncryptDatakeyRequestBody::keySpecIsSet() const
+{
+    return keySpecIsSet_;
+}
+
+void EncryptDatakeyRequestBody::unsetkeySpec()
+{
+    keySpecIsSet_ = false;
 }
 
 }

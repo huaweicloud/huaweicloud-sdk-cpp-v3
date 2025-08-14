@@ -146,6 +146,14 @@ public:
             { 
                 "https://ecs.cn-north-11.myhuaweicloud.com"
             });
+        regions["cn-north-12"] = Region("cn-north-12",
+            { 
+                "https://ecs.cn-north-12.myhuaweicloud.com"
+            });
+        regions["cn-southwest-3"] = Region("cn-southwest-3",
+            { 
+                "https://ecs.cn-southwest-3.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

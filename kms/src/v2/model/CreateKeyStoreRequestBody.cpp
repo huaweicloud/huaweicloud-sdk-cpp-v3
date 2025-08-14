@@ -18,6 +18,10 @@ CreateKeyStoreRequestBody::CreateKeyStoreRequestBody()
     hsmClusterIdIsSet_ = false;
     hsmCaCert_ = "";
     hsmCaCertIsSet_ = false;
+    clusterId_ = "";
+    clusterIdIsSet_ = false;
+    keystoreType_ = "";
+    keystoreTypeIsSet_ = false;
 }
 
 CreateKeyStoreRequestBody::~CreateKeyStoreRequestBody() = default;
@@ -38,6 +42,12 @@ web::json::value CreateKeyStoreRequestBody::toJson() const
     }
     if(hsmCaCertIsSet_) {
         val[utility::conversions::to_string_t("hsm_ca_cert")] = ModelBase::toJson(hsmCaCert_);
+    }
+    if(clusterIdIsSet_) {
+        val[utility::conversions::to_string_t("cluster_id")] = ModelBase::toJson(clusterId_);
+    }
+    if(keystoreTypeIsSet_) {
+        val[utility::conversions::to_string_t("keystore_type")] = ModelBase::toJson(keystoreType_);
     }
 
     return val;
@@ -71,6 +81,24 @@ bool CreateKeyStoreRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setHsmCaCert(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("cluster_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("cluster_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setClusterId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("keystore_type"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("keystore_type"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setKeystoreType(refVal);
         }
     }
     return ok;
@@ -138,6 +166,48 @@ bool CreateKeyStoreRequestBody::hsmCaCertIsSet() const
 void CreateKeyStoreRequestBody::unsethsmCaCert()
 {
     hsmCaCertIsSet_ = false;
+}
+
+std::string CreateKeyStoreRequestBody::getClusterId() const
+{
+    return clusterId_;
+}
+
+void CreateKeyStoreRequestBody::setClusterId(const std::string& value)
+{
+    clusterId_ = value;
+    clusterIdIsSet_ = true;
+}
+
+bool CreateKeyStoreRequestBody::clusterIdIsSet() const
+{
+    return clusterIdIsSet_;
+}
+
+void CreateKeyStoreRequestBody::unsetclusterId()
+{
+    clusterIdIsSet_ = false;
+}
+
+std::string CreateKeyStoreRequestBody::getKeystoreType() const
+{
+    return keystoreType_;
+}
+
+void CreateKeyStoreRequestBody::setKeystoreType(const std::string& value)
+{
+    keystoreType_ = value;
+    keystoreTypeIsSet_ = true;
+}
+
+bool CreateKeyStoreRequestBody::keystoreTypeIsSet() const
+{
+    return keystoreTypeIsSet_;
+}
+
+void CreateKeyStoreRequestBody::unsetkeystoreType()
+{
+    keystoreTypeIsSet_ = false;
 }
 
 }

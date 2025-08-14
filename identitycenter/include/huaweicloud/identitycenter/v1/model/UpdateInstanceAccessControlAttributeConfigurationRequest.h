@@ -40,7 +40,7 @@ public:
     /// UpdateInstanceAccessControlAttributeConfigurationRequest members
 
     /// <summary>
-    /// IAM身份中心实例的全局唯一标识符（ID）。
+    /// IAM Identity Center实例的全局唯一标识符（ID）
     /// </summary>
 
     std::string getInstanceId() const;

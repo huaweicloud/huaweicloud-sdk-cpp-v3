@@ -11,9 +11,9 @@
 
 #include <huaweicloud/core/utils/Object.h>
 #include <string>
-#include <huaweicloud/codeartsbuild/v3/model/QueryTemplate.h>
 #include <huaweicloud/codeartsbuild/v3/model/CreateBuildJobParameter.h>
 #include <vector>
+#include <huaweicloud/codeartsbuild/v3/model/QueryTemplateVo.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -82,10 +82,10 @@ public:
     /// 
     /// </summary>
 
-    QueryTemplate getTemplate() const;
+    QueryTemplateVo getTemplate() const;
     bool templateIsSet() const;
     void unsettemplate();
-    void setTemplate(const QueryTemplate& value);
+    void setTemplate(const QueryTemplateVo& value);
 
     /// <summary>
     /// 模板类别
@@ -232,7 +232,7 @@ protected:
     bool idIsSet_;
     std::string uuid_;
     bool uuidIsSet_;
-    QueryTemplate template_;
+    QueryTemplateVo template_;
     bool templateIsSet_;
     std::string type_;
     bool typeIsSet_;

@@ -84,6 +84,15 @@ public:
     void setHsmClusterId(const std::string& value);
 
     /// <summary>
+    /// 集群ID。当类型为DEFAULT时，cluster_id为”0”。当类型为DHSM时，cluster_id为hsm_cluster_id。当类型为CDMS时，默认密码卡集群，集群ID为“1”。自定义密码卡集群，为cdms_cluster_id
+    /// </summary>
+
+    std::string getClusterId() const;
+    bool clusterIdIsSet() const;
+    void unsetclusterId();
+    void setClusterId(const std::string& value);
+
+    /// <summary>
     /// 密钥库创建时间，UTC时间戳。
     /// </summary>
 
@@ -104,6 +113,8 @@ protected:
     bool keystoreTypeIsSet_;
     std::string hsmClusterId_;
     bool hsmClusterIdIsSet_;
+    std::string clusterId_;
+    bool clusterIdIsSet_;
     std::string createTime_;
     bool createTimeIsSet_;
 

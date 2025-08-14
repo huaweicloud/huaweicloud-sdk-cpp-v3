@@ -63,6 +63,15 @@ public:
     void setAssetId(const std::string& value);
 
     /// <summary>
+    /// ai标识ID。
+    /// </summary>
+
+    std::string getProduceId() const;
+    bool produceIdIsSet() const;
+    void unsetproduceId();
+    void setProduceId(const std::string& value);
+
+    /// <summary>
     /// 资产名称。
     /// </summary>
 
@@ -230,6 +239,8 @@ protected:
     bool projectIdIsSet_;
     std::string assetId_;
     bool assetIdIsSet_;
+    std::string produceId_;
+    bool produceIdIsSet_;
     std::string assetName_;
     bool assetNameIsSet_;
     std::string assetDescription_;

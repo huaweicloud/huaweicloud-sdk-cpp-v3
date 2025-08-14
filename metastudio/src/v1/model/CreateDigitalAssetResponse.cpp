@@ -14,6 +14,8 @@ CreateDigitalAssetResponse::CreateDigitalAssetResponse()
 {
     assetId_ = "";
     assetIdIsSet_ = false;
+    produceId_ = "";
+    produceIdIsSet_ = false;
     xRequestId_ = "";
     xRequestIdIsSet_ = false;
 }
@@ -30,6 +32,9 @@ web::json::value CreateDigitalAssetResponse::toJson() const
 
     if(assetIdIsSet_) {
         val[utility::conversions::to_string_t("asset_id")] = ModelBase::toJson(assetId_);
+    }
+    if(produceIdIsSet_) {
+        val[utility::conversions::to_string_t("produce_id")] = ModelBase::toJson(produceId_);
     }
     if(xRequestIdIsSet_) {
         val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
@@ -48,6 +53,15 @@ bool CreateDigitalAssetResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAssetId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("produce_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("produce_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProduceId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
@@ -82,6 +96,27 @@ bool CreateDigitalAssetResponse::assetIdIsSet() const
 void CreateDigitalAssetResponse::unsetassetId()
 {
     assetIdIsSet_ = false;
+}
+
+std::string CreateDigitalAssetResponse::getProduceId() const
+{
+    return produceId_;
+}
+
+void CreateDigitalAssetResponse::setProduceId(const std::string& value)
+{
+    produceId_ = value;
+    produceIdIsSet_ = true;
+}
+
+bool CreateDigitalAssetResponse::produceIdIsSet() const
+{
+    return produceIdIsSet_;
+}
+
+void CreateDigitalAssetResponse::unsetproduceId()
+{
+    produceIdIsSet_ = false;
 }
 
 std::string CreateDigitalAssetResponse::getXRequestId() const

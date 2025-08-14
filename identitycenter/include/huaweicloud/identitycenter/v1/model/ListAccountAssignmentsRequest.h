@@ -48,7 +48,7 @@ public:
     void setXSecurityToken(const std::string& value);
 
     /// <summary>
-    /// IAM身份中心实例的全局唯一标识符（ID）。
+    /// IAM Identity Center实例的全局唯一标识符（ID）
     /// </summary>
 
     std::string getInstanceId() const;
@@ -57,7 +57,7 @@ public:
     void setInstanceId(const std::string& value);
 
     /// <summary>
-    /// 每个请求返回的最大结果数
+    /// 每个请求返回的最大结果数。
     /// </summary>
 
     int32_t getLimit() const;
@@ -75,7 +75,7 @@ public:
     void setMarker(const std::string& value);
 
     /// <summary>
-    /// 账号的唯一身份标识
+    /// The identifier of the account from which to list the assignments.
     /// </summary>
 
     std::string getAccountId() const;
@@ -84,7 +84,7 @@ public:
     void setAccountId(const std::string& value);
 
     /// <summary>
-    /// 指定权限集的唯一身份标识.
+    /// The identifier of the permission set from which to list assignments.
     /// </summary>
 
     std::string getPermissionSetId() const;

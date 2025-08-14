@@ -74,6 +74,22 @@ public:
             { 
                 "https://gaussdb-nosql.me-east-1.myhuaweicloud.com"
             });
+        regions["cn-east-4"] = Region("cn-east-4",
+            { 
+                "https://gaussdb-nosql.cn-east-4.myhuaweicloud.com"
+            });
+        regions["cn-south-4"] = Region("cn-south-4",
+            { 
+                "https://nosql-gemini.cn-south-4.myhuaweicloud.com"
+            });
+        regions["cn-southwest-3"] = Region("cn-southwest-3",
+            { 
+                "https://gaussdb-nosql.cn-southwest-3.myhuaweicloud.com"
+            });
+        regions["tr-west-1"] = Region("tr-west-1",
+            { 
+                "https://gaussdb-nosql.tr-west-1.myhuaweicloud.com"
+            });
         regions["ru-northwest-2"] = Region("ru-northwest-2",
             { 
                 "https://gaussdb-nosql.ru-northwest-2.myhuaweicloud.com"

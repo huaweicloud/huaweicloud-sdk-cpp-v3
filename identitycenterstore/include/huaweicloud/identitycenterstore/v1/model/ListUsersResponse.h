@@ -50,7 +50,7 @@ public:
     void setPageInfo(const PageInfoDto& value);
 
     /// <summary>
-    /// 身份源中的用户列表
+    /// IdentityStore中的用户列表。
     /// </summary>
 
     std::vector<UserDto>& getUsers();

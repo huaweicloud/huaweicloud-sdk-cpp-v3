@@ -83,6 +83,24 @@ public:
     void unsetsequence();
     void setSequence(const std::string& value);
 
+    /// <summary>
+    /// 指定PIN码保护。仅四级密评场景支持该参数。
+    /// </summary>
+
+    std::string getPin() const;
+    bool pinIsSet() const;
+    void unsetpin();
+    void setPin(const std::string& value);
+
+    /// <summary>
+    /// pin码的类型，默认为“CipherText”，可选“PlainText”。仅四级密评场景支持该参数。
+    /// </summary>
+
+    std::string getPinType() const;
+    bool pinTypeIsSet() const;
+    void unsetpinType();
+    void setPinType(const std::string& value);
+
 
 protected:
     std::string keyId_;
@@ -95,6 +113,10 @@ protected:
     bool additionalAuthenticatedDataIsSet_;
     std::string sequence_;
     bool sequenceIsSet_;
+    std::string pin_;
+    bool pinIsSet_;
+    std::string pinType_;
+    bool pinTypeIsSet_;
 
 };
 

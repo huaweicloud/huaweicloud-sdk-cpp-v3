@@ -38,7 +38,7 @@ public:
     /// Pages members
 
     /// <summary>
-    /// 与第一条数据的偏移量
+    /// 页面起始页,从0开始
     /// </summary>
 
     int32_t getOffset() const;
@@ -47,7 +47,7 @@ public:
     void setOffset(int32_t value);
 
     /// <summary>
-    /// 页面大小
+    /// 每页显示的条目数量
     /// </summary>
 
     int32_t getLimit() const;

@@ -52,8 +52,10 @@ public:
     void regionInit() override;
     void processAuthParams(const std::string regionId) override;
 
+    void setDerivedPredicate(const std::function<bool(const HuaweiCloud::Sdk::Core::RequestParams &)> &derivedPredicate);
+
 protected:
-    std::string processAuthRequest(HuaweiCloud::Sdk::Core::RequestParams &requestParams, HuaweiCloud::Sdk::Core::Http::HttpConfig &httpConfig) override;
+    std::string processAuthRequest(HuaweiCloud::Sdk::Core::RequestParams &requestParams, HuaweiCloud::Sdk::Core::Http::HttpConfig &httpConfig, const std::string &region, const std::string &derivedAuthServiceName) override;
     const std::map<std::string, std::string> &getUpdatePathParams() override;
 
 private:
@@ -63,6 +65,7 @@ private:
     std::string projectId_;
     std::string iamEndpoint_;
     std::unique_ptr<IamService> iamService;
+    std::function<bool(const HuaweiCloud::Sdk::Core::RequestParams&)> derivedPredicate;
 };
 }
 }

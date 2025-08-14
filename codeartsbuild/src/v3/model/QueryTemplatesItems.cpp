@@ -167,7 +167,7 @@ bool QueryTemplatesItems::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("template"));
         if(!fieldValue.is_null())
         {
-            QueryTemplate refVal;
+            QueryTemplateVo refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTemplate(refVal);
         }
@@ -395,12 +395,12 @@ void QueryTemplatesItems::unsetuuid()
     uuidIsSet_ = false;
 }
 
-QueryTemplate QueryTemplatesItems::getTemplate() const
+QueryTemplateVo QueryTemplatesItems::getTemplate() const
 {
     return template_;
 }
 
-void QueryTemplatesItems::setTemplate(const QueryTemplate& value)
+void QueryTemplatesItems::setTemplate(const QueryTemplateVo& value)
 {
     template_ = value;
     templateIsSet_ = true;

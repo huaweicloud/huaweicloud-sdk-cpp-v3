@@ -66,7 +66,7 @@ public:
     void setPrincipalType(const std::string& value);
 
     /// <summary>
-    /// 目标账号身份标识
+    /// 目标账户身份标识
     /// </summary>
 
     std::string getTargetId() const;

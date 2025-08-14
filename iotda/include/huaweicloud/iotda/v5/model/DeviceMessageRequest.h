@@ -1,0 +1,154 @@
+
+#ifndef HUAWEICLOUD_SDK_IOTDA_V5_MODEL_DeviceMessageRequest_H_
+#define HUAWEICLOUD_SDK_IOTDA_V5_MODEL_DeviceMessageRequest_H_
+
+
+#include <huaweicloud/iotda/v5/IoTDAExport.h>
+
+#include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
+#include <huaweicloud/core/http/HttpResponse.h>
+
+#include <huaweicloud/core/utils/Object.h>
+#include <string>
+#include <huaweicloud/iotda/v5/model/PropertiesDTO.h>
+
+namespace HuaweiCloud {
+namespace Sdk {
+namespace Iotda {
+namespace V5 {
+namespace Model {
+
+using namespace HuaweiCloud::Sdk::Core::Utils;
+using namespace HuaweiCloud::Sdk::Core::Http;
+/// <summary>
+/// 
+/// </summary>
+class HUAWEICLOUD_IOTDA_V5_EXPORT  DeviceMessageRequest
+    : public ModelBase
+{
+public:
+    DeviceMessageRequest();
+    virtual ~DeviceMessageRequest();
+
+    /////////////////////////////////////////////
+    /// ModelBase overrides
+
+    void validate() override;
+    web::json::value toJson() const override;
+    bool fromJson(const web::json::value& json) override;
+    /////////////////////////////////////////////
+    /// DeviceMessageRequest members
+
+    /// <summary>
+    /// **参数说明**：消息id，由用户生成（推荐使用UUID），同一个设备下唯一， 如果用户填写的id在设备下不唯一， 则接口返回错误。 **取值范围**：长度不超过100，只允许字母、数字、下划线（_）、连接符（-）的组合。
+    /// </summary>
+
+    std::string getMessageId() const;
+    bool messageIdIsSet() const;
+    void unsetmessageId();
+    void setMessageId(const std::string& value);
+
+    /// <summary>
+    /// **参数说明**：消息名称。 **取值范围**：长度不超过128，只允许中文、字母、数字、以及_?&#39;#().,&amp;%@!-等字符的组合。
+    /// </summary>
+
+    std::string getName() const;
+    bool nameIsSet() const;
+    void unsetname();
+    void setName(const std::string& value);
+
+    /// <summary>
+    /// **参数说明**：消息内容，支持string和json格式。
+    /// </summary>
+
+    Object getMessage() const;
+    bool messageIsSet() const;
+    void unsetmessage();
+    void setMessage(const Object& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    PropertiesDTO getProperties() const;
+    bool propertiesIsSet() const;
+    void unsetproperties();
+    void setProperties(const PropertiesDTO& value);
+
+    /// <summary>
+    /// **参数说明**：消息内容编码格式。默认值none。 **取值范围**： - none  - base64
+    /// </summary>
+
+    std::string getEncoding() const;
+    bool encodingIsSet() const;
+    void unsetencoding();
+    void setEncoding(const std::string& value);
+
+    /// <summary>
+    /// **参数说明**：有效负载格式，在消息内容编码格式为none时有效。默认值standard（平台封装的标准格式）。 **取值范围**： - standard  - raw：直接将消息内容作为有效负载下发。
+    /// </summary>
+
+    std::string getPayloadFormat() const;
+    bool payloadFormatIsSet() const;
+    void unsetpayloadFormat();
+    void setPayloadFormat(const std::string& value);
+
+    /// <summary>
+    /// **参数说明**：消息下行到设备的自定义topic后缀, 可选， 仅适用于MQTT协议接入的设备。 用户只能填写在租户产品界面配置的topic, 否则会校验不通过。 平台给消息topic添加的前缀为$oc/devices/{device_id}/user/， 用户可以在前缀的基础上增加自定义部分， 如增加messageDown，则平台拼接前缀后完整的topic为 $oc/devices/{device_id}/user/messageDown，其中device_id以实际设备的网关id替代。 如果用户指定该topic，消息会通过该topic下行到设备，如果用户不指定， 则消息通过系统默认的topic下行到设备,系统默认的topic格式为： $oc/devices/{device_id}/sys/messages/down。此字段与topic_full_name字段只可填写一个。
+    /// </summary>
+
+    std::string getTopic() const;
+    bool topicIsSet() const;
+    void unsettopic();
+    void setTopic(const std::string& value);
+
+    /// <summary>
+    /// **参数说明**：消息下行到设备的完整topic名称, 可选。用户需要下发用户自定义的topic给设备时，可以使用该参数指定完整的topic名称，物联网平台不校验该topic是否在平台定义，直接透传给设备。设备需要提前订阅该topic。此字段与topic字段只可填写一个。
+    /// </summary>
+
+    std::string getTopicFullName() const;
+    bool topicFullNameIsSet() const;
+    void unsettopicFullName();
+    void setTopicFullName(const std::string& value);
+
+    /// <summary>
+    /// **参数说明**：下发消息在平台缓存的老化时间，时间单位是分钟，默认值1440；ttl参数数值必须是5的倍数，即以5分钟为粒度；指定为0时表示不缓存消息，最大缓存时间1440分钟，即缓存一天
+    /// </summary>
+
+    int32_t getTtl() const;
+    bool ttlIsSet() const;
+    void unsetttl();
+    void setTtl(int32_t value);
+
+
+protected:
+    std::string messageId_;
+    bool messageIdIsSet_;
+    std::string name_;
+    bool nameIsSet_;
+    Object message_;
+    bool messageIsSet_;
+    PropertiesDTO properties_;
+    bool propertiesIsSet_;
+    std::string encoding_;
+    bool encodingIsSet_;
+    std::string payloadFormat_;
+    bool payloadFormatIsSet_;
+    std::string topic_;
+    bool topicIsSet_;
+    std::string topicFullName_;
+    bool topicFullNameIsSet_;
+    int32_t ttl_;
+    bool ttlIsSet_;
+
+};
+
+
+}
+}
+}
+}
+}
+
+#endif // HUAWEICLOUD_SDK_IOTDA_V5_MODEL_DeviceMessageRequest_H_

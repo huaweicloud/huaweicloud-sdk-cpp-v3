@@ -41,7 +41,7 @@ public:
     /// ListInstancesResponse members
 
     /// <summary>
-    /// IAM身份中心实例信息列表
+    /// IAM身份中心实例信息列表。
     /// </summary>
 
     std::vector<InstanceMetadataEntryDto>& getInstances();

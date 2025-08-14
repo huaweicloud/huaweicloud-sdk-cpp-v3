@@ -39,7 +39,7 @@ public:
     /// PhoneNumberDto members
 
     /// <summary>
-    /// 一个布尔值，表示这是否为用户的主电话号码
+    /// 一个布尔值，表示这是否是用户的主电话号码
     /// </summary>
 
     bool isPrimary() const;

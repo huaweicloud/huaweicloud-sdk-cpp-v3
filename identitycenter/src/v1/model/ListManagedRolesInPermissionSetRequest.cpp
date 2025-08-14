@@ -12,12 +12,12 @@ namespace Model {
 
 ListManagedRolesInPermissionSetRequest::ListManagedRolesInPermissionSetRequest()
 {
+    xSecurityToken_ = "";
+    xSecurityTokenIsSet_ = false;
     instanceId_ = "";
     instanceIdIsSet_ = false;
     permissionSetId_ = "";
     permissionSetIdIsSet_ = false;
-    xSecurityToken_ = "";
-    xSecurityTokenIsSet_ = false;
     limit_ = 0;
     limitIsSet_ = false;
     marker_ = "";
@@ -34,14 +34,14 @@ web::json::value ListManagedRolesInPermissionSetRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(xSecurityTokenIsSet_) {
+        val[utility::conversions::to_string_t("X-Security-Token")] = ModelBase::toJson(xSecurityToken_);
+    }
     if(instanceIdIsSet_) {
         val[utility::conversions::to_string_t("instance_id")] = ModelBase::toJson(instanceId_);
     }
     if(permissionSetIdIsSet_) {
         val[utility::conversions::to_string_t("permission_set_id")] = ModelBase::toJson(permissionSetId_);
-    }
-    if(xSecurityTokenIsSet_) {
-        val[utility::conversions::to_string_t("X-Security-Token")] = ModelBase::toJson(xSecurityToken_);
     }
     if(limitIsSet_) {
         val[utility::conversions::to_string_t("limit")] = ModelBase::toJson(limit_);
@@ -56,6 +56,15 @@ bool ListManagedRolesInPermissionSetRequest::fromJson(const web::json::value& va
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("X-Security-Token"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Security-Token"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXSecurityToken(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("instance_id"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("instance_id"));
         if(!fieldValue.is_null())
@@ -72,15 +81,6 @@ bool ListManagedRolesInPermissionSetRequest::fromJson(const web::json::value& va
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPermissionSetId(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("X-Security-Token"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Security-Token"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setXSecurityToken(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("limit"))) {
@@ -104,6 +104,27 @@ bool ListManagedRolesInPermissionSetRequest::fromJson(const web::json::value& va
     return ok;
 }
 
+
+std::string ListManagedRolesInPermissionSetRequest::getXSecurityToken() const
+{
+    return xSecurityToken_;
+}
+
+void ListManagedRolesInPermissionSetRequest::setXSecurityToken(const std::string& value)
+{
+    xSecurityToken_ = value;
+    xSecurityTokenIsSet_ = true;
+}
+
+bool ListManagedRolesInPermissionSetRequest::xSecurityTokenIsSet() const
+{
+    return xSecurityTokenIsSet_;
+}
+
+void ListManagedRolesInPermissionSetRequest::unsetxSecurityToken()
+{
+    xSecurityTokenIsSet_ = false;
+}
 
 std::string ListManagedRolesInPermissionSetRequest::getInstanceId() const
 {
@@ -145,27 +166,6 @@ bool ListManagedRolesInPermissionSetRequest::permissionSetIdIsSet() const
 void ListManagedRolesInPermissionSetRequest::unsetpermissionSetId()
 {
     permissionSetIdIsSet_ = false;
-}
-
-std::string ListManagedRolesInPermissionSetRequest::getXSecurityToken() const
-{
-    return xSecurityToken_;
-}
-
-void ListManagedRolesInPermissionSetRequest::setXSecurityToken(const std::string& value)
-{
-    xSecurityToken_ = value;
-    xSecurityTokenIsSet_ = true;
-}
-
-bool ListManagedRolesInPermissionSetRequest::xSecurityTokenIsSet() const
-{
-    return xSecurityTokenIsSet_;
-}
-
-void ListManagedRolesInPermissionSetRequest::unsetxSecurityToken()
-{
-    xSecurityTokenIsSet_ = false;
 }
 
 int32_t ListManagedRolesInPermissionSetRequest::getLimit() const

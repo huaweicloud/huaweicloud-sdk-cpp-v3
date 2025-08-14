@@ -65,6 +65,24 @@ public:
     void unsetfileType();
     void setFileType(const std::string& value);
 
+    /// <summary>
+    /// 压缩区间最小范围
+    /// </summary>
+
+    int64_t getCompressMinLength() const;
+    bool compressMinLengthIsSet() const;
+    void unsetcompressMinLength();
+    void setCompressMinLength(int64_t value);
+
+    /// <summary>
+    /// 压缩区间最大范围
+    /// </summary>
+
+    int64_t getCompressMaxLength() const;
+    bool compressMaxLengthIsSet() const;
+    void unsetcompressMaxLength();
+    void setCompressMaxLength(int64_t value);
+
 
 protected:
     std::string status_;
@@ -73,6 +91,10 @@ protected:
     bool typeIsSet_;
     std::string fileType_;
     bool fileTypeIsSet_;
+    int64_t compressMinLength_;
+    bool compressMinLengthIsSet_;
+    int64_t compressMaxLength_;
+    bool compressMaxLengthIsSet_;
 
 };
 

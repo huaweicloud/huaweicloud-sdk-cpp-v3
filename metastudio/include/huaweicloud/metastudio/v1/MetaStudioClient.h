@@ -48,6 +48,24 @@
 #include <huaweicloud/metastudio/v1/model/UpdateAsrVocabularyResponse.h>
 #include <string>
 
+#include <huaweicloud/metastudio/v1/model/DeleteTaskRequest.h>
+#include <huaweicloud/metastudio/v1/model/DeleteTaskResponse.h>
+#include <huaweicloud/metastudio/v1/model/DownloadResultFileRequest.h>
+#include <huaweicloud/metastudio/v1/model/DownloadResultFileResponse.h>
+#include <huaweicloud/metastudio/v1/model/DownloadTemplateRequest.h>
+#include <huaweicloud/metastudio/v1/model/DownloadTemplateResponse.h>
+#include <huaweicloud/metastudio/v1/model/ExportResourceRequest.h>
+#include <huaweicloud/metastudio/v1/model/ExportResourceResponse.h>
+#include <huaweicloud/core/utils/HttpContent.h>
+#include <huaweicloud/metastudio/v1/model/ImportResourceRequest.h>
+#include <huaweicloud/metastudio/v1/model/ImportResourceRequestBody.h>
+#include <huaweicloud/metastudio/v1/model/ImportResourceResponse.h>
+#include <huaweicloud/metastudio/v1/model/SearchTaskRequest.h>
+#include <huaweicloud/metastudio/v1/model/SearchTaskResponse.h>
+#include <huaweicloud/metastudio/v1/model/ShowTaskRequest.h>
+#include <huaweicloud/metastudio/v1/model/ShowTaskResponse.h>
+#include <string>
+
 #include <huaweicloud/metastudio/v1/model/CreateDialogUrlReq.h>
 #include <huaweicloud/metastudio/v1/model/CreateDialogUrlRequest.h>
 #include <huaweicloud/metastudio/v1/model/CreateDialogUrlResponse.h>
@@ -726,6 +744,63 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateAsrVocabularyResponse> updateAsrVocabulary(
         UpdateAsrVocabularyRequest &request
+    );
+
+    // 删除导入导出任务
+    //
+    // 删除导入导出任务
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteTaskResponse> deleteTask(
+        DeleteTaskRequest &request
+    );
+    // 下载导入或导出的结果文件
+    //
+    // 下载导入或者导出结果文件
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DownloadResultFileResponse> downloadResultFile(
+        DownloadResultFileRequest &request
+    );
+    // 下载信息导入模板
+    //
+    // 下载导入模板，返回导入模板文件
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DownloadTemplateResponse> downloadTemplate(
+        DownloadTemplateRequest &request
+    );
+    // 导出文件
+    //
+    // 导出文件
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ExportResourceResponse> exportResource(
+        ExportResourceRequest &request
+    );
+    // 导入文件
+    //
+    // 导入文件
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ImportResourceResponse> importResource(
+        ImportResourceRequest &request
+    );
+    // 分页查询导入导出任务列表
+    //
+    // 分页查询导入导出任务列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SearchTaskResponse> searchTask(
+        SearchTaskRequest &request
+    );
+    // 查询导入导出任务详情
+    //
+    // 查询导入导出任务详情
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowTaskResponse> showTask(
+        ShowTaskRequest &request
     );
 
     // 创建对话链接

@@ -49,7 +49,7 @@ public:
     void setXSecurityToken(const std::string& value);
 
     /// <summary>
-    /// 资源类型 identitycenter:permissionset（权限集）
+    /// 资源类型 identitycenter:permissionset权限集
     /// </summary>
 
     std::string getResourceType() const;

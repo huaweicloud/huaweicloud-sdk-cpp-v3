@@ -28,6 +28,8 @@ CreateKeyRequestBody::CreateKeyRequestBody()
     sequenceIsSet_ = false;
     keystoreId_ = "";
     keystoreIdIsSet_ = false;
+    vmId_ = "";
+    vmIdIsSet_ = false;
 }
 
 CreateKeyRequestBody::~CreateKeyRequestBody() = default;
@@ -63,6 +65,9 @@ web::json::value CreateKeyRequestBody::toJson() const
     }
     if(keystoreIdIsSet_) {
         val[utility::conversions::to_string_t("keystore_id")] = ModelBase::toJson(keystoreId_);
+    }
+    if(vmIdIsSet_) {
+        val[utility::conversions::to_string_t("vm_id")] = ModelBase::toJson(vmId_);
     }
 
     return val;
@@ -141,6 +146,15 @@ bool CreateKeyRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setKeystoreId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("vm_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("vm_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setVmId(refVal);
         }
     }
     return ok;
@@ -313,6 +327,27 @@ bool CreateKeyRequestBody::keystoreIdIsSet() const
 void CreateKeyRequestBody::unsetkeystoreId()
 {
     keystoreIdIsSet_ = false;
+}
+
+std::string CreateKeyRequestBody::getVmId() const
+{
+    return vmId_;
+}
+
+void CreateKeyRequestBody::setVmId(const std::string& value)
+{
+    vmId_ = value;
+    vmIdIsSet_ = true;
+}
+
+bool CreateKeyRequestBody::vmIdIsSet() const
+{
+    return vmIdIsSet_;
+}
+
+void CreateKeyRequestBody::unsetvmId()
+{
+    vmIdIsSet_ = false;
 }
 
 }

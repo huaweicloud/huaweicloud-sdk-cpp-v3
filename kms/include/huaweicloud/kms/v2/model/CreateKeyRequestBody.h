@@ -102,13 +102,22 @@ public:
     void setSequence(const std::string& value);
 
     /// <summary>
-    /// 密钥库ID，默认使用KMS默认密钥库
+    /// 密钥库ID，默认为0，使用KMS默认密钥库；设置为1，则指定管理面CDMS集群；设置为2，则指定租户面共享CDMS集群；若需指定其他CDMS集群，需先执行创建密钥库操作
     /// </summary>
 
     std::string getKeystoreId() const;
     bool keystoreIdIsSet() const;
     void unsetkeystoreId();
     void setKeystoreId(const std::string& value);
+
+    /// <summary>
+    /// 虚机ID，密钥创建的虚机，仅四级密评场景生效
+    /// </summary>
+
+    std::string getVmId() const;
+    bool vmIdIsSet() const;
+    void unsetvmId();
+    void setVmId(const std::string& value);
 
 
 protected:
@@ -128,6 +137,8 @@ protected:
     bool sequenceIsSet_;
     std::string keystoreId_;
     bool keystoreIdIsSet_;
+    std::string vmId_;
+    bool vmIdIsSet_;
 
 };
 

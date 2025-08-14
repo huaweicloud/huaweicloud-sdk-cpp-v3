@@ -56,12 +56,23 @@ public:
     void unsetdomainId();
     void setDomainId(const std::string& value);
 
+    /// <summary>
+    /// region ID。
+    /// </summary>
+
+    std::string getRegionId() const;
+    bool regionIdIsSet() const;
+    void unsetregionId();
+    void setRegionId(const std::string& value);
+
 
 protected:
     std::string keyId_;
     bool keyIdIsSet_;
     std::string domainId_;
     bool domainIdIsSet_;
+    std::string regionId_;
+    bool regionIdIsSet_;
 
 };
 

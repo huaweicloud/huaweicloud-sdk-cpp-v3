@@ -39,7 +39,7 @@ public:
     /// ManagerDto members
 
     /// <summary>
-    /// 经理
+    /// Manager信息
     /// </summary>
 
     std::string getValue() const;

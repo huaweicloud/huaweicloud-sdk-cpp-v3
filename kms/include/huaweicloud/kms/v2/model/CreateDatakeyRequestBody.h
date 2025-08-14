@@ -48,7 +48,7 @@ public:
     void setKeyId(const std::string& value);
 
     /// <summary>
-    /// 指定生成的密钥bit位长度。有效值：AES_256、AES_128。  - AES_256：表示256比特的对称密钥。  - AES_128：表示128比特的对称密钥。 说明：  datakey_length和key_spec二选一。   - 若datakey_length和key_spec都为空，默认生成256bit的密钥。   - 若datakey_length和key_spec都指定了值，仅datakey_length生效。
+    /// 指定生成的密钥bit位长度。有效值：AES_256、AES_128、SM4、HMAC_256、HMAC_384、HMAC_512、HMAC_SM3。  - AES_256：表示256比特的对称密钥。  - AES_128：表示128比特的对称密钥。  - SM4：表示SM4密钥。  - HMAC_256：表示HMAC_256密钥。  - HMAC_384：表示HMAC_384密钥。  - HMAC_512：表示HMAC_512密钥。  - HMAC_SM3：表示HMAC_SM3密钥。     说明：  datakey_length和key_spec二选一。   - 若datakey_length和key_spec都为空，默认生成256bit的密钥。   - 若datakey_length和key_spec都指定了值，仅datakey_length生效。
     /// </summary>
 
     std::string getKeySpec() const;
@@ -83,6 +83,24 @@ public:
     void unsetsequence();
     void setSequence(const std::string& value);
 
+    /// <summary>
+    /// pin码，用于数据密钥的认证，仅四级密评场景生效
+    /// </summary>
+
+    std::string getPin() const;
+    bool pinIsSet() const;
+    void unsetpin();
+    void setPin(const std::string& value);
+
+    /// <summary>
+    /// pin码的类型，默认为“CipherText”： - PlainText：表示明文pin - CipherText：表示密文pin
+    /// </summary>
+
+    std::string getPinType() const;
+    bool pinTypeIsSet() const;
+    void unsetpinType();
+    void setPinType(const std::string& value);
+
 
 protected:
     std::string keyId_;
@@ -95,6 +113,10 @@ protected:
     bool additionalAuthenticatedDataIsSet_;
     std::string sequence_;
     bool sequenceIsSet_;
+    std::string pin_;
+    bool pinIsSet_;
+    std::string pinType_;
+    bool pinTypeIsSet_;
 
 };
 

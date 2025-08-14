@@ -134,6 +134,15 @@ HttpRequestDef KmsMeta::genRequestDefForCreateParametersForImport() {
     return reqDefBuilder;
 }
 
+HttpRequestDef KmsMeta::genRequestDefForCreatePin() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef KmsMeta::genRequestDefForCreateRandom() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;

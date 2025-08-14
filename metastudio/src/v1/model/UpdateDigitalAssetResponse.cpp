@@ -16,6 +16,8 @@ UpdateDigitalAssetResponse::UpdateDigitalAssetResponse()
     projectIdIsSet_ = false;
     assetId_ = "";
     assetIdIsSet_ = false;
+    produceId_ = "";
+    produceIdIsSet_ = false;
     assetName_ = "";
     assetNameIsSet_ = false;
     assetDescription_ = "";
@@ -63,6 +65,9 @@ web::json::value UpdateDigitalAssetResponse::toJson() const
     }
     if(assetIdIsSet_) {
         val[utility::conversions::to_string_t("asset_id")] = ModelBase::toJson(assetId_);
+    }
+    if(produceIdIsSet_) {
+        val[utility::conversions::to_string_t("produce_id")] = ModelBase::toJson(produceId_);
     }
     if(assetNameIsSet_) {
         val[utility::conversions::to_string_t("asset_name")] = ModelBase::toJson(assetName_);
@@ -141,6 +146,15 @@ bool UpdateDigitalAssetResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAssetId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("produce_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("produce_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProduceId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("asset_name"))) {
@@ -349,6 +363,27 @@ bool UpdateDigitalAssetResponse::assetIdIsSet() const
 void UpdateDigitalAssetResponse::unsetassetId()
 {
     assetIdIsSet_ = false;
+}
+
+std::string UpdateDigitalAssetResponse::getProduceId() const
+{
+    return produceId_;
+}
+
+void UpdateDigitalAssetResponse::setProduceId(const std::string& value)
+{
+    produceId_ = value;
+    produceIdIsSet_ = true;
+}
+
+bool UpdateDigitalAssetResponse::produceIdIsSet() const
+{
+    return produceIdIsSet_;
+}
+
+void UpdateDigitalAssetResponse::unsetproduceId()
+{
+    produceIdIsSet_ = false;
 }
 
 std::string UpdateDigitalAssetResponse::getAssetName() const

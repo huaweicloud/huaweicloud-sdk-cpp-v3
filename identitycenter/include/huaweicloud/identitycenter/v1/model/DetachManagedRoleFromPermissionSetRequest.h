@@ -40,7 +40,16 @@ public:
     /// DetachManagedRoleFromPermissionSetRequest members
 
     /// <summary>
-    /// IAM身份中心实例的全局唯一标识符（ID）。
+    /// 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
+    /// </summary>
+
+    std::string getXSecurityToken() const;
+    bool xSecurityTokenIsSet() const;
+    void unsetxSecurityToken();
+    void setXSecurityToken(const std::string& value);
+
+    /// <summary>
+    /// IAM Identity Center实例的全局唯一标识符（ID）
     /// </summary>
 
     std::string getInstanceId() const;
@@ -58,15 +67,6 @@ public:
     void setPermissionSetId(const std::string& value);
 
     /// <summary>
-    /// 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
-    /// </summary>
-
-    std::string getXSecurityToken() const;
-    bool xSecurityTokenIsSet() const;
-    void unsetxSecurityToken();
-    void setXSecurityToken(const std::string& value);
-
-    /// <summary>
     /// 
     /// </summary>
 
@@ -77,12 +77,12 @@ public:
 
 
 protected:
+    std::string xSecurityToken_;
+    bool xSecurityTokenIsSet_;
     std::string instanceId_;
     bool instanceIdIsSet_;
     std::string permissionSetId_;
     bool permissionSetIdIsSet_;
-    std::string xSecurityToken_;
-    bool xSecurityTokenIsSet_;
     ResourceDetachManagedPolicyFromPermissionSetReqBody body_;
     bool bodyIsSet_;
 

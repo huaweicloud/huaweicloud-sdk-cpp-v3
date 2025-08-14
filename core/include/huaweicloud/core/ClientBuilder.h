@@ -34,6 +34,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/CoreExport.h>
 #include <type_traits>
+#include <utility>
 
 
 namespace HuaweiCloud {
@@ -162,6 +163,12 @@ public:
         return *this;
     }
 
+    ClientBuilder &withDerivedAuthServiceName( std::string derivedAuthServiceName)
+    {
+        derivedAuthServiceName_ = std::move(derivedAuthServiceName);
+        return *this;
+    }
+
     std::unique_ptr<T> build()
     {
         auto client = std::make_unique<T>();
@@ -172,6 +179,9 @@ public:
         }
         if (client->isCredentialsEmpty()) {
             throw SdkException("credential can not be null, Credential objects are required");
+        }
+        if (!derivedAuthServiceName_.empty()) {
+            client->setDerivedAuthServiceName(derivedAuthServiceName_);
         }
         if (!httpConfig_) {
             HttpConfig httpConfig = HttpConfig();
@@ -200,6 +210,7 @@ private:
     std::string filePath_;
     bool fileLog_ = false;
     std::string defaultType_;
+    std::string derivedAuthServiceName_;
 };
 }
 }

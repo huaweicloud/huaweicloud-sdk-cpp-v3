@@ -39,7 +39,7 @@ public:
     /// PermissionSetProvisioningStatusDto members
 
     /// <summary>
-    /// 账号的唯一身份标识
+    /// 指定账户的唯一身份标识.
     /// </summary>
 
     std::string getAccountId() const;

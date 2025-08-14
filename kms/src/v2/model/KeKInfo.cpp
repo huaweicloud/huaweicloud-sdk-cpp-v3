@@ -16,6 +16,8 @@ KeKInfo::KeKInfo()
     keyIdIsSet_ = false;
     domainId_ = "";
     domainIdIsSet_ = false;
+    regionId_ = "";
+    regionIdIsSet_ = false;
 }
 
 KeKInfo::~KeKInfo() = default;
@@ -33,6 +35,9 @@ web::json::value KeKInfo::toJson() const
     }
     if(domainIdIsSet_) {
         val[utility::conversions::to_string_t("domain_id")] = ModelBase::toJson(domainId_);
+    }
+    if(regionIdIsSet_) {
+        val[utility::conversions::to_string_t("region_id")] = ModelBase::toJson(regionId_);
     }
 
     return val;
@@ -57,6 +62,15 @@ bool KeKInfo::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDomainId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("region_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("region_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setRegionId(refVal);
         }
     }
     return ok;
@@ -103,6 +117,27 @@ bool KeKInfo::domainIdIsSet() const
 void KeKInfo::unsetdomainId()
 {
     domainIdIsSet_ = false;
+}
+
+std::string KeKInfo::getRegionId() const
+{
+    return regionId_;
+}
+
+void KeKInfo::setRegionId(const std::string& value)
+{
+    regionId_ = value;
+    regionIdIsSet_ = true;
+}
+
+bool KeKInfo::regionIdIsSet() const
+{
+    return regionIdIsSet_;
+}
+
+void KeKInfo::unsetregionId()
+{
+    regionIdIsSet_ = false;
 }
 
 }

@@ -27,6 +27,7 @@ public:
     static HttpRequestDef genRequestDefForCreateKeyStore();
     static HttpRequestDef genRequestDefForCreateKmsTag();
     static HttpRequestDef genRequestDefForCreateParametersForImport();
+    static HttpRequestDef genRequestDefForCreatePin();
     static HttpRequestDef genRequestDefForCreateRandom();
     static HttpRequestDef genRequestDefForCreateRsaDatakeyPair();
     static HttpRequestDef genRequestDefForDecryptData();

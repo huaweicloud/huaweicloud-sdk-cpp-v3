@@ -23,6 +23,7 @@
 #include <curl/curl.h>
 #include <map>
 #include <atomic>
+#include <regex>
 
 #include <huaweicloud/core/RequestParams.h>
 #include <huaweicloud/core/utils/Header.h>
@@ -73,6 +74,11 @@ public:
         const std::map<std::string, std::string> &pathParams, const std::map<std::string, std::string> &queryParams,
         const std::map<std::string, std::string> &headerParams, const std::string &body, const HttpRequestDef& def);
 
+    const std::string &getDerivedAuthServiceName() const;
+
+    void setDerivedAuthServiceName(const std::string &derivedAuthServiceName);
+
+    void setDerivedPredicate(const std::function<bool(const HuaweiCloud::Sdk::Core::RequestParams &)> &derivedPredicate);
 private:
     std::string parseUrl(const RequestParams &requestParams);
 
@@ -98,7 +104,8 @@ private:
     std::string filePath_;
     Region region_;
     HttpClient httpClient_;
-
+    std::string derivedAuthServiceName_;
+    std::function<bool(const HuaweiCloud::Sdk::Core::RequestParams&)> derivedPredicate;
     std::atomic<int> endpointIndex;
 };
 }

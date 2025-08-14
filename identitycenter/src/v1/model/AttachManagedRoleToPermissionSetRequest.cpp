@@ -12,12 +12,12 @@ namespace Model {
 
 AttachManagedRoleToPermissionSetRequest::AttachManagedRoleToPermissionSetRequest()
 {
+    xSecurityToken_ = "";
+    xSecurityTokenIsSet_ = false;
     instanceId_ = "";
     instanceIdIsSet_ = false;
     permissionSetId_ = "";
     permissionSetIdIsSet_ = false;
-    xSecurityToken_ = "";
-    xSecurityTokenIsSet_ = false;
     bodyIsSet_ = false;
 }
 
@@ -31,14 +31,14 @@ web::json::value AttachManagedRoleToPermissionSetRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(xSecurityTokenIsSet_) {
+        val[utility::conversions::to_string_t("X-Security-Token")] = ModelBase::toJson(xSecurityToken_);
+    }
     if(instanceIdIsSet_) {
         val[utility::conversions::to_string_t("instance_id")] = ModelBase::toJson(instanceId_);
     }
     if(permissionSetIdIsSet_) {
         val[utility::conversions::to_string_t("permission_set_id")] = ModelBase::toJson(permissionSetId_);
-    }
-    if(xSecurityTokenIsSet_) {
-        val[utility::conversions::to_string_t("X-Security-Token")] = ModelBase::toJson(xSecurityToken_);
     }
     if(bodyIsSet_) {
         val[utility::conversions::to_string_t("body")] = ModelBase::toJson(body_);
@@ -50,6 +50,15 @@ bool AttachManagedRoleToPermissionSetRequest::fromJson(const web::json::value& v
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("X-Security-Token"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Security-Token"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXSecurityToken(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("instance_id"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("instance_id"));
         if(!fieldValue.is_null())
@@ -68,15 +77,6 @@ bool AttachManagedRoleToPermissionSetRequest::fromJson(const web::json::value& v
             setPermissionSetId(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("X-Security-Token"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Security-Token"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setXSecurityToken(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("body"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
         if(!fieldValue.is_null())
@@ -89,6 +89,27 @@ bool AttachManagedRoleToPermissionSetRequest::fromJson(const web::json::value& v
     return ok;
 }
 
+
+std::string AttachManagedRoleToPermissionSetRequest::getXSecurityToken() const
+{
+    return xSecurityToken_;
+}
+
+void AttachManagedRoleToPermissionSetRequest::setXSecurityToken(const std::string& value)
+{
+    xSecurityToken_ = value;
+    xSecurityTokenIsSet_ = true;
+}
+
+bool AttachManagedRoleToPermissionSetRequest::xSecurityTokenIsSet() const
+{
+    return xSecurityTokenIsSet_;
+}
+
+void AttachManagedRoleToPermissionSetRequest::unsetxSecurityToken()
+{
+    xSecurityTokenIsSet_ = false;
+}
 
 std::string AttachManagedRoleToPermissionSetRequest::getInstanceId() const
 {
@@ -130,27 +151,6 @@ bool AttachManagedRoleToPermissionSetRequest::permissionSetIdIsSet() const
 void AttachManagedRoleToPermissionSetRequest::unsetpermissionSetId()
 {
     permissionSetIdIsSet_ = false;
-}
-
-std::string AttachManagedRoleToPermissionSetRequest::getXSecurityToken() const
-{
-    return xSecurityToken_;
-}
-
-void AttachManagedRoleToPermissionSetRequest::setXSecurityToken(const std::string& value)
-{
-    xSecurityToken_ = value;
-    xSecurityTokenIsSet_ = true;
-}
-
-bool AttachManagedRoleToPermissionSetRequest::xSecurityTokenIsSet() const
-{
-    return xSecurityTokenIsSet_;
-}
-
-void AttachManagedRoleToPermissionSetRequest::unsetxSecurityToken()
-{
-    xSecurityTokenIsSet_ = false;
 }
 
 ResourceAttachManagedPolicyToPermissionSetReqBody AttachManagedRoleToPermissionSetRequest::getBody() const

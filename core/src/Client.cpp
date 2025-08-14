@@ -69,7 +69,7 @@ std::unique_ptr<HttpResponse> Client::callApi(const std::string &method, const s
 
         requestParams.addHeader(Header("User-Agent", "huaweicloud-usdk-cpp/3.0"));
         addHeaderParams(requestParams, headerParams);
-        credentials_->processAuthRequest(requestParams, httpConfig_);
+        credentials_->processAuthRequest(requestParams, httpConfig_, region_.getRegionId(), derivedAuthServiceName_);
 
         if (handler_request) {
            handler_request(requestParams);
@@ -143,6 +143,19 @@ void Client::addHeaderParams(RequestParams &requestParams, const std::map<std::s
 void Client::setHttpConfig(const HttpConfig &httpConfig)
 {
     httpConfig_ = httpConfig;
+}
+
+const std::string &Client::getDerivedAuthServiceName() const {
+    return derivedAuthServiceName_;
+}
+
+void Client::setDerivedAuthServiceName(const std::string &derivedAuthServiceName) {
+    derivedAuthServiceName_ = derivedAuthServiceName;
+}
+
+void Client::setDerivedPredicate(
+        const std::function<bool(const HuaweiCloud::Sdk::Core::RequestParams &)> &derivedPredicate) {
+    Client::derivedPredicate = derivedPredicate;
 }
 
 void Client::setCredentials(std::unique_ptr<Credentials> credentials)

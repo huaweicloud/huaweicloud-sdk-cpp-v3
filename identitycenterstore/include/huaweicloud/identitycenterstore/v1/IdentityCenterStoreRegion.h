@@ -82,6 +82,14 @@ public:
             { 
                 "https://identitystore.cn-southwest-2.myhuaweicloud.com"
             });
+        regions["af-north-1"] = Region("af-north-1",
+            { 
+                "https://identitystore.af-north-1.myhuaweicloud.com"
+            });
+        regions["ap-southeast-5"] = Region("ap-southeast-5",
+            { 
+                "https://identitystore.ap-southeast-5.myhuaweicloud.com"
+            });
         return regions;
     }
 private:

@@ -28,6 +28,13 @@ public:
     static HttpRequestDef genRequestDefForShowAsrVocabulary();
     static HttpRequestDef genRequestDefForShowAsrVocabularyAssociation();
     static HttpRequestDef genRequestDefForUpdateAsrVocabulary();
+    static HttpRequestDef genRequestDefForDeleteTask();
+    static HttpRequestDef genRequestDefForDownloadResultFile();
+    static HttpRequestDef genRequestDefForDownloadTemplate();
+    static HttpRequestDef genRequestDefForExportResource();
+    static HttpRequestDef genRequestDefForImportResource();
+    static HttpRequestDef genRequestDefForSearchTask();
+    static HttpRequestDef genRequestDefForShowTask();
     static HttpRequestDef genRequestDefForCreateDialogUrl();
     static HttpRequestDef genRequestDefForListSmartChatJob();
     static HttpRequestDef genRequestDefForShowSmartChatJob();

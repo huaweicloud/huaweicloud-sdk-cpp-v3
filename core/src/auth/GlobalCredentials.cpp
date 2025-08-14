@@ -61,7 +61,8 @@ const std::string &GlobalCredentials::getDomainId() const
 }
 
 std::string GlobalCredentials::processAuthRequest(HuaweiCloud::Sdk::Core::RequestParams &requestParams,
-                                                  HuaweiCloud::Sdk::Core::Http::HttpConfig &httpConfig)
+                                                  HuaweiCloud::Sdk::Core::Http::HttpConfig &httpConfig,
+                                                  const std::string &region, const std::string &derivedAuthServiceName)
 {
     requestParams.addHeader("X-Domain-Id", domainId_);
     if (!securityToken_.empty()) {

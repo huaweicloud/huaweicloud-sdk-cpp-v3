@@ -1,0 +1,104 @@
+
+#ifndef HUAWEICLOUD_SDK_IDENTITYCENTER_V1_MODEL_DeleteProfileRequest_H_
+#define HUAWEICLOUD_SDK_IDENTITYCENTER_V1_MODEL_DeleteProfileRequest_H_
+
+
+#include <huaweicloud/identitycenter/v1/IdentityCenterExport.h>
+
+#include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
+#include <huaweicloud/core/http/HttpResponse.h>
+
+#include <string>
+
+namespace HuaweiCloud {
+namespace Sdk {
+namespace Identitycenter {
+namespace V1 {
+namespace Model {
+
+using namespace HuaweiCloud::Sdk::Core::Utils;
+using namespace HuaweiCloud::Sdk::Core::Http;
+/// <summary>
+/// Request Object
+/// </summary>
+class HUAWEICLOUD_IDENTITYCENTER_V1_EXPORT  DeleteProfileRequest
+    : public ModelBase
+{
+public:
+    DeleteProfileRequest();
+    virtual ~DeleteProfileRequest();
+
+    /////////////////////////////////////////////
+    /// ModelBase overrides
+
+    void validate() override;
+    web::json::value toJson() const override;
+    bool fromJson(const web::json::value& json) override;
+    /////////////////////////////////////////////
+    /// DeleteProfileRequest members
+
+    /// <summary>
+    /// 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
+    /// </summary>
+
+    std::string getXSecurityToken() const;
+    bool xSecurityTokenIsSet() const;
+    void unsetxSecurityToken();
+    void setXSecurityToken(const std::string& value);
+
+    /// <summary>
+    /// IAM Identity Center实例的全局唯一标识符（ID）
+    /// </summary>
+
+    std::string getInstanceId() const;
+    bool instanceIdIsSet() const;
+    void unsetinstanceId();
+    void setInstanceId(const std::string& value);
+
+    /// <summary>
+    /// 应用程序实例ID，以app-ins-为前缀
+    /// </summary>
+
+    std::string getApplicationInstanceId() const;
+    bool applicationInstanceIdIsSet() const;
+    void unsetapplicationInstanceId();
+    void setApplicationInstanceId(const std::string& value);
+
+    /// <summary>
+    /// 应用程序实例与用户或用户组关联关系 ID
+    /// </summary>
+
+    std::string getProfileId() const;
+    bool profileIdIsSet() const;
+    void unsetprofileId();
+    void setProfileId(const std::string& value);
+
+
+protected:
+    std::string xSecurityToken_;
+    bool xSecurityTokenIsSet_;
+    std::string instanceId_;
+    bool instanceIdIsSet_;
+    std::string applicationInstanceId_;
+    bool applicationInstanceIdIsSet_;
+    std::string profileId_;
+    bool profileIdIsSet_;
+
+#ifdef RTTR_FLAG
+    RTTR_ENABLE()
+public:
+    DeleteProfileRequest& dereference_from_shared_ptr(std::shared_ptr<DeleteProfileRequest> ptr) {
+        return *ptr;
+    }
+#endif
+};
+
+
+}
+}
+}
+}
+}
+
+#endif // HUAWEICLOUD_SDK_IDENTITYCENTER_V1_MODEL_DeleteProfileRequest_H_

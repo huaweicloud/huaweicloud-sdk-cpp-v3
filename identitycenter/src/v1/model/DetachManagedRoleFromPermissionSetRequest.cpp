@@ -12,12 +12,12 @@ namespace Model {
 
 DetachManagedRoleFromPermissionSetRequest::DetachManagedRoleFromPermissionSetRequest()
 {
+    xSecurityToken_ = "";
+    xSecurityTokenIsSet_ = false;
     instanceId_ = "";
     instanceIdIsSet_ = false;
     permissionSetId_ = "";
     permissionSetIdIsSet_ = false;
-    xSecurityToken_ = "";
-    xSecurityTokenIsSet_ = false;
     bodyIsSet_ = false;
 }
 
@@ -31,14 +31,14 @@ web::json::value DetachManagedRoleFromPermissionSetRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
+    if(xSecurityTokenIsSet_) {
+        val[utility::conversions::to_string_t("X-Security-Token")] = ModelBase::toJson(xSecurityToken_);
+    }
     if(instanceIdIsSet_) {
         val[utility::conversions::to_string_t("instance_id")] = ModelBase::toJson(instanceId_);
     }
     if(permissionSetIdIsSet_) {
         val[utility::conversions::to_string_t("permission_set_id")] = ModelBase::toJson(permissionSetId_);
-    }
-    if(xSecurityTokenIsSet_) {
-        val[utility::conversions::to_string_t("X-Security-Token")] = ModelBase::toJson(xSecurityToken_);
     }
     if(bodyIsSet_) {
         val[utility::conversions::to_string_t("body")] = ModelBase::toJson(body_);
@@ -50,6 +50,15 @@ bool DetachManagedRoleFromPermissionSetRequest::fromJson(const web::json::value&
 {
     bool ok = true;
     
+    if(val.has_field(utility::conversions::to_string_t("X-Security-Token"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Security-Token"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setXSecurityToken(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("instance_id"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("instance_id"));
         if(!fieldValue.is_null())
@@ -68,15 +77,6 @@ bool DetachManagedRoleFromPermissionSetRequest::fromJson(const web::json::value&
             setPermissionSetId(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("X-Security-Token"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("X-Security-Token"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setXSecurityToken(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("body"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
         if(!fieldValue.is_null())
@@ -89,6 +89,27 @@ bool DetachManagedRoleFromPermissionSetRequest::fromJson(const web::json::value&
     return ok;
 }
 
+
+std::string DetachManagedRoleFromPermissionSetRequest::getXSecurityToken() const
+{
+    return xSecurityToken_;
+}
+
+void DetachManagedRoleFromPermissionSetRequest::setXSecurityToken(const std::string& value)
+{
+    xSecurityToken_ = value;
+    xSecurityTokenIsSet_ = true;
+}
+
+bool DetachManagedRoleFromPermissionSetRequest::xSecurityTokenIsSet() const
+{
+    return xSecurityTokenIsSet_;
+}
+
+void DetachManagedRoleFromPermissionSetRequest::unsetxSecurityToken()
+{
+    xSecurityTokenIsSet_ = false;
+}
 
 std::string DetachManagedRoleFromPermissionSetRequest::getInstanceId() const
 {
@@ -130,27 +151,6 @@ bool DetachManagedRoleFromPermissionSetRequest::permissionSetIdIsSet() const
 void DetachManagedRoleFromPermissionSetRequest::unsetpermissionSetId()
 {
     permissionSetIdIsSet_ = false;
-}
-
-std::string DetachManagedRoleFromPermissionSetRequest::getXSecurityToken() const
-{
-    return xSecurityToken_;
-}
-
-void DetachManagedRoleFromPermissionSetRequest::setXSecurityToken(const std::string& value)
-{
-    xSecurityToken_ = value;
-    xSecurityTokenIsSet_ = true;
-}
-
-bool DetachManagedRoleFromPermissionSetRequest::xSecurityTokenIsSet() const
-{
-    return xSecurityTokenIsSet_;
-}
-
-void DetachManagedRoleFromPermissionSetRequest::unsetxSecurityToken()
-{
-    xSecurityTokenIsSet_ = false;
 }
 
 ResourceDetachManagedPolicyFromPermissionSetReqBody DetachManagedRoleFromPermissionSetRequest::getBody() const

@@ -40,7 +40,7 @@ public:
     /// InstanceAccessControlAttributeConfigurationDto members
 
     /// <summary>
-    /// IAM身份中心实例中ABAC配置的属性
+    /// IAM Identity Center实例中ABAC配置的属性
     /// </summary>
 
     std::vector<AccessControlAttributeDto>& getAccessControlAttributes();

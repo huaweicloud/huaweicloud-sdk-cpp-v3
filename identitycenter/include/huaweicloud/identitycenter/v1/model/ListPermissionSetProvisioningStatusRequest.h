@@ -48,7 +48,7 @@ public:
     void setXSecurityToken(const std::string& value);
 
     /// <summary>
-    /// IAM身份中心实例的全局唯一标识符（ID）。
+    /// IAM Identity Center实例的全局唯一标识符（ID）
     /// </summary>
 
     std::string getInstanceId() const;
@@ -57,7 +57,7 @@ public:
     void setInstanceId(const std::string& value);
 
     /// <summary>
-    /// 每个请求返回的最大结果数
+    /// 每个请求返回的最大结果数。
     /// </summary>
 
     int32_t getLimit() const;

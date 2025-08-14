@@ -22,6 +22,8 @@ KeystoreDetails::KeystoreDetails()
     keystoreTypeIsSet_ = false;
     hsmClusterId_ = "";
     hsmClusterIdIsSet_ = false;
+    clusterId_ = "";
+    clusterIdIsSet_ = false;
     createTime_ = "";
     createTimeIsSet_ = false;
 }
@@ -50,6 +52,9 @@ web::json::value KeystoreDetails::toJson() const
     }
     if(hsmClusterIdIsSet_) {
         val[utility::conversions::to_string_t("hsm_cluster_id")] = ModelBase::toJson(hsmClusterId_);
+    }
+    if(clusterIdIsSet_) {
+        val[utility::conversions::to_string_t("cluster_id")] = ModelBase::toJson(clusterId_);
     }
     if(createTimeIsSet_) {
         val[utility::conversions::to_string_t("create_time")] = ModelBase::toJson(createTime_);
@@ -104,6 +109,15 @@ bool KeystoreDetails::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setHsmClusterId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("cluster_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("cluster_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setClusterId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("create_time"))) {
@@ -222,6 +236,27 @@ bool KeystoreDetails::hsmClusterIdIsSet() const
 void KeystoreDetails::unsethsmClusterId()
 {
     hsmClusterIdIsSet_ = false;
+}
+
+std::string KeystoreDetails::getClusterId() const
+{
+    return clusterId_;
+}
+
+void KeystoreDetails::setClusterId(const std::string& value)
+{
+    clusterId_ = value;
+    clusterIdIsSet_ = true;
+}
+
+bool KeystoreDetails::clusterIdIsSet() const
+{
+    return clusterIdIsSet_;
+}
+
+void KeystoreDetails::unsetclusterId()
+{
+    clusterIdIsSet_ = false;
 }
 
 std::string KeystoreDetails::getCreateTime() const

@@ -39,7 +39,16 @@ public:
     /// ListManagedRolesInPermissionSetRequest members
 
     /// <summary>
-    /// IAM身份中心实例的全局唯一标识符（ID）。
+    /// 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
+    /// </summary>
+
+    std::string getXSecurityToken() const;
+    bool xSecurityTokenIsSet() const;
+    void unsetxSecurityToken();
+    void setXSecurityToken(const std::string& value);
+
+    /// <summary>
+    /// IAM Identity Center实例的全局唯一标识符（ID）
     /// </summary>
 
     std::string getInstanceId() const;
@@ -57,16 +66,7 @@ public:
     void setPermissionSetId(const std::string& value);
 
     /// <summary>
-    /// 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
-    /// </summary>
-
-    std::string getXSecurityToken() const;
-    bool xSecurityTokenIsSet() const;
-    void unsetxSecurityToken();
-    void setXSecurityToken(const std::string& value);
-
-    /// <summary>
-    /// 每个请求返回的最大结果数
+    /// 每个请求返回的最大结果数。
     /// </summary>
 
     int32_t getLimit() const;
@@ -85,12 +85,12 @@ public:
 
 
 protected:
+    std::string xSecurityToken_;
+    bool xSecurityTokenIsSet_;
     std::string instanceId_;
     bool instanceIdIsSet_;
     std::string permissionSetId_;
     bool permissionSetIdIsSet_;
-    std::string xSecurityToken_;
-    bool xSecurityTokenIsSet_;
     int32_t limit_;
     bool limitIsSet_;
     std::string marker_;

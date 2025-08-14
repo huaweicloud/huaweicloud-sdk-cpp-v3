@@ -43,6 +43,9 @@
 #include <huaweicloud/kms/v2/model/CreateKmsTagResponse.h>
 #include <huaweicloud/kms/v2/model/CreateParametersForImportRequest.h>
 #include <huaweicloud/kms/v2/model/CreateParametersForImportResponse.h>
+#include <huaweicloud/kms/v2/model/CreatePinRequest.h>
+#include <huaweicloud/kms/v2/model/CreatePinRequestBody.h>
+#include <huaweicloud/kms/v2/model/CreatePinResponse.h>
 #include <huaweicloud/kms/v2/model/CreateRandomRequest.h>
 #include <huaweicloud/kms/v2/model/CreateRandomResponse.h>
 #include <huaweicloud/kms/v2/model/CreateRsaDatakeyPairRequest.h>
@@ -311,6 +314,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateParametersForImportResponse> createParametersForImport(
         CreateParametersForImportRequest &request
+    );
+    // 创建PIN码
+    //
+    // - 功能介绍：创建pin码。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreatePinResponse> createPin(
+        CreatePinRequest &request
     );
     // 创建随机数
     //

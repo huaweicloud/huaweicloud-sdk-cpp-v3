@@ -48,7 +48,7 @@ public:
     void setFamilyName(const std::string& value);
 
     /// <summary>
-    /// 包含要显示的名称的格式化版本的字符串
+    /// 包含要显示的名称的格式化版本的字符串display.
     /// </summary>
 
     std::string getFormatted() const;

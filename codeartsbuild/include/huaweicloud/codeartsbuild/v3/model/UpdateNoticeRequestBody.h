@@ -58,6 +58,15 @@ public:
     void setEnabledEventTypeNames(const std::vector<std::string>& value);
 
     /// <summary>
+    /// 是否开启消息通知。
+    /// </summary>
+
+    std::string getSendSwitch() const;
+    bool sendSwitchIsSet() const;
+    void unsetsendSwitch();
+    void setSendSwitch(const std::string& value);
+
+    /// <summary>
     /// 通知参数配置
     /// </summary>
 
@@ -66,14 +75,27 @@ public:
     void unsetparamConfig();
     void setParamConfig(const std::string& value);
 
+    /// <summary>
+    /// 是否使用项目级消息通知设置。
+    /// </summary>
+
+    std::string getUseProjectNotice() const;
+    bool useProjectNoticeIsSet() const;
+    void unsetuseProjectNotice();
+    void setUseProjectNotice(const std::string& value);
+
 
 protected:
     std::string noticeType_;
     bool noticeTypeIsSet_;
     std::vector<std::string> enabledEventTypeNames_;
     bool enabledEventTypeNamesIsSet_;
+    std::string sendSwitch_;
+    bool sendSwitchIsSet_;
     std::string paramConfig_;
     bool paramConfigIsSet_;
+    std::string useProjectNotice_;
+    bool useProjectNoticeIsSet_;
 
 };
 

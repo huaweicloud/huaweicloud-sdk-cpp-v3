@@ -66,15 +66,23 @@ const std::string &BasicCredentials::getIamEndpoint() const
     return iamEndpoint_;
 }
 
-std::string BasicCredentials::processAuthRequest(HuaweiCloud::Sdk::Core::RequestParams &requestParams,
-                                                 HuaweiCloud::Sdk::Core::Http::HttpConfig &httpConfig)
+void BasicCredentials::setDerivedPredicate(
+        const std::function<bool(const HuaweiCloud::Sdk::Core::RequestParams &)> &derivedPredicate) {
+    BasicCredentials::derivedPredicate = derivedPredicate;
+}
+
+std::string BasicCredentials::processAuthRequest(HuaweiCloud::Sdk::Core::RequestParams &requestParams, HuaweiCloud::Sdk::Core::Http::HttpConfig &httpConfig, const std::string &region, const std::string &derivedAuthServiceName)
 {
     requestParams.addHeader("X-Project-Id", projectId_);
     if (!securityToken_.empty()) {
         requestParams.addHeader("X-Security-Token", securityToken_);
     }
+    bool isDerived = false;
 
-    std::unique_ptr<Signer> signer = getAlgorithmSigner(httpConfig.getAlgorithm(), ak_, sk_);
+    if (derivedPredicate) {
+        isDerived = derivedPredicate.operator()(requestParams);
+    }
+    std::unique_ptr<Signer> signer = getAlgorithmSigner(httpConfig.getAlgorithm(), ak_, sk_, isDerived, region, derivedAuthServiceName);
     std::string signature = signer->createSignature(requestParams);
     return signature;
 }

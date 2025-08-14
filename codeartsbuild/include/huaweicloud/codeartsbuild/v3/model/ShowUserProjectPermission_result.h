@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -75,6 +76,60 @@ public:
     void setGroupPermission(bool value);
 
     /// <summary>
+    /// 用户是否有删除权限。
+    /// </summary>
+
+    bool isDeletePermission() const;
+    bool deletePermissionIsSet() const;
+    void unsetdeletePermission();
+    void setDeletePermission(bool value);
+
+    /// <summary>
+    /// 用户是否有查看权限。
+    /// </summary>
+
+    bool isViewPermission() const;
+    bool viewPermissionIsSet() const;
+    void unsetviewPermission();
+    void setViewPermission(bool value);
+
+    /// <summary>
+    /// 用户是否有执行权限。
+    /// </summary>
+
+    bool isExecutePermission() const;
+    bool executePermissionIsSet() const;
+    void unsetexecutePermission();
+    void setExecutePermission(bool value);
+
+    /// <summary>
+    /// 用户是否有克隆权限。
+    /// </summary>
+
+    bool isCopyPermission() const;
+    bool copyPermissionIsSet() const;
+    void unsetcopyPermission();
+    void setCopyPermission(bool value);
+
+    /// <summary>
+    /// 用户是否有禁用权限。
+    /// </summary>
+
+    bool isForbiddenPermission() const;
+    bool forbiddenPermissionIsSet() const;
+    void unsetforbiddenPermission();
+    void setForbiddenPermission(bool value);
+
+    /// <summary>
+    /// 用户是否有管理权限。
+    /// </summary>
+
+    bool isManagerPermission() const;
+    bool managerPermissionIsSet() const;
+    void unsetmanagerPermission();
+    void setManagerPermission(bool value);
+
+    /// <summary>
     /// 角色ID
     /// </summary>
 
@@ -92,6 +147,24 @@ public:
     void unsetroleName();
     void setRoleName(const std::string& value);
 
+    /// <summary>
+    /// 角色编码集合。
+    /// </summary>
+
+    std::vector<std::string>& getRoleIds();
+    bool roleIdsIsSet() const;
+    void unsetroleIds();
+    void setRoleIds(const std::vector<std::string>& value);
+
+    /// <summary>
+    /// 角色名称集合。
+    /// </summary>
+
+    std::vector<std::string>& getRoleNames();
+    bool roleNamesIsSet() const;
+    void unsetroleNames();
+    void setRoleNames(const std::vector<std::string>& value);
+
 
 protected:
     std::string projectId_;
@@ -102,10 +175,26 @@ protected:
     bool modifyPermissionIsSet_;
     bool groupPermission_;
     bool groupPermissionIsSet_;
+    bool deletePermission_;
+    bool deletePermissionIsSet_;
+    bool viewPermission_;
+    bool viewPermissionIsSet_;
+    bool executePermission_;
+    bool executePermissionIsSet_;
+    bool copyPermission_;
+    bool copyPermissionIsSet_;
+    bool forbiddenPermission_;
+    bool forbiddenPermissionIsSet_;
+    bool managerPermission_;
+    bool managerPermissionIsSet_;
     std::string roleId_;
     bool roleIdIsSet_;
     std::string roleName_;
     bool roleNameIsSet_;
+    std::vector<std::string> roleIds_;
+    bool roleIdsIsSet_;
+    std::vector<std::string> roleNames_;
+    bool roleNamesIsSet_;
 
 };
 

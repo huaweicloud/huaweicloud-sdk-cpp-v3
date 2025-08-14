@@ -1,3 +1,248 @@
+# 3.1.149 2025-08-14
+
+### HuaweiCloud SDK CDN
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowDomainFullConfig**
+    - changes of response param
+      - `+ configs.compress.compress_min_length`
+      - `+ configs.compress.compress_max_length`
+  - **UpdateDomainFullConfig**
+    - changes of request param
+      - `+ configs.compress.compress_min_length`
+      - `+ configs.compress.compress_max_length`
+
+### HuaweiCloud SDK CodeArtsBuild
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowProjectPermission**
+    - changes of response param
+      - `+ result.delete_permission`
+      - `+ result.view_permission`
+      - `+ result.execute_permission`
+      - `+ result.copy_permission`
+      - `+ result.forbidden_permission`
+      - `+ result.manager_permission`
+      - `+ result.role_ids`
+      - `+ result.role_names`
+  - **UpdateNotice**
+    - changes of request param
+      - `+ send_switch`
+      - `+ use_project_notice`
+  - **ListRecommendOfficialTemplate**
+    - changes of response param
+      - `+ result.items.template.actions`
+      - `+ result.items.template.auto_update_sub_module`
+      - `+ result.items.template.image`
+      - `+ result.items.template.image_source`
+      - `* result.items.template: object<QueryTemplate> -> object<QueryTemplateVo>`
+  - **ListCustomTemplate**
+    - changes of response param
+      - `+ result.items.template.actions`
+      - `+ result.items.template.auto_update_sub_module`
+      - `+ result.items.template.image`
+      - `+ result.items.template.image_source`
+      - `* result.items.template: object<QueryTemplate> -> object<QueryTemplateVo>`
+  - **ListTemplates**
+    - changes of response param
+      - `+ result.items.template.actions`
+      - `+ result.items.template.auto_update_sub_module`
+      - `+ result.items.template.image`
+      - `+ result.items.template.image_source`
+      - `* result.items.template: object<QueryTemplate> -> object<QueryTemplateVo>`
+
+### HuaweiCloud SDK IdentityCenter
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the following APIs:
+    - `DescribeRegisteredRegions`
+    - `RegisterRegion`
+    - `GetIdentityCenterServiceStatus`
+    - `StartIdentityCenter`
+    - `DeleteIdentityCenter`
+    - `ListIdentityStoreAssociation`
+    - `GetSsoConfiguration`
+    - `UpdateSsoConfiguration`
+    - `GetMfaDeviceManagementForIdentityStore`
+    - `PutMfaDeviceManagementForIdentityStore`
+    - `CreateAlias`
+    - `DisassociateProfile`
+    - `GetPermissionSetSummary`
+    - `GetHaConfiguration`
+    - `UpdateHaConfiguration`
+    - `ListAccountAssignmentsForPrincipal`
+    - `ListApplicationInstances`
+    - `CreateApplicationInstance`
+    - `ListCatalogApplications`
+    - `ListApplicationProviders`
+    - `ListApplicationTemplates`
+    - `ListApplicationAssignments`
+    - `CreateApplicationAssignment`
+    - `DeleteApplicationAssignment`
+    - `GetApplicationAssignmentConfiguration`
+    - `UpdateApplicationInstanceDisplayData`
+    - `ImportApplicationInstanceServiceProviderMetadata`
+    - `UpdateApplicationInstanceResponseConfiguration`
+    - `UpdateApplicationInstanceResponseSchemaConfiguration`
+    - `UpdateApplicationInstanceServiceProviderConfiguration`
+    - `UpdateApplicationInstanceStatus`
+    - `UpdateApplicationInstanceActiveCertificate`
+    - `DeleteApplicationInstanceCertificate`
+    - `UpdateApplicationInstanceSecurityConfiguration`
+    - `DescribeApplication`
+    - `ListApplications`
+    - `ListApplicationInstanceCertificates`
+    - `CreateApplicationInstanceCertificate`
+    - `GetApplicationInstance`
+    - `DeleteApplicationInstance`
+    - `DescribeApplicationProvider`
+    - `ListProfiles`
+    - `DeleteProfile`
+    - `ListApplicationAssignmentsForPrincipal`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK IdentityCenterStore
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the following APIs:
+    - `DescribeUsers`
+    - `DescribeGroups`
+    - `ResetPwdMode`
+    - `EnableUser`
+    - `DisableUser`
+    - `VerifyEmail`
+    - `RegisterMfaDeviceForUser`
+    - `BatchListMfaDevicesForUser`
+    - `UpdateMfaDeviceForUser`
+    - `DeleteMfaDeviceForUser`
+    - `ListExternalIdPConfigurationsForDirectory`
+    - `CreateExternalIdPConfigurationForDirectory`
+    - `EnableExternalIdPConfigurationForDirectory`
+    - `DisableExternalIdPConfigurationForDirectory`
+    - `GetSpConfigurationForDirectory`
+    - `UpdateExternalIdPConfigurationForDirectory`
+    - `DeleteExternalIdPConfigurationForDirectory`
+    - `ListExternalIdPCertificates`
+    - `ImportExternalIdPCertificate`
+    - `DeleteExternalIdPCertificate`
+    - `ListProvisioningTenants`
+    - `CreateProvisioningTenant`
+    - `DeleteProvisioningTenant`
+    - `ListBearerTokens`
+    - `CreateBearerToken`
+    - `DeleteBearerToken`
+    - `ListSessions`
+    - `BatchDeleteSessions`
+    - `GetIdentityStoreSummary`
+    - `DescribePasswordPolicy`
+    - `UpdatePasswordPolicy`
+    - `ListSpCertificates`
+    - `CreateSpCertificate`
+    - `DeleteSpCertificate`
+    - `UpdateSpActiveCertificate`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK KMS
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the API `CreatePin`
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateDatakey**
+    - changes of request param
+      - `+ pin`
+      - `+ pin_type`
+      - `+ key_spec: enum value [SM4,HMAC_256,HMAC_384,HMAC_512,HMAC_SM3]`
+  - **CreateDatakeyWithoutPlaintext**
+    - changes of request param
+      - `+ pin`
+      - `+ pin_type`
+      - `+ key_spec: enum value [SM4,HMAC_256,HMAC_384,HMAC_512,HMAC_SM3]`
+  - **CreateEcDatakeyPair**
+    - changes of request param
+      - `+ pin`
+      - `+ pin_type`
+  - **EncryptDatakey**
+    - changes of request param
+      - `+ pin`
+      - `+ pin_type`
+      - `+ key_spec`
+  - **CreateKey**
+    - changes of request param
+      - `+ vm_id`
+    - changes of response param
+      - `+ key_info.region_id`
+  - **ListKeyStores**
+    - changes of response param
+      - `+ keystores.cluster_id`
+  - **CreateKeyStore**
+    - changes of request param
+      - `+ cluster_id`
+      - `+ keystore_type`
+  - **ShowKeyStore**
+    - changes of response param
+      - `+ keystore.cluster_id`
+
+### HuaweiCloud SDK MetaStudio
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the following APIs:
+    - `DownloadTemplate`
+    - `DownloadResultFile`
+    - `SearchTask`
+    - `ShowTask`
+    - `DeleteTask`
+    - `ImportResource`
+    - `ExportResource`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListTtscVocabularyGroups**
+    - changes of request param
+      - `+ limit`
+      - `+ offset`
+      - `+ group_id`
+  - **ShowAsset**
+    - changes of response param
+      - `+ produce_id`
+  - **UpdateDigitalAsset**
+    - changes of response param
+      - `+ produce_id`
+  - **CreateDigitalAsset**
+    - changes of response param
+      - `+ produce_id`
+  - **ListAssets**
+    - changes of response param
+      - `+ produce_id`
+      - `+ assets.produce_id`
+
 # 3.1.148 2025-08-07
 
 ### HuaweiCloud SDK EPS

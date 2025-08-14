@@ -32,6 +32,7 @@
 #include <huaweicloud/core/RequestParams.h>
 #include <openssl/types.h>
 #include "huaweicloud/core/http/HttpConfig.h"
+#include "huaweicloud/core/auth/HKDF.h"
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -56,14 +57,14 @@ public:
     std::string getHexHash(const std::string &payload);
 
     /* Task 2:　Get String to Sign */
-    std::string getStringToSign(const std::string &date, const std::string &canonicalRequest);
+    virtual std::string getStringToSign(const std::string &date, const std::string &canonicalRequest);
 
     /* Task 3: Calculate the Signature */
     virtual std::string getSignature(const std::string &stringToSign);
 
     std::vector<unsigned char> derivePrivateKey(std::string alg, const EVP_MD *engine, std::string ak, std::string sk, BIGNUM* nMinusTwo);
     // One stroke create signature
-    std::string createSignature(HuaweiCloud::Sdk::Core::RequestParams &request);
+    virtual std::string createSignature(HuaweiCloud::Sdk::Core::RequestParams &request);
 
 protected:
     /* Credentials */
@@ -71,7 +72,11 @@ protected:
     std::string appSecret_;
     std::string algorithm_;
     std::string contentHeader_;
+    std::string region_;
+    std::string derivedAuthServiceName_;
+    HKDF hkdf_;
     AbstractHasher *hasher_;
+
 };
 }
 }

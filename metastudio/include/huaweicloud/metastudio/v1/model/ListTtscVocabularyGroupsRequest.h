@@ -83,6 +83,33 @@ public:
     void unsetxAppUserId();
     void setXAppUserId(const std::string& value);
 
+    /// <summary>
+    /// 每页显示的条目数量。
+    /// </summary>
+
+    int32_t getLimit() const;
+    bool limitIsSet() const;
+    void unsetlimit();
+    void setLimit(int32_t value);
+
+    /// <summary>
+    /// 偏移量，表示从此偏移量开始查询。
+    /// </summary>
+
+    int32_t getOffset() const;
+    bool offsetIsSet() const;
+    void unsetoffset();
+    void setOffset(int32_t value);
+
+    /// <summary>
+    /// 分组id
+    /// </summary>
+
+    std::string getGroupId() const;
+    bool groupIdIsSet() const;
+    void unsetgroupId();
+    void setGroupId(const std::string& value);
+
 
 protected:
     std::string xRequestId_;
@@ -95,6 +122,12 @@ protected:
     bool xProjectIdIsSet_;
     std::string xAppUserId_;
     bool xAppUserIdIsSet_;
+    int32_t limit_;
+    bool limitIsSet_;
+    int32_t offset_;
+    bool offsetIsSet_;
+    std::string groupId_;
+    bool groupIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

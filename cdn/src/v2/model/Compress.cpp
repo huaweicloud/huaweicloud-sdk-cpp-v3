@@ -18,6 +18,10 @@ Compress::Compress()
     typeIsSet_ = false;
     fileType_ = "";
     fileTypeIsSet_ = false;
+    compressMinLength_ = 0L;
+    compressMinLengthIsSet_ = false;
+    compressMaxLength_ = 0L;
+    compressMaxLengthIsSet_ = false;
 }
 
 Compress::~Compress() = default;
@@ -38,6 +42,12 @@ web::json::value Compress::toJson() const
     }
     if(fileTypeIsSet_) {
         val[utility::conversions::to_string_t("file_type")] = ModelBase::toJson(fileType_);
+    }
+    if(compressMinLengthIsSet_) {
+        val[utility::conversions::to_string_t("compress_min_length")] = ModelBase::toJson(compressMinLength_);
+    }
+    if(compressMaxLengthIsSet_) {
+        val[utility::conversions::to_string_t("compress_max_length")] = ModelBase::toJson(compressMaxLength_);
     }
 
     return val;
@@ -71,6 +81,24 @@ bool Compress::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFileType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("compress_min_length"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("compress_min_length"));
+        if(!fieldValue.is_null())
+        {
+            int64_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCompressMinLength(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("compress_max_length"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("compress_max_length"));
+        if(!fieldValue.is_null())
+        {
+            int64_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCompressMaxLength(refVal);
         }
     }
     return ok;
@@ -138,6 +166,48 @@ bool Compress::fileTypeIsSet() const
 void Compress::unsetfileType()
 {
     fileTypeIsSet_ = false;
+}
+
+int64_t Compress::getCompressMinLength() const
+{
+    return compressMinLength_;
+}
+
+void Compress::setCompressMinLength(int64_t value)
+{
+    compressMinLength_ = value;
+    compressMinLengthIsSet_ = true;
+}
+
+bool Compress::compressMinLengthIsSet() const
+{
+    return compressMinLengthIsSet_;
+}
+
+void Compress::unsetcompressMinLength()
+{
+    compressMinLengthIsSet_ = false;
+}
+
+int64_t Compress::getCompressMaxLength() const
+{
+    return compressMaxLength_;
+}
+
+void Compress::setCompressMaxLength(int64_t value)
+{
+    compressMaxLength_ = value;
+    compressMaxLengthIsSet_ = true;
+}
+
+bool Compress::compressMaxLengthIsSet() const
+{
+    return compressMaxLengthIsSet_;
+}
+
+void Compress::unsetcompressMaxLength()
+{
+    compressMaxLengthIsSet_ = false;
 }
 
 }

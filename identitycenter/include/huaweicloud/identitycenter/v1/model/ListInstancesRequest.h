@@ -48,7 +48,7 @@ public:
     void setXSecurityToken(const std::string& value);
 
     /// <summary>
-    /// 每个请求返回的最大结果数
+    /// 每个请求返回的最大结果数。
     /// </summary>
 
     int32_t getLimit() const;

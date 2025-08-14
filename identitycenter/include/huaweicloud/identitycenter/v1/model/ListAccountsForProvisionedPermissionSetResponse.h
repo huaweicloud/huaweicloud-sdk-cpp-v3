@@ -41,7 +41,7 @@ public:
     /// ListAccountsForProvisionedPermissionSetResponse members
 
     /// <summary>
-    /// 账号ID列表
+    /// 账户ID列表
     /// </summary>
 
     std::vector<std::string>& getAccountIds();

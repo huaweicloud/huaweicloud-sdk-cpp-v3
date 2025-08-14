@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 提供关于IAM身份中心实例的信息
+/// 提供关于IdentityCenter实例的信息
 /// </summary>
 class HUAWEICLOUD_IDENTITYCENTER_V1_EXPORT  InstanceMetadataEntryDto
     : public ModelBase
@@ -39,7 +39,7 @@ public:
     /// InstanceMetadataEntryDto members
 
     /// <summary>
-    /// 关联到IAM身份中心实例的身份源的全局唯一标识符（ID）
+    /// 关联到IAM身份中心实例的身份源的全局唯一标识符（ID）。
     /// </summary>
 
     std::string getIdentityStoreId() const;
@@ -48,7 +48,7 @@ public:
     void setIdentityStoreId(const std::string& value);
 
     /// <summary>
-    /// IAM身份中心实例的全局唯一标识符（ID）
+    /// Identity Center实例的全局唯一标识符（ID）
     /// </summary>
 
     std::string getInstanceId() const;

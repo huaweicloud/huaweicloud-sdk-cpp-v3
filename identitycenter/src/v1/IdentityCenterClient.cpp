@@ -191,6 +191,51 @@ std::shared_ptr<DescribeAccountAssignmentDeletionStatusResponse> IdentityCenterC
 
     return localVarResult;
 }
+std::shared_ptr<DisassociateProfileResponse> IdentityCenterClient::disassociateProfile(DisassociateProfileRequest &request)
+{
+    std::string localVarPath = "/v1/instances/{instance_id}/disassociate-profile";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForDisassociateProfile());
+
+    std::shared_ptr<DisassociateProfileResponse> localVarResult = std::make_shared<DisassociateProfileResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<ListAccountAssignmentCreationStatusResponse> IdentityCenterClient::listAccountAssignmentCreationStatus(ListAccountAssignmentCreationStatusRequest &request)
 {
     std::string localVarPath = "/v1/instances/{instance_id}/account-assignments/creation-statuses";
@@ -320,6 +365,1454 @@ std::shared_ptr<ListAccountAssignmentsResponse> IdentityCenterClient::listAccoun
 
     return localVarResult;
 }
+std::shared_ptr<ListAccountAssignmentsForPrincipalResponse> IdentityCenterClient::listAccountAssignmentsForPrincipal(ListAccountAssignmentsForPrincipalRequest &request)
+{
+    std::string localVarPath = "/v1/instances/{instance_id}/account-assignments-for-principals";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.principalIdIsSet()) {
+        localVarQueryParams["principal_id"] = parameterToString(request.getPrincipalId());
+    }
+    if (request.principalTypeIsSet()) {
+        localVarQueryParams["principal_type"] = parameterToString(request.getPrincipalType());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.markerIsSet()) {
+        localVarQueryParams["marker"] = parameterToString(request.getMarker());
+    }
+    if (request.accountIdIsSet()) {
+        localVarQueryParams["account_id"] = parameterToString(request.getAccountId());
+    }
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForListAccountAssignmentsForPrincipal());
+
+    std::shared_ptr<ListAccountAssignmentsForPrincipalResponse> localVarResult = std::make_shared<ListAccountAssignmentsForPrincipalResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<CreateApplicationInstanceResponse> IdentityCenterClient::createApplicationInstance(CreateApplicationInstanceRequest &request)
+{
+    std::string localVarPath = "/v1/instances/{instance_id}/application-instances";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForCreateApplicationInstance());
+
+    std::shared_ptr<CreateApplicationInstanceResponse> localVarResult = std::make_shared<CreateApplicationInstanceResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<DeleteApplicationInstanceResponse> IdentityCenterClient::deleteApplicationInstance(DeleteApplicationInstanceRequest &request)
+{
+    std::string localVarPath = "/v1/instances/{instance_id}/application-instances/{application_instance_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+    localVarPathParams["application_instance_id"] = parameterToString(request.getApplicationInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForDeleteApplicationInstance());
+
+    std::shared_ptr<DeleteApplicationInstanceResponse> localVarResult = std::make_shared<DeleteApplicationInstanceResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<DeleteProfileResponse> IdentityCenterClient::deleteProfile(DeleteProfileRequest &request)
+{
+    std::string localVarPath = "/v1/instances/{instance_id}/application-instances/{application_instance_id}/profiles/{profile_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+    localVarPathParams["application_instance_id"] = parameterToString(request.getApplicationInstanceId());
+    localVarPathParams["profile_id"] = parameterToString(request.getProfileId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForDeleteProfile());
+
+    std::shared_ptr<DeleteProfileResponse> localVarResult = std::make_shared<DeleteProfileResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<DescribeApplicationResponse> IdentityCenterClient::describeApplication(DescribeApplicationRequest &request)
+{
+    std::string localVarPath = "/v1/instances/{instance_id}/applications/{application_instance_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+    localVarPathParams["application_instance_id"] = parameterToString(request.getApplicationInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForDescribeApplication());
+
+    std::shared_ptr<DescribeApplicationResponse> localVarResult = std::make_shared<DescribeApplicationResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<DescribeApplicationProviderResponse> IdentityCenterClient::describeApplicationProvider(DescribeApplicationProviderRequest &request)
+{
+    std::string localVarPath = "/v1/application-providers/{application_provider_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["application_provider_id"] = parameterToString(request.getApplicationProviderId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForDescribeApplicationProvider());
+
+    std::shared_ptr<DescribeApplicationProviderResponse> localVarResult = std::make_shared<DescribeApplicationProviderResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<GetApplicationAssignmentConfigurationResponse> IdentityCenterClient::getApplicationAssignmentConfiguration(GetApplicationAssignmentConfigurationRequest &request)
+{
+    std::string localVarPath = "/v1/instances/{instance_id}/applications/{application_instance_id}/assignments-configuration";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+    localVarPathParams["application_instance_id"] = parameterToString(request.getApplicationInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForGetApplicationAssignmentConfiguration());
+
+    std::shared_ptr<GetApplicationAssignmentConfigurationResponse> localVarResult = std::make_shared<GetApplicationAssignmentConfigurationResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<GetApplicationInstanceResponse> IdentityCenterClient::getApplicationInstance(GetApplicationInstanceRequest &request)
+{
+    std::string localVarPath = "/v1/instances/{instance_id}/application-instances/{application_instance_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+    localVarPathParams["application_instance_id"] = parameterToString(request.getApplicationInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForGetApplicationInstance());
+
+    std::shared_ptr<GetApplicationInstanceResponse> localVarResult = std::make_shared<GetApplicationInstanceResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ImportApplicationInstanceServiceProviderMetadataResponse> IdentityCenterClient::importApplicationInstanceServiceProviderMetadata(ImportApplicationInstanceServiceProviderMetadataRequest &request)
+{
+    std::string localVarPath = "/v1/instances/{instance_id}/application-instances/{application_instance_id}/metadata";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+    localVarPathParams["application_instance_id"] = parameterToString(request.getApplicationInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForImportApplicationInstanceServiceProviderMetadata());
+
+    std::shared_ptr<ImportApplicationInstanceServiceProviderMetadataResponse> localVarResult = std::make_shared<ImportApplicationInstanceServiceProviderMetadataResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<ListApplicationInstancesResponse> IdentityCenterClient::listApplicationInstances(ListApplicationInstancesRequest &request)
+{
+    std::string localVarPath = "/v1/instances/{instance_id}/application-instances";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.markerIsSet()) {
+        localVarQueryParams["marker"] = parameterToString(request.getMarker());
+    }
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForListApplicationInstances());
+
+    std::shared_ptr<ListApplicationInstancesResponse> localVarResult = std::make_shared<ListApplicationInstancesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListApplicationProvidersResponse> IdentityCenterClient::listApplicationProviders(ListApplicationProvidersRequest &request)
+{
+    std::string localVarPath = "/v1/application-providers";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.markerIsSet()) {
+        localVarQueryParams["marker"] = parameterToString(request.getMarker());
+    }
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForListApplicationProviders());
+
+    std::shared_ptr<ListApplicationProvidersResponse> localVarResult = std::make_shared<ListApplicationProvidersResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListApplicationTemplatesResponse> IdentityCenterClient::listApplicationTemplates(ListApplicationTemplatesRequest &request)
+{
+    std::string localVarPath = "/v1/application-templates";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.applicationIdIsSet()) {
+        localVarQueryParams["application_id"] = parameterToString(request.getApplicationId());
+    }
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForListApplicationTemplates());
+
+    std::shared_ptr<ListApplicationTemplatesResponse> localVarResult = std::make_shared<ListApplicationTemplatesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListApplicationsResponse> IdentityCenterClient::listApplications(ListApplicationsRequest &request)
+{
+    std::string localVarPath = "/v1/instances/{instance_id}/applications";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.markerIsSet()) {
+        localVarQueryParams["marker"] = parameterToString(request.getMarker());
+    }
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForListApplications());
+
+    std::shared_ptr<ListApplicationsResponse> localVarResult = std::make_shared<ListApplicationsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListCatalogApplicationsResponse> IdentityCenterClient::listCatalogApplications(ListCatalogApplicationsRequest &request)
+{
+    std::string localVarPath = "/v1/catalog/applications";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.markerIsSet()) {
+        localVarQueryParams["marker"] = parameterToString(request.getMarker());
+    }
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForListCatalogApplications());
+
+    std::shared_ptr<ListCatalogApplicationsResponse> localVarResult = std::make_shared<ListCatalogApplicationsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListProfilesResponse> IdentityCenterClient::listProfiles(ListProfilesRequest &request)
+{
+    std::string localVarPath = "/v1/instances/{instance_id}/application-instances/{application_instance_id}/profiles";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+    localVarPathParams["application_instance_id"] = parameterToString(request.getApplicationInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForListProfiles());
+
+    std::shared_ptr<ListProfilesResponse> localVarResult = std::make_shared<ListProfilesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateApplicationInstanceDisplayDataResponse> IdentityCenterClient::updateApplicationInstanceDisplayData(UpdateApplicationInstanceDisplayDataRequest &request)
+{
+    std::string localVarPath = "/v1/instances/{instance_id}/application-instances/{application_instance_id}/display-data";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+    localVarPathParams["application_instance_id"] = parameterToString(request.getApplicationInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForUpdateApplicationInstanceDisplayData());
+
+    std::shared_ptr<UpdateApplicationInstanceDisplayDataResponse> localVarResult = std::make_shared<UpdateApplicationInstanceDisplayDataResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateApplicationInstanceResponseConfigurationResponse> IdentityCenterClient::updateApplicationInstanceResponseConfiguration(UpdateApplicationInstanceResponseConfigurationRequest &request)
+{
+    std::string localVarPath = "/v1/instances/{instance_id}/application-instances/{application_instance_id}/response-configuration";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+    localVarPathParams["application_instance_id"] = parameterToString(request.getApplicationInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForUpdateApplicationInstanceResponseConfiguration());
+
+    std::shared_ptr<UpdateApplicationInstanceResponseConfigurationResponse> localVarResult = std::make_shared<UpdateApplicationInstanceResponseConfigurationResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateApplicationInstanceResponseSchemaConfigurationResponse> IdentityCenterClient::updateApplicationInstanceResponseSchemaConfiguration(UpdateApplicationInstanceResponseSchemaConfigurationRequest &request)
+{
+    std::string localVarPath = "/v1/instances/{instance_id}/application-instances/{application_instance_id}/response-schema-configuration";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+    localVarPathParams["application_instance_id"] = parameterToString(request.getApplicationInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForUpdateApplicationInstanceResponseSchemaConfiguration());
+
+    std::shared_ptr<UpdateApplicationInstanceResponseSchemaConfigurationResponse> localVarResult = std::make_shared<UpdateApplicationInstanceResponseSchemaConfigurationResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateApplicationInstanceSecurityConfigurationResponse> IdentityCenterClient::updateApplicationInstanceSecurityConfiguration(UpdateApplicationInstanceSecurityConfigurationRequest &request)
+{
+    std::string localVarPath = "/v1/instances/{instance_id}/application-instances/{application_instance_id}/security-configuration";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+    localVarPathParams["application_instance_id"] = parameterToString(request.getApplicationInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForUpdateApplicationInstanceSecurityConfiguration());
+
+    std::shared_ptr<UpdateApplicationInstanceSecurityConfigurationResponse> localVarResult = std::make_shared<UpdateApplicationInstanceSecurityConfigurationResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateApplicationInstanceServiceProviderConfigurationResponse> IdentityCenterClient::updateApplicationInstanceServiceProviderConfiguration(UpdateApplicationInstanceServiceProviderConfigurationRequest &request)
+{
+    std::string localVarPath = "/v1/instances/{instance_id}/application-instances/{application_instance_id}/service-provider-configuration";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+    localVarPathParams["application_instance_id"] = parameterToString(request.getApplicationInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForUpdateApplicationInstanceServiceProviderConfiguration());
+
+    std::shared_ptr<UpdateApplicationInstanceServiceProviderConfigurationResponse> localVarResult = std::make_shared<UpdateApplicationInstanceServiceProviderConfigurationResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateApplicationInstanceStatusResponse> IdentityCenterClient::updateApplicationInstanceStatus(UpdateApplicationInstanceStatusRequest &request)
+{
+    std::string localVarPath = "/v1/instances/{instance_id}/application-instances/{application_instance_id}/status";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+    localVarPathParams["application_instance_id"] = parameterToString(request.getApplicationInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForUpdateApplicationInstanceStatus());
+
+    std::shared_ptr<UpdateApplicationInstanceStatusResponse> localVarResult = std::make_shared<UpdateApplicationInstanceStatusResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<CreateApplicationAssignmentResponse> IdentityCenterClient::createApplicationAssignment(CreateApplicationAssignmentRequest &request)
+{
+    std::string localVarPath = "/v1/instances/{instance_id}/applications/{application_instance_id}/assignments/create";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+    localVarPathParams["application_instance_id"] = parameterToString(request.getApplicationInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForCreateApplicationAssignment());
+
+    std::shared_ptr<CreateApplicationAssignmentResponse> localVarResult = std::make_shared<CreateApplicationAssignmentResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<DeleteApplicationAssignmentResponse> IdentityCenterClient::deleteApplicationAssignment(DeleteApplicationAssignmentRequest &request)
+{
+    std::string localVarPath = "/v1/instances/{instance_id}/applications/{application_instance_id}/assignments/delete";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+    localVarPathParams["application_instance_id"] = parameterToString(request.getApplicationInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForDeleteApplicationAssignment());
+
+    std::shared_ptr<DeleteApplicationAssignmentResponse> localVarResult = std::make_shared<DeleteApplicationAssignmentResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<ListApplicationAssignmentsResponse> IdentityCenterClient::listApplicationAssignments(ListApplicationAssignmentsRequest &request)
+{
+    std::string localVarPath = "/v1/instances/{instance_id}/applications/{application_instance_id}/assignments";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+    localVarPathParams["application_instance_id"] = parameterToString(request.getApplicationInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.markerIsSet()) {
+        localVarQueryParams["marker"] = parameterToString(request.getMarker());
+    }
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForListApplicationAssignments());
+
+    std::shared_ptr<ListApplicationAssignmentsResponse> localVarResult = std::make_shared<ListApplicationAssignmentsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListApplicationAssignmentsForPrincipalResponse> IdentityCenterClient::listApplicationAssignmentsForPrincipal(ListApplicationAssignmentsForPrincipalRequest &request)
+{
+    std::string localVarPath = "/v1/instances/{instance_id}/application-assignments-for-principals";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.principalIdIsSet()) {
+        localVarQueryParams["principal_id"] = parameterToString(request.getPrincipalId());
+    }
+    if (request.principalTypeIsSet()) {
+        localVarQueryParams["principal_type"] = parameterToString(request.getPrincipalType());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.markerIsSet()) {
+        localVarQueryParams["marker"] = parameterToString(request.getMarker());
+    }
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForListApplicationAssignmentsForPrincipal());
+
+    std::shared_ptr<ListApplicationAssignmentsForPrincipalResponse> localVarResult = std::make_shared<ListApplicationAssignmentsForPrincipalResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<CreateApplicationInstanceCertificateResponse> IdentityCenterClient::createApplicationInstanceCertificate(CreateApplicationInstanceCertificateRequest &request)
+{
+    std::string localVarPath = "/v1/instances/{instance_id}/application-instances/{application_instance_id}/certificates";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+    localVarPathParams["application_instance_id"] = parameterToString(request.getApplicationInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForCreateApplicationInstanceCertificate());
+
+    std::shared_ptr<CreateApplicationInstanceCertificateResponse> localVarResult = std::make_shared<CreateApplicationInstanceCertificateResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<DeleteApplicationInstanceCertificateResponse> IdentityCenterClient::deleteApplicationInstanceCertificate(DeleteApplicationInstanceCertificateRequest &request)
+{
+    std::string localVarPath = "/v1/instances/{instance_id}/application-instances/{application_instance_id}/certificates/{certificate_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+    localVarPathParams["application_instance_id"] = parameterToString(request.getApplicationInstanceId());
+    localVarPathParams["certificate_id"] = parameterToString(request.getCertificateId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForDeleteApplicationInstanceCertificate());
+
+    std::shared_ptr<DeleteApplicationInstanceCertificateResponse> localVarResult = std::make_shared<DeleteApplicationInstanceCertificateResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListApplicationInstanceCertificatesResponse> IdentityCenterClient::listApplicationInstanceCertificates(ListApplicationInstanceCertificatesRequest &request)
+{
+    std::string localVarPath = "/v1/instances/{instance_id}/application-instances/{application_instance_id}/certificates";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+    localVarPathParams["application_instance_id"] = parameterToString(request.getApplicationInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.markerIsSet()) {
+        localVarQueryParams["marker"] = parameterToString(request.getMarker());
+    }
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForListApplicationInstanceCertificates());
+
+    std::shared_ptr<ListApplicationInstanceCertificatesResponse> localVarResult = std::make_shared<ListApplicationInstanceCertificatesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateApplicationInstanceActiveCertificateResponse> IdentityCenterClient::updateApplicationInstanceActiveCertificate(UpdateApplicationInstanceActiveCertificateRequest &request)
+{
+    std::string localVarPath = "/v1/instances/{instance_id}/application-instances/{application_instance_id}/certificates/{certificate_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+    localVarPathParams["application_instance_id"] = parameterToString(request.getApplicationInstanceId());
+    localVarPathParams["certificate_id"] = parameterToString(request.getCertificateId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForUpdateApplicationInstanceActiveCertificate());
+
+    std::shared_ptr<UpdateApplicationInstanceActiveCertificateResponse> localVarResult = std::make_shared<UpdateApplicationInstanceActiveCertificateResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<GetSsoConfigurationResponse> IdentityCenterClient::getSsoConfiguration(GetSsoConfigurationRequest &request)
+{
+    std::string localVarPath = "/v1/instances/{instance_id}/sso-configuration";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForGetSsoConfiguration());
+
+    std::shared_ptr<GetSsoConfigurationResponse> localVarResult = std::make_shared<GetSsoConfigurationResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateSsoConfigurationResponse> IdentityCenterClient::updateSsoConfiguration(UpdateSsoConfigurationRequest &request)
+{
+    std::string localVarPath = "/v1/instances/{instance_id}/sso-configuration";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForUpdateSsoConfiguration());
+
+    std::shared_ptr<UpdateSsoConfigurationResponse> localVarResult = std::make_shared<UpdateSsoConfigurationResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<CreateAliasResponse> IdentityCenterClient::createAlias(CreateAliasRequest &request)
+{
+    std::string localVarPath = "/v1/instances/{instance_id}/alias";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForCreateAlias());
+
+    std::shared_ptr<CreateAliasResponse> localVarResult = std::make_shared<CreateAliasResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<DeleteIdentityCenterResponse> IdentityCenterClient::deleteIdentityCenter(DeleteIdentityCenterRequest &request)
+{
+    std::string localVarPath = "/v1/service/delete";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForDeleteIdentityCenter());
+
+    std::shared_ptr<DeleteIdentityCenterResponse> localVarResult = std::make_shared<DeleteIdentityCenterResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<DescribeRegisteredRegionsResponse> IdentityCenterClient::describeRegisteredRegions(DescribeRegisteredRegionsRequest &request)
+{
+    std::string localVarPath = "/v1/registered-regions";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForDescribeRegisteredRegions());
+
+    std::shared_ptr<DescribeRegisteredRegionsResponse> localVarResult = std::make_shared<DescribeRegisteredRegionsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<GetHaConfigurationResponse> IdentityCenterClient::getHaConfiguration(GetHaConfigurationRequest &request)
+{
+    std::string localVarPath = "/v1/instances/{instance_id}/disaster-recovery-configuration";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForGetHaConfiguration());
+
+    std::shared_ptr<GetHaConfigurationResponse> localVarResult = std::make_shared<GetHaConfigurationResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<GetIdentityCenterServiceStatusResponse> IdentityCenterClient::getIdentityCenterServiceStatus(GetIdentityCenterServiceStatusRequest &request)
+{
+    std::string localVarPath = "/v1/identity-center-service/status";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForGetIdentityCenterServiceStatus());
+
+    std::shared_ptr<GetIdentityCenterServiceStatusResponse> localVarResult = std::make_shared<GetIdentityCenterServiceStatusResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListIdentityStoreAssociationResponse> IdentityCenterClient::listIdentityStoreAssociation(ListIdentityStoreAssociationRequest &request)
+{
+    std::string localVarPath = "/v1/instances/{instance_id}/identity-store-associations";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForListIdentityStoreAssociation());
+
+    std::shared_ptr<ListIdentityStoreAssociationResponse> localVarResult = std::make_shared<ListIdentityStoreAssociationResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListInstancesResponse> IdentityCenterClient::listInstances(ListInstancesRequest &request)
 {
     std::string localVarPath = "/v1/instances";
@@ -355,6 +1848,127 @@ std::shared_ptr<ListInstancesResponse> IdentityCenterClient::listInstances(ListI
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<RegisterRegionResponse> IdentityCenterClient::registerRegion(RegisterRegionRequest &request)
+{
+    std::string localVarPath = "/v1/register-regions";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForRegisterRegion());
+
+    std::shared_ptr<RegisterRegionResponse> localVarResult = std::make_shared<RegisterRegionResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<StartIdentityCenterResponse> IdentityCenterClient::startIdentityCenter(StartIdentityCenterRequest &request)
+{
+    std::string localVarPath = "/v1/service/start";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForStartIdentityCenter());
+
+    std::shared_ptr<StartIdentityCenterResponse> localVarResult = std::make_shared<StartIdentityCenterResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateHaConfigurationResponse> IdentityCenterClient::updateHaConfiguration(UpdateHaConfigurationRequest &request)
+{
+    std::string localVarPath = "/v1/instances/{instance_id}/disaster-recovery-configuration";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForUpdateHaConfiguration());
+
+    std::shared_ptr<UpdateHaConfigurationResponse> localVarResult = std::make_shared<UpdateHaConfigurationResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
 
     return localVarResult;
 }
@@ -514,6 +2128,84 @@ std::shared_ptr<UpdateInstanceAccessControlAttributeConfigurationResponse> Ident
 
     return localVarResult;
 }
+std::shared_ptr<GetMfaDeviceManagementForIdentityStoreResponse> IdentityCenterClient::getMfaDeviceManagementForIdentityStore(GetMfaDeviceManagementForIdentityStoreRequest &request)
+{
+    std::string localVarPath = "/v1/instances/{instance_id}/mfa-devices/management-settings";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForGetMfaDeviceManagementForIdentityStore());
+
+    std::shared_ptr<GetMfaDeviceManagementForIdentityStoreResponse> localVarResult = std::make_shared<GetMfaDeviceManagementForIdentityStoreResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<PutMfaDeviceManagementForIdentityStoreResponse> IdentityCenterClient::putMfaDeviceManagementForIdentityStore(PutMfaDeviceManagementForIdentityStoreRequest &request)
+{
+    std::string localVarPath = "/v1/instances/{instance_id}/mfa-devices/management-settings";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForPutMfaDeviceManagementForIdentityStore());
+
+    std::shared_ptr<PutMfaDeviceManagementForIdentityStoreResponse> localVarResult = std::make_shared<PutMfaDeviceManagementForIdentityStoreResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<AttachManagedPolicyToPermissionSetResponse> IdentityCenterClient::attachManagedPolicyToPermissionSet(AttachManagedPolicyToPermissionSetRequest &request)
 {
     std::string localVarPath = "/v1/instances/{instance_id}/permission-sets/{permission_set_id}/attach-managed-policy";
@@ -548,6 +2240,52 @@ std::shared_ptr<AttachManagedPolicyToPermissionSetResponse> IdentityCenterClient
         localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForAttachManagedPolicyToPermissionSet());
 
     std::shared_ptr<AttachManagedPolicyToPermissionSetResponse> localVarResult = std::make_shared<AttachManagedPolicyToPermissionSetResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<AttachManagedRoleToPermissionSetResponse> IdentityCenterClient::attachManagedRoleToPermissionSet(AttachManagedRoleToPermissionSetRequest &request)
+{
+    std::string localVarPath = "/v1/instances/{instance_id}/permission-sets/{permission_set_id}/attach-managed-role";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+    localVarPathParams["permission_set_id"] = parameterToString(request.getPermissionSetId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForAttachManagedRoleToPermissionSet());
+
+    std::shared_ptr<AttachManagedRoleToPermissionSetResponse> localVarResult = std::make_shared<AttachManagedRoleToPermissionSetResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -821,6 +2559,52 @@ std::shared_ptr<DetachManagedPolicyFromPermissionSetResponse> IdentityCenterClie
 
     return localVarResult;
 }
+std::shared_ptr<DetachManagedRoleFromPermissionSetResponse> IdentityCenterClient::detachManagedRoleFromPermissionSet(DetachManagedRoleFromPermissionSetRequest &request)
+{
+    std::string localVarPath = "/v1/instances/{instance_id}/permission-sets/{permission_set_id}/detach-managed-role";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+    localVarPathParams["permission_set_id"] = parameterToString(request.getPermissionSetId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForDetachManagedRoleFromPermissionSet());
+
+    std::shared_ptr<DetachManagedRoleFromPermissionSetResponse> localVarResult = std::make_shared<DetachManagedRoleFromPermissionSetResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<GetCustomPolicyForPermissionSetResponse> IdentityCenterClient::getCustomPolicyForPermissionSet(GetCustomPolicyForPermissionSetRequest &request)
 {
     std::string localVarPath = "/v1/instances/{instance_id}/permission-sets/{permission_set_id}/custom-policy";
@@ -883,6 +2667,39 @@ std::shared_ptr<GetCustomRoleForPermissionSetResponse> IdentityCenterClient::get
         localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForGetCustomRoleForPermissionSet());
 
     std::shared_ptr<GetCustomRoleForPermissionSetResponse> localVarResult = std::make_shared<GetCustomRoleForPermissionSetResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<GetPermissionSetSummaryResponse> IdentityCenterClient::getPermissionSetSummary(GetPermissionSetSummaryRequest &request)
+{
+    std::string localVarPath = "/v1/instances/{instance_id}/permission-set-summary";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForGetPermissionSetSummary());
+
+    std::shared_ptr<GetPermissionSetSummaryResponse> localVarResult = std::make_shared<GetPermissionSetSummaryResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -966,6 +2783,46 @@ std::shared_ptr<ListManagedPoliciesInPermissionSetResponse> IdentityCenterClient
         localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForListManagedPoliciesInPermissionSet());
 
     std::shared_ptr<ListManagedPoliciesInPermissionSetResponse> localVarResult = std::make_shared<ListManagedPoliciesInPermissionSetResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListManagedRolesInPermissionSetResponse> IdentityCenterClient::listManagedRolesInPermissionSet(ListManagedRolesInPermissionSetRequest &request)
+{
+    std::string localVarPath = "/v1/instances/{instance_id}/permission-sets/{permission_set_id}/managed-roles";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
+    localVarPathParams["permission_set_id"] = parameterToString(request.getPermissionSetId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.markerIsSet()) {
+        localVarQueryParams["marker"] = parameterToString(request.getMarker());
+    }
+    if (request.xSecurityTokenIsSet()) {
+        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForListManagedRolesInPermissionSet());
+
+    std::shared_ptr<ListManagedRolesInPermissionSetResponse> localVarResult = std::make_shared<ListManagedRolesInPermissionSetResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -1417,138 +3274,6 @@ std::shared_ptr<ListTagResourcesResponse> IdentityCenterClient::listTagResources
         localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForListTagResources());
 
     std::shared_ptr<ListTagResourcesResponse> localVarResult = std::make_shared<ListTagResourcesResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-
-    return localVarResult;
-}
-std::shared_ptr<AttachManagedRoleToPermissionSetResponse> IdentityCenterClient::attachManagedRoleToPermissionSet(AttachManagedRoleToPermissionSetRequest &request)
-{
-    std::string localVarPath = "/v1/instances/{instance_id}/permission-sets/{permission_set_id}/attach-managed-role";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
-    localVarPathParams["permission_set_id"] = parameterToString(request.getPermissionSetId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.xSecurityTokenIsSet()) {
-        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
-    }
-
-    std::string localVarHttpBody;
-    if (isJson) {
-        // handle json input
-        web::json::value localVarJson;
-        localVarJson = ModelBase::toJson(request.getBody());
-        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
-    }
-
-    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForAttachManagedRoleToPermissionSet());
-
-    std::shared_ptr<AttachManagedRoleToPermissionSetResponse> localVarResult = std::make_shared<AttachManagedRoleToPermissionSetResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-    if (!res->getHttpBody().empty()) {
-        spdlog::info("parse json format response");
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
-
-    return localVarResult;
-}
-std::shared_ptr<DetachManagedRoleFromPermissionSetResponse> IdentityCenterClient::detachManagedRoleFromPermissionSet(DetachManagedRoleFromPermissionSetRequest &request)
-{
-    std::string localVarPath = "/v1/instances/{instance_id}/permission-sets/{permission_set_id}/detach-managed-role";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
-    localVarPathParams["permission_set_id"] = parameterToString(request.getPermissionSetId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.xSecurityTokenIsSet()) {
-        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
-    }
-
-    std::string localVarHttpBody;
-    if (isJson) {
-        // handle json input
-        web::json::value localVarJson;
-        localVarJson = ModelBase::toJson(request.getBody());
-        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
-    }
-
-    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForDetachManagedRoleFromPermissionSet());
-
-    std::shared_ptr<DetachManagedRoleFromPermissionSetResponse> localVarResult = std::make_shared<DetachManagedRoleFromPermissionSetResponse>();
-    localVarResult->setStatusCode(res->getStatusCode());
-    localVarResult->setHeaderParams(res->getHeaderParams());
-    localVarResult->setHttpBody(res->getHttpBody());
-    if (!res->getHttpBody().empty()) {
-        spdlog::info("parse json format response");
-        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
-        web::json::value localVarJson = web::json::value::parse(localVarResponse);
-        localVarResult->fromJson(localVarJson);
-    }
-
-    return localVarResult;
-}
-std::shared_ptr<ListManagedRolesInPermissionSetResponse> IdentityCenterClient::listManagedRolesInPermissionSet(ListManagedRolesInPermissionSetRequest &request)
-{
-    std::string localVarPath = "/v1/instances/{instance_id}/permission-sets/{permission_set_id}/managed-roles";
-
-    std::map<std::string, std::string> localVarQueryParams;
-    std::map<std::string, std::string> localVarHeaderParams;
-    std::map<std::string, std::string> localVarFormParams;
-    std::map<std::string, std::string> localVarPathParams;
-
-    localVarPathParams["instance_id"] = parameterToString(request.getInstanceId());
-    localVarPathParams["permission_set_id"] = parameterToString(request.getPermissionSetId());
-
-    bool isJson = false;
-    bool isMultiPart = false;
-    bool isBson = false;
-    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
-    localVarHeaderParams["Content-Type"] = contentType;
-
-    if (request.limitIsSet()) {
-        localVarQueryParams["limit"] = parameterToString(request.getLimit());
-    }
-    if (request.markerIsSet()) {
-        localVarQueryParams["marker"] = parameterToString(request.getMarker());
-    }
-    if (request.xSecurityTokenIsSet()) {
-        localVarHeaderParams["X-Security-Token"] = parameterToString(request.getXSecurityToken());
-    }
-
-    std::string localVarHttpBody;
-
-    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
-        localVarHeaderParams, localVarHttpBody, IdentityCenterMeta::genRequestDefForListManagedRolesInPermissionSet());
-
-    std::shared_ptr<ListManagedRolesInPermissionSetResponse> localVarResult = std::make_shared<ListManagedRolesInPermissionSetResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

@@ -65,6 +65,24 @@ public:
     void unsethsmCaCert();
     void setHsmCaCert(const std::string& value);
 
+    /// <summary>
+    /// 集群ID。当类型为DHSM时，cluster_id为hsm_cluster_id。当类型为CDMS时，为cdms_cluster_id
+    /// </summary>
+
+    std::string getClusterId() const;
+    bool clusterIdIsSet() const;
+    void unsetclusterId();
+    void setClusterId(const std::string& value);
+
+    /// <summary>
+    /// 专属密钥库集群类型。DHSM表示专属加密服务集群，CDMS表示密码卡集群,DEFAULT表示KMS原有集群
+    /// </summary>
+
+    std::string getKeystoreType() const;
+    bool keystoreTypeIsSet() const;
+    void unsetkeystoreType();
+    void setKeystoreType(const std::string& value);
+
 
 protected:
     std::string keystoreAlias_;
@@ -73,6 +91,10 @@ protected:
     bool hsmClusterIdIsSet_;
     std::string hsmCaCert_;
     bool hsmCaCertIsSet_;
+    std::string clusterId_;
+    bool clusterIdIsSet_;
+    std::string keystoreType_;
+    bool keystoreTypeIsSet_;
 
 };
 

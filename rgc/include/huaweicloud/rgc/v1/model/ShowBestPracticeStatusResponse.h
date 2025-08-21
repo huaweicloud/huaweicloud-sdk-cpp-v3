@@ -49,7 +49,7 @@ public:
     void setOperationId(const std::string& value);
 
     /// <summary>
-    /// 状态：进行中，成功，成败
+    /// 状态：进行中，成功，失败
     /// </summary>
 
     std::string getStatus() const;

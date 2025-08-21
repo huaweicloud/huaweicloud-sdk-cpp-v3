@@ -8,6 +8,15 @@ namespace V2 {
 
 using namespace HuaweiCloud::Sdk::Core::Http;
 
+HttpRequestDef CdnMeta::genRequestDefForApplyDomainTemplate() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CdnMeta::genRequestDefForBatchCopyDomain() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -56,6 +65,15 @@ HttpRequestDef CdnMeta::genRequestDefForCreateDomain() {
         withJsonTag("X-Request-Id").
         withKindName("std::string").
         withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CdnMeta::genRequestDefForCreateDomainTemplate() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
     return reqDefBuilder;
 }
 
@@ -135,6 +153,11 @@ HttpRequestDef CdnMeta::genRequestDefForDeleteDomain() {
         withJsonTag("X-Request-Id").
         withKindName("std::string").
         withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CdnMeta::genRequestDefForDeleteDomainTemplate() {
+    HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
 
@@ -340,6 +363,26 @@ HttpRequestDef CdnMeta::genRequestDefForSetChargeModes() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CdnMeta::genRequestDefForShowAppliedTemplateRecord() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("TmlId")
+                  .withJsonTag("tml_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("TmlName")
+                  .withJsonTag("tml_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("OperatorId")
+                  .withJsonTag("operator_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CdnMeta::genRequestDefForShowBandwidthCalc() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("StartTime")
@@ -497,6 +540,26 @@ HttpRequestDef CdnMeta::genRequestDefForShowDomainStats() {
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("EnterpriseProjectId")
                   .withJsonTag("enterprise_project_id")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CdnMeta::genRequestDefForShowDomainTemplate() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("TmlName")
+                  .withJsonTag("tml_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("TmlId")
+                  .withJsonTag("tml_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("TmlType")
+                  .withJsonTag("tml_type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
                   .withLocationType(Query_));
     return reqDefBuilder;
 }
@@ -747,6 +810,15 @@ HttpRequestDef CdnMeta::genRequestDefForUpdateDomainMultiCertificates() {
         withJsonTag("X-Request-Id").
         withKindName("std::string").
         withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CdnMeta::genRequestDefForUpdateDomainTemplate() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
     return reqDefBuilder;
 }
 

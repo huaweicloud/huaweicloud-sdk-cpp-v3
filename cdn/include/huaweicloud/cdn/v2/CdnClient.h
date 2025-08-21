@@ -7,6 +7,8 @@
 
 
 #include <huaweicloud/cdn/v2/model/AccountConfigModifyRequest.h>
+#include <huaweicloud/cdn/v2/model/ApplyDomainTemplateRequest.h>
+#include <huaweicloud/cdn/v2/model/ApplyDomainTemplateResponse.h>
 #include <huaweicloud/cdn/v2/model/BatchCopyDRequestBody.h>
 #include <huaweicloud/cdn/v2/model/BatchCopyDomainRequest.h>
 #include <huaweicloud/cdn/v2/model/BatchCopyDomainResponse.h>
@@ -19,6 +21,8 @@
 #include <huaweicloud/cdn/v2/model/CreateDomainRequest.h>
 #include <huaweicloud/cdn/v2/model/CreateDomainRequestBody.h>
 #include <huaweicloud/cdn/v2/model/CreateDomainResponse.h>
+#include <huaweicloud/cdn/v2/model/CreateDomainTemplateRequest.h>
+#include <huaweicloud/cdn/v2/model/CreateDomainTemplateResponse.h>
 #include <huaweicloud/cdn/v2/model/CreatePreheatingTasksRequest.h>
 #include <huaweicloud/cdn/v2/model/CreatePreheatingTasksResponse.h>
 #include <huaweicloud/cdn/v2/model/CreateRefreshTasksRequest.h>
@@ -32,8 +36,11 @@
 #include <huaweicloud/cdn/v2/model/CreateTagsRequest.h>
 #include <huaweicloud/cdn/v2/model/CreateTagsRequestBody.h>
 #include <huaweicloud/cdn/v2/model/CreateTagsResponse.h>
+#include <huaweicloud/cdn/v2/model/CreateTemplateRequestBody.h>
 #include <huaweicloud/cdn/v2/model/DeleteDomainRequest.h>
 #include <huaweicloud/cdn/v2/model/DeleteDomainResponse.h>
+#include <huaweicloud/cdn/v2/model/DeleteDomainTemplateRequest.h>
+#include <huaweicloud/cdn/v2/model/DeleteDomainTemplateResponse.h>
 #include <huaweicloud/cdn/v2/model/DeleteRuleNewRequest.h>
 #include <huaweicloud/cdn/v2/model/DeleteRuleNewResponse.h>
 #include <huaweicloud/cdn/v2/model/DeleteShareCacheGroupsRequest.h>
@@ -65,6 +72,8 @@
 #include <huaweicloud/cdn/v2/model/SetChargeModesBody.h>
 #include <huaweicloud/cdn/v2/model/SetChargeModesRequest.h>
 #include <huaweicloud/cdn/v2/model/SetChargeModesResponse.h>
+#include <huaweicloud/cdn/v2/model/ShowAppliedTemplateRecordRequest.h>
+#include <huaweicloud/cdn/v2/model/ShowAppliedTemplateRecordResponse.h>
 #include <huaweicloud/cdn/v2/model/ShowBandwidthCalcRequest.h>
 #include <huaweicloud/cdn/v2/model/ShowBandwidthCalcResponse.h>
 #include <huaweicloud/cdn/v2/model/ShowCertificatesHttpsInfoRequest.h>
@@ -79,6 +88,8 @@
 #include <huaweicloud/cdn/v2/model/ShowDomainLocationStatsResponse.h>
 #include <huaweicloud/cdn/v2/model/ShowDomainStatsRequest.h>
 #include <huaweicloud/cdn/v2/model/ShowDomainStatsResponse.h>
+#include <huaweicloud/cdn/v2/model/ShowDomainTemplateRequest.h>
+#include <huaweicloud/cdn/v2/model/ShowDomainTemplateResponse.h>
 #include <huaweicloud/cdn/v2/model/ShowHistoryTaskDetailsRequest.h>
 #include <huaweicloud/cdn/v2/model/ShowHistoryTaskDetailsResponse.h>
 #include <huaweicloud/cdn/v2/model/ShowHistoryTasksRequest.h>
@@ -99,11 +110,14 @@
 #include <huaweicloud/cdn/v2/model/ShowUrlTaskInfoResponse.h>
 #include <huaweicloud/cdn/v2/model/ShowVerifyDomainOwnerInfoRequest.h>
 #include <huaweicloud/cdn/v2/model/ShowVerifyDomainOwnerInfoResponse.h>
+#include <huaweicloud/cdn/v2/model/TemplateApplyRequestBody.h>
 #include <huaweicloud/cdn/v2/model/UpdateDomainFullConfigRequest.h>
 #include <huaweicloud/cdn/v2/model/UpdateDomainFullConfigResponse.h>
 #include <huaweicloud/cdn/v2/model/UpdateDomainMultiCertificatesRequest.h>
 #include <huaweicloud/cdn/v2/model/UpdateDomainMultiCertificatesRequestBody.h>
 #include <huaweicloud/cdn/v2/model/UpdateDomainMultiCertificatesResponse.h>
+#include <huaweicloud/cdn/v2/model/UpdateDomainTemplateRequest.h>
+#include <huaweicloud/cdn/v2/model/UpdateDomainTemplateResponse.h>
 #include <huaweicloud/cdn/v2/model/UpdateFullRuleRequest.h>
 #include <huaweicloud/cdn/v2/model/UpdateFullRuleResponse.h>
 #include <huaweicloud/cdn/v2/model/UpdatePrivateBucketAccessBody.h>
@@ -144,6 +158,14 @@ public:
 
     static ClientBuilder<CdnClient> newBuilder();
 
+    // 应用域名模板。
+    //
+    // 应用域名模板。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ApplyDomainTemplateResponse> applyDomainTemplate(
+        ApplyDomainTemplateRequest &request
+    );
     // 批量域名复制
     //
     // 批量域名复制接口。
@@ -176,6 +198,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateDomainResponse> createDomain(
         CreateDomainRequest &request
+    );
+    // 创建域名模板。
+    //
+    // 创建域名模板。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateDomainTemplateResponse> createDomainTemplate(
+        CreateDomainTemplateRequest &request
     );
     // 创建预热缓存任务
     //
@@ -228,6 +258,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteDomainResponse> deleteDomain(
         DeleteDomainRequest &request
+    );
+    // 删除域名模板。
+    //
+    // 删除域名模板。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteDomainTemplateResponse> deleteDomainTemplate(
+        DeleteDomainTemplateRequest &request
     );
     // 删除规则引擎规则
     //
@@ -362,6 +400,14 @@ public:
     std::shared_ptr<SetChargeModesResponse> setChargeModes(
         SetChargeModesRequest &request
     );
+    // 查询域名模板应用记录。
+    //
+    // 查询域名模板应用记录。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowAppliedTemplateRecordResponse> showAppliedTemplateRecord(
+        ShowAppliedTemplateRecordRequest &request
+    );
     // 查询域名带宽峰值类数据
     //
     // - 查询域名带宽峰值类数据。
@@ -461,6 +507,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowDomainStatsResponse> showDomainStats(
         ShowDomainStatsRequest &request
+    );
+    // 查询域名模板列表
+    //
+    // 查询域名模板列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowDomainTemplateResponse> showDomainTemplate(
+        ShowDomainTemplateRequest &request
     );
     // 查询刷新预热任务详情
     //
@@ -581,6 +635,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateDomainMultiCertificatesResponse> updateDomainMultiCertificates(
         UpdateDomainMultiCertificatesRequest &request
+    );
+    // 修改域名模板。
+    //
+    // 修改域名模板。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateDomainTemplateResponse> updateDomainTemplate(
+        UpdateDomainTemplateRequest &request
     );
     // 全量更新规则引擎规则
     //

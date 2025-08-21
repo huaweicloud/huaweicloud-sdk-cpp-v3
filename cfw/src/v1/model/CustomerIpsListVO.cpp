@@ -26,8 +26,6 @@ CustomerIpsListVO::CustomerIpsListVO()
     dstPortTypeIsSet_ = false;
     dstPorts_ = "";
     dstPortsIsSet_ = false;
-    groupId_ = "";
-    groupIdIsSet_ = false;
     ipsCfwId_ = "";
     ipsCfwIdIsSet_ = false;
     ipsId_ = "";
@@ -44,6 +42,8 @@ CustomerIpsListVO::CustomerIpsListVO()
     srcPortTypeIsSet_ = false;
     srcPorts_ = "";
     srcPortsIsSet_ = false;
+    groupId_ = "";
+    groupIdIsSet_ = false;
 }
 
 CustomerIpsListVO::~CustomerIpsListVO() = default;
@@ -77,9 +77,6 @@ web::json::value CustomerIpsListVO::toJson() const
     if(dstPortsIsSet_) {
         val[utility::conversions::to_string_t("dst_ports")] = ModelBase::toJson(dstPorts_);
     }
-    if(groupIdIsSet_) {
-        val[utility::conversions::to_string_t("group_id")] = ModelBase::toJson(groupId_);
-    }
     if(ipsCfwIdIsSet_) {
         val[utility::conversions::to_string_t("ips_cfw_id")] = ModelBase::toJson(ipsCfwId_);
     }
@@ -103,6 +100,9 @@ web::json::value CustomerIpsListVO::toJson() const
     }
     if(srcPortsIsSet_) {
         val[utility::conversions::to_string_t("src_ports")] = ModelBase::toJson(srcPorts_);
+    }
+    if(groupIdIsSet_) {
+        val[utility::conversions::to_string_t("group_id")] = ModelBase::toJson(groupId_);
     }
 
     return val;
@@ -172,15 +172,6 @@ bool CustomerIpsListVO::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDstPorts(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("group_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("group_id"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setGroupId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("ips_cfw_id"))) {
@@ -253,6 +244,15 @@ bool CustomerIpsListVO::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSrcPorts(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("group_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("group_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setGroupId(refVal);
         }
     }
     return ok;
@@ -404,27 +404,6 @@ bool CustomerIpsListVO::dstPortsIsSet() const
 void CustomerIpsListVO::unsetdstPorts()
 {
     dstPortsIsSet_ = false;
-}
-
-std::string CustomerIpsListVO::getGroupId() const
-{
-    return groupId_;
-}
-
-void CustomerIpsListVO::setGroupId(const std::string& value)
-{
-    groupId_ = value;
-    groupIdIsSet_ = true;
-}
-
-bool CustomerIpsListVO::groupIdIsSet() const
-{
-    return groupIdIsSet_;
-}
-
-void CustomerIpsListVO::unsetgroupId()
-{
-    groupIdIsSet_ = false;
 }
 
 std::string CustomerIpsListVO::getIpsCfwId() const
@@ -593,6 +572,27 @@ bool CustomerIpsListVO::srcPortsIsSet() const
 void CustomerIpsListVO::unsetsrcPorts()
 {
     srcPortsIsSet_ = false;
+}
+
+std::string CustomerIpsListVO::getGroupId() const
+{
+    return groupId_;
+}
+
+void CustomerIpsListVO::setGroupId(const std::string& value)
+{
+    groupId_ = value;
+    groupIdIsSet_ = true;
+}
+
+bool CustomerIpsListVO::groupIdIsSet() const
+{
+    return groupIdIsSet_;
+}
+
+void CustomerIpsListVO::unsetgroupId()
+{
+    groupIdIsSet_ = false;
 }
 
 }

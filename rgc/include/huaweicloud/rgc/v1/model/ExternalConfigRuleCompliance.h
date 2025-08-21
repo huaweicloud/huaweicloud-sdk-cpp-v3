@@ -57,7 +57,7 @@ public:
     void setStatus(const std::string& value);
 
     /// <summary>
-    /// 控制策略ID。
+    /// 外部规则ID。
     /// </summary>
 
     std::string getControlId() const;

@@ -39,7 +39,7 @@ public:
     /// ListLogLtsConfigsRequest members
 
     /// <summary>
-    /// 引擎。
+    /// 引擎，暂只支持mysql。
     /// </summary>
 
     std::string getEngine() const;

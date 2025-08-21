@@ -39,15 +39,6 @@ public:
     /// ShowCustomerIpsInfoRequest members
 
     /// <summary>
-    /// **参数解释**： 防火墙ID，用户创建防火墙实例后产生的唯一ID，配置后可区分不同防火墙，可通过[防火墙ID获取方式](cfw_02_0028.xml)获取 **约束限制**： 不涉及 **取值范围**： 32位UUID **默认取值**： 不涉及
-    /// </summary>
-
-    std::string getFwInstanceId() const;
-    bool fwInstanceIdIsSet() const;
-    void unsetfwInstanceId();
-    void setFwInstanceId(const std::string& value);
-
-    /// <summary>
     /// **参数解释**： cfw侧自定义IPS规则id **约束限制**： 不涉及 **取值范围**： 32位UUID **默认取值**： 不涉及
     /// </summary>
 
@@ -65,14 +56,23 @@ public:
     void unsetobjectId();
     void setObjectId(const std::string& value);
 
+    /// <summary>
+    /// **参数解释**： 防火墙ID，用户创建防火墙实例后产生的唯一ID，配置后可区分不同防火墙，可通过[防火墙ID获取方式](cfw_02_0028.xml)获取 **约束限制**： 不涉及 **取值范围**： 32位UUID **默认取值**： 不涉及
+    /// </summary>
+
+    std::string getFwInstanceId() const;
+    bool fwInstanceIdIsSet() const;
+    void unsetfwInstanceId();
+    void setFwInstanceId(const std::string& value);
+
 
 protected:
-    std::string fwInstanceId_;
-    bool fwInstanceIdIsSet_;
     std::string ipsCfwId_;
     bool ipsCfwIdIsSet_;
     std::string objectId_;
     bool objectIdIsSet_;
+    std::string fwInstanceId_;
+    bool fwInstanceIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

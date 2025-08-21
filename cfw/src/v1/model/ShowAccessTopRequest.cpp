@@ -14,10 +14,10 @@ ShowAccessTopRequest::ShowAccessTopRequest()
 {
     fwInstanceId_ = "";
     fwInstanceIdIsSet_ = false;
-    direction_ = "";
-    directionIsSet_ = false;
     range_ = 0;
     rangeIsSet_ = false;
+    direction_ = "";
+    directionIsSet_ = false;
     startTime_ = 0L;
     startTimeIsSet_ = false;
     endTime_ = 0L;
@@ -43,11 +43,11 @@ web::json::value ShowAccessTopRequest::toJson() const
     if(fwInstanceIdIsSet_) {
         val[utility::conversions::to_string_t("fw_instance_id")] = ModelBase::toJson(fwInstanceId_);
     }
-    if(directionIsSet_) {
-        val[utility::conversions::to_string_t("direction")] = ModelBase::toJson(direction_);
-    }
     if(rangeIsSet_) {
         val[utility::conversions::to_string_t("range")] = ModelBase::toJson(range_);
+    }
+    if(directionIsSet_) {
+        val[utility::conversions::to_string_t("direction")] = ModelBase::toJson(direction_);
     }
     if(startTimeIsSet_) {
         val[utility::conversions::to_string_t("start_time")] = ModelBase::toJson(startTime_);
@@ -83,15 +83,6 @@ bool ShowAccessTopRequest::fromJson(const web::json::value& val)
             setFwInstanceId(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("direction"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("direction"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setDirection(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("range"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("range"));
         if(!fieldValue.is_null())
@@ -99,6 +90,15 @@ bool ShowAccessTopRequest::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRange(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("direction"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("direction"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDirection(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("start_time"))) {
@@ -180,27 +180,6 @@ void ShowAccessTopRequest::unsetfwInstanceId()
     fwInstanceIdIsSet_ = false;
 }
 
-std::string ShowAccessTopRequest::getDirection() const
-{
-    return direction_;
-}
-
-void ShowAccessTopRequest::setDirection(const std::string& value)
-{
-    direction_ = value;
-    directionIsSet_ = true;
-}
-
-bool ShowAccessTopRequest::directionIsSet() const
-{
-    return directionIsSet_;
-}
-
-void ShowAccessTopRequest::unsetdirection()
-{
-    directionIsSet_ = false;
-}
-
 int32_t ShowAccessTopRequest::getRange() const
 {
     return range_;
@@ -220,6 +199,27 @@ bool ShowAccessTopRequest::rangeIsSet() const
 void ShowAccessTopRequest::unsetrange()
 {
     rangeIsSet_ = false;
+}
+
+std::string ShowAccessTopRequest::getDirection() const
+{
+    return direction_;
+}
+
+void ShowAccessTopRequest::setDirection(const std::string& value)
+{
+    direction_ = value;
+    directionIsSet_ = true;
+}
+
+bool ShowAccessTopRequest::directionIsSet() const
+{
+    return directionIsSet_;
+}
+
+void ShowAccessTopRequest::unsetdirection()
+{
+    directionIsSet_ = false;
 }
 
 int64_t ShowAccessTopRequest::getStartTime() const

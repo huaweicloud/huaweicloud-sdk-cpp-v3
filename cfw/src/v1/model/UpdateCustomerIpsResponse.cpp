@@ -12,7 +12,7 @@ namespace Model {
 
 UpdateCustomerIpsResponse::UpdateCustomerIpsResponse()
 {
-    bodyIsSet_ = false;
+    dataIsSet_ = false;
 }
 
 UpdateCustomerIpsResponse::~UpdateCustomerIpsResponse() = default;
@@ -25,8 +25,8 @@ web::json::value UpdateCustomerIpsResponse::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(bodyIsSet_) {
-        val[utility::conversions::to_string_t("body")] = ModelBase::toJson(body_);
+    if(dataIsSet_) {
+        val[utility::conversions::to_string_t("data")] = ModelBase::toJson(data_);
     }
 
     return val;
@@ -35,38 +35,38 @@ bool UpdateCustomerIpsResponse::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("body"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
+    if(val.has_field(utility::conversions::to_string_t("data"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("data"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            UpdateCustomerIpsResp_data refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setBody(refVal);
+            setData(refVal);
         }
     }
     return ok;
 }
 
 
-Object UpdateCustomerIpsResponse::getBody() const
+UpdateCustomerIpsResp_data UpdateCustomerIpsResponse::getData() const
 {
-    return body_;
+    return data_;
 }
 
-void UpdateCustomerIpsResponse::setBody(const Object& value)
+void UpdateCustomerIpsResponse::setData(const UpdateCustomerIpsResp_data& value)
 {
-    body_ = value;
-    bodyIsSet_ = true;
+    data_ = value;
+    dataIsSet_ = true;
 }
 
-bool UpdateCustomerIpsResponse::bodyIsSet() const
+bool UpdateCustomerIpsResponse::dataIsSet() const
 {
-    return bodyIsSet_;
+    return dataIsSet_;
 }
 
-void UpdateCustomerIpsResponse::unsetbody()
+void UpdateCustomerIpsResponse::unsetdata()
 {
-    bodyIsSet_ = false;
+    dataIsSet_ = false;
 }
 
 }

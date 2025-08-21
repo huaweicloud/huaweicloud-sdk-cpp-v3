@@ -51,6 +51,15 @@ public:
     void setAction(int32_t value);
 
     /// <summary>
+    /// **参数解释**： 防火墙集群id **取值范围**： 不涉及
+    /// </summary>
+
+    std::string getGroupId() const;
+    bool groupIdIsSet() const;
+    void unsetgroupId();
+    void setGroupId(const std::string& value);
+
+    /// <summary>
     /// **参数解释**： 影响操作系统 **取值范围**： 0 any、1 Windows、2 Linux、3 FreeBSD、4 Solaris、5 other Unix、6 网络设备、7 Mac OS、8 ios、9 android、10 others
     /// </summary>
 
@@ -103,15 +112,6 @@ public:
     bool dstPortIsSet() const;
     void unsetdstPort();
     void setDstPort(const Port& value);
-
-    /// <summary>
-    /// **参数解释**： 防火墙集群id **取值范围**： 不涉及
-    /// </summary>
-
-    std::string getGroupId() const;
-    bool groupIdIsSet() const;
-    void unsetgroupId();
-    void setGroupId(const std::string& value);
 
     /// <summary>
     /// **参数解释**： cfw侧自定义IPS规则id **约束限制**： 不涉及 **取值范围**： 32位UUID **默认取值**： 不涉及
@@ -180,6 +180,8 @@ public:
 protected:
     int32_t action_;
     bool actionIsSet_;
+    std::string groupId_;
+    bool groupIdIsSet_;
     int32_t affectedOs_;
     bool affectedOsIsSet_;
     int32_t attackType_;
@@ -192,8 +194,6 @@ protected:
     bool directionIsSet_;
     Port dstPort_;
     bool dstPortIsSet_;
-    std::string groupId_;
-    bool groupIdIsSet_;
     std::string ipsCfwId_;
     bool ipsCfwIdIsSet_;
     std::string ipsId_;

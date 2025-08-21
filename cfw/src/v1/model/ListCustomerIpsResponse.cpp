@@ -39,7 +39,7 @@ bool ListCustomerIpsResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("data"));
         if(!fieldValue.is_null())
         {
-            HttpListCustomerIpsResponseData refVal;
+            CustomerIpsPageInfo refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setData(refVal);
         }
@@ -48,12 +48,12 @@ bool ListCustomerIpsResponse::fromJson(const web::json::value& val)
 }
 
 
-HttpListCustomerIpsResponseData ListCustomerIpsResponse::getData() const
+CustomerIpsPageInfo ListCustomerIpsResponse::getData() const
 {
     return data_;
 }
 
-void ListCustomerIpsResponse::setData(const HttpListCustomerIpsResponseData& value)
+void ListCustomerIpsResponse::setData(const CustomerIpsPageInfo& value)
 {
     data_ = value;
     dataIsSet_ = true;

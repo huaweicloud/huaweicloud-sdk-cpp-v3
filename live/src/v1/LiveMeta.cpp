@@ -34,6 +34,18 @@ HttpRequestDef LiveMeta::genRequestDefForCreateDomainMapping() {
     return reqDefBuilder;
 }
 
+HttpRequestDef LiveMeta::genRequestDefForCreateFlowOutput() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("FlowId")
+                  .withJsonTag("flow_id")
+                  .withLocationType(Query_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef LiveMeta::genRequestDefForCreateFlows() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -165,6 +177,17 @@ HttpRequestDef LiveMeta::genRequestDefForDeleteFlow() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("FlowId")
                   .withJsonTag("flow_id")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LiveMeta::genRequestDefForDeleteFlowOutput() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("FlowId")
+                  .withJsonTag("flow_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("OutputName")
+                  .withJsonTag("output_name")
                   .withLocationType(Query_));
     return reqDefBuilder;
 }
@@ -484,6 +507,21 @@ HttpRequestDef LiveMeta::genRequestDefForListStreamForbidden() {
     return reqDefBuilder;
 }
 
+HttpRequestDef LiveMeta::genRequestDefForModifyFlowOutput() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("FlowId")
+                  .withJsonTag("flow_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("OutputName")
+                  .withJsonTag("output_name")
+                  .withLocationType(Query_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef LiveMeta::genRequestDefForModifyFlowSources() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("FlowId")
@@ -564,6 +602,20 @@ HttpRequestDef LiveMeta::genRequestDefForShowFlowDetail() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("FlowId")
                   .withJsonTag("flow_id")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LiveMeta::genRequestDefForShowOutputInfo() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("DataDisplay")
+                  .withJsonTag("data_display")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("FlowId")
+                  .withJsonTag("flow_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("OutputName")
+                  .withJsonTag("output_name")
                   .withLocationType(Query_));
     return reqDefBuilder;
 }
@@ -748,6 +800,23 @@ HttpRequestDef LiveMeta::genRequestDefForUpdateStreamForbidden() {
 }
 
 HttpRequestDef LiveMeta::genRequestDefForUpdateTranscodingsTemplate() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LiveMeta::genRequestDefForListCesDimsInfo() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Namespace")
+                  .withJsonTag("namespace")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef LiveMeta::genRequestDefForListCesInstance() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.

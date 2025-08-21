@@ -41,7 +41,7 @@ public:
     /// CreateManagedOrganizationalUnitResponse members
 
     /// <summary>
-    /// 管理纳管账号ID。
+    /// 管理员账号ID。
     /// </summary>
 
     std::string getManageAccountId() const;
@@ -104,7 +104,7 @@ public:
     void setParentOrganizationalUnitName(const std::string& value);
 
     /// <summary>
-    /// 组织里某个注册OU下的纳管账号被创建的时间。
+    /// 注册OU的创建时间。
     /// </summary>
 
     utility::datetime getCreatedAt() const;
@@ -113,7 +113,7 @@ public:
     void setCreatedAt(const utility::datetime& value);
 
     /// <summary>
-    /// Landing Zone版本。
+    /// 注册OU的Landing Zone版本。
     /// </summary>
 
     std::string getLandingZoneVersion() const;

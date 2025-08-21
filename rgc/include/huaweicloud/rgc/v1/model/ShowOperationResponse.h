@@ -68,7 +68,7 @@ public:
     void setStatus(const std::string& value);
 
     /// <summary>
-    /// 创建账号、纳管注册OU、纳管账号的详细进度信息。
+    /// 创建账号、注册OU、纳管账号的详细进度信息。
     /// </summary>
 
     std::vector<OrganizationalPercentageDetail>& getPercentageDetails();
@@ -77,7 +77,7 @@ public:
     void setPercentageDetails(const std::vector<OrganizationalPercentageDetail>& value);
 
     /// <summary>
-    /// 创建账号、纳管注册OU、纳管账号的错误信息描述。
+    /// 创建账号、注册OU、纳管账号的错误信息描述。
     /// </summary>
 
     std::string getMessage() const;

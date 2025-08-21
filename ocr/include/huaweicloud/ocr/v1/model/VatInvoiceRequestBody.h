@@ -83,6 +83,15 @@ public:
     void unsetpageNum();
     void setPageNum(int32_t value);
 
+    /// <summary>
+    /// OFD转图片的模式开关。针对输入文件为OFD时，有两种处理方案： 方案一：直接解析OFD文件，并提取结构化信息 方案二：转成图片后再进行识别，该方案更鲁棒，但是时延会显著增加 取值范围包括： •  false：选择方案一 •  true：选择方案二 未传入该参数时默认为false，即选择方案一。 
+    /// </summary>
+
+    bool isOfdToImageMode() const;
+    bool ofdToImageModeIsSet() const;
+    void unsetofdToImageMode();
+    void setOfdToImageMode(bool value);
+
 
 protected:
     std::string image_;
@@ -95,6 +104,8 @@ protected:
     bool returnTextLocationIsSet_;
     int32_t pageNum_;
     bool pageNumIsSet_;
+    bool ofdToImageMode_;
+    bool ofdToImageModeIsSet_;
 
 };
 

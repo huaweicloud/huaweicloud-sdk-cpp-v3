@@ -16,6 +16,7 @@ public:
     static HttpRequestDef genRequestDefForBatchShowIpBelongs();
     static HttpRequestDef genRequestDefForCreateDomain();
     static HttpRequestDef genRequestDefForCreateDomainMapping();
+    static HttpRequestDef genRequestDefForCreateFlowOutput();
     static HttpRequestDef genRequestDefForCreateFlows();
     static HttpRequestDef genRequestDefForCreateRecordCallbackConfig();
     static HttpRequestDef genRequestDefForCreateRecordIndex();
@@ -30,6 +31,7 @@ public:
     static HttpRequestDef genRequestDefForDeleteDomainKeyChain();
     static HttpRequestDef genRequestDefForDeleteDomainMapping();
     static HttpRequestDef genRequestDefForDeleteFlow();
+    static HttpRequestDef genRequestDefForDeleteFlowOutput();
     static HttpRequestDef genRequestDefForDeletePublishTemplate();
     static HttpRequestDef genRequestDefForDeleteRecordCallbackConfig();
     static HttpRequestDef genRequestDefForDeleteRecordRule();
@@ -52,6 +54,7 @@ public:
     static HttpRequestDef genRequestDefForListScheduleRecordTasks();
     static HttpRequestDef genRequestDefForListSnapshotConfigs();
     static HttpRequestDef genRequestDefForListStreamForbidden();
+    static HttpRequestDef genRequestDefForModifyFlowOutput();
     static HttpRequestDef genRequestDefForModifyFlowSources();
     static HttpRequestDef genRequestDefForModifyFlowStart();
     static HttpRequestDef genRequestDefForModifyFlowStop();
@@ -60,6 +63,7 @@ public:
     static HttpRequestDef genRequestDefForShowDomain();
     static HttpRequestDef genRequestDefForShowDomainKeyChain();
     static HttpRequestDef genRequestDefForShowFlowDetail();
+    static HttpRequestDef genRequestDefForShowOutputInfo();
     static HttpRequestDef genRequestDefForShowPullSourcesConfig();
     static HttpRequestDef genRequestDefForShowRecordCallbackConfig();
     static HttpRequestDef genRequestDefForShowRecordRule();
@@ -79,6 +83,8 @@ public:
     static HttpRequestDef genRequestDefForUpdateSnapshotConfig();
     static HttpRequestDef genRequestDefForUpdateStreamForbidden();
     static HttpRequestDef genRequestDefForUpdateTranscodingsTemplate();
+    static HttpRequestDef genRequestDefForListCesDimsInfo();
+    static HttpRequestDef genRequestDefForListCesInstance();
     static HttpRequestDef genRequestDefForDeleteDomainHttpsCert();
     static HttpRequestDef genRequestDefForShowDomainHttpsCert();
     static HttpRequestDef genRequestDefForUpdateDomainHttpsCert();

@@ -9,6 +9,8 @@
 #include <huaweicloud/rgc/v1/model/BestPracticeCheckItemDetail.h>
 #include <huaweicloud/rgc/v1/model/CreateBestPracticeDetectRequest.h>
 #include <huaweicloud/rgc/v1/model/CreateBestPracticeDetectResponse.h>
+#include <huaweicloud/rgc/v1/model/ShowBestPracticeAccountInfoRequest.h>
+#include <huaweicloud/rgc/v1/model/ShowBestPracticeAccountInfoResponse.h>
 #include <huaweicloud/rgc/v1/model/ShowBestPracticeDetailsRequest.h>
 #include <huaweicloud/rgc/v1/model/ShowBestPracticeDetailsResponse.h>
 #include <huaweicloud/rgc/v1/model/ShowBestPracticeOverviewRequest.h>
@@ -16,9 +18,10 @@
 #include <huaweicloud/rgc/v1/model/ShowBestPracticeStatusRequest.h>
 #include <huaweicloud/rgc/v1/model/ShowBestPracticeStatusResponse.h>
 
-#include <huaweicloud/rgc/v1/model/ControlOperateReqBody.h>
+#include <huaweicloud/rgc/v1/model/DisableControlOperateReqBody.h>
 #include <huaweicloud/rgc/v1/model/DisableControlRequest.h>
 #include <huaweicloud/rgc/v1/model/DisableControlResponse.h>
+#include <huaweicloud/rgc/v1/model/EnableControlOperateReqBody.h>
 #include <huaweicloud/rgc/v1/model/EnableControlRequest.h>
 #include <huaweicloud/rgc/v1/model/EnableControlResponse.h>
 #include <huaweicloud/rgc/v1/model/ListConfigRuleCompliancesRequest.h>
@@ -153,6 +156,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateBestPracticeDetectResponse> createBestPracticeDetect(
         CreateBestPracticeDetectRequest &request
+    );
+    // 查询治理成熟度的账号详情
+    //
+    // 查询治理成熟度的账号详情。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowBestPracticeAccountInfoResponse> showBestPracticeAccountInfo(
+        ShowBestPracticeAccountInfoRequest &request
     );
     // 查询最近一次成功的治理成熟度检测的详情
     //
@@ -291,9 +302,9 @@ public:
     std::shared_ptr<ShowControlOperateResponse> showControlOperate(
         ShowControlOperateRequest &request
     );
-    // 查询注册账号开启的控制策略
+    // 查询纳管账号开启的控制策略
     //
-    // 查询组织里某个注册账号下开启的某个控制策略的详细信息。
+    // 查询组织里某个纳管账号下开启的某个控制策略的详细信息。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowControlsForAccountResponse> showControlsForAccount(

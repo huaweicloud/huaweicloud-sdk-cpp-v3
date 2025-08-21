@@ -9,7 +9,8 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/ecs/v2/model/RecycleBin.h>
+#include <string>
+#include <huaweicloud/ecs/v2/model/RecycleBinPolicys.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -39,18 +40,40 @@ public:
     /// ShowRecycleBinResponse members
 
     /// <summary>
+    /// 项目ID
+    /// </summary>
+
+    std::string getProjectId() const;
+    bool projectIdIsSet() const;
+    void unsetprojectId();
+    void setProjectId(const std::string& value);
+
+    /// <summary>
+    /// 回收站配置开关
+    /// </summary>
+
+    std::string getSwitch() const;
+    bool switchIsSet() const;
+    void unsetswitch();
+    void setSwitch(const std::string& value);
+
+    /// <summary>
     /// 
     /// </summary>
 
-    RecycleBin getRecycleBin() const;
-    bool recycleBinIsSet() const;
-    void unsetrecycleBin();
-    void setRecycleBin(const RecycleBin& value);
+    RecycleBinPolicys getPolicy() const;
+    bool policyIsSet() const;
+    void unsetpolicy();
+    void setPolicy(const RecycleBinPolicys& value);
 
 
 protected:
-    RecycleBin recycleBin_;
-    bool recycleBinIsSet_;
+    std::string projectId_;
+    bool projectIdIsSet_;
+    std::string switch_;
+    bool switchIsSet_;
+    RecycleBinPolicys policy_;
+    bool policyIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

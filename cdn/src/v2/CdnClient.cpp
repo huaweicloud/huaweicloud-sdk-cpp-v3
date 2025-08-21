@@ -33,6 +33,48 @@ ClientBuilder<CdnClient> CdnClient::newBuilder()
     ClientBuilder<CdnClient> client = ClientBuilder<CdnClient>("GlobalCredential");
     return client;
 }
+std::shared_ptr<ApplyDomainTemplateResponse> CdnClient::applyDomainTemplate(ApplyDomainTemplateRequest &request)
+{
+    std::string localVarPath = "/v1.0/cdn/configuration/templates/{tml_id}/apply";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["tml_id"] = parameterToString(request.getTmlId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForApplyDomainTemplate());
+
+    std::shared_ptr<ApplyDomainTemplateResponse> localVarResult = std::make_shared<ApplyDomainTemplateResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<BatchCopyDomainResponse> CdnClient::batchCopyDomain(BatchCopyDomainRequest &request)
 {
     std::string localVarPath = "/v1.0/cdn/configuration/domains/batch-copy";
@@ -186,6 +228,47 @@ std::shared_ptr<CreateDomainResponse> CdnClient::createDomain(CreateDomainReques
         localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForCreateDomain());
 
     std::shared_ptr<CreateDomainResponse> localVarResult = std::make_shared<CreateDomainResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<CreateDomainTemplateResponse> CdnClient::createDomainTemplate(CreateDomainTemplateRequest &request)
+{
+    std::string localVarPath = "/v1.0/cdn/configuration/templates";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForCreateDomainTemplate());
+
+    std::shared_ptr<CreateDomainTemplateResponse> localVarResult = std::make_shared<CreateDomainTemplateResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -437,6 +520,36 @@ std::shared_ptr<DeleteDomainResponse> CdnClient::deleteDomain(DeleteDomainReques
         localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForDeleteDomain());
 
     std::shared_ptr<DeleteDomainResponse> localVarResult = std::make_shared<DeleteDomainResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<DeleteDomainTemplateResponse> CdnClient::deleteDomainTemplate(DeleteDomainTemplateRequest &request)
+{
+    std::string localVarPath = "/v1.0/cdn/configuration/templates/{tml_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["tml_id"] = parameterToString(request.getTmlId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForDeleteDomainTemplate());
+
+    std::shared_ptr<DeleteDomainTemplateResponse> localVarResult = std::make_shared<DeleteDomainTemplateResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -935,6 +1048,50 @@ std::shared_ptr<SetChargeModesResponse> CdnClient::setChargeModes(SetChargeModes
 
     return localVarResult;
 }
+std::shared_ptr<ShowAppliedTemplateRecordResponse> CdnClient::showAppliedTemplateRecord(ShowAppliedTemplateRecordRequest &request)
+{
+    std::string localVarPath = "/v1.0/cdn/configuration/tml-apply-records";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.tmlIdIsSet()) {
+        localVarQueryParams["tml_id"] = parameterToString(request.getTmlId());
+    }
+    if (request.tmlNameIsSet()) {
+        localVarQueryParams["tml_name"] = parameterToString(request.getTmlName());
+    }
+    if (request.operatorIdIsSet()) {
+        localVarQueryParams["operator_id"] = parameterToString(request.getOperatorId());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForShowAppliedTemplateRecord());
+
+    std::shared_ptr<ShowAppliedTemplateRecordResponse> localVarResult = std::make_shared<ShowAppliedTemplateRecordResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowBandwidthCalcResponse> CdnClient::showBandwidthCalc(ShowBandwidthCalcRequest &request)
 {
     std::string localVarPath = "/v1.0/cdn/statistics/bandwidth-calc";
@@ -1245,6 +1402,50 @@ std::shared_ptr<ShowDomainStatsResponse> CdnClient::showDomainStats(ShowDomainSt
         localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForShowDomainStats());
 
     std::shared_ptr<ShowDomainStatsResponse> localVarResult = std::make_shared<ShowDomainStatsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowDomainTemplateResponse> CdnClient::showDomainTemplate(ShowDomainTemplateRequest &request)
+{
+    std::string localVarPath = "/v1.0/cdn/configuration/templates";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.tmlNameIsSet()) {
+        localVarQueryParams["tml_name"] = parameterToString(request.getTmlName());
+    }
+    if (request.tmlIdIsSet()) {
+        localVarQueryParams["tml_id"] = parameterToString(request.getTmlId());
+    }
+    if (request.tmlTypeIsSet()) {
+        localVarQueryParams["tml_type"] = parameterToString(request.getTmlType());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForShowDomainTemplate());
+
+    std::shared_ptr<ShowDomainTemplateResponse> localVarResult = std::make_shared<ShowDomainTemplateResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -1755,6 +1956,48 @@ std::shared_ptr<UpdateDomainMultiCertificatesResponse> CdnClient::updateDomainMu
         localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForUpdateDomainMultiCertificates());
 
     std::shared_ptr<UpdateDomainMultiCertificatesResponse> localVarResult = std::make_shared<UpdateDomainMultiCertificatesResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateDomainTemplateResponse> CdnClient::updateDomainTemplate(UpdateDomainTemplateRequest &request)
+{
+    std::string localVarPath = "/v1.0/cdn/configuration/templates/{tml_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["tml_id"] = parameterToString(request.getTmlId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CdnMeta::genRequestDefForUpdateDomainTemplate());
+
+    std::shared_ptr<UpdateDomainTemplateResponse> localVarResult = std::make_shared<UpdateDomainTemplateResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

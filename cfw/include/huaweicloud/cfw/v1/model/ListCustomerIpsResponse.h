@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/cfw/v1/model/HttpListCustomerIpsResponseData.h>
+#include <huaweicloud/cfw/v1/model/CustomerIpsPageInfo.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -42,14 +42,14 @@ public:
     /// 
     /// </summary>
 
-    HttpListCustomerIpsResponseData getData() const;
+    CustomerIpsPageInfo getData() const;
     bool dataIsSet() const;
     void unsetdata();
-    void setData(const HttpListCustomerIpsResponseData& value);
+    void setData(const CustomerIpsPageInfo& value);
 
 
 protected:
-    HttpListCustomerIpsResponseData data_;
+    CustomerIpsPageInfo data_;
     bool dataIsSet_;
 
 #ifdef RTTR_FLAG

@@ -1,0 +1,143 @@
+
+#ifndef HUAWEICLOUD_SDK_LIVE_V1_MODEL_UpdateFlowOutputRequestBody_H_
+#define HUAWEICLOUD_SDK_LIVE_V1_MODEL_UpdateFlowOutputRequestBody_H_
+
+
+#include <huaweicloud/live/v1/LiveExport.h>
+
+#include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
+#include <huaweicloud/core/http/HttpResponse.h>
+
+#include <huaweicloud/live/v1/model/FlowSourceDecryption.h>
+#include <string>
+#include <vector>
+
+namespace HuaweiCloud {
+namespace Sdk {
+namespace Live {
+namespace V1 {
+namespace Model {
+
+using namespace HuaweiCloud::Sdk::Core::Utils;
+using namespace HuaweiCloud::Sdk::Core::Http;
+/// <summary>
+/// 
+/// </summary>
+class HUAWEICLOUD_LIVE_V1_EXPORT  UpdateFlowOutputRequestBody
+    : public ModelBase
+{
+public:
+    UpdateFlowOutputRequestBody();
+    virtual ~UpdateFlowOutputRequestBody();
+
+    /////////////////////////////////////////////
+    /// ModelBase overrides
+
+    void validate() override;
+    web::json::value toJson() const override;
+    bool fromJson(const web::json::value& json) override;
+    /////////////////////////////////////////////
+    /// UpdateFlowOutputRequestBody members
+
+    /// <summary>
+    /// ip白名单，最大20条ip白名单
+    /// </summary>
+
+    std::vector<std::string>& getCidrWhitelist();
+    bool cidrWhitelistIsSet() const;
+    void unsetcidrWhitelist();
+    void setCidrWhitelist(const std::vector<std::string>& value);
+
+    /// <summary>
+    /// 推流地址，支持ip和域名，最大值64
+    /// </summary>
+
+    std::string getDestination() const;
+    bool destinationIsSet() const;
+    void unsetdestination();
+    void setDestination(const std::string& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    FlowSourceDecryption getEncryption() const;
+    bool encryptionIsSet() const;
+    void unsetencryption();
+    void setEncryption(const FlowSourceDecryption& value);
+
+    /// <summary>
+    /// 输出状态，ENABLED：启用，DISABLED：禁用
+    /// </summary>
+
+    std::string getOutputStatus() const;
+    bool outputStatusIsSet() const;
+    void unsetoutputStatus();
+    void setOutputStatus(const std::string& value);
+
+    /// <summary>
+    /// 端口
+    /// </summary>
+
+    int32_t getPort() const;
+    bool portIsSet() const;
+    void unsetport();
+    void setPort(int32_t value);
+
+    /// <summary>
+    /// srt-caller模式支持设置streamid
+    /// </summary>
+
+    std::string getStreamId() const;
+    bool streamIdIsSet() const;
+    void unsetstreamId();
+    void setStreamId(const std::string& value);
+
+    /// <summary>
+    /// 输出描述
+    /// </summary>
+
+    std::string getDescription() const;
+    bool descriptionIsSet() const;
+    void unsetdescription();
+    void setDescription(const std::string& value);
+
+    /// <summary>
+    /// 最小时延，单位毫秒，默认值2000，最小值10，最大值15000
+    /// </summary>
+
+    int32_t getMinLatency() const;
+    bool minLatencyIsSet() const;
+    void unsetminLatency();
+    void setMinLatency(int32_t value);
+
+
+protected:
+    std::vector<std::string> cidrWhitelist_;
+    bool cidrWhitelistIsSet_;
+    std::string destination_;
+    bool destinationIsSet_;
+    FlowSourceDecryption encryption_;
+    bool encryptionIsSet_;
+    std::string outputStatus_;
+    bool outputStatusIsSet_;
+    int32_t port_;
+    bool portIsSet_;
+    std::string streamId_;
+    bool streamIdIsSet_;
+    std::string description_;
+    bool descriptionIsSet_;
+    int32_t minLatency_;
+    bool minLatencyIsSet_;
+
+};
+
+
+}
+}
+}
+}
+}
+
+#endif // HUAWEICLOUD_SDK_LIVE_V1_MODEL_UpdateFlowOutputRequestBody_H_

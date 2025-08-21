@@ -80,7 +80,7 @@ public:
             });
         regions["cn-south-4"] = Region("cn-south-4",
             { 
-                "https://nosql-gemini.cn-south-4.myhuaweicloud.com"
+                "https://gaussdb-nosql.cn-south-4.myhuaweicloud.com"
             });
         regions["cn-southwest-3"] = Region("cn-southwest-3",
             { 

@@ -39,7 +39,7 @@ public:
     /// DriftDetail members
 
     /// <summary>
-    /// 管理纳管账号ID。
+    /// 管理员账号ID。
     /// </summary>
 
     std::string getManagedAccountId() const;

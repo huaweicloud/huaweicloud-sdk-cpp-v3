@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/rgc/v1/model/ControlOperateReqBody.h>
+#include <huaweicloud/rgc/v1/model/DisableControlOperateReqBody.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -42,14 +42,14 @@ public:
     /// 
     /// </summary>
 
-    ControlOperateReqBody getBody() const;
+    DisableControlOperateReqBody getBody() const;
     bool bodyIsSet() const;
     void unsetbody();
-    void setBody(const ControlOperateReqBody& value);
+    void setBody(const DisableControlOperateReqBody& value);
 
 
 protected:
-    ControlOperateReqBody body_;
+    DisableControlOperateReqBody body_;
     bool bodyIsSet_;
 
 #ifdef RTTR_FLAG

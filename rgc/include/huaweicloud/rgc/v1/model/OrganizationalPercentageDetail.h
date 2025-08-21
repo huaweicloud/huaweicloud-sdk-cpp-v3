@@ -20,7 +20,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 创建账号、纳管注册OU、纳管账号状态信息。
+/// 创建账号、注册OU、纳管账号状态信息。
 /// </summary>
 class HUAWEICLOUD_RGC_V1_EXPORT  OrganizationalPercentageDetail
     : public ModelBase

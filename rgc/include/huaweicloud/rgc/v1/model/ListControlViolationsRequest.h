@@ -39,7 +39,7 @@ public:
     /// ListControlViolationsRequest members
 
     /// <summary>
-    /// 账户ID。
+    /// 纳管账号ID。
     /// </summary>
 
     std::string getAccountId() const;

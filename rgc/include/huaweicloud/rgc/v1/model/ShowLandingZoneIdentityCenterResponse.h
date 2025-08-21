@@ -60,7 +60,7 @@ public:
     void setUserPortalUrl(const std::string& value);
 
     /// <summary>
-    /// 
+    /// Identity Center权限集。
     /// </summary>
 
     std::vector<PermissionSet>& getPermissionSets();
@@ -69,7 +69,7 @@ public:
     void setPermissionSets(const std::vector<PermissionSet>& value);
 
     /// <summary>
-    /// 
+    /// Identity Center用户组。
     /// </summary>
 
     std::vector<IdentityCenterGroup>& getGroups();

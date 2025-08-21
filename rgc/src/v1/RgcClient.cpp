@@ -62,6 +62,35 @@ std::shared_ptr<CreateBestPracticeDetectResponse> RgcClient::createBestPracticeD
 
     return localVarResult;
 }
+std::shared_ptr<ShowBestPracticeAccountInfoResponse> RgcClient::showBestPracticeAccountInfo(ShowBestPracticeAccountInfoRequest &request)
+{
+    std::string localVarPath = "/v1/best-practice/account-info";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, RgcMeta::genRequestDefForShowBestPracticeAccountInfo());
+
+    std::shared_ptr<ShowBestPracticeAccountInfoResponse> localVarResult = std::make_shared<ShowBestPracticeAccountInfoResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowBestPracticeDetailsResponse> RgcClient::showBestPracticeDetails(ShowBestPracticeDetailsRequest &request)
 {
     std::string localVarPath = "/v1/best-practice/detection-details";

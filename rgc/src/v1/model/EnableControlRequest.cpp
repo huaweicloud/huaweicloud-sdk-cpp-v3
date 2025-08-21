@@ -39,7 +39,7 @@ bool EnableControlRequest::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
         if(!fieldValue.is_null())
         {
-            ControlOperateReqBody refVal;
+            EnableControlOperateReqBody refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBody(refVal);
         }
@@ -48,12 +48,12 @@ bool EnableControlRequest::fromJson(const web::json::value& val)
 }
 
 
-ControlOperateReqBody EnableControlRequest::getBody() const
+EnableControlOperateReqBody EnableControlRequest::getBody() const
 {
     return body_;
 }
 
-void EnableControlRequest::setBody(const ControlOperateReqBody& value)
+void EnableControlRequest::setBody(const EnableControlOperateReqBody& value)
 {
     body_ = value;
     bodyIsSet_ = true;

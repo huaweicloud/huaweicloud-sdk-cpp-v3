@@ -9,7 +9,6 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <string>
 #include <huaweicloud/cfw/v1/model/ChangeProtectStatusRequestBody.h>
 
 namespace HuaweiCloud {
@@ -40,24 +39,6 @@ public:
     /// ChangeEastWestFirewallStatusRequest members
 
     /// <summary>
-    /// 企业项目ID，用户根据组织规划企业项目，对应的ID为企业项目ID，可通过[如何获取企业项目ID](cfw_02_0027.xml)获取，用户未开启企业项目时为0
-    /// </summary>
-
-    std::string getEnterpriseProjectId() const;
-    bool enterpriseProjectIdIsSet() const;
-    void unsetenterpriseProjectId();
-    void setEnterpriseProjectId(const std::string& value);
-
-    /// <summary>
-    /// 防火墙id，可通过[防火墙ID获取方式](cfw_02_0028.xml)获取
-    /// </summary>
-
-    std::string getFwInstanceId() const;
-    bool fwInstanceIdIsSet() const;
-    void unsetfwInstanceId();
-    void setFwInstanceId(const std::string& value);
-
-    /// <summary>
     /// 
     /// </summary>
 
@@ -68,10 +49,6 @@ public:
 
 
 protected:
-    std::string enterpriseProjectId_;
-    bool enterpriseProjectIdIsSet_;
-    std::string fwInstanceId_;
-    bool fwInstanceIdIsSet_;
     ChangeProtectStatusRequestBody body_;
     bool bodyIsSet_;
 

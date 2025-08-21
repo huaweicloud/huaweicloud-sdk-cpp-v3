@@ -40,7 +40,7 @@ public:
     /// ShowAccessTopRequest members
 
     /// <summary>
-    /// **参数解释**： 防火墙ID，用户创建防火墙实例后产生的唯一ID，配置后可区分不同防火墙，可通过[防火墙ID获取方式](cfw_02_0028.xml)获取 **约束限制**： 不涉及 **取值范围**： 32位UUID **默认取值**： 不涉及 
+    /// **参数解释**： 防火墙ID，用户创建防火墙实例后产生的唯一ID，配置后可区分不同防火墙，可通过[防火墙ID获取方式](cfw_02_0028.xml)获取 **约束限制**： 不涉及 **取值范围**： 32位UUID **默认取值**： 不涉及
     /// </summary>
 
     std::string getFwInstanceId() const;
@@ -49,16 +49,7 @@ public:
     void setFwInstanceId(const std::string& value);
 
     /// <summary>
-    /// **参数解释**： 会话方向 **约束限制**： 不涉及 **取值范围**： in2out为出云方向 out2in为入云方向 **默认取值**： 不涉及 
-    /// </summary>
-
-    std::string getDirection() const;
-    bool directionIsSet() const;
-    void unsetdirection();
-    void setDirection(const std::string& value);
-
-    /// <summary>
-    /// **参数解释**： 时间范围  **约束限制**： 不涉及 **取值范围**： 0为近一时 1近一天 2近七天   **默认取值**： 不涉及 
+    /// **参数解释**： 时间范围  **约束限制**： 不涉及 **取值范围**： 0为近一时 1近一天 2近七天   **默认取值**： 不涉及
     /// </summary>
 
     int32_t getRange() const;
@@ -67,7 +58,16 @@ public:
     void setRange(int32_t value);
 
     /// <summary>
-    /// **参数解释**： 开始时间 **约束限制**： 不涉及 **取值范围**： 毫秒级时间戳 **默认取值**： 不涉及 
+    /// **参数解释**： 会话方向 **约束限制**： 不涉及 **取值范围**： in2out为出云方向 out2in为入云方向 **默认取值**： 不涉及
+    /// </summary>
+
+    std::string getDirection() const;
+    bool directionIsSet() const;
+    void unsetdirection();
+    void setDirection(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**： 开始时间 **约束限制**： 不涉及 **取值范围**： 毫秒级时间戳 **默认取值**： 不涉及
     /// </summary>
 
     int64_t getStartTime() const;
@@ -76,7 +76,7 @@ public:
     void setStartTime(int64_t value);
 
     /// <summary>
-    /// **参数解释**： 结束时间 **约束限制**： 不涉及 **取值范围**： 毫秒级时间戳 **默认取值**： 不涉及 
+    /// **参数解释**： 结束时间 **约束限制**： 不涉及 **取值范围**： 毫秒级时间戳 **默认取值**： 不涉及
     /// </summary>
 
     int64_t getEndTime() const;
@@ -85,7 +85,7 @@ public:
     void setEndTime(int64_t value);
 
     /// <summary>
-    /// **参数解释**： VGW ID **约束限制**： 不涉及 **取值范围**： 32位UUID **默认取值**： 不涉及 
+    /// **参数解释**： VGW ID **约束限制**： 不涉及 **取值范围**： 32位UUID **默认取值**： 不涉及
     /// </summary>
 
     std::vector<std::string>& getVgwId();
@@ -124,10 +124,10 @@ public:
 protected:
     std::string fwInstanceId_;
     bool fwInstanceIdIsSet_;
-    std::string direction_;
-    bool directionIsSet_;
     int32_t range_;
     bool rangeIsSet_;
+    std::string direction_;
+    bool directionIsSet_;
     int64_t startTime_;
     bool startTimeIsSet_;
     int64_t endTime_;

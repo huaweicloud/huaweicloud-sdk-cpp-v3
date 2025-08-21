@@ -40,7 +40,7 @@ public:
     /// ShowTemplateDeployParamsResponse members
 
     /// <summary>
-    /// 
+    /// 模板的部署参数。
     /// </summary>
 
     std::vector<TemplateParamVariable>& getVariables();

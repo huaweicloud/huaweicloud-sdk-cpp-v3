@@ -13,6 +13,11 @@ HttpRequestDef RgcMeta::genRequestDefForCreateBestPracticeDetect() {
     return reqDefBuilder;
 }
 
+HttpRequestDef RgcMeta::genRequestDefForShowBestPracticeAccountInfo() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef RgcMeta::genRequestDefForShowBestPracticeDetails() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withResponseField(FieldDef().

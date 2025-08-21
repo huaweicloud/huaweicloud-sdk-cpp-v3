@@ -60,7 +60,7 @@ public:
     void setRegions(const std::vector<RegionConfigurationList>& value);
 
     /// <summary>
-    /// 是否允许启用控制策略。
+    /// 状态。
     /// </summary>
 
     std::string getState() const;

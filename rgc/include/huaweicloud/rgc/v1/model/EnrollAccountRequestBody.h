@@ -40,7 +40,7 @@ public:
     /// EnrollAccountRequestBody members
 
     /// <summary>
-    /// 注册OU 标识。
+    /// 父注册OU ID。
     /// </summary>
 
     std::string getParentOrganizationalUnitId() const;

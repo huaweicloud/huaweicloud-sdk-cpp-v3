@@ -22,6 +22,8 @@ VatInvoiceRequestBody::VatInvoiceRequestBody()
     returnTextLocationIsSet_ = false;
     pageNum_ = 0;
     pageNumIsSet_ = false;
+    ofdToImageMode_ = false;
+    ofdToImageModeIsSet_ = false;
 }
 
 VatInvoiceRequestBody::~VatInvoiceRequestBody() = default;
@@ -48,6 +50,9 @@ web::json::value VatInvoiceRequestBody::toJson() const
     }
     if(pageNumIsSet_) {
         val[utility::conversions::to_string_t("page_num")] = ModelBase::toJson(pageNum_);
+    }
+    if(ofdToImageModeIsSet_) {
+        val[utility::conversions::to_string_t("ofd_to_image_mode")] = ModelBase::toJson(ofdToImageMode_);
     }
 
     return val;
@@ -99,6 +104,15 @@ bool VatInvoiceRequestBody::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setPageNum(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("ofd_to_image_mode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ofd_to_image_mode"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setOfdToImageMode(refVal);
         }
     }
     return ok;
@@ -208,6 +222,27 @@ bool VatInvoiceRequestBody::pageNumIsSet() const
 void VatInvoiceRequestBody::unsetpageNum()
 {
     pageNumIsSet_ = false;
+}
+
+bool VatInvoiceRequestBody::isOfdToImageMode() const
+{
+    return ofdToImageMode_;
+}
+
+void VatInvoiceRequestBody::setOfdToImageMode(bool value)
+{
+    ofdToImageMode_ = value;
+    ofdToImageModeIsSet_ = true;
+}
+
+bool VatInvoiceRequestBody::ofdToImageModeIsSet() const
+{
+    return ofdToImageModeIsSet_;
+}
+
+void VatInvoiceRequestBody::unsetofdToImageMode()
+{
+    ofdToImageModeIsSet_ = false;
 }
 
 }

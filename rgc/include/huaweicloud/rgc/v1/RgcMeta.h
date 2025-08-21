@@ -14,6 +14,7 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 class HUAWEICLOUD_RGC_V1_EXPORT  RgcMeta {
 public:
     static HttpRequestDef genRequestDefForCreateBestPracticeDetect();
+    static HttpRequestDef genRequestDefForShowBestPracticeAccountInfo();
     static HttpRequestDef genRequestDefForShowBestPracticeDetails();
     static HttpRequestDef genRequestDefForShowBestPracticeOverview();
     static HttpRequestDef genRequestDefForShowBestPracticeStatus();

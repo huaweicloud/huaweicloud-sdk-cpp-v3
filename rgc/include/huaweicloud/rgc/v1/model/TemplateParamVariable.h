@@ -96,7 +96,7 @@ public:
     void setType(const std::string& value);
 
     /// <summary>
-    /// 
+    /// 模板的部署参数变量的校验规则。
     /// </summary>
 
     std::vector<TemplateParamVariableValidation>& getValidations();

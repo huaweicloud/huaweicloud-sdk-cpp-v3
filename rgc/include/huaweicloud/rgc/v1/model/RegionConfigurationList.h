@@ -48,7 +48,7 @@ public:
     void setRegion(const std::string& value);
 
     /// <summary>
-    /// 纳管账号类型LOGGING,SECURITY。
+    /// 区域状态。
     /// </summary>
 
     std::string getRegionConfigurationStatus() const;

@@ -147,6 +147,50 @@ std::shared_ptr<CreateDomainMappingResponse> LiveClient::createDomainMapping(Cre
 
     return localVarResult;
 }
+std::shared_ptr<CreateFlowOutputResponse> LiveClient::createFlowOutput(CreateFlowOutputRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/flows/outputs";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=utf-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.flowIdIsSet()) {
+        localVarQueryParams["flow_id"] = parameterToString(request.getFlowId());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForCreateFlowOutput());
+
+    std::shared_ptr<CreateFlowOutputResponse> localVarResult = std::make_shared<CreateFlowOutputResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<CreateFlowsResponse> LiveClient::createFlows(CreateFlowsRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/flows";
@@ -682,6 +726,41 @@ std::shared_ptr<DeleteFlowResponse> LiveClient::deleteFlow(DeleteFlowRequest &re
         localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForDeleteFlow());
 
     std::shared_ptr<DeleteFlowResponse> localVarResult = std::make_shared<DeleteFlowResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<DeleteFlowOutputResponse> LiveClient::deleteFlowOutput(DeleteFlowOutputRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/flows/outputs";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.flowIdIsSet()) {
+        localVarQueryParams["flow_id"] = parameterToString(request.getFlowId());
+    }
+    if (request.outputNameIsSet()) {
+        localVarQueryParams["output_name"] = parameterToString(request.getOutputName());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForDeleteFlowOutput());
+
+    std::shared_ptr<DeleteFlowOutputResponse> localVarResult = std::make_shared<DeleteFlowOutputResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -1508,6 +1587,53 @@ std::shared_ptr<ListStreamForbiddenResponse> LiveClient::listStreamForbidden(Lis
 
     return localVarResult;
 }
+std::shared_ptr<ModifyFlowOutputResponse> LiveClient::modifyFlowOutput(ModifyFlowOutputRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/flows/outputs";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=utf-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.flowIdIsSet()) {
+        localVarQueryParams["flow_id"] = parameterToString(request.getFlowId());
+    }
+    if (request.outputNameIsSet()) {
+        localVarQueryParams["output_name"] = parameterToString(request.getOutputName());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForModifyFlowOutput());
+
+    std::shared_ptr<ModifyFlowOutputResponse> localVarResult = std::make_shared<ModifyFlowOutputResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<ModifyFlowSourcesResponse> LiveClient::modifyFlowSources(ModifyFlowSourcesRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/flows/sources";
@@ -1797,6 +1923,44 @@ std::shared_ptr<ShowFlowDetailResponse> LiveClient::showFlowDetail(ShowFlowDetai
         localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForShowFlowDetail());
 
     std::shared_ptr<ShowFlowDetailResponse> localVarResult = std::make_shared<ShowFlowDetailResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowOutputInfoResponse> LiveClient::showOutputInfo(ShowOutputInfoRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/flows/outputs";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.dataDisplayIsSet()) {
+        localVarQueryParams["data_display"] = parameterToString(request.getDataDisplay());
+    }
+    if (request.flowIdIsSet()) {
+        localVarQueryParams["flow_id"] = parameterToString(request.getFlowId());
+    }
+    if (request.outputNameIsSet()) {
+        localVarQueryParams["output_name"] = parameterToString(request.getOutputName());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForShowOutputInfo());
+
+    std::shared_ptr<ShowOutputInfoResponse> localVarResult = std::make_shared<ShowOutputInfoResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -2541,6 +2705,79 @@ std::shared_ptr<UpdateTranscodingsTemplateResponse> LiveClient::updateTranscodin
         localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForUpdateTranscodingsTemplate());
 
     std::shared_ptr<UpdateTranscodingsTemplateResponse> localVarResult = std::make_shared<UpdateTranscodingsTemplateResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<ListCesDimsInfoResponse> LiveClient::listCesDimsInfo(ListCesDimsInfoRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/ott/dims-info";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.namespaceIsSet()) {
+        localVarQueryParams["namespace"] = parameterToString(request.getNamespace());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForListCesDimsInfo());
+
+    std::shared_ptr<ListCesDimsInfoResponse> localVarResult = std::make_shared<ListCesDimsInfoResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ListCesInstanceResponse> LiveClient::listCesInstance(ListCesInstanceRequest &request)
+{
+    std::string localVarPath = "/v1/{project_id}/ott/instances";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json; charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LiveMeta::genRequestDefForListCesInstance());
+
+    std::shared_ptr<ListCesInstanceResponse> localVarResult = std::make_shared<ListCesInstanceResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

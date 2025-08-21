@@ -39,7 +39,7 @@ public:
     /// ShowAvailableUpdatesResponse members
 
     /// <summary>
-    /// Landing Zone基础配置是否可用。
+    /// 用户当前的Landing Zone版本是否为最新版本。
     /// </summary>
 
     bool isBaselineUpdateAvailable() const;

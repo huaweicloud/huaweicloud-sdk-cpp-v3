@@ -12,12 +12,12 @@ namespace Model {
 
 ShowCustomerIpsInfoRequest::ShowCustomerIpsInfoRequest()
 {
-    fwInstanceId_ = "";
-    fwInstanceIdIsSet_ = false;
     ipsCfwId_ = "";
     ipsCfwIdIsSet_ = false;
     objectId_ = "";
     objectIdIsSet_ = false;
+    fwInstanceId_ = "";
+    fwInstanceIdIsSet_ = false;
 }
 
 ShowCustomerIpsInfoRequest::~ShowCustomerIpsInfoRequest() = default;
@@ -30,14 +30,14 @@ web::json::value ShowCustomerIpsInfoRequest::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    if(fwInstanceIdIsSet_) {
-        val[utility::conversions::to_string_t("fw_instance_id")] = ModelBase::toJson(fwInstanceId_);
-    }
     if(ipsCfwIdIsSet_) {
         val[utility::conversions::to_string_t("ips_cfw_id")] = ModelBase::toJson(ipsCfwId_);
     }
     if(objectIdIsSet_) {
         val[utility::conversions::to_string_t("object_id")] = ModelBase::toJson(objectId_);
+    }
+    if(fwInstanceIdIsSet_) {
+        val[utility::conversions::to_string_t("fw_instance_id")] = ModelBase::toJson(fwInstanceId_);
     }
 
     return val;
@@ -46,15 +46,6 @@ bool ShowCustomerIpsInfoRequest::fromJson(const web::json::value& val)
 {
     bool ok = true;
     
-    if(val.has_field(utility::conversions::to_string_t("fw_instance_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("fw_instance_id"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setFwInstanceId(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("ips_cfw_id"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ips_cfw_id"));
         if(!fieldValue.is_null())
@@ -73,30 +64,18 @@ bool ShowCustomerIpsInfoRequest::fromJson(const web::json::value& val)
             setObjectId(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("fw_instance_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("fw_instance_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFwInstanceId(refVal);
+        }
+    }
     return ok;
 }
 
-
-std::string ShowCustomerIpsInfoRequest::getFwInstanceId() const
-{
-    return fwInstanceId_;
-}
-
-void ShowCustomerIpsInfoRequest::setFwInstanceId(const std::string& value)
-{
-    fwInstanceId_ = value;
-    fwInstanceIdIsSet_ = true;
-}
-
-bool ShowCustomerIpsInfoRequest::fwInstanceIdIsSet() const
-{
-    return fwInstanceIdIsSet_;
-}
-
-void ShowCustomerIpsInfoRequest::unsetfwInstanceId()
-{
-    fwInstanceIdIsSet_ = false;
-}
 
 std::string ShowCustomerIpsInfoRequest::getIpsCfwId() const
 {
@@ -138,6 +117,27 @@ bool ShowCustomerIpsInfoRequest::objectIdIsSet() const
 void ShowCustomerIpsInfoRequest::unsetobjectId()
 {
     objectIdIsSet_ = false;
+}
+
+std::string ShowCustomerIpsInfoRequest::getFwInstanceId() const
+{
+    return fwInstanceId_;
+}
+
+void ShowCustomerIpsInfoRequest::setFwInstanceId(const std::string& value)
+{
+    fwInstanceId_ = value;
+    fwInstanceIdIsSet_ = true;
+}
+
+bool ShowCustomerIpsInfoRequest::fwInstanceIdIsSet() const
+{
+    return fwInstanceIdIsSet_;
+}
+
+void ShowCustomerIpsInfoRequest::unsetfwInstanceId()
+{
+    fwInstanceIdIsSet_ = false;
 }
 
 }

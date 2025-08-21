@@ -104,7 +104,7 @@ public:
     void setService(const std::string& value);
 
     /// <summary>
-    /// 服务控制策略（SCP），配置规则。
+    /// 策略类别。
     /// </summary>
 
     std::string getImplementation() const;
@@ -122,7 +122,7 @@ public:
     void setBehavior(const std::string& value);
 
     /// <summary>
-    /// 纳管账号的创建来源，包括CUSTOM和RGC。
+    /// 控制策略来源。
     /// </summary>
 
     std::string getOwner() const;

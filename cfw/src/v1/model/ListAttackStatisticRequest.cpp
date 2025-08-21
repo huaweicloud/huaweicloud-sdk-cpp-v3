@@ -27,6 +27,8 @@ ListAttackStatisticRequest::ListAttackStatisticRequest()
     vgwIdIsSet_ = false;
     item_ = "";
     itemIsSet_ = false;
+    size_ = 0;
+    sizeIsSet_ = false;
 }
 
 ListAttackStatisticRequest::~ListAttackStatisticRequest() = default;
@@ -62,6 +64,9 @@ web::json::value ListAttackStatisticRequest::toJson() const
     }
     if(itemIsSet_) {
         val[utility::conversions::to_string_t("item")] = ModelBase::toJson(item_);
+    }
+    if(sizeIsSet_) {
+        val[utility::conversions::to_string_t("size")] = ModelBase::toJson(size_);
     }
 
     return val;
@@ -140,6 +145,15 @@ bool ListAttackStatisticRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setItem(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("size"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("size"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSize(refVal);
         }
     }
     return ok;
@@ -312,6 +326,27 @@ bool ListAttackStatisticRequest::itemIsSet() const
 void ListAttackStatisticRequest::unsetitem()
 {
     itemIsSet_ = false;
+}
+
+int32_t ListAttackStatisticRequest::getSize() const
+{
+    return size_;
+}
+
+void ListAttackStatisticRequest::setSize(int32_t value)
+{
+    size_ = value;
+    sizeIsSet_ = true;
+}
+
+bool ListAttackStatisticRequest::sizeIsSet() const
+{
+    return sizeIsSet_;
+}
+
+void ListAttackStatisticRequest::unsetsize()
+{
+    sizeIsSet_ = false;
 }
 
 }

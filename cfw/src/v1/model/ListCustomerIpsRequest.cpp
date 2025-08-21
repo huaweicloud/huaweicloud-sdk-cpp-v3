@@ -18,24 +18,26 @@ ListCustomerIpsRequest::ListCustomerIpsRequest()
     affectedOsIsSet_ = false;
     attackType_ = 0;
     attackTypeIsSet_ = false;
-    fwInstanceId_ = "";
-    fwInstanceIdIsSet_ = false;
     ipsName_ = "";
     ipsNameIsSet_ = false;
-    limit_ = 0;
-    limitIsSet_ = false;
-    objectId_ = "";
-    objectIdIsSet_ = false;
-    offset_ = 0;
-    offsetIsSet_ = false;
+    ipsId_ = "";
+    ipsIdIsSet_ = false;
     protocol_ = 0;
     protocolIsSet_ = false;
     severity_ = 0;
     severityIsSet_ = false;
     software_ = 0;
     softwareIsSet_ = false;
+    objectId_ = "";
+    objectIdIsSet_ = false;
     enterpriseProjectId_ = "";
     enterpriseProjectIdIsSet_ = false;
+    fwInstanceId_ = "";
+    fwInstanceIdIsSet_ = false;
+    limit_ = 0;
+    limitIsSet_ = false;
+    offset_ = 0;
+    offsetIsSet_ = false;
 }
 
 ListCustomerIpsRequest::~ListCustomerIpsRequest() = default;
@@ -57,20 +59,11 @@ web::json::value ListCustomerIpsRequest::toJson() const
     if(attackTypeIsSet_) {
         val[utility::conversions::to_string_t("attack_type")] = ModelBase::toJson(attackType_);
     }
-    if(fwInstanceIdIsSet_) {
-        val[utility::conversions::to_string_t("fw_instance_id")] = ModelBase::toJson(fwInstanceId_);
-    }
     if(ipsNameIsSet_) {
         val[utility::conversions::to_string_t("ips_name")] = ModelBase::toJson(ipsName_);
     }
-    if(limitIsSet_) {
-        val[utility::conversions::to_string_t("limit")] = ModelBase::toJson(limit_);
-    }
-    if(objectIdIsSet_) {
-        val[utility::conversions::to_string_t("object_id")] = ModelBase::toJson(objectId_);
-    }
-    if(offsetIsSet_) {
-        val[utility::conversions::to_string_t("offset")] = ModelBase::toJson(offset_);
+    if(ipsIdIsSet_) {
+        val[utility::conversions::to_string_t("ips_id")] = ModelBase::toJson(ipsId_);
     }
     if(protocolIsSet_) {
         val[utility::conversions::to_string_t("protocol")] = ModelBase::toJson(protocol_);
@@ -81,8 +74,20 @@ web::json::value ListCustomerIpsRequest::toJson() const
     if(softwareIsSet_) {
         val[utility::conversions::to_string_t("software")] = ModelBase::toJson(software_);
     }
+    if(objectIdIsSet_) {
+        val[utility::conversions::to_string_t("object_id")] = ModelBase::toJson(objectId_);
+    }
     if(enterpriseProjectIdIsSet_) {
         val[utility::conversions::to_string_t("enterprise_project_id")] = ModelBase::toJson(enterpriseProjectId_);
+    }
+    if(fwInstanceIdIsSet_) {
+        val[utility::conversions::to_string_t("fw_instance_id")] = ModelBase::toJson(fwInstanceId_);
+    }
+    if(limitIsSet_) {
+        val[utility::conversions::to_string_t("limit")] = ModelBase::toJson(limit_);
+    }
+    if(offsetIsSet_) {
+        val[utility::conversions::to_string_t("offset")] = ModelBase::toJson(offset_);
     }
 
     return val;
@@ -118,15 +123,6 @@ bool ListCustomerIpsRequest::fromJson(const web::json::value& val)
             setAttackType(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("fw_instance_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("fw_instance_id"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setFwInstanceId(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("ips_name"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ips_name"));
         if(!fieldValue.is_null())
@@ -136,31 +132,13 @@ bool ListCustomerIpsRequest::fromJson(const web::json::value& val)
             setIpsName(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("limit"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("limit"));
-        if(!fieldValue.is_null())
-        {
-            int32_t refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setLimit(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("object_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("object_id"));
+    if(val.has_field(utility::conversions::to_string_t("ips_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ips_id"));
         if(!fieldValue.is_null())
         {
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setObjectId(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("offset"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("offset"));
-        if(!fieldValue.is_null())
-        {
-            int32_t refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setOffset(refVal);
+            setIpsId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("protocol"))) {
@@ -190,6 +168,15 @@ bool ListCustomerIpsRequest::fromJson(const web::json::value& val)
             setSoftware(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("object_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("object_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setObjectId(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("enterprise_project_id"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enterprise_project_id"));
         if(!fieldValue.is_null())
@@ -197,6 +184,33 @@ bool ListCustomerIpsRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEnterpriseProjectId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("fw_instance_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("fw_instance_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFwInstanceId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("limit"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("limit"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLimit(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("offset"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("offset"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setOffset(refVal);
         }
     }
     return ok;
@@ -266,27 +280,6 @@ void ListCustomerIpsRequest::unsetattackType()
     attackTypeIsSet_ = false;
 }
 
-std::string ListCustomerIpsRequest::getFwInstanceId() const
-{
-    return fwInstanceId_;
-}
-
-void ListCustomerIpsRequest::setFwInstanceId(const std::string& value)
-{
-    fwInstanceId_ = value;
-    fwInstanceIdIsSet_ = true;
-}
-
-bool ListCustomerIpsRequest::fwInstanceIdIsSet() const
-{
-    return fwInstanceIdIsSet_;
-}
-
-void ListCustomerIpsRequest::unsetfwInstanceId()
-{
-    fwInstanceIdIsSet_ = false;
-}
-
 std::string ListCustomerIpsRequest::getIpsName() const
 {
     return ipsName_;
@@ -308,67 +301,25 @@ void ListCustomerIpsRequest::unsetipsName()
     ipsNameIsSet_ = false;
 }
 
-int32_t ListCustomerIpsRequest::getLimit() const
+std::string ListCustomerIpsRequest::getIpsId() const
 {
-    return limit_;
+    return ipsId_;
 }
 
-void ListCustomerIpsRequest::setLimit(int32_t value)
+void ListCustomerIpsRequest::setIpsId(const std::string& value)
 {
-    limit_ = value;
-    limitIsSet_ = true;
+    ipsId_ = value;
+    ipsIdIsSet_ = true;
 }
 
-bool ListCustomerIpsRequest::limitIsSet() const
+bool ListCustomerIpsRequest::ipsIdIsSet() const
 {
-    return limitIsSet_;
+    return ipsIdIsSet_;
 }
 
-void ListCustomerIpsRequest::unsetlimit()
+void ListCustomerIpsRequest::unsetipsId()
 {
-    limitIsSet_ = false;
-}
-
-std::string ListCustomerIpsRequest::getObjectId() const
-{
-    return objectId_;
-}
-
-void ListCustomerIpsRequest::setObjectId(const std::string& value)
-{
-    objectId_ = value;
-    objectIdIsSet_ = true;
-}
-
-bool ListCustomerIpsRequest::objectIdIsSet() const
-{
-    return objectIdIsSet_;
-}
-
-void ListCustomerIpsRequest::unsetobjectId()
-{
-    objectIdIsSet_ = false;
-}
-
-int32_t ListCustomerIpsRequest::getOffset() const
-{
-    return offset_;
-}
-
-void ListCustomerIpsRequest::setOffset(int32_t value)
-{
-    offset_ = value;
-    offsetIsSet_ = true;
-}
-
-bool ListCustomerIpsRequest::offsetIsSet() const
-{
-    return offsetIsSet_;
-}
-
-void ListCustomerIpsRequest::unsetoffset()
-{
-    offsetIsSet_ = false;
+    ipsIdIsSet_ = false;
 }
 
 int32_t ListCustomerIpsRequest::getProtocol() const
@@ -434,6 +385,27 @@ void ListCustomerIpsRequest::unsetsoftware()
     softwareIsSet_ = false;
 }
 
+std::string ListCustomerIpsRequest::getObjectId() const
+{
+    return objectId_;
+}
+
+void ListCustomerIpsRequest::setObjectId(const std::string& value)
+{
+    objectId_ = value;
+    objectIdIsSet_ = true;
+}
+
+bool ListCustomerIpsRequest::objectIdIsSet() const
+{
+    return objectIdIsSet_;
+}
+
+void ListCustomerIpsRequest::unsetobjectId()
+{
+    objectIdIsSet_ = false;
+}
+
 std::string ListCustomerIpsRequest::getEnterpriseProjectId() const
 {
     return enterpriseProjectId_;
@@ -453,6 +425,69 @@ bool ListCustomerIpsRequest::enterpriseProjectIdIsSet() const
 void ListCustomerIpsRequest::unsetenterpriseProjectId()
 {
     enterpriseProjectIdIsSet_ = false;
+}
+
+std::string ListCustomerIpsRequest::getFwInstanceId() const
+{
+    return fwInstanceId_;
+}
+
+void ListCustomerIpsRequest::setFwInstanceId(const std::string& value)
+{
+    fwInstanceId_ = value;
+    fwInstanceIdIsSet_ = true;
+}
+
+bool ListCustomerIpsRequest::fwInstanceIdIsSet() const
+{
+    return fwInstanceIdIsSet_;
+}
+
+void ListCustomerIpsRequest::unsetfwInstanceId()
+{
+    fwInstanceIdIsSet_ = false;
+}
+
+int32_t ListCustomerIpsRequest::getLimit() const
+{
+    return limit_;
+}
+
+void ListCustomerIpsRequest::setLimit(int32_t value)
+{
+    limit_ = value;
+    limitIsSet_ = true;
+}
+
+bool ListCustomerIpsRequest::limitIsSet() const
+{
+    return limitIsSet_;
+}
+
+void ListCustomerIpsRequest::unsetlimit()
+{
+    limitIsSet_ = false;
+}
+
+int32_t ListCustomerIpsRequest::getOffset() const
+{
+    return offset_;
+}
+
+void ListCustomerIpsRequest::setOffset(int32_t value)
+{
+    offset_ = value;
+    offsetIsSet_ = true;
+}
+
+bool ListCustomerIpsRequest::offsetIsSet() const
+{
+    return offsetIsSet_;
+}
+
+void ListCustomerIpsRequest::unsetoffset()
+{
+    offsetIsSet_ = false;
 }
 
 }

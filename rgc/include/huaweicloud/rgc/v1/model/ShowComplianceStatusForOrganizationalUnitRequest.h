@@ -48,7 +48,7 @@ public:
     void setManagedOrganizationalUnitId(const std::string& value);
 
     /// <summary>
-    /// 启用的控制策略信息。
+    /// 控制策略ID。
     /// </summary>
 
     std::string getControlId() const;

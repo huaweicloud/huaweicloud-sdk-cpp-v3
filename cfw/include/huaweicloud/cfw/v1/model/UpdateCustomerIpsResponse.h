@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/core/utils/Object.h>
+#include <huaweicloud/cfw/v1/model/UpdateCustomerIpsResp_data.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -42,15 +42,15 @@ public:
     /// 
     /// </summary>
 
-    Object getBody() const;
-    bool bodyIsSet() const;
-    void unsetbody();
-    void setBody(const Object& value);
+    UpdateCustomerIpsResp_data getData() const;
+    bool dataIsSet() const;
+    void unsetdata();
+    void setData(const UpdateCustomerIpsResp_data& value);
 
 
 protected:
-    Object body_;
-    bool bodyIsSet_;
+    UpdateCustomerIpsResp_data data_;
+    bool dataIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

@@ -40,7 +40,7 @@ public:
     /// AddLogConfigResponseBody members
 
     /// <summary>
-    /// 实例日志配置信息。
+    /// 实例日志配置信息，最多20条。
     /// </summary>
 
     std::vector<AddLogConfigs>& getLogConfigs();

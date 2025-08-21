@@ -39,7 +39,7 @@ public:
     /// EnabledControl members
 
     /// <summary>
-    /// 管理纳管账号ID。
+    /// 管理员账号ID。
     /// </summary>
 
     std::string getManageAccountId() const;
@@ -93,7 +93,7 @@ public:
     void setBehavior(const std::string& value);
 
     /// <summary>
-    /// 纳管账号的创建来源，包括CUSTOM和RGC。
+    /// 控制策略来源。
     /// </summary>
 
     std::string getOwner() const;

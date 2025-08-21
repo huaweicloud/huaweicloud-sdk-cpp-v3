@@ -51,7 +51,7 @@ public:
     void setIdentifier(const std::string& value);
 
     /// <summary>
-    /// 服务控制策略（SCP），配置规则。
+    /// 策略类别。
     /// </summary>
 
     std::string getImplementation() const;
@@ -60,7 +60,7 @@ public:
     void setImplementation(const std::string& value);
 
     /// <summary>
-    /// 控制策略必须性。
+    /// 实施建议。
     /// </summary>
 
     std::string getGuidance() const;
@@ -132,7 +132,7 @@ public:
     void setAliases(const std::vector<std::string>& value);
 
     /// <summary>
-    /// 纳管账号的创建来源，包括CUSTOM和RGC。
+    /// 控制策略来源。
     /// </summary>
 
     std::string getOwner() const;

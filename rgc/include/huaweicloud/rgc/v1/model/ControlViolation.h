@@ -39,7 +39,7 @@ public:
     /// ControlViolation members
 
     /// <summary>
-    /// 控制策略纳管账号ID。
+    /// 纳管账号ID。
     /// </summary>
 
     std::string getAccountId() const;
@@ -48,7 +48,7 @@ public:
     void setAccountId(const std::string& value);
 
     /// <summary>
-    /// 控制策略纳管账号名称。
+    /// 纳管账号名称。
     /// </summary>
 
     std::string getAccountName() const;

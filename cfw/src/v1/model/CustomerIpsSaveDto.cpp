@@ -24,10 +24,10 @@ CustomerIpsSaveDto::CustomerIpsSaveDto()
     dstPortIsSet_ = false;
     fwInstanceId_ = "";
     fwInstanceIdIsSet_ = false;
-    ipsName_ = "";
-    ipsNameIsSet_ = false;
     objectId_ = "";
     objectIdIsSet_ = false;
+    ipsName_ = "";
+    ipsNameIsSet_ = false;
     protocol_ = 0;
     protocolIsSet_ = false;
     severity_ = 0;
@@ -68,11 +68,11 @@ web::json::value CustomerIpsSaveDto::toJson() const
     if(fwInstanceIdIsSet_) {
         val[utility::conversions::to_string_t("fw_instance_id")] = ModelBase::toJson(fwInstanceId_);
     }
-    if(ipsNameIsSet_) {
-        val[utility::conversions::to_string_t("ips_name")] = ModelBase::toJson(ipsName_);
-    }
     if(objectIdIsSet_) {
         val[utility::conversions::to_string_t("object_id")] = ModelBase::toJson(objectId_);
+    }
+    if(ipsNameIsSet_) {
+        val[utility::conversions::to_string_t("ips_name")] = ModelBase::toJson(ipsName_);
     }
     if(protocolIsSet_) {
         val[utility::conversions::to_string_t("protocol")] = ModelBase::toJson(protocol_);
@@ -156,15 +156,6 @@ bool CustomerIpsSaveDto::fromJson(const web::json::value& val)
             setFwInstanceId(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("ips_name"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ips_name"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setIpsName(refVal);
-        }
-    }
     if(val.has_field(utility::conversions::to_string_t("object_id"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("object_id"));
         if(!fieldValue.is_null())
@@ -172,6 +163,15 @@ bool CustomerIpsSaveDto::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setObjectId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("ips_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ips_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIpsName(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("protocol"))) {
@@ -361,27 +361,6 @@ void CustomerIpsSaveDto::unsetfwInstanceId()
     fwInstanceIdIsSet_ = false;
 }
 
-std::string CustomerIpsSaveDto::getIpsName() const
-{
-    return ipsName_;
-}
-
-void CustomerIpsSaveDto::setIpsName(const std::string& value)
-{
-    ipsName_ = value;
-    ipsNameIsSet_ = true;
-}
-
-bool CustomerIpsSaveDto::ipsNameIsSet() const
-{
-    return ipsNameIsSet_;
-}
-
-void CustomerIpsSaveDto::unsetipsName()
-{
-    ipsNameIsSet_ = false;
-}
-
 std::string CustomerIpsSaveDto::getObjectId() const
 {
     return objectId_;
@@ -401,6 +380,27 @@ bool CustomerIpsSaveDto::objectIdIsSet() const
 void CustomerIpsSaveDto::unsetobjectId()
 {
     objectIdIsSet_ = false;
+}
+
+std::string CustomerIpsSaveDto::getIpsName() const
+{
+    return ipsName_;
+}
+
+void CustomerIpsSaveDto::setIpsName(const std::string& value)
+{
+    ipsName_ = value;
+    ipsNameIsSet_ = true;
+}
+
+bool CustomerIpsSaveDto::ipsNameIsSet() const
+{
+    return ipsNameIsSet_;
+}
+
+void CustomerIpsSaveDto::unsetipsName()
+{
+    ipsNameIsSet_ = false;
 }
 
 int32_t CustomerIpsSaveDto::getProtocol() const

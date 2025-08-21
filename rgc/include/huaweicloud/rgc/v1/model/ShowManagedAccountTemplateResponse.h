@@ -39,7 +39,7 @@ public:
     /// ShowManagedAccountTemplateResponse members
 
     /// <summary>
-    /// 管理纳管账号ID。
+    /// 管理员账号ID。
     /// </summary>
 
     std::string getManageAccountId() const;

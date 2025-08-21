@@ -39,7 +39,7 @@ public:
     /// UpdateManagedAccountResponse members
 
     /// <summary>
-    /// 创建账号、纳管账号、纳管注册OU的操作ID。
+    /// 创建账号、纳管账号、注册OU的操作ID。
     /// </summary>
 
     std::string getOperationId() const;

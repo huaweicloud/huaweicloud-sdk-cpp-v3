@@ -42,7 +42,7 @@ public:
     /// ManagedAccount members
 
     /// <summary>
-    /// Landing Zone版本。
+    /// 纳管账号的Landing Zone版本。
     /// </summary>
 
     std::string getLandingZoneVersion() const;
@@ -51,7 +51,7 @@ public:
     void setLandingZoneVersion(const std::string& value);
 
     /// <summary>
-    /// 管理纳管账号ID。
+    /// 管理员账号ID。
     /// </summary>
 
     std::string getManageAccountId() const;
@@ -186,7 +186,7 @@ public:
     void setRegions(const std::vector<RegionManagedList>& value);
 
     /// <summary>
-    /// 组织里某个注册OU下的纳管账号被创建的时间。
+    /// 纳管账号的创建时间。
     /// </summary>
 
     utility::datetime getCreatedAt() const;
@@ -195,7 +195,7 @@ public:
     void setCreatedAt(const utility::datetime& value);
 
     /// <summary>
-    /// 组织里某个注册OU下的纳管账号最后一次更新的时间。
+    /// 纳管账号的更新时间。
     /// </summary>
 
     utility::datetime getUpdatedAt() const;

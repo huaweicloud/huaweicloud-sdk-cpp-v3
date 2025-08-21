@@ -13,16 +13,19 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 
 class HUAWEICLOUD_CDN_V2_EXPORT  CdnMeta {
 public:
+    static HttpRequestDef genRequestDefForApplyDomainTemplate();
     static HttpRequestDef genRequestDefForBatchCopyDomain();
     static HttpRequestDef genRequestDefForBatchDeleteTags();
     static HttpRequestDef genRequestDefForBatchUpdateRuleStatus();
     static HttpRequestDef genRequestDefForCreateDomain();
+    static HttpRequestDef genRequestDefForCreateDomainTemplate();
     static HttpRequestDef genRequestDefForCreatePreheatingTasks();
     static HttpRequestDef genRequestDefForCreateRefreshTasks();
     static HttpRequestDef genRequestDefForCreateRuleNew();
     static HttpRequestDef genRequestDefForCreateShareCacheGroups();
     static HttpRequestDef genRequestDefForCreateTags();
     static HttpRequestDef genRequestDefForDeleteDomain();
+    static HttpRequestDef genRequestDefForDeleteDomainTemplate();
     static HttpRequestDef genRequestDefForDeleteRuleNew();
     static HttpRequestDef genRequestDefForDeleteShareCacheGroups();
     static HttpRequestDef genRequestDefForDisableDomain();
@@ -35,6 +38,7 @@ public:
     static HttpRequestDef genRequestDefForListShareCacheGroups();
     static HttpRequestDef genRequestDefForModifyAccountInfo();
     static HttpRequestDef genRequestDefForSetChargeModes();
+    static HttpRequestDef genRequestDefForShowAppliedTemplateRecord();
     static HttpRequestDef genRequestDefForShowBandwidthCalc();
     static HttpRequestDef genRequestDefForShowCertificatesHttpsInfo();
     static HttpRequestDef genRequestDefForShowChargeModes();
@@ -42,6 +46,7 @@ public:
     static HttpRequestDef genRequestDefForShowDomainFullConfig();
     static HttpRequestDef genRequestDefForShowDomainLocationStats();
     static HttpRequestDef genRequestDefForShowDomainStats();
+    static HttpRequestDef genRequestDefForShowDomainTemplate();
     static HttpRequestDef genRequestDefForShowHistoryTaskDetails();
     static HttpRequestDef genRequestDefForShowHistoryTasks();
     static HttpRequestDef genRequestDefForShowIpInfo();
@@ -54,6 +59,7 @@ public:
     static HttpRequestDef genRequestDefForShowVerifyDomainOwnerInfo();
     static HttpRequestDef genRequestDefForUpdateDomainFullConfig();
     static HttpRequestDef genRequestDefForUpdateDomainMultiCertificates();
+    static HttpRequestDef genRequestDefForUpdateDomainTemplate();
     static HttpRequestDef genRequestDefForUpdateFullRule();
     static HttpRequestDef genRequestDefForUpdatePrivateBucketAccess();
     static HttpRequestDef genRequestDefForUpdateRuleNew();

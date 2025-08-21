@@ -21,7 +21,7 @@ namespace Model {
 using namespace HuaweiCloud::Sdk::Core::Utils;
 using namespace HuaweiCloud::Sdk::Core::Http;
 /// <summary>
-/// 最佳实践检测结果各个场景的概览。
+/// 最佳实践检测结果中某个场景的概览。
 /// </summary>
 class HUAWEICLOUD_RGC_V1_EXPORT  BestPracticeOverviewItem
     : public ModelBase

@@ -1,0 +1,171 @@
+
+#ifndef HUAWEICLOUD_SDK_CFW_V1_MODEL_ShowFlowDetailRequest_H_
+#define HUAWEICLOUD_SDK_CFW_V1_MODEL_ShowFlowDetailRequest_H_
+
+
+#include <huaweicloud/cfw/v1/CfwExport.h>
+
+#include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
+#include <huaweicloud/core/http/HttpResponse.h>
+
+#include <string>
+#include <vector>
+
+namespace HuaweiCloud {
+namespace Sdk {
+namespace Cfw {
+namespace V1 {
+namespace Model {
+
+using namespace HuaweiCloud::Sdk::Core::Utils;
+using namespace HuaweiCloud::Sdk::Core::Http;
+/// <summary>
+/// Request Object
+/// </summary>
+class HUAWEICLOUD_CFW_V1_EXPORT  ShowFlowDetailRequest
+    : public ModelBase
+{
+public:
+    ShowFlowDetailRequest();
+    virtual ~ShowFlowDetailRequest();
+
+    /////////////////////////////////////////////
+    /// ModelBase overrides
+
+    void validate() override;
+    web::json::value toJson() const override;
+    bool fromJson(const web::json::value& json) override;
+    /////////////////////////////////////////////
+    /// ShowFlowDetailRequest members
+
+    /// <summary>
+    /// **参数解释**： 防火墙ID，用户创建防火墙实例后产生的唯一ID，配置后可区分不同防火墙，可通过[防火墙ID获取方式](cfw_02_0028.xml)获取 **约束限制**： 不涉及 **取值范围**： 32位UUID **默认取值**： 不涉及
+    /// </summary>
+
+    std::string getFwInstanceId() const;
+    bool fwInstanceIdIsSet() const;
+    void unsetfwInstanceId();
+    void setFwInstanceId(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**： 时间范围  **约束限制**： 不涉及 **取值范围**： 0为近一时 1近一天 2近七天   **默认取值**： 不涉及
+    /// </summary>
+
+    int32_t getRange() const;
+    bool rangeIsSet() const;
+    void unsetrange();
+    void setRange(int32_t value);
+
+    /// <summary>
+    /// **参数解释**： 日志类型 **约束限制**： 不涉及 **取值范围**： internet为南北向日志、nat为nat场景日志，vpc为东西向日志，vgw为vgw场景日志 **默认取值**： 不涉及
+    /// </summary>
+
+    std::string getLogType() const;
+    bool logTypeIsSet() const;
+    void unsetlogType();
+    void setLogType(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**： 会话方向 **约束限制**： 不涉及 **取值范围**： in2out为出云方向 out2in为入云方向 **默认取值**： 不涉及
+    /// </summary>
+
+    std::string getDirection() const;
+    bool directionIsSet() const;
+    void unsetdirection();
+    void setDirection(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**： 开始时间 **约束限制**： 不涉及 **取值范围**： 毫秒级时间戳 **默认取值**： 不涉及
+    /// </summary>
+
+    int64_t getStartTime() const;
+    bool startTimeIsSet() const;
+    void unsetstartTime();
+    void setStartTime(int64_t value);
+
+    /// <summary>
+    /// **参数解释**： 结束时间 **约束限制**： 不涉及 **取值范围**： 毫秒级时间戳 **默认取值**： 不涉及
+    /// </summary>
+
+    int64_t getEndTime() const;
+    bool endTimeIsSet() const;
+    void unsetendTime();
+    void setEndTime(int64_t value);
+
+    /// <summary>
+    /// **参数解释**： VGW ID **约束限制**： 不涉及 **取值范围**： 32位UUID **默认取值**： 不涉及
+    /// </summary>
+
+    std::vector<std::string>& getVgwId();
+    bool vgwIdIsSet() const;
+    void unsetvgwId();
+    void setVgwId(const std::vector<std::string>& value);
+
+    /// <summary>
+    /// **参数解释**： IP类型 **约束限制**： 不涉及 **取值范围**： public 公网IP private 私网IP open_port **默认取值**： 不涉及
+    /// </summary>
+
+    std::string getAssetType() const;
+    bool assetTypeIsSet() const;
+    void unsetassetType();
+    void setAssetType(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**： 聚合类型 **约束限制**： 不涉及 **取值范围**： src_ip 源IP dst_ip 目的IP dst_port 目的端口 protocol　协议 dst_host　目的域名 app　应用 dst_region_name　目的地区 src_region_name　源地区 **默认取值**： 不涉及
+    /// </summary>
+
+    std::string getItem() const;
+    bool itemIsSet() const;
+    void unsetitem();
+    void setItem(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**： 统计对象 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
+    /// </summary>
+
+    std::string getValue() const;
+    bool valueIsSet() const;
+    void unsetvalue();
+    void setValue(const std::string& value);
+
+
+protected:
+    std::string fwInstanceId_;
+    bool fwInstanceIdIsSet_;
+    int32_t range_;
+    bool rangeIsSet_;
+    std::string logType_;
+    bool logTypeIsSet_;
+    std::string direction_;
+    bool directionIsSet_;
+    int64_t startTime_;
+    bool startTimeIsSet_;
+    int64_t endTime_;
+    bool endTimeIsSet_;
+    std::vector<std::string> vgwId_;
+    bool vgwIdIsSet_;
+    std::string assetType_;
+    bool assetTypeIsSet_;
+    std::string item_;
+    bool itemIsSet_;
+    std::string value_;
+    bool valueIsSet_;
+
+#ifdef RTTR_FLAG
+    RTTR_ENABLE()
+public:
+    ShowFlowDetailRequest& dereference_from_shared_ptr(std::shared_ptr<ShowFlowDetailRequest> ptr) {
+        return *ptr;
+    }
+#endif
+};
+
+
+}
+}
+}
+}
+}
+
+#endif // HUAWEICLOUD_SDK_CFW_V1_MODEL_ShowFlowDetailRequest_H_

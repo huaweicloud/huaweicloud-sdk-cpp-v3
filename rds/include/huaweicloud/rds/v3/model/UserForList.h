@@ -67,6 +67,15 @@ public:
     void unsethosts();
     void setHosts(const std::vector<std::string>& value);
 
+    /// <summary>
+    /// 数据库用户备注
+    /// </summary>
+
+    std::string getComment() const;
+    bool commentIsSet() const;
+    void unsetcomment();
+    void setComment(const std::string& value);
+
 
 protected:
     std::string name_;
@@ -75,6 +84,8 @@ protected:
     bool databasesIsSet_;
     std::vector<std::string> hosts_;
     bool hostsIsSet_;
+    std::string comment_;
+    bool commentIsSet_;
 
 };
 

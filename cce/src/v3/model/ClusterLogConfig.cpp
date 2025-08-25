@@ -1,0 +1,113 @@
+
+
+#include "huaweicloud/cce/v3/model/ClusterLogConfig.h"
+namespace HuaweiCloud {
+namespace Sdk {
+namespace Cce {
+namespace V3 {
+namespace Model {
+
+
+
+
+ClusterLogConfig::ClusterLogConfig()
+{
+    ttlInDays_ = 0;
+    ttlInDaysIsSet_ = false;
+    logConfigsIsSet_ = false;
+}
+
+ClusterLogConfig::~ClusterLogConfig() = default;
+
+void ClusterLogConfig::validate()
+{
+}
+
+web::json::value ClusterLogConfig::toJson() const
+{
+    web::json::value val = web::json::value::object();
+
+    if(ttlInDaysIsSet_) {
+        val[utility::conversions::to_string_t("ttl_in_days")] = ModelBase::toJson(ttlInDays_);
+    }
+    if(logConfigsIsSet_) {
+        val[utility::conversions::to_string_t("log_configs")] = ModelBase::toJson(logConfigs_);
+    }
+
+    return val;
+}
+bool ClusterLogConfig::fromJson(const web::json::value& val)
+{
+    bool ok = true;
+    
+    if(val.has_field(utility::conversions::to_string_t("ttl_in_days"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ttl_in_days"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTtlInDays(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("log_configs"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("log_configs"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<ClusterLogConfig_log_configs> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setLogConfigs(refVal);
+        }
+    }
+    return ok;
+}
+
+
+int32_t ClusterLogConfig::getTtlInDays() const
+{
+    return ttlInDays_;
+}
+
+void ClusterLogConfig::setTtlInDays(int32_t value)
+{
+    ttlInDays_ = value;
+    ttlInDaysIsSet_ = true;
+}
+
+bool ClusterLogConfig::ttlInDaysIsSet() const
+{
+    return ttlInDaysIsSet_;
+}
+
+void ClusterLogConfig::unsetttlInDays()
+{
+    ttlInDaysIsSet_ = false;
+}
+
+std::vector<ClusterLogConfig_log_configs>& ClusterLogConfig::getLogConfigs()
+{
+    return logConfigs_;
+}
+
+void ClusterLogConfig::setLogConfigs(const std::vector<ClusterLogConfig_log_configs>& value)
+{
+    logConfigs_ = value;
+    logConfigsIsSet_ = true;
+}
+
+bool ClusterLogConfig::logConfigsIsSet() const
+{
+    return logConfigsIsSet_;
+}
+
+void ClusterLogConfig::unsetlogConfigs()
+{
+    logConfigsIsSet_ = false;
+}
+
+}
+}
+}
+}
+}
+
+

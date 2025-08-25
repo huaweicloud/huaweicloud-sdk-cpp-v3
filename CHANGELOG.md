@@ -1,3 +1,21 @@
+# 3.1.151 2025-08-25
+
+### HuaweiCloud SDK RDS
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListDbUsers**
+    - changes of response param
+      - `+ users.comment`
+  - **ListSqlserverDbUsers**
+    - changes of response param
+      - `+ users.comment`
+
 # 3.1.150 2025-08-21
 
 ### HuaweiCloud SDK CDN

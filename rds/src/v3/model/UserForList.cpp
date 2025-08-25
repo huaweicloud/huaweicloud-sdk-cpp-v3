@@ -16,6 +16,8 @@ UserForList::UserForList()
     nameIsSet_ = false;
     databasesIsSet_ = false;
     hostsIsSet_ = false;
+    comment_ = "";
+    commentIsSet_ = false;
 }
 
 UserForList::~UserForList() = default;
@@ -36,6 +38,9 @@ web::json::value UserForList::toJson() const
     }
     if(hostsIsSet_) {
         val[utility::conversions::to_string_t("hosts")] = ModelBase::toJson(hosts_);
+    }
+    if(commentIsSet_) {
+        val[utility::conversions::to_string_t("comment")] = ModelBase::toJson(comment_);
     }
 
     return val;
@@ -69,6 +74,15 @@ bool UserForList::fromJson(const web::json::value& val)
             std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setHosts(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("comment"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("comment"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setComment(refVal);
         }
     }
     return ok;
@@ -136,6 +150,27 @@ bool UserForList::hostsIsSet() const
 void UserForList::unsethosts()
 {
     hostsIsSet_ = false;
+}
+
+std::string UserForList::getComment() const
+{
+    return comment_;
+}
+
+void UserForList::setComment(const std::string& value)
+{
+    comment_ = value;
+    commentIsSet_ = true;
+}
+
+bool UserForList::commentIsSet() const
+{
+    return commentIsSet_;
+}
+
+void UserForList::unsetcomment()
+{
+    commentIsSet_ = false;
 }
 
 }

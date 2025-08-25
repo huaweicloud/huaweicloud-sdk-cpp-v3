@@ -1,3 +1,21 @@
+# 3.1.151 2025-08-25
+
+### HuaweiCloud SDK RDS
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListDbUsers**
+    - 响应参数变更
+      - `+ users.comment`
+  - **ListSqlserverDbUsers**
+    - 响应参数变更
+      - `+ users.comment`
+
 # 3.1.150 2025-08-21
 
 ### HuaweiCloud SDK CDN

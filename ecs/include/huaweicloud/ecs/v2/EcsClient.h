@@ -62,6 +62,9 @@
 #include <huaweicloud/ecs/v2/model/ChangeVpcRequest.h>
 #include <huaweicloud/ecs/v2/model/ChangeVpcRequestBody.h>
 #include <huaweicloud/ecs/v2/model/ChangeVpcResponse.h>
+#include <huaweicloud/ecs/v2/model/CreateLaunchTemplateRequest.h>
+#include <huaweicloud/ecs/v2/model/CreateLaunchTemplateRequestBody.h>
+#include <huaweicloud/ecs/v2/model/CreateLaunchTemplateResponse.h>
 #include <huaweicloud/ecs/v2/model/CreatePostPaidServersRequest.h>
 #include <huaweicloud/ecs/v2/model/CreatePostPaidServersRequestBody.h>
 #include <huaweicloud/ecs/v2/model/CreatePostPaidServersResponse.h>
@@ -435,6 +438,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ChangeVpcResponse> changeVpc(
         ChangeVpcRequest &request
+    );
+    // 创建模板
+    //
+    // 创建启动模板。将创建一个全新的模板，并自动生成版本号为1的作为默认版本。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateLaunchTemplateResponse> createLaunchTemplate(
+        CreateLaunchTemplateRequest &request
     );
     // 创建云服务器(按需)
     //

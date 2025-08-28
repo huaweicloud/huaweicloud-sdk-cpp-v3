@@ -16,6 +16,10 @@ ListSmartChatRoomsResponse::ListSmartChatRoomsResponse()
     countIsSet_ = false;
     countConcurrency_ = 0;
     countConcurrencyIsSet_ = false;
+    countClientNums_ = 0;
+    countClientNumsIsSet_ = false;
+    countClientNumsToken_ = 0;
+    countClientNumsTokenIsSet_ = false;
     smartChatRoomsIsSet_ = false;
     xRequestId_ = "";
     xRequestIdIsSet_ = false;
@@ -36,6 +40,12 @@ web::json::value ListSmartChatRoomsResponse::toJson() const
     }
     if(countConcurrencyIsSet_) {
         val[utility::conversions::to_string_t("count_concurrency")] = ModelBase::toJson(countConcurrency_);
+    }
+    if(countClientNumsIsSet_) {
+        val[utility::conversions::to_string_t("count_client_nums")] = ModelBase::toJson(countClientNums_);
+    }
+    if(countClientNumsTokenIsSet_) {
+        val[utility::conversions::to_string_t("count_client_nums_token")] = ModelBase::toJson(countClientNumsToken_);
     }
     if(smartChatRoomsIsSet_) {
         val[utility::conversions::to_string_t("smart_chat_rooms")] = ModelBase::toJson(smartChatRooms_);
@@ -66,6 +76,24 @@ bool ListSmartChatRoomsResponse::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setCountConcurrency(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("count_client_nums"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("count_client_nums"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCountClientNums(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("count_client_nums_token"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("count_client_nums_token"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCountClientNumsToken(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("smart_chat_rooms"))) {
@@ -130,6 +158,48 @@ bool ListSmartChatRoomsResponse::countConcurrencyIsSet() const
 void ListSmartChatRoomsResponse::unsetcountConcurrency()
 {
     countConcurrencyIsSet_ = false;
+}
+
+int32_t ListSmartChatRoomsResponse::getCountClientNums() const
+{
+    return countClientNums_;
+}
+
+void ListSmartChatRoomsResponse::setCountClientNums(int32_t value)
+{
+    countClientNums_ = value;
+    countClientNumsIsSet_ = true;
+}
+
+bool ListSmartChatRoomsResponse::countClientNumsIsSet() const
+{
+    return countClientNumsIsSet_;
+}
+
+void ListSmartChatRoomsResponse::unsetcountClientNums()
+{
+    countClientNumsIsSet_ = false;
+}
+
+int32_t ListSmartChatRoomsResponse::getCountClientNumsToken() const
+{
+    return countClientNumsToken_;
+}
+
+void ListSmartChatRoomsResponse::setCountClientNumsToken(int32_t value)
+{
+    countClientNumsToken_ = value;
+    countClientNumsTokenIsSet_ = true;
+}
+
+bool ListSmartChatRoomsResponse::countClientNumsTokenIsSet() const
+{
+    return countClientNumsTokenIsSet_;
+}
+
+void ListSmartChatRoomsResponse::unsetcountClientNumsToken()
+{
+    countClientNumsTokenIsSet_ = false;
 }
 
 std::vector<SmartChatRoomBaseInfo>& ListSmartChatRoomsResponse::getSmartChatRooms()

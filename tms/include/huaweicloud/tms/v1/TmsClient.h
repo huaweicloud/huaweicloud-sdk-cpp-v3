@@ -26,6 +26,8 @@
 #include <huaweicloud/tms/v1/model/ListTagKeysResponse.h>
 #include <huaweicloud/tms/v1/model/ListTagValuesRequest.h>
 #include <huaweicloud/tms/v1/model/ListTagValuesResponse.h>
+#include <huaweicloud/tms/v1/model/ListTagsRequest.h>
+#include <huaweicloud/tms/v1/model/ListTagsResponse.h>
 #include <huaweicloud/tms/v1/model/ModifyPrefineTag.h>
 #include <huaweicloud/tms/v1/model/ReqCreatePredefineTag.h>
 #include <huaweicloud/tms/v1/model/ReqCreateTag.h>
@@ -145,6 +147,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListTagValuesResponse> listTagValues(
         ListTagValuesRequest &request
+    );
+    // 查询标签列表
+    //
+    // 查询指定区域和实例类型中租户的所有标签
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListTagsResponse> listTags(
+        ListTagsRequest &request
     );
     // 查询API版本号详情
     //

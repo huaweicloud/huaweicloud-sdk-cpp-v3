@@ -57,12 +57,23 @@ public:
     void unsetalgorithmFailureReason();
     void setAlgorithmFailureReason(const std::string& value);
 
+    /// <summary>
+    /// 管理员驳回的原因
+    /// </summary>
+
+    std::string getAdminAuditFailureReason() const;
+    bool adminAuditFailureReasonIsSet() const;
+    void unsetadminAuditFailureReason();
+    void setAdminAuditFailureReason(const std::string& value);
+
 
 protected:
     std::vector<std::string> reviewIdList_;
     bool reviewIdListIsSet_;
     std::string algorithmFailureReason_;
     bool algorithmFailureReasonIsSet_;
+    std::string adminAuditFailureReason_;
+    bool adminAuditFailureReasonIsSet_;
 
 };
 

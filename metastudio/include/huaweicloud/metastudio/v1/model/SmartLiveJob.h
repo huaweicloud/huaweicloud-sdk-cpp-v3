@@ -234,6 +234,15 @@ public:
     void unsetusedResourceType();
     void setUsedResourceType(const std::string& value);
 
+    /// <summary>
+    /// AI标识开关
+    /// </summary>
+
+    bool isIsAiMarkOn() const;
+    bool isAiMarkOnIsSet() const;
+    void unsetisAiMarkOn();
+    void setIsAiMarkOn(bool value);
+
 
 protected:
     std::string jobId_;
@@ -278,6 +287,8 @@ protected:
     bool relationLivePlatformInfoIsSet_;
     std::string usedResourceType_;
     bool usedResourceTypeIsSet_;
+    bool isAiMarkOn_;
+    bool isAiMarkOnIsSet_;
 
 };
 

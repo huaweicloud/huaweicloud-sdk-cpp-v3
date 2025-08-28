@@ -41,7 +41,7 @@ public:
     /// SearchTaskResponse members
 
     /// <summary>
-    /// 页面起始页,从0开始
+    /// 与第一条数据的偏移量
     /// </summary>
 
     int32_t getOffset() const;
@@ -50,7 +50,7 @@ public:
     void setOffset(int32_t value);
 
     /// <summary>
-    /// 每页显示的条目数量
+    /// 页面大小
     /// </summary>
 
     int32_t getLimit() const;

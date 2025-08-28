@@ -37,6 +37,8 @@ VideoConfig::VideoConfig()
     isEndAtFirstFrameIsSet_ = false;
     outputExternalUrl_ = "";
     outputExternalUrlIsSet_ = false;
+    isVocabularyConfigEnable_ = false;
+    isVocabularyConfigEnableIsSet_ = false;
 }
 
 VideoConfig::~VideoConfig() = default;
@@ -87,6 +89,9 @@ web::json::value VideoConfig::toJson() const
     }
     if(outputExternalUrlIsSet_) {
         val[utility::conversions::to_string_t("output_external_url")] = ModelBase::toJson(outputExternalUrl_);
+    }
+    if(isVocabularyConfigEnableIsSet_) {
+        val[utility::conversions::to_string_t("is_vocabulary_config_enable")] = ModelBase::toJson(isVocabularyConfigEnable_);
     }
 
     return val;
@@ -210,6 +215,15 @@ bool VideoConfig::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setOutputExternalUrl(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_vocabulary_config_enable"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_vocabulary_config_enable"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsVocabularyConfigEnable(refVal);
         }
     }
     return ok;
@@ -487,6 +501,27 @@ bool VideoConfig::outputExternalUrlIsSet() const
 void VideoConfig::unsetoutputExternalUrl()
 {
     outputExternalUrlIsSet_ = false;
+}
+
+bool VideoConfig::isIsVocabularyConfigEnable() const
+{
+    return isVocabularyConfigEnable_;
+}
+
+void VideoConfig::setIsVocabularyConfigEnable(bool value)
+{
+    isVocabularyConfigEnable_ = value;
+    isVocabularyConfigEnableIsSet_ = true;
+}
+
+bool VideoConfig::isVocabularyConfigEnableIsSet() const
+{
+    return isVocabularyConfigEnableIsSet_;
+}
+
+void VideoConfig::unsetisVocabularyConfigEnable()
+{
+    isVocabularyConfigEnableIsSet_ = false;
 }
 
 }

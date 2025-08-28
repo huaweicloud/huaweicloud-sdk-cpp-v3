@@ -15,6 +15,8 @@ OpExternalInfo::OpExternalInfo()
     reviewIdListIsSet_ = false;
     algorithmFailureReason_ = "";
     algorithmFailureReasonIsSet_ = false;
+    adminAuditFailureReason_ = "";
+    adminAuditFailureReasonIsSet_ = false;
 }
 
 OpExternalInfo::~OpExternalInfo() = default;
@@ -32,6 +34,9 @@ web::json::value OpExternalInfo::toJson() const
     }
     if(algorithmFailureReasonIsSet_) {
         val[utility::conversions::to_string_t("algorithm_failure_reason")] = ModelBase::toJson(algorithmFailureReason_);
+    }
+    if(adminAuditFailureReasonIsSet_) {
+        val[utility::conversions::to_string_t("admin_audit_failure_reason")] = ModelBase::toJson(adminAuditFailureReason_);
     }
 
     return val;
@@ -56,6 +61,15 @@ bool OpExternalInfo::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAlgorithmFailureReason(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("admin_audit_failure_reason"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("admin_audit_failure_reason"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setAdminAuditFailureReason(refVal);
         }
     }
     return ok;
@@ -102,6 +116,27 @@ bool OpExternalInfo::algorithmFailureReasonIsSet() const
 void OpExternalInfo::unsetalgorithmFailureReason()
 {
     algorithmFailureReasonIsSet_ = false;
+}
+
+std::string OpExternalInfo::getAdminAuditFailureReason() const
+{
+    return adminAuditFailureReason_;
+}
+
+void OpExternalInfo::setAdminAuditFailureReason(const std::string& value)
+{
+    adminAuditFailureReason_ = value;
+    adminAuditFailureReasonIsSet_ = true;
+}
+
+bool OpExternalInfo::adminAuditFailureReasonIsSet() const
+{
+    return adminAuditFailureReasonIsSet_;
+}
+
+void OpExternalInfo::unsetadminAuditFailureReason()
+{
+    adminAuditFailureReasonIsSet_ = false;
 }
 
 }

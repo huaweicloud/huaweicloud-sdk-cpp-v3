@@ -146,11 +146,53 @@ public:
 
                 "https://cts.ap-southeast-4.myhuaweicloud.cn"
             });
+        regions["ap-southeast-5"] = Region("ap-southeast-5",
+            { 
+                "https://cts.ap-southeast-5.myhuaweicloud.com",
+
+                "https://cts.ap-southeast-5.myhuaweicloud.asia"
+            });
+        regions["af-north-1"] = Region("af-north-1",
+            { 
+                "https://cts.af-north-1.myhuaweicloud.com",
+
+                "https://cts.af-north-1.myhuaweicloud.africa"
+            });
         regions["tr-west-1"] = Region("tr-west-1",
             { 
                 "https://cts.tr-west-1.myhuaweicloud.com",
 
                 "https://cts.tr-west-1.myhuaweicloud.cn"
+            });
+        regions["cn-east-5"] = Region("cn-east-5",
+            { 
+                "https://cts.cn-east-5.myhuaweicloud.com",
+
+                "https://cts.cn-east-5.myhuaweicloud.cn"
+            });
+        regions["cn-north-12"] = Region("cn-north-12",
+            { 
+                "https://cts.cn-north-12.myhuaweicloud.com",
+
+                "https://cts.cn-north-12.myhuaweicloud.cn"
+            });
+        regions["cn-southwest-3"] = Region("cn-southwest-3",
+            { 
+                "https://cts.cn-southwest-3.myhuaweicloud.com",
+
+                "https://cts.cn-southwest-3.myhuaweicloud.cn"
+            });
+        regions["cn-north-11"] = Region("cn-north-11",
+            { 
+                "https://cts.cn-north-11.myhuaweicloud.com",
+
+                "https://cts.cn-north-11.myhuaweicloud.cn"
+            });
+        regions["cn-east-4"] = Region("cn-east-4",
+            { 
+                "https://cts.cn-east-4.myhuaweicloud.com",
+
+                "https://cts.cn-east-4.myhuaweicloud.cn"
             });
         regions["me-east-1"] = Region("me-east-1",
             { 

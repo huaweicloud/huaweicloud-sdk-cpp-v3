@@ -585,6 +585,16 @@ HttpRequestDef LtsMeta::genRequestDefForListLogStream() {
     return reqDefBuilder;
 }
 
+HttpRequestDef LtsMeta::genRequestDefForListLogStreamIndex() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamContentType;
+    reqDefBuilder.withRequestField(headerParamContentType
+                  .withName("ContentType")
+                  .withJsonTag("Content-Type")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef LtsMeta::genRequestDefForListLogStreams() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("LogGroupName")

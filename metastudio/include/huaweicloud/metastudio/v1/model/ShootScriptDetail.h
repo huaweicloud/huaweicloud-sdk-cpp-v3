@@ -82,7 +82,7 @@ public:
     void setAudioDriveActionConfig(const std::vector<AudioDriveActionConfig>& value);
 
     /// <summary>
-    /// 语音驱动音频文件外部下载URL。  &gt; * 需要先申请开通白名单后，才允许通过外部URL的音频文件来驱动分身数字人视频。
+    /// 语音驱动音频文件外部下载URL。  &gt; * 只支持分身数字人视频制作  &gt; * 需要先申请开通白名单后，才允许通过外部URL的音频文件来驱动分身数字人视频。  &gt; * 音频文件需要存放在华为云OBS
     /// </summary>
 
     std::string getAudioDriveFileExternalUrl() const;

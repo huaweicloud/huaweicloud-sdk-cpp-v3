@@ -23,6 +23,7 @@ public:
     static HttpRequestDef genRequestDefForListResource();
     static HttpRequestDef genRequestDefForListTagKeys();
     static HttpRequestDef genRequestDefForListTagValues();
+    static HttpRequestDef genRequestDefForListTags();
     static HttpRequestDef genRequestDefForShowApiVersion();
     static HttpRequestDef genRequestDefForShowResourceTag();
     static HttpRequestDef genRequestDefForShowTagQuota();

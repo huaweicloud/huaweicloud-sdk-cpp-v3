@@ -49,7 +49,7 @@ public:
     void setClipMode(const std::string& value);
 
     /// <summary>
-    /// **参数解释**： 视频编码格式及视频文件格式。 **约束限制**： 仅分身数字人视频制作支持VP8和QTRLE编码。QTRLE编码时文本驱动字符数限制小于1500字，音频驱动音频长度小于5分钟。 QTRLE编码需要先申请开通白名单后才能使用  **取值范围**： * H264：h264编码，输出mp4文件。 * VP8：vp8编码，输出webm文件。 * QTRLE：qtrle ，输出mov文件。  **默认取值**： 不涉及
+    /// **参数解释**： 视频编码格式及视频文件格式。 **约束限制**： 仅分身数字人视频制作支持VP8和QTRLE编码。QTRLE编码时文本驱动字符数限制小于1500字，音频驱动音频长度小于5分钟。 QTRLE编码需要先申请开通白名单后才能使用  **取值范围**： * H264：h264编码，输出mp4文件。 * VP8：vp8编码，输出webm文件。 * QTRLE：qtrle ，输出mov文件。  **默认取值**： H264
     /// </summary>
 
     std::string getCodec() const;
@@ -156,6 +156,15 @@ public:
     void unsetoutputExternalUrl();
     void setOutputExternalUrl(const std::string& value);
 
+    /// <summary>
+    /// **参数解释**： 是否应用当前租户的读法配置 **约束限制**： 仅分身数字人视频制作支持。 **取值范围** * true: 开启 * false: 不开启
+    /// </summary>
+
+    bool isIsVocabularyConfigEnable() const;
+    bool isVocabularyConfigEnableIsSet() const;
+    void unsetisVocabularyConfigEnable();
+    void setIsVocabularyConfigEnable(bool value);
+
 
 protected:
     std::string clipMode_;
@@ -184,6 +193,8 @@ protected:
     bool isEndAtFirstFrameIsSet_;
     std::string outputExternalUrl_;
     bool outputExternalUrlIsSet_;
+    bool isVocabularyConfigEnable_;
+    bool isVocabularyConfigEnableIsSet_;
 
 };
 

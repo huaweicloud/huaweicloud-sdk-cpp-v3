@@ -159,6 +159,40 @@
 #include <huaweicloud/metastudio/v1/model/ShowPhotoDigitalHumanVideoResponse.h>
 #include <string>
 
+#include <huaweicloud/metastudio/v1/model/CreateDocumentRequest.h>
+#include <huaweicloud/metastudio/v1/model/CreateDocumentRequestBody.h>
+#include <huaweicloud/metastudio/v1/model/CreateDocumentResponse.h>
+#include <huaweicloud/metastudio/v1/model/DeleteDocumentRequest.h>
+#include <huaweicloud/metastudio/v1/model/DeleteDocumentResponse.h>
+#include <huaweicloud/metastudio/v1/model/DownloadDocumentRequest.h>
+#include <huaweicloud/metastudio/v1/model/DownloadDocumentResponse.h>
+#include <huaweicloud/core/utils/HttpContent.h>
+#include <huaweicloud/metastudio/v1/model/ListDocumentInfoRequest.h>
+#include <huaweicloud/metastudio/v1/model/ListDocumentInfoResponse.h>
+#include <huaweicloud/metastudio/v1/model/ShowDocumentInfoRequest.h>
+#include <huaweicloud/metastudio/v1/model/ShowDocumentInfoResponse.h>
+#include <huaweicloud/metastudio/v1/model/UpdateDocumentRequest.h>
+#include <huaweicloud/metastudio/v1/model/UpdateDocumentRequestBody.h>
+#include <huaweicloud/metastudio/v1/model/UpdateDocumentResponse.h>
+#include <string>
+#include <vector>
+
+#include <huaweicloud/metastudio/v1/model/DocumentSegmentInfo.h>
+#include <huaweicloud/metastudio/v1/model/DocumentSegmentParam.h>
+#include <huaweicloud/metastudio/v1/model/ListDocumentSegmentRequest.h>
+#include <huaweicloud/metastudio/v1/model/ListDocumentSegmentResponse.h>
+#include <huaweicloud/metastudio/v1/model/PreviewDocumentSegmentRequest.h>
+#include <huaweicloud/metastudio/v1/model/PreviewDocumentSegmentResponse.h>
+#include <huaweicloud/metastudio/v1/model/StartDocumentSegmentRequest.h>
+#include <huaweicloud/metastudio/v1/model/StartDocumentSegmentResponse.h>
+#include <huaweicloud/metastudio/v1/model/StartDocumentSegmentTaskReq.h>
+#include <huaweicloud/metastudio/v1/model/UpdateDocumentSegmentInfoRequest.h>
+#include <huaweicloud/metastudio/v1/model/UpdateDocumentSegmentInfoResponse.h>
+#include <huaweicloud/metastudio/v1/model/UpdateDocumentSegmentParamRequest.h>
+#include <huaweicloud/metastudio/v1/model/UpdateDocumentSegmentParamResponse.h>
+#include <huaweicloud/metastudio/v1/model/UpdateDocumentSegmentReq.h>
+#include <string>
+
 #include <huaweicloud/metastudio/v1/model/ConfirmFileUploadRequest.h>
 #include <huaweicloud/metastudio/v1/model/ConfirmFileUploadRequestBody.h>
 #include <huaweicloud/metastudio/v1/model/ConfirmFileUploadResponse.h>
@@ -206,6 +240,36 @@
 #include <huaweicloud/metastudio/v1/model/UpdateHotWordsSwitchResponse.h>
 #include <string>
 
+#include <huaweicloud/metastudio/v1/model/CreateInstructionLibraryReq.h>
+#include <huaweicloud/metastudio/v1/model/CreateInstructionLibraryRequest.h>
+#include <huaweicloud/metastudio/v1/model/CreateInstructionLibraryResponse.h>
+#include <huaweicloud/metastudio/v1/model/DeleteInstructionLibraryRequest.h>
+#include <huaweicloud/metastudio/v1/model/DeleteInstructionLibraryResponse.h>
+#include <huaweicloud/metastudio/v1/model/ListInstructionLibraryRequest.h>
+#include <huaweicloud/metastudio/v1/model/ListInstructionLibraryResponse.h>
+#include <huaweicloud/metastudio/v1/model/ShowInstructionLibraryRequest.h>
+#include <huaweicloud/metastudio/v1/model/ShowInstructionLibraryResponse.h>
+#include <huaweicloud/metastudio/v1/model/UpdateInstructionLibraryReq.h>
+#include <huaweicloud/metastudio/v1/model/UpdateInstructionLibraryRequest.h>
+#include <huaweicloud/metastudio/v1/model/UpdateInstructionLibraryResponse.h>
+#include <string>
+#include <vector>
+
+#include <huaweicloud/metastudio/v1/model/CreateInstructionReq.h>
+#include <huaweicloud/metastudio/v1/model/CreateInstructionRequest.h>
+#include <huaweicloud/metastudio/v1/model/CreateInstructionResponse.h>
+#include <huaweicloud/metastudio/v1/model/DeleteInstructionRequest.h>
+#include <huaweicloud/metastudio/v1/model/DeleteInstructionResponse.h>
+#include <huaweicloud/metastudio/v1/model/ListInstructionRequest.h>
+#include <huaweicloud/metastudio/v1/model/ListInstructionResponse.h>
+#include <huaweicloud/metastudio/v1/model/ShowInstructionRequest.h>
+#include <huaweicloud/metastudio/v1/model/ShowInstructionResponse.h>
+#include <huaweicloud/metastudio/v1/model/UpdateInstructionReq.h>
+#include <huaweicloud/metastudio/v1/model/UpdateInstructionRequest.h>
+#include <huaweicloud/metastudio/v1/model/UpdateInstructionResponse.h>
+#include <string>
+#include <vector>
+
 #include <huaweicloud/metastudio/v1/model/CreateInteractionRuleGroupRequest.h>
 #include <huaweicloud/metastudio/v1/model/CreateInteractionRuleGroupResponse.h>
 #include <huaweicloud/metastudio/v1/model/DeleteInteractionRuleGroupRequest.h>
@@ -215,6 +279,11 @@
 #include <huaweicloud/metastudio/v1/model/ListInteractionRuleGroupsResponse.h>
 #include <huaweicloud/metastudio/v1/model/UpdateInteractionRuleGroupRequest.h>
 #include <huaweicloud/metastudio/v1/model/UpdateInteractionRuleGroupResponse.h>
+#include <string>
+
+#include <huaweicloud/metastudio/v1/model/CreateInteractiveChatReq.h>
+#include <huaweicloud/metastudio/v1/model/CreateInteractiveChatRequest.h>
+#include <huaweicloud/metastudio/v1/model/CreateInteractiveChatResponse.h>
 #include <string>
 
 #include <huaweicloud/metastudio/v1/model/CreateIntentAndQuestionReq.h>
@@ -232,6 +301,25 @@
 #include <huaweicloud/metastudio/v1/model/UpdateKnowledgeIntentReq.h>
 #include <huaweicloud/metastudio/v1/model/UpdateKnowledgeIntentRequest.h>
 #include <huaweicloud/metastudio/v1/model/UpdateKnowledgeIntentResponse.h>
+#include <string>
+#include <vector>
+
+#include <huaweicloud/metastudio/v1/model/CheckRecallKnowledgeLibraryRequest.h>
+#include <huaweicloud/metastudio/v1/model/CheckRecallKnowledgeLibraryResponse.h>
+#include <huaweicloud/metastudio/v1/model/CreateKnowledgeLibraryReq.h>
+#include <huaweicloud/metastudio/v1/model/CreateKnowledgeLibraryRequest.h>
+#include <huaweicloud/metastudio/v1/model/CreateKnowledgeLibraryResponse.h>
+#include <huaweicloud/metastudio/v1/model/DeleteKnowledgeLibraryRequest.h>
+#include <huaweicloud/metastudio/v1/model/DeleteKnowledgeLibraryResponse.h>
+#include <huaweicloud/metastudio/v1/model/ListKnowledgeLibraryRequest.h>
+#include <huaweicloud/metastudio/v1/model/ListKnowledgeLibraryResponse.h>
+#include <huaweicloud/metastudio/v1/model/RecallKnowledgeLibraryInfo.h>
+#include <huaweicloud/metastudio/v1/model/RecallKnowledgeLibraryRequestBody.h>
+#include <huaweicloud/metastudio/v1/model/ShowKnowledgeLibraryRequest.h>
+#include <huaweicloud/metastudio/v1/model/ShowKnowledgeLibraryResponse.h>
+#include <huaweicloud/metastudio/v1/model/UpdateKnowledgeLibraryReq.h>
+#include <huaweicloud/metastudio/v1/model/UpdateKnowledgeLibraryRequest.h>
+#include <huaweicloud/metastudio/v1/model/UpdateKnowledgeLibraryResponse.h>
 #include <string>
 #include <vector>
 
@@ -289,6 +377,36 @@
 #include <huaweicloud/metastudio/v1/model/UpdateLivePlatformResponse.h>
 #include <string>
 
+#include <huaweicloud/metastudio/v1/model/CreateLlmConfigReq.h>
+#include <huaweicloud/metastudio/v1/model/CreateLlmConfigRequest.h>
+#include <huaweicloud/metastudio/v1/model/CreateLlmConfigResponse.h>
+#include <huaweicloud/metastudio/v1/model/DeleteLlmConfigRequest.h>
+#include <huaweicloud/metastudio/v1/model/DeleteLlmConfigResponse.h>
+#include <huaweicloud/metastudio/v1/model/ListLlmConfigRequest.h>
+#include <huaweicloud/metastudio/v1/model/ListLlmConfigResponse.h>
+#include <huaweicloud/metastudio/v1/model/ShowLlmConfigRequest.h>
+#include <huaweicloud/metastudio/v1/model/ShowLlmConfigResponse.h>
+#include <huaweicloud/metastudio/v1/model/UpdateLlmConfigReq.h>
+#include <huaweicloud/metastudio/v1/model/UpdateLlmConfigRequest.h>
+#include <huaweicloud/metastudio/v1/model/UpdateLlmConfigResponse.h>
+#include <string>
+#include <vector>
+
+#include <huaweicloud/metastudio/v1/model/CreateMcpServerReq.h>
+#include <huaweicloud/metastudio/v1/model/CreateMcpServerRequest.h>
+#include <huaweicloud/metastudio/v1/model/CreateMcpServerResponse.h>
+#include <huaweicloud/metastudio/v1/model/DeleteMcpServerRequest.h>
+#include <huaweicloud/metastudio/v1/model/DeleteMcpServerResponse.h>
+#include <huaweicloud/metastudio/v1/model/ListMcpServerRequest.h>
+#include <huaweicloud/metastudio/v1/model/ListMcpServerResponse.h>
+#include <huaweicloud/metastudio/v1/model/ShowMcpServerRequest.h>
+#include <huaweicloud/metastudio/v1/model/ShowMcpServerResponse.h>
+#include <huaweicloud/metastudio/v1/model/UpdateMcpServerReq.h>
+#include <huaweicloud/metastudio/v1/model/UpdateMcpServerRequest.h>
+#include <huaweicloud/metastudio/v1/model/UpdateMcpServerResponse.h>
+#include <string>
+#include <vector>
+
 #include <huaweicloud/metastudio/v1/model/CreateOnceCodeRequest.h>
 #include <huaweicloud/metastudio/v1/model/CreateOnceCodeResponse.h>
 #include <string>
@@ -340,6 +458,23 @@
 #include <huaweicloud/metastudio/v1/model/ShowPictureModelingJobResponse.h>
 #include <string>
 
+#include <huaweicloud/metastudio/v1/model/CreatePluginConfigReq.h>
+#include <huaweicloud/metastudio/v1/model/CreatePluginConfigRequest.h>
+#include <huaweicloud/metastudio/v1/model/CreatePluginConfigResponse.h>
+#include <huaweicloud/metastudio/v1/model/DeletePluginConfigRequest.h>
+#include <huaweicloud/metastudio/v1/model/DeletePluginConfigResponse.h>
+#include <huaweicloud/metastudio/v1/model/ListPluginConfigRequest.h>
+#include <huaweicloud/metastudio/v1/model/ListPluginConfigResponse.h>
+#include <huaweicloud/metastudio/v1/model/ShowPluginConfigDefaultInfoRequest.h>
+#include <huaweicloud/metastudio/v1/model/ShowPluginConfigDefaultInfoResponse.h>
+#include <huaweicloud/metastudio/v1/model/ShowPluginConfigRequest.h>
+#include <huaweicloud/metastudio/v1/model/ShowPluginConfigResponse.h>
+#include <huaweicloud/metastudio/v1/model/UpdatePluginConfigReq.h>
+#include <huaweicloud/metastudio/v1/model/UpdatePluginConfigRequest.h>
+#include <huaweicloud/metastudio/v1/model/UpdatePluginConfigResponse.h>
+#include <string>
+#include <vector>
+
 #include <huaweicloud/metastudio/v1/model/CreateProductRequest.h>
 #include <huaweicloud/metastudio/v1/model/CreateProductRequestBody.h>
 #include <huaweicloud/metastudio/v1/model/CreateProductResponse.h>
@@ -357,6 +492,21 @@
 #include <huaweicloud/metastudio/v1/model/UpdateProductResponse.h>
 #include <string>
 
+#include <huaweicloud/metastudio/v1/model/CreateQuestionAnswerReq.h>
+#include <huaweicloud/metastudio/v1/model/CreateQuestionAnswerRequest.h>
+#include <huaweicloud/metastudio/v1/model/CreateQuestionAnswerResponse.h>
+#include <huaweicloud/metastudio/v1/model/DeleteQuestionAnswerRequest.h>
+#include <huaweicloud/metastudio/v1/model/DeleteQuestionAnswerResponse.h>
+#include <huaweicloud/metastudio/v1/model/ListQuestionAnswerRequest.h>
+#include <huaweicloud/metastudio/v1/model/ListQuestionAnswerResponse.h>
+#include <huaweicloud/metastudio/v1/model/ShowQuestionAnswerRequest.h>
+#include <huaweicloud/metastudio/v1/model/ShowQuestionAnswerResponse.h>
+#include <huaweicloud/metastudio/v1/model/UpdateQuestionAnswerReq.h>
+#include <huaweicloud/metastudio/v1/model/UpdateQuestionAnswerRequest.h>
+#include <huaweicloud/metastudio/v1/model/UpdateQuestionAnswerResponse.h>
+#include <string>
+#include <vector>
+
 #include <huaweicloud/metastudio/v1/model/CreateRobotReq.h>
 #include <huaweicloud/metastudio/v1/model/CreateRobotRequest.h>
 #include <huaweicloud/metastudio/v1/model/CreateRobotResponse.h>
@@ -372,6 +522,21 @@
 #include <huaweicloud/metastudio/v1/model/ValidateRobotReq.h>
 #include <huaweicloud/metastudio/v1/model/ValidateRobotRequest.h>
 #include <huaweicloud/metastudio/v1/model/ValidateRobotResponse.h>
+#include <string>
+#include <vector>
+
+#include <huaweicloud/metastudio/v1/model/CreateRoleReq.h>
+#include <huaweicloud/metastudio/v1/model/CreateRoleRequest.h>
+#include <huaweicloud/metastudio/v1/model/CreateRoleResponse.h>
+#include <huaweicloud/metastudio/v1/model/DeleteRoleRequest.h>
+#include <huaweicloud/metastudio/v1/model/DeleteRoleResponse.h>
+#include <huaweicloud/metastudio/v1/model/ListRoleRequest.h>
+#include <huaweicloud/metastudio/v1/model/ListRoleResponse.h>
+#include <huaweicloud/metastudio/v1/model/ShowRoleRequest.h>
+#include <huaweicloud/metastudio/v1/model/ShowRoleResponse.h>
+#include <huaweicloud/metastudio/v1/model/UpdateRoleReq.h>
+#include <huaweicloud/metastudio/v1/model/UpdateRoleRequest.h>
+#include <huaweicloud/metastudio/v1/model/UpdateRoleResponse.h>
 #include <string>
 #include <vector>
 
@@ -513,12 +678,26 @@
 #include <huaweicloud/metastudio/v1/model/ListTtsaJobsResponse.h>
 #include <string>
 
+#include <huaweicloud/metastudio/v1/model/CheckVoiceAssetRequest.h>
+#include <huaweicloud/metastudio/v1/model/CheckVoiceAssetResponse.h>
+#include <huaweicloud/metastudio/v1/model/ShowTtsJobRequest.h>
+#include <huaweicloud/metastudio/v1/model/ShowTtsJobResponse.h>
+#include <huaweicloud/metastudio/v1/model/ShowTtsPhoneticSymbolRequest.h>
+#include <huaweicloud/metastudio/v1/model/ShowTtsPhoneticSymbolResponse.h>
+#include <string>
+
 #include <huaweicloud/metastudio/v1/model/CreateAsyncTtsJobRequest.h>
 #include <huaweicloud/metastudio/v1/model/CreateAsyncTtsJobRequestBody.h>
 #include <huaweicloud/metastudio/v1/model/CreateAsyncTtsJobResponse.h>
 #include <huaweicloud/metastudio/v1/model/CreateTtsAuditionRequest.h>
 #include <huaweicloud/metastudio/v1/model/CreateTtsAuditionRequestBody.h>
 #include <huaweicloud/metastudio/v1/model/CreateTtsAuditionResponse.h>
+#include <huaweicloud/metastudio/v1/model/ShowAsyncTtsJobRequest.h>
+#include <huaweicloud/metastudio/v1/model/ShowAsyncTtsJobResponse.h>
+#include <huaweicloud/metastudio/v1/model/ShowTtsAuditionFileRequest.h>
+#include <huaweicloud/metastudio/v1/model/ShowTtsAuditionFileResponse.h>
+#include <string>
+
 #include <huaweicloud/metastudio/v1/model/CreateTtscVocabularyConfigsRequest.h>
 #include <huaweicloud/metastudio/v1/model/CreateTtscVocabularyConfigsResponse.h>
 #include <huaweicloud/metastudio/v1/model/CreateTtscVocabularyGroupsRequest.h>
@@ -532,6 +711,9 @@
 #include <huaweicloud/metastudio/v1/model/ListTtscVocabularyConfigsResponse.h>
 #include <huaweicloud/metastudio/v1/model/ListTtscVocabularyGroupsRequest.h>
 #include <huaweicloud/metastudio/v1/model/ListTtscVocabularyGroupsResponse.h>
+#include <huaweicloud/metastudio/v1/model/SaveTtscTenantConfigsRequest.h>
+#include <huaweicloud/metastudio/v1/model/SaveTtscTenantConfigsRequestBody.h>
+#include <huaweicloud/metastudio/v1/model/SaveTtscTenantConfigsResponse.h>
 #include <huaweicloud/metastudio/v1/model/SaveTtscVocabularyConfigsRequest.h>
 #include <huaweicloud/metastudio/v1/model/SaveTtscVocabularyConfigsRequestBody.h>
 #include <huaweicloud/metastudio/v1/model/SaveTtscVocabularyConfigsResponse.h>
@@ -539,12 +721,8 @@
 #include <huaweicloud/metastudio/v1/model/SetTtscGroupAssetsRequest.h>
 #include <huaweicloud/metastudio/v1/model/SetTtscGroupAssetsRequestBody.h>
 #include <huaweicloud/metastudio/v1/model/SetTtscGroupAssetsResponse.h>
-#include <huaweicloud/metastudio/v1/model/ShowAsyncTtsJobRequest.h>
-#include <huaweicloud/metastudio/v1/model/ShowAsyncTtsJobResponse.h>
-#include <huaweicloud/metastudio/v1/model/ShowTtsAuditionFileRequest.h>
-#include <huaweicloud/metastudio/v1/model/ShowTtsAuditionFileResponse.h>
-#include <huaweicloud/metastudio/v1/model/ShowTtsPhoneticSymbolRequest.h>
-#include <huaweicloud/metastudio/v1/model/ShowTtsPhoneticSymbolResponse.h>
+#include <huaweicloud/metastudio/v1/model/ShowVocabularySwitchConfigsRequest.h>
+#include <huaweicloud/metastudio/v1/model/ShowVocabularySwitchConfigsResponse.h>
 #include <huaweicloud/metastudio/v1/model/UpdateTtscVocabularyGroupsRequest.h>
 #include <huaweicloud/metastudio/v1/model/UpdateTtscVocabularyGroupsResponse.h>
 #include <string>
@@ -1079,6 +1257,96 @@ public:
         ShowPhotoDigitalHumanVideoRequest &request
     );
 
+    // 上传文档
+    //
+    // 该接口用于上传文档。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateDocumentResponse> createDocument(
+        CreateDocumentRequest &request
+    );
+    // 批量删除文档
+    //
+    // 该接口用于批量删除文档。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteDocumentResponse> deleteDocument(
+        DeleteDocumentRequest &request
+    );
+    // 下载文档
+    //
+    // 该接口用于下载文档。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DownloadDocumentResponse> downloadDocument(
+        DownloadDocumentRequest &request
+    );
+    // 查询文档列表
+    //
+    // 该接口用于分页查询文档列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListDocumentInfoResponse> listDocumentInfo(
+        ListDocumentInfoRequest &request
+    );
+    // 查询文档详情
+    //
+    // 该接口用于查询文档详情。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowDocumentInfoResponse> showDocumentInfo(
+        ShowDocumentInfoRequest &request
+    );
+    // 修改文档
+    //
+    // 该接口用于修改文档
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateDocumentResponse> updateDocument(
+        UpdateDocumentRequest &request
+    );
+
+    // 分页查询文档分段信息
+    //
+    // 该接口用于分页查询文档分段信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListDocumentSegmentResponse> listDocumentSegment(
+        ListDocumentSegmentRequest &request
+    );
+    // 文档分段效果预览
+    //
+    // 该接口用于文档分段效果预览。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<PreviewDocumentSegmentResponse> previewDocumentSegment(
+        PreviewDocumentSegmentRequest &request
+    );
+    // 开始文档分段
+    //
+    // 该接口用于开始文档分段任务。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<StartDocumentSegmentResponse> startDocumentSegment(
+        StartDocumentSegmentRequest &request
+    );
+    // 修改文档分段内容
+    //
+    // 该接口用于文档分段内容。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateDocumentSegmentInfoResponse> updateDocumentSegmentInfo(
+        UpdateDocumentSegmentInfoRequest &request
+    );
+    // 更新文档分段配置
+    //
+    // 该接口用于更新文档分段配置
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateDocumentSegmentParamResponse> updateDocumentSegmentParam(
+        UpdateDocumentSegmentParamRequest &request
+    );
+
     // 确认文件已上传
     //
     // 资产文件上传完毕后，通过该接口确认上传完成。
@@ -1210,6 +1478,88 @@ public:
         UpdateHotWordsSwitchRequest &request
     );
 
+    // 创建指令集
+    //
+    // 该接口用于创建指令集。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateInstructionLibraryResponse> createInstructionLibrary(
+        CreateInstructionLibraryRequest &request
+    );
+    // 删除指令集
+    //
+    // 该接口用于删除指令集。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteInstructionLibraryResponse> deleteInstructionLibrary(
+        DeleteInstructionLibraryRequest &request
+    );
+    // 查询指令集列表
+    //
+    // 该接口用于查询指令集列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListInstructionLibraryResponse> listInstructionLibrary(
+        ListInstructionLibraryRequest &request
+    );
+    // 查询指令集详情
+    //
+    // 该接口用于查询指令集详情。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowInstructionLibraryResponse> showInstructionLibrary(
+        ShowInstructionLibraryRequest &request
+    );
+    // 修改指令集
+    //
+    // 该接口用于修改指令集。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateInstructionLibraryResponse> updateInstructionLibrary(
+        UpdateInstructionLibraryRequest &request
+    );
+
+    // 创建指令
+    //
+    // 该接口用于创建指令。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateInstructionResponse> createInstruction(
+        CreateInstructionRequest &request
+    );
+    // 删除指令
+    //
+    // 该接口用于删除指令。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteInstructionResponse> deleteInstruction(
+        DeleteInstructionRequest &request
+    );
+    // 查询指令列表
+    //
+    // 该接口用于查询指令列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListInstructionResponse> listInstruction(
+        ListInstructionRequest &request
+    );
+    // 查询指令详情
+    //
+    // 该接口用于查询指令详情。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowInstructionResponse> showInstruction(
+        ShowInstructionRequest &request
+    );
+    // 修改指令
+    //
+    // 该接口用于修改指令。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateInstructionResponse> updateInstruction(
+        UpdateInstructionRequest &request
+    );
+
     // 创建智能直播间互动规则库
     //
     // 该接口用于创建智能直播间互动规则库。
@@ -1241,6 +1591,15 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateInteractionRuleGroupResponse> updateInteractionRuleGroup(
         UpdateInteractionRuleGroupRequest &request
+    );
+
+    // 交互助手对话
+    //
+    // 该接口用于交互助手对话。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateInteractiveChatResponse> createInteractiveChat(
+        CreateInteractiveChatRequest &request
     );
 
     // 创建知识库意图和问法
@@ -1290,6 +1649,55 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateKnowledgeIntentResponse> updateKnowledgeIntent(
         UpdateKnowledgeIntentRequest &request
+    );
+
+    // 知识库召回测试
+    //
+    // 该接口用于知识库召回测试。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CheckRecallKnowledgeLibraryResponse> checkRecallKnowledgeLibrary(
+        CheckRecallKnowledgeLibraryRequest &request
+    );
+    // 创建知识库
+    //
+    // 该接口用于创建知识库。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateKnowledgeLibraryResponse> createKnowledgeLibrary(
+        CreateKnowledgeLibraryRequest &request
+    );
+    // 删除知识库
+    //
+    // 该接口用于删除知识库。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteKnowledgeLibraryResponse> deleteKnowledgeLibrary(
+        DeleteKnowledgeLibraryRequest &request
+    );
+    // 查询知识库列表
+    //
+    // 该接口用于查询知识库列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListKnowledgeLibraryResponse> listKnowledgeLibrary(
+        ListKnowledgeLibraryRequest &request
+    );
+    // 查询知识库详情
+    //
+    // 该接口用于查询知识库详情。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowKnowledgeLibraryResponse> showKnowledgeLibrary(
+        ShowKnowledgeLibraryRequest &request
+    );
+    // 修改知识库
+    //
+    // 该接口用于修改知识库。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateKnowledgeLibraryResponse> updateKnowledgeLibrary(
+        UpdateKnowledgeLibraryRequest &request
     );
 
     // 批量创建知识库问法
@@ -1447,6 +1855,88 @@ public:
         UpdateLivePlatformRequest &request
     );
 
+    // 创建大语言模型配置
+    //
+    // 该接口用于创建大语言模型配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateLlmConfigResponse> createLlmConfig(
+        CreateLlmConfigRequest &request
+    );
+    // 删除大语言模型配置
+    //
+    // 该接口用于删除大语言模型配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteLlmConfigResponse> deleteLlmConfig(
+        DeleteLlmConfigRequest &request
+    );
+    // 查询大语言模型配置列表
+    //
+    // 该接口用于查询大语言模型配置列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListLlmConfigResponse> listLlmConfig(
+        ListLlmConfigRequest &request
+    );
+    // 查询大语言模型配置详情
+    //
+    // 该接口用于查询大语言模型配置详情。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowLlmConfigResponse> showLlmConfig(
+        ShowLlmConfigRequest &request
+    );
+    // 修改大语言模型配置
+    //
+    // 该接口用于修改大语言模型配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateLlmConfigResponse> updateLlmConfig(
+        UpdateLlmConfigRequest &request
+    );
+
+    // 创建MCP服务端对接配置
+    //
+    // 该接口用于创建MCP服务端对接配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateMcpServerResponse> createMcpServer(
+        CreateMcpServerRequest &request
+    );
+    // 删除MCP服务端对接配置
+    //
+    // 该接口用于删除MCP服务端对接配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteMcpServerResponse> deleteMcpServer(
+        DeleteMcpServerRequest &request
+    );
+    // 查询MCP服务端对接配置列表
+    //
+    // 该接口用于查询MCP服务端对接配置列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListMcpServerResponse> listMcpServer(
+        ListMcpServerRequest &request
+    );
+    // 查询MCP服务端对接配置详情
+    //
+    // 该接口用于查询MCP服务端对接配置详情。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowMcpServerResponse> showMcpServer(
+        ShowMcpServerRequest &request
+    );
+    // 修改MCP服务端对接配置
+    //
+    // 该接口用于修改MCP服务端对接配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateMcpServerResponse> updateMcpServer(
+        UpdateMcpServerRequest &request
+    );
+
     // 创建一次性鉴权码
     //
     // 该接口用于创建一次性鉴权码，有效期5分钟，鉴权码只能使用一次，每次使用后需要重新获取。
@@ -1588,6 +2078,55 @@ public:
         ShowPictureModelingJobRequest &request
     );
 
+    // 创建插件配置
+    //
+    // 该接口用于创建插件配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreatePluginConfigResponse> createPluginConfig(
+        CreatePluginConfigRequest &request
+    );
+    // 删除插件配置
+    //
+    // 该接口用于删除插件配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeletePluginConfigResponse> deletePluginConfig(
+        DeletePluginConfigRequest &request
+    );
+    // 查询插件配置列表
+    //
+    // 该接口用于查询插件配置列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListPluginConfigResponse> listPluginConfig(
+        ListPluginConfigRequest &request
+    );
+    // 查询插件配置详情
+    //
+    // 该接口用于查询插件配置详情。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowPluginConfigResponse> showPluginConfig(
+        ShowPluginConfigRequest &request
+    );
+    // 查询插件配置默认信息
+    //
+    // 该接口用于查询插件配置默认信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowPluginConfigDefaultInfoResponse> showPluginConfigDefaultInfo(
+        ShowPluginConfigDefaultInfoRequest &request
+    );
+    // 修改插件配置
+    //
+    // 该接口用于修改插件配置。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdatePluginConfigResponse> updatePluginConfig(
+        UpdatePluginConfigRequest &request
+    );
+
     // 创建商品
     //
     // Create product
@@ -1637,6 +2176,47 @@ public:
         UpdateProductRequest &request
     );
 
+    // 创建问答对
+    //
+    // 该接口用于创建问答对。一个问答对包含一个标准问题，一个答案，若干个相似问题等。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateQuestionAnswerResponse> createQuestionAnswer(
+        CreateQuestionAnswerRequest &request
+    );
+    // 删除问答对
+    //
+    // 该接口用于删除问答对。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteQuestionAnswerResponse> deleteQuestionAnswer(
+        DeleteQuestionAnswerRequest &request
+    );
+    // 查询问答对列表
+    //
+    // 该接口用于查询问答对列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListQuestionAnswerResponse> listQuestionAnswer(
+        ListQuestionAnswerRequest &request
+    );
+    // 查询问答对详情
+    //
+    // 该接口用于查询问答对详情。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowQuestionAnswerResponse> showQuestionAnswer(
+        ShowQuestionAnswerRequest &request
+    );
+    // 修改问答对
+    //
+    // 该接口用于修改问答对。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateQuestionAnswerResponse> updateQuestionAnswer(
+        UpdateQuestionAnswerRequest &request
+    );
+
     // 创建应用
     //
     // 该接口用于创建应用。
@@ -1684,6 +2264,47 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ValidateRobotResponse> validateRobot(
         ValidateRobotRequest &request
+    );
+
+    // 创建角色
+    //
+    // 该接口用于创建角色。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateRoleResponse> createRole(
+        CreateRoleRequest &request
+    );
+    // 删除角色
+    //
+    // 该接口用于删除角色。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteRoleResponse> deleteRole(
+        DeleteRoleRequest &request
+    );
+    // 查询角色列表
+    //
+    // 该接口用于查询角色列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListRoleResponse> listRole(
+        ListRoleRequest &request
+    );
+    // 查询角色详情
+    //
+    // 该接口用于查询角色详情。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowRoleResponse> showRole(
+        ShowRoleRequest &request
+    );
+    // 修改角色
+    //
+    // 该接口用于修改角色。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateRoleResponse> updateRole(
+        UpdateRoleRequest &request
     );
 
     // 创建智能交互对话
@@ -2134,6 +2755,31 @@ public:
         ListTtsaJobsRequest &request
     );
 
+    // 校验音色模型是否可用（自研和第三方音色）
+    //
+    // 该接口用于校验音色模型是否可用，模型可用返回模型信息，不可用返回具体不可用的原因
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CheckVoiceAssetResponse> checkVoiceAsset(
+        CheckVoiceAssetRequest &request
+    );
+    // 获取TTS语音合成任务记录
+    //
+    // 该接口用于获取TTS语音合成任务记录。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowTtsJobResponse> showTtsJob(
+        ShowTtsJobRequest &request
+    );
+    // 获取英文单词音标
+    //
+    // 根据英文单词返回对应音标列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowTtsPhoneticSymbolResponse> showTtsPhoneticSymbol(
+        ShowTtsPhoneticSymbolRequest &request
+    );
+
     // 创建TTS异步任务
     //
     // 该接口用于对外生成音频文件。每个预置音色的计费标准详见[预置音色计费标准](metastudio_02_0060.xml)。
@@ -2158,6 +2804,23 @@ public:
     std::shared_ptr<CreateTtsAuditionResponse> createTtsAudition(
         CreateTtsAuditionRequest &request
     );
+    // 获取TTS异步任务
+    //
+    // 该接口用于获取TTS音频文件下载链接。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowAsyncTtsJobResponse> showAsyncTtsJob(
+        ShowAsyncTtsJobRequest &request
+    );
+    // 获取TTS试听文件
+    //
+    // 该接口用于获取TTS试听文件下载链接，返回List中包含当前已生产的试听文件。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowTtsAuditionFileResponse> showTtsAuditionFile(
+        ShowTtsAuditionFileRequest &request
+    );
+
     // 设置TTS租户级自定义读法配置
     //
     // 该接口用于设置TTS租户级自定义读法配置。
@@ -2206,6 +2869,14 @@ public:
     std::shared_ptr<ListTtscVocabularyGroupsResponse> listTtscVocabularyGroups(
         ListTtscVocabularyGroupsRequest &request
     );
+    // 设置租户级配置
+    //
+    // 该接口用于设置租户级配置，当前用于租户级自定义读法配置的全局开关。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SaveTtscTenantConfigsResponse> saveTtscTenantConfigs(
+        SaveTtscTenantConfigsRequest &request
+    );
     // 修改TTS租户级自定义读法配置
     //
     // 该接口用于修改TTS租户级自定义读法配置。
@@ -2222,29 +2893,13 @@ public:
     std::shared_ptr<SetTtscGroupAssetsResponse> setTtscGroupAssets(
         SetTtscGroupAssetsRequest &request
     );
-    // 获取TTS异步任务
+    // 获取租户级全局配置
     //
-    // 该接口用于获取TTS音频文件下载链接。
+    // 该接口用于获取租户级全局配置。
     // 
     // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ShowAsyncTtsJobResponse> showAsyncTtsJob(
-        ShowAsyncTtsJobRequest &request
-    );
-    // 获取TTS试听文件
-    //
-    // 该接口用于获取TTS试听文件下载链接，返回List中包含当前已生产的试听文件。
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ShowTtsAuditionFileResponse> showTtsAuditionFile(
-        ShowTtsAuditionFileRequest &request
-    );
-    // 获取英文单词音标
-    //
-    // 根据英文单词返回对应音标列表
-    // 
-    // Please refer to HUAWEI cloud API Explorer for details.
-    std::shared_ptr<ShowTtsPhoneticSymbolResponse> showTtsPhoneticSymbol(
-        ShowTtsPhoneticSymbolRequest &request
+    std::shared_ptr<ShowVocabularySwitchConfigsResponse> showVocabularySwitchConfigs(
+        ShowVocabularySwitchConfigsRequest &request
     );
     // TTS租户级词表分组重命名
     //

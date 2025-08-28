@@ -184,6 +184,20 @@ HttpRequestDef EcsMeta::genRequestDefForChangeVpc() {
     return reqDefBuilder;
 }
 
+HttpRequestDef EcsMeta::genRequestDefForCreateLaunchTemplate() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef EcsMeta::genRequestDefForCreatePostPaidServers() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamXClientToken;

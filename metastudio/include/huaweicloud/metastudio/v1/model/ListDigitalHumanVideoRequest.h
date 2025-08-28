@@ -183,6 +183,15 @@ public:
     void unsetjobId();
     void setJobId(const std::string& value);
 
+    /// <summary>
+    /// 批量查询的任务ID
+    /// </summary>
+
+    std::vector<std::string>& getJobIds();
+    bool jobIdsIsSet() const;
+    void unsetjobIds();
+    void setJobIds(const std::vector<std::string>& value);
+
 
 protected:
     std::string authorization_;
@@ -217,6 +226,8 @@ protected:
     bool jobTypeIsSet_;
     std::string jobId_;
     bool jobIdIsSet_;
+    std::vector<std::string> jobIds_;
+    bool jobIdsIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

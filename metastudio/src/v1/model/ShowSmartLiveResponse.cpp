@@ -47,6 +47,8 @@ ShowSmartLiveResponse::ShowSmartLiveResponse()
     relationLivePlatformInfoIsSet_ = false;
     usedResourceType_ = "";
     usedResourceTypeIsSet_ = false;
+    isAiMarkOn_ = false;
+    isAiMarkOnIsSet_ = false;
     xRequestId_ = "";
     xRequestIdIsSet_ = false;
 }
@@ -123,6 +125,9 @@ web::json::value ShowSmartLiveResponse::toJson() const
     }
     if(usedResourceTypeIsSet_) {
         val[utility::conversions::to_string_t("used_resource_type")] = ModelBase::toJson(usedResourceType_);
+    }
+    if(isAiMarkOnIsSet_) {
+        val[utility::conversions::to_string_t("is_ai_mark_on")] = ModelBase::toJson(isAiMarkOn_);
     }
     if(xRequestIdIsSet_) {
         val[utility::conversions::to_string_t("X-Request-Id")] = ModelBase::toJson(xRequestId_);
@@ -321,6 +326,15 @@ bool ShowSmartLiveResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setUsedResourceType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_ai_mark_on"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_ai_mark_on"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsAiMarkOn(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("X-Request-Id"))) {
@@ -775,6 +789,27 @@ bool ShowSmartLiveResponse::usedResourceTypeIsSet() const
 void ShowSmartLiveResponse::unsetusedResourceType()
 {
     usedResourceTypeIsSet_ = false;
+}
+
+bool ShowSmartLiveResponse::isIsAiMarkOn() const
+{
+    return isAiMarkOn_;
+}
+
+void ShowSmartLiveResponse::setIsAiMarkOn(bool value)
+{
+    isAiMarkOn_ = value;
+    isAiMarkOnIsSet_ = true;
+}
+
+bool ShowSmartLiveResponse::isAiMarkOnIsSet() const
+{
+    return isAiMarkOnIsSet_;
+}
+
+void ShowSmartLiveResponse::unsetisAiMarkOn()
+{
+    isAiMarkOnIsSet_ = false;
 }
 
 std::string ShowSmartLiveResponse::getXRequestId() const

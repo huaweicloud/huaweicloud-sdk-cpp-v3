@@ -1838,6 +1838,40 @@ std::shared_ptr<ListLogStreamResponse> LtsClient::listLogStream(ListLogStreamReq
 
     return localVarResult;
 }
+std::shared_ptr<ListLogStreamIndexResponse> LtsClient::listLogStreamIndex(ListLogStreamIndexRequest &request)
+{
+    std::string localVarPath = "/v1.0/{project_id}/groups/{group_id}/stream/{stream_id}/index/config";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["group_id"] = parameterToString(request.getGroupId());
+    localVarPathParams["stream_id"] = parameterToString(request.getStreamId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.contentTypeIsSet()) {
+        localVarHeaderParams["Content-Type"] = parameterToString(request.getContentType());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, LtsMeta::genRequestDefForListLogStreamIndex());
+
+    std::shared_ptr<ListLogStreamIndexResponse> localVarResult = std::make_shared<ListLogStreamIndexResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListLogStreamsResponse> LtsClient::listLogStreams(ListLogStreamsRequest &request)
 {
     std::string localVarPath = "/v2/{project_id}/log-streams";

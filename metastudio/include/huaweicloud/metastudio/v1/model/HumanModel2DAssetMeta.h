@@ -50,6 +50,15 @@ public:
     void setIsActionEditable(bool value);
 
     /// <summary>
+    /// **参数解释**： 是否是直播间复刻任务 **约束限制**： 不涉及 **取值范围**： * true: 是直播间复刻任务 * false: 不是直播间复刻任务
+    /// </summary>
+
+    bool isIsLiveCopy() const;
+    bool isLiveCopyIsSet() const;
+    void unsetisLiveCopy();
+    void setIsLiveCopy(bool value);
+
+    /// <summary>
     /// **参数解释**： 是否是实景分身数字人 **约束限制**： 实景分身数字人不做背景替换。 **取值范围**： * true: 实景分身数字人 * false: 普通分身数字人，不带背景。
     /// </summary>
 
@@ -134,6 +143,8 @@ public:
 protected:
     bool isActionEditable_;
     bool isActionEditableIsSet_;
+    bool isLiveCopy_;
+    bool isLiveCopyIsSet_;
     bool isRealBackground_;
     bool isRealBackgroundIsSet_;
     bool supportLive_;

@@ -57,6 +57,7 @@ public:
     static HttpRequestDef genRequestDefForListLogGroups();
     static HttpRequestDef genRequestDefForListLogHistogram();
     static HttpRequestDef genRequestDefForListLogStream();
+    static HttpRequestDef genRequestDefForListLogStreamIndex();
     static HttpRequestDef genRequestDefForListLogStreams();
     static HttpRequestDef genRequestDefForListLogs();
     static HttpRequestDef genRequestDefForListNotificationTemplate();

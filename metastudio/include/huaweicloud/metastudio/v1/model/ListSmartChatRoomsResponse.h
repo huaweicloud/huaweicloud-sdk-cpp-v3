@@ -59,6 +59,24 @@ public:
     void setCountConcurrency(int32_t value);
 
     /// <summary>
+    /// **参数解释**： 智能交互对话按接入端计费总路数。
+    /// </summary>
+
+    int32_t getCountClientNums() const;
+    bool countClientNumsIsSet() const;
+    void unsetcountClientNums();
+    void setCountClientNums(int32_t value);
+
+    /// <summary>
+    /// **参数解释**： 智能交互对话按接入端计费（Token）总路数。
+    /// </summary>
+
+    int32_t getCountClientNumsToken() const;
+    bool countClientNumsTokenIsSet() const;
+    void unsetcountClientNumsToken();
+    void setCountClientNumsToken(int32_t value);
+
+    /// <summary>
     /// 智能交互对话列表。
     /// </summary>
 
@@ -82,6 +100,10 @@ protected:
     bool countIsSet_;
     int32_t countConcurrency_;
     bool countConcurrencyIsSet_;
+    int32_t countClientNums_;
+    bool countClientNumsIsSet_;
+    int32_t countClientNumsToken_;
+    bool countClientNumsTokenIsSet_;
     std::vector<SmartChatRoomBaseInfo> smartChatRooms_;
     bool smartChatRoomsIsSet_;
     std::string xRequestId_;

@@ -47,6 +47,8 @@ SmartLiveJob::SmartLiveJob()
     relationLivePlatformInfoIsSet_ = false;
     usedResourceType_ = "";
     usedResourceTypeIsSet_ = false;
+    isAiMarkOn_ = false;
+    isAiMarkOnIsSet_ = false;
 }
 
 SmartLiveJob::~SmartLiveJob() = default;
@@ -121,6 +123,9 @@ web::json::value SmartLiveJob::toJson() const
     }
     if(usedResourceTypeIsSet_) {
         val[utility::conversions::to_string_t("used_resource_type")] = ModelBase::toJson(usedResourceType_);
+    }
+    if(isAiMarkOnIsSet_) {
+        val[utility::conversions::to_string_t("is_ai_mark_on")] = ModelBase::toJson(isAiMarkOn_);
     }
 
     return val;
@@ -316,6 +321,15 @@ bool SmartLiveJob::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setUsedResourceType(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_ai_mark_on"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_ai_mark_on"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsAiMarkOn(refVal);
         }
     }
     return ok;
@@ -761,6 +775,27 @@ bool SmartLiveJob::usedResourceTypeIsSet() const
 void SmartLiveJob::unsetusedResourceType()
 {
     usedResourceTypeIsSet_ = false;
+}
+
+bool SmartLiveJob::isIsAiMarkOn() const
+{
+    return isAiMarkOn_;
+}
+
+void SmartLiveJob::setIsAiMarkOn(bool value)
+{
+    isAiMarkOn_ = value;
+    isAiMarkOnIsSet_ = true;
+}
+
+bool SmartLiveJob::isAiMarkOnIsSet() const
+{
+    return isAiMarkOnIsSet_;
+}
+
+void SmartLiveJob::unsetisAiMarkOn()
+{
+    isAiMarkOnIsSet_ = false;
 }
 
 }

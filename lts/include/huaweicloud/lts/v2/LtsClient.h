@@ -118,6 +118,8 @@
 #include <huaweicloud/lts/v2/model/ListLogGroupsResponse.h>
 #include <huaweicloud/lts/v2/model/ListLogHistogramRequest.h>
 #include <huaweicloud/lts/v2/model/ListLogHistogramResponse.h>
+#include <huaweicloud/lts/v2/model/ListLogStreamIndexRequest.h>
+#include <huaweicloud/lts/v2/model/ListLogStreamIndexResponse.h>
 #include <huaweicloud/lts/v2/model/ListLogStreamRequest.h>
 #include <huaweicloud/lts/v2/model/ListLogStreamResponse.h>
 #include <huaweicloud/lts/v2/model/ListLogStreamsRequest.h>
@@ -628,6 +630,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListLogStreamResponse> listLogStream(
         ListLogStreamRequest &request
+    );
+    // 查询日志流索引
+    //
+    // 查询日志流索引。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListLogStreamIndexResponse> listLogStreamIndex(
+        ListLogStreamIndexRequest &request
     );
     // 查询日志流信息
     //

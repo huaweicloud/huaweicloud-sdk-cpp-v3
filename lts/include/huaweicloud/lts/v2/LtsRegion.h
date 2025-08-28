@@ -118,6 +118,10 @@ public:
             { 
                 "https://lts.my-kualalumpur-1.myhuaweicloud.com"
             });
+        regions["ap-southeast-5"] = Region("ap-southeast-5",
+            { 
+                "https://lts.ap-southeast-5.myhuaweicloud.com"
+            });
         regions["ru-moscow-1"] = Region("ru-moscow-1",
             { 
                 "https://lts.ru-moscow-1.myhuaweicloud.com"

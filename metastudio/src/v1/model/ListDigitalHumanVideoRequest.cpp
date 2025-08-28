@@ -43,6 +43,7 @@ ListDigitalHumanVideoRequest::ListDigitalHumanVideoRequest()
     jobTypeIsSet_ = false;
     jobId_ = "";
     jobIdIsSet_ = false;
+    jobIdsIsSet_ = false;
 }
 
 ListDigitalHumanVideoRequest::~ListDigitalHumanVideoRequest() = default;
@@ -102,6 +103,9 @@ web::json::value ListDigitalHumanVideoRequest::toJson() const
     }
     if(jobIdIsSet_) {
         val[utility::conversions::to_string_t("job_id")] = ModelBase::toJson(jobId_);
+    }
+    if(jobIdsIsSet_) {
+        val[utility::conversions::to_string_t("job_ids")] = ModelBase::toJson(jobIds_);
     }
 
     return val;
@@ -252,6 +256,15 @@ bool ListDigitalHumanVideoRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setJobId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("job_ids"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("job_ids"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setJobIds(refVal);
         }
     }
     return ok;
@@ -592,6 +605,27 @@ bool ListDigitalHumanVideoRequest::jobIdIsSet() const
 void ListDigitalHumanVideoRequest::unsetjobId()
 {
     jobIdIsSet_ = false;
+}
+
+std::vector<std::string>& ListDigitalHumanVideoRequest::getJobIds()
+{
+    return jobIds_;
+}
+
+void ListDigitalHumanVideoRequest::setJobIds(const std::vector<std::string>& value)
+{
+    jobIds_ = value;
+    jobIdsIsSet_ = true;
+}
+
+bool ListDigitalHumanVideoRequest::jobIdsIsSet() const
+{
+    return jobIdsIsSet_;
+}
+
+void ListDigitalHumanVideoRequest::unsetjobIds()
+{
+    jobIdsIsSet_ = false;
 }
 
 }

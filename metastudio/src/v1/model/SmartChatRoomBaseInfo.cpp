@@ -24,8 +24,14 @@ SmartChatRoomBaseInfo::SmartChatRoomBaseInfo()
     coverUrlIsSet_ = false;
     modelInfosIsSet_ = false;
     voiceConfigIsSet_ = false;
+    billingMode_ = "";
+    billingModeIsSet_ = false;
+    reuseResource_ = false;
+    reuseResourceIsSet_ = false;
     concurrency_ = 0;
     concurrencyIsSet_ = false;
+    clientNums_ = 0;
+    clientNumsIsSet_ = false;
     voiceConfigListIsSet_ = false;
     defaultLanguage_ = "";
     defaultLanguageIsSet_ = false;
@@ -68,8 +74,17 @@ web::json::value SmartChatRoomBaseInfo::toJson() const
     if(voiceConfigIsSet_) {
         val[utility::conversions::to_string_t("voice_config")] = ModelBase::toJson(voiceConfig_);
     }
+    if(billingModeIsSet_) {
+        val[utility::conversions::to_string_t("billing_mode")] = ModelBase::toJson(billingMode_);
+    }
+    if(reuseResourceIsSet_) {
+        val[utility::conversions::to_string_t("reuse_resource")] = ModelBase::toJson(reuseResource_);
+    }
     if(concurrencyIsSet_) {
         val[utility::conversions::to_string_t("concurrency")] = ModelBase::toJson(concurrency_);
+    }
+    if(clientNumsIsSet_) {
+        val[utility::conversions::to_string_t("client_nums")] = ModelBase::toJson(clientNums_);
     }
     if(voiceConfigListIsSet_) {
         val[utility::conversions::to_string_t("voice_config_list")] = ModelBase::toJson(voiceConfigList_);
@@ -156,6 +171,24 @@ bool SmartChatRoomBaseInfo::fromJson(const web::json::value& val)
             setVoiceConfig(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("billing_mode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("billing_mode"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBillingMode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("reuse_resource"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("reuse_resource"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setReuseResource(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("concurrency"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("concurrency"));
         if(!fieldValue.is_null())
@@ -163,6 +196,15 @@ bool SmartChatRoomBaseInfo::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setConcurrency(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("client_nums"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("client_nums"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setClientNums(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("voice_config_list"))) {
@@ -361,6 +403,48 @@ void SmartChatRoomBaseInfo::unsetvoiceConfig()
     voiceConfigIsSet_ = false;
 }
 
+std::string SmartChatRoomBaseInfo::getBillingMode() const
+{
+    return billingMode_;
+}
+
+void SmartChatRoomBaseInfo::setBillingMode(const std::string& value)
+{
+    billingMode_ = value;
+    billingModeIsSet_ = true;
+}
+
+bool SmartChatRoomBaseInfo::billingModeIsSet() const
+{
+    return billingModeIsSet_;
+}
+
+void SmartChatRoomBaseInfo::unsetbillingMode()
+{
+    billingModeIsSet_ = false;
+}
+
+bool SmartChatRoomBaseInfo::isReuseResource() const
+{
+    return reuseResource_;
+}
+
+void SmartChatRoomBaseInfo::setReuseResource(bool value)
+{
+    reuseResource_ = value;
+    reuseResourceIsSet_ = true;
+}
+
+bool SmartChatRoomBaseInfo::reuseResourceIsSet() const
+{
+    return reuseResourceIsSet_;
+}
+
+void SmartChatRoomBaseInfo::unsetreuseResource()
+{
+    reuseResourceIsSet_ = false;
+}
+
 int32_t SmartChatRoomBaseInfo::getConcurrency() const
 {
     return concurrency_;
@@ -380,6 +464,27 @@ bool SmartChatRoomBaseInfo::concurrencyIsSet() const
 void SmartChatRoomBaseInfo::unsetconcurrency()
 {
     concurrencyIsSet_ = false;
+}
+
+int32_t SmartChatRoomBaseInfo::getClientNums() const
+{
+    return clientNums_;
+}
+
+void SmartChatRoomBaseInfo::setClientNums(int32_t value)
+{
+    clientNums_ = value;
+    clientNumsIsSet_ = true;
+}
+
+bool SmartChatRoomBaseInfo::clientNumsIsSet() const
+{
+    return clientNumsIsSet_;
+}
+
+void SmartChatRoomBaseInfo::unsetclientNums()
+{
+    clientNumsIsSet_ = false;
 }
 
 std::vector<VoiceConfigRsp>& SmartChatRoomBaseInfo::getVoiceConfigList()

@@ -24,8 +24,6 @@ VideoScriptsShowInfo::VideoScriptsShowInfo()
     modelAssetTypeIsSet_ = false;
     voiceConfigIsSet_ = false;
     videoConfigIsSet_ = false;
-    sceneAssetId_ = "";
-    sceneAssetIdIsSet_ = false;
     privData_ = "";
     privDataIsSet_ = false;
     backgroundMusicConfigIsSet_ = false;
@@ -65,9 +63,6 @@ web::json::value VideoScriptsShowInfo::toJson() const
     }
     if(videoConfigIsSet_) {
         val[utility::conversions::to_string_t("video_config")] = ModelBase::toJson(videoConfig_);
-    }
-    if(sceneAssetIdIsSet_) {
-        val[utility::conversions::to_string_t("scene_asset_id")] = ModelBase::toJson(sceneAssetId_);
     }
     if(privDataIsSet_) {
         val[utility::conversions::to_string_t("priv_data")] = ModelBase::toJson(privData_);
@@ -155,15 +150,6 @@ bool VideoScriptsShowInfo::fromJson(const web::json::value& val)
             VideoConfig refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setVideoConfig(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("scene_asset_id"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("scene_asset_id"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setSceneAssetId(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("priv_data"))) {
@@ -369,27 +355,6 @@ bool VideoScriptsShowInfo::videoConfigIsSet() const
 void VideoScriptsShowInfo::unsetvideoConfig()
 {
     videoConfigIsSet_ = false;
-}
-
-std::string VideoScriptsShowInfo::getSceneAssetId() const
-{
-    return sceneAssetId_;
-}
-
-void VideoScriptsShowInfo::setSceneAssetId(const std::string& value)
-{
-    sceneAssetId_ = value;
-    sceneAssetIdIsSet_ = true;
-}
-
-bool VideoScriptsShowInfo::sceneAssetIdIsSet() const
-{
-    return sceneAssetIdIsSet_;
-}
-
-void VideoScriptsShowInfo::unsetsceneAssetId()
-{
-    sceneAssetIdIsSet_ = false;
 }
 
 std::string VideoScriptsShowInfo::getPrivData() const

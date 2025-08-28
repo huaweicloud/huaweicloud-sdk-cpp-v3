@@ -23,8 +23,14 @@ CreateSmartChatRoomReq::CreateSmartChatRoomReq()
     voiceConfigListIsSet_ = false;
     robotId_ = "";
     robotIdIsSet_ = false;
+    billingMode_ = "";
+    billingModeIsSet_ = false;
+    reuseResource_ = false;
+    reuseResourceIsSet_ = false;
     concurrency_ = 0;
     concurrencyIsSet_ = false;
+    clientNums_ = 0;
+    clientNumsIsSet_ = false;
     defaultLanguage_ = "";
     defaultLanguageIsSet_ = false;
     backgroundConfigIsSet_ = false;
@@ -69,8 +75,17 @@ web::json::value CreateSmartChatRoomReq::toJson() const
     if(robotIdIsSet_) {
         val[utility::conversions::to_string_t("robot_id")] = ModelBase::toJson(robotId_);
     }
+    if(billingModeIsSet_) {
+        val[utility::conversions::to_string_t("billing_mode")] = ModelBase::toJson(billingMode_);
+    }
+    if(reuseResourceIsSet_) {
+        val[utility::conversions::to_string_t("reuse_resource")] = ModelBase::toJson(reuseResource_);
+    }
     if(concurrencyIsSet_) {
         val[utility::conversions::to_string_t("concurrency")] = ModelBase::toJson(concurrency_);
+    }
+    if(clientNumsIsSet_) {
+        val[utility::conversions::to_string_t("client_nums")] = ModelBase::toJson(clientNums_);
     }
     if(defaultLanguageIsSet_) {
         val[utility::conversions::to_string_t("default_language")] = ModelBase::toJson(defaultLanguage_);
@@ -166,6 +181,24 @@ bool CreateSmartChatRoomReq::fromJson(const web::json::value& val)
             setRobotId(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("billing_mode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("billing_mode"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBillingMode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("reuse_resource"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("reuse_resource"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setReuseResource(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("concurrency"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("concurrency"));
         if(!fieldValue.is_null())
@@ -173,6 +206,15 @@ bool CreateSmartChatRoomReq::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setConcurrency(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("client_nums"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("client_nums"));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setClientNums(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("default_language"))) {
@@ -398,6 +440,48 @@ void CreateSmartChatRoomReq::unsetrobotId()
     robotIdIsSet_ = false;
 }
 
+std::string CreateSmartChatRoomReq::getBillingMode() const
+{
+    return billingMode_;
+}
+
+void CreateSmartChatRoomReq::setBillingMode(const std::string& value)
+{
+    billingMode_ = value;
+    billingModeIsSet_ = true;
+}
+
+bool CreateSmartChatRoomReq::billingModeIsSet() const
+{
+    return billingModeIsSet_;
+}
+
+void CreateSmartChatRoomReq::unsetbillingMode()
+{
+    billingModeIsSet_ = false;
+}
+
+bool CreateSmartChatRoomReq::isReuseResource() const
+{
+    return reuseResource_;
+}
+
+void CreateSmartChatRoomReq::setReuseResource(bool value)
+{
+    reuseResource_ = value;
+    reuseResourceIsSet_ = true;
+}
+
+bool CreateSmartChatRoomReq::reuseResourceIsSet() const
+{
+    return reuseResourceIsSet_;
+}
+
+void CreateSmartChatRoomReq::unsetreuseResource()
+{
+    reuseResourceIsSet_ = false;
+}
+
 int32_t CreateSmartChatRoomReq::getConcurrency() const
 {
     return concurrency_;
@@ -417,6 +501,27 @@ bool CreateSmartChatRoomReq::concurrencyIsSet() const
 void CreateSmartChatRoomReq::unsetconcurrency()
 {
     concurrencyIsSet_ = false;
+}
+
+int32_t CreateSmartChatRoomReq::getClientNums() const
+{
+    return clientNums_;
+}
+
+void CreateSmartChatRoomReq::setClientNums(int32_t value)
+{
+    clientNums_ = value;
+    clientNumsIsSet_ = true;
+}
+
+bool CreateSmartChatRoomReq::clientNumsIsSet() const
+{
+    return clientNumsIsSet_;
+}
+
+void CreateSmartChatRoomReq::unsetclientNums()
+{
+    clientNumsIsSet_ = false;
 }
 
 std::string CreateSmartChatRoomReq::getDefaultLanguage() const

@@ -869,7 +869,7 @@ public:
     std::shared_ptr<DeleteJobResponse> deleteJob(
         DeleteJobRequest &request
     );
-    // 
+    // 解除LTS配置信息
     //
     // 解除LTS配置信息
     // 
@@ -1021,7 +1021,7 @@ public:
     std::shared_ptr<ListErrorLogsNewResponse> listErrorLogsNew(
         ListErrorLogsNewRequest &request
     );
-    // 
+    // 查询实例的错误日志数据
     //
     // 查询实例的错误日志数据。
     // 
@@ -1053,7 +1053,7 @@ public:
     std::shared_ptr<ListHistoryDatabaseResponse> listHistoryDatabase(
         ListHistoryDatabaseRequest &request
     );
-    // 
+    // 查询实例大版本升级检查历史
     //
     // 查询实例大版本升级检查历史。
     // 
@@ -1127,7 +1127,7 @@ public:
     std::shared_ptr<ListJobInfoDetailResponse> listJobInfoDetail(
         ListJobInfoDetailRequest &request
     );
-    // 
+    // 获取LTS配置信息
     //
     // 获取LTS配置信息
     // 
@@ -1184,7 +1184,7 @@ public:
     std::shared_ptr<ListPostgresqlListHistoryTablesResponse> listPostgresqlListHistoryTables(
         ListPostgresqlListHistoryTablesRequest &request
     );
-    // 
+    // 查询预定义标签
     //
     // 查询预定义标签
     // 
@@ -1257,7 +1257,7 @@ public:
     std::shared_ptr<ListShareBackupsResponse> listShareBackups(
         ListShareBackupsRequest &request
     );
-    // 
+    // 获取指定实例详情
     //
     // 获取指定实例详情
     // 
@@ -1274,7 +1274,7 @@ public:
     std::shared_ptr<ListSlowLogFileResponse> listSlowLogFile(
         ListSlowLogFileRequest &request
     );
-    // 
+    // 查询实例慢日志的统计数据
     //
     // 查询实例慢日志的统计数据。
     // 
@@ -1298,7 +1298,7 @@ public:
     std::shared_ptr<ListSlowLogsNewResponse> listSlowLogsNew(
         ListSlowLogsNewRequest &request
     );
-    // 
+    // 查询实例的慢日志数据
     //
     // 查询实例的慢日志数据。
     // 
@@ -1354,7 +1354,7 @@ public:
     std::shared_ptr<ListUpdateBackupEnhancePolicyResponse> listUpdateBackupEnhancePolicy(
         ListUpdateBackupEnhancePolicyRequest &request
     );
-    // 
+    // 查询实例大版本升级历史信息
     //
     // 查询实例大版本升级历史信息。
     // 
@@ -1493,7 +1493,7 @@ public:
     std::shared_ptr<SetInstancesProxyRestartResponse> setInstancesProxyRestart(
         SetInstancesProxyRestartRequest &request
     );
-    // 
+    // 关联LTS配置信息
     //
     // 关联LTS配置信息
     // 
@@ -1575,7 +1575,7 @@ public:
     std::shared_ptr<ShowAutoUpgradePolicyResponse> showAutoUpgradePolicy(
         ShowAutoUpgradePolicyRequest &request
     );
-    // 
+    // 查询实例可升级的目标版本
     //
     // 查询实例可升级的目标版本
     // 
@@ -1631,7 +1631,7 @@ public:
     std::shared_ptr<ShowDnsNameResponse> showDnsName(
         ShowDnsNameRequest &request
     );
-    // 
+    // 查询实例ipv4域名
     //
     // 查询实例ipv4域名
     // 
@@ -1735,7 +1735,7 @@ public:
     std::shared_ptr<ShowTransferPolicyResponse> showTransferPolicy(
         ShowTransferPolicyRequest &request
     );
-    // 
+    // 查询大版本检查状态或升级状态
     //
     // 查询大版本检查状态或升级状态。
     // 
@@ -1951,7 +1951,7 @@ public:
     std::shared_ptr<UpdateToPeriodResponse> updateToPeriod(
         UpdateToPeriodRequest &request
     );
-    // 
+    // PostgreSQL数据库升级大版本
     //
     // PostgreSQL数据库升级大版本。
     // 
@@ -1959,7 +1959,7 @@ public:
     std::shared_ptr<UpgradeDbMajorVersionResponse> upgradeDbMajorVersion(
         UpgradeDbMajorVersionRequest &request
     );
-    // 
+    // 大版本升级前进行升级检查
     //
     // 大版本升级前进行升级检查。
     // 
@@ -2392,7 +2392,7 @@ public:
     std::shared_ptr<UpdateDatabaseOwnerResponse> updateDatabaseOwner(
         UpdateDatabaseOwnerRequest &request
     );
-    // 
+    // 数据库帐号授权
     //
     // 数据库帐号授权。
     // 

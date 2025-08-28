@@ -72,6 +72,15 @@ public:
     void setGroupId(const std::string& value);
 
     /// <summary>
+    /// **参数解释**： 播放到对应的段落，显示对应的图层。该字段向前兼容，可以不填，字段可选。 只支持直播业务。 **约束限制**： 段落sequence_no。 **默认取值**： 不涉及。
+    /// </summary>
+
+    int32_t getSequenceNo() const;
+    bool sequenceNoIsSet() const;
+    void unsetsequenceNo();
+    void setSequenceNo(int32_t value);
+
+    /// <summary>
     /// 
     /// </summary>
 
@@ -133,6 +142,8 @@ protected:
     bool assetIdIsSet_;
     std::string groupId_;
     bool groupIdIsSet_;
+    int32_t sequenceNo_;
+    bool sequenceNoIsSet_;
     LayerPositionConfig position_;
     bool positionIsSet_;
     LayerSizeConfig size_;

@@ -112,6 +112,24 @@ public:
     void setRobotId(const std::string& value);
 
     /// <summary>
+    /// 计费模式，默认值CONCURRENCY * CONCURRENCY：并发计费 * CLIENT：按接入端计费 * CLIENT_TOKENS: 按接入端计费（TOKENS）
+    /// </summary>
+
+    std::string getBillingMode() const;
+    bool billingModeIsSet() const;
+    void unsetbillingMode();
+    void setBillingMode(const std::string& value);
+
+    /// <summary>
+    /// 是否允许使用未分配的并发数（端模式下不能复用），默认不使用。
+    /// </summary>
+
+    bool isReuseResource() const;
+    bool reuseResourceIsSet() const;
+    void unsetreuseResource();
+    void setReuseResource(bool value);
+
+    /// <summary>
     /// **参数解释**： 并发路数。 **约束限制**： 默认没有并发路数，如果不配置并发数量，则无法启动智能交互对话任务。
     /// </summary>
 
@@ -119,6 +137,15 @@ public:
     bool concurrencyIsSet() const;
     void unsetconcurrency();
     void setConcurrency(int32_t value);
+
+    /// <summary>
+    /// **参数解释**： 允许接入终端端数量。
+    /// </summary>
+
+    int32_t getClientNums() const;
+    bool clientNumsIsSet() const;
+    void unsetclientNums();
+    void setClientNums(int32_t value);
 
     /// <summary>
     /// 默认语言，智能交互接口使用。默认值CN。 * CN：简体中文。 * EN：英语。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持）
@@ -208,8 +235,14 @@ protected:
     bool voiceConfigListIsSet_;
     std::string robotId_;
     bool robotIdIsSet_;
+    std::string billingMode_;
+    bool billingModeIsSet_;
+    bool reuseResource_;
+    bool reuseResourceIsSet_;
     int32_t concurrency_;
     bool concurrencyIsSet_;
+    int32_t clientNums_;
+    bool clientNumsIsSet_;
     std::string defaultLanguage_;
     bool defaultLanguageIsSet_;
     BackgroundConfigInfo backgroundConfig_;

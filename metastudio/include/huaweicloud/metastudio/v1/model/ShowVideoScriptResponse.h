@@ -84,7 +84,7 @@ public:
     void setModelAssetId(const std::string& value);
 
     /// <summary>
-    /// **参数解释**： 数字人模型类型。 **约束限制**： 不涉及 **取值范围**： * HUMAN_MODEL_2D：分身数字人 * HUMAN_MODEL_3D：3D数字人  **默认取值**： 不涉及
+    /// **参数解释**： 数字人模型类型。 **约束限制**： 不涉及 **取值范围**： * HUMAN_MODEL_2D：分身数字人  **默认取值**： 不涉及
     /// </summary>
 
     std::string getModelAssetType() const;
@@ -109,15 +109,6 @@ public:
     bool videoConfigIsSet() const;
     void unsetvideoConfig();
     void setVideoConfig(const VideoConfig& value);
-
-    /// <summary>
-    /// **参数解释**： 场景资产ID。 **约束限制**： 分身数字人视频制作不需要填写该参数。 **取值范围**： 字符长度0-64位 **默认取值**： 不涉及
-    /// </summary>
-
-    std::string getSceneAssetId() const;
-    bool sceneAssetIdIsSet() const;
-    void unsetsceneAssetId();
-    void setSceneAssetId(const std::string& value);
 
     /// <summary>
     /// **参数解释**： 私有数据，用户填写，原样带回。 **约束限制**： 不涉及 **取值范围**： 字符长度0-8192位 **默认取值**： 不涉及
@@ -234,8 +225,6 @@ protected:
     bool voiceConfigIsSet_;
     VideoConfig videoConfig_;
     bool videoConfigIsSet_;
-    std::string sceneAssetId_;
-    bool sceneAssetIdIsSet_;
     std::string privData_;
     bool privDataIsSet_;
     BackgroundMusicConfig backgroundMusicConfig_;

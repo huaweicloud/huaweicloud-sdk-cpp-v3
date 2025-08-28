@@ -35,14 +35,8 @@ public:
 
     enum class eLanguageEnum 
     {
-        LanguageEnum_zh_CN,
-        LanguageEnum_en_US,
         LanguageEnum_CN,
         LanguageEnum_EN,
-        LanguageEnum_ESP,
-        LanguageEnum_por,
-        LanguageEnum_Arabic,
-        LanguageEnum_Thai,
     };
 
     eLanguageEnum getValue() const;

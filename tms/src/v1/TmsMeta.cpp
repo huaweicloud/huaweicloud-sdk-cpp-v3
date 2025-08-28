@@ -129,6 +129,20 @@ HttpRequestDef TmsMeta::genRequestDefForListTagValues() {
     return reqDefBuilder;
 }
 
+HttpRequestDef TmsMeta::genRequestDefForListTags() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("ResourceTypes")
+                  .withJsonTag("resource_types")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ProjectId")
+                  .withJsonTag("project_id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("TagTypes")
+                  .withJsonTag("tag_types")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef TmsMeta::genRequestDefForShowApiVersion() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;

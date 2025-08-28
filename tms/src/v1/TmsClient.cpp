@@ -434,6 +434,44 @@ std::shared_ptr<ListTagValuesResponse> TmsClient::listTagValues(ListTagValuesReq
 
     return localVarResult;
 }
+std::shared_ptr<ListTagsResponse> TmsClient::listTags(ListTagsRequest &request)
+{
+    std::string localVarPath = "/v1.0/tags";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.resourceTypesIsSet()) {
+        localVarQueryParams["resource_types"] = parameterToString(request.getResourceTypes());
+    }
+    if (request.projectIdIsSet()) {
+        localVarQueryParams["project_id"] = parameterToString(request.getProjectId());
+    }
+    if (request.tagTypesIsSet()) {
+        localVarQueryParams["tag_types"] = parameterToString(request.getTagTypes());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, TmsMeta::genRequestDefForListTags());
+
+    std::shared_ptr<ListTagsResponse> localVarResult = std::make_shared<ListTagsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowApiVersionResponse> TmsClient::showApiVersion(ShowApiVersionRequest &request)
 {
     std::string localVarPath = "/{api_version}";

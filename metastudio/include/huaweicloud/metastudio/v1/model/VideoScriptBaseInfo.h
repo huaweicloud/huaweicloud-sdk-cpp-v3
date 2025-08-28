@@ -75,7 +75,7 @@ public:
     void setModelAssetId(const std::string& value);
 
     /// <summary>
-    /// 数字人模型类型。  * HUMAN_MODEL_2D：分身数字人 * HUMAN_MODEL_3D：3D数字人
+    /// 数字人模型类型。  * HUMAN_MODEL_2D：分身数字人
     /// </summary>
 
     std::string getModelAssetType() const;

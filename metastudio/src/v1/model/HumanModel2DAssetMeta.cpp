@@ -14,6 +14,8 @@ HumanModel2DAssetMeta::HumanModel2DAssetMeta()
 {
     isActionEditable_ = false;
     isActionEditableIsSet_ = false;
+    isLiveCopy_ = false;
+    isLiveCopyIsSet_ = false;
     isRealBackground_ = false;
     isRealBackgroundIsSet_ = false;
     supportLive_ = false;
@@ -44,6 +46,9 @@ web::json::value HumanModel2DAssetMeta::toJson() const
 
     if(isActionEditableIsSet_) {
         val[utility::conversions::to_string_t("is_action_editable")] = ModelBase::toJson(isActionEditable_);
+    }
+    if(isLiveCopyIsSet_) {
+        val[utility::conversions::to_string_t("is_live_copy")] = ModelBase::toJson(isLiveCopy_);
     }
     if(isRealBackgroundIsSet_) {
         val[utility::conversions::to_string_t("is_real_background")] = ModelBase::toJson(isRealBackground_);
@@ -86,6 +91,15 @@ bool HumanModel2DAssetMeta::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setIsActionEditable(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_live_copy"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_live_copy"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsLiveCopy(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("is_real_background"))) {
@@ -192,6 +206,27 @@ bool HumanModel2DAssetMeta::isActionEditableIsSet() const
 void HumanModel2DAssetMeta::unsetisActionEditable()
 {
     isActionEditableIsSet_ = false;
+}
+
+bool HumanModel2DAssetMeta::isIsLiveCopy() const
+{
+    return isLiveCopy_;
+}
+
+void HumanModel2DAssetMeta::setIsLiveCopy(bool value)
+{
+    isLiveCopy_ = value;
+    isLiveCopyIsSet_ = true;
+}
+
+bool HumanModel2DAssetMeta::isLiveCopyIsSet() const
+{
+    return isLiveCopyIsSet_;
+}
+
+void HumanModel2DAssetMeta::unsetisLiveCopy()
+{
+    isLiveCopyIsSet_ = false;
 }
 
 bool HumanModel2DAssetMeta::isIsRealBackground() const

@@ -66,7 +66,7 @@ public:
     void setValue(const std::string& value);
 
     /// <summary>
-    /// TTSS支持配置的词表类型 * CHINESE_G2P:拼音 * PHONETIC_SYMBOL:音标 * CONTINUUM:连读 * ALIAS:别名 * SAY_AS:数字英文读法
+    /// TTSS支持配置的词表类型 - CHINESE_G2P：拼音 - PHONETIC_SYMBOL：音标 - CONTINUUM：连读 - ALIAS：别名 - SAY_AS：数字英文读法
     /// </summary>
 
     std::string getType() const;
